@@ -67,7 +67,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Soft delete user with specified ID
+   * Delete a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -101,7 +101,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Soft delete user with specified ID
+   * Delete a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -143,7 +143,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Soft delete user with specified ID
+   * Delete a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -177,7 +177,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Soft delete user with specified ID
+   * Delete a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -219,7 +219,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Return Group with specified ID
+   * Get a group
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -253,7 +253,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Return Group with specified ID
+   * Get a group
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -295,7 +295,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Query Groups
+   * Get a list of groups
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -329,7 +329,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Query Groups
+   * Get a list of groups
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -371,7 +371,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Return user with specified ID (default version)
+   * Get a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -405,7 +405,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Return user with specified ID (default version)
+   * Get a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -447,7 +447,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Query Users
+   * Get a list of users
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -481,7 +481,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Query Users
+   * Get a list of users
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -523,7 +523,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Return Group with specified ID
+   * Get a group
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -557,7 +557,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Return Group with specified ID
+   * Get a group
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -599,7 +599,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Query Groups
+   * Get a list of groups
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -633,7 +633,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Query Groups
+   * Get a list of groups
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -675,7 +675,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Get SCIM Configuration
+   * Get the SCIM configuration
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -709,7 +709,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Get SCIM Configuration
+   * Get the SCIM configuration
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -751,7 +751,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Return User with specified ID
+   * Get a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -785,7 +785,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Return User with specified ID
+   * Get a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -827,7 +827,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Query Users
+   * Get a list of users
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -861,7 +861,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Query Users
+   * Get a list of users
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -903,7 +903,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Update Group with specified ID
+   * Modify a group
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -937,7 +937,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Update Group with specified ID
+   * Modify a group
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -979,7 +979,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Patch user with specified ID
+   * Modify a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1013,7 +1013,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Patch user with specified ID
+   * Modify a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1055,7 +1055,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Update Group with specified ID
+   * Modify a group
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1089,7 +1089,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Update Group with specified ID
+   * Modify a group
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1131,7 +1131,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Update user with specified ID
+   * Modify a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1165,7 +1165,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Update user with specified ID
+   * Modify a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1207,7 +1207,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Create user
+   * Create a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1241,7 +1241,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Create user
+   * Create a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1283,7 +1283,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Create user
+   * Create a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1317,7 +1317,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Create user
+   * Create a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1359,7 +1359,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Update Group with specified ID
+   * Replace a group
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1393,7 +1393,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Update Group with specified ID
+   * Replace a group
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1435,7 +1435,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Update user with specified ID
+   * Replace a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1469,7 +1469,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Update user with specified ID
+   * Replace a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1511,7 +1511,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Update Group with specified ID
+   * Replace a group
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1545,7 +1545,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Update Group with specified ID
+   * Replace a group
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1587,7 +1587,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Update user with specified ID
+   * Replace a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1621,7 +1621,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Update user with specified ID
+   * Replace a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

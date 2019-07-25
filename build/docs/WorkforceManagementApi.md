@@ -26,7 +26,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementManagementunitSchedulingRuns**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitSchedulingRuns) | Get the status of all the ongoing schedule runs |
 | [**getWorkforcemanagementManagementunitServicegoalgroup**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitServicegoalgroup) | Get a service goal group |
 | [**getWorkforcemanagementManagementunitServicegoalgroups**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitServicegoalgroups) | Get service goal groups |
-| [**getWorkforcemanagementManagementunitSettings**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitSettings) | Get the settings for the requested management unit |
+| [**getWorkforcemanagementManagementunitSettings**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitSettings) | Get the settings for the requested management unit. Deprecated, use the GET management unit route instead |
 | [**getWorkforcemanagementManagementunitShifttradesMatched**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitShifttradesMatched) | Gets a summary of all shift trades in the matched state |
 | [**getWorkforcemanagementManagementunitShifttradesUsers**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitShifttradesUsers) | Gets list of users available for whom you can send direct shift trade requests |
 | [**getWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequest) | Get a time off request |
@@ -46,10 +46,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementShifttrades**](WorkforceManagementApi.html#getWorkforcemanagementShifttrades) | Gets all of my shift trades |
 | [**getWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequest) | Get a time off request for the current user |
 | [**getWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequests) | Get a list of time off requests for the current user |
+| [**patchWorkforcemanagementManagementunit**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunit) | Update the requested management unit |
 | [**patchWorkforcemanagementManagementunitActivitycode**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitActivitycode) | Update an activity code |
 | [**patchWorkforcemanagementManagementunitSchedulingRun**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitSchedulingRun) | Marks a specific scheduling run as applied, allowing a new rescheduling run to be started |
 | [**patchWorkforcemanagementManagementunitServicegoalgroup**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitServicegoalgroup) | Update a service goal group |
-| [**patchWorkforcemanagementManagementunitSettings**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitSettings) | Patch the settings for the requested management unit |
+| [**patchWorkforcemanagementManagementunitSettings**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitSettings) | Update the settings for the requested management unit |
 | [**patchWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitUserTimeoffrequest) | Update a time off request |
 | [**patchWorkforcemanagementManagementunitWeekSchedule**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitWeekSchedule) | Update a week schedule |
 | [**patchWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitWorkplan) | Update a work plan |
@@ -58,6 +59,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitActivitycodes) | Create a new activity code |
 | [**postWorkforcemanagementManagementunitHistoricaladherencequery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitHistoricaladherencequery) | Request a historical adherence report |
 | [**postWorkforcemanagementManagementunitIntraday**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitIntraday) | Get intraday data for the given date for the requested queueIds |
+| [**postWorkforcemanagementManagementunitMove**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitMove) | Move the requested management unit to a new business unit |
 | [**postWorkforcemanagementManagementunitSchedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitSchedulesSearch) | Query published schedules for given given time range for set of users |
 | [**postWorkforcemanagementManagementunitServicegoalgroups**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitServicegoalgroups) | Create a new service goal group |
 | [**postWorkforcemanagementManagementunitTimeoffrequests**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeoffrequests) | Create a new time off request |
@@ -120,7 +122,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 try {
     apiInstance.deleteWorkforcemanagementManagementunit(muId);
 } catch (ApiException e) {
@@ -134,7 +136,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 {: class="table-striped"}
 
 
@@ -738,8 +740,8 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
-String expand = "expand_example"; // String | 
+String muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+List<String> expand = Arrays.asList("expand_example"); // List<String> | 
 try {
     ManagementUnit result = apiInstance.getWorkforcemanagementManagementunit(muId, expand);
     System.out.println(result);
@@ -754,8 +756,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
-| **expand** | **String**|  | [optional]<br />**Values**: settings 
+| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **expand** | [**List&lt;String&gt;**](String.html)|  | [optional]<br />**Values**: settings, settings.adherence, settings.timeOff, settings.scheduling, settings.shortTermForecasting, settings.shiftTrading 
 {: class="table-striped"}
 
 
@@ -1386,11 +1388,11 @@ try {
 
 # **getWorkforcemanagementManagementunitSettings**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [ManagementUnitSettings](ManagementUnitSettings.html) getWorkforcemanagementManagementunitSettings(muId)
 
-Get the settings for the requested management unit
+Get the settings for the requested management unit. Deprecated, use the GET management unit route instead
 
 
 
@@ -1422,7 +1424,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 try {
     ManagementUnitSettings result = apiInstance.getWorkforcemanagementManagementunitSettings(muId);
     System.out.println(result);
@@ -1437,7 +1439,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 {: class="table-striped"}
 
 
@@ -2317,7 +2319,7 @@ try {
 | **pageSize** | **Integer**|  | [optional] 
 | **pageNumber** | **Integer**|  | [optional] 
 | **expand** | **String**|  | [optional]<br />**Values**: details 
-| **feature** | **String**|  | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BusinessUnits, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ServiceGoalTemplates, ShiftTrading, ShortTermForecasts, TimeOffRequests, WorkPlans 
+| **feature** | **String**|  | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BusinessUnitActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ServiceGoalTemplates, ShiftTrading, ShortTermForecasts, TimeOffRequests, WorkPlans 
 | **divisionId** | **String**|  | [optional] 
 {: class="table-striped"}
 
@@ -2699,6 +2701,71 @@ try {
 
 [**TimeOffRequestList**](TimeOffRequestList.html)
 
+<a name="patchWorkforcemanagementManagementunit"></a>
+
+# **patchWorkforcemanagementManagementunit**
+
+
+
+> [ManagementUnit](ManagementUnit.html) patchWorkforcemanagementManagementunit(muId, body)
+
+Update the requested management unit
+
+
+
+Wraps PATCH /api/v2/workforcemanagement/managementunits/{muId}  
+
+Requires ANY permissions: 
+
+* wfm:managementUnit:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+UpdateManagementUnitRequest body = new UpdateManagementUnitRequest(); // UpdateManagementUnitRequest | body
+try {
+    ManagementUnit result = apiInstance.patchWorkforcemanagementManagementunit(muId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementManagementunit");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **body** | [**UpdateManagementUnitRequest**](UpdateManagementUnitRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ManagementUnit**](ManagementUnit.html)
+
 <a name="patchWorkforcemanagementManagementunitActivitycode"></a>
 
 # **patchWorkforcemanagementManagementunitActivitycode**
@@ -2908,7 +2975,7 @@ try {
 
 > [ManagementUnitSettings](ManagementUnitSettings.html) patchWorkforcemanagementManagementunitSettings(muId, body)
 
-Patch the settings for the requested management unit
+Update the settings for the requested management unit
 
 
 
@@ -2940,7 +3007,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 ManagementUnitSettings body = new ManagementUnitSettings(); // ManagementUnitSettings | config
 try {
     ManagementUnitSettings result = apiInstance.patchWorkforcemanagementManagementunitSettings(muId, body);
@@ -2956,7 +3023,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **body** | [**ManagementUnitSettings**](ManagementUnitSettings.html)| config | [optional] 
 {: class="table-striped"}
 
@@ -3496,6 +3563,71 @@ try {
 ### Return type
 
 [**IntradayResponse**](IntradayResponse.html)
+
+<a name="postWorkforcemanagementManagementunitMove"></a>
+
+# **postWorkforcemanagementManagementunitMove**
+
+
+
+> [MoveManagementUnitResponse](MoveManagementUnitResponse.html) postWorkforcemanagementManagementunitMove(muId, body)
+
+Move the requested management unit to a new business unit
+
+Returns status 200 if the management unit is already in the requested business unit
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/move  
+
+Requires ANY permissions: 
+
+* wfm:managementUnit:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+MoveManagementUnitRequest body = new MoveManagementUnitRequest(); // MoveManagementUnitRequest | body
+try {
+    MoveManagementUnitResponse result = apiInstance.postWorkforcemanagementManagementunitMove(muId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitMove");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **body** | [**MoveManagementUnitRequest**](MoveManagementUnitRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MoveManagementUnitResponse**](MoveManagementUnitResponse.html)
 
 <a name="postWorkforcemanagementManagementunitSchedulesSearch"></a>
 

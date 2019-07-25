@@ -92,7 +92,8 @@ public class GetRoutingSmsPhonenumbersRequest {
 	public enum phoneNumberTypeValues { 
 		LOCAL("local"), 
 		MOBILE("mobile"), 
-		TOLLFREE("tollfree");
+		TOLLFREE("tollfree"), 
+		SHORTCODE("shortcode");
 
 		private String value;
 

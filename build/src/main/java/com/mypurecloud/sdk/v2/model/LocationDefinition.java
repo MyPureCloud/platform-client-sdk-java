@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.LocationAddress;
 import com.mypurecloud.sdk.v2.model.LocationEmergencyNumber;
+import com.mypurecloud.sdk.v2.model.LocationImage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -62,6 +63,8 @@ public class LocationDefinition  implements Serializable {
   private Integer version = null;
   private List<String> path = new ArrayList<String>();
   private String notes = null;
+  private List<LocationImage> profileImage = new ArrayList<LocationImage>();
+  private List<LocationImage> floorplanImage = new ArrayList<LocationImage>();
   private String selfUri = null;
 
   
@@ -210,6 +213,41 @@ public class LocationDefinition  implements Serializable {
   }
 
   
+  /**
+   * Profile image set for the location
+   **/
+  public LocationDefinition profileImage(List<LocationImage> profileImage) {
+    this.profileImage = profileImage;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Profile image set for the location")
+  @JsonProperty("profileImage")
+  public List<LocationImage> getProfileImage() {
+    return profileImage;
+  }
+  public void setProfileImage(List<LocationImage> profileImage) {
+    this.profileImage = profileImage;
+  }
+
+  
+  /**
+   **/
+  public LocationDefinition floorplanImage(List<LocationImage> floorplanImage) {
+    this.floorplanImage = floorplanImage;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("floorplanImage")
+  public List<LocationImage> getFloorplanImage() {
+    return floorplanImage;
+  }
+  public void setFloorplanImage(List<LocationImage> floorplanImage) {
+    this.floorplanImage = floorplanImage;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -236,12 +274,14 @@ public class LocationDefinition  implements Serializable {
         Objects.equals(this.version, locationDefinition.version) &&
         Objects.equals(this.path, locationDefinition.path) &&
         Objects.equals(this.notes, locationDefinition.notes) &&
+        Objects.equals(this.profileImage, locationDefinition.profileImage) &&
+        Objects.equals(this.floorplanImage, locationDefinition.floorplanImage) &&
         Objects.equals(this.selfUri, locationDefinition.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, addressVerified, emergencyNumber, state, version, path, notes, selfUri);
+    return Objects.hash(id, name, address, addressVerified, emergencyNumber, state, version, path, notes, profileImage, floorplanImage, selfUri);
   }
 
   @Override
@@ -258,6 +298,8 @@ public class LocationDefinition  implements Serializable {
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    path: ").append(toIndentedString(path)).append("\n");
     sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
+    sb.append("    profileImage: ").append(toIndentedString(profileImage)).append("\n");
+    sb.append("    floorplanImage: ").append(toIndentedString(floorplanImage)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

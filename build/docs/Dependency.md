@@ -62,6 +62,7 @@ title: Dependency
 | TTSVOICE | &quot;TTSVOICE&quot; |
 | USER | &quot;USER&quot; |
 | USERPROMPT | &quot;USERPROMPT&quot; |
+| WIDGET | &quot;WIDGET&quot; |
 | WORKFLOW | &quot;WORKFLOW&quot; |
 {: class="table table-striped"}
 

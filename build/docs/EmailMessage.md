@@ -19,6 +19,7 @@ title: EmailMessage
 | **textBody** | **String** | The text body of the email message. |  |
 | **htmlBody** | **String** | The html body of the email message. |  [optional] |
 | **time** | [**Date**](Date.html) | The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **historyIncluded** | **Boolean** | Indicates whether the history of previous emails of the conversation is included within the email bodies of this message. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

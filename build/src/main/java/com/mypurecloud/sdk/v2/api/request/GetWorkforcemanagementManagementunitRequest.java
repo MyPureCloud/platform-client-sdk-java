@@ -49,6 +49,7 @@ import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
 import com.mypurecloud.sdk.v2.model.NotificationsResponse;
 import com.mypurecloud.sdk.v2.model.SchedulingStatusResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeListResponse;
+import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.UpdateSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
@@ -61,6 +62,8 @@ import com.mypurecloud.sdk.v2.model.CreateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
 import com.mypurecloud.sdk.v2.model.IntradayResponse;
 import com.mypurecloud.sdk.v2.model.IntradayQueryDataCommand;
+import com.mypurecloud.sdk.v2.model.MoveManagementUnitRequest;
+import com.mypurecloud.sdk.v2.model.MoveManagementUnitResponse;
 import com.mypurecloud.sdk.v2.model.UserScheduleContainer;
 import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CreateServiceGoalGroupRequest;
@@ -105,22 +108,27 @@ public class GetWorkforcemanagementManagementunitRequest {
 	    return this;
 	} 
 	
-	private String expand;
-	public String getExpand() {
+	private List<String> expand;
+	public List<String> getExpand() {
 		return this.expand;
 	}
 
-	public void setExpand(String expand) {
+	public void setExpand(List<String> expand) {
 		this.expand = expand;
 	}
 
-	public GetWorkforcemanagementManagementunitRequest withExpand(String expand) {
+	public GetWorkforcemanagementManagementunitRequest withExpand(List<String> expand) {
 	    this.setExpand(expand);
 	    return this;
 	} 
 
 	public enum expandValues { 
-		SETTINGS("settings");
+		SETTINGS("settings"), 
+		SETTINGS_ADHERENCE("settings.adherence"), 
+		SETTINGS_TIMEOFF("settings.timeOff"), 
+		SETTINGS_SCHEDULING("settings.scheduling"), 
+		SETTINGS_SHORTTERMFORECASTING("settings.shortTermForecasting"), 
+		SETTINGS_SHIFTTRADING("settings.shiftTrading");
 
 		private String value;
 
@@ -178,7 +186,7 @@ public class GetWorkforcemanagementManagementunitRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/workforcemanagement/managementunits/{muId}")
                 .withPathParameter("muId", muId)
         
-                .withQueryParameters("expand", "", expand)
+                .withQueryParameters("expand", "multi", expand)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -211,13 +219,17 @@ public class GetWorkforcemanagementManagementunitRequest {
 			return this;
 		}
 		
-		public Builder withExpand(String expand) {
+		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
 
-		public Builder withExpand(expandValues expand) {
-		    request.setExpand(expand.toString());
+		public Builder withExpandEnumValues(List<expandValues> expand) {
+		    List<String> stringList = new ArrayList<>();
+	      for (expandValues e : expand) {
+	        stringList.add(e.toString());
+	      }
+	      request.setExpand(stringList);
 		    return this;
 		}
 		

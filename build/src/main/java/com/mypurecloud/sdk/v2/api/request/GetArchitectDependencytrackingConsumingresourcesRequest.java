@@ -54,6 +54,8 @@ import com.mypurecloud.sdk.v2.model.DataTable;
 import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowOutcome;
+import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 public class GetArchitectDependencytrackingConsumingresourcesRequest {
@@ -123,6 +125,7 @@ public class GetArchitectDependencytrackingConsumingresourcesRequest {
 		TTSVOICE("TTSVOICE"), 
 		USER("USER"), 
 		USERPROMPT("USERPROMPT"), 
+		WIDGET("WIDGET"), 
 		WORKFLOW("WORKFLOW");
 
 		private String value;
@@ -202,6 +205,7 @@ public class GetArchitectDependencytrackingConsumingresourcesRequest {
 		TTSVOICE("TTSVOICE"), 
 		USER("USER"), 
 		USERPROMPT("USERPROMPT"), 
+		WIDGET("WIDGET"), 
 		WORKFLOW("WORKFLOW");
 
 		private String value;

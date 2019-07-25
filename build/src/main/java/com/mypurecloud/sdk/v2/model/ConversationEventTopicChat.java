@@ -63,6 +63,7 @@ public class ConversationEventTopicChat  implements Serializable {
   private String scriptId = null;
   private String peerId = null;
   private String roomId = null;
+  private String avatarImageUrl = null;
   private Boolean held = null;
 
   /**
@@ -224,6 +225,23 @@ public class ConversationEventTopicChat  implements Serializable {
   
   /**
    **/
+  public ConversationEventTopicChat avatarImageUrl(String avatarImageUrl) {
+    this.avatarImageUrl = avatarImageUrl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("avatarImageUrl")
+  public String getAvatarImageUrl() {
+    return avatarImageUrl;
+  }
+  public void setAvatarImageUrl(String avatarImageUrl) {
+    this.avatarImageUrl = avatarImageUrl;
+  }
+
+  
+  /**
+   **/
   public ConversationEventTopicChat held(Boolean held) {
     this.held = held;
     return this;
@@ -357,6 +375,7 @@ public class ConversationEventTopicChat  implements Serializable {
         Objects.equals(this.scriptId, conversationEventTopicChat.scriptId) &&
         Objects.equals(this.peerId, conversationEventTopicChat.peerId) &&
         Objects.equals(this.roomId, conversationEventTopicChat.roomId) &&
+        Objects.equals(this.avatarImageUrl, conversationEventTopicChat.avatarImageUrl) &&
         Objects.equals(this.held, conversationEventTopicChat.held) &&
         Objects.equals(this.disconnectType, conversationEventTopicChat.disconnectType) &&
         Objects.equals(this.startHoldTime, conversationEventTopicChat.startHoldTime) &&
@@ -368,7 +387,7 @@ public class ConversationEventTopicChat  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, provider, scriptId, peerId, roomId, held, disconnectType, startHoldTime, connectedTime, disconnectedTime, journeyContext, additionalProperties);
+    return Objects.hash(state, id, provider, scriptId, peerId, roomId, avatarImageUrl, held, disconnectType, startHoldTime, connectedTime, disconnectedTime, journeyContext, additionalProperties);
   }
 
   @Override
@@ -382,6 +401,7 @@ public class ConversationEventTopicChat  implements Serializable {
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
+    sb.append("    avatarImageUrl: ").append(toIndentedString(avatarImageUrl)).append("\n");
     sb.append("    held: ").append(toIndentedString(held)).append("\n");
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
     sb.append("    startHoldTime: ").append(toIndentedString(startHoldTime)).append("\n");

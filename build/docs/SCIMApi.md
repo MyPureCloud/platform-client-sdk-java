@@ -7,27 +7,27 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**deleteScimUser**](SCIMApi.html#deleteScimUser) | Soft delete user with specified ID |
-| [**deleteScimV2User**](SCIMApi.html#deleteScimV2User) | Soft delete user with specified ID |
-| [**getScimGroup**](SCIMApi.html#getScimGroup) | Return Group with specified ID |
-| [**getScimGroups**](SCIMApi.html#getScimGroups) | Query Groups |
-| [**getScimUser**](SCIMApi.html#getScimUser) | Return user with specified ID (default version) |
-| [**getScimUsers**](SCIMApi.html#getScimUsers) | Query Users |
-| [**getScimV2Group**](SCIMApi.html#getScimV2Group) | Return Group with specified ID |
-| [**getScimV2Groups**](SCIMApi.html#getScimV2Groups) | Query Groups |
-| [**getScimV2Serviceproviderconfig**](SCIMApi.html#getScimV2Serviceproviderconfig) | Get SCIM Configuration |
-| [**getScimV2User**](SCIMApi.html#getScimV2User) | Return User with specified ID |
-| [**getScimV2Users**](SCIMApi.html#getScimV2Users) | Query Users |
-| [**patchScimGroup**](SCIMApi.html#patchScimGroup) | Update Group with specified ID |
-| [**patchScimUser**](SCIMApi.html#patchScimUser) | Patch user with specified ID |
-| [**patchScimV2Group**](SCIMApi.html#patchScimV2Group) | Update Group with specified ID |
-| [**patchScimV2User**](SCIMApi.html#patchScimV2User) | Update user with specified ID |
-| [**postScimUsers**](SCIMApi.html#postScimUsers) | Create user |
-| [**postScimV2Users**](SCIMApi.html#postScimV2Users) | Create user |
-| [**putScimGroup**](SCIMApi.html#putScimGroup) | Update Group with specified ID |
-| [**putScimUser**](SCIMApi.html#putScimUser) | Update user with specified ID |
-| [**putScimV2Group**](SCIMApi.html#putScimV2Group) | Update Group with specified ID |
-| [**putScimV2User**](SCIMApi.html#putScimV2User) | Update user with specified ID |
+| [**deleteScimUser**](SCIMApi.html#deleteScimUser) | Delete a user |
+| [**deleteScimV2User**](SCIMApi.html#deleteScimV2User) | Delete a user |
+| [**getScimGroup**](SCIMApi.html#getScimGroup) | Get a group |
+| [**getScimGroups**](SCIMApi.html#getScimGroups) | Get a list of groups |
+| [**getScimUser**](SCIMApi.html#getScimUser) | Get a user |
+| [**getScimUsers**](SCIMApi.html#getScimUsers) | Get a list of users |
+| [**getScimV2Group**](SCIMApi.html#getScimV2Group) | Get a group |
+| [**getScimV2Groups**](SCIMApi.html#getScimV2Groups) | Get a list of groups |
+| [**getScimV2Serviceproviderconfig**](SCIMApi.html#getScimV2Serviceproviderconfig) | Get the SCIM configuration |
+| [**getScimV2User**](SCIMApi.html#getScimV2User) | Get a user |
+| [**getScimV2Users**](SCIMApi.html#getScimV2Users) | Get a list of users |
+| [**patchScimGroup**](SCIMApi.html#patchScimGroup) | Modify a group |
+| [**patchScimUser**](SCIMApi.html#patchScimUser) | Modify a user |
+| [**patchScimV2Group**](SCIMApi.html#patchScimV2Group) | Modify a group |
+| [**patchScimV2User**](SCIMApi.html#patchScimV2User) | Modify a user |
+| [**postScimUsers**](SCIMApi.html#postScimUsers) | Create a user |
+| [**postScimV2Users**](SCIMApi.html#postScimV2Users) | Create a user |
+| [**putScimGroup**](SCIMApi.html#putScimGroup) | Replace a group |
+| [**putScimUser**](SCIMApi.html#putScimUser) | Replace a user |
+| [**putScimV2Group**](SCIMApi.html#putScimV2Group) | Replace a group |
+| [**putScimV2User**](SCIMApi.html#putScimV2User) | Replace a user |
 {: class="table-striped"}
 
 <a name="deleteScimUser"></a>
@@ -38,7 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 > [Empty](Empty.html) deleteScimUser(userId, ifMatch)
 
-Soft delete user with specified ID
+Delete a user
 
 
 
@@ -70,8 +70,8 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
-String userId = "userId_example"; // String | 
-String ifMatch = "ifMatch_example"; // String | If-Match for ETag version checking
+String userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/users.
+String ifMatch = "ifMatch_example"; // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 try {
     Empty result = apiInstance.deleteScimUser(userId, ifMatch);
     System.out.println(result);
@@ -86,8 +86,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**|  | 
-| **ifMatch** | **String**| If-Match for ETag version checking | [optional] 
+| **userId** | **String**| The ID of a user. Returned with GET /api/v2/scim/users. | 
+| **ifMatch** | **String**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional] 
 {: class="table-striped"}
 
 
@@ -103,7 +103,7 @@ try {
 
 > [Empty](Empty.html) deleteScimV2User(userId, ifMatch)
 
-Soft delete user with specified ID
+Delete a user
 
 
 
@@ -135,8 +135,8 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
-String userId = "userId_example"; // String | 
-String ifMatch = "ifMatch_example"; // String | If-Match for ETag version checking
+String userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.
+String ifMatch = "ifMatch_example"; // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 try {
     Empty result = apiInstance.deleteScimV2User(userId, ifMatch);
     System.out.println(result);
@@ -151,8 +151,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**|  | 
-| **ifMatch** | **String**| If-Match for ETag version checking | [optional] 
+| **userId** | **String**| The ID of a user. Returned with GET /api/v2/scim/v2/users. | 
+| **ifMatch** | **String**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional] 
 {: class="table-striped"}
 
 
@@ -168,7 +168,7 @@ try {
 
 > [ScimV2Group](ScimV2Group.html) getScimGroup(groupId, ifNoneMatch)
 
-Return Group with specified ID
+Get a group
 
 
 
@@ -200,8 +200,8 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
-String groupId = "groupId_example"; // String | 
-String ifNoneMatch = "ifNoneMatch_example"; // String | If-None-Match for ETag version checking
+String groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/groups.
+String ifNoneMatch = "ifNoneMatch_example"; // String | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
 try {
     ScimV2Group result = apiInstance.getScimGroup(groupId, ifNoneMatch);
     System.out.println(result);
@@ -216,8 +216,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **groupId** | **String**|  | 
-| **ifNoneMatch** | **String**| If-None-Match for ETag version checking | [optional] 
+| **groupId** | **String**| The ID of a group. Returned with GET /api/v2/scim/groups. | 
+| **ifNoneMatch** | **String**| The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional] 
 {: class="table-striped"}
 
 
@@ -233,7 +233,7 @@ try {
 
 > [ScimListResponse](ScimListResponse.html) getScimGroups(startIndex, count, filter)
 
-Query Groups
+Get a list of groups
 
 
 
@@ -265,9 +265,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
-Integer startIndex = 1; // Integer | Starting item of request. 1-based
-Integer count = 25; // Integer | The requested number of items per page. A value of 0 will return no results other than the totalResults count.
-String filter = "displayName eq groupName"; // String | filter parameter e.g. displayName eq groupName
+Integer startIndex = 1; // Integer | The 1-based index of the first query result.
+Integer count = 25; // Integer | The requested number of items per page. A value of 0 returns totalResults.
+String filter = "displayName eq groupName"; // String | Filters results.
 try {
     ScimListResponse result = apiInstance.getScimGroups(startIndex, count, filter);
     System.out.println(result);
@@ -282,9 +282,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **startIndex** | **Integer**| Starting item of request. 1-based | [optional] [default to 1] 
-| **count** | **Integer**| The requested number of items per page. A value of 0 will return no results other than the totalResults count. | [optional] [default to 25] 
-| **filter** | **String**| filter parameter e.g. displayName eq groupName | [optional] 
+| **startIndex** | **Integer**| The 1-based index of the first query result. | [optional] [default to 1] 
+| **count** | **Integer**| The requested number of items per page. A value of 0 returns totalResults. | [optional] [default to 25] 
+| **filter** | **String**| Filters results. | [optional] 
 {: class="table-striped"}
 
 
@@ -300,7 +300,7 @@ try {
 
 > [ScimV2User](ScimV2User.html) getScimUser(userId, ifNoneMatch)
 
-Return user with specified ID (default version)
+Get a user
 
 
 
@@ -333,8 +333,8 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
-String userId = "userId_example"; // String | 
-String ifNoneMatch = "ifNoneMatch_example"; // String | If-None-Match for ETag version checking
+String userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/users.
+String ifNoneMatch = "ifNoneMatch_example"; // String | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
 try {
     ScimV2User result = apiInstance.getScimUser(userId, ifNoneMatch);
     System.out.println(result);
@@ -349,8 +349,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**|  | 
-| **ifNoneMatch** | **String**| If-None-Match for ETag version checking | [optional] 
+| **userId** | **String**| The ID of a user. Returned with GET /api/v2/scim/users. | 
+| **ifNoneMatch** | **String**| The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional] 
 {: class="table-striped"}
 
 
@@ -366,7 +366,7 @@ try {
 
 > [ScimListResponse](ScimListResponse.html) getScimUsers(filter, startIndex, count)
 
-Query Users
+Get a list of users
 
 
 
@@ -399,9 +399,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
-String filter = "filter_example"; // String | filter parameter e.g. userName eq search@sample.org
-Integer startIndex = 1; // Integer | Starting item of request. 1-based
-Integer count = 25; // Integer | The requested number of items per page. A value of 0 will return no results other than the totalResults count.
+String filter = "filter_example"; // String | Filters results.
+Integer startIndex = 1; // Integer | The 1-based index of the first query result.
+Integer count = 25; // Integer | The requested number of items per page. A value of 0 returns totalResults.
 try {
     ScimListResponse result = apiInstance.getScimUsers(filter, startIndex, count);
     System.out.println(result);
@@ -416,9 +416,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **filter** | **String**| filter parameter e.g. userName eq search@sample.org | 
-| **startIndex** | **Integer**| Starting item of request. 1-based | [optional] [default to 1] 
-| **count** | **Integer**| The requested number of items per page. A value of 0 will return no results other than the totalResults count. | [optional] [default to 25] 
+| **filter** | **String**| Filters results. | 
+| **startIndex** | **Integer**| The 1-based index of the first query result. | [optional] [default to 1] 
+| **count** | **Integer**| The requested number of items per page. A value of 0 returns totalResults. | [optional] [default to 25] 
 {: class="table-striped"}
 
 
@@ -434,7 +434,7 @@ try {
 
 > [ScimV2Group](ScimV2Group.html) getScimV2Group(groupId, ifNoneMatch)
 
-Return Group with specified ID
+Get a group
 
 
 
@@ -466,8 +466,8 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
-String groupId = "groupId_example"; // String | 
-String ifNoneMatch = "ifNoneMatch_example"; // String | If-None-Match for ETag version checking
+String groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/v2/groups.
+String ifNoneMatch = "ifNoneMatch_example"; // String | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
 try {
     ScimV2Group result = apiInstance.getScimV2Group(groupId, ifNoneMatch);
     System.out.println(result);
@@ -482,8 +482,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **groupId** | **String**|  | 
-| **ifNoneMatch** | **String**| If-None-Match for ETag version checking | [optional] 
+| **groupId** | **String**| The ID of a group. Returned with GET /api/v2/scim/v2/groups. | 
+| **ifNoneMatch** | **String**| The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional] 
 {: class="table-striped"}
 
 
@@ -499,7 +499,7 @@ try {
 
 > [ScimListResponse](ScimListResponse.html) getScimV2Groups(filter, startIndex, count)
 
-Query Groups
+Get a list of groups
 
 
 
@@ -531,9 +531,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
-String filter = "displayName eq groupName"; // String | filter parameter e.g. displayName eq groupName
-Integer startIndex = 1; // Integer | Starting item of request. 1-based
-Integer count = 25; // Integer | The requested number of items per page. A value of 0 will return no results other than the totalResults count.
+String filter = "displayName eq groupName"; // String | Filters results.
+Integer startIndex = 1; // Integer | The 1-based index of the first query result.
+Integer count = 25; // Integer | The requested number of items per page. A value of 0 returns totalResults.
 try {
     ScimListResponse result = apiInstance.getScimV2Groups(filter, startIndex, count);
     System.out.println(result);
@@ -548,9 +548,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **filter** | **String**| filter parameter e.g. displayName eq groupName | 
-| **startIndex** | **Integer**| Starting item of request. 1-based | [optional] [default to 1] 
-| **count** | **Integer**| The requested number of items per page. A value of 0 will return no results other than the totalResults count. | [optional] [default to 25] 
+| **filter** | **String**| Filters results. | 
+| **startIndex** | **Integer**| The 1-based index of the first query result. | [optional] [default to 1] 
+| **count** | **Integer**| The requested number of items per page. A value of 0 returns totalResults. | [optional] [default to 25] 
 {: class="table-striped"}
 
 
@@ -566,7 +566,7 @@ try {
 
 > [ScimServiceProviderConfig](ScimServiceProviderConfig.html) getScimV2Serviceproviderconfig(ifNoneMatch)
 
-Get SCIM Configuration
+Get the SCIM configuration
 
 
 
@@ -584,7 +584,7 @@ import com.mypurecloud.sdk.v2.api.SCIMApi;
 
 
 SCIMApi apiInstance = new SCIMApi();
-String ifNoneMatch = "ifNoneMatch_example"; // String | If-None-Match for ETag version checking
+String ifNoneMatch = "ifNoneMatch_example"; // String | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
 try {
     ScimServiceProviderConfig result = apiInstance.getScimV2Serviceproviderconfig(ifNoneMatch);
     System.out.println(result);
@@ -599,7 +599,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **ifNoneMatch** | **String**| If-None-Match for ETag version checking | [optional] 
+| **ifNoneMatch** | **String**| The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional] 
 {: class="table-striped"}
 
 
@@ -615,7 +615,7 @@ try {
 
 > [ScimV2User](ScimV2User.html) getScimV2User(userId, ifNoneMatch)
 
-Return User with specified ID
+Get a user
 
 
 
@@ -648,8 +648,8 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
-String userId = "userId_example"; // String | 
-String ifNoneMatch = "ifNoneMatch_example"; // String | If-None-Match for ETag version checking
+String userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.
+String ifNoneMatch = "ifNoneMatch_example"; // String | The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified.
 try {
     ScimV2User result = apiInstance.getScimV2User(userId, ifNoneMatch);
     System.out.println(result);
@@ -664,8 +664,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**|  | 
-| **ifNoneMatch** | **String**| If-None-Match for ETag version checking | [optional] 
+| **userId** | **String**| The ID of a user. Returned with GET /api/v2/scim/v2/users. | 
+| **ifNoneMatch** | **String**| The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. | [optional] 
 {: class="table-striped"}
 
 
@@ -681,7 +681,7 @@ try {
 
 > [ScimListResponse](ScimListResponse.html) getScimV2Users(filter, startIndex, count)
 
-Query Users
+Get a list of users
 
 
 
@@ -714,9 +714,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
-String filter = "filter_example"; // String | filter parameter e.g. userName eq search@sample.org
-Integer startIndex = 1; // Integer | Starting item of request. 1-based
-Integer count = 25; // Integer | The requested number of items per page. A value of 0 will return no results other than the totalResults count.
+String filter = "filter_example"; // String | Filters results.
+Integer startIndex = 1; // Integer | The 1-based index of the first query result.
+Integer count = 25; // Integer | The requested number of items per page. A value of 0 returns totalResults.
 try {
     ScimListResponse result = apiInstance.getScimV2Users(filter, startIndex, count);
     System.out.println(result);
@@ -731,9 +731,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **filter** | **String**| filter parameter e.g. userName eq search@sample.org | 
-| **startIndex** | **Integer**| Starting item of request. 1-based | [optional] [default to 1] 
-| **count** | **Integer**| The requested number of items per page. A value of 0 will return no results other than the totalResults count. | [optional] [default to 25] 
+| **filter** | **String**| Filters results. | 
+| **startIndex** | **Integer**| The 1-based index of the first query result. | [optional] [default to 1] 
+| **count** | **Integer**| The requested number of items per page. A value of 0 returns totalResults. | [optional] [default to 25] 
 {: class="table-striped"}
 
 
@@ -749,7 +749,7 @@ try {
 
 > [ScimV2Group](ScimV2Group.html) patchScimGroup(groupId, body, ifMatch)
 
-Update Group with specified ID
+Modify a group
 
 
 
@@ -781,9 +781,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
-String groupId = "groupId_example"; // String | 
+String groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/groups.
 PatchRequest body = new PatchRequest(); // PatchRequest | Group
-String ifMatch = "ifMatch_example"; // String | If-Match for ETag version checking
+String ifMatch = "ifMatch_example"; // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 try {
     ScimV2Group result = apiInstance.patchScimGroup(groupId, body, ifMatch);
     System.out.println(result);
@@ -798,9 +798,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **groupId** | **String**|  | 
+| **groupId** | **String**| The ID of a group. Returned with GET /api/v2/scim/groups. | 
 | **body** | [**PatchRequest**](PatchRequest.html)| Group | 
-| **ifMatch** | **String**| If-Match for ETag version checking | [optional] 
+| **ifMatch** | **String**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional] 
 {: class="table-striped"}
 
 
@@ -816,7 +816,7 @@ try {
 
 > [ScimV2User](ScimV2User.html) patchScimUser(userId, body, ifMatch)
 
-Patch user with specified ID
+Modify a user
 
 
 
@@ -849,9 +849,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
-String userId = "userId_example"; // String | 
+String userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/users.
 ScimV2PatchRequest body = new ScimV2PatchRequest(); // ScimV2PatchRequest | SCIM Patch Request
-String ifMatch = "ifMatch_example"; // String | If-Match for ETag version checking
+String ifMatch = "ifMatch_example"; // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 try {
     ScimV2User result = apiInstance.patchScimUser(userId, body, ifMatch);
     System.out.println(result);
@@ -866,9 +866,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**|  | 
+| **userId** | **String**| The ID of a user. Returned with GET /api/v2/scim/users. | 
 | **body** | [**ScimV2PatchRequest**](ScimV2PatchRequest.html)| SCIM Patch Request | 
-| **ifMatch** | **String**| If-Match for ETag version checking | [optional] 
+| **ifMatch** | **String**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional] 
 {: class="table-striped"}
 
 
@@ -884,7 +884,7 @@ try {
 
 > [ScimV2Group](ScimV2Group.html) patchScimV2Group(groupId, body, ifMatch)
 
-Update Group with specified ID
+Modify a group
 
 
 
@@ -916,9 +916,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
-String groupId = "groupId_example"; // String | 
+String groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/v2/groups.
 PatchRequest body = new PatchRequest(); // PatchRequest | Group
-String ifMatch = "ifMatch_example"; // String | If-Match for ETag version checking
+String ifMatch = "ifMatch_example"; // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 try {
     ScimV2Group result = apiInstance.patchScimV2Group(groupId, body, ifMatch);
     System.out.println(result);
@@ -933,9 +933,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **groupId** | **String**|  | 
+| **groupId** | **String**| The ID of a group. Returned with GET /api/v2/scim/v2/groups. | 
 | **body** | [**PatchRequest**](PatchRequest.html)| Group | 
-| **ifMatch** | **String**| If-Match for ETag version checking | [optional] 
+| **ifMatch** | **String**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional] 
 {: class="table-striped"}
 
 
@@ -951,7 +951,7 @@ try {
 
 > [ScimV2User](ScimV2User.html) patchScimV2User(userId, body, ifMatch)
 
-Update user with specified ID
+Modify a user
 
 
 
@@ -984,9 +984,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
-String userId = "userId_example"; // String | User Id
+String userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.
 ScimV2PatchRequest body = new ScimV2PatchRequest(); // ScimV2PatchRequest | SCIM Patch Request
-String ifMatch = "ifMatch_example"; // String | If-Match for ETag version checking
+String ifMatch = "ifMatch_example"; // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 try {
     ScimV2User result = apiInstance.patchScimV2User(userId, body, ifMatch);
     System.out.println(result);
@@ -1001,9 +1001,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User Id | 
+| **userId** | **String**| The ID of a user. Returned with GET /api/v2/scim/v2/users. | 
 | **body** | [**ScimV2PatchRequest**](ScimV2PatchRequest.html)| SCIM Patch Request | 
-| **ifMatch** | **String**| If-Match for ETag version checking | [optional] 
+| **ifMatch** | **String**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional] 
 {: class="table-striped"}
 
 
@@ -1019,7 +1019,7 @@ try {
 
 > [ScimV2User](ScimV2User.html) postScimUsers(body)
 
-Create user
+Create a user
 
 
 
@@ -1082,7 +1082,7 @@ try {
 
 > [ScimV2User](ScimV2User.html) postScimV2Users(body)
 
-Create user
+Create a user
 
 
 
@@ -1145,7 +1145,7 @@ try {
 
 > [ScimV2Group](ScimV2Group.html) putScimGroup(groupId, body, ifMatch)
 
-Update Group with specified ID
+Replace a group
 
 
 
@@ -1177,9 +1177,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
-String groupId = "groupId_example"; // String | 
+String groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/groups.
 ScimV2Group body = new ScimV2Group(); // ScimV2Group | Group
-String ifMatch = "ifMatch_example"; // String | If-Match for ETag version checking
+String ifMatch = "ifMatch_example"; // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 try {
     ScimV2Group result = apiInstance.putScimGroup(groupId, body, ifMatch);
     System.out.println(result);
@@ -1194,9 +1194,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **groupId** | **String**|  | 
+| **groupId** | **String**| The ID of a group. Returned with GET /api/v2/scim/groups. | 
 | **body** | [**ScimV2Group**](ScimV2Group.html)| Group | 
-| **ifMatch** | **String**| If-Match for ETag version checking | [optional] 
+| **ifMatch** | **String**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional] 
 {: class="table-striped"}
 
 
@@ -1212,7 +1212,7 @@ try {
 
 > [ScimV2User](ScimV2User.html) putScimUser(userId, body, ifMatch)
 
-Update user with specified ID
+Replace a user
 
 
 
@@ -1245,9 +1245,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
-String userId = "userId_example"; // String | 
+String userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/users.
 ScimV2User body = new ScimV2User(); // ScimV2User | User
-String ifMatch = "ifMatch_example"; // String | If-Match for ETag version checking
+String ifMatch = "ifMatch_example"; // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 try {
     ScimV2User result = apiInstance.putScimUser(userId, body, ifMatch);
     System.out.println(result);
@@ -1262,9 +1262,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**|  | 
+| **userId** | **String**| The ID of a user. Returned with GET /api/v2/scim/users. | 
 | **body** | [**ScimV2User**](ScimV2User.html)| User | 
-| **ifMatch** | **String**| If-Match for ETag version checking | [optional] 
+| **ifMatch** | **String**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional] 
 {: class="table-striped"}
 
 
@@ -1280,7 +1280,7 @@ try {
 
 > [ScimV2Group](ScimV2Group.html) putScimV2Group(groupId, body, ifMatch)
 
-Update Group with specified ID
+Replace a group
 
 
 
@@ -1312,9 +1312,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
-String groupId = "groupId_example"; // String | 
+String groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/v2/groups.
 ScimV2Group body = new ScimV2Group(); // ScimV2Group | Group
-String ifMatch = "ifMatch_example"; // String | If-Match for ETag version checking
+String ifMatch = "ifMatch_example"; // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 try {
     ScimV2Group result = apiInstance.putScimV2Group(groupId, body, ifMatch);
     System.out.println(result);
@@ -1329,9 +1329,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **groupId** | **String**|  | 
+| **groupId** | **String**| The ID of a group. Returned with GET /api/v2/scim/v2/groups. | 
 | **body** | [**ScimV2Group**](ScimV2Group.html)| Group | 
-| **ifMatch** | **String**| If-Match for ETag version checking | [optional] 
+| **ifMatch** | **String**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional] 
 {: class="table-striped"}
 
 
@@ -1347,7 +1347,7 @@ try {
 
 > [ScimV2User](ScimV2User.html) putScimV2User(userId, body, ifMatch)
 
-Update user with specified ID
+Replace a user
 
 
 
@@ -1380,9 +1380,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 SCIMApi apiInstance = new SCIMApi();
-String userId = "userId_example"; // String | User Id
+String userId = "userId_example"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.
 ScimV2User body = new ScimV2User(); // ScimV2User | User
-String ifMatch = "ifMatch_example"; // String | If-Match for ETag version checking
+String ifMatch = "ifMatch_example"; // String | The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request.
 try {
     ScimV2User result = apiInstance.putScimV2User(userId, body, ifMatch);
     System.out.println(result);
@@ -1397,9 +1397,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User Id | 
+| **userId** | **String**| The ID of a user. Returned with GET /api/v2/scim/v2/users. | 
 | **body** | [**ScimV2User**](ScimV2User.html)| User | 
-| **ifMatch** | **String**| If-Match for ETag version checking | [optional] 
+| **ifMatch** | **String**| The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. | [optional] 
 {: class="table-striped"}
 
 

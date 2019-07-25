@@ -19,6 +19,8 @@ import com.mypurecloud.sdk.v2.model.Recording;
 import com.mypurecloud.sdk.v2.model.Annotation;
 import com.mypurecloud.sdk.v2.model.OrphanRecordingListing;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobStatusResult;
+import com.mypurecloud.sdk.v2.model.RecordingJob;
+import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
 import com.mypurecloud.sdk.v2.model.PolicyEntityListing;
@@ -30,14 +32,17 @@ import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmission;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmissionResult;
+import com.mypurecloud.sdk.v2.model.RecordingJobsQuery;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionKeyRequest;
 import com.mypurecloud.sdk.v2.model.EncryptionKey;
 import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
+import com.mypurecloud.sdk.v2.model.ExecuteRecordingJobsQuery;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationRecordingAnnotationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrphanrecordingRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRecordingJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRecordingMediaretentionpoliciesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRecordingMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationRecordingRequest;
@@ -50,6 +55,8 @@ import com.mypurecloud.sdk.v2.api.request.GetOrphanrecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrphanrecordingMediaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrphanrecordingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingBatchrequestRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingLocalkeysSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingLocalkeysSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingMediaretentionpoliciesRequest;
@@ -62,6 +69,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchRecordingMediaretentionpolicyRequ
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingsScreensessionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationRecordingAnnotationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingBatchrequestsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRecordingJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingMediaretentionpoliciesRequest;
@@ -69,6 +77,7 @@ import com.mypurecloud.sdk.v2.api.request.PostRecordingRecordingkeysRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationRecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationRecordingAnnotationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrphanrecordingRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRecordingJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingLocalkeysSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingRecordingkeysRotationscheduleRequest;
@@ -234,6 +243,82 @@ public class RecordingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<OrphanRecording> response = (ApiResponse<OrphanRecording>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Delete the recording bulk job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteRecordingJobAsync(DeleteRecordingJobRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete the recording bulk job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteRecordingJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1159,6 +1244,158 @@ public class RecordingApiAsync {
 
   
   /**
+   * Get the status of the job associated with the job id.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RecordingJob> getRecordingJobAsync(GetRecordingJobRequest request, final AsyncApiCallback<RecordingJob> callback) {
+    try {
+      final SettableFuture<RecordingJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RecordingJob>() {}, new AsyncApiCallback<ApiResponse<RecordingJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the status of the job associated with the job id.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RecordingJob>> getRecordingJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RecordingJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RecordingJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RecordingJob>() {}, new AsyncApiCallback<ApiResponse<RecordingJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingJob> response = (ApiResponse<RecordingJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingJob> response = (ApiResponse<RecordingJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the status of all jobs within the user&#39;s organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RecordingJobEntityListing> getRecordingJobsAsync(GetRecordingJobsRequest request, final AsyncApiCallback<RecordingJobEntityListing> callback) {
+    try {
+      final SettableFuture<RecordingJobEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RecordingJobEntityListing>() {}, new AsyncApiCallback<ApiResponse<RecordingJobEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingJobEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the status of all jobs within the user&#39;s organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RecordingJobEntityListing>> getRecordingJobsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RecordingJobEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RecordingJobEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RecordingJobEntityListing>() {}, new AsyncApiCallback<ApiResponse<RecordingJobEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingJobEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingJobEntityListing> response = (ApiResponse<RecordingJobEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingJobEntityListing> response = (ApiResponse<RecordingJobEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get the local encryption settings
    * 
    * @param request the request object
@@ -2071,6 +2308,82 @@ public class RecordingApiAsync {
 
   
   /**
+   * Create a recording bulk job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RecordingJob> postRecordingJobsAsync(PostRecordingJobsRequest request, final AsyncApiCallback<RecordingJob> callback) {
+    try {
+      final SettableFuture<RecordingJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RecordingJob>() {}, new AsyncApiCallback<ApiResponse<RecordingJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a recording bulk job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RecordingJob>> postRecordingJobsAsync(ApiRequest<RecordingJobsQuery> request, final AsyncApiCallback<ApiResponse<RecordingJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RecordingJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RecordingJob>() {}, new AsyncApiCallback<ApiResponse<RecordingJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingJob> response = (ApiResponse<RecordingJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingJob> response = (ApiResponse<RecordingJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * create a local recording key
    * 
    * @param request the request object
@@ -2590,6 +2903,82 @@ public class RecordingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Execute the recording bulk job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<RecordingJob> putRecordingJobAsync(PutRecordingJobRequest request, final AsyncApiCallback<RecordingJob> callback) {
+    try {
+      final SettableFuture<RecordingJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RecordingJob>() {}, new AsyncApiCallback<ApiResponse<RecordingJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Execute the recording bulk job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<RecordingJob>> putRecordingJobAsync(ApiRequest<ExecuteRecordingJobsQuery> request, final AsyncApiCallback<ApiResponse<RecordingJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<RecordingJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<RecordingJob>() {}, new AsyncApiCallback<ApiResponse<RecordingJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<RecordingJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingJob> response = (ApiResponse<RecordingJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<RecordingJob> response = (ApiResponse<RecordingJob>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

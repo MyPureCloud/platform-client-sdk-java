@@ -64,6 +64,7 @@ public class CallHistoryConversation  implements Serializable {
   private Boolean wasCallback = null;
   private Boolean hadScreenShare = null;
   private Boolean hadCobrowse = null;
+  private Boolean wasOutboundCampaign = null;
   private String selfUri = null;
 
   
@@ -253,6 +254,24 @@ public class CallHistoryConversation  implements Serializable {
   }
 
   
+  /**
+   * Was this conversation associated with an outbound campaign
+   **/
+  public CallHistoryConversation wasOutboundCampaign(Boolean wasOutboundCampaign) {
+    this.wasOutboundCampaign = wasOutboundCampaign;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Was this conversation associated with an outbound campaign")
+  @JsonProperty("wasOutboundCampaign")
+  public Boolean getWasOutboundCampaign() {
+    return wasOutboundCampaign;
+  }
+  public void setWasOutboundCampaign(Boolean wasOutboundCampaign) {
+    this.wasOutboundCampaign = wasOutboundCampaign;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -281,12 +300,13 @@ public class CallHistoryConversation  implements Serializable {
         Objects.equals(this.wasCallback, callHistoryConversation.wasCallback) &&
         Objects.equals(this.hadScreenShare, callHistoryConversation.hadScreenShare) &&
         Objects.equals(this.hadCobrowse, callHistoryConversation.hadCobrowse) &&
+        Objects.equals(this.wasOutboundCampaign, callHistoryConversation.wasOutboundCampaign) &&
         Objects.equals(this.selfUri, callHistoryConversation.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, direction, wentToVoicemail, missedCall, startTime, wasConference, wasCallback, hadScreenShare, hadCobrowse, selfUri);
+    return Objects.hash(id, name, participants, direction, wentToVoicemail, missedCall, startTime, wasConference, wasCallback, hadScreenShare, hadCobrowse, wasOutboundCampaign, selfUri);
   }
 
   @Override
@@ -305,6 +325,7 @@ public class CallHistoryConversation  implements Serializable {
     sb.append("    wasCallback: ").append(toIndentedString(wasCallback)).append("\n");
     sb.append("    hadScreenShare: ").append(toIndentedString(hadScreenShare)).append("\n");
     sb.append("    hadCobrowse: ").append(toIndentedString(hadCobrowse)).append("\n");
+    sb.append("    wasOutboundCampaign: ").append(toIndentedString(wasOutboundCampaign)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

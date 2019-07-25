@@ -140,7 +140,7 @@ public class CreateUser  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The division to which this user will belong")
+  @ApiModelProperty(example = "null", required = true, value = "The division to which this user will belong")
   @JsonProperty("divisionId")
   public String getDivisionId() {
     return divisionId;

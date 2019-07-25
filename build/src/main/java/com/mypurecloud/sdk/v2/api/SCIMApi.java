@@ -63,10 +63,10 @@ public class SCIMApi {
 
   
   /**
-   * Soft delete user with specified ID
+   * Delete a user
    * 
-   * @param userId  (required)
-   * @param ifMatch If-Match for ETag version checking (optional)
+   * @param userId The ID of a user. Returned with GET /api/v2/scim/users. (required)
+   * @param ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
    * @return Empty
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -76,10 +76,10 @@ public class SCIMApi {
   }
 
   /**
-   * Soft delete user with specified ID
+   * Delete a user
    * 
-   * @param userId  (required)
-   * @param ifMatch If-Match for ETag version checking (optional)
+   * @param userId The ID of a user. Returned with GET /api/v2/scim/users. (required)
+   * @param ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
    * @return Empty
    * @throws IOException if the request fails to be processed
    */
@@ -97,7 +97,7 @@ public class SCIMApi {
   }
 
   /**
-   * Soft delete user with specified ID
+   * Delete a user
    * 
    * @param request The request object
    * @return Empty
@@ -116,7 +116,7 @@ public class SCIMApi {
   }
 
   /**
-   * Soft delete user with specified ID
+   * Delete a user
    * 
    * @param request The request object
    * @return the response
@@ -146,10 +146,10 @@ public class SCIMApi {
 
   
   /**
-   * Soft delete user with specified ID
+   * Delete a user
    * 
-   * @param userId  (required)
-   * @param ifMatch If-Match for ETag version checking (optional)
+   * @param userId The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
+   * @param ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
    * @return Empty
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -159,10 +159,10 @@ public class SCIMApi {
   }
 
   /**
-   * Soft delete user with specified ID
+   * Delete a user
    * 
-   * @param userId  (required)
-   * @param ifMatch If-Match for ETag version checking (optional)
+   * @param userId The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
+   * @param ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
    * @return Empty
    * @throws IOException if the request fails to be processed
    */
@@ -180,7 +180,7 @@ public class SCIMApi {
   }
 
   /**
-   * Soft delete user with specified ID
+   * Delete a user
    * 
    * @param request The request object
    * @return Empty
@@ -199,7 +199,7 @@ public class SCIMApi {
   }
 
   /**
-   * Soft delete user with specified ID
+   * Delete a user
    * 
    * @param request The request object
    * @return the response
@@ -229,10 +229,10 @@ public class SCIMApi {
 
   
   /**
-   * Return Group with specified ID
+   * Get a group
    * 
-   * @param groupId  (required)
-   * @param ifNoneMatch If-None-Match for ETag version checking (optional)
+   * @param groupId The ID of a group. Returned with GET /api/v2/scim/groups. (required)
+   * @param ifNoneMatch The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. (optional)
    * @return ScimV2Group
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -242,10 +242,10 @@ public class SCIMApi {
   }
 
   /**
-   * Return Group with specified ID
+   * Get a group
    * 
-   * @param groupId  (required)
-   * @param ifNoneMatch If-None-Match for ETag version checking (optional)
+   * @param groupId The ID of a group. Returned with GET /api/v2/scim/groups. (required)
+   * @param ifNoneMatch The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. (optional)
    * @return ScimV2Group
    * @throws IOException if the request fails to be processed
    */
@@ -263,7 +263,7 @@ public class SCIMApi {
   }
 
   /**
-   * Return Group with specified ID
+   * Get a group
    * 
    * @param request The request object
    * @return ScimV2Group
@@ -282,7 +282,7 @@ public class SCIMApi {
   }
 
   /**
-   * Return Group with specified ID
+   * Get a group
    * 
    * @param request The request object
    * @return the response
@@ -312,11 +312,11 @@ public class SCIMApi {
 
   
   /**
-   * Query Groups
+   * Get a list of groups
    * 
-   * @param startIndex Starting item of request. 1-based (optional, default to 1)
-   * @param count The requested number of items per page. A value of 0 will return no results other than the totalResults count. (optional, default to 25)
-   * @param filter filter parameter e.g. displayName eq groupName (optional)
+   * @param startIndex The 1-based index of the first query result. (optional, default to 1)
+   * @param count The requested number of items per page. A value of 0 returns totalResults. (optional, default to 25)
+   * @param filter Filters results. (optional)
    * @return ScimListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -326,11 +326,11 @@ public class SCIMApi {
   }
 
   /**
-   * Query Groups
+   * Get a list of groups
    * 
-   * @param startIndex Starting item of request. 1-based (optional, default to 1)
-   * @param count The requested number of items per page. A value of 0 will return no results other than the totalResults count. (optional, default to 25)
-   * @param filter filter parameter e.g. displayName eq groupName (optional)
+   * @param startIndex The 1-based index of the first query result. (optional, default to 1)
+   * @param count The requested number of items per page. A value of 0 returns totalResults. (optional, default to 25)
+   * @param filter Filters results. (optional)
    * @return ScimListResponse
    * @throws IOException if the request fails to be processed
    */
@@ -350,7 +350,7 @@ public class SCIMApi {
   }
 
   /**
-   * Query Groups
+   * Get a list of groups
    * 
    * @param request The request object
    * @return ScimListResponse
@@ -369,7 +369,7 @@ public class SCIMApi {
   }
 
   /**
-   * Query Groups
+   * Get a list of groups
    * 
    * @param request The request object
    * @return the response
@@ -399,10 +399,10 @@ public class SCIMApi {
 
   
   /**
-   * Return user with specified ID (default version)
+   * Get a user
    * 
-   * @param userId  (required)
-   * @param ifNoneMatch If-None-Match for ETag version checking (optional)
+   * @param userId The ID of a user. Returned with GET /api/v2/scim/users. (required)
+   * @param ifNoneMatch The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. (optional)
    * @return ScimV2User
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -412,10 +412,10 @@ public class SCIMApi {
   }
 
   /**
-   * Return user with specified ID (default version)
+   * Get a user
    * 
-   * @param userId  (required)
-   * @param ifNoneMatch If-None-Match for ETag version checking (optional)
+   * @param userId The ID of a user. Returned with GET /api/v2/scim/users. (required)
+   * @param ifNoneMatch The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. (optional)
    * @return ScimV2User
    * @throws IOException if the request fails to be processed
    */
@@ -433,7 +433,7 @@ public class SCIMApi {
   }
 
   /**
-   * Return user with specified ID (default version)
+   * Get a user
    * 
    * @param request The request object
    * @return ScimV2User
@@ -452,7 +452,7 @@ public class SCIMApi {
   }
 
   /**
-   * Return user with specified ID (default version)
+   * Get a user
    * 
    * @param request The request object
    * @return the response
@@ -482,11 +482,11 @@ public class SCIMApi {
 
   
   /**
-   * Query Users
+   * Get a list of users
    * 
-   * @param filter filter parameter e.g. userName eq search@sample.org (required)
-   * @param startIndex Starting item of request. 1-based (optional, default to 1)
-   * @param count The requested number of items per page. A value of 0 will return no results other than the totalResults count. (optional, default to 25)
+   * @param filter Filters results. (required)
+   * @param startIndex The 1-based index of the first query result. (optional, default to 1)
+   * @param count The requested number of items per page. A value of 0 returns totalResults. (optional, default to 25)
    * @return ScimListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -496,11 +496,11 @@ public class SCIMApi {
   }
 
   /**
-   * Query Users
+   * Get a list of users
    * 
-   * @param filter filter parameter e.g. userName eq search@sample.org (required)
-   * @param startIndex Starting item of request. 1-based (optional, default to 1)
-   * @param count The requested number of items per page. A value of 0 will return no results other than the totalResults count. (optional, default to 25)
+   * @param filter Filters results. (required)
+   * @param startIndex The 1-based index of the first query result. (optional, default to 1)
+   * @param count The requested number of items per page. A value of 0 returns totalResults. (optional, default to 25)
    * @return ScimListResponse
    * @throws IOException if the request fails to be processed
    */
@@ -520,7 +520,7 @@ public class SCIMApi {
   }
 
   /**
-   * Query Users
+   * Get a list of users
    * 
    * @param request The request object
    * @return ScimListResponse
@@ -539,7 +539,7 @@ public class SCIMApi {
   }
 
   /**
-   * Query Users
+   * Get a list of users
    * 
    * @param request The request object
    * @return the response
@@ -569,10 +569,10 @@ public class SCIMApi {
 
   
   /**
-   * Return Group with specified ID
+   * Get a group
    * 
-   * @param groupId  (required)
-   * @param ifNoneMatch If-None-Match for ETag version checking (optional)
+   * @param groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
+   * @param ifNoneMatch The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. (optional)
    * @return ScimV2Group
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -582,10 +582,10 @@ public class SCIMApi {
   }
 
   /**
-   * Return Group with specified ID
+   * Get a group
    * 
-   * @param groupId  (required)
-   * @param ifNoneMatch If-None-Match for ETag version checking (optional)
+   * @param groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
+   * @param ifNoneMatch The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. (optional)
    * @return ScimV2Group
    * @throws IOException if the request fails to be processed
    */
@@ -603,7 +603,7 @@ public class SCIMApi {
   }
 
   /**
-   * Return Group with specified ID
+   * Get a group
    * 
    * @param request The request object
    * @return ScimV2Group
@@ -622,7 +622,7 @@ public class SCIMApi {
   }
 
   /**
-   * Return Group with specified ID
+   * Get a group
    * 
    * @param request The request object
    * @return the response
@@ -652,11 +652,11 @@ public class SCIMApi {
 
   
   /**
-   * Query Groups
+   * Get a list of groups
    * 
-   * @param filter filter parameter e.g. displayName eq groupName (required)
-   * @param startIndex Starting item of request. 1-based (optional, default to 1)
-   * @param count The requested number of items per page. A value of 0 will return no results other than the totalResults count. (optional, default to 25)
+   * @param filter Filters results. (required)
+   * @param startIndex The 1-based index of the first query result. (optional, default to 1)
+   * @param count The requested number of items per page. A value of 0 returns totalResults. (optional, default to 25)
    * @return ScimListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -666,11 +666,11 @@ public class SCIMApi {
   }
 
   /**
-   * Query Groups
+   * Get a list of groups
    * 
-   * @param filter filter parameter e.g. displayName eq groupName (required)
-   * @param startIndex Starting item of request. 1-based (optional, default to 1)
-   * @param count The requested number of items per page. A value of 0 will return no results other than the totalResults count. (optional, default to 25)
+   * @param filter Filters results. (required)
+   * @param startIndex The 1-based index of the first query result. (optional, default to 1)
+   * @param count The requested number of items per page. A value of 0 returns totalResults. (optional, default to 25)
    * @return ScimListResponse
    * @throws IOException if the request fails to be processed
    */
@@ -690,7 +690,7 @@ public class SCIMApi {
   }
 
   /**
-   * Query Groups
+   * Get a list of groups
    * 
    * @param request The request object
    * @return ScimListResponse
@@ -709,7 +709,7 @@ public class SCIMApi {
   }
 
   /**
-   * Query Groups
+   * Get a list of groups
    * 
    * @param request The request object
    * @return the response
@@ -739,9 +739,9 @@ public class SCIMApi {
 
   
   /**
-   * Get SCIM Configuration
+   * Get the SCIM configuration
    * 
-   * @param ifNoneMatch If-None-Match for ETag version checking (optional)
+   * @param ifNoneMatch The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. (optional)
    * @return ScimServiceProviderConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -751,9 +751,9 @@ public class SCIMApi {
   }
 
   /**
-   * Get SCIM Configuration
+   * Get the SCIM configuration
    * 
-   * @param ifNoneMatch If-None-Match for ETag version checking (optional)
+   * @param ifNoneMatch The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. (optional)
    * @return ScimServiceProviderConfig
    * @throws IOException if the request fails to be processed
    */
@@ -769,7 +769,7 @@ public class SCIMApi {
   }
 
   /**
-   * Get SCIM Configuration
+   * Get the SCIM configuration
    * 
    * @param request The request object
    * @return ScimServiceProviderConfig
@@ -788,7 +788,7 @@ public class SCIMApi {
   }
 
   /**
-   * Get SCIM Configuration
+   * Get the SCIM configuration
    * 
    * @param request The request object
    * @return the response
@@ -818,10 +818,10 @@ public class SCIMApi {
 
   
   /**
-   * Return User with specified ID
+   * Get a user
    * 
-   * @param userId  (required)
-   * @param ifNoneMatch If-None-Match for ETag version checking (optional)
+   * @param userId The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
+   * @param ifNoneMatch The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. (optional)
    * @return ScimV2User
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -831,10 +831,10 @@ public class SCIMApi {
   }
 
   /**
-   * Return User with specified ID
+   * Get a user
    * 
-   * @param userId  (required)
-   * @param ifNoneMatch If-None-Match for ETag version checking (optional)
+   * @param userId The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
+   * @param ifNoneMatch The ETag of a resource. If no match is found, returns request. If match is found, returns 304 Not Modified. (optional)
    * @return ScimV2User
    * @throws IOException if the request fails to be processed
    */
@@ -852,7 +852,7 @@ public class SCIMApi {
   }
 
   /**
-   * Return User with specified ID
+   * Get a user
    * 
    * @param request The request object
    * @return ScimV2User
@@ -871,7 +871,7 @@ public class SCIMApi {
   }
 
   /**
-   * Return User with specified ID
+   * Get a user
    * 
    * @param request The request object
    * @return the response
@@ -901,11 +901,11 @@ public class SCIMApi {
 
   
   /**
-   * Query Users
+   * Get a list of users
    * 
-   * @param filter filter parameter e.g. userName eq search@sample.org (required)
-   * @param startIndex Starting item of request. 1-based (optional, default to 1)
-   * @param count The requested number of items per page. A value of 0 will return no results other than the totalResults count. (optional, default to 25)
+   * @param filter Filters results. (required)
+   * @param startIndex The 1-based index of the first query result. (optional, default to 1)
+   * @param count The requested number of items per page. A value of 0 returns totalResults. (optional, default to 25)
    * @return ScimListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -915,11 +915,11 @@ public class SCIMApi {
   }
 
   /**
-   * Query Users
+   * Get a list of users
    * 
-   * @param filter filter parameter e.g. userName eq search@sample.org (required)
-   * @param startIndex Starting item of request. 1-based (optional, default to 1)
-   * @param count The requested number of items per page. A value of 0 will return no results other than the totalResults count. (optional, default to 25)
+   * @param filter Filters results. (required)
+   * @param startIndex The 1-based index of the first query result. (optional, default to 1)
+   * @param count The requested number of items per page. A value of 0 returns totalResults. (optional, default to 25)
    * @return ScimListResponse
    * @throws IOException if the request fails to be processed
    */
@@ -939,7 +939,7 @@ public class SCIMApi {
   }
 
   /**
-   * Query Users
+   * Get a list of users
    * 
    * @param request The request object
    * @return ScimListResponse
@@ -958,7 +958,7 @@ public class SCIMApi {
   }
 
   /**
-   * Query Users
+   * Get a list of users
    * 
    * @param request The request object
    * @return the response
@@ -988,11 +988,11 @@ public class SCIMApi {
 
   
   /**
-   * Update Group with specified ID
+   * Modify a group
    * 
-   * @param groupId  (required)
+   * @param groupId The ID of a group. Returned with GET /api/v2/scim/groups. (required)
    * @param body Group (required)
-   * @param ifMatch If-Match for ETag version checking (optional)
+   * @param ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
    * @return ScimV2Group
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1002,11 +1002,11 @@ public class SCIMApi {
   }
 
   /**
-   * Update Group with specified ID
+   * Modify a group
    * 
-   * @param groupId  (required)
+   * @param groupId The ID of a group. Returned with GET /api/v2/scim/groups. (required)
    * @param body Group (required)
-   * @param ifMatch If-Match for ETag version checking (optional)
+   * @param ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
    * @return ScimV2Group
    * @throws IOException if the request fails to be processed
    */
@@ -1026,7 +1026,7 @@ public class SCIMApi {
   }
 
   /**
-   * Update Group with specified ID
+   * Modify a group
    * 
    * @param request The request object
    * @return ScimV2Group
@@ -1045,7 +1045,7 @@ public class SCIMApi {
   }
 
   /**
-   * Update Group with specified ID
+   * Modify a group
    * 
    * @param request The request object
    * @return the response
@@ -1075,11 +1075,11 @@ public class SCIMApi {
 
   
   /**
-   * Patch user with specified ID
+   * Modify a user
    * 
-   * @param userId  (required)
+   * @param userId The ID of a user. Returned with GET /api/v2/scim/users. (required)
    * @param body SCIM Patch Request (required)
-   * @param ifMatch If-Match for ETag version checking (optional)
+   * @param ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
    * @return ScimV2User
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1089,11 +1089,11 @@ public class SCIMApi {
   }
 
   /**
-   * Patch user with specified ID
+   * Modify a user
    * 
-   * @param userId  (required)
+   * @param userId The ID of a user. Returned with GET /api/v2/scim/users. (required)
    * @param body SCIM Patch Request (required)
-   * @param ifMatch If-Match for ETag version checking (optional)
+   * @param ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
    * @return ScimV2User
    * @throws IOException if the request fails to be processed
    */
@@ -1113,7 +1113,7 @@ public class SCIMApi {
   }
 
   /**
-   * Patch user with specified ID
+   * Modify a user
    * 
    * @param request The request object
    * @return ScimV2User
@@ -1132,7 +1132,7 @@ public class SCIMApi {
   }
 
   /**
-   * Patch user with specified ID
+   * Modify a user
    * 
    * @param request The request object
    * @return the response
@@ -1162,11 +1162,11 @@ public class SCIMApi {
 
   
   /**
-   * Update Group with specified ID
+   * Modify a group
    * 
-   * @param groupId  (required)
+   * @param groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
    * @param body Group (required)
-   * @param ifMatch If-Match for ETag version checking (optional)
+   * @param ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
    * @return ScimV2Group
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1176,11 +1176,11 @@ public class SCIMApi {
   }
 
   /**
-   * Update Group with specified ID
+   * Modify a group
    * 
-   * @param groupId  (required)
+   * @param groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
    * @param body Group (required)
-   * @param ifMatch If-Match for ETag version checking (optional)
+   * @param ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
    * @return ScimV2Group
    * @throws IOException if the request fails to be processed
    */
@@ -1200,7 +1200,7 @@ public class SCIMApi {
   }
 
   /**
-   * Update Group with specified ID
+   * Modify a group
    * 
    * @param request The request object
    * @return ScimV2Group
@@ -1219,7 +1219,7 @@ public class SCIMApi {
   }
 
   /**
-   * Update Group with specified ID
+   * Modify a group
    * 
    * @param request The request object
    * @return the response
@@ -1249,11 +1249,11 @@ public class SCIMApi {
 
   
   /**
-   * Update user with specified ID
+   * Modify a user
    * 
-   * @param userId User Id (required)
+   * @param userId The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
    * @param body SCIM Patch Request (required)
-   * @param ifMatch If-Match for ETag version checking (optional)
+   * @param ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
    * @return ScimV2User
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1263,11 +1263,11 @@ public class SCIMApi {
   }
 
   /**
-   * Update user with specified ID
+   * Modify a user
    * 
-   * @param userId User Id (required)
+   * @param userId The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
    * @param body SCIM Patch Request (required)
-   * @param ifMatch If-Match for ETag version checking (optional)
+   * @param ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
    * @return ScimV2User
    * @throws IOException if the request fails to be processed
    */
@@ -1287,7 +1287,7 @@ public class SCIMApi {
   }
 
   /**
-   * Update user with specified ID
+   * Modify a user
    * 
    * @param request The request object
    * @return ScimV2User
@@ -1306,7 +1306,7 @@ public class SCIMApi {
   }
 
   /**
-   * Update user with specified ID
+   * Modify a user
    * 
    * @param request The request object
    * @return the response
@@ -1336,7 +1336,7 @@ public class SCIMApi {
 
   
   /**
-   * Create user
+   * Create a user
    * 
    * @param body SCIM Create User (required)
    * @return ScimV2User
@@ -1348,7 +1348,7 @@ public class SCIMApi {
   }
 
   /**
-   * Create user
+   * Create a user
    * 
    * @param body SCIM Create User (required)
    * @return ScimV2User
@@ -1366,7 +1366,7 @@ public class SCIMApi {
   }
 
   /**
-   * Create user
+   * Create a user
    * 
    * @param request The request object
    * @return ScimV2User
@@ -1385,7 +1385,7 @@ public class SCIMApi {
   }
 
   /**
-   * Create user
+   * Create a user
    * 
    * @param request The request object
    * @return the response
@@ -1415,7 +1415,7 @@ public class SCIMApi {
 
   
   /**
-   * Create user
+   * Create a user
    * 
    * @param body SCIM Create User (required)
    * @return ScimV2User
@@ -1427,7 +1427,7 @@ public class SCIMApi {
   }
 
   /**
-   * Create user
+   * Create a user
    * 
    * @param body SCIM Create User (required)
    * @return ScimV2User
@@ -1445,7 +1445,7 @@ public class SCIMApi {
   }
 
   /**
-   * Create user
+   * Create a user
    * 
    * @param request The request object
    * @return ScimV2User
@@ -1464,7 +1464,7 @@ public class SCIMApi {
   }
 
   /**
-   * Create user
+   * Create a user
    * 
    * @param request The request object
    * @return the response
@@ -1494,11 +1494,11 @@ public class SCIMApi {
 
   
   /**
-   * Update Group with specified ID
+   * Replace a group
    * 
-   * @param groupId  (required)
+   * @param groupId The ID of a group. Returned with GET /api/v2/scim/groups. (required)
    * @param body Group (required)
-   * @param ifMatch If-Match for ETag version checking (optional)
+   * @param ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
    * @return ScimV2Group
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1508,11 +1508,11 @@ public class SCIMApi {
   }
 
   /**
-   * Update Group with specified ID
+   * Replace a group
    * 
-   * @param groupId  (required)
+   * @param groupId The ID of a group. Returned with GET /api/v2/scim/groups. (required)
    * @param body Group (required)
-   * @param ifMatch If-Match for ETag version checking (optional)
+   * @param ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
    * @return ScimV2Group
    * @throws IOException if the request fails to be processed
    */
@@ -1532,7 +1532,7 @@ public class SCIMApi {
   }
 
   /**
-   * Update Group with specified ID
+   * Replace a group
    * 
    * @param request The request object
    * @return ScimV2Group
@@ -1551,7 +1551,7 @@ public class SCIMApi {
   }
 
   /**
-   * Update Group with specified ID
+   * Replace a group
    * 
    * @param request The request object
    * @return the response
@@ -1581,11 +1581,11 @@ public class SCIMApi {
 
   
   /**
-   * Update user with specified ID
+   * Replace a user
    * 
-   * @param userId  (required)
+   * @param userId The ID of a user. Returned with GET /api/v2/scim/users. (required)
    * @param body User (required)
-   * @param ifMatch If-Match for ETag version checking (optional)
+   * @param ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
    * @return ScimV2User
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1595,11 +1595,11 @@ public class SCIMApi {
   }
 
   /**
-   * Update user with specified ID
+   * Replace a user
    * 
-   * @param userId  (required)
+   * @param userId The ID of a user. Returned with GET /api/v2/scim/users. (required)
    * @param body User (required)
-   * @param ifMatch If-Match for ETag version checking (optional)
+   * @param ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
    * @return ScimV2User
    * @throws IOException if the request fails to be processed
    */
@@ -1619,7 +1619,7 @@ public class SCIMApi {
   }
 
   /**
-   * Update user with specified ID
+   * Replace a user
    * 
    * @param request The request object
    * @return ScimV2User
@@ -1638,7 +1638,7 @@ public class SCIMApi {
   }
 
   /**
-   * Update user with specified ID
+   * Replace a user
    * 
    * @param request The request object
    * @return the response
@@ -1668,11 +1668,11 @@ public class SCIMApi {
 
   
   /**
-   * Update Group with specified ID
+   * Replace a group
    * 
-   * @param groupId  (required)
+   * @param groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
    * @param body Group (required)
-   * @param ifMatch If-Match for ETag version checking (optional)
+   * @param ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
    * @return ScimV2Group
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1682,11 +1682,11 @@ public class SCIMApi {
   }
 
   /**
-   * Update Group with specified ID
+   * Replace a group
    * 
-   * @param groupId  (required)
+   * @param groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
    * @param body Group (required)
-   * @param ifMatch If-Match for ETag version checking (optional)
+   * @param ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
    * @return ScimV2Group
    * @throws IOException if the request fails to be processed
    */
@@ -1706,7 +1706,7 @@ public class SCIMApi {
   }
 
   /**
-   * Update Group with specified ID
+   * Replace a group
    * 
    * @param request The request object
    * @return ScimV2Group
@@ -1725,7 +1725,7 @@ public class SCIMApi {
   }
 
   /**
-   * Update Group with specified ID
+   * Replace a group
    * 
    * @param request The request object
    * @return the response
@@ -1755,11 +1755,11 @@ public class SCIMApi {
 
   
   /**
-   * Update user with specified ID
+   * Replace a user
    * 
-   * @param userId User Id (required)
+   * @param userId The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
    * @param body User (required)
-   * @param ifMatch If-Match for ETag version checking (optional)
+   * @param ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
    * @return ScimV2User
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1769,11 +1769,11 @@ public class SCIMApi {
   }
 
   /**
-   * Update user with specified ID
+   * Replace a user
    * 
-   * @param userId User Id (required)
+   * @param userId The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
    * @param body User (required)
-   * @param ifMatch If-Match for ETag version checking (optional)
+   * @param ifMatch The ETag of a resource. If no match is found, returns 412 Precondition Failed. If match is found, performs request. (optional)
    * @return ScimV2User
    * @throws IOException if the request fails to be processed
    */
@@ -1793,7 +1793,7 @@ public class SCIMApi {
   }
 
   /**
-   * Update user with specified ID
+   * Replace a user
    * 
    * @param request The request object
    * @return ScimV2User
@@ -1812,7 +1812,7 @@ public class SCIMApi {
   }
 
   /**
-   * Update user with specified ID
+   * Replace a user
    * 
    * @param request The request object
    * @return the response

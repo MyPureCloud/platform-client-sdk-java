@@ -14,6 +14,7 @@ title: QueueConversationVideoEventTopicChat
 | **scriptId** | **String** |  |  [optional] |
 | **peerId** | **String** |  |  [optional] |
 | **roomId** | **String** |  |  [optional] |
+| **avatarImageUrl** | **String** |  |  [optional] |
 | **held** | **Boolean** |  |  [optional] |
 | **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum) |  |  [optional] |
 | **startHoldTime** | [**Date**](Date.html) |  |  [optional] |

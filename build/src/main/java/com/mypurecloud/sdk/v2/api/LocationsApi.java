@@ -125,28 +125,32 @@ public class LocationsApi {
    * Get Location by ID.
    * 
    * @param locationId Location ID (required)
+   * @param expand Which fields, if any, to expand (optional)
    * @return LocationDefinition
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LocationDefinition getLocation(String locationId) throws IOException, ApiException {
-    return  getLocation(createGetLocationRequest(locationId));
+  public LocationDefinition getLocation(String locationId, List<String> expand) throws IOException, ApiException {
+    return  getLocation(createGetLocationRequest(locationId, expand));
   }
 
   /**
    * Get Location by ID.
    * 
    * @param locationId Location ID (required)
+   * @param expand Which fields, if any, to expand (optional)
    * @return LocationDefinition
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LocationDefinition> getLocationWithHttpInfo(String locationId) throws IOException {
-    return getLocation(createGetLocationRequest(locationId).withHttpInfo());
+  public ApiResponse<LocationDefinition> getLocationWithHttpInfo(String locationId, List<String> expand) throws IOException {
+    return getLocation(createGetLocationRequest(locationId, expand).withHttpInfo());
   }
 
-  private GetLocationRequest createGetLocationRequest(String locationId) {
+  private GetLocationRequest createGetLocationRequest(String locationId, List<String> expand) {
     return GetLocationRequest.builder()
             .withLocationId(locationId)
+    
+            .withExpand(expand)
     
             .build();
   }

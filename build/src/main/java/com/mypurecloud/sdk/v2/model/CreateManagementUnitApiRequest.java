@@ -136,14 +136,14 @@ public class CreateManagementUnitApiRequest  implements Serializable {
 
   
   /**
-   * The division to which this management unit belongs.  Defaults to home division ID
+   * The id of the division to which this management unit belongs.  Defaults to home division ID
    **/
   public CreateManagementUnitApiRequest divisionId(String divisionId) {
     this.divisionId = divisionId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The division to which this management unit belongs.  Defaults to home division ID")
+  @ApiModelProperty(example = "null", value = "The id of the division to which this management unit belongs.  Defaults to home division ID")
   @JsonProperty("divisionId")
   public String getDivisionId() {
     return divisionId;

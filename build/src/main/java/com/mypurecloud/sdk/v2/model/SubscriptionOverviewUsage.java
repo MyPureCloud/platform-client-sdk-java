@@ -23,6 +23,7 @@ public class SubscriptionOverviewUsage  implements Serializable {
   private String prepayQuantity = null;
   private String prepayPrice = null;
   private String usageNotes = null;
+  private Boolean isCancellable = null;
 
   
   /**
@@ -187,6 +188,24 @@ public class SubscriptionOverviewUsage  implements Serializable {
   }
 
   
+  /**
+   * Indicates whether the item is cancellable
+   **/
+  public SubscriptionOverviewUsage isCancellable(Boolean isCancellable) {
+    this.isCancellable = isCancellable;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether the item is cancellable")
+  @JsonProperty("isCancellable")
+  public Boolean getIsCancellable() {
+    return isCancellable;
+  }
+  public void setIsCancellable(Boolean isCancellable) {
+    this.isCancellable = isCancellable;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -205,12 +224,13 @@ public class SubscriptionOverviewUsage  implements Serializable {
         Objects.equals(this.overagePrice, subscriptionOverviewUsage.overagePrice) &&
         Objects.equals(this.prepayQuantity, subscriptionOverviewUsage.prepayQuantity) &&
         Objects.equals(this.prepayPrice, subscriptionOverviewUsage.prepayPrice) &&
-        Objects.equals(this.usageNotes, subscriptionOverviewUsage.usageNotes);
+        Objects.equals(this.usageNotes, subscriptionOverviewUsage.usageNotes) &&
+        Objects.equals(this.isCancellable, subscriptionOverviewUsage.isCancellable);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, partNumber, grouping, unitOfMeasureType, usageQuantity, overagePrice, prepayQuantity, prepayPrice, usageNotes);
+    return Objects.hash(name, partNumber, grouping, unitOfMeasureType, usageQuantity, overagePrice, prepayQuantity, prepayPrice, usageNotes, isCancellable);
   }
 
   @Override
@@ -227,6 +247,7 @@ public class SubscriptionOverviewUsage  implements Serializable {
     sb.append("    prepayQuantity: ").append(toIndentedString(prepayQuantity)).append("\n");
     sb.append("    prepayPrice: ").append(toIndentedString(prepayPrice)).append("\n");
     sb.append("    usageNotes: ").append(toIndentedString(usageNotes)).append("\n");
+    sb.append("    isCancellable: ").append(toIndentedString(isCancellable)).append("\n");
     sb.append("}");
     return sb.toString();
   }

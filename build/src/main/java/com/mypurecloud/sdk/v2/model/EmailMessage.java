@@ -30,6 +30,7 @@ public class EmailMessage  implements Serializable {
   private String textBody = null;
   private String htmlBody = null;
   private Date time = null;
+  private Boolean historyIncluded = null;
   private String selfUri = null;
 
   
@@ -219,6 +220,24 @@ public class EmailMessage  implements Serializable {
   }
 
   
+  /**
+   * Indicates whether the history of previous emails of the conversation is included within the email bodies of this message.
+   **/
+  public EmailMessage historyIncluded(Boolean historyIncluded) {
+    this.historyIncluded = historyIncluded;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether the history of previous emails of the conversation is included within the email bodies of this message.")
+  @JsonProperty("historyIncluded")
+  public Boolean getHistoryIncluded() {
+    return historyIncluded;
+  }
+  public void setHistoryIncluded(Boolean historyIncluded) {
+    this.historyIncluded = historyIncluded;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -247,12 +266,13 @@ public class EmailMessage  implements Serializable {
         Objects.equals(this.textBody, emailMessage.textBody) &&
         Objects.equals(this.htmlBody, emailMessage.htmlBody) &&
         Objects.equals(this.time, emailMessage.time) &&
+        Objects.equals(this.historyIncluded, emailMessage.historyIncluded) &&
         Objects.equals(this.selfUri, emailMessage.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, to, cc, bcc, from, subject, attachments, textBody, htmlBody, time, selfUri);
+    return Objects.hash(id, name, to, cc, bcc, from, subject, attachments, textBody, htmlBody, time, historyIncluded, selfUri);
   }
 
   @Override
@@ -271,6 +291,7 @@ public class EmailMessage  implements Serializable {
     sb.append("    textBody: ").append(toIndentedString(textBody)).append("\n");
     sb.append("    htmlBody: ").append(toIndentedString(htmlBody)).append("\n");
     sb.append("    time: ").append(toIndentedString(time)).append("\n");
+    sb.append("    historyIncluded: ").append(toIndentedString(historyIncluded)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

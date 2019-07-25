@@ -30,6 +30,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getIntegrationsCredentialsTypes**](IntegrationsApi.html#getIntegrationsCredentialsTypes) | List all credential types |
 | [**getIntegrationsEventlog**](IntegrationsApi.html#getIntegrationsEventlog) | List all events |
 | [**getIntegrationsEventlogEventId**](IntegrationsApi.html#getIntegrationsEventlogEventId) | Get a single event |
+| [**getIntegrationsSpeechDialogflowAgent**](IntegrationsApi.html#getIntegrationsSpeechDialogflowAgent) | Get details about a Dialogflow agent |
+| [**getIntegrationsSpeechDialogflowAgents**](IntegrationsApi.html#getIntegrationsSpeechDialogflowAgents) | Get a list of Dialogflow agents in the customers&#39; Google accounts |
+| [**getIntegrationsSpeechLexBotAlias**](IntegrationsApi.html#getIntegrationsSpeechLexBotAlias) | Get details about a Lex bot alias |
+| [**getIntegrationsSpeechLexBotBotIdAliases**](IntegrationsApi.html#getIntegrationsSpeechLexBotBotIdAliases) | Get a list of aliases for a bot in the customer&#39;s AWS accounts |
+| [**getIntegrationsSpeechLexBots**](IntegrationsApi.html#getIntegrationsSpeechLexBots) | Get a list of Lex bots in the customers&#39; AWS accounts |
+| [**getIntegrationsSpeechTtsEngine**](IntegrationsApi.html#getIntegrationsSpeechTtsEngine) | Get details about a TTS engine |
+| [**getIntegrationsSpeechTtsEngineVoice**](IntegrationsApi.html#getIntegrationsSpeechTtsEngineVoice) | Get details about a specific voice for a TTS engine |
+| [**getIntegrationsSpeechTtsEngineVoices**](IntegrationsApi.html#getIntegrationsSpeechTtsEngineVoices) | Get a list of voices for a TTS engine |
+| [**getIntegrationsSpeechTtsEngines**](IntegrationsApi.html#getIntegrationsSpeechTtsEngines) | Get a list of TTS engines enabled for org |
+| [**getIntegrationsSpeechTtsSettings**](IntegrationsApi.html#getIntegrationsSpeechTtsSettings) | Get TTS settings for an org |
 | [**getIntegrationsType**](IntegrationsApi.html#getIntegrationsType) | Get integration type. |
 | [**getIntegrationsTypeConfigschema**](IntegrationsApi.html#getIntegrationsTypeConfigschema) | Get properties config schema for an integration type. |
 | [**getIntegrationsTypes**](IntegrationsApi.html#getIntegrationsTypes) | List integration types |
@@ -48,6 +58,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postIntegrationsWorkforcemanagementVendorconnection**](IntegrationsApi.html#postIntegrationsWorkforcemanagementVendorconnection) | Add a vendor connection |
 | [**putIntegrationConfigCurrent**](IntegrationsApi.html#putIntegrationConfigCurrent) | Update integration configuration. |
 | [**putIntegrationsCredential**](IntegrationsApi.html#putIntegrationsCredential) | Update a set of credentials |
+| [**putIntegrationsSpeechTtsSettings**](IntegrationsApi.html#putIntegrationsSpeechTtsSettings) | Update TTS settings for an org |
 {: class="table-striped"}
 
 <a name="deleteIntegration"></a>
@@ -1600,6 +1611,664 @@ try {
 
 [**IntegrationEvent**](IntegrationEvent.html)
 
+<a name="getIntegrationsSpeechDialogflowAgent"></a>
+
+# **getIntegrationsSpeechDialogflowAgent**
+
+
+
+> [DialogflowAgent](DialogflowAgent.html) getIntegrationsSpeechDialogflowAgent(agentId)
+
+Get details about a Dialogflow agent
+
+
+
+Wraps GET /api/v2/integrations/speech/dialogflow/agents/{agentId}  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String agentId = "agentId_example"; // String | The agent ID
+try {
+    DialogflowAgent result = apiInstance.getIntegrationsSpeechDialogflowAgent(agentId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechDialogflowAgent");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **agentId** | **String**| The agent ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DialogflowAgent**](DialogflowAgent.html)
+
+<a name="getIntegrationsSpeechDialogflowAgents"></a>
+
+# **getIntegrationsSpeechDialogflowAgents**
+
+
+
+> [DialogflowAgentSummaryEntityListing](DialogflowAgentSummaryEntityListing.html) getIntegrationsSpeechDialogflowAgents(pageNumber, pageSize, name)
+
+Get a list of Dialogflow agents in the customers&#39; Google accounts
+
+
+
+Wraps GET /api/v2/integrations/speech/dialogflow/agents  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String name = "name_example"; // String | Filter on agent name
+try {
+    DialogflowAgentSummaryEntityListing result = apiInstance.getIntegrationsSpeechDialogflowAgents(pageNumber, pageSize, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechDialogflowAgents");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **name** | **String**| Filter on agent name | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DialogflowAgentSummaryEntityListing**](DialogflowAgentSummaryEntityListing.html)
+
+<a name="getIntegrationsSpeechLexBotAlias"></a>
+
+# **getIntegrationsSpeechLexBotAlias**
+
+
+
+> [LexBotAlias](LexBotAlias.html) getIntegrationsSpeechLexBotAlias(aliasId)
+
+Get details about a Lex bot alias
+
+
+
+Wraps GET /api/v2/integrations/speech/lex/bot/alias/{aliasId}  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String aliasId = "aliasId_example"; // String | The alias ID
+try {
+    LexBotAlias result = apiInstance.getIntegrationsSpeechLexBotAlias(aliasId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechLexBotAlias");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **aliasId** | **String**| The alias ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LexBotAlias**](LexBotAlias.html)
+
+<a name="getIntegrationsSpeechLexBotBotIdAliases"></a>
+
+# **getIntegrationsSpeechLexBotBotIdAliases**
+
+
+
+> [LexBotAliasEntityListing](LexBotAliasEntityListing.html) getIntegrationsSpeechLexBotBotIdAliases(botId, pageNumber, pageSize, status, name)
+
+Get a list of aliases for a bot in the customer&#39;s AWS accounts
+
+
+
+Wraps GET /api/v2/integrations/speech/lex/bot/{botId}/aliases  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String botId = "botId_example"; // String | The bot ID
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String status = "status_example"; // String | Filter on alias status
+String name = "name_example"; // String | Filter on alias name
+try {
+    LexBotAliasEntityListing result = apiInstance.getIntegrationsSpeechLexBotBotIdAliases(botId, pageNumber, pageSize, status, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechLexBotBotIdAliases");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **botId** | **String**| The bot ID | 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **status** | **String**| Filter on alias status | [optional]<br />**Values**: READY, FAILED, BUILDING, NOT_BUILT 
+| **name** | **String**| Filter on alias name | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LexBotAliasEntityListing**](LexBotAliasEntityListing.html)
+
+<a name="getIntegrationsSpeechLexBots"></a>
+
+# **getIntegrationsSpeechLexBots**
+
+
+
+> [LexBotEntityListing](LexBotEntityListing.html) getIntegrationsSpeechLexBots(pageNumber, pageSize, name)
+
+Get a list of Lex bots in the customers&#39; AWS accounts
+
+
+
+Wraps GET /api/v2/integrations/speech/lex/bots  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String name = "name_example"; // String | Filter on bot name
+try {
+    LexBotEntityListing result = apiInstance.getIntegrationsSpeechLexBots(pageNumber, pageSize, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechLexBots");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **name** | **String**| Filter on bot name | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LexBotEntityListing**](LexBotEntityListing.html)
+
+<a name="getIntegrationsSpeechTtsEngine"></a>
+
+# **getIntegrationsSpeechTtsEngine**
+
+
+
+> [TtsEngineEntity](TtsEngineEntity.html) getIntegrationsSpeechTtsEngine(engineId, includeVoices)
+
+Get details about a TTS engine
+
+
+
+Wraps GET /api/v2/integrations/speech/tts/engines/{engineId}  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String engineId = "engineId_example"; // String | The engine ID
+Boolean includeVoices = false; // Boolean | Include voices for the engine
+try {
+    TtsEngineEntity result = apiInstance.getIntegrationsSpeechTtsEngine(engineId, includeVoices);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechTtsEngine");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **engineId** | **String**| The engine ID | 
+| **includeVoices** | **Boolean**| Include voices for the engine | [optional] [default to false] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TtsEngineEntity**](TtsEngineEntity.html)
+
+<a name="getIntegrationsSpeechTtsEngineVoice"></a>
+
+# **getIntegrationsSpeechTtsEngineVoice**
+
+
+
+> [TtsVoiceEntity](TtsVoiceEntity.html) getIntegrationsSpeechTtsEngineVoice(engineId, voiceId)
+
+Get details about a specific voice for a TTS engine
+
+
+
+Wraps GET /api/v2/integrations/speech/tts/engines/{engineId}/voices/{voiceId}  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String engineId = "engineId_example"; // String | The engine ID
+String voiceId = "voiceId_example"; // String | The voice ID
+try {
+    TtsVoiceEntity result = apiInstance.getIntegrationsSpeechTtsEngineVoice(engineId, voiceId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechTtsEngineVoice");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **engineId** | **String**| The engine ID | 
+| **voiceId** | **String**| The voice ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TtsVoiceEntity**](TtsVoiceEntity.html)
+
+<a name="getIntegrationsSpeechTtsEngineVoices"></a>
+
+# **getIntegrationsSpeechTtsEngineVoices**
+
+
+
+> [TtsVoiceEntityListing](TtsVoiceEntityListing.html) getIntegrationsSpeechTtsEngineVoices(engineId, pageNumber, pageSize)
+
+Get a list of voices for a TTS engine
+
+
+
+Wraps GET /api/v2/integrations/speech/tts/engines/{engineId}/voices  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String engineId = "engineId_example"; // String | The engine ID
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+try {
+    TtsVoiceEntityListing result = apiInstance.getIntegrationsSpeechTtsEngineVoices(engineId, pageNumber, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechTtsEngineVoices");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **engineId** | **String**| The engine ID | 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TtsVoiceEntityListing**](TtsVoiceEntityListing.html)
+
+<a name="getIntegrationsSpeechTtsEngines"></a>
+
+# **getIntegrationsSpeechTtsEngines**
+
+
+
+> [TtsEngineEntityListing](TtsEngineEntityListing.html) getIntegrationsSpeechTtsEngines(pageNumber, pageSize, includeVoices, name, language)
+
+Get a list of TTS engines enabled for org
+
+
+
+Wraps GET /api/v2/integrations/speech/tts/engines  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+Boolean includeVoices = false; // Boolean | Include voices for the engine
+String name = "name_example"; // String | Filter on engine name
+String language = "language_example"; // String | Filter on supported language. If includeVoices=true then the voices are also filtered.
+try {
+    TtsEngineEntityListing result = apiInstance.getIntegrationsSpeechTtsEngines(pageNumber, pageSize, includeVoices, name, language);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechTtsEngines");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **includeVoices** | **Boolean**| Include voices for the engine | [optional] [default to false] 
+| **name** | **String**| Filter on engine name | [optional] 
+| **language** | **String**| Filter on supported language. If includeVoices=true then the voices are also filtered. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TtsEngineEntityListing**](TtsEngineEntityListing.html)
+
+<a name="getIntegrationsSpeechTtsSettings"></a>
+
+# **getIntegrationsSpeechTtsSettings**
+
+
+
+> [TtsSettings](TtsSettings.html) getIntegrationsSpeechTtsSettings()
+
+Get TTS settings for an org
+
+
+
+Wraps GET /api/v2/integrations/speech/tts/settings  
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+try {
+    TtsSettings result = apiInstance.getIntegrationsSpeechTtsSettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsSpeechTtsSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**TtsSettings**](TtsSettings.html)
+
 <a name="getIntegrationsType"></a>
 
 # **getIntegrationsType**
@@ -2768,4 +3437,67 @@ try {
 ### Return type
 
 [**CredentialInfo**](CredentialInfo.html)
+
+<a name="putIntegrationsSpeechTtsSettings"></a>
+
+# **putIntegrationsSpeechTtsSettings**
+
+
+
+> [TtsSettings](TtsSettings.html) putIntegrationsSpeechTtsSettings(body)
+
+Update TTS settings for an org
+
+
+
+Wraps PUT /api/v2/integrations/speech/tts/settings  
+
+Requires ANY permissions: 
+
+* integrations:integration:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+TtsSettings body = new TtsSettings(); // TtsSettings | Updated TtsSettings
+try {
+    TtsSettings result = apiInstance.putIntegrationsSpeechTtsSettings(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#putIntegrationsSpeechTtsSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**TtsSettings**](TtsSettings.html)| Updated TtsSettings | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TtsSettings**](TtsSettings.html)
 

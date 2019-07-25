@@ -16,6 +16,8 @@ import com.mypurecloud.sdk.v2.model.Recording;
 import com.mypurecloud.sdk.v2.model.Annotation;
 import com.mypurecloud.sdk.v2.model.OrphanRecordingListing;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobStatusResult;
+import com.mypurecloud.sdk.v2.model.RecordingJob;
+import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
 import com.mypurecloud.sdk.v2.model.PolicyEntityListing;
@@ -27,14 +29,17 @@ import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmission;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmissionResult;
+import com.mypurecloud.sdk.v2.model.RecordingJobsQuery;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionKeyRequest;
 import com.mypurecloud.sdk.v2.model.EncryptionKey;
 import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
+import com.mypurecloud.sdk.v2.model.ExecuteRecordingJobsQuery;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationRecordingAnnotationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrphanrecordingRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRecordingJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRecordingMediaretentionpoliciesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRecordingMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationRecordingRequest;
@@ -47,6 +52,8 @@ import com.mypurecloud.sdk.v2.api.request.GetOrphanrecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrphanrecordingMediaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrphanrecordingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingBatchrequestRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingLocalkeysSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingLocalkeysSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingMediaretentionpoliciesRequest;
@@ -59,6 +66,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchRecordingMediaretentionpolicyRequ
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingsScreensessionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationRecordingAnnotationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingBatchrequestsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRecordingJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingMediaretentionpoliciesRequest;
@@ -66,6 +74,7 @@ import com.mypurecloud.sdk.v2.api.request.PostRecordingRecordingkeysRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationRecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationRecordingAnnotationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrphanrecordingRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRecordingJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingLocalkeysSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingRecordingkeysRotationscheduleRequest;
@@ -248,6 +257,82 @@ public class RecordingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OrphanRecording> response = (ApiResponse<OrphanRecording>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete the recording bulk job
+   * 
+   * @param jobId jobId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRecordingJob(String jobId) throws IOException, ApiException {
+     deleteRecordingJob(createDeleteRecordingJobRequest(jobId));
+  }
+
+  /**
+   * Delete the recording bulk job
+   * 
+   * @param jobId jobId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRecordingJobWithHttpInfo(String jobId) throws IOException {
+    return deleteRecordingJob(createDeleteRecordingJobRequest(jobId).withHttpInfo());
+  }
+
+  private DeleteRecordingJobRequest createDeleteRecordingJobRequest(String jobId) {
+    return DeleteRecordingJobRequest.builder()
+            .withJobId(jobId)
+    
+            .build();
+  }
+
+  /**
+   * Delete the recording bulk job
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRecordingJob(DeleteRecordingJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete the recording bulk job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRecordingJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1276,6 +1361,168 @@ public class RecordingApi {
 
   
   /**
+   * Get the status of the job associated with the job id.
+   * 
+   * @param jobId jobId (required)
+   * @return RecordingJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingJob getRecordingJob(String jobId) throws IOException, ApiException {
+    return  getRecordingJob(createGetRecordingJobRequest(jobId));
+  }
+
+  /**
+   * Get the status of the job associated with the job id.
+   * 
+   * @param jobId jobId (required)
+   * @return RecordingJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingJob> getRecordingJobWithHttpInfo(String jobId) throws IOException {
+    return getRecordingJob(createGetRecordingJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetRecordingJobRequest createGetRecordingJobRequest(String jobId) {
+    return GetRecordingJobRequest.builder()
+            .withJobId(jobId)
+    
+            .build();
+  }
+
+  /**
+   * Get the status of the job associated with the job id.
+   * 
+   * @param request The request object
+   * @return RecordingJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingJob getRecordingJob(GetRecordingJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RecordingJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RecordingJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the status of the job associated with the job id.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingJob> getRecordingJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RecordingJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingJob> response = (ApiResponse<RecordingJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingJob> response = (ApiResponse<RecordingJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the status of all jobs within the user&#39;s organization
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return RecordingJobEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingJobEntityListing getRecordingJobs(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getRecordingJobs(createGetRecordingJobsRequest(pageSize, pageNumber));
+  }
+
+  /**
+   * Get the status of all jobs within the user&#39;s organization
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return RecordingJobEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingJobEntityListing> getRecordingJobsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getRecordingJobs(createGetRecordingJobsRequest(pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetRecordingJobsRequest createGetRecordingJobsRequest(Integer pageSize, Integer pageNumber) {
+    return GetRecordingJobsRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .build();
+  }
+
+  /**
+   * Get the status of all jobs within the user&#39;s organization
+   * 
+   * @param request The request object
+   * @return RecordingJobEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingJobEntityListing getRecordingJobs(GetRecordingJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RecordingJobEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RecordingJobEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the status of all jobs within the user&#39;s organization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingJobEntityListing> getRecordingJobs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RecordingJobEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingJobEntityListing> response = (ApiResponse<RecordingJobEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingJobEntityListing> response = (ApiResponse<RecordingJobEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get the local encryption settings
    * 
    * @param settingsId Settings Id (required)
@@ -2273,6 +2520,85 @@ public class RecordingApi {
 
   
   /**
+   * Create a recording bulk job
+   * 
+   * @param body query (required)
+   * @return RecordingJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingJob postRecordingJobs(RecordingJobsQuery body) throws IOException, ApiException {
+    return  postRecordingJobs(createPostRecordingJobsRequest(body));
+  }
+
+  /**
+   * Create a recording bulk job
+   * 
+   * @param body query (required)
+   * @return RecordingJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingJob> postRecordingJobsWithHttpInfo(RecordingJobsQuery body) throws IOException {
+    return postRecordingJobs(createPostRecordingJobsRequest(body).withHttpInfo());
+  }
+
+  private PostRecordingJobsRequest createPostRecordingJobsRequest(RecordingJobsQuery body) {
+    return PostRecordingJobsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a recording bulk job
+   * 
+   * @param request The request object
+   * @return RecordingJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingJob postRecordingJobs(PostRecordingJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RecordingJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RecordingJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a recording bulk job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingJob> postRecordingJobs(ApiRequest<RecordingJobsQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RecordingJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingJob> response = (ApiResponse<RecordingJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingJob> response = (ApiResponse<RecordingJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * create a local recording key
    * 
    * @param body Local Encryption body (required)
@@ -2840,6 +3166,89 @@ public class RecordingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Execute the recording bulk job
+   * 
+   * @param jobId jobId (required)
+   * @param body query (required)
+   * @return RecordingJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingJob putRecordingJob(String jobId, ExecuteRecordingJobsQuery body) throws IOException, ApiException {
+    return  putRecordingJob(createPutRecordingJobRequest(jobId, body));
+  }
+
+  /**
+   * Execute the recording bulk job
+   * 
+   * @param jobId jobId (required)
+   * @param body query (required)
+   * @return RecordingJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingJob> putRecordingJobWithHttpInfo(String jobId, ExecuteRecordingJobsQuery body) throws IOException {
+    return putRecordingJob(createPutRecordingJobRequest(jobId, body).withHttpInfo());
+  }
+
+  private PutRecordingJobRequest createPutRecordingJobRequest(String jobId, ExecuteRecordingJobsQuery body) {
+    return PutRecordingJobRequest.builder()
+            .withJobId(jobId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Execute the recording bulk job
+   * 
+   * @param request The request object
+   * @return RecordingJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RecordingJob putRecordingJob(PutRecordingJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RecordingJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RecordingJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Execute the recording bulk job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RecordingJob> putRecordingJob(ApiRequest<ExecuteRecordingJobsQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RecordingJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingJob> response = (ApiResponse<RecordingJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RecordingJob> response = (ApiResponse<RecordingJob>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

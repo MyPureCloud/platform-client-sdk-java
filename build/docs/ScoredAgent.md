@@ -8,7 +8,7 @@ title: ScoredAgent
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **agent** | [**Agent**](Agent.html) | The agent |  [optional] |
+| **agent** | [**AddressableEntityRef**](AddressableEntityRef.html) | The agent |  [optional] |
 | **score** | **Integer** | Agent&#39;s score for the current conversation, from 0 - 100, higher being better |  [optional] |
 {: class="table table-striped"}
 

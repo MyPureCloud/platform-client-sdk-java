@@ -47,6 +47,8 @@ import com.mypurecloud.sdk.v2.model.DataTable;
 import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowOutcome;
+import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 
@@ -102,6 +104,8 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDivisionviewsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectDependencytrackingBuildRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectEmergencygroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectIvrsRequest;
@@ -122,6 +126,7 @@ import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsRevertRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsUnlockRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatablesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectEmergencygroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectIvrRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectPromptRequest;
@@ -132,6 +137,7 @@ import com.mypurecloud.sdk.v2.api.request.PutArchitectSystempromptResourceReques
 import com.mypurecloud.sdk.v2.api.request.PutFlowRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFlowsDatatableRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFlowsDatatableRowRequest;
+import com.mypurecloud.sdk.v2.api.request.PutFlowsOutcomeRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -4106,6 +4112,158 @@ public class ArchitectApiAsync {
 
   
   /**
+   * Get a flow outcome
+   * Returns a specified flow outcome
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FlowOutcome> getFlowsOutcomeAsync(GetFlowsOutcomeRequest request, final AsyncApiCallback<FlowOutcome> callback) {
+    try {
+      final SettableFuture<FlowOutcome> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowOutcome>() {}, new AsyncApiCallback<ApiResponse<FlowOutcome>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowOutcome> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a flow outcome
+   * Returns a specified flow outcome
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FlowOutcome>> getFlowsOutcomeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FlowOutcome>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FlowOutcome>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FlowOutcome>() {}, new AsyncApiCallback<ApiResponse<FlowOutcome>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowOutcome> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowOutcome> response = (ApiResponse<FlowOutcome>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowOutcome> response = (ApiResponse<FlowOutcome>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a pageable list of flow outcomes, filtered by query parameters
+   * Multiple IDs can be specified, in which case all matching flow outcomes will be returned, and no other parameters will be evaluated.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FlowOutcomeListing> getFlowsOutcomesAsync(GetFlowsOutcomesRequest request, final AsyncApiCallback<FlowOutcomeListing> callback) {
+    try {
+      final SettableFuture<FlowOutcomeListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowOutcomeListing>() {}, new AsyncApiCallback<ApiResponse<FlowOutcomeListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowOutcomeListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a pageable list of flow outcomes, filtered by query parameters
+   * Multiple IDs can be specified, in which case all matching flow outcomes will be returned, and no other parameters will be evaluated.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FlowOutcomeListing>> getFlowsOutcomesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FlowOutcomeListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FlowOutcomeListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FlowOutcomeListing>() {}, new AsyncApiCallback<ApiResponse<FlowOutcomeListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowOutcomeListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowOutcomeListing> response = (ApiResponse<FlowOutcomeListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowOutcomeListing> response = (ApiResponse<FlowOutcomeListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Rebuild Dependency Tracking data for an organization
    * Asynchronous.  Notification topic: v2.architect.dependencytracking.build
    * @param request the request object
@@ -5626,6 +5784,82 @@ public class ArchitectApiAsync {
 
   
   /**
+   * Create a flow outcome
+   * Asynchronous.  Notification topic: v2.flows.outcomes.{flowOutcomeId}
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FlowOutcome> postFlowsOutcomesAsync(PostFlowsOutcomesRequest request, final AsyncApiCallback<FlowOutcome> callback) {
+    try {
+      final SettableFuture<FlowOutcome> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowOutcome>() {}, new AsyncApiCallback<ApiResponse<FlowOutcome>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowOutcome> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a flow outcome
+   * Asynchronous.  Notification topic: v2.flows.outcomes.{flowOutcomeId}
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FlowOutcome>> postFlowsOutcomesAsync(ApiRequest<FlowOutcome> request, final AsyncApiCallback<ApiResponse<FlowOutcome>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FlowOutcome>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FlowOutcome>() {}, new AsyncApiCallback<ApiResponse<FlowOutcome>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowOutcome> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowOutcome> response = (ApiResponse<FlowOutcome>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowOutcome> response = (ApiResponse<FlowOutcome>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Updates a emergency group by ID
    * 
    * @param request the request object
@@ -6373,6 +6607,82 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Map<String, Object>> response = (ApiResponse<Map<String, Object>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Updates a flow outcome
+   * Updates a flow outcome.  Asynchronous.  Notification topic: v2.flowoutcomes.{flowoutcomeId}
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Operation> putFlowsOutcomeAsync(PutFlowsOutcomeRequest request, final AsyncApiCallback<Operation> callback) {
+    try {
+      final SettableFuture<Operation> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Operation>() {}, new AsyncApiCallback<ApiResponse<Operation>>() {
+        @Override
+        public void onCompleted(ApiResponse<Operation> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Updates a flow outcome
+   * Updates a flow outcome.  Asynchronous.  Notification topic: v2.flowoutcomes.{flowoutcomeId}
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Operation>> putFlowsOutcomeAsync(ApiRequest<FlowOutcome> request, final AsyncApiCallback<ApiResponse<Operation>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Operation>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Operation>() {}, new AsyncApiCallback<ApiResponse<Operation>>() {
+        @Override
+        public void onCompleted(ApiResponse<Operation> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

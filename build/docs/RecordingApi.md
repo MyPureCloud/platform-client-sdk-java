@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deleteConversationRecordingAnnotation**](RecordingApi.html#deleteConversationRecordingAnnotation) | Delete annotation |
 | [**deleteOrphanrecording**](RecordingApi.html#deleteOrphanrecording) | Deletes a single orphan recording |
+| [**deleteRecordingJob**](RecordingApi.html#deleteRecordingJob) | Delete the recording bulk job |
 | [**deleteRecordingMediaretentionpolicies**](RecordingApi.html#deleteRecordingMediaretentionpolicies) | Delete media retention policies |
 | [**deleteRecordingMediaretentionpolicy**](RecordingApi.html#deleteRecordingMediaretentionpolicy) | Delete a media retention policy |
 | [**getConversationRecording**](RecordingApi.html#getConversationRecording) | Gets a specific recording. |
@@ -21,6 +22,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOrphanrecordingMedia**](RecordingApi.html#getOrphanrecordingMedia) | Gets the media of a single orphan recording |
 | [**getOrphanrecordings**](RecordingApi.html#getOrphanrecordings) | Gets all orphan recordings |
 | [**getRecordingBatchrequest**](RecordingApi.html#getRecordingBatchrequest) | Get the status and results for a batch request job, only the user that submitted the job may retrieve results |
+| [**getRecordingJob**](RecordingApi.html#getRecordingJob) | Get the status of the job associated with the job id. |
+| [**getRecordingJobs**](RecordingApi.html#getRecordingJobs) | Get the status of all jobs within the user&#39;s organization |
 | [**getRecordingLocalkeysSetting**](RecordingApi.html#getRecordingLocalkeysSetting) | Get the local encryption settings |
 | [**getRecordingLocalkeysSettings**](RecordingApi.html#getRecordingLocalkeysSettings) | gets a list local key settings data |
 | [**getRecordingMediaretentionpolicies**](RecordingApi.html#getRecordingMediaretentionpolicies) | Gets media retention policy list with query options to filter on name and enabled. |
@@ -33,6 +36,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchRecordingsScreensession**](RecordingApi.html#patchRecordingsScreensession) | Update a screen recording session |
 | [**postConversationRecordingAnnotations**](RecordingApi.html#postConversationRecordingAnnotations) | Create annotation |
 | [**postRecordingBatchrequests**](RecordingApi.html#postRecordingBatchrequests) | Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. |
+| [**postRecordingJobs**](RecordingApi.html#postRecordingJobs) | Create a recording bulk job |
 | [**postRecordingLocalkeys**](RecordingApi.html#postRecordingLocalkeys) | create a local recording key |
 | [**postRecordingLocalkeysSettings**](RecordingApi.html#postRecordingLocalkeysSettings) | create settings for local key creation |
 | [**postRecordingMediaretentionpolicies**](RecordingApi.html#postRecordingMediaretentionpolicies) | Create media retention policy |
@@ -40,6 +44,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putConversationRecording**](RecordingApi.html#putConversationRecording) | Updates the retention records on a recording. |
 | [**putConversationRecordingAnnotation**](RecordingApi.html#putConversationRecordingAnnotation) | Update annotation |
 | [**putOrphanrecording**](RecordingApi.html#putOrphanrecording) | Updates an orphan recording to a regular recording with retention values |
+| [**putRecordingJob**](RecordingApi.html#putRecordingJob) | Execute the recording bulk job |
 | [**putRecordingLocalkeysSetting**](RecordingApi.html#putRecordingLocalkeysSetting) | Update the local encryption settings |
 | [**putRecordingMediaretentionpolicy**](RecordingApi.html#putRecordingMediaretentionpolicy) | Update a media retention policy |
 | [**putRecordingRecordingkeysRotationschedule**](RecordingApi.html#putRecordingRecordingkeysRotationschedule) | Update key rotation schedule |
@@ -173,6 +178,68 @@ try {
 ### Return type
 
 [**OrphanRecording**](OrphanRecording.html)
+
+<a name="deleteRecordingJob"></a>
+
+# **deleteRecordingJob**
+
+
+
+> Void deleteRecordingJob(jobId)
+
+Delete the recording bulk job
+
+
+
+Wraps DELETE /api/v2/recording/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* recording:job:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteRecordingJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#deleteRecordingJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="deleteRecordingMediaretentionpolicies"></a>
 
@@ -961,6 +1028,134 @@ try {
 
 [**BatchDownloadJobStatusResult**](BatchDownloadJobStatusResult.html)
 
+<a name="getRecordingJob"></a>
+
+# **getRecordingJob**
+
+
+
+> [RecordingJob](RecordingJob.html) getRecordingJob(jobId)
+
+Get the status of the job associated with the job id.
+
+
+
+Wraps GET /api/v2/recording/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* recording:job:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    RecordingJob result = apiInstance.getRecordingJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#getRecordingJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RecordingJob**](RecordingJob.html)
+
+<a name="getRecordingJobs"></a>
+
+# **getRecordingJobs**
+
+
+
+> [RecordingJobEntityListing](RecordingJobEntityListing.html) getRecordingJobs(pageSize, pageNumber)
+
+Get the status of all jobs within the user&#39;s organization
+
+
+
+Wraps GET /api/v2/recording/jobs  
+
+Requires ANY permissions: 
+
+* recording:job:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    RecordingJobEntityListing result = apiInstance.getRecordingJobs(pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#getRecordingJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RecordingJobEntityListing**](RecordingJobEntityListing.html)
+
 <a name="getRecordingLocalkeysSetting"></a>
 
 # **getRecordingLocalkeysSetting**
@@ -1733,6 +1928,69 @@ try {
 
 [**BatchDownloadJobSubmissionResult**](BatchDownloadJobSubmissionResult.html)
 
+<a name="postRecordingJobs"></a>
+
+# **postRecordingJobs**
+
+
+
+> [RecordingJob](RecordingJob.html) postRecordingJobs(body)
+
+Create a recording bulk job
+
+
+
+Wraps POST /api/v2/recording/jobs  
+
+Requires ANY permissions: 
+
+* recording:job:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+RecordingJobsQuery body = new RecordingJobsQuery(); // RecordingJobsQuery | query
+try {
+    RecordingJob result = apiInstance.postRecordingJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#postRecordingJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**RecordingJobsQuery**](RecordingJobsQuery.html)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RecordingJob**](RecordingJob.html)
+
 <a name="postRecordingLocalkeys"></a>
 
 # **postRecordingLocalkeys**
@@ -2179,6 +2437,71 @@ try {
 ### Return type
 
 [**Recording**](Recording.html)
+
+<a name="putRecordingJob"></a>
+
+# **putRecordingJob**
+
+
+
+> [RecordingJob](RecordingJob.html) putRecordingJob(jobId, body)
+
+Execute the recording bulk job
+
+
+
+Wraps PUT /api/v2/recording/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* recording:job:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+String jobId = "jobId_example"; // String | jobId
+ExecuteRecordingJobsQuery body = new ExecuteRecordingJobsQuery(); // ExecuteRecordingJobsQuery | query
+try {
+    RecordingJob result = apiInstance.putRecordingJob(jobId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#putRecordingJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+| **body** | [**ExecuteRecordingJobsQuery**](ExecuteRecordingJobsQuery.html)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RecordingJob**](RecordingJob.html)
 
 <a name="putRecordingLocalkeysSetting"></a>
 

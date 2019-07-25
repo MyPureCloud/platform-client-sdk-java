@@ -17,6 +17,7 @@ public class ConversationProperties  implements Serializable {
   private Boolean isWaiting = null;
   private Boolean isActive = null;
   private Boolean isAcd = null;
+  private Boolean isPreferred = null;
   private Boolean isScreenshare = null;
   private Boolean isCobrowse = null;
   private Boolean isVoicemail = null;
@@ -76,6 +77,24 @@ public class ConversationProperties  implements Serializable {
   }
   public void setIsAcd(Boolean isAcd) {
     this.isAcd = isAcd;
+  }
+
+  
+  /**
+   * Indicates filtering for Preferred Agent Routing
+   **/
+  public ConversationProperties isPreferred(Boolean isPreferred) {
+    this.isPreferred = isPreferred;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates filtering for Preferred Agent Routing")
+  @JsonProperty("isPreferred")
+  public Boolean getIsPreferred() {
+    return isPreferred;
+  }
+  public void setIsPreferred(Boolean isPreferred) {
+    this.isPreferred = isPreferred;
   }
 
   
@@ -200,6 +219,7 @@ public class ConversationProperties  implements Serializable {
     return Objects.equals(this.isWaiting, conversationProperties.isWaiting) &&
         Objects.equals(this.isActive, conversationProperties.isActive) &&
         Objects.equals(this.isAcd, conversationProperties.isAcd) &&
+        Objects.equals(this.isPreferred, conversationProperties.isPreferred) &&
         Objects.equals(this.isScreenshare, conversationProperties.isScreenshare) &&
         Objects.equals(this.isCobrowse, conversationProperties.isCobrowse) &&
         Objects.equals(this.isVoicemail, conversationProperties.isVoicemail) &&
@@ -210,7 +230,7 @@ public class ConversationProperties  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(isWaiting, isActive, isAcd, isScreenshare, isCobrowse, isVoicemail, isFlagged, filterWrapUpNotes, matchAll);
+    return Objects.hash(isWaiting, isActive, isAcd, isPreferred, isScreenshare, isCobrowse, isVoicemail, isFlagged, filterWrapUpNotes, matchAll);
   }
 
   @Override
@@ -221,6 +241,7 @@ public class ConversationProperties  implements Serializable {
     sb.append("    isWaiting: ").append(toIndentedString(isWaiting)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    isAcd: ").append(toIndentedString(isAcd)).append("\n");
+    sb.append("    isPreferred: ").append(toIndentedString(isPreferred)).append("\n");
     sb.append("    isScreenshare: ").append(toIndentedString(isScreenshare)).append("\n");
     sb.append("    isCobrowse: ").append(toIndentedString(isCobrowse)).append("\n");
     sb.append("    isVoicemail: ").append(toIndentedString(isVoicemail)).append("\n");

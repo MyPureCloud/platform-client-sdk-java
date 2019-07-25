@@ -4,10 +4,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.Language;
-import com.mypurecloud.sdk.v2.model.Queue;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.ScoredAgent;
-import com.mypurecloud.sdk.v2.model.Skill;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -20,27 +18,27 @@ import java.io.Serializable;
 
 public class ConversationRoutingData  implements Serializable {
   
-  private Queue queue = null;
-  private Language language = null;
+  private AddressableEntityRef queue = null;
+  private AddressableEntityRef language = null;
   private Integer priority = null;
-  private List<Skill> skills = new ArrayList<Skill>();
+  private List<AddressableEntityRef> skills = new ArrayList<AddressableEntityRef>();
   private List<ScoredAgent> scoredAgents = new ArrayList<ScoredAgent>();
 
   
   /**
    * The queue to use for routing decisions
    **/
-  public ConversationRoutingData queue(Queue queue) {
+  public ConversationRoutingData queue(AddressableEntityRef queue) {
     this.queue = queue;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The queue to use for routing decisions")
   @JsonProperty("queue")
-  public Queue getQueue() {
+  public AddressableEntityRef getQueue() {
     return queue;
   }
-  public void setQueue(Queue queue) {
+  public void setQueue(AddressableEntityRef queue) {
     this.queue = queue;
   }
 
@@ -48,17 +46,17 @@ public class ConversationRoutingData  implements Serializable {
   /**
    * The language to use for routing decisions
    **/
-  public ConversationRoutingData language(Language language) {
+  public ConversationRoutingData language(AddressableEntityRef language) {
     this.language = language;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The language to use for routing decisions")
   @JsonProperty("language")
-  public Language getLanguage() {
+  public AddressableEntityRef getLanguage() {
     return language;
   }
-  public void setLanguage(Language language) {
+  public void setLanguage(AddressableEntityRef language) {
     this.language = language;
   }
 
@@ -84,17 +82,17 @@ public class ConversationRoutingData  implements Serializable {
   /**
    * The skills to use for routing decisions
    **/
-  public ConversationRoutingData skills(List<Skill> skills) {
+  public ConversationRoutingData skills(List<AddressableEntityRef> skills) {
     this.skills = skills;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The skills to use for routing decisions")
   @JsonProperty("skills")
-  public List<Skill> getSkills() {
+  public List<AddressableEntityRef> getSkills() {
     return skills;
   }
-  public void setSkills(List<Skill> skills) {
+  public void setSkills(List<AddressableEntityRef> skills) {
     this.skills = skills;
   }
 

@@ -57,7 +57,6 @@ public class DataSchema  implements Serializable {
   }
   private List<AppliesToEnum> appliesTo = new ArrayList<AppliesToEnum>();
   private Boolean enabled = null;
-  private Boolean deleted = null;
   private UriReference createdBy = null;
   private Date dateCreated = null;
   private JsonSchemaDocument jsonSchema = null;
@@ -107,14 +106,14 @@ public class DataSchema  implements Serializable {
 
   
   /**
-   * The PureCloud data this schema extends.
+   * One of \"CONTACT\" or \"EXTERNAL_ORGANIZATION\".  Indicates the built-in entity type to which this schema applies.
    **/
   public DataSchema appliesTo(List<AppliesToEnum> appliesTo) {
     this.appliesTo = appliesTo;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The PureCloud data this schema extends.")
+  @ApiModelProperty(example = "null", value = "One of \"CONTACT\" or \"EXTERNAL_ORGANIZATION\".  Indicates the built-in entity type to which this schema applies.")
   @JsonProperty("appliesTo")
   public List<AppliesToEnum> getAppliesTo() {
     return appliesTo;
@@ -125,14 +124,14 @@ public class DataSchema  implements Serializable {
 
   
   /**
-   * The schema's current enabled/disabled status. A disabled schema cannot be assigned to any other objects, but the data on those objects from the schemas still exists
+   * The schema's current enabled/disabled status. A disabled schema cannot be assigned to any other entities, but the data on those entities from the schema still exists
    **/
   public DataSchema enabled(Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The schema's current enabled/disabled status. A disabled schema cannot be assigned to any other objects, but the data on those objects from the schemas still exists")
+  @ApiModelProperty(example = "null", value = "The schema's current enabled/disabled status. A disabled schema cannot be assigned to any other entities, but the data on those entities from the schema still exists")
   @JsonProperty("enabled")
   public Boolean getEnabled() {
     return enabled;
@@ -143,32 +142,14 @@ public class DataSchema  implements Serializable {
 
   
   /**
-   * The schema's deleted status. A deleted schema can not be used by any records or updated. All records using a deleted schema will eventually have their schema-based data removed.
-   **/
-  public DataSchema deleted(Boolean deleted) {
-    this.deleted = deleted;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The schema's deleted status. A deleted schema can not be used by any records or updated. All records using a deleted schema will eventually have their schema-based data removed.")
-  @JsonProperty("deleted")
-  public Boolean getDeleted() {
-    return deleted;
-  }
-  public void setDeleted(Boolean deleted) {
-    this.deleted = deleted;
-  }
-
-  
-  /**
-   * The user that created this schema.
+   * The URI of the user that created this schema.
    **/
   public DataSchema createdBy(UriReference createdBy) {
     this.createdBy = createdBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The user that created this schema.")
+  @ApiModelProperty(example = "null", value = "The URI of the user that created this schema.")
   @JsonProperty("createdBy")
   public UriReference getCreatedBy() {
     return createdBy;
@@ -186,14 +167,14 @@ public class DataSchema  implements Serializable {
 
   
   /**
-   * The JSON schema defining the data extension.
+   * The JSON schema defining the extension to the built-in entity type.
    **/
   public DataSchema jsonSchema(JsonSchemaDocument jsonSchema) {
     this.jsonSchema = jsonSchema;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The JSON schema defining the data extension.")
+  @ApiModelProperty(example = "null", required = true, value = "The JSON schema defining the extension to the built-in entity type.")
   @JsonProperty("jsonSchema")
   public JsonSchemaDocument getJsonSchema() {
     return jsonSchema;
@@ -225,7 +206,6 @@ public class DataSchema  implements Serializable {
         Objects.equals(this.version, dataSchema.version) &&
         Objects.equals(this.appliesTo, dataSchema.appliesTo) &&
         Objects.equals(this.enabled, dataSchema.enabled) &&
-        Objects.equals(this.deleted, dataSchema.deleted) &&
         Objects.equals(this.createdBy, dataSchema.createdBy) &&
         Objects.equals(this.dateCreated, dataSchema.dateCreated) &&
         Objects.equals(this.jsonSchema, dataSchema.jsonSchema) &&
@@ -234,7 +214,7 @@ public class DataSchema  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, version, appliesTo, enabled, deleted, createdBy, dateCreated, jsonSchema, selfUri);
+    return Objects.hash(id, name, version, appliesTo, enabled, createdBy, dateCreated, jsonSchema, selfUri);
   }
 
   @Override
@@ -247,7 +227,6 @@ public class DataSchema  implements Serializable {
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    appliesTo: ").append(toIndentedString(appliesTo)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-    sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    jsonSchema: ").append(toIndentedString(jsonSchema)).append("\n");

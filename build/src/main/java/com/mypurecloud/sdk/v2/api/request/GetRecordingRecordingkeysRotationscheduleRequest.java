@@ -26,6 +26,8 @@ import com.mypurecloud.sdk.v2.model.Recording;
 import com.mypurecloud.sdk.v2.model.Annotation;
 import com.mypurecloud.sdk.v2.model.OrphanRecordingListing;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobStatusResult;
+import com.mypurecloud.sdk.v2.model.RecordingJob;
+import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
 import com.mypurecloud.sdk.v2.model.PolicyEntityListing;
@@ -37,10 +39,12 @@ import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmission;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmissionResult;
+import com.mypurecloud.sdk.v2.model.RecordingJobsQuery;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionKeyRequest;
 import com.mypurecloud.sdk.v2.model.EncryptionKey;
 import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
+import com.mypurecloud.sdk.v2.model.ExecuteRecordingJobsQuery;
 
 public class GetRecordingRecordingkeysRotationscheduleRequest {
     

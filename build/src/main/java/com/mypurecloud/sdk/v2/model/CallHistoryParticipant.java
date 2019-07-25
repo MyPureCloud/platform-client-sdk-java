@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.Campaign;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
 import com.mypurecloud.sdk.v2.model.ExternalOrganization;
 import com.mypurecloud.sdk.v2.model.Group;
@@ -154,6 +155,7 @@ public class CallHistoryParticipant  implements Serializable {
     }
   }
   private FlaggedReasonEnum flaggedReason = null;
+  private Campaign outboundCampaign = null;
 
   
   /**
@@ -480,6 +482,24 @@ public class CallHistoryParticipant  implements Serializable {
   }
 
   
+  /**
+   * The outbound campaign associated with the participant
+   **/
+  public CallHistoryParticipant outboundCampaign(Campaign outboundCampaign) {
+    this.outboundCampaign = outboundCampaign;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The outbound campaign associated with the participant")
+  @JsonProperty("outboundCampaign")
+  public Campaign getOutboundCampaign() {
+    return outboundCampaign;
+  }
+  public void setOutboundCampaign(Campaign outboundCampaign) {
+    this.outboundCampaign = outboundCampaign;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -507,12 +527,13 @@ public class CallHistoryParticipant  implements Serializable {
         Objects.equals(this.externalOrganization, callHistoryParticipant.externalOrganization) &&
         Objects.equals(this.didInteract, callHistoryParticipant.didInteract) &&
         Objects.equals(this.sipResponseCodes, callHistoryParticipant.sipResponseCodes) &&
-        Objects.equals(this.flaggedReason, callHistoryParticipant.flaggedReason);
+        Objects.equals(this.flaggedReason, callHistoryParticipant.flaggedReason) &&
+        Objects.equals(this.outboundCampaign, callHistoryParticipant.outboundCampaign);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, endTime, purpose, direction, ani, dnis, user, queue, group, disconnectType, externalContact, externalOrganization, didInteract, sipResponseCodes, flaggedReason);
+    return Objects.hash(id, name, address, startTime, endTime, purpose, direction, ani, dnis, user, queue, group, disconnectType, externalContact, externalOrganization, didInteract, sipResponseCodes, flaggedReason, outboundCampaign);
   }
 
   @Override
@@ -538,6 +559,7 @@ public class CallHistoryParticipant  implements Serializable {
     sb.append("    didInteract: ").append(toIndentedString(didInteract)).append("\n");
     sb.append("    sipResponseCodes: ").append(toIndentedString(sipResponseCodes)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
+    sb.append("    outboundCampaign: ").append(toIndentedString(outboundCampaign)).append("\n");
     sb.append("}");
     return sb.toString();
   }

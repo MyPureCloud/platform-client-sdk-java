@@ -84,7 +84,7 @@ null (empty response body)
 
 
 
-> [LocationDefinition](LocationDefinition.html) getLocation(locationId)
+> [LocationDefinition](LocationDefinition.html) getLocation(locationId, expand)
 
 Get Location by ID.
 
@@ -118,8 +118,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 LocationsApi apiInstance = new LocationsApi();
 String locationId = "locationId_example"; // String | Location ID
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
 try {
-    LocationDefinition result = apiInstance.getLocation(locationId);
+    LocationDefinition result = apiInstance.getLocation(locationId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LocationsApi#getLocation");
@@ -133,6 +134,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **locationId** | **String**| Location ID | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: images 
 {: class="table-striped"}
 
 

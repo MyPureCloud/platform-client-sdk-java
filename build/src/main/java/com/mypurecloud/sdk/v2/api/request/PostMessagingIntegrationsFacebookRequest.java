@@ -21,6 +21,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.MessagingIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.FacebookIntegration;
 import com.mypurecloud.sdk.v2.model.LineIntegrationEntityListing;

@@ -40,6 +40,7 @@ title: QueueConversationChatEventTopicChatMediaParticipant
 | **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum) |  |  [optional] |
 | **journeyContext** | [**QueueConversationChatEventTopicJourneyContext**](QueueConversationChatEventTopicJourneyContext.html) |  |  [optional] |
 | **roomId** | **String** |  |  [optional] |
+| **avatarImageUrl** | **String** |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -28,6 +28,16 @@ import com.mypurecloud.sdk.v2.model.CredentialInfoListing;
 import com.mypurecloud.sdk.v2.model.CredentialTypeListing;
 import com.mypurecloud.sdk.v2.model.IntegrationEventEntityListing;
 import com.mypurecloud.sdk.v2.model.IntegrationEvent;
+import com.mypurecloud.sdk.v2.model.DialogflowAgent;
+import com.mypurecloud.sdk.v2.model.DialogflowAgentSummaryEntityListing;
+import com.mypurecloud.sdk.v2.model.LexBotAlias;
+import com.mypurecloud.sdk.v2.model.LexBotAliasEntityListing;
+import com.mypurecloud.sdk.v2.model.LexBotEntityListing;
+import com.mypurecloud.sdk.v2.model.TtsEngineEntity;
+import com.mypurecloud.sdk.v2.model.TtsVoiceEntity;
+import com.mypurecloud.sdk.v2.model.TtsVoiceEntityListing;
+import com.mypurecloud.sdk.v2.model.TtsEngineEntityListing;
+import com.mypurecloud.sdk.v2.model.TtsSettings;
 import com.mypurecloud.sdk.v2.model.IntegrationType;
 import com.mypurecloud.sdk.v2.model.IntegrationTypeEntityListing;
 import com.mypurecloud.sdk.v2.model.UpdateActionInput;
@@ -64,6 +74,16 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsTypesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsEventlogRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsEventlogEventIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechDialogflowAgentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechDialogflowAgentsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexBotAliasRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexBotBotIdAliasesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexBotsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsEngineRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsEngineVoiceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsEngineVoicesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsEnginesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsTypeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsTypeConfigschemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsTypesRequest;
@@ -82,6 +102,7 @@ import com.mypurecloud.sdk.v2.api.request.PostIntegrationsCredentialsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsWorkforcemanagementVendorconnectionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationConfigCurrentRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsCredentialRequest;
+import com.mypurecloud.sdk.v2.api.request.PutIntegrationsSpeechTtsSettingsRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1852,6 +1873,766 @@ public class IntegrationsApiAsync {
 
   
   /**
+   * Get details about a Dialogflow agent
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DialogflowAgent> getIntegrationsSpeechDialogflowAgentAsync(GetIntegrationsSpeechDialogflowAgentRequest request, final AsyncApiCallback<DialogflowAgent> callback) {
+    try {
+      final SettableFuture<DialogflowAgent> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DialogflowAgent>() {}, new AsyncApiCallback<ApiResponse<DialogflowAgent>>() {
+        @Override
+        public void onCompleted(ApiResponse<DialogflowAgent> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get details about a Dialogflow agent
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DialogflowAgent>> getIntegrationsSpeechDialogflowAgentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DialogflowAgent>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DialogflowAgent>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DialogflowAgent>() {}, new AsyncApiCallback<ApiResponse<DialogflowAgent>>() {
+        @Override
+        public void onCompleted(ApiResponse<DialogflowAgent> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DialogflowAgent> response = (ApiResponse<DialogflowAgent>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DialogflowAgent> response = (ApiResponse<DialogflowAgent>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a list of Dialogflow agents in the customers&#39; Google accounts
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DialogflowAgentSummaryEntityListing> getIntegrationsSpeechDialogflowAgentsAsync(GetIntegrationsSpeechDialogflowAgentsRequest request, final AsyncApiCallback<DialogflowAgentSummaryEntityListing> callback) {
+    try {
+      final SettableFuture<DialogflowAgentSummaryEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DialogflowAgentSummaryEntityListing>() {}, new AsyncApiCallback<ApiResponse<DialogflowAgentSummaryEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DialogflowAgentSummaryEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of Dialogflow agents in the customers&#39; Google accounts
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DialogflowAgentSummaryEntityListing>> getIntegrationsSpeechDialogflowAgentsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DialogflowAgentSummaryEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DialogflowAgentSummaryEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DialogflowAgentSummaryEntityListing>() {}, new AsyncApiCallback<ApiResponse<DialogflowAgentSummaryEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DialogflowAgentSummaryEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DialogflowAgentSummaryEntityListing> response = (ApiResponse<DialogflowAgentSummaryEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DialogflowAgentSummaryEntityListing> response = (ApiResponse<DialogflowAgentSummaryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get details about a Lex bot alias
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LexBotAlias> getIntegrationsSpeechLexBotAliasAsync(GetIntegrationsSpeechLexBotAliasRequest request, final AsyncApiCallback<LexBotAlias> callback) {
+    try {
+      final SettableFuture<LexBotAlias> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LexBotAlias>() {}, new AsyncApiCallback<ApiResponse<LexBotAlias>>() {
+        @Override
+        public void onCompleted(ApiResponse<LexBotAlias> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get details about a Lex bot alias
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LexBotAlias>> getIntegrationsSpeechLexBotAliasAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LexBotAlias>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LexBotAlias>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LexBotAlias>() {}, new AsyncApiCallback<ApiResponse<LexBotAlias>>() {
+        @Override
+        public void onCompleted(ApiResponse<LexBotAlias> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LexBotAlias> response = (ApiResponse<LexBotAlias>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LexBotAlias> response = (ApiResponse<LexBotAlias>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a list of aliases for a bot in the customer&#39;s AWS accounts
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LexBotAliasEntityListing> getIntegrationsSpeechLexBotBotIdAliasesAsync(GetIntegrationsSpeechLexBotBotIdAliasesRequest request, final AsyncApiCallback<LexBotAliasEntityListing> callback) {
+    try {
+      final SettableFuture<LexBotAliasEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LexBotAliasEntityListing>() {}, new AsyncApiCallback<ApiResponse<LexBotAliasEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LexBotAliasEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of aliases for a bot in the customer&#39;s AWS accounts
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LexBotAliasEntityListing>> getIntegrationsSpeechLexBotBotIdAliasesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LexBotAliasEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LexBotAliasEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LexBotAliasEntityListing>() {}, new AsyncApiCallback<ApiResponse<LexBotAliasEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LexBotAliasEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LexBotAliasEntityListing> response = (ApiResponse<LexBotAliasEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LexBotAliasEntityListing> response = (ApiResponse<LexBotAliasEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a list of Lex bots in the customers&#39; AWS accounts
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LexBotEntityListing> getIntegrationsSpeechLexBotsAsync(GetIntegrationsSpeechLexBotsRequest request, final AsyncApiCallback<LexBotEntityListing> callback) {
+    try {
+      final SettableFuture<LexBotEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LexBotEntityListing>() {}, new AsyncApiCallback<ApiResponse<LexBotEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LexBotEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of Lex bots in the customers&#39; AWS accounts
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LexBotEntityListing>> getIntegrationsSpeechLexBotsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LexBotEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LexBotEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LexBotEntityListing>() {}, new AsyncApiCallback<ApiResponse<LexBotEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LexBotEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LexBotEntityListing> response = (ApiResponse<LexBotEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LexBotEntityListing> response = (ApiResponse<LexBotEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get details about a TTS engine
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TtsEngineEntity> getIntegrationsSpeechTtsEngineAsync(GetIntegrationsSpeechTtsEngineRequest request, final AsyncApiCallback<TtsEngineEntity> callback) {
+    try {
+      final SettableFuture<TtsEngineEntity> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TtsEngineEntity>() {}, new AsyncApiCallback<ApiResponse<TtsEngineEntity>>() {
+        @Override
+        public void onCompleted(ApiResponse<TtsEngineEntity> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get details about a TTS engine
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TtsEngineEntity>> getIntegrationsSpeechTtsEngineAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TtsEngineEntity>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TtsEngineEntity>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TtsEngineEntity>() {}, new AsyncApiCallback<ApiResponse<TtsEngineEntity>>() {
+        @Override
+        public void onCompleted(ApiResponse<TtsEngineEntity> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TtsEngineEntity> response = (ApiResponse<TtsEngineEntity>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TtsEngineEntity> response = (ApiResponse<TtsEngineEntity>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get details about a specific voice for a TTS engine
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TtsVoiceEntity> getIntegrationsSpeechTtsEngineVoiceAsync(GetIntegrationsSpeechTtsEngineVoiceRequest request, final AsyncApiCallback<TtsVoiceEntity> callback) {
+    try {
+      final SettableFuture<TtsVoiceEntity> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TtsVoiceEntity>() {}, new AsyncApiCallback<ApiResponse<TtsVoiceEntity>>() {
+        @Override
+        public void onCompleted(ApiResponse<TtsVoiceEntity> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get details about a specific voice for a TTS engine
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TtsVoiceEntity>> getIntegrationsSpeechTtsEngineVoiceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TtsVoiceEntity>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TtsVoiceEntity>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TtsVoiceEntity>() {}, new AsyncApiCallback<ApiResponse<TtsVoiceEntity>>() {
+        @Override
+        public void onCompleted(ApiResponse<TtsVoiceEntity> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TtsVoiceEntity> response = (ApiResponse<TtsVoiceEntity>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TtsVoiceEntity> response = (ApiResponse<TtsVoiceEntity>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a list of voices for a TTS engine
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TtsVoiceEntityListing> getIntegrationsSpeechTtsEngineVoicesAsync(GetIntegrationsSpeechTtsEngineVoicesRequest request, final AsyncApiCallback<TtsVoiceEntityListing> callback) {
+    try {
+      final SettableFuture<TtsVoiceEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TtsVoiceEntityListing>() {}, new AsyncApiCallback<ApiResponse<TtsVoiceEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TtsVoiceEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of voices for a TTS engine
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TtsVoiceEntityListing>> getIntegrationsSpeechTtsEngineVoicesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TtsVoiceEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TtsVoiceEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TtsVoiceEntityListing>() {}, new AsyncApiCallback<ApiResponse<TtsVoiceEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TtsVoiceEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TtsVoiceEntityListing> response = (ApiResponse<TtsVoiceEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TtsVoiceEntityListing> response = (ApiResponse<TtsVoiceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a list of TTS engines enabled for org
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TtsEngineEntityListing> getIntegrationsSpeechTtsEnginesAsync(GetIntegrationsSpeechTtsEnginesRequest request, final AsyncApiCallback<TtsEngineEntityListing> callback) {
+    try {
+      final SettableFuture<TtsEngineEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TtsEngineEntityListing>() {}, new AsyncApiCallback<ApiResponse<TtsEngineEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TtsEngineEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of TTS engines enabled for org
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TtsEngineEntityListing>> getIntegrationsSpeechTtsEnginesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TtsEngineEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TtsEngineEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TtsEngineEntityListing>() {}, new AsyncApiCallback<ApiResponse<TtsEngineEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TtsEngineEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TtsEngineEntityListing> response = (ApiResponse<TtsEngineEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TtsEngineEntityListing> response = (ApiResponse<TtsEngineEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get TTS settings for an org
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TtsSettings> getIntegrationsSpeechTtsSettingsAsync(GetIntegrationsSpeechTtsSettingsRequest request, final AsyncApiCallback<TtsSettings> callback) {
+    try {
+      final SettableFuture<TtsSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TtsSettings>() {}, new AsyncApiCallback<ApiResponse<TtsSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<TtsSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get TTS settings for an org
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TtsSettings>> getIntegrationsSpeechTtsSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TtsSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TtsSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TtsSettings>() {}, new AsyncApiCallback<ApiResponse<TtsSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<TtsSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TtsSettings> response = (ApiResponse<TtsSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TtsSettings> response = (ApiResponse<TtsSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get integration type.
    * 
    * @param request the request object
@@ -3207,6 +3988,82 @@ public class IntegrationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CredentialInfo> response = (ApiResponse<CredentialInfo>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update TTS settings for an org
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TtsSettings> putIntegrationsSpeechTtsSettingsAsync(PutIntegrationsSpeechTtsSettingsRequest request, final AsyncApiCallback<TtsSettings> callback) {
+    try {
+      final SettableFuture<TtsSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TtsSettings>() {}, new AsyncApiCallback<ApiResponse<TtsSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<TtsSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update TTS settings for an org
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TtsSettings>> putIntegrationsSpeechTtsSettingsAsync(ApiRequest<TtsSettings> request, final AsyncApiCallback<ApiResponse<TtsSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TtsSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TtsSettings>() {}, new AsyncApiCallback<ApiResponse<TtsSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<TtsSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TtsSettings> response = (ApiResponse<TtsSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TtsSettings> response = (ApiResponse<TtsSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

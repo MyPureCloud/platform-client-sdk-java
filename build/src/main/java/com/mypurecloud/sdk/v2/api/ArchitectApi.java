@@ -44,6 +44,8 @@ import com.mypurecloud.sdk.v2.model.DataTable;
 import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowOutcome;
+import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 
 
@@ -99,6 +101,8 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDivisionviewsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectDependencytrackingBuildRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectEmergencygroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectIvrsRequest;
@@ -119,6 +123,7 @@ import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsRevertRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsUnlockRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatablesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectEmergencygroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectIvrRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectPromptRequest;
@@ -129,6 +134,7 @@ import com.mypurecloud.sdk.v2.api.request.PutArchitectSystempromptResourceReques
 import com.mypurecloud.sdk.v2.api.request.PutFlowRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFlowsDatatableRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFlowsDatatableRowRequest;
+import com.mypurecloud.sdk.v2.api.request.PutFlowsOutcomeRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -4785,6 +4791,192 @@ public class ArchitectApi {
 
   
   /**
+   * Get a flow outcome
+   * Returns a specified flow outcome
+   * @param flowOutcomeId flow outcome ID (required)
+   * @return FlowOutcome
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowOutcome getFlowsOutcome(String flowOutcomeId) throws IOException, ApiException {
+    return  getFlowsOutcome(createGetFlowsOutcomeRequest(flowOutcomeId));
+  }
+
+  /**
+   * Get a flow outcome
+   * Returns a specified flow outcome
+   * @param flowOutcomeId flow outcome ID (required)
+   * @return FlowOutcome
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowOutcome> getFlowsOutcomeWithHttpInfo(String flowOutcomeId) throws IOException {
+    return getFlowsOutcome(createGetFlowsOutcomeRequest(flowOutcomeId).withHttpInfo());
+  }
+
+  private GetFlowsOutcomeRequest createGetFlowsOutcomeRequest(String flowOutcomeId) {
+    return GetFlowsOutcomeRequest.builder()
+            .withFlowOutcomeId(flowOutcomeId)
+    
+            .build();
+  }
+
+  /**
+   * Get a flow outcome
+   * Returns a specified flow outcome
+   * @param request The request object
+   * @return FlowOutcome
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowOutcome getFlowsOutcome(GetFlowsOutcomeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowOutcome> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowOutcome>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a flow outcome
+   * Returns a specified flow outcome
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowOutcome> getFlowsOutcome(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowOutcome>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowOutcome> response = (ApiResponse<FlowOutcome>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowOutcome> response = (ApiResponse<FlowOutcome>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a pageable list of flow outcomes, filtered by query parameters
+   * Multiple IDs can be specified, in which case all matching flow outcomes will be returned, and no other parameters will be evaluated.
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to id)
+   * @param sortOrder Sort order (optional, default to asc)
+   * @param id ID (optional)
+   * @param name Name (optional)
+   * @param description Description (optional)
+   * @param nameOrDescription Name or description (optional)
+   * @return FlowOutcomeListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowOutcomeListing getFlowsOutcomes(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription) throws IOException, ApiException {
+    return  getFlowsOutcomes(createGetFlowsOutcomesRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription));
+  }
+
+  /**
+   * Get a pageable list of flow outcomes, filtered by query parameters
+   * Multiple IDs can be specified, in which case all matching flow outcomes will be returned, and no other parameters will be evaluated.
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to id)
+   * @param sortOrder Sort order (optional, default to asc)
+   * @param id ID (optional)
+   * @param name Name (optional)
+   * @param description Description (optional)
+   * @param nameOrDescription Name or description (optional)
+   * @return FlowOutcomeListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowOutcomeListing> getFlowsOutcomesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription) throws IOException {
+    return getFlowsOutcomes(createGetFlowsOutcomesRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription).withHttpInfo());
+  }
+
+  private GetFlowsOutcomesRequest createGetFlowsOutcomesRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription) {
+    return GetFlowsOutcomesRequest.builder()
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .withSortBy(sortBy)
+    
+            .withSortOrder(sortOrder)
+    
+            .withId(id)
+    
+            .withName(name)
+    
+            .withDescription(description)
+    
+            .withNameOrDescription(nameOrDescription)
+    
+            .build();
+  }
+
+  /**
+   * Get a pageable list of flow outcomes, filtered by query parameters
+   * Multiple IDs can be specified, in which case all matching flow outcomes will be returned, and no other parameters will be evaluated.
+   * @param request The request object
+   * @return FlowOutcomeListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowOutcomeListing getFlowsOutcomes(GetFlowsOutcomesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowOutcomeListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowOutcomeListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a pageable list of flow outcomes, filtered by query parameters
+   * Multiple IDs can be specified, in which case all matching flow outcomes will be returned, and no other parameters will be evaluated.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowOutcomeListing> getFlowsOutcomes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowOutcomeListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowOutcomeListing> response = (ApiResponse<FlowOutcomeListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowOutcomeListing> response = (ApiResponse<FlowOutcomeListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Rebuild Dependency Tracking data for an organization
    * Asynchronous.  Notification topic: v2.architect.dependencytracking.build
    * @throws ApiException if the request fails on the server
@@ -6378,6 +6570,85 @@ public class ArchitectApi {
 
   
   /**
+   * Create a flow outcome
+   * Asynchronous.  Notification topic: v2.flows.outcomes.{flowOutcomeId}
+   * @param body  (optional)
+   * @return FlowOutcome
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowOutcome postFlowsOutcomes(FlowOutcome body) throws IOException, ApiException {
+    return  postFlowsOutcomes(createPostFlowsOutcomesRequest(body));
+  }
+
+  /**
+   * Create a flow outcome
+   * Asynchronous.  Notification topic: v2.flows.outcomes.{flowOutcomeId}
+   * @param body  (optional)
+   * @return FlowOutcome
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowOutcome> postFlowsOutcomesWithHttpInfo(FlowOutcome body) throws IOException {
+    return postFlowsOutcomes(createPostFlowsOutcomesRequest(body).withHttpInfo());
+  }
+
+  private PostFlowsOutcomesRequest createPostFlowsOutcomesRequest(FlowOutcome body) {
+    return PostFlowsOutcomesRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a flow outcome
+   * Asynchronous.  Notification topic: v2.flows.outcomes.{flowOutcomeId}
+   * @param request The request object
+   * @return FlowOutcome
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowOutcome postFlowsOutcomes(PostFlowsOutcomesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowOutcome> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowOutcome>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a flow outcome
+   * Asynchronous.  Notification topic: v2.flows.outcomes.{flowOutcomeId}
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowOutcome> postFlowsOutcomes(ApiRequest<FlowOutcome> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowOutcome>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowOutcome> response = (ApiResponse<FlowOutcome>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowOutcome> response = (ApiResponse<FlowOutcome>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Updates a emergency group by ID
    * 
    * @param emergencyGroupId Emergency group ID (required)
@@ -7218,6 +7489,89 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Map<String, Object>> response = (ApiResponse<Map<String, Object>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Updates a flow outcome
+   * Updates a flow outcome.  Asynchronous.  Notification topic: v2.flowoutcomes.{flowoutcomeId}
+   * @param flowOutcomeId flow outcome ID (required)
+   * @param body  (optional)
+   * @return Operation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Operation putFlowsOutcome(String flowOutcomeId, FlowOutcome body) throws IOException, ApiException {
+    return  putFlowsOutcome(createPutFlowsOutcomeRequest(flowOutcomeId, body));
+  }
+
+  /**
+   * Updates a flow outcome
+   * Updates a flow outcome.  Asynchronous.  Notification topic: v2.flowoutcomes.{flowoutcomeId}
+   * @param flowOutcomeId flow outcome ID (required)
+   * @param body  (optional)
+   * @return Operation
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Operation> putFlowsOutcomeWithHttpInfo(String flowOutcomeId, FlowOutcome body) throws IOException {
+    return putFlowsOutcome(createPutFlowsOutcomeRequest(flowOutcomeId, body).withHttpInfo());
+  }
+
+  private PutFlowsOutcomeRequest createPutFlowsOutcomeRequest(String flowOutcomeId, FlowOutcome body) {
+    return PutFlowsOutcomeRequest.builder()
+            .withFlowOutcomeId(flowOutcomeId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Updates a flow outcome
+   * Updates a flow outcome.  Asynchronous.  Notification topic: v2.flowoutcomes.{flowoutcomeId}
+   * @param request The request object
+   * @return Operation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Operation putFlowsOutcome(PutFlowsOutcomeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Operation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Operation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates a flow outcome
+   * Updates a flow outcome.  Asynchronous.  Notification topic: v2.flowoutcomes.{flowoutcomeId}
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Operation> putFlowsOutcome(ApiRequest<FlowOutcome> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Operation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

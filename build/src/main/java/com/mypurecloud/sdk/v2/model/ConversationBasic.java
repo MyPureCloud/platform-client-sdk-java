@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.ConversationDivisionMembership;
 import com.mypurecloud.sdk.v2.model.ParticipantBasic;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -22,6 +23,7 @@ public class ConversationBasic  implements Serializable {
   private String name = null;
   private Date startTime = null;
   private Date endTime = null;
+  private List<ConversationDivisionMembership> divisions = new ArrayList<ConversationDivisionMembership>();
   private String selfUri = null;
   private List<ParticipantBasic> participants = new ArrayList<ParticipantBasic>();
 
@@ -86,6 +88,24 @@ public class ConversationBasic  implements Serializable {
   }
 
   
+  /**
+   * Identifiers of divisions associated with this conversation
+   **/
+  public ConversationBasic divisions(List<ConversationDivisionMembership> divisions) {
+    this.divisions = divisions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Identifiers of divisions associated with this conversation")
+  @JsonProperty("divisions")
+  public List<ConversationDivisionMembership> getDivisions() {
+    return divisions;
+  }
+  public void setDivisions(List<ConversationDivisionMembership> divisions) {
+    this.divisions = divisions;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -124,13 +144,14 @@ public class ConversationBasic  implements Serializable {
         Objects.equals(this.name, conversationBasic.name) &&
         Objects.equals(this.startTime, conversationBasic.startTime) &&
         Objects.equals(this.endTime, conversationBasic.endTime) &&
+        Objects.equals(this.divisions, conversationBasic.divisions) &&
         Objects.equals(this.selfUri, conversationBasic.selfUri) &&
         Objects.equals(this.participants, conversationBasic.participants);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, startTime, endTime, selfUri, participants);
+    return Objects.hash(id, name, startTime, endTime, divisions, selfUri, participants);
   }
 
   @Override
@@ -142,6 +163,7 @@ public class ConversationBasic  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
     sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+    sb.append("    divisions: ").append(toIndentedString(divisions)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("}");

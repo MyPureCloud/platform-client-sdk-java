@@ -60,6 +60,7 @@ public class Dependency  implements Serializable {
     TTSVOICE("TTSVOICE"),
     USER("USER"),
     USERPROMPT("USERPROMPT"),
+    WIDGET("WIDGET"),
     WORKFLOW("WORKFLOW");
 
     private String value;

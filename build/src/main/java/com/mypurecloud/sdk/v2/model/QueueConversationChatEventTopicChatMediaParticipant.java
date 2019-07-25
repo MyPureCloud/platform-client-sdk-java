@@ -215,6 +215,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
   private FlaggedReasonEnum flaggedReason = null;
   private QueueConversationChatEventTopicJourneyContext journeyContext = null;
   private String roomId = null;
+  private String avatarImageUrl = null;
 
   
   /**
@@ -761,6 +762,23 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
   }
 
   
+  /**
+   **/
+  public QueueConversationChatEventTopicChatMediaParticipant avatarImageUrl(String avatarImageUrl) {
+    this.avatarImageUrl = avatarImageUrl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("avatarImageUrl")
+  public String getAvatarImageUrl() {
+    return avatarImageUrl;
+  }
+  public void setAvatarImageUrl(String avatarImageUrl) {
+    this.avatarImageUrl = avatarImageUrl;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -802,12 +820,13 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
         Objects.equals(this.screenRecordingState, queueConversationChatEventTopicChatMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, queueConversationChatEventTopicChatMediaParticipant.flaggedReason) &&
         Objects.equals(this.journeyContext, queueConversationChatEventTopicChatMediaParticipant.journeyContext) &&
-        Objects.equals(this.roomId, queueConversationChatEventTopicChatMediaParticipant.roomId);
+        Objects.equals(this.roomId, queueConversationChatEventTopicChatMediaParticipant.roomId) &&
+        Objects.equals(this.avatarImageUrl, queueConversationChatEventTopicChatMediaParticipant.avatarImageUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, roomId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, roomId, avatarImageUrl);
   }
 
   @Override
@@ -847,6 +866,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
+    sb.append("    avatarImageUrl: ").append(toIndentedString(avatarImageUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -25,6 +25,16 @@ import com.mypurecloud.sdk.v2.model.CredentialInfoListing;
 import com.mypurecloud.sdk.v2.model.CredentialTypeListing;
 import com.mypurecloud.sdk.v2.model.IntegrationEventEntityListing;
 import com.mypurecloud.sdk.v2.model.IntegrationEvent;
+import com.mypurecloud.sdk.v2.model.DialogflowAgent;
+import com.mypurecloud.sdk.v2.model.DialogflowAgentSummaryEntityListing;
+import com.mypurecloud.sdk.v2.model.LexBotAlias;
+import com.mypurecloud.sdk.v2.model.LexBotAliasEntityListing;
+import com.mypurecloud.sdk.v2.model.LexBotEntityListing;
+import com.mypurecloud.sdk.v2.model.TtsEngineEntity;
+import com.mypurecloud.sdk.v2.model.TtsVoiceEntity;
+import com.mypurecloud.sdk.v2.model.TtsVoiceEntityListing;
+import com.mypurecloud.sdk.v2.model.TtsEngineEntityListing;
+import com.mypurecloud.sdk.v2.model.TtsSettings;
 import com.mypurecloud.sdk.v2.model.IntegrationType;
 import com.mypurecloud.sdk.v2.model.IntegrationTypeEntityListing;
 import com.mypurecloud.sdk.v2.model.UpdateActionInput;
@@ -61,6 +71,16 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsTypesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsEventlogRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsEventlogEventIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechDialogflowAgentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechDialogflowAgentsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexBotAliasRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexBotBotIdAliasesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechLexBotsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsEngineRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsEngineVoiceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsEngineVoicesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsEnginesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsTypeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsTypeConfigschemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsTypesRequest;
@@ -79,6 +99,7 @@ import com.mypurecloud.sdk.v2.api.request.PostIntegrationsCredentialsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsWorkforcemanagementVendorconnectionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationConfigCurrentRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsCredentialRequest;
+import com.mypurecloud.sdk.v2.api.request.PutIntegrationsSpeechTtsSettingsRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -2116,6 +2137,856 @@ public class IntegrationsApi {
 
   
   /**
+   * Get details about a Dialogflow agent
+   * 
+   * @param agentId The agent ID (required)
+   * @return DialogflowAgent
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DialogflowAgent getIntegrationsSpeechDialogflowAgent(String agentId) throws IOException, ApiException {
+    return  getIntegrationsSpeechDialogflowAgent(createGetIntegrationsSpeechDialogflowAgentRequest(agentId));
+  }
+
+  /**
+   * Get details about a Dialogflow agent
+   * 
+   * @param agentId The agent ID (required)
+   * @return DialogflowAgent
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DialogflowAgent> getIntegrationsSpeechDialogflowAgentWithHttpInfo(String agentId) throws IOException {
+    return getIntegrationsSpeechDialogflowAgent(createGetIntegrationsSpeechDialogflowAgentRequest(agentId).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechDialogflowAgentRequest createGetIntegrationsSpeechDialogflowAgentRequest(String agentId) {
+    return GetIntegrationsSpeechDialogflowAgentRequest.builder()
+            .withAgentId(agentId)
+    
+            .build();
+  }
+
+  /**
+   * Get details about a Dialogflow agent
+   * 
+   * @param request The request object
+   * @return DialogflowAgent
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DialogflowAgent getIntegrationsSpeechDialogflowAgent(GetIntegrationsSpeechDialogflowAgentRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DialogflowAgent> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DialogflowAgent>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get details about a Dialogflow agent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DialogflowAgent> getIntegrationsSpeechDialogflowAgent(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DialogflowAgent>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DialogflowAgent> response = (ApiResponse<DialogflowAgent>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DialogflowAgent> response = (ApiResponse<DialogflowAgent>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of Dialogflow agents in the customers&#39; Google accounts
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param name Filter on agent name (optional)
+   * @return DialogflowAgentSummaryEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DialogflowAgentSummaryEntityListing getIntegrationsSpeechDialogflowAgents(Integer pageNumber, Integer pageSize, String name) throws IOException, ApiException {
+    return  getIntegrationsSpeechDialogflowAgents(createGetIntegrationsSpeechDialogflowAgentsRequest(pageNumber, pageSize, name));
+  }
+
+  /**
+   * Get a list of Dialogflow agents in the customers&#39; Google accounts
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param name Filter on agent name (optional)
+   * @return DialogflowAgentSummaryEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DialogflowAgentSummaryEntityListing> getIntegrationsSpeechDialogflowAgentsWithHttpInfo(Integer pageNumber, Integer pageSize, String name) throws IOException {
+    return getIntegrationsSpeechDialogflowAgents(createGetIntegrationsSpeechDialogflowAgentsRequest(pageNumber, pageSize, name).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechDialogflowAgentsRequest createGetIntegrationsSpeechDialogflowAgentsRequest(Integer pageNumber, Integer pageSize, String name) {
+    return GetIntegrationsSpeechDialogflowAgentsRequest.builder()
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .withName(name)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of Dialogflow agents in the customers&#39; Google accounts
+   * 
+   * @param request The request object
+   * @return DialogflowAgentSummaryEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DialogflowAgentSummaryEntityListing getIntegrationsSpeechDialogflowAgents(GetIntegrationsSpeechDialogflowAgentsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DialogflowAgentSummaryEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DialogflowAgentSummaryEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Dialogflow agents in the customers&#39; Google accounts
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DialogflowAgentSummaryEntityListing> getIntegrationsSpeechDialogflowAgents(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DialogflowAgentSummaryEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DialogflowAgentSummaryEntityListing> response = (ApiResponse<DialogflowAgentSummaryEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DialogflowAgentSummaryEntityListing> response = (ApiResponse<DialogflowAgentSummaryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get details about a Lex bot alias
+   * 
+   * @param aliasId The alias ID (required)
+   * @return LexBotAlias
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LexBotAlias getIntegrationsSpeechLexBotAlias(String aliasId) throws IOException, ApiException {
+    return  getIntegrationsSpeechLexBotAlias(createGetIntegrationsSpeechLexBotAliasRequest(aliasId));
+  }
+
+  /**
+   * Get details about a Lex bot alias
+   * 
+   * @param aliasId The alias ID (required)
+   * @return LexBotAlias
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LexBotAlias> getIntegrationsSpeechLexBotAliasWithHttpInfo(String aliasId) throws IOException {
+    return getIntegrationsSpeechLexBotAlias(createGetIntegrationsSpeechLexBotAliasRequest(aliasId).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechLexBotAliasRequest createGetIntegrationsSpeechLexBotAliasRequest(String aliasId) {
+    return GetIntegrationsSpeechLexBotAliasRequest.builder()
+            .withAliasId(aliasId)
+    
+            .build();
+  }
+
+  /**
+   * Get details about a Lex bot alias
+   * 
+   * @param request The request object
+   * @return LexBotAlias
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LexBotAlias getIntegrationsSpeechLexBotAlias(GetIntegrationsSpeechLexBotAliasRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LexBotAlias> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LexBotAlias>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get details about a Lex bot alias
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LexBotAlias> getIntegrationsSpeechLexBotAlias(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LexBotAlias>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LexBotAlias> response = (ApiResponse<LexBotAlias>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LexBotAlias> response = (ApiResponse<LexBotAlias>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of aliases for a bot in the customer&#39;s AWS accounts
+   * 
+   * @param botId The bot ID (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param status Filter on alias status (optional)
+   * @param name Filter on alias name (optional)
+   * @return LexBotAliasEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LexBotAliasEntityListing getIntegrationsSpeechLexBotBotIdAliases(String botId, Integer pageNumber, Integer pageSize, String status, String name) throws IOException, ApiException {
+    return  getIntegrationsSpeechLexBotBotIdAliases(createGetIntegrationsSpeechLexBotBotIdAliasesRequest(botId, pageNumber, pageSize, status, name));
+  }
+
+  /**
+   * Get a list of aliases for a bot in the customer&#39;s AWS accounts
+   * 
+   * @param botId The bot ID (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param status Filter on alias status (optional)
+   * @param name Filter on alias name (optional)
+   * @return LexBotAliasEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LexBotAliasEntityListing> getIntegrationsSpeechLexBotBotIdAliasesWithHttpInfo(String botId, Integer pageNumber, Integer pageSize, String status, String name) throws IOException {
+    return getIntegrationsSpeechLexBotBotIdAliases(createGetIntegrationsSpeechLexBotBotIdAliasesRequest(botId, pageNumber, pageSize, status, name).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechLexBotBotIdAliasesRequest createGetIntegrationsSpeechLexBotBotIdAliasesRequest(String botId, Integer pageNumber, Integer pageSize, String status, String name) {
+    return GetIntegrationsSpeechLexBotBotIdAliasesRequest.builder()
+            .withBotId(botId)
+    
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .withStatus(status)
+    
+            .withName(name)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of aliases for a bot in the customer&#39;s AWS accounts
+   * 
+   * @param request The request object
+   * @return LexBotAliasEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LexBotAliasEntityListing getIntegrationsSpeechLexBotBotIdAliases(GetIntegrationsSpeechLexBotBotIdAliasesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LexBotAliasEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LexBotAliasEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of aliases for a bot in the customer&#39;s AWS accounts
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LexBotAliasEntityListing> getIntegrationsSpeechLexBotBotIdAliases(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LexBotAliasEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LexBotAliasEntityListing> response = (ApiResponse<LexBotAliasEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LexBotAliasEntityListing> response = (ApiResponse<LexBotAliasEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of Lex bots in the customers&#39; AWS accounts
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param name Filter on bot name (optional)
+   * @return LexBotEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LexBotEntityListing getIntegrationsSpeechLexBots(Integer pageNumber, Integer pageSize, String name) throws IOException, ApiException {
+    return  getIntegrationsSpeechLexBots(createGetIntegrationsSpeechLexBotsRequest(pageNumber, pageSize, name));
+  }
+
+  /**
+   * Get a list of Lex bots in the customers&#39; AWS accounts
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param name Filter on bot name (optional)
+   * @return LexBotEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LexBotEntityListing> getIntegrationsSpeechLexBotsWithHttpInfo(Integer pageNumber, Integer pageSize, String name) throws IOException {
+    return getIntegrationsSpeechLexBots(createGetIntegrationsSpeechLexBotsRequest(pageNumber, pageSize, name).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechLexBotsRequest createGetIntegrationsSpeechLexBotsRequest(Integer pageNumber, Integer pageSize, String name) {
+    return GetIntegrationsSpeechLexBotsRequest.builder()
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .withName(name)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of Lex bots in the customers&#39; AWS accounts
+   * 
+   * @param request The request object
+   * @return LexBotEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LexBotEntityListing getIntegrationsSpeechLexBots(GetIntegrationsSpeechLexBotsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LexBotEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LexBotEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Lex bots in the customers&#39; AWS accounts
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LexBotEntityListing> getIntegrationsSpeechLexBots(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LexBotEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LexBotEntityListing> response = (ApiResponse<LexBotEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LexBotEntityListing> response = (ApiResponse<LexBotEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get details about a TTS engine
+   * 
+   * @param engineId The engine ID (required)
+   * @param includeVoices Include voices for the engine (optional, default to false)
+   * @return TtsEngineEntity
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TtsEngineEntity getIntegrationsSpeechTtsEngine(String engineId, Boolean includeVoices) throws IOException, ApiException {
+    return  getIntegrationsSpeechTtsEngine(createGetIntegrationsSpeechTtsEngineRequest(engineId, includeVoices));
+  }
+
+  /**
+   * Get details about a TTS engine
+   * 
+   * @param engineId The engine ID (required)
+   * @param includeVoices Include voices for the engine (optional, default to false)
+   * @return TtsEngineEntity
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TtsEngineEntity> getIntegrationsSpeechTtsEngineWithHttpInfo(String engineId, Boolean includeVoices) throws IOException {
+    return getIntegrationsSpeechTtsEngine(createGetIntegrationsSpeechTtsEngineRequest(engineId, includeVoices).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechTtsEngineRequest createGetIntegrationsSpeechTtsEngineRequest(String engineId, Boolean includeVoices) {
+    return GetIntegrationsSpeechTtsEngineRequest.builder()
+            .withEngineId(engineId)
+    
+            .withIncludeVoices(includeVoices)
+    
+            .build();
+  }
+
+  /**
+   * Get details about a TTS engine
+   * 
+   * @param request The request object
+   * @return TtsEngineEntity
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TtsEngineEntity getIntegrationsSpeechTtsEngine(GetIntegrationsSpeechTtsEngineRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TtsEngineEntity> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TtsEngineEntity>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get details about a TTS engine
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TtsEngineEntity> getIntegrationsSpeechTtsEngine(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TtsEngineEntity>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TtsEngineEntity> response = (ApiResponse<TtsEngineEntity>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TtsEngineEntity> response = (ApiResponse<TtsEngineEntity>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get details about a specific voice for a TTS engine
+   * 
+   * @param engineId The engine ID (required)
+   * @param voiceId The voice ID (required)
+   * @return TtsVoiceEntity
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TtsVoiceEntity getIntegrationsSpeechTtsEngineVoice(String engineId, String voiceId) throws IOException, ApiException {
+    return  getIntegrationsSpeechTtsEngineVoice(createGetIntegrationsSpeechTtsEngineVoiceRequest(engineId, voiceId));
+  }
+
+  /**
+   * Get details about a specific voice for a TTS engine
+   * 
+   * @param engineId The engine ID (required)
+   * @param voiceId The voice ID (required)
+   * @return TtsVoiceEntity
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TtsVoiceEntity> getIntegrationsSpeechTtsEngineVoiceWithHttpInfo(String engineId, String voiceId) throws IOException {
+    return getIntegrationsSpeechTtsEngineVoice(createGetIntegrationsSpeechTtsEngineVoiceRequest(engineId, voiceId).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechTtsEngineVoiceRequest createGetIntegrationsSpeechTtsEngineVoiceRequest(String engineId, String voiceId) {
+    return GetIntegrationsSpeechTtsEngineVoiceRequest.builder()
+            .withEngineId(engineId)
+    
+            .withVoiceId(voiceId)
+    
+            .build();
+  }
+
+  /**
+   * Get details about a specific voice for a TTS engine
+   * 
+   * @param request The request object
+   * @return TtsVoiceEntity
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TtsVoiceEntity getIntegrationsSpeechTtsEngineVoice(GetIntegrationsSpeechTtsEngineVoiceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TtsVoiceEntity> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TtsVoiceEntity>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get details about a specific voice for a TTS engine
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TtsVoiceEntity> getIntegrationsSpeechTtsEngineVoice(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TtsVoiceEntity>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TtsVoiceEntity> response = (ApiResponse<TtsVoiceEntity>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TtsVoiceEntity> response = (ApiResponse<TtsVoiceEntity>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of voices for a TTS engine
+   * 
+   * @param engineId The engine ID (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return TtsVoiceEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TtsVoiceEntityListing getIntegrationsSpeechTtsEngineVoices(String engineId, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getIntegrationsSpeechTtsEngineVoices(createGetIntegrationsSpeechTtsEngineVoicesRequest(engineId, pageNumber, pageSize));
+  }
+
+  /**
+   * Get a list of voices for a TTS engine
+   * 
+   * @param engineId The engine ID (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return TtsVoiceEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TtsVoiceEntityListing> getIntegrationsSpeechTtsEngineVoicesWithHttpInfo(String engineId, Integer pageNumber, Integer pageSize) throws IOException {
+    return getIntegrationsSpeechTtsEngineVoices(createGetIntegrationsSpeechTtsEngineVoicesRequest(engineId, pageNumber, pageSize).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechTtsEngineVoicesRequest createGetIntegrationsSpeechTtsEngineVoicesRequest(String engineId, Integer pageNumber, Integer pageSize) {
+    return GetIntegrationsSpeechTtsEngineVoicesRequest.builder()
+            .withEngineId(engineId)
+    
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of voices for a TTS engine
+   * 
+   * @param request The request object
+   * @return TtsVoiceEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TtsVoiceEntityListing getIntegrationsSpeechTtsEngineVoices(GetIntegrationsSpeechTtsEngineVoicesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TtsVoiceEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TtsVoiceEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of voices for a TTS engine
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TtsVoiceEntityListing> getIntegrationsSpeechTtsEngineVoices(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TtsVoiceEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TtsVoiceEntityListing> response = (ApiResponse<TtsVoiceEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TtsVoiceEntityListing> response = (ApiResponse<TtsVoiceEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of TTS engines enabled for org
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param includeVoices Include voices for the engine (optional, default to false)
+   * @param name Filter on engine name (optional)
+   * @param language Filter on supported language. If includeVoices=true then the voices are also filtered. (optional)
+   * @return TtsEngineEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TtsEngineEntityListing getIntegrationsSpeechTtsEngines(Integer pageNumber, Integer pageSize, Boolean includeVoices, String name, String language) throws IOException, ApiException {
+    return  getIntegrationsSpeechTtsEngines(createGetIntegrationsSpeechTtsEnginesRequest(pageNumber, pageSize, includeVoices, name, language));
+  }
+
+  /**
+   * Get a list of TTS engines enabled for org
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param includeVoices Include voices for the engine (optional, default to false)
+   * @param name Filter on engine name (optional)
+   * @param language Filter on supported language. If includeVoices=true then the voices are also filtered. (optional)
+   * @return TtsEngineEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TtsEngineEntityListing> getIntegrationsSpeechTtsEnginesWithHttpInfo(Integer pageNumber, Integer pageSize, Boolean includeVoices, String name, String language) throws IOException {
+    return getIntegrationsSpeechTtsEngines(createGetIntegrationsSpeechTtsEnginesRequest(pageNumber, pageSize, includeVoices, name, language).withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechTtsEnginesRequest createGetIntegrationsSpeechTtsEnginesRequest(Integer pageNumber, Integer pageSize, Boolean includeVoices, String name, String language) {
+    return GetIntegrationsSpeechTtsEnginesRequest.builder()
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .withIncludeVoices(includeVoices)
+    
+            .withName(name)
+    
+            .withLanguage(language)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of TTS engines enabled for org
+   * 
+   * @param request The request object
+   * @return TtsEngineEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TtsEngineEntityListing getIntegrationsSpeechTtsEngines(GetIntegrationsSpeechTtsEnginesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TtsEngineEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TtsEngineEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of TTS engines enabled for org
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TtsEngineEntityListing> getIntegrationsSpeechTtsEngines(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TtsEngineEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TtsEngineEntityListing> response = (ApiResponse<TtsEngineEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TtsEngineEntityListing> response = (ApiResponse<TtsEngineEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get TTS settings for an org
+   * 
+   * @return TtsSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TtsSettings getIntegrationsSpeechTtsSettings() throws IOException, ApiException {
+    return  getIntegrationsSpeechTtsSettings(createGetIntegrationsSpeechTtsSettingsRequest());
+  }
+
+  /**
+   * Get TTS settings for an org
+   * 
+   * @return TtsSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TtsSettings> getIntegrationsSpeechTtsSettingsWithHttpInfo() throws IOException {
+    return getIntegrationsSpeechTtsSettings(createGetIntegrationsSpeechTtsSettingsRequest().withHttpInfo());
+  }
+
+  private GetIntegrationsSpeechTtsSettingsRequest createGetIntegrationsSpeechTtsSettingsRequest() {
+    return GetIntegrationsSpeechTtsSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get TTS settings for an org
+   * 
+   * @param request The request object
+   * @return TtsSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TtsSettings getIntegrationsSpeechTtsSettings(GetIntegrationsSpeechTtsSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TtsSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TtsSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get TTS settings for an org
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TtsSettings> getIntegrationsSpeechTtsSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TtsSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TtsSettings> response = (ApiResponse<TtsSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TtsSettings> response = (ApiResponse<TtsSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get integration type.
    * 
    * @param typeId Integration Type Id (required)
@@ -3616,6 +4487,85 @@ public class IntegrationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CredentialInfo> response = (ApiResponse<CredentialInfo>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update TTS settings for an org
+   * 
+   * @param body Updated TtsSettings (required)
+   * @return TtsSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TtsSettings putIntegrationsSpeechTtsSettings(TtsSettings body) throws IOException, ApiException {
+    return  putIntegrationsSpeechTtsSettings(createPutIntegrationsSpeechTtsSettingsRequest(body));
+  }
+
+  /**
+   * Update TTS settings for an org
+   * 
+   * @param body Updated TtsSettings (required)
+   * @return TtsSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TtsSettings> putIntegrationsSpeechTtsSettingsWithHttpInfo(TtsSettings body) throws IOException {
+    return putIntegrationsSpeechTtsSettings(createPutIntegrationsSpeechTtsSettingsRequest(body).withHttpInfo());
+  }
+
+  private PutIntegrationsSpeechTtsSettingsRequest createPutIntegrationsSpeechTtsSettingsRequest(TtsSettings body) {
+    return PutIntegrationsSpeechTtsSettingsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update TTS settings for an org
+   * 
+   * @param request The request object
+   * @return TtsSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TtsSettings putIntegrationsSpeechTtsSettings(PutIntegrationsSpeechTtsSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TtsSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TtsSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update TTS settings for an org
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TtsSettings> putIntegrationsSpeechTtsSettings(ApiRequest<TtsSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TtsSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TtsSettings> response = (ApiResponse<TtsSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TtsSettings> response = (ApiResponse<TtsSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
