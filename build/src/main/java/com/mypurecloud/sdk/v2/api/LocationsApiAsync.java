@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteLocationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLocationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLocationSublocationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLocationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLocationsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLocationRequest;
@@ -189,6 +190,82 @@ public class LocationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<LocationDefinition> response = (ApiResponse<LocationDefinition>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get sublocations for location ID.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LocationEntityListing> getLocationSublocationsAsync(GetLocationSublocationsRequest request, final AsyncApiCallback<LocationEntityListing> callback) {
+    try {
+      final SettableFuture<LocationEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LocationEntityListing>() {}, new AsyncApiCallback<ApiResponse<LocationEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LocationEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get sublocations for location ID.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LocationEntityListing>> getLocationSublocationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LocationEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LocationEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LocationEntityListing>() {}, new AsyncApiCallback<ApiResponse<LocationEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LocationEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LocationEntityListing> response = (ApiResponse<LocationEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LocationEntityListing> response = (ApiResponse<LocationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

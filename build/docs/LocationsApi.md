@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deleteLocation**](LocationsApi.html#deleteLocation) | Delete a location |
 | [**getLocation**](LocationsApi.html#getLocation) | Get Location by ID. |
+| [**getLocationSublocations**](LocationsApi.html#getLocationSublocations) | Get sublocations for location ID. |
 | [**getLocations**](LocationsApi.html#getLocations) | Get a list of all locations. |
 | [**getLocationsSearch**](LocationsApi.html#getLocationsSearch) | Search locations using the q64 value returned from a previous search |
 | [**patchLocation**](LocationsApi.html#patchLocation) | Update a location |
@@ -141,6 +142,68 @@ try {
 ### Return type
 
 [**LocationDefinition**](LocationDefinition.html)
+
+<a name="getLocationSublocations"></a>
+
+# **getLocationSublocations**
+
+
+
+> [LocationEntityListing](LocationEntityListing.html) getLocationSublocations(locationId)
+
+Get sublocations for location ID.
+
+
+
+Wraps GET /api/v2/locations/{locationId}/sublocations  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LocationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LocationsApi apiInstance = new LocationsApi();
+String locationId = "locationId_example"; // String | Location ID
+try {
+    LocationEntityListing result = apiInstance.getLocationSublocations(locationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LocationsApi#getLocationSublocations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **locationId** | **String**| Location ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LocationEntityListing**](LocationEntityListing.html)
 
 <a name="getLocations"></a>
 

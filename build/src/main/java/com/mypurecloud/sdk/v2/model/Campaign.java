@@ -80,7 +80,9 @@ public class Campaign  implements Serializable {
     STOPPING("stopping"),
     OFF("off"),
     COMPLETE("complete"),
-    INVALID("invalid");
+    INVALID("invalid"),
+    FORCED_OFF("forced_off"),
+    FORCED_STOPPING("forced_stopping");
 
     private String value;
 

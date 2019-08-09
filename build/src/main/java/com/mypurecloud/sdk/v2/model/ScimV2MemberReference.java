@@ -11,9 +11,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * SCIM Members of Group Resource
+ * SCIM Members of Group Reference
  */
-@ApiModel(description = "SCIM Members of Group Resource")
+@ApiModel(description = "SCIM Members of Group Reference")
 
 public class ScimV2MemberReference  implements Serializable {
   
@@ -53,7 +53,6 @@ public class ScimV2MemberReference  implements Serializable {
     }
   }
   private TypeEnum type = null;
-  private String displayName = null;
   private ScimMetadata meta = null;
   private String value = null;
   private String ref = null;
@@ -67,31 +66,14 @@ public class ScimV2MemberReference  implements Serializable {
 
   
   /**
-   * Display Name
-   **/
-  public ScimV2MemberReference displayName(String displayName) {
-    this.displayName = displayName;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Display Name")
-  @JsonProperty("displayName")
-  public String getDisplayName() {
-    return displayName;
-  }
-  public void setDisplayName(String displayName) {
-    this.displayName = displayName;
-  }
-
-  
-  /**
+   * Resource SCIM meta
    **/
   public ScimV2MemberReference meta(ScimMetadata meta) {
     this.meta = meta;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Resource SCIM meta")
   @JsonProperty("meta")
   public ScimMetadata getMeta() {
     return meta;
@@ -101,10 +83,21 @@ public class ScimV2MemberReference  implements Serializable {
   }
 
   
+  /**
+   * Value of ID of group member. May be User or Group id
+   **/
+  public ScimV2MemberReference value(String value) {
+    this.value = value;
+    return this;
+  }
+  
   @ApiModelProperty(example = "null", value = "Value of ID of group member. May be User or Group id")
   @JsonProperty("value")
   public String getValue() {
     return value;
+  }
+  public void setValue(String value) {
+    this.value = value;
   }
 
   
@@ -126,7 +119,6 @@ public class ScimV2MemberReference  implements Serializable {
     }
     ScimV2MemberReference scimV2MemberReference = (ScimV2MemberReference) o;
     return Objects.equals(this.type, scimV2MemberReference.type) &&
-        Objects.equals(this.displayName, scimV2MemberReference.displayName) &&
         Objects.equals(this.meta, scimV2MemberReference.meta) &&
         Objects.equals(this.value, scimV2MemberReference.value) &&
         Objects.equals(this.ref, scimV2MemberReference.ref);
@@ -134,7 +126,7 @@ public class ScimV2MemberReference  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, displayName, meta, value, ref);
+    return Objects.hash(type, meta, value, ref);
   }
 
   @Override
@@ -143,7 +135,6 @@ public class ScimV2MemberReference  implements Serializable {
     sb.append("class ScimV2MemberReference {\n");
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    ref: ").append(toIndentedString(ref)).append("\n");

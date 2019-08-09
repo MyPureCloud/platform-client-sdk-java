@@ -15,7 +15,6 @@ import java.io.Serializable;
 public class BatchDownloadJobSubmissionResult  implements Serializable {
   
   private String id = null;
-  private String name = null;
   private String selfUri = null;
 
   
@@ -23,23 +22,6 @@ public class BatchDownloadJobSubmissionResult  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
-  }
-
-  
-  /**
-   **/
-  public BatchDownloadJobSubmissionResult name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
   }
 
   
@@ -61,13 +43,12 @@ public class BatchDownloadJobSubmissionResult  implements Serializable {
     }
     BatchDownloadJobSubmissionResult batchDownloadJobSubmissionResult = (BatchDownloadJobSubmissionResult) o;
     return Objects.equals(this.id, batchDownloadJobSubmissionResult.id) &&
-        Objects.equals(this.name, batchDownloadJobSubmissionResult.name) &&
         Objects.equals(this.selfUri, batchDownloadJobSubmissionResult.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, selfUri);
+    return Objects.hash(id, selfUri);
   }
 
   @Override
@@ -76,7 +57,6 @@ public class BatchDownloadJobSubmissionResult  implements Serializable {
     sb.append("class BatchDownloadJobSubmissionResult {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

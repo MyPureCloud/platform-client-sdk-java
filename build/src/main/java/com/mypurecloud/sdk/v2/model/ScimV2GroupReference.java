@@ -17,7 +17,6 @@ import java.io.Serializable;
 
 public class ScimV2GroupReference  implements Serializable {
   
-  private String displayName = null;
   private ScimMetadata meta = null;
 
   /**
@@ -60,31 +59,14 @@ public class ScimV2GroupReference  implements Serializable {
 
   
   /**
-   * Display Name
-   **/
-  public ScimV2GroupReference displayName(String displayName) {
-    this.displayName = displayName;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Display Name")
-  @JsonProperty("displayName")
-  public String getDisplayName() {
-    return displayName;
-  }
-  public void setDisplayName(String displayName) {
-    this.displayName = displayName;
-  }
-
-  
-  /**
+   * Resource SCIM meta
    **/
   public ScimV2GroupReference meta(ScimMetadata meta) {
     this.meta = meta;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Resource SCIM meta")
   @JsonProperty("meta")
   public ScimMetadata getMeta() {
     return meta;
@@ -101,10 +83,21 @@ public class ScimV2GroupReference  implements Serializable {
   }
 
   
+  /**
+   * Value of ID of group member. May be User or Group id
+   **/
+  public ScimV2GroupReference value(String value) {
+    this.value = value;
+    return this;
+  }
+  
   @ApiModelProperty(example = "null", value = "Value of ID of group member. May be User or Group id")
   @JsonProperty("value")
   public String getValue() {
     return value;
+  }
+  public void setValue(String value) {
+    this.value = value;
   }
 
   
@@ -125,8 +118,7 @@ public class ScimV2GroupReference  implements Serializable {
       return false;
     }
     ScimV2GroupReference scimV2GroupReference = (ScimV2GroupReference) o;
-    return Objects.equals(this.displayName, scimV2GroupReference.displayName) &&
-        Objects.equals(this.meta, scimV2GroupReference.meta) &&
+    return Objects.equals(this.meta, scimV2GroupReference.meta) &&
         Objects.equals(this.type, scimV2GroupReference.type) &&
         Objects.equals(this.value, scimV2GroupReference.value) &&
         Objects.equals(this.ref, scimV2GroupReference.ref);
@@ -134,7 +126,7 @@ public class ScimV2GroupReference  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(displayName, meta, type, value, ref);
+    return Objects.hash(meta, type, value, ref);
   }
 
   @Override
@@ -142,7 +134,6 @@ public class ScimV2GroupReference  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ScimV2GroupReference {\n");
     
-    sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");

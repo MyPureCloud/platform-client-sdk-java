@@ -23,10 +23,10 @@ import java.util.regex.Pattern;
 import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ScimV2Group;
-import com.mypurecloud.sdk.v2.model.ScimListResponse;
+import com.mypurecloud.sdk.v2.model.ScimGroupListResponse;
 import com.mypurecloud.sdk.v2.model.ScimV2User;
+import com.mypurecloud.sdk.v2.model.ScimUserListResponse;
 import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfig;
-import com.mypurecloud.sdk.v2.model.PatchRequest;
 import com.mypurecloud.sdk.v2.model.ScimV2PatchRequest;
 import com.mypurecloud.sdk.v2.model.ScimV2CreateUser;
 
@@ -46,16 +46,16 @@ public class PatchScimGroupRequest {
 	    return this;
 	} 
 	
-	private PatchRequest body;
-	public PatchRequest getBody() {
+	private ScimV2PatchRequest body;
+	public ScimV2PatchRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(PatchRequest body) {
+	public void setBody(ScimV2PatchRequest body) {
 		this.body = body;
 	}
 
-	public PatchScimGroupRequest withBody(PatchRequest body) {
+	public PatchScimGroupRequest withBody(ScimV2PatchRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -93,7 +93,7 @@ public class PatchScimGroupRequest {
         return this;
     }
 
-    public ApiRequest<PatchRequest> withHttpInfo() {
+    public ApiRequest<ScimV2PatchRequest> withHttpInfo() {
         
         // verify the required parameter 'groupId' is set
         if (this.groupId == null) {
@@ -125,7 +125,7 @@ public class PatchScimGroupRequest {
 	}
 
 	
-	public static Builder builder(String groupId, PatchRequest body) {
+	public static Builder builder(String groupId, ScimV2PatchRequest body) {
 	    return new Builder()
 	            .withRequiredParams(groupId, body);
 	}
@@ -144,7 +144,7 @@ public class PatchScimGroupRequest {
 			return this;
 		}
 		
-		public Builder withBody(PatchRequest body) {
+		public Builder withBody(ScimV2PatchRequest body) {
 			request.setBody(body);
 			return this;
 		}
@@ -156,7 +156,7 @@ public class PatchScimGroupRequest {
 		
 
 		
-		public Builder withRequiredParams(String groupId, PatchRequest body) {
+		public Builder withRequiredParams(String groupId, ScimV2PatchRequest body) {
 			request.setGroupId(groupId);
 						request.setBody(body);
 			

@@ -9,8 +9,7 @@ title: ScimV2MemberReference
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **type** | [**TypeEnum**](#TypeEnum) | SCIM Resource Type of member |  [optional] |
-| **displayName** | **String** | Display Name |  [optional] |
-| **meta** | [**ScimMetadata**](ScimMetadata.html) |  |  [optional] |
+| **meta** | [**ScimMetadata**](ScimMetadata.html) | Resource SCIM meta |  [optional] |
 | **value** | **String** | Value of ID of group member. May be User or Group id |  [optional] |
 | **ref** | **String** | Ref to entity |  [optional] |
 {: class="table table-striped"}

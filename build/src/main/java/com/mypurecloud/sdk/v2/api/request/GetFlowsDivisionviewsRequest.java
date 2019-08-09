@@ -75,6 +75,7 @@ public class GetFlowsDivisionviewsRequest {
 	} 
 
 	public enum typeValues { 
+		COMMONMODULE("commonmodule"), 
 		INBOUNDCALL("inboundcall"), 
 		INBOUNDCHAT("inboundchat"), 
 		INBOUNDEMAIL("inboundemail"), 

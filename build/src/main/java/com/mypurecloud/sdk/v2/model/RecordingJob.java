@@ -18,7 +18,6 @@ import java.io.Serializable;
 public class RecordingJob  implements Serializable {
   
   private String id = null;
-  private String name = null;
 
   /**
    * The current state of the job.
@@ -72,23 +71,6 @@ public class RecordingJob  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
-  }
-
-  
-  /**
-   **/
-  public RecordingJob name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
   }
 
   
@@ -188,7 +170,6 @@ public class RecordingJob  implements Serializable {
     }
     RecordingJob recordingJob = (RecordingJob) o;
     return Objects.equals(this.id, recordingJob.id) &&
-        Objects.equals(this.name, recordingJob.name) &&
         Objects.equals(this.state, recordingJob.state) &&
         Objects.equals(this.recordingJobsQuery, recordingJob.recordingJobsQuery) &&
         Objects.equals(this.dateCreated, recordingJob.dateCreated) &&
@@ -202,7 +183,7 @@ public class RecordingJob  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, state, recordingJobsQuery, dateCreated, totalConversations, totalRecordings, totalProcessedRecordings, percentProgress, errorMessage, selfUri);
+    return Objects.hash(id, state, recordingJobsQuery, dateCreated, totalConversations, totalRecordings, totalProcessedRecordings, percentProgress, errorMessage, selfUri);
   }
 
   @Override
@@ -211,7 +192,6 @@ public class RecordingJob  implements Serializable {
     sb.append("class RecordingJob {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    recordingJobsQuery: ").append(toIndentedString(recordingJobsQuery)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");

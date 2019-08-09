@@ -23,6 +23,7 @@ title: FlowDivisionView
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| COMMONMODULE | &quot;COMMONMODULE&quot; |
 | INBOUNDCALL | &quot;INBOUNDCALL&quot; |
 | INBOUNDCHAT | &quot;INBOUNDCHAT&quot; |
 | INBOUNDEMAIL | &quot;INBOUNDEMAIL&quot; |

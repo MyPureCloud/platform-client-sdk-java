@@ -27,6 +27,7 @@ public class AnalyticsFlow  implements Serializable {
    */
   public enum FlowTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    COMMONMODULE("COMMONMODULE"),
     INBOUNDCALL("INBOUNDCALL"),
     INBOUNDCHAT("INBOUNDCHAT"),
     INBOUNDEMAIL("INBOUNDEMAIL"),

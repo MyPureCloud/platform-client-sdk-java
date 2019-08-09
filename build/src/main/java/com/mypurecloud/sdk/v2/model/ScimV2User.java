@@ -17,17 +17,17 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Represents a SCIM V2 User
+ * SCIM version 2 User
  */
-@ApiModel(description = "Represents a SCIM V2 User")
+@ApiModel(description = "SCIM version 2 User")
 
 public class ScimV2User  implements Serializable {
   
   private String id = null;
-  private String displayName = null;
   private List<String> schemas = new ArrayList<String>();
   private Boolean active = null;
   private String userName = null;
+  private String displayName = null;
   private String password = null;
   private String title = null;
   private List<ScimPhoneNumber> phoneNumbers = new ArrayList<ScimPhoneNumber>();
@@ -43,24 +43,6 @@ public class ScimV2User  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
-  }
-
-  
-  /**
-   * Display Name
-   **/
-  public ScimV2User displayName(String displayName) {
-    this.displayName = displayName;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Display Name")
-  @JsonProperty("displayName")
-  public String getDisplayName() {
-    return displayName;
-  }
-  public void setDisplayName(String displayName) {
-    this.displayName = displayName;
   }
 
   
@@ -115,6 +97,24 @@ public class ScimV2User  implements Serializable {
   }
   public void setUserName(String userName) {
     this.userName = userName;
+  }
+
+  
+  /**
+   * Display Name
+   **/
+  public ScimV2User displayName(String displayName) {
+    this.displayName = displayName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Display Name")
+  @JsonProperty("displayName")
+  public String getDisplayName() {
+    return displayName;
+  }
+  public void setDisplayName(String displayName) {
+    this.displayName = displayName;
   }
 
   
@@ -245,13 +245,14 @@ public class ScimV2User  implements Serializable {
 
   
   /**
+   * Resource SCIM meta
    **/
   public ScimV2User meta(ScimMetadata meta) {
     this.meta = meta;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Resource SCIM meta")
   @JsonProperty("meta")
   public ScimMetadata getMeta() {
     return meta;
@@ -289,10 +290,10 @@ public class ScimV2User  implements Serializable {
     }
     ScimV2User scimV2User = (ScimV2User) o;
     return Objects.equals(this.id, scimV2User.id) &&
-        Objects.equals(this.displayName, scimV2User.displayName) &&
         Objects.equals(this.schemas, scimV2User.schemas) &&
         Objects.equals(this.active, scimV2User.active) &&
         Objects.equals(this.userName, scimV2User.userName) &&
+        Objects.equals(this.displayName, scimV2User.displayName) &&
         Objects.equals(this.password, scimV2User.password) &&
         Objects.equals(this.title, scimV2User.title) &&
         Objects.equals(this.phoneNumbers, scimV2User.phoneNumbers) &&
@@ -306,7 +307,7 @@ public class ScimV2User  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, displayName, schemas, active, userName, password, title, phoneNumbers, emails, photos, externalId, groups, meta, urnietfparamsscimschemasextensionenterprise20User);
+    return Objects.hash(id, schemas, active, userName, displayName, password, title, phoneNumbers, emails, photos, externalId, groups, meta, urnietfparamsscimschemasextensionenterprise20User);
   }
 
   @Override
@@ -315,10 +316,10 @@ public class ScimV2User  implements Serializable {
     sb.append("class ScimV2User {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    schemas: ").append(toIndentedString(schemas)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+    sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    phoneNumbers: ").append(toIndentedString(phoneNumbers)).append("\n");

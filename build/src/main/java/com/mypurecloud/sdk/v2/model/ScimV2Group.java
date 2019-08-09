@@ -13,15 +13,15 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Common attributes to all SCIM resources
+ * SCIM version 2 Group
  */
-@ApiModel(description = "Common attributes to all SCIM resources")
+@ApiModel(description = "SCIM version 2 Group")
 
 public class ScimV2Group  implements Serializable {
   
   private String id = null;
-  private String displayName = null;
   private List<String> schemas = new ArrayList<String>();
+  private String displayName = null;
   private List<ScimV2MemberReference> members = new ArrayList<ScimV2MemberReference>();
   private ScimMetadata meta = null;
 
@@ -30,24 +30,6 @@ public class ScimV2Group  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
-  }
-
-  
-  /**
-   * Display Name
-   **/
-  public ScimV2Group displayName(String displayName) {
-    this.displayName = displayName;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Display Name")
-  @JsonProperty("displayName")
-  public String getDisplayName() {
-    return displayName;
-  }
-  public void setDisplayName(String displayName) {
-    this.displayName = displayName;
   }
 
   
@@ -66,6 +48,13 @@ public class ScimV2Group  implements Serializable {
   }
   public void setSchemas(List<String> schemas) {
     this.schemas = schemas;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "Display Name")
+  @JsonProperty("displayName")
+  public String getDisplayName() {
+    return displayName;
   }
 
   
@@ -88,13 +77,14 @@ public class ScimV2Group  implements Serializable {
 
   
   /**
+   * Resource SCIM meta
    **/
   public ScimV2Group meta(ScimMetadata meta) {
     this.meta = meta;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Resource SCIM meta")
   @JsonProperty("meta")
   public ScimMetadata getMeta() {
     return meta;
@@ -115,15 +105,15 @@ public class ScimV2Group  implements Serializable {
     }
     ScimV2Group scimV2Group = (ScimV2Group) o;
     return Objects.equals(this.id, scimV2Group.id) &&
-        Objects.equals(this.displayName, scimV2Group.displayName) &&
         Objects.equals(this.schemas, scimV2Group.schemas) &&
+        Objects.equals(this.displayName, scimV2Group.displayName) &&
         Objects.equals(this.members, scimV2Group.members) &&
         Objects.equals(this.meta, scimV2Group.meta);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, displayName, schemas, members, meta);
+    return Objects.hash(id, schemas, displayName, members, meta);
   }
 
   @Override
@@ -132,8 +122,8 @@ public class ScimV2Group  implements Serializable {
     sb.append("class ScimV2Group {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    schemas: ").append(toIndentedString(schemas)).append("\n");
+    sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    members: ").append(toIndentedString(members)).append("\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("}");

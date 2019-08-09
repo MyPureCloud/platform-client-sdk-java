@@ -193,6 +193,7 @@ public class GetWorkforcemanagementManagementunitsRequest {
 		SCHEDULES("Schedules"), 
 		SERVICEGOALGROUPS("ServiceGoalGroups"), 
 		SERVICEGOALTEMPLATES("ServiceGoalTemplates"), 
+		PLANNINGGROUPS("PlanningGroups"), 
 		SHIFTTRADING("ShiftTrading"), 
 		SHORTTERMFORECASTS("ShortTermForecasts"), 
 		TIMEOFFREQUESTS("TimeOffRequests"), 

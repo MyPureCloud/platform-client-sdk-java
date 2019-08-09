@@ -75,6 +75,7 @@ public class GetFlowsRequest {
 	} 
 
 	public enum typeValues { 
+		COMMONMODULE("commonmodule"), 
 		INBOUNDCALL("inboundcall"), 
 		INBOUNDCHAT("inboundchat"), 
 		INBOUNDEMAIL("inboundemail"), 

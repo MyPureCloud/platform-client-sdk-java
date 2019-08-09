@@ -18,7 +18,6 @@ import java.io.Serializable;
 public class BatchDownloadJobStatusResult  implements Serializable {
   
   private String id = null;
-  private String name = null;
   private String jobId = null;
   private Integer expectedResultCount = null;
   private Integer resultCount = null;
@@ -31,23 +30,6 @@ public class BatchDownloadJobStatusResult  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
-  }
-
-  
-  /**
-   **/
-  public BatchDownloadJobStatusResult name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
   }
 
   
@@ -159,7 +141,6 @@ public class BatchDownloadJobStatusResult  implements Serializable {
     }
     BatchDownloadJobStatusResult batchDownloadJobStatusResult = (BatchDownloadJobStatusResult) o;
     return Objects.equals(this.id, batchDownloadJobStatusResult.id) &&
-        Objects.equals(this.name, batchDownloadJobStatusResult.name) &&
         Objects.equals(this.jobId, batchDownloadJobStatusResult.jobId) &&
         Objects.equals(this.expectedResultCount, batchDownloadJobStatusResult.expectedResultCount) &&
         Objects.equals(this.resultCount, batchDownloadJobStatusResult.resultCount) &&
@@ -170,7 +151,7 @@ public class BatchDownloadJobStatusResult  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, jobId, expectedResultCount, resultCount, errorCount, results, selfUri);
+    return Objects.hash(id, jobId, expectedResultCount, resultCount, errorCount, results, selfUri);
   }
 
   @Override
@@ -179,7 +160,6 @@ public class BatchDownloadJobStatusResult  implements Serializable {
     sb.append("class BatchDownloadJobStatusResult {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
     sb.append("    expectedResultCount: ").append(toIndentedString(expectedResultCount)).append("\n");
     sb.append("    resultCount: ").append(toIndentedString(resultCount)).append("\n");

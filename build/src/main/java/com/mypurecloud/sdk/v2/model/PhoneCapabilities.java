@@ -31,6 +31,7 @@ public class PhoneCapabilities  implements Serializable {
     AUDIO_OPUS("audio/opus"),
     AUDIO_PCMU("audio/pcmu"),
     AUDIO_PCMA("audio/pcma"),
+    AUDIO_G729("audio/g729"),
     AUDIO_G722("audio/g722");
 
     private String value;

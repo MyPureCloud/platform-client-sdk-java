@@ -56,65 +56,36 @@ public class PromptAsset  implements Serializable {
   }
 
   
-  /**
-   **/
-  public PromptAsset promptId(String promptId) {
-    this.promptId = promptId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Associated prompt ID")
   @JsonProperty("promptId")
   public String getPromptId() {
     return promptId;
   }
-  public void setPromptId(String promptId) {
-    this.promptId = promptId;
-  }
 
   
-  /**
-   **/
-  public PromptAsset language(String language) {
-    this.language = language;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Prompt resource language")
   @JsonProperty("language")
   public String getLanguage() {
     return language;
   }
-  public void setLanguage(String language) {
-    this.language = language;
-  }
 
   
-  /**
-   **/
-  public PromptAsset mediaUri(String mediaUri) {
-    this.mediaUri = mediaUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "URI of the resource audio")
   @JsonProperty("mediaUri")
   public String getMediaUri() {
     return mediaUri;
   }
-  public void setMediaUri(String mediaUri) {
-    this.mediaUri = mediaUri;
-  }
 
   
   /**
+   * Text to speech of the resource
    **/
   public PromptAsset ttsString(String ttsString) {
     this.ttsString = ttsString;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Text to speech of the resource")
   @JsonProperty("ttsString")
   public String getTtsString() {
     return ttsString;
@@ -125,13 +96,14 @@ public class PromptAsset  implements Serializable {
 
   
   /**
+   * Text of the resource
    **/
   public PromptAsset text(String text) {
     this.text = text;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Text of the resource")
   @JsonProperty("text")
   public String getText() {
     return text;
@@ -141,54 +113,24 @@ public class PromptAsset  implements Serializable {
   }
 
   
-  /**
-   **/
-  public PromptAsset uploadStatus(String uploadStatus) {
-    this.uploadStatus = uploadStatus;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Audio upload status")
   @JsonProperty("uploadStatus")
   public String getUploadStatus() {
     return uploadStatus;
   }
-  public void setUploadStatus(String uploadStatus) {
-    this.uploadStatus = uploadStatus;
-  }
 
   
-  /**
-   **/
-  public PromptAsset uploadUri(String uploadUri) {
-    this.uploadUri = uploadUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Upload URI for the resource audio")
   @JsonProperty("uploadUri")
   public String getUploadUri() {
     return uploadUri;
   }
-  public void setUploadUri(String uploadUri) {
-    this.uploadUri = uploadUri;
-  }
 
   
-  /**
-   **/
-  public PromptAsset languageDefault(Boolean languageDefault) {
-    this.languageDefault = languageDefault;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Whether or not this resource locale is the default for the language")
   @JsonProperty("languageDefault")
   public Boolean getLanguageDefault() {
     return languageDefault;
-  }
-  public void setLanguageDefault(Boolean languageDefault) {
-    this.languageDefault = languageDefault;
   }
 
   

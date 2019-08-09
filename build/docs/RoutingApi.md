@@ -652,6 +652,7 @@ Wraps DELETE /api/v2/users/{userId}/routinglanguages/{languageId}
 Requires ANY permissions: 
 
 * routing:skill:assign
+* routing:language:assign
 
 ### Example
 
@@ -2726,6 +2727,7 @@ Wraps PATCH /api/v2/users/{userId}/routinglanguages/{languageId}
 Requires ANY permissions: 
 
 * routing:skill:assign
+* routing:language:assign
 
 ### Example
 
@@ -2793,6 +2795,7 @@ Wraps PATCH /api/v2/users/{userId}/routinglanguages/bulk
 Requires ANY permissions: 
 
 * routing:skill:assign
+* routing:language:assign
 
 ### Example
 
@@ -3624,6 +3627,7 @@ Wraps POST /api/v2/users/{userId}/routinglanguages
 Requires ANY permissions: 
 
 * routing:skill:assign
+* routing:language:assign
 
 ### Example
 

@@ -212,50 +212,6 @@ public class GetProfilesUsersRequest {
 		}
 	}
 	
-	private String state;
-	public String getState() {
-		return this.state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-	}
-
-	public GetProfilesUsersRequest withState(String state) {
-	    this.setState(state);
-	    return this;
-	} 
-
-	public enum stateValues { 
-		ACTIVE("active"), 
-		DELETED("deleted");
-
-		private String value;
-
-		stateValues(String value) {
-		  this.value = value;
-		}
-
-		@JsonCreator
-		public static stateValues fromString(String key) {
-			if (key == null) return null;
-
-			for (stateValues value : stateValues.values()) {
-				if (key.equalsIgnoreCase(value.toString())) {
-					return value;
-				}
-			}
-
-			return stateValues.values()[0];
-		}
-
-		@Override
-		@JsonValue
-		public String toString() {
-			return String.valueOf(value);
-		}
-	}
-	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -290,8 +246,6 @@ public class GetProfilesUsersRequest {
                 .withQueryParameters("sortOrder", "", sortOrder)
         
                 .withQueryParameters("expand", "multi", expand)
-        
-                .withQueryParameters("state", "", state)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -355,16 +309,6 @@ public class GetProfilesUsersRequest {
 	        stringList.add(e.toString());
 	      }
 	      request.setExpand(stringList);
-		    return this;
-		}
-		
-		public Builder withState(String state) {
-			request.setState(state);
-			return this;
-		}
-
-		public Builder withState(stateValues state) {
-		    request.setState(state.toString());
 		    return this;
 		}
 		

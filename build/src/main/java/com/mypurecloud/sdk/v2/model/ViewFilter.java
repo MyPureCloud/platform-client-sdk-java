@@ -369,7 +369,8 @@ public class ViewFilter  implements Serializable {
     SECURE_FLOW("SECURE_FLOW"),
     ACD_VOICEMAIL("ACD_VOICEMAIL"),
     USER_VOICEMAIL("USER_VOICEMAIL"),
-    GROUP_VOICEMAIL("GROUP_VOICEMAIL");
+    GROUP_VOICEMAIL("GROUP_VOICEMAIL"),
+    RETURN_TO_AGENT("RETURN_TO_AGENT");
 
     private String value;
 
@@ -437,6 +438,7 @@ public class ViewFilter  implements Serializable {
    * Gets or Sets flowTypes
    */
   public enum FlowTypesEnum {
+    COMMONMODULE("commonmodule"),
     INBOUNDCALL("inboundcall"),
     INBOUNDCHAT("inboundchat"),
     INBOUNDEMAIL("inboundemail"),
@@ -516,6 +518,8 @@ public class ViewFilter  implements Serializable {
   private Boolean hasJourneyCustomerId = null;
   private Boolean hasJourneyActionMapId = null;
   private Boolean hasJourneyVisitId = null;
+  private List<String> oauthClientIds = new ArrayList<String>();
+  private List<String> apiOperations = new ArrayList<String>();
 
   
   /**
@@ -1796,6 +1800,42 @@ public class ViewFilter  implements Serializable {
   }
 
   
+  /**
+   * A list of OAuth client IDs
+   **/
+  public ViewFilter oauthClientIds(List<String> oauthClientIds) {
+    this.oauthClientIds = oauthClientIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of OAuth client IDs")
+  @JsonProperty("oauthClientIds")
+  public List<String> getOauthClientIds() {
+    return oauthClientIds;
+  }
+  public void setOauthClientIds(List<String> oauthClientIds) {
+    this.oauthClientIds = oauthClientIds;
+  }
+
+  
+  /**
+   * A list of API operations (ex: [\"GET /api/v2/users/{userId}/queues\"])
+   **/
+  public ViewFilter apiOperations(List<String> apiOperations) {
+    this.apiOperations = apiOperations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of API operations (ex: [\"GET /api/v2/users/{userId}/queues\"])")
+  @JsonProperty("apiOperations")
+  public List<String> getApiOperations() {
+    return apiOperations;
+  }
+  public void setApiOperations(List<String> apiOperations) {
+    this.apiOperations = apiOperations;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1876,12 +1916,14 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.groupIds, viewFilter.groupIds) &&
         Objects.equals(this.hasJourneyCustomerId, viewFilter.hasJourneyCustomerId) &&
         Objects.equals(this.hasJourneyActionMapId, viewFilter.hasJourneyActionMapId) &&
-        Objects.equals(this.hasJourneyVisitId, viewFilter.hasJourneyVisitId);
+        Objects.equals(this.hasJourneyVisitId, viewFilter.hasJourneyVisitId) &&
+        Objects.equals(this.oauthClientIds, viewFilter.oauthClientIds) &&
+        Objects.equals(this.apiOperations, viewFilter.apiOperations);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, showSecondaryStatus, agentDurationSortOrder, waitingDurationSortOrder, interactingDurationSortOrder, agentName, skillsList, languageList, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, statusList, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, showSecondaryStatus, agentDurationSortOrder, waitingDurationSortOrder, interactingDurationSortOrder, agentName, skillsList, languageList, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, statusList, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, oauthClientIds, apiOperations);
   }
 
   @Override
@@ -1960,6 +2002,8 @@ public class ViewFilter  implements Serializable {
     sb.append("    hasJourneyCustomerId: ").append(toIndentedString(hasJourneyCustomerId)).append("\n");
     sb.append("    hasJourneyActionMapId: ").append(toIndentedString(hasJourneyActionMapId)).append("\n");
     sb.append("    hasJourneyVisitId: ").append(toIndentedString(hasJourneyVisitId)).append("\n");
+    sb.append("    oauthClientIds: ").append(toIndentedString(oauthClientIds)).append("\n");
+    sb.append("    apiOperations: ").append(toIndentedString(apiOperations)).append("\n");
     sb.append("}");
     return sb.toString();
   }

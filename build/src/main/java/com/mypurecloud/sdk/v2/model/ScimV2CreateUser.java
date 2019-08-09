@@ -23,10 +23,10 @@ import java.io.Serializable;
 
 public class ScimV2CreateUser  implements Serializable {
   
-  private String displayName = null;
   private List<String> schemas = new ArrayList<String>();
   private Boolean active = null;
   private String userName = null;
+  private String displayName = null;
   private String password = null;
   private String title = null;
   private List<ScimPhoneNumber> phoneNumbers = new ArrayList<ScimPhoneNumber>();
@@ -36,24 +36,6 @@ public class ScimV2CreateUser  implements Serializable {
   private List<ScimV2GroupReference> groups = new ArrayList<ScimV2GroupReference>();
   private ScimMetadata meta = null;
   private ScimV2EnterpriseUser urnietfparamsscimschemasextensionenterprise20User = null;
-
-  
-  /**
-   * Display Name
-   **/
-  public ScimV2CreateUser displayName(String displayName) {
-    this.displayName = displayName;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "Display Name")
-  @JsonProperty("displayName")
-  public String getDisplayName() {
-    return displayName;
-  }
-  public void setDisplayName(String displayName) {
-    this.displayName = displayName;
-  }
 
   
   /**
@@ -107,6 +89,24 @@ public class ScimV2CreateUser  implements Serializable {
   }
   public void setUserName(String userName) {
     this.userName = userName;
+  }
+
+  
+  /**
+   * Display Name
+   **/
+  public ScimV2CreateUser displayName(String displayName) {
+    this.displayName = displayName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Display Name")
+  @JsonProperty("displayName")
+  public String getDisplayName() {
+    return displayName;
+  }
+  public void setDisplayName(String displayName) {
+    this.displayName = displayName;
   }
 
   
@@ -281,10 +281,10 @@ public class ScimV2CreateUser  implements Serializable {
       return false;
     }
     ScimV2CreateUser scimV2CreateUser = (ScimV2CreateUser) o;
-    return Objects.equals(this.displayName, scimV2CreateUser.displayName) &&
-        Objects.equals(this.schemas, scimV2CreateUser.schemas) &&
+    return Objects.equals(this.schemas, scimV2CreateUser.schemas) &&
         Objects.equals(this.active, scimV2CreateUser.active) &&
         Objects.equals(this.userName, scimV2CreateUser.userName) &&
+        Objects.equals(this.displayName, scimV2CreateUser.displayName) &&
         Objects.equals(this.password, scimV2CreateUser.password) &&
         Objects.equals(this.title, scimV2CreateUser.title) &&
         Objects.equals(this.phoneNumbers, scimV2CreateUser.phoneNumbers) &&
@@ -298,7 +298,7 @@ public class ScimV2CreateUser  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(displayName, schemas, active, userName, password, title, phoneNumbers, emails, photos, externalId, groups, meta, urnietfparamsscimschemasextensionenterprise20User);
+    return Objects.hash(schemas, active, userName, displayName, password, title, phoneNumbers, emails, photos, externalId, groups, meta, urnietfparamsscimschemasextensionenterprise20User);
   }
 
   @Override
@@ -306,10 +306,10 @@ public class ScimV2CreateUser  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ScimV2CreateUser {\n");
     
-    sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    schemas: ").append(toIndentedString(schemas)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+    sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    phoneNumbers: ").append(toIndentedString(phoneNumbers)).append("\n");

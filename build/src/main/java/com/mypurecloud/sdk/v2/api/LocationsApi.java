@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteLocationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLocationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLocationSublocationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLocationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLocationsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLocationRequest;
@@ -199,6 +200,85 @@ public class LocationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<LocationDefinition> response = (ApiResponse<LocationDefinition>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get sublocations for location ID.
+   * 
+   * @param locationId Location ID (required)
+   * @return LocationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LocationEntityListing getLocationSublocations(String locationId) throws IOException, ApiException {
+    return  getLocationSublocations(createGetLocationSublocationsRequest(locationId));
+  }
+
+  /**
+   * Get sublocations for location ID.
+   * 
+   * @param locationId Location ID (required)
+   * @return LocationEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LocationEntityListing> getLocationSublocationsWithHttpInfo(String locationId) throws IOException {
+    return getLocationSublocations(createGetLocationSublocationsRequest(locationId).withHttpInfo());
+  }
+
+  private GetLocationSublocationsRequest createGetLocationSublocationsRequest(String locationId) {
+    return GetLocationSublocationsRequest.builder()
+            .withLocationId(locationId)
+    
+            .build();
+  }
+
+  /**
+   * Get sublocations for location ID.
+   * 
+   * @param request The request object
+   * @return LocationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LocationEntityListing getLocationSublocations(GetLocationSublocationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LocationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LocationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get sublocations for location ID.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LocationEntityListing> getLocationSublocations(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LocationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LocationEntityListing> response = (ApiResponse<LocationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LocationEntityListing> response = (ApiResponse<LocationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

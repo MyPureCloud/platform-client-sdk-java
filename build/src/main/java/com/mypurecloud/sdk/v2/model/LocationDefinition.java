@@ -22,9 +22,9 @@ public class LocationDefinition  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private LocationEmergencyNumber emergencyNumber = null;
   private LocationAddress address = null;
   private Boolean addressVerified = null;
-  private LocationEmergencyNumber emergencyNumber = null;
 
   /**
    * Current activity status of the location.
@@ -60,9 +60,9 @@ public class LocationDefinition  implements Serializable {
     }
   }
   private StateEnum state = null;
+  private String notes = null;
   private Integer version = null;
   private List<String> path = new ArrayList<String>();
-  private String notes = null;
   private List<LocationImage> profileImage = new ArrayList<LocationImage>();
   private List<LocationImage> floorplanImage = new ArrayList<LocationImage>();
   private String selfUri = null;
@@ -90,6 +90,23 @@ public class LocationDefinition  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  
+  /**
+   **/
+  public LocationDefinition emergencyNumber(LocationEmergencyNumber emergencyNumber) {
+    this.emergencyNumber = emergencyNumber;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("emergencyNumber")
+  public LocationEmergencyNumber getEmergencyNumber() {
+    return emergencyNumber;
+  }
+  public void setEmergencyNumber(LocationEmergencyNumber emergencyNumber) {
+    this.emergencyNumber = emergencyNumber;
   }
 
   
@@ -128,23 +145,6 @@ public class LocationDefinition  implements Serializable {
 
   
   /**
-   **/
-  public LocationDefinition emergencyNumber(LocationEmergencyNumber emergencyNumber) {
-    this.emergencyNumber = emergencyNumber;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("emergencyNumber")
-  public LocationEmergencyNumber getEmergencyNumber() {
-    return emergencyNumber;
-  }
-  public void setEmergencyNumber(LocationEmergencyNumber emergencyNumber) {
-    this.emergencyNumber = emergencyNumber;
-  }
-
-  
-  /**
    * Current activity status of the location.
    **/
   public LocationDefinition state(StateEnum state) {
@@ -159,6 +159,23 @@ public class LocationDefinition  implements Serializable {
   }
   public void setState(StateEnum state) {
     this.state = state;
+  }
+
+  
+  /**
+   **/
+  public LocationDefinition notes(String notes) {
+    this.notes = notes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("notes")
+  public String getNotes() {
+    return notes;
+  }
+  public void setNotes(String notes) {
+    this.notes = notes;
   }
 
   
@@ -180,36 +197,20 @@ public class LocationDefinition  implements Serializable {
 
   
   /**
+   * A list of ancestor IDs in order
    **/
   public LocationDefinition path(List<String> path) {
     this.path = path;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A list of ancestor IDs in order")
   @JsonProperty("path")
   public List<String> getPath() {
     return path;
   }
   public void setPath(List<String> path) {
     this.path = path;
-  }
-
-  
-  /**
-   **/
-  public LocationDefinition notes(String notes) {
-    this.notes = notes;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("notes")
-  public String getNotes() {
-    return notes;
-  }
-  public void setNotes(String notes) {
-    this.notes = notes;
   }
 
   
@@ -267,13 +268,13 @@ public class LocationDefinition  implements Serializable {
     LocationDefinition locationDefinition = (LocationDefinition) o;
     return Objects.equals(this.id, locationDefinition.id) &&
         Objects.equals(this.name, locationDefinition.name) &&
+        Objects.equals(this.emergencyNumber, locationDefinition.emergencyNumber) &&
         Objects.equals(this.address, locationDefinition.address) &&
         Objects.equals(this.addressVerified, locationDefinition.addressVerified) &&
-        Objects.equals(this.emergencyNumber, locationDefinition.emergencyNumber) &&
         Objects.equals(this.state, locationDefinition.state) &&
+        Objects.equals(this.notes, locationDefinition.notes) &&
         Objects.equals(this.version, locationDefinition.version) &&
         Objects.equals(this.path, locationDefinition.path) &&
-        Objects.equals(this.notes, locationDefinition.notes) &&
         Objects.equals(this.profileImage, locationDefinition.profileImage) &&
         Objects.equals(this.floorplanImage, locationDefinition.floorplanImage) &&
         Objects.equals(this.selfUri, locationDefinition.selfUri);
@@ -281,7 +282,7 @@ public class LocationDefinition  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, addressVerified, emergencyNumber, state, version, path, notes, profileImage, floorplanImage, selfUri);
+    return Objects.hash(id, name, emergencyNumber, address, addressVerified, state, notes, version, path, profileImage, floorplanImage, selfUri);
   }
 
   @Override
@@ -291,13 +292,13 @@ public class LocationDefinition  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    emergencyNumber: ").append(toIndentedString(emergencyNumber)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    addressVerified: ").append(toIndentedString(addressVerified)).append("\n");
-    sb.append("    emergencyNumber: ").append(toIndentedString(emergencyNumber)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    path: ").append(toIndentedString(path)).append("\n");
-    sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
     sb.append("    profileImage: ").append(toIndentedString(profileImage)).append("\n");
     sb.append("    floorplanImage: ").append(toIndentedString(floorplanImage)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

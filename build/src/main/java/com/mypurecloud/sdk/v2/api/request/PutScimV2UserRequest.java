@@ -23,10 +23,10 @@ import java.util.regex.Pattern;
 import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ScimV2Group;
-import com.mypurecloud.sdk.v2.model.ScimListResponse;
+import com.mypurecloud.sdk.v2.model.ScimGroupListResponse;
 import com.mypurecloud.sdk.v2.model.ScimV2User;
+import com.mypurecloud.sdk.v2.model.ScimUserListResponse;
 import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfig;
-import com.mypurecloud.sdk.v2.model.PatchRequest;
 import com.mypurecloud.sdk.v2.model.ScimV2PatchRequest;
 import com.mypurecloud.sdk.v2.model.ScimV2CreateUser;
 

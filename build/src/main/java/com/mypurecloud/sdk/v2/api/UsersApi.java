@@ -1186,13 +1186,12 @@ public class UsersApi {
    * @param jid jid (optional)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @param expand Which fields, if any, to expand (optional)
-   * @param state Only list users of this state (optional, default to active)
    * @return UserProfileEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserProfileEntityListing getProfilesUsers(Integer pageSize, Integer pageNumber, List<String> id, List<String> jid, String sortOrder, List<String> expand, String state) throws IOException, ApiException {
-    return  getProfilesUsers(createGetProfilesUsersRequest(pageSize, pageNumber, id, jid, sortOrder, expand, state));
+  public UserProfileEntityListing getProfilesUsers(Integer pageSize, Integer pageNumber, List<String> id, List<String> jid, String sortOrder, List<String> expand) throws IOException, ApiException {
+    return  getProfilesUsers(createGetProfilesUsersRequest(pageSize, pageNumber, id, jid, sortOrder, expand));
   }
 
   /**
@@ -1204,15 +1203,14 @@ public class UsersApi {
    * @param jid jid (optional)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @param expand Which fields, if any, to expand (optional)
-   * @param state Only list users of this state (optional, default to active)
    * @return UserProfileEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserProfileEntityListing> getProfilesUsersWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, List<String> jid, String sortOrder, List<String> expand, String state) throws IOException {
-    return getProfilesUsers(createGetProfilesUsersRequest(pageSize, pageNumber, id, jid, sortOrder, expand, state).withHttpInfo());
+  public ApiResponse<UserProfileEntityListing> getProfilesUsersWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, List<String> jid, String sortOrder, List<String> expand) throws IOException {
+    return getProfilesUsers(createGetProfilesUsersRequest(pageSize, pageNumber, id, jid, sortOrder, expand).withHttpInfo());
   }
 
-  private GetProfilesUsersRequest createGetProfilesUsersRequest(Integer pageSize, Integer pageNumber, List<String> id, List<String> jid, String sortOrder, List<String> expand, String state) {
+  private GetProfilesUsersRequest createGetProfilesUsersRequest(Integer pageSize, Integer pageNumber, List<String> id, List<String> jid, String sortOrder, List<String> expand) {
     return GetProfilesUsersRequest.builder()
             .withPageSize(pageSize)
     
@@ -1225,8 +1223,6 @@ public class UsersApi {
             .withSortOrder(sortOrder)
     
             .withExpand(expand)
-    
-            .withState(state)
     
             .build();
   }

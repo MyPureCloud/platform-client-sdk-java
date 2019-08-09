@@ -62,6 +62,7 @@ public class Station  implements Serializable {
   private String lineAppearanceId = null;
   private Integer webRtcMediaDscp = null;
   private Boolean webRtcPersistentEnabled = null;
+  private Boolean webRtcForceTurn = null;
   private String selfUri = null;
 
   
@@ -241,6 +242,13 @@ public class Station  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "Whether the station is configured to require TURN for routing WebRTC calls. Empty if station type is not inin_webrtc_softphone.")
+  @JsonProperty("webRtcForceTurn")
+  public Boolean getWebRtcForceTurn() {
+    return webRtcForceTurn;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -270,12 +278,13 @@ public class Station  implements Serializable {
         Objects.equals(this.lineAppearanceId, station.lineAppearanceId) &&
         Objects.equals(this.webRtcMediaDscp, station.webRtcMediaDscp) &&
         Objects.equals(this.webRtcPersistentEnabled, station.webRtcPersistentEnabled) &&
+        Objects.equals(this.webRtcForceTurn, station.webRtcForceTurn) &&
         Objects.equals(this.selfUri, station.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, status, userId, webRtcUserId, primaryEdge, secondaryEdge, type, lineAppearanceId, webRtcMediaDscp, webRtcPersistentEnabled, selfUri);
+    return Objects.hash(id, name, description, status, userId, webRtcUserId, primaryEdge, secondaryEdge, type, lineAppearanceId, webRtcMediaDscp, webRtcPersistentEnabled, webRtcForceTurn, selfUri);
   }
 
   @Override
@@ -295,6 +304,7 @@ public class Station  implements Serializable {
     sb.append("    lineAppearanceId: ").append(toIndentedString(lineAppearanceId)).append("\n");
     sb.append("    webRtcMediaDscp: ").append(toIndentedString(webRtcMediaDscp)).append("\n");
     sb.append("    webRtcPersistentEnabled: ").append(toIndentedString(webRtcPersistentEnabled)).append("\n");
+    sb.append("    webRtcForceTurn: ").append(toIndentedString(webRtcForceTurn)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

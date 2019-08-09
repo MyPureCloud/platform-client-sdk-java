@@ -16,10 +16,10 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ScimV2Group;
-import com.mypurecloud.sdk.v2.model.ScimListResponse;
+import com.mypurecloud.sdk.v2.model.ScimGroupListResponse;
 import com.mypurecloud.sdk.v2.model.ScimV2User;
+import com.mypurecloud.sdk.v2.model.ScimUserListResponse;
 import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfig;
-import com.mypurecloud.sdk.v2.model.PatchRequest;
 import com.mypurecloud.sdk.v2.model.ScimV2PatchRequest;
 import com.mypurecloud.sdk.v2.model.ScimV2CreateUser;
 
@@ -301,13 +301,13 @@ public class SCIMApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ScimListResponse> getScimGroupsAsync(GetScimGroupsRequest request, final AsyncApiCallback<ScimListResponse> callback) {
+  public Future<ScimGroupListResponse> getScimGroupsAsync(GetScimGroupsRequest request, final AsyncApiCallback<ScimGroupListResponse> callback) {
     try {
-      final SettableFuture<ScimListResponse> future = SettableFuture.create();
+      final SettableFuture<ScimGroupListResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScimListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimListResponse>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScimGroupListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimGroupListResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<ScimListResponse> response) {
+        public void onCompleted(ApiResponse<ScimGroupListResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -335,13 +335,13 @@ public class SCIMApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ScimListResponse>> getScimGroupsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScimListResponse>> callback) {
+  public Future<ApiResponse<ScimGroupListResponse>> getScimGroupsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScimGroupListResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<ScimListResponse>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<ScimGroupListResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ScimListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimListResponse>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<ScimGroupListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimGroupListResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<ScimListResponse> response) {
+        public void onCompleted(ApiResponse<ScimGroupListResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -349,7 +349,7 @@ public class SCIMApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<ScimListResponse> response = (ApiResponse<ScimListResponse>)(ApiResponse<?>)exception;
+            ApiResponse<ScimGroupListResponse> response = (ApiResponse<ScimGroupListResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -357,7 +357,7 @@ public class SCIMApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<ScimListResponse> response = (ApiResponse<ScimListResponse>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<ScimGroupListResponse> response = (ApiResponse<ScimGroupListResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -453,13 +453,13 @@ public class SCIMApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ScimListResponse> getScimUsersAsync(GetScimUsersRequest request, final AsyncApiCallback<ScimListResponse> callback) {
+  public Future<ScimUserListResponse> getScimUsersAsync(GetScimUsersRequest request, final AsyncApiCallback<ScimUserListResponse> callback) {
     try {
-      final SettableFuture<ScimListResponse> future = SettableFuture.create();
+      final SettableFuture<ScimUserListResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScimListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimListResponse>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScimUserListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimUserListResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<ScimListResponse> response) {
+        public void onCompleted(ApiResponse<ScimUserListResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -487,13 +487,13 @@ public class SCIMApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ScimListResponse>> getScimUsersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScimListResponse>> callback) {
+  public Future<ApiResponse<ScimUserListResponse>> getScimUsersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScimUserListResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<ScimListResponse>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<ScimUserListResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ScimListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimListResponse>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<ScimUserListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimUserListResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<ScimListResponse> response) {
+        public void onCompleted(ApiResponse<ScimUserListResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -501,7 +501,7 @@ public class SCIMApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<ScimListResponse> response = (ApiResponse<ScimListResponse>)(ApiResponse<?>)exception;
+            ApiResponse<ScimUserListResponse> response = (ApiResponse<ScimUserListResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -509,7 +509,7 @@ public class SCIMApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<ScimListResponse> response = (ApiResponse<ScimListResponse>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<ScimUserListResponse> response = (ApiResponse<ScimUserListResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -605,13 +605,13 @@ public class SCIMApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ScimListResponse> getScimV2GroupsAsync(GetScimV2GroupsRequest request, final AsyncApiCallback<ScimListResponse> callback) {
+  public Future<ScimGroupListResponse> getScimV2GroupsAsync(GetScimV2GroupsRequest request, final AsyncApiCallback<ScimGroupListResponse> callback) {
     try {
-      final SettableFuture<ScimListResponse> future = SettableFuture.create();
+      final SettableFuture<ScimGroupListResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScimListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimListResponse>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScimGroupListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimGroupListResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<ScimListResponse> response) {
+        public void onCompleted(ApiResponse<ScimGroupListResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -639,13 +639,13 @@ public class SCIMApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ScimListResponse>> getScimV2GroupsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScimListResponse>> callback) {
+  public Future<ApiResponse<ScimGroupListResponse>> getScimV2GroupsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScimGroupListResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<ScimListResponse>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<ScimGroupListResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ScimListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimListResponse>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<ScimGroupListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimGroupListResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<ScimListResponse> response) {
+        public void onCompleted(ApiResponse<ScimGroupListResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -653,7 +653,7 @@ public class SCIMApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<ScimListResponse> response = (ApiResponse<ScimListResponse>)(ApiResponse<?>)exception;
+            ApiResponse<ScimGroupListResponse> response = (ApiResponse<ScimGroupListResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -661,7 +661,7 @@ public class SCIMApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<ScimListResponse> response = (ApiResponse<ScimListResponse>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<ScimGroupListResponse> response = (ApiResponse<ScimGroupListResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -833,13 +833,13 @@ public class SCIMApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ScimListResponse> getScimV2UsersAsync(GetScimV2UsersRequest request, final AsyncApiCallback<ScimListResponse> callback) {
+  public Future<ScimUserListResponse> getScimV2UsersAsync(GetScimV2UsersRequest request, final AsyncApiCallback<ScimUserListResponse> callback) {
     try {
-      final SettableFuture<ScimListResponse> future = SettableFuture.create();
+      final SettableFuture<ScimUserListResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScimListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimListResponse>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScimUserListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimUserListResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<ScimListResponse> response) {
+        public void onCompleted(ApiResponse<ScimUserListResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -867,13 +867,13 @@ public class SCIMApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ScimListResponse>> getScimV2UsersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScimListResponse>> callback) {
+  public Future<ApiResponse<ScimUserListResponse>> getScimV2UsersAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScimUserListResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<ScimListResponse>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<ScimUserListResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ScimListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimListResponse>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<ScimUserListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimUserListResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<ScimListResponse> response) {
+        public void onCompleted(ApiResponse<ScimUserListResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -881,7 +881,7 @@ public class SCIMApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<ScimListResponse> response = (ApiResponse<ScimListResponse>)(ApiResponse<?>)exception;
+            ApiResponse<ScimUserListResponse> response = (ApiResponse<ScimUserListResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -889,7 +889,7 @@ public class SCIMApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<ScimListResponse> response = (ApiResponse<ScimListResponse>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<ScimUserListResponse> response = (ApiResponse<ScimUserListResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -943,7 +943,7 @@ public class SCIMApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ScimV2Group>> patchScimGroupAsync(ApiRequest<PatchRequest> request, final AsyncApiCallback<ApiResponse<ScimV2Group>> callback) {
+  public Future<ApiResponse<ScimV2Group>> patchScimGroupAsync(ApiRequest<ScimV2PatchRequest> request, final AsyncApiCallback<ApiResponse<ScimV2Group>> callback) {
     try {
       final SettableFuture<ApiResponse<ScimV2Group>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -1095,7 +1095,7 @@ public class SCIMApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ScimV2Group>> patchScimV2GroupAsync(ApiRequest<PatchRequest> request, final AsyncApiCallback<ApiResponse<ScimV2Group>> callback) {
+  public Future<ApiResponse<ScimV2Group>> patchScimV2GroupAsync(ApiRequest<ScimV2PatchRequest> request, final AsyncApiCallback<ApiResponse<ScimV2Group>> callback) {
     try {
       final SettableFuture<ApiResponse<ScimV2Group>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

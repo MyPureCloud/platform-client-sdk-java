@@ -350,6 +350,7 @@ Wraps DELETE /api/v2/users/{userId}/routinglanguages/{languageId}
 Requires ANY permissions: 
 
 * routing:skill:assign
+* routing:language:assign
 
 ### Example
 
@@ -904,7 +905,7 @@ try {
 
 
 
-> [UserProfileEntityListing](UserProfileEntityListing.html) getProfilesUsers(pageSize, pageNumber, id, jid, sortOrder, expand, state)
+> [UserProfileEntityListing](UserProfileEntityListing.html) getProfilesUsers(pageSize, pageNumber, id, jid, sortOrder, expand)
 
 Get a user profile listing
 
@@ -943,9 +944,8 @@ List<String> id = Arrays.asList("id_example"); // List<String> | id
 List<String> jid = Arrays.asList("jid_example"); // List<String> | jid
 String sortOrder = "ASC"; // String | Ascending or descending sort order
 List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
-String state = "active"; // String | Only list users of this state
 try {
-    UserProfileEntityListing result = apiInstance.getProfilesUsers(pageSize, pageNumber, id, jid, sortOrder, expand, state);
+    UserProfileEntityListing result = apiInstance.getProfilesUsers(pageSize, pageNumber, id, jid, sortOrder, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getProfilesUsers");
@@ -964,7 +964,6 @@ try {
 | **jid** | [**List&lt;String&gt;**](String.html)| jid | [optional] 
 | **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending 
 | **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization 
-| **state** | **String**| Only list users of this state | [optional] [default to active]<br />**Values**: active, deleted 
 {: class="table-striped"}
 
 
@@ -2815,6 +2814,7 @@ Wraps PATCH /api/v2/users/{userId}/routinglanguages/{languageId}
 Requires ANY permissions: 
 
 * routing:skill:assign
+* routing:language:assign
 
 ### Example
 
@@ -2882,6 +2882,7 @@ Wraps PATCH /api/v2/users/{userId}/routinglanguages/bulk
 Requires ANY permissions: 
 
 * routing:skill:assign
+* routing:language:assign
 
 ### Example
 
@@ -3526,6 +3527,7 @@ Wraps POST /api/v2/users/{userId}/routinglanguages
 Requires ANY permissions: 
 
 * routing:skill:assign
+* routing:language:assign
 
 ### Example
 

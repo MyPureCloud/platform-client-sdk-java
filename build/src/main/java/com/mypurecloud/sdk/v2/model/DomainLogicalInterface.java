@@ -162,6 +162,9 @@ public class DomainLogicalInterface  implements Serializable {
   private Boolean useForInternalEdgeCommunication = null;
   private List<TrunkBaseAssignment> externalTrunkBaseAssignments = new ArrayList<TrunkBaseAssignment>();
   private List<TrunkBaseAssignment> phoneTrunkBaseAssignments = new ArrayList<TrunkBaseAssignment>();
+  private Boolean traceEnabled = null;
+  private Date startDate = null;
+  private Date endDate = null;
   private String selfUri = null;
 
   
@@ -700,6 +703,59 @@ public class DomainLogicalInterface  implements Serializable {
   }
 
   
+  /**
+   **/
+  public DomainLogicalInterface traceEnabled(Boolean traceEnabled) {
+    this.traceEnabled = traceEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("traceEnabled")
+  public Boolean getTraceEnabled() {
+    return traceEnabled;
+  }
+  public void setTraceEnabled(Boolean traceEnabled) {
+    this.traceEnabled = traceEnabled;
+  }
+
+  
+  /**
+   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public DomainLogicalInterface startDate(Date startDate) {
+    this.startDate = startDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("startDate")
+  public Date getStartDate() {
+    return startDate;
+  }
+  public void setStartDate(Date startDate) {
+    this.startDate = startDate;
+  }
+
+  
+  /**
+   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public DomainLogicalInterface endDate(Date endDate) {
+    this.endDate = endDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("endDate")
+  public Date getEndDate() {
+    return endDate;
+  }
+  public void setEndDate(Date endDate) {
+    this.endDate = endDate;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -749,12 +805,15 @@ public class DomainLogicalInterface  implements Serializable {
         Objects.equals(this.useForInternalEdgeCommunication, domainLogicalInterface.useForInternalEdgeCommunication) &&
         Objects.equals(this.externalTrunkBaseAssignments, domainLogicalInterface.externalTrunkBaseAssignments) &&
         Objects.equals(this.phoneTrunkBaseAssignments, domainLogicalInterface.phoneTrunkBaseAssignments) &&
+        Objects.equals(this.traceEnabled, domainLogicalInterface.traceEnabled) &&
+        Objects.equals(this.startDate, domainLogicalInterface.startDate) &&
+        Objects.equals(this.endDate, domainLogicalInterface.endDate) &&
         Objects.equals(this.selfUri, domainLogicalInterface.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, edgeUri, edgeAssignedId, friendlyName, vlanTagId, hardwareAddress, physicalAdapterId, ifStatus, interfaceType, routes, addresses, ipv4Capabilities, ipv6Capabilities, currentState, lastModifiedUserId, lastModifiedCorrelationId, commandResponses, inheritPhoneTrunkBasesIPv4, inheritPhoneTrunkBasesIPv6, useForInternalEdgeCommunication, externalTrunkBaseAssignments, phoneTrunkBaseAssignments, selfUri);
+    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, edgeUri, edgeAssignedId, friendlyName, vlanTagId, hardwareAddress, physicalAdapterId, ifStatus, interfaceType, routes, addresses, ipv4Capabilities, ipv6Capabilities, currentState, lastModifiedUserId, lastModifiedCorrelationId, commandResponses, inheritPhoneTrunkBasesIPv4, inheritPhoneTrunkBasesIPv6, useForInternalEdgeCommunication, externalTrunkBaseAssignments, phoneTrunkBaseAssignments, traceEnabled, startDate, endDate, selfUri);
   }
 
   @Override
@@ -794,6 +853,9 @@ public class DomainLogicalInterface  implements Serializable {
     sb.append("    useForInternalEdgeCommunication: ").append(toIndentedString(useForInternalEdgeCommunication)).append("\n");
     sb.append("    externalTrunkBaseAssignments: ").append(toIndentedString(externalTrunkBaseAssignments)).append("\n");
     sb.append("    phoneTrunkBaseAssignments: ").append(toIndentedString(phoneTrunkBaseAssignments)).append("\n");
+    sb.append("    traceEnabled: ").append(toIndentedString(traceEnabled)).append("\n");
+    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
