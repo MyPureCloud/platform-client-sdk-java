@@ -3695,7 +3695,7 @@ try {
 
 
 
-> [OutboundRouteEntityListing](OutboundRouteEntityListing.html) getTelephonyProvidersEdgesOutboundroutes(pageSize, pageNumber, name, siteId, sortBy)
+> [OutboundRouteEntityListing](OutboundRouteEntityListing.html) getTelephonyProvidersEdgesOutboundroutes(pageSize, pageNumber, name, siteId, externalTrunkBasesIds, sortBy)
 
 Get outbound routes
 
@@ -3733,9 +3733,10 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String name = "name_example"; // String | Name
 String siteId = "siteId_example"; // String | Filter by site.id
+String externalTrunkBasesIds = "externalTrunkBasesIds_example"; // String | Filter by externalTrunkBases.ids
 String sortBy = "name"; // String | Sort by
 try {
-    OutboundRouteEntityListing result = apiInstance.getTelephonyProvidersEdgesOutboundroutes(pageSize, pageNumber, name, siteId, sortBy);
+    OutboundRouteEntityListing result = apiInstance.getTelephonyProvidersEdgesOutboundroutes(pageSize, pageNumber, name, siteId, externalTrunkBasesIds, sortBy);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesOutboundroutes");
@@ -3752,6 +3753,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **name** | **String**| Name | [optional] 
 | **siteId** | **String**| Filter by site.id | [optional] 
+| **externalTrunkBasesIds** | **String**| Filter by externalTrunkBases.ids | [optional] 
 | **sortBy** | **String**| Sort by | [optional] [default to name] 
 {: class="table-striped"}
 
@@ -4632,7 +4634,7 @@ try {
 
 
 
-> [OutboundRouteBaseEntityListing](OutboundRouteBaseEntityListing.html) getTelephonyProvidersEdgesSiteOutboundroutes(siteId, pageSize, pageNumber, name, sortBy)
+> [OutboundRouteBaseEntityListing](OutboundRouteBaseEntityListing.html) getTelephonyProvidersEdgesSiteOutboundroutes(siteId, pageSize, pageNumber, name, externalTrunkBasesIds, sortBy)
 
 Get outbound routes
 
@@ -4670,9 +4672,10 @@ String siteId = "siteId_example"; // String | Site ID
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String name = "name_example"; // String | Name
+String externalTrunkBasesIds = "externalTrunkBasesIds_example"; // String | externalTrunkBases.ids
 String sortBy = "name"; // String | Sort by
 try {
-    OutboundRouteBaseEntityListing result = apiInstance.getTelephonyProvidersEdgesSiteOutboundroutes(siteId, pageSize, pageNumber, name, sortBy);
+    OutboundRouteBaseEntityListing result = apiInstance.getTelephonyProvidersEdgesSiteOutboundroutes(siteId, pageSize, pageNumber, name, externalTrunkBasesIds, sortBy);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesSiteOutboundroutes");
@@ -4689,6 +4692,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **name** | **String**| Name | [optional] 
+| **externalTrunkBasesIds** | **String**| externalTrunkBases.ids | [optional] 
 | **sortBy** | **String**| Sort by | [optional] [default to name] 
 {: class="table-striped"}
 

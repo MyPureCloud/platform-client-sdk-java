@@ -19,7 +19,7 @@ public class ScimPhoneNumber  implements Serializable {
   private String value = null;
 
   /**
-   * Type of Phone number
+   * The type of phone number. 
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -61,14 +61,14 @@ public class ScimPhoneNumber  implements Serializable {
 
   
   /**
-   * Phone number (e164)
+   * A phone number in E.164 format.
    **/
   public ScimPhoneNumber value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Phone number (e164)")
+  @ApiModelProperty(example = "null", value = "A phone number in E.164 format.")
   @JsonProperty("value")
   public String getValue() {
     return value;
@@ -79,14 +79,14 @@ public class ScimPhoneNumber  implements Serializable {
 
   
   /**
-   * Type of Phone number
+   * The type of phone number. 
    **/
   public ScimPhoneNumber type(TypeEnum type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Type of Phone number")
+  @ApiModelProperty(example = "null", value = "The type of phone number. ")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
@@ -97,14 +97,14 @@ public class ScimPhoneNumber  implements Serializable {
 
   
   /**
-   * Primary phone number flag
+   * Indicates whether the phone number is the primary phone number.
    **/
   public ScimPhoneNumber primary(Boolean primary) {
     this.primary = primary;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Primary phone number flag")
+  @ApiModelProperty(example = "null", value = "Indicates whether the phone number is the primary phone number.")
   @JsonProperty("primary")
   public Boolean getPrimary() {
     return primary;

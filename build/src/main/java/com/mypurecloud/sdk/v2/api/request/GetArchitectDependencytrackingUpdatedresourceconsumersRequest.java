@@ -126,8 +126,7 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 		TTSVOICE("TTSVOICE"), 
 		USER("USER"), 
 		USERPROMPT("USERPROMPT"), 
-		WIDGET("WIDGET"), 
-		WORKFLOW("WORKFLOW");
+		WIDGET("WIDGET");
 
 		private String value;
 
@@ -221,8 +220,7 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 		TTSVOICE("TTSVOICE"), 
 		USER("USER"), 
 		USERPROMPT("USERPROMPT"), 
-		WIDGET("WIDGET"), 
-		WORKFLOW("WORKFLOW");
+		WIDGET("WIDGET");
 
 		private String value;
 

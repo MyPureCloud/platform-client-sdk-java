@@ -143,6 +143,20 @@ public class GetTelephonyProvidersEdgesOutboundroutesRequest {
 	    return this;
 	} 
 	
+	private String externalTrunkBasesIds;
+	public String getExternalTrunkBasesIds() {
+		return this.externalTrunkBasesIds;
+	}
+
+	public void setExternalTrunkBasesIds(String externalTrunkBasesIds) {
+		this.externalTrunkBasesIds = externalTrunkBasesIds;
+	}
+
+	public GetTelephonyProvidersEdgesOutboundroutesRequest withExternalTrunkBasesIds(String externalTrunkBasesIds) {
+	    this.setExternalTrunkBasesIds(externalTrunkBasesIds);
+	    return this;
+	} 
+	
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -188,6 +202,8 @@ public class GetTelephonyProvidersEdgesOutboundroutesRequest {
         
                 .withQueryParameters("site.id", "", siteId)
         
+                .withQueryParameters("externalTrunkBases.ids", "", externalTrunkBasesIds)
+        
                 .withQueryParameters("sortBy", "", sortBy)
         
                 .withCustomHeaders(customHeaders)
@@ -228,6 +244,11 @@ public class GetTelephonyProvidersEdgesOutboundroutesRequest {
 		
 		public Builder withSiteId(String siteId) {
 			request.setSiteId(siteId);
+			return this;
+		}
+		
+		public Builder withExternalTrunkBasesIds(String externalTrunkBasesIds) {
+			request.setExternalTrunkBasesIds(externalTrunkBasesIds);
 			return this;
 		}
 		

@@ -37,6 +37,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingQueuesMe**](RoutingApi.html#getRoutingQueuesMe) | Get a paged listing of queues the user is a member of. |
 | [**getRoutingSkill**](RoutingApi.html#getRoutingSkill) | Get Routing Skill |
 | [**getRoutingSkills**](RoutingApi.html#getRoutingSkills) | Get the list of routing skills. |
+| [**getRoutingSmsAddress**](RoutingApi.html#getRoutingSmsAddress) | Get an Address by Id for SMS |
+| [**getRoutingSmsAddresses**](RoutingApi.html#getRoutingSmsAddresses) | Get a list of Addresses for SMS |
 | [**getRoutingSmsAvailablephonenumbers**](RoutingApi.html#getRoutingSmsAvailablephonenumbers) | Get a list of available phone numbers for SMS provisioning. |
 | [**getRoutingSmsPhonenumber**](RoutingApi.html#getRoutingSmsPhonenumber) | Get a phone number provisioned for SMS. |
 | [**getRoutingSmsPhonenumbers**](RoutingApi.html#getRoutingSmsPhonenumbers) | Get a list of provisioned phone numbers. |
@@ -2041,6 +2043,134 @@ try {
 
 [**SkillEntityListing**](SkillEntityListing.html)
 
+<a name="getRoutingSmsAddress"></a>
+
+# **getRoutingSmsAddress**
+
+
+
+> [SmsAddress](SmsAddress.html) getRoutingSmsAddress(addressId)
+
+Get an Address by Id for SMS
+
+
+
+Wraps GET /api/v2/routing/sms/addresses/{addressId}  
+
+Requires ANY permissions: 
+
+* sms:phoneNumber:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String addressId = "addressId_example"; // String | Address ID
+try {
+    SmsAddress result = apiInstance.getRoutingSmsAddress(addressId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingSmsAddress");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **addressId** | **String**| Address ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SmsAddress**](SmsAddress.html)
+
+<a name="getRoutingSmsAddresses"></a>
+
+# **getRoutingSmsAddresses**
+
+
+
+> [SmsAddressEntityListing](SmsAddressEntityListing.html) getRoutingSmsAddresses(pageSize, pageNumber)
+
+Get a list of Addresses for SMS
+
+
+
+Wraps GET /api/v2/routing/sms/addresses  
+
+Requires ANY permissions: 
+
+* sms:phoneNumber:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    SmsAddressEntityListing result = apiInstance.getRoutingSmsAddresses(pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingSmsAddresses");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SmsAddressEntityListing**](SmsAddressEntityListing.html)
+
 <a name="getRoutingSmsAvailablephonenumbers"></a>
 
 # **getRoutingSmsAvailablephonenumbers**
@@ -3427,7 +3557,7 @@ try {
 
 
 
-> [SmsPhoneNumber](SmsPhoneNumber.html) postRoutingSmsAddresses(body)
+> [SmsAddress](SmsAddress.html) postRoutingSmsAddresses(body)
 
 Provision an Address for SMS
 
@@ -3463,7 +3593,7 @@ Configuration.setDefaultApiClient(apiClient);
 RoutingApi apiInstance = new RoutingApi();
 SmsAddressProvision body = new SmsAddressProvision(); // SmsAddressProvision | SmsAddress
 try {
-    SmsPhoneNumber result = apiInstance.postRoutingSmsAddresses(body);
+    SmsAddress result = apiInstance.postRoutingSmsAddresses(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#postRoutingSmsAddresses");
@@ -3482,7 +3612,7 @@ try {
 
 ### Return type
 
-[**SmsPhoneNumber**](SmsPhoneNumber.html)
+[**SmsAddress**](SmsAddress.html)
 
 <a name="postRoutingSmsPhonenumbers"></a>
 

@@ -191,11 +191,13 @@ public class GetWorkforcemanagementManagementunitsRequest {
 		MANAGEMENTUNITS("ManagementUnits"), 
 		REALTIMEADHERENCE("RealTimeAdherence"), 
 		SCHEDULES("Schedules"), 
+		BUSCHEDULES("BuSchedules"), 
 		SERVICEGOALGROUPS("ServiceGoalGroups"), 
 		SERVICEGOALTEMPLATES("ServiceGoalTemplates"), 
 		PLANNINGGROUPS("PlanningGroups"), 
 		SHIFTTRADING("ShiftTrading"), 
 		SHORTTERMFORECASTS("ShortTermForecasts"), 
+		BUSHORTTERMFORECASTS("BuShortTermForecasts"), 
 		TIMEOFFREQUESTS("TimeOffRequests"), 
 		WORKPLANS("WorkPlans");
 

@@ -446,8 +446,7 @@ public class ViewFilter  implements Serializable {
     INQUEUECALL("inqueuecall"),
     OUTBOUNDCALL("outboundcall"),
     SECURECALL("securecall"),
-    SURVEYINVITE("surveyinvite"),
-    WORKFLOW("workflow");
+    SURVEYINVITE("surveyinvite");
 
     private String value;
 

@@ -23,7 +23,8 @@ public class RecordingJobsQuery  implements Serializable {
    */
   public enum ActionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    DELETE("DELETE");
+    DELETE("DELETE"),
+    EXPORT("EXPORT");
 
     private String value;
 
@@ -52,6 +53,7 @@ public class RecordingJobsQuery  implements Serializable {
   }
   private ActionEnum action = null;
   private Date actionDate = null;
+  private String integrationId = null;
   private AsyncConversationQuery conversationQuery = null;
 
   
@@ -92,6 +94,24 @@ public class RecordingJobsQuery  implements Serializable {
 
   
   /**
+   * Integration ID
+   **/
+  public RecordingJobsQuery integrationId(String integrationId) {
+    this.integrationId = integrationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Integration ID")
+  @JsonProperty("integrationId")
+  public String getIntegrationId() {
+    return integrationId;
+  }
+  public void setIntegrationId(String integrationId) {
+    this.integrationId = integrationId;
+  }
+
+  
+  /**
    * Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.
    **/
   public RecordingJobsQuery conversationQuery(AsyncConversationQuery conversationQuery) {
@@ -121,12 +141,13 @@ public class RecordingJobsQuery  implements Serializable {
     RecordingJobsQuery recordingJobsQuery = (RecordingJobsQuery) o;
     return Objects.equals(this.action, recordingJobsQuery.action) &&
         Objects.equals(this.actionDate, recordingJobsQuery.actionDate) &&
+        Objects.equals(this.integrationId, recordingJobsQuery.integrationId) &&
         Objects.equals(this.conversationQuery, recordingJobsQuery.conversationQuery);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(action, actionDate, conversationQuery);
+    return Objects.hash(action, actionDate, integrationId, conversationQuery);
   }
 
   @Override
@@ -136,6 +157,7 @@ public class RecordingJobsQuery  implements Serializable {
     
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    actionDate: ").append(toIndentedString(actionDate)).append("\n");
+    sb.append("    integrationId: ").append(toIndentedString(integrationId)).append("\n");
     sb.append("    conversationQuery: ").append(toIndentedString(conversationQuery)).append("\n");
     sb.append("}");
     return sb.toString();

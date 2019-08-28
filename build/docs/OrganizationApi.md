@@ -8,11 +8,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**getFieldconfig**](OrganizationApi.html#getFieldconfig) | Fetch field config for an entity type |
+| [**getOrganizationsEmbeddedintegration**](OrganizationApi.html#getOrganizationsEmbeddedintegration) | Get the list of domains that will be allowed to embed PureCloud applications |
 | [**getOrganizationsMe**](OrganizationApi.html#getOrganizationsMe) | Get organization. |
-| [**getOrganizationsWhitelist**](OrganizationApi.html#getOrganizationsWhitelist) | Get organization whitelist settings |
+| [**getOrganizationsWhitelist**](OrganizationApi.html#getOrganizationsWhitelist) | Use PUT /api/v2/organizations/embeddedintegration instead |
 | [**patchOrganizationsFeature**](OrganizationApi.html#patchOrganizationsFeature) | Update organization |
+| [**putOrganizationsEmbeddedintegration**](OrganizationApi.html#putOrganizationsEmbeddedintegration) | Update the list of domains that will be allowed to embed PureCloud applications |
 | [**putOrganizationsMe**](OrganizationApi.html#putOrganizationsMe) | Update organization. |
-| [**putOrganizationsWhitelist**](OrganizationApi.html#putOrganizationsWhitelist) | Update organization whitelist settings |
+| [**putOrganizationsWhitelist**](OrganizationApi.html#putOrganizationsWhitelist) | Use PUT /api/v2/organizations/embeddedintegration instead |
 {: class="table-striped"}
 
 <a name="getFieldconfig"></a>
@@ -77,6 +79,64 @@ try {
 
 [**FieldConfig**](FieldConfig.html)
 
+<a name="getOrganizationsEmbeddedintegration"></a>
+
+# **getOrganizationsEmbeddedintegration**
+
+
+
+> [EmbeddedIntegration](EmbeddedIntegration.html) getOrganizationsEmbeddedintegration()
+
+Get the list of domains that will be allowed to embed PureCloud applications
+
+
+
+Wraps GET /api/v2/organizations/embeddedintegration  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationApi apiInstance = new OrganizationApi();
+try {
+    EmbeddedIntegration result = apiInstance.getOrganizationsEmbeddedintegration();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationApi#getOrganizationsEmbeddedintegration");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**EmbeddedIntegration**](EmbeddedIntegration.html)
+
 <a name="getOrganizationsMe"></a>
 
 # **getOrganizationsMe**
@@ -139,11 +199,11 @@ This endpoint does not require any parameters.
 
 # **getOrganizationsWhitelist**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [OrgWhitelistSettings](OrgWhitelistSettings.html) getOrganizationsWhitelist()
 
-Get organization whitelist settings
+Use PUT /api/v2/organizations/embeddedintegration instead
 
 
 
@@ -258,6 +318,69 @@ try {
 
 [**OrganizationFeatures**](OrganizationFeatures.html)
 
+<a name="putOrganizationsEmbeddedintegration"></a>
+
+# **putOrganizationsEmbeddedintegration**
+
+
+
+> [EmbeddedIntegration](EmbeddedIntegration.html) putOrganizationsEmbeddedintegration(body)
+
+Update the list of domains that will be allowed to embed PureCloud applications
+
+
+
+Wraps PUT /api/v2/organizations/embeddedintegration  
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationApi apiInstance = new OrganizationApi();
+EmbeddedIntegration body = new EmbeddedIntegration(); // EmbeddedIntegration | Whitelist settings
+try {
+    EmbeddedIntegration result = apiInstance.putOrganizationsEmbeddedintegration(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationApi#putOrganizationsEmbeddedintegration");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**EmbeddedIntegration**](EmbeddedIntegration.html)| Whitelist settings | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EmbeddedIntegration**](EmbeddedIntegration.html)
+
 <a name="putOrganizationsMe"></a>
 
 # **putOrganizationsMe**
@@ -325,11 +448,11 @@ try {
 
 # **putOrganizationsWhitelist**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [OrgWhitelistSettings](OrgWhitelistSettings.html) putOrganizationsWhitelist(body)
 
-Update organization whitelist settings
+Use PUT /api/v2/organizations/embeddedintegration instead
 
 
 

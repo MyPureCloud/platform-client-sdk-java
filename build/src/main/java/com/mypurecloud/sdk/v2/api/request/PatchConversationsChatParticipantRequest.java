@@ -47,6 +47,14 @@ import com.mypurecloud.sdk.v2.model.MessageConversation;
 import com.mypurecloud.sdk.v2.model.MessageMediaData;
 import com.mypurecloud.sdk.v2.model.MessageData;
 import com.mypurecloud.sdk.v2.model.MessageConversationEntityListing;
+import com.mypurecloud.sdk.v2.model.MessagingIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.FacebookIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.FacebookIntegration;
+import com.mypurecloud.sdk.v2.model.LineIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.LineIntegration;
+import com.mypurecloud.sdk.v2.model.TwitterIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.TwitterIntegration;
+import com.mypurecloud.sdk.v2.model.MessagingStickerEntityListing;
 import com.mypurecloud.sdk.v2.model.MediaParticipantRequest;
 import com.mypurecloud.sdk.v2.model.ParticipantAttributes;
 import com.mypurecloud.sdk.v2.model.Empty;
@@ -75,6 +83,9 @@ import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 import com.mypurecloud.sdk.v2.model.AdditionalMessage;
 import com.mypurecloud.sdk.v2.model.TextMessageListing;
 import com.mypurecloud.sdk.v2.model.CreateOutboundMessagingConversationRequest;
+import com.mypurecloud.sdk.v2.model.FacebookIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.LineIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
 
 public class PatchConversationsChatParticipantRequest {

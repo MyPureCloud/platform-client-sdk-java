@@ -19,7 +19,7 @@ public class Photo  implements Serializable {
   private String value = null;
 
   /**
-   * Type of photo
+   * The type of photo.
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -55,14 +55,14 @@ public class Photo  implements Serializable {
 
   
   /**
-   * URI of photo
+   * The URI of the photo. Photos are limited to 240 KB and JPG, GIF, and PNG formats. Returns a JPG. 
    **/
   public Photo value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "URI of photo")
+  @ApiModelProperty(example = "null", value = "The URI of the photo. Photos are limited to 240 KB and JPG, GIF, and PNG formats. Returns a JPG. ")
   @JsonProperty("value")
   public String getValue() {
     return value;
@@ -73,14 +73,14 @@ public class Photo  implements Serializable {
 
   
   /**
-   * Type of photo
+   * The type of photo.
    **/
   public Photo type(TypeEnum type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Type of photo")
+  @ApiModelProperty(example = "null", value = "The type of photo.")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;

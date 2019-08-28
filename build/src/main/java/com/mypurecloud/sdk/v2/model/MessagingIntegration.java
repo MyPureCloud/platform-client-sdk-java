@@ -29,7 +29,9 @@ public class MessagingIntegration  implements Serializable {
     INACTIVE("Inactive"),
     ERROR("Error"),
     STARTING("Starting"),
-    INCOMPLETE("Incomplete");
+    INCOMPLETE("Incomplete"),
+    DELETING("Deleting"),
+    DELETIONFAILED("DeletionFailed");
 
     private String value;
 

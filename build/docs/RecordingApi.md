@@ -1097,7 +1097,7 @@ try {
 
 
 
-> [RecordingJobEntityListing](RecordingJobEntityListing.html) getRecordingJobs(pageSize, pageNumber)
+> [RecordingJobEntityListing](RecordingJobEntityListing.html) getRecordingJobs(pageSize, pageNumber, sortBy, state, showOnlyMyJobs, jobType)
 
 Get the status of all jobs within the user&#39;s organization
 
@@ -1133,8 +1133,12 @@ Configuration.setDefaultApiClient(apiClient);
 RecordingApi apiInstance = new RecordingApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
+String sortBy = "userId"; // String | Sort by
+String state = "state_example"; // String | Filter by state
+Boolean showOnlyMyJobs = true; // Boolean | Show only my jobs
+String jobType = "jobType_example"; // String | Job Type (Can be left empty for both)
 try {
-    RecordingJobEntityListing result = apiInstance.getRecordingJobs(pageSize, pageNumber);
+    RecordingJobEntityListing result = apiInstance.getRecordingJobs(pageSize, pageNumber, sortBy, state, showOnlyMyJobs, jobType);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RecordingApi#getRecordingJobs");
@@ -1149,6 +1153,10 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortBy** | **String**| Sort by | [optional] [default to userId]<br />**Values**: userId, dateCreated 
+| **state** | **String**| Filter by state | [optional]<br />**Values**: FULFILLED, PENDING, READY, PROCESSING, CANCELLED, FAILED 
+| **showOnlyMyJobs** | **Boolean**| Show only my jobs | [optional] 
+| **jobType** | **String**| Job Type (Can be left empty for both) | [optional]<br />**Values**: DELETE, EXPORT 
 {: class="table-striped"}
 
 

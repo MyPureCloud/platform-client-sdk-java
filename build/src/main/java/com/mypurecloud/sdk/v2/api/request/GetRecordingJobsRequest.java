@@ -76,6 +76,156 @@ public class GetRecordingJobsRequest {
 	    return this;
 	} 
 	
+	private String sortBy;
+	public String getSortBy() {
+		return this.sortBy;
+	}
+
+	public void setSortBy(String sortBy) {
+		this.sortBy = sortBy;
+	}
+
+	public GetRecordingJobsRequest withSortBy(String sortBy) {
+	    this.setSortBy(sortBy);
+	    return this;
+	} 
+
+	public enum sortByValues { 
+		USERID("userId"), 
+		DATECREATED("dateCreated");
+
+		private String value;
+
+		sortByValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static sortByValues fromString(String key) {
+			if (key == null) return null;
+
+			for (sortByValues value : sortByValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return sortByValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
+	private String state;
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public GetRecordingJobsRequest withState(String state) {
+	    this.setState(state);
+	    return this;
+	} 
+
+	public enum stateValues { 
+		FULFILLED("FULFILLED"), 
+		PENDING("PENDING"), 
+		READY("READY"), 
+		PROCESSING("PROCESSING"), 
+		CANCELLED("CANCELLED"), 
+		FAILED("FAILED");
+
+		private String value;
+
+		stateValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static stateValues fromString(String key) {
+			if (key == null) return null;
+
+			for (stateValues value : stateValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return stateValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
+	private Boolean showOnlyMyJobs;
+	public Boolean getShowOnlyMyJobs() {
+		return this.showOnlyMyJobs;
+	}
+
+	public void setShowOnlyMyJobs(Boolean showOnlyMyJobs) {
+		this.showOnlyMyJobs = showOnlyMyJobs;
+	}
+
+	public GetRecordingJobsRequest withShowOnlyMyJobs(Boolean showOnlyMyJobs) {
+	    this.setShowOnlyMyJobs(showOnlyMyJobs);
+	    return this;
+	} 
+	
+	private String jobType;
+	public String getJobType() {
+		return this.jobType;
+	}
+
+	public void setJobType(String jobType) {
+		this.jobType = jobType;
+	}
+
+	public GetRecordingJobsRequest withJobType(String jobType) {
+	    this.setJobType(jobType);
+	    return this;
+	} 
+
+	public enum jobTypeValues { 
+		DELETE("DELETE"), 
+		EXPORT("EXPORT");
+
+		private String value;
+
+		jobTypeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static jobTypeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (jobTypeValues value : jobTypeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return jobTypeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -102,6 +252,14 @@ public class GetRecordingJobsRequest {
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
+        
+                .withQueryParameters("sortBy", "", sortBy)
+        
+                .withQueryParameters("state", "", state)
+        
+                .withQueryParameters("showOnlyMyJobs", "", showOnlyMyJobs)
+        
+                .withQueryParameters("jobType", "", jobType)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -132,6 +290,41 @@ public class GetRecordingJobsRequest {
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
+		}
+		
+		public Builder withSortBy(String sortBy) {
+			request.setSortBy(sortBy);
+			return this;
+		}
+
+		public Builder withSortBy(sortByValues sortBy) {
+		    request.setSortBy(sortBy.toString());
+		    return this;
+		}
+		
+		public Builder withState(String state) {
+			request.setState(state);
+			return this;
+		}
+
+		public Builder withState(stateValues state) {
+		    request.setState(state.toString());
+		    return this;
+		}
+		
+		public Builder withShowOnlyMyJobs(Boolean showOnlyMyJobs) {
+			request.setShowOnlyMyJobs(showOnlyMyJobs);
+			return this;
+		}
+		
+		public Builder withJobType(String jobType) {
+			request.setJobType(jobType);
+			return this;
+		}
+
+		public Builder withJobType(jobTypeValues jobType) {
+		    request.setJobType(jobType.toString());
+		    return this;
 		}
 		
 

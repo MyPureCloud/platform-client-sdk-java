@@ -11,15 +11,15 @@ import java.util.Date;
 
 import java.io.Serializable;
 /**
- * SCIM V2 Meta data
+ * The meta object of the SCIM V2 implementation.
  */
-@ApiModel(description = "SCIM V2 Meta data")
+@ApiModel(description = "The meta object of the SCIM V2 implementation.")
 
 public class ScimMetadata  implements Serializable {
   
 
   /**
-   * Resource type
+   * The type of the resource.
    */
   public enum ResourceTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -58,28 +58,28 @@ public class ScimMetadata  implements Serializable {
   private String version = null;
 
   
-  @ApiModelProperty(example = "null", value = "Resource type")
+  @ApiModelProperty(example = "null", value = "The type of the resource.")
   @JsonProperty("resourceType")
   public ResourceTypeEnum getResourceType() {
     return resourceType;
   }
 
   
-  @ApiModelProperty(example = "null", value = "Last Modified ISO6501 (UTC). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The last time that the resource was modified. Time in ISO 6501 (UTC) format. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("lastModified")
   public Date getLastModified() {
     return lastModified;
   }
 
   
-  @ApiModelProperty(example = "null", value = "URI location of resource")
+  @ApiModelProperty(example = "null", value = "The URI of the resource.")
   @JsonProperty("location")
   public String getLocation() {
     return location;
   }
 
   
-  @ApiModelProperty(example = "null", value = "ETag version of resource [RFC7232]")
+  @ApiModelProperty(example = "null", value = "The version of the resource. Matches the ETag HTTP response header.")
   @JsonProperty("version")
   public String getVersion() {
     return version;

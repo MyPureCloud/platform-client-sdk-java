@@ -56,6 +56,7 @@ public class SmsPhoneNumberProvision  implements Serializable {
   }
   private PhoneNumberTypeEnum phoneNumberType = null;
   private String countryCode = null;
+  private String addressId = null;
   private String selfUri = null;
 
   
@@ -137,6 +138,24 @@ public class SmsPhoneNumberProvision  implements Serializable {
   }
 
   
+  /**
+   * The id of an address added on your account. Due to regulatory requirements in some countries, an address may be required when provisioning a sms number. In those cases you should provide the provisioned sms address id here
+   **/
+  public SmsPhoneNumberProvision addressId(String addressId) {
+    this.addressId = addressId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The id of an address added on your account. Due to regulatory requirements in some countries, an address may be required when provisioning a sms number. In those cases you should provide the provisioned sms address id here")
+  @JsonProperty("addressId")
+  public String getAddressId() {
+    return addressId;
+  }
+  public void setAddressId(String addressId) {
+    this.addressId = addressId;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -159,12 +178,13 @@ public class SmsPhoneNumberProvision  implements Serializable {
         Objects.equals(this.phoneNumber, smsPhoneNumberProvision.phoneNumber) &&
         Objects.equals(this.phoneNumberType, smsPhoneNumberProvision.phoneNumberType) &&
         Objects.equals(this.countryCode, smsPhoneNumberProvision.countryCode) &&
+        Objects.equals(this.addressId, smsPhoneNumberProvision.addressId) &&
         Objects.equals(this.selfUri, smsPhoneNumberProvision.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, phoneNumber, phoneNumberType, countryCode, selfUri);
+    return Objects.hash(id, name, phoneNumber, phoneNumberType, countryCode, addressId, selfUri);
   }
 
   @Override
@@ -177,6 +197,7 @@ public class SmsPhoneNumberProvision  implements Serializable {
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    phoneNumberType: ").append(toIndentedString(phoneNumberType)).append("\n");
     sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
+    sb.append("    addressId: ").append(toIndentedString(addressId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -34,6 +34,8 @@ title: MessagingIntegration
 | ERROR | &quot;Error&quot; |
 | STARTING | &quot;Starting&quot; |
 | INCOMPLETE | &quot;Incomplete&quot; |
+| DELETING | &quot;Deleting&quot; |
+| DELETIONFAILED | &quot;DeletionFailed&quot; |
 {: class="table table-striped"}
 
 

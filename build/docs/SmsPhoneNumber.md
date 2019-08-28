@@ -24,6 +24,7 @@ title: SmsPhoneNumber
 | **cancellationDate** | [**Date**](Date.html) | Contract end date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **renewalDate** | [**Date**](Date.html) | Contract renewal date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **autoRenewable** | [**AutoRenewableEnum**](#AutoRenewableEnum) | Renewal time period of this phone number, if the phoneNumberType is shortcode. |  [optional] |
+| **addressId** | [**SmsAddress**](SmsAddress.html) | The id of an address attached to this phone number. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

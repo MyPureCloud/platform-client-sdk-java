@@ -23,14 +23,14 @@ public class ScimV2PatchRequest  implements Serializable {
 
   
   /**
-   * Schemas used in this patch request
+   * A list of schemas used in the patch request.
    **/
   public ScimV2PatchRequest schemas(List<String> schemas) {
     this.schemas = schemas;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Schemas used in this patch request")
+  @ApiModelProperty(example = "null", required = true, value = "A list of schemas used in the patch request.")
   @JsonProperty("schemas")
   public List<String> getSchemas() {
     return schemas;

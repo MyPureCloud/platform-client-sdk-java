@@ -19,6 +19,9 @@ public class UserTokensTopicTokenNotification  implements Serializable {
   private String ipAddress = null;
   private String dateCreated = null;
   private String tokenExpirationDate = null;
+  private String sessionId = null;
+  private String clientId = null;
+  private String tokenHash = null;
 
   
   /**
@@ -89,6 +92,57 @@ public class UserTokensTopicTokenNotification  implements Serializable {
   }
 
   
+  /**
+   **/
+  public UserTokensTopicTokenNotification sessionId(String sessionId) {
+    this.sessionId = sessionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("sessionId")
+  public String getSessionId() {
+    return sessionId;
+  }
+  public void setSessionId(String sessionId) {
+    this.sessionId = sessionId;
+  }
+
+  
+  /**
+   **/
+  public UserTokensTopicTokenNotification clientId(String clientId) {
+    this.clientId = clientId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("clientId")
+  public String getClientId() {
+    return clientId;
+  }
+  public void setClientId(String clientId) {
+    this.clientId = clientId;
+  }
+
+  
+  /**
+   **/
+  public UserTokensTopicTokenNotification tokenHash(String tokenHash) {
+    this.tokenHash = tokenHash;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("tokenHash")
+  public String getTokenHash() {
+    return tokenHash;
+  }
+  public void setTokenHash(String tokenHash) {
+    this.tokenHash = tokenHash;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -102,12 +156,15 @@ public class UserTokensTopicTokenNotification  implements Serializable {
     return Objects.equals(this.user, userTokensTopicTokenNotification.user) &&
         Objects.equals(this.ipAddress, userTokensTopicTokenNotification.ipAddress) &&
         Objects.equals(this.dateCreated, userTokensTopicTokenNotification.dateCreated) &&
-        Objects.equals(this.tokenExpirationDate, userTokensTopicTokenNotification.tokenExpirationDate);
+        Objects.equals(this.tokenExpirationDate, userTokensTopicTokenNotification.tokenExpirationDate) &&
+        Objects.equals(this.sessionId, userTokensTopicTokenNotification.sessionId) &&
+        Objects.equals(this.clientId, userTokensTopicTokenNotification.clientId) &&
+        Objects.equals(this.tokenHash, userTokensTopicTokenNotification.tokenHash);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(user, ipAddress, dateCreated, tokenExpirationDate);
+    return Objects.hash(user, ipAddress, dateCreated, tokenExpirationDate, sessionId, clientId, tokenHash);
   }
 
   @Override
@@ -119,6 +176,9 @@ public class UserTokensTopicTokenNotification  implements Serializable {
     sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    tokenExpirationDate: ").append(toIndentedString(tokenExpirationDate)).append("\n");
+    sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
+    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
+    sb.append("    tokenHash: ").append(toIndentedString(tokenHash)).append("\n");
     sb.append("}");
     return sb.toString();
   }

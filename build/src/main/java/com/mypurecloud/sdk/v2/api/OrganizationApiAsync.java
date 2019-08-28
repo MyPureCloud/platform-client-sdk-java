@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
+import com.mypurecloud.sdk.v2.model.EmbeddedIntegration;
 import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrgWhitelistSettings;
 import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
@@ -22,9 +23,11 @@ import com.mypurecloud.sdk.v2.model.FeatureState;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrganizationsEmbeddedintegrationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsWhitelistRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOrganizationsFeatureRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOrganizationsEmbeddedintegrationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrganizationsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrganizationsWhitelistRequest;
 
@@ -125,6 +128,82 @@ public class OrganizationApiAsync {
 
   
   /**
+   * Get the list of domains that will be allowed to embed PureCloud applications
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EmbeddedIntegration> getOrganizationsEmbeddedintegrationAsync(GetOrganizationsEmbeddedintegrationRequest request, final AsyncApiCallback<EmbeddedIntegration> callback) {
+    try {
+      final SettableFuture<EmbeddedIntegration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EmbeddedIntegration>() {}, new AsyncApiCallback<ApiResponse<EmbeddedIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<EmbeddedIntegration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of domains that will be allowed to embed PureCloud applications
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EmbeddedIntegration>> getOrganizationsEmbeddedintegrationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EmbeddedIntegration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EmbeddedIntegration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EmbeddedIntegration>() {}, new AsyncApiCallback<ApiResponse<EmbeddedIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<EmbeddedIntegration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EmbeddedIntegration> response = (ApiResponse<EmbeddedIntegration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EmbeddedIntegration> response = (ApiResponse<EmbeddedIntegration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get organization.
    * 
    * @param request the request object
@@ -201,7 +280,7 @@ public class OrganizationApiAsync {
 
   
   /**
-   * Get organization whitelist settings
+   * Use PUT /api/v2/organizations/embeddedintegration instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -235,7 +314,7 @@ public class OrganizationApiAsync {
   }
 
   /**
-   * Get organization whitelist settings
+   * Use PUT /api/v2/organizations/embeddedintegration instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -353,6 +432,82 @@ public class OrganizationApiAsync {
 
   
   /**
+   * Update the list of domains that will be allowed to embed PureCloud applications
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EmbeddedIntegration> putOrganizationsEmbeddedintegrationAsync(PutOrganizationsEmbeddedintegrationRequest request, final AsyncApiCallback<EmbeddedIntegration> callback) {
+    try {
+      final SettableFuture<EmbeddedIntegration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EmbeddedIntegration>() {}, new AsyncApiCallback<ApiResponse<EmbeddedIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<EmbeddedIntegration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the list of domains that will be allowed to embed PureCloud applications
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EmbeddedIntegration>> putOrganizationsEmbeddedintegrationAsync(ApiRequest<EmbeddedIntegration> request, final AsyncApiCallback<ApiResponse<EmbeddedIntegration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EmbeddedIntegration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EmbeddedIntegration>() {}, new AsyncApiCallback<ApiResponse<EmbeddedIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<EmbeddedIntegration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EmbeddedIntegration> response = (ApiResponse<EmbeddedIntegration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EmbeddedIntegration> response = (ApiResponse<EmbeddedIntegration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Update organization.
    * 
    * @param request the request object
@@ -429,7 +584,7 @@ public class OrganizationApiAsync {
 
   
   /**
-   * Update organization whitelist settings
+   * Use PUT /api/v2/organizations/embeddedintegration instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -463,7 +618,7 @@ public class OrganizationApiAsync {
   }
 
   /**
-   * Update organization whitelist settings
+   * Use PUT /api/v2/organizations/embeddedintegration instead
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

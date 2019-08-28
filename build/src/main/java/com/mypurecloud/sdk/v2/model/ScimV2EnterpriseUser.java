@@ -22,14 +22,14 @@ public class ScimV2EnterpriseUser  implements Serializable {
 
   
   /**
-   * User division name
+   * The division that the user belongs to.
    **/
   public ScimV2EnterpriseUser division(String division) {
     this.division = division;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "User division name")
+  @ApiModelProperty(example = "null", value = "The division that the user belongs to.")
   @JsonProperty("division")
   public String getDivision() {
     return division;
@@ -40,14 +40,14 @@ public class ScimV2EnterpriseUser  implements Serializable {
 
   
   /**
-   * User department name
+   * The department that the user belongs to.
    **/
   public ScimV2EnterpriseUser department(String department) {
     this.department = department;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "User department name")
+  @ApiModelProperty(example = "null", value = "The department that the user belongs to.")
   @JsonProperty("department")
   public String getDepartment() {
     return department;
@@ -58,14 +58,14 @@ public class ScimV2EnterpriseUser  implements Serializable {
 
   
   /**
-   * Manager
+   * The user's manager.
    **/
   public ScimV2EnterpriseUser manager(Manager manager) {
     this.manager = manager;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Manager")
+  @ApiModelProperty(example = "null", value = "The user's manager.")
   @JsonProperty("manager")
   public Manager getManager() {
     return manager;

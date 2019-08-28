@@ -37,6 +37,8 @@ import com.mypurecloud.sdk.v2.model.QueueEntityListing;
 import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
 import com.mypurecloud.sdk.v2.model.RoutingSkill;
 import com.mypurecloud.sdk.v2.model.SkillEntityListing;
+import com.mypurecloud.sdk.v2.model.SmsAddress;
+import com.mypurecloud.sdk.v2.model.SmsAddressEntityListing;
 import com.mypurecloud.sdk.v2.model.SMSAvailablePhoneNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumber;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberEntityListing;

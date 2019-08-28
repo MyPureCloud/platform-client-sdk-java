@@ -11,6 +11,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteConversationParticipantFlaggedreason**](ConversationsApi.html#deleteConversationParticipantFlaggedreason) | Remove flagged reason from conversation participant. |
 | [**deleteConversationsCallParticipantConsult**](ConversationsApi.html#deleteConversationsCallParticipantConsult) | Cancel the transfer |
 | [**deleteConversationsEmailMessagesDraftAttachment**](ConversationsApi.html#deleteConversationsEmailMessagesDraftAttachment) | Delete attachment from draft |
+| [**deleteConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsFacebookIntegrationId) | Delete a Facebook messaging integration |
+| [**deleteConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsLineIntegrationId) | Delete a LINE messenger integration |
+| [**deleteConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsTwitterIntegrationId) | Delete a Twitter messaging integration |
 | [**getAnalyticsConversationDetails**](ConversationsApi.html#getAnalyticsConversationDetails) | Get a conversation by id |
 | [**getAnalyticsConversationsDetails**](ConversationsApi.html#getAnalyticsConversationsDetails) | Gets multiple conversations by id |
 | [**getConversation**](ConversationsApi.html#getConversation) | Get conversation |
@@ -50,6 +53,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsMessageParticipantWrapup**](ConversationsApi.html#getConversationsMessageParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationsMessageParticipantWrapupcodes**](ConversationsApi.html#getConversationsMessageParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
 | [**getConversationsMessages**](ConversationsApi.html#getConversationsMessages) | Get active message conversations for the logged in user |
+| [**getConversationsMessagingIntegrations**](ConversationsApi.html#getConversationsMessagingIntegrations) | Get a list of Integrations |
+| [**getConversationsMessagingIntegrationsFacebook**](ConversationsApi.html#getConversationsMessagingIntegrationsFacebook) | Get a list of Facebook Integrations |
+| [**getConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsFacebookIntegrationId) | Get a Facebook messaging integration |
+| [**getConversationsMessagingIntegrationsLine**](ConversationsApi.html#getConversationsMessagingIntegrationsLine) | Get a list of LINE messenger Integrations |
+| [**getConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsLineIntegrationId) | Get a LINE messenger integration |
+| [**getConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#getConversationsMessagingIntegrationsTwitter) | Get a list of Twitter Integrations |
+| [**getConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsTwitterIntegrationId) | Get a Twitter messaging integration |
+| [**getConversationsMessagingSticker**](ConversationsApi.html#getConversationsMessagingSticker) | Get a list of Messaging Stickers |
 | [**patchConversationParticipant**](ConversationsApi.html#patchConversationParticipant) | Update a participant. |
 | [**patchConversationParticipantAttributes**](ConversationsApi.html#patchConversationParticipantAttributes) | Update the attributes on a conversation participant. |
 | [**patchConversationsCall**](ConversationsApi.html#patchConversationsCall) | Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants |
@@ -106,9 +117,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsMessageMessagesBulk**](ConversationsApi.html#postConversationsMessageMessagesBulk) | Get messages in batch |
 | [**postConversationsMessageParticipantReplace**](ConversationsApi.html#postConversationsMessageParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsMessages**](ConversationsApi.html#postConversationsMessages) | Create an outbound messaging conversation. |
+| [**postConversationsMessagingIntegrationsFacebook**](ConversationsApi.html#postConversationsMessagingIntegrationsFacebook) | Create a Facebook Integration |
+| [**postConversationsMessagingIntegrationsLine**](ConversationsApi.html#postConversationsMessagingIntegrationsLine) | Create a LINE messenger Integration |
+| [**postConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#postConversationsMessagingIntegrationsTwitter) | Create a Twitter Integration |
 | [**putConversationParticipantFlaggedreason**](ConversationsApi.html#putConversationParticipantFlaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality. |
 | [**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi.html#putConversationsCallParticipantCommunicationUuidata) | Set uuiData to be sent on future commands. |
 | [**putConversationsEmailMessagesDraft**](ConversationsApi.html#putConversationsEmailMessagesDraft) | Update conversation draft reply |
+| [**putConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#putConversationsMessagingIntegrationsLineIntegrationId) | Update a LINE messenger integration |
 {: class="table-striped"}
 
 <a name="deleteConversationParticipantCode"></a>
@@ -358,6 +373,192 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| conversationId | 
 | **attachmentId** | **String**| attachmentId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteConversationsMessagingIntegrationsFacebookIntegrationId"></a>
+
+# **deleteConversationsMessagingIntegrationsFacebookIntegrationId**
+
+
+
+> Void deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId)
+
+Delete a Facebook messaging integration
+
+
+
+Wraps DELETE /api/v2/conversations/messaging/integrations/facebook/{integrationId}  
+
+Requires ANY permissions: 
+
+* messaging:integration:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration ID
+try {
+    apiInstance.deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#deleteConversationsMessagingIntegrationsFacebookIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteConversationsMessagingIntegrationsLineIntegrationId"></a>
+
+# **deleteConversationsMessagingIntegrationsLineIntegrationId**
+
+
+
+> Void deleteConversationsMessagingIntegrationsLineIntegrationId(integrationId)
+
+Delete a LINE messenger integration
+
+
+
+Wraps DELETE /api/v2/conversations/messaging/integrations/line/{integrationId}  
+
+Requires ANY permissions: 
+
+* messaging:integration:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration ID
+try {
+    apiInstance.deleteConversationsMessagingIntegrationsLineIntegrationId(integrationId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#deleteConversationsMessagingIntegrationsLineIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteConversationsMessagingIntegrationsTwitterIntegrationId"></a>
+
+# **deleteConversationsMessagingIntegrationsTwitterIntegrationId**
+
+
+
+> Void deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId)
+
+Delete a Twitter messaging integration
+
+
+
+Wraps DELETE /api/v2/conversations/messaging/integrations/twitter/{integrationId}  
+
+Requires ANY permissions: 
+
+* messaging:integration:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration ID
+try {
+    apiInstance.deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#deleteConversationsMessagingIntegrationsTwitterIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration ID | 
 {: class="table-striped"}
 
 
@@ -2821,6 +3022,522 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**MessageConversationEntityListing**](MessageConversationEntityListing.html)
+
+<a name="getConversationsMessagingIntegrations"></a>
+
+# **getConversationsMessagingIntegrations**
+
+
+
+> [MessagingIntegrationEntityListing](MessagingIntegrationEntityListing.html) getConversationsMessagingIntegrations(pageSize, pageNumber)
+
+Get a list of Integrations
+
+
+
+Wraps GET /api/v2/conversations/messaging/integrations  
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    MessagingIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrations(pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MessagingIntegrationEntityListing**](MessagingIntegrationEntityListing.html)
+
+<a name="getConversationsMessagingIntegrationsFacebook"></a>
+
+# **getConversationsMessagingIntegrationsFacebook**
+
+
+
+> [FacebookIntegrationEntityListing](FacebookIntegrationEntityListing.html) getConversationsMessagingIntegrationsFacebook(pageSize, pageNumber)
+
+Get a list of Facebook Integrations
+
+
+
+Wraps GET /api/v2/conversations/messaging/integrations/facebook  
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    FacebookIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrationsFacebook(pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsFacebook");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FacebookIntegrationEntityListing**](FacebookIntegrationEntityListing.html)
+
+<a name="getConversationsMessagingIntegrationsFacebookIntegrationId"></a>
+
+# **getConversationsMessagingIntegrationsFacebookIntegrationId**
+
+
+
+> [FacebookIntegration](FacebookIntegration.html) getConversationsMessagingIntegrationsFacebookIntegrationId(integrationId)
+
+Get a Facebook messaging integration
+
+
+
+Wraps GET /api/v2/conversations/messaging/integrations/facebook/{integrationId}  
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration ID
+try {
+    FacebookIntegration result = apiInstance.getConversationsMessagingIntegrationsFacebookIntegrationId(integrationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsFacebookIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FacebookIntegration**](FacebookIntegration.html)
+
+<a name="getConversationsMessagingIntegrationsLine"></a>
+
+# **getConversationsMessagingIntegrationsLine**
+
+
+
+> [LineIntegrationEntityListing](LineIntegrationEntityListing.html) getConversationsMessagingIntegrationsLine(pageSize, pageNumber)
+
+Get a list of LINE messenger Integrations
+
+
+
+Wraps GET /api/v2/conversations/messaging/integrations/line  
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    LineIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrationsLine(pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsLine");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LineIntegrationEntityListing**](LineIntegrationEntityListing.html)
+
+<a name="getConversationsMessagingIntegrationsLineIntegrationId"></a>
+
+# **getConversationsMessagingIntegrationsLineIntegrationId**
+
+
+
+> [LineIntegration](LineIntegration.html) getConversationsMessagingIntegrationsLineIntegrationId(integrationId)
+
+Get a LINE messenger integration
+
+
+
+Wraps GET /api/v2/conversations/messaging/integrations/line/{integrationId}  
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration ID
+try {
+    LineIntegration result = apiInstance.getConversationsMessagingIntegrationsLineIntegrationId(integrationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsLineIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LineIntegration**](LineIntegration.html)
+
+<a name="getConversationsMessagingIntegrationsTwitter"></a>
+
+# **getConversationsMessagingIntegrationsTwitter**
+
+
+
+> [TwitterIntegrationEntityListing](TwitterIntegrationEntityListing.html) getConversationsMessagingIntegrationsTwitter(pageSize, pageNumber)
+
+Get a list of Twitter Integrations
+
+
+
+Wraps GET /api/v2/conversations/messaging/integrations/twitter  
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    TwitterIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrationsTwitter(pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsTwitter");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TwitterIntegrationEntityListing**](TwitterIntegrationEntityListing.html)
+
+<a name="getConversationsMessagingIntegrationsTwitterIntegrationId"></a>
+
+# **getConversationsMessagingIntegrationsTwitterIntegrationId**
+
+
+
+> [TwitterIntegration](TwitterIntegration.html) getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId)
+
+Get a Twitter messaging integration
+
+
+
+Wraps GET /api/v2/conversations/messaging/integrations/twitter/{integrationId}  
+
+Requires ANY permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration ID
+try {
+    TwitterIntegration result = apiInstance.getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsTwitterIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TwitterIntegration**](TwitterIntegration.html)
+
+<a name="getConversationsMessagingSticker"></a>
+
+# **getConversationsMessagingSticker**
+
+
+
+> [MessagingStickerEntityListing](MessagingStickerEntityListing.html) getConversationsMessagingSticker(messengerType, pageSize, pageNumber)
+
+Get a list of Messaging Stickers
+
+
+
+Wraps GET /api/v2/conversations/messaging/stickers/{messengerType}  
+
+Requires ANY permissions: 
+
+* conversation:message:create
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String messengerType = "messengerType_example"; // String | Messenger Type
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    MessagingStickerEntityListing result = apiInstance.getConversationsMessagingSticker(messengerType, pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingSticker");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **messengerType** | **String**| Messenger Type | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MessagingStickerEntityListing**](MessagingStickerEntityListing.html)
 
 <a name="patchConversationParticipant"></a>
 
@@ -6462,6 +7179,195 @@ try {
 
 [**MessageConversation**](MessageConversation.html)
 
+<a name="postConversationsMessagingIntegrationsFacebook"></a>
+
+# **postConversationsMessagingIntegrationsFacebook**
+
+
+
+> [FacebookIntegration](FacebookIntegration.html) postConversationsMessagingIntegrationsFacebook(body)
+
+Create a Facebook Integration
+
+
+
+Wraps POST /api/v2/conversations/messaging/integrations/facebook  
+
+Requires ANY permissions: 
+
+* messaging:integration:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+FacebookIntegrationRequest body = new FacebookIntegrationRequest(); // FacebookIntegrationRequest | FacebookIntegrationRequest
+try {
+    FacebookIntegration result = apiInstance.postConversationsMessagingIntegrationsFacebook(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessagingIntegrationsFacebook");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**FacebookIntegrationRequest**](FacebookIntegrationRequest.html)| FacebookIntegrationRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FacebookIntegration**](FacebookIntegration.html)
+
+<a name="postConversationsMessagingIntegrationsLine"></a>
+
+# **postConversationsMessagingIntegrationsLine**
+
+
+
+> [LineIntegration](LineIntegration.html) postConversationsMessagingIntegrationsLine(body)
+
+Create a LINE messenger Integration
+
+
+
+Wraps POST /api/v2/conversations/messaging/integrations/line  
+
+Requires ANY permissions: 
+
+* messaging:integration:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+LineIntegrationRequest body = new LineIntegrationRequest(); // LineIntegrationRequest | LineIntegrationRequest
+try {
+    LineIntegration result = apiInstance.postConversationsMessagingIntegrationsLine(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessagingIntegrationsLine");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**LineIntegrationRequest**](LineIntegrationRequest.html)| LineIntegrationRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LineIntegration**](LineIntegration.html)
+
+<a name="postConversationsMessagingIntegrationsTwitter"></a>
+
+# **postConversationsMessagingIntegrationsTwitter**
+
+
+
+> [TwitterIntegration](TwitterIntegration.html) postConversationsMessagingIntegrationsTwitter(body)
+
+Create a Twitter Integration
+
+
+
+Wraps POST /api/v2/conversations/messaging/integrations/twitter  
+
+Requires ANY permissions: 
+
+* messaging:integration:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+TwitterIntegrationRequest body = new TwitterIntegrationRequest(); // TwitterIntegrationRequest | TwitterIntegrationRequest
+try {
+    TwitterIntegration result = apiInstance.postConversationsMessagingIntegrationsTwitter(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessagingIntegrationsTwitter");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**TwitterIntegrationRequest**](TwitterIntegrationRequest.html)| TwitterIntegrationRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TwitterIntegration**](TwitterIntegration.html)
+
 <a name="putConversationParticipantFlaggedreason"></a>
 
 # **putConversationParticipantFlaggedreason**
@@ -6656,4 +7562,69 @@ try {
 ### Return type
 
 [**EmailMessage**](EmailMessage.html)
+
+<a name="putConversationsMessagingIntegrationsLineIntegrationId"></a>
+
+# **putConversationsMessagingIntegrationsLineIntegrationId**
+
+
+
+> [LineIntegration](LineIntegration.html) putConversationsMessagingIntegrationsLineIntegrationId(integrationId, body)
+
+Update a LINE messenger integration
+
+
+
+Wraps PUT /api/v2/conversations/messaging/integrations/line/{integrationId}  
+
+Requires ANY permissions: 
+
+* messaging:integration:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration ID
+LineIntegrationRequest body = new LineIntegrationRequest(); // LineIntegrationRequest | LineIntegrationRequest
+try {
+    LineIntegration result = apiInstance.putConversationsMessagingIntegrationsLineIntegrationId(integrationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#putConversationsMessagingIntegrationsLineIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration ID | 
+| **body** | [**LineIntegrationRequest**](LineIntegrationRequest.html)| LineIntegrationRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LineIntegration**](LineIntegration.html)
 

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.SmsAddress;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -139,6 +140,7 @@ public class SmsPhoneNumber  implements Serializable {
     }
   }
   private AutoRenewableEnum autoRenewable = null;
+  private SmsAddress addressId = null;
   private String selfUri = null;
 
   
@@ -407,6 +409,24 @@ public class SmsPhoneNumber  implements Serializable {
   }
 
   
+  /**
+   * The id of an address attached to this phone number.
+   **/
+  public SmsPhoneNumber addressId(SmsAddress addressId) {
+    this.addressId = addressId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The id of an address attached to this phone number.")
+  @JsonProperty("addressId")
+  public SmsAddress getAddressId() {
+    return addressId;
+  }
+  public void setAddressId(SmsAddress addressId) {
+    this.addressId = addressId;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -440,12 +460,13 @@ public class SmsPhoneNumber  implements Serializable {
         Objects.equals(this.cancellationDate, smsPhoneNumber.cancellationDate) &&
         Objects.equals(this.renewalDate, smsPhoneNumber.renewalDate) &&
         Objects.equals(this.autoRenewable, smsPhoneNumber.autoRenewable) &&
+        Objects.equals(this.addressId, smsPhoneNumber.addressId) &&
         Objects.equals(this.selfUri, smsPhoneNumber.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, phoneNumber, phoneNumberType, provisionedThroughPureCloud, phoneNumberStatus, countryCode, dateCreated, dateModified, createdBy, modifiedBy, version, purchaseDate, cancellationDate, renewalDate, autoRenewable, selfUri);
+    return Objects.hash(id, name, phoneNumber, phoneNumberType, provisionedThroughPureCloud, phoneNumberStatus, countryCode, dateCreated, dateModified, createdBy, modifiedBy, version, purchaseDate, cancellationDate, renewalDate, autoRenewable, addressId, selfUri);
   }
 
   @Override
@@ -469,6 +490,7 @@ public class SmsPhoneNumber  implements Serializable {
     sb.append("    cancellationDate: ").append(toIndentedString(cancellationDate)).append("\n");
     sb.append("    renewalDate: ").append(toIndentedString(renewalDate)).append("\n");
     sb.append("    autoRenewable: ").append(toIndentedString(autoRenewable)).append("\n");
+    sb.append("    addressId: ").append(toIndentedString(addressId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

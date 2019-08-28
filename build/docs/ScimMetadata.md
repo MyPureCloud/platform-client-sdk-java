@@ -8,10 +8,10 @@ title: ScimMetadata
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **resourceType** | [**ResourceTypeEnum**](#ResourceTypeEnum) | Resource type |  [optional] |
-| **lastModified** | [**Date**](Date.html) | Last Modified ISO6501 (UTC). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **location** | **String** | URI location of resource |  [optional] |
-| **version** | **String** | ETag version of resource [RFC7232] |  [optional] |
+| **resourceType** | [**ResourceTypeEnum**](#ResourceTypeEnum) | The type of the resource. |  [optional] |
+| **lastModified** | [**Date**](Date.html) | The last time that the resource was modified. Time in ISO 6501 (UTC) format. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **location** | **String** | The URI of the resource. |  [optional] |
+| **version** | **String** | The version of the resource. Matches the ETag HTTP response header. |  [optional] |
 {: class="table table-striped"}
 
 

@@ -34,6 +34,7 @@ public class ScimV2CreateUser  implements Serializable {
   private List<Photo> photos = new ArrayList<Photo>();
   private String externalId = null;
   private List<ScimV2GroupReference> groups = new ArrayList<ScimV2GroupReference>();
+  private List<String> roles = new ArrayList<String>();
   private ScimMetadata meta = null;
   private ScimV2EnterpriseUser urnietfparamsscimschemasextensionenterprise20User = null;
 
@@ -57,14 +58,14 @@ public class ScimV2CreateUser  implements Serializable {
 
   
   /**
-   * Active flag
+   * Indicates whether the user's administrative status is active.
    **/
   public ScimV2CreateUser active(Boolean active) {
     this.active = active;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Active flag")
+  @ApiModelProperty(example = "null", value = "Indicates whether the user's administrative status is active.")
   @JsonProperty("active")
   public Boolean getActive() {
     return active;
@@ -75,14 +76,14 @@ public class ScimV2CreateUser  implements Serializable {
 
   
   /**
-   * User Name (Must be Unique) maps to PureCloud e-mail address
+   * The user's PureCloud email address. Must be unique.
    **/
   public ScimV2CreateUser userName(String userName) {
     this.userName = userName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "User Name (Must be Unique) maps to PureCloud e-mail address")
+  @ApiModelProperty(example = "null", required = true, value = "The user's PureCloud email address. Must be unique.")
   @JsonProperty("userName")
   public String getUserName() {
     return userName;
@@ -93,14 +94,14 @@ public class ScimV2CreateUser  implements Serializable {
 
   
   /**
-   * Display Name
+   * The display name for the user.
    **/
   public ScimV2CreateUser displayName(String displayName) {
     this.displayName = displayName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Display Name")
+  @ApiModelProperty(example = "null", required = true, value = "The display name for the user.")
   @JsonProperty("displayName")
   public String getDisplayName() {
     return displayName;
@@ -111,14 +112,14 @@ public class ScimV2CreateUser  implements Serializable {
 
   
   /**
-   * Password (updateOnly)
+   * A new password for a PureCloud user. Does not return an existing password.
    **/
   public ScimV2CreateUser password(String password) {
     this.password = password;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Password (updateOnly)")
+  @ApiModelProperty(example = "null", value = "A new password for a PureCloud user. Does not return an existing password.")
   @JsonProperty("password")
   public String getPassword() {
     return password;
@@ -129,14 +130,14 @@ public class ScimV2CreateUser  implements Serializable {
 
   
   /**
-   * Title
+   * The user's title.
    **/
   public ScimV2CreateUser title(String title) {
     this.title = title;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Title")
+  @ApiModelProperty(example = "null", value = "The user's title.")
   @JsonProperty("title")
   public String getTitle() {
     return title;
@@ -147,14 +148,14 @@ public class ScimV2CreateUser  implements Serializable {
 
   
   /**
-   * Phone numbers
+   * A list of the user's phone numbers.
    **/
   public ScimV2CreateUser phoneNumbers(List<ScimPhoneNumber> phoneNumbers) {
     this.phoneNumbers = phoneNumbers;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Phone numbers")
+  @ApiModelProperty(example = "null", value = "A list of the user's phone numbers.")
   @JsonProperty("phoneNumbers")
   public List<ScimPhoneNumber> getPhoneNumbers() {
     return phoneNumbers;
@@ -165,14 +166,14 @@ public class ScimV2CreateUser  implements Serializable {
 
   
   /**
-   * Emails
+   * A list of the user's email addresses.
    **/
   public ScimV2CreateUser emails(List<ScimEmail> emails) {
     this.emails = emails;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Emails")
+  @ApiModelProperty(example = "null", value = "A list of the user's email addresses.")
   @JsonProperty("emails")
   public List<ScimEmail> getEmails() {
     return emails;
@@ -183,14 +184,14 @@ public class ScimV2CreateUser  implements Serializable {
 
   
   /**
-   * Photos
+   * A list of the user's photos.
    **/
   public ScimV2CreateUser photos(List<Photo> photos) {
     this.photos = photos;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Photos")
+  @ApiModelProperty(example = "null", value = "A list of the user's photos.")
   @JsonProperty("photos")
   public List<Photo> getPhotos() {
     return photos;
@@ -201,14 +202,14 @@ public class ScimV2CreateUser  implements Serializable {
 
   
   /**
-   * External ID
+   * The external ID of the user. Set by the provisioning client. caseExact is set to true. mutability is set to readWrite.
    **/
   public ScimV2CreateUser externalId(String externalId) {
     this.externalId = externalId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "External ID")
+  @ApiModelProperty(example = "null", value = "The external ID of the user. Set by the provisioning client. caseExact is set to true. mutability is set to readWrite.")
   @JsonProperty("externalId")
   public String getExternalId() {
     return externalId;
@@ -219,20 +220,38 @@ public class ScimV2CreateUser  implements Serializable {
 
   
   /**
-   * Group References
+   * A list of groups that the user is a member of.
    **/
   public ScimV2CreateUser groups(List<ScimV2GroupReference> groups) {
     this.groups = groups;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Group References")
+  @ApiModelProperty(example = "null", value = "A list of groups that the user is a member of.")
   @JsonProperty("groups")
   public List<ScimV2GroupReference> getGroups() {
     return groups;
   }
   public void setGroups(List<ScimV2GroupReference> groups) {
     this.groups = groups;
+  }
+
+  
+  /**
+   * Roles
+   **/
+  public ScimV2CreateUser roles(List<String> roles) {
+    this.roles = roles;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Roles")
+  @JsonProperty("roles")
+  public List<String> getRoles() {
+    return roles;
+  }
+  public void setRoles(List<String> roles) {
+    this.roles = roles;
   }
 
   
@@ -292,13 +311,14 @@ public class ScimV2CreateUser  implements Serializable {
         Objects.equals(this.photos, scimV2CreateUser.photos) &&
         Objects.equals(this.externalId, scimV2CreateUser.externalId) &&
         Objects.equals(this.groups, scimV2CreateUser.groups) &&
+        Objects.equals(this.roles, scimV2CreateUser.roles) &&
         Objects.equals(this.meta, scimV2CreateUser.meta) &&
         Objects.equals(this.urnietfparamsscimschemasextensionenterprise20User, scimV2CreateUser.urnietfparamsscimschemasextensionenterprise20User);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(schemas, active, userName, displayName, password, title, phoneNumbers, emails, photos, externalId, groups, meta, urnietfparamsscimschemasextensionenterprise20User);
+    return Objects.hash(schemas, active, userName, displayName, password, title, phoneNumbers, emails, photos, externalId, groups, roles, meta, urnietfparamsscimschemasextensionenterprise20User);
   }
 
   @Override
@@ -317,6 +337,7 @@ public class ScimV2CreateUser  implements Serializable {
     sb.append("    photos: ").append(toIndentedString(photos)).append("\n");
     sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
+    sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    urnietfparamsscimschemasextensionenterprise20User: ").append(toIndentedString(urnietfparamsscimschemasextensionenterprise20User)).append("\n");
     sb.append("}");

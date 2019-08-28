@@ -167,14 +167,14 @@ public class DataSchema  implements Serializable {
 
   
   /**
-   * The JSON schema defining the extension to the built-in entity type.
+   * A JSON schema defining the extension to the built-in entity type.
    **/
   public DataSchema jsonSchema(JsonSchemaDocument jsonSchema) {
     this.jsonSchema = jsonSchema;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The JSON schema defining the extension to the built-in entity type.")
+  @ApiModelProperty(example = "null", required = true, value = "A JSON schema defining the extension to the built-in entity type.")
   @JsonProperty("jsonSchema")
   public JsonSchemaDocument getJsonSchema() {
     return jsonSchema;

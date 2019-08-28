@@ -12,6 +12,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
+import com.mypurecloud.sdk.v2.model.EmbeddedIntegration;
 import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrgWhitelistSettings;
 import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
@@ -19,9 +20,11 @@ import com.mypurecloud.sdk.v2.model.FeatureState;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrganizationsEmbeddedintegrationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsWhitelistRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOrganizationsFeatureRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOrganizationsEmbeddedintegrationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrganizationsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrganizationsWhitelistRequest;
 
@@ -124,6 +127,81 @@ public class OrganizationApi {
 
   
   /**
+   * Get the list of domains that will be allowed to embed PureCloud applications
+   * 
+   * @return EmbeddedIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmbeddedIntegration getOrganizationsEmbeddedintegration() throws IOException, ApiException {
+    return  getOrganizationsEmbeddedintegration(createGetOrganizationsEmbeddedintegrationRequest());
+  }
+
+  /**
+   * Get the list of domains that will be allowed to embed PureCloud applications
+   * 
+   * @return EmbeddedIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmbeddedIntegration> getOrganizationsEmbeddedintegrationWithHttpInfo() throws IOException {
+    return getOrganizationsEmbeddedintegration(createGetOrganizationsEmbeddedintegrationRequest().withHttpInfo());
+  }
+
+  private GetOrganizationsEmbeddedintegrationRequest createGetOrganizationsEmbeddedintegrationRequest() {
+    return GetOrganizationsEmbeddedintegrationRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get the list of domains that will be allowed to embed PureCloud applications
+   * 
+   * @param request The request object
+   * @return EmbeddedIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmbeddedIntegration getOrganizationsEmbeddedintegration(GetOrganizationsEmbeddedintegrationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EmbeddedIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmbeddedIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of domains that will be allowed to embed PureCloud applications
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmbeddedIntegration> getOrganizationsEmbeddedintegration(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmbeddedIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmbeddedIntegration> response = (ApiResponse<EmbeddedIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmbeddedIntegration> response = (ApiResponse<EmbeddedIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get organization.
    * 
    * @return Organization
@@ -199,7 +277,7 @@ public class OrganizationApi {
 
   
   /**
-   * Get organization whitelist settings
+   * Use PUT /api/v2/organizations/embeddedintegration instead
    * 
    * @return OrgWhitelistSettings
    * @throws ApiException if the request fails on the server
@@ -210,7 +288,7 @@ public class OrganizationApi {
   }
 
   /**
-   * Get organization whitelist settings
+   * Use PUT /api/v2/organizations/embeddedintegration instead
    * 
    * @return OrgWhitelistSettings
    * @throws IOException if the request fails to be processed
@@ -225,7 +303,7 @@ public class OrganizationApi {
   }
 
   /**
-   * Get organization whitelist settings
+   * Use PUT /api/v2/organizations/embeddedintegration instead
    * 
    * @param request The request object
    * @return OrgWhitelistSettings
@@ -244,7 +322,7 @@ public class OrganizationApi {
   }
 
   /**
-   * Get organization whitelist settings
+   * Use PUT /api/v2/organizations/embeddedintegration instead
    * 
    * @param request The request object
    * @return the response
@@ -357,6 +435,85 @@ public class OrganizationApi {
 
   
   /**
+   * Update the list of domains that will be allowed to embed PureCloud applications
+   * 
+   * @param body Whitelist settings (required)
+   * @return EmbeddedIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmbeddedIntegration putOrganizationsEmbeddedintegration(EmbeddedIntegration body) throws IOException, ApiException {
+    return  putOrganizationsEmbeddedintegration(createPutOrganizationsEmbeddedintegrationRequest(body));
+  }
+
+  /**
+   * Update the list of domains that will be allowed to embed PureCloud applications
+   * 
+   * @param body Whitelist settings (required)
+   * @return EmbeddedIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmbeddedIntegration> putOrganizationsEmbeddedintegrationWithHttpInfo(EmbeddedIntegration body) throws IOException {
+    return putOrganizationsEmbeddedintegration(createPutOrganizationsEmbeddedintegrationRequest(body).withHttpInfo());
+  }
+
+  private PutOrganizationsEmbeddedintegrationRequest createPutOrganizationsEmbeddedintegrationRequest(EmbeddedIntegration body) {
+    return PutOrganizationsEmbeddedintegrationRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update the list of domains that will be allowed to embed PureCloud applications
+   * 
+   * @param request The request object
+   * @return EmbeddedIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmbeddedIntegration putOrganizationsEmbeddedintegration(PutOrganizationsEmbeddedintegrationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EmbeddedIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmbeddedIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the list of domains that will be allowed to embed PureCloud applications
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmbeddedIntegration> putOrganizationsEmbeddedintegration(ApiRequest<EmbeddedIntegration> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmbeddedIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmbeddedIntegration> response = (ApiResponse<EmbeddedIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmbeddedIntegration> response = (ApiResponse<EmbeddedIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Update organization.
    * 
    * @param body Organization (optional)
@@ -436,7 +593,7 @@ public class OrganizationApi {
 
   
   /**
-   * Update organization whitelist settings
+   * Use PUT /api/v2/organizations/embeddedintegration instead
    * 
    * @param body Whitelist settings (required)
    * @return OrgWhitelistSettings
@@ -448,7 +605,7 @@ public class OrganizationApi {
   }
 
   /**
-   * Update organization whitelist settings
+   * Use PUT /api/v2/organizations/embeddedintegration instead
    * 
    * @param body Whitelist settings (required)
    * @return OrgWhitelistSettings
@@ -466,7 +623,7 @@ public class OrganizationApi {
   }
 
   /**
-   * Update organization whitelist settings
+   * Use PUT /api/v2/organizations/embeddedintegration instead
    * 
    * @param request The request object
    * @return OrgWhitelistSettings
@@ -485,7 +642,7 @@ public class OrganizationApi {
   }
 
   /**
-   * Update organization whitelist settings
+   * Use PUT /api/v2/organizations/embeddedintegration instead
    * 
    * @param request The request object
    * @return the response

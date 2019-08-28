@@ -19,7 +19,7 @@ public class ScimEmail  implements Serializable {
   private String value = null;
 
   /**
-   * Type of Email
+   * The type of email address.
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -56,14 +56,14 @@ public class ScimEmail  implements Serializable {
 
   
   /**
-   * Email address
+   * The email address.
    **/
   public ScimEmail value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Email address")
+  @ApiModelProperty(example = "null", value = "The email address.")
   @JsonProperty("value")
   public String getValue() {
     return value;
@@ -74,14 +74,14 @@ public class ScimEmail  implements Serializable {
 
   
   /**
-   * Type of Email
+   * The type of email address.
    **/
   public ScimEmail type(TypeEnum type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Type of Email")
+  @ApiModelProperty(example = "null", value = "The type of email address.")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
@@ -92,14 +92,14 @@ public class ScimEmail  implements Serializable {
 
   
   /**
-   * Primary flag
+   * Indicates whether the email address is the primary email address.
    **/
   public ScimEmail primary(Boolean primary) {
     this.primary = primary;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Primary flag")
+  @ApiModelProperty(example = "null", value = "Indicates whether the email address is the primary email address.")
   @JsonProperty("primary")
   public Boolean getPrimary() {
     return primary;

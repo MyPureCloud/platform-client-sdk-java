@@ -19,7 +19,7 @@ public class ScimV2PatchOperation  implements Serializable {
   
 
   /**
-   * Patch operation
+   * The patch operation to perform.
    */
   public enum OpEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -58,14 +58,14 @@ public class ScimV2PatchOperation  implements Serializable {
 
   
   /**
-   * Patch operation
+   * The patch operation to perform.
    **/
   public ScimV2PatchOperation op(OpEnum op) {
     this.op = op;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Patch operation")
+  @ApiModelProperty(example = "null", required = true, value = "The patch operation to perform.")
   @JsonProperty("op")
   public OpEnum getOp() {
     return op;
@@ -76,14 +76,14 @@ public class ScimV2PatchOperation  implements Serializable {
 
   
   /**
-   * Attribute path describing the target of the operation.  Required for 'remove' operation.
+   * The attribute path that describes the target of the operation. Required for a 'remove' operation.
    **/
   public ScimV2PatchOperation path(String path) {
     this.path = path;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Attribute path describing the target of the operation.  Required for 'remove' operation.")
+  @ApiModelProperty(example = "null", value = "The attribute path that describes the target of the operation. Required for a 'remove' operation.")
   @JsonProperty("path")
   public String getPath() {
     return path;
@@ -94,14 +94,14 @@ public class ScimV2PatchOperation  implements Serializable {
 
   
   /**
-   * Value to set in the specified path
+   * The value to set in the path.
    **/
   public ScimV2PatchOperation value(JsonNode value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Value to set in the specified path")
+  @ApiModelProperty(example = "null", value = "The value to set in the path.")
   @JsonProperty("value")
   public JsonNode getValue() {
     return value;

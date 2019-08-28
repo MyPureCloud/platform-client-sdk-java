@@ -37,6 +37,14 @@ import com.mypurecloud.sdk.v2.model.MessageConversation;
 import com.mypurecloud.sdk.v2.model.MessageMediaData;
 import com.mypurecloud.sdk.v2.model.MessageData;
 import com.mypurecloud.sdk.v2.model.MessageConversationEntityListing;
+import com.mypurecloud.sdk.v2.model.MessagingIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.FacebookIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.FacebookIntegration;
+import com.mypurecloud.sdk.v2.model.LineIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.LineIntegration;
+import com.mypurecloud.sdk.v2.model.TwitterIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.TwitterIntegration;
+import com.mypurecloud.sdk.v2.model.MessagingStickerEntityListing;
 import com.mypurecloud.sdk.v2.model.MediaParticipantRequest;
 import com.mypurecloud.sdk.v2.model.ParticipantAttributes;
 import com.mypurecloud.sdk.v2.model.Empty;
@@ -65,6 +73,9 @@ import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 import com.mypurecloud.sdk.v2.model.AdditionalMessage;
 import com.mypurecloud.sdk.v2.model.TextMessageListing;
 import com.mypurecloud.sdk.v2.model.CreateOutboundMessagingConversationRequest;
+import com.mypurecloud.sdk.v2.model.FacebookIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.LineIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
 
 
@@ -72,6 +83,9 @@ import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantCodeReque
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantFlaggedreasonRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsCallParticipantConsultRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsEmailMessagesDraftAttachmentRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsLineIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationRequest;
@@ -111,6 +125,14 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageParticipantWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageParticipantWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsLineRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsLineIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsTwitterRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingStickerRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallRequest;
@@ -167,9 +189,13 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationM
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageMessagesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsFacebookRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsLineRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsTwitterRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationParticipantFlaggedreasonRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsCallParticipantCommunicationUuidataRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailMessagesDraftRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIntegrationsLineIntegrationIdRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -492,6 +518,234 @@ public class ConversationsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteConversationsEmailMessagesDraftAttachment(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete a Facebook messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagingIntegrationsFacebookIntegrationId(String integrationId) throws IOException, ApiException {
+     deleteConversationsMessagingIntegrationsFacebookIntegrationId(createDeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest(integrationId));
+  }
+
+  /**
+   * Delete a Facebook messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagingIntegrationsFacebookIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+    return deleteConversationsMessagingIntegrationsFacebookIntegrationId(createDeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest(integrationId).withHttpInfo());
+  }
+
+  private DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest createDeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest(String integrationId) {
+    return DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a Facebook messaging integration
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagingIntegrationsFacebookIntegrationId(DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a Facebook messaging integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagingIntegrationsFacebookIntegrationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete a LINE messenger integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagingIntegrationsLineIntegrationId(String integrationId) throws IOException, ApiException {
+     deleteConversationsMessagingIntegrationsLineIntegrationId(createDeleteConversationsMessagingIntegrationsLineIntegrationIdRequest(integrationId));
+  }
+
+  /**
+   * Delete a LINE messenger integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagingIntegrationsLineIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+    return deleteConversationsMessagingIntegrationsLineIntegrationId(createDeleteConversationsMessagingIntegrationsLineIntegrationIdRequest(integrationId).withHttpInfo());
+  }
+
+  private DeleteConversationsMessagingIntegrationsLineIntegrationIdRequest createDeleteConversationsMessagingIntegrationsLineIntegrationIdRequest(String integrationId) {
+    return DeleteConversationsMessagingIntegrationsLineIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a LINE messenger integration
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagingIntegrationsLineIntegrationId(DeleteConversationsMessagingIntegrationsLineIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a LINE messenger integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagingIntegrationsLineIntegrationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete a Twitter messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagingIntegrationsTwitterIntegrationId(String integrationId) throws IOException, ApiException {
+     deleteConversationsMessagingIntegrationsTwitterIntegrationId(createDeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId));
+  }
+
+  /**
+   * Delete a Twitter messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagingIntegrationsTwitterIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+    return deleteConversationsMessagingIntegrationsTwitterIntegrationId(createDeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId).withHttpInfo());
+  }
+
+  private DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest createDeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest(String integrationId) {
+    return DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a Twitter messaging integration
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagingIntegrationsTwitterIntegrationId(DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a Twitter messaging integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagingIntegrationsTwitterIntegrationId(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -3686,6 +3940,662 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<MessageConversationEntityListing> response = (ApiResponse<MessageConversationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of Integrations
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return MessagingIntegrationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingIntegrationEntityListing getConversationsMessagingIntegrations(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrations(createGetConversationsMessagingIntegrationsRequest(pageSize, pageNumber));
+  }
+
+  /**
+   * Get a list of Integrations
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return MessagingIntegrationEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingIntegrationEntityListing> getConversationsMessagingIntegrationsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getConversationsMessagingIntegrations(createGetConversationsMessagingIntegrationsRequest(pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationsRequest createGetConversationsMessagingIntegrationsRequest(Integer pageSize, Integer pageNumber) {
+    return GetConversationsMessagingIntegrationsRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of Integrations
+   * 
+   * @param request The request object
+   * @return MessagingIntegrationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingIntegrationEntityListing getConversationsMessagingIntegrations(GetConversationsMessagingIntegrationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessagingIntegrationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessagingIntegrationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Integrations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingIntegrationEntityListing> getConversationsMessagingIntegrations(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessagingIntegrationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingIntegrationEntityListing> response = (ApiResponse<MessagingIntegrationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingIntegrationEntityListing> response = (ApiResponse<MessagingIntegrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of Facebook Integrations
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return FacebookIntegrationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FacebookIntegrationEntityListing getConversationsMessagingIntegrationsFacebook(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsFacebook(createGetConversationsMessagingIntegrationsFacebookRequest(pageSize, pageNumber));
+  }
+
+  /**
+   * Get a list of Facebook Integrations
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return FacebookIntegrationEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FacebookIntegrationEntityListing> getConversationsMessagingIntegrationsFacebookWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getConversationsMessagingIntegrationsFacebook(createGetConversationsMessagingIntegrationsFacebookRequest(pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationsFacebookRequest createGetConversationsMessagingIntegrationsFacebookRequest(Integer pageSize, Integer pageNumber) {
+    return GetConversationsMessagingIntegrationsFacebookRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of Facebook Integrations
+   * 
+   * @param request The request object
+   * @return FacebookIntegrationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FacebookIntegrationEntityListing getConversationsMessagingIntegrationsFacebook(GetConversationsMessagingIntegrationsFacebookRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FacebookIntegrationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FacebookIntegrationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Facebook Integrations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FacebookIntegrationEntityListing> getConversationsMessagingIntegrationsFacebook(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FacebookIntegrationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FacebookIntegrationEntityListing> response = (ApiResponse<FacebookIntegrationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FacebookIntegrationEntityListing> response = (ApiResponse<FacebookIntegrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a Facebook messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @return FacebookIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FacebookIntegration getConversationsMessagingIntegrationsFacebookIntegrationId(String integrationId) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsFacebookIntegrationId(createGetConversationsMessagingIntegrationsFacebookIntegrationIdRequest(integrationId));
+  }
+
+  /**
+   * Get a Facebook messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @return FacebookIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FacebookIntegration> getConversationsMessagingIntegrationsFacebookIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+    return getConversationsMessagingIntegrationsFacebookIntegrationId(createGetConversationsMessagingIntegrationsFacebookIntegrationIdRequest(integrationId).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest createGetConversationsMessagingIntegrationsFacebookIntegrationIdRequest(String integrationId) {
+    return GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+    
+            .build();
+  }
+
+  /**
+   * Get a Facebook messaging integration
+   * 
+   * @param request The request object
+   * @return FacebookIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FacebookIntegration getConversationsMessagingIntegrationsFacebookIntegrationId(GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FacebookIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FacebookIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Facebook messaging integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FacebookIntegration> getConversationsMessagingIntegrationsFacebookIntegrationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FacebookIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FacebookIntegration> response = (ApiResponse<FacebookIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FacebookIntegration> response = (ApiResponse<FacebookIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of LINE messenger Integrations
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return LineIntegrationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LineIntegrationEntityListing getConversationsMessagingIntegrationsLine(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsLine(createGetConversationsMessagingIntegrationsLineRequest(pageSize, pageNumber));
+  }
+
+  /**
+   * Get a list of LINE messenger Integrations
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return LineIntegrationEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LineIntegrationEntityListing> getConversationsMessagingIntegrationsLineWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getConversationsMessagingIntegrationsLine(createGetConversationsMessagingIntegrationsLineRequest(pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationsLineRequest createGetConversationsMessagingIntegrationsLineRequest(Integer pageSize, Integer pageNumber) {
+    return GetConversationsMessagingIntegrationsLineRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of LINE messenger Integrations
+   * 
+   * @param request The request object
+   * @return LineIntegrationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LineIntegrationEntityListing getConversationsMessagingIntegrationsLine(GetConversationsMessagingIntegrationsLineRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LineIntegrationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LineIntegrationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of LINE messenger Integrations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LineIntegrationEntityListing> getConversationsMessagingIntegrationsLine(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LineIntegrationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LineIntegrationEntityListing> response = (ApiResponse<LineIntegrationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LineIntegrationEntityListing> response = (ApiResponse<LineIntegrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a LINE messenger integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @return LineIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LineIntegration getConversationsMessagingIntegrationsLineIntegrationId(String integrationId) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsLineIntegrationId(createGetConversationsMessagingIntegrationsLineIntegrationIdRequest(integrationId));
+  }
+
+  /**
+   * Get a LINE messenger integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @return LineIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LineIntegration> getConversationsMessagingIntegrationsLineIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+    return getConversationsMessagingIntegrationsLineIntegrationId(createGetConversationsMessagingIntegrationsLineIntegrationIdRequest(integrationId).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationsLineIntegrationIdRequest createGetConversationsMessagingIntegrationsLineIntegrationIdRequest(String integrationId) {
+    return GetConversationsMessagingIntegrationsLineIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+    
+            .build();
+  }
+
+  /**
+   * Get a LINE messenger integration
+   * 
+   * @param request The request object
+   * @return LineIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LineIntegration getConversationsMessagingIntegrationsLineIntegrationId(GetConversationsMessagingIntegrationsLineIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LineIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LineIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a LINE messenger integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LineIntegration> getConversationsMessagingIntegrationsLineIntegrationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LineIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of Twitter Integrations
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return TwitterIntegrationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TwitterIntegrationEntityListing getConversationsMessagingIntegrationsTwitter(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsTwitter(createGetConversationsMessagingIntegrationsTwitterRequest(pageSize, pageNumber));
+  }
+
+  /**
+   * Get a list of Twitter Integrations
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return TwitterIntegrationEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TwitterIntegrationEntityListing> getConversationsMessagingIntegrationsTwitterWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getConversationsMessagingIntegrationsTwitter(createGetConversationsMessagingIntegrationsTwitterRequest(pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationsTwitterRequest createGetConversationsMessagingIntegrationsTwitterRequest(Integer pageSize, Integer pageNumber) {
+    return GetConversationsMessagingIntegrationsTwitterRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of Twitter Integrations
+   * 
+   * @param request The request object
+   * @return TwitterIntegrationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TwitterIntegrationEntityListing getConversationsMessagingIntegrationsTwitter(GetConversationsMessagingIntegrationsTwitterRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TwitterIntegrationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TwitterIntegrationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Twitter Integrations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TwitterIntegrationEntityListing> getConversationsMessagingIntegrationsTwitter(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TwitterIntegrationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TwitterIntegrationEntityListing> response = (ApiResponse<TwitterIntegrationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TwitterIntegrationEntityListing> response = (ApiResponse<TwitterIntegrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a Twitter messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @return TwitterIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TwitterIntegration getConversationsMessagingIntegrationsTwitterIntegrationId(String integrationId) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsTwitterIntegrationId(createGetConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId));
+  }
+
+  /**
+   * Get a Twitter messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @return TwitterIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TwitterIntegration> getConversationsMessagingIntegrationsTwitterIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+    return getConversationsMessagingIntegrationsTwitterIntegrationId(createGetConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest createGetConversationsMessagingIntegrationsTwitterIntegrationIdRequest(String integrationId) {
+    return GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+    
+            .build();
+  }
+
+  /**
+   * Get a Twitter messaging integration
+   * 
+   * @param request The request object
+   * @return TwitterIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TwitterIntegration getConversationsMessagingIntegrationsTwitterIntegrationId(GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TwitterIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TwitterIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Twitter messaging integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TwitterIntegration> getConversationsMessagingIntegrationsTwitterIntegrationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TwitterIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of Messaging Stickers
+   * 
+   * @param messengerType Messenger Type (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return MessagingStickerEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingStickerEntityListing getConversationsMessagingSticker(String messengerType, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getConversationsMessagingSticker(createGetConversationsMessagingStickerRequest(messengerType, pageSize, pageNumber));
+  }
+
+  /**
+   * Get a list of Messaging Stickers
+   * 
+   * @param messengerType Messenger Type (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return MessagingStickerEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingStickerEntityListing> getConversationsMessagingStickerWithHttpInfo(String messengerType, Integer pageSize, Integer pageNumber) throws IOException {
+    return getConversationsMessagingSticker(createGetConversationsMessagingStickerRequest(messengerType, pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetConversationsMessagingStickerRequest createGetConversationsMessagingStickerRequest(String messengerType, Integer pageSize, Integer pageNumber) {
+    return GetConversationsMessagingStickerRequest.builder()
+            .withMessengerType(messengerType)
+    
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of Messaging Stickers
+   * 
+   * @param request The request object
+   * @return MessagingStickerEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingStickerEntityListing getConversationsMessagingSticker(GetConversationsMessagingStickerRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessagingStickerEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessagingStickerEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Messaging Stickers
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingStickerEntityListing> getConversationsMessagingSticker(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessagingStickerEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingStickerEntityListing> response = (ApiResponse<MessagingStickerEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingStickerEntityListing> response = (ApiResponse<MessagingStickerEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -8388,6 +9298,243 @@ public class ConversationsApi {
 
   
   /**
+   * Create a Facebook Integration
+   * 
+   * @param body FacebookIntegrationRequest (required)
+   * @return FacebookIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FacebookIntegration postConversationsMessagingIntegrationsFacebook(FacebookIntegrationRequest body) throws IOException, ApiException {
+    return  postConversationsMessagingIntegrationsFacebook(createPostConversationsMessagingIntegrationsFacebookRequest(body));
+  }
+
+  /**
+   * Create a Facebook Integration
+   * 
+   * @param body FacebookIntegrationRequest (required)
+   * @return FacebookIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FacebookIntegration> postConversationsMessagingIntegrationsFacebookWithHttpInfo(FacebookIntegrationRequest body) throws IOException {
+    return postConversationsMessagingIntegrationsFacebook(createPostConversationsMessagingIntegrationsFacebookRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsMessagingIntegrationsFacebookRequest createPostConversationsMessagingIntegrationsFacebookRequest(FacebookIntegrationRequest body) {
+    return PostConversationsMessagingIntegrationsFacebookRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a Facebook Integration
+   * 
+   * @param request The request object
+   * @return FacebookIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FacebookIntegration postConversationsMessagingIntegrationsFacebook(PostConversationsMessagingIntegrationsFacebookRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FacebookIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FacebookIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a Facebook Integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FacebookIntegration> postConversationsMessagingIntegrationsFacebook(ApiRequest<FacebookIntegrationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FacebookIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FacebookIntegration> response = (ApiResponse<FacebookIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FacebookIntegration> response = (ApiResponse<FacebookIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create a LINE messenger Integration
+   * 
+   * @param body LineIntegrationRequest (required)
+   * @return LineIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LineIntegration postConversationsMessagingIntegrationsLine(LineIntegrationRequest body) throws IOException, ApiException {
+    return  postConversationsMessagingIntegrationsLine(createPostConversationsMessagingIntegrationsLineRequest(body));
+  }
+
+  /**
+   * Create a LINE messenger Integration
+   * 
+   * @param body LineIntegrationRequest (required)
+   * @return LineIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LineIntegration> postConversationsMessagingIntegrationsLineWithHttpInfo(LineIntegrationRequest body) throws IOException {
+    return postConversationsMessagingIntegrationsLine(createPostConversationsMessagingIntegrationsLineRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsMessagingIntegrationsLineRequest createPostConversationsMessagingIntegrationsLineRequest(LineIntegrationRequest body) {
+    return PostConversationsMessagingIntegrationsLineRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a LINE messenger Integration
+   * 
+   * @param request The request object
+   * @return LineIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LineIntegration postConversationsMessagingIntegrationsLine(PostConversationsMessagingIntegrationsLineRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LineIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LineIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a LINE messenger Integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LineIntegration> postConversationsMessagingIntegrationsLine(ApiRequest<LineIntegrationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LineIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create a Twitter Integration
+   * 
+   * @param body TwitterIntegrationRequest (required)
+   * @return TwitterIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TwitterIntegration postConversationsMessagingIntegrationsTwitter(TwitterIntegrationRequest body) throws IOException, ApiException {
+    return  postConversationsMessagingIntegrationsTwitter(createPostConversationsMessagingIntegrationsTwitterRequest(body));
+  }
+
+  /**
+   * Create a Twitter Integration
+   * 
+   * @param body TwitterIntegrationRequest (required)
+   * @return TwitterIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TwitterIntegration> postConversationsMessagingIntegrationsTwitterWithHttpInfo(TwitterIntegrationRequest body) throws IOException {
+    return postConversationsMessagingIntegrationsTwitter(createPostConversationsMessagingIntegrationsTwitterRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsMessagingIntegrationsTwitterRequest createPostConversationsMessagingIntegrationsTwitterRequest(TwitterIntegrationRequest body) {
+    return PostConversationsMessagingIntegrationsTwitterRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a Twitter Integration
+   * 
+   * @param request The request object
+   * @return TwitterIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TwitterIntegration postConversationsMessagingIntegrationsTwitter(PostConversationsMessagingIntegrationsTwitterRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TwitterIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TwitterIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a Twitter Integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TwitterIntegration> postConversationsMessagingIntegrationsTwitter(ApiRequest<TwitterIntegrationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TwitterIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Set flagged reason on conversation participant to indicate bad conversation quality.
    * 
    * @param conversationId conversation ID (required)
@@ -8636,6 +9783,89 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EmailMessage> response = (ApiResponse<EmailMessage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update a LINE messenger integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @param body LineIntegrationRequest (required)
+   * @return LineIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LineIntegration putConversationsMessagingIntegrationsLineIntegrationId(String integrationId, LineIntegrationRequest body) throws IOException, ApiException {
+    return  putConversationsMessagingIntegrationsLineIntegrationId(createPutConversationsMessagingIntegrationsLineIntegrationIdRequest(integrationId, body));
+  }
+
+  /**
+   * Update a LINE messenger integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @param body LineIntegrationRequest (required)
+   * @return LineIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LineIntegration> putConversationsMessagingIntegrationsLineIntegrationIdWithHttpInfo(String integrationId, LineIntegrationRequest body) throws IOException {
+    return putConversationsMessagingIntegrationsLineIntegrationId(createPutConversationsMessagingIntegrationsLineIntegrationIdRequest(integrationId, body).withHttpInfo());
+  }
+
+  private PutConversationsMessagingIntegrationsLineIntegrationIdRequest createPutConversationsMessagingIntegrationsLineIntegrationIdRequest(String integrationId, LineIntegrationRequest body) {
+    return PutConversationsMessagingIntegrationsLineIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update a LINE messenger integration
+   * 
+   * @param request The request object
+   * @return LineIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LineIntegration putConversationsMessagingIntegrationsLineIntegrationId(PutConversationsMessagingIntegrationsLineIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LineIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LineIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a LINE messenger integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LineIntegration> putConversationsMessagingIntegrationsLineIntegrationId(ApiRequest<LineIntegrationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LineIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

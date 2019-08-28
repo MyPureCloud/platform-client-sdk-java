@@ -4777,13 +4777,14 @@ public class TelephonyProvidersEdgeApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param name Name (optional)
    * @param siteId Filter by site.id (optional)
+   * @param externalTrunkBasesIds Filter by externalTrunkBases.ids (optional)
    * @param sortBy Sort by (optional, default to name)
    * @return OutboundRouteEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OutboundRouteEntityListing getTelephonyProvidersEdgesOutboundroutes(Integer pageSize, Integer pageNumber, String name, String siteId, String sortBy) throws IOException, ApiException {
-    return  getTelephonyProvidersEdgesOutboundroutes(createGetTelephonyProvidersEdgesOutboundroutesRequest(pageSize, pageNumber, name, siteId, sortBy));
+  public OutboundRouteEntityListing getTelephonyProvidersEdgesOutboundroutes(Integer pageSize, Integer pageNumber, String name, String siteId, String externalTrunkBasesIds, String sortBy) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesOutboundroutes(createGetTelephonyProvidersEdgesOutboundroutesRequest(pageSize, pageNumber, name, siteId, externalTrunkBasesIds, sortBy));
   }
 
   /**
@@ -4793,15 +4794,16 @@ public class TelephonyProvidersEdgeApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param name Name (optional)
    * @param siteId Filter by site.id (optional)
+   * @param externalTrunkBasesIds Filter by externalTrunkBases.ids (optional)
    * @param sortBy Sort by (optional, default to name)
    * @return OutboundRouteEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutboundRouteEntityListing> getTelephonyProvidersEdgesOutboundroutesWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String siteId, String sortBy) throws IOException {
-    return getTelephonyProvidersEdgesOutboundroutes(createGetTelephonyProvidersEdgesOutboundroutesRequest(pageSize, pageNumber, name, siteId, sortBy).withHttpInfo());
+  public ApiResponse<OutboundRouteEntityListing> getTelephonyProvidersEdgesOutboundroutesWithHttpInfo(Integer pageSize, Integer pageNumber, String name, String siteId, String externalTrunkBasesIds, String sortBy) throws IOException {
+    return getTelephonyProvidersEdgesOutboundroutes(createGetTelephonyProvidersEdgesOutboundroutesRequest(pageSize, pageNumber, name, siteId, externalTrunkBasesIds, sortBy).withHttpInfo());
   }
 
-  private GetTelephonyProvidersEdgesOutboundroutesRequest createGetTelephonyProvidersEdgesOutboundroutesRequest(Integer pageSize, Integer pageNumber, String name, String siteId, String sortBy) {
+  private GetTelephonyProvidersEdgesOutboundroutesRequest createGetTelephonyProvidersEdgesOutboundroutesRequest(Integer pageSize, Integer pageNumber, String name, String siteId, String externalTrunkBasesIds, String sortBy) {
     return GetTelephonyProvidersEdgesOutboundroutesRequest.builder()
             .withPageSize(pageSize)
     
@@ -4810,6 +4812,8 @@ public class TelephonyProvidersEdgeApi {
             .withName(name)
     
             .withSiteId(siteId)
+    
+            .withExternalTrunkBasesIds(externalTrunkBasesIds)
     
             .withSortBy(sortBy)
     
@@ -5991,13 +5995,14 @@ public class TelephonyProvidersEdgeApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param name Name (optional)
+   * @param externalTrunkBasesIds externalTrunkBases.ids (optional)
    * @param sortBy Sort by (optional, default to name)
    * @return OutboundRouteBaseEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OutboundRouteBaseEntityListing getTelephonyProvidersEdgesSiteOutboundroutes(String siteId, Integer pageSize, Integer pageNumber, String name, String sortBy) throws IOException, ApiException {
-    return  getTelephonyProvidersEdgesSiteOutboundroutes(createGetTelephonyProvidersEdgesSiteOutboundroutesRequest(siteId, pageSize, pageNumber, name, sortBy));
+  public OutboundRouteBaseEntityListing getTelephonyProvidersEdgesSiteOutboundroutes(String siteId, Integer pageSize, Integer pageNumber, String name, String externalTrunkBasesIds, String sortBy) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesSiteOutboundroutes(createGetTelephonyProvidersEdgesSiteOutboundroutesRequest(siteId, pageSize, pageNumber, name, externalTrunkBasesIds, sortBy));
   }
 
   /**
@@ -6007,15 +6012,16 @@ public class TelephonyProvidersEdgeApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param name Name (optional)
+   * @param externalTrunkBasesIds externalTrunkBases.ids (optional)
    * @param sortBy Sort by (optional, default to name)
    * @return OutboundRouteBaseEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutboundRouteBaseEntityListing> getTelephonyProvidersEdgesSiteOutboundroutesWithHttpInfo(String siteId, Integer pageSize, Integer pageNumber, String name, String sortBy) throws IOException {
-    return getTelephonyProvidersEdgesSiteOutboundroutes(createGetTelephonyProvidersEdgesSiteOutboundroutesRequest(siteId, pageSize, pageNumber, name, sortBy).withHttpInfo());
+  public ApiResponse<OutboundRouteBaseEntityListing> getTelephonyProvidersEdgesSiteOutboundroutesWithHttpInfo(String siteId, Integer pageSize, Integer pageNumber, String name, String externalTrunkBasesIds, String sortBy) throws IOException {
+    return getTelephonyProvidersEdgesSiteOutboundroutes(createGetTelephonyProvidersEdgesSiteOutboundroutesRequest(siteId, pageSize, pageNumber, name, externalTrunkBasesIds, sortBy).withHttpInfo());
   }
 
-  private GetTelephonyProvidersEdgesSiteOutboundroutesRequest createGetTelephonyProvidersEdgesSiteOutboundroutesRequest(String siteId, Integer pageSize, Integer pageNumber, String name, String sortBy) {
+  private GetTelephonyProvidersEdgesSiteOutboundroutesRequest createGetTelephonyProvidersEdgesSiteOutboundroutesRequest(String siteId, Integer pageSize, Integer pageNumber, String name, String externalTrunkBasesIds, String sortBy) {
     return GetTelephonyProvidersEdgesSiteOutboundroutesRequest.builder()
             .withSiteId(siteId)
     
@@ -6024,6 +6030,8 @@ public class TelephonyProvidersEdgeApi {
             .withPageNumber(pageNumber)
     
             .withName(name)
+    
+            .withExternalTrunkBasesIds(externalTrunkBasesIds)
     
             .withSortBy(sortBy)
     

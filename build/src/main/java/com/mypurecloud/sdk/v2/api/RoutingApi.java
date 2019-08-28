@@ -27,6 +27,8 @@ import com.mypurecloud.sdk.v2.model.QueueEntityListing;
 import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
 import com.mypurecloud.sdk.v2.model.RoutingSkill;
 import com.mypurecloud.sdk.v2.model.SkillEntityListing;
+import com.mypurecloud.sdk.v2.model.SmsAddress;
+import com.mypurecloud.sdk.v2.model.SmsAddressEntityListing;
 import com.mypurecloud.sdk.v2.model.SMSAvailablePhoneNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumber;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberEntityListing;
@@ -80,6 +82,8 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesDivisionviewsAllReques
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAddressRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAvailablephonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsPhonenumbersRequest;
@@ -2668,6 +2672,168 @@ public class RoutingApi {
 
   
   /**
+   * Get an Address by Id for SMS
+   * 
+   * @param addressId Address ID (required)
+   * @return SmsAddress
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SmsAddress getRoutingSmsAddress(String addressId) throws IOException, ApiException {
+    return  getRoutingSmsAddress(createGetRoutingSmsAddressRequest(addressId));
+  }
+
+  /**
+   * Get an Address by Id for SMS
+   * 
+   * @param addressId Address ID (required)
+   * @return SmsAddress
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SmsAddress> getRoutingSmsAddressWithHttpInfo(String addressId) throws IOException {
+    return getRoutingSmsAddress(createGetRoutingSmsAddressRequest(addressId).withHttpInfo());
+  }
+
+  private GetRoutingSmsAddressRequest createGetRoutingSmsAddressRequest(String addressId) {
+    return GetRoutingSmsAddressRequest.builder()
+            .withAddressId(addressId)
+    
+            .build();
+  }
+
+  /**
+   * Get an Address by Id for SMS
+   * 
+   * @param request The request object
+   * @return SmsAddress
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SmsAddress getRoutingSmsAddress(GetRoutingSmsAddressRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SmsAddress> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SmsAddress>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an Address by Id for SMS
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SmsAddress> getRoutingSmsAddress(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SmsAddress>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SmsAddress> response = (ApiResponse<SmsAddress>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SmsAddress> response = (ApiResponse<SmsAddress>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of Addresses for SMS
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return SmsAddressEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SmsAddressEntityListing getRoutingSmsAddresses(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getRoutingSmsAddresses(createGetRoutingSmsAddressesRequest(pageSize, pageNumber));
+  }
+
+  /**
+   * Get a list of Addresses for SMS
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return SmsAddressEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SmsAddressEntityListing> getRoutingSmsAddressesWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getRoutingSmsAddresses(createGetRoutingSmsAddressesRequest(pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetRoutingSmsAddressesRequest createGetRoutingSmsAddressesRequest(Integer pageSize, Integer pageNumber) {
+    return GetRoutingSmsAddressesRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of Addresses for SMS
+   * 
+   * @param request The request object
+   * @return SmsAddressEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SmsAddressEntityListing getRoutingSmsAddresses(GetRoutingSmsAddressesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SmsAddressEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SmsAddressEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Addresses for SMS
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SmsAddressEntityListing> getRoutingSmsAddresses(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SmsAddressEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SmsAddressEntityListing> response = (ApiResponse<SmsAddressEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SmsAddressEntityListing> response = (ApiResponse<SmsAddressEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get a list of available phone numbers for SMS provisioning.
    * This request will return up to 30 random phone numbers matching the criteria specified.  To get additional phone numbers repeat the request.
    * @param countryCode The ISO 3166-1 alpha-2 country code of the county for which available phone numbers should be returned (required)
@@ -4446,11 +4612,11 @@ public class RoutingApi {
    * Provision an Address for SMS
    * 
    * @param body SmsAddress (required)
-   * @return SmsPhoneNumber
+   * @return SmsAddress
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SmsPhoneNumber postRoutingSmsAddresses(SmsAddressProvision body) throws IOException, ApiException {
+  public SmsAddress postRoutingSmsAddresses(SmsAddressProvision body) throws IOException, ApiException {
     return  postRoutingSmsAddresses(createPostRoutingSmsAddressesRequest(body));
   }
 
@@ -4458,10 +4624,10 @@ public class RoutingApi {
    * Provision an Address for SMS
    * 
    * @param body SmsAddress (required)
-   * @return SmsPhoneNumber
+   * @return SmsAddress
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SmsPhoneNumber> postRoutingSmsAddressesWithHttpInfo(SmsAddressProvision body) throws IOException {
+  public ApiResponse<SmsAddress> postRoutingSmsAddressesWithHttpInfo(SmsAddressProvision body) throws IOException {
     return postRoutingSmsAddresses(createPostRoutingSmsAddressesRequest(body).withHttpInfo());
   }
 
@@ -4476,13 +4642,13 @@ public class RoutingApi {
    * Provision an Address for SMS
    * 
    * @param request The request object
-   * @return SmsPhoneNumber
+   * @return SmsAddress
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SmsPhoneNumber postRoutingSmsAddresses(PostRoutingSmsAddressesRequest request) throws IOException, ApiException {
+  public SmsAddress postRoutingSmsAddresses(PostRoutingSmsAddressesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<SmsPhoneNumber> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SmsPhoneNumber>() {});
+      ApiResponse<SmsAddress> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SmsAddress>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -4498,13 +4664,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SmsPhoneNumber> postRoutingSmsAddresses(ApiRequest<SmsAddressProvision> request) throws IOException {
+  public ApiResponse<SmsAddress> postRoutingSmsAddresses(ApiRequest<SmsAddressProvision> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<SmsPhoneNumber>() {});
+      return pcapiClient.invoke(request, new TypeReference<SmsAddress>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)exception;
+      ApiResponse<SmsAddress> response = (ApiResponse<SmsAddress>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -4515,7 +4681,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<SmsAddress> response = (ApiResponse<SmsAddress>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

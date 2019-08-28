@@ -20,14 +20,14 @@ public class Manager  implements Serializable {
 
   
   /**
-   * Identifier of the Manager
+   * The ID of the manager.
    **/
   public Manager value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Identifier of the Manager")
+  @ApiModelProperty(example = "null", value = "The ID of the manager.")
   @JsonProperty("value")
   public String getValue() {
     return value;

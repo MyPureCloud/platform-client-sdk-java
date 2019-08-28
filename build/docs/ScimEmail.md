@@ -8,9 +8,9 @@ title: ScimEmail
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **value** | **String** | Email address |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum) | Type of Email |  [optional] |
-| **primary** | **Boolean** | Primary flag |  [optional] |
+| **value** | **String** | The email address. |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum) | The type of email address. |  [optional] |
+| **primary** | **Boolean** | Indicates whether the email address is the primary email address. |  [optional] |
 {: class="table table-striped"}
 
 

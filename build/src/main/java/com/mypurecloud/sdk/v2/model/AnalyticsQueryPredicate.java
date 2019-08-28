@@ -163,6 +163,7 @@ public class AnalyticsQueryPredicate  implements Serializable {
     JOURNEYACTIONID("journeyActionId"),
     JOURNEYACTIONMAPID("journeyActionMapId"),
     JOURNEYACTIONMAPVERSION("journeyActionMapVersion"),
+    JOURNEYACTIONMEDIATYPE("journeyActionMediaType"),
     MINMOS("minMos"),
     MEDIASTATSMINCONVERSATIONMOS("mediaStatsMinConversationMos"),
     MINRFACTOR("minRFactor"),
@@ -316,7 +317,16 @@ public class AnalyticsQueryPredicate  implements Serializable {
     OFLOW("oFlow"),
     TFLOWOUTCOME("tFlowOutcome"),
     NFLOWOUTCOME("nFlowOutcome"),
-    NFLOWOUTCOMEFAILED("nFlowOutcomeFailed");
+    NFLOWOUTCOMEFAILED("nFlowOutcomeFailed"),
+    NWEBACTIONSQUALIFIED("nWebActionsQualified"),
+    NWEBACTIONSOFFERED("nWebActionsOffered"),
+    NWEBACTIONSACCEPTED("nWebActionsAccepted"),
+    NWEBACTIONSREJECTED("nWebActionsRejected"),
+    NWEBACTIONSTIMEDOUT("nWebActionsTimedout"),
+    NWEBACTIONSERRORED("nWebActionsErrored"),
+    NWEBACTIONSIGNORED("nWebActionsIgnored"),
+    NWEBACTIONSSTARTED("nWebActionsStarted"),
+    NWEBACTIONSENGAGED("nWebActionsEngaged");
 
     private String value;
 

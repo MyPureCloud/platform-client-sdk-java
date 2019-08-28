@@ -38,8 +38,7 @@ public class Flow  implements Serializable {
     OUTBOUNDCALL("OUTBOUNDCALL"),
     SECURECALL("SECURECALL"),
     SPEECH("SPEECH"),
-    SURVEYINVITE("SURVEYINVITE"),
-    WORKFLOW("WORKFLOW");
+    SURVEYINVITE("SURVEYINVITE");
 
     private String value;
 

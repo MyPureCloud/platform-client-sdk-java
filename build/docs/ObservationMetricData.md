@@ -100,6 +100,15 @@ title: ObservationMetricData
 | TFLOWOUTCOME | &quot;tFlowOutcome&quot; |
 | NFLOWOUTCOME | &quot;nFlowOutcome&quot; |
 | NFLOWOUTCOMEFAILED | &quot;nFlowOutcomeFailed&quot; |
+| NWEBACTIONSQUALIFIED | &quot;nWebActionsQualified&quot; |
+| NWEBACTIONSOFFERED | &quot;nWebActionsOffered&quot; |
+| NWEBACTIONSACCEPTED | &quot;nWebActionsAccepted&quot; |
+| NWEBACTIONSREJECTED | &quot;nWebActionsRejected&quot; |
+| NWEBACTIONSTIMEDOUT | &quot;nWebActionsTimedout&quot; |
+| NWEBACTIONSERRORED | &quot;nWebActionsErrored&quot; |
+| NWEBACTIONSIGNORED | &quot;nWebActionsIgnored&quot; |
+| NWEBACTIONSSTARTED | &quot;nWebActionsStarted&quot; |
+| NWEBACTIONSENGAGED | &quot;nWebActionsEngaged&quot; |
 {: class="table table-striped"}
 
 

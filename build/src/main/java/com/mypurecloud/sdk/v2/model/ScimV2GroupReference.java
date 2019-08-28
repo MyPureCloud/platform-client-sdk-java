@@ -84,14 +84,14 @@ public class ScimV2GroupReference  implements Serializable {
 
   
   /**
-   * Value of ID of group member. May be User or Group id
+   * The ID of the group member. Can be userId or groupId.
    **/
   public ScimV2GroupReference value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Value of ID of group member. May be User or Group id")
+  @ApiModelProperty(example = "null", value = "The ID of the group member. Can be userId or groupId.")
   @JsonProperty("value")
   public String getValue() {
     return value;

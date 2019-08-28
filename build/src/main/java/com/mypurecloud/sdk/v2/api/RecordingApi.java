@@ -1444,12 +1444,16 @@ public class RecordingApi {
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param sortBy Sort by (optional, default to userId)
+   * @param state Filter by state (optional)
+   * @param showOnlyMyJobs Show only my jobs (optional)
+   * @param jobType Job Type (Can be left empty for both) (optional)
    * @return RecordingJobEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public RecordingJobEntityListing getRecordingJobs(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return  getRecordingJobs(createGetRecordingJobsRequest(pageSize, pageNumber));
+  public RecordingJobEntityListing getRecordingJobs(Integer pageSize, Integer pageNumber, String sortBy, String state, Boolean showOnlyMyJobs, String jobType) throws IOException, ApiException {
+    return  getRecordingJobs(createGetRecordingJobsRequest(pageSize, pageNumber, sortBy, state, showOnlyMyJobs, jobType));
   }
 
   /**
@@ -1457,18 +1461,30 @@ public class RecordingApi {
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param sortBy Sort by (optional, default to userId)
+   * @param state Filter by state (optional)
+   * @param showOnlyMyJobs Show only my jobs (optional)
+   * @param jobType Job Type (Can be left empty for both) (optional)
    * @return RecordingJobEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RecordingJobEntityListing> getRecordingJobsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
-    return getRecordingJobs(createGetRecordingJobsRequest(pageSize, pageNumber).withHttpInfo());
+  public ApiResponse<RecordingJobEntityListing> getRecordingJobsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String state, Boolean showOnlyMyJobs, String jobType) throws IOException {
+    return getRecordingJobs(createGetRecordingJobsRequest(pageSize, pageNumber, sortBy, state, showOnlyMyJobs, jobType).withHttpInfo());
   }
 
-  private GetRecordingJobsRequest createGetRecordingJobsRequest(Integer pageSize, Integer pageNumber) {
+  private GetRecordingJobsRequest createGetRecordingJobsRequest(Integer pageSize, Integer pageNumber, String sortBy, String state, Boolean showOnlyMyJobs, String jobType) {
     return GetRecordingJobsRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withSortBy(sortBy)
+    
+            .withState(state)
+    
+            .withShowOnlyMyJobs(showOnlyMyJobs)
+    
+            .withJobType(jobType)
     
             .build();
   }

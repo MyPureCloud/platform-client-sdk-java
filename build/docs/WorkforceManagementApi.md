@@ -2319,7 +2319,7 @@ try {
 | **pageSize** | **Integer**|  | [optional] 
 | **pageNumber** | **Integer**|  | [optional] 
 | **expand** | **String**|  | [optional]<br />**Values**: details 
-| **feature** | **String**|  | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BusinessUnitActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, TimeOffRequests, WorkPlans 
+| **feature** | **String**|  | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BusinessUnitActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlans 
 | **divisionId** | **String**|  | [optional] 
 {: class="table-striped"}
 

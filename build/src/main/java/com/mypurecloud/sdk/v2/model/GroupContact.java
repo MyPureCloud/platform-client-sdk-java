@@ -16,6 +16,7 @@ import java.io.Serializable;
 public class GroupContact  implements Serializable {
   
   private String address = null;
+  private String extension = null;
   private String display = null;
 
   /**
@@ -106,6 +107,24 @@ public class GroupContact  implements Serializable {
   }
 
   
+  /**
+   * Extension is set if the number is e164 valid
+   **/
+  public GroupContact extension(String extension) {
+    this.extension = extension;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Extension is set if the number is e164 valid")
+  @JsonProperty("extension")
+  public String getExtension() {
+    return extension;
+  }
+  public void setExtension(String extension) {
+    this.extension = extension;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "Formatted version of the address property")
   @JsonProperty("display")
   public String getDisplay() {
@@ -160,6 +179,7 @@ public class GroupContact  implements Serializable {
     }
     GroupContact groupContact = (GroupContact) o;
     return Objects.equals(this.address, groupContact.address) &&
+        Objects.equals(this.extension, groupContact.extension) &&
         Objects.equals(this.display, groupContact.display) &&
         Objects.equals(this.type, groupContact.type) &&
         Objects.equals(this.mediaType, groupContact.mediaType);
@@ -167,7 +187,7 @@ public class GroupContact  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, display, type, mediaType);
+    return Objects.hash(address, extension, display, type, mediaType);
   }
 
   @Override
@@ -176,6 +196,7 @@ public class GroupContact  implements Serializable {
     sb.append("class GroupContact {\n");
     
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    extension: ").append(toIndentedString(extension)).append("\n");
     sb.append("    display: ").append(toIndentedString(display)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");

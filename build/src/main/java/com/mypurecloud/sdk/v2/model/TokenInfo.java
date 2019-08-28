@@ -8,6 +8,8 @@ import com.mypurecloud.sdk.v2.model.NamedEntity;
 import com.mypurecloud.sdk.v2.model.OrgOAuthClient;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -18,6 +20,7 @@ public class TokenInfo  implements Serializable {
   
   private NamedEntity organization = null;
   private NamedEntity homeOrganization = null;
+  private List<String> authorizedScope = new ArrayList<String>();
   private OrgOAuthClient oAuthClient = null;
 
   
@@ -58,6 +61,24 @@ public class TokenInfo  implements Serializable {
 
   
   /**
+   * The list of scopes authorized for the OAuth client
+   **/
+  public TokenInfo authorizedScope(List<String> authorizedScope) {
+    this.authorizedScope = authorizedScope;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of scopes authorized for the OAuth client")
+  @JsonProperty("authorizedScope")
+  public List<String> getAuthorizedScope() {
+    return authorizedScope;
+  }
+  public void setAuthorizedScope(List<String> authorizedScope) {
+    this.authorizedScope = authorizedScope;
+  }
+
+  
+  /**
    **/
   public TokenInfo oAuthClient(OrgOAuthClient oAuthClient) {
     this.oAuthClient = oAuthClient;
@@ -86,12 +107,13 @@ public class TokenInfo  implements Serializable {
     TokenInfo tokenInfo = (TokenInfo) o;
     return Objects.equals(this.organization, tokenInfo.organization) &&
         Objects.equals(this.homeOrganization, tokenInfo.homeOrganization) &&
+        Objects.equals(this.authorizedScope, tokenInfo.authorizedScope) &&
         Objects.equals(this.oAuthClient, tokenInfo.oAuthClient);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(organization, homeOrganization, oAuthClient);
+    return Objects.hash(organization, homeOrganization, authorizedScope, oAuthClient);
   }
 
   @Override
@@ -101,6 +123,7 @@ public class TokenInfo  implements Serializable {
     
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
     sb.append("    homeOrganization: ").append(toIndentedString(homeOrganization)).append("\n");
+    sb.append("    authorizedScope: ").append(toIndentedString(authorizedScope)).append("\n");
     sb.append("    oAuthClient: ").append(toIndentedString(oAuthClient)).append("\n");
     sb.append("}");
     return sb.toString();
