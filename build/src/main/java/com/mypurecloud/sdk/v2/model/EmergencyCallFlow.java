@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -18,24 +18,24 @@ import java.io.Serializable;
 
 public class EmergencyCallFlow  implements Serializable {
   
-  private UriReference emergencyFlow = null;
-  private List<UriReference> ivrs = new ArrayList<UriReference>();
+  private DomainEntityRef emergencyFlow = null;
+  private List<DomainEntityRef> ivrs = new ArrayList<DomainEntityRef>();
 
   
   /**
    * The call flow to execute in an emergency.
    **/
-  public EmergencyCallFlow emergencyFlow(UriReference emergencyFlow) {
+  public EmergencyCallFlow emergencyFlow(DomainEntityRef emergencyFlow) {
     this.emergencyFlow = emergencyFlow;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The call flow to execute in an emergency.")
   @JsonProperty("emergencyFlow")
-  public UriReference getEmergencyFlow() {
+  public DomainEntityRef getEmergencyFlow() {
     return emergencyFlow;
   }
-  public void setEmergencyFlow(UriReference emergencyFlow) {
+  public void setEmergencyFlow(DomainEntityRef emergencyFlow) {
     this.emergencyFlow = emergencyFlow;
   }
 
@@ -43,17 +43,17 @@ public class EmergencyCallFlow  implements Serializable {
   /**
    * The IVR(s) to route to the call flow during an emergency.
    **/
-  public EmergencyCallFlow ivrs(List<UriReference> ivrs) {
+  public EmergencyCallFlow ivrs(List<DomainEntityRef> ivrs) {
     this.ivrs = ivrs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The IVR(s) to route to the call flow during an emergency.")
   @JsonProperty("ivrs")
-  public List<UriReference> getIvrs() {
+  public List<DomainEntityRef> getIvrs() {
     return ivrs;
   }
-  public void setIvrs(List<UriReference> ivrs) {
+  public void setIvrs(List<DomainEntityRef> ivrs) {
     this.ivrs = ivrs;
   }
 

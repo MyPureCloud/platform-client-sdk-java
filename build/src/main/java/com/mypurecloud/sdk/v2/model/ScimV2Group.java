@@ -26,7 +26,7 @@ public class ScimV2Group  implements Serializable {
   private ScimMetadata meta = null;
 
   
-  @ApiModelProperty(example = "null", value = "SCIM Resource identifier")
+  @ApiModelProperty(example = "null", value = "The ID of the SCIM resource. Set by the service provider. caseExact is set to true. Mutability is set to readOnly. Returned is set to always.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -34,14 +34,14 @@ public class ScimV2Group  implements Serializable {
 
   
   /**
-   * schemas supported
+   * The list of supported schemas.
    **/
   public ScimV2Group schemas(List<String> schemas) {
     this.schemas = schemas;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "schemas supported")
+  @ApiModelProperty(example = "null", value = "The list of supported schemas.")
   @JsonProperty("schemas")
   public List<String> getSchemas() {
     return schemas;

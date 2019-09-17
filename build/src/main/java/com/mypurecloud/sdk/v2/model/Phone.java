@@ -5,11 +5,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.Edge;
 import com.mypurecloud.sdk.v2.model.Line;
 import com.mypurecloud.sdk.v2.model.PhoneCapabilities;
 import com.mypurecloud.sdk.v2.model.PhoneStatus;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import com.mypurecloud.sdk.v2.model.UserAgentInfo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -72,17 +72,17 @@ public class Phone  implements Serializable {
   private StateEnum state = null;
   private String modifiedByApp = null;
   private String createdByApp = null;
-  private UriReference site = null;
-  private UriReference phoneBaseSettings = null;
-  private UriReference lineBaseSettings = null;
-  private UriReference phoneMetaBase = null;
+  private DomainEntityRef site = null;
+  private DomainEntityRef phoneBaseSettings = null;
+  private DomainEntityRef lineBaseSettings = null;
+  private DomainEntityRef phoneMetaBase = null;
   private List<Line> lines = new ArrayList<Line>();
   private PhoneStatus status = null;
   private PhoneStatus secondaryStatus = null;
   private UserAgentInfo userAgentInfo = null;
   private Map<String, Object> properties = null;
   private PhoneCapabilities capabilities = null;
-  private UriReference webRtcUser = null;
+  private DomainEntityRef webRtcUser = null;
   private Edge primaryEdge = null;
   private Edge secondaryEdge = null;
   private String selfUri = null;
@@ -267,17 +267,17 @@ public class Phone  implements Serializable {
   /**
    * The site associated to the phone.
    **/
-  public Phone site(UriReference site) {
+  public Phone site(DomainEntityRef site) {
     this.site = site;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "The site associated to the phone.")
   @JsonProperty("site")
-  public UriReference getSite() {
+  public DomainEntityRef getSite() {
     return site;
   }
-  public void setSite(UriReference site) {
+  public void setSite(DomainEntityRef site) {
     this.site = site;
   }
 
@@ -285,51 +285,51 @@ public class Phone  implements Serializable {
   /**
    * Phone Base Settings
    **/
-  public Phone phoneBaseSettings(UriReference phoneBaseSettings) {
+  public Phone phoneBaseSettings(DomainEntityRef phoneBaseSettings) {
     this.phoneBaseSettings = phoneBaseSettings;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "Phone Base Settings")
   @JsonProperty("phoneBaseSettings")
-  public UriReference getPhoneBaseSettings() {
+  public DomainEntityRef getPhoneBaseSettings() {
     return phoneBaseSettings;
   }
-  public void setPhoneBaseSettings(UriReference phoneBaseSettings) {
+  public void setPhoneBaseSettings(DomainEntityRef phoneBaseSettings) {
     this.phoneBaseSettings = phoneBaseSettings;
   }
 
   
   /**
    **/
-  public Phone lineBaseSettings(UriReference lineBaseSettings) {
+  public Phone lineBaseSettings(DomainEntityRef lineBaseSettings) {
     this.lineBaseSettings = lineBaseSettings;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("lineBaseSettings")
-  public UriReference getLineBaseSettings() {
+  public DomainEntityRef getLineBaseSettings() {
     return lineBaseSettings;
   }
-  public void setLineBaseSettings(UriReference lineBaseSettings) {
+  public void setLineBaseSettings(DomainEntityRef lineBaseSettings) {
     this.lineBaseSettings = lineBaseSettings;
   }
 
   
   /**
    **/
-  public Phone phoneMetaBase(UriReference phoneMetaBase) {
+  public Phone phoneMetaBase(DomainEntityRef phoneMetaBase) {
     this.phoneMetaBase = phoneMetaBase;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("phoneMetaBase")
-  public UriReference getPhoneMetaBase() {
+  public DomainEntityRef getPhoneMetaBase() {
     return phoneMetaBase;
   }
-  public void setPhoneMetaBase(UriReference phoneMetaBase) {
+  public void setPhoneMetaBase(DomainEntityRef phoneMetaBase) {
     this.phoneMetaBase = phoneMetaBase;
   }
 
@@ -443,17 +443,17 @@ public class Phone  implements Serializable {
   /**
    * This is the user associated with a WebRTC type phone.  It is required for all WebRTC phones.
    **/
-  public Phone webRtcUser(UriReference webRtcUser) {
+  public Phone webRtcUser(DomainEntityRef webRtcUser) {
     this.webRtcUser = webRtcUser;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "This is the user associated with a WebRTC type phone.  It is required for all WebRTC phones.")
   @JsonProperty("webRtcUser")
-  public UriReference getWebRtcUser() {
+  public DomainEntityRef getWebRtcUser() {
     return webRtcUser;
   }
-  public void setWebRtcUser(UriReference webRtcUser) {
+  public void setWebRtcUser(DomainEntityRef webRtcUser) {
     this.webRtcUser = webRtcUser;
   }
 

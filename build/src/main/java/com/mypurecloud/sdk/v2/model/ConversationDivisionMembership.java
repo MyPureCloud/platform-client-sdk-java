@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -17,24 +17,24 @@ import java.io.Serializable;
 
 public class ConversationDivisionMembership  implements Serializable {
   
-  private UriReference division = null;
-  private List<UriReference> entities = new ArrayList<UriReference>();
+  private DomainEntityRef division = null;
+  private List<DomainEntityRef> entities = new ArrayList<DomainEntityRef>();
 
   
   /**
    * A division the conversation belongs to.
    **/
-  public ConversationDivisionMembership division(UriReference division) {
+  public ConversationDivisionMembership division(DomainEntityRef division) {
     this.division = division;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "A division the conversation belongs to.")
   @JsonProperty("division")
-  public UriReference getDivision() {
+  public DomainEntityRef getDivision() {
     return division;
   }
-  public void setDivision(UriReference division) {
+  public void setDivision(DomainEntityRef division) {
     this.division = division;
   }
 
@@ -42,17 +42,17 @@ public class ConversationDivisionMembership  implements Serializable {
   /**
    * The entities on the conversation within the division. These are the users, queues, work flows, etc. that can be on conversations and and be assigned to different divisions.
    **/
-  public ConversationDivisionMembership entities(List<UriReference> entities) {
+  public ConversationDivisionMembership entities(List<DomainEntityRef> entities) {
     this.entities = entities;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The entities on the conversation within the division. These are the users, queues, work flows, etc. that can be on conversations and and be assigned to different divisions.")
   @JsonProperty("entities")
-  public List<UriReference> getEntities() {
+  public List<DomainEntityRef> getEntities() {
     return entities;
   }
-  public void setEntities(List<UriReference> entities) {
+  public void setEntities(List<DomainEntityRef> entities) {
     this.entities = entities;
   }
 

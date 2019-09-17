@@ -71,6 +71,7 @@ title: AnalyticsQueryPredicate
 | DIVISIONID | &quot;divisionId&quot; |
 | FLAGGEDREASON | &quot;flaggedReason&quot; |
 | PROVIDER | &quot;provider&quot; |
+| FLOWOUTTYPE | &quot;flowOutType&quot; |
 | STATIONID | &quot;stationId&quot; |
 | EDGEID | &quot;edgeId&quot; |
 | DNIS | &quot;dnis&quot; |

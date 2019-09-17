@@ -20,8 +20,8 @@ title: Extension
 | **modifiedByApp** | **String** | The application that last modified the resource. |  [optional] |
 | **createdByApp** | **String** | The application that created the resource. |  [optional] |
 | **number** | **String** |  |  [optional] |
-| **owner** | [**UriReference**](UriReference.html) | A Uri reference to the owner of this extension, which is either a User or an IVR |  [optional] |
-| **extensionPool** | [**UriReference**](UriReference.html) |  |  [optional] |
+| **owner** | [**DomainEntityRef**](DomainEntityRef.html) | A Uri reference to the owner of this extension, which is either a User or an IVR |  [optional] |
+| **extensionPool** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
 | **ownerType** | [**OwnerTypeEnum**](#OwnerTypeEnum) |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}

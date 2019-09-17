@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ import java.io.Serializable;
 public class DocumentUpload  implements Serializable {
   
   private String name = null;
-  private UriReference workspace = null;
+  private DomainEntityRef workspace = null;
   private List<String> tags = new ArrayList<String>();
   private List<String> tagIds = new ArrayList<String>();
 
@@ -44,17 +44,17 @@ public class DocumentUpload  implements Serializable {
   /**
    * The workspace the document will be uploaded to
    **/
-  public DocumentUpload workspace(UriReference workspace) {
+  public DocumentUpload workspace(DomainEntityRef workspace) {
     this.workspace = workspace;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "The workspace the document will be uploaded to")
   @JsonProperty("workspace")
-  public UriReference getWorkspace() {
+  public DomainEntityRef getWorkspace() {
     return workspace;
   }
-  public void setWorkspace(UriReference workspace) {
+  public void setWorkspace(DomainEntityRef workspace) {
     this.workspace = workspace;
   }
 

@@ -6,11 +6,11 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Conversation;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.QueueReference;
 import com.mypurecloud.sdk.v2.model.SurveyErrorDetails;
 import com.mypurecloud.sdk.v2.model.SurveyForm;
 import com.mypurecloud.sdk.v2.model.SurveyScoringSet;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -26,7 +26,7 @@ public class Survey  implements Serializable {
   private String name = null;
   private Conversation conversation = null;
   private SurveyForm surveyForm = null;
-  private UriReference agent = null;
+  private DomainEntityRef agent = null;
 
   /**
    * Gets or Sets status
@@ -135,17 +135,17 @@ public class Survey  implements Serializable {
   
   /**
    **/
-  public Survey agent(UriReference agent) {
+  public Survey agent(DomainEntityRef agent) {
     this.agent = agent;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("agent")
-  public UriReference getAgent() {
+  public DomainEntityRef getAgent() {
     return agent;
   }
-  public void setAgent(UriReference agent) {
+  public void setAgent(DomainEntityRef agent) {
     this.agent = agent;
   }
 

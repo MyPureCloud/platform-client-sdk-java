@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public class EdgeInterface  implements Serializable {
   private String name = null;
   private String macAddress = null;
   private String ifName = null;
-  private List<UriReference> endpoints = new ArrayList<UriReference>();
+  private List<DomainEntityRef> endpoints = new ArrayList<DomainEntityRef>();
 
   /**
    * Gets or Sets lineTypes
@@ -149,17 +149,17 @@ public class EdgeInterface  implements Serializable {
   
   /**
    **/
-  public EdgeInterface endpoints(List<UriReference> endpoints) {
+  public EdgeInterface endpoints(List<DomainEntityRef> endpoints) {
     this.endpoints = endpoints;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("endpoints")
-  public List<UriReference> getEndpoints() {
+  public List<DomainEntityRef> getEndpoints() {
     return endpoints;
   }
-  public void setEndpoints(List<UriReference> endpoints) {
+  public void setEndpoints(List<DomainEntityRef> endpoints) {
     this.endpoints = endpoints;
   }
 

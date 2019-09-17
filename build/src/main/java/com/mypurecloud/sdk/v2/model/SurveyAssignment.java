@@ -4,8 +4,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.PublishedSurveyFormReference;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -17,7 +17,7 @@ import java.io.Serializable;
 public class SurveyAssignment  implements Serializable {
   
   private PublishedSurveyFormReference surveyForm = null;
-  private UriReference flow = null;
+  private DomainEntityRef flow = null;
   private String inviteTimeInterval = null;
   private String sendingUser = null;
   private String sendingDomain = null;
@@ -44,17 +44,17 @@ public class SurveyAssignment  implements Serializable {
   /**
    * The URI reference to the flow associated with this survey.
    **/
-  public SurveyAssignment flow(UriReference flow) {
+  public SurveyAssignment flow(DomainEntityRef flow) {
     this.flow = flow;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The URI reference to the flow associated with this survey.")
   @JsonProperty("flow")
-  public UriReference getFlow() {
+  public DomainEntityRef getFlow() {
     return flow;
   }
-  public void setFlow(UriReference flow) {
+  public void setFlow(DomainEntityRef flow) {
     this.flow = flow;
   }
 

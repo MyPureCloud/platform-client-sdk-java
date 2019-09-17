@@ -15,7 +15,7 @@ title: SequenceSchedule
 | **version** | **Integer** | Required for updates, must match the version number of the most recent update |  [optional] |
 | **intervals** | [**List&lt;ScheduleInterval&gt;**](ScheduleInterval.html) | A list of intervals during which to run the associated CampaignSequence. |  |
 | **timeZone** | **String** | The time zone for this SequenceSchedule. For example, Africa/Abidjan. |  |
-| **sequence** | [**UriReference**](UriReference.html) | The CampaignSequence that this SequenceSchedule is for. |  |
+| **sequence** | [**DomainEntityRef**](DomainEntityRef.html) | The CampaignSequence that this SequenceSchedule is for. |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

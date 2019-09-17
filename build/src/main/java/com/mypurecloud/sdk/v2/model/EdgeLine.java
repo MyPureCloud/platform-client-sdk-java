@@ -5,10 +5,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.Edge;
 import com.mypurecloud.sdk.v2.model.EdgeGroup;
 import com.mypurecloud.sdk.v2.model.Endpoint;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -69,7 +69,7 @@ public class EdgeLine  implements Serializable {
   private StateEnum state = null;
   private String modifiedByApp = null;
   private String createdByApp = null;
-  private UriReference schema = null;
+  private DomainEntityRef schema = null;
   private Map<String, Object> properties = null;
   private Edge edge = null;
   private EdgeGroup edgeGroup = null;
@@ -294,17 +294,17 @@ public class EdgeLine  implements Serializable {
   
   /**
    **/
-  public EdgeLine schema(UriReference schema) {
+  public EdgeLine schema(DomainEntityRef schema) {
     this.schema = schema;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("schema")
-  public UriReference getSchema() {
+  public DomainEntityRef getSchema() {
     return schema;
   }
-  public void setSchema(UriReference schema) {
+  public void setSchema(DomainEntityRef schema) {
     this.schema = schema;
   }
 

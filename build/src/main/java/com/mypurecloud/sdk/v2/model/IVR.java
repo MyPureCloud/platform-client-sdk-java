@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -67,10 +67,10 @@ public class IVR  implements Serializable {
   private String modifiedByApp = null;
   private String createdByApp = null;
   private List<String> dnis = new ArrayList<String>();
-  private UriReference openHoursFlow = null;
-  private UriReference closedHoursFlow = null;
-  private UriReference holidayHoursFlow = null;
-  private UriReference scheduleGroup = null;
+  private DomainEntityRef openHoursFlow = null;
+  private DomainEntityRef closedHoursFlow = null;
+  private DomainEntityRef holidayHoursFlow = null;
+  private DomainEntityRef scheduleGroup = null;
   private String selfUri = null;
 
   
@@ -271,17 +271,17 @@ public class IVR  implements Serializable {
   /**
    * The Architect flow to execute during the hours an organization is open.
    **/
-  public IVR openHoursFlow(UriReference openHoursFlow) {
+  public IVR openHoursFlow(DomainEntityRef openHoursFlow) {
     this.openHoursFlow = openHoursFlow;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The Architect flow to execute during the hours an organization is open.")
   @JsonProperty("openHoursFlow")
-  public UriReference getOpenHoursFlow() {
+  public DomainEntityRef getOpenHoursFlow() {
     return openHoursFlow;
   }
-  public void setOpenHoursFlow(UriReference openHoursFlow) {
+  public void setOpenHoursFlow(DomainEntityRef openHoursFlow) {
     this.openHoursFlow = openHoursFlow;
   }
 
@@ -289,17 +289,17 @@ public class IVR  implements Serializable {
   /**
    * The Architect flow to execute during the hours an organization is closed.
    **/
-  public IVR closedHoursFlow(UriReference closedHoursFlow) {
+  public IVR closedHoursFlow(DomainEntityRef closedHoursFlow) {
     this.closedHoursFlow = closedHoursFlow;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The Architect flow to execute during the hours an organization is closed.")
   @JsonProperty("closedHoursFlow")
-  public UriReference getClosedHoursFlow() {
+  public DomainEntityRef getClosedHoursFlow() {
     return closedHoursFlow;
   }
-  public void setClosedHoursFlow(UriReference closedHoursFlow) {
+  public void setClosedHoursFlow(DomainEntityRef closedHoursFlow) {
     this.closedHoursFlow = closedHoursFlow;
   }
 
@@ -307,17 +307,17 @@ public class IVR  implements Serializable {
   /**
    * The Architect flow to execute during an organization's holiday hours.
    **/
-  public IVR holidayHoursFlow(UriReference holidayHoursFlow) {
+  public IVR holidayHoursFlow(DomainEntityRef holidayHoursFlow) {
     this.holidayHoursFlow = holidayHoursFlow;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The Architect flow to execute during an organization's holiday hours.")
   @JsonProperty("holidayHoursFlow")
-  public UriReference getHolidayHoursFlow() {
+  public DomainEntityRef getHolidayHoursFlow() {
     return holidayHoursFlow;
   }
-  public void setHolidayHoursFlow(UriReference holidayHoursFlow) {
+  public void setHolidayHoursFlow(DomainEntityRef holidayHoursFlow) {
     this.holidayHoursFlow = holidayHoursFlow;
   }
 
@@ -325,17 +325,17 @@ public class IVR  implements Serializable {
   /**
    * The schedule group defining the open and closed hours for an organization.  If this is provided, an open flow and a closed flow must be specified as well.
    **/
-  public IVR scheduleGroup(UriReference scheduleGroup) {
+  public IVR scheduleGroup(DomainEntityRef scheduleGroup) {
     this.scheduleGroup = scheduleGroup;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The schedule group defining the open and closed hours for an organization.  If this is provided, an open flow and a closed flow must be specified as well.")
   @JsonProperty("scheduleGroup")
-  public UriReference getScheduleGroup() {
+  public DomainEntityRef getScheduleGroup() {
     return scheduleGroup;
   }
-  public void setScheduleGroup(UriReference scheduleGroup) {
+  public void setScheduleGroup(DomainEntityRef scheduleGroup) {
     this.scheduleGroup = scheduleGroup;
   }
 

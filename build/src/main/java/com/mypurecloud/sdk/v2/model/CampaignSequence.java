@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ public class CampaignSequence  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Integer version = null;
-  private List<UriReference> campaigns = new ArrayList<UriReference>();
+  private List<DomainEntityRef> campaigns = new ArrayList<DomainEntityRef>();
   private Integer currentCampaign = null;
 
   /**
@@ -126,17 +126,17 @@ public class CampaignSequence  implements Serializable {
   /**
    * The ordered list of Campaigns that this CampaignSequence will run.
    **/
-  public CampaignSequence campaigns(List<UriReference> campaigns) {
+  public CampaignSequence campaigns(List<DomainEntityRef> campaigns) {
     this.campaigns = campaigns;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "The ordered list of Campaigns that this CampaignSequence will run.")
   @JsonProperty("campaigns")
-  public List<UriReference> getCampaigns() {
+  public List<DomainEntityRef> getCampaigns() {
     return campaigns;
   }
-  public void setCampaigns(List<UriReference> campaigns) {
+  public void setCampaigns(List<DomainEntityRef> campaigns) {
     this.campaigns = campaigns;
   }
 

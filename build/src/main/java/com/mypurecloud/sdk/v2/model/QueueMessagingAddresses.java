@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -15,22 +15,22 @@ import java.io.Serializable;
 
 public class QueueMessagingAddresses  implements Serializable {
   
-  private UriReference smsAddress = null;
+  private DomainEntityRef smsAddress = null;
 
   
   /**
    **/
-  public QueueMessagingAddresses smsAddress(UriReference smsAddress) {
+  public QueueMessagingAddresses smsAddress(DomainEntityRef smsAddress) {
     this.smsAddress = smsAddress;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("smsAddress")
-  public UriReference getSmsAddress() {
+  public DomainEntityRef getSmsAddress() {
     return smsAddress;
   }
-  public void setSmsAddress(UriReference smsAddress) {
+  public void setSmsAddress(DomainEntityRef smsAddress) {
     this.smsAddress = smsAddress;
   }
 

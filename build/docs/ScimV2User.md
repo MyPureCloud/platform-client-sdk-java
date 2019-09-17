@@ -8,8 +8,8 @@ title: ScimV2User
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | SCIM Resource identifier |  [optional] |
-| **schemas** | **List&lt;String&gt;** | schemas supported |  [optional] |
+| **id** | **String** | The ID of the SCIM resource. Set by the service provider. caseExact is set to true. Mutability is set to readOnly. Returned is set to always. |  [optional] |
+| **schemas** | **List&lt;String&gt;** | The list of supported schemas. |  [optional] |
 | **active** | **Boolean** | Indicates whether the user&#39;s administrative status is active. |  [optional] |
 | **userName** | **String** | The user&#39;s PureCloud email address. Must be unique. |  [optional] |
 | **displayName** | **String** | The display name for the user. |  [optional] |
@@ -20,9 +20,9 @@ title: ScimV2User
 | **photos** | [**List&lt;Photo&gt;**](Photo.html) | A list of the user&#39;s photos. |  [optional] |
 | **externalId** | **String** | The external ID of the user. Set by the provisioning client. caseExact is set to true. mutability is set to readWrite. |  [optional] |
 | **groups** | [**List&lt;ScimV2GroupReference&gt;**](ScimV2GroupReference.html) | A list of groups that the user is a member of. |  [optional] |
-| **roles** | **List&lt;String&gt;** | Roles |  [optional] |
-| **meta** | [**ScimMetadata**](ScimMetadata.html) | Resource SCIM meta |  [optional] |
+| **roles** | **List&lt;String&gt;** | A list of roles assigned to the user. |  [optional] |
 | **urnietfparamsscimschemasextensionenterprise20User** | [**ScimV2EnterpriseUser**](ScimV2EnterpriseUser.html) |  |  [optional] |
+| **meta** | [**ScimMetadata**](ScimMetadata.html) | Resource SCIM meta |  [optional] |
 {: class="table table-striped"}
 
 

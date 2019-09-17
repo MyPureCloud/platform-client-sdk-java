@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import java.io.Serializable;
 
 public class RuleSetDiagnostic  implements Serializable {
   
-  private UriReference ruleSet = null;
+  private DomainEntityRef ruleSet = null;
 
   /**
    * Gets or Sets warnings
@@ -59,17 +59,17 @@ public class RuleSetDiagnostic  implements Serializable {
   /**
    * A campaign rule set
    **/
-  public RuleSetDiagnostic ruleSet(UriReference ruleSet) {
+  public RuleSetDiagnostic ruleSet(DomainEntityRef ruleSet) {
     this.ruleSet = ruleSet;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "A campaign rule set")
   @JsonProperty("ruleSet")
-  public UriReference getRuleSet() {
+  public DomainEntityRef getRuleSet() {
     return ruleSet;
   }
-  public void setRuleSet(UriReference ruleSet) {
+  public void setRuleSet(DomainEntityRef ruleSet) {
     this.ruleSet = ruleSet;
   }
 

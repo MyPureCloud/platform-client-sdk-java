@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -15,7 +15,7 @@ import java.io.Serializable;
 
 public class QueueUtilizationDiagnostic  implements Serializable {
   
-  private UriReference queue = null;
+  private DomainEntityRef queue = null;
   private Integer usersInQueue = null;
   private Integer activeUsersInQueue = null;
   private Integer usersOnQueue = null;
@@ -29,17 +29,17 @@ public class QueueUtilizationDiagnostic  implements Serializable {
   /**
    * Identifier of the queue
    **/
-  public QueueUtilizationDiagnostic queue(UriReference queue) {
+  public QueueUtilizationDiagnostic queue(DomainEntityRef queue) {
     this.queue = queue;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Identifier of the queue")
   @JsonProperty("queue")
-  public UriReference getQueue() {
+  public DomainEntityRef getQueue() {
     return queue;
   }
-  public void setQueue(UriReference queue) {
+  public void setQueue(DomainEntityRef queue) {
     this.queue = queue;
   }
 

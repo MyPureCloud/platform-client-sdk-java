@@ -5,9 +5,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.LineBase;
 import com.mypurecloud.sdk.v2.model.PhoneCapabilities;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -69,7 +69,7 @@ public class PhoneBase  implements Serializable {
   private StateEnum state = null;
   private String modifiedByApp = null;
   private String createdByApp = null;
-  private UriReference phoneMetaBase = null;
+  private DomainEntityRef phoneMetaBase = null;
   private List<LineBase> lines = new ArrayList<LineBase>();
   private Map<String, Object> properties = null;
   private PhoneCapabilities capabilities = null;
@@ -255,17 +255,17 @@ public class PhoneBase  implements Serializable {
   /**
    * A phone metabase is essentially a database for storing phone configuration settings, which simplifies the configuration process.
    **/
-  public PhoneBase phoneMetaBase(UriReference phoneMetaBase) {
+  public PhoneBase phoneMetaBase(DomainEntityRef phoneMetaBase) {
     this.phoneMetaBase = phoneMetaBase;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "A phone metabase is essentially a database for storing phone configuration settings, which simplifies the configuration process.")
   @JsonProperty("phoneMetaBase")
-  public UriReference getPhoneMetaBase() {
+  public DomainEntityRef getPhoneMetaBase() {
     return phoneMetaBase;
   }
-  public void setPhoneMetaBase(UriReference phoneMetaBase) {
+  public void setPhoneMetaBase(DomainEntityRef phoneMetaBase) {
     this.phoneMetaBase = phoneMetaBase;
   }
 

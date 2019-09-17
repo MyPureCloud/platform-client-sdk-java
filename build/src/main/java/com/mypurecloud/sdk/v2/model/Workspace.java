@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.WorkspaceSummary;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -58,7 +58,7 @@ public class Workspace  implements Serializable {
   }
   private TypeEnum type = null;
   private Boolean isCurrentUserWorkspace = null;
-  private UriReference user = null;
+  private DomainEntityRef user = null;
   private String bucket = null;
   private Date dateCreated = null;
   private Date dateModified = null;
@@ -129,17 +129,17 @@ public class Workspace  implements Serializable {
   
   /**
    **/
-  public Workspace user(UriReference user) {
+  public Workspace user(DomainEntityRef user) {
     this.user = user;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("user")
-  public UriReference getUser() {
+  public DomainEntityRef getUser() {
     return user;
   }
-  public void setUser(UriReference user) {
+  public void setUser(DomainEntityRef user) {
     this.user = user;
   }
 

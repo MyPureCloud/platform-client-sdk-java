@@ -24,9 +24,9 @@ public class DialogflowAgentSummaryEntityListing  implements Serializable, Paged
   private Long total = null;
   private String firstUri = null;
   private String selfUri = null;
-  private String lastUri = null;
-  private String previousUri = null;
   private String nextUri = null;
+  private String previousUri = null;
+  private String lastUri = null;
   private Integer pageCount = null;
 
   
@@ -134,18 +134,18 @@ public class DialogflowAgentSummaryEntityListing  implements Serializable, Paged
   
   /**
    **/
-  public DialogflowAgentSummaryEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
+  public DialogflowAgentSummaryEntityListing nextUri(String nextUri) {
+    this.nextUri = nextUri;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
+  @JsonProperty("nextUri")
+  public String getNextUri() {
+    return nextUri;
   }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
+  public void setNextUri(String nextUri) {
+    this.nextUri = nextUri;
   }
 
   
@@ -168,18 +168,18 @@ public class DialogflowAgentSummaryEntityListing  implements Serializable, Paged
   
   /**
    **/
-  public DialogflowAgentSummaryEntityListing nextUri(String nextUri) {
-    this.nextUri = nextUri;
+  public DialogflowAgentSummaryEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("nextUri")
-  public String getNextUri() {
-    return nextUri;
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
   }
-  public void setNextUri(String nextUri) {
-    this.nextUri = nextUri;
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
   }
 
   
@@ -216,15 +216,15 @@ public class DialogflowAgentSummaryEntityListing  implements Serializable, Paged
         Objects.equals(this.total, dialogflowAgentSummaryEntityListing.total) &&
         Objects.equals(this.firstUri, dialogflowAgentSummaryEntityListing.firstUri) &&
         Objects.equals(this.selfUri, dialogflowAgentSummaryEntityListing.selfUri) &&
-        Objects.equals(this.lastUri, dialogflowAgentSummaryEntityListing.lastUri) &&
-        Objects.equals(this.previousUri, dialogflowAgentSummaryEntityListing.previousUri) &&
         Objects.equals(this.nextUri, dialogflowAgentSummaryEntityListing.nextUri) &&
+        Objects.equals(this.previousUri, dialogflowAgentSummaryEntityListing.previousUri) &&
+        Objects.equals(this.lastUri, dialogflowAgentSummaryEntityListing.lastUri) &&
         Objects.equals(this.pageCount, dialogflowAgentSummaryEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, lastUri, previousUri, nextUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, previousUri, lastUri, pageCount);
   }
 
   @Override
@@ -238,9 +238,9 @@ public class DialogflowAgentSummaryEntityListing  implements Serializable, Paged
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

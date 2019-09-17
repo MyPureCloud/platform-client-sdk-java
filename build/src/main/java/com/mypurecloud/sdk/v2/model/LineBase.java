@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -66,7 +66,7 @@ public class LineBase  implements Serializable {
   private StateEnum state = null;
   private String modifiedByApp = null;
   private String createdByApp = null;
-  private UriReference lineMetaBase = null;
+  private DomainEntityRef lineMetaBase = null;
   private Map<String, Object> properties = null;
   private String selfUri = null;
 
@@ -249,17 +249,17 @@ public class LineBase  implements Serializable {
   
   /**
    **/
-  public LineBase lineMetaBase(UriReference lineMetaBase) {
+  public LineBase lineMetaBase(DomainEntityRef lineMetaBase) {
     this.lineMetaBase = lineMetaBase;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("lineMetaBase")
-  public UriReference getLineMetaBase() {
+  public DomainEntityRef getLineMetaBase() {
     return lineMetaBase;
   }
-  public void setLineMetaBase(UriReference lineMetaBase) {
+  public void setLineMetaBase(DomainEntityRef lineMetaBase) {
     this.lineMetaBase = lineMetaBase;
   }
 

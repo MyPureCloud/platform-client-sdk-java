@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -17,7 +17,7 @@ import java.io.Serializable;
 public class SecureSession  implements Serializable {
   
   private String id = null;
-  private UriReference flow = null;
+  private DomainEntityRef flow = null;
   private String userData = null;
 
   /**
@@ -70,17 +70,17 @@ public class SecureSession  implements Serializable {
   /**
    * The flow to execute securely
    **/
-  public SecureSession flow(UriReference flow) {
+  public SecureSession flow(DomainEntityRef flow) {
     this.flow = flow;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "The flow to execute securely")
   @JsonProperty("flow")
-  public UriReference getFlow() {
+  public DomainEntityRef getFlow() {
     return flow;
   }
-  public void setFlow(UriReference flow) {
+  public void setFlow(DomainEntityRef flow) {
     this.flow = flow;
   }
 

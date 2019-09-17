@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.Group;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -54,7 +54,7 @@ public class Share  implements Serializable {
     }
   }
   private SharedEntityTypeEnum sharedEntityType = null;
-  private UriReference sharedEntity = null;
+  private DomainEntityRef sharedEntity = null;
 
   /**
    * Gets or Sets memberType
@@ -91,9 +91,9 @@ public class Share  implements Serializable {
     }
   }
   private MemberTypeEnum memberType = null;
-  private UriReference member = null;
-  private UriReference sharedBy = null;
-  private UriReference workspace = null;
+  private DomainEntityRef member = null;
+  private DomainEntityRef sharedBy = null;
+  private DomainEntityRef workspace = null;
   private User user = null;
   private Group group = null;
   private String selfUri = null;
@@ -142,17 +142,17 @@ public class Share  implements Serializable {
   
   /**
    **/
-  public Share sharedEntity(UriReference sharedEntity) {
+  public Share sharedEntity(DomainEntityRef sharedEntity) {
     this.sharedEntity = sharedEntity;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("sharedEntity")
-  public UriReference getSharedEntity() {
+  public DomainEntityRef getSharedEntity() {
     return sharedEntity;
   }
-  public void setSharedEntity(UriReference sharedEntity) {
+  public void setSharedEntity(DomainEntityRef sharedEntity) {
     this.sharedEntity = sharedEntity;
   }
 
@@ -176,51 +176,51 @@ public class Share  implements Serializable {
   
   /**
    **/
-  public Share member(UriReference member) {
+  public Share member(DomainEntityRef member) {
     this.member = member;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("member")
-  public UriReference getMember() {
+  public DomainEntityRef getMember() {
     return member;
   }
-  public void setMember(UriReference member) {
+  public void setMember(DomainEntityRef member) {
     this.member = member;
   }
 
   
   /**
    **/
-  public Share sharedBy(UriReference sharedBy) {
+  public Share sharedBy(DomainEntityRef sharedBy) {
     this.sharedBy = sharedBy;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("sharedBy")
-  public UriReference getSharedBy() {
+  public DomainEntityRef getSharedBy() {
     return sharedBy;
   }
-  public void setSharedBy(UriReference sharedBy) {
+  public void setSharedBy(DomainEntityRef sharedBy) {
     this.sharedBy = sharedBy;
   }
 
   
   /**
    **/
-  public Share workspace(UriReference workspace) {
+  public Share workspace(DomainEntityRef workspace) {
     this.workspace = workspace;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("workspace")
-  public UriReference getWorkspace() {
+  public DomainEntityRef getWorkspace() {
     return workspace;
   }
-  public void setWorkspace(UriReference workspace) {
+  public void setWorkspace(DomainEntityRef workspace) {
     this.workspace = workspace;
   }
 

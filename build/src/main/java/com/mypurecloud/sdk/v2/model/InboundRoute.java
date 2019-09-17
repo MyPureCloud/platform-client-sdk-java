@@ -4,9 +4,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.EmailAddress;
 import com.mypurecloud.sdk.v2.model.QueueEmailAddress;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -22,16 +22,16 @@ public class InboundRoute  implements Serializable {
   private String id = null;
   private String name = null;
   private String pattern = null;
-  private UriReference queue = null;
+  private DomainEntityRef queue = null;
   private Integer priority = null;
-  private List<UriReference> skills = new ArrayList<UriReference>();
-  private UriReference language = null;
+  private List<DomainEntityRef> skills = new ArrayList<DomainEntityRef>();
+  private DomainEntityRef language = null;
   private String fromName = null;
   private String fromEmail = null;
-  private UriReference flow = null;
+  private DomainEntityRef flow = null;
   private QueueEmailAddress replyEmailAddress = null;
   private List<EmailAddress> autoBcc = new ArrayList<EmailAddress>();
-  private UriReference spamFlow = null;
+  private DomainEntityRef spamFlow = null;
   private String selfUri = null;
 
   
@@ -80,17 +80,17 @@ public class InboundRoute  implements Serializable {
   /**
    * The queue to route the emails to.
    **/
-  public InboundRoute queue(UriReference queue) {
+  public InboundRoute queue(DomainEntityRef queue) {
     this.queue = queue;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The queue to route the emails to.")
   @JsonProperty("queue")
-  public UriReference getQueue() {
+  public DomainEntityRef getQueue() {
     return queue;
   }
-  public void setQueue(UriReference queue) {
+  public void setQueue(DomainEntityRef queue) {
     this.queue = queue;
   }
 
@@ -116,17 +116,17 @@ public class InboundRoute  implements Serializable {
   /**
    * The skills to use for routing.
    **/
-  public InboundRoute skills(List<UriReference> skills) {
+  public InboundRoute skills(List<DomainEntityRef> skills) {
     this.skills = skills;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The skills to use for routing.")
   @JsonProperty("skills")
-  public List<UriReference> getSkills() {
+  public List<DomainEntityRef> getSkills() {
     return skills;
   }
-  public void setSkills(List<UriReference> skills) {
+  public void setSkills(List<DomainEntityRef> skills) {
     this.skills = skills;
   }
 
@@ -134,17 +134,17 @@ public class InboundRoute  implements Serializable {
   /**
    * The language to use for routing.
    **/
-  public InboundRoute language(UriReference language) {
+  public InboundRoute language(DomainEntityRef language) {
     this.language = language;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The language to use for routing.")
   @JsonProperty("language")
-  public UriReference getLanguage() {
+  public DomainEntityRef getLanguage() {
     return language;
   }
-  public void setLanguage(UriReference language) {
+  public void setLanguage(DomainEntityRef language) {
     this.language = language;
   }
 
@@ -188,17 +188,17 @@ public class InboundRoute  implements Serializable {
   /**
    * The flow to use for processing the email.
    **/
-  public InboundRoute flow(UriReference flow) {
+  public InboundRoute flow(DomainEntityRef flow) {
     this.flow = flow;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The flow to use for processing the email.")
   @JsonProperty("flow")
-  public UriReference getFlow() {
+  public DomainEntityRef getFlow() {
     return flow;
   }
-  public void setFlow(UriReference flow) {
+  public void setFlow(DomainEntityRef flow) {
     this.flow = flow;
   }
 
@@ -242,17 +242,17 @@ public class InboundRoute  implements Serializable {
   /**
    * The flow to use for processing inbound emails that have been marked as spam.
    **/
-  public InboundRoute spamFlow(UriReference spamFlow) {
+  public InboundRoute spamFlow(DomainEntityRef spamFlow) {
     this.spamFlow = spamFlow;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The flow to use for processing inbound emails that have been marked as spam.")
   @JsonProperty("spamFlow")
-  public UriReference getSpamFlow() {
+  public DomainEntityRef getSpamFlow() {
     return spamFlow;
   }
-  public void setSpamFlow(UriReference spamFlow) {
+  public void setSpamFlow(DomainEntityRef spamFlow) {
     this.spamFlow = spamFlow;
   }
 

@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -20,9 +20,9 @@ public class Attribute  implements Serializable {
   private String name = null;
   private Integer version = null;
   private String description = null;
-  private UriReference createdBy = null;
+  private DomainEntityRef createdBy = null;
   private Date dateCreated = null;
-  private UriReference modifiedBy = null;
+  private DomainEntityRef modifiedBy = null;
   private Date dateModified = null;
   private String selfUri = null;
 
@@ -88,17 +88,17 @@ public class Attribute  implements Serializable {
   
   /**
    **/
-  public Attribute createdBy(UriReference createdBy) {
+  public Attribute createdBy(DomainEntityRef createdBy) {
     this.createdBy = createdBy;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("createdBy")
-  public UriReference getCreatedBy() {
+  public DomainEntityRef getCreatedBy() {
     return createdBy;
   }
-  public void setCreatedBy(UriReference createdBy) {
+  public void setCreatedBy(DomainEntityRef createdBy) {
     this.createdBy = createdBy;
   }
 
@@ -123,17 +123,17 @@ public class Attribute  implements Serializable {
   
   /**
    **/
-  public Attribute modifiedBy(UriReference modifiedBy) {
+  public Attribute modifiedBy(DomainEntityRef modifiedBy) {
     this.modifiedBy = modifiedBy;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("modifiedBy")
-  public UriReference getModifiedBy() {
+  public DomainEntityRef getModifiedBy() {
     return modifiedBy;
   }
-  public void setModifiedBy(UriReference modifiedBy) {
+  public void setModifiedBy(DomainEntityRef modifiedBy) {
     this.modifiedBy = modifiedBy;
   }
 

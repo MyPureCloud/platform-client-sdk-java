@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.Site;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -103,7 +103,7 @@ public class OutboundRoute  implements Serializable {
     }
   }
   private DistributionEnum distribution = null;
-  private List<UriReference> externalTrunkBases = new ArrayList<UriReference>();
+  private List<DomainEntityRef> externalTrunkBases = new ArrayList<DomainEntityRef>();
   private Site site = null;
   private Boolean managed = null;
   private String selfUri = null;
@@ -340,17 +340,17 @@ public class OutboundRoute  implements Serializable {
   /**
    * Trunk base settings of trunkType \"EXTERNAL\".  This base must also be set on an edge logical interface for correct routing.
    **/
-  public OutboundRoute externalTrunkBases(List<UriReference> externalTrunkBases) {
+  public OutboundRoute externalTrunkBases(List<DomainEntityRef> externalTrunkBases) {
     this.externalTrunkBases = externalTrunkBases;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Trunk base settings of trunkType \"EXTERNAL\".  This base must also be set on an edge logical interface for correct routing.")
   @JsonProperty("externalTrunkBases")
-  public List<UriReference> getExternalTrunkBases() {
+  public List<DomainEntityRef> getExternalTrunkBases() {
     return externalTrunkBases;
   }
-  public void setExternalTrunkBases(List<UriReference> externalTrunkBases) {
+  public void setExternalTrunkBases(List<DomainEntityRef> externalTrunkBases) {
     this.externalTrunkBases = externalTrunkBases;
   }
 

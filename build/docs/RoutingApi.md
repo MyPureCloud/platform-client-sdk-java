@@ -1544,7 +1544,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortBy** | **String**| Sort by | [optional] [default to name] 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, authorization.unusedRoles, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
 | **joined** | **Boolean**| Filter by joined status | [optional] 
 | **name** | **String**| Filter by queue member name | [optional] 
 | **profileSkills** | [**List&lt;String&gt;**](String.html)| Filter by profile skill | [optional] 
@@ -1632,7 +1632,7 @@ try {
 
 
 
-> [QueueEntityListing](QueueEntityListing.html) getRoutingQueues(pageSize, pageNumber, sortBy, name, active, divisionId)
+> [QueueEntityListing](QueueEntityListing.html) getRoutingQueues(pageSize, pageNumber, sortBy, name, active, id, divisionId)
 
 Get list of queues.
 
@@ -1671,9 +1671,10 @@ Integer pageNumber = 1; // Integer | Page number
 String sortBy = "name"; // String | Sort by
 String name = "name_example"; // String | Name
 Boolean active = true; // Boolean | Active
+List<String> id = Arrays.asList("id_example"); // List<String> | ID(s)
 List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
 try {
-    QueueEntityListing result = apiInstance.getRoutingQueues(pageSize, pageNumber, sortBy, name, active, divisionId);
+    QueueEntityListing result = apiInstance.getRoutingQueues(pageSize, pageNumber, sortBy, name, active, id, divisionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingQueues");
@@ -1691,6 +1692,7 @@ try {
 | **sortBy** | **String**| Sort by | [optional] [default to name] 
 | **name** | **String**| Name | [optional] 
 | **active** | **Boolean**| Active | [optional] 
+| **id** | [**List&lt;String&gt;**](String.html)| ID(s) | [optional] 
 | **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
 {: class="table-striped"}
 

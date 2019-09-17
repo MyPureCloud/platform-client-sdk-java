@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -17,26 +17,26 @@ import java.io.Serializable;
 
 public class CallableContactsDiagnostic  implements Serializable {
   
-  private UriReference attemptLimits = null;
-  private List<UriReference> dncLists = new ArrayList<UriReference>();
-  private UriReference callableTimeSet = null;
-  private List<UriReference> ruleSets = new ArrayList<UriReference>();
+  private DomainEntityRef attemptLimits = null;
+  private List<DomainEntityRef> dncLists = new ArrayList<DomainEntityRef>();
+  private DomainEntityRef callableTimeSet = null;
+  private List<DomainEntityRef> ruleSets = new ArrayList<DomainEntityRef>();
 
   
   /**
    * Attempt limits for the campaign's contact list
    **/
-  public CallableContactsDiagnostic attemptLimits(UriReference attemptLimits) {
+  public CallableContactsDiagnostic attemptLimits(DomainEntityRef attemptLimits) {
     this.attemptLimits = attemptLimits;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Attempt limits for the campaign's contact list")
   @JsonProperty("attemptLimits")
-  public UriReference getAttemptLimits() {
+  public DomainEntityRef getAttemptLimits() {
     return attemptLimits;
   }
-  public void setAttemptLimits(UriReference attemptLimits) {
+  public void setAttemptLimits(DomainEntityRef attemptLimits) {
     this.attemptLimits = attemptLimits;
   }
 
@@ -44,17 +44,17 @@ public class CallableContactsDiagnostic  implements Serializable {
   /**
    * Do not call lists for the campaign
    **/
-  public CallableContactsDiagnostic dncLists(List<UriReference> dncLists) {
+  public CallableContactsDiagnostic dncLists(List<DomainEntityRef> dncLists) {
     this.dncLists = dncLists;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Do not call lists for the campaign")
   @JsonProperty("dncLists")
-  public List<UriReference> getDncLists() {
+  public List<DomainEntityRef> getDncLists() {
     return dncLists;
   }
-  public void setDncLists(List<UriReference> dncLists) {
+  public void setDncLists(List<DomainEntityRef> dncLists) {
     this.dncLists = dncLists;
   }
 
@@ -62,17 +62,17 @@ public class CallableContactsDiagnostic  implements Serializable {
   /**
    * Callable time sets for the campaign
    **/
-  public CallableContactsDiagnostic callableTimeSet(UriReference callableTimeSet) {
+  public CallableContactsDiagnostic callableTimeSet(DomainEntityRef callableTimeSet) {
     this.callableTimeSet = callableTimeSet;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Callable time sets for the campaign")
   @JsonProperty("callableTimeSet")
-  public UriReference getCallableTimeSet() {
+  public DomainEntityRef getCallableTimeSet() {
     return callableTimeSet;
   }
-  public void setCallableTimeSet(UriReference callableTimeSet) {
+  public void setCallableTimeSet(DomainEntityRef callableTimeSet) {
     this.callableTimeSet = callableTimeSet;
   }
 
@@ -80,17 +80,17 @@ public class CallableContactsDiagnostic  implements Serializable {
   /**
    * Rule sets for the campaign
    **/
-  public CallableContactsDiagnostic ruleSets(List<UriReference> ruleSets) {
+  public CallableContactsDiagnostic ruleSets(List<DomainEntityRef> ruleSets) {
     this.ruleSets = ruleSets;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Rule sets for the campaign")
   @JsonProperty("ruleSets")
-  public List<UriReference> getRuleSets() {
+  public List<DomainEntityRef> getRuleSets() {
     return ruleSets;
   }
-  public void setRuleSets(List<UriReference> ruleSets) {
+  public void setRuleSets(List<DomainEntityRef> ruleSets) {
     this.ruleSets = ruleSets;
   }
 

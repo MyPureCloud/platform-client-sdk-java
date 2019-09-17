@@ -19,7 +19,7 @@ title: EdgeLine
 | **state** | [**StateEnum**](#StateEnum) | Indicates if the resource is active, inactive, or deleted. |  [optional] |
 | **modifiedByApp** | **String** | The application that last modified the resource. |  [optional] |
 | **createdByApp** | **String** | The application that created the resource. |  [optional] |
-| **schema** | [**UriReference**](UriReference.html) |  |  [optional] |
+| **schema** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
 | **properties** | **Map&lt;String, Object&gt;** |  |  [optional] |
 | **edge** | [**Edge**](Edge.html) |  |  [optional] |
 | **edgeGroup** | [**EdgeGroup**](EdgeGroup.html) |  |  [optional] |

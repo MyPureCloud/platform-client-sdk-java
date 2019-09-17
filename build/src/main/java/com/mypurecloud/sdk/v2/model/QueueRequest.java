@@ -7,11 +7,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AcwSettings;
 import com.mypurecloud.sdk.v2.model.Bullseye;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.MediaSetting;
 import com.mypurecloud.sdk.v2.model.QueueEmailAddress;
 import com.mypurecloud.sdk.v2.model.QueueMessagingAddresses;
 import com.mypurecloud.sdk.v2.model.Script;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import com.mypurecloud.sdk.v2.model.WritableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -75,8 +75,8 @@ public class QueueRequest  implements Serializable {
     }
   }
   private SkillEvaluationMethodEnum skillEvaluationMethod = null;
-  private UriReference queueFlow = null;
-  private UriReference whisperPrompt = null;
+  private DomainEntityRef queueFlow = null;
+  private DomainEntityRef whisperPrompt = null;
   private Boolean autoAnswerOnly = null;
   private String callingPartyName = null;
   private String callingPartyNumber = null;
@@ -301,17 +301,17 @@ public class QueueRequest  implements Serializable {
   /**
    * The in-queue flow to use for conversations waiting in queue.
    **/
-  public QueueRequest queueFlow(UriReference queueFlow) {
+  public QueueRequest queueFlow(DomainEntityRef queueFlow) {
     this.queueFlow = queueFlow;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The in-queue flow to use for conversations waiting in queue.")
   @JsonProperty("queueFlow")
-  public UriReference getQueueFlow() {
+  public DomainEntityRef getQueueFlow() {
     return queueFlow;
   }
-  public void setQueueFlow(UriReference queueFlow) {
+  public void setQueueFlow(DomainEntityRef queueFlow) {
     this.queueFlow = queueFlow;
   }
 
@@ -319,17 +319,17 @@ public class QueueRequest  implements Serializable {
   /**
    * The prompt used for whisper on the queue, if configured.
    **/
-  public QueueRequest whisperPrompt(UriReference whisperPrompt) {
+  public QueueRequest whisperPrompt(DomainEntityRef whisperPrompt) {
     this.whisperPrompt = whisperPrompt;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The prompt used for whisper on the queue, if configured.")
   @JsonProperty("whisperPrompt")
-  public UriReference getWhisperPrompt() {
+  public DomainEntityRef getWhisperPrompt() {
     return whisperPrompt;
   }
-  public void setWhisperPrompt(UriReference whisperPrompt) {
+  public void setWhisperPrompt(DomainEntityRef whisperPrompt) {
     this.whisperPrompt = whisperPrompt;
   }
 

@@ -7,9 +7,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DocumentAttribute;
 import com.mypurecloud.sdk.v2.model.DocumentThumbnail;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.LockInfo;
 import com.mypurecloud.sdk.v2.model.TagValue;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -30,9 +30,9 @@ public class Document  implements Serializable {
   private Date dateModified = null;
   private Date dateUploaded = null;
   private String contentUri = null;
-  private UriReference workspace = null;
-  private UriReference createdBy = null;
-  private UriReference uploadedBy = null;
+  private DomainEntityRef workspace = null;
+  private DomainEntityRef createdBy = null;
+  private DomainEntityRef uploadedBy = null;
   private String contentType = null;
   private Long contentLength = null;
 
@@ -80,7 +80,7 @@ public class Document  implements Serializable {
   private List<TagValue> tagValues = new ArrayList<TagValue>();
   private List<DocumentAttribute> attributes = new ArrayList<DocumentAttribute>();
   private List<DocumentThumbnail> thumbnails = new ArrayList<DocumentThumbnail>();
-  private UriReference uploadStatus = null;
+  private DomainEntityRef uploadStatus = null;
   private String uploadDestinationUri = null;
 
   /**
@@ -274,51 +274,51 @@ public class Document  implements Serializable {
   
   /**
    **/
-  public Document workspace(UriReference workspace) {
+  public Document workspace(DomainEntityRef workspace) {
     this.workspace = workspace;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("workspace")
-  public UriReference getWorkspace() {
+  public DomainEntityRef getWorkspace() {
     return workspace;
   }
-  public void setWorkspace(UriReference workspace) {
+  public void setWorkspace(DomainEntityRef workspace) {
     this.workspace = workspace;
   }
 
   
   /**
    **/
-  public Document createdBy(UriReference createdBy) {
+  public Document createdBy(DomainEntityRef createdBy) {
     this.createdBy = createdBy;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("createdBy")
-  public UriReference getCreatedBy() {
+  public DomainEntityRef getCreatedBy() {
     return createdBy;
   }
-  public void setCreatedBy(UriReference createdBy) {
+  public void setCreatedBy(DomainEntityRef createdBy) {
     this.createdBy = createdBy;
   }
 
   
   /**
    **/
-  public Document uploadedBy(UriReference uploadedBy) {
+  public Document uploadedBy(DomainEntityRef uploadedBy) {
     this.uploadedBy = uploadedBy;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("uploadedBy")
-  public UriReference getUploadedBy() {
+  public DomainEntityRef getUploadedBy() {
     return uploadedBy;
   }
-  public void setUploadedBy(UriReference uploadedBy) {
+  public void setUploadedBy(DomainEntityRef uploadedBy) {
     this.uploadedBy = uploadedBy;
   }
 
@@ -529,17 +529,17 @@ public class Document  implements Serializable {
   
   /**
    **/
-  public Document uploadStatus(UriReference uploadStatus) {
+  public Document uploadStatus(DomainEntityRef uploadStatus) {
     this.uploadStatus = uploadStatus;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("uploadStatus")
-  public UriReference getUploadStatus() {
+  public DomainEntityRef getUploadStatus() {
     return uploadStatus;
   }
-  public void setUploadStatus(UriReference uploadStatus) {
+  public void setUploadStatus(DomainEntityRef uploadStatus) {
     this.uploadStatus = uploadStatus;
   }
 

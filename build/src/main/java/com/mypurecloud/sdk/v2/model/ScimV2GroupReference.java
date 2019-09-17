@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.ScimMetadata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -17,10 +16,9 @@ import java.io.Serializable;
 
 public class ScimV2GroupReference  implements Serializable {
   
-  private ScimMetadata meta = null;
 
   /**
-   * SCIM Resource Type of member
+   * The SCIM resource type. Can be user or group.
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -58,25 +56,7 @@ public class ScimV2GroupReference  implements Serializable {
   private String ref = null;
 
   
-  /**
-   * Resource SCIM meta
-   **/
-  public ScimV2GroupReference meta(ScimMetadata meta) {
-    this.meta = meta;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Resource SCIM meta")
-  @JsonProperty("meta")
-  public ScimMetadata getMeta() {
-    return meta;
-  }
-  public void setMeta(ScimMetadata meta) {
-    this.meta = meta;
-  }
-
-  
-  @ApiModelProperty(example = "null", value = "SCIM Resource Type of member")
+  @ApiModelProperty(example = "null", value = "The SCIM resource type. Can be user or group.")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
@@ -101,7 +81,7 @@ public class ScimV2GroupReference  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "Ref to entity")
+  @ApiModelProperty(example = "null", value = "The reference URI of the SCIM resource.")
   @JsonProperty("$ref")
   public String getRef() {
     return ref;
@@ -118,15 +98,14 @@ public class ScimV2GroupReference  implements Serializable {
       return false;
     }
     ScimV2GroupReference scimV2GroupReference = (ScimV2GroupReference) o;
-    return Objects.equals(this.meta, scimV2GroupReference.meta) &&
-        Objects.equals(this.type, scimV2GroupReference.type) &&
+    return Objects.equals(this.type, scimV2GroupReference.type) &&
         Objects.equals(this.value, scimV2GroupReference.value) &&
         Objects.equals(this.ref, scimV2GroupReference.ref);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(meta, type, value, ref);
+    return Objects.hash(type, value, ref);
   }
 
   @Override
@@ -134,7 +113,6 @@ public class ScimV2GroupReference  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ScimV2GroupReference {\n");
     
-    sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    ref: ").append(toIndentedString(ref)).append("\n");

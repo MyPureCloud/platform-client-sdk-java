@@ -5,10 +5,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import com.mypurecloud.sdk.v2.model.ResponseSubstitution;
 import com.mypurecloud.sdk.v2.model.ResponseText;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -27,7 +27,7 @@ public class Response  implements Serializable {
   private String id = null;
   private String name = null;
   private Integer version = null;
-  private List<UriReference> libraries = new ArrayList<UriReference>();
+  private List<DomainEntityRef> libraries = new ArrayList<DomainEntityRef>();
   private List<ResponseText> texts = new ArrayList<ResponseText>();
   private User createdBy = null;
   private Date dateCreated = null;
@@ -117,17 +117,17 @@ public class Response  implements Serializable {
   /**
    * One or more libraries response is associated with.
    **/
-  public Response libraries(List<UriReference> libraries) {
+  public Response libraries(List<DomainEntityRef> libraries) {
     this.libraries = libraries;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "One or more libraries response is associated with.")
   @JsonProperty("libraries")
-  public List<UriReference> getLibraries() {
+  public List<DomainEntityRef> getLibraries() {
     return libraries;
   }
-  public void setLibraries(List<UriReference> libraries) {
+  public void setLibraries(List<DomainEntityRef> libraries) {
     this.libraries = libraries;
   }
 

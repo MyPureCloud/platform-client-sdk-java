@@ -6,9 +6,9 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationRoutingData;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.JourneyContext;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import com.mypurecloud.sdk.v2.model.Wrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -162,17 +162,17 @@ public class CobrowseMediaParticipant  implements Serializable {
   private Boolean held = null;
   private Boolean wrapupRequired = null;
   private String wrapupPrompt = null;
-  private UriReference user = null;
-  private UriReference queue = null;
+  private DomainEntityRef user = null;
+  private DomainEntityRef queue = null;
   private Map<String, String> attributes = null;
   private ErrorBody errorInfo = null;
-  private UriReference script = null;
+  private DomainEntityRef script = null;
   private Integer wrapupTimeoutMs = null;
   private Boolean wrapupSkipped = null;
   private Integer alertingTimeoutMs = null;
   private String provider = null;
-  private UriReference externalContact = null;
-  private UriReference externalOrganization = null;
+  private DomainEntityRef externalContact = null;
+  private DomainEntityRef externalOrganization = null;
   private Wrapup wrapup = null;
   private String peer = null;
 
@@ -473,17 +473,17 @@ public class CobrowseMediaParticipant  implements Serializable {
   /**
    * The PureCloud user for this participant.
    **/
-  public CobrowseMediaParticipant user(UriReference user) {
+  public CobrowseMediaParticipant user(DomainEntityRef user) {
     this.user = user;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The PureCloud user for this participant.")
   @JsonProperty("user")
-  public UriReference getUser() {
+  public DomainEntityRef getUser() {
     return user;
   }
-  public void setUser(UriReference user) {
+  public void setUser(DomainEntityRef user) {
     this.user = user;
   }
 
@@ -491,17 +491,17 @@ public class CobrowseMediaParticipant  implements Serializable {
   /**
    * The PureCloud queue for this participant.
    **/
-  public CobrowseMediaParticipant queue(UriReference queue) {
+  public CobrowseMediaParticipant queue(DomainEntityRef queue) {
     this.queue = queue;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The PureCloud queue for this participant.")
   @JsonProperty("queue")
-  public UriReference getQueue() {
+  public DomainEntityRef getQueue() {
     return queue;
   }
-  public void setQueue(UriReference queue) {
+  public void setQueue(DomainEntityRef queue) {
     this.queue = queue;
   }
 
@@ -545,17 +545,17 @@ public class CobrowseMediaParticipant  implements Serializable {
   /**
    * The Engage script that should be used by this participant.
    **/
-  public CobrowseMediaParticipant script(UriReference script) {
+  public CobrowseMediaParticipant script(DomainEntityRef script) {
     this.script = script;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The Engage script that should be used by this participant.")
   @JsonProperty("script")
-  public UriReference getScript() {
+  public DomainEntityRef getScript() {
     return script;
   }
-  public void setScript(UriReference script) {
+  public void setScript(DomainEntityRef script) {
     this.script = script;
   }
 
@@ -635,17 +635,17 @@ public class CobrowseMediaParticipant  implements Serializable {
   /**
    * If this participant represents an external contact, then this will be the reference for the external contact.
    **/
-  public CobrowseMediaParticipant externalContact(UriReference externalContact) {
+  public CobrowseMediaParticipant externalContact(DomainEntityRef externalContact) {
     this.externalContact = externalContact;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "If this participant represents an external contact, then this will be the reference for the external contact.")
   @JsonProperty("externalContact")
-  public UriReference getExternalContact() {
+  public DomainEntityRef getExternalContact() {
     return externalContact;
   }
-  public void setExternalContact(UriReference externalContact) {
+  public void setExternalContact(DomainEntityRef externalContact) {
     this.externalContact = externalContact;
   }
 
@@ -653,17 +653,17 @@ public class CobrowseMediaParticipant  implements Serializable {
   /**
    * If this participant represents an external org, then this will be the reference for the external org.
    **/
-  public CobrowseMediaParticipant externalOrganization(UriReference externalOrganization) {
+  public CobrowseMediaParticipant externalOrganization(DomainEntityRef externalOrganization) {
     this.externalOrganization = externalOrganization;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "If this participant represents an external org, then this will be the reference for the external org.")
   @JsonProperty("externalOrganization")
-  public UriReference getExternalOrganization() {
+  public DomainEntityRef getExternalOrganization() {
     return externalOrganization;
   }
-  public void setExternalOrganization(UriReference externalOrganization) {
+  public void setExternalOrganization(DomainEntityRef externalOrganization) {
     this.externalOrganization = externalOrganization;
   }
 

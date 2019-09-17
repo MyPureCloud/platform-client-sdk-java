@@ -5,9 +5,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.NamedEntity;
 import com.mypurecloud.sdk.v2.model.RoleDivision;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -25,8 +25,8 @@ public class OrgOAuthClient  implements Serializable {
   private String name = null;
   private Date dateCreated = null;
   private Date dateModified = null;
-  private UriReference createdBy = null;
-  private UriReference modifiedBy = null;
+  private DomainEntityRef createdBy = null;
+  private DomainEntityRef modifiedBy = null;
 
   /**
    * The OAuth Grant/Client type supported by this client. Code Authorization Grant/Client type - Preferred client type where the Client ID and Secret are required to create tokens. Used where the secret can be secured. Implicit grant type - Client ID only is required to create tokens. Used in browser and mobile apps where the secret can not be secured. SAML2-Bearer extension grant type - SAML2 assertion provider for user authentication at the token endpoint. Client Credential grant type - Used to created access tokens that are tied only to the client. 
@@ -134,17 +134,17 @@ public class OrgOAuthClient  implements Serializable {
   /**
    * User that created this client
    **/
-  public OrgOAuthClient createdBy(UriReference createdBy) {
+  public OrgOAuthClient createdBy(DomainEntityRef createdBy) {
     this.createdBy = createdBy;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "User that created this client")
   @JsonProperty("createdBy")
-  public UriReference getCreatedBy() {
+  public DomainEntityRef getCreatedBy() {
     return createdBy;
   }
-  public void setCreatedBy(UriReference createdBy) {
+  public void setCreatedBy(DomainEntityRef createdBy) {
     this.createdBy = createdBy;
   }
 
@@ -152,17 +152,17 @@ public class OrgOAuthClient  implements Serializable {
   /**
    * User that last modified this client
    **/
-  public OrgOAuthClient modifiedBy(UriReference modifiedBy) {
+  public OrgOAuthClient modifiedBy(DomainEntityRef modifiedBy) {
     this.modifiedBy = modifiedBy;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "User that last modified this client")
   @JsonProperty("modifiedBy")
-  public UriReference getModifiedBy() {
+  public DomainEntityRef getModifiedBy() {
     return modifiedBy;
   }
-  public void setModifiedBy(UriReference modifiedBy) {
+  public void setModifiedBy(DomainEntityRef modifiedBy) {
     this.modifiedBy = modifiedBy;
   }
 

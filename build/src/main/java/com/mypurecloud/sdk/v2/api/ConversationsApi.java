@@ -13,6 +13,8 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversation;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationMultiGetResponse;
+import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
+import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.Conversation;
 import com.mypurecloud.sdk.v2.model.SecureSession;
 import com.mypurecloud.sdk.v2.model.SecureSessionEntityListing;
@@ -44,15 +46,20 @@ import com.mypurecloud.sdk.v2.model.LineIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.LineIntegration;
 import com.mypurecloud.sdk.v2.model.TwitterIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.TwitterIntegration;
+import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.WhatsAppIntegration;
 import com.mypurecloud.sdk.v2.model.MessagingStickerEntityListing;
 import com.mypurecloud.sdk.v2.model.MediaParticipantRequest;
 import com.mypurecloud.sdk.v2.model.ParticipantAttributes;
 import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
 import com.mypurecloud.sdk.v2.model.ConsultTransferResponse;
+import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.PropertyIndexRequest;
 import com.mypurecloud.sdk.v2.model.AggregationQuery;
 import com.mypurecloud.sdk.v2.model.AggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.AsyncConversationQuery;
+import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.ConversationQuery;
 import com.mypurecloud.sdk.v2.model.CreateCallbackOnConversationCommand;
@@ -79,6 +86,7 @@ import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantCodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationParticipantFlaggedreasonRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsCallParticipantConsultRequest;
@@ -88,6 +96,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegratio
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantSecureivrsessionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationParticipantSecureivrsessionsRequest;
@@ -132,6 +142,8 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsL
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsLineIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsTwitterRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsWhatsappRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingStickerRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantAttributesRequest;
@@ -160,8 +172,10 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantCommunicationRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationDetailsPropertiesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationDisconnectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantCallbacksRequest;
@@ -213,6 +227,82 @@ public class ConversationsApi {
 
   public ConversationsApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Delete/cancel an async request
+   * 
+   * @param jobId jobId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAnalyticsConversationsDetailsJob(String jobId) throws IOException, ApiException {
+     deleteAnalyticsConversationsDetailsJob(createDeleteAnalyticsConversationsDetailsJobRequest(jobId));
+  }
+
+  /**
+   * Delete/cancel an async request
+   * 
+   * @param jobId jobId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAnalyticsConversationsDetailsJobWithHttpInfo(String jobId) throws IOException {
+    return deleteAnalyticsConversationsDetailsJob(createDeleteAnalyticsConversationsDetailsJobRequest(jobId).withHttpInfo());
+  }
+
+  private DeleteAnalyticsConversationsDetailsJobRequest createDeleteAnalyticsConversationsDetailsJobRequest(String jobId) {
+    return DeleteAnalyticsConversationsDetailsJobRequest.builder()
+            .withJobId(jobId)
+    
+            .build();
+  }
+
+  /**
+   * Delete/cancel an async request
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteAnalyticsConversationsDetailsJob(DeleteAnalyticsConversationsDetailsJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete/cancel an async request
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteAnalyticsConversationsDetailsJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   
@@ -921,6 +1011,168 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AnalyticsConversationMultiGetResponse> response = (ApiResponse<AnalyticsConversationMultiGetResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get status for async query for conversation details
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryStatus getAnalyticsConversationsDetailsJob(String jobId) throws IOException, ApiException {
+    return  getAnalyticsConversationsDetailsJob(createGetAnalyticsConversationsDetailsJobRequest(jobId));
+  }
+
+  /**
+   * Get status for async query for conversation details
+   * 
+   * @param jobId jobId (required)
+   * @return AsyncQueryStatus
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsConversationsDetailsJobWithHttpInfo(String jobId) throws IOException {
+    return getAnalyticsConversationsDetailsJob(createGetAnalyticsConversationsDetailsJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetAnalyticsConversationsDetailsJobRequest createGetAnalyticsConversationsDetailsJobRequest(String jobId) {
+    return GetAnalyticsConversationsDetailsJobRequest.builder()
+            .withJobId(jobId)
+    
+            .build();
+  }
+
+  /**
+   * Get status for async query for conversation details
+   * 
+   * @param request The request object
+   * @return AsyncQueryStatus
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryStatus getAnalyticsConversationsDetailsJob(GetAnalyticsConversationsDetailsJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryStatus> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryStatus>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status for async query for conversation details
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryStatus> getAnalyticsConversationsDetailsJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryStatus>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryStatus> response = (ApiResponse<AsyncQueryStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Fetch a page of results for an async query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Indicates where to resume query results (not required for first page) (optional)
+   * @return AnalyticsConversationAsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AnalyticsConversationAsyncQueryResponse getAnalyticsConversationsDetailsJobResults(String jobId, String cursor) throws IOException, ApiException {
+    return  getAnalyticsConversationsDetailsJobResults(createGetAnalyticsConversationsDetailsJobResultsRequest(jobId, cursor));
+  }
+
+  /**
+   * Fetch a page of results for an async query
+   * 
+   * @param jobId jobId (required)
+   * @param cursor Indicates where to resume query results (not required for first page) (optional)
+   * @return AnalyticsConversationAsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AnalyticsConversationAsyncQueryResponse> getAnalyticsConversationsDetailsJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
+    return getAnalyticsConversationsDetailsJobResults(createGetAnalyticsConversationsDetailsJobResultsRequest(jobId, cursor).withHttpInfo());
+  }
+
+  private GetAnalyticsConversationsDetailsJobResultsRequest createGetAnalyticsConversationsDetailsJobResultsRequest(String jobId, String cursor) {
+    return GetAnalyticsConversationsDetailsJobResultsRequest.builder()
+            .withJobId(jobId)
+    
+            .withCursor(cursor)
+    
+            .build();
+  }
+
+  /**
+   * Fetch a page of results for an async query
+   * 
+   * @param request The request object
+   * @return AnalyticsConversationAsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AnalyticsConversationAsyncQueryResponse getAnalyticsConversationsDetailsJobResults(GetAnalyticsConversationsDetailsJobResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AnalyticsConversationAsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AnalyticsConversationAsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Fetch a page of results for an async query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AnalyticsConversationAsyncQueryResponse> getAnalyticsConversationsDetailsJobResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AnalyticsConversationAsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AnalyticsConversationAsyncQueryResponse> response = (ApiResponse<AnalyticsConversationAsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AnalyticsConversationAsyncQueryResponse> response = (ApiResponse<AnalyticsConversationAsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4515,6 +4767,168 @@ public class ConversationsApi {
 
   
   /**
+   * Get a list of WhatsApp Integrations
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return WhatsAppIntegrationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WhatsAppIntegrationEntityListing getConversationsMessagingIntegrationsWhatsapp(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsWhatsapp(createGetConversationsMessagingIntegrationsWhatsappRequest(pageSize, pageNumber));
+  }
+
+  /**
+   * Get a list of WhatsApp Integrations
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return WhatsAppIntegrationEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WhatsAppIntegrationEntityListing> getConversationsMessagingIntegrationsWhatsappWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getConversationsMessagingIntegrationsWhatsapp(createGetConversationsMessagingIntegrationsWhatsappRequest(pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationsWhatsappRequest createGetConversationsMessagingIntegrationsWhatsappRequest(Integer pageSize, Integer pageNumber) {
+    return GetConversationsMessagingIntegrationsWhatsappRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of WhatsApp Integrations
+   * 
+   * @param request The request object
+   * @return WhatsAppIntegrationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WhatsAppIntegrationEntityListing getConversationsMessagingIntegrationsWhatsapp(GetConversationsMessagingIntegrationsWhatsappRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WhatsAppIntegrationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WhatsAppIntegrationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of WhatsApp Integrations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WhatsAppIntegrationEntityListing> getConversationsMessagingIntegrationsWhatsapp(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WhatsAppIntegrationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WhatsAppIntegrationEntityListing> response = (ApiResponse<WhatsAppIntegrationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WhatsAppIntegrationEntityListing> response = (ApiResponse<WhatsAppIntegrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a WhatsApp messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @return WhatsAppIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WhatsAppIntegration getConversationsMessagingIntegrationsWhatsappIntegrationId(String integrationId) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsWhatsappIntegrationId(createGetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest(integrationId));
+  }
+
+  /**
+   * Get a WhatsApp messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @return WhatsAppIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WhatsAppIntegration> getConversationsMessagingIntegrationsWhatsappIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+    return getConversationsMessagingIntegrationsWhatsappIntegrationId(createGetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest(integrationId).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest createGetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest(String integrationId) {
+    return GetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+    
+            .build();
+  }
+
+  /**
+   * Get a WhatsApp messaging integration
+   * 
+   * @param request The request object
+   * @return WhatsAppIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WhatsAppIntegration getConversationsMessagingIntegrationsWhatsappIntegrationId(GetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WhatsAppIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WhatsAppIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a WhatsApp messaging integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WhatsAppIntegration> getConversationsMessagingIntegrationsWhatsappIntegrationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WhatsAppIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WhatsAppIntegration> response = (ApiResponse<WhatsAppIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WhatsAppIntegration> response = (ApiResponse<WhatsAppIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get a list of Messaging Stickers
    * 
    * @param messengerType Messenger Type (required)
@@ -6909,6 +7323,89 @@ public class ConversationsApi {
 
   
   /**
+   * Activate a WhatsApp messaging integration.
+   * The following steps are required in order to fully activate a Whatsapp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
+   * @param integrationId Integration ID (required)
+   * @param body WhatsAppIntegrationUpdateRequest (required)
+   * @return WhatsAppIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WhatsAppIntegration patchConversationsMessagingIntegrationsWhatsappIntegrationId(String integrationId, WhatsAppIntegrationUpdateRequest body) throws IOException, ApiException {
+    return  patchConversationsMessagingIntegrationsWhatsappIntegrationId(createPatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest(integrationId, body));
+  }
+
+  /**
+   * Activate a WhatsApp messaging integration.
+   * The following steps are required in order to fully activate a Whatsapp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
+   * @param integrationId Integration ID (required)
+   * @param body WhatsAppIntegrationUpdateRequest (required)
+   * @return WhatsAppIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WhatsAppIntegration> patchConversationsMessagingIntegrationsWhatsappIntegrationIdWithHttpInfo(String integrationId, WhatsAppIntegrationUpdateRequest body) throws IOException {
+    return patchConversationsMessagingIntegrationsWhatsappIntegrationId(createPatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest(integrationId, body).withHttpInfo());
+  }
+
+  private PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest createPatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest(String integrationId, WhatsAppIntegrationUpdateRequest body) {
+    return PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Activate a WhatsApp messaging integration.
+   * The following steps are required in order to fully activate a Whatsapp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
+   * @param request The request object
+   * @return WhatsAppIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WhatsAppIntegration patchConversationsMessagingIntegrationsWhatsappIntegrationId(PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WhatsAppIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WhatsAppIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Activate a WhatsApp messaging integration.
+   * The following steps are required in order to fully activate a Whatsapp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WhatsAppIntegration> patchConversationsMessagingIntegrationsWhatsappIntegrationId(ApiRequest<WhatsAppIntegrationUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WhatsAppIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WhatsAppIntegration> response = (ApiResponse<WhatsAppIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WhatsAppIntegration> response = (ApiResponse<WhatsAppIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Index conversation properties
    * 
    * @param conversationId conversationId (required)
@@ -7065,6 +7562,85 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AggregateQueryResponse> response = (ApiResponse<AggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Query for conversation details asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryResponse postAnalyticsConversationsDetailsJobs(AsyncConversationQuery body) throws IOException, ApiException {
+    return  postAnalyticsConversationsDetailsJobs(createPostAnalyticsConversationsDetailsJobsRequest(body));
+  }
+
+  /**
+   * Query for conversation details asynchronously
+   * 
+   * @param body query (required)
+   * @return AsyncQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsConversationsDetailsJobsWithHttpInfo(AsyncConversationQuery body) throws IOException {
+    return postAnalyticsConversationsDetailsJobs(createPostAnalyticsConversationsDetailsJobsRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsConversationsDetailsJobsRequest createPostAnalyticsConversationsDetailsJobsRequest(AsyncConversationQuery body) {
+    return PostAnalyticsConversationsDetailsJobsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Query for conversation details asynchronously
+   * 
+   * @param request The request object
+   * @return AsyncQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncQueryResponse postAnalyticsConversationsDetailsJobs(PostAnalyticsConversationsDetailsJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for conversation details asynchronously
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncQueryResponse> postAnalyticsConversationsDetailsJobs(ApiRequest<AsyncConversationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncQueryResponse> response = (ApiResponse<AsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

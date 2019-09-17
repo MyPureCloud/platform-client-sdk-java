@@ -11,11 +11,11 @@ title: Share
 | **id** | **String** | The globally unique identifier for the object. |  [optional] |
 | **name** | **String** |  |  [optional] |
 | **sharedEntityType** | [**SharedEntityTypeEnum**](#SharedEntityTypeEnum) |  |  [optional] |
-| **sharedEntity** | [**UriReference**](UriReference.html) |  |  [optional] |
+| **sharedEntity** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
 | **memberType** | [**MemberTypeEnum**](#MemberTypeEnum) |  |  [optional] |
-| **member** | [**UriReference**](UriReference.html) |  |  [optional] |
-| **sharedBy** | [**UriReference**](UriReference.html) |  |  [optional] |
-| **workspace** | [**UriReference**](UriReference.html) |  |  [optional] |
+| **member** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
+| **sharedBy** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
+| **workspace** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
 | **user** | [**User**](User.html) |  |  [optional] |
 | **group** | [**Group**](Group.html) |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |

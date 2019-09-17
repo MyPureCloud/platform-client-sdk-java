@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -15,8 +15,8 @@ import java.io.Serializable;
 
 public class CampaignProgress  implements Serializable {
   
-  private UriReference campaign = null;
-  private UriReference contactList = null;
+  private DomainEntityRef campaign = null;
+  private DomainEntityRef contactList = null;
   private Long numberOfContactsCalled = null;
   private Long totalNumberOfContacts = null;
   private Long percentage = null;
@@ -25,17 +25,17 @@ public class CampaignProgress  implements Serializable {
   /**
    * Identifier of the campaign
    **/
-  public CampaignProgress campaign(UriReference campaign) {
+  public CampaignProgress campaign(DomainEntityRef campaign) {
     this.campaign = campaign;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "Identifier of the campaign")
   @JsonProperty("campaign")
-  public UriReference getCampaign() {
+  public DomainEntityRef getCampaign() {
     return campaign;
   }
-  public void setCampaign(UriReference campaign) {
+  public void setCampaign(DomainEntityRef campaign) {
     this.campaign = campaign;
   }
 
@@ -43,17 +43,17 @@ public class CampaignProgress  implements Serializable {
   /**
    * Identifier of the contact list
    **/
-  public CampaignProgress contactList(UriReference contactList) {
+  public CampaignProgress contactList(DomainEntityRef contactList) {
     this.contactList = contactList;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "Identifier of the contact list")
   @JsonProperty("contactList")
-  public UriReference getContactList() {
+  public DomainEntityRef getContactList() {
     return contactList;
   }
-  public void setContactList(UriReference contactList) {
+  public void setContactList(DomainEntityRef contactList) {
     this.contactList = contactList;
   }
 

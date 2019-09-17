@@ -58,6 +58,7 @@ public class AggregationQuery  implements Serializable {
     DIVISIONID("divisionId"),
     FLAGGEDREASON("flaggedReason"),
     PROVIDER("provider"),
+    FLOWOUTTYPE("flowOutType"),
     STATIONID("stationId"),
     EDGEID("edgeId"),
     DNIS("dnis"),

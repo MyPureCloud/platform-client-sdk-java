@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallbackIdentifier;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -18,24 +18,24 @@ import java.io.Serializable;
 
 public class CreateCallbackResponse  implements Serializable {
   
-  private UriReference conversation = null;
+  private DomainEntityRef conversation = null;
   private List<CallbackIdentifier> callbackIdentifiers = new ArrayList<CallbackIdentifier>();
 
   
   /**
    * The conversation associated with the callback
    **/
-  public CreateCallbackResponse conversation(UriReference conversation) {
+  public CreateCallbackResponse conversation(DomainEntityRef conversation) {
     this.conversation = conversation;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "The conversation associated with the callback")
   @JsonProperty("conversation")
-  public UriReference getConversation() {
+  public DomainEntityRef getConversation() {
     return conversation;
   }
-  public void setConversation(UriReference conversation) {
+  public void setConversation(DomainEntityRef conversation) {
     this.conversation = conversation;
   }
 

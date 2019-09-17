@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Contact;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,6 +25,42 @@ public class CreateUser  implements Serializable {
   private String title = null;
   private String password = null;
   private String divisionId = null;
+
+  /**
+   * Optional initialized state of the user. If not specified, state will be Active if invites are sent, otherwise Inactive.
+   */
+  public enum StateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACTIVE("active"),
+    INACTIVE("inactive"),
+    DELETED("deleted");
+
+    private String value;
+
+    StateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static StateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (StateEnum value : StateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return StateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private StateEnum state = null;
 
   
   /**
@@ -150,6 +187,24 @@ public class CreateUser  implements Serializable {
   }
 
   
+  /**
+   * Optional initialized state of the user. If not specified, state will be Active if invites are sent, otherwise Inactive.
+   **/
+  public CreateUser state(StateEnum state) {
+    this.state = state;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Optional initialized state of the user. If not specified, state will be Active if invites are sent, otherwise Inactive.")
+  @JsonProperty("state")
+  public StateEnum getState() {
+    return state;
+  }
+  public void setState(StateEnum state) {
+    this.state = state;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -166,12 +221,13 @@ public class CreateUser  implements Serializable {
         Objects.equals(this.addresses, createUser.addresses) &&
         Objects.equals(this.title, createUser.title) &&
         Objects.equals(this.password, createUser.password) &&
-        Objects.equals(this.divisionId, createUser.divisionId);
+        Objects.equals(this.divisionId, createUser.divisionId) &&
+        Objects.equals(this.state, createUser.state);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, department, email, addresses, title, password, divisionId);
+    return Objects.hash(name, department, email, addresses, title, password, divisionId, state);
   }
 
   @Override
@@ -186,6 +242,7 @@ public class CreateUser  implements Serializable {
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("    divisionId: ").append(toIndentedString(divisionId)).append("\n");
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("}");
     return sb.toString();
   }

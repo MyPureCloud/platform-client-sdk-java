@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -17,25 +17,25 @@ import java.io.Serializable;
 
 public class CampaignRuleActionEntities  implements Serializable {
   
-  private List<UriReference> campaigns = new ArrayList<UriReference>();
-  private List<UriReference> sequences = new ArrayList<UriReference>();
+  private List<DomainEntityRef> campaigns = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> sequences = new ArrayList<DomainEntityRef>();
   private Boolean useTriggeringEntity = null;
 
   
   /**
    * The list of campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a campaign.
    **/
-  public CampaignRuleActionEntities campaigns(List<UriReference> campaigns) {
+  public CampaignRuleActionEntities campaigns(List<DomainEntityRef> campaigns) {
     this.campaigns = campaigns;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The list of campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a campaign.")
   @JsonProperty("campaigns")
-  public List<UriReference> getCampaigns() {
+  public List<DomainEntityRef> getCampaigns() {
     return campaigns;
   }
-  public void setCampaigns(List<UriReference> campaigns) {
+  public void setCampaigns(List<DomainEntityRef> campaigns) {
     this.campaigns = campaigns;
   }
 
@@ -43,17 +43,17 @@ public class CampaignRuleActionEntities  implements Serializable {
   /**
    * The list of sequences for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a sequence.
    **/
-  public CampaignRuleActionEntities sequences(List<UriReference> sequences) {
+  public CampaignRuleActionEntities sequences(List<DomainEntityRef> sequences) {
     this.sequences = sequences;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The list of sequences for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a sequence.")
   @JsonProperty("sequences")
-  public List<UriReference> getSequences() {
+  public List<DomainEntityRef> getSequences() {
     return sequences;
   }
-  public void setSequences(List<UriReference> sequences) {
+  public void setSequences(List<DomainEntityRef> sequences) {
     this.sequences = sequences;
   }
 

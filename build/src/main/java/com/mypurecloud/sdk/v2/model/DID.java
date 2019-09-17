@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -64,8 +64,8 @@ public class DID  implements Serializable {
   private String modifiedByApp = null;
   private String createdByApp = null;
   private String phoneNumber = null;
-  private UriReference didPool = null;
-  private UriReference owner = null;
+  private DomainEntityRef didPool = null;
+  private DomainEntityRef owner = null;
 
   /**
    * Gets or Sets ownerType
@@ -301,17 +301,17 @@ public class DID  implements Serializable {
   
   /**
    **/
-  public DID didPool(UriReference didPool) {
+  public DID didPool(DomainEntityRef didPool) {
     this.didPool = didPool;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("didPool")
-  public UriReference getDidPool() {
+  public DomainEntityRef getDidPool() {
     return didPool;
   }
-  public void setDidPool(UriReference didPool) {
+  public void setDidPool(DomainEntityRef didPool) {
     this.didPool = didPool;
   }
 
@@ -319,17 +319,17 @@ public class DID  implements Serializable {
   /**
    * A Uri reference to the owner of this DID, which is either a User or an IVR
    **/
-  public DID owner(UriReference owner) {
+  public DID owner(DomainEntityRef owner) {
     this.owner = owner;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "A Uri reference to the owner of this DID, which is either a User or an IVR")
   @JsonProperty("owner")
-  public UriReference getOwner() {
+  public DomainEntityRef getOwner() {
     return owner;
   }
-  public void setOwner(UriReference owner) {
+  public void setOwner(DomainEntityRef owner) {
     this.owner = owner;
   }
 

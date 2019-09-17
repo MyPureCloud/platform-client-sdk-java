@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerRule;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -24,8 +24,8 @@ public class RuleSet  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Integer version = null;
-  private UriReference contactList = null;
-  private UriReference queue = null;
+  private DomainEntityRef contactList = null;
+  private DomainEntityRef queue = null;
   private List<DialerRule> rules = new ArrayList<DialerRule>();
   private String selfUri = null;
 
@@ -90,17 +90,17 @@ public class RuleSet  implements Serializable {
   /**
    * A ContactList to provide user-interface suggestions for contact columns on relevant conditions and actions.
    **/
-  public RuleSet contactList(UriReference contactList) {
+  public RuleSet contactList(DomainEntityRef contactList) {
     this.contactList = contactList;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "A ContactList to provide user-interface suggestions for contact columns on relevant conditions and actions.")
   @JsonProperty("contactList")
-  public UriReference getContactList() {
+  public DomainEntityRef getContactList() {
     return contactList;
   }
-  public void setContactList(UriReference contactList) {
+  public void setContactList(DomainEntityRef contactList) {
     this.contactList = contactList;
   }
 
@@ -108,17 +108,17 @@ public class RuleSet  implements Serializable {
   /**
    * A Queue to provide user-interface suggestions for wrap-up codes on relevant conditions and actions.
    **/
-  public RuleSet queue(UriReference queue) {
+  public RuleSet queue(DomainEntityRef queue) {
     this.queue = queue;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "A Queue to provide user-interface suggestions for wrap-up codes on relevant conditions and actions.")
   @JsonProperty("queue")
-  public UriReference getQueue() {
+  public DomainEntityRef getQueue() {
     return queue;
   }
-  public void setQueue(UriReference queue) {
+  public void setQueue(DomainEntityRef queue) {
     this.queue = queue;
   }
 

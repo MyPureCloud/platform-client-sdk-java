@@ -4,8 +4,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -57,7 +57,7 @@ public class DataSchema  implements Serializable {
   }
   private List<AppliesToEnum> appliesTo = new ArrayList<AppliesToEnum>();
   private Boolean enabled = null;
-  private UriReference createdBy = null;
+  private DomainEntityRef createdBy = null;
   private Date dateCreated = null;
   private JsonSchemaDocument jsonSchema = null;
   private String selfUri = null;
@@ -144,17 +144,17 @@ public class DataSchema  implements Serializable {
   /**
    * The URI of the user that created this schema.
    **/
-  public DataSchema createdBy(UriReference createdBy) {
+  public DataSchema createdBy(DomainEntityRef createdBy) {
     this.createdBy = createdBy;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The URI of the user that created this schema.")
   @JsonProperty("createdBy")
-  public UriReference getCreatedBy() {
+  public DomainEntityRef getCreatedBy() {
     return createdBy;
   }
-  public void setCreatedBy(UriReference createdBy) {
+  public void setCreatedBy(DomainEntityRef createdBy) {
     this.createdBy = createdBy;
   }
 

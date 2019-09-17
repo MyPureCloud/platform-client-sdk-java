@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DocumentThumbnail;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -24,8 +24,8 @@ public class FaxDocument  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private String contentUri = null;
-  private UriReference workspace = null;
-  private UriReference createdBy = null;
+  private DomainEntityRef workspace = null;
+  private DomainEntityRef createdBy = null;
   private String contentType = null;
   private Long contentLength = null;
   private String filename = null;
@@ -118,34 +118,34 @@ public class FaxDocument  implements Serializable {
   
   /**
    **/
-  public FaxDocument workspace(UriReference workspace) {
+  public FaxDocument workspace(DomainEntityRef workspace) {
     this.workspace = workspace;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("workspace")
-  public UriReference getWorkspace() {
+  public DomainEntityRef getWorkspace() {
     return workspace;
   }
-  public void setWorkspace(UriReference workspace) {
+  public void setWorkspace(DomainEntityRef workspace) {
     this.workspace = workspace;
   }
 
   
   /**
    **/
-  public FaxDocument createdBy(UriReference createdBy) {
+  public FaxDocument createdBy(DomainEntityRef createdBy) {
     this.createdBy = createdBy;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("createdBy")
-  public UriReference getCreatedBy() {
+  public DomainEntityRef getCreatedBy() {
     return createdBy;
   }
-  public void setCreatedBy(UriReference createdBy) {
+  public void setCreatedBy(DomainEntityRef createdBy) {
     this.createdBy = createdBy;
   }
 

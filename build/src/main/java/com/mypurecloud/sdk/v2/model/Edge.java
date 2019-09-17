@@ -99,7 +99,8 @@ public class Edge  implements Serializable {
     INACTIVE("INACTIVE"),
     RMA("RMA"),
     UNPAIRING("UNPAIRING"),
-    UNPAIRED("UNPAIRED");
+    UNPAIRED("UNPAIRED"),
+    INITIALIZING("INITIALIZING");
 
     private String value;
 

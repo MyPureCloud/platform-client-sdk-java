@@ -20,13 +20,13 @@ title: Trunk
 | **modifiedByApp** | **String** | The application that last modified the resource. |  [optional] |
 | **createdByApp** | **String** | The application that created the resource. |  [optional] |
 | **trunkType** | [**TrunkTypeEnum**](#TrunkTypeEnum) | The type of this trunk. |  [optional] |
-| **edge** | [**UriReference**](UriReference.html) | The Edge using this trunk. |  [optional] |
-| **trunkBase** | [**UriReference**](UriReference.html) | The trunk base configuration used on this trunk. |  [optional] |
-| **trunkMetabase** | [**UriReference**](UriReference.html) | The metabase used to create this trunk. |  [optional] |
-| **edgeGroup** | [**UriReference**](UriReference.html) | The edge group associated with this trunk. |  [optional] |
+| **edge** | [**DomainEntityRef**](DomainEntityRef.html) | The Edge using this trunk. |  [optional] |
+| **trunkBase** | [**DomainEntityRef**](DomainEntityRef.html) | The trunk base configuration used on this trunk. |  [optional] |
+| **trunkMetabase** | [**DomainEntityRef**](DomainEntityRef.html) | The metabase used to create this trunk. |  [optional] |
+| **edgeGroup** | [**DomainEntityRef**](DomainEntityRef.html) | The edge group associated with this trunk. |  [optional] |
 | **inService** | **Boolean** | True if this trunk is in-service.  This comes from the trunk_enabled property of the referenced trunk base. |  [optional] |
 | **enabled** | **Boolean** | True if the Edge used by this trunk is in-service |  [optional] |
-| **logicalInterface** | [**UriReference**](UriReference.html) | The Logical Interface on the Edge to which the trunk is assigned. |  [optional] |
+| **logicalInterface** | [**DomainEntityRef**](DomainEntityRef.html) | The Logical Interface on the Edge to which the trunk is assigned. |  [optional] |
 | **connectedStatus** | [**TrunkConnectedStatus**](TrunkConnectedStatus.html) | The connected status of the trunk |  [optional] |
 | **optionsStatus** | [**List&lt;TrunkMetricsOptions&gt;**](TrunkMetricsOptions.html) | The trunk optionsStatus |  [optional] |
 | **registersStatus** | [**List&lt;TrunkMetricsRegisters&gt;**](TrunkMetricsRegisters.html) | The trunk registersStatus |  [optional] |

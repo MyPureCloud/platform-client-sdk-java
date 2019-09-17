@@ -22,17 +22,17 @@ title: CallbackMediaParticipant
 | **held** | **Boolean** | Value is true when the participant is on hold. |  [optional] |
 | **wrapupRequired** | **Boolean** | Value is true when the participant requires wrap-up. |  [optional] |
 | **wrapupPrompt** | **String** | The wrap-up prompt indicating the type of wrap-up to be performed. |  [optional] |
-| **user** | [**UriReference**](UriReference.html) | The PureCloud user for this participant. |  [optional] |
-| **queue** | [**UriReference**](UriReference.html) | The PureCloud queue for this participant. |  [optional] |
+| **user** | [**DomainEntityRef**](DomainEntityRef.html) | The PureCloud user for this participant. |  [optional] |
+| **queue** | [**DomainEntityRef**](DomainEntityRef.html) | The PureCloud queue for this participant. |  [optional] |
 | **attributes** | **Map&lt;String, String&gt;** | A list of ad-hoc attributes for the participant. |  [optional] |
 | **errorInfo** | [**ErrorBody**](ErrorBody.html) | If the conversation ends in error, contains additional error details. |  [optional] |
-| **script** | [**UriReference**](UriReference.html) | The Engage script that should be used by this participant. |  [optional] |
+| **script** | [**DomainEntityRef**](DomainEntityRef.html) | The Engage script that should be used by this participant. |  [optional] |
 | **wrapupTimeoutMs** | **Integer** | The amount of time the participant has to complete wrap-up. |  [optional] |
 | **wrapupSkipped** | **Boolean** | Value is true when the participant has skipped wrap-up. |  [optional] |
 | **alertingTimeoutMs** | **Integer** | Specifies how long the agent has to answer an interaction before being marked as not responding. |  [optional] |
 | **provider** | **String** | The source provider for the communication. |  [optional] |
-| **externalContact** | [**UriReference**](UriReference.html) | If this participant represents an external contact, then this will be the reference for the external contact. |  [optional] |
-| **externalOrganization** | [**UriReference**](UriReference.html) | If this participant represents an external org, then this will be the reference for the external org. |  [optional] |
+| **externalContact** | [**DomainEntityRef**](DomainEntityRef.html) | If this participant represents an external contact, then this will be the reference for the external contact. |  [optional] |
+| **externalOrganization** | [**DomainEntityRef**](DomainEntityRef.html) | If this participant represents an external org, then this will be the reference for the external org. |  [optional] |
 | **wrapup** | [**Wrapup**](Wrapup.html) | Wrapup for this participant, if it has been applied. |  [optional] |
 | **peer** | **String** | The peer communication corresponding to a matching leg for this communication. |  [optional] |
 | **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum) | The reason specifying why participant flagged the conversation. |  [optional] |

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -17,7 +17,7 @@ import java.io.Serializable;
 
 public class LockInfo  implements Serializable {
   
-  private UriReference lockedBy = null;
+  private DomainEntityRef lockedBy = null;
   private Date dateCreated = null;
   private Date dateExpires = null;
 
@@ -64,17 +64,17 @@ public class LockInfo  implements Serializable {
   
   /**
    **/
-  public LockInfo lockedBy(UriReference lockedBy) {
+  public LockInfo lockedBy(DomainEntityRef lockedBy) {
     this.lockedBy = lockedBy;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("lockedBy")
-  public UriReference getLockedBy() {
+  public DomainEntityRef getLockedBy() {
     return lockedBy;
   }
-  public void setLockedBy(UriReference lockedBy) {
+  public void setLockedBy(DomainEntityRef lockedBy) {
     this.lockedBy = lockedBy;
   }
 

@@ -13,7 +13,7 @@ title: WidgetDeployment
 | **description** | **String** | A human-readable description of this Deployment. |  [optional] |
 | **authenticationRequired** | **Boolean** | When true, the customer members starting a chat must be authenticated by supplying their JWT to the create operation. |  [optional] |
 | **disabled** | **Boolean** | When true, all create chat operations using this Deployment will be rejected. |  [optional] |
-| **flow** | [**UriReference**](UriReference.html) | The URI of the Inbound Chat Flow to run when new chats are initiated under this Deployment. |  [optional] |
+| **flow** | [**DomainEntityRef**](DomainEntityRef.html) | The URI of the Inbound Chat Flow to run when new chats are initiated under this Deployment. |  [optional] |
 | **allowedDomains** | **List&lt;String&gt;** | The list of domains that are approved to use this Deployment; the list will be added to CORS headers for ease of web use. |  [optional] |
 | **clientType** | [**ClientTypeEnum**](#ClientTypeEnum) | The type of display widget for which this Deployment is configured, which controls the administrator settings shown. |  [optional] |
 | **clientConfig** | [**WidgetClientConfig**](WidgetClientConfig.html) | The client configuration options that should be made available to the clients of this Deployment. |  [optional] |

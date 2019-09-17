@@ -8,11 +8,11 @@ title: ScimUserListResponse
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **totalResults** | **Long** | Total Results |  [optional] |
-| **startIndex** | **Long** | Start index |  [optional] |
-| **itemsPerPage** | **Long** | Items per Page |  [optional] |
+| **totalResults** | **Long** | The total number of results. |  [optional] |
+| **startIndex** | **Long** | The 1-based index of the first result returned by this request. Add this to itemsPerPage when requesting the next page of results. |  [optional] |
+| **itemsPerPage** | **Long** | The number of resources returned per page. |  [optional] |
 | **resources** | [**List&lt;ScimV2User&gt;**](ScimV2User.html) | Resources |  [optional] |
-| **schemas** | **List&lt;String&gt;** | schemas supported |  [optional] |
+| **schemas** | **List&lt;String&gt;** | The list of supported schemas. |  [optional] |
 {: class="table table-striped"}
 
 

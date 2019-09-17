@@ -812,7 +812,7 @@ This endpoint does not require any parameters.
 
 
 
-> [DomainOrganizationRole](DomainOrganizationRole.html) getAuthorizationRole(roleId)
+> [DomainOrganizationRole](DomainOrganizationRole.html) getAuthorizationRole(roleId, expand)
 
 Get a single organization role.
 
@@ -847,8 +847,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 AuthorizationApi apiInstance = new AuthorizationApi();
 String roleId = "roleId_example"; // String | Role ID
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
 try {
-    DomainOrganizationRole result = apiInstance.getAuthorizationRole(roleId);
+    DomainOrganizationRole result = apiInstance.getAuthorizationRole(roleId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthorizationApi#getAuthorizationRole");
@@ -862,6 +863,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **roleId** | **String**| Role ID | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: unusedPermissions 
 {: class="table-striped"}
 
 

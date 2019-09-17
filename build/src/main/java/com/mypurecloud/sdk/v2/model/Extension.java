@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -64,8 +64,8 @@ public class Extension  implements Serializable {
   private String modifiedByApp = null;
   private String createdByApp = null;
   private String number = null;
-  private UriReference owner = null;
-  private UriReference extensionPool = null;
+  private DomainEntityRef owner = null;
+  private DomainEntityRef extensionPool = null;
 
   /**
    * Gets or Sets ownerType
@@ -302,34 +302,34 @@ public class Extension  implements Serializable {
   /**
    * A Uri reference to the owner of this extension, which is either a User or an IVR
    **/
-  public Extension owner(UriReference owner) {
+  public Extension owner(DomainEntityRef owner) {
     this.owner = owner;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "A Uri reference to the owner of this extension, which is either a User or an IVR")
   @JsonProperty("owner")
-  public UriReference getOwner() {
+  public DomainEntityRef getOwner() {
     return owner;
   }
-  public void setOwner(UriReference owner) {
+  public void setOwner(DomainEntityRef owner) {
     this.owner = owner;
   }
 
   
   /**
    **/
-  public Extension extensionPool(UriReference extensionPool) {
+  public Extension extensionPool(DomainEntityRef extensionPool) {
     this.extensionPool = extensionPool;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("extensionPool")
-  public UriReference getExtensionPool() {
+  public DomainEntityRef getExtensionPool() {
     return extensionPool;
   }
-  public void setExtensionPool(UriReference extensionPool) {
+  public void setExtensionPool(DomainEntityRef extensionPool) {
     this.extensionPool = extensionPool;
   }
 

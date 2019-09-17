@@ -6,7 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationBasic;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -21,9 +21,9 @@ import java.io.Serializable;
 public class CampaignInteraction  implements Serializable {
   
   private String id = null;
-  private UriReference campaign = null;
-  private UriReference agent = null;
-  private UriReference contact = null;
+  private DomainEntityRef campaign = null;
+  private DomainEntityRef agent = null;
+  private DomainEntityRef contact = null;
   private String destinationAddress = null;
   private Boolean activePreviewCall = null;
   private Date lastActivePreviewWrapupTime = null;
@@ -31,8 +31,8 @@ public class CampaignInteraction  implements Serializable {
   private Date callPlacedTime = null;
   private Date callRoutedTime = null;
   private Date previewConnectedTime = null;
-  private UriReference queue = null;
-  private UriReference script = null;
+  private DomainEntityRef queue = null;
+  private DomainEntityRef script = null;
 
   /**
    * Describes what happened with call analysis for instance: disposition.classification.callable.person, disposition.classification.callable.noanswer
@@ -80,7 +80,7 @@ public class CampaignInteraction  implements Serializable {
   private ConversationBasic conversation = null;
   private String dialerSystemParticipantId = null;
   private String dialingMode = null;
-  private List<UriReference> skills = new ArrayList<UriReference>();
+  private List<DomainEntityRef> skills = new ArrayList<DomainEntityRef>();
 
   
   /**
@@ -102,51 +102,51 @@ public class CampaignInteraction  implements Serializable {
   
   /**
    **/
-  public CampaignInteraction campaign(UriReference campaign) {
+  public CampaignInteraction campaign(DomainEntityRef campaign) {
     this.campaign = campaign;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("campaign")
-  public UriReference getCampaign() {
+  public DomainEntityRef getCampaign() {
     return campaign;
   }
-  public void setCampaign(UriReference campaign) {
+  public void setCampaign(DomainEntityRef campaign) {
     this.campaign = campaign;
   }
 
   
   /**
    **/
-  public CampaignInteraction agent(UriReference agent) {
+  public CampaignInteraction agent(DomainEntityRef agent) {
     this.agent = agent;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("agent")
-  public UriReference getAgent() {
+  public DomainEntityRef getAgent() {
     return agent;
   }
-  public void setAgent(UriReference agent) {
+  public void setAgent(DomainEntityRef agent) {
     this.agent = agent;
   }
 
   
   /**
    **/
-  public CampaignInteraction contact(UriReference contact) {
+  public CampaignInteraction contact(DomainEntityRef contact) {
     this.contact = contact;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("contact")
-  public UriReference getContact() {
+  public DomainEntityRef getContact() {
     return contact;
   }
-  public void setContact(UriReference contact) {
+  public void setContact(DomainEntityRef contact) {
     this.contact = contact;
   }
 
@@ -278,34 +278,34 @@ public class CampaignInteraction  implements Serializable {
   
   /**
    **/
-  public CampaignInteraction queue(UriReference queue) {
+  public CampaignInteraction queue(DomainEntityRef queue) {
     this.queue = queue;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("queue")
-  public UriReference getQueue() {
+  public DomainEntityRef getQueue() {
     return queue;
   }
-  public void setQueue(UriReference queue) {
+  public void setQueue(DomainEntityRef queue) {
     this.queue = queue;
   }
 
   
   /**
    **/
-  public CampaignInteraction script(UriReference script) {
+  public CampaignInteraction script(DomainEntityRef script) {
     this.script = script;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("script")
-  public UriReference getScript() {
+  public DomainEntityRef getScript() {
     return script;
   }
-  public void setScript(UriReference script) {
+  public void setScript(DomainEntityRef script) {
     this.script = script;
   }
 
@@ -435,17 +435,17 @@ public class CampaignInteraction  implements Serializable {
   /**
    * Any skills that are attached to the call for routing
    **/
-  public CampaignInteraction skills(List<UriReference> skills) {
+  public CampaignInteraction skills(List<DomainEntityRef> skills) {
     this.skills = skills;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Any skills that are attached to the call for routing")
   @JsonProperty("skills")
-  public List<UriReference> getSkills() {
+  public List<DomainEntityRef> getSkills() {
     return skills;
   }
-  public void setSkills(List<UriReference> skills) {
+  public void setSkills(List<DomainEntityRef> skills) {
     this.skills = skills;
   }
 

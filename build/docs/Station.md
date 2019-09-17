@@ -14,8 +14,8 @@ title: Station
 | **status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
 | **userId** | **String** | The Id of the user currently logged in and associated with the station. |  [optional] |
 | **webRtcUserId** | **String** | The Id of the user configured for the station if it is of type inin_webrtc_softphone. Empty if station type is not inin_webrtc_softphone. |  [optional] |
-| **primaryEdge** | [**UriReference**](UriReference.html) |  |  [optional] |
-| **secondaryEdge** | [**UriReference**](UriReference.html) |  |  [optional] |
+| **primaryEdge** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
+| **secondaryEdge** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
 | **type** | **String** |  |  [optional] |
 | **lineAppearanceId** | **String** |  |  [optional] |
 | **webRtcMediaDscp** | **Integer** | The default or configured value of media dscp for the station. Empty if station type is not inin_webrtc_softphone. |  [optional] |

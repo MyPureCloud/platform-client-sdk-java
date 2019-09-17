@@ -99,6 +99,7 @@ public class GetUserAdjacentsRequest {
 		GEOLOCATION("geolocation"), 
 		STATION("station"), 
 		AUTHORIZATION("authorization"), 
+		AUTHORIZATION_UNUSEDROLES("authorization.unusedRoles"), 
 		PROFILESKILLS("profileSkills"), 
 		CERTIFICATIONS("certifications"), 
 		LOCATIONS("locations"), 

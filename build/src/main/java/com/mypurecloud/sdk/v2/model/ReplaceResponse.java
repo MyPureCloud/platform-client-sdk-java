@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -19,7 +19,7 @@ public class ReplaceResponse  implements Serializable {
   private String id = null;
   private String name = null;
   private Integer changeNumber = null;
-  private UriReference uploadStatus = null;
+  private DomainEntityRef uploadStatus = null;
   private String uploadDestinationUri = null;
 
   /**
@@ -111,17 +111,17 @@ public class ReplaceResponse  implements Serializable {
   
   /**
    **/
-  public ReplaceResponse uploadStatus(UriReference uploadStatus) {
+  public ReplaceResponse uploadStatus(DomainEntityRef uploadStatus) {
     this.uploadStatus = uploadStatus;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("uploadStatus")
-  public UriReference getUploadStatus() {
+  public DomainEntityRef getUploadStatus() {
     return uploadStatus;
   }
-  public void setUploadStatus(UriReference uploadStatus) {
+  public void setUploadStatus(DomainEntityRef uploadStatus) {
     this.uploadStatus = uploadStatus;
   }
 

@@ -5,9 +5,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.Group;
 import com.mypurecloud.sdk.v2.model.SecurityProfile;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -21,7 +21,7 @@ public class WorkspaceMember  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private UriReference workspace = null;
+  private DomainEntityRef workspace = null;
 
   /**
    * The workspace member type.
@@ -57,7 +57,7 @@ public class WorkspaceMember  implements Serializable {
     }
   }
   private MemberTypeEnum memberType = null;
-  private UriReference member = null;
+  private DomainEntityRef member = null;
   private User user = null;
   private Group group = null;
   private SecurityProfile securityProfile = null;
@@ -90,17 +90,17 @@ public class WorkspaceMember  implements Serializable {
   
   /**
    **/
-  public WorkspaceMember workspace(UriReference workspace) {
+  public WorkspaceMember workspace(DomainEntityRef workspace) {
     this.workspace = workspace;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("workspace")
-  public UriReference getWorkspace() {
+  public DomainEntityRef getWorkspace() {
     return workspace;
   }
-  public void setWorkspace(UriReference workspace) {
+  public void setWorkspace(DomainEntityRef workspace) {
     this.workspace = workspace;
   }
 
@@ -125,17 +125,17 @@ public class WorkspaceMember  implements Serializable {
   
   /**
    **/
-  public WorkspaceMember member(UriReference member) {
+  public WorkspaceMember member(DomainEntityRef member) {
     this.member = member;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("member")
-  public UriReference getMember() {
+  public DomainEntityRef getMember() {
     return member;
   }
-  public void setMember(UriReference member) {
+  public void setMember(DomainEntityRef member) {
     this.member = member;
   }
 

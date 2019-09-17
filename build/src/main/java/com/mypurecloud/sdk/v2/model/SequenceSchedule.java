@@ -4,8 +4,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.ScheduleInterval;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ public class SequenceSchedule  implements Serializable {
   private Integer version = null;
   private List<ScheduleInterval> intervals = new ArrayList<ScheduleInterval>();
   private String timeZone = null;
-  private UriReference sequence = null;
+  private DomainEntityRef sequence = null;
   private String selfUri = null;
 
   
@@ -125,17 +125,17 @@ public class SequenceSchedule  implements Serializable {
   /**
    * The CampaignSequence that this SequenceSchedule is for.
    **/
-  public SequenceSchedule sequence(UriReference sequence) {
+  public SequenceSchedule sequence(DomainEntityRef sequence) {
     this.sequence = sequence;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "The CampaignSequence that this SequenceSchedule is for.")
   @JsonProperty("sequence")
-  public UriReference getSequence() {
+  public DomainEntityRef getSequence() {
     return sequence;
   }
-  public void setSequence(UriReference sequence) {
+  public void setSequence(DomainEntityRef sequence) {
     this.sequence = sequence;
   }
 

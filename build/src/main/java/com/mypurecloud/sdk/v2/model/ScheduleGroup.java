@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -67,9 +67,9 @@ public class ScheduleGroup  implements Serializable {
   private String modifiedByApp = null;
   private String createdByApp = null;
   private String timeZone = null;
-  private List<UriReference> openSchedules = new ArrayList<UriReference>();
-  private List<UriReference> closedSchedules = new ArrayList<UriReference>();
-  private List<UriReference> holidaySchedules = new ArrayList<UriReference>();
+  private List<DomainEntityRef> openSchedules = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> closedSchedules = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> holidaySchedules = new ArrayList<DomainEntityRef>();
   private String selfUri = null;
 
   
@@ -270,17 +270,17 @@ public class ScheduleGroup  implements Serializable {
   /**
    * The schedules defining the hours an organization is open.
    **/
-  public ScheduleGroup openSchedules(List<UriReference> openSchedules) {
+  public ScheduleGroup openSchedules(List<DomainEntityRef> openSchedules) {
     this.openSchedules = openSchedules;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The schedules defining the hours an organization is open.")
   @JsonProperty("openSchedules")
-  public List<UriReference> getOpenSchedules() {
+  public List<DomainEntityRef> getOpenSchedules() {
     return openSchedules;
   }
-  public void setOpenSchedules(List<UriReference> openSchedules) {
+  public void setOpenSchedules(List<DomainEntityRef> openSchedules) {
     this.openSchedules = openSchedules;
   }
 
@@ -288,17 +288,17 @@ public class ScheduleGroup  implements Serializable {
   /**
    * The schedules defining the hours an organization is closed.
    **/
-  public ScheduleGroup closedSchedules(List<UriReference> closedSchedules) {
+  public ScheduleGroup closedSchedules(List<DomainEntityRef> closedSchedules) {
     this.closedSchedules = closedSchedules;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The schedules defining the hours an organization is closed.")
   @JsonProperty("closedSchedules")
-  public List<UriReference> getClosedSchedules() {
+  public List<DomainEntityRef> getClosedSchedules() {
     return closedSchedules;
   }
-  public void setClosedSchedules(List<UriReference> closedSchedules) {
+  public void setClosedSchedules(List<DomainEntityRef> closedSchedules) {
     this.closedSchedules = closedSchedules;
   }
 
@@ -306,17 +306,17 @@ public class ScheduleGroup  implements Serializable {
   /**
    * The schedules defining the hours an organization is closed for the holidays.
    **/
-  public ScheduleGroup holidaySchedules(List<UriReference> holidaySchedules) {
+  public ScheduleGroup holidaySchedules(List<DomainEntityRef> holidaySchedules) {
     this.holidaySchedules = holidaySchedules;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The schedules defining the hours an organization is closed for the holidays.")
   @JsonProperty("holidaySchedules")
-  public List<UriReference> getHolidaySchedules() {
+  public List<DomainEntityRef> getHolidaySchedules() {
     return holidaySchedules;
   }
-  public void setHolidaySchedules(List<UriReference> holidaySchedules) {
+  public void setHolidaySchedules(List<DomainEntityRef> holidaySchedules) {
     this.holidaySchedules = holidaySchedules;
   }
 

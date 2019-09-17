@@ -133,6 +133,20 @@ public class GetRoutingQueuesRequest {
 	    return this;
 	} 
 	
+	private List<String> id;
+	public List<String> getId() {
+		return this.id;
+	}
+
+	public void setId(List<String> id) {
+		this.id = id;
+	}
+
+	public GetRoutingQueuesRequest withId(List<String> id) {
+	    this.setId(id);
+	    return this;
+	} 
+	
 	private List<String> divisionId;
 	public List<String> getDivisionId() {
 		return this.divisionId;
@@ -180,6 +194,8 @@ public class GetRoutingQueuesRequest {
         
                 .withQueryParameters("active", "", active)
         
+                .withQueryParameters("id", "multi", id)
+        
                 .withQueryParameters("divisionId", "multi", divisionId)
         
                 .withCustomHeaders(customHeaders)
@@ -225,6 +241,11 @@ public class GetRoutingQueuesRequest {
 		
 		public Builder withActive(Boolean active) {
 			request.setActive(active);
+			return this;
+		}
+		
+		public Builder withId(List<String> id) {
+			request.setId(id);
 			return this;
 		}
 		

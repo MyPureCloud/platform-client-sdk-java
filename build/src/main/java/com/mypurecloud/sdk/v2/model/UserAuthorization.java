@@ -19,6 +19,7 @@ import java.io.Serializable;
 public class UserAuthorization  implements Serializable {
   
   private List<DomainRole> roles = new ArrayList<DomainRole>();
+  private List<DomainRole> unusedRoles = new ArrayList<DomainRole>();
   private List<String> permissions = new ArrayList<String>();
   private List<ResourcePermissionPolicy> permissionPolicies = new ArrayList<ResourcePermissionPolicy>();
 
@@ -37,6 +38,23 @@ public class UserAuthorization  implements Serializable {
   }
   public void setRoles(List<DomainRole> roles) {
     this.roles = roles;
+  }
+
+  
+  /**
+   **/
+  public UserAuthorization unusedRoles(List<DomainRole> unusedRoles) {
+    this.unusedRoles = unusedRoles;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("unusedRoles")
+  public List<DomainRole> getUnusedRoles() {
+    return unusedRoles;
+  }
+  public void setUnusedRoles(List<DomainRole> unusedRoles) {
+    this.unusedRoles = unusedRoles;
   }
 
   
@@ -87,13 +105,14 @@ public class UserAuthorization  implements Serializable {
     }
     UserAuthorization userAuthorization = (UserAuthorization) o;
     return Objects.equals(this.roles, userAuthorization.roles) &&
+        Objects.equals(this.unusedRoles, userAuthorization.unusedRoles) &&
         Objects.equals(this.permissions, userAuthorization.permissions) &&
         Objects.equals(this.permissionPolicies, userAuthorization.permissionPolicies);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(roles, permissions, permissionPolicies);
+    return Objects.hash(roles, unusedRoles, permissions, permissionPolicies);
   }
 
   @Override
@@ -102,6 +121,7 @@ public class UserAuthorization  implements Serializable {
     sb.append("class UserAuthorization {\n");
     
     sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
+    sb.append("    unusedRoles: ").append(toIndentedString(unusedRoles)).append("\n");
     sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
     sb.append("    permissionPolicies: ").append(toIndentedString(permissionPolicies)).append("\n");
     sb.append("}");

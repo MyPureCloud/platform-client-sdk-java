@@ -6,9 +6,9 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContactSort;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.PhoneColumn;
 import com.mypurecloud.sdk.v2.model.RestErrorDetail;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,8 +27,8 @@ public class Campaign  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Integer version = null;
-  private UriReference contactList = null;
-  private UriReference queue = null;
+  private DomainEntityRef contactList = null;
+  private DomainEntityRef queue = null;
 
   /**
    * The strategy this Campaign will use for dialing.
@@ -67,9 +67,9 @@ public class Campaign  implements Serializable {
     }
   }
   private DialingModeEnum dialingMode = null;
-  private UriReference script = null;
-  private UriReference edgeGroup = null;
-  private UriReference site = null;
+  private DomainEntityRef script = null;
+  private DomainEntityRef edgeGroup = null;
+  private DomainEntityRef site = null;
 
   /**
    * The current status of the Campaign. A Campaign may be turned 'on' or 'off'. Required for updates.
@@ -112,14 +112,14 @@ public class Campaign  implements Serializable {
   private CampaignStatusEnum campaignStatus = null;
   private List<PhoneColumn> phoneColumns = new ArrayList<PhoneColumn>();
   private Double abandonRate = null;
-  private List<UriReference> dncLists = new ArrayList<UriReference>();
-  private UriReference callableTimeSet = null;
-  private UriReference callAnalysisResponseSet = null;
+  private List<DomainEntityRef> dncLists = new ArrayList<DomainEntityRef>();
+  private DomainEntityRef callableTimeSet = null;
+  private DomainEntityRef callAnalysisResponseSet = null;
   private List<RestErrorDetail> errors = new ArrayList<RestErrorDetail>();
   private String callerName = null;
   private String callerAddress = null;
   private Integer outboundLineCount = null;
-  private List<UriReference> ruleSets = new ArrayList<UriReference>();
+  private List<DomainEntityRef> ruleSets = new ArrayList<DomainEntityRef>();
   private Boolean skipPreviewDisabled = null;
   private Long previewTimeOutSeconds = null;
   private Boolean alwaysRunning = null;
@@ -128,8 +128,8 @@ public class Campaign  implements Serializable {
   private Integer noAnswerTimeout = null;
   private String callAnalysisLanguage = null;
   private Integer priority = null;
-  private List<UriReference> contactListFilters = new ArrayList<UriReference>();
-  private UriReference division = null;
+  private List<DomainEntityRef> contactListFilters = new ArrayList<DomainEntityRef>();
+  private DomainEntityRef division = null;
   private String selfUri = null;
 
   
@@ -193,17 +193,17 @@ public class Campaign  implements Serializable {
   /**
    * The ContactList for this Campaign to dial.
    **/
-  public Campaign contactList(UriReference contactList) {
+  public Campaign contactList(DomainEntityRef contactList) {
     this.contactList = contactList;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "The ContactList for this Campaign to dial.")
   @JsonProperty("contactList")
-  public UriReference getContactList() {
+  public DomainEntityRef getContactList() {
     return contactList;
   }
-  public void setContactList(UriReference contactList) {
+  public void setContactList(DomainEntityRef contactList) {
     this.contactList = contactList;
   }
 
@@ -211,17 +211,17 @@ public class Campaign  implements Serializable {
   /**
    * The Queue for this Campaign to route calls to. Required for all dialing modes except agentless.
    **/
-  public Campaign queue(UriReference queue) {
+  public Campaign queue(DomainEntityRef queue) {
     this.queue = queue;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The Queue for this Campaign to route calls to. Required for all dialing modes except agentless.")
   @JsonProperty("queue")
-  public UriReference getQueue() {
+  public DomainEntityRef getQueue() {
     return queue;
   }
-  public void setQueue(UriReference queue) {
+  public void setQueue(DomainEntityRef queue) {
     this.queue = queue;
   }
 
@@ -247,17 +247,17 @@ public class Campaign  implements Serializable {
   /**
    * The Script to be displayed to agents that are handling outbound calls. Required for all dialing modes except agentless.
    **/
-  public Campaign script(UriReference script) {
+  public Campaign script(DomainEntityRef script) {
     this.script = script;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The Script to be displayed to agents that are handling outbound calls. Required for all dialing modes except agentless.")
   @JsonProperty("script")
-  public UriReference getScript() {
+  public DomainEntityRef getScript() {
     return script;
   }
-  public void setScript(UriReference script) {
+  public void setScript(DomainEntityRef script) {
     this.script = script;
   }
 
@@ -265,17 +265,17 @@ public class Campaign  implements Serializable {
   /**
    * The EdgeGroup that will place the calls. Required for all dialing modes except preview.
    **/
-  public Campaign edgeGroup(UriReference edgeGroup) {
+  public Campaign edgeGroup(DomainEntityRef edgeGroup) {
     this.edgeGroup = edgeGroup;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The EdgeGroup that will place the calls. Required for all dialing modes except preview.")
   @JsonProperty("edgeGroup")
-  public UriReference getEdgeGroup() {
+  public DomainEntityRef getEdgeGroup() {
     return edgeGroup;
   }
-  public void setEdgeGroup(UriReference edgeGroup) {
+  public void setEdgeGroup(DomainEntityRef edgeGroup) {
     this.edgeGroup = edgeGroup;
   }
 
@@ -283,17 +283,17 @@ public class Campaign  implements Serializable {
   /**
    * The identifier of the site to be used for dialing; can be set in place of an edge group.
    **/
-  public Campaign site(UriReference site) {
+  public Campaign site(DomainEntityRef site) {
     this.site = site;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The identifier of the site to be used for dialing; can be set in place of an edge group.")
   @JsonProperty("site")
-  public UriReference getSite() {
+  public DomainEntityRef getSite() {
     return site;
   }
-  public void setSite(UriReference site) {
+  public void setSite(DomainEntityRef site) {
     this.site = site;
   }
 
@@ -355,17 +355,17 @@ public class Campaign  implements Serializable {
   /**
    * DncLists for this Campaign to check before placing a call.
    **/
-  public Campaign dncLists(List<UriReference> dncLists) {
+  public Campaign dncLists(List<DomainEntityRef> dncLists) {
     this.dncLists = dncLists;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "DncLists for this Campaign to check before placing a call.")
   @JsonProperty("dncLists")
-  public List<UriReference> getDncLists() {
+  public List<DomainEntityRef> getDncLists() {
     return dncLists;
   }
-  public void setDncLists(List<UriReference> dncLists) {
+  public void setDncLists(List<DomainEntityRef> dncLists) {
     this.dncLists = dncLists;
   }
 
@@ -373,17 +373,17 @@ public class Campaign  implements Serializable {
   /**
    * The callable time set for this campaign to check before placing a call.
    **/
-  public Campaign callableTimeSet(UriReference callableTimeSet) {
+  public Campaign callableTimeSet(DomainEntityRef callableTimeSet) {
     this.callableTimeSet = callableTimeSet;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The callable time set for this campaign to check before placing a call.")
   @JsonProperty("callableTimeSet")
-  public UriReference getCallableTimeSet() {
+  public DomainEntityRef getCallableTimeSet() {
     return callableTimeSet;
   }
-  public void setCallableTimeSet(UriReference callableTimeSet) {
+  public void setCallableTimeSet(DomainEntityRef callableTimeSet) {
     this.callableTimeSet = callableTimeSet;
   }
 
@@ -391,17 +391,17 @@ public class Campaign  implements Serializable {
   /**
    * The call analysis response set to handle call analysis results from the edge. Required for all dialing modes except preview.
    **/
-  public Campaign callAnalysisResponseSet(UriReference callAnalysisResponseSet) {
+  public Campaign callAnalysisResponseSet(DomainEntityRef callAnalysisResponseSet) {
     this.callAnalysisResponseSet = callAnalysisResponseSet;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The call analysis response set to handle call analysis results from the edge. Required for all dialing modes except preview.")
   @JsonProperty("callAnalysisResponseSet")
-  public UriReference getCallAnalysisResponseSet() {
+  public DomainEntityRef getCallAnalysisResponseSet() {
     return callAnalysisResponseSet;
   }
-  public void setCallAnalysisResponseSet(UriReference callAnalysisResponseSet) {
+  public void setCallAnalysisResponseSet(DomainEntityRef callAnalysisResponseSet) {
     this.callAnalysisResponseSet = callAnalysisResponseSet;
   }
 
@@ -481,17 +481,17 @@ public class Campaign  implements Serializable {
   /**
    * Rule sets to be applied while this campaign is dialing.
    **/
-  public Campaign ruleSets(List<UriReference> ruleSets) {
+  public Campaign ruleSets(List<DomainEntityRef> ruleSets) {
     this.ruleSets = ruleSets;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Rule sets to be applied while this campaign is dialing.")
   @JsonProperty("ruleSets")
-  public List<UriReference> getRuleSets() {
+  public List<DomainEntityRef> getRuleSets() {
     return ruleSets;
   }
-  public void setRuleSets(List<UriReference> ruleSets) {
+  public void setRuleSets(List<DomainEntityRef> ruleSets) {
     this.ruleSets = ruleSets;
   }
 
@@ -643,17 +643,17 @@ public class Campaign  implements Serializable {
   /**
    * Filter to apply to the contact list before dialing. Currently a campaign can only have one filter applied.
    **/
-  public Campaign contactListFilters(List<UriReference> contactListFilters) {
+  public Campaign contactListFilters(List<DomainEntityRef> contactListFilters) {
     this.contactListFilters = contactListFilters;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Filter to apply to the contact list before dialing. Currently a campaign can only have one filter applied.")
   @JsonProperty("contactListFilters")
-  public List<UriReference> getContactListFilters() {
+  public List<DomainEntityRef> getContactListFilters() {
     return contactListFilters;
   }
-  public void setContactListFilters(List<UriReference> contactListFilters) {
+  public void setContactListFilters(List<DomainEntityRef> contactListFilters) {
     this.contactListFilters = contactListFilters;
   }
 
@@ -661,17 +661,17 @@ public class Campaign  implements Serializable {
   /**
    * The division this campaign belongs to.
    **/
-  public Campaign division(UriReference division) {
+  public Campaign division(DomainEntityRef division) {
     this.division = division;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The division this campaign belongs to.")
   @JsonProperty("division")
-  public UriReference getDivision() {
+  public DomainEntityRef getDivision() {
     return division;
   }
-  public void setDivision(UriReference division) {
+  public void setDivision(DomainEntityRef division) {
     this.division = division;
   }
 

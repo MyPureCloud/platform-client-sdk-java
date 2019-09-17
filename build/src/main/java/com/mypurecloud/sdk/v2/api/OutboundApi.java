@@ -55,7 +55,7 @@ import com.mypurecloud.sdk.v2.model.AuditSearchResult;
 import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
 import com.mypurecloud.sdk.v2.model.ContactCallbackRequest;
 import com.mypurecloud.sdk.v2.model.WritableDialerContact;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.FilterPreviewResponse;
 import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
@@ -6275,11 +6275,11 @@ public class OutboundApi {
    * Initiate the export of a contact list.
    * Returns 200 if received OK.
    * @param contactListId ContactList ID (required)
-   * @return UriReference
+   * @return DomainEntityRef
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UriReference postOutboundContactlistExport(String contactListId) throws IOException, ApiException {
+  public DomainEntityRef postOutboundContactlistExport(String contactListId) throws IOException, ApiException {
     return  postOutboundContactlistExport(createPostOutboundContactlistExportRequest(contactListId));
   }
 
@@ -6287,10 +6287,10 @@ public class OutboundApi {
    * Initiate the export of a contact list.
    * Returns 200 if received OK.
    * @param contactListId ContactList ID (required)
-   * @return UriReference
+   * @return DomainEntityRef
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UriReference> postOutboundContactlistExportWithHttpInfo(String contactListId) throws IOException {
+  public ApiResponse<DomainEntityRef> postOutboundContactlistExportWithHttpInfo(String contactListId) throws IOException {
     return postOutboundContactlistExport(createPostOutboundContactlistExportRequest(contactListId).withHttpInfo());
   }
 
@@ -6305,13 +6305,13 @@ public class OutboundApi {
    * Initiate the export of a contact list.
    * Returns 200 if received OK.
    * @param request The request object
-   * @return UriReference
+   * @return DomainEntityRef
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UriReference postOutboundContactlistExport(PostOutboundContactlistExportRequest request) throws IOException, ApiException {
+  public DomainEntityRef postOutboundContactlistExport(PostOutboundContactlistExportRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<UriReference> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UriReference>() {});
+      ApiResponse<DomainEntityRef> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DomainEntityRef>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -6327,13 +6327,13 @@ public class OutboundApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UriReference> postOutboundContactlistExport(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<DomainEntityRef> postOutboundContactlistExport(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<UriReference>() {});
+      return pcapiClient.invoke(request, new TypeReference<DomainEntityRef>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<UriReference> response = (ApiResponse<UriReference>)(ApiResponse<?>)exception;
+      ApiResponse<DomainEntityRef> response = (ApiResponse<DomainEntityRef>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -6344,7 +6344,7 @@ public class OutboundApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<UriReference> response = (ApiResponse<UriReference>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<DomainEntityRef> response = (ApiResponse<DomainEntityRef>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6667,11 +6667,11 @@ public class OutboundApi {
    * Initiate the export of a dnc list.
    * Returns 200 if received OK.
    * @param dncListId DncList ID (required)
-   * @return UriReference
+   * @return DomainEntityRef
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UriReference postOutboundDnclistExport(String dncListId) throws IOException, ApiException {
+  public DomainEntityRef postOutboundDnclistExport(String dncListId) throws IOException, ApiException {
     return  postOutboundDnclistExport(createPostOutboundDnclistExportRequest(dncListId));
   }
 
@@ -6679,10 +6679,10 @@ public class OutboundApi {
    * Initiate the export of a dnc list.
    * Returns 200 if received OK.
    * @param dncListId DncList ID (required)
-   * @return UriReference
+   * @return DomainEntityRef
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UriReference> postOutboundDnclistExportWithHttpInfo(String dncListId) throws IOException {
+  public ApiResponse<DomainEntityRef> postOutboundDnclistExportWithHttpInfo(String dncListId) throws IOException {
     return postOutboundDnclistExport(createPostOutboundDnclistExportRequest(dncListId).withHttpInfo());
   }
 
@@ -6697,13 +6697,13 @@ public class OutboundApi {
    * Initiate the export of a dnc list.
    * Returns 200 if received OK.
    * @param request The request object
-   * @return UriReference
+   * @return DomainEntityRef
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UriReference postOutboundDnclistExport(PostOutboundDnclistExportRequest request) throws IOException, ApiException {
+  public DomainEntityRef postOutboundDnclistExport(PostOutboundDnclistExportRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<UriReference> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UriReference>() {});
+      ApiResponse<DomainEntityRef> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DomainEntityRef>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -6719,13 +6719,13 @@ public class OutboundApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UriReference> postOutboundDnclistExport(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<DomainEntityRef> postOutboundDnclistExport(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<UriReference>() {});
+      return pcapiClient.invoke(request, new TypeReference<DomainEntityRef>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<UriReference> response = (ApiResponse<UriReference>)(ApiResponse<?>)exception;
+      ApiResponse<DomainEntityRef> response = (ApiResponse<DomainEntityRef>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -6736,7 +6736,7 @@ public class OutboundApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<UriReference> response = (ApiResponse<UriReference>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<DomainEntityRef> response = (ApiResponse<DomainEntityRef>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

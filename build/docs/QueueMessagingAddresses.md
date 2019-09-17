@@ -8,7 +8,7 @@ title: QueueMessagingAddresses
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **smsAddress** | [**UriReference**](UriReference.html) |  |  [optional] |
+| **smsAddress** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.Edge;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -68,14 +68,14 @@ public class Line  implements Serializable {
   private String modifiedByApp = null;
   private String createdByApp = null;
   private Map<String, Object> properties = null;
-  private UriReference edgeGroup = null;
-  private UriReference template = null;
-  private UriReference site = null;
-  private UriReference lineBaseSettings = null;
+  private DomainEntityRef edgeGroup = null;
+  private DomainEntityRef template = null;
+  private DomainEntityRef site = null;
+  private DomainEntityRef lineBaseSettings = null;
   private Edge primaryEdge = null;
   private Edge secondaryEdge = null;
-  private UriReference loggedInUser = null;
-  private UriReference defaultForUser = null;
+  private DomainEntityRef loggedInUser = null;
+  private DomainEntityRef defaultForUser = null;
   private String selfUri = null;
 
   
@@ -274,68 +274,68 @@ public class Line  implements Serializable {
   
   /**
    **/
-  public Line edgeGroup(UriReference edgeGroup) {
+  public Line edgeGroup(DomainEntityRef edgeGroup) {
     this.edgeGroup = edgeGroup;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("edgeGroup")
-  public UriReference getEdgeGroup() {
+  public DomainEntityRef getEdgeGroup() {
     return edgeGroup;
   }
-  public void setEdgeGroup(UriReference edgeGroup) {
+  public void setEdgeGroup(DomainEntityRef edgeGroup) {
     this.edgeGroup = edgeGroup;
   }
 
   
   /**
    **/
-  public Line template(UriReference template) {
+  public Line template(DomainEntityRef template) {
     this.template = template;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("template")
-  public UriReference getTemplate() {
+  public DomainEntityRef getTemplate() {
     return template;
   }
-  public void setTemplate(UriReference template) {
+  public void setTemplate(DomainEntityRef template) {
     this.template = template;
   }
 
   
   /**
    **/
-  public Line site(UriReference site) {
+  public Line site(DomainEntityRef site) {
     this.site = site;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("site")
-  public UriReference getSite() {
+  public DomainEntityRef getSite() {
     return site;
   }
-  public void setSite(UriReference site) {
+  public void setSite(DomainEntityRef site) {
     this.site = site;
   }
 
   
   /**
    **/
-  public Line lineBaseSettings(UriReference lineBaseSettings) {
+  public Line lineBaseSettings(DomainEntityRef lineBaseSettings) {
     this.lineBaseSettings = lineBaseSettings;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("lineBaseSettings")
-  public UriReference getLineBaseSettings() {
+  public DomainEntityRef getLineBaseSettings() {
     return lineBaseSettings;
   }
-  public void setLineBaseSettings(UriReference lineBaseSettings) {
+  public void setLineBaseSettings(DomainEntityRef lineBaseSettings) {
     this.lineBaseSettings = lineBaseSettings;
   }
 
@@ -378,34 +378,34 @@ public class Line  implements Serializable {
   
   /**
    **/
-  public Line loggedInUser(UriReference loggedInUser) {
+  public Line loggedInUser(DomainEntityRef loggedInUser) {
     this.loggedInUser = loggedInUser;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("loggedInUser")
-  public UriReference getLoggedInUser() {
+  public DomainEntityRef getLoggedInUser() {
     return loggedInUser;
   }
-  public void setLoggedInUser(UriReference loggedInUser) {
+  public void setLoggedInUser(DomainEntityRef loggedInUser) {
     this.loggedInUser = loggedInUser;
   }
 
   
   /**
    **/
-  public Line defaultForUser(UriReference defaultForUser) {
+  public Line defaultForUser(DomainEntityRef defaultForUser) {
     this.defaultForUser = defaultForUser;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("defaultForUser")
-  public UriReference getDefaultForUser() {
+  public DomainEntityRef getDefaultForUser() {
     return defaultForUser;
   }
-  public void setDefaultForUser(UriReference defaultForUser) {
+  public void setDefaultForUser(DomainEntityRef defaultForUser) {
     this.defaultForUser = defaultForUser;
   }
 

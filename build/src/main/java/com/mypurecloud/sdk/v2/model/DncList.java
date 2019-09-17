@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.ImportStatus;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -66,7 +66,7 @@ public class DncList  implements Serializable {
   private String loginId = null;
   private List<String> dncCodes = new ArrayList<String>();
   private String licenseId = null;
-  private UriReference division = null;
+  private DomainEntityRef division = null;
   private String selfUri = null;
 
   
@@ -216,17 +216,17 @@ public class DncList  implements Serializable {
   /**
    * The division this DncList belongs to.
    **/
-  public DncList division(UriReference division) {
+  public DncList division(DomainEntityRef division) {
     this.division = division;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The division this DncList belongs to.")
   @JsonProperty("division")
-  public UriReference getDivision() {
+  public DomainEntityRef getDivision() {
     return division;
   }
-  public void setDivision(UriReference division) {
+  public void setDivision(DomainEntityRef division) {
     this.division = division;
   }
 

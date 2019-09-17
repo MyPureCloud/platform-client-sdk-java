@@ -17,11 +17,11 @@ title: TwitterIntegration
 | **status** | **String** | The status of the Twitter Integration |  [optional] |
 | **tier** | [**TierEnum**](#TierEnum) | The type of twitter account to be used for the integration |  |
 | **envName** | **String** | The Twitter environment name, e.g.: env-beta (required for premium tier) |  [optional] |
-| **recipient** | [**UriReference**](UriReference.html) | The recipient associated to the Twitter Integration. This recipient is used to associate a flow to an integration |  [optional] |
+| **recipient** | [**DomainEntityRef**](DomainEntityRef.html) | The recipient associated to the Twitter Integration. This recipient is used to associate a flow to an integration |  [optional] |
 | **dateCreated** | [**Date**](Date.html) | Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **dateModified** | [**Date**](Date.html) | Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **createdBy** | [**UriReference**](UriReference.html) | User reference that created this Integration |  [optional] |
-| **modifiedBy** | [**UriReference**](UriReference.html) | User reference that last modified this Integration |  [optional] |
+| **createdBy** | [**DomainEntityRef**](DomainEntityRef.html) | User reference that created this Integration |  [optional] |
+| **modifiedBy** | [**DomainEntityRef**](DomainEntityRef.html) | User reference that last modified this Integration |  [optional] |
 | **version** | **Integer** | Version number required for updates. |  |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}

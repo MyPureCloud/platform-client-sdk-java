@@ -5,9 +5,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.LineStatus;
 import com.mypurecloud.sdk.v2.model.ProvisionInfo;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -133,7 +133,7 @@ public class PhoneStatus  implements Serializable {
     }
   }
   private PhoneAssignmentToEdgeTypeEnum phoneAssignmentToEdgeType = null;
-  private UriReference edge = null;
+  private DomainEntityRef edge = null;
   private String selfUri = null;
 
   
@@ -272,17 +272,17 @@ public class PhoneStatus  implements Serializable {
   /**
    * The URI of the edge that provided this status information.
    **/
-  public PhoneStatus edge(UriReference edge) {
+  public PhoneStatus edge(DomainEntityRef edge) {
     this.edge = edge;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The URI of the edge that provided this status information.")
   @JsonProperty("edge")
-  public UriReference getEdge() {
+  public DomainEntityRef getEdge() {
     return edge;
   }
-  public void setEdge(UriReference edge) {
+  public void setEdge(DomainEntityRef edge) {
     this.edge = edge;
   }
 

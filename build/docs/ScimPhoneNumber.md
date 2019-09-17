@@ -9,7 +9,7 @@ title: ScimPhoneNumber
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **value** | **String** | A phone number in E.164 format. |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum) | The type of phone number.  |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum) | The type of phone number. |  [optional] |
 | **primary** | **Boolean** | Indicates whether the phone number is the primary phone number. |  [optional] |
 {: class="table table-striped"}
 

@@ -6,11 +6,11 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Contact;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.Edge;
 import com.mypurecloud.sdk.v2.model.EdgeAutoUpdateConfig;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
 import com.mypurecloud.sdk.v2.model.NTPSettings;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -70,8 +70,8 @@ public class Site  implements Serializable {
   private StateEnum state = null;
   private String modifiedByApp = null;
   private String createdByApp = null;
-  private List<UriReference> primarySites = new ArrayList<UriReference>();
-  private List<UriReference> secondarySites = new ArrayList<UriReference>();
+  private List<DomainEntityRef> primarySites = new ArrayList<DomainEntityRef>();
+  private List<DomainEntityRef> secondarySites = new ArrayList<DomainEntityRef>();
   private List<Edge> primaryEdges = new ArrayList<Edge>();
   private List<Edge> secondaryEdges = new ArrayList<Edge>();
   private List<Contact> addresses = new ArrayList<Contact>();
@@ -261,34 +261,34 @@ public class Site  implements Serializable {
   
   /**
    **/
-  public Site primarySites(List<UriReference> primarySites) {
+  public Site primarySites(List<DomainEntityRef> primarySites) {
     this.primarySites = primarySites;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("primarySites")
-  public List<UriReference> getPrimarySites() {
+  public List<DomainEntityRef> getPrimarySites() {
     return primarySites;
   }
-  public void setPrimarySites(List<UriReference> primarySites) {
+  public void setPrimarySites(List<DomainEntityRef> primarySites) {
     this.primarySites = primarySites;
   }
 
   
   /**
    **/
-  public Site secondarySites(List<UriReference> secondarySites) {
+  public Site secondarySites(List<DomainEntityRef> secondarySites) {
     this.secondarySites = secondarySites;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("secondarySites")
-  public List<UriReference> getSecondarySites() {
+  public List<DomainEntityRef> getSecondarySites() {
     return secondarySites;
   }
-  public void setSecondarySites(List<UriReference> secondarySites) {
+  public void setSecondarySites(List<DomainEntityRef> secondarySites) {
     this.secondarySites = secondarySites;
   }
 

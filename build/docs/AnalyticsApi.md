@@ -7,9 +7,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteAnalyticsConversationsDetailsJob**](AnalyticsApi.html#deleteAnalyticsConversationsDetailsJob) | Delete/cancel an async request |
 | [**deleteAnalyticsReportingSchedule**](AnalyticsApi.html#deleteAnalyticsReportingSchedule) | Delete a scheduled report job. |
 | [**getAnalyticsConversationDetails**](AnalyticsApi.html#getAnalyticsConversationDetails) | Get a conversation by id |
 | [**getAnalyticsConversationsDetails**](AnalyticsApi.html#getAnalyticsConversationsDetails) | Gets multiple conversations by id |
+| [**getAnalyticsConversationsDetailsJob**](AnalyticsApi.html#getAnalyticsConversationsDetailsJob) | Get status for async query for conversation details |
+| [**getAnalyticsConversationsDetailsJobResults**](AnalyticsApi.html#getAnalyticsConversationsDetailsJobResults) | Fetch a page of results for an async query |
 | [**getAnalyticsReportingExports**](AnalyticsApi.html#getAnalyticsReportingExports) | Get all view export requests for a user |
 | [**getAnalyticsReportingMetadata**](AnalyticsApi.html#getAnalyticsReportingMetadata) | Get list of reporting metadata. |
 | [**getAnalyticsReportingReportIdMetadata**](AnalyticsApi.html#getAnalyticsReportingReportIdMetadata) | Get a reporting metadata. |
@@ -22,6 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAnalyticsReportingTimeperiods**](AnalyticsApi.html#getAnalyticsReportingTimeperiods) | Get a list of report time periods. |
 | [**postAnalyticsConversationDetailsProperties**](AnalyticsApi.html#postAnalyticsConversationDetailsProperties) | Index conversation properties |
 | [**postAnalyticsConversationsAggregatesQuery**](AnalyticsApi.html#postAnalyticsConversationsAggregatesQuery) | Query for conversation aggregates |
+| [**postAnalyticsConversationsDetailsJobs**](AnalyticsApi.html#postAnalyticsConversationsDetailsJobs) | Query for conversation details asynchronously |
 | [**postAnalyticsConversationsDetailsQuery**](AnalyticsApi.html#postAnalyticsConversationsDetailsQuery) | Query for conversation details |
 | [**postAnalyticsEvaluationsAggregatesQuery**](AnalyticsApi.html#postAnalyticsEvaluationsAggregatesQuery) | Query for evaluation aggregates |
 | [**postAnalyticsFlowsAggregatesQuery**](AnalyticsApi.html#postAnalyticsFlowsAggregatesQuery) | Query for flow aggregates |
@@ -36,6 +40,68 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsUsersObservationsQuery**](AnalyticsApi.html#postAnalyticsUsersObservationsQuery) | Query for user observations |
 | [**putAnalyticsReportingSchedule**](AnalyticsApi.html#putAnalyticsReportingSchedule) | Update a scheduled report job. |
 {: class="table-striped"}
+
+<a name="deleteAnalyticsConversationsDetailsJob"></a>
+
+# **deleteAnalyticsConversationsDetailsJob**
+
+
+
+> Void deleteAnalyticsConversationsDetailsJob(jobId)
+
+Delete/cancel an async request
+
+
+
+Wraps DELETE /api/v2/analytics/conversations/details/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    apiInstance.deleteAnalyticsConversationsDetailsJob(jobId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#deleteAnalyticsConversationsDetailsJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="deleteAnalyticsReportingSchedule"></a>
 
@@ -223,6 +289,134 @@ try {
 ### Return type
 
 [**AnalyticsConversationMultiGetResponse**](AnalyticsConversationMultiGetResponse.html)
+
+<a name="getAnalyticsConversationsDetailsJob"></a>
+
+# **getAnalyticsConversationsDetailsJob**
+
+
+
+> [AsyncQueryStatus](AsyncQueryStatus.html) getAnalyticsConversationsDetailsJob(jobId)
+
+Get status for async query for conversation details
+
+
+
+Wraps GET /api/v2/analytics/conversations/details/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+try {
+    AsyncQueryStatus result = apiInstance.getAnalyticsConversationsDetailsJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsConversationsDetailsJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="getAnalyticsConversationsDetailsJobResults"></a>
+
+# **getAnalyticsConversationsDetailsJobResults**
+
+
+
+> [AnalyticsConversationAsyncQueryResponse](AnalyticsConversationAsyncQueryResponse.html) getAnalyticsConversationsDetailsJobResults(jobId, cursor)
+
+Fetch a page of results for an async query
+
+
+
+Wraps GET /api/v2/analytics/conversations/details/jobs/{jobId}/results  
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String jobId = "jobId_example"; // String | jobId
+String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page)
+try {
+    AnalyticsConversationAsyncQueryResponse result = apiInstance.getAnalyticsConversationsDetailsJobResults(jobId, cursor);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsConversationsDetailsJobResults");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+| **cursor** | **String**| Indicates where to resume query results (not required for first page) | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AnalyticsConversationAsyncQueryResponse**](AnalyticsConversationAsyncQueryResponse.html)
 
 <a name="getAnalyticsReportingExports"></a>
 
@@ -974,6 +1168,69 @@ try {
 ### Return type
 
 [**AggregateQueryResponse**](AggregateQueryResponse.html)
+
+<a name="postAnalyticsConversationsDetailsJobs"></a>
+
+# **postAnalyticsConversationsDetailsJobs**
+
+
+
+> [AsyncQueryResponse](AsyncQueryResponse.html) postAnalyticsConversationsDetailsJobs(body)
+
+Query for conversation details asynchronously
+
+
+
+Wraps POST /api/v2/analytics/conversations/details/jobs  
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+AsyncConversationQuery body = new AsyncConversationQuery(); // AsyncConversationQuery | query
+try {
+    AsyncQueryResponse result = apiInstance.postAnalyticsConversationsDetailsJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#postAnalyticsConversationsDetailsJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AsyncConversationQuery**](AsyncConversationQuery.html)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
 
 <a name="postAnalyticsConversationsDetailsQuery"></a>
 

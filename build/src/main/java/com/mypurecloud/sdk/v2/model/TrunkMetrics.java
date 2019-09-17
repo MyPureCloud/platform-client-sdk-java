@@ -4,9 +4,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.TrunkMetricsCalls;
 import com.mypurecloud.sdk.v2.model.TrunkMetricsQoS;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -19,8 +19,8 @@ import java.io.Serializable;
 public class TrunkMetrics  implements Serializable {
   
   private Date eventTime = null;
-  private UriReference logicalInterface = null;
-  private UriReference trunk = null;
+  private DomainEntityRef logicalInterface = null;
+  private DomainEntityRef trunk = null;
   private TrunkMetricsCalls calls = null;
   private TrunkMetricsQoS qos = null;
 
@@ -45,34 +45,34 @@ public class TrunkMetrics  implements Serializable {
   
   /**
    **/
-  public TrunkMetrics logicalInterface(UriReference logicalInterface) {
+  public TrunkMetrics logicalInterface(DomainEntityRef logicalInterface) {
     this.logicalInterface = logicalInterface;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("logicalInterface")
-  public UriReference getLogicalInterface() {
+  public DomainEntityRef getLogicalInterface() {
     return logicalInterface;
   }
-  public void setLogicalInterface(UriReference logicalInterface) {
+  public void setLogicalInterface(DomainEntityRef logicalInterface) {
     this.logicalInterface = logicalInterface;
   }
 
   
   /**
    **/
-  public TrunkMetrics trunk(UriReference trunk) {
+  public TrunkMetrics trunk(DomainEntityRef trunk) {
     this.trunk = trunk;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("trunk")
-  public UriReference getTrunk() {
+  public DomainEntityRef getTrunk() {
     return trunk;
   }
-  public void setTrunk(UriReference trunk) {
+  public void setTrunk(DomainEntityRef trunk) {
     this.trunk = trunk;
   }
 

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -66,7 +66,7 @@ public class EdgeTrunkBase  implements Serializable {
   private StateEnum state = null;
   private String modifiedByApp = null;
   private String createdByApp = null;
-  private UriReference trunkMetabase = null;
+  private DomainEntityRef trunkMetabase = null;
   private Map<String, Object> properties = null;
 
   /**
@@ -286,17 +286,17 @@ public class EdgeTrunkBase  implements Serializable {
   /**
    * The meta-base this trunk is based on.
    **/
-  public EdgeTrunkBase trunkMetabase(UriReference trunkMetabase) {
+  public EdgeTrunkBase trunkMetabase(DomainEntityRef trunkMetabase) {
     this.trunkMetabase = trunkMetabase;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "The meta-base this trunk is based on.")
   @JsonProperty("trunkMetabase")
-  public UriReference getTrunkMetabase() {
+  public DomainEntityRef getTrunkMetabase() {
     return trunkMetabase;
   }
-  public void setTrunkMetabase(UriReference trunkMetabase) {
+  public void setTrunkMetabase(DomainEntityRef trunkMetabase) {
     this.trunkMetabase = trunkMetabase;
   }
 

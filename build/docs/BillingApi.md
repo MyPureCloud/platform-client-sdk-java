@@ -7,7 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**getBillingReportsBillableusage**](BillingApi.html#getBillingReportsBillableusage) | Get a report of the billable usages (e.g. licenses and devices utilized) for a given period. |
+| [**getBillingReportsBillableusage**](BillingApi.html#getBillingReportsBillableusage) | Get a report of the billable license usages |
 | [**getBillingTrusteebillingoverviewTrustorOrgId**](BillingApi.html#getBillingTrusteebillingoverviewTrustorOrgId) | Get the billing overview for an organization that is managed by a partner. |
 {: class="table-striped"}
 
@@ -19,9 +19,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 > [BillingUsageReport](BillingUsageReport.html) getBillingReportsBillableusage(startDate, endDate)
 
-Get a report of the billable usages (e.g. licenses and devices utilized) for a given period.
+Get a report of the billable license usages
 
-
+Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response&#39;s status is InProgress, wait a few seconds, then try the same request again.
 
 Wraps GET /api/v2/billing/reports/billableusage  
 

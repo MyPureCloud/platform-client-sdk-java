@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -21,11 +21,11 @@ public class LineIntegration  implements Serializable {
   private String channelId = null;
   private String webhookUri = null;
   private String status = null;
-  private UriReference recipient = null;
+  private DomainEntityRef recipient = null;
   private Date dateCreated = null;
   private Date dateModified = null;
-  private UriReference createdBy = null;
-  private UriReference modifiedBy = null;
+  private DomainEntityRef createdBy = null;
+  private DomainEntityRef modifiedBy = null;
   private Integer version = null;
   private String selfUri = null;
 
@@ -112,17 +112,17 @@ public class LineIntegration  implements Serializable {
   /**
    * The recipient associated to the Line Integration. This recipient is used to associate a flow to an integration
    **/
-  public LineIntegration recipient(UriReference recipient) {
+  public LineIntegration recipient(DomainEntityRef recipient) {
     this.recipient = recipient;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The recipient associated to the Line Integration. This recipient is used to associate a flow to an integration")
   @JsonProperty("recipient")
-  public UriReference getRecipient() {
+  public DomainEntityRef getRecipient() {
     return recipient;
   }
-  public void setRecipient(UriReference recipient) {
+  public void setRecipient(DomainEntityRef recipient) {
     this.recipient = recipient;
   }
 
@@ -166,17 +166,17 @@ public class LineIntegration  implements Serializable {
   /**
    * User reference that created this Integration
    **/
-  public LineIntegration createdBy(UriReference createdBy) {
+  public LineIntegration createdBy(DomainEntityRef createdBy) {
     this.createdBy = createdBy;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "User reference that created this Integration")
   @JsonProperty("createdBy")
-  public UriReference getCreatedBy() {
+  public DomainEntityRef getCreatedBy() {
     return createdBy;
   }
-  public void setCreatedBy(UriReference createdBy) {
+  public void setCreatedBy(DomainEntityRef createdBy) {
     this.createdBy = createdBy;
   }
 
@@ -184,17 +184,17 @@ public class LineIntegration  implements Serializable {
   /**
    * User reference that last modified this Integration
    **/
-  public LineIntegration modifiedBy(UriReference modifiedBy) {
+  public LineIntegration modifiedBy(DomainEntityRef modifiedBy) {
     this.modifiedBy = modifiedBy;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "User reference that last modified this Integration")
   @JsonProperty("modifiedBy")
-  public UriReference getModifiedBy() {
+  public DomainEntityRef getModifiedBy() {
     return modifiedBy;
   }
-  public void setModifiedBy(UriReference modifiedBy) {
+  public void setModifiedBy(DomainEntityRef modifiedBy) {
     this.modifiedBy = modifiedBy;
   }
 

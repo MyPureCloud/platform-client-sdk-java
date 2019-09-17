@@ -12,7 +12,7 @@ title: Survey
 | **name** | **String** |  |  [optional] |
 | **conversation** | [**Conversation**](Conversation.html) |  |  [optional] |
 | **surveyForm** | [**SurveyForm**](SurveyForm.html) | Survey form used for this survey. |  [optional] |
-| **agent** | [**UriReference**](UriReference.html) |  |  [optional] |
+| **agent** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
 | **queue** | [**QueueReference**](QueueReference.html) |  |  [optional] |
 | **answers** | [**SurveyScoringSet**](SurveyScoringSet.html) |  |  [optional] |

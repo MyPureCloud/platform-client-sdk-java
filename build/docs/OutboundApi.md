@@ -4852,7 +4852,7 @@ try {
 
 
 
-> [UriReference](UriReference.html) postOutboundContactlistExport(contactListId)
+> [DomainEntityRef](DomainEntityRef.html) postOutboundContactlistExport(contactListId)
 
 Initiate the export of a contact list.
 
@@ -4889,7 +4889,7 @@ Configuration.setDefaultApiClient(apiClient);
 OutboundApi apiInstance = new OutboundApi();
 String contactListId = "contactListId_example"; // String | ContactList ID
 try {
-    UriReference result = apiInstance.postOutboundContactlistExport(contactListId);
+    DomainEntityRef result = apiInstance.postOutboundContactlistExport(contactListId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#postOutboundContactlistExport");
@@ -4908,7 +4908,7 @@ try {
 
 ### Return type
 
-[**UriReference**](UriReference.html)
+[**DomainEntityRef**](DomainEntityRef.html)
 
 <a name="postOutboundContactlistfilters"></a>
 
@@ -5167,7 +5167,7 @@ null (empty response body)
 
 
 
-> [UriReference](UriReference.html) postOutboundDnclistExport(dncListId)
+> [DomainEntityRef](DomainEntityRef.html) postOutboundDnclistExport(dncListId)
 
 Initiate the export of a dnc list.
 
@@ -5204,7 +5204,7 @@ Configuration.setDefaultApiClient(apiClient);
 OutboundApi apiInstance = new OutboundApi();
 String dncListId = "dncListId_example"; // String | DncList ID
 try {
-    UriReference result = apiInstance.postOutboundDnclistExport(dncListId);
+    DomainEntityRef result = apiInstance.postOutboundDnclistExport(dncListId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#postOutboundDnclistExport");
@@ -5223,7 +5223,7 @@ try {
 
 ### Return type
 
-[**UriReference**](UriReference.html)
+[**DomainEntityRef**](DomainEntityRef.html)
 
 <a name="postOutboundDnclistPhonenumbers"></a>
 

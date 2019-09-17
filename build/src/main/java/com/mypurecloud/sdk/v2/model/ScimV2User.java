@@ -17,9 +17,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * SCIM version 2 User
+ * SCIM V2 User
  */
-@ApiModel(description = "SCIM version 2 User")
+@ApiModel(description = "SCIM V2 User")
 
 public class ScimV2User  implements Serializable {
   
@@ -36,11 +36,11 @@ public class ScimV2User  implements Serializable {
   private String externalId = null;
   private List<ScimV2GroupReference> groups = new ArrayList<ScimV2GroupReference>();
   private List<String> roles = new ArrayList<String>();
-  private ScimMetadata meta = null;
   private ScimV2EnterpriseUser urnietfparamsscimschemasextensionenterprise20User = null;
+  private ScimMetadata meta = null;
 
   
-  @ApiModelProperty(example = "null", value = "SCIM Resource identifier")
+  @ApiModelProperty(example = "null", value = "The ID of the SCIM resource. Set by the service provider. caseExact is set to true. Mutability is set to readOnly. Returned is set to always.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -48,14 +48,14 @@ public class ScimV2User  implements Serializable {
 
   
   /**
-   * schemas supported
+   * The list of supported schemas.
    **/
   public ScimV2User schemas(List<String> schemas) {
     this.schemas = schemas;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "schemas supported")
+  @ApiModelProperty(example = "null", value = "The list of supported schemas.")
   @JsonProperty("schemas")
   public List<String> getSchemas() {
     return schemas;
@@ -246,20 +246,37 @@ public class ScimV2User  implements Serializable {
 
   
   /**
-   * Roles
+   * A list of roles assigned to the user.
    **/
   public ScimV2User roles(List<String> roles) {
     this.roles = roles;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Roles")
+  @ApiModelProperty(example = "null", value = "A list of roles assigned to the user.")
   @JsonProperty("roles")
   public List<String> getRoles() {
     return roles;
   }
   public void setRoles(List<String> roles) {
     this.roles = roles;
+  }
+
+  
+  /**
+   **/
+  public ScimV2User urnietfparamsscimschemasextensionenterprise20User(ScimV2EnterpriseUser urnietfparamsscimschemasextensionenterprise20User) {
+    this.urnietfparamsscimschemasextensionenterprise20User = urnietfparamsscimschemasextensionenterprise20User;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User")
+  public ScimV2EnterpriseUser getUrnietfparamsscimschemasextensionenterprise20User() {
+    return urnietfparamsscimschemasextensionenterprise20User;
+  }
+  public void setUrnietfparamsscimschemasextensionenterprise20User(ScimV2EnterpriseUser urnietfparamsscimschemasextensionenterprise20User) {
+    this.urnietfparamsscimschemasextensionenterprise20User = urnietfparamsscimschemasextensionenterprise20User;
   }
 
   
@@ -278,23 +295,6 @@ public class ScimV2User  implements Serializable {
   }
   public void setMeta(ScimMetadata meta) {
     this.meta = meta;
-  }
-
-  
-  /**
-   **/
-  public ScimV2User urnietfparamsscimschemasextensionenterprise20User(ScimV2EnterpriseUser urnietfparamsscimschemasextensionenterprise20User) {
-    this.urnietfparamsscimschemasextensionenterprise20User = urnietfparamsscimschemasextensionenterprise20User;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User")
-  public ScimV2EnterpriseUser getUrnietfparamsscimschemasextensionenterprise20User() {
-    return urnietfparamsscimschemasextensionenterprise20User;
-  }
-  public void setUrnietfparamsscimschemasextensionenterprise20User(ScimV2EnterpriseUser urnietfparamsscimschemasextensionenterprise20User) {
-    this.urnietfparamsscimschemasextensionenterprise20User = urnietfparamsscimschemasextensionenterprise20User;
   }
 
   
@@ -321,13 +321,13 @@ public class ScimV2User  implements Serializable {
         Objects.equals(this.externalId, scimV2User.externalId) &&
         Objects.equals(this.groups, scimV2User.groups) &&
         Objects.equals(this.roles, scimV2User.roles) &&
-        Objects.equals(this.meta, scimV2User.meta) &&
-        Objects.equals(this.urnietfparamsscimschemasextensionenterprise20User, scimV2User.urnietfparamsscimschemasextensionenterprise20User);
+        Objects.equals(this.urnietfparamsscimschemasextensionenterprise20User, scimV2User.urnietfparamsscimschemasextensionenterprise20User) &&
+        Objects.equals(this.meta, scimV2User.meta);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, schemas, active, userName, displayName, password, title, phoneNumbers, emails, photos, externalId, groups, roles, meta, urnietfparamsscimschemasextensionenterprise20User);
+    return Objects.hash(id, schemas, active, userName, displayName, password, title, phoneNumbers, emails, photos, externalId, groups, roles, urnietfparamsscimschemasextensionenterprise20User, meta);
   }
 
   @Override
@@ -348,8 +348,8 @@ public class ScimV2User  implements Serializable {
     sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
-    sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    urnietfparamsscimschemasextensionenterprise20User: ").append(toIndentedString(urnietfparamsscimschemasextensionenterprise20User)).append("\n");
+    sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("}");
     return sb.toString();
   }

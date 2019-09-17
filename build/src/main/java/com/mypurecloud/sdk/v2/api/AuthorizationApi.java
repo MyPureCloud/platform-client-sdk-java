@@ -1070,28 +1070,32 @@ public class AuthorizationApi {
    * Get a single organization role.
    * Get the organization role specified by its ID.
    * @param roleId Role ID (required)
+   * @param expand Which fields, if any, to expand. (optional)
    * @return DomainOrganizationRole
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DomainOrganizationRole getAuthorizationRole(String roleId) throws IOException, ApiException {
-    return  getAuthorizationRole(createGetAuthorizationRoleRequest(roleId));
+  public DomainOrganizationRole getAuthorizationRole(String roleId, List<String> expand) throws IOException, ApiException {
+    return  getAuthorizationRole(createGetAuthorizationRoleRequest(roleId, expand));
   }
 
   /**
    * Get a single organization role.
    * Get the organization role specified by its ID.
    * @param roleId Role ID (required)
+   * @param expand Which fields, if any, to expand. (optional)
    * @return DomainOrganizationRole
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DomainOrganizationRole> getAuthorizationRoleWithHttpInfo(String roleId) throws IOException {
-    return getAuthorizationRole(createGetAuthorizationRoleRequest(roleId).withHttpInfo());
+  public ApiResponse<DomainOrganizationRole> getAuthorizationRoleWithHttpInfo(String roleId, List<String> expand) throws IOException {
+    return getAuthorizationRole(createGetAuthorizationRoleRequest(roleId, expand).withHttpInfo());
   }
 
-  private GetAuthorizationRoleRequest createGetAuthorizationRoleRequest(String roleId) {
+  private GetAuthorizationRoleRequest createGetAuthorizationRoleRequest(String roleId, List<String> expand) {
     return GetAuthorizationRoleRequest.builder()
             .withRoleId(roleId)
+    
+            .withExpand(expand)
     
             .build();
   }

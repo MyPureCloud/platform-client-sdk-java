@@ -4,12 +4,12 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.EdgeMetricsDisk;
 import com.mypurecloud.sdk.v2.model.EdgeMetricsMemory;
 import com.mypurecloud.sdk.v2.model.EdgeMetricsNetwork;
 import com.mypurecloud.sdk.v2.model.EdgeMetricsProcessor;
 import com.mypurecloud.sdk.v2.model.EdgeMetricsSubsystem;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ import java.io.Serializable;
 
 public class EdgeMetrics  implements Serializable {
   
-  private UriReference edge = null;
+  private DomainEntityRef edge = null;
   private Date eventTime = null;
   private Long upTimeMsec = null;
   private List<EdgeMetricsProcessor> processors = new ArrayList<EdgeMetricsProcessor>();
@@ -35,17 +35,17 @@ public class EdgeMetrics  implements Serializable {
   
   /**
    **/
-  public EdgeMetrics edge(UriReference edge) {
+  public EdgeMetrics edge(DomainEntityRef edge) {
     this.edge = edge;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("edge")
-  public UriReference getEdge() {
+  public DomainEntityRef getEdge() {
     return edge;
   }
-  public void setEdge(UriReference edge) {
+  public void setEdge(DomainEntityRef edge) {
     this.edge = edge;
   }
 

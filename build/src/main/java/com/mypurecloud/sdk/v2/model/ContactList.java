@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContactPhoneNumberColumn;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.ImportStatus;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -25,14 +25,14 @@ public class ContactList  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Integer version = null;
-  private UriReference division = null;
+  private DomainEntityRef division = null;
   private List<String> columnNames = new ArrayList<String>();
   private List<ContactPhoneNumberColumn> phoneColumns = new ArrayList<ContactPhoneNumberColumn>();
   private ImportStatus importStatus = null;
   private String previewModeColumnName = null;
   private List<String> previewModeAcceptedValues = new ArrayList<String>();
   private Long size = null;
-  private UriReference attemptLimits = null;
+  private DomainEntityRef attemptLimits = null;
   private Boolean automaticTimeZoneMapping = null;
   private String zipCodeColumnName = null;
   private String selfUri = null;
@@ -97,17 +97,17 @@ public class ContactList  implements Serializable {
   /**
    * The division this entity belongs to.
    **/
-  public ContactList division(UriReference division) {
+  public ContactList division(DomainEntityRef division) {
     this.division = division;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The division this entity belongs to.")
   @JsonProperty("division")
-  public UriReference getDivision() {
+  public DomainEntityRef getDivision() {
     return division;
   }
-  public void setDivision(UriReference division) {
+  public void setDivision(DomainEntityRef division) {
     this.division = division;
   }
 
@@ -212,17 +212,17 @@ public class ContactList  implements Serializable {
   /**
    * AttemptLimits for this ContactList.
    **/
-  public ContactList attemptLimits(UriReference attemptLimits) {
+  public ContactList attemptLimits(DomainEntityRef attemptLimits) {
     this.attemptLimits = attemptLimits;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "AttemptLimits for this ContactList.")
   @JsonProperty("attemptLimits")
-  public UriReference getAttemptLimits() {
+  public DomainEntityRef getAttemptLimits() {
     return attemptLimits;
   }
-  public void setAttemptLimits(UriReference attemptLimits) {
+  public void setAttemptLimits(DomainEntityRef attemptLimits) {
     this.attemptLimits = attemptLimits;
   }
 

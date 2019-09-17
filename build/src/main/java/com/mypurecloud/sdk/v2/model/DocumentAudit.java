@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AuditChange;
 import com.mypurecloud.sdk.v2.model.AuditEntityReference;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -23,8 +23,8 @@ public class DocumentAudit  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private UriReference user = null;
-  private UriReference workspace = null;
+  private DomainEntityRef user = null;
+  private DomainEntityRef workspace = null;
   private String transactionId = null;
   private Boolean transactionInitiator = null;
   private String application = null;
@@ -280,34 +280,34 @@ public class DocumentAudit  implements Serializable {
   
   /**
    **/
-  public DocumentAudit user(UriReference user) {
+  public DocumentAudit user(DomainEntityRef user) {
     this.user = user;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("user")
-  public UriReference getUser() {
+  public DomainEntityRef getUser() {
     return user;
   }
-  public void setUser(UriReference user) {
+  public void setUser(DomainEntityRef user) {
     this.user = user;
   }
 
   
   /**
    **/
-  public DocumentAudit workspace(UriReference workspace) {
+  public DocumentAudit workspace(DomainEntityRef workspace) {
     this.workspace = workspace;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("workspace")
-  public UriReference getWorkspace() {
+  public DomainEntityRef getWorkspace() {
     return workspace;
   }
-  public void setWorkspace(UriReference workspace) {
+  public void setWorkspace(DomainEntityRef workspace) {
     this.workspace = workspace;
   }
 

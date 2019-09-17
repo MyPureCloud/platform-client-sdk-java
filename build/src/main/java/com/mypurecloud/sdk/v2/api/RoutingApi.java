@@ -2121,13 +2121,14 @@ public class RoutingApi {
    * @param sortBy Sort by (optional, default to name)
    * @param name Name (optional)
    * @param active Active (optional)
+   * @param id ID(s) (optional)
    * @param divisionId Division ID(s) (optional)
    * @return QueueEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public QueueEntityListing getRoutingQueues(Integer pageSize, Integer pageNumber, String sortBy, String name, Boolean active, List<String> divisionId) throws IOException, ApiException {
-    return  getRoutingQueues(createGetRoutingQueuesRequest(pageSize, pageNumber, sortBy, name, active, divisionId));
+  public QueueEntityListing getRoutingQueues(Integer pageSize, Integer pageNumber, String sortBy, String name, Boolean active, List<String> id, List<String> divisionId) throws IOException, ApiException {
+    return  getRoutingQueues(createGetRoutingQueuesRequest(pageSize, pageNumber, sortBy, name, active, id, divisionId));
   }
 
   /**
@@ -2138,15 +2139,16 @@ public class RoutingApi {
    * @param sortBy Sort by (optional, default to name)
    * @param name Name (optional)
    * @param active Active (optional)
+   * @param id ID(s) (optional)
    * @param divisionId Division ID(s) (optional)
    * @return QueueEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueueEntityListing> getRoutingQueuesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String name, Boolean active, List<String> divisionId) throws IOException {
-    return getRoutingQueues(createGetRoutingQueuesRequest(pageSize, pageNumber, sortBy, name, active, divisionId).withHttpInfo());
+  public ApiResponse<QueueEntityListing> getRoutingQueuesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String name, Boolean active, List<String> id, List<String> divisionId) throws IOException {
+    return getRoutingQueues(createGetRoutingQueuesRequest(pageSize, pageNumber, sortBy, name, active, id, divisionId).withHttpInfo());
   }
 
-  private GetRoutingQueuesRequest createGetRoutingQueuesRequest(Integer pageSize, Integer pageNumber, String sortBy, String name, Boolean active, List<String> divisionId) {
+  private GetRoutingQueuesRequest createGetRoutingQueuesRequest(Integer pageSize, Integer pageNumber, String sortBy, String name, Boolean active, List<String> id, List<String> divisionId) {
     return GetRoutingQueuesRequest.builder()
             .withPageSize(pageSize)
     
@@ -2157,6 +2159,8 @@ public class RoutingApi {
             .withName(name)
     
             .withActive(active)
+    
+            .withId(id)
     
             .withDivisionId(divisionId)
     

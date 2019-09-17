@@ -5,11 +5,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.TrunkConnectedStatus;
 import com.mypurecloud.sdk.v2.model.TrunkMetricsNetworkTypeIp;
 import com.mypurecloud.sdk.v2.model.TrunkMetricsOptions;
 import com.mypurecloud.sdk.v2.model.TrunkMetricsRegisters;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -105,13 +105,13 @@ public class Trunk  implements Serializable {
     }
   }
   private TrunkTypeEnum trunkType = null;
-  private UriReference edge = null;
-  private UriReference trunkBase = null;
-  private UriReference trunkMetabase = null;
-  private UriReference edgeGroup = null;
+  private DomainEntityRef edge = null;
+  private DomainEntityRef trunkBase = null;
+  private DomainEntityRef trunkMetabase = null;
+  private DomainEntityRef edgeGroup = null;
   private Boolean inService = null;
   private Boolean enabled = null;
-  private UriReference logicalInterface = null;
+  private DomainEntityRef logicalInterface = null;
   private TrunkConnectedStatus connectedStatus = null;
   private List<TrunkMetricsOptions> optionsStatus = new ArrayList<TrunkMetricsOptions>();
   private List<TrunkMetricsRegisters> registersStatus = new ArrayList<TrunkMetricsRegisters>();
@@ -390,17 +390,17 @@ public class Trunk  implements Serializable {
   /**
    * The Edge using this trunk.
    **/
-  public Trunk edge(UriReference edge) {
+  public Trunk edge(DomainEntityRef edge) {
     this.edge = edge;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The Edge using this trunk.")
   @JsonProperty("edge")
-  public UriReference getEdge() {
+  public DomainEntityRef getEdge() {
     return edge;
   }
-  public void setEdge(UriReference edge) {
+  public void setEdge(DomainEntityRef edge) {
     this.edge = edge;
   }
 
@@ -408,17 +408,17 @@ public class Trunk  implements Serializable {
   /**
    * The trunk base configuration used on this trunk.
    **/
-  public Trunk trunkBase(UriReference trunkBase) {
+  public Trunk trunkBase(DomainEntityRef trunkBase) {
     this.trunkBase = trunkBase;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The trunk base configuration used on this trunk.")
   @JsonProperty("trunkBase")
-  public UriReference getTrunkBase() {
+  public DomainEntityRef getTrunkBase() {
     return trunkBase;
   }
-  public void setTrunkBase(UriReference trunkBase) {
+  public void setTrunkBase(DomainEntityRef trunkBase) {
     this.trunkBase = trunkBase;
   }
 
@@ -426,17 +426,17 @@ public class Trunk  implements Serializable {
   /**
    * The metabase used to create this trunk.
    **/
-  public Trunk trunkMetabase(UriReference trunkMetabase) {
+  public Trunk trunkMetabase(DomainEntityRef trunkMetabase) {
     this.trunkMetabase = trunkMetabase;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The metabase used to create this trunk.")
   @JsonProperty("trunkMetabase")
-  public UriReference getTrunkMetabase() {
+  public DomainEntityRef getTrunkMetabase() {
     return trunkMetabase;
   }
-  public void setTrunkMetabase(UriReference trunkMetabase) {
+  public void setTrunkMetabase(DomainEntityRef trunkMetabase) {
     this.trunkMetabase = trunkMetabase;
   }
 
@@ -444,17 +444,17 @@ public class Trunk  implements Serializable {
   /**
    * The edge group associated with this trunk.
    **/
-  public Trunk edgeGroup(UriReference edgeGroup) {
+  public Trunk edgeGroup(DomainEntityRef edgeGroup) {
     this.edgeGroup = edgeGroup;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The edge group associated with this trunk.")
   @JsonProperty("edgeGroup")
-  public UriReference getEdgeGroup() {
+  public DomainEntityRef getEdgeGroup() {
     return edgeGroup;
   }
-  public void setEdgeGroup(UriReference edgeGroup) {
+  public void setEdgeGroup(DomainEntityRef edgeGroup) {
     this.edgeGroup = edgeGroup;
   }
 
@@ -487,17 +487,17 @@ public class Trunk  implements Serializable {
   /**
    * The Logical Interface on the Edge to which the trunk is assigned.
    **/
-  public Trunk logicalInterface(UriReference logicalInterface) {
+  public Trunk logicalInterface(DomainEntityRef logicalInterface) {
     this.logicalInterface = logicalInterface;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The Logical Interface on the Edge to which the trunk is assigned.")
   @JsonProperty("logicalInterface")
-  public UriReference getLogicalInterface() {
+  public DomainEntityRef getLogicalInterface() {
     return logicalInterface;
   }
-  public void setLogicalInterface(UriReference logicalInterface) {
+  public void setLogicalInterface(DomainEntityRef logicalInterface) {
     this.logicalInterface = logicalInterface;
   }
 

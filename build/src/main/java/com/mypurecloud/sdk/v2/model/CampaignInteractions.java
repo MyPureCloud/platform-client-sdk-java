@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CampaignInteraction;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 public class CampaignInteractions  implements Serializable {
   
-  private UriReference campaign = null;
+  private DomainEntityRef campaign = null;
   private List<CampaignInteraction> pendingInteractions = new ArrayList<CampaignInteraction>();
   private List<CampaignInteraction> proceedingInteractions = new ArrayList<CampaignInteraction>();
   private List<CampaignInteraction> previewingInteractions = new ArrayList<CampaignInteraction>();
@@ -28,17 +28,17 @@ public class CampaignInteractions  implements Serializable {
   
   /**
    **/
-  public CampaignInteractions campaign(UriReference campaign) {
+  public CampaignInteractions campaign(DomainEntityRef campaign) {
     this.campaign = campaign;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("campaign")
-  public UriReference getCampaign() {
+  public DomainEntityRef getCampaign() {
     return campaign;
   }
-  public void setCampaign(UriReference campaign) {
+  public void setCampaign(DomainEntityRef campaign) {
     this.campaign = campaign;
   }
 

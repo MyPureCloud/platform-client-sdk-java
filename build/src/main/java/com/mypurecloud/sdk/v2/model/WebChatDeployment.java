@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.WebChatConfig;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -26,7 +26,7 @@ public class WebChatDeployment  implements Serializable {
   private Boolean disabled = null;
   private WebChatConfig webChatConfig = null;
   private List<String> allowedDomains = new ArrayList<String>();
-  private UriReference flow = null;
+  private DomainEntityRef flow = null;
   private String selfUri = null;
 
   
@@ -160,17 +160,17 @@ public class WebChatDeployment  implements Serializable {
   /**
    * The URI of the Inbound Chat Flow to run when new chats are initiated under this Deployment.
    **/
-  public WebChatDeployment flow(UriReference flow) {
+  public WebChatDeployment flow(DomainEntityRef flow) {
     this.flow = flow;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The URI of the Inbound Chat Flow to run when new chats are initiated under this Deployment.")
   @JsonProperty("flow")
-  public UriReference getFlow() {
+  public DomainEntityRef getFlow() {
     return flow;
   }
-  public void setFlow(UriReference flow) {
+  public void setFlow(DomainEntityRef flow) {
     this.flow = flow;
   }
 

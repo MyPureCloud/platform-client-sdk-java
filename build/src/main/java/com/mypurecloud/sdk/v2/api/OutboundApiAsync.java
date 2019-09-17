@@ -58,7 +58,7 @@ import com.mypurecloud.sdk.v2.model.AuditSearchResult;
 import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
 import com.mypurecloud.sdk.v2.model.ContactCallbackRequest;
 import com.mypurecloud.sdk.v2.model.WritableDialerContact;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.FilterPreviewResponse;
 import com.mypurecloud.sdk.v2.model.DncListCreate;
 import com.mypurecloud.sdk.v2.model.Agent;
@@ -5661,13 +5661,13 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UriReference> postOutboundContactlistExportAsync(PostOutboundContactlistExportRequest request, final AsyncApiCallback<UriReference> callback) {
+  public Future<DomainEntityRef> postOutboundContactlistExportAsync(PostOutboundContactlistExportRequest request, final AsyncApiCallback<DomainEntityRef> callback) {
     try {
-      final SettableFuture<UriReference> future = SettableFuture.create();
+      final SettableFuture<DomainEntityRef> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UriReference>() {}, new AsyncApiCallback<ApiResponse<UriReference>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainEntityRef>() {}, new AsyncApiCallback<ApiResponse<DomainEntityRef>>() {
         @Override
-        public void onCompleted(ApiResponse<UriReference> response) {
+        public void onCompleted(ApiResponse<DomainEntityRef> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -5695,13 +5695,13 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UriReference>> postOutboundContactlistExportAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UriReference>> callback) {
+  public Future<ApiResponse<DomainEntityRef>> postOutboundContactlistExportAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DomainEntityRef>> callback) {
     try {
-      final SettableFuture<ApiResponse<UriReference>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<DomainEntityRef>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<UriReference>() {}, new AsyncApiCallback<ApiResponse<UriReference>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<DomainEntityRef>() {}, new AsyncApiCallback<ApiResponse<DomainEntityRef>>() {
         @Override
-        public void onCompleted(ApiResponse<UriReference> response) {
+        public void onCompleted(ApiResponse<DomainEntityRef> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -5709,7 +5709,7 @@ public class OutboundApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<UriReference> response = (ApiResponse<UriReference>)(ApiResponse<?>)exception;
+            ApiResponse<DomainEntityRef> response = (ApiResponse<DomainEntityRef>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -5717,7 +5717,7 @@ public class OutboundApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<UriReference> response = (ApiResponse<UriReference>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<DomainEntityRef> response = (ApiResponse<DomainEntityRef>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -6041,13 +6041,13 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UriReference> postOutboundDnclistExportAsync(PostOutboundDnclistExportRequest request, final AsyncApiCallback<UriReference> callback) {
+  public Future<DomainEntityRef> postOutboundDnclistExportAsync(PostOutboundDnclistExportRequest request, final AsyncApiCallback<DomainEntityRef> callback) {
     try {
-      final SettableFuture<UriReference> future = SettableFuture.create();
+      final SettableFuture<DomainEntityRef> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UriReference>() {}, new AsyncApiCallback<ApiResponse<UriReference>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DomainEntityRef>() {}, new AsyncApiCallback<ApiResponse<DomainEntityRef>>() {
         @Override
-        public void onCompleted(ApiResponse<UriReference> response) {
+        public void onCompleted(ApiResponse<DomainEntityRef> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -6075,13 +6075,13 @@ public class OutboundApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UriReference>> postOutboundDnclistExportAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UriReference>> callback) {
+  public Future<ApiResponse<DomainEntityRef>> postOutboundDnclistExportAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DomainEntityRef>> callback) {
     try {
-      final SettableFuture<ApiResponse<UriReference>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<DomainEntityRef>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<UriReference>() {}, new AsyncApiCallback<ApiResponse<UriReference>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<DomainEntityRef>() {}, new AsyncApiCallback<ApiResponse<DomainEntityRef>>() {
         @Override
-        public void onCompleted(ApiResponse<UriReference> response) {
+        public void onCompleted(ApiResponse<DomainEntityRef> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -6089,7 +6089,7 @@ public class OutboundApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<UriReference> response = (ApiResponse<UriReference>)(ApiResponse<?>)exception;
+            ApiResponse<DomainEntityRef> response = (ApiResponse<DomainEntityRef>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -6097,7 +6097,7 @@ public class OutboundApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<UriReference> response = (ApiResponse<UriReference>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<DomainEntityRef> response = (ApiResponse<DomainEntityRef>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

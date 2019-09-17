@@ -9,9 +9,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * User&#39;s Manager
+ * The user&#39;s manager.
  */
-@ApiModel(description = "User's Manager")
+@ApiModel(description = "The user's manager.")
 
 public class Manager  implements Serializable {
   
@@ -37,7 +37,7 @@ public class Manager  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "URI for Manager User record.")
+  @ApiModelProperty(example = "null", value = "The URI of the manager's user record.")
   @JsonProperty("$ref")
   public String getRef() {
     return ref;

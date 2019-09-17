@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -56,8 +56,8 @@ public class Station  implements Serializable {
   private StatusEnum status = null;
   private String userId = null;
   private String webRtcUserId = null;
-  private UriReference primaryEdge = null;
-  private UriReference secondaryEdge = null;
+  private DomainEntityRef primaryEdge = null;
+  private DomainEntityRef secondaryEdge = null;
   private String type = null;
   private String lineAppearanceId = null;
   private Integer webRtcMediaDscp = null;
@@ -162,34 +162,34 @@ public class Station  implements Serializable {
   
   /**
    **/
-  public Station primaryEdge(UriReference primaryEdge) {
+  public Station primaryEdge(DomainEntityRef primaryEdge) {
     this.primaryEdge = primaryEdge;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("primaryEdge")
-  public UriReference getPrimaryEdge() {
+  public DomainEntityRef getPrimaryEdge() {
     return primaryEdge;
   }
-  public void setPrimaryEdge(UriReference primaryEdge) {
+  public void setPrimaryEdge(DomainEntityRef primaryEdge) {
     this.primaryEdge = primaryEdge;
   }
 
   
   /**
    **/
-  public Station secondaryEdge(UriReference secondaryEdge) {
+  public Station secondaryEdge(DomainEntityRef secondaryEdge) {
     this.secondaryEdge = secondaryEdge;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("secondaryEdge")
-  public UriReference getSecondaryEdge() {
+  public DomainEntityRef getSecondaryEdge() {
     return secondaryEdge;
   }
-  public void setSecondaryEdge(UriReference secondaryEdge) {
+  public void setSecondaryEdge(DomainEntityRef secondaryEdge) {
     this.secondaryEdge = secondaryEdge;
   }
 

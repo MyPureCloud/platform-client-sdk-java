@@ -4,8 +4,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.InboundRoute;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -16,23 +16,23 @@ import java.io.Serializable;
 
 public class QueueEmailAddress  implements Serializable {
   
-  private UriReference domain = null;
+  private DomainEntityRef domain = null;
   private InboundRoute route = null;
 
   
   /**
    **/
-  public QueueEmailAddress domain(UriReference domain) {
+  public QueueEmailAddress domain(DomainEntityRef domain) {
     this.domain = domain;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("domain")
-  public UriReference getDomain() {
+  public DomainEntityRef getDomain() {
     return domain;
   }
-  public void setDomain(UriReference domain) {
+  public void setDomain(DomainEntityRef domain) {
     this.domain = domain;
   }
 

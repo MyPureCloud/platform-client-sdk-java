@@ -5,9 +5,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.GDPRSubject;
 import com.mypurecloud.sdk.v2.model.ReplacementTerm;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ public class GDPRRequest  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private UriReference createdBy = null;
+  private DomainEntityRef createdBy = null;
   private List<ReplacementTerm> replacementTerms = new ArrayList<ReplacementTerm>();
 
   /**
@@ -134,17 +134,17 @@ public class GDPRRequest  implements Serializable {
   /**
    * The user that created this request
    **/
-  public GDPRRequest createdBy(UriReference createdBy) {
+  public GDPRRequest createdBy(DomainEntityRef createdBy) {
     this.createdBy = createdBy;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "The user that created this request")
   @JsonProperty("createdBy")
-  public UriReference getCreatedBy() {
+  public DomainEntityRef getCreatedBy() {
     return createdBy;
   }
-  public void setCreatedBy(UriReference createdBy) {
+  public void setCreatedBy(DomainEntityRef createdBy) {
     this.createdBy = createdBy;
   }
 

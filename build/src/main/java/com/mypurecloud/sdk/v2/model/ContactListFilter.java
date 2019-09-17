@@ -6,7 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContactListFilterClause;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ public class ContactListFilter  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Integer version = null;
-  private UriReference contactList = null;
+  private DomainEntityRef contactList = null;
   private List<ContactListFilterClause> clauses = new ArrayList<ContactListFilterClause>();
 
   /**
@@ -125,17 +125,17 @@ public class ContactListFilter  implements Serializable {
   /**
    * The contact list the filter is based on.
    **/
-  public ContactListFilter contactList(UriReference contactList) {
+  public ContactListFilter contactList(DomainEntityRef contactList) {
     this.contactList = contactList;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "The contact list the filter is based on.")
   @JsonProperty("contactList")
-  public UriReference getContactList() {
+  public DomainEntityRef getContactList() {
     return contactList;
   }
-  public void setContactList(UriReference contactList) {
+  public void setContactList(DomainEntityRef contactList) {
     this.contactList = contactList;
   }
 

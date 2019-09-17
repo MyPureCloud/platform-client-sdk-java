@@ -8,7 +8,7 @@ title: CampaignInteractions
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **campaign** | [**UriReference**](UriReference.html) |  |  [optional] |
+| **campaign** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
 | **pendingInteractions** | [**List&lt;CampaignInteraction&gt;**](CampaignInteraction.html) |  |  [optional] |
 | **proceedingInteractions** | [**List&lt;CampaignInteraction&gt;**](CampaignInteraction.html) |  |  [optional] |
 | **previewingInteractions** | [**List&lt;CampaignInteraction&gt;**](CampaignInteraction.html) |  |  [optional] |

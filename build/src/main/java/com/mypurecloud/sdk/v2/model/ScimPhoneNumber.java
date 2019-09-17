@@ -19,7 +19,7 @@ public class ScimPhoneNumber  implements Serializable {
   private String value = null;
 
   /**
-   * The type of phone number. 
+   * The type of phone number.
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -79,14 +79,14 @@ public class ScimPhoneNumber  implements Serializable {
 
   
   /**
-   * The type of phone number. 
+   * The type of phone number.
    **/
   public ScimPhoneNumber type(TypeEnum type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The type of phone number. ")
+  @ApiModelProperty(example = "null", value = "The type of phone number.")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;

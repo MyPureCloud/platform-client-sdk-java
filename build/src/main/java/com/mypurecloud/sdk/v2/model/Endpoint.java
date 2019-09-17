@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -69,9 +69,9 @@ public class Endpoint  implements Serializable {
   private String createdByApp = null;
   private Integer count = null;
   private Map<String, Object> properties = null;
-  private UriReference schema = null;
+  private DomainEntityRef schema = null;
   private Boolean enabled = null;
-  private UriReference site = null;
+  private DomainEntityRef site = null;
   private List<String> dids = new ArrayList<String>();
   private String selfUri = null;
 
@@ -289,17 +289,17 @@ public class Endpoint  implements Serializable {
   /**
    * Schema
    **/
-  public Endpoint schema(UriReference schema) {
+  public Endpoint schema(DomainEntityRef schema) {
     this.schema = schema;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "Schema")
   @JsonProperty("schema")
-  public UriReference getSchema() {
+  public DomainEntityRef getSchema() {
     return schema;
   }
-  public void setSchema(UriReference schema) {
+  public void setSchema(DomainEntityRef schema) {
     this.schema = schema;
   }
 
@@ -323,17 +323,17 @@ public class Endpoint  implements Serializable {
   
   /**
    **/
-  public Endpoint site(UriReference site) {
+  public Endpoint site(DomainEntityRef site) {
     this.site = site;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("site")
-  public UriReference getSite() {
+  public DomainEntityRef getSite() {
     return site;
   }
-  public void setSite(UriReference site) {
+  public void setSite(DomainEntityRef site) {
     this.site = site;
   }
 

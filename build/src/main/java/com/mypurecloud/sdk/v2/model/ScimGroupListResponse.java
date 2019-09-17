@@ -25,21 +25,21 @@ public class ScimGroupListResponse  implements Serializable {
   private List<String> schemas = new ArrayList<String>();
 
   
-  @ApiModelProperty(example = "null", value = "Total Results")
+  @ApiModelProperty(example = "null", value = "The total number of results.")
   @JsonProperty("totalResults")
   public Long getTotalResults() {
     return totalResults;
   }
 
   
-  @ApiModelProperty(example = "null", value = "Start index")
+  @ApiModelProperty(example = "null", value = "The 1-based index of the first result returned by this request. Add this to itemsPerPage when requesting the next page of results.")
   @JsonProperty("startIndex")
   public Long getStartIndex() {
     return startIndex;
   }
 
   
-  @ApiModelProperty(example = "null", value = "Items per Page")
+  @ApiModelProperty(example = "null", value = "The number of resources returned per page.")
   @JsonProperty("itemsPerPage")
   public Long getItemsPerPage() {
     return itemsPerPage;
@@ -65,14 +65,14 @@ public class ScimGroupListResponse  implements Serializable {
 
   
   /**
-   * schemas supported
+   * The list of supported schemas.
    **/
   public ScimGroupListResponse schemas(List<String> schemas) {
     this.schemas = schemas;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "schemas supported")
+  @ApiModelProperty(example = "null", value = "The list of supported schemas.")
   @JsonProperty("schemas")
   public List<String> getSchemas() {
     return schemas;

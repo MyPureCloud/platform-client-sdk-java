@@ -54,6 +54,7 @@ public class RecordingJobsQuery  implements Serializable {
   private ActionEnum action = null;
   private Date actionDate = null;
   private String integrationId = null;
+  private Boolean includeScreenRecordings = null;
   private AsyncConversationQuery conversationQuery = null;
 
   
@@ -94,20 +95,38 @@ public class RecordingJobsQuery  implements Serializable {
 
   
   /**
-   * Integration ID
+   * Integration ID (Required only for EXPORT action)
    **/
   public RecordingJobsQuery integrationId(String integrationId) {
     this.integrationId = integrationId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Integration ID")
+  @ApiModelProperty(example = "null", value = "Integration ID (Required only for EXPORT action)")
   @JsonProperty("integrationId")
   public String getIntegrationId() {
     return integrationId;
   }
   public void setIntegrationId(String integrationId) {
     this.integrationId = integrationId;
+  }
+
+  
+  /**
+   * Include Screen recordings for export action, default value = true 
+   **/
+  public RecordingJobsQuery includeScreenRecordings(Boolean includeScreenRecordings) {
+    this.includeScreenRecordings = includeScreenRecordings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Include Screen recordings for export action, default value = true ")
+  @JsonProperty("includeScreenRecordings")
+  public Boolean getIncludeScreenRecordings() {
+    return includeScreenRecordings;
+  }
+  public void setIncludeScreenRecordings(Boolean includeScreenRecordings) {
+    this.includeScreenRecordings = includeScreenRecordings;
   }
 
   
@@ -142,12 +161,13 @@ public class RecordingJobsQuery  implements Serializable {
     return Objects.equals(this.action, recordingJobsQuery.action) &&
         Objects.equals(this.actionDate, recordingJobsQuery.actionDate) &&
         Objects.equals(this.integrationId, recordingJobsQuery.integrationId) &&
+        Objects.equals(this.includeScreenRecordings, recordingJobsQuery.includeScreenRecordings) &&
         Objects.equals(this.conversationQuery, recordingJobsQuery.conversationQuery);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(action, actionDate, integrationId, conversationQuery);
+    return Objects.hash(action, actionDate, integrationId, includeScreenRecordings, conversationQuery);
   }
 
   @Override
@@ -158,6 +178,7 @@ public class RecordingJobsQuery  implements Serializable {
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    actionDate: ").append(toIndentedString(actionDate)).append("\n");
     sb.append("    integrationId: ").append(toIndentedString(integrationId)).append("\n");
+    sb.append("    includeScreenRecordings: ").append(toIndentedString(includeScreenRecordings)).append("\n");
     sb.append("    conversationQuery: ").append(toIndentedString(conversationQuery)).append("\n");
     sb.append("}");
     return sb.toString();

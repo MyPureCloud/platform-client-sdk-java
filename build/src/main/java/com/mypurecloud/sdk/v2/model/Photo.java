@@ -55,14 +55,14 @@ public class Photo  implements Serializable {
 
   
   /**
-   * The URI of the photo. Photos are limited to 240 KB and JPG, GIF, and PNG formats. Returns a JPG. 
+   * The URI of the photo. Photos are limited to 240 KB and JPG, GIF, and PNG formats. Returns a JPG.
    **/
   public Photo value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The URI of the photo. Photos are limited to 240 KB and JPG, GIF, and PNG formats. Returns a JPG. ")
+  @ApiModelProperty(example = "null", value = "The URI of the photo. Photos are limited to 240 KB and JPG, GIF, and PNG formats. Returns a JPG.")
   @JsonProperty("value")
   public String getValue() {
     return value;

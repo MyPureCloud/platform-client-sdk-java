@@ -39,8 +39,8 @@ public class BillingApi {
 
   
   /**
-   * Get a report of the billable usages (e.g. licenses and devices utilized) for a given period.
-   * 
+   * Get a report of the billable license usages
+   * Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response&#39;s status is InProgress, wait a few seconds, then try the same request again.
    * @param startDate The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ (required)
    * @param endDate The period end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ (required)
    * @return BillingUsageReport
@@ -52,8 +52,8 @@ public class BillingApi {
   }
 
   /**
-   * Get a report of the billable usages (e.g. licenses and devices utilized) for a given period.
-   * 
+   * Get a report of the billable license usages
+   * Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response&#39;s status is InProgress, wait a few seconds, then try the same request again.
    * @param startDate The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ (required)
    * @param endDate The period end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ (required)
    * @return BillingUsageReport
@@ -73,8 +73,8 @@ public class BillingApi {
   }
 
   /**
-   * Get a report of the billable usages (e.g. licenses and devices utilized) for a given period.
-   * 
+   * Get a report of the billable license usages
+   * Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response&#39;s status is InProgress, wait a few seconds, then try the same request again.
    * @param request The request object
    * @return BillingUsageReport
    * @throws ApiException if the request fails on the server
@@ -92,8 +92,8 @@ public class BillingApi {
   }
 
   /**
-   * Get a report of the billable usages (e.g. licenses and devices utilized) for a given period.
-   * 
+   * Get a report of the billable license usages
+   * Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response&#39;s status is InProgress, wait a few seconds, then try the same request again.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

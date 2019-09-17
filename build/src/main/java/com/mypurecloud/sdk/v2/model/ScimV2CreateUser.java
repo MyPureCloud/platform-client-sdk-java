@@ -6,7 +6,6 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Photo;
 import com.mypurecloud.sdk.v2.model.ScimEmail;
-import com.mypurecloud.sdk.v2.model.ScimMetadata;
 import com.mypurecloud.sdk.v2.model.ScimPhoneNumber;
 import com.mypurecloud.sdk.v2.model.ScimV2EnterpriseUser;
 import com.mypurecloud.sdk.v2.model.ScimV2GroupReference;
@@ -35,19 +34,18 @@ public class ScimV2CreateUser  implements Serializable {
   private String externalId = null;
   private List<ScimV2GroupReference> groups = new ArrayList<ScimV2GroupReference>();
   private List<String> roles = new ArrayList<String>();
-  private ScimMetadata meta = null;
   private ScimV2EnterpriseUser urnietfparamsscimschemasextensionenterprise20User = null;
 
   
   /**
-   * schemas supported
+   * The list of supported schemas.
    **/
   public ScimV2CreateUser schemas(List<String> schemas) {
     this.schemas = schemas;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "schemas supported")
+  @ApiModelProperty(example = "null", value = "The list of supported schemas.")
   @JsonProperty("schemas")
   public List<String> getSchemas() {
     return schemas;
@@ -238,38 +236,20 @@ public class ScimV2CreateUser  implements Serializable {
 
   
   /**
-   * Roles
+   * A list of roles assigned to the user.
    **/
   public ScimV2CreateUser roles(List<String> roles) {
     this.roles = roles;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Roles")
+  @ApiModelProperty(example = "null", value = "A list of roles assigned to the user.")
   @JsonProperty("roles")
   public List<String> getRoles() {
     return roles;
   }
   public void setRoles(List<String> roles) {
     this.roles = roles;
-  }
-
-  
-  /**
-   * Resource SCIM meta
-   **/
-  public ScimV2CreateUser meta(ScimMetadata meta) {
-    this.meta = meta;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Resource SCIM meta")
-  @JsonProperty("meta")
-  public ScimMetadata getMeta() {
-    return meta;
-  }
-  public void setMeta(ScimMetadata meta) {
-    this.meta = meta;
   }
 
   
@@ -312,13 +292,12 @@ public class ScimV2CreateUser  implements Serializable {
         Objects.equals(this.externalId, scimV2CreateUser.externalId) &&
         Objects.equals(this.groups, scimV2CreateUser.groups) &&
         Objects.equals(this.roles, scimV2CreateUser.roles) &&
-        Objects.equals(this.meta, scimV2CreateUser.meta) &&
         Objects.equals(this.urnietfparamsscimschemasextensionenterprise20User, scimV2CreateUser.urnietfparamsscimschemasextensionenterprise20User);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(schemas, active, userName, displayName, password, title, phoneNumbers, emails, photos, externalId, groups, roles, meta, urnietfparamsscimschemasextensionenterprise20User);
+    return Objects.hash(schemas, active, userName, displayName, password, title, phoneNumbers, emails, photos, externalId, groups, roles, urnietfparamsscimschemasextensionenterprise20User);
   }
 
   @Override
@@ -338,7 +317,6 @@ public class ScimV2CreateUser  implements Serializable {
     sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
-    sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("    urnietfparamsscimschemasextensionenterprise20User: ").append(toIndentedString(urnietfparamsscimschemasextensionenterprise20User)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -11,7 +11,7 @@ title: ReplaceResponse
 | **id** | **String** |  |  [optional] |
 | **name** | **String** |  |  [optional] |
 | **changeNumber** | **Integer** |  |  [optional] |
-| **uploadStatus** | [**UriReference**](UriReference.html) |  |  [optional] |
+| **uploadStatus** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
 | **uploadDestinationUri** | **String** |  |  [optional] |
 | **uploadMethod** | [**UploadMethodEnum**](#UploadMethodEnum) |  |  [optional] |
 {: class="table table-striped"}

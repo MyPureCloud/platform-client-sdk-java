@@ -4,8 +4,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.RoleDivision;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -28,8 +28,8 @@ public class OAuthClientListing  implements Serializable {
   private List<String> roleIds = new ArrayList<String>();
   private Date dateCreated = null;
   private Date dateModified = null;
-  private UriReference createdBy = null;
-  private UriReference modifiedBy = null;
+  private DomainEntityRef createdBy = null;
+  private DomainEntityRef modifiedBy = null;
   private List<String> scope = new ArrayList<String>();
   private List<RoleDivision> roleDivisions = new ArrayList<RoleDivision>();
   private String selfUri = null;
@@ -188,17 +188,17 @@ public class OAuthClientListing  implements Serializable {
   /**
    * User that created this client
    **/
-  public OAuthClientListing createdBy(UriReference createdBy) {
+  public OAuthClientListing createdBy(DomainEntityRef createdBy) {
     this.createdBy = createdBy;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "User that created this client")
   @JsonProperty("createdBy")
-  public UriReference getCreatedBy() {
+  public DomainEntityRef getCreatedBy() {
     return createdBy;
   }
-  public void setCreatedBy(UriReference createdBy) {
+  public void setCreatedBy(DomainEntityRef createdBy) {
     this.createdBy = createdBy;
   }
 
@@ -206,17 +206,17 @@ public class OAuthClientListing  implements Serializable {
   /**
    * User that last modified this client
    **/
-  public OAuthClientListing modifiedBy(UriReference modifiedBy) {
+  public OAuthClientListing modifiedBy(DomainEntityRef modifiedBy) {
     this.modifiedBy = modifiedBy;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "User that last modified this client")
   @JsonProperty("modifiedBy")
-  public UriReference getModifiedBy() {
+  public DomainEntityRef getModifiedBy() {
     return modifiedBy;
   }
-  public void setModifiedBy(UriReference modifiedBy) {
+  public void setModifiedBy(DomainEntityRef modifiedBy) {
     this.modifiedBy = modifiedBy;
   }
 

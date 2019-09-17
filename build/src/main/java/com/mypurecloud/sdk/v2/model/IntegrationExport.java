@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -15,37 +15,37 @@ import java.io.Serializable;
 
 public class IntegrationExport  implements Serializable {
   
-  private UriReference integration = null;
+  private DomainEntityRef integration = null;
   private Boolean shouldExportScreenRecordings = null;
 
   
   /**
    * The aws-s3-recording-bulk-actions-integration that the policy uses for exports.
    **/
-  public IntegrationExport integration(UriReference integration) {
+  public IntegrationExport integration(DomainEntityRef integration) {
     this.integration = integration;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The aws-s3-recording-bulk-actions-integration that the policy uses for exports.")
+  @ApiModelProperty(example = "null", required = true, value = "The aws-s3-recording-bulk-actions-integration that the policy uses for exports.")
   @JsonProperty("integration")
-  public UriReference getIntegration() {
+  public DomainEntityRef getIntegration() {
     return integration;
   }
-  public void setIntegration(UriReference integration) {
+  public void setIntegration(DomainEntityRef integration) {
     this.integration = integration;
   }
 
   
   /**
-   * True if the policy should export screen recordings in addition to the other conversation media. Default = true
+   * True if the policy should export screen recordings in addition to the other conversation media. Default = false
    **/
   public IntegrationExport shouldExportScreenRecordings(Boolean shouldExportScreenRecordings) {
     this.shouldExportScreenRecordings = shouldExportScreenRecordings;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "True if the policy should export screen recordings in addition to the other conversation media. Default = true")
+  @ApiModelProperty(example = "null", value = "True if the policy should export screen recordings in addition to the other conversation media. Default = false")
   @JsonProperty("shouldExportScreenRecordings")
   public Boolean getShouldExportScreenRecordings() {
     return shouldExportScreenRecordings;

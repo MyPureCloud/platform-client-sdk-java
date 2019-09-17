@@ -21,9 +21,9 @@ title: Endpoint
 | **createdByApp** | **String** | The application that created the resource. |  [optional] |
 | **count** | **Integer** |  |  [optional] |
 | **properties** | **Map&lt;String, Object&gt;** |  |  [optional] |
-| **schema** | [**UriReference**](UriReference.html) | Schema |  |
+| **schema** | [**DomainEntityRef**](DomainEntityRef.html) | Schema |  |
 | **enabled** | **Boolean** |  |  [optional] |
-| **site** | [**UriReference**](UriReference.html) |  |  [optional] |
+| **site** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
 | **dids** | **List&lt;String&gt;** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}

@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.UriReference;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.HashMap;
@@ -18,7 +18,7 @@ import java.io.Serializable;
 
 public class TimeZoneMappingPreview  implements Serializable {
   
-  private UriReference contactList = null;
+  private DomainEntityRef contactList = null;
   private Map<String, Long> contactsPerTimeZone = null;
   private Map<String, Long> contactsMappedUsingZipCode = null;
   private Long contactsMappedToASingleZone = null;
@@ -32,17 +32,17 @@ public class TimeZoneMappingPreview  implements Serializable {
   /**
    * The associated ContactList
    **/
-  public TimeZoneMappingPreview contactList(UriReference contactList) {
+  public TimeZoneMappingPreview contactList(DomainEntityRef contactList) {
     this.contactList = contactList;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The associated ContactList")
   @JsonProperty("contactList")
-  public UriReference getContactList() {
+  public DomainEntityRef getContactList() {
     return contactList;
   }
-  public void setContactList(UriReference contactList) {
+  public void setContactList(DomainEntityRef contactList) {
     this.contactList = contactList;
   }
 

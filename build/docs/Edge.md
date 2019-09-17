@@ -83,6 +83,7 @@ title: Edge
 | RMA | &quot;RMA&quot; |
 | UNPAIRING | &quot;UNPAIRING&quot; |
 | UNPAIRED | &quot;UNPAIRED&quot; |
+| INITIALIZING | &quot;INITIALIZING&quot; |
 {: class="table table-striped"}
 
 

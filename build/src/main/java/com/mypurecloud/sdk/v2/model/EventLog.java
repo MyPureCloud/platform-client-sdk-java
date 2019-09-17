@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.EventMessage;
-import com.mypurecloud.sdk.v2.model.UriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -20,8 +20,8 @@ public class EventLog  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private UriReference errorEntity = null;
-  private UriReference relatedEntity = null;
+  private DomainEntityRef errorEntity = null;
+  private DomainEntityRef relatedEntity = null;
   private Date timestamp = null;
 
   /**
@@ -135,34 +135,34 @@ public class EventLog  implements Serializable {
   
   /**
    **/
-  public EventLog errorEntity(UriReference errorEntity) {
+  public EventLog errorEntity(DomainEntityRef errorEntity) {
     this.errorEntity = errorEntity;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("errorEntity")
-  public UriReference getErrorEntity() {
+  public DomainEntityRef getErrorEntity() {
     return errorEntity;
   }
-  public void setErrorEntity(UriReference errorEntity) {
+  public void setErrorEntity(DomainEntityRef errorEntity) {
     this.errorEntity = errorEntity;
   }
 
   
   /**
    **/
-  public EventLog relatedEntity(UriReference relatedEntity) {
+  public EventLog relatedEntity(DomainEntityRef relatedEntity) {
     this.relatedEntity = relatedEntity;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("relatedEntity")
-  public UriReference getRelatedEntity() {
+  public DomainEntityRef getRelatedEntity() {
     return relatedEntity;
   }
-  public void setRelatedEntity(UriReference relatedEntity) {
+  public void setRelatedEntity(DomainEntityRef relatedEntity) {
     this.relatedEntity = relatedEntity;
   }
 
