@@ -59,6 +59,7 @@ public class LocationSearchRequest  implements Serializable {
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private List<SearchSort> sort = new ArrayList<SearchSort>();
+  private List<String> expand = new ArrayList<String>();
   private List<LocationSearchCriteria> query = new ArrayList<LocationSearchCriteria>();
 
   
@@ -153,6 +154,24 @@ public class LocationSearchRequest  implements Serializable {
 
   
   /**
+   * Provides more details about a specified resource
+   **/
+  public LocationSearchRequest expand(List<String> expand) {
+    this.expand = expand;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Provides more details about a specified resource")
+  @JsonProperty("expand")
+  public List<String> getExpand() {
+    return expand;
+  }
+  public void setExpand(List<String> expand) {
+    this.expand = expand;
+  }
+
+  
+  /**
    **/
   public LocationSearchRequest query(List<LocationSearchCriteria> query) {
     this.query = query;
@@ -184,12 +203,13 @@ public class LocationSearchRequest  implements Serializable {
         Objects.equals(this.pageSize, locationSearchRequest.pageSize) &&
         Objects.equals(this.pageNumber, locationSearchRequest.pageNumber) &&
         Objects.equals(this.sort, locationSearchRequest.sort) &&
+        Objects.equals(this.expand, locationSearchRequest.expand) &&
         Objects.equals(this.query, locationSearchRequest.query);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sortOrder, sortBy, pageSize, pageNumber, sort, query);
+    return Objects.hash(sortOrder, sortBy, pageSize, pageNumber, sort, expand, query);
   }
 
   @Override
@@ -202,6 +222,7 @@ public class LocationSearchRequest  implements Serializable {
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
+    sb.append("    expand: ").append(toIndentedString(expand)).append("\n");
     sb.append("    query: ").append(toIndentedString(query)).append("\n");
     sb.append("}");
     return sb.toString();

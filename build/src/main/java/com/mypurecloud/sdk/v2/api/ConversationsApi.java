@@ -28,6 +28,8 @@ import com.mypurecloud.sdk.v2.model.CallConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CallHistoryConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.MaxParticipants;
 import com.mypurecloud.sdk.v2.model.ChatConversation;
+import com.mypurecloud.sdk.v2.model.WebChatMessage;
+import com.mypurecloud.sdk.v2.model.WebChatMessageEntityList;
 import com.mypurecloud.sdk.v2.model.ChatConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CobrowseConversation;
 import com.mypurecloud.sdk.v2.model.CobrowseConversationEntityListing;
@@ -56,8 +58,8 @@ import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
 import com.mypurecloud.sdk.v2.model.ConsultTransferResponse;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.PropertyIndexRequest;
-import com.mypurecloud.sdk.v2.model.AggregationQuery;
-import com.mypurecloud.sdk.v2.model.AggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.ConversationAggregationQuery;
 import com.mypurecloud.sdk.v2.model.AsyncConversationQuery;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
@@ -72,6 +74,8 @@ import com.mypurecloud.sdk.v2.model.CreateCallbackResponse;
 import com.mypurecloud.sdk.v2.model.CreateCallbackCommand;
 import com.mypurecloud.sdk.v2.model.CreateCallRequest;
 import com.mypurecloud.sdk.v2.model.CreateCallResponse;
+import com.mypurecloud.sdk.v2.model.CreateWebChatMessageRequest;
+import com.mypurecloud.sdk.v2.model.WebChatTyping;
 import com.mypurecloud.sdk.v2.model.CreateWebChatRequest;
 import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
 import com.mypurecloud.sdk.v2.model.CreateEmailRequest;
@@ -115,6 +119,8 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsCallsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsCallsHistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsCallsMaximumconferencepartiesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsChatRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsChatMessageRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsChatMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsChatParticipantWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsChatParticipantWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsChatsRequest;
@@ -190,6 +196,8 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantsReque
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbackParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbacksRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsChatCommunicationMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsChatCommunicationTypingRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsChatParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsChatsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCobrowsesessionParticipantReplaceRequest;
@@ -2564,6 +2572,184 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ChatConversation> response = (ApiResponse<ChatConversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a web chat conversation message
+   * 
+   * @param conversationId conversationId (required)
+   * @param messageId messageId (required)
+   * @return WebChatMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WebChatMessage getConversationsChatMessage(String conversationId, String messageId) throws IOException, ApiException {
+    return  getConversationsChatMessage(createGetConversationsChatMessageRequest(conversationId, messageId));
+  }
+
+  /**
+   * Get a web chat conversation message
+   * 
+   * @param conversationId conversationId (required)
+   * @param messageId messageId (required)
+   * @return WebChatMessage
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WebChatMessage> getConversationsChatMessageWithHttpInfo(String conversationId, String messageId) throws IOException {
+    return getConversationsChatMessage(createGetConversationsChatMessageRequest(conversationId, messageId).withHttpInfo());
+  }
+
+  private GetConversationsChatMessageRequest createGetConversationsChatMessageRequest(String conversationId, String messageId) {
+    return GetConversationsChatMessageRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withMessageId(messageId)
+    
+            .build();
+  }
+
+  /**
+   * Get a web chat conversation message
+   * 
+   * @param request The request object
+   * @return WebChatMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WebChatMessage getConversationsChatMessage(GetConversationsChatMessageRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WebChatMessage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WebChatMessage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a web chat conversation message
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WebChatMessage> getConversationsChatMessage(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WebChatMessage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WebChatMessage> response = (ApiResponse<WebChatMessage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WebChatMessage> response = (ApiResponse<WebChatMessage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the messages of a chat conversation.
+   * 
+   * @param conversationId conversationId (required)
+   * @param after If specified, get the messages chronologically after the id of this message (optional)
+   * @param before If specified, get the messages chronologically before the id of this message (optional)
+   * @param sortOrder Sort order (optional, default to ascending)
+   * @param maxResults Limit the returned number of messages, up to a maximum of 100 (optional, default to 100)
+   * @return WebChatMessageEntityList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WebChatMessageEntityList getConversationsChatMessages(String conversationId, String after, String before, String sortOrder, Integer maxResults) throws IOException, ApiException {
+    return  getConversationsChatMessages(createGetConversationsChatMessagesRequest(conversationId, after, before, sortOrder, maxResults));
+  }
+
+  /**
+   * Get the messages of a chat conversation.
+   * 
+   * @param conversationId conversationId (required)
+   * @param after If specified, get the messages chronologically after the id of this message (optional)
+   * @param before If specified, get the messages chronologically before the id of this message (optional)
+   * @param sortOrder Sort order (optional, default to ascending)
+   * @param maxResults Limit the returned number of messages, up to a maximum of 100 (optional, default to 100)
+   * @return WebChatMessageEntityList
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WebChatMessageEntityList> getConversationsChatMessagesWithHttpInfo(String conversationId, String after, String before, String sortOrder, Integer maxResults) throws IOException {
+    return getConversationsChatMessages(createGetConversationsChatMessagesRequest(conversationId, after, before, sortOrder, maxResults).withHttpInfo());
+  }
+
+  private GetConversationsChatMessagesRequest createGetConversationsChatMessagesRequest(String conversationId, String after, String before, String sortOrder, Integer maxResults) {
+    return GetConversationsChatMessagesRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withAfter(after)
+    
+            .withBefore(before)
+    
+            .withSortOrder(sortOrder)
+    
+            .withMaxResults(maxResults)
+    
+            .build();
+  }
+
+  /**
+   * Get the messages of a chat conversation.
+   * 
+   * @param request The request object
+   * @return WebChatMessageEntityList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WebChatMessageEntityList getConversationsChatMessages(GetConversationsChatMessagesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WebChatMessageEntityList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WebChatMessageEntityList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the messages of a chat conversation.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WebChatMessageEntityList> getConversationsChatMessages(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WebChatMessageEntityList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WebChatMessageEntityList> response = (ApiResponse<WebChatMessageEntityList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WebChatMessageEntityList> response = (ApiResponse<WebChatMessageEntityList>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7492,11 +7678,11 @@ public class ConversationsApi {
    * Query for conversation aggregates
    * 
    * @param body query (required)
-   * @return AggregateQueryResponse
+   * @return ConversationAggregateQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AggregateQueryResponse postAnalyticsConversationsAggregatesQuery(AggregationQuery body) throws IOException, ApiException {
+  public ConversationAggregateQueryResponse postAnalyticsConversationsAggregatesQuery(ConversationAggregationQuery body) throws IOException, ApiException {
     return  postAnalyticsConversationsAggregatesQuery(createPostAnalyticsConversationsAggregatesQueryRequest(body));
   }
 
@@ -7504,14 +7690,14 @@ public class ConversationsApi {
    * Query for conversation aggregates
    * 
    * @param body query (required)
-   * @return AggregateQueryResponse
+   * @return ConversationAggregateQueryResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AggregateQueryResponse> postAnalyticsConversationsAggregatesQueryWithHttpInfo(AggregationQuery body) throws IOException {
+  public ApiResponse<ConversationAggregateQueryResponse> postAnalyticsConversationsAggregatesQueryWithHttpInfo(ConversationAggregationQuery body) throws IOException {
     return postAnalyticsConversationsAggregatesQuery(createPostAnalyticsConversationsAggregatesQueryRequest(body).withHttpInfo());
   }
 
-  private PostAnalyticsConversationsAggregatesQueryRequest createPostAnalyticsConversationsAggregatesQueryRequest(AggregationQuery body) {
+  private PostAnalyticsConversationsAggregatesQueryRequest createPostAnalyticsConversationsAggregatesQueryRequest(ConversationAggregationQuery body) {
     return PostAnalyticsConversationsAggregatesQueryRequest.builder()
             .withBody(body)
     
@@ -7522,13 +7708,13 @@ public class ConversationsApi {
    * Query for conversation aggregates
    * 
    * @param request The request object
-   * @return AggregateQueryResponse
+   * @return ConversationAggregateQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AggregateQueryResponse postAnalyticsConversationsAggregatesQuery(PostAnalyticsConversationsAggregatesQueryRequest request) throws IOException, ApiException {
+  public ConversationAggregateQueryResponse postAnalyticsConversationsAggregatesQuery(PostAnalyticsConversationsAggregatesQueryRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<AggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AggregateQueryResponse>() {});
+      ApiResponse<ConversationAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConversationAggregateQueryResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -7544,13 +7730,13 @@ public class ConversationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AggregateQueryResponse> postAnalyticsConversationsAggregatesQuery(ApiRequest<AggregationQuery> request) throws IOException {
+  public ApiResponse<ConversationAggregateQueryResponse> postAnalyticsConversationsAggregatesQuery(ApiRequest<ConversationAggregationQuery> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<AggregateQueryResponse>() {});
+      return pcapiClient.invoke(request, new TypeReference<ConversationAggregateQueryResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<AggregateQueryResponse> response = (ApiResponse<AggregateQueryResponse>)(ApiResponse<?>)exception;
+      ApiResponse<ConversationAggregateQueryResponse> response = (ApiResponse<ConversationAggregateQueryResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -7561,7 +7747,7 @@ public class ConversationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<AggregateQueryResponse> response = (ApiResponse<AggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<ConversationAggregateQueryResponse> response = (ApiResponse<ConversationAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -8797,6 +8983,176 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CreateCallResponse> response = (ApiResponse<CreateCallResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Send a message on behalf of a communication in a chat conversation.
+   * 
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @param body Message (required)
+   * @return WebChatMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WebChatMessage postConversationsChatCommunicationMessages(String conversationId, String communicationId, CreateWebChatMessageRequest body) throws IOException, ApiException {
+    return  postConversationsChatCommunicationMessages(createPostConversationsChatCommunicationMessagesRequest(conversationId, communicationId, body));
+  }
+
+  /**
+   * Send a message on behalf of a communication in a chat conversation.
+   * 
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @param body Message (required)
+   * @return WebChatMessage
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WebChatMessage> postConversationsChatCommunicationMessagesWithHttpInfo(String conversationId, String communicationId, CreateWebChatMessageRequest body) throws IOException {
+    return postConversationsChatCommunicationMessages(createPostConversationsChatCommunicationMessagesRequest(conversationId, communicationId, body).withHttpInfo());
+  }
+
+  private PostConversationsChatCommunicationMessagesRequest createPostConversationsChatCommunicationMessagesRequest(String conversationId, String communicationId, CreateWebChatMessageRequest body) {
+    return PostConversationsChatCommunicationMessagesRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withCommunicationId(communicationId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Send a message on behalf of a communication in a chat conversation.
+   * 
+   * @param request The request object
+   * @return WebChatMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WebChatMessage postConversationsChatCommunicationMessages(PostConversationsChatCommunicationMessagesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WebChatMessage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WebChatMessage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Send a message on behalf of a communication in a chat conversation.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WebChatMessage> postConversationsChatCommunicationMessages(ApiRequest<CreateWebChatMessageRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WebChatMessage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WebChatMessage> response = (ApiResponse<WebChatMessage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WebChatMessage> response = (ApiResponse<WebChatMessage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Send a typing-indicator on behalf of a communication in a chat conversation.
+   * 
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @return WebChatTyping
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WebChatTyping postConversationsChatCommunicationTyping(String conversationId, String communicationId) throws IOException, ApiException {
+    return  postConversationsChatCommunicationTyping(createPostConversationsChatCommunicationTypingRequest(conversationId, communicationId));
+  }
+
+  /**
+   * Send a typing-indicator on behalf of a communication in a chat conversation.
+   * 
+   * @param conversationId conversationId (required)
+   * @param communicationId communicationId (required)
+   * @return WebChatTyping
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WebChatTyping> postConversationsChatCommunicationTypingWithHttpInfo(String conversationId, String communicationId) throws IOException {
+    return postConversationsChatCommunicationTyping(createPostConversationsChatCommunicationTypingRequest(conversationId, communicationId).withHttpInfo());
+  }
+
+  private PostConversationsChatCommunicationTypingRequest createPostConversationsChatCommunicationTypingRequest(String conversationId, String communicationId) {
+    return PostConversationsChatCommunicationTypingRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withCommunicationId(communicationId)
+    
+            .build();
+  }
+
+  /**
+   * Send a typing-indicator on behalf of a communication in a chat conversation.
+   * 
+   * @param request The request object
+   * @return WebChatTyping
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WebChatTyping postConversationsChatCommunicationTyping(PostConversationsChatCommunicationTypingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WebChatTyping> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WebChatTyping>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Send a typing-indicator on behalf of a communication in a chat conversation.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WebChatTyping> postConversationsChatCommunicationTyping(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WebChatTyping>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WebChatTyping> response = (ApiResponse<WebChatTyping>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WebChatTyping> response = (ApiResponse<WebChatTyping>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

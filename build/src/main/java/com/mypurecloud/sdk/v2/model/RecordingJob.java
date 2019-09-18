@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.RecordingJobsQuery;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -65,6 +66,7 @@ public class RecordingJob  implements Serializable {
   private Integer percentProgress = null;
   private String errorMessage = null;
   private String selfUri = null;
+  private AddressableEntityRef user = null;
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
@@ -159,6 +161,24 @@ public class RecordingJob  implements Serializable {
   }
 
   
+  /**
+   * Details of the user created the job
+   **/
+  public RecordingJob user(AddressableEntityRef user) {
+    this.user = user;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Details of the user created the job")
+  @JsonProperty("user")
+  public AddressableEntityRef getUser() {
+    return user;
+  }
+  public void setUser(AddressableEntityRef user) {
+    this.user = user;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -178,12 +198,13 @@ public class RecordingJob  implements Serializable {
         Objects.equals(this.totalProcessedRecordings, recordingJob.totalProcessedRecordings) &&
         Objects.equals(this.percentProgress, recordingJob.percentProgress) &&
         Objects.equals(this.errorMessage, recordingJob.errorMessage) &&
-        Objects.equals(this.selfUri, recordingJob.selfUri);
+        Objects.equals(this.selfUri, recordingJob.selfUri) &&
+        Objects.equals(this.user, recordingJob.user);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, recordingJobsQuery, dateCreated, totalConversations, totalRecordings, totalProcessedRecordings, percentProgress, errorMessage, selfUri);
+    return Objects.hash(id, state, recordingJobsQuery, dateCreated, totalConversations, totalRecordings, totalProcessedRecordings, percentProgress, errorMessage, selfUri, user);
   }
 
   @Override
@@ -201,6 +222,7 @@ public class RecordingJob  implements Serializable {
     sb.append("    percentProgress: ").append(toIndentedString(percentProgress)).append("\n");
     sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("}");
     return sb.toString();
   }

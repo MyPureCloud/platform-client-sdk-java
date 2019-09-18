@@ -24,6 +24,7 @@ title: ScimV2GroupReference
 | USER | &quot;User&quot; |
 | GROUP | &quot;Group&quot; |
 | SERVICEPROVIDERCONFIG | &quot;ServiceProviderConfig&quot; |
+| RESOURCETYPE | &quot;ResourceType&quot; |
 {: class="table table-striped"}
 
 

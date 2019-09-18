@@ -20,24 +20,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.AggregationQuery;
+import com.mypurecloud.sdk.v2.model.FlowAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.AggregateQueryResponse;
-import com.mypurecloud.sdk.v2.model.QualifierMappingObservationQueryResponse;
-import com.mypurecloud.sdk.v2.model.ObservationQuery;
+import com.mypurecloud.sdk.v2.model.FlowAggregationQuery;
+import com.mypurecloud.sdk.v2.model.FlowObservationQuery;
+import com.mypurecloud.sdk.v2.model.FlowObservationQueryResponse;
 
 public class PostAnalyticsFlowsObservationsQueryRequest {
     
-	private ObservationQuery body;
-	public ObservationQuery getBody() {
+	private FlowObservationQuery body;
+	public FlowObservationQuery getBody() {
 		return this.body;
 	}
 
-	public void setBody(ObservationQuery body) {
+	public void setBody(FlowObservationQuery body) {
 		this.body = body;
 	}
 
-	public PostAnalyticsFlowsObservationsQueryRequest withBody(ObservationQuery body) {
+	public PostAnalyticsFlowsObservationsQueryRequest withBody(FlowObservationQuery body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -61,7 +61,7 @@ public class PostAnalyticsFlowsObservationsQueryRequest {
         return this;
     }
 
-    public ApiRequest<ObservationQuery> withHttpInfo() {
+    public ApiRequest<FlowObservationQuery> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -84,7 +84,7 @@ public class PostAnalyticsFlowsObservationsQueryRequest {
 	}
 
 	
-	public static Builder builder(ObservationQuery body) {
+	public static Builder builder(FlowObservationQuery body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -98,14 +98,14 @@ public class PostAnalyticsFlowsObservationsQueryRequest {
 		}
 
 		
-		public Builder withBody(ObservationQuery body) {
+		public Builder withBody(FlowObservationQuery body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(ObservationQuery body) {
+		public Builder withRequiredParams(FlowObservationQuery body) {
 			request.setBody(body);
 			
 			return this;

@@ -37,8 +37,10 @@ import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
 import com.mypurecloud.sdk.v2.model.KeywordSet;
 import com.mypurecloud.sdk.v2.model.KeywordSetEntityListing;
 import com.mypurecloud.sdk.v2.model.ScorableSurvey;
-import com.mypurecloud.sdk.v2.model.AggregationQuery;
-import com.mypurecloud.sdk.v2.model.AggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.EvaluationAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
+import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.CalibrationCreate;
 import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
@@ -48,16 +50,16 @@ import com.mypurecloud.sdk.v2.model.SurveyFormAndScoringSet;
 
 public class PostAnalyticsSurveysAggregatesQueryRequest {
     
-	private AggregationQuery body;
-	public AggregationQuery getBody() {
+	private SurveyAggregationQuery body;
+	public SurveyAggregationQuery getBody() {
 		return this.body;
 	}
 
-	public void setBody(AggregationQuery body) {
+	public void setBody(SurveyAggregationQuery body) {
 		this.body = body;
 	}
 
-	public PostAnalyticsSurveysAggregatesQueryRequest withBody(AggregationQuery body) {
+	public PostAnalyticsSurveysAggregatesQueryRequest withBody(SurveyAggregationQuery body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -81,7 +83,7 @@ public class PostAnalyticsSurveysAggregatesQueryRequest {
         return this;
     }
 
-    public ApiRequest<AggregationQuery> withHttpInfo() {
+    public ApiRequest<SurveyAggregationQuery> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -104,7 +106,7 @@ public class PostAnalyticsSurveysAggregatesQueryRequest {
 	}
 
 	
-	public static Builder builder(AggregationQuery body) {
+	public static Builder builder(SurveyAggregationQuery body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -118,14 +120,14 @@ public class PostAnalyticsSurveysAggregatesQueryRequest {
 		}
 
 		
-		public Builder withBody(AggregationQuery body) {
+		public Builder withBody(SurveyAggregationQuery body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(AggregationQuery body) {
+		public Builder withRequiredParams(SurveyAggregationQuery body) {
 			request.setBody(body);
 			
 			return this;

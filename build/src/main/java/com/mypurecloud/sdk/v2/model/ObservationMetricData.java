@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ObservationValue;
 import com.mypurecloud.sdk.v2.model.StatisticalSummary;
 import io.swagger.annotations.ApiModel;
@@ -19,125 +18,7 @@ import java.io.Serializable;
 
 public class ObservationMetricData  implements Serializable {
   
-
-  /**
-   * Gets or Sets metric
-   */
-  public enum MetricEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    TSEGMENTDURATION("tSegmentDuration"),
-    TCONVERSATIONDURATION("tConversationDuration"),
-    OTOTALCRITICALSCORE("oTotalCriticalScore"),
-    OTOTALSCORE("oTotalScore"),
-    NEVALUATIONS("nEvaluations"),
-    TABANDON("tAbandon"),
-    TIVR("tIvr"),
-    TANSWERED("tAnswered"),
-    TFLOWOUT("tFlowOut"),
-    TACD("tAcd"),
-    TTALK("tTalk"),
-    THELD("tHeld"),
-    TTALKCOMPLETE("tTalkComplete"),
-    THELDCOMPLETE("tHeldComplete"),
-    TACW("tAcw"),
-    THANDLE("tHandle"),
-    TCONTACTING("tContacting"),
-    TDIALING("tDialing"),
-    TWAIT("tWait"),
-    TAGENTROUTINGSTATUS("tAgentRoutingStatus"),
-    TORGANIZATIONPRESENCE("tOrganizationPresence"),
-    TSYSTEMPRESENCE("tSystemPresence"),
-    TUSERRESPONSETIME("tUserResponseTime"),
-    TAGENTRESPONSETIME("tAgentResponseTime"),
-    TVOICEMAIL("tVoicemail"),
-    NSTATETRANSITIONERROR("nStateTransitionError"),
-    NOFFERED("nOffered"),
-    NOVERSLA("nOverSla"),
-    NTRANSFERRED("nTransferred"),
-    NBLINDTRANSFERRED("nBlindTransferred"),
-    NCONSULTTRANSFERRED("nConsultTransferred"),
-    NCONSULT("nConsult"),
-    NCONNECTED("nConnected"),
-    TALERT("tAlert"),
-    TNOTRESPONDING("tNotResponding"),
-    NOUTBOUND("nOutbound"),
-    NOUTBOUNDATTEMPTED("nOutboundAttempted"),
-    NOUTBOUNDCONNECTED("nOutboundConnected"),
-    NOUTBOUNDABANDONED("nOutboundAbandoned"),
-    NERROR("nError"),
-    OSERVICETARGET("oServiceTarget"),
-    OSERVICELEVEL("oServiceLevel"),
-    TACTIVE("tActive"),
-    TINACTIVE("tInactive"),
-    OACTIVEUSERS("oActiveUsers"),
-    OMEMBERUSERS("oMemberUsers"),
-    OACTIVEQUEUES("oActiveQueues"),
-    OMEMBERQUEUES("oMemberQueues"),
-    OINTERACTING("oInteracting"),
-    OWAITING("oWaiting"),
-    OONQUEUEUSERS("oOnQueueUsers"),
-    OOFFQUEUEUSERS("oOffQueueUsers"),
-    OUSERPRESENCES("oUserPresences"),
-    OUSERROUTINGSTATUSES("oUserRoutingStatuses"),
-    NSURVEYSSENT("nSurveysSent"),
-    NSURVEYSSTARTED("nSurveysStarted"),
-    NSURVEYSABANDONED("nSurveysAbandoned"),
-    NSURVEYSEXPIRED("nSurveysExpired"),
-    NSURVEYERRORS("nSurveyErrors"),
-    NSURVEYRESPONSES("nSurveyResponses"),
-    NSURVEYANSWERRESPONSES("nSurveyAnswerResponses"),
-    OSURVEYTOTALSCORE("oSurveyTotalScore"),
-    OSURVEYQUESTIONGROUPSCORE("oSurveyQuestionGroupScore"),
-    NSURVEYQUESTIONGROUPRESPONSES("nSurveyQuestionGroupResponses"),
-    OSURVEYQUESTIONSCORE("oSurveyQuestionScore"),
-    NSURVEYQUESTIONRESPONSES("nSurveyQuestionResponses"),
-    NSURVEYNPSRESPONSES("nSurveyNpsResponses"),
-    NSURVEYNPSPROMOTERS("nSurveyNpsPromoters"),
-    NSURVEYNPSDETRACTORS("nSurveyNpsDetractors"),
-    NFLOW("nFlow"),
-    TFLOWDISCONNECT("tFlowDisconnect"),
-    TFLOWEXIT("tFlowExit"),
-    TFLOW("tFlow"),
-    OFLOW("oFlow"),
-    TFLOWOUTCOME("tFlowOutcome"),
-    NFLOWOUTCOME("nFlowOutcome"),
-    NFLOWOUTCOMEFAILED("nFlowOutcomeFailed"),
-    NWEBACTIONSQUALIFIED("nWebActionsQualified"),
-    NWEBACTIONSOFFERED("nWebActionsOffered"),
-    NWEBACTIONSACCEPTED("nWebActionsAccepted"),
-    NWEBACTIONSREJECTED("nWebActionsRejected"),
-    NWEBACTIONSTIMEDOUT("nWebActionsTimedout"),
-    NWEBACTIONSERRORED("nWebActionsErrored"),
-    NWEBACTIONSIGNORED("nWebActionsIgnored"),
-    NWEBACTIONSSTARTED("nWebActionsStarted"),
-    NWEBACTIONSENGAGED("nWebActionsEngaged");
-
-    private String value;
-
-    MetricEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static MetricEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (MetricEnum value : MetricEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return MetricEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private MetricEnum metric = null;
+  private String metric = null;
   private String qualifier = null;
   private StatisticalSummary stats = null;
   private Boolean truncated = null;
@@ -146,17 +27,17 @@ public class ObservationMetricData  implements Serializable {
   
   /**
    **/
-  public ObservationMetricData metric(MetricEnum metric) {
+  public ObservationMetricData metric(String metric) {
     this.metric = metric;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("metric")
-  public MetricEnum getMetric() {
+  public String getMetric() {
     return metric;
   }
-  public void setMetric(MetricEnum metric) {
+  public void setMetric(String metric) {
     this.metric = metric;
   }
 

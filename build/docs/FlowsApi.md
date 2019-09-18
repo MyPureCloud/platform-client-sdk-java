@@ -17,7 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 
-> [AggregateQueryResponse](AggregateQueryResponse.html) postAnalyticsFlowsAggregatesQuery(body)
+> [FlowAggregateQueryResponse](FlowAggregateQueryResponse.html) postAnalyticsFlowsAggregatesQuery(body)
 
 Query for flow aggregates
 
@@ -51,9 +51,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 FlowsApi apiInstance = new FlowsApi();
-AggregationQuery body = new AggregationQuery(); // AggregationQuery | query
+FlowAggregationQuery body = new FlowAggregationQuery(); // FlowAggregationQuery | query
 try {
-    AggregateQueryResponse result = apiInstance.postAnalyticsFlowsAggregatesQuery(body);
+    FlowAggregateQueryResponse result = apiInstance.postAnalyticsFlowsAggregatesQuery(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FlowsApi#postAnalyticsFlowsAggregatesQuery");
@@ -66,13 +66,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | 
+| **body** | [**FlowAggregationQuery**](FlowAggregationQuery.html)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AggregateQueryResponse**](AggregateQueryResponse.html)
+[**FlowAggregateQueryResponse**](FlowAggregateQueryResponse.html)
 
 <a name="postAnalyticsFlowsObservationsQuery"></a>
 
@@ -80,7 +80,7 @@ try {
 
 
 
-> [QualifierMappingObservationQueryResponse](QualifierMappingObservationQueryResponse.html) postAnalyticsFlowsObservationsQuery(body)
+> [FlowObservationQueryResponse](FlowObservationQueryResponse.html) postAnalyticsFlowsObservationsQuery(body)
 
 Query for flow observations
 
@@ -114,9 +114,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 FlowsApi apiInstance = new FlowsApi();
-ObservationQuery body = new ObservationQuery(); // ObservationQuery | query
+FlowObservationQuery body = new FlowObservationQuery(); // FlowObservationQuery | query
 try {
-    QualifierMappingObservationQueryResponse result = apiInstance.postAnalyticsFlowsObservationsQuery(body);
+    FlowObservationQueryResponse result = apiInstance.postAnalyticsFlowsObservationsQuery(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FlowsApi#postAnalyticsFlowsObservationsQuery");
@@ -129,11 +129,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ObservationQuery**](ObservationQuery.html)| query | 
+| **body** | [**FlowObservationQuery**](FlowObservationQuery.html)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**QualifierMappingObservationQueryResponse**](QualifierMappingObservationQueryResponse.html)
+[**FlowObservationQueryResponse**](FlowObservationQueryResponse.html)
 

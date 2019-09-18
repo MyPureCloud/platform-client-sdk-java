@@ -1070,7 +1070,7 @@ public class AuthorizationApi {
    * Get a single organization role.
    * Get the organization role specified by its ID.
    * @param roleId Role ID (required)
-   * @param expand Which fields, if any, to expand. (optional)
+   * @param expand Which fields, if any, to expand. \&quot;unusedPermissions\&quot; returns the permissions not used for the role (optional)
    * @return DomainOrganizationRole
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1083,7 +1083,7 @@ public class AuthorizationApi {
    * Get a single organization role.
    * Get the organization role specified by its ID.
    * @param roleId Role ID (required)
-   * @param expand Which fields, if any, to expand. (optional)
+   * @param expand Which fields, if any, to expand. \&quot;unusedPermissions\&quot; returns the permissions not used for the role (optional)
    * @return DomainOrganizationRole
    * @throws IOException if the request fails to be processed
    */
@@ -2104,7 +2104,7 @@ public class AuthorizationApi {
    * 
    * @param roleId Role ID (required)
    * @param body Subjects and Divisions (required)
-   * @param subjectType what the type of the subject is, PC_GROUP or PC_USER (optional, default to PC_USER)
+   * @param subjectType what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (optional, default to PC_USER)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
@@ -2117,7 +2117,7 @@ public class AuthorizationApi {
    * 
    * @param roleId Role ID (required)
    * @param body Subjects and Divisions (required)
-   * @param subjectType what the type of the subject is, PC_GROUP or PC_USER (optional, default to PC_USER)
+   * @param subjectType what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (optional, default to PC_USER)
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> postAuthorizationRoleWithHttpInfo(String roleId, SubjectDivisions body, String subjectType) throws IOException {
@@ -2434,7 +2434,7 @@ public class AuthorizationApi {
    * @param subjectId Subject ID (user or group) (required)
    * @param divisionId the id of the division to which to make the grant (required)
    * @param roleId the id of the role to grant (required)
-   * @param subjectType what the type of the subject is, PC_GROUP or PC_USER (optional, default to PC_USER)
+   * @param subjectType what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) (optional, default to PC_USER)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
@@ -2448,7 +2448,7 @@ public class AuthorizationApi {
    * @param subjectId Subject ID (user or group) (required)
    * @param divisionId the id of the division to which to make the grant (required)
    * @param roleId the id of the role to grant (required)
-   * @param subjectType what the type of the subject is, PC_GROUP or PC_USER (optional, default to PC_USER)
+   * @param subjectType what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) (optional, default to PC_USER)
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> postAuthorizationSubjectDivisionRoleWithHttpInfo(String subjectId, String divisionId, String roleId, String subjectType) throws IOException {

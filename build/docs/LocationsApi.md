@@ -313,7 +313,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 LocationsApi apiInstance = new LocationsApi();
 String q64 = "q64_example"; // String | q64
-List<String> expand = Arrays.asList("expand_example"); // List<String> | expand
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Provides more details about a specified resource
 try {
     LocationsSearchResponse result = apiInstance.getLocationsSearch(q64, expand);
     System.out.println(result);
@@ -329,7 +329,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **q64** | **String**| q64 | 
-| **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| Provides more details about a specified resource | [optional]<br />**Values**: images 
 {: class="table-striped"}
 
 

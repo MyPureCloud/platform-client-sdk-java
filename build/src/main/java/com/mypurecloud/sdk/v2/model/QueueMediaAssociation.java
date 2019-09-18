@@ -18,6 +18,7 @@ import java.io.Serializable;
 
 public class QueueMediaAssociation  implements Serializable {
   
+  private String id = null;
   private QueueReference queue = null;
 
   /**
@@ -56,8 +57,14 @@ public class QueueMediaAssociation  implements Serializable {
     }
   }
   private List<MediaTypesEnum> mediaTypes = new ArrayList<MediaTypesEnum>();
-  private String id = null;
   private Boolean delete = null;
+
+  
+  @ApiModelProperty(example = "null", value = "The reference ID for this QueueMediaAssociation")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
 
   
   /**
@@ -96,13 +103,6 @@ public class QueueMediaAssociation  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The reference ID for this QueueMediaAssociation")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-
-  
   /**
    * If marked true on a PATCH, this QueueMediaAssociation will be permanently deleted
    **/
@@ -131,15 +131,15 @@ public class QueueMediaAssociation  implements Serializable {
       return false;
     }
     QueueMediaAssociation queueMediaAssociation = (QueueMediaAssociation) o;
-    return Objects.equals(this.queue, queueMediaAssociation.queue) &&
+    return Objects.equals(this.id, queueMediaAssociation.id) &&
+        Objects.equals(this.queue, queueMediaAssociation.queue) &&
         Objects.equals(this.mediaTypes, queueMediaAssociation.mediaTypes) &&
-        Objects.equals(this.id, queueMediaAssociation.id) &&
         Objects.equals(this.delete, queueMediaAssociation.delete);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(queue, mediaTypes, id, delete);
+    return Objects.hash(id, queue, mediaTypes, delete);
   }
 
   @Override
@@ -147,9 +147,9 @@ public class QueueMediaAssociation  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class QueueMediaAssociation {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
     sb.append("    mediaTypes: ").append(toIndentedString(mediaTypes)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    delete: ").append(toIndentedString(delete)).append("\n");
     sb.append("}");
     return sb.toString();

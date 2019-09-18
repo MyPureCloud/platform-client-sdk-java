@@ -5,18 +5,51 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScimMetadata;
+import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfigAuthenticationScheme;
+import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfigBulkFeature;
+import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfigFilterFeature;
+import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfigSimpleFeature;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
- * ScimServiceProviderConfig
+ * SCIM Provider Config for PureCloud.
  */
+@ApiModel(description = "SCIM Provider Config for PureCloud.")
 
 public class ScimServiceProviderConfig  implements Serializable {
   
+  private List<String> schemas = new ArrayList<String>();
   private String documentationUri = null;
+  private ScimServiceProviderConfigSimpleFeature patch = null;
+  private ScimServiceProviderConfigFilterFeature filter = null;
+  private ScimServiceProviderConfigSimpleFeature etag = null;
+  private ScimServiceProviderConfigSimpleFeature sort = null;
+  private ScimServiceProviderConfigBulkFeature bulk = null;
+  private ScimServiceProviderConfigSimpleFeature changePassword = null;
+  private List<ScimServiceProviderConfigAuthenticationScheme> authenticationSchemes = new ArrayList<ScimServiceProviderConfigAuthenticationScheme>();
   private ScimMetadata meta = null;
+
+  
+  /**
+   * schemas supported
+   **/
+  public ScimServiceProviderConfig schemas(List<String> schemas) {
+    this.schemas = schemas;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "schemas supported")
+  @JsonProperty("schemas")
+  public List<String> getSchemas() {
+    return schemas;
+  }
+  public void setSchemas(List<String> schemas) {
+    this.schemas = schemas;
+  }
 
   
   @ApiModelProperty(example = "null", value = "Documentation")
@@ -27,14 +60,140 @@ public class ScimServiceProviderConfig  implements Serializable {
 
   
   /**
-   * Configuration SCIM meta data
+   * Patch support
+   **/
+  public ScimServiceProviderConfig patch(ScimServiceProviderConfigSimpleFeature patch) {
+    this.patch = patch;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Patch support")
+  @JsonProperty("patch")
+  public ScimServiceProviderConfigSimpleFeature getPatch() {
+    return patch;
+  }
+  public void setPatch(ScimServiceProviderConfigSimpleFeature patch) {
+    this.patch = patch;
+  }
+
+  
+  /**
+   * Filter support. Additional properties: maxResults
+   **/
+  public ScimServiceProviderConfig filter(ScimServiceProviderConfigFilterFeature filter) {
+    this.filter = filter;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filter support. Additional properties: maxResults")
+  @JsonProperty("filter")
+  public ScimServiceProviderConfigFilterFeature getFilter() {
+    return filter;
+  }
+  public void setFilter(ScimServiceProviderConfigFilterFeature filter) {
+    this.filter = filter;
+  }
+
+  
+  /**
+   * Entity Tag support
+   **/
+  public ScimServiceProviderConfig etag(ScimServiceProviderConfigSimpleFeature etag) {
+    this.etag = etag;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Entity Tag support")
+  @JsonProperty("etag")
+  public ScimServiceProviderConfigSimpleFeature getEtag() {
+    return etag;
+  }
+  public void setEtag(ScimServiceProviderConfigSimpleFeature etag) {
+    this.etag = etag;
+  }
+
+  
+  /**
+   * Sort support
+   **/
+  public ScimServiceProviderConfig sort(ScimServiceProviderConfigSimpleFeature sort) {
+    this.sort = sort;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Sort support")
+  @JsonProperty("sort")
+  public ScimServiceProviderConfigSimpleFeature getSort() {
+    return sort;
+  }
+  public void setSort(ScimServiceProviderConfigSimpleFeature sort) {
+    this.sort = sort;
+  }
+
+  
+  /**
+   * Bulk support
+   **/
+  public ScimServiceProviderConfig bulk(ScimServiceProviderConfigBulkFeature bulk) {
+    this.bulk = bulk;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Bulk support")
+  @JsonProperty("bulk")
+  public ScimServiceProviderConfigBulkFeature getBulk() {
+    return bulk;
+  }
+  public void setBulk(ScimServiceProviderConfigBulkFeature bulk) {
+    this.bulk = bulk;
+  }
+
+  
+  /**
+   * Change password
+   **/
+  public ScimServiceProviderConfig changePassword(ScimServiceProviderConfigSimpleFeature changePassword) {
+    this.changePassword = changePassword;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Change password")
+  @JsonProperty("changePassword")
+  public ScimServiceProviderConfigSimpleFeature getChangePassword() {
+    return changePassword;
+  }
+  public void setChangePassword(ScimServiceProviderConfigSimpleFeature changePassword) {
+    this.changePassword = changePassword;
+  }
+
+  
+  /**
+   * Authentication schemes supported.
+   **/
+  public ScimServiceProviderConfig authenticationSchemes(List<ScimServiceProviderConfigAuthenticationScheme> authenticationSchemes) {
+    this.authenticationSchemes = authenticationSchemes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Authentication schemes supported.")
+  @JsonProperty("authenticationSchemes")
+  public List<ScimServiceProviderConfigAuthenticationScheme> getAuthenticationSchemes() {
+    return authenticationSchemes;
+  }
+  public void setAuthenticationSchemes(List<ScimServiceProviderConfigAuthenticationScheme> authenticationSchemes) {
+    this.authenticationSchemes = authenticationSchemes;
+  }
+
+  
+  /**
+   * Resource SCIM meta
    **/
   public ScimServiceProviderConfig meta(ScimMetadata meta) {
     this.meta = meta;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Configuration SCIM meta data")
+  @ApiModelProperty(example = "null", value = "Resource SCIM meta")
   @JsonProperty("meta")
   public ScimMetadata getMeta() {
     return meta;
@@ -54,13 +213,21 @@ public class ScimServiceProviderConfig  implements Serializable {
       return false;
     }
     ScimServiceProviderConfig scimServiceProviderConfig = (ScimServiceProviderConfig) o;
-    return Objects.equals(this.documentationUri, scimServiceProviderConfig.documentationUri) &&
+    return Objects.equals(this.schemas, scimServiceProviderConfig.schemas) &&
+        Objects.equals(this.documentationUri, scimServiceProviderConfig.documentationUri) &&
+        Objects.equals(this.patch, scimServiceProviderConfig.patch) &&
+        Objects.equals(this.filter, scimServiceProviderConfig.filter) &&
+        Objects.equals(this.etag, scimServiceProviderConfig.etag) &&
+        Objects.equals(this.sort, scimServiceProviderConfig.sort) &&
+        Objects.equals(this.bulk, scimServiceProviderConfig.bulk) &&
+        Objects.equals(this.changePassword, scimServiceProviderConfig.changePassword) &&
+        Objects.equals(this.authenticationSchemes, scimServiceProviderConfig.authenticationSchemes) &&
         Objects.equals(this.meta, scimServiceProviderConfig.meta);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(documentationUri, meta);
+    return Objects.hash(schemas, documentationUri, patch, filter, etag, sort, bulk, changePassword, authenticationSchemes, meta);
   }
 
   @Override
@@ -68,7 +235,15 @@ public class ScimServiceProviderConfig  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ScimServiceProviderConfig {\n");
     
+    sb.append("    schemas: ").append(toIndentedString(schemas)).append("\n");
     sb.append("    documentationUri: ").append(toIndentedString(documentationUri)).append("\n");
+    sb.append("    patch: ").append(toIndentedString(patch)).append("\n");
+    sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
+    sb.append("    etag: ").append(toIndentedString(etag)).append("\n");
+    sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
+    sb.append("    bulk: ").append(toIndentedString(bulk)).append("\n");
+    sb.append("    changePassword: ").append(toIndentedString(changePassword)).append("\n");
+    sb.append("    authenticationSchemes: ").append(toIndentedString(authenticationSchemes)).append("\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("}");
     return sb.toString();

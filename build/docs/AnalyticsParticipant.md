@@ -10,6 +10,7 @@ title: AnalyticsParticipant
 | ------------ | ------------- | ------------- | ------------- |
 | **participantId** | **String** | Unique identifier for the participant |  [optional] |
 | **participantName** | **String** | A human readable name identifying the participant |  [optional] |
+| **attributes** | **Map&lt;String, String&gt;** | List of attributes associated to this participant |  [optional] |
 | **userId** | **String** | If a user, then this will be the unique identifier for the user |  [optional] |
 | **purpose** | [**PurposeEnum**](#PurposeEnum) | The participant&#39;s purpose |  [optional] |
 | **externalContactId** | **String** | External Contact Identifier |  [optional] |
@@ -42,6 +43,7 @@ title: AnalyticsParticipant
 | FAX | &quot;fax&quot; |
 | WORKFLOW | &quot;workflow&quot; |
 | CAMPAIGN | &quot;campaign&quot; |
+| API | &quot;api&quot; |
 {: class="table table-striped"}
 
 

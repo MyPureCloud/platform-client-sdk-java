@@ -13,13 +13,16 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.ScimError;
 import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ScimV2Group;
 import com.mypurecloud.sdk.v2.model.ScimGroupListResponse;
+import com.mypurecloud.sdk.v2.model.ScimConfigResourceType;
+import com.mypurecloud.sdk.v2.model.ScimConfigResourceTypesListResponse;
+import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfig;
 import com.mypurecloud.sdk.v2.model.ScimV2User;
 import com.mypurecloud.sdk.v2.model.ScimUserListResponse;
-import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfig;
 import com.mypurecloud.sdk.v2.model.ScimV2PatchRequest;
 import com.mypurecloud.sdk.v2.model.ScimV2CreateUser;
 
@@ -28,10 +31,15 @@ import com.mypurecloud.sdk.v2.api.request.DeleteScimUserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteScimV2UserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimGroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScimResourcetypeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScimResourcetypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScimServiceproviderconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimV2GroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimV2GroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScimV2ResourcetypeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScimV2ResourcetypesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimV2ServiceproviderconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimV2UserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimV2UsersRequest;
@@ -371,6 +379,234 @@ public class SCIMApiAsync {
 
   
   /**
+   * Get the SCIM configuration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScimConfigResourceType> getScimResourcetypeAsync(GetScimResourcetypeRequest request, final AsyncApiCallback<ScimConfigResourceType> callback) {
+    try {
+      final SettableFuture<ScimConfigResourceType> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScimConfigResourceType>() {}, new AsyncApiCallback<ApiResponse<ScimConfigResourceType>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScimConfigResourceType> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the SCIM configuration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScimConfigResourceType>> getScimResourcetypeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScimConfigResourceType>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScimConfigResourceType>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScimConfigResourceType>() {}, new AsyncApiCallback<ApiResponse<ScimConfigResourceType>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScimConfigResourceType> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScimConfigResourceType> response = (ApiResponse<ScimConfigResourceType>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScimConfigResourceType> response = (ApiResponse<ScimConfigResourceType>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the SCIM resource types
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScimConfigResourceTypesListResponse> getScimResourcetypesAsync(GetScimResourcetypesRequest request, final AsyncApiCallback<ScimConfigResourceTypesListResponse> callback) {
+    try {
+      final SettableFuture<ScimConfigResourceTypesListResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScimConfigResourceTypesListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimConfigResourceTypesListResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScimConfigResourceTypesListResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the SCIM resource types
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScimConfigResourceTypesListResponse>> getScimResourcetypesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScimConfigResourceTypesListResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScimConfigResourceTypesListResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScimConfigResourceTypesListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimConfigResourceTypesListResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScimConfigResourceTypesListResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScimConfigResourceTypesListResponse> response = (ApiResponse<ScimConfigResourceTypesListResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScimConfigResourceTypesListResponse> response = (ApiResponse<ScimConfigResourceTypesListResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the SCIM configuration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScimServiceProviderConfig> getScimServiceproviderconfigAsync(GetScimServiceproviderconfigRequest request, final AsyncApiCallback<ScimServiceProviderConfig> callback) {
+    try {
+      final SettableFuture<ScimServiceProviderConfig> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScimServiceProviderConfig>() {}, new AsyncApiCallback<ApiResponse<ScimServiceProviderConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScimServiceProviderConfig> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the SCIM configuration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScimServiceProviderConfig>> getScimServiceproviderconfigAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScimServiceProviderConfig>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScimServiceProviderConfig>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScimServiceProviderConfig>() {}, new AsyncApiCallback<ApiResponse<ScimServiceProviderConfig>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScimServiceProviderConfig> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScimServiceProviderConfig> response = (ApiResponse<ScimServiceProviderConfig>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScimServiceProviderConfig> response = (ApiResponse<ScimServiceProviderConfig>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get a user
    * 
    * @param request the request object
@@ -662,6 +898,158 @@ public class SCIMApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ScimGroupListResponse> response = (ApiResponse<ScimGroupListResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the SCIM configuration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScimConfigResourceType> getScimV2ResourcetypeAsync(GetScimV2ResourcetypeRequest request, final AsyncApiCallback<ScimConfigResourceType> callback) {
+    try {
+      final SettableFuture<ScimConfigResourceType> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScimConfigResourceType>() {}, new AsyncApiCallback<ApiResponse<ScimConfigResourceType>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScimConfigResourceType> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the SCIM configuration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScimConfigResourceType>> getScimV2ResourcetypeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScimConfigResourceType>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScimConfigResourceType>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScimConfigResourceType>() {}, new AsyncApiCallback<ApiResponse<ScimConfigResourceType>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScimConfigResourceType> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScimConfigResourceType> response = (ApiResponse<ScimConfigResourceType>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScimConfigResourceType> response = (ApiResponse<ScimConfigResourceType>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the SCIM resource types
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScimConfigResourceTypesListResponse> getScimV2ResourcetypesAsync(GetScimV2ResourcetypesRequest request, final AsyncApiCallback<ScimConfigResourceTypesListResponse> callback) {
+    try {
+      final SettableFuture<ScimConfigResourceTypesListResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScimConfigResourceTypesListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimConfigResourceTypesListResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScimConfigResourceTypesListResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the SCIM resource types
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScimConfigResourceTypesListResponse>> getScimV2ResourcetypesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScimConfigResourceTypesListResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScimConfigResourceTypesListResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScimConfigResourceTypesListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimConfigResourceTypesListResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScimConfigResourceTypesListResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScimConfigResourceTypesListResponse> response = (ApiResponse<ScimConfigResourceTypesListResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScimConfigResourceTypesListResponse> response = (ApiResponse<ScimConfigResourceTypesListResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -379,7 +379,7 @@ public class LocationsApi {
    * Search locations using the q64 value returned from a previous search
    * 
    * @param q64 q64 (required)
-   * @param expand expand (optional)
+   * @param expand Provides more details about a specified resource (optional)
    * @return LocationsSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -392,7 +392,7 @@ public class LocationsApi {
    * Search locations using the q64 value returned from a previous search
    * 
    * @param q64 q64 (required)
-   * @param expand expand (optional)
+   * @param expand Provides more details about a specified resource (optional)
    * @return LocationsSearchResponse
    * @throws IOException if the request fails to be processed
    */

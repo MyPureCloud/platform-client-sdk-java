@@ -30,8 +30,10 @@ import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
 import com.mypurecloud.sdk.v2.model.KeywordSet;
 import com.mypurecloud.sdk.v2.model.KeywordSetEntityListing;
 import com.mypurecloud.sdk.v2.model.ScorableSurvey;
-import com.mypurecloud.sdk.v2.model.AggregationQuery;
-import com.mypurecloud.sdk.v2.model.AggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.EvaluationAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
+import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.CalibrationCreate;
 import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
@@ -2938,13 +2940,13 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AggregateQueryResponse> postAnalyticsEvaluationsAggregatesQueryAsync(PostAnalyticsEvaluationsAggregatesQueryRequest request, final AsyncApiCallback<AggregateQueryResponse> callback) {
+  public Future<EvaluationAggregateQueryResponse> postAnalyticsEvaluationsAggregatesQueryAsync(PostAnalyticsEvaluationsAggregatesQueryRequest request, final AsyncApiCallback<EvaluationAggregateQueryResponse> callback) {
     try {
-      final SettableFuture<AggregateQueryResponse> future = SettableFuture.create();
+      final SettableFuture<EvaluationAggregateQueryResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AggregateQueryResponse>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EvaluationAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<EvaluationAggregateQueryResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<AggregateQueryResponse> response) {
+        public void onCompleted(ApiResponse<EvaluationAggregateQueryResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -2972,13 +2974,13 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AggregateQueryResponse>> postAnalyticsEvaluationsAggregatesQueryAsync(ApiRequest<AggregationQuery> request, final AsyncApiCallback<ApiResponse<AggregateQueryResponse>> callback) {
+  public Future<ApiResponse<EvaluationAggregateQueryResponse>> postAnalyticsEvaluationsAggregatesQueryAsync(ApiRequest<EvaluationAggregationQuery> request, final AsyncApiCallback<ApiResponse<EvaluationAggregateQueryResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<AggregateQueryResponse>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<EvaluationAggregateQueryResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<AggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AggregateQueryResponse>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<EvaluationAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<EvaluationAggregateQueryResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<AggregateQueryResponse> response) {
+        public void onCompleted(ApiResponse<EvaluationAggregateQueryResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2986,7 +2988,7 @@ public class QualityApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<AggregateQueryResponse> response = (ApiResponse<AggregateQueryResponse>)(ApiResponse<?>)exception;
+            ApiResponse<EvaluationAggregateQueryResponse> response = (ApiResponse<EvaluationAggregateQueryResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2994,7 +2996,7 @@ public class QualityApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<AggregateQueryResponse> response = (ApiResponse<AggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<EvaluationAggregateQueryResponse> response = (ApiResponse<EvaluationAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3014,13 +3016,13 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AggregateQueryResponse> postAnalyticsSurveysAggregatesQueryAsync(PostAnalyticsSurveysAggregatesQueryRequest request, final AsyncApiCallback<AggregateQueryResponse> callback) {
+  public Future<SurveyAggregateQueryResponse> postAnalyticsSurveysAggregatesQueryAsync(PostAnalyticsSurveysAggregatesQueryRequest request, final AsyncApiCallback<SurveyAggregateQueryResponse> callback) {
     try {
-      final SettableFuture<AggregateQueryResponse> future = SettableFuture.create();
+      final SettableFuture<SurveyAggregateQueryResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AggregateQueryResponse>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SurveyAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<SurveyAggregateQueryResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<AggregateQueryResponse> response) {
+        public void onCompleted(ApiResponse<SurveyAggregateQueryResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -3048,13 +3050,13 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AggregateQueryResponse>> postAnalyticsSurveysAggregatesQueryAsync(ApiRequest<AggregationQuery> request, final AsyncApiCallback<ApiResponse<AggregateQueryResponse>> callback) {
+  public Future<ApiResponse<SurveyAggregateQueryResponse>> postAnalyticsSurveysAggregatesQueryAsync(ApiRequest<SurveyAggregationQuery> request, final AsyncApiCallback<ApiResponse<SurveyAggregateQueryResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<AggregateQueryResponse>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<SurveyAggregateQueryResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<AggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AggregateQueryResponse>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<SurveyAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<SurveyAggregateQueryResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<AggregateQueryResponse> response) {
+        public void onCompleted(ApiResponse<SurveyAggregateQueryResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -3062,7 +3064,7 @@ public class QualityApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<AggregateQueryResponse> response = (ApiResponse<AggregateQueryResponse>)(ApiResponse<?>)exception;
+            ApiResponse<SurveyAggregateQueryResponse> response = (ApiResponse<SurveyAggregateQueryResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -3070,7 +3072,7 @@ public class QualityApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<AggregateQueryResponse> response = (ApiResponse<AggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<SurveyAggregateQueryResponse> response = (ApiResponse<SurveyAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

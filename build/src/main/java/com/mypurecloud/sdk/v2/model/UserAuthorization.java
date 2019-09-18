@@ -42,13 +42,14 @@ public class UserAuthorization  implements Serializable {
 
   
   /**
+   * A collection of the roles the user is not using
    **/
   public UserAuthorization unusedRoles(List<DomainRole> unusedRoles) {
     this.unusedRoles = unusedRoles;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A collection of the roles the user is not using")
   @JsonProperty("unusedRoles")
   public List<DomainRole> getUnusedRoles() {
     return unusedRoles;

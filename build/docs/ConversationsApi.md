@@ -36,6 +36,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsCallsHistory**](ConversationsApi.html#getConversationsCallsHistory) | Get call history |
 | [**getConversationsCallsMaximumconferenceparties**](ConversationsApi.html#getConversationsCallsMaximumconferenceparties) | Get the maximum number of participants that this user can have on a conference |
 | [**getConversationsChat**](ConversationsApi.html#getConversationsChat) | Get chat conversation |
+| [**getConversationsChatMessage**](ConversationsApi.html#getConversationsChatMessage) | Get a web chat conversation message |
+| [**getConversationsChatMessages**](ConversationsApi.html#getConversationsChatMessages) | Get the messages of a chat conversation. |
 | [**getConversationsChatParticipantWrapup**](ConversationsApi.html#getConversationsChatParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationsChatParticipantWrapupcodes**](ConversationsApi.html#getConversationsChatParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
 | [**getConversationsChats**](ConversationsApi.html#getConversationsChats) | Get active chat conversations for the logged in user |
@@ -111,6 +113,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsCallbackParticipantReplace**](ConversationsApi.html#postConversationsCallbackParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsCallbacks**](ConversationsApi.html#postConversationsCallbacks) | Create a Callback |
 | [**postConversationsCalls**](ConversationsApi.html#postConversationsCalls) | Create a call conversation |
+| [**postConversationsChatCommunicationMessages**](ConversationsApi.html#postConversationsChatCommunicationMessages) | Send a message on behalf of a communication in a chat conversation. |
+| [**postConversationsChatCommunicationTyping**](ConversationsApi.html#postConversationsChatCommunicationTyping) | Send a typing-indicator on behalf of a communication in a chat conversation. |
 | [**postConversationsChatParticipantReplace**](ConversationsApi.html#postConversationsChatParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsChats**](ConversationsApi.html#postConversationsChats) | Create a web chat conversation |
 | [**postConversationsCobrowsesessionParticipantReplace**](ConversationsApi.html#postConversationsCobrowsesessionParticipantReplace) | Replace this participant with the specified user and/or address |
@@ -1961,6 +1965,140 @@ try {
 ### Return type
 
 [**ChatConversation**](ChatConversation.html)
+
+<a name="getConversationsChatMessage"></a>
+
+# **getConversationsChatMessage**
+
+
+
+> [WebChatMessage](WebChatMessage.html) getConversationsChatMessage(conversationId, messageId)
+
+Get a web chat conversation message
+
+
+
+Wraps GET /api/v2/conversations/chats/{conversationId}/messages/{messageId}  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String messageId = "messageId_example"; // String | messageId
+try {
+    WebChatMessage result = apiInstance.getConversationsChatMessage(conversationId, messageId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsChatMessage");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **messageId** | **String**| messageId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WebChatMessage**](WebChatMessage.html)
+
+<a name="getConversationsChatMessages"></a>
+
+# **getConversationsChatMessages**
+
+
+
+> [WebChatMessageEntityList](WebChatMessageEntityList.html) getConversationsChatMessages(conversationId, after, before, sortOrder, maxResults)
+
+Get the messages of a chat conversation.
+
+
+
+Wraps GET /api/v2/conversations/chats/{conversationId}/messages  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String after = "after_example"; // String | If specified, get the messages chronologically after the id of this message
+String before = "before_example"; // String | If specified, get the messages chronologically before the id of this message
+String sortOrder = "ascending"; // String | Sort order
+Integer maxResults = 100; // Integer | Limit the returned number of messages, up to a maximum of 100
+try {
+    WebChatMessageEntityList result = apiInstance.getConversationsChatMessages(conversationId, after, before, sortOrder, maxResults);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsChatMessages");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **after** | **String**| If specified, get the messages chronologically after the id of this message | [optional] 
+| **before** | **String**| If specified, get the messages chronologically before the id of this message | [optional] 
+| **sortOrder** | **String**| Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending 
+| **maxResults** | **Integer**| Limit the returned number of messages, up to a maximum of 100 | [optional] [default to 100] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WebChatMessageEntityList**](WebChatMessageEntityList.html)
 
 <a name="getConversationsChatParticipantWrapup"></a>
 
@@ -5774,7 +5912,7 @@ try {
 
 
 
-> [AggregateQueryResponse](AggregateQueryResponse.html) postAnalyticsConversationsAggregatesQuery(body)
+> [ConversationAggregateQueryResponse](ConversationAggregateQueryResponse.html) postAnalyticsConversationsAggregatesQuery(body)
 
 Query for conversation aggregates
 
@@ -5808,9 +5946,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
-AggregationQuery body = new AggregationQuery(); // AggregationQuery | query
+ConversationAggregationQuery body = new ConversationAggregationQuery(); // ConversationAggregationQuery | query
 try {
-    AggregateQueryResponse result = apiInstance.postAnalyticsConversationsAggregatesQuery(body);
+    ConversationAggregateQueryResponse result = apiInstance.postAnalyticsConversationsAggregatesQuery(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postAnalyticsConversationsAggregatesQuery");
@@ -5823,13 +5961,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | 
+| **body** | [**ConversationAggregationQuery**](ConversationAggregationQuery.html)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AggregateQueryResponse**](AggregateQueryResponse.html)
+[**ConversationAggregateQueryResponse**](ConversationAggregateQueryResponse.html)
 
 <a name="postAnalyticsConversationsDetailsJobs"></a>
 
@@ -6795,6 +6933,136 @@ try {
 ### Return type
 
 [**CreateCallResponse**](CreateCallResponse.html)
+
+<a name="postConversationsChatCommunicationMessages"></a>
+
+# **postConversationsChatCommunicationMessages**
+
+
+
+> [WebChatMessage](WebChatMessage.html) postConversationsChatCommunicationMessages(conversationId, communicationId, body)
+
+Send a message on behalf of a communication in a chat conversation.
+
+
+
+Wraps POST /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String communicationId = "communicationId_example"; // String | communicationId
+CreateWebChatMessageRequest body = new CreateWebChatMessageRequest(); // CreateWebChatMessageRequest | Message
+try {
+    WebChatMessage result = apiInstance.postConversationsChatCommunicationMessages(conversationId, communicationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsChatCommunicationMessages");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **communicationId** | **String**| communicationId | 
+| **body** | [**CreateWebChatMessageRequest**](CreateWebChatMessageRequest.html)| Message | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WebChatMessage**](WebChatMessage.html)
+
+<a name="postConversationsChatCommunicationTyping"></a>
+
+# **postConversationsChatCommunicationTyping**
+
+
+
+> [WebChatTyping](WebChatTyping.html) postConversationsChatCommunicationTyping(conversationId, communicationId)
+
+Send a typing-indicator on behalf of a communication in a chat conversation.
+
+
+
+Wraps POST /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String communicationId = "communicationId_example"; // String | communicationId
+try {
+    WebChatTyping result = apiInstance.postConversationsChatCommunicationTyping(conversationId, communicationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsChatCommunicationTyping");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **communicationId** | **String**| communicationId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WebChatTyping**](WebChatTyping.html)
 
 <a name="postConversationsChatParticipantReplace"></a>
 

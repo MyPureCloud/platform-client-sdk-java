@@ -25,6 +25,7 @@ title: SmsPhoneNumber
 | **renewalDate** | [**Date**](Date.html) | Contract renewal date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **autoRenewable** | [**AutoRenewableEnum**](#AutoRenewableEnum) | Renewal time period of this phone number, if the phoneNumberType is shortcode. |  [optional] |
 | **addressId** | [**SmsAddress**](SmsAddress.html) | The id of an address attached to this phone number. |  [optional] |
+| **shortCodeBillingType** | [**ShortCodeBillingTypeEnum**](#ShortCodeBillingTypeEnum) | BillingType of this phone number, if the phoneNumberType is shortcode. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
@@ -66,6 +67,18 @@ title: SmsPhoneNumber
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | QUARTERLY | &quot;Quarterly&quot; |
+{: class="table table-striped"}
+
+
+<a name="ShortCodeBillingTypeEnum"></a>
+
+## Enum: ShortCodeBillingTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| BASIC | &quot;Basic&quot; |
+| VANITY | &quot;Vanity&quot; |
 {: class="table table-striped"}
 
 

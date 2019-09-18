@@ -141,6 +141,41 @@ public class SmsPhoneNumber  implements Serializable {
   }
   private AutoRenewableEnum autoRenewable = null;
   private SmsAddress addressId = null;
+
+  /**
+   * BillingType of this phone number, if the phoneNumberType is shortcode.
+   */
+  public enum ShortCodeBillingTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    BASIC("Basic"),
+    VANITY("Vanity");
+
+    private String value;
+
+    ShortCodeBillingTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ShortCodeBillingTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ShortCodeBillingTypeEnum value : ShortCodeBillingTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ShortCodeBillingTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ShortCodeBillingTypeEnum shortCodeBillingType = null;
   private String selfUri = null;
 
   
@@ -427,6 +462,24 @@ public class SmsPhoneNumber  implements Serializable {
   }
 
   
+  /**
+   * BillingType of this phone number, if the phoneNumberType is shortcode.
+   **/
+  public SmsPhoneNumber shortCodeBillingType(ShortCodeBillingTypeEnum shortCodeBillingType) {
+    this.shortCodeBillingType = shortCodeBillingType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "BillingType of this phone number, if the phoneNumberType is shortcode.")
+  @JsonProperty("shortCodeBillingType")
+  public ShortCodeBillingTypeEnum getShortCodeBillingType() {
+    return shortCodeBillingType;
+  }
+  public void setShortCodeBillingType(ShortCodeBillingTypeEnum shortCodeBillingType) {
+    this.shortCodeBillingType = shortCodeBillingType;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -461,12 +514,13 @@ public class SmsPhoneNumber  implements Serializable {
         Objects.equals(this.renewalDate, smsPhoneNumber.renewalDate) &&
         Objects.equals(this.autoRenewable, smsPhoneNumber.autoRenewable) &&
         Objects.equals(this.addressId, smsPhoneNumber.addressId) &&
+        Objects.equals(this.shortCodeBillingType, smsPhoneNumber.shortCodeBillingType) &&
         Objects.equals(this.selfUri, smsPhoneNumber.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, phoneNumber, phoneNumberType, provisionedThroughPureCloud, phoneNumberStatus, countryCode, dateCreated, dateModified, createdBy, modifiedBy, version, purchaseDate, cancellationDate, renewalDate, autoRenewable, addressId, selfUri);
+    return Objects.hash(id, name, phoneNumber, phoneNumberType, provisionedThroughPureCloud, phoneNumberStatus, countryCode, dateCreated, dateModified, createdBy, modifiedBy, version, purchaseDate, cancellationDate, renewalDate, autoRenewable, addressId, shortCodeBillingType, selfUri);
   }
 
   @Override
@@ -491,6 +545,7 @@ public class SmsPhoneNumber  implements Serializable {
     sb.append("    renewalDate: ").append(toIndentedString(renewalDate)).append("\n");
     sb.append("    autoRenewable: ").append(toIndentedString(autoRenewable)).append("\n");
     sb.append("    addressId: ").append(toIndentedString(addressId)).append("\n");
+    sb.append("    shortCodeBillingType: ").append(toIndentedString(shortCodeBillingType)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

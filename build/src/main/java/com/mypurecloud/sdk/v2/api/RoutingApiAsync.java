@@ -43,8 +43,8 @@ import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
-import com.mypurecloud.sdk.v2.model.QualifierMappingObservationQueryResponse;
-import com.mypurecloud.sdk.v2.model.ObservationQuery;
+import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.WritableEntity;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
@@ -3569,13 +3569,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<QualifierMappingObservationQueryResponse> postAnalyticsQueuesObservationsQueryAsync(PostAnalyticsQueuesObservationsQueryRequest request, final AsyncApiCallback<QualifierMappingObservationQueryResponse> callback) {
+  public Future<QueueObservationQueryResponse> postAnalyticsQueuesObservationsQueryAsync(PostAnalyticsQueuesObservationsQueryRequest request, final AsyncApiCallback<QueueObservationQueryResponse> callback) {
     try {
-      final SettableFuture<QualifierMappingObservationQueryResponse> future = SettableFuture.create();
+      final SettableFuture<QueueObservationQueryResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QualifierMappingObservationQueryResponse>() {}, new AsyncApiCallback<ApiResponse<QualifierMappingObservationQueryResponse>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QueueObservationQueryResponse>() {}, new AsyncApiCallback<ApiResponse<QueueObservationQueryResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<QualifierMappingObservationQueryResponse> response) {
+        public void onCompleted(ApiResponse<QueueObservationQueryResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -3603,13 +3603,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<QualifierMappingObservationQueryResponse>> postAnalyticsQueuesObservationsQueryAsync(ApiRequest<ObservationQuery> request, final AsyncApiCallback<ApiResponse<QualifierMappingObservationQueryResponse>> callback) {
+  public Future<ApiResponse<QueueObservationQueryResponse>> postAnalyticsQueuesObservationsQueryAsync(ApiRequest<QueueObservationQuery> request, final AsyncApiCallback<ApiResponse<QueueObservationQueryResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<QualifierMappingObservationQueryResponse>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<QueueObservationQueryResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<QualifierMappingObservationQueryResponse>() {}, new AsyncApiCallback<ApiResponse<QualifierMappingObservationQueryResponse>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<QueueObservationQueryResponse>() {}, new AsyncApiCallback<ApiResponse<QueueObservationQueryResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<QualifierMappingObservationQueryResponse> response) {
+        public void onCompleted(ApiResponse<QueueObservationQueryResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -3617,7 +3617,7 @@ public class RoutingApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<QualifierMappingObservationQueryResponse> response = (ApiResponse<QualifierMappingObservationQueryResponse>)(ApiResponse<?>)exception;
+            ApiResponse<QueueObservationQueryResponse> response = (ApiResponse<QueueObservationQueryResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -3625,7 +3625,7 @@ public class RoutingApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<QualifierMappingObservationQueryResponse> response = (ApiResponse<QualifierMappingObservationQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<QueueObservationQueryResponse> response = (ApiResponse<QueueObservationQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

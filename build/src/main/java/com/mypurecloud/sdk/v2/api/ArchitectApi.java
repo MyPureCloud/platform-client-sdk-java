@@ -41,6 +41,7 @@ import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTable;
+import com.mypurecloud.sdk.v2.model.DataTableImportJob;
 import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
@@ -97,6 +98,7 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowVersionConfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableImportJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesRequest;
@@ -4393,6 +4395,89 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DataTable> response = (ApiResponse<DataTable>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Returns the state information about an import job
+   * Returns the state information about an import job.
+   * @param datatableId id of datatable (required)
+   * @param importJobId id of import job (required)
+   * @return DataTableImportJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataTableImportJob getFlowsDatatableImportJob(String datatableId, String importJobId) throws IOException, ApiException {
+    return  getFlowsDatatableImportJob(createGetFlowsDatatableImportJobRequest(datatableId, importJobId));
+  }
+
+  /**
+   * Returns the state information about an import job
+   * Returns the state information about an import job.
+   * @param datatableId id of datatable (required)
+   * @param importJobId id of import job (required)
+   * @return DataTableImportJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataTableImportJob> getFlowsDatatableImportJobWithHttpInfo(String datatableId, String importJobId) throws IOException {
+    return getFlowsDatatableImportJob(createGetFlowsDatatableImportJobRequest(datatableId, importJobId).withHttpInfo());
+  }
+
+  private GetFlowsDatatableImportJobRequest createGetFlowsDatatableImportJobRequest(String datatableId, String importJobId) {
+    return GetFlowsDatatableImportJobRequest.builder()
+            .withDatatableId(datatableId)
+    
+            .withImportJobId(importJobId)
+    
+            .build();
+  }
+
+  /**
+   * Returns the state information about an import job
+   * Returns the state information about an import job.
+   * @param request The request object
+   * @return DataTableImportJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataTableImportJob getFlowsDatatableImportJob(GetFlowsDatatableImportJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataTableImportJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataTableImportJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Returns the state information about an import job
+   * Returns the state information about an import job.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataTableImportJob> getFlowsDatatableImportJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataTableImportJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataTableImportJob> response = (ApiResponse<DataTableImportJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataTableImportJob> response = (ApiResponse<DataTableImportJob>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

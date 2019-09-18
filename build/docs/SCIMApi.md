@@ -11,10 +11,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteScimV2User**](SCIMApi.html#deleteScimV2User) | Delete a user |
 | [**getScimGroup**](SCIMApi.html#getScimGroup) | Get a group |
 | [**getScimGroups**](SCIMApi.html#getScimGroups) | Get a list of groups |
+| [**getScimResourcetype**](SCIMApi.html#getScimResourcetype) | Get the SCIM configuration |
+| [**getScimResourcetypes**](SCIMApi.html#getScimResourcetypes) | Get the SCIM resource types |
+| [**getScimServiceproviderconfig**](SCIMApi.html#getScimServiceproviderconfig) | Get the SCIM configuration |
 | [**getScimUser**](SCIMApi.html#getScimUser) | Get a user |
 | [**getScimUsers**](SCIMApi.html#getScimUsers) | Get a list of users |
 | [**getScimV2Group**](SCIMApi.html#getScimV2Group) | Get a group |
 | [**getScimV2Groups**](SCIMApi.html#getScimV2Groups) | Get a list of groups |
+| [**getScimV2Resourcetype**](SCIMApi.html#getScimV2Resourcetype) | Get the SCIM configuration |
+| [**getScimV2Resourcetypes**](SCIMApi.html#getScimV2Resourcetypes) | Get the SCIM resource types |
 | [**getScimV2Serviceproviderconfig**](SCIMApi.html#getScimV2Serviceproviderconfig) | Get the SCIM configuration |
 | [**getScimV2User**](SCIMApi.html#getScimV2User) | Get a user |
 | [**getScimV2Users**](SCIMApi.html#getScimV2Users) | Get a list of users |
@@ -292,6 +297,153 @@ try {
 
 [**ScimGroupListResponse**](ScimGroupListResponse.html)
 
+<a name="getScimResourcetype"></a>
+
+# **getScimResourcetype**
+
+
+
+> [ScimConfigResourceType](ScimConfigResourceType.html) getScimResourcetype(resourceType)
+
+Get the SCIM configuration
+
+
+
+Wraps GET /api/v2/scim/resourcetypes/{resourceType}  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.api.SCIMApi;
+
+
+SCIMApi apiInstance = new SCIMApi();
+String resourceType = "resourceType_example"; // String | The ID of a resource.
+try {
+    ScimConfigResourceType result = apiInstance.getScimResourcetype(resourceType);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SCIMApi#getScimResourcetype");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **resourceType** | **String**| The ID of a resource. |<br />**Values**: User, Group, ServiceProviderConfig, ResourceType 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ScimConfigResourceType**](ScimConfigResourceType.html)
+
+<a name="getScimResourcetypes"></a>
+
+# **getScimResourcetypes**
+
+
+
+> [ScimConfigResourceTypesListResponse](ScimConfigResourceTypesListResponse.html) getScimResourcetypes(filter)
+
+Get the SCIM resource types
+
+
+
+Wraps GET /api/v2/scim/resourcetypes  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.api.SCIMApi;
+
+
+SCIMApi apiInstance = new SCIMApi();
+String filter = "displayName eq groupName"; // String | Filtered results are invalid and will result in a 403 (Unauthorized) return.
+try {
+    ScimConfigResourceTypesListResponse result = apiInstance.getScimResourcetypes(filter);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SCIMApi#getScimResourcetypes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **String**| Filtered results are invalid and will result in a 403 (Unauthorized) return. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ScimConfigResourceTypesListResponse**](ScimConfigResourceTypesListResponse.html)
+
+<a name="getScimServiceproviderconfig"></a>
+
+# **getScimServiceproviderconfig**
+
+
+
+> [ScimServiceProviderConfig](ScimServiceProviderConfig.html) getScimServiceproviderconfig(ifNoneMatch)
+
+Get the SCIM configuration
+
+
+
+Wraps GET /api/v2/scim/serviceproviderconfig  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.api.SCIMApi;
+
+
+SCIMApi apiInstance = new SCIMApi();
+String ifNoneMatch = "ifNoneMatch_example"; // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \"42\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. 
+try {
+    ScimServiceProviderConfig result = apiInstance.getScimServiceproviderconfig(ifNoneMatch);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SCIMApi#getScimServiceproviderconfig");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ifNoneMatch** | **String**| The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ScimServiceProviderConfig**](ScimServiceProviderConfig.html)
+
 <a name="getScimUser"></a>
 
 # **getScimUser**
@@ -557,6 +709,104 @@ try {
 ### Return type
 
 [**ScimGroupListResponse**](ScimGroupListResponse.html)
+
+<a name="getScimV2Resourcetype"></a>
+
+# **getScimV2Resourcetype**
+
+
+
+> [ScimConfigResourceType](ScimConfigResourceType.html) getScimV2Resourcetype(resourceType)
+
+Get the SCIM configuration
+
+
+
+Wraps GET /api/v2/scim/v2/resourcetypes/{resourceType}  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.api.SCIMApi;
+
+
+SCIMApi apiInstance = new SCIMApi();
+String resourceType = "resourceType_example"; // String | The ID of a resource.
+try {
+    ScimConfigResourceType result = apiInstance.getScimV2Resourcetype(resourceType);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SCIMApi#getScimV2Resourcetype");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **resourceType** | **String**| The ID of a resource. |<br />**Values**: User, Group, ServiceProviderConfig, ResourceType 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ScimConfigResourceType**](ScimConfigResourceType.html)
+
+<a name="getScimV2Resourcetypes"></a>
+
+# **getScimV2Resourcetypes**
+
+
+
+> [ScimConfigResourceTypesListResponse](ScimConfigResourceTypesListResponse.html) getScimV2Resourcetypes(filter)
+
+Get the SCIM resource types
+
+
+
+Wraps GET /api/v2/scim/v2/resourcetypes  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.api.SCIMApi;
+
+
+SCIMApi apiInstance = new SCIMApi();
+String filter = "displayName eq groupName"; // String | Filtered results are invalid and will result in a 403 (Unauthorized) return.
+try {
+    ScimConfigResourceTypesListResponse result = apiInstance.getScimV2Resourcetypes(filter);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SCIMApi#getScimV2Resourcetypes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **filter** | **String**| Filtered results are invalid and will result in a 403 (Unauthorized) return. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ScimConfigResourceTypesListResponse**](ScimConfigResourceTypesListResponse.html)
 
 <a name="getScimV2Serviceproviderconfig"></a>
 

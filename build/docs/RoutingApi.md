@@ -3047,7 +3047,7 @@ try {
 
 
 
-> [QualifierMappingObservationQueryResponse](QualifierMappingObservationQueryResponse.html) postAnalyticsQueuesObservationsQuery(body)
+> [QueueObservationQueryResponse](QueueObservationQueryResponse.html) postAnalyticsQueuesObservationsQuery(body)
 
 Query for queue observations
 
@@ -3081,9 +3081,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
-ObservationQuery body = new ObservationQuery(); // ObservationQuery | query
+QueueObservationQuery body = new QueueObservationQuery(); // QueueObservationQuery | query
 try {
-    QualifierMappingObservationQueryResponse result = apiInstance.postAnalyticsQueuesObservationsQuery(body);
+    QueueObservationQueryResponse result = apiInstance.postAnalyticsQueuesObservationsQuery(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#postAnalyticsQueuesObservationsQuery");
@@ -3096,13 +3096,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ObservationQuery**](ObservationQuery.html)| query | 
+| **body** | [**QueueObservationQuery**](QueueObservationQuery.html)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**QualifierMappingObservationQueryResponse**](QualifierMappingObservationQueryResponse.html)
+[**QueueObservationQueryResponse**](QueueObservationQueryResponse.html)
 
 <a name="postRoutingEmailDomainRoutes"></a>
 

@@ -3066,7 +3066,7 @@ try {
 
 
 
-> [PresenceQueryResponse](PresenceQueryResponse.html) postAnalyticsUsersAggregatesQuery(body)
+> [UserAggregateQueryResponse](UserAggregateQueryResponse.html) postAnalyticsUsersAggregatesQuery(body)
 
 Query for user aggregates
 
@@ -3100,9 +3100,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 UsersApi apiInstance = new UsersApi();
-AggregationQuery body = new AggregationQuery(); // AggregationQuery | query
+UserAggregationQuery body = new UserAggregationQuery(); // UserAggregationQuery | query
 try {
-    PresenceQueryResponse result = apiInstance.postAnalyticsUsersAggregatesQuery(body);
+    UserAggregateQueryResponse result = apiInstance.postAnalyticsUsersAggregatesQuery(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#postAnalyticsUsersAggregatesQuery");
@@ -3115,13 +3115,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | 
+| **body** | [**UserAggregationQuery**](UserAggregationQuery.html)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**PresenceQueryResponse**](PresenceQueryResponse.html)
+[**UserAggregateQueryResponse**](UserAggregateQueryResponse.html)
 
 <a name="postAnalyticsUsersDetailsQuery"></a>
 
@@ -3192,7 +3192,7 @@ try {
 
 
 
-> [ObservationQueryResponse](ObservationQueryResponse.html) postAnalyticsUsersObservationsQuery(body)
+> [UserObservationQueryResponse](UserObservationQueryResponse.html) postAnalyticsUsersObservationsQuery(body)
 
 Query for user observations
 
@@ -3226,9 +3226,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 UsersApi apiInstance = new UsersApi();
-ObservationQuery body = new ObservationQuery(); // ObservationQuery | query
+UserObservationQuery body = new UserObservationQuery(); // UserObservationQuery | query
 try {
-    ObservationQueryResponse result = apiInstance.postAnalyticsUsersObservationsQuery(body);
+    UserObservationQueryResponse result = apiInstance.postAnalyticsUsersObservationsQuery(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#postAnalyticsUsersObservationsQuery");
@@ -3241,13 +3241,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ObservationQuery**](ObservationQuery.html)| query | 
+| **body** | [**UserObservationQuery**](UserObservationQuery.html)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ObservationQueryResponse**](ObservationQueryResponse.html)
+[**UserObservationQueryResponse**](UserObservationQueryResponse.html)
 
 <a name="postAuthorizationSubjectDivisionRole"></a>
 
@@ -3292,7 +3292,7 @@ UsersApi apiInstance = new UsersApi();
 String subjectId = "subjectId_example"; // String | Subject ID (user or group)
 String divisionId = "divisionId_example"; // String | the id of the division to which to make the grant
 String roleId = "roleId_example"; // String | the id of the role to grant
-String subjectType = "PC_USER"; // String | what the type of the subject is, PC_GROUP or PC_USER
+String subjectType = "PC_USER"; // String | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints)
 try {
     apiInstance.postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, subjectType);
 } catch (ApiException e) {
@@ -3309,7 +3309,7 @@ try {
 | **subjectId** | **String**| Subject ID (user or group) | 
 | **divisionId** | **String**| the id of the division to which to make the grant | 
 | **roleId** | **String**| the id of the role to grant | 
-| **subjectType** | **String**| what the type of the subject is, PC_GROUP or PC_USER | [optional] [default to PC_USER] 
+| **subjectType** | **String**| what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) | [optional] [default to PC_USER] 
 {: class="table-striped"}
 
 

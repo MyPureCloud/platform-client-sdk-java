@@ -6,8 +6,10 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AnalyticsQueryAggregation;
-import com.mypurecloud.sdk.v2.model.AnalyticsQueryFilter;
 import com.mypurecloud.sdk.v2.model.PagingSpec;
+import com.mypurecloud.sdk.v2.model.PresenceDetailQueryFilter;
+import com.mypurecloud.sdk.v2.model.RoutingStatusDetailQueryFilter;
+import com.mypurecloud.sdk.v2.model.UserDetailQueryFilter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -21,9 +23,8 @@ import java.io.Serializable;
 public class UserDetailsQuery  implements Serializable {
   
   private String interval = null;
-  private List<AnalyticsQueryFilter> userFilters = new ArrayList<AnalyticsQueryFilter>();
-  private List<AnalyticsQueryFilter> presenceFilters = new ArrayList<AnalyticsQueryFilter>();
-  private List<AnalyticsQueryFilter> routingStatusFilters = new ArrayList<AnalyticsQueryFilter>();
+  private List<UserDetailQueryFilter> userFilters = new ArrayList<UserDetailQueryFilter>();
+  private List<RoutingStatusDetailQueryFilter> routingStatusFilters = new ArrayList<RoutingStatusDetailQueryFilter>();
   private List<AnalyticsQueryAggregation> presenceAggregations = new ArrayList<AnalyticsQueryAggregation>();
   private List<AnalyticsQueryAggregation> routingStatusAggregations = new ArrayList<AnalyticsQueryAggregation>();
   private PagingSpec paging = null;
@@ -62,6 +63,7 @@ public class UserDetailsQuery  implements Serializable {
     }
   }
   private OrderEnum order = null;
+  private List<PresenceDetailQueryFilter> presenceDetailFilters = new ArrayList<PresenceDetailQueryFilter>();
 
   
   /**
@@ -85,53 +87,35 @@ public class UserDetailsQuery  implements Serializable {
   /**
    * Filters that target the users to retrieve data for
    **/
-  public UserDetailsQuery userFilters(List<AnalyticsQueryFilter> userFilters) {
+  public UserDetailsQuery userFilters(List<UserDetailQueryFilter> userFilters) {
     this.userFilters = userFilters;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Filters that target the users to retrieve data for")
   @JsonProperty("userFilters")
-  public List<AnalyticsQueryFilter> getUserFilters() {
+  public List<UserDetailQueryFilter> getUserFilters() {
     return userFilters;
   }
-  public void setUserFilters(List<AnalyticsQueryFilter> userFilters) {
+  public void setUserFilters(List<UserDetailQueryFilter> userFilters) {
     this.userFilters = userFilters;
-  }
-
-  
-  /**
-   * Filters that target system and organization presence-level data
-   **/
-  public UserDetailsQuery presenceFilters(List<AnalyticsQueryFilter> presenceFilters) {
-    this.presenceFilters = presenceFilters;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Filters that target system and organization presence-level data")
-  @JsonProperty("presenceFilters")
-  public List<AnalyticsQueryFilter> getPresenceFilters() {
-    return presenceFilters;
-  }
-  public void setPresenceFilters(List<AnalyticsQueryFilter> presenceFilters) {
-    this.presenceFilters = presenceFilters;
   }
 
   
   /**
    * Filters that target agent routing status-level data
    **/
-  public UserDetailsQuery routingStatusFilters(List<AnalyticsQueryFilter> routingStatusFilters) {
+  public UserDetailsQuery routingStatusFilters(List<RoutingStatusDetailQueryFilter> routingStatusFilters) {
     this.routingStatusFilters = routingStatusFilters;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Filters that target agent routing status-level data")
   @JsonProperty("routingStatusFilters")
-  public List<AnalyticsQueryFilter> getRoutingStatusFilters() {
+  public List<RoutingStatusDetailQueryFilter> getRoutingStatusFilters() {
     return routingStatusFilters;
   }
-  public void setRoutingStatusFilters(List<AnalyticsQueryFilter> routingStatusFilters) {
+  public void setRoutingStatusFilters(List<RoutingStatusDetailQueryFilter> routingStatusFilters) {
     this.routingStatusFilters = routingStatusFilters;
   }
 
@@ -208,6 +192,23 @@ public class UserDetailsQuery  implements Serializable {
   }
 
   
+  /**
+   **/
+  public UserDetailsQuery presenceDetailFilters(List<PresenceDetailQueryFilter> presenceDetailFilters) {
+    this.presenceDetailFilters = presenceDetailFilters;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("presenceDetailFilters")
+  public List<PresenceDetailQueryFilter> getPresenceDetailFilters() {
+    return presenceDetailFilters;
+  }
+  public void setPresenceDetailFilters(List<PresenceDetailQueryFilter> presenceDetailFilters) {
+    this.presenceDetailFilters = presenceDetailFilters;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -220,17 +221,17 @@ public class UserDetailsQuery  implements Serializable {
     UserDetailsQuery userDetailsQuery = (UserDetailsQuery) o;
     return Objects.equals(this.interval, userDetailsQuery.interval) &&
         Objects.equals(this.userFilters, userDetailsQuery.userFilters) &&
-        Objects.equals(this.presenceFilters, userDetailsQuery.presenceFilters) &&
         Objects.equals(this.routingStatusFilters, userDetailsQuery.routingStatusFilters) &&
         Objects.equals(this.presenceAggregations, userDetailsQuery.presenceAggregations) &&
         Objects.equals(this.routingStatusAggregations, userDetailsQuery.routingStatusAggregations) &&
         Objects.equals(this.paging, userDetailsQuery.paging) &&
-        Objects.equals(this.order, userDetailsQuery.order);
+        Objects.equals(this.order, userDetailsQuery.order) &&
+        Objects.equals(this.presenceDetailFilters, userDetailsQuery.presenceDetailFilters);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(interval, userFilters, presenceFilters, routingStatusFilters, presenceAggregations, routingStatusAggregations, paging, order);
+    return Objects.hash(interval, userFilters, routingStatusFilters, presenceAggregations, routingStatusAggregations, paging, order, presenceDetailFilters);
   }
 
   @Override
@@ -240,12 +241,12 @@ public class UserDetailsQuery  implements Serializable {
     
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    userFilters: ").append(toIndentedString(userFilters)).append("\n");
-    sb.append("    presenceFilters: ").append(toIndentedString(presenceFilters)).append("\n");
     sb.append("    routingStatusFilters: ").append(toIndentedString(routingStatusFilters)).append("\n");
     sb.append("    presenceAggregations: ").append(toIndentedString(presenceAggregations)).append("\n");
     sb.append("    routingStatusAggregations: ").append(toIndentedString(routingStatusAggregations)).append("\n");
     sb.append("    paging: ").append(toIndentedString(paging)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
+    sb.append("    presenceDetailFilters: ").append(toIndentedString(presenceDetailFilters)).append("\n");
     sb.append("}");
     return sb.toString();
   }

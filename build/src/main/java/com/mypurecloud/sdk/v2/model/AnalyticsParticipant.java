@@ -9,7 +9,9 @@ import com.mypurecloud.sdk.v2.model.AnalyticsSession;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -20,6 +22,7 @@ public class AnalyticsParticipant  implements Serializable {
   
   private String participantId = null;
   private String participantName = null;
+  private Map<String, String> attributes = null;
   private String userId = null;
 
   /**
@@ -42,7 +45,8 @@ public class AnalyticsParticipant  implements Serializable {
     EXTERNAL("external"),
     FAX("fax"),
     WORKFLOW("workflow"),
-    CAMPAIGN("campaign");
+    CAMPAIGN("campaign"),
+    API("api");
 
     private String value;
 
@@ -142,6 +146,24 @@ public class AnalyticsParticipant  implements Serializable {
   }
   public void setParticipantName(String participantName) {
     this.participantName = participantName;
+  }
+
+  
+  /**
+   * List of attributes associated to this participant
+   **/
+  public AnalyticsParticipant attributes(Map<String, String> attributes) {
+    this.attributes = attributes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of attributes associated to this participant")
+  @JsonProperty("attributes")
+  public Map<String, String> getAttributes() {
+    return attributes;
+  }
+  public void setAttributes(Map<String, String> attributes) {
+    this.attributes = attributes;
   }
 
   
@@ -265,6 +287,7 @@ public class AnalyticsParticipant  implements Serializable {
     AnalyticsParticipant analyticsParticipant = (AnalyticsParticipant) o;
     return Objects.equals(this.participantId, analyticsParticipant.participantId) &&
         Objects.equals(this.participantName, analyticsParticipant.participantName) &&
+        Objects.equals(this.attributes, analyticsParticipant.attributes) &&
         Objects.equals(this.userId, analyticsParticipant.userId) &&
         Objects.equals(this.purpose, analyticsParticipant.purpose) &&
         Objects.equals(this.externalContactId, analyticsParticipant.externalContactId) &&
@@ -275,7 +298,7 @@ public class AnalyticsParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(participantId, participantName, userId, purpose, externalContactId, externalOrganizationId, flaggedReason, sessions);
+    return Objects.hash(participantId, participantName, attributes, userId, purpose, externalContactId, externalOrganizationId, flaggedReason, sessions);
   }
 
   @Override
@@ -285,6 +308,7 @@ public class AnalyticsParticipant  implements Serializable {
     
     sb.append("    participantId: ").append(toIndentedString(participantId)).append("\n");
     sb.append("    participantName: ").append(toIndentedString(participantName)).append("\n");
+    sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    purpose: ").append(toIndentedString(purpose)).append("\n");
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");

@@ -24,7 +24,8 @@ public class ScimV2GroupReference  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     USER("User"),
     GROUP("Group"),
-    SERVICEPROVIDERCONFIG("ServiceProviderConfig");
+    SERVICEPROVIDERCONFIG("ServiceProviderConfig"),
+    RESOURCETYPE("ResourceType");
 
     private String value;
 

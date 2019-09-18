@@ -2588,7 +2588,7 @@ try {
 
 
 
-> [AggregateQueryResponse](AggregateQueryResponse.html) postAnalyticsEvaluationsAggregatesQuery(body)
+> [EvaluationAggregateQueryResponse](EvaluationAggregateQueryResponse.html) postAnalyticsEvaluationsAggregatesQuery(body)
 
 Query for evaluation aggregates
 
@@ -2622,9 +2622,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 QualityApi apiInstance = new QualityApi();
-AggregationQuery body = new AggregationQuery(); // AggregationQuery | query
+EvaluationAggregationQuery body = new EvaluationAggregationQuery(); // EvaluationAggregationQuery | query
 try {
-    AggregateQueryResponse result = apiInstance.postAnalyticsEvaluationsAggregatesQuery(body);
+    EvaluationAggregateQueryResponse result = apiInstance.postAnalyticsEvaluationsAggregatesQuery(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#postAnalyticsEvaluationsAggregatesQuery");
@@ -2637,13 +2637,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | 
+| **body** | [**EvaluationAggregationQuery**](EvaluationAggregationQuery.html)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AggregateQueryResponse**](AggregateQueryResponse.html)
+[**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse.html)
 
 <a name="postAnalyticsSurveysAggregatesQuery"></a>
 
@@ -2651,7 +2651,7 @@ try {
 
 
 
-> [AggregateQueryResponse](AggregateQueryResponse.html) postAnalyticsSurveysAggregatesQuery(body)
+> [SurveyAggregateQueryResponse](SurveyAggregateQueryResponse.html) postAnalyticsSurveysAggregatesQuery(body)
 
 Query for survey aggregates
 
@@ -2685,9 +2685,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 QualityApi apiInstance = new QualityApi();
-AggregationQuery body = new AggregationQuery(); // AggregationQuery | query
+SurveyAggregationQuery body = new SurveyAggregationQuery(); // SurveyAggregationQuery | query
 try {
-    AggregateQueryResponse result = apiInstance.postAnalyticsSurveysAggregatesQuery(body);
+    SurveyAggregateQueryResponse result = apiInstance.postAnalyticsSurveysAggregatesQuery(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#postAnalyticsSurveysAggregatesQuery");
@@ -2700,13 +2700,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | 
+| **body** | [**SurveyAggregationQuery**](SurveyAggregationQuery.html)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AggregateQueryResponse**](AggregateQueryResponse.html)
+[**SurveyAggregateQueryResponse**](SurveyAggregateQueryResponse.html)
 
 <a name="postQualityCalibrations"></a>
 

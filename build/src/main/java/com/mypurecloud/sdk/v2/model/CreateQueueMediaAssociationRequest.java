@@ -18,6 +18,7 @@ import java.io.Serializable;
 
 public class CreateQueueMediaAssociationRequest  implements Serializable {
   
+  private String id = null;
   private QueueReference queue = null;
 
   /**
@@ -56,6 +57,13 @@ public class CreateQueueMediaAssociationRequest  implements Serializable {
     }
   }
   private List<MediaTypesEnum> mediaTypes = new ArrayList<MediaTypesEnum>();
+
+  
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
 
   
   /**
@@ -104,13 +112,14 @@ public class CreateQueueMediaAssociationRequest  implements Serializable {
       return false;
     }
     CreateQueueMediaAssociationRequest createQueueMediaAssociationRequest = (CreateQueueMediaAssociationRequest) o;
-    return Objects.equals(this.queue, createQueueMediaAssociationRequest.queue) &&
+    return Objects.equals(this.id, createQueueMediaAssociationRequest.id) &&
+        Objects.equals(this.queue, createQueueMediaAssociationRequest.queue) &&
         Objects.equals(this.mediaTypes, createQueueMediaAssociationRequest.mediaTypes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(queue, mediaTypes);
+    return Objects.hash(id, queue, mediaTypes);
   }
 
   @Override
@@ -118,6 +127,7 @@ public class CreateQueueMediaAssociationRequest  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateQueueMediaAssociationRequest {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
     sb.append("    mediaTypes: ").append(toIndentedString(mediaTypes)).append("\n");
     sb.append("}");

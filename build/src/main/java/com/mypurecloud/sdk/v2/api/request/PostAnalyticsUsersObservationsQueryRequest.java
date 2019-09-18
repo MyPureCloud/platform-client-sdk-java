@@ -49,12 +49,12 @@ import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.PatchUser;
-import com.mypurecloud.sdk.v2.model.AggregationQuery;
-import com.mypurecloud.sdk.v2.model.PresenceQueryResponse;
+import com.mypurecloud.sdk.v2.model.UserAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.UserAggregationQuery;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
-import com.mypurecloud.sdk.v2.model.ObservationQueryResponse;
-import com.mypurecloud.sdk.v2.model.ObservationQuery;
+import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.UserObservationQuery;
 import com.mypurecloud.sdk.v2.model.ChangePasswordRequest;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 import com.mypurecloud.sdk.v2.model.CreateUser;
@@ -63,16 +63,16 @@ import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class PostAnalyticsUsersObservationsQueryRequest {
     
-	private ObservationQuery body;
-	public ObservationQuery getBody() {
+	private UserObservationQuery body;
+	public UserObservationQuery getBody() {
 		return this.body;
 	}
 
-	public void setBody(ObservationQuery body) {
+	public void setBody(UserObservationQuery body) {
 		this.body = body;
 	}
 
-	public PostAnalyticsUsersObservationsQueryRequest withBody(ObservationQuery body) {
+	public PostAnalyticsUsersObservationsQueryRequest withBody(UserObservationQuery body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -96,7 +96,7 @@ public class PostAnalyticsUsersObservationsQueryRequest {
         return this;
     }
 
-    public ApiRequest<ObservationQuery> withHttpInfo() {
+    public ApiRequest<UserObservationQuery> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -119,7 +119,7 @@ public class PostAnalyticsUsersObservationsQueryRequest {
 	}
 
 	
-	public static Builder builder(ObservationQuery body) {
+	public static Builder builder(UserObservationQuery body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -133,14 +133,14 @@ public class PostAnalyticsUsersObservationsQueryRequest {
 		}
 
 		
-		public Builder withBody(ObservationQuery body) {
+		public Builder withBody(UserObservationQuery body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(ObservationQuery body) {
+		public Builder withRequiredParams(UserObservationQuery body) {
 			request.setBody(body);
 			
 			return this;

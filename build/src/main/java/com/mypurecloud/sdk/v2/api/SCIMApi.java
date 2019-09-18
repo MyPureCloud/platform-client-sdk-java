@@ -10,13 +10,16 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.ScimError;
 import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ScimV2Group;
 import com.mypurecloud.sdk.v2.model.ScimGroupListResponse;
+import com.mypurecloud.sdk.v2.model.ScimConfigResourceType;
+import com.mypurecloud.sdk.v2.model.ScimConfigResourceTypesListResponse;
+import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfig;
 import com.mypurecloud.sdk.v2.model.ScimV2User;
 import com.mypurecloud.sdk.v2.model.ScimUserListResponse;
-import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfig;
 import com.mypurecloud.sdk.v2.model.ScimV2PatchRequest;
 import com.mypurecloud.sdk.v2.model.ScimV2CreateUser;
 
@@ -25,10 +28,15 @@ import com.mypurecloud.sdk.v2.api.request.DeleteScimUserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteScimV2UserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimGroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScimResourcetypeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScimResourcetypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScimServiceproviderconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimV2GroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimV2GroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScimV2ResourcetypeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScimV2ResourcetypesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimV2ServiceproviderconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimV2UserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimV2UsersRequest;
@@ -399,6 +407,243 @@ public class SCIMApi {
 
   
   /**
+   * Get the SCIM configuration
+   * 
+   * @param resourceType The ID of a resource. (required)
+   * @return ScimConfigResourceType
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScimConfigResourceType getScimResourcetype(String resourceType) throws IOException, ApiException {
+    return  getScimResourcetype(createGetScimResourcetypeRequest(resourceType));
+  }
+
+  /**
+   * Get the SCIM configuration
+   * 
+   * @param resourceType The ID of a resource. (required)
+   * @return ScimConfigResourceType
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScimConfigResourceType> getScimResourcetypeWithHttpInfo(String resourceType) throws IOException {
+    return getScimResourcetype(createGetScimResourcetypeRequest(resourceType).withHttpInfo());
+  }
+
+  private GetScimResourcetypeRequest createGetScimResourcetypeRequest(String resourceType) {
+    return GetScimResourcetypeRequest.builder()
+            .withResourceType(resourceType)
+    
+            .build();
+  }
+
+  /**
+   * Get the SCIM configuration
+   * 
+   * @param request The request object
+   * @return ScimConfigResourceType
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScimConfigResourceType getScimResourcetype(GetScimResourcetypeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScimConfigResourceType> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScimConfigResourceType>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the SCIM configuration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScimConfigResourceType> getScimResourcetype(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScimConfigResourceType>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScimConfigResourceType> response = (ApiResponse<ScimConfigResourceType>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScimConfigResourceType> response = (ApiResponse<ScimConfigResourceType>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the SCIM resource types
+   * 
+   * @param filter Filtered results are invalid and will result in a 403 (Unauthorized) return. (optional)
+   * @return ScimConfigResourceTypesListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScimConfigResourceTypesListResponse getScimResourcetypes(String filter) throws IOException, ApiException {
+    return  getScimResourcetypes(createGetScimResourcetypesRequest(filter));
+  }
+
+  /**
+   * Get the SCIM resource types
+   * 
+   * @param filter Filtered results are invalid and will result in a 403 (Unauthorized) return. (optional)
+   * @return ScimConfigResourceTypesListResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScimConfigResourceTypesListResponse> getScimResourcetypesWithHttpInfo(String filter) throws IOException {
+    return getScimResourcetypes(createGetScimResourcetypesRequest(filter).withHttpInfo());
+  }
+
+  private GetScimResourcetypesRequest createGetScimResourcetypesRequest(String filter) {
+    return GetScimResourcetypesRequest.builder()
+            .withFilter(filter)
+    
+            .build();
+  }
+
+  /**
+   * Get the SCIM resource types
+   * 
+   * @param request The request object
+   * @return ScimConfigResourceTypesListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScimConfigResourceTypesListResponse getScimResourcetypes(GetScimResourcetypesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScimConfigResourceTypesListResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScimConfigResourceTypesListResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the SCIM resource types
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScimConfigResourceTypesListResponse> getScimResourcetypes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScimConfigResourceTypesListResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScimConfigResourceTypesListResponse> response = (ApiResponse<ScimConfigResourceTypesListResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScimConfigResourceTypesListResponse> response = (ApiResponse<ScimConfigResourceTypesListResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the SCIM configuration
+   * 
+   * @param ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  (optional)
+   * @return ScimServiceProviderConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScimServiceProviderConfig getScimServiceproviderconfig(String ifNoneMatch) throws IOException, ApiException {
+    return  getScimServiceproviderconfig(createGetScimServiceproviderconfigRequest(ifNoneMatch));
+  }
+
+  /**
+   * Get the SCIM configuration
+   * 
+   * @param ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  (optional)
+   * @return ScimServiceProviderConfig
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScimServiceProviderConfig> getScimServiceproviderconfigWithHttpInfo(String ifNoneMatch) throws IOException {
+    return getScimServiceproviderconfig(createGetScimServiceproviderconfigRequest(ifNoneMatch).withHttpInfo());
+  }
+
+  private GetScimServiceproviderconfigRequest createGetScimServiceproviderconfigRequest(String ifNoneMatch) {
+    return GetScimServiceproviderconfigRequest.builder()
+            .withIfNoneMatch(ifNoneMatch)
+    
+            .build();
+  }
+
+  /**
+   * Get the SCIM configuration
+   * 
+   * @param request The request object
+   * @return ScimServiceProviderConfig
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScimServiceProviderConfig getScimServiceproviderconfig(GetScimServiceproviderconfigRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScimServiceProviderConfig> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScimServiceProviderConfig>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the SCIM configuration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScimServiceProviderConfig> getScimServiceproviderconfig(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScimServiceProviderConfig>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScimServiceProviderConfig> response = (ApiResponse<ScimServiceProviderConfig>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScimServiceProviderConfig> response = (ApiResponse<ScimServiceProviderConfig>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get a user
    * 
    * @param userId The ID of a user. Returned with GET /api/v2/scim/users. (required)
@@ -733,6 +978,164 @@ public class SCIMApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ScimGroupListResponse> response = (ApiResponse<ScimGroupListResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the SCIM configuration
+   * 
+   * @param resourceType The ID of a resource. (required)
+   * @return ScimConfigResourceType
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScimConfigResourceType getScimV2Resourcetype(String resourceType) throws IOException, ApiException {
+    return  getScimV2Resourcetype(createGetScimV2ResourcetypeRequest(resourceType));
+  }
+
+  /**
+   * Get the SCIM configuration
+   * 
+   * @param resourceType The ID of a resource. (required)
+   * @return ScimConfigResourceType
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScimConfigResourceType> getScimV2ResourcetypeWithHttpInfo(String resourceType) throws IOException {
+    return getScimV2Resourcetype(createGetScimV2ResourcetypeRequest(resourceType).withHttpInfo());
+  }
+
+  private GetScimV2ResourcetypeRequest createGetScimV2ResourcetypeRequest(String resourceType) {
+    return GetScimV2ResourcetypeRequest.builder()
+            .withResourceType(resourceType)
+    
+            .build();
+  }
+
+  /**
+   * Get the SCIM configuration
+   * 
+   * @param request The request object
+   * @return ScimConfigResourceType
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScimConfigResourceType getScimV2Resourcetype(GetScimV2ResourcetypeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScimConfigResourceType> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScimConfigResourceType>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the SCIM configuration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScimConfigResourceType> getScimV2Resourcetype(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScimConfigResourceType>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScimConfigResourceType> response = (ApiResponse<ScimConfigResourceType>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScimConfigResourceType> response = (ApiResponse<ScimConfigResourceType>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the SCIM resource types
+   * 
+   * @param filter Filtered results are invalid and will result in a 403 (Unauthorized) return. (optional)
+   * @return ScimConfigResourceTypesListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScimConfigResourceTypesListResponse getScimV2Resourcetypes(String filter) throws IOException, ApiException {
+    return  getScimV2Resourcetypes(createGetScimV2ResourcetypesRequest(filter));
+  }
+
+  /**
+   * Get the SCIM resource types
+   * 
+   * @param filter Filtered results are invalid and will result in a 403 (Unauthorized) return. (optional)
+   * @return ScimConfigResourceTypesListResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScimConfigResourceTypesListResponse> getScimV2ResourcetypesWithHttpInfo(String filter) throws IOException {
+    return getScimV2Resourcetypes(createGetScimV2ResourcetypesRequest(filter).withHttpInfo());
+  }
+
+  private GetScimV2ResourcetypesRequest createGetScimV2ResourcetypesRequest(String filter) {
+    return GetScimV2ResourcetypesRequest.builder()
+            .withFilter(filter)
+    
+            .build();
+  }
+
+  /**
+   * Get the SCIM resource types
+   * 
+   * @param request The request object
+   * @return ScimConfigResourceTypesListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScimConfigResourceTypesListResponse getScimV2Resourcetypes(GetScimV2ResourcetypesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScimConfigResourceTypesListResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScimConfigResourceTypesListResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the SCIM resource types
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScimConfigResourceTypesListResponse> getScimV2Resourcetypes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScimConfigResourceTypesListResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScimConfigResourceTypesListResponse> response = (ApiResponse<ScimConfigResourceTypesListResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScimConfigResourceTypesListResponse> response = (ApiResponse<ScimConfigResourceTypesListResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

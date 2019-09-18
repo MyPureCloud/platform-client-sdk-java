@@ -31,6 +31,8 @@ import com.mypurecloud.sdk.v2.model.CallConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CallHistoryConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.MaxParticipants;
 import com.mypurecloud.sdk.v2.model.ChatConversation;
+import com.mypurecloud.sdk.v2.model.WebChatMessage;
+import com.mypurecloud.sdk.v2.model.WebChatMessageEntityList;
 import com.mypurecloud.sdk.v2.model.ChatConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CobrowseConversation;
 import com.mypurecloud.sdk.v2.model.CobrowseConversationEntityListing;
@@ -59,8 +61,8 @@ import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
 import com.mypurecloud.sdk.v2.model.ConsultTransferResponse;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.PropertyIndexRequest;
-import com.mypurecloud.sdk.v2.model.AggregationQuery;
-import com.mypurecloud.sdk.v2.model.AggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.ConversationAggregationQuery;
 import com.mypurecloud.sdk.v2.model.AsyncConversationQuery;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
@@ -75,6 +77,8 @@ import com.mypurecloud.sdk.v2.model.CreateCallbackResponse;
 import com.mypurecloud.sdk.v2.model.CreateCallbackCommand;
 import com.mypurecloud.sdk.v2.model.CreateCallRequest;
 import com.mypurecloud.sdk.v2.model.CreateCallResponse;
+import com.mypurecloud.sdk.v2.model.CreateWebChatMessageRequest;
+import com.mypurecloud.sdk.v2.model.WebChatTyping;
 import com.mypurecloud.sdk.v2.model.CreateWebChatRequest;
 import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
 import com.mypurecloud.sdk.v2.model.CreateEmailRequest;
@@ -118,6 +122,8 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsCallsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsCallsHistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsCallsMaximumconferencepartiesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsChatRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsChatMessageRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsChatMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsChatParticipantWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsChatParticipantWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsChatsRequest;
@@ -193,6 +199,8 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantsReque
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbackParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallbacksRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsChatCommunicationMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsChatCommunicationTypingRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsChatParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsChatsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCobrowsesessionParticipantReplaceRequest;
@@ -2426,6 +2434,158 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ChatConversation> response = (ApiResponse<ChatConversation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a web chat conversation message
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WebChatMessage> getConversationsChatMessageAsync(GetConversationsChatMessageRequest request, final AsyncApiCallback<WebChatMessage> callback) {
+    try {
+      final SettableFuture<WebChatMessage> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WebChatMessage>() {}, new AsyncApiCallback<ApiResponse<WebChatMessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<WebChatMessage> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a web chat conversation message
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WebChatMessage>> getConversationsChatMessageAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WebChatMessage>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WebChatMessage>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WebChatMessage>() {}, new AsyncApiCallback<ApiResponse<WebChatMessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<WebChatMessage> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WebChatMessage> response = (ApiResponse<WebChatMessage>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WebChatMessage> response = (ApiResponse<WebChatMessage>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the messages of a chat conversation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WebChatMessageEntityList> getConversationsChatMessagesAsync(GetConversationsChatMessagesRequest request, final AsyncApiCallback<WebChatMessageEntityList> callback) {
+    try {
+      final SettableFuture<WebChatMessageEntityList> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WebChatMessageEntityList>() {}, new AsyncApiCallback<ApiResponse<WebChatMessageEntityList>>() {
+        @Override
+        public void onCompleted(ApiResponse<WebChatMessageEntityList> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the messages of a chat conversation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WebChatMessageEntityList>> getConversationsChatMessagesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WebChatMessageEntityList>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WebChatMessageEntityList>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WebChatMessageEntityList>() {}, new AsyncApiCallback<ApiResponse<WebChatMessageEntityList>>() {
+        @Override
+        public void onCompleted(ApiResponse<WebChatMessageEntityList> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WebChatMessageEntityList> response = (ApiResponse<WebChatMessageEntityList>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WebChatMessageEntityList> response = (ApiResponse<WebChatMessageEntityList>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -6929,13 +7089,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AggregateQueryResponse> postAnalyticsConversationsAggregatesQueryAsync(PostAnalyticsConversationsAggregatesQueryRequest request, final AsyncApiCallback<AggregateQueryResponse> callback) {
+  public Future<ConversationAggregateQueryResponse> postAnalyticsConversationsAggregatesQueryAsync(PostAnalyticsConversationsAggregatesQueryRequest request, final AsyncApiCallback<ConversationAggregateQueryResponse> callback) {
     try {
-      final SettableFuture<AggregateQueryResponse> future = SettableFuture.create();
+      final SettableFuture<ConversationAggregateQueryResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AggregateQueryResponse>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConversationAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<ConversationAggregateQueryResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<AggregateQueryResponse> response) {
+        public void onCompleted(ApiResponse<ConversationAggregateQueryResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -6963,13 +7123,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AggregateQueryResponse>> postAnalyticsConversationsAggregatesQueryAsync(ApiRequest<AggregationQuery> request, final AsyncApiCallback<ApiResponse<AggregateQueryResponse>> callback) {
+  public Future<ApiResponse<ConversationAggregateQueryResponse>> postAnalyticsConversationsAggregatesQueryAsync(ApiRequest<ConversationAggregationQuery> request, final AsyncApiCallback<ApiResponse<ConversationAggregateQueryResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<AggregateQueryResponse>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<ConversationAggregateQueryResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<AggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<AggregateQueryResponse>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<ConversationAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<ConversationAggregateQueryResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<AggregateQueryResponse> response) {
+        public void onCompleted(ApiResponse<ConversationAggregateQueryResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -6977,7 +7137,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<AggregateQueryResponse> response = (ApiResponse<AggregateQueryResponse>)(ApiResponse<?>)exception;
+            ApiResponse<ConversationAggregateQueryResponse> response = (ApiResponse<ConversationAggregateQueryResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -6985,7 +7145,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<AggregateQueryResponse> response = (ApiResponse<AggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<ConversationAggregateQueryResponse> response = (ApiResponse<ConversationAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -8126,6 +8286,158 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CreateCallResponse> response = (ApiResponse<CreateCallResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Send a message on behalf of a communication in a chat conversation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WebChatMessage> postConversationsChatCommunicationMessagesAsync(PostConversationsChatCommunicationMessagesRequest request, final AsyncApiCallback<WebChatMessage> callback) {
+    try {
+      final SettableFuture<WebChatMessage> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WebChatMessage>() {}, new AsyncApiCallback<ApiResponse<WebChatMessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<WebChatMessage> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Send a message on behalf of a communication in a chat conversation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WebChatMessage>> postConversationsChatCommunicationMessagesAsync(ApiRequest<CreateWebChatMessageRequest> request, final AsyncApiCallback<ApiResponse<WebChatMessage>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WebChatMessage>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WebChatMessage>() {}, new AsyncApiCallback<ApiResponse<WebChatMessage>>() {
+        @Override
+        public void onCompleted(ApiResponse<WebChatMessage> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WebChatMessage> response = (ApiResponse<WebChatMessage>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WebChatMessage> response = (ApiResponse<WebChatMessage>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Send a typing-indicator on behalf of a communication in a chat conversation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<WebChatTyping> postConversationsChatCommunicationTypingAsync(PostConversationsChatCommunicationTypingRequest request, final AsyncApiCallback<WebChatTyping> callback) {
+    try {
+      final SettableFuture<WebChatTyping> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<WebChatTyping>() {}, new AsyncApiCallback<ApiResponse<WebChatTyping>>() {
+        @Override
+        public void onCompleted(ApiResponse<WebChatTyping> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Send a typing-indicator on behalf of a communication in a chat conversation.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<WebChatTyping>> postConversationsChatCommunicationTypingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<WebChatTyping>> callback) {
+    try {
+      final SettableFuture<ApiResponse<WebChatTyping>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<WebChatTyping>() {}, new AsyncApiCallback<ApiResponse<WebChatTyping>>() {
+        @Override
+        public void onCompleted(ApiResponse<WebChatTyping> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WebChatTyping> response = (ApiResponse<WebChatTyping>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<WebChatTyping> response = (ApiResponse<WebChatTyping>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

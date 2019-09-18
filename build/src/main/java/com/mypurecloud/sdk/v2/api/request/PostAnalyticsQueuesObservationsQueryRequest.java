@@ -50,8 +50,8 @@ import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
-import com.mypurecloud.sdk.v2.model.QualifierMappingObservationQueryResponse;
-import com.mypurecloud.sdk.v2.model.ObservationQuery;
+import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.WritableEntity;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
@@ -63,16 +63,16 @@ import com.mypurecloud.sdk.v2.model.QueueRequest;
 
 public class PostAnalyticsQueuesObservationsQueryRequest {
     
-	private ObservationQuery body;
-	public ObservationQuery getBody() {
+	private QueueObservationQuery body;
+	public QueueObservationQuery getBody() {
 		return this.body;
 	}
 
-	public void setBody(ObservationQuery body) {
+	public void setBody(QueueObservationQuery body) {
 		this.body = body;
 	}
 
-	public PostAnalyticsQueuesObservationsQueryRequest withBody(ObservationQuery body) {
+	public PostAnalyticsQueuesObservationsQueryRequest withBody(QueueObservationQuery body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -96,7 +96,7 @@ public class PostAnalyticsQueuesObservationsQueryRequest {
         return this;
     }
 
-    public ApiRequest<ObservationQuery> withHttpInfo() {
+    public ApiRequest<QueueObservationQuery> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -119,7 +119,7 @@ public class PostAnalyticsQueuesObservationsQueryRequest {
 	}
 
 	
-	public static Builder builder(ObservationQuery body) {
+	public static Builder builder(QueueObservationQuery body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -133,14 +133,14 @@ public class PostAnalyticsQueuesObservationsQueryRequest {
 		}
 
 		
-		public Builder withBody(ObservationQuery body) {
+		public Builder withBody(QueueObservationQuery body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(ObservationQuery body) {
+		public Builder withRequiredParams(QueueObservationQuery body) {
 			request.setBody(body);
 			
 			return this;

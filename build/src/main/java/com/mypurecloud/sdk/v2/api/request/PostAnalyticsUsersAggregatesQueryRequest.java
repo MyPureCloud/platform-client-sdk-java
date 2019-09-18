@@ -49,12 +49,12 @@ import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.PatchUser;
-import com.mypurecloud.sdk.v2.model.AggregationQuery;
-import com.mypurecloud.sdk.v2.model.PresenceQueryResponse;
+import com.mypurecloud.sdk.v2.model.UserAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.UserAggregationQuery;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
-import com.mypurecloud.sdk.v2.model.ObservationQueryResponse;
-import com.mypurecloud.sdk.v2.model.ObservationQuery;
+import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.UserObservationQuery;
 import com.mypurecloud.sdk.v2.model.ChangePasswordRequest;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 import com.mypurecloud.sdk.v2.model.CreateUser;
@@ -63,16 +63,16 @@ import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 public class PostAnalyticsUsersAggregatesQueryRequest {
     
-	private AggregationQuery body;
-	public AggregationQuery getBody() {
+	private UserAggregationQuery body;
+	public UserAggregationQuery getBody() {
 		return this.body;
 	}
 
-	public void setBody(AggregationQuery body) {
+	public void setBody(UserAggregationQuery body) {
 		this.body = body;
 	}
 
-	public PostAnalyticsUsersAggregatesQueryRequest withBody(AggregationQuery body) {
+	public PostAnalyticsUsersAggregatesQueryRequest withBody(UserAggregationQuery body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -96,7 +96,7 @@ public class PostAnalyticsUsersAggregatesQueryRequest {
         return this;
     }
 
-    public ApiRequest<AggregationQuery> withHttpInfo() {
+    public ApiRequest<UserAggregationQuery> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -119,7 +119,7 @@ public class PostAnalyticsUsersAggregatesQueryRequest {
 	}
 
 	
-	public static Builder builder(AggregationQuery body) {
+	public static Builder builder(UserAggregationQuery body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -133,14 +133,14 @@ public class PostAnalyticsUsersAggregatesQueryRequest {
 		}
 
 		
-		public Builder withBody(AggregationQuery body) {
+		public Builder withBody(UserAggregationQuery body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(AggregationQuery body) {
+		public Builder withRequiredParams(UserAggregationQuery body) {
 			request.setBody(body);
 			
 			return this;

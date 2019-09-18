@@ -1112,7 +1112,7 @@ try {
 
 
 
-> [AggregateQueryResponse](AggregateQueryResponse.html) postAnalyticsConversationsAggregatesQuery(body)
+> [ConversationAggregateQueryResponse](ConversationAggregateQueryResponse.html) postAnalyticsConversationsAggregatesQuery(body)
 
 Query for conversation aggregates
 
@@ -1146,9 +1146,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 AnalyticsApi apiInstance = new AnalyticsApi();
-AggregationQuery body = new AggregationQuery(); // AggregationQuery | query
+ConversationAggregationQuery body = new ConversationAggregationQuery(); // ConversationAggregationQuery | query
 try {
-    AggregateQueryResponse result = apiInstance.postAnalyticsConversationsAggregatesQuery(body);
+    ConversationAggregateQueryResponse result = apiInstance.postAnalyticsConversationsAggregatesQuery(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AnalyticsApi#postAnalyticsConversationsAggregatesQuery");
@@ -1161,13 +1161,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | 
+| **body** | [**ConversationAggregationQuery**](ConversationAggregationQuery.html)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AggregateQueryResponse**](AggregateQueryResponse.html)
+[**ConversationAggregateQueryResponse**](ConversationAggregateQueryResponse.html)
 
 <a name="postAnalyticsConversationsDetailsJobs"></a>
 
@@ -1301,7 +1301,7 @@ try {
 
 
 
-> [AggregateQueryResponse](AggregateQueryResponse.html) postAnalyticsEvaluationsAggregatesQuery(body)
+> [EvaluationAggregateQueryResponse](EvaluationAggregateQueryResponse.html) postAnalyticsEvaluationsAggregatesQuery(body)
 
 Query for evaluation aggregates
 
@@ -1335,9 +1335,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 AnalyticsApi apiInstance = new AnalyticsApi();
-AggregationQuery body = new AggregationQuery(); // AggregationQuery | query
+EvaluationAggregationQuery body = new EvaluationAggregationQuery(); // EvaluationAggregationQuery | query
 try {
-    AggregateQueryResponse result = apiInstance.postAnalyticsEvaluationsAggregatesQuery(body);
+    EvaluationAggregateQueryResponse result = apiInstance.postAnalyticsEvaluationsAggregatesQuery(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AnalyticsApi#postAnalyticsEvaluationsAggregatesQuery");
@@ -1350,13 +1350,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | 
+| **body** | [**EvaluationAggregationQuery**](EvaluationAggregationQuery.html)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AggregateQueryResponse**](AggregateQueryResponse.html)
+[**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse.html)
 
 <a name="postAnalyticsFlowsAggregatesQuery"></a>
 
@@ -1364,7 +1364,7 @@ try {
 
 
 
-> [AggregateQueryResponse](AggregateQueryResponse.html) postAnalyticsFlowsAggregatesQuery(body)
+> [FlowAggregateQueryResponse](FlowAggregateQueryResponse.html) postAnalyticsFlowsAggregatesQuery(body)
 
 Query for flow aggregates
 
@@ -1398,9 +1398,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 AnalyticsApi apiInstance = new AnalyticsApi();
-AggregationQuery body = new AggregationQuery(); // AggregationQuery | query
+FlowAggregationQuery body = new FlowAggregationQuery(); // FlowAggregationQuery | query
 try {
-    AggregateQueryResponse result = apiInstance.postAnalyticsFlowsAggregatesQuery(body);
+    FlowAggregateQueryResponse result = apiInstance.postAnalyticsFlowsAggregatesQuery(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AnalyticsApi#postAnalyticsFlowsAggregatesQuery");
@@ -1413,13 +1413,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | 
+| **body** | [**FlowAggregationQuery**](FlowAggregationQuery.html)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AggregateQueryResponse**](AggregateQueryResponse.html)
+[**FlowAggregateQueryResponse**](FlowAggregateQueryResponse.html)
 
 <a name="postAnalyticsFlowsObservationsQuery"></a>
 
@@ -1427,7 +1427,7 @@ try {
 
 
 
-> [QualifierMappingObservationQueryResponse](QualifierMappingObservationQueryResponse.html) postAnalyticsFlowsObservationsQuery(body)
+> [FlowObservationQueryResponse](FlowObservationQueryResponse.html) postAnalyticsFlowsObservationsQuery(body)
 
 Query for flow observations
 
@@ -1461,9 +1461,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 AnalyticsApi apiInstance = new AnalyticsApi();
-ObservationQuery body = new ObservationQuery(); // ObservationQuery | query
+FlowObservationQuery body = new FlowObservationQuery(); // FlowObservationQuery | query
 try {
-    QualifierMappingObservationQueryResponse result = apiInstance.postAnalyticsFlowsObservationsQuery(body);
+    FlowObservationQueryResponse result = apiInstance.postAnalyticsFlowsObservationsQuery(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AnalyticsApi#postAnalyticsFlowsObservationsQuery");
@@ -1476,13 +1476,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ObservationQuery**](ObservationQuery.html)| query | 
+| **body** | [**FlowObservationQuery**](FlowObservationQuery.html)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**QualifierMappingObservationQueryResponse**](QualifierMappingObservationQueryResponse.html)
+[**FlowObservationQueryResponse**](FlowObservationQueryResponse.html)
 
 <a name="postAnalyticsQueuesObservationsQuery"></a>
 
@@ -1490,7 +1490,7 @@ try {
 
 
 
-> [QualifierMappingObservationQueryResponse](QualifierMappingObservationQueryResponse.html) postAnalyticsQueuesObservationsQuery(body)
+> [QueueObservationQueryResponse](QueueObservationQueryResponse.html) postAnalyticsQueuesObservationsQuery(body)
 
 Query for queue observations
 
@@ -1524,9 +1524,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 AnalyticsApi apiInstance = new AnalyticsApi();
-ObservationQuery body = new ObservationQuery(); // ObservationQuery | query
+QueueObservationQuery body = new QueueObservationQuery(); // QueueObservationQuery | query
 try {
-    QualifierMappingObservationQueryResponse result = apiInstance.postAnalyticsQueuesObservationsQuery(body);
+    QueueObservationQueryResponse result = apiInstance.postAnalyticsQueuesObservationsQuery(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AnalyticsApi#postAnalyticsQueuesObservationsQuery");
@@ -1539,13 +1539,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ObservationQuery**](ObservationQuery.html)| query | 
+| **body** | [**QueueObservationQuery**](QueueObservationQuery.html)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**QualifierMappingObservationQueryResponse**](QualifierMappingObservationQueryResponse.html)
+[**QueueObservationQueryResponse**](QueueObservationQueryResponse.html)
 
 <a name="postAnalyticsReportingExports"></a>
 
@@ -1740,7 +1740,7 @@ try {
 
 
 
-> [AggregateQueryResponse](AggregateQueryResponse.html) postAnalyticsSurveysAggregatesQuery(body)
+> [SurveyAggregateQueryResponse](SurveyAggregateQueryResponse.html) postAnalyticsSurveysAggregatesQuery(body)
 
 Query for survey aggregates
 
@@ -1774,9 +1774,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 AnalyticsApi apiInstance = new AnalyticsApi();
-AggregationQuery body = new AggregationQuery(); // AggregationQuery | query
+SurveyAggregationQuery body = new SurveyAggregationQuery(); // SurveyAggregationQuery | query
 try {
-    AggregateQueryResponse result = apiInstance.postAnalyticsSurveysAggregatesQuery(body);
+    SurveyAggregateQueryResponse result = apiInstance.postAnalyticsSurveysAggregatesQuery(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AnalyticsApi#postAnalyticsSurveysAggregatesQuery");
@@ -1789,13 +1789,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | 
+| **body** | [**SurveyAggregationQuery**](SurveyAggregationQuery.html)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**AggregateQueryResponse**](AggregateQueryResponse.html)
+[**SurveyAggregateQueryResponse**](SurveyAggregateQueryResponse.html)
 
 <a name="postAnalyticsUsersAggregatesQuery"></a>
 
@@ -1803,7 +1803,7 @@ try {
 
 
 
-> [PresenceQueryResponse](PresenceQueryResponse.html) postAnalyticsUsersAggregatesQuery(body)
+> [UserAggregateQueryResponse](UserAggregateQueryResponse.html) postAnalyticsUsersAggregatesQuery(body)
 
 Query for user aggregates
 
@@ -1837,9 +1837,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 AnalyticsApi apiInstance = new AnalyticsApi();
-AggregationQuery body = new AggregationQuery(); // AggregationQuery | query
+UserAggregationQuery body = new UserAggregationQuery(); // UserAggregationQuery | query
 try {
-    PresenceQueryResponse result = apiInstance.postAnalyticsUsersAggregatesQuery(body);
+    UserAggregateQueryResponse result = apiInstance.postAnalyticsUsersAggregatesQuery(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AnalyticsApi#postAnalyticsUsersAggregatesQuery");
@@ -1852,13 +1852,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**AggregationQuery**](AggregationQuery.html)| query | 
+| **body** | [**UserAggregationQuery**](UserAggregationQuery.html)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**PresenceQueryResponse**](PresenceQueryResponse.html)
+[**UserAggregateQueryResponse**](UserAggregateQueryResponse.html)
 
 <a name="postAnalyticsUsersDetailsQuery"></a>
 
@@ -1929,7 +1929,7 @@ try {
 
 
 
-> [ObservationQueryResponse](ObservationQueryResponse.html) postAnalyticsUsersObservationsQuery(body)
+> [UserObservationQueryResponse](UserObservationQueryResponse.html) postAnalyticsUsersObservationsQuery(body)
 
 Query for user observations
 
@@ -1963,9 +1963,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 AnalyticsApi apiInstance = new AnalyticsApi();
-ObservationQuery body = new ObservationQuery(); // ObservationQuery | query
+UserObservationQuery body = new UserObservationQuery(); // UserObservationQuery | query
 try {
-    ObservationQueryResponse result = apiInstance.postAnalyticsUsersObservationsQuery(body);
+    UserObservationQueryResponse result = apiInstance.postAnalyticsUsersObservationsQuery(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AnalyticsApi#postAnalyticsUsersObservationsQuery");
@@ -1978,13 +1978,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**ObservationQuery**](ObservationQuery.html)| query | 
+| **body** | [**UserObservationQuery**](UserObservationQuery.html)| query | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ObservationQueryResponse**](ObservationQueryResponse.html)
+[**UserObservationQueryResponse**](UserObservationQueryResponse.html)
 
 <a name="putAnalyticsReportingSchedule"></a>
 

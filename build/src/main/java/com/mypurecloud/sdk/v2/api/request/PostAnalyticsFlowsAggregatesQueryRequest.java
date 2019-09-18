@@ -20,24 +20,24 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.AggregationQuery;
+import com.mypurecloud.sdk.v2.model.FlowAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.AggregateQueryResponse;
-import com.mypurecloud.sdk.v2.model.QualifierMappingObservationQueryResponse;
-import com.mypurecloud.sdk.v2.model.ObservationQuery;
+import com.mypurecloud.sdk.v2.model.FlowAggregationQuery;
+import com.mypurecloud.sdk.v2.model.FlowObservationQuery;
+import com.mypurecloud.sdk.v2.model.FlowObservationQueryResponse;
 
 public class PostAnalyticsFlowsAggregatesQueryRequest {
     
-	private AggregationQuery body;
-	public AggregationQuery getBody() {
+	private FlowAggregationQuery body;
+	public FlowAggregationQuery getBody() {
 		return this.body;
 	}
 
-	public void setBody(AggregationQuery body) {
+	public void setBody(FlowAggregationQuery body) {
 		this.body = body;
 	}
 
-	public PostAnalyticsFlowsAggregatesQueryRequest withBody(AggregationQuery body) {
+	public PostAnalyticsFlowsAggregatesQueryRequest withBody(FlowAggregationQuery body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -61,7 +61,7 @@ public class PostAnalyticsFlowsAggregatesQueryRequest {
         return this;
     }
 
-    public ApiRequest<AggregationQuery> withHttpInfo() {
+    public ApiRequest<FlowAggregationQuery> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -84,7 +84,7 @@ public class PostAnalyticsFlowsAggregatesQueryRequest {
 	}
 
 	
-	public static Builder builder(AggregationQuery body) {
+	public static Builder builder(FlowAggregationQuery body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -98,14 +98,14 @@ public class PostAnalyticsFlowsAggregatesQueryRequest {
 		}
 
 		
-		public Builder withBody(AggregationQuery body) {
+		public Builder withBody(FlowAggregationQuery body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(AggregationQuery body) {
+		public Builder withRequiredParams(FlowAggregationQuery body) {
 			request.setBody(body);
 			
 			return this;

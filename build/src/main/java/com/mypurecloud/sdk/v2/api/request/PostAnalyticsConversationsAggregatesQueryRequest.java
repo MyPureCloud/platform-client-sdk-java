@@ -38,6 +38,8 @@ import com.mypurecloud.sdk.v2.model.CallConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CallHistoryConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.MaxParticipants;
 import com.mypurecloud.sdk.v2.model.ChatConversation;
+import com.mypurecloud.sdk.v2.model.WebChatMessage;
+import com.mypurecloud.sdk.v2.model.WebChatMessageEntityList;
 import com.mypurecloud.sdk.v2.model.ChatConversationEntityListing;
 import com.mypurecloud.sdk.v2.model.CobrowseConversation;
 import com.mypurecloud.sdk.v2.model.CobrowseConversationEntityListing;
@@ -66,8 +68,8 @@ import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
 import com.mypurecloud.sdk.v2.model.ConsultTransferResponse;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.PropertyIndexRequest;
-import com.mypurecloud.sdk.v2.model.AggregationQuery;
-import com.mypurecloud.sdk.v2.model.AggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.ConversationAggregationQuery;
 import com.mypurecloud.sdk.v2.model.AsyncConversationQuery;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
@@ -82,6 +84,8 @@ import com.mypurecloud.sdk.v2.model.CreateCallbackResponse;
 import com.mypurecloud.sdk.v2.model.CreateCallbackCommand;
 import com.mypurecloud.sdk.v2.model.CreateCallRequest;
 import com.mypurecloud.sdk.v2.model.CreateCallResponse;
+import com.mypurecloud.sdk.v2.model.CreateWebChatMessageRequest;
+import com.mypurecloud.sdk.v2.model.WebChatTyping;
 import com.mypurecloud.sdk.v2.model.CreateWebChatRequest;
 import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
 import com.mypurecloud.sdk.v2.model.CreateEmailRequest;
@@ -97,16 +101,16 @@ import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
 
 public class PostAnalyticsConversationsAggregatesQueryRequest {
     
-	private AggregationQuery body;
-	public AggregationQuery getBody() {
+	private ConversationAggregationQuery body;
+	public ConversationAggregationQuery getBody() {
 		return this.body;
 	}
 
-	public void setBody(AggregationQuery body) {
+	public void setBody(ConversationAggregationQuery body) {
 		this.body = body;
 	}
 
-	public PostAnalyticsConversationsAggregatesQueryRequest withBody(AggregationQuery body) {
+	public PostAnalyticsConversationsAggregatesQueryRequest withBody(ConversationAggregationQuery body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -130,7 +134,7 @@ public class PostAnalyticsConversationsAggregatesQueryRequest {
         return this;
     }
 
-    public ApiRequest<AggregationQuery> withHttpInfo() {
+    public ApiRequest<ConversationAggregationQuery> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -153,7 +157,7 @@ public class PostAnalyticsConversationsAggregatesQueryRequest {
 	}
 
 	
-	public static Builder builder(AggregationQuery body) {
+	public static Builder builder(ConversationAggregationQuery body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -167,14 +171,14 @@ public class PostAnalyticsConversationsAggregatesQueryRequest {
 		}
 
 		
-		public Builder withBody(AggregationQuery body) {
+		public Builder withBody(ConversationAggregationQuery body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(AggregationQuery body) {
+		public Builder withRequiredParams(ConversationAggregationQuery body) {
 			request.setBody(body);
 			
 			return this;

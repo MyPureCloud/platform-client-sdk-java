@@ -847,7 +847,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 AuthorizationApi apiInstance = new AuthorizationApi();
 String roleId = "roleId_example"; // String | Role ID
-List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand. \"unusedPermissions\" returns the permissions not used for the role
 try {
     DomainOrganizationRole result = apiInstance.getAuthorizationRole(roleId, expand);
     System.out.println(result);
@@ -863,7 +863,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **roleId** | **String**| Role ID | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: unusedPermissions 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. \&quot;unusedPermissions\&quot; returns the permissions not used for the role | [optional]<br />**Values**: unusedPermissions 
 {: class="table-striped"}
 
 
@@ -1528,7 +1528,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **divisionId** | **String**| Division ID | 
-| **objectType** | **String**| The type of the objects. Must be one of the valid object types |<br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, USER 
+| **objectType** | **String**| The type of the objects. Must be one of the valid object types |<br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, USER 
 | **body** | **List&lt;String&gt;**| Object Id List | 
 {: class="table-striped"}
 
@@ -1643,7 +1643,7 @@ Configuration.setDefaultApiClient(apiClient);
 AuthorizationApi apiInstance = new AuthorizationApi();
 String roleId = "roleId_example"; // String | Role ID
 SubjectDivisions body = new SubjectDivisions(); // SubjectDivisions | Subjects and Divisions
-String subjectType = "PC_USER"; // String | what the type of the subject is, PC_GROUP or PC_USER
+String subjectType = "PC_USER"; // String | what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT)
 try {
     apiInstance.postAuthorizationRole(roleId, body, subjectType);
 } catch (ApiException e) {
@@ -1659,7 +1659,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **roleId** | **String**| Role ID | 
 | **body** | [**SubjectDivisions**](SubjectDivisions.html)| Subjects and Divisions | 
-| **subjectType** | **String**| what the type of the subject is, PC_GROUP or PC_USER | [optional] [default to PC_USER] 
+| **subjectType** | **String**| what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] 
 {: class="table-striped"}
 
 
@@ -1903,7 +1903,7 @@ AuthorizationApi apiInstance = new AuthorizationApi();
 String subjectId = "subjectId_example"; // String | Subject ID (user or group)
 String divisionId = "divisionId_example"; // String | the id of the division to which to make the grant
 String roleId = "roleId_example"; // String | the id of the role to grant
-String subjectType = "PC_USER"; // String | what the type of the subject is, PC_GROUP or PC_USER
+String subjectType = "PC_USER"; // String | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints)
 try {
     apiInstance.postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, subjectType);
 } catch (ApiException e) {
@@ -1920,7 +1920,7 @@ try {
 | **subjectId** | **String**| Subject ID (user or group) | 
 | **divisionId** | **String**| the id of the division to which to make the grant | 
 | **roleId** | **String**| the id of the role to grant | 
-| **subjectType** | **String**| what the type of the subject is, PC_GROUP or PC_USER | [optional] [default to PC_USER] 
+| **subjectType** | **String**| what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) | [optional] [default to PC_USER] 
 {: class="table-striped"}
 
 

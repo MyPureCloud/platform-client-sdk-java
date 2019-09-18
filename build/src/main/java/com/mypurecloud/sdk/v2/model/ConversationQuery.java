@@ -6,8 +6,12 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AnalyticsQueryAggregation;
-import com.mypurecloud.sdk.v2.model.AnalyticsQueryFilter;
+import com.mypurecloud.sdk.v2.model.ConversationDetailQueryFilter;
+import com.mypurecloud.sdk.v2.model.EvaluationDetailQueryFilter;
+import com.mypurecloud.sdk.v2.model.MediaEndpointStatDetailQueryFilter;
 import com.mypurecloud.sdk.v2.model.PagingSpec;
+import com.mypurecloud.sdk.v2.model.SegmentDetailQueryFilter;
+import com.mypurecloud.sdk.v2.model.SurveyDetailQueryFilter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -21,11 +25,11 @@ import java.io.Serializable;
 public class ConversationQuery  implements Serializable {
   
   private String interval = null;
-  private List<AnalyticsQueryFilter> conversationFilters = new ArrayList<AnalyticsQueryFilter>();
-  private List<AnalyticsQueryFilter> evaluationFilters = new ArrayList<AnalyticsQueryFilter>();
-  private List<AnalyticsQueryFilter> surveyFilters = new ArrayList<AnalyticsQueryFilter>();
-  private List<AnalyticsQueryFilter> mediaEndpointStatFilters = new ArrayList<AnalyticsQueryFilter>();
-  private List<AnalyticsQueryFilter> segmentFilters = new ArrayList<AnalyticsQueryFilter>();
+  private List<ConversationDetailQueryFilter> conversationFilters = new ArrayList<ConversationDetailQueryFilter>();
+  private List<SegmentDetailQueryFilter> segmentFilters = new ArrayList<SegmentDetailQueryFilter>();
+  private List<EvaluationDetailQueryFilter> evaluationFilters = new ArrayList<EvaluationDetailQueryFilter>();
+  private List<MediaEndpointStatDetailQueryFilter> mediaEndpointStatFilters = new ArrayList<MediaEndpointStatDetailQueryFilter>();
+  private List<SurveyDetailQueryFilter> surveyFilters = new ArrayList<SurveyDetailQueryFilter>();
 
   /**
    * Sort the result set in ascending/descending order. Default is ascending
@@ -123,90 +127,90 @@ public class ConversationQuery  implements Serializable {
   /**
    * Filters that target conversation-level data
    **/
-  public ConversationQuery conversationFilters(List<AnalyticsQueryFilter> conversationFilters) {
+  public ConversationQuery conversationFilters(List<ConversationDetailQueryFilter> conversationFilters) {
     this.conversationFilters = conversationFilters;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Filters that target conversation-level data")
   @JsonProperty("conversationFilters")
-  public List<AnalyticsQueryFilter> getConversationFilters() {
+  public List<ConversationDetailQueryFilter> getConversationFilters() {
     return conversationFilters;
   }
-  public void setConversationFilters(List<AnalyticsQueryFilter> conversationFilters) {
+  public void setConversationFilters(List<ConversationDetailQueryFilter> conversationFilters) {
     this.conversationFilters = conversationFilters;
-  }
-
-  
-  /**
-   * Filters that target quality management evaluation-level data
-   **/
-  public ConversationQuery evaluationFilters(List<AnalyticsQueryFilter> evaluationFilters) {
-    this.evaluationFilters = evaluationFilters;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Filters that target quality management evaluation-level data")
-  @JsonProperty("evaluationFilters")
-  public List<AnalyticsQueryFilter> getEvaluationFilters() {
-    return evaluationFilters;
-  }
-  public void setEvaluationFilters(List<AnalyticsQueryFilter> evaluationFilters) {
-    this.evaluationFilters = evaluationFilters;
-  }
-
-  
-  /**
-   * Filters that target quality management survey-level data
-   **/
-  public ConversationQuery surveyFilters(List<AnalyticsQueryFilter> surveyFilters) {
-    this.surveyFilters = surveyFilters;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Filters that target quality management survey-level data")
-  @JsonProperty("surveyFilters")
-  public List<AnalyticsQueryFilter> getSurveyFilters() {
-    return surveyFilters;
-  }
-  public void setSurveyFilters(List<AnalyticsQueryFilter> surveyFilters) {
-    this.surveyFilters = surveyFilters;
-  }
-
-  
-  /**
-   * Filters that target call quality of service data
-   **/
-  public ConversationQuery mediaEndpointStatFilters(List<AnalyticsQueryFilter> mediaEndpointStatFilters) {
-    this.mediaEndpointStatFilters = mediaEndpointStatFilters;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Filters that target call quality of service data")
-  @JsonProperty("mediaEndpointStatFilters")
-  public List<AnalyticsQueryFilter> getMediaEndpointStatFilters() {
-    return mediaEndpointStatFilters;
-  }
-  public void setMediaEndpointStatFilters(List<AnalyticsQueryFilter> mediaEndpointStatFilters) {
-    this.mediaEndpointStatFilters = mediaEndpointStatFilters;
   }
 
   
   /**
    * Filters that target individual segments within a conversation
    **/
-  public ConversationQuery segmentFilters(List<AnalyticsQueryFilter> segmentFilters) {
+  public ConversationQuery segmentFilters(List<SegmentDetailQueryFilter> segmentFilters) {
     this.segmentFilters = segmentFilters;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Filters that target individual segments within a conversation")
   @JsonProperty("segmentFilters")
-  public List<AnalyticsQueryFilter> getSegmentFilters() {
+  public List<SegmentDetailQueryFilter> getSegmentFilters() {
     return segmentFilters;
   }
-  public void setSegmentFilters(List<AnalyticsQueryFilter> segmentFilters) {
+  public void setSegmentFilters(List<SegmentDetailQueryFilter> segmentFilters) {
     this.segmentFilters = segmentFilters;
+  }
+
+  
+  /**
+   * Filters that target evaluations
+   **/
+  public ConversationQuery evaluationFilters(List<EvaluationDetailQueryFilter> evaluationFilters) {
+    this.evaluationFilters = evaluationFilters;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filters that target evaluations")
+  @JsonProperty("evaluationFilters")
+  public List<EvaluationDetailQueryFilter> getEvaluationFilters() {
+    return evaluationFilters;
+  }
+  public void setEvaluationFilters(List<EvaluationDetailQueryFilter> evaluationFilters) {
+    this.evaluationFilters = evaluationFilters;
+  }
+
+  
+  /**
+   * Filters that target mediaEndpointStats
+   **/
+  public ConversationQuery mediaEndpointStatFilters(List<MediaEndpointStatDetailQueryFilter> mediaEndpointStatFilters) {
+    this.mediaEndpointStatFilters = mediaEndpointStatFilters;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filters that target mediaEndpointStats")
+  @JsonProperty("mediaEndpointStatFilters")
+  public List<MediaEndpointStatDetailQueryFilter> getMediaEndpointStatFilters() {
+    return mediaEndpointStatFilters;
+  }
+  public void setMediaEndpointStatFilters(List<MediaEndpointStatDetailQueryFilter> mediaEndpointStatFilters) {
+    this.mediaEndpointStatFilters = mediaEndpointStatFilters;
+  }
+
+  
+  /**
+   * Filters that target surveys
+   **/
+  public ConversationQuery surveyFilters(List<SurveyDetailQueryFilter> surveyFilters) {
+    this.surveyFilters = surveyFilters;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filters that target surveys")
+  @JsonProperty("surveyFilters")
+  public List<SurveyDetailQueryFilter> getSurveyFilters() {
+    return surveyFilters;
+  }
+  public void setSurveyFilters(List<SurveyDetailQueryFilter> surveyFilters) {
+    this.surveyFilters = surveyFilters;
   }
 
   
@@ -294,10 +298,10 @@ public class ConversationQuery  implements Serializable {
     ConversationQuery conversationQuery = (ConversationQuery) o;
     return Objects.equals(this.interval, conversationQuery.interval) &&
         Objects.equals(this.conversationFilters, conversationQuery.conversationFilters) &&
-        Objects.equals(this.evaluationFilters, conversationQuery.evaluationFilters) &&
-        Objects.equals(this.surveyFilters, conversationQuery.surveyFilters) &&
-        Objects.equals(this.mediaEndpointStatFilters, conversationQuery.mediaEndpointStatFilters) &&
         Objects.equals(this.segmentFilters, conversationQuery.segmentFilters) &&
+        Objects.equals(this.evaluationFilters, conversationQuery.evaluationFilters) &&
+        Objects.equals(this.mediaEndpointStatFilters, conversationQuery.mediaEndpointStatFilters) &&
+        Objects.equals(this.surveyFilters, conversationQuery.surveyFilters) &&
         Objects.equals(this.order, conversationQuery.order) &&
         Objects.equals(this.orderBy, conversationQuery.orderBy) &&
         Objects.equals(this.aggregations, conversationQuery.aggregations) &&
@@ -306,7 +310,7 @@ public class ConversationQuery  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(interval, conversationFilters, evaluationFilters, surveyFilters, mediaEndpointStatFilters, segmentFilters, order, orderBy, aggregations, paging);
+    return Objects.hash(interval, conversationFilters, segmentFilters, evaluationFilters, mediaEndpointStatFilters, surveyFilters, order, orderBy, aggregations, paging);
   }
 
   @Override
@@ -316,10 +320,10 @@ public class ConversationQuery  implements Serializable {
     
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    conversationFilters: ").append(toIndentedString(conversationFilters)).append("\n");
-    sb.append("    evaluationFilters: ").append(toIndentedString(evaluationFilters)).append("\n");
-    sb.append("    surveyFilters: ").append(toIndentedString(surveyFilters)).append("\n");
-    sb.append("    mediaEndpointStatFilters: ").append(toIndentedString(mediaEndpointStatFilters)).append("\n");
     sb.append("    segmentFilters: ").append(toIndentedString(segmentFilters)).append("\n");
+    sb.append("    evaluationFilters: ").append(toIndentedString(evaluationFilters)).append("\n");
+    sb.append("    mediaEndpointStatFilters: ").append(toIndentedString(mediaEndpointStatFilters)).append("\n");
+    sb.append("    surveyFilters: ").append(toIndentedString(surveyFilters)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");
     sb.append("    aggregations: ").append(toIndentedString(aggregations)).append("\n");
