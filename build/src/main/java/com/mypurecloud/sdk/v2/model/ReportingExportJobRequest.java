@@ -131,6 +131,7 @@ public class ReportingExportJobRequest  implements Serializable {
   private ViewFilter filter = null;
   private Boolean read = null;
   private String locale = null;
+  private Boolean hasFormatDurations = null;
 
   
   /**
@@ -295,6 +296,24 @@ public class ReportingExportJobRequest  implements Serializable {
   }
 
   
+  /**
+   * Indicates if durations are formatted in hh:mm:ss format instead of ms
+   **/
+  public ReportingExportJobRequest hasFormatDurations(Boolean hasFormatDurations) {
+    this.hasFormatDurations = hasFormatDurations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates if durations are formatted in hh:mm:ss format instead of ms")
+  @JsonProperty("hasFormatDurations")
+  public Boolean getHasFormatDurations() {
+    return hasFormatDurations;
+  }
+  public void setHasFormatDurations(Boolean hasFormatDurations) {
+    this.hasFormatDurations = hasFormatDurations;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -313,12 +332,13 @@ public class ReportingExportJobRequest  implements Serializable {
         Objects.equals(this.viewType, reportingExportJobRequest.viewType) &&
         Objects.equals(this.filter, reportingExportJobRequest.filter) &&
         Objects.equals(this.read, reportingExportJobRequest.read) &&
-        Objects.equals(this.locale, reportingExportJobRequest.locale);
+        Objects.equals(this.locale, reportingExportJobRequest.locale) &&
+        Objects.equals(this.hasFormatDurations, reportingExportJobRequest.hasFormatDurations);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, timeZone, exportFormat, interval, period, viewType, filter, read, locale);
+    return Objects.hash(name, timeZone, exportFormat, interval, period, viewType, filter, read, locale, hasFormatDurations);
   }
 
   @Override
@@ -335,6 +355,7 @@ public class ReportingExportJobRequest  implements Serializable {
     sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
     sb.append("    read: ").append(toIndentedString(read)).append("\n");
     sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
+    sb.append("    hasFormatDurations: ").append(toIndentedString(hasFormatDurations)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -24,21 +24,21 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
 import com.mypurecloud.sdk.v2.model.LocationEntityListing;
 import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
-import com.mypurecloud.sdk.v2.model.LocationUpdateDefinition;
+import com.mypurecloud.sdk.v2.model.LocationCreateUpdateDefinition;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
 
 public class PostLocationsRequest {
     
-	private LocationDefinition body;
-	public LocationDefinition getBody() {
+	private LocationCreateUpdateDefinition body;
+	public LocationCreateUpdateDefinition getBody() {
 		return this.body;
 	}
 
-	public void setBody(LocationDefinition body) {
+	public void setBody(LocationCreateUpdateDefinition body) {
 		this.body = body;
 	}
 
-	public PostLocationsRequest withBody(LocationDefinition body) {
+	public PostLocationsRequest withBody(LocationCreateUpdateDefinition body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -62,7 +62,7 @@ public class PostLocationsRequest {
         return this;
     }
 
-    public ApiRequest<LocationDefinition> withHttpInfo() {
+    public ApiRequest<LocationCreateUpdateDefinition> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -85,7 +85,7 @@ public class PostLocationsRequest {
 	}
 
 	
-	public static Builder builder(LocationDefinition body) {
+	public static Builder builder(LocationCreateUpdateDefinition body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -99,14 +99,14 @@ public class PostLocationsRequest {
 		}
 
 		
-		public Builder withBody(LocationDefinition body) {
+		public Builder withBody(LocationCreateUpdateDefinition body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(LocationDefinition body) {
+		public Builder withRequiredParams(LocationCreateUpdateDefinition body) {
 			request.setBody(body);
 			
 			return this;

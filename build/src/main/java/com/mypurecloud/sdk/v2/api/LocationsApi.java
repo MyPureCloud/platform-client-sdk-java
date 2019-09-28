@@ -14,7 +14,7 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
 import com.mypurecloud.sdk.v2.model.LocationEntityListing;
 import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
-import com.mypurecloud.sdk.v2.model.LocationUpdateDefinition;
+import com.mypurecloud.sdk.v2.model.LocationCreateUpdateDefinition;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
 
 
@@ -467,7 +467,7 @@ public class LocationsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LocationDefinition patchLocation(String locationId, LocationUpdateDefinition body) throws IOException, ApiException {
+  public LocationDefinition patchLocation(String locationId, LocationCreateUpdateDefinition body) throws IOException, ApiException {
     return  patchLocation(createPatchLocationRequest(locationId, body));
   }
 
@@ -479,11 +479,11 @@ public class LocationsApi {
    * @return LocationDefinition
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LocationDefinition> patchLocationWithHttpInfo(String locationId, LocationUpdateDefinition body) throws IOException {
+  public ApiResponse<LocationDefinition> patchLocationWithHttpInfo(String locationId, LocationCreateUpdateDefinition body) throws IOException {
     return patchLocation(createPatchLocationRequest(locationId, body).withHttpInfo());
   }
 
-  private PatchLocationRequest createPatchLocationRequest(String locationId, LocationUpdateDefinition body) {
+  private PatchLocationRequest createPatchLocationRequest(String locationId, LocationCreateUpdateDefinition body) {
     return PatchLocationRequest.builder()
             .withLocationId(locationId)
     
@@ -518,7 +518,7 @@ public class LocationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LocationDefinition> patchLocation(ApiRequest<LocationUpdateDefinition> request) throws IOException {
+  public ApiResponse<LocationDefinition> patchLocation(ApiRequest<LocationCreateUpdateDefinition> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<LocationDefinition>() {});
     }
@@ -549,7 +549,7 @@ public class LocationsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LocationDefinition postLocations(LocationDefinition body) throws IOException, ApiException {
+  public LocationDefinition postLocations(LocationCreateUpdateDefinition body) throws IOException, ApiException {
     return  postLocations(createPostLocationsRequest(body));
   }
 
@@ -560,11 +560,11 @@ public class LocationsApi {
    * @return LocationDefinition
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LocationDefinition> postLocationsWithHttpInfo(LocationDefinition body) throws IOException {
+  public ApiResponse<LocationDefinition> postLocationsWithHttpInfo(LocationCreateUpdateDefinition body) throws IOException {
     return postLocations(createPostLocationsRequest(body).withHttpInfo());
   }
 
-  private PostLocationsRequest createPostLocationsRequest(LocationDefinition body) {
+  private PostLocationsRequest createPostLocationsRequest(LocationCreateUpdateDefinition body) {
     return PostLocationsRequest.builder()
             .withBody(body)
     
@@ -597,7 +597,7 @@ public class LocationsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LocationDefinition> postLocations(ApiRequest<LocationDefinition> request) throws IOException {
+  public ApiResponse<LocationDefinition> postLocations(ApiRequest<LocationCreateUpdateDefinition> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<LocationDefinition>() {});
     }

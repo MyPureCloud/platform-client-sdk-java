@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.LocationAddress;
 import com.mypurecloud.sdk.v2.model.LocationEmergencyNumber;
 import com.mypurecloud.sdk.v2.model.LocationImage;
@@ -22,6 +23,7 @@ public class LocationDefinition  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private AddressableEntityRef contactUser = null;
   private LocationEmergencyNumber emergencyNumber = null;
   private LocationAddress address = null;
   private Boolean addressVerified = null;
@@ -90,6 +92,24 @@ public class LocationDefinition  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  
+  /**
+   * Site contact for the location
+   **/
+  public LocationDefinition contactUser(AddressableEntityRef contactUser) {
+    this.contactUser = contactUser;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Site contact for the location")
+  @JsonProperty("contactUser")
+  public AddressableEntityRef getContactUser() {
+    return contactUser;
+  }
+  public void setContactUser(AddressableEntityRef contactUser) {
+    this.contactUser = contactUser;
   }
 
   
@@ -268,6 +288,7 @@ public class LocationDefinition  implements Serializable {
     LocationDefinition locationDefinition = (LocationDefinition) o;
     return Objects.equals(this.id, locationDefinition.id) &&
         Objects.equals(this.name, locationDefinition.name) &&
+        Objects.equals(this.contactUser, locationDefinition.contactUser) &&
         Objects.equals(this.emergencyNumber, locationDefinition.emergencyNumber) &&
         Objects.equals(this.address, locationDefinition.address) &&
         Objects.equals(this.addressVerified, locationDefinition.addressVerified) &&
@@ -282,7 +303,7 @@ public class LocationDefinition  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, emergencyNumber, address, addressVerified, state, notes, version, path, profileImage, floorplanImage, selfUri);
+    return Objects.hash(id, name, contactUser, emergencyNumber, address, addressVerified, state, notes, version, path, profileImage, floorplanImage, selfUri);
   }
 
   @Override
@@ -292,6 +313,7 @@ public class LocationDefinition  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    contactUser: ").append(toIndentedString(contactUser)).append("\n");
     sb.append("    emergencyNumber: ").append(toIndentedString(emergencyNumber)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    addressVerified: ").append(toIndentedString(addressVerified)).append("\n");

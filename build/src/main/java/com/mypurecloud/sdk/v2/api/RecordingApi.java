@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OrphanRecording;
 import com.mypurecloud.sdk.v2.model.Recording;
 import com.mypurecloud.sdk.v2.model.Annotation;
+import com.mypurecloud.sdk.v2.model.RecordingMetadata;
 import com.mypurecloud.sdk.v2.model.OrphanRecordingListing;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobStatusResult;
 import com.mypurecloud.sdk.v2.model.RecordingJob;
@@ -839,11 +840,11 @@ public class RecordingApi {
    * 
    * @param conversationId Conversation ID (required)
    * @param recordingId Recording ID (required)
-   * @return Recording
+   * @return RecordingMetadata
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Recording getConversationRecordingmetadataRecordingId(String conversationId, String recordingId) throws IOException, ApiException {
+  public RecordingMetadata getConversationRecordingmetadataRecordingId(String conversationId, String recordingId) throws IOException, ApiException {
     return  getConversationRecordingmetadataRecordingId(createGetConversationRecordingmetadataRecordingIdRequest(conversationId, recordingId));
   }
 
@@ -852,10 +853,10 @@ public class RecordingApi {
    * 
    * @param conversationId Conversation ID (required)
    * @param recordingId Recording ID (required)
-   * @return Recording
+   * @return RecordingMetadata
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Recording> getConversationRecordingmetadataRecordingIdWithHttpInfo(String conversationId, String recordingId) throws IOException {
+  public ApiResponse<RecordingMetadata> getConversationRecordingmetadataRecordingIdWithHttpInfo(String conversationId, String recordingId) throws IOException {
     return getConversationRecordingmetadataRecordingId(createGetConversationRecordingmetadataRecordingIdRequest(conversationId, recordingId).withHttpInfo());
   }
 
@@ -872,13 +873,13 @@ public class RecordingApi {
    * Get metadata for a specific recording. Does not return playable media.
    * 
    * @param request The request object
-   * @return Recording
+   * @return RecordingMetadata
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Recording getConversationRecordingmetadataRecordingId(GetConversationRecordingmetadataRecordingIdRequest request) throws IOException, ApiException {
+  public RecordingMetadata getConversationRecordingmetadataRecordingId(GetConversationRecordingmetadataRecordingIdRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Recording> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Recording>() {});
+      ApiResponse<RecordingMetadata> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RecordingMetadata>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -894,13 +895,13 @@ public class RecordingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Recording> getConversationRecordingmetadataRecordingId(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<RecordingMetadata> getConversationRecordingmetadataRecordingId(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<Recording>() {});
+      return pcapiClient.invoke(request, new TypeReference<RecordingMetadata>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)exception;
+      ApiResponse<RecordingMetadata> response = (ApiResponse<RecordingMetadata>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -911,7 +912,7 @@ public class RecordingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<RecordingMetadata> response = (ApiResponse<RecordingMetadata>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

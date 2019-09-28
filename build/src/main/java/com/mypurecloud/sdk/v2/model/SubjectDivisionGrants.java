@@ -30,6 +30,8 @@ public class SubjectDivisionGrants  implements Serializable {
     PC_USER("PC_USER"),
     PC_GROUP("PC_GROUP"),
     PC_OAUTH_CLIENT("PC_OAUTH_CLIENT"),
+    PC_TRUSTEE_USER("PC_TRUSTEE_USER"),
+    PC_TRUSTEE_GROUP("PC_TRUSTEE_GROUP"),
     UNKNOWN("UNKNOWN");
 
     private String value;

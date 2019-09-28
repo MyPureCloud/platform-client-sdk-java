@@ -378,7 +378,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 LocationsApi apiInstance = new LocationsApi();
 String locationId = "locationId_example"; // String | Location ID
-LocationUpdateDefinition body = new LocationUpdateDefinition(); // LocationUpdateDefinition | Location
+LocationCreateUpdateDefinition body = new LocationCreateUpdateDefinition(); // LocationCreateUpdateDefinition | Location
 try {
     LocationDefinition result = apiInstance.patchLocation(locationId, body);
     System.out.println(result);
@@ -394,7 +394,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **locationId** | **String**| Location ID | 
-| **body** | [**LocationUpdateDefinition**](LocationUpdateDefinition.html)| Location | 
+| **body** | [**LocationCreateUpdateDefinition**](LocationCreateUpdateDefinition.html)| Location | 
 {: class="table-striped"}
 
 
@@ -442,7 +442,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 LocationsApi apiInstance = new LocationsApi();
-LocationDefinition body = new LocationDefinition(); // LocationDefinition | Location
+LocationCreateUpdateDefinition body = new LocationCreateUpdateDefinition(); // LocationCreateUpdateDefinition | Location
 try {
     LocationDefinition result = apiInstance.postLocations(body);
     System.out.println(result);
@@ -457,7 +457,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**LocationDefinition**](LocationDefinition.html)| Location | 
+| **body** | [**LocationCreateUpdateDefinition**](LocationCreateUpdateDefinition.html)| Location | 
 {: class="table-striped"}
 
 

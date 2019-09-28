@@ -24,7 +24,7 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
 import com.mypurecloud.sdk.v2.model.LocationEntityListing;
 import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
-import com.mypurecloud.sdk.v2.model.LocationUpdateDefinition;
+import com.mypurecloud.sdk.v2.model.LocationCreateUpdateDefinition;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
 
 public class PatchLocationRequest {
@@ -43,16 +43,16 @@ public class PatchLocationRequest {
 	    return this;
 	} 
 	
-	private LocationUpdateDefinition body;
-	public LocationUpdateDefinition getBody() {
+	private LocationCreateUpdateDefinition body;
+	public LocationCreateUpdateDefinition getBody() {
 		return this.body;
 	}
 
-	public void setBody(LocationUpdateDefinition body) {
+	public void setBody(LocationCreateUpdateDefinition body) {
 		this.body = body;
 	}
 
-	public PatchLocationRequest withBody(LocationUpdateDefinition body) {
+	public PatchLocationRequest withBody(LocationCreateUpdateDefinition body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -76,7 +76,7 @@ public class PatchLocationRequest {
         return this;
     }
 
-    public ApiRequest<LocationUpdateDefinition> withHttpInfo() {
+    public ApiRequest<LocationCreateUpdateDefinition> withHttpInfo() {
         
         // verify the required parameter 'locationId' is set
         if (this.locationId == null) {
@@ -106,7 +106,7 @@ public class PatchLocationRequest {
 	}
 
 	
-	public static Builder builder(String locationId, LocationUpdateDefinition body) {
+	public static Builder builder(String locationId, LocationCreateUpdateDefinition body) {
 	    return new Builder()
 	            .withRequiredParams(locationId, body);
 	}
@@ -125,14 +125,14 @@ public class PatchLocationRequest {
 			return this;
 		}
 		
-		public Builder withBody(LocationUpdateDefinition body) {
+		public Builder withBody(LocationCreateUpdateDefinition body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(String locationId, LocationUpdateDefinition body) {
+		public Builder withRequiredParams(String locationId, LocationCreateUpdateDefinition body) {
 			request.setLocationId(locationId);
 						request.setBody(body);
 			

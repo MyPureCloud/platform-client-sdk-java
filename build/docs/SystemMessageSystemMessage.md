@@ -29,6 +29,7 @@ title: SystemMessageSystemMessage
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NO_LONGER_SUBSCRIBED | &quot;no_longer_subscribed&quot; |
 | SUBSCRIPTION_CHANGED | &quot;subscription_changed&quot; |
+| TOKEN_REVOKED | &quot;token_revoked&quot; |
 {: class="table table-striped"}
 
 
@@ -40,6 +41,7 @@ title: SystemMessageSystemMessage
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ANOTHER_CHANNEL_SUBSCRIBED | &quot;another_channel_subscribed&quot; |
+| USER_TOKENS_REVOKED | &quot;user_tokens_revoked&quot; |
 {: class="table table-striped"}
 
 

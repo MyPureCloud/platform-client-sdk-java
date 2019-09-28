@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -65,6 +66,7 @@ public class HistoryEntry  implements Serializable {
   private String resource = null;
   private Date timestamp = null;
   private User user = null;
+  private DomainEntityRef client = null;
   private String version = null;
   private Boolean secure = null;
 
@@ -124,19 +126,38 @@ public class HistoryEntry  implements Serializable {
 
   
   /**
+   * User associated with this entry.
    **/
   public HistoryEntry user(User user) {
     this.user = user;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "User associated with this entry.")
   @JsonProperty("user")
   public User getUser() {
     return user;
   }
   public void setUser(User user) {
     this.user = user;
+  }
+
+  
+  /**
+   * OAuth client associated with this entry.
+   **/
+  public HistoryEntry client(DomainEntityRef client) {
+    this.client = client;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "OAuth client associated with this entry.")
+  @JsonProperty("client")
+  public DomainEntityRef getClient() {
+    return client;
+  }
+  public void setClient(DomainEntityRef client) {
+    this.client = client;
   }
 
   
@@ -188,13 +209,14 @@ public class HistoryEntry  implements Serializable {
         Objects.equals(this.resource, historyEntry.resource) &&
         Objects.equals(this.timestamp, historyEntry.timestamp) &&
         Objects.equals(this.user, historyEntry.user) &&
+        Objects.equals(this.client, historyEntry.client) &&
         Objects.equals(this.version, historyEntry.version) &&
         Objects.equals(this.secure, historyEntry.secure);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(action, resource, timestamp, user, version, secure);
+    return Objects.hash(action, resource, timestamp, user, client, version, secure);
   }
 
   @Override
@@ -206,6 +228,7 @@ public class HistoryEntry  implements Serializable {
     sb.append("    resource: ").append(toIndentedString(resource)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
+    sb.append("    client: ").append(toIndentedString(client)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    secure: ").append(toIndentedString(secure)).append("\n");
     sb.append("}");

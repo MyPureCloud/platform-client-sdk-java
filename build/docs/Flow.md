@@ -13,7 +13,8 @@ title: Flow
 | **division** | [**WritableDivision**](WritableDivision.html) | The division to which this entity belongs. |  [optional] |
 | **description** | **String** |  |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
-| **lockedUser** | [**User**](User.html) |  |  [optional] |
+| **lockedUser** | [**User**](User.html) | User that has the flow locked. |  [optional] |
+| **lockedClient** | [**DomainEntityRef**](DomainEntityRef.html) | OAuth client that has the flow locked. |  [optional] |
 | **active** | **Boolean** |  |  [optional] |
 | **system** | **Boolean** |  |  [optional] |
 | **deleted** | **Boolean** |  |  [optional] |

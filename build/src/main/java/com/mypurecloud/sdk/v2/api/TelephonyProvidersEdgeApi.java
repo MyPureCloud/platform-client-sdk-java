@@ -5744,7 +5744,7 @@ public class TelephonyProvidersEdgeApi {
 
   
   /**
-   * Get the list of Number Plans for this Site.
+   * Get the list of Number Plans for this Site. Only fetches the first 200 records.
    * 
    * @param siteId Site ID (required)
    * @return List<NumberPlan>
@@ -5756,7 +5756,7 @@ public class TelephonyProvidersEdgeApi {
   }
 
   /**
-   * Get the list of Number Plans for this Site.
+   * Get the list of Number Plans for this Site. Only fetches the first 200 records.
    * 
    * @param siteId Site ID (required)
    * @return List<NumberPlan>
@@ -5774,7 +5774,7 @@ public class TelephonyProvidersEdgeApi {
   }
 
   /**
-   * Get the list of Number Plans for this Site.
+   * Get the list of Number Plans for this Site. Only fetches the first 200 records.
    * 
    * @param request The request object
    * @return List<NumberPlan>
@@ -5793,7 +5793,7 @@ public class TelephonyProvidersEdgeApi {
   }
 
   /**
-   * Get the list of Number Plans for this Site.
+   * Get the list of Number Plans for this Site. Only fetches the first 200 records.
    * 
    * @param request The request object
    * @return the response
@@ -9985,7 +9985,7 @@ public class TelephonyProvidersEdgeApi {
 
   
   /**
-   * Update the list of Number Plans.
+   * Update the list of Number Plans. A user can update maximum 200 number plans at a time.
    * 
    * @param siteId Site ID (required)
    * @param body List of number plans (required)
@@ -9998,7 +9998,7 @@ public class TelephonyProvidersEdgeApi {
   }
 
   /**
-   * Update the list of Number Plans.
+   * Update the list of Number Plans. A user can update maximum 200 number plans at a time.
    * 
    * @param siteId Site ID (required)
    * @param body List of number plans (required)
@@ -10019,7 +10019,7 @@ public class TelephonyProvidersEdgeApi {
   }
 
   /**
-   * Update the list of Number Plans.
+   * Update the list of Number Plans. A user can update maximum 200 number plans at a time.
    * 
    * @param request The request object
    * @return List<NumberPlan>
@@ -10038,7 +10038,7 @@ public class TelephonyProvidersEdgeApi {
   }
 
   /**
-   * Update the list of Number Plans.
+   * Update the list of Number Plans. A user can update maximum 200 number plans at a time.
    * 
    * @param request The request object
    * @return the response

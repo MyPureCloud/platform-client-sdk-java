@@ -2448,7 +2448,7 @@ public class ConversationsApiAsync {
   
   /**
    * Get a web chat conversation message
-   * 
+   * The current user must be involved with the conversation to get its messages.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2482,7 +2482,7 @@ public class ConversationsApiAsync {
 
   /**
    * Get a web chat conversation message
-   * 
+   * The current user must be involved with the conversation to get its messages.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2524,7 +2524,7 @@ public class ConversationsApiAsync {
   
   /**
    * Get the messages of a chat conversation.
-   * 
+   * The current user must be involved with the conversation to get its messages.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2558,7 +2558,7 @@ public class ConversationsApiAsync {
 
   /**
    * Get the messages of a chat conversation.
-   * 
+   * The current user must be involved with the conversation to get its messages.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

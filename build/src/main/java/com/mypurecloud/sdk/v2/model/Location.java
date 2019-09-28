@@ -26,13 +26,14 @@ public class Location  implements Serializable {
 
   
   /**
+   * Unique identifier for the location
    **/
   public Location id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Unique identifier for the location")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -42,31 +43,22 @@ public class Location  implements Serializable {
   }
 
   
-  /**
-   **/
-  public Location floorplanId(String floorplanId) {
-    this.floorplanId = floorplanId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Unique identifier for the location floorplan image")
   @JsonProperty("floorplanId")
   public String getFloorplanId() {
     return floorplanId;
   }
-  public void setFloorplanId(String floorplanId) {
-    this.floorplanId = floorplanId;
-  }
 
   
   /**
+   * Users coordinates on the floorplan. Only used when floorplanImage is set
    **/
   public Location coordinates(Map<String, Double> coordinates) {
     this.coordinates = coordinates;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Users coordinates on the floorplan. Only used when floorplanImage is set")
   @JsonProperty("coordinates")
   public Map<String, Double> getCoordinates() {
     return coordinates;
@@ -77,13 +69,14 @@ public class Location  implements Serializable {
 
   
   /**
+   * Optional description on the users location
    **/
   public Location notes(String notes) {
     this.notes = notes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Optional description on the users location")
   @JsonProperty("notes")
   public String getNotes() {
     return notes;

@@ -24,13 +24,14 @@ public class MessageInfo  implements Serializable {
 
   
   /**
+   * Key that can be used to localize the message.
    **/
   public MessageInfo localizableMessageCode(String localizableMessageCode) {
     this.localizableMessageCode = localizableMessageCode;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Key that can be used to localize the message.")
   @JsonProperty("localizableMessageCode")
   public String getLocalizableMessageCode() {
     return localizableMessageCode;
@@ -41,13 +42,14 @@ public class MessageInfo  implements Serializable {
 
   
   /**
+   * Description of the message.
    **/
   public MessageInfo message(String message) {
     this.message = message;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Description of the message.")
   @JsonProperty("message")
   public String getMessage() {
     return message;
@@ -58,13 +60,14 @@ public class MessageInfo  implements Serializable {
 
   
   /**
+   * Message with template fields for variable replacement.
    **/
   public MessageInfo messageWithParams(String messageWithParams) {
     this.messageWithParams = messageWithParams;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Message with template fields for variable replacement.")
   @JsonProperty("messageWithParams")
   public String getMessageWithParams() {
     return messageWithParams;
@@ -75,13 +78,14 @@ public class MessageInfo  implements Serializable {
 
   
   /**
+   * Map with fields for variable replacement.
    **/
   public MessageInfo messageParams(Map<String, String> messageParams) {
     this.messageParams = messageParams;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Map with fields for variable replacement.")
   @JsonProperty("messageParams")
   public Map<String, String> getMessageParams() {
     return messageParams;

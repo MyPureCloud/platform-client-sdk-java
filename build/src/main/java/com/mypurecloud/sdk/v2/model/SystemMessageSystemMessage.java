@@ -23,7 +23,8 @@ public class SystemMessageSystemMessage  implements Serializable {
   public enum SystemTopicTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NO_LONGER_SUBSCRIBED("no_longer_subscribed"),
-    SUBSCRIPTION_CHANGED("subscription_changed");
+    SUBSCRIPTION_CHANGED("subscription_changed"),
+    TOKEN_REVOKED("token_revoked");
 
     private String value;
 
@@ -61,7 +62,8 @@ public class SystemMessageSystemMessage  implements Serializable {
    */
   public enum ReasonEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ANOTHER_CHANNEL_SUBSCRIBED("another_channel_subscribed");
+    ANOTHER_CHANNEL_SUBSCRIBED("another_channel_subscribed"),
+    USER_TOKENS_REVOKED("user_tokens_revoked");
 
     private String value;
 

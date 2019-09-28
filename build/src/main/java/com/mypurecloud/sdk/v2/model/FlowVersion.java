@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -58,6 +59,7 @@ public class FlowVersion  implements Serializable {
   private TypeEnum type = null;
   private Boolean secure = null;
   private User createdBy = null;
+  private DomainEntityRef createdByClient = null;
   private String configurationUri = null;
   private Long dateCreated = null;
   private String generationId = null;
@@ -187,6 +189,23 @@ public class FlowVersion  implements Serializable {
   
   /**
    **/
+  public FlowVersion createdByClient(DomainEntityRef createdByClient) {
+    this.createdByClient = createdByClient;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("createdByClient")
+  public DomainEntityRef getCreatedByClient() {
+    return createdByClient;
+  }
+  public void setCreatedByClient(DomainEntityRef createdByClient) {
+    this.createdByClient = createdByClient;
+  }
+
+  
+  /**
+   **/
   public FlowVersion configurationUri(String configurationUri) {
     this.configurationUri = configurationUri;
     return this;
@@ -277,6 +296,7 @@ public class FlowVersion  implements Serializable {
         Objects.equals(this.type, flowVersion.type) &&
         Objects.equals(this.secure, flowVersion.secure) &&
         Objects.equals(this.createdBy, flowVersion.createdBy) &&
+        Objects.equals(this.createdByClient, flowVersion.createdByClient) &&
         Objects.equals(this.configurationUri, flowVersion.configurationUri) &&
         Objects.equals(this.dateCreated, flowVersion.dateCreated) &&
         Objects.equals(this.generationId, flowVersion.generationId) &&
@@ -286,7 +306,7 @@ public class FlowVersion  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, commitVersion, configurationVersion, type, secure, createdBy, configurationUri, dateCreated, generationId, publishResultUri, selfUri);
+    return Objects.hash(id, name, commitVersion, configurationVersion, type, secure, createdBy, createdByClient, configurationUri, dateCreated, generationId, publishResultUri, selfUri);
   }
 
   @Override
@@ -301,6 +321,7 @@ public class FlowVersion  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    secure: ").append(toIndentedString(secure)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
+    sb.append("    createdByClient: ").append(toIndentedString(createdByClient)).append("\n");
     sb.append("    configurationUri: ").append(toIndentedString(configurationUri)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    generationId: ").append(toIndentedString(generationId)).append("\n");

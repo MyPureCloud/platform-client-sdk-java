@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.FailedObject;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
@@ -23,6 +24,7 @@ public class DependencyStatus  implements Serializable {
   private String id = null;
   private String name = null;
   private User user = null;
+  private DomainEntityRef client = null;
   private String buildId = null;
   private Date dateStarted = null;
   private Date dateCompleted = null;
@@ -93,19 +95,38 @@ public class DependencyStatus  implements Serializable {
 
   
   /**
+   * User that initiated the build.
    **/
   public DependencyStatus user(User user) {
     this.user = user;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "User that initiated the build.")
   @JsonProperty("user")
   public User getUser() {
     return user;
   }
   public void setUser(User user) {
     this.user = user;
+  }
+
+  
+  /**
+   * OAuth client that initiated the build.
+   **/
+  public DependencyStatus client(DomainEntityRef client) {
+    this.client = client;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "OAuth client that initiated the build.")
+  @JsonProperty("client")
+  public DomainEntityRef getClient() {
+    return client;
+  }
+  public void setClient(DomainEntityRef client) {
+    this.client = client;
   }
 
   
@@ -216,6 +237,7 @@ public class DependencyStatus  implements Serializable {
     return Objects.equals(this.id, dependencyStatus.id) &&
         Objects.equals(this.name, dependencyStatus.name) &&
         Objects.equals(this.user, dependencyStatus.user) &&
+        Objects.equals(this.client, dependencyStatus.client) &&
         Objects.equals(this.buildId, dependencyStatus.buildId) &&
         Objects.equals(this.dateStarted, dependencyStatus.dateStarted) &&
         Objects.equals(this.dateCompleted, dependencyStatus.dateCompleted) &&
@@ -226,7 +248,7 @@ public class DependencyStatus  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, user, buildId, dateStarted, dateCompleted, status, failedObjects, selfUri);
+    return Objects.hash(id, name, user, client, buildId, dateStarted, dateCompleted, status, failedObjects, selfUri);
   }
 
   @Override
@@ -237,6 +259,7 @@ public class DependencyStatus  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
+    sb.append("    client: ").append(toIndentedString(client)).append("\n");
     sb.append("    buildId: ").append(toIndentedString(buildId)).append("\n");
     sb.append("    dateStarted: ").append(toIndentedString(dateStarted)).append("\n");
     sb.append("    dateCompleted: ").append(toIndentedString(dateCompleted)).append("\n");

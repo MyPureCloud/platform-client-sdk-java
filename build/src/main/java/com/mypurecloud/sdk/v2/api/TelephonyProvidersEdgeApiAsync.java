@@ -5237,7 +5237,7 @@ public class TelephonyProvidersEdgeApiAsync {
 
   
   /**
-   * Get the list of Number Plans for this Site.
+   * Get the list of Number Plans for this Site. Only fetches the first 200 records.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -5271,7 +5271,7 @@ public class TelephonyProvidersEdgeApiAsync {
   }
 
   /**
-   * Get the list of Number Plans for this Site.
+   * Get the list of Number Plans for this Site. Only fetches the first 200 records.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -9113,7 +9113,7 @@ public class TelephonyProvidersEdgeApiAsync {
 
   
   /**
-   * Update the list of Number Plans.
+   * Update the list of Number Plans. A user can update maximum 200 number plans at a time.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -9147,7 +9147,7 @@ public class TelephonyProvidersEdgeApiAsync {
   }
 
   /**
-   * Update the list of Number Plans.
+   * Update the list of Number Plans. A user can update maximum 200 number plans at a time.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

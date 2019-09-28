@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.Operation;
 import com.mypurecloud.sdk.v2.model.User;
@@ -67,6 +68,7 @@ public class Flow  implements Serializable {
   }
   private TypeEnum type = null;
   private User lockedUser = null;
+  private DomainEntityRef lockedClient = null;
   private Boolean active = null;
   private Boolean system = null;
   private Boolean deleted = null;
@@ -169,19 +171,38 @@ public class Flow  implements Serializable {
 
   
   /**
+   * User that has the flow locked.
    **/
   public Flow lockedUser(User lockedUser) {
     this.lockedUser = lockedUser;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "User that has the flow locked.")
   @JsonProperty("lockedUser")
   public User getLockedUser() {
     return lockedUser;
   }
   public void setLockedUser(User lockedUser) {
     this.lockedUser = lockedUser;
+  }
+
+  
+  /**
+   * OAuth client that has the flow locked.
+   **/
+  public Flow lockedClient(DomainEntityRef lockedClient) {
+    this.lockedClient = lockedClient;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "OAuth client that has the flow locked.")
+  @JsonProperty("lockedClient")
+  public DomainEntityRef getLockedClient() {
+    return lockedClient;
+  }
+  public void setLockedClient(DomainEntityRef lockedClient) {
+    this.lockedClient = lockedClient;
   }
 
   
@@ -380,6 +401,7 @@ public class Flow  implements Serializable {
         Objects.equals(this.description, flow.description) &&
         Objects.equals(this.type, flow.type) &&
         Objects.equals(this.lockedUser, flow.lockedUser) &&
+        Objects.equals(this.lockedClient, flow.lockedClient) &&
         Objects.equals(this.active, flow.active) &&
         Objects.equals(this.system, flow.system) &&
         Objects.equals(this.deleted, flow.deleted) &&
@@ -395,7 +417,7 @@ public class Flow  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, type, lockedUser, active, system, deleted, publishedVersion, savedVersion, inputSchema, outputSchema, checkedInVersion, publishedBy, currentOperation, selfUri);
+    return Objects.hash(id, name, division, description, type, lockedUser, lockedClient, active, system, deleted, publishedVersion, savedVersion, inputSchema, outputSchema, checkedInVersion, publishedBy, currentOperation, selfUri);
   }
 
   @Override
@@ -409,6 +431,7 @@ public class Flow  implements Serializable {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    lockedUser: ").append(toIndentedString(lockedUser)).append("\n");
+    sb.append("    lockedClient: ").append(toIndentedString(lockedClient)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    system: ").append(toIndentedString(system)).append("\n");
     sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");

@@ -15,6 +15,7 @@ title: FlowVersion
 | **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
 | **secure** | **Boolean** |  |  [optional] |
 | **createdBy** | [**User**](User.html) |  |  [optional] |
+| **createdByClient** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
 | **configurationUri** | **String** |  |  [optional] |
 | **dateCreated** | **Long** |  |  [optional] |
 | **generationId** | **String** |  |  [optional] |

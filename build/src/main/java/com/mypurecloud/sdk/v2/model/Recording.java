@@ -185,13 +185,14 @@ public class Recording  implements Serializable {
 
   
   /**
+   * The start time of the recording. Null when there is no playable media.
    **/
   public Recording startTime(String startTime) {
     this.startTime = startTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The start time of the recording. Null when there is no playable media.")
   @JsonProperty("startTime")
   public String getStartTime() {
     return startTime;
@@ -202,13 +203,14 @@ public class Recording  implements Serializable {
 
   
   /**
+   * The end time of the recording. Null when there is no playable media.
    **/
   public Recording endTime(String endTime) {
     this.endTime = endTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The end time of the recording. Null when there is no playable media.")
   @JsonProperty("endTime")
   public String getEndTime() {
     return endTime;
@@ -345,14 +347,14 @@ public class Recording  implements Serializable {
 
   
   /**
-   * The different mediaUris for the recording.
+   * The different mediaUris for the recording. Null when there is no playable media.
    **/
   public Recording mediaUris(Map<String, MediaResult> mediaUris) {
     this.mediaUris = mediaUris;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The different mediaUris for the recording.")
+  @ApiModelProperty(example = "null", value = "The different mediaUris for the recording. Null when there is no playable media.")
   @JsonProperty("mediaUris")
   public Map<String, MediaResult> getMediaUris() {
     return mediaUris;
@@ -469,14 +471,14 @@ public class Recording  implements Serializable {
 
   
   /**
-   * Size of transcoded media in bytes
+   * Size of transcoded media in bytes. 0 if there is no transcoded media.
    **/
   public Recording outputSizeInBytes(Integer outputSizeInBytes) {
     this.outputSizeInBytes = outputSizeInBytes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Size of transcoded media in bytes")
+  @ApiModelProperty(example = "null", value = "Size of transcoded media in bytes. 0 if there is no transcoded media.")
   @JsonProperty("outputSizeInBytes")
   public Integer getOutputSizeInBytes() {
     return outputSizeInBytes;

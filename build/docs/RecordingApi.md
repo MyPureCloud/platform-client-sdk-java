@@ -633,7 +633,7 @@ try {
 
 
 
-> [Recording](Recording.html) getConversationRecordingmetadataRecordingId(conversationId, recordingId)
+> [RecordingMetadata](RecordingMetadata.html) getConversationRecordingmetadataRecordingId(conversationId, recordingId)
 
 Get metadata for a specific recording. Does not return playable media.
 
@@ -669,7 +669,7 @@ RecordingApi apiInstance = new RecordingApi();
 String conversationId = "conversationId_example"; // String | Conversation ID
 String recordingId = "recordingId_example"; // String | Recording ID
 try {
-    Recording result = apiInstance.getConversationRecordingmetadataRecordingId(conversationId, recordingId);
+    RecordingMetadata result = apiInstance.getConversationRecordingmetadataRecordingId(conversationId, recordingId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RecordingApi#getConversationRecordingmetadataRecordingId");
@@ -689,7 +689,7 @@ try {
 
 ### Return type
 
-[**Recording**](Recording.html)
+[**RecordingMetadata**](RecordingMetadata.html)
 
 <a name="getConversationRecordings"></a>
 

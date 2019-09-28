@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OrphanRecording;
 import com.mypurecloud.sdk.v2.model.Recording;
 import com.mypurecloud.sdk.v2.model.Annotation;
+import com.mypurecloud.sdk.v2.model.RecordingMetadata;
 import com.mypurecloud.sdk.v2.model.OrphanRecordingListing;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobStatusResult;
 import com.mypurecloud.sdk.v2.model.RecordingJob;
@@ -794,13 +795,13 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Recording> getConversationRecordingmetadataRecordingIdAsync(GetConversationRecordingmetadataRecordingIdRequest request, final AsyncApiCallback<Recording> callback) {
+  public Future<RecordingMetadata> getConversationRecordingmetadataRecordingIdAsync(GetConversationRecordingmetadataRecordingIdRequest request, final AsyncApiCallback<RecordingMetadata> callback) {
     try {
-      final SettableFuture<Recording> future = SettableFuture.create();
+      final SettableFuture<RecordingMetadata> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Recording>() {}, new AsyncApiCallback<ApiResponse<Recording>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RecordingMetadata>() {}, new AsyncApiCallback<ApiResponse<RecordingMetadata>>() {
         @Override
-        public void onCompleted(ApiResponse<Recording> response) {
+        public void onCompleted(ApiResponse<RecordingMetadata> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -828,13 +829,13 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Recording>> getConversationRecordingmetadataRecordingIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Recording>> callback) {
+  public Future<ApiResponse<RecordingMetadata>> getConversationRecordingmetadataRecordingIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<RecordingMetadata>> callback) {
     try {
-      final SettableFuture<ApiResponse<Recording>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<RecordingMetadata>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<Recording>() {}, new AsyncApiCallback<ApiResponse<Recording>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<RecordingMetadata>() {}, new AsyncApiCallback<ApiResponse<RecordingMetadata>>() {
         @Override
-        public void onCompleted(ApiResponse<Recording> response) {
+        public void onCompleted(ApiResponse<RecordingMetadata> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -842,7 +843,7 @@ public class RecordingApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)exception;
+            ApiResponse<RecordingMetadata> response = (ApiResponse<RecordingMetadata>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -850,7 +851,7 @@ public class RecordingApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<RecordingMetadata> response = (ApiResponse<RecordingMetadata>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

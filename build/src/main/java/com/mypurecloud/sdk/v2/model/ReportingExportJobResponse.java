@@ -221,6 +221,7 @@ public class ReportingExportJobResponse  implements Serializable {
   private Date modifiedDateTime = null;
   private String locale = null;
   private Double percentageComplete = null;
+  private Boolean hasFormatDurations = null;
   private String selfUri = null;
 
   
@@ -500,6 +501,24 @@ public class ReportingExportJobResponse  implements Serializable {
   }
 
   
+  /**
+   * Indicates if durations are formatted in hh:mm:ss format instead of ms
+   **/
+  public ReportingExportJobResponse hasFormatDurations(Boolean hasFormatDurations) {
+    this.hasFormatDurations = hasFormatDurations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates if durations are formatted in hh:mm:ss format instead of ms")
+  @JsonProperty("hasFormatDurations")
+  public Boolean getHasFormatDurations() {
+    return hasFormatDurations;
+  }
+  public void setHasFormatDurations(Boolean hasFormatDurations) {
+    this.hasFormatDurations = hasFormatDurations;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -533,12 +552,13 @@ public class ReportingExportJobResponse  implements Serializable {
         Objects.equals(this.modifiedDateTime, reportingExportJobResponse.modifiedDateTime) &&
         Objects.equals(this.locale, reportingExportJobResponse.locale) &&
         Objects.equals(this.percentageComplete, reportingExportJobResponse.percentageComplete) &&
+        Objects.equals(this.hasFormatDurations, reportingExportJobResponse.hasFormatDurations) &&
         Objects.equals(this.selfUri, reportingExportJobResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, selfUri);
+    return Objects.hash(id, name, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, selfUri);
   }
 
   @Override
@@ -562,6 +582,7 @@ public class ReportingExportJobResponse  implements Serializable {
     sb.append("    modifiedDateTime: ").append(toIndentedString(modifiedDateTime)).append("\n");
     sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("    percentageComplete: ").append(toIndentedString(percentageComplete)).append("\n");
+    sb.append("    hasFormatDurations: ").append(toIndentedString(hasFormatDurations)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

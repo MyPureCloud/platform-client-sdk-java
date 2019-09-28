@@ -11,6 +11,7 @@ title: HistoryListing
 | **id** | **String** |  |  [optional] |
 | **complete** | **Boolean** |  |  [optional] |
 | **user** | [**User**](User.html) |  |  [optional] |
+| **client** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
 | **errorMessage** | **String** |  |  [optional] |
 | **errorCode** | **String** |  |  [optional] |
 | **errorDetails** | [**List&lt;Detail&gt;**](Detail.html) |  |  [optional] |

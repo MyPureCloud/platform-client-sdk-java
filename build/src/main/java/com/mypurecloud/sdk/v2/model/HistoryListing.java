@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Detail;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.HistoryEntry;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
@@ -26,6 +27,7 @@ public class HistoryListing  implements Serializable {
   private String id = null;
   private Boolean complete = null;
   private User user = null;
+  private DomainEntityRef client = null;
   private String errorMessage = null;
   private String errorCode = null;
   private List<Detail> errorDetails = new ArrayList<Detail>();
@@ -172,6 +174,23 @@ public class HistoryListing  implements Serializable {
   }
   public void setUser(User user) {
     this.user = user;
+  }
+
+  
+  /**
+   **/
+  public HistoryListing client(DomainEntityRef client) {
+    this.client = client;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("client")
+  public DomainEntityRef getClient() {
+    return client;
+  }
+  public void setClient(DomainEntityRef client) {
+    this.client = client;
   }
 
   
@@ -464,6 +483,7 @@ public class HistoryListing  implements Serializable {
     return Objects.equals(this.id, historyListing.id) &&
         Objects.equals(this.complete, historyListing.complete) &&
         Objects.equals(this.user, historyListing.user) &&
+        Objects.equals(this.client, historyListing.client) &&
         Objects.equals(this.errorMessage, historyListing.errorMessage) &&
         Objects.equals(this.errorCode, historyListing.errorCode) &&
         Objects.equals(this.errorDetails, historyListing.errorDetails) &&
@@ -484,7 +504,7 @@ public class HistoryListing  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, complete, user, errorMessage, errorCode, errorDetails, errorMessageParams, actionName, actionStatus, name, description, system, started, completed, entities, total, pageSize, pageNumber, pageCount);
+    return Objects.hash(id, complete, user, client, errorMessage, errorCode, errorDetails, errorMessageParams, actionName, actionStatus, name, description, system, started, completed, entities, total, pageSize, pageNumber, pageCount);
   }
 
   @Override
@@ -495,6 +515,7 @@ public class HistoryListing  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    complete: ").append(toIndentedString(complete)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
+    sb.append("    client: ").append(toIndentedString(client)).append("\n");
     sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
     sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
     sb.append("    errorDetails: ").append(toIndentedString(errorDetails)).append("\n");

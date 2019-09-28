@@ -2579,7 +2579,7 @@ public class ConversationsApi {
   
   /**
    * Get a web chat conversation message
-   * 
+   * The current user must be involved with the conversation to get its messages.
    * @param conversationId conversationId (required)
    * @param messageId messageId (required)
    * @return WebChatMessage
@@ -2592,7 +2592,7 @@ public class ConversationsApi {
 
   /**
    * Get a web chat conversation message
-   * 
+   * The current user must be involved with the conversation to get its messages.
    * @param conversationId conversationId (required)
    * @param messageId messageId (required)
    * @return WebChatMessage
@@ -2613,7 +2613,7 @@ public class ConversationsApi {
 
   /**
    * Get a web chat conversation message
-   * 
+   * The current user must be involved with the conversation to get its messages.
    * @param request The request object
    * @return WebChatMessage
    * @throws ApiException if the request fails on the server
@@ -2632,7 +2632,7 @@ public class ConversationsApi {
 
   /**
    * Get a web chat conversation message
-   * 
+   * The current user must be involved with the conversation to get its messages.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2662,7 +2662,7 @@ public class ConversationsApi {
   
   /**
    * Get the messages of a chat conversation.
-   * 
+   * The current user must be involved with the conversation to get its messages.
    * @param conversationId conversationId (required)
    * @param after If specified, get the messages chronologically after the id of this message (optional)
    * @param before If specified, get the messages chronologically before the id of this message (optional)
@@ -2678,7 +2678,7 @@ public class ConversationsApi {
 
   /**
    * Get the messages of a chat conversation.
-   * 
+   * The current user must be involved with the conversation to get its messages.
    * @param conversationId conversationId (required)
    * @param after If specified, get the messages chronologically after the id of this message (optional)
    * @param before If specified, get the messages chronologically before the id of this message (optional)
@@ -2708,7 +2708,7 @@ public class ConversationsApi {
 
   /**
    * Get the messages of a chat conversation.
-   * 
+   * The current user must be involved with the conversation to get its messages.
    * @param request The request object
    * @return WebChatMessageEntityList
    * @throws ApiException if the request fails on the server
@@ -2727,7 +2727,7 @@ public class ConversationsApi {
 
   /**
    * Get the messages of a chat conversation.
-   * 
+   * The current user must be involved with the conversation to get its messages.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
