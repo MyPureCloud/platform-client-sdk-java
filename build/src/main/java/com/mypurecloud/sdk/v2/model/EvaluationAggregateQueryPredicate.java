@@ -62,11 +62,13 @@ public class EvaluationAggregateQueryPredicate  implements Serializable {
     CONTEXTID("contextId"),
     CONVERSATIONID("conversationId"),
     DIVISIONID("divisionId"),
+    EVALUATIONCREATEDDATE("evaluationCreatedDate"),
     EVALUATIONID("evaluationId"),
     EVALUATORID("evaluatorId"),
     FORMID("formId"),
     QUEUEID("queueId"),
     RESCIND("rescind"),
+    RESCORED("rescored"),
     USERID("userId");
 
     private String value;

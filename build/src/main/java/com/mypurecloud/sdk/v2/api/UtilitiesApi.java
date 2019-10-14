@@ -12,6 +12,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ServerDate;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.IpAddressRangeListing;
 import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.ParsedCertificate;
 import com.mypurecloud.sdk.v2.model.Certificate;
@@ -19,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.Token;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetDateRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIprangesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTimezonesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCertificateDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGmscTokensRequest;
@@ -112,6 +114,81 @@ public class UtilitiesApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ServerDate> response = (ApiResponse<ServerDate>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get public ip address ranges for PureCloud
+   * 
+   * @return IpAddressRangeListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IpAddressRangeListing getIpranges() throws IOException, ApiException {
+    return  getIpranges(createGetIprangesRequest());
+  }
+
+  /**
+   * Get public ip address ranges for PureCloud
+   * 
+   * @return IpAddressRangeListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IpAddressRangeListing> getIprangesWithHttpInfo() throws IOException {
+    return getIpranges(createGetIprangesRequest().withHttpInfo());
+  }
+
+  private GetIprangesRequest createGetIprangesRequest() {
+    return GetIprangesRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get public ip address ranges for PureCloud
+   * 
+   * @param request The request object
+   * @return IpAddressRangeListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IpAddressRangeListing getIpranges(GetIprangesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IpAddressRangeListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IpAddressRangeListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get public ip address ranges for PureCloud
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IpAddressRangeListing> getIpranges(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IpAddressRangeListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IpAddressRangeListing> response = (ApiResponse<IpAddressRangeListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IpAddressRangeListing> response = (ApiResponse<IpAddressRangeListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

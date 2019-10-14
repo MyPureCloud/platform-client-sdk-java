@@ -22,6 +22,7 @@ import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ServerDate;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.IpAddressRangeListing;
 import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.ParsedCertificate;
 import com.mypurecloud.sdk.v2.model.Certificate;

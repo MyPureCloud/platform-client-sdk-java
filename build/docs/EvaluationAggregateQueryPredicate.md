@@ -40,11 +40,13 @@ title: EvaluationAggregateQueryPredicate
 | CONTEXTID | &quot;contextId&quot; |
 | CONVERSATIONID | &quot;conversationId&quot; |
 | DIVISIONID | &quot;divisionId&quot; |
+| EVALUATIONCREATEDDATE | &quot;evaluationCreatedDate&quot; |
 | EVALUATIONID | &quot;evaluationId&quot; |
 | EVALUATORID | &quot;evaluatorId&quot; |
 | FORMID | &quot;formId&quot; |
 | QUEUEID | &quot;queueId&quot; |
 | RESCIND | &quot;rescind&quot; |
+| RESCORED | &quot;rescored&quot; |
 | USERID | &quot;userId&quot; |
 {: class="table table-striped"}
 

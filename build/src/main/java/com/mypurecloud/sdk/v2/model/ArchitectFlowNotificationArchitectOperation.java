@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ArchitectFlowNotificationClient;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowNotificationErrorDetail;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowNotificationErrorMessageParams;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowNotificationUser;
@@ -23,6 +24,7 @@ public class ArchitectFlowNotificationArchitectOperation  implements Serializabl
   private String id = null;
   private Boolean complete = null;
   private ArchitectFlowNotificationUser user = null;
+  private ArchitectFlowNotificationClient client = null;
 
   /**
    * Gets or Sets actionName
@@ -164,6 +166,23 @@ public class ArchitectFlowNotificationArchitectOperation  implements Serializabl
   
   /**
    **/
+  public ArchitectFlowNotificationArchitectOperation client(ArchitectFlowNotificationClient client) {
+    this.client = client;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("client")
+  public ArchitectFlowNotificationClient getClient() {
+    return client;
+  }
+  public void setClient(ArchitectFlowNotificationClient client) {
+    this.client = client;
+  }
+
+  
+  /**
+   **/
   public ArchitectFlowNotificationArchitectOperation actionName(ActionNameEnum actionName) {
     this.actionName = actionName;
     return this;
@@ -277,6 +296,7 @@ public class ArchitectFlowNotificationArchitectOperation  implements Serializabl
     return Objects.equals(this.id, architectFlowNotificationArchitectOperation.id) &&
         Objects.equals(this.complete, architectFlowNotificationArchitectOperation.complete) &&
         Objects.equals(this.user, architectFlowNotificationArchitectOperation.user) &&
+        Objects.equals(this.client, architectFlowNotificationArchitectOperation.client) &&
         Objects.equals(this.actionName, architectFlowNotificationArchitectOperation.actionName) &&
         Objects.equals(this.actionStatus, architectFlowNotificationArchitectOperation.actionStatus) &&
         Objects.equals(this.errorMessage, architectFlowNotificationArchitectOperation.errorMessage) &&
@@ -287,7 +307,7 @@ public class ArchitectFlowNotificationArchitectOperation  implements Serializabl
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, complete, user, actionName, actionStatus, errorMessage, errorCode, errorMessageParams, errorDetails);
+    return Objects.hash(id, complete, user, client, actionName, actionStatus, errorMessage, errorCode, errorMessageParams, errorDetails);
   }
 
   @Override
@@ -298,6 +318,7 @@ public class ArchitectFlowNotificationArchitectOperation  implements Serializabl
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    complete: ").append(toIndentedString(complete)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
+    sb.append("    client: ").append(toIndentedString(client)).append("\n");
     sb.append("    actionName: ").append(toIndentedString(actionName)).append("\n");
     sb.append("    actionStatus: ").append(toIndentedString(actionStatus)).append("\n");
     sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");

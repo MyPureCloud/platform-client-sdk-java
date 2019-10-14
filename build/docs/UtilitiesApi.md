@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**getDate**](UtilitiesApi.html#getDate) | Get the current system date/time |
+| [**getIpranges**](UtilitiesApi.html#getIpranges) | Get public ip address ranges for PureCloud |
 | [**getTimezones**](UtilitiesApi.html#getTimezones) | Get time zones list |
 | [**postCertificateDetails**](UtilitiesApi.html#postCertificateDetails) | Returns the information about an X509 PEM encoded certificate or certificate chain. |
 | [**postGmscTokens**](UtilitiesApi.html#postGmscTokens) | Generate a JWT for use with common cloud. |
@@ -70,6 +71,64 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**ServerDate**](ServerDate.html)
+
+<a name="getIpranges"></a>
+
+# **getIpranges**
+
+
+
+> [IpAddressRangeListing](IpAddressRangeListing.html) getIpranges()
+
+Get public ip address ranges for PureCloud
+
+
+
+Wraps GET /api/v2/ipranges  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UtilitiesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UtilitiesApi apiInstance = new UtilitiesApi();
+try {
+    IpAddressRangeListing result = apiInstance.getIpranges();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UtilitiesApi#getIpranges");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**IpAddressRangeListing**](IpAddressRangeListing.html)
 
 <a name="getTimezones"></a>
 

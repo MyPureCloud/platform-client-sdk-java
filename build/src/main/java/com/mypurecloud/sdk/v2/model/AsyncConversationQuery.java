@@ -101,6 +101,7 @@ public class AsyncConversationQuery  implements Serializable {
   }
   private OrderByEnum orderBy = null;
   private Integer limit = null;
+  private Boolean startOfDayIntervalMatching = null;
 
   
   /**
@@ -265,6 +266,24 @@ public class AsyncConversationQuery  implements Serializable {
   }
 
   
+  /**
+   * Add a filter to only include conversations that started after the beginning of the interval start date (UTC)
+   **/
+  public AsyncConversationQuery startOfDayIntervalMatching(Boolean startOfDayIntervalMatching) {
+    this.startOfDayIntervalMatching = startOfDayIntervalMatching;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Add a filter to only include conversations that started after the beginning of the interval start date (UTC)")
+  @JsonProperty("startOfDayIntervalMatching")
+  public Boolean getStartOfDayIntervalMatching() {
+    return startOfDayIntervalMatching;
+  }
+  public void setStartOfDayIntervalMatching(Boolean startOfDayIntervalMatching) {
+    this.startOfDayIntervalMatching = startOfDayIntervalMatching;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -283,12 +302,13 @@ public class AsyncConversationQuery  implements Serializable {
         Objects.equals(this.surveyFilters, asyncConversationQuery.surveyFilters) &&
         Objects.equals(this.order, asyncConversationQuery.order) &&
         Objects.equals(this.orderBy, asyncConversationQuery.orderBy) &&
-        Objects.equals(this.limit, asyncConversationQuery.limit);
+        Objects.equals(this.limit, asyncConversationQuery.limit) &&
+        Objects.equals(this.startOfDayIntervalMatching, asyncConversationQuery.startOfDayIntervalMatching);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(interval, conversationFilters, segmentFilters, evaluationFilters, mediaEndpointStatFilters, surveyFilters, order, orderBy, limit);
+    return Objects.hash(interval, conversationFilters, segmentFilters, evaluationFilters, mediaEndpointStatFilters, surveyFilters, order, orderBy, limit, startOfDayIntervalMatching);
   }
 
   @Override
@@ -305,6 +325,7 @@ public class AsyncConversationQuery  implements Serializable {
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+    sb.append("    startOfDayIntervalMatching: ").append(toIndentedString(startOfDayIntervalMatching)).append("\n");
     sb.append("}");
     return sb.toString();
   }

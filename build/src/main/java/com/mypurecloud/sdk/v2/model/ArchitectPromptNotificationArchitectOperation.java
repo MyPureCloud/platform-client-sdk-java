@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ArchitectPromptNotificationClient;
 import com.mypurecloud.sdk.v2.model.ArchitectPromptNotificationErrorDetail;
 import com.mypurecloud.sdk.v2.model.ArchitectPromptNotificationErrorMessageParams;
 import com.mypurecloud.sdk.v2.model.ArchitectPromptNotificationUser;
@@ -23,6 +24,7 @@ public class ArchitectPromptNotificationArchitectOperation  implements Serializa
   private String id = null;
   private Boolean complete = null;
   private ArchitectPromptNotificationUser user = null;
+  private ArchitectPromptNotificationClient client = null;
 
   /**
    * Gets or Sets actionName
@@ -164,6 +166,23 @@ public class ArchitectPromptNotificationArchitectOperation  implements Serializa
   
   /**
    **/
+  public ArchitectPromptNotificationArchitectOperation client(ArchitectPromptNotificationClient client) {
+    this.client = client;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("client")
+  public ArchitectPromptNotificationClient getClient() {
+    return client;
+  }
+  public void setClient(ArchitectPromptNotificationClient client) {
+    this.client = client;
+  }
+
+  
+  /**
+   **/
   public ArchitectPromptNotificationArchitectOperation actionName(ActionNameEnum actionName) {
     this.actionName = actionName;
     return this;
@@ -277,6 +296,7 @@ public class ArchitectPromptNotificationArchitectOperation  implements Serializa
     return Objects.equals(this.id, architectPromptNotificationArchitectOperation.id) &&
         Objects.equals(this.complete, architectPromptNotificationArchitectOperation.complete) &&
         Objects.equals(this.user, architectPromptNotificationArchitectOperation.user) &&
+        Objects.equals(this.client, architectPromptNotificationArchitectOperation.client) &&
         Objects.equals(this.actionName, architectPromptNotificationArchitectOperation.actionName) &&
         Objects.equals(this.actionStatus, architectPromptNotificationArchitectOperation.actionStatus) &&
         Objects.equals(this.errorMessage, architectPromptNotificationArchitectOperation.errorMessage) &&
@@ -287,7 +307,7 @@ public class ArchitectPromptNotificationArchitectOperation  implements Serializa
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, complete, user, actionName, actionStatus, errorMessage, errorCode, errorMessageParams, errorDetails);
+    return Objects.hash(id, complete, user, client, actionName, actionStatus, errorMessage, errorCode, errorMessageParams, errorDetails);
   }
 
   @Override
@@ -298,6 +318,7 @@ public class ArchitectPromptNotificationArchitectOperation  implements Serializa
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    complete: ").append(toIndentedString(complete)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
+    sb.append("    client: ").append(toIndentedString(client)).append("\n");
     sb.append("    actionName: ").append(toIndentedString(actionName)).append("\n");
     sb.append("    actionStatus: ").append(toIndentedString(actionStatus)).append("\n");
     sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");

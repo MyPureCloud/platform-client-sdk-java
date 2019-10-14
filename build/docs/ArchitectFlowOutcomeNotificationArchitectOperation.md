@@ -11,6 +11,7 @@ title: ArchitectFlowOutcomeNotificationArchitectOperation
 | **id** | **String** |  |  [optional] |
 | **complete** | **Boolean** |  |  [optional] |
 | **user** | [**ArchitectFlowOutcomeNotificationUser**](ArchitectFlowOutcomeNotificationUser.html) |  |  [optional] |
+| **client** | [**ArchitectFlowOutcomeNotificationClient**](ArchitectFlowOutcomeNotificationClient.html) |  |  [optional] |
 | **actionName** | [**ActionNameEnum**](#ActionNameEnum) |  |  [optional] |
 | **actionStatus** | [**ActionStatusEnum**](#ActionStatusEnum) |  |  [optional] |
 | **errorMessage** | **String** |  |  [optional] |

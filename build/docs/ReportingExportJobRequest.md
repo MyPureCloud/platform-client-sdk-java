@@ -29,6 +29,7 @@ title: ReportingExportJobRequest
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | CSV | &quot;CSV&quot; |
+| PDF | &quot;PDF&quot; |
 {: class="table table-striped"}
 
 

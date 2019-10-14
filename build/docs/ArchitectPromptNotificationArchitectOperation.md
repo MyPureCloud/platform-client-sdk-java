@@ -11,6 +11,7 @@ title: ArchitectPromptNotificationArchitectOperation
 | **id** | **String** |  |  [optional] |
 | **complete** | **Boolean** |  |  [optional] |
 | **user** | [**ArchitectPromptNotificationUser**](ArchitectPromptNotificationUser.html) |  |  [optional] |
+| **client** | [**ArchitectPromptNotificationClient**](ArchitectPromptNotificationClient.html) |  |  [optional] |
 | **actionName** | [**ActionNameEnum**](#ActionNameEnum) |  |  [optional] |
 | **actionStatus** | [**ActionStatusEnum**](#ActionStatusEnum) |  |  [optional] |
 | **errorMessage** | **String** |  |  [optional] |

@@ -60,12 +60,14 @@ public class EvaluationDetailQueryPredicate  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CALIBRATIONID("calibrationId"),
     CONTEXTID("contextId"),
+    DELETED("deleted"),
     EVALUATIONID("evaluationId"),
     EVALUATORID("evaluatorId"),
     EVENTTIME("eventTime"),
     FORMID("formId"),
     FORMNAME("formName"),
     QUEUEID("queueId"),
+    RESCORED("rescored"),
     USERID("userId");
 
     private String value;

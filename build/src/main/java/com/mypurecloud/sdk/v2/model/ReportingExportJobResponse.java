@@ -67,7 +67,8 @@ public class ReportingExportJobResponse  implements Serializable {
    */
   public enum ExportFormatEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    CSV("CSV");
+    CSV("CSV"),
+    PDF("PDF");
 
     private String value;
 

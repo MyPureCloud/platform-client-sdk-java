@@ -23,6 +23,8 @@ public class EvaluationAggregationView  implements Serializable {
   public enum TargetEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NEVALUATIONS("nEvaluations"),
+    NEVALUATIONSDELETED("nEvaluationsDeleted"),
+    NEVALUATIONSRESCORED("nEvaluationsRescored"),
     OTOTALCRITICALSCORE("oTotalCriticalScore"),
     OTOTALSCORE("oTotalScore");
 

@@ -55,7 +55,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFlowVersions**](ArchitectApi.html#getFlowVersions) | Get flow version list |
 | [**getFlows**](ArchitectApi.html#getFlows) | Get a pageable list of flows, filtered by query parameters |
 | [**getFlowsDatatable**](ArchitectApi.html#getFlowsDatatable) | Returns a specific datatable by id |
-| [**getFlowsDatatableImportJob**](ArchitectApi.html#getFlowsDatatableImportJob) | Returns the state information about an import job |
 | [**getFlowsDatatableRow**](ArchitectApi.html#getFlowsDatatableRow) | Returns a specific row for the datatable |
 | [**getFlowsDatatableRows**](ArchitectApi.html#getFlowsDatatableRows) | Returns the rows for the datatable with the given id |
 | [**getFlowsDatatables**](ArchitectApi.html#getFlowsDatatables) | Retrieve a list of datatables for the org |
@@ -3348,71 +3347,6 @@ try {
 ### Return type
 
 [**DataTable**](DataTable.html)
-
-<a name="getFlowsDatatableImportJob"></a>
-
-# **getFlowsDatatableImportJob**
-
-
-
-> [DataTableImportJob](DataTableImportJob.html) getFlowsDatatableImportJob(datatableId, importJobId)
-
-Returns the state information about an import job
-
-Returns the state information about an import job.
-
-Wraps GET /api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}  
-
-Requires ANY permissions: 
-
-* architect:datatable:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.ArchitectApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-ArchitectApi apiInstance = new ArchitectApi();
-String datatableId = "datatableId_example"; // String | id of datatable
-String importJobId = "importJobId_example"; // String | id of import job
-try {
-    DataTableImportJob result = apiInstance.getFlowsDatatableImportJob(datatableId, importJobId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ArchitectApi#getFlowsDatatableImportJob");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **datatableId** | **String**| id of datatable | 
-| **importJobId** | **String**| id of import job | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**DataTableImportJob**](DataTableImportJob.html)
 
 <a name="getFlowsDatatableRow"></a>
 

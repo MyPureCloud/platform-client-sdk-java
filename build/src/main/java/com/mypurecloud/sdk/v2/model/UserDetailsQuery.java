@@ -25,9 +25,6 @@ public class UserDetailsQuery  implements Serializable {
   private String interval = null;
   private List<UserDetailQueryFilter> userFilters = new ArrayList<UserDetailQueryFilter>();
   private List<RoutingStatusDetailQueryFilter> routingStatusFilters = new ArrayList<RoutingStatusDetailQueryFilter>();
-  private List<AnalyticsQueryAggregation> presenceAggregations = new ArrayList<AnalyticsQueryAggregation>();
-  private List<AnalyticsQueryAggregation> routingStatusAggregations = new ArrayList<AnalyticsQueryAggregation>();
-  private PagingSpec paging = null;
 
   /**
    * Sort the result set in ascending/descending order. Default is ascending
@@ -63,6 +60,9 @@ public class UserDetailsQuery  implements Serializable {
     }
   }
   private OrderEnum order = null;
+  private List<AnalyticsQueryAggregation> presenceAggregations = new ArrayList<AnalyticsQueryAggregation>();
+  private List<AnalyticsQueryAggregation> routingStatusAggregations = new ArrayList<AnalyticsQueryAggregation>();
+  private PagingSpec paging = null;
   private List<PresenceDetailQueryFilter> presenceDetailFilters = new ArrayList<PresenceDetailQueryFilter>();
 
   
@@ -121,6 +121,24 @@ public class UserDetailsQuery  implements Serializable {
 
   
   /**
+   * Sort the result set in ascending/descending order. Default is ascending
+   **/
+  public UserDetailsQuery order(OrderEnum order) {
+    this.order = order;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Sort the result set in ascending/descending order. Default is ascending")
+  @JsonProperty("order")
+  public OrderEnum getOrder() {
+    return order;
+  }
+  public void setOrder(OrderEnum order) {
+    this.order = order;
+  }
+
+  
+  /**
    * Include faceted search and aggregate roll-ups of presence data in your search results. This does not function as a filter, but rather, summary data about the presence results matching your filters
    **/
   public UserDetailsQuery presenceAggregations(List<AnalyticsQueryAggregation> presenceAggregations) {
@@ -175,24 +193,6 @@ public class UserDetailsQuery  implements Serializable {
 
   
   /**
-   * Sort the result set in ascending/descending order. Default is ascending
-   **/
-  public UserDetailsQuery order(OrderEnum order) {
-    this.order = order;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Sort the result set in ascending/descending order. Default is ascending")
-  @JsonProperty("order")
-  public OrderEnum getOrder() {
-    return order;
-  }
-  public void setOrder(OrderEnum order) {
-    this.order = order;
-  }
-
-  
-  /**
    **/
   public UserDetailsQuery presenceDetailFilters(List<PresenceDetailQueryFilter> presenceDetailFilters) {
     this.presenceDetailFilters = presenceDetailFilters;
@@ -222,16 +222,16 @@ public class UserDetailsQuery  implements Serializable {
     return Objects.equals(this.interval, userDetailsQuery.interval) &&
         Objects.equals(this.userFilters, userDetailsQuery.userFilters) &&
         Objects.equals(this.routingStatusFilters, userDetailsQuery.routingStatusFilters) &&
+        Objects.equals(this.order, userDetailsQuery.order) &&
         Objects.equals(this.presenceAggregations, userDetailsQuery.presenceAggregations) &&
         Objects.equals(this.routingStatusAggregations, userDetailsQuery.routingStatusAggregations) &&
         Objects.equals(this.paging, userDetailsQuery.paging) &&
-        Objects.equals(this.order, userDetailsQuery.order) &&
         Objects.equals(this.presenceDetailFilters, userDetailsQuery.presenceDetailFilters);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(interval, userFilters, routingStatusFilters, presenceAggregations, routingStatusAggregations, paging, order, presenceDetailFilters);
+    return Objects.hash(interval, userFilters, routingStatusFilters, order, presenceAggregations, routingStatusAggregations, paging, presenceDetailFilters);
   }
 
   @Override
@@ -242,10 +242,10 @@ public class UserDetailsQuery  implements Serializable {
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    userFilters: ").append(toIndentedString(userFilters)).append("\n");
     sb.append("    routingStatusFilters: ").append(toIndentedString(routingStatusFilters)).append("\n");
+    sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    presenceAggregations: ").append(toIndentedString(presenceAggregations)).append("\n");
     sb.append("    routingStatusAggregations: ").append(toIndentedString(routingStatusAggregations)).append("\n");
     sb.append("    paging: ").append(toIndentedString(paging)).append("\n");
-    sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    presenceDetailFilters: ").append(toIndentedString(presenceDetailFilters)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -30,11 +30,13 @@ public class EvaluationAggregationQuery  implements Serializable {
     CONTEXTID("contextId"),
     CONVERSATIONID("conversationId"),
     DIVISIONID("divisionId"),
+    EVALUATIONCREATEDDATE("evaluationCreatedDate"),
     EVALUATIONID("evaluationId"),
     EVALUATORID("evaluatorId"),
     FORMID("formId"),
     QUEUEID("queueId"),
     RESCIND("rescind"),
+    RESCORED("rescored"),
     USERID("userId");
 
     private String value;
@@ -70,6 +72,8 @@ public class EvaluationAggregationQuery  implements Serializable {
    */
   public enum MetricsEnum {
     NEVALUATIONS("nEvaluations"),
+    NEVALUATIONSDELETED("nEvaluationsDeleted"),
+    NEVALUATIONSRESCORED("nEvaluationsRescored"),
     OTOTALCRITICALSCORE("oTotalCriticalScore"),
     OTOTALSCORE("oTotalScore");
 

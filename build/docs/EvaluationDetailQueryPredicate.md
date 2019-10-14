@@ -39,12 +39,14 @@ title: EvaluationDetailQueryPredicate
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | CALIBRATIONID | &quot;calibrationId&quot; |
 | CONTEXTID | &quot;contextId&quot; |
+| DELETED | &quot;deleted&quot; |
 | EVALUATIONID | &quot;evaluationId&quot; |
 | EVALUATORID | &quot;evaluatorId&quot; |
 | EVENTTIME | &quot;eventTime&quot; |
 | FORMID | &quot;formId&quot; |
 | FORMNAME | &quot;formName&quot; |
 | QUEUEID | &quot;queueId&quot; |
+| RESCORED | &quot;rescored&quot; |
 | USERID | &quot;userId&quot; |
 {: class="table table-striped"}
 

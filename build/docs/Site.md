@@ -26,6 +26,7 @@ title: Site
 | **addresses** | [**List&lt;Contact&gt;**](Contact.html) |  |  [optional] |
 | **edges** | [**List&lt;Edge&gt;**](Edge.html) |  |  [optional] |
 | **edgeAutoUpdateConfig** | [**EdgeAutoUpdateConfig**](EdgeAutoUpdateConfig.html) | Recurrance rule, time zone, and start/end settings for automatic edge updates for this site |  [optional] |
+| **mediaRegionsUseLatencyBased** | **Boolean** |  |  [optional] |
 | **location** | [**LocationDefinition**](LocationDefinition.html) | Location |  |
 | **managed** | **Boolean** |  |  [optional] |
 | **ntpSettings** | [**NTPSettings**](NTPSettings.html) | Network Time Protocol settings for the site |  [optional] |

@@ -77,6 +77,7 @@ public class Site  implements Serializable {
   private List<Contact> addresses = new ArrayList<Contact>();
   private List<Edge> edges = new ArrayList<Edge>();
   private EdgeAutoUpdateConfig edgeAutoUpdateConfig = null;
+  private Boolean mediaRegionsUseLatencyBased = null;
   private LocationDefinition location = null;
   private Boolean managed = null;
   private NTPSettings ntpSettings = null;
@@ -380,6 +381,23 @@ public class Site  implements Serializable {
 
   
   /**
+   **/
+  public Site mediaRegionsUseLatencyBased(Boolean mediaRegionsUseLatencyBased) {
+    this.mediaRegionsUseLatencyBased = mediaRegionsUseLatencyBased;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("mediaRegionsUseLatencyBased")
+  public Boolean getMediaRegionsUseLatencyBased() {
+    return mediaRegionsUseLatencyBased;
+  }
+  public void setMediaRegionsUseLatencyBased(Boolean mediaRegionsUseLatencyBased) {
+    this.mediaRegionsUseLatencyBased = mediaRegionsUseLatencyBased;
+  }
+
+  
+  /**
    * Location
    **/
   public Site location(LocationDefinition location) {
@@ -467,6 +485,7 @@ public class Site  implements Serializable {
         Objects.equals(this.addresses, site.addresses) &&
         Objects.equals(this.edges, site.edges) &&
         Objects.equals(this.edgeAutoUpdateConfig, site.edgeAutoUpdateConfig) &&
+        Objects.equals(this.mediaRegionsUseLatencyBased, site.mediaRegionsUseLatencyBased) &&
         Objects.equals(this.location, site.location) &&
         Objects.equals(this.managed, site.managed) &&
         Objects.equals(this.ntpSettings, site.ntpSettings) &&
@@ -475,7 +494,7 @@ public class Site  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, primarySites, secondarySites, primaryEdges, secondaryEdges, addresses, edges, edgeAutoUpdateConfig, location, managed, ntpSettings, selfUri);
+    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, primarySites, secondarySites, primaryEdges, secondaryEdges, addresses, edges, edgeAutoUpdateConfig, mediaRegionsUseLatencyBased, location, managed, ntpSettings, selfUri);
   }
 
   @Override
@@ -501,6 +520,7 @@ public class Site  implements Serializable {
     sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
     sb.append("    edges: ").append(toIndentedString(edges)).append("\n");
     sb.append("    edgeAutoUpdateConfig: ").append(toIndentedString(edgeAutoUpdateConfig)).append("\n");
+    sb.append("    mediaRegionsUseLatencyBased: ").append(toIndentedString(mediaRegionsUseLatencyBased)).append("\n");
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("    managed: ").append(toIndentedString(managed)).append("\n");
     sb.append("    ntpSettings: ").append(toIndentedString(ntpSettings)).append("\n");

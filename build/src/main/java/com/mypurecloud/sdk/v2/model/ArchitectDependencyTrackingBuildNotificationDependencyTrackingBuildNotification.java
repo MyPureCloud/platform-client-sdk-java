@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.ArchitectDependencyTrackingBuildNotificationClient;
 import com.mypurecloud.sdk.v2.model.ArchitectDependencyTrackingBuildNotificationUser;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -18,6 +19,7 @@ public class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuild
   
   private String status = null;
   private ArchitectDependencyTrackingBuildNotificationUser user = null;
+  private ArchitectDependencyTrackingBuildNotificationClient client = null;
   private Date startTime = null;
 
   
@@ -57,6 +59,23 @@ public class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuild
   
   /**
    **/
+  public ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification client(ArchitectDependencyTrackingBuildNotificationClient client) {
+    this.client = client;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("client")
+  public ArchitectDependencyTrackingBuildNotificationClient getClient() {
+    return client;
+  }
+  public void setClient(ArchitectDependencyTrackingBuildNotificationClient client) {
+    this.client = client;
+  }
+
+  
+  /**
+   **/
   public ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification startTime(Date startTime) {
     this.startTime = startTime;
     return this;
@@ -84,12 +103,13 @@ public class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuild
     ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification architectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification = (ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification) o;
     return Objects.equals(this.status, architectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.status) &&
         Objects.equals(this.user, architectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.user) &&
+        Objects.equals(this.client, architectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.client) &&
         Objects.equals(this.startTime, architectDependencyTrackingBuildNotificationDependencyTrackingBuildNotification.startTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, user, startTime);
+    return Objects.hash(status, user, client, startTime);
   }
 
   @Override
@@ -99,6 +119,7 @@ public class ArchitectDependencyTrackingBuildNotificationDependencyTrackingBuild
     
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
+    sb.append("    client: ").append(toIndentedString(client)).append("\n");
     sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
     sb.append("}");
     return sb.toString();

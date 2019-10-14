@@ -56,6 +56,7 @@ title: FlowAggregateQueryPredicate
 | FLAGGEDREASON | &quot;flaggedReason&quot; |
 | FLOWID | &quot;flowId&quot; |
 | FLOWNAME | &quot;flowName&quot; |
+| FLOWOUTTYPE | &quot;flowOutType&quot; |
 | FLOWOUTCOME | &quot;flowOutcome&quot; |
 | FLOWOUTCOMEID | &quot;flowOutcomeId&quot; |
 | FLOWOUTCOMEVALUE | &quot;flowOutcomeValue&quot; |

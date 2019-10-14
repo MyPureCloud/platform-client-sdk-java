@@ -73,6 +73,7 @@ public class TrusteeBillingOverview  implements Serializable {
   private Date contractAmendmentDate = null;
   private Date contractEffectiveDate = null;
   private Date contractEndDate = null;
+  private String minimumMonthlyAmount = null;
   private Boolean inRampPeriod = null;
   private String selfUri = null;
 
@@ -318,6 +319,24 @@ public class TrusteeBillingOverview  implements Serializable {
 
   
   /**
+   * Minimum amount that will be charged for the month
+   **/
+  public TrusteeBillingOverview minimumMonthlyAmount(String minimumMonthlyAmount) {
+    this.minimumMonthlyAmount = minimumMonthlyAmount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Minimum amount that will be charged for the month")
+  @JsonProperty("minimumMonthlyAmount")
+  public String getMinimumMonthlyAmount() {
+    return minimumMonthlyAmount;
+  }
+  public void setMinimumMonthlyAmount(String minimumMonthlyAmount) {
+    this.minimumMonthlyAmount = minimumMonthlyAmount;
+  }
+
+  
+  /**
    **/
   public TrusteeBillingOverview inRampPeriod(Boolean inRampPeriod) {
     this.inRampPeriod = inRampPeriod;
@@ -365,13 +384,14 @@ public class TrusteeBillingOverview  implements Serializable {
         Objects.equals(this.contractAmendmentDate, trusteeBillingOverview.contractAmendmentDate) &&
         Objects.equals(this.contractEffectiveDate, trusteeBillingOverview.contractEffectiveDate) &&
         Objects.equals(this.contractEndDate, trusteeBillingOverview.contractEndDate) &&
+        Objects.equals(this.minimumMonthlyAmount, trusteeBillingOverview.minimumMonthlyAmount) &&
         Objects.equals(this.inRampPeriod, trusteeBillingOverview.inRampPeriod) &&
         Objects.equals(this.selfUri, trusteeBillingOverview.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, organization, currency, enabledProducts, subscriptionType, rampPeriodStartDate, rampPeriodEndDate, billingPeriodStartDate, billingPeriodEndDate, usages, contractAmendmentDate, contractEffectiveDate, contractEndDate, inRampPeriod, selfUri);
+    return Objects.hash(id, name, organization, currency, enabledProducts, subscriptionType, rampPeriodStartDate, rampPeriodEndDate, billingPeriodStartDate, billingPeriodEndDate, usages, contractAmendmentDate, contractEffectiveDate, contractEndDate, minimumMonthlyAmount, inRampPeriod, selfUri);
   }
 
   @Override
@@ -393,6 +413,7 @@ public class TrusteeBillingOverview  implements Serializable {
     sb.append("    contractAmendmentDate: ").append(toIndentedString(contractAmendmentDate)).append("\n");
     sb.append("    contractEffectiveDate: ").append(toIndentedString(contractEffectiveDate)).append("\n");
     sb.append("    contractEndDate: ").append(toIndentedString(contractEndDate)).append("\n");
+    sb.append("    minimumMonthlyAmount: ").append(toIndentedString(minimumMonthlyAmount)).append("\n");
     sb.append("    inRampPeriod: ").append(toIndentedString(inRampPeriod)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

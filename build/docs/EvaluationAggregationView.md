@@ -23,6 +23,8 @@ title: EvaluationAggregationView
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NEVALUATIONS | &quot;nEvaluations&quot; |
+| NEVALUATIONSDELETED | &quot;nEvaluationsDeleted&quot; |
+| NEVALUATIONSRESCORED | &quot;nEvaluationsRescored&quot; |
 | OTOTALCRITICALSCORE | &quot;oTotalCriticalScore&quot; |
 | OTOTALSCORE | &quot;oTotalScore&quot; |
 {: class="table table-striped"}

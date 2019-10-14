@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ArchitectFlowOutcomeNotificationClient;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowOutcomeNotificationErrorDetail;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowOutcomeNotificationErrorMessageParams;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowOutcomeNotificationUser;
@@ -23,6 +24,7 @@ public class ArchitectFlowOutcomeNotificationArchitectOperation  implements Seri
   private String id = null;
   private Boolean complete = null;
   private ArchitectFlowOutcomeNotificationUser user = null;
+  private ArchitectFlowOutcomeNotificationClient client = null;
 
   /**
    * Gets or Sets actionName
@@ -164,6 +166,23 @@ public class ArchitectFlowOutcomeNotificationArchitectOperation  implements Seri
   
   /**
    **/
+  public ArchitectFlowOutcomeNotificationArchitectOperation client(ArchitectFlowOutcomeNotificationClient client) {
+    this.client = client;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("client")
+  public ArchitectFlowOutcomeNotificationClient getClient() {
+    return client;
+  }
+  public void setClient(ArchitectFlowOutcomeNotificationClient client) {
+    this.client = client;
+  }
+
+  
+  /**
+   **/
   public ArchitectFlowOutcomeNotificationArchitectOperation actionName(ActionNameEnum actionName) {
     this.actionName = actionName;
     return this;
@@ -277,6 +296,7 @@ public class ArchitectFlowOutcomeNotificationArchitectOperation  implements Seri
     return Objects.equals(this.id, architectFlowOutcomeNotificationArchitectOperation.id) &&
         Objects.equals(this.complete, architectFlowOutcomeNotificationArchitectOperation.complete) &&
         Objects.equals(this.user, architectFlowOutcomeNotificationArchitectOperation.user) &&
+        Objects.equals(this.client, architectFlowOutcomeNotificationArchitectOperation.client) &&
         Objects.equals(this.actionName, architectFlowOutcomeNotificationArchitectOperation.actionName) &&
         Objects.equals(this.actionStatus, architectFlowOutcomeNotificationArchitectOperation.actionStatus) &&
         Objects.equals(this.errorMessage, architectFlowOutcomeNotificationArchitectOperation.errorMessage) &&
@@ -287,7 +307,7 @@ public class ArchitectFlowOutcomeNotificationArchitectOperation  implements Seri
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, complete, user, actionName, actionStatus, errorMessage, errorCode, errorMessageParams, errorDetails);
+    return Objects.hash(id, complete, user, client, actionName, actionStatus, errorMessage, errorCode, errorMessageParams, errorDetails);
   }
 
   @Override
@@ -298,6 +318,7 @@ public class ArchitectFlowOutcomeNotificationArchitectOperation  implements Seri
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    complete: ").append(toIndentedString(complete)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
+    sb.append("    client: ").append(toIndentedString(client)).append("\n");
     sb.append("    actionName: ").append(toIndentedString(actionName)).append("\n");
     sb.append("    actionStatus: ").append(toIndentedString(actionStatus)).append("\n");
     sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");

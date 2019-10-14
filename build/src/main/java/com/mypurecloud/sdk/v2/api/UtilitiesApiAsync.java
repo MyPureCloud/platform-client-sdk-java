@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ServerDate;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.IpAddressRangeListing;
 import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.ParsedCertificate;
 import com.mypurecloud.sdk.v2.model.Certificate;
@@ -22,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.Token;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetDateRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIprangesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTimezonesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCertificateDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGmscTokensRequest;
@@ -110,6 +112,82 @@ public class UtilitiesApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ServerDate> response = (ApiResponse<ServerDate>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get public ip address ranges for PureCloud
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IpAddressRangeListing> getIprangesAsync(GetIprangesRequest request, final AsyncApiCallback<IpAddressRangeListing> callback) {
+    try {
+      final SettableFuture<IpAddressRangeListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IpAddressRangeListing>() {}, new AsyncApiCallback<ApiResponse<IpAddressRangeListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<IpAddressRangeListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get public ip address ranges for PureCloud
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IpAddressRangeListing>> getIprangesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IpAddressRangeListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IpAddressRangeListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IpAddressRangeListing>() {}, new AsyncApiCallback<ApiResponse<IpAddressRangeListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<IpAddressRangeListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IpAddressRangeListing> response = (ApiResponse<IpAddressRangeListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IpAddressRangeListing> response = (ApiResponse<IpAddressRangeListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
