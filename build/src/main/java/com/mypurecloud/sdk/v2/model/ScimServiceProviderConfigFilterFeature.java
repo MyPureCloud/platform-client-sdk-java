@@ -9,9 +9,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Filter support configuration.
+ * \&quot;filter\&quot; configuration options.
  */
-@ApiModel(description = "Filter support configuration.")
+@ApiModel(description = "\"filter\" configuration options.")
 
 public class ScimServiceProviderConfigFilterFeature  implements Serializable {
   
@@ -19,14 +19,14 @@ public class ScimServiceProviderConfigFilterFeature  implements Serializable {
   private Integer maxResults = null;
 
   
-  @ApiModelProperty(example = "null", value = "Indicates if configuration options is supported.")
+  @ApiModelProperty(example = "null", value = "Indicates whether configuration options are supported.")
   @JsonProperty("supported")
   public Boolean getSupported() {
     return supported;
   }
 
   
-  @ApiModelProperty(example = "null", value = "Maximum results returned from filtered query.")
+  @ApiModelProperty(example = "null", value = "The maximum number of results returned from a filtered query.")
   @JsonProperty("maxResults")
   public Integer getMaxResults() {
     return maxResults;

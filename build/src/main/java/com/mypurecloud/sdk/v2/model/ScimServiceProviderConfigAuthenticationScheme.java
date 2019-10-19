@@ -10,9 +10,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Authentication Schema
+ * Authentication schema.
  */
-@ApiModel(description = "Authentication Schema")
+@ApiModel(description = "Authentication schema.")
 
 public class ScimServiceProviderConfigAuthenticationScheme  implements Serializable {
   
@@ -22,7 +22,7 @@ public class ScimServiceProviderConfigAuthenticationScheme  implements Serializa
   private String documentationUri = null;
 
   /**
-   * The authentication type.
+   * The type of authentication scheme.
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -61,42 +61,42 @@ public class ScimServiceProviderConfigAuthenticationScheme  implements Serializa
   private Boolean primary = null;
 
   
-  @ApiModelProperty(example = "null", required = true, value = "Name")
+  @ApiModelProperty(example = "null", required = true, value = "The name of the authentication scheme, for example, HTTP Basic.")
   @JsonProperty("name")
   public String getName() {
     return name;
   }
 
   
-  @ApiModelProperty(example = "null", required = true, value = "Description")
+  @ApiModelProperty(example = "null", required = true, value = "The description of the authentication scheme.")
   @JsonProperty("description")
   public String getDescription() {
     return description;
   }
 
   
-  @ApiModelProperty(example = "null", value = "An HTTP-addressable URL pointing to the authentication scheme's specification.")
+  @ApiModelProperty(example = "null", value = "The HTTP-addressable URL that points to the authentication scheme's specification.")
   @JsonProperty("specUri")
   public String getSpecUri() {
     return specUri;
   }
 
   
-  @ApiModelProperty(example = "null", value = "An HTTP-addressable URL pointing to the authentication scheme's usage documentation")
+  @ApiModelProperty(example = "null", value = "The HTTP-addressable URL that points to the authentication scheme's usage documentation.")
   @JsonProperty("documentationUri")
   public String getDocumentationUri() {
     return documentationUri;
   }
 
   
-  @ApiModelProperty(example = "null", required = true, value = "The authentication type.")
+  @ApiModelProperty(example = "null", required = true, value = "The type of authentication scheme.")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
   }
 
   
-  @ApiModelProperty(example = "null", value = "Indication of primary method of authentication.")
+  @ApiModelProperty(example = "null", value = "Indicates the primary method of authentication.")
   @JsonProperty("primary")
   public Boolean getPrimary() {
     return primary;

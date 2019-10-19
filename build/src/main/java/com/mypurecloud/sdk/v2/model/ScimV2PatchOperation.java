@@ -11,15 +11,15 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Represents an individual patch operation. Path and value have very specific rules based on operation type. See https://tools.ietf.org/html/rfc7644#section-3.5.2 for details.
+ * Represents an individual PATCH operation. Path and value have very specific rules based on operation type. See https://tools.ietf.org/html/rfc7644#section-3.5.2 for details.
  */
-@ApiModel(description = "Represents an individual patch operation. Path and value have very specific rules based on operation type. See https://tools.ietf.org/html/rfc7644#section-3.5.2 for details.")
+@ApiModel(description = "Represents an individual PATCH operation. Path and value have very specific rules based on operation type. See https://tools.ietf.org/html/rfc7644#section-3.5.2 for details.")
 
 public class ScimV2PatchOperation  implements Serializable {
   
 
   /**
-   * The patch operation to perform.
+   * The PATCH operation to perform.
    */
   public enum OpEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -58,14 +58,14 @@ public class ScimV2PatchOperation  implements Serializable {
 
   
   /**
-   * The patch operation to perform.
+   * The PATCH operation to perform.
    **/
   public ScimV2PatchOperation op(OpEnum op) {
     this.op = op;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The patch operation to perform.")
+  @ApiModelProperty(example = "null", required = true, value = "The PATCH operation to perform.")
   @JsonProperty("op")
   public OpEnum getOp() {
     return op;
@@ -76,14 +76,14 @@ public class ScimV2PatchOperation  implements Serializable {
 
   
   /**
-   * The attribute path that describes the target of the operation. Required for a 'remove' operation.
+   * The attribute path that describes the target of the operation. Required for a \"remove\" operation.
    **/
   public ScimV2PatchOperation path(String path) {
     this.path = path;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The attribute path that describes the target of the operation. Required for a 'remove' operation.")
+  @ApiModelProperty(example = "null", value = "The attribute path that describes the target of the operation. Required for a \"remove\" operation.")
   @JsonProperty("path")
   public String getPath() {
     return path;

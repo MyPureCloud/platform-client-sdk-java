@@ -40,7 +40,7 @@ public class ScimV2User  implements Serializable {
   private ScimMetadata meta = null;
 
   
-  @ApiModelProperty(example = "null", value = "The ID of the SCIM resource. Set by the service provider. caseExact is set to true. Mutability is set to readOnly. Returned is set to always.")
+  @ApiModelProperty(example = "null", value = "The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"Mutability\" is set to \"readOnly\". \"Returned\" is set to \"always\".")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -102,14 +102,14 @@ public class ScimV2User  implements Serializable {
 
   
   /**
-   * The display name for the user.
+   * The display name of the user.
    **/
   public ScimV2User displayName(String displayName) {
     this.displayName = displayName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The display name for the user.")
+  @ApiModelProperty(example = "null", value = "The display name of the user.")
   @JsonProperty("displayName")
   public String getDisplayName() {
     return displayName;
@@ -120,14 +120,14 @@ public class ScimV2User  implements Serializable {
 
   
   /**
-   * A new password for a PureCloud user. Does not return an existing password.
+   * The new password for the PureCloud user. Does not return an existing password.
    **/
   public ScimV2User password(String password) {
     this.password = password;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A new password for a PureCloud user. Does not return an existing password.")
+  @ApiModelProperty(example = "null", value = "The new password for the PureCloud user. Does not return an existing password.")
   @JsonProperty("password")
   public String getPassword() {
     return password;
@@ -156,14 +156,14 @@ public class ScimV2User  implements Serializable {
 
   
   /**
-   * A list of the user's phone numbers.
+   * The list of the user's phone numbers.
    **/
   public ScimV2User phoneNumbers(List<ScimPhoneNumber> phoneNumbers) {
     this.phoneNumbers = phoneNumbers;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A list of the user's phone numbers.")
+  @ApiModelProperty(example = "null", value = "The list of the user's phone numbers.")
   @JsonProperty("phoneNumbers")
   public List<ScimPhoneNumber> getPhoneNumbers() {
     return phoneNumbers;
@@ -174,14 +174,14 @@ public class ScimV2User  implements Serializable {
 
   
   /**
-   * A list of the user's email addresses.
+   * The list of the user's email addresses.
    **/
   public ScimV2User emails(List<ScimEmail> emails) {
     this.emails = emails;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A list of the user's email addresses.")
+  @ApiModelProperty(example = "null", value = "The list of the user's email addresses.")
   @JsonProperty("emails")
   public List<ScimEmail> getEmails() {
     return emails;
@@ -192,14 +192,14 @@ public class ScimV2User  implements Serializable {
 
   
   /**
-   * A list of the user's photos.
+   * The list of the user's photos.
    **/
   public ScimV2User photos(List<Photo> photos) {
     this.photos = photos;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A list of the user's photos.")
+  @ApiModelProperty(example = "null", value = "The list of the user's photos.")
   @JsonProperty("photos")
   public List<Photo> getPhotos() {
     return photos;
@@ -210,14 +210,14 @@ public class ScimV2User  implements Serializable {
 
   
   /**
-   * The external ID of the user. Set by the provisioning client. caseExact is set to true. mutability is set to readWrite.
+   * The external ID of the user. Set by the provisioning client. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readWrite\".
    **/
   public ScimV2User externalId(String externalId) {
     this.externalId = externalId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The external ID of the user. Set by the provisioning client. caseExact is set to true. mutability is set to readWrite.")
+  @ApiModelProperty(example = "null", value = "The external ID of the user. Set by the provisioning client. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readWrite\".")
   @JsonProperty("externalId")
   public String getExternalId() {
     return externalId;
@@ -228,14 +228,14 @@ public class ScimV2User  implements Serializable {
 
   
   /**
-   * A list of groups that the user is a member of.
+   * The list of groups that the user is a member of.
    **/
   public ScimV2User groups(List<ScimV2GroupReference> groups) {
     this.groups = groups;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A list of groups that the user is a member of.")
+  @ApiModelProperty(example = "null", value = "The list of groups that the user is a member of.")
   @JsonProperty("groups")
   public List<ScimV2GroupReference> getGroups() {
     return groups;
@@ -246,14 +246,14 @@ public class ScimV2User  implements Serializable {
 
   
   /**
-   * A list of roles assigned to the user.
+   * The list of roles assigned to the user.
    **/
   public ScimV2User roles(List<String> roles) {
     this.roles = roles;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A list of roles assigned to the user.")
+  @ApiModelProperty(example = "null", value = "The list of roles assigned to the user.")
   @JsonProperty("roles")
   public List<String> getRoles() {
     return roles;

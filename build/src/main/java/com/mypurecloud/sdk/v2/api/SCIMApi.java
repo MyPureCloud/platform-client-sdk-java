@@ -74,7 +74,7 @@ public class SCIMApi {
    * Delete a user
    * 
    * @param userId The ID of a user. Returned with GET /api/v2/scim/users. (required)
-   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. (optional)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
    * @return Empty
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -87,7 +87,7 @@ public class SCIMApi {
    * Delete a user
    * 
    * @param userId The ID of a user. Returned with GET /api/v2/scim/users. (required)
-   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. (optional)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
    * @return Empty
    * @throws IOException if the request fails to be processed
    */
@@ -157,7 +157,7 @@ public class SCIMApi {
    * Delete a user
    * 
    * @param userId The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
-   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. (optional)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
    * @return Empty
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -170,7 +170,7 @@ public class SCIMApi {
    * Delete a user
    * 
    * @param userId The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
-   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. (optional)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
    * @return Empty
    * @throws IOException if the request fails to be processed
    */
@@ -323,7 +323,7 @@ public class SCIMApi {
    * Get a list of groups
    * 
    * @param startIndex The 1-based index of the first query result. (optional, default to 1)
-   * @param count The requested number of items per page. A value of 0 returns totalResults. (optional, default to 25)
+   * @param count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (optional, default to 25)
    * @param filter Filters results. (optional)
    * @return ScimGroupListResponse
    * @throws ApiException if the request fails on the server
@@ -337,7 +337,7 @@ public class SCIMApi {
    * Get a list of groups
    * 
    * @param startIndex The 1-based index of the first query result. (optional, default to 1)
-   * @param count The requested number of items per page. A value of 0 returns totalResults. (optional, default to 25)
+   * @param count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (optional, default to 25)
    * @param filter Filters results. (optional)
    * @return ScimGroupListResponse
    * @throws IOException if the request fails to be processed
@@ -407,9 +407,9 @@ public class SCIMApi {
 
   
   /**
-   * Get the SCIM configuration
+   * Get a resource type
    * 
-   * @param resourceType The ID of a resource. (required)
+   * @param resourceType The type of resource. Returned with GET /api/v2/scim/resourcetypes. (required)
    * @return ScimConfigResourceType
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -419,9 +419,9 @@ public class SCIMApi {
   }
 
   /**
-   * Get the SCIM configuration
+   * Get a resource type
    * 
-   * @param resourceType The ID of a resource. (required)
+   * @param resourceType The type of resource. Returned with GET /api/v2/scim/resourcetypes. (required)
    * @return ScimConfigResourceType
    * @throws IOException if the request fails to be processed
    */
@@ -437,7 +437,7 @@ public class SCIMApi {
   }
 
   /**
-   * Get the SCIM configuration
+   * Get a resource type
    * 
    * @param request The request object
    * @return ScimConfigResourceType
@@ -456,7 +456,7 @@ public class SCIMApi {
   }
 
   /**
-   * Get the SCIM configuration
+   * Get a resource type
    * 
    * @param request The request object
    * @return the response
@@ -486,37 +486,33 @@ public class SCIMApi {
 
   
   /**
-   * Get the SCIM resource types
+   * Get a list of resource types
    * 
-   * @param filter Filtered results are invalid and will result in a 403 (Unauthorized) return. (optional)
    * @return ScimConfigResourceTypesListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ScimConfigResourceTypesListResponse getScimResourcetypes(String filter) throws IOException, ApiException {
-    return  getScimResourcetypes(createGetScimResourcetypesRequest(filter));
+  public ScimConfigResourceTypesListResponse getScimResourcetypes() throws IOException, ApiException {
+    return  getScimResourcetypes(createGetScimResourcetypesRequest());
   }
 
   /**
-   * Get the SCIM resource types
+   * Get a list of resource types
    * 
-   * @param filter Filtered results are invalid and will result in a 403 (Unauthorized) return. (optional)
    * @return ScimConfigResourceTypesListResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScimConfigResourceTypesListResponse> getScimResourcetypesWithHttpInfo(String filter) throws IOException {
-    return getScimResourcetypes(createGetScimResourcetypesRequest(filter).withHttpInfo());
+  public ApiResponse<ScimConfigResourceTypesListResponse> getScimResourcetypesWithHttpInfo() throws IOException {
+    return getScimResourcetypes(createGetScimResourcetypesRequest().withHttpInfo());
   }
 
-  private GetScimResourcetypesRequest createGetScimResourcetypesRequest(String filter) {
+  private GetScimResourcetypesRequest createGetScimResourcetypesRequest() {
     return GetScimResourcetypesRequest.builder()
-            .withFilter(filter)
-    
             .build();
   }
 
   /**
-   * Get the SCIM resource types
+   * Get a list of resource types
    * 
    * @param request The request object
    * @return ScimConfigResourceTypesListResponse
@@ -535,7 +531,7 @@ public class SCIMApi {
   }
 
   /**
-   * Get the SCIM resource types
+   * Get a list of resource types
    * 
    * @param request The request object
    * @return the response
@@ -565,9 +561,9 @@ public class SCIMApi {
 
   
   /**
-   * Get the SCIM configuration
+   * Get a service provider&#39;s configuration
    * 
-   * @param ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  (optional)
+   * @param ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/serviceproviderconfig. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  (optional)
    * @return ScimServiceProviderConfig
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -577,9 +573,9 @@ public class SCIMApi {
   }
 
   /**
-   * Get the SCIM configuration
+   * Get a service provider&#39;s configuration
    * 
-   * @param ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  (optional)
+   * @param ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/serviceproviderconfig. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  (optional)
    * @return ScimServiceProviderConfig
    * @throws IOException if the request fails to be processed
    */
@@ -595,7 +591,7 @@ public class SCIMApi {
   }
 
   /**
-   * Get the SCIM configuration
+   * Get a service provider&#39;s configuration
    * 
    * @param request The request object
    * @return ScimServiceProviderConfig
@@ -614,7 +610,7 @@ public class SCIMApi {
   }
 
   /**
-   * Get the SCIM configuration
+   * Get a service provider&#39;s configuration
    * 
    * @param request The request object
    * @return the response
@@ -731,7 +727,7 @@ public class SCIMApi {
    * 
    * @param filter Filters results. (required)
    * @param startIndex The 1-based index of the first query result. (optional, default to 1)
-   * @param count The requested number of items per page. A value of 0 returns totalResults. (optional, default to 25)
+   * @param count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (optional, default to 25)
    * @return ScimUserListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -745,7 +741,7 @@ public class SCIMApi {
    * 
    * @param filter Filters results. (required)
    * @param startIndex The 1-based index of the first query result. (optional, default to 1)
-   * @param count The requested number of items per page. A value of 0 returns totalResults. (optional, default to 25)
+   * @param count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (optional, default to 25)
    * @return ScimUserListResponse
    * @throws IOException if the request fails to be processed
    */
@@ -901,7 +897,7 @@ public class SCIMApi {
    * 
    * @param filter Filters results. (required)
    * @param startIndex The 1-based index of the first query result. (optional, default to 1)
-   * @param count The requested number of items per page. A value of 0 returns totalResults. (optional, default to 25)
+   * @param count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (optional, default to 25)
    * @return ScimGroupListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -915,7 +911,7 @@ public class SCIMApi {
    * 
    * @param filter Filters results. (required)
    * @param startIndex The 1-based index of the first query result. (optional, default to 1)
-   * @param count The requested number of items per page. A value of 0 returns totalResults. (optional, default to 25)
+   * @param count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (optional, default to 25)
    * @return ScimGroupListResponse
    * @throws IOException if the request fails to be processed
    */
@@ -984,9 +980,9 @@ public class SCIMApi {
 
   
   /**
-   * Get the SCIM configuration
+   * Get a resource type
    * 
-   * @param resourceType The ID of a resource. (required)
+   * @param resourceType The type of resource. Returned with GET /api/v2/scim/v2/resourcetypes. (required)
    * @return ScimConfigResourceType
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -996,9 +992,9 @@ public class SCIMApi {
   }
 
   /**
-   * Get the SCIM configuration
+   * Get a resource type
    * 
-   * @param resourceType The ID of a resource. (required)
+   * @param resourceType The type of resource. Returned with GET /api/v2/scim/v2/resourcetypes. (required)
    * @return ScimConfigResourceType
    * @throws IOException if the request fails to be processed
    */
@@ -1014,7 +1010,7 @@ public class SCIMApi {
   }
 
   /**
-   * Get the SCIM configuration
+   * Get a resource type
    * 
    * @param request The request object
    * @return ScimConfigResourceType
@@ -1033,7 +1029,7 @@ public class SCIMApi {
   }
 
   /**
-   * Get the SCIM configuration
+   * Get a resource type
    * 
    * @param request The request object
    * @return the response
@@ -1063,37 +1059,33 @@ public class SCIMApi {
 
   
   /**
-   * Get the SCIM resource types
+   * Get a list of resource types
    * 
-   * @param filter Filtered results are invalid and will result in a 403 (Unauthorized) return. (optional)
    * @return ScimConfigResourceTypesListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ScimConfigResourceTypesListResponse getScimV2Resourcetypes(String filter) throws IOException, ApiException {
-    return  getScimV2Resourcetypes(createGetScimV2ResourcetypesRequest(filter));
+  public ScimConfigResourceTypesListResponse getScimV2Resourcetypes() throws IOException, ApiException {
+    return  getScimV2Resourcetypes(createGetScimV2ResourcetypesRequest());
   }
 
   /**
-   * Get the SCIM resource types
+   * Get a list of resource types
    * 
-   * @param filter Filtered results are invalid and will result in a 403 (Unauthorized) return. (optional)
    * @return ScimConfigResourceTypesListResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScimConfigResourceTypesListResponse> getScimV2ResourcetypesWithHttpInfo(String filter) throws IOException {
-    return getScimV2Resourcetypes(createGetScimV2ResourcetypesRequest(filter).withHttpInfo());
+  public ApiResponse<ScimConfigResourceTypesListResponse> getScimV2ResourcetypesWithHttpInfo() throws IOException {
+    return getScimV2Resourcetypes(createGetScimV2ResourcetypesRequest().withHttpInfo());
   }
 
-  private GetScimV2ResourcetypesRequest createGetScimV2ResourcetypesRequest(String filter) {
+  private GetScimV2ResourcetypesRequest createGetScimV2ResourcetypesRequest() {
     return GetScimV2ResourcetypesRequest.builder()
-            .withFilter(filter)
-    
             .build();
   }
 
   /**
-   * Get the SCIM resource types
+   * Get a list of resource types
    * 
    * @param request The request object
    * @return ScimConfigResourceTypesListResponse
@@ -1112,7 +1104,7 @@ public class SCIMApi {
   }
 
   /**
-   * Get the SCIM resource types
+   * Get a list of resource types
    * 
    * @param request The request object
    * @return the response
@@ -1142,7 +1134,7 @@ public class SCIMApi {
 
   
   /**
-   * Get the SCIM configuration
+   * Get a service provider&#39;s configuration
    * 
    * @param ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  (optional)
    * @return ScimServiceProviderConfig
@@ -1154,7 +1146,7 @@ public class SCIMApi {
   }
 
   /**
-   * Get the SCIM configuration
+   * Get a service provider&#39;s configuration
    * 
    * @param ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  (optional)
    * @return ScimServiceProviderConfig
@@ -1172,7 +1164,7 @@ public class SCIMApi {
   }
 
   /**
-   * Get the SCIM configuration
+   * Get a service provider&#39;s configuration
    * 
    * @param request The request object
    * @return ScimServiceProviderConfig
@@ -1191,7 +1183,7 @@ public class SCIMApi {
   }
 
   /**
-   * Get the SCIM configuration
+   * Get a service provider&#39;s configuration
    * 
    * @param request The request object
    * @return the response
@@ -1308,7 +1300,7 @@ public class SCIMApi {
    * 
    * @param filter Filters results. (required)
    * @param startIndex The 1-based index of the first query result. (optional, default to 1)
-   * @param count The requested number of items per page. A value of 0 returns totalResults. (optional, default to 25)
+   * @param count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (optional, default to 25)
    * @return ScimUserListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1322,7 +1314,7 @@ public class SCIMApi {
    * 
    * @param filter Filters results. (required)
    * @param startIndex The 1-based index of the first query result. (optional, default to 1)
-   * @param count The requested number of items per page. A value of 0 returns totalResults. (optional, default to 25)
+   * @param count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (optional, default to 25)
    * @return ScimUserListResponse
    * @throws IOException if the request fails to be processed
    */
@@ -1395,7 +1387,7 @@ public class SCIMApi {
    * 
    * @param groupId The ID of a group. Returned with GET /api/v2/scim/groups. (required)
    * @param body The information used to modify a group. (required)
-   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. (optional)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
    * @return ScimV2Group
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1409,7 +1401,7 @@ public class SCIMApi {
    * 
    * @param groupId The ID of a group. Returned with GET /api/v2/scim/groups. (required)
    * @param body The information used to modify a group. (required)
-   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. (optional)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
    * @return ScimV2Group
    * @throws IOException if the request fails to be processed
    */
@@ -1482,7 +1474,7 @@ public class SCIMApi {
    * 
    * @param userId The ID of a user. Returned with GET /api/v2/scim/users. (required)
    * @param body The information used to modify a user. (required)
-   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. (optional)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
    * @return ScimV2User
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1496,7 +1488,7 @@ public class SCIMApi {
    * 
    * @param userId The ID of a user. Returned with GET /api/v2/scim/users. (required)
    * @param body The information used to modify a user. (required)
-   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. (optional)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
    * @return ScimV2User
    * @throws IOException if the request fails to be processed
    */
@@ -1569,7 +1561,7 @@ public class SCIMApi {
    * 
    * @param groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
    * @param body The information used to modify a group. (required)
-   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. (optional)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
    * @return ScimV2Group
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1583,7 +1575,7 @@ public class SCIMApi {
    * 
    * @param groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
    * @param body The information used to modify a group. (required)
-   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. (optional)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
    * @return ScimV2Group
    * @throws IOException if the request fails to be processed
    */
@@ -1656,7 +1648,7 @@ public class SCIMApi {
    * 
    * @param userId The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
    * @param body The information used to modify a user. (required)
-   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. (optional)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
    * @return ScimV2User
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1670,7 +1662,7 @@ public class SCIMApi {
    * 
    * @param userId The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
    * @param body The information used to modify a user. (required)
-   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. (optional)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
    * @return ScimV2User
    * @throws IOException if the request fails to be processed
    */
@@ -1901,7 +1893,7 @@ public class SCIMApi {
    * 
    * @param groupId The ID of a group. Returned with GET /api/v2/scim/groups. (required)
    * @param body The information used to replace a group. (required)
-   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. (optional)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
    * @return ScimV2Group
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1915,7 +1907,7 @@ public class SCIMApi {
    * 
    * @param groupId The ID of a group. Returned with GET /api/v2/scim/groups. (required)
    * @param body The information used to replace a group. (required)
-   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. (optional)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
    * @return ScimV2Group
    * @throws IOException if the request fails to be processed
    */
@@ -1988,7 +1980,7 @@ public class SCIMApi {
    * 
    * @param userId The ID of a user. Returned with GET /api/v2/scim/users. (required)
    * @param body The information used to replace a user. (required)
-   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. (optional)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
    * @return ScimV2User
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2002,7 +1994,7 @@ public class SCIMApi {
    * 
    * @param userId The ID of a user. Returned with GET /api/v2/scim/users. (required)
    * @param body The information used to replace a user. (required)
-   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. (optional)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
    * @return ScimV2User
    * @throws IOException if the request fails to be processed
    */
@@ -2075,7 +2067,7 @@ public class SCIMApi {
    * 
    * @param groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
    * @param body The information used to replace a group. (required)
-   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. (optional)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
    * @return ScimV2Group
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2089,7 +2081,7 @@ public class SCIMApi {
    * 
    * @param groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
    * @param body The information used to replace a group. (required)
-   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. (optional)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
    * @return ScimV2Group
    * @throws IOException if the request fails to be processed
    */
@@ -2162,7 +2154,7 @@ public class SCIMApi {
    * 
    * @param userId The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
    * @param body The information used to replace a user. (required)
-   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. (optional)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
    * @return ScimV2User
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2176,7 +2168,7 @@ public class SCIMApi {
    * 
    * @param userId The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
    * @param body The information used to replace a user. (required)
-   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a scimType of \&quot;invalidVers\&quot;. (optional)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
    * @return ScimV2User
    * @throws IOException if the request fails to be processed
    */

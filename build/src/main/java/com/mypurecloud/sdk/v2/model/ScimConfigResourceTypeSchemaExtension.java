@@ -9,9 +9,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Extension schemas supported by PureCloud SCIM.
+ * Schema extensions supported by PureCloud SCIM.
  */
-@ApiModel(description = "Extension schemas supported by PureCloud SCIM.")
+@ApiModel(description = "Schema extensions supported by PureCloud SCIM.")
 
 public class ScimConfigResourceTypeSchemaExtension  implements Serializable {
   
@@ -19,14 +19,14 @@ public class ScimConfigResourceTypeSchemaExtension  implements Serializable {
   private Boolean required = null;
 
   
-  @ApiModelProperty(example = "null", value = "The URI of an extended schema, e.g., \"urn:edu:2.0:Staff\".  This MUST be equal to the \"id\" attribute of a \"Schema\"")
+  @ApiModelProperty(example = "null", value = "The URI of an extended schema, for example, \"urn:edu:2.0:Staff\". Must be equal to the \"id\" attribute of a schema. ")
   @JsonProperty("schema")
   public String getSchema() {
     return schema;
   }
 
   
-  @ApiModelProperty(example = "null", value = "True if schema extension must be included in resource.")
+  @ApiModelProperty(example = "null", value = "Indicates whether a schema extension is required.")
   @JsonProperty("required")
   public Boolean getRequired() {
     return required;

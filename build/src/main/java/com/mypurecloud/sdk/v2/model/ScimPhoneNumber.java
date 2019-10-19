@@ -10,9 +10,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * SCIM V2 ScimEmail
+ * SCIM V2 phone number
  */
-@ApiModel(description = "SCIM V2 ScimEmail")
+@ApiModel(description = "SCIM V2 phone number")
 
 public class ScimPhoneNumber  implements Serializable {
   
@@ -61,14 +61,14 @@ public class ScimPhoneNumber  implements Serializable {
 
   
   /**
-   * A phone number in E.164 format.
+   * The phone number in E.164 or tel URI format, for example, tel:+nnnnnnnn; ext=xxxxx.
    **/
   public ScimPhoneNumber value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A phone number in E.164 format.")
+  @ApiModelProperty(example = "null", value = "The phone number in E.164 or tel URI format, for example, tel:+nnnnnnnn; ext=xxxxx.")
   @JsonProperty("value")
   public String getValue() {
     return value;

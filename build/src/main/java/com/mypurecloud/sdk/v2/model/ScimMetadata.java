@@ -19,7 +19,7 @@ public class ScimMetadata  implements Serializable {
   
 
   /**
-   * The type of the resource.
+   * The type of SCIM resource.
    */
   public enum ResourceTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -59,14 +59,14 @@ public class ScimMetadata  implements Serializable {
   private String version = null;
 
   
-  @ApiModelProperty(example = "null", value = "The type of the resource.")
+  @ApiModelProperty(example = "null", value = "The type of SCIM resource.")
   @JsonProperty("resourceType")
   public ResourceTypeEnum getResourceType() {
     return resourceType;
   }
 
   
-  @ApiModelProperty(example = "null", value = "The last time that the resource was modified. Time in ISO 6501 (UTC) format. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The last time that the resource was modified. Date time is represented as an ISO-8601 string, for example, yyyy-MM-ddTHH:mm:ss.SSSZ.")
   @JsonProperty("lastModified")
   public Date getLastModified() {
     return lastModified;

@@ -9,16 +9,16 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Configuration support.
+ * Configuration options.
  */
-@ApiModel(description = "Configuration support.")
+@ApiModel(description = "Configuration options.")
 
 public class ScimServiceProviderConfigSimpleFeature  implements Serializable {
   
   private Boolean supported = null;
 
   
-  @ApiModelProperty(example = "null", value = "Indicates if configuration options is supported.")
+  @ApiModelProperty(example = "null", value = "Indicates whether configuration options are supported.")
   @JsonProperty("supported")
   public Boolean getSupported() {
     return supported;

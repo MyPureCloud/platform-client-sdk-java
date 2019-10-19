@@ -8,8 +8,8 @@ title: ScimServiceProviderConfigFilterFeature
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **supported** | **Boolean** | Indicates if configuration options is supported. |  [optional] |
-| **maxResults** | **Integer** | Maximum results returned from filtered query. |  [optional] |
+| **supported** | **Boolean** | Indicates whether configuration options are supported. |  [optional] |
+| **maxResults** | **Integer** | The maximum number of results returned from a filtered query. |  [optional] |
 {: class="table table-striped"}
 
 

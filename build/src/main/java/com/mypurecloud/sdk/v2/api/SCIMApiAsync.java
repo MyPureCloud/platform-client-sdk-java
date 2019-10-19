@@ -379,7 +379,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Get the SCIM configuration
+   * Get a resource type
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -413,7 +413,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Get the SCIM configuration
+   * Get a resource type
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -455,7 +455,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Get the SCIM resource types
+   * Get a list of resource types
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -489,7 +489,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Get the SCIM resource types
+   * Get a list of resource types
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -531,7 +531,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Get the SCIM configuration
+   * Get a service provider&#39;s configuration
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -565,7 +565,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Get the SCIM configuration
+   * Get a service provider&#39;s configuration
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -911,7 +911,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Get the SCIM configuration
+   * Get a resource type
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -945,7 +945,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Get the SCIM configuration
+   * Get a resource type
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -987,7 +987,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Get the SCIM resource types
+   * Get a list of resource types
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1021,7 +1021,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Get the SCIM resource types
+   * Get a list of resource types
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1063,7 +1063,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Get the SCIM configuration
+   * Get a service provider&#39;s configuration
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1097,7 +1097,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Get the SCIM configuration
+   * Get a service provider&#39;s configuration
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

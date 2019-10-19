@@ -58,6 +58,7 @@ public class CallConversation  implements Serializable {
     }
   }
   private RecordingStateEnum recordingState = null;
+  private Integer maxParticipants = null;
   private String selfUri = null;
 
   
@@ -138,6 +139,24 @@ public class CallConversation  implements Serializable {
   }
 
   
+  /**
+   * If this is a conference conversation, then this field indicates the maximum number of participants allowed to participant in the conference.
+   **/
+  public CallConversation maxParticipants(Integer maxParticipants) {
+    this.maxParticipants = maxParticipants;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If this is a conference conversation, then this field indicates the maximum number of participants allowed to participant in the conference.")
+  @JsonProperty("maxParticipants")
+  public Integer getMaxParticipants() {
+    return maxParticipants;
+  }
+  public void setMaxParticipants(Integer maxParticipants) {
+    this.maxParticipants = maxParticipants;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -160,12 +179,13 @@ public class CallConversation  implements Serializable {
         Objects.equals(this.participants, callConversation.participants) &&
         Objects.equals(this.otherMediaUris, callConversation.otherMediaUris) &&
         Objects.equals(this.recordingState, callConversation.recordingState) &&
+        Objects.equals(this.maxParticipants, callConversation.maxParticipants) &&
         Objects.equals(this.selfUri, callConversation.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, participants, otherMediaUris, recordingState, selfUri);
+    return Objects.hash(id, name, participants, otherMediaUris, recordingState, maxParticipants, selfUri);
   }
 
   @Override
@@ -178,6 +198,7 @@ public class CallConversation  implements Serializable {
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    otherMediaUris: ").append(toIndentedString(otherMediaUris)).append("\n");
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");
+    sb.append("    maxParticipants: ").append(toIndentedString(maxParticipants)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

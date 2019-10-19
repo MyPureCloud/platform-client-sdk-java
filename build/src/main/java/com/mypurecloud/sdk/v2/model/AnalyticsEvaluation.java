@@ -24,8 +24,10 @@ public class AnalyticsEvaluation  implements Serializable {
   private String contextId = null;
   private String formName = null;
   private String calibrationId = null;
-  private Long oTotalCriticalScore = null;
+  private Boolean rescored = null;
+  private Boolean deleted = null;
   private Long oTotalScore = null;
+  private Long oTotalCriticalScore = null;
 
   
   /**
@@ -191,19 +193,38 @@ public class AnalyticsEvaluation  implements Serializable {
 
   
   /**
+   * Whether this evaluation has ever been rescored
    **/
-  public AnalyticsEvaluation oTotalCriticalScore(Long oTotalCriticalScore) {
-    this.oTotalCriticalScore = oTotalCriticalScore;
+  public AnalyticsEvaluation rescored(Boolean rescored) {
+    this.rescored = rescored;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("oTotalCriticalScore")
-  public Long getOTotalCriticalScore() {
-    return oTotalCriticalScore;
+  @ApiModelProperty(example = "null", value = "Whether this evaluation has ever been rescored")
+  @JsonProperty("rescored")
+  public Boolean getRescored() {
+    return rescored;
   }
-  public void setOTotalCriticalScore(Long oTotalCriticalScore) {
-    this.oTotalCriticalScore = oTotalCriticalScore;
+  public void setRescored(Boolean rescored) {
+    this.rescored = rescored;
+  }
+
+  
+  /**
+   * Whether this evaluation has been deleted
+   **/
+  public AnalyticsEvaluation deleted(Boolean deleted) {
+    this.deleted = deleted;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether this evaluation has been deleted")
+  @JsonProperty("deleted")
+  public Boolean getDeleted() {
+    return deleted;
+  }
+  public void setDeleted(Boolean deleted) {
+    this.deleted = deleted;
   }
 
   
@@ -221,6 +242,23 @@ public class AnalyticsEvaluation  implements Serializable {
   }
   public void setOTotalScore(Long oTotalScore) {
     this.oTotalScore = oTotalScore;
+  }
+
+  
+  /**
+   **/
+  public AnalyticsEvaluation oTotalCriticalScore(Long oTotalCriticalScore) {
+    this.oTotalCriticalScore = oTotalCriticalScore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("oTotalCriticalScore")
+  public Long getOTotalCriticalScore() {
+    return oTotalCriticalScore;
+  }
+  public void setOTotalCriticalScore(Long oTotalCriticalScore) {
+    this.oTotalCriticalScore = oTotalCriticalScore;
   }
 
   
@@ -243,13 +281,15 @@ public class AnalyticsEvaluation  implements Serializable {
         Objects.equals(this.contextId, analyticsEvaluation.contextId) &&
         Objects.equals(this.formName, analyticsEvaluation.formName) &&
         Objects.equals(this.calibrationId, analyticsEvaluation.calibrationId) &&
-        Objects.equals(this.oTotalCriticalScore, analyticsEvaluation.oTotalCriticalScore) &&
-        Objects.equals(this.oTotalScore, analyticsEvaluation.oTotalScore);
+        Objects.equals(this.rescored, analyticsEvaluation.rescored) &&
+        Objects.equals(this.deleted, analyticsEvaluation.deleted) &&
+        Objects.equals(this.oTotalScore, analyticsEvaluation.oTotalScore) &&
+        Objects.equals(this.oTotalCriticalScore, analyticsEvaluation.oTotalCriticalScore);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(evaluationId, evaluatorId, userId, eventTime, queueId, formId, contextId, formName, calibrationId, oTotalCriticalScore, oTotalScore);
+    return Objects.hash(evaluationId, evaluatorId, userId, eventTime, queueId, formId, contextId, formName, calibrationId, rescored, deleted, oTotalScore, oTotalCriticalScore);
   }
 
   @Override
@@ -266,8 +306,10 @@ public class AnalyticsEvaluation  implements Serializable {
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");
     sb.append("    formName: ").append(toIndentedString(formName)).append("\n");
     sb.append("    calibrationId: ").append(toIndentedString(calibrationId)).append("\n");
-    sb.append("    oTotalCriticalScore: ").append(toIndentedString(oTotalCriticalScore)).append("\n");
+    sb.append("    rescored: ").append(toIndentedString(rescored)).append("\n");
+    sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
     sb.append("    oTotalScore: ").append(toIndentedString(oTotalScore)).append("\n");
+    sb.append("    oTotalCriticalScore: ").append(toIndentedString(oTotalCriticalScore)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -35,20 +35,6 @@ import com.mypurecloud.sdk.v2.model.ScimV2CreateUser;
 
 public class GetScimV2ResourcetypesRequest {
     
-	private String filter;
-	public String getFilter() {
-		return this.filter;
-	}
-
-	public void setFilter(String filter) {
-		this.filter = filter;
-	}
-
-	public GetScimV2ResourcetypesRequest withFilter(String filter) {
-	    this.setFilter(filter);
-	    return this;
-	} 
-	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -72,8 +58,6 @@ public class GetScimV2ResourcetypesRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/scim/v2/resourcetypes")
-                .withQueryParameters("filter", "", filter)
-        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json", "application/scim+json")
                 .withAccepts("application/json", "application/scim+json")
@@ -94,11 +78,6 @@ public class GetScimV2ResourcetypesRequest {
 			request = new GetScimV2ResourcetypesRequest();
 		}
 
-		
-		public Builder withFilter(String filter) {
-			request.setFilter(filter);
-			return this;
-		}
 		
 
 		

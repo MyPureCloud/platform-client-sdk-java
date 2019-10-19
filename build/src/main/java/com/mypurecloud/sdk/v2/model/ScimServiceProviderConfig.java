@@ -35,14 +35,14 @@ public class ScimServiceProviderConfig  implements Serializable {
 
   
   /**
-   * schemas supported
+   * The list of supported schemas.
    **/
   public ScimServiceProviderConfig schemas(List<String> schemas) {
     this.schemas = schemas;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "schemas supported")
+  @ApiModelProperty(example = "null", value = "The list of supported schemas.")
   @JsonProperty("schemas")
   public List<String> getSchemas() {
     return schemas;
@@ -52,7 +52,7 @@ public class ScimServiceProviderConfig  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "Documentation")
+  @ApiModelProperty(example = "null", value = "The HTTP-addressable URL that points to the service provider's documentation.")
   @JsonProperty("documentationUri")
   public String getDocumentationUri() {
     return documentationUri;
@@ -60,14 +60,14 @@ public class ScimServiceProviderConfig  implements Serializable {
 
   
   /**
-   * Patch support
+   * \"patch\" configuration options.
    **/
   public ScimServiceProviderConfig patch(ScimServiceProviderConfigSimpleFeature patch) {
     this.patch = patch;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Patch support")
+  @ApiModelProperty(example = "null", value = "\"patch\" configuration options.")
   @JsonProperty("patch")
   public ScimServiceProviderConfigSimpleFeature getPatch() {
     return patch;
@@ -78,14 +78,14 @@ public class ScimServiceProviderConfig  implements Serializable {
 
   
   /**
-   * Filter support. Additional properties: maxResults
+   * \"filter\" configuration options.
    **/
   public ScimServiceProviderConfig filter(ScimServiceProviderConfigFilterFeature filter) {
     this.filter = filter;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Filter support. Additional properties: maxResults")
+  @ApiModelProperty(example = "null", value = "\"filter\" configuration options.")
   @JsonProperty("filter")
   public ScimServiceProviderConfigFilterFeature getFilter() {
     return filter;
@@ -96,14 +96,14 @@ public class ScimServiceProviderConfig  implements Serializable {
 
   
   /**
-   * Entity Tag support
+   * \"ETag\" configuration options.
    **/
   public ScimServiceProviderConfig etag(ScimServiceProviderConfigSimpleFeature etag) {
     this.etag = etag;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Entity Tag support")
+  @ApiModelProperty(example = "null", value = "\"ETag\" configuration options.")
   @JsonProperty("etag")
   public ScimServiceProviderConfigSimpleFeature getEtag() {
     return etag;
@@ -114,14 +114,14 @@ public class ScimServiceProviderConfig  implements Serializable {
 
   
   /**
-   * Sort support
+   * \"sort\" configuration options.
    **/
   public ScimServiceProviderConfig sort(ScimServiceProviderConfigSimpleFeature sort) {
     this.sort = sort;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Sort support")
+  @ApiModelProperty(example = "null", value = "\"sort\" configuration options.")
   @JsonProperty("sort")
   public ScimServiceProviderConfigSimpleFeature getSort() {
     return sort;
@@ -132,14 +132,14 @@ public class ScimServiceProviderConfig  implements Serializable {
 
   
   /**
-   * Bulk support
+   * \"bulk\" configuration options.
    **/
   public ScimServiceProviderConfig bulk(ScimServiceProviderConfigBulkFeature bulk) {
     this.bulk = bulk;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Bulk support")
+  @ApiModelProperty(example = "null", value = "\"bulk\" configuration options.")
   @JsonProperty("bulk")
   public ScimServiceProviderConfigBulkFeature getBulk() {
     return bulk;
@@ -150,14 +150,14 @@ public class ScimServiceProviderConfig  implements Serializable {
 
   
   /**
-   * Change password
+   * \"changePassword\" configuration options.
    **/
   public ScimServiceProviderConfig changePassword(ScimServiceProviderConfigSimpleFeature changePassword) {
     this.changePassword = changePassword;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Change password")
+  @ApiModelProperty(example = "null", value = "\"changePassword\" configuration options.")
   @JsonProperty("changePassword")
   public ScimServiceProviderConfigSimpleFeature getChangePassword() {
     return changePassword;
@@ -168,14 +168,14 @@ public class ScimServiceProviderConfig  implements Serializable {
 
   
   /**
-   * Authentication schemes supported.
+   * The list of supported authentication schemes.
    **/
   public ScimServiceProviderConfig authenticationSchemes(List<ScimServiceProviderConfigAuthenticationScheme> authenticationSchemes) {
     this.authenticationSchemes = authenticationSchemes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Authentication schemes supported.")
+  @ApiModelProperty(example = "null", value = "The list of supported authentication schemes.")
   @JsonProperty("authenticationSchemes")
   public List<ScimServiceProviderConfigAuthenticationScheme> getAuthenticationSchemes() {
     return authenticationSchemes;

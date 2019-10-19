@@ -223,6 +223,7 @@ public class ReportingExportJobResponse  implements Serializable {
   private String locale = null;
   private Double percentageComplete = null;
   private Boolean hasFormatDurations = null;
+  private Boolean hasSplitFilters = null;
   private String selfUri = null;
 
   
@@ -520,6 +521,24 @@ public class ReportingExportJobResponse  implements Serializable {
   }
 
   
+  /**
+   * Indicates if filters will be split in aggregate detail exports
+   **/
+  public ReportingExportJobResponse hasSplitFilters(Boolean hasSplitFilters) {
+    this.hasSplitFilters = hasSplitFilters;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates if filters will be split in aggregate detail exports")
+  @JsonProperty("hasSplitFilters")
+  public Boolean getHasSplitFilters() {
+    return hasSplitFilters;
+  }
+  public void setHasSplitFilters(Boolean hasSplitFilters) {
+    this.hasSplitFilters = hasSplitFilters;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -554,12 +573,13 @@ public class ReportingExportJobResponse  implements Serializable {
         Objects.equals(this.locale, reportingExportJobResponse.locale) &&
         Objects.equals(this.percentageComplete, reportingExportJobResponse.percentageComplete) &&
         Objects.equals(this.hasFormatDurations, reportingExportJobResponse.hasFormatDurations) &&
+        Objects.equals(this.hasSplitFilters, reportingExportJobResponse.hasSplitFilters) &&
         Objects.equals(this.selfUri, reportingExportJobResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, selfUri);
+    return Objects.hash(id, name, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, hasSplitFilters, selfUri);
   }
 
   @Override
@@ -584,6 +604,7 @@ public class ReportingExportJobResponse  implements Serializable {
     sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("    percentageComplete: ").append(toIndentedString(percentageComplete)).append("\n");
     sb.append("    hasFormatDurations: ").append(toIndentedString(hasFormatDurations)).append("\n");
+    sb.append("    hasSplitFilters: ").append(toIndentedString(hasSplitFilters)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

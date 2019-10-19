@@ -17,8 +17,10 @@ title: AnalyticsEvaluation
 | **contextId** | **String** | A unique identifier for an evaluation form, regardless of version |  [optional] |
 | **formName** | **String** | Name of the evaluation form |  [optional] |
 | **calibrationId** | **String** | The calibration id used for the purpose of training evaluators |  [optional] |
-| **oTotalCriticalScore** | **Long** |  |  [optional] |
+| **rescored** | **Boolean** | Whether this evaluation has ever been rescored |  [optional] |
+| **deleted** | **Boolean** | Whether this evaluation has been deleted |  [optional] |
 | **oTotalScore** | **Long** |  |  [optional] |
+| **oTotalCriticalScore** | **Long** |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -26,7 +26,7 @@ public class ScimV2Group  implements Serializable {
   private ScimMetadata meta = null;
 
   
-  @ApiModelProperty(example = "null", value = "The ID of the SCIM resource. Set by the service provider. caseExact is set to true. Mutability is set to readOnly. Returned is set to always.")
+  @ApiModelProperty(example = "null", value = "The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"Mutability\" is set to \"readOnly\". \"Returned\" is set to \"always\".")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -51,7 +51,7 @@ public class ScimV2Group  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The display name for the group.")
+  @ApiModelProperty(example = "null", value = "The display name of the group.")
   @JsonProperty("displayName")
   public String getDisplayName() {
     return displayName;
@@ -59,14 +59,14 @@ public class ScimV2Group  implements Serializable {
 
   
   /**
-   * A list of members in a SCIM group.
+   * The list of members in the group.
    **/
   public ScimV2Group members(List<ScimV2MemberReference> members) {
     this.members = members;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A list of members in a SCIM group.")
+  @ApiModelProperty(example = "null", value = "The list of members in the group.")
   @JsonProperty("members")
   public List<ScimV2MemberReference> getMembers() {
     return members;

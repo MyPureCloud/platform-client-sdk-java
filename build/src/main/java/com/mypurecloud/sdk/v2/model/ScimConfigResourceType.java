@@ -29,7 +29,7 @@ public class ScimConfigResourceType  implements Serializable {
   private ScimMetadata meta = null;
 
   
-  @ApiModelProperty(example = "null", value = "The ID of the SCIM resource. Set by the service provider. caseExact is set to true. Mutability is set to readOnly. Returned is set to always.")
+  @ApiModelProperty(example = "null", value = "The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"Mutability\" is set to \"readOnly\". \"Returned\" is set to \"always\".")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -37,14 +37,14 @@ public class ScimConfigResourceType  implements Serializable {
 
   
   /**
-   * schemas supported
+   * The list of supported schemas.
    **/
   public ScimConfigResourceType schemas(List<String> schemas) {
     this.schemas = schemas;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "schemas supported")
+  @ApiModelProperty(example = "null", value = "The list of supported schemas.")
   @JsonProperty("schemas")
   public List<String> getSchemas() {
     return schemas;
@@ -54,21 +54,21 @@ public class ScimConfigResourceType  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "Resource name.")
+  @ApiModelProperty(example = "null", value = "The name of the resource type.")
   @JsonProperty("name")
   public String getName() {
     return name;
   }
 
   
-  @ApiModelProperty(example = "null", value = "Resource description.")
+  @ApiModelProperty(example = "null", value = "The description of the resource type.")
   @JsonProperty("description")
   public String getDescription() {
     return description;
   }
 
   
-  @ApiModelProperty(example = "null", value = "The resource type's primary/base schema URI.")
+  @ApiModelProperty(example = "null", value = "The URI of the primary or base schema for the resource type.")
   @JsonProperty("schema")
   public String getSchema() {
     return schema;
@@ -76,14 +76,14 @@ public class ScimConfigResourceType  implements Serializable {
 
   
   /**
-   * Resource extension schemas
+   * The list of schema extensions for the resource type.
    **/
   public ScimConfigResourceType schemaExtensions(List<ScimConfigResourceTypeSchemaExtension> schemaExtensions) {
     this.schemaExtensions = schemaExtensions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Resource extension schemas")
+  @ApiModelProperty(example = "null", value = "The list of schema extensions for the resource type.")
   @JsonProperty("schemaExtensions")
   public List<ScimConfigResourceTypeSchemaExtension> getSchemaExtensions() {
     return schemaExtensions;
@@ -93,7 +93,7 @@ public class ScimConfigResourceType  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "Resource HTTP endpoint.")
+  @ApiModelProperty(example = "null", value = "The HTTP-addressable endpoint of the resource type. Appears after the base URL.")
   @JsonProperty("endpoint")
   public String getEndpoint() {
     return endpoint;

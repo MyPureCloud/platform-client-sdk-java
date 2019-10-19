@@ -16,6 +16,29 @@ title: EvaluationAggregationQuery
 | **metrics** | **List&lt;String&gt;** | Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *). |  [optional] |
 | **flattenMultivaluedDimensions** | **Boolean** | Flattens any multivalued dimensions used in response groups (e.g. [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]-&gt;&#39;a,b,c&#39;) |  [optional] |
 | **views** | [**List&lt;EvaluationAggregationView&gt;**](EvaluationAggregationView.html) | Custom derived metric views |  [optional] |
+| **alternateTimeDimension** | [**AlternateTimeDimensionEnum**](#AlternateTimeDimensionEnum) | Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \&quot;eventTime\&quot; uses the actual time of the data event. |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="AlternateTimeDimensionEnum"></a>
+
+## Enum: AlternateTimeDimensionEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| CALIBRATIONID | &quot;calibrationId&quot; |
+| CONTEXTID | &quot;contextId&quot; |
+| CONVERSATIONID | &quot;conversationId&quot; |
+| DIVISIONID | &quot;divisionId&quot; |
+| EVALUATIONCREATEDDATE | &quot;evaluationCreatedDate&quot; |
+| EVALUATIONID | &quot;evaluationId&quot; |
+| EVALUATORID | &quot;evaluatorId&quot; |
+| FORMID | &quot;formId&quot; |
+| QUEUEID | &quot;queueId&quot; |
+| RESCIND | &quot;rescind&quot; |
+| RESCORED | &quot;rescored&quot; |
+| USERID | &quot;userId&quot; |
 {: class="table table-striped"}
 
 

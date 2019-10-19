@@ -18,7 +18,7 @@ public class ScimV2MemberReference  implements Serializable {
   
 
   /**
-   * The SCIM resource type. Can be user or group.
+   * The type of SCIM resource.
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -57,7 +57,7 @@ public class ScimV2MemberReference  implements Serializable {
   private String ref = null;
 
   
-  @ApiModelProperty(example = "null", value = "The SCIM resource type. Can be user or group.")
+  @ApiModelProperty(example = "null", value = "The type of SCIM resource.")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
@@ -65,14 +65,14 @@ public class ScimV2MemberReference  implements Serializable {
 
   
   /**
-   * The ID of the group member. Can be userId or groupId.
+   * The ID of the group member. Can be \"userId\" or \"groupId\".
    **/
   public ScimV2MemberReference value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ID of the group member. Can be userId or groupId.")
+  @ApiModelProperty(example = "null", value = "The ID of the group member. Can be \"userId\" or \"groupId\".")
   @JsonProperty("value")
   public String getValue() {
     return value;

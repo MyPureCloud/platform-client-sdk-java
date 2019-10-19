@@ -25,6 +25,7 @@ title: ReportingExportJobResponse
 | **locale** | **String** | The locale use for localization of the exported data, i.e. en-us, es-mx   |  |
 | **percentageComplete** | **Double** | The percentage of the job that has completed processing |  |
 | **hasFormatDurations** | **Boolean** | Indicates if durations are formatted in hh:mm:ss format instead of ms |  [optional] |
+| **hasSplitFilters** | **Boolean** | Indicates if filters will be split in aggregate detail exports |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

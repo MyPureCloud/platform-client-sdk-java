@@ -32,7 +32,7 @@ public class ScimUserListResponse  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The 1-based index of the first result returned by this request. Add this to itemsPerPage when requesting the next page of results.")
+  @ApiModelProperty(example = "null", value = "The 1-based index of the first result returned by this request. Add this to \"itemsPerPage\" when requesting the next page of results.")
   @JsonProperty("startIndex")
   public Long getStartIndex() {
     return startIndex;
@@ -47,14 +47,14 @@ public class ScimUserListResponse  implements Serializable {
 
   
   /**
-   * Resources
+   * The list of requested resources. If \"count\" is 0, then the list will be empty.
    **/
   public ScimUserListResponse resources(List<ScimV2User> resources) {
     this.resources = resources;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Resources")
+  @ApiModelProperty(example = "null", value = "The list of requested resources. If \"count\" is 0, then the list will be empty.")
   @JsonProperty("Resources")
   public List<ScimV2User> getResources() {
     return resources;

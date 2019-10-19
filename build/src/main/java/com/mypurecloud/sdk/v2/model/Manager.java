@@ -37,7 +37,7 @@ public class Manager  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The URI of the manager's user record.")
+  @ApiModelProperty(example = "null", value = "The reference URI of the manager's user record.")
   @JsonProperty("$ref")
   public String getRef() {
     return ref;

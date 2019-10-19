@@ -8,12 +8,12 @@ title: ScimServiceProviderConfigAuthenticationScheme
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | **String** | Name |  |
-| **description** | **String** | Description |  |
-| **specUri** | **String** | An HTTP-addressable URL pointing to the authentication scheme&#39;s specification. |  [optional] |
-| **documentationUri** | **String** | An HTTP-addressable URL pointing to the authentication scheme&#39;s usage documentation |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum) | The authentication type. |  |
-| **primary** | **Boolean** | Indication of primary method of authentication. |  [optional] |
+| **name** | **String** | The name of the authentication scheme, for example, HTTP Basic. |  |
+| **description** | **String** | The description of the authentication scheme. |  |
+| **specUri** | **String** | The HTTP-addressable URL that points to the authentication scheme&#39;s specification. |  [optional] |
+| **documentationUri** | **String** | The HTTP-addressable URL that points to the authentication scheme&#39;s usage documentation. |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum) | The type of authentication scheme. |  |
+| **primary** | **Boolean** | Indicates the primary method of authentication. |  [optional] |
 {: class="table table-striped"}
 
 

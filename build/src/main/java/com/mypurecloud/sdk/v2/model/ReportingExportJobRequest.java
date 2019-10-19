@@ -133,6 +133,7 @@ public class ReportingExportJobRequest  implements Serializable {
   private Boolean read = null;
   private String locale = null;
   private Boolean hasFormatDurations = null;
+  private Boolean hasSplitFilters = null;
 
   
   /**
@@ -315,6 +316,24 @@ public class ReportingExportJobRequest  implements Serializable {
   }
 
   
+  /**
+   * Indicates if filters will be split in aggregate detail exports
+   **/
+  public ReportingExportJobRequest hasSplitFilters(Boolean hasSplitFilters) {
+    this.hasSplitFilters = hasSplitFilters;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates if filters will be split in aggregate detail exports")
+  @JsonProperty("hasSplitFilters")
+  public Boolean getHasSplitFilters() {
+    return hasSplitFilters;
+  }
+  public void setHasSplitFilters(Boolean hasSplitFilters) {
+    this.hasSplitFilters = hasSplitFilters;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -334,12 +353,13 @@ public class ReportingExportJobRequest  implements Serializable {
         Objects.equals(this.filter, reportingExportJobRequest.filter) &&
         Objects.equals(this.read, reportingExportJobRequest.read) &&
         Objects.equals(this.locale, reportingExportJobRequest.locale) &&
-        Objects.equals(this.hasFormatDurations, reportingExportJobRequest.hasFormatDurations);
+        Objects.equals(this.hasFormatDurations, reportingExportJobRequest.hasFormatDurations) &&
+        Objects.equals(this.hasSplitFilters, reportingExportJobRequest.hasSplitFilters);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, timeZone, exportFormat, interval, period, viewType, filter, read, locale, hasFormatDurations);
+    return Objects.hash(name, timeZone, exportFormat, interval, period, viewType, filter, read, locale, hasFormatDurations, hasSplitFilters);
   }
 
   @Override
@@ -357,6 +377,7 @@ public class ReportingExportJobRequest  implements Serializable {
     sb.append("    read: ").append(toIndentedString(read)).append("\n");
     sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("    hasFormatDurations: ").append(toIndentedString(hasFormatDurations)).append("\n");
+    sb.append("    hasSplitFilters: ").append(toIndentedString(hasSplitFilters)).append("\n");
     sb.append("}");
     return sb.toString();
   }

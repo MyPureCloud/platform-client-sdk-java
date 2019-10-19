@@ -9,9 +9,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Bulk feature configuration
+ * Bulk configuration options.
  */
-@ApiModel(description = "Bulk feature configuration")
+@ApiModel(description = "Bulk configuration options.")
 
 public class ScimServiceProviderConfigBulkFeature  implements Serializable {
   
@@ -20,21 +20,21 @@ public class ScimServiceProviderConfigBulkFeature  implements Serializable {
   private Integer maxPayloadSize = null;
 
   
-  @ApiModelProperty(example = "null", value = "Indicates if configuration options is supported.")
+  @ApiModelProperty(example = "null", value = "Indicates whether configuration options are supported.")
   @JsonProperty("supported")
   public Boolean getSupported() {
     return supported;
   }
 
   
-  @ApiModelProperty(example = "null", value = "Maximum operations per bulk request.")
+  @ApiModelProperty(example = "null", value = "The maximum number of operations for each bulk request.")
   @JsonProperty("maxOperations")
   public Integer getMaxOperations() {
     return maxOperations;
   }
 
   
-  @ApiModelProperty(example = "null", value = "Maximum payload size.")
+  @ApiModelProperty(example = "null", value = "The maximum payload size.")
   @JsonProperty("maxPayloadSize")
   public Integer getMaxPayloadSize() {
     return maxPayloadSize;
