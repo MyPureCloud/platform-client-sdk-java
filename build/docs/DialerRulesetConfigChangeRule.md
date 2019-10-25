@@ -8,13 +8,13 @@ title: DialerRulesetConfigChangeRule
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **order** | **Integer** |  |  [optional] |
-| **category** | [**CategoryEnum**](#CategoryEnum) |  |  [optional] |
-| **actions** | [**List&lt;DialerRulesetConfigChangeAction&gt;**](DialerRulesetConfigChangeAction.html) |  |  [optional] |
-| **conditions** | [**List&lt;DialerRulesetConfigChangeCondition&gt;**](DialerRulesetConfigChangeCondition.html) |  |  [optional] |
-| **additionalProperties** | **Object** |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **order** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **category** | [**CategoryEnum**](#CategoryEnum)<!----> |  |  [optional] |
+| **actions** | <!----><!---->[**List&lt;DialerRulesetConfigChangeAction&gt;**](DialerRulesetConfigChangeAction.html)<!----> |  |  [optional] |
+| **conditions** | <!----><!---->[**List&lt;DialerRulesetConfigChangeCondition&gt;**](DialerRulesetConfigChangeCondition.html)<!----> |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

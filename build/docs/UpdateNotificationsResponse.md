@@ -8,7 +8,7 @@ title: UpdateNotificationsResponse
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | [**List&lt;UpdateNotificationResponse&gt;**](UpdateNotificationResponse.html) |  |  [optional] |
+| **entities** | <!----><!---->[**List&lt;UpdateNotificationResponse&gt;**](UpdateNotificationResponse.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

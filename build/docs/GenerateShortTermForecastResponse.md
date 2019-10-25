@@ -8,10 +8,10 @@ title: GenerateShortTermForecastResponse
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **status** | [**StatusEnum**](#StatusEnum) | The status of the request |  [optional] |
-| **result** | [**ShortTermForecast**](ShortTermForecast.html) | The resulting forecast.  May be sent asynchronously via notification depending on the complexity of the forecast |  [optional] |
-| **operationId** | **String** | The operation id to watch for on the notification topic |  [optional] |
-| **progress** | **Integer** | Percent progress.  Subscribe to the corresponding notification to view progress and await the result |  [optional] |
+| **status** | [**StatusEnum**](#StatusEnum)<!----> | The status of the request |  [optional] |
+| **result** | <!----><!---->[**ShortTermForecast**](ShortTermForecast.html)<!----> | The resulting forecast.  May be sent asynchronously via notification depending on the complexity of the forecast |  [optional] |
+| **operationId** | <!----><!---->**String**<!----> | The operation id to watch for on the notification topic |  [optional] |
+| **progress** | <!----><!---->**Integer**<!----> | Percent progress.  Subscribe to the corresponding notification to view progress and await the result |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,12 +8,12 @@ title: WfmUserNotificationTopicTimeOffRequestNotification
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **timeOffRequestId** | **String** |  |  [optional] |
-| **user** | [**WfmUserNotificationTopicUserReference**](WfmUserNotificationTopicUserReference.html) |  |  [optional] |
-| **isFullDayRequest** | **Boolean** |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
-| **partialDayStartDateTimes** | [**List&lt;Date&gt;**](Date.html) |  |  [optional] |
-| **fullDayManagementUnitDates** | **List&lt;String&gt;** |  |  [optional] |
+| **timeOffRequestId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **user** | <!----><!---->[**WfmUserNotificationTopicUserReference**](WfmUserNotificationTopicUserReference.html)<!----> |  |  [optional] |
+| **isFullDayRequest** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
+| **partialDayStartDateTimes** | <!----><!---->[**List&lt;Date&gt;**](Date.html)<!----> |  |  [optional] |
+| **fullDayManagementUnitDates** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

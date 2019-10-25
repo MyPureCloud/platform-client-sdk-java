@@ -8,9 +8,9 @@ title: QueueConversationCallEventTopicJourneyContext
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **customer** | [**QueueConversationCallEventTopicJourneyCustomer**](QueueConversationCallEventTopicJourneyCustomer.html) |  |  [optional] |
-| **customerSession** | [**QueueConversationCallEventTopicJourneyCustomerSession**](QueueConversationCallEventTopicJourneyCustomerSession.html) |  |  [optional] |
-| **triggeringAction** | [**QueueConversationCallEventTopicJourneyAction**](QueueConversationCallEventTopicJourneyAction.html) |  |  [optional] |
+| **customer** | <!----><!---->[**QueueConversationCallEventTopicJourneyCustomer**](QueueConversationCallEventTopicJourneyCustomer.html)<!----> |  |  [optional] |
+| **customerSession** | <!----><!---->[**QueueConversationCallEventTopicJourneyCustomerSession**](QueueConversationCallEventTopicJourneyCustomerSession.html)<!----> |  |  [optional] |
+| **triggeringAction** | <!----><!---->[**QueueConversationCallEventTopicJourneyAction**](QueueConversationCallEventTopicJourneyAction.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

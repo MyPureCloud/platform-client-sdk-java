@@ -8,7 +8,7 @@ title: EdgeVersionInformation
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **softwareVersion** | **String** |  |  [optional] |
+| **softwareVersion** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

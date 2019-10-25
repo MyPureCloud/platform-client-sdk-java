@@ -8,8 +8,8 @@ title: WfmMoveAgentsCompleteTopicWfmMoveAgentData
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **user** | [**WfmMoveAgentsCompleteTopicUserReference**](WfmMoveAgentsCompleteTopicUserReference.html) |  |  [optional] |
-| **result** | [**ResultEnum**](#ResultEnum) |  |  [optional] |
+| **user** | <!----><!---->[**WfmMoveAgentsCompleteTopicUserReference**](WfmMoveAgentsCompleteTopicUserReference.html)<!----> |  |  [optional] |
+| **result** | [**ResultEnum**](#ResultEnum)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

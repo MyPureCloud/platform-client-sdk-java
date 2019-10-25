@@ -8,16 +8,16 @@ title: ArchitectPromptNotificationArchitectOperation
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **complete** | **Boolean** |  |  [optional] |
-| **user** | [**ArchitectPromptNotificationUser**](ArchitectPromptNotificationUser.html) |  |  [optional] |
-| **client** | [**ArchitectPromptNotificationClient**](ArchitectPromptNotificationClient.html) |  |  [optional] |
-| **actionName** | [**ActionNameEnum**](#ActionNameEnum) |  |  [optional] |
-| **actionStatus** | [**ActionStatusEnum**](#ActionStatusEnum) |  |  [optional] |
-| **errorMessage** | **String** |  |  [optional] |
-| **errorCode** | **String** |  |  [optional] |
-| **errorMessageParams** | [**ArchitectPromptNotificationErrorMessageParams**](ArchitectPromptNotificationErrorMessageParams.html) |  |  [optional] |
-| **errorDetails** | [**List&lt;ArchitectPromptNotificationErrorDetail&gt;**](ArchitectPromptNotificationErrorDetail.html) |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **complete** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **user** | <!----><!---->[**ArchitectPromptNotificationUser**](ArchitectPromptNotificationUser.html)<!----> |  |  [optional] |
+| **client** | <!----><!---->[**ArchitectPromptNotificationClient**](ArchitectPromptNotificationClient.html)<!----> |  |  [optional] |
+| **actionName** | [**ActionNameEnum**](#ActionNameEnum)<!----> |  |  [optional] |
+| **actionStatus** | [**ActionStatusEnum**](#ActionStatusEnum)<!----> |  |  [optional] |
+| **errorMessage** | <!----><!---->**String**<!----> |  |  [optional] |
+| **errorCode** | <!----><!---->**String**<!----> |  |  [optional] |
+| **errorMessageParams** | <!----><!---->[**ArchitectPromptNotificationErrorMessageParams**](ArchitectPromptNotificationErrorMessageParams.html)<!----> |  |  [optional] |
+| **errorDetails** | <!----><!---->[**List&lt;ArchitectPromptNotificationErrorDetail&gt;**](ArchitectPromptNotificationErrorDetail.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

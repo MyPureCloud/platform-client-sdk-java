@@ -8,7 +8,7 @@ title: ChatBadgeTopicBadgeEntity
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **jabberId** | **String** |  |  [optional] |
+| **jabberId** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

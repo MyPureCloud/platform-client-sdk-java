@@ -8,23 +8,23 @@ title: UserScheduleAdherence
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **user** | [**User**](User.html) | The user for whom this status applies |  [optional] |
-| **managementUnit** | [**ManagementUnit**](ManagementUnit.html) | The management unit to which this user belongs |  [optional] |
-| **scheduledActivityCategory** | [**ScheduledActivityCategoryEnum**](#ScheduledActivityCategoryEnum) | Activity for which the user is scheduled |  [optional] |
-| **systemPresence** | [**SystemPresenceEnum**](#SystemPresenceEnum) | Actual underlying system presence value |  [optional] |
-| **organizationSecondaryPresenceId** | **String** | Organization Secondary Presence Id. |  [optional] |
-| **routingStatus** | [**RoutingStatusEnum**](#RoutingStatusEnum) | Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue |  [optional] |
-| **actualActivityCategory** | [**ActualActivityCategoryEnum**](#ActualActivityCategoryEnum) | Activity in which the user is actually engaged |  [optional] |
-| **isOutOfOffice** | **Boolean** | Whether the user is marked OutOfOffice |  [optional] |
-| **adherenceState** | [**AdherenceStateEnum**](#AdherenceStateEnum) | The user&#39;s current adherence state |  [optional] |
-| **impact** | [**ImpactEnum**](#ImpactEnum) | The impact of the user&#39;s current adherenceState |  [optional] |
-| **timeOfAdherenceChange** | [**Date**](Date.html) | Time when the user entered the current adherenceState in ISO-8601 format |  [optional] |
-| **presenceUpdateTime** | [**Date**](Date.html) | Time when presence was last updated.  Used to calculate time in current status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **activeQueues** | [**List&lt;QueueReference&gt;**](QueueReference.html) | The list of queues to which this user is joined |  [optional] |
-| **activeQueuesModifiedTime** | [**Date**](Date.html) | Time when the list of active queues for this user was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **selfUri** | **String** | The URI for this object |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **user** | <!----><!---->[**User**](User.html)<!----> | The user for whom this status applies |  [optional] |
+| **managementUnit** | <!----><!---->[**ManagementUnit**](ManagementUnit.html)<!----> | The management unit to which this user belongs |  [optional] |
+| **scheduledActivityCategory** | [**ScheduledActivityCategoryEnum**](#ScheduledActivityCategoryEnum)<!----> | Activity for which the user is scheduled |  [optional] |
+| **systemPresence** | [**SystemPresenceEnum**](#SystemPresenceEnum)<!----> | Actual underlying system presence value |  [optional] |
+| **organizationSecondaryPresenceId** | <!----><!---->**String**<!----> | Organization Secondary Presence Id. |  [optional] |
+| **routingStatus** | [**RoutingStatusEnum**](#RoutingStatusEnum)<!----> | Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue |  [optional] |
+| **actualActivityCategory** | [**ActualActivityCategoryEnum**](#ActualActivityCategoryEnum)<!----> | Activity in which the user is actually engaged |  [optional] |
+| **isOutOfOffice** | <!----><!---->**Boolean**<!----> | Whether the user is marked OutOfOffice |  [optional] |
+| **adherenceState** | [**AdherenceStateEnum**](#AdherenceStateEnum)<!----> | The user&#39;s current adherence state |  [optional] |
+| **impact** | [**ImpactEnum**](#ImpactEnum)<!----> | The impact of the user&#39;s current adherenceState |  [optional] |
+| **timeOfAdherenceChange** | <!----><!---->[**Date**](Date.html)<!----> | Time when the user entered the current adherenceState in ISO-8601 format |  [optional] |
+| **presenceUpdateTime** | <!----><!---->[**Date**](Date.html)<!----> | Time when presence was last updated.  Used to calculate time in current status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **activeQueues** | <!----><!---->[**List&lt;QueueReference&gt;**](QueueReference.html)<!----> | The list of queues to which this user is joined |  [optional] |
+| **activeQueuesModifiedTime** | <!----><!---->[**Date**](Date.html)<!----> | Time when the list of active queues for this user was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
 

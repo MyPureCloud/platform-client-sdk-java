@@ -8,7 +8,7 @@ title: ChannelEntityListing
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | [**List&lt;Channel&gt;**](Channel.html) |  |  [optional] |
+| **entities** | <!----><!---->[**List&lt;Channel&gt;**](Channel.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

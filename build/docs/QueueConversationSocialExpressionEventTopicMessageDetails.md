@@ -8,12 +8,12 @@ title: QueueConversationSocialExpressionEventTopicMessageDetails
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **messageId** | **String** |  |  [optional] |
-| **messageTime** | [**Date**](Date.html) |  |  [optional] |
-| **messageStatus** | [**MessageStatusEnum**](#MessageStatusEnum) |  |  [optional] |
-| **messageSegmentCount** | **Integer** |  |  [optional] |
-| **media** | [**List&lt;QueueConversationSocialExpressionEventTopicMessageMedia&gt;**](QueueConversationSocialExpressionEventTopicMessageMedia.html) |  |  [optional] |
-| **stickers** | [**List&lt;QueueConversationSocialExpressionEventTopicMessageSticker&gt;**](QueueConversationSocialExpressionEventTopicMessageSticker.html) |  |  [optional] |
+| **messageId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **messageTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **messageStatus** | [**MessageStatusEnum**](#MessageStatusEnum)<!----> |  |  [optional] |
+| **messageSegmentCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **media** | <!----><!---->[**List&lt;QueueConversationSocialExpressionEventTopicMessageMedia&gt;**](QueueConversationSocialExpressionEventTopicMessageMedia.html)<!----> |  |  [optional] |
+| **stickers** | <!----><!---->[**List&lt;QueueConversationSocialExpressionEventTopicMessageSticker&gt;**](QueueConversationSocialExpressionEventTopicMessageSticker.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

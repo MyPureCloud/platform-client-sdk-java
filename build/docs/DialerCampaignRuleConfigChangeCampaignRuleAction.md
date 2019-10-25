@@ -8,11 +8,11 @@ title: DialerCampaignRuleConfigChangeCampaignRuleAction
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **parameters** | **Map&lt;String, String&gt;** |  |  [optional] |
-| **actionType** | [**ActionTypeEnum**](#ActionTypeEnum) |  |  [optional] |
-| **campaignRuleActionEntities** | [**DialerCampaignRuleConfigChangeCampaignRuleActionEntities**](DialerCampaignRuleConfigChangeCampaignRuleActionEntities.html) |  |  [optional] |
-| **additionalProperties** | **Object** |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **parameters** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
+| **actionType** | [**ActionTypeEnum**](#ActionTypeEnum)<!----> |  |  [optional] |
+| **campaignRuleActionEntities** | <!----><!---->[**DialerCampaignRuleConfigChangeCampaignRuleActionEntities**](DialerCampaignRuleConfigChangeCampaignRuleActionEntities.html)<!----> |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

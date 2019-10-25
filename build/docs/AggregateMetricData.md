@@ -8,9 +8,9 @@ title: AggregateMetricData
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **metric** | **String** |  |  [optional] |
-| **qualifier** | **String** |  |  [optional] |
-| **stats** | [**StatisticalSummary**](StatisticalSummary.html) |  |  [optional] |
+| **metric** | <!----><!---->**String**<!----> |  |  [optional] |
+| **qualifier** | <!----><!---->**String**<!----> |  |  [optional] |
+| **stats** | <!----><!---->[**StatisticalSummary**](StatisticalSummary.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

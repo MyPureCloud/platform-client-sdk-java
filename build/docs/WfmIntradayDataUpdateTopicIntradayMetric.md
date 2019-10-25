@@ -8,8 +8,8 @@ title: WfmIntradayDataUpdateTopicIntradayMetric
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **category** | [**CategoryEnum**](#CategoryEnum) |  |  [optional] |
-| **version** | **String** |  |  [optional] |
+| **category** | [**CategoryEnum**](#CategoryEnum)<!----> |  |  [optional] |
+| **version** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

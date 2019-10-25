@@ -8,16 +8,16 @@ title: DependencyObject
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The dependency identifier |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **version** | **String** |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
-| **deleted** | **Boolean** |  |  [optional] |
-| **updated** | **Boolean** |  |  [optional] |
-| **stateUnknown** | **Boolean** |  |  [optional] |
-| **consumedResources** | [**List&lt;Dependency&gt;**](Dependency.html) |  |  [optional] |
-| **consumingResources** | [**List&lt;Dependency&gt;**](Dependency.html) |  |  [optional] |
-| **selfUri** | **String** | The URI for this object |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The dependency identifier |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **version** | <!----><!---->**String**<!----> |  |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
+| **deleted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **updated** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **stateUnknown** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **consumedResources** | <!----><!---->[**List&lt;Dependency&gt;**](Dependency.html)<!----> |  |  [optional] |
+| **consumingResources** | <!----><!---->[**List&lt;Dependency&gt;**](Dependency.html)<!----> |  |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
 

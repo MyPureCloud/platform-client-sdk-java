@@ -8,41 +8,41 @@ title: ConversationMessageEventTopicMessageMediaParticipant
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **address** | **String** |  |  [optional] |
-| **startTime** | [**Date**](Date.html) |  |  [optional] |
-| **connectedTime** | [**Date**](Date.html) |  |  [optional] |
-| **endTime** | [**Date**](Date.html) |  |  [optional] |
-| **startHoldTime** | [**Date**](Date.html) |  |  [optional] |
-| **purpose** | **String** |  |  [optional] |
-| **state** | [**StateEnum**](#StateEnum) |  |  [optional] |
-| **direction** | [**DirectionEnum**](#DirectionEnum) |  |  [optional] |
-| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum) |  |  [optional] |
-| **held** | **Boolean** |  |  [optional] |
-| **wrapupRequired** | **Boolean** |  |  [optional] |
-| **wrapupPrompt** | **String** |  |  [optional] |
-| **user** | [**ConversationMessageEventTopicUriReference**](ConversationMessageEventTopicUriReference.html) |  |  [optional] |
-| **queue** | [**ConversationMessageEventTopicUriReference**](ConversationMessageEventTopicUriReference.html) |  |  [optional] |
-| **attributes** | **Map&lt;String, String&gt;** |  |  [optional] |
-| **errorInfo** | [**ConversationMessageEventTopicErrorBody**](ConversationMessageEventTopicErrorBody.html) |  |  [optional] |
-| **script** | [**ConversationMessageEventTopicUriReference**](ConversationMessageEventTopicUriReference.html) |  |  [optional] |
-| **wrapupTimeoutMs** | **Integer** |  |  [optional] |
-| **wrapupSkipped** | **Boolean** |  |  [optional] |
-| **alertingTimeoutMs** | **Integer** |  |  [optional] |
-| **provider** | **String** |  |  [optional] |
-| **externalContact** | [**ConversationMessageEventTopicUriReference**](ConversationMessageEventTopicUriReference.html) |  |  [optional] |
-| **externalOrganization** | [**ConversationMessageEventTopicUriReference**](ConversationMessageEventTopicUriReference.html) |  |  [optional] |
-| **wrapup** | [**ConversationMessageEventTopicWrapup**](ConversationMessageEventTopicWrapup.html) |  |  [optional] |
-| **conversationRoutingData** | [**ConversationMessageEventTopicConversationRoutingData**](ConversationMessageEventTopicConversationRoutingData.html) |  |  [optional] |
-| **peer** | **String** |  |  [optional] |
-| **screenRecordingState** | **String** |  |  [optional] |
-| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum) |  |  [optional] |
-| **journeyContext** | [**ConversationMessageEventTopicJourneyContext**](ConversationMessageEventTopicJourneyContext.html) |  |  [optional] |
-| **messages** | [**List&lt;ConversationMessageEventTopicMessageDetails&gt;**](ConversationMessageEventTopicMessageDetails.html) |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
-| **recipientCountry** | **String** |  |  [optional] |
-| **recipientType** | **String** |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **address** | <!----><!---->**String**<!----> |  |  [optional] |
+| **startTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **endTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **startHoldTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **purpose** | <!----><!---->**String**<!----> |  |  [optional] |
+| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
+| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> |  |  [optional] |
+| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> |  |  [optional] |
+| **held** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **wrapupRequired** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **wrapupPrompt** | <!----><!---->**String**<!----> |  |  [optional] |
+| **user** | <!----><!---->[**ConversationMessageEventTopicUriReference**](ConversationMessageEventTopicUriReference.html)<!----> |  |  [optional] |
+| **queue** | <!----><!---->[**ConversationMessageEventTopicUriReference**](ConversationMessageEventTopicUriReference.html)<!----> |  |  [optional] |
+| **attributes** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
+| **errorInfo** | <!----><!---->[**ConversationMessageEventTopicErrorBody**](ConversationMessageEventTopicErrorBody.html)<!----> |  |  [optional] |
+| **script** | <!----><!---->[**ConversationMessageEventTopicUriReference**](ConversationMessageEventTopicUriReference.html)<!----> |  |  [optional] |
+| **wrapupTimeoutMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **wrapupSkipped** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **alertingTimeoutMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **provider** | <!----><!---->**String**<!----> |  |  [optional] |
+| **externalContact** | <!----><!---->[**ConversationMessageEventTopicUriReference**](ConversationMessageEventTopicUriReference.html)<!----> |  |  [optional] |
+| **externalOrganization** | <!----><!---->[**ConversationMessageEventTopicUriReference**](ConversationMessageEventTopicUriReference.html)<!----> |  |  [optional] |
+| **wrapup** | <!----><!---->[**ConversationMessageEventTopicWrapup**](ConversationMessageEventTopicWrapup.html)<!----> |  |  [optional] |
+| **conversationRoutingData** | <!----><!---->[**ConversationMessageEventTopicConversationRoutingData**](ConversationMessageEventTopicConversationRoutingData.html)<!----> |  |  [optional] |
+| **peer** | <!----><!---->**String**<!----> |  |  [optional] |
+| **screenRecordingState** | <!----><!---->**String**<!----> |  |  [optional] |
+| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum)<!----> |  |  [optional] |
+| **journeyContext** | <!----><!---->[**ConversationMessageEventTopicJourneyContext**](ConversationMessageEventTopicJourneyContext.html)<!----> |  |  [optional] |
+| **messages** | <!----><!---->[**List&lt;ConversationMessageEventTopicMessageDetails&gt;**](ConversationMessageEventTopicMessageDetails.html)<!----> |  |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
+| **recipientCountry** | <!----><!---->**String**<!----> |  |  [optional] |
+| **recipientType** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

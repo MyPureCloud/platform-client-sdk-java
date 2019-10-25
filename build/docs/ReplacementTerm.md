@@ -8,9 +8,9 @@ title: ReplacementTerm
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
-| **existingValue** | **String** |  |  [optional] |
-| **updatedValue** | **String** |  |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
+| **existingValue** | <!----><!---->**String**<!----> |  |  [optional] |
+| **updatedValue** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

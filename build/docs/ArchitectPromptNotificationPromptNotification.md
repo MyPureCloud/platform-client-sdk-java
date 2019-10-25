@@ -8,10 +8,10 @@ title: ArchitectPromptNotificationPromptNotification
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **description** | **String** |  |  [optional] |
-| **currentOperation** | [**ArchitectPromptNotificationArchitectOperation**](ArchitectPromptNotificationArchitectOperation.html) |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **description** | <!----><!---->**String**<!----> |  |  [optional] |
+| **currentOperation** | <!----><!---->[**ArchitectPromptNotificationArchitectOperation**](ArchitectPromptNotificationArchitectOperation.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,7 +8,7 @@ title: UserObservationQueryResponse
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **results** | [**List&lt;UserObservationDataContainer&gt;**](UserObservationDataContainer.html) |  |  [optional] |
+| **results** | <!----><!---->[**List&lt;UserObservationDataContainer&gt;**](UserObservationDataContainer.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

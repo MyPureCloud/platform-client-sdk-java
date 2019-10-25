@@ -8,16 +8,16 @@ title: DomainEdgeSoftwareUpdateDto
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **version** | [**DomainEdgeSoftwareVersionDto**](DomainEdgeSoftwareVersionDto.html) | Version |  |
-| **maxDownloadRate** | **Integer** |  |  [optional] |
-| **downloadStartTime** | [**Date**](Date.html) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **executeStartTime** | [**Date**](Date.html) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **executeStopTime** | [**Date**](Date.html) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **executeOnIdle** | **Boolean** |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
-| **edgeUri** | **String** |  |  [optional] |
-| **callDrainingWaitTimeSeconds** | **Long** |  |  [optional] |
-| **current** | **Boolean** |  |  [optional] |
+| **version** | <!----><!---->[**DomainEdgeSoftwareVersionDto**](DomainEdgeSoftwareVersionDto.html)<!----> | Version |  |
+| **maxDownloadRate** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **downloadStartTime** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **executeStartTime** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **executeStopTime** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **executeOnIdle** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
+| **edgeUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **callDrainingWaitTimeSeconds** | <!----><!---->**Long**<!----> |  |  [optional] |
+| **current** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

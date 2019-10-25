@@ -8,8 +8,8 @@ title: QueueConversationCallEventTopicJourneyAction
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **actionMap** | [**QueueConversationCallEventTopicJourneyActionMap**](QueueConversationCallEventTopicJourneyActionMap.html) |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **actionMap** | <!----><!---->[**QueueConversationCallEventTopicJourneyActionMap**](QueueConversationCallEventTopicJourneyActionMap.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

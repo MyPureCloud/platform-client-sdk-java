@@ -8,16 +8,16 @@ title: ArchitectFlowNotificationArchitectOperation
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **complete** | **Boolean** |  |  [optional] |
-| **user** | [**ArchitectFlowNotificationUser**](ArchitectFlowNotificationUser.html) |  |  [optional] |
-| **client** | [**ArchitectFlowNotificationClient**](ArchitectFlowNotificationClient.html) |  |  [optional] |
-| **actionName** | [**ActionNameEnum**](#ActionNameEnum) |  |  [optional] |
-| **actionStatus** | [**ActionStatusEnum**](#ActionStatusEnum) |  |  [optional] |
-| **errorMessage** | **String** |  |  [optional] |
-| **errorCode** | **String** |  |  [optional] |
-| **errorMessageParams** | [**ArchitectFlowNotificationErrorMessageParams**](ArchitectFlowNotificationErrorMessageParams.html) |  |  [optional] |
-| **errorDetails** | [**List&lt;ArchitectFlowNotificationErrorDetail&gt;**](ArchitectFlowNotificationErrorDetail.html) |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **complete** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **user** | <!----><!---->[**ArchitectFlowNotificationUser**](ArchitectFlowNotificationUser.html)<!----> |  |  [optional] |
+| **client** | <!----><!---->[**ArchitectFlowNotificationClient**](ArchitectFlowNotificationClient.html)<!----> |  |  [optional] |
+| **actionName** | [**ActionNameEnum**](#ActionNameEnum)<!----> |  |  [optional] |
+| **actionStatus** | [**ActionStatusEnum**](#ActionStatusEnum)<!----> |  |  [optional] |
+| **errorMessage** | <!----><!---->**String**<!----> |  |  [optional] |
+| **errorCode** | <!----><!---->**String**<!----> |  |  [optional] |
+| **errorMessageParams** | <!----><!---->[**ArchitectFlowNotificationErrorMessageParams**](ArchitectFlowNotificationErrorMessageParams.html)<!----> |  |  [optional] |
+| **errorDetails** | <!----><!---->[**List&lt;ArchitectFlowNotificationErrorDetail&gt;**](ArchitectFlowNotificationErrorDetail.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

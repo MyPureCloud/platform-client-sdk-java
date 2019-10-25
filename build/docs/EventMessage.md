@@ -8,12 +8,12 @@ title: EventMessage
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **code** | [**CodeEnum**](#CodeEnum) |  |  [optional] |
-| **message** | **String** |  |  [optional] |
-| **messageWithParams** | **String** |  |  [optional] |
-| **messageParams** | **Map&lt;String, Object&gt;** |  |  [optional] |
-| **documentationUri** | **String** |  |  [optional] |
-| **resourceURIs** | **List&lt;String&gt;** |  |  [optional] |
+| **code** | [**CodeEnum**](#CodeEnum)<!----> |  |  [optional] |
+| **message** | <!----><!---->**String**<!----> |  |  [optional] |
+| **messageWithParams** | <!----><!---->**String**<!----> |  |  [optional] |
+| **messageParams** | <!----><!---->**Map&lt;String, Object&gt;**<!----> |  |  [optional] |
+| **documentationUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **resourceURIs** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

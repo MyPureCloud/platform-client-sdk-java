@@ -8,8 +8,8 @@ title: QueueConversationScreenShareEventTopicJourneyAction
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **actionMap** | [**QueueConversationScreenShareEventTopicJourneyActionMap**](QueueConversationScreenShareEventTopicJourneyActionMap.html) |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **actionMap** | <!----><!---->[**QueueConversationScreenShareEventTopicJourneyActionMap**](QueueConversationScreenShareEventTopicJourneyActionMap.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

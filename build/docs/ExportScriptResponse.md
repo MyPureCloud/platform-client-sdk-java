@@ -8,7 +8,7 @@ title: ExportScriptResponse
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **url** | **String** |  |  [optional] |
+| **url** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

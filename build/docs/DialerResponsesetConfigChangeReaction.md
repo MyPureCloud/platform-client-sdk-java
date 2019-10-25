@@ -8,10 +8,10 @@ title: DialerResponsesetConfigChangeReaction
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **data** | **String** |  |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **reactionType** | [**ReactionTypeEnum**](#ReactionTypeEnum) |  |  [optional] |
-| **additionalProperties** | **Object** |  |  [optional] |
+| **data** | <!----><!---->**String**<!----> |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **reactionType** | [**ReactionTypeEnum**](#ReactionTypeEnum)<!----> |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

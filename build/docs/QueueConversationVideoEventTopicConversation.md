@@ -8,11 +8,11 @@ title: QueueConversationVideoEventTopicConversation
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **maxParticipants** | **Integer** |  |  [optional] |
-| **participants** | [**List&lt;QueueConversationVideoEventTopicParticipant&gt;**](QueueConversationVideoEventTopicParticipant.html) |  |  [optional] |
-| **recordingState** | **String** |  |  [optional] |
-| **address** | **String** |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **maxParticipants** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **participants** | <!----><!---->[**List&lt;QueueConversationVideoEventTopicParticipant&gt;**](QueueConversationVideoEventTopicParticipant.html)<!----> |  |  [optional] |
+| **recordingState** | <!----><!---->**String**<!----> |  |  [optional] |
+| **address** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

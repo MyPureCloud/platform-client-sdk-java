@@ -8,8 +8,8 @@ title: Number
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **start** | **String** |  |  [optional] |
-| **end** | **String** |  |  [optional] |
+| **start** | <!----><!---->**String**<!----> |  |  [optional] |
+| **end** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

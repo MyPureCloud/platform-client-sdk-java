@@ -8,11 +8,11 @@ title: ResourceConditionNode
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **variableName** | **String** |  |  [optional] |
-| **conjunction** | [**ConjunctionEnum**](#ConjunctionEnum) |  |  [optional] |
-| **operator** | [**OperatorEnum**](#OperatorEnum) |  |  [optional] |
-| **operands** | [**List&lt;ResourceConditionValue&gt;**](ResourceConditionValue.html) |  |  [optional] |
-| **terms** | [**List&lt;ResourceConditionNode&gt;**](ResourceConditionNode.html) |  |  [optional] |
+| **variableName** | <!----><!---->**String**<!----> |  |  [optional] |
+| **conjunction** | [**ConjunctionEnum**](#ConjunctionEnum)<!----> |  |  [optional] |
+| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> |  |  [optional] |
+| **operands** | <!----><!---->[**List&lt;ResourceConditionValue&gt;**](ResourceConditionValue.html)<!----> |  |  [optional] |
+| **terms** | <!----><!---->[**List&lt;ResourceConditionNode&gt;**](ResourceConditionNode.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

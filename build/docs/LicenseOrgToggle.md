@@ -8,8 +8,8 @@ title: LicenseOrgToggle
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **featureName** | **String** |  |  [optional] |
-| **enabled** | **Boolean** |  |  [optional] |
+| **featureName** | <!----><!---->**String**<!----> |  |  [optional] |
+| **enabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

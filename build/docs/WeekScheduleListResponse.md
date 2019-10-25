@@ -8,7 +8,7 @@ title: WeekScheduleListResponse
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | [**List&lt;WeekScheduleListItemResponse&gt;**](WeekScheduleListItemResponse.html) |  |  [optional] |
+| **entities** | <!----><!---->[**List&lt;WeekScheduleListItemResponse&gt;**](WeekScheduleListItemResponse.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

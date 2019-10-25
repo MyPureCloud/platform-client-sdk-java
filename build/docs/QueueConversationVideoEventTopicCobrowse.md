@@ -8,22 +8,22 @@ title: QueueConversationVideoEventTopicCobrowse
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **state** | [**StateEnum**](#StateEnum) |  |  [optional] |
-| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum) |  |  [optional] |
-| **id** | **String** |  |  [optional] |
-| **self** | [**QueueConversationVideoEventTopicAddress**](QueueConversationVideoEventTopicAddress.html) |  |  [optional] |
-| **roomId** | **String** |  |  [optional] |
-| **cobrowseSessionId** | **String** |  |  [optional] |
-| **cobrowseRole** | **String** |  |  [optional] |
-| **controlling** | **List&lt;String&gt;** |  |  [optional] |
-| **viewerUrl** | **String** |  |  [optional] |
-| **provider** | **String** |  |  [optional] |
-| **scriptId** | **String** |  |  [optional] |
-| **peerId** | **String** |  |  [optional] |
-| **providerEventTime** | [**Date**](Date.html) |  |  [optional] |
-| **connectedTime** | [**Date**](Date.html) |  |  [optional] |
-| **disconnectedTime** | [**Date**](Date.html) |  |  [optional] |
-| **additionalProperties** | **Object** |  |  [optional] |
+| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
+| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **self** | <!----><!---->[**QueueConversationVideoEventTopicAddress**](QueueConversationVideoEventTopicAddress.html)<!----> |  |  [optional] |
+| **roomId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **cobrowseSessionId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **cobrowseRole** | <!----><!---->**String**<!----> |  |  [optional] |
+| **controlling** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **viewerUrl** | <!----><!---->**String**<!----> |  |  [optional] |
+| **provider** | <!----><!---->**String**<!----> |  |  [optional] |
+| **scriptId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **peerId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **providerEventTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **disconnectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,37 +8,37 @@ title: Document
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **changeNumber** | **Integer** |  |  [optional] |
-| **dateCreated** | [**Date**](Date.html) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **dateModified** | [**Date**](Date.html) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **dateUploaded** | [**Date**](Date.html) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **contentUri** | **String** |  |  [optional] |
-| **workspace** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
-| **createdBy** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
-| **uploadedBy** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
-| **contentType** | **String** |  |  [optional] |
-| **contentLength** | **Long** |  |  [optional] |
-| **systemType** | [**SystemTypeEnum**](#SystemTypeEnum) |  |  [optional] |
-| **filename** | **String** |  |  [optional] |
-| **pageCount** | **Long** |  |  [optional] |
-| **read** | **Boolean** |  |  [optional] |
-| **callerAddress** | **String** |  |  [optional] |
-| **receiverAddress** | **String** |  |  [optional] |
-| **tags** | **List&lt;String&gt;** |  |  [optional] |
-| **tagValues** | [**List&lt;TagValue&gt;**](TagValue.html) |  |  [optional] |
-| **attributes** | [**List&lt;DocumentAttribute&gt;**](DocumentAttribute.html) |  |  [optional] |
-| **thumbnails** | [**List&lt;DocumentThumbnail&gt;**](DocumentThumbnail.html) |  |  [optional] |
-| **uploadStatus** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
-| **uploadDestinationUri** | **String** |  |  [optional] |
-| **uploadMethod** | [**UploadMethodEnum**](#UploadMethodEnum) |  |  [optional] |
-| **lockInfo** | [**LockInfo**](LockInfo.html) |  |  [optional] |
-| **acl** | **List&lt;String&gt;** | A list of permitted action rights for the user making the request |  [optional] |
-| **sharingStatus** | [**SharingStatusEnum**](#SharingStatusEnum) |  |  [optional] |
-| **sharingUri** | **String** |  |  [optional] |
-| **downloadSharingUri** | **String** |  |  [optional] |
-| **selfUri** | **String** | The URI for this object |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **changeNumber** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **dateUploaded** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **contentUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **workspace** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
+| **createdBy** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
+| **uploadedBy** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
+| **contentType** | <!----><!---->**String**<!----> |  |  [optional] |
+| **contentLength** | <!----><!---->**Long**<!----> |  |  [optional] |
+| **systemType** | [**SystemTypeEnum**](#SystemTypeEnum)<!----> |  |  [optional] |
+| **filename** | <!----><!---->**String**<!----> |  |  [optional] |
+| **pageCount** | <!----><!---->**Long**<!----> |  |  [optional] |
+| **read** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **callerAddress** | <!----><!---->**String**<!----> |  |  [optional] |
+| **receiverAddress** | <!----><!---->**String**<!----> |  |  [optional] |
+| **tags** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **tagValues** | <!----><!---->[**List&lt;TagValue&gt;**](TagValue.html)<!----> |  |  [optional] |
+| **attributes** | <!----><!---->[**List&lt;DocumentAttribute&gt;**](DocumentAttribute.html)<!----> |  |  [optional] |
+| **thumbnails** | <!----><!---->[**List&lt;DocumentThumbnail&gt;**](DocumentThumbnail.html)<!----> |  |  [optional] |
+| **uploadStatus** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
+| **uploadDestinationUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **uploadMethod** | [**UploadMethodEnum**](#UploadMethodEnum)<!----> |  |  [optional] |
+| **lockInfo** | <!----><!---->[**LockInfo**](LockInfo.html)<!----> |  |  [optional] |
+| **acl** | <!----><!---->**List&lt;String&gt;**<!----> | A list of permitted action rights for the user making the request |  [optional] |
+| **sharingStatus** | [**SharingStatusEnum**](#SharingStatusEnum)<!----> |  |  [optional] |
+| **sharingUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **downloadSharingUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
 

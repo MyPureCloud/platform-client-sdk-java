@@ -8,42 +8,42 @@ title: ConversationCobrowseEventTopicCobrowseMediaParticipant
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **address** | **String** |  |  [optional] |
-| **startTime** | [**Date**](Date.html) |  |  [optional] |
-| **connectedTime** | [**Date**](Date.html) |  |  [optional] |
-| **endTime** | [**Date**](Date.html) |  |  [optional] |
-| **startHoldTime** | [**Date**](Date.html) |  |  [optional] |
-| **purpose** | **String** |  |  [optional] |
-| **state** | [**StateEnum**](#StateEnum) |  |  [optional] |
-| **direction** | [**DirectionEnum**](#DirectionEnum) |  |  [optional] |
-| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum) |  |  [optional] |
-| **held** | **Boolean** |  |  [optional] |
-| **wrapupRequired** | **Boolean** |  |  [optional] |
-| **wrapupPrompt** | **String** |  |  [optional] |
-| **user** | [**ConversationCobrowseEventTopicUriReference**](ConversationCobrowseEventTopicUriReference.html) |  |  [optional] |
-| **queue** | [**ConversationCobrowseEventTopicUriReference**](ConversationCobrowseEventTopicUriReference.html) |  |  [optional] |
-| **attributes** | **Map&lt;String, String&gt;** |  |  [optional] |
-| **errorInfo** | [**ConversationCobrowseEventTopicErrorBody**](ConversationCobrowseEventTopicErrorBody.html) |  |  [optional] |
-| **script** | [**ConversationCobrowseEventTopicUriReference**](ConversationCobrowseEventTopicUriReference.html) |  |  [optional] |
-| **wrapupTimeoutMs** | **Integer** |  |  [optional] |
-| **wrapupSkipped** | **Boolean** |  |  [optional] |
-| **alertingTimeoutMs** | **Integer** |  |  [optional] |
-| **provider** | **String** |  |  [optional] |
-| **externalContact** | [**ConversationCobrowseEventTopicUriReference**](ConversationCobrowseEventTopicUriReference.html) |  |  [optional] |
-| **externalOrganization** | [**ConversationCobrowseEventTopicUriReference**](ConversationCobrowseEventTopicUriReference.html) |  |  [optional] |
-| **wrapup** | [**ConversationCobrowseEventTopicWrapup**](ConversationCobrowseEventTopicWrapup.html) |  |  [optional] |
-| **conversationRoutingData** | [**ConversationCobrowseEventTopicConversationRoutingData**](ConversationCobrowseEventTopicConversationRoutingData.html) |  |  [optional] |
-| **peer** | **String** |  |  [optional] |
-| **screenRecordingState** | **String** |  |  [optional] |
-| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum) |  |  [optional] |
-| **journeyContext** | [**ConversationCobrowseEventTopicJourneyContext**](ConversationCobrowseEventTopicJourneyContext.html) |  |  [optional] |
-| **cobrowseSessionId** | **String** |  |  [optional] |
-| **cobrowseRole** | **String** |  |  [optional] |
-| **viewerUrl** | **String** |  |  [optional] |
-| **providerEventTime** | [**Date**](Date.html) |  |  [optional] |
-| **controlling** | **List&lt;String&gt;** |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **address** | <!----><!---->**String**<!----> |  |  [optional] |
+| **startTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **endTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **startHoldTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **purpose** | <!----><!---->**String**<!----> |  |  [optional] |
+| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
+| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> |  |  [optional] |
+| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> |  |  [optional] |
+| **held** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **wrapupRequired** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **wrapupPrompt** | <!----><!---->**String**<!----> |  |  [optional] |
+| **user** | <!----><!---->[**ConversationCobrowseEventTopicUriReference**](ConversationCobrowseEventTopicUriReference.html)<!----> |  |  [optional] |
+| **queue** | <!----><!---->[**ConversationCobrowseEventTopicUriReference**](ConversationCobrowseEventTopicUriReference.html)<!----> |  |  [optional] |
+| **attributes** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
+| **errorInfo** | <!----><!---->[**ConversationCobrowseEventTopicErrorBody**](ConversationCobrowseEventTopicErrorBody.html)<!----> |  |  [optional] |
+| **script** | <!----><!---->[**ConversationCobrowseEventTopicUriReference**](ConversationCobrowseEventTopicUriReference.html)<!----> |  |  [optional] |
+| **wrapupTimeoutMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **wrapupSkipped** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **alertingTimeoutMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **provider** | <!----><!---->**String**<!----> |  |  [optional] |
+| **externalContact** | <!----><!---->[**ConversationCobrowseEventTopicUriReference**](ConversationCobrowseEventTopicUriReference.html)<!----> |  |  [optional] |
+| **externalOrganization** | <!----><!---->[**ConversationCobrowseEventTopicUriReference**](ConversationCobrowseEventTopicUriReference.html)<!----> |  |  [optional] |
+| **wrapup** | <!----><!---->[**ConversationCobrowseEventTopicWrapup**](ConversationCobrowseEventTopicWrapup.html)<!----> |  |  [optional] |
+| **conversationRoutingData** | <!----><!---->[**ConversationCobrowseEventTopicConversationRoutingData**](ConversationCobrowseEventTopicConversationRoutingData.html)<!----> |  |  [optional] |
+| **peer** | <!----><!---->**String**<!----> |  |  [optional] |
+| **screenRecordingState** | <!----><!---->**String**<!----> |  |  [optional] |
+| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum)<!----> |  |  [optional] |
+| **journeyContext** | <!----><!---->[**ConversationCobrowseEventTopicJourneyContext**](ConversationCobrowseEventTopicJourneyContext.html)<!----> |  |  [optional] |
+| **cobrowseSessionId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **cobrowseRole** | <!----><!---->**String**<!----> |  |  [optional] |
+| **viewerUrl** | <!----><!---->**String**<!----> |  |  [optional] |
+| **providerEventTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **controlling** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

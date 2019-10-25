@@ -8,12 +8,12 @@ title: EvaluationScoringSet
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **totalScore** | **Float** |  |  [optional] |
-| **totalCriticalScore** | **Float** |  |  [optional] |
-| **questionGroupScores** | [**List&lt;EvaluationQuestionGroupScore&gt;**](EvaluationQuestionGroupScore.html) |  |  [optional] |
-| **anyFailedKillQuestions** | **Boolean** |  |  [optional] |
-| **comments** | **String** |  |  [optional] |
-| **agentComments** | **String** |  |  [optional] |
+| **totalScore** | <!----><!---->**Float**<!----> |  |  [optional] |
+| **totalCriticalScore** | <!----><!---->**Float**<!----> |  |  [optional] |
+| **questionGroupScores** | <!----><!---->[**List&lt;EvaluationQuestionGroupScore&gt;**](EvaluationQuestionGroupScore.html)<!----> |  |  [optional] |
+| **anyFailedKillQuestions** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **comments** | <!----><!---->**String**<!----> |  |  [optional] |
+| **agentComments** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

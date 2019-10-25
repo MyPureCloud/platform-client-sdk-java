@@ -8,10 +8,10 @@ title: ContentFilterItem
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | **String** |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
-| **operator** | [**OperatorEnum**](#OperatorEnum) |  |  [optional] |
-| **values** | **List&lt;String&gt;** |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
+| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> |  |  [optional] |
+| **values** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

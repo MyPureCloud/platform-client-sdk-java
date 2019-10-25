@@ -8,12 +8,12 @@ title: QueueConversationMessageEventTopicMessageDetails
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **message** | [**QueueConversationMessageEventTopicUriReference**](QueueConversationMessageEventTopicUriReference.html) |  |  [optional] |
-| **messageTime** | [**Date**](Date.html) |  |  [optional] |
-| **messageSegmentCount** | **Integer** |  |  [optional] |
-| **messageStatus** | [**MessageStatusEnum**](#MessageStatusEnum) |  |  [optional] |
-| **media** | [**List&lt;QueueConversationMessageEventTopicMessageMedia&gt;**](QueueConversationMessageEventTopicMessageMedia.html) |  |  [optional] |
-| **stickers** | [**List&lt;QueueConversationMessageEventTopicMessageSticker&gt;**](QueueConversationMessageEventTopicMessageSticker.html) |  |  [optional] |
+| **message** | <!----><!---->[**QueueConversationMessageEventTopicUriReference**](QueueConversationMessageEventTopicUriReference.html)<!----> |  |  [optional] |
+| **messageTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **messageSegmentCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **messageStatus** | [**MessageStatusEnum**](#MessageStatusEnum)<!----> |  |  [optional] |
+| **media** | <!----><!---->[**List&lt;QueueConversationMessageEventTopicMessageMedia&gt;**](QueueConversationMessageEventTopicMessageMedia.html)<!----> |  |  [optional] |
+| **stickers** | <!----><!---->[**List&lt;QueueConversationMessageEventTopicMessageSticker&gt;**](QueueConversationMessageEventTopicMessageSticker.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

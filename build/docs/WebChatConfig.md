@@ -8,7 +8,7 @@ title: WebChatConfig
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **webChatSkin** | [**WebChatSkinEnum**](#WebChatSkinEnum) | css class to be applied to the web chat widget. |  [optional] |
+| **webChatSkin** | [**WebChatSkinEnum**](#WebChatSkinEnum)<!----> | css class to be applied to the web chat widget. |  [optional] |
 {: class="table table-striped"}
 
 

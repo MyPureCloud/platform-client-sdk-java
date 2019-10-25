@@ -8,8 +8,8 @@ title: WfmIntradayDataUpdateTopicIntradayScheduleData
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **onQueueTimeSeconds** | **Integer** |  |  [optional] |
-| **scheduledTimeSeconds** | **Integer** |  |  [optional] |
+| **onQueueTimeSeconds** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **scheduledTimeSeconds** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,8 +8,8 @@ title: IntradayMetric
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **category** | [**CategoryEnum**](#CategoryEnum) | The metric category |  [optional] |
-| **version** | **String** | The current version id for this metric category |  [optional] |
+| **category** | [**CategoryEnum**](#CategoryEnum)<!----> | The metric category |  [optional] |
+| **version** | <!----><!---->**String**<!----> | The current version id for this metric category |  [optional] |
 {: class="table table-striped"}
 
 

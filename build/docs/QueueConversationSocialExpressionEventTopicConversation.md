@@ -8,11 +8,11 @@ title: QueueConversationSocialExpressionEventTopicConversation
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **maxParticipants** | **Integer** |  |  [optional] |
-| **participants** | [**List&lt;QueueConversationSocialExpressionEventTopicParticipant&gt;**](QueueConversationSocialExpressionEventTopicParticipant.html) |  |  [optional] |
-| **recordingState** | **String** |  |  [optional] |
-| **address** | **String** |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **maxParticipants** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **participants** | <!----><!---->[**List&lt;QueueConversationSocialExpressionEventTopicParticipant&gt;**](QueueConversationSocialExpressionEventTopicParticipant.html)<!----> |  |  [optional] |
+| **recordingState** | <!----><!---->**String**<!----> |  |  [optional] |
+| **address** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

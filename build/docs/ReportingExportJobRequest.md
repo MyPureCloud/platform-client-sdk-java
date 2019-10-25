@@ -8,17 +8,17 @@ title: ReportingExportJobRequest
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | **String** | The user supplied name of the export request |  |
-| **timeZone** | [**TimeZone**](TimeZone.html) | The requested timezone of the exported data |  |
-| **exportFormat** | [**ExportFormatEnum**](#ExportFormatEnum) | The requested format of the exported data |  |
-| **interval** | **String** | The time period used to limit the the exported data. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss |  [optional] |
-| **period** | **String** | The Period of the request in which to break down the intervals. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H |  [optional] |
-| **viewType** | [**ViewTypeEnum**](#ViewTypeEnum) | The type of view export job to be created |  |
-| **filter** | [**ViewFilter**](ViewFilter.html) | Filters to apply to create the view |  |
-| **read** | **Boolean** | Indicates if the request has been marked as read |  [optional] |
-| **locale** | **String** | The locale use for localization of the exported data, i.e. en-us, es-mx   |  |
-| **hasFormatDurations** | **Boolean** | Indicates if durations are formatted in hh:mm:ss format instead of ms |  [optional] |
-| **hasSplitFilters** | **Boolean** | Indicates if filters will be split in aggregate detail exports |  [optional] |
+| **name** | <!----><!---->**String**<!----> | The user supplied name of the export request |  |
+| **timeZone** | <!----><!---->[**TimeZone**](TimeZone.html)<!----> | The requested timezone of the exported data |  |
+| **exportFormat** | [**ExportFormatEnum**](#ExportFormatEnum)<!----> | The requested format of the exported data |  |
+| **interval** | <!----><!---->**String**<!----> | The time period used to limit the the exported data. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss |  [optional] |
+| **period** | <!----><!---->**String**<!----> | The Period of the request in which to break down the intervals. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H |  [optional] |
+| **viewType** | [**ViewTypeEnum**](#ViewTypeEnum)<!----> | The type of view export job to be created |  |
+| **filter** | <!----><!---->[**ViewFilter**](ViewFilter.html)<!----> | Filters to apply to create the view |  |
+| **read** | <!----><!---->**Boolean**<!----> | Indicates if the request has been marked as read |  [optional] |
+| **locale** | <!----><!---->**String**<!----> | The locale use for localization of the exported data, i.e. en-us, es-mx   |  |
+| **hasFormatDurations** | <!----><!---->**Boolean**<!----> | Indicates if durations are formatted in hh:mm:ss format instead of ms |  [optional] |
+| **hasSplitFilters** | <!----><!---->**Boolean**<!----> | Indicates if filters will be split in aggregate detail exports |  [optional] |
 {: class="table table-striped"}
 
 

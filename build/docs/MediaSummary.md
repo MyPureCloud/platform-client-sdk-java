@@ -8,8 +8,8 @@ title: MediaSummary
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **contactCenter** | [**MediaSummaryDetail**](MediaSummaryDetail.html) |  |  [optional] |
-| **enterprise** | [**MediaSummaryDetail**](MediaSummaryDetail.html) |  |  [optional] |
+| **contactCenter** | <!----><!---->[**MediaSummaryDetail**](MediaSummaryDetail.html)<!----> |  |  [optional] |
+| **enterprise** | <!----><!---->[**MediaSummaryDetail**](MediaSummaryDetail.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

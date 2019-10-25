@@ -8,7 +8,7 @@ title: EdgeLogsJobUploadRequest
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **fileIds** | **List&lt;String&gt;** | A list of file ids to upload. |  |
+| **fileIds** | <!----><!---->**List&lt;String&gt;**<!----> | A list of file ids to upload. |  |
 {: class="table table-striped"}
 
 

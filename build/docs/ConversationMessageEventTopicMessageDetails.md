@@ -8,12 +8,12 @@ title: ConversationMessageEventTopicMessageDetails
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **message** | [**ConversationMessageEventTopicUriReference**](ConversationMessageEventTopicUriReference.html) |  |  [optional] |
-| **messageTime** | [**Date**](Date.html) |  |  [optional] |
-| **messageSegmentCount** | **Integer** |  |  [optional] |
-| **messageStatus** | [**MessageStatusEnum**](#MessageStatusEnum) |  |  [optional] |
-| **media** | [**List&lt;ConversationMessageEventTopicMessageMedia&gt;**](ConversationMessageEventTopicMessageMedia.html) |  |  [optional] |
-| **stickers** | [**List&lt;ConversationMessageEventTopicMessageSticker&gt;**](ConversationMessageEventTopicMessageSticker.html) |  |  [optional] |
+| **message** | <!----><!---->[**ConversationMessageEventTopicUriReference**](ConversationMessageEventTopicUriReference.html)<!----> |  |  [optional] |
+| **messageTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **messageSegmentCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **messageStatus** | [**MessageStatusEnum**](#MessageStatusEnum)<!----> |  |  [optional] |
+| **media** | <!----><!---->[**List&lt;ConversationMessageEventTopicMessageMedia&gt;**](ConversationMessageEventTopicMessageMedia.html)<!----> |  |  [optional] |
+| **stickers** | <!----><!---->[**List&lt;ConversationMessageEventTopicMessageSticker&gt;**](ConversationMessageEventTopicMessageSticker.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

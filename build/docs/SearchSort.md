@@ -8,8 +8,8 @@ title: SearchSort
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **sortOrder** | [**SortOrderEnum**](#SortOrderEnum) | The sort order for results |  [optional] |
-| **sortBy** | **String** | The field in the resource that you want to sort the results by |  [optional] |
+| **sortOrder** | [**SortOrderEnum**](#SortOrderEnum)<!----> | The sort order for results |  [optional] |
+| **sortBy** | <!----><!---->**String**<!----> | The field in the resource that you want to sort the results by |  [optional] |
 {: class="table table-striped"}
 
 

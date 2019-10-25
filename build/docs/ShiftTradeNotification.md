@@ -8,14 +8,14 @@ title: ShiftTradeNotification
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **weekDate** | **String** | The start date of the schedule with which this trade is associated |  [optional] |
-| **tradeId** | **String** | The ID of the shift trade |  [optional] |
-| **oneSided** | **Boolean** | Whether this is a one sided shift trade |  [optional] |
-| **newState** | [**NewStateEnum**](#NewStateEnum) | The new state of the shift trade, null if there was no change |  [optional] |
-| **initiatingUser** | [**UserReference**](UserReference.html) | The user who initiated the shift trade |  [optional] |
-| **initiatingShiftDate** | [**Date**](Date.html) | The start date and time of the initiating shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **receivingUser** | [**UserReference**](UserReference.html) | The user on the receiving side of this shift trade (null if not matched) |  [optional] |
-| **receivingShiftDate** | [**Date**](Date.html) | The start date and time of the receiving shift (null if not matched or if one-sided. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **weekDate** | <!----><!---->**String**<!----> | The start date of the schedule with which this trade is associated |  [optional] |
+| **tradeId** | <!----><!---->**String**<!----> | The ID of the shift trade |  [optional] |
+| **oneSided** | <!----><!---->**Boolean**<!----> | Whether this is a one sided shift trade |  [optional] |
+| **newState** | [**NewStateEnum**](#NewStateEnum)<!----> | The new state of the shift trade, null if there was no change |  [optional] |
+| **initiatingUser** | <!----><!---->[**UserReference**](UserReference.html)<!----> | The user who initiated the shift trade |  [optional] |
+| **initiatingShiftDate** | <!----><!---->[**Date**](Date.html)<!----> | The start date and time of the initiating shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **receivingUser** | <!----><!---->[**UserReference**](UserReference.html)<!----> | The user on the receiving side of this shift trade (null if not matched) |  [optional] |
+| **receivingShiftDate** | <!----><!---->[**Date**](Date.html)<!----> | The start date and time of the receiving shift (null if not matched or if one-sided. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 {: class="table table-striped"}
 
 

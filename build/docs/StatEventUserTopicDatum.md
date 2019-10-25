@@ -8,8 +8,8 @@ title: StatEventUserTopicDatum
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **interval** | **String** |  |  [optional] |
-| **metrics** | [**List&lt;StatEventUserTopicMetric&gt;**](StatEventUserTopicMetric.html) |  |  [optional] |
+| **interval** | <!----><!---->**String**<!----> |  |  [optional] |
+| **metrics** | <!----><!---->[**List&lt;StatEventUserTopicMetric&gt;**](StatEventUserTopicMetric.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

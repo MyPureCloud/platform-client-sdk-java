@@ -8,7 +8,7 @@ title: UpdateNotificationsRequest
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | [**List&lt;WfmUserNotification&gt;**](WfmUserNotification.html) | The notifications to update |  |
+| **entities** | <!----><!---->[**List&lt;WfmUserNotification&gt;**](WfmUserNotification.html)<!----> | The notifications to update |  |
 {: class="table table-striped"}
 
 

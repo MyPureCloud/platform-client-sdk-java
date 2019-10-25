@@ -8,7 +8,7 @@ title: SMSAvailablePhoneNumberEntityListing
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | [**List&lt;SmsAvailablePhoneNumber&gt;**](SmsAvailablePhoneNumber.html) |  |  [optional] |
+| **entities** | <!----><!---->[**List&lt;SmsAvailablePhoneNumber&gt;**](SmsAvailablePhoneNumber.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,8 +8,8 @@ title: ChannelTopic
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **selfUri** | **String** | The URI for this object |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
 

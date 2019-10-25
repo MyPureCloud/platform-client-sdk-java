@@ -8,9 +8,9 @@ title: QueueConversationSocialExpressionEventTopicDisconnectReason
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
-| **code** | **Integer** |  |  [optional] |
-| **phrase** | **String** |  |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
+| **code** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **phrase** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

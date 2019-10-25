@@ -8,8 +8,8 @@ title: QueueConversationChatEventTopicScoredAgent
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **agent** | [**QueueConversationChatEventTopicUriReference**](QueueConversationChatEventTopicUriReference.html) |  |  [optional] |
-| **score** | **Integer** |  |  [optional] |
+| **agent** | <!----><!---->[**QueueConversationChatEventTopicUriReference**](QueueConversationChatEventTopicUriReference.html)<!----> |  |  [optional] |
+| **score** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

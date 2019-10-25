@@ -8,8 +8,8 @@ title: StatEventQueueTopicStatsNotification
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **group** | **Map&lt;String, String&gt;** |  |  [optional] |
-| **data** | [**List&lt;StatEventQueueTopicDatum&gt;**](StatEventQueueTopicDatum.html) |  |  [optional] |
+| **group** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
+| **data** | <!----><!---->[**List&lt;StatEventQueueTopicDatum&gt;**](StatEventQueueTopicDatum.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

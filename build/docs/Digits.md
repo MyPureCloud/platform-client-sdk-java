@@ -8,7 +8,7 @@ title: Digits
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **digits** | **String** | A string representing the digits pressed on phone. |  [optional] |
+| **digits** | <!----><!---->**String**<!----> | A string representing the digits pressed on phone. |  [optional] |
 {: class="table table-striped"}
 
 

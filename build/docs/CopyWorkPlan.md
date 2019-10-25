@@ -8,7 +8,7 @@ title: CopyWorkPlan
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | **String** | Name of the copied work plan |  |
+| **name** | <!----><!---->**String**<!----> | Name of the copied work plan |  |
 {: class="table table-striped"}
 
 

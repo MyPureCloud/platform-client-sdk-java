@@ -8,9 +8,9 @@ title: UserRoutingStatusUserParam
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **key** | **String** |  |  [optional] |
-| **value** | **String** |  |  [optional] |
-| **additionalProperties** | **Object** |  |  [optional] |
+| **key** | <!----><!---->**String**<!----> |  |  [optional] |
+| **value** | <!----><!---->**String**<!----> |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

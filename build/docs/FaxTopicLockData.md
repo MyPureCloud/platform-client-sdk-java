@@ -8,9 +8,9 @@ title: FaxTopicLockData
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **lockedBy** | [**FaxTopicUserData**](FaxTopicUserData.html) |  |  [optional] |
-| **dateCreated** | [**Date**](Date.html) |  |  [optional] |
-| **dateExpires** | [**Date**](Date.html) |  |  [optional] |
+| **lockedBy** | <!----><!---->[**FaxTopicUserData**](FaxTopicUserData.html)<!----> |  |  [optional] |
+| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **dateExpires** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,9 +8,9 @@ title: ShortTermForecastResponse
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **status** | [**StatusEnum**](#StatusEnum) | The status of the request |  [optional] |
-| **result** | [**ShortTermForecast**](ShortTermForecast.html) | The resulting forecast.  May be sent asynchronously via notification depending on the complexity of the forecast |  [optional] |
-| **operationId** | **String** | The operation id to watch for on the notification topic |  [optional] |
+| **status** | [**StatusEnum**](#StatusEnum)<!----> | The status of the request |  [optional] |
+| **result** | <!----><!---->[**ShortTermForecast**](ShortTermForecast.html)<!----> | The resulting forecast.  May be sent asynchronously via notification depending on the complexity of the forecast |  [optional] |
+| **operationId** | <!----><!---->**String**<!----> | The operation id to watch for on the notification topic |  [optional] |
 {: class="table table-striped"}
 
 

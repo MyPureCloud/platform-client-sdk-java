@@ -8,18 +8,18 @@ title: ConversationEventTopicScreenshare
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **state** | [**StateEnum**](#StateEnum) |  |  [optional] |
-| **self** | [**ConversationEventTopicAddress**](ConversationEventTopicAddress.html) |  |  [optional] |
-| **id** | **String** |  |  [optional] |
-| **context** | **String** |  |  [optional] |
-| **sharing** | **Boolean** |  |  [optional] |
-| **provider** | **String** |  |  [optional] |
-| **scriptId** | **String** |  |  [optional] |
-| **peerId** | **String** |  |  [optional] |
-| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum) |  |  [optional] |
-| **connectedTime** | [**Date**](Date.html) |  |  [optional] |
-| **disconnectedTime** | [**Date**](Date.html) |  |  [optional] |
-| **additionalProperties** | **Object** |  |  [optional] |
+| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
+| **self** | <!----><!---->[**ConversationEventTopicAddress**](ConversationEventTopicAddress.html)<!----> |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **context** | <!----><!---->**String**<!----> |  |  [optional] |
+| **sharing** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **provider** | <!----><!---->**String**<!----> |  |  [optional] |
+| **scriptId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **peerId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> |  |  [optional] |
+| **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **disconnectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

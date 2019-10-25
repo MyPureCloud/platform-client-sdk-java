@@ -8,23 +8,23 @@ title: InteractionStatsAlert
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
-| **name** | **String** | Name of the rule that generated the alert |  |
-| **dimension** | [**DimensionEnum**](#DimensionEnum) | The dimension of concern. |  |
-| **dimensionValue** | **String** | The value of the dimension. |  |
-| **metric** | [**MetricEnum**](#MetricEnum) | The metric to be assessed. |  |
-| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum) | The media type. |  |
-| **numericRange** | [**NumericRangeEnum**](#NumericRangeEnum) | The comparison descriptor used against the metric&#39;s value. |  |
-| **statistic** | [**StatisticEnum**](#StatisticEnum) | The statistic of concern for the metric. |  |
-| **value** | **Double** | The threshold value. |  |
-| **ruleId** | **String** | The id of the rule. |  |
-| **unread** | **Boolean** | Indicates if the alert has been read. |  |
-| **startDate** | [**Date**](Date.html) | The date/time the alert was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  |
-| **endDate** | [**Date**](Date.html) | The date/time the owning rule exiting in alarm status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **notificationUsers** | [**List&lt;User&gt;**](User.html) | The ids of users who were notified of alarm state change. |  |
-| **alertTypes** | **List&lt;String&gt;** | A collection of notification methods. |  |
-| **ruleUri** | **String** |  |  [optional] |
-| **selfUri** | **String** | The URI for this object |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
+| **name** | <!----><!---->**String**<!----> | Name of the rule that generated the alert |  |
+| **dimension** | [**DimensionEnum**](#DimensionEnum)<!----> | The dimension of concern. |  |
+| **dimensionValue** | <!----><!---->**String**<!----> | The value of the dimension. |  |
+| **metric** | [**MetricEnum**](#MetricEnum)<!----> | The metric to be assessed. |  |
+| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> | The media type. |  |
+| **numericRange** | [**NumericRangeEnum**](#NumericRangeEnum)<!----> | The comparison descriptor used against the metric&#39;s value. |  |
+| **statistic** | [**StatisticEnum**](#StatisticEnum)<!----> | The statistic of concern for the metric. |  |
+| **value** | <!----><!---->**Double**<!----> | The threshold value. |  |
+| **ruleId** | <!----><!---->**String**<!----> | The id of the rule. |  |
+| **unread** | <!----><!---->**Boolean**<!----> | Indicates if the alert has been read. |  |
+| **startDate** | <!----><!---->[**Date**](Date.html)<!----> | The date/time the alert was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  |
+| **endDate** | <!----><!---->[**Date**](Date.html)<!----> | The date/time the owning rule exiting in alarm status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **notificationUsers** | <!----><!---->[**List&lt;User&gt;**](User.html)<!----> | The ids of users who were notified of alarm state change. |  |
+| **alertTypes** | <!---->[**List&lt;AlertTypesEnum&gt;**](#AlertTypesEnum)<!----> | A collection of notification methods. |  |
+| **ruleUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
 
@@ -102,6 +102,18 @@ title: InteractionStatsAlert
 | MIN | &quot;min&quot; |
 | RATIO | &quot;ratio&quot; |
 | MAX | &quot;max&quot; |
+{: class="table table-striped"}
+
+
+<a name="AlertTypesEnum"></a>
+
+## Enum: AlertTypesEnum
+
+| Name | Value |
+| ---- | ----- |
+| SMS | &quot;SMS&quot; |
+| DEVICE | &quot;DEVICE&quot; |
+| EMAIL | &quot;EMAIL&quot; |
 {: class="table table-striped"}
 
 

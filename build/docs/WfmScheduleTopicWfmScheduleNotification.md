@@ -8,11 +8,11 @@ title: WfmScheduleTopicWfmScheduleNotification
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
-| **operationId** | **String** |  |  [optional] |
-| **downloadUrl** | **String** |  |  [optional] |
-| **percentComplete** | **Integer** |  |  [optional] |
-| **eventType** | [**EventTypeEnum**](#EventTypeEnum) |  |  [optional] |
+| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
+| **operationId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **downloadUrl** | <!----><!---->**String**<!----> |  |  [optional] |
+| **percentComplete** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **eventType** | [**EventTypeEnum**](#EventTypeEnum)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,9 +8,9 @@ title: ResponseFilter
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | **String** | Field to filter on. Allowed values are &#39;name&#39; and &#39;libraryId. |  |
-| **operator** | [**OperatorEnum**](#OperatorEnum) | Filter operation: IN, EQUALS, NOTEQUALS. |  |
-| **values** | **List&lt;String&gt;** | Values to filter on. |  |
+| **name** | <!----><!---->**String**<!----> | Field to filter on. Allowed values are &#39;name&#39; and &#39;libraryId. |  |
+| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | Filter operation: IN, EQUALS, NOTEQUALS. |  |
+| **values** | <!----><!---->**List&lt;String&gt;**<!----> | Values to filter on. |  |
 {: class="table table-striped"}
 
 

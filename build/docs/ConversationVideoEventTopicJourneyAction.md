@@ -8,8 +8,8 @@ title: ConversationVideoEventTopicJourneyAction
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **actionMap** | [**ConversationVideoEventTopicJourneyActionMap**](ConversationVideoEventTopicJourneyActionMap.html) |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **actionMap** | <!----><!---->[**ConversationVideoEventTopicJourneyActionMap**](ConversationVideoEventTopicJourneyActionMap.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

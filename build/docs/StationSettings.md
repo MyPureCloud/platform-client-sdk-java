@@ -8,7 +8,7 @@ title: StationSettings
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **freeSeatingConfiguration** | [**FreeSeatingConfiguration**](FreeSeatingConfiguration.html) | Configuration options for free-seating |  [optional] |
+| **freeSeatingConfiguration** | <!----><!---->[**FreeSeatingConfiguration**](FreeSeatingConfiguration.html)<!----> | Configuration options for free-seating |  [optional] |
 {: class="table table-striped"}
 
 

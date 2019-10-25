@@ -8,23 +8,23 @@ title: DialerRulesetConfigChangeCondition
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | **String** |  |  [optional] |
-| **inverted** | **Boolean** |  |  [optional] |
-| **attributeName** | **String** |  |  [optional] |
-| **value** | **String** |  |  [optional] |
-| **valueType** | [**ValueTypeEnum**](#ValueTypeEnum) |  |  [optional] |
-| **operator** | [**OperatorEnum**](#OperatorEnum) |  |  [optional] |
-| **codes** | **List&lt;String&gt;** |  |  [optional] |
-| **propertyType** | [**PropertyTypeEnum**](#PropertyTypeEnum) |  |  [optional] |
-| **property** | **String** |  |  [optional] |
-| **dataNotFoundResolution** | **Boolean** |  |  [optional] |
-| **contactIdField** | **String** |  |  [optional] |
-| **callAnalysisResultField** | **String** |  |  [optional] |
-| **agentWrapupField** | **String** |  |  [optional] |
-| **contactColumnToDataActionFieldMappings** | [**List&lt;DialerRulesetConfigChangeContactColumnToDataActionFieldMapping&gt;**](DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.html) |  |  [optional] |
-| **predicates** | [**List&lt;DialerRulesetConfigChangeDataActionConditionPredicate&gt;**](DialerRulesetConfigChangeDataActionConditionPredicate.html) |  |  [optional] |
-| **dataAction** | [**DialerRulesetConfigChangeUriReference**](DialerRulesetConfigChangeUriReference.html) |  |  [optional] |
-| **additionalProperties** | **Object** |  |  [optional] |
+| **type** | <!----><!---->**String**<!----> |  |  [optional] |
+| **inverted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **attributeName** | <!----><!---->**String**<!----> |  |  [optional] |
+| **value** | <!----><!---->**String**<!----> |  |  [optional] |
+| **valueType** | [**ValueTypeEnum**](#ValueTypeEnum)<!----> |  |  [optional] |
+| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> |  |  [optional] |
+| **codes** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **propertyType** | [**PropertyTypeEnum**](#PropertyTypeEnum)<!----> |  |  [optional] |
+| **property** | <!----><!---->**String**<!----> |  |  [optional] |
+| **dataNotFoundResolution** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **contactIdField** | <!----><!---->**String**<!----> |  |  [optional] |
+| **callAnalysisResultField** | <!----><!---->**String**<!----> |  |  [optional] |
+| **agentWrapupField** | <!----><!---->**String**<!----> |  |  [optional] |
+| **contactColumnToDataActionFieldMappings** | <!----><!---->[**List&lt;DialerRulesetConfigChangeContactColumnToDataActionFieldMapping&gt;**](DialerRulesetConfigChangeContactColumnToDataActionFieldMapping.html)<!----> |  |  [optional] |
+| **predicates** | <!----><!---->[**List&lt;DialerRulesetConfigChangeDataActionConditionPredicate&gt;**](DialerRulesetConfigChangeDataActionConditionPredicate.html)<!----> |  |  [optional] |
+| **dataAction** | <!----><!---->[**DialerRulesetConfigChangeUriReference**](DialerRulesetConfigChangeUriReference.html)<!----> |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,8 +8,8 @@ title: QueueConversationCallbackEventTopicVoicemail
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **uploadStatus** | [**UploadStatusEnum**](#UploadStatusEnum) |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **uploadStatus** | [**UploadStatusEnum**](#UploadStatusEnum)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

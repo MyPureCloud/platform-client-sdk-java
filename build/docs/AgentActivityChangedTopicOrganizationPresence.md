@@ -8,8 +8,8 @@ title: AgentActivityChangedTopicOrganizationPresence
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **systemPresence** | **String** |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **systemPresence** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

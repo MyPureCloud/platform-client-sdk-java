@@ -8,7 +8,7 @@ title: ArchitectPromptNotificationErrorMessageParams
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **additionalProperties** | **Map&lt;String, String&gt;** |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

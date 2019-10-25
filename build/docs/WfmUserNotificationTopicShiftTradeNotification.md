@@ -8,14 +8,14 @@ title: WfmUserNotificationTopicShiftTradeNotification
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **weekDate** | **String** |  |  [optional] |
-| **tradeId** | **String** |  |  [optional] |
-| **oneSided** | **Boolean** |  |  [optional] |
-| **newState** | [**NewStateEnum**](#NewStateEnum) |  |  [optional] |
-| **initiatingUser** | [**WfmUserNotificationTopicUserReference**](WfmUserNotificationTopicUserReference.html) |  |  [optional] |
-| **initiatingShiftDate** | [**Date**](Date.html) |  |  [optional] |
-| **receivingUser** | [**WfmUserNotificationTopicUserReference**](WfmUserNotificationTopicUserReference.html) |  |  [optional] |
-| **receivingShiftDate** | [**Date**](Date.html) |  |  [optional] |
+| **weekDate** | <!----><!---->**String**<!----> |  |  [optional] |
+| **tradeId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **oneSided** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **newState** | [**NewStateEnum**](#NewStateEnum)<!----> |  |  [optional] |
+| **initiatingUser** | <!----><!---->[**WfmUserNotificationTopicUserReference**](WfmUserNotificationTopicUserReference.html)<!----> |  |  [optional] |
+| **initiatingShiftDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **receivingUser** | <!----><!---->[**WfmUserNotificationTopicUserReference**](WfmUserNotificationTopicUserReference.html)<!----> |  |  [optional] |
+| **receivingShiftDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

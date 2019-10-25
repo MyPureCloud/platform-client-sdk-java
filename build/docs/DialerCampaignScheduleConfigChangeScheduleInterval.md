@@ -8,9 +8,9 @@ title: DialerCampaignScheduleConfigChangeScheduleInterval
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **start** | **String** |  |  [optional] |
-| **end** | **String** |  |  [optional] |
-| **additionalProperties** | **Object** |  |  [optional] |
+| **start** | <!----><!---->**String**<!----> |  |  [optional] |
+| **end** | <!----><!---->**String**<!----> |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

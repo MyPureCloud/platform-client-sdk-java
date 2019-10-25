@@ -8,8 +8,8 @@ title: WfmMoveManagementUnitTopicMoveManagementUnitNotification
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **businessUnit** | [**WfmMoveManagementUnitTopicBusinessUnit**](WfmMoveManagementUnitTopicBusinessUnit.html) |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
+| **businessUnit** | <!----><!---->[**WfmMoveManagementUnitTopicBusinessUnit**](WfmMoveManagementUnitTopicBusinessUnit.html)<!----> |  |  [optional] |
+| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

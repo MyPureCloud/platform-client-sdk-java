@@ -8,9 +8,9 @@ title: ArchitectDependencyTrackingBuildNotificationUser
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **homeOrg** | [**ArchitectDependencyTrackingBuildNotificationHomeOrganization**](ArchitectDependencyTrackingBuildNotificationHomeOrganization.html) |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **homeOrg** | <!----><!---->[**ArchitectDependencyTrackingBuildNotificationHomeOrganization**](ArchitectDependencyTrackingBuildNotificationHomeOrganization.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

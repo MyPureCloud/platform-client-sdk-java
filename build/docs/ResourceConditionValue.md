@@ -8,8 +8,8 @@ title: ResourceConditionValue
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
-| **value** | **String** |  |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
+| **value** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,16 +8,16 @@ title: DependencyStatus
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **user** | [**User**](User.html) | User that initiated the build. |  [optional] |
-| **client** | [**DomainEntityRef**](DomainEntityRef.html) | OAuth client that initiated the build. |  [optional] |
-| **buildId** | **String** |  |  [optional] |
-| **dateStarted** | [**Date**](Date.html) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **dateCompleted** | [**Date**](Date.html) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
-| **failedObjects** | [**List&lt;FailedObject&gt;**](FailedObject.html) |  |  [optional] |
-| **selfUri** | **String** | The URI for this object |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **user** | <!----><!---->[**User**](User.html)<!----> | User that initiated the build. |  [optional] |
+| **client** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | OAuth client that initiated the build. |  [optional] |
+| **buildId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **dateStarted** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **dateCompleted** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
+| **failedObjects** | <!----><!---->[**List&lt;FailedObject&gt;**](FailedObject.html)<!----> |  |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
 

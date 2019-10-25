@@ -1,0 +1,99 @@
+package com.mypurecloud.sdk.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
+
+import java.io.Serializable;
+/**
+ * PlanningPeriodSettings
+ */
+
+public class PlanningPeriodSettings  implements Serializable {
+  
+  private Integer weekCount = null;
+  private Date startDate = null;
+
+  
+  /**
+   * Planning period length in weeks
+   **/
+  public PlanningPeriodSettings weekCount(Integer weekCount) {
+    this.weekCount = weekCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Planning period length in weeks")
+  @JsonProperty("weekCount")
+  public Integer getWeekCount() {
+    return weekCount;
+  }
+  public void setWeekCount(Integer weekCount) {
+    this.weekCount = weekCount;
+  }
+
+  
+  /**
+   * Start date of the planning period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public PlanningPeriodSettings startDate(Date startDate) {
+    this.startDate = startDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Start date of the planning period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("startDate")
+  public Date getStartDate() {
+    return startDate;
+  }
+  public void setStartDate(Date startDate) {
+    this.startDate = startDate;
+  }
+
+  
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    PlanningPeriodSettings planningPeriodSettings = (PlanningPeriodSettings) o;
+    return Objects.equals(this.weekCount, planningPeriodSettings.weekCount) &&
+        Objects.equals(this.startDate, planningPeriodSettings.startDate);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(weekCount, startDate);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class PlanningPeriodSettings {\n");
+    
+    sb.append("    weekCount: ").append(toIndentedString(weekCount)).append("\n");
+    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+

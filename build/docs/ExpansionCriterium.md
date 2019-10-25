@@ -8,8 +8,8 @@ title: ExpansionCriterium
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
-| **threshold** | **Double** |  |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
+| **threshold** | <!----><!---->**Double**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,8 +8,8 @@ title: CreateShareRequestMember
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **memberType** | [**MemberTypeEnum**](#MemberTypeEnum) |  |  [optional] |
-| **member** | [**MemberEntity**](MemberEntity.html) |  |  [optional] |
+| **memberType** | [**MemberTypeEnum**](#MemberTypeEnum)<!----> |  |  [optional] |
+| **member** | <!----><!---->[**MemberEntity**](MemberEntity.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

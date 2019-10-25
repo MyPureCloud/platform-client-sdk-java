@@ -8,9 +8,9 @@ title: UsageItem
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
-| **totalDocumentByteCount** | **Long** |  |  [optional] |
-| **totalDocumentCount** | **Long** |  |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
+| **totalDocumentByteCount** | <!----><!---->**Long**<!----> |  |  [optional] |
+| **totalDocumentCount** | <!----><!---->**Long**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

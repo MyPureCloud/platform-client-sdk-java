@@ -8,9 +8,9 @@ title: ConversationCallbackEventTopicJourneyContext
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **customer** | [**ConversationCallbackEventTopicJourneyCustomer**](ConversationCallbackEventTopicJourneyCustomer.html) |  |  [optional] |
-| **customerSession** | [**ConversationCallbackEventTopicJourneyCustomerSession**](ConversationCallbackEventTopicJourneyCustomerSession.html) |  |  [optional] |
-| **triggeringAction** | [**ConversationCallbackEventTopicJourneyAction**](ConversationCallbackEventTopicJourneyAction.html) |  |  [optional] |
+| **customer** | <!----><!---->[**ConversationCallbackEventTopicJourneyCustomer**](ConversationCallbackEventTopicJourneyCustomer.html)<!----> |  |  [optional] |
+| **customerSession** | <!----><!---->[**ConversationCallbackEventTopicJourneyCustomerSession**](ConversationCallbackEventTopicJourneyCustomerSession.html)<!----> |  |  [optional] |
+| **triggeringAction** | <!----><!---->[**ConversationCallbackEventTopicJourneyAction**](ConversationCallbackEventTopicJourneyAction.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

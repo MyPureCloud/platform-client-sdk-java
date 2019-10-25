@@ -8,7 +8,7 @@ title: UserStationChangeTopicUserStations
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **associatedStation** | [**UserStationChangeTopicUserStation**](UserStationChangeTopicUserStation.html) |  |  [optional] |
+| **associatedStation** | <!----><!---->[**UserStationChangeTopicUserStation**](UserStationChangeTopicUserStation.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

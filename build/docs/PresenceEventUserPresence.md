@@ -8,11 +8,11 @@ title: PresenceEventUserPresence
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **source** | **String** |  |  [optional] |
-| **presenceDefinition** | [**PresenceEventOrganizationPresence**](PresenceEventOrganizationPresence.html) |  |  [optional] |
-| **primary** | **Boolean** |  |  [optional] |
-| **message** | **String** |  |  [optional] |
-| **modifiedDate** | [**Date**](Date.html) |  |  [optional] |
+| **source** | <!----><!---->**String**<!----> |  |  [optional] |
+| **presenceDefinition** | <!----><!---->[**PresenceEventOrganizationPresence**](PresenceEventOrganizationPresence.html)<!----> |  |  [optional] |
+| **primary** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **message** | <!----><!---->**String**<!----> |  |  [optional] |
+| **modifiedDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

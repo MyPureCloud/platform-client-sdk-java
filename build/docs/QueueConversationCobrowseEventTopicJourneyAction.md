@@ -8,8 +8,8 @@ title: QueueConversationCobrowseEventTopicJourneyAction
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **actionMap** | [**QueueConversationCobrowseEventTopicJourneyActionMap**](QueueConversationCobrowseEventTopicJourneyActionMap.html) |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **actionMap** | <!----><!---->[**QueueConversationCobrowseEventTopicJourneyActionMap**](QueueConversationCobrowseEventTopicJourneyActionMap.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

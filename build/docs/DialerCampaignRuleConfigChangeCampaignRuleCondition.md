@@ -8,10 +8,10 @@ title: DialerCampaignRuleConfigChangeCampaignRuleCondition
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **parameters** | **Map&lt;String, String&gt;** |  |  [optional] |
-| **conditionType** | [**ConditionTypeEnum**](#ConditionTypeEnum) |  |  [optional] |
-| **additionalProperties** | **Object** |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **parameters** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
+| **conditionType** | [**ConditionTypeEnum**](#ConditionTypeEnum)<!----> |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

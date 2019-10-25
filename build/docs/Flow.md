@@ -8,24 +8,24 @@ title: Flow
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The flow identifier |  [optional] |
-| **name** | **String** | The flow name |  |
-| **division** | [**WritableDivision**](WritableDivision.html) | The division to which this entity belongs. |  [optional] |
-| **description** | **String** |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
-| **lockedUser** | [**User**](User.html) | User that has the flow locked. |  [optional] |
-| **lockedClient** | [**DomainEntityRef**](DomainEntityRef.html) | OAuth client that has the flow locked. |  [optional] |
-| **active** | **Boolean** |  |  [optional] |
-| **system** | **Boolean** |  |  [optional] |
-| **deleted** | **Boolean** |  |  [optional] |
-| **publishedVersion** | [**FlowVersion**](FlowVersion.html) |  |  [optional] |
-| **savedVersion** | [**FlowVersion**](FlowVersion.html) |  |  [optional] |
-| **inputSchema** | **Object** | json schema describing the inputs for the flow |  [optional] |
-| **outputSchema** | **Object** | json schema describing the outputs for the flow |  [optional] |
-| **checkedInVersion** | [**FlowVersion**](FlowVersion.html) |  |  [optional] |
-| **publishedBy** | [**User**](User.html) |  |  [optional] |
-| **currentOperation** | [**Operation**](Operation.html) |  |  [optional] |
-| **selfUri** | **String** | The URI for this object |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The flow identifier |  [optional] |
+| **name** | <!----><!---->**String**<!----> | The flow name |  |
+| **division** | <!----><!---->[**WritableDivision**](WritableDivision.html)<!----> | The division to which this entity belongs. |  [optional] |
+| **description** | <!----><!---->**String**<!----> |  |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
+| **lockedUser** | <!----><!---->[**User**](User.html)<!----> | User that has the flow locked. |  [optional] |
+| **lockedClient** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | OAuth client that has the flow locked. |  [optional] |
+| **active** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **system** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **deleted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **publishedVersion** | <!----><!---->[**FlowVersion**](FlowVersion.html)<!----> |  |  [optional] |
+| **savedVersion** | <!----><!---->[**FlowVersion**](FlowVersion.html)<!----> |  |  [optional] |
+| **inputSchema** | <!----><!---->**Object**<!----> | json schema describing the inputs for the flow |  [optional] |
+| **outputSchema** | <!----><!---->**Object**<!----> | json schema describing the outputs for the flow |  [optional] |
+| **checkedInVersion** | <!----><!---->[**FlowVersion**](FlowVersion.html)<!----> |  |  [optional] |
+| **publishedBy** | <!----><!---->[**User**](User.html)<!----> |  |  [optional] |
+| **currentOperation** | <!----><!---->[**Operation**](Operation.html)<!----> |  |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
 

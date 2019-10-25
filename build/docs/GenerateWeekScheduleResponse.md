@@ -8,9 +8,9 @@ title: GenerateWeekScheduleResponse
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **downloadUrl** | **String** | The url to fetch the result for large responses. The value is null if result contains the data |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum) | The status of the request |  [optional] |
-| **operationId** | **String** | The operation id to watch for on the notification topic if status == Processing |  [optional] |
+| **downloadUrl** | <!----><!---->**String**<!----> | The url to fetch the result for large responses. The value is null if result contains the data |  [optional] |
+| **status** | [**StatusEnum**](#StatusEnum)<!----> | The status of the request |  [optional] |
+| **operationId** | <!----><!---->**String**<!----> | The operation id to watch for on the notification topic if status == Processing |  [optional] |
 {: class="table table-striped"}
 
 

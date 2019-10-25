@@ -8,9 +8,9 @@ title: SurveyDetailQueryFilter
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum) | Boolean operation to apply to the provided predicates and clauses |  |
-| **clauses** | [**List&lt;SurveyDetailQueryClause&gt;**](SurveyDetailQueryClause.html) | Boolean &#39;and/or&#39; logic with up to two-levels of nesting |  [optional] |
-| **predicates** | [**List&lt;SurveyDetailQueryPredicate&gt;**](SurveyDetailQueryPredicate.html) | Like a three-word sentence: (attribute-name) (operator) (target-value). |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> | Boolean operation to apply to the provided predicates and clauses |  |
+| **clauses** | <!----><!---->[**List&lt;SurveyDetailQueryClause&gt;**](SurveyDetailQueryClause.html)<!----> | Boolean &#39;and/or&#39; logic with up to two-levels of nesting |  [optional] |
+| **predicates** | <!----><!---->[**List&lt;SurveyDetailQueryPredicate&gt;**](SurveyDetailQueryPredicate.html)<!----> | Like a three-word sentence: (attribute-name) (operator) (target-value). |  [optional] |
 {: class="table table-striped"}
 
 

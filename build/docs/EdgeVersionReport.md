@@ -8,8 +8,8 @@ title: EdgeVersionReport
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **oldestVersion** | [**EdgeVersionInformation**](EdgeVersionInformation.html) |  |  [optional] |
-| **newestVersion** | [**EdgeVersionInformation**](EdgeVersionInformation.html) |  |  [optional] |
+| **oldestVersion** | <!----><!---->[**EdgeVersionInformation**](EdgeVersionInformation.html)<!----> |  |  [optional] |
+| **newestVersion** | <!----><!---->[**EdgeVersionInformation**](EdgeVersionInformation.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

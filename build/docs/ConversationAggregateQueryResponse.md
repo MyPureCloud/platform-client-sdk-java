@@ -8,7 +8,7 @@ title: ConversationAggregateQueryResponse
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **results** | [**List&lt;ConversationAggregateDataContainer&gt;**](ConversationAggregateDataContainer.html) |  |  [optional] |
+| **results** | <!----><!---->[**List&lt;ConversationAggregateDataContainer&gt;**](ConversationAggregateDataContainer.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

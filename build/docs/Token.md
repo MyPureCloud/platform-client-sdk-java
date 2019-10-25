@@ -8,7 +8,7 @@ title: Token
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **jwt** | **String** | Token for use with common api |  |
+| **jwt** | <!----><!---->**String**<!----> | Token for use with common api |  |
 {: class="table table-striped"}
 
 

@@ -8,9 +8,9 @@ title: TrunkErrorInfoDetails
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **code** | **String** |  |  [optional] |
-| **message** | **String** |  |  [optional] |
-| **hostname** | **String** |  |  [optional] |
+| **code** | <!----><!---->**String**<!----> |  |  [optional] |
+| **message** | <!----><!---->**String**<!----> |  |  [optional] |
+| **hostname** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,13 +8,13 @@ title: DialerContactlistfilterConfigChangeFilterPredicate
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **column** | **String** |  |  [optional] |
-| **columnType** | [**ColumnTypeEnum**](#ColumnTypeEnum) |  |  [optional] |
-| **operator** | [**OperatorEnum**](#OperatorEnum) |  |  [optional] |
-| **value** | **String** |  |  [optional] |
-| **range** | [**DialerContactlistfilterConfigChangeRange**](DialerContactlistfilterConfigChangeRange.html) |  |  [optional] |
-| **inverted** | **Boolean** |  |  [optional] |
-| **additionalProperties** | **Object** |  |  [optional] |
+| **column** | <!----><!---->**String**<!----> |  |  [optional] |
+| **columnType** | [**ColumnTypeEnum**](#ColumnTypeEnum)<!----> |  |  [optional] |
+| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> |  |  [optional] |
+| **value** | <!----><!---->**String**<!----> |  |  [optional] |
+| **range** | <!----><!---->[**DialerContactlistfilterConfigChangeRange**](DialerContactlistfilterConfigChangeRange.html)<!----> |  |  [optional] |
+| **inverted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

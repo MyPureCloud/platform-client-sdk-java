@@ -8,8 +8,8 @@ title: UnscheduledAgentWarning
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **agent** | [**UserReference**](UserReference.html) | The agent for which this warning applies |  [optional] |
-| **unscheduledReason** | [**UnscheduledReasonEnum**](#UnscheduledReasonEnum) | The reason this agent was not scheduled |  [optional] |
+| **agent** | <!----><!---->[**UserReference**](UserReference.html)<!----> | The agent for which this warning applies |  [optional] |
+| **unscheduledReason** | [**UnscheduledReasonEnum**](#UnscheduledReasonEnum)<!----> | The reason this agent was not scheduled |  [optional] |
 {: class="table table-striped"}
 
 

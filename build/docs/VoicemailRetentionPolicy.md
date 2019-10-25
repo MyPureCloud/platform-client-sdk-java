@@ -8,8 +8,8 @@ title: VoicemailRetentionPolicy
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **voicemailRetentionPolicyType** | [**VoicemailRetentionPolicyTypeEnum**](#VoicemailRetentionPolicyTypeEnum) | The retention policy type |  [optional] |
-| **numberOfDays** | **Integer** | If retentionPolicyType == RETAIN_WITH_TTL, then this value represents the number of days for the TTL |  [optional] |
+| **voicemailRetentionPolicyType** | [**VoicemailRetentionPolicyTypeEnum**](#VoicemailRetentionPolicyTypeEnum)<!----> | The retention policy type |  [optional] |
+| **numberOfDays** | <!----><!---->**Integer**<!----> | If retentionPolicyType == RETAIN_WITH_TTL, then this value represents the number of days for the TTL |  [optional] |
 {: class="table table-striped"}
 
 

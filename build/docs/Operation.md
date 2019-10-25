@@ -8,16 +8,16 @@ title: Operation
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **complete** | **Boolean** |  |  [optional] |
-| **user** | [**User**](User.html) |  |  [optional] |
-| **client** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
-| **errorMessage** | **String** |  |  [optional] |
-| **errorCode** | **String** |  |  [optional] |
-| **errorDetails** | [**List&lt;Detail&gt;**](Detail.html) |  |  [optional] |
-| **errorMessageParams** | **Map&lt;String, String&gt;** |  |  [optional] |
-| **actionName** | [**ActionNameEnum**](#ActionNameEnum) | Action name |  [optional] |
-| **actionStatus** | [**ActionStatusEnum**](#ActionStatusEnum) | Action status |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **complete** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **user** | <!----><!---->[**User**](User.html)<!----> |  |  [optional] |
+| **client** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
+| **errorMessage** | <!----><!---->**String**<!----> |  |  [optional] |
+| **errorCode** | <!----><!---->**String**<!----> |  |  [optional] |
+| **errorDetails** | <!----><!---->[**List&lt;Detail&gt;**](Detail.html)<!----> |  |  [optional] |
+| **errorMessageParams** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
+| **actionName** | [**ActionNameEnum**](#ActionNameEnum)<!----> | Action name |  [optional] |
+| **actionStatus** | [**ActionStatusEnum**](#ActionStatusEnum)<!----> | Action status |  [optional] |
 {: class="table table-striped"}
 
 

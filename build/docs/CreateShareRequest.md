@@ -8,11 +8,11 @@ title: CreateShareRequest
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **sharedEntityType** | [**SharedEntityTypeEnum**](#SharedEntityTypeEnum) | The share entity type |  |
-| **sharedEntity** | [**SharedEntity**](SharedEntity.html) | The entity that will be shared |  |
-| **memberType** | [**MemberTypeEnum**](#MemberTypeEnum) |  |  [optional] |
-| **member** | [**SharedEntity**](SharedEntity.html) | The member that will have access to this share. Only required if a list of members is not provided. |  [optional] |
-| **members** | [**List&lt;CreateShareRequestMember&gt;**](CreateShareRequestMember.html) |  |  [optional] |
+| **sharedEntityType** | [**SharedEntityTypeEnum**](#SharedEntityTypeEnum)<!----> | The share entity type |  |
+| **sharedEntity** | <!----><!---->[**SharedEntity**](SharedEntity.html)<!----> | The entity that will be shared |  |
+| **memberType** | [**MemberTypeEnum**](#MemberTypeEnum)<!----> |  |  [optional] |
+| **member** | <!----><!---->[**SharedEntity**](SharedEntity.html)<!----> | The member that will have access to this share. Only required if a list of members is not provided. |  [optional] |
+| **members** | <!----><!---->[**List&lt;CreateShareRequestMember&gt;**](CreateShareRequestMember.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

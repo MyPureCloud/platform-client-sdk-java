@@ -8,7 +8,7 @@ title: ListWrapperShiftStartVariance
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **values** | [**List&lt;ShiftStartVariance&gt;**](ShiftStartVariance.html) |  |  [optional] |
+| **values** | <!----><!---->[**List&lt;ShiftStartVariance&gt;**](ShiftStartVariance.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

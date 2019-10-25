@@ -8,11 +8,11 @@ title: SubjectDivisionGrants
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **divisions** | [**List&lt;Division&gt;**](Division.html) |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
-| **selfUri** | **String** | The URI for this object |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **divisions** | <!----><!---->[**List&lt;Division&gt;**](Division.html)<!----> |  |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
 

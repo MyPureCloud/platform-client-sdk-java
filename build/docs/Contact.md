@@ -8,11 +8,11 @@ title: Contact
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **address** | **String** | Email address or phone number for this contact type |  [optional] |
-| **display** | **String** | Formatted version of the address property |  [optional] |
-| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum) |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
-| **extension** | **String** | Use internal extension instead of address. Mutually exclusive with the address field. |  [optional] |
+| **address** | <!----><!---->**String**<!----> | Email address or phone number for this contact type |  [optional] |
+| **display** | <!----><!---->**String**<!----> | Formatted version of the address property |  [optional] |
+| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> |  |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
+| **extension** | <!----><!---->**String**<!----> | Use internal extension instead of address. Mutually exclusive with the address field. |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,8 +8,8 @@ title: QueueConversationScreenShareEventTopicScoredAgent
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **agent** | [**QueueConversationScreenShareEventTopicUriReference**](QueueConversationScreenShareEventTopicUriReference.html) |  |  [optional] |
-| **score** | **Integer** |  |  [optional] |
+| **agent** | <!----><!---->[**QueueConversationScreenShareEventTopicUriReference**](QueueConversationScreenShareEventTopicUriReference.html)<!----> |  |  [optional] |
+| **score** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

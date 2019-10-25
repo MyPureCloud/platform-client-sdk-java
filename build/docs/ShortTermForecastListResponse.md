@@ -8,7 +8,7 @@ title: ShortTermForecastListResponse
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | [**List&lt;ShortTermForecastListItemResponse&gt;**](ShortTermForecastListItemResponse.html) |  |  [optional] |
+| **entities** | <!----><!---->[**List&lt;ShortTermForecastListItemResponse&gt;**](ShortTermForecastListItemResponse.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

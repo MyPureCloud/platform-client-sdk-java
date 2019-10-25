@@ -8,8 +8,8 @@ title: QueueConversationSocialExpressionEventTopicMessageSticker
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **url** | **String** |  |  [optional] |
-| **id** | **String** |  |  [optional] |
+| **url** | <!----><!---->**String**<!----> |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

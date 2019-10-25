@@ -8,9 +8,9 @@ title: PredictionResults
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **intent** | [**IntentEnum**](#IntentEnum) | Indicates the media type scope of this estimated wait time |  [optional] |
-| **formula** | [**FormulaEnum**](#FormulaEnum) | Indicates the estimated wait time Formula |  |
-| **estimatedWaitTimeSeconds** | **Integer** | Estimated wait time in seconds |  |
+| **intent** | [**IntentEnum**](#IntentEnum)<!----> | Indicates the media type scope of this estimated wait time |  [optional] |
+| **formula** | [**FormulaEnum**](#FormulaEnum)<!----> | Indicates the estimated wait time Formula |  |
+| **estimatedWaitTimeSeconds** | <!----><!---->**Integer**<!----> | Estimated wait time in seconds |  |
 {: class="table table-striped"}
 
 

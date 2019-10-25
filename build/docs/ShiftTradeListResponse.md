@@ -8,7 +8,7 @@ title: ShiftTradeListResponse
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | [**List&lt;ShiftTradeResponse&gt;**](ShiftTradeResponse.html) |  |  [optional] |
+| **entities** | <!----><!---->[**List&lt;ShiftTradeResponse&gt;**](ShiftTradeResponse.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

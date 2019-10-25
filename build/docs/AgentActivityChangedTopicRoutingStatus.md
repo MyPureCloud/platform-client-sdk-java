@@ -8,8 +8,8 @@ title: AgentActivityChangedTopicRoutingStatus
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
-| **startTime** | [**Date**](Date.html) |  |  [optional] |
+| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
+| **startTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

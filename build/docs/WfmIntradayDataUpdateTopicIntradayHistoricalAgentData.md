@@ -8,8 +8,8 @@ title: WfmIntradayDataUpdateTopicIntradayHistoricalAgentData
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **onQueueTimeSeconds** | [**BigDecimal**](BigDecimal.html) |  |  [optional] |
-| **interactingTimeSeconds** | [**BigDecimal**](BigDecimal.html) |  |  [optional] |
+| **onQueueTimeSeconds** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
+| **interactingTimeSeconds** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,7 +8,7 @@ title: RecordingSettings
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **maxSimultaneousStreams** | **Integer** |  |  [optional] |
+| **maxSimultaneousStreams** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

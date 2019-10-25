@@ -8,10 +8,10 @@ title: DialerCampaignConfigChangeContactSort
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **fieldName** | **String** |  |  [optional] |
-| **direction** | [**DirectionEnum**](#DirectionEnum) |  |  [optional] |
-| **numeric** | **Boolean** |  |  [optional] |
-| **additionalProperties** | **Object** |  |  [optional] |
+| **fieldName** | <!----><!---->**String**<!----> |  |  [optional] |
+| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> |  |  [optional] |
+| **numeric** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

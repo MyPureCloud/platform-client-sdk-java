@@ -8,8 +8,8 @@ title: Ring
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **expansionCriteria** | [**List&lt;ExpansionCriterium&gt;**](ExpansionCriterium.html) |  |  [optional] |
-| **actions** | [**Actions**](Actions.html) |  |  [optional] |
+| **expansionCriteria** | <!----><!---->[**List&lt;ExpansionCriterium&gt;**](ExpansionCriterium.html)<!----> |  |  [optional] |
+| **actions** | <!----><!---->[**Actions**](Actions.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

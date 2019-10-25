@@ -8,7 +8,7 @@ title: ListWrapperForecastSourceDayPointer
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **values** | [**List&lt;ForecastSourceDayPointer&gt;**](ForecastSourceDayPointer.html) |  |  [optional] |
+| **values** | <!----><!---->[**List&lt;ForecastSourceDayPointer&gt;**](ForecastSourceDayPointer.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

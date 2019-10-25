@@ -8,16 +8,16 @@ title: ConversationVideoEventTopicErrorBody
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **status** | **Integer** |  |  [optional] |
-| **code** | **String** |  |  [optional] |
-| **entityId** | **String** |  |  [optional] |
-| **entityName** | **String** |  |  [optional] |
-| **message** | **String** |  |  [optional] |
-| **messageWithParams** | **String** |  |  [optional] |
-| **messageParams** | **Map&lt;String, String&gt;** |  |  [optional] |
-| **contextId** | **String** |  |  [optional] |
-| **details** | [**List&lt;ConversationVideoEventTopicDetail&gt;**](ConversationVideoEventTopicDetail.html) |  |  [optional] |
-| **errors** | [**List&lt;ConversationVideoEventTopicErrorBody&gt;**](ConversationVideoEventTopicErrorBody.html) |  |  [optional] |
+| **status** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **code** | <!----><!---->**String**<!----> |  |  [optional] |
+| **entityId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **entityName** | <!----><!---->**String**<!----> |  |  [optional] |
+| **message** | <!----><!---->**String**<!----> |  |  [optional] |
+| **messageWithParams** | <!----><!---->**String**<!----> |  |  [optional] |
+| **messageParams** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
+| **contextId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **details** | <!----><!---->[**List&lt;ConversationVideoEventTopicDetail&gt;**](ConversationVideoEventTopicDetail.html)<!----> |  |  [optional] |
+| **errors** | <!----><!---->[**List&lt;ConversationVideoEventTopicErrorBody&gt;**](ConversationVideoEventTopicErrorBody.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

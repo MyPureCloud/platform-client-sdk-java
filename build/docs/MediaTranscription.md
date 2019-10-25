@@ -8,9 +8,9 @@ title: MediaTranscription
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **displayName** | **String** |  |  [optional] |
-| **transcriptionProvider** | [**TranscriptionProviderEnum**](#TranscriptionProviderEnum) |  |  [optional] |
-| **integrationId** | **String** |  |  [optional] |
+| **displayName** | <!----><!---->**String**<!----> |  |  [optional] |
+| **transcriptionProvider** | [**TranscriptionProviderEnum**](#TranscriptionProviderEnum)<!----> |  |  [optional] |
+| **integrationId** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

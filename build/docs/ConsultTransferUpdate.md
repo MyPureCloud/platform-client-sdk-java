@@ -8,7 +8,7 @@ title: ConsultTransferUpdate
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **speakTo** | [**SpeakToEnum**](#SpeakToEnum) | Determines to whom the initiating participant is speaking. |  |
+| **speakTo** | [**SpeakToEnum**](#SpeakToEnum)<!----> | Determines to whom the initiating participant is speaking. |  |
 {: class="table table-striped"}
 
 

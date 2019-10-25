@@ -8,7 +8,7 @@ title: ForecastGenerationResult
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **routeGroupResults** | [**List&lt;ForecastGenerationRouteGroupResult&gt;**](ForecastGenerationRouteGroupResult.html) | Generation results, broken down by route group |  [optional] |
+| **routeGroupResults** | <!----><!---->[**List&lt;ForecastGenerationRouteGroupResult&gt;**](ForecastGenerationRouteGroupResult.html)<!----> | Generation results, broken down by route group |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,7 +8,7 @@ title: PartialUploadResponse
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The reference id for a partial import request |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The reference id for a partial import request |  [optional] |
 {: class="table table-striped"}
 
 

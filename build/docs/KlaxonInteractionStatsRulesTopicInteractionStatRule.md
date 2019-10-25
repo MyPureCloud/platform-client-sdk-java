@@ -8,20 +8,20 @@ title: KlaxonInteractionStatsRulesTopicInteractionStatRule
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **dimension** | [**DimensionEnum**](#DimensionEnum) |  |  [optional] |
-| **dimensionValue** | **String** |  |  [optional] |
-| **dimensionValueName** | **String** |  |  [optional] |
-| **metric** | [**MetricEnum**](#MetricEnum) |  |  [optional] |
-| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum) |  |  [optional] |
-| **numericRange** | [**NumericRangeEnum**](#NumericRangeEnum) |  |  [optional] |
-| **statistic** | [**StatisticEnum**](#StatisticEnum) |  |  [optional] |
-| **value** | [**BigDecimal**](BigDecimal.html) |  |  [optional] |
-| **inAlarm** | **Boolean** |  |  [optional] |
-| **enabled** | **Boolean** |  |  [optional] |
-| **notificationUsers** | [**List&lt;KlaxonInteractionStatsRulesTopicNotificationUser&gt;**](KlaxonInteractionStatsRulesTopicNotificationUser.html) |  |  [optional] |
-| **alertTypes** | **List&lt;String&gt;** |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **dimension** | [**DimensionEnum**](#DimensionEnum)<!----> |  |  [optional] |
+| **dimensionValue** | <!----><!---->**String**<!----> |  |  [optional] |
+| **dimensionValueName** | <!----><!---->**String**<!----> |  |  [optional] |
+| **metric** | [**MetricEnum**](#MetricEnum)<!----> |  |  [optional] |
+| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> |  |  [optional] |
+| **numericRange** | [**NumericRangeEnum**](#NumericRangeEnum)<!----> |  |  [optional] |
+| **statistic** | [**StatisticEnum**](#StatisticEnum)<!----> |  |  [optional] |
+| **value** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
+| **inAlarm** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **enabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **notificationUsers** | <!----><!---->[**List&lt;KlaxonInteractionStatsRulesTopicNotificationUser&gt;**](KlaxonInteractionStatsRulesTopicNotificationUser.html)<!----> |  |  [optional] |
+| **alertTypes** | <!---->[**List&lt;AlertTypesEnum&gt;**](#AlertTypesEnum)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 
@@ -99,6 +99,18 @@ title: KlaxonInteractionStatsRulesTopicInteractionStatRule
 | MIN | &quot;min&quot; |
 | RATIO | &quot;ratio&quot; |
 | MAX | &quot;max&quot; |
+{: class="table table-striped"}
+
+
+<a name="AlertTypesEnum"></a>
+
+## Enum: AlertTypesEnum
+
+| Name | Value |
+| ---- | ----- |
+| SMS | &quot;SMS&quot; |
+| DEVICE | &quot;DEVICE&quot; |
+| EMAIL | &quot;EMAIL&quot; |
 {: class="table table-striped"}
 
 

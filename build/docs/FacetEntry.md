@@ -8,14 +8,14 @@ title: FacetEntry
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **attribute** | [**TermAttribute**](TermAttribute.html) |  |  [optional] |
-| **statistics** | [**FacetStatistics**](FacetStatistics.html) |  |  [optional] |
-| **other** | **Long** |  |  [optional] |
-| **total** | **Long** |  |  [optional] |
-| **missing** | **Long** |  |  [optional] |
-| **termCount** | **Integer** |  |  [optional] |
-| **termType** | [**TermTypeEnum**](#TermTypeEnum) |  |  [optional] |
-| **terms** | [**List&lt;FacetTerm&gt;**](FacetTerm.html) |  |  [optional] |
+| **attribute** | <!----><!---->[**TermAttribute**](TermAttribute.html)<!----> |  |  [optional] |
+| **statistics** | <!----><!---->[**FacetStatistics**](FacetStatistics.html)<!----> |  |  [optional] |
+| **other** | <!----><!---->**Long**<!----> |  |  [optional] |
+| **total** | <!----><!---->**Long**<!----> |  |  [optional] |
+| **missing** | <!----><!---->**Long**<!----> |  |  [optional] |
+| **termCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **termType** | [**TermTypeEnum**](#TermTypeEnum)<!----> |  |  [optional] |
+| **terms** | <!----><!---->[**List&lt;FacetTerm&gt;**](FacetTerm.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

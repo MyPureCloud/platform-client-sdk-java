@@ -8,9 +8,9 @@ title: DurationCondition
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **durationTarget** | [**DurationTargetEnum**](#DurationTargetEnum) |  |  [optional] |
-| **durationOperator** | **String** |  |  [optional] |
-| **durationRange** | **String** |  |  [optional] |
+| **durationTarget** | [**DurationTargetEnum**](#DurationTargetEnum)<!----> |  |  [optional] |
+| **durationOperator** | <!----><!---->**String**<!----> |  |  [optional] |
+| **durationRange** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

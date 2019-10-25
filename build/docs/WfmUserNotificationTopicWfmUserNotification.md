@@ -8,14 +8,14 @@ title: WfmUserNotificationTopicWfmUserNotification
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **mutableGroupId** | **String** |  |  [optional] |
-| **timestamp** | [**Date**](Date.html) |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
-| **shiftTrade** | [**WfmUserNotificationTopicShiftTradeNotification**](WfmUserNotificationTopicShiftTradeNotification.html) |  |  [optional] |
-| **timeOffRequest** | [**WfmUserNotificationTopicTimeOffRequestNotification**](WfmUserNotificationTopicTimeOffRequestNotification.html) |  |  [optional] |
-| **agentNotification** | **Boolean** |  |  [optional] |
-| **otherNotificationIdsInGroup** | **List&lt;String&gt;** |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **mutableGroupId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **timestamp** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
+| **shiftTrade** | <!----><!---->[**WfmUserNotificationTopicShiftTradeNotification**](WfmUserNotificationTopicShiftTradeNotification.html)<!----> |  |  [optional] |
+| **timeOffRequest** | <!----><!---->[**WfmUserNotificationTopicTimeOffRequestNotification**](WfmUserNotificationTopicTimeOffRequestNotification.html)<!----> |  |  [optional] |
+| **agentNotification** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **otherNotificationIdsInGroup** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

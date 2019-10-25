@@ -8,15 +8,15 @@ title: LocationCreateUpdateDefinition
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | **String** | The name of the Location. |  |
-| **address** | [**LocationAddress**](LocationAddress.html) |  |  [optional] |
-| **emergencyNumber** | [**LocationEmergencyNumber**](LocationEmergencyNumber.html) |  |  [optional] |
-| **version** | **Integer** |  |  [optional] |
-| **state** | [**StateEnum**](#StateEnum) | Current activity status of the location. |  [optional] |
-| **notes** | **String** |  |  [optional] |
-| **contactUser** | **String** | The user id of the location contact |  [optional] |
-| **path** | **List&lt;String&gt;** |  |  [optional] |
-| **addressVerified** | **Boolean** |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> | The name of the Location. |  |
+| **address** | <!----><!---->[**LocationAddress**](LocationAddress.html)<!----> |  |  [optional] |
+| **emergencyNumber** | <!----><!---->[**LocationEmergencyNumber**](LocationEmergencyNumber.html)<!----> |  |  [optional] |
+| **version** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **state** | [**StateEnum**](#StateEnum)<!----> | Current activity status of the location. |  [optional] |
+| **notes** | <!----><!---->**String**<!----> |  |  [optional] |
+| **contactUser** | <!----><!---->**String**<!----> | The user id of the location contact |  [optional] |
+| **path** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **addressVerified** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

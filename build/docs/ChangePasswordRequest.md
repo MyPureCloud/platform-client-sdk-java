@@ -8,7 +8,7 @@ title: ChangePasswordRequest
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **newPassword** | **String** | The new password |  |
+| **newPassword** | <!----><!---->**String**<!----> | The new password |  |
 {: class="table table-striped"}
 
 

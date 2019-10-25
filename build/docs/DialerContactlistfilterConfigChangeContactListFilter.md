@@ -8,16 +8,16 @@ title: DialerContactlistfilterConfigChangeContactListFilter
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **dateCreated** | [**Date**](Date.html) |  |  [optional] |
-| **dateModified** | [**Date**](Date.html) |  |  [optional] |
-| **version** | **Integer** |  |  [optional] |
-| **contactList** | [**DialerContactlistfilterConfigChangeUriReference**](DialerContactlistfilterConfigChangeUriReference.html) |  |  [optional] |
-| **contactListColumns** | **List&lt;String&gt;** |  |  [optional] |
-| **clauses** | [**List&lt;DialerContactlistfilterConfigChangeFilterClause&gt;**](DialerContactlistfilterConfigChangeFilterClause.html) |  |  [optional] |
-| **filterType** | [**FilterTypeEnum**](#FilterTypeEnum) |  |  [optional] |
-| **additionalProperties** | **Object** |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **version** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **contactList** | <!----><!---->[**DialerContactlistfilterConfigChangeUriReference**](DialerContactlistfilterConfigChangeUriReference.html)<!----> |  |  [optional] |
+| **contactListColumns** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **clauses** | <!----><!---->[**List&lt;DialerContactlistfilterConfigChangeFilterClause&gt;**](DialerContactlistfilterConfigChangeFilterClause.html)<!----> |  |  [optional] |
+| **filterType** | [**FilterTypeEnum**](#FilterTypeEnum)<!----> |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

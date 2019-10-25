@@ -8,7 +8,7 @@ title: IntegrationConfigurationInfo
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **current** | [**IntegrationConfiguration**](IntegrationConfiguration.html) | The current, active configuration for the integration. |  [optional] |
+| **current** | <!----><!---->[**IntegrationConfiguration**](IntegrationConfiguration.html)<!----> | The current, active configuration for the integration. |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,16 +8,16 @@ title: MessagingSticker
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **providerStickerId** | **Integer** | The sticker Id of the sticker, assigned by the sticker provider. |  |
-| **providerPackageId** | **Integer** | The package Id of the sticker, assigned by the sticker provider. |  [optional] |
-| **packageName** | **String** | The package name of the sticker, assigned by the sticker provider. |  [optional] |
-| **messengerType** | [**MessengerTypeEnum**](#MessengerTypeEnum) | The type of the messenger provider. |  |
-| **stickerType** | [**StickerTypeEnum**](#StickerTypeEnum) | The type of the sticker. |  |
-| **providerVersion** | **Long** | The version of the sticker, assigned by the provider. |  [optional] |
-| **uriLocation** | **String** |  |  [optional] |
-| **selfUri** | **String** | The URI for this object |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **providerStickerId** | <!----><!---->**Integer**<!----> | The sticker Id of the sticker, assigned by the sticker provider. |  |
+| **providerPackageId** | <!----><!---->**Integer**<!----> | The package Id of the sticker, assigned by the sticker provider. |  [optional] |
+| **packageName** | <!----><!---->**String**<!----> | The package name of the sticker, assigned by the sticker provider. |  [optional] |
+| **messengerType** | [**MessengerTypeEnum**](#MessengerTypeEnum)<!----> | The type of the messenger provider. |  |
+| **stickerType** | [**StickerTypeEnum**](#StickerTypeEnum)<!----> | The type of the sticker. |  |
+| **providerVersion** | <!----><!---->**Long**<!----> | The version of the sticker, assigned by the provider. |  [optional] |
+| **uriLocation** | <!----><!---->**String**<!----> |  |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,8 +8,8 @@ title: AggregateViewData
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | **String** |  |  [optional] |
-| **stats** | [**StatisticalSummary**](StatisticalSummary.html) |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **stats** | <!----><!---->[**StatisticalSummary**](StatisticalSummary.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

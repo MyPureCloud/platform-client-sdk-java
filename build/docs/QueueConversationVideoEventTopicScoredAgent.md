@@ -8,8 +8,8 @@ title: QueueConversationVideoEventTopicScoredAgent
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **agent** | [**QueueConversationVideoEventTopicUriReference**](QueueConversationVideoEventTopicUriReference.html) |  |  [optional] |
-| **score** | **Integer** |  |  [optional] |
+| **agent** | <!----><!---->[**QueueConversationVideoEventTopicUriReference**](QueueConversationVideoEventTopicUriReference.html)<!----> |  |  [optional] |
+| **score** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

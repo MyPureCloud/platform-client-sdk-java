@@ -8,12 +8,12 @@ title: QueueConversationVideoEventTopicMessageDetails
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **messageId** | **String** |  |  [optional] |
-| **messageTime** | [**Date**](Date.html) |  |  [optional] |
-| **messageStatus** | [**MessageStatusEnum**](#MessageStatusEnum) |  |  [optional] |
-| **messageSegmentCount** | **Integer** |  |  [optional] |
-| **media** | [**List&lt;QueueConversationVideoEventTopicMessageMedia&gt;**](QueueConversationVideoEventTopicMessageMedia.html) |  |  [optional] |
-| **stickers** | [**List&lt;QueueConversationVideoEventTopicMessageSticker&gt;**](QueueConversationVideoEventTopicMessageSticker.html) |  |  [optional] |
+| **messageId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **messageTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **messageStatus** | [**MessageStatusEnum**](#MessageStatusEnum)<!----> |  |  [optional] |
+| **messageSegmentCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **media** | <!----><!---->[**List&lt;QueueConversationVideoEventTopicMessageMedia&gt;**](QueueConversationVideoEventTopicMessageMedia.html)<!----> |  |  [optional] |
+| **stickers** | <!----><!---->[**List&lt;QueueConversationVideoEventTopicMessageSticker&gt;**](QueueConversationVideoEventTopicMessageSticker.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

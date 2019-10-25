@@ -8,7 +8,7 @@ title: ShiftTradeMatchesSummaryResponse
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | [**List&lt;WeekShiftTradeMatchesSummaryResponse&gt;**](WeekShiftTradeMatchesSummaryResponse.html) |  |  [optional] |
+| **entities** | <!----><!---->[**List&lt;WeekShiftTradeMatchesSummaryResponse&gt;**](WeekShiftTradeMatchesSummaryResponse.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

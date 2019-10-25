@@ -8,11 +8,11 @@ title: ImportStatus
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **state** | [**StateEnum**](#StateEnum) | current status of the import |  |
-| **totalRecords** | **Long** | total number of records to be imported |  |
-| **completedRecords** | **Long** | number of records finished importing |  |
-| **percentComplete** | **Integer** | percentage of records finished importing |  |
-| **failureReason** | **String** | if the import has failed, the reason for the failure |  [optional] |
+| **state** | [**StateEnum**](#StateEnum)<!----> | current status of the import |  |
+| **totalRecords** | <!----><!---->**Long**<!----> | total number of records to be imported |  |
+| **completedRecords** | <!----><!---->**Long**<!----> | number of records finished importing |  |
+| **percentComplete** | <!----><!---->**Integer**<!----> | percentage of records finished importing |  |
+| **failureReason** | <!----><!---->**String**<!----> | if the import has failed, the reason for the failure |  [optional] |
 {: class="table table-striped"}
 
 

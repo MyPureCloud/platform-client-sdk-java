@@ -8,7 +8,7 @@ title: Actions
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **skillsToRemove** | [**List&lt;SkillsToRemove&gt;**](SkillsToRemove.html) |  |  [optional] |
+| **skillsToRemove** | <!----><!---->[**List&lt;SkillsToRemove&gt;**](SkillsToRemove.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

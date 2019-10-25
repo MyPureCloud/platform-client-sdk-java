@@ -8,43 +8,43 @@ title: ConversationVideoEventTopicVideoMediaParticipant
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **address** | **String** |  |  [optional] |
-| **startTime** | [**Date**](Date.html) |  |  [optional] |
-| **connectedTime** | [**Date**](Date.html) |  |  [optional] |
-| **endTime** | [**Date**](Date.html) |  |  [optional] |
-| **startHoldTime** | [**Date**](Date.html) |  |  [optional] |
-| **purpose** | **String** |  |  [optional] |
-| **state** | [**StateEnum**](#StateEnum) |  |  [optional] |
-| **direction** | [**DirectionEnum**](#DirectionEnum) |  |  [optional] |
-| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum) |  |  [optional] |
-| **held** | **Boolean** |  |  [optional] |
-| **wrapupRequired** | **Boolean** |  |  [optional] |
-| **wrapupPrompt** | **String** |  |  [optional] |
-| **user** | [**ConversationVideoEventTopicUriReference**](ConversationVideoEventTopicUriReference.html) |  |  [optional] |
-| **queue** | [**ConversationVideoEventTopicUriReference**](ConversationVideoEventTopicUriReference.html) |  |  [optional] |
-| **attributes** | **Map&lt;String, String&gt;** |  |  [optional] |
-| **errorInfo** | [**ConversationVideoEventTopicErrorBody**](ConversationVideoEventTopicErrorBody.html) |  |  [optional] |
-| **script** | [**ConversationVideoEventTopicUriReference**](ConversationVideoEventTopicUriReference.html) |  |  [optional] |
-| **wrapupTimeoutMs** | **Integer** |  |  [optional] |
-| **wrapupSkipped** | **Boolean** |  |  [optional] |
-| **alertingTimeoutMs** | **Integer** |  |  [optional] |
-| **provider** | **String** |  |  [optional] |
-| **externalContact** | [**ConversationVideoEventTopicUriReference**](ConversationVideoEventTopicUriReference.html) |  |  [optional] |
-| **externalOrganization** | [**ConversationVideoEventTopicUriReference**](ConversationVideoEventTopicUriReference.html) |  |  [optional] |
-| **wrapup** | [**ConversationVideoEventTopicWrapup**](ConversationVideoEventTopicWrapup.html) |  |  [optional] |
-| **conversationRoutingData** | [**ConversationVideoEventTopicConversationRoutingData**](ConversationVideoEventTopicConversationRoutingData.html) |  |  [optional] |
-| **peer** | **String** |  |  [optional] |
-| **screenRecordingState** | **String** |  |  [optional] |
-| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum) |  |  [optional] |
-| **journeyContext** | [**ConversationVideoEventTopicJourneyContext**](ConversationVideoEventTopicJourneyContext.html) |  |  [optional] |
-| **audioMuted** | **Boolean** |  |  [optional] |
-| **videoMuted** | **Boolean** |  |  [optional] |
-| **sharingScreen** | **Boolean** |  |  [optional] |
-| **peerCount** | **Integer** |  |  [optional] |
-| **context** | **String** |  |  [optional] |
-| **msids** | **List&lt;String&gt;** |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **address** | <!----><!---->**String**<!----> |  |  [optional] |
+| **startTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **endTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **startHoldTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **purpose** | <!----><!---->**String**<!----> |  |  [optional] |
+| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
+| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> |  |  [optional] |
+| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> |  |  [optional] |
+| **held** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **wrapupRequired** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **wrapupPrompt** | <!----><!---->**String**<!----> |  |  [optional] |
+| **user** | <!----><!---->[**ConversationVideoEventTopicUriReference**](ConversationVideoEventTopicUriReference.html)<!----> |  |  [optional] |
+| **queue** | <!----><!---->[**ConversationVideoEventTopicUriReference**](ConversationVideoEventTopicUriReference.html)<!----> |  |  [optional] |
+| **attributes** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
+| **errorInfo** | <!----><!---->[**ConversationVideoEventTopicErrorBody**](ConversationVideoEventTopicErrorBody.html)<!----> |  |  [optional] |
+| **script** | <!----><!---->[**ConversationVideoEventTopicUriReference**](ConversationVideoEventTopicUriReference.html)<!----> |  |  [optional] |
+| **wrapupTimeoutMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **wrapupSkipped** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **alertingTimeoutMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **provider** | <!----><!---->**String**<!----> |  |  [optional] |
+| **externalContact** | <!----><!---->[**ConversationVideoEventTopicUriReference**](ConversationVideoEventTopicUriReference.html)<!----> |  |  [optional] |
+| **externalOrganization** | <!----><!---->[**ConversationVideoEventTopicUriReference**](ConversationVideoEventTopicUriReference.html)<!----> |  |  [optional] |
+| **wrapup** | <!----><!---->[**ConversationVideoEventTopicWrapup**](ConversationVideoEventTopicWrapup.html)<!----> |  |  [optional] |
+| **conversationRoutingData** | <!----><!---->[**ConversationVideoEventTopicConversationRoutingData**](ConversationVideoEventTopicConversationRoutingData.html)<!----> |  |  [optional] |
+| **peer** | <!----><!---->**String**<!----> |  |  [optional] |
+| **screenRecordingState** | <!----><!---->**String**<!----> |  |  [optional] |
+| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum)<!----> |  |  [optional] |
+| **journeyContext** | <!----><!---->[**ConversationVideoEventTopicJourneyContext**](ConversationVideoEventTopicJourneyContext.html)<!----> |  |  [optional] |
+| **audioMuted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **videoMuted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **sharingScreen** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **peerCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **context** | <!----><!---->**String**<!----> |  |  [optional] |
+| **msids** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

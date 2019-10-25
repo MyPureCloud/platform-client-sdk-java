@@ -8,8 +8,8 @@ title: ConversationSocialExpressionEventTopicJourneyAction
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **actionMap** | [**ConversationSocialExpressionEventTopicJourneyActionMap**](ConversationSocialExpressionEventTopicJourneyActionMap.html) |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **actionMap** | <!----><!---->[**ConversationSocialExpressionEventTopicJourneyActionMap**](ConversationSocialExpressionEventTopicJourneyActionMap.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

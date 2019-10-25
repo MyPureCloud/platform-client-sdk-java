@@ -8,9 +8,9 @@ title: DialerRulesetConfigChangeContactColumnToDataActionFieldMapping
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **contactColumnName** | **String** |  |  [optional] |
-| **dataActionField** | **String** |  |  [optional] |
-| **additionalProperties** | **Object** |  |  [optional] |
+| **contactColumnName** | <!----><!---->**String**<!----> |  |  [optional] |
+| **dataActionField** | <!----><!---->**String**<!----> |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,15 +8,15 @@ title: SystemMessageSystemMessage
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **channelId** | **String** |  |  [optional] |
-| **systemTopicType** | [**SystemTopicTypeEnum**](#SystemTopicTypeEnum) |  |  [optional] |
-| **correlationId** | **String** |  |  [optional] |
-| **organizationId** | **String** |  |  [optional] |
-| **userId** | **String** |  |  [optional] |
-| **oauthClientId** | **String** |  |  [optional] |
-| **reason** | [**ReasonEnum**](#ReasonEnum) |  |  [optional] |
-| **message** | **String** |  |  [optional] |
-| **data** | **Object** |  |  [optional] |
+| **channelId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **systemTopicType** | [**SystemTopicTypeEnum**](#SystemTopicTypeEnum)<!----> |  |  [optional] |
+| **correlationId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **organizationId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **userId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **oauthClientId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **reason** | [**ReasonEnum**](#ReasonEnum)<!----> |  |  [optional] |
+| **message** | <!----><!---->**String**<!----> |  |  [optional] |
+| **data** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,7 +8,7 @@ title: AutomaticTimeZoneMappingSettings
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **callableWindows** | [**List&lt;CallableWindow&gt;**](CallableWindow.html) | The time intervals to use for automatic time zone mapping. |  [optional] |
+| **callableWindows** | <!----><!---->[**List&lt;CallableWindow&gt;**](CallableWindow.html)<!----> | The time intervals to use for automatic time zone mapping. |  [optional] |
 {: class="table table-striped"}
 
 

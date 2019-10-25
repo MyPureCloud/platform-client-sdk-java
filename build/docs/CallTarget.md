@@ -8,8 +8,8 @@ title: CallTarget
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum) | The type of call |  [optional] |
-| **value** | **String** | The id of the station or an E.164 formatted phone number |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of call |  [optional] |
+| **value** | <!----><!---->**String**<!----> | The id of the station or an E.164 formatted phone number |  [optional] |
 {: class="table table-striped"}
 
 

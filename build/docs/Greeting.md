@@ -8,18 +8,18 @@ title: Greeting
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum) | Greeting type |  |
-| **ownerType** | [**OwnerTypeEnum**](#OwnerTypeEnum) | Greeting owner type |  |
-| **owner** | [**DomainEntity**](DomainEntity.html) | Greeting owner |  |
-| **audioFile** | [**GreetingAudioFile**](GreetingAudioFile.html) |  |  [optional] |
-| **audioTTS** | **String** |  |  [optional] |
-| **createdDate** | [**Date**](Date.html) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **createdBy** | **String** |  |  [optional] |
-| **modifiedDate** | [**Date**](Date.html) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **modifiedBy** | **String** |  |  [optional] |
-| **selfUri** | **String** | The URI for this object |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> | Greeting type |  |
+| **ownerType** | [**OwnerTypeEnum**](#OwnerTypeEnum)<!----> | Greeting owner type |  |
+| **owner** | <!----><!---->[**DomainEntity**](DomainEntity.html)<!----> | Greeting owner |  |
+| **audioFile** | <!----><!---->[**GreetingAudioFile**](GreetingAudioFile.html)<!----> |  |  [optional] |
+| **audioTTS** | <!----><!---->**String**<!----> |  |  [optional] |
+| **createdDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **createdBy** | <!----><!---->**String**<!----> |  |  [optional] |
+| **modifiedDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **modifiedBy** | <!----><!---->**String**<!----> |  |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
 

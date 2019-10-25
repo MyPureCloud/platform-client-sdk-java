@@ -8,8 +8,8 @@ title: AddressableEntityRef
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **selfUri** | **String** |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

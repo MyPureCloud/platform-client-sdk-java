@@ -8,14 +8,14 @@ title: VoicemailGroupPolicy
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | **String** |  |  [optional] |
-| **group** | [**Group**](Group.html) | The group associated with the policy |  [optional] |
-| **enabled** | **Boolean** | Whether voicemail is enabled for the group |  [optional] |
-| **sendEmailNotifications** | **Boolean** | Whether email notifications are sent to group members when a new voicemail is received |  [optional] |
-| **rotateCallsSecs** | **Integer** | How many seconds to ring before rotating to the next member in the group |  [optional] |
-| **stopRingingAfterRotations** | **Integer** | How many rotations to go through |  [optional] |
-| **overflowGroupId** | **String** |  A fallback group to contact when all of the members in this group did not answer the call. |  [optional] |
-| **groupAlertType** | [**GroupAlertTypeEnum**](#GroupAlertTypeEnum) | Specifies if the members in this group should be contacted randomly, in a specific order, or by round-robin. |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **group** | <!----><!---->[**Group**](Group.html)<!----> | The group associated with the policy |  [optional] |
+| **enabled** | <!----><!---->**Boolean**<!----> | Whether voicemail is enabled for the group |  [optional] |
+| **sendEmailNotifications** | <!----><!---->**Boolean**<!----> | Whether email notifications are sent to group members when a new voicemail is received |  [optional] |
+| **rotateCallsSecs** | <!----><!---->**Integer**<!----> | How many seconds to ring before rotating to the next member in the group |  [optional] |
+| **stopRingingAfterRotations** | <!----><!---->**Integer**<!----> | How many rotations to go through |  [optional] |
+| **overflowGroupId** | <!----><!---->**String**<!----> |  A fallback group to contact when all of the members in this group did not answer the call. |  [optional] |
+| **groupAlertType** | [**GroupAlertTypeEnum**](#GroupAlertTypeEnum)<!----> | Specifies if the members in this group should be contacted randomly, in a specific order, or by round-robin. |  [optional] |
 {: class="table table-striped"}
 
 

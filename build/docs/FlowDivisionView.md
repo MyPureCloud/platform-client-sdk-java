@@ -8,11 +8,11 @@ title: FlowDivisionView
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The flow identifier |  [optional] |
-| **name** | **String** | The flow name |  |
-| **division** | [**WritableDivision**](WritableDivision.html) | The division to which this entity belongs. |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
-| **selfUri** | **String** | The URI for this object |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The flow identifier |  [optional] |
+| **name** | <!----><!---->**String**<!----> | The flow name |  |
+| **division** | <!----><!---->[**WritableDivision**](WritableDivision.html)<!----> | The division to which this entity belongs. |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
 

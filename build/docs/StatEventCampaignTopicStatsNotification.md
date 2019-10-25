@@ -8,8 +8,8 @@ title: StatEventCampaignTopicStatsNotification
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **group** | **Map&lt;String, String&gt;** |  |  [optional] |
-| **data** | [**List&lt;StatEventCampaignTopicDatum&gt;**](StatEventCampaignTopicDatum.html) |  |  [optional] |
+| **group** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
+| **data** | <!----><!---->[**List&lt;StatEventCampaignTopicDatum&gt;**](StatEventCampaignTopicDatum.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

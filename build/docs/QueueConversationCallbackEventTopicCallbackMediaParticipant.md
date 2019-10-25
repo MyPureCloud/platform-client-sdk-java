@@ -8,45 +8,45 @@ title: QueueConversationCallbackEventTopicCallbackMediaParticipant
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **address** | **String** |  |  [optional] |
-| **startTime** | [**Date**](Date.html) |  |  [optional] |
-| **connectedTime** | [**Date**](Date.html) |  |  [optional] |
-| **endTime** | [**Date**](Date.html) |  |  [optional] |
-| **startHoldTime** | [**Date**](Date.html) |  |  [optional] |
-| **purpose** | **String** |  |  [optional] |
-| **state** | [**StateEnum**](#StateEnum) |  |  [optional] |
-| **direction** | [**DirectionEnum**](#DirectionEnum) |  |  [optional] |
-| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum) |  |  [optional] |
-| **held** | **Boolean** |  |  [optional] |
-| **wrapupRequired** | **Boolean** |  |  [optional] |
-| **wrapupPrompt** | **String** |  |  [optional] |
-| **user** | [**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference.html) |  |  [optional] |
-| **queue** | [**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference.html) |  |  [optional] |
-| **attributes** | **Map&lt;String, String&gt;** |  |  [optional] |
-| **errorInfo** | [**QueueConversationCallbackEventTopicErrorBody**](QueueConversationCallbackEventTopicErrorBody.html) |  |  [optional] |
-| **script** | [**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference.html) |  |  [optional] |
-| **wrapupTimeoutMs** | **Integer** |  |  [optional] |
-| **wrapupSkipped** | **Boolean** |  |  [optional] |
-| **alertingTimeoutMs** | **Integer** |  |  [optional] |
-| **provider** | **String** |  |  [optional] |
-| **externalContact** | [**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference.html) |  |  [optional] |
-| **externalOrganization** | [**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference.html) |  |  [optional] |
-| **wrapup** | [**QueueConversationCallbackEventTopicWrapup**](QueueConversationCallbackEventTopicWrapup.html) |  |  [optional] |
-| **conversationRoutingData** | [**QueueConversationCallbackEventTopicConversationRoutingData**](QueueConversationCallbackEventTopicConversationRoutingData.html) |  |  [optional] |
-| **peer** | **String** |  |  [optional] |
-| **screenRecordingState** | **String** |  |  [optional] |
-| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum) |  |  [optional] |
-| **journeyContext** | [**QueueConversationCallbackEventTopicJourneyContext**](QueueConversationCallbackEventTopicJourneyContext.html) |  |  [optional] |
-| **outboundPreview** | [**QueueConversationCallbackEventTopicDialerPreview**](QueueConversationCallbackEventTopicDialerPreview.html) |  |  [optional] |
-| **voicemail** | [**QueueConversationCallbackEventTopicVoicemail**](QueueConversationCallbackEventTopicVoicemail.html) |  |  [optional] |
-| **callbackNumbers** | **List&lt;String&gt;** |  |  [optional] |
-| **callbackUserName** | **String** |  |  [optional] |
-| **skipEnabled** | **Boolean** |  |  [optional] |
-| **timeoutSeconds** | **Integer** |  |  [optional] |
-| **callbackScheduledTime** | [**Date**](Date.html) |  |  [optional] |
-| **automatedCallbackConfigId** | **String** |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **address** | <!----><!---->**String**<!----> |  |  [optional] |
+| **startTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **endTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **startHoldTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **purpose** | <!----><!---->**String**<!----> |  |  [optional] |
+| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
+| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> |  |  [optional] |
+| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> |  |  [optional] |
+| **held** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **wrapupRequired** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **wrapupPrompt** | <!----><!---->**String**<!----> |  |  [optional] |
+| **user** | <!----><!---->[**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference.html)<!----> |  |  [optional] |
+| **queue** | <!----><!---->[**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference.html)<!----> |  |  [optional] |
+| **attributes** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
+| **errorInfo** | <!----><!---->[**QueueConversationCallbackEventTopicErrorBody**](QueueConversationCallbackEventTopicErrorBody.html)<!----> |  |  [optional] |
+| **script** | <!----><!---->[**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference.html)<!----> |  |  [optional] |
+| **wrapupTimeoutMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **wrapupSkipped** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **alertingTimeoutMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **provider** | <!----><!---->**String**<!----> |  |  [optional] |
+| **externalContact** | <!----><!---->[**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference.html)<!----> |  |  [optional] |
+| **externalOrganization** | <!----><!---->[**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference.html)<!----> |  |  [optional] |
+| **wrapup** | <!----><!---->[**QueueConversationCallbackEventTopicWrapup**](QueueConversationCallbackEventTopicWrapup.html)<!----> |  |  [optional] |
+| **conversationRoutingData** | <!----><!---->[**QueueConversationCallbackEventTopicConversationRoutingData**](QueueConversationCallbackEventTopicConversationRoutingData.html)<!----> |  |  [optional] |
+| **peer** | <!----><!---->**String**<!----> |  |  [optional] |
+| **screenRecordingState** | <!----><!---->**String**<!----> |  |  [optional] |
+| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum)<!----> |  |  [optional] |
+| **journeyContext** | <!----><!---->[**QueueConversationCallbackEventTopicJourneyContext**](QueueConversationCallbackEventTopicJourneyContext.html)<!----> |  |  [optional] |
+| **outboundPreview** | <!----><!---->[**QueueConversationCallbackEventTopicDialerPreview**](QueueConversationCallbackEventTopicDialerPreview.html)<!----> |  |  [optional] |
+| **voicemail** | <!----><!---->[**QueueConversationCallbackEventTopicVoicemail**](QueueConversationCallbackEventTopicVoicemail.html)<!----> |  |  [optional] |
+| **callbackNumbers** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **callbackUserName** | <!----><!---->**String**<!----> |  |  [optional] |
+| **skipEnabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **timeoutSeconds** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **callbackScheduledTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **automatedCallbackConfigId** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

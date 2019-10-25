@@ -8,8 +8,8 @@ title: WidgetClientConfigV1
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **webChatSkin** | [**WebChatSkinEnum**](#WebChatSkinEnum) |  |  [optional] |
-| **authenticationUrl** | **String** |  |  [optional] |
+| **webChatSkin** | [**WebChatSkinEnum**](#WebChatSkinEnum)<!----> |  |  [optional] |
+| **authenticationUrl** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

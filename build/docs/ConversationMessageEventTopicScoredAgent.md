@@ -8,8 +8,8 @@ title: ConversationMessageEventTopicScoredAgent
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **agent** | [**ConversationMessageEventTopicUriReference**](ConversationMessageEventTopicUriReference.html) |  |  [optional] |
-| **score** | **Integer** |  |  [optional] |
+| **agent** | <!----><!---->[**ConversationMessageEventTopicUriReference**](ConversationMessageEventTopicUriReference.html)<!----> |  |  [optional] |
+| **score** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

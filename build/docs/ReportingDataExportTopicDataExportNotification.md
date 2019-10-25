@@ -8,17 +8,17 @@ title: ReportingDataExportTopicDataExportNotification
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
-| **exportFormat** | [**ExportFormatEnum**](#ExportFormatEnum) |  |  [optional] |
-| **downloadUrl** | **String** |  |  [optional] |
-| **viewType** | [**ViewTypeEnum**](#ViewTypeEnum) |  |  [optional] |
-| **exportErrorMessagesType** | [**ExportErrorMessagesTypeEnum**](#ExportErrorMessagesTypeEnum) |  |  [optional] |
-| **read** | **Boolean** |  |  [optional] |
-| **createdDateTime** | [**Date**](Date.html) |  |  [optional] |
-| **modifiedDateTime** | [**Date**](Date.html) |  |  [optional] |
-| **percentageComplete** | [**BigDecimal**](BigDecimal.html) |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
+| **exportFormat** | [**ExportFormatEnum**](#ExportFormatEnum)<!----> |  |  [optional] |
+| **downloadUrl** | <!----><!---->**String**<!----> |  |  [optional] |
+| **viewType** | [**ViewTypeEnum**](#ViewTypeEnum)<!----> |  |  [optional] |
+| **exportErrorMessagesType** | [**ExportErrorMessagesTypeEnum**](#ExportErrorMessagesTypeEnum)<!----> |  |  [optional] |
+| **read** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **createdDateTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **modifiedDateTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **percentageComplete** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

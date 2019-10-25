@@ -8,9 +8,9 @@ title: WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalc
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **downloadUrl** | **String** |  |  [optional] |
-| **queryState** | [**QueryStateEnum**](#QueryStateEnum) |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **downloadUrl** | <!----><!---->**String**<!----> |  |  [optional] |
+| **queryState** | [**QueryStateEnum**](#QueryStateEnum)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

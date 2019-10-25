@@ -8,16 +8,16 @@ title: ArchitectFlowOutcomeNotificationArchitectOperation
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **complete** | **Boolean** |  |  [optional] |
-| **user** | [**ArchitectFlowOutcomeNotificationUser**](ArchitectFlowOutcomeNotificationUser.html) |  |  [optional] |
-| **client** | [**ArchitectFlowOutcomeNotificationClient**](ArchitectFlowOutcomeNotificationClient.html) |  |  [optional] |
-| **actionName** | [**ActionNameEnum**](#ActionNameEnum) |  |  [optional] |
-| **actionStatus** | [**ActionStatusEnum**](#ActionStatusEnum) |  |  [optional] |
-| **errorMessage** | **String** |  |  [optional] |
-| **errorCode** | **String** |  |  [optional] |
-| **errorMessageParams** | [**ArchitectFlowOutcomeNotificationErrorMessageParams**](ArchitectFlowOutcomeNotificationErrorMessageParams.html) |  |  [optional] |
-| **errorDetails** | [**List&lt;ArchitectFlowOutcomeNotificationErrorDetail&gt;**](ArchitectFlowOutcomeNotificationErrorDetail.html) |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **complete** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **user** | <!----><!---->[**ArchitectFlowOutcomeNotificationUser**](ArchitectFlowOutcomeNotificationUser.html)<!----> |  |  [optional] |
+| **client** | <!----><!---->[**ArchitectFlowOutcomeNotificationClient**](ArchitectFlowOutcomeNotificationClient.html)<!----> |  |  [optional] |
+| **actionName** | [**ActionNameEnum**](#ActionNameEnum)<!----> |  |  [optional] |
+| **actionStatus** | [**ActionStatusEnum**](#ActionStatusEnum)<!----> |  |  [optional] |
+| **errorMessage** | <!----><!---->**String**<!----> |  |  [optional] |
+| **errorCode** | <!----><!---->**String**<!----> |  |  [optional] |
+| **errorMessageParams** | <!----><!---->[**ArchitectFlowOutcomeNotificationErrorMessageParams**](ArchitectFlowOutcomeNotificationErrorMessageParams.html)<!----> |  |  [optional] |
+| **errorDetails** | <!----><!---->[**List&lt;ArchitectFlowOutcomeNotificationErrorDetail&gt;**](ArchitectFlowOutcomeNotificationErrorDetail.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

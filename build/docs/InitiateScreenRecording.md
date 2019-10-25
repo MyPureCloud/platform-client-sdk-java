@@ -8,9 +8,9 @@ title: InitiateScreenRecording
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **recordACW** | **Boolean** |  |  [optional] |
-| **archiveRetention** | [**ArchiveRetention**](ArchiveRetention.html) |  |  [optional] |
-| **deleteRetention** | [**DeleteRetention**](DeleteRetention.html) |  |  [optional] |
+| **recordACW** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **archiveRetention** | <!----><!---->[**ArchiveRetention**](ArchiveRetention.html)<!----> |  |  [optional] |
+| **deleteRetention** | <!----><!---->[**DeleteRetention**](DeleteRetention.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

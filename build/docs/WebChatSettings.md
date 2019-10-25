@@ -8,7 +8,7 @@ title: WebChatSettings
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **requireDeployment** | **Boolean** |  |  [optional] |
+| **requireDeployment** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

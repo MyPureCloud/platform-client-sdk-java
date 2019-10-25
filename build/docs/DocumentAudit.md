@@ -8,22 +8,22 @@ title: DocumentAudit
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **user** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
-| **workspace** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
-| **transactionId** | **String** |  |  [optional] |
-| **transactionInitiator** | **Boolean** |  |  [optional] |
-| **application** | **String** |  |  [optional] |
-| **serviceName** | **String** |  |  [optional] |
-| **level** | [**LevelEnum**](#LevelEnum) |  |  [optional] |
-| **timestamp** | [**Date**](Date.html) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
-| **actionContext** | [**ActionContextEnum**](#ActionContextEnum) |  |  [optional] |
-| **action** | [**ActionEnum**](#ActionEnum) |  |  [optional] |
-| **entity** | [**AuditEntityReference**](AuditEntityReference.html) |  |  [optional] |
-| **changes** | [**List&lt;AuditChange&gt;**](AuditChange.html) |  |  [optional] |
-| **selfUri** | **String** | The URI for this object |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **user** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
+| **workspace** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
+| **transactionId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **transactionInitiator** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **application** | <!----><!---->**String**<!----> |  |  [optional] |
+| **serviceName** | <!----><!---->**String**<!----> |  |  [optional] |
+| **level** | [**LevelEnum**](#LevelEnum)<!----> |  |  [optional] |
+| **timestamp** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
+| **actionContext** | [**ActionContextEnum**](#ActionContextEnum)<!----> |  |  [optional] |
+| **action** | [**ActionEnum**](#ActionEnum)<!----> |  |  [optional] |
+| **entity** | <!----><!---->[**AuditEntityReference**](AuditEntityReference.html)<!----> |  |  [optional] |
+| **changes** | <!----><!---->[**List&lt;AuditChange&gt;**](AuditChange.html)<!----> |  |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,8 +8,8 @@ title: CallbackIdentifier
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum) | The type of the associated callback participant |  |
-| **id** | **String** | The identifier of the callback |  |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of the associated callback participant |  |
+| **id** | <!----><!---->**String**<!----> | The identifier of the callback |  |
 {: class="table table-striped"}
 
 

@@ -8,19 +8,19 @@ title: DialerDnclistConfigChangeDncList
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **dateCreated** | [**Date**](Date.html) |  |  [optional] |
-| **dateModified** | [**Date**](Date.html) |  |  [optional] |
-| **version** | **Integer** |  |  [optional] |
-| **importStatus** | [**DialerDnclistConfigChangeImportStatus**](DialerDnclistConfigChangeImportStatus.html) |  |  [optional] |
-| **size** | **Integer** |  |  [optional] |
-| **dncSourceType** | [**DncSourceTypeEnum**](#DncSourceTypeEnum) |  |  [optional] |
-| **loginId** | **String** |  |  [optional] |
-| **dncCodes** | **List&lt;String&gt;** |  |  [optional] |
-| **licenseId** | **String** |  |  [optional] |
-| **division** | [**DialerDnclistConfigChangeUriReference**](DialerDnclistConfigChangeUriReference.html) |  |  [optional] |
-| **additionalProperties** | **Object** |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **version** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **importStatus** | <!----><!---->[**DialerDnclistConfigChangeImportStatus**](DialerDnclistConfigChangeImportStatus.html)<!----> |  |  [optional] |
+| **size** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **dncSourceType** | [**DncSourceTypeEnum**](#DncSourceTypeEnum)<!----> |  |  [optional] |
+| **loginId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **dncCodes** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **licenseId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **division** | <!----><!---->[**DialerDnclistConfigChangeUriReference**](DialerDnclistConfigChangeUriReference.html)<!----> |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

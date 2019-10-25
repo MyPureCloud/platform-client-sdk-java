@@ -8,21 +8,21 @@ title: ConversationEventTopicVideo
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **state** | [**StateEnum**](#StateEnum) |  |  [optional] |
-| **self** | [**ConversationEventTopicAddress**](ConversationEventTopicAddress.html) |  |  [optional] |
-| **id** | **String** |  |  [optional] |
-| **context** | **String** |  |  [optional] |
-| **audioMuted** | **Boolean** |  |  [optional] |
-| **videoMuted** | **Boolean** |  |  [optional] |
-| **sharingScreen** | **Boolean** |  |  [optional] |
-| **provider** | **String** |  |  [optional] |
-| **scriptId** | **String** |  |  [optional] |
-| **peerId** | **String** |  |  [optional] |
-| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum) |  |  [optional] |
-| **connectedTime** | [**Date**](Date.html) |  |  [optional] |
-| **disconnectedTime** | [**Date**](Date.html) |  |  [optional] |
-| **msids** | **List&lt;String&gt;** |  |  [optional] |
-| **additionalProperties** | **Object** |  |  [optional] |
+| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
+| **self** | <!----><!---->[**ConversationEventTopicAddress**](ConversationEventTopicAddress.html)<!----> |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **context** | <!----><!---->**String**<!----> |  |  [optional] |
+| **audioMuted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **videoMuted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **sharingScreen** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **provider** | <!----><!---->**String**<!----> |  |  [optional] |
+| **scriptId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **peerId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> |  |  [optional] |
+| **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **disconnectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **msids** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

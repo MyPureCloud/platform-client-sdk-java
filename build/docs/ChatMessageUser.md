@@ -8,11 +8,11 @@ title: ChatMessageUser
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **displayName** | **String** |  |  [optional] |
-| **username** | **String** |  |  [optional] |
-| **images** | [**List&lt;UserImage&gt;**](UserImage.html) |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **displayName** | <!----><!---->**String**<!----> |  |  [optional] |
+| **username** | <!----><!---->**String**<!----> |  |  [optional] |
+| **images** | <!----><!---->[**List&lt;UserImage&gt;**](UserImage.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

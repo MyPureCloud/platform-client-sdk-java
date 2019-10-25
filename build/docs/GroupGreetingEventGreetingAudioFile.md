@@ -8,8 +8,8 @@ title: GroupGreetingEventGreetingAudioFile
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **durationMilliseconds** | **Integer** |  |  [optional] |
-| **sizeBytes** | **Integer** |  |  [optional] |
+| **durationMilliseconds** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **sizeBytes** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

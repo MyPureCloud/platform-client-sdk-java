@@ -8,7 +8,7 @@ title: AvailableLanguageList
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **languages** | **List&lt;String&gt;** |  |  [optional] |
+| **languages** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

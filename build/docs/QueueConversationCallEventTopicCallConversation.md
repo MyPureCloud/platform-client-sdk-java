@@ -8,11 +8,11 @@ title: QueueConversationCallEventTopicCallConversation
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **participants** | [**List&lt;QueueConversationCallEventTopicCallMediaParticipant&gt;**](QueueConversationCallEventTopicCallMediaParticipant.html) |  |  [optional] |
-| **otherMediaUris** | **List&lt;String&gt;** |  |  [optional] |
-| **recordingState** | [**RecordingStateEnum**](#RecordingStateEnum) |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **participants** | <!----><!---->[**List&lt;QueueConversationCallEventTopicCallMediaParticipant&gt;**](QueueConversationCallEventTopicCallMediaParticipant.html)<!----> |  |  [optional] |
+| **otherMediaUris** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **recordingState** | [**RecordingStateEnum**](#RecordingStateEnum)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

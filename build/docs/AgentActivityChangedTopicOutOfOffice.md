@@ -8,8 +8,8 @@ title: AgentActivityChangedTopicOutOfOffice
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **active** | **Boolean** |  |  [optional] |
-| **modifiedDate** | [**Date**](Date.html) |  |  [optional] |
+| **active** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **modifiedDate** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

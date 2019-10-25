@@ -8,8 +8,8 @@ title: ArchiveRetention
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **days** | **Integer** |  |  [optional] |
-| **storageMedium** | [**StorageMediumEnum**](#StorageMediumEnum) |  |  [optional] |
+| **days** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **storageMedium** | [**StorageMediumEnum**](#StorageMediumEnum)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,12 +8,12 @@ title: ConversationEventTopicMessageDetails
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **messageId** | **String** |  |  [optional] |
-| **messageTime** | [**Date**](Date.html) |  |  [optional] |
-| **messageStatus** | [**MessageStatusEnum**](#MessageStatusEnum) |  |  [optional] |
-| **messageSegmentCount** | **Integer** |  |  [optional] |
-| **media** | [**List&lt;ConversationEventTopicMessageMedia&gt;**](ConversationEventTopicMessageMedia.html) |  |  [optional] |
-| **stickers** | [**List&lt;ConversationEventTopicMessageSticker&gt;**](ConversationEventTopicMessageSticker.html) |  |  [optional] |
+| **messageId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **messageTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **messageStatus** | [**MessageStatusEnum**](#MessageStatusEnum)<!----> |  |  [optional] |
+| **messageSegmentCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **media** | <!----><!---->[**List&lt;ConversationEventTopicMessageMedia&gt;**](ConversationEventTopicMessageMedia.html)<!----> |  |  [optional] |
+| **stickers** | <!----><!---->[**List&lt;ConversationEventTopicMessageSticker&gt;**](ConversationEventTopicMessageSticker.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

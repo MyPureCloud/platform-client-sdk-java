@@ -8,15 +8,15 @@ title: Condition
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum) | The type of the condition. |  [optional] |
-| **inverted** | **Boolean** | If true, inverts the result of evaluating this Condition. Default is false. |  [optional] |
-| **attributeName** | **String** | An attribute name associated with this Condition. Required for a contactAttributeCondition. |  [optional] |
-| **value** | **String** | A value associated with this Condition. This could be text, a number, or a relative time. Not used for a DataActionCondition. |  [optional] |
-| **valueType** | [**ValueTypeEnum**](#ValueTypeEnum) | The type of the value associated with this Condition. Not used for a DataActionCondition. |  [optional] |
-| **operator** | [**OperatorEnum**](#OperatorEnum) | An operation with which to evaluate the Condition. Not used for a DataActionCondition. |  [optional] |
-| **codes** | **List&lt;String&gt;** | List of wrap-up code identifiers. Required for a wrapupCondition. |  [optional] |
-| **property** | **String** | A value associated with the property type of this Condition. Required for a contactPropertyCondition. |  [optional] |
-| **propertyType** | [**PropertyTypeEnum**](#PropertyTypeEnum) | The type of the property associated with this Condition. Required for a contactPropertyCondition. |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of the condition. |  [optional] |
+| **inverted** | <!----><!---->**Boolean**<!----> | If true, inverts the result of evaluating this Condition. Default is false. |  [optional] |
+| **attributeName** | <!----><!---->**String**<!----> | An attribute name associated with this Condition. Required for a contactAttributeCondition. |  [optional] |
+| **value** | <!----><!---->**String**<!----> | A value associated with this Condition. This could be text, a number, or a relative time. Not used for a DataActionCondition. |  [optional] |
+| **valueType** | [**ValueTypeEnum**](#ValueTypeEnum)<!----> | The type of the value associated with this Condition. Not used for a DataActionCondition. |  [optional] |
+| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | An operation with which to evaluate the Condition. Not used for a DataActionCondition. |  [optional] |
+| **codes** | <!----><!---->**List&lt;String&gt;**<!----> | List of wrap-up code identifiers. Required for a wrapupCondition. |  [optional] |
+| **property** | <!----><!---->**String**<!----> | A value associated with the property type of this Condition. Required for a contactPropertyCondition. |  [optional] |
+| **propertyType** | [**PropertyTypeEnum**](#PropertyTypeEnum)<!----> | The type of the property associated with this Condition. Required for a contactPropertyCondition. |  [optional] |
 {: class="table table-striped"}
 
 

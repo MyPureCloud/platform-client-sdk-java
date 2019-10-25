@@ -8,8 +8,8 @@ title: DialerCampaignRuleConfigChangeCampaignRuleEntities
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **campaigns** | [**List&lt;DialerCampaignRuleConfigChangeUriReference&gt;**](DialerCampaignRuleConfigChangeUriReference.html) |  |  [optional] |
-| **sequences** | [**List&lt;DialerCampaignRuleConfigChangeUriReference&gt;**](DialerCampaignRuleConfigChangeUriReference.html) |  |  [optional] |
+| **campaigns** | <!----><!---->[**List&lt;DialerCampaignRuleConfigChangeUriReference&gt;**](DialerCampaignRuleConfigChangeUriReference.html)<!----> |  |  [optional] |
+| **sequences** | <!----><!---->[**List&lt;DialerCampaignRuleConfigChangeUriReference&gt;**](DialerCampaignRuleConfigChangeUriReference.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,7 +8,7 @@ title: ValidateAddressRequest
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **address** | [**StreetAddress**](StreetAddress.html) | Address schema |  [optional] |
+| **address** | <!----><!---->[**StreetAddress**](StreetAddress.html)<!----> | Address schema |  [optional] |
 {: class="table table-striped"}
 
 

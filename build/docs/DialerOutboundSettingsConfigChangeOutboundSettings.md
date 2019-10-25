@@ -8,16 +8,16 @@ title: DialerOutboundSettingsConfigChangeOutboundSettings
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **dateCreated** | [**Date**](Date.html) |  |  [optional] |
-| **dateModified** | [**Date**](Date.html) |  |  [optional] |
-| **version** | **Integer** |  |  [optional] |
-| **maxCallsPerAgent** | **Integer** |  |  [optional] |
-| **maxLineUtilization** | [**BigDecimal**](BigDecimal.html) |  |  [optional] |
-| **abandonSeconds** | [**BigDecimal**](BigDecimal.html) |  |  [optional] |
-| **complianceAbandonRateDenominator** | [**ComplianceAbandonRateDenominatorEnum**](#ComplianceAbandonRateDenominatorEnum) |  |  [optional] |
-| **automaticTimeZoneMapping** | [**DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings**](DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings.html) |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **version** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **maxCallsPerAgent** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **maxLineUtilization** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
+| **abandonSeconds** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
+| **complianceAbandonRateDenominator** | [**ComplianceAbandonRateDenominatorEnum**](#ComplianceAbandonRateDenominatorEnum)<!----> |  |  [optional] |
+| **automaticTimeZoneMapping** | <!----><!---->[**DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings**](DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

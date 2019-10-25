@@ -8,26 +8,26 @@ title: HistoryListing
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **complete** | **Boolean** |  |  [optional] |
-| **user** | [**User**](User.html) |  |  [optional] |
-| **client** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
-| **errorMessage** | **String** |  |  [optional] |
-| **errorCode** | **String** |  |  [optional] |
-| **errorDetails** | [**List&lt;Detail&gt;**](Detail.html) |  |  [optional] |
-| **errorMessageParams** | **Map&lt;String, String&gt;** |  |  [optional] |
-| **actionName** | [**ActionNameEnum**](#ActionNameEnum) | Action name |  [optional] |
-| **actionStatus** | [**ActionStatusEnum**](#ActionStatusEnum) | Action status |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **description** | **String** |  |  [optional] |
-| **system** | **Boolean** |  |  [optional] |
-| **started** | [**Date**](Date.html) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **completed** | [**Date**](Date.html) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **entities** | [**List&lt;HistoryEntry&gt;**](HistoryEntry.html) |  |  [optional] |
-| **total** | **Long** |  |  [optional] |
-| **pageSize** | **Integer** |  |  [optional] |
-| **pageNumber** | **Integer** |  |  [optional] |
-| **pageCount** | **Integer** |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **complete** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **user** | <!----><!---->[**User**](User.html)<!----> |  |  [optional] |
+| **client** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
+| **errorMessage** | <!----><!---->**String**<!----> |  |  [optional] |
+| **errorCode** | <!----><!---->**String**<!----> |  |  [optional] |
+| **errorDetails** | <!----><!---->[**List&lt;Detail&gt;**](Detail.html)<!----> |  |  [optional] |
+| **errorMessageParams** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
+| **actionName** | [**ActionNameEnum**](#ActionNameEnum)<!----> | Action name |  [optional] |
+| **actionStatus** | [**ActionStatusEnum**](#ActionStatusEnum)<!----> | Action status |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **description** | <!----><!---->**String**<!----> |  |  [optional] |
+| **system** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **started** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **completed** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **entities** | <!----><!---->[**List&lt;HistoryEntry&gt;**](HistoryEntry.html)<!----> |  |  [optional] |
+| **total** | <!----><!---->**Long**<!----> |  |  [optional] |
+| **pageNumber** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **pageSize** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **pageCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

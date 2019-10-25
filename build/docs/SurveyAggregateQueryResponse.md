@@ -8,7 +8,7 @@ title: SurveyAggregateQueryResponse
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **results** | [**List&lt;SurveyAggregateDataContainer&gt;**](SurveyAggregateDataContainer.html) |  |  [optional] |
+| **results** | <!----><!---->[**List&lt;SurveyAggregateDataContainer&gt;**](SurveyAggregateDataContainer.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

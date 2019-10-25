@@ -8,8 +8,8 @@ title: TrunkMetricsCalls
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **inboundCallCount** | **Integer** |  |  [optional] |
-| **outboundCallCount** | **Integer** |  |  [optional] |
+| **inboundCallCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **outboundCallCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,10 +8,10 @@ title: Parameter
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | **String** |  |  [optional] |
-| **parameterType** | [**ParameterTypeEnum**](#ParameterTypeEnum) |  |  [optional] |
-| **domain** | [**DomainEnum**](#DomainEnum) |  |  [optional] |
-| **required** | **Boolean** |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **parameterType** | [**ParameterTypeEnum**](#ParameterTypeEnum)<!----> |  |  [optional] |
+| **domain** | [**DomainEnum**](#DomainEnum)<!----> |  |  [optional] |
+| **required** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

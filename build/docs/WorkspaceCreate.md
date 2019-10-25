@@ -8,9 +8,9 @@ title: WorkspaceCreate
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | **String** | The workspace name |  |
-| **bucket** | **String** |  |  [optional] |
-| **description** | **String** |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> | The workspace name |  |
+| **bucket** | <!----><!---->**String**<!----> |  |  [optional] |
+| **description** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,7 +8,7 @@ title: ExecuteRecordingJobsQuery
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **state** | [**StateEnum**](#StateEnum) | The desired state for the job to be set to. |  |
+| **state** | [**StateEnum**](#StateEnum)<!----> | The desired state for the job to be set to. |  |
 {: class="table table-striped"}
 
 

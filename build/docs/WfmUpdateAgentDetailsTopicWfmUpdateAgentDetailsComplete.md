@@ -8,7 +8,7 @@ title: WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
+| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

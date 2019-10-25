@@ -8,12 +8,12 @@ title: DialerContactlistConfigChangeImportStatus
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **importState** | [**ImportStateEnum**](#ImportStateEnum) |  |  [optional] |
-| **totalRecords** | **Integer** |  |  [optional] |
-| **completedRecords** | **Integer** |  |  [optional] |
-| **percentageComplete** | **Integer** |  |  [optional] |
-| **failureReason** | **String** |  |  [optional] |
-| **additionalProperties** | **Object** |  |  [optional] |
+| **importState** | [**ImportStateEnum**](#ImportStateEnum)<!----> |  |  [optional] |
+| **totalRecords** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **completedRecords** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **percentageComplete** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **failureReason** | <!----><!---->**String**<!----> |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

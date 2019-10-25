@@ -8,7 +8,7 @@ title: AnalyticsConversationMultiGetResponse
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **conversations** | [**List&lt;AnalyticsConversation&gt;**](AnalyticsConversation.html) |  |  [optional] |
+| **conversations** | <!----><!---->[**List&lt;AnalyticsConversation&gt;**](AnalyticsConversation.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

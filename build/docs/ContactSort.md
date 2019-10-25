@@ -8,9 +8,9 @@ title: ContactSort
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **fieldName** | **String** |  |  [optional] |
-| **direction** | [**DirectionEnum**](#DirectionEnum) | The direction in which to sort contacts. |  [optional] |
-| **numeric** | **Boolean** | Whether or not the column contains numeric data. |  [optional] |
+| **fieldName** | <!----><!---->**String**<!----> |  |  [optional] |
+| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> | The direction in which to sort contacts. |  [optional] |
+| **numeric** | <!----><!---->**Boolean**<!----> | Whether or not the column contains numeric data. |  [optional] |
 {: class="table table-striped"}
 
 

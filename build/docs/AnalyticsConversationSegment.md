@@ -8,31 +8,31 @@ title: AnalyticsConversationSegment
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **segmentStart** | [**Date**](Date.html) | The timestamp when this segment began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **segmentEnd** | [**Date**](Date.html) | The timestamp when this segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **queueId** | **String** | Queue identifier |  [optional] |
-| **wrapUpCode** | **String** | Wrapup Code id |  [optional] |
-| **wrapUpNote** | **String** | Note entered by an agent during after-call work |  [optional] |
-| **wrapUpTags** | **List&lt;String&gt;** |  |  [optional] |
-| **errorCode** | **String** |  |  [optional] |
-| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum) | A description of the event that disconnected the segment |  [optional] |
-| **segmentType** | [**SegmentTypeEnum**](#SegmentTypeEnum) | The activity taking place for the participant in the segment |  [optional] |
-| **requestedRoutingUserIds** | **List&lt;String&gt;** |  |  [optional] |
-| **requestedRoutingSkillIds** | **List&lt;String&gt;** |  |  [optional] |
-| **requestedLanguageId** | **String** | A unique identifier for the language requested for an interaction. |  [optional] |
-| **scoredAgents** | [**List&lt;AnalyticsScoredAgent&gt;**](AnalyticsScoredAgent.html) |  |  [optional] |
-| **properties** | [**List&lt;AnalyticsProperty&gt;**](AnalyticsProperty.html) |  |  [optional] |
-| **sourceConversationId** | **String** |  |  [optional] |
-| **destinationConversationId** | **String** |  |  [optional] |
-| **sourceSessionId** | **String** |  |  [optional] |
-| **destinationSessionId** | **String** |  |  [optional] |
-| **sipResponseCodes** | **List&lt;Long&gt;** |  |  [optional] |
-| **q850ResponseCodes** | **List&lt;Long&gt;** |  |  [optional] |
-| **conference** | **Boolean** | Indicates whether the segment was a conference |  [optional] |
-| **groupId** | **String** |  |  [optional] |
-| **subject** | **String** |  |  [optional] |
-| **audioMuted** | **Boolean** |  |  [optional] |
-| **videoMuted** | **Boolean** |  |  [optional] |
+| **segmentStart** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this segment began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **segmentEnd** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **queueId** | <!----><!---->**String**<!----> | Queue identifier |  [optional] |
+| **wrapUpCode** | <!----><!---->**String**<!----> | Wrapup Code id |  [optional] |
+| **wrapUpNote** | <!----><!---->**String**<!----> | Note entered by an agent during after-call work |  [optional] |
+| **wrapUpTags** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **errorCode** | <!----><!---->**String**<!----> |  |  [optional] |
+| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> | A description of the event that disconnected the segment |  [optional] |
+| **segmentType** | [**SegmentTypeEnum**](#SegmentTypeEnum)<!----> | The activity taking place for the participant in the segment |  [optional] |
+| **requestedRoutingUserIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **requestedRoutingSkillIds** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **requestedLanguageId** | <!----><!---->**String**<!----> | A unique identifier for the language requested for an interaction. |  [optional] |
+| **scoredAgents** | <!----><!---->[**List&lt;AnalyticsScoredAgent&gt;**](AnalyticsScoredAgent.html)<!----> |  |  [optional] |
+| **properties** | <!----><!---->[**List&lt;AnalyticsProperty&gt;**](AnalyticsProperty.html)<!----> |  |  [optional] |
+| **sourceConversationId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **destinationConversationId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **sourceSessionId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **destinationSessionId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **sipResponseCodes** | <!----><!---->**List&lt;Long&gt;**<!----> |  |  [optional] |
+| **q850ResponseCodes** | <!----><!---->**List&lt;Long&gt;**<!----> |  |  [optional] |
+| **conference** | <!----><!---->**Boolean**<!----> | Indicates whether the segment was a conference |  [optional] |
+| **groupId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **subject** | <!----><!---->**String**<!----> |  |  [optional] |
+| **audioMuted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **videoMuted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

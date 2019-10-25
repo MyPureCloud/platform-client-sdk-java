@@ -8,7 +8,7 @@ title: FeatureState
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **enabled** | **Boolean** |  |  [optional] |
+| **enabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

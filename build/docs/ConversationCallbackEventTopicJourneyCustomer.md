@@ -8,8 +8,8 @@ title: ConversationCallbackEventTopicJourneyCustomer
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **idType** | **String** |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **idType** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

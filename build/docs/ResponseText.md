@@ -8,8 +8,8 @@ title: ResponseText
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **content** | **String** | Response text content. |  |
-| **contentType** | [**ContentTypeEnum**](#ContentTypeEnum) | Response text content type. |  [optional] |
+| **content** | <!----><!---->**String**<!----> | Response text content. |  |
+| **contentType** | [**ContentTypeEnum**](#ContentTypeEnum)<!----> | Response text content type. |  [optional] |
 {: class="table table-striped"}
 
 

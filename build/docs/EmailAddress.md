@@ -8,8 +8,8 @@ title: EmailAddress
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **email** | **String** |  |  [optional] |
-| **name** | **String** |  |  [optional] |
+| **email** | <!----><!---->**String**<!----> |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

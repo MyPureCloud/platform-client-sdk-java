@@ -8,18 +8,18 @@ title: OrphanRecording
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **createdTime** | [**Date**](Date.html) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **recoveredTime** | [**Date**](Date.html) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **providerType** | [**ProviderTypeEnum**](#ProviderTypeEnum) |  |  [optional] |
-| **mediaSizeBytes** | **Long** |  |  [optional] |
-| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum) |  |  [optional] |
-| **fileState** | [**FileStateEnum**](#FileStateEnum) |  |  [optional] |
-| **providerEndpoint** | [**Endpoint**](Endpoint.html) |  |  [optional] |
-| **recording** | [**Recording**](Recording.html) |  |  [optional] |
-| **orphanStatus** | [**OrphanStatusEnum**](#OrphanStatusEnum) | The status of the orphaned recording&#39;s conversation. |  [optional] |
-| **selfUri** | **String** | The URI for this object |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **createdTime** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **recoveredTime** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **providerType** | [**ProviderTypeEnum**](#ProviderTypeEnum)<!----> |  |  [optional] |
+| **mediaSizeBytes** | <!----><!---->**Long**<!----> |  |  [optional] |
+| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> |  |  [optional] |
+| **fileState** | [**FileStateEnum**](#FileStateEnum)<!----> |  |  [optional] |
+| **providerEndpoint** | <!----><!---->[**Endpoint**](Endpoint.html)<!----> |  |  [optional] |
+| **recording** | <!----><!---->[**Recording**](Recording.html)<!----> |  |  [optional] |
+| **orphanStatus** | [**OrphanStatusEnum**](#OrphanStatusEnum)<!----> | The status of the orphaned recording&#39;s conversation. |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,8 +8,8 @@ title: ForecastTimeSeriesResult
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **metric** | [**MetricEnum**](#MetricEnum) | The metric this result applies to |  [optional] |
-| **forecastingMethod** | [**ForecastingMethodEnum**](#ForecastingMethodEnum) | The forecasting method that was used for this metric |  [optional] |
+| **metric** | [**MetricEnum**](#MetricEnum)<!----> | The metric this result applies to |  [optional] |
+| **forecastingMethod** | [**ForecastingMethodEnum**](#ForecastingMethodEnum)<!----> | The forecasting method that was used for this metric |  [optional] |
 {: class="table table-striped"}
 
 

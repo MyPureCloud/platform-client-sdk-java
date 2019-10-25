@@ -8,26 +8,26 @@ title: QueueConversationVideoEventTopicCallback
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **state** | [**StateEnum**](#StateEnum) |  |  [optional] |
-| **id** | **String** |  |  [optional] |
-| **direction** | [**DirectionEnum**](#DirectionEnum) |  |  [optional] |
-| **held** | **Boolean** |  |  [optional] |
-| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum) |  |  [optional] |
-| **startHoldTime** | [**Date**](Date.html) |  |  [optional] |
-| **dialerPreview** | [**QueueConversationVideoEventTopicDialerPreview**](QueueConversationVideoEventTopicDialerPreview.html) |  |  [optional] |
-| **voicemail** | [**QueueConversationVideoEventTopicVoicemail**](QueueConversationVideoEventTopicVoicemail.html) |  |  [optional] |
-| **callbackNumbers** | **List&lt;String&gt;** |  |  [optional] |
-| **callbackUserName** | **String** |  |  [optional] |
-| **scriptId** | **String** |  |  [optional] |
-| **peerId** | **String** |  |  [optional] |
-| **skipEnabled** | **Boolean** |  |  [optional] |
-| **provider** | **String** |  |  [optional] |
-| **timeoutSeconds** | **Integer** |  |  [optional] |
-| **connectedTime** | [**Date**](Date.html) |  |  [optional] |
-| **disconnectedTime** | [**Date**](Date.html) |  |  [optional] |
-| **callbackScheduledTime** | [**Date**](Date.html) |  |  [optional] |
-| **automatedCallbackConfigId** | **String** |  |  [optional] |
-| **additionalProperties** | **Object** |  |  [optional] |
+| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> |  |  [optional] |
+| **held** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **disconnectType** | [**DisconnectTypeEnum**](#DisconnectTypeEnum)<!----> |  |  [optional] |
+| **startHoldTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **dialerPreview** | <!----><!---->[**QueueConversationVideoEventTopicDialerPreview**](QueueConversationVideoEventTopicDialerPreview.html)<!----> |  |  [optional] |
+| **voicemail** | <!----><!---->[**QueueConversationVideoEventTopicVoicemail**](QueueConversationVideoEventTopicVoicemail.html)<!----> |  |  [optional] |
+| **callbackNumbers** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **callbackUserName** | <!----><!---->**String**<!----> |  |  [optional] |
+| **scriptId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **peerId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **skipEnabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **provider** | <!----><!---->**String**<!----> |  |  [optional] |
+| **timeoutSeconds** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **disconnectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **callbackScheduledTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **automatedCallbackConfigId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

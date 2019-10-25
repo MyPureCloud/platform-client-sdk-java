@@ -8,9 +8,9 @@ title: ArchitectPromptNotificationUser
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **homeOrg** | [**ArchitectPromptNotificationHomeOrganization**](ArchitectPromptNotificationHomeOrganization.html) |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **homeOrg** | <!----><!---->[**ArchitectPromptNotificationHomeOrganization**](ArchitectPromptNotificationHomeOrganization.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

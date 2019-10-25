@@ -8,16 +8,16 @@ title: CampaignSequenceEntityListing
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **entities** | [**List&lt;CampaignSequence&gt;**](CampaignSequence.html) |  |  [optional] |
-| **pageSize** | **Integer** |  |  [optional] |
-| **pageNumber** | **Integer** |  |  [optional] |
-| **total** | **Long** |  |  [optional] |
-| **firstUri** | **String** |  |  [optional] |
-| **selfUri** | **String** |  |  [optional] |
-| **nextUri** | **String** |  |  [optional] |
-| **previousUri** | **String** |  |  [optional] |
-| **lastUri** | **String** |  |  [optional] |
-| **pageCount** | **Integer** |  |  [optional] |
+| **entities** | <!----><!---->[**List&lt;CampaignSequence&gt;**](CampaignSequence.html)<!----> |  |  [optional] |
+| **pageSize** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **pageNumber** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **total** | <!----><!---->**Long**<!----> |  |  [optional] |
+| **firstUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **lastUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **nextUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **previousUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **pageCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

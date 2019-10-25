@@ -8,8 +8,8 @@ title: ValidateAddressResponse
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **valid** | **Boolean** | Was the passed in address valid |  |
-| **response** | [**SubscriberResponse**](SubscriberResponse.html) | Subscriber schema |  [optional] |
+| **valid** | <!----><!---->**Boolean**<!----> | Was the passed in address valid |  |
+| **response** | <!----><!---->[**SubscriberResponse**](SubscriberResponse.html)<!----> | Subscriber schema |  [optional] |
 {: class="table table-striped"}
 
 

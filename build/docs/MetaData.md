@@ -8,9 +8,9 @@ title: MetaData
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **pairingToken** | **String** |  |  [optional] |
-| **pairingTrust** | **List&lt;String&gt;** |  |  [optional] |
-| **pairingUrl** | **String** |  |  [optional] |
+| **pairingToken** | <!----><!---->**String**<!----> |  |  [optional] |
+| **pairingTrust** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **pairingUrl** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

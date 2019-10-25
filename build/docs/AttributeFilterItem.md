@@ -8,9 +8,9 @@ title: AttributeFilterItem
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **operator** | [**OperatorEnum**](#OperatorEnum) |  |  [optional] |
-| **values** | **List&lt;String&gt;** |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **operator** | [**OperatorEnum**](#OperatorEnum)<!----> |  |  [optional] |
+| **values** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

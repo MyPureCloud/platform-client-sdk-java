@@ -8,8 +8,8 @@ title: Voicemail
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The voicemail id |  [optional] |
-| **uploadStatus** | [**UploadStatusEnum**](#UploadStatusEnum) | current state of the voicemail upload |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The voicemail id |  [optional] |
+| **uploadStatus** | [**UploadStatusEnum**](#UploadStatusEnum)<!----> | current state of the voicemail upload |  [optional] |
 {: class="table table-striped"}
 
 

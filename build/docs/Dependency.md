@@ -8,14 +8,14 @@ title: Dependency
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The dependency identifier |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **version** | **String** |  |  [optional] |
-| **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
-| **deleted** | **Boolean** |  |  [optional] |
-| **updated** | **Boolean** |  |  [optional] |
-| **stateUnknown** | **Boolean** |  |  [optional] |
-| **selfUri** | **String** | The URI for this object |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The dependency identifier |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **version** | <!----><!---->**String**<!----> |  |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
+| **deleted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **updated** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **stateUnknown** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
 

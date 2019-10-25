@@ -8,11 +8,11 @@ title: AggregationResult
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
-| **dimension** | **String** | For termFrequency aggregations |  [optional] |
-| **metric** | **String** | For numericRange aggregations |  [optional] |
-| **count** | **Long** |  |  [optional] |
-| **results** | [**List&lt;AggregationResultEntry&gt;**](AggregationResultEntry.html) |  |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
+| **dimension** | <!----><!---->**String**<!----> | For termFrequency aggregations |  [optional] |
+| **metric** | <!----><!---->**String**<!----> | For numericRange aggregations |  [optional] |
+| **count** | <!----><!---->**Long**<!----> |  |  [optional] |
+| **results** | <!----><!---->[**List&lt;AggregationResultEntry&gt;**](AggregationResultEntry.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

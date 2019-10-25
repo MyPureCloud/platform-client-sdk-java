@@ -8,9 +8,9 @@ title: QueueConversationEmailEventTopicJourneyContext
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **customer** | [**QueueConversationEmailEventTopicJourneyCustomer**](QueueConversationEmailEventTopicJourneyCustomer.html) |  |  [optional] |
-| **customerSession** | [**QueueConversationEmailEventTopicJourneyCustomerSession**](QueueConversationEmailEventTopicJourneyCustomerSession.html) |  |  [optional] |
-| **triggeringAction** | [**QueueConversationEmailEventTopicJourneyAction**](QueueConversationEmailEventTopicJourneyAction.html) |  |  [optional] |
+| **customer** | <!----><!---->[**QueueConversationEmailEventTopicJourneyCustomer**](QueueConversationEmailEventTopicJourneyCustomer.html)<!----> |  |  [optional] |
+| **customerSession** | <!----><!---->[**QueueConversationEmailEventTopicJourneyCustomerSession**](QueueConversationEmailEventTopicJourneyCustomerSession.html)<!----> |  |  [optional] |
+| **triggeringAction** | <!----><!---->[**QueueConversationEmailEventTopicJourneyAction**](QueueConversationEmailEventTopicJourneyAction.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

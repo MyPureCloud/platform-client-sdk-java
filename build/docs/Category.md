@@ -8,7 +8,7 @@ title: Category
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | **String** | Category name |  [optional] |
+| **name** | <!----><!---->**String**<!----> | Category name |  [optional] |
 {: class="table table-striped"}
 
 

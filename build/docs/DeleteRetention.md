@@ -8,7 +8,7 @@ title: DeleteRetention
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **days** | **Integer** |  |  [optional] |
+| **days** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

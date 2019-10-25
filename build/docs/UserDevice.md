@@ -8,16 +8,16 @@ title: UserDevice
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** | The globally unique identifier for the object. |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **deviceToken** | **String** | device token sent by mobile clients. |  |
-| **notificationId** | **String** | notification id of the device. |  |
-| **make** | **String** | make of the device. |  |
-| **model** | **String** | Device model |  |
-| **acceptNotifications** | **Boolean** | if the device accepts notifications |  |
-| **type** | [**TypeEnum**](#TypeEnum) | type of the device; ios or android |  |
-| **sessionHash** | **String** |  |  [optional] |
-| **selfUri** | **String** | The URI for this object |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **deviceToken** | <!----><!---->**String**<!----> | device token sent by mobile clients. |  |
+| **notificationId** | <!----><!---->**String**<!----> | notification id of the device. |  |
+| **make** | <!----><!---->**String**<!----> | make of the device. |  |
+| **model** | <!----><!---->**String**<!----> | Device model |  |
+| **acceptNotifications** | <!----><!---->**Boolean**<!----> | if the device accepts notifications |  |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> | type of the device; ios or android |  |
+| **sessionHash** | <!----><!---->**String**<!----> |  |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
 

@@ -8,9 +8,9 @@ title: ArchitectFlowNotificationUser
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **homeOrg** | [**ArchitectFlowNotificationHomeOrganization**](ArchitectFlowNotificationHomeOrganization.html) |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **homeOrg** | <!----><!---->[**ArchitectFlowNotificationHomeOrganization**](ArchitectFlowNotificationHomeOrganization.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

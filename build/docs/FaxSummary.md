@@ -8,9 +8,9 @@ title: FaxSummary
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **readCount** | **Integer** |  |  [optional] |
-| **unreadCount** | **Integer** |  |  [optional] |
-| **totalCount** | **Integer** |  |  [optional] |
+| **readCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **unreadCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **totalCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

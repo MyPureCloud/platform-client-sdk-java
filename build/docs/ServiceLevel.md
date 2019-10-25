@@ -8,8 +8,8 @@ title: ServiceLevel
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **percentage** | **Double** |  |  [optional] |
-| **durationMs** | **Long** |  |  [optional] |
+| **percentage** | <!----><!---->**Double**<!----> |  |  [optional] |
+| **durationMs** | <!----><!---->**Long**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

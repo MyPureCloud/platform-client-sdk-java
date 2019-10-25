@@ -8,8 +8,8 @@ title: ConsultTransfer
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **speakTo** | [**SpeakToEnum**](#SpeakToEnum) | Determines to whom the initiating participant is speaking. Defaults to DESTINATION |  [optional] |
-| **destination** | [**Destination**](Destination.html) | Destination phone number and name. |  |
+| **speakTo** | [**SpeakToEnum**](#SpeakToEnum)<!----> | Determines to whom the initiating participant is speaking. Defaults to DESTINATION |  [optional] |
+| **destination** | <!----><!---->[**Destination**](Destination.html)<!----> | Destination phone number and name. |  |
 {: class="table table-striped"}
 
 

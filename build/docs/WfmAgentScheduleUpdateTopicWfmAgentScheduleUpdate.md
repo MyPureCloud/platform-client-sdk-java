@@ -8,8 +8,8 @@ title: WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdate
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **updateType** | [**UpdateTypeEnum**](#UpdateTypeEnum) |  |  [optional] |
-| **shiftStartDates** | [**List&lt;Date&gt;**](Date.html) |  |  [optional] |
+| **updateType** | [**UpdateTypeEnum**](#UpdateTypeEnum)<!----> |  |  [optional] |
+| **shiftStartDates** | <!----><!---->[**List&lt;Date&gt;**](Date.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

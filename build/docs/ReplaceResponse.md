@@ -8,12 +8,12 @@ title: ReplaceResponse
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | **String** |  |  [optional] |
-| **name** | **String** |  |  [optional] |
-| **changeNumber** | **Integer** |  |  [optional] |
-| **uploadStatus** | [**DomainEntityRef**](DomainEntityRef.html) |  |  [optional] |
-| **uploadDestinationUri** | **String** |  |  [optional] |
-| **uploadMethod** | [**UploadMethodEnum**](#UploadMethodEnum) |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **changeNumber** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **uploadStatus** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
+| **uploadDestinationUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **uploadMethod** | [**UploadMethodEnum**](#UploadMethodEnum)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

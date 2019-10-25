@@ -8,7 +8,7 @@ title: ResponseQueryResults
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **results** | [**ResponseEntityList**](ResponseEntityList.html) | Contains the query results |  |
+| **results** | <!----><!---->[**ResponseEntityList**](ResponseEntityList.html)<!----> | Contains the query results |  |
 {: class="table table-striped"}
 
 

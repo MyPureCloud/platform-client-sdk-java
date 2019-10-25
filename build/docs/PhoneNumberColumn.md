@@ -8,8 +8,8 @@ title: PhoneNumberColumn
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **columnName** | **String** |  |  [optional] |
-| **type** | **String** |  |  [optional] |
+| **columnName** | <!----><!---->**String**<!----> |  |  [optional] |
+| **type** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 
