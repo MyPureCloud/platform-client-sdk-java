@@ -68,7 +68,8 @@ public class GetLocationsSearchRequest {
 	} 
 
 	public enum expandValues { 
-		IMAGES("images");
+		IMAGES("images"), 
+		ADDRESSVERIFICATIONDETAILS("addressVerificationDetails");
 
 		private String value;
 

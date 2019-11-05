@@ -110,6 +110,7 @@ title: ConversationAggregationQuery
 | THELDCOMPLETE | &quot;tHeldComplete&quot; |
 | TIVR | &quot;tIvr&quot; |
 | TNOTRESPONDING | &quot;tNotResponding&quot; |
+| TSHORTABANDON | &quot;tShortAbandon&quot; |
 | TTALK | &quot;tTalk&quot; |
 | TTALKCOMPLETE | &quot;tTalkComplete&quot; |
 | TUSERRESPONSETIME | &quot;tUserResponseTime&quot; |

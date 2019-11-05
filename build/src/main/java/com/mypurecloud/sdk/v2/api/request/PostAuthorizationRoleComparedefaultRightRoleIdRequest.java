@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.AuthzSubject;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.SubjectDivisions;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
+import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
 
 public class PostAuthorizationRoleComparedefaultRightRoleIdRequest {

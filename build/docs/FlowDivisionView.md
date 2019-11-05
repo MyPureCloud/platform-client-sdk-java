@@ -33,6 +33,7 @@ title: FlowDivisionView
 | SECURECALL | &quot;SECURECALL&quot; |
 | SPEECH | &quot;SPEECH&quot; |
 | SURVEYINVITE | &quot;SURVEYINVITE&quot; |
+| WORKFLOW | &quot;WORKFLOW&quot; |
 {: class="table table-striped"}
 
 

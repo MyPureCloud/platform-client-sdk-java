@@ -643,30 +643,38 @@ public class SCIMApi {
    * Get a user
    * 
    * @param userId The ID of a user. Returned with GET /api/v2/scim/users. (required)
+   * @param attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
    * @param ifNoneMatch TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. (optional)
    * @return ScimV2User
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ScimV2User getScimUser(String userId, String ifNoneMatch) throws IOException, ApiException {
-    return  getScimUser(createGetScimUserRequest(userId, ifNoneMatch));
+  public ScimV2User getScimUser(String userId, List<String> attributes, List<String> excludedAttributes, String ifNoneMatch) throws IOException, ApiException {
+    return  getScimUser(createGetScimUserRequest(userId, attributes, excludedAttributes, ifNoneMatch));
   }
 
   /**
    * Get a user
    * 
    * @param userId The ID of a user. Returned with GET /api/v2/scim/users. (required)
+   * @param attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
    * @param ifNoneMatch TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. (optional)
    * @return ScimV2User
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScimV2User> getScimUserWithHttpInfo(String userId, String ifNoneMatch) throws IOException {
-    return getScimUser(createGetScimUserRequest(userId, ifNoneMatch).withHttpInfo());
+  public ApiResponse<ScimV2User> getScimUserWithHttpInfo(String userId, List<String> attributes, List<String> excludedAttributes, String ifNoneMatch) throws IOException {
+    return getScimUser(createGetScimUserRequest(userId, attributes, excludedAttributes, ifNoneMatch).withHttpInfo());
   }
 
-  private GetScimUserRequest createGetScimUserRequest(String userId, String ifNoneMatch) {
+  private GetScimUserRequest createGetScimUserRequest(String userId, List<String> attributes, List<String> excludedAttributes, String ifNoneMatch) {
     return GetScimUserRequest.builder()
             .withUserId(userId)
+    
+            .withAttributes(attributes)
+    
+            .withExcludedAttributes(excludedAttributes)
     
             .withIfNoneMatch(ifNoneMatch)
     
@@ -724,45 +732,53 @@ public class SCIMApi {
   
   /**
    * Get a list of users
-   * 
-   * @param filter Filters results. (required)
+   * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
    * @param startIndex The 1-based index of the first query result. (optional, default to 1)
    * @param count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (optional, default to 25)
+   * @param attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;. (optional)
    * @return ScimUserListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ScimUserListResponse getScimUsers(String filter, Integer startIndex, Integer count) throws IOException, ApiException {
-    return  getScimUsers(createGetScimUsersRequest(filter, startIndex, count));
+  public ScimUserListResponse getScimUsers(Integer startIndex, Integer count, List<String> attributes, List<String> excludedAttributes, String filter) throws IOException, ApiException {
+    return  getScimUsers(createGetScimUsersRequest(startIndex, count, attributes, excludedAttributes, filter));
   }
 
   /**
    * Get a list of users
-   * 
-   * @param filter Filters results. (required)
+   * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
    * @param startIndex The 1-based index of the first query result. (optional, default to 1)
    * @param count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (optional, default to 25)
+   * @param attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;. (optional)
    * @return ScimUserListResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScimUserListResponse> getScimUsersWithHttpInfo(String filter, Integer startIndex, Integer count) throws IOException {
-    return getScimUsers(createGetScimUsersRequest(filter, startIndex, count).withHttpInfo());
+  public ApiResponse<ScimUserListResponse> getScimUsersWithHttpInfo(Integer startIndex, Integer count, List<String> attributes, List<String> excludedAttributes, String filter) throws IOException {
+    return getScimUsers(createGetScimUsersRequest(startIndex, count, attributes, excludedAttributes, filter).withHttpInfo());
   }
 
-  private GetScimUsersRequest createGetScimUsersRequest(String filter, Integer startIndex, Integer count) {
+  private GetScimUsersRequest createGetScimUsersRequest(Integer startIndex, Integer count, List<String> attributes, List<String> excludedAttributes, String filter) {
     return GetScimUsersRequest.builder()
-            .withFilter(filter)
-    
             .withStartIndex(startIndex)
     
             .withCount(count)
+    
+            .withAttributes(attributes)
+    
+            .withExcludedAttributes(excludedAttributes)
+    
+            .withFilter(filter)
     
             .build();
   }
 
   /**
    * Get a list of users
-   * 
+   * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
    * @param request The request object
    * @return ScimUserListResponse
    * @throws ApiException if the request fails on the server
@@ -781,7 +797,7 @@ public class SCIMApi {
 
   /**
    * Get a list of users
-   * 
+   * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1216,30 +1232,38 @@ public class SCIMApi {
    * Get a user
    * 
    * @param userId The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
+   * @param attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
    * @param ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. (optional)
    * @return ScimV2User
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ScimV2User getScimV2User(String userId, String ifNoneMatch) throws IOException, ApiException {
-    return  getScimV2User(createGetScimV2UserRequest(userId, ifNoneMatch));
+  public ScimV2User getScimV2User(String userId, List<String> attributes, List<String> excludedAttributes, String ifNoneMatch) throws IOException, ApiException {
+    return  getScimV2User(createGetScimV2UserRequest(userId, attributes, excludedAttributes, ifNoneMatch));
   }
 
   /**
    * Get a user
    * 
    * @param userId The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
+   * @param attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
    * @param ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. (optional)
    * @return ScimV2User
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScimV2User> getScimV2UserWithHttpInfo(String userId, String ifNoneMatch) throws IOException {
-    return getScimV2User(createGetScimV2UserRequest(userId, ifNoneMatch).withHttpInfo());
+  public ApiResponse<ScimV2User> getScimV2UserWithHttpInfo(String userId, List<String> attributes, List<String> excludedAttributes, String ifNoneMatch) throws IOException {
+    return getScimV2User(createGetScimV2UserRequest(userId, attributes, excludedAttributes, ifNoneMatch).withHttpInfo());
   }
 
-  private GetScimV2UserRequest createGetScimV2UserRequest(String userId, String ifNoneMatch) {
+  private GetScimV2UserRequest createGetScimV2UserRequest(String userId, List<String> attributes, List<String> excludedAttributes, String ifNoneMatch) {
     return GetScimV2UserRequest.builder()
             .withUserId(userId)
+    
+            .withAttributes(attributes)
+    
+            .withExcludedAttributes(excludedAttributes)
     
             .withIfNoneMatch(ifNoneMatch)
     
@@ -1297,45 +1321,53 @@ public class SCIMApi {
   
   /**
    * Get a list of users
-   * 
-   * @param filter Filters results. (required)
+   * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
    * @param startIndex The 1-based index of the first query result. (optional, default to 1)
    * @param count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (optional, default to 25)
+   * @param attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;. (optional)
    * @return ScimUserListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ScimUserListResponse getScimV2Users(String filter, Integer startIndex, Integer count) throws IOException, ApiException {
-    return  getScimV2Users(createGetScimV2UsersRequest(filter, startIndex, count));
+  public ScimUserListResponse getScimV2Users(Integer startIndex, Integer count, List<String> attributes, List<String> excludedAttributes, String filter) throws IOException, ApiException {
+    return  getScimV2Users(createGetScimV2UsersRequest(startIndex, count, attributes, excludedAttributes, filter));
   }
 
   /**
    * Get a list of users
-   * 
-   * @param filter Filters results. (required)
+   * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
    * @param startIndex The 1-based index of the first query result. (optional, default to 1)
    * @param count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (optional, default to 25)
+   * @param attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;. (optional)
    * @return ScimUserListResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScimUserListResponse> getScimV2UsersWithHttpInfo(String filter, Integer startIndex, Integer count) throws IOException {
-    return getScimV2Users(createGetScimV2UsersRequest(filter, startIndex, count).withHttpInfo());
+  public ApiResponse<ScimUserListResponse> getScimV2UsersWithHttpInfo(Integer startIndex, Integer count, List<String> attributes, List<String> excludedAttributes, String filter) throws IOException {
+    return getScimV2Users(createGetScimV2UsersRequest(startIndex, count, attributes, excludedAttributes, filter).withHttpInfo());
   }
 
-  private GetScimV2UsersRequest createGetScimV2UsersRequest(String filter, Integer startIndex, Integer count) {
+  private GetScimV2UsersRequest createGetScimV2UsersRequest(Integer startIndex, Integer count, List<String> attributes, List<String> excludedAttributes, String filter) {
     return GetScimV2UsersRequest.builder()
-            .withFilter(filter)
-    
             .withStartIndex(startIndex)
     
             .withCount(count)
+    
+            .withAttributes(attributes)
+    
+            .withExcludedAttributes(excludedAttributes)
+    
+            .withFilter(filter)
     
             .build();
   }
 
   /**
    * Get a list of users
-   * 
+   * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
    * @param request The request object
    * @return ScimUserListResponse
    * @throws ApiException if the request fails on the server
@@ -1354,7 +1386,7 @@ public class SCIMApi {
 
   /**
    * Get a list of users
-   * 
+   * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

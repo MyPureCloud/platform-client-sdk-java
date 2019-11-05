@@ -55,6 +55,7 @@ import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserDetailsQuery;
 import com.mypurecloud.sdk.v2.model.UserObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserObservationQuery;
+import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 import com.mypurecloud.sdk.v2.model.ChangePasswordRequest;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 import com.mypurecloud.sdk.v2.model.CreateUser;

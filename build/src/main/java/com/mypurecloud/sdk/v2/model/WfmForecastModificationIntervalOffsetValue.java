@@ -16,7 +16,7 @@ import java.io.Serializable;
 public class WfmForecastModificationIntervalOffsetValue  implements Serializable {
   
   private Integer intervalIndex = null;
-  private Integer value = null;
+  private Double value = null;
 
   
   /**
@@ -40,17 +40,17 @@ public class WfmForecastModificationIntervalOffsetValue  implements Serializable
   /**
    * The value to set for the given interval
    **/
-  public WfmForecastModificationIntervalOffsetValue value(Integer value) {
+  public WfmForecastModificationIntervalOffsetValue value(Double value) {
     this.value = value;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "The value to set for the given interval")
   @JsonProperty("value")
-  public Integer getValue() {
+  public Double getValue() {
     return value;
   }
-  public void setValue(Integer value) {
+  public void setValue(Double value) {
     this.value = value;
   }
 

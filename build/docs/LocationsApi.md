@@ -135,7 +135,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **locationId** | **String**| Location ID | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: images 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: images, addressVerificationDetails 
 {: class="table-striped"}
 
 
@@ -329,7 +329,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **q64** | **String**| q64 | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Provides more details about a specified resource | [optional]<br />**Values**: images 
+| **expand** | [**List&lt;String&gt;**](String.html)| Provides more details about a specified resource | [optional]<br />**Values**: images, addressVerificationDetails 
 {: class="table-striped"}
 
 

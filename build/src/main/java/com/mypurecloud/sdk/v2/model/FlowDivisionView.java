@@ -34,7 +34,8 @@ public class FlowDivisionView  implements Serializable {
     OUTBOUNDCALL("OUTBOUNDCALL"),
     SECURECALL("SECURECALL"),
     SPEECH("SPEECH"),
-    SURVEYINVITE("SURVEYINVITE");
+    SURVEYINVITE("SURVEYINVITE"),
+    WORKFLOW("WORKFLOW");
 
     private String value;
 

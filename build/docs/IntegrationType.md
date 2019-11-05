@@ -30,6 +30,7 @@ title: IntegrationType
 | **nonInstallable** | <!----><!---->**Boolean**<!----> | Indicates if the integration type is installable or not. |  [optional] |
 | **maxInstances** | <!----><!---->**Integer**<!----> | The maximum number of integration instances allowable for this integration type |  [optional] |
 | **userPermissions** | <!----><!---->**List&lt;String&gt;**<!----> | List of permissions required to permit user access to the integration type. |  [optional] |
+| **vendorOAuthClientIds** | <!----><!---->**List&lt;String&gt;**<!----> | List of OAuth Client IDs that must be authorized when the integration is created. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

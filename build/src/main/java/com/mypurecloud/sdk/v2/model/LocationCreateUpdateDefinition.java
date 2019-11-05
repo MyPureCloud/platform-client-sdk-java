@@ -20,8 +20,6 @@ import java.io.Serializable;
 public class LocationCreateUpdateDefinition  implements Serializable {
   
   private String name = null;
-  private LocationAddress address = null;
-  private LocationEmergencyNumber emergencyNumber = null;
   private Integer version = null;
 
   /**
@@ -58,10 +56,12 @@ public class LocationCreateUpdateDefinition  implements Serializable {
     }
   }
   private StateEnum state = null;
-  private String notes = null;
-  private String contactUser = null;
   private List<String> path = new ArrayList<String>();
   private Boolean addressVerified = null;
+  private String notes = null;
+  private String contactUser = null;
+  private LocationEmergencyNumber emergencyNumber = null;
+  private LocationAddress address = null;
 
   
   /**
@@ -83,47 +83,14 @@ public class LocationCreateUpdateDefinition  implements Serializable {
 
   
   /**
-   **/
-  public LocationCreateUpdateDefinition address(LocationAddress address) {
-    this.address = address;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("address")
-  public LocationAddress getAddress() {
-    return address;
-  }
-  public void setAddress(LocationAddress address) {
-    this.address = address;
-  }
-
-  
-  /**
-   **/
-  public LocationCreateUpdateDefinition emergencyNumber(LocationEmergencyNumber emergencyNumber) {
-    this.emergencyNumber = emergencyNumber;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("emergencyNumber")
-  public LocationEmergencyNumber getEmergencyNumber() {
-    return emergencyNumber;
-  }
-  public void setEmergencyNumber(LocationEmergencyNumber emergencyNumber) {
-    this.emergencyNumber = emergencyNumber;
-  }
-
-  
-  /**
+   * Current version of the location
    **/
   public LocationCreateUpdateDefinition version(Integer version) {
     this.version = version;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Current version of the location")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;
@@ -152,13 +119,49 @@ public class LocationCreateUpdateDefinition  implements Serializable {
 
   
   /**
+   * A list of ancestor ids
+   **/
+  public LocationCreateUpdateDefinition path(List<String> path) {
+    this.path = path;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of ancestor ids")
+  @JsonProperty("path")
+  public List<String> getPath() {
+    return path;
+  }
+  public void setPath(List<String> path) {
+    this.path = path;
+  }
+
+  
+  /**
+   **/
+  public LocationCreateUpdateDefinition addressVerified(Boolean addressVerified) {
+    this.addressVerified = addressVerified;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("addressVerified")
+  public Boolean getAddressVerified() {
+    return addressVerified;
+  }
+  public void setAddressVerified(Boolean addressVerified) {
+    this.addressVerified = addressVerified;
+  }
+
+  
+  /**
+   * Notes for the location
    **/
   public LocationCreateUpdateDefinition notes(String notes) {
     this.notes = notes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Notes for the location")
   @JsonProperty("notes")
   public String getNotes() {
     return notes;
@@ -187,36 +190,38 @@ public class LocationCreateUpdateDefinition  implements Serializable {
 
   
   /**
+   * Emergency number for the location
    **/
-  public LocationCreateUpdateDefinition path(List<String> path) {
-    this.path = path;
+  public LocationCreateUpdateDefinition emergencyNumber(LocationEmergencyNumber emergencyNumber) {
+    this.emergencyNumber = emergencyNumber;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("path")
-  public List<String> getPath() {
-    return path;
+  @ApiModelProperty(example = "null", value = "Emergency number for the location")
+  @JsonProperty("emergencyNumber")
+  public LocationEmergencyNumber getEmergencyNumber() {
+    return emergencyNumber;
   }
-  public void setPath(List<String> path) {
-    this.path = path;
+  public void setEmergencyNumber(LocationEmergencyNumber emergencyNumber) {
+    this.emergencyNumber = emergencyNumber;
   }
 
   
   /**
+   * Address of the location
    **/
-  public LocationCreateUpdateDefinition addressVerified(Boolean addressVerified) {
-    this.addressVerified = addressVerified;
+  public LocationCreateUpdateDefinition address(LocationAddress address) {
+    this.address = address;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("addressVerified")
-  public Boolean getAddressVerified() {
-    return addressVerified;
+  @ApiModelProperty(example = "null", value = "Address of the location")
+  @JsonProperty("address")
+  public LocationAddress getAddress() {
+    return address;
   }
-  public void setAddressVerified(Boolean addressVerified) {
-    this.addressVerified = addressVerified;
+  public void setAddress(LocationAddress address) {
+    this.address = address;
   }
 
   
@@ -231,19 +236,19 @@ public class LocationCreateUpdateDefinition  implements Serializable {
     }
     LocationCreateUpdateDefinition locationCreateUpdateDefinition = (LocationCreateUpdateDefinition) o;
     return Objects.equals(this.name, locationCreateUpdateDefinition.name) &&
-        Objects.equals(this.address, locationCreateUpdateDefinition.address) &&
-        Objects.equals(this.emergencyNumber, locationCreateUpdateDefinition.emergencyNumber) &&
         Objects.equals(this.version, locationCreateUpdateDefinition.version) &&
         Objects.equals(this.state, locationCreateUpdateDefinition.state) &&
+        Objects.equals(this.path, locationCreateUpdateDefinition.path) &&
+        Objects.equals(this.addressVerified, locationCreateUpdateDefinition.addressVerified) &&
         Objects.equals(this.notes, locationCreateUpdateDefinition.notes) &&
         Objects.equals(this.contactUser, locationCreateUpdateDefinition.contactUser) &&
-        Objects.equals(this.path, locationCreateUpdateDefinition.path) &&
-        Objects.equals(this.addressVerified, locationCreateUpdateDefinition.addressVerified);
+        Objects.equals(this.emergencyNumber, locationCreateUpdateDefinition.emergencyNumber) &&
+        Objects.equals(this.address, locationCreateUpdateDefinition.address);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, address, emergencyNumber, version, state, notes, contactUser, path, addressVerified);
+    return Objects.hash(name, version, state, path, addressVerified, notes, contactUser, emergencyNumber, address);
   }
 
   @Override
@@ -252,14 +257,14 @@ public class LocationCreateUpdateDefinition  implements Serializable {
     sb.append("class LocationCreateUpdateDefinition {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    address: ").append(toIndentedString(address)).append("\n");
-    sb.append("    emergencyNumber: ").append(toIndentedString(emergencyNumber)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
-    sb.append("    contactUser: ").append(toIndentedString(contactUser)).append("\n");
     sb.append("    path: ").append(toIndentedString(path)).append("\n");
     sb.append("    addressVerified: ").append(toIndentedString(addressVerified)).append("\n");
+    sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
+    sb.append("    contactUser: ").append(toIndentedString(contactUser)).append("\n");
+    sb.append("    emergencyNumber: ").append(toIndentedString(emergencyNumber)).append("\n");
+    sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("}");
     return sb.toString();
   }

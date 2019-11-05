@@ -44,6 +44,7 @@ public class IntegrationType  implements Serializable {
   private Boolean nonInstallable = null;
   private Integer maxInstances = null;
   private List<String> userPermissions = new ArrayList<String>();
+  private List<String> vendorOAuthClientIds = new ArrayList<String>();
   private String selfUri = null;
 
   
@@ -266,6 +267,24 @@ public class IntegrationType  implements Serializable {
   }
 
   
+  /**
+   * List of OAuth Client IDs that must be authorized when the integration is created.
+   **/
+  public IntegrationType vendorOAuthClientIds(List<String> vendorOAuthClientIds) {
+    this.vendorOAuthClientIds = vendorOAuthClientIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of OAuth Client IDs that must be authorized when the integration is created.")
+  @JsonProperty("vendorOAuthClientIds")
+  public List<String> getVendorOAuthClientIds() {
+    return vendorOAuthClientIds;
+  }
+  public void setVendorOAuthClientIds(List<String> vendorOAuthClientIds) {
+    this.vendorOAuthClientIds = vendorOAuthClientIds;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -305,12 +324,13 @@ public class IntegrationType  implements Serializable {
         Objects.equals(this.nonInstallable, integrationType.nonInstallable) &&
         Objects.equals(this.maxInstances, integrationType.maxInstances) &&
         Objects.equals(this.userPermissions, integrationType.userPermissions) &&
+        Objects.equals(this.vendorOAuthClientIds, integrationType.vendorOAuthClientIds) &&
         Objects.equals(this.selfUri, integrationType.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, provider, category, images, configPropertiesSchemaUri, configAdvancedSchemaUri, helpUri, termsOfServiceUri, vendorName, vendorWebsiteUri, marketplaceUri, faqUri, privacyPolicyUri, supportContactUri, salesContactUri, helpLinks, credentials, nonInstallable, maxInstances, userPermissions, selfUri);
+    return Objects.hash(id, name, description, provider, category, images, configPropertiesSchemaUri, configAdvancedSchemaUri, helpUri, termsOfServiceUri, vendorName, vendorWebsiteUri, marketplaceUri, faqUri, privacyPolicyUri, supportContactUri, salesContactUri, helpLinks, credentials, nonInstallable, maxInstances, userPermissions, vendorOAuthClientIds, selfUri);
   }
 
   @Override
@@ -340,6 +360,7 @@ public class IntegrationType  implements Serializable {
     sb.append("    nonInstallable: ").append(toIndentedString(nonInstallable)).append("\n");
     sb.append("    maxInstances: ").append(toIndentedString(maxInstances)).append("\n");
     sb.append("    userPermissions: ").append(toIndentedString(userPermissions)).append("\n");
+    sb.append("    vendorOAuthClientIds: ").append(toIndentedString(vendorOAuthClientIds)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

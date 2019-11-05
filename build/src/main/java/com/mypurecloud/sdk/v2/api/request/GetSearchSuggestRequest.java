@@ -78,7 +78,8 @@ public class GetSearchSuggestRequest {
 		CALLERUSER_CONVERSATIONSUMMARY("callerUser.conversationSummary"), 
 		CALLERUSER_OUTOFOFFICE("callerUser.outOfOffice"), 
 		CALLERUSER_GEOLOCATION("callerUser.geolocation"), 
-		IMAGES("images");
+		IMAGES("images"), 
+		ADDRESSVERIFICATIONDETAILS("addressVerificationDetails");
 
 		private String value;
 

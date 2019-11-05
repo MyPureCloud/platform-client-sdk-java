@@ -84,7 +84,8 @@ public class GetFlowsRequest {
 		INQUEUECALL("inqueuecall"), 
 		SPEECH("speech"), 
 		SECURECALL("securecall"), 
-		SURVEYINVITE("surveyinvite");
+		SURVEYINVITE("surveyinvite"), 
+		WORKFLOW("workflow");
 
 		private String value;
 
@@ -266,6 +267,20 @@ public class GetFlowsRequest {
 	    return this;
 	} 
 	
+	private String lockedByClientId;
+	public String getLockedByClientId() {
+		return this.lockedByClientId;
+	}
+
+	public void setLockedByClientId(String lockedByClientId) {
+		this.lockedByClientId = lockedByClientId;
+	}
+
+	public GetFlowsRequest withLockedByClientId(String lockedByClientId) {
+	    this.setLockedByClientId(lockedByClientId);
+	    return this;
+	} 
+	
 	private String secure;
 	public String getSecure() {
 		return this.secure;
@@ -428,6 +443,8 @@ public class GetFlowsRequest {
         
                 .withQueryParameters("lockedBy", "", lockedBy)
         
+                .withQueryParameters("lockedByClientId", "", lockedByClientId)
+        
                 .withQueryParameters("secure", "", secure)
         
                 .withQueryParameters("deleted", "", deleted)
@@ -527,6 +544,11 @@ public class GetFlowsRequest {
 		
 		public Builder withLockedBy(String lockedBy) {
 			request.setLockedBy(lockedBy);
+			return this;
+		}
+		
+		public Builder withLockedByClientId(String lockedByClientId) {
+			request.setLockedByClientId(lockedByClientId);
 			return this;
 		}
 		

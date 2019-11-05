@@ -35,6 +35,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi.html#postAuthorizationRoleComparedefaultRightRoleId) | Get an unsaved org role to default role comparison |
 | [**postAuthorizationRoles**](AuthorizationApi.html#postAuthorizationRoles) | Create an organization role. |
 | [**postAuthorizationRolesDefault**](AuthorizationApi.html#postAuthorizationRolesDefault) | Restores all default roles |
+| [**postAuthorizationSubjectBulkadd**](AuthorizationApi.html#postAuthorizationSubjectBulkadd) | Bulk-grant roles and divisions to a subject. |
+| [**postAuthorizationSubjectBulkremove**](AuthorizationApi.html#postAuthorizationSubjectBulkremove) | Bulk-remove grants from a subject. |
 | [**postAuthorizationSubjectDivisionRole**](AuthorizationApi.html#postAuthorizationSubjectDivisionRole) | Make a grant of a role in a division |
 | [**putAuthorizationDivision**](AuthorizationApi.html#putAuthorizationDivision) | Update a division. |
 | [**putAuthorizationRole**](AuthorizationApi.html#putAuthorizationRole) | Update an organization role. |
@@ -1859,6 +1861,136 @@ try {
 ### Return type
 
 [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html)
+
+<a name="postAuthorizationSubjectBulkadd"></a>
+
+# **postAuthorizationSubjectBulkadd**
+
+
+
+> Void postAuthorizationSubjectBulkadd(subjectId, body, subjectType)
+
+Bulk-grant roles and divisions to a subject.
+
+
+
+Wraps POST /api/v2/authorization/subjects/{subjectId}/bulkadd  
+
+Requires ANY permissions: 
+
+* authorization:grant:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+String subjectId = "subjectId_example"; // String | Subject ID (user or group)
+RoleDivisionGrants body = new RoleDivisionGrants(); // RoleDivisionGrants | Pairs of role and division IDs
+String subjectType = "PC_USER"; // String | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT)
+try {
+    apiInstance.postAuthorizationSubjectBulkadd(subjectId, body, subjectType);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#postAuthorizationSubjectBulkadd");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **subjectId** | **String**| Subject ID (user or group) | 
+| **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Pairs of role and division IDs | 
+| **subjectType** | **String**| what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="postAuthorizationSubjectBulkremove"></a>
+
+# **postAuthorizationSubjectBulkremove**
+
+
+
+> Void postAuthorizationSubjectBulkremove(subjectId, body)
+
+Bulk-remove grants from a subject.
+
+
+
+Wraps POST /api/v2/authorization/subjects/{subjectId}/bulkremove  
+
+Requires ANY permissions: 
+
+* authorization:grant:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+String subjectId = "subjectId_example"; // String | Subject ID (user or group)
+RoleDivisionGrants body = new RoleDivisionGrants(); // RoleDivisionGrants | Pairs of role and division IDs
+try {
+    apiInstance.postAuthorizationSubjectBulkremove(subjectId, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#postAuthorizationSubjectBulkremove");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **subjectId** | **String**| Subject ID (user or group) | 
+| **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Pairs of role and division IDs | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="postAuthorizationSubjectDivisionRole"></a>
 

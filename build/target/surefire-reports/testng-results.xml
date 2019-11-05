@@ -2,48 +2,48 @@
 <testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="SDK tests" duration-ms="2715" started-at="2019-10-25T03:20:14Z" finished-at="2019-10-25T03:20:16Z">
+  <suite name="SDK tests" duration-ms="2478" started-at="2019-11-05T07:34:39Z" finished-at="2019-11-05T07:34:41Z">
     <groups>
     </groups>
-    <test name="Test One" duration-ms="2715" started-at="2019-10-25T03:20:14Z" finished-at="2019-10-25T03:20:16Z">
+    <test name="Test One" duration-ms="2478" started-at="2019-11-05T07:34:39Z" finished-at="2019-11-05T07:34:41Z">
       <class name="com.mypurecloud.sdk.v2.SdkTests">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.mypurecloud.sdk.v2.SdkTests@3d99d22e]" name="beforeTest" is-config="true" duration-ms="12" started-at="2019-10-25T03:20:14Z" finished-at="2019-10-25T03:20:14Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.mypurecloud.sdk.v2.SdkTests@6e6c3152]" name="beforeTest" is-config="true" duration-ms="12" started-at="2019-11-05T07:34:39Z" finished-at="2019-11-05T07:34:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="traceBasicInformation()[pri:1, instance:com.mypurecloud.sdk.v2.SdkTests@3d99d22e]" name="traceBasicInformation" duration-ms="3" started-at="2019-10-25T03:20:14Z" finished-at="2019-10-25T03:20:14Z">
+        <test-method status="PASS" signature="traceBasicInformation()[pri:1, instance:com.mypurecloud.sdk.v2.SdkTests@6e6c3152]" name="traceBasicInformation" duration-ms="4" started-at="2019-11-05T07:34:39Z" finished-at="2019-11-05T07:34:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- traceBasicInformation -->
-        <test-method status="PASS" signature="authenticate()[pri:2, instance:com.mypurecloud.sdk.v2.SdkTests@3d99d22e]" name="authenticate" duration-ms="702" started-at="2019-10-25T03:20:14Z" finished-at="2019-10-25T03:20:14Z">
+        <test-method status="PASS" signature="authenticate()[pri:2, instance:com.mypurecloud.sdk.v2.SdkTests@6e6c3152]" name="authenticate" duration-ms="880" started-at="2019-11-05T07:34:39Z" finished-at="2019-11-05T07:34:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- authenticate -->
-        <test-method status="PASS" signature="createUser()[pri:3, instance:com.mypurecloud.sdk.v2.SdkTests@3d99d22e]" name="createUser" duration-ms="927" started-at="2019-10-25T03:20:14Z" finished-at="2019-10-25T03:20:15Z">
+        <test-method status="PASS" signature="createUser()[pri:3, instance:com.mypurecloud.sdk.v2.SdkTests@6e6c3152]" name="createUser" duration-ms="711" started-at="2019-11-05T07:34:40Z" finished-at="2019-11-05T07:34:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createUser -->
-        <test-method status="PASS" signature="updateUser()[pri:4, instance:com.mypurecloud.sdk.v2.SdkTests@3d99d22e]" name="updateUser" duration-ms="195" started-at="2019-10-25T03:20:15Z" finished-at="2019-10-25T03:20:15Z">
+        <test-method status="PASS" signature="updateUser()[pri:4, instance:com.mypurecloud.sdk.v2.SdkTests@6e6c3152]" name="updateUser" duration-ms="144" started-at="2019-11-05T07:34:40Z" finished-at="2019-11-05T07:34:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- updateUser -->
-        <test-method status="PASS" signature="setProfileSkills()[pri:5, instance:com.mypurecloud.sdk.v2.SdkTests@3d99d22e]" name="setProfileSkills" duration-ms="113" started-at="2019-10-25T03:20:15Z" finished-at="2019-10-25T03:20:15Z">
+        <test-method status="PASS" signature="setProfileSkills()[pri:5, instance:com.mypurecloud.sdk.v2.SdkTests@6e6c3152]" name="setProfileSkills" duration-ms="115" started-at="2019-11-05T07:34:41Z" finished-at="2019-11-05T07:34:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setProfileSkills -->
-        <test-method status="PASS" signature="testNotifications()[pri:6, instance:com.mypurecloud.sdk.v2.SdkTests@3d99d22e]" name="testNotifications" duration-ms="450" started-at="2019-10-25T03:20:15Z" finished-at="2019-10-25T03:20:16Z">
+        <test-method status="PASS" signature="testNotifications()[pri:6, instance:com.mypurecloud.sdk.v2.SdkTests@6e6c3152]" name="testNotifications" duration-ms="332" started-at="2019-11-05T07:34:41Z" finished-at="2019-11-05T07:34:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testNotifications -->
-        <test-method status="PASS" signature="getUser()[pri:7, instance:com.mypurecloud.sdk.v2.SdkTests@3d99d22e]" name="getUser" duration-ms="72" started-at="2019-10-25T03:20:16Z" finished-at="2019-10-25T03:20:16Z">
+        <test-method status="PASS" signature="getUser()[pri:7, instance:com.mypurecloud.sdk.v2.SdkTests@6e6c3152]" name="getUser" duration-ms="65" started-at="2019-11-05T07:34:41Z" finished-at="2019-11-05T07:34:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getUser -->
-        <test-method status="PASS" signature="deleteUser()[pri:8, instance:com.mypurecloud.sdk.v2.SdkTests@3d99d22e]" name="deleteUser" duration-ms="212" started-at="2019-10-25T03:20:16Z" finished-at="2019-10-25T03:20:16Z">
+        <test-method status="PASS" signature="deleteUser()[pri:8, instance:com.mypurecloud.sdk.v2.SdkTests@6e6c3152]" name="deleteUser" duration-ms="187" started-at="2019-11-05T07:34:41Z" finished-at="2019-11-05T07:34:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteUser -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.mypurecloud.sdk.v2.SdkTests@3d99d22e]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-10-25T03:20:16Z" finished-at="2019-10-25T03:20:16Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.mypurecloud.sdk.v2.SdkTests@6e6c3152]" name="afterTest" is-config="true" duration-ms="1" started-at="2019-11-05T07:34:41Z" finished-at="2019-11-05T07:34:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

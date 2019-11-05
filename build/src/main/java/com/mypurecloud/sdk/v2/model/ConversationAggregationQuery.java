@@ -135,6 +135,7 @@ public class ConversationAggregationQuery  implements Serializable {
     THELDCOMPLETE("tHeldComplete"),
     TIVR("tIvr"),
     TNOTRESPONDING("tNotResponding"),
+    TSHORTABANDON("tShortAbandon"),
     TTALK("tTalk"),
     TTALKCOMPLETE("tTalkComplete"),
     TUSERRESPONSETIME("tUserResponseTime"),

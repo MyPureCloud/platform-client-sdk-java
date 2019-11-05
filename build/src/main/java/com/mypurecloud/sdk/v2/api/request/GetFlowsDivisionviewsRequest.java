@@ -84,7 +84,8 @@ public class GetFlowsDivisionviewsRequest {
 		INQUEUECALL("inqueuecall"), 
 		SPEECH("speech"), 
 		SECURECALL("securecall"), 
-		SURVEYINVITE("surveyinvite");
+		SURVEYINVITE("surveyinvite"), 
+		WORKFLOW("workflow");
 
 		private String value;
 

@@ -35,20 +35,6 @@ import com.mypurecloud.sdk.v2.model.ScimV2CreateUser;
 
 public class GetScimV2UsersRequest {
     
-	private String filter;
-	public String getFilter() {
-		return this.filter;
-	}
-
-	public void setFilter(String filter) {
-		this.filter = filter;
-	}
-
-	public GetScimV2UsersRequest withFilter(String filter) {
-	    this.setFilter(filter);
-	    return this;
-	} 
-	
 	private Integer startIndex;
 	public Integer getStartIndex() {
 		return this.startIndex;
@@ -77,6 +63,156 @@ public class GetScimV2UsersRequest {
 	    return this;
 	} 
 	
+	private List<String> attributes;
+	public List<String> getAttributes() {
+		return this.attributes;
+	}
+
+	public void setAttributes(List<String> attributes) {
+		this.attributes = attributes;
+	}
+
+	public GetScimV2UsersRequest withAttributes(List<String> attributes) {
+	    this.setAttributes(attributes);
+	    return this;
+	} 
+
+	public enum attributesValues { 
+		ID("id"), 
+		USERNAME("userName"), 
+		DISPLAYNAME("displayName"), 
+		TITLE("title"), 
+		ACTIVE("active"), 
+		EXTERNALID("externalId"), 
+		PHONENUMBERS("phoneNumbers"), 
+		EMAILS("emails"), 
+		PHOTOS("photos"), 
+		GROUPS("groups"), 
+		ROLESURN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_USER_ID("rolesurn:ietf:params:scim:schemas:core:2.0:User:id"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_USER_USERNAME("urn:ietf:params:scim:schemas:core:2.0:User:userName"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_USER_DISPLAYNAME("urn:ietf:params:scim:schemas:core:2.0:User:displayName"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_USER_TITLE("urn:ietf:params:scim:schemas:core:2.0:User:title"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_USER_ACTIVE("urn:ietf:params:scim:schemas:core:2.0:User:active"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_USER_EXTERNALID("urn:ietf:params:scim:schemas:core:2.0:User:externalId"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_USER_PHONENUMBERS("urn:ietf:params:scim:schemas:core:2.0:User:phoneNumbers"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_USER_EMAILS("urn:ietf:params:scim:schemas:core:2.0:User:emails"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_USER_PHOTOS("urn:ietf:params:scim:schemas:core:2.0:User:photos"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_USER_GROUPS("urn:ietf:params:scim:schemas:core:2.0:User:groups"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_USER_ROLES("urn:ietf:params:scim:schemas:core:2.0:User:roles"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_ENTERPRISE_2_0_USER("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_ENTERPRISE_2_0_USER_DIVISION("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_ENTERPRISE_2_0_USER_DEPARTMENT("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_ENTERPRISE_2_0_USER_MANAGER("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_ENTERPRISE_2_0_USER_MANAGER_VALUE("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager.value");
+
+		private String value;
+
+		attributesValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static attributesValues fromString(String key) {
+			if (key == null) return null;
+
+			for (attributesValues value : attributesValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return attributesValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
+	private List<String> excludedAttributes;
+	public List<String> getExcludedAttributes() {
+		return this.excludedAttributes;
+	}
+
+	public void setExcludedAttributes(List<String> excludedAttributes) {
+		this.excludedAttributes = excludedAttributes;
+	}
+
+	public GetScimV2UsersRequest withExcludedAttributes(List<String> excludedAttributes) {
+	    this.setExcludedAttributes(excludedAttributes);
+	    return this;
+	} 
+
+	public enum excludedAttributesValues { 
+		ID("id"), 
+		USERNAME("userName"), 
+		DISPLAYNAME("displayName"), 
+		TITLE("title"), 
+		ACTIVE("active"), 
+		EXTERNALID("externalId"), 
+		PHONENUMBERS("phoneNumbers"), 
+		EMAILS("emails"), 
+		PHOTOS("photos"), 
+		GROUPS("groups"), 
+		ROLESURN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_USER_ID("rolesurn:ietf:params:scim:schemas:core:2.0:User:id"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_USER_USERNAME("urn:ietf:params:scim:schemas:core:2.0:User:userName"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_USER_DISPLAYNAME("urn:ietf:params:scim:schemas:core:2.0:User:displayName"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_USER_TITLE("urn:ietf:params:scim:schemas:core:2.0:User:title"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_USER_ACTIVE("urn:ietf:params:scim:schemas:core:2.0:User:active"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_USER_EXTERNALID("urn:ietf:params:scim:schemas:core:2.0:User:externalId"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_USER_PHONENUMBERS("urn:ietf:params:scim:schemas:core:2.0:User:phoneNumbers"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_USER_EMAILS("urn:ietf:params:scim:schemas:core:2.0:User:emails"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_USER_PHOTOS("urn:ietf:params:scim:schemas:core:2.0:User:photos"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_USER_GROUPS("urn:ietf:params:scim:schemas:core:2.0:User:groups"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_USER_ROLES("urn:ietf:params:scim:schemas:core:2.0:User:roles"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_ENTERPRISE_2_0_USER("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_ENTERPRISE_2_0_USER_DIVISION("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_ENTERPRISE_2_0_USER_DEPARTMENT("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_ENTERPRISE_2_0_USER_MANAGER("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_ENTERPRISE_2_0_USER_MANAGER_VALUE("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager.value");
+
+		private String value;
+
+		excludedAttributesValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static excludedAttributesValues fromString(String key) {
+			if (key == null) return null;
+
+			for (excludedAttributesValues value : excludedAttributesValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return excludedAttributesValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
+	private String filter;
+	public String getFilter() {
+		return this.filter;
+	}
+
+	public void setFilter(String filter) {
+		this.filter = filter;
+	}
+
+	public GetScimV2UsersRequest withFilter(String filter) {
+	    this.setFilter(filter);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -98,16 +234,15 @@ public class GetScimV2UsersRequest {
 
     public ApiRequest<Void> withHttpInfo() {
         
-        // verify the required parameter 'filter' is set
-        if (this.filter == null) {
-            throw new IllegalStateException("Missing the required parameter 'filter' when building request for GetScimV2UsersRequest.");
-        }
-        
 
         return ApiRequestBuilder.create("GET", "/api/v2/scim/v2/users")
                 .withQueryParameters("startIndex", "", startIndex)
         
                 .withQueryParameters("count", "", count)
+        
+                .withQueryParameters("attributes", "multi", attributes)
+        
+                .withQueryParameters("excludedAttributes", "multi", excludedAttributes)
         
                 .withQueryParameters("filter", "", filter)
         
@@ -123,11 +258,6 @@ public class GetScimV2UsersRequest {
 	}
 
 	
-	public static Builder builder(String filter) {
-	    return new Builder()
-	            .withRequiredParams(filter);
-	}
-	
 
 	public static class Builder {
 		private final GetScimV2UsersRequest request;
@@ -136,11 +266,6 @@ public class GetScimV2UsersRequest {
 			request = new GetScimV2UsersRequest();
 		}
 
-		
-		public Builder withFilter(String filter) {
-			request.setFilter(filter);
-			return this;
-		}
 		
 		public Builder withStartIndex(Integer startIndex) {
 			request.setStartIndex(startIndex);
@@ -152,21 +277,43 @@ public class GetScimV2UsersRequest {
 			return this;
 		}
 		
+		public Builder withAttributes(List<String> attributes) {
+			request.setAttributes(attributes);
+			return this;
+		}
 
+		public Builder withAttributesEnumValues(List<attributesValues> attributes) {
+		    List<String> stringList = new ArrayList<>();
+	      for (attributesValues e : attributes) {
+	        stringList.add(e.toString());
+	      }
+	      request.setAttributes(stringList);
+		    return this;
+		}
 		
-		public Builder withRequiredParams(String filter) {
+		public Builder withExcludedAttributes(List<String> excludedAttributes) {
+			request.setExcludedAttributes(excludedAttributes);
+			return this;
+		}
+
+		public Builder withExcludedAttributesEnumValues(List<excludedAttributesValues> excludedAttributes) {
+		    List<String> stringList = new ArrayList<>();
+	      for (excludedAttributesValues e : excludedAttributes) {
+	        stringList.add(e.toString());
+	      }
+	      request.setExcludedAttributes(stringList);
+		    return this;
+		}
+		
+		public Builder withFilter(String filter) {
 			request.setFilter(filter);
-			
 			return this;
 		}
 		
 
+		
+
 		public GetScimV2UsersRequest build() {
-            
-            // verify the required parameter 'filter' is set
-            if (request.filter == null) {
-                throw new IllegalStateException("Missing the required parameter 'filter' when building request for GetScimV2UsersRequest.");
-            }
             
 			return request;
 		}

@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.AuthzSubject;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.SubjectDivisions;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleCreate;
+import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
 
 
@@ -55,6 +56,8 @@ import com.mypurecloud.sdk.v2.api.request.PostAuthorizationRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationRoleComparedefaultRightRoleIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationRolesDefaultRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectBulkaddRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectBulkremoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectDivisionRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAuthorizationDivisionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRoleRequest;
@@ -2423,6 +2426,170 @@ public class AuthorizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OrganizationRoleEntityListing> response = (ApiResponse<OrganizationRoleEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Bulk-grant roles and divisions to a subject.
+   * 
+   * @param subjectId Subject ID (user or group) (required)
+   * @param body Pairs of role and division IDs (required)
+   * @param subjectType what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (optional, default to PC_USER)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postAuthorizationSubjectBulkadd(String subjectId, RoleDivisionGrants body, String subjectType) throws IOException, ApiException {
+     postAuthorizationSubjectBulkadd(createPostAuthorizationSubjectBulkaddRequest(subjectId, body, subjectType));
+  }
+
+  /**
+   * Bulk-grant roles and divisions to a subject.
+   * 
+   * @param subjectId Subject ID (user or group) (required)
+   * @param body Pairs of role and division IDs (required)
+   * @param subjectType what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (optional, default to PC_USER)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postAuthorizationSubjectBulkaddWithHttpInfo(String subjectId, RoleDivisionGrants body, String subjectType) throws IOException {
+    return postAuthorizationSubjectBulkadd(createPostAuthorizationSubjectBulkaddRequest(subjectId, body, subjectType).withHttpInfo());
+  }
+
+  private PostAuthorizationSubjectBulkaddRequest createPostAuthorizationSubjectBulkaddRequest(String subjectId, RoleDivisionGrants body, String subjectType) {
+    return PostAuthorizationSubjectBulkaddRequest.builder()
+            .withSubjectId(subjectId)
+    
+            .withBody(body)
+    
+            .withSubjectType(subjectType)
+    
+            .build();
+  }
+
+  /**
+   * Bulk-grant roles and divisions to a subject.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postAuthorizationSubjectBulkadd(PostAuthorizationSubjectBulkaddRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Bulk-grant roles and divisions to a subject.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postAuthorizationSubjectBulkadd(ApiRequest<RoleDivisionGrants> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Bulk-remove grants from a subject.
+   * 
+   * @param subjectId Subject ID (user or group) (required)
+   * @param body Pairs of role and division IDs (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postAuthorizationSubjectBulkremove(String subjectId, RoleDivisionGrants body) throws IOException, ApiException {
+     postAuthorizationSubjectBulkremove(createPostAuthorizationSubjectBulkremoveRequest(subjectId, body));
+  }
+
+  /**
+   * Bulk-remove grants from a subject.
+   * 
+   * @param subjectId Subject ID (user or group) (required)
+   * @param body Pairs of role and division IDs (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postAuthorizationSubjectBulkremoveWithHttpInfo(String subjectId, RoleDivisionGrants body) throws IOException {
+    return postAuthorizationSubjectBulkremove(createPostAuthorizationSubjectBulkremoveRequest(subjectId, body).withHttpInfo());
+  }
+
+  private PostAuthorizationSubjectBulkremoveRequest createPostAuthorizationSubjectBulkremoveRequest(String subjectId, RoleDivisionGrants body) {
+    return PostAuthorizationSubjectBulkremoveRequest.builder()
+            .withSubjectId(subjectId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Bulk-remove grants from a subject.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postAuthorizationSubjectBulkremove(PostAuthorizationSubjectBulkremoveRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Bulk-remove grants from a subject.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postAuthorizationSubjectBulkremove(ApiRequest<RoleDivisionGrants> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

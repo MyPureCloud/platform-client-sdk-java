@@ -230,6 +230,7 @@ title: ViewFilter
 | OUTBOUNDCALL | &quot;outboundcall&quot; |
 | SECURECALL | &quot;securecall&quot; |
 | SURVEYINVITE | &quot;surveyinvite&quot; |
+| WORKFLOW | &quot;workflow&quot; |
 {: class="table table-striped"}
 
 

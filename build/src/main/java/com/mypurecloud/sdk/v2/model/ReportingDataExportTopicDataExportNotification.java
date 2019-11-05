@@ -65,7 +65,8 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
    */
   public enum ExportFormatEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    CSV("CSV");
+    CSV("CSV"),
+    PDF("PDF");
 
     private String value;
 

@@ -254,13 +254,14 @@ public class ScimV2CreateUser  implements Serializable {
 
   
   /**
+   * SCIM enterprise user attributes
    **/
   public ScimV2CreateUser urnietfparamsscimschemasextensionenterprise20User(ScimV2EnterpriseUser urnietfparamsscimschemasextensionenterprise20User) {
     this.urnietfparamsscimschemasextensionenterprise20User = urnietfparamsscimschemasextensionenterprise20User;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "SCIM enterprise user attributes")
   @JsonProperty("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User")
   public ScimV2EnterpriseUser getUrnietfparamsscimschemasextensionenterprise20User() {
     return urnietfparamsscimschemasextensionenterprise20User;
