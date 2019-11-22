@@ -60,14 +60,14 @@ public class ScimServiceProviderConfig  implements Serializable {
 
   
   /**
-   * \"patch\" configuration options.
+   * The \"patch\" configuration options.
    **/
   public ScimServiceProviderConfig patch(ScimServiceProviderConfigSimpleFeature patch) {
     this.patch = patch;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "\"patch\" configuration options.")
+  @ApiModelProperty(example = "null", value = "The \"patch\" configuration options.")
   @JsonProperty("patch")
   public ScimServiceProviderConfigSimpleFeature getPatch() {
     return patch;
@@ -78,14 +78,14 @@ public class ScimServiceProviderConfig  implements Serializable {
 
   
   /**
-   * \"filter\" configuration options.
+   * The \"filter\" configuration options.
    **/
   public ScimServiceProviderConfig filter(ScimServiceProviderConfigFilterFeature filter) {
     this.filter = filter;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "\"filter\" configuration options.")
+  @ApiModelProperty(example = "null", value = "The \"filter\" configuration options.")
   @JsonProperty("filter")
   public ScimServiceProviderConfigFilterFeature getFilter() {
     return filter;
@@ -96,14 +96,14 @@ public class ScimServiceProviderConfig  implements Serializable {
 
   
   /**
-   * \"ETag\" configuration options.
+   * The \"etag\" configuration options.
    **/
   public ScimServiceProviderConfig etag(ScimServiceProviderConfigSimpleFeature etag) {
     this.etag = etag;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "\"ETag\" configuration options.")
+  @ApiModelProperty(example = "null", value = "The \"etag\" configuration options.")
   @JsonProperty("etag")
   public ScimServiceProviderConfigSimpleFeature getEtag() {
     return etag;
@@ -114,14 +114,14 @@ public class ScimServiceProviderConfig  implements Serializable {
 
   
   /**
-   * \"sort\" configuration options.
+   * The \"sort\" configuration options.
    **/
   public ScimServiceProviderConfig sort(ScimServiceProviderConfigSimpleFeature sort) {
     this.sort = sort;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "\"sort\" configuration options.")
+  @ApiModelProperty(example = "null", value = "The \"sort\" configuration options.")
   @JsonProperty("sort")
   public ScimServiceProviderConfigSimpleFeature getSort() {
     return sort;
@@ -132,14 +132,14 @@ public class ScimServiceProviderConfig  implements Serializable {
 
   
   /**
-   * \"bulk\" configuration options.
+   * The \"bulk\" configuration options.
    **/
   public ScimServiceProviderConfig bulk(ScimServiceProviderConfigBulkFeature bulk) {
     this.bulk = bulk;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "\"bulk\" configuration options.")
+  @ApiModelProperty(example = "null", value = "The \"bulk\" configuration options.")
   @JsonProperty("bulk")
   public ScimServiceProviderConfigBulkFeature getBulk() {
     return bulk;
@@ -150,14 +150,14 @@ public class ScimServiceProviderConfig  implements Serializable {
 
   
   /**
-   * \"changePassword\" configuration options.
+   * The \"changePassword\" configuration options.
    **/
   public ScimServiceProviderConfig changePassword(ScimServiceProviderConfigSimpleFeature changePassword) {
     this.changePassword = changePassword;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "\"changePassword\" configuration options.")
+  @ApiModelProperty(example = "null", value = "The \"changePassword\" configuration options.")
   @JsonProperty("changePassword")
   public ScimServiceProviderConfigSimpleFeature getChangePassword() {
     return changePassword;

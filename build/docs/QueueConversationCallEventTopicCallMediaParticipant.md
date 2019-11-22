@@ -39,6 +39,8 @@ title: QueueConversationCallEventTopicCallMediaParticipant
 | **screenRecordingState** | <!----><!---->**String**<!----> |  |  [optional] |
 | **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum)<!----> |  |  [optional] |
 | **journeyContext** | <!----><!---->[**QueueConversationCallEventTopicJourneyContext**](QueueConversationCallEventTopicJourneyContext.html)<!----> |  |  [optional] |
+| **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **muted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **confined** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **recording** | <!----><!---->**Boolean**<!----> |  |  [optional] |

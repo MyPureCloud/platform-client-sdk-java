@@ -994,7 +994,7 @@ public class QualityApi {
   
   /**
    * Get audits for conversation or recording
-   * 
+   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.
    * @param conversationId Conversation ID (required)
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
@@ -1014,7 +1014,7 @@ public class QualityApi {
 
   /**
    * Get audits for conversation or recording
-   * 
+   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.
    * @param conversationId Conversation ID (required)
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
@@ -1056,7 +1056,7 @@ public class QualityApi {
 
   /**
    * Get audits for conversation or recording
-   * 
+   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.
    * @param request The request object
    * @return QualityAuditPage
    * @throws ApiException if the request fails on the server
@@ -1075,7 +1075,7 @@ public class QualityApi {
 
   /**
    * Get audits for conversation or recording
-   * 
+   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4668,7 +4668,7 @@ public class QualityApi {
   
   /**
    * Update an evaluation
-   * 
+   * The quality:evaluation:edit permission allows modification of most fields, while the quality:evaluation:editScore permission allows an evaluator to change just the question scores, and the quality:evaluation:editAgentSignoff permission allows an agent to change the agent comments and sign off on the evaluation.
    * @param conversationId conversationId (required)
    * @param evaluationId evaluationId (required)
    * @param body evaluation (required)
@@ -4683,7 +4683,7 @@ public class QualityApi {
 
   /**
    * Update an evaluation
-   * 
+   * The quality:evaluation:edit permission allows modification of most fields, while the quality:evaluation:editScore permission allows an evaluator to change just the question scores, and the quality:evaluation:editAgentSignoff permission allows an agent to change the agent comments and sign off on the evaluation.
    * @param conversationId conversationId (required)
    * @param evaluationId evaluationId (required)
    * @param body evaluation (required)
@@ -4710,7 +4710,7 @@ public class QualityApi {
 
   /**
    * Update an evaluation
-   * 
+   * The quality:evaluation:edit permission allows modification of most fields, while the quality:evaluation:editScore permission allows an evaluator to change just the question scores, and the quality:evaluation:editAgentSignoff permission allows an agent to change the agent comments and sign off on the evaluation.
    * @param request The request object
    * @return Evaluation
    * @throws ApiException if the request fails on the server
@@ -4729,7 +4729,7 @@ public class QualityApi {
 
   /**
    * Update an evaluation
-   * 
+   * The quality:evaluation:edit permission allows modification of most fields, while the quality:evaluation:editScore permission allows an evaluator to change just the question scores, and the quality:evaluation:editAgentSignoff permission allows an agent to change the agent comments and sign off on the evaluation.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

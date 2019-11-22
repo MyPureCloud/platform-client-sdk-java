@@ -215,6 +215,8 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
   }
   private FlaggedReasonEnum flaggedReason = null;
   private ConversationVideoEventTopicJourneyContext journeyContext = null;
+  private Date startAcwTime = null;
+  private Date endAcwTime = null;
   private Boolean audioMuted = null;
   private Boolean videoMuted = null;
   private Boolean sharingScreen = null;
@@ -752,6 +754,40 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
   
   /**
    **/
+  public ConversationVideoEventTopicVideoMediaParticipant startAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("startAcwTime")
+  public Date getStartAcwTime() {
+    return startAcwTime;
+  }
+  public void setStartAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+  }
+
+  
+  /**
+   **/
+  public ConversationVideoEventTopicVideoMediaParticipant endAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("endAcwTime")
+  public Date getEndAcwTime() {
+    return endAcwTime;
+  }
+  public void setEndAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+  }
+
+  
+  /**
+   **/
   public ConversationVideoEventTopicVideoMediaParticipant audioMuted(Boolean audioMuted) {
     this.audioMuted = audioMuted;
     return this;
@@ -893,6 +929,8 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
         Objects.equals(this.screenRecordingState, conversationVideoEventTopicVideoMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, conversationVideoEventTopicVideoMediaParticipant.flaggedReason) &&
         Objects.equals(this.journeyContext, conversationVideoEventTopicVideoMediaParticipant.journeyContext) &&
+        Objects.equals(this.startAcwTime, conversationVideoEventTopicVideoMediaParticipant.startAcwTime) &&
+        Objects.equals(this.endAcwTime, conversationVideoEventTopicVideoMediaParticipant.endAcwTime) &&
         Objects.equals(this.audioMuted, conversationVideoEventTopicVideoMediaParticipant.audioMuted) &&
         Objects.equals(this.videoMuted, conversationVideoEventTopicVideoMediaParticipant.videoMuted) &&
         Objects.equals(this.sharingScreen, conversationVideoEventTopicVideoMediaParticipant.sharingScreen) &&
@@ -903,7 +941,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, audioMuted, videoMuted, sharingScreen, peerCount, context, msids);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, audioMuted, videoMuted, sharingScreen, peerCount, context, msids);
   }
 
   @Override
@@ -942,6 +980,8 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
+    sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
+    sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    audioMuted: ").append(toIndentedString(audioMuted)).append("\n");
     sb.append("    videoMuted: ").append(toIndentedString(videoMuted)).append("\n");
     sb.append("    sharingScreen: ").append(toIndentedString(sharingScreen)).append("\n");

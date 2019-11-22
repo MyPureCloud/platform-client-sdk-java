@@ -9,7 +9,9 @@ import com.mypurecloud.sdk.v2.model.SmsAddress;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -97,6 +99,41 @@ public class SmsPhoneNumber  implements Serializable {
     }
   }
   private PhoneNumberStatusEnum phoneNumberStatus = null;
+
+  /**
+   * Gets or Sets capabilities
+   */
+  public enum CapabilitiesEnum {
+    SMS("sms"),
+    MMS("mms"),
+    VOICE("voice");
+
+    private String value;
+
+    CapabilitiesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static CapabilitiesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (CapabilitiesEnum value : CapabilitiesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return CapabilitiesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<CapabilitiesEnum> capabilities = new ArrayList<CapabilitiesEnum>();
   private String countryCode = null;
   private Date dateCreated = null;
   private Date dateModified = null;
@@ -261,6 +298,24 @@ public class SmsPhoneNumber  implements Serializable {
   }
   public void setPhoneNumberStatus(PhoneNumberStatusEnum phoneNumberStatus) {
     this.phoneNumberStatus = phoneNumberStatus;
+  }
+
+  
+  /**
+   * The capabilities of the phone number available for provisioning.
+   **/
+  public SmsPhoneNumber capabilities(List<CapabilitiesEnum> capabilities) {
+    this.capabilities = capabilities;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The capabilities of the phone number available for provisioning.")
+  @JsonProperty("capabilities")
+  public List<CapabilitiesEnum> getCapabilities() {
+    return capabilities;
+  }
+  public void setCapabilities(List<CapabilitiesEnum> capabilities) {
+    this.capabilities = capabilities;
   }
 
   
@@ -503,6 +558,7 @@ public class SmsPhoneNumber  implements Serializable {
         Objects.equals(this.phoneNumberType, smsPhoneNumber.phoneNumberType) &&
         Objects.equals(this.provisionedThroughPureCloud, smsPhoneNumber.provisionedThroughPureCloud) &&
         Objects.equals(this.phoneNumberStatus, smsPhoneNumber.phoneNumberStatus) &&
+        Objects.equals(this.capabilities, smsPhoneNumber.capabilities) &&
         Objects.equals(this.countryCode, smsPhoneNumber.countryCode) &&
         Objects.equals(this.dateCreated, smsPhoneNumber.dateCreated) &&
         Objects.equals(this.dateModified, smsPhoneNumber.dateModified) &&
@@ -520,7 +576,7 @@ public class SmsPhoneNumber  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, phoneNumber, phoneNumberType, provisionedThroughPureCloud, phoneNumberStatus, countryCode, dateCreated, dateModified, createdBy, modifiedBy, version, purchaseDate, cancellationDate, renewalDate, autoRenewable, addressId, shortCodeBillingType, selfUri);
+    return Objects.hash(id, name, phoneNumber, phoneNumberType, provisionedThroughPureCloud, phoneNumberStatus, capabilities, countryCode, dateCreated, dateModified, createdBy, modifiedBy, version, purchaseDate, cancellationDate, renewalDate, autoRenewable, addressId, shortCodeBillingType, selfUri);
   }
 
   @Override
@@ -534,6 +590,7 @@ public class SmsPhoneNumber  implements Serializable {
     sb.append("    phoneNumberType: ").append(toIndentedString(phoneNumberType)).append("\n");
     sb.append("    provisionedThroughPureCloud: ").append(toIndentedString(provisionedThroughPureCloud)).append("\n");
     sb.append("    phoneNumberStatus: ").append(toIndentedString(phoneNumberStatus)).append("\n");
+    sb.append("    capabilities: ").append(toIndentedString(capabilities)).append("\n");
     sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");

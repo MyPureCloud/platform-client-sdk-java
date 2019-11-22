@@ -17,7 +17,8 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
 import com.mypurecloud.sdk.v2.model.LocationEntityListing;
 import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
-import com.mypurecloud.sdk.v2.model.LocationCreateUpdateDefinition;
+import com.mypurecloud.sdk.v2.model.LocationUpdateDefinition;
+import com.mypurecloud.sdk.v2.model.LocationCreateDefinition;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
 
 
@@ -471,7 +472,7 @@ public class LocationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<LocationDefinition>> patchLocationAsync(ApiRequest<LocationCreateUpdateDefinition> request, final AsyncApiCallback<ApiResponse<LocationDefinition>> callback) {
+  public Future<ApiResponse<LocationDefinition>> patchLocationAsync(ApiRequest<LocationUpdateDefinition> request, final AsyncApiCallback<ApiResponse<LocationDefinition>> callback) {
     try {
       final SettableFuture<ApiResponse<LocationDefinition>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -547,7 +548,7 @@ public class LocationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<LocationDefinition>> postLocationsAsync(ApiRequest<LocationCreateUpdateDefinition> request, final AsyncApiCallback<ApiResponse<LocationDefinition>> callback) {
+  public Future<ApiResponse<LocationDefinition>> postLocationsAsync(ApiRequest<LocationCreateDefinition> request, final AsyncApiCallback<ApiResponse<LocationDefinition>> callback) {
     try {
       final SettableFuture<ApiResponse<LocationDefinition>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

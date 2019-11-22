@@ -8,11 +8,11 @@ title: QueueUserEventTopicQueueMember
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **memberId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **ringNumber** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **type** | <!----><!---->**String**<!----> |  |  [optional] |
+| **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **user** | <!----><!---->[**QueueUserEventTopicUserReference**](QueueUserEventTopicUserReference.html)<!----> |  |  [optional] |
+| **queueId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **joined** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

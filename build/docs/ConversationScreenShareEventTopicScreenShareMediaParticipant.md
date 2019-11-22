@@ -39,6 +39,8 @@ title: ConversationScreenShareEventTopicScreenShareMediaParticipant
 | **screenRecordingState** | <!----><!---->**String**<!----> |  |  [optional] |
 | **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum)<!----> |  |  [optional] |
 | **journeyContext** | <!----><!---->[**ConversationScreenShareEventTopicJourneyContext**](ConversationScreenShareEventTopicJourneyContext.html)<!----> |  |  [optional] |
+| **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **context** | <!----><!---->**String**<!----> |  |  [optional] |
 | **peerCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **sharing** | <!----><!---->**Boolean**<!----> |  |  [optional] |

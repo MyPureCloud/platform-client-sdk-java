@@ -24,6 +24,8 @@ public class SubscriptionOverviewUsage  implements Serializable {
   private String prepayPrice = null;
   private String usageNotes = null;
   private Boolean isCancellable = null;
+  private String bundleQuantity = null;
+  private Boolean isThirdParty = null;
 
   
   /**
@@ -206,6 +208,42 @@ public class SubscriptionOverviewUsage  implements Serializable {
   }
 
   
+  /**
+   * Quantity multiplier for this charge
+   **/
+  public SubscriptionOverviewUsage bundleQuantity(String bundleQuantity) {
+    this.bundleQuantity = bundleQuantity;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Quantity multiplier for this charge")
+  @JsonProperty("bundleQuantity")
+  public String getBundleQuantity() {
+    return bundleQuantity;
+  }
+  public void setBundleQuantity(String bundleQuantity) {
+    this.bundleQuantity = bundleQuantity;
+  }
+
+  
+  /**
+   * A charge from a third party entity
+   **/
+  public SubscriptionOverviewUsage isThirdParty(Boolean isThirdParty) {
+    this.isThirdParty = isThirdParty;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A charge from a third party entity")
+  @JsonProperty("isThirdParty")
+  public Boolean getIsThirdParty() {
+    return isThirdParty;
+  }
+  public void setIsThirdParty(Boolean isThirdParty) {
+    this.isThirdParty = isThirdParty;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -225,12 +263,14 @@ public class SubscriptionOverviewUsage  implements Serializable {
         Objects.equals(this.prepayQuantity, subscriptionOverviewUsage.prepayQuantity) &&
         Objects.equals(this.prepayPrice, subscriptionOverviewUsage.prepayPrice) &&
         Objects.equals(this.usageNotes, subscriptionOverviewUsage.usageNotes) &&
-        Objects.equals(this.isCancellable, subscriptionOverviewUsage.isCancellable);
+        Objects.equals(this.isCancellable, subscriptionOverviewUsage.isCancellable) &&
+        Objects.equals(this.bundleQuantity, subscriptionOverviewUsage.bundleQuantity) &&
+        Objects.equals(this.isThirdParty, subscriptionOverviewUsage.isThirdParty);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, partNumber, grouping, unitOfMeasureType, usageQuantity, overagePrice, prepayQuantity, prepayPrice, usageNotes, isCancellable);
+    return Objects.hash(name, partNumber, grouping, unitOfMeasureType, usageQuantity, overagePrice, prepayQuantity, prepayPrice, usageNotes, isCancellable, bundleQuantity, isThirdParty);
   }
 
   @Override
@@ -248,6 +288,8 @@ public class SubscriptionOverviewUsage  implements Serializable {
     sb.append("    prepayPrice: ").append(toIndentedString(prepayPrice)).append("\n");
     sb.append("    usageNotes: ").append(toIndentedString(usageNotes)).append("\n");
     sb.append("    isCancellable: ").append(toIndentedString(isCancellable)).append("\n");
+    sb.append("    bundleQuantity: ").append(toIndentedString(bundleQuantity)).append("\n");
+    sb.append("    isThirdParty: ").append(toIndentedString(isThirdParty)).append("\n");
     sb.append("}");
     return sb.toString();
   }

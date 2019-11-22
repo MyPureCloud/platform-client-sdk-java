@@ -215,6 +215,8 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
   }
   private FlaggedReasonEnum flaggedReason = null;
   private QueueConversationCallEventTopicJourneyContext journeyContext = null;
+  private Date startAcwTime = null;
+  private Date endAcwTime = null;
   private Boolean muted = null;
   private Boolean confined = null;
   private Boolean recording = null;
@@ -792,6 +794,40 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
   
   /**
    **/
+  public QueueConversationCallEventTopicCallMediaParticipant startAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("startAcwTime")
+  public Date getStartAcwTime() {
+    return startAcwTime;
+  }
+  public void setStartAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+  }
+
+  
+  /**
+   **/
+  public QueueConversationCallEventTopicCallMediaParticipant endAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("endAcwTime")
+  public Date getEndAcwTime() {
+    return endAcwTime;
+  }
+  public void setEndAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+  }
+
+  
+  /**
+   **/
   public QueueConversationCallEventTopicCallMediaParticipant muted(Boolean muted) {
     this.muted = muted;
     return this;
@@ -1018,6 +1054,8 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
         Objects.equals(this.screenRecordingState, queueConversationCallEventTopicCallMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, queueConversationCallEventTopicCallMediaParticipant.flaggedReason) &&
         Objects.equals(this.journeyContext, queueConversationCallEventTopicCallMediaParticipant.journeyContext) &&
+        Objects.equals(this.startAcwTime, queueConversationCallEventTopicCallMediaParticipant.startAcwTime) &&
+        Objects.equals(this.endAcwTime, queueConversationCallEventTopicCallMediaParticipant.endAcwTime) &&
         Objects.equals(this.muted, queueConversationCallEventTopicCallMediaParticipant.muted) &&
         Objects.equals(this.confined, queueConversationCallEventTopicCallMediaParticipant.confined) &&
         Objects.equals(this.recording, queueConversationCallEventTopicCallMediaParticipant.recording) &&
@@ -1033,7 +1071,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, consultParticipantId, faxStatus);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, consultParticipantId, faxStatus);
   }
 
   @Override
@@ -1072,6 +1110,8 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
+    sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
+    sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    muted: ").append(toIndentedString(muted)).append("\n");
     sb.append("    confined: ").append(toIndentedString(confined)).append("\n");
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");

@@ -180,6 +180,8 @@ public class ParticipantBasic  implements Serializable {
     }
   }
   private FlaggedReasonEnum flaggedReason = null;
+  private Date startAcwTime = null;
+  private Date endAcwTime = null;
 
   
   /**
@@ -910,6 +912,42 @@ public class ParticipantBasic  implements Serializable {
   }
 
   
+  /**
+   * The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public ParticipantBasic startAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("startAcwTime")
+  public Date getStartAcwTime() {
+    return startAcwTime;
+  }
+  public void setStartAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+  }
+
+  
+  /**
+   * The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public ParticipantBasic endAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("endAcwTime")
+  public Date getEndAcwTime() {
+    return endAcwTime;
+  }
+  public void setEndAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -960,12 +998,14 @@ public class ParticipantBasic  implements Serializable {
         Objects.equals(this.videos, participantBasic.videos) &&
         Objects.equals(this.evaluations, participantBasic.evaluations) &&
         Objects.equals(this.screenRecordingState, participantBasic.screenRecordingState) &&
-        Objects.equals(this.flaggedReason, participantBasic.flaggedReason);
+        Objects.equals(this.flaggedReason, participantBasic.flaggedReason) &&
+        Objects.equals(this.startAcwTime, participantBasic.startAcwTime) &&
+        Objects.equals(this.endAcwTime, participantBasic.endAcwTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalOrganizationId, queueId, groupId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, evaluations, screenRecordingState, flaggedReason);
+    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalOrganizationId, queueId, groupId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, evaluations, screenRecordingState, flaggedReason, startAcwTime, endAcwTime);
   }
 
   @Override
@@ -1014,6 +1054,8 @@ public class ParticipantBasic  implements Serializable {
     sb.append("    evaluations: ").append(toIndentedString(evaluations)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
+    sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
+    sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -20,12 +20,14 @@ title: WfmMoveAgentsCompleteTopicWfmMoveAgentData
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| MOVESUCCESSFUL | &quot;MoveSuccessful&quot; |
-| NOTHINGTODO | &quot;NothingToDo&quot; |
 | ALREADYMOVED | &quot;AlreadyMoved&quot; |
-| DESTINATIONMANAGEMENTUNITDOESNOTEXIST | &quot;DestinationManagementUnitDoesNotExist&quot; |
+| DESTINATIONBUSINESSUNITAGENTLIMITEXCEEDED | &quot;DestinationBusinessUnitAgentLimitExceeded&quot; |
 | DESTINATIONMANAGEMENTUNITAGENTLIMITEXCEEDED | &quot;DestinationManagementUnitAgentLimitExceeded&quot; |
+| DESTINATIONMANAGEMENTUNITDOESNOTEXIST | &quot;DestinationManagementUnitDoesNotExist&quot; |
+| MOVESUCCESSFUL | &quot;MoveSuccessful&quot; |
 | MOVINGTODIFFERENTMANAGEMENTUNIT | &quot;MovingToDifferentManagementUnit&quot; |
+| NOTHINGTODO | &quot;NothingToDo&quot; |
+| SOURCEMANAGEMENTUNITNOTAUTHORIZED | &quot;SourceManagementUnitNotAuthorized&quot; |
 {: class="table table-striped"}
 
 

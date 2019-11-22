@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.SelectedColumns;
 import com.mypurecloud.sdk.v2.model.TimeZone;
 import com.mypurecloud.sdk.v2.model.ViewFilter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -134,6 +137,7 @@ public class ReportingExportJobRequest  implements Serializable {
   private String locale = null;
   private Boolean hasFormatDurations = null;
   private Boolean hasSplitFilters = null;
+  private List<SelectedColumns> selectedColumns = new ArrayList<SelectedColumns>();
 
   
   /**
@@ -334,6 +338,24 @@ public class ReportingExportJobRequest  implements Serializable {
   }
 
   
+  /**
+   * The list of ordered selected columns from the export view by the user
+   **/
+  public ReportingExportJobRequest selectedColumns(List<SelectedColumns> selectedColumns) {
+    this.selectedColumns = selectedColumns;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of ordered selected columns from the export view by the user")
+  @JsonProperty("selectedColumns")
+  public List<SelectedColumns> getSelectedColumns() {
+    return selectedColumns;
+  }
+  public void setSelectedColumns(List<SelectedColumns> selectedColumns) {
+    this.selectedColumns = selectedColumns;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -354,12 +376,13 @@ public class ReportingExportJobRequest  implements Serializable {
         Objects.equals(this.read, reportingExportJobRequest.read) &&
         Objects.equals(this.locale, reportingExportJobRequest.locale) &&
         Objects.equals(this.hasFormatDurations, reportingExportJobRequest.hasFormatDurations) &&
-        Objects.equals(this.hasSplitFilters, reportingExportJobRequest.hasSplitFilters);
+        Objects.equals(this.hasSplitFilters, reportingExportJobRequest.hasSplitFilters) &&
+        Objects.equals(this.selectedColumns, reportingExportJobRequest.selectedColumns);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, timeZone, exportFormat, interval, period, viewType, filter, read, locale, hasFormatDurations, hasSplitFilters);
+    return Objects.hash(name, timeZone, exportFormat, interval, period, viewType, filter, read, locale, hasFormatDurations, hasSplitFilters, selectedColumns);
   }
 
   @Override
@@ -378,6 +401,7 @@ public class ReportingExportJobRequest  implements Serializable {
     sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("    hasFormatDurations: ").append(toIndentedString(hasFormatDurations)).append("\n");
     sb.append("    hasSplitFilters: ").append(toIndentedString(hasSplitFilters)).append("\n");
+    sb.append("    selectedColumns: ").append(toIndentedString(selectedColumns)).append("\n");
     sb.append("}");
     return sb.toString();
   }

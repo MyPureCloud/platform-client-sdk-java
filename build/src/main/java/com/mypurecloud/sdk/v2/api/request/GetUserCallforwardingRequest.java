@@ -29,7 +29,6 @@ import com.mypurecloud.sdk.v2.model.UserProfileEntityListing;
 import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.Adjacents;
 import com.mypurecloud.sdk.v2.model.CallForwarding;
-import com.mypurecloud.sdk.v2.model.UserExternalIdentifier;
 import com.mypurecloud.sdk.v2.model.UserEntityListing;
 import com.mypurecloud.sdk.v2.model.Geolocation;
 import com.mypurecloud.sdk.v2.model.OutOfOffice;

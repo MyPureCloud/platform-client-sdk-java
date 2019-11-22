@@ -39,6 +39,8 @@ title: ConversationMessageEventTopicMessageMediaParticipant
 | **screenRecordingState** | <!----><!---->**String**<!----> |  |  [optional] |
 | **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum)<!----> |  |  [optional] |
 | **journeyContext** | <!----><!---->[**ConversationMessageEventTopicJourneyContext**](ConversationMessageEventTopicJourneyContext.html)<!----> |  |  [optional] |
+| **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **messages** | <!----><!---->[**List&lt;ConversationMessageEventTopicMessageDetails&gt;**](ConversationMessageEventTopicMessageDetails.html)<!----> |  |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
 | **recipientCountry** | <!----><!---->**String**<!----> |  |  [optional] |

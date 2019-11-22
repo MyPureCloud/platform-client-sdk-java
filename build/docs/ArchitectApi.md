@@ -3563,7 +3563,7 @@ try {
 
 
 
-> [FlowDivisionViewEntityListing](FlowDivisionViewEntityListing.html) getFlowsDivisionviews(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore, divisionId)
+> [FlowDivisionViewEntityListing](FlowDivisionViewEntityListing.html) getFlowsDivisionviews(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore, divisionId, includeSchemas)
 
 Get a pageable list of basic flow information objects filterable by query parameters.
 
@@ -3608,8 +3608,9 @@ String publishVersionId = "publishVersionId_example"; // String | Publish versio
 String publishedAfter = "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01"; // String | Published after
 String publishedBefore = "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01"; // String | Published before
 List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | division ID(s)
+Boolean includeSchemas = false; // Boolean | Include variable schemas
 try {
-    FlowDivisionViewEntityListing result = apiInstance.getFlowsDivisionviews(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore, divisionId);
+    FlowDivisionViewEntityListing result = apiInstance.getFlowsDivisionviews(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore, divisionId, includeSchemas);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getFlowsDivisionviews");
@@ -3633,6 +3634,7 @@ try {
 | **publishedAfter** | **String**| Published after | [optional] 
 | **publishedBefore** | **String**| Published before | [optional] 
 | **divisionId** | [**List&lt;String&gt;**](String.html)| division ID(s) | [optional] 
+| **includeSchemas** | **Boolean**| Include variable schemas | [optional] [default to false] 
 {: class="table-striped"}
 
 

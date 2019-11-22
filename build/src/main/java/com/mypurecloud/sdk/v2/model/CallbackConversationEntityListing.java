@@ -22,8 +22,8 @@ public class CallbackConversationEntityListing  implements Serializable, PagedRe
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String firstUri = null;
   private String selfUri = null;
+  private String firstUri = null;
   private String nextUri = null;
   private String lastUri = null;
   private String previousUri = null;
@@ -100,23 +100,6 @@ public class CallbackConversationEntityListing  implements Serializable, PagedRe
   
   /**
    **/
-  public CallbackConversationEntityListing firstUri(String firstUri) {
-    this.firstUri = firstUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("firstUri")
-  public String getFirstUri() {
-    return firstUri;
-  }
-  public void setFirstUri(String firstUri) {
-    this.firstUri = firstUri;
-  }
-
-  
-  /**
-   **/
   public CallbackConversationEntityListing selfUri(String selfUri) {
     this.selfUri = selfUri;
     return this;
@@ -129,6 +112,23 @@ public class CallbackConversationEntityListing  implements Serializable, PagedRe
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
+  }
+
+  
+  /**
+   **/
+  public CallbackConversationEntityListing firstUri(String firstUri) {
+    this.firstUri = firstUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("firstUri")
+  public String getFirstUri() {
+    return firstUri;
+  }
+  public void setFirstUri(String firstUri) {
+    this.firstUri = firstUri;
   }
 
   
@@ -214,8 +214,8 @@ public class CallbackConversationEntityListing  implements Serializable, PagedRe
         Objects.equals(this.pageSize, callbackConversationEntityListing.pageSize) &&
         Objects.equals(this.pageNumber, callbackConversationEntityListing.pageNumber) &&
         Objects.equals(this.total, callbackConversationEntityListing.total) &&
-        Objects.equals(this.firstUri, callbackConversationEntityListing.firstUri) &&
         Objects.equals(this.selfUri, callbackConversationEntityListing.selfUri) &&
+        Objects.equals(this.firstUri, callbackConversationEntityListing.firstUri) &&
         Objects.equals(this.nextUri, callbackConversationEntityListing.nextUri) &&
         Objects.equals(this.lastUri, callbackConversationEntityListing.lastUri) &&
         Objects.equals(this.previousUri, callbackConversationEntityListing.previousUri) &&
@@ -224,7 +224,7 @@ public class CallbackConversationEntityListing  implements Serializable, PagedRe
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, lastUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, nextUri, lastUri, previousUri, pageCount);
   }
 
   @Override
@@ -236,8 +236,8 @@ public class CallbackConversationEntityListing  implements Serializable, PagedRe
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");

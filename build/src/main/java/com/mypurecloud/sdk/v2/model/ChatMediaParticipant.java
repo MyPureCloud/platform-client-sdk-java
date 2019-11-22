@@ -210,6 +210,8 @@ public class ChatMediaParticipant  implements Serializable {
   private FlaggedReasonEnum flaggedReason = null;
   private JourneyContext journeyContext = null;
   private ConversationRoutingData conversationRoutingData = null;
+  private Date startAcwTime = null;
+  private Date endAcwTime = null;
   private String roomId = null;
   private String avatarImageUrl = null;
 
@@ -755,6 +757,42 @@ public class ChatMediaParticipant  implements Serializable {
 
   
   /**
+   * The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public ChatMediaParticipant startAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("startAcwTime")
+  public Date getStartAcwTime() {
+    return startAcwTime;
+  }
+  public void setStartAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+  }
+
+  
+  /**
+   * The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public ChatMediaParticipant endAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("endAcwTime")
+  public Date getEndAcwTime() {
+    return endAcwTime;
+  }
+  public void setEndAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+  }
+
+  
+  /**
    * The ID of the chat room.
    **/
   public ChatMediaParticipant roomId(String roomId) {
@@ -830,13 +868,15 @@ public class ChatMediaParticipant  implements Serializable {
         Objects.equals(this.flaggedReason, chatMediaParticipant.flaggedReason) &&
         Objects.equals(this.journeyContext, chatMediaParticipant.journeyContext) &&
         Objects.equals(this.conversationRoutingData, chatMediaParticipant.conversationRoutingData) &&
+        Objects.equals(this.startAcwTime, chatMediaParticipant.startAcwTime) &&
+        Objects.equals(this.endAcwTime, chatMediaParticipant.endAcwTime) &&
         Objects.equals(this.roomId, chatMediaParticipant.roomId) &&
         Objects.equals(this.avatarImageUrl, chatMediaParticipant.avatarImageUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, roomId, avatarImageUrl);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, roomId, avatarImageUrl);
   }
 
   @Override
@@ -874,6 +914,8 @@ public class ChatMediaParticipant  implements Serializable {
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
+    sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
+    sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
     sb.append("    avatarImageUrl: ").append(toIndentedString(avatarImageUrl)).append("\n");
     sb.append("}");

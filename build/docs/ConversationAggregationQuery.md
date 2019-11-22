@@ -16,6 +16,7 @@ title: ConversationAggregationQuery
 | **metrics** | <!---->[**List&lt;MetricsEnum&gt;**](#MetricsEnum)<!----> | Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *). |  [optional] |
 | **flattenMultivaluedDimensions** | <!----><!---->**Boolean**<!----> | Flattens any multivalued dimensions used in response groups (e.g. [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]-&gt;&#39;a,b,c&#39;) |  [optional] |
 | **views** | <!----><!---->[**List&lt;ConversationAggregationView&gt;**](ConversationAggregationView.html)<!----> | Custom derived metric views |  [optional] |
+| **alternateTimeDimension** | [**AlternateTimeDimensionEnum**](#AlternateTimeDimensionEnum)<!----> | Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \&quot;eventTime\&quot; uses the actual time of the data event. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -116,6 +117,17 @@ title: ConversationAggregationQuery
 | TUSERRESPONSETIME | &quot;tUserResponseTime&quot; |
 | TVOICEMAIL | &quot;tVoicemail&quot; |
 | TWAIT | &quot;tWait&quot; |
+{: class="table table-striped"}
+
+
+<a name="AlternateTimeDimensionEnum"></a>
+
+## Enum: AlternateTimeDimensionEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| EVENTTIME | &quot;eventTime&quot; |
 {: class="table table-striped"}
 
 

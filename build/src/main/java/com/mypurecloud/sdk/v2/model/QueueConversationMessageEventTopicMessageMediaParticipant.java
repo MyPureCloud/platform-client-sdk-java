@@ -216,6 +216,8 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
   }
   private FlaggedReasonEnum flaggedReason = null;
   private QueueConversationMessageEventTopicJourneyContext journeyContext = null;
+  private Date startAcwTime = null;
+  private Date endAcwTime = null;
   private List<QueueConversationMessageEventTopicMessageDetails> messages = new ArrayList<QueueConversationMessageEventTopicMessageDetails>();
 
   /**
@@ -792,6 +794,40 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
   
   /**
    **/
+  public QueueConversationMessageEventTopicMessageMediaParticipant startAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("startAcwTime")
+  public Date getStartAcwTime() {
+    return startAcwTime;
+  }
+  public void setStartAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+  }
+
+  
+  /**
+   **/
+  public QueueConversationMessageEventTopicMessageMediaParticipant endAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("endAcwTime")
+  public Date getEndAcwTime() {
+    return endAcwTime;
+  }
+  public void setEndAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+  }
+
+  
+  /**
+   **/
   public QueueConversationMessageEventTopicMessageMediaParticipant messages(List<QueueConversationMessageEventTopicMessageDetails> messages) {
     this.messages = messages;
     return this;
@@ -899,6 +935,8 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
         Objects.equals(this.screenRecordingState, queueConversationMessageEventTopicMessageMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, queueConversationMessageEventTopicMessageMediaParticipant.flaggedReason) &&
         Objects.equals(this.journeyContext, queueConversationMessageEventTopicMessageMediaParticipant.journeyContext) &&
+        Objects.equals(this.startAcwTime, queueConversationMessageEventTopicMessageMediaParticipant.startAcwTime) &&
+        Objects.equals(this.endAcwTime, queueConversationMessageEventTopicMessageMediaParticipant.endAcwTime) &&
         Objects.equals(this.messages, queueConversationMessageEventTopicMessageMediaParticipant.messages) &&
         Objects.equals(this.type, queueConversationMessageEventTopicMessageMediaParticipant.type) &&
         Objects.equals(this.recipientCountry, queueConversationMessageEventTopicMessageMediaParticipant.recipientCountry) &&
@@ -907,7 +945,7 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, messages, type, recipientCountry, recipientType);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, messages, type, recipientCountry, recipientType);
   }
 
   @Override
@@ -946,6 +984,8 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
+    sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
+    sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    recipientCountry: ").append(toIndentedString(recipientCountry)).append("\n");

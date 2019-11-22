@@ -22,8 +22,8 @@ public class CredentialInfoListing  implements Serializable, PagedResource<Crede
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String firstUri = null;
   private String selfUri = null;
+  private String firstUri = null;
   private String nextUri = null;
   private String lastUri = null;
   private String previousUri = null;
@@ -100,23 +100,6 @@ public class CredentialInfoListing  implements Serializable, PagedResource<Crede
   
   /**
    **/
-  public CredentialInfoListing firstUri(String firstUri) {
-    this.firstUri = firstUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("firstUri")
-  public String getFirstUri() {
-    return firstUri;
-  }
-  public void setFirstUri(String firstUri) {
-    this.firstUri = firstUri;
-  }
-
-  
-  /**
-   **/
   public CredentialInfoListing selfUri(String selfUri) {
     this.selfUri = selfUri;
     return this;
@@ -129,6 +112,23 @@ public class CredentialInfoListing  implements Serializable, PagedResource<Crede
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
+  }
+
+  
+  /**
+   **/
+  public CredentialInfoListing firstUri(String firstUri) {
+    this.firstUri = firstUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("firstUri")
+  public String getFirstUri() {
+    return firstUri;
+  }
+  public void setFirstUri(String firstUri) {
+    this.firstUri = firstUri;
   }
 
   
@@ -214,8 +214,8 @@ public class CredentialInfoListing  implements Serializable, PagedResource<Crede
         Objects.equals(this.pageSize, credentialInfoListing.pageSize) &&
         Objects.equals(this.pageNumber, credentialInfoListing.pageNumber) &&
         Objects.equals(this.total, credentialInfoListing.total) &&
-        Objects.equals(this.firstUri, credentialInfoListing.firstUri) &&
         Objects.equals(this.selfUri, credentialInfoListing.selfUri) &&
+        Objects.equals(this.firstUri, credentialInfoListing.firstUri) &&
         Objects.equals(this.nextUri, credentialInfoListing.nextUri) &&
         Objects.equals(this.lastUri, credentialInfoListing.lastUri) &&
         Objects.equals(this.previousUri, credentialInfoListing.previousUri) &&
@@ -224,7 +224,7 @@ public class CredentialInfoListing  implements Serializable, PagedResource<Crede
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, lastUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, nextUri, lastUri, previousUri, pageCount);
   }
 
   @Override
@@ -236,8 +236,8 @@ public class CredentialInfoListing  implements Serializable, PagedResource<Crede
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");

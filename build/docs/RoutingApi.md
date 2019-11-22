@@ -1632,7 +1632,7 @@ try {
 
 
 
-> [QueueEntityListing](QueueEntityListing.html) getRoutingQueues(pageSize, pageNumber, sortBy, name, active, id, divisionId)
+> [QueueEntityListing](QueueEntityListing.html) getRoutingQueues(pageSize, pageNumber, sortBy, name, id, divisionId)
 
 Get list of queues.
 
@@ -1670,11 +1670,10 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortBy = "name"; // String | Sort by
 String name = "name_example"; // String | Name
-Boolean active = true; // Boolean | Active
 List<String> id = Arrays.asList("id_example"); // List<String> | ID(s)
 List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
 try {
-    QueueEntityListing result = apiInstance.getRoutingQueues(pageSize, pageNumber, sortBy, name, active, id, divisionId);
+    QueueEntityListing result = apiInstance.getRoutingQueues(pageSize, pageNumber, sortBy, name, id, divisionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingQueues");
@@ -1691,7 +1690,6 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortBy** | **String**| Sort by | [optional] [default to name] 
 | **name** | **String**| Name | [optional] 
-| **active** | **Boolean**| Active | [optional] 
 | **id** | [**List&lt;String&gt;**](String.html)| ID(s) | [optional] 
 | **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
 {: class="table-striped"}

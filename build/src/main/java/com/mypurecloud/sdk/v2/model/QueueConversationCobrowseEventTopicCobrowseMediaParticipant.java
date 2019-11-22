@@ -215,6 +215,8 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
   }
   private FlaggedReasonEnum flaggedReason = null;
   private QueueConversationCobrowseEventTopicJourneyContext journeyContext = null;
+  private Date startAcwTime = null;
+  private Date endAcwTime = null;
   private String cobrowseSessionId = null;
   private String cobrowseRole = null;
   private String viewerUrl = null;
@@ -751,6 +753,40 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
   
   /**
    **/
+  public QueueConversationCobrowseEventTopicCobrowseMediaParticipant startAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("startAcwTime")
+  public Date getStartAcwTime() {
+    return startAcwTime;
+  }
+  public void setStartAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+  }
+
+  
+  /**
+   **/
+  public QueueConversationCobrowseEventTopicCobrowseMediaParticipant endAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("endAcwTime")
+  public Date getEndAcwTime() {
+    return endAcwTime;
+  }
+  public void setEndAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+  }
+
+  
+  /**
+   **/
   public QueueConversationCobrowseEventTopicCobrowseMediaParticipant cobrowseSessionId(String cobrowseSessionId) {
     this.cobrowseSessionId = cobrowseSessionId;
     return this;
@@ -875,6 +911,8 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
         Objects.equals(this.screenRecordingState, queueConversationCobrowseEventTopicCobrowseMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, queueConversationCobrowseEventTopicCobrowseMediaParticipant.flaggedReason) &&
         Objects.equals(this.journeyContext, queueConversationCobrowseEventTopicCobrowseMediaParticipant.journeyContext) &&
+        Objects.equals(this.startAcwTime, queueConversationCobrowseEventTopicCobrowseMediaParticipant.startAcwTime) &&
+        Objects.equals(this.endAcwTime, queueConversationCobrowseEventTopicCobrowseMediaParticipant.endAcwTime) &&
         Objects.equals(this.cobrowseSessionId, queueConversationCobrowseEventTopicCobrowseMediaParticipant.cobrowseSessionId) &&
         Objects.equals(this.cobrowseRole, queueConversationCobrowseEventTopicCobrowseMediaParticipant.cobrowseRole) &&
         Objects.equals(this.viewerUrl, queueConversationCobrowseEventTopicCobrowseMediaParticipant.viewerUrl) &&
@@ -884,7 +922,7 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, cobrowseSessionId, cobrowseRole, viewerUrl, providerEventTime, controlling);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, cobrowseSessionId, cobrowseRole, viewerUrl, providerEventTime, controlling);
   }
 
   @Override
@@ -923,6 +961,8 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
+    sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
+    sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    cobrowseSessionId: ").append(toIndentedString(cobrowseSessionId)).append("\n");
     sb.append("    cobrowseRole: ").append(toIndentedString(cobrowseRole)).append("\n");
     sb.append("    viewerUrl: ").append(toIndentedString(viewerUrl)).append("\n");

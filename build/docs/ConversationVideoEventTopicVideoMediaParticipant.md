@@ -39,6 +39,8 @@ title: ConversationVideoEventTopicVideoMediaParticipant
 | **screenRecordingState** | <!----><!---->**String**<!----> |  |  [optional] |
 | **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum)<!----> |  |  [optional] |
 | **journeyContext** | <!----><!---->[**ConversationVideoEventTopicJourneyContext**](ConversationVideoEventTopicJourneyContext.html)<!----> |  |  [optional] |
+| **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **audioMuted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **videoMuted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **sharingScreen** | <!----><!---->**Boolean**<!----> |  |  [optional] |

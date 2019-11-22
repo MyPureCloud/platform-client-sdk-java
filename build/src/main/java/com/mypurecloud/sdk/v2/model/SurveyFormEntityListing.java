@@ -22,8 +22,8 @@ public class SurveyFormEntityListing  implements Serializable, PagedResource<Sur
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String firstUri = null;
   private String selfUri = null;
+  private String firstUri = null;
   private String nextUri = null;
   private String lastUri = null;
   private String previousUri = null;
@@ -100,23 +100,6 @@ public class SurveyFormEntityListing  implements Serializable, PagedResource<Sur
   
   /**
    **/
-  public SurveyFormEntityListing firstUri(String firstUri) {
-    this.firstUri = firstUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("firstUri")
-  public String getFirstUri() {
-    return firstUri;
-  }
-  public void setFirstUri(String firstUri) {
-    this.firstUri = firstUri;
-  }
-
-  
-  /**
-   **/
   public SurveyFormEntityListing selfUri(String selfUri) {
     this.selfUri = selfUri;
     return this;
@@ -129,6 +112,23 @@ public class SurveyFormEntityListing  implements Serializable, PagedResource<Sur
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
+  }
+
+  
+  /**
+   **/
+  public SurveyFormEntityListing firstUri(String firstUri) {
+    this.firstUri = firstUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("firstUri")
+  public String getFirstUri() {
+    return firstUri;
+  }
+  public void setFirstUri(String firstUri) {
+    this.firstUri = firstUri;
   }
 
   
@@ -214,8 +214,8 @@ public class SurveyFormEntityListing  implements Serializable, PagedResource<Sur
         Objects.equals(this.pageSize, surveyFormEntityListing.pageSize) &&
         Objects.equals(this.pageNumber, surveyFormEntityListing.pageNumber) &&
         Objects.equals(this.total, surveyFormEntityListing.total) &&
-        Objects.equals(this.firstUri, surveyFormEntityListing.firstUri) &&
         Objects.equals(this.selfUri, surveyFormEntityListing.selfUri) &&
+        Objects.equals(this.firstUri, surveyFormEntityListing.firstUri) &&
         Objects.equals(this.nextUri, surveyFormEntityListing.nextUri) &&
         Objects.equals(this.lastUri, surveyFormEntityListing.lastUri) &&
         Objects.equals(this.previousUri, surveyFormEntityListing.previousUri) &&
@@ -224,7 +224,7 @@ public class SurveyFormEntityListing  implements Serializable, PagedResource<Sur
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, lastUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, nextUri, lastUri, previousUri, pageCount);
   }
 
   @Override
@@ -236,8 +236,8 @@ public class SurveyFormEntityListing  implements Serializable, PagedResource<Sur
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");

@@ -112,18 +112,8 @@ public class EvaluationAggregationQuery  implements Serializable {
    */
   public enum AlternateTimeDimensionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    CALIBRATIONID("calibrationId"),
-    CONTEXTID("contextId"),
-    CONVERSATIONID("conversationId"),
-    DIVISIONID("divisionId"),
     EVALUATIONCREATEDDATE("evaluationCreatedDate"),
-    EVALUATIONID("evaluationId"),
-    EVALUATORID("evaluatorId"),
-    FORMID("formId"),
-    QUEUEID("queueId"),
-    RESCIND("rescind"),
-    RESCORED("rescored"),
-    USERID("userId");
+    EVENTTIME("eventTime");
 
     private String value;
 

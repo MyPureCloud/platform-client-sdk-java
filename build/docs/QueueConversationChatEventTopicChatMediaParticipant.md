@@ -39,6 +39,8 @@ title: QueueConversationChatEventTopicChatMediaParticipant
 | **screenRecordingState** | <!----><!---->**String**<!----> |  |  [optional] |
 | **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum)<!----> |  |  [optional] |
 | **journeyContext** | <!----><!---->[**QueueConversationChatEventTopicJourneyContext**](QueueConversationChatEventTopicJourneyContext.html)<!----> |  |  [optional] |
+| **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **roomId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **avatarImageUrl** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}

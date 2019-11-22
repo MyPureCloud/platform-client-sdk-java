@@ -213,6 +213,8 @@ public class MessageMediaParticipant  implements Serializable {
   private FlaggedReasonEnum flaggedReason = null;
   private JourneyContext journeyContext = null;
   private ConversationRoutingData conversationRoutingData = null;
+  private Date startAcwTime = null;
+  private Date endAcwTime = null;
   private Address toAddress = null;
   private Address fromAddress = null;
   private List<MessageDetails> messages = new ArrayList<MessageDetails>();
@@ -801,6 +803,42 @@ public class MessageMediaParticipant  implements Serializable {
 
   
   /**
+   * The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public MessageMediaParticipant startAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("startAcwTime")
+  public Date getStartAcwTime() {
+    return startAcwTime;
+  }
+  public void setStartAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+  }
+
+  
+  /**
+   * The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public MessageMediaParticipant endAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("endAcwTime")
+  public Date getEndAcwTime() {
+    return endAcwTime;
+  }
+  public void setEndAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+  }
+
+  
+  /**
    * Address for the participant on receiving side of the message conversation. If the address is a phone number, E.164 format is recommended.
    **/
   public MessageMediaParticipant toAddress(Address toAddress) {
@@ -948,6 +986,8 @@ public class MessageMediaParticipant  implements Serializable {
         Objects.equals(this.flaggedReason, messageMediaParticipant.flaggedReason) &&
         Objects.equals(this.journeyContext, messageMediaParticipant.journeyContext) &&
         Objects.equals(this.conversationRoutingData, messageMediaParticipant.conversationRoutingData) &&
+        Objects.equals(this.startAcwTime, messageMediaParticipant.startAcwTime) &&
+        Objects.equals(this.endAcwTime, messageMediaParticipant.endAcwTime) &&
         Objects.equals(this.toAddress, messageMediaParticipant.toAddress) &&
         Objects.equals(this.fromAddress, messageMediaParticipant.fromAddress) &&
         Objects.equals(this.messages, messageMediaParticipant.messages) &&
@@ -958,7 +998,7 @@ public class MessageMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, toAddress, fromAddress, messages, type, recipientCountry, recipientType);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, toAddress, fromAddress, messages, type, recipientCountry, recipientType);
   }
 
   @Override
@@ -996,6 +1036,8 @@ public class MessageMediaParticipant  implements Serializable {
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
+    sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
+    sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    toAddress: ").append(toIndentedString(toAddress)).append("\n");
     sb.append("    fromAddress: ").append(toIndentedString(fromAddress)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");

@@ -14,6 +14,7 @@ title: SmsPhoneNumber
 | **phoneNumberType** | [**PhoneNumberTypeEnum**](#PhoneNumberTypeEnum)<!----> | Type of the phone number provisioned. |  [optional] |
 | **provisionedThroughPureCloud** | <!----><!---->**Boolean**<!----> | Is set to false, if the phone number is provisioned through a SMS provider, outside of PureCloud |  [optional] |
 | **phoneNumberStatus** | [**PhoneNumberStatusEnum**](#PhoneNumberStatusEnum)<!----> | Status of the provisioned phone number. |  [optional] |
+| **capabilities** | <!---->[**List&lt;CapabilitiesEnum&gt;**](#CapabilitiesEnum)<!----> | The capabilities of the phone number available for provisioning. |  [optional] |
 | **countryCode** | <!----><!---->**String**<!----> | The ISO 3166-1 alpha-2 country code of the country this phone number is associated with. |  [optional] |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Date this phone number was provisioned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Date this phone number was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
@@ -56,6 +57,18 @@ title: SmsPhoneNumber
 | PORTING | &quot;PORTING&quot; |
 | PENDING | &quot;PENDING&quot; |
 | PENDING_CANCELLATION | &quot;PENDING_CANCELLATION&quot; |
+{: class="table table-striped"}
+
+
+<a name="CapabilitiesEnum"></a>
+
+## Enum: CapabilitiesEnum
+
+| Name | Value |
+| ---- | ----- |
+| SMS | &quot;sms&quot; |
+| MMS | &quot;mms&quot; |
+| VOICE | &quot;voice&quot; |
 {: class="table table-striped"}
 
 

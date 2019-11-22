@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryFilter;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationView;
 import io.swagger.annotations.ApiModel;
@@ -124,6 +125,41 @@ public class SurveyAggregationQuery  implements Serializable {
   private List<MetricsEnum> metrics = new ArrayList<MetricsEnum>();
   private Boolean flattenMultivaluedDimensions = null;
   private List<SurveyAggregationView> views = new ArrayList<SurveyAggregationView>();
+
+  /**
+   * Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.
+   */
+  public enum AlternateTimeDimensionEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    EVENTTIME("eventTime"),
+    SURVEYCREATEDDATE("surveyCreatedDate");
+
+    private String value;
+
+    AlternateTimeDimensionEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static AlternateTimeDimensionEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (AlternateTimeDimensionEnum value : AlternateTimeDimensionEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return AlternateTimeDimensionEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private AlternateTimeDimensionEnum alternateTimeDimension = null;
 
   
   /**
@@ -270,6 +306,24 @@ public class SurveyAggregationQuery  implements Serializable {
   }
 
   
+  /**
+   * Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.
+   **/
+  public SurveyAggregationQuery alternateTimeDimension(AlternateTimeDimensionEnum alternateTimeDimension) {
+    this.alternateTimeDimension = alternateTimeDimension;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.")
+  @JsonProperty("alternateTimeDimension")
+  public AlternateTimeDimensionEnum getAlternateTimeDimension() {
+    return alternateTimeDimension;
+  }
+  public void setAlternateTimeDimension(AlternateTimeDimensionEnum alternateTimeDimension) {
+    this.alternateTimeDimension = alternateTimeDimension;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -287,12 +341,13 @@ public class SurveyAggregationQuery  implements Serializable {
         Objects.equals(this.filter, surveyAggregationQuery.filter) &&
         Objects.equals(this.metrics, surveyAggregationQuery.metrics) &&
         Objects.equals(this.flattenMultivaluedDimensions, surveyAggregationQuery.flattenMultivaluedDimensions) &&
-        Objects.equals(this.views, surveyAggregationQuery.views);
+        Objects.equals(this.views, surveyAggregationQuery.views) &&
+        Objects.equals(this.alternateTimeDimension, surveyAggregationQuery.alternateTimeDimension);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(interval, granularity, timeZone, groupBy, filter, metrics, flattenMultivaluedDimensions, views);
+    return Objects.hash(interval, granularity, timeZone, groupBy, filter, metrics, flattenMultivaluedDimensions, views, alternateTimeDimension);
   }
 
   @Override
@@ -308,6 +363,7 @@ public class SurveyAggregationQuery  implements Serializable {
     sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");
     sb.append("    flattenMultivaluedDimensions: ").append(toIndentedString(flattenMultivaluedDimensions)).append("\n");
     sb.append("    views: ").append(toIndentedString(views)).append("\n");
+    sb.append("    alternateTimeDimension: ").append(toIndentedString(alternateTimeDimension)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -883,7 +883,7 @@ public class QualityApiAsync {
   
   /**
    * Get audits for conversation or recording
-   * 
+   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -917,7 +917,7 @@ public class QualityApiAsync {
 
   /**
    * Get audits for conversation or recording
-   * 
+   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4075,7 +4075,7 @@ public class QualityApiAsync {
   
   /**
    * Update an evaluation
-   * 
+   * The quality:evaluation:edit permission allows modification of most fields, while the quality:evaluation:editScore permission allows an evaluator to change just the question scores, and the quality:evaluation:editAgentSignoff permission allows an agent to change the agent comments and sign off on the evaluation.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4109,7 +4109,7 @@ public class QualityApiAsync {
 
   /**
    * Update an evaluation
-   * 
+   * The quality:evaluation:edit permission allows modification of most fields, while the quality:evaluation:editScore permission allows an evaluator to change just the question scores, and the quality:evaluation:editAgentSignoff permission allows an agent to change the agent comments and sign off on the evaluation.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

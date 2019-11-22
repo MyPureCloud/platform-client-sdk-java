@@ -213,6 +213,8 @@ public class CallbackMediaParticipant  implements Serializable {
   private FlaggedReasonEnum flaggedReason = null;
   private JourneyContext journeyContext = null;
   private ConversationRoutingData conversationRoutingData = null;
+  private Date startAcwTime = null;
+  private Date endAcwTime = null;
   private DialerPreview outboundPreview = null;
   private Voicemail voicemail = null;
   private List<String> callbackNumbers = new ArrayList<String>();
@@ -764,6 +766,42 @@ public class CallbackMediaParticipant  implements Serializable {
 
   
   /**
+   * The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public CallbackMediaParticipant startAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("startAcwTime")
+  public Date getStartAcwTime() {
+    return startAcwTime;
+  }
+  public void setStartAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+  }
+
+  
+  /**
+   * The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public CallbackMediaParticipant endAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("endAcwTime")
+  public Date getEndAcwTime() {
+    return endAcwTime;
+  }
+  public void setEndAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+  }
+
+  
+  /**
    * The outbound preview associated with this callback.
    **/
   public CallbackMediaParticipant outboundPreview(DialerPreview outboundPreview) {
@@ -947,6 +985,8 @@ public class CallbackMediaParticipant  implements Serializable {
         Objects.equals(this.flaggedReason, callbackMediaParticipant.flaggedReason) &&
         Objects.equals(this.journeyContext, callbackMediaParticipant.journeyContext) &&
         Objects.equals(this.conversationRoutingData, callbackMediaParticipant.conversationRoutingData) &&
+        Objects.equals(this.startAcwTime, callbackMediaParticipant.startAcwTime) &&
+        Objects.equals(this.endAcwTime, callbackMediaParticipant.endAcwTime) &&
         Objects.equals(this.outboundPreview, callbackMediaParticipant.outboundPreview) &&
         Objects.equals(this.voicemail, callbackMediaParticipant.voicemail) &&
         Objects.equals(this.callbackNumbers, callbackMediaParticipant.callbackNumbers) &&
@@ -959,7 +999,7 @@ public class CallbackMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, automatedCallbackConfigId, callbackScheduledTime);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, automatedCallbackConfigId, callbackScheduledTime);
   }
 
   @Override
@@ -997,6 +1037,8 @@ public class CallbackMediaParticipant  implements Serializable {
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
+    sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
+    sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    outboundPreview: ").append(toIndentedString(outboundPreview)).append("\n");
     sb.append("    voicemail: ").append(toIndentedString(voicemail)).append("\n");
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");

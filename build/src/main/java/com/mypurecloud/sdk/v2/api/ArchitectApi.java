@@ -4689,12 +4689,13 @@ public class ArchitectApi {
    * @param publishedAfter Published after (optional)
    * @param publishedBefore Published before (optional)
    * @param divisionId division ID(s) (optional)
+   * @param includeSchemas Include variable schemas (optional, default to false)
    * @return FlowDivisionViewEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public FlowDivisionViewEntityListing getFlowsDivisionviews(List<String> type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String publishVersionId, String publishedAfter, String publishedBefore, List<String> divisionId) throws IOException, ApiException {
-    return  getFlowsDivisionviews(createGetFlowsDivisionviewsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore, divisionId));
+  public FlowDivisionViewEntityListing getFlowsDivisionviews(List<String> type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String publishVersionId, String publishedAfter, String publishedBefore, List<String> divisionId, Boolean includeSchemas) throws IOException, ApiException {
+    return  getFlowsDivisionviews(createGetFlowsDivisionviewsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore, divisionId, includeSchemas));
   }
 
   /**
@@ -4711,14 +4712,15 @@ public class ArchitectApi {
    * @param publishedAfter Published after (optional)
    * @param publishedBefore Published before (optional)
    * @param divisionId division ID(s) (optional)
+   * @param includeSchemas Include variable schemas (optional, default to false)
    * @return FlowDivisionViewEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FlowDivisionViewEntityListing> getFlowsDivisionviewsWithHttpInfo(List<String> type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String publishVersionId, String publishedAfter, String publishedBefore, List<String> divisionId) throws IOException {
-    return getFlowsDivisionviews(createGetFlowsDivisionviewsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore, divisionId).withHttpInfo());
+  public ApiResponse<FlowDivisionViewEntityListing> getFlowsDivisionviewsWithHttpInfo(List<String> type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String publishVersionId, String publishedAfter, String publishedBefore, List<String> divisionId, Boolean includeSchemas) throws IOException {
+    return getFlowsDivisionviews(createGetFlowsDivisionviewsRequest(type, pageNumber, pageSize, sortBy, sortOrder, id, name, publishVersionId, publishedAfter, publishedBefore, divisionId, includeSchemas).withHttpInfo());
   }
 
-  private GetFlowsDivisionviewsRequest createGetFlowsDivisionviewsRequest(List<String> type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String publishVersionId, String publishedAfter, String publishedBefore, List<String> divisionId) {
+  private GetFlowsDivisionviewsRequest createGetFlowsDivisionviewsRequest(List<String> type, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String publishVersionId, String publishedAfter, String publishedBefore, List<String> divisionId, Boolean includeSchemas) {
     return GetFlowsDivisionviewsRequest.builder()
             .withType(type)
     
@@ -4741,6 +4743,8 @@ public class ArchitectApi {
             .withPublishedBefore(publishedBefore)
     
             .withDivisionId(divisionId)
+    
+            .withIncludeSchemas(includeSchemas)
     
             .build();
   }

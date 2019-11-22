@@ -160,6 +160,9 @@ public class DomainLogicalInterface  implements Serializable {
   private Boolean inheritPhoneTrunkBasesIPv4 = null;
   private Boolean inheritPhoneTrunkBasesIPv6 = null;
   private Boolean useForInternalEdgeCommunication = null;
+  private Boolean useForIndirectEdgeCommunication = null;
+  private Boolean useForCloudProxyEdgeCommunication = null;
+  private String publicNatIpAddress = null;
   private List<TrunkBaseAssignment> externalTrunkBaseAssignments = new ArrayList<TrunkBaseAssignment>();
   private List<TrunkBaseAssignment> phoneTrunkBaseAssignments = new ArrayList<TrunkBaseAssignment>();
   private Boolean traceEnabled = null;
@@ -668,6 +671,60 @@ public class DomainLogicalInterface  implements Serializable {
 
   
   /**
+   * Site Interconnects using the \"Indirect\" method will communicate using the Public IP Address specified on the interface. Use this option when a NAT enabled firewall is between the Edge and the far end.
+   **/
+  public DomainLogicalInterface useForIndirectEdgeCommunication(Boolean useForIndirectEdgeCommunication) {
+    this.useForIndirectEdgeCommunication = useForIndirectEdgeCommunication;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Site Interconnects using the \"Indirect\" method will communicate using the Public IP Address specified on the interface. Use this option when a NAT enabled firewall is between the Edge and the far end.")
+  @JsonProperty("useForIndirectEdgeCommunication")
+  public Boolean getUseForIndirectEdgeCommunication() {
+    return useForIndirectEdgeCommunication;
+  }
+  public void setUseForIndirectEdgeCommunication(Boolean useForIndirectEdgeCommunication) {
+    this.useForIndirectEdgeCommunication = useForIndirectEdgeCommunication;
+  }
+
+  
+  /**
+   * Site Interconnects using the \"Cloud Proxy\" method will broker the connection between them with a Cloud Proxy. This method is required for connections between one or more Sites using Cloud Media, but can optionally be used between two premises Sites if Direct or Indirect are not an option.
+   **/
+  public DomainLogicalInterface useForCloudProxyEdgeCommunication(Boolean useForCloudProxyEdgeCommunication) {
+    this.useForCloudProxyEdgeCommunication = useForCloudProxyEdgeCommunication;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Site Interconnects using the \"Cloud Proxy\" method will broker the connection between them with a Cloud Proxy. This method is required for connections between one or more Sites using Cloud Media, but can optionally be used between two premises Sites if Direct or Indirect are not an option.")
+  @JsonProperty("useForCloudProxyEdgeCommunication")
+  public Boolean getUseForCloudProxyEdgeCommunication() {
+    return useForCloudProxyEdgeCommunication;
+  }
+  public void setUseForCloudProxyEdgeCommunication(Boolean useForCloudProxyEdgeCommunication) {
+    this.useForCloudProxyEdgeCommunication = useForCloudProxyEdgeCommunication;
+  }
+
+  
+  /**
+   * NENT IP Address
+   **/
+  public DomainLogicalInterface publicNatIpAddress(String publicNatIpAddress) {
+    this.publicNatIpAddress = publicNatIpAddress;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "NENT IP Address")
+  @JsonProperty("publicNatIpAddress")
+  public String getPublicNatIpAddress() {
+    return publicNatIpAddress;
+  }
+  public void setPublicNatIpAddress(String publicNatIpAddress) {
+    this.publicNatIpAddress = publicNatIpAddress;
+  }
+
+  
+  /**
    * External trunk base settings to use for external communication from this interface.
    **/
   public DomainLogicalInterface externalTrunkBaseAssignments(List<TrunkBaseAssignment> externalTrunkBaseAssignments) {
@@ -803,6 +860,9 @@ public class DomainLogicalInterface  implements Serializable {
         Objects.equals(this.inheritPhoneTrunkBasesIPv4, domainLogicalInterface.inheritPhoneTrunkBasesIPv4) &&
         Objects.equals(this.inheritPhoneTrunkBasesIPv6, domainLogicalInterface.inheritPhoneTrunkBasesIPv6) &&
         Objects.equals(this.useForInternalEdgeCommunication, domainLogicalInterface.useForInternalEdgeCommunication) &&
+        Objects.equals(this.useForIndirectEdgeCommunication, domainLogicalInterface.useForIndirectEdgeCommunication) &&
+        Objects.equals(this.useForCloudProxyEdgeCommunication, domainLogicalInterface.useForCloudProxyEdgeCommunication) &&
+        Objects.equals(this.publicNatIpAddress, domainLogicalInterface.publicNatIpAddress) &&
         Objects.equals(this.externalTrunkBaseAssignments, domainLogicalInterface.externalTrunkBaseAssignments) &&
         Objects.equals(this.phoneTrunkBaseAssignments, domainLogicalInterface.phoneTrunkBaseAssignments) &&
         Objects.equals(this.traceEnabled, domainLogicalInterface.traceEnabled) &&
@@ -813,7 +873,7 @@ public class DomainLogicalInterface  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, edgeUri, edgeAssignedId, friendlyName, vlanTagId, hardwareAddress, physicalAdapterId, ifStatus, interfaceType, routes, addresses, ipv4Capabilities, ipv6Capabilities, currentState, lastModifiedUserId, lastModifiedCorrelationId, commandResponses, inheritPhoneTrunkBasesIPv4, inheritPhoneTrunkBasesIPv6, useForInternalEdgeCommunication, externalTrunkBaseAssignments, phoneTrunkBaseAssignments, traceEnabled, startDate, endDate, selfUri);
+    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, edgeUri, edgeAssignedId, friendlyName, vlanTagId, hardwareAddress, physicalAdapterId, ifStatus, interfaceType, routes, addresses, ipv4Capabilities, ipv6Capabilities, currentState, lastModifiedUserId, lastModifiedCorrelationId, commandResponses, inheritPhoneTrunkBasesIPv4, inheritPhoneTrunkBasesIPv6, useForInternalEdgeCommunication, useForIndirectEdgeCommunication, useForCloudProxyEdgeCommunication, publicNatIpAddress, externalTrunkBaseAssignments, phoneTrunkBaseAssignments, traceEnabled, startDate, endDate, selfUri);
   }
 
   @Override
@@ -851,6 +911,9 @@ public class DomainLogicalInterface  implements Serializable {
     sb.append("    inheritPhoneTrunkBasesIPv4: ").append(toIndentedString(inheritPhoneTrunkBasesIPv4)).append("\n");
     sb.append("    inheritPhoneTrunkBasesIPv6: ").append(toIndentedString(inheritPhoneTrunkBasesIPv6)).append("\n");
     sb.append("    useForInternalEdgeCommunication: ").append(toIndentedString(useForInternalEdgeCommunication)).append("\n");
+    sb.append("    useForIndirectEdgeCommunication: ").append(toIndentedString(useForIndirectEdgeCommunication)).append("\n");
+    sb.append("    useForCloudProxyEdgeCommunication: ").append(toIndentedString(useForCloudProxyEdgeCommunication)).append("\n");
+    sb.append("    publicNatIpAddress: ").append(toIndentedString(publicNatIpAddress)).append("\n");
     sb.append("    externalTrunkBaseAssignments: ").append(toIndentedString(externalTrunkBaseAssignments)).append("\n");
     sb.append("    phoneTrunkBaseAssignments: ").append(toIndentedString(phoneTrunkBaseAssignments)).append("\n");
     sb.append("    traceEnabled: ").append(toIndentedString(traceEnabled)).append("\n");

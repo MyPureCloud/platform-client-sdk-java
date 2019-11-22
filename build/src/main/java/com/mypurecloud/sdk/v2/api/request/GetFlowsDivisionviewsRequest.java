@@ -253,6 +253,20 @@ public class GetFlowsDivisionviewsRequest {
 	    return this;
 	} 
 	
+	private Boolean includeSchemas;
+	public Boolean getIncludeSchemas() {
+		return this.includeSchemas;
+	}
+
+	public void setIncludeSchemas(Boolean includeSchemas) {
+		this.includeSchemas = includeSchemas;
+	}
+
+	public GetFlowsDivisionviewsRequest withIncludeSchemas(Boolean includeSchemas) {
+	    this.setIncludeSchemas(includeSchemas);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -297,6 +311,8 @@ public class GetFlowsDivisionviewsRequest {
                 .withQueryParameters("publishedBefore", "", publishedBefore)
         
                 .withQueryParameters("divisionId", "multi", divisionId)
+        
+                .withQueryParameters("includeSchemas", "", includeSchemas)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -380,6 +396,11 @@ public class GetFlowsDivisionviewsRequest {
 		
 		public Builder withDivisionId(List<String> divisionId) {
 			request.setDivisionId(divisionId);
+			return this;
+		}
+		
+		public Builder withIncludeSchemas(Boolean includeSchemas) {
+			request.setIncludeSchemas(includeSchemas);
 			return this;
 		}
 		

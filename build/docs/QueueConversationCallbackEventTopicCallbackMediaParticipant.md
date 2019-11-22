@@ -39,6 +39,8 @@ title: QueueConversationCallbackEventTopicCallbackMediaParticipant
 | **screenRecordingState** | <!----><!---->**String**<!----> |  |  [optional] |
 | **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum)<!----> |  |  [optional] |
 | **journeyContext** | <!----><!---->[**QueueConversationCallbackEventTopicJourneyContext**](QueueConversationCallbackEventTopicJourneyContext.html)<!----> |  |  [optional] |
+| **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **outboundPreview** | <!----><!---->[**QueueConversationCallbackEventTopicDialerPreview**](QueueConversationCallbackEventTopicDialerPreview.html)<!----> |  |  [optional] |
 | **voicemail** | <!----><!---->[**QueueConversationCallbackEventTopicVoicemail**](QueueConversationCallbackEventTopicVoicemail.html)<!----> |  |  [optional] |
 | **callbackNumbers** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |

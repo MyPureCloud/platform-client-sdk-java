@@ -41,6 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postRecordingLocalkeysSettings**](RecordingApi.html#postRecordingLocalkeysSettings) | create settings for local key creation |
 | [**postRecordingMediaretentionpolicies**](RecordingApi.html#postRecordingMediaretentionpolicies) | Create media retention policy |
 | [**postRecordingRecordingkeys**](RecordingApi.html#postRecordingRecordingkeys) | Create encryption key |
+| [**postRecordingsDeletionprotection**](RecordingApi.html#postRecordingsDeletionprotection) | Get a list of conversations with protected recordings |
 | [**putConversationRecording**](RecordingApi.html#putConversationRecording) | Updates the retention records on a recording. |
 | [**putConversationRecordingAnnotation**](RecordingApi.html#putConversationRecordingAnnotation) | Update annotation |
 | [**putOrphanrecording**](RecordingApi.html#putOrphanrecording) | Updates an orphan recording to a regular recording with retention values |
@@ -49,6 +50,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putRecordingMediaretentionpolicy**](RecordingApi.html#putRecordingMediaretentionpolicy) | Update a media retention policy |
 | [**putRecordingRecordingkeysRotationschedule**](RecordingApi.html#putRecordingRecordingkeysRotationschedule) | Update key rotation schedule |
 | [**putRecordingSettings**](RecordingApi.html#putRecordingSettings) | Update the Recording Settings for the Organization |
+| [**putRecordingsDeletionprotection**](RecordingApi.html#putRecordingsDeletionprotection) | Apply or revoke recording protection for conversations |
 {: class="table-striped"}
 
 <a name="deleteConversationRecordingAnnotation"></a>
@@ -65,8 +67,9 @@ Delete annotation
 
 Wraps DELETE /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* recording:annotation:delete
 
 ### Example
 
@@ -379,8 +382,9 @@ Gets a specific recording.
 
 Wraps GET /api/v2/conversations/{conversationId}/recordings/{recordingId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* recording:recording:view
 
 ### Example
 
@@ -449,8 +453,9 @@ Get annotation
 
 Wraps GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* recording:annotation:view
 
 ### Example
 
@@ -515,8 +520,9 @@ Get annotations for recording
 
 Wraps GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* recording:annotation:view
 
 ### Example
 
@@ -641,8 +647,9 @@ Get metadata for a specific recording. Does not return playable media.
 
 Wraps GET /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* recording:recording:view
 
 ### Example
 
@@ -835,8 +842,9 @@ A 202 response means the orphaned media is currently transcoding and will be ava
 
 Wraps GET /api/v2/orphanrecordings/{orphanId}/media  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* recording:orphan:view
 
 ### Example
 
@@ -1568,8 +1576,10 @@ Get the Recording Settings for the Organization
 
 Wraps GET /api/v2/recording/settings  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* recording:screenRecording:view
+* recording:settings:editScreenRecordings
 
 ### Example
 
@@ -1630,8 +1640,9 @@ Retrieves a paged listing of screen recording sessions
 
 Wraps GET /api/v2/recordings/screensessions  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* recording:screenRecording:view
 
 ### Example
 
@@ -1759,8 +1770,9 @@ Update a screen recording session
 
 Wraps PATCH /api/v2/recordings/screensessions/{recordingSessionId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* recording:screenRecording:stop
 
 ### Example
 
@@ -1822,8 +1834,9 @@ Create annotation
 
 Wraps POST /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* recording:annotation:add
 
 ### Example
 
@@ -2247,6 +2260,68 @@ This endpoint does not require any parameters.
 
 [**EncryptionKey**](EncryptionKey.html)
 
+<a name="postRecordingsDeletionprotection"></a>
+
+# **postRecordingsDeletionprotection**
+
+
+
+> [List&lt;AddressableEntityRef&gt;](AddressableEntityRef.html) postRecordingsDeletionprotection(body)
+
+Get a list of conversations with protected recordings
+
+
+
+Wraps POST /api/v2/recordings/deletionprotection  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+ConversationDeletionProtectionQuery body = new ConversationDeletionProtectionQuery(); // ConversationDeletionProtectionQuery | conversationIds
+try {
+    List<AddressableEntityRef> result = apiInstance.postRecordingsDeletionprotection(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#postRecordingsDeletionprotection");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ConversationDeletionProtectionQuery**](ConversationDeletionProtectionQuery.html)| conversationIds | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**List&lt;AddressableEntityRef&gt;**](AddressableEntityRef.html)
+
 <a name="putConversationRecording"></a>
 
 # **putConversationRecording**
@@ -2257,12 +2332,15 @@ This endpoint does not require any parameters.
 
 Updates the retention records on a recording.
 
-Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. 
+Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. The recording:recording:view permission is required for the recording, as well as either the recording:recording:editRetention or recording:screenRecording:editRetention permissions depending on the type of recording.
 
 Wraps PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* recording:recording:view
+* recording:recording:editRetention
+* recording:screenRecording:editRetention
 
 ### Example
 
@@ -2327,8 +2405,9 @@ Update annotation
 
 Wraps PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* recording:annotation:edit
 
 ### Example
 
@@ -2718,8 +2797,9 @@ Update the Recording Settings for the Organization
 
 Wraps PUT /api/v2/recording/settings  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* recording:settings:editScreenRecordings
 
 ### Example
 
@@ -2765,4 +2845,69 @@ try {
 ### Return type
 
 [**RecordingSettings**](RecordingSettings.html)
+
+<a name="putRecordingsDeletionprotection"></a>
+
+# **putRecordingsDeletionprotection**
+
+
+
+> Void putRecordingsDeletionprotection(protect, body)
+
+Apply or revoke recording protection for conversations
+
+
+
+Wraps PUT /api/v2/recordings/deletionprotection  
+
+Requires ANY permissions: 
+
+* recording:deletionProtection:apply
+* recording:deletionProtection:revoke
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+Boolean protect = true; // Boolean | Check for apply, uncheck for revoke (each action requires the respective permission)
+ConversationDeletionProtectionQuery body = new ConversationDeletionProtectionQuery(); // ConversationDeletionProtectionQuery | 
+try {
+    apiInstance.putRecordingsDeletionprotection(protect, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#putRecordingsDeletionprotection");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **protect** | **Boolean**| Check for apply, uncheck for revoke (each action requires the respective permission) | [optional] [default to true] 
+| **body** | [**ConversationDeletionProtectionQuery**](ConversationDeletionProtectionQuery.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 

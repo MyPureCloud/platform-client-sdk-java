@@ -62,18 +62,8 @@ title: EvaluationAggregationQuery
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| CALIBRATIONID | &quot;calibrationId&quot; |
-| CONTEXTID | &quot;contextId&quot; |
-| CONVERSATIONID | &quot;conversationId&quot; |
-| DIVISIONID | &quot;divisionId&quot; |
 | EVALUATIONCREATEDDATE | &quot;evaluationCreatedDate&quot; |
-| EVALUATIONID | &quot;evaluationId&quot; |
-| EVALUATORID | &quot;evaluatorId&quot; |
-| FORMID | &quot;formId&quot; |
-| QUEUEID | &quot;queueId&quot; |
-| RESCIND | &quot;rescind&quot; |
-| RESCORED | &quot;rescored&quot; |
-| USERID | &quot;userId&quot; |
+| EVENTTIME | &quot;eventTime&quot; |
 {: class="table table-striped"}
 
 

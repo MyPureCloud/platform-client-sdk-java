@@ -211,6 +211,8 @@ public class CobrowseMediaParticipant  implements Serializable {
   private FlaggedReasonEnum flaggedReason = null;
   private JourneyContext journeyContext = null;
   private ConversationRoutingData conversationRoutingData = null;
+  private Date startAcwTime = null;
+  private Date endAcwTime = null;
   private String cobrowseSessionId = null;
   private String cobrowseRole = null;
   private List<String> controlling = new ArrayList<String>();
@@ -759,6 +761,42 @@ public class CobrowseMediaParticipant  implements Serializable {
 
   
   /**
+   * The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public CobrowseMediaParticipant startAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("startAcwTime")
+  public Date getStartAcwTime() {
+    return startAcwTime;
+  }
+  public void setStartAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+  }
+
+  
+  /**
+   * The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public CobrowseMediaParticipant endAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("endAcwTime")
+  public Date getEndAcwTime() {
+    return endAcwTime;
+  }
+  public void setEndAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+  }
+
+  
+  /**
    * The co-browse session ID.
    **/
   public CobrowseMediaParticipant cobrowseSessionId(String cobrowseSessionId) {
@@ -888,6 +926,8 @@ public class CobrowseMediaParticipant  implements Serializable {
         Objects.equals(this.flaggedReason, cobrowseMediaParticipant.flaggedReason) &&
         Objects.equals(this.journeyContext, cobrowseMediaParticipant.journeyContext) &&
         Objects.equals(this.conversationRoutingData, cobrowseMediaParticipant.conversationRoutingData) &&
+        Objects.equals(this.startAcwTime, cobrowseMediaParticipant.startAcwTime) &&
+        Objects.equals(this.endAcwTime, cobrowseMediaParticipant.endAcwTime) &&
         Objects.equals(this.cobrowseSessionId, cobrowseMediaParticipant.cobrowseSessionId) &&
         Objects.equals(this.cobrowseRole, cobrowseMediaParticipant.cobrowseRole) &&
         Objects.equals(this.controlling, cobrowseMediaParticipant.controlling) &&
@@ -897,7 +937,7 @@ public class CobrowseMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, providerEventTime);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, providerEventTime);
   }
 
   @Override
@@ -935,6 +975,8 @@ public class CobrowseMediaParticipant  implements Serializable {
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
+    sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
+    sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    cobrowseSessionId: ").append(toIndentedString(cobrowseSessionId)).append("\n");
     sb.append("    cobrowseRole: ").append(toIndentedString(cobrowseRole)).append("\n");
     sb.append("    controlling: ").append(toIndentedString(controlling)).append("\n");

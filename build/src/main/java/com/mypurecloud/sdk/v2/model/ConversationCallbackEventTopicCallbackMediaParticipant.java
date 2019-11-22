@@ -217,6 +217,8 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
   }
   private FlaggedReasonEnum flaggedReason = null;
   private ConversationCallbackEventTopicJourneyContext journeyContext = null;
+  private Date startAcwTime = null;
+  private Date endAcwTime = null;
   private ConversationCallbackEventTopicDialerPreview outboundPreview = null;
   private ConversationCallbackEventTopicVoicemail voicemail = null;
   private List<String> callbackNumbers = new ArrayList<String>();
@@ -756,6 +758,40 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
   
   /**
    **/
+  public ConversationCallbackEventTopicCallbackMediaParticipant startAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("startAcwTime")
+  public Date getStartAcwTime() {
+    return startAcwTime;
+  }
+  public void setStartAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+  }
+
+  
+  /**
+   **/
+  public ConversationCallbackEventTopicCallbackMediaParticipant endAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("endAcwTime")
+  public Date getEndAcwTime() {
+    return endAcwTime;
+  }
+  public void setEndAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+  }
+
+  
+  /**
+   **/
   public ConversationCallbackEventTopicCallbackMediaParticipant outboundPreview(ConversationCallbackEventTopicDialerPreview outboundPreview) {
     this.outboundPreview = outboundPreview;
     return this;
@@ -931,6 +967,8 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
         Objects.equals(this.screenRecordingState, conversationCallbackEventTopicCallbackMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, conversationCallbackEventTopicCallbackMediaParticipant.flaggedReason) &&
         Objects.equals(this.journeyContext, conversationCallbackEventTopicCallbackMediaParticipant.journeyContext) &&
+        Objects.equals(this.startAcwTime, conversationCallbackEventTopicCallbackMediaParticipant.startAcwTime) &&
+        Objects.equals(this.endAcwTime, conversationCallbackEventTopicCallbackMediaParticipant.endAcwTime) &&
         Objects.equals(this.outboundPreview, conversationCallbackEventTopicCallbackMediaParticipant.outboundPreview) &&
         Objects.equals(this.voicemail, conversationCallbackEventTopicCallbackMediaParticipant.voicemail) &&
         Objects.equals(this.callbackNumbers, conversationCallbackEventTopicCallbackMediaParticipant.callbackNumbers) &&
@@ -943,7 +981,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
   }
 
   @Override
@@ -982,6 +1020,8 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
+    sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
+    sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    outboundPreview: ").append(toIndentedString(outboundPreview)).append("\n");
     sb.append("    voicemail: ").append(toIndentedString(voicemail)).append("\n");
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");

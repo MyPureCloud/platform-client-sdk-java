@@ -23,12 +23,14 @@ public class WfmMoveAgentsCompleteTopicWfmMoveAgentData  implements Serializable
    */
   public enum ResultEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    MOVESUCCESSFUL("MoveSuccessful"),
-    NOTHINGTODO("NothingToDo"),
     ALREADYMOVED("AlreadyMoved"),
-    DESTINATIONMANAGEMENTUNITDOESNOTEXIST("DestinationManagementUnitDoesNotExist"),
+    DESTINATIONBUSINESSUNITAGENTLIMITEXCEEDED("DestinationBusinessUnitAgentLimitExceeded"),
     DESTINATIONMANAGEMENTUNITAGENTLIMITEXCEEDED("DestinationManagementUnitAgentLimitExceeded"),
-    MOVINGTODIFFERENTMANAGEMENTUNIT("MovingToDifferentManagementUnit");
+    DESTINATIONMANAGEMENTUNITDOESNOTEXIST("DestinationManagementUnitDoesNotExist"),
+    MOVESUCCESSFUL("MoveSuccessful"),
+    MOVINGTODIFFERENTMANAGEMENTUNIT("MovingToDifferentManagementUnit"),
+    NOTHINGTODO("NothingToDo"),
+    SOURCEMANAGEMENTUNITNOTAUTHORIZED("SourceManagementUnitNotAuthorized");
 
     private String value;
 

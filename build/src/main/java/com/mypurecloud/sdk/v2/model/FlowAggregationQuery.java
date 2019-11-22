@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.FlowAggregateQueryFilter;
 import com.mypurecloud.sdk.v2.model.FlowAggregationView;
 import io.swagger.annotations.ApiModel;
@@ -157,6 +158,40 @@ public class FlowAggregationQuery  implements Serializable {
   private Boolean flattenMultivaluedDimensions = null;
   private List<FlowAggregationView> views = new ArrayList<FlowAggregationView>();
 
+  /**
+   * Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.
+   */
+  public enum AlternateTimeDimensionEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    EVENTTIME("eventTime");
+
+    private String value;
+
+    AlternateTimeDimensionEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static AlternateTimeDimensionEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (AlternateTimeDimensionEnum value : AlternateTimeDimensionEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return AlternateTimeDimensionEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private AlternateTimeDimensionEnum alternateTimeDimension = null;
+
   
   /**
    * Behaves like one clause in a SQL WHERE. Specifies the date and time range of data being queried. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
@@ -302,6 +337,24 @@ public class FlowAggregationQuery  implements Serializable {
   }
 
   
+  /**
+   * Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.
+   **/
+  public FlowAggregationQuery alternateTimeDimension(AlternateTimeDimensionEnum alternateTimeDimension) {
+    this.alternateTimeDimension = alternateTimeDimension;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.")
+  @JsonProperty("alternateTimeDimension")
+  public AlternateTimeDimensionEnum getAlternateTimeDimension() {
+    return alternateTimeDimension;
+  }
+  public void setAlternateTimeDimension(AlternateTimeDimensionEnum alternateTimeDimension) {
+    this.alternateTimeDimension = alternateTimeDimension;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -319,12 +372,13 @@ public class FlowAggregationQuery  implements Serializable {
         Objects.equals(this.filter, flowAggregationQuery.filter) &&
         Objects.equals(this.metrics, flowAggregationQuery.metrics) &&
         Objects.equals(this.flattenMultivaluedDimensions, flowAggregationQuery.flattenMultivaluedDimensions) &&
-        Objects.equals(this.views, flowAggregationQuery.views);
+        Objects.equals(this.views, flowAggregationQuery.views) &&
+        Objects.equals(this.alternateTimeDimension, flowAggregationQuery.alternateTimeDimension);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(interval, granularity, timeZone, groupBy, filter, metrics, flattenMultivaluedDimensions, views);
+    return Objects.hash(interval, granularity, timeZone, groupBy, filter, metrics, flattenMultivaluedDimensions, views, alternateTimeDimension);
   }
 
   @Override
@@ -340,6 +394,7 @@ public class FlowAggregationQuery  implements Serializable {
     sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");
     sb.append("    flattenMultivaluedDimensions: ").append(toIndentedString(flattenMultivaluedDimensions)).append("\n");
     sb.append("    views: ").append(toIndentedString(views)).append("\n");
+    sb.append("    alternateTimeDimension: ").append(toIndentedString(alternateTimeDimension)).append("\n");
     sb.append("}");
     return sb.toString();
   }

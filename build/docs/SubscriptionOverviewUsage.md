@@ -18,6 +18,8 @@ title: SubscriptionOverviewUsage
 | **prepayPrice** | <!----><!---->**String**<!----> | Price for prepay charge |  [optional] |
 | **usageNotes** | <!----><!---->**String**<!----> | Notes about the usage/charge item |  [optional] |
 | **isCancellable** | <!----><!---->**Boolean**<!----> | Indicates whether the item is cancellable |  [optional] |
+| **bundleQuantity** | <!----><!---->**String**<!----> | Quantity multiplier for this charge |  [optional] |
+| **isThirdParty** | <!----><!---->**Boolean**<!----> | A charge from a third party entity |  [optional] |
 {: class="table table-striped"}
 
 

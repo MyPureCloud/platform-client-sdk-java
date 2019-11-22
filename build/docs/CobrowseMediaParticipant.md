@@ -38,6 +38,8 @@ title: CobrowseMediaParticipant
 | **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum)<!----> | The reason specifying why participant flagged the conversation. |  [optional] |
 | **journeyContext** | <!----><!---->[**JourneyContext**](JourneyContext.html)<!----> | Journey System data/context that is applicable to this communication.  When used for historical purposes, the context should be immutable.  When null, there is no applicable Journey System context. |  [optional] |
 | **conversationRoutingData** | <!----><!---->[**ConversationRoutingData**](ConversationRoutingData.html)<!----> | Information on how a communication should be routed to an agent. |  [optional] |
+| **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **cobrowseSessionId** | <!----><!---->**String**<!----> | The co-browse session ID. |  [optional] |
 | **cobrowseRole** | <!----><!---->**String**<!----> | This value identifies the role of the co-browse client within the co-browse session (a client is a sharer or a viewer). |  [optional] |
 | **controlling** | <!----><!---->**List&lt;String&gt;**<!----> | ID of co-browse participants for which this client has been granted control (list is empty if this client cannot control any shared pages). |  [optional] |

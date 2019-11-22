@@ -214,6 +214,8 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
   }
   private FlaggedReasonEnum flaggedReason = null;
   private ConversationScreenShareEventTopicJourneyContext journeyContext = null;
+  private Date startAcwTime = null;
+  private Date endAcwTime = null;
   private String context = null;
   private Integer peerCount = null;
   private Boolean sharing = null;
@@ -748,6 +750,40 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
   
   /**
    **/
+  public ConversationScreenShareEventTopicScreenShareMediaParticipant startAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("startAcwTime")
+  public Date getStartAcwTime() {
+    return startAcwTime;
+  }
+  public void setStartAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+  }
+
+  
+  /**
+   **/
+  public ConversationScreenShareEventTopicScreenShareMediaParticipant endAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("endAcwTime")
+  public Date getEndAcwTime() {
+    return endAcwTime;
+  }
+  public void setEndAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+  }
+
+  
+  /**
+   **/
   public ConversationScreenShareEventTopicScreenShareMediaParticipant context(String context) {
     this.context = context;
     return this;
@@ -838,6 +874,8 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
         Objects.equals(this.screenRecordingState, conversationScreenShareEventTopicScreenShareMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, conversationScreenShareEventTopicScreenShareMediaParticipant.flaggedReason) &&
         Objects.equals(this.journeyContext, conversationScreenShareEventTopicScreenShareMediaParticipant.journeyContext) &&
+        Objects.equals(this.startAcwTime, conversationScreenShareEventTopicScreenShareMediaParticipant.startAcwTime) &&
+        Objects.equals(this.endAcwTime, conversationScreenShareEventTopicScreenShareMediaParticipant.endAcwTime) &&
         Objects.equals(this.context, conversationScreenShareEventTopicScreenShareMediaParticipant.context) &&
         Objects.equals(this.peerCount, conversationScreenShareEventTopicScreenShareMediaParticipant.peerCount) &&
         Objects.equals(this.sharing, conversationScreenShareEventTopicScreenShareMediaParticipant.sharing);
@@ -845,7 +883,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, context, peerCount, sharing);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, context, peerCount, sharing);
   }
 
   @Override
@@ -884,6 +922,8 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
+    sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
+    sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    peerCount: ").append(toIndentedString(peerCount)).append("\n");
     sb.append("    sharing: ").append(toIndentedString(sharing)).append("\n");

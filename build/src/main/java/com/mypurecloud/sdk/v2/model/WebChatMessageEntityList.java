@@ -20,8 +20,8 @@ public class WebChatMessageEntityList  implements Serializable {
   private Integer pageSize = null;
   private List<WebChatMessage> entities = new ArrayList<WebChatMessage>();
   private String previousPage = null;
-  private String next = null;
   private String selfUri = null;
+  private String next = null;
 
   
   /**
@@ -77,23 +77,6 @@ public class WebChatMessageEntityList  implements Serializable {
   
   /**
    **/
-  public WebChatMessageEntityList next(String next) {
-    this.next = next;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("next")
-  public String getNext() {
-    return next;
-  }
-  public void setNext(String next) {
-    this.next = next;
-  }
-
-  
-  /**
-   **/
   public WebChatMessageEntityList selfUri(String selfUri) {
     this.selfUri = selfUri;
     return this;
@@ -106,6 +89,23 @@ public class WebChatMessageEntityList  implements Serializable {
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
+  }
+
+  
+  /**
+   **/
+  public WebChatMessageEntityList next(String next) {
+    this.next = next;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("next")
+  public String getNext() {
+    return next;
+  }
+  public void setNext(String next) {
+    this.next = next;
   }
 
   
@@ -122,13 +122,13 @@ public class WebChatMessageEntityList  implements Serializable {
     return Objects.equals(this.pageSize, webChatMessageEntityList.pageSize) &&
         Objects.equals(this.entities, webChatMessageEntityList.entities) &&
         Objects.equals(this.previousPage, webChatMessageEntityList.previousPage) &&
-        Objects.equals(this.next, webChatMessageEntityList.next) &&
-        Objects.equals(this.selfUri, webChatMessageEntityList.selfUri);
+        Objects.equals(this.selfUri, webChatMessageEntityList.selfUri) &&
+        Objects.equals(this.next, webChatMessageEntityList.next);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(pageSize, entities, previousPage, next, selfUri);
+    return Objects.hash(pageSize, entities, previousPage, selfUri, next);
   }
 
   @Override
@@ -139,8 +139,8 @@ public class WebChatMessageEntityList  implements Serializable {
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
     sb.append("    previousPage: ").append(toIndentedString(previousPage)).append("\n");
-    sb.append("    next: ").append(toIndentedString(next)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    next: ").append(toIndentedString(next)).append("\n");
     sb.append("}");
     return sb.toString();
   }

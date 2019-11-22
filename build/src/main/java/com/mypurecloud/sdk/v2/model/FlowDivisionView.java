@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import com.mypurecloud.sdk.v2.model.WritableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -63,6 +64,8 @@ public class FlowDivisionView  implements Serializable {
     }
   }
   private TypeEnum type = null;
+  private JsonSchemaDocument inputSchema = null;
+  private JsonSchemaDocument outputSchema = null;
   private String selfUri = null;
 
   
@@ -137,6 +140,42 @@ public class FlowDivisionView  implements Serializable {
   }
 
   
+  /**
+   * json schema describing the inputs for the flow
+   **/
+  public FlowDivisionView inputSchema(JsonSchemaDocument inputSchema) {
+    this.inputSchema = inputSchema;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "json schema describing the inputs for the flow")
+  @JsonProperty("inputSchema")
+  public JsonSchemaDocument getInputSchema() {
+    return inputSchema;
+  }
+  public void setInputSchema(JsonSchemaDocument inputSchema) {
+    this.inputSchema = inputSchema;
+  }
+
+  
+  /**
+   * json schema describing the outputs for the flow
+   **/
+  public FlowDivisionView outputSchema(JsonSchemaDocument outputSchema) {
+    this.outputSchema = outputSchema;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "json schema describing the outputs for the flow")
+  @JsonProperty("outputSchema")
+  public JsonSchemaDocument getOutputSchema() {
+    return outputSchema;
+  }
+  public void setOutputSchema(JsonSchemaDocument outputSchema) {
+    this.outputSchema = outputSchema;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -158,12 +197,14 @@ public class FlowDivisionView  implements Serializable {
         Objects.equals(this.name, flowDivisionView.name) &&
         Objects.equals(this.division, flowDivisionView.division) &&
         Objects.equals(this.type, flowDivisionView.type) &&
+        Objects.equals(this.inputSchema, flowDivisionView.inputSchema) &&
+        Objects.equals(this.outputSchema, flowDivisionView.outputSchema) &&
         Objects.equals(this.selfUri, flowDivisionView.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, type, selfUri);
+    return Objects.hash(id, name, division, type, inputSchema, outputSchema, selfUri);
   }
 
   @Override
@@ -175,6 +216,8 @@ public class FlowDivisionView  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    inputSchema: ").append(toIndentedString(inputSchema)).append("\n");
+    sb.append("    outputSchema: ").append(toIndentedString(outputSchema)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

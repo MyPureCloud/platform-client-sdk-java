@@ -214,6 +214,8 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
   }
   private FlaggedReasonEnum flaggedReason = null;
   private ConversationChatEventTopicJourneyContext journeyContext = null;
+  private Date startAcwTime = null;
+  private Date endAcwTime = null;
   private String roomId = null;
   private String avatarImageUrl = null;
 
@@ -747,6 +749,40 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
   
   /**
    **/
+  public ConversationChatEventTopicChatMediaParticipant startAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("startAcwTime")
+  public Date getStartAcwTime() {
+    return startAcwTime;
+  }
+  public void setStartAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+  }
+
+  
+  /**
+   **/
+  public ConversationChatEventTopicChatMediaParticipant endAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("endAcwTime")
+  public Date getEndAcwTime() {
+    return endAcwTime;
+  }
+  public void setEndAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+  }
+
+  
+  /**
+   **/
   public ConversationChatEventTopicChatMediaParticipant roomId(String roomId) {
     this.roomId = roomId;
     return this;
@@ -820,13 +856,15 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
         Objects.equals(this.screenRecordingState, conversationChatEventTopicChatMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, conversationChatEventTopicChatMediaParticipant.flaggedReason) &&
         Objects.equals(this.journeyContext, conversationChatEventTopicChatMediaParticipant.journeyContext) &&
+        Objects.equals(this.startAcwTime, conversationChatEventTopicChatMediaParticipant.startAcwTime) &&
+        Objects.equals(this.endAcwTime, conversationChatEventTopicChatMediaParticipant.endAcwTime) &&
         Objects.equals(this.roomId, conversationChatEventTopicChatMediaParticipant.roomId) &&
         Objects.equals(this.avatarImageUrl, conversationChatEventTopicChatMediaParticipant.avatarImageUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, roomId, avatarImageUrl);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, roomId, avatarImageUrl);
   }
 
   @Override
@@ -865,6 +903,8 @@ public class ConversationChatEventTopicChatMediaParticipant  implements Serializ
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
+    sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
+    sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
     sb.append("    avatarImageUrl: ").append(toIndentedString(avatarImageUrl)).append("\n");
     sb.append("}");

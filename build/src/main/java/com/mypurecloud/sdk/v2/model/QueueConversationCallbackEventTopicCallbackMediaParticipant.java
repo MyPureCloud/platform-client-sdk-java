@@ -217,6 +217,8 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
   }
   private FlaggedReasonEnum flaggedReason = null;
   private QueueConversationCallbackEventTopicJourneyContext journeyContext = null;
+  private Date startAcwTime = null;
+  private Date endAcwTime = null;
   private QueueConversationCallbackEventTopicDialerPreview outboundPreview = null;
   private QueueConversationCallbackEventTopicVoicemail voicemail = null;
   private List<String> callbackNumbers = new ArrayList<String>();
@@ -756,6 +758,40 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
   
   /**
    **/
+  public QueueConversationCallbackEventTopicCallbackMediaParticipant startAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("startAcwTime")
+  public Date getStartAcwTime() {
+    return startAcwTime;
+  }
+  public void setStartAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+  }
+
+  
+  /**
+   **/
+  public QueueConversationCallbackEventTopicCallbackMediaParticipant endAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("endAcwTime")
+  public Date getEndAcwTime() {
+    return endAcwTime;
+  }
+  public void setEndAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+  }
+
+  
+  /**
+   **/
   public QueueConversationCallbackEventTopicCallbackMediaParticipant outboundPreview(QueueConversationCallbackEventTopicDialerPreview outboundPreview) {
     this.outboundPreview = outboundPreview;
     return this;
@@ -931,6 +967,8 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
         Objects.equals(this.screenRecordingState, queueConversationCallbackEventTopicCallbackMediaParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, queueConversationCallbackEventTopicCallbackMediaParticipant.flaggedReason) &&
         Objects.equals(this.journeyContext, queueConversationCallbackEventTopicCallbackMediaParticipant.journeyContext) &&
+        Objects.equals(this.startAcwTime, queueConversationCallbackEventTopicCallbackMediaParticipant.startAcwTime) &&
+        Objects.equals(this.endAcwTime, queueConversationCallbackEventTopicCallbackMediaParticipant.endAcwTime) &&
         Objects.equals(this.outboundPreview, queueConversationCallbackEventTopicCallbackMediaParticipant.outboundPreview) &&
         Objects.equals(this.voicemail, queueConversationCallbackEventTopicCallbackMediaParticipant.voicemail) &&
         Objects.equals(this.callbackNumbers, queueConversationCallbackEventTopicCallbackMediaParticipant.callbackNumbers) &&
@@ -943,7 +981,7 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
   }
 
   @Override
@@ -982,6 +1020,8 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
+    sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
+    sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    outboundPreview: ").append(toIndentedString(outboundPreview)).append("\n");
     sb.append("    voicemail: ").append(toIndentedString(voicemail)).append("\n");
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");

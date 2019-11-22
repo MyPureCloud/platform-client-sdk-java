@@ -39,6 +39,8 @@ title: ConversationSocialExpressionEventTopicSocialMediaParticipant
 | **screenRecordingState** | <!----><!---->**String**<!----> |  |  [optional] |
 | **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum)<!----> |  |  [optional] |
 | **journeyContext** | <!----><!---->[**ConversationSocialExpressionEventTopicJourneyContext**](ConversationSocialExpressionEventTopicJourneyContext.html)<!----> |  |  [optional] |
+| **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **socialMediaId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **socialMediaHub** | <!----><!---->**String**<!----> |  |  [optional] |
 | **socialUserName** | <!----><!---->**String**<!----> |  |  [optional] |

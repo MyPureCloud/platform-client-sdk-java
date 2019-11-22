@@ -5,11 +5,14 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.SelectedColumns;
 import com.mypurecloud.sdk.v2.model.TimeZone;
 import com.mypurecloud.sdk.v2.model.ViewFilter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -224,6 +227,7 @@ public class ReportingExportJobResponse  implements Serializable {
   private Double percentageComplete = null;
   private Boolean hasFormatDurations = null;
   private Boolean hasSplitFilters = null;
+  private List<SelectedColumns> selectedColumns = new ArrayList<SelectedColumns>();
   private String selfUri = null;
 
   
@@ -539,6 +543,24 @@ public class ReportingExportJobResponse  implements Serializable {
   }
 
   
+  /**
+   * The list of ordered selected columns from the export view by the user
+   **/
+  public ReportingExportJobResponse selectedColumns(List<SelectedColumns> selectedColumns) {
+    this.selectedColumns = selectedColumns;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of ordered selected columns from the export view by the user")
+  @JsonProperty("selectedColumns")
+  public List<SelectedColumns> getSelectedColumns() {
+    return selectedColumns;
+  }
+  public void setSelectedColumns(List<SelectedColumns> selectedColumns) {
+    this.selectedColumns = selectedColumns;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -574,12 +596,13 @@ public class ReportingExportJobResponse  implements Serializable {
         Objects.equals(this.percentageComplete, reportingExportJobResponse.percentageComplete) &&
         Objects.equals(this.hasFormatDurations, reportingExportJobResponse.hasFormatDurations) &&
         Objects.equals(this.hasSplitFilters, reportingExportJobResponse.hasSplitFilters) &&
+        Objects.equals(this.selectedColumns, reportingExportJobResponse.selectedColumns) &&
         Objects.equals(this.selfUri, reportingExportJobResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, hasSplitFilters, selfUri);
+    return Objects.hash(id, name, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, hasSplitFilters, selectedColumns, selfUri);
   }
 
   @Override
@@ -605,6 +628,7 @@ public class ReportingExportJobResponse  implements Serializable {
     sb.append("    percentageComplete: ").append(toIndentedString(percentageComplete)).append("\n");
     sb.append("    hasFormatDurations: ").append(toIndentedString(hasFormatDurations)).append("\n");
     sb.append("    hasSplitFilters: ").append(toIndentedString(hasSplitFilters)).append("\n");
+    sb.append("    selectedColumns: ").append(toIndentedString(selectedColumns)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -24,21 +24,22 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
 import com.mypurecloud.sdk.v2.model.LocationEntityListing;
 import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
-import com.mypurecloud.sdk.v2.model.LocationCreateUpdateDefinition;
+import com.mypurecloud.sdk.v2.model.LocationUpdateDefinition;
+import com.mypurecloud.sdk.v2.model.LocationCreateDefinition;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
 
 public class PostLocationsRequest {
     
-	private LocationCreateUpdateDefinition body;
-	public LocationCreateUpdateDefinition getBody() {
+	private LocationCreateDefinition body;
+	public LocationCreateDefinition getBody() {
 		return this.body;
 	}
 
-	public void setBody(LocationCreateUpdateDefinition body) {
+	public void setBody(LocationCreateDefinition body) {
 		this.body = body;
 	}
 
-	public PostLocationsRequest withBody(LocationCreateUpdateDefinition body) {
+	public PostLocationsRequest withBody(LocationCreateDefinition body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -62,7 +63,7 @@ public class PostLocationsRequest {
         return this;
     }
 
-    public ApiRequest<LocationCreateUpdateDefinition> withHttpInfo() {
+    public ApiRequest<LocationCreateDefinition> withHttpInfo() {
         
         // verify the required parameter 'body' is set
         if (this.body == null) {
@@ -85,7 +86,7 @@ public class PostLocationsRequest {
 	}
 
 	
-	public static Builder builder(LocationCreateUpdateDefinition body) {
+	public static Builder builder(LocationCreateDefinition body) {
 	    return new Builder()
 	            .withRequiredParams(body);
 	}
@@ -99,14 +100,14 @@ public class PostLocationsRequest {
 		}
 
 		
-		public Builder withBody(LocationCreateUpdateDefinition body) {
+		public Builder withBody(LocationCreateDefinition body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(LocationCreateUpdateDefinition body) {
+		public Builder withRequiredParams(LocationCreateDefinition body) {
 			request.setBody(body);
 			
 			return this;

@@ -48,6 +48,8 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
   private String wrapupPrompt = null;
   private Integer wrapupTimeoutMs = null;
   private QueueConversationSocialExpressionEventTopicWrapup wrapup = null;
+  private Date startAcwTime = null;
+  private Date endAcwTime = null;
   private QueueConversationSocialExpressionEventTopicConversationRoutingData conversationRoutingData = null;
   private Integer alertingTimeoutMs = null;
   private String monitoredParticipantId = null;
@@ -395,6 +397,40 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
   
   /**
    **/
+  public QueueConversationSocialExpressionEventTopicParticipant startAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("startAcwTime")
+  public Date getStartAcwTime() {
+    return startAcwTime;
+  }
+  public void setStartAcwTime(Date startAcwTime) {
+    this.startAcwTime = startAcwTime;
+  }
+
+  
+  /**
+   **/
+  public QueueConversationSocialExpressionEventTopicParticipant endAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("endAcwTime")
+  public Date getEndAcwTime() {
+    return endAcwTime;
+  }
+  public void setEndAcwTime(Date endAcwTime) {
+    this.endAcwTime = endAcwTime;
+  }
+
+  
+  /**
+   **/
   public QueueConversationSocialExpressionEventTopicParticipant conversationRoutingData(QueueConversationSocialExpressionEventTopicConversationRoutingData conversationRoutingData) {
     this.conversationRoutingData = conversationRoutingData;
     return this;
@@ -692,6 +728,8 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
         Objects.equals(this.wrapupPrompt, queueConversationSocialExpressionEventTopicParticipant.wrapupPrompt) &&
         Objects.equals(this.wrapupTimeoutMs, queueConversationSocialExpressionEventTopicParticipant.wrapupTimeoutMs) &&
         Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicParticipant.wrapup) &&
+        Objects.equals(this.startAcwTime, queueConversationSocialExpressionEventTopicParticipant.startAcwTime) &&
+        Objects.equals(this.endAcwTime, queueConversationSocialExpressionEventTopicParticipant.endAcwTime) &&
         Objects.equals(this.conversationRoutingData, queueConversationSocialExpressionEventTopicParticipant.conversationRoutingData) &&
         Objects.equals(this.alertingTimeoutMs, queueConversationSocialExpressionEventTopicParticipant.alertingTimeoutMs) &&
         Objects.equals(this.monitoredParticipantId, queueConversationSocialExpressionEventTopicParticipant.monitoredParticipantId) &&
@@ -712,7 +750,7 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, additionalProperties);
+    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, additionalProperties);
   }
 
   @Override
@@ -737,6 +775,8 @@ public class QueueConversationSocialExpressionEventTopicParticipant  implements 
     sb.append("    wrapupPrompt: ").append(toIndentedString(wrapupPrompt)).append("\n");
     sb.append("    wrapupTimeoutMs: ").append(toIndentedString(wrapupTimeoutMs)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    startAcwTime: ").append(toIndentedString(startAcwTime)).append("\n");
+    sb.append("    endAcwTime: ").append(toIndentedString(endAcwTime)).append("\n");
     sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
     sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    monitoredParticipantId: ").append(toIndentedString(monitoredParticipantId)).append("\n");

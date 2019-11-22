@@ -25,6 +25,8 @@ title: QueueConversationEventTopicParticipant
 | **wrapupPrompt** | <!----><!---->**String**<!----> |  |  [optional] |
 | **wrapupTimeoutMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **wrapup** | <!----><!---->[**QueueConversationEventTopicWrapup**](QueueConversationEventTopicWrapup.html)<!----> |  |  [optional] |
+| **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **conversationRoutingData** | <!----><!---->[**QueueConversationEventTopicConversationRoutingData**](QueueConversationEventTopicConversationRoutingData.html)<!----> |  |  [optional] |
 | **alertingTimeoutMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **monitoredParticipantId** | <!----><!---->**String**<!----> |  |  [optional] |
