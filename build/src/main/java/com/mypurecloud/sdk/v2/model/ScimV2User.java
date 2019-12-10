@@ -17,9 +17,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * SCIM V2 User
+ * Defines a SCIM user.
  */
-@ApiModel(description = "SCIM V2 User")
+@ApiModel(description = "Defines a SCIM user.")
 
 public class ScimV2User  implements Serializable {
   
@@ -264,14 +264,14 @@ public class ScimV2User  implements Serializable {
 
   
   /**
-   * SCIM enterprise user attributes
+   * The URI of the schema for the enterprise user.
    **/
   public ScimV2User urnietfparamsscimschemasextensionenterprise20User(ScimV2EnterpriseUser urnietfparamsscimschemasextensionenterprise20User) {
     this.urnietfparamsscimschemasextensionenterprise20User = urnietfparamsscimschemasextensionenterprise20User;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "SCIM enterprise user attributes")
+  @ApiModelProperty(example = "null", value = "The URI of the schema for the enterprise user.")
   @JsonProperty("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User")
   public ScimV2EnterpriseUser getUrnietfparamsscimschemasextensionenterprise20User() {
     return urnietfparamsscimschemasextensionenterprise20User;
@@ -282,14 +282,14 @@ public class ScimV2User  implements Serializable {
 
   
   /**
-   * Resource SCIM meta
+   * The metadata of the SCIM resource.
    **/
   public ScimV2User meta(ScimMetadata meta) {
     this.meta = meta;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Resource SCIM meta")
+  @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource.")
   @JsonProperty("meta")
   public ScimMetadata getMeta() {
     return meta;

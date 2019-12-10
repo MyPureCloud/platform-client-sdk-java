@@ -10,9 +10,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * SCIM V2 ScimEmail
+ * Defines a SCIM email address.
  */
-@ApiModel(description = "SCIM V2 ScimEmail")
+@ApiModel(description = "Defines a SCIM email address.")
 
 public class ScimEmail  implements Serializable {
   

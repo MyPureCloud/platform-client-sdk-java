@@ -118,6 +118,7 @@ public class Recording  implements Serializable {
   private ArchiveMediumEnum archiveMedium = null;
   private Date deleteDate = null;
   private Date exportDate = null;
+  private Date exportedDate = null;
   private Integer outputDurationMs = null;
   private Integer outputSizeInBytes = null;
   private Integer maxAllowedRestorationsForOrg = null;
@@ -472,6 +473,24 @@ public class Recording  implements Serializable {
 
   
   /**
+   * The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public Recording exportedDate(Date exportedDate) {
+    this.exportedDate = exportedDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("exportedDate")
+  public Date getExportedDate() {
+    return exportedDate;
+  }
+  public void setExportedDate(Date exportedDate) {
+    this.exportedDate = exportedDate;
+  }
+
+  
+  /**
    * Duration of transcoded media in milliseconds
    **/
   public Recording outputDurationMs(Integer outputDurationMs) {
@@ -616,6 +635,7 @@ public class Recording  implements Serializable {
         Objects.equals(this.archiveMedium, recording.archiveMedium) &&
         Objects.equals(this.deleteDate, recording.deleteDate) &&
         Objects.equals(this.exportDate, recording.exportDate) &&
+        Objects.equals(this.exportedDate, recording.exportedDate) &&
         Objects.equals(this.outputDurationMs, recording.outputDurationMs) &&
         Objects.equals(this.outputSizeInBytes, recording.outputSizeInBytes) &&
         Objects.equals(this.maxAllowedRestorationsForOrg, recording.maxAllowedRestorationsForOrg) &&
@@ -627,7 +647,7 @@ public class Recording  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, annotations, transcript, emailTranscript, messagingTranscript, fileState, restoreExpirationTime, mediaUris, estimatedTranscodeTimeMs, actualTranscodeTimeMs, archiveDate, archiveMedium, deleteDate, exportDate, outputDurationMs, outputSizeInBytes, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, users, selfUri);
+    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, annotations, transcript, emailTranscript, messagingTranscript, fileState, restoreExpirationTime, mediaUris, estimatedTranscodeTimeMs, actualTranscodeTimeMs, archiveDate, archiveMedium, deleteDate, exportDate, exportedDate, outputDurationMs, outputSizeInBytes, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, users, selfUri);
   }
 
   @Override
@@ -655,6 +675,7 @@ public class Recording  implements Serializable {
     sb.append("    archiveMedium: ").append(toIndentedString(archiveMedium)).append("\n");
     sb.append("    deleteDate: ").append(toIndentedString(deleteDate)).append("\n");
     sb.append("    exportDate: ").append(toIndentedString(exportDate)).append("\n");
+    sb.append("    exportedDate: ").append(toIndentedString(exportedDate)).append("\n");
     sb.append("    outputDurationMs: ").append(toIndentedString(outputDurationMs)).append("\n");
     sb.append("    outputSizeInBytes: ").append(toIndentedString(outputSizeInBytes)).append("\n");
     sb.append("    maxAllowedRestorationsForOrg: ").append(toIndentedString(maxAllowedRestorationsForOrg)).append("\n");

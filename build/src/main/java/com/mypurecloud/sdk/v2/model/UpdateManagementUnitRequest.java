@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.ManagementUnitSettings;
+import com.mypurecloud.sdk.v2.model.ManagementUnitSettingsRequest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -17,7 +17,7 @@ public class UpdateManagementUnitRequest  implements Serializable {
   
   private String name = null;
   private String divisionId = null;
-  private ManagementUnitSettings settings = null;
+  private ManagementUnitSettingsRequest settings = null;
 
   
   /**
@@ -59,17 +59,17 @@ public class UpdateManagementUnitRequest  implements Serializable {
   /**
    * Updated settings for the management unit
    **/
-  public UpdateManagementUnitRequest settings(ManagementUnitSettings settings) {
+  public UpdateManagementUnitRequest settings(ManagementUnitSettingsRequest settings) {
     this.settings = settings;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Updated settings for the management unit")
   @JsonProperty("settings")
-  public ManagementUnitSettings getSettings() {
+  public ManagementUnitSettingsRequest getSettings() {
     return settings;
   }
-  public void setSettings(ManagementUnitSettings settings) {
+  public void setSettings(ManagementUnitSettingsRequest settings) {
     this.settings = settings;
   }
 

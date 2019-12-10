@@ -6,7 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.Date;
+import java.time.LocalDate;
 
 import java.io.Serializable;
 /**
@@ -16,7 +16,7 @@ import java.io.Serializable;
 public class PlanningPeriodSettings  implements Serializable {
   
   private Integer weekCount = null;
-  private Date startDate = null;
+  private LocalDate startDate = null;
 
   
   /**
@@ -38,19 +38,19 @@ public class PlanningPeriodSettings  implements Serializable {
 
   
   /**
-   * Start date of the planning period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Start date of the planning period in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
    **/
-  public PlanningPeriodSettings startDate(Date startDate) {
+  public PlanningPeriodSettings startDate(LocalDate startDate) {
     this.startDate = startDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Start date of the planning period. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", required = true, value = "Start date of the planning period in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("startDate")
-  public Date getStartDate() {
+  public LocalDate getStartDate() {
     return startDate;
   }
-  public void setStartDate(Date startDate) {
+  public void setStartDate(LocalDate startDate) {
     this.startDate = startDate;
   }
 

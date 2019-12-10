@@ -26,7 +26,7 @@ import com.mypurecloud.sdk.v2.model.RescheduleResult;
 import com.mypurecloud.sdk.v2.model.SchedulingRunListResponse;
 import com.mypurecloud.sdk.v2.model.ServiceGoalGroup;
 import com.mypurecloud.sdk.v2.model.ServiceGoalGroupList;
-import com.mypurecloud.sdk.v2.model.ManagementUnitSettings;
+import com.mypurecloud.sdk.v2.model.ManagementUnitSettingsResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeMatchesSummaryResponse;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestResponse;
@@ -45,6 +45,7 @@ import com.mypurecloud.sdk.v2.model.ShiftTradeListResponse;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.UpdateSchedulingRunRequest;
+import com.mypurecloud.sdk.v2.model.ManagementUnitSettingsRequest;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.UpdateWeekScheduleRequest;
 import com.mypurecloud.sdk.v2.model.AsyncWeekScheduleResponse;
@@ -1631,13 +1632,13 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ManagementUnitSettings> getWorkforcemanagementManagementunitSettingsAsync(GetWorkforcemanagementManagementunitSettingsRequest request, final AsyncApiCallback<ManagementUnitSettings> callback) {
+  public Future<ManagementUnitSettingsResponse> getWorkforcemanagementManagementunitSettingsAsync(GetWorkforcemanagementManagementunitSettingsRequest request, final AsyncApiCallback<ManagementUnitSettingsResponse> callback) {
     try {
-      final SettableFuture<ManagementUnitSettings> future = SettableFuture.create();
+      final SettableFuture<ManagementUnitSettingsResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ManagementUnitSettings>() {}, new AsyncApiCallback<ApiResponse<ManagementUnitSettings>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ManagementUnitSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<ManagementUnitSettingsResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<ManagementUnitSettings> response) {
+        public void onCompleted(ApiResponse<ManagementUnitSettingsResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1665,13 +1666,13 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ManagementUnitSettings>> getWorkforcemanagementManagementunitSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ManagementUnitSettings>> callback) {
+  public Future<ApiResponse<ManagementUnitSettingsResponse>> getWorkforcemanagementManagementunitSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ManagementUnitSettingsResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<ManagementUnitSettings>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<ManagementUnitSettingsResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ManagementUnitSettings>() {}, new AsyncApiCallback<ApiResponse<ManagementUnitSettings>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<ManagementUnitSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<ManagementUnitSettingsResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<ManagementUnitSettings> response) {
+        public void onCompleted(ApiResponse<ManagementUnitSettingsResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1679,7 +1680,7 @@ public class WorkforceManagementApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<ManagementUnitSettings> response = (ApiResponse<ManagementUnitSettings>)(ApiResponse<?>)exception;
+            ApiResponse<ManagementUnitSettingsResponse> response = (ApiResponse<ManagementUnitSettingsResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1687,7 +1688,7 @@ public class WorkforceManagementApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<ManagementUnitSettings> response = (ApiResponse<ManagementUnitSettings>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<ManagementUnitSettingsResponse> response = (ApiResponse<ManagementUnitSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3455,13 +3456,13 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ManagementUnitSettings> patchWorkforcemanagementManagementunitSettingsAsync(PatchWorkforcemanagementManagementunitSettingsRequest request, final AsyncApiCallback<ManagementUnitSettings> callback) {
+  public Future<ManagementUnitSettingsResponse> patchWorkforcemanagementManagementunitSettingsAsync(PatchWorkforcemanagementManagementunitSettingsRequest request, final AsyncApiCallback<ManagementUnitSettingsResponse> callback) {
     try {
-      final SettableFuture<ManagementUnitSettings> future = SettableFuture.create();
+      final SettableFuture<ManagementUnitSettingsResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ManagementUnitSettings>() {}, new AsyncApiCallback<ApiResponse<ManagementUnitSettings>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ManagementUnitSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<ManagementUnitSettingsResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<ManagementUnitSettings> response) {
+        public void onCompleted(ApiResponse<ManagementUnitSettingsResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -3489,13 +3490,13 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ManagementUnitSettings>> patchWorkforcemanagementManagementunitSettingsAsync(ApiRequest<ManagementUnitSettings> request, final AsyncApiCallback<ApiResponse<ManagementUnitSettings>> callback) {
+  public Future<ApiResponse<ManagementUnitSettingsResponse>> patchWorkforcemanagementManagementunitSettingsAsync(ApiRequest<ManagementUnitSettingsRequest> request, final AsyncApiCallback<ApiResponse<ManagementUnitSettingsResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<ManagementUnitSettings>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<ManagementUnitSettingsResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ManagementUnitSettings>() {}, new AsyncApiCallback<ApiResponse<ManagementUnitSettings>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<ManagementUnitSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<ManagementUnitSettingsResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<ManagementUnitSettings> response) {
+        public void onCompleted(ApiResponse<ManagementUnitSettingsResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -3503,7 +3504,7 @@ public class WorkforceManagementApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<ManagementUnitSettings> response = (ApiResponse<ManagementUnitSettings>)(ApiResponse<?>)exception;
+            ApiResponse<ManagementUnitSettingsResponse> response = (ApiResponse<ManagementUnitSettingsResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -3511,7 +3512,7 @@ public class WorkforceManagementApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<ManagementUnitSettings> response = (ApiResponse<ManagementUnitSettings>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<ManagementUnitSettingsResponse> response = (ApiResponse<ManagementUnitSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

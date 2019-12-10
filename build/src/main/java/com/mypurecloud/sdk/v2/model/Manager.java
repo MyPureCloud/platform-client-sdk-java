@@ -9,9 +9,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * The user&#39;s manager.
+ * Defines a SCIM manager.
  */
-@ApiModel(description = "The user's manager.")
+@ApiModel(description = "Defines a SCIM manager.")
 
 public class Manager  implements Serializable {
   

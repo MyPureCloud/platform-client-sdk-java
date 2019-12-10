@@ -1390,7 +1390,7 @@ try {
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-> [ManagementUnitSettings](ManagementUnitSettings.html) getWorkforcemanagementManagementunitSettings(muId)
+> [ManagementUnitSettingsResponse](ManagementUnitSettingsResponse.html) getWorkforcemanagementManagementunitSettings(muId)
 
 Get the settings for the requested management unit. Deprecated, use the GET management unit route instead
 
@@ -1426,7 +1426,7 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 try {
-    ManagementUnitSettings result = apiInstance.getWorkforcemanagementManagementunitSettings(muId);
+    ManagementUnitSettingsResponse result = apiInstance.getWorkforcemanagementManagementunitSettings(muId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunitSettings");
@@ -1445,7 +1445,7 @@ try {
 
 ### Return type
 
-[**ManagementUnitSettings**](ManagementUnitSettings.html)
+[**ManagementUnitSettingsResponse**](ManagementUnitSettingsResponse.html)
 
 <a name="getWorkforcemanagementManagementunitShifttradesMatched"></a>
 
@@ -2973,7 +2973,7 @@ try {
 
 
 
-> [ManagementUnitSettings](ManagementUnitSettings.html) patchWorkforcemanagementManagementunitSettings(muId, body)
+> [ManagementUnitSettingsResponse](ManagementUnitSettingsResponse.html) patchWorkforcemanagementManagementunitSettings(muId, body)
 
 Update the settings for the requested management unit
 
@@ -3008,9 +3008,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-ManagementUnitSettings body = new ManagementUnitSettings(); // ManagementUnitSettings | config
+ManagementUnitSettingsRequest body = new ManagementUnitSettingsRequest(); // ManagementUnitSettingsRequest | config
 try {
-    ManagementUnitSettings result = apiInstance.patchWorkforcemanagementManagementunitSettings(muId, body);
+    ManagementUnitSettingsResponse result = apiInstance.patchWorkforcemanagementManagementunitSettings(muId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementManagementunitSettings");
@@ -3024,13 +3024,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
-| **body** | [**ManagementUnitSettings**](ManagementUnitSettings.html)| config | [optional] 
+| **body** | [**ManagementUnitSettingsRequest**](ManagementUnitSettingsRequest.html)| config | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ManagementUnitSettings**](ManagementUnitSettings.html)
+[**ManagementUnitSettingsResponse**](ManagementUnitSettingsResponse.html)
 
 <a name="patchWorkforcemanagementManagementunitUserTimeoffrequest"></a>
 

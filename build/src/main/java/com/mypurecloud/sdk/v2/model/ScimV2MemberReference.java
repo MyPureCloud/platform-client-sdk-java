@@ -10,9 +10,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * SCIM Members of Group Reference
+ * Defines a reference to SCIM group members.
  */
-@ApiModel(description = "SCIM Members of Group Reference")
+@ApiModel(description = "Defines a reference to SCIM group members.")
 
 public class ScimV2MemberReference  implements Serializable {
   

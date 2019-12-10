@@ -12,9 +12,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * SCIM Group List Response
+ * Defines a response for a list of SCIM groups.
  */
-@ApiModel(description = "SCIM Group List Response")
+@ApiModel(description = "Defines a response for a list of SCIM groups.")
 
 public class ScimGroupListResponse  implements Serializable {
   

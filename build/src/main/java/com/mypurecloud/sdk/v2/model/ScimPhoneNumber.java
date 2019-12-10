@@ -10,9 +10,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * SCIM V2 phone number
+ * Defines a SCIM phone number.
  */
-@ApiModel(description = "SCIM V2 phone number")
+@ApiModel(description = "Defines a SCIM phone number.")
 
 public class ScimPhoneNumber  implements Serializable {
   

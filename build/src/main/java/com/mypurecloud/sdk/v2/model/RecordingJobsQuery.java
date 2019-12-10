@@ -95,14 +95,14 @@ public class RecordingJobsQuery  implements Serializable {
 
   
   /**
-   * IntegrationId to Access AWS S3 bucket for bulk recording exports. This field is for EXPORT only
+   * IntegrationId to Access AWS S3 bucket for bulk recording exports. This field is required and used only for EXPORT action.
    **/
   public RecordingJobsQuery integrationId(String integrationId) {
     this.integrationId = integrationId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "IntegrationId to Access AWS S3 bucket for bulk recording exports. This field is for EXPORT only")
+  @ApiModelProperty(example = "null", value = "IntegrationId to Access AWS S3 bucket for bulk recording exports. This field is required and used only for EXPORT action.")
   @JsonProperty("integrationId")
   public String getIntegrationId() {
     return integrationId;

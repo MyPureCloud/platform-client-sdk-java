@@ -33,7 +33,7 @@ import com.mypurecloud.sdk.v2.model.RescheduleResult;
 import com.mypurecloud.sdk.v2.model.SchedulingRunListResponse;
 import com.mypurecloud.sdk.v2.model.ServiceGoalGroup;
 import com.mypurecloud.sdk.v2.model.ServiceGoalGroupList;
-import com.mypurecloud.sdk.v2.model.ManagementUnitSettings;
+import com.mypurecloud.sdk.v2.model.ManagementUnitSettingsResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeMatchesSummaryResponse;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestResponse;
@@ -52,6 +52,7 @@ import com.mypurecloud.sdk.v2.model.ShiftTradeListResponse;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.UpdateSchedulingRunRequest;
+import com.mypurecloud.sdk.v2.model.ManagementUnitSettingsRequest;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.UpdateWeekScheduleRequest;
 import com.mypurecloud.sdk.v2.model.AsyncWeekScheduleResponse;
@@ -108,16 +109,16 @@ public class PatchWorkforcemanagementManagementunitSettingsRequest {
 	    return this;
 	} 
 	
-	private ManagementUnitSettings body;
-	public ManagementUnitSettings getBody() {
+	private ManagementUnitSettingsRequest body;
+	public ManagementUnitSettingsRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(ManagementUnitSettings body) {
+	public void setBody(ManagementUnitSettingsRequest body) {
 		this.body = body;
 	}
 
-	public PatchWorkforcemanagementManagementunitSettingsRequest withBody(ManagementUnitSettings body) {
+	public PatchWorkforcemanagementManagementunitSettingsRequest withBody(ManagementUnitSettingsRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -141,7 +142,7 @@ public class PatchWorkforcemanagementManagementunitSettingsRequest {
         return this;
     }
 
-    public ApiRequest<ManagementUnitSettings> withHttpInfo() {
+    public ApiRequest<ManagementUnitSettingsRequest> withHttpInfo() {
         
         // verify the required parameter 'muId' is set
         if (this.muId == null) {
@@ -185,7 +186,7 @@ public class PatchWorkforcemanagementManagementunitSettingsRequest {
 			return this;
 		}
 		
-		public Builder withBody(ManagementUnitSettings body) {
+		public Builder withBody(ManagementUnitSettingsRequest body) {
 			request.setBody(body);
 			return this;
 		}

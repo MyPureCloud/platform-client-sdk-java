@@ -11,9 +11,9 @@ import java.util.Date;
 
 import java.io.Serializable;
 /**
- * The meta object of the SCIM V2 implementation.
+ * Defines the SCIM metadata.
  */
-@ApiModel(description = "The meta object of the SCIM V2 implementation.")
+@ApiModel(description = "Defines the SCIM metadata.")
 
 public class ScimMetadata  implements Serializable {
   

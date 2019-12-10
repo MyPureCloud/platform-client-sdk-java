@@ -22,8 +22,8 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String selfUri = null;
   private String firstUri = null;
+  private String selfUri = null;
   private String nextUri = null;
   private String lastUri = null;
   private String previousUri = null;
@@ -100,23 +100,6 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
   
   /**
    **/
-  public DomainEntityListingEvaluationForm selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-  
-  /**
-   **/
   public DomainEntityListingEvaluationForm firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
@@ -129,6 +112,23 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
   }
   public void setFirstUri(String firstUri) {
     this.firstUri = firstUri;
+  }
+
+  
+  /**
+   **/
+  public DomainEntityListingEvaluationForm selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
   }
 
   
@@ -214,8 +214,8 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
         Objects.equals(this.pageSize, domainEntityListingEvaluationForm.pageSize) &&
         Objects.equals(this.pageNumber, domainEntityListingEvaluationForm.pageNumber) &&
         Objects.equals(this.total, domainEntityListingEvaluationForm.total) &&
-        Objects.equals(this.selfUri, domainEntityListingEvaluationForm.selfUri) &&
         Objects.equals(this.firstUri, domainEntityListingEvaluationForm.firstUri) &&
+        Objects.equals(this.selfUri, domainEntityListingEvaluationForm.selfUri) &&
         Objects.equals(this.nextUri, domainEntityListingEvaluationForm.nextUri) &&
         Objects.equals(this.lastUri, domainEntityListingEvaluationForm.lastUri) &&
         Objects.equals(this.previousUri, domainEntityListingEvaluationForm.previousUri) &&
@@ -224,7 +224,7 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, nextUri, lastUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, lastUri, previousUri, pageCount);
   }
 
   @Override
@@ -236,8 +236,8 @@ public class DomainEntityListingEvaluationForm  implements Serializable, PagedRe
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");

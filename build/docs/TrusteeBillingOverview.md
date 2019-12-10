@@ -40,6 +40,7 @@ title: TrusteeBillingOverview
 | FREE_TRIAL_MONTH_TO_MONTH | &quot;FREE_TRIAL_MONTH_TO_MONTH&quot; |
 | PREPAY_MONTHLY_COMMITMENT | &quot;PREPAY_MONTHLY_COMMITMENT&quot; |
 | PREPAY | &quot;PREPAY&quot; |
+| DEV_ORG_MONTH_TO_MONTH | &quot;DEV_ORG_MONTH_TO_MONTH&quot; |
 | DEV_ORG_PREPAY_MONTHLY_COMMITMENT | &quot;DEV_ORG_PREPAY_MONTHLY_COMMITMENT&quot; |
 | DEV_ORG_PREPAY | &quot;DEV_ORG_PREPAY&quot; |
 {: class="table table-striped"}

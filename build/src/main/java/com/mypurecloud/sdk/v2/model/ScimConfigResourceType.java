@@ -13,9 +13,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Common attributes to all SCIM resources
+ * Defines a SCIM resource.
  */
-@ApiModel(description = "Common attributes to all SCIM resources")
+@ApiModel(description = "Defines a SCIM resource.")
 
 public class ScimConfigResourceType  implements Serializable {
   
@@ -101,14 +101,14 @@ public class ScimConfigResourceType  implements Serializable {
 
   
   /**
-   * Resource SCIM meta
+   * The metadata of the SCIM resource.
    **/
   public ScimConfigResourceType meta(ScimMetadata meta) {
     this.meta = meta;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Resource SCIM meta")
+  @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource.")
   @JsonProperty("meta")
   public ScimMetadata getMeta() {
     return meta;

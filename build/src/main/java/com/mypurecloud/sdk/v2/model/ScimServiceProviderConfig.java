@@ -16,9 +16,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * SCIM Provider Config for PureCloud.
+ * Defines a SCIM service provider&#39;s configuration.
  */
-@ApiModel(description = "SCIM Provider Config for PureCloud.")
+@ApiModel(description = "Defines a SCIM service provider's configuration.")
 
 public class ScimServiceProviderConfig  implements Serializable {
   
@@ -186,14 +186,14 @@ public class ScimServiceProviderConfig  implements Serializable {
 
   
   /**
-   * Resource SCIM meta
+   * The metadata of the SCIM resource.
    **/
   public ScimServiceProviderConfig meta(ScimMetadata meta) {
     this.meta = meta;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Resource SCIM meta")
+  @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource.")
   @JsonProperty("meta")
   public ScimMetadata getMeta() {
     return meta;

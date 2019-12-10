@@ -16,9 +16,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Represents a SCIM V2 Create User
+ * Defines the creation of a SCIM user.
  */
-@ApiModel(description = "Represents a SCIM V2 Create User")
+@ApiModel(description = "Defines the creation of a SCIM user.")
 
 public class ScimV2CreateUser  implements Serializable {
   
@@ -254,14 +254,14 @@ public class ScimV2CreateUser  implements Serializable {
 
   
   /**
-   * SCIM enterprise user attributes
+   * The URI of the schema for the enterprise user.
    **/
   public ScimV2CreateUser urnietfparamsscimschemasextensionenterprise20User(ScimV2EnterpriseUser urnietfparamsscimschemasextensionenterprise20User) {
     this.urnietfparamsscimschemasextensionenterprise20User = urnietfparamsscimschemasextensionenterprise20User;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "SCIM enterprise user attributes")
+  @ApiModelProperty(example = "null", value = "The URI of the schema for the enterprise user.")
   @JsonProperty("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User")
   public ScimV2EnterpriseUser getUrnietfparamsscimschemasextensionenterprise20User() {
     return urnietfparamsscimschemasextensionenterprise20User;

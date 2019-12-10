@@ -111,6 +111,8 @@ public class DomainLogicalInterface  implements Serializable {
     }
   }
   private InterfaceTypeEnum interfaceType = null;
+  private String publicNatAddressIpV4 = null;
+  private String publicNatAddressIpV6 = null;
   private List<DomainNetworkRoute> routes = new ArrayList<DomainNetworkRoute>();
   private List<DomainNetworkAddress> addresses = new ArrayList<DomainNetworkAddress>();
   private DomainCapabilities ipv4Capabilities = null;
@@ -162,7 +164,6 @@ public class DomainLogicalInterface  implements Serializable {
   private Boolean useForInternalEdgeCommunication = null;
   private Boolean useForIndirectEdgeCommunication = null;
   private Boolean useForCloudProxyEdgeCommunication = null;
-  private String publicNatIpAddress = null;
   private List<TrunkBaseAssignment> externalTrunkBaseAssignments = new ArrayList<TrunkBaseAssignment>();
   private List<TrunkBaseAssignment> phoneTrunkBaseAssignments = new ArrayList<TrunkBaseAssignment>();
   private Boolean traceEnabled = null;
@@ -477,6 +478,42 @@ public class DomainLogicalInterface  implements Serializable {
 
   
   /**
+   * IPv4 NENT IP Address
+   **/
+  public DomainLogicalInterface publicNatAddressIpV4(String publicNatAddressIpV4) {
+    this.publicNatAddressIpV4 = publicNatAddressIpV4;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "IPv4 NENT IP Address")
+  @JsonProperty("publicNatAddressIpV4")
+  public String getPublicNatAddressIpV4() {
+    return publicNatAddressIpV4;
+  }
+  public void setPublicNatAddressIpV4(String publicNatAddressIpV4) {
+    this.publicNatAddressIpV4 = publicNatAddressIpV4;
+  }
+
+  
+  /**
+   * IPv6 NENT IP Address
+   **/
+  public DomainLogicalInterface publicNatAddressIpV6(String publicNatAddressIpV6) {
+    this.publicNatAddressIpV6 = publicNatAddressIpV6;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "IPv6 NENT IP Address")
+  @JsonProperty("publicNatAddressIpV6")
+  public String getPublicNatAddressIpV6() {
+    return publicNatAddressIpV6;
+  }
+  public void setPublicNatAddressIpV6(String publicNatAddressIpV6) {
+    this.publicNatAddressIpV6 = publicNatAddressIpV6;
+  }
+
+  
+  /**
    * The list of routes assigned to this interface.
    **/
   public DomainLogicalInterface routes(List<DomainNetworkRoute> routes) {
@@ -707,24 +744,6 @@ public class DomainLogicalInterface  implements Serializable {
 
   
   /**
-   * NENT IP Address
-   **/
-  public DomainLogicalInterface publicNatIpAddress(String publicNatIpAddress) {
-    this.publicNatIpAddress = publicNatIpAddress;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "NENT IP Address")
-  @JsonProperty("publicNatIpAddress")
-  public String getPublicNatIpAddress() {
-    return publicNatIpAddress;
-  }
-  public void setPublicNatIpAddress(String publicNatIpAddress) {
-    this.publicNatIpAddress = publicNatIpAddress;
-  }
-
-  
-  /**
    * External trunk base settings to use for external communication from this interface.
    **/
   public DomainLogicalInterface externalTrunkBaseAssignments(List<TrunkBaseAssignment> externalTrunkBaseAssignments) {
@@ -849,6 +868,8 @@ public class DomainLogicalInterface  implements Serializable {
         Objects.equals(this.physicalAdapterId, domainLogicalInterface.physicalAdapterId) &&
         Objects.equals(this.ifStatus, domainLogicalInterface.ifStatus) &&
         Objects.equals(this.interfaceType, domainLogicalInterface.interfaceType) &&
+        Objects.equals(this.publicNatAddressIpV4, domainLogicalInterface.publicNatAddressIpV4) &&
+        Objects.equals(this.publicNatAddressIpV6, domainLogicalInterface.publicNatAddressIpV6) &&
         Objects.equals(this.routes, domainLogicalInterface.routes) &&
         Objects.equals(this.addresses, domainLogicalInterface.addresses) &&
         Objects.equals(this.ipv4Capabilities, domainLogicalInterface.ipv4Capabilities) &&
@@ -862,7 +883,6 @@ public class DomainLogicalInterface  implements Serializable {
         Objects.equals(this.useForInternalEdgeCommunication, domainLogicalInterface.useForInternalEdgeCommunication) &&
         Objects.equals(this.useForIndirectEdgeCommunication, domainLogicalInterface.useForIndirectEdgeCommunication) &&
         Objects.equals(this.useForCloudProxyEdgeCommunication, domainLogicalInterface.useForCloudProxyEdgeCommunication) &&
-        Objects.equals(this.publicNatIpAddress, domainLogicalInterface.publicNatIpAddress) &&
         Objects.equals(this.externalTrunkBaseAssignments, domainLogicalInterface.externalTrunkBaseAssignments) &&
         Objects.equals(this.phoneTrunkBaseAssignments, domainLogicalInterface.phoneTrunkBaseAssignments) &&
         Objects.equals(this.traceEnabled, domainLogicalInterface.traceEnabled) &&
@@ -873,7 +893,7 @@ public class DomainLogicalInterface  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, edgeUri, edgeAssignedId, friendlyName, vlanTagId, hardwareAddress, physicalAdapterId, ifStatus, interfaceType, routes, addresses, ipv4Capabilities, ipv6Capabilities, currentState, lastModifiedUserId, lastModifiedCorrelationId, commandResponses, inheritPhoneTrunkBasesIPv4, inheritPhoneTrunkBasesIPv6, useForInternalEdgeCommunication, useForIndirectEdgeCommunication, useForCloudProxyEdgeCommunication, publicNatIpAddress, externalTrunkBaseAssignments, phoneTrunkBaseAssignments, traceEnabled, startDate, endDate, selfUri);
+    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, edgeUri, edgeAssignedId, friendlyName, vlanTagId, hardwareAddress, physicalAdapterId, ifStatus, interfaceType, publicNatAddressIpV4, publicNatAddressIpV6, routes, addresses, ipv4Capabilities, ipv6Capabilities, currentState, lastModifiedUserId, lastModifiedCorrelationId, commandResponses, inheritPhoneTrunkBasesIPv4, inheritPhoneTrunkBasesIPv6, useForInternalEdgeCommunication, useForIndirectEdgeCommunication, useForCloudProxyEdgeCommunication, externalTrunkBaseAssignments, phoneTrunkBaseAssignments, traceEnabled, startDate, endDate, selfUri);
   }
 
   @Override
@@ -900,6 +920,8 @@ public class DomainLogicalInterface  implements Serializable {
     sb.append("    physicalAdapterId: ").append(toIndentedString(physicalAdapterId)).append("\n");
     sb.append("    ifStatus: ").append(toIndentedString(ifStatus)).append("\n");
     sb.append("    interfaceType: ").append(toIndentedString(interfaceType)).append("\n");
+    sb.append("    publicNatAddressIpV4: ").append(toIndentedString(publicNatAddressIpV4)).append("\n");
+    sb.append("    publicNatAddressIpV6: ").append(toIndentedString(publicNatAddressIpV6)).append("\n");
     sb.append("    routes: ").append(toIndentedString(routes)).append("\n");
     sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
     sb.append("    ipv4Capabilities: ").append(toIndentedString(ipv4Capabilities)).append("\n");
@@ -913,7 +935,6 @@ public class DomainLogicalInterface  implements Serializable {
     sb.append("    useForInternalEdgeCommunication: ").append(toIndentedString(useForInternalEdgeCommunication)).append("\n");
     sb.append("    useForIndirectEdgeCommunication: ").append(toIndentedString(useForIndirectEdgeCommunication)).append("\n");
     sb.append("    useForCloudProxyEdgeCommunication: ").append(toIndentedString(useForCloudProxyEdgeCommunication)).append("\n");
-    sb.append("    publicNatIpAddress: ").append(toIndentedString(publicNatIpAddress)).append("\n");
     sb.append("    externalTrunkBaseAssignments: ").append(toIndentedString(externalTrunkBaseAssignments)).append("\n");
     sb.append("    phoneTrunkBaseAssignments: ").append(toIndentedString(phoneTrunkBaseAssignments)).append("\n");
     sb.append("    traceEnabled: ").append(toIndentedString(traceEnabled)).append("\n");

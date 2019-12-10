@@ -9,9 +9,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Schema extensions supported by PureCloud SCIM.
+ * Defines a SCIM resource type&#39;s schema extension.
  */
-@ApiModel(description = "Schema extensions supported by PureCloud SCIM.")
+@ApiModel(description = "Defines a SCIM resource type's schema extension.")
 
 public class ScimConfigResourceTypeSchemaExtension  implements Serializable {
   

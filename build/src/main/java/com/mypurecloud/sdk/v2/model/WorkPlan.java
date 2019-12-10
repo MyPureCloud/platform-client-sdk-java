@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DeletableUserReference;
 import com.mypurecloud.sdk.v2.model.ListWrapperShiftStartVariance;
 import com.mypurecloud.sdk.v2.model.SetWrapperDayOfWeek;
@@ -36,56 +35,7 @@ public class WorkPlan  implements Serializable {
   private Boolean constrainMinimumTimeBetweenShifts = null;
   private Integer minimumTimeBetweenShiftsMinutes = null;
   private Integer maximumDays = null;
-
-  /**
-   * The day of the week for which the weekend starts, such as Saturday
-   */
-  public enum StartDayOfWeekendEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    SUNDAY("Sunday"),
-    MONDAY("Monday"),
-    TUESDAY("Tuesday"),
-    WEDNESDAY("Wednesday"),
-    THURSDAY("Thursday"),
-    FRIDAY("Friday"),
-    SATURDAY("Saturday");
-
-    private String value;
-
-    StartDayOfWeekendEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static StartDayOfWeekendEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (StartDayOfWeekendEnum value : StartDayOfWeekendEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return StartDayOfWeekendEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private StartDayOfWeekendEnum startDayOfWeekend = null;
-  private Integer minimumConsecutiveTimeOffPerWeekMinutes = null;
-  private Boolean constrainMaximumConsecutiveWorkingWeekends = null;
-  private Integer maximumConsecutiveWorkingWeekends = null;
   private Integer minimumWorkingDaysPerWeek = null;
-  private Integer maximumConsecutiveWorkingDays = null;
-  private Integer minimumShiftStartDistanceMinutes = null;
-  private Integer minimumDaysOffPerPlanningPeriod = null;
-  private Integer maximumDaysOffPerPlanningPeriod = null;
-  private Integer minimumPaidHoursPerPlanningPeriod = null;
-  private Integer maximumPaidHoursPerPlanningPeriod = null;
   private SetWrapperDayOfWeek optionalDays = null;
   private ListWrapperShiftStartVariance shiftStartVariances = null;
   private List<WorkPlanShift> shifts = new ArrayList<WorkPlanShift>();
@@ -317,78 +267,6 @@ public class WorkPlan  implements Serializable {
 
   
   /**
-   * The day of the week for which the weekend starts, such as Saturday
-   **/
-  public WorkPlan startDayOfWeekend(StartDayOfWeekendEnum startDayOfWeekend) {
-    this.startDayOfWeekend = startDayOfWeekend;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The day of the week for which the weekend starts, such as Saturday")
-  @JsonProperty("startDayOfWeekend")
-  public StartDayOfWeekendEnum getStartDayOfWeekend() {
-    return startDayOfWeekend;
-  }
-  public void setStartDayOfWeekend(StartDayOfWeekendEnum startDayOfWeekend) {
-    this.startDayOfWeekend = startDayOfWeekend;
-  }
-
-  
-  /**
-   * Minimum amount of consecutive time off per week that agents who are assigned this work plan are allowed to have off
-   **/
-  public WorkPlan minimumConsecutiveTimeOffPerWeekMinutes(Integer minimumConsecutiveTimeOffPerWeekMinutes) {
-    this.minimumConsecutiveTimeOffPerWeekMinutes = minimumConsecutiveTimeOffPerWeekMinutes;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Minimum amount of consecutive time off per week that agents who are assigned this work plan are allowed to have off")
-  @JsonProperty("minimumConsecutiveTimeOffPerWeekMinutes")
-  public Integer getMinimumConsecutiveTimeOffPerWeekMinutes() {
-    return minimumConsecutiveTimeOffPerWeekMinutes;
-  }
-  public void setMinimumConsecutiveTimeOffPerWeekMinutes(Integer minimumConsecutiveTimeOffPerWeekMinutes) {
-    this.minimumConsecutiveTimeOffPerWeekMinutes = minimumConsecutiveTimeOffPerWeekMinutes;
-  }
-
-  
-  /**
-   * Whether to constrain the maximum consecutive working weekends
-   **/
-  public WorkPlan constrainMaximumConsecutiveWorkingWeekends(Boolean constrainMaximumConsecutiveWorkingWeekends) {
-    this.constrainMaximumConsecutiveWorkingWeekends = constrainMaximumConsecutiveWorkingWeekends;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Whether to constrain the maximum consecutive working weekends")
-  @JsonProperty("constrainMaximumConsecutiveWorkingWeekends")
-  public Boolean getConstrainMaximumConsecutiveWorkingWeekends() {
-    return constrainMaximumConsecutiveWorkingWeekends;
-  }
-  public void setConstrainMaximumConsecutiveWorkingWeekends(Boolean constrainMaximumConsecutiveWorkingWeekends) {
-    this.constrainMaximumConsecutiveWorkingWeekends = constrainMaximumConsecutiveWorkingWeekends;
-  }
-
-  
-  /**
-   * The maximum number of consecutive weekends that agents who are assigned to this work plan are allowed to work
-   **/
-  public WorkPlan maximumConsecutiveWorkingWeekends(Integer maximumConsecutiveWorkingWeekends) {
-    this.maximumConsecutiveWorkingWeekends = maximumConsecutiveWorkingWeekends;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The maximum number of consecutive weekends that agents who are assigned to this work plan are allowed to work")
-  @JsonProperty("maximumConsecutiveWorkingWeekends")
-  public Integer getMaximumConsecutiveWorkingWeekends() {
-    return maximumConsecutiveWorkingWeekends;
-  }
-  public void setMaximumConsecutiveWorkingWeekends(Integer maximumConsecutiveWorkingWeekends) {
-    this.maximumConsecutiveWorkingWeekends = maximumConsecutiveWorkingWeekends;
-  }
-
-  
-  /**
    * The minimum number of days that agents assigned to a work plan must work per week
    **/
   public WorkPlan minimumWorkingDaysPerWeek(Integer minimumWorkingDaysPerWeek) {
@@ -403,114 +281,6 @@ public class WorkPlan  implements Serializable {
   }
   public void setMinimumWorkingDaysPerWeek(Integer minimumWorkingDaysPerWeek) {
     this.minimumWorkingDaysPerWeek = minimumWorkingDaysPerWeek;
-  }
-
-  
-  /**
-   * The maximum number of consecutive days that agents assigned to this work plan are allowed to work
-   **/
-  public WorkPlan maximumConsecutiveWorkingDays(Integer maximumConsecutiveWorkingDays) {
-    this.maximumConsecutiveWorkingDays = maximumConsecutiveWorkingDays;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The maximum number of consecutive days that agents assigned to this work plan are allowed to work")
-  @JsonProperty("maximumConsecutiveWorkingDays")
-  public Integer getMaximumConsecutiveWorkingDays() {
-    return maximumConsecutiveWorkingDays;
-  }
-  public void setMaximumConsecutiveWorkingDays(Integer maximumConsecutiveWorkingDays) {
-    this.maximumConsecutiveWorkingDays = maximumConsecutiveWorkingDays;
-  }
-
-  
-  /**
-   * The time period in minutes for the duration between the start times of two consecutive working days
-   **/
-  public WorkPlan minimumShiftStartDistanceMinutes(Integer minimumShiftStartDistanceMinutes) {
-    this.minimumShiftStartDistanceMinutes = minimumShiftStartDistanceMinutes;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The time period in minutes for the duration between the start times of two consecutive working days")
-  @JsonProperty("minimumShiftStartDistanceMinutes")
-  public Integer getMinimumShiftStartDistanceMinutes() {
-    return minimumShiftStartDistanceMinutes;
-  }
-  public void setMinimumShiftStartDistanceMinutes(Integer minimumShiftStartDistanceMinutes) {
-    this.minimumShiftStartDistanceMinutes = minimumShiftStartDistanceMinutes;
-  }
-
-  
-  /**
-   * Minimum days off in the planning period
-   **/
-  public WorkPlan minimumDaysOffPerPlanningPeriod(Integer minimumDaysOffPerPlanningPeriod) {
-    this.minimumDaysOffPerPlanningPeriod = minimumDaysOffPerPlanningPeriod;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Minimum days off in the planning period")
-  @JsonProperty("minimumDaysOffPerPlanningPeriod")
-  public Integer getMinimumDaysOffPerPlanningPeriod() {
-    return minimumDaysOffPerPlanningPeriod;
-  }
-  public void setMinimumDaysOffPerPlanningPeriod(Integer minimumDaysOffPerPlanningPeriod) {
-    this.minimumDaysOffPerPlanningPeriod = minimumDaysOffPerPlanningPeriod;
-  }
-
-  
-  /**
-   * Maximum days off in the planning period
-   **/
-  public WorkPlan maximumDaysOffPerPlanningPeriod(Integer maximumDaysOffPerPlanningPeriod) {
-    this.maximumDaysOffPerPlanningPeriod = maximumDaysOffPerPlanningPeriod;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Maximum days off in the planning period")
-  @JsonProperty("maximumDaysOffPerPlanningPeriod")
-  public Integer getMaximumDaysOffPerPlanningPeriod() {
-    return maximumDaysOffPerPlanningPeriod;
-  }
-  public void setMaximumDaysOffPerPlanningPeriod(Integer maximumDaysOffPerPlanningPeriod) {
-    this.maximumDaysOffPerPlanningPeriod = maximumDaysOffPerPlanningPeriod;
-  }
-
-  
-  /**
-   * Minimum paid hours in the planning period
-   **/
-  public WorkPlan minimumPaidHoursPerPlanningPeriod(Integer minimumPaidHoursPerPlanningPeriod) {
-    this.minimumPaidHoursPerPlanningPeriod = minimumPaidHoursPerPlanningPeriod;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Minimum paid hours in the planning period")
-  @JsonProperty("minimumPaidHoursPerPlanningPeriod")
-  public Integer getMinimumPaidHoursPerPlanningPeriod() {
-    return minimumPaidHoursPerPlanningPeriod;
-  }
-  public void setMinimumPaidHoursPerPlanningPeriod(Integer minimumPaidHoursPerPlanningPeriod) {
-    this.minimumPaidHoursPerPlanningPeriod = minimumPaidHoursPerPlanningPeriod;
-  }
-
-  
-  /**
-   * Maximum paid hours in the planning period
-   **/
-  public WorkPlan maximumPaidHoursPerPlanningPeriod(Integer maximumPaidHoursPerPlanningPeriod) {
-    this.maximumPaidHoursPerPlanningPeriod = maximumPaidHoursPerPlanningPeriod;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Maximum paid hours in the planning period")
-  @JsonProperty("maximumPaidHoursPerPlanningPeriod")
-  public Integer getMaximumPaidHoursPerPlanningPeriod() {
-    return maximumPaidHoursPerPlanningPeriod;
-  }
-  public void setMaximumPaidHoursPerPlanningPeriod(Integer maximumPaidHoursPerPlanningPeriod) {
-    this.maximumPaidHoursPerPlanningPeriod = maximumPaidHoursPerPlanningPeriod;
   }
 
   
@@ -634,17 +404,7 @@ public class WorkPlan  implements Serializable {
         Objects.equals(this.constrainMinimumTimeBetweenShifts, workPlan.constrainMinimumTimeBetweenShifts) &&
         Objects.equals(this.minimumTimeBetweenShiftsMinutes, workPlan.minimumTimeBetweenShiftsMinutes) &&
         Objects.equals(this.maximumDays, workPlan.maximumDays) &&
-        Objects.equals(this.startDayOfWeekend, workPlan.startDayOfWeekend) &&
-        Objects.equals(this.minimumConsecutiveTimeOffPerWeekMinutes, workPlan.minimumConsecutiveTimeOffPerWeekMinutes) &&
-        Objects.equals(this.constrainMaximumConsecutiveWorkingWeekends, workPlan.constrainMaximumConsecutiveWorkingWeekends) &&
-        Objects.equals(this.maximumConsecutiveWorkingWeekends, workPlan.maximumConsecutiveWorkingWeekends) &&
         Objects.equals(this.minimumWorkingDaysPerWeek, workPlan.minimumWorkingDaysPerWeek) &&
-        Objects.equals(this.maximumConsecutiveWorkingDays, workPlan.maximumConsecutiveWorkingDays) &&
-        Objects.equals(this.minimumShiftStartDistanceMinutes, workPlan.minimumShiftStartDistanceMinutes) &&
-        Objects.equals(this.minimumDaysOffPerPlanningPeriod, workPlan.minimumDaysOffPerPlanningPeriod) &&
-        Objects.equals(this.maximumDaysOffPerPlanningPeriod, workPlan.maximumDaysOffPerPlanningPeriod) &&
-        Objects.equals(this.minimumPaidHoursPerPlanningPeriod, workPlan.minimumPaidHoursPerPlanningPeriod) &&
-        Objects.equals(this.maximumPaidHoursPerPlanningPeriod, workPlan.maximumPaidHoursPerPlanningPeriod) &&
         Objects.equals(this.optionalDays, workPlan.optionalDays) &&
         Objects.equals(this.shiftStartVariances, workPlan.shiftStartVariances) &&
         Objects.equals(this.shifts, workPlan.shifts) &&
@@ -655,7 +415,7 @@ public class WorkPlan  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, enabled, constrainWeeklyPaidTime, flexibleWeeklyPaidTime, weeklyExactPaidMinutes, weeklyMinimumPaidMinutes, weeklyMaximumPaidMinutes, constrainPaidTimeGranularity, paidTimeGranularityMinutes, constrainMinimumTimeBetweenShifts, minimumTimeBetweenShiftsMinutes, maximumDays, startDayOfWeekend, minimumConsecutiveTimeOffPerWeekMinutes, constrainMaximumConsecutiveWorkingWeekends, maximumConsecutiveWorkingWeekends, minimumWorkingDaysPerWeek, maximumConsecutiveWorkingDays, minimumShiftStartDistanceMinutes, minimumDaysOffPerPlanningPeriod, maximumDaysOffPerPlanningPeriod, minimumPaidHoursPerPlanningPeriod, maximumPaidHoursPerPlanningPeriod, optionalDays, shiftStartVariances, shifts, agents, metadata, selfUri);
+    return Objects.hash(id, name, enabled, constrainWeeklyPaidTime, flexibleWeeklyPaidTime, weeklyExactPaidMinutes, weeklyMinimumPaidMinutes, weeklyMaximumPaidMinutes, constrainPaidTimeGranularity, paidTimeGranularityMinutes, constrainMinimumTimeBetweenShifts, minimumTimeBetweenShiftsMinutes, maximumDays, minimumWorkingDaysPerWeek, optionalDays, shiftStartVariances, shifts, agents, metadata, selfUri);
   }
 
   @Override
@@ -676,17 +436,7 @@ public class WorkPlan  implements Serializable {
     sb.append("    constrainMinimumTimeBetweenShifts: ").append(toIndentedString(constrainMinimumTimeBetweenShifts)).append("\n");
     sb.append("    minimumTimeBetweenShiftsMinutes: ").append(toIndentedString(minimumTimeBetweenShiftsMinutes)).append("\n");
     sb.append("    maximumDays: ").append(toIndentedString(maximumDays)).append("\n");
-    sb.append("    startDayOfWeekend: ").append(toIndentedString(startDayOfWeekend)).append("\n");
-    sb.append("    minimumConsecutiveTimeOffPerWeekMinutes: ").append(toIndentedString(minimumConsecutiveTimeOffPerWeekMinutes)).append("\n");
-    sb.append("    constrainMaximumConsecutiveWorkingWeekends: ").append(toIndentedString(constrainMaximumConsecutiveWorkingWeekends)).append("\n");
-    sb.append("    maximumConsecutiveWorkingWeekends: ").append(toIndentedString(maximumConsecutiveWorkingWeekends)).append("\n");
     sb.append("    minimumWorkingDaysPerWeek: ").append(toIndentedString(minimumWorkingDaysPerWeek)).append("\n");
-    sb.append("    maximumConsecutiveWorkingDays: ").append(toIndentedString(maximumConsecutiveWorkingDays)).append("\n");
-    sb.append("    minimumShiftStartDistanceMinutes: ").append(toIndentedString(minimumShiftStartDistanceMinutes)).append("\n");
-    sb.append("    minimumDaysOffPerPlanningPeriod: ").append(toIndentedString(minimumDaysOffPerPlanningPeriod)).append("\n");
-    sb.append("    maximumDaysOffPerPlanningPeriod: ").append(toIndentedString(maximumDaysOffPerPlanningPeriod)).append("\n");
-    sb.append("    minimumPaidHoursPerPlanningPeriod: ").append(toIndentedString(minimumPaidHoursPerPlanningPeriod)).append("\n");
-    sb.append("    maximumPaidHoursPerPlanningPeriod: ").append(toIndentedString(maximumPaidHoursPerPlanningPeriod)).append("\n");
     sb.append("    optionalDays: ").append(toIndentedString(optionalDays)).append("\n");
     sb.append("    shiftStartVariances: ").append(toIndentedString(shiftStartVariances)).append("\n");
     sb.append("    shifts: ").append(toIndentedString(shifts)).append("\n");

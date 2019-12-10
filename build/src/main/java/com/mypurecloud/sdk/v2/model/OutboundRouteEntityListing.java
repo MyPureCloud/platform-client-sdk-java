@@ -22,8 +22,8 @@ public class OutboundRouteEntityListing  implements Serializable, PagedResource<
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String selfUri = null;
   private String firstUri = null;
+  private String selfUri = null;
   private String nextUri = null;
   private String lastUri = null;
   private String previousUri = null;
@@ -100,23 +100,6 @@ public class OutboundRouteEntityListing  implements Serializable, PagedResource<
   
   /**
    **/
-  public OutboundRouteEntityListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-  
-  /**
-   **/
   public OutboundRouteEntityListing firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
@@ -129,6 +112,23 @@ public class OutboundRouteEntityListing  implements Serializable, PagedResource<
   }
   public void setFirstUri(String firstUri) {
     this.firstUri = firstUri;
+  }
+
+  
+  /**
+   **/
+  public OutboundRouteEntityListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
   }
 
   
@@ -214,8 +214,8 @@ public class OutboundRouteEntityListing  implements Serializable, PagedResource<
         Objects.equals(this.pageSize, outboundRouteEntityListing.pageSize) &&
         Objects.equals(this.pageNumber, outboundRouteEntityListing.pageNumber) &&
         Objects.equals(this.total, outboundRouteEntityListing.total) &&
-        Objects.equals(this.selfUri, outboundRouteEntityListing.selfUri) &&
         Objects.equals(this.firstUri, outboundRouteEntityListing.firstUri) &&
+        Objects.equals(this.selfUri, outboundRouteEntityListing.selfUri) &&
         Objects.equals(this.nextUri, outboundRouteEntityListing.nextUri) &&
         Objects.equals(this.lastUri, outboundRouteEntityListing.lastUri) &&
         Objects.equals(this.previousUri, outboundRouteEntityListing.previousUri) &&
@@ -224,7 +224,7 @@ public class OutboundRouteEntityListing  implements Serializable, PagedResource<
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, nextUri, lastUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, lastUri, previousUri, pageCount);
   }
 
   @Override
@@ -236,8 +236,8 @@ public class OutboundRouteEntityListing  implements Serializable, PagedResource<
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");

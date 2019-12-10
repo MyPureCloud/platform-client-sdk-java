@@ -23,7 +23,7 @@ import com.mypurecloud.sdk.v2.model.RescheduleResult;
 import com.mypurecloud.sdk.v2.model.SchedulingRunListResponse;
 import com.mypurecloud.sdk.v2.model.ServiceGoalGroup;
 import com.mypurecloud.sdk.v2.model.ServiceGoalGroupList;
-import com.mypurecloud.sdk.v2.model.ManagementUnitSettings;
+import com.mypurecloud.sdk.v2.model.ManagementUnitSettingsResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeMatchesSummaryResponse;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestResponse;
@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.ShiftTradeListResponse;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.UpdateSchedulingRunRequest;
+import com.mypurecloud.sdk.v2.model.ManagementUnitSettingsRequest;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.UpdateWeekScheduleRequest;
 import com.mypurecloud.sdk.v2.model.AsyncWeekScheduleResponse;
@@ -1720,11 +1721,11 @@ public class WorkforceManagementApi {
    * Get the settings for the requested management unit. Deprecated, use the GET management unit route instead
    * 
    * @param muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
-   * @return ManagementUnitSettings
+   * @return ManagementUnitSettingsResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ManagementUnitSettings getWorkforcemanagementManagementunitSettings(String muId) throws IOException, ApiException {
+  public ManagementUnitSettingsResponse getWorkforcemanagementManagementunitSettings(String muId) throws IOException, ApiException {
     return  getWorkforcemanagementManagementunitSettings(createGetWorkforcemanagementManagementunitSettingsRequest(muId));
   }
 
@@ -1732,10 +1733,10 @@ public class WorkforceManagementApi {
    * Get the settings for the requested management unit. Deprecated, use the GET management unit route instead
    * 
    * @param muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
-   * @return ManagementUnitSettings
+   * @return ManagementUnitSettingsResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ManagementUnitSettings> getWorkforcemanagementManagementunitSettingsWithHttpInfo(String muId) throws IOException {
+  public ApiResponse<ManagementUnitSettingsResponse> getWorkforcemanagementManagementunitSettingsWithHttpInfo(String muId) throws IOException {
     return getWorkforcemanagementManagementunitSettings(createGetWorkforcemanagementManagementunitSettingsRequest(muId).withHttpInfo());
   }
 
@@ -1750,13 +1751,13 @@ public class WorkforceManagementApi {
    * Get the settings for the requested management unit. Deprecated, use the GET management unit route instead
    * 
    * @param request The request object
-   * @return ManagementUnitSettings
+   * @return ManagementUnitSettingsResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ManagementUnitSettings getWorkforcemanagementManagementunitSettings(GetWorkforcemanagementManagementunitSettingsRequest request) throws IOException, ApiException {
+  public ManagementUnitSettingsResponse getWorkforcemanagementManagementunitSettings(GetWorkforcemanagementManagementunitSettingsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<ManagementUnitSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ManagementUnitSettings>() {});
+      ApiResponse<ManagementUnitSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ManagementUnitSettingsResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1772,13 +1773,13 @@ public class WorkforceManagementApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ManagementUnitSettings> getWorkforcemanagementManagementunitSettings(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<ManagementUnitSettingsResponse> getWorkforcemanagementManagementunitSettings(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<ManagementUnitSettings>() {});
+      return pcapiClient.invoke(request, new TypeReference<ManagementUnitSettingsResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<ManagementUnitSettings> response = (ApiResponse<ManagementUnitSettings>)(ApiResponse<?>)exception;
+      ApiResponse<ManagementUnitSettingsResponse> response = (ApiResponse<ManagementUnitSettingsResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1789,7 +1790,7 @@ public class WorkforceManagementApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<ManagementUnitSettings> response = (ApiResponse<ManagementUnitSettings>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<ManagementUnitSettingsResponse> response = (ApiResponse<ManagementUnitSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3733,11 +3734,11 @@ public class WorkforceManagementApi {
    * 
    * @param muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body config (optional)
-   * @return ManagementUnitSettings
+   * @return ManagementUnitSettingsResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ManagementUnitSettings patchWorkforcemanagementManagementunitSettings(String muId, ManagementUnitSettings body) throws IOException, ApiException {
+  public ManagementUnitSettingsResponse patchWorkforcemanagementManagementunitSettings(String muId, ManagementUnitSettingsRequest body) throws IOException, ApiException {
     return  patchWorkforcemanagementManagementunitSettings(createPatchWorkforcemanagementManagementunitSettingsRequest(muId, body));
   }
 
@@ -3746,14 +3747,14 @@ public class WorkforceManagementApi {
    * 
    * @param muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body config (optional)
-   * @return ManagementUnitSettings
+   * @return ManagementUnitSettingsResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ManagementUnitSettings> patchWorkforcemanagementManagementunitSettingsWithHttpInfo(String muId, ManagementUnitSettings body) throws IOException {
+  public ApiResponse<ManagementUnitSettingsResponse> patchWorkforcemanagementManagementunitSettingsWithHttpInfo(String muId, ManagementUnitSettingsRequest body) throws IOException {
     return patchWorkforcemanagementManagementunitSettings(createPatchWorkforcemanagementManagementunitSettingsRequest(muId, body).withHttpInfo());
   }
 
-  private PatchWorkforcemanagementManagementunitSettingsRequest createPatchWorkforcemanagementManagementunitSettingsRequest(String muId, ManagementUnitSettings body) {
+  private PatchWorkforcemanagementManagementunitSettingsRequest createPatchWorkforcemanagementManagementunitSettingsRequest(String muId, ManagementUnitSettingsRequest body) {
     return PatchWorkforcemanagementManagementunitSettingsRequest.builder()
             .withMuId(muId)
     
@@ -3766,13 +3767,13 @@ public class WorkforceManagementApi {
    * Update the settings for the requested management unit
    * 
    * @param request The request object
-   * @return ManagementUnitSettings
+   * @return ManagementUnitSettingsResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ManagementUnitSettings patchWorkforcemanagementManagementunitSettings(PatchWorkforcemanagementManagementunitSettingsRequest request) throws IOException, ApiException {
+  public ManagementUnitSettingsResponse patchWorkforcemanagementManagementunitSettings(PatchWorkforcemanagementManagementunitSettingsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<ManagementUnitSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ManagementUnitSettings>() {});
+      ApiResponse<ManagementUnitSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ManagementUnitSettingsResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -3788,13 +3789,13 @@ public class WorkforceManagementApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ManagementUnitSettings> patchWorkforcemanagementManagementunitSettings(ApiRequest<ManagementUnitSettings> request) throws IOException {
+  public ApiResponse<ManagementUnitSettingsResponse> patchWorkforcemanagementManagementunitSettings(ApiRequest<ManagementUnitSettingsRequest> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<ManagementUnitSettings>() {});
+      return pcapiClient.invoke(request, new TypeReference<ManagementUnitSettingsResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<ManagementUnitSettings> response = (ApiResponse<ManagementUnitSettings>)(ApiResponse<?>)exception;
+      ApiResponse<ManagementUnitSettingsResponse> response = (ApiResponse<ManagementUnitSettingsResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -3805,7 +3806,7 @@ public class WorkforceManagementApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<ManagementUnitSettings> response = (ApiResponse<ManagementUnitSettings>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<ManagementUnitSettingsResponse> response = (ApiResponse<ManagementUnitSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

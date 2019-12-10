@@ -17,7 +17,7 @@ title: ScimServiceProviderConfig
 | **bulk** | <!----><!---->[**ScimServiceProviderConfigBulkFeature**](ScimServiceProviderConfigBulkFeature.html)<!----> | The \&quot;bulk\&quot; configuration options. |  [optional] |
 | **changePassword** | <!----><!---->[**ScimServiceProviderConfigSimpleFeature**](ScimServiceProviderConfigSimpleFeature.html)<!----> | The \&quot;changePassword\&quot; configuration options. |  [optional] |
 | **authenticationSchemes** | <!----><!---->[**List&lt;ScimServiceProviderConfigAuthenticationScheme&gt;**](ScimServiceProviderConfigAuthenticationScheme.html)<!----> | The list of supported authentication schemes. |  [optional] |
-| **meta** | <!----><!---->[**ScimMetadata**](ScimMetadata.html)<!----> | Resource SCIM meta |  [optional] |
+| **meta** | <!----><!---->[**ScimMetadata**](ScimMetadata.html)<!----> | The metadata of the SCIM resource. |  [optional] |
 {: class="table table-striped"}
 
 

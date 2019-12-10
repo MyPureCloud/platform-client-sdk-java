@@ -12,9 +12,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * SCIM User List Response
+ * Defines a response for a list of SCIM users.
  */
-@ApiModel(description = "SCIM User List Response")
+@ApiModel(description = "Defines a response for a list of SCIM users.")
 
 public class ScimUserListResponse  implements Serializable {
   

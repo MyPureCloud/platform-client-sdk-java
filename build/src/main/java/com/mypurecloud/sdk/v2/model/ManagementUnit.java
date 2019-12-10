@@ -6,7 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Division;
-import com.mypurecloud.sdk.v2.model.ManagementUnitSettings;
+import com.mypurecloud.sdk.v2.model.ManagementUnitSettingsResponse;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
@@ -65,7 +65,7 @@ public class ManagementUnit  implements Serializable {
   }
   private StartDayOfWeekEnum startDayOfWeek = null;
   private String timeZone = null;
-  private ManagementUnitSettings settings = null;
+  private ManagementUnitSettingsResponse settings = null;
   private WfmVersionedEntityMetadata metadata = null;
   private Integer version = null;
   private Date dateModified = null;
@@ -154,17 +154,17 @@ public class ManagementUnit  implements Serializable {
   /**
    * The configuration settings for this management unit
    **/
-  public ManagementUnit settings(ManagementUnitSettings settings) {
+  public ManagementUnit settings(ManagementUnitSettingsResponse settings) {
     this.settings = settings;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The configuration settings for this management unit")
   @JsonProperty("settings")
-  public ManagementUnitSettings getSettings() {
+  public ManagementUnitSettingsResponse getSettings() {
     return settings;
   }
-  public void setSettings(ManagementUnitSettings settings) {
+  public void setSettings(ManagementUnitSettingsResponse settings) {
     this.settings = settings;
   }
 

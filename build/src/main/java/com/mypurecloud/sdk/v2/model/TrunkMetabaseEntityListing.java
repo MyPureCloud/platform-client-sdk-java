@@ -22,8 +22,8 @@ public class TrunkMetabaseEntityListing  implements Serializable, PagedResource<
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String selfUri = null;
   private String firstUri = null;
+  private String selfUri = null;
   private String nextUri = null;
   private String lastUri = null;
   private String previousUri = null;
@@ -100,23 +100,6 @@ public class TrunkMetabaseEntityListing  implements Serializable, PagedResource<
   
   /**
    **/
-  public TrunkMetabaseEntityListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-  
-  /**
-   **/
   public TrunkMetabaseEntityListing firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
@@ -129,6 +112,23 @@ public class TrunkMetabaseEntityListing  implements Serializable, PagedResource<
   }
   public void setFirstUri(String firstUri) {
     this.firstUri = firstUri;
+  }
+
+  
+  /**
+   **/
+  public TrunkMetabaseEntityListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
   }
 
   
@@ -214,8 +214,8 @@ public class TrunkMetabaseEntityListing  implements Serializable, PagedResource<
         Objects.equals(this.pageSize, trunkMetabaseEntityListing.pageSize) &&
         Objects.equals(this.pageNumber, trunkMetabaseEntityListing.pageNumber) &&
         Objects.equals(this.total, trunkMetabaseEntityListing.total) &&
-        Objects.equals(this.selfUri, trunkMetabaseEntityListing.selfUri) &&
         Objects.equals(this.firstUri, trunkMetabaseEntityListing.firstUri) &&
+        Objects.equals(this.selfUri, trunkMetabaseEntityListing.selfUri) &&
         Objects.equals(this.nextUri, trunkMetabaseEntityListing.nextUri) &&
         Objects.equals(this.lastUri, trunkMetabaseEntityListing.lastUri) &&
         Objects.equals(this.previousUri, trunkMetabaseEntityListing.previousUri) &&
@@ -224,7 +224,7 @@ public class TrunkMetabaseEntityListing  implements Serializable, PagedResource<
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, selfUri, firstUri, nextUri, lastUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, lastUri, previousUri, pageCount);
   }
 
   @Override
@@ -236,8 +236,8 @@ public class TrunkMetabaseEntityListing  implements Serializable, PagedResource<
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");

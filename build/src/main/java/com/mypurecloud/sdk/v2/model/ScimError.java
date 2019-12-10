@@ -12,16 +12,16 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * SCIM Error
+ * Defines a SCIM error.
  */
-@ApiModel(description = "SCIM Error")
+@ApiModel(description = "Defines a SCIM error.")
 
 public class ScimError  implements Serializable {
   
   private String status = null;
 
   /**
-   * Optional SCIM Error Type when httpStatus is 400 error
+   * The type of SCIM error when httpStatus is a \"400\" error.
    */
   public enum ScimTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -66,21 +66,21 @@ public class ScimError  implements Serializable {
   private List<String> schemas = new ArrayList<String>();
 
   
-  @ApiModelProperty(example = "null", value = "HTTP Status Code")
+  @ApiModelProperty(example = "null", value = "The HTTP status code returned for the SCIM error.")
   @JsonProperty("status")
   public String getStatus() {
     return status;
   }
 
   
-  @ApiModelProperty(example = "null", value = "Optional SCIM Error Type when httpStatus is 400 error")
+  @ApiModelProperty(example = "null", value = "The type of SCIM error when httpStatus is a \"400\" error.")
   @JsonProperty("scimType")
   public ScimTypeEnum getScimType() {
     return scimType;
   }
 
   
-  @ApiModelProperty(example = "null", value = "Optional detailed error description")
+  @ApiModelProperty(example = "null", value = "The detailed description of the SCIM error.")
   @JsonProperty("detail")
   public String getDetail() {
     return detail;
@@ -88,14 +88,14 @@ public class ScimError  implements Serializable {
 
   
   /**
-   * Schemas for the SCIM Error
+   * The list of schemas for the SCIM error.
    **/
   public ScimError schemas(List<String> schemas) {
     this.schemas = schemas;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Schemas for the SCIM Error")
+  @ApiModelProperty(example = "null", value = "The list of schemas for the SCIM error.")
   @JsonProperty("schemas")
   public List<String> getSchemas() {
     return schemas;

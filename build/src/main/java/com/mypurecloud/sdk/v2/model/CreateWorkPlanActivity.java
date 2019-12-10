@@ -26,8 +26,6 @@ public class CreateWorkPlanActivity  implements Serializable {
   private Integer startTimeIncrementMinutes = null;
   private Boolean countsAsPaidTime = null;
   private Boolean countsAsContiguousWorkTime = null;
-  private Integer minimumLengthFromShiftStartMinutes = null;
-  private Integer minimumLengthFromShiftEndMinutes = null;
 
   
   /**
@@ -228,42 +226,6 @@ public class CreateWorkPlanActivity  implements Serializable {
   }
 
   
-  /**
-   * The minimum duration between shift start and shift item (e.g., break or meal) start in minutes
-   **/
-  public CreateWorkPlanActivity minimumLengthFromShiftStartMinutes(Integer minimumLengthFromShiftStartMinutes) {
-    this.minimumLengthFromShiftStartMinutes = minimumLengthFromShiftStartMinutes;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The minimum duration between shift start and shift item (e.g., break or meal) start in minutes")
-  @JsonProperty("minimumLengthFromShiftStartMinutes")
-  public Integer getMinimumLengthFromShiftStartMinutes() {
-    return minimumLengthFromShiftStartMinutes;
-  }
-  public void setMinimumLengthFromShiftStartMinutes(Integer minimumLengthFromShiftStartMinutes) {
-    this.minimumLengthFromShiftStartMinutes = minimumLengthFromShiftStartMinutes;
-  }
-
-  
-  /**
-   * The minimum duration between shift item (e.g., break or meal) end and shift end in minutes
-   **/
-  public CreateWorkPlanActivity minimumLengthFromShiftEndMinutes(Integer minimumLengthFromShiftEndMinutes) {
-    this.minimumLengthFromShiftEndMinutes = minimumLengthFromShiftEndMinutes;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The minimum duration between shift item (e.g., break or meal) end and shift end in minutes")
-  @JsonProperty("minimumLengthFromShiftEndMinutes")
-  public Integer getMinimumLengthFromShiftEndMinutes() {
-    return minimumLengthFromShiftEndMinutes;
-  }
-  public void setMinimumLengthFromShiftEndMinutes(Integer minimumLengthFromShiftEndMinutes) {
-    this.minimumLengthFromShiftEndMinutes = minimumLengthFromShiftEndMinutes;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -284,14 +246,12 @@ public class CreateWorkPlanActivity  implements Serializable {
         Objects.equals(this.exactStartTimeMinutes, createWorkPlanActivity.exactStartTimeMinutes) &&
         Objects.equals(this.startTimeIncrementMinutes, createWorkPlanActivity.startTimeIncrementMinutes) &&
         Objects.equals(this.countsAsPaidTime, createWorkPlanActivity.countsAsPaidTime) &&
-        Objects.equals(this.countsAsContiguousWorkTime, createWorkPlanActivity.countsAsContiguousWorkTime) &&
-        Objects.equals(this.minimumLengthFromShiftStartMinutes, createWorkPlanActivity.minimumLengthFromShiftStartMinutes) &&
-        Objects.equals(this.minimumLengthFromShiftEndMinutes, createWorkPlanActivity.minimumLengthFromShiftEndMinutes);
+        Objects.equals(this.countsAsContiguousWorkTime, createWorkPlanActivity.countsAsContiguousWorkTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(activityCodeId, description, lengthMinutes, startTimeIsRelativeToShiftStart, flexibleStartTime, earliestStartTimeMinutes, latestStartTimeMinutes, exactStartTimeMinutes, startTimeIncrementMinutes, countsAsPaidTime, countsAsContiguousWorkTime, minimumLengthFromShiftStartMinutes, minimumLengthFromShiftEndMinutes);
+    return Objects.hash(activityCodeId, description, lengthMinutes, startTimeIsRelativeToShiftStart, flexibleStartTime, earliestStartTimeMinutes, latestStartTimeMinutes, exactStartTimeMinutes, startTimeIncrementMinutes, countsAsPaidTime, countsAsContiguousWorkTime);
   }
 
   @Override
@@ -310,8 +270,6 @@ public class CreateWorkPlanActivity  implements Serializable {
     sb.append("    startTimeIncrementMinutes: ").append(toIndentedString(startTimeIncrementMinutes)).append("\n");
     sb.append("    countsAsPaidTime: ").append(toIndentedString(countsAsPaidTime)).append("\n");
     sb.append("    countsAsContiguousWorkTime: ").append(toIndentedString(countsAsContiguousWorkTime)).append("\n");
-    sb.append("    minimumLengthFromShiftStartMinutes: ").append(toIndentedString(minimumLengthFromShiftStartMinutes)).append("\n");
-    sb.append("    minimumLengthFromShiftEndMinutes: ").append(toIndentedString(minimumLengthFromShiftEndMinutes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

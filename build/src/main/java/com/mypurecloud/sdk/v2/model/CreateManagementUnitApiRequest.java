@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.CreateManagementUnitSettings;
+import com.mypurecloud.sdk.v2.model.CreateManagementUnitSettingsRequest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -59,7 +59,7 @@ public class CreateManagementUnitApiRequest  implements Serializable {
     }
   }
   private StartDayOfWeekEnum startDayOfWeek = null;
-  private CreateManagementUnitSettings settings = null;
+  private CreateManagementUnitSettingsRequest settings = null;
   private String divisionId = null;
 
   
@@ -120,17 +120,17 @@ public class CreateManagementUnitApiRequest  implements Serializable {
   /**
    * The configuration for the management unit.  If omitted, reasonable defaults will be assigned
    **/
-  public CreateManagementUnitApiRequest settings(CreateManagementUnitSettings settings) {
+  public CreateManagementUnitApiRequest settings(CreateManagementUnitSettingsRequest settings) {
     this.settings = settings;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The configuration for the management unit.  If omitted, reasonable defaults will be assigned")
   @JsonProperty("settings")
-  public CreateManagementUnitSettings getSettings() {
+  public CreateManagementUnitSettingsRequest getSettings() {
     return settings;
   }
-  public void setSettings(CreateManagementUnitSettings settings) {
+  public void setSettings(CreateManagementUnitSettingsRequest settings) {
     this.settings = settings;
   }
 

@@ -13,9 +13,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * SCIM version 2 Group
+ * Defines a SCIM group.
  */
-@ApiModel(description = "SCIM version 2 Group")
+@ApiModel(description = "Defines a SCIM group.")
 
 public class ScimV2Group  implements Serializable {
   
@@ -77,14 +77,14 @@ public class ScimV2Group  implements Serializable {
 
   
   /**
-   * Resource SCIM meta
+   * The metadata of the SCIM resource.
    **/
   public ScimV2Group meta(ScimMetadata meta) {
     this.meta = meta;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Resource SCIM meta")
+  @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource.")
   @JsonProperty("meta")
   public ScimMetadata getMeta() {
     return meta;

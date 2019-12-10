@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.QueueMemberEntityListing;
 import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
 import com.mypurecloud.sdk.v2.model.QueueEntityListing;
 import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
+import com.mypurecloud.sdk.v2.model.ContactCenterSettings;
 import com.mypurecloud.sdk.v2.model.RoutingSkill;
 import com.mypurecloud.sdk.v2.model.SkillEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsAddress;
@@ -80,6 +81,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesDivisionviewsAllRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSettingsContactcenterRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAddressRequest;
@@ -94,6 +96,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUserRoutinglanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUserRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUsersRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRoutingSettingsContactcenterRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguagesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutingskillsBulkRequest;
@@ -2502,6 +2505,81 @@ public class RoutingApi {
 
   
   /**
+   * Get Contact Center Settings
+   * 
+   * @return ContactCenterSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactCenterSettings getRoutingSettingsContactcenter() throws IOException, ApiException {
+    return  getRoutingSettingsContactcenter(createGetRoutingSettingsContactcenterRequest());
+  }
+
+  /**
+   * Get Contact Center Settings
+   * 
+   * @return ContactCenterSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactCenterSettings> getRoutingSettingsContactcenterWithHttpInfo() throws IOException {
+    return getRoutingSettingsContactcenter(createGetRoutingSettingsContactcenterRequest().withHttpInfo());
+  }
+
+  private GetRoutingSettingsContactcenterRequest createGetRoutingSettingsContactcenterRequest() {
+    return GetRoutingSettingsContactcenterRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get Contact Center Settings
+   * 
+   * @param request The request object
+   * @return ContactCenterSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactCenterSettings getRoutingSettingsContactcenter(GetRoutingSettingsContactcenterRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactCenterSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactCenterSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Contact Center Settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactCenterSettings> getRoutingSettingsContactcenter(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactCenterSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactCenterSettings> response = (ApiResponse<ContactCenterSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactCenterSettings> response = (ApiResponse<ContactCenterSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get Routing Skill
    * 
    * @param skillId Skill ID (required)
@@ -3702,6 +3780,82 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<QueueMemberEntityListing> response = (ApiResponse<QueueMemberEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update Contact Center Settings
+   * 
+   * @param body Contact Center Settings (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchRoutingSettingsContactcenter(ContactCenterSettings body) throws IOException, ApiException {
+     patchRoutingSettingsContactcenter(createPatchRoutingSettingsContactcenterRequest(body));
+  }
+
+  /**
+   * Update Contact Center Settings
+   * 
+   * @param body Contact Center Settings (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchRoutingSettingsContactcenterWithHttpInfo(ContactCenterSettings body) throws IOException {
+    return patchRoutingSettingsContactcenter(createPatchRoutingSettingsContactcenterRequest(body).withHttpInfo());
+  }
+
+  private PatchRoutingSettingsContactcenterRequest createPatchRoutingSettingsContactcenterRequest(ContactCenterSettings body) {
+    return PatchRoutingSettingsContactcenterRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update Contact Center Settings
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchRoutingSettingsContactcenter(PatchRoutingSettingsContactcenterRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Update Contact Center Settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchRoutingSettingsContactcenter(ApiRequest<ContactCenterSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -9,9 +9,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * \&quot;filter\&quot; configuration options.
+ * Defines a \&quot;filter\&quot; request in the SCIM service provider&#39;s configuration.
  */
-@ApiModel(description = "\"filter\" configuration options.")
+@ApiModel(description = "Defines a \"filter\" request in the SCIM service provider's configuration.")
 
 public class ScimServiceProviderConfigFilterFeature  implements Serializable {
   

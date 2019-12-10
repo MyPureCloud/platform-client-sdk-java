@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CreateWorkPlanActivity;
 import com.mypurecloud.sdk.v2.model.SetWrapperDayOfWeek;
 import io.swagger.annotations.ApiModel;
@@ -29,8 +28,6 @@ public class CreateWorkPlanShift  implements Serializable {
   private Boolean constrainStopTime = null;
   private Boolean constrainLatestStopTime = null;
   private Integer latestStopTimeMinutesFromMidnight = null;
-  private Boolean constrainEarliestStopTime = null;
-  private Integer earliestStopTimeMinutesFromMidnight = null;
   private Integer startIncrementMinutes = null;
   private Boolean flexiblePaidTime = null;
   private Integer exactPaidTimeMinutes = null;
@@ -39,78 +36,6 @@ public class CreateWorkPlanShift  implements Serializable {
   private Boolean constrainContiguousWorkTime = null;
   private Integer minimumContiguousWorkTimeMinutes = null;
   private Integer maximumContiguousWorkTimeMinutes = null;
-  private Boolean synchronizeAgentsSchedules = null;
-
-  /**
-   * This constraint ensures that an agent starts each workday within a user-defined time threshold. Used if synchronizeAgentsSchedules == true
-   */
-  public enum SynchronizationTypeEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    SHIFTSTART("ShiftStart"),
-    SHIFTSTARTANDPAIDDURATION("ShiftStartAndPaidDuration");
-
-    private String value;
-
-    SynchronizationTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static SynchronizationTypeEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (SynchronizationTypeEnum value : SynchronizationTypeEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return SynchronizationTypeEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private SynchronizationTypeEnum synchronizationType = null;
-  private Boolean constrainDayOff = null;
-
-  /**
-   * The day off rule for agents to have next day off or previous day off. used if constrainDayOff = true
-   */
-  public enum DayOffRuleEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    NEXTDAYOFF("NextDayOff"),
-    PREVIOUSDAYOFF("PreviousDayOff");
-
-    private String value;
-
-    DayOffRuleEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static DayOffRuleEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (DayOffRuleEnum value : DayOffRuleEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return DayOffRuleEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private DayOffRuleEnum dayOffRule = null;
   private List<CreateWorkPlanActivity> activities = new ArrayList<CreateWorkPlanActivity>();
 
   
@@ -277,42 +202,6 @@ public class CreateWorkPlanShift  implements Serializable {
 
   
   /**
-   * Whether the earliest stop time constraint for the shift is enabled
-   **/
-  public CreateWorkPlanShift constrainEarliestStopTime(Boolean constrainEarliestStopTime) {
-    this.constrainEarliestStopTime = constrainEarliestStopTime;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Whether the earliest stop time constraint for the shift is enabled")
-  @JsonProperty("constrainEarliestStopTime")
-  public Boolean getConstrainEarliestStopTime() {
-    return constrainEarliestStopTime;
-  }
-  public void setConstrainEarliestStopTime(Boolean constrainEarliestStopTime) {
-    this.constrainEarliestStopTime = constrainEarliestStopTime;
-  }
-
-  
-  /**
-   * This is the earliest time a shift can end
-   **/
-  public CreateWorkPlanShift earliestStopTimeMinutesFromMidnight(Integer earliestStopTimeMinutesFromMidnight) {
-    this.earliestStopTimeMinutesFromMidnight = earliestStopTimeMinutesFromMidnight;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "This is the earliest time a shift can end")
-  @JsonProperty("earliestStopTimeMinutesFromMidnight")
-  public Integer getEarliestStopTimeMinutesFromMidnight() {
-    return earliestStopTimeMinutesFromMidnight;
-  }
-  public void setEarliestStopTimeMinutesFromMidnight(Integer earliestStopTimeMinutesFromMidnight) {
-    this.earliestStopTimeMinutesFromMidnight = earliestStopTimeMinutesFromMidnight;
-  }
-
-  
-  /**
    * Increment in offset minutes that would contribute to different possible start times for the shift. Used if flexibleStartTime == true
    **/
   public CreateWorkPlanShift startIncrementMinutes(Integer startIncrementMinutes) {
@@ -457,78 +346,6 @@ public class CreateWorkPlanShift  implements Serializable {
 
   
   /**
-   * Whether synchronization for agent is enabled
-   **/
-  public CreateWorkPlanShift synchronizeAgentsSchedules(Boolean synchronizeAgentsSchedules) {
-    this.synchronizeAgentsSchedules = synchronizeAgentsSchedules;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Whether synchronization for agent is enabled")
-  @JsonProperty("synchronizeAgentsSchedules")
-  public Boolean getSynchronizeAgentsSchedules() {
-    return synchronizeAgentsSchedules;
-  }
-  public void setSynchronizeAgentsSchedules(Boolean synchronizeAgentsSchedules) {
-    this.synchronizeAgentsSchedules = synchronizeAgentsSchedules;
-  }
-
-  
-  /**
-   * This constraint ensures that an agent starts each workday within a user-defined time threshold. Used if synchronizeAgentsSchedules == true
-   **/
-  public CreateWorkPlanShift synchronizationType(SynchronizationTypeEnum synchronizationType) {
-    this.synchronizationType = synchronizationType;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "This constraint ensures that an agent starts each workday within a user-defined time threshold. Used if synchronizeAgentsSchedules == true")
-  @JsonProperty("synchronizationType")
-  public SynchronizationTypeEnum getSynchronizationType() {
-    return synchronizationType;
-  }
-  public void setSynchronizationType(SynchronizationTypeEnum synchronizationType) {
-    this.synchronizationType = synchronizationType;
-  }
-
-  
-  /**
-   * Whether day off rule is enabled
-   **/
-  public CreateWorkPlanShift constrainDayOff(Boolean constrainDayOff) {
-    this.constrainDayOff = constrainDayOff;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Whether day off rule is enabled")
-  @JsonProperty("constrainDayOff")
-  public Boolean getConstrainDayOff() {
-    return constrainDayOff;
-  }
-  public void setConstrainDayOff(Boolean constrainDayOff) {
-    this.constrainDayOff = constrainDayOff;
-  }
-
-  
-  /**
-   * The day off rule for agents to have next day off or previous day off. used if constrainDayOff = true
-   **/
-  public CreateWorkPlanShift dayOffRule(DayOffRuleEnum dayOffRule) {
-    this.dayOffRule = dayOffRule;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The day off rule for agents to have next day off or previous day off. used if constrainDayOff = true")
-  @JsonProperty("dayOffRule")
-  public DayOffRuleEnum getDayOffRule() {
-    return dayOffRule;
-  }
-  public void setDayOffRule(DayOffRuleEnum dayOffRule) {
-    this.dayOffRule = dayOffRule;
-  }
-
-  
-  /**
    * Activities configured for this shift
    **/
   public CreateWorkPlanShift activities(List<CreateWorkPlanActivity> activities) {
@@ -565,8 +382,6 @@ public class CreateWorkPlanShift  implements Serializable {
         Objects.equals(this.constrainStopTime, createWorkPlanShift.constrainStopTime) &&
         Objects.equals(this.constrainLatestStopTime, createWorkPlanShift.constrainLatestStopTime) &&
         Objects.equals(this.latestStopTimeMinutesFromMidnight, createWorkPlanShift.latestStopTimeMinutesFromMidnight) &&
-        Objects.equals(this.constrainEarliestStopTime, createWorkPlanShift.constrainEarliestStopTime) &&
-        Objects.equals(this.earliestStopTimeMinutesFromMidnight, createWorkPlanShift.earliestStopTimeMinutesFromMidnight) &&
         Objects.equals(this.startIncrementMinutes, createWorkPlanShift.startIncrementMinutes) &&
         Objects.equals(this.flexiblePaidTime, createWorkPlanShift.flexiblePaidTime) &&
         Objects.equals(this.exactPaidTimeMinutes, createWorkPlanShift.exactPaidTimeMinutes) &&
@@ -575,16 +390,12 @@ public class CreateWorkPlanShift  implements Serializable {
         Objects.equals(this.constrainContiguousWorkTime, createWorkPlanShift.constrainContiguousWorkTime) &&
         Objects.equals(this.minimumContiguousWorkTimeMinutes, createWorkPlanShift.minimumContiguousWorkTimeMinutes) &&
         Objects.equals(this.maximumContiguousWorkTimeMinutes, createWorkPlanShift.maximumContiguousWorkTimeMinutes) &&
-        Objects.equals(this.synchronizeAgentsSchedules, createWorkPlanShift.synchronizeAgentsSchedules) &&
-        Objects.equals(this.synchronizationType, createWorkPlanShift.synchronizationType) &&
-        Objects.equals(this.constrainDayOff, createWorkPlanShift.constrainDayOff) &&
-        Objects.equals(this.dayOffRule, createWorkPlanShift.dayOffRule) &&
         Objects.equals(this.activities, createWorkPlanShift.activities);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, days, flexibleStartTime, exactStartTimeMinutesFromMidnight, earliestStartTimeMinutesFromMidnight, latestStartTimeMinutesFromMidnight, constrainStopTime, constrainLatestStopTime, latestStopTimeMinutesFromMidnight, constrainEarliestStopTime, earliestStopTimeMinutesFromMidnight, startIncrementMinutes, flexiblePaidTime, exactPaidTimeMinutes, minimumPaidTimeMinutes, maximumPaidTimeMinutes, constrainContiguousWorkTime, minimumContiguousWorkTimeMinutes, maximumContiguousWorkTimeMinutes, synchronizeAgentsSchedules, synchronizationType, constrainDayOff, dayOffRule, activities);
+    return Objects.hash(name, days, flexibleStartTime, exactStartTimeMinutesFromMidnight, earliestStartTimeMinutesFromMidnight, latestStartTimeMinutesFromMidnight, constrainStopTime, constrainLatestStopTime, latestStopTimeMinutesFromMidnight, startIncrementMinutes, flexiblePaidTime, exactPaidTimeMinutes, minimumPaidTimeMinutes, maximumPaidTimeMinutes, constrainContiguousWorkTime, minimumContiguousWorkTimeMinutes, maximumContiguousWorkTimeMinutes, activities);
   }
 
   @Override
@@ -601,8 +412,6 @@ public class CreateWorkPlanShift  implements Serializable {
     sb.append("    constrainStopTime: ").append(toIndentedString(constrainStopTime)).append("\n");
     sb.append("    constrainLatestStopTime: ").append(toIndentedString(constrainLatestStopTime)).append("\n");
     sb.append("    latestStopTimeMinutesFromMidnight: ").append(toIndentedString(latestStopTimeMinutesFromMidnight)).append("\n");
-    sb.append("    constrainEarliestStopTime: ").append(toIndentedString(constrainEarliestStopTime)).append("\n");
-    sb.append("    earliestStopTimeMinutesFromMidnight: ").append(toIndentedString(earliestStopTimeMinutesFromMidnight)).append("\n");
     sb.append("    startIncrementMinutes: ").append(toIndentedString(startIncrementMinutes)).append("\n");
     sb.append("    flexiblePaidTime: ").append(toIndentedString(flexiblePaidTime)).append("\n");
     sb.append("    exactPaidTimeMinutes: ").append(toIndentedString(exactPaidTimeMinutes)).append("\n");
@@ -611,10 +420,6 @@ public class CreateWorkPlanShift  implements Serializable {
     sb.append("    constrainContiguousWorkTime: ").append(toIndentedString(constrainContiguousWorkTime)).append("\n");
     sb.append("    minimumContiguousWorkTimeMinutes: ").append(toIndentedString(minimumContiguousWorkTimeMinutes)).append("\n");
     sb.append("    maximumContiguousWorkTimeMinutes: ").append(toIndentedString(maximumContiguousWorkTimeMinutes)).append("\n");
-    sb.append("    synchronizeAgentsSchedules: ").append(toIndentedString(synchronizeAgentsSchedules)).append("\n");
-    sb.append("    synchronizationType: ").append(toIndentedString(synchronizationType)).append("\n");
-    sb.append("    constrainDayOff: ").append(toIndentedString(constrainDayOff)).append("\n");
-    sb.append("    dayOffRule: ").append(toIndentedString(dayOffRule)).append("\n");
     sb.append("    activities: ").append(toIndentedString(activities)).append("\n");
     sb.append("}");
     return sb.toString();

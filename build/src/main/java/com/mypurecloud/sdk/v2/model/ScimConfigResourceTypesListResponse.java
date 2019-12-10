@@ -12,9 +12,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * SCIM Resource Types list response
+ * Defines a response for a list of SCIM resource types.
  */
-@ApiModel(description = "SCIM Resource Types list response")
+@ApiModel(description = "Defines a response for a list of SCIM resource types.")
 
 public class ScimConfigResourceTypesListResponse  implements Serializable {
   

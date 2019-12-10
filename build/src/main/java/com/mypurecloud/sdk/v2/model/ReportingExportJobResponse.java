@@ -228,6 +228,7 @@ public class ReportingExportJobResponse  implements Serializable {
   private Boolean hasFormatDurations = null;
   private Boolean hasSplitFilters = null;
   private List<SelectedColumns> selectedColumns = new ArrayList<SelectedColumns>();
+  private Boolean hasCustomParticipantAttributes = null;
   private String selfUri = null;
 
   
@@ -561,6 +562,24 @@ public class ReportingExportJobResponse  implements Serializable {
   }
 
   
+  /**
+   * Indicates if custom participant attributes will be exported
+   **/
+  public ReportingExportJobResponse hasCustomParticipantAttributes(Boolean hasCustomParticipantAttributes) {
+    this.hasCustomParticipantAttributes = hasCustomParticipantAttributes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates if custom participant attributes will be exported")
+  @JsonProperty("hasCustomParticipantAttributes")
+  public Boolean getHasCustomParticipantAttributes() {
+    return hasCustomParticipantAttributes;
+  }
+  public void setHasCustomParticipantAttributes(Boolean hasCustomParticipantAttributes) {
+    this.hasCustomParticipantAttributes = hasCustomParticipantAttributes;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -597,12 +616,13 @@ public class ReportingExportJobResponse  implements Serializable {
         Objects.equals(this.hasFormatDurations, reportingExportJobResponse.hasFormatDurations) &&
         Objects.equals(this.hasSplitFilters, reportingExportJobResponse.hasSplitFilters) &&
         Objects.equals(this.selectedColumns, reportingExportJobResponse.selectedColumns) &&
+        Objects.equals(this.hasCustomParticipantAttributes, reportingExportJobResponse.hasCustomParticipantAttributes) &&
         Objects.equals(this.selfUri, reportingExportJobResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, hasSplitFilters, selectedColumns, selfUri);
+    return Objects.hash(id, name, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, hasSplitFilters, selectedColumns, hasCustomParticipantAttributes, selfUri);
   }
 
   @Override
@@ -629,6 +649,7 @@ public class ReportingExportJobResponse  implements Serializable {
     sb.append("    hasFormatDurations: ").append(toIndentedString(hasFormatDurations)).append("\n");
     sb.append("    hasSplitFilters: ").append(toIndentedString(hasSplitFilters)).append("\n");
     sb.append("    selectedColumns: ").append(toIndentedString(selectedColumns)).append("\n");
+    sb.append("    hasCustomParticipantAttributes: ").append(toIndentedString(hasCustomParticipantAttributes)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

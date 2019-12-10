@@ -27,6 +27,8 @@ title: DomainLogicalInterface
 | **physicalAdapterId** | <!----><!---->**String**<!----> | Physical Adapter Id |  |
 | **ifStatus** | <!----><!---->**String**<!----> |  |  [optional] |
 | **interfaceType** | [**InterfaceTypeEnum**](#InterfaceTypeEnum)<!----> | The type of this network interface. |  [optional] |
+| **publicNatAddressIpV4** | <!----><!---->**String**<!----> | IPv4 NENT IP Address |  [optional] |
+| **publicNatAddressIpV6** | <!----><!---->**String**<!----> | IPv6 NENT IP Address |  [optional] |
 | **routes** | <!----><!---->[**List&lt;DomainNetworkRoute&gt;**](DomainNetworkRoute.html)<!----> | The list of routes assigned to this interface. |  [optional] |
 | **addresses** | <!----><!---->[**List&lt;DomainNetworkAddress&gt;**](DomainNetworkAddress.html)<!----> | The list of IP addresses on this interface.  Priority of dns addresses are based on order in the list. |  [optional] |
 | **ipv4Capabilities** | <!----><!---->[**DomainCapabilities**](DomainCapabilities.html)<!----> | IPv4 interface settings. |  [optional] |
@@ -40,7 +42,6 @@ title: DomainLogicalInterface
 | **useForInternalEdgeCommunication** | <!----><!---->**Boolean**<!----> | This interface will be used for all internal edge-to-edge communication using settings from the edgeTrunkBaseAssignment on the Edge Group. |  [optional] |
 | **useForIndirectEdgeCommunication** | <!----><!---->**Boolean**<!----> | Site Interconnects using the \&quot;Indirect\&quot; method will communicate using the Public IP Address specified on the interface. Use this option when a NAT enabled firewall is between the Edge and the far end. |  [optional] |
 | **useForCloudProxyEdgeCommunication** | <!----><!---->**Boolean**<!----> | Site Interconnects using the \&quot;Cloud Proxy\&quot; method will broker the connection between them with a Cloud Proxy. This method is required for connections between one or more Sites using Cloud Media, but can optionally be used between two premises Sites if Direct or Indirect are not an option. |  [optional] |
-| **publicNatIpAddress** | <!----><!---->**String**<!----> | NENT IP Address |  [optional] |
 | **externalTrunkBaseAssignments** | <!----><!---->[**List&lt;TrunkBaseAssignment&gt;**](TrunkBaseAssignment.html)<!----> | External trunk base settings to use for external communication from this interface. |  [optional] |
 | **phoneTrunkBaseAssignments** | <!----><!---->[**List&lt;TrunkBaseAssignment&gt;**](TrunkBaseAssignment.html)<!----> | Phone trunk base settings to use for phone communication from this interface.  These settings will be ignored when \&quot;inheritPhoneTrunkBases\&quot; is true. |  [optional] |
 | **traceEnabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |

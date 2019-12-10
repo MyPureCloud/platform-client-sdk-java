@@ -105,6 +105,7 @@ public class RecordingMetadata  implements Serializable {
   private ArchiveMediumEnum archiveMedium = null;
   private Date deleteDate = null;
   private Date exportDate = null;
+  private Date exportedDate = null;
   private Integer maxAllowedRestorationsForOrg = null;
   private Integer remainingRestorationsAllowedForOrg = null;
   private String sessionId = null;
@@ -349,6 +350,24 @@ public class RecordingMetadata  implements Serializable {
 
   
   /**
+   * The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public RecordingMetadata exportedDate(Date exportedDate) {
+    this.exportedDate = exportedDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("exportedDate")
+  public Date getExportedDate() {
+    return exportedDate;
+  }
+  public void setExportedDate(Date exportedDate) {
+    this.exportedDate = exportedDate;
+  }
+
+  
+  /**
    * How many archive restorations the organization is allowed to have.
    **/
   public RecordingMetadata maxAllowedRestorationsForOrg(Integer maxAllowedRestorationsForOrg) {
@@ -433,6 +452,7 @@ public class RecordingMetadata  implements Serializable {
         Objects.equals(this.archiveMedium, recordingMetadata.archiveMedium) &&
         Objects.equals(this.deleteDate, recordingMetadata.deleteDate) &&
         Objects.equals(this.exportDate, recordingMetadata.exportDate) &&
+        Objects.equals(this.exportedDate, recordingMetadata.exportedDate) &&
         Objects.equals(this.maxAllowedRestorationsForOrg, recordingMetadata.maxAllowedRestorationsForOrg) &&
         Objects.equals(this.remainingRestorationsAllowedForOrg, recordingMetadata.remainingRestorationsAllowedForOrg) &&
         Objects.equals(this.sessionId, recordingMetadata.sessionId) &&
@@ -441,7 +461,7 @@ public class RecordingMetadata  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, annotations, fileState, restoreExpirationTime, archiveDate, archiveMedium, deleteDate, exportDate, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, selfUri);
+    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, annotations, fileState, restoreExpirationTime, archiveDate, archiveMedium, deleteDate, exportDate, exportedDate, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, selfUri);
   }
 
   @Override
@@ -463,6 +483,7 @@ public class RecordingMetadata  implements Serializable {
     sb.append("    archiveMedium: ").append(toIndentedString(archiveMedium)).append("\n");
     sb.append("    deleteDate: ").append(toIndentedString(deleteDate)).append("\n");
     sb.append("    exportDate: ").append(toIndentedString(exportDate)).append("\n");
+    sb.append("    exportedDate: ").append(toIndentedString(exportedDate)).append("\n");
     sb.append("    maxAllowedRestorationsForOrg: ").append(toIndentedString(maxAllowedRestorationsForOrg)).append("\n");
     sb.append("    remainingRestorationsAllowedForOrg: ").append(toIndentedString(remainingRestorationsAllowedForOrg)).append("\n");
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");

@@ -10,9 +10,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * SCIM V2 Photo
+ * Defines a SCIM photo.
  */
-@ApiModel(description = "SCIM V2 Photo")
+@ApiModel(description = "Defines a SCIM photo.")
 
 public class Photo  implements Serializable {
   

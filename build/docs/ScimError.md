@@ -8,10 +8,10 @@ title: ScimError
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **status** | <!----><!---->**String**<!----> | HTTP Status Code |  [optional] |
-| **scimType** | [**ScimTypeEnum**](#ScimTypeEnum)<!----> | Optional SCIM Error Type when httpStatus is 400 error |  [optional] |
-| **detail** | <!----><!---->**String**<!----> | Optional detailed error description |  [optional] |
-| **schemas** | <!----><!---->**List&lt;String&gt;**<!----> | Schemas for the SCIM Error |  [optional] |
+| **status** | <!----><!---->**String**<!----> | The HTTP status code returned for the SCIM error. |  [optional] |
+| **scimType** | [**ScimTypeEnum**](#ScimTypeEnum)<!----> | The type of SCIM error when httpStatus is a \&quot;400\&quot; error. |  [optional] |
+| **detail** | <!----><!---->**String**<!----> | The detailed description of the SCIM error. |  [optional] |
+| **schemas** | <!----><!---->**List&lt;String&gt;**<!----> | The list of schemas for the SCIM error. |  [optional] |
 {: class="table table-striped"}
 
 

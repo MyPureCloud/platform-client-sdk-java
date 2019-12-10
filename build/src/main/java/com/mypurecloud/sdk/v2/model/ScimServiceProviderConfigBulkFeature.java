@@ -9,9 +9,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Bulk configuration options.
+ * Defines a \&quot;bulk\&quot; request in the SCIM service provider&#39;s configuration.
  */
-@ApiModel(description = "Bulk configuration options.")
+@ApiModel(description = "Defines a \"bulk\" request in the SCIM service provider's configuration.")
 
 public class ScimServiceProviderConfigBulkFeature  implements Serializable {
   

@@ -9,9 +9,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Configuration options.
+ * Defines a request in the SCIM service provider&#39;s configuration.
  */
-@ApiModel(description = "Configuration options.")
+@ApiModel(description = "Defines a request in the SCIM service provider's configuration.")
 
 public class ScimServiceProviderConfigSimpleFeature  implements Serializable {
   

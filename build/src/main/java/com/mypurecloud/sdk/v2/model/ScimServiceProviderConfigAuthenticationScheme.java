@@ -10,9 +10,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Authentication schema.
+ * Defines an authentication scheme in the SCIM service provider&#39;s configuration.
  */
-@ApiModel(description = "Authentication schema.")
+@ApiModel(description = "Defines an authentication scheme in the SCIM service provider's configuration.")
 
 public class ScimServiceProviderConfigAuthenticationScheme  implements Serializable {
   

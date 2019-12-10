@@ -51,6 +51,7 @@ title: EventLog
 | DNC_LIST | &quot;DNC_LIST&quot; |
 | ENTITY_LIMIT | &quot;ENTITY_LIMIT&quot; |
 | IMPORT_ERROR | &quot;IMPORT_ERROR&quot; |
+| MESSAGING_CAMPAIGN | &quot;MESSAGING_CAMPAIGN&quot; |
 | ORGANIZATION_CONFIGURATION | &quot;ORGANIZATION_CONFIGURATION&quot; |
 | SCHEDULE | &quot;SCHEDULE&quot; |
 {: class="table table-striped"}
