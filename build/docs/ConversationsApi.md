@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsFacebookIntegrationId) | Delete a Facebook messaging integration |
 | [**deleteConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsLineIntegrationId) | Delete a LINE messenger integration |
 | [**deleteConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsTwitterIntegrationId) | Delete a Twitter messaging integration |
+| [**deleteConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsWhatsappIntegrationId) | Delete a WhatsApp messaging integration |
 | [**getAnalyticsConversationDetails**](ConversationsApi.html#getAnalyticsConversationDetails) | Get a conversation by id |
 | [**getAnalyticsConversationsDetails**](ConversationsApi.html#getAnalyticsConversationsDetails) | Gets multiple conversations by id |
 | [**getAnalyticsConversationsDetailsJob**](ConversationsApi.html#getAnalyticsConversationsDetailsJob) | Get status for async query for conversation details |
@@ -128,9 +129,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsMessageMessagesBulk**](ConversationsApi.html#postConversationsMessageMessagesBulk) | Get messages in batch |
 | [**postConversationsMessageParticipantReplace**](ConversationsApi.html#postConversationsMessageParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsMessages**](ConversationsApi.html#postConversationsMessages) | Create an outbound messaging conversation. |
+| [**postConversationsMessagesAgentless**](ConversationsApi.html#postConversationsMessagesAgentless) | Send an agentless outbound message |
 | [**postConversationsMessagingIntegrationsFacebook**](ConversationsApi.html#postConversationsMessagingIntegrationsFacebook) | Create a Facebook Integration |
 | [**postConversationsMessagingIntegrationsLine**](ConversationsApi.html#postConversationsMessagingIntegrationsLine) | Create a LINE messenger Integration |
 | [**postConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#postConversationsMessagingIntegrationsTwitter) | Create a Twitter Integration |
+| [**postConversationsMessagingIntegrationsWhatsapp**](ConversationsApi.html#postConversationsMessagingIntegrationsWhatsapp) | Create a WhatsApp Integration |
 | [**putConversationParticipantFlaggedreason**](ConversationsApi.html#putConversationParticipantFlaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality. |
 | [**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi.html#putConversationsCallParticipantCommunicationUuidata) | Set uuiData to be sent on future commands. |
 | [**putConversationsEmailMessagesDraft**](ConversationsApi.html#putConversationsEmailMessagesDraft) | Update conversation draft reply |
@@ -638,6 +641,69 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="deleteConversationsMessagingIntegrationsWhatsappIntegrationId"></a>
+
+# **deleteConversationsMessagingIntegrationsWhatsappIntegrationId**
+
+
+
+> [WhatsAppIntegration](WhatsAppIntegration.html) deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId)
+
+Delete a WhatsApp messaging integration
+
+
+
+Wraps DELETE /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}  
+
+Requires ANY permissions: 
+
+* messaging:integration:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration ID
+try {
+    WhatsAppIntegration result = apiInstance.deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#deleteConversationsMessagingIntegrationsWhatsappIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WhatsAppIntegration**](WhatsAppIntegration.html)
 
 <a name="getAnalyticsConversationDetails"></a>
 
@@ -7900,6 +7966,69 @@ try {
 
 [**MessageConversation**](MessageConversation.html)
 
+<a name="postConversationsMessagesAgentless"></a>
+
+# **postConversationsMessagesAgentless**
+
+
+
+> [SendAgentlessOutboundMessageResponse](SendAgentlessOutboundMessageResponse.html) postConversationsMessagesAgentless(body)
+
+Send an agentless outbound message
+
+Send an agentlesss (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
+
+Wraps POST /api/v2/conversations/messages/agentless  
+
+Requires ANY permissions: 
+
+* conversation:message:create
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+SendAgentlessOutboundMessageRequest body = new SendAgentlessOutboundMessageRequest(); // SendAgentlessOutboundMessageRequest | Create agentless outbound messaging request
+try {
+    SendAgentlessOutboundMessageResponse result = apiInstance.postConversationsMessagesAgentless(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessagesAgentless");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**SendAgentlessOutboundMessageRequest**](SendAgentlessOutboundMessageRequest.html)| Create agentless outbound messaging request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SendAgentlessOutboundMessageResponse**](SendAgentlessOutboundMessageResponse.html)
+
 <a name="postConversationsMessagingIntegrationsFacebook"></a>
 
 # **postConversationsMessagingIntegrationsFacebook**
@@ -8088,6 +8217,69 @@ try {
 ### Return type
 
 [**TwitterIntegration**](TwitterIntegration.html)
+
+<a name="postConversationsMessagingIntegrationsWhatsapp"></a>
+
+# **postConversationsMessagingIntegrationsWhatsapp**
+
+
+
+> [WhatsAppIntegration](WhatsAppIntegration.html) postConversationsMessagingIntegrationsWhatsapp(body)
+
+Create a WhatsApp Integration
+
+
+
+Wraps POST /api/v2/conversations/messaging/integrations/whatsapp  
+
+Requires ANY permissions: 
+
+* messaging:whatsappIntegration:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+WhatsAppIntegrationRequest body = new WhatsAppIntegrationRequest(); // WhatsAppIntegrationRequest | WhatsAppIntegrationRequest
+try {
+    WhatsAppIntegration result = apiInstance.postConversationsMessagingIntegrationsWhatsapp(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessagingIntegrationsWhatsapp");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**WhatsAppIntegrationRequest**](WhatsAppIntegrationRequest.html)| WhatsAppIntegrationRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**WhatsAppIntegration**](WhatsAppIntegration.html)
 
 <a name="putConversationParticipantFlaggedreason"></a>
 

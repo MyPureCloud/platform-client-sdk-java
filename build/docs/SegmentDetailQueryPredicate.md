@@ -101,6 +101,7 @@ title: SegmentDetailQueryPredicate
 | PURPOSE | &quot;purpose&quot; |
 | Q850RESPONSECODE | &quot;q850ResponseCode&quot; |
 | QUEUEID | &quot;queueId&quot; |
+| REMOTE | &quot;remote&quot; |
 | RECORDING | &quot;recording&quot; |
 | REMOTENAMEDISPLAYABLE | &quot;remoteNameDisplayable&quot; |
 | REQUESTEDLANGUAGEID | &quot;requestedLanguageId&quot; |

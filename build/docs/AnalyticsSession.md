@@ -58,6 +58,7 @@ title: AnalyticsSession
 | **journeyActionMapVersion** | <!----><!---->**String**<!----> | Journey action map version |  [optional] |
 | **protocolCallId** | <!----><!---->**String**<!----> | The original voice protocol call ID, e.g. a SIP call ID |  [optional] |
 | **provider** | <!----><!---->**String**<!----> | The source provider for the communication |  [optional] |
+| **remote** | <!----><!---->**String**<!----> | Name, phone number, or email address of the remote party. |  [optional] |
 {: class="table table-striped"}
 
 

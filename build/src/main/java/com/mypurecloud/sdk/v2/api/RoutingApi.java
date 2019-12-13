@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
 import com.mypurecloud.sdk.v2.model.QueueEntityListing;
 import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactCenterSettings;
+import com.mypurecloud.sdk.v2.model.TranscriptionSettings;
 import com.mypurecloud.sdk.v2.model.RoutingSkill;
 import com.mypurecloud.sdk.v2.model.SkillEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsAddress;
@@ -82,6 +83,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesDivisionviewsAllRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSettingsContactcenterRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSettingsTranscriptionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAddressRequest;
@@ -116,6 +118,7 @@ import com.mypurecloud.sdk.v2.api.request.PostUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingEmailDomainRouteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingMessageRecipientRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingQueueRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingSettingsTranscriptionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingWrapupcodeRequest;
@@ -2574,6 +2577,81 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ContactCenterSettings> response = (ApiResponse<ContactCenterSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get Transcription Settings
+   * 
+   * @return TranscriptionSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TranscriptionSettings getRoutingSettingsTranscription() throws IOException, ApiException {
+    return  getRoutingSettingsTranscription(createGetRoutingSettingsTranscriptionRequest());
+  }
+
+  /**
+   * Get Transcription Settings
+   * 
+   * @return TranscriptionSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TranscriptionSettings> getRoutingSettingsTranscriptionWithHttpInfo() throws IOException {
+    return getRoutingSettingsTranscription(createGetRoutingSettingsTranscriptionRequest().withHttpInfo());
+  }
+
+  private GetRoutingSettingsTranscriptionRequest createGetRoutingSettingsTranscriptionRequest() {
+    return GetRoutingSettingsTranscriptionRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get Transcription Settings
+   * 
+   * @param request The request object
+   * @return TranscriptionSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TranscriptionSettings getRoutingSettingsTranscription(GetRoutingSettingsTranscriptionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TranscriptionSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TranscriptionSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Transcription Settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TranscriptionSettings> getRoutingSettingsTranscription(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TranscriptionSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TranscriptionSettings> response = (ApiResponse<TranscriptionSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TranscriptionSettings> response = (ApiResponse<TranscriptionSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5413,6 +5491,85 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Queue> response = (ApiResponse<Queue>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update Transcription Settings
+   * 
+   * @param body Organization Settings (required)
+   * @return TranscriptionSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TranscriptionSettings putRoutingSettingsTranscription(TranscriptionSettings body) throws IOException, ApiException {
+    return  putRoutingSettingsTranscription(createPutRoutingSettingsTranscriptionRequest(body));
+  }
+
+  /**
+   * Update Transcription Settings
+   * 
+   * @param body Organization Settings (required)
+   * @return TranscriptionSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TranscriptionSettings> putRoutingSettingsTranscriptionWithHttpInfo(TranscriptionSettings body) throws IOException {
+    return putRoutingSettingsTranscription(createPutRoutingSettingsTranscriptionRequest(body).withHttpInfo());
+  }
+
+  private PutRoutingSettingsTranscriptionRequest createPutRoutingSettingsTranscriptionRequest(TranscriptionSettings body) {
+    return PutRoutingSettingsTranscriptionRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update Transcription Settings
+   * 
+   * @param request The request object
+   * @return TranscriptionSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TranscriptionSettings putRoutingSettingsTranscription(PutRoutingSettingsTranscriptionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TranscriptionSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TranscriptionSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update Transcription Settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TranscriptionSettings> putRoutingSettingsTranscription(ApiRequest<TranscriptionSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TranscriptionSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TranscriptionSettings> response = (ApiResponse<TranscriptionSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TranscriptionSettings> response = (ApiResponse<TranscriptionSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

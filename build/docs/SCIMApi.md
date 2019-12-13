@@ -7,7 +7,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteScimGroup**](SCIMApi.html#deleteScimGroup) | Delete a group. |
 | [**deleteScimUser**](SCIMApi.html#deleteScimUser) | Delete a user |
+| [**deleteScimV2Group**](SCIMApi.html#deleteScimV2Group) | Delete a group. |
 | [**deleteScimV2User**](SCIMApi.html#deleteScimV2User) | Delete a user |
 | [**getScimGroup**](SCIMApi.html#getScimGroup) | Get a group |
 | [**getScimGroups**](SCIMApi.html#getScimGroups) | Get a list of groups |
@@ -27,13 +29,79 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchScimUser**](SCIMApi.html#patchScimUser) | Modify a user |
 | [**patchScimV2Group**](SCIMApi.html#patchScimV2Group) | Modify a group |
 | [**patchScimV2User**](SCIMApi.html#patchScimV2User) | Modify a user |
+| [**postScimGroups**](SCIMApi.html#postScimGroups) | The information used to create a group. |
 | [**postScimUsers**](SCIMApi.html#postScimUsers) | Create a user |
+| [**postScimV2Groups**](SCIMApi.html#postScimV2Groups) | The information used to create a group. |
 | [**postScimV2Users**](SCIMApi.html#postScimV2Users) | Create a user |
 | [**putScimGroup**](SCIMApi.html#putScimGroup) | Replace a group |
 | [**putScimUser**](SCIMApi.html#putScimUser) | Replace a user |
 | [**putScimV2Group**](SCIMApi.html#putScimV2Group) | Replace a group |
 | [**putScimV2User**](SCIMApi.html#putScimV2User) | Replace a user |
 {: class="table-striped"}
+
+<a name="deleteScimGroup"></a>
+
+# **deleteScimGroup**
+
+
+
+> Void deleteScimGroup(groupId, ifMatch)
+
+Delete a group.
+
+
+
+Wraps DELETE /api/v2/scim/groups/{groupId}  
+
+Requires ANY permissions: 
+
+* directory:group:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SCIMApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SCIMApi apiInstance = new SCIMApi();
+String groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/v2/groups.
+String ifMatch = "ifMatch_example"; // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a \"scimType\" of \"invalidVers\".
+try {
+    apiInstance.deleteScimGroup(groupId, ifMatch);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SCIMApi#deleteScimGroup");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **groupId** | **String**| The ID of a group. Returned with GET /api/v2/scim/v2/groups. | 
+| **ifMatch** | **String**| The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="deleteScimUser"></a>
 
@@ -99,6 +167,70 @@ try {
 ### Return type
 
 [**Empty**](Empty.html)
+
+<a name="deleteScimV2Group"></a>
+
+# **deleteScimV2Group**
+
+
+
+> Void deleteScimV2Group(groupId, ifMatch)
+
+Delete a group.
+
+
+
+Wraps DELETE /api/v2/scim/v2/groups/{groupId}  
+
+Requires ANY permissions: 
+
+* directory:group:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SCIMApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SCIMApi apiInstance = new SCIMApi();
+String groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/v2/groups.
+String ifMatch = "ifMatch_example"; // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a \"scimType\" of \"invalidVers\".
+try {
+    apiInstance.deleteScimV2Group(groupId, ifMatch);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SCIMApi#deleteScimV2Group");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **groupId** | **String**| The ID of a group. Returned with GET /api/v2/scim/v2/groups. | 
+| **ifMatch** | **String**| The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="deleteScimV2User"></a>
 
@@ -1261,6 +1393,69 @@ try {
 
 [**ScimV2User**](ScimV2User.html)
 
+<a name="postScimGroups"></a>
+
+# **postScimGroups**
+
+
+
+> [ScimV2Group](ScimV2Group.html) postScimGroups(body)
+
+The information used to create a group.
+
+PureCloud group will be created as \&quot;Official\&quot; group with visibility set \&quot;Public\&quot;, and rules visibility True. Will auto-create an external ID if one is not provided on create. External ID is used to determine if delete should be allowed.
+
+Wraps POST /api/v2/scim/groups  
+
+Requires ANY permissions: 
+
+* directory:group:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SCIMApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SCIMApi apiInstance = new SCIMApi();
+ScimV2Group body = new ScimV2Group(); // ScimV2Group | The information used to create a group.
+try {
+    ScimV2Group result = apiInstance.postScimGroups(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SCIMApi#postScimGroups");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ScimV2Group**](ScimV2Group.html)| The information used to create a group. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ScimV2Group**](ScimV2Group.html)
+
 <a name="postScimUsers"></a>
 
 # **postScimUsers**
@@ -1323,6 +1518,69 @@ try {
 ### Return type
 
 [**ScimV2User**](ScimV2User.html)
+
+<a name="postScimV2Groups"></a>
+
+# **postScimV2Groups**
+
+
+
+> [ScimV2Group](ScimV2Group.html) postScimV2Groups(body)
+
+The information used to create a group.
+
+PureCloud group will be created as \&quot;Official\&quot; group with visibility set \&quot;Public\&quot;, and rules visibility True. Will auto-create an external ID if one is not provided on create. External ID is used to determine if delete should be allowed.
+
+Wraps POST /api/v2/scim/v2/groups  
+
+Requires ANY permissions: 
+
+* directory:group:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SCIMApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SCIMApi apiInstance = new SCIMApi();
+ScimV2Group body = new ScimV2Group(); // ScimV2Group | The information used to create a group.
+try {
+    ScimV2Group result = apiInstance.postScimV2Groups(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SCIMApi#postScimV2Groups");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ScimV2Group**](ScimV2Group.html)| The information used to create a group. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ScimV2Group**](ScimV2Group.html)
 
 <a name="postScimV2Users"></a>
 

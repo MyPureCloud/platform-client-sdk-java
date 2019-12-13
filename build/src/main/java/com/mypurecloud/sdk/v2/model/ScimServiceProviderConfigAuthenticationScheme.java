@@ -96,7 +96,7 @@ public class ScimServiceProviderConfigAuthenticationScheme  implements Serializa
   }
 
   
-  @ApiModelProperty(example = "null", value = "Indicates the primary method of authentication.")
+  @ApiModelProperty(example = "null", value = "Indicates whether this authentication scheme is the primary method of authentication.")
   @JsonProperty("primary")
   public Boolean getPrimary() {
     return primary;

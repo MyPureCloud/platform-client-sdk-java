@@ -57,6 +57,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementTimeoffrequest) | Update a time off request for the current user |
 | [**postWorkforcemanagementAdherenceHistorical**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceHistorical) | Request a historical adherence report for users across management units |
 | [**postWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitActivitycodes) | Create a new activity code |
+| [**postWorkforcemanagementManagementunitAgentschedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitAgentschedulesSearch) | Query published schedules for given given time range for set of users |
 | [**postWorkforcemanagementManagementunitHistoricaladherencequery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitHistoricaladherencequery) | Request a historical adherence report |
 | [**postWorkforcemanagementManagementunitIntraday**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitIntraday) | Get intraday data for the given date for the requested queueIds |
 | [**postWorkforcemanagementManagementunitMove**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitMove) | Move the requested management unit to a new business unit |
@@ -1143,7 +1144,7 @@ Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/schedul
 
 Requires ANY permissions: 
 
-* wfm:schedule:generate
+* wfm:schedule:edit
 
 ### Example
 
@@ -2849,7 +2850,7 @@ Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/sched
 
 Requires ANY permissions: 
 
-* wfm:schedule:generate
+* wfm:schedule:edit
 
 ### Example
 
@@ -3433,6 +3434,72 @@ try {
 ### Return type
 
 [**ActivityCode**](ActivityCode.html)
+
+<a name="postWorkforcemanagementManagementunitAgentschedulesSearch"></a>
+
+# **postWorkforcemanagementManagementunitAgentschedulesSearch**
+
+
+
+> [UserScheduleContainer](UserScheduleContainer.html) postWorkforcemanagementManagementunitAgentschedulesSearch(muId, body)
+
+Query published schedules for given given time range for set of users
+
+
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/agentschedules/search  
+
+Requires ANY permissions: 
+
+* wfm:publishedSchedule:view
+* wfm:schedule:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+BuSearchAgentSchedulesRequest body = new BuSearchAgentSchedulesRequest(); // BuSearchAgentSchedulesRequest | body
+try {
+    UserScheduleContainer result = apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(muId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitAgentschedulesSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest.html)| body | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserScheduleContainer**](UserScheduleContainer.html)
 
 <a name="postWorkforcemanagementManagementunitHistoricaladherencequery"></a>
 
@@ -4044,7 +4111,7 @@ Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/
 
 Requires ANY permissions: 
 
-* wfm:schedule:edit
+* wfm:schedule:generate
 
 ### Example
 

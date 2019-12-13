@@ -169,6 +169,7 @@ public class ShiftTradeSettings  implements Serializable {
   private Boolean requiresMatchingQueues = null;
   private Boolean requiresMatchingLanguages = null;
   private Boolean requiresMatchingSkills = null;
+  private Boolean requiresMatchingPlanningGroups = null;
   private List<ShiftTradeActivityRule> activityCategoryRules = new ArrayList<ShiftTradeActivityRule>();
 
   
@@ -371,6 +372,24 @@ public class ShiftTradeSettings  implements Serializable {
 
   
   /**
+   * Whether to constrain shift trades to agents with matching planning groups
+   **/
+  public ShiftTradeSettings requiresMatchingPlanningGroups(Boolean requiresMatchingPlanningGroups) {
+    this.requiresMatchingPlanningGroups = requiresMatchingPlanningGroups;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether to constrain shift trades to agents with matching planning groups")
+  @JsonProperty("requiresMatchingPlanningGroups")
+  public Boolean getRequiresMatchingPlanningGroups() {
+    return requiresMatchingPlanningGroups;
+  }
+  public void setRequiresMatchingPlanningGroups(Boolean requiresMatchingPlanningGroups) {
+    this.requiresMatchingPlanningGroups = requiresMatchingPlanningGroups;
+  }
+
+  
+  /**
    * Rules that specify what to do with activity categories that are part of a shift defined in a trade
    **/
   public ShiftTradeSettings activityCategoryRules(List<ShiftTradeActivityRule> activityCategoryRules) {
@@ -409,12 +428,13 @@ public class ShiftTradeSettings  implements Serializable {
         Objects.equals(this.requiresMatchingQueues, shiftTradeSettings.requiresMatchingQueues) &&
         Objects.equals(this.requiresMatchingLanguages, shiftTradeSettings.requiresMatchingLanguages) &&
         Objects.equals(this.requiresMatchingSkills, shiftTradeSettings.requiresMatchingSkills) &&
+        Objects.equals(this.requiresMatchingPlanningGroups, shiftTradeSettings.requiresMatchingPlanningGroups) &&
         Objects.equals(this.activityCategoryRules, shiftTradeSettings.activityCategoryRules);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, autoReview, allowDirectTrades, minHoursInFuture, unequalPaid, oneSided, weeklyMinPaidViolations, weeklyMaxPaidViolations, requiresMatchingQueues, requiresMatchingLanguages, requiresMatchingSkills, activityCategoryRules);
+    return Objects.hash(enabled, autoReview, allowDirectTrades, minHoursInFuture, unequalPaid, oneSided, weeklyMinPaidViolations, weeklyMaxPaidViolations, requiresMatchingQueues, requiresMatchingLanguages, requiresMatchingSkills, requiresMatchingPlanningGroups, activityCategoryRules);
   }
 
   @Override
@@ -433,6 +453,7 @@ public class ShiftTradeSettings  implements Serializable {
     sb.append("    requiresMatchingQueues: ").append(toIndentedString(requiresMatchingQueues)).append("\n");
     sb.append("    requiresMatchingLanguages: ").append(toIndentedString(requiresMatchingLanguages)).append("\n");
     sb.append("    requiresMatchingSkills: ").append(toIndentedString(requiresMatchingSkills)).append("\n");
+    sb.append("    requiresMatchingPlanningGroups: ").append(toIndentedString(requiresMatchingPlanningGroups)).append("\n");
     sb.append("    activityCategoryRules: ").append(toIndentedString(activityCategoryRules)).append("\n");
     sb.append("}");
     return sb.toString();

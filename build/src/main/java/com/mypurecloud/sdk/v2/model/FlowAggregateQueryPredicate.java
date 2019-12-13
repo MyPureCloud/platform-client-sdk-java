@@ -104,6 +104,7 @@ public class FlowAggregateQueryPredicate  implements Serializable {
     PROVIDER("provider"),
     PURPOSE("purpose"),
     QUEUEID("queueId"),
+    REMOTE("remote"),
     REQUESTEDLANGUAGEID("requestedLanguageId"),
     REQUESTEDROUTINGSKILLID("requestedRoutingSkillId"),
     ROOMID("roomId"),

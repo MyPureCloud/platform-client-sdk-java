@@ -4,34 +4,52 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.ManagementUnitReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * WorkPlanReference
+ * Work plan information
  */
+@ApiModel(description = "Work plan information")
 
 public class WorkPlanReference  implements Serializable {
   
   private String id = null;
+  private ManagementUnitReference managementUnit = null;
+  private String selfUri = null;
 
   
-  /**
-   * The ID of the work plan
-   **/
-  public WorkPlanReference id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "The ID of the work plan")
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")
   public String getId() {
     return id;
   }
-  public void setId(String id) {
-    this.id = id;
+
+  
+  /**
+   * The management unit to which this work plan belongs.  Nullable in some routes
+   **/
+  public WorkPlanReference managementUnit(ManagementUnitReference managementUnit) {
+    this.managementUnit = managementUnit;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The management unit to which this work plan belongs.  Nullable in some routes")
+  @JsonProperty("managementUnit")
+  public ManagementUnitReference getManagementUnit() {
+    return managementUnit;
+  }
+  public void setManagementUnit(ManagementUnitReference managementUnit) {
+    this.managementUnit = managementUnit;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "The URI for this object")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
   }
 
   
@@ -45,12 +63,14 @@ public class WorkPlanReference  implements Serializable {
       return false;
     }
     WorkPlanReference workPlanReference = (WorkPlanReference) o;
-    return Objects.equals(this.id, workPlanReference.id);
+    return Objects.equals(this.id, workPlanReference.id) &&
+        Objects.equals(this.managementUnit, workPlanReference.managementUnit) &&
+        Objects.equals(this.selfUri, workPlanReference.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id);
+    return Objects.hash(id, managementUnit, selfUri);
   }
 
   @Override
@@ -59,6 +79,8 @@ public class WorkPlanReference  implements Serializable {
     sb.append("class WorkPlanReference {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    managementUnit: ").append(toIndentedString(managementUnit)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

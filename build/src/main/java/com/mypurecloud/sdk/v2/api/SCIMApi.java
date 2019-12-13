@@ -11,8 +11,8 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ScimError;
-import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ScimV2Group;
 import com.mypurecloud.sdk.v2.model.ScimGroupListResponse;
 import com.mypurecloud.sdk.v2.model.ScimConfigResourceType;
@@ -24,7 +24,9 @@ import com.mypurecloud.sdk.v2.model.ScimV2PatchRequest;
 import com.mypurecloud.sdk.v2.model.ScimV2CreateUser;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteScimGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteScimUserRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteScimV2GroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteScimV2UserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimGroupsRequest;
@@ -44,7 +46,9 @@ import com.mypurecloud.sdk.v2.api.request.PatchScimGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchScimUserRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchScimV2GroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchScimV2UserRequest;
+import com.mypurecloud.sdk.v2.api.request.PostScimGroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostScimUsersRequest;
+import com.mypurecloud.sdk.v2.api.request.PostScimV2GroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostScimV2UsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PutScimGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PutScimUserRequest;
@@ -67,6 +71,86 @@ public class SCIMApi {
 
   public SCIMApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Delete a group.
+   * 
+   * @param groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteScimGroup(String groupId, String ifMatch) throws IOException, ApiException {
+     deleteScimGroup(createDeleteScimGroupRequest(groupId, ifMatch));
+  }
+
+  /**
+   * Delete a group.
+   * 
+   * @param groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteScimGroupWithHttpInfo(String groupId, String ifMatch) throws IOException {
+    return deleteScimGroup(createDeleteScimGroupRequest(groupId, ifMatch).withHttpInfo());
+  }
+
+  private DeleteScimGroupRequest createDeleteScimGroupRequest(String groupId, String ifMatch) {
+    return DeleteScimGroupRequest.builder()
+            .withGroupId(groupId)
+    
+            .withIfMatch(ifMatch)
+    
+            .build();
+  }
+
+  /**
+   * Delete a group.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteScimGroup(DeleteScimGroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a group.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteScimGroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   
@@ -148,6 +232,86 @@ public class SCIMApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete a group.
+   * 
+   * @param groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteScimV2Group(String groupId, String ifMatch) throws IOException, ApiException {
+     deleteScimV2Group(createDeleteScimV2GroupRequest(groupId, ifMatch));
+  }
+
+  /**
+   * Delete a group.
+   * 
+   * @param groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
+   * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteScimV2GroupWithHttpInfo(String groupId, String ifMatch) throws IOException {
+    return deleteScimV2Group(createDeleteScimV2GroupRequest(groupId, ifMatch).withHttpInfo());
+  }
+
+  private DeleteScimV2GroupRequest createDeleteScimV2GroupRequest(String groupId, String ifMatch) {
+    return DeleteScimV2GroupRequest.builder()
+            .withGroupId(groupId)
+    
+            .withIfMatch(ifMatch)
+    
+            .build();
+  }
+
+  /**
+   * Delete a group.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteScimV2Group(DeleteScimV2GroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a group.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteScimV2Group(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1763,6 +1927,85 @@ public class SCIMApi {
 
   
   /**
+   * The information used to create a group.
+   * PureCloud group will be created as \&quot;Official\&quot; group with visibility set \&quot;Public\&quot;, and rules visibility True. Will auto-create an external ID if one is not provided on create. External ID is used to determine if delete should be allowed.
+   * @param body The information used to create a group. (required)
+   * @return ScimV2Group
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScimV2Group postScimGroups(ScimV2Group body) throws IOException, ApiException {
+    return  postScimGroups(createPostScimGroupsRequest(body));
+  }
+
+  /**
+   * The information used to create a group.
+   * PureCloud group will be created as \&quot;Official\&quot; group with visibility set \&quot;Public\&quot;, and rules visibility True. Will auto-create an external ID if one is not provided on create. External ID is used to determine if delete should be allowed.
+   * @param body The information used to create a group. (required)
+   * @return ScimV2Group
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScimV2Group> postScimGroupsWithHttpInfo(ScimV2Group body) throws IOException {
+    return postScimGroups(createPostScimGroupsRequest(body).withHttpInfo());
+  }
+
+  private PostScimGroupsRequest createPostScimGroupsRequest(ScimV2Group body) {
+    return PostScimGroupsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * The information used to create a group.
+   * PureCloud group will be created as \&quot;Official\&quot; group with visibility set \&quot;Public\&quot;, and rules visibility True. Will auto-create an external ID if one is not provided on create. External ID is used to determine if delete should be allowed.
+   * @param request The request object
+   * @return ScimV2Group
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScimV2Group postScimGroups(PostScimGroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScimV2Group> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScimV2Group>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * The information used to create a group.
+   * PureCloud group will be created as \&quot;Official\&quot; group with visibility set \&quot;Public\&quot;, and rules visibility True. Will auto-create an external ID if one is not provided on create. External ID is used to determine if delete should be allowed.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScimV2Group> postScimGroups(ApiRequest<ScimV2Group> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScimV2Group>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScimV2Group> response = (ApiResponse<ScimV2Group>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScimV2Group> response = (ApiResponse<ScimV2Group>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Create a user
    * 
    * @param body The information used to create a user. (required)
@@ -1836,6 +2079,85 @@ public class SCIMApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ScimV2User> response = (ApiResponse<ScimV2User>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * The information used to create a group.
+   * PureCloud group will be created as \&quot;Official\&quot; group with visibility set \&quot;Public\&quot;, and rules visibility True. Will auto-create an external ID if one is not provided on create. External ID is used to determine if delete should be allowed.
+   * @param body The information used to create a group. (required)
+   * @return ScimV2Group
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScimV2Group postScimV2Groups(ScimV2Group body) throws IOException, ApiException {
+    return  postScimV2Groups(createPostScimV2GroupsRequest(body));
+  }
+
+  /**
+   * The information used to create a group.
+   * PureCloud group will be created as \&quot;Official\&quot; group with visibility set \&quot;Public\&quot;, and rules visibility True. Will auto-create an external ID if one is not provided on create. External ID is used to determine if delete should be allowed.
+   * @param body The information used to create a group. (required)
+   * @return ScimV2Group
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScimV2Group> postScimV2GroupsWithHttpInfo(ScimV2Group body) throws IOException {
+    return postScimV2Groups(createPostScimV2GroupsRequest(body).withHttpInfo());
+  }
+
+  private PostScimV2GroupsRequest createPostScimV2GroupsRequest(ScimV2Group body) {
+    return PostScimV2GroupsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * The information used to create a group.
+   * PureCloud group will be created as \&quot;Official\&quot; group with visibility set \&quot;Public\&quot;, and rules visibility True. Will auto-create an external ID if one is not provided on create. External ID is used to determine if delete should be allowed.
+   * @param request The request object
+   * @return ScimV2Group
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScimV2Group postScimV2Groups(PostScimV2GroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScimV2Group> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScimV2Group>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * The information used to create a group.
+   * PureCloud group will be created as \&quot;Official\&quot; group with visibility set \&quot;Public\&quot;, and rules visibility True. Will auto-create an external ID if one is not provided on create. External ID is used to determine if delete should be allowed.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScimV2Group> postScimV2Groups(ApiRequest<ScimV2Group> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScimV2Group>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScimV2Group> response = (ApiResponse<ScimV2Group>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScimV2Group> response = (ApiResponse<ScimV2Group>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

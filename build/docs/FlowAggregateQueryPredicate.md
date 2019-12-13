@@ -82,6 +82,7 @@ title: FlowAggregateQueryPredicate
 | PROVIDER | &quot;provider&quot; |
 | PURPOSE | &quot;purpose&quot; |
 | QUEUEID | &quot;queueId&quot; |
+| REMOTE | &quot;remote&quot; |
 | REQUESTEDLANGUAGEID | &quot;requestedLanguageId&quot; |
 | REQUESTEDROUTINGSKILLID | &quot;requestedRoutingSkillId&quot; |
 | ROOMID | &quot;roomId&quot; |

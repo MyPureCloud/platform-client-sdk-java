@@ -120,6 +120,7 @@ public class SegmentDetailQueryPredicate  implements Serializable {
     PURPOSE("purpose"),
     Q850RESPONSECODE("q850ResponseCode"),
     QUEUEID("queueId"),
+    REMOTE("remote"),
     RECORDING("recording"),
     REMOTENAMEDISPLAYABLE("remoteNameDisplayable"),
     REQUESTEDLANGUAGEID("requestedLanguageId"),

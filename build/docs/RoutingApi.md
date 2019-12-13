@@ -36,6 +36,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingQueuesDivisionviewsAll**](RoutingApi.html#getRoutingQueuesDivisionviewsAll) | Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization. |
 | [**getRoutingQueuesMe**](RoutingApi.html#getRoutingQueuesMe) | Get a paged listing of queues the user is a member of. |
 | [**getRoutingSettingsContactcenter**](RoutingApi.html#getRoutingSettingsContactcenter) | Get Contact Center Settings |
+| [**getRoutingSettingsTranscription**](RoutingApi.html#getRoutingSettingsTranscription) | Get Transcription Settings |
 | [**getRoutingSkill**](RoutingApi.html#getRoutingSkill) | Get Routing Skill |
 | [**getRoutingSkills**](RoutingApi.html#getRoutingSkills) | Get the list of routing skills. |
 | [**getRoutingSmsAddress**](RoutingApi.html#getRoutingSmsAddress) | Get an Address by Id for SMS |
@@ -70,6 +71,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putRoutingEmailDomainRoute**](RoutingApi.html#putRoutingEmailDomainRoute) | Update a route |
 | [**putRoutingMessageRecipient**](RoutingApi.html#putRoutingMessageRecipient) | Update a recipient |
 | [**putRoutingQueue**](RoutingApi.html#putRoutingQueue) | Update a queue |
+| [**putRoutingSettingsTranscription**](RoutingApi.html#putRoutingSettingsTranscription) | Update Transcription Settings |
 | [**putRoutingSmsPhonenumber**](RoutingApi.html#putRoutingSmsPhonenumber) | Update a phone number provisioned for SMS. |
 | [**putRoutingUtilization**](RoutingApi.html#putRoutingUtilization) | Update the utilization settings. |
 | [**putRoutingWrapupcode**](RoutingApi.html#putRoutingWrapupcode) | Update wrap-up code |
@@ -1972,6 +1974,65 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**ContactCenterSettings**](ContactCenterSettings.html)
+
+<a name="getRoutingSettingsTranscription"></a>
+
+# **getRoutingSettingsTranscription**
+
+
+
+> [TranscriptionSettings](TranscriptionSettings.html) getRoutingSettingsTranscription()
+
+Get Transcription Settings
+
+
+
+Wraps GET /api/v2/routing/settings/transcription  
+
+Requires ANY permissions: 
+
+* routing:transcriptionSettings:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+try {
+    TranscriptionSettings result = apiInstance.getRoutingSettingsTranscription();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingSettingsTranscription");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**TranscriptionSettings**](TranscriptionSettings.html)
 
 <a name="getRoutingSkill"></a>
 
@@ -4189,6 +4250,69 @@ try {
 ### Return type
 
 [**Queue**](Queue.html)
+
+<a name="putRoutingSettingsTranscription"></a>
+
+# **putRoutingSettingsTranscription**
+
+
+
+> [TranscriptionSettings](TranscriptionSettings.html) putRoutingSettingsTranscription(body)
+
+Update Transcription Settings
+
+
+
+Wraps PUT /api/v2/routing/settings/transcription  
+
+Requires ANY permissions: 
+
+* routing:transcriptionSettings:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+TranscriptionSettings body = new TranscriptionSettings(); // TranscriptionSettings | Organization Settings
+try {
+    TranscriptionSettings result = apiInstance.putRoutingSettingsTranscription(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#putRoutingSettingsTranscription");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**TranscriptionSettings**](TranscriptionSettings.html)| Organization Settings | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TranscriptionSettings**](TranscriptionSettings.html)
 
 <a name="putRoutingSmsPhonenumber"></a>
 

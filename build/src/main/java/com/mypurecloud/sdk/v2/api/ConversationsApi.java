@@ -11,6 +11,7 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.WhatsAppIntegration;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversation;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationMultiGetResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
@@ -49,7 +50,6 @@ import com.mypurecloud.sdk.v2.model.LineIntegration;
 import com.mypurecloud.sdk.v2.model.TwitterIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.TwitterIntegration;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationEntityListing;
-import com.mypurecloud.sdk.v2.model.WhatsAppIntegration;
 import com.mypurecloud.sdk.v2.model.MessagingStickerEntityListing;
 import com.mypurecloud.sdk.v2.model.MediaParticipantRequest;
 import com.mypurecloud.sdk.v2.model.ParticipantAttributes;
@@ -84,9 +84,12 @@ import com.mypurecloud.sdk.v2.model.FaxSendRequest;
 import com.mypurecloud.sdk.v2.model.AdditionalMessage;
 import com.mypurecloud.sdk.v2.model.TextMessageListing;
 import com.mypurecloud.sdk.v2.model.CreateOutboundMessagingConversationRequest;
+import com.mypurecloud.sdk.v2.model.SendAgentlessOutboundMessageRequest;
+import com.mypurecloud.sdk.v2.model.SendAgentlessOutboundMessageResponse;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.LineIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
 
 
@@ -98,6 +101,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteConversationsEmailMessagesDraftA
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsLineIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobRequest;
@@ -211,9 +215,11 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageCommunicationM
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageMessagesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesAgentlessRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsLineRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsTwitterRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsWhatsappRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationParticipantFlaggedreasonRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsCallParticipantCommunicationUuidataRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailMessagesDraftRequest;
@@ -861,6 +867,85 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete a WhatsApp messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @return WhatsAppIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WhatsAppIntegration deleteConversationsMessagingIntegrationsWhatsappIntegrationId(String integrationId) throws IOException, ApiException {
+    return  deleteConversationsMessagingIntegrationsWhatsappIntegrationId(createDeleteConversationsMessagingIntegrationsWhatsappIntegrationIdRequest(integrationId));
+  }
+
+  /**
+   * Delete a WhatsApp messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @return WhatsAppIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WhatsAppIntegration> deleteConversationsMessagingIntegrationsWhatsappIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+    return deleteConversationsMessagingIntegrationsWhatsappIntegrationId(createDeleteConversationsMessagingIntegrationsWhatsappIntegrationIdRequest(integrationId).withHttpInfo());
+  }
+
+  private DeleteConversationsMessagingIntegrationsWhatsappIntegrationIdRequest createDeleteConversationsMessagingIntegrationsWhatsappIntegrationIdRequest(String integrationId) {
+    return DeleteConversationsMessagingIntegrationsWhatsappIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a WhatsApp messaging integration
+   * 
+   * @param request The request object
+   * @return WhatsAppIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WhatsAppIntegration deleteConversationsMessagingIntegrationsWhatsappIntegrationId(DeleteConversationsMessagingIntegrationsWhatsappIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WhatsAppIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WhatsAppIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Delete a WhatsApp messaging integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WhatsAppIntegration> deleteConversationsMessagingIntegrationsWhatsappIntegrationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WhatsAppIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WhatsAppIntegration> response = (ApiResponse<WhatsAppIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WhatsAppIntegration> response = (ApiResponse<WhatsAppIntegration>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -10230,6 +10315,85 @@ public class ConversationsApi {
 
   
   /**
+   * Send an agentless outbound message
+   * Send an agentlesss (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
+   * @param body Create agentless outbound messaging request (required)
+   * @return SendAgentlessOutboundMessageResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SendAgentlessOutboundMessageResponse postConversationsMessagesAgentless(SendAgentlessOutboundMessageRequest body) throws IOException, ApiException {
+    return  postConversationsMessagesAgentless(createPostConversationsMessagesAgentlessRequest(body));
+  }
+
+  /**
+   * Send an agentless outbound message
+   * Send an agentlesss (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
+   * @param body Create agentless outbound messaging request (required)
+   * @return SendAgentlessOutboundMessageResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SendAgentlessOutboundMessageResponse> postConversationsMessagesAgentlessWithHttpInfo(SendAgentlessOutboundMessageRequest body) throws IOException {
+    return postConversationsMessagesAgentless(createPostConversationsMessagesAgentlessRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsMessagesAgentlessRequest createPostConversationsMessagesAgentlessRequest(SendAgentlessOutboundMessageRequest body) {
+    return PostConversationsMessagesAgentlessRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Send an agentless outbound message
+   * Send an agentlesss (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
+   * @param request The request object
+   * @return SendAgentlessOutboundMessageResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SendAgentlessOutboundMessageResponse postConversationsMessagesAgentless(PostConversationsMessagesAgentlessRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SendAgentlessOutboundMessageResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SendAgentlessOutboundMessageResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Send an agentless outbound message
+   * Send an agentlesss (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SendAgentlessOutboundMessageResponse> postConversationsMessagesAgentless(ApiRequest<SendAgentlessOutboundMessageRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SendAgentlessOutboundMessageResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SendAgentlessOutboundMessageResponse> response = (ApiResponse<SendAgentlessOutboundMessageResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SendAgentlessOutboundMessageResponse> response = (ApiResponse<SendAgentlessOutboundMessageResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Create a Facebook Integration
    * 
    * @param body FacebookIntegrationRequest (required)
@@ -10461,6 +10625,85 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create a WhatsApp Integration
+   * 
+   * @param body WhatsAppIntegrationRequest (required)
+   * @return WhatsAppIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WhatsAppIntegration postConversationsMessagingIntegrationsWhatsapp(WhatsAppIntegrationRequest body) throws IOException, ApiException {
+    return  postConversationsMessagingIntegrationsWhatsapp(createPostConversationsMessagingIntegrationsWhatsappRequest(body));
+  }
+
+  /**
+   * Create a WhatsApp Integration
+   * 
+   * @param body WhatsAppIntegrationRequest (required)
+   * @return WhatsAppIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WhatsAppIntegration> postConversationsMessagingIntegrationsWhatsappWithHttpInfo(WhatsAppIntegrationRequest body) throws IOException {
+    return postConversationsMessagingIntegrationsWhatsapp(createPostConversationsMessagingIntegrationsWhatsappRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsMessagingIntegrationsWhatsappRequest createPostConversationsMessagingIntegrationsWhatsappRequest(WhatsAppIntegrationRequest body) {
+    return PostConversationsMessagingIntegrationsWhatsappRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a WhatsApp Integration
+   * 
+   * @param request The request object
+   * @return WhatsAppIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WhatsAppIntegration postConversationsMessagingIntegrationsWhatsapp(PostConversationsMessagingIntegrationsWhatsappRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WhatsAppIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WhatsAppIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a WhatsApp Integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WhatsAppIntegration> postConversationsMessagingIntegrationsWhatsapp(ApiRequest<WhatsAppIntegrationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WhatsAppIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WhatsAppIntegration> response = (ApiResponse<WhatsAppIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WhatsAppIntegration> response = (ApiResponse<WhatsAppIntegration>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -22,6 +22,7 @@ public class ScimV2Group  implements Serializable {
   private String id = null;
   private List<String> schemas = new ArrayList<String>();
   private String displayName = null;
+  private String externalId = null;
   private List<ScimV2MemberReference> members = new ArrayList<ScimV2MemberReference>();
   private ScimMetadata meta = null;
 
@@ -51,10 +52,28 @@ public class ScimV2Group  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The display name of the group.")
+  @ApiModelProperty(example = "null", required = true, value = "The display name of the group.")
   @JsonProperty("displayName")
   public String getDisplayName() {
     return displayName;
+  }
+
+  
+  /**
+   * The external ID of the group. Set by the provisioning client. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readWrite\".
+   **/
+  public ScimV2Group externalId(String externalId) {
+    this.externalId = externalId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The external ID of the group. Set by the provisioning client. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readWrite\".")
+  @JsonProperty("externalId")
+  public String getExternalId() {
+    return externalId;
+  }
+  public void setExternalId(String externalId) {
+    this.externalId = externalId;
   }
 
   
@@ -107,13 +126,14 @@ public class ScimV2Group  implements Serializable {
     return Objects.equals(this.id, scimV2Group.id) &&
         Objects.equals(this.schemas, scimV2Group.schemas) &&
         Objects.equals(this.displayName, scimV2Group.displayName) &&
+        Objects.equals(this.externalId, scimV2Group.externalId) &&
         Objects.equals(this.members, scimV2Group.members) &&
         Objects.equals(this.meta, scimV2Group.meta);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, schemas, displayName, members, meta);
+    return Objects.hash(id, schemas, displayName, externalId, members, meta);
   }
 
   @Override
@@ -124,6 +144,7 @@ public class ScimV2Group  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    schemas: ").append(toIndentedString(schemas)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    members: ").append(toIndentedString(members)).append("\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("}");
