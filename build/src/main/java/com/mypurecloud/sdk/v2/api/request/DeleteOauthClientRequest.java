@@ -21,8 +21,12 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.OAuthAuthorization;
+import com.mypurecloud.sdk.v2.model.OAuthAuthorizationListing;
 import com.mypurecloud.sdk.v2.model.OAuthClient;
 import com.mypurecloud.sdk.v2.model.OAuthClientEntityListing;
+import com.mypurecloud.sdk.v2.model.OAuthScope;
+import com.mypurecloud.sdk.v2.model.OAuthScopeListing;
 import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
 
 public class DeleteOauthClientRequest {

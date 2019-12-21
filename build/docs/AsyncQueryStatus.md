@@ -23,6 +23,7 @@ title: AsyncQueryStatus
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| QUEUED | &quot;QUEUED&quot; |
 | PENDING | &quot;PENDING&quot; |
 | FAILED | &quot;FAILED&quot; |
 | CANCELLED | &quot;CANCELLED&quot; |

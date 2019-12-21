@@ -112,7 +112,7 @@ public class AsyncConversationQuery  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Specifies the date and time range of data being queried. Results will include conversations that both started on a day touched by the interval AND either started, ended, or any activity during the interval. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
+  @ApiModelProperty(example = "null", required = true, value = "Specifies the date and time range of data being queried. Results will include conversations that both started on a day touched by the interval AND either started, ended, or any activity during the interval. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
   @JsonProperty("interval")
   public String getInterval() {
     return interval;

@@ -59,14 +59,14 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
 
   
   /**
-   * The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned sms phone number. The phone number address must be in E.164 format. E.g. +13175555555 or +34234234234
+   * The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned sms phone number.
    **/
   public SendAgentlessOutboundMessageRequest fromAddress(String fromAddress) {
     this.fromAddress = fromAddress;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned sms phone number. The phone number address must be in E.164 format. E.g. +13175555555 or +34234234234")
+  @ApiModelProperty(example = "null", required = true, value = "The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned sms phone number.")
   @JsonProperty("fromAddress")
   public String getFromAddress() {
     return fromAddress;

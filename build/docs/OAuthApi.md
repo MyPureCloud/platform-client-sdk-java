@@ -8,8 +8,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**deleteOauthClient**](OAuthApi.html#deleteOauthClient) | Delete OAuth Client |
+| [**getOauthAuthorization**](OAuthApi.html#getOauthAuthorization) | Get a client that is authorized by the resource owner |
+| [**getOauthAuthorizations**](OAuthApi.html#getOauthAuthorizations) | List clients that are authorized by the resource owner |
 | [**getOauthClient**](OAuthApi.html#getOauthClient) | Get OAuth Client |
 | [**getOauthClients**](OAuthApi.html#getOauthClients) | The list of OAuth clients |
+| [**getOauthScope**](OAuthApi.html#getOauthScope) | An OAuth scope |
+| [**getOauthScopes**](OAuthApi.html#getOauthScopes) | The list of OAuth scopes |
 | [**postOauthClientSecret**](OAuthApi.html#postOauthClientSecret) | Regenerate Client Secret |
 | [**postOauthClients**](OAuthApi.html#postOauthClients) | Create OAuth client |
 | [**putOauthClient**](OAuthApi.html#putOauthClient) | Update OAuth Client |
@@ -76,6 +80,128 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="getOauthAuthorization"></a>
+
+# **getOauthAuthorization**
+
+
+
+> [OAuthAuthorization](OAuthAuthorization.html) getOauthAuthorization(clientId)
+
+Get a client that is authorized by the resource owner
+
+
+
+Wraps GET /api/v2/oauth/authorizations/{clientId}  
+
+Requires ANY permissions: 
+
+* oauth:client:authorize
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OAuthApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OAuthApi apiInstance = new OAuthApi();
+String clientId = "clientId_example"; // String | The ID of client
+try {
+    OAuthAuthorization result = apiInstance.getOauthAuthorization(clientId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OAuthApi#getOauthAuthorization");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **clientId** | **String**| The ID of client | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OAuthAuthorization**](OAuthAuthorization.html)
+
+<a name="getOauthAuthorizations"></a>
+
+# **getOauthAuthorizations**
+
+
+
+> [OAuthAuthorizationListing](OAuthAuthorizationListing.html) getOauthAuthorizations()
+
+List clients that are authorized by the resource owner
+
+
+
+Wraps GET /api/v2/oauth/authorizations  
+
+Requires ANY permissions: 
+
+* oauth:client:authorize
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OAuthApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OAuthApi apiInstance = new OAuthApi();
+try {
+    OAuthAuthorizationListing result = apiInstance.getOauthAuthorizations();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OAuthApi#getOauthAuthorizations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**OAuthAuthorizationListing**](OAuthAuthorizationListing.html)
 
 <a name="getOauthClient"></a>
 
@@ -198,6 +324,132 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**OAuthClientEntityListing**](OAuthClientEntityListing.html)
+
+<a name="getOauthScope"></a>
+
+# **getOauthScope**
+
+
+
+> [OAuthScope](OAuthScope.html) getOauthScope(scopeId, acceptLanguage)
+
+An OAuth scope
+
+
+
+Wraps GET /api/v2/oauth/scopes/{scopeId}  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OAuthApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OAuthApi apiInstance = new OAuthApi();
+String scopeId = "scopeId_example"; // String | Scope ID
+String acceptLanguage = "en-us"; // String | The language with which to display the scope description.
+try {
+    OAuthScope result = apiInstance.getOauthScope(scopeId, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OAuthApi#getOauthScope");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **scopeId** | **String**| Scope ID | 
+| **acceptLanguage** | **String**| The language with which to display the scope description. | [optional] [default to en-us] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OAuthScope**](OAuthScope.html)
+
+<a name="getOauthScopes"></a>
+
+# **getOauthScopes**
+
+
+
+> [OAuthScopeListing](OAuthScopeListing.html) getOauthScopes(acceptLanguage)
+
+The list of OAuth scopes
+
+
+
+Wraps GET /api/v2/oauth/scopes  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OAuthApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OAuthApi apiInstance = new OAuthApi();
+String acceptLanguage = "en-us"; // String | The language with which to display the scope descriptions.
+try {
+    OAuthScopeListing result = apiInstance.getOauthScopes(acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OAuthApi#getOauthScopes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **acceptLanguage** | **String**| The language with which to display the scope descriptions. | [optional] [default to en-us] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OAuthScopeListing**](OAuthScopeListing.html)
 
 <a name="postOauthClientSecret"></a>
 

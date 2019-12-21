@@ -14,14 +14,22 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.OAuthAuthorization;
+import com.mypurecloud.sdk.v2.model.OAuthAuthorizationListing;
 import com.mypurecloud.sdk.v2.model.OAuthClient;
 import com.mypurecloud.sdk.v2.model.OAuthClientEntityListing;
+import com.mypurecloud.sdk.v2.model.OAuthScope;
+import com.mypurecloud.sdk.v2.model.OAuthScopeListing;
 import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteOauthClientRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOauthAuthorizationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOauthAuthorizationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOauthClientRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOauthClientsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOauthScopeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOauthScopesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOauthClientSecretRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOauthClientsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOauthClientRequest;
@@ -110,6 +118,158 @@ public class OAuthApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a client that is authorized by the resource owner
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OAuthAuthorization> getOauthAuthorizationAsync(GetOauthAuthorizationRequest request, final AsyncApiCallback<OAuthAuthorization> callback) {
+    try {
+      final SettableFuture<OAuthAuthorization> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthAuthorization>() {}, new AsyncApiCallback<ApiResponse<OAuthAuthorization>>() {
+        @Override
+        public void onCompleted(ApiResponse<OAuthAuthorization> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a client that is authorized by the resource owner
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OAuthAuthorization>> getOauthAuthorizationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OAuthAuthorization>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OAuthAuthorization>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OAuthAuthorization>() {}, new AsyncApiCallback<ApiResponse<OAuthAuthorization>>() {
+        @Override
+        public void onCompleted(ApiResponse<OAuthAuthorization> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OAuthAuthorization> response = (ApiResponse<OAuthAuthorization>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OAuthAuthorization> response = (ApiResponse<OAuthAuthorization>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * List clients that are authorized by the resource owner
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OAuthAuthorizationListing> getOauthAuthorizationsAsync(GetOauthAuthorizationsRequest request, final AsyncApiCallback<OAuthAuthorizationListing> callback) {
+    try {
+      final SettableFuture<OAuthAuthorizationListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthAuthorizationListing>() {}, new AsyncApiCallback<ApiResponse<OAuthAuthorizationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<OAuthAuthorizationListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List clients that are authorized by the resource owner
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OAuthAuthorizationListing>> getOauthAuthorizationsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OAuthAuthorizationListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OAuthAuthorizationListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OAuthAuthorizationListing>() {}, new AsyncApiCallback<ApiResponse<OAuthAuthorizationListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<OAuthAuthorizationListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OAuthAuthorizationListing> response = (ApiResponse<OAuthAuthorizationListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OAuthAuthorizationListing> response = (ApiResponse<OAuthAuthorizationListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -262,6 +422,158 @@ public class OAuthApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<OAuthClientEntityListing> response = (ApiResponse<OAuthClientEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * An OAuth scope
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OAuthScope> getOauthScopeAsync(GetOauthScopeRequest request, final AsyncApiCallback<OAuthScope> callback) {
+    try {
+      final SettableFuture<OAuthScope> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthScope>() {}, new AsyncApiCallback<ApiResponse<OAuthScope>>() {
+        @Override
+        public void onCompleted(ApiResponse<OAuthScope> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * An OAuth scope
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OAuthScope>> getOauthScopeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OAuthScope>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OAuthScope>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OAuthScope>() {}, new AsyncApiCallback<ApiResponse<OAuthScope>>() {
+        @Override
+        public void onCompleted(ApiResponse<OAuthScope> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OAuthScope> response = (ApiResponse<OAuthScope>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OAuthScope> response = (ApiResponse<OAuthScope>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * The list of OAuth scopes
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OAuthScopeListing> getOauthScopesAsync(GetOauthScopesRequest request, final AsyncApiCallback<OAuthScopeListing> callback) {
+    try {
+      final SettableFuture<OAuthScopeListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthScopeListing>() {}, new AsyncApiCallback<ApiResponse<OAuthScopeListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<OAuthScopeListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * The list of OAuth scopes
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OAuthScopeListing>> getOauthScopesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OAuthScopeListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OAuthScopeListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OAuthScopeListing>() {}, new AsyncApiCallback<ApiResponse<OAuthScopeListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<OAuthScopeListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OAuthScopeListing> response = (ApiResponse<OAuthScopeListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OAuthScopeListing> response = (ApiResponse<OAuthScopeListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

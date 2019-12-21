@@ -254,7 +254,7 @@ public class Schedule  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS")
+  @ApiModelProperty(example = "null", required = true, value = "Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS")
   @JsonProperty("start")
   public LocalDateTime getStart() {
     return start;
@@ -272,7 +272,7 @@ public class Schedule  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS")
+  @ApiModelProperty(example = "null", required = true, value = "Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS")
   @JsonProperty("end")
   public LocalDateTime getEnd() {
     return end;

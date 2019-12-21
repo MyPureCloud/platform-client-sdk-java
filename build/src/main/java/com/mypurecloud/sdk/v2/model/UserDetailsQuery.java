@@ -74,7 +74,7 @@ public class UserDetailsQuery  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Specifies the date and time range of data being queried. Conversations MUST have started within this time range to potentially be included within the result set. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
+  @ApiModelProperty(example = "null", required = true, value = "Specifies the date and time range of data being queried. Conversations MUST have started within this time range to potentially be included within the result set. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
   @JsonProperty("interval")
   public String getInterval() {
     return interval;

@@ -22,6 +22,7 @@ public class AsyncQueryStatus  implements Serializable {
    */
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    QUEUED("QUEUED"),
     PENDING("PENDING"),
     FAILED("FAILED"),
     CANCELLED("CANCELLED"),

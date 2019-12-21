@@ -11,14 +11,22 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.OAuthAuthorization;
+import com.mypurecloud.sdk.v2.model.OAuthAuthorizationListing;
 import com.mypurecloud.sdk.v2.model.OAuthClient;
 import com.mypurecloud.sdk.v2.model.OAuthClientEntityListing;
+import com.mypurecloud.sdk.v2.model.OAuthScope;
+import com.mypurecloud.sdk.v2.model.OAuthScopeListing;
 import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteOauthClientRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOauthAuthorizationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOauthAuthorizationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOauthClientRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOauthClientsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOauthScopeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOauthScopesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOauthClientSecretRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOauthClientsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOauthClientRequest;
@@ -113,6 +121,160 @@ public class OAuthApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a client that is authorized by the resource owner
+   * 
+   * @param clientId The ID of client (required)
+   * @return OAuthAuthorization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OAuthAuthorization getOauthAuthorization(String clientId) throws IOException, ApiException {
+    return  getOauthAuthorization(createGetOauthAuthorizationRequest(clientId));
+  }
+
+  /**
+   * Get a client that is authorized by the resource owner
+   * 
+   * @param clientId The ID of client (required)
+   * @return OAuthAuthorization
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OAuthAuthorization> getOauthAuthorizationWithHttpInfo(String clientId) throws IOException {
+    return getOauthAuthorization(createGetOauthAuthorizationRequest(clientId).withHttpInfo());
+  }
+
+  private GetOauthAuthorizationRequest createGetOauthAuthorizationRequest(String clientId) {
+    return GetOauthAuthorizationRequest.builder()
+            .withClientId(clientId)
+    
+            .build();
+  }
+
+  /**
+   * Get a client that is authorized by the resource owner
+   * 
+   * @param request The request object
+   * @return OAuthAuthorization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OAuthAuthorization getOauthAuthorization(GetOauthAuthorizationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OAuthAuthorization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthAuthorization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a client that is authorized by the resource owner
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OAuthAuthorization> getOauthAuthorization(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OAuthAuthorization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthAuthorization> response = (ApiResponse<OAuthAuthorization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthAuthorization> response = (ApiResponse<OAuthAuthorization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * List clients that are authorized by the resource owner
+   * 
+   * @return OAuthAuthorizationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OAuthAuthorizationListing getOauthAuthorizations() throws IOException, ApiException {
+    return  getOauthAuthorizations(createGetOauthAuthorizationsRequest());
+  }
+
+  /**
+   * List clients that are authorized by the resource owner
+   * 
+   * @return OAuthAuthorizationListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OAuthAuthorizationListing> getOauthAuthorizationsWithHttpInfo() throws IOException {
+    return getOauthAuthorizations(createGetOauthAuthorizationsRequest().withHttpInfo());
+  }
+
+  private GetOauthAuthorizationsRequest createGetOauthAuthorizationsRequest() {
+    return GetOauthAuthorizationsRequest.builder()
+            .build();
+  }
+
+  /**
+   * List clients that are authorized by the resource owner
+   * 
+   * @param request The request object
+   * @return OAuthAuthorizationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OAuthAuthorizationListing getOauthAuthorizations(GetOauthAuthorizationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OAuthAuthorizationListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthAuthorizationListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * List clients that are authorized by the resource owner
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OAuthAuthorizationListing> getOauthAuthorizations(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OAuthAuthorizationListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthAuthorizationListing> response = (ApiResponse<OAuthAuthorizationListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthAuthorizationListing> response = (ApiResponse<OAuthAuthorizationListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -267,6 +429,168 @@ public class OAuthApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OAuthClientEntityListing> response = (ApiResponse<OAuthClientEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * An OAuth scope
+   * 
+   * @param scopeId Scope ID (required)
+   * @param acceptLanguage The language with which to display the scope description. (optional, default to en-us)
+   * @return OAuthScope
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OAuthScope getOauthScope(String scopeId, String acceptLanguage) throws IOException, ApiException {
+    return  getOauthScope(createGetOauthScopeRequest(scopeId, acceptLanguage));
+  }
+
+  /**
+   * An OAuth scope
+   * 
+   * @param scopeId Scope ID (required)
+   * @param acceptLanguage The language with which to display the scope description. (optional, default to en-us)
+   * @return OAuthScope
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OAuthScope> getOauthScopeWithHttpInfo(String scopeId, String acceptLanguage) throws IOException {
+    return getOauthScope(createGetOauthScopeRequest(scopeId, acceptLanguage).withHttpInfo());
+  }
+
+  private GetOauthScopeRequest createGetOauthScopeRequest(String scopeId, String acceptLanguage) {
+    return GetOauthScopeRequest.builder()
+            .withScopeId(scopeId)
+    
+            .withAcceptLanguage(acceptLanguage)
+    
+            .build();
+  }
+
+  /**
+   * An OAuth scope
+   * 
+   * @param request The request object
+   * @return OAuthScope
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OAuthScope getOauthScope(GetOauthScopeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OAuthScope> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthScope>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * An OAuth scope
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OAuthScope> getOauthScope(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OAuthScope>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthScope> response = (ApiResponse<OAuthScope>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthScope> response = (ApiResponse<OAuthScope>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * The list of OAuth scopes
+   * 
+   * @param acceptLanguage The language with which to display the scope descriptions. (optional, default to en-us)
+   * @return OAuthScopeListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OAuthScopeListing getOauthScopes(String acceptLanguage) throws IOException, ApiException {
+    return  getOauthScopes(createGetOauthScopesRequest(acceptLanguage));
+  }
+
+  /**
+   * The list of OAuth scopes
+   * 
+   * @param acceptLanguage The language with which to display the scope descriptions. (optional, default to en-us)
+   * @return OAuthScopeListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OAuthScopeListing> getOauthScopesWithHttpInfo(String acceptLanguage) throws IOException {
+    return getOauthScopes(createGetOauthScopesRequest(acceptLanguage).withHttpInfo());
+  }
+
+  private GetOauthScopesRequest createGetOauthScopesRequest(String acceptLanguage) {
+    return GetOauthScopesRequest.builder()
+            .withAcceptLanguage(acceptLanguage)
+    
+            .build();
+  }
+
+  /**
+   * The list of OAuth scopes
+   * 
+   * @param request The request object
+   * @return OAuthScopeListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OAuthScopeListing getOauthScopes(GetOauthScopesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OAuthScopeListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthScopeListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * The list of OAuth scopes
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OAuthScopeListing> getOauthScopes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OAuthScopeListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthScopeListing> response = (ApiResponse<OAuthScopeListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthScopeListing> response = (ApiResponse<OAuthScopeListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

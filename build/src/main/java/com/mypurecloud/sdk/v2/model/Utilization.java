@@ -22,14 +22,14 @@ public class Utilization  implements Serializable {
 
   
   /**
-   * Map of media types to utilization settings.  Map keys can be: call, chat, email, or socialExpression
+   * Map of media types to utilization settings.  Valid media types include call, callback, chat, email, and message.
    **/
   public Utilization utilization(Map<String, OrgMediaUtilization> utilization) {
     this.utilization = utilization;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Map of media types to utilization settings.  Map keys can be: call, chat, email, or socialExpression")
+  @ApiModelProperty(example = "null", value = "Map of media types to utilization settings.  Valid media types include call, callback, chat, email, and message.")
   @JsonProperty("utilization")
   public Map<String, OrgMediaUtilization> getUtilization() {
     return utilization;

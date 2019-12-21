@@ -34,8 +34,6 @@ import com.mypurecloud.sdk.v2.model.RecordingJobsQuery;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionKeyRequest;
 import com.mypurecloud.sdk.v2.model.EncryptionKey;
 import com.mypurecloud.sdk.v2.model.PolicyCreate;
-import com.mypurecloud.sdk.v2.model.ConversationDeletionProtectionQuery;
-import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 import com.mypurecloud.sdk.v2.model.ExecuteRecordingJobsQuery;
 
@@ -74,7 +72,6 @@ import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingMediaretentionpoliciesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingRecordingkeysRequest;
-import com.mypurecloud.sdk.v2.api.request.PostRecordingsDeletionprotectionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationRecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationRecordingAnnotationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrphanrecordingRequest;
@@ -83,7 +80,6 @@ import com.mypurecloud.sdk.v2.api.request.PutRecordingLocalkeysSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingRecordingkeysRotationscheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingSettingsRequest;
-import com.mypurecloud.sdk.v2.api.request.PutRecordingsDeletionprotectionRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -2932,85 +2928,6 @@ public class RecordingApi {
 
   
   /**
-   * Get a list of conversations with protected recordings
-   * 
-   * @param body conversationIds (required)
-   * @return List<AddressableEntityRef>
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public List<AddressableEntityRef> postRecordingsDeletionprotection(ConversationDeletionProtectionQuery body) throws IOException, ApiException {
-    return  postRecordingsDeletionprotection(createPostRecordingsDeletionprotectionRequest(body));
-  }
-
-  /**
-   * Get a list of conversations with protected recordings
-   * 
-   * @param body conversationIds (required)
-   * @return List<AddressableEntityRef>
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<List<AddressableEntityRef>> postRecordingsDeletionprotectionWithHttpInfo(ConversationDeletionProtectionQuery body) throws IOException {
-    return postRecordingsDeletionprotection(createPostRecordingsDeletionprotectionRequest(body).withHttpInfo());
-  }
-
-  private PostRecordingsDeletionprotectionRequest createPostRecordingsDeletionprotectionRequest(ConversationDeletionProtectionQuery body) {
-    return PostRecordingsDeletionprotectionRequest.builder()
-            .withBody(body)
-    
-            .build();
-  }
-
-  /**
-   * Get a list of conversations with protected recordings
-   * 
-   * @param request The request object
-   * @return List<AddressableEntityRef>
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public List<AddressableEntityRef> postRecordingsDeletionprotection(PostRecordingsDeletionprotectionRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<List<AddressableEntityRef>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<AddressableEntityRef>>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get a list of conversations with protected recordings
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<List<AddressableEntityRef>> postRecordingsDeletionprotection(ApiRequest<ConversationDeletionProtectionQuery> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<List<AddressableEntityRef>>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<List<AddressableEntityRef>> response = (ApiResponse<List<AddressableEntityRef>>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<List<AddressableEntityRef>> response = (ApiResponse<List<AddressableEntityRef>>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
    * Updates the retention records on a recording.
    * Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. The recording:recording:view permission is required for the recording, as well as either the recording:recording:editRetention or recording:screenRecording:editRetention permissions depending on the type of recording.
    * @param conversationId Conversation ID (required)
@@ -3673,86 +3590,6 @@ public class RecordingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<RecordingSettings> response = (ApiResponse<RecordingSettings>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Apply or revoke recording protection for conversations
-   * 
-   * @param protect Check for apply, uncheck for revoke (each action requires the respective permission) (optional, default to true)
-   * @param body  (optional)
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void putRecordingsDeletionprotection(Boolean protect, ConversationDeletionProtectionQuery body) throws IOException, ApiException {
-     putRecordingsDeletionprotection(createPutRecordingsDeletionprotectionRequest(protect, body));
-  }
-
-  /**
-   * Apply or revoke recording protection for conversations
-   * 
-   * @param protect Check for apply, uncheck for revoke (each action requires the respective permission) (optional, default to true)
-   * @param body  (optional)
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> putRecordingsDeletionprotectionWithHttpInfo(Boolean protect, ConversationDeletionProtectionQuery body) throws IOException {
-    return putRecordingsDeletionprotection(createPutRecordingsDeletionprotectionRequest(protect, body).withHttpInfo());
-  }
-
-  private PutRecordingsDeletionprotectionRequest createPutRecordingsDeletionprotectionRequest(Boolean protect, ConversationDeletionProtectionQuery body) {
-    return PutRecordingsDeletionprotectionRequest.builder()
-            .withProtect(protect)
-    
-            .withBody(body)
-    
-            .build();
-  }
-
-  /**
-   * Apply or revoke recording protection for conversations
-   * 
-   * @param request The request object
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void putRecordingsDeletionprotection(PutRecordingsDeletionprotectionRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
-    }
-  }
-
-  /**
-   * Apply or revoke recording protection for conversations
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> putRecordingsDeletionprotection(ApiRequest<ConversationDeletionProtectionQuery> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, null);
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

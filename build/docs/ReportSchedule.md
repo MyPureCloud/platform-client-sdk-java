@@ -17,7 +17,7 @@ title: ReportSchedule
 | **description** | <!----><!---->**String**<!----> |  |  [optional] |
 | **timeZone** | <!----><!---->**String**<!----> |  |  [optional] |
 | **timePeriod** | <!----><!---->**String**<!----> |  |  [optional] |
-| **interval** | <!----><!---->**String**<!----> | Interval. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss |  [optional] |
+| **interval** | <!----><!---->**String**<!----> | Interval. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss |  |
 | **reportFormat** | <!----><!---->**String**<!----> |  |  [optional] |
 | **locale** | <!----><!---->**String**<!----> |  |  [optional] |
 | **enabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |

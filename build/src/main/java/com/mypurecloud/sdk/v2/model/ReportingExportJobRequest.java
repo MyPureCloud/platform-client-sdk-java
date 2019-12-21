@@ -6,7 +6,6 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SelectedColumns;
-import com.mypurecloud.sdk.v2.model.TimeZone;
 import com.mypurecloud.sdk.v2.model.ViewFilter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -21,7 +20,7 @@ import java.io.Serializable;
 public class ReportingExportJobRequest  implements Serializable {
   
   private String name = null;
-  private TimeZone timeZone = null;
+  private String timeZone = null;
 
   /**
    * The requested format of the exported data
@@ -160,19 +159,19 @@ public class ReportingExportJobRequest  implements Serializable {
 
   
   /**
-   * The requested timezone of the exported data
+   * The requested timezone of the exported data. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
    **/
-  public ReportingExportJobRequest timeZone(TimeZone timeZone) {
+  public ReportingExportJobRequest timeZone(String timeZone) {
     this.timeZone = timeZone;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The requested timezone of the exported data")
+  @ApiModelProperty(example = "null", required = true, value = "The requested timezone of the exported data. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London")
   @JsonProperty("timeZone")
-  public TimeZone getTimeZone() {
+  public String getTimeZone() {
     return timeZone;
   }
-  public void setTimeZone(TimeZone timeZone) {
+  public void setTimeZone(String timeZone) {
     this.timeZone = timeZone;
   }
 
@@ -203,7 +202,7 @@ public class ReportingExportJobRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The time period used to limit the the exported data. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
+  @ApiModelProperty(example = "null", required = true, value = "The time period used to limit the the exported data. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
   @JsonProperty("interval")
   public String getInterval() {
     return interval;
@@ -221,7 +220,7 @@ public class ReportingExportJobRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The Period of the request in which to break down the intervals. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H")
+  @ApiModelProperty(example = "null", required = true, value = "The Period of the request in which to break down the intervals. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H")
   @JsonProperty("period")
   public String getPeriod() {
     return period;
