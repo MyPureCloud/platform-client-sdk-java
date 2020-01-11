@@ -12,7 +12,6 @@ title: AnalyticsUserPresenceRecord
 | **endTime** | <!----><!---->[**Date**](Date.html)<!----> | The end time of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **systemPresence** | [**SystemPresenceEnum**](#SystemPresenceEnum)<!----> | The user&#39;s system presence |  [optional] |
 | **organizationPresenceId** | <!----><!---->**String**<!----> | The identifier for the user&#39;s organization presence |  [optional] |
-| **durationMilliseconds** | <!----><!---->**Long**<!----> | The duration of the status (in milliseconds) |  [optional] |
 {: class="table table-striped"}
 
 

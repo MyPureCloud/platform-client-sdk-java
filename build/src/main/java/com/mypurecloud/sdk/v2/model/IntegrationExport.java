@@ -38,14 +38,14 @@ public class IntegrationExport  implements Serializable {
 
   
   /**
-   * True if the policy should export screen recordings in addition to the other conversation media. Default = false
+   * True if the policy should export screen recordings in addition to the other conversation media. Default = true
    **/
   public IntegrationExport shouldExportScreenRecordings(Boolean shouldExportScreenRecordings) {
     this.shouldExportScreenRecordings = shouldExportScreenRecordings;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "True if the policy should export screen recordings in addition to the other conversation media. Default = false")
+  @ApiModelProperty(example = "null", value = "True if the policy should export screen recordings in addition to the other conversation media. Default = true")
   @JsonProperty("shouldExportScreenRecordings")
   public Boolean getShouldExportScreenRecordings() {
     return shouldExportScreenRecordings;

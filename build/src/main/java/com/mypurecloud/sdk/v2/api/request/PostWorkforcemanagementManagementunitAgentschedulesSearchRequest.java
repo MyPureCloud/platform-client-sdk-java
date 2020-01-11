@@ -124,6 +124,34 @@ public class PostWorkforcemanagementManagementunitAgentschedulesSearchRequest {
 	    return this;
 	} 
 	
+	private Boolean forceAsync;
+	public Boolean getForceAsync() {
+		return this.forceAsync;
+	}
+
+	public void setForceAsync(Boolean forceAsync) {
+		this.forceAsync = forceAsync;
+	}
+
+	public PostWorkforcemanagementManagementunitAgentschedulesSearchRequest withForceAsync(Boolean forceAsync) {
+	    this.setForceAsync(forceAsync);
+	    return this;
+	} 
+	
+	private Boolean forceDownloadService;
+	public Boolean getForceDownloadService() {
+		return this.forceDownloadService;
+	}
+
+	public void setForceDownloadService(Boolean forceDownloadService) {
+		this.forceDownloadService = forceDownloadService;
+	}
+
+	public PostWorkforcemanagementManagementunitAgentschedulesSearchRequest withForceDownloadService(Boolean forceDownloadService) {
+	    this.setForceDownloadService(forceDownloadService);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -153,6 +181,10 @@ public class PostWorkforcemanagementManagementunitAgentschedulesSearchRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/managementunits/{muId}/agentschedules/search")
                 .withPathParameter("muId", muId)
+        
+                .withQueryParameters("forceAsync", "", forceAsync)
+        
+                .withQueryParameters("forceDownloadService", "", forceDownloadService)
         
                 .withBody(body)
         
@@ -189,6 +221,16 @@ public class PostWorkforcemanagementManagementunitAgentschedulesSearchRequest {
 		
 		public Builder withBody(BuSearchAgentSchedulesRequest body) {
 			request.setBody(body);
+			return this;
+		}
+		
+		public Builder withForceAsync(Boolean forceAsync) {
+			request.setForceAsync(forceAsync);
+			return this;
+		}
+		
+		public Builder withForceDownloadService(Boolean forceDownloadService) {
+			request.setForceDownloadService(forceDownloadService);
 			return this;
 		}
 		

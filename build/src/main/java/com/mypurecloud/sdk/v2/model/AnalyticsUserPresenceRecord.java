@@ -62,7 +62,6 @@ public class AnalyticsUserPresenceRecord  implements Serializable {
   }
   private SystemPresenceEnum systemPresence = null;
   private String organizationPresenceId = null;
-  private Long durationMilliseconds = null;
 
   
   /**
@@ -137,24 +136,6 @@ public class AnalyticsUserPresenceRecord  implements Serializable {
   }
 
   
-  /**
-   * The duration of the status (in milliseconds)
-   **/
-  public AnalyticsUserPresenceRecord durationMilliseconds(Long durationMilliseconds) {
-    this.durationMilliseconds = durationMilliseconds;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The duration of the status (in milliseconds)")
-  @JsonProperty("durationMilliseconds")
-  public Long getDurationMilliseconds() {
-    return durationMilliseconds;
-  }
-  public void setDurationMilliseconds(Long durationMilliseconds) {
-    this.durationMilliseconds = durationMilliseconds;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -168,13 +149,12 @@ public class AnalyticsUserPresenceRecord  implements Serializable {
     return Objects.equals(this.startTime, analyticsUserPresenceRecord.startTime) &&
         Objects.equals(this.endTime, analyticsUserPresenceRecord.endTime) &&
         Objects.equals(this.systemPresence, analyticsUserPresenceRecord.systemPresence) &&
-        Objects.equals(this.organizationPresenceId, analyticsUserPresenceRecord.organizationPresenceId) &&
-        Objects.equals(this.durationMilliseconds, analyticsUserPresenceRecord.durationMilliseconds);
+        Objects.equals(this.organizationPresenceId, analyticsUserPresenceRecord.organizationPresenceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startTime, endTime, systemPresence, organizationPresenceId, durationMilliseconds);
+    return Objects.hash(startTime, endTime, systemPresence, organizationPresenceId);
   }
 
   @Override
@@ -186,7 +166,6 @@ public class AnalyticsUserPresenceRecord  implements Serializable {
     sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
     sb.append("    systemPresence: ").append(toIndentedString(systemPresence)).append("\n");
     sb.append("    organizationPresenceId: ").append(toIndentedString(organizationPresenceId)).append("\n");
-    sb.append("    durationMilliseconds: ").append(toIndentedString(durationMilliseconds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

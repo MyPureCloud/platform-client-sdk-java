@@ -3441,7 +3441,7 @@ try {
 
 
 
-> [UserScheduleContainer](UserScheduleContainer.html) postWorkforcemanagementManagementunitAgentschedulesSearch(muId, body)
+> [UserScheduleContainer](UserScheduleContainer.html) postWorkforcemanagementManagementunitAgentschedulesSearch(muId, body, forceAsync, forceDownloadService)
 
 Query published schedules for given given time range for set of users
 
@@ -3478,8 +3478,10 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 BuSearchAgentSchedulesRequest body = new BuSearchAgentSchedulesRequest(); // BuSearchAgentSchedulesRequest | body
+Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
 try {
-    UserScheduleContainer result = apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(muId, body);
+    UserScheduleContainer result = apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(muId, body, forceAsync, forceDownloadService);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitAgentschedulesSearch");
@@ -3494,6 +3496,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest.html)| body | [optional] 
+| **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] 
+| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional] 
 {: class="table-striped"}
 
 

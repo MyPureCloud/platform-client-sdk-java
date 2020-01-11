@@ -23,10 +23,10 @@ public class DncListDivisionViewListing  implements Serializable, PagedResource<
   private Integer pageNumber = null;
   private Long total = null;
   private String firstUri = null;
-  private String previousUri = null;
+  private String selfUri = null;
   private String lastUri = null;
   private String nextUri = null;
-  private String selfUri = null;
+  private String previousUri = null;
   private Integer pageCount = null;
 
   
@@ -117,18 +117,18 @@ public class DncListDivisionViewListing  implements Serializable, PagedResource<
   
   /**
    **/
-  public DncListDivisionViewListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
+  public DncListDivisionViewListing selfUri(String selfUri) {
+    this.selfUri = selfUri;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
   }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
+  public void setSelfUri(String selfUri) {
+    this.selfUri = selfUri;
   }
 
   
@@ -168,18 +168,18 @@ public class DncListDivisionViewListing  implements Serializable, PagedResource<
   
   /**
    **/
-  public DncListDivisionViewListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
+  public DncListDivisionViewListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
   }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
   }
 
   
@@ -215,16 +215,16 @@ public class DncListDivisionViewListing  implements Serializable, PagedResource<
         Objects.equals(this.pageNumber, dncListDivisionViewListing.pageNumber) &&
         Objects.equals(this.total, dncListDivisionViewListing.total) &&
         Objects.equals(this.firstUri, dncListDivisionViewListing.firstUri) &&
-        Objects.equals(this.previousUri, dncListDivisionViewListing.previousUri) &&
+        Objects.equals(this.selfUri, dncListDivisionViewListing.selfUri) &&
         Objects.equals(this.lastUri, dncListDivisionViewListing.lastUri) &&
         Objects.equals(this.nextUri, dncListDivisionViewListing.nextUri) &&
-        Objects.equals(this.selfUri, dncListDivisionViewListing.selfUri) &&
+        Objects.equals(this.previousUri, dncListDivisionViewListing.previousUri) &&
         Objects.equals(this.pageCount, dncListDivisionViewListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, previousUri, lastUri, nextUri, selfUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, lastUri, nextUri, previousUri, pageCount);
   }
 
   @Override
@@ -237,10 +237,10 @@ public class DncListDivisionViewListing  implements Serializable, PagedResource<
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

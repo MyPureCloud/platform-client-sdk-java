@@ -55,6 +55,7 @@ title: AuditLogMessage
 | MEMBERUPDATE | &quot;MemberUpdate&quot; |
 | MEMBERREMOVE | &quot;MemberRemove&quot; |
 | READ | &quot;Read&quot; |
+| READALL | &quot;ReadAll&quot; |
 | EXECUTE | &quot;Execute&quot; |
 | PUBLISH | &quot;Publish&quot; |
 {: class="table table-striped"}

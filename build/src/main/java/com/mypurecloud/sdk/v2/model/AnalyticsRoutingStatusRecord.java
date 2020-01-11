@@ -56,7 +56,6 @@ public class AnalyticsRoutingStatusRecord  implements Serializable {
     }
   }
   private RoutingStatusEnum routingStatus = null;
-  private Long durationMilliseconds = null;
 
   
   /**
@@ -113,24 +112,6 @@ public class AnalyticsRoutingStatusRecord  implements Serializable {
   }
 
   
-  /**
-   * The duration of the status (in milliseconds)
-   **/
-  public AnalyticsRoutingStatusRecord durationMilliseconds(Long durationMilliseconds) {
-    this.durationMilliseconds = durationMilliseconds;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The duration of the status (in milliseconds)")
-  @JsonProperty("durationMilliseconds")
-  public Long getDurationMilliseconds() {
-    return durationMilliseconds;
-  }
-  public void setDurationMilliseconds(Long durationMilliseconds) {
-    this.durationMilliseconds = durationMilliseconds;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -143,13 +124,12 @@ public class AnalyticsRoutingStatusRecord  implements Serializable {
     AnalyticsRoutingStatusRecord analyticsRoutingStatusRecord = (AnalyticsRoutingStatusRecord) o;
     return Objects.equals(this.startTime, analyticsRoutingStatusRecord.startTime) &&
         Objects.equals(this.endTime, analyticsRoutingStatusRecord.endTime) &&
-        Objects.equals(this.routingStatus, analyticsRoutingStatusRecord.routingStatus) &&
-        Objects.equals(this.durationMilliseconds, analyticsRoutingStatusRecord.durationMilliseconds);
+        Objects.equals(this.routingStatus, analyticsRoutingStatusRecord.routingStatus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startTime, endTime, routingStatus, durationMilliseconds);
+    return Objects.hash(startTime, endTime, routingStatus);
   }
 
   @Override
@@ -160,7 +140,6 @@ public class AnalyticsRoutingStatusRecord  implements Serializable {
     sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
     sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
     sb.append("    routingStatus: ").append(toIndentedString(routingStatus)).append("\n");
-    sb.append("    durationMilliseconds: ").append(toIndentedString(durationMilliseconds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

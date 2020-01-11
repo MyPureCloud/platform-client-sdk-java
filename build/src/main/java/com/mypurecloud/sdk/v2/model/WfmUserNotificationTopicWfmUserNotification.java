@@ -62,6 +62,7 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
   private WfmUserNotificationTopicTimeOffRequestNotification timeOffRequest = null;
   private Boolean agentNotification = null;
   private List<String> otherNotificationIdsInGroup = new ArrayList<String>();
+  private Boolean markedAsRead = null;
 
   
   /**
@@ -200,6 +201,23 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
   }
 
   
+  /**
+   **/
+  public WfmUserNotificationTopicWfmUserNotification markedAsRead(Boolean markedAsRead) {
+    this.markedAsRead = markedAsRead;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("markedAsRead")
+  public Boolean getMarkedAsRead() {
+    return markedAsRead;
+  }
+  public void setMarkedAsRead(Boolean markedAsRead) {
+    this.markedAsRead = markedAsRead;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -217,12 +235,13 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
         Objects.equals(this.shiftTrade, wfmUserNotificationTopicWfmUserNotification.shiftTrade) &&
         Objects.equals(this.timeOffRequest, wfmUserNotificationTopicWfmUserNotification.timeOffRequest) &&
         Objects.equals(this.agentNotification, wfmUserNotificationTopicWfmUserNotification.agentNotification) &&
-        Objects.equals(this.otherNotificationIdsInGroup, wfmUserNotificationTopicWfmUserNotification.otherNotificationIdsInGroup);
+        Objects.equals(this.otherNotificationIdsInGroup, wfmUserNotificationTopicWfmUserNotification.otherNotificationIdsInGroup) &&
+        Objects.equals(this.markedAsRead, wfmUserNotificationTopicWfmUserNotification.markedAsRead);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, mutableGroupId, timestamp, type, shiftTrade, timeOffRequest, agentNotification, otherNotificationIdsInGroup);
+    return Objects.hash(id, mutableGroupId, timestamp, type, shiftTrade, timeOffRequest, agentNotification, otherNotificationIdsInGroup, markedAsRead);
   }
 
   @Override
@@ -238,6 +257,7 @@ public class WfmUserNotificationTopicWfmUserNotification  implements Serializabl
     sb.append("    timeOffRequest: ").append(toIndentedString(timeOffRequest)).append("\n");
     sb.append("    agentNotification: ").append(toIndentedString(agentNotification)).append("\n");
     sb.append("    otherNotificationIdsInGroup: ").append(toIndentedString(otherNotificationIdsInGroup)).append("\n");
+    sb.append("    markedAsRead: ").append(toIndentedString(markedAsRead)).append("\n");
     sb.append("}");
     return sb.toString();
   }

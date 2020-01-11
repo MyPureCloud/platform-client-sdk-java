@@ -4341,12 +4341,14 @@ public class WorkforceManagementApi {
    * 
    * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
    * @return UserScheduleContainer
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserScheduleContainer postWorkforcemanagementManagementunitAgentschedulesSearch(String muId, BuSearchAgentSchedulesRequest body) throws IOException, ApiException {
-    return  postWorkforcemanagementManagementunitAgentschedulesSearch(createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(muId, body));
+  public UserScheduleContainer postWorkforcemanagementManagementunitAgentschedulesSearch(String muId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitAgentschedulesSearch(createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(muId, body, forceAsync, forceDownloadService));
   }
 
   /**
@@ -4354,18 +4356,24 @@ public class WorkforceManagementApi {
    * 
    * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
    * @return UserScheduleContainer
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserScheduleContainer> postWorkforcemanagementManagementunitAgentschedulesSearchWithHttpInfo(String muId, BuSearchAgentSchedulesRequest body) throws IOException {
-    return postWorkforcemanagementManagementunitAgentschedulesSearch(createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(muId, body).withHttpInfo());
+  public ApiResponse<UserScheduleContainer> postWorkforcemanagementManagementunitAgentschedulesSearchWithHttpInfo(String muId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException {
+    return postWorkforcemanagementManagementunitAgentschedulesSearch(createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(muId, body, forceAsync, forceDownloadService).withHttpInfo());
   }
 
-  private PostWorkforcemanagementManagementunitAgentschedulesSearchRequest createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(String muId, BuSearchAgentSchedulesRequest body) {
+  private PostWorkforcemanagementManagementunitAgentschedulesSearchRequest createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(String muId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) {
     return PostWorkforcemanagementManagementunitAgentschedulesSearchRequest.builder()
             .withMuId(muId)
     
             .withBody(body)
+    
+            .withForceAsync(forceAsync)
+    
+            .withForceDownloadService(forceDownloadService)
     
             .build();
   }

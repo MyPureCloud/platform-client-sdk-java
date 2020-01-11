@@ -10,7 +10,7 @@ title: TrusteeBillingOverview
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **organization** | <!----><!---->[**Entity**](Entity.html)<!----> | Organization |  |
+| **organization** | <!----><!---->[**NamedEntity**](NamedEntity.html)<!----> | Organization |  |
 | **currency** | <!----><!---->**String**<!----> | The currency type. |  |
 | **enabledProducts** | <!----><!---->**List&lt;String&gt;**<!----> | The charge short names for products enabled during the specified period. |  |
 | **subscriptionType** | [**SubscriptionTypeEnum**](#SubscriptionTypeEnum)<!----> | The subscription type. |  |

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.Entity;
+import com.mypurecloud.sdk.v2.model.NamedEntity;
 import com.mypurecloud.sdk.v2.model.SubscriptionOverviewUsage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -22,7 +22,7 @@ public class TrusteeBillingOverview  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private Entity organization = null;
+  private NamedEntity organization = null;
   private String currency = null;
   private List<String> enabledProducts = new ArrayList<String>();
 
@@ -106,17 +106,17 @@ public class TrusteeBillingOverview  implements Serializable {
   /**
    * Organization
    **/
-  public TrusteeBillingOverview organization(Entity organization) {
+  public TrusteeBillingOverview organization(NamedEntity organization) {
     this.organization = organization;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "Organization")
   @JsonProperty("organization")
-  public Entity getOrganization() {
+  public NamedEntity getOrganization() {
     return organization;
   }
-  public void setOrganization(Entity organization) {
+  public void setOrganization(NamedEntity organization) {
     this.organization = organization;
   }
 

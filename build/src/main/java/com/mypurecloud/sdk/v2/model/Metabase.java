@@ -74,7 +74,10 @@ public class Metabase  implements Serializable {
     EXTERNAL_BYOC_CARRIER("EXTERNAL_BYOC_CARRIER"),
     EXTERNAL_BYOC_PBX("EXTERNAL_BYOC_PBX"),
     STATION("STATION"),
-    TIE("TIE");
+    TIE("TIE"),
+    TIE_DIRECT("TIE_DIRECT"),
+    TIE_INDIRECT("TIE_INDIRECT"),
+    TIE_CLOUD_PROXY("TIE_CLOUD_PROXY");
 
     private String value;
 

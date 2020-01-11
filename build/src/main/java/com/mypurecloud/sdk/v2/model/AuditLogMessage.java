@@ -83,6 +83,7 @@ public class AuditLogMessage  implements Serializable {
     MEMBERUPDATE("MemberUpdate"),
     MEMBERREMOVE("MemberRemove"),
     READ("Read"),
+    READALL("ReadAll"),
     EXECUTE("Execute"),
     PUBLISH("Publish");
 

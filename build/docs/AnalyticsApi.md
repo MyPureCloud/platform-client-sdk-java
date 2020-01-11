@@ -557,8 +557,9 @@ Get list of reporting metadata.
 
 Wraps GET /api/v2/analytics/reporting/metadata  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
 
 ### Example
 
@@ -623,8 +624,9 @@ Get a reporting metadata.
 
 Wraps GET /api/v2/analytics/reporting/{reportId}/metadata  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
 
 ### Example
 
@@ -1880,8 +1882,9 @@ Create a scheduled report job.
 
 Wraps POST /api/v2/analytics/reporting/schedules  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
 
 ### Example
 
@@ -2257,8 +2260,9 @@ Update a scheduled report job.
 
 Wraps PUT /api/v2/analytics/reporting/schedules/{scheduleId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
 
 ### Example
 

@@ -51,6 +51,9 @@ title: Metabase
 | EXTERNAL_BYOC_PBX | &quot;EXTERNAL_BYOC_PBX&quot; |
 | STATION | &quot;STATION&quot; |
 | TIE | &quot;TIE&quot; |
+| TIE_DIRECT | &quot;TIE_DIRECT&quot; |
+| TIE_INDIRECT | &quot;TIE_INDIRECT&quot; |
+| TIE_CLOUD_PROXY | &quot;TIE_CLOUD_PROXY&quot; |
 {: class="table table-striped"}
 
 

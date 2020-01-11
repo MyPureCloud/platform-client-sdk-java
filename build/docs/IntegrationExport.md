@@ -9,7 +9,7 @@ title: IntegrationExport
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **integration** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The aws-s3-recording-bulk-actions-integration that the policy uses for exports. |  |
-| **shouldExportScreenRecordings** | <!----><!---->**Boolean**<!----> | True if the policy should export screen recordings in addition to the other conversation media. Default = false |  [optional] |
+| **shouldExportScreenRecordings** | <!----><!---->**Boolean**<!----> | True if the policy should export screen recordings in addition to the other conversation media. Default = true |  [optional] |
 {: class="table table-striped"}
 
 
