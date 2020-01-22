@@ -23,7 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 
-> Void deleteAuthorizationDivision(divisionId)
+> Void deleteAuthorizationDivision(divisionId, force)
 
 Delete a division.
 
@@ -58,8 +58,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 ObjectsApi apiInstance = new ObjectsApi();
 String divisionId = "divisionId_example"; // String | Division ID
+Boolean force = false; // Boolean | Force delete this division as well as the grants and objects associated with it
 try {
-    apiInstance.deleteAuthorizationDivision(divisionId);
+    apiInstance.deleteAuthorizationDivision(divisionId, force);
 } catch (ApiException e) {
     System.err.println("Exception when calling ObjectsApi#deleteAuthorizationDivision");
     e.printStackTrace();
@@ -72,6 +73,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **divisionId** | **String**| Division ID | 
+| **force** | **Boolean**| Force delete this division as well as the grants and objects associated with it | [optional] [default to false] 
 {: class="table-striped"}
 
 

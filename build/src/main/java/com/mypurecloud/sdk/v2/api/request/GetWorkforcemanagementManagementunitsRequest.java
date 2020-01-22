@@ -190,6 +190,7 @@ public class GetWorkforcemanagementManagementunitsRequest {
 		BUSINESSUNITS("BusinessUnits"), 
 		HISTORICALADHERENCE("HistoricalAdherence"), 
 		INTRADAYMONITORING("IntradayMonitoring"), 
+		BUINTRADAYMONITORING("BuIntradayMonitoring"), 
 		MANAGEMENTUNITS("ManagementUnits"), 
 		REALTIMEADHERENCE("RealTimeAdherence"), 
 		SCHEDULES("Schedules"), 

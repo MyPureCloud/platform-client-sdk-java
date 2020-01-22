@@ -4,10 +4,12 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmBuScheduleRunTopicBuScheduleReference;
 import com.mypurecloud.sdk.v2.model.WfmBuScheduleRunTopicUserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.math.BigDecimal;
 
 import java.io.Serializable;
 /**
@@ -17,9 +19,50 @@ import java.io.Serializable;
 public class WfmBuScheduleRunTopicBuScheduleRun  implements Serializable {
   
   private String id = null;
+  private BigDecimal percentComplete = null;
+  private Boolean intradayRescheduling = null;
+
+  /**
+   * Gets or Sets state
+   */
+  public enum StateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NONE("None"),
+    QUEUED("Queued"),
+    SCHEDULING("Scheduling"),
+    CANCELED("Canceled"),
+    FAILED("Failed"),
+    COMPLETE("Complete");
+
+    private String value;
+
+    StateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static StateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (StateEnum value : StateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return StateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private StateEnum state = null;
   private Integer weekCount = null;
   private WfmBuScheduleRunTopicBuScheduleReference schedule = null;
-  private WfmBuScheduleRunTopicUserReference schedulingCanceledByUser = null;
+  private WfmBuScheduleRunTopicUserReference schedulingCanceledBy = null;
   private String schedulingCompletedTime = null;
   private Integer messageCount = null;
 
@@ -38,6 +81,57 @@ public class WfmBuScheduleRunTopicBuScheduleRun  implements Serializable {
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+  
+  /**
+   **/
+  public WfmBuScheduleRunTopicBuScheduleRun percentComplete(BigDecimal percentComplete) {
+    this.percentComplete = percentComplete;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("percentComplete")
+  public BigDecimal getPercentComplete() {
+    return percentComplete;
+  }
+  public void setPercentComplete(BigDecimal percentComplete) {
+    this.percentComplete = percentComplete;
+  }
+
+  
+  /**
+   **/
+  public WfmBuScheduleRunTopicBuScheduleRun intradayRescheduling(Boolean intradayRescheduling) {
+    this.intradayRescheduling = intradayRescheduling;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("intradayRescheduling")
+  public Boolean getIntradayRescheduling() {
+    return intradayRescheduling;
+  }
+  public void setIntradayRescheduling(Boolean intradayRescheduling) {
+    this.intradayRescheduling = intradayRescheduling;
+  }
+
+  
+  /**
+   **/
+  public WfmBuScheduleRunTopicBuScheduleRun state(StateEnum state) {
+    this.state = state;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("state")
+  public StateEnum getState() {
+    return state;
+  }
+  public void setState(StateEnum state) {
+    this.state = state;
   }
 
   
@@ -77,18 +171,18 @@ public class WfmBuScheduleRunTopicBuScheduleRun  implements Serializable {
   
   /**
    **/
-  public WfmBuScheduleRunTopicBuScheduleRun schedulingCanceledByUser(WfmBuScheduleRunTopicUserReference schedulingCanceledByUser) {
-    this.schedulingCanceledByUser = schedulingCanceledByUser;
+  public WfmBuScheduleRunTopicBuScheduleRun schedulingCanceledBy(WfmBuScheduleRunTopicUserReference schedulingCanceledBy) {
+    this.schedulingCanceledBy = schedulingCanceledBy;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("schedulingCanceledByUser")
-  public WfmBuScheduleRunTopicUserReference getSchedulingCanceledByUser() {
-    return schedulingCanceledByUser;
+  @JsonProperty("schedulingCanceledBy")
+  public WfmBuScheduleRunTopicUserReference getSchedulingCanceledBy() {
+    return schedulingCanceledBy;
   }
-  public void setSchedulingCanceledByUser(WfmBuScheduleRunTopicUserReference schedulingCanceledByUser) {
-    this.schedulingCanceledByUser = schedulingCanceledByUser;
+  public void setSchedulingCanceledBy(WfmBuScheduleRunTopicUserReference schedulingCanceledBy) {
+    this.schedulingCanceledBy = schedulingCanceledBy;
   }
 
   
@@ -137,16 +231,19 @@ public class WfmBuScheduleRunTopicBuScheduleRun  implements Serializable {
     }
     WfmBuScheduleRunTopicBuScheduleRun wfmBuScheduleRunTopicBuScheduleRun = (WfmBuScheduleRunTopicBuScheduleRun) o;
     return Objects.equals(this.id, wfmBuScheduleRunTopicBuScheduleRun.id) &&
+        Objects.equals(this.percentComplete, wfmBuScheduleRunTopicBuScheduleRun.percentComplete) &&
+        Objects.equals(this.intradayRescheduling, wfmBuScheduleRunTopicBuScheduleRun.intradayRescheduling) &&
+        Objects.equals(this.state, wfmBuScheduleRunTopicBuScheduleRun.state) &&
         Objects.equals(this.weekCount, wfmBuScheduleRunTopicBuScheduleRun.weekCount) &&
         Objects.equals(this.schedule, wfmBuScheduleRunTopicBuScheduleRun.schedule) &&
-        Objects.equals(this.schedulingCanceledByUser, wfmBuScheduleRunTopicBuScheduleRun.schedulingCanceledByUser) &&
+        Objects.equals(this.schedulingCanceledBy, wfmBuScheduleRunTopicBuScheduleRun.schedulingCanceledBy) &&
         Objects.equals(this.schedulingCompletedTime, wfmBuScheduleRunTopicBuScheduleRun.schedulingCompletedTime) &&
         Objects.equals(this.messageCount, wfmBuScheduleRunTopicBuScheduleRun.messageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, weekCount, schedule, schedulingCanceledByUser, schedulingCompletedTime, messageCount);
+    return Objects.hash(id, percentComplete, intradayRescheduling, state, weekCount, schedule, schedulingCanceledBy, schedulingCompletedTime, messageCount);
   }
 
   @Override
@@ -155,9 +252,12 @@ public class WfmBuScheduleRunTopicBuScheduleRun  implements Serializable {
     sb.append("class WfmBuScheduleRunTopicBuScheduleRun {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    percentComplete: ").append(toIndentedString(percentComplete)).append("\n");
+    sb.append("    intradayRescheduling: ").append(toIndentedString(intradayRescheduling)).append("\n");
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    weekCount: ").append(toIndentedString(weekCount)).append("\n");
     sb.append("    schedule: ").append(toIndentedString(schedule)).append("\n");
-    sb.append("    schedulingCanceledByUser: ").append(toIndentedString(schedulingCanceledByUser)).append("\n");
+    sb.append("    schedulingCanceledBy: ").append(toIndentedString(schedulingCanceledBy)).append("\n");
     sb.append("    schedulingCompletedTime: ").append(toIndentedString(schedulingCompletedTime)).append("\n");
     sb.append("    messageCount: ").append(toIndentedString(messageCount)).append("\n");
     sb.append("}");

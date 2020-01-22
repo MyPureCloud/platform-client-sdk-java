@@ -86,6 +86,7 @@ title: ConversationDetailQueryPredicate
 | THELD | &quot;tHeld&quot; |
 | THELDCOMPLETE | &quot;tHeldComplete&quot; |
 | TIVR | &quot;tIvr&quot; |
+| TMONITORING | &quot;tMonitoring&quot; |
 | TNOTRESPONDING | &quot;tNotResponding&quot; |
 | TTALK | &quot;tTalk&quot; |
 | TTALKCOMPLETE | &quot;tTalkComplete&quot; |

@@ -28,6 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postOrgauthorizationTrusteesAudits**](OrganizationAuthorizationApi.html#postOrgauthorizationTrusteesAudits) | Get Org Trustee Audits |
 | [**postOrgauthorizationTrustorAudits**](OrganizationAuthorizationApi.html#postOrgauthorizationTrustorAudits) | Get Org Trustor Audits |
 | [**putOrgauthorizationTrustee**](OrganizationAuthorizationApi.html#putOrgauthorizationTrustee) | Update Org Trust |
+| [**putOrgauthorizationTrusteeUserRoledivisions**](OrganizationAuthorizationApi.html#putOrgauthorizationTrusteeUserRoledivisions) | Update Trustee User Roles |
 | [**putOrgauthorizationTrusteeUserRoles**](OrganizationAuthorizationApi.html#putOrgauthorizationTrusteeUserRoles) | Update Trustee User Roles |
 | [**putOrgauthorizationTrustorUser**](OrganizationAuthorizationApi.html#putOrgauthorizationTrustorUser) | Add a Trustee user to the trust. |
 {: class="table-striped"}
@@ -1395,6 +1396,73 @@ try {
 ### Return type
 
 [**Trustee**](Trustee.html)
+
+<a name="putOrgauthorizationTrusteeUserRoledivisions"></a>
+
+# **putOrgauthorizationTrusteeUserRoledivisions**
+
+
+
+> [UserAuthorization](UserAuthorization.html) putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId, trusteeUserId, body)
+
+Update Trustee User Roles
+
+
+
+Wraps PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roledivisions  
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();
+String trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
+String trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+RoleDivisionGrants body = new RoleDivisionGrants(); // RoleDivisionGrants | Set of roles with corresponding divisions to apply
+try {
+    UserAuthorization result = apiInstance.putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId, trusteeUserId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationAuthorizationApi#putOrgauthorizationTrusteeUserRoledivisions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **trusteeOrgId** | **String**| Trustee Organization Id | 
+| **trusteeUserId** | **String**| Trustee User Id | 
+| **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Set of roles with corresponding divisions to apply | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserAuthorization**](UserAuthorization.html)
 
 <a name="putOrgauthorizationTrusteeUserRoles"></a>
 

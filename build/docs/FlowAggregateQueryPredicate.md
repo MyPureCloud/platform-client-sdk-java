@@ -52,6 +52,7 @@ title: FlowAggregateQueryPredicate
 | ENTRYREASON | &quot;entryReason&quot; |
 | ENTRYTYPE | &quot;entryType&quot; |
 | EXITREASON | &quot;exitReason&quot; |
+| EXTERNALMEDIACOUNT | &quot;externalMediaCount&quot; |
 | EXTERNALORGANIZATIONID | &quot;externalOrganizationId&quot; |
 | FLAGGEDREASON | &quot;flaggedReason&quot; |
 | FLOWID | &quot;flowId&quot; |
@@ -71,6 +72,7 @@ title: FlowAggregateQueryPredicate
 | JOURNEYCUSTOMERIDTYPE | &quot;journeyCustomerIdType&quot; |
 | JOURNEYCUSTOMERSESSIONID | &quot;journeyCustomerSessionId&quot; |
 | JOURNEYCUSTOMERSESSIONIDTYPE | &quot;journeyCustomerSessionIdType&quot; |
+| MEDIACOUNT | &quot;mediaCount&quot; |
 | MEDIATYPE | &quot;mediaType&quot; |
 | MESSAGETYPE | &quot;messageType&quot; |
 | ORIGINATINGDIRECTION | &quot;originatingDirection&quot; |

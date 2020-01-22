@@ -89,26 +89,30 @@ public class AuthorizationApi {
    * Delete a division.
    * 
    * @param divisionId Division ID (required)
+   * @param force Force delete this division as well as the grants and objects associated with it (optional, default to false)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteAuthorizationDivision(String divisionId) throws IOException, ApiException {
-     deleteAuthorizationDivision(createDeleteAuthorizationDivisionRequest(divisionId));
+  public void deleteAuthorizationDivision(String divisionId, Boolean force) throws IOException, ApiException {
+     deleteAuthorizationDivision(createDeleteAuthorizationDivisionRequest(divisionId, force));
   }
 
   /**
    * Delete a division.
    * 
    * @param divisionId Division ID (required)
+   * @param force Force delete this division as well as the grants and objects associated with it (optional, default to false)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteAuthorizationDivisionWithHttpInfo(String divisionId) throws IOException {
-    return deleteAuthorizationDivision(createDeleteAuthorizationDivisionRequest(divisionId).withHttpInfo());
+  public ApiResponse<Void> deleteAuthorizationDivisionWithHttpInfo(String divisionId, Boolean force) throws IOException {
+    return deleteAuthorizationDivision(createDeleteAuthorizationDivisionRequest(divisionId, force).withHttpInfo());
   }
 
-  private DeleteAuthorizationDivisionRequest createDeleteAuthorizationDivisionRequest(String divisionId) {
+  private DeleteAuthorizationDivisionRequest createDeleteAuthorizationDivisionRequest(String divisionId, Boolean force) {
     return DeleteAuthorizationDivisionRequest.builder()
             .withDivisionId(divisionId)
+    
+            .withForce(force)
     
             .build();
   }

@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmBuScheduleRunTopicBuScheduleRun;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 
 import java.io.Serializable;
 /**
@@ -17,37 +16,34 @@ import java.io.Serializable;
 
 public class WfmBuScheduleRunTopicBuSchedulingRunProgressNotification  implements Serializable {
   
-  private String operationId = null;
 
   /**
-   * Gets or Sets state
+   * Gets or Sets status
    */
-  public enum StateEnum {
+  public enum StatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    NONE("None"),
-    QUEUED("Queued"),
-    SCHEDULING("Scheduling"),
+    PROCESSING("Processing"),
+    COMPLETE("Complete"),
     CANCELED("Canceled"),
-    FAILED("Failed"),
-    COMPLETE("Complete");
+    ERROR("Error");
 
     private String value;
 
-    StateEnum(String value) {
+    StatusEnum(String value) {
       this.value = value;
     }
 
     @JsonCreator
-    public static StateEnum fromString(String key) {
+    public static StatusEnum fromString(String key) {
       if (key == null) return null;
 
-      for (StateEnum value : StateEnum.values()) {
+      for (StatusEnum value : StatusEnum.values()) {
         if (key.equalsIgnoreCase(value.toString())) {
           return value;
         }
       }
 
-      return StateEnum.values()[0];
+      return StatusEnum.values()[0];
     }
 
     @Override
@@ -56,10 +52,26 @@ public class WfmBuScheduleRunTopicBuSchedulingRunProgressNotification  implement
       return String.valueOf(value);
     }
   }
-  private StateEnum state = null;
-  private BigDecimal percentComplete = null;
-  private Boolean intradayRescheduling = null;
-  private WfmBuScheduleRunTopicBuScheduleRun run = null;
+  private StatusEnum status = null;
+  private String operationId = null;
+  private WfmBuScheduleRunTopicBuScheduleRun result = null;
+
+  
+  /**
+   **/
+  public WfmBuScheduleRunTopicBuSchedulingRunProgressNotification status(StatusEnum status) {
+    this.status = status;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("status")
+  public StatusEnum getStatus() {
+    return status;
+  }
+  public void setStatus(StatusEnum status) {
+    this.status = status;
+  }
 
   
   /**
@@ -81,69 +93,18 @@ public class WfmBuScheduleRunTopicBuSchedulingRunProgressNotification  implement
   
   /**
    **/
-  public WfmBuScheduleRunTopicBuSchedulingRunProgressNotification state(StateEnum state) {
-    this.state = state;
+  public WfmBuScheduleRunTopicBuSchedulingRunProgressNotification result(WfmBuScheduleRunTopicBuScheduleRun result) {
+    this.result = result;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("state")
-  public StateEnum getState() {
-    return state;
+  @JsonProperty("result")
+  public WfmBuScheduleRunTopicBuScheduleRun getResult() {
+    return result;
   }
-  public void setState(StateEnum state) {
-    this.state = state;
-  }
-
-  
-  /**
-   **/
-  public WfmBuScheduleRunTopicBuSchedulingRunProgressNotification percentComplete(BigDecimal percentComplete) {
-    this.percentComplete = percentComplete;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("percentComplete")
-  public BigDecimal getPercentComplete() {
-    return percentComplete;
-  }
-  public void setPercentComplete(BigDecimal percentComplete) {
-    this.percentComplete = percentComplete;
-  }
-
-  
-  /**
-   **/
-  public WfmBuScheduleRunTopicBuSchedulingRunProgressNotification intradayRescheduling(Boolean intradayRescheduling) {
-    this.intradayRescheduling = intradayRescheduling;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("intradayRescheduling")
-  public Boolean getIntradayRescheduling() {
-    return intradayRescheduling;
-  }
-  public void setIntradayRescheduling(Boolean intradayRescheduling) {
-    this.intradayRescheduling = intradayRescheduling;
-  }
-
-  
-  /**
-   **/
-  public WfmBuScheduleRunTopicBuSchedulingRunProgressNotification run(WfmBuScheduleRunTopicBuScheduleRun run) {
-    this.run = run;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("run")
-  public WfmBuScheduleRunTopicBuScheduleRun getRun() {
-    return run;
-  }
-  public void setRun(WfmBuScheduleRunTopicBuScheduleRun run) {
-    this.run = run;
+  public void setResult(WfmBuScheduleRunTopicBuScheduleRun result) {
+    this.result = result;
   }
 
   
@@ -157,16 +118,14 @@ public class WfmBuScheduleRunTopicBuSchedulingRunProgressNotification  implement
       return false;
     }
     WfmBuScheduleRunTopicBuSchedulingRunProgressNotification wfmBuScheduleRunTopicBuSchedulingRunProgressNotification = (WfmBuScheduleRunTopicBuSchedulingRunProgressNotification) o;
-    return Objects.equals(this.operationId, wfmBuScheduleRunTopicBuSchedulingRunProgressNotification.operationId) &&
-        Objects.equals(this.state, wfmBuScheduleRunTopicBuSchedulingRunProgressNotification.state) &&
-        Objects.equals(this.percentComplete, wfmBuScheduleRunTopicBuSchedulingRunProgressNotification.percentComplete) &&
-        Objects.equals(this.intradayRescheduling, wfmBuScheduleRunTopicBuSchedulingRunProgressNotification.intradayRescheduling) &&
-        Objects.equals(this.run, wfmBuScheduleRunTopicBuSchedulingRunProgressNotification.run);
+    return Objects.equals(this.status, wfmBuScheduleRunTopicBuSchedulingRunProgressNotification.status) &&
+        Objects.equals(this.operationId, wfmBuScheduleRunTopicBuSchedulingRunProgressNotification.operationId) &&
+        Objects.equals(this.result, wfmBuScheduleRunTopicBuSchedulingRunProgressNotification.result);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(operationId, state, percentComplete, intradayRescheduling, run);
+    return Objects.hash(status, operationId, result);
   }
 
   @Override
@@ -174,11 +133,9 @@ public class WfmBuScheduleRunTopicBuSchedulingRunProgressNotification  implement
     StringBuilder sb = new StringBuilder();
     sb.append("class WfmBuScheduleRunTopicBuSchedulingRunProgressNotification {\n");
     
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    operationId: ").append(toIndentedString(operationId)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    percentComplete: ").append(toIndentedString(percentComplete)).append("\n");
-    sb.append("    intradayRescheduling: ").append(toIndentedString(intradayRescheduling)).append("\n");
-    sb.append("    run: ").append(toIndentedString(run)).append("\n");
+    sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("}");
     return sb.toString();
   }

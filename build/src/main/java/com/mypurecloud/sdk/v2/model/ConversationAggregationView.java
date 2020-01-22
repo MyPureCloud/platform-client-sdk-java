@@ -52,6 +52,7 @@ public class ConversationAggregationView  implements Serializable {
     THELD("tHeld"),
     THELDCOMPLETE("tHeldComplete"),
     TIVR("tIvr"),
+    TMONITORING("tMonitoring"),
     TNOTRESPONDING("tNotResponding"),
     TSHORTABANDON("tShortAbandon"),
     TTALK("tTalk"),

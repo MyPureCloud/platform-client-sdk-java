@@ -87,6 +87,7 @@ title: SegmentDetailQueryPredicate
 | JOURNEYCUSTOMERSESSIONID | &quot;journeyCustomerSessionId&quot; |
 | JOURNEYCUSTOMERSESSIONIDTYPE | &quot;journeyCustomerSessionIdType&quot; |
 | MEDIABRIDGEID | &quot;mediaBridgeId&quot; |
+| MEDIACOUNT | &quot;mediaCount&quot; |
 | MEDIATYPE | &quot;mediaType&quot; |
 | MESSAGETYPE | &quot;messageType&quot; |
 | MONITOREDPARTICIPANTID | &quot;monitoredParticipantId&quot; |
@@ -101,8 +102,8 @@ title: SegmentDetailQueryPredicate
 | PURPOSE | &quot;purpose&quot; |
 | Q850RESPONSECODE | &quot;q850ResponseCode&quot; |
 | QUEUEID | &quot;queueId&quot; |
-| REMOTE | &quot;remote&quot; |
 | RECORDING | &quot;recording&quot; |
+| REMOTE | &quot;remote&quot; |
 | REMOTENAMEDISPLAYABLE | &quot;remoteNameDisplayable&quot; |
 | REQUESTEDLANGUAGEID | &quot;requestedLanguageId&quot; |
 | REQUESTEDROUTINGSKILLID | &quot;requestedRoutingSkillId&quot; |

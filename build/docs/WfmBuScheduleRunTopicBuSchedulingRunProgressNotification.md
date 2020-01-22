@@ -8,27 +8,23 @@ title: WfmBuScheduleRunTopicBuSchedulingRunProgressNotification
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
+| **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
 | **operationId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
-| **percentComplete** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **intradayRescheduling** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **run** | <!----><!---->[**WfmBuScheduleRunTopicBuScheduleRun**](WfmBuScheduleRunTopicBuScheduleRun.html)<!----> |  |  [optional] |
+| **result** | <!----><!---->[**WfmBuScheduleRunTopicBuScheduleRun**](WfmBuScheduleRunTopicBuScheduleRun.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 
-<a name="StateEnum"></a>
+<a name="StatusEnum"></a>
 
-## Enum: StateEnum
+## Enum: StatusEnum
 
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NONE | &quot;None&quot; |
-| QUEUED | &quot;Queued&quot; |
-| SCHEDULING | &quot;Scheduling&quot; |
-| CANCELED | &quot;Canceled&quot; |
-| FAILED | &quot;Failed&quot; |
+| PROCESSING | &quot;Processing&quot; |
 | COMPLETE | &quot;Complete&quot; |
+| CANCELED | &quot;Canceled&quot; |
+| ERROR | &quot;Error&quot; |
 {: class="table table-striped"}
 
 

@@ -52,6 +52,7 @@ title: ConversationAggregationView
 | THELD | &quot;tHeld&quot; |
 | THELDCOMPLETE | &quot;tHeldComplete&quot; |
 | TIVR | &quot;tIvr&quot; |
+| TMONITORING | &quot;tMonitoring&quot; |
 | TNOTRESPONDING | &quot;tNotResponding&quot; |
 | TSHORTABANDON | &quot;tShortAbandon&quot; |
 | TTALK | &quot;tTalk&quot; |

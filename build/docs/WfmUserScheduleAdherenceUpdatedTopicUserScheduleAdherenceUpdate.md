@@ -22,6 +22,7 @@ title: WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate
 | **presenceUpdateTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **activeQueues** | <!----><!---->[**List&lt;WfmUserScheduleAdherenceUpdatedTopicQueueReference&gt;**](WfmUserScheduleAdherenceUpdatedTopicQueueReference.html)<!----> |  |  [optional] |
 | **activeQueuesModifiedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **removedFromManagementUnit** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

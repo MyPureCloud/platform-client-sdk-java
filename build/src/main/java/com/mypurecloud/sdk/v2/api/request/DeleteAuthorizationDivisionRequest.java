@@ -40,6 +40,20 @@ public class DeleteAuthorizationDivisionRequest {
 	    return this;
 	} 
 	
+	private Boolean force;
+	public Boolean getForce() {
+		return this.force;
+	}
+
+	public void setForce(Boolean force) {
+		this.force = force;
+	}
+
+	public DeleteAuthorizationDivisionRequest withForce(Boolean force) {
+	    this.setForce(force);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -70,6 +84,8 @@ public class DeleteAuthorizationDivisionRequest {
         return ApiRequestBuilder.create("DELETE", "/api/v2/authorization/divisions/{divisionId}")
                 .withPathParameter("divisionId", divisionId)
         
+                .withQueryParameters("force", "", force)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -98,6 +114,11 @@ public class DeleteAuthorizationDivisionRequest {
 		
 		public Builder withDivisionId(String divisionId) {
 			request.setDivisionId(divisionId);
+			return this;
+		}
+		
+		public Builder withForce(Boolean force) {
+			request.setForce(force);
 			return this;
 		}
 		

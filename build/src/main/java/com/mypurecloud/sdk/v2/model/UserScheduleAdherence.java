@@ -271,6 +271,7 @@ public class UserScheduleAdherence  implements Serializable {
   private Date presenceUpdateTime = null;
   private List<QueueReference> activeQueues = new ArrayList<QueueReference>();
   private Date activeQueuesModifiedTime = null;
+  private Boolean removedFromManagementUnit = null;
   private String selfUri = null;
 
   
@@ -429,6 +430,13 @@ public class UserScheduleAdherence  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "For notification purposes. Used to indicate that a user was removed from the management unit")
+  @JsonProperty("removedFromManagementUnit")
+  public Boolean getRemovedFromManagementUnit() {
+    return removedFromManagementUnit;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -462,12 +470,13 @@ public class UserScheduleAdherence  implements Serializable {
         Objects.equals(this.presenceUpdateTime, userScheduleAdherence.presenceUpdateTime) &&
         Objects.equals(this.activeQueues, userScheduleAdherence.activeQueues) &&
         Objects.equals(this.activeQueuesModifiedTime, userScheduleAdherence.activeQueuesModifiedTime) &&
+        Objects.equals(this.removedFromManagementUnit, userScheduleAdherence.removedFromManagementUnit) &&
         Objects.equals(this.selfUri, userScheduleAdherence.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, user, managementUnit, scheduledActivityCategory, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, timeOfAdherenceChange, presenceUpdateTime, activeQueues, activeQueuesModifiedTime, selfUri);
+    return Objects.hash(id, name, user, managementUnit, scheduledActivityCategory, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, timeOfAdherenceChange, presenceUpdateTime, activeQueues, activeQueuesModifiedTime, removedFromManagementUnit, selfUri);
   }
 
   @Override
@@ -491,6 +500,7 @@ public class UserScheduleAdherence  implements Serializable {
     sb.append("    presenceUpdateTime: ").append(toIndentedString(presenceUpdateTime)).append("\n");
     sb.append("    activeQueues: ").append(toIndentedString(activeQueues)).append("\n");
     sb.append("    activeQueuesModifiedTime: ").append(toIndentedString(activeQueuesModifiedTime)).append("\n");
+    sb.append("    removedFromManagementUnit: ").append(toIndentedString(removedFromManagementUnit)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

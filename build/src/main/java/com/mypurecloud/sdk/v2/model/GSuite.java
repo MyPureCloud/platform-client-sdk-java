@@ -17,8 +17,8 @@ public class GSuite  implements Serializable {
   private String id = null;
   private String name = null;
   private String relyingPartyIdentifier = null;
-  private String issuerURI = null;
   private String certificate = null;
+  private String issuerURI = null;
   private String ssoTargetURI = null;
   private Boolean disabled = null;
   private String selfUri = null;
@@ -67,23 +67,6 @@ public class GSuite  implements Serializable {
   
   /**
    **/
-  public GSuite issuerURI(String issuerURI) {
-    this.issuerURI = issuerURI;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("issuerURI")
-  public String getIssuerURI() {
-    return issuerURI;
-  }
-  public void setIssuerURI(String issuerURI) {
-    this.issuerURI = issuerURI;
-  }
-
-  
-  /**
-   **/
   public GSuite certificate(String certificate) {
     this.certificate = certificate;
     return this;
@@ -96,6 +79,23 @@ public class GSuite  implements Serializable {
   }
   public void setCertificate(String certificate) {
     this.certificate = certificate;
+  }
+
+  
+  /**
+   **/
+  public GSuite issuerURI(String issuerURI) {
+    this.issuerURI = issuerURI;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("issuerURI")
+  public String getIssuerURI() {
+    return issuerURI;
+  }
+  public void setIssuerURI(String issuerURI) {
+    this.issuerURI = issuerURI;
   }
 
   
@@ -153,8 +153,8 @@ public class GSuite  implements Serializable {
     return Objects.equals(this.id, gSuite.id) &&
         Objects.equals(this.name, gSuite.name) &&
         Objects.equals(this.relyingPartyIdentifier, gSuite.relyingPartyIdentifier) &&
-        Objects.equals(this.issuerURI, gSuite.issuerURI) &&
         Objects.equals(this.certificate, gSuite.certificate) &&
+        Objects.equals(this.issuerURI, gSuite.issuerURI) &&
         Objects.equals(this.ssoTargetURI, gSuite.ssoTargetURI) &&
         Objects.equals(this.disabled, gSuite.disabled) &&
         Objects.equals(this.selfUri, gSuite.selfUri);
@@ -162,7 +162,7 @@ public class GSuite  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, relyingPartyIdentifier, issuerURI, certificate, ssoTargetURI, disabled, selfUri);
+    return Objects.hash(id, name, relyingPartyIdentifier, certificate, issuerURI, ssoTargetURI, disabled, selfUri);
   }
 
   @Override
@@ -173,8 +173,8 @@ public class GSuite  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    relyingPartyIdentifier: ").append(toIndentedString(relyingPartyIdentifier)).append("\n");
-    sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
+    sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
     sb.append("    ssoTargetURI: ").append(toIndentedString(ssoTargetURI)).append("\n");
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

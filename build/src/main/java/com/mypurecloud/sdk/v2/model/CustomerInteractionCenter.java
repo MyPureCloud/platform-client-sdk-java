@@ -16,8 +16,8 @@ public class CustomerInteractionCenter  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private String issuerURI = null;
   private String certificate = null;
+  private String issuerURI = null;
   private String ssoTargetURI = null;
   private Boolean disabled = null;
   private String selfUri = null;
@@ -49,23 +49,6 @@ public class CustomerInteractionCenter  implements Serializable {
   
   /**
    **/
-  public CustomerInteractionCenter issuerURI(String issuerURI) {
-    this.issuerURI = issuerURI;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("issuerURI")
-  public String getIssuerURI() {
-    return issuerURI;
-  }
-  public void setIssuerURI(String issuerURI) {
-    this.issuerURI = issuerURI;
-  }
-
-  
-  /**
-   **/
   public CustomerInteractionCenter certificate(String certificate) {
     this.certificate = certificate;
     return this;
@@ -78,6 +61,23 @@ public class CustomerInteractionCenter  implements Serializable {
   }
   public void setCertificate(String certificate) {
     this.certificate = certificate;
+  }
+
+  
+  /**
+   **/
+  public CustomerInteractionCenter issuerURI(String issuerURI) {
+    this.issuerURI = issuerURI;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("issuerURI")
+  public String getIssuerURI() {
+    return issuerURI;
+  }
+  public void setIssuerURI(String issuerURI) {
+    this.issuerURI = issuerURI;
   }
 
   
@@ -134,8 +134,8 @@ public class CustomerInteractionCenter  implements Serializable {
     CustomerInteractionCenter customerInteractionCenter = (CustomerInteractionCenter) o;
     return Objects.equals(this.id, customerInteractionCenter.id) &&
         Objects.equals(this.name, customerInteractionCenter.name) &&
-        Objects.equals(this.issuerURI, customerInteractionCenter.issuerURI) &&
         Objects.equals(this.certificate, customerInteractionCenter.certificate) &&
+        Objects.equals(this.issuerURI, customerInteractionCenter.issuerURI) &&
         Objects.equals(this.ssoTargetURI, customerInteractionCenter.ssoTargetURI) &&
         Objects.equals(this.disabled, customerInteractionCenter.disabled) &&
         Objects.equals(this.selfUri, customerInteractionCenter.selfUri);
@@ -143,7 +143,7 @@ public class CustomerInteractionCenter  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, issuerURI, certificate, ssoTargetURI, disabled, selfUri);
+    return Objects.hash(id, name, certificate, issuerURI, ssoTargetURI, disabled, selfUri);
   }
 
   @Override
@@ -153,8 +153,8 @@ public class CustomerInteractionCenter  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
+    sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
     sb.append("    ssoTargetURI: ").append(toIndentedString(ssoTargetURI)).append("\n");
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

@@ -38,6 +38,7 @@ title: ConversationAggregationQuery
 | DIVISIONID | &quot;divisionId&quot; |
 | DNIS | &quot;dnis&quot; |
 | EDGEID | &quot;edgeId&quot; |
+| EXTERNALMEDIACOUNT | &quot;externalMediaCount&quot; |
 | EXTERNALORGANIZATIONID | &quot;externalOrganizationId&quot; |
 | FLAGGEDREASON | &quot;flaggedReason&quot; |
 | FLOWOUTTYPE | &quot;flowOutType&quot; |
@@ -50,6 +51,7 @@ title: ConversationAggregationQuery
 | JOURNEYCUSTOMERIDTYPE | &quot;journeyCustomerIdType&quot; |
 | JOURNEYCUSTOMERSESSIONID | &quot;journeyCustomerSessionId&quot; |
 | JOURNEYCUSTOMERSESSIONIDTYPE | &quot;journeyCustomerSessionIdType&quot; |
+| MEDIACOUNT | &quot;mediaCount&quot; |
 | MEDIATYPE | &quot;mediaType&quot; |
 | MESSAGETYPE | &quot;messageType&quot; |
 | ORIGINATINGDIRECTION | &quot;originatingDirection&quot; |
@@ -111,6 +113,7 @@ title: ConversationAggregationQuery
 | THELD | &quot;tHeld&quot; |
 | THELDCOMPLETE | &quot;tHeldComplete&quot; |
 | TIVR | &quot;tIvr&quot; |
+| TMONITORING | &quot;tMonitoring&quot; |
 | TNOTRESPONDING | &quot;tNotResponding&quot; |
 | TSHORTABANDON | &quot;tShortAbandon&quot; |
 | TTALK | &quot;tTalk&quot; |

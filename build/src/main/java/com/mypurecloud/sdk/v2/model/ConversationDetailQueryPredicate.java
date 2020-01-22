@@ -130,6 +130,7 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     THELD("tHeld"),
     THELDCOMPLETE("tHeldComplete"),
     TIVR("tIvr"),
+    TMONITORING("tMonitoring"),
     TNOTRESPONDING("tNotResponding"),
     TTALK("tTalk"),
     TTALKCOMPLETE("tTalkComplete"),

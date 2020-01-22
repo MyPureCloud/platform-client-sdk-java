@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.TrustCreate;
 import com.mypurecloud.sdk.v2.model.AuditQueryResponse;
 import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
 import com.mypurecloud.sdk.v2.model.TrustorAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeRequest;
@@ -48,6 +49,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteesAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrustorAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrusteeRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrusteeUserRoledivisionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrusteeUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrustorUserRequest;
 
@@ -1797,6 +1799,93 @@ public class OrganizationAuthorizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Trustee> response = (ApiResponse<Trustee>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update Trustee User Roles
+   * 
+   * @param trusteeOrgId Trustee Organization Id (required)
+   * @param trusteeUserId Trustee User Id (required)
+   * @param body Set of roles with corresponding divisions to apply (required)
+   * @return UserAuthorization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserAuthorization putOrgauthorizationTrusteeUserRoledivisions(String trusteeOrgId, String trusteeUserId, RoleDivisionGrants body) throws IOException, ApiException {
+    return  putOrgauthorizationTrusteeUserRoledivisions(createPutOrgauthorizationTrusteeUserRoledivisionsRequest(trusteeOrgId, trusteeUserId, body));
+  }
+
+  /**
+   * Update Trustee User Roles
+   * 
+   * @param trusteeOrgId Trustee Organization Id (required)
+   * @param trusteeUserId Trustee User Id (required)
+   * @param body Set of roles with corresponding divisions to apply (required)
+   * @return UserAuthorization
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserAuthorization> putOrgauthorizationTrusteeUserRoledivisionsWithHttpInfo(String trusteeOrgId, String trusteeUserId, RoleDivisionGrants body) throws IOException {
+    return putOrgauthorizationTrusteeUserRoledivisions(createPutOrgauthorizationTrusteeUserRoledivisionsRequest(trusteeOrgId, trusteeUserId, body).withHttpInfo());
+  }
+
+  private PutOrgauthorizationTrusteeUserRoledivisionsRequest createPutOrgauthorizationTrusteeUserRoledivisionsRequest(String trusteeOrgId, String trusteeUserId, RoleDivisionGrants body) {
+    return PutOrgauthorizationTrusteeUserRoledivisionsRequest.builder()
+            .withTrusteeOrgId(trusteeOrgId)
+    
+            .withTrusteeUserId(trusteeUserId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update Trustee User Roles
+   * 
+   * @param request The request object
+   * @return UserAuthorization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserAuthorization putOrgauthorizationTrusteeUserRoledivisions(PutOrgauthorizationTrusteeUserRoledivisionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserAuthorization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserAuthorization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update Trustee User Roles
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserAuthorization> putOrgauthorizationTrusteeUserRoledivisions(ApiRequest<RoleDivisionGrants> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserAuthorization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

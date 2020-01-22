@@ -110,6 +110,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
   private Date presenceUpdateTime = null;
   private List<WfmUserScheduleAdherenceUpdatedTopicQueueReference> activeQueues = new ArrayList<WfmUserScheduleAdherenceUpdatedTopicQueueReference>();
   private Date activeQueuesModifiedTime = null;
+  private Boolean removedFromManagementUnit = null;
 
   
   /**
@@ -350,6 +351,23 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
   }
 
   
+  /**
+   **/
+  public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate removedFromManagementUnit(Boolean removedFromManagementUnit) {
+    this.removedFromManagementUnit = removedFromManagementUnit;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("removedFromManagementUnit")
+  public Boolean getRemovedFromManagementUnit() {
+    return removedFromManagementUnit;
+  }
+  public void setRemovedFromManagementUnit(Boolean removedFromManagementUnit) {
+    this.removedFromManagementUnit = removedFromManagementUnit;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -373,12 +391,13 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
         Objects.equals(this.adherenceChangeTime, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.adherenceChangeTime) &&
         Objects.equals(this.presenceUpdateTime, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.presenceUpdateTime) &&
         Objects.equals(this.activeQueues, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.activeQueues) &&
-        Objects.equals(this.activeQueuesModifiedTime, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.activeQueuesModifiedTime);
+        Objects.equals(this.activeQueuesModifiedTime, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.activeQueuesModifiedTime) &&
+        Objects.equals(this.removedFromManagementUnit, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.removedFromManagementUnit);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(user, managementUnitId, scheduledActivityCategory, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, adherenceChangeTime, presenceUpdateTime, activeQueues, activeQueuesModifiedTime);
+    return Objects.hash(user, managementUnitId, scheduledActivityCategory, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, adherenceChangeTime, presenceUpdateTime, activeQueues, activeQueuesModifiedTime, removedFromManagementUnit);
   }
 
   @Override
@@ -400,6 +419,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     sb.append("    presenceUpdateTime: ").append(toIndentedString(presenceUpdateTime)).append("\n");
     sb.append("    activeQueues: ").append(toIndentedString(activeQueues)).append("\n");
     sb.append("    activeQueuesModifiedTime: ").append(toIndentedString(activeQueuesModifiedTime)).append("\n");
+    sb.append("    removedFromManagementUnit: ").append(toIndentedString(removedFromManagementUnit)).append("\n");
     sb.append("}");
     return sb.toString();
   }

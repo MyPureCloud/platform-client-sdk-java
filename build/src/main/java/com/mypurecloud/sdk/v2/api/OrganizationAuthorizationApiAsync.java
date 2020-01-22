@@ -28,6 +28,7 @@ import com.mypurecloud.sdk.v2.model.TrustCreate;
 import com.mypurecloud.sdk.v2.model.AuditQueryResponse;
 import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
 import com.mypurecloud.sdk.v2.model.TrustorAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeRequest;
@@ -51,6 +52,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteesAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrustorAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrusteeRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrusteeUserRoledivisionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrusteeUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrustorUserRequest;
 
@@ -1658,6 +1660,82 @@ public class OrganizationAuthorizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Trustee> response = (ApiResponse<Trustee>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update Trustee User Roles
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserAuthorization> putOrgauthorizationTrusteeUserRoledivisionsAsync(PutOrgauthorizationTrusteeUserRoledivisionsRequest request, final AsyncApiCallback<UserAuthorization> callback) {
+    try {
+      final SettableFuture<UserAuthorization> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserAuthorization>() {}, new AsyncApiCallback<ApiResponse<UserAuthorization>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserAuthorization> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update Trustee User Roles
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserAuthorization>> putOrgauthorizationTrusteeUserRoledivisionsAsync(ApiRequest<RoleDivisionGrants> request, final AsyncApiCallback<ApiResponse<UserAuthorization>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserAuthorization>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserAuthorization>() {}, new AsyncApiCallback<ApiResponse<UserAuthorization>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserAuthorization> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
