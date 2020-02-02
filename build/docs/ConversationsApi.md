@@ -711,7 +711,7 @@ try {
 
 
 
-> [AnalyticsConversation](AnalyticsConversation.html) getAnalyticsConversationDetails(conversationId)
+> [AnalyticsConversationWithoutAttributes](AnalyticsConversationWithoutAttributes.html) getAnalyticsConversationDetails(conversationId)
 
 Get a conversation by id
 
@@ -747,7 +747,7 @@ Configuration.setDefaultApiClient(apiClient);
 ConversationsApi apiInstance = new ConversationsApi();
 String conversationId = "conversationId_example"; // String | conversationId
 try {
-    AnalyticsConversation result = apiInstance.getAnalyticsConversationDetails(conversationId);
+    AnalyticsConversationWithoutAttributes result = apiInstance.getAnalyticsConversationDetails(conversationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getAnalyticsConversationDetails");
@@ -766,7 +766,7 @@ try {
 
 ### Return type
 
-[**AnalyticsConversation**](AnalyticsConversation.html)
+[**AnalyticsConversationWithoutAttributes**](AnalyticsConversationWithoutAttributes.html)
 
 <a name="getAnalyticsConversationsDetails"></a>
 
@@ -774,7 +774,7 @@ try {
 
 
 
-> [AnalyticsConversationMultiGetResponse](AnalyticsConversationMultiGetResponse.html) getAnalyticsConversationsDetails(id)
+> [AnalyticsConversationWithoutAttributesMultiGetResponse](AnalyticsConversationWithoutAttributesMultiGetResponse.html) getAnalyticsConversationsDetails(id)
 
 Gets multiple conversations by id
 
@@ -810,7 +810,7 @@ Configuration.setDefaultApiClient(apiClient);
 ConversationsApi apiInstance = new ConversationsApi();
 List<String> id = Arrays.asList("id_example"); // List<String> | Comma-separated conversation ids
 try {
-    AnalyticsConversationMultiGetResponse result = apiInstance.getAnalyticsConversationsDetails(id);
+    AnalyticsConversationWithoutAttributesMultiGetResponse result = apiInstance.getAnalyticsConversationsDetails(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getAnalyticsConversationsDetails");
@@ -829,7 +829,7 @@ try {
 
 ### Return type
 
-[**AnalyticsConversationMultiGetResponse**](AnalyticsConversationMultiGetResponse.html)
+[**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse.html)
 
 <a name="getAnalyticsConversationsDetailsJob"></a>
 

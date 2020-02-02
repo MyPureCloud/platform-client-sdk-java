@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -17,6 +19,7 @@ public class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdheren
   
   private String id = null;
   private String downloadUrl = null;
+  private List<String> downloadUrls = new ArrayList<String>();
 
   /**
    * Gets or Sets queryState
@@ -92,6 +95,23 @@ public class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdheren
   
   /**
    **/
+  public WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice downloadUrls(List<String> downloadUrls) {
+    this.downloadUrls = downloadUrls;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("downloadUrls")
+  public List<String> getDownloadUrls() {
+    return downloadUrls;
+  }
+  public void setDownloadUrls(List<String> downloadUrls) {
+    this.downloadUrls = downloadUrls;
+  }
+
+  
+  /**
+   **/
   public WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice queryState(QueryStateEnum queryState) {
     this.queryState = queryState;
     return this;
@@ -119,12 +139,13 @@ public class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdheren
     WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice wfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice = (WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice) o;
     return Objects.equals(this.id, wfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice.id) &&
         Objects.equals(this.downloadUrl, wfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice.downloadUrl) &&
+        Objects.equals(this.downloadUrls, wfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice.downloadUrls) &&
         Objects.equals(this.queryState, wfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice.queryState);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, downloadUrl, queryState);
+    return Objects.hash(id, downloadUrl, downloadUrls, queryState);
   }
 
   @Override
@@ -134,6 +155,7 @@ public class WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdheren
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
+    sb.append("    downloadUrls: ").append(toIndentedString(downloadUrls)).append("\n");
     sb.append("    queryState: ").append(toIndentedString(queryState)).append("\n");
     sb.append("}");
     return sb.toString();

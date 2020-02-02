@@ -14,10 +14,10 @@ title: AnalyticsConversation
 | **mediaStatsMinConversationMos** | <!----><!---->**Double**<!----> | The lowest estimated average MOS among all the audio streams belonging to this conversation |  [optional] |
 | **mediaStatsMinConversationRFactor** | <!----><!---->**Double**<!----> | The lowest R-factor value among all of the audio streams belonging to this conversation |  [optional] |
 | **originatingDirection** | [**OriginatingDirectionEnum**](#OriginatingDirectionEnum)<!----> | The original direction of the conversation |  [optional] |
-| **participants** | <!----><!---->[**List&lt;AnalyticsParticipant&gt;**](AnalyticsParticipant.html)<!----> | Participants in the conversation |  [optional] |
 | **evaluations** | <!----><!---->[**List&lt;AnalyticsEvaluation&gt;**](AnalyticsEvaluation.html)<!----> | Evaluations tied to this conversation |  [optional] |
 | **surveys** | <!----><!---->[**List&lt;AnalyticsSurvey&gt;**](AnalyticsSurvey.html)<!----> | Surveys tied to this conversation |  [optional] |
 | **divisionIds** | <!----><!---->**List&lt;String&gt;**<!----> | Identifiers of divisions associated with this conversation |  [optional] |
+| **participants** | <!----><!---->[**List&lt;AnalyticsParticipant&gt;**](AnalyticsParticipant.html)<!----> | Participants in the conversation |  [optional] |
 {: class="table table-striped"}
 
 

@@ -9,7 +9,8 @@ title: WfmHistoricalAdherenceResponse
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | The query ID to listen for |  [optional] |
-| **downloadUrl** | <!----><!---->**String**<!----> | The uri to query to GET the results of the Historical Adherence query. This will return unpopulated but will be populated in the notification |  [optional] |
+| **downloadUrl** | <!----><!---->**String**<!----> | Deprecated. Use downloadUrls instead. |  [optional] |
+| **downloadUrls** | <!----><!---->**List&lt;String&gt;**<!----> | The uri list to GET the results of the Historical Adherence query. For notification purposes only |  [optional] |
 | **queryState** | [**QueryStateEnum**](#QueryStateEnum)<!----> | The state of the adherence query |  [optional] |
 {: class="table table-striped"}
 

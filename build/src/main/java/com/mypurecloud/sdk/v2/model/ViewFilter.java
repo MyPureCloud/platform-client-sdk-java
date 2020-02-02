@@ -143,8 +143,16 @@ public class ViewFilter  implements Serializable {
   private List<String> outboundCampaignIds = new ArrayList<String>();
   private List<String> outboundContactListIds = new ArrayList<String>();
   private List<String> contactIds = new ArrayList<String>();
+  private List<String> externalContactIds = new ArrayList<String>();
+  private List<String> externalOrgIds = new ArrayList<String>();
   private List<String> aniList = new ArrayList<String>();
   private List<NumericRange> durationsMilliseconds = new ArrayList<NumericRange>();
+  private List<NumericRange> acdDurationsMilliseconds = new ArrayList<NumericRange>();
+  private List<NumericRange> talkDurationsMilliseconds = new ArrayList<NumericRange>();
+  private List<NumericRange> acwDurationsMilliseconds = new ArrayList<NumericRange>();
+  private List<NumericRange> handleDurationsMilliseconds = new ArrayList<NumericRange>();
+  private List<NumericRange> holdDurationsMilliseconds = new ArrayList<NumericRange>();
+  private List<NumericRange> abandonDurationsMilliseconds = new ArrayList<NumericRange>();
   private NumericRange evaluationScore = null;
   private NumericRange evaluationCriticalScore = null;
   private List<String> evaluationFormIds = new ArrayList<String>();
@@ -865,6 +873,42 @@ public class ViewFilter  implements Serializable {
 
   
   /**
+   * The external contact ids are used to filter the view
+   **/
+  public ViewFilter externalContactIds(List<String> externalContactIds) {
+    this.externalContactIds = externalContactIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The external contact ids are used to filter the view")
+  @JsonProperty("externalContactIds")
+  public List<String> getExternalContactIds() {
+    return externalContactIds;
+  }
+  public void setExternalContactIds(List<String> externalContactIds) {
+    this.externalContactIds = externalContactIds;
+  }
+
+  
+  /**
+   * The external org ids are used to filter the view
+   **/
+  public ViewFilter externalOrgIds(List<String> externalOrgIds) {
+    this.externalOrgIds = externalOrgIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The external org ids are used to filter the view")
+  @JsonProperty("externalOrgIds")
+  public List<String> getExternalOrgIds() {
+    return externalOrgIds;
+  }
+  public void setExternalOrgIds(List<String> externalOrgIds) {
+    this.externalOrgIds = externalOrgIds;
+  }
+
+  
+  /**
    * The ani list ids are used to filter the view
    **/
   public ViewFilter aniList(List<String> aniList) {
@@ -897,6 +941,114 @@ public class ViewFilter  implements Serializable {
   }
   public void setDurationsMilliseconds(List<NumericRange> durationsMilliseconds) {
     this.durationsMilliseconds = durationsMilliseconds;
+  }
+
+  
+  /**
+   * The acd durations in milliseconds used to filter the view
+   **/
+  public ViewFilter acdDurationsMilliseconds(List<NumericRange> acdDurationsMilliseconds) {
+    this.acdDurationsMilliseconds = acdDurationsMilliseconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The acd durations in milliseconds used to filter the view")
+  @JsonProperty("acdDurationsMilliseconds")
+  public List<NumericRange> getAcdDurationsMilliseconds() {
+    return acdDurationsMilliseconds;
+  }
+  public void setAcdDurationsMilliseconds(List<NumericRange> acdDurationsMilliseconds) {
+    this.acdDurationsMilliseconds = acdDurationsMilliseconds;
+  }
+
+  
+  /**
+   * The talk durations in milliseconds used to filter the view
+   **/
+  public ViewFilter talkDurationsMilliseconds(List<NumericRange> talkDurationsMilliseconds) {
+    this.talkDurationsMilliseconds = talkDurationsMilliseconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The talk durations in milliseconds used to filter the view")
+  @JsonProperty("talkDurationsMilliseconds")
+  public List<NumericRange> getTalkDurationsMilliseconds() {
+    return talkDurationsMilliseconds;
+  }
+  public void setTalkDurationsMilliseconds(List<NumericRange> talkDurationsMilliseconds) {
+    this.talkDurationsMilliseconds = talkDurationsMilliseconds;
+  }
+
+  
+  /**
+   * The acw durations in milliseconds used to filter the view
+   **/
+  public ViewFilter acwDurationsMilliseconds(List<NumericRange> acwDurationsMilliseconds) {
+    this.acwDurationsMilliseconds = acwDurationsMilliseconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The acw durations in milliseconds used to filter the view")
+  @JsonProperty("acwDurationsMilliseconds")
+  public List<NumericRange> getAcwDurationsMilliseconds() {
+    return acwDurationsMilliseconds;
+  }
+  public void setAcwDurationsMilliseconds(List<NumericRange> acwDurationsMilliseconds) {
+    this.acwDurationsMilliseconds = acwDurationsMilliseconds;
+  }
+
+  
+  /**
+   * The handle durations in milliseconds used to filter the view
+   **/
+  public ViewFilter handleDurationsMilliseconds(List<NumericRange> handleDurationsMilliseconds) {
+    this.handleDurationsMilliseconds = handleDurationsMilliseconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The handle durations in milliseconds used to filter the view")
+  @JsonProperty("handleDurationsMilliseconds")
+  public List<NumericRange> getHandleDurationsMilliseconds() {
+    return handleDurationsMilliseconds;
+  }
+  public void setHandleDurationsMilliseconds(List<NumericRange> handleDurationsMilliseconds) {
+    this.handleDurationsMilliseconds = handleDurationsMilliseconds;
+  }
+
+  
+  /**
+   * The hold durations in milliseconds used to filter the view
+   **/
+  public ViewFilter holdDurationsMilliseconds(List<NumericRange> holdDurationsMilliseconds) {
+    this.holdDurationsMilliseconds = holdDurationsMilliseconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The hold durations in milliseconds used to filter the view")
+  @JsonProperty("holdDurationsMilliseconds")
+  public List<NumericRange> getHoldDurationsMilliseconds() {
+    return holdDurationsMilliseconds;
+  }
+  public void setHoldDurationsMilliseconds(List<NumericRange> holdDurationsMilliseconds) {
+    this.holdDurationsMilliseconds = holdDurationsMilliseconds;
+  }
+
+  
+  /**
+   * The abandon durations in milliseconds used to filter the view
+   **/
+  public ViewFilter abandonDurationsMilliseconds(List<NumericRange> abandonDurationsMilliseconds) {
+    this.abandonDurationsMilliseconds = abandonDurationsMilliseconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The abandon durations in milliseconds used to filter the view")
+  @JsonProperty("abandonDurationsMilliseconds")
+  public List<NumericRange> getAbandonDurationsMilliseconds() {
+    return abandonDurationsMilliseconds;
+  }
+  public void setAbandonDurationsMilliseconds(List<NumericRange> abandonDurationsMilliseconds) {
+    this.abandonDurationsMilliseconds = abandonDurationsMilliseconds;
   }
 
   
@@ -1865,8 +2017,16 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.outboundCampaignIds, viewFilter.outboundCampaignIds) &&
         Objects.equals(this.outboundContactListIds, viewFilter.outboundContactListIds) &&
         Objects.equals(this.contactIds, viewFilter.contactIds) &&
+        Objects.equals(this.externalContactIds, viewFilter.externalContactIds) &&
+        Objects.equals(this.externalOrgIds, viewFilter.externalOrgIds) &&
         Objects.equals(this.aniList, viewFilter.aniList) &&
         Objects.equals(this.durationsMilliseconds, viewFilter.durationsMilliseconds) &&
+        Objects.equals(this.acdDurationsMilliseconds, viewFilter.acdDurationsMilliseconds) &&
+        Objects.equals(this.talkDurationsMilliseconds, viewFilter.talkDurationsMilliseconds) &&
+        Objects.equals(this.acwDurationsMilliseconds, viewFilter.acwDurationsMilliseconds) &&
+        Objects.equals(this.handleDurationsMilliseconds, viewFilter.handleDurationsMilliseconds) &&
+        Objects.equals(this.holdDurationsMilliseconds, viewFilter.holdDurationsMilliseconds) &&
+        Objects.equals(this.abandonDurationsMilliseconds, viewFilter.abandonDurationsMilliseconds) &&
         Objects.equals(this.evaluationScore, viewFilter.evaluationScore) &&
         Objects.equals(this.evaluationCriticalScore, viewFilter.evaluationCriticalScore) &&
         Objects.equals(this.evaluationFormIds, viewFilter.evaluationFormIds) &&
@@ -1923,7 +2083,7 @@ public class ViewFilter  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, aniList, durationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, showSecondaryStatus, agentDurationSortOrder, waitingDurationSortOrder, interactingDurationSortOrder, agentName, skillsList, languageList, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, statusList, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, oauthClientIds, apiOperations);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, showSecondaryStatus, agentDurationSortOrder, waitingDurationSortOrder, interactingDurationSortOrder, agentName, skillsList, languageList, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, statusList, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, oauthClientIds, apiOperations);
   }
 
   @Override
@@ -1950,8 +2110,16 @@ public class ViewFilter  implements Serializable {
     sb.append("    outboundCampaignIds: ").append(toIndentedString(outboundCampaignIds)).append("\n");
     sb.append("    outboundContactListIds: ").append(toIndentedString(outboundContactListIds)).append("\n");
     sb.append("    contactIds: ").append(toIndentedString(contactIds)).append("\n");
+    sb.append("    externalContactIds: ").append(toIndentedString(externalContactIds)).append("\n");
+    sb.append("    externalOrgIds: ").append(toIndentedString(externalOrgIds)).append("\n");
     sb.append("    aniList: ").append(toIndentedString(aniList)).append("\n");
     sb.append("    durationsMilliseconds: ").append(toIndentedString(durationsMilliseconds)).append("\n");
+    sb.append("    acdDurationsMilliseconds: ").append(toIndentedString(acdDurationsMilliseconds)).append("\n");
+    sb.append("    talkDurationsMilliseconds: ").append(toIndentedString(talkDurationsMilliseconds)).append("\n");
+    sb.append("    acwDurationsMilliseconds: ").append(toIndentedString(acwDurationsMilliseconds)).append("\n");
+    sb.append("    handleDurationsMilliseconds: ").append(toIndentedString(handleDurationsMilliseconds)).append("\n");
+    sb.append("    holdDurationsMilliseconds: ").append(toIndentedString(holdDurationsMilliseconds)).append("\n");
+    sb.append("    abandonDurationsMilliseconds: ").append(toIndentedString(abandonDurationsMilliseconds)).append("\n");
     sb.append("    evaluationScore: ").append(toIndentedString(evaluationScore)).append("\n");
     sb.append("    evaluationCriticalScore: ").append(toIndentedString(evaluationCriticalScore)).append("\n");
     sb.append("    evaluationFormIds: ").append(toIndentedString(evaluationFormIds)).append("\n");

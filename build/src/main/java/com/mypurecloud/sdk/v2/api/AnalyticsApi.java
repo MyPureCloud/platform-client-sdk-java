@@ -11,8 +11,8 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.AnalyticsConversation;
-import com.mypurecloud.sdk.v2.model.AnalyticsConversationMultiGetResponse;
+import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
+import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiGetResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobListing;
@@ -340,11 +340,11 @@ public class AnalyticsApi {
    * Get a conversation by id
    * 
    * @param conversationId conversationId (required)
-   * @return AnalyticsConversation
+   * @return AnalyticsConversationWithoutAttributes
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AnalyticsConversation getAnalyticsConversationDetails(String conversationId) throws IOException, ApiException {
+  public AnalyticsConversationWithoutAttributes getAnalyticsConversationDetails(String conversationId) throws IOException, ApiException {
     return  getAnalyticsConversationDetails(createGetAnalyticsConversationDetailsRequest(conversationId));
   }
 
@@ -352,10 +352,10 @@ public class AnalyticsApi {
    * Get a conversation by id
    * 
    * @param conversationId conversationId (required)
-   * @return AnalyticsConversation
+   * @return AnalyticsConversationWithoutAttributes
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AnalyticsConversation> getAnalyticsConversationDetailsWithHttpInfo(String conversationId) throws IOException {
+  public ApiResponse<AnalyticsConversationWithoutAttributes> getAnalyticsConversationDetailsWithHttpInfo(String conversationId) throws IOException {
     return getAnalyticsConversationDetails(createGetAnalyticsConversationDetailsRequest(conversationId).withHttpInfo());
   }
 
@@ -370,13 +370,13 @@ public class AnalyticsApi {
    * Get a conversation by id
    * 
    * @param request The request object
-   * @return AnalyticsConversation
+   * @return AnalyticsConversationWithoutAttributes
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AnalyticsConversation getAnalyticsConversationDetails(GetAnalyticsConversationDetailsRequest request) throws IOException, ApiException {
+  public AnalyticsConversationWithoutAttributes getAnalyticsConversationDetails(GetAnalyticsConversationDetailsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<AnalyticsConversation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AnalyticsConversation>() {});
+      ApiResponse<AnalyticsConversationWithoutAttributes> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AnalyticsConversationWithoutAttributes>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -392,13 +392,13 @@ public class AnalyticsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AnalyticsConversation> getAnalyticsConversationDetails(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<AnalyticsConversationWithoutAttributes> getAnalyticsConversationDetails(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<AnalyticsConversation>() {});
+      return pcapiClient.invoke(request, new TypeReference<AnalyticsConversationWithoutAttributes>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<AnalyticsConversation> response = (ApiResponse<AnalyticsConversation>)(ApiResponse<?>)exception;
+      ApiResponse<AnalyticsConversationWithoutAttributes> response = (ApiResponse<AnalyticsConversationWithoutAttributes>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -409,7 +409,7 @@ public class AnalyticsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<AnalyticsConversation> response = (ApiResponse<AnalyticsConversation>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<AnalyticsConversationWithoutAttributes> response = (ApiResponse<AnalyticsConversationWithoutAttributes>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -419,11 +419,11 @@ public class AnalyticsApi {
    * Gets multiple conversations by id
    * 
    * @param id Comma-separated conversation ids (optional)
-   * @return AnalyticsConversationMultiGetResponse
+   * @return AnalyticsConversationWithoutAttributesMultiGetResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AnalyticsConversationMultiGetResponse getAnalyticsConversationsDetails(List<String> id) throws IOException, ApiException {
+  public AnalyticsConversationWithoutAttributesMultiGetResponse getAnalyticsConversationsDetails(List<String> id) throws IOException, ApiException {
     return  getAnalyticsConversationsDetails(createGetAnalyticsConversationsDetailsRequest(id));
   }
 
@@ -431,10 +431,10 @@ public class AnalyticsApi {
    * Gets multiple conversations by id
    * 
    * @param id Comma-separated conversation ids (optional)
-   * @return AnalyticsConversationMultiGetResponse
+   * @return AnalyticsConversationWithoutAttributesMultiGetResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AnalyticsConversationMultiGetResponse> getAnalyticsConversationsDetailsWithHttpInfo(List<String> id) throws IOException {
+  public ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse> getAnalyticsConversationsDetailsWithHttpInfo(List<String> id) throws IOException {
     return getAnalyticsConversationsDetails(createGetAnalyticsConversationsDetailsRequest(id).withHttpInfo());
   }
 
@@ -449,13 +449,13 @@ public class AnalyticsApi {
    * Gets multiple conversations by id
    * 
    * @param request The request object
-   * @return AnalyticsConversationMultiGetResponse
+   * @return AnalyticsConversationWithoutAttributesMultiGetResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AnalyticsConversationMultiGetResponse getAnalyticsConversationsDetails(GetAnalyticsConversationsDetailsRequest request) throws IOException, ApiException {
+  public AnalyticsConversationWithoutAttributesMultiGetResponse getAnalyticsConversationsDetails(GetAnalyticsConversationsDetailsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<AnalyticsConversationMultiGetResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AnalyticsConversationMultiGetResponse>() {});
+      ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AnalyticsConversationWithoutAttributesMultiGetResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -471,13 +471,13 @@ public class AnalyticsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AnalyticsConversationMultiGetResponse> getAnalyticsConversationsDetails(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse> getAnalyticsConversationsDetails(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<AnalyticsConversationMultiGetResponse>() {});
+      return pcapiClient.invoke(request, new TypeReference<AnalyticsConversationWithoutAttributesMultiGetResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<AnalyticsConversationMultiGetResponse> response = (ApiResponse<AnalyticsConversationMultiGetResponse>)(ApiResponse<?>)exception;
+      ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse> response = (ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -488,7 +488,7 @@ public class AnalyticsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<AnalyticsConversationMultiGetResponse> response = (ApiResponse<AnalyticsConversationMultiGetResponse>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse> response = (ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -15,8 +15,8 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegration;
-import com.mypurecloud.sdk.v2.model.AnalyticsConversation;
-import com.mypurecloud.sdk.v2.model.AnalyticsConversationMultiGetResponse;
+import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
+import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiGetResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.Conversation;
@@ -939,13 +939,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AnalyticsConversation> getAnalyticsConversationDetailsAsync(GetAnalyticsConversationDetailsRequest request, final AsyncApiCallback<AnalyticsConversation> callback) {
+  public Future<AnalyticsConversationWithoutAttributes> getAnalyticsConversationDetailsAsync(GetAnalyticsConversationDetailsRequest request, final AsyncApiCallback<AnalyticsConversationWithoutAttributes> callback) {
     try {
-      final SettableFuture<AnalyticsConversation> future = SettableFuture.create();
+      final SettableFuture<AnalyticsConversationWithoutAttributes> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AnalyticsConversation>() {}, new AsyncApiCallback<ApiResponse<AnalyticsConversation>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AnalyticsConversationWithoutAttributes>() {}, new AsyncApiCallback<ApiResponse<AnalyticsConversationWithoutAttributes>>() {
         @Override
-        public void onCompleted(ApiResponse<AnalyticsConversation> response) {
+        public void onCompleted(ApiResponse<AnalyticsConversationWithoutAttributes> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -973,13 +973,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AnalyticsConversation>> getAnalyticsConversationDetailsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AnalyticsConversation>> callback) {
+  public Future<ApiResponse<AnalyticsConversationWithoutAttributes>> getAnalyticsConversationDetailsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AnalyticsConversationWithoutAttributes>> callback) {
     try {
-      final SettableFuture<ApiResponse<AnalyticsConversation>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<AnalyticsConversationWithoutAttributes>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<AnalyticsConversation>() {}, new AsyncApiCallback<ApiResponse<AnalyticsConversation>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<AnalyticsConversationWithoutAttributes>() {}, new AsyncApiCallback<ApiResponse<AnalyticsConversationWithoutAttributes>>() {
         @Override
-        public void onCompleted(ApiResponse<AnalyticsConversation> response) {
+        public void onCompleted(ApiResponse<AnalyticsConversationWithoutAttributes> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -987,7 +987,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<AnalyticsConversation> response = (ApiResponse<AnalyticsConversation>)(ApiResponse<?>)exception;
+            ApiResponse<AnalyticsConversationWithoutAttributes> response = (ApiResponse<AnalyticsConversationWithoutAttributes>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -995,7 +995,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<AnalyticsConversation> response = (ApiResponse<AnalyticsConversation>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<AnalyticsConversationWithoutAttributes> response = (ApiResponse<AnalyticsConversationWithoutAttributes>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1015,13 +1015,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<AnalyticsConversationMultiGetResponse> getAnalyticsConversationsDetailsAsync(GetAnalyticsConversationsDetailsRequest request, final AsyncApiCallback<AnalyticsConversationMultiGetResponse> callback) {
+  public Future<AnalyticsConversationWithoutAttributesMultiGetResponse> getAnalyticsConversationsDetailsAsync(GetAnalyticsConversationsDetailsRequest request, final AsyncApiCallback<AnalyticsConversationWithoutAttributesMultiGetResponse> callback) {
     try {
-      final SettableFuture<AnalyticsConversationMultiGetResponse> future = SettableFuture.create();
+      final SettableFuture<AnalyticsConversationWithoutAttributesMultiGetResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AnalyticsConversationMultiGetResponse>() {}, new AsyncApiCallback<ApiResponse<AnalyticsConversationMultiGetResponse>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AnalyticsConversationWithoutAttributesMultiGetResponse>() {}, new AsyncApiCallback<ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<AnalyticsConversationMultiGetResponse> response) {
+        public void onCompleted(ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1049,13 +1049,13 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<AnalyticsConversationMultiGetResponse>> getAnalyticsConversationsDetailsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AnalyticsConversationMultiGetResponse>> callback) {
+  public Future<ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse>> getAnalyticsConversationsDetailsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<AnalyticsConversationMultiGetResponse>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<AnalyticsConversationMultiGetResponse>() {}, new AsyncApiCallback<ApiResponse<AnalyticsConversationMultiGetResponse>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<AnalyticsConversationWithoutAttributesMultiGetResponse>() {}, new AsyncApiCallback<ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<AnalyticsConversationMultiGetResponse> response) {
+        public void onCompleted(ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1063,7 +1063,7 @@ public class ConversationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<AnalyticsConversationMultiGetResponse> response = (ApiResponse<AnalyticsConversationMultiGetResponse>)(ApiResponse<?>)exception;
+            ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse> response = (ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1071,7 +1071,7 @@ public class ConversationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<AnalyticsConversationMultiGetResponse> response = (ApiResponse<AnalyticsConversationMultiGetResponse>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse> response = (ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -10,6 +10,7 @@ title: WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalc
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> |  |  [optional] |
 | **downloadUrl** | <!----><!---->**String**<!----> |  |  [optional] |
+| **downloadUrls** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **queryState** | [**QueryStateEnum**](#QueryStateEnum)<!----> |  |  [optional] |
 {: class="table table-striped"}
 

@@ -49,6 +49,7 @@ import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
 import com.mypurecloud.sdk.v2.model.QueueMember;
+import com.mypurecloud.sdk.v2.model.UserQueue;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
@@ -143,6 +144,7 @@ public class GetRoutingQueueUsersRequest {
 		GEOLOCATION("geolocation"), 
 		STATION("station"), 
 		AUTHORIZATION("authorization"), 
+		LASTTOKENISSUED("lasttokenissued"), 
 		AUTHORIZATION_UNUSEDROLES("authorization.unusedRoles"), 
 		PROFILESKILLS("profileSkills"), 
 		CERTIFICATIONS("certifications"), 

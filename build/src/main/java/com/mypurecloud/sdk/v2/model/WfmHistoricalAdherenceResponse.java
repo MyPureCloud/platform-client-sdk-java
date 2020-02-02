@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -18,6 +20,7 @@ public class WfmHistoricalAdherenceResponse  implements Serializable {
   
   private String id = null;
   private String downloadUrl = null;
+  private List<String> downloadUrls = new ArrayList<String>();
 
   /**
    * The state of the adherence query
@@ -75,20 +78,38 @@ public class WfmHistoricalAdherenceResponse  implements Serializable {
 
   
   /**
-   * The uri to query to GET the results of the Historical Adherence query. This will return unpopulated but will be populated in the notification
+   * Deprecated. Use downloadUrls instead.
    **/
   public WfmHistoricalAdherenceResponse downloadUrl(String downloadUrl) {
     this.downloadUrl = downloadUrl;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The uri to query to GET the results of the Historical Adherence query. This will return unpopulated but will be populated in the notification")
+  @ApiModelProperty(example = "null", value = "Deprecated. Use downloadUrls instead.")
   @JsonProperty("downloadUrl")
   public String getDownloadUrl() {
     return downloadUrl;
   }
   public void setDownloadUrl(String downloadUrl) {
     this.downloadUrl = downloadUrl;
+  }
+
+  
+  /**
+   * The uri list to GET the results of the Historical Adherence query. For notification purposes only
+   **/
+  public WfmHistoricalAdherenceResponse downloadUrls(List<String> downloadUrls) {
+    this.downloadUrls = downloadUrls;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The uri list to GET the results of the Historical Adherence query. For notification purposes only")
+  @JsonProperty("downloadUrls")
+  public List<String> getDownloadUrls() {
+    return downloadUrls;
+  }
+  public void setDownloadUrls(List<String> downloadUrls) {
+    this.downloadUrls = downloadUrls;
   }
 
   
@@ -122,12 +143,13 @@ public class WfmHistoricalAdherenceResponse  implements Serializable {
     WfmHistoricalAdherenceResponse wfmHistoricalAdherenceResponse = (WfmHistoricalAdherenceResponse) o;
     return Objects.equals(this.id, wfmHistoricalAdherenceResponse.id) &&
         Objects.equals(this.downloadUrl, wfmHistoricalAdherenceResponse.downloadUrl) &&
+        Objects.equals(this.downloadUrls, wfmHistoricalAdherenceResponse.downloadUrls) &&
         Objects.equals(this.queryState, wfmHistoricalAdherenceResponse.queryState);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, downloadUrl, queryState);
+    return Objects.hash(id, downloadUrl, downloadUrls, queryState);
   }
 
   @Override
@@ -137,6 +159,7 @@ public class WfmHistoricalAdherenceResponse  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
+    sb.append("    downloadUrls: ").append(toIndentedString(downloadUrls)).append("\n");
     sb.append("    queryState: ").append(toIndentedString(queryState)).append("\n");
     sb.append("}");
     return sb.toString();

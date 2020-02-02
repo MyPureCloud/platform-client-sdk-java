@@ -23,6 +23,7 @@ title: Flow
 | **inputSchema** | <!----><!---->**Object**<!----> | json schema describing the inputs for the flow |  [optional] |
 | **outputSchema** | <!----><!---->**Object**<!----> | json schema describing the outputs for the flow |  [optional] |
 | **checkedInVersion** | <!----><!---->[**FlowVersion**](FlowVersion.html)<!----> |  |  [optional] |
+| **debugVersion** | <!----><!---->[**FlowVersion**](FlowVersion.html)<!----> |  |  [optional] |
 | **publishedBy** | <!----><!---->[**User**](User.html)<!----> |  |  [optional] |
 | **currentOperation** | <!----><!---->[**Operation**](Operation.html)<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |

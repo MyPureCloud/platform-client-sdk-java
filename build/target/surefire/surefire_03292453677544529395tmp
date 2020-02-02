@@ -1,6 +1,0 @@
-#surefire_0
-#Wed Jan 22 21:46:47 UTC 2020
-user.dir=/var/build/workspace/build-platform-sdks/platform-client-sdk-common/output/purecloudjava/build
-gpg.passphrase=D0gf00d
-localRepository=/home/jenkins/.m2/repository
-basedir=/var/build/workspace/build-platform-sdks/platform-client-sdk-common/output/purecloudjava/build

@@ -16,6 +16,7 @@ title: ConversationProperties
 | **isCobrowse** | <!----><!---->**Boolean**<!----> | Indicates filtering for Cobrowse |  [optional] |
 | **isVoicemail** | <!----><!---->**Boolean**<!----> | Indicates filtering for Voice mail |  [optional] |
 | **isFlagged** | <!----><!---->**Boolean**<!----> | Indicates filtering for flagged |  [optional] |
+| **isMonitored** | <!----><!---->**Boolean**<!----> | Indicates filtering for monitored |  [optional] |
 | **filterWrapUpNotes** | <!----><!---->**Boolean**<!----> | Indicates filtering for WrapUpNotes |  [optional] |
 | **matchAll** | <!----><!---->**Boolean**<!----> | Indicates comparison operation, TRUE indicates filters will use AND logic, FALSE indicates OR logic |  [optional] |
 {: class="table table-striped"}

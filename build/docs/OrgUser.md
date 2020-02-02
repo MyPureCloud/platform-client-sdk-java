@@ -39,6 +39,7 @@ title: OrgUser
 | **languages** | <!----><!---->[**List&lt;UserRoutingLanguage&gt;**](UserRoutingLanguage.html)<!----> | Routing (ACD) languages possessed by the user |  [optional] |
 | **acdAutoAnswer** | <!----><!---->**Boolean**<!----> | acd auto answer |  [optional] |
 | **languagePreference** | <!----><!---->**String**<!----> | preferred language by the user |  [optional] |
+| **lastTokenIssued** | <!----><!---->[**OAuthLastTokenIssued**](OAuthLastTokenIssued.html)<!----> |  |  [optional] |
 | **organization** | <!----><!---->[**Organization**](Organization.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 

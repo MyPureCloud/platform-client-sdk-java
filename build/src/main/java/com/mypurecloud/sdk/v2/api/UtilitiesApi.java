@@ -16,14 +16,12 @@ import com.mypurecloud.sdk.v2.model.IpAddressRangeListing;
 import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.ParsedCertificate;
 import com.mypurecloud.sdk.v2.model.Certificate;
-import com.mypurecloud.sdk.v2.model.Token;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetDateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIprangesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTimezonesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCertificateDetailsRequest;
-import com.mypurecloud.sdk.v2.api.request.PostGmscTokensRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -351,81 +349,6 @@ public class UtilitiesApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ParsedCertificate> response = (ApiResponse<ParsedCertificate>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Generate a JWT for use with common cloud.
-   * 
-   * @return Token
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public Token postGmscTokens() throws IOException, ApiException {
-    return  postGmscTokens(createPostGmscTokensRequest());
-  }
-
-  /**
-   * Generate a JWT for use with common cloud.
-   * 
-   * @return Token
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Token> postGmscTokensWithHttpInfo() throws IOException {
-    return postGmscTokens(createPostGmscTokensRequest().withHttpInfo());
-  }
-
-  private PostGmscTokensRequest createPostGmscTokensRequest() {
-    return PostGmscTokensRequest.builder()
-            .build();
-  }
-
-  /**
-   * Generate a JWT for use with common cloud.
-   * 
-   * @param request The request object
-   * @return Token
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public Token postGmscTokens(PostGmscTokensRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Token> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Token>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Generate a JWT for use with common cloud.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Token> postGmscTokens(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<Token>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Token> response = (ApiResponse<Token>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Token> response = (ApiResponse<Token>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -58,12 +59,15 @@ public class FlowVersion  implements Serializable {
   }
   private TypeEnum type = null;
   private Boolean secure = null;
+  private Boolean debug = null;
   private User createdBy = null;
   private DomainEntityRef createdByClient = null;
   private String configurationUri = null;
   private Long dateCreated = null;
   private String generationId = null;
   private String publishResultUri = null;
+  private JsonSchemaDocument inputSchema = null;
+  private JsonSchemaDocument outputSchema = null;
   private String selfUri = null;
 
   
@@ -172,6 +176,23 @@ public class FlowVersion  implements Serializable {
   
   /**
    **/
+  public FlowVersion debug(Boolean debug) {
+    this.debug = debug;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("debug")
+  public Boolean getDebug() {
+    return debug;
+  }
+  public void setDebug(Boolean debug) {
+    this.debug = debug;
+  }
+
+  
+  /**
+   **/
   public FlowVersion createdBy(User createdBy) {
     this.createdBy = createdBy;
     return this;
@@ -272,6 +293,40 @@ public class FlowVersion  implements Serializable {
   }
 
   
+  /**
+   **/
+  public FlowVersion inputSchema(JsonSchemaDocument inputSchema) {
+    this.inputSchema = inputSchema;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("inputSchema")
+  public JsonSchemaDocument getInputSchema() {
+    return inputSchema;
+  }
+  public void setInputSchema(JsonSchemaDocument inputSchema) {
+    this.inputSchema = inputSchema;
+  }
+
+  
+  /**
+   **/
+  public FlowVersion outputSchema(JsonSchemaDocument outputSchema) {
+    this.outputSchema = outputSchema;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("outputSchema")
+  public JsonSchemaDocument getOutputSchema() {
+    return outputSchema;
+  }
+  public void setOutputSchema(JsonSchemaDocument outputSchema) {
+    this.outputSchema = outputSchema;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -295,18 +350,21 @@ public class FlowVersion  implements Serializable {
         Objects.equals(this.configurationVersion, flowVersion.configurationVersion) &&
         Objects.equals(this.type, flowVersion.type) &&
         Objects.equals(this.secure, flowVersion.secure) &&
+        Objects.equals(this.debug, flowVersion.debug) &&
         Objects.equals(this.createdBy, flowVersion.createdBy) &&
         Objects.equals(this.createdByClient, flowVersion.createdByClient) &&
         Objects.equals(this.configurationUri, flowVersion.configurationUri) &&
         Objects.equals(this.dateCreated, flowVersion.dateCreated) &&
         Objects.equals(this.generationId, flowVersion.generationId) &&
         Objects.equals(this.publishResultUri, flowVersion.publishResultUri) &&
+        Objects.equals(this.inputSchema, flowVersion.inputSchema) &&
+        Objects.equals(this.outputSchema, flowVersion.outputSchema) &&
         Objects.equals(this.selfUri, flowVersion.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, commitVersion, configurationVersion, type, secure, createdBy, createdByClient, configurationUri, dateCreated, generationId, publishResultUri, selfUri);
+    return Objects.hash(id, name, commitVersion, configurationVersion, type, secure, debug, createdBy, createdByClient, configurationUri, dateCreated, generationId, publishResultUri, inputSchema, outputSchema, selfUri);
   }
 
   @Override
@@ -320,12 +378,15 @@ public class FlowVersion  implements Serializable {
     sb.append("    configurationVersion: ").append(toIndentedString(configurationVersion)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    secure: ").append(toIndentedString(secure)).append("\n");
+    sb.append("    debug: ").append(toIndentedString(debug)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    createdByClient: ").append(toIndentedString(createdByClient)).append("\n");
     sb.append("    configurationUri: ").append(toIndentedString(configurationUri)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    generationId: ").append(toIndentedString(generationId)).append("\n");
     sb.append("    publishResultUri: ").append(toIndentedString(publishResultUri)).append("\n");
+    sb.append("    inputSchema: ").append(toIndentedString(inputSchema)).append("\n");
+    sb.append("    outputSchema: ").append(toIndentedString(outputSchema)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

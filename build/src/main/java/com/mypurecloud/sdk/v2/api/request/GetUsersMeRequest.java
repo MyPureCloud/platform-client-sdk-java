@@ -89,6 +89,7 @@ public class GetUsersMeRequest {
 		GEOLOCATION("geolocation"), 
 		STATION("station"), 
 		AUTHORIZATION("authorization"), 
+		LASTTOKENISSUED("lasttokenissued"), 
 		AUTHORIZATION_UNUSEDROLES("authorization.unusedRoles"), 
 		PROFILESKILLS("profileSkills"), 
 		CERTIFICATIONS("certifications"), 

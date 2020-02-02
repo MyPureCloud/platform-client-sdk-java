@@ -795,7 +795,7 @@ List<String> expand = Arrays.asList("expand_example"); // List<String> | variabl
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 String recordingId = "recordingId_example"; // String | id of the recording
-String entityType = "RECORDING"; // String | entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording
+String entityType = "Recording"; // String | entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording
 try {
     QualityAuditPage result = apiInstance.getQualityConversationAudits(conversationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, recordingId, entityType);
     System.out.println(result);
@@ -818,7 +818,7 @@ try {
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
 | **recordingId** | **String**| id of the recording | [optional] 
-| **entityType** | **String**| entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording | [optional] [default to RECORDING] 
+| **entityType** | **String**| entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording | [optional] [default to Recording] 
 {: class="table-striped"}
 
 

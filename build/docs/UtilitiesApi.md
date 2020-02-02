@@ -11,7 +11,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getIpranges**](UtilitiesApi.html#getIpranges) | Get public ip address ranges for PureCloud |
 | [**getTimezones**](UtilitiesApi.html#getTimezones) | Get time zones list |
 | [**postCertificateDetails**](UtilitiesApi.html#postCertificateDetails) | Returns the information about an X509 PEM encoded certificate or certificate chain. |
-| [**postGmscTokens**](UtilitiesApi.html#postGmscTokens) | Generate a JWT for use with common cloud. |
 {: class="table-striped"}
 
 <a name="getDate"></a>
@@ -255,62 +254,4 @@ try {
 ### Return type
 
 [**ParsedCertificate**](ParsedCertificate.html)
-
-<a name="postGmscTokens"></a>
-
-# **postGmscTokens**
-
-
-
-> [Token](Token.html) postGmscTokens()
-
-Generate a JWT for use with common cloud.
-
-
-
-Wraps POST /api/v2/gmsc/tokens  
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.UtilitiesApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-UtilitiesApi apiInstance = new UtilitiesApi();
-try {
-    Token result = apiInstance.postGmscTokens();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UtilitiesApi#postGmscTokens");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-This endpoint does not require any parameters.
-
-
-
-### Return type
-
-[**Token**](Token.html)
 

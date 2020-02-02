@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.OrgMediaUtilization;
+import com.mypurecloud.sdk.v2.model.MediaUtilization;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.HashMap;
@@ -18,23 +18,23 @@ import java.io.Serializable;
 
 public class Utilization  implements Serializable {
   
-  private Map<String, OrgMediaUtilization> utilization = null;
+  private Map<String, MediaUtilization> utilization = null;
 
   
   /**
-   * Map of media types to utilization settings.  Valid media types include call, callback, chat, email, and message.
+   * Map of media type to utilization settings.  Valid media types include call, callback, chat, email, and message.
    **/
-  public Utilization utilization(Map<String, OrgMediaUtilization> utilization) {
+  public Utilization utilization(Map<String, MediaUtilization> utilization) {
     this.utilization = utilization;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Map of media types to utilization settings.  Valid media types include call, callback, chat, email, and message.")
+  @ApiModelProperty(example = "null", value = "Map of media type to utilization settings.  Valid media types include call, callback, chat, email, and message.")
   @JsonProperty("utilization")
-  public Map<String, OrgMediaUtilization> getUtilization() {
+  public Map<String, MediaUtilization> getUtilization() {
     return utilization;
   }
-  public void setUtilization(Map<String, OrgMediaUtilization> utilization) {
+  public void setUtilization(Map<String, MediaUtilization> utilization) {
     this.utilization = utilization;
   }
 

@@ -14,7 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteRoutingQueueWrapupcode**](RoutingApi.html#deleteRoutingQueueWrapupcode) | Delete a wrap-up code from a queue |
 | [**deleteRoutingSkill**](RoutingApi.html#deleteRoutingSkill) | Delete Routing Skill |
 | [**deleteRoutingSmsPhonenumber**](RoutingApi.html#deleteRoutingSmsPhonenumber) | Delete a phone number provisioned for SMS. |
-| [**deleteRoutingUtilization**](RoutingApi.html#deleteRoutingUtilization) | Delete utilization settings and revert to system defaults. |
+| [**deleteRoutingUtilization**](RoutingApi.html#deleteRoutingUtilization) | Delete the organization-wide max utilization settings and revert to the system default. |
 | [**deleteRoutingWrapupcode**](RoutingApi.html#deleteRoutingWrapupcode) | Delete wrap-up code |
 | [**deleteUserRoutinglanguage**](RoutingApi.html#deleteUserRoutinglanguage) | Remove routing language from user |
 | [**deleteUserRoutingskill**](RoutingApi.html#deleteUserRoutingskill) | Remove routing skill from user |
@@ -44,14 +44,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingSmsAvailablephonenumbers**](RoutingApi.html#getRoutingSmsAvailablephonenumbers) | Get a list of available phone numbers for SMS provisioning. |
 | [**getRoutingSmsPhonenumber**](RoutingApi.html#getRoutingSmsPhonenumber) | Get a phone number provisioned for SMS. |
 | [**getRoutingSmsPhonenumbers**](RoutingApi.html#getRoutingSmsPhonenumbers) | Get a list of provisioned phone numbers. |
-| [**getRoutingUtilization**](RoutingApi.html#getRoutingUtilization) | Get the utilization settings. |
+| [**getRoutingUtilization**](RoutingApi.html#getRoutingUtilization) | Get the organization-wide max utilization settings. |
 | [**getRoutingWrapupcode**](RoutingApi.html#getRoutingWrapupcode) | Get details about this wrap-up code. |
 | [**getRoutingWrapupcodes**](RoutingApi.html#getRoutingWrapupcodes) | Get list of wrapup codes. |
+| [**getUserQueues**](RoutingApi.html#getUserQueues) | Get queues for user |
 | [**getUserRoutinglanguages**](RoutingApi.html#getUserRoutinglanguages) | List routing language for user |
 | [**getUserRoutingskills**](RoutingApi.html#getUserRoutingskills) | List routing skills for user |
 | [**patchRoutingQueueUser**](RoutingApi.html#patchRoutingQueueUser) | Update the ring number OR joined status for a User in a Queue |
 | [**patchRoutingQueueUsers**](RoutingApi.html#patchRoutingQueueUsers) | Join or unjoin a set of users for a queue |
 | [**patchRoutingSettingsContactcenter**](RoutingApi.html#patchRoutingSettingsContactcenter) | Update Contact Center Settings |
+| [**patchUserQueue**](RoutingApi.html#patchUserQueue) | Join or unjoin a queue for a user |
+| [**patchUserQueues**](RoutingApi.html#patchUserQueues) | Join or unjoin a set of queues for a user |
 | [**patchUserRoutinglanguage**](RoutingApi.html#patchUserRoutinglanguage) | Update routing language proficiency or state. |
 | [**patchUserRoutinglanguagesBulk**](RoutingApi.html#patchUserRoutinglanguagesBulk) | Add bulk routing language to user. Max limit 50 languages |
 | [**patchUserRoutingskillsBulk**](RoutingApi.html#patchUserRoutingskillsBulk) | Bulk add routing skills to user |
@@ -73,7 +76,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putRoutingQueue**](RoutingApi.html#putRoutingQueue) | Update a queue |
 | [**putRoutingSettingsTranscription**](RoutingApi.html#putRoutingSettingsTranscription) | Update Transcription Settings |
 | [**putRoutingSmsPhonenumber**](RoutingApi.html#putRoutingSmsPhonenumber) | Update a phone number provisioned for SMS. |
-| [**putRoutingUtilization**](RoutingApi.html#putRoutingUtilization) | Update the utilization settings. |
+| [**putRoutingUtilization**](RoutingApi.html#putRoutingUtilization) | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. |
 | [**putRoutingWrapupcode**](RoutingApi.html#putRoutingWrapupcode) | Update wrap-up code |
 | [**putUserRoutingskill**](RoutingApi.html#putUserRoutingskill) | Update routing skill proficiency or state. |
 | [**putUserRoutingskillsBulk**](RoutingApi.html#putUserRoutingskillsBulk) | Replace all routing skills assigned to a user |
@@ -529,7 +532,7 @@ null (empty response body)
 
 > Void deleteRoutingUtilization()
 
-Delete utilization settings and revert to system defaults.
+Delete the organization-wide max utilization settings and revert to the system default.
 
 
 
@@ -1548,7 +1551,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortBy** | **String**| Sort by | [optional] [default to name] 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, authorization.unusedRoles, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
 | **joined** | **Boolean**| Filter by joined status | [optional] 
 | **name** | **String**| Filter by queue member name | [optional] 
 | **profileSkills** | [**List&lt;String&gt;**](String.html)| Filter by profile skill | [optional] 
@@ -2509,7 +2512,7 @@ try {
 
 > [Utilization](Utilization.html) getRoutingUtilization()
 
-Get the utilization settings.
+Get the organization-wide max utilization settings.
 
 
 
@@ -2692,6 +2695,78 @@ try {
 ### Return type
 
 [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html)
+
+<a name="getUserQueues"></a>
+
+# **getUserQueues**
+
+
+
+> [UserQueueEntityListing](UserQueueEntityListing.html) getUserQueues(userId, pageSize, pageNumber, joined, divisionId)
+
+Get queues for user
+
+
+
+Wraps GET /api/v2/users/{userId}/queues  
+
+Requires ANY permissions: 
+
+* routing:queue:view
+* routing:queue:join
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String userId = "userId_example"; // String | User ID
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+Boolean joined = true; // Boolean | Is joined to the queue
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
+try {
+    UserQueueEntityListing result = apiInstance.getUserQueues(userId, pageSize, pageNumber, joined, divisionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getUserQueues");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **joined** | **Boolean**| Is joined to the queue | [optional] [default to true] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserQueueEntityListing**](UserQueueEntityListing.html)
 
 <a name="getUserRoutinglanguages"></a>
 
@@ -3022,6 +3097,140 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="patchUserQueue"></a>
+
+# **patchUserQueue**
+
+
+
+> [UserQueue](UserQueue.html) patchUserQueue(queueId, userId, body)
+
+Join or unjoin a queue for a user
+
+
+
+Wraps PATCH /api/v2/users/{userId}/queues/{queueId}  
+
+Requires ANY permissions: 
+
+* routing:queue:join
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String queueId = "queueId_example"; // String | Queue ID
+String userId = "userId_example"; // String | User ID
+UserQueue body = new UserQueue(); // UserQueue | Queue Member
+try {
+    UserQueue result = apiInstance.patchUserQueue(queueId, userId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#patchUserQueue");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **queueId** | **String**| Queue ID | 
+| **userId** | **String**| User ID | 
+| **body** | [**UserQueue**](UserQueue.html)| Queue Member | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserQueue**](UserQueue.html)
+
+<a name="patchUserQueues"></a>
+
+# **patchUserQueues**
+
+
+
+> [UserQueueEntityListing](UserQueueEntityListing.html) patchUserQueues(userId, body, divisionId)
+
+Join or unjoin a set of queues for a user
+
+
+
+Wraps PATCH /api/v2/users/{userId}/queues  
+
+Requires ANY permissions: 
+
+* routing:queue:join
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String userId = "userId_example"; // String | User ID
+List<UserQueue> body = Arrays.asList(new UserQueue()); // List<UserQueue> | User Queues
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
+try {
+    UserQueueEntityListing result = apiInstance.patchUserQueues(userId, body, divisionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#patchUserQueues");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+| **body** | [**List&lt;UserQueue&gt;**](UserQueue.html)| User Queues | 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserQueueEntityListing**](UserQueueEntityListing.html)
 
 <a name="patchUserRoutinglanguage"></a>
 
@@ -4387,7 +4596,7 @@ try {
 
 > [Utilization](Utilization.html) putRoutingUtilization(body)
 
-Update the utilization settings.
+Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
 
 
 

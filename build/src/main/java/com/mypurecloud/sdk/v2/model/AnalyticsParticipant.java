@@ -22,7 +22,6 @@ public class AnalyticsParticipant  implements Serializable {
   
   private String participantId = null;
   private String participantName = null;
-  private Map<String, String> attributes = null;
   private String userId = null;
 
   /**
@@ -111,6 +110,7 @@ public class AnalyticsParticipant  implements Serializable {
   }
   private FlaggedReasonEnum flaggedReason = null;
   private List<AnalyticsSession> sessions = new ArrayList<AnalyticsSession>();
+  private Map<String, String> attributes = null;
 
   
   /**
@@ -146,24 +146,6 @@ public class AnalyticsParticipant  implements Serializable {
   }
   public void setParticipantName(String participantName) {
     this.participantName = participantName;
-  }
-
-  
-  /**
-   * List of attributes associated to this participant
-   **/
-  public AnalyticsParticipant attributes(Map<String, String> attributes) {
-    this.attributes = attributes;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "List of attributes associated to this participant")
-  @JsonProperty("attributes")
-  public Map<String, String> getAttributes() {
-    return attributes;
-  }
-  public void setAttributes(Map<String, String> attributes) {
-    this.attributes = attributes;
   }
 
   
@@ -275,6 +257,24 @@ public class AnalyticsParticipant  implements Serializable {
   }
 
   
+  /**
+   * List of attributes associated to this participant
+   **/
+  public AnalyticsParticipant attributes(Map<String, String> attributes) {
+    this.attributes = attributes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of attributes associated to this participant")
+  @JsonProperty("attributes")
+  public Map<String, String> getAttributes() {
+    return attributes;
+  }
+  public void setAttributes(Map<String, String> attributes) {
+    this.attributes = attributes;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -287,18 +287,18 @@ public class AnalyticsParticipant  implements Serializable {
     AnalyticsParticipant analyticsParticipant = (AnalyticsParticipant) o;
     return Objects.equals(this.participantId, analyticsParticipant.participantId) &&
         Objects.equals(this.participantName, analyticsParticipant.participantName) &&
-        Objects.equals(this.attributes, analyticsParticipant.attributes) &&
         Objects.equals(this.userId, analyticsParticipant.userId) &&
         Objects.equals(this.purpose, analyticsParticipant.purpose) &&
         Objects.equals(this.externalContactId, analyticsParticipant.externalContactId) &&
         Objects.equals(this.externalOrganizationId, analyticsParticipant.externalOrganizationId) &&
         Objects.equals(this.flaggedReason, analyticsParticipant.flaggedReason) &&
-        Objects.equals(this.sessions, analyticsParticipant.sessions);
+        Objects.equals(this.sessions, analyticsParticipant.sessions) &&
+        Objects.equals(this.attributes, analyticsParticipant.attributes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(participantId, participantName, attributes, userId, purpose, externalContactId, externalOrganizationId, flaggedReason, sessions);
+    return Objects.hash(participantId, participantName, userId, purpose, externalContactId, externalOrganizationId, flaggedReason, sessions, attributes);
   }
 
   @Override
@@ -308,13 +308,13 @@ public class AnalyticsParticipant  implements Serializable {
     
     sb.append("    participantId: ").append(toIndentedString(participantId)).append("\n");
     sb.append("    participantName: ").append(toIndentedString(participantName)).append("\n");
-    sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    purpose: ").append(toIndentedString(purpose)).append("\n");
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("    externalOrganizationId: ").append(toIndentedString(externalOrganizationId)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    sessions: ").append(toIndentedString(sessions)).append("\n");
+    sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

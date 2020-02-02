@@ -13,6 +13,7 @@ import com.mypurecloud.sdk.v2.model.EmployerInfo;
 import com.mypurecloud.sdk.v2.model.Geolocation;
 import com.mypurecloud.sdk.v2.model.Group;
 import com.mypurecloud.sdk.v2.model.Location;
+import com.mypurecloud.sdk.v2.model.OAuthLastTokenIssued;
 import com.mypurecloud.sdk.v2.model.OutOfOffice;
 import com.mypurecloud.sdk.v2.model.RoutingStatus;
 import com.mypurecloud.sdk.v2.model.User;
@@ -101,6 +102,7 @@ public class User  implements Serializable {
   private List<UserRoutingLanguage> languages = new ArrayList<UserRoutingLanguage>();
   private Boolean acdAutoAnswer = null;
   private String languagePreference = null;
+  private OAuthLastTokenIssued lastTokenIssued = null;
   private String selfUri = null;
 
   
@@ -618,6 +620,23 @@ public class User  implements Serializable {
   }
 
   
+  /**
+   **/
+  public User lastTokenIssued(OAuthLastTokenIssued lastTokenIssued) {
+    this.lastTokenIssued = lastTokenIssued;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastTokenIssued")
+  public OAuthLastTokenIssued getLastTokenIssued() {
+    return lastTokenIssued;
+  }
+  public void setLastTokenIssued(OAuthLastTokenIssued lastTokenIssued) {
+    this.lastTokenIssued = lastTokenIssued;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -666,12 +685,13 @@ public class User  implements Serializable {
         Objects.equals(this.languages, user.languages) &&
         Objects.equals(this.acdAutoAnswer, user.acdAutoAnswer) &&
         Objects.equals(this.languagePreference, user.languagePreference) &&
+        Objects.equals(this.lastTokenIssued, user.lastTokenIssued) &&
         Objects.equals(this.selfUri, user.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, acdAutoAnswer, languagePreference, selfUri);
+    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, acdAutoAnswer, languagePreference, lastTokenIssued, selfUri);
   }
 
   @Override
@@ -710,6 +730,7 @@ public class User  implements Serializable {
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
     sb.append("    languagePreference: ").append(toIndentedString(languagePreference)).append("\n");
+    sb.append("    lastTokenIssued: ").append(toIndentedString(lastTokenIssued)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

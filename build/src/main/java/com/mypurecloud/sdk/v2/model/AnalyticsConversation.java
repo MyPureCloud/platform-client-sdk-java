@@ -61,10 +61,10 @@ public class AnalyticsConversation  implements Serializable {
     }
   }
   private OriginatingDirectionEnum originatingDirection = null;
-  private List<AnalyticsParticipant> participants = new ArrayList<AnalyticsParticipant>();
   private List<AnalyticsEvaluation> evaluations = new ArrayList<AnalyticsEvaluation>();
   private List<AnalyticsSurvey> surveys = new ArrayList<AnalyticsSurvey>();
   private List<String> divisionIds = new ArrayList<String>();
+  private List<AnalyticsParticipant> participants = new ArrayList<AnalyticsParticipant>();
 
   
   /**
@@ -176,24 +176,6 @@ public class AnalyticsConversation  implements Serializable {
 
   
   /**
-   * Participants in the conversation
-   **/
-  public AnalyticsConversation participants(List<AnalyticsParticipant> participants) {
-    this.participants = participants;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Participants in the conversation")
-  @JsonProperty("participants")
-  public List<AnalyticsParticipant> getParticipants() {
-    return participants;
-  }
-  public void setParticipants(List<AnalyticsParticipant> participants) {
-    this.participants = participants;
-  }
-
-  
-  /**
    * Evaluations tied to this conversation
    **/
   public AnalyticsConversation evaluations(List<AnalyticsEvaluation> evaluations) {
@@ -247,6 +229,24 @@ public class AnalyticsConversation  implements Serializable {
   }
 
   
+  /**
+   * Participants in the conversation
+   **/
+  public AnalyticsConversation participants(List<AnalyticsParticipant> participants) {
+    this.participants = participants;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Participants in the conversation")
+  @JsonProperty("participants")
+  public List<AnalyticsParticipant> getParticipants() {
+    return participants;
+  }
+  public void setParticipants(List<AnalyticsParticipant> participants) {
+    this.participants = participants;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -263,15 +263,15 @@ public class AnalyticsConversation  implements Serializable {
         Objects.equals(this.mediaStatsMinConversationMos, analyticsConversation.mediaStatsMinConversationMos) &&
         Objects.equals(this.mediaStatsMinConversationRFactor, analyticsConversation.mediaStatsMinConversationRFactor) &&
         Objects.equals(this.originatingDirection, analyticsConversation.originatingDirection) &&
-        Objects.equals(this.participants, analyticsConversation.participants) &&
         Objects.equals(this.evaluations, analyticsConversation.evaluations) &&
         Objects.equals(this.surveys, analyticsConversation.surveys) &&
-        Objects.equals(this.divisionIds, analyticsConversation.divisionIds);
+        Objects.equals(this.divisionIds, analyticsConversation.divisionIds) &&
+        Objects.equals(this.participants, analyticsConversation.participants);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, conversationStart, conversationEnd, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, originatingDirection, participants, evaluations, surveys, divisionIds);
+    return Objects.hash(conversationId, conversationStart, conversationEnd, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, originatingDirection, evaluations, surveys, divisionIds, participants);
   }
 
   @Override
@@ -285,10 +285,10 @@ public class AnalyticsConversation  implements Serializable {
     sb.append("    mediaStatsMinConversationMos: ").append(toIndentedString(mediaStatsMinConversationMos)).append("\n");
     sb.append("    mediaStatsMinConversationRFactor: ").append(toIndentedString(mediaStatsMinConversationRFactor)).append("\n");
     sb.append("    originatingDirection: ").append(toIndentedString(originatingDirection)).append("\n");
-    sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    evaluations: ").append(toIndentedString(evaluations)).append("\n");
     sb.append("    surveys: ").append(toIndentedString(surveys)).append("\n");
     sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
+    sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("}");
     return sb.toString();
   }

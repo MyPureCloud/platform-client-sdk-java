@@ -66,8 +66,11 @@ title: ConversationDetailQueryPredicate
 | NOUTBOUNDABANDONED | &quot;nOutboundAbandoned&quot; |
 | NOUTBOUNDATTEMPTED | &quot;nOutboundAttempted&quot; |
 | NOUTBOUNDCONNECTED | &quot;nOutboundConnected&quot; |
+| NOVERSLA | &quot;nOverSla&quot; |
 | NSTATETRANSITIONERROR | &quot;nStateTransitionError&quot; |
 | NTRANSFERRED | &quot;nTransferred&quot; |
+| OEXTERNALMEDIACOUNT | &quot;oExternalMediaCount&quot; |
+| OMEDIACOUNT | &quot;oMediaCount&quot; |
 | TABANDON | &quot;tAbandon&quot; |
 | TACD | &quot;tAcd&quot; |
 | TACW | &quot;tAcw&quot; |
@@ -88,6 +91,7 @@ title: ConversationDetailQueryPredicate
 | TIVR | &quot;tIvr&quot; |
 | TMONITORING | &quot;tMonitoring&quot; |
 | TNOTRESPONDING | &quot;tNotResponding&quot; |
+| TSHORTABANDON | &quot;tShortAbandon&quot; |
 | TTALK | &quot;tTalk&quot; |
 | TTALKCOMPLETE | &quot;tTalkComplete&quot; |
 | TUSERRESPONSETIME | &quot;tUserResponseTime&quot; |

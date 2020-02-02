@@ -78,6 +78,7 @@ public class Flow  implements Serializable {
   private Object inputSchema = null;
   private Object outputSchema = null;
   private FlowVersion checkedInVersion = null;
+  private FlowVersion debugVersion = null;
   private User publishedBy = null;
   private Operation currentOperation = null;
   private String selfUri = null;
@@ -347,6 +348,23 @@ public class Flow  implements Serializable {
   
   /**
    **/
+  public Flow debugVersion(FlowVersion debugVersion) {
+    this.debugVersion = debugVersion;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("debugVersion")
+  public FlowVersion getDebugVersion() {
+    return debugVersion;
+  }
+  public void setDebugVersion(FlowVersion debugVersion) {
+    this.debugVersion = debugVersion;
+  }
+
+  
+  /**
+   **/
   public Flow publishedBy(User publishedBy) {
     this.publishedBy = publishedBy;
     return this;
@@ -411,6 +429,7 @@ public class Flow  implements Serializable {
         Objects.equals(this.inputSchema, flow.inputSchema) &&
         Objects.equals(this.outputSchema, flow.outputSchema) &&
         Objects.equals(this.checkedInVersion, flow.checkedInVersion) &&
+        Objects.equals(this.debugVersion, flow.debugVersion) &&
         Objects.equals(this.publishedBy, flow.publishedBy) &&
         Objects.equals(this.currentOperation, flow.currentOperation) &&
         Objects.equals(this.selfUri, flow.selfUri);
@@ -418,7 +437,7 @@ public class Flow  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, type, lockedUser, lockedClient, active, system, deleted, publishedVersion, savedVersion, inputSchema, outputSchema, checkedInVersion, publishedBy, currentOperation, selfUri);
+    return Objects.hash(id, name, division, description, type, lockedUser, lockedClient, active, system, deleted, publishedVersion, savedVersion, inputSchema, outputSchema, checkedInVersion, debugVersion, publishedBy, currentOperation, selfUri);
   }
 
   @Override
@@ -441,6 +460,7 @@ public class Flow  implements Serializable {
     sb.append("    inputSchema: ").append(toIndentedString(inputSchema)).append("\n");
     sb.append("    outputSchema: ").append(toIndentedString(outputSchema)).append("\n");
     sb.append("    checkedInVersion: ").append(toIndentedString(checkedInVersion)).append("\n");
+    sb.append("    debugVersion: ").append(toIndentedString(debugVersion)).append("\n");
     sb.append("    publishedBy: ").append(toIndentedString(publishedBy)).append("\n");
     sb.append("    currentOperation: ").append(toIndentedString(currentOperation)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

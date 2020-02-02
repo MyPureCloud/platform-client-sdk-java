@@ -22,6 +22,7 @@ public class ConversationProperties  implements Serializable {
   private Boolean isCobrowse = null;
   private Boolean isVoicemail = null;
   private Boolean isFlagged = null;
+  private Boolean isMonitored = null;
   private Boolean filterWrapUpNotes = null;
   private Boolean matchAll = null;
 
@@ -171,6 +172,24 @@ public class ConversationProperties  implements Serializable {
 
   
   /**
+   * Indicates filtering for monitored
+   **/
+  public ConversationProperties isMonitored(Boolean isMonitored) {
+    this.isMonitored = isMonitored;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates filtering for monitored")
+  @JsonProperty("isMonitored")
+  public Boolean getIsMonitored() {
+    return isMonitored;
+  }
+  public void setIsMonitored(Boolean isMonitored) {
+    this.isMonitored = isMonitored;
+  }
+
+  
+  /**
    * Indicates filtering for WrapUpNotes
    **/
   public ConversationProperties filterWrapUpNotes(Boolean filterWrapUpNotes) {
@@ -224,13 +243,14 @@ public class ConversationProperties  implements Serializable {
         Objects.equals(this.isCobrowse, conversationProperties.isCobrowse) &&
         Objects.equals(this.isVoicemail, conversationProperties.isVoicemail) &&
         Objects.equals(this.isFlagged, conversationProperties.isFlagged) &&
+        Objects.equals(this.isMonitored, conversationProperties.isMonitored) &&
         Objects.equals(this.filterWrapUpNotes, conversationProperties.filterWrapUpNotes) &&
         Objects.equals(this.matchAll, conversationProperties.matchAll);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(isWaiting, isActive, isAcd, isPreferred, isScreenshare, isCobrowse, isVoicemail, isFlagged, filterWrapUpNotes, matchAll);
+    return Objects.hash(isWaiting, isActive, isAcd, isPreferred, isScreenshare, isCobrowse, isVoicemail, isFlagged, isMonitored, filterWrapUpNotes, matchAll);
   }
 
   @Override
@@ -246,6 +266,7 @@ public class ConversationProperties  implements Serializable {
     sb.append("    isCobrowse: ").append(toIndentedString(isCobrowse)).append("\n");
     sb.append("    isVoicemail: ").append(toIndentedString(isVoicemail)).append("\n");
     sb.append("    isFlagged: ").append(toIndentedString(isFlagged)).append("\n");
+    sb.append("    isMonitored: ").append(toIndentedString(isMonitored)).append("\n");
     sb.append("    filterWrapUpNotes: ").append(toIndentedString(filterWrapUpNotes)).append("\n");
     sb.append("    matchAll: ").append(toIndentedString(matchAll)).append("\n");
     sb.append("}");

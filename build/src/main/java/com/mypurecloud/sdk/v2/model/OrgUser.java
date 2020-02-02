@@ -13,6 +13,7 @@ import com.mypurecloud.sdk.v2.model.EmployerInfo;
 import com.mypurecloud.sdk.v2.model.Geolocation;
 import com.mypurecloud.sdk.v2.model.Group;
 import com.mypurecloud.sdk.v2.model.Location;
+import com.mypurecloud.sdk.v2.model.OAuthLastTokenIssued;
 import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OutOfOffice;
 import com.mypurecloud.sdk.v2.model.RoutingStatus;
@@ -102,6 +103,7 @@ public class OrgUser  implements Serializable {
   private List<UserRoutingLanguage> languages = new ArrayList<UserRoutingLanguage>();
   private Boolean acdAutoAnswer = null;
   private String languagePreference = null;
+  private OAuthLastTokenIssued lastTokenIssued = null;
   private Organization organization = null;
 
   
@@ -621,6 +623,23 @@ public class OrgUser  implements Serializable {
   
   /**
    **/
+  public OrgUser lastTokenIssued(OAuthLastTokenIssued lastTokenIssued) {
+    this.lastTokenIssued = lastTokenIssued;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastTokenIssued")
+  public OAuthLastTokenIssued getLastTokenIssued() {
+    return lastTokenIssued;
+  }
+  public void setLastTokenIssued(OAuthLastTokenIssued lastTokenIssued) {
+    this.lastTokenIssued = lastTokenIssued;
+  }
+
+  
+  /**
+   **/
   public OrgUser organization(Organization organization) {
     this.organization = organization;
     return this;
@@ -677,12 +696,13 @@ public class OrgUser  implements Serializable {
         Objects.equals(this.languages, orgUser.languages) &&
         Objects.equals(this.acdAutoAnswer, orgUser.acdAutoAnswer) &&
         Objects.equals(this.languagePreference, orgUser.languagePreference) &&
+        Objects.equals(this.lastTokenIssued, orgUser.lastTokenIssued) &&
         Objects.equals(this.organization, orgUser.organization);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, acdAutoAnswer, languagePreference, organization);
+    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, acdAutoAnswer, languagePreference, lastTokenIssued, organization);
   }
 
   @Override
@@ -721,6 +741,7 @@ public class OrgUser  implements Serializable {
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
     sb.append("    languagePreference: ").append(toIndentedString(languagePreference)).append("\n");
+    sb.append("    lastTokenIssued: ").append(toIndentedString(lastTokenIssued)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
     sb.append("}");
     return sb.toString();

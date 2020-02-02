@@ -39,6 +39,7 @@ import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
 import com.mypurecloud.sdk.v2.model.QueueMember;
+import com.mypurecloud.sdk.v2.model.UserQueue;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
@@ -94,11 +95,14 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUserQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutinglanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUserRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingSettingsContactcenterRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchUserQueueRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchUserQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguagesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutingskillsBulkRequest;
@@ -693,7 +697,7 @@ public class RoutingApi {
 
   
   /**
-   * Delete utilization settings and revert to system defaults.
+   * Delete the organization-wide max utilization settings and revert to the system default.
    * 
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -703,7 +707,7 @@ public class RoutingApi {
   }
 
   /**
-   * Delete utilization settings and revert to system defaults.
+   * Delete the organization-wide max utilization settings and revert to the system default.
    * 
    * @throws IOException if the request fails to be processed
    */
@@ -717,7 +721,7 @@ public class RoutingApi {
   }
 
   /**
-   * Delete utilization settings and revert to system defaults.
+   * Delete the organization-wide max utilization settings and revert to the system default.
    * 
    * @param request The request object
    * @throws ApiException if the request fails on the server
@@ -735,7 +739,7 @@ public class RoutingApi {
   }
 
   /**
-   * Delete utilization settings and revert to system defaults.
+   * Delete the organization-wide max utilization settings and revert to the system default.
    * 
    * @param request The request object
    * @return the response
@@ -3267,7 +3271,7 @@ public class RoutingApi {
 
   
   /**
-   * Get the utilization settings.
+   * Get the organization-wide max utilization settings.
    * 
    * @return Utilization
    * @throws ApiException if the request fails on the server
@@ -3278,7 +3282,7 @@ public class RoutingApi {
   }
 
   /**
-   * Get the utilization settings.
+   * Get the organization-wide max utilization settings.
    * 
    * @return Utilization
    * @throws IOException if the request fails to be processed
@@ -3293,7 +3297,7 @@ public class RoutingApi {
   }
 
   /**
-   * Get the utilization settings.
+   * Get the organization-wide max utilization settings.
    * 
    * @param request The request object
    * @return Utilization
@@ -3312,7 +3316,7 @@ public class RoutingApi {
   }
 
   /**
-   * Get the utilization settings.
+   * Get the organization-wide max utilization settings.
    * 
    * @param request The request object
    * @return the response
@@ -3506,6 +3510,101 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WrapupCodeEntityListing> response = (ApiResponse<WrapupCodeEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get queues for user
+   * 
+   * @param userId User ID (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param joined Is joined to the queue (optional, default to true)
+   * @param divisionId Division ID(s) (optional)
+   * @return UserQueueEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserQueueEntityListing getUserQueues(String userId, Integer pageSize, Integer pageNumber, Boolean joined, List<String> divisionId) throws IOException, ApiException {
+    return  getUserQueues(createGetUserQueuesRequest(userId, pageSize, pageNumber, joined, divisionId));
+  }
+
+  /**
+   * Get queues for user
+   * 
+   * @param userId User ID (required)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param joined Is joined to the queue (optional, default to true)
+   * @param divisionId Division ID(s) (optional)
+   * @return UserQueueEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserQueueEntityListing> getUserQueuesWithHttpInfo(String userId, Integer pageSize, Integer pageNumber, Boolean joined, List<String> divisionId) throws IOException {
+    return getUserQueues(createGetUserQueuesRequest(userId, pageSize, pageNumber, joined, divisionId).withHttpInfo());
+  }
+
+  private GetUserQueuesRequest createGetUserQueuesRequest(String userId, Integer pageSize, Integer pageNumber, Boolean joined, List<String> divisionId) {
+    return GetUserQueuesRequest.builder()
+            .withUserId(userId)
+    
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withJoined(joined)
+    
+            .withDivisionId(divisionId)
+    
+            .build();
+  }
+
+  /**
+   * Get queues for user
+   * 
+   * @param request The request object
+   * @return UserQueueEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserQueueEntityListing getUserQueues(GetUserQueuesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserQueueEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserQueueEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get queues for user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserQueueEntityListing> getUserQueues(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserQueueEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserQueueEntityListing> response = (ApiResponse<UserQueueEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserQueueEntityListing> response = (ApiResponse<UserQueueEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3934,6 +4033,180 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Join or unjoin a queue for a user
+   * 
+   * @param queueId Queue ID (required)
+   * @param userId User ID (required)
+   * @param body Queue Member (required)
+   * @return UserQueue
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserQueue patchUserQueue(String queueId, String userId, UserQueue body) throws IOException, ApiException {
+    return  patchUserQueue(createPatchUserQueueRequest(queueId, userId, body));
+  }
+
+  /**
+   * Join or unjoin a queue for a user
+   * 
+   * @param queueId Queue ID (required)
+   * @param userId User ID (required)
+   * @param body Queue Member (required)
+   * @return UserQueue
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserQueue> patchUserQueueWithHttpInfo(String queueId, String userId, UserQueue body) throws IOException {
+    return patchUserQueue(createPatchUserQueueRequest(queueId, userId, body).withHttpInfo());
+  }
+
+  private PatchUserQueueRequest createPatchUserQueueRequest(String queueId, String userId, UserQueue body) {
+    return PatchUserQueueRequest.builder()
+            .withQueueId(queueId)
+    
+            .withUserId(userId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Join or unjoin a queue for a user
+   * 
+   * @param request The request object
+   * @return UserQueue
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserQueue patchUserQueue(PatchUserQueueRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserQueue> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserQueue>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Join or unjoin a queue for a user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserQueue> patchUserQueue(ApiRequest<UserQueue> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserQueue>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserQueue> response = (ApiResponse<UserQueue>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserQueue> response = (ApiResponse<UserQueue>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Join or unjoin a set of queues for a user
+   * 
+   * @param userId User ID (required)
+   * @param body User Queues (required)
+   * @param divisionId Division ID(s) (optional)
+   * @return UserQueueEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserQueueEntityListing patchUserQueues(String userId, List<UserQueue> body, List<String> divisionId) throws IOException, ApiException {
+    return  patchUserQueues(createPatchUserQueuesRequest(userId, body, divisionId));
+  }
+
+  /**
+   * Join or unjoin a set of queues for a user
+   * 
+   * @param userId User ID (required)
+   * @param body User Queues (required)
+   * @param divisionId Division ID(s) (optional)
+   * @return UserQueueEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserQueueEntityListing> patchUserQueuesWithHttpInfo(String userId, List<UserQueue> body, List<String> divisionId) throws IOException {
+    return patchUserQueues(createPatchUserQueuesRequest(userId, body, divisionId).withHttpInfo());
+  }
+
+  private PatchUserQueuesRequest createPatchUserQueuesRequest(String userId, List<UserQueue> body, List<String> divisionId) {
+    return PatchUserQueuesRequest.builder()
+            .withUserId(userId)
+    
+            .withBody(body)
+    
+            .withDivisionId(divisionId)
+    
+            .build();
+  }
+
+  /**
+   * Join or unjoin a set of queues for a user
+   * 
+   * @param request The request object
+   * @return UserQueueEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserQueueEntityListing patchUserQueues(PatchUserQueuesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserQueueEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserQueueEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Join or unjoin a set of queues for a user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserQueueEntityListing> patchUserQueues(ApiRequest<List<UserQueue>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserQueueEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserQueueEntityListing> response = (ApiResponse<UserQueueEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserQueueEntityListing> response = (ApiResponse<UserQueueEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5659,7 +5932,7 @@ public class RoutingApi {
 
   
   /**
-   * Update the utilization settings.
+   * Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
    * 
    * @param body utilization (required)
    * @return Utilization
@@ -5671,7 +5944,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update the utilization settings.
+   * Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
    * 
    * @param body utilization (required)
    * @return Utilization
@@ -5689,7 +5962,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update the utilization settings.
+   * Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
    * 
    * @param request The request object
    * @return Utilization
@@ -5708,7 +5981,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update the utilization settings.
+   * Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
    * 
    * @param request The request object
    * @return the response

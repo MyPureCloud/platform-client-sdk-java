@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CalibrationAssignment;
 import com.mypurecloud.sdk.v2.model.EvaluationAssignment;
 import com.mypurecloud.sdk.v2.model.InitiateScreenRecording;
+import com.mypurecloud.sdk.v2.model.IntegrationExport;
 import com.mypurecloud.sdk.v2.model.MediaTranscription;
 import com.mypurecloud.sdk.v2.model.MeteredAssignmentByAgent;
 import com.mypurecloud.sdk.v2.model.MeteredEvaluationAssignment;
@@ -35,6 +36,7 @@ public class PolicyActions  implements Serializable {
   private RetentionDuration retentionDuration = null;
   private InitiateScreenRecording initiateScreenRecording = null;
   private List<MediaTranscription> mediaTranscriptions = new ArrayList<MediaTranscription>();
+  private IntegrationExport integrationExport = null;
 
   
   /**
@@ -227,6 +229,24 @@ public class PolicyActions  implements Serializable {
   }
 
   
+  /**
+   * Policy action for exporting recordings using an integration to 3rd party s3.
+   **/
+  public PolicyActions integrationExport(IntegrationExport integrationExport) {
+    this.integrationExport = integrationExport;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Policy action for exporting recordings using an integration to 3rd party s3.")
+  @JsonProperty("integrationExport")
+  public IntegrationExport getIntegrationExport() {
+    return integrationExport;
+  }
+  public void setIntegrationExport(IntegrationExport integrationExport) {
+    this.integrationExport = integrationExport;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -247,12 +267,13 @@ public class PolicyActions  implements Serializable {
         Objects.equals(this.assignSurveys, policyActions.assignSurveys) &&
         Objects.equals(this.retentionDuration, policyActions.retentionDuration) &&
         Objects.equals(this.initiateScreenRecording, policyActions.initiateScreenRecording) &&
-        Objects.equals(this.mediaTranscriptions, policyActions.mediaTranscriptions);
+        Objects.equals(this.mediaTranscriptions, policyActions.mediaTranscriptions) &&
+        Objects.equals(this.integrationExport, policyActions.integrationExport);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(retainRecording, deleteRecording, alwaysDelete, assignEvaluations, assignMeteredEvaluations, assignMeteredAssignmentByAgent, assignCalibrations, assignSurveys, retentionDuration, initiateScreenRecording, mediaTranscriptions);
+    return Objects.hash(retainRecording, deleteRecording, alwaysDelete, assignEvaluations, assignMeteredEvaluations, assignMeteredAssignmentByAgent, assignCalibrations, assignSurveys, retentionDuration, initiateScreenRecording, mediaTranscriptions, integrationExport);
   }
 
   @Override
@@ -271,6 +292,7 @@ public class PolicyActions  implements Serializable {
     sb.append("    retentionDuration: ").append(toIndentedString(retentionDuration)).append("\n");
     sb.append("    initiateScreenRecording: ").append(toIndentedString(initiateScreenRecording)).append("\n");
     sb.append("    mediaTranscriptions: ").append(toIndentedString(mediaTranscriptions)).append("\n");
+    sb.append("    integrationExport: ").append(toIndentedString(integrationExport)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
 import com.mypurecloud.sdk.v2.model.QueueMember;
+import com.mypurecloud.sdk.v2.model.UserQueue;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
@@ -97,11 +98,14 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUserQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutinglanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUserRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingSettingsContactcenterRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchUserQueueRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchUserQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguagesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutingskillsBulkRequest;
@@ -681,7 +685,7 @@ public class RoutingApiAsync {
 
   
   /**
-   * Delete utilization settings and revert to system defaults.
+   * Delete the organization-wide max utilization settings and revert to the system default.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -715,7 +719,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Delete utilization settings and revert to system defaults.
+   * Delete the organization-wide max utilization settings and revert to the system default.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2961,7 +2965,7 @@ public class RoutingApiAsync {
 
   
   /**
-   * Get the utilization settings.
+   * Get the organization-wide max utilization settings.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2995,7 +2999,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Get the utilization settings.
+   * Get the organization-wide max utilization settings.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3176,6 +3180,82 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<WrapupCodeEntityListing> response = (ApiResponse<WrapupCodeEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get queues for user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserQueueEntityListing> getUserQueuesAsync(GetUserQueuesRequest request, final AsyncApiCallback<UserQueueEntityListing> callback) {
+    try {
+      final SettableFuture<UserQueueEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserQueueEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserQueueEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserQueueEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get queues for user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserQueueEntityListing>> getUserQueuesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserQueueEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserQueueEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserQueueEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserQueueEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserQueueEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserQueueEntityListing> response = (ApiResponse<UserQueueEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserQueueEntityListing> response = (ApiResponse<UserQueueEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3556,6 +3636,158 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Join or unjoin a queue for a user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserQueue> patchUserQueueAsync(PatchUserQueueRequest request, final AsyncApiCallback<UserQueue> callback) {
+    try {
+      final SettableFuture<UserQueue> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserQueue>() {}, new AsyncApiCallback<ApiResponse<UserQueue>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserQueue> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Join or unjoin a queue for a user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserQueue>> patchUserQueueAsync(ApiRequest<UserQueue> request, final AsyncApiCallback<ApiResponse<UserQueue>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserQueue>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserQueue>() {}, new AsyncApiCallback<ApiResponse<UserQueue>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserQueue> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserQueue> response = (ApiResponse<UserQueue>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserQueue> response = (ApiResponse<UserQueue>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Join or unjoin a set of queues for a user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserQueueEntityListing> patchUserQueuesAsync(PatchUserQueuesRequest request, final AsyncApiCallback<UserQueueEntityListing> callback) {
+    try {
+      final SettableFuture<UserQueueEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserQueueEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserQueueEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserQueueEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Join or unjoin a set of queues for a user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserQueueEntityListing>> patchUserQueuesAsync(ApiRequest<List<UserQueue>> request, final AsyncApiCallback<ApiResponse<UserQueueEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserQueueEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserQueueEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserQueueEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserQueueEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserQueueEntityListing> response = (ApiResponse<UserQueueEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserQueueEntityListing> response = (ApiResponse<UserQueueEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -5165,7 +5397,7 @@ public class RoutingApiAsync {
 
   
   /**
-   * Update the utilization settings.
+   * Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -5199,7 +5431,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Update the utilization settings.
+   * Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

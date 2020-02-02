@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.GeolocationSettings;
 import com.mypurecloud.sdk.v2.model.Group;
 import com.mypurecloud.sdk.v2.model.Location;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
+import com.mypurecloud.sdk.v2.model.OAuthLastTokenIssued;
 import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrganizationPresence;
 import com.mypurecloud.sdk.v2.model.OutOfOffice;
@@ -113,6 +114,7 @@ public class UserMe  implements Serializable {
   private List<UserRoutingLanguage> languages = new ArrayList<UserRoutingLanguage>();
   private Boolean acdAutoAnswer = null;
   private String languagePreference = null;
+  private OAuthLastTokenIssued lastTokenIssued = null;
   private ServerDate date = null;
   private GeolocationSettings geolocationSettings = null;
   private Organization organization = null;
@@ -646,6 +648,23 @@ public class UserMe  implements Serializable {
 
   
   /**
+   **/
+  public UserMe lastTokenIssued(OAuthLastTokenIssued lastTokenIssued) {
+    this.lastTokenIssued = lastTokenIssued;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastTokenIssued")
+  public OAuthLastTokenIssued getLastTokenIssued() {
+    return lastTokenIssued;
+  }
+  public void setLastTokenIssued(OAuthLastTokenIssued lastTokenIssued) {
+    this.lastTokenIssued = lastTokenIssued;
+  }
+
+  
+  /**
    * The PureCloud system date time.
    **/
   public UserMe date(ServerDate date) {
@@ -963,6 +982,7 @@ public class UserMe  implements Serializable {
         Objects.equals(this.languages, userMe.languages) &&
         Objects.equals(this.acdAutoAnswer, userMe.acdAutoAnswer) &&
         Objects.equals(this.languagePreference, userMe.languagePreference) &&
+        Objects.equals(this.lastTokenIssued, userMe.lastTokenIssued) &&
         Objects.equals(this.date, userMe.date) &&
         Objects.equals(this.geolocationSettings, userMe.geolocationSettings) &&
         Objects.equals(this.organization, userMe.organization) &&
@@ -983,7 +1003,7 @@ public class UserMe  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, acdAutoAnswer, languagePreference, date, geolocationSettings, organization, presenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, orgProducts, selfUri);
+    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, acdAutoAnswer, languagePreference, lastTokenIssued, date, geolocationSettings, organization, presenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, orgProducts, selfUri);
   }
 
   @Override
@@ -1022,6 +1042,7 @@ public class UserMe  implements Serializable {
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
     sb.append("    languagePreference: ").append(toIndentedString(languagePreference)).append("\n");
+    sb.append("    lastTokenIssued: ").append(toIndentedString(lastTokenIssued)).append("\n");
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    geolocationSettings: ").append(toIndentedString(geolocationSettings)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");

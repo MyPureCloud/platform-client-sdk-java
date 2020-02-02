@@ -27,8 +27,16 @@ title: ViewFilter
 | **outboundCampaignIds** | <!----><!---->**List&lt;String&gt;**<!----> | The outbound campaign ids are used to filter the view |  [optional] |
 | **outboundContactListIds** | <!----><!---->**List&lt;String&gt;**<!----> | The outbound contact list ids are used to filter the view |  [optional] |
 | **contactIds** | <!----><!---->**List&lt;String&gt;**<!----> | The contact ids are used to filter the view |  [optional] |
+| **externalContactIds** | <!----><!---->**List&lt;String&gt;**<!----> | The external contact ids are used to filter the view |  [optional] |
+| **externalOrgIds** | <!----><!---->**List&lt;String&gt;**<!----> | The external org ids are used to filter the view |  [optional] |
 | **aniList** | <!----><!---->**List&lt;String&gt;**<!----> | The ani list ids are used to filter the view |  [optional] |
 | **durationsMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The durations in milliseconds used to filter the view |  [optional] |
+| **acdDurationsMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The acd durations in milliseconds used to filter the view |  [optional] |
+| **talkDurationsMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The talk durations in milliseconds used to filter the view |  [optional] |
+| **acwDurationsMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The acw durations in milliseconds used to filter the view |  [optional] |
+| **handleDurationsMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The handle durations in milliseconds used to filter the view |  [optional] |
+| **holdDurationsMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The hold durations in milliseconds used to filter the view |  [optional] |
+| **abandonDurationsMilliseconds** | <!----><!---->[**List&lt;NumericRange&gt;**](NumericRange.html)<!----> | The abandon durations in milliseconds used to filter the view |  [optional] |
 | **evaluationScore** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The evaluationScore is used to filter the view |  [optional] |
 | **evaluationCriticalScore** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The evaluationCriticalScore is used to filter the view |  [optional] |
 | **evaluationFormIds** | <!----><!---->**List&lt;String&gt;**<!----> | The evaluation form ids are used to filter the view |  [optional] |

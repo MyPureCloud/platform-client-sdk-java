@@ -1003,7 +1003,7 @@ public class QualityApi {
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
    * @param recordingId id of the recording (optional)
-   * @param entityType entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording (optional, default to RECORDING)
+   * @param entityType entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording (optional, default to Recording)
    * @return QualityAuditPage
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1023,7 +1023,7 @@ public class QualityApi {
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
    * @param recordingId id of the recording (optional)
-   * @param entityType entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording (optional, default to RECORDING)
+   * @param entityType entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording (optional, default to Recording)
    * @return QualityAuditPage
    * @throws IOException if the request fails to be processed
    */

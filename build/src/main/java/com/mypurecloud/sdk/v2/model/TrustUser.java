@@ -13,6 +13,7 @@ import com.mypurecloud.sdk.v2.model.EmployerInfo;
 import com.mypurecloud.sdk.v2.model.Geolocation;
 import com.mypurecloud.sdk.v2.model.Group;
 import com.mypurecloud.sdk.v2.model.Location;
+import com.mypurecloud.sdk.v2.model.OAuthLastTokenIssued;
 import com.mypurecloud.sdk.v2.model.OutOfOffice;
 import com.mypurecloud.sdk.v2.model.RoutingStatus;
 import com.mypurecloud.sdk.v2.model.TrustUserDetails;
@@ -102,6 +103,7 @@ public class TrustUser  implements Serializable {
   private List<UserRoutingLanguage> languages = new ArrayList<UserRoutingLanguage>();
   private Boolean acdAutoAnswer = null;
   private String languagePreference = null;
+  private OAuthLastTokenIssued lastTokenIssued = null;
   private TrustUserDetails trustUserDetails = null;
 
   
@@ -621,6 +623,23 @@ public class TrustUser  implements Serializable {
   
   /**
    **/
+  public TrustUser lastTokenIssued(OAuthLastTokenIssued lastTokenIssued) {
+    this.lastTokenIssued = lastTokenIssued;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastTokenIssued")
+  public OAuthLastTokenIssued getLastTokenIssued() {
+    return lastTokenIssued;
+  }
+  public void setLastTokenIssued(OAuthLastTokenIssued lastTokenIssued) {
+    this.lastTokenIssued = lastTokenIssued;
+  }
+
+  
+  /**
+   **/
   public TrustUser trustUserDetails(TrustUserDetails trustUserDetails) {
     this.trustUserDetails = trustUserDetails;
     return this;
@@ -677,12 +696,13 @@ public class TrustUser  implements Serializable {
         Objects.equals(this.languages, trustUser.languages) &&
         Objects.equals(this.acdAutoAnswer, trustUser.acdAutoAnswer) &&
         Objects.equals(this.languagePreference, trustUser.languagePreference) &&
+        Objects.equals(this.lastTokenIssued, trustUser.lastTokenIssued) &&
         Objects.equals(this.trustUserDetails, trustUser.trustUserDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, acdAutoAnswer, languagePreference, trustUserDetails);
+    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, acdAutoAnswer, languagePreference, lastTokenIssued, trustUserDetails);
   }
 
   @Override
@@ -721,6 +741,7 @@ public class TrustUser  implements Serializable {
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
     sb.append("    languagePreference: ").append(toIndentedString(languagePreference)).append("\n");
+    sb.append("    lastTokenIssued: ").append(toIndentedString(lastTokenIssued)).append("\n");
     sb.append("    trustUserDetails: ").append(toIndentedString(trustUserDetails)).append("\n");
     sb.append("}");
     return sb.toString();
