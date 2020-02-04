@@ -9294,7 +9294,7 @@ public class ConversationsApiAsync {
   
   /**
    * Get messages in batch
-   * 
+   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\&quot;a3069a33b-bbb1-4703-9d68-061d9e9db96e\&quot;, \&quot;55bc6be3-078c-4a49-a4e6-1e05776ed7e8\&quot;]
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -9328,7 +9328,7 @@ public class ConversationsApiAsync {
 
   /**
    * Get messages in batch
-   * 
+   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\&quot;a3069a33b-bbb1-4703-9d68-061d9e9db96e\&quot;, \&quot;55bc6be3-078c-4a49-a4e6-1e05776ed7e8\&quot;]
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

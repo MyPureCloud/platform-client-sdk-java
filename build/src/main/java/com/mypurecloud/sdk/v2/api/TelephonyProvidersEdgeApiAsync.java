@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.SchemaCategoryEntityListing;
 import com.mypurecloud.sdk.v2.model.SchemaReferenceEntityListing;
 import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.Edge;
+import com.mypurecloud.sdk.v2.model.EdgeNetworkDiagnosticResponse;
 import com.mypurecloud.sdk.v2.model.EdgeLine;
 import com.mypurecloud.sdk.v2.model.EdgeLineEntityListing;
 import com.mypurecloud.sdk.v2.model.DomainLogicalInterface;
@@ -69,6 +70,8 @@ import com.mypurecloud.sdk.v2.model.TrunkBase;
 import com.mypurecloud.sdk.v2.model.TrunkBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkMetabaseEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkRecordingEnabledCount;
+import com.mypurecloud.sdk.v2.model.EdgeNetworkDiagnostic;
+import com.mypurecloud.sdk.v2.model.EdgeNetworkDiagnosticRequest;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJobUploadRequest;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJobRequest;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJobResponse;
@@ -98,6 +101,10 @@ import com.mypurecloud.sdk.v2.api.request.GetConfigurationSchemasEdgesVnextSchem
 import com.mypurecloud.sdk.v2.api.request.GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeDiagnosticNslookupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeDiagnosticPingRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeDiagnosticRouteRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeDiagnosticTracepathRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLineRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLinesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLogicalinterfaceRequest;
@@ -160,6 +167,10 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbaseset
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkswithrecordingRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticNslookupRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticPingRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticRouteRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticTracepathRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeLogicalinterfacesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeLogsJobUploadRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeLogsJobsRequest;
@@ -1652,6 +1663,310 @@ public class TelephonyProvidersEdgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Edge> response = (ApiResponse<Edge>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EdgeNetworkDiagnosticResponse> getTelephonyProvidersEdgeDiagnosticNslookupAsync(GetTelephonyProvidersEdgeDiagnosticNslookupRequest request, final AsyncApiCallback<EdgeNetworkDiagnosticResponse> callback) {
+    try {
+      final SettableFuture<EdgeNetworkDiagnosticResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeNetworkDiagnosticResponse>() {}, new AsyncApiCallback<ApiResponse<EdgeNetworkDiagnosticResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeNetworkDiagnosticResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EdgeNetworkDiagnosticResponse>> getTelephonyProvidersEdgeDiagnosticNslookupAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EdgeNetworkDiagnosticResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EdgeNetworkDiagnosticResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeNetworkDiagnosticResponse>() {}, new AsyncApiCallback<ApiResponse<EdgeNetworkDiagnosticResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeNetworkDiagnosticResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeNetworkDiagnosticResponse> response = (ApiResponse<EdgeNetworkDiagnosticResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeNetworkDiagnosticResponse> response = (ApiResponse<EdgeNetworkDiagnosticResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EdgeNetworkDiagnosticResponse> getTelephonyProvidersEdgeDiagnosticPingAsync(GetTelephonyProvidersEdgeDiagnosticPingRequest request, final AsyncApiCallback<EdgeNetworkDiagnosticResponse> callback) {
+    try {
+      final SettableFuture<EdgeNetworkDiagnosticResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeNetworkDiagnosticResponse>() {}, new AsyncApiCallback<ApiResponse<EdgeNetworkDiagnosticResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeNetworkDiagnosticResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EdgeNetworkDiagnosticResponse>> getTelephonyProvidersEdgeDiagnosticPingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EdgeNetworkDiagnosticResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EdgeNetworkDiagnosticResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeNetworkDiagnosticResponse>() {}, new AsyncApiCallback<ApiResponse<EdgeNetworkDiagnosticResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeNetworkDiagnosticResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeNetworkDiagnosticResponse> response = (ApiResponse<EdgeNetworkDiagnosticResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeNetworkDiagnosticResponse> response = (ApiResponse<EdgeNetworkDiagnosticResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EdgeNetworkDiagnosticResponse> getTelephonyProvidersEdgeDiagnosticRouteAsync(GetTelephonyProvidersEdgeDiagnosticRouteRequest request, final AsyncApiCallback<EdgeNetworkDiagnosticResponse> callback) {
+    try {
+      final SettableFuture<EdgeNetworkDiagnosticResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeNetworkDiagnosticResponse>() {}, new AsyncApiCallback<ApiResponse<EdgeNetworkDiagnosticResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeNetworkDiagnosticResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EdgeNetworkDiagnosticResponse>> getTelephonyProvidersEdgeDiagnosticRouteAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EdgeNetworkDiagnosticResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EdgeNetworkDiagnosticResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeNetworkDiagnosticResponse>() {}, new AsyncApiCallback<ApiResponse<EdgeNetworkDiagnosticResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeNetworkDiagnosticResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeNetworkDiagnosticResponse> response = (ApiResponse<EdgeNetworkDiagnosticResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeNetworkDiagnosticResponse> response = (ApiResponse<EdgeNetworkDiagnosticResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EdgeNetworkDiagnosticResponse> getTelephonyProvidersEdgeDiagnosticTracepathAsync(GetTelephonyProvidersEdgeDiagnosticTracepathRequest request, final AsyncApiCallback<EdgeNetworkDiagnosticResponse> callback) {
+    try {
+      final SettableFuture<EdgeNetworkDiagnosticResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeNetworkDiagnosticResponse>() {}, new AsyncApiCallback<ApiResponse<EdgeNetworkDiagnosticResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeNetworkDiagnosticResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EdgeNetworkDiagnosticResponse>> getTelephonyProvidersEdgeDiagnosticTracepathAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EdgeNetworkDiagnosticResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EdgeNetworkDiagnosticResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeNetworkDiagnosticResponse>() {}, new AsyncApiCallback<ApiResponse<EdgeNetworkDiagnosticResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeNetworkDiagnosticResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeNetworkDiagnosticResponse> response = (ApiResponse<EdgeNetworkDiagnosticResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeNetworkDiagnosticResponse> response = (ApiResponse<EdgeNetworkDiagnosticResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -6364,6 +6679,310 @@ public class TelephonyProvidersEdgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<TrunkRecordingEnabledCount> response = (ApiResponse<TrunkRecordingEnabledCount>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Nslookup request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EdgeNetworkDiagnostic> postTelephonyProvidersEdgeDiagnosticNslookupAsync(PostTelephonyProvidersEdgeDiagnosticNslookupRequest request, final AsyncApiCallback<EdgeNetworkDiagnostic> callback) {
+    try {
+      final SettableFuture<EdgeNetworkDiagnostic> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeNetworkDiagnostic>() {}, new AsyncApiCallback<ApiResponse<EdgeNetworkDiagnostic>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeNetworkDiagnostic> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Nslookup request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EdgeNetworkDiagnostic>> postTelephonyProvidersEdgeDiagnosticNslookupAsync(ApiRequest<EdgeNetworkDiagnosticRequest> request, final AsyncApiCallback<ApiResponse<EdgeNetworkDiagnostic>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EdgeNetworkDiagnostic>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeNetworkDiagnostic>() {}, new AsyncApiCallback<ApiResponse<EdgeNetworkDiagnostic>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeNetworkDiagnostic> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeNetworkDiagnostic> response = (ApiResponse<EdgeNetworkDiagnostic>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeNetworkDiagnostic> response = (ApiResponse<EdgeNetworkDiagnostic>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Ping Request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EdgeNetworkDiagnostic> postTelephonyProvidersEdgeDiagnosticPingAsync(PostTelephonyProvidersEdgeDiagnosticPingRequest request, final AsyncApiCallback<EdgeNetworkDiagnostic> callback) {
+    try {
+      final SettableFuture<EdgeNetworkDiagnostic> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeNetworkDiagnostic>() {}, new AsyncApiCallback<ApiResponse<EdgeNetworkDiagnostic>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeNetworkDiagnostic> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Ping Request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EdgeNetworkDiagnostic>> postTelephonyProvidersEdgeDiagnosticPingAsync(ApiRequest<EdgeNetworkDiagnosticRequest> request, final AsyncApiCallback<ApiResponse<EdgeNetworkDiagnostic>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EdgeNetworkDiagnostic>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeNetworkDiagnostic>() {}, new AsyncApiCallback<ApiResponse<EdgeNetworkDiagnostic>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeNetworkDiagnostic> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeNetworkDiagnostic> response = (ApiResponse<EdgeNetworkDiagnostic>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeNetworkDiagnostic> response = (ApiResponse<EdgeNetworkDiagnostic>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Route request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EdgeNetworkDiagnostic> postTelephonyProvidersEdgeDiagnosticRouteAsync(PostTelephonyProvidersEdgeDiagnosticRouteRequest request, final AsyncApiCallback<EdgeNetworkDiagnostic> callback) {
+    try {
+      final SettableFuture<EdgeNetworkDiagnostic> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeNetworkDiagnostic>() {}, new AsyncApiCallback<ApiResponse<EdgeNetworkDiagnostic>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeNetworkDiagnostic> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Route request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EdgeNetworkDiagnostic>> postTelephonyProvidersEdgeDiagnosticRouteAsync(ApiRequest<EdgeNetworkDiagnosticRequest> request, final AsyncApiCallback<ApiResponse<EdgeNetworkDiagnostic>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EdgeNetworkDiagnostic>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeNetworkDiagnostic>() {}, new AsyncApiCallback<ApiResponse<EdgeNetworkDiagnostic>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeNetworkDiagnostic> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeNetworkDiagnostic> response = (ApiResponse<EdgeNetworkDiagnostic>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeNetworkDiagnostic> response = (ApiResponse<EdgeNetworkDiagnostic>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Tracepath request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EdgeNetworkDiagnostic> postTelephonyProvidersEdgeDiagnosticTracepathAsync(PostTelephonyProvidersEdgeDiagnosticTracepathRequest request, final AsyncApiCallback<EdgeNetworkDiagnostic> callback) {
+    try {
+      final SettableFuture<EdgeNetworkDiagnostic> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EdgeNetworkDiagnostic>() {}, new AsyncApiCallback<ApiResponse<EdgeNetworkDiagnostic>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeNetworkDiagnostic> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Tracepath request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EdgeNetworkDiagnostic>> postTelephonyProvidersEdgeDiagnosticTracepathAsync(ApiRequest<EdgeNetworkDiagnosticRequest> request, final AsyncApiCallback<ApiResponse<EdgeNetworkDiagnostic>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EdgeNetworkDiagnostic>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EdgeNetworkDiagnostic>() {}, new AsyncApiCallback<ApiResponse<EdgeNetworkDiagnostic>>() {
+        @Override
+        public void onCompleted(ApiResponse<EdgeNetworkDiagnostic> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeNetworkDiagnostic> response = (ApiResponse<EdgeNetworkDiagnostic>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EdgeNetworkDiagnostic> response = (ApiResponse<EdgeNetworkDiagnostic>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

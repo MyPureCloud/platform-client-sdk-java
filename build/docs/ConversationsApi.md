@@ -7783,7 +7783,7 @@ try {
 
 Get messages in batch
 
-
+The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\&quot;a3069a33b-bbb1-4703-9d68-061d9e9db96e\&quot;, \&quot;55bc6be3-078c-4a49-a4e6-1e05776ed7e8\&quot;]
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/messages/bulk  
 
@@ -7813,7 +7813,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
-String conversationId = "conversationId_example"; // String | conversationId
+String conversationId = "conversationId_example"; // String | 
 List<String> body = Arrays.asList(new List<String>()); // List<String> | messageIds
 try {
     TextMessageListing result = apiInstance.postConversationsMessageMessagesBulk(conversationId, body);
@@ -7829,7 +7829,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | 
+| **conversationId** | **String**|  | 
 | **body** | **List&lt;String&gt;**| messageIds | [optional] 
 {: class="table-striped"}
 

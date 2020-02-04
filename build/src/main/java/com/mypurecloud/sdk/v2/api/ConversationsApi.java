@@ -10070,8 +10070,8 @@ public class ConversationsApi {
   
   /**
    * Get messages in batch
-   * 
-   * @param conversationId conversationId (required)
+   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\&quot;a3069a33b-bbb1-4703-9d68-061d9e9db96e\&quot;, \&quot;55bc6be3-078c-4a49-a4e6-1e05776ed7e8\&quot;]
+   * @param conversationId  (required)
    * @param body messageIds (optional)
    * @return TextMessageListing
    * @throws ApiException if the request fails on the server
@@ -10083,8 +10083,8 @@ public class ConversationsApi {
 
   /**
    * Get messages in batch
-   * 
-   * @param conversationId conversationId (required)
+   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\&quot;a3069a33b-bbb1-4703-9d68-061d9e9db96e\&quot;, \&quot;55bc6be3-078c-4a49-a4e6-1e05776ed7e8\&quot;]
+   * @param conversationId  (required)
    * @param body messageIds (optional)
    * @return TextMessageListing
    * @throws IOException if the request fails to be processed
@@ -10104,7 +10104,7 @@ public class ConversationsApi {
 
   /**
    * Get messages in batch
-   * 
+   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\&quot;a3069a33b-bbb1-4703-9d68-061d9e9db96e\&quot;, \&quot;55bc6be3-078c-4a49-a4e6-1e05776ed7e8\&quot;]
    * @param request The request object
    * @return TextMessageListing
    * @throws ApiException if the request fails on the server
@@ -10123,7 +10123,7 @@ public class ConversationsApi {
 
   /**
    * Get messages in batch
-   * 
+   * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\&quot;a3069a33b-bbb1-4703-9d68-061d9e9db96e\&quot;, \&quot;55bc6be3-078c-4a49-a4e6-1e05776ed7e8\&quot;]
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

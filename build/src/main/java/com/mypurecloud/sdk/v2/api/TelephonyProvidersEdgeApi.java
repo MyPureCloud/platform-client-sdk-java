@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.model.SchemaCategoryEntityListing;
 import com.mypurecloud.sdk.v2.model.SchemaReferenceEntityListing;
 import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.Edge;
+import com.mypurecloud.sdk.v2.model.EdgeNetworkDiagnosticResponse;
 import com.mypurecloud.sdk.v2.model.EdgeLine;
 import com.mypurecloud.sdk.v2.model.EdgeLineEntityListing;
 import com.mypurecloud.sdk.v2.model.DomainLogicalInterface;
@@ -66,6 +67,8 @@ import com.mypurecloud.sdk.v2.model.TrunkBase;
 import com.mypurecloud.sdk.v2.model.TrunkBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkMetabaseEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkRecordingEnabledCount;
+import com.mypurecloud.sdk.v2.model.EdgeNetworkDiagnostic;
+import com.mypurecloud.sdk.v2.model.EdgeNetworkDiagnosticRequest;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJobUploadRequest;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJobRequest;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJobResponse;
@@ -95,6 +98,10 @@ import com.mypurecloud.sdk.v2.api.request.GetConfigurationSchemasEdgesVnextSchem
 import com.mypurecloud.sdk.v2.api.request.GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExtensionTypeMetadataIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeDiagnosticNslookupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeDiagnosticPingRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeDiagnosticRouteRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeDiagnosticTracepathRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLineRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLinesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgeLogicalinterfaceRequest;
@@ -157,6 +164,10 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbaseset
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkswithrecordingRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticNslookupRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticPingRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticRouteRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticTracepathRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeLogicalinterfacesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeLogsJobUploadRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeLogsJobsRequest;
@@ -1737,6 +1748,322 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Edge> response = (ApiResponse<Edge>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param edgeId Edge Id (required)
+   * @return EdgeNetworkDiagnosticResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticNslookup(String edgeId) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgeDiagnosticNslookup(createGetTelephonyProvidersEdgeDiagnosticNslookupRequest(edgeId));
+  }
+
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param edgeId Edge Id (required)
+   * @return EdgeNetworkDiagnosticResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EdgeNetworkDiagnosticResponse> getTelephonyProvidersEdgeDiagnosticNslookupWithHttpInfo(String edgeId) throws IOException {
+    return getTelephonyProvidersEdgeDiagnosticNslookup(createGetTelephonyProvidersEdgeDiagnosticNslookupRequest(edgeId).withHttpInfo());
+  }
+
+  private GetTelephonyProvidersEdgeDiagnosticNslookupRequest createGetTelephonyProvidersEdgeDiagnosticNslookupRequest(String edgeId) {
+    return GetTelephonyProvidersEdgeDiagnosticNslookupRequest.builder()
+            .withEdgeId(edgeId)
+    
+            .build();
+  }
+
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request The request object
+   * @return EdgeNetworkDiagnosticResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticNslookup(GetTelephonyProvidersEdgeDiagnosticNslookupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EdgeNetworkDiagnosticResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeNetworkDiagnosticResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EdgeNetworkDiagnosticResponse> getTelephonyProvidersEdgeDiagnosticNslookup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeNetworkDiagnosticResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeNetworkDiagnosticResponse> response = (ApiResponse<EdgeNetworkDiagnosticResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeNetworkDiagnosticResponse> response = (ApiResponse<EdgeNetworkDiagnosticResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param edgeId Edge Id (required)
+   * @return EdgeNetworkDiagnosticResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticPing(String edgeId) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgeDiagnosticPing(createGetTelephonyProvidersEdgeDiagnosticPingRequest(edgeId));
+  }
+
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param edgeId Edge Id (required)
+   * @return EdgeNetworkDiagnosticResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EdgeNetworkDiagnosticResponse> getTelephonyProvidersEdgeDiagnosticPingWithHttpInfo(String edgeId) throws IOException {
+    return getTelephonyProvidersEdgeDiagnosticPing(createGetTelephonyProvidersEdgeDiagnosticPingRequest(edgeId).withHttpInfo());
+  }
+
+  private GetTelephonyProvidersEdgeDiagnosticPingRequest createGetTelephonyProvidersEdgeDiagnosticPingRequest(String edgeId) {
+    return GetTelephonyProvidersEdgeDiagnosticPingRequest.builder()
+            .withEdgeId(edgeId)
+    
+            .build();
+  }
+
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request The request object
+   * @return EdgeNetworkDiagnosticResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticPing(GetTelephonyProvidersEdgeDiagnosticPingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EdgeNetworkDiagnosticResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeNetworkDiagnosticResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EdgeNetworkDiagnosticResponse> getTelephonyProvidersEdgeDiagnosticPing(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeNetworkDiagnosticResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeNetworkDiagnosticResponse> response = (ApiResponse<EdgeNetworkDiagnosticResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeNetworkDiagnosticResponse> response = (ApiResponse<EdgeNetworkDiagnosticResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param edgeId Edge Id (required)
+   * @return EdgeNetworkDiagnosticResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticRoute(String edgeId) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgeDiagnosticRoute(createGetTelephonyProvidersEdgeDiagnosticRouteRequest(edgeId));
+  }
+
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param edgeId Edge Id (required)
+   * @return EdgeNetworkDiagnosticResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EdgeNetworkDiagnosticResponse> getTelephonyProvidersEdgeDiagnosticRouteWithHttpInfo(String edgeId) throws IOException {
+    return getTelephonyProvidersEdgeDiagnosticRoute(createGetTelephonyProvidersEdgeDiagnosticRouteRequest(edgeId).withHttpInfo());
+  }
+
+  private GetTelephonyProvidersEdgeDiagnosticRouteRequest createGetTelephonyProvidersEdgeDiagnosticRouteRequest(String edgeId) {
+    return GetTelephonyProvidersEdgeDiagnosticRouteRequest.builder()
+            .withEdgeId(edgeId)
+    
+            .build();
+  }
+
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request The request object
+   * @return EdgeNetworkDiagnosticResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticRoute(GetTelephonyProvidersEdgeDiagnosticRouteRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EdgeNetworkDiagnosticResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeNetworkDiagnosticResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EdgeNetworkDiagnosticResponse> getTelephonyProvidersEdgeDiagnosticRoute(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeNetworkDiagnosticResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeNetworkDiagnosticResponse> response = (ApiResponse<EdgeNetworkDiagnosticResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeNetworkDiagnosticResponse> response = (ApiResponse<EdgeNetworkDiagnosticResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param edgeId Edge Id (required)
+   * @return EdgeNetworkDiagnosticResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticTracepath(String edgeId) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgeDiagnosticTracepath(createGetTelephonyProvidersEdgeDiagnosticTracepathRequest(edgeId));
+  }
+
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param edgeId Edge Id (required)
+   * @return EdgeNetworkDiagnosticResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EdgeNetworkDiagnosticResponse> getTelephonyProvidersEdgeDiagnosticTracepathWithHttpInfo(String edgeId) throws IOException {
+    return getTelephonyProvidersEdgeDiagnosticTracepath(createGetTelephonyProvidersEdgeDiagnosticTracepathRequest(edgeId).withHttpInfo());
+  }
+
+  private GetTelephonyProvidersEdgeDiagnosticTracepathRequest createGetTelephonyProvidersEdgeDiagnosticTracepathRequest(String edgeId) {
+    return GetTelephonyProvidersEdgeDiagnosticTracepathRequest.builder()
+            .withEdgeId(edgeId)
+    
+            .build();
+  }
+
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request The request object
+   * @return EdgeNetworkDiagnosticResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticTracepath(GetTelephonyProvidersEdgeDiagnosticTracepathRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EdgeNetworkDiagnosticResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeNetworkDiagnosticResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EdgeNetworkDiagnosticResponse> getTelephonyProvidersEdgeDiagnosticTracepath(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeNetworkDiagnosticResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeNetworkDiagnosticResponse> response = (ApiResponse<EdgeNetworkDiagnosticResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeNetworkDiagnosticResponse> response = (ApiResponse<EdgeNetworkDiagnosticResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7047,6 +7374,338 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TrunkRecordingEnabledCount> response = (ApiResponse<TrunkRecordingEnabledCount>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Nslookup request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param edgeId Edge Id (required)
+   * @param body request payload to get network diagnostic (required)
+   * @return EdgeNetworkDiagnostic
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticNslookup(String edgeId, EdgeNetworkDiagnosticRequest body) throws IOException, ApiException {
+    return  postTelephonyProvidersEdgeDiagnosticNslookup(createPostTelephonyProvidersEdgeDiagnosticNslookupRequest(edgeId, body));
+  }
+
+  /**
+   * Nslookup request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param edgeId Edge Id (required)
+   * @param body request payload to get network diagnostic (required)
+   * @return EdgeNetworkDiagnostic
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EdgeNetworkDiagnostic> postTelephonyProvidersEdgeDiagnosticNslookupWithHttpInfo(String edgeId, EdgeNetworkDiagnosticRequest body) throws IOException {
+    return postTelephonyProvidersEdgeDiagnosticNslookup(createPostTelephonyProvidersEdgeDiagnosticNslookupRequest(edgeId, body).withHttpInfo());
+  }
+
+  private PostTelephonyProvidersEdgeDiagnosticNslookupRequest createPostTelephonyProvidersEdgeDiagnosticNslookupRequest(String edgeId, EdgeNetworkDiagnosticRequest body) {
+    return PostTelephonyProvidersEdgeDiagnosticNslookupRequest.builder()
+            .withEdgeId(edgeId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Nslookup request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request The request object
+   * @return EdgeNetworkDiagnostic
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticNslookup(PostTelephonyProvidersEdgeDiagnosticNslookupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EdgeNetworkDiagnostic> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeNetworkDiagnostic>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Nslookup request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EdgeNetworkDiagnostic> postTelephonyProvidersEdgeDiagnosticNslookup(ApiRequest<EdgeNetworkDiagnosticRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeNetworkDiagnostic>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeNetworkDiagnostic> response = (ApiResponse<EdgeNetworkDiagnostic>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeNetworkDiagnostic> response = (ApiResponse<EdgeNetworkDiagnostic>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Ping Request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param edgeId Edge Id (required)
+   * @param body request payload to get network diagnostic (required)
+   * @return EdgeNetworkDiagnostic
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticPing(String edgeId, EdgeNetworkDiagnosticRequest body) throws IOException, ApiException {
+    return  postTelephonyProvidersEdgeDiagnosticPing(createPostTelephonyProvidersEdgeDiagnosticPingRequest(edgeId, body));
+  }
+
+  /**
+   * Ping Request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param edgeId Edge Id (required)
+   * @param body request payload to get network diagnostic (required)
+   * @return EdgeNetworkDiagnostic
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EdgeNetworkDiagnostic> postTelephonyProvidersEdgeDiagnosticPingWithHttpInfo(String edgeId, EdgeNetworkDiagnosticRequest body) throws IOException {
+    return postTelephonyProvidersEdgeDiagnosticPing(createPostTelephonyProvidersEdgeDiagnosticPingRequest(edgeId, body).withHttpInfo());
+  }
+
+  private PostTelephonyProvidersEdgeDiagnosticPingRequest createPostTelephonyProvidersEdgeDiagnosticPingRequest(String edgeId, EdgeNetworkDiagnosticRequest body) {
+    return PostTelephonyProvidersEdgeDiagnosticPingRequest.builder()
+            .withEdgeId(edgeId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Ping Request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request The request object
+   * @return EdgeNetworkDiagnostic
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticPing(PostTelephonyProvidersEdgeDiagnosticPingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EdgeNetworkDiagnostic> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeNetworkDiagnostic>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Ping Request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EdgeNetworkDiagnostic> postTelephonyProvidersEdgeDiagnosticPing(ApiRequest<EdgeNetworkDiagnosticRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeNetworkDiagnostic>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeNetworkDiagnostic> response = (ApiResponse<EdgeNetworkDiagnostic>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeNetworkDiagnostic> response = (ApiResponse<EdgeNetworkDiagnostic>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Route request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param edgeId Edge Id (required)
+   * @param body request payload to get network diagnostic (required)
+   * @return EdgeNetworkDiagnostic
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticRoute(String edgeId, EdgeNetworkDiagnosticRequest body) throws IOException, ApiException {
+    return  postTelephonyProvidersEdgeDiagnosticRoute(createPostTelephonyProvidersEdgeDiagnosticRouteRequest(edgeId, body));
+  }
+
+  /**
+   * Route request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param edgeId Edge Id (required)
+   * @param body request payload to get network diagnostic (required)
+   * @return EdgeNetworkDiagnostic
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EdgeNetworkDiagnostic> postTelephonyProvidersEdgeDiagnosticRouteWithHttpInfo(String edgeId, EdgeNetworkDiagnosticRequest body) throws IOException {
+    return postTelephonyProvidersEdgeDiagnosticRoute(createPostTelephonyProvidersEdgeDiagnosticRouteRequest(edgeId, body).withHttpInfo());
+  }
+
+  private PostTelephonyProvidersEdgeDiagnosticRouteRequest createPostTelephonyProvidersEdgeDiagnosticRouteRequest(String edgeId, EdgeNetworkDiagnosticRequest body) {
+    return PostTelephonyProvidersEdgeDiagnosticRouteRequest.builder()
+            .withEdgeId(edgeId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Route request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request The request object
+   * @return EdgeNetworkDiagnostic
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticRoute(PostTelephonyProvidersEdgeDiagnosticRouteRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EdgeNetworkDiagnostic> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeNetworkDiagnostic>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Route request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EdgeNetworkDiagnostic> postTelephonyProvidersEdgeDiagnosticRoute(ApiRequest<EdgeNetworkDiagnosticRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeNetworkDiagnostic>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeNetworkDiagnostic> response = (ApiResponse<EdgeNetworkDiagnostic>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeNetworkDiagnostic> response = (ApiResponse<EdgeNetworkDiagnostic>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Tracepath request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param edgeId Edge Id (required)
+   * @param body request payload to get network diagnostic (required)
+   * @return EdgeNetworkDiagnostic
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticTracepath(String edgeId, EdgeNetworkDiagnosticRequest body) throws IOException, ApiException {
+    return  postTelephonyProvidersEdgeDiagnosticTracepath(createPostTelephonyProvidersEdgeDiagnosticTracepathRequest(edgeId, body));
+  }
+
+  /**
+   * Tracepath request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param edgeId Edge Id (required)
+   * @param body request payload to get network diagnostic (required)
+   * @return EdgeNetworkDiagnostic
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EdgeNetworkDiagnostic> postTelephonyProvidersEdgeDiagnosticTracepathWithHttpInfo(String edgeId, EdgeNetworkDiagnosticRequest body) throws IOException {
+    return postTelephonyProvidersEdgeDiagnosticTracepath(createPostTelephonyProvidersEdgeDiagnosticTracepathRequest(edgeId, body).withHttpInfo());
+  }
+
+  private PostTelephonyProvidersEdgeDiagnosticTracepathRequest createPostTelephonyProvidersEdgeDiagnosticTracepathRequest(String edgeId, EdgeNetworkDiagnosticRequest body) {
+    return PostTelephonyProvidersEdgeDiagnosticTracepathRequest.builder()
+            .withEdgeId(edgeId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Tracepath request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request The request object
+   * @return EdgeNetworkDiagnostic
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticTracepath(PostTelephonyProvidersEdgeDiagnosticTracepathRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EdgeNetworkDiagnostic> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EdgeNetworkDiagnostic>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Tracepath request command to collect networking-related information from an Edge for a target IP or host.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EdgeNetworkDiagnostic> postTelephonyProvidersEdgeDiagnosticTracepath(ApiRequest<EdgeNetworkDiagnosticRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EdgeNetworkDiagnostic>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeNetworkDiagnostic> response = (ApiResponse<EdgeNetworkDiagnostic>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EdgeNetworkDiagnostic> response = (ApiResponse<EdgeNetworkDiagnostic>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
