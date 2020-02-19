@@ -25,7 +25,8 @@ public class ScimV2MemberReference  implements Serializable {
     USER("User"),
     GROUP("Group"),
     SERVICEPROVIDERCONFIG("ServiceProviderConfig"),
-    RESOURCETYPE("ResourceType");
+    RESOURCETYPE("ResourceType"),
+    SCHEMA("Schema");
 
     private String value;
 

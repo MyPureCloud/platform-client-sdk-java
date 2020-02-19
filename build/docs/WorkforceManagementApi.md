@@ -149,7 +149,7 @@ null (empty response body)
 
 # **deleteWorkforcemanagementManagementunitActivitycode**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > Void deleteWorkforcemanagementManagementunitActivitycode(muId, acId)
 
@@ -213,7 +213,7 @@ null (empty response body)
 
 # **deleteWorkforcemanagementManagementunitSchedulingRun**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > Void deleteWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId)
 
@@ -277,7 +277,7 @@ null (empty response body)
 
 # **deleteWorkforcemanagementManagementunitServicegoalgroup**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > Void deleteWorkforcemanagementManagementunitServicegoalgroup(managementUnitId, serviceGoalGroupId)
 
@@ -341,7 +341,7 @@ null (empty response body)
 
 # **deleteWorkforcemanagementManagementunitWeekSchedule**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > Void deleteWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId)
 
@@ -407,7 +407,7 @@ null (empty response body)
 
 # **deleteWorkforcemanagementManagementunitWeekShorttermforecast**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > Void deleteWorkforcemanagementManagementunitWeekShorttermforecast(managementUnitId, weekDateId, forecastId)
 
@@ -770,7 +770,7 @@ try {
 
 # **getWorkforcemanagementManagementunitActivitycode**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [ActivityCode](ActivityCode.html) getWorkforcemanagementManagementunitActivitycode(muId, acId)
 
@@ -835,7 +835,7 @@ try {
 
 # **getWorkforcemanagementManagementunitActivitycodes**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [ActivityCodeContainer](ActivityCodeContainer.html) getWorkforcemanagementManagementunitActivitycodes(muId)
 
@@ -1002,7 +1002,7 @@ try {
 
 # **getWorkforcemanagementManagementunitIntradayQueues**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [WfmIntradayQueueListing](WfmIntradayQueueListing.html) getWorkforcemanagementManagementunitIntradayQueues(muId, date)
 
@@ -1067,7 +1067,7 @@ try {
 
 # **getWorkforcemanagementManagementunitSchedulingRun**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [SchedulingRunResponse](SchedulingRunResponse.html) getWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId)
 
@@ -1132,7 +1132,7 @@ try {
 
 # **getWorkforcemanagementManagementunitSchedulingRunResult**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [RescheduleResult](RescheduleResult.html) getWorkforcemanagementManagementunitSchedulingRunResult(managementUnitId, runId)
 
@@ -1197,7 +1197,7 @@ try {
 
 # **getWorkforcemanagementManagementunitSchedulingRuns**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [SchedulingRunListResponse](SchedulingRunListResponse.html) getWorkforcemanagementManagementunitSchedulingRuns(managementUnitId)
 
@@ -1260,7 +1260,7 @@ try {
 
 # **getWorkforcemanagementManagementunitServicegoalgroup**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [ServiceGoalGroup](ServiceGoalGroup.html) getWorkforcemanagementManagementunitServicegoalgroup(managementUnitId, serviceGoalGroupId)
 
@@ -1325,7 +1325,7 @@ try {
 
 # **getWorkforcemanagementManagementunitServicegoalgroups**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [ServiceGoalGroupList](ServiceGoalGroupList.html) getWorkforcemanagementManagementunitServicegoalgroups(managementUnitId)
 
@@ -1782,7 +1782,7 @@ try {
 
 # **getWorkforcemanagementManagementunitWeekSchedule**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [WeekScheduleResponse](WeekScheduleResponse.html) getWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId, expand, forceDownloadService)
 
@@ -1854,7 +1854,7 @@ try {
 
 # **getWorkforcemanagementManagementunitWeekScheduleGenerationresults**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [WeekScheduleGenerationResult](WeekScheduleGenerationResult.html) getWorkforcemanagementManagementunitWeekScheduleGenerationresults(managementUnitId, weekId, scheduleId)
 
@@ -1922,7 +1922,7 @@ try {
 
 # **getWorkforcemanagementManagementunitWeekSchedules**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [WeekScheduleListResponse](WeekScheduleListResponse.html) getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, includeOnlyPublished, earliestWeekDate, latestWeekDate)
 
@@ -1994,7 +1994,7 @@ try {
 
 # **getWorkforcemanagementManagementunitWeekShorttermforecastFinal**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [ForecastResultResponse](ForecastResultResponse.html) getWorkforcemanagementManagementunitWeekShorttermforecastFinal(managementUnitId, weekDateId, forecastId, forceDownloadService)
 
@@ -2063,7 +2063,7 @@ try {
 
 # **getWorkforcemanagementManagementunitWeekShorttermforecasts**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [ShortTermForecastListResponse](ShortTermForecastListResponse.html) getWorkforcemanagementManagementunitWeekShorttermforecasts(managementUnitId, weekDateId)
 
@@ -2771,7 +2771,7 @@ try {
 
 # **patchWorkforcemanagementManagementunitActivitycode**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [ActivityCode](ActivityCode.html) patchWorkforcemanagementManagementunitActivitycode(muId, acId, body)
 
@@ -2838,7 +2838,7 @@ try {
 
 # **patchWorkforcemanagementManagementunitSchedulingRun**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [RescheduleResult](RescheduleResult.html) patchWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId, body)
 
@@ -2905,7 +2905,7 @@ try {
 
 # **patchWorkforcemanagementManagementunitServicegoalgroup**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [ServiceGoalGroup](ServiceGoalGroup.html) patchWorkforcemanagementManagementunitServicegoalgroup(managementUnitId, serviceGoalGroupId, body)
 
@@ -2972,7 +2972,7 @@ try {
 
 # **patchWorkforcemanagementManagementunitSettings**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [ManagementUnitSettingsResponse](ManagementUnitSettingsResponse.html) patchWorkforcemanagementManagementunitSettings(muId, body)
 
@@ -3106,7 +3106,7 @@ try {
 
 # **patchWorkforcemanagementManagementunitWeekSchedule**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [AsyncWeekScheduleResponse](AsyncWeekScheduleResponse.html) patchWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId, forceAsync, forceDownloadService, body)
 
@@ -3374,7 +3374,7 @@ try {
 
 # **postWorkforcemanagementManagementunitActivitycodes**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [ActivityCode](ActivityCode.html) postWorkforcemanagementManagementunitActivitycodes(muId, body)
 
@@ -3574,7 +3574,7 @@ try {
 
 # **postWorkforcemanagementManagementunitIntraday**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [IntradayResponse](IntradayResponse.html) postWorkforcemanagementManagementunitIntraday(muId, body)
 
@@ -3704,7 +3704,7 @@ try {
 
 # **postWorkforcemanagementManagementunitSchedulesSearch**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [UserScheduleContainer](UserScheduleContainer.html) postWorkforcemanagementManagementunitSchedulesSearch(muId, body)
 
@@ -3770,7 +3770,7 @@ try {
 
 # **postWorkforcemanagementManagementunitServicegoalgroups**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [ServiceGoalGroup](ServiceGoalGroup.html) postWorkforcemanagementManagementunitServicegoalgroups(managementUnitId, body)
 
@@ -3900,7 +3900,7 @@ try {
 
 # **postWorkforcemanagementManagementunitTimeoffrequestsFetchdetails**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [TimeOffRequestEntityList](TimeOffRequestEntityList.html) postWorkforcemanagementManagementunitTimeoffrequestsFetchdetails(muId, body)
 
@@ -4030,7 +4030,7 @@ try {
 
 # **postWorkforcemanagementManagementunitWeekScheduleCopy**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [AsyncWeekScheduleResponse](AsyncWeekScheduleResponse.html) postWorkforcemanagementManagementunitWeekScheduleCopy(managementUnitId, weekId, scheduleId, forceAsync, forceDownloadService, body)
 
@@ -4103,7 +4103,7 @@ try {
 
 # **postWorkforcemanagementManagementunitWeekScheduleReschedule**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [AsyncWeekScheduleResponse](AsyncWeekScheduleResponse.html) postWorkforcemanagementManagementunitWeekScheduleReschedule(managementUnitId, weekId, scheduleId, body)
 
@@ -4172,7 +4172,7 @@ try {
 
 # **postWorkforcemanagementManagementunitWeekSchedules**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [AsyncWeekScheduleResponse](AsyncWeekScheduleResponse.html) postWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, forceAsync, forceDownloadService, body)
 
@@ -4243,7 +4243,7 @@ try {
 
 # **postWorkforcemanagementManagementunitWeekSchedulesGenerate**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [GenerateWeekScheduleResponse](GenerateWeekScheduleResponse.html) postWorkforcemanagementManagementunitWeekSchedulesGenerate(managementUnitId, weekId, body)
 
@@ -4310,7 +4310,7 @@ try {
 
 # **postWorkforcemanagementManagementunitWeekSchedulesPartialupload**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [PartialUploadResponse](PartialUploadResponse.html) postWorkforcemanagementManagementunitWeekSchedulesPartialupload(managementUnitId, weekId, body)
 
@@ -4378,7 +4378,7 @@ try {
 
 # **postWorkforcemanagementManagementunitWeekShorttermforecastCopy**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [ShortTermForecastResponse](ShortTermForecastResponse.html) postWorkforcemanagementManagementunitWeekShorttermforecastCopy(managementUnitId, weekDateId, forecastId, body, forceAsync)
 
@@ -4449,7 +4449,7 @@ try {
 
 # **postWorkforcemanagementManagementunitWeekShorttermforecasts**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [ShortTermForecastResponse](ShortTermForecastResponse.html) postWorkforcemanagementManagementunitWeekShorttermforecasts(managementUnitId, weekDateId, body, forceAsync)
 
@@ -4518,7 +4518,7 @@ try {
 
 # **postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [GenerateShortTermForecastResponse](GenerateShortTermForecastResponse.html) postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate(managementUnitId, weekDateId, body, forceAsync)
 
@@ -4587,7 +4587,7 @@ try {
 
 # **postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [PartialUploadResponse](PartialUploadResponse.html) postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload(managementUnitId, weekDateId, body)
 
@@ -4911,7 +4911,7 @@ try {
 
 # **postWorkforcemanagementSchedules**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [UserScheduleContainer](UserScheduleContainer.html) postWorkforcemanagementSchedules(body)
 
@@ -4924,7 +4924,6 @@ Wraps POST /api/v2/workforcemanagement/schedules
 Requires ANY permissions: 
 
 * wfm:agentSchedule:view
-* wfm:publishedSchedule:view
 
 ### Example
 

@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationRoutingData;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ErrorInfo;
 import com.mypurecloud.sdk.v2.model.JourneyContext;
 import com.mypurecloud.sdk.v2.model.Wrapup;
 import io.swagger.annotations.ApiModel;
@@ -165,7 +165,7 @@ public class CobrowseMediaParticipant  implements Serializable {
   private DomainEntityRef user = null;
   private DomainEntityRef queue = null;
   private Map<String, String> attributes = null;
-  private ErrorBody errorInfo = null;
+  private ErrorInfo errorInfo = null;
   private DomainEntityRef script = null;
   private Integer wrapupTimeoutMs = null;
   private Boolean wrapupSkipped = null;
@@ -529,17 +529,17 @@ public class CobrowseMediaParticipant  implements Serializable {
   /**
    * If the conversation ends in error, contains additional error details.
    **/
-  public CobrowseMediaParticipant errorInfo(ErrorBody errorInfo) {
+  public CobrowseMediaParticipant errorInfo(ErrorInfo errorInfo) {
     this.errorInfo = errorInfo;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "If the conversation ends in error, contains additional error details.")
   @JsonProperty("errorInfo")
-  public ErrorBody getErrorInfo() {
+  public ErrorInfo getErrorInfo() {
     return errorInfo;
   }
-  public void setErrorInfo(ErrorBody errorInfo) {
+  public void setErrorInfo(ErrorInfo errorInfo) {
     this.errorInfo = errorInfo;
   }
 

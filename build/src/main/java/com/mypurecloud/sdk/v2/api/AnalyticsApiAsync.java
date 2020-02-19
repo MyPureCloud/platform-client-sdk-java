@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiG
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobListing;
+import com.mypurecloud.sdk.v2.model.ReportingExportMetadataJobListing;
 import com.mypurecloud.sdk.v2.model.ReportMetaDataEntityListing;
 import com.mypurecloud.sdk.v2.model.ReportMetaData;
 import com.mypurecloud.sdk.v2.model.ReportSchedule;
@@ -63,6 +64,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsReques
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingExportsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingExportsMetadataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingMetadataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingReportIdMetadataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingReportformatsRequest;
@@ -708,6 +710,82 @@ public class AnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ReportingExportJobListing> response = (ApiResponse<ReportingExportJobListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get all export metadata
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ReportingExportMetadataJobListing> getAnalyticsReportingExportsMetadataAsync(GetAnalyticsReportingExportsMetadataRequest request, final AsyncApiCallback<ReportingExportMetadataJobListing> callback) {
+    try {
+      final SettableFuture<ReportingExportMetadataJobListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ReportingExportMetadataJobListing>() {}, new AsyncApiCallback<ApiResponse<ReportingExportMetadataJobListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ReportingExportMetadataJobListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all export metadata
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ReportingExportMetadataJobListing>> getAnalyticsReportingExportsMetadataAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ReportingExportMetadataJobListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ReportingExportMetadataJobListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ReportingExportMetadataJobListing>() {}, new AsyncApiCallback<ApiResponse<ReportingExportMetadataJobListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ReportingExportMetadataJobListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ReportingExportMetadataJobListing> response = (ApiResponse<ReportingExportMetadataJobListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ReportingExportMetadataJobListing> response = (ApiResponse<ReportingExportMetadataJobListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

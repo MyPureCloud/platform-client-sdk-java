@@ -85,7 +85,11 @@ public class AuditLogMessage  implements Serializable {
     READ("Read"),
     READALL("ReadAll"),
     EXECUTE("Execute"),
-    PUBLISH("Publish");
+    PUBLISH("Publish"),
+    AUTHORIZE("Authorize"),
+    DEAUTHORIZE("Deauthorize"),
+    AUTHENTICATE("Authenticate"),
+    CHANGEPASSWORD("ChangePassword");
 
     private String value;
 
@@ -127,6 +131,9 @@ public class AuditLogMessage  implements Serializable {
     VOICEMAILUSERPOLICY("VoicemailUserPolicy"),
     WRAPUPCODE("WrapupCode"),
     ACCESSTOKEN("AccessToken"),
+    OAUTHCLIENT("OAuthClient"),
+    AUTHORGANIZATION("AuthOrganization"),
+    AUTHUSER("AuthUser"),
     BULKACTIONS("BulkActions"),
     FEEDBACK("Feedback"),
     TOPIC("Topic"),

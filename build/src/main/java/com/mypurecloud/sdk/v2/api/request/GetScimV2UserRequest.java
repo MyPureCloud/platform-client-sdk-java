@@ -30,6 +30,8 @@ import com.mypurecloud.sdk.v2.model.ScimConfigResourceTypesListResponse;
 import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfig;
 import com.mypurecloud.sdk.v2.model.ScimV2User;
 import com.mypurecloud.sdk.v2.model.ScimUserListResponse;
+import com.mypurecloud.sdk.v2.model.ScimV2SchemaDefinition;
+import com.mypurecloud.sdk.v2.model.ScimV2SchemaListResponse;
 import com.mypurecloud.sdk.v2.model.ScimV2PatchRequest;
 import com.mypurecloud.sdk.v2.model.ScimV2CreateUser;
 
@@ -89,7 +91,10 @@ public class GetScimV2UserRequest {
 		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_ENTERPRISE_2_0_USER_DIVISION("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division"), 
 		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_ENTERPRISE_2_0_USER_DEPARTMENT("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department"), 
 		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_ENTERPRISE_2_0_USER_MANAGER("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager"), 
-		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_ENTERPRISE_2_0_USER_MANAGER_VALUE("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager.value");
+		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_ENTERPRISE_2_0_USER_MANAGER_VALUE("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager.value"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_GENESYS_PURECLOUD_2_0_USER("urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_GENESYS_PURECLOUD_2_0_USER_ROUTINGSKILLS("urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_GENESYS_PURECLOUD_2_0_USER_ROUTINGLANGUAGES("urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages");
 
 		private String value;
 
@@ -157,7 +162,10 @@ public class GetScimV2UserRequest {
 		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_ENTERPRISE_2_0_USER_DIVISION("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division"), 
 		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_ENTERPRISE_2_0_USER_DEPARTMENT("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department"), 
 		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_ENTERPRISE_2_0_USER_MANAGER("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager"), 
-		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_ENTERPRISE_2_0_USER_MANAGER_VALUE("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager.value");
+		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_ENTERPRISE_2_0_USER_MANAGER_VALUE("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager.value"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_GENESYS_PURECLOUD_2_0_USER("urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_GENESYS_PURECLOUD_2_0_USER_ROUTINGSKILLS("urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_EXTENSION_GENESYS_PURECLOUD_2_0_USER_ROUTINGLANGUAGES("urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages");
 
 		private String value;
 

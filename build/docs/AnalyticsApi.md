@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAnalyticsConversationsDetailsJob**](AnalyticsApi.html#getAnalyticsConversationsDetailsJob) | Get status for async query for conversation details |
 | [**getAnalyticsConversationsDetailsJobResults**](AnalyticsApi.html#getAnalyticsConversationsDetailsJobResults) | Fetch a page of results for an async query |
 | [**getAnalyticsReportingExports**](AnalyticsApi.html#getAnalyticsReportingExports) | Get all view export requests for a user |
+| [**getAnalyticsReportingExportsMetadata**](AnalyticsApi.html#getAnalyticsReportingExportsMetadata) | Get all export metadata |
 | [**getAnalyticsReportingMetadata**](AnalyticsApi.html#getAnalyticsReportingMetadata) | Get list of reporting metadata. |
 | [**getAnalyticsReportingReportIdMetadata**](AnalyticsApi.html#getAnalyticsReportingReportIdMetadata) | Get a reporting metadata. |
 | [**getAnalyticsReportingReportformats**](AnalyticsApi.html#getAnalyticsReportingReportformats) | Get a list of report formats |
@@ -542,6 +543,65 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**ReportingExportJobListing**](ReportingExportJobListing.html)
+
+<a name="getAnalyticsReportingExportsMetadata"></a>
+
+# **getAnalyticsReportingExportsMetadata**
+
+
+
+> [ReportingExportMetadataJobListing](ReportingExportMetadataJobListing.html) getAnalyticsReportingExportsMetadata()
+
+Get all export metadata
+
+
+
+Wraps GET /api/v2/analytics/reporting/exports/metadata  
+
+Requires ANY permissions: 
+
+* analytics:dataExport:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+try {
+    ReportingExportMetadataJobListing result = apiInstance.getAnalyticsReportingExportsMetadata();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsReportingExportsMetadata");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**ReportingExportMetadataJobListing**](ReportingExportMetadataJobListing.html)
 
 <a name="getAnalyticsReportingMetadata"></a>
 

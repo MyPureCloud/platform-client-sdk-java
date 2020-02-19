@@ -26,7 +26,8 @@ public class ScimMetadata  implements Serializable {
     USER("User"),
     GROUP("Group"),
     SERVICEPROVIDERCONFIG("ServiceProviderConfig"),
-    RESOURCETYPE("ResourceType");
+    RESOURCETYPE("ResourceType"),
+    SCHEMA("Schema");
 
     private String value;
 

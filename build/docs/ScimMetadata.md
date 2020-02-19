@@ -26,6 +26,7 @@ title: ScimMetadata
 | GROUP | &quot;Group&quot; |
 | SERVICEPROVIDERCONFIG | &quot;ServiceProviderConfig&quot; |
 | RESOURCETYPE | &quot;ResourceType&quot; |
+| SCHEMA | &quot;Schema&quot; |
 {: class="table table-striped"}
 
 

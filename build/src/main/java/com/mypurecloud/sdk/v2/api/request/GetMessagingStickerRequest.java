@@ -20,18 +20,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.MessagingIntegrationEntityListing;
-import com.mypurecloud.sdk.v2.model.FacebookIntegrationEntityListing;
-import com.mypurecloud.sdk.v2.model.FacebookIntegration;
-import com.mypurecloud.sdk.v2.model.LineIntegrationEntityListing;
-import com.mypurecloud.sdk.v2.model.LineIntegration;
-import com.mypurecloud.sdk.v2.model.TwitterIntegrationEntityListing;
-import com.mypurecloud.sdk.v2.model.TwitterIntegration;
 import com.mypurecloud.sdk.v2.model.MessagingStickerEntityListing;
-import com.mypurecloud.sdk.v2.model.FacebookIntegrationRequest;
-import com.mypurecloud.sdk.v2.model.LineIntegrationRequest;
-import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 
 public class GetMessagingStickerRequest {
     

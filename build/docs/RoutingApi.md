@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteRoutingQueue**](RoutingApi.html#deleteRoutingQueue) | Delete a queue |
 | [**deleteRoutingQueueUser**](RoutingApi.html#deleteRoutingQueueUser) | Delete queue member |
 | [**deleteRoutingQueueWrapupcode**](RoutingApi.html#deleteRoutingQueueWrapupcode) | Delete a wrap-up code from a queue |
+| [**deleteRoutingSettings**](RoutingApi.html#deleteRoutingSettings) | Delete an organization&#39;s routing settings |
 | [**deleteRoutingSkill**](RoutingApi.html#deleteRoutingSkill) | Delete Routing Skill |
 | [**deleteRoutingSmsPhonenumber**](RoutingApi.html#deleteRoutingSmsPhonenumber) | Delete a phone number provisioned for SMS. |
 | [**deleteRoutingUtilization**](RoutingApi.html#deleteRoutingUtilization) | Delete the organization-wide max utilization settings and revert to the system default. |
@@ -35,6 +36,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingQueuesDivisionviews**](RoutingApi.html#getRoutingQueuesDivisionviews) | Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s). |
 | [**getRoutingQueuesDivisionviewsAll**](RoutingApi.html#getRoutingQueuesDivisionviewsAll) | Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization. |
 | [**getRoutingQueuesMe**](RoutingApi.html#getRoutingQueuesMe) | Get a paged listing of queues the user is a member of. |
+| [**getRoutingSettings**](RoutingApi.html#getRoutingSettings) | Get an organization&#39;s routing settings |
 | [**getRoutingSettingsContactcenter**](RoutingApi.html#getRoutingSettingsContactcenter) | Get Contact Center Settings |
 | [**getRoutingSettingsTranscription**](RoutingApi.html#getRoutingSettingsTranscription) | Get Transcription Settings |
 | [**getRoutingSkill**](RoutingApi.html#getRoutingSkill) | Get Routing Skill |
@@ -74,6 +76,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putRoutingEmailDomainRoute**](RoutingApi.html#putRoutingEmailDomainRoute) | Update a route |
 | [**putRoutingMessageRecipient**](RoutingApi.html#putRoutingMessageRecipient) | Update a recipient |
 | [**putRoutingQueue**](RoutingApi.html#putRoutingQueue) | Update a queue |
+| [**putRoutingSettings**](RoutingApi.html#putRoutingSettings) | Update an organization&#39;s routing settings |
 | [**putRoutingSettingsTranscription**](RoutingApi.html#putRoutingSettingsTranscription) | Update Transcription Settings |
 | [**putRoutingSmsPhonenumber**](RoutingApi.html#putRoutingSmsPhonenumber) | Update a phone number provisioned for SMS. |
 | [**putRoutingUtilization**](RoutingApi.html#putRoutingUtilization) | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. |
@@ -394,6 +397,64 @@ try {
 | **queueId** | **String**| Queue ID | 
 | **codeId** | **String**| Code ID | 
 {: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteRoutingSettings"></a>
+
+# **deleteRoutingSettings**
+
+
+
+> Void deleteRoutingSettings()
+
+Delete an organization&#39;s routing settings
+
+
+
+Wraps DELETE /api/v2/routing/settings  
+
+Requires ANY permissions: 
+
+* routing:settings:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+try {
+    apiInstance.deleteRoutingSettings();
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#deleteRoutingSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
 
 
 ### Return type
@@ -1919,6 +1980,64 @@ try {
 ### Return type
 
 [**UserQueueEntityListing**](UserQueueEntityListing.html)
+
+<a name="getRoutingSettings"></a>
+
+# **getRoutingSettings**
+
+
+
+> [RoutingSettings](RoutingSettings.html) getRoutingSettings()
+
+Get an organization&#39;s routing settings
+
+
+
+Wraps GET /api/v2/routing/settings  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+try {
+    RoutingSettings result = apiInstance.getRoutingSettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**RoutingSettings**](RoutingSettings.html)
 
 <a name="getRoutingSettingsContactcenter"></a>
 
@@ -4459,6 +4578,69 @@ try {
 ### Return type
 
 [**Queue**](Queue.html)
+
+<a name="putRoutingSettings"></a>
+
+# **putRoutingSettings**
+
+
+
+> [RoutingSettings](RoutingSettings.html) putRoutingSettings(body)
+
+Update an organization&#39;s routing settings
+
+
+
+Wraps PUT /api/v2/routing/settings  
+
+Requires ANY permissions: 
+
+* routing:settings:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+RoutingSettings body = new RoutingSettings(); // RoutingSettings | Organization Settings
+try {
+    RoutingSettings result = apiInstance.putRoutingSettings(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#putRoutingSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**RoutingSettings**](RoutingSettings.html)| Organization Settings | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RoutingSettings**](RoutingSettings.html)
 
 <a name="putRoutingSettingsTranscription"></a>
 

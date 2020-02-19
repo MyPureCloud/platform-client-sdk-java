@@ -30,6 +30,8 @@ import com.mypurecloud.sdk.v2.model.ScimConfigResourceTypesListResponse;
 import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfig;
 import com.mypurecloud.sdk.v2.model.ScimV2User;
 import com.mypurecloud.sdk.v2.model.ScimUserListResponse;
+import com.mypurecloud.sdk.v2.model.ScimV2SchemaDefinition;
+import com.mypurecloud.sdk.v2.model.ScimV2SchemaListResponse;
 import com.mypurecloud.sdk.v2.model.ScimV2PatchRequest;
 import com.mypurecloud.sdk.v2.model.ScimV2CreateUser;
 
@@ -77,6 +79,106 @@ public class GetScimV2GroupsRequest {
 	    return this;
 	} 
 	
+	private List<String> attributes;
+	public List<String> getAttributes() {
+		return this.attributes;
+	}
+
+	public void setAttributes(List<String> attributes) {
+		this.attributes = attributes;
+	}
+
+	public GetScimV2GroupsRequest withAttributes(List<String> attributes) {
+	    this.setAttributes(attributes);
+	    return this;
+	} 
+
+	public enum attributesValues { 
+		ID("id"), 
+		DISPLAYNAME("displayName"), 
+		MEMBERS("members"), 
+		EXTERNALID("externalId"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_GROUP_ID("urn:ietf:params:scim:schemas:core:2.0:Group:id"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_GROUP_DISPLAYNAME("urn:ietf:params:scim:schemas:core:2.0:Group:displayName"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_GROUP_MEMBERS("urn:ietf:params:scim:schemas:core:2.0:Group:members"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_GROUP_EXTERNALID("urn:ietf:params:scim:schemas:core:2.0:Group:externalId");
+
+		private String value;
+
+		attributesValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static attributesValues fromString(String key) {
+			if (key == null) return null;
+
+			for (attributesValues value : attributesValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return attributesValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
+	private List<String> excludedAttributes;
+	public List<String> getExcludedAttributes() {
+		return this.excludedAttributes;
+	}
+
+	public void setExcludedAttributes(List<String> excludedAttributes) {
+		this.excludedAttributes = excludedAttributes;
+	}
+
+	public GetScimV2GroupsRequest withExcludedAttributes(List<String> excludedAttributes) {
+	    this.setExcludedAttributes(excludedAttributes);
+	    return this;
+	} 
+
+	public enum excludedAttributesValues { 
+		ID("id"), 
+		DISPLAYNAME("displayName"), 
+		MEMBERS("members"), 
+		EXTERNALID("externalId"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_GROUP_ID("urn:ietf:params:scim:schemas:core:2.0:Group:id"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_GROUP_DISPLAYNAME("urn:ietf:params:scim:schemas:core:2.0:Group:displayName"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_GROUP_MEMBERS("urn:ietf:params:scim:schemas:core:2.0:Group:members"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_GROUP_EXTERNALID("urn:ietf:params:scim:schemas:core:2.0:Group:externalId");
+
+		private String value;
+
+		excludedAttributesValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static excludedAttributesValues fromString(String key) {
+			if (key == null) return null;
+
+			for (excludedAttributesValues value : excludedAttributesValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return excludedAttributesValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -108,6 +210,10 @@ public class GetScimV2GroupsRequest {
                 .withQueryParameters("startIndex", "", startIndex)
         
                 .withQueryParameters("count", "", count)
+        
+                .withQueryParameters("attributes", "multi", attributes)
+        
+                .withQueryParameters("excludedAttributes", "multi", excludedAttributes)
         
                 .withQueryParameters("filter", "", filter)
         
@@ -150,6 +256,34 @@ public class GetScimV2GroupsRequest {
 		public Builder withCount(Integer count) {
 			request.setCount(count);
 			return this;
+		}
+		
+		public Builder withAttributes(List<String> attributes) {
+			request.setAttributes(attributes);
+			return this;
+		}
+
+		public Builder withAttributesEnumValues(List<attributesValues> attributes) {
+		    List<String> stringList = new ArrayList<>();
+	      for (attributesValues e : attributes) {
+	        stringList.add(e.toString());
+	      }
+	      request.setAttributes(stringList);
+		    return this;
+		}
+		
+		public Builder withExcludedAttributes(List<String> excludedAttributes) {
+			request.setExcludedAttributes(excludedAttributes);
+			return this;
+		}
+
+		public Builder withExcludedAttributesEnumValues(List<excludedAttributesValues> excludedAttributes) {
+		    List<String> stringList = new ArrayList<>();
+	      for (excludedAttributesValues e : excludedAttributes) {
+	        stringList.add(e.toString());
+	      }
+	      request.setExcludedAttributes(stringList);
+		    return this;
 		}
 		
 

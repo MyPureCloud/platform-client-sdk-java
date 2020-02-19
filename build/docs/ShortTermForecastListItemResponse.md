@@ -8,12 +8,12 @@ title: ShortTermForecastListItemResponse
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The id of the short term forecast |  |
+| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 | **weekDate** | <!----><!---->**String**<!----> | The weekDate of the short term forecast in yyyy-MM-dd format |  |
 | **description** | <!----><!---->**String**<!----> | The description of the short term forecast |  [optional] |
 | **creationMethod** | [**CreationMethodEnum**](#CreationMethodEnum)<!----> | The method used to create this forecast |  [optional] |
 | **metadata** | <!----><!---->[**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html)<!----> | Metadata for this forecast |  |
-| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
 

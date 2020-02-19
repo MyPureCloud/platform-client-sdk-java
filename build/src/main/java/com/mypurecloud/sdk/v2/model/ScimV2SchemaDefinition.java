@@ -1,0 +1,133 @@
+package com.mypurecloud.sdk.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.ScimMetadata;
+import com.mypurecloud.sdk.v2.model.ScimV2SchemaAttribute;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
+
+import java.io.Serializable;
+/**
+ * A SCIM schema definition.
+ */
+@ApiModel(description = "A SCIM schema definition.")
+
+public class ScimV2SchemaDefinition  implements Serializable {
+  
+  private String id = null;
+  private String name = null;
+  private String description = null;
+  private List<ScimV2SchemaAttribute> attributes = new ArrayList<ScimV2SchemaAttribute>();
+  private ScimMetadata meta = null;
+
+  
+  @ApiModelProperty(example = "null", value = "The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"Mutability\" is set to \"readOnly\". \"Returned\" is set to \"always\".")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "Schema name.")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "Schema description.")
+  @JsonProperty("description")
+  public String getDescription() {
+    return description;
+  }
+
+  
+  /**
+   * A complex type that defines service provider attributes and their qualities.
+   **/
+  public ScimV2SchemaDefinition attributes(List<ScimV2SchemaAttribute> attributes) {
+    this.attributes = attributes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A complex type that defines service provider attributes and their qualities.")
+  @JsonProperty("attributes")
+  public List<ScimV2SchemaAttribute> getAttributes() {
+    return attributes;
+  }
+  public void setAttributes(List<ScimV2SchemaAttribute> attributes) {
+    this.attributes = attributes;
+  }
+
+  
+  /**
+   * The metadata of the SCIM resource.
+   **/
+  public ScimV2SchemaDefinition meta(ScimMetadata meta) {
+    this.meta = meta;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource.")
+  @JsonProperty("meta")
+  public ScimMetadata getMeta() {
+    return meta;
+  }
+  public void setMeta(ScimMetadata meta) {
+    this.meta = meta;
+  }
+
+  
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    ScimV2SchemaDefinition scimV2SchemaDefinition = (ScimV2SchemaDefinition) o;
+    return Objects.equals(this.id, scimV2SchemaDefinition.id) &&
+        Objects.equals(this.name, scimV2SchemaDefinition.name) &&
+        Objects.equals(this.description, scimV2SchemaDefinition.description) &&
+        Objects.equals(this.attributes, scimV2SchemaDefinition.attributes) &&
+        Objects.equals(this.meta, scimV2SchemaDefinition.meta);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, name, description, attributes, meta);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class ScimV2SchemaDefinition {\n");
+    
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
+    sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+

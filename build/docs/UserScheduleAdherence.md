@@ -10,7 +10,7 @@ title: UserScheduleAdherence
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **user** | <!----><!---->[**User**](User.html)<!----> | The user for whom this status applies |  [optional] |
+| **user** | <!----><!---->[**UserReference**](UserReference.html)<!----> | The user for whom this status applies |  [optional] |
 | **managementUnit** | <!----><!---->[**ManagementUnit**](ManagementUnit.html)<!----> | The management unit to which this user belongs |  [optional] |
 | **scheduledActivityCategory** | [**ScheduledActivityCategoryEnum**](#ScheduledActivityCategoryEnum)<!----> | Activity for which the user is scheduled |  [optional] |
 | **systemPresence** | [**SystemPresenceEnum**](#SystemPresenceEnum)<!----> | Actual underlying system presence value |  [optional] |

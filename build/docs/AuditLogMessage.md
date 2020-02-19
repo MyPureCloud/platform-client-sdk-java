@@ -58,6 +58,10 @@ title: AuditLogMessage
 | READALL | &quot;ReadAll&quot; |
 | EXECUTE | &quot;Execute&quot; |
 | PUBLISH | &quot;Publish&quot; |
+| AUTHORIZE | &quot;Authorize&quot; |
+| DEAUTHORIZE | &quot;Deauthorize&quot; |
+| AUTHENTICATE | &quot;Authenticate&quot; |
+| CHANGEPASSWORD | &quot;ChangePassword&quot; |
 {: class="table table-striped"}
 
 
@@ -75,6 +79,9 @@ title: AuditLogMessage
 | VOICEMAILUSERPOLICY | &quot;VoicemailUserPolicy&quot; |
 | WRAPUPCODE | &quot;WrapupCode&quot; |
 | ACCESSTOKEN | &quot;AccessToken&quot; |
+| OAUTHCLIENT | &quot;OAuthClient&quot; |
+| AUTHORGANIZATION | &quot;AuthOrganization&quot; |
+| AUTHUSER | &quot;AuthUser&quot; |
 | BULKACTIONS | &quot;BulkActions&quot; |
 | FEEDBACK | &quot;Feedback&quot; |
 | TOPIC | &quot;Topic&quot; |

@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.QueueMemberEntityListing;
 import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
 import com.mypurecloud.sdk.v2.model.QueueEntityListing;
 import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
+import com.mypurecloud.sdk.v2.model.RoutingSettings;
 import com.mypurecloud.sdk.v2.model.ContactCenterSettings;
 import com.mypurecloud.sdk.v2.model.TranscriptionSettings;
 import com.mypurecloud.sdk.v2.model.RoutingSkill;
@@ -60,6 +61,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailDomainRouteRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueUserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueWrapupcodeRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSkillRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationRequest;
@@ -83,6 +85,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesDivisionviewsAllRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSettingsContactcenterRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSettingsTranscriptionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSkillRequest;
@@ -122,6 +125,7 @@ import com.mypurecloud.sdk.v2.api.request.PostUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingEmailDomainRouteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingMessageRecipientRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingQueueRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingSettingsTranscriptionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUtilizationRequest;
@@ -522,6 +526,78 @@ public class RoutingApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteRoutingQueueWrapupcode(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete an organization&#39;s routing settings
+   * 
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingSettings() throws IOException, ApiException {
+     deleteRoutingSettings(createDeleteRoutingSettingsRequest());
+  }
+
+  /**
+   * Delete an organization&#39;s routing settings
+   * 
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingSettingsWithHttpInfo() throws IOException {
+    return deleteRoutingSettings(createDeleteRoutingSettingsRequest().withHttpInfo());
+  }
+
+  private DeleteRoutingSettingsRequest createDeleteRoutingSettingsRequest() {
+    return DeleteRoutingSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Delete an organization&#39;s routing settings
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingSettings(DeleteRoutingSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete an organization&#39;s routing settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingSettings(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -2506,6 +2582,81 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UserQueueEntityListing> response = (ApiResponse<UserQueueEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get an organization&#39;s routing settings
+   * 
+   * @return RoutingSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RoutingSettings getRoutingSettings() throws IOException, ApiException {
+    return  getRoutingSettings(createGetRoutingSettingsRequest());
+  }
+
+  /**
+   * Get an organization&#39;s routing settings
+   * 
+   * @return RoutingSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RoutingSettings> getRoutingSettingsWithHttpInfo() throws IOException {
+    return getRoutingSettings(createGetRoutingSettingsRequest().withHttpInfo());
+  }
+
+  private GetRoutingSettingsRequest createGetRoutingSettingsRequest() {
+    return GetRoutingSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get an organization&#39;s routing settings
+   * 
+   * @param request The request object
+   * @return RoutingSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RoutingSettings getRoutingSettings(GetRoutingSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RoutingSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RoutingSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an organization&#39;s routing settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RoutingSettings> getRoutingSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RoutingSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingSettings> response = (ApiResponse<RoutingSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingSettings> response = (ApiResponse<RoutingSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5764,6 +5915,85 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Queue> response = (ApiResponse<Queue>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update an organization&#39;s routing settings
+   * 
+   * @param body Organization Settings (required)
+   * @return RoutingSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RoutingSettings putRoutingSettings(RoutingSettings body) throws IOException, ApiException {
+    return  putRoutingSettings(createPutRoutingSettingsRequest(body));
+  }
+
+  /**
+   * Update an organization&#39;s routing settings
+   * 
+   * @param body Organization Settings (required)
+   * @return RoutingSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RoutingSettings> putRoutingSettingsWithHttpInfo(RoutingSettings body) throws IOException {
+    return putRoutingSettings(createPutRoutingSettingsRequest(body).withHttpInfo());
+  }
+
+  private PutRoutingSettingsRequest createPutRoutingSettingsRequest(RoutingSettings body) {
+    return PutRoutingSettingsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update an organization&#39;s routing settings
+   * 
+   * @param request The request object
+   * @return RoutingSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RoutingSettings putRoutingSettings(PutRoutingSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RoutingSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RoutingSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an organization&#39;s routing settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RoutingSettings> putRoutingSettings(ApiRequest<RoutingSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RoutingSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingSettings> response = (ApiResponse<RoutingSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingSettings> response = (ApiResponse<RoutingSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

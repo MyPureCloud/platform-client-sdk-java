@@ -14,7 +14,7 @@ title: CreateWorkPlanShift
 | **exactStartTimeMinutesFromMidnight** | <!----><!---->**Integer**<!----> | Exact start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime == false |  [optional] |
 | **earliestStartTimeMinutesFromMidnight** | <!----><!---->**Integer**<!----> | Earliest start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime == true |  [optional] |
 | **latestStartTimeMinutesFromMidnight** | <!----><!---->**Integer**<!----> | Latest start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime == true |  [optional] |
-| **constrainStopTime** | <!----><!---->**Boolean**<!----> | Whether the latest stop time constraint for the shift is enabled |  [optional] |
+| **constrainStopTime** | <!----><!---->**Boolean**<!----> | Whether the latest stop time constraint for the shift is enabled.  Deprecated, use constrainLatestStopTime instead |  [optional] |
 | **constrainLatestStopTime** | <!----><!---->**Boolean**<!----> | Whether the latest stop time constraint for the shift is enabled |  [optional] |
 | **latestStopTimeMinutesFromMidnight** | <!----><!---->**Integer**<!----> | Latest stop time of the shift defined as offset minutes from midnight. Used if constrainStopTime == true |  [optional] |
 | **startIncrementMinutes** | <!----><!---->**Integer**<!----> | Increment in offset minutes that would contribute to different possible start times for the shift. Used if flexibleStartTime == true |  [optional] |

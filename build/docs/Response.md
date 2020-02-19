@@ -18,6 +18,8 @@ title: Response
 | **interactionType** | [**InteractionTypeEnum**](#InteractionTypeEnum)<!----> | The interaction type for this response. |  [optional] |
 | **substitutions** | <!----><!---->[**List&lt;ResponseSubstitution&gt;**](ResponseSubstitution.html)<!----> | Details about any text substitutions used in the texts for this response. |  [optional] |
 | **substitutionsSchema** | <!----><!---->[**JsonSchemaDocument**](JsonSchemaDocument.html)<!----> | Metadata about the text substitutions in json schema format. |  [optional] |
+| **responseType** | [**ResponseTypeEnum**](#ResponseTypeEnum)<!----> | The response type represented by the response |  [optional] |
+| **messagingTemplate** | <!----><!---->[**MessagingTemplate**](MessagingTemplate.html)<!----> | The messaging template definition. This is required when adding to a library with responseType set to MessagingTemplate. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
@@ -32,6 +34,17 @@ title: Response
 | CHAT | &quot;chat&quot; |
 | EMAIL | &quot;email&quot; |
 | TWITTER | &quot;twitter&quot; |
+{: class="table table-striped"}
+
+
+<a name="ResponseTypeEnum"></a>
+
+## Enum: ResponseTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| MESSAGINGTEMPLATE | &quot;MessagingTemplate&quot; |
 {: class="table table-striped"}
 
 

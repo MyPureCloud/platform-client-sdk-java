@@ -8,6 +8,8 @@ import com.mypurecloud.sdk.v2.model.Photo;
 import com.mypurecloud.sdk.v2.model.ScimEmail;
 import com.mypurecloud.sdk.v2.model.ScimMetadata;
 import com.mypurecloud.sdk.v2.model.ScimPhoneNumber;
+import com.mypurecloud.sdk.v2.model.ScimUserExtensions;
+import com.mypurecloud.sdk.v2.model.ScimUserRole;
 import com.mypurecloud.sdk.v2.model.ScimV2EnterpriseUser;
 import com.mypurecloud.sdk.v2.model.ScimV2GroupReference;
 import io.swagger.annotations.ApiModel;
@@ -35,8 +37,9 @@ public class ScimV2User  implements Serializable {
   private List<Photo> photos = new ArrayList<Photo>();
   private String externalId = null;
   private List<ScimV2GroupReference> groups = new ArrayList<ScimV2GroupReference>();
-  private List<String> roles = new ArrayList<String>();
+  private List<ScimUserRole> roles = new ArrayList<ScimUserRole>();
   private ScimV2EnterpriseUser urnietfparamsscimschemasextensionenterprise20User = null;
+  private ScimUserExtensions urnietfparamsscimschemasextensiongenesyspurecloud20User = null;
   private ScimMetadata meta = null;
 
   
@@ -248,17 +251,17 @@ public class ScimV2User  implements Serializable {
   /**
    * The list of roles assigned to the user.
    **/
-  public ScimV2User roles(List<String> roles) {
+  public ScimV2User roles(List<ScimUserRole> roles) {
     this.roles = roles;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The list of roles assigned to the user.")
   @JsonProperty("roles")
-  public List<String> getRoles() {
+  public List<ScimUserRole> getRoles() {
     return roles;
   }
-  public void setRoles(List<String> roles) {
+  public void setRoles(List<ScimUserRole> roles) {
     this.roles = roles;
   }
 
@@ -278,6 +281,23 @@ public class ScimV2User  implements Serializable {
   }
   public void setUrnietfparamsscimschemasextensionenterprise20User(ScimV2EnterpriseUser urnietfparamsscimschemasextensionenterprise20User) {
     this.urnietfparamsscimschemasextensionenterprise20User = urnietfparamsscimschemasextensionenterprise20User;
+  }
+
+  
+  /**
+   **/
+  public ScimV2User urnietfparamsscimschemasextensiongenesyspurecloud20User(ScimUserExtensions urnietfparamsscimschemasextensiongenesyspurecloud20User) {
+    this.urnietfparamsscimschemasextensiongenesyspurecloud20User = urnietfparamsscimschemasextensiongenesyspurecloud20User;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User")
+  public ScimUserExtensions getUrnietfparamsscimschemasextensiongenesyspurecloud20User() {
+    return urnietfparamsscimschemasextensiongenesyspurecloud20User;
+  }
+  public void setUrnietfparamsscimschemasextensiongenesyspurecloud20User(ScimUserExtensions urnietfparamsscimschemasextensiongenesyspurecloud20User) {
+    this.urnietfparamsscimschemasextensiongenesyspurecloud20User = urnietfparamsscimschemasextensiongenesyspurecloud20User;
   }
 
   
@@ -323,12 +343,13 @@ public class ScimV2User  implements Serializable {
         Objects.equals(this.groups, scimV2User.groups) &&
         Objects.equals(this.roles, scimV2User.roles) &&
         Objects.equals(this.urnietfparamsscimschemasextensionenterprise20User, scimV2User.urnietfparamsscimschemasextensionenterprise20User) &&
+        Objects.equals(this.urnietfparamsscimschemasextensiongenesyspurecloud20User, scimV2User.urnietfparamsscimschemasextensiongenesyspurecloud20User) &&
         Objects.equals(this.meta, scimV2User.meta);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, schemas, active, userName, displayName, password, title, phoneNumbers, emails, photos, externalId, groups, roles, urnietfparamsscimschemasextensionenterprise20User, meta);
+    return Objects.hash(id, schemas, active, userName, displayName, password, title, phoneNumbers, emails, photos, externalId, groups, roles, urnietfparamsscimschemasextensionenterprise20User, urnietfparamsscimschemasextensiongenesyspurecloud20User, meta);
   }
 
   @Override
@@ -350,6 +371,7 @@ public class ScimV2User  implements Serializable {
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
     sb.append("    urnietfparamsscimschemasextensionenterprise20User: ").append(toIndentedString(urnietfparamsscimschemasextensionenterprise20User)).append("\n");
+    sb.append("    urnietfparamsscimschemasextensiongenesyspurecloud20User: ").append(toIndentedString(urnietfparamsscimschemasextensiongenesyspurecloud20User)).append("\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("}");
     return sb.toString();

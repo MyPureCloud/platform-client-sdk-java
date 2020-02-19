@@ -26,7 +26,7 @@ public class ManagementUnit  implements Serializable {
   private Division division = null;
 
   /**
-   * Start day of week for scheduling and forecasting purposes
+   * Start day of week for scheduling and forecasting purposes. Moving to Business Unit
    */
   public enum StartDayOfWeekEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -116,14 +116,14 @@ public class ManagementUnit  implements Serializable {
 
   
   /**
-   * Start day of week for scheduling and forecasting purposes
+   * Start day of week for scheduling and forecasting purposes. Moving to Business Unit
    **/
   public ManagementUnit startDayOfWeek(StartDayOfWeekEnum startDayOfWeek) {
     this.startDayOfWeek = startDayOfWeek;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Start day of week for scheduling and forecasting purposes")
+  @ApiModelProperty(example = "null", value = "Start day of week for scheduling and forecasting purposes. Moving to Business Unit")
   @JsonProperty("startDayOfWeek")
   public StartDayOfWeekEnum getStartDayOfWeek() {
     return startDayOfWeek;
@@ -134,14 +134,14 @@ public class ManagementUnit  implements Serializable {
 
   
   /**
-   * The time zone for the management unit in standard Olson format
+   * The time zone for the management unit in standard Olson format.  Moving to Business Unit
    **/
   public ManagementUnit timeZone(String timeZone) {
     this.timeZone = timeZone;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The time zone for the management unit in standard Olson format")
+  @ApiModelProperty(example = "null", value = "The time zone for the management unit in standard Olson format.  Moving to Business Unit")
   @JsonProperty("timeZone")
   public String getTimeZone() {
     return timeZone;

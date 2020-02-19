@@ -20,8 +20,9 @@ title: ScimV2User
 | **photos** | <!----><!---->[**List&lt;Photo&gt;**](Photo.html)<!----> | The list of the user&#39;s photos. |  [optional] |
 | **externalId** | <!----><!---->**String**<!----> | The external ID of the user. Set by the provisioning client. \&quot;caseExact\&quot; is set to \&quot;true\&quot;. \&quot;mutability\&quot; is set to \&quot;readWrite\&quot;. |  [optional] |
 | **groups** | <!----><!---->[**List&lt;ScimV2GroupReference&gt;**](ScimV2GroupReference.html)<!----> | The list of groups that the user is a member of. |  [optional] |
-| **roles** | <!----><!---->**List&lt;String&gt;**<!----> | The list of roles assigned to the user. |  [optional] |
+| **roles** | <!----><!---->[**List&lt;ScimUserRole&gt;**](ScimUserRole.html)<!----> | The list of roles assigned to the user. |  [optional] |
 | **urnietfparamsscimschemasextensionenterprise20User** | <!----><!---->[**ScimV2EnterpriseUser**](ScimV2EnterpriseUser.html)<!----> | The URI of the schema for the enterprise user. |  [optional] |
+| **urnietfparamsscimschemasextensiongenesyspurecloud20User** | <!----><!---->[**ScimUserExtensions**](ScimUserExtensions.html)<!----> |  |  [optional] |
 | **meta** | <!----><!---->[**ScimMetadata**](ScimMetadata.html)<!----> | The metadata of the SCIM resource. |  [optional] |
 {: class="table table-striped"}
 

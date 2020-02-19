@@ -16,26 +16,22 @@ import java.io.Serializable;
 public class ShortTermForecastReference  implements Serializable {
   
   private String id = null;
+  private String selfUri = null;
   private String weekDate = null;
   private String description = null;
-  private String selfUri = null;
 
   
-  /**
-   * The id of the short term forecast
-   **/
-  public ShortTermForecastReference id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "The id of the short term forecast")
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")
   public String getId() {
     return id;
   }
-  public void setId(String id) {
-    this.id = id;
+
+  
+  @ApiModelProperty(example = "null", value = "The URI for this object")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
   }
 
   
@@ -75,13 +71,6 @@ public class ShortTermForecastReference  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The URI for this object")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -93,14 +82,14 @@ public class ShortTermForecastReference  implements Serializable {
     }
     ShortTermForecastReference shortTermForecastReference = (ShortTermForecastReference) o;
     return Objects.equals(this.id, shortTermForecastReference.id) &&
+        Objects.equals(this.selfUri, shortTermForecastReference.selfUri) &&
         Objects.equals(this.weekDate, shortTermForecastReference.weekDate) &&
-        Objects.equals(this.description, shortTermForecastReference.description) &&
-        Objects.equals(this.selfUri, shortTermForecastReference.selfUri);
+        Objects.equals(this.description, shortTermForecastReference.description);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, weekDate, description, selfUri);
+    return Objects.hash(id, selfUri, weekDate, description);
   }
 
   @Override
@@ -109,9 +98,9 @@ public class ShortTermForecastReference  implements Serializable {
     sb.append("class ShortTermForecastReference {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    weekDate: ").append(toIndentedString(weekDate)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

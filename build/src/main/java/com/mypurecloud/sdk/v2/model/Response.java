@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
+import com.mypurecloud.sdk.v2.model.MessagingTemplate;
 import com.mypurecloud.sdk.v2.model.ResponseSubstitution;
 import com.mypurecloud.sdk.v2.model.ResponseText;
 import com.mypurecloud.sdk.v2.model.User;
@@ -69,6 +70,41 @@ public class Response  implements Serializable {
   private InteractionTypeEnum interactionType = null;
   private List<ResponseSubstitution> substitutions = new ArrayList<ResponseSubstitution>();
   private JsonSchemaDocument substitutionsSchema = null;
+
+  /**
+   * The response type represented by the response
+   */
+  public enum ResponseTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    MESSAGINGTEMPLATE("MessagingTemplate");
+
+    private String value;
+
+    ResponseTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ResponseTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ResponseTypeEnum value : ResponseTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ResponseTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ResponseTypeEnum responseType = null;
+  private MessagingTemplate messagingTemplate = null;
   private String selfUri = null;
 
   
@@ -168,21 +204,10 @@ public class Response  implements Serializable {
   }
 
   
-  /**
-   * The date and time the response was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
-   **/
-  public Response dateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The date and time the response was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
-  }
-  public void setDateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
   }
 
   
@@ -240,6 +265,31 @@ public class Response  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The response type represented by the response")
+  @JsonProperty("responseType")
+  public ResponseTypeEnum getResponseType() {
+    return responseType;
+  }
+
+  
+  /**
+   * The messaging template definition. This is required when adding to a library with responseType set to MessagingTemplate.
+   **/
+  public Response messagingTemplate(MessagingTemplate messagingTemplate) {
+    this.messagingTemplate = messagingTemplate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The messaging template definition. This is required when adding to a library with responseType set to MessagingTemplate.")
+  @JsonProperty("messagingTemplate")
+  public MessagingTemplate getMessagingTemplate() {
+    return messagingTemplate;
+  }
+  public void setMessagingTemplate(MessagingTemplate messagingTemplate) {
+    this.messagingTemplate = messagingTemplate;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -267,12 +317,14 @@ public class Response  implements Serializable {
         Objects.equals(this.interactionType, response.interactionType) &&
         Objects.equals(this.substitutions, response.substitutions) &&
         Objects.equals(this.substitutionsSchema, response.substitutionsSchema) &&
+        Objects.equals(this.responseType, response.responseType) &&
+        Objects.equals(this.messagingTemplate, response.messagingTemplate) &&
         Objects.equals(this.selfUri, response.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, version, libraries, texts, createdBy, dateCreated, interactionType, substitutions, substitutionsSchema, selfUri);
+    return Objects.hash(id, name, version, libraries, texts, createdBy, dateCreated, interactionType, substitutions, substitutionsSchema, responseType, messagingTemplate, selfUri);
   }
 
   @Override
@@ -290,6 +342,8 @@ public class Response  implements Serializable {
     sb.append("    interactionType: ").append(toIndentedString(interactionType)).append("\n");
     sb.append("    substitutions: ").append(toIndentedString(substitutions)).append("\n");
     sb.append("    substitutionsSchema: ").append(toIndentedString(substitutionsSchema)).append("\n");
+    sb.append("    responseType: ").append(toIndentedString(responseType)).append("\n");
+    sb.append("    messagingTemplate: ").append(toIndentedString(messagingTemplate)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

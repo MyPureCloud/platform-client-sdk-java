@@ -24,6 +24,7 @@ import java.io.Serializable;
 public class WeekSchedule  implements Serializable {
   
   private String id = null;
+  private String selfUri = null;
   private String weekDate = null;
   private String description = null;
   private Boolean published = null;
@@ -33,13 +34,19 @@ public class WeekSchedule  implements Serializable {
   private Map<String, UserSchedule> userSchedules = null;
   private HeadcountForecast headcountForecast = null;
   private Integer agentSchedulesVersion = null;
-  private String selfUri = null;
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "The URI for this object")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
   }
 
   
@@ -205,13 +212,6 @@ public class WeekSchedule  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The URI for this object")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -223,6 +223,7 @@ public class WeekSchedule  implements Serializable {
     }
     WeekSchedule weekSchedule = (WeekSchedule) o;
     return Objects.equals(this.id, weekSchedule.id) &&
+        Objects.equals(this.selfUri, weekSchedule.selfUri) &&
         Objects.equals(this.weekDate, weekSchedule.weekDate) &&
         Objects.equals(this.description, weekSchedule.description) &&
         Objects.equals(this.published, weekSchedule.published) &&
@@ -231,13 +232,12 @@ public class WeekSchedule  implements Serializable {
         Objects.equals(this.metadata, weekSchedule.metadata) &&
         Objects.equals(this.userSchedules, weekSchedule.userSchedules) &&
         Objects.equals(this.headcountForecast, weekSchedule.headcountForecast) &&
-        Objects.equals(this.agentSchedulesVersion, weekSchedule.agentSchedulesVersion) &&
-        Objects.equals(this.selfUri, weekSchedule.selfUri);
+        Objects.equals(this.agentSchedulesVersion, weekSchedule.agentSchedulesVersion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, weekDate, description, published, generationResults, shortTermForecast, metadata, userSchedules, headcountForecast, agentSchedulesVersion, selfUri);
+    return Objects.hash(id, selfUri, weekDate, description, published, generationResults, shortTermForecast, metadata, userSchedules, headcountForecast, agentSchedulesVersion);
   }
 
   @Override
@@ -246,6 +246,7 @@ public class WeekSchedule  implements Serializable {
     sb.append("class WeekSchedule {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    weekDate: ").append(toIndentedString(weekDate)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    published: ").append(toIndentedString(published)).append("\n");
@@ -255,7 +256,6 @@ public class WeekSchedule  implements Serializable {
     sb.append("    userSchedules: ").append(toIndentedString(userSchedules)).append("\n");
     sb.append("    headcountForecast: ").append(toIndentedString(headcountForecast)).append("\n");
     sb.append("    agentSchedulesVersion: ").append(toIndentedString(agentSchedulesVersion)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

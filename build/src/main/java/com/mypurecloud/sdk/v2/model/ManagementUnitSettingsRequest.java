@@ -48,14 +48,14 @@ public class ManagementUnitSettingsRequest  implements Serializable {
 
   
   /**
-   * Short term forecasting settings for this management unit
+   * Short term forecasting settings for this management unit.  Moving to Business Unit
    **/
   public ManagementUnitSettingsRequest shortTermForecasting(ShortTermForecastingSettings shortTermForecasting) {
     this.shortTermForecasting = shortTermForecasting;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Short term forecasting settings for this management unit")
+  @ApiModelProperty(example = "null", value = "Short term forecasting settings for this management unit.  Moving to Business Unit")
   @JsonProperty("shortTermForecasting")
   public ShortTermForecastingSettings getShortTermForecasting() {
     return shortTermForecasting;

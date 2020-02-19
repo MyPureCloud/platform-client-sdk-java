@@ -10,10 +10,22 @@ title: Library
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> | The library name. |  |
-| **version** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **createdBy** | <!----><!---->[**User**](User.html)<!----> |  |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **version** | <!----><!---->**Integer**<!----> | Current version for this resource. |  [optional] |
+| **createdBy** | <!----><!---->[**User**](User.html)<!----> | User that created the library. |  [optional] |
+| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | The date and time the response was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **responseType** | [**ResponseTypeEnum**](#ResponseTypeEnum)<!----> | The response type for the library. If set, only response&#39;s of this type may be added to this library. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="ResponseTypeEnum"></a>
+
+## Enum: ResponseTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| MESSAGINGTEMPLATE | &quot;MessagingTemplate&quot; |
 {: class="table table-striped"}
 
 

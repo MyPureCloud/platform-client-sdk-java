@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ManagementUnit;
 import com.mypurecloud.sdk.v2.model.QueueReference;
-import com.mypurecloud.sdk.v2.model.User;
+import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ public class UserScheduleAdherence  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private User user = null;
+  private UserReference user = null;
   private ManagementUnit managementUnit = null;
 
   /**
@@ -302,17 +302,17 @@ public class UserScheduleAdherence  implements Serializable {
   /**
    * The user for whom this status applies
    **/
-  public UserScheduleAdherence user(User user) {
+  public UserScheduleAdherence user(UserReference user) {
     this.user = user;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The user for whom this status applies")
   @JsonProperty("user")
-  public User getUser() {
+  public UserReference getUser() {
     return user;
   }
-  public void setUser(User user) {
+  public void setUser(UserReference user) {
     this.user = user;
   }
 

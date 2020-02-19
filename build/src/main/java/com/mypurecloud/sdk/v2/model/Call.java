@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Address;
 import com.mypurecloud.sdk.v2.model.DisconnectReason;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ErrorInfo;
 import com.mypurecloud.sdk.v2.model.FaxStatus;
 import com.mypurecloud.sdk.v2.model.Segment;
 import io.swagger.annotations.ApiModel;
@@ -145,7 +145,7 @@ public class Call  implements Serializable {
   private Boolean held = null;
   private String recordingId = null;
   private List<Segment> segments = new ArrayList<Segment>();
-  private ErrorBody errorInfo = null;
+  private ErrorInfo errorInfo = null;
 
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
@@ -392,17 +392,17 @@ public class Call  implements Serializable {
   
   /**
    **/
-  public Call errorInfo(ErrorBody errorInfo) {
+  public Call errorInfo(ErrorInfo errorInfo) {
     this.errorInfo = errorInfo;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("errorInfo")
-  public ErrorBody getErrorInfo() {
+  public ErrorInfo getErrorInfo() {
     return errorInfo;
   }
-  public void setErrorInfo(ErrorBody errorInfo) {
+  public void setErrorInfo(ErrorInfo errorInfo) {
     this.errorInfo = errorInfo;
   }
 

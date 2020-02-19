@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.MailFromResult;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -54,6 +56,8 @@ public class InboundDomain  implements Serializable {
   }
   private MxRecordStatusEnum mxRecordStatus = null;
   private Boolean subDomain = null;
+  private MailFromResult mailFromSettings = null;
+  private DomainEntityRef customSMTPServer = null;
   private String selfUri = null;
 
   
@@ -128,6 +132,42 @@ public class InboundDomain  implements Serializable {
   }
 
   
+  /**
+   * The DNS settings if the inbound domain is using a custom Mail From. These settings can only be used on InboundDomains where subDomain is false.
+   **/
+  public InboundDomain mailFromSettings(MailFromResult mailFromSettings) {
+    this.mailFromSettings = mailFromSettings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The DNS settings if the inbound domain is using a custom Mail From. These settings can only be used on InboundDomains where subDomain is false.")
+  @JsonProperty("mailFromSettings")
+  public MailFromResult getMailFromSettings() {
+    return mailFromSettings;
+  }
+  public void setMailFromSettings(MailFromResult mailFromSettings) {
+    this.mailFromSettings = mailFromSettings;
+  }
+
+  
+  /**
+   * The custom SMTP server integration to use when sending outbound emails from this domain.
+   **/
+  public InboundDomain customSMTPServer(DomainEntityRef customSMTPServer) {
+    this.customSMTPServer = customSMTPServer;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The custom SMTP server integration to use when sending outbound emails from this domain.")
+  @JsonProperty("customSMTPServer")
+  public DomainEntityRef getCustomSMTPServer() {
+    return customSMTPServer;
+  }
+  public void setCustomSMTPServer(DomainEntityRef customSMTPServer) {
+    this.customSMTPServer = customSMTPServer;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -149,12 +189,14 @@ public class InboundDomain  implements Serializable {
         Objects.equals(this.name, inboundDomain.name) &&
         Objects.equals(this.mxRecordStatus, inboundDomain.mxRecordStatus) &&
         Objects.equals(this.subDomain, inboundDomain.subDomain) &&
+        Objects.equals(this.mailFromSettings, inboundDomain.mailFromSettings) &&
+        Objects.equals(this.customSMTPServer, inboundDomain.customSMTPServer) &&
         Objects.equals(this.selfUri, inboundDomain.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, mxRecordStatus, subDomain, selfUri);
+    return Objects.hash(id, name, mxRecordStatus, subDomain, mailFromSettings, customSMTPServer, selfUri);
   }
 
   @Override
@@ -166,6 +208,8 @@ public class InboundDomain  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    mxRecordStatus: ").append(toIndentedString(mxRecordStatus)).append("\n");
     sb.append("    subDomain: ").append(toIndentedString(subDomain)).append("\n");
+    sb.append("    mailFromSettings: ").append(toIndentedString(mailFromSettings)).append("\n");
+    sb.append("    customSMTPServer: ").append(toIndentedString(customSMTPServer)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

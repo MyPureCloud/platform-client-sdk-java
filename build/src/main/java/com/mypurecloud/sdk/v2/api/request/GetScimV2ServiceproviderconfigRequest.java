@@ -30,6 +30,8 @@ import com.mypurecloud.sdk.v2.model.ScimConfigResourceTypesListResponse;
 import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfig;
 import com.mypurecloud.sdk.v2.model.ScimV2User;
 import com.mypurecloud.sdk.v2.model.ScimUserListResponse;
+import com.mypurecloud.sdk.v2.model.ScimV2SchemaDefinition;
+import com.mypurecloud.sdk.v2.model.ScimV2SchemaListResponse;
 import com.mypurecloud.sdk.v2.model.ScimV2PatchRequest;
 import com.mypurecloud.sdk.v2.model.ScimV2CreateUser;
 
@@ -77,7 +79,7 @@ public class GetScimV2ServiceproviderconfigRequest {
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json", "application/scim+json")
                 .withAccepts("application/json", "application/scim+json")
-                .withAuthNames()
+                .withAuthNames("PureCloud OAuth")
                 .build();
     }
 

@@ -18,6 +18,7 @@ import java.io.Serializable;
 public class ActivityCode  implements Serializable {
   
   private String id = null;
+  private String selfUri = null;
   private String name = null;
   private Boolean isActive = null;
   private Boolean isDefault = null;
@@ -68,13 +69,19 @@ public class ActivityCode  implements Serializable {
   private Boolean countsAsWorkTime = null;
   private Boolean agentTimeOffSelectable = null;
   private WfmVersionedEntityMetadata metadata = null;
-  private String selfUri = null;
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "The URI for this object")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
   }
 
   
@@ -240,13 +247,6 @@ public class ActivityCode  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The URI for this object")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -258,6 +258,7 @@ public class ActivityCode  implements Serializable {
     }
     ActivityCode activityCode = (ActivityCode) o;
     return Objects.equals(this.id, activityCode.id) &&
+        Objects.equals(this.selfUri, activityCode.selfUri) &&
         Objects.equals(this.name, activityCode.name) &&
         Objects.equals(this.isActive, activityCode.isActive) &&
         Objects.equals(this.isDefault, activityCode.isDefault) &&
@@ -266,13 +267,12 @@ public class ActivityCode  implements Serializable {
         Objects.equals(this.countsAsPaidTime, activityCode.countsAsPaidTime) &&
         Objects.equals(this.countsAsWorkTime, activityCode.countsAsWorkTime) &&
         Objects.equals(this.agentTimeOffSelectable, activityCode.agentTimeOffSelectable) &&
-        Objects.equals(this.metadata, activityCode.metadata) &&
-        Objects.equals(this.selfUri, activityCode.selfUri);
+        Objects.equals(this.metadata, activityCode.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, isActive, isDefault, category, lengthInMinutes, countsAsPaidTime, countsAsWorkTime, agentTimeOffSelectable, metadata, selfUri);
+    return Objects.hash(id, selfUri, name, isActive, isDefault, category, lengthInMinutes, countsAsPaidTime, countsAsWorkTime, agentTimeOffSelectable, metadata);
   }
 
   @Override
@@ -281,6 +281,7 @@ public class ActivityCode  implements Serializable {
     sb.append("class ActivityCode {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    isDefault: ").append(toIndentedString(isDefault)).append("\n");
@@ -290,7 +291,6 @@ public class ActivityCode  implements Serializable {
     sb.append("    countsAsWorkTime: ").append(toIndentedString(countsAsWorkTime)).append("\n");
     sb.append("    agentTimeOffSelectable: ").append(toIndentedString(agentTimeOffSelectable)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

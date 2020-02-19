@@ -150,14 +150,14 @@ public class WorkPlanShift  implements Serializable {
 
   
   /**
-   * Whether the latest stop time constraint for the shift is enabled
+   * Whether the latest stop time constraint for the shift is enabled.  Deprecated, use constrainLatestStopTime instead
    **/
   public WorkPlanShift constrainStopTime(Boolean constrainStopTime) {
     this.constrainStopTime = constrainStopTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether the latest stop time constraint for the shift is enabled")
+  @ApiModelProperty(example = "null", value = "Whether the latest stop time constraint for the shift is enabled.  Deprecated, use constrainLatestStopTime instead")
   @JsonProperty("constrainStopTime")
   public Boolean getConstrainStopTime() {
     return constrainStopTime;

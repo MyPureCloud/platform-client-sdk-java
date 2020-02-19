@@ -25,7 +25,7 @@ title: ChatMediaParticipant
 | **user** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The PureCloud user for this participant. |  [optional] |
 | **queue** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The PureCloud queue for this participant. |  [optional] |
 | **attributes** | <!----><!---->**Map&lt;String, String&gt;**<!----> | A list of ad-hoc attributes for the participant. |  [optional] |
-| **errorInfo** | <!----><!---->[**ErrorBody**](ErrorBody.html)<!----> | If the conversation ends in error, contains additional error details. |  [optional] |
+| **errorInfo** | <!----><!---->[**ErrorInfo**](ErrorInfo.html)<!----> | If the conversation ends in error, contains additional error details. |  [optional] |
 | **script** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The Engage script that should be used by this participant. |  [optional] |
 | **wrapupTimeoutMs** | <!----><!---->**Integer**<!----> | The amount of time the participant has to complete wrap-up. |  [optional] |
 | **wrapupSkipped** | <!----><!---->**Boolean**<!----> | Value is true when the participant has skipped wrap-up. |  [optional] |

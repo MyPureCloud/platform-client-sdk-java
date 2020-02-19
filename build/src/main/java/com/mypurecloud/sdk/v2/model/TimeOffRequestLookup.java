@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.User;
+import com.mypurecloud.sdk.v2.model.UserReference;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -21,7 +21,7 @@ import java.io.Serializable;
 public class TimeOffRequestLookup  implements Serializable {
   
   private String id = null;
-  private User user = null;
+  private UserReference user = null;
   private Boolean isFullDayRequest = null;
   private Boolean markedAsRead = null;
   private String activityCodeId = null;
@@ -66,9 +66,9 @@ public class TimeOffRequestLookup  implements Serializable {
   private List<String> fullDayManagementUnitDates = new ArrayList<String>();
   private Integer dailyDurationMinutes = null;
   private String notes = null;
-  private User submittedBy = null;
+  private UserReference submittedBy = null;
   private Date submittedDate = null;
-  private User reviewedBy = null;
+  private UserReference reviewedBy = null;
   private Date reviewedDate = null;
   private WfmVersionedEntityMetadata metadata = null;
   private String selfUri = null;
@@ -95,17 +95,17 @@ public class TimeOffRequestLookup  implements Serializable {
   /**
    * The user that the time off request belongs to
    **/
-  public TimeOffRequestLookup user(User user) {
+  public TimeOffRequestLookup user(UserReference user) {
     this.user = user;
     return this;
   }
   
   @ApiModelProperty(example = "null", required = true, value = "The user that the time off request belongs to")
   @JsonProperty("user")
-  public User getUser() {
+  public UserReference getUser() {
     return user;
   }
-  public void setUser(User user) {
+  public void setUser(UserReference user) {
     this.user = user;
   }
 
@@ -257,17 +257,17 @@ public class TimeOffRequestLookup  implements Serializable {
   /**
    * The user who submitted this time off request
    **/
-  public TimeOffRequestLookup submittedBy(User submittedBy) {
+  public TimeOffRequestLookup submittedBy(UserReference submittedBy) {
     this.submittedBy = submittedBy;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The user who submitted this time off request")
   @JsonProperty("submittedBy")
-  public User getSubmittedBy() {
+  public UserReference getSubmittedBy() {
     return submittedBy;
   }
-  public void setSubmittedBy(User submittedBy) {
+  public void setSubmittedBy(UserReference submittedBy) {
     this.submittedBy = submittedBy;
   }
 
@@ -293,17 +293,17 @@ public class TimeOffRequestLookup  implements Serializable {
   /**
    * The user who reviewed this time off request
    **/
-  public TimeOffRequestLookup reviewedBy(User reviewedBy) {
+  public TimeOffRequestLookup reviewedBy(UserReference reviewedBy) {
     this.reviewedBy = reviewedBy;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The user who reviewed this time off request")
   @JsonProperty("reviewedBy")
-  public User getReviewedBy() {
+  public UserReference getReviewedBy() {
     return reviewedBy;
   }
-  public void setReviewedBy(User reviewedBy) {
+  public void setReviewedBy(UserReference reviewedBy) {
     this.reviewedBy = reviewedBy;
   }
 

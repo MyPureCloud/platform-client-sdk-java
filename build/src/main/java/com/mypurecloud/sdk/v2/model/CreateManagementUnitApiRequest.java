@@ -21,7 +21,7 @@ public class CreateManagementUnitApiRequest  implements Serializable {
   private String timeZone = null;
 
   /**
-   * The configured first day of the week for scheduling and forecasting purposes
+   * The configured first day of the week for scheduling and forecasting purposes. Moving to Business Unit
    */
   public enum StartDayOfWeekEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -61,6 +61,7 @@ public class CreateManagementUnitApiRequest  implements Serializable {
   private StartDayOfWeekEnum startDayOfWeek = null;
   private CreateManagementUnitSettingsRequest settings = null;
   private String divisionId = null;
+  private String businessUnitId = null;
 
   
   /**
@@ -82,14 +83,14 @@ public class CreateManagementUnitApiRequest  implements Serializable {
 
   
   /**
-   * The default time zone to use for this management unit
+   * The default time zone to use for this management unit.  Moving to Business Unit
    **/
   public CreateManagementUnitApiRequest timeZone(String timeZone) {
     this.timeZone = timeZone;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The default time zone to use for this management unit")
+  @ApiModelProperty(example = "null", value = "The default time zone to use for this management unit.  Moving to Business Unit")
   @JsonProperty("timeZone")
   public String getTimeZone() {
     return timeZone;
@@ -100,14 +101,14 @@ public class CreateManagementUnitApiRequest  implements Serializable {
 
   
   /**
-   * The configured first day of the week for scheduling and forecasting purposes
+   * The configured first day of the week for scheduling and forecasting purposes. Moving to Business Unit
    **/
   public CreateManagementUnitApiRequest startDayOfWeek(StartDayOfWeekEnum startDayOfWeek) {
     this.startDayOfWeek = startDayOfWeek;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The configured first day of the week for scheduling and forecasting purposes")
+  @ApiModelProperty(example = "null", value = "The configured first day of the week for scheduling and forecasting purposes. Moving to Business Unit")
   @JsonProperty("startDayOfWeek")
   public StartDayOfWeekEnum getStartDayOfWeek() {
     return startDayOfWeek;
@@ -153,6 +154,24 @@ public class CreateManagementUnitApiRequest  implements Serializable {
   }
 
   
+  /**
+   * The id of the business unit to which this management unit belongs.  Required after business unit launch
+   **/
+  public CreateManagementUnitApiRequest businessUnitId(String businessUnitId) {
+    this.businessUnitId = businessUnitId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The id of the business unit to which this management unit belongs.  Required after business unit launch")
+  @JsonProperty("businessUnitId")
+  public String getBusinessUnitId() {
+    return businessUnitId;
+  }
+  public void setBusinessUnitId(String businessUnitId) {
+    this.businessUnitId = businessUnitId;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -167,12 +186,13 @@ public class CreateManagementUnitApiRequest  implements Serializable {
         Objects.equals(this.timeZone, createManagementUnitApiRequest.timeZone) &&
         Objects.equals(this.startDayOfWeek, createManagementUnitApiRequest.startDayOfWeek) &&
         Objects.equals(this.settings, createManagementUnitApiRequest.settings) &&
-        Objects.equals(this.divisionId, createManagementUnitApiRequest.divisionId);
+        Objects.equals(this.divisionId, createManagementUnitApiRequest.divisionId) &&
+        Objects.equals(this.businessUnitId, createManagementUnitApiRequest.businessUnitId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, timeZone, startDayOfWeek, settings, divisionId);
+    return Objects.hash(name, timeZone, startDayOfWeek, settings, divisionId, businessUnitId);
   }
 
   @Override
@@ -185,6 +205,7 @@ public class CreateManagementUnitApiRequest  implements Serializable {
     sb.append("    startDayOfWeek: ").append(toIndentedString(startDayOfWeek)).append("\n");
     sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
     sb.append("    divisionId: ").append(toIndentedString(divisionId)).append("\n");
+    sb.append("    businessUnitId: ").append(toIndentedString(businessUnitId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -22,6 +22,7 @@ import java.io.Serializable;
 public class ShortTermForecast  implements Serializable {
   
   private String id = null;
+  private String selfUri = null;
   private String weekDate = null;
   private String description = null;
 
@@ -65,24 +66,19 @@ public class ShortTermForecast  implements Serializable {
   private Date referenceStartDate = null;
   private ListWrapperWfmForecastModification modifications = null;
   private ForecastGenerationResult generationResults = null;
-  private String selfUri = null;
 
   
-  /**
-   * The id of the short term forecast
-   **/
-  public ShortTermForecast id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "The id of the short term forecast")
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")
   public String getId() {
     return id;
   }
-  public void setId(String id) {
-    this.id = id;
+
+  
+  @ApiModelProperty(example = "null", value = "The URI for this object")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
   }
 
   
@@ -208,13 +204,6 @@ public class ShortTermForecast  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The URI for this object")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -226,6 +215,7 @@ public class ShortTermForecast  implements Serializable {
     }
     ShortTermForecast shortTermForecast = (ShortTermForecast) o;
     return Objects.equals(this.id, shortTermForecast.id) &&
+        Objects.equals(this.selfUri, shortTermForecast.selfUri) &&
         Objects.equals(this.weekDate, shortTermForecast.weekDate) &&
         Objects.equals(this.description, shortTermForecast.description) &&
         Objects.equals(this.creationMethod, shortTermForecast.creationMethod) &&
@@ -233,13 +223,12 @@ public class ShortTermForecast  implements Serializable {
         Objects.equals(this.sourceData, shortTermForecast.sourceData) &&
         Objects.equals(this.referenceStartDate, shortTermForecast.referenceStartDate) &&
         Objects.equals(this.modifications, shortTermForecast.modifications) &&
-        Objects.equals(this.generationResults, shortTermForecast.generationResults) &&
-        Objects.equals(this.selfUri, shortTermForecast.selfUri);
+        Objects.equals(this.generationResults, shortTermForecast.generationResults);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, weekDate, description, creationMethod, metadata, sourceData, referenceStartDate, modifications, generationResults, selfUri);
+    return Objects.hash(id, selfUri, weekDate, description, creationMethod, metadata, sourceData, referenceStartDate, modifications, generationResults);
   }
 
   @Override
@@ -248,6 +237,7 @@ public class ShortTermForecast  implements Serializable {
     sb.append("class ShortTermForecast {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    weekDate: ").append(toIndentedString(weekDate)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    creationMethod: ").append(toIndentedString(creationMethod)).append("\n");
@@ -256,7 +246,6 @@ public class ShortTermForecast  implements Serializable {
     sb.append("    referenceStartDate: ").append(toIndentedString(referenceStartDate)).append("\n");
     sb.append("    modifications: ").append(toIndentedString(modifications)).append("\n");
     sb.append("    generationResults: ").append(toIndentedString(generationResults)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

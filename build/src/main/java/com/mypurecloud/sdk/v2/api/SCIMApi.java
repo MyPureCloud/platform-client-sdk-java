@@ -20,6 +20,8 @@ import com.mypurecloud.sdk.v2.model.ScimConfigResourceTypesListResponse;
 import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfig;
 import com.mypurecloud.sdk.v2.model.ScimV2User;
 import com.mypurecloud.sdk.v2.model.ScimUserListResponse;
+import com.mypurecloud.sdk.v2.model.ScimV2SchemaDefinition;
+import com.mypurecloud.sdk.v2.model.ScimV2SchemaListResponse;
 import com.mypurecloud.sdk.v2.model.ScimV2PatchRequest;
 import com.mypurecloud.sdk.v2.model.ScimV2CreateUser;
 
@@ -32,6 +34,8 @@ import com.mypurecloud.sdk.v2.api.request.GetScimGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimGroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimResourcetypeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimResourcetypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScimSchemaRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScimSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimServiceproviderconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimUsersRequest;
@@ -39,6 +43,8 @@ import com.mypurecloud.sdk.v2.api.request.GetScimV2GroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimV2GroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimV2ResourcetypeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimV2ResourcetypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScimV2SchemaRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScimV2SchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimV2ServiceproviderconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimV2UserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimV2UsersRequest;
@@ -404,30 +410,38 @@ public class SCIMApi {
    * Get a group
    * 
    * @param groupId The ID of a group. Returned with GET /api/v2/scim/groups. (required)
+   * @param attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39;  attributes will always be present in the output. (optional)
    * @param ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. (optional)
    * @return ScimV2Group
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ScimV2Group getScimGroup(String groupId, String ifNoneMatch) throws IOException, ApiException {
-    return  getScimGroup(createGetScimGroupRequest(groupId, ifNoneMatch));
+  public ScimV2Group getScimGroup(String groupId, List<String> attributes, List<String> excludedAttributes, String ifNoneMatch) throws IOException, ApiException {
+    return  getScimGroup(createGetScimGroupRequest(groupId, attributes, excludedAttributes, ifNoneMatch));
   }
 
   /**
    * Get a group
    * 
    * @param groupId The ID of a group. Returned with GET /api/v2/scim/groups. (required)
+   * @param attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39;  attributes will always be present in the output. (optional)
    * @param ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. (optional)
    * @return ScimV2Group
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScimV2Group> getScimGroupWithHttpInfo(String groupId, String ifNoneMatch) throws IOException {
-    return getScimGroup(createGetScimGroupRequest(groupId, ifNoneMatch).withHttpInfo());
+  public ApiResponse<ScimV2Group> getScimGroupWithHttpInfo(String groupId, List<String> attributes, List<String> excludedAttributes, String ifNoneMatch) throws IOException {
+    return getScimGroup(createGetScimGroupRequest(groupId, attributes, excludedAttributes, ifNoneMatch).withHttpInfo());
   }
 
-  private GetScimGroupRequest createGetScimGroupRequest(String groupId, String ifNoneMatch) {
+  private GetScimGroupRequest createGetScimGroupRequest(String groupId, List<String> attributes, List<String> excludedAttributes, String ifNoneMatch) {
     return GetScimGroupRequest.builder()
             .withGroupId(groupId)
+    
+            .withAttributes(attributes)
+    
+            .withExcludedAttributes(excludedAttributes)
     
             .withIfNoneMatch(ifNoneMatch)
     
@@ -488,13 +502,15 @@ public class SCIMApi {
    * 
    * @param startIndex The 1-based index of the first query result. (optional, default to 1)
    * @param count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (optional, default to 25)
+   * @param attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39;  attributes will always be present in the output. (optional)
    * @param filter Filters results. (optional)
    * @return ScimGroupListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ScimGroupListResponse getScimGroups(Integer startIndex, Integer count, String filter) throws IOException, ApiException {
-    return  getScimGroups(createGetScimGroupsRequest(startIndex, count, filter));
+  public ScimGroupListResponse getScimGroups(Integer startIndex, Integer count, List<String> attributes, List<String> excludedAttributes, String filter) throws IOException, ApiException {
+    return  getScimGroups(createGetScimGroupsRequest(startIndex, count, attributes, excludedAttributes, filter));
   }
 
   /**
@@ -502,19 +518,25 @@ public class SCIMApi {
    * 
    * @param startIndex The 1-based index of the first query result. (optional, default to 1)
    * @param count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (optional, default to 25)
+   * @param attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39;  attributes will always be present in the output. (optional)
    * @param filter Filters results. (optional)
    * @return ScimGroupListResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScimGroupListResponse> getScimGroupsWithHttpInfo(Integer startIndex, Integer count, String filter) throws IOException {
-    return getScimGroups(createGetScimGroupsRequest(startIndex, count, filter).withHttpInfo());
+  public ApiResponse<ScimGroupListResponse> getScimGroupsWithHttpInfo(Integer startIndex, Integer count, List<String> attributes, List<String> excludedAttributes, String filter) throws IOException {
+    return getScimGroups(createGetScimGroupsRequest(startIndex, count, attributes, excludedAttributes, filter).withHttpInfo());
   }
 
-  private GetScimGroupsRequest createGetScimGroupsRequest(Integer startIndex, Integer count, String filter) {
+  private GetScimGroupsRequest createGetScimGroupsRequest(Integer startIndex, Integer count, List<String> attributes, List<String> excludedAttributes, String filter) {
     return GetScimGroupsRequest.builder()
             .withStartIndex(startIndex)
     
             .withCount(count)
+    
+            .withAttributes(attributes)
+    
+            .withExcludedAttributes(excludedAttributes)
     
             .withFilter(filter)
     
@@ -725,6 +747,164 @@ public class SCIMApi {
 
   
   /**
+   * Get the SCIM schema by id
+   * 
+   * @param schemaId The ID of a schema. (required)
+   * @return ScimConfigResourceType
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScimConfigResourceType getScimSchema(String schemaId) throws IOException, ApiException {
+    return  getScimSchema(createGetScimSchemaRequest(schemaId));
+  }
+
+  /**
+   * Get the SCIM schema by id
+   * 
+   * @param schemaId The ID of a schema. (required)
+   * @return ScimConfigResourceType
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScimConfigResourceType> getScimSchemaWithHttpInfo(String schemaId) throws IOException {
+    return getScimSchema(createGetScimSchemaRequest(schemaId).withHttpInfo());
+  }
+
+  private GetScimSchemaRequest createGetScimSchemaRequest(String schemaId) {
+    return GetScimSchemaRequest.builder()
+            .withSchemaId(schemaId)
+    
+            .build();
+  }
+
+  /**
+   * Get the SCIM schema by id
+   * 
+   * @param request The request object
+   * @return ScimConfigResourceType
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScimConfigResourceType getScimSchema(GetScimSchemaRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScimConfigResourceType> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScimConfigResourceType>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the SCIM schema by id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScimConfigResourceType> getScimSchema(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScimConfigResourceType>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScimConfigResourceType> response = (ApiResponse<ScimConfigResourceType>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScimConfigResourceType> response = (ApiResponse<ScimConfigResourceType>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the SCIM schemas
+   * 
+   * @param filter Filtered results are invalid and will result in a 403 (Unauthorized) return. (optional)
+   * @return ScimConfigResourceTypesListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScimConfigResourceTypesListResponse getScimSchemas(String filter) throws IOException, ApiException {
+    return  getScimSchemas(createGetScimSchemasRequest(filter));
+  }
+
+  /**
+   * Get the SCIM schemas
+   * 
+   * @param filter Filtered results are invalid and will result in a 403 (Unauthorized) return. (optional)
+   * @return ScimConfigResourceTypesListResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScimConfigResourceTypesListResponse> getScimSchemasWithHttpInfo(String filter) throws IOException {
+    return getScimSchemas(createGetScimSchemasRequest(filter).withHttpInfo());
+  }
+
+  private GetScimSchemasRequest createGetScimSchemasRequest(String filter) {
+    return GetScimSchemasRequest.builder()
+            .withFilter(filter)
+    
+            .build();
+  }
+
+  /**
+   * Get the SCIM schemas
+   * 
+   * @param request The request object
+   * @return ScimConfigResourceTypesListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScimConfigResourceTypesListResponse getScimSchemas(GetScimSchemasRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScimConfigResourceTypesListResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScimConfigResourceTypesListResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the SCIM schemas
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScimConfigResourceTypesListResponse> getScimSchemas(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScimConfigResourceTypesListResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScimConfigResourceTypesListResponse> response = (ApiResponse<ScimConfigResourceTypesListResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScimConfigResourceTypesListResponse> response = (ApiResponse<ScimConfigResourceTypesListResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get a service provider&#39;s configuration
    * 
    * @param ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/serviceproviderconfig. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  (optional)
@@ -807,8 +987,8 @@ public class SCIMApi {
    * Get a user
    * 
    * @param userId The ID of a user. Returned with GET /api/v2/scim/users. (required)
-   * @param attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
-   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param attributes Indicates which attributes to include. Returns these attributes ant the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output. (optional)
    * @param ifNoneMatch TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. (optional)
    * @return ScimV2User
    * @throws ApiException if the request fails on the server
@@ -822,8 +1002,8 @@ public class SCIMApi {
    * Get a user
    * 
    * @param userId The ID of a user. Returned with GET /api/v2/scim/users. (required)
-   * @param attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
-   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param attributes Indicates which attributes to include. Returns these attributes ant the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output. (optional)
    * @param ifNoneMatch TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. (optional)
    * @return ScimV2User
    * @throws IOException if the request fails to be processed
@@ -899,8 +1079,8 @@ public class SCIMApi {
    * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
    * @param startIndex The 1-based index of the first query result. (optional, default to 1)
    * @param count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (optional, default to 25)
-   * @param attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
-   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param attributes Indicates which attributes to include. Returns these attributes ant the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output. (optional)
    * @param filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;. (optional)
    * @return ScimUserListResponse
    * @throws ApiException if the request fails on the server
@@ -915,8 +1095,8 @@ public class SCIMApi {
    * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
    * @param startIndex The 1-based index of the first query result. (optional, default to 1)
    * @param count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (optional, default to 25)
-   * @param attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
-   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param attributes Indicates which attributes to include. Returns these attributes ant the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output. (optional)
    * @param filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;. (optional)
    * @return ScimUserListResponse
    * @throws IOException if the request fails to be processed
@@ -993,30 +1173,38 @@ public class SCIMApi {
    * Get a group
    * 
    * @param groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
+   * @param attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39;  attributes will always be present in the output. (optional)
    * @param ifNoneMatch TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  (optional)
    * @return ScimV2Group
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ScimV2Group getScimV2Group(String groupId, String ifNoneMatch) throws IOException, ApiException {
-    return  getScimV2Group(createGetScimV2GroupRequest(groupId, ifNoneMatch));
+  public ScimV2Group getScimV2Group(String groupId, List<String> attributes, List<String> excludedAttributes, String ifNoneMatch) throws IOException, ApiException {
+    return  getScimV2Group(createGetScimV2GroupRequest(groupId, attributes, excludedAttributes, ifNoneMatch));
   }
 
   /**
    * Get a group
    * 
    * @param groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
+   * @param attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39;  attributes will always be present in the output. (optional)
    * @param ifNoneMatch TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  (optional)
    * @return ScimV2Group
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScimV2Group> getScimV2GroupWithHttpInfo(String groupId, String ifNoneMatch) throws IOException {
-    return getScimV2Group(createGetScimV2GroupRequest(groupId, ifNoneMatch).withHttpInfo());
+  public ApiResponse<ScimV2Group> getScimV2GroupWithHttpInfo(String groupId, List<String> attributes, List<String> excludedAttributes, String ifNoneMatch) throws IOException {
+    return getScimV2Group(createGetScimV2GroupRequest(groupId, attributes, excludedAttributes, ifNoneMatch).withHttpInfo());
   }
 
-  private GetScimV2GroupRequest createGetScimV2GroupRequest(String groupId, String ifNoneMatch) {
+  private GetScimV2GroupRequest createGetScimV2GroupRequest(String groupId, List<String> attributes, List<String> excludedAttributes, String ifNoneMatch) {
     return GetScimV2GroupRequest.builder()
             .withGroupId(groupId)
+    
+            .withAttributes(attributes)
+    
+            .withExcludedAttributes(excludedAttributes)
     
             .withIfNoneMatch(ifNoneMatch)
     
@@ -1078,12 +1266,14 @@ public class SCIMApi {
    * @param filter Filters results. (required)
    * @param startIndex The 1-based index of the first query result. (optional, default to 1)
    * @param count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (optional, default to 25)
+   * @param attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39;  attributes will always be present in the output. (optional)
    * @return ScimGroupListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ScimGroupListResponse getScimV2Groups(String filter, Integer startIndex, Integer count) throws IOException, ApiException {
-    return  getScimV2Groups(createGetScimV2GroupsRequest(filter, startIndex, count));
+  public ScimGroupListResponse getScimV2Groups(String filter, Integer startIndex, Integer count, List<String> attributes, List<String> excludedAttributes) throws IOException, ApiException {
+    return  getScimV2Groups(createGetScimV2GroupsRequest(filter, startIndex, count, attributes, excludedAttributes));
   }
 
   /**
@@ -1092,20 +1282,26 @@ public class SCIMApi {
    * @param filter Filters results. (required)
    * @param startIndex The 1-based index of the first query result. (optional, default to 1)
    * @param count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (optional, default to 25)
+   * @param attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39;  attributes will always be present in the output. (optional)
    * @return ScimGroupListResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScimGroupListResponse> getScimV2GroupsWithHttpInfo(String filter, Integer startIndex, Integer count) throws IOException {
-    return getScimV2Groups(createGetScimV2GroupsRequest(filter, startIndex, count).withHttpInfo());
+  public ApiResponse<ScimGroupListResponse> getScimV2GroupsWithHttpInfo(String filter, Integer startIndex, Integer count, List<String> attributes, List<String> excludedAttributes) throws IOException {
+    return getScimV2Groups(createGetScimV2GroupsRequest(filter, startIndex, count, attributes, excludedAttributes).withHttpInfo());
   }
 
-  private GetScimV2GroupsRequest createGetScimV2GroupsRequest(String filter, Integer startIndex, Integer count) {
+  private GetScimV2GroupsRequest createGetScimV2GroupsRequest(String filter, Integer startIndex, Integer count, List<String> attributes, List<String> excludedAttributes) {
     return GetScimV2GroupsRequest.builder()
             .withFilter(filter)
     
             .withStartIndex(startIndex)
     
             .withCount(count)
+    
+            .withAttributes(attributes)
+    
+            .withExcludedAttributes(excludedAttributes)
     
             .build();
   }
@@ -1314,6 +1510,164 @@ public class SCIMApi {
 
   
   /**
+   * Get the SCIM schema by id
+   * 
+   * @param schemaId The ID of a schema. (required)
+   * @return ScimV2SchemaDefinition
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScimV2SchemaDefinition getScimV2Schema(String schemaId) throws IOException, ApiException {
+    return  getScimV2Schema(createGetScimV2SchemaRequest(schemaId));
+  }
+
+  /**
+   * Get the SCIM schema by id
+   * 
+   * @param schemaId The ID of a schema. (required)
+   * @return ScimV2SchemaDefinition
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScimV2SchemaDefinition> getScimV2SchemaWithHttpInfo(String schemaId) throws IOException {
+    return getScimV2Schema(createGetScimV2SchemaRequest(schemaId).withHttpInfo());
+  }
+
+  private GetScimV2SchemaRequest createGetScimV2SchemaRequest(String schemaId) {
+    return GetScimV2SchemaRequest.builder()
+            .withSchemaId(schemaId)
+    
+            .build();
+  }
+
+  /**
+   * Get the SCIM schema by id
+   * 
+   * @param request The request object
+   * @return ScimV2SchemaDefinition
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScimV2SchemaDefinition getScimV2Schema(GetScimV2SchemaRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScimV2SchemaDefinition> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScimV2SchemaDefinition>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the SCIM schema by id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScimV2SchemaDefinition> getScimV2Schema(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScimV2SchemaDefinition>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScimV2SchemaDefinition> response = (ApiResponse<ScimV2SchemaDefinition>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScimV2SchemaDefinition> response = (ApiResponse<ScimV2SchemaDefinition>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the SCIM schemas
+   * 
+   * @param filter Filtered results are invalid and will result in a 403 (Unauthorized) return. (optional)
+   * @return ScimV2SchemaListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScimV2SchemaListResponse getScimV2Schemas(String filter) throws IOException, ApiException {
+    return  getScimV2Schemas(createGetScimV2SchemasRequest(filter));
+  }
+
+  /**
+   * Get the SCIM schemas
+   * 
+   * @param filter Filtered results are invalid and will result in a 403 (Unauthorized) return. (optional)
+   * @return ScimV2SchemaListResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScimV2SchemaListResponse> getScimV2SchemasWithHttpInfo(String filter) throws IOException {
+    return getScimV2Schemas(createGetScimV2SchemasRequest(filter).withHttpInfo());
+  }
+
+  private GetScimV2SchemasRequest createGetScimV2SchemasRequest(String filter) {
+    return GetScimV2SchemasRequest.builder()
+            .withFilter(filter)
+    
+            .build();
+  }
+
+  /**
+   * Get the SCIM schemas
+   * 
+   * @param request The request object
+   * @return ScimV2SchemaListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScimV2SchemaListResponse getScimV2Schemas(GetScimV2SchemasRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScimV2SchemaListResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScimV2SchemaListResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the SCIM schemas
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScimV2SchemaListResponse> getScimV2Schemas(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScimV2SchemaListResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScimV2SchemaListResponse> response = (ApiResponse<ScimV2SchemaListResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScimV2SchemaListResponse> response = (ApiResponse<ScimV2SchemaListResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get a service provider&#39;s configuration
    * 
    * @param ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.  (optional)
@@ -1396,8 +1750,8 @@ public class SCIMApi {
    * Get a user
    * 
    * @param userId The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
-   * @param attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
-   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param attributes Indicates which attributes to include. Returns these attributes ant the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output. (optional)
    * @param ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. (optional)
    * @return ScimV2User
    * @throws ApiException if the request fails on the server
@@ -1411,8 +1765,8 @@ public class SCIMApi {
    * Get a user
    * 
    * @param userId The ID of a user. Returned with GET /api/v2/scim/v2/users. (required)
-   * @param attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
-   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param attributes Indicates which attributes to include. Returns these attributes ant the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output. (optional)
    * @param ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. (optional)
    * @return ScimV2User
    * @throws IOException if the request fails to be processed
@@ -1488,8 +1842,8 @@ public class SCIMApi {
    * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
    * @param startIndex The 1-based index of the first query result. (optional, default to 1)
    * @param count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (optional, default to 25)
-   * @param attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
-   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param attributes Indicates which attributes to include. Returns these attributes ant the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output. (optional)
    * @param filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;. (optional)
    * @return ScimUserListResponse
    * @throws ApiException if the request fails on the server
@@ -1504,8 +1858,8 @@ public class SCIMApi {
    * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
    * @param startIndex The 1-based index of the first query result. (optional, default to 1)
    * @param count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (optional, default to 25)
-   * @param attributes Indicates which attributes to include. Returns these attributes and the default attributes (externalId, enterprise-user:manager, roles). Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
-   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes (externalId, enterprise-user:manager, roles) minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param attributes Indicates which attributes to include. Returns these attributes ant the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output. (optional)
    * @param filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;. (optional)
    * @return ScimUserListResponse
    * @throws IOException if the request fails to be processed

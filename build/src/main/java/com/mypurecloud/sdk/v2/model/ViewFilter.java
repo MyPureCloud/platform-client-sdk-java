@@ -528,6 +528,10 @@ public class ViewFilter  implements Serializable {
   private Boolean hasJourneyVisitId = null;
   private List<String> oauthClientIds = new ArrayList<String>();
   private List<String> apiOperations = new ArrayList<String>();
+  private Boolean hasMedia = null;
+  private List<String> roleIds = new ArrayList<String>();
+  private List<String> reportsTos = new ArrayList<String>();
+  private List<String> locationIds = new ArrayList<String>();
 
   
   /**
@@ -1988,6 +1992,78 @@ public class ViewFilter  implements Serializable {
   }
 
   
+  /**
+   * Indicates filtering for presence of MMS media
+   **/
+  public ViewFilter hasMedia(Boolean hasMedia) {
+    this.hasMedia = hasMedia;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates filtering for presence of MMS media")
+  @JsonProperty("hasMedia")
+  public Boolean getHasMedia() {
+    return hasMedia;
+  }
+  public void setHasMedia(Boolean hasMedia) {
+    this.hasMedia = hasMedia;
+  }
+
+  
+  /**
+   * The role Ids used to filter the view
+   **/
+  public ViewFilter roleIds(List<String> roleIds) {
+    this.roleIds = roleIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The role Ids used to filter the view")
+  @JsonProperty("roleIds")
+  public List<String> getRoleIds() {
+    return roleIds;
+  }
+  public void setRoleIds(List<String> roleIds) {
+    this.roleIds = roleIds;
+  }
+
+  
+  /**
+   * The report to user IDs used to filter the view
+   **/
+  public ViewFilter reportsTos(List<String> reportsTos) {
+    this.reportsTos = reportsTos;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The report to user IDs used to filter the view")
+  @JsonProperty("reportsTos")
+  public List<String> getReportsTos() {
+    return reportsTos;
+  }
+  public void setReportsTos(List<String> reportsTos) {
+    this.reportsTos = reportsTos;
+  }
+
+  
+  /**
+   * The location Ids used to filter the view
+   **/
+  public ViewFilter locationIds(List<String> locationIds) {
+    this.locationIds = locationIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The location Ids used to filter the view")
+  @JsonProperty("locationIds")
+  public List<String> getLocationIds() {
+    return locationIds;
+  }
+  public void setLocationIds(List<String> locationIds) {
+    this.locationIds = locationIds;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -2078,12 +2154,16 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.hasJourneyActionMapId, viewFilter.hasJourneyActionMapId) &&
         Objects.equals(this.hasJourneyVisitId, viewFilter.hasJourneyVisitId) &&
         Objects.equals(this.oauthClientIds, viewFilter.oauthClientIds) &&
-        Objects.equals(this.apiOperations, viewFilter.apiOperations);
+        Objects.equals(this.apiOperations, viewFilter.apiOperations) &&
+        Objects.equals(this.hasMedia, viewFilter.hasMedia) &&
+        Objects.equals(this.roleIds, viewFilter.roleIds) &&
+        Objects.equals(this.reportsTos, viewFilter.reportsTos) &&
+        Objects.equals(this.locationIds, viewFilter.locationIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, showSecondaryStatus, agentDurationSortOrder, waitingDurationSortOrder, interactingDurationSortOrder, agentName, skillsList, languageList, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, statusList, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, oauthClientIds, apiOperations);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, showSecondaryStatus, agentDurationSortOrder, waitingDurationSortOrder, interactingDurationSortOrder, agentName, skillsList, languageList, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, statusList, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, oauthClientIds, apiOperations, hasMedia, roleIds, reportsTos, locationIds);
   }
 
   @Override
@@ -2172,6 +2252,10 @@ public class ViewFilter  implements Serializable {
     sb.append("    hasJourneyVisitId: ").append(toIndentedString(hasJourneyVisitId)).append("\n");
     sb.append("    oauthClientIds: ").append(toIndentedString(oauthClientIds)).append("\n");
     sb.append("    apiOperations: ").append(toIndentedString(apiOperations)).append("\n");
+    sb.append("    hasMedia: ").append(toIndentedString(hasMedia)).append("\n");
+    sb.append("    roleIds: ").append(toIndentedString(roleIds)).append("\n");
+    sb.append("    reportsTos: ").append(toIndentedString(reportsTos)).append("\n");
+    sb.append("    locationIds: ").append(toIndentedString(locationIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

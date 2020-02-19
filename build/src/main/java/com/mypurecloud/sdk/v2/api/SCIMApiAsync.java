@@ -23,6 +23,8 @@ import com.mypurecloud.sdk.v2.model.ScimConfigResourceTypesListResponse;
 import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfig;
 import com.mypurecloud.sdk.v2.model.ScimV2User;
 import com.mypurecloud.sdk.v2.model.ScimUserListResponse;
+import com.mypurecloud.sdk.v2.model.ScimV2SchemaDefinition;
+import com.mypurecloud.sdk.v2.model.ScimV2SchemaListResponse;
 import com.mypurecloud.sdk.v2.model.ScimV2PatchRequest;
 import com.mypurecloud.sdk.v2.model.ScimV2CreateUser;
 
@@ -35,6 +37,8 @@ import com.mypurecloud.sdk.v2.api.request.GetScimGroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimGroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimResourcetypeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimResourcetypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScimSchemaRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScimSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimServiceproviderconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimUsersRequest;
@@ -42,6 +46,8 @@ import com.mypurecloud.sdk.v2.api.request.GetScimV2GroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimV2GroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimV2ResourcetypeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimV2ResourcetypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScimV2SchemaRequest;
+import com.mypurecloud.sdk.v2.api.request.GetScimV2SchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimV2ServiceproviderconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimV2UserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetScimV2UsersRequest;
@@ -687,6 +693,158 @@ public class SCIMApiAsync {
 
   
   /**
+   * Get the SCIM schema by id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScimConfigResourceType> getScimSchemaAsync(GetScimSchemaRequest request, final AsyncApiCallback<ScimConfigResourceType> callback) {
+    try {
+      final SettableFuture<ScimConfigResourceType> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScimConfigResourceType>() {}, new AsyncApiCallback<ApiResponse<ScimConfigResourceType>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScimConfigResourceType> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the SCIM schema by id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScimConfigResourceType>> getScimSchemaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScimConfigResourceType>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScimConfigResourceType>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScimConfigResourceType>() {}, new AsyncApiCallback<ApiResponse<ScimConfigResourceType>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScimConfigResourceType> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScimConfigResourceType> response = (ApiResponse<ScimConfigResourceType>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScimConfigResourceType> response = (ApiResponse<ScimConfigResourceType>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the SCIM schemas
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScimConfigResourceTypesListResponse> getScimSchemasAsync(GetScimSchemasRequest request, final AsyncApiCallback<ScimConfigResourceTypesListResponse> callback) {
+    try {
+      final SettableFuture<ScimConfigResourceTypesListResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScimConfigResourceTypesListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimConfigResourceTypesListResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScimConfigResourceTypesListResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the SCIM schemas
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScimConfigResourceTypesListResponse>> getScimSchemasAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScimConfigResourceTypesListResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScimConfigResourceTypesListResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScimConfigResourceTypesListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimConfigResourceTypesListResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScimConfigResourceTypesListResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScimConfigResourceTypesListResponse> response = (ApiResponse<ScimConfigResourceTypesListResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScimConfigResourceTypesListResponse> response = (ApiResponse<ScimConfigResourceTypesListResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get a service provider&#39;s configuration
    * 
    * @param request the request object
@@ -1206,6 +1364,158 @@ public class SCIMApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ScimConfigResourceTypesListResponse> response = (ApiResponse<ScimConfigResourceTypesListResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the SCIM schema by id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScimV2SchemaDefinition> getScimV2SchemaAsync(GetScimV2SchemaRequest request, final AsyncApiCallback<ScimV2SchemaDefinition> callback) {
+    try {
+      final SettableFuture<ScimV2SchemaDefinition> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScimV2SchemaDefinition>() {}, new AsyncApiCallback<ApiResponse<ScimV2SchemaDefinition>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScimV2SchemaDefinition> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the SCIM schema by id
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScimV2SchemaDefinition>> getScimV2SchemaAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScimV2SchemaDefinition>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScimV2SchemaDefinition>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScimV2SchemaDefinition>() {}, new AsyncApiCallback<ApiResponse<ScimV2SchemaDefinition>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScimV2SchemaDefinition> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScimV2SchemaDefinition> response = (ApiResponse<ScimV2SchemaDefinition>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScimV2SchemaDefinition> response = (ApiResponse<ScimV2SchemaDefinition>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the SCIM schemas
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ScimV2SchemaListResponse> getScimV2SchemasAsync(GetScimV2SchemasRequest request, final AsyncApiCallback<ScimV2SchemaListResponse> callback) {
+    try {
+      final SettableFuture<ScimV2SchemaListResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScimV2SchemaListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimV2SchemaListResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScimV2SchemaListResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the SCIM schemas
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ScimV2SchemaListResponse>> getScimV2SchemasAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ScimV2SchemaListResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ScimV2SchemaListResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ScimV2SchemaListResponse>() {}, new AsyncApiCallback<ApiResponse<ScimV2SchemaListResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ScimV2SchemaListResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScimV2SchemaListResponse> response = (ApiResponse<ScimV2SchemaListResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ScimV2SchemaListResponse> response = (ApiResponse<ScimV2SchemaListResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -78,6 +78,7 @@ import com.mypurecloud.sdk.v2.model.CreateWebChatMessageRequest;
 import com.mypurecloud.sdk.v2.model.WebChatTyping;
 import com.mypurecloud.sdk.v2.model.CreateWebChatRequest;
 import com.mypurecloud.sdk.v2.model.InboundMessageRequest;
+import com.mypurecloud.sdk.v2.model.CopyAttachmentsRequest;
 import com.mypurecloud.sdk.v2.model.CreateEmailRequest;
 import com.mypurecloud.sdk.v2.model.FaxSendResponse;
 import com.mypurecloud.sdk.v2.model.FaxSendRequest;
@@ -207,6 +208,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsChatsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCobrowsesessionParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailInboundmessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailMessagesDraftAttachmentsCopyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsEmailsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsFaxesRequest;
@@ -9634,6 +9636,89 @@ public class ConversationsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<EmailMessage> postConversationsEmailMessages(ApiRequest<EmailMessage> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EmailMessage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailMessage> response = (ApiResponse<EmailMessage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EmailMessage> response = (ApiResponse<EmailMessage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Copy attachments from an email message to the current draft.
+   * 
+   * @param conversationId conversationId (required)
+   * @param body Copy Attachment Request (required)
+   * @return EmailMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmailMessage postConversationsEmailMessagesDraftAttachmentsCopy(String conversationId, CopyAttachmentsRequest body) throws IOException, ApiException {
+    return  postConversationsEmailMessagesDraftAttachmentsCopy(createPostConversationsEmailMessagesDraftAttachmentsCopyRequest(conversationId, body));
+  }
+
+  /**
+   * Copy attachments from an email message to the current draft.
+   * 
+   * @param conversationId conversationId (required)
+   * @param body Copy Attachment Request (required)
+   * @return EmailMessage
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmailMessage> postConversationsEmailMessagesDraftAttachmentsCopyWithHttpInfo(String conversationId, CopyAttachmentsRequest body) throws IOException {
+    return postConversationsEmailMessagesDraftAttachmentsCopy(createPostConversationsEmailMessagesDraftAttachmentsCopyRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PostConversationsEmailMessagesDraftAttachmentsCopyRequest createPostConversationsEmailMessagesDraftAttachmentsCopyRequest(String conversationId, CopyAttachmentsRequest body) {
+    return PostConversationsEmailMessagesDraftAttachmentsCopyRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Copy attachments from an email message to the current draft.
+   * 
+   * @param request The request object
+   * @return EmailMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EmailMessage postConversationsEmailMessagesDraftAttachmentsCopy(PostConversationsEmailMessagesDraftAttachmentsCopyRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EmailMessage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EmailMessage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Copy attachments from an email message to the current draft.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EmailMessage> postConversationsEmailMessagesDraftAttachmentsCopy(ApiRequest<CopyAttachmentsRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<EmailMessage>() {});
     }

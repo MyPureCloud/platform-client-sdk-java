@@ -1,0 +1,99 @@
+package com.mypurecloud.sdk.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+import java.io.Serializable;
+/**
+ * Routing language assigned to user.
+ */
+@ApiModel(description = "Routing language assigned to user.")
+
+public class ScimUserRoutingLanguage  implements Serializable {
+  
+  private String name = null;
+  private Double proficiency = null;
+
+  
+  /**
+   * Case-sensitive name identifying a language configured in routing languages.
+   **/
+  public ScimUserRoutingLanguage name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Case-sensitive name identifying a language configured in routing languages.")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  
+  /**
+   * Proficiency is a rating from 0.0 to 5.0 on how competent an agent is for a particular language. It is used when a queue is set to \"Best available language\" mode to allow acd interactions to target agents with higher proficiency ratings.
+   **/
+  public ScimUserRoutingLanguage proficiency(Double proficiency) {
+    this.proficiency = proficiency;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Proficiency is a rating from 0.0 to 5.0 on how competent an agent is for a particular language. It is used when a queue is set to \"Best available language\" mode to allow acd interactions to target agents with higher proficiency ratings.")
+  @JsonProperty("proficiency")
+  public Double getProficiency() {
+    return proficiency;
+  }
+  public void setProficiency(Double proficiency) {
+    this.proficiency = proficiency;
+  }
+
+  
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    ScimUserRoutingLanguage scimUserRoutingLanguage = (ScimUserRoutingLanguage) o;
+    return Objects.equals(this.name, scimUserRoutingLanguage.name) &&
+        Objects.equals(this.proficiency, scimUserRoutingLanguage.proficiency);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(name, proficiency);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class ScimUserRoutingLanguage {\n");
+    
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    proficiency: ").append(toIndentedString(proficiency)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+

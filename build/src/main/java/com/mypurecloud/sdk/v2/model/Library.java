@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -21,6 +22,40 @@ public class Library  implements Serializable {
   private Integer version = null;
   private User createdBy = null;
   private Date dateCreated = null;
+
+  /**
+   * The response type for the library. If set, only response's of this type may be added to this library.
+   */
+  public enum ResponseTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    MESSAGINGTEMPLATE("MessagingTemplate");
+
+    private String value;
+
+    ResponseTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ResponseTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ResponseTypeEnum value : ResponseTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ResponseTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ResponseTypeEnum responseType = null;
   private String selfUri = null;
 
   
@@ -49,31 +84,22 @@ public class Library  implements Serializable {
   }
 
   
-  /**
-   **/
-  public Library version(Integer version) {
-    this.version = version;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Current version for this resource.")
   @JsonProperty("version")
   public Integer getVersion() {
     return version;
   }
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
 
   
   /**
+   * User that created the library.
    **/
   public Library createdBy(User createdBy) {
     this.createdBy = createdBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "User that created the library.")
   @JsonProperty("createdBy")
   public User getCreatedBy() {
     return createdBy;
@@ -83,21 +109,28 @@ public class Library  implements Serializable {
   }
 
   
-  /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
-   **/
-  public Library dateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The date and time the response was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
   }
-  public void setDateCreated(Date dateCreated) {
-    this.dateCreated = dateCreated;
+
+  
+  /**
+   * The response type for the library. If set, only response's of this type may be added to this library.
+   **/
+  public Library responseType(ResponseTypeEnum responseType) {
+    this.responseType = responseType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The response type for the library. If set, only response's of this type may be added to this library.")
+  @JsonProperty("responseType")
+  public ResponseTypeEnum getResponseType() {
+    return responseType;
+  }
+  public void setResponseType(ResponseTypeEnum responseType) {
+    this.responseType = responseType;
   }
 
   
@@ -123,12 +156,13 @@ public class Library  implements Serializable {
         Objects.equals(this.version, library.version) &&
         Objects.equals(this.createdBy, library.createdBy) &&
         Objects.equals(this.dateCreated, library.dateCreated) &&
+        Objects.equals(this.responseType, library.responseType) &&
         Objects.equals(this.selfUri, library.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, version, createdBy, dateCreated, selfUri);
+    return Objects.hash(id, name, version, createdBy, dateCreated, responseType, selfUri);
   }
 
   @Override
@@ -141,6 +175,7 @@ public class Library  implements Serializable {
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    responseType: ").append(toIndentedString(responseType)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

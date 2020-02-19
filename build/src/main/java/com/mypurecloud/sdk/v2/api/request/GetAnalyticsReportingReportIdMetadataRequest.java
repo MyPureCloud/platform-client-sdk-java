@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiG
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobListing;
+import com.mypurecloud.sdk.v2.model.ReportingExportMetadataJobListing;
 import com.mypurecloud.sdk.v2.model.ReportMetaDataEntityListing;
 import com.mypurecloud.sdk.v2.model.ReportMetaData;
 import com.mypurecloud.sdk.v2.model.ReportSchedule;

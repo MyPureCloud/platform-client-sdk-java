@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiG
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobListing;
+import com.mypurecloud.sdk.v2.model.ReportingExportMetadataJobListing;
 import com.mypurecloud.sdk.v2.model.ReportMetaDataEntityListing;
 import com.mypurecloud.sdk.v2.model.ReportMetaData;
 import com.mypurecloud.sdk.v2.model.ReportSchedule;
@@ -60,6 +61,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsReques
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingExportsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingExportsMetadataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingMetadataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingReportIdMetadataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingReportformatsRequest;
@@ -726,6 +728,81 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ReportingExportJobListing> response = (ApiResponse<ReportingExportJobListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get all export metadata
+   * 
+   * @return ReportingExportMetadataJobListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ReportingExportMetadataJobListing getAnalyticsReportingExportsMetadata() throws IOException, ApiException {
+    return  getAnalyticsReportingExportsMetadata(createGetAnalyticsReportingExportsMetadataRequest());
+  }
+
+  /**
+   * Get all export metadata
+   * 
+   * @return ReportingExportMetadataJobListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ReportingExportMetadataJobListing> getAnalyticsReportingExportsMetadataWithHttpInfo() throws IOException {
+    return getAnalyticsReportingExportsMetadata(createGetAnalyticsReportingExportsMetadataRequest().withHttpInfo());
+  }
+
+  private GetAnalyticsReportingExportsMetadataRequest createGetAnalyticsReportingExportsMetadataRequest() {
+    return GetAnalyticsReportingExportsMetadataRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get all export metadata
+   * 
+   * @param request The request object
+   * @return ReportingExportMetadataJobListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ReportingExportMetadataJobListing getAnalyticsReportingExportsMetadata(GetAnalyticsReportingExportsMetadataRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ReportingExportMetadataJobListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ReportingExportMetadataJobListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get all export metadata
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ReportingExportMetadataJobListing> getAnalyticsReportingExportsMetadata(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ReportingExportMetadataJobListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ReportingExportMetadataJobListing> response = (ApiResponse<ReportingExportMetadataJobListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ReportingExportMetadataJobListing> response = (ApiResponse<ReportingExportMetadataJobListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

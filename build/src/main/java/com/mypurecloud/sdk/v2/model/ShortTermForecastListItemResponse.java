@@ -18,6 +18,7 @@ import java.io.Serializable;
 public class ShortTermForecastListItemResponse  implements Serializable {
   
   private String id = null;
+  private String selfUri = null;
   private String weekDate = null;
   private String description = null;
 
@@ -57,24 +58,19 @@ public class ShortTermForecastListItemResponse  implements Serializable {
   }
   private CreationMethodEnum creationMethod = null;
   private WfmVersionedEntityMetadata metadata = null;
-  private String selfUri = null;
 
   
-  /**
-   * The id of the short term forecast
-   **/
-  public ShortTermForecastListItemResponse id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "The id of the short term forecast")
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")
   public String getId() {
     return id;
   }
-  public void setId(String id) {
-    this.id = id;
+
+  
+  @ApiModelProperty(example = "null", value = "The URI for this object")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
   }
 
   
@@ -139,13 +135,6 @@ public class ShortTermForecastListItemResponse  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The URI for this object")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -157,16 +146,16 @@ public class ShortTermForecastListItemResponse  implements Serializable {
     }
     ShortTermForecastListItemResponse shortTermForecastListItemResponse = (ShortTermForecastListItemResponse) o;
     return Objects.equals(this.id, shortTermForecastListItemResponse.id) &&
+        Objects.equals(this.selfUri, shortTermForecastListItemResponse.selfUri) &&
         Objects.equals(this.weekDate, shortTermForecastListItemResponse.weekDate) &&
         Objects.equals(this.description, shortTermForecastListItemResponse.description) &&
         Objects.equals(this.creationMethod, shortTermForecastListItemResponse.creationMethod) &&
-        Objects.equals(this.metadata, shortTermForecastListItemResponse.metadata) &&
-        Objects.equals(this.selfUri, shortTermForecastListItemResponse.selfUri);
+        Objects.equals(this.metadata, shortTermForecastListItemResponse.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, weekDate, description, creationMethod, metadata, selfUri);
+    return Objects.hash(id, selfUri, weekDate, description, creationMethod, metadata);
   }
 
   @Override
@@ -175,11 +164,11 @@ public class ShortTermForecastListItemResponse  implements Serializable {
     sb.append("class ShortTermForecastListItemResponse {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    weekDate: ").append(toIndentedString(weekDate)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    creationMethod: ").append(toIndentedString(creationMethod)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }
