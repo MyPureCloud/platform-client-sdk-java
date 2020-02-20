@@ -85,6 +85,11 @@ public class GetQualitySurveysScorableRequest {
 
     public ApiRequest<Void> withHttpInfo() {
         
+        // verify the required parameter 'customerSurveyUrl' is set
+        if (this.customerSurveyUrl == null) {
+            throw new IllegalStateException("Missing the required parameter 'customerSurveyUrl' when building request for GetQualitySurveysScorableRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("GET", "/api/v2/quality/surveys/scorable")
                 .withQueryParameters("customerSurveyUrl", "", customerSurveyUrl)
@@ -100,6 +105,11 @@ public class GetQualitySurveysScorableRequest {
 		return new Builder();
 	}
 
+	
+	public static Builder builder(String customerSurveyUrl) {
+	    return new Builder()
+	            .withRequiredParams(customerSurveyUrl);
+	}
 	
 
 	public static class Builder {
@@ -117,8 +127,19 @@ public class GetQualitySurveysScorableRequest {
 		
 
 		
+		public Builder withRequiredParams(String customerSurveyUrl) {
+			request.setCustomerSurveyUrl(customerSurveyUrl);
+			
+			return this;
+		}
+		
 
 		public GetQualitySurveysScorableRequest build() {
+            
+            // verify the required parameter 'customerSurveyUrl' is set
+            if (request.customerSurveyUrl == null) {
+                throw new IllegalStateException("Missing the required parameter 'customerSurveyUrl' when building request for GetQualitySurveysScorableRequest.");
+            }
             
 			return request;
 		}

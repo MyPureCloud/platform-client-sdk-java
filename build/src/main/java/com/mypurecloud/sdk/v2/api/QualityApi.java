@@ -3302,7 +3302,7 @@ public class QualityApi {
   /**
    * Get a survey as an end-customer, for the purposes of scoring it.
    * 
-   * @param customerSurveyUrl customerSurveyUrl (optional)
+   * @param customerSurveyUrl customerSurveyUrl (required)
    * @return ScorableSurvey
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3314,7 +3314,7 @@ public class QualityApi {
   /**
    * Get a survey as an end-customer, for the purposes of scoring it.
    * 
-   * @param customerSurveyUrl customerSurveyUrl (optional)
+   * @param customerSurveyUrl customerSurveyUrl (required)
    * @return ScorableSurvey
    * @throws IOException if the request fails to be processed
    */
