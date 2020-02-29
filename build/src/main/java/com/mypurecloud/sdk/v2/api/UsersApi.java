@@ -855,12 +855,13 @@ public class UsersApi {
    * 
    * @param jobId jobId (required)
    * @param cursor Indicates where to resume query results (not required for first page) (optional)
+   * @param pageSize The desired maximum number of results (optional)
    * @return AnalyticsUserDetailsAsyncQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AnalyticsUserDetailsAsyncQueryResponse getAnalyticsUsersDetailsJobResults(String jobId, String cursor) throws IOException, ApiException {
-    return  getAnalyticsUsersDetailsJobResults(createGetAnalyticsUsersDetailsJobResultsRequest(jobId, cursor));
+  public AnalyticsUserDetailsAsyncQueryResponse getAnalyticsUsersDetailsJobResults(String jobId, String cursor, Integer pageSize) throws IOException, ApiException {
+    return  getAnalyticsUsersDetailsJobResults(createGetAnalyticsUsersDetailsJobResultsRequest(jobId, cursor, pageSize));
   }
 
   /**
@@ -868,18 +869,21 @@ public class UsersApi {
    * 
    * @param jobId jobId (required)
    * @param cursor Indicates where to resume query results (not required for first page) (optional)
+   * @param pageSize The desired maximum number of results (optional)
    * @return AnalyticsUserDetailsAsyncQueryResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AnalyticsUserDetailsAsyncQueryResponse> getAnalyticsUsersDetailsJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
-    return getAnalyticsUsersDetailsJobResults(createGetAnalyticsUsersDetailsJobResultsRequest(jobId, cursor).withHttpInfo());
+  public ApiResponse<AnalyticsUserDetailsAsyncQueryResponse> getAnalyticsUsersDetailsJobResultsWithHttpInfo(String jobId, String cursor, Integer pageSize) throws IOException {
+    return getAnalyticsUsersDetailsJobResults(createGetAnalyticsUsersDetailsJobResultsRequest(jobId, cursor, pageSize).withHttpInfo());
   }
 
-  private GetAnalyticsUsersDetailsJobResultsRequest createGetAnalyticsUsersDetailsJobResultsRequest(String jobId, String cursor) {
+  private GetAnalyticsUsersDetailsJobResultsRequest createGetAnalyticsUsersDetailsJobResultsRequest(String jobId, String cursor, Integer pageSize) {
     return GetAnalyticsUsersDetailsJobResultsRequest.builder()
             .withJobId(jobId)
     
             .withCursor(cursor)
+    
+            .withPageSize(pageSize)
     
             .build();
   }

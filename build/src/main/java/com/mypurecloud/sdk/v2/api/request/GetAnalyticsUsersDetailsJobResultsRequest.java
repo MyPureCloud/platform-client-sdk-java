@@ -95,6 +95,20 @@ public class GetAnalyticsUsersDetailsJobResultsRequest {
 	    return this;
 	} 
 	
+	private Integer pageSize;
+	public Integer getPageSize() {
+		return this.pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public GetAnalyticsUsersDetailsJobResultsRequest withPageSize(Integer pageSize) {
+	    this.setPageSize(pageSize);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -126,6 +140,8 @@ public class GetAnalyticsUsersDetailsJobResultsRequest {
                 .withPathParameter("jobId", jobId)
         
                 .withQueryParameters("cursor", "", cursor)
+        
+                .withQueryParameters("pageSize", "", pageSize)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -160,6 +176,11 @@ public class GetAnalyticsUsersDetailsJobResultsRequest {
 		
 		public Builder withCursor(String cursor) {
 			request.setCursor(cursor);
+			return this;
+		}
+		
+		public Builder withPageSize(Integer pageSize) {
+			request.setPageSize(pageSize);
 			return this;
 		}
 		

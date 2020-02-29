@@ -132,6 +132,7 @@ public class AuditLogMessage  implements Serializable {
     WRAPUPCODE("WrapupCode"),
     ACCESSTOKEN("AccessToken"),
     OAUTHCLIENT("OAuthClient"),
+    OAUTHCLIENTAUTHORIZATION("OAuthClientAuthorization"),
     AUTHORGANIZATION("AuthOrganization"),
     AUTHUSER("AuthUser"),
     BULKACTIONS("BulkActions"),

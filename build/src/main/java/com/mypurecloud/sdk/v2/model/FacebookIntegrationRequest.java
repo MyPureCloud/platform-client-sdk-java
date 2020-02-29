@@ -104,14 +104,14 @@ public class FacebookIntegrationRequest  implements Serializable {
 
   
   /**
-   * The app Id of a facebook app
+   * The app Id of a facebook app. The appId is required when a customer wants to use their own approved facebook app.
    **/
   public FacebookIntegrationRequest appId(String appId) {
     this.appId = appId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The app Id of a facebook app")
+  @ApiModelProperty(example = "null", value = "The app Id of a facebook app. The appId is required when a customer wants to use their own approved facebook app.")
   @JsonProperty("appId")
   public String getAppId() {
     return appId;
@@ -122,14 +122,14 @@ public class FacebookIntegrationRequest  implements Serializable {
 
   
   /**
-   * The app Secret of a facebook app
+   * The app Secret of a facebook app. The appSecret is required when appId is provided.
    **/
   public FacebookIntegrationRequest appSecret(String appSecret) {
     this.appSecret = appSecret;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The app Secret of a facebook app")
+  @ApiModelProperty(example = "null", value = "The app Secret of a facebook app. The appSecret is required when appId is provided.")
   @JsonProperty("appSecret")
   public String getAppSecret() {
     return appSecret;

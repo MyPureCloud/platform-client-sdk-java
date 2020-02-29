@@ -580,12 +580,13 @@ public class AnalyticsApi {
    * 
    * @param jobId jobId (required)
    * @param cursor Indicates where to resume query results (not required for first page) (optional)
+   * @param pageSize The desired maximum number of results (optional)
    * @return AnalyticsConversationAsyncQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AnalyticsConversationAsyncQueryResponse getAnalyticsConversationsDetailsJobResults(String jobId, String cursor) throws IOException, ApiException {
-    return  getAnalyticsConversationsDetailsJobResults(createGetAnalyticsConversationsDetailsJobResultsRequest(jobId, cursor));
+  public AnalyticsConversationAsyncQueryResponse getAnalyticsConversationsDetailsJobResults(String jobId, String cursor, Integer pageSize) throws IOException, ApiException {
+    return  getAnalyticsConversationsDetailsJobResults(createGetAnalyticsConversationsDetailsJobResultsRequest(jobId, cursor, pageSize));
   }
 
   /**
@@ -593,18 +594,21 @@ public class AnalyticsApi {
    * 
    * @param jobId jobId (required)
    * @param cursor Indicates where to resume query results (not required for first page) (optional)
+   * @param pageSize The desired maximum number of results (optional)
    * @return AnalyticsConversationAsyncQueryResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AnalyticsConversationAsyncQueryResponse> getAnalyticsConversationsDetailsJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
-    return getAnalyticsConversationsDetailsJobResults(createGetAnalyticsConversationsDetailsJobResultsRequest(jobId, cursor).withHttpInfo());
+  public ApiResponse<AnalyticsConversationAsyncQueryResponse> getAnalyticsConversationsDetailsJobResultsWithHttpInfo(String jobId, String cursor, Integer pageSize) throws IOException {
+    return getAnalyticsConversationsDetailsJobResults(createGetAnalyticsConversationsDetailsJobResultsRequest(jobId, cursor, pageSize).withHttpInfo());
   }
 
-  private GetAnalyticsConversationsDetailsJobResultsRequest createGetAnalyticsConversationsDetailsJobResultsRequest(String jobId, String cursor) {
+  private GetAnalyticsConversationsDetailsJobResultsRequest createGetAnalyticsConversationsDetailsJobResultsRequest(String jobId, String cursor, Integer pageSize) {
     return GetAnalyticsConversationsDetailsJobResultsRequest.builder()
             .withJobId(jobId)
     
             .withCursor(cursor)
+    
+            .withPageSize(pageSize)
     
             .build();
   }
@@ -1623,12 +1627,13 @@ public class AnalyticsApi {
    * 
    * @param jobId jobId (required)
    * @param cursor Indicates where to resume query results (not required for first page) (optional)
+   * @param pageSize The desired maximum number of results (optional)
    * @return AnalyticsUserDetailsAsyncQueryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AnalyticsUserDetailsAsyncQueryResponse getAnalyticsUsersDetailsJobResults(String jobId, String cursor) throws IOException, ApiException {
-    return  getAnalyticsUsersDetailsJobResults(createGetAnalyticsUsersDetailsJobResultsRequest(jobId, cursor));
+  public AnalyticsUserDetailsAsyncQueryResponse getAnalyticsUsersDetailsJobResults(String jobId, String cursor, Integer pageSize) throws IOException, ApiException {
+    return  getAnalyticsUsersDetailsJobResults(createGetAnalyticsUsersDetailsJobResultsRequest(jobId, cursor, pageSize));
   }
 
   /**
@@ -1636,18 +1641,21 @@ public class AnalyticsApi {
    * 
    * @param jobId jobId (required)
    * @param cursor Indicates where to resume query results (not required for first page) (optional)
+   * @param pageSize The desired maximum number of results (optional)
    * @return AnalyticsUserDetailsAsyncQueryResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AnalyticsUserDetailsAsyncQueryResponse> getAnalyticsUsersDetailsJobResultsWithHttpInfo(String jobId, String cursor) throws IOException {
-    return getAnalyticsUsersDetailsJobResults(createGetAnalyticsUsersDetailsJobResultsRequest(jobId, cursor).withHttpInfo());
+  public ApiResponse<AnalyticsUserDetailsAsyncQueryResponse> getAnalyticsUsersDetailsJobResultsWithHttpInfo(String jobId, String cursor, Integer pageSize) throws IOException {
+    return getAnalyticsUsersDetailsJobResults(createGetAnalyticsUsersDetailsJobResultsRequest(jobId, cursor, pageSize).withHttpInfo());
   }
 
-  private GetAnalyticsUsersDetailsJobResultsRequest createGetAnalyticsUsersDetailsJobResultsRequest(String jobId, String cursor) {
+  private GetAnalyticsUsersDetailsJobResultsRequest createGetAnalyticsUsersDetailsJobResultsRequest(String jobId, String cursor, Integer pageSize) {
     return GetAnalyticsUsersDetailsJobResultsRequest.builder()
             .withJobId(jobId)
     
             .withCursor(cursor)
+    
+            .withPageSize(pageSize)
     
             .build();
   }

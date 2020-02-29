@@ -80,6 +80,7 @@ title: AuditLogMessage
 | WRAPUPCODE | &quot;WrapupCode&quot; |
 | ACCESSTOKEN | &quot;AccessToken&quot; |
 | OAUTHCLIENT | &quot;OAuthClient&quot; |
+| OAUTHCLIENTAUTHORIZATION | &quot;OAuthClientAuthorization&quot; |
 | AUTHORGANIZATION | &quot;AuthOrganization&quot; |
 | AUTHUSER | &quot;AuthUser&quot; |
 | BULKACTIONS | &quot;BulkActions&quot; |

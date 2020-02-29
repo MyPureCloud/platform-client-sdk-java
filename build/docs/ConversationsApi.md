@@ -901,7 +901,7 @@ try {
 
 
 
-> [AnalyticsConversationAsyncQueryResponse](AnalyticsConversationAsyncQueryResponse.html) getAnalyticsConversationsDetailsJobResults(jobId, cursor)
+> [AnalyticsConversationAsyncQueryResponse](AnalyticsConversationAsyncQueryResponse.html) getAnalyticsConversationsDetailsJobResults(jobId, cursor, pageSize)
 
 Fetch a page of results for an async query
 
@@ -937,8 +937,9 @@ Configuration.setDefaultApiClient(apiClient);
 ConversationsApi apiInstance = new ConversationsApi();
 String jobId = "jobId_example"; // String | jobId
 String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page)
+Integer pageSize = 56; // Integer | The desired maximum number of results
 try {
-    AnalyticsConversationAsyncQueryResponse result = apiInstance.getAnalyticsConversationsDetailsJobResults(jobId, cursor);
+    AnalyticsConversationAsyncQueryResponse result = apiInstance.getAnalyticsConversationsDetailsJobResults(jobId, cursor, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#getAnalyticsConversationsDetailsJobResults");
@@ -953,6 +954,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **jobId** | **String**| jobId | 
 | **cursor** | **String**| Indicates where to resume query results (not required for first page) | [optional] 
+| **pageSize** | **Integer**| The desired maximum number of results | [optional] 
 {: class="table-striped"}
 
 

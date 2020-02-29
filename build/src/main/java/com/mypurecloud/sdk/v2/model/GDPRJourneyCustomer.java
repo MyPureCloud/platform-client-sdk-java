@@ -19,14 +19,14 @@ public class GDPRJourneyCustomer  implements Serializable {
 
   
   /**
-   * The type of the customerId within the Journey System (e.g. cookie).
+   * The type of the customerId within the Journey System (e.g. cookie). Required if `id` is defined.
    **/
   public GDPRJourneyCustomer type(String type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The type of the customerId within the Journey System (e.g. cookie).")
+  @ApiModelProperty(example = "null", value = "The type of the customerId within the Journey System (e.g. cookie). Required if `id` is defined.")
   @JsonProperty("type")
   public String getType() {
     return type;
@@ -37,14 +37,14 @@ public class GDPRJourneyCustomer  implements Serializable {
 
   
   /**
-   * An ID of a customer within the Journey System at a point-in-time.
+   * An ID of a customer within the Journey System at a point-in-time. Required if `type` is defined.
    **/
   public GDPRJourneyCustomer id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "An ID of a customer within the Journey System at a point-in-time.")
+  @ApiModelProperty(example = "null", value = "An ID of a customer within the Journey System at a point-in-time. Required if `type` is defined.")
   @JsonProperty("id")
   public String getId() {
     return id;
