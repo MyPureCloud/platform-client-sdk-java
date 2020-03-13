@@ -15,9 +15,11 @@ import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsAsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
+import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzSubject;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.UserProfileEntityListing;
+import com.mypurecloud.sdk.v2.model.Utilization;
 import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.Adjacents;
 import com.mypurecloud.sdk.v2.model.CallForwarding;
@@ -58,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsUsersDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationSubjectDivisionRoleRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutinglanguageRequest;
@@ -67,11 +70,14 @@ import com.mypurecloud.sdk.v2.api.request.DeleteUserStationDefaultstationRequest
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedPagedMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedPagedSubjectIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedSubjectIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSubjectRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSubjectsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetProfilesUsersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserAdjacentsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserCallforwardingRequest;
@@ -115,6 +121,7 @@ import com.mypurecloud.sdk.v2.api.request.PostUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersMePasswordRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserCallforwardingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserOutofofficeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserProfileskillsRequest;
@@ -282,6 +289,82 @@ public class UsersApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteAuthorizationSubjectDivisionRole(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+   * 
+   * @param userId User ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingUserUtilization(String userId) throws IOException, ApiException {
+     deleteRoutingUserUtilization(createDeleteRoutingUserUtilizationRequest(userId));
+  }
+
+  /**
+   * Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+   * 
+   * @param userId User ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingUserUtilizationWithHttpInfo(String userId) throws IOException {
+    return deleteRoutingUserUtilization(createDeleteRoutingUserUtilizationRequest(userId).withHttpInfo());
+  }
+
+  private DeleteRoutingUserUtilizationRequest createDeleteRoutingUserUtilizationRequest(String userId) {
+    return DeleteRoutingUserUtilizationRequest.builder()
+            .withUserId(userId)
+    
+            .build();
+  }
+
+  /**
+   * Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingUserUtilization(DeleteRoutingUserUtilizationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingUserUtilization(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -938,8 +1021,8 @@ public class UsersApi {
 
   
   /**
-   * Returns whether or not current user can perform the specified action(s).
-   * 
+   * Returns which divisions the current user has the given permission in.
+   * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
    * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
    * @param name Search term to filter by division name (optional)
    * @return List<AuthzDivision>
@@ -951,8 +1034,8 @@ public class UsersApi {
   }
 
   /**
-   * Returns whether or not current user can perform the specified action(s).
-   * 
+   * Returns which divisions the current user has the given permission in.
+   * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
    * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
    * @param name Search term to filter by division name (optional)
    * @return List<AuthzDivision>
@@ -972,8 +1055,8 @@ public class UsersApi {
   }
 
   /**
-   * Returns whether or not current user can perform the specified action(s).
-   * 
+   * Returns which divisions the current user has the given permission in.
+   * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
    * @param request The request object
    * @return List<AuthzDivision>
    * @throws ApiException if the request fails on the server
@@ -991,8 +1074,8 @@ public class UsersApi {
   }
 
   /**
-   * Returns whether or not current user can perform the specified action(s).
-   * 
+   * Returns which divisions the current user has the given permission in.
+   * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1021,8 +1104,186 @@ public class UsersApi {
 
   
   /**
-   * Returns whether or not specified user can perform the specified action(s).
+   * Returns which divisions the current user has the given permission in.
    * 
+   * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return DivsPermittedEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedMe(String permission, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getAuthorizationDivisionspermittedPagedMe(createGetAuthorizationDivisionspermittedPagedMeRequest(permission, pageNumber, pageSize));
+  }
+
+  /**
+   * Returns which divisions the current user has the given permission in.
+   * 
+   * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return DivsPermittedEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DivsPermittedEntityListing> getAuthorizationDivisionspermittedPagedMeWithHttpInfo(String permission, Integer pageNumber, Integer pageSize) throws IOException {
+    return getAuthorizationDivisionspermittedPagedMe(createGetAuthorizationDivisionspermittedPagedMeRequest(permission, pageNumber, pageSize).withHttpInfo());
+  }
+
+  private GetAuthorizationDivisionspermittedPagedMeRequest createGetAuthorizationDivisionspermittedPagedMeRequest(String permission, Integer pageNumber, Integer pageSize) {
+    return GetAuthorizationDivisionspermittedPagedMeRequest.builder()
+            .withPermission(permission)
+    
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .build();
+  }
+
+  /**
+   * Returns which divisions the current user has the given permission in.
+   * 
+   * @param request The request object
+   * @return DivsPermittedEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedMe(GetAuthorizationDivisionspermittedPagedMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DivsPermittedEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DivsPermittedEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Returns which divisions the current user has the given permission in.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DivsPermittedEntityListing> getAuthorizationDivisionspermittedPagedMe(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DivsPermittedEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DivsPermittedEntityListing> response = (ApiResponse<DivsPermittedEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DivsPermittedEntityListing> response = (ApiResponse<DivsPermittedEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Returns which divisions the specified user has the given permission in.
+   * 
+   * @param subjectId Subject ID (user or group) (required)
+   * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return DivsPermittedEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedSubjectId(String subjectId, String permission, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getAuthorizationDivisionspermittedPagedSubjectId(createGetAuthorizationDivisionspermittedPagedSubjectIdRequest(subjectId, permission, pageNumber, pageSize));
+  }
+
+  /**
+   * Returns which divisions the specified user has the given permission in.
+   * 
+   * @param subjectId Subject ID (user or group) (required)
+   * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return DivsPermittedEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DivsPermittedEntityListing> getAuthorizationDivisionspermittedPagedSubjectIdWithHttpInfo(String subjectId, String permission, Integer pageNumber, Integer pageSize) throws IOException {
+    return getAuthorizationDivisionspermittedPagedSubjectId(createGetAuthorizationDivisionspermittedPagedSubjectIdRequest(subjectId, permission, pageNumber, pageSize).withHttpInfo());
+  }
+
+  private GetAuthorizationDivisionspermittedPagedSubjectIdRequest createGetAuthorizationDivisionspermittedPagedSubjectIdRequest(String subjectId, String permission, Integer pageNumber, Integer pageSize) {
+    return GetAuthorizationDivisionspermittedPagedSubjectIdRequest.builder()
+            .withSubjectId(subjectId)
+    
+            .withPermission(permission)
+    
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .build();
+  }
+
+  /**
+   * Returns which divisions the specified user has the given permission in.
+   * 
+   * @param request The request object
+   * @return DivsPermittedEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedSubjectId(GetAuthorizationDivisionspermittedPagedSubjectIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DivsPermittedEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DivsPermittedEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Returns which divisions the specified user has the given permission in.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DivsPermittedEntityListing> getAuthorizationDivisionspermittedPagedSubjectId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DivsPermittedEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DivsPermittedEntityListing> response = (ApiResponse<DivsPermittedEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DivsPermittedEntityListing> response = (ApiResponse<DivsPermittedEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Returns which divisions the specified user has the given permission in.
+   * This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
    * @param subjectId Subject ID (user or group) (required)
    * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
    * @param name Search term to filter by division name (optional)
@@ -1035,8 +1296,8 @@ public class UsersApi {
   }
 
   /**
-   * Returns whether or not specified user can perform the specified action(s).
-   * 
+   * Returns which divisions the specified user has the given permission in.
+   * This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
    * @param subjectId Subject ID (user or group) (required)
    * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
    * @param name Search term to filter by division name (optional)
@@ -1059,8 +1320,8 @@ public class UsersApi {
   }
 
   /**
-   * Returns whether or not specified user can perform the specified action(s).
-   * 
+   * Returns which divisions the specified user has the given permission in.
+   * This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
    * @param request The request object
    * @return List<AuthzDivision>
    * @throws ApiException if the request fails on the server
@@ -1078,8 +1339,8 @@ public class UsersApi {
   }
 
   /**
-   * Returns whether or not specified user can perform the specified action(s).
-   * 
+   * Returns which divisions the specified user has the given permission in.
+   * This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1434,6 +1695,85 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UserProfileEntityListing> response = (ApiResponse<UserProfileEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+   * 
+   * @param userId User ID (required)
+   * @return Utilization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Utilization getRoutingUserUtilization(String userId) throws IOException, ApiException {
+    return  getRoutingUserUtilization(createGetRoutingUserUtilizationRequest(userId));
+  }
+
+  /**
+   * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+   * 
+   * @param userId User ID (required)
+   * @return Utilization
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Utilization> getRoutingUserUtilizationWithHttpInfo(String userId) throws IOException {
+    return getRoutingUserUtilization(createGetRoutingUserUtilizationRequest(userId).withHttpInfo());
+  }
+
+  private GetRoutingUserUtilizationRequest createGetRoutingUserUtilizationRequest(String userId) {
+    return GetRoutingUserUtilizationRequest.builder()
+            .withUserId(userId)
+    
+            .build();
+  }
+
+  /**
+   * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+   * 
+   * @param request The request object
+   * @return Utilization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Utilization getRoutingUserUtilization(GetRoutingUserUtilizationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Utilization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Utilization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Utilization> getRoutingUserUtilization(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Utilization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Utilization> response = (ApiResponse<Utilization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Utilization> response = (ApiResponse<Utilization>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5021,6 +5361,89 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UsersSearchResponse> response = (ApiResponse<UsersSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+   * 
+   * @param userId User ID (required)
+   * @param body utilization (required)
+   * @return Utilization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Utilization putRoutingUserUtilization(String userId, Utilization body) throws IOException, ApiException {
+    return  putRoutingUserUtilization(createPutRoutingUserUtilizationRequest(userId, body));
+  }
+
+  /**
+   * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+   * 
+   * @param userId User ID (required)
+   * @param body utilization (required)
+   * @return Utilization
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Utilization> putRoutingUserUtilizationWithHttpInfo(String userId, Utilization body) throws IOException {
+    return putRoutingUserUtilization(createPutRoutingUserUtilizationRequest(userId, body).withHttpInfo());
+  }
+
+  private PutRoutingUserUtilizationRequest createPutRoutingUserUtilizationRequest(String userId, Utilization body) {
+    return PutRoutingUserUtilizationRequest.builder()
+            .withUserId(userId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+   * 
+   * @param request The request object
+   * @return Utilization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Utilization putRoutingUserUtilization(PutRoutingUserUtilizationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Utilization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Utilization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Utilization> putRoutingUserUtilization(ApiRequest<Utilization> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Utilization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Utilization> response = (ApiResponse<Utilization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Utilization> response = (ApiResponse<Utilization>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -24,14 +24,14 @@ public class ScimUserExtensions  implements Serializable {
 
   
   /**
-   * Routing Skills assigned to user.
+   * Routing Skills assigned to user. No more than 50 skills may be assigned to a user.
    **/
   public ScimUserExtensions routingSkills(List<ScimUserRoutingSkill> routingSkills) {
     this.routingSkills = routingSkills;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Routing Skills assigned to user.")
+  @ApiModelProperty(example = "null", value = "Routing Skills assigned to user. No more than 50 skills may be assigned to a user.")
   @JsonProperty("routingSkills")
   public List<ScimUserRoutingSkill> getRoutingSkills() {
     return routingSkills;
@@ -42,14 +42,14 @@ public class ScimUserExtensions  implements Serializable {
 
   
   /**
-   * Routing Languages assigned to user
+   * Routing Languages assigned to user. No more than 50 languages may be assigned to a user.
    **/
   public ScimUserExtensions routingLanguages(List<ScimUserRoutingLanguage> routingLanguages) {
     this.routingLanguages = routingLanguages;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Routing Languages assigned to user")
+  @ApiModelProperty(example = "null", value = "Routing Languages assigned to user. No more than 50 languages may be assigned to a user.")
   @JsonProperty("routingLanguages")
   public List<ScimUserRoutingLanguage> getRoutingLanguages() {
     return routingLanguages;

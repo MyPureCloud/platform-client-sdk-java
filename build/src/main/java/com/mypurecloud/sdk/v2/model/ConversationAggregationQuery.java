@@ -73,6 +73,7 @@ public class ConversationAggregationQuery  implements Serializable {
     SESSIONDNIS("sessionDnis"),
     SESSIONID("sessionId"),
     STATIONID("stationId"),
+    TEAMID("teamId"),
     USERID("userId"),
     WRAPUPCODE("wrapUpCode");
 

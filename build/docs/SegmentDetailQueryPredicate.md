@@ -124,6 +124,7 @@ title: SegmentDetailQueryPredicate
 | SOURCESESSIONID | &quot;sourceSessionId&quot; |
 | STARTINGLANGUAGE | &quot;startingLanguage&quot; |
 | SUBJECT | &quot;subject&quot; |
+| TEAMID | &quot;teamId&quot; |
 | TIMEOUTSECONDS | &quot;timeoutSeconds&quot; |
 | TRANSFERTARGETADDRESS | &quot;transferTargetAddress&quot; |
 | TRANSFERTARGETNAME | &quot;transferTargetName&quot; |

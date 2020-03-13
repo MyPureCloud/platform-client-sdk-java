@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationProperties;
 import com.mypurecloud.sdk.v2.model.NumericRange;
 import io.swagger.annotations.ApiModel;
@@ -201,115 +200,6 @@ public class ViewFilter  implements Serializable {
   private List<String> surveyFormIds = new ArrayList<String>();
   private NumericRange surveyTotalScore = null;
   private NumericRange surveyNpsScore = null;
-  private Boolean showSecondaryStatus = null;
-
-  /**
-   * Provides the agent duration sort order
-   */
-  public enum AgentDurationSortOrderEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ASCENDING("ascending"),
-    DESCENDING("descending");
-
-    private String value;
-
-    AgentDurationSortOrderEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static AgentDurationSortOrderEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (AgentDurationSortOrderEnum value : AgentDurationSortOrderEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return AgentDurationSortOrderEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private AgentDurationSortOrderEnum agentDurationSortOrder = null;
-
-  /**
-   * Provides the waiting duration sort order
-   */
-  public enum WaitingDurationSortOrderEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ASCENDING("ascending"),
-    DESCENDING("descending");
-
-    private String value;
-
-    WaitingDurationSortOrderEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static WaitingDurationSortOrderEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (WaitingDurationSortOrderEnum value : WaitingDurationSortOrderEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return WaitingDurationSortOrderEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private WaitingDurationSortOrderEnum waitingDurationSortOrder = null;
-
-  /**
-   * Provides the interacting duration sort order
-   */
-  public enum InteractingDurationSortOrderEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ASCENDING("ascending"),
-    DESCENDING("descending");
-
-    private String value;
-
-    InteractingDurationSortOrderEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static InteractingDurationSortOrderEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (InteractingDurationSortOrderEnum value : InteractingDurationSortOrderEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return InteractingDurationSortOrderEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private InteractingDurationSortOrderEnum interactingDurationSortOrder = null;
-  private String agentName = null;
-  private List<String> skillsList = new ArrayList<String>();
-  private List<String> languageList = new ArrayList<String>();
   private NumericRange mos = null;
   private NumericRange surveyQuestionGroupScore = null;
   private NumericRange surveyPromoterScore = null;
@@ -327,7 +217,6 @@ public class ViewFilter  implements Serializable {
   private Boolean isConsulted = null;
   private Boolean isConsultTransferred = null;
   private List<String> remoteParticipants = new ArrayList<String>();
-  private List<String> statusList = new ArrayList<String>();
   private List<String> flowIds = new ArrayList<String>();
   private List<String> flowOutcomeIds = new ArrayList<String>();
 
@@ -526,8 +415,6 @@ public class ViewFilter  implements Serializable {
   private Boolean hasJourneyCustomerId = null;
   private Boolean hasJourneyActionMapId = null;
   private Boolean hasJourneyVisitId = null;
-  private List<String> oauthClientIds = new ArrayList<String>();
-  private List<String> apiOperations = new ArrayList<String>();
   private Boolean hasMedia = null;
   private List<String> roleIds = new ArrayList<String>();
   private List<String> reportsTos = new ArrayList<String>();
@@ -1273,132 +1160,6 @@ public class ViewFilter  implements Serializable {
 
   
   /**
-   * Indicates if the Secondary Status should be shown
-   **/
-  public ViewFilter showSecondaryStatus(Boolean showSecondaryStatus) {
-    this.showSecondaryStatus = showSecondaryStatus;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Indicates if the Secondary Status should be shown")
-  @JsonProperty("showSecondaryStatus")
-  public Boolean getShowSecondaryStatus() {
-    return showSecondaryStatus;
-  }
-  public void setShowSecondaryStatus(Boolean showSecondaryStatus) {
-    this.showSecondaryStatus = showSecondaryStatus;
-  }
-
-  
-  /**
-   * Provides the agent duration sort order
-   **/
-  public ViewFilter agentDurationSortOrder(AgentDurationSortOrderEnum agentDurationSortOrder) {
-    this.agentDurationSortOrder = agentDurationSortOrder;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Provides the agent duration sort order")
-  @JsonProperty("agentDurationSortOrder")
-  public AgentDurationSortOrderEnum getAgentDurationSortOrder() {
-    return agentDurationSortOrder;
-  }
-  public void setAgentDurationSortOrder(AgentDurationSortOrderEnum agentDurationSortOrder) {
-    this.agentDurationSortOrder = agentDurationSortOrder;
-  }
-
-  
-  /**
-   * Provides the waiting duration sort order
-   **/
-  public ViewFilter waitingDurationSortOrder(WaitingDurationSortOrderEnum waitingDurationSortOrder) {
-    this.waitingDurationSortOrder = waitingDurationSortOrder;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Provides the waiting duration sort order")
-  @JsonProperty("waitingDurationSortOrder")
-  public WaitingDurationSortOrderEnum getWaitingDurationSortOrder() {
-    return waitingDurationSortOrder;
-  }
-  public void setWaitingDurationSortOrder(WaitingDurationSortOrderEnum waitingDurationSortOrder) {
-    this.waitingDurationSortOrder = waitingDurationSortOrder;
-  }
-
-  
-  /**
-   * Provides the interacting duration sort order
-   **/
-  public ViewFilter interactingDurationSortOrder(InteractingDurationSortOrderEnum interactingDurationSortOrder) {
-    this.interactingDurationSortOrder = interactingDurationSortOrder;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Provides the interacting duration sort order")
-  @JsonProperty("interactingDurationSortOrder")
-  public InteractingDurationSortOrderEnum getInteractingDurationSortOrder() {
-    return interactingDurationSortOrder;
-  }
-  public void setInteractingDurationSortOrder(InteractingDurationSortOrderEnum interactingDurationSortOrder) {
-    this.interactingDurationSortOrder = interactingDurationSortOrder;
-  }
-
-  
-  /**
-   * Displays the Agent name as provided by the user
-   **/
-  public ViewFilter agentName(String agentName) {
-    this.agentName = agentName;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Displays the Agent name as provided by the user")
-  @JsonProperty("agentName")
-  public String getAgentName() {
-    return agentName;
-  }
-  public void setAgentName(String agentName) {
-    this.agentName = agentName;
-  }
-
-  
-  /**
-   * The list of skill strings as free form text
-   **/
-  public ViewFilter skillsList(List<String> skillsList) {
-    this.skillsList = skillsList;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The list of skill strings as free form text")
-  @JsonProperty("skillsList")
-  public List<String> getSkillsList() {
-    return skillsList;
-  }
-  public void setSkillsList(List<String> skillsList) {
-    this.skillsList = skillsList;
-  }
-
-  
-  /**
-   * The list of language strings as free form text
-   **/
-  public ViewFilter languageList(List<String> languageList) {
-    this.languageList = languageList;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The list of language strings as free form text")
-  @JsonProperty("languageList")
-  public List<String> getLanguageList() {
-    return languageList;
-  }
-  public void setLanguageList(List<String> languageList) {
-    this.languageList = languageList;
-  }
-
-  
-  /**
    * The desired range for mos values
    **/
   public ViewFilter mos(NumericRange mos) {
@@ -1705,24 +1466,6 @@ public class ViewFilter  implements Serializable {
 
   
   /**
-   * A list of status for the configuration view
-   **/
-  public ViewFilter statusList(List<String> statusList) {
-    this.statusList = statusList;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "A list of status for the configuration view")
-  @JsonProperty("statusList")
-  public List<String> getStatusList() {
-    return statusList;
-  }
-  public void setStatusList(List<String> statusList) {
-    this.statusList = statusList;
-  }
-
-  
-  /**
    * The list of flow Ids
    **/
   public ViewFilter flowIds(List<String> flowIds) {
@@ -1957,42 +1700,6 @@ public class ViewFilter  implements Serializable {
 
   
   /**
-   * A list of OAuth client IDs
-   **/
-  public ViewFilter oauthClientIds(List<String> oauthClientIds) {
-    this.oauthClientIds = oauthClientIds;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "A list of OAuth client IDs")
-  @JsonProperty("oauthClientIds")
-  public List<String> getOauthClientIds() {
-    return oauthClientIds;
-  }
-  public void setOauthClientIds(List<String> oauthClientIds) {
-    this.oauthClientIds = oauthClientIds;
-  }
-
-  
-  /**
-   * A list of API operations (ex: [\"GET /api/v2/users/{userId}/queues\"])
-   **/
-  public ViewFilter apiOperations(List<String> apiOperations) {
-    this.apiOperations = apiOperations;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "A list of API operations (ex: [\"GET /api/v2/users/{userId}/queues\"])")
-  @JsonProperty("apiOperations")
-  public List<String> getApiOperations() {
-    return apiOperations;
-  }
-  public void setApiOperations(List<String> apiOperations) {
-    this.apiOperations = apiOperations;
-  }
-
-  
-  /**
    * Indicates filtering for presence of MMS media
    **/
   public ViewFilter hasMedia(Boolean hasMedia) {
@@ -2115,13 +1822,6 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.surveyFormIds, viewFilter.surveyFormIds) &&
         Objects.equals(this.surveyTotalScore, viewFilter.surveyTotalScore) &&
         Objects.equals(this.surveyNpsScore, viewFilter.surveyNpsScore) &&
-        Objects.equals(this.showSecondaryStatus, viewFilter.showSecondaryStatus) &&
-        Objects.equals(this.agentDurationSortOrder, viewFilter.agentDurationSortOrder) &&
-        Objects.equals(this.waitingDurationSortOrder, viewFilter.waitingDurationSortOrder) &&
-        Objects.equals(this.interactingDurationSortOrder, viewFilter.interactingDurationSortOrder) &&
-        Objects.equals(this.agentName, viewFilter.agentName) &&
-        Objects.equals(this.skillsList, viewFilter.skillsList) &&
-        Objects.equals(this.languageList, viewFilter.languageList) &&
         Objects.equals(this.mos, viewFilter.mos) &&
         Objects.equals(this.surveyQuestionGroupScore, viewFilter.surveyQuestionGroupScore) &&
         Objects.equals(this.surveyPromoterScore, viewFilter.surveyPromoterScore) &&
@@ -2139,7 +1839,6 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.isConsulted, viewFilter.isConsulted) &&
         Objects.equals(this.isConsultTransferred, viewFilter.isConsultTransferred) &&
         Objects.equals(this.remoteParticipants, viewFilter.remoteParticipants) &&
-        Objects.equals(this.statusList, viewFilter.statusList) &&
         Objects.equals(this.flowIds, viewFilter.flowIds) &&
         Objects.equals(this.flowOutcomeIds, viewFilter.flowOutcomeIds) &&
         Objects.equals(this.flowOutcomeValues, viewFilter.flowOutcomeValues) &&
@@ -2153,8 +1852,6 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.hasJourneyCustomerId, viewFilter.hasJourneyCustomerId) &&
         Objects.equals(this.hasJourneyActionMapId, viewFilter.hasJourneyActionMapId) &&
         Objects.equals(this.hasJourneyVisitId, viewFilter.hasJourneyVisitId) &&
-        Objects.equals(this.oauthClientIds, viewFilter.oauthClientIds) &&
-        Objects.equals(this.apiOperations, viewFilter.apiOperations) &&
         Objects.equals(this.hasMedia, viewFilter.hasMedia) &&
         Objects.equals(this.roleIds, viewFilter.roleIds) &&
         Objects.equals(this.reportsTos, viewFilter.reportsTos) &&
@@ -2163,7 +1860,7 @@ public class ViewFilter  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, showSecondaryStatus, agentDurationSortOrder, waitingDurationSortOrder, interactingDurationSortOrder, agentName, skillsList, languageList, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, statusList, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, oauthClientIds, apiOperations, hasMedia, roleIds, reportsTos, locationIds);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds);
   }
 
   @Override
@@ -2212,13 +1909,6 @@ public class ViewFilter  implements Serializable {
     sb.append("    surveyFormIds: ").append(toIndentedString(surveyFormIds)).append("\n");
     sb.append("    surveyTotalScore: ").append(toIndentedString(surveyTotalScore)).append("\n");
     sb.append("    surveyNpsScore: ").append(toIndentedString(surveyNpsScore)).append("\n");
-    sb.append("    showSecondaryStatus: ").append(toIndentedString(showSecondaryStatus)).append("\n");
-    sb.append("    agentDurationSortOrder: ").append(toIndentedString(agentDurationSortOrder)).append("\n");
-    sb.append("    waitingDurationSortOrder: ").append(toIndentedString(waitingDurationSortOrder)).append("\n");
-    sb.append("    interactingDurationSortOrder: ").append(toIndentedString(interactingDurationSortOrder)).append("\n");
-    sb.append("    agentName: ").append(toIndentedString(agentName)).append("\n");
-    sb.append("    skillsList: ").append(toIndentedString(skillsList)).append("\n");
-    sb.append("    languageList: ").append(toIndentedString(languageList)).append("\n");
     sb.append("    mos: ").append(toIndentedString(mos)).append("\n");
     sb.append("    surveyQuestionGroupScore: ").append(toIndentedString(surveyQuestionGroupScore)).append("\n");
     sb.append("    surveyPromoterScore: ").append(toIndentedString(surveyPromoterScore)).append("\n");
@@ -2236,7 +1926,6 @@ public class ViewFilter  implements Serializable {
     sb.append("    isConsulted: ").append(toIndentedString(isConsulted)).append("\n");
     sb.append("    isConsultTransferred: ").append(toIndentedString(isConsultTransferred)).append("\n");
     sb.append("    remoteParticipants: ").append(toIndentedString(remoteParticipants)).append("\n");
-    sb.append("    statusList: ").append(toIndentedString(statusList)).append("\n");
     sb.append("    flowIds: ").append(toIndentedString(flowIds)).append("\n");
     sb.append("    flowOutcomeIds: ").append(toIndentedString(flowOutcomeIds)).append("\n");
     sb.append("    flowOutcomeValues: ").append(toIndentedString(flowOutcomeValues)).append("\n");
@@ -2250,8 +1939,6 @@ public class ViewFilter  implements Serializable {
     sb.append("    hasJourneyCustomerId: ").append(toIndentedString(hasJourneyCustomerId)).append("\n");
     sb.append("    hasJourneyActionMapId: ").append(toIndentedString(hasJourneyActionMapId)).append("\n");
     sb.append("    hasJourneyVisitId: ").append(toIndentedString(hasJourneyVisitId)).append("\n");
-    sb.append("    oauthClientIds: ").append(toIndentedString(oauthClientIds)).append("\n");
-    sb.append("    apiOperations: ").append(toIndentedString(apiOperations)).append("\n");
     sb.append("    hasMedia: ").append(toIndentedString(hasMedia)).append("\n");
     sb.append("    roleIds: ").append(toIndentedString(roleIds)).append("\n");
     sb.append("    reportsTos: ").append(toIndentedString(reportsTos)).append("\n");

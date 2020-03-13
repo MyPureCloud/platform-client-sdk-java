@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.MessageInfo;
 import com.mypurecloud.sdk.v2.model.PropertyChange;
 import io.swagger.annotations.ApiModel;
@@ -24,7 +25,7 @@ import java.io.Serializable;
 public class AuditLogMessage  implements Serializable {
   
   private String id = null;
-  private AddressableEntityRef user = null;
+  private DomainEntityRef user = null;
   private AddressableEntityRef client = null;
   private List<String> remoteIp = new ArrayList<String>();
 
@@ -191,17 +192,17 @@ public class AuditLogMessage  implements Serializable {
   /**
    * User associated with this audit message.
    **/
-  public AuditLogMessage user(AddressableEntityRef user) {
+  public AuditLogMessage user(DomainEntityRef user) {
     this.user = user;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "User associated with this audit message.")
   @JsonProperty("user")
-  public AddressableEntityRef getUser() {
+  public DomainEntityRef getUser() {
     return user;
   }
-  public void setUser(AddressableEntityRef user) {
+  public void setUser(DomainEntityRef user) {
     this.user = user;
   }
 

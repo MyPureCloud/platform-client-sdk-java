@@ -22,6 +22,8 @@ public class AvailableTopic  implements Serializable {
   private String id = null;
   private List<String> requiresPermissions = new ArrayList<String>();
   private Map<String, Object> schema = null;
+  private Boolean requiresCurrentUser = null;
+  private Boolean requiresCurrentUserOrPermission = null;
 
   
   /**
@@ -59,13 +61,14 @@ public class AvailableTopic  implements Serializable {
 
   
   /**
+   * Permissions required to subscribe to the topic
    **/
   public AvailableTopic requiresPermissions(List<String> requiresPermissions) {
     this.requiresPermissions = requiresPermissions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Permissions required to subscribe to the topic")
   @JsonProperty("requiresPermissions")
   public List<String> getRequiresPermissions() {
     return requiresPermissions;
@@ -92,6 +95,42 @@ public class AvailableTopic  implements Serializable {
   }
 
   
+  /**
+   * True if the topic user ID is required to match the subscribing user ID
+   **/
+  public AvailableTopic requiresCurrentUser(Boolean requiresCurrentUser) {
+    this.requiresCurrentUser = requiresCurrentUser;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "True if the topic user ID is required to match the subscribing user ID")
+  @JsonProperty("requiresCurrentUser")
+  public Boolean getRequiresCurrentUser() {
+    return requiresCurrentUser;
+  }
+  public void setRequiresCurrentUser(Boolean requiresCurrentUser) {
+    this.requiresCurrentUser = requiresCurrentUser;
+  }
+
+  
+  /**
+   * True if permissions are only required when the topic user ID does not match the subscribing user ID
+   **/
+  public AvailableTopic requiresCurrentUserOrPermission(Boolean requiresCurrentUserOrPermission) {
+    this.requiresCurrentUserOrPermission = requiresCurrentUserOrPermission;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "True if permissions are only required when the topic user ID does not match the subscribing user ID")
+  @JsonProperty("requiresCurrentUserOrPermission")
+  public Boolean getRequiresCurrentUserOrPermission() {
+    return requiresCurrentUserOrPermission;
+  }
+  public void setRequiresCurrentUserOrPermission(Boolean requiresCurrentUserOrPermission) {
+    this.requiresCurrentUserOrPermission = requiresCurrentUserOrPermission;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -105,12 +144,14 @@ public class AvailableTopic  implements Serializable {
     return Objects.equals(this.description, availableTopic.description) &&
         Objects.equals(this.id, availableTopic.id) &&
         Objects.equals(this.requiresPermissions, availableTopic.requiresPermissions) &&
-        Objects.equals(this.schema, availableTopic.schema);
+        Objects.equals(this.schema, availableTopic.schema) &&
+        Objects.equals(this.requiresCurrentUser, availableTopic.requiresCurrentUser) &&
+        Objects.equals(this.requiresCurrentUserOrPermission, availableTopic.requiresCurrentUserOrPermission);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, id, requiresPermissions, schema);
+    return Objects.hash(description, id, requiresPermissions, schema, requiresCurrentUser, requiresCurrentUserOrPermission);
   }
 
   @Override
@@ -122,6 +163,8 @@ public class AvailableTopic  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    requiresPermissions: ").append(toIndentedString(requiresPermissions)).append("\n");
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
+    sb.append("    requiresCurrentUser: ").append(toIndentedString(requiresCurrentUser)).append("\n");
+    sb.append("    requiresCurrentUserOrPermission: ").append(toIndentedString(requiresCurrentUserOrPermission)).append("\n");
     sb.append("}");
     return sb.toString();
   }

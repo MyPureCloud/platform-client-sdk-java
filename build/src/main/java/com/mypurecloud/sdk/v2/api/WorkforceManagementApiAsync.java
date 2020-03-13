@@ -53,13 +53,14 @@ import com.mypurecloud.sdk.v2.model.AgentTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForUsers;
 import com.mypurecloud.sdk.v2.model.CreateActivityCodeRequest;
-import com.mypurecloud.sdk.v2.model.UserScheduleContainer;
+import com.mypurecloud.sdk.v2.model.BuAsyncAgentSchedulesSearchResponse;
 import com.mypurecloud.sdk.v2.model.BuSearchAgentSchedulesRequest;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
 import com.mypurecloud.sdk.v2.model.IntradayResponse;
 import com.mypurecloud.sdk.v2.model.IntradayQueryDataCommand;
 import com.mypurecloud.sdk.v2.model.MoveManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.MoveManagementUnitResponse;
+import com.mypurecloud.sdk.v2.model.UserScheduleContainer;
 import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CreateServiceGoalGroupRequest;
 import com.mypurecloud.sdk.v2.model.CreateAdminTimeOffRequest;
@@ -3990,13 +3991,13 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<UserScheduleContainer> postWorkforcemanagementManagementunitAgentschedulesSearchAsync(PostWorkforcemanagementManagementunitAgentschedulesSearchRequest request, final AsyncApiCallback<UserScheduleContainer> callback) {
+  public Future<BuAsyncAgentSchedulesSearchResponse> postWorkforcemanagementManagementunitAgentschedulesSearchAsync(PostWorkforcemanagementManagementunitAgentschedulesSearchRequest request, final AsyncApiCallback<BuAsyncAgentSchedulesSearchResponse> callback) {
     try {
-      final SettableFuture<UserScheduleContainer> future = SettableFuture.create();
+      final SettableFuture<BuAsyncAgentSchedulesSearchResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserScheduleContainer>() {}, new AsyncApiCallback<ApiResponse<UserScheduleContainer>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BuAsyncAgentSchedulesSearchResponse>() {}, new AsyncApiCallback<ApiResponse<BuAsyncAgentSchedulesSearchResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<UserScheduleContainer> response) {
+        public void onCompleted(ApiResponse<BuAsyncAgentSchedulesSearchResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -4024,13 +4025,13 @@ public class WorkforceManagementApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<UserScheduleContainer>> postWorkforcemanagementManagementunitAgentschedulesSearchAsync(ApiRequest<BuSearchAgentSchedulesRequest> request, final AsyncApiCallback<ApiResponse<UserScheduleContainer>> callback) {
+  public Future<ApiResponse<BuAsyncAgentSchedulesSearchResponse>> postWorkforcemanagementManagementunitAgentschedulesSearchAsync(ApiRequest<BuSearchAgentSchedulesRequest> request, final AsyncApiCallback<ApiResponse<BuAsyncAgentSchedulesSearchResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<UserScheduleContainer>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<BuAsyncAgentSchedulesSearchResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<UserScheduleContainer>() {}, new AsyncApiCallback<ApiResponse<UserScheduleContainer>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<BuAsyncAgentSchedulesSearchResponse>() {}, new AsyncApiCallback<ApiResponse<BuAsyncAgentSchedulesSearchResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<UserScheduleContainer> response) {
+        public void onCompleted(ApiResponse<BuAsyncAgentSchedulesSearchResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -4038,7 +4039,7 @@ public class WorkforceManagementApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<UserScheduleContainer> response = (ApiResponse<UserScheduleContainer>)(ApiResponse<?>)exception;
+            ApiResponse<BuAsyncAgentSchedulesSearchResponse> response = (ApiResponse<BuAsyncAgentSchedulesSearchResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -4046,7 +4047,7 @@ public class WorkforceManagementApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<UserScheduleContainer> response = (ApiResponse<UserScheduleContainer>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<BuAsyncAgentSchedulesSearchResponse> response = (ApiResponse<BuAsyncAgentSchedulesSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

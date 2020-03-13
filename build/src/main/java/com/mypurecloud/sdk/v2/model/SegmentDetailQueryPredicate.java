@@ -143,6 +143,7 @@ public class SegmentDetailQueryPredicate  implements Serializable {
     SOURCESESSIONID("sourceSessionId"),
     STARTINGLANGUAGE("startingLanguage"),
     SUBJECT("subject"),
+    TEAMID("teamId"),
     TIMEOUTSECONDS("timeoutSeconds"),
     TRANSFERTARGETADDRESS("transferTargetAddress"),
     TRANSFERTARGETNAME("transferTargetName"),

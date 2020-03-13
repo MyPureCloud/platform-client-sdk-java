@@ -44,6 +44,9 @@ import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTable;
+import com.mypurecloud.sdk.v2.model.DataTableExportJob;
+import com.mypurecloud.sdk.v2.model.DataTableImportJob;
+import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
@@ -100,6 +103,9 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowVersionConfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableExportJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableImportJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableImportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesRequest;
@@ -124,6 +130,8 @@ import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsDeactivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsRevertRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsUnlockRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableExportJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableImportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatablesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsOutcomesRequest;
@@ -3808,6 +3816,234 @@ public class ArchitectApiAsync {
 
   
   /**
+   * Returns the state information about an export job
+   * Returns the state information about an export job.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DataTableExportJob> getFlowsDatatableExportJobAsync(GetFlowsDatatableExportJobRequest request, final AsyncApiCallback<DataTableExportJob> callback) {
+    try {
+      final SettableFuture<DataTableExportJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataTableExportJob>() {}, new AsyncApiCallback<ApiResponse<DataTableExportJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataTableExportJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns the state information about an export job
+   * Returns the state information about an export job.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DataTableExportJob>> getFlowsDatatableExportJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataTableExportJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DataTableExportJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DataTableExportJob>() {}, new AsyncApiCallback<ApiResponse<DataTableExportJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataTableExportJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataTableExportJob> response = (ApiResponse<DataTableExportJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataTableExportJob> response = (ApiResponse<DataTableExportJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Returns the state information about an import job
+   * Returns the state information about an import job.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DataTableImportJob> getFlowsDatatableImportJobAsync(GetFlowsDatatableImportJobRequest request, final AsyncApiCallback<DataTableImportJob> callback) {
+    try {
+      final SettableFuture<DataTableImportJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataTableImportJob>() {}, new AsyncApiCallback<ApiResponse<DataTableImportJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataTableImportJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns the state information about an import job
+   * Returns the state information about an import job.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DataTableImportJob>> getFlowsDatatableImportJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataTableImportJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DataTableImportJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DataTableImportJob>() {}, new AsyncApiCallback<ApiResponse<DataTableImportJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataTableImportJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataTableImportJob> response = (ApiResponse<DataTableImportJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataTableImportJob> response = (ApiResponse<DataTableImportJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get all recent import jobs
+   * Get all recent import jobs
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<EntityListing> getFlowsDatatableImportJobsAsync(GetFlowsDatatableImportJobsRequest request, final AsyncApiCallback<EntityListing> callback) {
+    try {
+      final SettableFuture<EntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EntityListing>() {}, new AsyncApiCallback<ApiResponse<EntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all recent import jobs
+   * Get all recent import jobs
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<EntityListing>> getFlowsDatatableImportJobsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<EntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<EntityListing>() {}, new AsyncApiCallback<ApiResponse<EntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<EntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Returns a specific row for the datatable
    * Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
    * @param request the request object
@@ -5619,6 +5855,158 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Begin an export process for exporting all rows from a datatable
+   * Create an export job for exporting rows. The caller can then poll for status of the export using the token returned in the response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DataTableExportJob> postFlowsDatatableExportJobsAsync(PostFlowsDatatableExportJobsRequest request, final AsyncApiCallback<DataTableExportJob> callback) {
+    try {
+      final SettableFuture<DataTableExportJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataTableExportJob>() {}, new AsyncApiCallback<ApiResponse<DataTableExportJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataTableExportJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Begin an export process for exporting all rows from a datatable
+   * Create an export job for exporting rows. The caller can then poll for status of the export using the token returned in the response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DataTableExportJob>> postFlowsDatatableExportJobsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataTableExportJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DataTableExportJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DataTableExportJob>() {}, new AsyncApiCallback<ApiResponse<DataTableExportJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataTableExportJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataTableExportJob> response = (ApiResponse<DataTableExportJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataTableExportJob> response = (ApiResponse<DataTableExportJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Begin an import process for importing rows into a datatable
+   * Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DataTableImportJob> postFlowsDatatableImportJobsAsync(PostFlowsDatatableImportJobsRequest request, final AsyncApiCallback<DataTableImportJob> callback) {
+    try {
+      final SettableFuture<DataTableImportJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataTableImportJob>() {}, new AsyncApiCallback<ApiResponse<DataTableImportJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataTableImportJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Begin an import process for importing rows into a datatable
+   * Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DataTableImportJob>> postFlowsDatatableImportJobsAsync(ApiRequest<DataTableImportJob> request, final AsyncApiCallback<ApiResponse<DataTableImportJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DataTableImportJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DataTableImportJob>() {}, new AsyncApiCallback<ApiResponse<DataTableImportJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataTableImportJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataTableImportJob> response = (ApiResponse<DataTableImportJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataTableImportJob> response = (ApiResponse<DataTableImportJob>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

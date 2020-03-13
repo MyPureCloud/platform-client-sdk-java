@@ -12,6 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getLicenseToggle**](LicenseApi.html#getLicenseToggle) | Get PureCloud license feature toggle value. |
 | [**getLicenseUser**](LicenseApi.html#getLicenseUser) | Get licenses for specified user. |
 | [**getLicenseUsers**](LicenseApi.html#getLicenseUsers) | Get a page of users and their licenses |
+| [**postLicenseInfer**](LicenseApi.html#postLicenseInfer) | Get a list of licenses inferred based on a list of roleIds |
 | [**postLicenseOrganization**](LicenseApi.html#postLicenseOrganization) | Update the organization&#39;s license assignments in a batch. |
 | [**postLicenseToggle**](LicenseApi.html#postLicenseToggle) | Switch PureCloud license feature toggle value. |
 | [**postLicenseUsers**](LicenseApi.html#postLicenseUsers) | Fetch user licenses in a batch. |
@@ -328,6 +329,68 @@ try {
 ### Return type
 
 [**UserLicensesEntityListing**](UserLicensesEntityListing.html)
+
+<a name="postLicenseInfer"></a>
+
+# **postLicenseInfer**
+
+
+
+> List&lt;String&gt; postLicenseInfer(body)
+
+Get a list of licenses inferred based on a list of roleIds
+
+
+
+Wraps POST /api/v2/license/infer  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LicenseApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LicenseApi apiInstance = new LicenseApi();
+List<String> body = Arrays.asList(new List<String>()); // List<String> | The roleIds to use while inferring licenses
+try {
+    List<String> result = apiInstance.postLicenseInfer(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LicenseApi#postLicenseInfer");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | **List&lt;String&gt;**| The roleIds to use while inferring licenses | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+**List&lt;String&gt;**
 
 <a name="postLicenseOrganization"></a>
 

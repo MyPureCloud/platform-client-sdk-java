@@ -41,6 +41,9 @@ import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.FlowVersionEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTable;
+import com.mypurecloud.sdk.v2.model.DataTableExportJob;
+import com.mypurecloud.sdk.v2.model.DataTableImportJob;
+import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
@@ -97,6 +100,9 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowVersionConfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableExportJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableImportJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableImportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesRequest;
@@ -121,6 +127,8 @@ import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsDeactivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsRevertRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsUnlockRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableExportJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableImportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatablesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsOutcomesRequest;
@@ -4403,6 +4411,259 @@ public class ArchitectApi {
 
   
   /**
+   * Returns the state information about an export job
+   * Returns the state information about an export job.
+   * @param datatableId id of datatable (required)
+   * @param exportJobId id of export job (required)
+   * @return DataTableExportJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataTableExportJob getFlowsDatatableExportJob(String datatableId, String exportJobId) throws IOException, ApiException {
+    return  getFlowsDatatableExportJob(createGetFlowsDatatableExportJobRequest(datatableId, exportJobId));
+  }
+
+  /**
+   * Returns the state information about an export job
+   * Returns the state information about an export job.
+   * @param datatableId id of datatable (required)
+   * @param exportJobId id of export job (required)
+   * @return DataTableExportJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataTableExportJob> getFlowsDatatableExportJobWithHttpInfo(String datatableId, String exportJobId) throws IOException {
+    return getFlowsDatatableExportJob(createGetFlowsDatatableExportJobRequest(datatableId, exportJobId).withHttpInfo());
+  }
+
+  private GetFlowsDatatableExportJobRequest createGetFlowsDatatableExportJobRequest(String datatableId, String exportJobId) {
+    return GetFlowsDatatableExportJobRequest.builder()
+            .withDatatableId(datatableId)
+    
+            .withExportJobId(exportJobId)
+    
+            .build();
+  }
+
+  /**
+   * Returns the state information about an export job
+   * Returns the state information about an export job.
+   * @param request The request object
+   * @return DataTableExportJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataTableExportJob getFlowsDatatableExportJob(GetFlowsDatatableExportJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataTableExportJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataTableExportJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Returns the state information about an export job
+   * Returns the state information about an export job.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataTableExportJob> getFlowsDatatableExportJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataTableExportJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataTableExportJob> response = (ApiResponse<DataTableExportJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataTableExportJob> response = (ApiResponse<DataTableExportJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Returns the state information about an import job
+   * Returns the state information about an import job.
+   * @param datatableId id of datatable (required)
+   * @param importJobId id of import job (required)
+   * @return DataTableImportJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataTableImportJob getFlowsDatatableImportJob(String datatableId, String importJobId) throws IOException, ApiException {
+    return  getFlowsDatatableImportJob(createGetFlowsDatatableImportJobRequest(datatableId, importJobId));
+  }
+
+  /**
+   * Returns the state information about an import job
+   * Returns the state information about an import job.
+   * @param datatableId id of datatable (required)
+   * @param importJobId id of import job (required)
+   * @return DataTableImportJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataTableImportJob> getFlowsDatatableImportJobWithHttpInfo(String datatableId, String importJobId) throws IOException {
+    return getFlowsDatatableImportJob(createGetFlowsDatatableImportJobRequest(datatableId, importJobId).withHttpInfo());
+  }
+
+  private GetFlowsDatatableImportJobRequest createGetFlowsDatatableImportJobRequest(String datatableId, String importJobId) {
+    return GetFlowsDatatableImportJobRequest.builder()
+            .withDatatableId(datatableId)
+    
+            .withImportJobId(importJobId)
+    
+            .build();
+  }
+
+  /**
+   * Returns the state information about an import job
+   * Returns the state information about an import job.
+   * @param request The request object
+   * @return DataTableImportJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataTableImportJob getFlowsDatatableImportJob(GetFlowsDatatableImportJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataTableImportJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataTableImportJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Returns the state information about an import job
+   * Returns the state information about an import job.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataTableImportJob> getFlowsDatatableImportJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataTableImportJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataTableImportJob> response = (ApiResponse<DataTableImportJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataTableImportJob> response = (ApiResponse<DataTableImportJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get all recent import jobs
+   * Get all recent import jobs
+   * @param datatableId id of datatable (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return EntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EntityListing getFlowsDatatableImportJobs(String datatableId, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getFlowsDatatableImportJobs(createGetFlowsDatatableImportJobsRequest(datatableId, pageNumber, pageSize));
+  }
+
+  /**
+   * Get all recent import jobs
+   * Get all recent import jobs
+   * @param datatableId id of datatable (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return EntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EntityListing> getFlowsDatatableImportJobsWithHttpInfo(String datatableId, Integer pageNumber, Integer pageSize) throws IOException {
+    return getFlowsDatatableImportJobs(createGetFlowsDatatableImportJobsRequest(datatableId, pageNumber, pageSize).withHttpInfo());
+  }
+
+  private GetFlowsDatatableImportJobsRequest createGetFlowsDatatableImportJobsRequest(String datatableId, Integer pageNumber, Integer pageSize) {
+    return GetFlowsDatatableImportJobsRequest.builder()
+            .withDatatableId(datatableId)
+    
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .build();
+  }
+
+  /**
+   * Get all recent import jobs
+   * Get all recent import jobs
+   * @param request The request object
+   * @return EntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public EntityListing getFlowsDatatableImportJobs(GetFlowsDatatableImportJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<EntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get all recent import jobs
+   * Get all recent import jobs
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<EntityListing> getFlowsDatatableImportJobs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<EntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Returns a specific row for the datatable
    * Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
    * @param datatableId id of datatable (required)
@@ -6410,6 +6671,168 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Flow> response = (ApiResponse<Flow>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Begin an export process for exporting all rows from a datatable
+   * Create an export job for exporting rows. The caller can then poll for status of the export using the token returned in the response
+   * @param datatableId id of datatable (required)
+   * @return DataTableExportJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataTableExportJob postFlowsDatatableExportJobs(String datatableId) throws IOException, ApiException {
+    return  postFlowsDatatableExportJobs(createPostFlowsDatatableExportJobsRequest(datatableId));
+  }
+
+  /**
+   * Begin an export process for exporting all rows from a datatable
+   * Create an export job for exporting rows. The caller can then poll for status of the export using the token returned in the response
+   * @param datatableId id of datatable (required)
+   * @return DataTableExportJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataTableExportJob> postFlowsDatatableExportJobsWithHttpInfo(String datatableId) throws IOException {
+    return postFlowsDatatableExportJobs(createPostFlowsDatatableExportJobsRequest(datatableId).withHttpInfo());
+  }
+
+  private PostFlowsDatatableExportJobsRequest createPostFlowsDatatableExportJobsRequest(String datatableId) {
+    return PostFlowsDatatableExportJobsRequest.builder()
+            .withDatatableId(datatableId)
+    
+            .build();
+  }
+
+  /**
+   * Begin an export process for exporting all rows from a datatable
+   * Create an export job for exporting rows. The caller can then poll for status of the export using the token returned in the response
+   * @param request The request object
+   * @return DataTableExportJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataTableExportJob postFlowsDatatableExportJobs(PostFlowsDatatableExportJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataTableExportJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataTableExportJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Begin an export process for exporting all rows from a datatable
+   * Create an export job for exporting rows. The caller can then poll for status of the export using the token returned in the response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataTableExportJob> postFlowsDatatableExportJobs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataTableExportJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataTableExportJob> response = (ApiResponse<DataTableExportJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataTableExportJob> response = (ApiResponse<DataTableExportJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Begin an import process for importing rows into a datatable
+   * Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
+   * @param datatableId id of datatable (required)
+   * @param body import job information (required)
+   * @return DataTableImportJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataTableImportJob postFlowsDatatableImportJobs(String datatableId, DataTableImportJob body) throws IOException, ApiException {
+    return  postFlowsDatatableImportJobs(createPostFlowsDatatableImportJobsRequest(datatableId, body));
+  }
+
+  /**
+   * Begin an import process for importing rows into a datatable
+   * Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
+   * @param datatableId id of datatable (required)
+   * @param body import job information (required)
+   * @return DataTableImportJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataTableImportJob> postFlowsDatatableImportJobsWithHttpInfo(String datatableId, DataTableImportJob body) throws IOException {
+    return postFlowsDatatableImportJobs(createPostFlowsDatatableImportJobsRequest(datatableId, body).withHttpInfo());
+  }
+
+  private PostFlowsDatatableImportJobsRequest createPostFlowsDatatableImportJobsRequest(String datatableId, DataTableImportJob body) {
+    return PostFlowsDatatableImportJobsRequest.builder()
+            .withDatatableId(datatableId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Begin an import process for importing rows into a datatable
+   * Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
+   * @param request The request object
+   * @return DataTableImportJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataTableImportJob postFlowsDatatableImportJobs(PostFlowsDatatableImportJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataTableImportJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataTableImportJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Begin an import process for importing rows into a datatable
+   * Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataTableImportJob> postFlowsDatatableImportJobs(ApiRequest<DataTableImportJob> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataTableImportJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataTableImportJob> response = (ApiResponse<DataTableImportJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataTableImportJob> response = (ApiResponse<DataTableImportJob>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

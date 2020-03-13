@@ -50,13 +50,14 @@ import com.mypurecloud.sdk.v2.model.AgentTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForUsers;
 import com.mypurecloud.sdk.v2.model.CreateActivityCodeRequest;
-import com.mypurecloud.sdk.v2.model.UserScheduleContainer;
+import com.mypurecloud.sdk.v2.model.BuAsyncAgentSchedulesSearchResponse;
 import com.mypurecloud.sdk.v2.model.BuSearchAgentSchedulesRequest;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
 import com.mypurecloud.sdk.v2.model.IntradayResponse;
 import com.mypurecloud.sdk.v2.model.IntradayQueryDataCommand;
 import com.mypurecloud.sdk.v2.model.MoveManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.MoveManagementUnitResponse;
+import com.mypurecloud.sdk.v2.model.UserScheduleContainer;
 import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CreateServiceGoalGroupRequest;
 import com.mypurecloud.sdk.v2.model.CreateAdminTimeOffRequest;
@@ -4343,11 +4344,11 @@ public class WorkforceManagementApi {
    * @param body body (optional)
    * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
    * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
-   * @return UserScheduleContainer
+   * @return BuAsyncAgentSchedulesSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserScheduleContainer postWorkforcemanagementManagementunitAgentschedulesSearch(String muId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException, ApiException {
+  public BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementManagementunitAgentschedulesSearch(String muId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException, ApiException {
     return  postWorkforcemanagementManagementunitAgentschedulesSearch(createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(muId, body, forceAsync, forceDownloadService));
   }
 
@@ -4358,10 +4359,10 @@ public class WorkforceManagementApi {
    * @param body body (optional)
    * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
    * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
-   * @return UserScheduleContainer
+   * @return BuAsyncAgentSchedulesSearchResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserScheduleContainer> postWorkforcemanagementManagementunitAgentschedulesSearchWithHttpInfo(String muId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException {
+  public ApiResponse<BuAsyncAgentSchedulesSearchResponse> postWorkforcemanagementManagementunitAgentschedulesSearchWithHttpInfo(String muId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException {
     return postWorkforcemanagementManagementunitAgentschedulesSearch(createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(muId, body, forceAsync, forceDownloadService).withHttpInfo());
   }
 
@@ -4382,13 +4383,13 @@ public class WorkforceManagementApi {
    * Query published schedules for given given time range for set of users
    * 
    * @param request The request object
-   * @return UserScheduleContainer
+   * @return BuAsyncAgentSchedulesSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserScheduleContainer postWorkforcemanagementManagementunitAgentschedulesSearch(PostWorkforcemanagementManagementunitAgentschedulesSearchRequest request) throws IOException, ApiException {
+  public BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementManagementunitAgentschedulesSearch(PostWorkforcemanagementManagementunitAgentschedulesSearchRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<UserScheduleContainer> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserScheduleContainer>() {});
+      ApiResponse<BuAsyncAgentSchedulesSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuAsyncAgentSchedulesSearchResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -4404,13 +4405,13 @@ public class WorkforceManagementApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserScheduleContainer> postWorkforcemanagementManagementunitAgentschedulesSearch(ApiRequest<BuSearchAgentSchedulesRequest> request) throws IOException {
+  public ApiResponse<BuAsyncAgentSchedulesSearchResponse> postWorkforcemanagementManagementunitAgentschedulesSearch(ApiRequest<BuSearchAgentSchedulesRequest> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<UserScheduleContainer>() {});
+      return pcapiClient.invoke(request, new TypeReference<BuAsyncAgentSchedulesSearchResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<UserScheduleContainer> response = (ApiResponse<UserScheduleContainer>)(ApiResponse<?>)exception;
+      ApiResponse<BuAsyncAgentSchedulesSearchResponse> response = (ApiResponse<BuAsyncAgentSchedulesSearchResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -4421,7 +4422,7 @@ public class WorkforceManagementApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<UserScheduleContainer> response = (ApiResponse<UserScheduleContainer>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<BuAsyncAgentSchedulesSearchResponse> response = (ApiResponse<BuAsyncAgentSchedulesSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

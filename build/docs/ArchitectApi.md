@@ -55,6 +55,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFlowVersions**](ArchitectApi.html#getFlowVersions) | Get flow version list |
 | [**getFlows**](ArchitectApi.html#getFlows) | Get a pageable list of flows, filtered by query parameters |
 | [**getFlowsDatatable**](ArchitectApi.html#getFlowsDatatable) | Returns a specific datatable by id |
+| [**getFlowsDatatableExportJob**](ArchitectApi.html#getFlowsDatatableExportJob) | Returns the state information about an export job |
+| [**getFlowsDatatableImportJob**](ArchitectApi.html#getFlowsDatatableImportJob) | Returns the state information about an import job |
+| [**getFlowsDatatableImportJobs**](ArchitectApi.html#getFlowsDatatableImportJobs) | Get all recent import jobs |
 | [**getFlowsDatatableRow**](ArchitectApi.html#getFlowsDatatableRow) | Returns a specific row for the datatable |
 | [**getFlowsDatatableRows**](ArchitectApi.html#getFlowsDatatableRows) | Returns the rows for the datatable with the given id |
 | [**getFlowsDatatables**](ArchitectApi.html#getFlowsDatatables) | Retrieve a list of datatables for the org |
@@ -79,6 +82,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postFlowsActionsPublish**](ArchitectApi.html#postFlowsActionsPublish) | Publish flow |
 | [**postFlowsActionsRevert**](ArchitectApi.html#postFlowsActionsRevert) | Revert flow |
 | [**postFlowsActionsUnlock**](ArchitectApi.html#postFlowsActionsUnlock) | Unlock flow |
+| [**postFlowsDatatableExportJobs**](ArchitectApi.html#postFlowsDatatableExportJobs) | Begin an export process for exporting all rows from a datatable |
+| [**postFlowsDatatableImportJobs**](ArchitectApi.html#postFlowsDatatableImportJobs) | Begin an import process for importing rows into a datatable |
 | [**postFlowsDatatableRows**](ArchitectApi.html#postFlowsDatatableRows) | Create a new row entry for the datatable. |
 | [**postFlowsDatatables**](ArchitectApi.html#postFlowsDatatables) | Create a new datatable with the specified json-schema definition |
 | [**postFlowsOutcomes**](ArchitectApi.html#postFlowsOutcomes) | Create a flow outcome |
@@ -3350,6 +3355,203 @@ try {
 
 [**DataTable**](DataTable.html)
 
+<a name="getFlowsDatatableExportJob"></a>
+
+# **getFlowsDatatableExportJob**
+
+
+
+> [DataTableExportJob](DataTableExportJob.html) getFlowsDatatableExportJob(datatableId, exportJobId)
+
+Returns the state information about an export job
+
+Returns the state information about an export job.
+
+Wraps GET /api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId}  
+
+Requires ANY permissions: 
+
+* architect:datatable:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String datatableId = "datatableId_example"; // String | id of datatable
+String exportJobId = "exportJobId_example"; // String | id of export job
+try {
+    DataTableExportJob result = apiInstance.getFlowsDatatableExportJob(datatableId, exportJobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowsDatatableExportJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **datatableId** | **String**| id of datatable | 
+| **exportJobId** | **String**| id of export job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataTableExportJob**](DataTableExportJob.html)
+
+<a name="getFlowsDatatableImportJob"></a>
+
+# **getFlowsDatatableImportJob**
+
+
+
+> [DataTableImportJob](DataTableImportJob.html) getFlowsDatatableImportJob(datatableId, importJobId)
+
+Returns the state information about an import job
+
+Returns the state information about an import job.
+
+Wraps GET /api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}  
+
+Requires ANY permissions: 
+
+* architect:datatable:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String datatableId = "datatableId_example"; // String | id of datatable
+String importJobId = "importJobId_example"; // String | id of import job
+try {
+    DataTableImportJob result = apiInstance.getFlowsDatatableImportJob(datatableId, importJobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowsDatatableImportJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **datatableId** | **String**| id of datatable | 
+| **importJobId** | **String**| id of import job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataTableImportJob**](DataTableImportJob.html)
+
+<a name="getFlowsDatatableImportJobs"></a>
+
+# **getFlowsDatatableImportJobs**
+
+
+
+> [EntityListing](EntityListing.html) getFlowsDatatableImportJobs(datatableId, pageNumber, pageSize)
+
+Get all recent import jobs
+
+Get all recent import jobs
+
+Wraps GET /api/v2/flows/datatables/{datatableId}/import/jobs  
+
+Requires ANY permissions: 
+
+* architect:datatable:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String datatableId = "datatableId_example"; // String | id of datatable
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+try {
+    EntityListing result = apiInstance.getFlowsDatatableImportJobs(datatableId, pageNumber, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowsDatatableImportJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **datatableId** | **String**| id of datatable | 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**EntityListing**](EntityListing.html)
+
 <a name="getFlowsDatatableRow"></a>
 
 # **getFlowsDatatableRow**
@@ -4920,6 +5122,134 @@ try {
 ### Return type
 
 [**Flow**](Flow.html)
+
+<a name="postFlowsDatatableExportJobs"></a>
+
+# **postFlowsDatatableExportJobs**
+
+
+
+> [DataTableExportJob](DataTableExportJob.html) postFlowsDatatableExportJobs(datatableId)
+
+Begin an export process for exporting all rows from a datatable
+
+Create an export job for exporting rows. The caller can then poll for status of the export using the token returned in the response
+
+Wraps POST /api/v2/flows/datatables/{datatableId}/export/jobs  
+
+Requires ANY permissions: 
+
+* architect:datatable:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String datatableId = "datatableId_example"; // String | id of datatable
+try {
+    DataTableExportJob result = apiInstance.postFlowsDatatableExportJobs(datatableId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postFlowsDatatableExportJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **datatableId** | **String**| id of datatable | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataTableExportJob**](DataTableExportJob.html)
+
+<a name="postFlowsDatatableImportJobs"></a>
+
+# **postFlowsDatatableImportJobs**
+
+
+
+> [DataTableImportJob](DataTableImportJob.html) postFlowsDatatableImportJobs(datatableId, body)
+
+Begin an import process for importing rows into a datatable
+
+Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
+
+Wraps POST /api/v2/flows/datatables/{datatableId}/import/jobs  
+
+Requires ANY permissions: 
+
+* architect:datatable:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String datatableId = "datatableId_example"; // String | id of datatable
+DataTableImportJob body = new DataTableImportJob(); // DataTableImportJob | import job information
+try {
+    DataTableImportJob result = apiInstance.postFlowsDatatableImportJobs(datatableId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postFlowsDatatableImportJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **datatableId** | **String**| id of datatable | 
+| **body** | [**DataTableImportJob**](DataTableImportJob.html)| import job information | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataTableImportJob**](DataTableImportJob.html)
 
 <a name="postFlowsDatatableRows"></a>
 

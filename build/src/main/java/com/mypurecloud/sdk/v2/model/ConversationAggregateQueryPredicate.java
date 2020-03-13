@@ -104,6 +104,7 @@ public class ConversationAggregateQueryPredicate  implements Serializable {
     SESSIONDNIS("sessionDnis"),
     SESSIONID("sessionId"),
     STATIONID("stationId"),
+    TEAMID("teamId"),
     USERID("userId"),
     WRAPUPCODE("wrapUpCode");
 

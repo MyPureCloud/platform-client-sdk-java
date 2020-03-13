@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
+import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
 import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
 import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
@@ -40,6 +41,8 @@ import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsHomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsLimitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedPagedMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedPagedSubjectIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedSubjectIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPermissionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationProductsRequest;
@@ -698,8 +701,8 @@ public class AuthorizationApiAsync {
 
   
   /**
-   * Returns whether or not current user can perform the specified action(s).
-   * 
+   * Returns which divisions the current user has the given permission in.
+   * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -732,8 +735,8 @@ public class AuthorizationApiAsync {
   }
 
   /**
-   * Returns whether or not current user can perform the specified action(s).
-   * 
+   * Returns which divisions the current user has the given permission in.
+   * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -774,8 +777,160 @@ public class AuthorizationApiAsync {
 
   
   /**
-   * Returns whether or not specified user can perform the specified action(s).
+   * Returns which divisions the current user has the given permission in.
    * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DivsPermittedEntityListing> getAuthorizationDivisionspermittedPagedMeAsync(GetAuthorizationDivisionspermittedPagedMeRequest request, final AsyncApiCallback<DivsPermittedEntityListing> callback) {
+    try {
+      final SettableFuture<DivsPermittedEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DivsPermittedEntityListing>() {}, new AsyncApiCallback<ApiResponse<DivsPermittedEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DivsPermittedEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns which divisions the current user has the given permission in.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DivsPermittedEntityListing>> getAuthorizationDivisionspermittedPagedMeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DivsPermittedEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DivsPermittedEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DivsPermittedEntityListing>() {}, new AsyncApiCallback<ApiResponse<DivsPermittedEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DivsPermittedEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DivsPermittedEntityListing> response = (ApiResponse<DivsPermittedEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DivsPermittedEntityListing> response = (ApiResponse<DivsPermittedEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Returns which divisions the specified user has the given permission in.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DivsPermittedEntityListing> getAuthorizationDivisionspermittedPagedSubjectIdAsync(GetAuthorizationDivisionspermittedPagedSubjectIdRequest request, final AsyncApiCallback<DivsPermittedEntityListing> callback) {
+    try {
+      final SettableFuture<DivsPermittedEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DivsPermittedEntityListing>() {}, new AsyncApiCallback<ApiResponse<DivsPermittedEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DivsPermittedEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns which divisions the specified user has the given permission in.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DivsPermittedEntityListing>> getAuthorizationDivisionspermittedPagedSubjectIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DivsPermittedEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DivsPermittedEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DivsPermittedEntityListing>() {}, new AsyncApiCallback<ApiResponse<DivsPermittedEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DivsPermittedEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DivsPermittedEntityListing> response = (ApiResponse<DivsPermittedEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DivsPermittedEntityListing> response = (ApiResponse<DivsPermittedEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Returns which divisions the specified user has the given permission in.
+   * This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -808,8 +963,8 @@ public class AuthorizationApiAsync {
   }
 
   /**
-   * Returns whether or not specified user can perform the specified action(s).
-   * 
+   * Returns which divisions the specified user has the given permission in.
+   * This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

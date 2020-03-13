@@ -23,10 +23,14 @@ public class EvaluationQuestionGroupScore  implements Serializable {
   private Boolean markedNA = null;
   private Float totalCriticalScore = null;
   private Float maxTotalCriticalScore = null;
+  private Float totalNonCriticalScore = null;
+  private Float maxTotalNonCriticalScore = null;
   private Float totalScoreUnweighted = null;
   private Float maxTotalScoreUnweighted = null;
   private Float totalCriticalScoreUnweighted = null;
   private Float maxTotalCriticalScoreUnweighted = null;
+  private Float totalNonCriticalScoreUnweighted = null;
+  private Float maxTotalNonCriticalScoreUnweighted = null;
   private List<EvaluationQuestionScore> questionScores = new ArrayList<EvaluationQuestionScore>();
 
   
@@ -134,6 +138,40 @@ public class EvaluationQuestionGroupScore  implements Serializable {
   
   /**
    **/
+  public EvaluationQuestionGroupScore totalNonCriticalScore(Float totalNonCriticalScore) {
+    this.totalNonCriticalScore = totalNonCriticalScore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("totalNonCriticalScore")
+  public Float getTotalNonCriticalScore() {
+    return totalNonCriticalScore;
+  }
+  public void setTotalNonCriticalScore(Float totalNonCriticalScore) {
+    this.totalNonCriticalScore = totalNonCriticalScore;
+  }
+
+  
+  /**
+   **/
+  public EvaluationQuestionGroupScore maxTotalNonCriticalScore(Float maxTotalNonCriticalScore) {
+    this.maxTotalNonCriticalScore = maxTotalNonCriticalScore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("maxTotalNonCriticalScore")
+  public Float getMaxTotalNonCriticalScore() {
+    return maxTotalNonCriticalScore;
+  }
+  public void setMaxTotalNonCriticalScore(Float maxTotalNonCriticalScore) {
+    this.maxTotalNonCriticalScore = maxTotalNonCriticalScore;
+  }
+
+  
+  /**
+   **/
   public EvaluationQuestionGroupScore totalScoreUnweighted(Float totalScoreUnweighted) {
     this.totalScoreUnweighted = totalScoreUnweighted;
     return this;
@@ -202,6 +240,40 @@ public class EvaluationQuestionGroupScore  implements Serializable {
   
   /**
    **/
+  public EvaluationQuestionGroupScore totalNonCriticalScoreUnweighted(Float totalNonCriticalScoreUnweighted) {
+    this.totalNonCriticalScoreUnweighted = totalNonCriticalScoreUnweighted;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("totalNonCriticalScoreUnweighted")
+  public Float getTotalNonCriticalScoreUnweighted() {
+    return totalNonCriticalScoreUnweighted;
+  }
+  public void setTotalNonCriticalScoreUnweighted(Float totalNonCriticalScoreUnweighted) {
+    this.totalNonCriticalScoreUnweighted = totalNonCriticalScoreUnweighted;
+  }
+
+  
+  /**
+   **/
+  public EvaluationQuestionGroupScore maxTotalNonCriticalScoreUnweighted(Float maxTotalNonCriticalScoreUnweighted) {
+    this.maxTotalNonCriticalScoreUnweighted = maxTotalNonCriticalScoreUnweighted;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("maxTotalNonCriticalScoreUnweighted")
+  public Float getMaxTotalNonCriticalScoreUnweighted() {
+    return maxTotalNonCriticalScoreUnweighted;
+  }
+  public void setMaxTotalNonCriticalScoreUnweighted(Float maxTotalNonCriticalScoreUnweighted) {
+    this.maxTotalNonCriticalScoreUnweighted = maxTotalNonCriticalScoreUnweighted;
+  }
+
+  
+  /**
+   **/
   public EvaluationQuestionGroupScore questionScores(List<EvaluationQuestionScore> questionScores) {
     this.questionScores = questionScores;
     return this;
@@ -233,16 +305,20 @@ public class EvaluationQuestionGroupScore  implements Serializable {
         Objects.equals(this.markedNA, evaluationQuestionGroupScore.markedNA) &&
         Objects.equals(this.totalCriticalScore, evaluationQuestionGroupScore.totalCriticalScore) &&
         Objects.equals(this.maxTotalCriticalScore, evaluationQuestionGroupScore.maxTotalCriticalScore) &&
+        Objects.equals(this.totalNonCriticalScore, evaluationQuestionGroupScore.totalNonCriticalScore) &&
+        Objects.equals(this.maxTotalNonCriticalScore, evaluationQuestionGroupScore.maxTotalNonCriticalScore) &&
         Objects.equals(this.totalScoreUnweighted, evaluationQuestionGroupScore.totalScoreUnweighted) &&
         Objects.equals(this.maxTotalScoreUnweighted, evaluationQuestionGroupScore.maxTotalScoreUnweighted) &&
         Objects.equals(this.totalCriticalScoreUnweighted, evaluationQuestionGroupScore.totalCriticalScoreUnweighted) &&
         Objects.equals(this.maxTotalCriticalScoreUnweighted, evaluationQuestionGroupScore.maxTotalCriticalScoreUnweighted) &&
+        Objects.equals(this.totalNonCriticalScoreUnweighted, evaluationQuestionGroupScore.totalNonCriticalScoreUnweighted) &&
+        Objects.equals(this.maxTotalNonCriticalScoreUnweighted, evaluationQuestionGroupScore.maxTotalNonCriticalScoreUnweighted) &&
         Objects.equals(this.questionScores, evaluationQuestionGroupScore.questionScores);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(questionGroupId, totalScore, maxTotalScore, markedNA, totalCriticalScore, maxTotalCriticalScore, totalScoreUnweighted, maxTotalScoreUnweighted, totalCriticalScoreUnweighted, maxTotalCriticalScoreUnweighted, questionScores);
+    return Objects.hash(questionGroupId, totalScore, maxTotalScore, markedNA, totalCriticalScore, maxTotalCriticalScore, totalNonCriticalScore, maxTotalNonCriticalScore, totalScoreUnweighted, maxTotalScoreUnweighted, totalCriticalScoreUnweighted, maxTotalCriticalScoreUnweighted, totalNonCriticalScoreUnweighted, maxTotalNonCriticalScoreUnweighted, questionScores);
   }
 
   @Override
@@ -256,10 +332,14 @@ public class EvaluationQuestionGroupScore  implements Serializable {
     sb.append("    markedNA: ").append(toIndentedString(markedNA)).append("\n");
     sb.append("    totalCriticalScore: ").append(toIndentedString(totalCriticalScore)).append("\n");
     sb.append("    maxTotalCriticalScore: ").append(toIndentedString(maxTotalCriticalScore)).append("\n");
+    sb.append("    totalNonCriticalScore: ").append(toIndentedString(totalNonCriticalScore)).append("\n");
+    sb.append("    maxTotalNonCriticalScore: ").append(toIndentedString(maxTotalNonCriticalScore)).append("\n");
     sb.append("    totalScoreUnweighted: ").append(toIndentedString(totalScoreUnweighted)).append("\n");
     sb.append("    maxTotalScoreUnweighted: ").append(toIndentedString(maxTotalScoreUnweighted)).append("\n");
     sb.append("    totalCriticalScoreUnweighted: ").append(toIndentedString(totalCriticalScoreUnweighted)).append("\n");
     sb.append("    maxTotalCriticalScoreUnweighted: ").append(toIndentedString(maxTotalCriticalScoreUnweighted)).append("\n");
+    sb.append("    totalNonCriticalScoreUnweighted: ").append(toIndentedString(totalNonCriticalScoreUnweighted)).append("\n");
+    sb.append("    maxTotalNonCriticalScoreUnweighted: ").append(toIndentedString(maxTotalNonCriticalScoreUnweighted)).append("\n");
     sb.append("    questionScores: ").append(toIndentedString(questionScores)).append("\n");
     sb.append("}");
     return sb.toString();

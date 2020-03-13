@@ -85,6 +85,7 @@ public class FlowAggregationQuery  implements Serializable {
     SESSIONID("sessionId"),
     STARTINGLANGUAGE("startingLanguage"),
     STATIONID("stationId"),
+    TEAMID("teamId"),
     TRANSFERTARGETADDRESS("transferTargetAddress"),
     TRANSFERTARGETNAME("transferTargetName"),
     TRANSFERTYPE("transferType"),

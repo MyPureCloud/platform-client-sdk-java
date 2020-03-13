@@ -124,12 +124,13 @@ public class AuditApi {
    * @param transactionId Transaction ID (required)
    * @param cursor Indicates where to resume query results (not required for first page) (optional)
    * @param pageSize Page size (optional, default to 25)
+   * @param expand Which fields, if any, to expand (optional)
    * @return AuditQueryExecutionResultsResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AuditQueryExecutionResultsResponse getAuditsQueryTransactionIdResults(String transactionId, String cursor, Integer pageSize) throws IOException, ApiException {
-    return  getAuditsQueryTransactionIdResults(createGetAuditsQueryTransactionIdResultsRequest(transactionId, cursor, pageSize));
+  public AuditQueryExecutionResultsResponse getAuditsQueryTransactionIdResults(String transactionId, String cursor, Integer pageSize, List<String> expand) throws IOException, ApiException {
+    return  getAuditsQueryTransactionIdResults(createGetAuditsQueryTransactionIdResultsRequest(transactionId, cursor, pageSize, expand));
   }
 
   /**
@@ -138,20 +139,23 @@ public class AuditApi {
    * @param transactionId Transaction ID (required)
    * @param cursor Indicates where to resume query results (not required for first page) (optional)
    * @param pageSize Page size (optional, default to 25)
+   * @param expand Which fields, if any, to expand (optional)
    * @return AuditQueryExecutionResultsResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AuditQueryExecutionResultsResponse> getAuditsQueryTransactionIdResultsWithHttpInfo(String transactionId, String cursor, Integer pageSize) throws IOException {
-    return getAuditsQueryTransactionIdResults(createGetAuditsQueryTransactionIdResultsRequest(transactionId, cursor, pageSize).withHttpInfo());
+  public ApiResponse<AuditQueryExecutionResultsResponse> getAuditsQueryTransactionIdResultsWithHttpInfo(String transactionId, String cursor, Integer pageSize, List<String> expand) throws IOException {
+    return getAuditsQueryTransactionIdResults(createGetAuditsQueryTransactionIdResultsRequest(transactionId, cursor, pageSize, expand).withHttpInfo());
   }
 
-  private GetAuditsQueryTransactionIdResultsRequest createGetAuditsQueryTransactionIdResultsRequest(String transactionId, String cursor, Integer pageSize) {
+  private GetAuditsQueryTransactionIdResultsRequest createGetAuditsQueryTransactionIdResultsRequest(String transactionId, String cursor, Integer pageSize, List<String> expand) {
     return GetAuditsQueryTransactionIdResultsRequest.builder()
             .withTransactionId(transactionId)
     
             .withCursor(cursor)
     
             .withPageSize(pageSize)
+    
+            .withExpand(expand)
     
             .build();
   }

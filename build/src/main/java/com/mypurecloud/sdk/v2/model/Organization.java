@@ -65,6 +65,45 @@ public class Organization  implements Serializable {
   private String defaultSiteId = null;
   private String supportURI = null;
   private Boolean voicemailEnabled = null;
+
+  /**
+   * Organizations Originating Platform.
+   */
+  public enum ProductPlatformEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    PURECLOUD("PureCloud"),
+    PUREENGAGE("PureEngage"),
+    PUREENGAGECLOUD("PureEngageCloud"),
+    PURECONNECT("PureConnect"),
+    PURECONNECTCLOUD("PureConnectCloud"),
+    UNKNOWN("Unknown");
+
+    private String value;
+
+    ProductPlatformEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ProductPlatformEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ProductPlatformEnum value : ProductPlatformEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ProductPlatformEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ProductPlatformEnum productPlatform = null;
   private String selfUri = null;
   private Map<String, Boolean> features = null;
 
@@ -258,6 +297,13 @@ public class Organization  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "Organizations Originating Platform.")
+  @JsonProperty("productPlatform")
+  public ProductPlatformEnum getProductPlatform() {
+    return productPlatform;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -305,13 +351,14 @@ public class Organization  implements Serializable {
         Objects.equals(this.defaultSiteId, organization.defaultSiteId) &&
         Objects.equals(this.supportURI, organization.supportURI) &&
         Objects.equals(this.voicemailEnabled, organization.voicemailEnabled) &&
+        Objects.equals(this.productPlatform, organization.productPlatform) &&
         Objects.equals(this.selfUri, organization.selfUri) &&
         Objects.equals(this.features, organization.features);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, defaultLanguage, defaultCountryCode, thirdPartyOrgName, thirdPartyURI, domain, version, state, defaultSiteId, supportURI, voicemailEnabled, selfUri, features);
+    return Objects.hash(id, name, defaultLanguage, defaultCountryCode, thirdPartyOrgName, thirdPartyURI, domain, version, state, defaultSiteId, supportURI, voicemailEnabled, productPlatform, selfUri, features);
   }
 
   @Override
@@ -331,6 +378,7 @@ public class Organization  implements Serializable {
     sb.append("    defaultSiteId: ").append(toIndentedString(defaultSiteId)).append("\n");
     sb.append("    supportURI: ").append(toIndentedString(supportURI)).append("\n");
     sb.append("    voicemailEnabled: ").append(toIndentedString(voicemailEnabled)).append("\n");
+    sb.append("    productPlatform: ").append(toIndentedString(productPlatform)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    features: ").append(toIndentedString(features)).append("\n");
     sb.append("}");

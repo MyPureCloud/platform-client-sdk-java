@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.api.request.GetLicenseDefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseToggleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLicenseUsersRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLicenseInferRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLicenseOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLicenseToggleRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLicenseUsersRequest;
@@ -437,6 +438,85 @@ public class LicenseApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UserLicensesEntityListing> response = (ApiResponse<UserLicensesEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of licenses inferred based on a list of roleIds
+   * 
+   * @param body The roleIds to use while inferring licenses (optional)
+   * @return List<String>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<String> postLicenseInfer(List<String> body) throws IOException, ApiException {
+    return  postLicenseInfer(createPostLicenseInferRequest(body));
+  }
+
+  /**
+   * Get a list of licenses inferred based on a list of roleIds
+   * 
+   * @param body The roleIds to use while inferring licenses (optional)
+   * @return List<String>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<String>> postLicenseInferWithHttpInfo(List<String> body) throws IOException {
+    return postLicenseInfer(createPostLicenseInferRequest(body).withHttpInfo());
+  }
+
+  private PostLicenseInferRequest createPostLicenseInferRequest(List<String> body) {
+    return PostLicenseInferRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of licenses inferred based on a list of roleIds
+   * 
+   * @param request The request object
+   * @return List<String>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<String> postLicenseInfer(PostLicenseInferRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<String>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<String>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of licenses inferred based on a list of roleIds
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<String>> postLicenseInfer(ApiRequest<List<String>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<String>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<String>> response = (ApiResponse<List<String>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<String>> response = (ApiResponse<List<String>>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

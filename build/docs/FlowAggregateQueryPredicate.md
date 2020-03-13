@@ -94,6 +94,7 @@ title: FlowAggregateQueryPredicate
 | SESSIONID | &quot;sessionId&quot; |
 | STARTINGLANGUAGE | &quot;startingLanguage&quot; |
 | STATIONID | &quot;stationId&quot; |
+| TEAMID | &quot;teamId&quot; |
 | TRANSFERTARGETADDRESS | &quot;transferTargetAddress&quot; |
 | TRANSFERTARGETNAME | &quot;transferTargetName&quot; |
 | TRANSFERTYPE | &quot;transferType&quot; |

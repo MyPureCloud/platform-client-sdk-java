@@ -107,6 +107,7 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
     }
   }
   private FlaggedReasonEnum flaggedReason = null;
+  private String teamId = null;
   private List<AnalyticsSession> sessions = new ArrayList<AnalyticsSession>();
 
   
@@ -237,6 +238,24 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
 
   
   /**
+   * The team id the user is a member of
+   **/
+  public AnalyticsParticipantWithoutAttributes teamId(String teamId) {
+    this.teamId = teamId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The team id the user is a member of")
+  @JsonProperty("teamId")
+  public String getTeamId() {
+    return teamId;
+  }
+  public void setTeamId(String teamId) {
+    this.teamId = teamId;
+  }
+
+  
+  /**
    * List of sessions associated to this participant
    **/
   public AnalyticsParticipantWithoutAttributes sessions(List<AnalyticsSession> sessions) {
@@ -271,12 +290,13 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
         Objects.equals(this.externalContactId, analyticsParticipantWithoutAttributes.externalContactId) &&
         Objects.equals(this.externalOrganizationId, analyticsParticipantWithoutAttributes.externalOrganizationId) &&
         Objects.equals(this.flaggedReason, analyticsParticipantWithoutAttributes.flaggedReason) &&
+        Objects.equals(this.teamId, analyticsParticipantWithoutAttributes.teamId) &&
         Objects.equals(this.sessions, analyticsParticipantWithoutAttributes.sessions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(participantId, participantName, userId, purpose, externalContactId, externalOrganizationId, flaggedReason, sessions);
+    return Objects.hash(participantId, participantName, userId, purpose, externalContactId, externalOrganizationId, flaggedReason, teamId, sessions);
   }
 
   @Override
@@ -291,6 +311,7 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("    externalOrganizationId: ").append(toIndentedString(externalOrganizationId)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
+    sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
     sb.append("    sessions: ").append(toIndentedString(sessions)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -3441,7 +3441,7 @@ try {
 
 
 
-> [UserScheduleContainer](UserScheduleContainer.html) postWorkforcemanagementManagementunitAgentschedulesSearch(muId, body, forceAsync, forceDownloadService)
+> [BuAsyncAgentSchedulesSearchResponse](BuAsyncAgentSchedulesSearchResponse.html) postWorkforcemanagementManagementunitAgentschedulesSearch(muId, body, forceAsync, forceDownloadService)
 
 Query published schedules for given given time range for set of users
 
@@ -3481,7 +3481,7 @@ BuSearchAgentSchedulesRequest body = new BuSearchAgentSchedulesRequest(); // BuS
 Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
 try {
-    UserScheduleContainer result = apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(muId, body, forceAsync, forceDownloadService);
+    BuAsyncAgentSchedulesSearchResponse result = apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(muId, body, forceAsync, forceDownloadService);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitAgentschedulesSearch");
@@ -3503,7 +3503,7 @@ try {
 
 ### Return type
 
-[**UserScheduleContainer**](UserScheduleContainer.html)
+[**BuAsyncAgentSchedulesSearchResponse**](BuAsyncAgentSchedulesSearchResponse.html)
 
 <a name="postWorkforcemanagementManagementunitHistoricaladherencequery"></a>
 

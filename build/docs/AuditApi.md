@@ -81,7 +81,7 @@ try {
 
 
 
-> [AuditQueryExecutionResultsResponse](AuditQueryExecutionResultsResponse.html) getAuditsQueryTransactionIdResults(transactionId, cursor, pageSize)
+> [AuditQueryExecutionResultsResponse](AuditQueryExecutionResultsResponse.html) getAuditsQueryTransactionIdResults(transactionId, cursor, pageSize, expand)
 
 Get results of audit query
 
@@ -118,8 +118,9 @@ AuditApi apiInstance = new AuditApi();
 String transactionId = "transactionId_example"; // String | Transaction ID
 String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page)
 Integer pageSize = 25; // Integer | Page size
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
 try {
-    AuditQueryExecutionResultsResponse result = apiInstance.getAuditsQueryTransactionIdResults(transactionId, cursor, pageSize);
+    AuditQueryExecutionResultsResponse result = apiInstance.getAuditsQueryTransactionIdResults(transactionId, cursor, pageSize, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuditApi#getAuditsQueryTransactionIdResults");
@@ -135,6 +136,7 @@ try {
 | **transactionId** | **String**| Transaction ID | 
 | **cursor** | **String**| Indicates where to resume query results (not required for first page) | [optional] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: user 
 {: class="table-striped"}
 
 

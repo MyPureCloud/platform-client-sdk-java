@@ -13,6 +13,7 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
+import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
 import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
 import com.mypurecloud.sdk.v2.model.OrganizationProductEntityListing;
 import com.mypurecloud.sdk.v2.model.DomainOrganizationRole;
@@ -37,6 +38,8 @@ import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsHomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsLimitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedPagedMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedPagedSubjectIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedSubjectIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPermissionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationProductsRequest;
@@ -746,8 +749,8 @@ public class AuthorizationApi {
 
   
   /**
-   * Returns whether or not current user can perform the specified action(s).
-   * 
+   * Returns which divisions the current user has the given permission in.
+   * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
    * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
    * @param name Search term to filter by division name (optional)
    * @return List<AuthzDivision>
@@ -759,8 +762,8 @@ public class AuthorizationApi {
   }
 
   /**
-   * Returns whether or not current user can perform the specified action(s).
-   * 
+   * Returns which divisions the current user has the given permission in.
+   * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
    * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
    * @param name Search term to filter by division name (optional)
    * @return List<AuthzDivision>
@@ -780,8 +783,8 @@ public class AuthorizationApi {
   }
 
   /**
-   * Returns whether or not current user can perform the specified action(s).
-   * 
+   * Returns which divisions the current user has the given permission in.
+   * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
    * @param request The request object
    * @return List<AuthzDivision>
    * @throws ApiException if the request fails on the server
@@ -799,8 +802,8 @@ public class AuthorizationApi {
   }
 
   /**
-   * Returns whether or not current user can perform the specified action(s).
-   * 
+   * Returns which divisions the current user has the given permission in.
+   * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -829,8 +832,186 @@ public class AuthorizationApi {
 
   
   /**
-   * Returns whether or not specified user can perform the specified action(s).
+   * Returns which divisions the current user has the given permission in.
    * 
+   * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return DivsPermittedEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedMe(String permission, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getAuthorizationDivisionspermittedPagedMe(createGetAuthorizationDivisionspermittedPagedMeRequest(permission, pageNumber, pageSize));
+  }
+
+  /**
+   * Returns which divisions the current user has the given permission in.
+   * 
+   * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return DivsPermittedEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DivsPermittedEntityListing> getAuthorizationDivisionspermittedPagedMeWithHttpInfo(String permission, Integer pageNumber, Integer pageSize) throws IOException {
+    return getAuthorizationDivisionspermittedPagedMe(createGetAuthorizationDivisionspermittedPagedMeRequest(permission, pageNumber, pageSize).withHttpInfo());
+  }
+
+  private GetAuthorizationDivisionspermittedPagedMeRequest createGetAuthorizationDivisionspermittedPagedMeRequest(String permission, Integer pageNumber, Integer pageSize) {
+    return GetAuthorizationDivisionspermittedPagedMeRequest.builder()
+            .withPermission(permission)
+    
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .build();
+  }
+
+  /**
+   * Returns which divisions the current user has the given permission in.
+   * 
+   * @param request The request object
+   * @return DivsPermittedEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedMe(GetAuthorizationDivisionspermittedPagedMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DivsPermittedEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DivsPermittedEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Returns which divisions the current user has the given permission in.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DivsPermittedEntityListing> getAuthorizationDivisionspermittedPagedMe(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DivsPermittedEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DivsPermittedEntityListing> response = (ApiResponse<DivsPermittedEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DivsPermittedEntityListing> response = (ApiResponse<DivsPermittedEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Returns which divisions the specified user has the given permission in.
+   * 
+   * @param subjectId Subject ID (user or group) (required)
+   * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return DivsPermittedEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedSubjectId(String subjectId, String permission, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getAuthorizationDivisionspermittedPagedSubjectId(createGetAuthorizationDivisionspermittedPagedSubjectIdRequest(subjectId, permission, pageNumber, pageSize));
+  }
+
+  /**
+   * Returns which divisions the specified user has the given permission in.
+   * 
+   * @param subjectId Subject ID (user or group) (required)
+   * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return DivsPermittedEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DivsPermittedEntityListing> getAuthorizationDivisionspermittedPagedSubjectIdWithHttpInfo(String subjectId, String permission, Integer pageNumber, Integer pageSize) throws IOException {
+    return getAuthorizationDivisionspermittedPagedSubjectId(createGetAuthorizationDivisionspermittedPagedSubjectIdRequest(subjectId, permission, pageNumber, pageSize).withHttpInfo());
+  }
+
+  private GetAuthorizationDivisionspermittedPagedSubjectIdRequest createGetAuthorizationDivisionspermittedPagedSubjectIdRequest(String subjectId, String permission, Integer pageNumber, Integer pageSize) {
+    return GetAuthorizationDivisionspermittedPagedSubjectIdRequest.builder()
+            .withSubjectId(subjectId)
+    
+            .withPermission(permission)
+    
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .build();
+  }
+
+  /**
+   * Returns which divisions the specified user has the given permission in.
+   * 
+   * @param request The request object
+   * @return DivsPermittedEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedSubjectId(GetAuthorizationDivisionspermittedPagedSubjectIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DivsPermittedEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DivsPermittedEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Returns which divisions the specified user has the given permission in.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DivsPermittedEntityListing> getAuthorizationDivisionspermittedPagedSubjectId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DivsPermittedEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DivsPermittedEntityListing> response = (ApiResponse<DivsPermittedEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DivsPermittedEntityListing> response = (ApiResponse<DivsPermittedEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Returns which divisions the specified user has the given permission in.
+   * This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
    * @param subjectId Subject ID (user or group) (required)
    * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
    * @param name Search term to filter by division name (optional)
@@ -843,8 +1024,8 @@ public class AuthorizationApi {
   }
 
   /**
-   * Returns whether or not specified user can perform the specified action(s).
-   * 
+   * Returns which divisions the specified user has the given permission in.
+   * This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
    * @param subjectId Subject ID (user or group) (required)
    * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
    * @param name Search term to filter by division name (optional)
@@ -867,8 +1048,8 @@ public class AuthorizationApi {
   }
 
   /**
-   * Returns whether or not specified user can perform the specified action(s).
-   * 
+   * Returns which divisions the specified user has the given permission in.
+   * This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
    * @param request The request object
    * @return List<AuthzDivision>
    * @throws ApiException if the request fails on the server
@@ -886,8 +1067,8 @@ public class AuthorizationApi {
   }
 
   /**
-   * Returns whether or not specified user can perform the specified action(s).
-   * 
+   * Returns which divisions the specified user has the given permission in.
+   * This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

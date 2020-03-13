@@ -64,6 +64,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSkillRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSmsPhonenumberRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutinglanguageRequest;
@@ -95,6 +96,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAddressesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsAvailablephonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingSmsPhonenumbersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodesRequest;
@@ -128,6 +130,7 @@ import com.mypurecloud.sdk.v2.api.request.PutRoutingQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingSettingsTranscriptionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingSmsPhonenumberRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserRoutingskillRequest;
@@ -750,6 +753,82 @@ public class RoutingApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteRoutingSmsPhonenumber(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+   * 
+   * @param userId User ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingUserUtilization(String userId) throws IOException, ApiException {
+     deleteRoutingUserUtilization(createDeleteRoutingUserUtilizationRequest(userId));
+  }
+
+  /**
+   * Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+   * 
+   * @param userId User ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingUserUtilizationWithHttpInfo(String userId) throws IOException {
+    return deleteRoutingUserUtilization(createDeleteRoutingUserUtilizationRequest(userId).withHttpInfo());
+  }
+
+  private DeleteRoutingUserUtilizationRequest createDeleteRoutingUserUtilizationRequest(String userId) {
+    return DeleteRoutingUserUtilizationRequest.builder()
+            .withUserId(userId)
+    
+            .build();
+  }
+
+  /**
+   * Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingUserUtilization(DeleteRoutingUserUtilizationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingUserUtilization(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -3416,6 +3495,85 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SmsPhoneNumberEntityListing> response = (ApiResponse<SmsPhoneNumberEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+   * 
+   * @param userId User ID (required)
+   * @return Utilization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Utilization getRoutingUserUtilization(String userId) throws IOException, ApiException {
+    return  getRoutingUserUtilization(createGetRoutingUserUtilizationRequest(userId));
+  }
+
+  /**
+   * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+   * 
+   * @param userId User ID (required)
+   * @return Utilization
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Utilization> getRoutingUserUtilizationWithHttpInfo(String userId) throws IOException {
+    return getRoutingUserUtilization(createGetRoutingUserUtilizationRequest(userId).withHttpInfo());
+  }
+
+  private GetRoutingUserUtilizationRequest createGetRoutingUserUtilizationRequest(String userId) {
+    return GetRoutingUserUtilizationRequest.builder()
+            .withUserId(userId)
+    
+            .build();
+  }
+
+  /**
+   * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+   * 
+   * @param request The request object
+   * @return Utilization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Utilization getRoutingUserUtilization(GetRoutingUserUtilizationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Utilization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Utilization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Utilization> getRoutingUserUtilization(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Utilization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Utilization> response = (ApiResponse<Utilization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Utilization> response = (ApiResponse<Utilization>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6156,6 +6314,89 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SmsPhoneNumber> response = (ApiResponse<SmsPhoneNumber>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+   * 
+   * @param userId User ID (required)
+   * @param body utilization (required)
+   * @return Utilization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Utilization putRoutingUserUtilization(String userId, Utilization body) throws IOException, ApiException {
+    return  putRoutingUserUtilization(createPutRoutingUserUtilizationRequest(userId, body));
+  }
+
+  /**
+   * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+   * 
+   * @param userId User ID (required)
+   * @param body utilization (required)
+   * @return Utilization
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Utilization> putRoutingUserUtilizationWithHttpInfo(String userId, Utilization body) throws IOException {
+    return putRoutingUserUtilization(createPutRoutingUserUtilizationRequest(userId, body).withHttpInfo());
+  }
+
+  private PutRoutingUserUtilizationRequest createPutRoutingUserUtilizationRequest(String userId, Utilization body) {
+    return PutRoutingUserUtilizationRequest.builder()
+            .withUserId(userId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+   * 
+   * @param request The request object
+   * @return Utilization
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Utilization putRoutingUserUtilization(PutRoutingUserUtilizationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Utilization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Utilization>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Utilization> putRoutingUserUtilization(ApiRequest<Utilization> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Utilization>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Utilization> response = (ApiResponse<Utilization>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Utilization> response = (ApiResponse<Utilization>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

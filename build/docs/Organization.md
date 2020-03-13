@@ -20,6 +20,7 @@ title: Organization
 | **defaultSiteId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **supportURI** | <!----><!---->**String**<!----> | Email address where support tickets are sent to. |  [optional] |
 | **voicemailEnabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **productPlatform** | [**ProductPlatformEnum**](#ProductPlatformEnum)<!----> | Organizations Originating Platform. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 | **features** | <!----><!---->**Map&lt;String, Boolean&gt;**<!----> | The state of features available for the organization. |  [optional] |
 {: class="table table-striped"}
@@ -35,6 +36,22 @@ title: Organization
 | ACTIVE | &quot;active&quot; |
 | INACTIVE | &quot;inactive&quot; |
 | DELETED | &quot;deleted&quot; |
+{: class="table table-striped"}
+
+
+<a name="ProductPlatformEnum"></a>
+
+## Enum: ProductPlatformEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| PURECLOUD | &quot;PureCloud&quot; |
+| PUREENGAGE | &quot;PureEngage&quot; |
+| PUREENGAGECLOUD | &quot;PureEngageCloud&quot; |
+| PURECONNECT | &quot;PureConnect&quot; |
+| PURECONNECTCLOUD | &quot;PureConnectCloud&quot; |
+| UNKNOWN | &quot;Unknown&quot; |
 {: class="table table-striped"}
 
 

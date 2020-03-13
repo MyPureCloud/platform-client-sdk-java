@@ -19,6 +19,7 @@ public class EvaluationScoringSet  implements Serializable {
   
   private Float totalScore = null;
   private Float totalCriticalScore = null;
+  private Float totalNonCriticalScore = null;
   private List<EvaluationQuestionGroupScore> questionGroupScores = new ArrayList<EvaluationQuestionGroupScore>();
   private Boolean anyFailedKillQuestions = null;
   private String comments = null;
@@ -56,6 +57,23 @@ public class EvaluationScoringSet  implements Serializable {
   }
   public void setTotalCriticalScore(Float totalCriticalScore) {
     this.totalCriticalScore = totalCriticalScore;
+  }
+
+  
+  /**
+   **/
+  public EvaluationScoringSet totalNonCriticalScore(Float totalNonCriticalScore) {
+    this.totalNonCriticalScore = totalNonCriticalScore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("totalNonCriticalScore")
+  public Float getTotalNonCriticalScore() {
+    return totalNonCriticalScore;
+  }
+  public void setTotalNonCriticalScore(Float totalNonCriticalScore) {
+    this.totalNonCriticalScore = totalNonCriticalScore;
   }
 
   
@@ -139,6 +157,7 @@ public class EvaluationScoringSet  implements Serializable {
     EvaluationScoringSet evaluationScoringSet = (EvaluationScoringSet) o;
     return Objects.equals(this.totalScore, evaluationScoringSet.totalScore) &&
         Objects.equals(this.totalCriticalScore, evaluationScoringSet.totalCriticalScore) &&
+        Objects.equals(this.totalNonCriticalScore, evaluationScoringSet.totalNonCriticalScore) &&
         Objects.equals(this.questionGroupScores, evaluationScoringSet.questionGroupScores) &&
         Objects.equals(this.anyFailedKillQuestions, evaluationScoringSet.anyFailedKillQuestions) &&
         Objects.equals(this.comments, evaluationScoringSet.comments) &&
@@ -147,7 +166,7 @@ public class EvaluationScoringSet  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalScore, totalCriticalScore, questionGroupScores, anyFailedKillQuestions, comments, agentComments);
+    return Objects.hash(totalScore, totalCriticalScore, totalNonCriticalScore, questionGroupScores, anyFailedKillQuestions, comments, agentComments);
   }
 
   @Override
@@ -157,6 +176,7 @@ public class EvaluationScoringSet  implements Serializable {
     
     sb.append("    totalScore: ").append(toIndentedString(totalScore)).append("\n");
     sb.append("    totalCriticalScore: ").append(toIndentedString(totalCriticalScore)).append("\n");
+    sb.append("    totalNonCriticalScore: ").append(toIndentedString(totalNonCriticalScore)).append("\n");
     sb.append("    questionGroupScores: ").append(toIndentedString(questionGroupScores)).append("\n");
     sb.append("    anyFailedKillQuestions: ").append(toIndentedString(anyFailedKillQuestions)).append("\n");
     sb.append("    comments: ").append(toIndentedString(comments)).append("\n");

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AggregationResult;
-import com.mypurecloud.sdk.v2.model.AnalyticsConversation;
+import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -18,25 +18,8 @@ import java.io.Serializable;
 
 public class AnalyticsConversationQueryResponse  implements Serializable {
   
-  private List<AnalyticsConversation> conversations = new ArrayList<AnalyticsConversation>();
   private List<AggregationResult> aggregations = new ArrayList<AggregationResult>();
-
-  
-  /**
-   **/
-  public AnalyticsConversationQueryResponse conversations(List<AnalyticsConversation> conversations) {
-    this.conversations = conversations;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("conversations")
-  public List<AnalyticsConversation> getConversations() {
-    return conversations;
-  }
-  public void setConversations(List<AnalyticsConversation> conversations) {
-    this.conversations = conversations;
-  }
+  private List<AnalyticsConversationWithoutAttributes> conversations = new ArrayList<AnalyticsConversationWithoutAttributes>();
 
   
   /**
@@ -56,6 +39,23 @@ public class AnalyticsConversationQueryResponse  implements Serializable {
   }
 
   
+  /**
+   **/
+  public AnalyticsConversationQueryResponse conversations(List<AnalyticsConversationWithoutAttributes> conversations) {
+    this.conversations = conversations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversations")
+  public List<AnalyticsConversationWithoutAttributes> getConversations() {
+    return conversations;
+  }
+  public void setConversations(List<AnalyticsConversationWithoutAttributes> conversations) {
+    this.conversations = conversations;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -66,13 +66,13 @@ public class AnalyticsConversationQueryResponse  implements Serializable {
       return false;
     }
     AnalyticsConversationQueryResponse analyticsConversationQueryResponse = (AnalyticsConversationQueryResponse) o;
-    return Objects.equals(this.conversations, analyticsConversationQueryResponse.conversations) &&
-        Objects.equals(this.aggregations, analyticsConversationQueryResponse.aggregations);
+    return Objects.equals(this.aggregations, analyticsConversationQueryResponse.aggregations) &&
+        Objects.equals(this.conversations, analyticsConversationQueryResponse.conversations);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversations, aggregations);
+    return Objects.hash(aggregations, conversations);
   }
 
   @Override
@@ -80,8 +80,8 @@ public class AnalyticsConversationQueryResponse  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class AnalyticsConversationQueryResponse {\n");
     
-    sb.append("    conversations: ").append(toIndentedString(conversations)).append("\n");
     sb.append("    aggregations: ").append(toIndentedString(aggregations)).append("\n");
+    sb.append("    conversations: ").append(toIndentedString(conversations)).append("\n");
     sb.append("}");
     return sb.toString();
   }

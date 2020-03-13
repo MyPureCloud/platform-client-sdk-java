@@ -49,13 +49,6 @@ title: ViewFilter
 | **surveyFormIds** | <!----><!---->**List&lt;String&gt;**<!----> | The survey form ids used to filter the view |  [optional] |
 | **surveyTotalScore** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The survey total score used to filter the view |  [optional] |
 | **surveyNpsScore** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The survey NPS score used to filter the view |  [optional] |
-| **showSecondaryStatus** | <!----><!---->**Boolean**<!----> | Indicates if the Secondary Status should be shown |  [optional] |
-| **agentDurationSortOrder** | [**AgentDurationSortOrderEnum**](#AgentDurationSortOrderEnum)<!----> | Provides the agent duration sort order |  [optional] |
-| **waitingDurationSortOrder** | [**WaitingDurationSortOrderEnum**](#WaitingDurationSortOrderEnum)<!----> | Provides the waiting duration sort order |  [optional] |
-| **interactingDurationSortOrder** | [**InteractingDurationSortOrderEnum**](#InteractingDurationSortOrderEnum)<!----> | Provides the interacting duration sort order |  [optional] |
-| **agentName** | <!----><!---->**String**<!----> | Displays the Agent name as provided by the user |  [optional] |
-| **skillsList** | <!----><!---->**List&lt;String&gt;**<!----> | The list of skill strings as free form text |  [optional] |
-| **languageList** | <!----><!---->**List&lt;String&gt;**<!----> | The list of language strings as free form text |  [optional] |
 | **mos** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The desired range for mos values |  [optional] |
 | **surveyQuestionGroupScore** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The survey question group score used to filter the view |  [optional] |
 | **surveyPromoterScore** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The survey promoter score used to filter the view |  [optional] |
@@ -73,7 +66,6 @@ title: ViewFilter
 | **isConsulted** | <!----><!---->**Boolean**<!----> | Indicates filtering for consulted |  [optional] |
 | **isConsultTransferred** | <!----><!---->**Boolean**<!----> | Indicates filtering for consult transferred |  [optional] |
 | **remoteParticipants** | <!----><!---->**List&lt;String&gt;**<!----> | The list of remote participants used to filter the view |  [optional] |
-| **statusList** | <!----><!---->**List&lt;String&gt;**<!----> | A list of status for the configuration view |  [optional] |
 | **flowIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of flow Ids |  [optional] |
 | **flowOutcomeIds** | <!----><!---->**List&lt;String&gt;**<!----> | A list of outcome ids of the flow |  [optional] |
 | **flowOutcomeValues** | <!---->[**List&lt;FlowOutcomeValuesEnum&gt;**](#FlowOutcomeValuesEnum)<!----> | A list of outcome values of the flow |  [optional] |
@@ -87,8 +79,6 @@ title: ViewFilter
 | **hasJourneyCustomerId** | <!----><!---->**Boolean**<!----> | Indicates filtering for journey customer id |  [optional] |
 | **hasJourneyActionMapId** | <!----><!---->**Boolean**<!----> | Indicates filtering for Journey action map id |  [optional] |
 | **hasJourneyVisitId** | <!----><!---->**Boolean**<!----> | Indicates filtering for Journey visit id |  [optional] |
-| **oauthClientIds** | <!----><!---->**List&lt;String&gt;**<!----> | A list of OAuth client IDs |  [optional] |
-| **apiOperations** | <!----><!---->**List&lt;String&gt;**<!----> | A list of API operations (ex: [\&quot;GET /api/v2/users/{userId}/queues\&quot;]) |  [optional] |
 | **hasMedia** | <!----><!---->**Boolean**<!----> | Indicates filtering for presence of MMS media |  [optional] |
 | **roleIds** | <!----><!---->**List&lt;String&gt;**<!----> | The role Ids used to filter the view |  [optional] |
 | **reportsTos** | <!----><!---->**List&lt;String&gt;**<!----> | The report to user IDs used to filter the view |  [optional] |
@@ -146,42 +136,6 @@ title: ViewFilter
 | LINE | &quot;line&quot; |
 | FACEBOOK | &quot;facebook&quot; |
 | WHATSAPP | &quot;whatsapp&quot; |
-{: class="table table-striped"}
-
-
-<a name="AgentDurationSortOrderEnum"></a>
-
-## Enum: AgentDurationSortOrderEnum
-
-| Name | Value |
-| ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ASCENDING | &quot;ascending&quot; |
-| DESCENDING | &quot;descending&quot; |
-{: class="table table-striped"}
-
-
-<a name="WaitingDurationSortOrderEnum"></a>
-
-## Enum: WaitingDurationSortOrderEnum
-
-| Name | Value |
-| ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ASCENDING | &quot;ascending&quot; |
-| DESCENDING | &quot;descending&quot; |
-{: class="table table-striped"}
-
-
-<a name="InteractingDurationSortOrderEnum"></a>
-
-## Enum: InteractingDurationSortOrderEnum
-
-| Name | Value |
-| ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ASCENDING | &quot;ascending&quot; |
-| DESCENDING | &quot;descending&quot; |
 {: class="table table-striped"}
 
 

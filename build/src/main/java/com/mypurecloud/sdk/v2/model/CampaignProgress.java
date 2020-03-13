@@ -18,6 +18,7 @@ public class CampaignProgress  implements Serializable {
   private DomainEntityRef campaign = null;
   private DomainEntityRef contactList = null;
   private Long numberOfContactsCalled = null;
+  private Long numberOfContactsMessaged = null;
   private Long totalNumberOfContacts = null;
   private Long percentage = null;
 
@@ -58,10 +59,17 @@ public class CampaignProgress  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "Number of contacts processed during the campaign")
+  @ApiModelProperty(example = "null", value = "Number of contacts called during the campaign")
   @JsonProperty("numberOfContactsCalled")
   public Long getNumberOfContactsCalled() {
     return numberOfContactsCalled;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "Number of contacts messaged during the campaign")
+  @JsonProperty("numberOfContactsMessaged")
+  public Long getNumberOfContactsMessaged() {
+    return numberOfContactsMessaged;
   }
 
   
@@ -92,13 +100,14 @@ public class CampaignProgress  implements Serializable {
     return Objects.equals(this.campaign, campaignProgress.campaign) &&
         Objects.equals(this.contactList, campaignProgress.contactList) &&
         Objects.equals(this.numberOfContactsCalled, campaignProgress.numberOfContactsCalled) &&
+        Objects.equals(this.numberOfContactsMessaged, campaignProgress.numberOfContactsMessaged) &&
         Objects.equals(this.totalNumberOfContacts, campaignProgress.totalNumberOfContacts) &&
         Objects.equals(this.percentage, campaignProgress.percentage);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(campaign, contactList, numberOfContactsCalled, totalNumberOfContacts, percentage);
+    return Objects.hash(campaign, contactList, numberOfContactsCalled, numberOfContactsMessaged, totalNumberOfContacts, percentage);
   }
 
   @Override
@@ -109,6 +118,7 @@ public class CampaignProgress  implements Serializable {
     sb.append("    campaign: ").append(toIndentedString(campaign)).append("\n");
     sb.append("    contactList: ").append(toIndentedString(contactList)).append("\n");
     sb.append("    numberOfContactsCalled: ").append(toIndentedString(numberOfContactsCalled)).append("\n");
+    sb.append("    numberOfContactsMessaged: ").append(toIndentedString(numberOfContactsMessaged)).append("\n");
     sb.append("    totalNumberOfContacts: ").append(toIndentedString(totalNumberOfContacts)).append("\n");
     sb.append("    percentage: ").append(toIndentedString(percentage)).append("\n");
     sb.append("}");

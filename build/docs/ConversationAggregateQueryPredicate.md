@@ -82,6 +82,7 @@ title: ConversationAggregateQueryPredicate
 | SESSIONDNIS | &quot;sessionDnis&quot; |
 | SESSIONID | &quot;sessionId&quot; |
 | STATIONID | &quot;stationId&quot; |
+| TEAMID | &quot;teamId&quot; |
 | USERID | &quot;userId&quot; |
 | WRAPUPCODE | &quot;wrapUpCode&quot; |
 {: class="table table-striped"}
