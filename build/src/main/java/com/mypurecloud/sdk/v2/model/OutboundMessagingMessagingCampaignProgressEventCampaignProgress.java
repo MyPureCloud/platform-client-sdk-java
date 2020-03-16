@@ -18,6 +18,7 @@ public class OutboundMessagingMessagingCampaignProgressEventCampaignProgress  im
   
   private OutboundMessagingMessagingCampaignProgressEventUriReference campaign = null;
   private BigDecimal numberOfContactsCalled = null;
+  private BigDecimal numberOfContactsMessaged = null;
   private BigDecimal totalNumberOfContacts = null;
   private Integer percentage = null;
   private Object additionalProperties = null;
@@ -54,6 +55,23 @@ public class OutboundMessagingMessagingCampaignProgressEventCampaignProgress  im
   }
   public void setNumberOfContactsCalled(BigDecimal numberOfContactsCalled) {
     this.numberOfContactsCalled = numberOfContactsCalled;
+  }
+
+  
+  /**
+   **/
+  public OutboundMessagingMessagingCampaignProgressEventCampaignProgress numberOfContactsMessaged(BigDecimal numberOfContactsMessaged) {
+    this.numberOfContactsMessaged = numberOfContactsMessaged;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("numberOfContactsMessaged")
+  public BigDecimal getNumberOfContactsMessaged() {
+    return numberOfContactsMessaged;
+  }
+  public void setNumberOfContactsMessaged(BigDecimal numberOfContactsMessaged) {
+    this.numberOfContactsMessaged = numberOfContactsMessaged;
   }
 
   
@@ -120,6 +138,7 @@ public class OutboundMessagingMessagingCampaignProgressEventCampaignProgress  im
     OutboundMessagingMessagingCampaignProgressEventCampaignProgress outboundMessagingMessagingCampaignProgressEventCampaignProgress = (OutboundMessagingMessagingCampaignProgressEventCampaignProgress) o;
     return Objects.equals(this.campaign, outboundMessagingMessagingCampaignProgressEventCampaignProgress.campaign) &&
         Objects.equals(this.numberOfContactsCalled, outboundMessagingMessagingCampaignProgressEventCampaignProgress.numberOfContactsCalled) &&
+        Objects.equals(this.numberOfContactsMessaged, outboundMessagingMessagingCampaignProgressEventCampaignProgress.numberOfContactsMessaged) &&
         Objects.equals(this.totalNumberOfContacts, outboundMessagingMessagingCampaignProgressEventCampaignProgress.totalNumberOfContacts) &&
         Objects.equals(this.percentage, outboundMessagingMessagingCampaignProgressEventCampaignProgress.percentage) &&
         Objects.equals(this.additionalProperties, outboundMessagingMessagingCampaignProgressEventCampaignProgress.additionalProperties);
@@ -127,7 +146,7 @@ public class OutboundMessagingMessagingCampaignProgressEventCampaignProgress  im
 
   @Override
   public int hashCode() {
-    return Objects.hash(campaign, numberOfContactsCalled, totalNumberOfContacts, percentage, additionalProperties);
+    return Objects.hash(campaign, numberOfContactsCalled, numberOfContactsMessaged, totalNumberOfContacts, percentage, additionalProperties);
   }
 
   @Override
@@ -137,6 +156,7 @@ public class OutboundMessagingMessagingCampaignProgressEventCampaignProgress  im
     
     sb.append("    campaign: ").append(toIndentedString(campaign)).append("\n");
     sb.append("    numberOfContactsCalled: ").append(toIndentedString(numberOfContactsCalled)).append("\n");
+    sb.append("    numberOfContactsMessaged: ").append(toIndentedString(numberOfContactsMessaged)).append("\n");
     sb.append("    totalNumberOfContacts: ").append(toIndentedString(totalNumberOfContacts)).append("\n");
     sb.append("    percentage: ").append(toIndentedString(percentage)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");

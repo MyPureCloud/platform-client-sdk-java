@@ -128,6 +128,25 @@ Specify the connector in the builder:
 .withProperty(ApiClientConnectorProperty.CONNECTOR_PROVIDER, new OkHttpClientConnectorProvider())
 ```
 
+#### Setting the max retry time
+
+By default, the Java SDK does not automatically retry any failed requests.
+To enable automatic retries, provide a RetryConfiguration object with the maximum number of seconds to retry requests when building the ApiClient instance.
+
+Building a `RetryConfiguration` instance:
+```{"language":"java"}
+ApiClient.RetryConfiguration retryConfiguration = new ApiClient.RetryConfiguration();
+retryConfiguration.setMaxRetryTimeSec(30);
+```
+
+Setting `RetryConfiguration` instance to `ApiClient`:
+ ```{"language":"java"}
+        .withRetryConfiguration(retryConfiguration)
+```
+Set the `maxRetryTime` to the number of seconds to process retries before returning an error.
+When the retry time is a a positive integer, the SDK will follow the recommended backoff logic using the provided configuration.
+The best practices are documented in the [Rate Limiting](https://developer.mypurecloud.com/api/rest/rate_limits.html) Developer Center article.
+
 #### Other ApiClient.Builder methods
 
 * `withDefaultHeader(String header, String value)` Specifies additional headers to be sent with every request
@@ -137,6 +156,7 @@ Specify the connector in the builder:
 * `withConnectionTimeout(int connectionTimeout)` Overrides the default connection timeout
 * `withShouldThrowErrors(boolean shouldThrowErrors)` Set to `false` to suppress throwing of all errors
 * `withProxy(Proxy proxy)` Sets a proxy to use for requests
+* `withAuthenticatedProxy(Proxy proxy, String user, String pass)` Sets an authenticated proxy to use for requests
 
 ### Making Requests
 

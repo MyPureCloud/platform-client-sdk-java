@@ -8,4 +8,10 @@
             <class name="com.mypurecloud.sdk.v2.SdkTests" />
         </classes>
     </test>
+    <test name="Unit Tests">
+        <classes>
+            <class name="com.mypurecloud.sdk.v2.ApiClientRetryTest" />
+            <class name="com.mypurecloud.sdk.v2.ApiClientRetryAsyncTest" />
+        </classes>
+    </test>
 </suite>

@@ -10,6 +10,7 @@ title: OutboundMessagingMessagingCampaignProgressEventCampaignProgress
 | ------------ | ------------- | ------------- | ------------- |
 | **campaign** | <!----><!---->[**OutboundMessagingMessagingCampaignProgressEventUriReference**](OutboundMessagingMessagingCampaignProgressEventUriReference.html)<!----> |  |  [optional] |
 | **numberOfContactsCalled** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
+| **numberOfContactsMessaged** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
 | **totalNumberOfContacts** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
 | **percentage** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |

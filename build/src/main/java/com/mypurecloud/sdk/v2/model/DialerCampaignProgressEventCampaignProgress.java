@@ -18,6 +18,7 @@ public class DialerCampaignProgressEventCampaignProgress  implements Serializabl
   
   private DialerCampaignProgressEventUriReference campaign = null;
   private BigDecimal numberOfContactsCalled = null;
+  private BigDecimal numberOfContactsMessaged = null;
   private BigDecimal totalNumberOfContacts = null;
   private Integer percentage = null;
   private Object additionalProperties = null;
@@ -54,6 +55,23 @@ public class DialerCampaignProgressEventCampaignProgress  implements Serializabl
   }
   public void setNumberOfContactsCalled(BigDecimal numberOfContactsCalled) {
     this.numberOfContactsCalled = numberOfContactsCalled;
+  }
+
+  
+  /**
+   **/
+  public DialerCampaignProgressEventCampaignProgress numberOfContactsMessaged(BigDecimal numberOfContactsMessaged) {
+    this.numberOfContactsMessaged = numberOfContactsMessaged;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("numberOfContactsMessaged")
+  public BigDecimal getNumberOfContactsMessaged() {
+    return numberOfContactsMessaged;
+  }
+  public void setNumberOfContactsMessaged(BigDecimal numberOfContactsMessaged) {
+    this.numberOfContactsMessaged = numberOfContactsMessaged;
   }
 
   
@@ -120,6 +138,7 @@ public class DialerCampaignProgressEventCampaignProgress  implements Serializabl
     DialerCampaignProgressEventCampaignProgress dialerCampaignProgressEventCampaignProgress = (DialerCampaignProgressEventCampaignProgress) o;
     return Objects.equals(this.campaign, dialerCampaignProgressEventCampaignProgress.campaign) &&
         Objects.equals(this.numberOfContactsCalled, dialerCampaignProgressEventCampaignProgress.numberOfContactsCalled) &&
+        Objects.equals(this.numberOfContactsMessaged, dialerCampaignProgressEventCampaignProgress.numberOfContactsMessaged) &&
         Objects.equals(this.totalNumberOfContacts, dialerCampaignProgressEventCampaignProgress.totalNumberOfContacts) &&
         Objects.equals(this.percentage, dialerCampaignProgressEventCampaignProgress.percentage) &&
         Objects.equals(this.additionalProperties, dialerCampaignProgressEventCampaignProgress.additionalProperties);
@@ -127,7 +146,7 @@ public class DialerCampaignProgressEventCampaignProgress  implements Serializabl
 
   @Override
   public int hashCode() {
-    return Objects.hash(campaign, numberOfContactsCalled, totalNumberOfContacts, percentage, additionalProperties);
+    return Objects.hash(campaign, numberOfContactsCalled, numberOfContactsMessaged, totalNumberOfContacts, percentage, additionalProperties);
   }
 
   @Override
@@ -137,6 +156,7 @@ public class DialerCampaignProgressEventCampaignProgress  implements Serializabl
     
     sb.append("    campaign: ").append(toIndentedString(campaign)).append("\n");
     sb.append("    numberOfContactsCalled: ").append(toIndentedString(numberOfContactsCalled)).append("\n");
+    sb.append("    numberOfContactsMessaged: ").append(toIndentedString(numberOfContactsMessaged)).append("\n");
     sb.append("    totalNumberOfContacts: ").append(toIndentedString(totalNumberOfContacts)).append("\n");
     sb.append("    percentage: ").append(toIndentedString(percentage)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");

@@ -11,6 +11,7 @@ import org.apache.http.HttpRequestInterceptor;
 import org.apache.http.HttpResponseInterceptor;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 
 import java.net.InetSocketAddress;
@@ -32,23 +33,33 @@ public class ApacheHttpClientConnectorProvider implements ApiClientConnectorProv
         }
 
         Proxy proxy = properties.getProperty(ApiClientConnectorProperty.PROXY, Proxy.class, null);
+        ApacheHttpCredentialsProvider credentialsProvider = null;
         if (proxy != null) {
             SocketAddress address = proxy.address();
             if (address instanceof InetSocketAddress) {
                 InetSocketAddress inetAddress = (InetSocketAddress)address;
                 HttpHost proxyHost = new HttpHost(inetAddress.getAddress(), inetAddress.getPort());
                 requestBuilder.setProxy(proxyHost);
+
+                String user = properties.getProperty(ApiClientConnectorProperty.PROXY_USER, String.class, null);
+                String pass = properties.getProperty(ApiClientConnectorProperty.PROXY_PASS, String.class, null);
+                if (user != null && pass != null) {
+                    credentialsProvider = new ApacheHttpCredentialsProvider(inetAddress.getHostName(), inetAddress.getPort(), user, pass);
+                }
             }
         }
 
         DetailLevel detailLevel = properties.getProperty(ApiClientConnectorProperty.DETAIL_LEVEL, DetailLevel.class, DetailLevel.MINIMAL);
         SLF4JInterceptor interceptor = new SLF4JInterceptor(detailLevel);
 
-        CloseableHttpClient client = HttpClients.custom()
+        HttpClientBuilder builder = HttpClients.custom()
                 .setDefaultRequestConfig(requestBuilder.build())
                 .addInterceptorFirst((HttpRequestInterceptor) interceptor)
-                .addInterceptorLast((HttpResponseInterceptor) interceptor)
-                .build();
+                .addInterceptorLast((HttpResponseInterceptor) interceptor);
+        if (credentialsProvider != null) {
+            builder.setDefaultCredentialsProvider(credentialsProvider);
+        }
+        CloseableHttpClient client = builder.build();
 
         ExecutorService executorService = properties.getProperty(ApiClientConnectorProperty.ASYNC_EXECUTOR_SERVICE, ExecutorService.class, null);
         if (executorService == null) {
