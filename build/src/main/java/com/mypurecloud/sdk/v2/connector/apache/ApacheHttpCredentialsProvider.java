@@ -9,7 +9,7 @@ import java.security.Principal;
 import java.util.HashMap;
 
 public class ApacheHttpCredentialsProvider implements CredentialsProvider {
-    private HashMap<AuthScope, Credentials> map = new HashMap<>();
+    private HashMap<String, Credentials> map = new HashMap<>();
 
     public ApacheHttpCredentialsProvider(String hostname, int port, String user, String pass) {
         PrincipalWrapper principalWrapper = new PrincipalWrapper(user);
@@ -18,17 +18,21 @@ public class ApacheHttpCredentialsProvider implements CredentialsProvider {
 
     @Override
     public void setCredentials(AuthScope authScope, Credentials credentials) {
-        map.put(authScope, credentials);
+        map.put(authDescription(authScope), credentials);
     }
 
     @Override
     public Credentials getCredentials(AuthScope authScope) {
-        return map.get(authScope);
+        return map.get(authDescription(authScope));
     }
 
     @Override
     public void clear() {
         map.clear();
+    }
+
+    private String authDescription(AuthScope authScope) {
+        return authScope.getHost() + ":" + authScope.getPort();
     }
 
     private class CredentialsWrapper implements Credentials {
