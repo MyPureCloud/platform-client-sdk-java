@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.Photo;
 import com.mypurecloud.sdk.v2.model.ScimEmail;
 import com.mypurecloud.sdk.v2.model.ScimMetadata;
 import com.mypurecloud.sdk.v2.model.ScimPhoneNumber;
@@ -34,7 +33,6 @@ public class ScimV2User  implements Serializable {
   private String title = null;
   private List<ScimPhoneNumber> phoneNumbers = new ArrayList<ScimPhoneNumber>();
   private List<ScimEmail> emails = new ArrayList<ScimEmail>();
-  private List<Photo> photos = new ArrayList<Photo>();
   private String externalId = null;
   private List<ScimV2GroupReference> groups = new ArrayList<ScimV2GroupReference>();
   private List<ScimUserRole> roles = new ArrayList<ScimUserRole>();
@@ -195,24 +193,6 @@ public class ScimV2User  implements Serializable {
 
   
   /**
-   * The list of the user's photos.
-   **/
-  public ScimV2User photos(List<Photo> photos) {
-    this.photos = photos;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The list of the user's photos.")
-  @JsonProperty("photos")
-  public List<Photo> getPhotos() {
-    return photos;
-  }
-  public void setPhotos(List<Photo> photos) {
-    this.photos = photos;
-  }
-
-  
-  /**
    * The external ID of the user. Set by the provisioning client. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readWrite\".
    **/
   public ScimV2User externalId(String externalId) {
@@ -338,7 +318,6 @@ public class ScimV2User  implements Serializable {
         Objects.equals(this.title, scimV2User.title) &&
         Objects.equals(this.phoneNumbers, scimV2User.phoneNumbers) &&
         Objects.equals(this.emails, scimV2User.emails) &&
-        Objects.equals(this.photos, scimV2User.photos) &&
         Objects.equals(this.externalId, scimV2User.externalId) &&
         Objects.equals(this.groups, scimV2User.groups) &&
         Objects.equals(this.roles, scimV2User.roles) &&
@@ -349,7 +328,7 @@ public class ScimV2User  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, schemas, active, userName, displayName, password, title, phoneNumbers, emails, photos, externalId, groups, roles, urnietfparamsscimschemasextensionenterprise20User, urnietfparamsscimschemasextensiongenesyspurecloud20User, meta);
+    return Objects.hash(id, schemas, active, userName, displayName, password, title, phoneNumbers, emails, externalId, groups, roles, urnietfparamsscimschemasextensionenterprise20User, urnietfparamsscimschemasextensiongenesyspurecloud20User, meta);
   }
 
   @Override
@@ -366,7 +345,6 @@ public class ScimV2User  implements Serializable {
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    phoneNumbers: ").append(toIndentedString(phoneNumbers)).append("\n");
     sb.append("    emails: ").append(toIndentedString(emails)).append("\n");
-    sb.append("    photos: ").append(toIndentedString(photos)).append("\n");
     sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("    roles: ").append(toIndentedString(roles)).append("\n");

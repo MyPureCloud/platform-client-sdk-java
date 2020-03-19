@@ -26,7 +26,7 @@ title: AuditQueryRequest
 | PEOPLEPERMISSIONS | &quot;PeoplePermissions&quot; |
 | QUALITY | &quot;Quality&quot; |
 | LANGUAGEUNDERSTANDING | &quot;LanguageUnderstanding&quot; |
-| TOPICSDEFINITIONSSERVICE | &quot;TopicsDefinitionsService&quot; |
+| TOPICSDEFINITIONS | &quot;TopicsDefinitions&quot; |
 {: class="table table-striped"}
 
 

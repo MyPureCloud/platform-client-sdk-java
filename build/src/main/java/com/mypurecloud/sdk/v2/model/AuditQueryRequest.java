@@ -30,7 +30,7 @@ public class AuditQueryRequest  implements Serializable {
     PEOPLEPERMISSIONS("PeoplePermissions"),
     QUALITY("Quality"),
     LANGUAGEUNDERSTANDING("LanguageUnderstanding"),
-    TOPICSDEFINITIONSSERVICE("TopicsDefinitionsService");
+    TOPICSDEFINITIONS("TopicsDefinitions");
 
     private String value;
 

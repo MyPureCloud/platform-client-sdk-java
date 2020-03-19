@@ -56,6 +56,7 @@ title: Campaign
 | POWER | &quot;power&quot; |
 | PREDICTIVE | &quot;predictive&quot; |
 | PROGRESSIVE | &quot;progressive&quot; |
+| EXTERNAL | &quot;external&quot; |
 {: class="table table-striped"}
 
 

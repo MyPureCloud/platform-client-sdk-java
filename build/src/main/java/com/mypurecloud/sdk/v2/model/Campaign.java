@@ -39,7 +39,8 @@ public class Campaign  implements Serializable {
     PREVIEW("preview"),
     POWER("power"),
     PREDICTIVE("predictive"),
-    PROGRESSIVE("progressive");
+    PROGRESSIVE("progressive"),
+    EXTERNAL("external");
 
     private String value;
 

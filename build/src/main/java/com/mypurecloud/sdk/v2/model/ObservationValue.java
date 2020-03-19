@@ -68,6 +68,7 @@ public class ObservationValue  implements Serializable {
   private String addressTo = null;
   private String ani = null;
   private String dnis = null;
+  private String teamId = null;
   private List<AnalyticsScoredAgent> scoredAgents = new ArrayList<AnalyticsScoredAgent>();
 
   
@@ -342,6 +343,24 @@ public class ObservationValue  implements Serializable {
 
   
   /**
+   * The team Id the user is a member of
+   **/
+  public ObservationValue teamId(String teamId) {
+    this.teamId = teamId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The team Id the user is a member of")
+  @JsonProperty("teamId")
+  public String getTeamId() {
+    return teamId;
+  }
+  public void setTeamId(String teamId) {
+    this.teamId = teamId;
+  }
+
+  
+  /**
    **/
   public ObservationValue scoredAgents(List<AnalyticsScoredAgent> scoredAgents) {
     this.scoredAgents = scoredAgents;
@@ -383,12 +402,13 @@ public class ObservationValue  implements Serializable {
         Objects.equals(this.addressTo, observationValue.addressTo) &&
         Objects.equals(this.ani, observationValue.ani) &&
         Objects.equals(this.dnis, observationValue.dnis) &&
+        Objects.equals(this.teamId, observationValue.teamId) &&
         Objects.equals(this.scoredAgents, observationValue.scoredAgents);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(observationDate, conversationId, sessionId, requestedRoutingSkillIds, requestedLanguageId, routingPriority, participantName, userId, direction, convertedFrom, convertedTo, addressFrom, addressTo, ani, dnis, scoredAgents);
+    return Objects.hash(observationDate, conversationId, sessionId, requestedRoutingSkillIds, requestedLanguageId, routingPriority, participantName, userId, direction, convertedFrom, convertedTo, addressFrom, addressTo, ani, dnis, teamId, scoredAgents);
   }
 
   @Override
@@ -411,6 +431,7 @@ public class ObservationValue  implements Serializable {
     sb.append("    addressTo: ").append(toIndentedString(addressTo)).append("\n");
     sb.append("    ani: ").append(toIndentedString(ani)).append("\n");
     sb.append("    dnis: ").append(toIndentedString(dnis)).append("\n");
+    sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
     sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");
     sb.append("}");
     return sb.toString();
