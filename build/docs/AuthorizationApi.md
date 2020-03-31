@@ -10,7 +10,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteAuthorizationDivision**](AuthorizationApi.html#deleteAuthorizationDivision) | Delete a division. |
 | [**deleteAuthorizationRole**](AuthorizationApi.html#deleteAuthorizationRole) | Delete an organization role. |
 | [**deleteAuthorizationSubjectDivisionRole**](AuthorizationApi.html#deleteAuthorizationSubjectDivisionRole) | Delete a grant of a role in a division |
-| [**deleteUserRoles**](AuthorizationApi.html#deleteUserRoles) | Removes all the roles from the user. |
 | [**getAuthorizationDivision**](AuthorizationApi.html#getAuthorizationDivision) | Returns an authorization division. |
 | [**getAuthorizationDivisions**](AuthorizationApi.html#getAuthorizationDivisions) | Retrieve a list of all divisions defined for the organization |
 | [**getAuthorizationDivisionsHome**](AuthorizationApi.html#getAuthorizationDivisionsHome) | Retrieve the home division for the organization. |
@@ -233,68 +232,6 @@ try {
 | **subjectId** | **String**| Subject ID (user or group) | 
 | **divisionId** | **String**| the id of the division of the grant | 
 | **roleId** | **String**| the id of the role of the grant | 
-{: class="table-striped"}
-
-
-### Return type
-
-null (empty response body)
-
-<a name="deleteUserRoles"></a>
-
-# **deleteUserRoles**
-
-
-
-> Void deleteUserRoles(userId)
-
-Removes all the roles from the user.
-
-
-
-Wraps DELETE /api/v2/users/{userId}/roles  
-
-Requires ANY permissions: 
-
-* authorization:grant:delete
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.AuthorizationApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-AuthorizationApi apiInstance = new AuthorizationApi();
-String userId = "userId_example"; // String | User ID
-try {
-    apiInstance.deleteUserRoles(userId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AuthorizationApi#deleteUserRoles");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | 
 {: class="table-striped"}
 
 

@@ -19,6 +19,7 @@ title: Participant
 | **externalOrganizationId** | <!----><!---->**String**<!----> | If this participant represents an external org, then this will be the globally unique identifier for the external org. |  [optional] |
 | **queueId** | <!----><!---->**String**<!----> | If present, the queue id that the communication channel came in on. |  [optional] |
 | **groupId** | <!----><!---->**String**<!----> | If present, group of users the participant represents. |  [optional] |
+| **teamId** | <!----><!---->**String**<!----> | The team id that this participant is a member of when added to the conversation. |  [optional] |
 | **queueName** | <!----><!---->**String**<!----> | If present, the queue name that the communication channel came in on. |  [optional] |
 | **purpose** | <!----><!---->**String**<!----> | A well known string that specifies the purpose of this participant. |  [optional] |
 | **participantType** | <!----><!---->**String**<!----> | A well known string that specifies the type of this participant. |  [optional] |

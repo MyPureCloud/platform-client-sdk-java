@@ -24,6 +24,7 @@ title: QueueConversationEmailEventTopicEmailMediaParticipant
 | **wrapupPrompt** | <!----><!---->**String**<!----> |  |  [optional] |
 | **user** | <!----><!---->[**QueueConversationEmailEventTopicUriReference**](QueueConversationEmailEventTopicUriReference.html)<!----> |  |  [optional] |
 | **queue** | <!----><!---->[**QueueConversationEmailEventTopicUriReference**](QueueConversationEmailEventTopicUriReference.html)<!----> |  |  [optional] |
+| **team** | <!----><!---->[**QueueConversationEmailEventTopicUriReference**](QueueConversationEmailEventTopicUriReference.html)<!----> |  |  [optional] |
 | **attributes** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
 | **errorInfo** | <!----><!---->[**QueueConversationEmailEventTopicErrorBody**](QueueConversationEmailEventTopicErrorBody.html)<!----> |  |  [optional] |
 | **script** | <!----><!---->[**QueueConversationEmailEventTopicUriReference**](QueueConversationEmailEventTopicUriReference.html)<!----> |  |  [optional] |

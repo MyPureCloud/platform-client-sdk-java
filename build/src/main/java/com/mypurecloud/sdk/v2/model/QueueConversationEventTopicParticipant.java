@@ -40,6 +40,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
   private String name = null;
   private String queueId = null;
   private String groupId = null;
+  private String teamId = null;
   private String purpose = null;
   private String consultParticipantId = null;
   private String address = null;
@@ -256,6 +257,23 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
   }
   public void setGroupId(String groupId) {
     this.groupId = groupId;
+  }
+
+  
+  /**
+   **/
+  public QueueConversationEventTopicParticipant teamId(String teamId) {
+    this.teamId = teamId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("teamId")
+  public String getTeamId() {
+    return teamId;
+  }
+  public void setTeamId(String teamId) {
+    this.teamId = teamId;
   }
 
   
@@ -720,6 +738,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
         Objects.equals(this.name, queueConversationEventTopicParticipant.name) &&
         Objects.equals(this.queueId, queueConversationEventTopicParticipant.queueId) &&
         Objects.equals(this.groupId, queueConversationEventTopicParticipant.groupId) &&
+        Objects.equals(this.teamId, queueConversationEventTopicParticipant.teamId) &&
         Objects.equals(this.purpose, queueConversationEventTopicParticipant.purpose) &&
         Objects.equals(this.consultParticipantId, queueConversationEventTopicParticipant.consultParticipantId) &&
         Objects.equals(this.address, queueConversationEventTopicParticipant.address) &&
@@ -750,7 +769,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, additionalProperties);
+    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, additionalProperties);
   }
 
   @Override
@@ -767,6 +786,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+    sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
     sb.append("    purpose: ").append(toIndentedString(purpose)).append("\n");
     sb.append("    consultParticipantId: ").append(toIndentedString(consultParticipantId)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");

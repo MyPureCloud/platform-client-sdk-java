@@ -43,6 +43,7 @@ public class Participant  implements Serializable {
   private String externalOrganizationId = null;
   private String queueId = null;
   private String groupId = null;
+  private String teamId = null;
   private String queueName = null;
   private String purpose = null;
   private String participantType = null;
@@ -379,6 +380,24 @@ public class Participant  implements Serializable {
   }
   public void setGroupId(String groupId) {
     this.groupId = groupId;
+  }
+
+  
+  /**
+   * The team id that this participant is a member of when added to the conversation.
+   **/
+  public Participant teamId(String teamId) {
+    this.teamId = teamId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The team id that this participant is a member of when added to the conversation.")
+  @JsonProperty("teamId")
+  public String getTeamId() {
+    return teamId;
+  }
+  public void setTeamId(String teamId) {
+    this.teamId = teamId;
   }
 
   
@@ -969,6 +988,7 @@ public class Participant  implements Serializable {
         Objects.equals(this.externalOrganizationId, participant.externalOrganizationId) &&
         Objects.equals(this.queueId, participant.queueId) &&
         Objects.equals(this.groupId, participant.groupId) &&
+        Objects.equals(this.teamId, participant.teamId) &&
         Objects.equals(this.queueName, participant.queueName) &&
         Objects.equals(this.purpose, participant.purpose) &&
         Objects.equals(this.participantType, participant.participantType) &&
@@ -1005,7 +1025,7 @@ public class Participant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalOrganizationId, queueId, groupId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, evaluations, screenRecordingState, flaggedReason, startAcwTime, endAcwTime);
+    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalOrganizationId, queueId, groupId, teamId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, evaluations, screenRecordingState, flaggedReason, startAcwTime, endAcwTime);
   }
 
   @Override
@@ -1024,6 +1044,7 @@ public class Participant  implements Serializable {
     sb.append("    externalOrganizationId: ").append(toIndentedString(externalOrganizationId)).append("\n");
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
+    sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
     sb.append("    queueName: ").append(toIndentedString(queueName)).append("\n");
     sb.append("    purpose: ").append(toIndentedString(purpose)).append("\n");
     sb.append("    participantType: ").append(toIndentedString(participantType)).append("\n");

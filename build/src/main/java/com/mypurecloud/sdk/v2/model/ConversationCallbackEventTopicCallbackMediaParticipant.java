@@ -169,6 +169,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
   private String wrapupPrompt = null;
   private ConversationCallbackEventTopicUriReference user = null;
   private ConversationCallbackEventTopicUriReference queue = null;
+  private ConversationCallbackEventTopicUriReference team = null;
   private Map<String, String> attributes = null;
   private ConversationCallbackEventTopicErrorBody errorInfo = null;
   private ConversationCallbackEventTopicUriReference script = null;
@@ -498,6 +499,23 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
   }
   public void setQueue(ConversationCallbackEventTopicUriReference queue) {
     this.queue = queue;
+  }
+
+  
+  /**
+   **/
+  public ConversationCallbackEventTopicCallbackMediaParticipant team(ConversationCallbackEventTopicUriReference team) {
+    this.team = team;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("team")
+  public ConversationCallbackEventTopicUriReference getTeam() {
+    return team;
+  }
+  public void setTeam(ConversationCallbackEventTopicUriReference team) {
+    this.team = team;
   }
 
   
@@ -952,6 +970,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
         Objects.equals(this.wrapupPrompt, conversationCallbackEventTopicCallbackMediaParticipant.wrapupPrompt) &&
         Objects.equals(this.user, conversationCallbackEventTopicCallbackMediaParticipant.user) &&
         Objects.equals(this.queue, conversationCallbackEventTopicCallbackMediaParticipant.queue) &&
+        Objects.equals(this.team, conversationCallbackEventTopicCallbackMediaParticipant.team) &&
         Objects.equals(this.attributes, conversationCallbackEventTopicCallbackMediaParticipant.attributes) &&
         Objects.equals(this.errorInfo, conversationCallbackEventTopicCallbackMediaParticipant.errorInfo) &&
         Objects.equals(this.script, conversationCallbackEventTopicCallbackMediaParticipant.script) &&
@@ -981,7 +1000,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
   }
 
   @Override
@@ -1005,6 +1024,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
     sb.append("    wrapupPrompt: ").append(toIndentedString(wrapupPrompt)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
+    sb.append("    team: ").append(toIndentedString(team)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    script: ").append(toIndentedString(script)).append("\n");

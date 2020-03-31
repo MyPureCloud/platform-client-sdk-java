@@ -24,6 +24,7 @@ title: QueueConversationCallbackEventTopicCallbackMediaParticipant
 | **wrapupPrompt** | <!----><!---->**String**<!----> |  |  [optional] |
 | **user** | <!----><!---->[**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference.html)<!----> |  |  [optional] |
 | **queue** | <!----><!---->[**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference.html)<!----> |  |  [optional] |
+| **team** | <!----><!---->[**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference.html)<!----> |  |  [optional] |
 | **attributes** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
 | **errorInfo** | <!----><!---->[**QueueConversationCallbackEventTopicErrorBody**](QueueConversationCallbackEventTopicErrorBody.html)<!----> |  |  [optional] |
 | **script** | <!----><!---->[**QueueConversationCallbackEventTopicUriReference**](QueueConversationCallbackEventTopicUriReference.html)<!----> |  |  [optional] |

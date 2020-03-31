@@ -24,6 +24,7 @@ title: QueueConversationCobrowseEventTopicCobrowseMediaParticipant
 | **wrapupPrompt** | <!----><!---->**String**<!----> |  |  [optional] |
 | **user** | <!----><!---->[**QueueConversationCobrowseEventTopicUriReference**](QueueConversationCobrowseEventTopicUriReference.html)<!----> |  |  [optional] |
 | **queue** | <!----><!---->[**QueueConversationCobrowseEventTopicUriReference**](QueueConversationCobrowseEventTopicUriReference.html)<!----> |  |  [optional] |
+| **team** | <!----><!---->[**QueueConversationCobrowseEventTopicUriReference**](QueueConversationCobrowseEventTopicUriReference.html)<!----> |  |  [optional] |
 | **attributes** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
 | **errorInfo** | <!----><!---->[**QueueConversationCobrowseEventTopicErrorBody**](QueueConversationCobrowseEventTopicErrorBody.html)<!----> |  |  [optional] |
 | **script** | <!----><!---->[**QueueConversationCobrowseEventTopicUriReference**](QueueConversationCobrowseEventTopicUriReference.html)<!----> |  |  [optional] |

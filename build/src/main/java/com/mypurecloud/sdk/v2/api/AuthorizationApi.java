@@ -32,7 +32,6 @@ import com.mypurecloud.sdk.v2.model.DomainOrganizationRoleUpdate;
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationDivisionRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationSubjectDivisionRoleRequest;
-import com.mypurecloud.sdk.v2.api.request.DeleteUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsHomeRequest;
@@ -306,82 +305,6 @@ public class AuthorizationApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteAuthorizationSubjectDivisionRole(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, null);
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Removes all the roles from the user.
-   * 
-   * @param userId User ID (required)
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void deleteUserRoles(String userId) throws IOException, ApiException {
-     deleteUserRoles(createDeleteUserRolesRequest(userId));
-  }
-
-  /**
-   * Removes all the roles from the user.
-   * 
-   * @param userId User ID (required)
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> deleteUserRolesWithHttpInfo(String userId) throws IOException {
-    return deleteUserRoles(createDeleteUserRolesRequest(userId).withHttpInfo());
-  }
-
-  private DeleteUserRolesRequest createDeleteUserRolesRequest(String userId) {
-    return DeleteUserRolesRequest.builder()
-            .withUserId(userId)
-    
-            .build();
-  }
-
-  /**
-   * Removes all the roles from the user.
-   * 
-   * @param request The request object
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void deleteUserRoles(DeleteUserRolesRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
-    }
-  }
-
-  /**
-   * Removes all the roles from the user.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> deleteUserRoles(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }

@@ -11,7 +11,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteAuthorizationSubjectDivisionRole**](UsersApi.html#deleteAuthorizationSubjectDivisionRole) | Delete a grant of a role in a division |
 | [**deleteRoutingUserUtilization**](UsersApi.html#deleteRoutingUserUtilization) | Delete the user&#39;s max utilization settings and revert to the organization-wide default. |
 | [**deleteUser**](UsersApi.html#deleteUser) | Delete user |
-| [**deleteUserRoles**](UsersApi.html#deleteUserRoles) | Removes all the roles from the user. |
 | [**deleteUserRoutinglanguage**](UsersApi.html#deleteUserRoutinglanguage) | Remove routing language from user |
 | [**deleteUserRoutingskill**](UsersApi.html#deleteUserRoutingskill) | Remove routing skill from user |
 | [**deleteUserStationAssociatedstation**](UsersApi.html#deleteUserStationAssociatedstation) | Clear associated station |
@@ -334,68 +333,6 @@ try {
 ### Return type
 
 [**Empty**](Empty.html)
-
-<a name="deleteUserRoles"></a>
-
-# **deleteUserRoles**
-
-
-
-> Void deleteUserRoles(userId)
-
-Removes all the roles from the user.
-
-
-
-Wraps DELETE /api/v2/users/{userId}/roles  
-
-Requires ANY permissions: 
-
-* authorization:grant:delete
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.UsersApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-UsersApi apiInstance = new UsersApi();
-String userId = "userId_example"; // String | User ID
-try {
-    apiInstance.deleteUserRoles(userId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#deleteUserRoles");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| User ID | 
-{: class="table-striped"}
-
-
-### Return type
-
-null (empty response body)
 
 <a name="deleteUserRoutinglanguage"></a>
 

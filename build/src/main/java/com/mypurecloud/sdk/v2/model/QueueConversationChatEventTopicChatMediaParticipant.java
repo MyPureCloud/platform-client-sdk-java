@@ -166,6 +166,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
   private String wrapupPrompt = null;
   private QueueConversationChatEventTopicUriReference user = null;
   private QueueConversationChatEventTopicUriReference queue = null;
+  private QueueConversationChatEventTopicUriReference team = null;
   private Map<String, String> attributes = null;
   private QueueConversationChatEventTopicErrorBody errorInfo = null;
   private QueueConversationChatEventTopicUriReference script = null;
@@ -489,6 +490,23 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
   }
   public void setQueue(QueueConversationChatEventTopicUriReference queue) {
     this.queue = queue;
+  }
+
+  
+  /**
+   **/
+  public QueueConversationChatEventTopicChatMediaParticipant team(QueueConversationChatEventTopicUriReference team) {
+    this.team = team;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("team")
+  public QueueConversationChatEventTopicUriReference getTeam() {
+    return team;
+  }
+  public void setTeam(QueueConversationChatEventTopicUriReference team) {
+    this.team = team;
   }
 
   
@@ -841,6 +859,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
         Objects.equals(this.wrapupPrompt, queueConversationChatEventTopicChatMediaParticipant.wrapupPrompt) &&
         Objects.equals(this.user, queueConversationChatEventTopicChatMediaParticipant.user) &&
         Objects.equals(this.queue, queueConversationChatEventTopicChatMediaParticipant.queue) &&
+        Objects.equals(this.team, queueConversationChatEventTopicChatMediaParticipant.team) &&
         Objects.equals(this.attributes, queueConversationChatEventTopicChatMediaParticipant.attributes) &&
         Objects.equals(this.errorInfo, queueConversationChatEventTopicChatMediaParticipant.errorInfo) &&
         Objects.equals(this.script, queueConversationChatEventTopicChatMediaParticipant.script) &&
@@ -864,7 +883,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, roomId, avatarImageUrl);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, roomId, avatarImageUrl);
   }
 
   @Override
@@ -888,6 +907,7 @@ public class QueueConversationChatEventTopicChatMediaParticipant  implements Ser
     sb.append("    wrapupPrompt: ").append(toIndentedString(wrapupPrompt)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
+    sb.append("    team: ").append(toIndentedString(team)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    script: ").append(toIndentedString(script)).append("\n");

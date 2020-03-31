@@ -24,6 +24,7 @@ title: ConversationVideoEventTopicVideoMediaParticipant
 | **wrapupPrompt** | <!----><!---->**String**<!----> |  |  [optional] |
 | **user** | <!----><!---->[**ConversationVideoEventTopicUriReference**](ConversationVideoEventTopicUriReference.html)<!----> |  |  [optional] |
 | **queue** | <!----><!---->[**ConversationVideoEventTopicUriReference**](ConversationVideoEventTopicUriReference.html)<!----> |  |  [optional] |
+| **team** | <!----><!---->[**ConversationVideoEventTopicUriReference**](ConversationVideoEventTopicUriReference.html)<!----> |  |  [optional] |
 | **attributes** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
 | **errorInfo** | <!----><!---->[**ConversationVideoEventTopicErrorBody**](ConversationVideoEventTopicErrorBody.html)<!----> |  |  [optional] |
 | **script** | <!----><!---->[**ConversationVideoEventTopicUriReference**](ConversationVideoEventTopicUriReference.html)<!----> |  |  [optional] |

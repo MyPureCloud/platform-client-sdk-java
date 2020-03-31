@@ -167,6 +167,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
   private String wrapupPrompt = null;
   private QueueConversationCallEventTopicUriReference user = null;
   private QueueConversationCallEventTopicUriReference queue = null;
+  private QueueConversationCallEventTopicUriReference team = null;
   private Map<String, String> attributes = null;
   private QueueConversationCallEventTopicErrorBody errorInfo = null;
   private QueueConversationCallEventTopicUriReference script = null;
@@ -534,6 +535,23 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
   }
   public void setQueue(QueueConversationCallEventTopicUriReference queue) {
     this.queue = queue;
+  }
+
+  
+  /**
+   **/
+  public QueueConversationCallEventTopicCallMediaParticipant team(QueueConversationCallEventTopicUriReference team) {
+    this.team = team;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("team")
+  public QueueConversationCallEventTopicUriReference getTeam() {
+    return team;
+  }
+  public void setTeam(QueueConversationCallEventTopicUriReference team) {
+    this.team = team;
   }
 
   
@@ -1039,6 +1057,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
         Objects.equals(this.wrapupPrompt, queueConversationCallEventTopicCallMediaParticipant.wrapupPrompt) &&
         Objects.equals(this.user, queueConversationCallEventTopicCallMediaParticipant.user) &&
         Objects.equals(this.queue, queueConversationCallEventTopicCallMediaParticipant.queue) &&
+        Objects.equals(this.team, queueConversationCallEventTopicCallMediaParticipant.team) &&
         Objects.equals(this.attributes, queueConversationCallEventTopicCallMediaParticipant.attributes) &&
         Objects.equals(this.errorInfo, queueConversationCallEventTopicCallMediaParticipant.errorInfo) &&
         Objects.equals(this.script, queueConversationCallEventTopicCallMediaParticipant.script) &&
@@ -1071,7 +1090,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, consultParticipantId, faxStatus);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, consultParticipantId, faxStatus);
   }
 
   @Override
@@ -1095,6 +1114,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
     sb.append("    wrapupPrompt: ").append(toIndentedString(wrapupPrompt)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
+    sb.append("    team: ").append(toIndentedString(team)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    script: ").append(toIndentedString(script)).append("\n");

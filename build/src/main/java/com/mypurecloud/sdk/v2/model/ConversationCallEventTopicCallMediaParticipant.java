@@ -167,6 +167,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
   private String wrapupPrompt = null;
   private ConversationCallEventTopicUriReference user = null;
   private ConversationCallEventTopicUriReference queue = null;
+  private ConversationCallEventTopicUriReference team = null;
   private Map<String, String> attributes = null;
   private ConversationCallEventTopicErrorBody errorInfo = null;
   private ConversationCallEventTopicUriReference script = null;
@@ -534,6 +535,23 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
   }
   public void setQueue(ConversationCallEventTopicUriReference queue) {
     this.queue = queue;
+  }
+
+  
+  /**
+   **/
+  public ConversationCallEventTopicCallMediaParticipant team(ConversationCallEventTopicUriReference team) {
+    this.team = team;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("team")
+  public ConversationCallEventTopicUriReference getTeam() {
+    return team;
+  }
+  public void setTeam(ConversationCallEventTopicUriReference team) {
+    this.team = team;
   }
 
   
@@ -1039,6 +1057,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
         Objects.equals(this.wrapupPrompt, conversationCallEventTopicCallMediaParticipant.wrapupPrompt) &&
         Objects.equals(this.user, conversationCallEventTopicCallMediaParticipant.user) &&
         Objects.equals(this.queue, conversationCallEventTopicCallMediaParticipant.queue) &&
+        Objects.equals(this.team, conversationCallEventTopicCallMediaParticipant.team) &&
         Objects.equals(this.attributes, conversationCallEventTopicCallMediaParticipant.attributes) &&
         Objects.equals(this.errorInfo, conversationCallEventTopicCallMediaParticipant.errorInfo) &&
         Objects.equals(this.script, conversationCallEventTopicCallMediaParticipant.script) &&
@@ -1071,7 +1090,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, consultParticipantId, faxStatus);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, consultParticipantId, faxStatus);
   }
 
   @Override
@@ -1095,6 +1114,7 @@ public class ConversationCallEventTopicCallMediaParticipant  implements Serializ
     sb.append("    wrapupPrompt: ").append(toIndentedString(wrapupPrompt)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
+    sb.append("    team: ").append(toIndentedString(team)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    script: ").append(toIndentedString(script)).append("\n");

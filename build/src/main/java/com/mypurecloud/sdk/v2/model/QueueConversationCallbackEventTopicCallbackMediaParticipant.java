@@ -169,6 +169,7 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
   private String wrapupPrompt = null;
   private QueueConversationCallbackEventTopicUriReference user = null;
   private QueueConversationCallbackEventTopicUriReference queue = null;
+  private QueueConversationCallbackEventTopicUriReference team = null;
   private Map<String, String> attributes = null;
   private QueueConversationCallbackEventTopicErrorBody errorInfo = null;
   private QueueConversationCallbackEventTopicUriReference script = null;
@@ -498,6 +499,23 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
   }
   public void setQueue(QueueConversationCallbackEventTopicUriReference queue) {
     this.queue = queue;
+  }
+
+  
+  /**
+   **/
+  public QueueConversationCallbackEventTopicCallbackMediaParticipant team(QueueConversationCallbackEventTopicUriReference team) {
+    this.team = team;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("team")
+  public QueueConversationCallbackEventTopicUriReference getTeam() {
+    return team;
+  }
+  public void setTeam(QueueConversationCallbackEventTopicUriReference team) {
+    this.team = team;
   }
 
   
@@ -952,6 +970,7 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
         Objects.equals(this.wrapupPrompt, queueConversationCallbackEventTopicCallbackMediaParticipant.wrapupPrompt) &&
         Objects.equals(this.user, queueConversationCallbackEventTopicCallbackMediaParticipant.user) &&
         Objects.equals(this.queue, queueConversationCallbackEventTopicCallbackMediaParticipant.queue) &&
+        Objects.equals(this.team, queueConversationCallbackEventTopicCallbackMediaParticipant.team) &&
         Objects.equals(this.attributes, queueConversationCallbackEventTopicCallbackMediaParticipant.attributes) &&
         Objects.equals(this.errorInfo, queueConversationCallbackEventTopicCallbackMediaParticipant.errorInfo) &&
         Objects.equals(this.script, queueConversationCallbackEventTopicCallbackMediaParticipant.script) &&
@@ -981,7 +1000,7 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
   }
 
   @Override
@@ -1005,6 +1024,7 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
     sb.append("    wrapupPrompt: ").append(toIndentedString(wrapupPrompt)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
+    sb.append("    team: ").append(toIndentedString(team)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    script: ").append(toIndentedString(script)).append("\n");

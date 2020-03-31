@@ -167,6 +167,7 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
   private String wrapupPrompt = null;
   private QueueConversationCobrowseEventTopicUriReference user = null;
   private QueueConversationCobrowseEventTopicUriReference queue = null;
+  private QueueConversationCobrowseEventTopicUriReference team = null;
   private Map<String, String> attributes = null;
   private QueueConversationCobrowseEventTopicErrorBody errorInfo = null;
   private QueueConversationCobrowseEventTopicUriReference script = null;
@@ -493,6 +494,23 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
   }
   public void setQueue(QueueConversationCobrowseEventTopicUriReference queue) {
     this.queue = queue;
+  }
+
+  
+  /**
+   **/
+  public QueueConversationCobrowseEventTopicCobrowseMediaParticipant team(QueueConversationCobrowseEventTopicUriReference team) {
+    this.team = team;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("team")
+  public QueueConversationCobrowseEventTopicUriReference getTeam() {
+    return team;
+  }
+  public void setTeam(QueueConversationCobrowseEventTopicUriReference team) {
+    this.team = team;
   }
 
   
@@ -896,6 +914,7 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
         Objects.equals(this.wrapupPrompt, queueConversationCobrowseEventTopicCobrowseMediaParticipant.wrapupPrompt) &&
         Objects.equals(this.user, queueConversationCobrowseEventTopicCobrowseMediaParticipant.user) &&
         Objects.equals(this.queue, queueConversationCobrowseEventTopicCobrowseMediaParticipant.queue) &&
+        Objects.equals(this.team, queueConversationCobrowseEventTopicCobrowseMediaParticipant.team) &&
         Objects.equals(this.attributes, queueConversationCobrowseEventTopicCobrowseMediaParticipant.attributes) &&
         Objects.equals(this.errorInfo, queueConversationCobrowseEventTopicCobrowseMediaParticipant.errorInfo) &&
         Objects.equals(this.script, queueConversationCobrowseEventTopicCobrowseMediaParticipant.script) &&
@@ -922,7 +941,7 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, cobrowseSessionId, cobrowseRole, viewerUrl, providerEventTime, controlling);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, cobrowseSessionId, cobrowseRole, viewerUrl, providerEventTime, controlling);
   }
 
   @Override
@@ -946,6 +965,7 @@ public class QueueConversationCobrowseEventTopicCobrowseMediaParticipant  implem
     sb.append("    wrapupPrompt: ").append(toIndentedString(wrapupPrompt)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
+    sb.append("    team: ").append(toIndentedString(team)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    script: ").append(toIndentedString(script)).append("\n");

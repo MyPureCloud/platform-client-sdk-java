@@ -17,6 +17,7 @@ title: QueueConversationSocialExpressionEventTopicParticipant
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
 | **queueId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **groupId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **teamId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **purpose** | <!----><!---->**String**<!----> |  |  [optional] |
 | **consultParticipantId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **address** | <!----><!---->**String**<!----> |  |  [optional] |

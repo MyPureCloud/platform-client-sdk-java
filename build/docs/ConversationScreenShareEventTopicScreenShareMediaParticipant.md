@@ -24,6 +24,7 @@ title: ConversationScreenShareEventTopicScreenShareMediaParticipant
 | **wrapupPrompt** | <!----><!---->**String**<!----> |  |  [optional] |
 | **user** | <!----><!---->[**ConversationScreenShareEventTopicUriReference**](ConversationScreenShareEventTopicUriReference.html)<!----> |  |  [optional] |
 | **queue** | <!----><!---->[**ConversationScreenShareEventTopicUriReference**](ConversationScreenShareEventTopicUriReference.html)<!----> |  |  [optional] |
+| **team** | <!----><!---->[**ConversationScreenShareEventTopicUriReference**](ConversationScreenShareEventTopicUriReference.html)<!----> |  |  [optional] |
 | **attributes** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
 | **errorInfo** | <!----><!---->[**ConversationScreenShareEventTopicErrorBody**](ConversationScreenShareEventTopicErrorBody.html)<!----> |  |  [optional] |
 | **script** | <!----><!---->[**ConversationScreenShareEventTopicUriReference**](ConversationScreenShareEventTopicUriReference.html)<!----> |  |  [optional] |

@@ -40,6 +40,7 @@ title: DialerCampaignConfigChangeCampaign
 | **priority** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **contactListFilters** | <!----><!---->[**List&lt;DialerCampaignConfigChangeUriReference&gt;**](DialerCampaignConfigChangeUriReference.html)<!----> |  |  [optional] |
 | **division** | <!----><!---->[**DialerCampaignConfigChangeUriReference**](DialerCampaignConfigChangeUriReference.html)<!----> |  |  [optional] |
+| **agentOwnedColumn** | <!----><!---->**String**<!----> |  |  [optional] |
 | **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

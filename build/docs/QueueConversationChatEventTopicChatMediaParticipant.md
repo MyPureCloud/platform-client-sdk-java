@@ -24,6 +24,7 @@ title: QueueConversationChatEventTopicChatMediaParticipant
 | **wrapupPrompt** | <!----><!---->**String**<!----> |  |  [optional] |
 | **user** | <!----><!---->[**QueueConversationChatEventTopicUriReference**](QueueConversationChatEventTopicUriReference.html)<!----> |  |  [optional] |
 | **queue** | <!----><!---->[**QueueConversationChatEventTopicUriReference**](QueueConversationChatEventTopicUriReference.html)<!----> |  |  [optional] |
+| **team** | <!----><!---->[**QueueConversationChatEventTopicUriReference**](QueueConversationChatEventTopicUriReference.html)<!----> |  |  [optional] |
 | **attributes** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
 | **errorInfo** | <!----><!---->[**QueueConversationChatEventTopicErrorBody**](QueueConversationChatEventTopicErrorBody.html)<!----> |  |  [optional] |
 | **script** | <!----><!---->[**QueueConversationChatEventTopicUriReference**](QueueConversationChatEventTopicUriReference.html)<!----> |  |  [optional] |

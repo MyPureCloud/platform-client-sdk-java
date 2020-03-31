@@ -167,6 +167,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
   private String wrapupPrompt = null;
   private ConversationVideoEventTopicUriReference user = null;
   private ConversationVideoEventTopicUriReference queue = null;
+  private ConversationVideoEventTopicUriReference team = null;
   private Map<String, String> attributes = null;
   private ConversationVideoEventTopicErrorBody errorInfo = null;
   private ConversationVideoEventTopicUriReference script = null;
@@ -494,6 +495,23 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
   }
   public void setQueue(ConversationVideoEventTopicUriReference queue) {
     this.queue = queue;
+  }
+
+  
+  /**
+   **/
+  public ConversationVideoEventTopicVideoMediaParticipant team(ConversationVideoEventTopicUriReference team) {
+    this.team = team;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("team")
+  public ConversationVideoEventTopicUriReference getTeam() {
+    return team;
+  }
+  public void setTeam(ConversationVideoEventTopicUriReference team) {
+    this.team = team;
   }
 
   
@@ -914,6 +932,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
         Objects.equals(this.wrapupPrompt, conversationVideoEventTopicVideoMediaParticipant.wrapupPrompt) &&
         Objects.equals(this.user, conversationVideoEventTopicVideoMediaParticipant.user) &&
         Objects.equals(this.queue, conversationVideoEventTopicVideoMediaParticipant.queue) &&
+        Objects.equals(this.team, conversationVideoEventTopicVideoMediaParticipant.team) &&
         Objects.equals(this.attributes, conversationVideoEventTopicVideoMediaParticipant.attributes) &&
         Objects.equals(this.errorInfo, conversationVideoEventTopicVideoMediaParticipant.errorInfo) &&
         Objects.equals(this.script, conversationVideoEventTopicVideoMediaParticipant.script) &&
@@ -941,7 +960,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, audioMuted, videoMuted, sharingScreen, peerCount, context, msids);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, audioMuted, videoMuted, sharingScreen, peerCount, context, msids);
   }
 
   @Override
@@ -965,6 +984,7 @@ public class ConversationVideoEventTopicVideoMediaParticipant  implements Serial
     sb.append("    wrapupPrompt: ").append(toIndentedString(wrapupPrompt)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
+    sb.append("    team: ").append(toIndentedString(team)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    script: ").append(toIndentedString(script)).append("\n");

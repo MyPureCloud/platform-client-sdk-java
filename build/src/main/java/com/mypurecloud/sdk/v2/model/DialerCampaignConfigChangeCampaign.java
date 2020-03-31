@@ -129,6 +129,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
   private Integer priority = null;
   private List<DialerCampaignConfigChangeUriReference> contactListFilters = new ArrayList<DialerCampaignConfigChangeUriReference>();
   private DialerCampaignConfigChangeUriReference division = null;
+  private String agentOwnedColumn = null;
   private Object additionalProperties = null;
 
   
@@ -678,6 +679,23 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
   
   /**
    **/
+  public DialerCampaignConfigChangeCampaign agentOwnedColumn(String agentOwnedColumn) {
+    this.agentOwnedColumn = agentOwnedColumn;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("agentOwnedColumn")
+  public String getAgentOwnedColumn() {
+    return agentOwnedColumn;
+  }
+  public void setAgentOwnedColumn(String agentOwnedColumn) {
+    this.agentOwnedColumn = agentOwnedColumn;
+  }
+
+  
+  /**
+   **/
   public DialerCampaignConfigChangeCampaign additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -735,12 +753,13 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
         Objects.equals(this.priority, dialerCampaignConfigChangeCampaign.priority) &&
         Objects.equals(this.contactListFilters, dialerCampaignConfigChangeCampaign.contactListFilters) &&
         Objects.equals(this.division, dialerCampaignConfigChangeCampaign.division) &&
+        Objects.equals(this.agentOwnedColumn, dialerCampaignConfigChangeCampaign.agentOwnedColumn) &&
         Objects.equals(this.additionalProperties, dialerCampaignConfigChangeCampaign.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, callerName, callerAddress, outboundLineCount, errors, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, singleNumberPreview, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, additionalProperties);
+    return Objects.hash(id, name, dateCreated, dateModified, version, contactList, queue, dialingMode, script, edgeGroup, site, campaignStatus, phoneColumns, abandonRate, dncLists, callableTimeSet, callAnalysisResponseSet, callerName, callerAddress, outboundLineCount, errors, ruleSets, skipPreviewDisabled, previewTimeOutSeconds, singleNumberPreview, contactSort, contactSorts, noAnswerTimeout, callAnalysisLanguage, priority, contactListFilters, division, agentOwnedColumn, additionalProperties);
   }
 
   @Override
@@ -780,6 +799,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    contactListFilters: ").append(toIndentedString(contactListFilters)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
+    sb.append("    agentOwnedColumn: ").append(toIndentedString(agentOwnedColumn)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -164,6 +164,7 @@ public class CallMediaParticipant  implements Serializable {
   private String wrapupPrompt = null;
   private DomainEntityRef user = null;
   private DomainEntityRef queue = null;
+  private DomainEntityRef team = null;
   private Map<String, String> attributes = null;
   private ErrorInfo errorInfo = null;
   private DomainEntityRef script = null;
@@ -547,6 +548,24 @@ public class CallMediaParticipant  implements Serializable {
   }
   public void setQueue(DomainEntityRef queue) {
     this.queue = queue;
+  }
+
+  
+  /**
+   * The PureCloud team for this participant.
+   **/
+  public CallMediaParticipant team(DomainEntityRef team) {
+    this.team = team;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The PureCloud team for this participant.")
+  @JsonProperty("team")
+  public DomainEntityRef getTeam() {
+    return team;
+  }
+  public void setTeam(DomainEntityRef team) {
+    this.team = team;
   }
 
   
@@ -1080,6 +1099,7 @@ public class CallMediaParticipant  implements Serializable {
         Objects.equals(this.wrapupPrompt, callMediaParticipant.wrapupPrompt) &&
         Objects.equals(this.user, callMediaParticipant.user) &&
         Objects.equals(this.queue, callMediaParticipant.queue) &&
+        Objects.equals(this.team, callMediaParticipant.team) &&
         Objects.equals(this.attributes, callMediaParticipant.attributes) &&
         Objects.equals(this.errorInfo, callMediaParticipant.errorInfo) &&
         Objects.equals(this.script, callMediaParticipant.script) &&
@@ -1112,7 +1132,7 @@ public class CallMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, consultParticipantId, uuiData);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, consultParticipantId, uuiData);
   }
 
   @Override
@@ -1136,6 +1156,7 @@ public class CallMediaParticipant  implements Serializable {
     sb.append("    wrapupPrompt: ").append(toIndentedString(wrapupPrompt)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
+    sb.append("    team: ").append(toIndentedString(team)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    script: ").append(toIndentedString(script)).append("\n");

@@ -89,6 +89,7 @@ public class SegmentDetailQueryPredicate  implements Serializable {
     FLAGGEDREASON("flaggedReason"),
     FLOWID("flowId"),
     FLOWNAME("flowName"),
+    FLOWOUTTYPE("flowOutType"),
     FLOWOUTCOME("flowOutcome"),
     FLOWOUTCOMEENDTIMESTAMP("flowOutcomeEndTimestamp"),
     FLOWOUTCOMEID("flowOutcomeId"),

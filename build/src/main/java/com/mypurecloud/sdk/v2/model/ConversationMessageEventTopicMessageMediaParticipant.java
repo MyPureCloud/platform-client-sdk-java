@@ -168,6 +168,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
   private String wrapupPrompt = null;
   private ConversationMessageEventTopicUriReference user = null;
   private ConversationMessageEventTopicUriReference queue = null;
+  private ConversationMessageEventTopicUriReference team = null;
   private Map<String, String> attributes = null;
   private ConversationMessageEventTopicErrorBody errorInfo = null;
   private ConversationMessageEventTopicUriReference script = null;
@@ -534,6 +535,23 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
   }
   public void setQueue(ConversationMessageEventTopicUriReference queue) {
     this.queue = queue;
+  }
+
+  
+  /**
+   **/
+  public ConversationMessageEventTopicMessageMediaParticipant team(ConversationMessageEventTopicUriReference team) {
+    this.team = team;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("team")
+  public ConversationMessageEventTopicUriReference getTeam() {
+    return team;
+  }
+  public void setTeam(ConversationMessageEventTopicUriReference team) {
+    this.team = team;
   }
 
   
@@ -920,6 +938,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
         Objects.equals(this.wrapupPrompt, conversationMessageEventTopicMessageMediaParticipant.wrapupPrompt) &&
         Objects.equals(this.user, conversationMessageEventTopicMessageMediaParticipant.user) &&
         Objects.equals(this.queue, conversationMessageEventTopicMessageMediaParticipant.queue) &&
+        Objects.equals(this.team, conversationMessageEventTopicMessageMediaParticipant.team) &&
         Objects.equals(this.attributes, conversationMessageEventTopicMessageMediaParticipant.attributes) &&
         Objects.equals(this.errorInfo, conversationMessageEventTopicMessageMediaParticipant.errorInfo) &&
         Objects.equals(this.script, conversationMessageEventTopicMessageMediaParticipant.script) &&
@@ -945,7 +964,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, messages, type, recipientCountry, recipientType);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, messages, type, recipientCountry, recipientType);
   }
 
   @Override
@@ -969,6 +988,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     sb.append("    wrapupPrompt: ").append(toIndentedString(wrapupPrompt)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
+    sb.append("    team: ").append(toIndentedString(team)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    script: ").append(toIndentedString(script)).append("\n");

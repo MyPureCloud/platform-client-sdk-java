@@ -166,6 +166,7 @@ public class CallbackMediaParticipant  implements Serializable {
   private String wrapupPrompt = null;
   private DomainEntityRef user = null;
   private DomainEntityRef queue = null;
+  private DomainEntityRef team = null;
   private Map<String, String> attributes = null;
   private ErrorInfo errorInfo = null;
   private DomainEntityRef script = null;
@@ -510,6 +511,24 @@ public class CallbackMediaParticipant  implements Serializable {
   }
   public void setQueue(DomainEntityRef queue) {
     this.queue = queue;
+  }
+
+  
+  /**
+   * The PureCloud team for this participant.
+   **/
+  public CallbackMediaParticipant team(DomainEntityRef team) {
+    this.team = team;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The PureCloud team for this participant.")
+  @JsonProperty("team")
+  public DomainEntityRef getTeam() {
+    return team;
+  }
+  public void setTeam(DomainEntityRef team) {
+    this.team = team;
   }
 
   
@@ -971,6 +990,7 @@ public class CallbackMediaParticipant  implements Serializable {
         Objects.equals(this.wrapupPrompt, callbackMediaParticipant.wrapupPrompt) &&
         Objects.equals(this.user, callbackMediaParticipant.user) &&
         Objects.equals(this.queue, callbackMediaParticipant.queue) &&
+        Objects.equals(this.team, callbackMediaParticipant.team) &&
         Objects.equals(this.attributes, callbackMediaParticipant.attributes) &&
         Objects.equals(this.errorInfo, callbackMediaParticipant.errorInfo) &&
         Objects.equals(this.script, callbackMediaParticipant.script) &&
@@ -999,7 +1019,7 @@ public class CallbackMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, automatedCallbackConfigId, callbackScheduledTime);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, automatedCallbackConfigId, callbackScheduledTime);
   }
 
   @Override
@@ -1023,6 +1043,7 @@ public class CallbackMediaParticipant  implements Serializable {
     sb.append("    wrapupPrompt: ").append(toIndentedString(wrapupPrompt)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
+    sb.append("    team: ").append(toIndentedString(team)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    script: ").append(toIndentedString(script)).append("\n");

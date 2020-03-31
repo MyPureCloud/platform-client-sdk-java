@@ -166,6 +166,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
   private String wrapupPrompt = null;
   private ConversationScreenShareEventTopicUriReference user = null;
   private ConversationScreenShareEventTopicUriReference queue = null;
+  private ConversationScreenShareEventTopicUriReference team = null;
   private Map<String, String> attributes = null;
   private ConversationScreenShareEventTopicErrorBody errorInfo = null;
   private ConversationScreenShareEventTopicUriReference script = null;
@@ -490,6 +491,23 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
   }
   public void setQueue(ConversationScreenShareEventTopicUriReference queue) {
     this.queue = queue;
+  }
+
+  
+  /**
+   **/
+  public ConversationScreenShareEventTopicScreenShareMediaParticipant team(ConversationScreenShareEventTopicUriReference team) {
+    this.team = team;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("team")
+  public ConversationScreenShareEventTopicUriReference getTeam() {
+    return team;
+  }
+  public void setTeam(ConversationScreenShareEventTopicUriReference team) {
+    this.team = team;
   }
 
   
@@ -859,6 +877,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
         Objects.equals(this.wrapupPrompt, conversationScreenShareEventTopicScreenShareMediaParticipant.wrapupPrompt) &&
         Objects.equals(this.user, conversationScreenShareEventTopicScreenShareMediaParticipant.user) &&
         Objects.equals(this.queue, conversationScreenShareEventTopicScreenShareMediaParticipant.queue) &&
+        Objects.equals(this.team, conversationScreenShareEventTopicScreenShareMediaParticipant.team) &&
         Objects.equals(this.attributes, conversationScreenShareEventTopicScreenShareMediaParticipant.attributes) &&
         Objects.equals(this.errorInfo, conversationScreenShareEventTopicScreenShareMediaParticipant.errorInfo) &&
         Objects.equals(this.script, conversationScreenShareEventTopicScreenShareMediaParticipant.script) &&
@@ -883,7 +902,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, context, peerCount, sharing);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, context, peerCount, sharing);
   }
 
   @Override
@@ -907,6 +926,7 @@ public class ConversationScreenShareEventTopicScreenShareMediaParticipant  imple
     sb.append("    wrapupPrompt: ").append(toIndentedString(wrapupPrompt)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
+    sb.append("    team: ").append(toIndentedString(team)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    script: ").append(toIndentedString(script)).append("\n");

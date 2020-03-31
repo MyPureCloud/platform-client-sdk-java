@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.QueueUserEventTopicUserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -14,78 +15,61 @@ import java.io.Serializable;
 
 public class QueueUserEventTopicQueueMember  implements Serializable {
   
-  private String memberId = null;
-  private String name = null;
-  private Integer ringNumber = null;
-  private String type = null;
+  private String id = null;
+  private QueueUserEventTopicUserReference user = null;
+  private String queueId = null;
   private Boolean joined = null;
+  private Object additionalProperties = null;
 
   
   /**
    **/
-  public QueueUserEventTopicQueueMember memberId(String memberId) {
-    this.memberId = memberId;
+  public QueueUserEventTopicQueueMember id(String id) {
+    this.id = id;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("memberId")
-  public String getMemberId() {
-    return memberId;
+  @JsonProperty("id")
+  public String getId() {
+    return id;
   }
-  public void setMemberId(String memberId) {
-    this.memberId = memberId;
-  }
-
-  
-  /**
-   **/
-  public QueueUserEventTopicQueueMember name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
+  public void setId(String id) {
+    this.id = id;
   }
 
   
   /**
    **/
-  public QueueUserEventTopicQueueMember ringNumber(Integer ringNumber) {
-    this.ringNumber = ringNumber;
+  public QueueUserEventTopicQueueMember user(QueueUserEventTopicUserReference user) {
+    this.user = user;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("ringNumber")
-  public Integer getRingNumber() {
-    return ringNumber;
+  @JsonProperty("user")
+  public QueueUserEventTopicUserReference getUser() {
+    return user;
   }
-  public void setRingNumber(Integer ringNumber) {
-    this.ringNumber = ringNumber;
+  public void setUser(QueueUserEventTopicUserReference user) {
+    this.user = user;
   }
 
   
   /**
    **/
-  public QueueUserEventTopicQueueMember type(String type) {
-    this.type = type;
+  public QueueUserEventTopicQueueMember queueId(String queueId) {
+    this.queueId = queueId;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("type")
-  public String getType() {
-    return type;
+  @JsonProperty("queueId")
+  public String getQueueId() {
+    return queueId;
   }
-  public void setType(String type) {
-    this.type = type;
+  public void setQueueId(String queueId) {
+    this.queueId = queueId;
   }
 
   
@@ -106,6 +90,23 @@ public class QueueUserEventTopicQueueMember  implements Serializable {
   }
 
   
+  /**
+   **/
+  public QueueUserEventTopicQueueMember additionalProperties(Object additionalProperties) {
+    this.additionalProperties = additionalProperties;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("additionalProperties")
+  public Object getAdditionalProperties() {
+    return additionalProperties;
+  }
+  public void setAdditionalProperties(Object additionalProperties) {
+    this.additionalProperties = additionalProperties;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -116,16 +117,16 @@ public class QueueUserEventTopicQueueMember  implements Serializable {
       return false;
     }
     QueueUserEventTopicQueueMember queueUserEventTopicQueueMember = (QueueUserEventTopicQueueMember) o;
-    return Objects.equals(this.memberId, queueUserEventTopicQueueMember.memberId) &&
-        Objects.equals(this.name, queueUserEventTopicQueueMember.name) &&
-        Objects.equals(this.ringNumber, queueUserEventTopicQueueMember.ringNumber) &&
-        Objects.equals(this.type, queueUserEventTopicQueueMember.type) &&
-        Objects.equals(this.joined, queueUserEventTopicQueueMember.joined);
+    return Objects.equals(this.id, queueUserEventTopicQueueMember.id) &&
+        Objects.equals(this.user, queueUserEventTopicQueueMember.user) &&
+        Objects.equals(this.queueId, queueUserEventTopicQueueMember.queueId) &&
+        Objects.equals(this.joined, queueUserEventTopicQueueMember.joined) &&
+        Objects.equals(this.additionalProperties, queueUserEventTopicQueueMember.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(memberId, name, ringNumber, type, joined);
+    return Objects.hash(id, user, queueId, joined, additionalProperties);
   }
 
   @Override
@@ -133,11 +134,11 @@ public class QueueUserEventTopicQueueMember  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class QueueUserEventTopicQueueMember {\n");
     
-    sb.append("    memberId: ").append(toIndentedString(memberId)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    ringNumber: ").append(toIndentedString(ringNumber)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    user: ").append(toIndentedString(user)).append("\n");
+    sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    joined: ").append(toIndentedString(joined)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }

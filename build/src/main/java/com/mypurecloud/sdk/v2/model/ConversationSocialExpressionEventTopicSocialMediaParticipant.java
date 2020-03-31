@@ -166,6 +166,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
   private String wrapupPrompt = null;
   private ConversationSocialExpressionEventTopicUriReference user = null;
   private ConversationSocialExpressionEventTopicUriReference queue = null;
+  private ConversationSocialExpressionEventTopicUriReference team = null;
   private Map<String, String> attributes = null;
   private ConversationSocialExpressionEventTopicErrorBody errorInfo = null;
   private ConversationSocialExpressionEventTopicUriReference script = null;
@@ -491,6 +492,23 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
   }
   public void setQueue(ConversationSocialExpressionEventTopicUriReference queue) {
     this.queue = queue;
+  }
+
+  
+  /**
+   **/
+  public ConversationSocialExpressionEventTopicSocialMediaParticipant team(ConversationSocialExpressionEventTopicUriReference team) {
+    this.team = team;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("team")
+  public ConversationSocialExpressionEventTopicUriReference getTeam() {
+    return team;
+  }
+  public void setTeam(ConversationSocialExpressionEventTopicUriReference team) {
+    this.team = team;
   }
 
   
@@ -877,6 +895,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
         Objects.equals(this.wrapupPrompt, conversationSocialExpressionEventTopicSocialMediaParticipant.wrapupPrompt) &&
         Objects.equals(this.user, conversationSocialExpressionEventTopicSocialMediaParticipant.user) &&
         Objects.equals(this.queue, conversationSocialExpressionEventTopicSocialMediaParticipant.queue) &&
+        Objects.equals(this.team, conversationSocialExpressionEventTopicSocialMediaParticipant.team) &&
         Objects.equals(this.attributes, conversationSocialExpressionEventTopicSocialMediaParticipant.attributes) &&
         Objects.equals(this.errorInfo, conversationSocialExpressionEventTopicSocialMediaParticipant.errorInfo) &&
         Objects.equals(this.script, conversationSocialExpressionEventTopicSocialMediaParticipant.script) &&
@@ -902,7 +921,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, socialMediaId, socialMediaHub, socialUserName, previewText);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, socialMediaId, socialMediaHub, socialUserName, previewText);
   }
 
   @Override
@@ -926,6 +945,7 @@ public class ConversationSocialExpressionEventTopicSocialMediaParticipant  imple
     sb.append("    wrapupPrompt: ").append(toIndentedString(wrapupPrompt)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
+    sb.append("    team: ").append(toIndentedString(team)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    script: ").append(toIndentedString(script)).append("\n");

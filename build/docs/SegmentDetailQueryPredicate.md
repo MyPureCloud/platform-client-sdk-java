@@ -70,6 +70,7 @@ title: SegmentDetailQueryPredicate
 | FLAGGEDREASON | &quot;flaggedReason&quot; |
 | FLOWID | &quot;flowId&quot; |
 | FLOWNAME | &quot;flowName&quot; |
+| FLOWOUTTYPE | &quot;flowOutType&quot; |
 | FLOWOUTCOME | &quot;flowOutcome&quot; |
 | FLOWOUTCOMEENDTIMESTAMP | &quot;flowOutcomeEndTimestamp&quot; |
 | FLOWOUTCOMEID | &quot;flowOutcomeId&quot; |
