@@ -35,6 +35,7 @@ title: TrustUser
 | **profileSkills** | <!----><!---->**List&lt;String&gt;**<!----> | Profile skills possessed by the user |  [optional] |
 | **locations** | <!----><!---->[**List&lt;Location&gt;**](Location.html)<!----> | The user placement at each site location. |  [optional] |
 | **groups** | <!----><!---->[**List&lt;Group&gt;**](Group.html)<!----> | The groups the user is a member of |  [optional] |
+| **team** | <!----><!---->[**Team**](Team.html)<!----> | The team the user is a member of |  [optional] |
 | **skills** | <!----><!---->[**List&lt;UserRoutingSkill&gt;**](UserRoutingSkill.html)<!----> | Routing (ACD) skills possessed by the user |  [optional] |
 | **languages** | <!----><!---->[**List&lt;UserRoutingLanguage&gt;**](UserRoutingLanguage.html)<!----> | Routing (ACD) languages possessed by the user |  [optional] |
 | **acdAutoAnswer** | <!----><!---->**Boolean**<!----> | acd auto answer |  [optional] |

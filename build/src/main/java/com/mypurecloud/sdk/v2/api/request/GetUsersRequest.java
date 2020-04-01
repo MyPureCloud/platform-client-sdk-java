@@ -193,6 +193,7 @@ public class GetUsersRequest {
 		AUTHORIZATION("authorization"), 
 		LASTTOKENISSUED("lasttokenissued"), 
 		AUTHORIZATION_UNUSEDROLES("authorization.unusedRoles"), 
+		TEAM("team"), 
 		PROFILESKILLS("profileSkills"), 
 		CERTIFICATIONS("certifications"), 
 		LOCATIONS("locations"), 

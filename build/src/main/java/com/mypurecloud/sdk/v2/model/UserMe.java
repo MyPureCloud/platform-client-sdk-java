@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.OutOfOffice;
 import com.mypurecloud.sdk.v2.model.RoutingSkill;
 import com.mypurecloud.sdk.v2.model.RoutingStatus;
 import com.mypurecloud.sdk.v2.model.ServerDate;
+import com.mypurecloud.sdk.v2.model.Team;
 import com.mypurecloud.sdk.v2.model.TokenInfo;
 import com.mypurecloud.sdk.v2.model.Trustor;
 import com.mypurecloud.sdk.v2.model.User;
@@ -110,6 +111,7 @@ public class UserMe  implements Serializable {
   private List<String> profileSkills = new ArrayList<String>();
   private List<Location> locations = new ArrayList<Location>();
   private List<Group> groups = new ArrayList<Group>();
+  private Team team = null;
   private List<UserRoutingSkill> skills = new ArrayList<UserRoutingSkill>();
   private List<UserRoutingLanguage> languages = new ArrayList<UserRoutingLanguage>();
   private Boolean acdAutoAnswer = null;
@@ -587,6 +589,24 @@ public class UserMe  implements Serializable {
 
   
   /**
+   * The team the user is a member of
+   **/
+  public UserMe team(Team team) {
+    this.team = team;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The team the user is a member of")
+  @JsonProperty("team")
+  public Team getTeam() {
+    return team;
+  }
+  public void setTeam(Team team) {
+    this.team = team;
+  }
+
+  
+  /**
    * Routing (ACD) skills possessed by the user
    **/
   public UserMe skills(List<UserRoutingSkill> skills) {
@@ -978,6 +998,7 @@ public class UserMe  implements Serializable {
         Objects.equals(this.profileSkills, userMe.profileSkills) &&
         Objects.equals(this.locations, userMe.locations) &&
         Objects.equals(this.groups, userMe.groups) &&
+        Objects.equals(this.team, userMe.team) &&
         Objects.equals(this.skills, userMe.skills) &&
         Objects.equals(this.languages, userMe.languages) &&
         Objects.equals(this.acdAutoAnswer, userMe.acdAutoAnswer) &&
@@ -1003,7 +1024,7 @@ public class UserMe  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, skills, languages, acdAutoAnswer, languagePreference, lastTokenIssued, date, geolocationSettings, organization, presenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, orgProducts, selfUri);
+    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, team, skills, languages, acdAutoAnswer, languagePreference, lastTokenIssued, date, geolocationSettings, organization, presenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, orgProducts, selfUri);
   }
 
   @Override
@@ -1038,6 +1059,7 @@ public class UserMe  implements Serializable {
     sb.append("    profileSkills: ").append(toIndentedString(profileSkills)).append("\n");
     sb.append("    locations: ").append(toIndentedString(locations)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
+    sb.append("    team: ").append(toIndentedString(team)).append("\n");
     sb.append("    skills: ").append(toIndentedString(skills)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
