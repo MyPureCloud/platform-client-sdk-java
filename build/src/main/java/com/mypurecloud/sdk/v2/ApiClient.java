@@ -756,7 +756,7 @@ public class ApiClient implements AutoCloseable {
         private Builder(ConnectorProperties properties) {
             this.properties = (properties != null) ? properties.copy() : new ConnectorProperties();
             withUserAgent(DEFAULT_USER_AGENT);
-            withDefaultHeader("purecloud-sdk", "86.0.0");
+            withDefaultHeader("purecloud-sdk", "87.0.0");
         }
 
         public Builder withDefaultHeader(String header, String value) {
@@ -1026,21 +1026,21 @@ public class ApiClient implements AutoCloseable {
 
         public void setBackoffIntervalMs(long backoffIntervalMs) {
             if (backoffIntervalMs < 0) {
-                throw new IllegalArgumentException("backoffInterval should be a positive integer");
+                throw new IllegalArgumentException("backoffIntervalMs should be a positive integer");
             }
             this.backoffIntervalMs = backoffIntervalMs;
         }
 
         public void setRetryAfterDefaultMs(long retryAfterDefaultMs) {
             if (retryAfterDefaultMs < 0) {
-                throw new IllegalArgumentException("defaultDelay should be a positive integer");
+                throw new IllegalArgumentException("retryAfterDefaultMs should be a positive integer");
             }
             this.retryAfterDefaultMs = retryAfterDefaultMs;
         }
 
         public void setMaxRetryTimeSec(int maxRetryTimeSec) {
             if (maxRetryTimeSec < 0) {
-                throw new IllegalArgumentException("maxRetryTime should be a positive integer");
+                throw new IllegalArgumentException("maxRetryTimeSec should be a positive integer");
             }
             this.maxRetryTimeSec = maxRetryTimeSec;
         }

@@ -143,7 +143,7 @@ Setting `RetryConfiguration` instance to `ApiClient`:
  ```{"language":"java"}
         .withRetryConfiguration(retryConfiguration)
 ```
-Set the `maxRetryTime` to the number of seconds to process retries before returning an error.
+Set the `maxRetryTimeSec` to the number of seconds to process retries before returning an error.
 When the retry time is a a positive integer, the SDK will follow the recommended backoff logic using the provided configuration.
 The best practices are documented in the [Rate Limiting](https://developer.mypurecloud.com/api/rest/rate_limits.html) Developer Center article.
 
