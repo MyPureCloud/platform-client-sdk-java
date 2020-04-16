@@ -843,7 +843,7 @@ public class AuthorizationApi {
   
   /**
    * Returns which divisions the specified user has the given permission in.
-   * 
+   * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
    * @param subjectId Subject ID (user or group) (required)
    * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
    * @param pageNumber Page number (optional, default to 1)
@@ -858,7 +858,7 @@ public class AuthorizationApi {
 
   /**
    * Returns which divisions the specified user has the given permission in.
-   * 
+   * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
    * @param subjectId Subject ID (user or group) (required)
    * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
    * @param pageNumber Page number (optional, default to 1)
@@ -885,7 +885,7 @@ public class AuthorizationApi {
 
   /**
    * Returns which divisions the specified user has the given permission in.
-   * 
+   * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
    * @param request The request object
    * @return DivsPermittedEntityListing
    * @throws ApiException if the request fails on the server
@@ -904,7 +904,7 @@ public class AuthorizationApi {
 
   /**
    * Returns which divisions the specified user has the given permission in.
-   * 
+   * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

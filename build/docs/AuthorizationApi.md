@@ -631,13 +631,13 @@ try {
 
 # **getAuthorizationDivisionspermittedPagedSubjectId**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [DivsPermittedEntityListing](DivsPermittedEntityListing.html) getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, pageNumber, pageSize)
 
 Returns which divisions the specified user has the given permission in.
 
-
+This route is deprecated, use authorization/divisionspermitted/paged/me instead.
 
 Wraps GET /api/v2/authorization/divisionspermitted/paged/{subjectId}  
 

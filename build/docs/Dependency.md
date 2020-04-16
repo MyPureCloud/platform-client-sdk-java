@@ -29,6 +29,7 @@ title: Dependency
 | ACDLANGUAGE | &quot;ACDLANGUAGE&quot; |
 | ACDSKILL | &quot;ACDSKILL&quot; |
 | ACDWRAPUPCODE | &quot;ACDWRAPUPCODE&quot; |
+| BOTFLOW | &quot;BOTFLOW&quot; |
 | BRIDGEACTION | &quot;BRIDGEACTION&quot; |
 | COMMONMODULEFLOW | &quot;COMMONMODULEFLOW&quot; |
 | COMPOSERSCRIPT | &quot;COMPOSERSCRIPT&quot; |
@@ -40,6 +41,8 @@ title: Dependency
 | DIALOGFLOWAGENT | &quot;DIALOGFLOWAGENT&quot; |
 | EMAILROUTE | &quot;EMAILROUTE&quot; |
 | EMERGENCYGROUP | &quot;EMERGENCYGROUP&quot; |
+| FLOWACTION | &quot;FLOWACTION&quot; |
+| FLOWDATATYPE | &quot;FLOWDATATYPE&quot; |
 | FLOWOUTCOME | &quot;FLOWOUTCOME&quot; |
 | GROUP | &quot;GROUP&quot; |
 | INBOUNDCALLFLOW | &quot;INBOUNDCALLFLOW&quot; |

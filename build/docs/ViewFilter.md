@@ -44,6 +44,7 @@ title: ViewFilter
 | **evaluatorIds** | <!----><!---->**List&lt;String&gt;**<!----> | The evaluator ids are used to filter the view |  [optional] |
 | **transferred** | <!----><!---->**Boolean**<!----> | Indicates filtering for transfers |  [optional] |
 | **abandoned** | <!----><!---->**Boolean**<!----> | Indicates filtering for abandons |  [optional] |
+| **answered** | <!----><!---->**Boolean**<!----> | Indicates filtering for answered interactions |  [optional] |
 | **messageTypes** | <!---->[**List&lt;MessageTypesEnum&gt;**](#MessageTypesEnum)<!----> | The message media types used to filter the view |  [optional] |
 | **divisionIds** | <!----><!---->**List&lt;String&gt;**<!----> | The divison Ids used to filter the view |  [optional] |
 | **surveyFormIds** | <!----><!---->**List&lt;String&gt;**<!----> | The survey form ids used to filter the view |  [optional] |
@@ -83,6 +84,8 @@ title: ViewFilter
 | **roleIds** | <!----><!---->**List&lt;String&gt;**<!----> | The role Ids used to filter the view |  [optional] |
 | **reportsTos** | <!----><!---->**List&lt;String&gt;**<!----> | The report to user IDs used to filter the view |  [optional] |
 | **locationIds** | <!----><!---->**List&lt;String&gt;**<!----> | The location Ids used to filter the view |  [optional] |
+| **flowOutTypes** | <!----><!---->**List&lt;String&gt;**<!----> | A list of flow out types |  [optional] |
+| **providerList** | <!----><!---->**List&lt;String&gt;**<!----> | A list of providers |  [optional] |
 {: class="table table-striped"}
 
 
@@ -187,6 +190,7 @@ title: ViewFilter
 
 | Name | Value |
 | ---- | ----- |
+| BOT | &quot;bot&quot; |
 | COMMONMODULE | &quot;commonmodule&quot; |
 | INBOUNDCALL | &quot;inboundcall&quot; |
 | INBOUNDCHAT | &quot;inboundchat&quot; |

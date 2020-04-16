@@ -53,6 +53,7 @@ title: DialerCampaignConfigChangeCampaign
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | AGENTLESS | &quot;AGENTLESS&quot; |
+| EXTERNAL | &quot;EXTERNAL&quot; |
 | PREVIEW | &quot;PREVIEW&quot; |
 | POWER | &quot;POWER&quot; |
 | PREDICTIVE | &quot;PREDICTIVE&quot; |

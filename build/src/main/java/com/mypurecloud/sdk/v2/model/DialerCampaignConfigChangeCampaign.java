@@ -37,6 +37,7 @@ public class DialerCampaignConfigChangeCampaign  implements Serializable {
   public enum DialingModeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     AGENTLESS("AGENTLESS"),
+    EXTERNAL("EXTERNAL"),
     PREVIEW("PREVIEW"),
     POWER("POWER"),
     PREDICTIVE("PREDICTIVE"),

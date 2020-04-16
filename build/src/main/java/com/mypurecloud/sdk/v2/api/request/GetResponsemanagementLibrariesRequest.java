@@ -58,6 +58,49 @@ public class GetResponsemanagementLibrariesRequest {
 	    return this;
 	} 
 	
+	private String messagingTemplateFilter;
+	public String getMessagingTemplateFilter() {
+		return this.messagingTemplateFilter;
+	}
+
+	public void setMessagingTemplateFilter(String messagingTemplateFilter) {
+		this.messagingTemplateFilter = messagingTemplateFilter;
+	}
+
+	public GetResponsemanagementLibrariesRequest withMessagingTemplateFilter(String messagingTemplateFilter) {
+	    this.setMessagingTemplateFilter(messagingTemplateFilter);
+	    return this;
+	} 
+
+	public enum messagingTemplateFilterValues { 
+		WHATSAPP("whatsapp");
+
+		private String value;
+
+		messagingTemplateFilterValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static messagingTemplateFilterValues fromString(String key) {
+			if (key == null) return null;
+
+			for (messagingTemplateFilterValues value : messagingTemplateFilterValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return messagingTemplateFilterValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -84,6 +127,8 @@ public class GetResponsemanagementLibrariesRequest {
                 .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withQueryParameters("pageSize", "", pageSize)
+        
+                .withQueryParameters("messagingTemplateFilter", "", messagingTemplateFilter)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -114,6 +159,16 @@ public class GetResponsemanagementLibrariesRequest {
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
+		}
+		
+		public Builder withMessagingTemplateFilter(String messagingTemplateFilter) {
+			request.setMessagingTemplateFilter(messagingTemplateFilter);
+			return this;
+		}
+
+		public Builder withMessagingTemplateFilter(messagingTemplateFilterValues messagingTemplateFilter) {
+		    request.setMessagingTemplateFilter(messagingTemplateFilter.toString());
+		    return this;
 		}
 		
 

@@ -37,6 +37,7 @@ title: Flow
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| BOT | &quot;BOT&quot; |
 | COMMONMODULE | &quot;COMMONMODULE&quot; |
 | INBOUNDCALL | &quot;INBOUNDCALL&quot; |
 | INBOUNDCHAT | &quot;INBOUNDCHAT&quot; |

@@ -45,7 +45,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 
-> Void deleteExternalcontactsContact(contactId)
+> [Empty](Empty.html) deleteExternalcontactsContact(contactId)
 
 Delete an external contact
 
@@ -81,7 +81,8 @@ Configuration.setDefaultApiClient(apiClient);
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String contactId = "contactId_example"; // String | ExternalContact ID
 try {
-    apiInstance.deleteExternalcontactsContact(contactId);
+    Empty result = apiInstance.deleteExternalcontactsContact(contactId);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#deleteExternalcontactsContact");
     e.printStackTrace();
@@ -99,7 +100,7 @@ try {
 
 ### Return type
 
-null (empty response body)
+[**Empty**](Empty.html)
 
 <a name="deleteExternalcontactsContactNote"></a>
 
@@ -107,7 +108,7 @@ null (empty response body)
 
 
 
-> Void deleteExternalcontactsContactNote(contactId, noteId)
+> [Empty](Empty.html) deleteExternalcontactsContactNote(contactId, noteId)
 
 Delete a note for an external contact
 
@@ -144,7 +145,8 @@ ExternalContactsApi apiInstance = new ExternalContactsApi();
 String contactId = "contactId_example"; // String | ExternalContact Id
 String noteId = "noteId_example"; // String | Note Id
 try {
-    apiInstance.deleteExternalcontactsContactNote(contactId, noteId);
+    Empty result = apiInstance.deleteExternalcontactsContactNote(contactId, noteId);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#deleteExternalcontactsContactNote");
     e.printStackTrace();
@@ -163,7 +165,7 @@ try {
 
 ### Return type
 
-null (empty response body)
+[**Empty**](Empty.html)
 
 <a name="deleteExternalcontactsOrganization"></a>
 
@@ -171,7 +173,7 @@ null (empty response body)
 
 
 
-> Void deleteExternalcontactsOrganization(externalOrganizationId)
+> [Empty](Empty.html) deleteExternalcontactsOrganization(externalOrganizationId)
 
 Delete an external organization
 
@@ -207,7 +209,8 @@ Configuration.setDefaultApiClient(apiClient);
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
 try {
-    apiInstance.deleteExternalcontactsOrganization(externalOrganizationId);
+    Empty result = apiInstance.deleteExternalcontactsOrganization(externalOrganizationId);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#deleteExternalcontactsOrganization");
     e.printStackTrace();
@@ -225,7 +228,7 @@ try {
 
 ### Return type
 
-null (empty response body)
+[**Empty**](Empty.html)
 
 <a name="deleteExternalcontactsOrganizationNote"></a>
 
@@ -233,7 +236,7 @@ null (empty response body)
 
 
 
-> Void deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId)
+> [Empty](Empty.html) deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId)
 
 Delete a note for an external organization
 
@@ -270,7 +273,8 @@ ExternalContactsApi apiInstance = new ExternalContactsApi();
 String externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
 String noteId = "noteId_example"; // String | Note Id
 try {
-    apiInstance.deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId);
+    Empty result = apiInstance.deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#deleteExternalcontactsOrganizationNote");
     e.printStackTrace();
@@ -289,7 +293,7 @@ try {
 
 ### Return type
 
-null (empty response body)
+[**Empty**](Empty.html)
 
 <a name="deleteExternalcontactsOrganizationTrustor"></a>
 
@@ -359,7 +363,7 @@ null (empty response body)
 
 
 
-> Void deleteExternalcontactsRelationship(relationshipId)
+> [Empty](Empty.html) deleteExternalcontactsRelationship(relationshipId)
 
 Delete a relationship
 
@@ -395,7 +399,8 @@ Configuration.setDefaultApiClient(apiClient);
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 String relationshipId = "relationshipId_example"; // String | Relationship Id
 try {
-    apiInstance.deleteExternalcontactsRelationship(relationshipId);
+    Empty result = apiInstance.deleteExternalcontactsRelationship(relationshipId);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#deleteExternalcontactsRelationship");
     e.printStackTrace();
@@ -413,7 +418,7 @@ try {
 
 ### Return type
 
-null (empty response body)
+[**Empty**](Empty.html)
 
 <a name="getExternalcontactsContact"></a>
 

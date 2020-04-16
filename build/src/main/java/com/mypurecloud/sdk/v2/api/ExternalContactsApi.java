@@ -10,6 +10,7 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
 import com.mypurecloud.sdk.v2.model.Note;
@@ -77,20 +78,22 @@ public class ExternalContactsApi {
    * Delete an external contact
    * 
    * @param contactId ExternalContact ID (required)
+   * @return Empty
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteExternalcontactsContact(String contactId) throws IOException, ApiException {
-     deleteExternalcontactsContact(createDeleteExternalcontactsContactRequest(contactId));
+  public Empty deleteExternalcontactsContact(String contactId) throws IOException, ApiException {
+    return  deleteExternalcontactsContact(createDeleteExternalcontactsContactRequest(contactId));
   }
 
   /**
    * Delete an external contact
    * 
    * @param contactId ExternalContact ID (required)
+   * @return Empty
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteExternalcontactsContactWithHttpInfo(String contactId) throws IOException {
+  public ApiResponse<Empty> deleteExternalcontactsContactWithHttpInfo(String contactId) throws IOException {
     return deleteExternalcontactsContact(createDeleteExternalcontactsContactRequest(contactId).withHttpInfo());
   }
 
@@ -105,17 +108,18 @@ public class ExternalContactsApi {
    * Delete an external contact
    * 
    * @param request The request object
+   * @return Empty
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteExternalcontactsContact(DeleteExternalcontactsContactRequest request) throws IOException, ApiException {
+  public Empty deleteExternalcontactsContact(DeleteExternalcontactsContactRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
+      return null;
     }
   }
 
@@ -126,13 +130,13 @@ public class ExternalContactsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteExternalcontactsContact(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Empty> deleteExternalcontactsContact(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, null);
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -143,7 +147,7 @@ public class ExternalContactsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -154,11 +158,12 @@ public class ExternalContactsApi {
    * 
    * @param contactId ExternalContact Id (required)
    * @param noteId Note Id (required)
+   * @return Empty
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteExternalcontactsContactNote(String contactId, String noteId) throws IOException, ApiException {
-     deleteExternalcontactsContactNote(createDeleteExternalcontactsContactNoteRequest(contactId, noteId));
+  public Empty deleteExternalcontactsContactNote(String contactId, String noteId) throws IOException, ApiException {
+    return  deleteExternalcontactsContactNote(createDeleteExternalcontactsContactNoteRequest(contactId, noteId));
   }
 
   /**
@@ -166,9 +171,10 @@ public class ExternalContactsApi {
    * 
    * @param contactId ExternalContact Id (required)
    * @param noteId Note Id (required)
+   * @return Empty
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteExternalcontactsContactNoteWithHttpInfo(String contactId, String noteId) throws IOException {
+  public ApiResponse<Empty> deleteExternalcontactsContactNoteWithHttpInfo(String contactId, String noteId) throws IOException {
     return deleteExternalcontactsContactNote(createDeleteExternalcontactsContactNoteRequest(contactId, noteId).withHttpInfo());
   }
 
@@ -185,17 +191,18 @@ public class ExternalContactsApi {
    * Delete a note for an external contact
    * 
    * @param request The request object
+   * @return Empty
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteExternalcontactsContactNote(DeleteExternalcontactsContactNoteRequest request) throws IOException, ApiException {
+  public Empty deleteExternalcontactsContactNote(DeleteExternalcontactsContactNoteRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
+      return null;
     }
   }
 
@@ -206,13 +213,13 @@ public class ExternalContactsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteExternalcontactsContactNote(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Empty> deleteExternalcontactsContactNote(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, null);
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -223,7 +230,7 @@ public class ExternalContactsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -233,20 +240,22 @@ public class ExternalContactsApi {
    * Delete an external organization
    * 
    * @param externalOrganizationId External Organization ID (required)
+   * @return Empty
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteExternalcontactsOrganization(String externalOrganizationId) throws IOException, ApiException {
-     deleteExternalcontactsOrganization(createDeleteExternalcontactsOrganizationRequest(externalOrganizationId));
+  public Empty deleteExternalcontactsOrganization(String externalOrganizationId) throws IOException, ApiException {
+    return  deleteExternalcontactsOrganization(createDeleteExternalcontactsOrganizationRequest(externalOrganizationId));
   }
 
   /**
    * Delete an external organization
    * 
    * @param externalOrganizationId External Organization ID (required)
+   * @return Empty
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteExternalcontactsOrganizationWithHttpInfo(String externalOrganizationId) throws IOException {
+  public ApiResponse<Empty> deleteExternalcontactsOrganizationWithHttpInfo(String externalOrganizationId) throws IOException {
     return deleteExternalcontactsOrganization(createDeleteExternalcontactsOrganizationRequest(externalOrganizationId).withHttpInfo());
   }
 
@@ -261,17 +270,18 @@ public class ExternalContactsApi {
    * Delete an external organization
    * 
    * @param request The request object
+   * @return Empty
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteExternalcontactsOrganization(DeleteExternalcontactsOrganizationRequest request) throws IOException, ApiException {
+  public Empty deleteExternalcontactsOrganization(DeleteExternalcontactsOrganizationRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
+      return null;
     }
   }
 
@@ -282,13 +292,13 @@ public class ExternalContactsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteExternalcontactsOrganization(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Empty> deleteExternalcontactsOrganization(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, null);
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -299,7 +309,7 @@ public class ExternalContactsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -310,11 +320,12 @@ public class ExternalContactsApi {
    * 
    * @param externalOrganizationId External Organization Id (required)
    * @param noteId Note Id (required)
+   * @return Empty
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteExternalcontactsOrganizationNote(String externalOrganizationId, String noteId) throws IOException, ApiException {
-     deleteExternalcontactsOrganizationNote(createDeleteExternalcontactsOrganizationNoteRequest(externalOrganizationId, noteId));
+  public Empty deleteExternalcontactsOrganizationNote(String externalOrganizationId, String noteId) throws IOException, ApiException {
+    return  deleteExternalcontactsOrganizationNote(createDeleteExternalcontactsOrganizationNoteRequest(externalOrganizationId, noteId));
   }
 
   /**
@@ -322,9 +333,10 @@ public class ExternalContactsApi {
    * 
    * @param externalOrganizationId External Organization Id (required)
    * @param noteId Note Id (required)
+   * @return Empty
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteExternalcontactsOrganizationNoteWithHttpInfo(String externalOrganizationId, String noteId) throws IOException {
+  public ApiResponse<Empty> deleteExternalcontactsOrganizationNoteWithHttpInfo(String externalOrganizationId, String noteId) throws IOException {
     return deleteExternalcontactsOrganizationNote(createDeleteExternalcontactsOrganizationNoteRequest(externalOrganizationId, noteId).withHttpInfo());
   }
 
@@ -341,17 +353,18 @@ public class ExternalContactsApi {
    * Delete a note for an external organization
    * 
    * @param request The request object
+   * @return Empty
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteExternalcontactsOrganizationNote(DeleteExternalcontactsOrganizationNoteRequest request) throws IOException, ApiException {
+  public Empty deleteExternalcontactsOrganizationNote(DeleteExternalcontactsOrganizationNoteRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
+      return null;
     }
   }
 
@@ -362,13 +375,13 @@ public class ExternalContactsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteExternalcontactsOrganizationNote(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Empty> deleteExternalcontactsOrganizationNote(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, null);
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -379,7 +392,7 @@ public class ExternalContactsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -465,20 +478,22 @@ public class ExternalContactsApi {
    * Delete a relationship
    * 
    * @param relationshipId Relationship Id (required)
+   * @return Empty
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteExternalcontactsRelationship(String relationshipId) throws IOException, ApiException {
-     deleteExternalcontactsRelationship(createDeleteExternalcontactsRelationshipRequest(relationshipId));
+  public Empty deleteExternalcontactsRelationship(String relationshipId) throws IOException, ApiException {
+    return  deleteExternalcontactsRelationship(createDeleteExternalcontactsRelationshipRequest(relationshipId));
   }
 
   /**
    * Delete a relationship
    * 
    * @param relationshipId Relationship Id (required)
+   * @return Empty
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteExternalcontactsRelationshipWithHttpInfo(String relationshipId) throws IOException {
+  public ApiResponse<Empty> deleteExternalcontactsRelationshipWithHttpInfo(String relationshipId) throws IOException {
     return deleteExternalcontactsRelationship(createDeleteExternalcontactsRelationshipRequest(relationshipId).withHttpInfo());
   }
 
@@ -493,17 +508,18 @@ public class ExternalContactsApi {
    * Delete a relationship
    * 
    * @param request The request object
+   * @return Empty
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteExternalcontactsRelationship(DeleteExternalcontactsRelationshipRequest request) throws IOException, ApiException {
+  public Empty deleteExternalcontactsRelationship(DeleteExternalcontactsRelationshipRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
+      return null;
     }
   }
 
@@ -514,13 +530,13 @@ public class ExternalContactsApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteExternalcontactsRelationship(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Empty> deleteExternalcontactsRelationship(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, null);
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -531,7 +547,7 @@ public class ExternalContactsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

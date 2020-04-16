@@ -26,6 +26,7 @@ public class FlowDivisionView  implements Serializable {
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    BOT("BOT"),
     COMMONMODULE("COMMONMODULE"),
     INBOUNDCALL("INBOUNDCALL"),
     INBOUNDCHAT("INBOUNDCHAT"),

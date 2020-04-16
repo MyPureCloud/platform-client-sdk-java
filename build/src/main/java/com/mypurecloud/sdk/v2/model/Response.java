@@ -72,7 +72,7 @@ public class Response  implements Serializable {
   private JsonSchemaDocument substitutionsSchema = null;
 
   /**
-   * The response type represented by the response
+   * The response type represented by the response.
    */
   public enum ResponseTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -265,22 +265,33 @@ public class Response  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The response type represented by the response")
+  /**
+   * The response type represented by the response.
+   **/
+  public Response responseType(ResponseTypeEnum responseType) {
+    this.responseType = responseType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The response type represented by the response.")
   @JsonProperty("responseType")
   public ResponseTypeEnum getResponseType() {
     return responseType;
   }
+  public void setResponseType(ResponseTypeEnum responseType) {
+    this.responseType = responseType;
+  }
 
   
   /**
-   * The messaging template definition. This is required when adding to a library with responseType set to MessagingTemplate.
+   * An optional messaging template definition for responseType.MessagingTemplate.
    **/
   public Response messagingTemplate(MessagingTemplate messagingTemplate) {
     this.messagingTemplate = messagingTemplate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The messaging template definition. This is required when adding to a library with responseType set to MessagingTemplate.")
+  @ApiModelProperty(example = "null", value = "An optional messaging template definition for responseType.MessagingTemplate.")
   @JsonProperty("messagingTemplate")
   public MessagingTemplate getMessagingTemplate() {
     return messagingTemplate;

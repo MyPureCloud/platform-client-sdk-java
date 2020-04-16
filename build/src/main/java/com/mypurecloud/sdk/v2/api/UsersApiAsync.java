@@ -1068,7 +1068,7 @@ public class UsersApiAsync {
   
   /**
    * Returns which divisions the specified user has the given permission in.
-   * 
+   * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1102,7 +1102,7 @@ public class UsersApiAsync {
 
   /**
    * Returns which divisions the specified user has the given permission in.
-   * 
+   * This route is deprecated, use authorization/divisionspermitted/paged/me instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

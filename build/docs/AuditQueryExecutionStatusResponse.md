@@ -45,6 +45,7 @@ title: AuditQueryExecutionStatusResponse
 | QUALITY | &quot;Quality&quot; |
 | LANGUAGEUNDERSTANDING | &quot;LanguageUnderstanding&quot; |
 | TOPICSDEFINITIONS | &quot;TopicsDefinitions&quot; |
+| PREDICTIVEENGAGEMENT | &quot;PredictiveEngagement&quot; |
 {: class="table table-striped"}
 
 

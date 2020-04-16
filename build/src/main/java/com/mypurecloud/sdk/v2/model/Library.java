@@ -24,7 +24,7 @@ public class Library  implements Serializable {
   private Date dateCreated = null;
 
   /**
-   * The response type for the library. If set, only response's of this type may be added to this library.
+   * This value is deprecated. Responses representing message templates may be added to any library.
    */
   public enum ResponseTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -117,14 +117,14 @@ public class Library  implements Serializable {
 
   
   /**
-   * The response type for the library. If set, only response's of this type may be added to this library.
+   * This value is deprecated. Responses representing message templates may be added to any library.
    **/
   public Library responseType(ResponseTypeEnum responseType) {
     this.responseType = responseType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The response type for the library. If set, only response's of this type may be added to this library.")
+  @ApiModelProperty(example = "null", value = "This value is deprecated. Responses representing message templates may be added to any library.")
   @JsonProperty("responseType")
   public ResponseTypeEnum getResponseType() {
     return responseType;

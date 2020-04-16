@@ -159,6 +159,7 @@ public class ViewFilter  implements Serializable {
   private List<String> evaluatorIds = new ArrayList<String>();
   private Boolean transferred = null;
   private Boolean abandoned = null;
+  private Boolean answered = null;
 
   /**
    * Gets or Sets messageTypes
@@ -335,6 +336,7 @@ public class ViewFilter  implements Serializable {
    * Gets or Sets flowTypes
    */
   public enum FlowTypesEnum {
+    BOT("bot"),
     COMMONMODULE("commonmodule"),
     INBOUNDCALL("inboundcall"),
     INBOUNDCHAT("inboundchat"),
@@ -419,6 +421,8 @@ public class ViewFilter  implements Serializable {
   private List<String> roleIds = new ArrayList<String>();
   private List<String> reportsTos = new ArrayList<String>();
   private List<String> locationIds = new ArrayList<String>();
+  private List<String> flowOutTypes = new ArrayList<String>();
+  private List<String> providerList = new ArrayList<String>();
 
   
   /**
@@ -1066,6 +1070,24 @@ public class ViewFilter  implements Serializable {
   }
   public void setAbandoned(Boolean abandoned) {
     this.abandoned = abandoned;
+  }
+
+  
+  /**
+   * Indicates filtering for answered interactions
+   **/
+  public ViewFilter answered(Boolean answered) {
+    this.answered = answered;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates filtering for answered interactions")
+  @JsonProperty("answered")
+  public Boolean getAnswered() {
+    return answered;
+  }
+  public void setAnswered(Boolean answered) {
+    this.answered = answered;
   }
 
   
@@ -1771,6 +1793,42 @@ public class ViewFilter  implements Serializable {
   }
 
   
+  /**
+   * A list of flow out types
+   **/
+  public ViewFilter flowOutTypes(List<String> flowOutTypes) {
+    this.flowOutTypes = flowOutTypes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of flow out types")
+  @JsonProperty("flowOutTypes")
+  public List<String> getFlowOutTypes() {
+    return flowOutTypes;
+  }
+  public void setFlowOutTypes(List<String> flowOutTypes) {
+    this.flowOutTypes = flowOutTypes;
+  }
+
+  
+  /**
+   * A list of providers
+   **/
+  public ViewFilter providerList(List<String> providerList) {
+    this.providerList = providerList;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of providers")
+  @JsonProperty("providerList")
+  public List<String> getProviderList() {
+    return providerList;
+  }
+  public void setProviderList(List<String> providerList) {
+    this.providerList = providerList;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1817,6 +1875,7 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.evaluatorIds, viewFilter.evaluatorIds) &&
         Objects.equals(this.transferred, viewFilter.transferred) &&
         Objects.equals(this.abandoned, viewFilter.abandoned) &&
+        Objects.equals(this.answered, viewFilter.answered) &&
         Objects.equals(this.messageTypes, viewFilter.messageTypes) &&
         Objects.equals(this.divisionIds, viewFilter.divisionIds) &&
         Objects.equals(this.surveyFormIds, viewFilter.surveyFormIds) &&
@@ -1855,12 +1914,14 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.hasMedia, viewFilter.hasMedia) &&
         Objects.equals(this.roleIds, viewFilter.roleIds) &&
         Objects.equals(this.reportsTos, viewFilter.reportsTos) &&
-        Objects.equals(this.locationIds, viewFilter.locationIds);
+        Objects.equals(this.locationIds, viewFilter.locationIds) &&
+        Objects.equals(this.flowOutTypes, viewFilter.flowOutTypes) &&
+        Objects.equals(this.providerList, viewFilter.providerList);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList);
   }
 
   @Override
@@ -1904,6 +1965,7 @@ public class ViewFilter  implements Serializable {
     sb.append("    evaluatorIds: ").append(toIndentedString(evaluatorIds)).append("\n");
     sb.append("    transferred: ").append(toIndentedString(transferred)).append("\n");
     sb.append("    abandoned: ").append(toIndentedString(abandoned)).append("\n");
+    sb.append("    answered: ").append(toIndentedString(answered)).append("\n");
     sb.append("    messageTypes: ").append(toIndentedString(messageTypes)).append("\n");
     sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
     sb.append("    surveyFormIds: ").append(toIndentedString(surveyFormIds)).append("\n");
@@ -1943,6 +2005,8 @@ public class ViewFilter  implements Serializable {
     sb.append("    roleIds: ").append(toIndentedString(roleIds)).append("\n");
     sb.append("    reportsTos: ").append(toIndentedString(reportsTos)).append("\n");
     sb.append("    locationIds: ").append(toIndentedString(locationIds)).append("\n");
+    sb.append("    flowOutTypes: ").append(toIndentedString(flowOutTypes)).append("\n");
+    sb.append("    providerList: ").append(toIndentedString(providerList)).append("\n");
     sb.append("}");
     return sb.toString();
   }

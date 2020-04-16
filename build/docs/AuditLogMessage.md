@@ -36,6 +36,7 @@ title: AuditLogMessage
 | QUALITY | &quot;Quality&quot; |
 | LANGUAGEUNDERSTANDING | &quot;LanguageUnderstanding&quot; |
 | TOPICSDEFINITIONS | &quot;TopicsDefinitions&quot; |
+| PREDICTIVEENGAGEMENT | &quot;PredictiveEngagement&quot; |
 {: class="table table-striped"}
 
 
@@ -55,6 +56,9 @@ title: AuditLogMessage
 | MEMBERUPDATE | &quot;MemberUpdate&quot; |
 | MEMBERREMOVE | &quot;MemberRemove&quot; |
 | READ | &quot;Read&quot; |
+| APPLYPROTECTION | &quot;ApplyProtection&quot; |
+| REVOKEPROTECTION | &quot;RevokeProtection&quot; |
+| UPDATERETENTION | &quot;UpdateRetention&quot; |
 | READALL | &quot;ReadAll&quot; |
 | EXECUTE | &quot;Execute&quot; |
 | PUBLISH | &quot;Publish&quot; |
@@ -87,6 +91,9 @@ title: AuditLogMessage
 | FEEDBACK | &quot;Feedback&quot; |
 | TOPIC | &quot;Topic&quot; |
 | PROGRAM | &quot;Program&quot; |
+| SEGMENT | &quot;Segment&quot; |
+| OUTCOME | &quot;Outcome&quot; |
+| CLICKSTREAMSETTINGS | &quot;ClickstreamSettings&quot; |
 {: class="table table-striped"}
 
 
