@@ -73,7 +73,7 @@ PureCloudRegionHosts region = PureCloudRegionHosts.us_east_1;
 
 ApiClient apiClient = ApiClient.Builder.standard().withBasePath(region).build();
 ApiResponse<AuthResponse> authResponse = apiClient.authorizeSaml2Bearer(clientId,clientSecret,orgName,encodedSamlAssertion);
-System.out.println("Authentication sucesful. Access token expires in " + authResponse.getBody().getExpires_in(); + " seconds");
+System.out.println("Authentication successful. Access token expires in " + authResponse.getBody().getExpires_in() + " seconds");
 
 ```
 
@@ -133,14 +133,14 @@ Specify the connector in the builder:
 By default, the Java SDK does not automatically retry any failed requests.
 To enable automatic retries, provide a RetryConfiguration object with the maximum number of seconds to retry requests when building the ApiClient instance.
 
-Building a `RetryConfiguration` instance:
+Building a `RetryConfiguration` instance:  
 ```{"language":"java"}
 ApiClient.RetryConfiguration retryConfiguration = new ApiClient.RetryConfiguration();
 retryConfiguration.setMaxRetryTimeSec(30);
 ```
 
 Setting `RetryConfiguration` instance to `ApiClient`:
- ```{"language":"java"}
+```{"language":"java"}
         .withRetryConfiguration(retryConfiguration)
 ```
 Set the `maxRetryTimeSec` to the number of seconds to process retries before returning an error.
@@ -239,8 +239,8 @@ NotificationHandler notificationHandler = NotificationHandler.Builder.standard()
         .withNotificationListener(new UserPresenceListener(me.getId()))
         .withNotificationListener(new ChannelMetadataListener())
         // As a list
-        .withNotificationListeners(new ArrayList<NotificationListener<?>>()\{\{
-            add(new UserPresenceListener(me.getId());
+        .withNotificationListeners(new ArrayList<NotificationListener<?>>() { {
+            add(new UserPresenceListener(me.getId()));
             add(new ChannelMetadataListener());
         }})
         .withAutoConnect(false)
@@ -256,8 +256,8 @@ notificationHandler.setWebSocketListener(new MyWebSocketListener());
 notificationHandler.addSubscription(new UserPresenceListener(me.getId()));
 notificationHandler.addSubscription(new ChannelMetadataListener());
 // As a list
-notificationHandler.addSubscriptions(new ArrayList<NotificationListener<?>>()\{\{
-            add(new UserPresenceListener(me.getId());
+notificationHandler.addSubscriptions(new ArrayList<NotificationListener<?>>() { {
+            add(new UserPresenceListener(me.getId()));
             add(new ChannelMetadataListener());
         }});
 ```

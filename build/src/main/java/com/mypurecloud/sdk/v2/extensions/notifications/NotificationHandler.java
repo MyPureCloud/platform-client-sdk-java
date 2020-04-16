@@ -9,6 +9,7 @@ import com.mypurecloud.sdk.v2.api.NotificationsApi;
 import com.mypurecloud.sdk.v2.model.Channel;
 import com.mypurecloud.sdk.v2.model.ChannelTopic;
 import com.mypurecloud.sdk.v2.model.ChannelTopicEntityListing;
+import com.mypurecloud.sdk.v2.model.SystemMessageSystemMessage;
 import com.mypurecloud.sdk.v2.api.request.PostNotificationsChannelsRequest;
 import com.neovisionaries.ws.client.*;
 import org.slf4j.Logger;
@@ -69,6 +70,9 @@ public class NotificationHandler extends Object {
 
         // Set notification listeners
         this.addSubscriptions(builder.notificationListeners);
+
+        // Add handler for socket closing event
+        this.addHandlerNoSubscribe(new SocketClosingHandler());
 
         // Set web socket listener
         this.setWebSocketListener(builder.webSocketListener);
@@ -229,7 +233,28 @@ public class NotificationHandler extends Object {
         }
     }
 
+    private class SocketClosingHandler implements NotificationListener<SystemMessageSystemMessage> {
+        private String topic = "v2.system.socket_closing";
 
+        @Override
+        public String getTopic() {
+            return topic;
+        }
+
+        @Override
+        public Class<?> getEventBodyClass() {
+            return SystemMessageSystemMessage.class;
+        }
+
+        @Override
+        public void onEvent(NotificationEvent<?> event) {
+            try {
+                webSocket = webSocket.recreate();
+            } catch (Exception ex) {
+                LOGGER.error(ex.getMessage(), ex);
+            }
+        }
+    }
 
     public void sendPing() {
         this.webSocket.sendText("{\"message\":\"ping\"}");
@@ -249,7 +274,7 @@ public class NotificationHandler extends Object {
         for (NotificationListener<?> listener : listeners) {
             typeMap.put(listener.getTopic(), listener);
 
-            if (!"channel.metadata".equals(listener.getTopic())) {
+            if (!"channel.metadata".equals(listener.getTopic()) && !listener.getTopic().startsWith("v2.system")) {
                 ChannelTopic channelTopic = new ChannelTopic();
                 channelTopic.setId(listener.getTopic());
                 topics.add(channelTopic);
@@ -257,6 +282,16 @@ public class NotificationHandler extends Object {
         }
 
         notificationsApi.postNotificationsChannelSubscriptions(this.channel.getId(), topics);
+    }
+
+    public <T> void addHandlerNoSubscribe(NotificationListener<T> listener) {
+        addHandlersNoSubscribe(Collections.<NotificationListener<?>>singletonList(listener));
+    }
+
+    public void addHandlersNoSubscribe(List<NotificationListener<?>> listeners) {
+        for (NotificationListener<?> listener : listeners) {
+            typeMap.put(listener.getTopic(), listener);
+        }
     }
 
     public void RemoveSubscription(String topic) throws IOException, ApiException {
