@@ -337,7 +337,7 @@ Delete a survey form.
 
 Wraps DELETE /api/v2/quality/forms/surveys/{formId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * quality:surveyForm:delete
 
@@ -1564,7 +1564,7 @@ Get a survey form
 
 Wraps GET /api/v2/quality/forms/surveys/{formId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * quality:surveyForm:view
 
@@ -1627,7 +1627,7 @@ Gets all the revisions for a specific survey.
 
 Wraps GET /api/v2/quality/forms/surveys/{formId}/versions  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * quality:surveyForm:view
 
@@ -1694,7 +1694,7 @@ Get the list of survey forms
 
 Wraps GET /api/v2/quality/forms/surveys  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * quality:surveyForm:view
 
@@ -1771,7 +1771,7 @@ Retrieve a list of survey forms by their ids
 
 Wraps GET /api/v2/quality/forms/surveys/bulk  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * quality:surveyForm:view
 
@@ -1834,7 +1834,7 @@ Retrieve a list of the latest form versions by context ids
 
 Wraps GET /api/v2/quality/forms/surveys/bulk/contexts  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * quality:surveyForm:view
 
@@ -2307,7 +2307,7 @@ Get the most recent published version of a survey form.
 
 Wraps GET /api/v2/quality/publishedforms/surveys/{formId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * quality:surveyForm:view
 
@@ -2370,7 +2370,7 @@ Get the published survey forms.
 
 Wraps GET /api/v2/quality/publishedforms/surveys  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * quality:surveyForm:view
 
@@ -2551,7 +2551,7 @@ Disable a particular version of a survey form and invalidates any invitations th
 
 Wraps PATCH /api/v2/quality/forms/surveys/{formId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * quality:surveyForm:disable
 
@@ -3062,7 +3062,7 @@ Create a survey form.
 
 Wraps POST /api/v2/quality/forms/surveys  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * quality:surveyForm:add
 
@@ -3316,7 +3316,7 @@ Publish a survey form.
 
 Wraps POST /api/v2/quality/publishedforms/surveys  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * quality:surveyForm:add
 
@@ -3769,7 +3769,7 @@ Update a survey form.
 
 Wraps PUT /api/v2/quality/forms/surveys/{formId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * quality:surveyForm:edit
 

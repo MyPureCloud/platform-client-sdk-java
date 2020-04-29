@@ -413,7 +413,7 @@ Remove routing skill from user
 
 Wraps DELETE /api/v2/users/{userId}/routingskills/{skillId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:skill:assign
 
@@ -2352,7 +2352,7 @@ List the organizations that have authorized/trusted the user.
 
 Wraps GET /api/v2/users/{userId}/trustors  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * authorization:orgTrustor:view
 
@@ -3855,7 +3855,7 @@ Add routing skill to user
 
 Wraps POST /api/v2/users/{userId}/routingskills  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:skill:assign
 
@@ -4429,7 +4429,7 @@ Update routing skill proficiency or state.
 
 Wraps PUT /api/v2/users/{userId}/routingskills/{skillId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:skill:assign
 

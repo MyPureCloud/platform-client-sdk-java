@@ -665,26 +665,34 @@ public class AnalyticsApi {
   /**
    * Get all view export requests for a user
    * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
    * @return ReportingExportJobListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ReportingExportJobListing getAnalyticsReportingExports() throws IOException, ApiException {
-    return  getAnalyticsReportingExports(createGetAnalyticsReportingExportsRequest());
+  public ReportingExportJobListing getAnalyticsReportingExports(Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getAnalyticsReportingExports(createGetAnalyticsReportingExportsRequest(pageNumber, pageSize));
   }
 
   /**
    * Get all view export requests for a user
    * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
    * @return ReportingExportJobListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ReportingExportJobListing> getAnalyticsReportingExportsWithHttpInfo() throws IOException {
-    return getAnalyticsReportingExports(createGetAnalyticsReportingExportsRequest().withHttpInfo());
+  public ApiResponse<ReportingExportJobListing> getAnalyticsReportingExportsWithHttpInfo(Integer pageNumber, Integer pageSize) throws IOException {
+    return getAnalyticsReportingExports(createGetAnalyticsReportingExportsRequest(pageNumber, pageSize).withHttpInfo());
   }
 
-  private GetAnalyticsReportingExportsRequest createGetAnalyticsReportingExportsRequest() {
+  private GetAnalyticsReportingExportsRequest createGetAnalyticsReportingExportsRequest(Integer pageNumber, Integer pageSize) {
     return GetAnalyticsReportingExportsRequest.builder()
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
             .build();
   }
 

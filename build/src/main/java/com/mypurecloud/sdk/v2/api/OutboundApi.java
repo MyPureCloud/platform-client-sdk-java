@@ -6100,7 +6100,7 @@ public class OutboundApi {
    * @param body Contact (required)
    * @param priority Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue. (optional)
    * @param clearSystemData Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won&#39;t. (optional)
-   * @param doNotQueue Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts they will not be called until a campaign recycle; False means that updated contacts will be re-queued, according to the &#39;priority&#39; parameter. (optional)
+   * @param doNotQueue Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the &#39;priority&#39; parameter. (optional)
    * @return List<DialerContact>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -6116,7 +6116,7 @@ public class OutboundApi {
    * @param body Contact (required)
    * @param priority Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue. (optional)
    * @param clearSystemData Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won&#39;t. (optional)
-   * @param doNotQueue Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts they will not be called until a campaign recycle; False means that updated contacts will be re-queued, according to the &#39;priority&#39; parameter. (optional)
+   * @param doNotQueue Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the &#39;priority&#39; parameter. (optional)
    * @return List<DialerContact>
    * @throws IOException if the request fails to be processed
    */

@@ -40,6 +40,7 @@ import com.mypurecloud.sdk.v2.model.TtsEngineEntityListing;
 import com.mypurecloud.sdk.v2.model.TtsSettings;
 import com.mypurecloud.sdk.v2.model.IntegrationType;
 import com.mypurecloud.sdk.v2.model.IntegrationTypeEntityListing;
+import com.mypurecloud.sdk.v2.model.UserAppEntityListing;
 import com.mypurecloud.sdk.v2.model.UpdateActionInput;
 import com.mypurecloud.sdk.v2.model.UpdateDraftInput;
 import com.mypurecloud.sdk.v2.model.CreateIntegrationRequest;
@@ -87,6 +88,7 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsSettingsReques
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsTypeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsTypeConfigschemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsTypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsUserappsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchIntegrationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchIntegrationsActionRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchIntegrationsActionDraftRequest;
@@ -2848,6 +2850,82 @@ public class IntegrationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<IntegrationTypeEntityListing> response = (ApiResponse<IntegrationTypeEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * List permitted user app integrations for the logged in user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserAppEntityListing> getIntegrationsUserappsAsync(GetIntegrationsUserappsRequest request, final AsyncApiCallback<UserAppEntityListing> callback) {
+    try {
+      final SettableFuture<UserAppEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserAppEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserAppEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserAppEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * List permitted user app integrations for the logged in user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserAppEntityListing>> getIntegrationsUserappsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UserAppEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserAppEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserAppEntityListing>() {}, new AsyncApiCallback<ApiResponse<UserAppEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserAppEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserAppEntityListing> response = (ApiResponse<UserAppEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserAppEntityListing> response = (ApiResponse<UserAppEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -5506,7 +5506,7 @@ public class WorkforceManagementApiAsync {
   
   /**
    * Add a management unit
-   * 
+   * It may take a minute or two for a new management unit to be available for api operations
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -5540,7 +5540,7 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Add a management unit
-   * 
+   * It may take a minute or two for a new management unit to be available for api operations
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

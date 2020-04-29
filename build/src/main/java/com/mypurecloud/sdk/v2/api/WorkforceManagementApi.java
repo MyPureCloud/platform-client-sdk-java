@@ -6087,7 +6087,7 @@ public class WorkforceManagementApi {
   
   /**
    * Add a management unit
-   * 
+   * It may take a minute or two for a new management unit to be available for api operations
    * @param body body (optional)
    * @return ManagementUnit
    * @throws ApiException if the request fails on the server
@@ -6099,7 +6099,7 @@ public class WorkforceManagementApi {
 
   /**
    * Add a management unit
-   * 
+   * It may take a minute or two for a new management unit to be available for api operations
    * @param body body (optional)
    * @return ManagementUnit
    * @throws IOException if the request fails to be processed
@@ -6117,7 +6117,7 @@ public class WorkforceManagementApi {
 
   /**
    * Add a management unit
-   * 
+   * It may take a minute or two for a new management unit to be available for api operations
    * @param request The request object
    * @return ManagementUnit
    * @throws ApiException if the request fails on the server
@@ -6136,7 +6136,7 @@ public class WorkforceManagementApi {
 
   /**
    * Add a management unit
-   * 
+   * It may take a minute or two for a new management unit to be available for api operations
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

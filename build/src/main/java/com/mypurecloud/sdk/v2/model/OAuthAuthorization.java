@@ -26,6 +26,7 @@ public class OAuthAuthorization  implements Serializable {
   private Date dateModified = null;
   private DomainEntityRef createdBy = null;
   private DomainEntityRef modifiedBy = null;
+  private Boolean pending = null;
   private String selfUri = null;
 
   
@@ -150,6 +151,23 @@ public class OAuthAuthorization  implements Serializable {
   }
 
   
+  /**
+   **/
+  public OAuthAuthorization pending(Boolean pending) {
+    this.pending = pending;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("pending")
+  public Boolean getPending() {
+    return pending;
+  }
+  public void setPending(Boolean pending) {
+    this.pending = pending;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -174,12 +192,13 @@ public class OAuthAuthorization  implements Serializable {
         Objects.equals(this.dateModified, oAuthAuthorization.dateModified) &&
         Objects.equals(this.createdBy, oAuthAuthorization.createdBy) &&
         Objects.equals(this.modifiedBy, oAuthAuthorization.modifiedBy) &&
+        Objects.equals(this.pending, oAuthAuthorization.pending) &&
         Objects.equals(this.selfUri, oAuthAuthorization.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(client, scope, resourceOwner, dateCreated, dateModified, createdBy, modifiedBy, selfUri);
+    return Objects.hash(client, scope, resourceOwner, dateCreated, dateModified, createdBy, modifiedBy, pending, selfUri);
   }
 
   @Override
@@ -194,6 +213,7 @@ public class OAuthAuthorization  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
+    sb.append("    pending: ").append(toIndentedString(pending)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

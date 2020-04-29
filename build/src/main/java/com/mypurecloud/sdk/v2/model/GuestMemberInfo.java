@@ -18,6 +18,10 @@ import java.io.Serializable;
 public class GuestMemberInfo  implements Serializable {
   
   private String displayName = null;
+  private String firstName = null;
+  private String lastName = null;
+  private String email = null;
+  private String phoneNumber = null;
   private String avatarImageUrl = null;
   private Map<String, String> customFields = null;
 
@@ -37,6 +41,78 @@ public class GuestMemberInfo  implements Serializable {
   }
   public void setDisplayName(String displayName) {
     this.displayName = displayName;
+  }
+
+  
+  /**
+   * The first name to use for the guest member in the conversation.
+   **/
+  public GuestMemberInfo firstName(String firstName) {
+    this.firstName = firstName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The first name to use for the guest member in the conversation.")
+  @JsonProperty("firstName")
+  public String getFirstName() {
+    return firstName;
+  }
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+  
+  /**
+   * The last name to use for the guest member in the conversation.
+   **/
+  public GuestMemberInfo lastName(String lastName) {
+    this.lastName = lastName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The last name to use for the guest member in the conversation.")
+  @JsonProperty("lastName")
+  public String getLastName() {
+    return lastName;
+  }
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
+
+  
+  /**
+   * The email address to use for the guest member in the conversation.
+   **/
+  public GuestMemberInfo email(String email) {
+    this.email = email;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The email address to use for the guest member in the conversation.")
+  @JsonProperty("email")
+  public String getEmail() {
+    return email;
+  }
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  
+  /**
+   * The phone number to use for the guest member in the conversation.
+   **/
+  public GuestMemberInfo phoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The phone number to use for the guest member in the conversation.")
+  @JsonProperty("phoneNumber")
+  public String getPhoneNumber() {
+    return phoneNumber;
+  }
+  public void setPhoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
   }
 
   
@@ -87,13 +163,17 @@ public class GuestMemberInfo  implements Serializable {
     }
     GuestMemberInfo guestMemberInfo = (GuestMemberInfo) o;
     return Objects.equals(this.displayName, guestMemberInfo.displayName) &&
+        Objects.equals(this.firstName, guestMemberInfo.firstName) &&
+        Objects.equals(this.lastName, guestMemberInfo.lastName) &&
+        Objects.equals(this.email, guestMemberInfo.email) &&
+        Objects.equals(this.phoneNumber, guestMemberInfo.phoneNumber) &&
         Objects.equals(this.avatarImageUrl, guestMemberInfo.avatarImageUrl) &&
         Objects.equals(this.customFields, guestMemberInfo.customFields);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(displayName, avatarImageUrl, customFields);
+    return Objects.hash(displayName, firstName, lastName, email, phoneNumber, avatarImageUrl, customFields);
   }
 
   @Override
@@ -102,6 +182,10 @@ public class GuestMemberInfo  implements Serializable {
     sb.append("class GuestMemberInfo {\n");
     
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
+    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    avatarImageUrl: ").append(toIndentedString(avatarImageUrl)).append("\n");
     sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
     sb.append("}");

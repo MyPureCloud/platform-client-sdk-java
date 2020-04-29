@@ -32,7 +32,7 @@ Delete a Presence Definition
 
 Wraps DELETE /api/v2/presencedefinitions/{presenceId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * presence:presenceDefinition:delete
 
@@ -414,7 +414,7 @@ Create a Presence Definition
 
 Wraps POST /api/v2/presencedefinitions  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * presence:presenceDefinition:add
 
@@ -477,7 +477,7 @@ Update a Presence Definition
 
 Wraps PUT /api/v2/presencedefinitions/{presenceId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * presence:presenceDefinition:edit
 

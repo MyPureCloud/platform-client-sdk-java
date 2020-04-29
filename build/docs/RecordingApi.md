@@ -41,6 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postRecordingLocalkeysSettings**](RecordingApi.html#postRecordingLocalkeysSettings) | create settings for local key creation |
 | [**postRecordingMediaretentionpolicies**](RecordingApi.html#postRecordingMediaretentionpolicies) | Create media retention policy |
 | [**postRecordingRecordingkeys**](RecordingApi.html#postRecordingRecordingkeys) | Create encryption key |
+| [**postRecordingsDeletionprotection**](RecordingApi.html#postRecordingsDeletionprotection) | Get a list of conversations with protected recordings |
 | [**putConversationRecording**](RecordingApi.html#putConversationRecording) | Updates the retention records on a recording. |
 | [**putConversationRecordingAnnotation**](RecordingApi.html#putConversationRecordingAnnotation) | Update annotation |
 | [**putOrphanrecording**](RecordingApi.html#putOrphanrecording) | Updates an orphan recording to a regular recording with retention values |
@@ -49,6 +50,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putRecordingMediaretentionpolicy**](RecordingApi.html#putRecordingMediaretentionpolicy) | Update a media retention policy |
 | [**putRecordingRecordingkeysRotationschedule**](RecordingApi.html#putRecordingRecordingkeysRotationschedule) | Update key rotation schedule |
 | [**putRecordingSettings**](RecordingApi.html#putRecordingSettings) | Update the Recording Settings for the Organization |
+| [**putRecordingsDeletionprotection**](RecordingApi.html#putRecordingsDeletionprotection) | Apply or revoke recording protection for conversations |
 {: class="table-striped"}
 
 <a name="deleteConversationRecordingAnnotation"></a>
@@ -194,7 +196,7 @@ Delete the recording bulk job
 
 Wraps DELETE /api/v2/recording/jobs/{jobId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * recording:job:delete
 
@@ -1048,7 +1050,7 @@ Get the status of the job associated with the job id.
 
 Wraps GET /api/v2/recording/jobs/{jobId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * recording:job:view
 
@@ -1111,7 +1113,7 @@ Get the status of all jobs within the user&#39;s organization
 
 Wraps GET /api/v2/recording/jobs  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * recording:job:view
 
@@ -1961,7 +1963,7 @@ Create a recording bulk job
 
 Wraps POST /api/v2/recording/jobs  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * recording:job:add
 
@@ -2258,6 +2260,68 @@ This endpoint does not require any parameters.
 
 [**EncryptionKey**](EncryptionKey.html)
 
+<a name="postRecordingsDeletionprotection"></a>
+
+# **postRecordingsDeletionprotection**
+
+
+
+> [List&lt;AddressableEntityRef&gt;](AddressableEntityRef.html) postRecordingsDeletionprotection(body)
+
+Get a list of conversations with protected recordings
+
+
+
+Wraps POST /api/v2/recordings/deletionprotection  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+ConversationDeletionProtectionQuery body = new ConversationDeletionProtectionQuery(); // ConversationDeletionProtectionQuery | conversationIds
+try {
+    List<AddressableEntityRef> result = apiInstance.postRecordingsDeletionprotection(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#postRecordingsDeletionprotection");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ConversationDeletionProtectionQuery**](ConversationDeletionProtectionQuery.html)| conversationIds | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**List&lt;AddressableEntityRef&gt;**](AddressableEntityRef.html)
+
 <a name="putConversationRecording"></a>
 
 # **putConversationRecording**
@@ -2475,7 +2539,7 @@ Execute the recording bulk job
 
 Wraps PUT /api/v2/recording/jobs/{jobId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * recording:job:edit
 
@@ -2781,4 +2845,69 @@ try {
 ### Return type
 
 [**RecordingSettings**](RecordingSettings.html)
+
+<a name="putRecordingsDeletionprotection"></a>
+
+# **putRecordingsDeletionprotection**
+
+
+
+> Void putRecordingsDeletionprotection(protect, body)
+
+Apply or revoke recording protection for conversations
+
+
+
+Wraps PUT /api/v2/recordings/deletionprotection  
+
+Requires ANY permissions: 
+
+* recording:deletionProtection:apply
+* recording:deletionProtection:revoke
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+Boolean protect = true; // Boolean | Check for apply, uncheck for revoke (each action requires the respective permission)
+ConversationDeletionProtectionQuery body = new ConversationDeletionProtectionQuery(); // ConversationDeletionProtectionQuery | 
+try {
+    apiInstance.putRecordingsDeletionprotection(protect, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#putRecordingsDeletionprotection");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **protect** | **Boolean**| Check for apply, uncheck for revoke (each action requires the respective permission) | [optional] [default to true] 
+| **body** | [**ConversationDeletionProtectionQuery**](ConversationDeletionProtectionQuery.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 

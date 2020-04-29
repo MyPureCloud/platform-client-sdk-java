@@ -493,7 +493,7 @@ try {
 
 
 
-> [ReportingExportJobListing](ReportingExportJobListing.html) getAnalyticsReportingExports()
+> [ReportingExportJobListing](ReportingExportJobListing.html) getAnalyticsReportingExports(pageNumber, pageSize)
 
 Get all view export requests for a user
 
@@ -501,7 +501,7 @@ Get all view export requests for a user
 
 Wraps GET /api/v2/analytics/reporting/exports  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * analytics:dataExport:view
 
@@ -527,8 +527,10 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 AnalyticsApi apiInstance = new AnalyticsApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
 try {
-    ReportingExportJobListing result = apiInstance.getAnalyticsReportingExports();
+    ReportingExportJobListing result = apiInstance.getAnalyticsReportingExports(pageNumber, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AnalyticsApi#getAnalyticsReportingExports");
@@ -538,8 +540,12 @@ try {
 
 ### Parameters
 
-This endpoint does not require any parameters.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+{: class="table-striped"}
 
 
 ### Return type
@@ -560,7 +566,7 @@ Get all export metadata
 
 Wraps GET /api/v2/analytics/reporting/exports/metadata  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * analytics:dataExport:view
 
@@ -1821,7 +1827,7 @@ Generate a view export request
 
 Wraps POST /api/v2/analytics/reporting/exports  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * analytics:dataExport:add
 

@@ -21,6 +21,10 @@ public class WebChatMemberInfo  implements Serializable {
   
   private String id = null;
   private String displayName = null;
+  private String firstName = null;
+  private String lastName = null;
+  private String email = null;
+  private String phoneNumber = null;
   private String avatarImageUrl = null;
 
   /**
@@ -134,6 +138,78 @@ public class WebChatMemberInfo  implements Serializable {
   }
   public void setDisplayName(String displayName) {
     this.displayName = displayName;
+  }
+
+  
+  /**
+   * The first name of the member.
+   **/
+  public WebChatMemberInfo firstName(String firstName) {
+    this.firstName = firstName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The first name of the member.")
+  @JsonProperty("firstName")
+  public String getFirstName() {
+    return firstName;
+  }
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+  
+  /**
+   * The last name of the member.
+   **/
+  public WebChatMemberInfo lastName(String lastName) {
+    this.lastName = lastName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The last name of the member.")
+  @JsonProperty("lastName")
+  public String getLastName() {
+    return lastName;
+  }
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
+
+  
+  /**
+   * The email address of the member.
+   **/
+  public WebChatMemberInfo email(String email) {
+    this.email = email;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The email address of the member.")
+  @JsonProperty("email")
+  public String getEmail() {
+    return email;
+  }
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  
+  /**
+   * The phone number of the member.
+   **/
+  public WebChatMemberInfo phoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The phone number of the member.")
+  @JsonProperty("phoneNumber")
+  public String getPhoneNumber() {
+    return phoneNumber;
+  }
+  public void setPhoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
   }
 
   
@@ -275,6 +351,10 @@ public class WebChatMemberInfo  implements Serializable {
     WebChatMemberInfo webChatMemberInfo = (WebChatMemberInfo) o;
     return Objects.equals(this.id, webChatMemberInfo.id) &&
         Objects.equals(this.displayName, webChatMemberInfo.displayName) &&
+        Objects.equals(this.firstName, webChatMemberInfo.firstName) &&
+        Objects.equals(this.lastName, webChatMemberInfo.lastName) &&
+        Objects.equals(this.email, webChatMemberInfo.email) &&
+        Objects.equals(this.phoneNumber, webChatMemberInfo.phoneNumber) &&
         Objects.equals(this.avatarImageUrl, webChatMemberInfo.avatarImageUrl) &&
         Objects.equals(this.role, webChatMemberInfo.role) &&
         Objects.equals(this.joinDate, webChatMemberInfo.joinDate) &&
@@ -286,7 +366,7 @@ public class WebChatMemberInfo  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, displayName, avatarImageUrl, role, joinDate, leaveDate, authenticatedGuest, customFields, state);
+    return Objects.hash(id, displayName, firstName, lastName, email, phoneNumber, avatarImageUrl, role, joinDate, leaveDate, authenticatedGuest, customFields, state);
   }
 
   @Override
@@ -296,6 +376,10 @@ public class WebChatMemberInfo  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+    sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
+    sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    avatarImageUrl: ").append(toIndentedString(avatarImageUrl)).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
     sb.append("    joinDate: ").append(toIndentedString(joinDate)).append("\n");

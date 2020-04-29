@@ -37,6 +37,7 @@ import com.mypurecloud.sdk.v2.model.TtsEngineEntityListing;
 import com.mypurecloud.sdk.v2.model.TtsSettings;
 import com.mypurecloud.sdk.v2.model.IntegrationType;
 import com.mypurecloud.sdk.v2.model.IntegrationTypeEntityListing;
+import com.mypurecloud.sdk.v2.model.UserAppEntityListing;
 import com.mypurecloud.sdk.v2.model.UpdateActionInput;
 import com.mypurecloud.sdk.v2.model.UpdateDraftInput;
 import com.mypurecloud.sdk.v2.model.CreateIntegrationRequest;
@@ -84,6 +85,7 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationsSpeechTtsSettingsReques
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsTypeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsTypeConfigschemaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsTypesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsUserappsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchIntegrationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchIntegrationsActionRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchIntegrationsActionDraftRequest;
@@ -3242,6 +3244,109 @@ public class IntegrationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<IntegrationTypeEntityListing> response = (ApiResponse<IntegrationTypeEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * List permitted user app integrations for the logged in user
+   * 
+   * @param pageSize The total page size requested (optional, default to 25)
+   * @param pageNumber The page number requested (optional, default to 1)
+   * @param sortBy variable name requested to sort by (optional)
+   * @param expand variable name requested by expand list (optional)
+   * @param nextPage next page token (optional)
+   * @param previousPage Previous page token (optional)
+   * @param appHost The type of UserApp to filter by (optional)
+   * @return UserAppEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserAppEntityListing getIntegrationsUserapps(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String appHost) throws IOException, ApiException {
+    return  getIntegrationsUserapps(createGetIntegrationsUserappsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, appHost));
+  }
+
+  /**
+   * List permitted user app integrations for the logged in user
+   * 
+   * @param pageSize The total page size requested (optional, default to 25)
+   * @param pageNumber The page number requested (optional, default to 1)
+   * @param sortBy variable name requested to sort by (optional)
+   * @param expand variable name requested by expand list (optional)
+   * @param nextPage next page token (optional)
+   * @param previousPage Previous page token (optional)
+   * @param appHost The type of UserApp to filter by (optional)
+   * @return UserAppEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserAppEntityListing> getIntegrationsUserappsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String appHost) throws IOException {
+    return getIntegrationsUserapps(createGetIntegrationsUserappsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, appHost).withHttpInfo());
+  }
+
+  private GetIntegrationsUserappsRequest createGetIntegrationsUserappsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String appHost) {
+    return GetIntegrationsUserappsRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withSortBy(sortBy)
+    
+            .withExpand(expand)
+    
+            .withNextPage(nextPage)
+    
+            .withPreviousPage(previousPage)
+    
+            .withAppHost(appHost)
+    
+            .build();
+  }
+
+  /**
+   * List permitted user app integrations for the logged in user
+   * 
+   * @param request The request object
+   * @return UserAppEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserAppEntityListing getIntegrationsUserapps(GetIntegrationsUserappsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserAppEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserAppEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * List permitted user app integrations for the logged in user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserAppEntityListing> getIntegrationsUserapps(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserAppEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserAppEntityListing> response = (ApiResponse<UserAppEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserAppEntityListing> response = (ApiResponse<UserAppEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

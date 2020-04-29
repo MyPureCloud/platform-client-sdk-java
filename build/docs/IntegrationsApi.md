@@ -43,6 +43,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getIntegrationsType**](IntegrationsApi.html#getIntegrationsType) | Get integration type. |
 | [**getIntegrationsTypeConfigschema**](IntegrationsApi.html#getIntegrationsTypeConfigschema) | Get properties config schema for an integration type. |
 | [**getIntegrationsTypes**](IntegrationsApi.html#getIntegrationsTypes) | List integration types |
+| [**getIntegrationsUserapps**](IntegrationsApi.html#getIntegrationsUserapps) | List permitted user app integrations for the logged in user |
 | [**patchIntegration**](IntegrationsApi.html#patchIntegration) | Update an integration. |
 | [**patchIntegrationsAction**](IntegrationsApi.html#patchIntegrationsAction) | Patch an Action |
 | [**patchIntegrationsActionDraft**](IntegrationsApi.html#patchIntegrationsActionDraft) | Update an existing Draft |
@@ -2466,6 +2467,80 @@ try {
 ### Return type
 
 [**IntegrationTypeEntityListing**](IntegrationTypeEntityListing.html)
+
+<a name="getIntegrationsUserapps"></a>
+
+# **getIntegrationsUserapps**
+
+
+
+> [UserAppEntityListing](UserAppEntityListing.html) getIntegrationsUserapps(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, appHost)
+
+List permitted user app integrations for the logged in user
+
+
+
+Wraps GET /api/v2/integrations/userapps  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+Integer pageSize = 25; // Integer | The total page size requested
+Integer pageNumber = 1; // Integer | The page number requested
+String sortBy = "sortBy_example"; // String | variable name requested to sort by
+List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+String nextPage = "nextPage_example"; // String | next page token
+String previousPage = "previousPage_example"; // String | Previous page token
+String appHost = "appHost_example"; // String | The type of UserApp to filter by
+try {
+    UserAppEntityListing result = apiInstance.getIntegrationsUserapps(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, appHost);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsUserapps");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+| **appHost** | **String**| The type of UserApp to filter by | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserAppEntityListing**](UserAppEntityListing.html)
 
 <a name="patchIntegration"></a>
 

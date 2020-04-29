@@ -787,7 +787,7 @@ Get a policy
 
 Wraps GET /api/v2/voicemail/policy  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * telephony:plugin:all
 
@@ -1483,7 +1483,7 @@ Update a policy
 
 Wraps PUT /api/v2/voicemail/policy  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * telephony:plugin:all
 

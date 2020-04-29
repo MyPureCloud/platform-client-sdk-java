@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.MessageConversation;
 import com.mypurecloud.sdk.v2.model.MessageMediaData;
 import com.mypurecloud.sdk.v2.model.MessageData;
 import com.mypurecloud.sdk.v2.model.MessageConversationEntityListing;
+import com.mypurecloud.sdk.v2.model.FacebookAppCredentials;
 import com.mypurecloud.sdk.v2.model.MessagingIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.FacebookIntegration;
@@ -146,6 +147,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageParticipantWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageParticipantWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingFacebookAppRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
@@ -4469,6 +4471,81 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<MessageConversationEntityListing> response = (ApiResponse<MessageConversationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get Genesys Facebook App Id
+   * 
+   * @return FacebookAppCredentials
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FacebookAppCredentials getConversationsMessagingFacebookApp() throws IOException, ApiException {
+    return  getConversationsMessagingFacebookApp(createGetConversationsMessagingFacebookAppRequest());
+  }
+
+  /**
+   * Get Genesys Facebook App Id
+   * 
+   * @return FacebookAppCredentials
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FacebookAppCredentials> getConversationsMessagingFacebookAppWithHttpInfo() throws IOException {
+    return getConversationsMessagingFacebookApp(createGetConversationsMessagingFacebookAppRequest().withHttpInfo());
+  }
+
+  private GetConversationsMessagingFacebookAppRequest createGetConversationsMessagingFacebookAppRequest() {
+    return GetConversationsMessagingFacebookAppRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get Genesys Facebook App Id
+   * 
+   * @param request The request object
+   * @return FacebookAppCredentials
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FacebookAppCredentials getConversationsMessagingFacebookApp(GetConversationsMessagingFacebookAppRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FacebookAppCredentials> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FacebookAppCredentials>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Genesys Facebook App Id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FacebookAppCredentials> getConversationsMessagingFacebookApp(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FacebookAppCredentials>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FacebookAppCredentials> response = (ApiResponse<FacebookAppCredentials>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FacebookAppCredentials> response = (ApiResponse<FacebookAppCredentials>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
