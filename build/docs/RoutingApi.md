@@ -54,6 +54,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUserQueues**](RoutingApi.html#getUserQueues) | Get queues for user |
 | [**getUserRoutinglanguages**](RoutingApi.html#getUserRoutinglanguages) | List routing language for user |
 | [**getUserRoutingskills**](RoutingApi.html#getUserRoutingskills) | List routing skills for user |
+| [**patchRoutingEmailDomain**](RoutingApi.html#patchRoutingEmailDomain) | Update domain settings |
 | [**patchRoutingQueueUser**](RoutingApi.html#patchRoutingQueueUser) | Update the ring number OR joined status for a User in a Queue |
 | [**patchRoutingQueueUsers**](RoutingApi.html#patchRoutingQueueUsers) | Join or unjoin a set of users for a queue |
 | [**patchRoutingSettingsContactcenter**](RoutingApi.html#patchRoutingSettingsContactcenter) | Update Contact Center Settings |
@@ -64,6 +65,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchUserRoutingskillsBulk**](RoutingApi.html#patchUserRoutingskillsBulk) | Bulk add routing skills to user |
 | [**postAnalyticsQueuesObservationsQuery**](RoutingApi.html#postAnalyticsQueuesObservationsQuery) | Query for queue observations |
 | [**postRoutingEmailDomainRoutes**](RoutingApi.html#postRoutingEmailDomainRoutes) | Create a route |
+| [**postRoutingEmailDomainTestconnection**](RoutingApi.html#postRoutingEmailDomainTestconnection) | Tests the custom SMTP server integration connection set on this domain |
 | [**postRoutingEmailDomains**](RoutingApi.html#postRoutingEmailDomains) | Create a domain |
 | [**postRoutingLanguages**](RoutingApi.html#postRoutingLanguages) | Create Language |
 | [**postRoutingQueueUsers**](RoutingApi.html#postRoutingQueueUsers) | Bulk add or delete up to 100 queue members |
@@ -3152,6 +3154,71 @@ try {
 
 [**UserSkillEntityListing**](UserSkillEntityListing.html)
 
+<a name="patchRoutingEmailDomain"></a>
+
+# **patchRoutingEmailDomain**
+
+
+
+> [InboundDomain](InboundDomain.html) patchRoutingEmailDomain(domainId, body)
+
+Update domain settings
+
+
+
+Wraps PATCH /api/v2/routing/email/domains/{domainId}  
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String domainId = "domainId_example"; // String | domain ID
+InboundDomainPatchRequest body = new InboundDomainPatchRequest(); // InboundDomainPatchRequest | Domain settings
+try {
+    InboundDomain result = apiInstance.patchRoutingEmailDomain(domainId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#patchRoutingEmailDomain");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domainId** | **String**| domain ID | 
+| **body** | [**InboundDomainPatchRequest**](InboundDomainPatchRequest.html)| Domain settings | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**InboundDomain**](InboundDomain.html)
+
 <a name="patchRoutingQueueUser"></a>
 
 # **patchRoutingQueueUser**
@@ -3806,6 +3873,71 @@ try {
 ### Return type
 
 [**InboundRoute**](InboundRoute.html)
+
+<a name="postRoutingEmailDomainTestconnection"></a>
+
+# **postRoutingEmailDomainTestconnection**
+
+
+
+> [TestMessage](TestMessage.html) postRoutingEmailDomainTestconnection(domainId, body)
+
+Tests the custom SMTP server integration connection set on this domain
+
+The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
+
+Wraps POST /api/v2/routing/email/domains/{domainId}/testconnection  
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String domainId = "domainId_example"; // String | domain ID
+TestMessage body = new TestMessage(); // TestMessage | TestMessage
+try {
+    TestMessage result = apiInstance.postRoutingEmailDomainTestconnection(domainId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#postRoutingEmailDomainTestconnection");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domainId** | **String**| domain ID | 
+| **body** | [**TestMessage**](TestMessage.html)| TestMessage | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TestMessage**](TestMessage.html)
 
 <a name="postRoutingEmailDomains"></a>
 

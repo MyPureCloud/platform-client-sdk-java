@@ -142,6 +142,20 @@ public class GetOrphanrecordingMediaRequest {
 	    return this;
 	} 
 	
+	private String locale;
+	public String getLocale() {
+		return this.locale;
+	}
+
+	public void setLocale(String locale) {
+		this.locale = locale;
+	}
+
+	public GetOrphanrecordingMediaRequest withLocale(String locale) {
+	    this.setLocale(locale);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -177,6 +191,8 @@ public class GetOrphanrecordingMediaRequest {
                 .withQueryParameters("download", "", download)
         
                 .withQueryParameters("fileName", "", fileName)
+        
+                .withQueryParameters("locale", "", locale)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -226,6 +242,11 @@ public class GetOrphanrecordingMediaRequest {
 		
 		public Builder withFileName(String fileName) {
 			request.setFileName(fileName);
+			return this;
+		}
+		
+		public Builder withLocale(String locale) {
+			request.setLocale(locale);
 			return this;
 		}
 		

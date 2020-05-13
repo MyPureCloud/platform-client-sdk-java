@@ -18,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postDocumentationGknSearch**](SearchApi.html#postDocumentationGknSearch) | Search gkn documentation |
 | [**postDocumentationSearch**](SearchApi.html#postDocumentationSearch) | Search documentation |
 | [**postGroupsSearch**](SearchApi.html#postGroupsSearch) | Search groups |
+| [**postKnowledgeKnowledgebaseSearch**](SearchApi.html#postKnowledgeKnowledgebaseSearch) | Search Documents |
 | [**postLocationsSearch**](SearchApi.html#postLocationsSearch) | Search locations |
 | [**postSearch**](SearchApi.html#postSearch) | Search resources. |
 | [**postSearchSuggest**](SearchApi.html#postSearchSuggest) | Suggest resources. |
@@ -670,6 +671,71 @@ try {
 ### Return type
 
 [**GroupsSearchResponse**](GroupsSearchResponse.html)
+
+<a name="postKnowledgeKnowledgebaseSearch"></a>
+
+# **postKnowledgeKnowledgebaseSearch**
+
+
+
+> [KnowledgeSearchResponse](KnowledgeSearchResponse.html) postKnowledgeKnowledgebaseSearch(knowledgeBaseId, body)
+
+Search Documents
+
+
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search  
+
+Requires ALL permissions: 
+
+* knowledge:knowledgebase:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SearchApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SearchApi apiInstance = new SearchApi();
+String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+KnowledgeSearchRequest body = new KnowledgeSearchRequest(); // KnowledgeSearchRequest | 
+try {
+    KnowledgeSearchResponse result = apiInstance.postKnowledgeKnowledgebaseSearch(knowledgeBaseId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SearchApi#postKnowledgeKnowledgebaseSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **knowledgeBaseId** | **String**| Knowledge base ID | 
+| **body** | [**KnowledgeSearchRequest**](KnowledgeSearchRequest.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**KnowledgeSearchResponse**](KnowledgeSearchResponse.html)
 
 <a name="postLocationsSearch"></a>
 

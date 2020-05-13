@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.ExternalOrganizationListing;
 import com.mypurecloud.sdk.v2.model.Relationship;
 import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
+import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactRequest;
@@ -2213,13 +2214,13 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ExternalOrganization> putExternalcontactsOrganizationTrustorTrustorIdAsync(PutExternalcontactsOrganizationTrustorTrustorIdRequest request, final AsyncApiCallback<ExternalOrganization> callback) {
+  public Future<ExternalOrganizationTrustorLink> putExternalcontactsOrganizationTrustorTrustorIdAsync(PutExternalcontactsOrganizationTrustorTrustorIdRequest request, final AsyncApiCallback<ExternalOrganizationTrustorLink> callback) {
     try {
-      final SettableFuture<ExternalOrganization> future = SettableFuture.create();
+      final SettableFuture<ExternalOrganizationTrustorLink> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalOrganization>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganization>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ExternalOrganizationTrustorLink>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganizationTrustorLink>>() {
         @Override
-        public void onCompleted(ApiResponse<ExternalOrganization> response) {
+        public void onCompleted(ApiResponse<ExternalOrganizationTrustorLink> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -2247,13 +2248,13 @@ public class ExternalContactsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ExternalOrganization>> putExternalcontactsOrganizationTrustorTrustorIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ExternalOrganization>> callback) {
+  public Future<ApiResponse<ExternalOrganizationTrustorLink>> putExternalcontactsOrganizationTrustorTrustorIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ExternalOrganizationTrustorLink>> callback) {
     try {
-      final SettableFuture<ApiResponse<ExternalOrganization>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<ExternalOrganizationTrustorLink>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ExternalOrganization>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganization>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<ExternalOrganizationTrustorLink>() {}, new AsyncApiCallback<ApiResponse<ExternalOrganizationTrustorLink>>() {
         @Override
-        public void onCompleted(ApiResponse<ExternalOrganization> response) {
+        public void onCompleted(ApiResponse<ExternalOrganizationTrustorLink> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2261,7 +2262,7 @@ public class ExternalContactsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)exception;
+            ApiResponse<ExternalOrganizationTrustorLink> response = (ApiResponse<ExternalOrganizationTrustorLink>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2269,7 +2270,7 @@ public class ExternalContactsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<ExternalOrganizationTrustorLink> response = (ApiResponse<ExternalOrganizationTrustorLink>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

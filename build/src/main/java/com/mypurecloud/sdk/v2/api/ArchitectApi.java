@@ -1468,6 +1468,7 @@ public class ArchitectApi {
    * @param id Consumed object ID (required)
    * @param objectType Consumed object type (required)
    * @param resourceType Types of consuming resources to show.  Only versioned types are allowed here. (optional)
+   * @param version Object version (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param flowFilter Show only checkedIn or published flows (optional)
@@ -1475,8 +1476,8 @@ public class ArchitectApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ConsumingResourcesEntityListing getArchitectDependencytrackingConsumingresources(String id, String objectType, List<String> resourceType, Integer pageNumber, Integer pageSize, String flowFilter) throws IOException, ApiException {
-    return  getArchitectDependencytrackingConsumingresources(createGetArchitectDependencytrackingConsumingresourcesRequest(id, objectType, resourceType, pageNumber, pageSize, flowFilter));
+  public ConsumingResourcesEntityListing getArchitectDependencytrackingConsumingresources(String id, String objectType, List<String> resourceType, String version, Integer pageNumber, Integer pageSize, String flowFilter) throws IOException, ApiException {
+    return  getArchitectDependencytrackingConsumingresources(createGetArchitectDependencytrackingConsumingresourcesRequest(id, objectType, resourceType, version, pageNumber, pageSize, flowFilter));
   }
 
   /**
@@ -1485,23 +1486,26 @@ public class ArchitectApi {
    * @param id Consumed object ID (required)
    * @param objectType Consumed object type (required)
    * @param resourceType Types of consuming resources to show.  Only versioned types are allowed here. (optional)
+   * @param version Object version (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param flowFilter Show only checkedIn or published flows (optional)
    * @return ConsumingResourcesEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ConsumingResourcesEntityListing> getArchitectDependencytrackingConsumingresourcesWithHttpInfo(String id, String objectType, List<String> resourceType, Integer pageNumber, Integer pageSize, String flowFilter) throws IOException {
-    return getArchitectDependencytrackingConsumingresources(createGetArchitectDependencytrackingConsumingresourcesRequest(id, objectType, resourceType, pageNumber, pageSize, flowFilter).withHttpInfo());
+  public ApiResponse<ConsumingResourcesEntityListing> getArchitectDependencytrackingConsumingresourcesWithHttpInfo(String id, String objectType, List<String> resourceType, String version, Integer pageNumber, Integer pageSize, String flowFilter) throws IOException {
+    return getArchitectDependencytrackingConsumingresources(createGetArchitectDependencytrackingConsumingresourcesRequest(id, objectType, resourceType, version, pageNumber, pageSize, flowFilter).withHttpInfo());
   }
 
-  private GetArchitectDependencytrackingConsumingresourcesRequest createGetArchitectDependencytrackingConsumingresourcesRequest(String id, String objectType, List<String> resourceType, Integer pageNumber, Integer pageSize, String flowFilter) {
+  private GetArchitectDependencytrackingConsumingresourcesRequest createGetArchitectDependencytrackingConsumingresourcesRequest(String id, String objectType, List<String> resourceType, String version, Integer pageNumber, Integer pageSize, String flowFilter) {
     return GetArchitectDependencytrackingConsumingresourcesRequest.builder()
             .withId(id)
     
             .withObjectType(objectType)
     
             .withResourceType(resourceType)
+    
+            .withVersion(version)
     
             .withPageNumber(pageNumber)
     
@@ -1674,12 +1678,13 @@ public class ArchitectApi {
    * @param consumingResources Include resources that consume this item (optional)
    * @param consumedResourceType Types of consumed resources to return, if consumed resources are requested (optional)
    * @param consumingResourceType Types of consuming resources to return, if consuming resources are requested (optional)
+   * @param consumedResourceRequest Indicate that this is going to look up a consumed resource object (optional)
    * @return DependencyObject
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DependencyObject getArchitectDependencytrackingObject(String id, String version, String objectType, Boolean consumedResources, Boolean consumingResources, List<String> consumedResourceType, List<String> consumingResourceType) throws IOException, ApiException {
-    return  getArchitectDependencytrackingObject(createGetArchitectDependencytrackingObjectRequest(id, version, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType));
+  public DependencyObject getArchitectDependencytrackingObject(String id, String version, String objectType, Boolean consumedResources, Boolean consumingResources, List<String> consumedResourceType, List<String> consumingResourceType, Boolean consumedResourceRequest) throws IOException, ApiException {
+    return  getArchitectDependencytrackingObject(createGetArchitectDependencytrackingObjectRequest(id, version, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType, consumedResourceRequest));
   }
 
   /**
@@ -1692,14 +1697,15 @@ public class ArchitectApi {
    * @param consumingResources Include resources that consume this item (optional)
    * @param consumedResourceType Types of consumed resources to return, if consumed resources are requested (optional)
    * @param consumingResourceType Types of consuming resources to return, if consuming resources are requested (optional)
+   * @param consumedResourceRequest Indicate that this is going to look up a consumed resource object (optional)
    * @return DependencyObject
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DependencyObject> getArchitectDependencytrackingObjectWithHttpInfo(String id, String version, String objectType, Boolean consumedResources, Boolean consumingResources, List<String> consumedResourceType, List<String> consumingResourceType) throws IOException {
-    return getArchitectDependencytrackingObject(createGetArchitectDependencytrackingObjectRequest(id, version, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType).withHttpInfo());
+  public ApiResponse<DependencyObject> getArchitectDependencytrackingObjectWithHttpInfo(String id, String version, String objectType, Boolean consumedResources, Boolean consumingResources, List<String> consumedResourceType, List<String> consumingResourceType, Boolean consumedResourceRequest) throws IOException {
+    return getArchitectDependencytrackingObject(createGetArchitectDependencytrackingObjectRequest(id, version, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType, consumedResourceRequest).withHttpInfo());
   }
 
-  private GetArchitectDependencytrackingObjectRequest createGetArchitectDependencytrackingObjectRequest(String id, String version, String objectType, Boolean consumedResources, Boolean consumingResources, List<String> consumedResourceType, List<String> consumingResourceType) {
+  private GetArchitectDependencytrackingObjectRequest createGetArchitectDependencytrackingObjectRequest(String id, String version, String objectType, Boolean consumedResources, Boolean consumingResources, List<String> consumedResourceType, List<String> consumingResourceType, Boolean consumedResourceRequest) {
     return GetArchitectDependencytrackingObjectRequest.builder()
             .withId(id)
     
@@ -1714,6 +1720,8 @@ public class ArchitectApi {
             .withConsumedResourceType(consumedResourceType)
     
             .withConsumingResourceType(consumingResourceType)
+    
+            .withConsumedResourceRequest(consumedResourceRequest)
     
             .build();
   }

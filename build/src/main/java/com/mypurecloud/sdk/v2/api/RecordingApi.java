@@ -503,12 +503,13 @@ public class RecordingApi {
    * @param formatId The desired media format. (optional, default to WEBM)
    * @param download requesting a download format of the recording (optional, default to false)
    * @param fileName the name of the downloaded fileName (optional)
+   * @param locale The locale for the requested file when downloading, as an ISO 639-1 code (optional)
    * @return Recording
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Recording getConversationRecording(String conversationId, String recordingId, String formatId, Boolean download, String fileName) throws IOException, ApiException {
-    return  getConversationRecording(createGetConversationRecordingRequest(conversationId, recordingId, formatId, download, fileName));
+  public Recording getConversationRecording(String conversationId, String recordingId, String formatId, Boolean download, String fileName, String locale) throws IOException, ApiException {
+    return  getConversationRecording(createGetConversationRecordingRequest(conversationId, recordingId, formatId, download, fileName, locale));
   }
 
   /**
@@ -519,14 +520,15 @@ public class RecordingApi {
    * @param formatId The desired media format. (optional, default to WEBM)
    * @param download requesting a download format of the recording (optional, default to false)
    * @param fileName the name of the downloaded fileName (optional)
+   * @param locale The locale for the requested file when downloading, as an ISO 639-1 code (optional)
    * @return Recording
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Recording> getConversationRecordingWithHttpInfo(String conversationId, String recordingId, String formatId, Boolean download, String fileName) throws IOException {
-    return getConversationRecording(createGetConversationRecordingRequest(conversationId, recordingId, formatId, download, fileName).withHttpInfo());
+  public ApiResponse<Recording> getConversationRecordingWithHttpInfo(String conversationId, String recordingId, String formatId, Boolean download, String fileName, String locale) throws IOException {
+    return getConversationRecording(createGetConversationRecordingRequest(conversationId, recordingId, formatId, download, fileName, locale).withHttpInfo());
   }
 
-  private GetConversationRecordingRequest createGetConversationRecordingRequest(String conversationId, String recordingId, String formatId, Boolean download, String fileName) {
+  private GetConversationRecordingRequest createGetConversationRecordingRequest(String conversationId, String recordingId, String formatId, Boolean download, String fileName, String locale) {
     return GetConversationRecordingRequest.builder()
             .withConversationId(conversationId)
     
@@ -537,6 +539,8 @@ public class RecordingApi {
             .withDownload(download)
     
             .withFileName(fileName)
+    
+            .withLocale(locale)
     
             .build();
   }
@@ -1095,12 +1099,13 @@ public class RecordingApi {
    * @param formatId The desired media format. (optional, default to WEBM)
    * @param download requesting a download format of the recording (optional, default to false)
    * @param fileName the name of the downloaded fileName (optional)
+   * @param locale The locale for the requested file when downloading, as an ISO 639-1 code (optional)
    * @return Recording
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Recording getOrphanrecordingMedia(String orphanId, String formatId, Boolean download, String fileName) throws IOException, ApiException {
-    return  getOrphanrecordingMedia(createGetOrphanrecordingMediaRequest(orphanId, formatId, download, fileName));
+  public Recording getOrphanrecordingMedia(String orphanId, String formatId, Boolean download, String fileName, String locale) throws IOException, ApiException {
+    return  getOrphanrecordingMedia(createGetOrphanrecordingMediaRequest(orphanId, formatId, download, fileName, locale));
   }
 
   /**
@@ -1110,14 +1115,15 @@ public class RecordingApi {
    * @param formatId The desired media format. (optional, default to WEBM)
    * @param download requesting a download format of the recording (optional, default to false)
    * @param fileName the name of the downloaded fileName (optional)
+   * @param locale The locale for the requested file when downloading, as an ISO 639-1 code (optional)
    * @return Recording
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Recording> getOrphanrecordingMediaWithHttpInfo(String orphanId, String formatId, Boolean download, String fileName) throws IOException {
-    return getOrphanrecordingMedia(createGetOrphanrecordingMediaRequest(orphanId, formatId, download, fileName).withHttpInfo());
+  public ApiResponse<Recording> getOrphanrecordingMediaWithHttpInfo(String orphanId, String formatId, Boolean download, String fileName, String locale) throws IOException {
+    return getOrphanrecordingMedia(createGetOrphanrecordingMediaRequest(orphanId, formatId, download, fileName, locale).withHttpInfo());
   }
 
-  private GetOrphanrecordingMediaRequest createGetOrphanrecordingMediaRequest(String orphanId, String formatId, Boolean download, String fileName) {
+  private GetOrphanrecordingMediaRequest createGetOrphanrecordingMediaRequest(String orphanId, String formatId, Boolean download, String fileName, String locale) {
     return GetOrphanrecordingMediaRequest.builder()
             .withOrphanId(orphanId)
     
@@ -1126,6 +1132,8 @@ public class RecordingApi {
             .withDownload(download)
     
             .withFileName(fileName)
+    
+            .withLocale(locale)
     
             .build();
   }
@@ -3272,8 +3280,8 @@ public class RecordingApi {
 
   
   /**
-   * Execute the recording bulk job
-   * 
+   * Execute the recording bulk job.
+   * A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording&#39;s retention.
    * @param jobId jobId (required)
    * @param body query (required)
    * @return RecordingJob
@@ -3285,8 +3293,8 @@ public class RecordingApi {
   }
 
   /**
-   * Execute the recording bulk job
-   * 
+   * Execute the recording bulk job.
+   * A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording&#39;s retention.
    * @param jobId jobId (required)
    * @param body query (required)
    * @return RecordingJob
@@ -3306,8 +3314,8 @@ public class RecordingApi {
   }
 
   /**
-   * Execute the recording bulk job
-   * 
+   * Execute the recording bulk job.
+   * A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording&#39;s retention.
    * @param request The request object
    * @return RecordingJob
    * @throws ApiException if the request fails on the server
@@ -3325,8 +3333,8 @@ public class RecordingApi {
   }
 
   /**
-   * Execute the recording bulk job
-   * 
+   * Execute the recording bulk job.
+   * A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording&#39;s retention.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

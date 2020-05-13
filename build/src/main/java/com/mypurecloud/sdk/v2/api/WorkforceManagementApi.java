@@ -11,12 +11,38 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.BuAsyncScheduleResponse;
+import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.UserScheduleAdherence;
 import com.mypurecloud.sdk.v2.model.ModelingStatusResponse;
+import com.mypurecloud.sdk.v2.model.BusinessUnit;
+import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCode;
+import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCodeListing;
+import com.mypurecloud.sdk.v2.model.WfmIntradayPlanningGroupListing;
+import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
+import com.mypurecloud.sdk.v2.model.PlanningGroup;
+import com.mypurecloud.sdk.v2.model.PlanningGroupList;
+import com.mypurecloud.sdk.v2.model.BuScheduleRun;
+import com.mypurecloud.sdk.v2.model.BuRescheduleResult;
+import com.mypurecloud.sdk.v2.model.BuScheduleRunListing;
+import com.mypurecloud.sdk.v2.model.ServiceGoalTemplate;
+import com.mypurecloud.sdk.v2.model.ServiceGoalTemplateList;
+import com.mypurecloud.sdk.v2.model.BuScheduleMetadata;
+import com.mypurecloud.sdk.v2.model.ScheduleGenerationResult;
+import com.mypurecloud.sdk.v2.model.BuHeadcountForecastResponse;
+import com.mypurecloud.sdk.v2.model.BuScheduleListing;
+import com.mypurecloud.sdk.v2.model.BuShortTermForecast;
+import com.mypurecloud.sdk.v2.model.BuForecastResultResponse;
+import com.mypurecloud.sdk.v2.model.BuForecastGenerationResult;
+import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupsResponse;
+import com.mypurecloud.sdk.v2.model.BuShortTermForecastListing;
+import com.mypurecloud.sdk.v2.model.BusinessUnitListing;
 import com.mypurecloud.sdk.v2.model.ManagementUnit;
 import com.mypurecloud.sdk.v2.model.ActivityCode;
 import com.mypurecloud.sdk.v2.model.ActivityCodeContainer;
+import com.mypurecloud.sdk.v2.model.UserScheduleAdherenceListing;
 import com.mypurecloud.sdk.v2.model.WfmAgent;
+import com.mypurecloud.sdk.v2.model.ShiftTradeListResponse;
 import com.mypurecloud.sdk.v2.model.WfmIntradayQueueListing;
 import com.mypurecloud.sdk.v2.model.SchedulingRunResponse;
 import com.mypurecloud.sdk.v2.model.RescheduleResult;
@@ -31,27 +57,49 @@ import com.mypurecloud.sdk.v2.model.TimeOffRequestList;
 import com.mypurecloud.sdk.v2.model.WeekScheduleResponse;
 import com.mypurecloud.sdk.v2.model.WeekScheduleGenerationResult;
 import com.mypurecloud.sdk.v2.model.WeekScheduleListResponse;
+import com.mypurecloud.sdk.v2.model.WeekShiftTradeListResponse;
 import com.mypurecloud.sdk.v2.model.ForecastResultResponse;
 import com.mypurecloud.sdk.v2.model.ShortTermForecastListResponse;
 import com.mypurecloud.sdk.v2.model.WorkPlan;
 import com.mypurecloud.sdk.v2.model.WorkPlanListResponse;
-import com.mypurecloud.sdk.v2.model.ManagementUnitListing;
 import com.mypurecloud.sdk.v2.model.NotificationsResponse;
 import com.mypurecloud.sdk.v2.model.SchedulingStatusResponse;
-import com.mypurecloud.sdk.v2.model.ShiftTradeListResponse;
-import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
+import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
+import com.mypurecloud.sdk.v2.model.UpdatePlanningGroupRequest;
+import com.mypurecloud.sdk.v2.model.PatchBuScheduleRunRequest;
+import com.mypurecloud.sdk.v2.model.UpdateServiceGoalTemplate;
+import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.model.ManagementUnitSettingsRequest;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.UpdateWeekScheduleRequest;
 import com.mypurecloud.sdk.v2.model.AsyncWeekScheduleResponse;
+import com.mypurecloud.sdk.v2.model.ShiftTradeResponse;
+import com.mypurecloud.sdk.v2.model.PatchShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.AgentTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForUsers;
+import com.mypurecloud.sdk.v2.model.BuCurrentAgentScheduleSearchResponse;
+import com.mypurecloud.sdk.v2.model.BuGetCurrentAgentScheduleRequest;
 import com.mypurecloud.sdk.v2.model.CreateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.BuAsyncAgentSchedulesSearchResponse;
 import com.mypurecloud.sdk.v2.model.BuSearchAgentSchedulesRequest;
+import com.mypurecloud.sdk.v2.model.IntradayPlanningGroupRequest;
+import com.mypurecloud.sdk.v2.model.AsyncIntradayResponse;
+import com.mypurecloud.sdk.v2.model.CreatePlanningGroupRequest;
+import com.mypurecloud.sdk.v2.model.CreateServiceGoalTemplate;
+import com.mypurecloud.sdk.v2.model.BuAsyncAgentSchedulesQueryResponse;
+import com.mypurecloud.sdk.v2.model.BuQueryAgentSchedulesRequest;
+import com.mypurecloud.sdk.v2.model.BuCopyScheduleRequest;
+import com.mypurecloud.sdk.v2.model.BuAsyncScheduleRunResponse;
+import com.mypurecloud.sdk.v2.model.BuRescheduleRequest;
+import com.mypurecloud.sdk.v2.model.BuCreateBlankScheduleRequest;
+import com.mypurecloud.sdk.v2.model.BuGenerateScheduleRequest;
+import com.mypurecloud.sdk.v2.model.AsyncForecastOperationResult;
+import com.mypurecloud.sdk.v2.model.CopyBuForecastRequest;
+import com.mypurecloud.sdk.v2.model.GenerateBuForecastRequest;
+import com.mypurecloud.sdk.v2.model.CreateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
 import com.mypurecloud.sdk.v2.model.IntradayResponse;
 import com.mypurecloud.sdk.v2.model.IntradayQueryDataCommand;
@@ -71,6 +119,13 @@ import com.mypurecloud.sdk.v2.model.GenerateWeekScheduleResponse;
 import com.mypurecloud.sdk.v2.model.GenerateWeekScheduleRequest;
 import com.mypurecloud.sdk.v2.model.UserSchedulesPartialUploadRequest;
 import com.mypurecloud.sdk.v2.model.PartialUploadResponse;
+import com.mypurecloud.sdk.v2.model.MatchShiftTradeRequest;
+import com.mypurecloud.sdk.v2.model.MatchShiftTradeResponse;
+import com.mypurecloud.sdk.v2.model.AddShiftTradeRequest;
+import com.mypurecloud.sdk.v2.model.SearchShiftTradesResponse;
+import com.mypurecloud.sdk.v2.model.SearchShiftTradesRequest;
+import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
+import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
 import com.mypurecloud.sdk.v2.model.ShortTermForecastResponse;
 import com.mypurecloud.sdk.v2.model.CopyShortTermForecastRequest;
 import com.mypurecloud.sdk.v2.model.ImportShortTermForecastRequest;
@@ -86,6 +141,13 @@ import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CreateAgentTimeOffRequest;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitActivitycodeRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitPlanninggroupRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitSchedulingRunRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitServicegoaltemplateRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitWeekScheduleRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitWeekShorttermforecastRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitActivitycodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitSchedulingRunRequest;
@@ -95,10 +157,35 @@ import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementuni
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdhocmodelingjobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivitycodeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivitycodesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitIntradayPlanninggroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitManagementunitsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitPlanninggroupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitPlanninggroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunResultRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitServicegoaltemplateRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitServicegoaltemplatesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleGenerationresultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekSchedulesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastDataRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitActivitycodeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitActivitycodesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAdherenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAgentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAgentShifttradesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitIntradayQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitSchedulingRunResultRequest;
@@ -114,6 +201,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitUs
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWeekScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWeekScheduleGenerationresultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWeekSchedulesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWeekShifttradesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWeekShorttermforecastFinalRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWeekShorttermforecastsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWorkplanRequest;
@@ -125,6 +213,11 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulingjobReq
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitActivitycodeRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitPlanninggroupRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulingRunRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitActivitycodeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitSchedulingRunRequest;
@@ -132,9 +225,24 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunit
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWeekScheduleRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWeekShifttradeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWorkplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistoricalRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentschedulesMineRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivitycodesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitIntradayRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitPlanninggroupsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitServicegoaltemplatesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleCopyRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekScheduleRescheduleRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekSchedulesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekSchedulesGenerateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekShorttermforecastCopyRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitActivitycodesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitAgentschedulesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest;
@@ -150,6 +258,10 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitW
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekSchedulesGenerateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekSchedulesPartialuploadRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShifttradeMatchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShifttradesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShifttradesSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShifttradesStateBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShorttermforecastCopyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShorttermforecastsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShorttermforecastsGenerateRequest;
@@ -177,6 +289,573 @@ public class WorkforceManagementApi {
 
   public WorkforceManagementApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Delete business unit
+   * A business unit cannot be deleted if it contains one or more management units
+   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunit(String businessUnitId) throws IOException, ApiException {
+     deleteWorkforcemanagementBusinessunit(createDeleteWorkforcemanagementBusinessunitRequest(businessUnitId));
+  }
+
+  /**
+   * Delete business unit
+   * A business unit cannot be deleted if it contains one or more management units
+   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitWithHttpInfo(String businessUnitId) throws IOException {
+    return deleteWorkforcemanagementBusinessunit(createDeleteWorkforcemanagementBusinessunitRequest(businessUnitId).withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementBusinessunitRequest createDeleteWorkforcemanagementBusinessunitRequest(String businessUnitId) {
+    return DeleteWorkforcemanagementBusinessunitRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .build();
+  }
+
+  /**
+   * Delete business unit
+   * A business unit cannot be deleted if it contains one or more management units
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunit(DeleteWorkforcemanagementBusinessunitRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete business unit
+   * A business unit cannot be deleted if it contains one or more management units
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunit(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Deletes an activity code
+   * 
+   * @param buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param acId The ID of the activity code to delete (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitActivitycode(String buId, String acId) throws IOException, ApiException {
+     deleteWorkforcemanagementBusinessunitActivitycode(createDeleteWorkforcemanagementBusinessunitActivitycodeRequest(buId, acId));
+  }
+
+  /**
+   * Deletes an activity code
+   * 
+   * @param buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param acId The ID of the activity code to delete (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitActivitycodeWithHttpInfo(String buId, String acId) throws IOException {
+    return deleteWorkforcemanagementBusinessunitActivitycode(createDeleteWorkforcemanagementBusinessunitActivitycodeRequest(buId, acId).withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementBusinessunitActivitycodeRequest createDeleteWorkforcemanagementBusinessunitActivitycodeRequest(String buId, String acId) {
+    return DeleteWorkforcemanagementBusinessunitActivitycodeRequest.builder()
+            .withBuId(buId)
+    
+            .withAcId(acId)
+    
+            .build();
+  }
+
+  /**
+   * Deletes an activity code
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitActivitycode(DeleteWorkforcemanagementBusinessunitActivitycodeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Deletes an activity code
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitActivitycode(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Deletes the planning group
+   * 
+   * @param businessUnitId The ID of the business unit. (required)
+   * @param planningGroupId The ID of a planning group to delete (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitPlanninggroup(String businessUnitId, String planningGroupId) throws IOException, ApiException {
+     deleteWorkforcemanagementBusinessunitPlanninggroup(createDeleteWorkforcemanagementBusinessunitPlanninggroupRequest(businessUnitId, planningGroupId));
+  }
+
+  /**
+   * Deletes the planning group
+   * 
+   * @param businessUnitId The ID of the business unit. (required)
+   * @param planningGroupId The ID of a planning group to delete (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitPlanninggroupWithHttpInfo(String businessUnitId, String planningGroupId) throws IOException {
+    return deleteWorkforcemanagementBusinessunitPlanninggroup(createDeleteWorkforcemanagementBusinessunitPlanninggroupRequest(businessUnitId, planningGroupId).withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementBusinessunitPlanninggroupRequest createDeleteWorkforcemanagementBusinessunitPlanninggroupRequest(String businessUnitId, String planningGroupId) {
+    return DeleteWorkforcemanagementBusinessunitPlanninggroupRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withPlanningGroupId(planningGroupId)
+    
+            .build();
+  }
+
+  /**
+   * Deletes the planning group
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitPlanninggroup(DeleteWorkforcemanagementBusinessunitPlanninggroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Deletes the planning group
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitPlanninggroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Cancel a scheduling run
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param runId The ID of the schedule run (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitSchedulingRun(String businessUnitId, String runId) throws IOException, ApiException {
+     deleteWorkforcemanagementBusinessunitSchedulingRun(createDeleteWorkforcemanagementBusinessunitSchedulingRunRequest(businessUnitId, runId));
+  }
+
+  /**
+   * Cancel a scheduling run
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param runId The ID of the schedule run (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitSchedulingRunWithHttpInfo(String businessUnitId, String runId) throws IOException {
+    return deleteWorkforcemanagementBusinessunitSchedulingRun(createDeleteWorkforcemanagementBusinessunitSchedulingRunRequest(businessUnitId, runId).withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementBusinessunitSchedulingRunRequest createDeleteWorkforcemanagementBusinessunitSchedulingRunRequest(String businessUnitId, String runId) {
+    return DeleteWorkforcemanagementBusinessunitSchedulingRunRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withRunId(runId)
+    
+            .build();
+  }
+
+  /**
+   * Cancel a scheduling run
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitSchedulingRun(DeleteWorkforcemanagementBusinessunitSchedulingRunRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Cancel a scheduling run
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitSchedulingRun(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete a service goal template
+   * 
+   * @param businessUnitId The ID of the business unit. (required)
+   * @param serviceGoalTemplateId The ID of the service goal template to delete (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitServicegoaltemplate(String businessUnitId, String serviceGoalTemplateId) throws IOException, ApiException {
+     deleteWorkforcemanagementBusinessunitServicegoaltemplate(createDeleteWorkforcemanagementBusinessunitServicegoaltemplateRequest(businessUnitId, serviceGoalTemplateId));
+  }
+
+  /**
+   * Delete a service goal template
+   * 
+   * @param businessUnitId The ID of the business unit. (required)
+   * @param serviceGoalTemplateId The ID of the service goal template to delete (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitServicegoaltemplateWithHttpInfo(String businessUnitId, String serviceGoalTemplateId) throws IOException {
+    return deleteWorkforcemanagementBusinessunitServicegoaltemplate(createDeleteWorkforcemanagementBusinessunitServicegoaltemplateRequest(businessUnitId, serviceGoalTemplateId).withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementBusinessunitServicegoaltemplateRequest createDeleteWorkforcemanagementBusinessunitServicegoaltemplateRequest(String businessUnitId, String serviceGoalTemplateId) {
+    return DeleteWorkforcemanagementBusinessunitServicegoaltemplateRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withServiceGoalTemplateId(serviceGoalTemplateId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a service goal template
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitServicegoaltemplate(DeleteWorkforcemanagementBusinessunitServicegoaltemplateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a service goal template
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitServicegoaltemplate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete a schedule
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param scheduleId The ID of the schedule (required)
+   * @return BuAsyncScheduleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAsyncScheduleResponse deleteWorkforcemanagementBusinessunitWeekSchedule(String businessUnitId, LocalDate weekId, String scheduleId) throws IOException, ApiException {
+    return  deleteWorkforcemanagementBusinessunitWeekSchedule(createDeleteWorkforcemanagementBusinessunitWeekScheduleRequest(businessUnitId, weekId, scheduleId));
+  }
+
+  /**
+   * Delete a schedule
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param scheduleId The ID of the schedule (required)
+   * @return BuAsyncScheduleResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAsyncScheduleResponse> deleteWorkforcemanagementBusinessunitWeekScheduleWithHttpInfo(String businessUnitId, LocalDate weekId, String scheduleId) throws IOException {
+    return deleteWorkforcemanagementBusinessunitWeekSchedule(createDeleteWorkforcemanagementBusinessunitWeekScheduleRequest(businessUnitId, weekId, scheduleId).withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementBusinessunitWeekScheduleRequest createDeleteWorkforcemanagementBusinessunitWeekScheduleRequest(String businessUnitId, LocalDate weekId, String scheduleId) {
+    return DeleteWorkforcemanagementBusinessunitWeekScheduleRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekId(weekId)
+    
+            .withScheduleId(scheduleId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a schedule
+   * 
+   * @param request The request object
+   * @return BuAsyncScheduleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAsyncScheduleResponse deleteWorkforcemanagementBusinessunitWeekSchedule(DeleteWorkforcemanagementBusinessunitWeekScheduleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuAsyncScheduleResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuAsyncScheduleResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Delete a schedule
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAsyncScheduleResponse> deleteWorkforcemanagementBusinessunitWeekSchedule(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuAsyncScheduleResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAsyncScheduleResponse> response = (ApiResponse<BuAsyncScheduleResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAsyncScheduleResponse> response = (ApiResponse<BuAsyncScheduleResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete a short term forecast
+   * Must not be tied to any schedules
+   * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param forecastId The ID of the forecast (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitWeekShorttermforecast(String businessUnitId, LocalDate weekDateId, String forecastId) throws IOException, ApiException {
+     deleteWorkforcemanagementBusinessunitWeekShorttermforecast(createDeleteWorkforcemanagementBusinessunitWeekShorttermforecastRequest(businessUnitId, weekDateId, forecastId));
+  }
+
+  /**
+   * Delete a short term forecast
+   * Must not be tied to any schedules
+   * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param forecastId The ID of the forecast (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitWeekShorttermforecastWithHttpInfo(String businessUnitId, LocalDate weekDateId, String forecastId) throws IOException {
+    return deleteWorkforcemanagementBusinessunitWeekShorttermforecast(createDeleteWorkforcemanagementBusinessunitWeekShorttermforecastRequest(businessUnitId, weekDateId, forecastId).withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementBusinessunitWeekShorttermforecastRequest createDeleteWorkforcemanagementBusinessunitWeekShorttermforecastRequest(String businessUnitId, LocalDate weekDateId, String forecastId) {
+    return DeleteWorkforcemanagementBusinessunitWeekShorttermforecastRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .withForecastId(forecastId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a short term forecast
+   * Must not be tied to any schedules
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitWeekShorttermforecast(DeleteWorkforcemanagementBusinessunitWeekShorttermforecastRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a short term forecast
+   * Must not be tied to any schedules
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitWeekShorttermforecast(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   
@@ -903,6 +1582,1959 @@ public class WorkforceManagementApi {
 
   
   /**
+   * Get business unit
+   * Expanding \&quot;settings\&quot; will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
+   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param expand  (optional)
+   * @return BusinessUnit
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnit getWorkforcemanagementBusinessunit(String businessUnitId, List<String> expand) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunit(createGetWorkforcemanagementBusinessunitRequest(businessUnitId, expand));
+  }
+
+  /**
+   * Get business unit
+   * Expanding \&quot;settings\&quot; will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
+   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param expand  (optional)
+   * @return BusinessUnit
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnit> getWorkforcemanagementBusinessunitWithHttpInfo(String businessUnitId, List<String> expand) throws IOException {
+    return getWorkforcemanagementBusinessunit(createGetWorkforcemanagementBusinessunitRequest(businessUnitId, expand).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitRequest createGetWorkforcemanagementBusinessunitRequest(String businessUnitId, List<String> expand) {
+    return GetWorkforcemanagementBusinessunitRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withExpand(expand)
+    
+            .build();
+  }
+
+  /**
+   * Get business unit
+   * Expanding \&quot;settings\&quot; will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
+   * @param request The request object
+   * @return BusinessUnit
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnit getWorkforcemanagementBusinessunit(GetWorkforcemanagementBusinessunitRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BusinessUnit> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessUnit>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get business unit
+   * Expanding \&quot;settings\&quot; will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnit> getWorkforcemanagementBusinessunit(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BusinessUnit>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnit> response = (ApiResponse<BusinessUnit>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnit> response = (ApiResponse<BusinessUnit>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get an activity code
+   * 
+   * @param buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param acId The ID of the activity code to fetch (required)
+   * @return BusinessUnitActivityCode
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnitActivityCode getWorkforcemanagementBusinessunitActivitycode(String buId, String acId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitActivitycode(createGetWorkforcemanagementBusinessunitActivitycodeRequest(buId, acId));
+  }
+
+  /**
+   * Get an activity code
+   * 
+   * @param buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param acId The ID of the activity code to fetch (required)
+   * @return BusinessUnitActivityCode
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnitActivityCode> getWorkforcemanagementBusinessunitActivitycodeWithHttpInfo(String buId, String acId) throws IOException {
+    return getWorkforcemanagementBusinessunitActivitycode(createGetWorkforcemanagementBusinessunitActivitycodeRequest(buId, acId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitActivitycodeRequest createGetWorkforcemanagementBusinessunitActivitycodeRequest(String buId, String acId) {
+    return GetWorkforcemanagementBusinessunitActivitycodeRequest.builder()
+            .withBuId(buId)
+    
+            .withAcId(acId)
+    
+            .build();
+  }
+
+  /**
+   * Get an activity code
+   * 
+   * @param request The request object
+   * @return BusinessUnitActivityCode
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnitActivityCode getWorkforcemanagementBusinessunitActivitycode(GetWorkforcemanagementBusinessunitActivitycodeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BusinessUnitActivityCode> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessUnitActivityCode>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an activity code
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnitActivityCode> getWorkforcemanagementBusinessunitActivitycode(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BusinessUnitActivityCode>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnitActivityCode> response = (ApiResponse<BusinessUnitActivityCode>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnitActivityCode> response = (ApiResponse<BusinessUnitActivityCode>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get activity codes
+   * 
+   * @param buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @return BusinessUnitActivityCodeListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnitActivityCodeListing getWorkforcemanagementBusinessunitActivitycodes(String buId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitActivitycodes(createGetWorkforcemanagementBusinessunitActivitycodesRequest(buId));
+  }
+
+  /**
+   * Get activity codes
+   * 
+   * @param buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @return BusinessUnitActivityCodeListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnitActivityCodeListing> getWorkforcemanagementBusinessunitActivitycodesWithHttpInfo(String buId) throws IOException {
+    return getWorkforcemanagementBusinessunitActivitycodes(createGetWorkforcemanagementBusinessunitActivitycodesRequest(buId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitActivitycodesRequest createGetWorkforcemanagementBusinessunitActivitycodesRequest(String buId) {
+    return GetWorkforcemanagementBusinessunitActivitycodesRequest.builder()
+            .withBuId(buId)
+    
+            .build();
+  }
+
+  /**
+   * Get activity codes
+   * 
+   * @param request The request object
+   * @return BusinessUnitActivityCodeListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnitActivityCodeListing getWorkforcemanagementBusinessunitActivitycodes(GetWorkforcemanagementBusinessunitActivitycodesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BusinessUnitActivityCodeListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessUnitActivityCodeListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get activity codes
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnitActivityCodeListing> getWorkforcemanagementBusinessunitActivitycodes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BusinessUnitActivityCodeListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnitActivityCodeListing> response = (ApiResponse<BusinessUnitActivityCodeListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnitActivityCodeListing> response = (ApiResponse<BusinessUnitActivityCodeListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get intraday planning groups for the given date
+   * 
+   * @param businessUnitId The business unit ID of the business unit (required)
+   * @param date yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @return WfmIntradayPlanningGroupListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmIntradayPlanningGroupListing getWorkforcemanagementBusinessunitIntradayPlanninggroups(String businessUnitId, LocalDate date) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitIntradayPlanninggroups(createGetWorkforcemanagementBusinessunitIntradayPlanninggroupsRequest(businessUnitId, date));
+  }
+
+  /**
+   * Get intraday planning groups for the given date
+   * 
+   * @param businessUnitId The business unit ID of the business unit (required)
+   * @param date yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @return WfmIntradayPlanningGroupListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmIntradayPlanningGroupListing> getWorkforcemanagementBusinessunitIntradayPlanninggroupsWithHttpInfo(String businessUnitId, LocalDate date) throws IOException {
+    return getWorkforcemanagementBusinessunitIntradayPlanninggroups(createGetWorkforcemanagementBusinessunitIntradayPlanninggroupsRequest(businessUnitId, date).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitIntradayPlanninggroupsRequest createGetWorkforcemanagementBusinessunitIntradayPlanninggroupsRequest(String businessUnitId, LocalDate date) {
+    return GetWorkforcemanagementBusinessunitIntradayPlanninggroupsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withDate(date)
+    
+            .build();
+  }
+
+  /**
+   * Get intraday planning groups for the given date
+   * 
+   * @param request The request object
+   * @return WfmIntradayPlanningGroupListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WfmIntradayPlanningGroupListing getWorkforcemanagementBusinessunitIntradayPlanninggroups(GetWorkforcemanagementBusinessunitIntradayPlanninggroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WfmIntradayPlanningGroupListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WfmIntradayPlanningGroupListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get intraday planning groups for the given date
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WfmIntradayPlanningGroupListing> getWorkforcemanagementBusinessunitIntradayPlanninggroups(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WfmIntradayPlanningGroupListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmIntradayPlanningGroupListing> response = (ApiResponse<WfmIntradayPlanningGroupListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WfmIntradayPlanningGroupListing> response = (ApiResponse<WfmIntradayPlanningGroupListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get all authorized management units in the business unit
+   * 
+   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param feature  (optional)
+   * @param divisionId  (optional)
+   * @return ManagementUnitListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ManagementUnitListing getWorkforcemanagementBusinessunitManagementunits(String businessUnitId, String feature, String divisionId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitManagementunits(createGetWorkforcemanagementBusinessunitManagementunitsRequest(businessUnitId, feature, divisionId));
+  }
+
+  /**
+   * Get all authorized management units in the business unit
+   * 
+   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param feature  (optional)
+   * @param divisionId  (optional)
+   * @return ManagementUnitListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ManagementUnitListing> getWorkforcemanagementBusinessunitManagementunitsWithHttpInfo(String businessUnitId, String feature, String divisionId) throws IOException {
+    return getWorkforcemanagementBusinessunitManagementunits(createGetWorkforcemanagementBusinessunitManagementunitsRequest(businessUnitId, feature, divisionId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitManagementunitsRequest createGetWorkforcemanagementBusinessunitManagementunitsRequest(String businessUnitId, String feature, String divisionId) {
+    return GetWorkforcemanagementBusinessunitManagementunitsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withFeature(feature)
+    
+            .withDivisionId(divisionId)
+    
+            .build();
+  }
+
+  /**
+   * Get all authorized management units in the business unit
+   * 
+   * @param request The request object
+   * @return ManagementUnitListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ManagementUnitListing getWorkforcemanagementBusinessunitManagementunits(GetWorkforcemanagementBusinessunitManagementunitsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ManagementUnitListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ManagementUnitListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get all authorized management units in the business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ManagementUnitListing> getWorkforcemanagementBusinessunitManagementunits(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ManagementUnitListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ManagementUnitListing> response = (ApiResponse<ManagementUnitListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ManagementUnitListing> response = (ApiResponse<ManagementUnitListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a planning group
+   * 
+   * @param businessUnitId The ID of the business unit. (required)
+   * @param planningGroupId The ID of a planning group to fetch (required)
+   * @return PlanningGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PlanningGroup getWorkforcemanagementBusinessunitPlanninggroup(String businessUnitId, String planningGroupId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitPlanninggroup(createGetWorkforcemanagementBusinessunitPlanninggroupRequest(businessUnitId, planningGroupId));
+  }
+
+  /**
+   * Get a planning group
+   * 
+   * @param businessUnitId The ID of the business unit. (required)
+   * @param planningGroupId The ID of a planning group to fetch (required)
+   * @return PlanningGroup
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PlanningGroup> getWorkforcemanagementBusinessunitPlanninggroupWithHttpInfo(String businessUnitId, String planningGroupId) throws IOException {
+    return getWorkforcemanagementBusinessunitPlanninggroup(createGetWorkforcemanagementBusinessunitPlanninggroupRequest(businessUnitId, planningGroupId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitPlanninggroupRequest createGetWorkforcemanagementBusinessunitPlanninggroupRequest(String businessUnitId, String planningGroupId) {
+    return GetWorkforcemanagementBusinessunitPlanninggroupRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withPlanningGroupId(planningGroupId)
+    
+            .build();
+  }
+
+  /**
+   * Get a planning group
+   * 
+   * @param request The request object
+   * @return PlanningGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PlanningGroup getWorkforcemanagementBusinessunitPlanninggroup(GetWorkforcemanagementBusinessunitPlanninggroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PlanningGroup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PlanningGroup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a planning group
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PlanningGroup> getWorkforcemanagementBusinessunitPlanninggroup(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PlanningGroup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PlanningGroup> response = (ApiResponse<PlanningGroup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PlanningGroup> response = (ApiResponse<PlanningGroup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Gets list of planning groups
+   * 
+   * @param businessUnitId The ID of the business unit. (required)
+   * @return PlanningGroupList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PlanningGroupList getWorkforcemanagementBusinessunitPlanninggroups(String businessUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitPlanninggroups(createGetWorkforcemanagementBusinessunitPlanninggroupsRequest(businessUnitId));
+  }
+
+  /**
+   * Gets list of planning groups
+   * 
+   * @param businessUnitId The ID of the business unit. (required)
+   * @return PlanningGroupList
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PlanningGroupList> getWorkforcemanagementBusinessunitPlanninggroupsWithHttpInfo(String businessUnitId) throws IOException {
+    return getWorkforcemanagementBusinessunitPlanninggroups(createGetWorkforcemanagementBusinessunitPlanninggroupsRequest(businessUnitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitPlanninggroupsRequest createGetWorkforcemanagementBusinessunitPlanninggroupsRequest(String businessUnitId) {
+    return GetWorkforcemanagementBusinessunitPlanninggroupsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .build();
+  }
+
+  /**
+   * Gets list of planning groups
+   * 
+   * @param request The request object
+   * @return PlanningGroupList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PlanningGroupList getWorkforcemanagementBusinessunitPlanninggroups(GetWorkforcemanagementBusinessunitPlanninggroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PlanningGroupList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PlanningGroupList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets list of planning groups
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PlanningGroupList> getWorkforcemanagementBusinessunitPlanninggroups(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PlanningGroupList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PlanningGroupList> response = (ApiResponse<PlanningGroupList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PlanningGroupList> response = (ApiResponse<PlanningGroupList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a scheduling run
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param runId The ID of the schedule run (required)
+   * @return BuScheduleRun
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuScheduleRun getWorkforcemanagementBusinessunitSchedulingRun(String businessUnitId, String runId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitSchedulingRun(createGetWorkforcemanagementBusinessunitSchedulingRunRequest(businessUnitId, runId));
+  }
+
+  /**
+   * Get a scheduling run
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param runId The ID of the schedule run (required)
+   * @return BuScheduleRun
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuScheduleRun> getWorkforcemanagementBusinessunitSchedulingRunWithHttpInfo(String businessUnitId, String runId) throws IOException {
+    return getWorkforcemanagementBusinessunitSchedulingRun(createGetWorkforcemanagementBusinessunitSchedulingRunRequest(businessUnitId, runId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitSchedulingRunRequest createGetWorkforcemanagementBusinessunitSchedulingRunRequest(String businessUnitId, String runId) {
+    return GetWorkforcemanagementBusinessunitSchedulingRunRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withRunId(runId)
+    
+            .build();
+  }
+
+  /**
+   * Get a scheduling run
+   * 
+   * @param request The request object
+   * @return BuScheduleRun
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuScheduleRun getWorkforcemanagementBusinessunitSchedulingRun(GetWorkforcemanagementBusinessunitSchedulingRunRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuScheduleRun> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuScheduleRun>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a scheduling run
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuScheduleRun> getWorkforcemanagementBusinessunitSchedulingRun(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuScheduleRun>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuScheduleRun> response = (ApiResponse<BuScheduleRun>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuScheduleRun> response = (ApiResponse<BuScheduleRun>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the result of a rescheduling operation
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param runId The ID of the schedule run (required)
+   * @param managementUnitIds The IDs of the management units for which to fetch the reschedule results (required)
+   * @param expand The fields to expand. Omitting will return an empty response (required)
+   * @return BuRescheduleResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuRescheduleResult getWorkforcemanagementBusinessunitSchedulingRunResult(String businessUnitId, String runId, List<String> managementUnitIds, List<String> expand) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitSchedulingRunResult(createGetWorkforcemanagementBusinessunitSchedulingRunResultRequest(businessUnitId, runId, managementUnitIds, expand));
+  }
+
+  /**
+   * Get the result of a rescheduling operation
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param runId The ID of the schedule run (required)
+   * @param managementUnitIds The IDs of the management units for which to fetch the reschedule results (required)
+   * @param expand The fields to expand. Omitting will return an empty response (required)
+   * @return BuRescheduleResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuRescheduleResult> getWorkforcemanagementBusinessunitSchedulingRunResultWithHttpInfo(String businessUnitId, String runId, List<String> managementUnitIds, List<String> expand) throws IOException {
+    return getWorkforcemanagementBusinessunitSchedulingRunResult(createGetWorkforcemanagementBusinessunitSchedulingRunResultRequest(businessUnitId, runId, managementUnitIds, expand).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitSchedulingRunResultRequest createGetWorkforcemanagementBusinessunitSchedulingRunResultRequest(String businessUnitId, String runId, List<String> managementUnitIds, List<String> expand) {
+    return GetWorkforcemanagementBusinessunitSchedulingRunResultRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withRunId(runId)
+    
+            .withManagementUnitIds(managementUnitIds)
+    
+            .withExpand(expand)
+    
+            .build();
+  }
+
+  /**
+   * Get the result of a rescheduling operation
+   * 
+   * @param request The request object
+   * @return BuRescheduleResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuRescheduleResult getWorkforcemanagementBusinessunitSchedulingRunResult(GetWorkforcemanagementBusinessunitSchedulingRunResultRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuRescheduleResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuRescheduleResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the result of a rescheduling operation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuRescheduleResult> getWorkforcemanagementBusinessunitSchedulingRunResult(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuRescheduleResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuRescheduleResult> response = (ApiResponse<BuRescheduleResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuRescheduleResult> response = (ApiResponse<BuRescheduleResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the list of scheduling runs
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @return BuScheduleRunListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuScheduleRunListing getWorkforcemanagementBusinessunitSchedulingRuns(String businessUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitSchedulingRuns(createGetWorkforcemanagementBusinessunitSchedulingRunsRequest(businessUnitId));
+  }
+
+  /**
+   * Get the list of scheduling runs
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @return BuScheduleRunListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuScheduleRunListing> getWorkforcemanagementBusinessunitSchedulingRunsWithHttpInfo(String businessUnitId) throws IOException {
+    return getWorkforcemanagementBusinessunitSchedulingRuns(createGetWorkforcemanagementBusinessunitSchedulingRunsRequest(businessUnitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitSchedulingRunsRequest createGetWorkforcemanagementBusinessunitSchedulingRunsRequest(String businessUnitId) {
+    return GetWorkforcemanagementBusinessunitSchedulingRunsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .build();
+  }
+
+  /**
+   * Get the list of scheduling runs
+   * 
+   * @param request The request object
+   * @return BuScheduleRunListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuScheduleRunListing getWorkforcemanagementBusinessunitSchedulingRuns(GetWorkforcemanagementBusinessunitSchedulingRunsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuScheduleRunListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuScheduleRunListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of scheduling runs
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuScheduleRunListing> getWorkforcemanagementBusinessunitSchedulingRuns(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuScheduleRunListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuScheduleRunListing> response = (ApiResponse<BuScheduleRunListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuScheduleRunListing> response = (ApiResponse<BuScheduleRunListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a service goal template
+   * 
+   * @param businessUnitId The ID of the business unit. (required)
+   * @param serviceGoalTemplateId The ID of a service goal template to fetch (required)
+   * @return ServiceGoalTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ServiceGoalTemplate getWorkforcemanagementBusinessunitServicegoaltemplate(String businessUnitId, String serviceGoalTemplateId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitServicegoaltemplate(createGetWorkforcemanagementBusinessunitServicegoaltemplateRequest(businessUnitId, serviceGoalTemplateId));
+  }
+
+  /**
+   * Get a service goal template
+   * 
+   * @param businessUnitId The ID of the business unit. (required)
+   * @param serviceGoalTemplateId The ID of a service goal template to fetch (required)
+   * @return ServiceGoalTemplate
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ServiceGoalTemplate> getWorkforcemanagementBusinessunitServicegoaltemplateWithHttpInfo(String businessUnitId, String serviceGoalTemplateId) throws IOException {
+    return getWorkforcemanagementBusinessunitServicegoaltemplate(createGetWorkforcemanagementBusinessunitServicegoaltemplateRequest(businessUnitId, serviceGoalTemplateId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitServicegoaltemplateRequest createGetWorkforcemanagementBusinessunitServicegoaltemplateRequest(String businessUnitId, String serviceGoalTemplateId) {
+    return GetWorkforcemanagementBusinessunitServicegoaltemplateRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withServiceGoalTemplateId(serviceGoalTemplateId)
+    
+            .build();
+  }
+
+  /**
+   * Get a service goal template
+   * 
+   * @param request The request object
+   * @return ServiceGoalTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ServiceGoalTemplate getWorkforcemanagementBusinessunitServicegoaltemplate(GetWorkforcemanagementBusinessunitServicegoaltemplateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ServiceGoalTemplate> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ServiceGoalTemplate>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a service goal template
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ServiceGoalTemplate> getWorkforcemanagementBusinessunitServicegoaltemplate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ServiceGoalTemplate>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ServiceGoalTemplate> response = (ApiResponse<ServiceGoalTemplate>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ServiceGoalTemplate> response = (ApiResponse<ServiceGoalTemplate>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Gets list of service goal templates
+   * 
+   * @param businessUnitId The ID of the business unit. (required)
+   * @return ServiceGoalTemplateList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ServiceGoalTemplateList getWorkforcemanagementBusinessunitServicegoaltemplates(String businessUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitServicegoaltemplates(createGetWorkforcemanagementBusinessunitServicegoaltemplatesRequest(businessUnitId));
+  }
+
+  /**
+   * Gets list of service goal templates
+   * 
+   * @param businessUnitId The ID of the business unit. (required)
+   * @return ServiceGoalTemplateList
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ServiceGoalTemplateList> getWorkforcemanagementBusinessunitServicegoaltemplatesWithHttpInfo(String businessUnitId) throws IOException {
+    return getWorkforcemanagementBusinessunitServicegoaltemplates(createGetWorkforcemanagementBusinessunitServicegoaltemplatesRequest(businessUnitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitServicegoaltemplatesRequest createGetWorkforcemanagementBusinessunitServicegoaltemplatesRequest(String businessUnitId) {
+    return GetWorkforcemanagementBusinessunitServicegoaltemplatesRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .build();
+  }
+
+  /**
+   * Gets list of service goal templates
+   * 
+   * @param request The request object
+   * @return ServiceGoalTemplateList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ServiceGoalTemplateList getWorkforcemanagementBusinessunitServicegoaltemplates(GetWorkforcemanagementBusinessunitServicegoaltemplatesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ServiceGoalTemplateList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ServiceGoalTemplateList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets list of service goal templates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ServiceGoalTemplateList> getWorkforcemanagementBusinessunitServicegoaltemplates(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ServiceGoalTemplateList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ServiceGoalTemplateList> response = (ApiResponse<ServiceGoalTemplateList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ServiceGoalTemplateList> response = (ApiResponse<ServiceGoalTemplateList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param scheduleId The ID of the schedule (required)
+   * @return BuScheduleMetadata
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuScheduleMetadata getWorkforcemanagementBusinessunitWeekSchedule(String businessUnitId, LocalDate weekId, String scheduleId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitWeekSchedule(createGetWorkforcemanagementBusinessunitWeekScheduleRequest(businessUnitId, weekId, scheduleId));
+  }
+
+  /**
+   * Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param scheduleId The ID of the schedule (required)
+   * @return BuScheduleMetadata
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuScheduleMetadata> getWorkforcemanagementBusinessunitWeekScheduleWithHttpInfo(String businessUnitId, LocalDate weekId, String scheduleId) throws IOException {
+    return getWorkforcemanagementBusinessunitWeekSchedule(createGetWorkforcemanagementBusinessunitWeekScheduleRequest(businessUnitId, weekId, scheduleId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitWeekScheduleRequest createGetWorkforcemanagementBusinessunitWeekScheduleRequest(String businessUnitId, LocalDate weekId, String scheduleId) {
+    return GetWorkforcemanagementBusinessunitWeekScheduleRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekId(weekId)
+    
+            .withScheduleId(scheduleId)
+    
+            .build();
+  }
+
+  /**
+   * Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
+   * 
+   * @param request The request object
+   * @return BuScheduleMetadata
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuScheduleMetadata getWorkforcemanagementBusinessunitWeekSchedule(GetWorkforcemanagementBusinessunitWeekScheduleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuScheduleMetadata> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuScheduleMetadata>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuScheduleMetadata> getWorkforcemanagementBusinessunitWeekSchedule(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuScheduleMetadata>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuScheduleMetadata> response = (ApiResponse<BuScheduleMetadata>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuScheduleMetadata> response = (ApiResponse<BuScheduleMetadata>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the generation results for a generated schedule
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param scheduleId The ID of the schedule (required)
+   * @return ScheduleGenerationResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleGenerationResult getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(String businessUnitId, LocalDate weekId, String scheduleId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(createGetWorkforcemanagementBusinessunitWeekScheduleGenerationresultsRequest(businessUnitId, weekId, scheduleId));
+  }
+
+  /**
+   * Get the generation results for a generated schedule
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param scheduleId The ID of the schedule (required)
+   * @return ScheduleGenerationResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleGenerationResult> getWorkforcemanagementBusinessunitWeekScheduleGenerationresultsWithHttpInfo(String businessUnitId, LocalDate weekId, String scheduleId) throws IOException {
+    return getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(createGetWorkforcemanagementBusinessunitWeekScheduleGenerationresultsRequest(businessUnitId, weekId, scheduleId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitWeekScheduleGenerationresultsRequest createGetWorkforcemanagementBusinessunitWeekScheduleGenerationresultsRequest(String businessUnitId, LocalDate weekId, String scheduleId) {
+    return GetWorkforcemanagementBusinessunitWeekScheduleGenerationresultsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekId(weekId)
+    
+            .withScheduleId(scheduleId)
+    
+            .build();
+  }
+
+  /**
+   * Get the generation results for a generated schedule
+   * 
+   * @param request The request object
+   * @return ScheduleGenerationResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScheduleGenerationResult getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(GetWorkforcemanagementBusinessunitWeekScheduleGenerationresultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScheduleGenerationResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScheduleGenerationResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the generation results for a generated schedule
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScheduleGenerationResult> getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScheduleGenerationResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleGenerationResult> response = (ApiResponse<ScheduleGenerationResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScheduleGenerationResult> response = (ApiResponse<ScheduleGenerationResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the headcount forecast by planning group for the schedule
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param scheduleId The ID of the schedule (required)
+   * @param forceDownload Whether to force the result to come via download url.  For testing purposes only (optional)
+   * @return BuHeadcountForecastResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuHeadcountForecastResponse getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast(String businessUnitId, LocalDate weekId, String scheduleId, Boolean forceDownload) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast(createGetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastRequest(businessUnitId, weekId, scheduleId, forceDownload));
+  }
+
+  /**
+   * Get the headcount forecast by planning group for the schedule
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param scheduleId The ID of the schedule (required)
+   * @param forceDownload Whether to force the result to come via download url.  For testing purposes only (optional)
+   * @return BuHeadcountForecastResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuHeadcountForecastResponse> getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastWithHttpInfo(String businessUnitId, LocalDate weekId, String scheduleId, Boolean forceDownload) throws IOException {
+    return getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast(createGetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastRequest(businessUnitId, weekId, scheduleId, forceDownload).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastRequest createGetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastRequest(String businessUnitId, LocalDate weekId, String scheduleId, Boolean forceDownload) {
+    return GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekId(weekId)
+    
+            .withScheduleId(scheduleId)
+    
+            .withForceDownload(forceDownload)
+    
+            .build();
+  }
+
+  /**
+   * Get the headcount forecast by planning group for the schedule
+   * 
+   * @param request The request object
+   * @return BuHeadcountForecastResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuHeadcountForecastResponse getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast(GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuHeadcountForecastResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuHeadcountForecastResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the headcount forecast by planning group for the schedule
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuHeadcountForecastResponse> getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuHeadcountForecastResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuHeadcountForecastResponse> response = (ApiResponse<BuHeadcountForecastResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuHeadcountForecastResponse> response = (ApiResponse<BuHeadcountForecastResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the list of week schedules for the specified week
+   * Use \&quot;recent\&quot; for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format, or &#39;recent&#39; to get recent schedules (required)
+   * @param includeOnlyPublished includeOnlyPublished (optional)
+   * @param expand expand (optional)
+   * @return BuScheduleListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuScheduleListing getWorkforcemanagementBusinessunitWeekSchedules(String businessUnitId, String weekId, Boolean includeOnlyPublished, String expand) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitWeekSchedules(createGetWorkforcemanagementBusinessunitWeekSchedulesRequest(businessUnitId, weekId, includeOnlyPublished, expand));
+  }
+
+  /**
+   * Get the list of week schedules for the specified week
+   * Use \&quot;recent\&quot; for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format, or &#39;recent&#39; to get recent schedules (required)
+   * @param includeOnlyPublished includeOnlyPublished (optional)
+   * @param expand expand (optional)
+   * @return BuScheduleListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuScheduleListing> getWorkforcemanagementBusinessunitWeekSchedulesWithHttpInfo(String businessUnitId, String weekId, Boolean includeOnlyPublished, String expand) throws IOException {
+    return getWorkforcemanagementBusinessunitWeekSchedules(createGetWorkforcemanagementBusinessunitWeekSchedulesRequest(businessUnitId, weekId, includeOnlyPublished, expand).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitWeekSchedulesRequest createGetWorkforcemanagementBusinessunitWeekSchedulesRequest(String businessUnitId, String weekId, Boolean includeOnlyPublished, String expand) {
+    return GetWorkforcemanagementBusinessunitWeekSchedulesRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekId(weekId)
+    
+            .withIncludeOnlyPublished(includeOnlyPublished)
+    
+            .withExpand(expand)
+    
+            .build();
+  }
+
+  /**
+   * Get the list of week schedules for the specified week
+   * Use \&quot;recent\&quot; for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+   * @param request The request object
+   * @return BuScheduleListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuScheduleListing getWorkforcemanagementBusinessunitWeekSchedules(GetWorkforcemanagementBusinessunitWeekSchedulesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuScheduleListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuScheduleListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of week schedules for the specified week
+   * Use \&quot;recent\&quot; for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuScheduleListing> getWorkforcemanagementBusinessunitWeekSchedules(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuScheduleListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuScheduleListing> response = (ApiResponse<BuScheduleListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuScheduleListing> response = (ApiResponse<BuScheduleListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a short term forecast
+   * 
+   * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param forecastId The ID of the forecast (required)
+   * @param expand  (optional)
+   * @return BuShortTermForecast
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuShortTermForecast getWorkforcemanagementBusinessunitWeekShorttermforecast(String businessUnitId, LocalDate weekDateId, String forecastId, List<String> expand) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitWeekShorttermforecast(createGetWorkforcemanagementBusinessunitWeekShorttermforecastRequest(businessUnitId, weekDateId, forecastId, expand));
+  }
+
+  /**
+   * Get a short term forecast
+   * 
+   * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param forecastId The ID of the forecast (required)
+   * @param expand  (optional)
+   * @return BuShortTermForecast
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuShortTermForecast> getWorkforcemanagementBusinessunitWeekShorttermforecastWithHttpInfo(String businessUnitId, LocalDate weekDateId, String forecastId, List<String> expand) throws IOException {
+    return getWorkforcemanagementBusinessunitWeekShorttermforecast(createGetWorkforcemanagementBusinessunitWeekShorttermforecastRequest(businessUnitId, weekDateId, forecastId, expand).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitWeekShorttermforecastRequest createGetWorkforcemanagementBusinessunitWeekShorttermforecastRequest(String businessUnitId, LocalDate weekDateId, String forecastId, List<String> expand) {
+    return GetWorkforcemanagementBusinessunitWeekShorttermforecastRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .withForecastId(forecastId)
+    
+            .withExpand(expand)
+    
+            .build();
+  }
+
+  /**
+   * Get a short term forecast
+   * 
+   * @param request The request object
+   * @return BuShortTermForecast
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuShortTermForecast getWorkforcemanagementBusinessunitWeekShorttermforecast(GetWorkforcemanagementBusinessunitWeekShorttermforecastRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuShortTermForecast> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuShortTermForecast>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a short term forecast
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuShortTermForecast> getWorkforcemanagementBusinessunitWeekShorttermforecast(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuShortTermForecast>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuShortTermForecast> response = (ApiResponse<BuShortTermForecast>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuShortTermForecast> response = (ApiResponse<BuShortTermForecast>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the result of a short term forecast calculation
+   * Includes modifications unless you pass the doNotApplyModifications query parameter
+   * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param forecastId The ID of the forecast (required)
+   * @param weekNumber The week number to fetch (for multi-week forecasts) (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+   * @return BuForecastResultResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuForecastResultResponse getWorkforcemanagementBusinessunitWeekShorttermforecastData(String businessUnitId, LocalDate weekDateId, String forecastId, Integer weekNumber, Boolean forceDownloadService) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitWeekShorttermforecastData(createGetWorkforcemanagementBusinessunitWeekShorttermforecastDataRequest(businessUnitId, weekDateId, forecastId, weekNumber, forceDownloadService));
+  }
+
+  /**
+   * Get the result of a short term forecast calculation
+   * Includes modifications unless you pass the doNotApplyModifications query parameter
+   * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param forecastId The ID of the forecast (required)
+   * @param weekNumber The week number to fetch (for multi-week forecasts) (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+   * @return BuForecastResultResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuForecastResultResponse> getWorkforcemanagementBusinessunitWeekShorttermforecastDataWithHttpInfo(String businessUnitId, LocalDate weekDateId, String forecastId, Integer weekNumber, Boolean forceDownloadService) throws IOException {
+    return getWorkforcemanagementBusinessunitWeekShorttermforecastData(createGetWorkforcemanagementBusinessunitWeekShorttermforecastDataRequest(businessUnitId, weekDateId, forecastId, weekNumber, forceDownloadService).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitWeekShorttermforecastDataRequest createGetWorkforcemanagementBusinessunitWeekShorttermforecastDataRequest(String businessUnitId, LocalDate weekDateId, String forecastId, Integer weekNumber, Boolean forceDownloadService) {
+    return GetWorkforcemanagementBusinessunitWeekShorttermforecastDataRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .withForecastId(forecastId)
+    
+            .withWeekNumber(weekNumber)
+    
+            .withForceDownloadService(forceDownloadService)
+    
+            .build();
+  }
+
+  /**
+   * Get the result of a short term forecast calculation
+   * Includes modifications unless you pass the doNotApplyModifications query parameter
+   * @param request The request object
+   * @return BuForecastResultResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuForecastResultResponse getWorkforcemanagementBusinessunitWeekShorttermforecastData(GetWorkforcemanagementBusinessunitWeekShorttermforecastDataRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuForecastResultResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuForecastResultResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the result of a short term forecast calculation
+   * Includes modifications unless you pass the doNotApplyModifications query parameter
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuForecastResultResponse> getWorkforcemanagementBusinessunitWeekShorttermforecastData(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuForecastResultResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuForecastResultResponse> response = (ApiResponse<BuForecastResultResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuForecastResultResponse> response = (ApiResponse<BuForecastResultResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Gets the forecast generation results
+   * 
+   * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param forecastId The ID of the forecast (required)
+   * @return BuForecastGenerationResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuForecastGenerationResult getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(String businessUnitId, LocalDate weekDateId, String forecastId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(createGetWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresultsRequest(businessUnitId, weekDateId, forecastId));
+  }
+
+  /**
+   * Gets the forecast generation results
+   * 
+   * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param forecastId The ID of the forecast (required)
+   * @return BuForecastGenerationResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuForecastGenerationResult> getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresultsWithHttpInfo(String businessUnitId, LocalDate weekDateId, String forecastId) throws IOException {
+    return getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(createGetWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresultsRequest(businessUnitId, weekDateId, forecastId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresultsRequest createGetWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresultsRequest(String businessUnitId, LocalDate weekDateId, String forecastId) {
+    return GetWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresultsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .withForecastId(forecastId)
+    
+            .build();
+  }
+
+  /**
+   * Gets the forecast generation results
+   * 
+   * @param request The request object
+   * @return BuForecastGenerationResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuForecastGenerationResult getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(GetWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuForecastGenerationResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuForecastGenerationResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets the forecast generation results
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuForecastGenerationResult> getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuForecastGenerationResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuForecastGenerationResult> response = (ApiResponse<BuForecastGenerationResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuForecastGenerationResult> response = (ApiResponse<BuForecastGenerationResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Gets the forecast planning group snapshot
+   * 
+   * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param forecastId The ID of the forecast (required)
+   * @return ForecastPlanningGroupsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ForecastPlanningGroupsResponse getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(String businessUnitId, LocalDate weekDateId, String forecastId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(createGetWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroupsRequest(businessUnitId, weekDateId, forecastId));
+  }
+
+  /**
+   * Gets the forecast planning group snapshot
+   * 
+   * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param forecastId The ID of the forecast (required)
+   * @return ForecastPlanningGroupsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ForecastPlanningGroupsResponse> getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroupsWithHttpInfo(String businessUnitId, LocalDate weekDateId, String forecastId) throws IOException {
+    return getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(createGetWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroupsRequest(businessUnitId, weekDateId, forecastId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroupsRequest createGetWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroupsRequest(String businessUnitId, LocalDate weekDateId, String forecastId) {
+    return GetWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroupsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .withForecastId(forecastId)
+    
+            .build();
+  }
+
+  /**
+   * Gets the forecast planning group snapshot
+   * 
+   * @param request The request object
+   * @return ForecastPlanningGroupsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ForecastPlanningGroupsResponse getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(GetWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ForecastPlanningGroupsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ForecastPlanningGroupsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets the forecast planning group snapshot
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ForecastPlanningGroupsResponse> getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ForecastPlanningGroupsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ForecastPlanningGroupsResponse> response = (ApiResponse<ForecastPlanningGroupsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ForecastPlanningGroupsResponse> response = (ApiResponse<ForecastPlanningGroupsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get short term forecasts
+   * Use \&quot;recent\&quot; for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+   * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; to fetch recent forecasts (required)
+   * @return BuShortTermForecastListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuShortTermForecastListing getWorkforcemanagementBusinessunitWeekShorttermforecasts(String businessUnitId, String weekDateId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitWeekShorttermforecasts(createGetWorkforcemanagementBusinessunitWeekShorttermforecastsRequest(businessUnitId, weekDateId));
+  }
+
+  /**
+   * Get short term forecasts
+   * Use \&quot;recent\&quot; for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+   * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; to fetch recent forecasts (required)
+   * @return BuShortTermForecastListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuShortTermForecastListing> getWorkforcemanagementBusinessunitWeekShorttermforecastsWithHttpInfo(String businessUnitId, String weekDateId) throws IOException {
+    return getWorkforcemanagementBusinessunitWeekShorttermforecasts(createGetWorkforcemanagementBusinessunitWeekShorttermforecastsRequest(businessUnitId, weekDateId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitWeekShorttermforecastsRequest createGetWorkforcemanagementBusinessunitWeekShorttermforecastsRequest(String businessUnitId, String weekDateId) {
+    return GetWorkforcemanagementBusinessunitWeekShorttermforecastsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .build();
+  }
+
+  /**
+   * Get short term forecasts
+   * Use \&quot;recent\&quot; for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+   * @param request The request object
+   * @return BuShortTermForecastListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuShortTermForecastListing getWorkforcemanagementBusinessunitWeekShorttermforecasts(GetWorkforcemanagementBusinessunitWeekShorttermforecastsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuShortTermForecastListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuShortTermForecastListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get short term forecasts
+   * Use \&quot;recent\&quot; for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuShortTermForecastListing> getWorkforcemanagementBusinessunitWeekShorttermforecasts(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuShortTermForecastListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuShortTermForecastListing> response = (ApiResponse<BuShortTermForecastListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuShortTermForecastListing> response = (ApiResponse<BuShortTermForecastListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get business units
+   * 
+   * @param feature  (optional)
+   * @param divisionId  (optional)
+   * @return BusinessUnitListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnitListing getWorkforcemanagementBusinessunits(String feature, String divisionId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunits(createGetWorkforcemanagementBusinessunitsRequest(feature, divisionId));
+  }
+
+  /**
+   * Get business units
+   * 
+   * @param feature  (optional)
+   * @param divisionId  (optional)
+   * @return BusinessUnitListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnitListing> getWorkforcemanagementBusinessunitsWithHttpInfo(String feature, String divisionId) throws IOException {
+    return getWorkforcemanagementBusinessunits(createGetWorkforcemanagementBusinessunitsRequest(feature, divisionId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitsRequest createGetWorkforcemanagementBusinessunitsRequest(String feature, String divisionId) {
+    return GetWorkforcemanagementBusinessunitsRequest.builder()
+            .withFeature(feature)
+    
+            .withDivisionId(divisionId)
+    
+            .build();
+  }
+
+  /**
+   * Get business units
+   * 
+   * @param request The request object
+   * @return BusinessUnitListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnitListing getWorkforcemanagementBusinessunits(GetWorkforcemanagementBusinessunitsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BusinessUnitListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessUnitListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get business units
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnitListing> getWorkforcemanagementBusinessunits(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BusinessUnitListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnitListing> response = (ApiResponse<BusinessUnitListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnitListing> response = (ApiResponse<BusinessUnitListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get business units across divisions
+   * 
+   * @param divisionId The divisionIds to filter by. If omitted, will return business units in all divisions (optional)
+   * @return BusinessUnitListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnitListing getWorkforcemanagementBusinessunitsDivisionviews(List<String> divisionId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitsDivisionviews(createGetWorkforcemanagementBusinessunitsDivisionviewsRequest(divisionId));
+  }
+
+  /**
+   * Get business units across divisions
+   * 
+   * @param divisionId The divisionIds to filter by. If omitted, will return business units in all divisions (optional)
+   * @return BusinessUnitListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnitListing> getWorkforcemanagementBusinessunitsDivisionviewsWithHttpInfo(List<String> divisionId) throws IOException {
+    return getWorkforcemanagementBusinessunitsDivisionviews(createGetWorkforcemanagementBusinessunitsDivisionviewsRequest(divisionId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitsDivisionviewsRequest createGetWorkforcemanagementBusinessunitsDivisionviewsRequest(List<String> divisionId) {
+    return GetWorkforcemanagementBusinessunitsDivisionviewsRequest.builder()
+            .withDivisionId(divisionId)
+    
+            .build();
+  }
+
+  /**
+   * Get business units across divisions
+   * 
+   * @param request The request object
+   * @return BusinessUnitListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnitListing getWorkforcemanagementBusinessunitsDivisionviews(GetWorkforcemanagementBusinessunitsDivisionviewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BusinessUnitListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessUnitListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get business units across divisions
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnitListing> getWorkforcemanagementBusinessunitsDivisionviews(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BusinessUnitListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnitListing> response = (ApiResponse<BusinessUnitListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnitListing> response = (ApiResponse<BusinessUnitListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get management unit
    * 
    * @param muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
@@ -1148,6 +3780,89 @@ public class WorkforceManagementApi {
 
   
   /**
+   * Get a list of user schedule adherence records for the requested management unit
+   * 
+   * @param managementUnitId The management unit ID of the management unit. (required)
+   * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+   * @return UserScheduleAdherenceListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserScheduleAdherenceListing getWorkforcemanagementManagementunitAdherence(String managementUnitId, Boolean forceDownloadService) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitAdherence(createGetWorkforcemanagementManagementunitAdherenceRequest(managementUnitId, forceDownloadService));
+  }
+
+  /**
+   * Get a list of user schedule adherence records for the requested management unit
+   * 
+   * @param managementUnitId The management unit ID of the management unit. (required)
+   * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+   * @return UserScheduleAdherenceListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserScheduleAdherenceListing> getWorkforcemanagementManagementunitAdherenceWithHttpInfo(String managementUnitId, Boolean forceDownloadService) throws IOException {
+    return getWorkforcemanagementManagementunitAdherence(createGetWorkforcemanagementManagementunitAdherenceRequest(managementUnitId, forceDownloadService).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementManagementunitAdherenceRequest createGetWorkforcemanagementManagementunitAdherenceRequest(String managementUnitId, Boolean forceDownloadService) {
+    return GetWorkforcemanagementManagementunitAdherenceRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withForceDownloadService(forceDownloadService)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of user schedule adherence records for the requested management unit
+   * 
+   * @param request The request object
+   * @return UserScheduleAdherenceListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserScheduleAdherenceListing getWorkforcemanagementManagementunitAdherence(GetWorkforcemanagementManagementunitAdherenceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserScheduleAdherenceListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserScheduleAdherenceListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of user schedule adherence records for the requested management unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserScheduleAdherenceListing> getWorkforcemanagementManagementunitAdherence(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserScheduleAdherenceListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserScheduleAdherenceListing> response = (ApiResponse<UserScheduleAdherenceListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserScheduleAdherenceListing> response = (ApiResponse<UserScheduleAdherenceListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get data for agent in the management unit
    * 
    * @param managementUnitId The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
@@ -1225,6 +3940,89 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WfmAgent> response = (ApiResponse<WfmAgent>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Gets all the shift trades for a given agent
+   * 
+   * @param managementUnitId The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param agentId The agent id (required)
+   * @return ShiftTradeListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeListResponse getWorkforcemanagementManagementunitAgentShifttrades(String managementUnitId, String agentId) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitAgentShifttrades(createGetWorkforcemanagementManagementunitAgentShifttradesRequest(managementUnitId, agentId));
+  }
+
+  /**
+   * Gets all the shift trades for a given agent
+   * 
+   * @param managementUnitId The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param agentId The agent id (required)
+   * @return ShiftTradeListResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeListResponse> getWorkforcemanagementManagementunitAgentShifttradesWithHttpInfo(String managementUnitId, String agentId) throws IOException {
+    return getWorkforcemanagementManagementunitAgentShifttrades(createGetWorkforcemanagementManagementunitAgentShifttradesRequest(managementUnitId, agentId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementManagementunitAgentShifttradesRequest createGetWorkforcemanagementManagementunitAgentShifttradesRequest(String managementUnitId, String agentId) {
+    return GetWorkforcemanagementManagementunitAgentShifttradesRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withAgentId(agentId)
+    
+            .build();
+  }
+
+  /**
+   * Gets all the shift trades for a given agent
+   * 
+   * @param request The request object
+   * @return ShiftTradeListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeListResponse getWorkforcemanagementManagementunitAgentShifttrades(GetWorkforcemanagementManagementunitAgentShifttradesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeListResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeListResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets all the shift trades for a given agent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeListResponse> getWorkforcemanagementManagementunitAgentShifttrades(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeListResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeListResponse> response = (ApiResponse<ShiftTradeListResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeListResponse> response = (ApiResponse<ShiftTradeListResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2488,6 +5286,93 @@ public class WorkforceManagementApi {
 
   
   /**
+   * Gets all the shift trades for a given week
+   * 
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param evaluateMatches Whether to evaluate the matches for violations (optional, default to true)
+   * @return WeekShiftTradeListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WeekShiftTradeListResponse getWorkforcemanagementManagementunitWeekShifttrades(String managementUnitId, LocalDate weekDateId, Boolean evaluateMatches) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitWeekShifttrades(createGetWorkforcemanagementManagementunitWeekShifttradesRequest(managementUnitId, weekDateId, evaluateMatches));
+  }
+
+  /**
+   * Gets all the shift trades for a given week
+   * 
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param evaluateMatches Whether to evaluate the matches for violations (optional, default to true)
+   * @return WeekShiftTradeListResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WeekShiftTradeListResponse> getWorkforcemanagementManagementunitWeekShifttradesWithHttpInfo(String managementUnitId, LocalDate weekDateId, Boolean evaluateMatches) throws IOException {
+    return getWorkforcemanagementManagementunitWeekShifttrades(createGetWorkforcemanagementManagementunitWeekShifttradesRequest(managementUnitId, weekDateId, evaluateMatches).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementManagementunitWeekShifttradesRequest createGetWorkforcemanagementManagementunitWeekShifttradesRequest(String managementUnitId, LocalDate weekDateId, Boolean evaluateMatches) {
+    return GetWorkforcemanagementManagementunitWeekShifttradesRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .withEvaluateMatches(evaluateMatches)
+    
+            .build();
+  }
+
+  /**
+   * Gets all the shift trades for a given week
+   * 
+   * @param request The request object
+   * @return WeekShiftTradeListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WeekShiftTradeListResponse getWorkforcemanagementManagementunitWeekShifttrades(GetWorkforcemanagementManagementunitWeekShifttradesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WeekShiftTradeListResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WeekShiftTradeListResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets all the shift trades for a given week
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WeekShiftTradeListResponse> getWorkforcemanagementManagementunitWeekShifttrades(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WeekShiftTradeListResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WeekShiftTradeListResponse> response = (ApiResponse<WeekShiftTradeListResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WeekShiftTradeListResponse> response = (ApiResponse<WeekShiftTradeListResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get the final result of a short term forecast calculation with modifications applied
    * 
    * @param managementUnitId The management unit ID of the management unit to which the forecast belongs (required)
@@ -3389,6 +6274,434 @@ public class WorkforceManagementApi {
 
   
   /**
+   * Update business unit
+   * 
+   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param body body (optional)
+   * @return BusinessUnit
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnit patchWorkforcemanagementBusinessunit(String businessUnitId, UpdateBusinessUnitRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunit(createPatchWorkforcemanagementBusinessunitRequest(businessUnitId, body));
+  }
+
+  /**
+   * Update business unit
+   * 
+   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param body body (optional)
+   * @return BusinessUnit
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnit> patchWorkforcemanagementBusinessunitWithHttpInfo(String businessUnitId, UpdateBusinessUnitRequest body) throws IOException {
+    return patchWorkforcemanagementBusinessunit(createPatchWorkforcemanagementBusinessunitRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitRequest createPatchWorkforcemanagementBusinessunitRequest(String businessUnitId, UpdateBusinessUnitRequest body) {
+    return PatchWorkforcemanagementBusinessunitRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update business unit
+   * 
+   * @param request The request object
+   * @return BusinessUnit
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnit patchWorkforcemanagementBusinessunit(PatchWorkforcemanagementBusinessunitRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BusinessUnit> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessUnit>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnit> patchWorkforcemanagementBusinessunit(ApiRequest<UpdateBusinessUnitRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BusinessUnit>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnit> response = (ApiResponse<BusinessUnit>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnit> response = (ApiResponse<BusinessUnit>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update an activity code
+   * 
+   * @param buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param acId The ID of the activity code to update (required)
+   * @param body body (optional)
+   * @return BusinessUnitActivityCode
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnitActivityCode patchWorkforcemanagementBusinessunitActivitycode(String buId, String acId, UpdateActivityCodeRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitActivitycode(createPatchWorkforcemanagementBusinessunitActivitycodeRequest(buId, acId, body));
+  }
+
+  /**
+   * Update an activity code
+   * 
+   * @param buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param acId The ID of the activity code to update (required)
+   * @param body body (optional)
+   * @return BusinessUnitActivityCode
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnitActivityCode> patchWorkforcemanagementBusinessunitActivitycodeWithHttpInfo(String buId, String acId, UpdateActivityCodeRequest body) throws IOException {
+    return patchWorkforcemanagementBusinessunitActivitycode(createPatchWorkforcemanagementBusinessunitActivitycodeRequest(buId, acId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitActivitycodeRequest createPatchWorkforcemanagementBusinessunitActivitycodeRequest(String buId, String acId, UpdateActivityCodeRequest body) {
+    return PatchWorkforcemanagementBusinessunitActivitycodeRequest.builder()
+            .withBuId(buId)
+    
+            .withAcId(acId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update an activity code
+   * 
+   * @param request The request object
+   * @return BusinessUnitActivityCode
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnitActivityCode patchWorkforcemanagementBusinessunitActivitycode(PatchWorkforcemanagementBusinessunitActivitycodeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BusinessUnitActivityCode> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessUnitActivityCode>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an activity code
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnitActivityCode> patchWorkforcemanagementBusinessunitActivitycode(ApiRequest<UpdateActivityCodeRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BusinessUnitActivityCode>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnitActivityCode> response = (ApiResponse<BusinessUnitActivityCode>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnitActivityCode> response = (ApiResponse<BusinessUnitActivityCode>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Updates the planning group
+   * 
+   * @param businessUnitId The ID of the business unit. (required)
+   * @param planningGroupId The ID of a planning group to update (required)
+   * @param body body (optional)
+   * @return PlanningGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PlanningGroup patchWorkforcemanagementBusinessunitPlanninggroup(String businessUnitId, String planningGroupId, UpdatePlanningGroupRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitPlanninggroup(createPatchWorkforcemanagementBusinessunitPlanninggroupRequest(businessUnitId, planningGroupId, body));
+  }
+
+  /**
+   * Updates the planning group
+   * 
+   * @param businessUnitId The ID of the business unit. (required)
+   * @param planningGroupId The ID of a planning group to update (required)
+   * @param body body (optional)
+   * @return PlanningGroup
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PlanningGroup> patchWorkforcemanagementBusinessunitPlanninggroupWithHttpInfo(String businessUnitId, String planningGroupId, UpdatePlanningGroupRequest body) throws IOException {
+    return patchWorkforcemanagementBusinessunitPlanninggroup(createPatchWorkforcemanagementBusinessunitPlanninggroupRequest(businessUnitId, planningGroupId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitPlanninggroupRequest createPatchWorkforcemanagementBusinessunitPlanninggroupRequest(String businessUnitId, String planningGroupId, UpdatePlanningGroupRequest body) {
+    return PatchWorkforcemanagementBusinessunitPlanninggroupRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withPlanningGroupId(planningGroupId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Updates the planning group
+   * 
+   * @param request The request object
+   * @return PlanningGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PlanningGroup patchWorkforcemanagementBusinessunitPlanninggroup(PatchWorkforcemanagementBusinessunitPlanninggroupRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PlanningGroup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PlanningGroup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates the planning group
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PlanningGroup> patchWorkforcemanagementBusinessunitPlanninggroup(ApiRequest<UpdatePlanningGroupRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PlanningGroup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PlanningGroup> response = (ApiResponse<PlanningGroup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PlanningGroup> response = (ApiResponse<PlanningGroup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Mark a schedule run as applied
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param runId The ID of the schedule run (required)
+   * @param body body (optional)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchWorkforcemanagementBusinessunitSchedulingRun(String businessUnitId, String runId, PatchBuScheduleRunRequest body) throws IOException, ApiException {
+     patchWorkforcemanagementBusinessunitSchedulingRun(createPatchWorkforcemanagementBusinessunitSchedulingRunRequest(businessUnitId, runId, body));
+  }
+
+  /**
+   * Mark a schedule run as applied
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param runId The ID of the schedule run (required)
+   * @param body body (optional)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchWorkforcemanagementBusinessunitSchedulingRunWithHttpInfo(String businessUnitId, String runId, PatchBuScheduleRunRequest body) throws IOException {
+    return patchWorkforcemanagementBusinessunitSchedulingRun(createPatchWorkforcemanagementBusinessunitSchedulingRunRequest(businessUnitId, runId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitSchedulingRunRequest createPatchWorkforcemanagementBusinessunitSchedulingRunRequest(String businessUnitId, String runId, PatchBuScheduleRunRequest body) {
+    return PatchWorkforcemanagementBusinessunitSchedulingRunRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withRunId(runId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Mark a schedule run as applied
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void patchWorkforcemanagementBusinessunitSchedulingRun(PatchWorkforcemanagementBusinessunitSchedulingRunRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Mark a schedule run as applied
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> patchWorkforcemanagementBusinessunitSchedulingRun(ApiRequest<PatchBuScheduleRunRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Updates a service goal template
+   * 
+   * @param businessUnitId The ID of the business unit. (required)
+   * @param serviceGoalTemplateId The ID of a service goal template to update (required)
+   * @param body body (optional)
+   * @return ServiceGoalTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ServiceGoalTemplate patchWorkforcemanagementBusinessunitServicegoaltemplate(String businessUnitId, String serviceGoalTemplateId, UpdateServiceGoalTemplate body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitServicegoaltemplate(createPatchWorkforcemanagementBusinessunitServicegoaltemplateRequest(businessUnitId, serviceGoalTemplateId, body));
+  }
+
+  /**
+   * Updates a service goal template
+   * 
+   * @param businessUnitId The ID of the business unit. (required)
+   * @param serviceGoalTemplateId The ID of a service goal template to update (required)
+   * @param body body (optional)
+   * @return ServiceGoalTemplate
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ServiceGoalTemplate> patchWorkforcemanagementBusinessunitServicegoaltemplateWithHttpInfo(String businessUnitId, String serviceGoalTemplateId, UpdateServiceGoalTemplate body) throws IOException {
+    return patchWorkforcemanagementBusinessunitServicegoaltemplate(createPatchWorkforcemanagementBusinessunitServicegoaltemplateRequest(businessUnitId, serviceGoalTemplateId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest createPatchWorkforcemanagementBusinessunitServicegoaltemplateRequest(String businessUnitId, String serviceGoalTemplateId, UpdateServiceGoalTemplate body) {
+    return PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withServiceGoalTemplateId(serviceGoalTemplateId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Updates a service goal template
+   * 
+   * @param request The request object
+   * @return ServiceGoalTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ServiceGoalTemplate patchWorkforcemanagementBusinessunitServicegoaltemplate(PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ServiceGoalTemplate> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ServiceGoalTemplate>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates a service goal template
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ServiceGoalTemplate> patchWorkforcemanagementBusinessunitServicegoaltemplate(ApiRequest<UpdateServiceGoalTemplate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ServiceGoalTemplate>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ServiceGoalTemplate> response = (ApiResponse<ServiceGoalTemplate>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ServiceGoalTemplate> response = (ApiResponse<ServiceGoalTemplate>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Update the requested management unit
    * 
    * @param muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
@@ -4006,6 +7319,97 @@ public class WorkforceManagementApi {
 
   
   /**
+   * Updates a shift trade. This route can only be called by the initiating agent
+   * 
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @param tradeId The ID of the shift trade to update (required)
+   * @return ShiftTradeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeResponse patchWorkforcemanagementManagementunitWeekShifttrade(String managementUnitId, LocalDate weekDateId, PatchShiftTradeRequest body, String tradeId) throws IOException, ApiException {
+    return  patchWorkforcemanagementManagementunitWeekShifttrade(createPatchWorkforcemanagementManagementunitWeekShifttradeRequest(managementUnitId, weekDateId, body, tradeId));
+  }
+
+  /**
+   * Updates a shift trade. This route can only be called by the initiating agent
+   * 
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @param tradeId The ID of the shift trade to update (required)
+   * @return ShiftTradeResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeResponse> patchWorkforcemanagementManagementunitWeekShifttradeWithHttpInfo(String managementUnitId, LocalDate weekDateId, PatchShiftTradeRequest body, String tradeId) throws IOException {
+    return patchWorkforcemanagementManagementunitWeekShifttrade(createPatchWorkforcemanagementManagementunitWeekShifttradeRequest(managementUnitId, weekDateId, body, tradeId).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementManagementunitWeekShifttradeRequest createPatchWorkforcemanagementManagementunitWeekShifttradeRequest(String managementUnitId, LocalDate weekDateId, PatchShiftTradeRequest body, String tradeId) {
+    return PatchWorkforcemanagementManagementunitWeekShifttradeRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .withBody(body)
+    
+            .withTradeId(tradeId)
+    
+            .build();
+  }
+
+  /**
+   * Updates a shift trade. This route can only be called by the initiating agent
+   * 
+   * @param request The request object
+   * @return ShiftTradeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeResponse patchWorkforcemanagementManagementunitWeekShifttrade(PatchWorkforcemanagementManagementunitWeekShifttradeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates a shift trade. This route can only be called by the initiating agent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeResponse> patchWorkforcemanagementManagementunitWeekShifttrade(ApiRequest<PatchShiftTradeRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeResponse> response = (ApiResponse<ShiftTradeResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeResponse> response = (ApiResponse<ShiftTradeResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Update a work plan
    * 
    * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
@@ -4249,6 +7653,1232 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WfmHistoricalAdherenceResponse> response = (ApiResponse<WfmHistoricalAdherenceResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get published schedule for the current user
+   * 
+   * @param body body (optional)
+   * @return BuCurrentAgentScheduleSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuCurrentAgentScheduleSearchResponse postWorkforcemanagementAgentschedulesMine(BuGetCurrentAgentScheduleRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementAgentschedulesMine(createPostWorkforcemanagementAgentschedulesMineRequest(body));
+  }
+
+  /**
+   * Get published schedule for the current user
+   * 
+   * @param body body (optional)
+   * @return BuCurrentAgentScheduleSearchResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuCurrentAgentScheduleSearchResponse> postWorkforcemanagementAgentschedulesMineWithHttpInfo(BuGetCurrentAgentScheduleRequest body) throws IOException {
+    return postWorkforcemanagementAgentschedulesMine(createPostWorkforcemanagementAgentschedulesMineRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementAgentschedulesMineRequest createPostWorkforcemanagementAgentschedulesMineRequest(BuGetCurrentAgentScheduleRequest body) {
+    return PostWorkforcemanagementAgentschedulesMineRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Get published schedule for the current user
+   * 
+   * @param request The request object
+   * @return BuCurrentAgentScheduleSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuCurrentAgentScheduleSearchResponse postWorkforcemanagementAgentschedulesMine(PostWorkforcemanagementAgentschedulesMineRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuCurrentAgentScheduleSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuCurrentAgentScheduleSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get published schedule for the current user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuCurrentAgentScheduleSearchResponse> postWorkforcemanagementAgentschedulesMine(ApiRequest<BuGetCurrentAgentScheduleRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuCurrentAgentScheduleSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuCurrentAgentScheduleSearchResponse> response = (ApiResponse<BuCurrentAgentScheduleSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuCurrentAgentScheduleSearchResponse> response = (ApiResponse<BuCurrentAgentScheduleSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create a new activity code
+   * 
+   * @param buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param body body (optional)
+   * @return BusinessUnitActivityCode
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnitActivityCode postWorkforcemanagementBusinessunitActivitycodes(String buId, CreateActivityCodeRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitActivitycodes(createPostWorkforcemanagementBusinessunitActivitycodesRequest(buId, body));
+  }
+
+  /**
+   * Create a new activity code
+   * 
+   * @param buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param body body (optional)
+   * @return BusinessUnitActivityCode
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnitActivityCode> postWorkforcemanagementBusinessunitActivitycodesWithHttpInfo(String buId, CreateActivityCodeRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitActivitycodes(createPostWorkforcemanagementBusinessunitActivitycodesRequest(buId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitActivitycodesRequest createPostWorkforcemanagementBusinessunitActivitycodesRequest(String buId, CreateActivityCodeRequest body) {
+    return PostWorkforcemanagementBusinessunitActivitycodesRequest.builder()
+            .withBuId(buId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a new activity code
+   * 
+   * @param request The request object
+   * @return BusinessUnitActivityCode
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnitActivityCode postWorkforcemanagementBusinessunitActivitycodes(PostWorkforcemanagementBusinessunitActivitycodesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BusinessUnitActivityCode> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessUnitActivityCode>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a new activity code
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnitActivityCode> postWorkforcemanagementBusinessunitActivitycodes(ApiRequest<CreateActivityCodeRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BusinessUnitActivityCode>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnitActivityCode> response = (ApiResponse<BusinessUnitActivityCode>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnitActivityCode> response = (ApiResponse<BusinessUnitActivityCode>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Search published schedules
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (optional)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+   * @return BuAsyncAgentSchedulesSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementBusinessunitAgentschedulesSearch(String businessUnitId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitAgentschedulesSearch(createPostWorkforcemanagementBusinessunitAgentschedulesSearchRequest(businessUnitId, body, forceAsync, forceDownloadService));
+  }
+
+  /**
+   * Search published schedules
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (optional)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+   * @return BuAsyncAgentSchedulesSearchResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAsyncAgentSchedulesSearchResponse> postWorkforcemanagementBusinessunitAgentschedulesSearchWithHttpInfo(String businessUnitId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException {
+    return postWorkforcemanagementBusinessunitAgentschedulesSearch(createPostWorkforcemanagementBusinessunitAgentschedulesSearchRequest(businessUnitId, body, forceAsync, forceDownloadService).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest createPostWorkforcemanagementBusinessunitAgentschedulesSearchRequest(String businessUnitId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) {
+    return PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withBody(body)
+    
+            .withForceAsync(forceAsync)
+    
+            .withForceDownloadService(forceDownloadService)
+    
+            .build();
+  }
+
+  /**
+   * Search published schedules
+   * 
+   * @param request The request object
+   * @return BuAsyncAgentSchedulesSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementBusinessunitAgentschedulesSearch(PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuAsyncAgentSchedulesSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuAsyncAgentSchedulesSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search published schedules
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAsyncAgentSchedulesSearchResponse> postWorkforcemanagementBusinessunitAgentschedulesSearch(ApiRequest<BuSearchAgentSchedulesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuAsyncAgentSchedulesSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAsyncAgentSchedulesSearchResponse> response = (ApiResponse<BuAsyncAgentSchedulesSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAsyncAgentSchedulesSearchResponse> response = (ApiResponse<BuAsyncAgentSchedulesSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get intraday data for the given date for the requested planningGroupIds
+   * 
+   * @param businessUnitId The business unit ID of the business unit (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+   * @param body body (optional)
+   * @return AsyncIntradayResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncIntradayResponse postWorkforcemanagementBusinessunitIntraday(String businessUnitId, Boolean forceAsync, IntradayPlanningGroupRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitIntraday(createPostWorkforcemanagementBusinessunitIntradayRequest(businessUnitId, forceAsync, body));
+  }
+
+  /**
+   * Get intraday data for the given date for the requested planningGroupIds
+   * 
+   * @param businessUnitId The business unit ID of the business unit (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+   * @param body body (optional)
+   * @return AsyncIntradayResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncIntradayResponse> postWorkforcemanagementBusinessunitIntradayWithHttpInfo(String businessUnitId, Boolean forceAsync, IntradayPlanningGroupRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitIntraday(createPostWorkforcemanagementBusinessunitIntradayRequest(businessUnitId, forceAsync, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitIntradayRequest createPostWorkforcemanagementBusinessunitIntradayRequest(String businessUnitId, Boolean forceAsync, IntradayPlanningGroupRequest body) {
+    return PostWorkforcemanagementBusinessunitIntradayRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withForceAsync(forceAsync)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Get intraday data for the given date for the requested planningGroupIds
+   * 
+   * @param request The request object
+   * @return AsyncIntradayResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncIntradayResponse postWorkforcemanagementBusinessunitIntraday(PostWorkforcemanagementBusinessunitIntradayRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncIntradayResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncIntradayResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get intraday data for the given date for the requested planningGroupIds
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncIntradayResponse> postWorkforcemanagementBusinessunitIntraday(ApiRequest<IntradayPlanningGroupRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncIntradayResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncIntradayResponse> response = (ApiResponse<AsyncIntradayResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncIntradayResponse> response = (ApiResponse<AsyncIntradayResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Adds a new planning group
+   * 
+   * @param businessUnitId The ID of the business unit. (required)
+   * @param body body (optional)
+   * @return PlanningGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PlanningGroup postWorkforcemanagementBusinessunitPlanninggroups(String businessUnitId, CreatePlanningGroupRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitPlanninggroups(createPostWorkforcemanagementBusinessunitPlanninggroupsRequest(businessUnitId, body));
+  }
+
+  /**
+   * Adds a new planning group
+   * 
+   * @param businessUnitId The ID of the business unit. (required)
+   * @param body body (optional)
+   * @return PlanningGroup
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PlanningGroup> postWorkforcemanagementBusinessunitPlanninggroupsWithHttpInfo(String businessUnitId, CreatePlanningGroupRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitPlanninggroups(createPostWorkforcemanagementBusinessunitPlanninggroupsRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitPlanninggroupsRequest createPostWorkforcemanagementBusinessunitPlanninggroupsRequest(String businessUnitId, CreatePlanningGroupRequest body) {
+    return PostWorkforcemanagementBusinessunitPlanninggroupsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Adds a new planning group
+   * 
+   * @param request The request object
+   * @return PlanningGroup
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PlanningGroup postWorkforcemanagementBusinessunitPlanninggroups(PostWorkforcemanagementBusinessunitPlanninggroupsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PlanningGroup> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PlanningGroup>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Adds a new planning group
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PlanningGroup> postWorkforcemanagementBusinessunitPlanninggroups(ApiRequest<CreatePlanningGroupRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PlanningGroup>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PlanningGroup> response = (ApiResponse<PlanningGroup>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PlanningGroup> response = (ApiResponse<PlanningGroup>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Adds a new service goal template
+   * 
+   * @param businessUnitId The ID of the business unit. (required)
+   * @param body body (optional)
+   * @return ServiceGoalTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ServiceGoalTemplate postWorkforcemanagementBusinessunitServicegoaltemplates(String businessUnitId, CreateServiceGoalTemplate body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitServicegoaltemplates(createPostWorkforcemanagementBusinessunitServicegoaltemplatesRequest(businessUnitId, body));
+  }
+
+  /**
+   * Adds a new service goal template
+   * 
+   * @param businessUnitId The ID of the business unit. (required)
+   * @param body body (optional)
+   * @return ServiceGoalTemplate
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ServiceGoalTemplate> postWorkforcemanagementBusinessunitServicegoaltemplatesWithHttpInfo(String businessUnitId, CreateServiceGoalTemplate body) throws IOException {
+    return postWorkforcemanagementBusinessunitServicegoaltemplates(createPostWorkforcemanagementBusinessunitServicegoaltemplatesRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitServicegoaltemplatesRequest createPostWorkforcemanagementBusinessunitServicegoaltemplatesRequest(String businessUnitId, CreateServiceGoalTemplate body) {
+    return PostWorkforcemanagementBusinessunitServicegoaltemplatesRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Adds a new service goal template
+   * 
+   * @param request The request object
+   * @return ServiceGoalTemplate
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ServiceGoalTemplate postWorkforcemanagementBusinessunitServicegoaltemplates(PostWorkforcemanagementBusinessunitServicegoaltemplatesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ServiceGoalTemplate> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ServiceGoalTemplate>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Adds a new service goal template
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ServiceGoalTemplate> postWorkforcemanagementBusinessunitServicegoaltemplates(ApiRequest<CreateServiceGoalTemplate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ServiceGoalTemplate>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ServiceGoalTemplate> response = (ApiResponse<ServiceGoalTemplate>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ServiceGoalTemplate> response = (ApiResponse<ServiceGoalTemplate>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Loads agent schedule data from the schedule. Used in combination with the metadata route
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param scheduleId The ID of the schedule (required)
+   * @param body body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+   * @return BuAsyncAgentSchedulesQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAsyncAgentSchedulesQueryResponse postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(String businessUnitId, LocalDate weekId, String scheduleId, BuQueryAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(createPostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryRequest(businessUnitId, weekId, scheduleId, body, forceAsync, forceDownloadService));
+  }
+
+  /**
+   * Loads agent schedule data from the schedule. Used in combination with the metadata route
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param scheduleId The ID of the schedule (required)
+   * @param body body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+   * @return BuAsyncAgentSchedulesQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAsyncAgentSchedulesQueryResponse> postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryWithHttpInfo(String businessUnitId, LocalDate weekId, String scheduleId, BuQueryAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException {
+    return postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(createPostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryRequest(businessUnitId, weekId, scheduleId, body, forceAsync, forceDownloadService).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryRequest createPostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryRequest(String businessUnitId, LocalDate weekId, String scheduleId, BuQueryAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) {
+    return PostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekId(weekId)
+    
+            .withScheduleId(scheduleId)
+    
+            .withBody(body)
+    
+            .withForceAsync(forceAsync)
+    
+            .withForceDownloadService(forceDownloadService)
+    
+            .build();
+  }
+
+  /**
+   * Loads agent schedule data from the schedule. Used in combination with the metadata route
+   * 
+   * @param request The request object
+   * @return BuAsyncAgentSchedulesQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAsyncAgentSchedulesQueryResponse postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(PostWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuAsyncAgentSchedulesQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuAsyncAgentSchedulesQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Loads agent schedule data from the schedule. Used in combination with the metadata route
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAsyncAgentSchedulesQueryResponse> postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(ApiRequest<BuQueryAgentSchedulesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuAsyncAgentSchedulesQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAsyncAgentSchedulesQueryResponse> response = (ApiResponse<BuAsyncAgentSchedulesQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAsyncAgentSchedulesQueryResponse> response = (ApiResponse<BuAsyncAgentSchedulesQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Copy a schedule
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param scheduleId The ID of the schedule to copy (required)
+   * @param body body (required)
+   * @return BuAsyncScheduleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAsyncScheduleResponse postWorkforcemanagementBusinessunitWeekScheduleCopy(String businessUnitId, LocalDate weekId, String scheduleId, BuCopyScheduleRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitWeekScheduleCopy(createPostWorkforcemanagementBusinessunitWeekScheduleCopyRequest(businessUnitId, weekId, scheduleId, body));
+  }
+
+  /**
+   * Copy a schedule
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param scheduleId The ID of the schedule to copy (required)
+   * @param body body (required)
+   * @return BuAsyncScheduleResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAsyncScheduleResponse> postWorkforcemanagementBusinessunitWeekScheduleCopyWithHttpInfo(String businessUnitId, LocalDate weekId, String scheduleId, BuCopyScheduleRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitWeekScheduleCopy(createPostWorkforcemanagementBusinessunitWeekScheduleCopyRequest(businessUnitId, weekId, scheduleId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitWeekScheduleCopyRequest createPostWorkforcemanagementBusinessunitWeekScheduleCopyRequest(String businessUnitId, LocalDate weekId, String scheduleId, BuCopyScheduleRequest body) {
+    return PostWorkforcemanagementBusinessunitWeekScheduleCopyRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekId(weekId)
+    
+            .withScheduleId(scheduleId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Copy a schedule
+   * 
+   * @param request The request object
+   * @return BuAsyncScheduleResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAsyncScheduleResponse postWorkforcemanagementBusinessunitWeekScheduleCopy(PostWorkforcemanagementBusinessunitWeekScheduleCopyRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuAsyncScheduleResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuAsyncScheduleResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Copy a schedule
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAsyncScheduleResponse> postWorkforcemanagementBusinessunitWeekScheduleCopy(ApiRequest<BuCopyScheduleRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuAsyncScheduleResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAsyncScheduleResponse> response = (ApiResponse<BuAsyncScheduleResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAsyncScheduleResponse> response = (ApiResponse<BuAsyncScheduleResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Start a rescheduling run
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param scheduleId The ID of the schedule (required)
+   * @param body body (required)
+   * @return BuAsyncScheduleRunResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAsyncScheduleRunResponse postWorkforcemanagementBusinessunitWeekScheduleReschedule(String businessUnitId, LocalDate weekId, String scheduleId, BuRescheduleRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitWeekScheduleReschedule(createPostWorkforcemanagementBusinessunitWeekScheduleRescheduleRequest(businessUnitId, weekId, scheduleId, body));
+  }
+
+  /**
+   * Start a rescheduling run
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param scheduleId The ID of the schedule (required)
+   * @param body body (required)
+   * @return BuAsyncScheduleRunResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAsyncScheduleRunResponse> postWorkforcemanagementBusinessunitWeekScheduleRescheduleWithHttpInfo(String businessUnitId, LocalDate weekId, String scheduleId, BuRescheduleRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitWeekScheduleReschedule(createPostWorkforcemanagementBusinessunitWeekScheduleRescheduleRequest(businessUnitId, weekId, scheduleId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitWeekScheduleRescheduleRequest createPostWorkforcemanagementBusinessunitWeekScheduleRescheduleRequest(String businessUnitId, LocalDate weekId, String scheduleId, BuRescheduleRequest body) {
+    return PostWorkforcemanagementBusinessunitWeekScheduleRescheduleRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekId(weekId)
+    
+            .withScheduleId(scheduleId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Start a rescheduling run
+   * 
+   * @param request The request object
+   * @return BuAsyncScheduleRunResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAsyncScheduleRunResponse postWorkforcemanagementBusinessunitWeekScheduleReschedule(PostWorkforcemanagementBusinessunitWeekScheduleRescheduleRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuAsyncScheduleRunResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuAsyncScheduleRunResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Start a rescheduling run
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAsyncScheduleRunResponse> postWorkforcemanagementBusinessunitWeekScheduleReschedule(ApiRequest<BuRescheduleRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuAsyncScheduleRunResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAsyncScheduleRunResponse> response = (ApiResponse<BuAsyncScheduleRunResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAsyncScheduleRunResponse> response = (ApiResponse<BuAsyncScheduleRunResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create a blank schedule
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @return BuScheduleMetadata
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuScheduleMetadata postWorkforcemanagementBusinessunitWeekSchedules(String businessUnitId, LocalDate weekId, BuCreateBlankScheduleRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitWeekSchedules(createPostWorkforcemanagementBusinessunitWeekSchedulesRequest(businessUnitId, weekId, body));
+  }
+
+  /**
+   * Create a blank schedule
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @return BuScheduleMetadata
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuScheduleMetadata> postWorkforcemanagementBusinessunitWeekSchedulesWithHttpInfo(String businessUnitId, LocalDate weekId, BuCreateBlankScheduleRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitWeekSchedules(createPostWorkforcemanagementBusinessunitWeekSchedulesRequest(businessUnitId, weekId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitWeekSchedulesRequest createPostWorkforcemanagementBusinessunitWeekSchedulesRequest(String businessUnitId, LocalDate weekId, BuCreateBlankScheduleRequest body) {
+    return PostWorkforcemanagementBusinessunitWeekSchedulesRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekId(weekId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a blank schedule
+   * 
+   * @param request The request object
+   * @return BuScheduleMetadata
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuScheduleMetadata postWorkforcemanagementBusinessunitWeekSchedules(PostWorkforcemanagementBusinessunitWeekSchedulesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuScheduleMetadata> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuScheduleMetadata>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a blank schedule
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuScheduleMetadata> postWorkforcemanagementBusinessunitWeekSchedules(ApiRequest<BuCreateBlankScheduleRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuScheduleMetadata>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuScheduleMetadata> response = (ApiResponse<BuScheduleMetadata>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuScheduleMetadata> response = (ApiResponse<BuScheduleMetadata>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Generate a schedule
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @return BuAsyncScheduleRunResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAsyncScheduleRunResponse postWorkforcemanagementBusinessunitWeekSchedulesGenerate(String businessUnitId, LocalDate weekId, BuGenerateScheduleRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitWeekSchedulesGenerate(createPostWorkforcemanagementBusinessunitWeekSchedulesGenerateRequest(businessUnitId, weekId, body));
+  }
+
+  /**
+   * Generate a schedule
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @return BuAsyncScheduleRunResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAsyncScheduleRunResponse> postWorkforcemanagementBusinessunitWeekSchedulesGenerateWithHttpInfo(String businessUnitId, LocalDate weekId, BuGenerateScheduleRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitWeekSchedulesGenerate(createPostWorkforcemanagementBusinessunitWeekSchedulesGenerateRequest(businessUnitId, weekId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitWeekSchedulesGenerateRequest createPostWorkforcemanagementBusinessunitWeekSchedulesGenerateRequest(String businessUnitId, LocalDate weekId, BuGenerateScheduleRequest body) {
+    return PostWorkforcemanagementBusinessunitWeekSchedulesGenerateRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekId(weekId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Generate a schedule
+   * 
+   * @param request The request object
+   * @return BuAsyncScheduleRunResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAsyncScheduleRunResponse postWorkforcemanagementBusinessunitWeekSchedulesGenerate(PostWorkforcemanagementBusinessunitWeekSchedulesGenerateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuAsyncScheduleRunResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuAsyncScheduleRunResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Generate a schedule
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAsyncScheduleRunResponse> postWorkforcemanagementBusinessunitWeekSchedulesGenerate(ApiRequest<BuGenerateScheduleRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuAsyncScheduleRunResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAsyncScheduleRunResponse> response = (ApiResponse<BuAsyncScheduleRunResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAsyncScheduleRunResponse> response = (ApiResponse<BuAsyncScheduleRunResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Copy a short term forecast
+   * 
+   * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param forecastId The ID of the forecast to copy (required)
+   * @param body body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+   * @return AsyncForecastOperationResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncForecastOperationResult postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(String businessUnitId, LocalDate weekDateId, String forecastId, CopyBuForecastRequest body, Boolean forceAsync) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(createPostWorkforcemanagementBusinessunitWeekShorttermforecastCopyRequest(businessUnitId, weekDateId, forecastId, body, forceAsync));
+  }
+
+  /**
+   * Copy a short term forecast
+   * 
+   * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param forecastId The ID of the forecast to copy (required)
+   * @param body body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+   * @return AsyncForecastOperationResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncForecastOperationResult> postWorkforcemanagementBusinessunitWeekShorttermforecastCopyWithHttpInfo(String businessUnitId, LocalDate weekDateId, String forecastId, CopyBuForecastRequest body, Boolean forceAsync) throws IOException {
+    return postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(createPostWorkforcemanagementBusinessunitWeekShorttermforecastCopyRequest(businessUnitId, weekDateId, forecastId, body, forceAsync).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitWeekShorttermforecastCopyRequest createPostWorkforcemanagementBusinessunitWeekShorttermforecastCopyRequest(String businessUnitId, LocalDate weekDateId, String forecastId, CopyBuForecastRequest body, Boolean forceAsync) {
+    return PostWorkforcemanagementBusinessunitWeekShorttermforecastCopyRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .withForecastId(forecastId)
+    
+            .withBody(body)
+    
+            .withForceAsync(forceAsync)
+    
+            .build();
+  }
+
+  /**
+   * Copy a short term forecast
+   * 
+   * @param request The request object
+   * @return AsyncForecastOperationResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncForecastOperationResult postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(PostWorkforcemanagementBusinessunitWeekShorttermforecastCopyRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncForecastOperationResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncForecastOperationResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Copy a short term forecast
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncForecastOperationResult> postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(ApiRequest<CopyBuForecastRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncForecastOperationResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncForecastOperationResult> response = (ApiResponse<AsyncForecastOperationResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncForecastOperationResult> response = (ApiResponse<AsyncForecastOperationResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Generate a short term forecast
+   * 
+   * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body  (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+   * @return AsyncForecastOperationResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncForecastOperationResult postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(String businessUnitId, LocalDate weekDateId, GenerateBuForecastRequest body, Boolean forceAsync) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(createPostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateRequest(businessUnitId, weekDateId, body, forceAsync));
+  }
+
+  /**
+   * Generate a short term forecast
+   * 
+   * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body  (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+   * @return AsyncForecastOperationResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncForecastOperationResult> postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateWithHttpInfo(String businessUnitId, LocalDate weekDateId, GenerateBuForecastRequest body, Boolean forceAsync) throws IOException {
+    return postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(createPostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateRequest(businessUnitId, weekDateId, body, forceAsync).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateRequest createPostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateRequest(String businessUnitId, LocalDate weekDateId, GenerateBuForecastRequest body, Boolean forceAsync) {
+    return PostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .withBody(body)
+    
+            .withForceAsync(forceAsync)
+    
+            .build();
+  }
+
+  /**
+   * Generate a short term forecast
+   * 
+   * @param request The request object
+   * @return AsyncForecastOperationResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AsyncForecastOperationResult postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(PostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AsyncForecastOperationResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AsyncForecastOperationResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Generate a short term forecast
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AsyncForecastOperationResult> postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(ApiRequest<GenerateBuForecastRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AsyncForecastOperationResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncForecastOperationResult> response = (ApiResponse<AsyncForecastOperationResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AsyncForecastOperationResult> response = (ApiResponse<AsyncForecastOperationResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Add a new business unit
+   * It may take a minute or two for a new business unit to be available for api operations
+   * @param body body (optional)
+   * @return BusinessUnit
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnit postWorkforcemanagementBusinessunits(CreateBusinessUnitRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunits(createPostWorkforcemanagementBusinessunitsRequest(body));
+  }
+
+  /**
+   * Add a new business unit
+   * It may take a minute or two for a new business unit to be available for api operations
+   * @param body body (optional)
+   * @return BusinessUnit
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnit> postWorkforcemanagementBusinessunitsWithHttpInfo(CreateBusinessUnitRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunits(createPostWorkforcemanagementBusinessunitsRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitsRequest createPostWorkforcemanagementBusinessunitsRequest(CreateBusinessUnitRequest body) {
+    return PostWorkforcemanagementBusinessunitsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Add a new business unit
+   * It may take a minute or two for a new business unit to be available for api operations
+   * @param request The request object
+   * @return BusinessUnit
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnit postWorkforcemanagementBusinessunits(PostWorkforcemanagementBusinessunitsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BusinessUnit> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessUnit>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add a new business unit
+   * It may take a minute or two for a new business unit to be available for api operations
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnit> postWorkforcemanagementBusinessunits(ApiRequest<CreateBusinessUnitRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BusinessUnit>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnit> response = (ApiResponse<BusinessUnit>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnit> response = (ApiResponse<BusinessUnit>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5546,6 +10176,362 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<PartialUploadResponse> response = (ApiResponse<PartialUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Matches a shift trade. This route can only be called by the receiving agent
+   * 
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @param tradeId The ID of the shift trade to update (required)
+   * @return MatchShiftTradeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MatchShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttradeMatch(String managementUnitId, LocalDate weekDateId, MatchShiftTradeRequest body, String tradeId) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitWeekShifttradeMatch(createPostWorkforcemanagementManagementunitWeekShifttradeMatchRequest(managementUnitId, weekDateId, body, tradeId));
+  }
+
+  /**
+   * Matches a shift trade. This route can only be called by the receiving agent
+   * 
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @param tradeId The ID of the shift trade to update (required)
+   * @return MatchShiftTradeResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MatchShiftTradeResponse> postWorkforcemanagementManagementunitWeekShifttradeMatchWithHttpInfo(String managementUnitId, LocalDate weekDateId, MatchShiftTradeRequest body, String tradeId) throws IOException {
+    return postWorkforcemanagementManagementunitWeekShifttradeMatch(createPostWorkforcemanagementManagementunitWeekShifttradeMatchRequest(managementUnitId, weekDateId, body, tradeId).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitWeekShifttradeMatchRequest createPostWorkforcemanagementManagementunitWeekShifttradeMatchRequest(String managementUnitId, LocalDate weekDateId, MatchShiftTradeRequest body, String tradeId) {
+    return PostWorkforcemanagementManagementunitWeekShifttradeMatchRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .withBody(body)
+    
+            .withTradeId(tradeId)
+    
+            .build();
+  }
+
+  /**
+   * Matches a shift trade. This route can only be called by the receiving agent
+   * 
+   * @param request The request object
+   * @return MatchShiftTradeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MatchShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttradeMatch(PostWorkforcemanagementManagementunitWeekShifttradeMatchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MatchShiftTradeResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MatchShiftTradeResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Matches a shift trade. This route can only be called by the receiving agent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MatchShiftTradeResponse> postWorkforcemanagementManagementunitWeekShifttradeMatch(ApiRequest<MatchShiftTradeRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MatchShiftTradeResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MatchShiftTradeResponse> response = (ApiResponse<MatchShiftTradeResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MatchShiftTradeResponse> response = (ApiResponse<MatchShiftTradeResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Adds a shift trade
+   * 
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @return ShiftTradeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttrades(String managementUnitId, LocalDate weekDateId, AddShiftTradeRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitWeekShifttrades(createPostWorkforcemanagementManagementunitWeekShifttradesRequest(managementUnitId, weekDateId, body));
+  }
+
+  /**
+   * Adds a shift trade
+   * 
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @return ShiftTradeResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeResponse> postWorkforcemanagementManagementunitWeekShifttradesWithHttpInfo(String managementUnitId, LocalDate weekDateId, AddShiftTradeRequest body) throws IOException {
+    return postWorkforcemanagementManagementunitWeekShifttrades(createPostWorkforcemanagementManagementunitWeekShifttradesRequest(managementUnitId, weekDateId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitWeekShifttradesRequest createPostWorkforcemanagementManagementunitWeekShifttradesRequest(String managementUnitId, LocalDate weekDateId, AddShiftTradeRequest body) {
+    return PostWorkforcemanagementManagementunitWeekShifttradesRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Adds a shift trade
+   * 
+   * @param request The request object
+   * @return ShiftTradeResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttrades(PostWorkforcemanagementManagementunitWeekShifttradesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ShiftTradeResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ShiftTradeResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Adds a shift trade
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ShiftTradeResponse> postWorkforcemanagementManagementunitWeekShifttrades(ApiRequest<AddShiftTradeRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ShiftTradeResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeResponse> response = (ApiResponse<ShiftTradeResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ShiftTradeResponse> response = (ApiResponse<ShiftTradeResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Searches for potential shift trade matches for the current agent
+   * 
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @return SearchShiftTradesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SearchShiftTradesResponse postWorkforcemanagementManagementunitWeekShifttradesSearch(String managementUnitId, LocalDate weekDateId, SearchShiftTradesRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitWeekShifttradesSearch(createPostWorkforcemanagementManagementunitWeekShifttradesSearchRequest(managementUnitId, weekDateId, body));
+  }
+
+  /**
+   * Searches for potential shift trade matches for the current agent
+   * 
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @return SearchShiftTradesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SearchShiftTradesResponse> postWorkforcemanagementManagementunitWeekShifttradesSearchWithHttpInfo(String managementUnitId, LocalDate weekDateId, SearchShiftTradesRequest body) throws IOException {
+    return postWorkforcemanagementManagementunitWeekShifttradesSearch(createPostWorkforcemanagementManagementunitWeekShifttradesSearchRequest(managementUnitId, weekDateId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitWeekShifttradesSearchRequest createPostWorkforcemanagementManagementunitWeekShifttradesSearchRequest(String managementUnitId, LocalDate weekDateId, SearchShiftTradesRequest body) {
+    return PostWorkforcemanagementManagementunitWeekShifttradesSearchRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Searches for potential shift trade matches for the current agent
+   * 
+   * @param request The request object
+   * @return SearchShiftTradesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SearchShiftTradesResponse postWorkforcemanagementManagementunitWeekShifttradesSearch(PostWorkforcemanagementManagementunitWeekShifttradesSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SearchShiftTradesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SearchShiftTradesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Searches for potential shift trade matches for the current agent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SearchShiftTradesResponse> postWorkforcemanagementManagementunitWeekShifttradesSearch(ApiRequest<SearchShiftTradesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SearchShiftTradesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SearchShiftTradesResponse> response = (ApiResponse<SearchShiftTradesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SearchShiftTradesResponse> response = (ApiResponse<SearchShiftTradesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Updates the state of a batch of shift trades
+   * Admin functionality is not supported with \&quot;mine\&quot;.
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+   * @return BulkUpdateShiftTradeStateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkUpdateShiftTradeStateResponse postWorkforcemanagementManagementunitWeekShifttradesStateBulk(String managementUnitId, LocalDate weekDateId, BulkShiftTradeStateUpdateRequest body, Boolean forceAsync) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitWeekShifttradesStateBulk(createPostWorkforcemanagementManagementunitWeekShifttradesStateBulkRequest(managementUnitId, weekDateId, body, forceAsync));
+  }
+
+  /**
+   * Updates the state of a batch of shift trades
+   * Admin functionality is not supported with \&quot;mine\&quot;.
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param body body (required)
+   * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+   * @return BulkUpdateShiftTradeStateResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkUpdateShiftTradeStateResponse> postWorkforcemanagementManagementunitWeekShifttradesStateBulkWithHttpInfo(String managementUnitId, LocalDate weekDateId, BulkShiftTradeStateUpdateRequest body, Boolean forceAsync) throws IOException {
+    return postWorkforcemanagementManagementunitWeekShifttradesStateBulk(createPostWorkforcemanagementManagementunitWeekShifttradesStateBulkRequest(managementUnitId, weekDateId, body, forceAsync).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitWeekShifttradesStateBulkRequest createPostWorkforcemanagementManagementunitWeekShifttradesStateBulkRequest(String managementUnitId, LocalDate weekDateId, BulkShiftTradeStateUpdateRequest body, Boolean forceAsync) {
+    return PostWorkforcemanagementManagementunitWeekShifttradesStateBulkRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .withBody(body)
+    
+            .withForceAsync(forceAsync)
+    
+            .build();
+  }
+
+  /**
+   * Updates the state of a batch of shift trades
+   * Admin functionality is not supported with \&quot;mine\&quot;.
+   * @param request The request object
+   * @return BulkUpdateShiftTradeStateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkUpdateShiftTradeStateResponse postWorkforcemanagementManagementunitWeekShifttradesStateBulk(PostWorkforcemanagementManagementunitWeekShifttradesStateBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkUpdateShiftTradeStateResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkUpdateShiftTradeStateResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates the state of a batch of shift trades
+   * Admin functionality is not supported with \&quot;mine\&quot;.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkUpdateShiftTradeStateResponse> postWorkforcemanagementManagementunitWeekShifttradesStateBulk(ApiRequest<BulkShiftTradeStateUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkUpdateShiftTradeStateResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkUpdateShiftTradeStateResponse> response = (ApiResponse<BulkUpdateShiftTradeStateResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkUpdateShiftTradeStateResponse> response = (ApiResponse<BulkUpdateShiftTradeStateResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

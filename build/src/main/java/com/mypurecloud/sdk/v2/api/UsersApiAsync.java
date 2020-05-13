@@ -74,7 +74,6 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobResultsRequ
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedPagedMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedPagedSubjectIdRequest;
-import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedSubjectIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSubjectRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationSubjectsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
@@ -1130,82 +1129,6 @@ public class UsersApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DivsPermittedEntityListing> response = (ApiResponse<DivsPermittedEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  
-  /**
-   * Returns which divisions the specified user has the given permission in.
-   * This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<List<AuthzDivision>> getAuthorizationDivisionspermittedSubjectIdAsync(GetAuthorizationDivisionspermittedSubjectIdRequest request, final AsyncApiCallback<List<AuthzDivision>> callback) {
-    try {
-      final SettableFuture<List<AuthzDivision>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<AuthzDivision>>() {}, new AsyncApiCallback<ApiResponse<List<AuthzDivision>>>() {
-        @Override
-        public void onCompleted(ApiResponse<List<AuthzDivision>> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Returns which divisions the specified user has the given permission in.
-   * This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<List<AuthzDivision>>> getAuthorizationDivisionspermittedSubjectIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<AuthzDivision>>> callback) {
-    try {
-      final SettableFuture<ApiResponse<List<AuthzDivision>>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<List<AuthzDivision>>() {}, new AsyncApiCallback<ApiResponse<List<AuthzDivision>>>() {
-        @Override
-        public void onCompleted(ApiResponse<List<AuthzDivision>> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<List<AuthzDivision>> response = (ApiResponse<List<AuthzDivision>>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<List<AuthzDivision>> response = (ApiResponse<List<AuthzDivision>>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

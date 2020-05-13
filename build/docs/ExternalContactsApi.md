@@ -1909,7 +1909,7 @@ try {
 
 
 
-> [ExternalOrganization](ExternalOrganization.html) putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId)
+> [ExternalOrganizationTrustorLink](ExternalOrganizationTrustorLink.html) putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId)
 
 Links a Trustor with an External Organization
 
@@ -1946,7 +1946,7 @@ ExternalContactsApi apiInstance = new ExternalContactsApi();
 String externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
 String trustorId = "trustorId_example"; // String | Trustor ID
 try {
-    ExternalOrganization result = apiInstance.putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId);
+    ExternalOrganizationTrustorLink result = apiInstance.putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#putExternalcontactsOrganizationTrustorTrustorId");
@@ -1966,7 +1966,7 @@ try {
 
 ### Return type
 
-[**ExternalOrganization**](ExternalOrganization.html)
+[**ExternalOrganizationTrustorLink**](ExternalOrganizationTrustorLink.html)
 
 <a name="putExternalcontactsRelationship"></a>
 

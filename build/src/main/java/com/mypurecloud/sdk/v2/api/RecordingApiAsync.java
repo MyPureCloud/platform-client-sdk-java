@@ -2997,8 +2997,8 @@ public class RecordingApiAsync {
 
   
   /**
-   * Execute the recording bulk job
-   * 
+   * Execute the recording bulk job.
+   * A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording&#39;s retention.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3031,8 +3031,8 @@ public class RecordingApiAsync {
   }
 
   /**
-   * Execute the recording bulk job
-   * 
+   * Execute the recording bulk job.
+   * A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording&#39;s retention.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

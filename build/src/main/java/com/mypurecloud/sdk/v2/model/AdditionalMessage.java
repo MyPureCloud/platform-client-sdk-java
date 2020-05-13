@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.MessagingTemplateRequest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class AdditionalMessage  implements Serializable {
   private String textBody = null;
   private List<String> mediaIds = new ArrayList<String>();
   private List<String> stickerIds = new ArrayList<String>();
+  private MessagingTemplateRequest messagingTemplate = null;
 
   
   /**
@@ -75,6 +77,24 @@ public class AdditionalMessage  implements Serializable {
   }
 
   
+  /**
+   * The messaging template use to send a predefined canned response with the message
+   **/
+  public AdditionalMessage messagingTemplate(MessagingTemplateRequest messagingTemplate) {
+    this.messagingTemplate = messagingTemplate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The messaging template use to send a predefined canned response with the message")
+  @JsonProperty("messagingTemplate")
+  public MessagingTemplateRequest getMessagingTemplate() {
+    return messagingTemplate;
+  }
+  public void setMessagingTemplate(MessagingTemplateRequest messagingTemplate) {
+    this.messagingTemplate = messagingTemplate;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,12 +107,13 @@ public class AdditionalMessage  implements Serializable {
     AdditionalMessage additionalMessage = (AdditionalMessage) o;
     return Objects.equals(this.textBody, additionalMessage.textBody) &&
         Objects.equals(this.mediaIds, additionalMessage.mediaIds) &&
-        Objects.equals(this.stickerIds, additionalMessage.stickerIds);
+        Objects.equals(this.stickerIds, additionalMessage.stickerIds) &&
+        Objects.equals(this.messagingTemplate, additionalMessage.messagingTemplate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(textBody, mediaIds, stickerIds);
+    return Objects.hash(textBody, mediaIds, stickerIds, messagingTemplate);
   }
 
   @Override
@@ -103,6 +124,7 @@ public class AdditionalMessage  implements Serializable {
     sb.append("    textBody: ").append(toIndentedString(textBody)).append("\n");
     sb.append("    mediaIds: ").append(toIndentedString(mediaIds)).append("\n");
     sb.append("    stickerIds: ").append(toIndentedString(stickerIds)).append("\n");
+    sb.append("    messagingTemplate: ").append(toIndentedString(messagingTemplate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

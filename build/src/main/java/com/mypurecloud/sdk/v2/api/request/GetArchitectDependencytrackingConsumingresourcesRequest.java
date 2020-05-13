@@ -249,6 +249,20 @@ public class GetArchitectDependencytrackingConsumingresourcesRequest {
 		}
 	}
 	
+	private String version;
+	public String getVersion() {
+		return this.version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+	}
+
+	public GetArchitectDependencytrackingConsumingresourcesRequest withVersion(String version) {
+	    this.setVersion(version);
+	    return this;
+	} 
+	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -360,6 +374,8 @@ public class GetArchitectDependencytrackingConsumingresourcesRequest {
         
                 .withQueryParameters("resourceType", "multi", resourceType)
         
+                .withQueryParameters("version", "", version)
+        
                 .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withQueryParameters("pageSize", "", pageSize)
@@ -419,6 +435,11 @@ public class GetArchitectDependencytrackingConsumingresourcesRequest {
 	      }
 	      request.setResourceType(stringList);
 		    return this;
+		}
+		
+		public Builder withVersion(String version) {
+			request.setVersion(version);
+			return this;
 		}
 		
 		public Builder withPageNumber(Integer pageNumber) {

@@ -32,6 +32,7 @@ import com.mypurecloud.sdk.v2.model.ExternalOrganizationListing;
 import com.mypurecloud.sdk.v2.model.Relationship;
 import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
+import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
 
 public class PostExternalcontactsOrganizationNotesRequest {
     

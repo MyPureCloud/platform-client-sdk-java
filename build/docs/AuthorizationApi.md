@@ -17,7 +17,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAuthorizationDivisionspermittedMe**](AuthorizationApi.html#getAuthorizationDivisionspermittedMe) | Returns which divisions the current user has the given permission in. |
 | [**getAuthorizationDivisionspermittedPagedMe**](AuthorizationApi.html#getAuthorizationDivisionspermittedPagedMe) | Returns which divisions the current user has the given permission in. |
 | [**getAuthorizationDivisionspermittedPagedSubjectId**](AuthorizationApi.html#getAuthorizationDivisionspermittedPagedSubjectId) | Returns which divisions the specified user has the given permission in. |
-| [**getAuthorizationDivisionspermittedSubjectId**](AuthorizationApi.html#getAuthorizationDivisionspermittedSubjectId) | Returns which divisions the specified user has the given permission in. |
 | [**getAuthorizationPermissions**](AuthorizationApi.html#getAuthorizationPermissions) | Get all permissions. |
 | [**getAuthorizationProducts**](AuthorizationApi.html#getAuthorizationProducts) | Get the list of enabled products |
 | [**getAuthorizationRole**](AuthorizationApi.html#getAuthorizationRole) | Get a single organization role. |
@@ -694,72 +693,6 @@ try {
 ### Return type
 
 [**DivsPermittedEntityListing**](DivsPermittedEntityListing.html)
-
-<a name="getAuthorizationDivisionspermittedSubjectId"></a>
-
-# **getAuthorizationDivisionspermittedSubjectId**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [List&lt;AuthzDivision&gt;](AuthzDivision.html) getAuthorizationDivisionspermittedSubjectId(subjectId, permission, name)
-
-Returns which divisions the specified user has the given permission in.
-
-This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
-
-Wraps GET /api/v2/authorization/divisionspermitted/{subjectId}  
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.AuthorizationApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-AuthorizationApi apiInstance = new AuthorizationApi();
-String subjectId = "subjectId_example"; // String | Subject ID (user or group)
-String permission = "permission_example"; // String | The permission string, including the object to access, e.g. routing:queue:view
-String name = "name_example"; // String | Search term to filter by division name
-try {
-    List<AuthzDivision> result = apiInstance.getAuthorizationDivisionspermittedSubjectId(subjectId, permission, name);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AuthorizationApi#getAuthorizationDivisionspermittedSubjectId");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **subjectId** | **String**| Subject ID (user or group) | 
-| **permission** | **String**| The permission string, including the object to access, e.g. routing:queue:view | 
-| **name** | **String**| Search term to filter by division name | [optional] 
-{: class="table-striped"}
-
-
-### Return type
-
-[**List&lt;AuthzDivision&gt;**](AuthzDivision.html)
 
 <a name="getAuthorizationPermissions"></a>
 

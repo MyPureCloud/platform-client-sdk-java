@@ -39,6 +39,7 @@ import com.mypurecloud.sdk.v2.model.Utilization;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
+import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
 import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.UserQueue;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
@@ -46,6 +47,7 @@ import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
+import com.mypurecloud.sdk.v2.model.TestMessage;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.WritableEntity;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
@@ -103,6 +105,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutinglanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutingskillsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUserRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingSettingsContactcenterRequest;
@@ -113,6 +116,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguagesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutingskillsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsQueuesObservationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainRoutesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainTestconnectionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingLanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueUsersRequest;
@@ -4102,6 +4106,89 @@ public class RoutingApi {
 
   
   /**
+   * Update domain settings
+   * 
+   * @param domainId domain ID (required)
+   * @param body Domain settings (required)
+   * @return InboundDomain
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InboundDomain patchRoutingEmailDomain(String domainId, InboundDomainPatchRequest body) throws IOException, ApiException {
+    return  patchRoutingEmailDomain(createPatchRoutingEmailDomainRequest(domainId, body));
+  }
+
+  /**
+   * Update domain settings
+   * 
+   * @param domainId domain ID (required)
+   * @param body Domain settings (required)
+   * @return InboundDomain
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InboundDomain> patchRoutingEmailDomainWithHttpInfo(String domainId, InboundDomainPatchRequest body) throws IOException {
+    return patchRoutingEmailDomain(createPatchRoutingEmailDomainRequest(domainId, body).withHttpInfo());
+  }
+
+  private PatchRoutingEmailDomainRequest createPatchRoutingEmailDomainRequest(String domainId, InboundDomainPatchRequest body) {
+    return PatchRoutingEmailDomainRequest.builder()
+            .withDomainId(domainId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update domain settings
+   * 
+   * @param request The request object
+   * @return InboundDomain
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InboundDomain patchRoutingEmailDomain(PatchRoutingEmailDomainRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InboundDomain> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InboundDomain>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update domain settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InboundDomain> patchRoutingEmailDomain(ApiRequest<InboundDomainPatchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InboundDomain>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InboundDomain> response = (ApiResponse<InboundDomain>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InboundDomain> response = (ApiResponse<InboundDomain>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Update the ring number OR joined status for a User in a Queue
    * 
    * @param queueId Queue ID (required)
@@ -4931,6 +5018,89 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<InboundRoute> response = (ApiResponse<InboundRoute>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Tests the custom SMTP server integration connection set on this domain
+   * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
+   * @param domainId domain ID (required)
+   * @param body TestMessage (optional)
+   * @return TestMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TestMessage postRoutingEmailDomainTestconnection(String domainId, TestMessage body) throws IOException, ApiException {
+    return  postRoutingEmailDomainTestconnection(createPostRoutingEmailDomainTestconnectionRequest(domainId, body));
+  }
+
+  /**
+   * Tests the custom SMTP server integration connection set on this domain
+   * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
+   * @param domainId domain ID (required)
+   * @param body TestMessage (optional)
+   * @return TestMessage
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TestMessage> postRoutingEmailDomainTestconnectionWithHttpInfo(String domainId, TestMessage body) throws IOException {
+    return postRoutingEmailDomainTestconnection(createPostRoutingEmailDomainTestconnectionRequest(domainId, body).withHttpInfo());
+  }
+
+  private PostRoutingEmailDomainTestconnectionRequest createPostRoutingEmailDomainTestconnectionRequest(String domainId, TestMessage body) {
+    return PostRoutingEmailDomainTestconnectionRequest.builder()
+            .withDomainId(domainId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Tests the custom SMTP server integration connection set on this domain
+   * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
+   * @param request The request object
+   * @return TestMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TestMessage postRoutingEmailDomainTestconnection(PostRoutingEmailDomainTestconnectionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TestMessage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TestMessage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Tests the custom SMTP server integration connection set on this domain
+   * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TestMessage> postRoutingEmailDomainTestconnection(ApiRequest<TestMessage> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TestMessage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TestMessage> response = (ApiResponse<TestMessage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TestMessage> response = (ApiResponse<TestMessage>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

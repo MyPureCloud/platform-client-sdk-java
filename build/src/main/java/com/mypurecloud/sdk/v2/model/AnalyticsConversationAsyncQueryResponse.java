@@ -8,6 +8,7 @@ import com.mypurecloud.sdk.v2.model.AnalyticsConversation;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -18,6 +19,7 @@ import java.io.Serializable;
 public class AnalyticsConversationAsyncQueryResponse  implements Serializable {
   
   private String cursor = null;
+  private Date dataAvailabilityDate = null;
   private List<AnalyticsConversation> conversations = new ArrayList<AnalyticsConversation>();
 
   
@@ -36,6 +38,24 @@ public class AnalyticsConversationAsyncQueryResponse  implements Serializable {
   }
   public void setCursor(String cursor) {
     this.cursor = cursor;
+  }
+
+  
+  /**
+   * Data available up to at least this datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public AnalyticsConversationAsyncQueryResponse dataAvailabilityDate(Date dataAvailabilityDate) {
+    this.dataAvailabilityDate = dataAvailabilityDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Data available up to at least this datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("dataAvailabilityDate")
+  public Date getDataAvailabilityDate() {
+    return dataAvailabilityDate;
+  }
+  public void setDataAvailabilityDate(Date dataAvailabilityDate) {
+    this.dataAvailabilityDate = dataAvailabilityDate;
   }
 
   
@@ -67,12 +87,13 @@ public class AnalyticsConversationAsyncQueryResponse  implements Serializable {
     }
     AnalyticsConversationAsyncQueryResponse analyticsConversationAsyncQueryResponse = (AnalyticsConversationAsyncQueryResponse) o;
     return Objects.equals(this.cursor, analyticsConversationAsyncQueryResponse.cursor) &&
+        Objects.equals(this.dataAvailabilityDate, analyticsConversationAsyncQueryResponse.dataAvailabilityDate) &&
         Objects.equals(this.conversations, analyticsConversationAsyncQueryResponse.conversations);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cursor, conversations);
+    return Objects.hash(cursor, dataAvailabilityDate, conversations);
   }
 
   @Override
@@ -81,6 +102,7 @@ public class AnalyticsConversationAsyncQueryResponse  implements Serializable {
     sb.append("class AnalyticsConversationAsyncQueryResponse {\n");
     
     sb.append("    cursor: ").append(toIndentedString(cursor)).append("\n");
+    sb.append("    dataAvailabilityDate: ").append(toIndentedString(dataAvailabilityDate)).append("\n");
     sb.append("    conversations: ").append(toIndentedString(conversations)).append("\n");
     sb.append("}");
     return sb.toString();

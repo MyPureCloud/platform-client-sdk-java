@@ -156,6 +156,7 @@ public class Callback  implements Serializable {
   private List<String> callbackNumbers = new ArrayList<String>();
   private String callbackUserName = null;
   private String scriptId = null;
+  private Boolean externalCampaign = null;
   private Boolean skipEnabled = null;
   private Integer timeoutSeconds = null;
   private Date startAlertingTime = null;
@@ -384,6 +385,24 @@ public class Callback  implements Serializable {
 
   
   /**
+   * True if the call for the callback uses external dialing.
+   **/
+  public Callback externalCampaign(Boolean externalCampaign) {
+    this.externalCampaign = externalCampaign;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "True if the call for the callback uses external dialing.")
+  @JsonProperty("externalCampaign")
+  public Boolean getExternalCampaign() {
+    return externalCampaign;
+  }
+  public void setExternalCampaign(Boolean externalCampaign) {
+    this.externalCampaign = externalCampaign;
+  }
+
+  
+  /**
    * True if the ability to skip a callback should be enabled.
    **/
   public Callback skipEnabled(Boolean skipEnabled) {
@@ -567,6 +586,7 @@ public class Callback  implements Serializable {
         Objects.equals(this.callbackNumbers, callback.callbackNumbers) &&
         Objects.equals(this.callbackUserName, callback.callbackUserName) &&
         Objects.equals(this.scriptId, callback.scriptId) &&
+        Objects.equals(this.externalCampaign, callback.externalCampaign) &&
         Objects.equals(this.skipEnabled, callback.skipEnabled) &&
         Objects.equals(this.timeoutSeconds, callback.timeoutSeconds) &&
         Objects.equals(this.startAlertingTime, callback.startAlertingTime) &&
@@ -580,7 +600,7 @@ public class Callback  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, segments, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, skipEnabled, timeoutSeconds, startAlertingTime, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, provider, peerId);
+    return Objects.hash(state, id, segments, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, externalCampaign, skipEnabled, timeoutSeconds, startAlertingTime, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, provider, peerId);
   }
 
   @Override
@@ -600,6 +620,7 @@ public class Callback  implements Serializable {
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");
     sb.append("    callbackUserName: ").append(toIndentedString(callbackUserName)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
+    sb.append("    externalCampaign: ").append(toIndentedString(externalCampaign)).append("\n");
     sb.append("    skipEnabled: ").append(toIndentedString(skipEnabled)).append("\n");
     sb.append("    timeoutSeconds: ").append(toIndentedString(timeoutSeconds)).append("\n");
     sb.append("    startAlertingTime: ").append(toIndentedString(startAlertingTime)).append("\n");

@@ -377,6 +377,20 @@ public class GetArchitectDependencytrackingObjectRequest {
 		}
 	}
 	
+	private Boolean consumedResourceRequest;
+	public Boolean getConsumedResourceRequest() {
+		return this.consumedResourceRequest;
+	}
+
+	public void setConsumedResourceRequest(Boolean consumedResourceRequest) {
+		this.consumedResourceRequest = consumedResourceRequest;
+	}
+
+	public GetArchitectDependencytrackingObjectRequest withConsumedResourceRequest(Boolean consumedResourceRequest) {
+	    this.setConsumedResourceRequest(consumedResourceRequest);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -418,6 +432,8 @@ public class GetArchitectDependencytrackingObjectRequest {
                 .withQueryParameters("consumedResourceType", "multi", consumedResourceType)
         
                 .withQueryParameters("consumingResourceType", "multi", consumingResourceType)
+        
+                .withQueryParameters("consumedResourceRequest", "", consumedResourceRequest)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -501,6 +517,11 @@ public class GetArchitectDependencytrackingObjectRequest {
 	      }
 	      request.setConsumingResourceType(stringList);
 		    return this;
+		}
+		
+		public Builder withConsumedResourceRequest(Boolean consumedResourceRequest) {
+			request.setConsumedResourceRequest(consumedResourceRequest);
+			return this;
 		}
 		
 

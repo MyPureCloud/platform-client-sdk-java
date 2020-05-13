@@ -45,7 +45,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putConversationRecording**](RecordingApi.html#putConversationRecording) | Updates the retention records on a recording. |
 | [**putConversationRecordingAnnotation**](RecordingApi.html#putConversationRecordingAnnotation) | Update annotation |
 | [**putOrphanrecording**](RecordingApi.html#putOrphanrecording) | Updates an orphan recording to a regular recording with retention values |
-| [**putRecordingJob**](RecordingApi.html#putRecordingJob) | Execute the recording bulk job |
+| [**putRecordingJob**](RecordingApi.html#putRecordingJob) | Execute the recording bulk job. |
 | [**putRecordingLocalkeysSetting**](RecordingApi.html#putRecordingLocalkeysSetting) | Update the local encryption settings |
 | [**putRecordingMediaretentionpolicy**](RecordingApi.html#putRecordingMediaretentionpolicy) | Update a media retention policy |
 | [**putRecordingRecordingkeysRotationschedule**](RecordingApi.html#putRecordingRecordingkeysRotationschedule) | Update key rotation schedule |
@@ -374,7 +374,7 @@ null (empty response body)
 
 
 
-> [Recording](Recording.html) getConversationRecording(conversationId, recordingId, formatId, download, fileName)
+> [Recording](Recording.html) getConversationRecording(conversationId, recordingId, formatId, download, fileName, locale)
 
 Gets a specific recording.
 
@@ -413,8 +413,9 @@ String recordingId = "recordingId_example"; // String | Recording ID
 String formatId = "WEBM"; // String | The desired media format.
 Boolean download = false; // Boolean | requesting a download format of the recording
 String fileName = "fileName_example"; // String | the name of the downloaded fileName
+String locale = "locale_example"; // String | The locale for the requested file when downloading, as an ISO 639-1 code
 try {
-    Recording result = apiInstance.getConversationRecording(conversationId, recordingId, formatId, download, fileName);
+    Recording result = apiInstance.getConversationRecording(conversationId, recordingId, formatId, download, fileName, locale);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RecordingApi#getConversationRecording");
@@ -432,6 +433,7 @@ try {
 | **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
 | **download** | **Boolean**| requesting a download format of the recording | [optional] [default to false] 
 | **fileName** | **String**| the name of the downloaded fileName | [optional] 
+| **locale** | **String**| The locale for the requested file when downloading, as an ISO 639-1 code | [optional] 
 {: class="table-striped"}
 
 
@@ -834,7 +836,7 @@ try {
 
 
 
-> [Recording](Recording.html) getOrphanrecordingMedia(orphanId, formatId, download, fileName)
+> [Recording](Recording.html) getOrphanrecordingMedia(orphanId, formatId, download, fileName, locale)
 
 Gets the media of a single orphan recording
 
@@ -872,8 +874,9 @@ String orphanId = "orphanId_example"; // String | Orphan ID
 String formatId = "WEBM"; // String | The desired media format.
 Boolean download = false; // Boolean | requesting a download format of the recording
 String fileName = "fileName_example"; // String | the name of the downloaded fileName
+String locale = "locale_example"; // String | The locale for the requested file when downloading, as an ISO 639-1 code
 try {
-    Recording result = apiInstance.getOrphanrecordingMedia(orphanId, formatId, download, fileName);
+    Recording result = apiInstance.getOrphanrecordingMedia(orphanId, formatId, download, fileName, locale);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RecordingApi#getOrphanrecordingMedia");
@@ -890,6 +893,7 @@ try {
 | **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
 | **download** | **Boolean**| requesting a download format of the recording | [optional] [default to false] 
 | **fileName** | **String**| the name of the downloaded fileName | [optional] 
+| **locale** | **String**| The locale for the requested file when downloading, as an ISO 639-1 code | [optional] 
 {: class="table-striped"}
 
 
@@ -2533,15 +2537,17 @@ try {
 
 > [RecordingJob](RecordingJob.html) putRecordingJob(jobId, body)
 
-Execute the recording bulk job
+Execute the recording bulk job.
 
-
+A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording&#39;s retention.
 
 Wraps PUT /api/v2/recording/jobs/{jobId}  
 
 Requires ALL permissions: 
 
 * recording:job:edit
+* recording:recording:editRetention
+* recording:screenRecording:editRetention
 
 ### Example
 

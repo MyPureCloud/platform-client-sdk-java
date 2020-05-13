@@ -8,6 +8,7 @@ import com.mypurecloud.sdk.v2.model.AnalyticsUserDetail;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -19,6 +20,7 @@ public class AnalyticsUserDetailsAsyncQueryResponse  implements Serializable {
   
   private List<AnalyticsUserDetail> userDetails = new ArrayList<AnalyticsUserDetail>();
   private String cursor = null;
+  private Date dataAvailabilityDate = null;
 
   
   /**
@@ -56,6 +58,24 @@ public class AnalyticsUserDetailsAsyncQueryResponse  implements Serializable {
   }
 
   
+  /**
+   * Data available up to at least this datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public AnalyticsUserDetailsAsyncQueryResponse dataAvailabilityDate(Date dataAvailabilityDate) {
+    this.dataAvailabilityDate = dataAvailabilityDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Data available up to at least this datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("dataAvailabilityDate")
+  public Date getDataAvailabilityDate() {
+    return dataAvailabilityDate;
+  }
+  public void setDataAvailabilityDate(Date dataAvailabilityDate) {
+    this.dataAvailabilityDate = dataAvailabilityDate;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -67,12 +87,13 @@ public class AnalyticsUserDetailsAsyncQueryResponse  implements Serializable {
     }
     AnalyticsUserDetailsAsyncQueryResponse analyticsUserDetailsAsyncQueryResponse = (AnalyticsUserDetailsAsyncQueryResponse) o;
     return Objects.equals(this.userDetails, analyticsUserDetailsAsyncQueryResponse.userDetails) &&
-        Objects.equals(this.cursor, analyticsUserDetailsAsyncQueryResponse.cursor);
+        Objects.equals(this.cursor, analyticsUserDetailsAsyncQueryResponse.cursor) &&
+        Objects.equals(this.dataAvailabilityDate, analyticsUserDetailsAsyncQueryResponse.dataAvailabilityDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userDetails, cursor);
+    return Objects.hash(userDetails, cursor, dataAvailabilityDate);
   }
 
   @Override
@@ -82,6 +103,7 @@ public class AnalyticsUserDetailsAsyncQueryResponse  implements Serializable {
     
     sb.append("    userDetails: ").append(toIndentedString(userDetails)).append("\n");
     sb.append("    cursor: ").append(toIndentedString(cursor)).append("\n");
+    sb.append("    dataAvailabilityDate: ").append(toIndentedString(dataAvailabilityDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

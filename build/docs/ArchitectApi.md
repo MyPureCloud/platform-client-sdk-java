@@ -1135,7 +1135,7 @@ try {
 
 
 
-> [ConsumingResourcesEntityListing](ConsumingResourcesEntityListing.html) getArchitectDependencytrackingConsumingresources(id, objectType, resourceType, pageNumber, pageSize, flowFilter)
+> [ConsumingResourcesEntityListing](ConsumingResourcesEntityListing.html) getArchitectDependencytrackingConsumingresources(id, objectType, resourceType, version, pageNumber, pageSize, flowFilter)
 
 Get resources that consume a given Dependency Tracking object
 
@@ -1172,11 +1172,12 @@ ArchitectApi apiInstance = new ArchitectApi();
 String id = "id_example"; // String | Consumed object ID
 String objectType = "objectType_example"; // String | Consumed object type
 List<String> resourceType = Arrays.asList("resourceType_example"); // List<String> | Types of consuming resources to show.  Only versioned types are allowed here.
+String version = "version_example"; // String | Object version
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String flowFilter = "flowFilter_example"; // String | Show only checkedIn or published flows
 try {
-    ConsumingResourcesEntityListing result = apiInstance.getArchitectDependencytrackingConsumingresources(id, objectType, resourceType, pageNumber, pageSize, flowFilter);
+    ConsumingResourcesEntityListing result = apiInstance.getArchitectDependencytrackingConsumingresources(id, objectType, resourceType, version, pageNumber, pageSize, flowFilter);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getArchitectDependencytrackingConsumingresources");
@@ -1192,6 +1193,7 @@ try {
 | **id** | **String**| Consumed object ID | 
 | **objectType** | **String**| Consumed object type |<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW 
 | **resourceType** | [**List&lt;String&gt;**](String.html)| Types of consuming resources to show.  Only versioned types are allowed here. | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW 
+| **version** | **String**| Object version | [optional] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **flowFilter** | **String**| Show only checkedIn or published flows | [optional]<br />**Values**: checkedIn, published 
@@ -1283,7 +1285,7 @@ try {
 
 
 
-> [DependencyObject](DependencyObject.html) getArchitectDependencytrackingObject(id, version, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType)
+> [DependencyObject](DependencyObject.html) getArchitectDependencytrackingObject(id, version, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType, consumedResourceRequest)
 
 Get a Dependency Tracking object
 
@@ -1324,8 +1326,9 @@ Boolean consumedResources = true; // Boolean | Include resources this item consu
 Boolean consumingResources = true; // Boolean | Include resources that consume this item
 List<String> consumedResourceType = Arrays.asList("consumedResourceType_example"); // List<String> | Types of consumed resources to return, if consumed resources are requested
 List<String> consumingResourceType = Arrays.asList("consumingResourceType_example"); // List<String> | Types of consuming resources to return, if consuming resources are requested
+Boolean consumedResourceRequest = true; // Boolean | Indicate that this is going to look up a consumed resource object
 try {
-    DependencyObject result = apiInstance.getArchitectDependencytrackingObject(id, version, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType);
+    DependencyObject result = apiInstance.getArchitectDependencytrackingObject(id, version, objectType, consumedResources, consumingResources, consumedResourceType, consumingResourceType, consumedResourceRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getArchitectDependencytrackingObject");
@@ -1345,6 +1348,7 @@ try {
 | **consumingResources** | **Boolean**| Include resources that consume this item | [optional] 
 | **consumedResourceType** | [**List&lt;String&gt;**](String.html)| Types of consumed resources to return, if consumed resources are requested | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW 
 | **consumingResourceType** | [**List&lt;String&gt;**](String.html)| Types of consuming resources to return, if consuming resources are requested | [optional]<br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW 
+| **consumedResourceRequest** | **Boolean**| Indicate that this is going to look up a consumed resource object | [optional] 
 {: class="table-striped"}
 
 

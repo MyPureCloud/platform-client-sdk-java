@@ -220,6 +220,7 @@ public class CallbackMediaParticipant  implements Serializable {
   private Voicemail voicemail = null;
   private List<String> callbackNumbers = new ArrayList<String>();
   private String callbackUserName = null;
+  private Boolean externalCampaign = null;
   private Boolean skipEnabled = null;
   private Integer timeoutSeconds = null;
   private String automatedCallbackConfigId = null;
@@ -893,14 +894,32 @@ public class CallbackMediaParticipant  implements Serializable {
 
   
   /**
-   * If true, the callback can be skipped
+   * True if the call for the callback uses external dialing.
+   **/
+  public CallbackMediaParticipant externalCampaign(Boolean externalCampaign) {
+    this.externalCampaign = externalCampaign;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "True if the call for the callback uses external dialing.")
+  @JsonProperty("externalCampaign")
+  public Boolean getExternalCampaign() {
+    return externalCampaign;
+  }
+  public void setExternalCampaign(Boolean externalCampaign) {
+    this.externalCampaign = externalCampaign;
+  }
+
+  
+  /**
+   * If true, the callback can be skipped.
    **/
   public CallbackMediaParticipant skipEnabled(Boolean skipEnabled) {
     this.skipEnabled = skipEnabled;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "If true, the callback can be skipped")
+  @ApiModelProperty(example = "null", value = "If true, the callback can be skipped.")
   @JsonProperty("skipEnabled")
   public Boolean getSkipEnabled() {
     return skipEnabled;
@@ -1011,6 +1030,7 @@ public class CallbackMediaParticipant  implements Serializable {
         Objects.equals(this.voicemail, callbackMediaParticipant.voicemail) &&
         Objects.equals(this.callbackNumbers, callbackMediaParticipant.callbackNumbers) &&
         Objects.equals(this.callbackUserName, callbackMediaParticipant.callbackUserName) &&
+        Objects.equals(this.externalCampaign, callbackMediaParticipant.externalCampaign) &&
         Objects.equals(this.skipEnabled, callbackMediaParticipant.skipEnabled) &&
         Objects.equals(this.timeoutSeconds, callbackMediaParticipant.timeoutSeconds) &&
         Objects.equals(this.automatedCallbackConfigId, callbackMediaParticipant.automatedCallbackConfigId) &&
@@ -1019,7 +1039,7 @@ public class CallbackMediaParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, automatedCallbackConfigId, callbackScheduledTime);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, outboundPreview, voicemail, callbackNumbers, callbackUserName, externalCampaign, skipEnabled, timeoutSeconds, automatedCallbackConfigId, callbackScheduledTime);
   }
 
   @Override
@@ -1064,6 +1084,7 @@ public class CallbackMediaParticipant  implements Serializable {
     sb.append("    voicemail: ").append(toIndentedString(voicemail)).append("\n");
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");
     sb.append("    callbackUserName: ").append(toIndentedString(callbackUserName)).append("\n");
+    sb.append("    externalCampaign: ").append(toIndentedString(externalCampaign)).append("\n");
     sb.append("    skipEnabled: ").append(toIndentedString(skipEnabled)).append("\n");
     sb.append("    timeoutSeconds: ").append(toIndentedString(timeoutSeconds)).append("\n");
     sb.append("    automatedCallbackConfigId: ").append(toIndentedString(automatedCallbackConfigId)).append("\n");

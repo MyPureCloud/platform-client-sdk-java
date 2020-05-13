@@ -52,6 +52,7 @@ public class TranscriptionSettings  implements Serializable {
   }
   private TranscriptionEnum transcription = null;
   private Integer transcriptionConfidenceThreshold = null;
+  private Boolean contentSearchEnabled = null;
 
   
   /**
@@ -90,6 +91,24 @@ public class TranscriptionSettings  implements Serializable {
   }
 
   
+  /**
+   * Setting to enable/disable content search
+   **/
+  public TranscriptionSettings contentSearchEnabled(Boolean contentSearchEnabled) {
+    this.contentSearchEnabled = contentSearchEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Setting to enable/disable content search")
+  @JsonProperty("contentSearchEnabled")
+  public Boolean getContentSearchEnabled() {
+    return contentSearchEnabled;
+  }
+  public void setContentSearchEnabled(Boolean contentSearchEnabled) {
+    this.contentSearchEnabled = contentSearchEnabled;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -101,12 +120,13 @@ public class TranscriptionSettings  implements Serializable {
     }
     TranscriptionSettings transcriptionSettings = (TranscriptionSettings) o;
     return Objects.equals(this.transcription, transcriptionSettings.transcription) &&
-        Objects.equals(this.transcriptionConfidenceThreshold, transcriptionSettings.transcriptionConfidenceThreshold);
+        Objects.equals(this.transcriptionConfidenceThreshold, transcriptionSettings.transcriptionConfidenceThreshold) &&
+        Objects.equals(this.contentSearchEnabled, transcriptionSettings.contentSearchEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(transcription, transcriptionConfidenceThreshold);
+    return Objects.hash(transcription, transcriptionConfidenceThreshold, contentSearchEnabled);
   }
 
   @Override
@@ -116,6 +136,7 @@ public class TranscriptionSettings  implements Serializable {
     
     sb.append("    transcription: ").append(toIndentedString(transcription)).append("\n");
     sb.append("    transcriptionConfidenceThreshold: ").append(toIndentedString(transcriptionConfidenceThreshold)).append("\n");
+    sb.append("    contentSearchEnabled: ").append(toIndentedString(contentSearchEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }

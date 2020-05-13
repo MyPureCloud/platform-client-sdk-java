@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.BuScheduleReferenceForMuRoute;
 import com.mypurecloud.sdk.v2.model.UserReference;
-import com.mypurecloud.sdk.v2.model.WeekScheduleReference;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,7 +24,7 @@ public class ShiftTradeResponse  implements Serializable {
   
   private String id = null;
   private LocalDate weekDate = null;
-  private WeekScheduleReference schedule = null;
+  private BuScheduleReferenceForMuRoute schedule = null;
 
   /**
    * The state of this shift trade
@@ -117,19 +117,19 @@ public class ShiftTradeResponse  implements Serializable {
 
   
   /**
-   * The ID of the associated schedule
+   * A reference to the associated schedule
    **/
-  public ShiftTradeResponse schedule(WeekScheduleReference schedule) {
+  public ShiftTradeResponse schedule(BuScheduleReferenceForMuRoute schedule) {
     this.schedule = schedule;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ID of the associated schedule")
+  @ApiModelProperty(example = "null", value = "A reference to the associated schedule")
   @JsonProperty("schedule")
-  public WeekScheduleReference getSchedule() {
+  public BuScheduleReferenceForMuRoute getSchedule() {
     return schedule;
   }
-  public void setSchedule(WeekScheduleReference schedule) {
+  public void setSchedule(BuScheduleReferenceForMuRoute schedule) {
     this.schedule = schedule;
   }
 

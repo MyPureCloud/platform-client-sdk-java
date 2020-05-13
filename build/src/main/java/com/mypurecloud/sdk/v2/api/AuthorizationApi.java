@@ -39,7 +39,6 @@ import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsLimitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedPagedMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedPagedSubjectIdRequest;
-import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedSubjectIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationPermissionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationProductsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationRoleRequest;
@@ -927,93 +926,6 @@ public class AuthorizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DivsPermittedEntityListing> response = (ApiResponse<DivsPermittedEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Returns which divisions the specified user has the given permission in.
-   * This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
-   * @param subjectId Subject ID (user or group) (required)
-   * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
-   * @param name Search term to filter by division name (optional)
-   * @return List<AuthzDivision>
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public List<AuthzDivision> getAuthorizationDivisionspermittedSubjectId(String subjectId, String permission, String name) throws IOException, ApiException {
-    return  getAuthorizationDivisionspermittedSubjectId(createGetAuthorizationDivisionspermittedSubjectIdRequest(subjectId, permission, name));
-  }
-
-  /**
-   * Returns which divisions the specified user has the given permission in.
-   * This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
-   * @param subjectId Subject ID (user or group) (required)
-   * @param permission The permission string, including the object to access, e.g. routing:queue:view (required)
-   * @param name Search term to filter by division name (optional)
-   * @return List<AuthzDivision>
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<List<AuthzDivision>> getAuthorizationDivisionspermittedSubjectIdWithHttpInfo(String subjectId, String permission, String name) throws IOException {
-    return getAuthorizationDivisionspermittedSubjectId(createGetAuthorizationDivisionspermittedSubjectIdRequest(subjectId, permission, name).withHttpInfo());
-  }
-
-  private GetAuthorizationDivisionspermittedSubjectIdRequest createGetAuthorizationDivisionspermittedSubjectIdRequest(String subjectId, String permission, String name) {
-    return GetAuthorizationDivisionspermittedSubjectIdRequest.builder()
-            .withSubjectId(subjectId)
-    
-            .withPermission(permission)
-    
-            .withName(name)
-    
-            .build();
-  }
-
-  /**
-   * Returns which divisions the specified user has the given permission in.
-   * This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
-   * @param request The request object
-   * @return List<AuthzDivision>
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public List<AuthzDivision> getAuthorizationDivisionspermittedSubjectId(GetAuthorizationDivisionspermittedSubjectIdRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<List<AuthzDivision>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<AuthzDivision>>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Returns which divisions the specified user has the given permission in.
-   * This route is deprecated, use authorization/divisionspermitted/paged/{subjectId} instead.
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<List<AuthzDivision>> getAuthorizationDivisionspermittedSubjectId(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<List<AuthzDivision>>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<List<AuthzDivision>> response = (ApiResponse<List<AuthzDivision>>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<List<AuthzDivision>> response = (ApiResponse<List<AuthzDivision>>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

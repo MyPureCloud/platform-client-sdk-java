@@ -49,6 +49,8 @@ title: Metabase
 | EXTERNAL_PCV_AWS | &quot;EXTERNAL_PCV_AWS&quot; |
 | EXTERNAL_BYOC_CARRIER | &quot;EXTERNAL_BYOC_CARRIER&quot; |
 | EXTERNAL_BYOC_PBX | &quot;EXTERNAL_BYOC_PBX&quot; |
+| STATION_CDM | &quot;STATION_CDM&quot; |
+| STATION_CDM_WEBRTC | &quot;STATION_CDM_WEBRTC&quot; |
 | STATION | &quot;STATION&quot; |
 | TIE | &quot;TIE&quot; |
 | TIE_DIRECT | &quot;TIE_DIRECT&quot; |
