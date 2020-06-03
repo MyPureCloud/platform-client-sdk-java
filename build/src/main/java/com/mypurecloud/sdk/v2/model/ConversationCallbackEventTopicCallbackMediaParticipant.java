@@ -225,6 +225,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
   private List<String> callbackNumbers = new ArrayList<String>();
   private String callbackUserName = null;
   private Boolean skipEnabled = null;
+  private Boolean externalCampaign = null;
   private Integer timeoutSeconds = null;
   private Date callbackScheduledTime = null;
   private String automatedCallbackConfigId = null;
@@ -895,6 +896,23 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
   
   /**
    **/
+  public ConversationCallbackEventTopicCallbackMediaParticipant externalCampaign(Boolean externalCampaign) {
+    this.externalCampaign = externalCampaign;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("externalCampaign")
+  public Boolean getExternalCampaign() {
+    return externalCampaign;
+  }
+  public void setExternalCampaign(Boolean externalCampaign) {
+    this.externalCampaign = externalCampaign;
+  }
+
+  
+  /**
+   **/
   public ConversationCallbackEventTopicCallbackMediaParticipant timeoutSeconds(Integer timeoutSeconds) {
     this.timeoutSeconds = timeoutSeconds;
     return this;
@@ -993,6 +1011,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
         Objects.equals(this.callbackNumbers, conversationCallbackEventTopicCallbackMediaParticipant.callbackNumbers) &&
         Objects.equals(this.callbackUserName, conversationCallbackEventTopicCallbackMediaParticipant.callbackUserName) &&
         Objects.equals(this.skipEnabled, conversationCallbackEventTopicCallbackMediaParticipant.skipEnabled) &&
+        Objects.equals(this.externalCampaign, conversationCallbackEventTopicCallbackMediaParticipant.externalCampaign) &&
         Objects.equals(this.timeoutSeconds, conversationCallbackEventTopicCallbackMediaParticipant.timeoutSeconds) &&
         Objects.equals(this.callbackScheduledTime, conversationCallbackEventTopicCallbackMediaParticipant.callbackScheduledTime) &&
         Objects.equals(this.automatedCallbackConfigId, conversationCallbackEventTopicCallbackMediaParticipant.automatedCallbackConfigId);
@@ -1000,7 +1019,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, externalCampaign, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
   }
 
   @Override
@@ -1047,6 +1066,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");
     sb.append("    callbackUserName: ").append(toIndentedString(callbackUserName)).append("\n");
     sb.append("    skipEnabled: ").append(toIndentedString(skipEnabled)).append("\n");
+    sb.append("    externalCampaign: ").append(toIndentedString(externalCampaign)).append("\n");
     sb.append("    timeoutSeconds: ").append(toIndentedString(timeoutSeconds)).append("\n");
     sb.append("    callbackScheduledTime: ").append(toIndentedString(callbackScheduledTime)).append("\n");
     sb.append("    automatedCallbackConfigId: ").append(toIndentedString(automatedCallbackConfigId)).append("\n");

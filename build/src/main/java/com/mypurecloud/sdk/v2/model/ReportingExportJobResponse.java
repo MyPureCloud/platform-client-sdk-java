@@ -11,7 +11,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -229,6 +231,42 @@ public class ReportingExportJobResponse  implements Serializable {
   private Boolean hasSplitFilters = null;
   private List<SelectedColumns> selectedColumns = new ArrayList<SelectedColumns>();
   private Boolean hasCustomParticipantAttributes = null;
+  private List<String> recipientEmails = new ArrayList<String>();
+
+  /**
+   * Gets or Sets inner
+   */
+  public enum InnerEnum {
+    SENT("Sent"),
+    PENDING("Pending"),
+    FAILED("Failed");
+
+    private String value;
+
+    InnerEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static InnerEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (InnerEnum value : InnerEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return InnerEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private Map<String, String> emailStatuses = null;
   private String selfUri = null;
 
   
@@ -580,6 +618,42 @@ public class ReportingExportJobResponse  implements Serializable {
   }
 
   
+  /**
+   * The list of email recipients for the exports
+   **/
+  public ReportingExportJobResponse recipientEmails(List<String> recipientEmails) {
+    this.recipientEmails = recipientEmails;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of email recipients for the exports")
+  @JsonProperty("recipientEmails")
+  public List<String> getRecipientEmails() {
+    return recipientEmails;
+  }
+  public void setRecipientEmails(List<String> recipientEmails) {
+    this.recipientEmails = recipientEmails;
+  }
+
+  
+  /**
+   * The status of individual email addresses as a map
+   **/
+  public ReportingExportJobResponse emailStatuses(Map<String, String> emailStatuses) {
+    this.emailStatuses = emailStatuses;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The status of individual email addresses as a map")
+  @JsonProperty("emailStatuses")
+  public Map<String, String> getEmailStatuses() {
+    return emailStatuses;
+  }
+  public void setEmailStatuses(Map<String, String> emailStatuses) {
+    this.emailStatuses = emailStatuses;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -617,12 +691,14 @@ public class ReportingExportJobResponse  implements Serializable {
         Objects.equals(this.hasSplitFilters, reportingExportJobResponse.hasSplitFilters) &&
         Objects.equals(this.selectedColumns, reportingExportJobResponse.selectedColumns) &&
         Objects.equals(this.hasCustomParticipantAttributes, reportingExportJobResponse.hasCustomParticipantAttributes) &&
+        Objects.equals(this.recipientEmails, reportingExportJobResponse.recipientEmails) &&
+        Objects.equals(this.emailStatuses, reportingExportJobResponse.emailStatuses) &&
         Objects.equals(this.selfUri, reportingExportJobResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, hasSplitFilters, selectedColumns, hasCustomParticipantAttributes, selfUri);
+    return Objects.hash(id, name, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, hasSplitFilters, selectedColumns, hasCustomParticipantAttributes, recipientEmails, emailStatuses, selfUri);
   }
 
   @Override
@@ -650,6 +726,8 @@ public class ReportingExportJobResponse  implements Serializable {
     sb.append("    hasSplitFilters: ").append(toIndentedString(hasSplitFilters)).append("\n");
     sb.append("    selectedColumns: ").append(toIndentedString(selectedColumns)).append("\n");
     sb.append("    hasCustomParticipantAttributes: ").append(toIndentedString(hasCustomParticipantAttributes)).append("\n");
+    sb.append("    recipientEmails: ").append(toIndentedString(recipientEmails)).append("\n");
+    sb.append("    emailStatuses: ").append(toIndentedString(emailStatuses)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

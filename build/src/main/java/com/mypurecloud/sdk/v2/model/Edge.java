@@ -738,13 +738,14 @@ public class Edge  implements Serializable {
 
   
   /**
+   * Details about an in-progress or recently in-progress Edge software upgrade. This node appears only if a software upgrade was recently initiated for this Edge.
    **/
   public Edge softwareStatus(DomainEdgeSoftwareUpdateDto softwareStatus) {
     this.softwareStatus = softwareStatus;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Details about an in-progress or recently in-progress Edge software upgrade. This node appears only if a software upgrade was recently initiated for this Edge.")
   @JsonProperty("softwareStatus")
   public DomainEdgeSoftwareUpdateDto getSoftwareStatus() {
     return softwareStatus;

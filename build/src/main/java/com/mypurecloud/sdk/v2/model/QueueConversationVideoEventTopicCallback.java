@@ -156,6 +156,7 @@ public class QueueConversationVideoEventTopicCallback  implements Serializable {
   private String callbackUserName = null;
   private String scriptId = null;
   private String peerId = null;
+  private Boolean externalCampaign = null;
   private Boolean skipEnabled = null;
   private String provider = null;
   private Integer timeoutSeconds = null;
@@ -372,6 +373,23 @@ public class QueueConversationVideoEventTopicCallback  implements Serializable {
   
   /**
    **/
+  public QueueConversationVideoEventTopicCallback externalCampaign(Boolean externalCampaign) {
+    this.externalCampaign = externalCampaign;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("externalCampaign")
+  public Boolean getExternalCampaign() {
+    return externalCampaign;
+  }
+  public void setExternalCampaign(Boolean externalCampaign) {
+    this.externalCampaign = externalCampaign;
+  }
+
+  
+  /**
+   **/
   public QueueConversationVideoEventTopicCallback skipEnabled(Boolean skipEnabled) {
     this.skipEnabled = skipEnabled;
     return this;
@@ -528,6 +546,7 @@ public class QueueConversationVideoEventTopicCallback  implements Serializable {
         Objects.equals(this.callbackUserName, queueConversationVideoEventTopicCallback.callbackUserName) &&
         Objects.equals(this.scriptId, queueConversationVideoEventTopicCallback.scriptId) &&
         Objects.equals(this.peerId, queueConversationVideoEventTopicCallback.peerId) &&
+        Objects.equals(this.externalCampaign, queueConversationVideoEventTopicCallback.externalCampaign) &&
         Objects.equals(this.skipEnabled, queueConversationVideoEventTopicCallback.skipEnabled) &&
         Objects.equals(this.provider, queueConversationVideoEventTopicCallback.provider) &&
         Objects.equals(this.timeoutSeconds, queueConversationVideoEventTopicCallback.timeoutSeconds) &&
@@ -540,7 +559,7 @@ public class QueueConversationVideoEventTopicCallback  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, peerId, skipEnabled, provider, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, additionalProperties);
+    return Objects.hash(state, id, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, peerId, externalCampaign, skipEnabled, provider, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, additionalProperties);
   }
 
   @Override
@@ -560,6 +579,7 @@ public class QueueConversationVideoEventTopicCallback  implements Serializable {
     sb.append("    callbackUserName: ").append(toIndentedString(callbackUserName)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
+    sb.append("    externalCampaign: ").append(toIndentedString(externalCampaign)).append("\n");
     sb.append("    skipEnabled: ").append(toIndentedString(skipEnabled)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    timeoutSeconds: ").append(toIndentedString(timeoutSeconds)).append("\n");

@@ -28,6 +28,8 @@ title: ReportingExportJobResponse
 | **hasSplitFilters** | <!----><!---->**Boolean**<!----> | Indicates if filters will be split in aggregate detail exports |  [optional] |
 | **selectedColumns** | <!----><!---->[**List&lt;SelectedColumns&gt;**](SelectedColumns.html)<!----> | The list of ordered selected columns from the export view by the user |  [optional] |
 | **hasCustomParticipantAttributes** | <!----><!---->**Boolean**<!----> | Indicates if custom participant attributes will be exported |  [optional] |
+| **recipientEmails** | <!----><!---->**List&lt;String&gt;**<!----> | The list of email recipients for the exports |  [optional] |
+| **emailStatuses** | <!---->[**Map&lt;String, String&gt;**](#InnerEnum)<!----> | The status of individual email addresses as a map |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
@@ -130,6 +132,18 @@ title: ReportingExportJobResponse
 | REACHED_MAXIMUM_ATTEMPT_OF_RETRY | &quot;REACHED_MAXIMUM_ATTEMPT_OF_RETRY&quot; |
 | FAILED_LONG_RUNNING_EXPORT | &quot;FAILED_LONG_RUNNING_EXPORT&quot; |
 | TOO_MANY_REQUESTS_FROM_AN_ORGANIZATION | &quot;TOO_MANY_REQUESTS_FROM_AN_ORGANIZATION&quot; |
+{: class="table table-striped"}
+
+
+<a name="InnerEnum"></a>
+
+## Enum: InnerEnum
+
+| Name | Value |
+| ---- | ----- |
+| SENT | &quot;Sent&quot; |
+| PENDING | &quot;Pending&quot; |
+| FAILED | &quot;Failed&quot; |
 {: class="table table-striped"}
 
 

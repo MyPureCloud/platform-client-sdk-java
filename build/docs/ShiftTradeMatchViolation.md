@@ -26,6 +26,7 @@ title: ShiftTradeMatchViolation
 | INITIATINGAGENTSCHEDULEDOESNOTEXIST | &quot;InitiatingAgentScheduleDoesNotExist&quot; |
 | INITIATINGSHIFTDISALLOWEDACTIVITYCATEGORY | &quot;InitiatingShiftDisallowedActivityCategory&quot; |
 | INITIATINGSHIFTDOESNOTEXIST | &quot;InitiatingShiftDoesNotExist&quot; |
+| INITIATINGSHIFTHASEXTERNALACTIVITIES | &quot;InitiatingShiftHasExternalActivities&quot; |
 | INITIATINGSHIFTOVERLAPSEXISTING | &quot;InitiatingShiftOverlapsExisting&quot; |
 | INITIATINGSHIFTSTARTTOOCLOSE | &quot;InitiatingShiftStartTooClose&quot; |
 | INITIATINGSHIFTTIMESCHANGED | &quot;InitiatingShiftTimesChanged&quot; |
@@ -37,6 +38,7 @@ title: ShiftTradeMatchViolation
 | RECEIVINGSHIFTDISALLOWEDACTIVITYCATEGORY | &quot;ReceivingShiftDisallowedActivityCategory&quot; |
 | RECEIVINGSHIFTDOESNOTEXIST | &quot;ReceivingShiftDoesNotExist&quot; |
 | RECEIVINGSHIFTFORONESIDEDTRADE | &quot;ReceivingShiftForOneSidedTrade&quot; |
+| RECEIVINGSHIFTHASEXTERNALACTIVITIES | &quot;ReceivingShiftHasExternalActivities&quot; |
 | RECEIVINGSHIFTMISSINGFORTWOSIDEDTRADE | &quot;ReceivingShiftMissingForTwoSidedTrade&quot; |
 | RECEIVINGSHIFTOUTSIDEACCEPTABLEINTERVALS | &quot;ReceivingShiftOutsideAcceptableIntervals&quot; |
 | RECEIVINGSHIFTOVERLAPSEXISTING | &quot;ReceivingShiftOverlapsExisting&quot; |

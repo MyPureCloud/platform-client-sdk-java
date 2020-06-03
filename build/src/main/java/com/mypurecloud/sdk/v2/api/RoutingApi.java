@@ -65,6 +65,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueUserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSkillRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSmsAddressRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSmsPhonenumberRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUserUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationRequest;
@@ -681,6 +682,82 @@ public class RoutingApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteRoutingSkill(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete an Address by Id for SMS
+   * 
+   * @param addressId Address ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingSmsAddress(String addressId) throws IOException, ApiException {
+     deleteRoutingSmsAddress(createDeleteRoutingSmsAddressRequest(addressId));
+  }
+
+  /**
+   * Delete an Address by Id for SMS
+   * 
+   * @param addressId Address ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingSmsAddressWithHttpInfo(String addressId) throws IOException {
+    return deleteRoutingSmsAddress(createDeleteRoutingSmsAddressRequest(addressId).withHttpInfo());
+  }
+
+  private DeleteRoutingSmsAddressRequest createDeleteRoutingSmsAddressRequest(String addressId) {
+    return DeleteRoutingSmsAddressRequest.builder()
+            .withAddressId(addressId)
+    
+            .build();
+  }
+
+  /**
+   * Delete an Address by Id for SMS
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingSmsAddress(DeleteRoutingSmsAddressRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete an Address by Id for SMS
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingSmsAddress(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }

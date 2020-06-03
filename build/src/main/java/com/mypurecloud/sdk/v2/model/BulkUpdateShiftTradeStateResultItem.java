@@ -67,9 +67,11 @@ public class BulkUpdateShiftTradeStateResultItem  implements Serializable {
   public enum FailureReasonEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INITIATINGAGENTSCHEDULENOTFOUND("InitiatingAgentScheduleNotFound"),
+    INITIATINGAGENTSHIFTHASEXTERNALACTIVITIES("InitiatingAgentShiftHasExternalActivities"),
     INITIATINGAGENTSHIFTNOTFOUND("InitiatingAgentShiftNotFound"),
     RECEIVINGAGENTNOTFOUND("ReceivingAgentNotFound"),
     RECEIVINGAGENTSCHEDULENOTFOUND("ReceivingAgentScheduleNotFound"),
+    RECEIVINGAGENTSHIFTHASEXTERNALACTIVITIES("ReceivingAgentShiftHasExternalActivities"),
     RECEIVINGAGENTSHIFTNOTFOUND("ReceivingAgentShiftNotFound"),
     SCHEDULENOTPUBLISHED("ScheduleNotPublished"),
     TRANSITIONNOTALLOWED("TransitionNotAllowed");

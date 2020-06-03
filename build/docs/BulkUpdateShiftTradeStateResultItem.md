@@ -41,9 +41,11 @@ title: BulkUpdateShiftTradeStateResultItem
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | INITIATINGAGENTSCHEDULENOTFOUND | &quot;InitiatingAgentScheduleNotFound&quot; |
+| INITIATINGAGENTSHIFTHASEXTERNALACTIVITIES | &quot;InitiatingAgentShiftHasExternalActivities&quot; |
 | INITIATINGAGENTSHIFTNOTFOUND | &quot;InitiatingAgentShiftNotFound&quot; |
 | RECEIVINGAGENTNOTFOUND | &quot;ReceivingAgentNotFound&quot; |
 | RECEIVINGAGENTSCHEDULENOTFOUND | &quot;ReceivingAgentScheduleNotFound&quot; |
+| RECEIVINGAGENTSHIFTHASEXTERNALACTIVITIES | &quot;ReceivingAgentShiftHasExternalActivities&quot; |
 | RECEIVINGAGENTSHIFTNOTFOUND | &quot;ReceivingAgentShiftNotFound&quot; |
 | SCHEDULENOTPUBLISHED | &quot;ScheduleNotPublished&quot; |
 | TRANSITIONNOTALLOWED | &quot;TransitionNotAllowed&quot; |

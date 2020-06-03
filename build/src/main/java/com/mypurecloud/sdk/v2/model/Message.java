@@ -9,6 +9,7 @@ import com.mypurecloud.sdk.v2.model.Address;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.MessageDetails;
 import com.mypurecloud.sdk.v2.model.Segment;
+import com.mypurecloud.sdk.v2.model.Wrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -199,6 +200,7 @@ public class Message  implements Serializable {
   private Address toAddress = null;
   private Address fromAddress = null;
   private List<MessageDetails> messages = new ArrayList<MessageDetails>();
+  private Wrapup wrapup = null;
 
   
   /**
@@ -578,6 +580,24 @@ public class Message  implements Serializable {
   }
 
   
+  /**
+   * Call wrap up or disposition data.
+   **/
+  public Message wrapup(Wrapup wrapup) {
+    this.wrapup = wrapup;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Call wrap up or disposition data.")
+  @JsonProperty("wrapup")
+  public Wrapup getWrapup() {
+    return wrapup;
+  }
+  public void setWrapup(Wrapup wrapup) {
+    this.wrapup = wrapup;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -608,12 +628,13 @@ public class Message  implements Serializable {
         Objects.equals(this.peerId, message.peerId) &&
         Objects.equals(this.toAddress, message.toAddress) &&
         Objects.equals(this.fromAddress, message.fromAddress) &&
-        Objects.equals(this.messages, message.messages);
+        Objects.equals(this.messages, message.messages) &&
+        Objects.equals(this.wrapup, message.wrapup);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, held, segments, direction, recordingId, errorInfo, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, type, recipientCountry, recipientType, scriptId, peerId, toAddress, fromAddress, messages);
+    return Objects.hash(state, id, held, segments, direction, recordingId, errorInfo, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, type, recipientCountry, recipientType, scriptId, peerId, toAddress, fromAddress, messages, wrapup);
   }
 
   @Override
@@ -642,6 +663,7 @@ public class Message  implements Serializable {
     sb.append("    toAddress: ").append(toIndentedString(toAddress)).append("\n");
     sb.append("    fromAddress: ").append(toIndentedString(fromAddress)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
+    sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -138,6 +138,7 @@ public class ReportingExportJobRequest  implements Serializable {
   private Boolean hasSplitFilters = null;
   private List<SelectedColumns> selectedColumns = new ArrayList<SelectedColumns>();
   private Boolean hasCustomParticipantAttributes = null;
+  private List<String> recipientEmails = new ArrayList<String>();
 
   
   /**
@@ -374,6 +375,24 @@ public class ReportingExportJobRequest  implements Serializable {
   }
 
   
+  /**
+   * The list of email recipients for the exports
+   **/
+  public ReportingExportJobRequest recipientEmails(List<String> recipientEmails) {
+    this.recipientEmails = recipientEmails;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of email recipients for the exports")
+  @JsonProperty("recipientEmails")
+  public List<String> getRecipientEmails() {
+    return recipientEmails;
+  }
+  public void setRecipientEmails(List<String> recipientEmails) {
+    this.recipientEmails = recipientEmails;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -396,12 +415,13 @@ public class ReportingExportJobRequest  implements Serializable {
         Objects.equals(this.hasFormatDurations, reportingExportJobRequest.hasFormatDurations) &&
         Objects.equals(this.hasSplitFilters, reportingExportJobRequest.hasSplitFilters) &&
         Objects.equals(this.selectedColumns, reportingExportJobRequest.selectedColumns) &&
-        Objects.equals(this.hasCustomParticipantAttributes, reportingExportJobRequest.hasCustomParticipantAttributes);
+        Objects.equals(this.hasCustomParticipantAttributes, reportingExportJobRequest.hasCustomParticipantAttributes) &&
+        Objects.equals(this.recipientEmails, reportingExportJobRequest.recipientEmails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, timeZone, exportFormat, interval, period, viewType, filter, read, locale, hasFormatDurations, hasSplitFilters, selectedColumns, hasCustomParticipantAttributes);
+    return Objects.hash(name, timeZone, exportFormat, interval, period, viewType, filter, read, locale, hasFormatDurations, hasSplitFilters, selectedColumns, hasCustomParticipantAttributes, recipientEmails);
   }
 
   @Override
@@ -422,6 +442,7 @@ public class ReportingExportJobRequest  implements Serializable {
     sb.append("    hasSplitFilters: ").append(toIndentedString(hasSplitFilters)).append("\n");
     sb.append("    selectedColumns: ").append(toIndentedString(selectedColumns)).append("\n");
     sb.append("    hasCustomParticipantAttributes: ").append(toIndentedString(hasCustomParticipantAttributes)).append("\n");
+    sb.append("    recipientEmails: ").append(toIndentedString(recipientEmails)).append("\n");
     sb.append("}");
     return sb.toString();
   }

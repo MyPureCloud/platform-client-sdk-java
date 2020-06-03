@@ -53,23 +53,13 @@ import com.mypurecloud.sdk.v2.model.ActivityCodeContainer;
 import com.mypurecloud.sdk.v2.model.UserScheduleAdherenceListing;
 import com.mypurecloud.sdk.v2.model.WfmAgent;
 import com.mypurecloud.sdk.v2.model.ShiftTradeListResponse;
-import com.mypurecloud.sdk.v2.model.WfmIntradayQueueListing;
-import com.mypurecloud.sdk.v2.model.SchedulingRunResponse;
-import com.mypurecloud.sdk.v2.model.RescheduleResult;
-import com.mypurecloud.sdk.v2.model.SchedulingRunListResponse;
-import com.mypurecloud.sdk.v2.model.ServiceGoalGroup;
-import com.mypurecloud.sdk.v2.model.ServiceGoalGroupList;
-import com.mypurecloud.sdk.v2.model.ManagementUnitSettingsResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeMatchesSummaryResponse;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestResponse;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestList;
 import com.mypurecloud.sdk.v2.model.WeekScheduleResponse;
-import com.mypurecloud.sdk.v2.model.WeekScheduleGenerationResult;
 import com.mypurecloud.sdk.v2.model.WeekScheduleListResponse;
 import com.mypurecloud.sdk.v2.model.WeekShiftTradeListResponse;
-import com.mypurecloud.sdk.v2.model.ForecastResultResponse;
-import com.mypurecloud.sdk.v2.model.ShortTermForecastListResponse;
 import com.mypurecloud.sdk.v2.model.WorkPlan;
 import com.mypurecloud.sdk.v2.model.WorkPlanListResponse;
 import com.mypurecloud.sdk.v2.model.NotificationsResponse;
@@ -81,10 +71,7 @@ import com.mypurecloud.sdk.v2.model.PatchBuScheduleRunRequest;
 import com.mypurecloud.sdk.v2.model.UpdateServiceGoalTemplate;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateSchedulingRunRequest;
-import com.mypurecloud.sdk.v2.model.ManagementUnitSettingsRequest;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
-import com.mypurecloud.sdk.v2.model.UpdateWeekScheduleRequest;
-import com.mypurecloud.sdk.v2.model.AsyncWeekScheduleResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeResponse;
 import com.mypurecloud.sdk.v2.model.PatchShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.AgentTimeOffRequestPatch;
@@ -111,24 +98,13 @@ import com.mypurecloud.sdk.v2.model.CopyBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.GenerateBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.CreateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
-import com.mypurecloud.sdk.v2.model.IntradayResponse;
-import com.mypurecloud.sdk.v2.model.IntradayQueryDataCommand;
 import com.mypurecloud.sdk.v2.model.MoveManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.MoveManagementUnitResponse;
 import com.mypurecloud.sdk.v2.model.UserScheduleContainer;
 import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
-import com.mypurecloud.sdk.v2.model.CreateServiceGoalGroupRequest;
 import com.mypurecloud.sdk.v2.model.CreateAdminTimeOffRequest;
-import com.mypurecloud.sdk.v2.model.TimeOffRequestEntityList;
-import com.mypurecloud.sdk.v2.model.TimeOffRequestLookupList;
+import com.mypurecloud.sdk.v2.model.TimeOffRequestListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestQueryBody;
-import com.mypurecloud.sdk.v2.model.CopyWeekScheduleRequest;
-import com.mypurecloud.sdk.v2.model.RescheduleRequest;
-import com.mypurecloud.sdk.v2.model.ImportWeekScheduleRequest;
-import com.mypurecloud.sdk.v2.model.GenerateWeekScheduleResponse;
-import com.mypurecloud.sdk.v2.model.GenerateWeekScheduleRequest;
-import com.mypurecloud.sdk.v2.model.UserSchedulesPartialUploadRequest;
-import com.mypurecloud.sdk.v2.model.PartialUploadResponse;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeResponse;
 import com.mypurecloud.sdk.v2.model.AddShiftTradeRequest;
@@ -136,12 +112,6 @@ import com.mypurecloud.sdk.v2.model.SearchShiftTradesResponse;
 import com.mypurecloud.sdk.v2.model.SearchShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
 import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
-import com.mypurecloud.sdk.v2.model.ShortTermForecastResponse;
-import com.mypurecloud.sdk.v2.model.CopyShortTermForecastRequest;
-import com.mypurecloud.sdk.v2.model.ImportShortTermForecastRequest;
-import com.mypurecloud.sdk.v2.model.GenerateShortTermForecastResponse;
-import com.mypurecloud.sdk.v2.model.GenerateShortTermForecastRequest;
-import com.mypurecloud.sdk.v2.model.RouteGroupList;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlan;
 import com.mypurecloud.sdk.v2.model.CreateWorkPlan;
 import com.mypurecloud.sdk.v2.model.CreateManagementUnitApiRequest;
@@ -163,20 +133,6 @@ public class GetWorkforcemanagementManagementunitIntradayQueuesRequest {
 
 	public GetWorkforcemanagementManagementunitIntradayQueuesRequest withMuId(String muId) {
 	    this.setMuId(muId);
-	    return this;
-	} 
-	
-	private String date;
-	public String getDate() {
-		return this.date;
-	}
-
-	public void setDate(String date) {
-		this.date = date;
-	}
-
-	public GetWorkforcemanagementManagementunitIntradayQueuesRequest withDate(String date) {
-	    this.setDate(date);
 	    return this;
 	} 
 	
@@ -206,16 +162,9 @@ public class GetWorkforcemanagementManagementunitIntradayQueuesRequest {
             throw new IllegalStateException("Missing the required parameter 'muId' when building request for GetWorkforcemanagementManagementunitIntradayQueuesRequest.");
         }
         
-        // verify the required parameter 'date' is set
-        if (this.date == null) {
-            throw new IllegalStateException("Missing the required parameter 'date' when building request for GetWorkforcemanagementManagementunitIntradayQueuesRequest.");
-        }
-        
 
         return ApiRequestBuilder.create("GET", "/api/v2/workforcemanagement/managementunits/{muId}/intraday/queues")
                 .withPathParameter("muId", muId)
-        
-                .withQueryParameters("date", "", date)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -229,9 +178,9 @@ public class GetWorkforcemanagementManagementunitIntradayQueuesRequest {
 	}
 
 	
-	public static Builder builder(String muId, String date) {
+	public static Builder builder(String muId) {
 	    return new Builder()
-	            .withRequiredParams(muId, date);
+	            .withRequiredParams(muId);
 	}
 	
 
@@ -248,16 +197,10 @@ public class GetWorkforcemanagementManagementunitIntradayQueuesRequest {
 			return this;
 		}
 		
-		public Builder withDate(String date) {
-			request.setDate(date);
-			return this;
-		}
-		
 
 		
-		public Builder withRequiredParams(String muId, String date) {
+		public Builder withRequiredParams(String muId) {
 			request.setMuId(muId);
-						request.setDate(date);
 			
 			return this;
 		}
@@ -268,11 +211,6 @@ public class GetWorkforcemanagementManagementunitIntradayQueuesRequest {
             // verify the required parameter 'muId' is set
             if (request.muId == null) {
                 throw new IllegalStateException("Missing the required parameter 'muId' when building request for GetWorkforcemanagementManagementunitIntradayQueuesRequest.");
-            }
-            
-            // verify the required parameter 'date' is set
-            if (request.date == null) {
-                throw new IllegalStateException("Missing the required parameter 'date' when building request for GetWorkforcemanagementManagementunitIntradayQueuesRequest.");
             }
             
 			return request;

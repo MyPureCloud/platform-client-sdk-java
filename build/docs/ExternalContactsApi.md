@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deleteExternalcontactsContact**](ExternalContactsApi.html#deleteExternalcontactsContact) | Delete an external contact |
 | [**deleteExternalcontactsContactNote**](ExternalContactsApi.html#deleteExternalcontactsContactNote) | Delete a note for an external contact |
+| [**deleteExternalcontactsContactsSchema**](ExternalContactsApi.html#deleteExternalcontactsContactsSchema) | Delete a schema |
 | [**deleteExternalcontactsOrganization**](ExternalContactsApi.html#deleteExternalcontactsOrganization) | Delete an external organization |
 | [**deleteExternalcontactsOrganizationNote**](ExternalContactsApi.html#deleteExternalcontactsOrganizationNote) | Delete a note for an external organization |
 | [**deleteExternalcontactsOrganizationTrustor**](ExternalContactsApi.html#deleteExternalcontactsOrganizationTrustor) | Unlink the Trustor for this External Organization |
@@ -17,25 +18,37 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsContactNote**](ExternalContactsApi.html#getExternalcontactsContactNote) | Fetch a note for an external contact |
 | [**getExternalcontactsContactNotes**](ExternalContactsApi.html#getExternalcontactsContactNotes) | List notes for an external contact |
 | [**getExternalcontactsContacts**](ExternalContactsApi.html#getExternalcontactsContacts) | Search for external contacts |
+| [**getExternalcontactsContactsSchema**](ExternalContactsApi.html#getExternalcontactsContactsSchema) | Get a schema |
+| [**getExternalcontactsContactsSchemaVersion**](ExternalContactsApi.html#getExternalcontactsContactsSchemaVersion) | Get a specific version of a schema |
+| [**getExternalcontactsContactsSchemaVersions**](ExternalContactsApi.html#getExternalcontactsContactsSchemaVersions) | Get all versions of an external contact&#39;s schema |
+| [**getExternalcontactsContactsSchemas**](ExternalContactsApi.html#getExternalcontactsContactsSchemas) | Get a list of schemas. |
 | [**getExternalcontactsOrganization**](ExternalContactsApi.html#getExternalcontactsOrganization) | Fetch an external organization |
 | [**getExternalcontactsOrganizationContacts**](ExternalContactsApi.html#getExternalcontactsOrganizationContacts) | Search for external contacts in an external organization |
 | [**getExternalcontactsOrganizationNote**](ExternalContactsApi.html#getExternalcontactsOrganizationNote) | Fetch a note for an external organization |
 | [**getExternalcontactsOrganizationNotes**](ExternalContactsApi.html#getExternalcontactsOrganizationNotes) | List notes for an external organization |
 | [**getExternalcontactsOrganizationRelationships**](ExternalContactsApi.html#getExternalcontactsOrganizationRelationships) | Fetch a relationship for an external organization |
 | [**getExternalcontactsOrganizations**](ExternalContactsApi.html#getExternalcontactsOrganizations) | Search for external organizations |
+| [**getExternalcontactsOrganizationsSchema**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchema) | Get a schema |
+| [**getExternalcontactsOrganizationsSchemaVersion**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchemaVersion) | Get a specific version of a schema |
+| [**getExternalcontactsOrganizationsSchemaVersions**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchemaVersions) | Get all versions of an external organization&#39;s schema |
+| [**getExternalcontactsOrganizationsSchemas**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchemas) | Get a list of schemas. |
 | [**getExternalcontactsRelationship**](ExternalContactsApi.html#getExternalcontactsRelationship) | Fetch a relationship |
 | [**getExternalcontactsReversewhitepageslookup**](ExternalContactsApi.html#getExternalcontactsReversewhitepageslookup) | Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned. |
 | [**postExternalcontactsContactNotes**](ExternalContactsApi.html#postExternalcontactsContactNotes) | Create a note for an external contact |
 | [**postExternalcontactsContacts**](ExternalContactsApi.html#postExternalcontactsContacts) | Create an external contact |
+| [**postExternalcontactsContactsSchemas**](ExternalContactsApi.html#postExternalcontactsContactsSchemas) | Create a schema |
 | [**postExternalcontactsOrganizationNotes**](ExternalContactsApi.html#postExternalcontactsOrganizationNotes) | Create a note for an external organization |
 | [**postExternalcontactsOrganizations**](ExternalContactsApi.html#postExternalcontactsOrganizations) | Create an external organization |
+| [**postExternalcontactsOrganizationsSchemas**](ExternalContactsApi.html#postExternalcontactsOrganizationsSchemas) | Create a schema |
 | [**postExternalcontactsRelationships**](ExternalContactsApi.html#postExternalcontactsRelationships) | Create a relationship |
 | [**putExternalcontactsContact**](ExternalContactsApi.html#putExternalcontactsContact) | Update an external contact |
 | [**putExternalcontactsContactNote**](ExternalContactsApi.html#putExternalcontactsContactNote) | Update a note for an external contact |
+| [**putExternalcontactsContactsSchema**](ExternalContactsApi.html#putExternalcontactsContactsSchema) | Update a schema |
 | [**putExternalcontactsConversation**](ExternalContactsApi.html#putExternalcontactsConversation) | Associate an external contact with a conversation |
 | [**putExternalcontactsOrganization**](ExternalContactsApi.html#putExternalcontactsOrganization) | Update an external organization |
 | [**putExternalcontactsOrganizationNote**](ExternalContactsApi.html#putExternalcontactsOrganizationNote) | Update a note for an external organization |
 | [**putExternalcontactsOrganizationTrustorTrustorId**](ExternalContactsApi.html#putExternalcontactsOrganizationTrustorTrustorId) | Links a Trustor with an External Organization |
+| [**putExternalcontactsOrganizationsSchema**](ExternalContactsApi.html#putExternalcontactsOrganizationsSchema) | Update a schema |
 | [**putExternalcontactsRelationship**](ExternalContactsApi.html#putExternalcontactsRelationship) | Update a relationship |
 {: class="table-striped"}
 
@@ -166,6 +179,68 @@ try {
 ### Return type
 
 [**Empty**](Empty.html)
+
+<a name="deleteExternalcontactsContactsSchema"></a>
+
+# **deleteExternalcontactsContactsSchema**
+
+
+
+> Void deleteExternalcontactsContactsSchema(schemaId)
+
+Delete a schema
+
+
+
+Wraps DELETE /api/v2/externalcontacts/contacts/schemas/{schemaId}  
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+try {
+    apiInstance.deleteExternalcontactsContactsSchema(schemaId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#deleteExternalcontactsContactsSchema");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="deleteExternalcontactsOrganization"></a>
 
@@ -695,6 +770,256 @@ try {
 
 [**ContactListing**](ContactListing.html)
 
+<a name="getExternalcontactsContactsSchema"></a>
+
+# **getExternalcontactsContactsSchema**
+
+
+
+> [DataSchema](DataSchema.html) getExternalcontactsContactsSchema(schemaId)
+
+Get a schema
+
+
+
+Wraps GET /api/v2/externalcontacts/contacts/schemas/{schemaId}  
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+try {
+    DataSchema result = apiInstance.getExternalcontactsContactsSchema(schemaId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsContactsSchema");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataSchema**](DataSchema.html)
+
+<a name="getExternalcontactsContactsSchemaVersion"></a>
+
+# **getExternalcontactsContactsSchemaVersion**
+
+
+
+> [DataSchema](DataSchema.html) getExternalcontactsContactsSchemaVersion(schemaId, versionId)
+
+Get a specific version of a schema
+
+
+
+Wraps GET /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId}  
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+String versionId = "versionId_example"; // String | Schema version
+try {
+    DataSchema result = apiInstance.getExternalcontactsContactsSchemaVersion(schemaId, versionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsContactsSchemaVersion");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+| **versionId** | **String**| Schema version | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataSchema**](DataSchema.html)
+
+<a name="getExternalcontactsContactsSchemaVersions"></a>
+
+# **getExternalcontactsContactsSchemaVersions**
+
+
+
+> [DataSchema](DataSchema.html) getExternalcontactsContactsSchemaVersions(schemaId)
+
+Get all versions of an external contact&#39;s schema
+
+
+
+Wraps GET /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions  
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+try {
+    DataSchema result = apiInstance.getExternalcontactsContactsSchemaVersions(schemaId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsContactsSchemaVersions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataSchema**](DataSchema.html)
+
+<a name="getExternalcontactsContactsSchemas"></a>
+
+# **getExternalcontactsContactsSchemas**
+
+
+
+> [DataSchemaListing](DataSchemaListing.html) getExternalcontactsContactsSchemas()
+
+Get a list of schemas.
+
+
+
+Wraps GET /api/v2/externalcontacts/contacts/schemas  
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+try {
+    DataSchemaListing result = apiInstance.getExternalcontactsContactsSchemas();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsContactsSchemas");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**DataSchemaListing**](DataSchemaListing.html)
+
 <a name="getExternalcontactsOrganization"></a>
 
 # **getExternalcontactsOrganization**
@@ -1123,6 +1448,256 @@ try {
 
 [**ExternalOrganizationListing**](ExternalOrganizationListing.html)
 
+<a name="getExternalcontactsOrganizationsSchema"></a>
+
+# **getExternalcontactsOrganizationsSchema**
+
+
+
+> [DataSchema](DataSchema.html) getExternalcontactsOrganizationsSchema(schemaId)
+
+Get a schema
+
+
+
+Wraps GET /api/v2/externalcontacts/organizations/schemas/{schemaId}  
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+try {
+    DataSchema result = apiInstance.getExternalcontactsOrganizationsSchema(schemaId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsOrganizationsSchema");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataSchema**](DataSchema.html)
+
+<a name="getExternalcontactsOrganizationsSchemaVersion"></a>
+
+# **getExternalcontactsOrganizationsSchemaVersion**
+
+
+
+> [DataSchema](DataSchema.html) getExternalcontactsOrganizationsSchemaVersion(schemaId, versionId)
+
+Get a specific version of a schema
+
+
+
+Wraps GET /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId}  
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+String versionId = "versionId_example"; // String | Schema version
+try {
+    DataSchema result = apiInstance.getExternalcontactsOrganizationsSchemaVersion(schemaId, versionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsOrganizationsSchemaVersion");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+| **versionId** | **String**| Schema version | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataSchema**](DataSchema.html)
+
+<a name="getExternalcontactsOrganizationsSchemaVersions"></a>
+
+# **getExternalcontactsOrganizationsSchemaVersions**
+
+
+
+> [DataSchema](DataSchema.html) getExternalcontactsOrganizationsSchemaVersions(schemaId)
+
+Get all versions of an external organization&#39;s schema
+
+
+
+Wraps GET /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions  
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+try {
+    DataSchema result = apiInstance.getExternalcontactsOrganizationsSchemaVersions(schemaId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsOrganizationsSchemaVersions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataSchema**](DataSchema.html)
+
+<a name="getExternalcontactsOrganizationsSchemas"></a>
+
+# **getExternalcontactsOrganizationsSchemas**
+
+
+
+> [DataSchemaListing](DataSchemaListing.html) getExternalcontactsOrganizationsSchemas()
+
+Get a list of schemas.
+
+
+
+Wraps GET /api/v2/externalcontacts/organizations/schemas  
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+try {
+    DataSchemaListing result = apiInstance.getExternalcontactsOrganizationsSchemas();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsOrganizationsSchemas");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**DataSchemaListing**](DataSchemaListing.html)
+
 <a name="getExternalcontactsRelationship"></a>
 
 # **getExternalcontactsRelationship**
@@ -1381,6 +1956,69 @@ try {
 
 [**ExternalContact**](ExternalContact.html)
 
+<a name="postExternalcontactsContactsSchemas"></a>
+
+# **postExternalcontactsContactsSchemas**
+
+
+
+> [DataSchema](DataSchema.html) postExternalcontactsContactsSchemas(body)
+
+Create a schema
+
+
+
+Wraps POST /api/v2/externalcontacts/contacts/schemas  
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+DataSchema body = new DataSchema(); // DataSchema | Schema
+try {
+    DataSchema result = apiInstance.postExternalcontactsContactsSchemas(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsContactsSchemas");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**DataSchema**](DataSchema.html)| Schema | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataSchema**](DataSchema.html)
+
 <a name="postExternalcontactsOrganizationNotes"></a>
 
 # **postExternalcontactsOrganizationNotes**
@@ -1510,6 +2148,69 @@ try {
 ### Return type
 
 [**ExternalOrganization**](ExternalOrganization.html)
+
+<a name="postExternalcontactsOrganizationsSchemas"></a>
+
+# **postExternalcontactsOrganizationsSchemas**
+
+
+
+> [DataSchema](DataSchema.html) postExternalcontactsOrganizationsSchemas(body)
+
+Create a schema
+
+
+
+Wraps POST /api/v2/externalcontacts/organizations/schemas  
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+DataSchema body = new DataSchema(); // DataSchema | Schema
+try {
+    DataSchema result = apiInstance.postExternalcontactsOrganizationsSchemas(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsOrganizationsSchemas");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**DataSchema**](DataSchema.html)| Schema | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataSchema**](DataSchema.html)
 
 <a name="postExternalcontactsRelationships"></a>
 
@@ -1705,6 +2406,71 @@ try {
 ### Return type
 
 [**Note**](Note.html)
+
+<a name="putExternalcontactsContactsSchema"></a>
+
+# **putExternalcontactsContactsSchema**
+
+
+
+> [DataSchema](DataSchema.html) putExternalcontactsContactsSchema(schemaId, body)
+
+Update a schema
+
+
+
+Wraps PUT /api/v2/externalcontacts/contacts/schemas/{schemaId}  
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+DataSchema body = new DataSchema(); // DataSchema | Data Schema
+try {
+    DataSchema result = apiInstance.putExternalcontactsContactsSchema(schemaId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#putExternalcontactsContactsSchema");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+| **body** | [**DataSchema**](DataSchema.html)| Data Schema | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataSchema**](DataSchema.html)
 
 <a name="putExternalcontactsConversation"></a>
 
@@ -1967,6 +2733,71 @@ try {
 ### Return type
 
 [**ExternalOrganizationTrustorLink**](ExternalOrganizationTrustorLink.html)
+
+<a name="putExternalcontactsOrganizationsSchema"></a>
+
+# **putExternalcontactsOrganizationsSchema**
+
+
+
+> [DataSchema](DataSchema.html) putExternalcontactsOrganizationsSchema(schemaId, body)
+
+Update a schema
+
+
+
+Wraps PUT /api/v2/externalcontacts/organizations/schemas/{schemaId}  
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+String schemaId = "schemaId_example"; // String | Schema ID
+DataSchema body = new DataSchema(); // DataSchema | Data Schema
+try {
+    DataSchema result = apiInstance.putExternalcontactsOrganizationsSchema(schemaId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#putExternalcontactsOrganizationsSchema");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **schemaId** | **String**| Schema ID | 
+| **body** | [**DataSchema**](DataSchema.html)| Data Schema | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataSchema**](DataSchema.html)
 
 <a name="putExternalcontactsRelationship"></a>
 

@@ -47,6 +47,7 @@ title: ConversationCallbackEventTopicCallbackMediaParticipant
 | **callbackNumbers** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **callbackUserName** | <!----><!---->**String**<!----> |  |  [optional] |
 | **skipEnabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **externalCampaign** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **timeoutSeconds** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **callbackScheduledTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **automatedCallbackConfigId** | <!----><!---->**String**<!----> |  |  [optional] |

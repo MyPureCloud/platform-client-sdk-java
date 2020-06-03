@@ -23,6 +23,7 @@ public class DialogflowAgent  implements Serializable {
   private DialogflowProject project = null;
   private List<String> languages = new ArrayList<String>();
   private List<DialogflowIntent> intents = new ArrayList<DialogflowIntent>();
+  private List<String> environments = new ArrayList<String>();
   private String selfUri = null;
 
   
@@ -69,14 +70,14 @@ public class DialogflowAgent  implements Serializable {
 
   
   /**
-   * The target languages of the Dialogflow agent
+   * The supported languages of the Dialogflow agent
    **/
   public DialogflowAgent languages(List<String> languages) {
     this.languages = languages;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The target languages of the Dialogflow agent")
+  @ApiModelProperty(example = "null", value = "The supported languages of the Dialogflow agent")
   @JsonProperty("languages")
   public List<String> getLanguages() {
     return languages;
@@ -87,20 +88,38 @@ public class DialogflowAgent  implements Serializable {
 
   
   /**
-   * An array of Intents associated with this bot alias
+   * An array of Intents associated with this agent
    **/
   public DialogflowAgent intents(List<DialogflowIntent> intents) {
     this.intents = intents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "An array of Intents associated with this bot alias")
+  @ApiModelProperty(example = "null", value = "An array of Intents associated with this agent")
   @JsonProperty("intents")
   public List<DialogflowIntent> getIntents() {
     return intents;
   }
   public void setIntents(List<DialogflowIntent> intents) {
     this.intents = intents;
+  }
+
+  
+  /**
+   * Available environments for this agent
+   **/
+  public DialogflowAgent environments(List<String> environments) {
+    this.environments = environments;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Available environments for this agent")
+  @JsonProperty("environments")
+  public List<String> getEnvironments() {
+    return environments;
+  }
+  public void setEnvironments(List<String> environments) {
+    this.environments = environments;
   }
 
   
@@ -126,12 +145,13 @@ public class DialogflowAgent  implements Serializable {
         Objects.equals(this.project, dialogflowAgent.project) &&
         Objects.equals(this.languages, dialogflowAgent.languages) &&
         Objects.equals(this.intents, dialogflowAgent.intents) &&
+        Objects.equals(this.environments, dialogflowAgent.environments) &&
         Objects.equals(this.selfUri, dialogflowAgent.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, project, languages, intents, selfUri);
+    return Objects.hash(id, name, project, languages, intents, environments, selfUri);
   }
 
   @Override
@@ -144,6 +164,7 @@ public class DialogflowAgent  implements Serializable {
     sb.append("    project: ").append(toIndentedString(project)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    intents: ").append(toIndentedString(intents)).append("\n");
+    sb.append("    environments: ").append(toIndentedString(environments)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

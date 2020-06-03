@@ -16,6 +16,8 @@ import com.mypurecloud.sdk.v2.model.ExternalContact;
 import com.mypurecloud.sdk.v2.model.Note;
 import com.mypurecloud.sdk.v2.model.NoteListing;
 import com.mypurecloud.sdk.v2.model.ContactListing;
+import com.mypurecloud.sdk.v2.model.DataSchema;
+import com.mypurecloud.sdk.v2.model.DataSchemaListing;
 import com.mypurecloud.sdk.v2.model.ExternalOrganization;
 import com.mypurecloud.sdk.v2.model.RelationshipListing;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationListing;
@@ -27,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactNoteRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsContactsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteExternalcontactsOrganizationTrustorRequest;
@@ -35,25 +38,37 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemaRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemaVersionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemaVersionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsContactsSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationRelationshipsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemaRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemaVersionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemaVersionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsRelationshipRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsReversewhitepageslookupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsOrganizationsSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsRelationshipsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsContactRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsContactNoteRequest;
+import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsContactsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationNoteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationTrustorTrustorIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsOrganizationsSchemaRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsRelationshipRequest;
 
 import java.io.IOException;
@@ -232,6 +247,82 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteExternalcontactsContactsSchema(String schemaId) throws IOException, ApiException {
+     deleteExternalcontactsContactsSchema(createDeleteExternalcontactsContactsSchemaRequest(schemaId));
+  }
+
+  /**
+   * Delete a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteExternalcontactsContactsSchemaWithHttpInfo(String schemaId) throws IOException {
+    return deleteExternalcontactsContactsSchema(createDeleteExternalcontactsContactsSchemaRequest(schemaId).withHttpInfo());
+  }
+
+  private DeleteExternalcontactsContactsSchemaRequest createDeleteExternalcontactsContactsSchemaRequest(String schemaId) {
+    return DeleteExternalcontactsContactsSchemaRequest.builder()
+            .withSchemaId(schemaId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a schema
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteExternalcontactsContactsSchema(DeleteExternalcontactsContactsSchemaRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a schema
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteExternalcontactsContactsSchema(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -915,6 +1006,322 @@ public class ExternalContactsApi {
 
   
   /**
+   * Get a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema getExternalcontactsContactsSchema(String schemaId) throws IOException, ApiException {
+    return  getExternalcontactsContactsSchema(createGetExternalcontactsContactsSchemaRequest(schemaId));
+  }
+
+  /**
+   * Get a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @return DataSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> getExternalcontactsContactsSchemaWithHttpInfo(String schemaId) throws IOException {
+    return getExternalcontactsContactsSchema(createGetExternalcontactsContactsSchemaRequest(schemaId).withHttpInfo());
+  }
+
+  private GetExternalcontactsContactsSchemaRequest createGetExternalcontactsContactsSchemaRequest(String schemaId) {
+    return GetExternalcontactsContactsSchemaRequest.builder()
+            .withSchemaId(schemaId)
+    
+            .build();
+  }
+
+  /**
+   * Get a schema
+   * 
+   * @param request The request object
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema getExternalcontactsContactsSchema(GetExternalcontactsContactsSchemaRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a schema
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> getExternalcontactsContactsSchema(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a specific version of a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @param versionId Schema version (required)
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema getExternalcontactsContactsSchemaVersion(String schemaId, String versionId) throws IOException, ApiException {
+    return  getExternalcontactsContactsSchemaVersion(createGetExternalcontactsContactsSchemaVersionRequest(schemaId, versionId));
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @param versionId Schema version (required)
+   * @return DataSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> getExternalcontactsContactsSchemaVersionWithHttpInfo(String schemaId, String versionId) throws IOException {
+    return getExternalcontactsContactsSchemaVersion(createGetExternalcontactsContactsSchemaVersionRequest(schemaId, versionId).withHttpInfo());
+  }
+
+  private GetExternalcontactsContactsSchemaVersionRequest createGetExternalcontactsContactsSchemaVersionRequest(String schemaId, String versionId) {
+    return GetExternalcontactsContactsSchemaVersionRequest.builder()
+            .withSchemaId(schemaId)
+    
+            .withVersionId(versionId)
+    
+            .build();
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * @param request The request object
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema getExternalcontactsContactsSchemaVersion(GetExternalcontactsContactsSchemaVersionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> getExternalcontactsContactsSchemaVersion(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get all versions of an external contact&#39;s schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema getExternalcontactsContactsSchemaVersions(String schemaId) throws IOException, ApiException {
+    return  getExternalcontactsContactsSchemaVersions(createGetExternalcontactsContactsSchemaVersionsRequest(schemaId));
+  }
+
+  /**
+   * Get all versions of an external contact&#39;s schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @return DataSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> getExternalcontactsContactsSchemaVersionsWithHttpInfo(String schemaId) throws IOException {
+    return getExternalcontactsContactsSchemaVersions(createGetExternalcontactsContactsSchemaVersionsRequest(schemaId).withHttpInfo());
+  }
+
+  private GetExternalcontactsContactsSchemaVersionsRequest createGetExternalcontactsContactsSchemaVersionsRequest(String schemaId) {
+    return GetExternalcontactsContactsSchemaVersionsRequest.builder()
+            .withSchemaId(schemaId)
+    
+            .build();
+  }
+
+  /**
+   * Get all versions of an external contact&#39;s schema
+   * 
+   * @param request The request object
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema getExternalcontactsContactsSchemaVersions(GetExternalcontactsContactsSchemaVersionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get all versions of an external contact&#39;s schema
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> getExternalcontactsContactsSchemaVersions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of schemas.
+   * 
+   * @return DataSchemaListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchemaListing getExternalcontactsContactsSchemas() throws IOException, ApiException {
+    return  getExternalcontactsContactsSchemas(createGetExternalcontactsContactsSchemasRequest());
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * @return DataSchemaListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchemaListing> getExternalcontactsContactsSchemasWithHttpInfo() throws IOException {
+    return getExternalcontactsContactsSchemas(createGetExternalcontactsContactsSchemasRequest().withHttpInfo());
+  }
+
+  private GetExternalcontactsContactsSchemasRequest createGetExternalcontactsContactsSchemasRequest() {
+    return GetExternalcontactsContactsSchemasRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * @param request The request object
+   * @return DataSchemaListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchemaListing getExternalcontactsContactsSchemas(GetExternalcontactsContactsSchemasRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataSchemaListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchemaListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchemaListing> getExternalcontactsContactsSchemas(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataSchemaListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Fetch an external organization
    * 
    * @param externalOrganizationId External Organization ID (required)
@@ -1481,6 +1888,322 @@ public class ExternalContactsApi {
 
   
   /**
+   * Get a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema getExternalcontactsOrganizationsSchema(String schemaId) throws IOException, ApiException {
+    return  getExternalcontactsOrganizationsSchema(createGetExternalcontactsOrganizationsSchemaRequest(schemaId));
+  }
+
+  /**
+   * Get a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @return DataSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> getExternalcontactsOrganizationsSchemaWithHttpInfo(String schemaId) throws IOException {
+    return getExternalcontactsOrganizationsSchema(createGetExternalcontactsOrganizationsSchemaRequest(schemaId).withHttpInfo());
+  }
+
+  private GetExternalcontactsOrganizationsSchemaRequest createGetExternalcontactsOrganizationsSchemaRequest(String schemaId) {
+    return GetExternalcontactsOrganizationsSchemaRequest.builder()
+            .withSchemaId(schemaId)
+    
+            .build();
+  }
+
+  /**
+   * Get a schema
+   * 
+   * @param request The request object
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema getExternalcontactsOrganizationsSchema(GetExternalcontactsOrganizationsSchemaRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a schema
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> getExternalcontactsOrganizationsSchema(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a specific version of a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @param versionId Schema version (required)
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema getExternalcontactsOrganizationsSchemaVersion(String schemaId, String versionId) throws IOException, ApiException {
+    return  getExternalcontactsOrganizationsSchemaVersion(createGetExternalcontactsOrganizationsSchemaVersionRequest(schemaId, versionId));
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @param versionId Schema version (required)
+   * @return DataSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> getExternalcontactsOrganizationsSchemaVersionWithHttpInfo(String schemaId, String versionId) throws IOException {
+    return getExternalcontactsOrganizationsSchemaVersion(createGetExternalcontactsOrganizationsSchemaVersionRequest(schemaId, versionId).withHttpInfo());
+  }
+
+  private GetExternalcontactsOrganizationsSchemaVersionRequest createGetExternalcontactsOrganizationsSchemaVersionRequest(String schemaId, String versionId) {
+    return GetExternalcontactsOrganizationsSchemaVersionRequest.builder()
+            .withSchemaId(schemaId)
+    
+            .withVersionId(versionId)
+    
+            .build();
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * @param request The request object
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema getExternalcontactsOrganizationsSchemaVersion(GetExternalcontactsOrganizationsSchemaVersionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a specific version of a schema
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> getExternalcontactsOrganizationsSchemaVersion(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get all versions of an external organization&#39;s schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema getExternalcontactsOrganizationsSchemaVersions(String schemaId) throws IOException, ApiException {
+    return  getExternalcontactsOrganizationsSchemaVersions(createGetExternalcontactsOrganizationsSchemaVersionsRequest(schemaId));
+  }
+
+  /**
+   * Get all versions of an external organization&#39;s schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @return DataSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> getExternalcontactsOrganizationsSchemaVersionsWithHttpInfo(String schemaId) throws IOException {
+    return getExternalcontactsOrganizationsSchemaVersions(createGetExternalcontactsOrganizationsSchemaVersionsRequest(schemaId).withHttpInfo());
+  }
+
+  private GetExternalcontactsOrganizationsSchemaVersionsRequest createGetExternalcontactsOrganizationsSchemaVersionsRequest(String schemaId) {
+    return GetExternalcontactsOrganizationsSchemaVersionsRequest.builder()
+            .withSchemaId(schemaId)
+    
+            .build();
+  }
+
+  /**
+   * Get all versions of an external organization&#39;s schema
+   * 
+   * @param request The request object
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema getExternalcontactsOrganizationsSchemaVersions(GetExternalcontactsOrganizationsSchemaVersionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get all versions of an external organization&#39;s schema
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> getExternalcontactsOrganizationsSchemaVersions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of schemas.
+   * 
+   * @return DataSchemaListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchemaListing getExternalcontactsOrganizationsSchemas() throws IOException, ApiException {
+    return  getExternalcontactsOrganizationsSchemas(createGetExternalcontactsOrganizationsSchemasRequest());
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * @return DataSchemaListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchemaListing> getExternalcontactsOrganizationsSchemasWithHttpInfo() throws IOException {
+    return getExternalcontactsOrganizationsSchemas(createGetExternalcontactsOrganizationsSchemasRequest().withHttpInfo());
+  }
+
+  private GetExternalcontactsOrganizationsSchemasRequest createGetExternalcontactsOrganizationsSchemasRequest() {
+    return GetExternalcontactsOrganizationsSchemasRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * @param request The request object
+   * @return DataSchemaListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchemaListing getExternalcontactsOrganizationsSchemas(GetExternalcontactsOrganizationsSchemasRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataSchemaListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchemaListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of schemas.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchemaListing> getExternalcontactsOrganizationsSchemas(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataSchemaListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchemaListing> response = (ApiResponse<DataSchemaListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Fetch a relationship
    * 
    * @param relationshipId Relationship Id (required)
@@ -1809,6 +2532,85 @@ public class ExternalContactsApi {
 
   
   /**
+   * Create a schema
+   * 
+   * @param body Schema (required)
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema postExternalcontactsContactsSchemas(DataSchema body) throws IOException, ApiException {
+    return  postExternalcontactsContactsSchemas(createPostExternalcontactsContactsSchemasRequest(body));
+  }
+
+  /**
+   * Create a schema
+   * 
+   * @param body Schema (required)
+   * @return DataSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> postExternalcontactsContactsSchemasWithHttpInfo(DataSchema body) throws IOException {
+    return postExternalcontactsContactsSchemas(createPostExternalcontactsContactsSchemasRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsContactsSchemasRequest createPostExternalcontactsContactsSchemasRequest(DataSchema body) {
+    return PostExternalcontactsContactsSchemasRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a schema
+   * 
+   * @param request The request object
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema postExternalcontactsContactsSchemas(PostExternalcontactsContactsSchemasRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a schema
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> postExternalcontactsContactsSchemas(ApiRequest<DataSchema> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Create a note for an external organization
    * 
    * @param externalOrganizationId External Organization Id (required)
@@ -1965,6 +2767,85 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ExternalOrganization> response = (ApiResponse<ExternalOrganization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create a schema
+   * 
+   * @param body Schema (required)
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema postExternalcontactsOrganizationsSchemas(DataSchema body) throws IOException, ApiException {
+    return  postExternalcontactsOrganizationsSchemas(createPostExternalcontactsOrganizationsSchemasRequest(body));
+  }
+
+  /**
+   * Create a schema
+   * 
+   * @param body Schema (required)
+   * @return DataSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> postExternalcontactsOrganizationsSchemasWithHttpInfo(DataSchema body) throws IOException {
+    return postExternalcontactsOrganizationsSchemas(createPostExternalcontactsOrganizationsSchemasRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsOrganizationsSchemasRequest createPostExternalcontactsOrganizationsSchemasRequest(DataSchema body) {
+    return PostExternalcontactsOrganizationsSchemasRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a schema
+   * 
+   * @param request The request object
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema postExternalcontactsOrganizationsSchemas(PostExternalcontactsOrganizationsSchemasRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a schema
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> postExternalcontactsOrganizationsSchemas(ApiRequest<DataSchema> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2214,6 +3095,89 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Note> response = (ApiResponse<Note>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @param body Data Schema (required)
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema putExternalcontactsContactsSchema(String schemaId, DataSchema body) throws IOException, ApiException {
+    return  putExternalcontactsContactsSchema(createPutExternalcontactsContactsSchemaRequest(schemaId, body));
+  }
+
+  /**
+   * Update a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @param body Data Schema (required)
+   * @return DataSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> putExternalcontactsContactsSchemaWithHttpInfo(String schemaId, DataSchema body) throws IOException {
+    return putExternalcontactsContactsSchema(createPutExternalcontactsContactsSchemaRequest(schemaId, body).withHttpInfo());
+  }
+
+  private PutExternalcontactsContactsSchemaRequest createPutExternalcontactsContactsSchemaRequest(String schemaId, DataSchema body) {
+    return PutExternalcontactsContactsSchemaRequest.builder()
+            .withSchemaId(schemaId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update a schema
+   * 
+   * @param request The request object
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema putExternalcontactsContactsSchema(PutExternalcontactsContactsSchemaRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a schema
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> putExternalcontactsContactsSchema(ApiRequest<DataSchema> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2547,6 +3511,89 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ExternalOrganizationTrustorLink> response = (ApiResponse<ExternalOrganizationTrustorLink>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @param body Data Schema (required)
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema putExternalcontactsOrganizationsSchema(String schemaId, DataSchema body) throws IOException, ApiException {
+    return  putExternalcontactsOrganizationsSchema(createPutExternalcontactsOrganizationsSchemaRequest(schemaId, body));
+  }
+
+  /**
+   * Update a schema
+   * 
+   * @param schemaId Schema ID (required)
+   * @param body Data Schema (required)
+   * @return DataSchema
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> putExternalcontactsOrganizationsSchemaWithHttpInfo(String schemaId, DataSchema body) throws IOException {
+    return putExternalcontactsOrganizationsSchema(createPutExternalcontactsOrganizationsSchemaRequest(schemaId, body).withHttpInfo());
+  }
+
+  private PutExternalcontactsOrganizationsSchemaRequest createPutExternalcontactsOrganizationsSchemaRequest(String schemaId, DataSchema body) {
+    return PutExternalcontactsOrganizationsSchemaRequest.builder()
+            .withSchemaId(schemaId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update a schema
+   * 
+   * @param request The request object
+   * @return DataSchema
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataSchema putExternalcontactsOrganizationsSchema(PutExternalcontactsOrganizationsSchemaRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataSchema> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataSchema>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a schema
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataSchema> putExternalcontactsOrganizationsSchema(ApiRequest<DataSchema> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataSchema>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataSchema> response = (ApiResponse<DataSchema>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

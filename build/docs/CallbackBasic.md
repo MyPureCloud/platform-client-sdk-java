@@ -30,6 +30,7 @@ title: CallbackBasic
 | **automatedCallbackConfigId** | <!----><!---->**String**<!----> | The id of the config for automatically placing the callback (and handling the disposition). If null, the callback will not be placed automatically but routed to an agent as per normal. |  [optional] |
 | **provider** | <!----><!---->**String**<!----> | The source provider for the callback. |  [optional] |
 | **peerId** | <!----><!---->**String**<!----> | The id of the peer communication corresponding to a matching leg for this communication. |  [optional] |
+| **wrapup** | <!----><!---->[**Wrapup**](Wrapup.html)<!----> | Call wrap up or disposition data. |  [optional] |
 {: class="table table-striped"}
 
 

@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Address;
+import com.mypurecloud.sdk.v2.model.Wrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -122,6 +123,7 @@ public class Video  implements Serializable {
   private String peerId = null;
   private List<String> msids = new ArrayList<String>();
   private Address self = null;
+  private Wrapup wrapup = null;
 
   
   /**
@@ -394,6 +396,24 @@ public class Video  implements Serializable {
   }
 
   
+  /**
+   * Call wrap up or disposition data.
+   **/
+  public Video wrapup(Wrapup wrapup) {
+    this.wrapup = wrapup;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Call wrap up or disposition data.")
+  @JsonProperty("wrapup")
+  public Wrapup getWrapup() {
+    return wrapup;
+  }
+  public void setWrapup(Wrapup wrapup) {
+    this.wrapup = wrapup;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -418,12 +438,13 @@ public class Video  implements Serializable {
         Objects.equals(this.provider, video.provider) &&
         Objects.equals(this.peerId, video.peerId) &&
         Objects.equals(this.msids, video.msids) &&
-        Objects.equals(this.self, video.self);
+        Objects.equals(this.self, video.self) &&
+        Objects.equals(this.wrapup, video.wrapup);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, context, audioMuted, videoMuted, sharingScreen, peerCount, disconnectType, startAlertingTime, connectedTime, disconnectedTime, provider, peerId, msids, self);
+    return Objects.hash(state, id, context, audioMuted, videoMuted, sharingScreen, peerCount, disconnectType, startAlertingTime, connectedTime, disconnectedTime, provider, peerId, msids, self, wrapup);
   }
 
   @Override
@@ -446,6 +467,7 @@ public class Video  implements Serializable {
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("    msids: ").append(toIndentedString(msids)).append("\n");
     sb.append("    self: ").append(toIndentedString(self)).append("\n");
+    sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("}");
     return sb.toString();
   }

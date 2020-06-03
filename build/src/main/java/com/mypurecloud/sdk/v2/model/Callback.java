@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DialerPreview;
 import com.mypurecloud.sdk.v2.model.Segment;
 import com.mypurecloud.sdk.v2.model.Voicemail;
+import com.mypurecloud.sdk.v2.model.Wrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -166,6 +167,7 @@ public class Callback  implements Serializable {
   private String automatedCallbackConfigId = null;
   private String provider = null;
   private String peerId = null;
+  private Wrapup wrapup = null;
 
   
   /**
@@ -564,6 +566,24 @@ public class Callback  implements Serializable {
   }
 
   
+  /**
+   * Call wrap up or disposition data.
+   **/
+  public Callback wrapup(Wrapup wrapup) {
+    this.wrapup = wrapup;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Call wrap up or disposition data.")
+  @JsonProperty("wrapup")
+  public Wrapup getWrapup() {
+    return wrapup;
+  }
+  public void setWrapup(Wrapup wrapup) {
+    this.wrapup = wrapup;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -595,12 +615,13 @@ public class Callback  implements Serializable {
         Objects.equals(this.callbackScheduledTime, callback.callbackScheduledTime) &&
         Objects.equals(this.automatedCallbackConfigId, callback.automatedCallbackConfigId) &&
         Objects.equals(this.provider, callback.provider) &&
-        Objects.equals(this.peerId, callback.peerId);
+        Objects.equals(this.peerId, callback.peerId) &&
+        Objects.equals(this.wrapup, callback.wrapup);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, segments, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, externalCampaign, skipEnabled, timeoutSeconds, startAlertingTime, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, provider, peerId);
+    return Objects.hash(state, id, segments, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, externalCampaign, skipEnabled, timeoutSeconds, startAlertingTime, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, provider, peerId, wrapup);
   }
 
   @Override
@@ -630,6 +651,7 @@ public class Callback  implements Serializable {
     sb.append("    automatedCallbackConfigId: ").append(toIndentedString(automatedCallbackConfigId)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
+    sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("}");
     return sb.toString();
   }

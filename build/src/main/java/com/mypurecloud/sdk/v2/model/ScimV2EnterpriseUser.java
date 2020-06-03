@@ -19,6 +19,7 @@ public class ScimV2EnterpriseUser  implements Serializable {
   private String division = null;
   private String department = null;
   private Manager manager = null;
+  private String employeeNumber = null;
 
   
   /**
@@ -75,6 +76,24 @@ public class ScimV2EnterpriseUser  implements Serializable {
   }
 
   
+  /**
+   * The users employee number.
+   **/
+  public ScimV2EnterpriseUser employeeNumber(String employeeNumber) {
+    this.employeeNumber = employeeNumber;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The users employee number.")
+  @JsonProperty("employeeNumber")
+  public String getEmployeeNumber() {
+    return employeeNumber;
+  }
+  public void setEmployeeNumber(String employeeNumber) {
+    this.employeeNumber = employeeNumber;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,12 +106,13 @@ public class ScimV2EnterpriseUser  implements Serializable {
     ScimV2EnterpriseUser scimV2EnterpriseUser = (ScimV2EnterpriseUser) o;
     return Objects.equals(this.division, scimV2EnterpriseUser.division) &&
         Objects.equals(this.department, scimV2EnterpriseUser.department) &&
-        Objects.equals(this.manager, scimV2EnterpriseUser.manager);
+        Objects.equals(this.manager, scimV2EnterpriseUser.manager) &&
+        Objects.equals(this.employeeNumber, scimV2EnterpriseUser.employeeNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(division, department, manager);
+    return Objects.hash(division, department, manager, employeeNumber);
   }
 
   @Override
@@ -103,6 +123,7 @@ public class ScimV2EnterpriseUser  implements Serializable {
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    department: ").append(toIndentedString(department)).append("\n");
     sb.append("    manager: ").append(toIndentedString(manager)).append("\n");
+    sb.append("    employeeNumber: ").append(toIndentedString(employeeNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

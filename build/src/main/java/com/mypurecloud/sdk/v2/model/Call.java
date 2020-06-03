@@ -10,6 +10,7 @@ import com.mypurecloud.sdk.v2.model.DisconnectReason;
 import com.mypurecloud.sdk.v2.model.ErrorInfo;
 import com.mypurecloud.sdk.v2.model.FaxStatus;
 import com.mypurecloud.sdk.v2.model.Segment;
+import com.mypurecloud.sdk.v2.model.Wrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -208,6 +209,7 @@ public class Call  implements Serializable {
   private String uuiData = null;
   private Address self = null;
   private Address other = null;
+  private Wrapup wrapup = null;
 
   
   /**
@@ -659,6 +661,24 @@ public class Call  implements Serializable {
   }
 
   
+  /**
+   * Call wrap up or disposition data.
+   **/
+  public Call wrapup(Wrapup wrapup) {
+    this.wrapup = wrapup;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Call wrap up or disposition data.")
+  @JsonProperty("wrapup")
+  public Wrapup getWrapup() {
+    return wrapup;
+  }
+  public void setWrapup(Wrapup wrapup) {
+    this.wrapup = wrapup;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -693,12 +713,13 @@ public class Call  implements Serializable {
         Objects.equals(this.peerId, call.peerId) &&
         Objects.equals(this.uuiData, call.uuiData) &&
         Objects.equals(this.self, call.self) &&
-        Objects.equals(this.other, call.other);
+        Objects.equals(this.other, call.other) &&
+        Objects.equals(this.wrapup, call.wrapup);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, direction, recording, recordingState, muted, confined, held, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, startAlertingTime, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData, self, other);
+    return Objects.hash(state, id, direction, recording, recordingState, muted, confined, held, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, startAlertingTime, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData, self, other, wrapup);
   }
 
   @Override
@@ -731,6 +752,7 @@ public class Call  implements Serializable {
     sb.append("    uuiData: ").append(toIndentedString(uuiData)).append("\n");
     sb.append("    self: ").append(toIndentedString(self)).append("\n");
     sb.append("    other: ").append(toIndentedString(other)).append("\n");
+    sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("}");
     return sb.toString();
   }

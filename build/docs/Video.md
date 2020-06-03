@@ -23,6 +23,7 @@ title: Video
 | **peerId** | <!----><!---->**String**<!----> | The id of the peer communication corresponding to a matching leg for this communication. |  [optional] |
 | **msids** | <!----><!---->**List&lt;String&gt;**<!----> | List of media stream ids |  [optional] |
 | **self** | <!----><!---->[**Address**](Address.html)<!----> | Address and name data for a call endpoint. |  [optional] |
+| **wrapup** | <!----><!---->[**Wrapup**](Wrapup.html)<!----> | Call wrap up or disposition data. |  [optional] |
 {: class="table table-striped"}
 
 

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import com.mypurecloud.sdk.v2.model.WritableDivision;
 import io.swagger.annotations.ApiModel;
@@ -67,6 +68,8 @@ public class FlowDivisionView  implements Serializable {
   private TypeEnum type = null;
   private JsonSchemaDocument inputSchema = null;
   private JsonSchemaDocument outputSchema = null;
+  private FlowVersion publishedVersion = null;
+  private FlowVersion debugVersion = null;
   private String selfUri = null;
 
   
@@ -177,6 +180,42 @@ public class FlowDivisionView  implements Serializable {
   }
 
   
+  /**
+   * published version information if there is a published version
+   **/
+  public FlowDivisionView publishedVersion(FlowVersion publishedVersion) {
+    this.publishedVersion = publishedVersion;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "published version information if there is a published version")
+  @JsonProperty("publishedVersion")
+  public FlowVersion getPublishedVersion() {
+    return publishedVersion;
+  }
+  public void setPublishedVersion(FlowVersion publishedVersion) {
+    this.publishedVersion = publishedVersion;
+  }
+
+  
+  /**
+   * debug version information if there is a debug version
+   **/
+  public FlowDivisionView debugVersion(FlowVersion debugVersion) {
+    this.debugVersion = debugVersion;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "debug version information if there is a debug version")
+  @JsonProperty("debugVersion")
+  public FlowVersion getDebugVersion() {
+    return debugVersion;
+  }
+  public void setDebugVersion(FlowVersion debugVersion) {
+    this.debugVersion = debugVersion;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -200,12 +239,14 @@ public class FlowDivisionView  implements Serializable {
         Objects.equals(this.type, flowDivisionView.type) &&
         Objects.equals(this.inputSchema, flowDivisionView.inputSchema) &&
         Objects.equals(this.outputSchema, flowDivisionView.outputSchema) &&
+        Objects.equals(this.publishedVersion, flowDivisionView.publishedVersion) &&
+        Objects.equals(this.debugVersion, flowDivisionView.debugVersion) &&
         Objects.equals(this.selfUri, flowDivisionView.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, type, inputSchema, outputSchema, selfUri);
+    return Objects.hash(id, name, division, type, inputSchema, outputSchema, publishedVersion, debugVersion, selfUri);
   }
 
   @Override
@@ -219,6 +260,8 @@ public class FlowDivisionView  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    inputSchema: ").append(toIndentedString(inputSchema)).append("\n");
     sb.append("    outputSchema: ").append(toIndentedString(outputSchema)).append("\n");
+    sb.append("    publishedVersion: ").append(toIndentedString(publishedVersion)).append("\n");
+    sb.append("    debugVersion: ").append(toIndentedString(debugVersion)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

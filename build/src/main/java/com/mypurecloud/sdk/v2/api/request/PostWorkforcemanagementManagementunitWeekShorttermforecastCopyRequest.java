@@ -53,23 +53,13 @@ import com.mypurecloud.sdk.v2.model.ActivityCodeContainer;
 import com.mypurecloud.sdk.v2.model.UserScheduleAdherenceListing;
 import com.mypurecloud.sdk.v2.model.WfmAgent;
 import com.mypurecloud.sdk.v2.model.ShiftTradeListResponse;
-import com.mypurecloud.sdk.v2.model.WfmIntradayQueueListing;
-import com.mypurecloud.sdk.v2.model.SchedulingRunResponse;
-import com.mypurecloud.sdk.v2.model.RescheduleResult;
-import com.mypurecloud.sdk.v2.model.SchedulingRunListResponse;
-import com.mypurecloud.sdk.v2.model.ServiceGoalGroup;
-import com.mypurecloud.sdk.v2.model.ServiceGoalGroupList;
-import com.mypurecloud.sdk.v2.model.ManagementUnitSettingsResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeMatchesSummaryResponse;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestResponse;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestList;
 import com.mypurecloud.sdk.v2.model.WeekScheduleResponse;
-import com.mypurecloud.sdk.v2.model.WeekScheduleGenerationResult;
 import com.mypurecloud.sdk.v2.model.WeekScheduleListResponse;
 import com.mypurecloud.sdk.v2.model.WeekShiftTradeListResponse;
-import com.mypurecloud.sdk.v2.model.ForecastResultResponse;
-import com.mypurecloud.sdk.v2.model.ShortTermForecastListResponse;
 import com.mypurecloud.sdk.v2.model.WorkPlan;
 import com.mypurecloud.sdk.v2.model.WorkPlanListResponse;
 import com.mypurecloud.sdk.v2.model.NotificationsResponse;
@@ -81,10 +71,7 @@ import com.mypurecloud.sdk.v2.model.PatchBuScheduleRunRequest;
 import com.mypurecloud.sdk.v2.model.UpdateServiceGoalTemplate;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateSchedulingRunRequest;
-import com.mypurecloud.sdk.v2.model.ManagementUnitSettingsRequest;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
-import com.mypurecloud.sdk.v2.model.UpdateWeekScheduleRequest;
-import com.mypurecloud.sdk.v2.model.AsyncWeekScheduleResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeResponse;
 import com.mypurecloud.sdk.v2.model.PatchShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.AgentTimeOffRequestPatch;
@@ -111,24 +98,13 @@ import com.mypurecloud.sdk.v2.model.CopyBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.GenerateBuForecastRequest;
 import com.mypurecloud.sdk.v2.model.CreateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQuery;
-import com.mypurecloud.sdk.v2.model.IntradayResponse;
-import com.mypurecloud.sdk.v2.model.IntradayQueryDataCommand;
 import com.mypurecloud.sdk.v2.model.MoveManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.MoveManagementUnitResponse;
 import com.mypurecloud.sdk.v2.model.UserScheduleContainer;
 import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
-import com.mypurecloud.sdk.v2.model.CreateServiceGoalGroupRequest;
 import com.mypurecloud.sdk.v2.model.CreateAdminTimeOffRequest;
-import com.mypurecloud.sdk.v2.model.TimeOffRequestEntityList;
-import com.mypurecloud.sdk.v2.model.TimeOffRequestLookupList;
+import com.mypurecloud.sdk.v2.model.TimeOffRequestListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestQueryBody;
-import com.mypurecloud.sdk.v2.model.CopyWeekScheduleRequest;
-import com.mypurecloud.sdk.v2.model.RescheduleRequest;
-import com.mypurecloud.sdk.v2.model.ImportWeekScheduleRequest;
-import com.mypurecloud.sdk.v2.model.GenerateWeekScheduleResponse;
-import com.mypurecloud.sdk.v2.model.GenerateWeekScheduleRequest;
-import com.mypurecloud.sdk.v2.model.UserSchedulesPartialUploadRequest;
-import com.mypurecloud.sdk.v2.model.PartialUploadResponse;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeResponse;
 import com.mypurecloud.sdk.v2.model.AddShiftTradeRequest;
@@ -136,12 +112,6 @@ import com.mypurecloud.sdk.v2.model.SearchShiftTradesResponse;
 import com.mypurecloud.sdk.v2.model.SearchShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
 import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
-import com.mypurecloud.sdk.v2.model.ShortTermForecastResponse;
-import com.mypurecloud.sdk.v2.model.CopyShortTermForecastRequest;
-import com.mypurecloud.sdk.v2.model.ImportShortTermForecastRequest;
-import com.mypurecloud.sdk.v2.model.GenerateShortTermForecastResponse;
-import com.mypurecloud.sdk.v2.model.GenerateShortTermForecastRequest;
-import com.mypurecloud.sdk.v2.model.RouteGroupList;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlan;
 import com.mypurecloud.sdk.v2.model.CreateWorkPlan;
 import com.mypurecloud.sdk.v2.model.CreateManagementUnitApiRequest;
@@ -194,34 +164,6 @@ public class PostWorkforcemanagementManagementunitWeekShorttermforecastCopyReque
 	    return this;
 	} 
 	
-	private CopyShortTermForecastRequest body;
-	public CopyShortTermForecastRequest getBody() {
-		return this.body;
-	}
-
-	public void setBody(CopyShortTermForecastRequest body) {
-		this.body = body;
-	}
-
-	public PostWorkforcemanagementManagementunitWeekShorttermforecastCopyRequest withBody(CopyShortTermForecastRequest body) {
-	    this.setBody(body);
-	    return this;
-	} 
-	
-	private Boolean forceAsync;
-	public Boolean getForceAsync() {
-		return this.forceAsync;
-	}
-
-	public void setForceAsync(Boolean forceAsync) {
-		this.forceAsync = forceAsync;
-	}
-
-	public PostWorkforcemanagementManagementunitWeekShorttermforecastCopyRequest withForceAsync(Boolean forceAsync) {
-	    this.setForceAsync(forceAsync);
-	    return this;
-	} 
-	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -241,7 +183,7 @@ public class PostWorkforcemanagementManagementunitWeekShorttermforecastCopyReque
         return this;
     }
 
-    public ApiRequest<CopyShortTermForecastRequest> withHttpInfo() {
+    public ApiRequest<Void> withHttpInfo() {
         
         // verify the required parameter 'managementUnitId' is set
         if (this.managementUnitId == null) {
@@ -258,11 +200,6 @@ public class PostWorkforcemanagementManagementunitWeekShorttermforecastCopyReque
             throw new IllegalStateException("Missing the required parameter 'forecastId' when building request for PostWorkforcemanagementManagementunitWeekShorttermforecastCopyRequest.");
         }
         
-        // verify the required parameter 'body' is set
-        if (this.body == null) {
-            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitWeekShorttermforecastCopyRequest.");
-        }
-        
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy")
                 .withPathParameter("managementUnitId", managementUnitId)
@@ -270,10 +207,6 @@ public class PostWorkforcemanagementManagementunitWeekShorttermforecastCopyReque
                 .withPathParameter("weekDateId", weekDateId)
         
                 .withPathParameter("forecastId", forecastId)
-        
-                .withQueryParameters("forceAsync", "", forceAsync)
-        
-                .withBody(body)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -287,9 +220,9 @@ public class PostWorkforcemanagementManagementunitWeekShorttermforecastCopyReque
 	}
 
 	
-	public static Builder builder(String managementUnitId, String weekDateId, String forecastId, CopyShortTermForecastRequest body) {
+	public static Builder builder(String managementUnitId, String weekDateId, String forecastId) {
 	    return new Builder()
-	            .withRequiredParams(managementUnitId, weekDateId, forecastId, body);
+	            .withRequiredParams(managementUnitId, weekDateId, forecastId);
 	}
 	
 
@@ -316,23 +249,12 @@ public class PostWorkforcemanagementManagementunitWeekShorttermforecastCopyReque
 			return this;
 		}
 		
-		public Builder withBody(CopyShortTermForecastRequest body) {
-			request.setBody(body);
-			return this;
-		}
-		
-		public Builder withForceAsync(Boolean forceAsync) {
-			request.setForceAsync(forceAsync);
-			return this;
-		}
-		
 
 		
-		public Builder withRequiredParams(String managementUnitId, String weekDateId, String forecastId, CopyShortTermForecastRequest body) {
+		public Builder withRequiredParams(String managementUnitId, String weekDateId, String forecastId) {
 			request.setManagementUnitId(managementUnitId);
 						request.setWeekDateId(weekDateId);
 						request.setForecastId(forecastId);
-						request.setBody(body);
 			
 			return this;
 		}
@@ -353,11 +275,6 @@ public class PostWorkforcemanagementManagementunitWeekShorttermforecastCopyReque
             // verify the required parameter 'forecastId' is set
             if (request.forecastId == null) {
                 throw new IllegalStateException("Missing the required parameter 'forecastId' when building request for PostWorkforcemanagementManagementunitWeekShorttermforecastCopyRequest.");
-            }
-            
-            // verify the required parameter 'body' is set
-            if (request.body == null) {
-                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostWorkforcemanagementManagementunitWeekShorttermforecastCopyRequest.");
             }
             
 			return request;

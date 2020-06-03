@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteRoutingQueueWrapupcode**](RoutingApi.html#deleteRoutingQueueWrapupcode) | Delete a wrap-up code from a queue |
 | [**deleteRoutingSettings**](RoutingApi.html#deleteRoutingSettings) | Delete an organization&#39;s routing settings |
 | [**deleteRoutingSkill**](RoutingApi.html#deleteRoutingSkill) | Delete Routing Skill |
+| [**deleteRoutingSmsAddress**](RoutingApi.html#deleteRoutingSmsAddress) | Delete an Address by Id for SMS |
 | [**deleteRoutingSmsPhonenumber**](RoutingApi.html#deleteRoutingSmsPhonenumber) | Delete a phone number provisioned for SMS. |
 | [**deleteRoutingUserUtilization**](RoutingApi.html#deleteRoutingUserUtilization) | Delete the user&#39;s max utilization settings and revert to the organization-wide default. |
 | [**deleteRoutingUtilization**](RoutingApi.html#deleteRoutingUtilization) | Delete the organization-wide max utilization settings and revert to the system default. |
@@ -521,6 +522,68 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **skillId** | **String**| Skill ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteRoutingSmsAddress"></a>
+
+# **deleteRoutingSmsAddress**
+
+
+
+> Void deleteRoutingSmsAddress(addressId)
+
+Delete an Address by Id for SMS
+
+
+
+Wraps DELETE /api/v2/routing/sms/addresses/{addressId}  
+
+Requires ALL permissions: 
+
+* sms:phoneNumber:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String addressId = "addressId_example"; // String | Address ID
+try {
+    apiInstance.deleteRoutingSmsAddress(addressId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#deleteRoutingSmsAddress");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **addressId** | **String**| Address ID | 
 {: class="table-striped"}
 
 

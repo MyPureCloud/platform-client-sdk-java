@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Segment;
+import com.mypurecloud.sdk.v2.model.Wrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -124,6 +125,7 @@ public class SocialExpression  implements Serializable {
   private String provider = null;
   private String scriptId = null;
   private String peerId = null;
+  private Wrapup wrapup = null;
 
   
   /**
@@ -432,6 +434,24 @@ public class SocialExpression  implements Serializable {
   }
 
   
+  /**
+   * Call wrap up or disposition data.
+   **/
+  public SocialExpression wrapup(Wrapup wrapup) {
+    this.wrapup = wrapup;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Call wrap up or disposition data.")
+  @JsonProperty("wrapup")
+  public Wrapup getWrapup() {
+    return wrapup;
+  }
+  public void setWrapup(Wrapup wrapup) {
+    this.wrapup = wrapup;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -458,12 +478,13 @@ public class SocialExpression  implements Serializable {
         Objects.equals(this.disconnectedTime, socialExpression.disconnectedTime) &&
         Objects.equals(this.provider, socialExpression.provider) &&
         Objects.equals(this.scriptId, socialExpression.scriptId) &&
-        Objects.equals(this.peerId, socialExpression.peerId);
+        Objects.equals(this.peerId, socialExpression.peerId) &&
+        Objects.equals(this.wrapup, socialExpression.wrapup);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, segments, held, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, scriptId, peerId);
+    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, segments, held, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, scriptId, peerId, wrapup);
   }
 
   @Override
@@ -488,6 +509,7 @@ public class SocialExpression  implements Serializable {
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
+    sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("}");
     return sb.toString();
   }

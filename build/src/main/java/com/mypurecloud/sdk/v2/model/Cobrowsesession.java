@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Address;
 import com.mypurecloud.sdk.v2.model.Segment;
+import com.mypurecloud.sdk.v2.model.Wrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -122,6 +123,7 @@ public class Cobrowsesession  implements Serializable {
   private String provider = null;
   private String peerId = null;
   private List<Segment> segments = new ArrayList<Segment>();
+  private Wrapup wrapup = null;
 
   
   /**
@@ -394,6 +396,24 @@ public class Cobrowsesession  implements Serializable {
   }
 
   
+  /**
+   * Call wrap up or disposition data.
+   **/
+  public Cobrowsesession wrapup(Wrapup wrapup) {
+    this.wrapup = wrapup;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Call wrap up or disposition data.")
+  @JsonProperty("wrapup")
+  public Wrapup getWrapup() {
+    return wrapup;
+  }
+  public void setWrapup(Wrapup wrapup) {
+    this.wrapup = wrapup;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -418,12 +438,13 @@ public class Cobrowsesession  implements Serializable {
         Objects.equals(this.disconnectedTime, cobrowsesession.disconnectedTime) &&
         Objects.equals(this.provider, cobrowsesession.provider) &&
         Objects.equals(this.peerId, cobrowsesession.peerId) &&
-        Objects.equals(this.segments, cobrowsesession.segments);
+        Objects.equals(this.segments, cobrowsesession.segments) &&
+        Objects.equals(this.wrapup, cobrowsesession.wrapup);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, disconnectType, self, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, providerEventTime, startAlertingTime, connectedTime, disconnectedTime, provider, peerId, segments);
+    return Objects.hash(state, id, disconnectType, self, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, providerEventTime, startAlertingTime, connectedTime, disconnectedTime, provider, peerId, segments, wrapup);
   }
 
   @Override
@@ -446,6 +467,7 @@ public class Cobrowsesession  implements Serializable {
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("    segments: ").append(toIndentedString(segments)).append("\n");
+    sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("}");
     return sb.toString();
   }
