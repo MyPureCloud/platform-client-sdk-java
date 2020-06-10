@@ -9,6 +9,7 @@ import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicA
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicDisconnectReason;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicErrorDetails;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicFaxStatus;
+import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -204,6 +205,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
   private List<QueueConversationSocialExpressionEventTopicDisconnectReason> disconnectReasons = new ArrayList<QueueConversationSocialExpressionEventTopicDisconnectReason>();
   private QueueConversationSocialExpressionEventTopicFaxStatus faxStatus = null;
   private String uuiData = null;
+  private QueueConversationSocialExpressionEventTopicWrapup wrapup = null;
   private Object additionalProperties = null;
 
   
@@ -583,6 +585,23 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
   
   /**
    **/
+  public QueueConversationSocialExpressionEventTopicCall wrapup(QueueConversationSocialExpressionEventTopicWrapup wrapup) {
+    this.wrapup = wrapup;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("wrapup")
+  public QueueConversationSocialExpressionEventTopicWrapup getWrapup() {
+    return wrapup;
+  }
+  public void setWrapup(QueueConversationSocialExpressionEventTopicWrapup wrapup) {
+    this.wrapup = wrapup;
+  }
+
+  
+  /**
+   **/
   public QueueConversationSocialExpressionEventTopicCall additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -630,12 +649,13 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
         Objects.equals(this.disconnectReasons, queueConversationSocialExpressionEventTopicCall.disconnectReasons) &&
         Objects.equals(this.faxStatus, queueConversationSocialExpressionEventTopicCall.faxStatus) &&
         Objects.equals(this.uuiData, queueConversationSocialExpressionEventTopicCall.uuiData) &&
+        Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicCall.wrapup) &&
         Objects.equals(this.additionalProperties, queueConversationSocialExpressionEventTopicCall.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, recording, recordingState, muted, confined, held, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, additionalProperties);
+    return Objects.hash(id, state, recording, recordingState, muted, confined, held, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, wrapup, additionalProperties);
   }
 
   @Override
@@ -665,6 +685,7 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     sb.append("    disconnectReasons: ").append(toIndentedString(disconnectReasons)).append("\n");
     sb.append("    faxStatus: ").append(toIndentedString(faxStatus)).append("\n");
     sb.append("    uuiData: ").append(toIndentedString(uuiData)).append("\n");
+    sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

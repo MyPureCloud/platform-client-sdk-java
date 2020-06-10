@@ -26,6 +26,7 @@ title: QueueConversationEventTopicEmail
 | **direction** | [**DirectionEnum**](#DirectionEnum)<!----> |  |  [optional] |
 | **draftAttachments** | <!----><!---->[**List&lt;QueueConversationEventTopicAttachment&gt;**](QueueConversationEventTopicAttachment.html)<!----> |  |  [optional] |
 | **spam** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **wrapup** | <!----><!---->[**QueueConversationEventTopicWrapup**](QueueConversationEventTopicWrapup.html)<!----> |  |  [optional] |
 | **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

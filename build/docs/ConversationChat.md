@@ -77,6 +77,7 @@ title: ConversationChat
 | PEER | &quot;peer&quot; |
 | OTHER | &quot;other&quot; |
 | UNCALLABLE | &quot;uncallable&quot; |
+| TIMEOUT | &quot;timeout&quot; |
 {: class="table table-striped"}
 
 

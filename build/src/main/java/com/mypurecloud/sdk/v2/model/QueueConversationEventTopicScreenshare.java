@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicAddress;
+import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -116,6 +117,7 @@ public class QueueConversationEventTopicScreenshare  implements Serializable {
   private DisconnectTypeEnum disconnectType = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
+  private QueueConversationEventTopicWrapup wrapup = null;
   private Object additionalProperties = null;
 
   
@@ -308,6 +310,23 @@ public class QueueConversationEventTopicScreenshare  implements Serializable {
   
   /**
    **/
+  public QueueConversationEventTopicScreenshare wrapup(QueueConversationEventTopicWrapup wrapup) {
+    this.wrapup = wrapup;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("wrapup")
+  public QueueConversationEventTopicWrapup getWrapup() {
+    return wrapup;
+  }
+  public void setWrapup(QueueConversationEventTopicWrapup wrapup) {
+    this.wrapup = wrapup;
+  }
+
+  
+  /**
+   **/
   public QueueConversationEventTopicScreenshare additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -344,12 +363,13 @@ public class QueueConversationEventTopicScreenshare  implements Serializable {
         Objects.equals(this.disconnectType, queueConversationEventTopicScreenshare.disconnectType) &&
         Objects.equals(this.connectedTime, queueConversationEventTopicScreenshare.connectedTime) &&
         Objects.equals(this.disconnectedTime, queueConversationEventTopicScreenshare.disconnectedTime) &&
+        Objects.equals(this.wrapup, queueConversationEventTopicScreenshare.wrapup) &&
         Objects.equals(this.additionalProperties, queueConversationEventTopicScreenshare.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, self, id, context, sharing, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, additionalProperties);
+    return Objects.hash(state, self, id, context, sharing, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, wrapup, additionalProperties);
   }
 
   @Override
@@ -368,6 +388,7 @@ public class QueueConversationEventTopicScreenshare  implements Serializable {
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
+    sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

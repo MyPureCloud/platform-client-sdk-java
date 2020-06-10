@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicDialerPreview;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicVoicemail;
+import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -164,6 +165,7 @@ public class QueueConversationEventTopicCallback  implements Serializable {
   private Date disconnectedTime = null;
   private Date callbackScheduledTime = null;
   private String automatedCallbackConfigId = null;
+  private QueueConversationEventTopicWrapup wrapup = null;
   private Object additionalProperties = null;
 
   
@@ -509,6 +511,23 @@ public class QueueConversationEventTopicCallback  implements Serializable {
   
   /**
    **/
+  public QueueConversationEventTopicCallback wrapup(QueueConversationEventTopicWrapup wrapup) {
+    this.wrapup = wrapup;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("wrapup")
+  public QueueConversationEventTopicWrapup getWrapup() {
+    return wrapup;
+  }
+  public void setWrapup(QueueConversationEventTopicWrapup wrapup) {
+    this.wrapup = wrapup;
+  }
+
+  
+  /**
+   **/
   public QueueConversationEventTopicCallback additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -554,12 +573,13 @@ public class QueueConversationEventTopicCallback  implements Serializable {
         Objects.equals(this.disconnectedTime, queueConversationEventTopicCallback.disconnectedTime) &&
         Objects.equals(this.callbackScheduledTime, queueConversationEventTopicCallback.callbackScheduledTime) &&
         Objects.equals(this.automatedCallbackConfigId, queueConversationEventTopicCallback.automatedCallbackConfigId) &&
+        Objects.equals(this.wrapup, queueConversationEventTopicCallback.wrapup) &&
         Objects.equals(this.additionalProperties, queueConversationEventTopicCallback.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, peerId, externalCampaign, skipEnabled, provider, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, additionalProperties);
+    return Objects.hash(state, id, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, peerId, externalCampaign, skipEnabled, provider, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, wrapup, additionalProperties);
   }
 
   @Override
@@ -587,6 +607,7 @@ public class QueueConversationEventTopicCallback  implements Serializable {
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    callbackScheduledTime: ").append(toIndentedString(callbackScheduledTime)).append("\n");
     sb.append("    automatedCallbackConfigId: ").append(toIndentedString(automatedCallbackConfigId)).append("\n");
+    sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

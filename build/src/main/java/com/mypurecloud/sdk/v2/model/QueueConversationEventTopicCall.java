@@ -9,6 +9,7 @@ import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicAddress;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicDisconnectReason;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicErrorDetails;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicFaxStatus;
+import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -204,6 +205,7 @@ public class QueueConversationEventTopicCall  implements Serializable {
   private List<QueueConversationEventTopicDisconnectReason> disconnectReasons = new ArrayList<QueueConversationEventTopicDisconnectReason>();
   private QueueConversationEventTopicFaxStatus faxStatus = null;
   private String uuiData = null;
+  private QueueConversationEventTopicWrapup wrapup = null;
   private Object additionalProperties = null;
 
   
@@ -583,6 +585,23 @@ public class QueueConversationEventTopicCall  implements Serializable {
   
   /**
    **/
+  public QueueConversationEventTopicCall wrapup(QueueConversationEventTopicWrapup wrapup) {
+    this.wrapup = wrapup;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("wrapup")
+  public QueueConversationEventTopicWrapup getWrapup() {
+    return wrapup;
+  }
+  public void setWrapup(QueueConversationEventTopicWrapup wrapup) {
+    this.wrapup = wrapup;
+  }
+
+  
+  /**
+   **/
   public QueueConversationEventTopicCall additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -630,12 +649,13 @@ public class QueueConversationEventTopicCall  implements Serializable {
         Objects.equals(this.disconnectReasons, queueConversationEventTopicCall.disconnectReasons) &&
         Objects.equals(this.faxStatus, queueConversationEventTopicCall.faxStatus) &&
         Objects.equals(this.uuiData, queueConversationEventTopicCall.uuiData) &&
+        Objects.equals(this.wrapup, queueConversationEventTopicCall.wrapup) &&
         Objects.equals(this.additionalProperties, queueConversationEventTopicCall.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, recording, recordingState, muted, confined, held, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, additionalProperties);
+    return Objects.hash(id, state, recording, recordingState, muted, confined, held, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, wrapup, additionalProperties);
   }
 
   @Override
@@ -665,6 +685,7 @@ public class QueueConversationEventTopicCall  implements Serializable {
     sb.append("    disconnectReasons: ").append(toIndentedString(disconnectReasons)).append("\n");
     sb.append("    faxStatus: ").append(toIndentedString(faxStatus)).append("\n");
     sb.append("    uuiData: ").append(toIndentedString(uuiData)).append("\n");
+    sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -119,6 +120,7 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
   private Date startHoldTime = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
+  private ConversationEventTopicWrapup wrapup = null;
   private Object additionalProperties = null;
 
   
@@ -379,6 +381,23 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
   
   /**
    **/
+  public ConversationEventTopicSocialExpression wrapup(ConversationEventTopicWrapup wrapup) {
+    this.wrapup = wrapup;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("wrapup")
+  public ConversationEventTopicWrapup getWrapup() {
+    return wrapup;
+  }
+  public void setWrapup(ConversationEventTopicWrapup wrapup) {
+    this.wrapup = wrapup;
+  }
+
+  
+  /**
+   **/
   public ConversationEventTopicSocialExpression additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -419,12 +438,13 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
         Objects.equals(this.startHoldTime, conversationEventTopicSocialExpression.startHoldTime) &&
         Objects.equals(this.connectedTime, conversationEventTopicSocialExpression.connectedTime) &&
         Objects.equals(this.disconnectedTime, conversationEventTopicSocialExpression.disconnectedTime) &&
+        Objects.equals(this.wrapup, conversationEventTopicSocialExpression.wrapup) &&
         Objects.equals(this.additionalProperties, conversationEventTopicSocialExpression.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, additionalProperties);
+    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, wrapup, additionalProperties);
   }
 
   @Override
@@ -447,6 +467,7 @@ public class ConversationEventTopicSocialExpression  implements Serializable {
     sb.append("    startHoldTime: ").append(toIndentedString(startHoldTime)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
+    sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

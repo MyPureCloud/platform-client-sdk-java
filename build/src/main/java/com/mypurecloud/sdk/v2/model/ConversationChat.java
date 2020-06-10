@@ -118,7 +118,8 @@ public class ConversationChat  implements Serializable {
     ERROR("error"),
     PEER("peer"),
     OTHER("other"),
-    UNCALLABLE("uncallable");
+    UNCALLABLE("uncallable"),
+    TIMEOUT("timeout");
 
     private String value;
 

@@ -21,6 +21,7 @@ title: QueueConversationSocialExpressionEventTopicChat
 | **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **disconnectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **journeyContext** | <!----><!---->[**QueueConversationSocialExpressionEventTopicJourneyContext**](QueueConversationSocialExpressionEventTopicJourneyContext.html)<!----> |  |  [optional] |
+| **wrapup** | <!----><!---->[**QueueConversationSocialExpressionEventTopicWrapup**](QueueConversationSocialExpressionEventTopicWrapup.html)<!----> |  |  [optional] |
 | **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

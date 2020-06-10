@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicAddress;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicMessageDetails;
+import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -161,6 +162,7 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
   private TypeEnum type = null;
   private String recipientCountry = null;
   private String recipientType = null;
+  private QueueConversationVideoEventTopicWrapup wrapup = null;
   private Object additionalProperties = null;
 
   
@@ -455,6 +457,23 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
   
   /**
    **/
+  public QueueConversationVideoEventTopicMessage wrapup(QueueConversationVideoEventTopicWrapup wrapup) {
+    this.wrapup = wrapup;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("wrapup")
+  public QueueConversationVideoEventTopicWrapup getWrapup() {
+    return wrapup;
+  }
+  public void setWrapup(QueueConversationVideoEventTopicWrapup wrapup) {
+    this.wrapup = wrapup;
+  }
+
+  
+  /**
+   **/
   public QueueConversationVideoEventTopicMessage additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -497,12 +516,13 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
         Objects.equals(this.type, queueConversationVideoEventTopicMessage.type) &&
         Objects.equals(this.recipientCountry, queueConversationVideoEventTopicMessage.recipientCountry) &&
         Objects.equals(this.recipientType, queueConversationVideoEventTopicMessage.recipientType) &&
+        Objects.equals(this.wrapup, queueConversationVideoEventTopicMessage.wrapup) &&
         Objects.equals(this.additionalProperties, queueConversationVideoEventTopicMessage.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, additionalProperties);
+    return Objects.hash(id, state, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, wrapup, additionalProperties);
   }
 
   @Override
@@ -527,6 +547,7 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    recipientCountry: ").append(toIndentedString(recipientCountry)).append("\n");
     sb.append("    recipientType: ").append(toIndentedString(recipientType)).append("\n");
+    sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

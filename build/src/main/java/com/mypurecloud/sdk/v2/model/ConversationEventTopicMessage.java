@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicAddress;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicMessageDetails;
+import com.mypurecloud.sdk.v2.model.ConversationEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -161,6 +162,7 @@ public class ConversationEventTopicMessage  implements Serializable {
   private TypeEnum type = null;
   private String recipientCountry = null;
   private String recipientType = null;
+  private ConversationEventTopicWrapup wrapup = null;
   private Object additionalProperties = null;
 
   
@@ -455,6 +457,23 @@ public class ConversationEventTopicMessage  implements Serializable {
   
   /**
    **/
+  public ConversationEventTopicMessage wrapup(ConversationEventTopicWrapup wrapup) {
+    this.wrapup = wrapup;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("wrapup")
+  public ConversationEventTopicWrapup getWrapup() {
+    return wrapup;
+  }
+  public void setWrapup(ConversationEventTopicWrapup wrapup) {
+    this.wrapup = wrapup;
+  }
+
+  
+  /**
+   **/
   public ConversationEventTopicMessage additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -497,12 +516,13 @@ public class ConversationEventTopicMessage  implements Serializable {
         Objects.equals(this.type, conversationEventTopicMessage.type) &&
         Objects.equals(this.recipientCountry, conversationEventTopicMessage.recipientCountry) &&
         Objects.equals(this.recipientType, conversationEventTopicMessage.recipientType) &&
+        Objects.equals(this.wrapup, conversationEventTopicMessage.wrapup) &&
         Objects.equals(this.additionalProperties, conversationEventTopicMessage.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, additionalProperties);
+    return Objects.hash(id, state, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, wrapup, additionalProperties);
   }
 
   @Override
@@ -527,6 +547,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    recipientCountry: ").append(toIndentedString(recipientCountry)).append("\n");
     sb.append("    recipientType: ").append(toIndentedString(recipientType)).append("\n");
+    sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

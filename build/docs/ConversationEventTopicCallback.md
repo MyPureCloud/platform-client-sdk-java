@@ -28,6 +28,7 @@ title: ConversationEventTopicCallback
 | **disconnectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **callbackScheduledTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **automatedCallbackConfigId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **wrapup** | <!----><!---->[**ConversationEventTopicWrapup**](ConversationEventTopicWrapup.html)<!----> |  |  [optional] |
 | **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

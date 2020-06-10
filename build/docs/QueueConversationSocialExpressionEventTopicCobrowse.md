@@ -23,6 +23,7 @@ title: QueueConversationSocialExpressionEventTopicCobrowse
 | **providerEventTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **disconnectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **wrapup** | <!----><!---->[**QueueConversationSocialExpressionEventTopicWrapup**](QueueConversationSocialExpressionEventTopicWrapup.html)<!----> |  |  [optional] |
 | **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

@@ -25,6 +25,7 @@ title: QueueConversationSocialExpressionEventTopicMessage
 | **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
 | **recipientCountry** | <!----><!---->**String**<!----> |  |  [optional] |
 | **recipientType** | <!----><!---->**String**<!----> |  |  [optional] |
+| **wrapup** | <!----><!---->[**QueueConversationSocialExpressionEventTopicWrapup**](QueueConversationSocialExpressionEventTopicWrapup.html)<!----> |  |  [optional] |
 | **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

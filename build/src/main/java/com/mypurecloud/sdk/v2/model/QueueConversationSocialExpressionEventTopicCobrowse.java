@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicAddress;
+import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -120,6 +121,7 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
   private Date providerEventTime = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
+  private QueueConversationSocialExpressionEventTopicWrapup wrapup = null;
   private Object additionalProperties = null;
 
   
@@ -380,6 +382,23 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
   
   /**
    **/
+  public QueueConversationSocialExpressionEventTopicCobrowse wrapup(QueueConversationSocialExpressionEventTopicWrapup wrapup) {
+    this.wrapup = wrapup;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("wrapup")
+  public QueueConversationSocialExpressionEventTopicWrapup getWrapup() {
+    return wrapup;
+  }
+  public void setWrapup(QueueConversationSocialExpressionEventTopicWrapup wrapup) {
+    this.wrapup = wrapup;
+  }
+
+  
+  /**
+   **/
   public QueueConversationSocialExpressionEventTopicCobrowse additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -420,12 +439,13 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
         Objects.equals(this.providerEventTime, queueConversationSocialExpressionEventTopicCobrowse.providerEventTime) &&
         Objects.equals(this.connectedTime, queueConversationSocialExpressionEventTopicCobrowse.connectedTime) &&
         Objects.equals(this.disconnectedTime, queueConversationSocialExpressionEventTopicCobrowse.disconnectedTime) &&
+        Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicCobrowse.wrapup) &&
         Objects.equals(this.additionalProperties, queueConversationSocialExpressionEventTopicCobrowse.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, disconnectType, id, self, roomId, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, provider, scriptId, peerId, providerEventTime, connectedTime, disconnectedTime, additionalProperties);
+    return Objects.hash(state, disconnectType, id, self, roomId, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, provider, scriptId, peerId, providerEventTime, connectedTime, disconnectedTime, wrapup, additionalProperties);
   }
 
   @Override
@@ -448,6 +468,7 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
     sb.append("    providerEventTime: ").append(toIndentedString(providerEventTime)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
+    sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

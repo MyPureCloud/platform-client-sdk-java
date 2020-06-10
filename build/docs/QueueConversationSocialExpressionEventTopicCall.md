@@ -30,6 +30,7 @@ title: QueueConversationSocialExpressionEventTopicCall
 | **disconnectReasons** | <!----><!---->[**List&lt;QueueConversationSocialExpressionEventTopicDisconnectReason&gt;**](QueueConversationSocialExpressionEventTopicDisconnectReason.html)<!----> |  |  [optional] |
 | **faxStatus** | <!----><!---->[**QueueConversationSocialExpressionEventTopicFaxStatus**](QueueConversationSocialExpressionEventTopicFaxStatus.html)<!----> |  |  [optional] |
 | **uuiData** | <!----><!---->**String**<!----> |  |  [optional] |
+| **wrapup** | <!----><!---->[**QueueConversationSocialExpressionEventTopicWrapup**](QueueConversationSocialExpressionEventTopicWrapup.html)<!----> |  |  [optional] |
 | **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

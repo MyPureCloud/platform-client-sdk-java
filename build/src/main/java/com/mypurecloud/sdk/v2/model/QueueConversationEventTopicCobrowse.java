@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicAddress;
+import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -120,6 +121,7 @@ public class QueueConversationEventTopicCobrowse  implements Serializable {
   private Date providerEventTime = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
+  private QueueConversationEventTopicWrapup wrapup = null;
   private Object additionalProperties = null;
 
   
@@ -380,6 +382,23 @@ public class QueueConversationEventTopicCobrowse  implements Serializable {
   
   /**
    **/
+  public QueueConversationEventTopicCobrowse wrapup(QueueConversationEventTopicWrapup wrapup) {
+    this.wrapup = wrapup;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("wrapup")
+  public QueueConversationEventTopicWrapup getWrapup() {
+    return wrapup;
+  }
+  public void setWrapup(QueueConversationEventTopicWrapup wrapup) {
+    this.wrapup = wrapup;
+  }
+
+  
+  /**
+   **/
   public QueueConversationEventTopicCobrowse additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -420,12 +439,13 @@ public class QueueConversationEventTopicCobrowse  implements Serializable {
         Objects.equals(this.providerEventTime, queueConversationEventTopicCobrowse.providerEventTime) &&
         Objects.equals(this.connectedTime, queueConversationEventTopicCobrowse.connectedTime) &&
         Objects.equals(this.disconnectedTime, queueConversationEventTopicCobrowse.disconnectedTime) &&
+        Objects.equals(this.wrapup, queueConversationEventTopicCobrowse.wrapup) &&
         Objects.equals(this.additionalProperties, queueConversationEventTopicCobrowse.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, disconnectType, id, self, roomId, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, provider, scriptId, peerId, providerEventTime, connectedTime, disconnectedTime, additionalProperties);
+    return Objects.hash(state, disconnectType, id, self, roomId, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, provider, scriptId, peerId, providerEventTime, connectedTime, disconnectedTime, wrapup, additionalProperties);
   }
 
   @Override
@@ -448,6 +468,7 @@ public class QueueConversationEventTopicCobrowse  implements Serializable {
     sb.append("    providerEventTime: ").append(toIndentedString(providerEventTime)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
+    sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

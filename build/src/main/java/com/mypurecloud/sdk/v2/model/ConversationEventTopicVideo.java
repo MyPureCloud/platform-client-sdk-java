@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicAddress;
+import com.mypurecloud.sdk.v2.model.ConversationEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -121,6 +122,7 @@ public class ConversationEventTopicVideo  implements Serializable {
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private List<String> msids = new ArrayList<String>();
+  private ConversationEventTopicWrapup wrapup = null;
   private Object additionalProperties = null;
 
   
@@ -364,6 +366,23 @@ public class ConversationEventTopicVideo  implements Serializable {
   
   /**
    **/
+  public ConversationEventTopicVideo wrapup(ConversationEventTopicWrapup wrapup) {
+    this.wrapup = wrapup;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("wrapup")
+  public ConversationEventTopicWrapup getWrapup() {
+    return wrapup;
+  }
+  public void setWrapup(ConversationEventTopicWrapup wrapup) {
+    this.wrapup = wrapup;
+  }
+
+  
+  /**
+   **/
   public ConversationEventTopicVideo additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -403,12 +422,13 @@ public class ConversationEventTopicVideo  implements Serializable {
         Objects.equals(this.connectedTime, conversationEventTopicVideo.connectedTime) &&
         Objects.equals(this.disconnectedTime, conversationEventTopicVideo.disconnectedTime) &&
         Objects.equals(this.msids, conversationEventTopicVideo.msids) &&
+        Objects.equals(this.wrapup, conversationEventTopicVideo.wrapup) &&
         Objects.equals(this.additionalProperties, conversationEventTopicVideo.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, self, id, context, audioMuted, videoMuted, sharingScreen, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, msids, additionalProperties);
+    return Objects.hash(state, self, id, context, audioMuted, videoMuted, sharingScreen, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, msids, wrapup, additionalProperties);
   }
 
   @Override
@@ -430,6 +450,7 @@ public class ConversationEventTopicVideo  implements Serializable {
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    msids: ").append(toIndentedString(msids)).append("\n");
+    sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

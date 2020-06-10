@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicAddress;
+import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -116,6 +117,7 @@ public class QueueConversationVideoEventTopicScreenshare  implements Serializabl
   private DisconnectTypeEnum disconnectType = null;
   private Date connectedTime = null;
   private Date disconnectedTime = null;
+  private QueueConversationVideoEventTopicWrapup wrapup = null;
   private Object additionalProperties = null;
 
   
@@ -308,6 +310,23 @@ public class QueueConversationVideoEventTopicScreenshare  implements Serializabl
   
   /**
    **/
+  public QueueConversationVideoEventTopicScreenshare wrapup(QueueConversationVideoEventTopicWrapup wrapup) {
+    this.wrapup = wrapup;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("wrapup")
+  public QueueConversationVideoEventTopicWrapup getWrapup() {
+    return wrapup;
+  }
+  public void setWrapup(QueueConversationVideoEventTopicWrapup wrapup) {
+    this.wrapup = wrapup;
+  }
+
+  
+  /**
+   **/
   public QueueConversationVideoEventTopicScreenshare additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -344,12 +363,13 @@ public class QueueConversationVideoEventTopicScreenshare  implements Serializabl
         Objects.equals(this.disconnectType, queueConversationVideoEventTopicScreenshare.disconnectType) &&
         Objects.equals(this.connectedTime, queueConversationVideoEventTopicScreenshare.connectedTime) &&
         Objects.equals(this.disconnectedTime, queueConversationVideoEventTopicScreenshare.disconnectedTime) &&
+        Objects.equals(this.wrapup, queueConversationVideoEventTopicScreenshare.wrapup) &&
         Objects.equals(this.additionalProperties, queueConversationVideoEventTopicScreenshare.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, self, id, context, sharing, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, additionalProperties);
+    return Objects.hash(state, self, id, context, sharing, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, wrapup, additionalProperties);
   }
 
   @Override
@@ -368,6 +388,7 @@ public class QueueConversationVideoEventTopicScreenshare  implements Serializabl
     sb.append("    disconnectType: ").append(toIndentedString(disconnectType)).append("\n");
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
+    sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
