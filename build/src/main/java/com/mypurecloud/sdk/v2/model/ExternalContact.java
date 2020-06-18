@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContactAddress;
+import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.ExternalDataSource;
 import com.mypurecloud.sdk.v2.model.ExternalOrganization;
 import com.mypurecloud.sdk.v2.model.FacebookId;
@@ -16,7 +17,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -48,6 +51,8 @@ public class ExternalContact  implements Serializable {
   private ExternalOrganization externalOrganization = null;
   private Boolean surveyOptOut = null;
   private String externalSystemUrl = null;
+  private DataSchema schema = null;
+  private Map<String, Object> customFields = null;
   private List<ExternalDataSource> externalDataSources = new ArrayList<ExternalDataSource>();
   private String selfUri = null;
 
@@ -439,6 +444,42 @@ public class ExternalContact  implements Serializable {
 
   
   /**
+   * The schema defining custom fields for this contact
+   **/
+  public ExternalContact schema(DataSchema schema) {
+    this.schema = schema;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The schema defining custom fields for this contact")
+  @JsonProperty("schema")
+  public DataSchema getSchema() {
+    return schema;
+  }
+  public void setSchema(DataSchema schema) {
+    this.schema = schema;
+  }
+
+  
+  /**
+   * Custom fields defined in the schema referenced by schemaId and schemaVersion.
+   **/
+  public ExternalContact customFields(Map<String, Object> customFields) {
+    this.customFields = customFields;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Custom fields defined in the schema referenced by schemaId and schemaVersion.")
+  @JsonProperty("customFields")
+  public Map<String, Object> getCustomFields() {
+    return customFields;
+  }
+  public void setCustomFields(Map<String, Object> customFields) {
+    this.customFields = customFields;
+  }
+
+  
+  /**
    * Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.
    **/
   public ExternalContact externalDataSources(List<ExternalDataSource> externalDataSources) {
@@ -496,13 +537,15 @@ public class ExternalContact  implements Serializable {
         Objects.equals(this.externalOrganization, externalContact.externalOrganization) &&
         Objects.equals(this.surveyOptOut, externalContact.surveyOptOut) &&
         Objects.equals(this.externalSystemUrl, externalContact.externalSystemUrl) &&
+        Objects.equals(this.schema, externalContact.schema) &&
+        Objects.equals(this.customFields, externalContact.customFields) &&
         Objects.equals(this.externalDataSources, externalContact.externalDataSources) &&
         Objects.equals(this.selfUri, externalContact.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, twitterId, lineId, whatsAppId, facebookId, modifyDate, createDate, externalOrganization, surveyOptOut, externalSystemUrl, externalDataSources, selfUri);
+    return Objects.hash(id, firstName, middleName, lastName, salutation, title, workPhone, cellPhone, homePhone, otherPhone, workEmail, personalEmail, otherEmail, address, twitterId, lineId, whatsAppId, facebookId, modifyDate, createDate, externalOrganization, surveyOptOut, externalSystemUrl, schema, customFields, externalDataSources, selfUri);
   }
 
   @Override
@@ -533,6 +576,8 @@ public class ExternalContact  implements Serializable {
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    surveyOptOut: ").append(toIndentedString(surveyOptOut)).append("\n");
     sb.append("    externalSystemUrl: ").append(toIndentedString(externalSystemUrl)).append("\n");
+    sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
+    sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
     sb.append("    externalDataSources: ").append(toIndentedString(externalDataSources)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

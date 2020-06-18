@@ -17,12 +17,19 @@ import java.io.Serializable;
 
 public class KnowledgeSearchResponse  implements Serializable {
   
+  private String searchId = null;
   private Integer total = null;
   private Integer pageCount = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
-  private String searchId = null;
   private List<KnowledgeSearchDocument> results = new ArrayList<KnowledgeSearchDocument>();
+
+  
+  @ApiModelProperty(example = "null", value = "Search Id")
+  @JsonProperty("searchId")
+  public String getSearchId() {
+    return searchId;
+  }
 
   
   @ApiModelProperty(example = "null", value = "Total number of records returned")
@@ -50,13 +57,6 @@ public class KnowledgeSearchResponse  implements Serializable {
   @JsonProperty("pageNumber")
   public Integer getPageNumber() {
     return pageNumber;
-  }
-
-  
-  @ApiModelProperty(example = "null", value = "ID of the Search Response")
-  @JsonProperty("searchId")
-  public String getSearchId() {
-    return searchId;
   }
 
   
@@ -88,17 +88,17 @@ public class KnowledgeSearchResponse  implements Serializable {
       return false;
     }
     KnowledgeSearchResponse knowledgeSearchResponse = (KnowledgeSearchResponse) o;
-    return Objects.equals(this.total, knowledgeSearchResponse.total) &&
+    return Objects.equals(this.searchId, knowledgeSearchResponse.searchId) &&
+        Objects.equals(this.total, knowledgeSearchResponse.total) &&
         Objects.equals(this.pageCount, knowledgeSearchResponse.pageCount) &&
         Objects.equals(this.pageSize, knowledgeSearchResponse.pageSize) &&
         Objects.equals(this.pageNumber, knowledgeSearchResponse.pageNumber) &&
-        Objects.equals(this.searchId, knowledgeSearchResponse.searchId) &&
         Objects.equals(this.results, knowledgeSearchResponse.results);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(total, pageCount, pageSize, pageNumber, searchId, results);
+    return Objects.hash(searchId, total, pageCount, pageSize, pageNumber, results);
   }
 
   @Override
@@ -106,11 +106,11 @@ public class KnowledgeSearchResponse  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class KnowledgeSearchResponse {\n");
     
+    sb.append("    searchId: ").append(toIndentedString(searchId)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
-    sb.append("    searchId: ").append(toIndentedString(searchId)).append("\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("}");
     return sb.toString();

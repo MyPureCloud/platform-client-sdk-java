@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deleteIdentityprovidersAdfs**](IdentityProviderApi.html#deleteIdentityprovidersAdfs) | Delete ADFS Identity Provider |
 | [**deleteIdentityprovidersCic**](IdentityProviderApi.html#deleteIdentityprovidersCic) | Delete Customer Interaction Center (CIC) Identity Provider |
+| [**deleteIdentityprovidersGeneric**](IdentityProviderApi.html#deleteIdentityprovidersGeneric) | Delete Generic SAML Identity Provider |
 | [**deleteIdentityprovidersGsuite**](IdentityProviderApi.html#deleteIdentityprovidersGsuite) | Delete G Suite Identity Provider |
 | [**deleteIdentityprovidersIdentitynow**](IdentityProviderApi.html#deleteIdentityprovidersIdentitynow) | Delete IdentityNow Provider |
 | [**deleteIdentityprovidersOkta**](IdentityProviderApi.html#deleteIdentityprovidersOkta) | Delete Okta Identity Provider |
@@ -20,6 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getIdentityproviders**](IdentityProviderApi.html#getIdentityproviders) | The list of identity providers |
 | [**getIdentityprovidersAdfs**](IdentityProviderApi.html#getIdentityprovidersAdfs) | Get ADFS Identity Provider |
 | [**getIdentityprovidersCic**](IdentityProviderApi.html#getIdentityprovidersCic) | Get Customer Interaction Center (CIC) Identity Provider |
+| [**getIdentityprovidersGeneric**](IdentityProviderApi.html#getIdentityprovidersGeneric) | Get Generic SAML Identity Provider |
 | [**getIdentityprovidersGsuite**](IdentityProviderApi.html#getIdentityprovidersGsuite) | Get G Suite Identity Provider |
 | [**getIdentityprovidersIdentitynow**](IdentityProviderApi.html#getIdentityprovidersIdentitynow) | Get IdentityNow Provider |
 | [**getIdentityprovidersOkta**](IdentityProviderApi.html#getIdentityprovidersOkta) | Get Okta Identity Provider |
@@ -30,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getIdentityprovidersSalesforce**](IdentityProviderApi.html#getIdentityprovidersSalesforce) | Get Salesforce Identity Provider |
 | [**putIdentityprovidersAdfs**](IdentityProviderApi.html#putIdentityprovidersAdfs) | Update/Create ADFS Identity Provider |
 | [**putIdentityprovidersCic**](IdentityProviderApi.html#putIdentityprovidersCic) | Update/Create Customer Interaction Center (CIC) Identity Provider |
+| [**putIdentityprovidersGeneric**](IdentityProviderApi.html#putIdentityprovidersGeneric) | Update/Create Generic SAML Identity Provider |
 | [**putIdentityprovidersGsuite**](IdentityProviderApi.html#putIdentityprovidersGsuite) | Update/Create G Suite Identity Provider |
 | [**putIdentityprovidersIdentitynow**](IdentityProviderApi.html#putIdentityprovidersIdentitynow) | Update/Create IdentityNow Provider |
 | [**putIdentityprovidersOkta**](IdentityProviderApi.html#putIdentityprovidersOkta) | Update/Create Okta Identity Provider |
@@ -144,6 +147,65 @@ try {
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IdentityProviderApi#deleteIdentityprovidersCic");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**Empty**](Empty.html)
+
+<a name="deleteIdentityprovidersGeneric"></a>
+
+# **deleteIdentityprovidersGeneric**
+
+
+
+> [Empty](Empty.html) deleteIdentityprovidersGeneric()
+
+Delete Generic SAML Identity Provider
+
+
+
+Wraps DELETE /api/v2/identityproviders/generic  
+
+Requires ANY permissions: 
+
+* sso:provider:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IdentityProviderApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IdentityProviderApi apiInstance = new IdentityProviderApi();
+try {
+    Empty result = apiInstance.deleteIdentityprovidersGeneric();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IdentityProviderApi#deleteIdentityprovidersGeneric");
     e.printStackTrace();
 }
 ```
@@ -807,6 +869,65 @@ This endpoint does not require any parameters.
 
 [**CustomerInteractionCenter**](CustomerInteractionCenter.html)
 
+<a name="getIdentityprovidersGeneric"></a>
+
+# **getIdentityprovidersGeneric**
+
+
+
+> [GenericSAML](GenericSAML.html) getIdentityprovidersGeneric()
+
+Get Generic SAML Identity Provider
+
+
+
+Wraps GET /api/v2/identityproviders/generic  
+
+Requires ANY permissions: 
+
+* sso:provider:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IdentityProviderApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IdentityProviderApi apiInstance = new IdentityProviderApi();
+try {
+    GenericSAML result = apiInstance.getIdentityprovidersGeneric();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IdentityProviderApi#getIdentityprovidersGeneric");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**GenericSAML**](GenericSAML.html)
+
 <a name="getIdentityprovidersGsuite"></a>
 
 # **getIdentityprovidersGsuite**
@@ -1400,6 +1521,70 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**CustomerInteractionCenter**](CustomerInteractionCenter.html)| Provider | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OAuthProvider**](OAuthProvider.html)
+
+<a name="putIdentityprovidersGeneric"></a>
+
+# **putIdentityprovidersGeneric**
+
+
+
+> [OAuthProvider](OAuthProvider.html) putIdentityprovidersGeneric(body)
+
+Update/Create Generic SAML Identity Provider
+
+
+
+Wraps PUT /api/v2/identityproviders/generic  
+
+Requires ANY permissions: 
+
+* sso:provider:add
+* sso:provider:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IdentityProviderApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IdentityProviderApi apiInstance = new IdentityProviderApi();
+GenericSAML body = new GenericSAML(); // GenericSAML | Provider
+try {
+    OAuthProvider result = apiInstance.putIdentityprovidersGeneric(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IdentityProviderApi#putIdentityprovidersGeneric");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**GenericSAML**](GenericSAML.html)| Provider | 
 {: class="table-striped"}
 
 

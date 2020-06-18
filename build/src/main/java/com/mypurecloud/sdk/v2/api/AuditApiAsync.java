@@ -13,12 +13,14 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.AuditQueryServiceMapping;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuditQueryExecutionStatusResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryExecutionResultsResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryRequest;
 
 
+import com.mypurecloud.sdk.v2.api.request.GetAuditsQueryServicemappingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuditsQueryTransactionIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuditsQueryTransactionIdResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuditsQueryRequest;
@@ -40,6 +42,82 @@ public class AuditApiAsync {
 
   public AuditApiAsync(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Get service mapping information used in audits.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AuditQueryServiceMapping> getAuditsQueryServicemappingAsync(GetAuditsQueryServicemappingRequest request, final AsyncApiCallback<AuditQueryServiceMapping> callback) {
+    try {
+      final SettableFuture<AuditQueryServiceMapping> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AuditQueryServiceMapping>() {}, new AsyncApiCallback<ApiResponse<AuditQueryServiceMapping>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuditQueryServiceMapping> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get service mapping information used in audits.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AuditQueryServiceMapping>> getAuditsQueryServicemappingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AuditQueryServiceMapping>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AuditQueryServiceMapping>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AuditQueryServiceMapping>() {}, new AsyncApiCallback<ApiResponse<AuditQueryServiceMapping>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuditQueryServiceMapping> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuditQueryServiceMapping> response = (ApiResponse<AuditQueryServiceMapping>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuditQueryServiceMapping> response = (ApiResponse<AuditQueryServiceMapping>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   

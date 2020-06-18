@@ -62,6 +62,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFlowsDatatableRows**](ArchitectApi.html#getFlowsDatatableRows) | Returns the rows for the datatable with the given id |
 | [**getFlowsDatatables**](ArchitectApi.html#getFlowsDatatables) | Retrieve a list of datatables for the org |
 | [**getFlowsDivisionviews**](ArchitectApi.html#getFlowsDivisionviews) | Get a pageable list of basic flow information objects filterable by query parameters. |
+| [**getFlowsExecution**](ArchitectApi.html#getFlowsExecution) | Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started. |
 | [**getFlowsOutcome**](ArchitectApi.html#getFlowsOutcome) | Get a flow outcome |
 | [**getFlowsOutcomes**](ArchitectApi.html#getFlowsOutcomes) | Get a pageable list of flow outcomes, filtered by query parameters |
 | [**postArchitectDependencytrackingBuild**](ArchitectApi.html#postArchitectDependencytrackingBuild) | Rebuild Dependency Tracking data for an organization |
@@ -86,6 +87,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postFlowsDatatableImportJobs**](ArchitectApi.html#postFlowsDatatableImportJobs) | Begin an import process for importing rows into a datatable |
 | [**postFlowsDatatableRows**](ArchitectApi.html#postFlowsDatatableRows) | Create a new row entry for the datatable. |
 | [**postFlowsDatatables**](ArchitectApi.html#postFlowsDatatables) | Create a new datatable with the specified json-schema definition |
+| [**postFlowsExecutions**](ArchitectApi.html#postFlowsExecutions) | Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type. |
 | [**postFlowsOutcomes**](ArchitectApi.html#postFlowsOutcomes) | Create a flow outcome |
 | [**putArchitectEmergencygroup**](ArchitectApi.html#putArchitectEmergencygroup) | Updates a emergency group by ID |
 | [**putArchitectIvr**](ArchitectApi.html#putArchitectIvr) | Update an IVR Config. |
@@ -3848,6 +3850,69 @@ try {
 
 [**FlowDivisionViewEntityListing**](FlowDivisionViewEntityListing.html)
 
+<a name="getFlowsExecution"></a>
+
+# **getFlowsExecution**
+
+
+
+> [FlowRuntimeExecution](FlowRuntimeExecution.html) getFlowsExecution(flowExecutionId)
+
+Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
+
+
+
+Wraps GET /api/v2/flows/executions/{flowExecutionId}  
+
+Requires ANY permissions: 
+
+* architect:flowExecution:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String flowExecutionId = "flowExecutionId_example"; // String | flow execution ID
+try {
+    FlowRuntimeExecution result = apiInstance.getFlowsExecution(flowExecutionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowsExecution");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **flowExecutionId** | **String**| flow execution ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FlowRuntimeExecution**](FlowRuntimeExecution.html)
+
 <a name="getFlowsOutcome"></a>
 
 # **getFlowsOutcome**
@@ -5382,6 +5447,69 @@ try {
 ### Return type
 
 [**DataTable**](DataTable.html)
+
+<a name="postFlowsExecutions"></a>
+
+# **postFlowsExecutions**
+
+
+
+> [FlowExecutionLaunchResponse](FlowExecutionLaunchResponse.html) postFlowsExecutions(flowLaunchRequest)
+
+Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.
+
+The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
+
+Wraps POST /api/v2/flows/executions  
+
+Requires ANY permissions: 
+
+* architect:flow:launch
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+FlowExecutionLaunchRequest flowLaunchRequest = new FlowExecutionLaunchRequest(); // FlowExecutionLaunchRequest | 
+try {
+    FlowExecutionLaunchResponse result = apiInstance.postFlowsExecutions(flowLaunchRequest);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postFlowsExecutions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **flowLaunchRequest** | [**FlowExecutionLaunchRequest**](FlowExecutionLaunchRequest.html)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FlowExecutionLaunchResponse**](FlowExecutionLaunchResponse.html)
 
 <a name="postFlowsOutcomes"></a>
 

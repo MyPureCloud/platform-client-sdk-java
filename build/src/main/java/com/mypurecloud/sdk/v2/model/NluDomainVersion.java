@@ -67,6 +67,43 @@ public class NluDomainVersion  implements Serializable {
     }
   }
   private TrainingStatusEnum trainingStatus = null;
+
+  /**
+   * The evaluation status of the NLU domain version.
+   */
+  public enum EvaluationStatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNEVALUATED("Unevaluated"),
+    EVALUATING("Evaluating"),
+    EVALUATED("Evaluated"),
+    ERROR("Error");
+
+    private String value;
+
+    EvaluationStatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static EvaluationStatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (EvaluationStatusEnum value : EvaluationStatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return EvaluationStatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private EvaluationStatusEnum evaluationStatus = null;
   private List<IntentDefinition> intents = new ArrayList<IntentDefinition>();
   private List<NamedEntityTypeDefinition> entityTypes = new ArrayList<NamedEntityTypeDefinition>();
   private String selfUri = null;
@@ -168,6 +205,13 @@ public class NluDomainVersion  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The evaluation status of the NLU domain version.")
+  @JsonProperty("evaluationStatus")
+  public EvaluationStatusEnum getEvaluationStatus() {
+    return evaluationStatus;
+  }
+
+  
   /**
    * The intents defined for this NLU domain version.
    **/
@@ -230,6 +274,7 @@ public class NluDomainVersion  implements Serializable {
         Objects.equals(this.dateTrained, nluDomainVersion.dateTrained) &&
         Objects.equals(this.datePublished, nluDomainVersion.datePublished) &&
         Objects.equals(this.trainingStatus, nluDomainVersion.trainingStatus) &&
+        Objects.equals(this.evaluationStatus, nluDomainVersion.evaluationStatus) &&
         Objects.equals(this.intents, nluDomainVersion.intents) &&
         Objects.equals(this.entityTypes, nluDomainVersion.entityTypes) &&
         Objects.equals(this.selfUri, nluDomainVersion.selfUri);
@@ -237,7 +282,7 @@ public class NluDomainVersion  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, domain, description, language, dateCreated, dateModified, dateTrained, datePublished, trainingStatus, intents, entityTypes, selfUri);
+    return Objects.hash(id, domain, description, language, dateCreated, dateModified, dateTrained, datePublished, trainingStatus, evaluationStatus, intents, entityTypes, selfUri);
   }
 
   @Override
@@ -254,6 +299,7 @@ public class NluDomainVersion  implements Serializable {
     sb.append("    dateTrained: ").append(toIndentedString(dateTrained)).append("\n");
     sb.append("    datePublished: ").append(toIndentedString(datePublished)).append("\n");
     sb.append("    trainingStatus: ").append(toIndentedString(trainingStatus)).append("\n");
+    sb.append("    evaluationStatus: ").append(toIndentedString(evaluationStatus)).append("\n");
     sb.append("    intents: ").append(toIndentedString(intents)).append("\n");
     sb.append("    entityTypes: ").append(toIndentedString(entityTypes)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

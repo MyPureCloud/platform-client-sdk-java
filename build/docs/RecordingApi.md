@@ -374,7 +374,7 @@ null (empty response body)
 
 
 
-> [Recording](Recording.html) getConversationRecording(conversationId, recordingId, formatId, download, fileName, locale)
+> [Recording](Recording.html) getConversationRecording(conversationId, recordingId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale)
 
 Gets a specific recording.
 
@@ -411,11 +411,14 @@ RecordingApi apiInstance = new RecordingApi();
 String conversationId = "conversationId_example"; // String | Conversation ID
 String recordingId = "recordingId_example"; // String | Recording ID
 String formatId = "WEBM"; // String | The desired media format.
+String emailFormatId = "EML"; // String | The desired media format when downloading an email recording.
+String chatFormatId = "ZIP"; // String | The desired media format when downloading a chat recording.
+String messageFormatId = "ZIP"; // String | The desired media format when downloading a message recording.
 Boolean download = false; // Boolean | requesting a download format of the recording
 String fileName = "fileName_example"; // String | the name of the downloaded fileName
 String locale = "locale_example"; // String | The locale for the requested file when downloading, as an ISO 639-1 code
 try {
-    Recording result = apiInstance.getConversationRecording(conversationId, recordingId, formatId, download, fileName, locale);
+    Recording result = apiInstance.getConversationRecording(conversationId, recordingId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RecordingApi#getConversationRecording");
@@ -431,6 +434,9 @@ try {
 | **conversationId** | **String**| Conversation ID | 
 | **recordingId** | **String**| Recording ID | 
 | **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
+| **emailFormatId** | **String**| The desired media format when downloading an email recording. | [optional] [default to EML]<br />**Values**: EML, NONE 
+| **chatFormatId** | **String**| The desired media format when downloading a chat recording. | [optional] [default to ZIP]<br />**Values**: ZIP, NONE 
+| **messageFormatId** | **String**| The desired media format when downloading a message recording. | [optional] [default to ZIP]<br />**Values**: ZIP, NONE 
 | **download** | **Boolean**| requesting a download format of the recording | [optional] [default to false] 
 | **fileName** | **String**| the name of the downloaded fileName | [optional] 
 | **locale** | **String**| The locale for the requested file when downloading, as an ISO 639-1 code | [optional] 
@@ -836,7 +842,7 @@ try {
 
 
 
-> [Recording](Recording.html) getOrphanrecordingMedia(orphanId, formatId, download, fileName, locale)
+> [Recording](Recording.html) getOrphanrecordingMedia(orphanId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale)
 
 Gets the media of a single orphan recording
 
@@ -872,11 +878,14 @@ Configuration.setDefaultApiClient(apiClient);
 RecordingApi apiInstance = new RecordingApi();
 String orphanId = "orphanId_example"; // String | Orphan ID
 String formatId = "WEBM"; // String | The desired media format.
+String emailFormatId = "EML"; // String | The desired media format when downloading an email recording.
+String chatFormatId = "ZIP"; // String | The desired media format when downloading a chat recording.
+String messageFormatId = "ZIP"; // String | The desired media format when downloading a message recording.
 Boolean download = false; // Boolean | requesting a download format of the recording
 String fileName = "fileName_example"; // String | the name of the downloaded fileName
 String locale = "locale_example"; // String | The locale for the requested file when downloading, as an ISO 639-1 code
 try {
-    Recording result = apiInstance.getOrphanrecordingMedia(orphanId, formatId, download, fileName, locale);
+    Recording result = apiInstance.getOrphanrecordingMedia(orphanId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RecordingApi#getOrphanrecordingMedia");
@@ -891,6 +900,9 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **orphanId** | **String**| Orphan ID | 
 | **formatId** | **String**| The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
+| **emailFormatId** | **String**| The desired media format when downloading an email recording. | [optional] [default to EML]<br />**Values**: EML, NONE 
+| **chatFormatId** | **String**| The desired media format when downloading a chat recording. | [optional] [default to ZIP]<br />**Values**: ZIP, NONE 
+| **messageFormatId** | **String**| The desired media format when downloading a message recording. | [optional] [default to ZIP]<br />**Values**: ZIP, NONE 
 | **download** | **Boolean**| requesting a download format of the recording | [optional] [default to false] 
 | **fileName** | **String**| the name of the downloaded fileName | [optional] 
 | **locale** | **String**| The locale for the requested file when downloading, as an ISO 639-1 code | [optional] 

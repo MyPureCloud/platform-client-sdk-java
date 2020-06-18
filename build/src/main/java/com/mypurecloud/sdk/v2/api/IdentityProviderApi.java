@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OAuthProviderEntityListing;
 import com.mypurecloud.sdk.v2.model.ADFS;
 import com.mypurecloud.sdk.v2.model.CustomerInteractionCenter;
+import com.mypurecloud.sdk.v2.model.GenericSAML;
 import com.mypurecloud.sdk.v2.model.GSuite;
 import com.mypurecloud.sdk.v2.model.IdentityNow;
 import com.mypurecloud.sdk.v2.model.Okta;
@@ -28,6 +29,7 @@ import com.mypurecloud.sdk.v2.model.OAuthProvider;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersAdfsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersCicRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersGenericRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersGsuiteRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersIdentitynowRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersOktaRequest;
@@ -39,6 +41,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersSalesforceReque
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersAdfsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersCicRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersGenericRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersGsuiteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersIdentitynowRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersOktaRequest;
@@ -49,6 +52,7 @@ import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersPureengageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersSalesforceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersAdfsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersCicRequest;
+import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersGenericRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersGsuiteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersIdentitynowRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersOktaRequest;
@@ -205,6 +209,81 @@ public class IdentityProviderApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Empty> deleteIdentityprovidersCic(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete Generic SAML Identity Provider
+   * 
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty deleteIdentityprovidersGeneric() throws IOException, ApiException {
+    return  deleteIdentityprovidersGeneric(createDeleteIdentityprovidersGenericRequest());
+  }
+
+  /**
+   * Delete Generic SAML Identity Provider
+   * 
+   * @return Empty
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> deleteIdentityprovidersGenericWithHttpInfo() throws IOException {
+    return deleteIdentityprovidersGeneric(createDeleteIdentityprovidersGenericRequest().withHttpInfo());
+  }
+
+  private DeleteIdentityprovidersGenericRequest createDeleteIdentityprovidersGenericRequest() {
+    return DeleteIdentityprovidersGenericRequest.builder()
+            .build();
+  }
+
+  /**
+   * Delete Generic SAML Identity Provider
+   * 
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty deleteIdentityprovidersGeneric(DeleteIdentityprovidersGenericRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Delete Generic SAML Identity Provider
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> deleteIdentityprovidersGeneric(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<Empty>() {});
     }
@@ -1053,6 +1132,81 @@ public class IdentityProviderApi {
 
   
   /**
+   * Get Generic SAML Identity Provider
+   * 
+   * @return GenericSAML
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GenericSAML getIdentityprovidersGeneric() throws IOException, ApiException {
+    return  getIdentityprovidersGeneric(createGetIdentityprovidersGenericRequest());
+  }
+
+  /**
+   * Get Generic SAML Identity Provider
+   * 
+   * @return GenericSAML
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GenericSAML> getIdentityprovidersGenericWithHttpInfo() throws IOException {
+    return getIdentityprovidersGeneric(createGetIdentityprovidersGenericRequest().withHttpInfo());
+  }
+
+  private GetIdentityprovidersGenericRequest createGetIdentityprovidersGenericRequest() {
+    return GetIdentityprovidersGenericRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get Generic SAML Identity Provider
+   * 
+   * @param request The request object
+   * @return GenericSAML
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GenericSAML getIdentityprovidersGeneric(GetIdentityprovidersGenericRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GenericSAML> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GenericSAML>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Generic SAML Identity Provider
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GenericSAML> getIdentityprovidersGeneric(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GenericSAML>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GenericSAML> response = (ApiResponse<GenericSAML>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GenericSAML> response = (ApiResponse<GenericSAML>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get G Suite Identity Provider
    * 
    * @return GSuite
@@ -1788,6 +1942,85 @@ public class IdentityProviderApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<OAuthProvider> putIdentityprovidersCic(ApiRequest<CustomerInteractionCenter> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OAuthProvider>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update/Create Generic SAML Identity Provider
+   * 
+   * @param body Provider (required)
+   * @return OAuthProvider
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OAuthProvider putIdentityprovidersGeneric(GenericSAML body) throws IOException, ApiException {
+    return  putIdentityprovidersGeneric(createPutIdentityprovidersGenericRequest(body));
+  }
+
+  /**
+   * Update/Create Generic SAML Identity Provider
+   * 
+   * @param body Provider (required)
+   * @return OAuthProvider
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OAuthProvider> putIdentityprovidersGenericWithHttpInfo(GenericSAML body) throws IOException {
+    return putIdentityprovidersGeneric(createPutIdentityprovidersGenericRequest(body).withHttpInfo());
+  }
+
+  private PutIdentityprovidersGenericRequest createPutIdentityprovidersGenericRequest(GenericSAML body) {
+    return PutIdentityprovidersGenericRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update/Create Generic SAML Identity Provider
+   * 
+   * @param request The request object
+   * @return OAuthProvider
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OAuthProvider putIdentityprovidersGeneric(PutIdentityprovidersGenericRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OAuthProvider> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OAuthProvider>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update/Create Generic SAML Identity Provider
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OAuthProvider> putIdentityprovidersGeneric(ApiRequest<GenericSAML> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<OAuthProvider>() {});
     }

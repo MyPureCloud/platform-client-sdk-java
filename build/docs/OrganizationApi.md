@@ -9,10 +9,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**getFieldconfig**](OrganizationApi.html#getFieldconfig) | Fetch field config for an entity type |
 | [**getOrganizationsEmbeddedintegration**](OrganizationApi.html#getOrganizationsEmbeddedintegration) | Get the list of domains that will be allowed to embed PureCloud applications |
+| [**getOrganizationsIpaddressauthentication**](OrganizationApi.html#getOrganizationsIpaddressauthentication) | Get organization IP address whitelist settings |
 | [**getOrganizationsMe**](OrganizationApi.html#getOrganizationsMe) | Get organization. |
 | [**getOrganizationsWhitelist**](OrganizationApi.html#getOrganizationsWhitelist) | Use PUT /api/v2/organizations/embeddedintegration instead |
 | [**patchOrganizationsFeature**](OrganizationApi.html#patchOrganizationsFeature) | Update organization |
 | [**putOrganizationsEmbeddedintegration**](OrganizationApi.html#putOrganizationsEmbeddedintegration) | Update the list of domains that will be allowed to embed PureCloud applications |
+| [**putOrganizationsIpaddressauthentication**](OrganizationApi.html#putOrganizationsIpaddressauthentication) | Update organization IP address whitelist settings |
 | [**putOrganizationsMe**](OrganizationApi.html#putOrganizationsMe) | Update organization. |
 | [**putOrganizationsWhitelist**](OrganizationApi.html#putOrganizationsWhitelist) | Use PUT /api/v2/organizations/embeddedintegration instead |
 {: class="table-striped"}
@@ -136,6 +138,65 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**EmbeddedIntegration**](EmbeddedIntegration.html)
+
+<a name="getOrganizationsIpaddressauthentication"></a>
+
+# **getOrganizationsIpaddressauthentication**
+
+
+
+> [IpAddressAuthentication](IpAddressAuthentication.html) getOrganizationsIpaddressauthentication()
+
+Get organization IP address whitelist settings
+
+
+
+Wraps GET /api/v2/organizations/ipaddressauthentication  
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationApi apiInstance = new OrganizationApi();
+try {
+    IpAddressAuthentication result = apiInstance.getOrganizationsIpaddressauthentication();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationApi#getOrganizationsIpaddressauthentication");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**IpAddressAuthentication**](IpAddressAuthentication.html)
 
 <a name="getOrganizationsMe"></a>
 
@@ -380,6 +441,69 @@ try {
 ### Return type
 
 [**EmbeddedIntegration**](EmbeddedIntegration.html)
+
+<a name="putOrganizationsIpaddressauthentication"></a>
+
+# **putOrganizationsIpaddressauthentication**
+
+
+
+> [IpAddressAuthentication](IpAddressAuthentication.html) putOrganizationsIpaddressauthentication(body)
+
+Update organization IP address whitelist settings
+
+
+
+Wraps PUT /api/v2/organizations/ipaddressauthentication  
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationApi apiInstance = new OrganizationApi();
+IpAddressAuthentication body = new IpAddressAuthentication(); // IpAddressAuthentication | IP address Whitelist settings
+try {
+    IpAddressAuthentication result = apiInstance.putOrganizationsIpaddressauthentication(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationApi#putOrganizationsIpaddressauthentication");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**IpAddressAuthentication**](IpAddressAuthentication.html)| IP address Whitelist settings | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**IpAddressAuthentication**](IpAddressAuthentication.html)
 
 <a name="putOrganizationsMe"></a>
 

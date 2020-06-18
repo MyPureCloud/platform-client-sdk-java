@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OAuthProviderEntityListing;
 import com.mypurecloud.sdk.v2.model.ADFS;
 import com.mypurecloud.sdk.v2.model.CustomerInteractionCenter;
+import com.mypurecloud.sdk.v2.model.GenericSAML;
 import com.mypurecloud.sdk.v2.model.GSuite;
 import com.mypurecloud.sdk.v2.model.IdentityNow;
 import com.mypurecloud.sdk.v2.model.Okta;

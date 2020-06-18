@@ -13,6 +13,7 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.EmbeddedIntegration;
+import com.mypurecloud.sdk.v2.model.IpAddressAuthentication;
 import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrgWhitelistSettings;
 import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
@@ -21,10 +22,12 @@ import com.mypurecloud.sdk.v2.model.FeatureState;
 
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsEmbeddedintegrationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrganizationsIpaddressauthenticationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsWhitelistRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOrganizationsFeatureRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrganizationsEmbeddedintegrationRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOrganizationsIpaddressauthenticationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrganizationsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrganizationsWhitelistRequest;
 
@@ -196,6 +199,81 @@ public class OrganizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EmbeddedIntegration> response = (ApiResponse<EmbeddedIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get organization IP address whitelist settings
+   * 
+   * @return IpAddressAuthentication
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IpAddressAuthentication getOrganizationsIpaddressauthentication() throws IOException, ApiException {
+    return  getOrganizationsIpaddressauthentication(createGetOrganizationsIpaddressauthenticationRequest());
+  }
+
+  /**
+   * Get organization IP address whitelist settings
+   * 
+   * @return IpAddressAuthentication
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IpAddressAuthentication> getOrganizationsIpaddressauthenticationWithHttpInfo() throws IOException {
+    return getOrganizationsIpaddressauthentication(createGetOrganizationsIpaddressauthenticationRequest().withHttpInfo());
+  }
+
+  private GetOrganizationsIpaddressauthenticationRequest createGetOrganizationsIpaddressauthenticationRequest() {
+    return GetOrganizationsIpaddressauthenticationRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get organization IP address whitelist settings
+   * 
+   * @param request The request object
+   * @return IpAddressAuthentication
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IpAddressAuthentication getOrganizationsIpaddressauthentication(GetOrganizationsIpaddressauthenticationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IpAddressAuthentication> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IpAddressAuthentication>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get organization IP address whitelist settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IpAddressAuthentication> getOrganizationsIpaddressauthentication(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IpAddressAuthentication>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IpAddressAuthentication> response = (ApiResponse<IpAddressAuthentication>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IpAddressAuthentication> response = (ApiResponse<IpAddressAuthentication>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -508,6 +586,85 @@ public class OrganizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EmbeddedIntegration> response = (ApiResponse<EmbeddedIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update organization IP address whitelist settings
+   * 
+   * @param body IP address Whitelist settings (required)
+   * @return IpAddressAuthentication
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IpAddressAuthentication putOrganizationsIpaddressauthentication(IpAddressAuthentication body) throws IOException, ApiException {
+    return  putOrganizationsIpaddressauthentication(createPutOrganizationsIpaddressauthenticationRequest(body));
+  }
+
+  /**
+   * Update organization IP address whitelist settings
+   * 
+   * @param body IP address Whitelist settings (required)
+   * @return IpAddressAuthentication
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IpAddressAuthentication> putOrganizationsIpaddressauthenticationWithHttpInfo(IpAddressAuthentication body) throws IOException {
+    return putOrganizationsIpaddressauthentication(createPutOrganizationsIpaddressauthenticationRequest(body).withHttpInfo());
+  }
+
+  private PutOrganizationsIpaddressauthenticationRequest createPutOrganizationsIpaddressauthenticationRequest(IpAddressAuthentication body) {
+    return PutOrganizationsIpaddressauthenticationRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update organization IP address whitelist settings
+   * 
+   * @param request The request object
+   * @return IpAddressAuthentication
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public IpAddressAuthentication putOrganizationsIpaddressauthentication(PutOrganizationsIpaddressauthenticationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<IpAddressAuthentication> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<IpAddressAuthentication>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update organization IP address whitelist settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<IpAddressAuthentication> putOrganizationsIpaddressauthentication(ApiRequest<IpAddressAuthentication> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<IpAddressAuthentication>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<IpAddressAuthentication> response = (ApiResponse<IpAddressAuthentication>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<IpAddressAuthentication> response = (ApiResponse<IpAddressAuthentication>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

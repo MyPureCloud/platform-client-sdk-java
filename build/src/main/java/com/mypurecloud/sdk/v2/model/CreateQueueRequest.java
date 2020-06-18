@@ -11,10 +11,12 @@ import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.MediaSetting;
 import com.mypurecloud.sdk.v2.model.QueueEmailAddress;
 import com.mypurecloud.sdk.v2.model.QueueMessagingAddresses;
+import com.mypurecloud.sdk.v2.model.RoutingRule;
 import com.mypurecloud.sdk.v2.model.Script;
 import com.mypurecloud.sdk.v2.model.WritableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -37,6 +39,7 @@ public class CreateQueueRequest  implements Serializable {
   private String createdBy = null;
   private Integer memberCount = null;
   private Map<String, MediaSetting> mediaSettings = null;
+  private List<RoutingRule> routingRules = new ArrayList<RoutingRule>();
   private Bullseye bullseye = null;
   private AcwSettings acwSettings = null;
 
@@ -242,6 +245,24 @@ public class CreateQueueRequest  implements Serializable {
   }
   public void setMediaSettings(Map<String, MediaSetting> mediaSettings) {
     this.mediaSettings = mediaSettings;
+  }
+
+  
+  /**
+   * The routing rules for the queue, used for routing to known or preferred agents.
+   **/
+  public CreateQueueRequest routingRules(List<RoutingRule> routingRules) {
+    this.routingRules = routingRules;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The routing rules for the queue, used for routing to known or preferred agents.")
+  @JsonProperty("routingRules")
+  public List<RoutingRule> getRoutingRules() {
+    return routingRules;
+  }
+  public void setRoutingRules(List<RoutingRule> routingRules) {
+    this.routingRules = routingRules;
   }
 
   
@@ -487,6 +508,7 @@ public class CreateQueueRequest  implements Serializable {
         Objects.equals(this.createdBy, createQueueRequest.createdBy) &&
         Objects.equals(this.memberCount, createQueueRequest.memberCount) &&
         Objects.equals(this.mediaSettings, createQueueRequest.mediaSettings) &&
+        Objects.equals(this.routingRules, createQueueRequest.routingRules) &&
         Objects.equals(this.bullseye, createQueueRequest.bullseye) &&
         Objects.equals(this.acwSettings, createQueueRequest.acwSettings) &&
         Objects.equals(this.skillEvaluationMethod, createQueueRequest.skillEvaluationMethod) &&
@@ -504,7 +526,7 @@ public class CreateQueueRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, mediaSettings, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisperPrompt, autoAnswerOnly, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, sourceQueueId, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisperPrompt, autoAnswerOnly, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, sourceQueueId, selfUri);
   }
 
   @Override
@@ -522,6 +544,7 @@ public class CreateQueueRequest  implements Serializable {
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    memberCount: ").append(toIndentedString(memberCount)).append("\n");
     sb.append("    mediaSettings: ").append(toIndentedString(mediaSettings)).append("\n");
+    sb.append("    routingRules: ").append(toIndentedString(routingRules)).append("\n");
     sb.append("    bullseye: ").append(toIndentedString(bullseye)).append("\n");
     sb.append("    acwSettings: ").append(toIndentedString(acwSettings)).append("\n");
     sb.append("    skillEvaluationMethod: ").append(toIndentedString(skillEvaluationMethod)).append("\n");

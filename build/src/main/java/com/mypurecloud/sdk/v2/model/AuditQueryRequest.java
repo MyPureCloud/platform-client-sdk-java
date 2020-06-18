@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AuditQueryFilter;
+import com.mypurecloud.sdk.v2.model.AuditQuerySort;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -60,6 +61,7 @@ public class AuditQueryRequest  implements Serializable {
   }
   private ServiceNameEnum serviceName = null;
   private List<AuditQueryFilter> filters = new ArrayList<AuditQueryFilter>();
+  private List<AuditQuerySort> sort = new ArrayList<AuditQuerySort>();
 
   
   /**
@@ -116,6 +118,24 @@ public class AuditQueryRequest  implements Serializable {
   }
 
   
+  /**
+   * Sort parameter for the query.
+   **/
+  public AuditQueryRequest sort(List<AuditQuerySort> sort) {
+    this.sort = sort;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Sort parameter for the query.")
+  @JsonProperty("sort")
+  public List<AuditQuerySort> getSort() {
+    return sort;
+  }
+  public void setSort(List<AuditQuerySort> sort) {
+    this.sort = sort;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,12 +148,13 @@ public class AuditQueryRequest  implements Serializable {
     AuditQueryRequest auditQueryRequest = (AuditQueryRequest) o;
     return Objects.equals(this.interval, auditQueryRequest.interval) &&
         Objects.equals(this.serviceName, auditQueryRequest.serviceName) &&
-        Objects.equals(this.filters, auditQueryRequest.filters);
+        Objects.equals(this.filters, auditQueryRequest.filters) &&
+        Objects.equals(this.sort, auditQueryRequest.sort);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(interval, serviceName, filters);
+    return Objects.hash(interval, serviceName, filters, sort);
   }
 
   @Override
@@ -144,6 +165,7 @@ public class AuditQueryRequest  implements Serializable {
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    serviceName: ").append(toIndentedString(serviceName)).append("\n");
     sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
+    sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
     sb.append("}");
     return sb.toString();
   }

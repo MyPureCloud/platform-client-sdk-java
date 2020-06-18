@@ -38,6 +38,7 @@ title: ConversationAggregationQuery
 | DIVISIONID | &quot;divisionId&quot; |
 | DNIS | &quot;dnis&quot; |
 | EDGEID | &quot;edgeId&quot; |
+| EXTERNALCONTACTID | &quot;externalContactId&quot; |
 | EXTERNALMEDIACOUNT | &quot;externalMediaCount&quot; |
 | EXTERNALORGANIZATIONID | &quot;externalOrganizationId&quot; |
 | FLAGGEDREASON | &quot;flaggedReason&quot; |

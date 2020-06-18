@@ -128,6 +128,138 @@ public class GetConversationRecordingRequest {
 		}
 	}
 	
+	private String emailFormatId;
+	public String getEmailFormatId() {
+		return this.emailFormatId;
+	}
+
+	public void setEmailFormatId(String emailFormatId) {
+		this.emailFormatId = emailFormatId;
+	}
+
+	public GetConversationRecordingRequest withEmailFormatId(String emailFormatId) {
+	    this.setEmailFormatId(emailFormatId);
+	    return this;
+	} 
+
+	public enum emailFormatIdValues { 
+		EML("EML"), 
+		NONE("NONE");
+
+		private String value;
+
+		emailFormatIdValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static emailFormatIdValues fromString(String key) {
+			if (key == null) return null;
+
+			for (emailFormatIdValues value : emailFormatIdValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return emailFormatIdValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
+	private String chatFormatId;
+	public String getChatFormatId() {
+		return this.chatFormatId;
+	}
+
+	public void setChatFormatId(String chatFormatId) {
+		this.chatFormatId = chatFormatId;
+	}
+
+	public GetConversationRecordingRequest withChatFormatId(String chatFormatId) {
+	    this.setChatFormatId(chatFormatId);
+	    return this;
+	} 
+
+	public enum chatFormatIdValues { 
+		ZIP("ZIP"), 
+		NONE("NONE");
+
+		private String value;
+
+		chatFormatIdValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static chatFormatIdValues fromString(String key) {
+			if (key == null) return null;
+
+			for (chatFormatIdValues value : chatFormatIdValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return chatFormatIdValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
+	private String messageFormatId;
+	public String getMessageFormatId() {
+		return this.messageFormatId;
+	}
+
+	public void setMessageFormatId(String messageFormatId) {
+		this.messageFormatId = messageFormatId;
+	}
+
+	public GetConversationRecordingRequest withMessageFormatId(String messageFormatId) {
+	    this.setMessageFormatId(messageFormatId);
+	    return this;
+	} 
+
+	public enum messageFormatIdValues { 
+		ZIP("ZIP"), 
+		NONE("NONE");
+
+		private String value;
+
+		messageFormatIdValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static messageFormatIdValues fromString(String key) {
+			if (key == null) return null;
+
+			for (messageFormatIdValues value : messageFormatIdValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return messageFormatIdValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
 	private Boolean download;
 	public Boolean getDownload() {
 		return this.download;
@@ -209,6 +341,12 @@ public class GetConversationRecordingRequest {
         
                 .withQueryParameters("formatId", "", formatId)
         
+                .withQueryParameters("emailFormatId", "", emailFormatId)
+        
+                .withQueryParameters("chatFormatId", "", chatFormatId)
+        
+                .withQueryParameters("messageFormatId", "", messageFormatId)
+        
                 .withQueryParameters("download", "", download)
         
                 .withQueryParameters("fileName", "", fileName)
@@ -258,6 +396,36 @@ public class GetConversationRecordingRequest {
 
 		public Builder withFormatId(formatIdValues formatId) {
 		    request.setFormatId(formatId.toString());
+		    return this;
+		}
+		
+		public Builder withEmailFormatId(String emailFormatId) {
+			request.setEmailFormatId(emailFormatId);
+			return this;
+		}
+
+		public Builder withEmailFormatId(emailFormatIdValues emailFormatId) {
+		    request.setEmailFormatId(emailFormatId.toString());
+		    return this;
+		}
+		
+		public Builder withChatFormatId(String chatFormatId) {
+			request.setChatFormatId(chatFormatId);
+			return this;
+		}
+
+		public Builder withChatFormatId(chatFormatIdValues chatFormatId) {
+		    request.setChatFormatId(chatFormatId.toString());
+		    return this;
+		}
+		
+		public Builder withMessageFormatId(String messageFormatId) {
+			request.setMessageFormatId(messageFormatId);
+			return this;
+		}
+
+		public Builder withMessageFormatId(messageFormatIdValues messageFormatId) {
+		    request.setMessageFormatId(messageFormatId.toString());
 		    return this;
 		}
 		

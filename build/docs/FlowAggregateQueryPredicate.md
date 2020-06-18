@@ -52,6 +52,7 @@ title: FlowAggregateQueryPredicate
 | ENTRYREASON | &quot;entryReason&quot; |
 | ENTRYTYPE | &quot;entryType&quot; |
 | EXITREASON | &quot;exitReason&quot; |
+| EXTERNALCONTACTID | &quot;externalContactId&quot; |
 | EXTERNALMEDIACOUNT | &quot;externalMediaCount&quot; |
 | EXTERNALORGANIZATIONID | &quot;externalOrganizationId&quot; |
 | FLAGGEDREASON | &quot;flaggedReason&quot; |

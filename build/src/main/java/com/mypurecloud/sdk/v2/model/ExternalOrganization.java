@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ContactAddress;
+import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.ExternalDataSource;
 import com.mypurecloud.sdk.v2.model.PhoneNumber;
 import com.mypurecloud.sdk.v2.model.Ticker;
@@ -14,7 +15,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -41,6 +44,8 @@ public class ExternalOrganization  implements Serializable {
   private Date modifyDate = null;
   private Date createDate = null;
   private Trustor trustor = null;
+  private DataSchema schema = null;
+  private Map<String, Object> customFields = null;
   private List<ExternalDataSource> externalDataSources = new ArrayList<ExternalDataSource>();
   private String selfUri = null;
 
@@ -357,6 +362,42 @@ public class ExternalOrganization  implements Serializable {
 
   
   /**
+   * The schema defining custom fields for this contact
+   **/
+  public ExternalOrganization schema(DataSchema schema) {
+    this.schema = schema;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The schema defining custom fields for this contact")
+  @JsonProperty("schema")
+  public DataSchema getSchema() {
+    return schema;
+  }
+  public void setSchema(DataSchema schema) {
+    this.schema = schema;
+  }
+
+  
+  /**
+   * Custom fields defined in the schema referenced by schemaId and schemaVersion.
+   **/
+  public ExternalOrganization customFields(Map<String, Object> customFields) {
+    this.customFields = customFields;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Custom fields defined in the schema referenced by schemaId and schemaVersion.")
+  @JsonProperty("customFields")
+  public Map<String, Object> getCustomFields() {
+    return customFields;
+  }
+  public void setCustomFields(Map<String, Object> customFields) {
+    this.customFields = customFields;
+  }
+
+  
+  /**
    * Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.
    **/
   public ExternalOrganization externalDataSources(List<ExternalDataSource> externalDataSources) {
@@ -409,13 +450,15 @@ public class ExternalOrganization  implements Serializable {
         Objects.equals(this.modifyDate, externalOrganization.modifyDate) &&
         Objects.equals(this.createDate, externalOrganization.createDate) &&
         Objects.equals(this.trustor, externalOrganization.trustor) &&
+        Objects.equals(this.schema, externalOrganization.schema) &&
+        Objects.equals(this.customFields, externalOrganization.customFields) &&
         Objects.equals(this.externalDataSources, externalOrganization.externalDataSources) &&
         Objects.equals(this.selfUri, externalOrganization.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, companyType, industry, primaryContactId, address, phoneNumber, faxNumber, employeeCount, revenue, tags, websites, tickers, twitterId, externalSystemUrl, modifyDate, createDate, trustor, externalDataSources, selfUri);
+    return Objects.hash(id, name, companyType, industry, primaryContactId, address, phoneNumber, faxNumber, employeeCount, revenue, tags, websites, tickers, twitterId, externalSystemUrl, modifyDate, createDate, trustor, schema, customFields, externalDataSources, selfUri);
   }
 
   @Override
@@ -441,6 +484,8 @@ public class ExternalOrganization  implements Serializable {
     sb.append("    modifyDate: ").append(toIndentedString(modifyDate)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    trustor: ").append(toIndentedString(trustor)).append("\n");
+    sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
+    sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
     sb.append("    externalDataSources: ").append(toIndentedString(externalDataSources)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

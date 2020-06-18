@@ -23,9 +23,9 @@ public class SubjectDivisionGrantsEntityListing  implements Serializable, PagedR
   private Integer pageNumber = null;
   private Long total = null;
   private String firstUri = null;
+  private String previousUri = null;
   private String selfUri = null;
   private String nextUri = null;
-  private String previousUri = null;
   private String lastUri = null;
   private Integer pageCount = null;
 
@@ -117,6 +117,23 @@ public class SubjectDivisionGrantsEntityListing  implements Serializable, PagedR
   
   /**
    **/
+  public SubjectDivisionGrantsEntityListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
+  }
+
+  
+  /**
+   **/
   public SubjectDivisionGrantsEntityListing selfUri(String selfUri) {
     this.selfUri = selfUri;
     return this;
@@ -146,23 +163,6 @@ public class SubjectDivisionGrantsEntityListing  implements Serializable, PagedR
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
-  }
-
-  
-  /**
-   **/
-  public SubjectDivisionGrantsEntityListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
   }
 
   
@@ -215,16 +215,16 @@ public class SubjectDivisionGrantsEntityListing  implements Serializable, PagedR
         Objects.equals(this.pageNumber, subjectDivisionGrantsEntityListing.pageNumber) &&
         Objects.equals(this.total, subjectDivisionGrantsEntityListing.total) &&
         Objects.equals(this.firstUri, subjectDivisionGrantsEntityListing.firstUri) &&
+        Objects.equals(this.previousUri, subjectDivisionGrantsEntityListing.previousUri) &&
         Objects.equals(this.selfUri, subjectDivisionGrantsEntityListing.selfUri) &&
         Objects.equals(this.nextUri, subjectDivisionGrantsEntityListing.nextUri) &&
-        Objects.equals(this.previousUri, subjectDivisionGrantsEntityListing.previousUri) &&
         Objects.equals(this.lastUri, subjectDivisionGrantsEntityListing.lastUri) &&
         Objects.equals(this.pageCount, subjectDivisionGrantsEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, previousUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, previousUri, selfUri, nextUri, lastUri, pageCount);
   }
 
   @Override
@@ -237,9 +237,9 @@ public class SubjectDivisionGrantsEntityListing  implements Serializable, PagedR
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");

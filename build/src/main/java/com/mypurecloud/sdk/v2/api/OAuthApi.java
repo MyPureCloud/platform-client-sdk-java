@@ -14,9 +14,12 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OAuthAuthorization;
 import com.mypurecloud.sdk.v2.model.OAuthAuthorizationListing;
 import com.mypurecloud.sdk.v2.model.OAuthClient;
+import com.mypurecloud.sdk.v2.model.ApiUsageQueryResult;
+import com.mypurecloud.sdk.v2.model.UsageExecutionResult;
 import com.mypurecloud.sdk.v2.model.OAuthClientEntityListing;
 import com.mypurecloud.sdk.v2.model.OAuthScope;
 import com.mypurecloud.sdk.v2.model.OAuthScopeListing;
+import com.mypurecloud.sdk.v2.model.ApiUsageQuery;
 import com.mypurecloud.sdk.v2.model.OAuthClientRequest;
 
 
@@ -24,10 +27,13 @@ import com.mypurecloud.sdk.v2.api.request.DeleteOauthClientRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOauthAuthorizationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOauthAuthorizationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOauthClientRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOauthClientUsageQueryResultRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOauthClientUsageSummaryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOauthClientsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOauthScopeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOauthScopesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOauthClientSecretRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOauthClientUsageQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOauthClientsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOauthClientRequest;
 
@@ -360,6 +366,172 @@ public class OAuthApi {
 
   
   /**
+   * Get the results of a usage query
+   * 
+   * @param executionId ID of the query execution (required)
+   * @param clientId Client ID (required)
+   * @return ApiUsageQueryResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiUsageQueryResult getOauthClientUsageQueryResult(String executionId, String clientId) throws IOException, ApiException {
+    return  getOauthClientUsageQueryResult(createGetOauthClientUsageQueryResultRequest(executionId, clientId));
+  }
+
+  /**
+   * Get the results of a usage query
+   * 
+   * @param executionId ID of the query execution (required)
+   * @param clientId Client ID (required)
+   * @return ApiUsageQueryResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ApiUsageQueryResult> getOauthClientUsageQueryResultWithHttpInfo(String executionId, String clientId) throws IOException {
+    return getOauthClientUsageQueryResult(createGetOauthClientUsageQueryResultRequest(executionId, clientId).withHttpInfo());
+  }
+
+  private GetOauthClientUsageQueryResultRequest createGetOauthClientUsageQueryResultRequest(String executionId, String clientId) {
+    return GetOauthClientUsageQueryResultRequest.builder()
+            .withExecutionId(executionId)
+    
+            .withClientId(clientId)
+    
+            .build();
+  }
+
+  /**
+   * Get the results of a usage query
+   * 
+   * @param request The request object
+   * @return ApiUsageQueryResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiUsageQueryResult getOauthClientUsageQueryResult(GetOauthClientUsageQueryResultRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ApiUsageQueryResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ApiUsageQueryResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the results of a usage query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ApiUsageQueryResult> getOauthClientUsageQueryResult(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ApiUsageQueryResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ApiUsageQueryResult> response = (ApiResponse<ApiUsageQueryResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ApiUsageQueryResult> response = (ApiResponse<ApiUsageQueryResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a summary of OAuth client API usage
+   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * @param clientId Client ID (required)
+   * @param days Previous number of days to query (optional, default to 7)
+   * @return UsageExecutionResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UsageExecutionResult getOauthClientUsageSummary(String clientId, String days) throws IOException, ApiException {
+    return  getOauthClientUsageSummary(createGetOauthClientUsageSummaryRequest(clientId, days));
+  }
+
+  /**
+   * Get a summary of OAuth client API usage
+   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * @param clientId Client ID (required)
+   * @param days Previous number of days to query (optional, default to 7)
+   * @return UsageExecutionResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UsageExecutionResult> getOauthClientUsageSummaryWithHttpInfo(String clientId, String days) throws IOException {
+    return getOauthClientUsageSummary(createGetOauthClientUsageSummaryRequest(clientId, days).withHttpInfo());
+  }
+
+  private GetOauthClientUsageSummaryRequest createGetOauthClientUsageSummaryRequest(String clientId, String days) {
+    return GetOauthClientUsageSummaryRequest.builder()
+            .withClientId(clientId)
+    
+            .withDays(days)
+    
+            .build();
+  }
+
+  /**
+   * Get a summary of OAuth client API usage
+   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * @param request The request object
+   * @return UsageExecutionResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UsageExecutionResult getOauthClientUsageSummary(GetOauthClientUsageSummaryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UsageExecutionResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UsageExecutionResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a summary of OAuth client API usage
+   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UsageExecutionResult> getOauthClientUsageSummary(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UsageExecutionResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UsageExecutionResult> response = (ApiResponse<UsageExecutionResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UsageExecutionResult> response = (ApiResponse<UsageExecutionResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * The list of OAuth clients
    * 
    * @return OAuthClientEntityListing
@@ -670,6 +842,89 @@ public class OAuthApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OAuthClient> response = (ApiResponse<OAuthClient>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Query for OAuth client API usage
+   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * @param clientId Client ID (required)
+   * @param body Query (required)
+   * @return UsageExecutionResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UsageExecutionResult postOauthClientUsageQuery(String clientId, ApiUsageQuery body) throws IOException, ApiException {
+    return  postOauthClientUsageQuery(createPostOauthClientUsageQueryRequest(clientId, body));
+  }
+
+  /**
+   * Query for OAuth client API usage
+   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * @param clientId Client ID (required)
+   * @param body Query (required)
+   * @return UsageExecutionResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UsageExecutionResult> postOauthClientUsageQueryWithHttpInfo(String clientId, ApiUsageQuery body) throws IOException {
+    return postOauthClientUsageQuery(createPostOauthClientUsageQueryRequest(clientId, body).withHttpInfo());
+  }
+
+  private PostOauthClientUsageQueryRequest createPostOauthClientUsageQueryRequest(String clientId, ApiUsageQuery body) {
+    return PostOauthClientUsageQueryRequest.builder()
+            .withClientId(clientId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Query for OAuth client API usage
+   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * @param request The request object
+   * @return UsageExecutionResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UsageExecutionResult postOauthClientUsageQuery(PostOauthClientUsageQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UsageExecutionResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UsageExecutionResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for OAuth client API usage
+   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UsageExecutionResult> postOauthClientUsageQuery(ApiRequest<ApiUsageQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UsageExecutionResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UsageExecutionResult> response = (ApiResponse<UsageExecutionResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UsageExecutionResult> response = (ApiResponse<UsageExecutionResult>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

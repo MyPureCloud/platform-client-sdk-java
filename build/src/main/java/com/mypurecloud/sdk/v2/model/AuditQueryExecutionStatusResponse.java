@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AuditQueryFilter;
+import com.mypurecloud.sdk.v2.model.AuditQuerySort;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -101,6 +102,7 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
   }
   private ServiceNameEnum serviceName = null;
   private List<AuditQueryFilter> filters = new ArrayList<AuditQueryFilter>();
+  private List<AuditQuerySort> sort = new ArrayList<AuditQuerySort>();
 
   
   /**
@@ -211,6 +213,24 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
   }
 
   
+  /**
+   * Sort parameter for the audit query.
+   **/
+  public AuditQueryExecutionStatusResponse sort(List<AuditQuerySort> sort) {
+    this.sort = sort;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Sort parameter for the audit query.")
+  @JsonProperty("sort")
+  public List<AuditQuerySort> getSort() {
+    return sort;
+  }
+  public void setSort(List<AuditQuerySort> sort) {
+    this.sort = sort;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -226,12 +246,13 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
         Objects.equals(this.startDate, auditQueryExecutionStatusResponse.startDate) &&
         Objects.equals(this.interval, auditQueryExecutionStatusResponse.interval) &&
         Objects.equals(this.serviceName, auditQueryExecutionStatusResponse.serviceName) &&
-        Objects.equals(this.filters, auditQueryExecutionStatusResponse.filters);
+        Objects.equals(this.filters, auditQueryExecutionStatusResponse.filters) &&
+        Objects.equals(this.sort, auditQueryExecutionStatusResponse.sort);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, startDate, interval, serviceName, filters);
+    return Objects.hash(id, state, startDate, interval, serviceName, filters, sort);
   }
 
   @Override
@@ -245,6 +266,7 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    serviceName: ").append(toIndentedString(serviceName)).append("\n");
     sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
+    sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
     sb.append("}");
     return sb.toString();
   }

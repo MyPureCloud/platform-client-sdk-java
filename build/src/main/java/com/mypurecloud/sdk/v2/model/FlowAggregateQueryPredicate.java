@@ -74,6 +74,7 @@ public class FlowAggregateQueryPredicate  implements Serializable {
     ENTRYREASON("entryReason"),
     ENTRYTYPE("entryType"),
     EXITREASON("exitReason"),
+    EXTERNALCONTACTID("externalContactId"),
     EXTERNALMEDIACOUNT("externalMediaCount"),
     EXTERNALORGANIZATIONID("externalOrganizationId"),
     FLAGGEDREASON("flaggedReason"),

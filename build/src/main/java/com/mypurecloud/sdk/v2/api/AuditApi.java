@@ -10,12 +10,14 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.AuditQueryServiceMapping;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuditQueryExecutionStatusResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryExecutionResultsResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryRequest;
 
 
+import com.mypurecloud.sdk.v2.api.request.GetAuditsQueryServicemappingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuditsQueryTransactionIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuditsQueryTransactionIdResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuditsQueryRequest;
@@ -36,6 +38,81 @@ public class AuditApi {
 
   public AuditApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Get service mapping information used in audits.
+   * 
+   * @return AuditQueryServiceMapping
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuditQueryServiceMapping getAuditsQueryServicemapping() throws IOException, ApiException {
+    return  getAuditsQueryServicemapping(createGetAuditsQueryServicemappingRequest());
+  }
+
+  /**
+   * Get service mapping information used in audits.
+   * 
+   * @return AuditQueryServiceMapping
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuditQueryServiceMapping> getAuditsQueryServicemappingWithHttpInfo() throws IOException {
+    return getAuditsQueryServicemapping(createGetAuditsQueryServicemappingRequest().withHttpInfo());
+  }
+
+  private GetAuditsQueryServicemappingRequest createGetAuditsQueryServicemappingRequest() {
+    return GetAuditsQueryServicemappingRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get service mapping information used in audits.
+   * 
+   * @param request The request object
+   * @return AuditQueryServiceMapping
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuditQueryServiceMapping getAuditsQueryServicemapping(GetAuditsQueryServicemappingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AuditQueryServiceMapping> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AuditQueryServiceMapping>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get service mapping information used in audits.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuditQueryServiceMapping> getAuditsQueryServicemapping(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AuditQueryServiceMapping>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuditQueryServiceMapping> response = (ApiResponse<AuditQueryServiceMapping>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuditQueryServiceMapping> response = (ApiResponse<AuditQueryServiceMapping>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   

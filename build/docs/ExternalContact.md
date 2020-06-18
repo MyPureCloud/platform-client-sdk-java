@@ -31,6 +31,8 @@ title: ExternalContact
 | **externalOrganization** | <!----><!---->[**ExternalOrganization**](ExternalOrganization.html)<!----> |  |  [optional] |
 | **surveyOptOut** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **externalSystemUrl** | <!----><!---->**String**<!----> | A string that identifies an external system-of-record resource that may have more detailed information on the contact. It should be a valid URL (including the http/https protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace. |  [optional] |
+| **schema** | <!----><!---->[**DataSchema**](DataSchema.html)<!----> | The schema defining custom fields for this contact |  [optional] |
+| **customFields** | <!----><!---->**Map&lt;String, Object&gt;**<!----> | Custom fields defined in the schema referenced by schemaId and schemaVersion. |  [optional] |
 | **externalDataSources** | <!----><!---->[**List&lt;ExternalDataSource&gt;**](ExternalDataSource.html)<!----> | Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}

@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.OAuthProviderEntityListing;
 import com.mypurecloud.sdk.v2.model.ADFS;
 import com.mypurecloud.sdk.v2.model.CustomerInteractionCenter;
+import com.mypurecloud.sdk.v2.model.GenericSAML;
 import com.mypurecloud.sdk.v2.model.GSuite;
 import com.mypurecloud.sdk.v2.model.IdentityNow;
 import com.mypurecloud.sdk.v2.model.Okta;
@@ -31,6 +32,7 @@ import com.mypurecloud.sdk.v2.model.OAuthProvider;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersAdfsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersCicRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersGenericRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersGsuiteRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersIdentitynowRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersOktaRequest;
@@ -42,6 +44,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteIdentityprovidersSalesforceReque
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersAdfsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersCicRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersGenericRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersGsuiteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersIdentitynowRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersOktaRequest;
@@ -52,6 +55,7 @@ import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersPureengageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIdentityprovidersSalesforceRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersAdfsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersCicRequest;
+import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersGenericRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersGsuiteRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersIdentitynowRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIdentityprovidersOktaRequest;
@@ -199,6 +203,82 @@ public class IdentityProviderApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Empty>> deleteIdentityprovidersCicAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Delete Generic SAML Identity Provider
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Empty> deleteIdentityprovidersGenericAsync(DeleteIdentityprovidersGenericRequest request, final AsyncApiCallback<Empty> callback) {
+    try {
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete Generic SAML Identity Provider
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Empty>> deleteIdentityprovidersGenericAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
     try {
       final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -1070,6 +1150,82 @@ public class IdentityProviderApiAsync {
 
   
   /**
+   * Get Generic SAML Identity Provider
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GenericSAML> getIdentityprovidersGenericAsync(GetIdentityprovidersGenericRequest request, final AsyncApiCallback<GenericSAML> callback) {
+    try {
+      final SettableFuture<GenericSAML> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GenericSAML>() {}, new AsyncApiCallback<ApiResponse<GenericSAML>>() {
+        @Override
+        public void onCompleted(ApiResponse<GenericSAML> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Generic SAML Identity Provider
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GenericSAML>> getIdentityprovidersGenericAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<GenericSAML>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GenericSAML>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GenericSAML>() {}, new AsyncApiCallback<ApiResponse<GenericSAML>>() {
+        @Override
+        public void onCompleted(ApiResponse<GenericSAML> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GenericSAML> response = (ApiResponse<GenericSAML>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GenericSAML> response = (ApiResponse<GenericSAML>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get G Suite Identity Provider
    * 
    * @param request the request object
@@ -1795,6 +1951,82 @@ public class IdentityProviderApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<OAuthProvider>> putIdentityprovidersCicAsync(ApiRequest<CustomerInteractionCenter> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+        @Override
+        public void onCompleted(ApiResponse<OAuthProvider> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OAuthProvider> response = (ApiResponse<OAuthProvider>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update/Create Generic SAML Identity Provider
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OAuthProvider> putIdentityprovidersGenericAsync(PutIdentityprovidersGenericRequest request, final AsyncApiCallback<OAuthProvider> callback) {
+    try {
+      final SettableFuture<OAuthProvider> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OAuthProvider>() {}, new AsyncApiCallback<ApiResponse<OAuthProvider>>() {
+        @Override
+        public void onCompleted(ApiResponse<OAuthProvider> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update/Create Generic SAML Identity Provider
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OAuthProvider>> putIdentityprovidersGenericAsync(ApiRequest<GenericSAML> request, final AsyncApiCallback<ApiResponse<OAuthProvider>> callback) {
     try {
       final SettableFuture<ApiResponse<OAuthProvider>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

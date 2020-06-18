@@ -11,10 +11,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOauthAuthorization**](OAuthApi.html#getOauthAuthorization) | Get a client that is authorized by the resource owner |
 | [**getOauthAuthorizations**](OAuthApi.html#getOauthAuthorizations) | List clients that are authorized by the resource owner |
 | [**getOauthClient**](OAuthApi.html#getOauthClient) | Get OAuth Client |
+| [**getOauthClientUsageQueryResult**](OAuthApi.html#getOauthClientUsageQueryResult) | Get the results of a usage query |
+| [**getOauthClientUsageSummary**](OAuthApi.html#getOauthClientUsageSummary) | Get a summary of OAuth client API usage |
 | [**getOauthClients**](OAuthApi.html#getOauthClients) | The list of OAuth clients |
 | [**getOauthScope**](OAuthApi.html#getOauthScope) | An OAuth scope |
 | [**getOauthScopes**](OAuthApi.html#getOauthScopes) | The list of OAuth scopes |
 | [**postOauthClientSecret**](OAuthApi.html#postOauthClientSecret) | Regenerate Client Secret |
+| [**postOauthClientUsageQuery**](OAuthApi.html#postOauthClientUsageQuery) | Query for OAuth client API usage |
 | [**postOauthClients**](OAuthApi.html#postOauthClients) | Create OAuth client |
 | [**putOauthClient**](OAuthApi.html#putOauthClient) | Update OAuth Client |
 {: class="table-striped"}
@@ -266,6 +269,136 @@ try {
 
 [**OAuthClient**](OAuthClient.html)
 
+<a name="getOauthClientUsageQueryResult"></a>
+
+# **getOauthClientUsageQueryResult**
+
+
+
+> [ApiUsageQueryResult](ApiUsageQueryResult.html) getOauthClientUsageQueryResult(executionId, clientId)
+
+Get the results of a usage query
+
+
+
+Wraps GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}  
+
+Requires ANY permissions: 
+
+* oauth:client:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OAuthApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OAuthApi apiInstance = new OAuthApi();
+String executionId = "executionId_example"; // String | ID of the query execution
+String clientId = "clientId_example"; // String | Client ID
+try {
+    ApiUsageQueryResult result = apiInstance.getOauthClientUsageQueryResult(executionId, clientId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OAuthApi#getOauthClientUsageQueryResult");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **executionId** | **String**| ID of the query execution | 
+| **clientId** | **String**| Client ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ApiUsageQueryResult**](ApiUsageQueryResult.html)
+
+<a name="getOauthClientUsageSummary"></a>
+
+# **getOauthClientUsageSummary**
+
+
+
+> [UsageExecutionResult](UsageExecutionResult.html) getOauthClientUsageSummary(clientId, days)
+
+Get a summary of OAuth client API usage
+
+After calling this method, you will then need to poll for the query results based on the returned execution Id
+
+Wraps GET /api/v2/oauth/clients/{clientId}/usage/summary  
+
+Requires ANY permissions: 
+
+* oauth:client:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OAuthApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OAuthApi apiInstance = new OAuthApi();
+String clientId = "clientId_example"; // String | Client ID
+String days = "7"; // String | Previous number of days to query
+try {
+    UsageExecutionResult result = apiInstance.getOauthClientUsageSummary(clientId, days);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OAuthApi#getOauthClientUsageSummary");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **clientId** | **String**| Client ID | 
+| **days** | **String**| Previous number of days to query | [optional] [default to 7] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UsageExecutionResult**](UsageExecutionResult.html)
+
 <a name="getOauthClients"></a>
 
 # **getOauthClients**
@@ -513,6 +646,71 @@ try {
 ### Return type
 
 [**OAuthClient**](OAuthClient.html)
+
+<a name="postOauthClientUsageQuery"></a>
+
+# **postOauthClientUsageQuery**
+
+
+
+> [UsageExecutionResult](UsageExecutionResult.html) postOauthClientUsageQuery(clientId, body)
+
+Query for OAuth client API usage
+
+After calling this method, you will then need to poll for the query results based on the returned execution Id
+
+Wraps POST /api/v2/oauth/clients/{clientId}/usage/query  
+
+Requires ANY permissions: 
+
+* oauth:client:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OAuthApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OAuthApi apiInstance = new OAuthApi();
+String clientId = "clientId_example"; // String | Client ID
+ApiUsageQuery body = new ApiUsageQuery(); // ApiUsageQuery | Query
+try {
+    UsageExecutionResult result = apiInstance.postOauthClientUsageQuery(clientId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OAuthApi#postOauthClientUsageQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **clientId** | **String**| Client ID | 
+| **body** | [**ApiUsageQuery**](ApiUsageQuery.html)| Query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UsageExecutionResult**](UsageExecutionResult.html)
 
 <a name="postOauthClients"></a>
 

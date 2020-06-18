@@ -39,6 +39,7 @@ public class ConversationAggregationQuery  implements Serializable {
     DIVISIONID("divisionId"),
     DNIS("dnis"),
     EDGEID("edgeId"),
+    EXTERNALCONTACTID("externalContactId"),
     EXTERNALMEDIACOUNT("externalMediaCount"),
     EXTERNALORGANIZATIONID("externalOrganizationId"),
     FLAGGEDREASON("flaggedReason"),

@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.EmbeddedIntegration;
+import com.mypurecloud.sdk.v2.model.IpAddressAuthentication;
 import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrgWhitelistSettings;
 import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
@@ -24,10 +25,12 @@ import com.mypurecloud.sdk.v2.model.FeatureState;
 
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsEmbeddedintegrationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrganizationsIpaddressauthenticationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsWhitelistRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOrganizationsFeatureRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrganizationsEmbeddedintegrationRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOrganizationsIpaddressauthenticationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrganizationsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrganizationsWhitelistRequest;
 
@@ -191,6 +194,82 @@ public class OrganizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<EmbeddedIntegration> response = (ApiResponse<EmbeddedIntegration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get organization IP address whitelist settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IpAddressAuthentication> getOrganizationsIpaddressauthenticationAsync(GetOrganizationsIpaddressauthenticationRequest request, final AsyncApiCallback<IpAddressAuthentication> callback) {
+    try {
+      final SettableFuture<IpAddressAuthentication> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IpAddressAuthentication>() {}, new AsyncApiCallback<ApiResponse<IpAddressAuthentication>>() {
+        @Override
+        public void onCompleted(ApiResponse<IpAddressAuthentication> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get organization IP address whitelist settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IpAddressAuthentication>> getOrganizationsIpaddressauthenticationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<IpAddressAuthentication>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IpAddressAuthentication>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IpAddressAuthentication>() {}, new AsyncApiCallback<ApiResponse<IpAddressAuthentication>>() {
+        @Override
+        public void onCompleted(ApiResponse<IpAddressAuthentication> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IpAddressAuthentication> response = (ApiResponse<IpAddressAuthentication>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IpAddressAuthentication> response = (ApiResponse<IpAddressAuthentication>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -495,6 +574,82 @@ public class OrganizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<EmbeddedIntegration> response = (ApiResponse<EmbeddedIntegration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update organization IP address whitelist settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<IpAddressAuthentication> putOrganizationsIpaddressauthenticationAsync(PutOrganizationsIpaddressauthenticationRequest request, final AsyncApiCallback<IpAddressAuthentication> callback) {
+    try {
+      final SettableFuture<IpAddressAuthentication> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<IpAddressAuthentication>() {}, new AsyncApiCallback<ApiResponse<IpAddressAuthentication>>() {
+        @Override
+        public void onCompleted(ApiResponse<IpAddressAuthentication> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update organization IP address whitelist settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<IpAddressAuthentication>> putOrganizationsIpaddressauthenticationAsync(ApiRequest<IpAddressAuthentication> request, final AsyncApiCallback<ApiResponse<IpAddressAuthentication>> callback) {
+    try {
+      final SettableFuture<ApiResponse<IpAddressAuthentication>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<IpAddressAuthentication>() {}, new AsyncApiCallback<ApiResponse<IpAddressAuthentication>>() {
+        @Override
+        public void onCompleted(ApiResponse<IpAddressAuthentication> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IpAddressAuthentication> response = (ApiResponse<IpAddressAuthentication>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<IpAddressAuthentication> response = (ApiResponse<IpAddressAuthentication>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

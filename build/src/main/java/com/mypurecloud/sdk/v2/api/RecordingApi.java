@@ -501,6 +501,9 @@ public class RecordingApi {
    * @param conversationId Conversation ID (required)
    * @param recordingId Recording ID (required)
    * @param formatId The desired media format. (optional, default to WEBM)
+   * @param emailFormatId The desired media format when downloading an email recording. (optional, default to EML)
+   * @param chatFormatId The desired media format when downloading a chat recording. (optional, default to ZIP)
+   * @param messageFormatId The desired media format when downloading a message recording. (optional, default to ZIP)
    * @param download requesting a download format of the recording (optional, default to false)
    * @param fileName the name of the downloaded fileName (optional)
    * @param locale The locale for the requested file when downloading, as an ISO 639-1 code (optional)
@@ -508,8 +511,8 @@ public class RecordingApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Recording getConversationRecording(String conversationId, String recordingId, String formatId, Boolean download, String fileName, String locale) throws IOException, ApiException {
-    return  getConversationRecording(createGetConversationRecordingRequest(conversationId, recordingId, formatId, download, fileName, locale));
+  public Recording getConversationRecording(String conversationId, String recordingId, String formatId, String emailFormatId, String chatFormatId, String messageFormatId, Boolean download, String fileName, String locale) throws IOException, ApiException {
+    return  getConversationRecording(createGetConversationRecordingRequest(conversationId, recordingId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale));
   }
 
   /**
@@ -518,23 +521,32 @@ public class RecordingApi {
    * @param conversationId Conversation ID (required)
    * @param recordingId Recording ID (required)
    * @param formatId The desired media format. (optional, default to WEBM)
+   * @param emailFormatId The desired media format when downloading an email recording. (optional, default to EML)
+   * @param chatFormatId The desired media format when downloading a chat recording. (optional, default to ZIP)
+   * @param messageFormatId The desired media format when downloading a message recording. (optional, default to ZIP)
    * @param download requesting a download format of the recording (optional, default to false)
    * @param fileName the name of the downloaded fileName (optional)
    * @param locale The locale for the requested file when downloading, as an ISO 639-1 code (optional)
    * @return Recording
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Recording> getConversationRecordingWithHttpInfo(String conversationId, String recordingId, String formatId, Boolean download, String fileName, String locale) throws IOException {
-    return getConversationRecording(createGetConversationRecordingRequest(conversationId, recordingId, formatId, download, fileName, locale).withHttpInfo());
+  public ApiResponse<Recording> getConversationRecordingWithHttpInfo(String conversationId, String recordingId, String formatId, String emailFormatId, String chatFormatId, String messageFormatId, Boolean download, String fileName, String locale) throws IOException {
+    return getConversationRecording(createGetConversationRecordingRequest(conversationId, recordingId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale).withHttpInfo());
   }
 
-  private GetConversationRecordingRequest createGetConversationRecordingRequest(String conversationId, String recordingId, String formatId, Boolean download, String fileName, String locale) {
+  private GetConversationRecordingRequest createGetConversationRecordingRequest(String conversationId, String recordingId, String formatId, String emailFormatId, String chatFormatId, String messageFormatId, Boolean download, String fileName, String locale) {
     return GetConversationRecordingRequest.builder()
             .withConversationId(conversationId)
     
             .withRecordingId(recordingId)
     
             .withFormatId(formatId)
+    
+            .withEmailFormatId(emailFormatId)
+    
+            .withChatFormatId(chatFormatId)
+    
+            .withMessageFormatId(messageFormatId)
     
             .withDownload(download)
     
@@ -1097,6 +1109,9 @@ public class RecordingApi {
    * A 202 response means the orphaned media is currently transcoding and will be available shortly.A 200 response denotes the transcoded orphan media is available now and is contained in the response body.
    * @param orphanId Orphan ID (required)
    * @param formatId The desired media format. (optional, default to WEBM)
+   * @param emailFormatId The desired media format when downloading an email recording. (optional, default to EML)
+   * @param chatFormatId The desired media format when downloading a chat recording. (optional, default to ZIP)
+   * @param messageFormatId The desired media format when downloading a message recording. (optional, default to ZIP)
    * @param download requesting a download format of the recording (optional, default to false)
    * @param fileName the name of the downloaded fileName (optional)
    * @param locale The locale for the requested file when downloading, as an ISO 639-1 code (optional)
@@ -1104,8 +1119,8 @@ public class RecordingApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Recording getOrphanrecordingMedia(String orphanId, String formatId, Boolean download, String fileName, String locale) throws IOException, ApiException {
-    return  getOrphanrecordingMedia(createGetOrphanrecordingMediaRequest(orphanId, formatId, download, fileName, locale));
+  public Recording getOrphanrecordingMedia(String orphanId, String formatId, String emailFormatId, String chatFormatId, String messageFormatId, Boolean download, String fileName, String locale) throws IOException, ApiException {
+    return  getOrphanrecordingMedia(createGetOrphanrecordingMediaRequest(orphanId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale));
   }
 
   /**
@@ -1113,21 +1128,30 @@ public class RecordingApi {
    * A 202 response means the orphaned media is currently transcoding and will be available shortly.A 200 response denotes the transcoded orphan media is available now and is contained in the response body.
    * @param orphanId Orphan ID (required)
    * @param formatId The desired media format. (optional, default to WEBM)
+   * @param emailFormatId The desired media format when downloading an email recording. (optional, default to EML)
+   * @param chatFormatId The desired media format when downloading a chat recording. (optional, default to ZIP)
+   * @param messageFormatId The desired media format when downloading a message recording. (optional, default to ZIP)
    * @param download requesting a download format of the recording (optional, default to false)
    * @param fileName the name of the downloaded fileName (optional)
    * @param locale The locale for the requested file when downloading, as an ISO 639-1 code (optional)
    * @return Recording
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Recording> getOrphanrecordingMediaWithHttpInfo(String orphanId, String formatId, Boolean download, String fileName, String locale) throws IOException {
-    return getOrphanrecordingMedia(createGetOrphanrecordingMediaRequest(orphanId, formatId, download, fileName, locale).withHttpInfo());
+  public ApiResponse<Recording> getOrphanrecordingMediaWithHttpInfo(String orphanId, String formatId, String emailFormatId, String chatFormatId, String messageFormatId, Boolean download, String fileName, String locale) throws IOException {
+    return getOrphanrecordingMedia(createGetOrphanrecordingMediaRequest(orphanId, formatId, emailFormatId, chatFormatId, messageFormatId, download, fileName, locale).withHttpInfo());
   }
 
-  private GetOrphanrecordingMediaRequest createGetOrphanrecordingMediaRequest(String orphanId, String formatId, Boolean download, String fileName, String locale) {
+  private GetOrphanrecordingMediaRequest createGetOrphanrecordingMediaRequest(String orphanId, String formatId, String emailFormatId, String chatFormatId, String messageFormatId, Boolean download, String fileName, String locale) {
     return GetOrphanrecordingMediaRequest.builder()
             .withOrphanId(orphanId)
     
             .withFormatId(formatId)
+    
+            .withEmailFormatId(emailFormatId)
+    
+            .withChatFormatId(chatFormatId)
+    
+            .withMessageFormatId(messageFormatId)
     
             .withDownload(download)
     

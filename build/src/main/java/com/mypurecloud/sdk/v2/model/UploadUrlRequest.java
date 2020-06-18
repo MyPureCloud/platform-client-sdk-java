@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -17,6 +18,40 @@ public class UploadUrlRequest  implements Serializable {
   private String fileName = null;
   private String contentMd5 = null;
   private Integer signedUrlTimeoutSeconds = null;
+
+  /**
+   * Gets or Sets serverSideEncryption
+   */
+  public enum ServerSideEncryptionEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    AES256("AES256");
+
+    private String value;
+
+    ServerSideEncryptionEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ServerSideEncryptionEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ServerSideEncryptionEnum value : ServerSideEncryptionEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ServerSideEncryptionEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ServerSideEncryptionEnum serverSideEncryption = null;
 
   
   /**
@@ -73,6 +108,23 @@ public class UploadUrlRequest  implements Serializable {
   }
 
   
+  /**
+   **/
+  public UploadUrlRequest serverSideEncryption(ServerSideEncryptionEnum serverSideEncryption) {
+    this.serverSideEncryption = serverSideEncryption;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("serverSideEncryption")
+  public ServerSideEncryptionEnum getServerSideEncryption() {
+    return serverSideEncryption;
+  }
+  public void setServerSideEncryption(ServerSideEncryptionEnum serverSideEncryption) {
+    this.serverSideEncryption = serverSideEncryption;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -85,12 +137,13 @@ public class UploadUrlRequest  implements Serializable {
     UploadUrlRequest uploadUrlRequest = (UploadUrlRequest) o;
     return Objects.equals(this.fileName, uploadUrlRequest.fileName) &&
         Objects.equals(this.contentMd5, uploadUrlRequest.contentMd5) &&
-        Objects.equals(this.signedUrlTimeoutSeconds, uploadUrlRequest.signedUrlTimeoutSeconds);
+        Objects.equals(this.signedUrlTimeoutSeconds, uploadUrlRequest.signedUrlTimeoutSeconds) &&
+        Objects.equals(this.serverSideEncryption, uploadUrlRequest.serverSideEncryption);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fileName, contentMd5, signedUrlTimeoutSeconds);
+    return Objects.hash(fileName, contentMd5, signedUrlTimeoutSeconds, serverSideEncryption);
   }
 
   @Override
@@ -101,6 +154,7 @@ public class UploadUrlRequest  implements Serializable {
     sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
     sb.append("    contentMd5: ").append(toIndentedString(contentMd5)).append("\n");
     sb.append("    signedUrlTimeoutSeconds: ").append(toIndentedString(signedUrlTimeoutSeconds)).append("\n");
+    sb.append("    serverSideEncryption: ").append(toIndentedString(serverSideEncryption)).append("\n");
     sb.append("}");
     return sb.toString();
   }

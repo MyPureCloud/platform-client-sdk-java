@@ -47,9 +47,12 @@ import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
 import com.mypurecloud.sdk.v2.model.FlowOutcome;
 import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
+import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchResponse;
+import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectEmergencygroupRequest;
@@ -107,6 +110,7 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDivisionviewsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsExecutionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectDependencytrackingBuildRequest;
@@ -131,6 +135,7 @@ import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableExportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableImportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatablesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsExecutionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectEmergencygroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectIvrRequest;
@@ -5068,6 +5073,85 @@ public class ArchitectApi {
 
   
   /**
+   * Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
+   * 
+   * @param flowExecutionId flow execution ID (required)
+   * @return FlowRuntimeExecution
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowRuntimeExecution getFlowsExecution(String flowExecutionId) throws IOException, ApiException {
+    return  getFlowsExecution(createGetFlowsExecutionRequest(flowExecutionId));
+  }
+
+  /**
+   * Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
+   * 
+   * @param flowExecutionId flow execution ID (required)
+   * @return FlowRuntimeExecution
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowRuntimeExecution> getFlowsExecutionWithHttpInfo(String flowExecutionId) throws IOException {
+    return getFlowsExecution(createGetFlowsExecutionRequest(flowExecutionId).withHttpInfo());
+  }
+
+  private GetFlowsExecutionRequest createGetFlowsExecutionRequest(String flowExecutionId) {
+    return GetFlowsExecutionRequest.builder()
+            .withFlowExecutionId(flowExecutionId)
+    
+            .build();
+  }
+
+  /**
+   * Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
+   * 
+   * @param request The request object
+   * @return FlowRuntimeExecution
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowRuntimeExecution getFlowsExecution(GetFlowsExecutionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowRuntimeExecution> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowRuntimeExecution>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowRuntimeExecution> getFlowsExecution(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowRuntimeExecution>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowRuntimeExecution> response = (ApiResponse<FlowRuntimeExecution>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowRuntimeExecution> response = (ApiResponse<FlowRuntimeExecution>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get a flow outcome
    * Returns a specified flow outcome
    * @param flowOutcomeId flow outcome ID (required)
@@ -7003,6 +7087,85 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DataTable> response = (ApiResponse<DataTable>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.
+   * The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
+   * @param flowLaunchRequest  (required)
+   * @return FlowExecutionLaunchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowExecutionLaunchResponse postFlowsExecutions(FlowExecutionLaunchRequest flowLaunchRequest) throws IOException, ApiException {
+    return  postFlowsExecutions(createPostFlowsExecutionsRequest(flowLaunchRequest));
+  }
+
+  /**
+   * Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.
+   * The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
+   * @param flowLaunchRequest  (required)
+   * @return FlowExecutionLaunchResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowExecutionLaunchResponse> postFlowsExecutionsWithHttpInfo(FlowExecutionLaunchRequest flowLaunchRequest) throws IOException {
+    return postFlowsExecutions(createPostFlowsExecutionsRequest(flowLaunchRequest).withHttpInfo());
+  }
+
+  private PostFlowsExecutionsRequest createPostFlowsExecutionsRequest(FlowExecutionLaunchRequest flowLaunchRequest) {
+    return PostFlowsExecutionsRequest.builder()
+            .withFlowLaunchRequest(flowLaunchRequest)
+    
+            .build();
+  }
+
+  /**
+   * Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.
+   * The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
+   * @param request The request object
+   * @return FlowExecutionLaunchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowExecutionLaunchResponse postFlowsExecutions(PostFlowsExecutionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowExecutionLaunchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowExecutionLaunchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.
+   * The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowExecutionLaunchResponse> postFlowsExecutions(ApiRequest<FlowExecutionLaunchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowExecutionLaunchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowExecutionLaunchResponse> response = (ApiResponse<FlowExecutionLaunchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowExecutionLaunchResponse> response = (ApiResponse<FlowExecutionLaunchResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

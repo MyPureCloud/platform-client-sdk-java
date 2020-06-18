@@ -23,9 +23,9 @@ public class IntegrationEventEntityListing  implements Serializable, PagedResour
   private Integer pageNumber = null;
   private Long total = null;
   private String firstUri = null;
+  private String previousUri = null;
   private String selfUri = null;
   private String nextUri = null;
-  private String previousUri = null;
   private String lastUri = null;
   private Integer pageCount = null;
 
@@ -117,6 +117,23 @@ public class IntegrationEventEntityListing  implements Serializable, PagedResour
   
   /**
    **/
+  public IntegrationEventEntityListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
+  }
+
+  
+  /**
+   **/
   public IntegrationEventEntityListing selfUri(String selfUri) {
     this.selfUri = selfUri;
     return this;
@@ -146,23 +163,6 @@ public class IntegrationEventEntityListing  implements Serializable, PagedResour
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
-  }
-
-  
-  /**
-   **/
-  public IntegrationEventEntityListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
   }
 
   
@@ -215,16 +215,16 @@ public class IntegrationEventEntityListing  implements Serializable, PagedResour
         Objects.equals(this.pageNumber, integrationEventEntityListing.pageNumber) &&
         Objects.equals(this.total, integrationEventEntityListing.total) &&
         Objects.equals(this.firstUri, integrationEventEntityListing.firstUri) &&
+        Objects.equals(this.previousUri, integrationEventEntityListing.previousUri) &&
         Objects.equals(this.selfUri, integrationEventEntityListing.selfUri) &&
         Objects.equals(this.nextUri, integrationEventEntityListing.nextUri) &&
-        Objects.equals(this.previousUri, integrationEventEntityListing.previousUri) &&
         Objects.equals(this.lastUri, integrationEventEntityListing.lastUri) &&
         Objects.equals(this.pageCount, integrationEventEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, previousUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, previousUri, selfUri, nextUri, lastUri, pageCount);
   }
 
   @Override
@@ -237,9 +237,9 @@ public class IntegrationEventEntityListing  implements Serializable, PagedResour
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");

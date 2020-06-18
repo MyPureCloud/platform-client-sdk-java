@@ -50,9 +50,12 @@ import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
 import com.mypurecloud.sdk.v2.model.FlowOutcome;
 import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
+import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchResponse;
+import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteArchitectEmergencygroupRequest;
@@ -110,6 +113,7 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDivisionviewsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsExecutionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectDependencytrackingBuildRequest;
@@ -134,6 +138,7 @@ import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableExportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableImportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatablesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsExecutionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectEmergencygroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectIvrRequest;
@@ -4348,6 +4353,82 @@ public class ArchitectApiAsync {
 
   
   /**
+   * Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FlowRuntimeExecution> getFlowsExecutionAsync(GetFlowsExecutionRequest request, final AsyncApiCallback<FlowRuntimeExecution> callback) {
+    try {
+      final SettableFuture<FlowRuntimeExecution> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowRuntimeExecution>() {}, new AsyncApiCallback<ApiResponse<FlowRuntimeExecution>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowRuntimeExecution> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FlowRuntimeExecution>> getFlowsExecutionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FlowRuntimeExecution>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FlowRuntimeExecution>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FlowRuntimeExecution>() {}, new AsyncApiCallback<ApiResponse<FlowRuntimeExecution>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowRuntimeExecution> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowRuntimeExecution> response = (ApiResponse<FlowRuntimeExecution>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowRuntimeExecution> response = (ApiResponse<FlowRuntimeExecution>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get a flow outcome
    * Returns a specified flow outcome
    * @param request the request object
@@ -6159,6 +6240,82 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DataTable> response = (ApiResponse<DataTable>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.
+   * The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FlowExecutionLaunchResponse> postFlowsExecutionsAsync(PostFlowsExecutionsRequest request, final AsyncApiCallback<FlowExecutionLaunchResponse> callback) {
+    try {
+      final SettableFuture<FlowExecutionLaunchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowExecutionLaunchResponse>() {}, new AsyncApiCallback<ApiResponse<FlowExecutionLaunchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowExecutionLaunchResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.
+   * The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FlowExecutionLaunchResponse>> postFlowsExecutionsAsync(ApiRequest<FlowExecutionLaunchRequest> request, final AsyncApiCallback<ApiResponse<FlowExecutionLaunchResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FlowExecutionLaunchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FlowExecutionLaunchResponse>() {}, new AsyncApiCallback<ApiResponse<FlowExecutionLaunchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowExecutionLaunchResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowExecutionLaunchResponse> response = (ApiResponse<FlowExecutionLaunchResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowExecutionLaunchResponse> response = (ApiResponse<FlowExecutionLaunchResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

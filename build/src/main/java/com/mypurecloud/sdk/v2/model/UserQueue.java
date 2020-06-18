@@ -12,9 +12,11 @@ import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.MediaSetting;
 import com.mypurecloud.sdk.v2.model.QueueEmailAddress;
 import com.mypurecloud.sdk.v2.model.QueueMessagingAddresses;
+import com.mypurecloud.sdk.v2.model.RoutingRule;
 import com.mypurecloud.sdk.v2.model.Script;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -37,6 +39,7 @@ public class UserQueue  implements Serializable {
   private String createdBy = null;
   private Integer memberCount = null;
   private Map<String, MediaSetting> mediaSettings = null;
+  private List<RoutingRule> routingRules = new ArrayList<RoutingRule>();
   private Bullseye bullseye = null;
   private AcwSettings acwSettings = null;
 
@@ -240,6 +243,24 @@ public class UserQueue  implements Serializable {
   }
   public void setMediaSettings(Map<String, MediaSetting> mediaSettings) {
     this.mediaSettings = mediaSettings;
+  }
+
+  
+  /**
+   * The routing rules for the queue, used for routing to known or preferred agents.
+   **/
+  public UserQueue routingRules(List<RoutingRule> routingRules) {
+    this.routingRules = routingRules;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The routing rules for the queue, used for routing to known or preferred agents.")
+  @JsonProperty("routingRules")
+  public List<RoutingRule> getRoutingRules() {
+    return routingRules;
+  }
+  public void setRoutingRules(List<RoutingRule> routingRules) {
+    this.routingRules = routingRules;
   }
 
   
@@ -466,6 +487,7 @@ public class UserQueue  implements Serializable {
         Objects.equals(this.createdBy, userQueue.createdBy) &&
         Objects.equals(this.memberCount, userQueue.memberCount) &&
         Objects.equals(this.mediaSettings, userQueue.mediaSettings) &&
+        Objects.equals(this.routingRules, userQueue.routingRules) &&
         Objects.equals(this.bullseye, userQueue.bullseye) &&
         Objects.equals(this.acwSettings, userQueue.acwSettings) &&
         Objects.equals(this.skillEvaluationMethod, userQueue.skillEvaluationMethod) &&
@@ -482,7 +504,7 @@ public class UserQueue  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, mediaSettings, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisperPrompt, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, joined, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisperPrompt, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, joined, selfUri);
   }
 
   @Override
@@ -500,6 +522,7 @@ public class UserQueue  implements Serializable {
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    memberCount: ").append(toIndentedString(memberCount)).append("\n");
     sb.append("    mediaSettings: ").append(toIndentedString(mediaSettings)).append("\n");
+    sb.append("    routingRules: ").append(toIndentedString(routingRules)).append("\n");
     sb.append("    bullseye: ").append(toIndentedString(bullseye)).append("\n");
     sb.append("    acwSettings: ").append(toIndentedString(acwSettings)).append("\n");
     sb.append("    skillEvaluationMethod: ").append(toIndentedString(skillEvaluationMethod)).append("\n");

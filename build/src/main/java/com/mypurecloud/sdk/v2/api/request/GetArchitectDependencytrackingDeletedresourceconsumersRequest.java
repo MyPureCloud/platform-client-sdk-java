@@ -57,9 +57,12 @@ import com.mypurecloud.sdk.v2.model.EntityListing;
 import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
+import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
 import com.mypurecloud.sdk.v2.model.FlowOutcome;
 import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
+import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchResponse;
+import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchRequest;
 
 public class GetArchitectDependencytrackingDeletedresourceconsumersRequest {
     
