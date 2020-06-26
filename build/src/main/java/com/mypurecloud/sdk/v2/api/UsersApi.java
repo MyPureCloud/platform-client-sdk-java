@@ -1438,7 +1438,7 @@ public class UsersApi {
   
   /**
    * Get a user profile listing
-   * 
+   * This api is deprecated. User /api/v2/users
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param id id (optional)
@@ -1455,7 +1455,7 @@ public class UsersApi {
 
   /**
    * Get a user profile listing
-   * 
+   * This api is deprecated. User /api/v2/users
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param id id (optional)
@@ -1488,7 +1488,7 @@ public class UsersApi {
 
   /**
    * Get a user profile listing
-   * 
+   * This api is deprecated. User /api/v2/users
    * @param request The request object
    * @return UserProfileEntityListing
    * @throws ApiException if the request fails on the server
@@ -1507,7 +1507,7 @@ public class UsersApi {
 
   /**
    * Get a user profile listing
-   * 
+   * This api is deprecated. User /api/v2/users
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2205,7 +2205,7 @@ public class UsersApi {
   
   /**
    * Get user profile
-   * 
+   * This api has been deprecated. Use api/v2/users instead
    * @param userId userId (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return UserProfile
@@ -2218,7 +2218,7 @@ public class UsersApi {
 
   /**
    * Get user profile
-   * 
+   * This api has been deprecated. Use api/v2/users instead
    * @param userId userId (required)
    * @param expand Which fields, if any, to expand (optional)
    * @return UserProfile
@@ -2239,7 +2239,7 @@ public class UsersApi {
 
   /**
    * Get user profile
-   * 
+   * This api has been deprecated. Use api/v2/users instead
    * @param request The request object
    * @return UserProfile
    * @throws ApiException if the request fails on the server
@@ -2258,7 +2258,7 @@ public class UsersApi {
 
   /**
    * Get user profile
-   * 
+   * This api has been deprecated. Use api/v2/users instead
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

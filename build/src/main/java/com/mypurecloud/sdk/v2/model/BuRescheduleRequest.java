@@ -29,14 +29,14 @@ public class BuRescheduleRequest  implements Serializable {
 
   
   /**
-   * The start of the range to reschedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The start of the range to reschedule.  Defaults to the beginning of the schedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public BuRescheduleRequest startDate(Date startDate) {
     this.startDate = startDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The start of the range to reschedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The start of the range to reschedule.  Defaults to the beginning of the schedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("startDate")
   public Date getStartDate() {
     return startDate;
@@ -47,14 +47,14 @@ public class BuRescheduleRequest  implements Serializable {
 
   
   /**
-   * The end of the range to reschedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The end of the range to reschedule.  Defaults the the end of the schedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
    **/
   public BuRescheduleRequest endDate(Date endDate) {
     this.endDate = endDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The end of the range to reschedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The end of the range to reschedule.  Defaults the the end of the schedule. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
   @JsonProperty("endDate")
   public Date getEndDate() {
     return endDate;

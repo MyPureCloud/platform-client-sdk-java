@@ -481,7 +481,7 @@ try {
 | **interval** | **String**| Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; | [optional] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-| **statuses** | [**List&lt;String&gt;**](String.html)| Appointment Statuses to filter by | [optional]<br />**Values**: Scheduled, InProgress, Completed 
+| **statuses** | [**List&lt;String&gt;**](String.html)| Appointment Statuses to filter by | [optional]<br />**Values**: Scheduled, InProgress, Completed, InvalidSchedule 
 | **facilitatorIds** | [**List&lt;String&gt;**](String.html)| The facilitator IDs for which to retrieve appointments | [optional] 
 | **sortOrder** | **String**| Sort (by due date) either Asc or Desc | [optional]<br />**Values**: Desc, Asc 
 {: class="table-striped"}

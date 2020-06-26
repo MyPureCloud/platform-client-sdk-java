@@ -1101,13 +1101,13 @@ try {
 
 # **getProfilesUsers**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [UserProfileEntityListing](UserProfileEntityListing.html) getProfilesUsers(pageSize, pageNumber, id, jid, sortOrder, expand)
 
 Get a user profile listing
 
-
+This api is deprecated. User /api/v2/users
 
 Wraps GET /api/v2/profiles/users  
 
@@ -1689,13 +1689,13 @@ try {
 
 # **getUserProfile**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [UserProfile](UserProfile.html) getUserProfile(userId, expand)
 
 Get user profile
 
-
+This api has been deprecated. Use api/v2/users instead
 
 Wraps GET /api/v2/users/{userId}/profile  
 
@@ -1741,7 +1741,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| userId | 
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team 
 {: class="table-striped"}
 
 

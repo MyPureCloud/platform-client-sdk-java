@@ -56,14 +56,14 @@ public class ScimEmail  implements Serializable {
 
   
   /**
-   * The email address.
+   * The email address. Note value for type 'other'is immutable.
    **/
   public ScimEmail value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The email address.")
+  @ApiModelProperty(example = "null", value = "The email address. Note value for type 'other'is immutable.")
   @JsonProperty("value")
   public String getValue() {
     return value;

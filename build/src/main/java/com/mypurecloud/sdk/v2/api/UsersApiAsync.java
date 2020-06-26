@@ -1371,7 +1371,7 @@ public class UsersApiAsync {
   
   /**
    * Get a user profile listing
-   * 
+   * This api is deprecated. User /api/v2/users
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1405,7 +1405,7 @@ public class UsersApiAsync {
 
   /**
    * Get a user profile listing
-   * 
+   * This api is deprecated. User /api/v2/users
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2055,7 +2055,7 @@ public class UsersApiAsync {
   
   /**
    * Get user profile
-   * 
+   * This api has been deprecated. Use api/v2/users instead
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2089,7 +2089,7 @@ public class UsersApiAsync {
 
   /**
    * Get user profile
-   * 
+   * This api has been deprecated. Use api/v2/users instead
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

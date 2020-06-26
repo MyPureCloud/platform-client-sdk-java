@@ -104,7 +104,8 @@ public class CoachingNotification  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SCHEDULED("Scheduled"),
     INPROGRESS("InProgress"),
-    COMPLETED("Completed");
+    COMPLETED("Completed"),
+    INVALIDSCHEDULE("InvalidSchedule");
 
     private String value;
 

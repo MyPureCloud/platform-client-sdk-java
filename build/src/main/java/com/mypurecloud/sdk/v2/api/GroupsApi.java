@@ -552,7 +552,7 @@ public class GroupsApi {
   
   /**
    * Get group profile
-   * 
+   * This api is deprecated. Use /api/v2/groups instead
    * @param groupId groupId (required)
    * @param fields Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList (optional)
    * @return GroupProfile
@@ -565,7 +565,7 @@ public class GroupsApi {
 
   /**
    * Get group profile
-   * 
+   * This api is deprecated. Use /api/v2/groups instead
    * @param groupId groupId (required)
    * @param fields Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList (optional)
    * @return GroupProfile
@@ -586,7 +586,7 @@ public class GroupsApi {
 
   /**
    * Get group profile
-   * 
+   * This api is deprecated. Use /api/v2/groups instead
    * @param request The request object
    * @return GroupProfile
    * @throws ApiException if the request fails on the server
@@ -605,7 +605,7 @@ public class GroupsApi {
 
   /**
    * Get group profile
-   * 
+   * This api is deprecated. Use /api/v2/groups instead
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -813,7 +813,7 @@ public class GroupsApi {
   
   /**
    * Get group profile listing
-   * 
+   * This api is deprecated. Use /api/v2/groups instead.
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param id id (optional)
@@ -828,7 +828,7 @@ public class GroupsApi {
 
   /**
    * Get group profile listing
-   * 
+   * This api is deprecated. Use /api/v2/groups instead.
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param id id (optional)
@@ -855,7 +855,7 @@ public class GroupsApi {
 
   /**
    * Get group profile listing
-   * 
+   * This api is deprecated. Use /api/v2/groups instead.
    * @param request The request object
    * @return GroupProfileEntityListing
    * @throws ApiException if the request fails on the server
@@ -874,7 +874,7 @@ public class GroupsApi {
 
   /**
    * Get group profile listing
-   * 
+   * This api is deprecated. Use /api/v2/groups instead.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

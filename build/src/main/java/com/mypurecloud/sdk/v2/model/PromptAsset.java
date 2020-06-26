@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.HashMap;
@@ -24,7 +25,43 @@ public class PromptAsset  implements Serializable {
   private String mediaUri = null;
   private String ttsString = null;
   private String text = null;
-  private String uploadStatus = null;
+
+  /**
+   * Audio upload status
+   */
+  public enum UploadStatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    CREATED("created"),
+    UPLOADED("uploaded"),
+    TRANSCODED("transcoded"),
+    TRANSCODEFAILED("transcodeFailed");
+
+    private String value;
+
+    UploadStatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static UploadStatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (UploadStatusEnum value : UploadStatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return UploadStatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private UploadStatusEnum uploadStatus = null;
   private String uploadUri = null;
   private Boolean languageDefault = null;
   private Map<String, List<String>> tags = null;
@@ -115,7 +152,7 @@ public class PromptAsset  implements Serializable {
   
   @ApiModelProperty(example = "null", value = "Audio upload status")
   @JsonProperty("uploadStatus")
-  public String getUploadStatus() {
+  public UploadStatusEnum getUploadStatus() {
     return uploadStatus;
   }
 
