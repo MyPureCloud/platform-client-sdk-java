@@ -20,6 +20,8 @@ title: VoicemailMessagesTopicVoicemailMessage
 | **note** | <!----><!---->**String**<!----> |  |  [optional] |
 | **deleted** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **modifiedByUserId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **copiedTo** | <!----><!---->[**List&lt;VoicemailMessagesTopicVoicemailCopyRecord&gt;**](VoicemailMessagesTopicVoicemailCopyRecord.html)<!----> |  |  [optional] |
+| **copiedFrom** | <!----><!---->[**VoicemailMessagesTopicVoicemailCopyRecord**](VoicemailMessagesTopicVoicemailCopyRecord.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -38,6 +38,7 @@ title: AuditQueryEntity
 | SEGMENT | &quot;Segment&quot; |
 | OUTCOME | &quot;Outcome&quot; |
 | CLICKSTREAMSETTINGS | &quot;ClickstreamSettings&quot; |
+| SCHEDULE | &quot;Schedule&quot; |
 {: class="table table-striped"}
 
 
@@ -62,6 +63,7 @@ title: AuditQueryEntity
 | READALL | &quot;ReadAll&quot; |
 | EXECUTE | &quot;Execute&quot; |
 | PUBLISH | &quot;Publish&quot; |
+| UNPUBLISH | &quot;Unpublish&quot; |
 | AUTHORIZE | &quot;Authorize&quot; |
 | DEAUTHORIZE | &quot;Deauthorize&quot; |
 | AUTHENTICATE | &quot;Authenticate&quot; |

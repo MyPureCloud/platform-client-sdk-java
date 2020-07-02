@@ -30,7 +30,8 @@ public class AuditQueryService  implements Serializable {
     QUALITY("Quality"),
     LANGUAGEUNDERSTANDING("LanguageUnderstanding"),
     TOPICSDEFINITIONS("TopicsDefinitions"),
-    PREDICTIVEENGAGEMENT("PredictiveEngagement");
+    PREDICTIVEENGAGEMENT("PredictiveEngagement"),
+    WORKFORCEMANAGEMENT("WorkforceManagement");
 
     private String value;
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -21,6 +22,41 @@ public class BuAgentScheduleActivity  implements Serializable {
   private String activityCodeId = null;
   private Boolean paid = null;
   private String timeOffRequestId = null;
+  private String externalActivityId = null;
+
+  /**
+   * The type of the external activity associated with this activity, if applicable
+   */
+  public enum ExternalActivityTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    COACHING("Coaching");
+
+    private String value;
+
+    ExternalActivityTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ExternalActivityTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ExternalActivityTypeEnum value : ExternalActivityTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ExternalActivityTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ExternalActivityTypeEnum externalActivityType = null;
 
   
   /**
@@ -131,6 +167,42 @@ public class BuAgentScheduleActivity  implements Serializable {
   }
 
   
+  /**
+   * The ID of the external activity associated with this activity, if applicable
+   **/
+  public BuAgentScheduleActivity externalActivityId(String externalActivityId) {
+    this.externalActivityId = externalActivityId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ID of the external activity associated with this activity, if applicable")
+  @JsonProperty("externalActivityId")
+  public String getExternalActivityId() {
+    return externalActivityId;
+  }
+  public void setExternalActivityId(String externalActivityId) {
+    this.externalActivityId = externalActivityId;
+  }
+
+  
+  /**
+   * The type of the external activity associated with this activity, if applicable
+   **/
+  public BuAgentScheduleActivity externalActivityType(ExternalActivityTypeEnum externalActivityType) {
+    this.externalActivityType = externalActivityType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type of the external activity associated with this activity, if applicable")
+  @JsonProperty("externalActivityType")
+  public ExternalActivityTypeEnum getExternalActivityType() {
+    return externalActivityType;
+  }
+  public void setExternalActivityType(ExternalActivityTypeEnum externalActivityType) {
+    this.externalActivityType = externalActivityType;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -146,12 +218,14 @@ public class BuAgentScheduleActivity  implements Serializable {
         Objects.equals(this.description, buAgentScheduleActivity.description) &&
         Objects.equals(this.activityCodeId, buAgentScheduleActivity.activityCodeId) &&
         Objects.equals(this.paid, buAgentScheduleActivity.paid) &&
-        Objects.equals(this.timeOffRequestId, buAgentScheduleActivity.timeOffRequestId);
+        Objects.equals(this.timeOffRequestId, buAgentScheduleActivity.timeOffRequestId) &&
+        Objects.equals(this.externalActivityId, buAgentScheduleActivity.externalActivityId) &&
+        Objects.equals(this.externalActivityType, buAgentScheduleActivity.externalActivityType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startDate, lengthMinutes, description, activityCodeId, paid, timeOffRequestId);
+    return Objects.hash(startDate, lengthMinutes, description, activityCodeId, paid, timeOffRequestId, externalActivityId, externalActivityType);
   }
 
   @Override
@@ -165,6 +239,8 @@ public class BuAgentScheduleActivity  implements Serializable {
     sb.append("    activityCodeId: ").append(toIndentedString(activityCodeId)).append("\n");
     sb.append("    paid: ").append(toIndentedString(paid)).append("\n");
     sb.append("    timeOffRequestId: ").append(toIndentedString(timeOffRequestId)).append("\n");
+    sb.append("    externalActivityId: ").append(toIndentedString(externalActivityId)).append("\n");
+    sb.append("    externalActivityType: ").append(toIndentedString(externalActivityType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

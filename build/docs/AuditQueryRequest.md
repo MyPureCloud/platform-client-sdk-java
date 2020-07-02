@@ -29,6 +29,7 @@ title: AuditQueryRequest
 | LANGUAGEUNDERSTANDING | &quot;LanguageUnderstanding&quot; |
 | TOPICSDEFINITIONS | &quot;TopicsDefinitions&quot; |
 | PREDICTIVEENGAGEMENT | &quot;PredictiveEngagement&quot; |
+| WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; |
 {: class="table table-striped"}
 
 

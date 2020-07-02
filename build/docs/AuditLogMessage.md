@@ -37,6 +37,7 @@ title: AuditLogMessage
 | LANGUAGEUNDERSTANDING | &quot;LanguageUnderstanding&quot; |
 | TOPICSDEFINITIONS | &quot;TopicsDefinitions&quot; |
 | PREDICTIVEENGAGEMENT | &quot;PredictiveEngagement&quot; |
+| WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; |
 {: class="table table-striped"}
 
 
@@ -62,6 +63,7 @@ title: AuditLogMessage
 | READALL | &quot;ReadAll&quot; |
 | EXECUTE | &quot;Execute&quot; |
 | PUBLISH | &quot;Publish&quot; |
+| UNPUBLISH | &quot;Unpublish&quot; |
 | AUTHORIZE | &quot;Authorize&quot; |
 | DEAUTHORIZE | &quot;Deauthorize&quot; |
 | AUTHENTICATE | &quot;Authenticate&quot; |
@@ -94,6 +96,7 @@ title: AuditLogMessage
 | SEGMENT | &quot;Segment&quot; |
 | OUTCOME | &quot;Outcome&quot; |
 | CLICKSTREAMSETTINGS | &quot;ClickstreamSettings&quot; |
+| SCHEDULE | &quot;Schedule&quot; |
 {: class="table table-striped"}
 
 

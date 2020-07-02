@@ -141,7 +141,7 @@ public class GetWorkforcemanagementBusinessunitsRequest {
 		AGENTTIMEOFFREQUEST("AgentTimeOffRequest"), 
 		ACTIVITYCODES("ActivityCodes"), 
 		AGENTS("Agents"), 
-		BUSINESSUNITACTIVITYCODES("BusinessUnitActivityCodes"), 
+		BUACTIVITYCODES("BuActivityCodes"), 
 		BUSINESSUNITS("BusinessUnits"), 
 		HISTORICALADHERENCE("HistoricalAdherence"), 
 		INTRADAYMONITORING("IntradayMonitoring"), 

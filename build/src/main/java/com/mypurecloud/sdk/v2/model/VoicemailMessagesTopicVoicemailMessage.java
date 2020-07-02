@@ -4,9 +4,12 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.VoicemailMessagesTopicVoicemailCopyRecord;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -27,6 +30,8 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
   private String note = null;
   private Boolean deleted = null;
   private String modifiedByUserId = null;
+  private List<VoicemailMessagesTopicVoicemailCopyRecord> copiedTo = new ArrayList<VoicemailMessagesTopicVoicemailCopyRecord>();
+  private VoicemailMessagesTopicVoicemailCopyRecord copiedFrom = null;
 
   
   /**
@@ -233,6 +238,40 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
   }
 
   
+  /**
+   **/
+  public VoicemailMessagesTopicVoicemailMessage copiedTo(List<VoicemailMessagesTopicVoicemailCopyRecord> copiedTo) {
+    this.copiedTo = copiedTo;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("copiedTo")
+  public List<VoicemailMessagesTopicVoicemailCopyRecord> getCopiedTo() {
+    return copiedTo;
+  }
+  public void setCopiedTo(List<VoicemailMessagesTopicVoicemailCopyRecord> copiedTo) {
+    this.copiedTo = copiedTo;
+  }
+
+  
+  /**
+   **/
+  public VoicemailMessagesTopicVoicemailMessage copiedFrom(VoicemailMessagesTopicVoicemailCopyRecord copiedFrom) {
+    this.copiedFrom = copiedFrom;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("copiedFrom")
+  public VoicemailMessagesTopicVoicemailCopyRecord getCopiedFrom() {
+    return copiedFrom;
+  }
+  public void setCopiedFrom(VoicemailMessagesTopicVoicemailCopyRecord copiedFrom) {
+    this.copiedFrom = copiedFrom;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -254,12 +293,14 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
         Objects.equals(this.action, voicemailMessagesTopicVoicemailMessage.action) &&
         Objects.equals(this.note, voicemailMessagesTopicVoicemailMessage.note) &&
         Objects.equals(this.deleted, voicemailMessagesTopicVoicemailMessage.deleted) &&
-        Objects.equals(this.modifiedByUserId, voicemailMessagesTopicVoicemailMessage.modifiedByUserId);
+        Objects.equals(this.modifiedByUserId, voicemailMessagesTopicVoicemailMessage.modifiedByUserId) &&
+        Objects.equals(this.copiedTo, voicemailMessagesTopicVoicemailMessage.copiedTo) &&
+        Objects.equals(this.copiedFrom, voicemailMessagesTopicVoicemailMessage.copiedFrom);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, read, audioRecordingDurationSeconds, audioRecordingSizeBytes, createdDate, modifiedDate, callerAddress, callerName, action, note, deleted, modifiedByUserId);
+    return Objects.hash(id, read, audioRecordingDurationSeconds, audioRecordingSizeBytes, createdDate, modifiedDate, callerAddress, callerName, action, note, deleted, modifiedByUserId, copiedTo, copiedFrom);
   }
 
   @Override
@@ -279,6 +320,8 @@ public class VoicemailMessagesTopicVoicemailMessage  implements Serializable {
     sb.append("    note: ").append(toIndentedString(note)).append("\n");
     sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
     sb.append("    modifiedByUserId: ").append(toIndentedString(modifiedByUserId)).append("\n");
+    sb.append("    copiedTo: ").append(toIndentedString(copiedTo)).append("\n");
+    sb.append("    copiedFrom: ").append(toIndentedString(copiedFrom)).append("\n");
     sb.append("}");
     return sb.toString();
   }

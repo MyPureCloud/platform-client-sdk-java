@@ -19,6 +19,7 @@ title: ReportingDataExportTopicDataExportNotification
 | **createdDateTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **modifiedDateTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **percentageComplete** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
+| **emailStatuses** | <!---->[**Map&lt;String, String&gt;**](#InnerEnum)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 
@@ -118,6 +119,18 @@ title: ReportingDataExportTopicDataExportNotification
 | REACHED_MAXIMUM_ATTEMPT_OF_RETRY | &quot;REACHED_MAXIMUM_ATTEMPT_OF_RETRY&quot; |
 | FAILED_LONG_RUNNING_EXPORT | &quot;FAILED_LONG_RUNNING_EXPORT&quot; |
 | TOO_MANY_REQUESTS_FROM_AN_ORGANIZATION | &quot;TOO_MANY_REQUESTS_FROM_AN_ORGANIZATION&quot; |
+{: class="table table-striped"}
+
+
+<a name="InnerEnum"></a>
+
+## Enum: InnerEnum
+
+| Name | Value |
+| ---- | ----- |
+| SENT | &quot;Sent&quot; |
+| PENDING | &quot;Pending&quot; |
+| FAILED | &quot;Failed&quot; |
 {: class="table table-striped"}
 
 

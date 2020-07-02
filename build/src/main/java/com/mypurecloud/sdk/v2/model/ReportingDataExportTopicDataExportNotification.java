@@ -9,6 +9,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -216,6 +219,41 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
   private Date modifiedDateTime = null;
   private BigDecimal percentageComplete = null;
 
+  /**
+   * Gets or Sets inner
+   */
+  public enum InnerEnum {
+    SENT("Sent"),
+    PENDING("Pending"),
+    FAILED("Failed");
+
+    private String value;
+
+    InnerEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static InnerEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (InnerEnum value : InnerEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return InnerEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private Map<String, String> emailStatuses = null;
+
   
   /**
    **/
@@ -404,6 +442,23 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
   }
 
   
+  /**
+   **/
+  public ReportingDataExportTopicDataExportNotification emailStatuses(Map<String, String> emailStatuses) {
+    this.emailStatuses = emailStatuses;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("emailStatuses")
+  public Map<String, String> getEmailStatuses() {
+    return emailStatuses;
+  }
+  public void setEmailStatuses(Map<String, String> emailStatuses) {
+    this.emailStatuses = emailStatuses;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -424,12 +479,13 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
         Objects.equals(this.read, reportingDataExportTopicDataExportNotification.read) &&
         Objects.equals(this.createdDateTime, reportingDataExportTopicDataExportNotification.createdDateTime) &&
         Objects.equals(this.modifiedDateTime, reportingDataExportTopicDataExportNotification.modifiedDateTime) &&
-        Objects.equals(this.percentageComplete, reportingDataExportTopicDataExportNotification.percentageComplete);
+        Objects.equals(this.percentageComplete, reportingDataExportTopicDataExportNotification.percentageComplete) &&
+        Objects.equals(this.emailStatuses, reportingDataExportTopicDataExportNotification.emailStatuses);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, status, exportFormat, downloadUrl, viewType, exportErrorMessagesType, read, createdDateTime, modifiedDateTime, percentageComplete);
+    return Objects.hash(id, name, status, exportFormat, downloadUrl, viewType, exportErrorMessagesType, read, createdDateTime, modifiedDateTime, percentageComplete, emailStatuses);
   }
 
   @Override
@@ -448,6 +504,7 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     sb.append("    createdDateTime: ").append(toIndentedString(createdDateTime)).append("\n");
     sb.append("    modifiedDateTime: ").append(toIndentedString(modifiedDateTime)).append("\n");
     sb.append("    percentageComplete: ").append(toIndentedString(percentageComplete)).append("\n");
+    sb.append("    emailStatuses: ").append(toIndentedString(emailStatuses)).append("\n");
     sb.append("}");
     return sb.toString();
   }

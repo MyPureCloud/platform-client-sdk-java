@@ -423,6 +423,8 @@ public class ViewFilter  implements Serializable {
   private List<String> locationIds = new ArrayList<String>();
   private List<String> flowOutTypes = new ArrayList<String>();
   private List<String> providerList = new ArrayList<String>();
+  private List<String> callbackNumberList = new ArrayList<String>();
+  private String callbackInterval = null;
 
   
   /**
@@ -1829,6 +1831,42 @@ public class ViewFilter  implements Serializable {
   }
 
   
+  /**
+   * A list of callback numbers or substrings of numbers (ex: [\"317\", \"13172222222\"])
+   **/
+  public ViewFilter callbackNumberList(List<String> callbackNumberList) {
+    this.callbackNumberList = callbackNumberList;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of callback numbers or substrings of numbers (ex: [\"317\", \"13172222222\"])")
+  @JsonProperty("callbackNumberList")
+  public List<String> getCallbackNumberList() {
+    return callbackNumberList;
+  }
+  public void setCallbackNumberList(List<String> callbackNumberList) {
+    this.callbackNumberList = callbackNumberList;
+  }
+
+  
+  /**
+   * An interval of time to filter for scheduled callbacks. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+   **/
+  public ViewFilter callbackInterval(String callbackInterval) {
+    this.callbackInterval = callbackInterval;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "An interval of time to filter for scheduled callbacks. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
+  @JsonProperty("callbackInterval")
+  public String getCallbackInterval() {
+    return callbackInterval;
+  }
+  public void setCallbackInterval(String callbackInterval) {
+    this.callbackInterval = callbackInterval;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1916,12 +1954,14 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.reportsTos, viewFilter.reportsTos) &&
         Objects.equals(this.locationIds, viewFilter.locationIds) &&
         Objects.equals(this.flowOutTypes, viewFilter.flowOutTypes) &&
-        Objects.equals(this.providerList, viewFilter.providerList);
+        Objects.equals(this.providerList, viewFilter.providerList) &&
+        Objects.equals(this.callbackNumberList, viewFilter.callbackNumberList) &&
+        Objects.equals(this.callbackInterval, viewFilter.callbackInterval);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval);
   }
 
   @Override
@@ -2007,6 +2047,8 @@ public class ViewFilter  implements Serializable {
     sb.append("    locationIds: ").append(toIndentedString(locationIds)).append("\n");
     sb.append("    flowOutTypes: ").append(toIndentedString(flowOutTypes)).append("\n");
     sb.append("    providerList: ").append(toIndentedString(providerList)).append("\n");
+    sb.append("    callbackNumberList: ").append(toIndentedString(callbackNumberList)).append("\n");
+    sb.append("    callbackInterval: ").append(toIndentedString(callbackInterval)).append("\n");
     sb.append("}");
     return sb.toString();
   }

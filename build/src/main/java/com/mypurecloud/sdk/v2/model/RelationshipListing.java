@@ -23,8 +23,8 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
   private Integer pageNumber = null;
   private Long total = null;
   private String firstUri = null;
-  private String nextUri = null;
   private String selfUri = null;
+  private String nextUri = null;
   private String lastUri = null;
   private String previousUri = null;
   private Integer pageCount = null;
@@ -117,23 +117,6 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
   
   /**
    **/
-  public RelationshipListing nextUri(String nextUri) {
-    this.nextUri = nextUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("nextUri")
-  public String getNextUri() {
-    return nextUri;
-  }
-  public void setNextUri(String nextUri) {
-    this.nextUri = nextUri;
-  }
-
-  
-  /**
-   **/
   public RelationshipListing selfUri(String selfUri) {
     this.selfUri = selfUri;
     return this;
@@ -146,6 +129,23 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
+  }
+
+  
+  /**
+   **/
+  public RelationshipListing nextUri(String nextUri) {
+    this.nextUri = nextUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nextUri")
+  public String getNextUri() {
+    return nextUri;
+  }
+  public void setNextUri(String nextUri) {
+    this.nextUri = nextUri;
   }
 
   
@@ -215,8 +215,8 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
         Objects.equals(this.pageNumber, relationshipListing.pageNumber) &&
         Objects.equals(this.total, relationshipListing.total) &&
         Objects.equals(this.firstUri, relationshipListing.firstUri) &&
-        Objects.equals(this.nextUri, relationshipListing.nextUri) &&
         Objects.equals(this.selfUri, relationshipListing.selfUri) &&
+        Objects.equals(this.nextUri, relationshipListing.nextUri) &&
         Objects.equals(this.lastUri, relationshipListing.lastUri) &&
         Objects.equals(this.previousUri, relationshipListing.previousUri) &&
         Objects.equals(this.pageCount, relationshipListing.pageCount);
@@ -224,7 +224,7 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, nextUri, selfUri, lastUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, lastUri, previousUri, pageCount);
   }
 
   @Override
@@ -237,8 +237,8 @@ public class RelationshipListing  implements Serializable, PagedResource<Relatio
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
