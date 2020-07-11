@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deleteLanguageunderstandingDomain**](LanguageUnderstandingApi.html#deleteLanguageunderstandingDomain) | Delete an NLU Domain. |
 | [**deleteLanguageunderstandingDomainFeedbackFeedbackId**](LanguageUnderstandingApi.html#deleteLanguageunderstandingDomainFeedbackFeedbackId) | Delete the feedback on the NLU Domain Version. |
+| [**deleteLanguageunderstandingDomainVersion**](LanguageUnderstandingApi.html#deleteLanguageunderstandingDomainVersion) | Delete an NLU Domain Version |
 | [**getLanguageunderstandingDomain**](LanguageUnderstandingApi.html#getLanguageunderstandingDomain) | Find an NLU Domain. |
 | [**getLanguageunderstandingDomainFeedback**](LanguageUnderstandingApi.html#getLanguageunderstandingDomainFeedback) | Get all feedback in the given NLU Domain Version. |
 | [**getLanguageunderstandingDomainFeedbackFeedbackId**](LanguageUnderstandingApi.html#getLanguageunderstandingDomainFeedbackFeedbackId) | Find a Feedback |
@@ -21,6 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postLanguageunderstandingDomainVersionDetect**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainVersionDetect) | Detect intent, entities, etc. in the submitted text using the specified NLU domain version. |
 | [**postLanguageunderstandingDomainVersionPublish**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainVersionPublish) | Publish the draft NLU Domain Version. |
 | [**postLanguageunderstandingDomainVersionTrain**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainVersionTrain) | Train the draft NLU Domain Version. |
+| [**postLanguageunderstandingDomainVersions**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainVersions) | Create an NLU Domain Version. |
 | [**postLanguageunderstandingDomains**](LanguageUnderstandingApi.html#postLanguageunderstandingDomains) | Create an NLU Domain. |
 | [**putLanguageunderstandingDomainVersion**](LanguageUnderstandingApi.html#putLanguageunderstandingDomainVersion) | Update an NLU Domain Version. |
 {: class="table-striped"}
@@ -146,6 +148,71 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **domainId** | **String**| ID of the NLU domain. | 
 | **feedbackId** | **String**| ID of the Feedback | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteLanguageunderstandingDomainVersion"></a>
+
+# **deleteLanguageunderstandingDomainVersion**
+
+
+
+> Void deleteLanguageunderstandingDomainVersion(domainId, domainVersionId)
+
+Delete an NLU Domain Version
+
+
+
+Wraps DELETE /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}  
+
+Requires ANY permissions: 
+
+* languageUnderstanding:nluDomainVersion:delete
+* dialog:botVersion:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+String domainId = "domainId_example"; // String | ID of the NLU domain.
+String domainVersionId = "domainVersionId_example"; // String | ID of the NLU domain version.
+try {
+    apiInstance.deleteLanguageunderstandingDomainVersion(domainId, domainVersionId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#deleteLanguageunderstandingDomainVersion");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domainId** | **String**| ID of the NLU domain. | 
+| **domainVersionId** | **String**| ID of the NLU domain version. | 
 {: class="table-striped"}
 
 
@@ -677,7 +744,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
 String domainId = "domainId_example"; // String | ID of the NLU domain.
-NluDomain body = new NluDomain(); // NluDomain | 
+NluDomain body = new NluDomain(); // NluDomain | The updated NLU Domain.
 try {
     NluDomain result = apiInstance.patchLanguageunderstandingDomain(domainId, body);
     System.out.println(result);
@@ -693,7 +760,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **domainId** | **String**| ID of the NLU domain. | 
-| **body** | [**NluDomain**](NluDomain.html)|  | [optional] 
+| **body** | [**NluDomain**](NluDomain.html)| The updated NLU Domain. | 
 {: class="table-striped"}
 
 
@@ -743,7 +810,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
 String domainId = "domainId_example"; // String | ID of the NLU domain.
-NluFeedbackRequest body = new NluFeedbackRequest(); // NluFeedbackRequest | 
+NluFeedbackRequest body = new NluFeedbackRequest(); // NluFeedbackRequest | The Feedback to create.
 try {
     NluFeedbackResponse result = apiInstance.postLanguageunderstandingDomainFeedback(domainId, body);
     System.out.println(result);
@@ -759,7 +826,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **domainId** | **String**| ID of the NLU domain. | 
-| **body** | [**NluFeedbackRequest**](NluFeedbackRequest.html)|  | [optional] 
+| **body** | [**NluFeedbackRequest**](NluFeedbackRequest.html)| The Feedback to create. | 
 {: class="table-striped"}
 
 
@@ -810,7 +877,7 @@ Configuration.setDefaultApiClient(apiClient);
 LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
 String domainId = "domainId_example"; // String | ID of the NLU domain.
 String domainVersionId = "domainVersionId_example"; // String | ID of the NLU domain version.
-NluDetectionRequest body = new NluDetectionRequest(); // NluDetectionRequest | 
+NluDetectionRequest body = new NluDetectionRequest(); // NluDetectionRequest | The input data to perform detection on.
 try {
     NluDetectionResponse result = apiInstance.postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, body);
     System.out.println(result);
@@ -827,7 +894,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **domainId** | **String**| ID of the NLU domain. | 
 | **domainVersionId** | **String**| ID of the NLU domain version. | 
-| **body** | [**NluDetectionRequest**](NluDetectionRequest.html)|  | [optional] 
+| **body** | [**NluDetectionRequest**](NluDetectionRequest.html)| The input data to perform detection on. | 
 {: class="table-striped"}
 
 
@@ -967,6 +1034,72 @@ try {
 
 [**NluDomainVersionTrainingResponse**](NluDomainVersionTrainingResponse.html)
 
+<a name="postLanguageunderstandingDomainVersions"></a>
+
+# **postLanguageunderstandingDomainVersions**
+
+
+
+> [NluDomainVersion](NluDomainVersion.html) postLanguageunderstandingDomainVersions(domainId, body)
+
+Create an NLU Domain Version.
+
+
+
+Wraps POST /api/v2/languageunderstanding/domains/{domainId}/versions  
+
+Requires ANY permissions: 
+
+* languageUnderstanding:nluDomainVersion:add
+* dialog:botVersion:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+String domainId = "domainId_example"; // String | ID of the NLU domain.
+NluDomainVersion body = new NluDomainVersion(); // NluDomainVersion | The NLU Domain Version to create.
+try {
+    NluDomainVersion result = apiInstance.postLanguageunderstandingDomainVersions(domainId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#postLanguageunderstandingDomainVersions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domainId** | **String**| ID of the NLU domain. | 
+| **body** | [**NluDomainVersion**](NluDomainVersion.html)| The NLU Domain Version to create. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**NluDomainVersion**](NluDomainVersion.html)
+
 <a name="postLanguageunderstandingDomains"></a>
 
 # **postLanguageunderstandingDomains**
@@ -1008,7 +1141,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
-NluDomain body = new NluDomain(); // NluDomain | 
+NluDomain body = new NluDomain(); // NluDomain | The NLU Domain to create.
 try {
     NluDomain result = apiInstance.postLanguageunderstandingDomains(body);
     System.out.println(result);
@@ -1023,7 +1156,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | [**NluDomain**](NluDomain.html)|  | [optional] 
+| **body** | [**NluDomain**](NluDomain.html)| The NLU Domain to create. | 
 {: class="table-striped"}
 
 
@@ -1074,7 +1207,7 @@ Configuration.setDefaultApiClient(apiClient);
 LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
 String domainId = "domainId_example"; // String | ID of the NLU domain.
 String domainVersionId = "domainVersionId_example"; // String | ID of the NLU domain version.
-NluDomainVersion body = new NluDomainVersion(); // NluDomainVersion | 
+NluDomainVersion body = new NluDomainVersion(); // NluDomainVersion | The updated NLU Domain Version.
 try {
     NluDomainVersion result = apiInstance.putLanguageunderstandingDomainVersion(domainId, domainVersionId, body);
     System.out.println(result);
@@ -1091,7 +1224,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **domainId** | **String**| ID of the NLU domain. | 
 | **domainVersionId** | **String**| ID of the NLU domain version. | 
-| **body** | [**NluDomainVersion**](NluDomainVersion.html)|  | [optional] 
+| **body** | [**NluDomainVersion**](NluDomainVersion.html)| The updated NLU Domain Version. | 
 {: class="table-striped"}
 
 

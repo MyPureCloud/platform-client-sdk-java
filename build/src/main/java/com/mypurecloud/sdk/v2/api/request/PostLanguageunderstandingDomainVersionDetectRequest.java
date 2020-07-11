@@ -109,6 +109,11 @@ public class PostLanguageunderstandingDomainVersionDetectRequest {
             throw new IllegalStateException("Missing the required parameter 'domainVersionId' when building request for PostLanguageunderstandingDomainVersionDetectRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostLanguageunderstandingDomainVersionDetectRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/detect")
                 .withPathParameter("domainId", domainId)
@@ -129,9 +134,9 @@ public class PostLanguageunderstandingDomainVersionDetectRequest {
 	}
 
 	
-	public static Builder builder(String domainId, String domainVersionId) {
+	public static Builder builder(String domainId, String domainVersionId, NluDetectionRequest body) {
 	    return new Builder()
-	            .withRequiredParams(domainId, domainVersionId);
+	            .withRequiredParams(domainId, domainVersionId, body);
 	}
 	
 
@@ -160,9 +165,10 @@ public class PostLanguageunderstandingDomainVersionDetectRequest {
 		
 
 		
-		public Builder withRequiredParams(String domainId, String domainVersionId) {
+		public Builder withRequiredParams(String domainId, String domainVersionId, NluDetectionRequest body) {
 			request.setDomainId(domainId);
 						request.setDomainVersionId(domainVersionId);
+						request.setBody(body);
 			
 			return this;
 		}
@@ -178,6 +184,11 @@ public class PostLanguageunderstandingDomainVersionDetectRequest {
             // verify the required parameter 'domainVersionId' is set
             if (request.domainVersionId == null) {
                 throw new IllegalStateException("Missing the required parameter 'domainVersionId' when building request for PostLanguageunderstandingDomainVersionDetectRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostLanguageunderstandingDomainVersionDetectRequest.");
             }
             
 			return request;

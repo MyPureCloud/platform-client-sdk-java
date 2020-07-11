@@ -15,12 +15,15 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuditQueryExecutionStatusResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryExecutionResultsResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.AuditRealtimeQueryRequest;
+import com.mypurecloud.sdk.v2.model.AuditRealtimeQueryResultsResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetAuditsQueryServicemappingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuditsQueryTransactionIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuditsQueryTransactionIdResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuditsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAuditsQueryRealtimeRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -360,6 +363,89 @@ public class AuditApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AuditQueryExecutionStatusResponse> response = (ApiResponse<AuditQueryExecutionStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+   * 
+   * @param body query (required)
+   * @param expand Which fields, if any, to expand (optional)
+   * @return AuditRealtimeQueryResultsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuditRealtimeQueryResultsResponse postAuditsQueryRealtime(AuditRealtimeQueryRequest body, List<String> expand) throws IOException, ApiException {
+    return  postAuditsQueryRealtime(createPostAuditsQueryRealtimeRequest(body, expand));
+  }
+
+  /**
+   * This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+   * 
+   * @param body query (required)
+   * @param expand Which fields, if any, to expand (optional)
+   * @return AuditRealtimeQueryResultsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuditRealtimeQueryResultsResponse> postAuditsQueryRealtimeWithHttpInfo(AuditRealtimeQueryRequest body, List<String> expand) throws IOException {
+    return postAuditsQueryRealtime(createPostAuditsQueryRealtimeRequest(body, expand).withHttpInfo());
+  }
+
+  private PostAuditsQueryRealtimeRequest createPostAuditsQueryRealtimeRequest(AuditRealtimeQueryRequest body, List<String> expand) {
+    return PostAuditsQueryRealtimeRequest.builder()
+            .withBody(body)
+    
+            .withExpand(expand)
+    
+            .build();
+  }
+
+  /**
+   * This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+   * 
+   * @param request The request object
+   * @return AuditRealtimeQueryResultsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuditRealtimeQueryResultsResponse postAuditsQueryRealtime(PostAuditsQueryRealtimeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AuditRealtimeQueryResultsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AuditRealtimeQueryResultsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuditRealtimeQueryResultsResponse> postAuditsQueryRealtime(ApiRequest<AuditRealtimeQueryRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AuditRealtimeQueryResultsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuditRealtimeQueryResultsResponse> response = (ApiResponse<AuditRealtimeQueryResultsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuditRealtimeQueryResultsResponse> response = (ApiResponse<AuditRealtimeQueryResultsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

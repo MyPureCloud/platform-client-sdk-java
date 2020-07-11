@@ -27,6 +27,7 @@ import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteLanguageunderstandingDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteLanguageunderstandingDomainFeedbackFeedbackIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteLanguageunderstandingDomainVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingDomainFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingDomainFeedbackFeedbackIdRequest;
@@ -39,6 +40,7 @@ import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainFeedbac
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainVersionDetectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainVersionPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainVersionTrainRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutLanguageunderstandingDomainVersionRequest;
 
@@ -195,6 +197,86 @@ public class LanguageUnderstandingApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteLanguageunderstandingDomainFeedbackFeedbackId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete an NLU Domain Version
+   * 
+   * @param domainId ID of the NLU domain. (required)
+   * @param domainVersionId ID of the NLU domain version. (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteLanguageunderstandingDomainVersion(String domainId, String domainVersionId) throws IOException, ApiException {
+     deleteLanguageunderstandingDomainVersion(createDeleteLanguageunderstandingDomainVersionRequest(domainId, domainVersionId));
+  }
+
+  /**
+   * Delete an NLU Domain Version
+   * 
+   * @param domainId ID of the NLU domain. (required)
+   * @param domainVersionId ID of the NLU domain version. (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteLanguageunderstandingDomainVersionWithHttpInfo(String domainId, String domainVersionId) throws IOException {
+    return deleteLanguageunderstandingDomainVersion(createDeleteLanguageunderstandingDomainVersionRequest(domainId, domainVersionId).withHttpInfo());
+  }
+
+  private DeleteLanguageunderstandingDomainVersionRequest createDeleteLanguageunderstandingDomainVersionRequest(String domainId, String domainVersionId) {
+    return DeleteLanguageunderstandingDomainVersionRequest.builder()
+            .withDomainId(domainId)
+    
+            .withDomainVersionId(domainVersionId)
+    
+            .build();
+  }
+
+  /**
+   * Delete an NLU Domain Version
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteLanguageunderstandingDomainVersion(DeleteLanguageunderstandingDomainVersionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete an NLU Domain Version
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteLanguageunderstandingDomainVersion(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -842,7 +924,7 @@ public class LanguageUnderstandingApi {
    * Update an NLU Domain.
    * 
    * @param domainId ID of the NLU domain. (required)
-   * @param body  (optional)
+   * @param body The updated NLU Domain. (required)
    * @return NluDomain
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -855,7 +937,7 @@ public class LanguageUnderstandingApi {
    * Update an NLU Domain.
    * 
    * @param domainId ID of the NLU domain. (required)
-   * @param body  (optional)
+   * @param body The updated NLU Domain. (required)
    * @return NluDomain
    * @throws IOException if the request fails to be processed
    */
@@ -925,7 +1007,7 @@ public class LanguageUnderstandingApi {
    * Create feedback for the NLU Domain Version.
    * 
    * @param domainId ID of the NLU domain. (required)
-   * @param body  (optional)
+   * @param body The Feedback to create. (required)
    * @return NluFeedbackResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -938,7 +1020,7 @@ public class LanguageUnderstandingApi {
    * Create feedback for the NLU Domain Version.
    * 
    * @param domainId ID of the NLU domain. (required)
-   * @param body  (optional)
+   * @param body The Feedback to create. (required)
    * @return NluFeedbackResponse
    * @throws IOException if the request fails to be processed
    */
@@ -1009,7 +1091,7 @@ public class LanguageUnderstandingApi {
    * 
    * @param domainId ID of the NLU domain. (required)
    * @param domainVersionId ID of the NLU domain version. (required)
-   * @param body  (optional)
+   * @param body The input data to perform detection on. (required)
    * @return NluDetectionResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1023,7 +1105,7 @@ public class LanguageUnderstandingApi {
    * 
    * @param domainId ID of the NLU domain. (required)
    * @param domainVersionId ID of the NLU domain version. (required)
-   * @param body  (optional)
+   * @param body The input data to perform detection on. (required)
    * @return NluDetectionResponse
    * @throws IOException if the request fails to be processed
    */
@@ -1258,9 +1340,92 @@ public class LanguageUnderstandingApi {
 
   
   /**
+   * Create an NLU Domain Version.
+   * 
+   * @param domainId ID of the NLU domain. (required)
+   * @param body The NLU Domain Version to create. (required)
+   * @return NluDomainVersion
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public NluDomainVersion postLanguageunderstandingDomainVersions(String domainId, NluDomainVersion body) throws IOException, ApiException {
+    return  postLanguageunderstandingDomainVersions(createPostLanguageunderstandingDomainVersionsRequest(domainId, body));
+  }
+
+  /**
+   * Create an NLU Domain Version.
+   * 
+   * @param domainId ID of the NLU domain. (required)
+   * @param body The NLU Domain Version to create. (required)
+   * @return NluDomainVersion
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<NluDomainVersion> postLanguageunderstandingDomainVersionsWithHttpInfo(String domainId, NluDomainVersion body) throws IOException {
+    return postLanguageunderstandingDomainVersions(createPostLanguageunderstandingDomainVersionsRequest(domainId, body).withHttpInfo());
+  }
+
+  private PostLanguageunderstandingDomainVersionsRequest createPostLanguageunderstandingDomainVersionsRequest(String domainId, NluDomainVersion body) {
+    return PostLanguageunderstandingDomainVersionsRequest.builder()
+            .withDomainId(domainId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create an NLU Domain Version.
+   * 
+   * @param request The request object
+   * @return NluDomainVersion
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public NluDomainVersion postLanguageunderstandingDomainVersions(PostLanguageunderstandingDomainVersionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<NluDomainVersion> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<NluDomainVersion>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create an NLU Domain Version.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<NluDomainVersion> postLanguageunderstandingDomainVersions(ApiRequest<NluDomainVersion> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<NluDomainVersion>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<NluDomainVersion> response = (ApiResponse<NluDomainVersion>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<NluDomainVersion> response = (ApiResponse<NluDomainVersion>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Create an NLU Domain.
    * 
-   * @param body  (optional)
+   * @param body The NLU Domain to create. (required)
    * @return NluDomain
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1272,7 +1437,7 @@ public class LanguageUnderstandingApi {
   /**
    * Create an NLU Domain.
    * 
-   * @param body  (optional)
+   * @param body The NLU Domain to create. (required)
    * @return NluDomain
    * @throws IOException if the request fails to be processed
    */
@@ -1341,7 +1506,7 @@ public class LanguageUnderstandingApi {
    * 
    * @param domainId ID of the NLU domain. (required)
    * @param domainVersionId ID of the NLU domain version. (required)
-   * @param body  (optional)
+   * @param body The updated NLU Domain Version. (required)
    * @return NluDomainVersion
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1355,7 +1520,7 @@ public class LanguageUnderstandingApi {
    * 
    * @param domainId ID of the NLU domain. (required)
    * @param domainVersionId ID of the NLU domain version. (required)
-   * @param body  (optional)
+   * @param body The updated NLU Domain Version. (required)
    * @return NluDomainVersion
    * @throws IOException if the request fails to be processed
    */

@@ -30,6 +30,7 @@ import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteLanguageunderstandingDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteLanguageunderstandingDomainFeedbackFeedbackIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteLanguageunderstandingDomainVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingDomainFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingDomainFeedbackFeedbackIdRequest;
@@ -42,6 +43,7 @@ import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainFeedbac
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainVersionDetectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainVersionPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainVersionTrainRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutLanguageunderstandingDomainVersionRequest;
 
@@ -183,6 +185,82 @@ public class LanguageUnderstandingApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteLanguageunderstandingDomainFeedbackFeedbackIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Delete an NLU Domain Version
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteLanguageunderstandingDomainVersionAsync(DeleteLanguageunderstandingDomainVersionRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an NLU Domain Version
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteLanguageunderstandingDomainVersionAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -1117,6 +1195,82 @@ public class LanguageUnderstandingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<NluDomainVersionTrainingResponse> response = (ApiResponse<NluDomainVersionTrainingResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Create an NLU Domain Version.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<NluDomainVersion> postLanguageunderstandingDomainVersionsAsync(PostLanguageunderstandingDomainVersionsRequest request, final AsyncApiCallback<NluDomainVersion> callback) {
+    try {
+      final SettableFuture<NluDomainVersion> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<NluDomainVersion>() {}, new AsyncApiCallback<ApiResponse<NluDomainVersion>>() {
+        @Override
+        public void onCompleted(ApiResponse<NluDomainVersion> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create an NLU Domain Version.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<NluDomainVersion>> postLanguageunderstandingDomainVersionsAsync(ApiRequest<NluDomainVersion> request, final AsyncApiCallback<ApiResponse<NluDomainVersion>> callback) {
+    try {
+      final SettableFuture<ApiResponse<NluDomainVersion>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<NluDomainVersion>() {}, new AsyncApiCallback<ApiResponse<NluDomainVersion>>() {
+        @Override
+        public void onCompleted(ApiResponse<NluDomainVersion> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<NluDomainVersion> response = (ApiResponse<NluDomainVersion>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<NluDomainVersion> response = (ApiResponse<NluDomainVersion>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

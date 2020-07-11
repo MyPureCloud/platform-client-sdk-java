@@ -15,8 +15,6 @@ title: SurveyForm
 | **disabled** | <!----><!---->**Boolean**<!----> | Is this form disabled |  [optional] |
 | **contextId** | <!----><!---->**String**<!----> | Unique Id for all versions of this form |  |
 | **language** | <!----><!---->**String**<!----> | Language for survey viewer localization. Currently localized languages: da, de, en-US, es, fi, fr, it, ja, ko, nl, no, pl, pt-BR, sv, th, tr, zh-CH, zh-TW |  |
-| **headerImageId** | <!----><!---->**String**<!----> | Id of the header image appearing at the top of the form. |  [optional] |
-| **headerImageUrl** | <!----><!---->**String**<!----> | Temporary URL for accessing header image |  [optional] |
 | **header** | <!----><!---->**String**<!----> | Markdown text for the top of the form. |  [optional] |
 | **footer** | <!----><!---->**String**<!----> | Markdown text for the bottom of the form. |  [optional] |
 | **questionGroups** | <!----><!---->[**List&lt;SurveyQuestionGroup&gt;**](SurveyQuestionGroup.html)<!----> | A list of question groups |  |

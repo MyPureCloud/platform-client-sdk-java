@@ -90,6 +90,11 @@ public class PatchLanguageunderstandingDomainRequest {
             throw new IllegalStateException("Missing the required parameter 'domainId' when building request for PatchLanguageunderstandingDomainRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchLanguageunderstandingDomainRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PATCH", "/api/v2/languageunderstanding/domains/{domainId}")
                 .withPathParameter("domainId", domainId)
@@ -108,9 +113,9 @@ public class PatchLanguageunderstandingDomainRequest {
 	}
 
 	
-	public static Builder builder(String domainId) {
+	public static Builder builder(String domainId, NluDomain body) {
 	    return new Builder()
-	            .withRequiredParams(domainId);
+	            .withRequiredParams(domainId, body);
 	}
 	
 
@@ -134,8 +139,9 @@ public class PatchLanguageunderstandingDomainRequest {
 		
 
 		
-		public Builder withRequiredParams(String domainId) {
+		public Builder withRequiredParams(String domainId, NluDomain body) {
 			request.setDomainId(domainId);
+						request.setBody(body);
 			
 			return this;
 		}
@@ -146,6 +152,11 @@ public class PatchLanguageunderstandingDomainRequest {
             // verify the required parameter 'domainId' is set
             if (request.domainId == null) {
                 throw new IllegalStateException("Missing the required parameter 'domainId' when building request for PatchLanguageunderstandingDomainRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchLanguageunderstandingDomainRequest.");
             }
             
 			return request;

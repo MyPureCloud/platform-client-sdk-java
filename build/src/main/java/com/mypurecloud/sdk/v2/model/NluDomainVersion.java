@@ -25,6 +25,7 @@ public class NluDomainVersion  implements Serializable {
   private NluDomain domain = null;
   private String description = null;
   private String language = null;
+  private Boolean published = null;
   private Date dateCreated = null;
   private Date dateModified = null;
   private Date dateTrained = null;
@@ -160,13 +161,20 @@ public class NluDomainVersion  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The language that the NLU domain version supports.")
+  @ApiModelProperty(example = "null", required = true, value = "The language that the NLU domain version supports.")
   @JsonProperty("language")
   public String getLanguage() {
     return language;
   }
   public void setLanguage(String language) {
     this.language = language;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "Whether this NLU domain version has been published.")
+  @JsonProperty("published")
+  public Boolean getPublished() {
+    return published;
   }
 
   
@@ -269,6 +277,7 @@ public class NluDomainVersion  implements Serializable {
         Objects.equals(this.domain, nluDomainVersion.domain) &&
         Objects.equals(this.description, nluDomainVersion.description) &&
         Objects.equals(this.language, nluDomainVersion.language) &&
+        Objects.equals(this.published, nluDomainVersion.published) &&
         Objects.equals(this.dateCreated, nluDomainVersion.dateCreated) &&
         Objects.equals(this.dateModified, nluDomainVersion.dateModified) &&
         Objects.equals(this.dateTrained, nluDomainVersion.dateTrained) &&
@@ -282,7 +291,7 @@ public class NluDomainVersion  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, domain, description, language, dateCreated, dateModified, dateTrained, datePublished, trainingStatus, evaluationStatus, intents, entityTypes, selfUri);
+    return Objects.hash(id, domain, description, language, published, dateCreated, dateModified, dateTrained, datePublished, trainingStatus, evaluationStatus, intents, entityTypes, selfUri);
   }
 
   @Override
@@ -294,6 +303,7 @@ public class NluDomainVersion  implements Serializable {
     sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
+    sb.append("    published: ").append(toIndentedString(published)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    dateTrained: ").append(toIndentedString(dateTrained)).append("\n");

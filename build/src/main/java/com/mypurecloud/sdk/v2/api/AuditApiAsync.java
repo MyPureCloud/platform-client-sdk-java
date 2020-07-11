@@ -18,12 +18,15 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuditQueryExecutionStatusResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryExecutionResultsResponse;
 import com.mypurecloud.sdk.v2.model.AuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.AuditRealtimeQueryRequest;
+import com.mypurecloud.sdk.v2.model.AuditRealtimeQueryResultsResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetAuditsQueryServicemappingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuditsQueryTransactionIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuditsQueryTransactionIdResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuditsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAuditsQueryRealtimeRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -337,6 +340,82 @@ public class AuditApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AuditQueryExecutionStatusResponse> response = (ApiResponse<AuditQueryExecutionStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AuditRealtimeQueryResultsResponse> postAuditsQueryRealtimeAsync(PostAuditsQueryRealtimeRequest request, final AsyncApiCallback<AuditRealtimeQueryResultsResponse> callback) {
+    try {
+      final SettableFuture<AuditRealtimeQueryResultsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AuditRealtimeQueryResultsResponse>() {}, new AsyncApiCallback<ApiResponse<AuditRealtimeQueryResultsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuditRealtimeQueryResultsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AuditRealtimeQueryResultsResponse>> postAuditsQueryRealtimeAsync(ApiRequest<AuditRealtimeQueryRequest> request, final AsyncApiCallback<ApiResponse<AuditRealtimeQueryResultsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AuditRealtimeQueryResultsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AuditRealtimeQueryResultsResponse>() {}, new AsyncApiCallback<ApiResponse<AuditRealtimeQueryResultsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuditRealtimeQueryResultsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuditRealtimeQueryResultsResponse> response = (ApiResponse<AuditRealtimeQueryResultsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuditRealtimeQueryResultsResponse> response = (ApiResponse<AuditRealtimeQueryResultsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

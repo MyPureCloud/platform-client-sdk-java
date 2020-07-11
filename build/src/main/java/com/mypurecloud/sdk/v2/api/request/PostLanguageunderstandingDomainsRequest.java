@@ -71,6 +71,11 @@ public class PostLanguageunderstandingDomainsRequest {
 
     public ApiRequest<NluDomain> withHttpInfo() {
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostLanguageunderstandingDomainsRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/languageunderstanding/domains")
                 .withBody(body)
@@ -86,6 +91,11 @@ public class PostLanguageunderstandingDomainsRequest {
 		return new Builder();
 	}
 
+	
+	public static Builder builder(NluDomain body) {
+	    return new Builder()
+	            .withRequiredParams(body);
+	}
 	
 
 	public static class Builder {
@@ -103,8 +113,19 @@ public class PostLanguageunderstandingDomainsRequest {
 		
 
 		
+		public Builder withRequiredParams(NluDomain body) {
+			request.setBody(body);
+			
+			return this;
+		}
+		
 
 		public PostLanguageunderstandingDomainsRequest build() {
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostLanguageunderstandingDomainsRequest.");
+            }
             
 			return request;
 		}

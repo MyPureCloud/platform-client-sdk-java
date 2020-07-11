@@ -90,6 +90,11 @@ public class PostLanguageunderstandingDomainFeedbackRequest {
             throw new IllegalStateException("Missing the required parameter 'domainId' when building request for PostLanguageunderstandingDomainFeedbackRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PostLanguageunderstandingDomainFeedbackRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("POST", "/api/v2/languageunderstanding/domains/{domainId}/feedback")
                 .withPathParameter("domainId", domainId)
@@ -108,9 +113,9 @@ public class PostLanguageunderstandingDomainFeedbackRequest {
 	}
 
 	
-	public static Builder builder(String domainId) {
+	public static Builder builder(String domainId, NluFeedbackRequest body) {
 	    return new Builder()
-	            .withRequiredParams(domainId);
+	            .withRequiredParams(domainId, body);
 	}
 	
 
@@ -134,8 +139,9 @@ public class PostLanguageunderstandingDomainFeedbackRequest {
 		
 
 		
-		public Builder withRequiredParams(String domainId) {
+		public Builder withRequiredParams(String domainId, NluFeedbackRequest body) {
 			request.setDomainId(domainId);
+						request.setBody(body);
 			
 			return this;
 		}
@@ -146,6 +152,11 @@ public class PostLanguageunderstandingDomainFeedbackRequest {
             // verify the required parameter 'domainId' is set
             if (request.domainId == null) {
                 throw new IllegalStateException("Missing the required parameter 'domainId' when building request for PostLanguageunderstandingDomainFeedbackRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PostLanguageunderstandingDomainFeedbackRequest.");
             }
             
 			return request;

@@ -67,6 +67,7 @@ public class EdgeGroup  implements Serializable {
   private String modifiedByApp = null;
   private String createdByApp = null;
   private Boolean managed = null;
+  private Boolean hybrid = null;
   private TrunkBaseAssignment edgeTrunkBaseAssignment = null;
   private List<TrunkBase> phoneTrunkBases = new ArrayList<TrunkBase>();
   private String selfUri = null;
@@ -267,6 +268,24 @@ public class EdgeGroup  implements Serializable {
 
   
   /**
+   * Is this edge group hybrid.
+   **/
+  public EdgeGroup hybrid(Boolean hybrid) {
+    this.hybrid = hybrid;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Is this edge group hybrid.")
+  @JsonProperty("hybrid")
+  public Boolean getHybrid() {
+    return hybrid;
+  }
+  public void setHybrid(Boolean hybrid) {
+    this.hybrid = hybrid;
+  }
+
+  
+  /**
    * A trunk base settings assignment of trunkType \"EDGE\" to use for edge-to-edge communication.
    **/
   public EdgeGroup edgeTrunkBaseAssignment(TrunkBaseAssignment edgeTrunkBaseAssignment) {
@@ -331,6 +350,7 @@ public class EdgeGroup  implements Serializable {
         Objects.equals(this.modifiedByApp, edgeGroup.modifiedByApp) &&
         Objects.equals(this.createdByApp, edgeGroup.createdByApp) &&
         Objects.equals(this.managed, edgeGroup.managed) &&
+        Objects.equals(this.hybrid, edgeGroup.hybrid) &&
         Objects.equals(this.edgeTrunkBaseAssignment, edgeGroup.edgeTrunkBaseAssignment) &&
         Objects.equals(this.phoneTrunkBases, edgeGroup.phoneTrunkBases) &&
         Objects.equals(this.selfUri, edgeGroup.selfUri);
@@ -338,7 +358,7 @@ public class EdgeGroup  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, managed, edgeTrunkBaseAssignment, phoneTrunkBases, selfUri);
+    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, managed, hybrid, edgeTrunkBaseAssignment, phoneTrunkBases, selfUri);
   }
 
   @Override
@@ -358,6 +378,7 @@ public class EdgeGroup  implements Serializable {
     sb.append("    modifiedByApp: ").append(toIndentedString(modifiedByApp)).append("\n");
     sb.append("    createdByApp: ").append(toIndentedString(createdByApp)).append("\n");
     sb.append("    managed: ").append(toIndentedString(managed)).append("\n");
+    sb.append("    hybrid: ").append(toIndentedString(hybrid)).append("\n");
     sb.append("    edgeTrunkBaseAssignment: ").append(toIndentedString(edgeTrunkBaseAssignment)).append("\n");
     sb.append("    phoneTrunkBases: ").append(toIndentedString(phoneTrunkBases)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

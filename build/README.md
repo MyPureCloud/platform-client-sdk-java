@@ -35,7 +35,7 @@ import com.mypurecloud.sdk.v2.PureCloudRegionHosts;
 
 ### Authenticating
 
-The Java SDK contains a helper method toe execute a Client Credentials OAuth flow. This is appropriate for non-user Java applications, typically when there is no UI. Invoking `authorizeClientCredentials(String clientId, String clientSecret)` will execute the client credentials OAuth grant and store the access token within the ApiClient class. 
+The Java SDK contains a helper method to execute a Client Credentials OAuth flow. This is appropriate for non-user Java applications, typically when there is no UI. Invoking `authorizeClientCredentials(String clientId, String clientSecret)` will execute the client credentials OAuth grant and store the access token within the ApiClient class. 
 
 ```{"language":"java"}
 String clientId = "a0bda580-cb41-4ff6-8f06-28ffb4227594";
@@ -55,7 +55,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 // Create API instances and make authenticated API requests
 UsersApi apiInstance = new UsersApi();
-UserEntityListing response = apiInstance.getUsers(null, null, null, null, null, null);
+UserEntityListing response = apiInstance.getUsers(null, null, null, null, null, null, null);
 ```
 
 For user applications, the consuming application must complete an implicit, auth token, or SAML2 Bearer OAuth flow to get an access token outside the scope of the SDK. Once an access token is obtained, it should be set on the SDK via constructing a new ApiClient instance (use `withAccessToken(String token)`). For more information about authenticating with OAuth, see the Developer Center article [Authorization](https://developer.mypurecloud.com/api/rest/authorization/index.html). For more information about SAML2 Bearer Oauth flow view the example below 
