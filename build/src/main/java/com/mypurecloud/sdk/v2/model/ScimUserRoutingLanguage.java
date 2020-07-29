@@ -9,9 +9,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Routing language assigned to user.
+ * The routing language assigned to a user.
  */
-@ApiModel(description = "Routing language assigned to user.")
+@ApiModel(description = "The routing language assigned to a user.")
 
 public class ScimUserRoutingLanguage  implements Serializable {
   
@@ -20,14 +20,14 @@ public class ScimUserRoutingLanguage  implements Serializable {
 
   
   /**
-   * Case-sensitive name identifying a language configured in routing languages.
+   * The case-sensitive name of a routing language configured in Genesys Cloud.
    **/
   public ScimUserRoutingLanguage name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Case-sensitive name identifying a language configured in routing languages.")
+  @ApiModelProperty(example = "null", required = true, value = "The case-sensitive name of a routing language configured in Genesys Cloud.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -38,14 +38,14 @@ public class ScimUserRoutingLanguage  implements Serializable {
 
   
   /**
-   * Proficiency is a rating from 0.0 to 5.0 on how competent an agent is for a particular language. It is used when a queue is set to \"Best available language\" mode to allow acd interactions to target agents with higher proficiency ratings.
+   * A rating from 0.0 to 5.0 that indicates how fluent an agent is in a particular language. ACD interactions are routed to agents with higher proficiency ratings.
    **/
   public ScimUserRoutingLanguage proficiency(Double proficiency) {
     this.proficiency = proficiency;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Proficiency is a rating from 0.0 to 5.0 on how competent an agent is for a particular language. It is used when a queue is set to \"Best available language\" mode to allow acd interactions to target agents with higher proficiency ratings.")
+  @ApiModelProperty(example = "null", value = "A rating from 0.0 to 5.0 that indicates how fluent an agent is in a particular language. ACD interactions are routed to agents with higher proficiency ratings.")
   @JsonProperty("proficiency")
   public Double getProficiency() {
     return proficiency;

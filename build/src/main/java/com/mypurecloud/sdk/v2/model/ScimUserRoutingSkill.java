@@ -9,9 +9,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Routing skill assigned to user.
+ * The routing skill assigned to a user.
  */
-@ApiModel(description = "Routing skill assigned to user.")
+@ApiModel(description = "The routing skill assigned to a user.")
 
 public class ScimUserRoutingSkill  implements Serializable {
   
@@ -20,14 +20,14 @@ public class ScimUserRoutingSkill  implements Serializable {
 
   
   /**
-   * Case-sensitive name identifying a skill configured in routing skills.
+   * The case-sensitive name of a routing skill configured in Genesys Cloud.
    **/
   public ScimUserRoutingSkill name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Case-sensitive name identifying a skill configured in routing skills.")
+  @ApiModelProperty(example = "null", required = true, value = "The case-sensitive name of a routing skill configured in Genesys Cloud.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -38,14 +38,14 @@ public class ScimUserRoutingSkill  implements Serializable {
 
   
   /**
-   * Proficiency is a rating from 0.0 to 5.0 on how competent an agent is for a particular skill. It is used when a queue is set to \"Best available skills\" mode to allow acd interactions to target agents with higher proficiency ratings.
+   * A rating from 0.0 to 5.0 that indicates how adept an agent is at a particular skill. When \"Best available skills\" is enabled for a queue in Genesys Cloud, ACD interactions in that queue are routed to agents with higher proficiency ratings.
    **/
   public ScimUserRoutingSkill proficiency(Double proficiency) {
     this.proficiency = proficiency;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Proficiency is a rating from 0.0 to 5.0 on how competent an agent is for a particular skill. It is used when a queue is set to \"Best available skills\" mode to allow acd interactions to target agents with higher proficiency ratings.")
+  @ApiModelProperty(example = "null", value = "A rating from 0.0 to 5.0 that indicates how adept an agent is at a particular skill. When \"Best available skills\" is enabled for a queue in Genesys Cloud, ACD interactions in that queue are routed to agents with higher proficiency ratings.")
   @JsonProperty("proficiency")
   public Double getProficiency() {
     return proficiency;

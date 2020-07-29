@@ -75,14 +75,14 @@ public class ScimV2CreateUser  implements Serializable {
 
   
   /**
-   * The user's PureCloud email address. Must be unique.
+   * The user's Genesys Cloud email address. Must be unique.
    **/
   public ScimV2CreateUser userName(String userName) {
     this.userName = userName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The user's PureCloud email address. Must be unique.")
+  @ApiModelProperty(example = "null", required = true, value = "The user's Genesys Cloud email address. Must be unique.")
   @JsonProperty("userName")
   public String getUserName() {
     return userName;
@@ -111,14 +111,14 @@ public class ScimV2CreateUser  implements Serializable {
 
   
   /**
-   * The new password for the PureCloud user. Does not return an existing password.
+   * The new password for the Genesys Cloud user. Does not return an existing password.
    **/
   public ScimV2CreateUser password(String password) {
     this.password = password;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The new password for the PureCloud user. Does not return an existing password.")
+  @ApiModelProperty(example = "null", value = "The new password for the Genesys Cloud user. Does not return an existing password.")
   @JsonProperty("password")
   public String getPassword() {
     return password;
@@ -255,13 +255,14 @@ public class ScimV2CreateUser  implements Serializable {
 
   
   /**
+   * The URI of the schema for the Genesys Cloud user.
    **/
   public ScimV2CreateUser urnietfparamsscimschemasextensiongenesyspurecloud20User(ScimUserExtensions urnietfparamsscimschemasextensiongenesyspurecloud20User) {
     this.urnietfparamsscimschemasextensiongenesyspurecloud20User = urnietfparamsscimschemasextensiongenesyspurecloud20User;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The URI of the schema for the Genesys Cloud user.")
   @JsonProperty("urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User")
   public ScimUserExtensions getUrnietfparamsscimschemasextensiongenesyspurecloud20User() {
     return urnietfparamsscimschemasextensiongenesyspurecloud20User;

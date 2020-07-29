@@ -82,7 +82,7 @@ public class KnowledgeSearchRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Page size of the returned results")
+  @ApiModelProperty(example = "null", value = "Page size of the returned results")
   @JsonProperty("pageSize")
   public Integer getPageSize() {
     return pageSize;
@@ -100,7 +100,7 @@ public class KnowledgeSearchRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Page number of the returned results")
+  @ApiModelProperty(example = "null", value = "Page number of the returned results")
   @JsonProperty("pageNumber")
   public Integer getPageNumber() {
     return pageNumber;
@@ -118,7 +118,7 @@ public class KnowledgeSearchRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Document type to be used while searching")
+  @ApiModelProperty(example = "null", value = "Document type to be used while searching")
   @JsonProperty("documentType")
   public DocumentTypeEnum getDocumentType() {
     return documentType;

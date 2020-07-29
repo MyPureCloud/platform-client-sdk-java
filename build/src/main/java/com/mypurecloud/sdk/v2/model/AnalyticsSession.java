@@ -186,6 +186,85 @@ public class AnalyticsSession  implements Serializable {
   private Integer mediaCount = null;
   private String flowOutType = null;
 
+  /**
+   * Gets or Sets requestedRoutings
+   */
+  public enum RequestedRoutingsEnum {
+    PREDICTIVE("Predictive"),
+    PREFERRED("Preferred"),
+    MANUAL("Manual"),
+    LAST("Last"),
+    BULLSEYE("Bullseye"),
+    STANDARD("Standard");
+
+    private String value;
+
+    RequestedRoutingsEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static RequestedRoutingsEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (RequestedRoutingsEnum value : RequestedRoutingsEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return RequestedRoutingsEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<RequestedRoutingsEnum> requestedRoutings = new ArrayList<RequestedRoutingsEnum>();
+
+  /**
+   * Complete routing method
+   */
+  public enum UsedRoutingEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    PREDICTIVE("Predictive"),
+    PREFERRED("Preferred"),
+    MANUAL("Manual"),
+    LAST("Last"),
+    BULLSEYE("Bullseye"),
+    STANDARD("Standard");
+
+    private String value;
+
+    UsedRoutingEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static UsedRoutingEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (UsedRoutingEnum value : UsedRoutingEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return UsedRoutingEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private UsedRoutingEnum usedRouting = null;
+  private String selectedAgentId = null;
+  private Integer selectedAgentRank = null;
+
   
   /**
    * The session media type
@@ -1134,6 +1213,78 @@ public class AnalyticsSession  implements Serializable {
   }
 
   
+  /**
+   * All routing types for requested/attempted routing methods.
+   **/
+  public AnalyticsSession requestedRoutings(List<RequestedRoutingsEnum> requestedRoutings) {
+    this.requestedRoutings = requestedRoutings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "All routing types for requested/attempted routing methods.")
+  @JsonProperty("requestedRoutings")
+  public List<RequestedRoutingsEnum> getRequestedRoutings() {
+    return requestedRoutings;
+  }
+  public void setRequestedRoutings(List<RequestedRoutingsEnum> requestedRoutings) {
+    this.requestedRoutings = requestedRoutings;
+  }
+
+  
+  /**
+   * Complete routing method
+   **/
+  public AnalyticsSession usedRouting(UsedRoutingEnum usedRouting) {
+    this.usedRouting = usedRouting;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Complete routing method")
+  @JsonProperty("usedRouting")
+  public UsedRoutingEnum getUsedRouting() {
+    return usedRouting;
+  }
+  public void setUsedRouting(UsedRoutingEnum usedRouting) {
+    this.usedRouting = usedRouting;
+  }
+
+  
+  /**
+   * Selected agent id
+   **/
+  public AnalyticsSession selectedAgentId(String selectedAgentId) {
+    this.selectedAgentId = selectedAgentId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Selected agent id")
+  @JsonProperty("selectedAgentId")
+  public String getSelectedAgentId() {
+    return selectedAgentId;
+  }
+  public void setSelectedAgentId(String selectedAgentId) {
+    this.selectedAgentId = selectedAgentId;
+  }
+
+  
+  /**
+   * Selected agent GPR rank
+   **/
+  public AnalyticsSession selectedAgentRank(Integer selectedAgentRank) {
+    this.selectedAgentRank = selectedAgentRank;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Selected agent GPR rank")
+  @JsonProperty("selectedAgentRank")
+  public Integer getSelectedAgentRank() {
+    return selectedAgentRank;
+  }
+  public void setSelectedAgentRank(Integer selectedAgentRank) {
+    this.selectedAgentRank = selectedAgentRank;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1196,12 +1347,16 @@ public class AnalyticsSession  implements Serializable {
         Objects.equals(this.provider, analyticsSession.provider) &&
         Objects.equals(this.remote, analyticsSession.remote) &&
         Objects.equals(this.mediaCount, analyticsSession.mediaCount) &&
-        Objects.equals(this.flowOutType, analyticsSession.flowOutType);
+        Objects.equals(this.flowOutType, analyticsSession.flowOutType) &&
+        Objects.equals(this.requestedRoutings, analyticsSession.requestedRoutings) &&
+        Objects.equals(this.usedRouting, analyticsSession.usedRouting) &&
+        Objects.equals(this.selectedAgentId, analyticsSession.selectedAgentId) &&
+        Objects.equals(this.selectedAgentRank, analyticsSession.selectedAgentRank);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, sessionDnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments, metrics, flow, mediaEndpointStats, recording, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, journeyActionId, journeyActionMapId, journeyActionMapVersion, protocolCallId, provider, remote, mediaCount, flowOutType);
+    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, sessionDnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments, metrics, flow, mediaEndpointStats, recording, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, journeyActionId, journeyActionMapId, journeyActionMapVersion, protocolCallId, provider, remote, mediaCount, flowOutType, requestedRoutings, usedRouting, selectedAgentId, selectedAgentRank);
   }
 
   @Override
@@ -1262,6 +1417,10 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    remote: ").append(toIndentedString(remote)).append("\n");
     sb.append("    mediaCount: ").append(toIndentedString(mediaCount)).append("\n");
     sb.append("    flowOutType: ").append(toIndentedString(flowOutType)).append("\n");
+    sb.append("    requestedRoutings: ").append(toIndentedString(requestedRoutings)).append("\n");
+    sb.append("    usedRouting: ").append(toIndentedString(usedRouting)).append("\n");
+    sb.append("    selectedAgentId: ").append(toIndentedString(selectedAgentId)).append("\n");
+    sb.append("    selectedAgentRank: ").append(toIndentedString(selectedAgentRank)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -26,10 +26,13 @@ title: ReportingExportJobResponse
 | **percentageComplete** | <!----><!---->**Double**<!----> | The percentage of the job that has completed processing |  |
 | **hasFormatDurations** | <!----><!---->**Boolean**<!----> | Indicates if durations are formatted in hh:mm:ss format instead of ms |  [optional] |
 | **hasSplitFilters** | <!----><!---->**Boolean**<!----> | Indicates if filters will be split in aggregate detail exports |  [optional] |
+| **excludeEmptyRows** | <!----><!---->**Boolean**<!----> | Excludes empty rows from the exports |  [optional] |
+| **hasSplitByMedia** | <!----><!---->**Boolean**<!----> | Indicates if media type will be split in aggregate detail exports |  [optional] |
 | **selectedColumns** | <!----><!---->[**List&lt;SelectedColumns&gt;**](SelectedColumns.html)<!----> | The list of ordered selected columns from the export view by the user |  [optional] |
 | **hasCustomParticipantAttributes** | <!----><!---->**Boolean**<!----> | Indicates if custom participant attributes will be exported |  [optional] |
 | **recipientEmails** | <!----><!---->**List&lt;String&gt;**<!----> | The list of email recipients for the exports |  [optional] |
 | **emailStatuses** | <!---->[**Map&lt;String, String&gt;**](#InnerEnum)<!----> | The status of individual email addresses as a map |  [optional] |
+| **enabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

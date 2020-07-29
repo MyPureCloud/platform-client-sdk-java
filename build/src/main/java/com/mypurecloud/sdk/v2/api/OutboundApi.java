@@ -12,6 +12,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Campaign;
+import com.mypurecloud.sdk.v2.model.MessagingCampaign;
 import com.mypurecloud.sdk.v2.model.AttemptLimits;
 import com.mypurecloud.sdk.v2.model.AttemptLimitsEntityListing;
 import com.mypurecloud.sdk.v2.model.CallableTimeSet;
@@ -25,6 +26,8 @@ import com.mypurecloud.sdk.v2.model.CampaignStats;
 import com.mypurecloud.sdk.v2.model.CampaignRule;
 import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.CommonCampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.CommonCampaignDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionView;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.ContactList;
@@ -43,6 +46,9 @@ import com.mypurecloud.sdk.v2.model.DncListDivisionView;
 import com.mypurecloud.sdk.v2.model.DncListDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.EventLog;
 import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionView;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.RuleSet;
 import com.mypurecloud.sdk.v2.model.RuleSetEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignSchedule;
@@ -73,6 +79,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistContactsReque
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistfilterRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundMessagingcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundRulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSchedulesCampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSchedulesSequenceRequest;
@@ -91,6 +98,8 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignStatsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignruleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsAllRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsAllDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsDivisionviewRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistRequest;
@@ -111,6 +120,11 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistsDivisionviewRequest
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundEventRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundEventsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignProgressRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignsDivisionviewRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundRulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundRulesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesCampaignRequest;
@@ -141,6 +155,8 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundConversationDncRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundMessagingcampaignsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundMessagingcampaignsProgressRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundRulesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundSequencesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundAttemptlimitRequest;
@@ -153,6 +169,7 @@ import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistContactRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistfilterRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundDnclistRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOutboundMessagingcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundRulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesCampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesSequenceRequest;
@@ -1102,6 +1119,85 @@ public class OutboundApi {
 
   
   /**
+   * Delete an Outbound Messaging Campaign
+   * 
+   * @param messagingCampaignId The Messaging Campaign ID (required)
+   * @return MessagingCampaign
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaign deleteOutboundMessagingcampaign(String messagingCampaignId) throws IOException, ApiException {
+    return  deleteOutboundMessagingcampaign(createDeleteOutboundMessagingcampaignRequest(messagingCampaignId));
+  }
+
+  /**
+   * Delete an Outbound Messaging Campaign
+   * 
+   * @param messagingCampaignId The Messaging Campaign ID (required)
+   * @return MessagingCampaign
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaign> deleteOutboundMessagingcampaignWithHttpInfo(String messagingCampaignId) throws IOException {
+    return deleteOutboundMessagingcampaign(createDeleteOutboundMessagingcampaignRequest(messagingCampaignId).withHttpInfo());
+  }
+
+  private DeleteOutboundMessagingcampaignRequest createDeleteOutboundMessagingcampaignRequest(String messagingCampaignId) {
+    return DeleteOutboundMessagingcampaignRequest.builder()
+            .withMessagingCampaignId(messagingCampaignId)
+    
+            .build();
+  }
+
+  /**
+   * Delete an Outbound Messaging Campaign
+   * 
+   * @param request The request object
+   * @return MessagingCampaign
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaign deleteOutboundMessagingcampaign(DeleteOutboundMessagingcampaignRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessagingCampaign> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessagingCampaign>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Delete an Outbound Messaging Campaign
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaign> deleteOutboundMessagingcampaign(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessagingCampaign>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaign> response = (ApiResponse<MessagingCampaign>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaign> response = (ApiResponse<MessagingCampaign>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Delete a Rule set.
    * 
    * @param ruleSetId Rule Set ID (required)
@@ -1489,6 +1585,7 @@ public class OutboundApi {
    * 
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
    * @param sortBy Sort by (optional)
@@ -1497,8 +1594,8 @@ public class OutboundApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AttemptLimitsEntityListing getOutboundAttemptlimits(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getOutboundAttemptlimits(createGetOutboundAttemptlimitsRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder));
+  public AttemptLimitsEntityListing getOutboundAttemptlimits(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundAttemptlimits(createGetOutboundAttemptlimitsRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder));
   }
 
   /**
@@ -1506,6 +1603,7 @@ public class OutboundApi {
    * 
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
    * @param sortBy Sort by (optional)
@@ -1513,15 +1611,17 @@ public class OutboundApi {
    * @return AttemptLimitsEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AttemptLimitsEntityListing> getOutboundAttemptlimitsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException {
-    return getOutboundAttemptlimits(createGetOutboundAttemptlimitsRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<AttemptLimitsEntityListing> getOutboundAttemptlimitsWithHttpInfo(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) throws IOException {
+    return getOutboundAttemptlimits(createGetOutboundAttemptlimitsRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetOutboundAttemptlimitsRequest createGetOutboundAttemptlimitsRequest(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) {
+  private GetOutboundAttemptlimitsRequest createGetOutboundAttemptlimitsRequest(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) {
     return GetOutboundAttemptlimitsRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withAllowEmptyResult(allowEmptyResult)
     
             .withFilterType(filterType)
     
@@ -1667,6 +1767,7 @@ public class OutboundApi {
    * 
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
    * @param sortBy Sort by (optional)
@@ -1675,8 +1776,8 @@ public class OutboundApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CallableTimeSetEntityListing getOutboundCallabletimesets(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getOutboundCallabletimesets(createGetOutboundCallabletimesetsRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder));
+  public CallableTimeSetEntityListing getOutboundCallabletimesets(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundCallabletimesets(createGetOutboundCallabletimesetsRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder));
   }
 
   /**
@@ -1684,6 +1785,7 @@ public class OutboundApi {
    * 
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
    * @param sortBy Sort by (optional)
@@ -1691,15 +1793,17 @@ public class OutboundApi {
    * @return CallableTimeSetEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CallableTimeSetEntityListing> getOutboundCallabletimesetsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException {
-    return getOutboundCallabletimesets(createGetOutboundCallabletimesetsRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<CallableTimeSetEntityListing> getOutboundCallabletimesetsWithHttpInfo(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) throws IOException {
+    return getOutboundCallabletimesets(createGetOutboundCallabletimesetsRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetOutboundCallabletimesetsRequest createGetOutboundCallabletimesetsRequest(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) {
+  private GetOutboundCallabletimesetsRequest createGetOutboundCallabletimesetsRequest(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) {
     return GetOutboundCallabletimesetsRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withAllowEmptyResult(allowEmptyResult)
     
             .withFilterType(filterType)
     
@@ -1845,6 +1949,7 @@ public class OutboundApi {
    * 
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
    * @param sortBy Sort by (optional)
@@ -1853,8 +1958,8 @@ public class OutboundApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ResponseSetEntityListing getOutboundCallanalysisresponsesets(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getOutboundCallanalysisresponsesets(createGetOutboundCallanalysisresponsesetsRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder));
+  public ResponseSetEntityListing getOutboundCallanalysisresponsesets(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundCallanalysisresponsesets(createGetOutboundCallanalysisresponsesetsRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder));
   }
 
   /**
@@ -1862,6 +1967,7 @@ public class OutboundApi {
    * 
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
    * @param sortBy Sort by (optional)
@@ -1869,15 +1975,17 @@ public class OutboundApi {
    * @return ResponseSetEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ResponseSetEntityListing> getOutboundCallanalysisresponsesetsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException {
-    return getOutboundCallanalysisresponsesets(createGetOutboundCallanalysisresponsesetsRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<ResponseSetEntityListing> getOutboundCallanalysisresponsesetsWithHttpInfo(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) throws IOException {
+    return getOutboundCallanalysisresponsesets(createGetOutboundCallanalysisresponsesetsRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetOutboundCallanalysisresponsesetsRequest createGetOutboundCallanalysisresponsesetsRequest(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) {
+  private GetOutboundCallanalysisresponsesetsRequest createGetOutboundCallanalysisresponsesetsRequest(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) {
     return GetOutboundCallanalysisresponsesetsRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withAllowEmptyResult(allowEmptyResult)
     
             .withFilterType(filterType)
     
@@ -2418,6 +2526,7 @@ public class OutboundApi {
    * 
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
    * @param sortBy Sort by (optional)
@@ -2426,8 +2535,8 @@ public class OutboundApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CampaignRuleEntityListing getOutboundCampaignrules(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getOutboundCampaignrules(createGetOutboundCampaignrulesRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder));
+  public CampaignRuleEntityListing getOutboundCampaignrules(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundCampaignrules(createGetOutboundCampaignrulesRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder));
   }
 
   /**
@@ -2435,6 +2544,7 @@ public class OutboundApi {
    * 
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
    * @param sortBy Sort by (optional)
@@ -2442,15 +2552,17 @@ public class OutboundApi {
    * @return CampaignRuleEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignRuleEntityListing> getOutboundCampaignrulesWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException {
-    return getOutboundCampaignrules(createGetOutboundCampaignrulesRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<CampaignRuleEntityListing> getOutboundCampaignrulesWithHttpInfo(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) throws IOException {
+    return getOutboundCampaignrules(createGetOutboundCampaignrulesRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetOutboundCampaignrulesRequest createGetOutboundCampaignrulesRequest(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) {
+  private GetOutboundCampaignrulesRequest createGetOutboundCampaignrulesRequest(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) {
     return GetOutboundCampaignrulesRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withAllowEmptyResult(allowEmptyResult)
     
             .withFilterType(filterType)
     
@@ -2634,6 +2746,212 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CampaignEntityListing> response = (ApiResponse<CampaignEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Query across all types of campaigns by division
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param id Campaign ID(s) (optional)
+   * @param name Campaign name(s) (optional)
+   * @param divisionId Division ID(s) (optional)
+   * @param mediaType Media type(s) (optional)
+   * @param sortOrder Sort order (optional, default to a)
+   * @return CommonCampaignEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CommonCampaignEntityListing getOutboundCampaignsAll(Integer pageSize, Integer pageNumber, List<String> id, String name, List<String> divisionId, List<String> mediaType, String sortOrder) throws IOException, ApiException {
+    return  getOutboundCampaignsAll(createGetOutboundCampaignsAllRequest(pageSize, pageNumber, id, name, divisionId, mediaType, sortOrder));
+  }
+
+  /**
+   * Query across all types of campaigns by division
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param id Campaign ID(s) (optional)
+   * @param name Campaign name(s) (optional)
+   * @param divisionId Division ID(s) (optional)
+   * @param mediaType Media type(s) (optional)
+   * @param sortOrder Sort order (optional, default to a)
+   * @return CommonCampaignEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CommonCampaignEntityListing> getOutboundCampaignsAllWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, String name, List<String> divisionId, List<String> mediaType, String sortOrder) throws IOException {
+    return getOutboundCampaignsAll(createGetOutboundCampaignsAllRequest(pageSize, pageNumber, id, name, divisionId, mediaType, sortOrder).withHttpInfo());
+  }
+
+  private GetOutboundCampaignsAllRequest createGetOutboundCampaignsAllRequest(Integer pageSize, Integer pageNumber, List<String> id, String name, List<String> divisionId, List<String> mediaType, String sortOrder) {
+    return GetOutboundCampaignsAllRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withId(id)
+    
+            .withName(name)
+    
+            .withDivisionId(divisionId)
+    
+            .withMediaType(mediaType)
+    
+            .withSortOrder(sortOrder)
+    
+            .build();
+  }
+
+  /**
+   * Query across all types of campaigns by division
+   * 
+   * @param request The request object
+   * @return CommonCampaignEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CommonCampaignEntityListing getOutboundCampaignsAll(GetOutboundCampaignsAllRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CommonCampaignEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CommonCampaignEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query across all types of campaigns by division
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CommonCampaignEntityListing> getOutboundCampaignsAll(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CommonCampaignEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CommonCampaignEntityListing> response = (ApiResponse<CommonCampaignEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CommonCampaignEntityListing> response = (ApiResponse<CommonCampaignEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Query across all types of campaigns
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param id Campaign ID(s) (optional)
+   * @param name Campaign name(s) (optional)
+   * @param divisionId Division ID(s) (optional)
+   * @param mediaType Media type(s) (optional)
+   * @param sortOrder Sort order (optional, default to a)
+   * @return CommonCampaignDivisionViewEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CommonCampaignDivisionViewEntityListing getOutboundCampaignsAllDivisionviews(Integer pageSize, Integer pageNumber, List<String> id, String name, List<String> divisionId, List<String> mediaType, String sortOrder) throws IOException, ApiException {
+    return  getOutboundCampaignsAllDivisionviews(createGetOutboundCampaignsAllDivisionviewsRequest(pageSize, pageNumber, id, name, divisionId, mediaType, sortOrder));
+  }
+
+  /**
+   * Query across all types of campaigns
+   * 
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param id Campaign ID(s) (optional)
+   * @param name Campaign name(s) (optional)
+   * @param divisionId Division ID(s) (optional)
+   * @param mediaType Media type(s) (optional)
+   * @param sortOrder Sort order (optional, default to a)
+   * @return CommonCampaignDivisionViewEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CommonCampaignDivisionViewEntityListing> getOutboundCampaignsAllDivisionviewsWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, String name, List<String> divisionId, List<String> mediaType, String sortOrder) throws IOException {
+    return getOutboundCampaignsAllDivisionviews(createGetOutboundCampaignsAllDivisionviewsRequest(pageSize, pageNumber, id, name, divisionId, mediaType, sortOrder).withHttpInfo());
+  }
+
+  private GetOutboundCampaignsAllDivisionviewsRequest createGetOutboundCampaignsAllDivisionviewsRequest(Integer pageSize, Integer pageNumber, List<String> id, String name, List<String> divisionId, List<String> mediaType, String sortOrder) {
+    return GetOutboundCampaignsAllDivisionviewsRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withId(id)
+    
+            .withName(name)
+    
+            .withDivisionId(divisionId)
+    
+            .withMediaType(mediaType)
+    
+            .withSortOrder(sortOrder)
+    
+            .build();
+  }
+
+  /**
+   * Query across all types of campaigns
+   * 
+   * @param request The request object
+   * @return CommonCampaignDivisionViewEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CommonCampaignDivisionViewEntityListing getOutboundCampaignsAllDivisionviews(GetOutboundCampaignsAllDivisionviewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CommonCampaignDivisionViewEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CommonCampaignDivisionViewEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query across all types of campaigns
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CommonCampaignDivisionViewEntityListing> getOutboundCampaignsAllDivisionviews(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CommonCampaignDivisionViewEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CommonCampaignDivisionViewEntityListing> response = (ApiResponse<CommonCampaignDivisionViewEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CommonCampaignDivisionViewEntityListing> response = (ApiResponse<CommonCampaignDivisionViewEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3316,6 +3634,7 @@ public class OutboundApi {
    * 
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
    * @param sortBy Sort by (optional)
@@ -3325,8 +3644,8 @@ public class OutboundApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ContactListFilterEntityListing getOutboundContactlistfilters(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder, String contactListId) throws IOException, ApiException {
-    return  getOutboundContactlistfilters(createGetOutboundContactlistfiltersRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder, contactListId));
+  public ContactListFilterEntityListing getOutboundContactlistfilters(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder, String contactListId) throws IOException, ApiException {
+    return  getOutboundContactlistfilters(createGetOutboundContactlistfiltersRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder, contactListId));
   }
 
   /**
@@ -3334,6 +3653,7 @@ public class OutboundApi {
    * 
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
    * @param sortBy Sort by (optional)
@@ -3342,15 +3662,17 @@ public class OutboundApi {
    * @return ContactListFilterEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactListFilterEntityListing> getOutboundContactlistfiltersWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder, String contactListId) throws IOException {
-    return getOutboundContactlistfilters(createGetOutboundContactlistfiltersRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder, contactListId).withHttpInfo());
+  public ApiResponse<ContactListFilterEntityListing> getOutboundContactlistfiltersWithHttpInfo(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder, String contactListId) throws IOException {
+    return getOutboundContactlistfilters(createGetOutboundContactlistfiltersRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder, contactListId).withHttpInfo());
   }
 
-  private GetOutboundContactlistfiltersRequest createGetOutboundContactlistfiltersRequest(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder, String contactListId) {
+  private GetOutboundContactlistfiltersRequest createGetOutboundContactlistfiltersRequest(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder, String contactListId) {
     return GetOutboundContactlistfiltersRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withAllowEmptyResult(allowEmptyResult)
     
             .withFilterType(filterType)
     
@@ -3421,6 +3743,7 @@ public class OutboundApi {
    * @param includeSize Include size (optional, default to false)
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
    * @param id id (optional)
@@ -3431,8 +3754,8 @@ public class OutboundApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ContactListEntityListing getOutboundContactlists(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, List<String> divisionId, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getOutboundContactlists(createGetOutboundContactlistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, divisionId, sortBy, sortOrder));
+  public ContactListEntityListing getOutboundContactlists(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, List<String> id, List<String> divisionId, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundContactlists(createGetOutboundContactlistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, id, divisionId, sortBy, sortOrder));
   }
 
   /**
@@ -3442,6 +3765,7 @@ public class OutboundApi {
    * @param includeSize Include size (optional, default to false)
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
    * @param id id (optional)
@@ -3451,11 +3775,11 @@ public class OutboundApi {
    * @return ContactListEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactListEntityListing> getOutboundContactlistsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, List<String> divisionId, String sortBy, String sortOrder) throws IOException {
-    return getOutboundContactlists(createGetOutboundContactlistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, divisionId, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<ContactListEntityListing> getOutboundContactlistsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, List<String> id, List<String> divisionId, String sortBy, String sortOrder) throws IOException {
+    return getOutboundContactlists(createGetOutboundContactlistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, id, divisionId, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetOutboundContactlistsRequest createGetOutboundContactlistsRequest(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, List<String> divisionId, String sortBy, String sortOrder) {
+  private GetOutboundContactlistsRequest createGetOutboundContactlistsRequest(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, List<String> id, List<String> divisionId, String sortBy, String sortOrder) {
     return GetOutboundContactlistsRequest.builder()
             .withIncludeImportStatus(includeImportStatus)
     
@@ -3464,6 +3788,8 @@ public class OutboundApi {
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withAllowEmptyResult(allowEmptyResult)
     
             .withFilterType(filterType)
     
@@ -3983,6 +4309,7 @@ public class OutboundApi {
    * @param includeSize Include size (optional, default to false)
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
    * @param dncSourceType DncSourceType (optional)
@@ -3993,8 +4320,8 @@ public class OutboundApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DncListEntityListing getOutboundDnclists(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String dncSourceType, List<String> divisionId, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getOutboundDnclists(createGetOutboundDnclistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, dncSourceType, divisionId, sortBy, sortOrder));
+  public DncListEntityListing getOutboundDnclists(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String dncSourceType, List<String> divisionId, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundDnclists(createGetOutboundDnclistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, dncSourceType, divisionId, sortBy, sortOrder));
   }
 
   /**
@@ -4004,6 +4331,7 @@ public class OutboundApi {
    * @param includeSize Include size (optional, default to false)
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
    * @param dncSourceType DncSourceType (optional)
@@ -4013,11 +4341,11 @@ public class OutboundApi {
    * @return DncListEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DncListEntityListing> getOutboundDnclistsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String dncSourceType, List<String> divisionId, String sortBy, String sortOrder) throws IOException {
-    return getOutboundDnclists(createGetOutboundDnclistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, dncSourceType, divisionId, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<DncListEntityListing> getOutboundDnclistsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String dncSourceType, List<String> divisionId, String sortBy, String sortOrder) throws IOException {
+    return getOutboundDnclists(createGetOutboundDnclistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, dncSourceType, divisionId, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetOutboundDnclistsRequest createGetOutboundDnclistsRequest(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String dncSourceType, List<String> divisionId, String sortBy, String sortOrder) {
+  private GetOutboundDnclistsRequest createGetOutboundDnclistsRequest(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String dncSourceType, List<String> divisionId, String sortBy, String sortOrder) {
     return GetOutboundDnclistsRequest.builder()
             .withIncludeImportStatus(includeImportStatus)
     
@@ -4026,6 +4354,8 @@ public class OutboundApi {
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withAllowEmptyResult(allowEmptyResult)
     
             .withFilterType(filterType)
     
@@ -4472,6 +4802,457 @@ public class OutboundApi {
 
   
   /**
+   * Get an Outbound Messaging Campaign
+   * 
+   * @param messagingCampaignId The Messaging Campaign ID (required)
+   * @return MessagingCampaign
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaign getOutboundMessagingcampaign(String messagingCampaignId) throws IOException, ApiException {
+    return  getOutboundMessagingcampaign(createGetOutboundMessagingcampaignRequest(messagingCampaignId));
+  }
+
+  /**
+   * Get an Outbound Messaging Campaign
+   * 
+   * @param messagingCampaignId The Messaging Campaign ID (required)
+   * @return MessagingCampaign
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaign> getOutboundMessagingcampaignWithHttpInfo(String messagingCampaignId) throws IOException {
+    return getOutboundMessagingcampaign(createGetOutboundMessagingcampaignRequest(messagingCampaignId).withHttpInfo());
+  }
+
+  private GetOutboundMessagingcampaignRequest createGetOutboundMessagingcampaignRequest(String messagingCampaignId) {
+    return GetOutboundMessagingcampaignRequest.builder()
+            .withMessagingCampaignId(messagingCampaignId)
+    
+            .build();
+  }
+
+  /**
+   * Get an Outbound Messaging Campaign
+   * 
+   * @param request The request object
+   * @return MessagingCampaign
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaign getOutboundMessagingcampaign(GetOutboundMessagingcampaignRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessagingCampaign> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessagingCampaign>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an Outbound Messaging Campaign
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaign> getOutboundMessagingcampaign(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessagingCampaign>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaign> response = (ApiResponse<MessagingCampaign>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaign> response = (ApiResponse<MessagingCampaign>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get messaging campaign&#39;s progress
+   * 
+   * @param messagingCampaignId The Messaging Campaign ID (required)
+   * @return CampaignProgress
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CampaignProgress getOutboundMessagingcampaignProgress(String messagingCampaignId) throws IOException, ApiException {
+    return  getOutboundMessagingcampaignProgress(createGetOutboundMessagingcampaignProgressRequest(messagingCampaignId));
+  }
+
+  /**
+   * Get messaging campaign&#39;s progress
+   * 
+   * @param messagingCampaignId The Messaging Campaign ID (required)
+   * @return CampaignProgress
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CampaignProgress> getOutboundMessagingcampaignProgressWithHttpInfo(String messagingCampaignId) throws IOException {
+    return getOutboundMessagingcampaignProgress(createGetOutboundMessagingcampaignProgressRequest(messagingCampaignId).withHttpInfo());
+  }
+
+  private GetOutboundMessagingcampaignProgressRequest createGetOutboundMessagingcampaignProgressRequest(String messagingCampaignId) {
+    return GetOutboundMessagingcampaignProgressRequest.builder()
+            .withMessagingCampaignId(messagingCampaignId)
+    
+            .build();
+  }
+
+  /**
+   * Get messaging campaign&#39;s progress
+   * 
+   * @param request The request object
+   * @return CampaignProgress
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CampaignProgress getOutboundMessagingcampaignProgress(GetOutboundMessagingcampaignProgressRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CampaignProgress> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CampaignProgress>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get messaging campaign&#39;s progress
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CampaignProgress> getOutboundMessagingcampaignProgress(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CampaignProgress>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignProgress> response = (ApiResponse<CampaignProgress>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CampaignProgress> response = (ApiResponse<CampaignProgress>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Query a list of Messaging Campaigns
+   * 
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortBy The field to sort by (optional, default to name)
+   * @param sortOrder The direction to sort (optional, default to ascending)
+   * @param name Name (optional)
+   * @param contactListId Contact List ID (optional)
+   * @param divisionId Division ID(s) (optional)
+   * @param type Campaign Type (optional)
+   * @param senderSmsPhoneNumber Sender SMS Phone Number (optional)
+   * @param id A list of messaging campaign ids to bulk fetch (optional)
+   * @return MessagingCampaignEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaignEntityListing getOutboundMessagingcampaigns(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String contactListId, List<String> divisionId, String type, String senderSmsPhoneNumber, List<String> id) throws IOException, ApiException {
+    return  getOutboundMessagingcampaigns(createGetOutboundMessagingcampaignsRequest(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id));
+  }
+
+  /**
+   * Query a list of Messaging Campaigns
+   * 
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortBy The field to sort by (optional, default to name)
+   * @param sortOrder The direction to sort (optional, default to ascending)
+   * @param name Name (optional)
+   * @param contactListId Contact List ID (optional)
+   * @param divisionId Division ID(s) (optional)
+   * @param type Campaign Type (optional)
+   * @param senderSmsPhoneNumber Sender SMS Phone Number (optional)
+   * @param id A list of messaging campaign ids to bulk fetch (optional)
+   * @return MessagingCampaignEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaignEntityListing> getOutboundMessagingcampaignsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String contactListId, List<String> divisionId, String type, String senderSmsPhoneNumber, List<String> id) throws IOException {
+    return getOutboundMessagingcampaigns(createGetOutboundMessagingcampaignsRequest(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id).withHttpInfo());
+  }
+
+  private GetOutboundMessagingcampaignsRequest createGetOutboundMessagingcampaignsRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name, String contactListId, List<String> divisionId, String type, String senderSmsPhoneNumber, List<String> id) {
+    return GetOutboundMessagingcampaignsRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withSortBy(sortBy)
+    
+            .withSortOrder(sortOrder)
+    
+            .withName(name)
+    
+            .withContactListId(contactListId)
+    
+            .withDivisionId(divisionId)
+    
+            .withType(type)
+    
+            .withSenderSmsPhoneNumber(senderSmsPhoneNumber)
+    
+            .withId(id)
+    
+            .build();
+  }
+
+  /**
+   * Query a list of Messaging Campaigns
+   * 
+   * @param request The request object
+   * @return MessagingCampaignEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaignEntityListing getOutboundMessagingcampaigns(GetOutboundMessagingcampaignsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessagingCampaignEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessagingCampaignEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query a list of Messaging Campaigns
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaignEntityListing> getOutboundMessagingcampaigns(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessagingCampaignEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaignEntityListing> response = (ApiResponse<MessagingCampaignEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaignEntityListing> response = (ApiResponse<MessagingCampaignEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a basic Messaging Campaign information object
+   * This returns a simplified version of a Messaging Campaign, consisting of id, name, and division.
+   * @param messagingCampaignId The Messaging Campaign ID (required)
+   * @return MessagingCampaignDivisionView
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaignDivisionView getOutboundMessagingcampaignsDivisionview(String messagingCampaignId) throws IOException, ApiException {
+    return  getOutboundMessagingcampaignsDivisionview(createGetOutboundMessagingcampaignsDivisionviewRequest(messagingCampaignId));
+  }
+
+  /**
+   * Get a basic Messaging Campaign information object
+   * This returns a simplified version of a Messaging Campaign, consisting of id, name, and division.
+   * @param messagingCampaignId The Messaging Campaign ID (required)
+   * @return MessagingCampaignDivisionView
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaignDivisionView> getOutboundMessagingcampaignsDivisionviewWithHttpInfo(String messagingCampaignId) throws IOException {
+    return getOutboundMessagingcampaignsDivisionview(createGetOutboundMessagingcampaignsDivisionviewRequest(messagingCampaignId).withHttpInfo());
+  }
+
+  private GetOutboundMessagingcampaignsDivisionviewRequest createGetOutboundMessagingcampaignsDivisionviewRequest(String messagingCampaignId) {
+    return GetOutboundMessagingcampaignsDivisionviewRequest.builder()
+            .withMessagingCampaignId(messagingCampaignId)
+    
+            .build();
+  }
+
+  /**
+   * Get a basic Messaging Campaign information object
+   * This returns a simplified version of a Messaging Campaign, consisting of id, name, and division.
+   * @param request The request object
+   * @return MessagingCampaignDivisionView
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaignDivisionView getOutboundMessagingcampaignsDivisionview(GetOutboundMessagingcampaignsDivisionviewRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessagingCampaignDivisionView> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessagingCampaignDivisionView>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a basic Messaging Campaign information object
+   * This returns a simplified version of a Messaging Campaign, consisting of id, name, and division.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaignDivisionView> getOutboundMessagingcampaignsDivisionview(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessagingCampaignDivisionView>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaignDivisionView> response = (ApiResponse<MessagingCampaignDivisionView>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaignDivisionView> response = (ApiResponse<MessagingCampaignDivisionView>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Query a list of basic Messaging Campaign information objects
+   * This returns a listing of simplified Messaging Campaigns, each consisting of id, name, and division.
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortOrder The direction to sort (optional, default to a)
+   * @param name Name (optional)
+   * @param id id (optional)
+   * @param senderSmsPhoneNumber Sender SMS Phone Number (optional)
+   * @return MessagingCampaignDivisionViewEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaignDivisionViewEntityListing getOutboundMessagingcampaignsDivisionviews(Integer pageSize, Integer pageNumber, String sortOrder, String name, List<String> id, String senderSmsPhoneNumber) throws IOException, ApiException {
+    return  getOutboundMessagingcampaignsDivisionviews(createGetOutboundMessagingcampaignsDivisionviewsRequest(pageSize, pageNumber, sortOrder, name, id, senderSmsPhoneNumber));
+  }
+
+  /**
+   * Query a list of basic Messaging Campaign information objects
+   * This returns a listing of simplified Messaging Campaigns, each consisting of id, name, and division.
+   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortOrder The direction to sort (optional, default to a)
+   * @param name Name (optional)
+   * @param id id (optional)
+   * @param senderSmsPhoneNumber Sender SMS Phone Number (optional)
+   * @return MessagingCampaignDivisionViewEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaignDivisionViewEntityListing> getOutboundMessagingcampaignsDivisionviewsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder, String name, List<String> id, String senderSmsPhoneNumber) throws IOException {
+    return getOutboundMessagingcampaignsDivisionviews(createGetOutboundMessagingcampaignsDivisionviewsRequest(pageSize, pageNumber, sortOrder, name, id, senderSmsPhoneNumber).withHttpInfo());
+  }
+
+  private GetOutboundMessagingcampaignsDivisionviewsRequest createGetOutboundMessagingcampaignsDivisionviewsRequest(Integer pageSize, Integer pageNumber, String sortOrder, String name, List<String> id, String senderSmsPhoneNumber) {
+    return GetOutboundMessagingcampaignsDivisionviewsRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withSortOrder(sortOrder)
+    
+            .withName(name)
+    
+            .withId(id)
+    
+            .withSenderSmsPhoneNumber(senderSmsPhoneNumber)
+    
+            .build();
+  }
+
+  /**
+   * Query a list of basic Messaging Campaign information objects
+   * This returns a listing of simplified Messaging Campaigns, each consisting of id, name, and division.
+   * @param request The request object
+   * @return MessagingCampaignDivisionViewEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaignDivisionViewEntityListing getOutboundMessagingcampaignsDivisionviews(GetOutboundMessagingcampaignsDivisionviewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessagingCampaignDivisionViewEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessagingCampaignDivisionViewEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query a list of basic Messaging Campaign information objects
+   * This returns a listing of simplified Messaging Campaigns, each consisting of id, name, and division.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaignDivisionViewEntityListing> getOutboundMessagingcampaignsDivisionviews(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessagingCampaignDivisionViewEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaignDivisionViewEntityListing> response = (ApiResponse<MessagingCampaignDivisionViewEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaignDivisionViewEntityListing> response = (ApiResponse<MessagingCampaignDivisionViewEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get a Rule Set by ID.
    * 
    * @param ruleSetId Rule Set ID (required)
@@ -4555,6 +5336,7 @@ public class OutboundApi {
    * 
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
    * @param sortBy Sort by (optional)
@@ -4563,8 +5345,8 @@ public class OutboundApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public RuleSetEntityListing getOutboundRulesets(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getOutboundRulesets(createGetOutboundRulesetsRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder));
+  public RuleSetEntityListing getOutboundRulesets(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundRulesets(createGetOutboundRulesetsRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder));
   }
 
   /**
@@ -4572,6 +5354,7 @@ public class OutboundApi {
    * 
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
    * @param sortBy Sort by (optional)
@@ -4579,15 +5362,17 @@ public class OutboundApi {
    * @return RuleSetEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RuleSetEntityListing> getOutboundRulesetsWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException {
-    return getOutboundRulesets(createGetOutboundRulesetsRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<RuleSetEntityListing> getOutboundRulesetsWithHttpInfo(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) throws IOException {
+    return getOutboundRulesets(createGetOutboundRulesetsRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetOutboundRulesetsRequest createGetOutboundRulesetsRequest(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) {
+  private GetOutboundRulesetsRequest createGetOutboundRulesetsRequest(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) {
     return GetOutboundRulesetsRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withAllowEmptyResult(allowEmptyResult)
     
             .withFilterType(filterType)
     
@@ -5041,6 +5826,7 @@ public class OutboundApi {
    * 
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
    * @param sortBy Sort by (optional)
@@ -5049,8 +5835,8 @@ public class OutboundApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CampaignSequenceEntityListing getOutboundSequences(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getOutboundSequences(createGetOutboundSequencesRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder));
+  public CampaignSequenceEntityListing getOutboundSequences(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundSequences(createGetOutboundSequencesRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder));
   }
 
   /**
@@ -5058,6 +5844,7 @@ public class OutboundApi {
    * 
    * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
    * @param sortBy Sort by (optional)
@@ -5065,15 +5852,17 @@ public class OutboundApi {
    * @return CampaignSequenceEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CampaignSequenceEntityListing> getOutboundSequencesWithHttpInfo(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) throws IOException {
-    return getOutboundSequences(createGetOutboundSequencesRequest(pageSize, pageNumber, filterType, name, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<CampaignSequenceEntityListing> getOutboundSequencesWithHttpInfo(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) throws IOException {
+    return getOutboundSequences(createGetOutboundSequencesRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetOutboundSequencesRequest createGetOutboundSequencesRequest(Integer pageSize, Integer pageNumber, String filterType, String name, String sortBy, String sortOrder) {
+  private GetOutboundSequencesRequest createGetOutboundSequencesRequest(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) {
     return GetOutboundSequencesRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withAllowEmptyResult(allowEmptyResult)
     
             .withFilterType(filterType)
     
@@ -6902,6 +7691,164 @@ public class OutboundApi {
 
   
   /**
+   * Create a Messaging Campaign
+   * 
+   * @param body Messaging Campaign (required)
+   * @return MessagingCampaign
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaign postOutboundMessagingcampaigns(MessagingCampaign body) throws IOException, ApiException {
+    return  postOutboundMessagingcampaigns(createPostOutboundMessagingcampaignsRequest(body));
+  }
+
+  /**
+   * Create a Messaging Campaign
+   * 
+   * @param body Messaging Campaign (required)
+   * @return MessagingCampaign
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaign> postOutboundMessagingcampaignsWithHttpInfo(MessagingCampaign body) throws IOException {
+    return postOutboundMessagingcampaigns(createPostOutboundMessagingcampaignsRequest(body).withHttpInfo());
+  }
+
+  private PostOutboundMessagingcampaignsRequest createPostOutboundMessagingcampaignsRequest(MessagingCampaign body) {
+    return PostOutboundMessagingcampaignsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a Messaging Campaign
+   * 
+   * @param request The request object
+   * @return MessagingCampaign
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaign postOutboundMessagingcampaigns(PostOutboundMessagingcampaignsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessagingCampaign> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessagingCampaign>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a Messaging Campaign
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaign> postOutboundMessagingcampaigns(ApiRequest<MessagingCampaign> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessagingCampaign>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaign> response = (ApiResponse<MessagingCampaign>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaign> response = (ApiResponse<MessagingCampaign>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get progress for a list of messaging campaigns
+   * 
+   * @param body Messaging Campaign IDs (required)
+   * @return List<CampaignProgress>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<CampaignProgress> postOutboundMessagingcampaignsProgress(List<String> body) throws IOException, ApiException {
+    return  postOutboundMessagingcampaignsProgress(createPostOutboundMessagingcampaignsProgressRequest(body));
+  }
+
+  /**
+   * Get progress for a list of messaging campaigns
+   * 
+   * @param body Messaging Campaign IDs (required)
+   * @return List<CampaignProgress>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<CampaignProgress>> postOutboundMessagingcampaignsProgressWithHttpInfo(List<String> body) throws IOException {
+    return postOutboundMessagingcampaignsProgress(createPostOutboundMessagingcampaignsProgressRequest(body).withHttpInfo());
+  }
+
+  private PostOutboundMessagingcampaignsProgressRequest createPostOutboundMessagingcampaignsProgressRequest(List<String> body) {
+    return PostOutboundMessagingcampaignsProgressRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Get progress for a list of messaging campaigns
+   * 
+   * @param request The request object
+   * @return List<CampaignProgress>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<CampaignProgress> postOutboundMessagingcampaignsProgress(PostOutboundMessagingcampaignsProgressRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<CampaignProgress>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<CampaignProgress>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get progress for a list of messaging campaigns
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<CampaignProgress>> postOutboundMessagingcampaignsProgress(ApiRequest<List<String>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<CampaignProgress>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<CampaignProgress>> response = (ApiResponse<List<CampaignProgress>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<CampaignProgress>> response = (ApiResponse<List<CampaignProgress>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Create a Dialer Call Analysis Response Set.
    * 
    * @param body RuleSet (required)
@@ -7892,6 +8839,89 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DncList> response = (ApiResponse<DncList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update an Outbound Messaging Campaign
+   * 
+   * @param messagingCampaignId The Messaging Campaign ID (required)
+   * @param body MessagingCampaign (required)
+   * @return MessagingCampaign
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaign putOutboundMessagingcampaign(String messagingCampaignId, MessagingCampaign body) throws IOException, ApiException {
+    return  putOutboundMessagingcampaign(createPutOutboundMessagingcampaignRequest(messagingCampaignId, body));
+  }
+
+  /**
+   * Update an Outbound Messaging Campaign
+   * 
+   * @param messagingCampaignId The Messaging Campaign ID (required)
+   * @param body MessagingCampaign (required)
+   * @return MessagingCampaign
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaign> putOutboundMessagingcampaignWithHttpInfo(String messagingCampaignId, MessagingCampaign body) throws IOException {
+    return putOutboundMessagingcampaign(createPutOutboundMessagingcampaignRequest(messagingCampaignId, body).withHttpInfo());
+  }
+
+  private PutOutboundMessagingcampaignRequest createPutOutboundMessagingcampaignRequest(String messagingCampaignId, MessagingCampaign body) {
+    return PutOutboundMessagingcampaignRequest.builder()
+            .withMessagingCampaignId(messagingCampaignId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update an Outbound Messaging Campaign
+   * 
+   * @param request The request object
+   * @return MessagingCampaign
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessagingCampaign putOutboundMessagingcampaign(PutOutboundMessagingcampaignRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessagingCampaign> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessagingCampaign>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an Outbound Messaging Campaign
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessagingCampaign> putOutboundMessagingcampaign(ApiRequest<MessagingCampaign> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessagingCampaign>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaign> response = (ApiResponse<MessagingCampaign>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessagingCampaign> response = (ApiResponse<MessagingCampaign>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

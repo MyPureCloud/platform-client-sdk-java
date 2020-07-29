@@ -3184,8 +3184,8 @@ public class ExternalContactsApi {
 
   
   /**
-   * Associate an external contact with a conversation
-   * 
+   * Associate/disassociate an external contact with a conversation
+   * To associate, supply a value for the externalContactId.  To disassociate, do not include the property at all.
    * @param conversationId Conversation ID (required)
    * @param body ConversationAssociation (required)
    * @throws ApiException if the request fails on the server
@@ -3196,8 +3196,8 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Associate an external contact with a conversation
-   * 
+   * Associate/disassociate an external contact with a conversation
+   * To associate, supply a value for the externalContactId.  To disassociate, do not include the property at all.
    * @param conversationId Conversation ID (required)
    * @param body ConversationAssociation (required)
    * @throws IOException if the request fails to be processed
@@ -3216,8 +3216,8 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Associate an external contact with a conversation
-   * 
+   * Associate/disassociate an external contact with a conversation
+   * To associate, supply a value for the externalContactId.  To disassociate, do not include the property at all.
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3234,8 +3234,8 @@ public class ExternalContactsApi {
   }
 
   /**
-   * Associate an external contact with a conversation
-   * 
+   * Associate/disassociate an external contact with a conversation
+   * To associate, supply a value for the externalContactId.  To disassociate, do not include the property at all.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

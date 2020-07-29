@@ -19,6 +19,7 @@ public class VoicemailUserPolicy  implements Serializable {
   private Integer alertTimeoutSeconds = null;
   private String pin = null;
   private Date modifiedDate = null;
+  private Boolean sendEmailNotifications = null;
 
   
   @ApiModelProperty(example = "null", value = "Whether the user has voicemail enabled")
@@ -71,6 +72,24 @@ public class VoicemailUserPolicy  implements Serializable {
   }
 
   
+  /**
+   * Whether email notifications are sent to the user when a new voicemail is received
+   **/
+  public VoicemailUserPolicy sendEmailNotifications(Boolean sendEmailNotifications) {
+    this.sendEmailNotifications = sendEmailNotifications;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether email notifications are sent to the user when a new voicemail is received")
+  @JsonProperty("sendEmailNotifications")
+  public Boolean getSendEmailNotifications() {
+    return sendEmailNotifications;
+  }
+  public void setSendEmailNotifications(Boolean sendEmailNotifications) {
+    this.sendEmailNotifications = sendEmailNotifications;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -84,12 +103,13 @@ public class VoicemailUserPolicy  implements Serializable {
     return Objects.equals(this.enabled, voicemailUserPolicy.enabled) &&
         Objects.equals(this.alertTimeoutSeconds, voicemailUserPolicy.alertTimeoutSeconds) &&
         Objects.equals(this.pin, voicemailUserPolicy.pin) &&
-        Objects.equals(this.modifiedDate, voicemailUserPolicy.modifiedDate);
+        Objects.equals(this.modifiedDate, voicemailUserPolicy.modifiedDate) &&
+        Objects.equals(this.sendEmailNotifications, voicemailUserPolicy.sendEmailNotifications);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, alertTimeoutSeconds, pin, modifiedDate);
+    return Objects.hash(enabled, alertTimeoutSeconds, pin, modifiedDate, sendEmailNotifications);
   }
 
   @Override
@@ -101,6 +121,7 @@ public class VoicemailUserPolicy  implements Serializable {
     sb.append("    alertTimeoutSeconds: ").append(toIndentedString(alertTimeoutSeconds)).append("\n");
     sb.append("    pin: ").append(toIndentedString(pin)).append("\n");
     sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
+    sb.append("    sendEmailNotifications: ").append(toIndentedString(sendEmailNotifications)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -136,6 +136,8 @@ public class ReportingExportJobRequest  implements Serializable {
   private String locale = null;
   private Boolean hasFormatDurations = null;
   private Boolean hasSplitFilters = null;
+  private Boolean excludeEmptyRows = null;
+  private Boolean hasSplitByMedia = null;
   private List<SelectedColumns> selectedColumns = new ArrayList<SelectedColumns>();
   private Boolean hasCustomParticipantAttributes = null;
   private List<String> recipientEmails = new ArrayList<String>();
@@ -340,6 +342,42 @@ public class ReportingExportJobRequest  implements Serializable {
 
   
   /**
+   * Excludes empty rows from the exports
+   **/
+  public ReportingExportJobRequest excludeEmptyRows(Boolean excludeEmptyRows) {
+    this.excludeEmptyRows = excludeEmptyRows;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Excludes empty rows from the exports")
+  @JsonProperty("excludeEmptyRows")
+  public Boolean getExcludeEmptyRows() {
+    return excludeEmptyRows;
+  }
+  public void setExcludeEmptyRows(Boolean excludeEmptyRows) {
+    this.excludeEmptyRows = excludeEmptyRows;
+  }
+
+  
+  /**
+   * Indicates if media type will be split in aggregate detail exports
+   **/
+  public ReportingExportJobRequest hasSplitByMedia(Boolean hasSplitByMedia) {
+    this.hasSplitByMedia = hasSplitByMedia;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates if media type will be split in aggregate detail exports")
+  @JsonProperty("hasSplitByMedia")
+  public Boolean getHasSplitByMedia() {
+    return hasSplitByMedia;
+  }
+  public void setHasSplitByMedia(Boolean hasSplitByMedia) {
+    this.hasSplitByMedia = hasSplitByMedia;
+  }
+
+  
+  /**
    * The list of ordered selected columns from the export view by the user
    **/
   public ReportingExportJobRequest selectedColumns(List<SelectedColumns> selectedColumns) {
@@ -414,6 +452,8 @@ public class ReportingExportJobRequest  implements Serializable {
         Objects.equals(this.locale, reportingExportJobRequest.locale) &&
         Objects.equals(this.hasFormatDurations, reportingExportJobRequest.hasFormatDurations) &&
         Objects.equals(this.hasSplitFilters, reportingExportJobRequest.hasSplitFilters) &&
+        Objects.equals(this.excludeEmptyRows, reportingExportJobRequest.excludeEmptyRows) &&
+        Objects.equals(this.hasSplitByMedia, reportingExportJobRequest.hasSplitByMedia) &&
         Objects.equals(this.selectedColumns, reportingExportJobRequest.selectedColumns) &&
         Objects.equals(this.hasCustomParticipantAttributes, reportingExportJobRequest.hasCustomParticipantAttributes) &&
         Objects.equals(this.recipientEmails, reportingExportJobRequest.recipientEmails);
@@ -421,7 +461,7 @@ public class ReportingExportJobRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, timeZone, exportFormat, interval, period, viewType, filter, read, locale, hasFormatDurations, hasSplitFilters, selectedColumns, hasCustomParticipantAttributes, recipientEmails);
+    return Objects.hash(name, timeZone, exportFormat, interval, period, viewType, filter, read, locale, hasFormatDurations, hasSplitFilters, excludeEmptyRows, hasSplitByMedia, selectedColumns, hasCustomParticipantAttributes, recipientEmails);
   }
 
   @Override
@@ -440,6 +480,8 @@ public class ReportingExportJobRequest  implements Serializable {
     sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("    hasFormatDurations: ").append(toIndentedString(hasFormatDurations)).append("\n");
     sb.append("    hasSplitFilters: ").append(toIndentedString(hasSplitFilters)).append("\n");
+    sb.append("    excludeEmptyRows: ").append(toIndentedString(excludeEmptyRows)).append("\n");
+    sb.append("    hasSplitByMedia: ").append(toIndentedString(hasSplitByMedia)).append("\n");
     sb.append("    selectedColumns: ").append(toIndentedString(selectedColumns)).append("\n");
     sb.append("    hasCustomParticipantAttributes: ").append(toIndentedString(hasCustomParticipantAttributes)).append("\n");
     sb.append("    recipientEmails: ").append(toIndentedString(recipientEmails)).append("\n");

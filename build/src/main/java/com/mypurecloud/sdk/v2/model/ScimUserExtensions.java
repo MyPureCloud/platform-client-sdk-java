@@ -13,9 +13,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * SCIM PureCloud extensions of user.
+ * Defines a SCIM Genesys Cloud user.
  */
-@ApiModel(description = "SCIM PureCloud extensions of user.")
+@ApiModel(description = "Defines a SCIM Genesys Cloud user.")
 
 public class ScimUserExtensions  implements Serializable {
   
@@ -24,14 +24,14 @@ public class ScimUserExtensions  implements Serializable {
 
   
   /**
-   * Routing Skills assigned to user. No more than 50 skills may be assigned to a user.
+   * The list of routing skills assigned to a user. Maximum 50 skills.
    **/
   public ScimUserExtensions routingSkills(List<ScimUserRoutingSkill> routingSkills) {
     this.routingSkills = routingSkills;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Routing Skills assigned to user. No more than 50 skills may be assigned to a user.")
+  @ApiModelProperty(example = "null", value = "The list of routing skills assigned to a user. Maximum 50 skills.")
   @JsonProperty("routingSkills")
   public List<ScimUserRoutingSkill> getRoutingSkills() {
     return routingSkills;
@@ -42,14 +42,14 @@ public class ScimUserExtensions  implements Serializable {
 
   
   /**
-   * Routing Languages assigned to user. No more than 50 languages may be assigned to a user.
+   * The list of routing languages assigned to a user. Maximum 50 languages.
    **/
   public ScimUserExtensions routingLanguages(List<ScimUserRoutingLanguage> routingLanguages) {
     this.routingLanguages = routingLanguages;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Routing Languages assigned to user. No more than 50 languages may be assigned to a user.")
+  @ApiModelProperty(example = "null", value = "The list of routing languages assigned to a user. Maximum 50 languages.")
   @JsonProperty("routingLanguages")
   public List<ScimUserRoutingLanguage> getRoutingLanguages() {
     return routingLanguages;

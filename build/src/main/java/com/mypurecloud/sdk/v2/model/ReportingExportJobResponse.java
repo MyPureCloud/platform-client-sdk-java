@@ -229,6 +229,8 @@ public class ReportingExportJobResponse  implements Serializable {
   private Double percentageComplete = null;
   private Boolean hasFormatDurations = null;
   private Boolean hasSplitFilters = null;
+  private Boolean excludeEmptyRows = null;
+  private Boolean hasSplitByMedia = null;
   private List<SelectedColumns> selectedColumns = new ArrayList<SelectedColumns>();
   private Boolean hasCustomParticipantAttributes = null;
   private List<String> recipientEmails = new ArrayList<String>();
@@ -267,6 +269,7 @@ public class ReportingExportJobResponse  implements Serializable {
     }
   }
   private Map<String, String> emailStatuses = null;
+  private Boolean enabled = null;
   private String selfUri = null;
 
   
@@ -583,6 +586,42 @@ public class ReportingExportJobResponse  implements Serializable {
 
   
   /**
+   * Excludes empty rows from the exports
+   **/
+  public ReportingExportJobResponse excludeEmptyRows(Boolean excludeEmptyRows) {
+    this.excludeEmptyRows = excludeEmptyRows;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Excludes empty rows from the exports")
+  @JsonProperty("excludeEmptyRows")
+  public Boolean getExcludeEmptyRows() {
+    return excludeEmptyRows;
+  }
+  public void setExcludeEmptyRows(Boolean excludeEmptyRows) {
+    this.excludeEmptyRows = excludeEmptyRows;
+  }
+
+  
+  /**
+   * Indicates if media type will be split in aggregate detail exports
+   **/
+  public ReportingExportJobResponse hasSplitByMedia(Boolean hasSplitByMedia) {
+    this.hasSplitByMedia = hasSplitByMedia;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates if media type will be split in aggregate detail exports")
+  @JsonProperty("hasSplitByMedia")
+  public Boolean getHasSplitByMedia() {
+    return hasSplitByMedia;
+  }
+  public void setHasSplitByMedia(Boolean hasSplitByMedia) {
+    this.hasSplitByMedia = hasSplitByMedia;
+  }
+
+  
+  /**
    * The list of ordered selected columns from the export view by the user
    **/
   public ReportingExportJobResponse selectedColumns(List<SelectedColumns> selectedColumns) {
@@ -654,6 +693,23 @@ public class ReportingExportJobResponse  implements Serializable {
   }
 
   
+  /**
+   **/
+  public ReportingExportJobResponse enabled(Boolean enabled) {
+    this.enabled = enabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("enabled")
+  public Boolean getEnabled() {
+    return enabled;
+  }
+  public void setEnabled(Boolean enabled) {
+    this.enabled = enabled;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -689,16 +745,19 @@ public class ReportingExportJobResponse  implements Serializable {
         Objects.equals(this.percentageComplete, reportingExportJobResponse.percentageComplete) &&
         Objects.equals(this.hasFormatDurations, reportingExportJobResponse.hasFormatDurations) &&
         Objects.equals(this.hasSplitFilters, reportingExportJobResponse.hasSplitFilters) &&
+        Objects.equals(this.excludeEmptyRows, reportingExportJobResponse.excludeEmptyRows) &&
+        Objects.equals(this.hasSplitByMedia, reportingExportJobResponse.hasSplitByMedia) &&
         Objects.equals(this.selectedColumns, reportingExportJobResponse.selectedColumns) &&
         Objects.equals(this.hasCustomParticipantAttributes, reportingExportJobResponse.hasCustomParticipantAttributes) &&
         Objects.equals(this.recipientEmails, reportingExportJobResponse.recipientEmails) &&
         Objects.equals(this.emailStatuses, reportingExportJobResponse.emailStatuses) &&
+        Objects.equals(this.enabled, reportingExportJobResponse.enabled) &&
         Objects.equals(this.selfUri, reportingExportJobResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, hasSplitFilters, selectedColumns, hasCustomParticipantAttributes, recipientEmails, emailStatuses, selfUri);
+    return Objects.hash(id, name, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, hasSplitFilters, excludeEmptyRows, hasSplitByMedia, selectedColumns, hasCustomParticipantAttributes, recipientEmails, emailStatuses, enabled, selfUri);
   }
 
   @Override
@@ -724,10 +783,13 @@ public class ReportingExportJobResponse  implements Serializable {
     sb.append("    percentageComplete: ").append(toIndentedString(percentageComplete)).append("\n");
     sb.append("    hasFormatDurations: ").append(toIndentedString(hasFormatDurations)).append("\n");
     sb.append("    hasSplitFilters: ").append(toIndentedString(hasSplitFilters)).append("\n");
+    sb.append("    excludeEmptyRows: ").append(toIndentedString(excludeEmptyRows)).append("\n");
+    sb.append("    hasSplitByMedia: ").append(toIndentedString(hasSplitByMedia)).append("\n");
     sb.append("    selectedColumns: ").append(toIndentedString(selectedColumns)).append("\n");
     sb.append("    hasCustomParticipantAttributes: ").append(toIndentedString(hasCustomParticipantAttributes)).append("\n");
     sb.append("    recipientEmails: ").append(toIndentedString(recipientEmails)).append("\n");
     sb.append("    emailStatuses: ").append(toIndentedString(emailStatuses)).append("\n");
+    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

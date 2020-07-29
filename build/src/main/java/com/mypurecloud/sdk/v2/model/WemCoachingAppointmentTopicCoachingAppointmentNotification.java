@@ -33,7 +33,8 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SCHEDULED("Scheduled"),
     INPROGRESS("InProgress"),
-    COMPLETED("Completed");
+    COMPLETED("Completed"),
+    INVALIDSCHEDULE("InvalidSchedule");
 
     private String value;
 
@@ -77,7 +78,8 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CREATE("Create"),
     UPDATE("Update"),
-    DELETE("Delete");
+    DELETE("Delete"),
+    INVALIDATE("Invalidate");
 
     private String value;
 

@@ -44,7 +44,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putExternalcontactsContact**](ExternalContactsApi.html#putExternalcontactsContact) | Update an external contact |
 | [**putExternalcontactsContactNote**](ExternalContactsApi.html#putExternalcontactsContactNote) | Update a note for an external contact |
 | [**putExternalcontactsContactsSchema**](ExternalContactsApi.html#putExternalcontactsContactsSchema) | Update a schema |
-| [**putExternalcontactsConversation**](ExternalContactsApi.html#putExternalcontactsConversation) | Associate an external contact with a conversation |
+| [**putExternalcontactsConversation**](ExternalContactsApi.html#putExternalcontactsConversation) | Associate/disassociate an external contact with a conversation |
 | [**putExternalcontactsOrganization**](ExternalContactsApi.html#putExternalcontactsOrganization) | Update an external organization |
 | [**putExternalcontactsOrganizationNote**](ExternalContactsApi.html#putExternalcontactsOrganizationNote) | Update a note for an external organization |
 | [**putExternalcontactsOrganizationTrustorTrustorId**](ExternalContactsApi.html#putExternalcontactsOrganizationTrustorTrustorId) | Links a Trustor with an External Organization |
@@ -2480,9 +2480,9 @@ try {
 
 > Void putExternalcontactsConversation(conversationId, body)
 
-Associate an external contact with a conversation
+Associate/disassociate an external contact with a conversation
 
-
+To associate, supply a value for the externalContactId.  To disassociate, do not include the property at all.
 
 Wraps PUT /api/v2/externalcontacts/conversations/{conversationId}  
 

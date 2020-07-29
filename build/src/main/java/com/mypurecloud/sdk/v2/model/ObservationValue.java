@@ -69,6 +69,83 @@ public class ObservationValue  implements Serializable {
   private String ani = null;
   private String dnis = null;
   private String teamId = null;
+
+  /**
+   * Gets or Sets requestedRoutings
+   */
+  public enum RequestedRoutingsEnum {
+    PREDICTIVE("Predictive"),
+    PREFERRED("Preferred"),
+    MANUAL("Manual"),
+    LAST("Last"),
+    BULLSEYE("Bullseye"),
+    STANDARD("Standard");
+
+    private String value;
+
+    RequestedRoutingsEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static RequestedRoutingsEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (RequestedRoutingsEnum value : RequestedRoutingsEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return RequestedRoutingsEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<RequestedRoutingsEnum> requestedRoutings = new ArrayList<RequestedRoutingsEnum>();
+
+  /**
+   * Complete routing method
+   */
+  public enum UsedRoutingEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    PREDICTIVE("Predictive"),
+    PREFERRED("Preferred"),
+    MANUAL("Manual"),
+    LAST("Last"),
+    BULLSEYE("Bullseye"),
+    STANDARD("Standard");
+
+    private String value;
+
+    UsedRoutingEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static UsedRoutingEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (UsedRoutingEnum value : UsedRoutingEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return UsedRoutingEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private UsedRoutingEnum usedRouting = null;
   private List<AnalyticsScoredAgent> scoredAgents = new ArrayList<AnalyticsScoredAgent>();
 
   
@@ -343,20 +420,56 @@ public class ObservationValue  implements Serializable {
 
   
   /**
-   * The team Id the user is a member of
+   * The team id the user is a member of
    **/
   public ObservationValue teamId(String teamId) {
     this.teamId = teamId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The team Id the user is a member of")
+  @ApiModelProperty(example = "null", value = "The team id the user is a member of")
   @JsonProperty("teamId")
   public String getTeamId() {
     return teamId;
   }
   public void setTeamId(String teamId) {
     this.teamId = teamId;
+  }
+
+  
+  /**
+   * All routing types for requested/attempted routing methods
+   **/
+  public ObservationValue requestedRoutings(List<RequestedRoutingsEnum> requestedRoutings) {
+    this.requestedRoutings = requestedRoutings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "All routing types for requested/attempted routing methods")
+  @JsonProperty("requestedRoutings")
+  public List<RequestedRoutingsEnum> getRequestedRoutings() {
+    return requestedRoutings;
+  }
+  public void setRequestedRoutings(List<RequestedRoutingsEnum> requestedRoutings) {
+    this.requestedRoutings = requestedRoutings;
+  }
+
+  
+  /**
+   * Complete routing method
+   **/
+  public ObservationValue usedRouting(UsedRoutingEnum usedRouting) {
+    this.usedRouting = usedRouting;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Complete routing method")
+  @JsonProperty("usedRouting")
+  public UsedRoutingEnum getUsedRouting() {
+    return usedRouting;
+  }
+  public void setUsedRouting(UsedRoutingEnum usedRouting) {
+    this.usedRouting = usedRouting;
   }
 
   
@@ -403,12 +516,14 @@ public class ObservationValue  implements Serializable {
         Objects.equals(this.ani, observationValue.ani) &&
         Objects.equals(this.dnis, observationValue.dnis) &&
         Objects.equals(this.teamId, observationValue.teamId) &&
+        Objects.equals(this.requestedRoutings, observationValue.requestedRoutings) &&
+        Objects.equals(this.usedRouting, observationValue.usedRouting) &&
         Objects.equals(this.scoredAgents, observationValue.scoredAgents);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(observationDate, conversationId, sessionId, requestedRoutingSkillIds, requestedLanguageId, routingPriority, participantName, userId, direction, convertedFrom, convertedTo, addressFrom, addressTo, ani, dnis, teamId, scoredAgents);
+    return Objects.hash(observationDate, conversationId, sessionId, requestedRoutingSkillIds, requestedLanguageId, routingPriority, participantName, userId, direction, convertedFrom, convertedTo, addressFrom, addressTo, ani, dnis, teamId, requestedRoutings, usedRouting, scoredAgents);
   }
 
   @Override
@@ -432,6 +547,8 @@ public class ObservationValue  implements Serializable {
     sb.append("    ani: ").append(toIndentedString(ani)).append("\n");
     sb.append("    dnis: ").append(toIndentedString(dnis)).append("\n");
     sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
+    sb.append("    requestedRoutings: ").append(toIndentedString(requestedRoutings)).append("\n");
+    sb.append("    usedRouting: ").append(toIndentedString(usedRouting)).append("\n");
     sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -107,6 +107,7 @@ title: SegmentDetailQueryPredicate
 | REMOTE | &quot;remote&quot; |
 | REMOTENAMEDISPLAYABLE | &quot;remoteNameDisplayable&quot; |
 | REQUESTEDLANGUAGEID | &quot;requestedLanguageId&quot; |
+| REQUESTEDROUTING | &quot;requestedRouting&quot; |
 | REQUESTEDROUTINGSKILLID | &quot;requestedRoutingSkillId&quot; |
 | REQUESTEDROUTINGUSERID | &quot;requestedRoutingUserId&quot; |
 | ROOMID | &quot;roomId&quot; |
@@ -116,6 +117,8 @@ title: SegmentDetailQueryPredicate
 | SCRIPTID | &quot;scriptId&quot; |
 | SEGMENTEND | &quot;segmentEnd&quot; |
 | SEGMENTTYPE | &quot;segmentType&quot; |
+| SELECTEDAGENTID | &quot;selectedAgentId&quot; |
+| SELECTEDAGENTRANK | &quot;selectedAgentRank&quot; |
 | SESSIONDNIS | &quot;sessionDnis&quot; |
 | SESSIONID | &quot;sessionId&quot; |
 | SHARINGSCREEN | &quot;sharingScreen&quot; |
@@ -130,6 +133,7 @@ title: SegmentDetailQueryPredicate
 | TRANSFERTARGETADDRESS | &quot;transferTargetAddress&quot; |
 | TRANSFERTARGETNAME | &quot;transferTargetName&quot; |
 | TRANSFERTYPE | &quot;transferType&quot; |
+| USEDROUTING | &quot;usedRouting&quot; |
 | USERID | &quot;userId&quot; |
 | VIDEOADDRESSSELF | &quot;videoAddressSelf&quot; |
 | VIDEOMUTED | &quot;videoMuted&quot; |

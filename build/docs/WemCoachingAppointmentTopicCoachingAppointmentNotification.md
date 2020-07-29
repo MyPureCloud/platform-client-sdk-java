@@ -35,6 +35,7 @@ title: WemCoachingAppointmentTopicCoachingAppointmentNotification
 | SCHEDULED | &quot;Scheduled&quot; |
 | INPROGRESS | &quot;InProgress&quot; |
 | COMPLETED | &quot;Completed&quot; |
+| INVALIDSCHEDULE | &quot;InvalidSchedule&quot; |
 {: class="table table-striped"}
 
 
@@ -48,6 +49,7 @@ title: WemCoachingAppointmentTopicCoachingAppointmentNotification
 | CREATE | &quot;Create&quot; |
 | UPDATE | &quot;Update&quot; |
 | DELETE | &quot;Delete&quot; |
+| INVALIDATE | &quot;Invalidate&quot; |
 {: class="table table-striped"}
 
 

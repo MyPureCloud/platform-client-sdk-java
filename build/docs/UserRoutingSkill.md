@@ -10,7 +10,7 @@ title: UserRoutingSkill
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **proficiency** | <!----><!---->**Double**<!----> | Proficiency is a rating from 0.0 to 5.0 on how competent an agent is for a particular skill. It is used when a queue is set to \&quot;Best available skills\&quot; mode to allow acd interactions to target agents with higher proficiency ratings. |  [optional] |
+| **proficiency** | <!----><!---->**Double**<!----> | A rating from 0.0 to 5.0 that indicates how adept an agent is at a particular skill. When \&quot;Best available skills\&quot; is enabled for a queue in Genesys Cloud, ACD interactions in that queue are routed to agents with higher proficiency ratings. |  [optional] |
 | **state** | [**StateEnum**](#StateEnum)<!----> | Activate or deactivate this routing skill. |  [optional] |
 | **skillUri** | <!----><!---->**String**<!----> | URI to the organization skill used by this user skill. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |

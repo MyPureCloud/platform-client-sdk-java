@@ -136,6 +136,20 @@ public class GetArchitectSchedulegroupsRequest {
 	    return this;
 	} 
 	
+	private String scheduleIds;
+	public String getScheduleIds() {
+		return this.scheduleIds;
+	}
+
+	public void setScheduleIds(String scheduleIds) {
+		this.scheduleIds = scheduleIds;
+	}
+
+	public GetArchitectSchedulegroupsRequest withScheduleIds(String scheduleIds) {
+	    this.setScheduleIds(scheduleIds);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -168,6 +182,8 @@ public class GetArchitectSchedulegroupsRequest {
                 .withQueryParameters("sortOrder", "", sortOrder)
         
                 .withQueryParameters("name", "", name)
+        
+                .withQueryParameters("scheduleIds", "", scheduleIds)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -212,6 +228,11 @@ public class GetArchitectSchedulegroupsRequest {
 		
 		public Builder withName(String name) {
 			request.setName(name);
+			return this;
+		}
+		
+		public Builder withScheduleIds(String scheduleIds) {
+			request.setScheduleIds(scheduleIds);
 			return this;
 		}
 		

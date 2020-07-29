@@ -11,6 +11,7 @@ title: QueueConversationSocialExpressionEventTopicMessage
 | **id** | <!----><!---->**String**<!----> |  |  [optional] |
 | **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
 | **held** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **errorInfo** | <!----><!---->[**QueueConversationSocialExpressionEventTopicErrorDetails**](QueueConversationSocialExpressionEventTopicErrorDetails.html)<!----> |  |  [optional] |
 | **provider** | <!----><!---->**String**<!----> |  |  [optional] |
 | **scriptId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **peerId** | <!----><!---->**String**<!----> |  |  [optional] |

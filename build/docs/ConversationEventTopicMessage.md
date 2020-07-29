@@ -11,6 +11,7 @@ title: ConversationEventTopicMessage
 | **id** | <!----><!---->**String**<!----> |  |  [optional] |
 | **state** | [**StateEnum**](#StateEnum)<!----> |  |  [optional] |
 | **held** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **errorInfo** | <!----><!---->[**ConversationEventTopicErrorDetails**](ConversationEventTopicErrorDetails.html)<!----> |  |  [optional] |
 | **provider** | <!----><!---->**String**<!----> |  |  [optional] |
 | **scriptId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **peerId** | <!----><!---->**String**<!----> |  |  [optional] |

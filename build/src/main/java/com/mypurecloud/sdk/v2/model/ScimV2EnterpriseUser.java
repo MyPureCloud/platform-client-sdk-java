@@ -10,9 +10,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Defines an SCIM enterprise user.
+ * Defines a SCIM enterprise user.
  */
-@ApiModel(description = "Defines an SCIM enterprise user.")
+@ApiModel(description = "Defines a SCIM enterprise user.")
 
 public class ScimV2EnterpriseUser  implements Serializable {
   

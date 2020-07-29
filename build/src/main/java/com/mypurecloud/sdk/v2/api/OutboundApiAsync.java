@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Campaign;
+import com.mypurecloud.sdk.v2.model.MessagingCampaign;
 import com.mypurecloud.sdk.v2.model.AttemptLimits;
 import com.mypurecloud.sdk.v2.model.AttemptLimitsEntityListing;
 import com.mypurecloud.sdk.v2.model.CallableTimeSet;
@@ -28,6 +29,8 @@ import com.mypurecloud.sdk.v2.model.CampaignStats;
 import com.mypurecloud.sdk.v2.model.CampaignRule;
 import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.CommonCampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.CommonCampaignDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionView;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.ContactList;
@@ -46,6 +49,9 @@ import com.mypurecloud.sdk.v2.model.DncListDivisionView;
 import com.mypurecloud.sdk.v2.model.DncListDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.EventLog;
 import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionView;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.RuleSet;
 import com.mypurecloud.sdk.v2.model.RuleSetEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignSchedule;
@@ -76,6 +82,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistContactsReque
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistfilterRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundContactlistsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundDnclistRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOutboundMessagingcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundRulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSchedulesCampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOutboundSchedulesSequenceRequest;
@@ -94,6 +101,8 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignStatsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignruleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsAllRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsAllDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsDivisionviewRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundContactlistRequest;
@@ -114,6 +123,11 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistsDivisionviewRequest
 import com.mypurecloud.sdk.v2.api.request.GetOutboundDnclistsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundEventRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundEventsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignProgressRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignsDivisionviewRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundMessagingcampaignsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundRulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundRulesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundSchedulesCampaignRequest;
@@ -144,6 +158,8 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundConversationDncRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistExportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistPhonenumbersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundDnclistsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundMessagingcampaignsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundMessagingcampaignsProgressRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundRulesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundSequencesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundAttemptlimitRequest;
@@ -156,6 +172,7 @@ import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistContactRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundContactlistfilterRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundDnclistRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOutboundMessagingcampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundRulesetRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesCampaignRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOutboundSchedulesSequenceRequest;
@@ -1082,6 +1099,82 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Delete an Outbound Messaging Campaign
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MessagingCampaign> deleteOutboundMessagingcampaignAsync(DeleteOutboundMessagingcampaignRequest request, final AsyncApiCallback<MessagingCampaign> callback) {
+    try {
+      final SettableFuture<MessagingCampaign> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MessagingCampaign>() {}, new AsyncApiCallback<ApiResponse<MessagingCampaign>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessagingCampaign> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an Outbound Messaging Campaign
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MessagingCampaign>> deleteOutboundMessagingcampaignAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MessagingCampaign>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MessagingCampaign>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MessagingCampaign>() {}, new AsyncApiCallback<ApiResponse<MessagingCampaign>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessagingCampaign> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessagingCampaign> response = (ApiResponse<MessagingCampaign>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessagingCampaign> response = (ApiResponse<MessagingCampaign>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2450,6 +2543,158 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CampaignEntityListing> response = (ApiResponse<CampaignEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Query across all types of campaigns by division
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CommonCampaignEntityListing> getOutboundCampaignsAllAsync(GetOutboundCampaignsAllRequest request, final AsyncApiCallback<CommonCampaignEntityListing> callback) {
+    try {
+      final SettableFuture<CommonCampaignEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CommonCampaignEntityListing>() {}, new AsyncApiCallback<ApiResponse<CommonCampaignEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CommonCampaignEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query across all types of campaigns by division
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CommonCampaignEntityListing>> getOutboundCampaignsAllAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CommonCampaignEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CommonCampaignEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CommonCampaignEntityListing>() {}, new AsyncApiCallback<ApiResponse<CommonCampaignEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CommonCampaignEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CommonCampaignEntityListing> response = (ApiResponse<CommonCampaignEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CommonCampaignEntityListing> response = (ApiResponse<CommonCampaignEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Query across all types of campaigns
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CommonCampaignDivisionViewEntityListing> getOutboundCampaignsAllDivisionviewsAsync(GetOutboundCampaignsAllDivisionviewsRequest request, final AsyncApiCallback<CommonCampaignDivisionViewEntityListing> callback) {
+    try {
+      final SettableFuture<CommonCampaignDivisionViewEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CommonCampaignDivisionViewEntityListing>() {}, new AsyncApiCallback<ApiResponse<CommonCampaignDivisionViewEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CommonCampaignDivisionViewEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query across all types of campaigns
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CommonCampaignDivisionViewEntityListing>> getOutboundCampaignsAllDivisionviewsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CommonCampaignDivisionViewEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CommonCampaignDivisionViewEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CommonCampaignDivisionViewEntityListing>() {}, new AsyncApiCallback<ApiResponse<CommonCampaignDivisionViewEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CommonCampaignDivisionViewEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CommonCampaignDivisionViewEntityListing> response = (ApiResponse<CommonCampaignDivisionViewEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CommonCampaignDivisionViewEntityListing> response = (ApiResponse<CommonCampaignDivisionViewEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3970,6 +4215,386 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DialerEventEntityListing> response = (ApiResponse<DialerEventEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get an Outbound Messaging Campaign
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MessagingCampaign> getOutboundMessagingcampaignAsync(GetOutboundMessagingcampaignRequest request, final AsyncApiCallback<MessagingCampaign> callback) {
+    try {
+      final SettableFuture<MessagingCampaign> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MessagingCampaign>() {}, new AsyncApiCallback<ApiResponse<MessagingCampaign>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessagingCampaign> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an Outbound Messaging Campaign
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MessagingCampaign>> getOutboundMessagingcampaignAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MessagingCampaign>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MessagingCampaign>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MessagingCampaign>() {}, new AsyncApiCallback<ApiResponse<MessagingCampaign>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessagingCampaign> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessagingCampaign> response = (ApiResponse<MessagingCampaign>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessagingCampaign> response = (ApiResponse<MessagingCampaign>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get messaging campaign&#39;s progress
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CampaignProgress> getOutboundMessagingcampaignProgressAsync(GetOutboundMessagingcampaignProgressRequest request, final AsyncApiCallback<CampaignProgress> callback) {
+    try {
+      final SettableFuture<CampaignProgress> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CampaignProgress>() {}, new AsyncApiCallback<ApiResponse<CampaignProgress>>() {
+        @Override
+        public void onCompleted(ApiResponse<CampaignProgress> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get messaging campaign&#39;s progress
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CampaignProgress>> getOutboundMessagingcampaignProgressAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CampaignProgress>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CampaignProgress>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CampaignProgress>() {}, new AsyncApiCallback<ApiResponse<CampaignProgress>>() {
+        @Override
+        public void onCompleted(ApiResponse<CampaignProgress> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CampaignProgress> response = (ApiResponse<CampaignProgress>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CampaignProgress> response = (ApiResponse<CampaignProgress>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Query a list of Messaging Campaigns
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MessagingCampaignEntityListing> getOutboundMessagingcampaignsAsync(GetOutboundMessagingcampaignsRequest request, final AsyncApiCallback<MessagingCampaignEntityListing> callback) {
+    try {
+      final SettableFuture<MessagingCampaignEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MessagingCampaignEntityListing>() {}, new AsyncApiCallback<ApiResponse<MessagingCampaignEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessagingCampaignEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query a list of Messaging Campaigns
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MessagingCampaignEntityListing>> getOutboundMessagingcampaignsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MessagingCampaignEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MessagingCampaignEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MessagingCampaignEntityListing>() {}, new AsyncApiCallback<ApiResponse<MessagingCampaignEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessagingCampaignEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessagingCampaignEntityListing> response = (ApiResponse<MessagingCampaignEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessagingCampaignEntityListing> response = (ApiResponse<MessagingCampaignEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a basic Messaging Campaign information object
+   * This returns a simplified version of a Messaging Campaign, consisting of id, name, and division.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MessagingCampaignDivisionView> getOutboundMessagingcampaignsDivisionviewAsync(GetOutboundMessagingcampaignsDivisionviewRequest request, final AsyncApiCallback<MessagingCampaignDivisionView> callback) {
+    try {
+      final SettableFuture<MessagingCampaignDivisionView> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MessagingCampaignDivisionView>() {}, new AsyncApiCallback<ApiResponse<MessagingCampaignDivisionView>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessagingCampaignDivisionView> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a basic Messaging Campaign information object
+   * This returns a simplified version of a Messaging Campaign, consisting of id, name, and division.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MessagingCampaignDivisionView>> getOutboundMessagingcampaignsDivisionviewAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MessagingCampaignDivisionView>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MessagingCampaignDivisionView>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MessagingCampaignDivisionView>() {}, new AsyncApiCallback<ApiResponse<MessagingCampaignDivisionView>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessagingCampaignDivisionView> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessagingCampaignDivisionView> response = (ApiResponse<MessagingCampaignDivisionView>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessagingCampaignDivisionView> response = (ApiResponse<MessagingCampaignDivisionView>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Query a list of basic Messaging Campaign information objects
+   * This returns a listing of simplified Messaging Campaigns, each consisting of id, name, and division.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MessagingCampaignDivisionViewEntityListing> getOutboundMessagingcampaignsDivisionviewsAsync(GetOutboundMessagingcampaignsDivisionviewsRequest request, final AsyncApiCallback<MessagingCampaignDivisionViewEntityListing> callback) {
+    try {
+      final SettableFuture<MessagingCampaignDivisionViewEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MessagingCampaignDivisionViewEntityListing>() {}, new AsyncApiCallback<ApiResponse<MessagingCampaignDivisionViewEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessagingCampaignDivisionViewEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query a list of basic Messaging Campaign information objects
+   * This returns a listing of simplified Messaging Campaigns, each consisting of id, name, and division.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MessagingCampaignDivisionViewEntityListing>> getOutboundMessagingcampaignsDivisionviewsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MessagingCampaignDivisionViewEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MessagingCampaignDivisionViewEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MessagingCampaignDivisionViewEntityListing>() {}, new AsyncApiCallback<ApiResponse<MessagingCampaignDivisionViewEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessagingCampaignDivisionViewEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessagingCampaignDivisionViewEntityListing> response = (ApiResponse<MessagingCampaignDivisionViewEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessagingCampaignDivisionViewEntityListing> response = (ApiResponse<MessagingCampaignDivisionViewEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -6263,6 +6888,158 @@ public class OutboundApiAsync {
 
   
   /**
+   * Create a Messaging Campaign
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MessagingCampaign> postOutboundMessagingcampaignsAsync(PostOutboundMessagingcampaignsRequest request, final AsyncApiCallback<MessagingCampaign> callback) {
+    try {
+      final SettableFuture<MessagingCampaign> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MessagingCampaign>() {}, new AsyncApiCallback<ApiResponse<MessagingCampaign>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessagingCampaign> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a Messaging Campaign
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MessagingCampaign>> postOutboundMessagingcampaignsAsync(ApiRequest<MessagingCampaign> request, final AsyncApiCallback<ApiResponse<MessagingCampaign>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MessagingCampaign>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MessagingCampaign>() {}, new AsyncApiCallback<ApiResponse<MessagingCampaign>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessagingCampaign> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessagingCampaign> response = (ApiResponse<MessagingCampaign>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessagingCampaign> response = (ApiResponse<MessagingCampaign>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get progress for a list of messaging campaigns
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<CampaignProgress>> postOutboundMessagingcampaignsProgressAsync(PostOutboundMessagingcampaignsProgressRequest request, final AsyncApiCallback<List<CampaignProgress>> callback) {
+    try {
+      final SettableFuture<List<CampaignProgress>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<CampaignProgress>>() {}, new AsyncApiCallback<ApiResponse<List<CampaignProgress>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<CampaignProgress>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get progress for a list of messaging campaigns
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<CampaignProgress>>> postOutboundMessagingcampaignsProgressAsync(ApiRequest<List<String>> request, final AsyncApiCallback<ApiResponse<List<CampaignProgress>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<CampaignProgress>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<CampaignProgress>>() {}, new AsyncApiCallback<ApiResponse<List<CampaignProgress>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<CampaignProgress>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<CampaignProgress>> response = (ApiResponse<List<CampaignProgress>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<CampaignProgress>> response = (ApiResponse<List<CampaignProgress>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Create a Dialer Call Analysis Response Set.
    * 
    * @param request the request object
@@ -7162,6 +7939,82 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DncList> response = (ApiResponse<DncList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update an Outbound Messaging Campaign
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MessagingCampaign> putOutboundMessagingcampaignAsync(PutOutboundMessagingcampaignRequest request, final AsyncApiCallback<MessagingCampaign> callback) {
+    try {
+      final SettableFuture<MessagingCampaign> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MessagingCampaign>() {}, new AsyncApiCallback<ApiResponse<MessagingCampaign>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessagingCampaign> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an Outbound Messaging Campaign
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MessagingCampaign>> putOutboundMessagingcampaignAsync(ApiRequest<MessagingCampaign> request, final AsyncApiCallback<ApiResponse<MessagingCampaign>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MessagingCampaign>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MessagingCampaign>() {}, new AsyncApiCallback<ApiResponse<MessagingCampaign>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessagingCampaign> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessagingCampaign> response = (ApiResponse<MessagingCampaign>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessagingCampaign> response = (ApiResponse<MessagingCampaign>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

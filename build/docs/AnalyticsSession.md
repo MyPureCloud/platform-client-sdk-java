@@ -61,6 +61,10 @@ title: AnalyticsSession
 | **remote** | <!----><!---->**String**<!----> | Name, phone number, or email address of the remote party. |  [optional] |
 | **mediaCount** | <!----><!---->**Integer**<!----> | Count of any media (images, files, etc) included in this session |  [optional] |
 | **flowOutType** | <!----><!---->**String**<!----> | Type of flow out that occurred, e.g. voicemail, callback, or acd |  [optional] |
+| **requestedRoutings** | <!---->[**List&lt;RequestedRoutingsEnum&gt;**](#RequestedRoutingsEnum)<!----> | All routing types for requested/attempted routing methods. |  [optional] |
+| **usedRouting** | [**UsedRoutingEnum**](#UsedRoutingEnum)<!----> | Complete routing method |  [optional] |
+| **selectedAgentId** | <!----><!---->**String**<!----> | Selected agent id |  [optional] |
+| **selectedAgentRank** | <!----><!---->**Integer**<!----> | Selected agent GPR rank |  [optional] |
 {: class="table table-striped"}
 
 
@@ -105,6 +109,37 @@ title: AnalyticsSession
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | INBOUND | &quot;inbound&quot; |
 | OUTBOUND | &quot;outbound&quot; |
+{: class="table table-striped"}
+
+
+<a name="RequestedRoutingsEnum"></a>
+
+## Enum: RequestedRoutingsEnum
+
+| Name | Value |
+| ---- | ----- |
+| PREDICTIVE | &quot;Predictive&quot; |
+| PREFERRED | &quot;Preferred&quot; |
+| MANUAL | &quot;Manual&quot; |
+| LAST | &quot;Last&quot; |
+| BULLSEYE | &quot;Bullseye&quot; |
+| STANDARD | &quot;Standard&quot; |
+{: class="table table-striped"}
+
+
+<a name="UsedRoutingEnum"></a>
+
+## Enum: UsedRoutingEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| PREDICTIVE | &quot;Predictive&quot; |
+| PREFERRED | &quot;Preferred&quot; |
+| MANUAL | &quot;Manual&quot; |
+| LAST | &quot;Last&quot; |
+| BULLSEYE | &quot;Bullseye&quot; |
+| STANDARD | &quot;Standard&quot; |
 {: class="table table-striped"}
 
 

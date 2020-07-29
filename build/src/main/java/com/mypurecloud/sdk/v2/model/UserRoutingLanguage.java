@@ -10,9 +10,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Represents an organization langauge assigned to a user. When assigning to a user specify the organization language id as the id.
+ * Represents an organization language assigned to a user. When assigning to a user specify the organization language id as the id.
  */
-@ApiModel(description = "Represents an organization langauge assigned to a user. When assigning to a user specify the organization language id as the id.")
+@ApiModel(description = "Represents an organization language assigned to a user. When assigning to a user specify the organization language id as the id.")
 
 public class UserRoutingLanguage  implements Serializable {
   
@@ -21,7 +21,7 @@ public class UserRoutingLanguage  implements Serializable {
   private Double proficiency = null;
 
   /**
-   * Activate or deactivate this routing langauge.
+   * Activate or deactivate this routing language.
    */
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -84,14 +84,14 @@ public class UserRoutingLanguage  implements Serializable {
 
   
   /**
-   * Proficiency is a rating from 0.0 to 5.0 on how competent an agent is for a particular language. It is used when a queue is set to \"Best available language\" mode to allow acd interactions to target agents with higher proficiency ratings.
+   * A rating from 0.0 to 5.0 that indicates how fluent an agent is in a particular language. ACD interactions are routed to agents with higher proficiency ratings.
    **/
   public UserRoutingLanguage proficiency(Double proficiency) {
     this.proficiency = proficiency;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Proficiency is a rating from 0.0 to 5.0 on how competent an agent is for a particular language. It is used when a queue is set to \"Best available language\" mode to allow acd interactions to target agents with higher proficiency ratings.")
+  @ApiModelProperty(example = "null", value = "A rating from 0.0 to 5.0 that indicates how fluent an agent is in a particular language. ACD interactions are routed to agents with higher proficiency ratings.")
   @JsonProperty("proficiency")
   public Double getProficiency() {
     return proficiency;
@@ -102,14 +102,14 @@ public class UserRoutingLanguage  implements Serializable {
 
   
   /**
-   * Activate or deactivate this routing langauge.
+   * Activate or deactivate this routing language.
    **/
   public UserRoutingLanguage state(StateEnum state) {
     this.state = state;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Activate or deactivate this routing langauge.")
+  @ApiModelProperty(example = "null", value = "Activate or deactivate this routing language.")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
@@ -119,7 +119,7 @@ public class UserRoutingLanguage  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "URI to the organization language used by this user langauge.")
+  @ApiModelProperty(example = "null", value = "URI to the organization language used by this user language.")
   @JsonProperty("languageUri")
   public String getLanguageUri() {
     return languageUri;

@@ -31,7 +31,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 
-> Void deleteCoachingAppointment(appointmentId)
+> [CoachingAppointmentReference](CoachingAppointmentReference.html) deleteCoachingAppointment(appointmentId)
 
 Delete an existing appointment
 
@@ -67,7 +67,8 @@ Configuration.setDefaultApiClient(apiClient);
 CoachingApi apiInstance = new CoachingApi();
 String appointmentId = "appointmentId_example"; // String | The ID of the coaching appointment.
 try {
-    apiInstance.deleteCoachingAppointment(appointmentId);
+    CoachingAppointmentReference result = apiInstance.deleteCoachingAppointment(appointmentId);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CoachingApi#deleteCoachingAppointment");
     e.printStackTrace();
@@ -85,7 +86,7 @@ try {
 
 ### Return type
 
-null (empty response body)
+[**CoachingAppointmentReference**](CoachingAppointmentReference.html)
 
 <a name="deleteCoachingAppointmentAnnotation"></a>
 
@@ -457,7 +458,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 CoachingApi apiInstance = new CoachingApi();
 List<String> userIds = Arrays.asList("userIds_example"); // List<String> | The user IDs for which to retrieve appointments
-String interval = "interval_example"; // String | Interval string; format is ISO-8601. Separate start and end times with forward slash '/'
+String interval = "interval_example"; // String | Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 List<String> statuses = Arrays.asList("statuses_example"); // List<String> | Appointment Statuses to filter by
@@ -478,7 +479,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userIds** | [**List&lt;String&gt;**](String.html)| The user IDs for which to retrieve appointments | 
-| **interval** | **String**| Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; | [optional] 
+| **interval** | **String**| Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **statuses** | [**List&lt;String&gt;**](String.html)| Appointment Statuses to filter by | [optional]<br />**Values**: Scheduled, InProgress, Completed, InvalidSchedule 
@@ -530,7 +531,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 CoachingApi apiInstance = new CoachingApi();
-String interval = "interval_example"; // String | Interval string; format is ISO-8601. Separate start and end times with forward slash '/'
+String interval = "interval_example"; // String | Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 List<String> statuses = Arrays.asList("statuses_example"); // List<String> | Appointment Statuses to filter by
@@ -550,7 +551,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **interval** | **String**| Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; | [optional] 
+| **interval** | **String**| Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **statuses** | [**List&lt;String&gt;**](String.html)| Appointment Statuses to filter by | [optional]<br />**Values**: Scheduled, InProgress, Completed 

@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentReference;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponse;
 import com.mypurecloud.sdk.v2.model.CoachingAnnotation;
 import com.mypurecloud.sdk.v2.model.CoachingAnnotationList;
@@ -71,13 +72,13 @@ public class CoachingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> deleteCoachingAppointmentAsync(DeleteCoachingAppointmentRequest request, final AsyncApiCallback<Void> callback) {
+  public Future<CoachingAppointmentReference> deleteCoachingAppointmentAsync(DeleteCoachingAppointmentRequest request, final AsyncApiCallback<CoachingAppointmentReference> callback) {
     try {
-      final SettableFuture<Void> future = SettableFuture.create();
+      final SettableFuture<CoachingAppointmentReference> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CoachingAppointmentReference>() {}, new AsyncApiCallback<ApiResponse<CoachingAppointmentReference>>() {
         @Override
-        public void onCompleted(ApiResponse<Void> response) {
+        public void onCompleted(ApiResponse<CoachingAppointmentReference> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -105,13 +106,13 @@ public class CoachingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> deleteCoachingAppointmentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<CoachingAppointmentReference>> deleteCoachingAppointmentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CoachingAppointmentReference>> callback) {
     try {
-      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<CoachingAppointmentReference>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<CoachingAppointmentReference>() {}, new AsyncApiCallback<ApiResponse<CoachingAppointmentReference>>() {
         @Override
-        public void onCompleted(ApiResponse<Void> response) {
+        public void onCompleted(ApiResponse<CoachingAppointmentReference> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -119,7 +120,7 @@ public class CoachingApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            ApiResponse<CoachingAppointmentReference> response = (ApiResponse<CoachingAppointmentReference>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -127,7 +128,7 @@ public class CoachingApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<CoachingAppointmentReference> response = (ApiResponse<CoachingAppointmentReference>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -63,14 +63,14 @@ public class ConversationAssociation  implements Serializable {
 
   
   /**
-   * External Contact ID
+   * An external contact ID.  If not supplied, implies the conversation should be disassociated with any external contact.
    **/
   public ConversationAssociation externalContactId(String externalContactId) {
     this.externalContactId = externalContactId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "External Contact ID")
+  @ApiModelProperty(example = "null", value = "An external contact ID.  If not supplied, implies the conversation should be disassociated with any external contact.")
   @JsonProperty("externalContactId")
   public String getExternalContactId() {
     return externalContactId;

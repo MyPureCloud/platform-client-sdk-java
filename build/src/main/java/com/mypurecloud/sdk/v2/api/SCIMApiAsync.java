@@ -85,7 +85,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Delete a group.
+   * Delete a group
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -119,7 +119,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Delete a group.
+   * Delete a group
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -237,7 +237,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Delete a group.
+   * Delete a group
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -271,7 +271,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Delete a group.
+   * Delete a group
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -693,7 +693,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Get the SCIM schema by id
+   * Get a SCIM schema
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -727,7 +727,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Get the SCIM schema by id
+   * Get a SCIM schema
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -769,7 +769,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Get the SCIM schemas
+   * Get a list of SCIM schemas
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -803,7 +803,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Get the SCIM schemas
+   * Get a list of SCIM schemas
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -998,7 +998,7 @@ public class SCIMApiAsync {
   
   /**
    * Get a list of users
-   * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
+   * To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \&quot;active eq false\&quot;. By default, returns SCIM attributes \&quot;externalId\&quot;, \&quot;enterprise-user:manager\&quot;, and \&quot;roles\&quot;. To exclude these attributes, set the attributes parameter to \&quot;id,active\&quot; or the excludeAttributes parameter to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1032,7 +1032,7 @@ public class SCIMApiAsync {
 
   /**
    * Get a list of users
-   * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
+   * To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \&quot;active eq false\&quot;. By default, returns SCIM attributes \&quot;externalId\&quot;, \&quot;enterprise-user:manager\&quot;, and \&quot;roles\&quot;. To exclude these attributes, set the attributes parameter to \&quot;id,active\&quot; or the excludeAttributes parameter to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1377,7 +1377,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Get the SCIM schema by id
+   * Get a SCIM schema
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1411,7 +1411,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Get the SCIM schema by id
+   * Get a SCIM schema
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1453,7 +1453,7 @@ public class SCIMApiAsync {
 
   
   /**
-   * Get the SCIM schemas
+   * Get a list of SCIM schemas
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1487,7 +1487,7 @@ public class SCIMApiAsync {
   }
 
   /**
-   * Get the SCIM schemas
+   * Get a list of SCIM schemas
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1682,7 +1682,7 @@ public class SCIMApiAsync {
   
   /**
    * Get a list of users
-   * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
+   * To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \&quot;active eq false\&quot;. By default, returns SCIM attributes \&quot;externalId\&quot;, \&quot;enterprise-user:manager\&quot;, and \&quot;roles\&quot;. To exclude these attributes, set the attributes parameter to \&quot;id,active\&quot; or the excludeAttributes parameter to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -1716,7 +1716,7 @@ public class SCIMApiAsync {
 
   /**
    * Get a list of users
-   * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
+   * To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \&quot;active eq false\&quot;. By default, returns SCIM attributes \&quot;externalId\&quot;, \&quot;enterprise-user:manager\&quot;, and \&quot;roles\&quot;. To exclude these attributes, set the attributes parameter to \&quot;id,active\&quot; or the excludeAttributes parameter to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2061,8 +2061,8 @@ public class SCIMApiAsync {
 
   
   /**
-   * The information used to create a group.
-   * PureCloud group will be created as \&quot;Official\&quot; group with visibility set \&quot;Public\&quot;, and rules visibility True. Will auto-create an external ID if one is not provided on create. External ID is used to determine if delete should be allowed.
+   * Creates a group
+   * Creates a Genesys Cloud group with group visibility set to \&quot;public\&quot; and rules visibility set to \&quot;true\&quot;. Auto-creates an \&quot;externalId\&quot;. \&quot;externalId\&quot; is used to determine if DELETE /api/v2/scim/groups/{groupId} or DELETE /api/v2/scim/v2/groups/{groupId} should be allowed.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2095,8 +2095,8 @@ public class SCIMApiAsync {
   }
 
   /**
-   * The information used to create a group.
-   * PureCloud group will be created as \&quot;Official\&quot; group with visibility set \&quot;Public\&quot;, and rules visibility True. Will auto-create an external ID if one is not provided on create. External ID is used to determine if delete should be allowed.
+   * Creates a group
+   * Creates a Genesys Cloud group with group visibility set to \&quot;public\&quot; and rules visibility set to \&quot;true\&quot;. Auto-creates an \&quot;externalId\&quot;. \&quot;externalId\&quot; is used to determine if DELETE /api/v2/scim/groups/{groupId} or DELETE /api/v2/scim/v2/groups/{groupId} should be allowed.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2213,8 +2213,8 @@ public class SCIMApiAsync {
 
   
   /**
-   * The information used to create a group.
-   * PureCloud group will be created as \&quot;Official\&quot; group with visibility set \&quot;Public\&quot;, and rules visibility True. Will auto-create an external ID if one is not provided on create. External ID is used to determine if delete should be allowed.
+   * Create a group
+   * Creates an \&quot;official\&quot; Genesys Cloud group with group visibility set to \&quot;public\&quot; and rules visibility set to \&quot;true\&quot;. Auto-creates an \&quot;externalId\&quot;. \&quot;externalId\&quot; is used to determine if DELETE /api/v2/scim/groups/{groupId} or DELETE /api/v2/scim/v2/groups/{groupId} should be allowed.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2247,8 +2247,8 @@ public class SCIMApiAsync {
   }
 
   /**
-   * The information used to create a group.
-   * PureCloud group will be created as \&quot;Official\&quot; group with visibility set \&quot;Public\&quot;, and rules visibility True. Will auto-create an external ID if one is not provided on create. External ID is used to determine if delete should be allowed.
+   * Create a group
+   * Creates an \&quot;official\&quot; Genesys Cloud group with group visibility set to \&quot;public\&quot; and rules visibility set to \&quot;true\&quot;. Auto-creates an \&quot;externalId\&quot;. \&quot;externalId\&quot; is used to determine if DELETE /api/v2/scim/groups/{groupId} or DELETE /api/v2/scim/v2/groups/{groupId} should be allowed.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

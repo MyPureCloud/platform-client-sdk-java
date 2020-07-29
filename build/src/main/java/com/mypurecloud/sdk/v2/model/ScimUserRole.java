@@ -19,14 +19,14 @@ public class ScimUserRole  implements Serializable {
 
   
   /**
-   * Purecloud user role name
+   * The role of the Genesys Cloud user.
    **/
   public ScimUserRole value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Purecloud user role name")
+  @ApiModelProperty(example = "null", value = "The role of the Genesys Cloud user.")
   @JsonProperty("value")
   public String getValue() {
     return value;

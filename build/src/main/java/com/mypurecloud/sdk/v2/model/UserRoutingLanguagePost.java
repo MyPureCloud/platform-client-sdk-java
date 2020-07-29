@@ -57,7 +57,7 @@ public class UserRoutingLanguagePost  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "URI to the organization language used by this user langauge.")
+  @ApiModelProperty(example = "null", value = "URI to the organization language used by this user language.")
   @JsonProperty("languageUri")
   public String getLanguageUri() {
     return languageUri;

@@ -2907,8 +2907,8 @@ public class ExternalContactsApiAsync {
 
   
   /**
-   * Associate an external contact with a conversation
-   * 
+   * Associate/disassociate an external contact with a conversation
+   * To associate, supply a value for the externalContactId.  To disassociate, do not include the property at all.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2941,8 +2941,8 @@ public class ExternalContactsApiAsync {
   }
 
   /**
-   * Associate an external contact with a conversation
-   * 
+   * Associate/disassociate an external contact with a conversation
+   * To associate, supply a value for the externalContactId.  To disassociate, do not include the property at all.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

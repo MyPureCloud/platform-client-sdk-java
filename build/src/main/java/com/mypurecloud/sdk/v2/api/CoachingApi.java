@@ -11,6 +11,7 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentReference;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponse;
 import com.mypurecloud.sdk.v2.model.CoachingAnnotation;
 import com.mypurecloud.sdk.v2.model.CoachingAnnotationList;
@@ -64,20 +65,22 @@ public class CoachingApi {
    * Delete an existing appointment
    * Permission not required if you are the creator of the appointment
    * @param appointmentId The ID of the coaching appointment. (required)
+   * @return CoachingAppointmentReference
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteCoachingAppointment(String appointmentId) throws IOException, ApiException {
-     deleteCoachingAppointment(createDeleteCoachingAppointmentRequest(appointmentId));
+  public CoachingAppointmentReference deleteCoachingAppointment(String appointmentId) throws IOException, ApiException {
+    return  deleteCoachingAppointment(createDeleteCoachingAppointmentRequest(appointmentId));
   }
 
   /**
    * Delete an existing appointment
    * Permission not required if you are the creator of the appointment
    * @param appointmentId The ID of the coaching appointment. (required)
+   * @return CoachingAppointmentReference
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteCoachingAppointmentWithHttpInfo(String appointmentId) throws IOException {
+  public ApiResponse<CoachingAppointmentReference> deleteCoachingAppointmentWithHttpInfo(String appointmentId) throws IOException {
     return deleteCoachingAppointment(createDeleteCoachingAppointmentRequest(appointmentId).withHttpInfo());
   }
 
@@ -92,17 +95,18 @@ public class CoachingApi {
    * Delete an existing appointment
    * Permission not required if you are the creator of the appointment
    * @param request The request object
+   * @return CoachingAppointmentReference
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteCoachingAppointment(DeleteCoachingAppointmentRequest request) throws IOException, ApiException {
+  public CoachingAppointmentReference deleteCoachingAppointment(DeleteCoachingAppointmentRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
+      ApiResponse<CoachingAppointmentReference> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CoachingAppointmentReference>() {});
+      return response.getBody();
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
+      return null;
     }
   }
 
@@ -113,13 +117,13 @@ public class CoachingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteCoachingAppointment(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<CoachingAppointmentReference> deleteCoachingAppointment(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, null);
+      return pcapiClient.invoke(request, new TypeReference<CoachingAppointmentReference>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      ApiResponse<CoachingAppointmentReference> response = (ApiResponse<CoachingAppointmentReference>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -130,7 +134,7 @@ public class CoachingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<CoachingAppointmentReference> response = (ApiResponse<CoachingAppointmentReference>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -556,7 +560,7 @@ public class CoachingApi {
    * Get appointments for users and optional date range
    * 
    * @param userIds The user IDs for which to retrieve appointments (required)
-   * @param interval Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; (optional)
+   * @param interval Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param statuses Appointment Statuses to filter by (optional)
@@ -574,7 +578,7 @@ public class CoachingApi {
    * Get appointments for users and optional date range
    * 
    * @param userIds The user IDs for which to retrieve appointments (required)
-   * @param interval Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; (optional)
+   * @param interval Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param statuses Appointment Statuses to filter by (optional)
@@ -658,7 +662,7 @@ public class CoachingApi {
   /**
    * Get my appointments for a given date range
    * 
-   * @param interval Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; (optional)
+   * @param interval Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param statuses Appointment Statuses to filter by (optional)
@@ -675,7 +679,7 @@ public class CoachingApi {
   /**
    * Get my appointments for a given date range
    * 
-   * @param interval Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; (optional)
+   * @param interval Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param statuses Appointment Statuses to filter by (optional)

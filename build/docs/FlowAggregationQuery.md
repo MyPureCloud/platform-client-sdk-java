@@ -77,10 +77,13 @@ title: FlowAggregationQuery
 | QUEUEID | &quot;queueId&quot; |
 | REMOTE | &quot;remote&quot; |
 | REQUESTEDLANGUAGEID | &quot;requestedLanguageId&quot; |
+| REQUESTEDROUTING | &quot;requestedRouting&quot; |
 | REQUESTEDROUTINGSKILLID | &quot;requestedRoutingSkillId&quot; |
 | ROOMID | &quot;roomId&quot; |
 | ROUTINGPRIORITY | &quot;routingPriority&quot; |
 | SCOREDAGENTID | &quot;scoredAgentId&quot; |
+| SELECTEDAGENTID | &quot;selectedAgentId&quot; |
+| SELECTEDAGENTRANK | &quot;selectedAgentRank&quot; |
 | SESSIONDNIS | &quot;sessionDnis&quot; |
 | SESSIONID | &quot;sessionId&quot; |
 | STARTINGLANGUAGE | &quot;startingLanguage&quot; |
@@ -89,6 +92,7 @@ title: FlowAggregationQuery
 | TRANSFERTARGETADDRESS | &quot;transferTargetAddress&quot; |
 | TRANSFERTARGETNAME | &quot;transferTargetName&quot; |
 | TRANSFERTYPE | &quot;transferType&quot; |
+| USEDROUTING | &quot;usedRouting&quot; |
 | USERID | &quot;userId&quot; |
 | WRAPUPCODE | &quot;wrapUpCode&quot; |
 {: class="table table-striped"}

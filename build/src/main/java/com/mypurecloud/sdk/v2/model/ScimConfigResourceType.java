@@ -29,7 +29,7 @@ public class ScimConfigResourceType  implements Serializable {
   private ScimMetadata meta = null;
 
   
-  @ApiModelProperty(example = "null", value = "The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"Mutability\" is set to \"readOnly\". \"Returned\" is set to \"always\".")
+  @ApiModelProperty(example = "null", value = "The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readOnly\". \"returned\" is set to \"always\".")
   @JsonProperty("id")
   public String getId() {
     return id;

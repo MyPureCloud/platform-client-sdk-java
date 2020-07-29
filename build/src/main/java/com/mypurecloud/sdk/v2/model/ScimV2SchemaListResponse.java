@@ -12,9 +12,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * SCIM Resource Types list response
+ * Defines the list response for SCIM resource types.
  */
-@ApiModel(description = "SCIM Resource Types list response")
+@ApiModel(description = "Defines the list response for SCIM resource types.")
 
 public class ScimV2SchemaListResponse  implements Serializable {
   
@@ -47,14 +47,14 @@ public class ScimV2SchemaListResponse  implements Serializable {
 
   
   /**
-   * Resources
+   * The list of requested resources.
    **/
   public ScimV2SchemaListResponse resources(List<ScimV2SchemaDefinition> resources) {
     this.resources = resources;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Resources")
+  @ApiModelProperty(example = "null", value = "The list of requested resources.")
   @JsonProperty("Resources")
   public List<ScimV2SchemaDefinition> getResources() {
     return resources;

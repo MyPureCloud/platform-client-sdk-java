@@ -22,6 +22,7 @@ import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Campaign;
+import com.mypurecloud.sdk.v2.model.MessagingCampaign;
 import com.mypurecloud.sdk.v2.model.AttemptLimits;
 import com.mypurecloud.sdk.v2.model.AttemptLimitsEntityListing;
 import com.mypurecloud.sdk.v2.model.CallableTimeSet;
@@ -35,6 +36,8 @@ import com.mypurecloud.sdk.v2.model.CampaignStats;
 import com.mypurecloud.sdk.v2.model.CampaignRule;
 import com.mypurecloud.sdk.v2.model.CampaignRuleEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.CommonCampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.CommonCampaignDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionView;
 import com.mypurecloud.sdk.v2.model.CampaignDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.ContactList;
@@ -53,6 +56,9 @@ import com.mypurecloud.sdk.v2.model.DncListDivisionView;
 import com.mypurecloud.sdk.v2.model.DncListDivisionViewListing;
 import com.mypurecloud.sdk.v2.model.EventLog;
 import com.mypurecloud.sdk.v2.model.DialerEventEntityListing;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignEntityListing;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionView;
+import com.mypurecloud.sdk.v2.model.MessagingCampaignDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.RuleSet;
 import com.mypurecloud.sdk.v2.model.RuleSetEntityListing;
 import com.mypurecloud.sdk.v2.model.CampaignSchedule;
@@ -97,6 +103,20 @@ public class GetOutboundAttemptlimitsRequest {
 
 	public GetOutboundAttemptlimitsRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
+	    return this;
+	} 
+	
+	private Boolean allowEmptyResult;
+	public Boolean getAllowEmptyResult() {
+		return this.allowEmptyResult;
+	}
+
+	public void setAllowEmptyResult(Boolean allowEmptyResult) {
+		this.allowEmptyResult = allowEmptyResult;
+	}
+
+	public GetOutboundAttemptlimitsRequest withAllowEmptyResult(Boolean allowEmptyResult) {
+	    this.setAllowEmptyResult(allowEmptyResult);
 	    return this;
 	} 
 	
@@ -251,6 +271,8 @@ public class GetOutboundAttemptlimitsRequest {
         
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+                .withQueryParameters("allowEmptyResult", "", allowEmptyResult)
+        
                 .withQueryParameters("filterType", "", filterType)
         
                 .withQueryParameters("name", "", name)
@@ -287,6 +309,11 @@ public class GetOutboundAttemptlimitsRequest {
 		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
+			return this;
+		}
+		
+		public Builder withAllowEmptyResult(Boolean allowEmptyResult) {
+			request.setAllowEmptyResult(allowEmptyResult);
 			return this;
 		}
 		

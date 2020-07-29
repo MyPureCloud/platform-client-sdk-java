@@ -13,16 +13,16 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * A complex type that defines service provider attributes, or sub-attributes and their qualities.
+ * A complex type that defines service provider attributes or subattributes and their qualities.
  */
-@ApiModel(description = "A complex type that defines service provider attributes, or sub-attributes and their qualities.")
+@ApiModel(description = "A complex type that defines service provider attributes or subattributes and their qualities.")
 
 public class ScimV2SchemaAttribute  implements Serializable {
   
   private String name = null;
 
   /**
-   * The attribute's data type.  Valid values are \"string\", \"boolean\", \"decimal\", \"integer\", \"dateTime\", \"reference\", and \"complex\".
+   * The data type of the attribute.
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -68,7 +68,7 @@ public class ScimV2SchemaAttribute  implements Serializable {
   private Boolean caseExact = null;
 
   /**
-   * A single keyword indicating the circumstances under which the value of the attribute can be (re)defined. Value are readOnly, readWrite, immutable, writeOnly
+   * The circumstances under which an attribute can be defined or redefined. The default is \"readWrite\".
    */
   public enum MutabilityEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -105,7 +105,7 @@ public class ScimV2SchemaAttribute  implements Serializable {
   private MutabilityEnum mutability = null;
 
   /**
-   * A single keyword that indicates when an attribute and associated values are returned in response to a GET request, or in response to a PUT, POST, or PATCH request.  Valid keywords are as follows: always, never, default, request
+   * The circumstances under which an attribute and its values are returned in response to a GET, PUT, POST, or PATCH request.
    */
   public enum ReturnedEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -142,7 +142,7 @@ public class ScimV2SchemaAttribute  implements Serializable {
   private ReturnedEnum returned = null;
 
   /**
-   * A single keyword value that specifies how the service provider enforces uniqueness of attribute values.  A server MAY reject an invalid value based on uniqueness by returning HTTP response code 400 (Bad Request).  A client MAY enforce uniqueness on the client side to a greater degree than the service provider enforces.  For example, a client could make a value unique while the server has uniqueness of \"none\".  Valid keywords are as follows: none, server, global
+   * The method by which the service provider enforces the uniqueness of an attribute value. A server can reject a value by returning the HTTP response code 400 (Bad Request). A client can enforce uniqueness to a greater degree than the server provider enforces. For example, a client could make a value unique even though the server has \"uniqueness\" set to \"none\".
    */
   public enum UniquenessEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -221,7 +221,7 @@ public class ScimV2SchemaAttribute  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The attribute's data type.  Valid values are \"string\", \"boolean\", \"decimal\", \"integer\", \"dateTime\", \"reference\", and \"complex\".")
+  @ApiModelProperty(example = "null", value = "The data type of the attribute.")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
@@ -229,14 +229,14 @@ public class ScimV2SchemaAttribute  implements Serializable {
 
   
   /**
-   * When an attribute is of type \"complex\", \"subAttributes\" defines a set of sub-attributes. \"subAttributes\" has the same schema sub-attributes as \"attributes\"
+   * The list of subattributes for an attribute of the type \"complex\". Uses the same schema as \"attributes\".
    **/
   public ScimV2SchemaAttribute subAttributes(List<ScimV2SchemaAttribute> subAttributes) {
     this.subAttributes = subAttributes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "When an attribute is of type \"complex\", \"subAttributes\" defines a set of sub-attributes. \"subAttributes\" has the same schema sub-attributes as \"attributes\"")
+  @ApiModelProperty(example = "null", value = "The list of subattributes for an attribute of the type \"complex\". Uses the same schema as \"attributes\".")
   @JsonProperty("subAttributes")
   public List<ScimV2SchemaAttribute> getSubAttributes() {
     return subAttributes;
@@ -246,21 +246,21 @@ public class ScimV2SchemaAttribute  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "A Boolean value indicating the attribute's plurality.")
+  @ApiModelProperty(example = "null", value = "Indicates whether an attribute contains multiple values.")
   @JsonProperty("multiValued")
   public Boolean getMultiValued() {
     return multiValued;
   }
 
   
-  @ApiModelProperty(example = "null", value = "The attribute's human-readable description.")
+  @ApiModelProperty(example = "null", value = "The description of the attribute.")
   @JsonProperty("description")
   public String getDescription() {
     return description;
   }
 
   
-  @ApiModelProperty(example = "null", value = "A Boolean value that specifies whether or not the attribute is required.")
+  @ApiModelProperty(example = "null", value = "Indicates whether an attribute is required.")
   @JsonProperty("required")
   public Boolean getRequired() {
     return required;
@@ -268,14 +268,14 @@ public class ScimV2SchemaAttribute  implements Serializable {
 
   
   /**
-   * A collection of suggested canonical values that MAY be used (e.g., \"work\" and \"home\").  In some cases, service providers MAY choose to ignore unsupported values.  OPTIONAL.
+   * The list of standard values that service providers may use. Service providers may ignore unsupported values.
    **/
   public ScimV2SchemaAttribute canonicalValues(List<String> canonicalValues) {
     this.canonicalValues = canonicalValues;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A collection of suggested canonical values that MAY be used (e.g., \"work\" and \"home\").  In some cases, service providers MAY choose to ignore unsupported values.  OPTIONAL.")
+  @ApiModelProperty(example = "null", value = "The list of standard values that service providers may use. Service providers may ignore unsupported values.")
   @JsonProperty("canonicalValues")
   public List<String> getCanonicalValues() {
     return canonicalValues;
@@ -285,28 +285,28 @@ public class ScimV2SchemaAttribute  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "A Boolean value that specifies whether or not a string attribute is case sensitive.  The server SHALL use case sensitivity when evaluating filters.  For attributes that are case exact, the server SHALL preserve case for any value submitted.  If the attribute is case insensitive, the server MAY alter case for a submitted value.  Case sensitivity also impacts how attribute values MAY be compared against filter values (see Section 3.4.2.2 of [RFC7644])")
+  @ApiModelProperty(example = "null", value = "Indicates whether a string attribute is case-sensitive. If set to \"true\", the server preserves case sensitivity. If set to \"false\", the server may change the case. The server also uses case sensitivity when evaluating filters. See section 3.4.2.2 \"Filtering\" in RFC 7644 for details.")
   @JsonProperty("caseExact")
   public Boolean getCaseExact() {
     return caseExact;
   }
 
   
-  @ApiModelProperty(example = "null", value = "A single keyword indicating the circumstances under which the value of the attribute can be (re)defined. Value are readOnly, readWrite, immutable, writeOnly")
+  @ApiModelProperty(example = "null", value = "The circumstances under which an attribute can be defined or redefined. The default is \"readWrite\".")
   @JsonProperty("mutability")
   public MutabilityEnum getMutability() {
     return mutability;
   }
 
   
-  @ApiModelProperty(example = "null", value = "A single keyword that indicates when an attribute and associated values are returned in response to a GET request, or in response to a PUT, POST, or PATCH request.  Valid keywords are as follows: always, never, default, request")
+  @ApiModelProperty(example = "null", value = "The circumstances under which an attribute and its values are returned in response to a GET, PUT, POST, or PATCH request.")
   @JsonProperty("returned")
   public ReturnedEnum getReturned() {
     return returned;
   }
 
   
-  @ApiModelProperty(example = "null", value = "A single keyword value that specifies how the service provider enforces uniqueness of attribute values.  A server MAY reject an invalid value based on uniqueness by returning HTTP response code 400 (Bad Request).  A client MAY enforce uniqueness on the client side to a greater degree than the service provider enforces.  For example, a client could make a value unique while the server has uniqueness of \"none\".  Valid keywords are as follows: none, server, global")
+  @ApiModelProperty(example = "null", value = "The method by which the service provider enforces the uniqueness of an attribute value. A server can reject a value by returning the HTTP response code 400 (Bad Request). A client can enforce uniqueness to a greater degree than the server provider enforces. For example, a client could make a value unique even though the server has \"uniqueness\" set to \"none\".")
   @JsonProperty("uniqueness")
   public UniquenessEnum getUniqueness() {
     return uniqueness;
@@ -314,14 +314,14 @@ public class ScimV2SchemaAttribute  implements Serializable {
 
   
   /**
-   * A multi-valued array of JSON strings that indicate the SCIM resource types that may be referenced. Values include User, Group, external and uri.
+   * The list of SCIM resource types that may be referenced. Only applies when \"type\" is set to \"reference\".
    **/
   public ScimV2SchemaAttribute referenceTypes(List<ReferenceTypesEnum> referenceTypes) {
     this.referenceTypes = referenceTypes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A multi-valued array of JSON strings that indicate the SCIM resource types that may be referenced. Values include User, Group, external and uri.")
+  @ApiModelProperty(example = "null", value = "The list of SCIM resource types that may be referenced. Only applies when \"type\" is set to \"reference\".")
   @JsonProperty("referenceTypes")
   public List<ReferenceTypesEnum> getReferenceTypes() {
     return referenceTypes;

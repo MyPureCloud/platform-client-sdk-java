@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResultWrapper;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public class WfmHistoricalAdherenceResponse  implements Serializable {
   
   private String id = null;
   private String downloadUrl = null;
+  private WfmHistoricalAdherenceResultWrapper downloadResult = null;
   private List<String> downloadUrls = new ArrayList<String>();
 
   /**
@@ -96,6 +98,24 @@ public class WfmHistoricalAdherenceResponse  implements Serializable {
 
   
   /**
+   * Result will always come via downloadUrls; however the schema is included for documentation
+   **/
+  public WfmHistoricalAdherenceResponse downloadResult(WfmHistoricalAdherenceResultWrapper downloadResult) {
+    this.downloadResult = downloadResult;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Result will always come via downloadUrls; however the schema is included for documentation")
+  @JsonProperty("downloadResult")
+  public WfmHistoricalAdherenceResultWrapper getDownloadResult() {
+    return downloadResult;
+  }
+  public void setDownloadResult(WfmHistoricalAdherenceResultWrapper downloadResult) {
+    this.downloadResult = downloadResult;
+  }
+
+  
+  /**
    * The uri list to GET the results of the Historical Adherence query. For notification purposes only
    **/
   public WfmHistoricalAdherenceResponse downloadUrls(List<String> downloadUrls) {
@@ -143,13 +163,14 @@ public class WfmHistoricalAdherenceResponse  implements Serializable {
     WfmHistoricalAdherenceResponse wfmHistoricalAdherenceResponse = (WfmHistoricalAdherenceResponse) o;
     return Objects.equals(this.id, wfmHistoricalAdherenceResponse.id) &&
         Objects.equals(this.downloadUrl, wfmHistoricalAdherenceResponse.downloadUrl) &&
+        Objects.equals(this.downloadResult, wfmHistoricalAdherenceResponse.downloadResult) &&
         Objects.equals(this.downloadUrls, wfmHistoricalAdherenceResponse.downloadUrls) &&
         Objects.equals(this.queryState, wfmHistoricalAdherenceResponse.queryState);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, downloadUrl, downloadUrls, queryState);
+    return Objects.hash(id, downloadUrl, downloadResult, downloadUrls, queryState);
   }
 
   @Override
@@ -159,6 +180,7 @@ public class WfmHistoricalAdherenceResponse  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
+    sb.append("    downloadResult: ").append(toIndentedString(downloadResult)).append("\n");
     sb.append("    downloadUrls: ").append(toIndentedString(downloadUrls)).append("\n");
     sb.append("    queryState: ").append(toIndentedString(queryState)).append("\n");
     sb.append("}");

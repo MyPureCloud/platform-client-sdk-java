@@ -23,7 +23,9 @@ title: ObservationValue
 | **addressTo** | <!----><!---->**String**<!----> | The address receiving an action |  [optional] |
 | **ani** | <!----><!---->**String**<!----> | Automatic Number Identification (caller&#39;s number) |  [optional] |
 | **dnis** | <!----><!---->**String**<!----> | Dialed number identification service (number dialed by the calling party) |  [optional] |
-| **teamId** | <!----><!---->**String**<!----> | The team Id the user is a member of |  [optional] |
+| **teamId** | <!----><!---->**String**<!----> | The team id the user is a member of |  [optional] |
+| **requestedRoutings** | <!---->[**List&lt;RequestedRoutingsEnum&gt;**](#RequestedRoutingsEnum)<!----> | All routing types for requested/attempted routing methods |  [optional] |
+| **usedRouting** | [**UsedRoutingEnum**](#UsedRoutingEnum)<!----> | Complete routing method |  [optional] |
 | **scoredAgents** | <!----><!---->[**List&lt;AnalyticsScoredAgent&gt;**](AnalyticsScoredAgent.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
@@ -37,6 +39,37 @@ title: ObservationValue
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | INBOUND | &quot;inbound&quot; |
 | OUTBOUND | &quot;outbound&quot; |
+{: class="table table-striped"}
+
+
+<a name="RequestedRoutingsEnum"></a>
+
+## Enum: RequestedRoutingsEnum
+
+| Name | Value |
+| ---- | ----- |
+| PREDICTIVE | &quot;Predictive&quot; |
+| PREFERRED | &quot;Preferred&quot; |
+| MANUAL | &quot;Manual&quot; |
+| LAST | &quot;Last&quot; |
+| BULLSEYE | &quot;Bullseye&quot; |
+| STANDARD | &quot;Standard&quot; |
+{: class="table table-striped"}
+
+
+<a name="UsedRoutingEnum"></a>
+
+## Enum: UsedRoutingEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| PREDICTIVE | &quot;Predictive&quot; |
+| PREFERRED | &quot;Preferred&quot; |
+| MANUAL | &quot;Manual&quot; |
+| LAST | &quot;Last&quot; |
+| BULLSEYE | &quot;Bullseye&quot; |
+| STANDARD | &quot;Standard&quot; |
 {: class="table table-striped"}
 
 

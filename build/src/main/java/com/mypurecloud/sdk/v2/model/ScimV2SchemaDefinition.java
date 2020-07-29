@@ -13,9 +13,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * A SCIM schema definition.
+ * Defines a SCIM schema.
  */
-@ApiModel(description = "A SCIM schema definition.")
+@ApiModel(description = "Defines a SCIM schema.")
 
 public class ScimV2SchemaDefinition  implements Serializable {
   
@@ -26,21 +26,21 @@ public class ScimV2SchemaDefinition  implements Serializable {
   private ScimMetadata meta = null;
 
   
-  @ApiModelProperty(example = "null", value = "The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"Mutability\" is set to \"readOnly\". \"Returned\" is set to \"always\".")
+  @ApiModelProperty(example = "null", value = "The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readOnly\". \"returned\" is set to \"always\".")
   @JsonProperty("id")
   public String getId() {
     return id;
   }
 
   
-  @ApiModelProperty(example = "null", value = "Schema name.")
+  @ApiModelProperty(example = "null", value = "The name of the schema.")
   @JsonProperty("name")
   public String getName() {
     return name;
   }
 
   
-  @ApiModelProperty(example = "null", value = "Schema description.")
+  @ApiModelProperty(example = "null", value = "The description of the schema.")
   @JsonProperty("description")
   public String getDescription() {
     return description;
@@ -48,14 +48,14 @@ public class ScimV2SchemaDefinition  implements Serializable {
 
   
   /**
-   * A complex type that defines service provider attributes and their qualities.
+   * The list of service provider attributes.
    **/
   public ScimV2SchemaDefinition attributes(List<ScimV2SchemaAttribute> attributes) {
     this.attributes = attributes;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A complex type that defines service provider attributes and their qualities.")
+  @ApiModelProperty(example = "null", value = "The list of service provider attributes.")
   @JsonProperty("attributes")
   public List<ScimV2SchemaAttribute> getAttributes() {
     return attributes;

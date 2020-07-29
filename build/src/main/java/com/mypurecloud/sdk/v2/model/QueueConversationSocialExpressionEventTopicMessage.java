@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicAddress;
+import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicErrorDetails;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicMessageDetails;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -59,6 +60,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
   }
   private StateEnum state = null;
   private Boolean held = null;
+  private QueueConversationSocialExpressionEventTopicErrorDetails errorInfo = null;
   private String provider = null;
   private String scriptId = null;
   private String peerId = null;
@@ -214,6 +216,23 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
   }
   public void setHeld(Boolean held) {
     this.held = held;
+  }
+
+  
+  /**
+   **/
+  public QueueConversationSocialExpressionEventTopicMessage errorInfo(QueueConversationSocialExpressionEventTopicErrorDetails errorInfo) {
+    this.errorInfo = errorInfo;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("errorInfo")
+  public QueueConversationSocialExpressionEventTopicErrorDetails getErrorInfo() {
+    return errorInfo;
+  }
+  public void setErrorInfo(QueueConversationSocialExpressionEventTopicErrorDetails errorInfo) {
+    this.errorInfo = errorInfo;
   }
 
   
@@ -502,6 +521,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     return Objects.equals(this.id, queueConversationSocialExpressionEventTopicMessage.id) &&
         Objects.equals(this.state, queueConversationSocialExpressionEventTopicMessage.state) &&
         Objects.equals(this.held, queueConversationSocialExpressionEventTopicMessage.held) &&
+        Objects.equals(this.errorInfo, queueConversationSocialExpressionEventTopicMessage.errorInfo) &&
         Objects.equals(this.provider, queueConversationSocialExpressionEventTopicMessage.provider) &&
         Objects.equals(this.scriptId, queueConversationSocialExpressionEventTopicMessage.scriptId) &&
         Objects.equals(this.peerId, queueConversationSocialExpressionEventTopicMessage.peerId) &&
@@ -522,7 +542,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, wrapup, additionalProperties);
+    return Objects.hash(id, state, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, wrapup, additionalProperties);
   }
 
   @Override
@@ -533,6 +553,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    held: ").append(toIndentedString(held)).append("\n");
+    sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");

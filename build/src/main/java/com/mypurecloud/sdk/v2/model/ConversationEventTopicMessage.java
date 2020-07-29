@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicAddress;
+import com.mypurecloud.sdk.v2.model.ConversationEventTopicErrorDetails;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicMessageDetails;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -59,6 +60,7 @@ public class ConversationEventTopicMessage  implements Serializable {
   }
   private StateEnum state = null;
   private Boolean held = null;
+  private ConversationEventTopicErrorDetails errorInfo = null;
   private String provider = null;
   private String scriptId = null;
   private String peerId = null;
@@ -214,6 +216,23 @@ public class ConversationEventTopicMessage  implements Serializable {
   }
   public void setHeld(Boolean held) {
     this.held = held;
+  }
+
+  
+  /**
+   **/
+  public ConversationEventTopicMessage errorInfo(ConversationEventTopicErrorDetails errorInfo) {
+    this.errorInfo = errorInfo;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("errorInfo")
+  public ConversationEventTopicErrorDetails getErrorInfo() {
+    return errorInfo;
+  }
+  public void setErrorInfo(ConversationEventTopicErrorDetails errorInfo) {
+    this.errorInfo = errorInfo;
   }
 
   
@@ -502,6 +521,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     return Objects.equals(this.id, conversationEventTopicMessage.id) &&
         Objects.equals(this.state, conversationEventTopicMessage.state) &&
         Objects.equals(this.held, conversationEventTopicMessage.held) &&
+        Objects.equals(this.errorInfo, conversationEventTopicMessage.errorInfo) &&
         Objects.equals(this.provider, conversationEventTopicMessage.provider) &&
         Objects.equals(this.scriptId, conversationEventTopicMessage.scriptId) &&
         Objects.equals(this.peerId, conversationEventTopicMessage.peerId) &&
@@ -522,7 +542,7 @@ public class ConversationEventTopicMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, wrapup, additionalProperties);
+    return Objects.hash(id, state, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, wrapup, additionalProperties);
   }
 
   @Override
@@ -533,6 +553,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    held: ").append(toIndentedString(held)).append("\n");
+    sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");

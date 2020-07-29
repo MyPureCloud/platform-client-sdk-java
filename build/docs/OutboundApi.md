@@ -19,6 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteOutboundContactlistfilter**](OutboundApi.html#deleteOutboundContactlistfilter) | Delete Contact List Filter |
 | [**deleteOutboundContactlists**](OutboundApi.html#deleteOutboundContactlists) | Delete multiple contact lists. |
 | [**deleteOutboundDnclist**](OutboundApi.html#deleteOutboundDnclist) | Delete dialer DNC list |
+| [**deleteOutboundMessagingcampaign**](OutboundApi.html#deleteOutboundMessagingcampaign) | Delete an Outbound Messaging Campaign |
 | [**deleteOutboundRuleset**](OutboundApi.html#deleteOutboundRuleset) | Delete a Rule set. |
 | [**deleteOutboundSchedulesCampaign**](OutboundApi.html#deleteOutboundSchedulesCampaign) | Delete a dialer campaign schedule. |
 | [**deleteOutboundSchedulesSequence**](OutboundApi.html#deleteOutboundSchedulesSequence) | Delete a dialer sequence schedule. |
@@ -37,6 +38,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundCampaignrule**](OutboundApi.html#getOutboundCampaignrule) | Get Campaign Rule |
 | [**getOutboundCampaignrules**](OutboundApi.html#getOutboundCampaignrules) | Query Campaign Rule list |
 | [**getOutboundCampaigns**](OutboundApi.html#getOutboundCampaigns) | Query a list of dialer campaigns. |
+| [**getOutboundCampaignsAll**](OutboundApi.html#getOutboundCampaignsAll) | Query across all types of campaigns by division |
+| [**getOutboundCampaignsAllDivisionviews**](OutboundApi.html#getOutboundCampaignsAllDivisionviews) | Query across all types of campaigns |
 | [**getOutboundCampaignsDivisionview**](OutboundApi.html#getOutboundCampaignsDivisionview) | Get a basic Campaign information object |
 | [**getOutboundCampaignsDivisionviews**](OutboundApi.html#getOutboundCampaignsDivisionviews) | Query a list of basic Campaign information objects |
 | [**getOutboundContactlist**](OutboundApi.html#getOutboundContactlist) | Get a dialer contact list. |
@@ -57,6 +60,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundDnclistsDivisionviews**](OutboundApi.html#getOutboundDnclistsDivisionviews) | Query a list of simplified dnc list objects. |
 | [**getOutboundEvent**](OutboundApi.html#getOutboundEvent) | Get Dialer Event |
 | [**getOutboundEvents**](OutboundApi.html#getOutboundEvents) | Query Event Logs |
+| [**getOutboundMessagingcampaign**](OutboundApi.html#getOutboundMessagingcampaign) | Get an Outbound Messaging Campaign |
+| [**getOutboundMessagingcampaignProgress**](OutboundApi.html#getOutboundMessagingcampaignProgress) | Get messaging campaign&#39;s progress |
+| [**getOutboundMessagingcampaigns**](OutboundApi.html#getOutboundMessagingcampaigns) | Query a list of Messaging Campaigns |
+| [**getOutboundMessagingcampaignsDivisionview**](OutboundApi.html#getOutboundMessagingcampaignsDivisionview) | Get a basic Messaging Campaign information object |
+| [**getOutboundMessagingcampaignsDivisionviews**](OutboundApi.html#getOutboundMessagingcampaignsDivisionviews) | Query a list of basic Messaging Campaign information objects |
 | [**getOutboundRuleset**](OutboundApi.html#getOutboundRuleset) | Get a Rule Set by ID. |
 | [**getOutboundRulesets**](OutboundApi.html#getOutboundRulesets) | Query a list of Rule Sets. |
 | [**getOutboundSchedulesCampaign**](OutboundApi.html#getOutboundSchedulesCampaign) | Get a dialer campaign schedule. |
@@ -87,6 +95,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postOutboundDnclistExport**](OutboundApi.html#postOutboundDnclistExport) | Initiate the export of a dnc list. |
 | [**postOutboundDnclistPhonenumbers**](OutboundApi.html#postOutboundDnclistPhonenumbers) | Add phone numbers to a Dialer DNC list. |
 | [**postOutboundDnclists**](OutboundApi.html#postOutboundDnclists) | Create dialer DNC list |
+| [**postOutboundMessagingcampaigns**](OutboundApi.html#postOutboundMessagingcampaigns) | Create a Messaging Campaign |
+| [**postOutboundMessagingcampaignsProgress**](OutboundApi.html#postOutboundMessagingcampaignsProgress) | Get progress for a list of messaging campaigns |
 | [**postOutboundRulesets**](OutboundApi.html#postOutboundRulesets) | Create a Dialer Call Analysis Response Set. |
 | [**postOutboundSequences**](OutboundApi.html#postOutboundSequences) | Create a new campaign sequence. |
 | [**putOutboundAttemptlimit**](OutboundApi.html#putOutboundAttemptlimit) | Update attempt limits |
@@ -99,6 +109,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putOutboundContactlistContact**](OutboundApi.html#putOutboundContactlistContact) | Update a contact. |
 | [**putOutboundContactlistfilter**](OutboundApi.html#putOutboundContactlistfilter) | Update Contact List Filter |
 | [**putOutboundDnclist**](OutboundApi.html#putOutboundDnclist) | Update dialer DNC list |
+| [**putOutboundMessagingcampaign**](OutboundApi.html#putOutboundMessagingcampaign) | Update an Outbound Messaging Campaign |
 | [**putOutboundRuleset**](OutboundApi.html#putOutboundRuleset) | Update a RuleSet. |
 | [**putOutboundSchedulesCampaign**](OutboundApi.html#putOutboundSchedulesCampaign) | Update a new campaign schedule. |
 | [**putOutboundSchedulesSequence**](OutboundApi.html#putOutboundSchedulesSequence) | Update a new sequence schedule. |
@@ -855,6 +866,69 @@ try {
 
 null (empty response body)
 
+<a name="deleteOutboundMessagingcampaign"></a>
+
+# **deleteOutboundMessagingcampaign**
+
+
+
+> [MessagingCampaign](MessagingCampaign.html) deleteOutboundMessagingcampaign(messagingCampaignId)
+
+Delete an Outbound Messaging Campaign
+
+
+
+Wraps DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}  
+
+Requires ANY permissions: 
+
+* outbound:campaign:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+try {
+    MessagingCampaign result = apiInstance.deleteOutboundMessagingcampaign(messagingCampaignId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#deleteOutboundMessagingcampaign");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **messagingCampaignId** | **String**| The Messaging Campaign ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MessagingCampaign**](MessagingCampaign.html)
+
 <a name="deleteOutboundRuleset"></a>
 
 # **deleteOutboundRuleset**
@@ -1172,7 +1246,7 @@ try {
 
 
 
-> [AttemptLimitsEntityListing](AttemptLimitsEntityListing.html) getOutboundAttemptlimits(pageSize, pageNumber, filterType, name, sortBy, sortOrder)
+> [AttemptLimitsEntityListing](AttemptLimitsEntityListing.html) getOutboundAttemptlimits(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
 
 Query attempt limits list
 
@@ -1208,12 +1282,13 @@ Configuration.setDefaultApiClient(apiClient);
 OutboundApi apiInstance = new OutboundApi();
 Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
 Integer pageNumber = 1; // Integer | Page number
+Boolean allowEmptyResult = false; // Boolean | Whether to return an empty page when there are no results for that page
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "a"; // String | Sort order
 try {
-    AttemptLimitsEntityListing result = apiInstance.getOutboundAttemptlimits(pageSize, pageNumber, filterType, name, sortBy, sortOrder);
+    AttemptLimitsEntityListing result = apiInstance.getOutboundAttemptlimits(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundAttemptlimits");
@@ -1228,6 +1303,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **allowEmptyResult** | **Boolean**| Whether to return an empty page when there are no results for that page | [optional] [default to false] 
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith 
 | **name** | **String**| Name | [optional] 
 | **sortBy** | **String**| Sort by | [optional] 
@@ -1308,7 +1384,7 @@ try {
 
 
 
-> [CallableTimeSetEntityListing](CallableTimeSetEntityListing.html) getOutboundCallabletimesets(pageSize, pageNumber, filterType, name, sortBy, sortOrder)
+> [CallableTimeSetEntityListing](CallableTimeSetEntityListing.html) getOutboundCallabletimesets(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
 
 Query callable time set list
 
@@ -1344,12 +1420,13 @@ Configuration.setDefaultApiClient(apiClient);
 OutboundApi apiInstance = new OutboundApi();
 Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
 Integer pageNumber = 1; // Integer | Page number
+Boolean allowEmptyResult = false; // Boolean | Whether to return an empty page when there are no results for that page
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "a"; // String | Sort order
 try {
-    CallableTimeSetEntityListing result = apiInstance.getOutboundCallabletimesets(pageSize, pageNumber, filterType, name, sortBy, sortOrder);
+    CallableTimeSetEntityListing result = apiInstance.getOutboundCallabletimesets(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundCallabletimesets");
@@ -1364,6 +1441,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **allowEmptyResult** | **Boolean**| Whether to return an empty page when there are no results for that page | [optional] [default to false] 
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith 
 | **name** | **String**| Name | [optional] 
 | **sortBy** | **String**| Sort by | [optional] 
@@ -1444,7 +1522,7 @@ try {
 
 
 
-> [ResponseSetEntityListing](ResponseSetEntityListing.html) getOutboundCallanalysisresponsesets(pageSize, pageNumber, filterType, name, sortBy, sortOrder)
+> [ResponseSetEntityListing](ResponseSetEntityListing.html) getOutboundCallanalysisresponsesets(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
 
 Query a list of dialer call analysis response sets.
 
@@ -1480,12 +1558,13 @@ Configuration.setDefaultApiClient(apiClient);
 OutboundApi apiInstance = new OutboundApi();
 Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
 Integer pageNumber = 1; // Integer | Page number
+Boolean allowEmptyResult = false; // Boolean | Whether to return an empty page when there are no results for that page
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "a"; // String | Sort order
 try {
-    ResponseSetEntityListing result = apiInstance.getOutboundCallanalysisresponsesets(pageSize, pageNumber, filterType, name, sortBy, sortOrder);
+    ResponseSetEntityListing result = apiInstance.getOutboundCallanalysisresponsesets(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundCallanalysisresponsesets");
@@ -1500,6 +1579,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **allowEmptyResult** | **Boolean**| Whether to return an empty page when there are no results for that page | [optional] [default to false] 
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith 
 | **name** | **String**| Name | [optional] 
 | **sortBy** | **String**| Sort by | [optional] 
@@ -1895,7 +1975,7 @@ try {
 
 
 
-> [CampaignRuleEntityListing](CampaignRuleEntityListing.html) getOutboundCampaignrules(pageSize, pageNumber, filterType, name, sortBy, sortOrder)
+> [CampaignRuleEntityListing](CampaignRuleEntityListing.html) getOutboundCampaignrules(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
 
 Query Campaign Rule list
 
@@ -1931,12 +2011,13 @@ Configuration.setDefaultApiClient(apiClient);
 OutboundApi apiInstance = new OutboundApi();
 Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
 Integer pageNumber = 1; // Integer | Page number
+Boolean allowEmptyResult = false; // Boolean | Whether to return an empty page when there are no results for that page
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "a"; // String | Sort order
 try {
-    CampaignRuleEntityListing result = apiInstance.getOutboundCampaignrules(pageSize, pageNumber, filterType, name, sortBy, sortOrder);
+    CampaignRuleEntityListing result = apiInstance.getOutboundCampaignrules(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundCampaignrules");
@@ -1951,6 +2032,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **allowEmptyResult** | **Boolean**| Whether to return an empty page when there are no results for that page | [optional] [default to false] 
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith 
 | **name** | **String**| Name | [optional] 
 | **sortBy** | **String**| Sort by | [optional] 
@@ -2048,6 +2130,158 @@ try {
 ### Return type
 
 [**CampaignEntityListing**](CampaignEntityListing.html)
+
+<a name="getOutboundCampaignsAll"></a>
+
+# **getOutboundCampaignsAll**
+
+
+
+> [CommonCampaignEntityListing](CommonCampaignEntityListing.html) getOutboundCampaignsAll(pageSize, pageNumber, id, name, divisionId, mediaType, sortOrder)
+
+Query across all types of campaigns by division
+
+
+
+Wraps GET /api/v2/outbound/campaigns/all  
+
+Requires ANY permissions: 
+
+* outbound:campaign:view
+* outbound:messagingCampaign:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+List<String> id = Arrays.asList("id_example"); // List<String> | Campaign ID(s)
+String name = "name_example"; // String | Campaign name(s)
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
+List<String> mediaType = Arrays.asList("mediaType_example"); // List<String> | Media type(s)
+String sortOrder = "a"; // String | Sort order
+try {
+    CommonCampaignEntityListing result = apiInstance.getOutboundCampaignsAll(pageSize, pageNumber, id, name, divisionId, mediaType, sortOrder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundCampaignsAll");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **id** | [**List&lt;String&gt;**](String.html)| Campaign ID(s) | [optional] 
+| **name** | **String**| Campaign name(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
+| **mediaType** | [**List&lt;String&gt;**](String.html)| Media type(s) | [optional]<br />**Values**: sms, voice 
+| **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CommonCampaignEntityListing**](CommonCampaignEntityListing.html)
+
+<a name="getOutboundCampaignsAllDivisionviews"></a>
+
+# **getOutboundCampaignsAllDivisionviews**
+
+
+
+> [CommonCampaignDivisionViewEntityListing](CommonCampaignDivisionViewEntityListing.html) getOutboundCampaignsAllDivisionviews(pageSize, pageNumber, id, name, divisionId, mediaType, sortOrder)
+
+Query across all types of campaigns
+
+
+
+Wraps GET /api/v2/outbound/campaigns/all/divisionviews  
+
+Requires ANY permissions: 
+
+* outbound:campaign:search
+* outbound:messagingCampaign:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+List<String> id = Arrays.asList("id_example"); // List<String> | Campaign ID(s)
+String name = "name_example"; // String | Campaign name(s)
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
+List<String> mediaType = Arrays.asList("mediaType_example"); // List<String> | Media type(s)
+String sortOrder = "a"; // String | Sort order
+try {
+    CommonCampaignDivisionViewEntityListing result = apiInstance.getOutboundCampaignsAllDivisionviews(pageSize, pageNumber, id, name, divisionId, mediaType, sortOrder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundCampaignsAllDivisionviews");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **id** | [**List&lt;String&gt;**](String.html)| Campaign ID(s) | [optional] 
+| **name** | **String**| Campaign name(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
+| **mediaType** | [**List&lt;String&gt;**](String.html)| Media type(s) | [optional]<br />**Values**: sms, voice 
+| **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CommonCampaignDivisionViewEntityListing**](CommonCampaignDivisionViewEntityListing.html)
 
 <a name="getOutboundCampaignsDivisionview"></a>
 
@@ -2580,7 +2814,7 @@ try {
 
 
 
-> [ContactListFilterEntityListing](ContactListFilterEntityListing.html) getOutboundContactlistfilters(pageSize, pageNumber, filterType, name, sortBy, sortOrder, contactListId)
+> [ContactListFilterEntityListing](ContactListFilterEntityListing.html) getOutboundContactlistfilters(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder, contactListId)
 
 Query Contact list filters
 
@@ -2616,13 +2850,14 @@ Configuration.setDefaultApiClient(apiClient);
 OutboundApi apiInstance = new OutboundApi();
 Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
 Integer pageNumber = 1; // Integer | Page number
+Boolean allowEmptyResult = false; // Boolean | Whether to return an empty page when there are no results for that page
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "a"; // String | Sort order
 String contactListId = "contactListId_example"; // String | Contact List ID
 try {
-    ContactListFilterEntityListing result = apiInstance.getOutboundContactlistfilters(pageSize, pageNumber, filterType, name, sortBy, sortOrder, contactListId);
+    ContactListFilterEntityListing result = apiInstance.getOutboundContactlistfilters(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder, contactListId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundContactlistfilters");
@@ -2637,6 +2872,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **allowEmptyResult** | **Boolean**| Whether to return an empty page when there are no results for that page | [optional] [default to false] 
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith 
 | **name** | **String**| Name | [optional] 
 | **sortBy** | **String**| Sort by | [optional] 
@@ -2655,7 +2891,7 @@ try {
 
 
 
-> [ContactListEntityListing](ContactListEntityListing.html) getOutboundContactlists(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, divisionId, sortBy, sortOrder)
+> [ContactListEntityListing](ContactListEntityListing.html) getOutboundContactlists(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, id, divisionId, sortBy, sortOrder)
 
 Query a list of contact lists.
 
@@ -2693,6 +2929,7 @@ Boolean includeImportStatus = false; // Boolean | Include import status
 Boolean includeSize = false; // Boolean | Include size
 Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
 Integer pageNumber = 1; // Integer | Page number
+Boolean allowEmptyResult = false; // Boolean | Whether to return an empty page when there are no results for that page
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
 List<String> id = Arrays.asList("id_example"); // List<String> | id
@@ -2700,7 +2937,7 @@ List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> |
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "a"; // String | Sort order
 try {
-    ContactListEntityListing result = apiInstance.getOutboundContactlists(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, divisionId, sortBy, sortOrder);
+    ContactListEntityListing result = apiInstance.getOutboundContactlists(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, id, divisionId, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundContactlists");
@@ -2717,6 +2954,7 @@ try {
 | **includeSize** | **Boolean**| Include size | [optional] [default to false] 
 | **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **allowEmptyResult** | **Boolean**| Whether to return an empty page when there are no results for that page | [optional] [default to false] 
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith 
 | **name** | **String**| Name | [optional] 
 | **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
@@ -3078,7 +3316,7 @@ try {
 
 
 
-> [DncListEntityListing](DncListEntityListing.html) getOutboundDnclists(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, dncSourceType, divisionId, sortBy, sortOrder)
+> [DncListEntityListing](DncListEntityListing.html) getOutboundDnclists(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, dncSourceType, divisionId, sortBy, sortOrder)
 
 Query dialer DNC lists
 
@@ -3116,6 +3354,7 @@ Boolean includeImportStatus = false; // Boolean | Import status
 Boolean includeSize = false; // Boolean | Include size
 Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
 Integer pageNumber = 1; // Integer | Page number
+Boolean allowEmptyResult = false; // Boolean | Whether to return an empty page when there are no results for that page
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
 String dncSourceType = "dncSourceType_example"; // String | DncSourceType
@@ -3123,7 +3362,7 @@ List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> |
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "sortOrder_example"; // String | Sort order
 try {
-    DncListEntityListing result = apiInstance.getOutboundDnclists(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, dncSourceType, divisionId, sortBy, sortOrder);
+    DncListEntityListing result = apiInstance.getOutboundDnclists(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, dncSourceType, divisionId, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundDnclists");
@@ -3140,6 +3379,7 @@ try {
 | **includeSize** | **Boolean**| Include size | [optional] [default to false] 
 | **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **allowEmptyResult** | **Boolean**| Whether to return an empty page when there are no results for that page | [optional] [default to false] 
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith 
 | **name** | **String**| Name | [optional] 
 | **dncSourceType** | **String**| DncSourceType | [optional]<br />**Values**: rds, dnc.com, gryphon 
@@ -3437,6 +3677,349 @@ try {
 
 [**DialerEventEntityListing**](DialerEventEntityListing.html)
 
+<a name="getOutboundMessagingcampaign"></a>
+
+# **getOutboundMessagingcampaign**
+
+
+
+> [MessagingCampaign](MessagingCampaign.html) getOutboundMessagingcampaign(messagingCampaignId)
+
+Get an Outbound Messaging Campaign
+
+
+
+Wraps GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}  
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+try {
+    MessagingCampaign result = apiInstance.getOutboundMessagingcampaign(messagingCampaignId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundMessagingcampaign");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **messagingCampaignId** | **String**| The Messaging Campaign ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MessagingCampaign**](MessagingCampaign.html)
+
+<a name="getOutboundMessagingcampaignProgress"></a>
+
+# **getOutboundMessagingcampaignProgress**
+
+
+
+> [CampaignProgress](CampaignProgress.html) getOutboundMessagingcampaignProgress(messagingCampaignId)
+
+Get messaging campaign&#39;s progress
+
+
+
+Wraps GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress  
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+try {
+    CampaignProgress result = apiInstance.getOutboundMessagingcampaignProgress(messagingCampaignId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundMessagingcampaignProgress");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **messagingCampaignId** | **String**| The Messaging Campaign ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CampaignProgress**](CampaignProgress.html)
+
+<a name="getOutboundMessagingcampaigns"></a>
+
+# **getOutboundMessagingcampaigns**
+
+
+
+> [MessagingCampaignEntityListing](MessagingCampaignEntityListing.html) getOutboundMessagingcampaigns(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id)
+
+Query a list of Messaging Campaigns
+
+
+
+Wraps GET /api/v2/outbound/messagingcampaigns  
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
+Integer pageNumber = 1; // Integer | Page number
+String sortBy = "name"; // String | The field to sort by
+String sortOrder = "ascending"; // String | The direction to sort
+String name = "name_example"; // String | Name
+String contactListId = "contactListId_example"; // String | Contact List ID
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
+String type = "type_example"; // String | Campaign Type
+String senderSmsPhoneNumber = "senderSmsPhoneNumber_example"; // String | Sender SMS Phone Number
+List<String> id = Arrays.asList("id_example"); // List<String> | A list of messaging campaign ids to bulk fetch
+try {
+    MessagingCampaignEntityListing result = apiInstance.getOutboundMessagingcampaigns(pageSize, pageNumber, sortBy, sortOrder, name, contactListId, divisionId, type, senderSmsPhoneNumber, id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundMessagingcampaigns");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortBy** | **String**| The field to sort by | [optional] [default to name]<br />**Values**: campaignStatus, name, type 
+| **sortOrder** | **String**| The direction to sort | [optional] [default to ascending]<br />**Values**: ascending, descending 
+| **name** | **String**| Name | [optional] 
+| **contactListId** | **String**| Contact List ID | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
+| **type** | **String**| Campaign Type | [optional]<br />**Values**: SMS 
+| **senderSmsPhoneNumber** | **String**| Sender SMS Phone Number | [optional] 
+| **id** | [**List&lt;String&gt;**](String.html)| A list of messaging campaign ids to bulk fetch | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MessagingCampaignEntityListing**](MessagingCampaignEntityListing.html)
+
+<a name="getOutboundMessagingcampaignsDivisionview"></a>
+
+# **getOutboundMessagingcampaignsDivisionview**
+
+
+
+> [MessagingCampaignDivisionView](MessagingCampaignDivisionView.html) getOutboundMessagingcampaignsDivisionview(messagingCampaignId)
+
+Get a basic Messaging Campaign information object
+
+This returns a simplified version of a Messaging Campaign, consisting of id, name, and division.
+
+Wraps GET /api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId}  
+
+Requires ALL permissions: 
+
+* outbound:messagingCampaign:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+try {
+    MessagingCampaignDivisionView result = apiInstance.getOutboundMessagingcampaignsDivisionview(messagingCampaignId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundMessagingcampaignsDivisionview");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **messagingCampaignId** | **String**| The Messaging Campaign ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MessagingCampaignDivisionView**](MessagingCampaignDivisionView.html)
+
+<a name="getOutboundMessagingcampaignsDivisionviews"></a>
+
+# **getOutboundMessagingcampaignsDivisionviews**
+
+
+
+> [MessagingCampaignDivisionViewEntityListing](MessagingCampaignDivisionViewEntityListing.html) getOutboundMessagingcampaignsDivisionviews(pageSize, pageNumber, sortOrder, name, id, senderSmsPhoneNumber)
+
+Query a list of basic Messaging Campaign information objects
+
+This returns a listing of simplified Messaging Campaigns, each consisting of id, name, and division.
+
+Wraps GET /api/v2/outbound/messagingcampaigns/divisionviews  
+
+Requires ALL permissions: 
+
+* outbound:messagingCampaign:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
+Integer pageNumber = 1; // Integer | Page number
+String sortOrder = "a"; // String | The direction to sort
+String name = "name_example"; // String | Name
+List<String> id = Arrays.asList("id_example"); // List<String> | id
+String senderSmsPhoneNumber = "senderSmsPhoneNumber_example"; // String | Sender SMS Phone Number
+try {
+    MessagingCampaignDivisionViewEntityListing result = apiInstance.getOutboundMessagingcampaignsDivisionviews(pageSize, pageNumber, sortOrder, name, id, senderSmsPhoneNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundMessagingcampaignsDivisionviews");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortOrder** | **String**| The direction to sort | [optional] [default to a]<br />**Values**: ascending, descending 
+| **name** | **String**| Name | [optional] 
+| **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
+| **senderSmsPhoneNumber** | **String**| Sender SMS Phone Number | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MessagingCampaignDivisionViewEntityListing**](MessagingCampaignDivisionViewEntityListing.html)
+
 <a name="getOutboundRuleset"></a>
 
 # **getOutboundRuleset**
@@ -3506,7 +4089,7 @@ try {
 
 
 
-> [RuleSetEntityListing](RuleSetEntityListing.html) getOutboundRulesets(pageSize, pageNumber, filterType, name, sortBy, sortOrder)
+> [RuleSetEntityListing](RuleSetEntityListing.html) getOutboundRulesets(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
 
 Query a list of Rule Sets.
 
@@ -3542,12 +4125,13 @@ Configuration.setDefaultApiClient(apiClient);
 OutboundApi apiInstance = new OutboundApi();
 Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
 Integer pageNumber = 1; // Integer | Page number
+Boolean allowEmptyResult = false; // Boolean | Whether to return an empty page when there are no results for that page
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "a"; // String | Sort order
 try {
-    RuleSetEntityListing result = apiInstance.getOutboundRulesets(pageSize, pageNumber, filterType, name, sortBy, sortOrder);
+    RuleSetEntityListing result = apiInstance.getOutboundRulesets(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundRulesets");
@@ -3562,6 +4146,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **allowEmptyResult** | **Boolean**| Whether to return an empty page when there are no results for that page | [optional] [default to false] 
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith 
 | **name** | **String**| Name | [optional] 
 | **sortBy** | **String**| Sort by | [optional] 
@@ -3886,7 +4471,7 @@ try {
 
 
 
-> [CampaignSequenceEntityListing](CampaignSequenceEntityListing.html) getOutboundSequences(pageSize, pageNumber, filterType, name, sortBy, sortOrder)
+> [CampaignSequenceEntityListing](CampaignSequenceEntityListing.html) getOutboundSequences(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
 
 Query a list of dialer campaign sequences.
 
@@ -3922,12 +4507,13 @@ Configuration.setDefaultApiClient(apiClient);
 OutboundApi apiInstance = new OutboundApi();
 Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
 Integer pageNumber = 1; // Integer | Page number
+Boolean allowEmptyResult = false; // Boolean | Whether to return an empty page when there are no results for that page
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "a"; // String | Sort order
 try {
-    CampaignSequenceEntityListing result = apiInstance.getOutboundSequences(pageSize, pageNumber, filterType, name, sortBy, sortOrder);
+    CampaignSequenceEntityListing result = apiInstance.getOutboundSequences(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundSequences");
@@ -3942,6 +4528,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **allowEmptyResult** | **Boolean**| Whether to return an empty page when there are no results for that page | [optional] [default to false] 
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith 
 | **name** | **String**| Name | [optional] 
 | **sortBy** | **String**| Sort by | [optional] 
@@ -5352,6 +5939,132 @@ try {
 
 [**DncList**](DncList.html)
 
+<a name="postOutboundMessagingcampaigns"></a>
+
+# **postOutboundMessagingcampaigns**
+
+
+
+> [MessagingCampaign](MessagingCampaign.html) postOutboundMessagingcampaigns(body)
+
+Create a Messaging Campaign
+
+
+
+Wraps POST /api/v2/outbound/messagingcampaigns  
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+MessagingCampaign body = new MessagingCampaign(); // MessagingCampaign | Messaging Campaign
+try {
+    MessagingCampaign result = apiInstance.postOutboundMessagingcampaigns(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundMessagingcampaigns");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**MessagingCampaign**](MessagingCampaign.html)| Messaging Campaign | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MessagingCampaign**](MessagingCampaign.html)
+
+<a name="postOutboundMessagingcampaignsProgress"></a>
+
+# **postOutboundMessagingcampaignsProgress**
+
+
+
+> [List&lt;CampaignProgress&gt;](CampaignProgress.html) postOutboundMessagingcampaignsProgress(body)
+
+Get progress for a list of messaging campaigns
+
+
+
+Wraps POST /api/v2/outbound/messagingcampaigns/progress  
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+List<String> body = Arrays.asList(new List<String>()); // List<String> | Messaging Campaign IDs
+try {
+    List<CampaignProgress> result = apiInstance.postOutboundMessagingcampaignsProgress(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundMessagingcampaignsProgress");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | **List&lt;String&gt;**| Messaging Campaign IDs | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**List&lt;CampaignProgress&gt;**](CampaignProgress.html)
+
 <a name="postOutboundRulesets"></a>
 
 # **postOutboundRulesets**
@@ -6130,6 +6843,71 @@ try {
 ### Return type
 
 [**DncList**](DncList.html)
+
+<a name="putOutboundMessagingcampaign"></a>
+
+# **putOutboundMessagingcampaign**
+
+
+
+> [MessagingCampaign](MessagingCampaign.html) putOutboundMessagingcampaign(messagingCampaignId, body)
+
+Update an Outbound Messaging Campaign
+
+
+
+Wraps PUT /api/v2/outbound/messagingcampaigns/{messagingCampaignId}  
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+MessagingCampaign body = new MessagingCampaign(); // MessagingCampaign | MessagingCampaign
+try {
+    MessagingCampaign result = apiInstance.putOutboundMessagingcampaign(messagingCampaignId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#putOutboundMessagingcampaign");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **messagingCampaignId** | **String**| The Messaging Campaign ID | 
+| **body** | [**MessagingCampaign**](MessagingCampaign.html)| MessagingCampaign | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MessagingCampaign**](MessagingCampaign.html)
 
 <a name="putOutboundRuleset"></a>
 

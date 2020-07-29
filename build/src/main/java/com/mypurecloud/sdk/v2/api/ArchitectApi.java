@@ -3010,12 +3010,13 @@ public class ArchitectApi {
    * @param sortBy Sort by (optional, default to name)
    * @param sortOrder Sort order (optional, default to ASC)
    * @param name Name of the Schedule Group to filter by. (optional)
+   * @param scheduleIds A comma-delimited list of Schedule IDs to filter by. (optional)
    * @return ScheduleGroupEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ScheduleGroupEntityListing getArchitectSchedulegroups(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name) throws IOException, ApiException {
-    return  getArchitectSchedulegroups(createGetArchitectSchedulegroupsRequest(pageNumber, pageSize, sortBy, sortOrder, name));
+  public ScheduleGroupEntityListing getArchitectSchedulegroups(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String scheduleIds) throws IOException, ApiException {
+    return  getArchitectSchedulegroups(createGetArchitectSchedulegroupsRequest(pageNumber, pageSize, sortBy, sortOrder, name, scheduleIds));
   }
 
   /**
@@ -3026,14 +3027,15 @@ public class ArchitectApi {
    * @param sortBy Sort by (optional, default to name)
    * @param sortOrder Sort order (optional, default to ASC)
    * @param name Name of the Schedule Group to filter by. (optional)
+   * @param scheduleIds A comma-delimited list of Schedule IDs to filter by. (optional)
    * @return ScheduleGroupEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScheduleGroupEntityListing> getArchitectSchedulegroupsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name) throws IOException {
-    return getArchitectSchedulegroups(createGetArchitectSchedulegroupsRequest(pageNumber, pageSize, sortBy, sortOrder, name).withHttpInfo());
+  public ApiResponse<ScheduleGroupEntityListing> getArchitectSchedulegroupsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String scheduleIds) throws IOException {
+    return getArchitectSchedulegroups(createGetArchitectSchedulegroupsRequest(pageNumber, pageSize, sortBy, sortOrder, name, scheduleIds).withHttpInfo());
   }
 
-  private GetArchitectSchedulegroupsRequest createGetArchitectSchedulegroupsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name) {
+  private GetArchitectSchedulegroupsRequest createGetArchitectSchedulegroupsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, String name, String scheduleIds) {
     return GetArchitectSchedulegroupsRequest.builder()
             .withPageNumber(pageNumber)
     
@@ -3044,6 +3046,8 @@ public class ArchitectApi {
             .withSortOrder(sortOrder)
     
             .withName(name)
+    
+            .withScheduleIds(scheduleIds)
     
             .build();
   }

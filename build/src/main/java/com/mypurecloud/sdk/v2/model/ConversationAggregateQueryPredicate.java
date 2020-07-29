@@ -98,14 +98,18 @@ public class ConversationAggregateQueryPredicate  implements Serializable {
     QUEUEID("queueId"),
     REMOTE("remote"),
     REQUESTEDLANGUAGEID("requestedLanguageId"),
+    REQUESTEDROUTING("requestedRouting"),
     REQUESTEDROUTINGSKILLID("requestedRoutingSkillId"),
     ROOMID("roomId"),
     ROUTINGPRIORITY("routingPriority"),
     SCOREDAGENTID("scoredAgentId"),
+    SELECTEDAGENTID("selectedAgentId"),
+    SELECTEDAGENTRANK("selectedAgentRank"),
     SESSIONDNIS("sessionDnis"),
     SESSIONID("sessionId"),
     STATIONID("stationId"),
     TEAMID("teamId"),
+    USEDROUTING("usedRouting"),
     USERID("userId"),
     WRAPUPCODE("wrapUpCode");
 
