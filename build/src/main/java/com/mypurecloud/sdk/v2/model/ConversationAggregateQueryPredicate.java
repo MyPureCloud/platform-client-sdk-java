@@ -60,6 +60,7 @@ public class ConversationAggregateQueryPredicate  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ADDRESSFROM("addressFrom"),
     ADDRESSTO("addressTo"),
+    AGENTASSISTANTID("agentAssistantId"),
     AGENTSCORE("agentScore"),
     ANI("ani"),
     CONVERSATIONID("conversationId"),

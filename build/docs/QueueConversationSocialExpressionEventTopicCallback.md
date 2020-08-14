@@ -29,6 +29,7 @@ title: QueueConversationSocialExpressionEventTopicCallback
 | **callbackScheduledTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **automatedCallbackConfigId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **wrapup** | <!----><!---->[**QueueConversationSocialExpressionEventTopicWrapup**](QueueConversationSocialExpressionEventTopicWrapup.html)<!----> |  |  [optional] |
+| **afterCallWork** | <!----><!---->[**QueueConversationSocialExpressionEventTopicAfterCallWork**](QueueConversationSocialExpressionEventTopicAfterCallWork.html)<!----> |  |  [optional] |
 | **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

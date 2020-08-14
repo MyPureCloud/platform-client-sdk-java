@@ -1103,7 +1103,7 @@ try {
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-> [UserProfileEntityListing](UserProfileEntityListing.html) getProfilesUsers(pageSize, pageNumber, id, jid, sortOrder, expand)
+> [UserProfileEntityListing](UserProfileEntityListing.html) getProfilesUsers(pageSize, pageNumber, id, jid, sortOrder, expand, integrationPresenceSource)
 
 Get a user profile listing
 
@@ -1142,8 +1142,9 @@ List<String> id = Arrays.asList("id_example"); // List<String> | id
 List<String> jid = Arrays.asList("jid_example"); // List<String> | jid
 String sortOrder = "ASC"; // String | Ascending or descending sort order
 List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+String integrationPresenceSource = "integrationPresenceSource_example"; // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\".
 try {
-    UserProfileEntityListing result = apiInstance.getProfilesUsers(pageSize, pageNumber, id, jid, sortOrder, expand);
+    UserProfileEntityListing result = apiInstance.getProfilesUsers(pageSize, pageNumber, id, jid, sortOrder, expand, integrationPresenceSource);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getProfilesUsers");
@@ -1162,6 +1163,7 @@ try {
 | **jid** | [**List&lt;String&gt;**](String.html)| jid | [optional] 
 | **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending 
 | **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization 
+| **integrationPresenceSource** | **String**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional]<br />**Values**: MicrosoftTeams, ZoomPhone 
 {: class="table-striped"}
 
 
@@ -1239,7 +1241,7 @@ try {
 
 
 
-> [User](User.html) getUser(userId, expand, state)
+> [User](User.html) getUser(userId, expand, integrationPresenceSource, state)
 
 Get user.
 
@@ -1274,9 +1276,10 @@ Configuration.setDefaultApiClient(apiClient);
 UsersApi apiInstance = new UsersApi();
 String userId = "userId_example"; // String | User ID
 List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+String integrationPresenceSource = "integrationPresenceSource_example"; // String | Gets an integration presence for a user instead of their default.
 String state = "active"; // String | Search for a user with this state
 try {
-    User result = apiInstance.getUser(userId, expand, state);
+    User result = apiInstance.getUser(userId, expand, integrationPresenceSource, state);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getUser");
@@ -1291,6 +1294,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| User ID | 
 | **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
+| **integrationPresenceSource** | **String**| Gets an integration presence for a user instead of their default. | [optional]<br />**Values**: MicrosoftTeams, ZoomPhone 
 | **state** | **String**| Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted 
 {: class="table-striped"}
 
@@ -1691,7 +1695,7 @@ try {
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-> [UserProfile](UserProfile.html) getUserProfile(userId, expand)
+> [UserProfile](UserProfile.html) getUserProfile(userId, expand, integrationPresenceSource)
 
 Get user profile
 
@@ -1726,8 +1730,9 @@ Configuration.setDefaultApiClient(apiClient);
 UsersApi apiInstance = new UsersApi();
 String userId = "userId_example"; // String | userId
 List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+String integrationPresenceSource = "integrationPresenceSource_example"; // String | Gets an integration presence for a user instead of their default.
 try {
-    UserProfile result = apiInstance.getUserProfile(userId, expand);
+    UserProfile result = apiInstance.getUserProfile(userId, expand, integrationPresenceSource);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getUserProfile");
@@ -1742,6 +1747,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| userId | 
 | **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team 
+| **integrationPresenceSource** | **String**| Gets an integration presence for a user instead of their default. | [optional]<br />**Values**: MicrosoftTeams, ZoomPhone 
 {: class="table-striped"}
 
 
@@ -2344,7 +2350,7 @@ try {
 
 
 
-> [UserEntityListing](UserEntityListing.html) getUsers(pageSize, pageNumber, id, jabberId, sortOrder, expand, state)
+> [UserEntityListing](UserEntityListing.html) getUsers(pageSize, pageNumber, id, jabberId, sortOrder, expand, integrationPresenceSource, state)
 
 Get the list of available users.
 
@@ -2383,9 +2389,10 @@ List<String> id = Arrays.asList("id_example"); // List<String> | A list of user 
 List<String> jabberId = Arrays.asList("jabberId_example"); // List<String> | A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter)
 String sortOrder = "ASC"; // String | Ascending or descending sort order
 List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+String integrationPresenceSource = "integrationPresenceSource_example"; // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 10.
 String state = "active"; // String | Only list users of this state
 try {
-    UserEntityListing result = apiInstance.getUsers(pageSize, pageNumber, id, jabberId, sortOrder, expand, state);
+    UserEntityListing result = apiInstance.getUsers(pageSize, pageNumber, id, jabberId, sortOrder, expand, integrationPresenceSource, state);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getUsers");
@@ -2404,6 +2411,7 @@ try {
 | **jabberId** | [**List&lt;String&gt;**](String.html)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional] 
 | **sortOrder** | **String**| Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending 
 | **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
+| **integrationPresenceSource** | **String**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 10. | [optional]<br />**Values**: MicrosoftTeams, ZoomPhone 
 | **state** | **String**| Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted, any 
 {: class="table-striped"}
 
@@ -2418,7 +2426,7 @@ try {
 
 
 
-> [UserMe](UserMe.html) getUsersMe(expand)
+> [UserMe](UserMe.html) getUsersMe(expand, integrationPresenceSource)
 
 Get current user details.
 
@@ -2452,8 +2460,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 UsersApi apiInstance = new UsersApi();
 List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+String integrationPresenceSource = "integrationPresenceSource_example"; // String | Get your presence for a given integration. This parameter will only be used when presence is provided as an \"expand\".
 try {
-    UserMe result = apiInstance.getUsersMe(expand);
+    UserMe result = apiInstance.getUsersMe(expand, integrationPresenceSource);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getUsersMe");
@@ -2467,6 +2476,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors 
+| **integrationPresenceSource** | **String**| Get your presence for a given integration. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional]<br />**Values**: MicrosoftTeams, ZoomPhone 
 {: class="table-striped"}
 
 
@@ -2480,7 +2490,7 @@ try {
 
 
 
-> [UsersSearchResponse](UsersSearchResponse.html) getUsersSearch(q64, expand)
+> [UsersSearchResponse](UsersSearchResponse.html) getUsersSearch(q64, expand, integrationPresenceSource)
 
 Search users using the q64 value returned from a previous search
 
@@ -2515,8 +2525,9 @@ Configuration.setDefaultApiClient(apiClient);
 UsersApi apiInstance = new UsersApi();
 String q64 = "q64_example"; // String | q64
 List<String> expand = Arrays.asList("expand_example"); // List<String> | expand
+String integrationPresenceSource = "integrationPresenceSource_example"; // String | integrationPresenceSource
 try {
-    UsersSearchResponse result = apiInstance.getUsersSearch(q64, expand);
+    UsersSearchResponse result = apiInstance.getUsersSearch(q64, expand, integrationPresenceSource);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getUsersSearch");
@@ -2531,6 +2542,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **q64** | **String**| q64 | 
 | **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] 
+| **integrationPresenceSource** | **String**| integrationPresenceSource | [optional]<br />**Values**: MicrosoftTeams, ZoomPhone 
 {: class="table-striped"}
 
 

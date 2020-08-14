@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Address;
+import com.mypurecloud.sdk.v2.model.AfterCallWork;
 import com.mypurecloud.sdk.v2.model.Wrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -124,6 +125,7 @@ public class Video  implements Serializable {
   private List<String> msids = new ArrayList<String>();
   private Address self = null;
   private Wrapup wrapup = null;
+  private AfterCallWork afterCallWork = null;
 
   
   /**
@@ -414,6 +416,24 @@ public class Video  implements Serializable {
   }
 
   
+  /**
+   * After-call work for the communication.
+   **/
+  public Video afterCallWork(AfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "After-call work for the communication.")
+  @JsonProperty("afterCallWork")
+  public AfterCallWork getAfterCallWork() {
+    return afterCallWork;
+  }
+  public void setAfterCallWork(AfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -439,12 +459,13 @@ public class Video  implements Serializable {
         Objects.equals(this.peerId, video.peerId) &&
         Objects.equals(this.msids, video.msids) &&
         Objects.equals(this.self, video.self) &&
-        Objects.equals(this.wrapup, video.wrapup);
+        Objects.equals(this.wrapup, video.wrapup) &&
+        Objects.equals(this.afterCallWork, video.afterCallWork);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, context, audioMuted, videoMuted, sharingScreen, peerCount, disconnectType, startAlertingTime, connectedTime, disconnectedTime, provider, peerId, msids, self, wrapup);
+    return Objects.hash(state, id, context, audioMuted, videoMuted, sharingScreen, peerCount, disconnectType, startAlertingTime, connectedTime, disconnectedTime, provider, peerId, msids, self, wrapup, afterCallWork);
   }
 
   @Override
@@ -468,6 +489,7 @@ public class Video  implements Serializable {
     sb.append("    msids: ").append(toIndentedString(msids)).append("\n");
     sb.append("    self: ").append(toIndentedString(self)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("}");
     return sb.toString();
   }

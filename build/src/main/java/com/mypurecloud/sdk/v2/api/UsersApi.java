@@ -1445,12 +1445,13 @@ public class UsersApi {
    * @param jid jid (optional)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @param expand Which fields, if any, to expand (optional)
+   * @param integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. (optional)
    * @return UserProfileEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserProfileEntityListing getProfilesUsers(Integer pageSize, Integer pageNumber, List<String> id, List<String> jid, String sortOrder, List<String> expand) throws IOException, ApiException {
-    return  getProfilesUsers(createGetProfilesUsersRequest(pageSize, pageNumber, id, jid, sortOrder, expand));
+  public UserProfileEntityListing getProfilesUsers(Integer pageSize, Integer pageNumber, List<String> id, List<String> jid, String sortOrder, List<String> expand, String integrationPresenceSource) throws IOException, ApiException {
+    return  getProfilesUsers(createGetProfilesUsersRequest(pageSize, pageNumber, id, jid, sortOrder, expand, integrationPresenceSource));
   }
 
   /**
@@ -1462,14 +1463,15 @@ public class UsersApi {
    * @param jid jid (optional)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @param expand Which fields, if any, to expand (optional)
+   * @param integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. (optional)
    * @return UserProfileEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserProfileEntityListing> getProfilesUsersWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, List<String> jid, String sortOrder, List<String> expand) throws IOException {
-    return getProfilesUsers(createGetProfilesUsersRequest(pageSize, pageNumber, id, jid, sortOrder, expand).withHttpInfo());
+  public ApiResponse<UserProfileEntityListing> getProfilesUsersWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, List<String> jid, String sortOrder, List<String> expand, String integrationPresenceSource) throws IOException {
+    return getProfilesUsers(createGetProfilesUsersRequest(pageSize, pageNumber, id, jid, sortOrder, expand, integrationPresenceSource).withHttpInfo());
   }
 
-  private GetProfilesUsersRequest createGetProfilesUsersRequest(Integer pageSize, Integer pageNumber, List<String> id, List<String> jid, String sortOrder, List<String> expand) {
+  private GetProfilesUsersRequest createGetProfilesUsersRequest(Integer pageSize, Integer pageNumber, List<String> id, List<String> jid, String sortOrder, List<String> expand, String integrationPresenceSource) {
     return GetProfilesUsersRequest.builder()
             .withPageSize(pageSize)
     
@@ -1482,6 +1484,8 @@ public class UsersApi {
             .withSortOrder(sortOrder)
     
             .withExpand(expand)
+    
+            .withIntegrationPresenceSource(integrationPresenceSource)
     
             .build();
   }
@@ -1619,13 +1623,14 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @param expand Which fields, if any, to expand (optional)
+   * @param integrationPresenceSource Gets an integration presence for a user instead of their default. (optional)
    * @param state Search for a user with this state (optional, default to active)
    * @return User
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public User getUser(String userId, List<String> expand, String state) throws IOException, ApiException {
-    return  getUser(createGetUserRequest(userId, expand, state));
+  public User getUser(String userId, List<String> expand, String integrationPresenceSource, String state) throws IOException, ApiException {
+    return  getUser(createGetUserRequest(userId, expand, integrationPresenceSource, state));
   }
 
   /**
@@ -1633,19 +1638,22 @@ public class UsersApi {
    * 
    * @param userId User ID (required)
    * @param expand Which fields, if any, to expand (optional)
+   * @param integrationPresenceSource Gets an integration presence for a user instead of their default. (optional)
    * @param state Search for a user with this state (optional, default to active)
    * @return User
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<User> getUserWithHttpInfo(String userId, List<String> expand, String state) throws IOException {
-    return getUser(createGetUserRequest(userId, expand, state).withHttpInfo());
+  public ApiResponse<User> getUserWithHttpInfo(String userId, List<String> expand, String integrationPresenceSource, String state) throws IOException {
+    return getUser(createGetUserRequest(userId, expand, integrationPresenceSource, state).withHttpInfo());
   }
 
-  private GetUserRequest createGetUserRequest(String userId, List<String> expand, String state) {
+  private GetUserRequest createGetUserRequest(String userId, List<String> expand, String integrationPresenceSource, String state) {
     return GetUserRequest.builder()
             .withUserId(userId)
     
             .withExpand(expand)
+    
+            .withIntegrationPresenceSource(integrationPresenceSource)
     
             .withState(state)
     
@@ -2208,12 +2216,13 @@ public class UsersApi {
    * This api has been deprecated. Use api/v2/users instead
    * @param userId userId (required)
    * @param expand Which fields, if any, to expand (optional)
+   * @param integrationPresenceSource Gets an integration presence for a user instead of their default. (optional)
    * @return UserProfile
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserProfile getUserProfile(String userId, List<String> expand) throws IOException, ApiException {
-    return  getUserProfile(createGetUserProfileRequest(userId, expand));
+  public UserProfile getUserProfile(String userId, List<String> expand, String integrationPresenceSource) throws IOException, ApiException {
+    return  getUserProfile(createGetUserProfileRequest(userId, expand, integrationPresenceSource));
   }
 
   /**
@@ -2221,18 +2230,21 @@ public class UsersApi {
    * This api has been deprecated. Use api/v2/users instead
    * @param userId userId (required)
    * @param expand Which fields, if any, to expand (optional)
+   * @param integrationPresenceSource Gets an integration presence for a user instead of their default. (optional)
    * @return UserProfile
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserProfile> getUserProfileWithHttpInfo(String userId, List<String> expand) throws IOException {
-    return getUserProfile(createGetUserProfileRequest(userId, expand).withHttpInfo());
+  public ApiResponse<UserProfile> getUserProfileWithHttpInfo(String userId, List<String> expand, String integrationPresenceSource) throws IOException {
+    return getUserProfile(createGetUserProfileRequest(userId, expand, integrationPresenceSource).withHttpInfo());
   }
 
-  private GetUserProfileRequest createGetUserProfileRequest(String userId, List<String> expand) {
+  private GetUserProfileRequest createGetUserProfileRequest(String userId, List<String> expand, String integrationPresenceSource) {
     return GetUserProfileRequest.builder()
             .withUserId(userId)
     
             .withExpand(expand)
+    
+            .withIntegrationPresenceSource(integrationPresenceSource)
     
             .build();
   }
@@ -3058,13 +3070,14 @@ public class UsersApi {
    * @param jabberId A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) (optional)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @param expand Which fields, if any, to expand (optional)
+   * @param integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 10. (optional)
    * @param state Only list users of this state (optional, default to active)
    * @return UserEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserEntityListing getUsers(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder, List<String> expand, String state) throws IOException, ApiException {
-    return  getUsers(createGetUsersRequest(pageSize, pageNumber, id, jabberId, sortOrder, expand, state));
+  public UserEntityListing getUsers(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder, List<String> expand, String integrationPresenceSource, String state) throws IOException, ApiException {
+    return  getUsers(createGetUsersRequest(pageSize, pageNumber, id, jabberId, sortOrder, expand, integrationPresenceSource, state));
   }
 
   /**
@@ -3076,15 +3089,16 @@ public class UsersApi {
    * @param jabberId A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) (optional)
    * @param sortOrder Ascending or descending sort order (optional, default to ASC)
    * @param expand Which fields, if any, to expand (optional)
+   * @param integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 10. (optional)
    * @param state Only list users of this state (optional, default to active)
    * @return UserEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserEntityListing> getUsersWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder, List<String> expand, String state) throws IOException {
-    return getUsers(createGetUsersRequest(pageSize, pageNumber, id, jabberId, sortOrder, expand, state).withHttpInfo());
+  public ApiResponse<UserEntityListing> getUsersWithHttpInfo(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder, List<String> expand, String integrationPresenceSource, String state) throws IOException {
+    return getUsers(createGetUsersRequest(pageSize, pageNumber, id, jabberId, sortOrder, expand, integrationPresenceSource, state).withHttpInfo());
   }
 
-  private GetUsersRequest createGetUsersRequest(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder, List<String> expand, String state) {
+  private GetUsersRequest createGetUsersRequest(Integer pageSize, Integer pageNumber, List<String> id, List<String> jabberId, String sortOrder, List<String> expand, String integrationPresenceSource, String state) {
     return GetUsersRequest.builder()
             .withPageSize(pageSize)
     
@@ -3097,6 +3111,8 @@ public class UsersApi {
             .withSortOrder(sortOrder)
     
             .withExpand(expand)
+    
+            .withIntegrationPresenceSource(integrationPresenceSource)
     
             .withState(state)
     
@@ -3156,28 +3172,32 @@ public class UsersApi {
    * Get current user details.
    * This request is not valid when using the Client Credentials OAuth grant.
    * @param expand Which fields, if any, to expand. (optional)
+   * @param integrationPresenceSource Get your presence for a given integration. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. (optional)
    * @return UserMe
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserMe getUsersMe(List<String> expand) throws IOException, ApiException {
-    return  getUsersMe(createGetUsersMeRequest(expand));
+  public UserMe getUsersMe(List<String> expand, String integrationPresenceSource) throws IOException, ApiException {
+    return  getUsersMe(createGetUsersMeRequest(expand, integrationPresenceSource));
   }
 
   /**
    * Get current user details.
    * This request is not valid when using the Client Credentials OAuth grant.
    * @param expand Which fields, if any, to expand. (optional)
+   * @param integrationPresenceSource Get your presence for a given integration. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. (optional)
    * @return UserMe
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserMe> getUsersMeWithHttpInfo(List<String> expand) throws IOException {
-    return getUsersMe(createGetUsersMeRequest(expand).withHttpInfo());
+  public ApiResponse<UserMe> getUsersMeWithHttpInfo(List<String> expand, String integrationPresenceSource) throws IOException {
+    return getUsersMe(createGetUsersMeRequest(expand, integrationPresenceSource).withHttpInfo());
   }
 
-  private GetUsersMeRequest createGetUsersMeRequest(List<String> expand) {
+  private GetUsersMeRequest createGetUsersMeRequest(List<String> expand, String integrationPresenceSource) {
     return GetUsersMeRequest.builder()
             .withExpand(expand)
+    
+            .withIntegrationPresenceSource(integrationPresenceSource)
     
             .build();
   }
@@ -3236,12 +3256,13 @@ public class UsersApi {
    * 
    * @param q64 q64 (required)
    * @param expand expand (optional)
+   * @param integrationPresenceSource integrationPresenceSource (optional)
    * @return UsersSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UsersSearchResponse getUsersSearch(String q64, List<String> expand) throws IOException, ApiException {
-    return  getUsersSearch(createGetUsersSearchRequest(q64, expand));
+  public UsersSearchResponse getUsersSearch(String q64, List<String> expand, String integrationPresenceSource) throws IOException, ApiException {
+    return  getUsersSearch(createGetUsersSearchRequest(q64, expand, integrationPresenceSource));
   }
 
   /**
@@ -3249,18 +3270,21 @@ public class UsersApi {
    * 
    * @param q64 q64 (required)
    * @param expand expand (optional)
+   * @param integrationPresenceSource integrationPresenceSource (optional)
    * @return UsersSearchResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UsersSearchResponse> getUsersSearchWithHttpInfo(String q64, List<String> expand) throws IOException {
-    return getUsersSearch(createGetUsersSearchRequest(q64, expand).withHttpInfo());
+  public ApiResponse<UsersSearchResponse> getUsersSearchWithHttpInfo(String q64, List<String> expand, String integrationPresenceSource) throws IOException {
+    return getUsersSearch(createGetUsersSearchRequest(q64, expand, integrationPresenceSource).withHttpInfo());
   }
 
-  private GetUsersSearchRequest createGetUsersSearchRequest(String q64, List<String> expand) {
+  private GetUsersSearchRequest createGetUsersSearchRequest(String q64, List<String> expand, String integrationPresenceSource) {
     return GetUsersSearchRequest.builder()
             .withQ64(q64)
     
             .withExpand(expand)
+    
+            .withIntegrationPresenceSource(integrationPresenceSource)
     
             .build();
   }

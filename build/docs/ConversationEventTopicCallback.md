@@ -29,6 +29,7 @@ title: ConversationEventTopicCallback
 | **callbackScheduledTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **automatedCallbackConfigId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **wrapup** | <!----><!---->[**ConversationEventTopicWrapup**](ConversationEventTopicWrapup.html)<!----> |  |  [optional] |
+| **afterCallWork** | <!----><!---->[**ConversationEventTopicAfterCallWork**](ConversationEventTopicAfterCallWork.html)<!----> |  |  [optional] |
 | **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

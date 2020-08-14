@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AfterCallWork;
 import com.mypurecloud.sdk.v2.model.Segment;
 import com.mypurecloud.sdk.v2.model.Wrapup;
 import io.swagger.annotations.ApiModel;
@@ -126,6 +127,7 @@ public class SocialExpression  implements Serializable {
   private String scriptId = null;
   private String peerId = null;
   private Wrapup wrapup = null;
+  private AfterCallWork afterCallWork = null;
 
   
   /**
@@ -452,6 +454,24 @@ public class SocialExpression  implements Serializable {
   }
 
   
+  /**
+   * After-call work for the communication.
+   **/
+  public SocialExpression afterCallWork(AfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "After-call work for the communication.")
+  @JsonProperty("afterCallWork")
+  public AfterCallWork getAfterCallWork() {
+    return afterCallWork;
+  }
+  public void setAfterCallWork(AfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -479,12 +499,13 @@ public class SocialExpression  implements Serializable {
         Objects.equals(this.provider, socialExpression.provider) &&
         Objects.equals(this.scriptId, socialExpression.scriptId) &&
         Objects.equals(this.peerId, socialExpression.peerId) &&
-        Objects.equals(this.wrapup, socialExpression.wrapup);
+        Objects.equals(this.wrapup, socialExpression.wrapup) &&
+        Objects.equals(this.afterCallWork, socialExpression.afterCallWork);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, segments, held, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, scriptId, peerId, wrapup);
+    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, segments, held, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, scriptId, peerId, wrapup, afterCallWork);
   }
 
   @Override
@@ -510,6 +531,7 @@ public class SocialExpression  implements Serializable {
     sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("}");
     return sb.toString();
   }

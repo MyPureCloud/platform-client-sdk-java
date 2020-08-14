@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -24,6 +25,43 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
   private Integer lengthInMinutes = null;
   private List<String> conversationIds = new ArrayList<String>();
   private List<String> documentIds = new ArrayList<String>();
+
+  /**
+   * The status of the coaching appointment.
+   */
+  public enum StatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    SCHEDULED("Scheduled"),
+    INPROGRESS("InProgress"),
+    COMPLETED("Completed"),
+    INVALIDSCHEDULE("InvalidSchedule");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static StatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (StatusEnum value : StatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return StatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private StatusEnum status = null;
 
   
   /**
@@ -134,6 +172,24 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
   }
 
   
+  /**
+   * The status of the coaching appointment.
+   **/
+  public UpdateCoachingAppointmentRequest status(StatusEnum status) {
+    this.status = status;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The status of the coaching appointment.")
+  @JsonProperty("status")
+  public StatusEnum getStatus() {
+    return status;
+  }
+  public void setStatus(StatusEnum status) {
+    this.status = status;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -149,12 +205,13 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
         Objects.equals(this.dateStart, updateCoachingAppointmentRequest.dateStart) &&
         Objects.equals(this.lengthInMinutes, updateCoachingAppointmentRequest.lengthInMinutes) &&
         Objects.equals(this.conversationIds, updateCoachingAppointmentRequest.conversationIds) &&
-        Objects.equals(this.documentIds, updateCoachingAppointmentRequest.documentIds);
+        Objects.equals(this.documentIds, updateCoachingAppointmentRequest.documentIds) &&
+        Objects.equals(this.status, updateCoachingAppointmentRequest.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, dateStart, lengthInMinutes, conversationIds, documentIds);
+    return Objects.hash(name, description, dateStart, lengthInMinutes, conversationIds, documentIds, status);
   }
 
   @Override
@@ -168,6 +225,7 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
     sb.append("    lengthInMinutes: ").append(toIndentedString(lengthInMinutes)).append("\n");
     sb.append("    conversationIds: ").append(toIndentedString(conversationIds)).append("\n");
     sb.append("    documentIds: ").append(toIndentedString(documentIds)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }

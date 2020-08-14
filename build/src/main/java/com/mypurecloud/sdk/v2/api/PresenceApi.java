@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.model.OrganizationPresence;
 import com.mypurecloud.sdk.v2.model.OrganizationPresenceEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemPresence;
 import com.mypurecloud.sdk.v2.model.UserPresence;
+import com.mypurecloud.sdk.v2.model.PresenceExpand;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeletePresencedefinitionRequest;
@@ -22,7 +23,10 @@ import com.mypurecloud.sdk.v2.api.request.GetPresencedefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetPresencedefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSystempresencesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserPresenceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUserPresencesMicrosoftteamsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUserPresencesPurecloudRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresenceRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchUserPresencesPurecloudRequest;
 import com.mypurecloud.sdk.v2.api.request.PostPresencedefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutPresencedefinitionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUsersPresencesBulkRequest;
@@ -373,9 +377,9 @@ public class PresenceApi {
   
   /**
    * Get a user&#39;s Presence
-   * 
+   * Get a user&#39;s presence for the specified source that is not specifically listed.  Used to support custom presence sources.
    * @param userId user Id (required)
-   * @param sourceId Source (required)
+   * @param sourceId Presence source ID (required)
    * @return UserPresence
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -386,9 +390,9 @@ public class PresenceApi {
 
   /**
    * Get a user&#39;s Presence
-   * 
+   * Get a user&#39;s presence for the specified source that is not specifically listed.  Used to support custom presence sources.
    * @param userId user Id (required)
-   * @param sourceId Source (required)
+   * @param sourceId Presence source ID (required)
    * @return UserPresence
    * @throws IOException if the request fails to be processed
    */
@@ -407,7 +411,7 @@ public class PresenceApi {
 
   /**
    * Get a user&#39;s Presence
-   * 
+   * Get a user&#39;s presence for the specified source that is not specifically listed.  Used to support custom presence sources.
    * @param request The request object
    * @return UserPresence
    * @throws ApiException if the request fails on the server
@@ -426,7 +430,7 @@ public class PresenceApi {
 
   /**
    * Get a user&#39;s Presence
-   * 
+   * Get a user&#39;s presence for the specified source that is not specifically listed.  Used to support custom presence sources.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -455,10 +459,168 @@ public class PresenceApi {
 
   
   /**
-   * Patch a user&#39;s Presence
-   * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+   * Get a user&#39;s Microsoft Teams presence.
+   * Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to GenesysCloud presence with additional activity details in the message field. This presence source is read-only.
    * @param userId user Id (required)
-   * @param sourceId Source (required)
+   * @return PresenceExpand
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PresenceExpand getUserPresencesMicrosoftteams(String userId) throws IOException, ApiException {
+    return  getUserPresencesMicrosoftteams(createGetUserPresencesMicrosoftteamsRequest(userId));
+  }
+
+  /**
+   * Get a user&#39;s Microsoft Teams presence.
+   * Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to GenesysCloud presence with additional activity details in the message field. This presence source is read-only.
+   * @param userId user Id (required)
+   * @return PresenceExpand
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PresenceExpand> getUserPresencesMicrosoftteamsWithHttpInfo(String userId) throws IOException {
+    return getUserPresencesMicrosoftteams(createGetUserPresencesMicrosoftteamsRequest(userId).withHttpInfo());
+  }
+
+  private GetUserPresencesMicrosoftteamsRequest createGetUserPresencesMicrosoftteamsRequest(String userId) {
+    return GetUserPresencesMicrosoftteamsRequest.builder()
+            .withUserId(userId)
+    
+            .build();
+  }
+
+  /**
+   * Get a user&#39;s Microsoft Teams presence.
+   * Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to GenesysCloud presence with additional activity details in the message field. This presence source is read-only.
+   * @param request The request object
+   * @return PresenceExpand
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PresenceExpand getUserPresencesMicrosoftteams(GetUserPresencesMicrosoftteamsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PresenceExpand> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PresenceExpand>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a user&#39;s Microsoft Teams presence.
+   * Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to GenesysCloud presence with additional activity details in the message field. This presence source is read-only.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PresenceExpand> getUserPresencesMicrosoftteams(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PresenceExpand>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PresenceExpand> response = (ApiResponse<PresenceExpand>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PresenceExpand> response = (ApiResponse<PresenceExpand>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a user&#39;s GenesysCloud presence.
+   * Get the default GenesysCloud user presence source PURECLOUD
+   * @param userId user Id (required)
+   * @return UserPresence
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserPresence getUserPresencesPurecloud(String userId) throws IOException, ApiException {
+    return  getUserPresencesPurecloud(createGetUserPresencesPurecloudRequest(userId));
+  }
+
+  /**
+   * Get a user&#39;s GenesysCloud presence.
+   * Get the default GenesysCloud user presence source PURECLOUD
+   * @param userId user Id (required)
+   * @return UserPresence
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserPresence> getUserPresencesPurecloudWithHttpInfo(String userId) throws IOException {
+    return getUserPresencesPurecloud(createGetUserPresencesPurecloudRequest(userId).withHttpInfo());
+  }
+
+  private GetUserPresencesPurecloudRequest createGetUserPresencesPurecloudRequest(String userId) {
+    return GetUserPresencesPurecloudRequest.builder()
+            .withUserId(userId)
+    
+            .build();
+  }
+
+  /**
+   * Get a user&#39;s GenesysCloud presence.
+   * Get the default GenesysCloud user presence source PURECLOUD
+   * @param request The request object
+   * @return UserPresence
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserPresence getUserPresencesPurecloud(GetUserPresencesPurecloudRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserPresence> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserPresence>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a user&#39;s GenesysCloud presence.
+   * Get the default GenesysCloud user presence source PURECLOUD
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserPresence> getUserPresencesPurecloud(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserPresence>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPresence> response = (ApiResponse<UserPresence>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPresence> response = (ApiResponse<UserPresence>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Patch a user&#39;s Presence
+   * Patch a user&#39;s presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+   * @param userId user Id (required)
+   * @param sourceId Presence source ID (required)
    * @param body User presence (required)
    * @return UserPresence
    * @throws ApiException if the request fails on the server
@@ -470,9 +632,9 @@ public class PresenceApi {
 
   /**
    * Patch a user&#39;s Presence
-   * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+   * Patch a user&#39;s presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
    * @param userId user Id (required)
-   * @param sourceId Source (required)
+   * @param sourceId Presence source ID (required)
    * @param body User presence (required)
    * @return UserPresence
    * @throws IOException if the request fails to be processed
@@ -494,7 +656,7 @@ public class PresenceApi {
 
   /**
    * Patch a user&#39;s Presence
-   * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+   * Patch a user&#39;s presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
    * @param request The request object
    * @return UserPresence
    * @throws ApiException if the request fails on the server
@@ -513,12 +675,95 @@ public class PresenceApi {
 
   /**
    * Patch a user&#39;s Presence
-   * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+   * Patch a user&#39;s presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<UserPresence> patchUserPresence(ApiRequest<UserPresence> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserPresence>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPresence> response = (ApiResponse<UserPresence>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserPresence> response = (ApiResponse<UserPresence>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Patch a GenesysCloud user&#39;s presence
+   * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the PURECLOUD source as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+   * @param userId user Id (required)
+   * @param body User presence (required)
+   * @return UserPresence
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserPresence patchUserPresencesPurecloud(String userId, UserPresence body) throws IOException, ApiException {
+    return  patchUserPresencesPurecloud(createPatchUserPresencesPurecloudRequest(userId, body));
+  }
+
+  /**
+   * Patch a GenesysCloud user&#39;s presence
+   * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the PURECLOUD source as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+   * @param userId user Id (required)
+   * @param body User presence (required)
+   * @return UserPresence
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserPresence> patchUserPresencesPurecloudWithHttpInfo(String userId, UserPresence body) throws IOException {
+    return patchUserPresencesPurecloud(createPatchUserPresencesPurecloudRequest(userId, body).withHttpInfo());
+  }
+
+  private PatchUserPresencesPurecloudRequest createPatchUserPresencesPurecloudRequest(String userId, UserPresence body) {
+    return PatchUserPresencesPurecloudRequest.builder()
+            .withUserId(userId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Patch a GenesysCloud user&#39;s presence
+   * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the PURECLOUD source as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+   * @param request The request object
+   * @return UserPresence
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserPresence patchUserPresencesPurecloud(PatchUserPresencesPurecloudRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserPresence> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserPresence>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Patch a GenesysCloud user&#39;s presence
+   * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the PURECLOUD source as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserPresence> patchUserPresencesPurecloud(ApiRequest<UserPresence> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<UserPresence>() {});
     }

@@ -27,6 +27,7 @@ title: ConversationEventTopicEmail
 | **draftAttachments** | <!----><!---->[**List&lt;ConversationEventTopicAttachment&gt;**](ConversationEventTopicAttachment.html)<!----> |  |  [optional] |
 | **spam** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **wrapup** | <!----><!---->[**ConversationEventTopicWrapup**](ConversationEventTopicWrapup.html)<!----> |  |  [optional] |
+| **afterCallWork** | <!----><!---->[**ConversationEventTopicAfterCallWork**](ConversationEventTopicAfterCallWork.html)<!----> |  |  [optional] |
 | **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

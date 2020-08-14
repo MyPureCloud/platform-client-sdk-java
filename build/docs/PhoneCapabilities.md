@@ -16,6 +16,7 @@ title: PhoneCapabilities
 | **noRebalance** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **noCloudProvisioning** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **mediaCodecs** | <!---->[**List&lt;MediaCodecsEnum&gt;**](#MediaCodecsEnum)<!----> |  |  [optional] |
+| **cdm** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

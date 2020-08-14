@@ -12,7 +12,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getPresencedefinitions**](PresenceApi.html#getPresencedefinitions) | Get an Organization&#39;s list of Presence Definitions |
 | [**getSystempresences**](PresenceApi.html#getSystempresences) | Get the list of SystemPresences |
 | [**getUserPresence**](PresenceApi.html#getUserPresence) | Get a user&#39;s Presence |
+| [**getUserPresencesMicrosoftteams**](PresenceApi.html#getUserPresencesMicrosoftteams) | Get a user&#39;s Microsoft Teams presence. |
+| [**getUserPresencesPurecloud**](PresenceApi.html#getUserPresencesPurecloud) | Get a user&#39;s GenesysCloud presence. |
 | [**patchUserPresence**](PresenceApi.html#patchUserPresence) | Patch a user&#39;s Presence |
+| [**patchUserPresencesPurecloud**](PresenceApi.html#patchUserPresencesPurecloud) | Patch a GenesysCloud user&#39;s presence |
 | [**postPresencedefinitions**](PresenceApi.html#postPresencedefinitions) | Create a Presence Definition |
 | [**putPresencedefinition**](PresenceApi.html#putPresencedefinition) | Update a Presence Definition |
 | [**putUsersPresencesBulk**](PresenceApi.html#putUsersPresencesBulk) | Update bulk user Presences |
@@ -280,7 +283,7 @@ This endpoint does not require any parameters.
 
 Get a user&#39;s Presence
 
-
+Get a user&#39;s presence for the specified source that is not specifically listed.  Used to support custom presence sources.
 
 Wraps GET /api/v2/users/{userId}/presences/{sourceId}  
 
@@ -310,7 +313,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 PresenceApi apiInstance = new PresenceApi();
 String userId = "userId_example"; // String | user Id
-String sourceId = "sourceId_example"; // String | Source
+String sourceId = "sourceId_example"; // String | Presence source ID
 try {
     UserPresence result = apiInstance.getUserPresence(userId, sourceId);
     System.out.println(result);
@@ -326,7 +329,133 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| user Id | 
-| **sourceId** | **String**| Source | 
+| **sourceId** | **String**| Presence source ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserPresence**](UserPresence.html)
+
+<a name="getUserPresencesMicrosoftteams"></a>
+
+# **getUserPresencesMicrosoftteams**
+
+
+
+> [PresenceExpand](PresenceExpand.html) getUserPresencesMicrosoftteams(userId)
+
+Get a user&#39;s Microsoft Teams presence.
+
+Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to GenesysCloud presence with additional activity details in the message field. This presence source is read-only.
+
+Wraps GET /api/v2/users/{userId}/presences/microsoftteams  
+
+Requires ANY permissions: 
+
+* integration:microsoftTeams:view
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.PresenceApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PresenceApi apiInstance = new PresenceApi();
+String userId = "userId_example"; // String | user Id
+try {
+    PresenceExpand result = apiInstance.getUserPresencesMicrosoftteams(userId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PresenceApi#getUserPresencesMicrosoftteams");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| user Id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PresenceExpand**](PresenceExpand.html)
+
+<a name="getUserPresencesPurecloud"></a>
+
+# **getUserPresencesPurecloud**
+
+
+
+> [UserPresence](UserPresence.html) getUserPresencesPurecloud(userId)
+
+Get a user&#39;s GenesysCloud presence.
+
+Get the default GenesysCloud user presence source PURECLOUD
+
+Wraps GET /api/v2/users/{userId}/presences/purecloud  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.PresenceApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PresenceApi apiInstance = new PresenceApi();
+String userId = "userId_example"; // String | user Id
+try {
+    UserPresence result = apiInstance.getUserPresencesPurecloud(userId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PresenceApi#getUserPresencesPurecloud");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| user Id | 
 {: class="table-striped"}
 
 
@@ -344,7 +473,7 @@ try {
 
 Patch a user&#39;s Presence
 
-The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+Patch a user&#39;s presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
 
 Wraps PATCH /api/v2/users/{userId}/presences/{sourceId}  
 
@@ -374,7 +503,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 PresenceApi apiInstance = new PresenceApi();
 String userId = "userId_example"; // String | user Id
-String sourceId = "sourceId_example"; // String | Source
+String sourceId = "sourceId_example"; // String | Presence source ID
 UserPresence body = new UserPresence(); // UserPresence | User presence
 try {
     UserPresence result = apiInstance.patchUserPresence(userId, sourceId, body);
@@ -391,7 +520,71 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**| user Id | 
-| **sourceId** | **String**| Source | 
+| **sourceId** | **String**| Presence source ID | 
+| **body** | [**UserPresence**](UserPresence.html)| User presence | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserPresence**](UserPresence.html)
+
+<a name="patchUserPresencesPurecloud"></a>
+
+# **patchUserPresencesPurecloud**
+
+
+
+> [UserPresence](UserPresence.html) patchUserPresencesPurecloud(userId, body)
+
+Patch a GenesysCloud user&#39;s presence
+
+The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the PURECLOUD source as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+
+Wraps PATCH /api/v2/users/{userId}/presences/purecloud  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.PresenceApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PresenceApi apiInstance = new PresenceApi();
+String userId = "userId_example"; // String | user Id
+UserPresence body = new UserPresence(); // UserPresence | User presence
+try {
+    UserPresence result = apiInstance.patchUserPresencesPurecloud(userId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PresenceApi#patchUserPresencesPurecloud");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| user Id | 
 | **body** | [**UserPresence**](UserPresence.html)| User presence | 
 {: class="table-striped"}
 

@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Address;
+import com.mypurecloud.sdk.v2.model.AfterCallWork;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.MessageDetails;
 import com.mypurecloud.sdk.v2.model.Segment;
@@ -201,6 +202,7 @@ public class Message  implements Serializable {
   private Address fromAddress = null;
   private List<MessageDetails> messages = new ArrayList<MessageDetails>();
   private Wrapup wrapup = null;
+  private AfterCallWork afterCallWork = null;
 
   
   /**
@@ -598,6 +600,24 @@ public class Message  implements Serializable {
   }
 
   
+  /**
+   * After-call work for the communication.
+   **/
+  public Message afterCallWork(AfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "After-call work for the communication.")
+  @JsonProperty("afterCallWork")
+  public AfterCallWork getAfterCallWork() {
+    return afterCallWork;
+  }
+  public void setAfterCallWork(AfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -629,12 +649,13 @@ public class Message  implements Serializable {
         Objects.equals(this.toAddress, message.toAddress) &&
         Objects.equals(this.fromAddress, message.fromAddress) &&
         Objects.equals(this.messages, message.messages) &&
-        Objects.equals(this.wrapup, message.wrapup);
+        Objects.equals(this.wrapup, message.wrapup) &&
+        Objects.equals(this.afterCallWork, message.afterCallWork);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, held, segments, direction, recordingId, errorInfo, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, type, recipientCountry, recipientType, scriptId, peerId, toAddress, fromAddress, messages, wrapup);
+    return Objects.hash(state, id, held, segments, direction, recordingId, errorInfo, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, type, recipientCountry, recipientType, scriptId, peerId, toAddress, fromAddress, messages, wrapup, afterCallWork);
   }
 
   @Override
@@ -664,6 +685,7 @@ public class Message  implements Serializable {
     sb.append("    fromAddress: ").append(toIndentedString(fromAddress)).append("\n");
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("}");
     return sb.toString();
   }

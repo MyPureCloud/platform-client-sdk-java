@@ -93,16 +93,16 @@ public class GetOrphanrecordingsRequest {
 	    return this;
 	} 
 	
-	private List<String> expand;
-	public List<String> getExpand() {
+	private List<Object> expand;
+	public List<Object> getExpand() {
 		return this.expand;
 	}
 
-	public void setExpand(List<String> expand) {
+	public void setExpand(List<Object> expand) {
 		this.expand = expand;
 	}
 
-	public GetOrphanrecordingsRequest withExpand(List<String> expand) {
+	public GetOrphanrecordingsRequest withExpand(List<Object> expand) {
 	    this.setExpand(expand);
 	    return this;
 	} 
@@ -268,7 +268,7 @@ public class GetOrphanrecordingsRequest {
 			return this;
 		}
 		
-		public Builder withExpand(List<String> expand) {
+		public Builder withExpand(List<Object> expand) {
 			request.setExpand(expand);
 			return this;
 		}

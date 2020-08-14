@@ -29,7 +29,9 @@ public class ScimPhoneNumber  implements Serializable {
     WORK4("work4"),
     HOME("home"),
     MOBILE("mobile"),
-    OTHER("other");
+    OTHER("other"),
+    MICROSOFTTEAMS("microsoftteams"),
+    ZOOMPHONE("zoomphone");
 
     private String value;
 

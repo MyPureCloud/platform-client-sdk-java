@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicAddress;
+import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicAfterCallWork;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicErrorDetails;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicMessageDetails;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicWrapup;
@@ -165,6 +166,7 @@ public class QueueConversationEventTopicMessage  implements Serializable {
   private String recipientCountry = null;
   private String recipientType = null;
   private QueueConversationEventTopicWrapup wrapup = null;
+  private QueueConversationEventTopicAfterCallWork afterCallWork = null;
   private Object additionalProperties = null;
 
   
@@ -493,6 +495,23 @@ public class QueueConversationEventTopicMessage  implements Serializable {
   
   /**
    **/
+  public QueueConversationEventTopicMessage afterCallWork(QueueConversationEventTopicAfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("afterCallWork")
+  public QueueConversationEventTopicAfterCallWork getAfterCallWork() {
+    return afterCallWork;
+  }
+  public void setAfterCallWork(QueueConversationEventTopicAfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+  }
+
+  
+  /**
+   **/
   public QueueConversationEventTopicMessage additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -537,12 +556,13 @@ public class QueueConversationEventTopicMessage  implements Serializable {
         Objects.equals(this.recipientCountry, queueConversationEventTopicMessage.recipientCountry) &&
         Objects.equals(this.recipientType, queueConversationEventTopicMessage.recipientType) &&
         Objects.equals(this.wrapup, queueConversationEventTopicMessage.wrapup) &&
+        Objects.equals(this.afterCallWork, queueConversationEventTopicMessage.afterCallWork) &&
         Objects.equals(this.additionalProperties, queueConversationEventTopicMessage.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, wrapup, additionalProperties);
+    return Objects.hash(id, state, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, wrapup, afterCallWork, additionalProperties);
   }
 
   @Override
@@ -569,6 +589,7 @@ public class QueueConversationEventTopicMessage  implements Serializable {
     sb.append("    recipientCountry: ").append(toIndentedString(recipientCountry)).append("\n");
     sb.append("    recipientType: ").append(toIndentedString(recipientType)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

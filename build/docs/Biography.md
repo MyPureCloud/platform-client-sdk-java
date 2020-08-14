@@ -12,6 +12,7 @@ title: Biography
 | **interests** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **hobbies** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **spouse** | <!----><!---->**String**<!----> |  |  [optional] |
+| **education** | <!----><!---->[**List&lt;Education&gt;**](Education.html)<!----> | User education details |  [optional] |
 {: class="table table-striped"}
 
 

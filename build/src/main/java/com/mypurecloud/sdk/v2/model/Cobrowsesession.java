@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Address;
+import com.mypurecloud.sdk.v2.model.AfterCallWork;
 import com.mypurecloud.sdk.v2.model.Segment;
 import com.mypurecloud.sdk.v2.model.Wrapup;
 import io.swagger.annotations.ApiModel;
@@ -124,6 +125,7 @@ public class Cobrowsesession  implements Serializable {
   private String peerId = null;
   private List<Segment> segments = new ArrayList<Segment>();
   private Wrapup wrapup = null;
+  private AfterCallWork afterCallWork = null;
 
   
   /**
@@ -414,6 +416,24 @@ public class Cobrowsesession  implements Serializable {
   }
 
   
+  /**
+   * After-call work for the communication.
+   **/
+  public Cobrowsesession afterCallWork(AfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "After-call work for the communication.")
+  @JsonProperty("afterCallWork")
+  public AfterCallWork getAfterCallWork() {
+    return afterCallWork;
+  }
+  public void setAfterCallWork(AfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -439,12 +459,13 @@ public class Cobrowsesession  implements Serializable {
         Objects.equals(this.provider, cobrowsesession.provider) &&
         Objects.equals(this.peerId, cobrowsesession.peerId) &&
         Objects.equals(this.segments, cobrowsesession.segments) &&
-        Objects.equals(this.wrapup, cobrowsesession.wrapup);
+        Objects.equals(this.wrapup, cobrowsesession.wrapup) &&
+        Objects.equals(this.afterCallWork, cobrowsesession.afterCallWork);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, disconnectType, self, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, providerEventTime, startAlertingTime, connectedTime, disconnectedTime, provider, peerId, segments, wrapup);
+    return Objects.hash(state, id, disconnectType, self, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, providerEventTime, startAlertingTime, connectedTime, disconnectedTime, provider, peerId, segments, wrapup, afterCallWork);
   }
 
   @Override
@@ -468,6 +489,7 @@ public class Cobrowsesession  implements Serializable {
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("    segments: ").append(toIndentedString(segments)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("}");
     return sb.toString();
   }

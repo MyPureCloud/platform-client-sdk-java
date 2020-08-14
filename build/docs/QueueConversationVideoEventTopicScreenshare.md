@@ -20,6 +20,7 @@ title: QueueConversationVideoEventTopicScreenshare
 | **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **disconnectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **wrapup** | <!----><!---->[**QueueConversationVideoEventTopicWrapup**](QueueConversationVideoEventTopicWrapup.html)<!----> |  |  [optional] |
+| **afterCallWork** | <!----><!---->[**QueueConversationVideoEventTopicAfterCallWork**](QueueConversationVideoEventTopicAfterCallWork.html)<!----> |  |  [optional] |
 | **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

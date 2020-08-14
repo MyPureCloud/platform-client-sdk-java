@@ -64,6 +64,42 @@ public class OAuthClientRequest  implements Serializable {
   private List<String> scope = new ArrayList<String>();
   private List<RoleDivision> roleDivisions = new ArrayList<RoleDivision>();
 
+  /**
+   * The state of the OAuth client. Active: The OAuth client can be used to create access tokens. This is the default state. Disabled: Access tokens created by the client are invalid and new ones cannot be created. Inactive: Access tokens cannot be created with this OAuth client and it will be deleted.
+   */
+  public enum StateEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACTIVE("active"),
+    DISABLED("disabled"),
+    INACTIVE("inactive");
+
+    private String value;
+
+    StateEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static StateEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (StateEnum value : StateEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return StateEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private StateEnum state = null;
+
   
   /**
    * The name of the OAuth client.
@@ -208,6 +244,24 @@ public class OAuthClientRequest  implements Serializable {
   }
 
   
+  /**
+   * The state of the OAuth client. Active: The OAuth client can be used to create access tokens. This is the default state. Disabled: Access tokens created by the client are invalid and new ones cannot be created. Inactive: Access tokens cannot be created with this OAuth client and it will be deleted.
+   **/
+  public OAuthClientRequest state(StateEnum state) {
+    this.state = state;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The state of the OAuth client. Active: The OAuth client can be used to create access tokens. This is the default state. Disabled: Access tokens created by the client are invalid and new ones cannot be created. Inactive: Access tokens cannot be created with this OAuth client and it will be deleted.")
+  @JsonProperty("state")
+  public StateEnum getState() {
+    return state;
+  }
+  public void setState(StateEnum state) {
+    this.state = state;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -225,12 +279,13 @@ public class OAuthClientRequest  implements Serializable {
         Objects.equals(this.roleIds, oAuthClientRequest.roleIds) &&
         Objects.equals(this.authorizedGrantType, oAuthClientRequest.authorizedGrantType) &&
         Objects.equals(this.scope, oAuthClientRequest.scope) &&
-        Objects.equals(this.roleDivisions, oAuthClientRequest.roleDivisions);
+        Objects.equals(this.roleDivisions, oAuthClientRequest.roleDivisions) &&
+        Objects.equals(this.state, oAuthClientRequest.state);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, accessTokenValiditySeconds, description, registeredRedirectUri, roleIds, authorizedGrantType, scope, roleDivisions);
+    return Objects.hash(name, accessTokenValiditySeconds, description, registeredRedirectUri, roleIds, authorizedGrantType, scope, roleDivisions, state);
   }
 
   @Override
@@ -246,6 +301,7 @@ public class OAuthClientRequest  implements Serializable {
     sb.append("    authorizedGrantType: ").append(toIndentedString(authorizedGrantType)).append("\n");
     sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
     sb.append("    roleDivisions: ").append(toIndentedString(roleDivisions)).append("\n");
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("}");
     return sb.toString();
   }

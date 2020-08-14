@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicAddress;
+import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicAfterCallWork;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -122,6 +123,7 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private QueueConversationSocialExpressionEventTopicWrapup wrapup = null;
+  private QueueConversationSocialExpressionEventTopicAfterCallWork afterCallWork = null;
   private Object additionalProperties = null;
 
   
@@ -399,6 +401,23 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
   
   /**
    **/
+  public QueueConversationSocialExpressionEventTopicCobrowse afterCallWork(QueueConversationSocialExpressionEventTopicAfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("afterCallWork")
+  public QueueConversationSocialExpressionEventTopicAfterCallWork getAfterCallWork() {
+    return afterCallWork;
+  }
+  public void setAfterCallWork(QueueConversationSocialExpressionEventTopicAfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+  }
+
+  
+  /**
+   **/
   public QueueConversationSocialExpressionEventTopicCobrowse additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -440,12 +459,13 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
         Objects.equals(this.connectedTime, queueConversationSocialExpressionEventTopicCobrowse.connectedTime) &&
         Objects.equals(this.disconnectedTime, queueConversationSocialExpressionEventTopicCobrowse.disconnectedTime) &&
         Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicCobrowse.wrapup) &&
+        Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicCobrowse.afterCallWork) &&
         Objects.equals(this.additionalProperties, queueConversationSocialExpressionEventTopicCobrowse.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, disconnectType, id, self, roomId, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, provider, scriptId, peerId, providerEventTime, connectedTime, disconnectedTime, wrapup, additionalProperties);
+    return Objects.hash(state, disconnectType, id, self, roomId, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, provider, scriptId, peerId, providerEventTime, connectedTime, disconnectedTime, wrapup, afterCallWork, additionalProperties);
   }
 
   @Override
@@ -469,6 +489,7 @@ public class QueueConversationSocialExpressionEventTopicCobrowse  implements Ser
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

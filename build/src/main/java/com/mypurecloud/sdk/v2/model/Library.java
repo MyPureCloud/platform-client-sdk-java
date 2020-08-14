@@ -28,7 +28,8 @@ public class Library  implements Serializable {
    */
   public enum ResponseTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    MESSAGINGTEMPLATE("MessagingTemplate");
+    MESSAGINGTEMPLATE("MessagingTemplate"),
+    CAMPAIGNSMSTEMPLATE("CampaignSmsTemplate");
 
     private String value;
 

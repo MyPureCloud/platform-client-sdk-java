@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicAddress;
+import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicAfterCallWork;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -122,6 +123,7 @@ public class QueueConversationEventTopicCobrowse  implements Serializable {
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private QueueConversationEventTopicWrapup wrapup = null;
+  private QueueConversationEventTopicAfterCallWork afterCallWork = null;
   private Object additionalProperties = null;
 
   
@@ -399,6 +401,23 @@ public class QueueConversationEventTopicCobrowse  implements Serializable {
   
   /**
    **/
+  public QueueConversationEventTopicCobrowse afterCallWork(QueueConversationEventTopicAfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("afterCallWork")
+  public QueueConversationEventTopicAfterCallWork getAfterCallWork() {
+    return afterCallWork;
+  }
+  public void setAfterCallWork(QueueConversationEventTopicAfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+  }
+
+  
+  /**
+   **/
   public QueueConversationEventTopicCobrowse additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -440,12 +459,13 @@ public class QueueConversationEventTopicCobrowse  implements Serializable {
         Objects.equals(this.connectedTime, queueConversationEventTopicCobrowse.connectedTime) &&
         Objects.equals(this.disconnectedTime, queueConversationEventTopicCobrowse.disconnectedTime) &&
         Objects.equals(this.wrapup, queueConversationEventTopicCobrowse.wrapup) &&
+        Objects.equals(this.afterCallWork, queueConversationEventTopicCobrowse.afterCallWork) &&
         Objects.equals(this.additionalProperties, queueConversationEventTopicCobrowse.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, disconnectType, id, self, roomId, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, provider, scriptId, peerId, providerEventTime, connectedTime, disconnectedTime, wrapup, additionalProperties);
+    return Objects.hash(state, disconnectType, id, self, roomId, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, provider, scriptId, peerId, providerEventTime, connectedTime, disconnectedTime, wrapup, afterCallWork, additionalProperties);
   }
 
   @Override
@@ -469,6 +489,7 @@ public class QueueConversationEventTopicCobrowse  implements Serializable {
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

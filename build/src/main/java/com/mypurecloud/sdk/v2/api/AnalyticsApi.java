@@ -37,6 +37,8 @@ import com.mypurecloud.sdk.v2.model.FlowAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.FlowAggregationQuery;
 import com.mypurecloud.sdk.v2.model.FlowObservationQuery;
 import com.mypurecloud.sdk.v2.model.FlowObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
+import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobRequest;
@@ -80,6 +82,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsQuery
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsEvaluationsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsFlowsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsFlowsObservationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsJourneysAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsQueuesObservationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingScheduleRunreportRequest;
@@ -2275,6 +2278,85 @@ public class AnalyticsApi {
 
   
   /**
+   * Query for journey aggregates
+   * 
+   * @param body query (required)
+   * @return JourneyAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyAggregateQueryResponse postAnalyticsJourneysAggregatesQuery(JourneyAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsJourneysAggregatesQuery(createPostAnalyticsJourneysAggregatesQueryRequest(body));
+  }
+
+  /**
+   * Query for journey aggregates
+   * 
+   * @param body query (required)
+   * @return JourneyAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyAggregateQueryResponse> postAnalyticsJourneysAggregatesQueryWithHttpInfo(JourneyAggregationQuery body) throws IOException {
+    return postAnalyticsJourneysAggregatesQuery(createPostAnalyticsJourneysAggregatesQueryRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsJourneysAggregatesQueryRequest createPostAnalyticsJourneysAggregatesQueryRequest(JourneyAggregationQuery body) {
+    return PostAnalyticsJourneysAggregatesQueryRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Query for journey aggregates
+   * 
+   * @param request The request object
+   * @return JourneyAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneyAggregateQueryResponse postAnalyticsJourneysAggregatesQuery(PostAnalyticsJourneysAggregatesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneyAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneyAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for journey aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneyAggregateQueryResponse> postAnalyticsJourneysAggregatesQuery(ApiRequest<JourneyAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneyAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyAggregateQueryResponse> response = (ApiResponse<JourneyAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneyAggregateQueryResponse> response = (ApiResponse<JourneyAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Query for queue observations
    * 
    * @param body query (required)
@@ -2355,7 +2437,7 @@ public class AnalyticsApi {
   
   /**
    * Generate a view export request
-   * 
+   * This API creates a reporting export but the desired way to export analytics data is to use the analytics query APIs instead
    * @param body ReportingExportJobRequest (required)
    * @return ReportingExportJobResponse
    * @throws ApiException if the request fails on the server
@@ -2367,7 +2449,7 @@ public class AnalyticsApi {
 
   /**
    * Generate a view export request
-   * 
+   * This API creates a reporting export but the desired way to export analytics data is to use the analytics query APIs instead
    * @param body ReportingExportJobRequest (required)
    * @return ReportingExportJobResponse
    * @throws IOException if the request fails to be processed
@@ -2385,7 +2467,7 @@ public class AnalyticsApi {
 
   /**
    * Generate a view export request
-   * 
+   * This API creates a reporting export but the desired way to export analytics data is to use the analytics query APIs instead
    * @param request The request object
    * @return ReportingExportJobResponse
    * @throws ApiException if the request fails on the server
@@ -2404,7 +2486,7 @@ public class AnalyticsApi {
 
   /**
    * Generate a view export request
-   * 
+   * This API creates a reporting export but the desired way to export analytics data is to use the analytics query APIs instead
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

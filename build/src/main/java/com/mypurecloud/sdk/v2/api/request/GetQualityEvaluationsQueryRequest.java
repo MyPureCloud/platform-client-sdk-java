@@ -92,16 +92,16 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	} 
 	
-	private List<String> expand;
-	public List<String> getExpand() {
+	private List<Object> expand;
+	public List<Object> getExpand() {
 		return this.expand;
 	}
 
-	public void setExpand(List<String> expand) {
+	public void setExpand(List<Object> expand) {
 		this.expand = expand;
 	}
 
-	public GetQualityEvaluationsQueryRequest withExpand(List<String> expand) {
+	public GetQualityEvaluationsQueryRequest withExpand(List<Object> expand) {
 	    this.setExpand(expand);
 	    return this;
 	} 
@@ -218,16 +218,16 @@ public class GetQualityEvaluationsQueryRequest {
 	    return this;
 	} 
 	
-	private List<String> evaluationState;
-	public List<String> getEvaluationState() {
+	private List<Object> evaluationState;
+	public List<Object> getEvaluationState() {
 		return this.evaluationState;
 	}
 
-	public void setEvaluationState(List<String> evaluationState) {
+	public void setEvaluationState(List<Object> evaluationState) {
 		this.evaluationState = evaluationState;
 	}
 
-	public GetQualityEvaluationsQueryRequest withEvaluationState(List<String> evaluationState) {
+	public GetQualityEvaluationsQueryRequest withEvaluationState(List<Object> evaluationState) {
 	    this.setEvaluationState(evaluationState);
 	    return this;
 	} 
@@ -397,7 +397,7 @@ public class GetQualityEvaluationsQueryRequest {
 			return this;
 		}
 		
-		public Builder withExpand(List<String> expand) {
+		public Builder withExpand(List<Object> expand) {
 			request.setExpand(expand);
 			return this;
 		}
@@ -442,7 +442,7 @@ public class GetQualityEvaluationsQueryRequest {
 			return this;
 		}
 		
-		public Builder withEvaluationState(List<String> evaluationState) {
+		public Builder withEvaluationState(List<Object> evaluationState) {
 			request.setEvaluationState(evaluationState);
 			return this;
 		}

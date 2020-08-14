@@ -33,25 +33,15 @@ import com.mypurecloud.sdk.v2.model.RelationshipListing;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationListing;
 import com.mypurecloud.sdk.v2.model.Relationship;
 import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
+import com.mypurecloud.sdk.v2.model.CursorContactListing;
+import com.mypurecloud.sdk.v2.model.CursorNoteListing;
+import com.mypurecloud.sdk.v2.model.CursorOrganizationListing;
+import com.mypurecloud.sdk.v2.model.CursorRelationshipListing;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
 
 public class PutExternalcontactsConversationRequest {
     
-	private String conversationId;
-	public String getConversationId() {
-		return this.conversationId;
-	}
-
-	public void setConversationId(String conversationId) {
-		this.conversationId = conversationId;
-	}
-
-	public PutExternalcontactsConversationRequest withConversationId(String conversationId) {
-	    this.setConversationId(conversationId);
-	    return this;
-	} 
-	
 	private ConversationAssociation body;
 	public ConversationAssociation getBody() {
 		return this.body;
@@ -63,6 +53,20 @@ public class PutExternalcontactsConversationRequest {
 
 	public PutExternalcontactsConversationRequest withBody(ConversationAssociation body) {
 	    this.setBody(body);
+	    return this;
+	} 
+	
+	private String conversationId;
+	public String getConversationId() {
+		return this.conversationId;
+	}
+
+	public void setConversationId(String conversationId) {
+		this.conversationId = conversationId;
+	}
+
+	public PutExternalcontactsConversationRequest withConversationId(String conversationId) {
+	    this.setConversationId(conversationId);
 	    return this;
 	} 
 	
@@ -87,14 +91,14 @@ public class PutExternalcontactsConversationRequest {
 
     public ApiRequest<ConversationAssociation> withHttpInfo() {
         
-        // verify the required parameter 'conversationId' is set
-        if (this.conversationId == null) {
-            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PutExternalcontactsConversationRequest.");
-        }
-        
         // verify the required parameter 'body' is set
         if (this.body == null) {
             throw new IllegalStateException("Missing the required parameter 'body' when building request for PutExternalcontactsConversationRequest.");
+        }
+        
+        // verify the required parameter 'conversationId' is set
+        if (this.conversationId == null) {
+            throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PutExternalcontactsConversationRequest.");
         }
         
 
@@ -115,9 +119,9 @@ public class PutExternalcontactsConversationRequest {
 	}
 
 	
-	public static Builder builder(String conversationId, ConversationAssociation body) {
+	public static Builder builder(ConversationAssociation body, String conversationId) {
 	    return new Builder()
-	            .withRequiredParams(conversationId, body);
+	            .withRequiredParams(body, conversationId);
 	}
 	
 
@@ -129,21 +133,21 @@ public class PutExternalcontactsConversationRequest {
 		}
 
 		
-		public Builder withConversationId(String conversationId) {
-			request.setConversationId(conversationId);
-			return this;
-		}
-		
 		public Builder withBody(ConversationAssociation body) {
 			request.setBody(body);
 			return this;
 		}
 		
+		public Builder withConversationId(String conversationId) {
+			request.setConversationId(conversationId);
+			return this;
+		}
+		
 
 		
-		public Builder withRequiredParams(String conversationId, ConversationAssociation body) {
-			request.setConversationId(conversationId);
-						request.setBody(body);
+		public Builder withRequiredParams(ConversationAssociation body, String conversationId) {
+			request.setBody(body);
+						request.setConversationId(conversationId);
 			
 			return this;
 		}
@@ -151,14 +155,14 @@ public class PutExternalcontactsConversationRequest {
 
 		public PutExternalcontactsConversationRequest build() {
             
-            // verify the required parameter 'conversationId' is set
-            if (request.conversationId == null) {
-                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PutExternalcontactsConversationRequest.");
-            }
-            
             // verify the required parameter 'body' is set
             if (request.body == null) {
                 throw new IllegalStateException("Missing the required parameter 'body' when building request for PutExternalcontactsConversationRequest.");
+            }
+            
+            // verify the required parameter 'conversationId' is set
+            if (request.conversationId == null) {
+                throw new IllegalStateException("Missing the required parameter 'conversationId' when building request for PutExternalcontactsConversationRequest.");
             }
             
 			return request;

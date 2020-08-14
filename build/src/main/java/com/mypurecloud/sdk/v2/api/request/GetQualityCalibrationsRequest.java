@@ -106,16 +106,16 @@ public class GetQualityCalibrationsRequest {
 	    return this;
 	} 
 	
-	private List<String> expand;
-	public List<String> getExpand() {
+	private List<Object> expand;
+	public List<Object> getExpand() {
 		return this.expand;
 	}
 
-	public void setExpand(List<String> expand) {
+	public void setExpand(List<Object> expand) {
 		this.expand = expand;
 	}
 
-	public GetQualityCalibrationsRequest withExpand(List<String> expand) {
+	public GetQualityCalibrationsRequest withExpand(List<Object> expand) {
 	    this.setExpand(expand);
 	    return this;
 	} 
@@ -284,7 +284,7 @@ public class GetQualityCalibrationsRequest {
 			return this;
 		}
 		
-		public Builder withExpand(List<String> expand) {
+		public Builder withExpand(List<Object> expand) {
 			request.setExpand(expand);
 			return this;
 		}

@@ -21,7 +21,21 @@ title: OAuthClientListing
 | **modifiedBy** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | User that last modified this client |  [optional] |
 | **scope** | <!----><!---->**List&lt;String&gt;**<!----> | The scope requested by this client. Scopes only apply to clients not using the client_credential grant |  [optional] |
 | **roleDivisions** | <!----><!---->[**List&lt;RoleDivision&gt;**](RoleDivision.html)<!----> | Set of roles and their corresponding divisions associated with this client. Roles and divisions only apply to clients using the client_credential grant |  [optional] |
+| **state** | [**StateEnum**](#StateEnum)<!----> | The state of the OAuth client. Active: The OAuth client can be used to create access tokens. This is the default state. Disabled: Access tokens created by the client are invalid and new ones cannot be created. Inactive: Access tokens cannot be created with this OAuth client and it will be deleted. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="StateEnum"></a>
+
+## Enum: StateEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| ACTIVE | &quot;active&quot; |
+| DISABLED | &quot;disabled&quot; |
+| INACTIVE | &quot;inactive&quot; |
 {: class="table table-striped"}
 
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.ScimGenesysUserExternalId;
 import com.mypurecloud.sdk.v2.model.ScimUserRoutingLanguage;
 import com.mypurecloud.sdk.v2.model.ScimUserRoutingSkill;
 import io.swagger.annotations.ApiModel;
@@ -13,14 +14,15 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Defines a SCIM Genesys Cloud user.
+ * Genesys Cloud user extensions to SCIM RFC.
  */
-@ApiModel(description = "Defines a SCIM Genesys Cloud user.")
+@ApiModel(description = "Genesys Cloud user extensions to SCIM RFC.")
 
 public class ScimUserExtensions  implements Serializable {
   
   private List<ScimUserRoutingSkill> routingSkills = new ArrayList<ScimUserRoutingSkill>();
   private List<ScimUserRoutingLanguage> routingLanguages = new ArrayList<ScimUserRoutingLanguage>();
+  private List<ScimGenesysUserExternalId> externalIds = new ArrayList<ScimGenesysUserExternalId>();
 
   
   /**
@@ -59,6 +61,24 @@ public class ScimUserExtensions  implements Serializable {
   }
 
   
+  /**
+   * External Identifiers assigned to user. SCIM External ID will be visible here with authority prefix 'x-pc:scimv2:v1' but will be immutable.
+   **/
+  public ScimUserExtensions externalIds(List<ScimGenesysUserExternalId> externalIds) {
+    this.externalIds = externalIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "External Identifiers assigned to user. SCIM External ID will be visible here with authority prefix 'x-pc:scimv2:v1' but will be immutable.")
+  @JsonProperty("externalIds")
+  public List<ScimGenesysUserExternalId> getExternalIds() {
+    return externalIds;
+  }
+  public void setExternalIds(List<ScimGenesysUserExternalId> externalIds) {
+    this.externalIds = externalIds;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,12 +90,13 @@ public class ScimUserExtensions  implements Serializable {
     }
     ScimUserExtensions scimUserExtensions = (ScimUserExtensions) o;
     return Objects.equals(this.routingSkills, scimUserExtensions.routingSkills) &&
-        Objects.equals(this.routingLanguages, scimUserExtensions.routingLanguages);
+        Objects.equals(this.routingLanguages, scimUserExtensions.routingLanguages) &&
+        Objects.equals(this.externalIds, scimUserExtensions.externalIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(routingSkills, routingLanguages);
+    return Objects.hash(routingSkills, routingLanguages, externalIds);
   }
 
   @Override
@@ -85,6 +106,7 @@ public class ScimUserExtensions  implements Serializable {
     
     sb.append("    routingSkills: ").append(toIndentedString(routingSkills)).append("\n");
     sb.append("    routingLanguages: ").append(toIndentedString(routingLanguages)).append("\n");
+    sb.append("    externalIds: ").append(toIndentedString(externalIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -45,6 +45,7 @@ title: Response
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | MESSAGINGTEMPLATE | &quot;MessagingTemplate&quot; |
+| CAMPAIGNSMSTEMPLATE | &quot;CampaignSmsTemplate&quot; |
 {: class="table table-striped"}
 
 

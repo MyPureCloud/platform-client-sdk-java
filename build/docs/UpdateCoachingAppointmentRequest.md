@@ -14,6 +14,21 @@ title: UpdateCoachingAppointmentRequest
 | **lengthInMinutes** | <!----><!---->**Integer**<!----> | The duration of coaching appointment in minutes. |  [optional] |
 | **conversationIds** | <!----><!---->**List&lt;String&gt;**<!----> | IDs of conversations associated with this coaching appointment. |  [optional] |
 | **documentIds** | <!----><!---->**List&lt;String&gt;**<!----> | IDs of documents associated with this coaching appointment. |  [optional] |
+| **status** | [**StatusEnum**](#StatusEnum)<!----> | The status of the coaching appointment. |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="StatusEnum"></a>
+
+## Enum: StatusEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| SCHEDULED | &quot;Scheduled&quot; |
+| INPROGRESS | &quot;InProgress&quot; |
+| COMPLETED | &quot;Completed&quot; |
+| INVALIDSCHEDULE | &quot;InvalidSchedule&quot; |
 {: class="table table-striped"}
 
 

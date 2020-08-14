@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicAddress;
+import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicAfterCallWork;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -118,6 +119,7 @@ public class QueueConversationEventTopicScreenshare  implements Serializable {
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private QueueConversationEventTopicWrapup wrapup = null;
+  private QueueConversationEventTopicAfterCallWork afterCallWork = null;
   private Object additionalProperties = null;
 
   
@@ -327,6 +329,23 @@ public class QueueConversationEventTopicScreenshare  implements Serializable {
   
   /**
    **/
+  public QueueConversationEventTopicScreenshare afterCallWork(QueueConversationEventTopicAfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("afterCallWork")
+  public QueueConversationEventTopicAfterCallWork getAfterCallWork() {
+    return afterCallWork;
+  }
+  public void setAfterCallWork(QueueConversationEventTopicAfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+  }
+
+  
+  /**
+   **/
   public QueueConversationEventTopicScreenshare additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -364,12 +383,13 @@ public class QueueConversationEventTopicScreenshare  implements Serializable {
         Objects.equals(this.connectedTime, queueConversationEventTopicScreenshare.connectedTime) &&
         Objects.equals(this.disconnectedTime, queueConversationEventTopicScreenshare.disconnectedTime) &&
         Objects.equals(this.wrapup, queueConversationEventTopicScreenshare.wrapup) &&
+        Objects.equals(this.afterCallWork, queueConversationEventTopicScreenshare.afterCallWork) &&
         Objects.equals(this.additionalProperties, queueConversationEventTopicScreenshare.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, self, id, context, sharing, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, wrapup, additionalProperties);
+    return Objects.hash(state, self, id, context, sharing, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, wrapup, afterCallWork, additionalProperties);
   }
 
   @Override
@@ -389,6 +409,7 @@ public class QueueConversationEventTopicScreenshare  implements Serializable {
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

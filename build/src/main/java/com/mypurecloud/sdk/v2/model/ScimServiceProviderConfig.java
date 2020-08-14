@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.ScimMetadata;
 import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfigAuthenticationScheme;
 import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfigBulkFeature;
 import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfigFilterFeature;
@@ -31,7 +30,6 @@ public class ScimServiceProviderConfig  implements Serializable {
   private ScimServiceProviderConfigBulkFeature bulk = null;
   private ScimServiceProviderConfigSimpleFeature changePassword = null;
   private List<ScimServiceProviderConfigAuthenticationScheme> authenticationSchemes = new ArrayList<ScimServiceProviderConfigAuthenticationScheme>();
-  private ScimMetadata meta = null;
 
   
   /**
@@ -185,24 +183,6 @@ public class ScimServiceProviderConfig  implements Serializable {
   }
 
   
-  /**
-   * The metadata of the SCIM resource.
-   **/
-  public ScimServiceProviderConfig meta(ScimMetadata meta) {
-    this.meta = meta;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource.")
-  @JsonProperty("meta")
-  public ScimMetadata getMeta() {
-    return meta;
-  }
-  public void setMeta(ScimMetadata meta) {
-    this.meta = meta;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -221,13 +201,12 @@ public class ScimServiceProviderConfig  implements Serializable {
         Objects.equals(this.sort, scimServiceProviderConfig.sort) &&
         Objects.equals(this.bulk, scimServiceProviderConfig.bulk) &&
         Objects.equals(this.changePassword, scimServiceProviderConfig.changePassword) &&
-        Objects.equals(this.authenticationSchemes, scimServiceProviderConfig.authenticationSchemes) &&
-        Objects.equals(this.meta, scimServiceProviderConfig.meta);
+        Objects.equals(this.authenticationSchemes, scimServiceProviderConfig.authenticationSchemes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(schemas, documentationUri, patch, filter, etag, sort, bulk, changePassword, authenticationSchemes, meta);
+    return Objects.hash(schemas, documentationUri, patch, filter, etag, sort, bulk, changePassword, authenticationSchemes);
   }
 
   @Override
@@ -244,7 +223,6 @@ public class ScimServiceProviderConfig  implements Serializable {
     sb.append("    bulk: ").append(toIndentedString(bulk)).append("\n");
     sb.append("    changePassword: ").append(toIndentedString(changePassword)).append("\n");
     sb.append("    authenticationSchemes: ").append(toIndentedString(authenticationSchemes)).append("\n");
-    sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("}");
     return sb.toString();
   }

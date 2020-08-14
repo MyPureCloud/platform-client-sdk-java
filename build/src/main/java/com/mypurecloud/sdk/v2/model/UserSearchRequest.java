@@ -62,6 +62,41 @@ public class UserSearchRequest  implements Serializable {
   private List<String> expand = new ArrayList<String>();
   private List<UserSearchCriteria> query = new ArrayList<UserSearchCriteria>();
 
+  /**
+   * Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 10.
+   */
+  public enum IntegrationPresenceSourceEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    MICROSOFTTEAMS("MicrosoftTeams"),
+    ZOOMPHONE("ZoomPhone");
+
+    private String value;
+
+    IntegrationPresenceSourceEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static IntegrationPresenceSourceEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (IntegrationPresenceSourceEnum value : IntegrationPresenceSourceEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return IntegrationPresenceSourceEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private IntegrationPresenceSourceEnum integrationPresenceSource = null;
+
   
   /**
    * The sort order for results
@@ -188,6 +223,24 @@ public class UserSearchRequest  implements Serializable {
   }
 
   
+  /**
+   * Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 10.
+   **/
+  public UserSearchRequest integrationPresenceSource(IntegrationPresenceSourceEnum integrationPresenceSource) {
+    this.integrationPresenceSource = integrationPresenceSource;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 10.")
+  @JsonProperty("integrationPresenceSource")
+  public IntegrationPresenceSourceEnum getIntegrationPresenceSource() {
+    return integrationPresenceSource;
+  }
+  public void setIntegrationPresenceSource(IntegrationPresenceSourceEnum integrationPresenceSource) {
+    this.integrationPresenceSource = integrationPresenceSource;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -204,12 +257,13 @@ public class UserSearchRequest  implements Serializable {
         Objects.equals(this.pageNumber, userSearchRequest.pageNumber) &&
         Objects.equals(this.sort, userSearchRequest.sort) &&
         Objects.equals(this.expand, userSearchRequest.expand) &&
-        Objects.equals(this.query, userSearchRequest.query);
+        Objects.equals(this.query, userSearchRequest.query) &&
+        Objects.equals(this.integrationPresenceSource, userSearchRequest.integrationPresenceSource);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sortOrder, sortBy, pageSize, pageNumber, sort, expand, query);
+    return Objects.hash(sortOrder, sortBy, pageSize, pageNumber, sort, expand, query, integrationPresenceSource);
   }
 
   @Override
@@ -224,6 +278,7 @@ public class UserSearchRequest  implements Serializable {
     sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
     sb.append("    expand: ").append(toIndentedString(expand)).append("\n");
     sb.append("    query: ").append(toIndentedString(query)).append("\n");
+    sb.append("    integrationPresenceSource: ").append(toIndentedString(integrationPresenceSource)).append("\n");
     sb.append("}");
     return sb.toString();
   }

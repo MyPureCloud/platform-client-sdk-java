@@ -110,6 +110,7 @@ public class AnalyticsParticipant  implements Serializable {
   }
   private FlaggedReasonEnum flaggedReason = null;
   private String teamId = null;
+  private List<String> agentAssistantIds = new ArrayList<String>();
   private List<AnalyticsSession> sessions = new ArrayList<AnalyticsSession>();
   private Map<String, String> attributes = null;
 
@@ -259,6 +260,24 @@ public class AnalyticsParticipant  implements Serializable {
 
   
   /**
+   * Unique identifiers of the active virtual agent assistants
+   **/
+  public AnalyticsParticipant agentAssistantIds(List<String> agentAssistantIds) {
+    this.agentAssistantIds = agentAssistantIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Unique identifiers of the active virtual agent assistants")
+  @JsonProperty("agentAssistantIds")
+  public List<String> getAgentAssistantIds() {
+    return agentAssistantIds;
+  }
+  public void setAgentAssistantIds(List<String> agentAssistantIds) {
+    this.agentAssistantIds = agentAssistantIds;
+  }
+
+  
+  /**
    * List of sessions associated to this participant
    **/
   public AnalyticsParticipant sessions(List<AnalyticsSession> sessions) {
@@ -312,13 +331,14 @@ public class AnalyticsParticipant  implements Serializable {
         Objects.equals(this.externalOrganizationId, analyticsParticipant.externalOrganizationId) &&
         Objects.equals(this.flaggedReason, analyticsParticipant.flaggedReason) &&
         Objects.equals(this.teamId, analyticsParticipant.teamId) &&
+        Objects.equals(this.agentAssistantIds, analyticsParticipant.agentAssistantIds) &&
         Objects.equals(this.sessions, analyticsParticipant.sessions) &&
         Objects.equals(this.attributes, analyticsParticipant.attributes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(participantId, participantName, userId, purpose, externalContactId, externalOrganizationId, flaggedReason, teamId, sessions, attributes);
+    return Objects.hash(participantId, participantName, userId, purpose, externalContactId, externalOrganizationId, flaggedReason, teamId, agentAssistantIds, sessions, attributes);
   }
 
   @Override
@@ -334,6 +354,7 @@ public class AnalyticsParticipant  implements Serializable {
     sb.append("    externalOrganizationId: ").append(toIndentedString(externalOrganizationId)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
+    sb.append("    agentAssistantIds: ").append(toIndentedString(agentAssistantIds)).append("\n");
     sb.append("    sessions: ").append(toIndentedString(sessions)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("}");

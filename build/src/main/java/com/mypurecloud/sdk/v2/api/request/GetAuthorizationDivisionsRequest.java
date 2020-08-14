@@ -68,16 +68,16 @@ public class GetAuthorizationDivisionsRequest {
 	    return this;
 	} 
 	
-	private List<String> expand;
-	public List<String> getExpand() {
+	private List<Object> expand;
+	public List<Object> getExpand() {
 		return this.expand;
 	}
 
-	public void setExpand(List<String> expand) {
+	public void setExpand(List<Object> expand) {
 		this.expand = expand;
 	}
 
-	public GetAuthorizationDivisionsRequest withExpand(List<String> expand) {
+	public GetAuthorizationDivisionsRequest withExpand(List<Object> expand) {
 	    this.setExpand(expand);
 	    return this;
 	} 
@@ -124,16 +124,16 @@ public class GetAuthorizationDivisionsRequest {
 	    return this;
 	} 
 	
-	private List<String> id;
-	public List<String> getId() {
+	private List<Object> id;
+	public List<Object> getId() {
 		return this.id;
 	}
 
-	public void setId(List<String> id) {
+	public void setId(List<Object> id) {
 		this.id = id;
 	}
 
-	public GetAuthorizationDivisionsRequest withId(List<String> id) {
+	public GetAuthorizationDivisionsRequest withId(List<Object> id) {
 	    this.setId(id);
 	    return this;
 	} 
@@ -229,7 +229,7 @@ public class GetAuthorizationDivisionsRequest {
 			return this;
 		}
 		
-		public Builder withExpand(List<String> expand) {
+		public Builder withExpand(List<Object> expand) {
 			request.setExpand(expand);
 			return this;
 		}
@@ -249,7 +249,7 @@ public class GetAuthorizationDivisionsRequest {
 			return this;
 		}
 		
-		public Builder withId(List<String> id) {
+		public Builder withId(List<Object> id) {
 			request.setId(id);
 			return this;
 		}

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationEventTopicAfterCallWork;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -120,6 +121,7 @@ public class ConversationEventTopicChat  implements Serializable {
   private Date disconnectedTime = null;
   private ConversationEventTopicJourneyContext journeyContext = null;
   private ConversationEventTopicWrapup wrapup = null;
+  private ConversationEventTopicAfterCallWork afterCallWork = null;
   private Object additionalProperties = null;
 
   
@@ -363,6 +365,23 @@ public class ConversationEventTopicChat  implements Serializable {
   
   /**
    **/
+  public ConversationEventTopicChat afterCallWork(ConversationEventTopicAfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("afterCallWork")
+  public ConversationEventTopicAfterCallWork getAfterCallWork() {
+    return afterCallWork;
+  }
+  public void setAfterCallWork(ConversationEventTopicAfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+  }
+
+  
+  /**
+   **/
   public ConversationEventTopicChat additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -402,12 +421,13 @@ public class ConversationEventTopicChat  implements Serializable {
         Objects.equals(this.disconnectedTime, conversationEventTopicChat.disconnectedTime) &&
         Objects.equals(this.journeyContext, conversationEventTopicChat.journeyContext) &&
         Objects.equals(this.wrapup, conversationEventTopicChat.wrapup) &&
+        Objects.equals(this.afterCallWork, conversationEventTopicChat.afterCallWork) &&
         Objects.equals(this.additionalProperties, conversationEventTopicChat.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, provider, scriptId, peerId, roomId, avatarImageUrl, held, disconnectType, startHoldTime, connectedTime, disconnectedTime, journeyContext, wrapup, additionalProperties);
+    return Objects.hash(state, id, provider, scriptId, peerId, roomId, avatarImageUrl, held, disconnectType, startHoldTime, connectedTime, disconnectedTime, journeyContext, wrapup, afterCallWork, additionalProperties);
   }
 
   @Override
@@ -429,6 +449,7 @@ public class ConversationEventTopicChat  implements Serializable {
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

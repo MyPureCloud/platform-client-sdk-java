@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicAddress;
+import com.mypurecloud.sdk.v2.model.ConversationEventTopicAfterCallWork;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicErrorDetails;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicMessageDetails;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicWrapup;
@@ -165,6 +166,7 @@ public class ConversationEventTopicMessage  implements Serializable {
   private String recipientCountry = null;
   private String recipientType = null;
   private ConversationEventTopicWrapup wrapup = null;
+  private ConversationEventTopicAfterCallWork afterCallWork = null;
   private Object additionalProperties = null;
 
   
@@ -493,6 +495,23 @@ public class ConversationEventTopicMessage  implements Serializable {
   
   /**
    **/
+  public ConversationEventTopicMessage afterCallWork(ConversationEventTopicAfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("afterCallWork")
+  public ConversationEventTopicAfterCallWork getAfterCallWork() {
+    return afterCallWork;
+  }
+  public void setAfterCallWork(ConversationEventTopicAfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+  }
+
+  
+  /**
+   **/
   public ConversationEventTopicMessage additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -537,12 +556,13 @@ public class ConversationEventTopicMessage  implements Serializable {
         Objects.equals(this.recipientCountry, conversationEventTopicMessage.recipientCountry) &&
         Objects.equals(this.recipientType, conversationEventTopicMessage.recipientType) &&
         Objects.equals(this.wrapup, conversationEventTopicMessage.wrapup) &&
+        Objects.equals(this.afterCallWork, conversationEventTopicMessage.afterCallWork) &&
         Objects.equals(this.additionalProperties, conversationEventTopicMessage.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, wrapup, additionalProperties);
+    return Objects.hash(id, state, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, wrapup, afterCallWork, additionalProperties);
   }
 
   @Override
@@ -569,6 +589,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     sb.append("    recipientCountry: ").append(toIndentedString(recipientCountry)).append("\n");
     sb.append("    recipientType: ").append(toIndentedString(recipientType)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

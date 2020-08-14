@@ -15,6 +15,7 @@ title: UserSearchRequest
 | **sort** | <!----><!---->[**List&lt;SearchSort&gt;**](SearchSort.html)<!----> | Multi-value sort order, list of multiple sort values |  [optional] |
 | **expand** | <!----><!---->**List&lt;String&gt;**<!----> | Provides more details about a specified resource |  [optional] |
 | **query** | <!----><!---->[**List&lt;UserSearchCriteria&gt;**](UserSearchCriteria.html)<!----> |  |  [optional] |
+| **integrationPresenceSource** | [**IntegrationPresenceSourceEnum**](#IntegrationPresenceSourceEnum)<!----> | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 10. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -28,6 +29,18 @@ title: UserSearchRequest
 | ASC | &quot;ASC&quot; |
 | DESC | &quot;DESC&quot; |
 | SCORE | &quot;SCORE&quot; |
+{: class="table table-striped"}
+
+
+<a name="IntegrationPresenceSourceEnum"></a>
+
+## Enum: IntegrationPresenceSourceEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| MICROSOFTTEAMS | &quot;MicrosoftTeams&quot; |
+| ZOOMPHONE | &quot;ZoomPhone&quot; |
 {: class="table table-striped"}
 
 

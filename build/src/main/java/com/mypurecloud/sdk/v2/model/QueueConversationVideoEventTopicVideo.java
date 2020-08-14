@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicAddress;
+import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicAfterCallWork;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -123,6 +124,7 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
   private Date disconnectedTime = null;
   private List<String> msids = new ArrayList<String>();
   private QueueConversationVideoEventTopicWrapup wrapup = null;
+  private QueueConversationVideoEventTopicAfterCallWork afterCallWork = null;
   private Object additionalProperties = null;
 
   
@@ -383,6 +385,23 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
   
   /**
    **/
+  public QueueConversationVideoEventTopicVideo afterCallWork(QueueConversationVideoEventTopicAfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("afterCallWork")
+  public QueueConversationVideoEventTopicAfterCallWork getAfterCallWork() {
+    return afterCallWork;
+  }
+  public void setAfterCallWork(QueueConversationVideoEventTopicAfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+  }
+
+  
+  /**
+   **/
   public QueueConversationVideoEventTopicVideo additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -423,12 +442,13 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
         Objects.equals(this.disconnectedTime, queueConversationVideoEventTopicVideo.disconnectedTime) &&
         Objects.equals(this.msids, queueConversationVideoEventTopicVideo.msids) &&
         Objects.equals(this.wrapup, queueConversationVideoEventTopicVideo.wrapup) &&
+        Objects.equals(this.afterCallWork, queueConversationVideoEventTopicVideo.afterCallWork) &&
         Objects.equals(this.additionalProperties, queueConversationVideoEventTopicVideo.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, self, id, context, audioMuted, videoMuted, sharingScreen, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, msids, wrapup, additionalProperties);
+    return Objects.hash(state, self, id, context, audioMuted, videoMuted, sharingScreen, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, msids, wrapup, afterCallWork, additionalProperties);
   }
 
   @Override
@@ -451,6 +471,7 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    msids: ").append(toIndentedString(msids)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

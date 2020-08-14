@@ -3569,12 +3569,13 @@ public class TelephonyProvidersEdgeApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional, default to number)
+   * @param id Filter by a specific list of ID&#39;s (optional)
    * @return DIDPoolEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DIDPoolEntityListing getTelephonyProvidersEdgesDidpools(Integer pageSize, Integer pageNumber, String sortBy) throws IOException, ApiException {
-    return  getTelephonyProvidersEdgesDidpools(createGetTelephonyProvidersEdgesDidpoolsRequest(pageSize, pageNumber, sortBy));
+  public DIDPoolEntityListing getTelephonyProvidersEdgesDidpools(Integer pageSize, Integer pageNumber, String sortBy, List<String> id) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesDidpools(createGetTelephonyProvidersEdgesDidpoolsRequest(pageSize, pageNumber, sortBy, id));
   }
 
   /**
@@ -3583,20 +3584,23 @@ public class TelephonyProvidersEdgeApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional, default to number)
+   * @param id Filter by a specific list of ID&#39;s (optional)
    * @return DIDPoolEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DIDPoolEntityListing> getTelephonyProvidersEdgesDidpoolsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy) throws IOException {
-    return getTelephonyProvidersEdgesDidpools(createGetTelephonyProvidersEdgesDidpoolsRequest(pageSize, pageNumber, sortBy).withHttpInfo());
+  public ApiResponse<DIDPoolEntityListing> getTelephonyProvidersEdgesDidpoolsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> id) throws IOException {
+    return getTelephonyProvidersEdgesDidpools(createGetTelephonyProvidersEdgesDidpoolsRequest(pageSize, pageNumber, sortBy, id).withHttpInfo());
   }
 
-  private GetTelephonyProvidersEdgesDidpoolsRequest createGetTelephonyProvidersEdgesDidpoolsRequest(Integer pageSize, Integer pageNumber, String sortBy) {
+  private GetTelephonyProvidersEdgesDidpoolsRequest createGetTelephonyProvidersEdgesDidpoolsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> id) {
     return GetTelephonyProvidersEdgesDidpoolsRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
     
             .withSortBy(sortBy)
+    
+            .withId(id)
     
             .build();
   }
@@ -3660,12 +3664,13 @@ public class TelephonyProvidersEdgeApi {
    * @param phoneNumber Filter by phoneNumber (optional)
    * @param ownerId Filter by the owner of a phone number (optional)
    * @param didPoolId Filter by the DID Pool assignment (optional)
+   * @param id Filter by a specific list of ID&#39;s (optional)
    * @return DIDEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DIDEntityListing getTelephonyProvidersEdgesDids(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String phoneNumber, String ownerId, String didPoolId) throws IOException, ApiException {
-    return  getTelephonyProvidersEdgesDids(createGetTelephonyProvidersEdgesDidsRequest(pageSize, pageNumber, sortBy, sortOrder, phoneNumber, ownerId, didPoolId));
+  public DIDEntityListing getTelephonyProvidersEdgesDids(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String phoneNumber, String ownerId, String didPoolId, List<String> id) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesDids(createGetTelephonyProvidersEdgesDidsRequest(pageSize, pageNumber, sortBy, sortOrder, phoneNumber, ownerId, didPoolId, id));
   }
 
   /**
@@ -3678,14 +3683,15 @@ public class TelephonyProvidersEdgeApi {
    * @param phoneNumber Filter by phoneNumber (optional)
    * @param ownerId Filter by the owner of a phone number (optional)
    * @param didPoolId Filter by the DID Pool assignment (optional)
+   * @param id Filter by a specific list of ID&#39;s (optional)
    * @return DIDEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DIDEntityListing> getTelephonyProvidersEdgesDidsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String phoneNumber, String ownerId, String didPoolId) throws IOException {
-    return getTelephonyProvidersEdgesDids(createGetTelephonyProvidersEdgesDidsRequest(pageSize, pageNumber, sortBy, sortOrder, phoneNumber, ownerId, didPoolId).withHttpInfo());
+  public ApiResponse<DIDEntityListing> getTelephonyProvidersEdgesDidsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String phoneNumber, String ownerId, String didPoolId, List<String> id) throws IOException {
+    return getTelephonyProvidersEdgesDids(createGetTelephonyProvidersEdgesDidsRequest(pageSize, pageNumber, sortBy, sortOrder, phoneNumber, ownerId, didPoolId, id).withHttpInfo());
   }
 
-  private GetTelephonyProvidersEdgesDidsRequest createGetTelephonyProvidersEdgesDidsRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String phoneNumber, String ownerId, String didPoolId) {
+  private GetTelephonyProvidersEdgesDidsRequest createGetTelephonyProvidersEdgesDidsRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String phoneNumber, String ownerId, String didPoolId, List<String> id) {
     return GetTelephonyProvidersEdgesDidsRequest.builder()
             .withPageSize(pageSize)
     
@@ -3700,6 +3706,8 @@ public class TelephonyProvidersEdgeApi {
             .withOwnerId(ownerId)
     
             .withDidPoolId(didPoolId)
+    
+            .withId(id)
     
             .build();
   }

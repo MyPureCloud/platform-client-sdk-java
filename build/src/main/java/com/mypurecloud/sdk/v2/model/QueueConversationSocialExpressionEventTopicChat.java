@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicAfterCallWork;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -120,6 +121,7 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
   private Date disconnectedTime = null;
   private QueueConversationSocialExpressionEventTopicJourneyContext journeyContext = null;
   private QueueConversationSocialExpressionEventTopicWrapup wrapup = null;
+  private QueueConversationSocialExpressionEventTopicAfterCallWork afterCallWork = null;
   private Object additionalProperties = null;
 
   
@@ -363,6 +365,23 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
   
   /**
    **/
+  public QueueConversationSocialExpressionEventTopicChat afterCallWork(QueueConversationSocialExpressionEventTopicAfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("afterCallWork")
+  public QueueConversationSocialExpressionEventTopicAfterCallWork getAfterCallWork() {
+    return afterCallWork;
+  }
+  public void setAfterCallWork(QueueConversationSocialExpressionEventTopicAfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+  }
+
+  
+  /**
+   **/
   public QueueConversationSocialExpressionEventTopicChat additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -402,12 +421,13 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
         Objects.equals(this.disconnectedTime, queueConversationSocialExpressionEventTopicChat.disconnectedTime) &&
         Objects.equals(this.journeyContext, queueConversationSocialExpressionEventTopicChat.journeyContext) &&
         Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicChat.wrapup) &&
+        Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicChat.afterCallWork) &&
         Objects.equals(this.additionalProperties, queueConversationSocialExpressionEventTopicChat.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, provider, scriptId, peerId, roomId, avatarImageUrl, held, disconnectType, startHoldTime, connectedTime, disconnectedTime, journeyContext, wrapup, additionalProperties);
+    return Objects.hash(state, id, provider, scriptId, peerId, roomId, avatarImageUrl, held, disconnectType, startHoldTime, connectedTime, disconnectedTime, journeyContext, wrapup, afterCallWork, additionalProperties);
   }
 
   @Override
@@ -429,6 +449,7 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

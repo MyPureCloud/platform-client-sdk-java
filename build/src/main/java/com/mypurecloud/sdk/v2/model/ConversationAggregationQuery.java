@@ -29,6 +29,7 @@ public class ConversationAggregationQuery  implements Serializable {
   public enum GroupByEnum {
     ADDRESSFROM("addressFrom"),
     ADDRESSTO("addressTo"),
+    AGENTASSISTANTID("agentAssistantId"),
     AGENTSCORE("agentScore"),
     ANI("ani"),
     CONVERSATIONID("conversationId"),

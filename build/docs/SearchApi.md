@@ -390,7 +390,7 @@ try {
 
 
 
-> [UsersSearchResponse](UsersSearchResponse.html) getUsersSearch(q64, expand)
+> [UsersSearchResponse](UsersSearchResponse.html) getUsersSearch(q64, expand, integrationPresenceSource)
 
 Search users using the q64 value returned from a previous search
 
@@ -425,8 +425,9 @@ Configuration.setDefaultApiClient(apiClient);
 SearchApi apiInstance = new SearchApi();
 String q64 = "q64_example"; // String | q64
 List<String> expand = Arrays.asList("expand_example"); // List<String> | expand
+String integrationPresenceSource = "integrationPresenceSource_example"; // String | integrationPresenceSource
 try {
-    UsersSearchResponse result = apiInstance.getUsersSearch(q64, expand);
+    UsersSearchResponse result = apiInstance.getUsersSearch(q64, expand, integrationPresenceSource);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SearchApi#getUsersSearch");
@@ -441,6 +442,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **q64** | **String**| q64 | 
 | **expand** | [**List&lt;String&gt;**](String.html)| expand | [optional] 
+| **integrationPresenceSource** | **String**| integrationPresenceSource | [optional]<br />**Values**: MicrosoftTeams, ZoomPhone 
 {: class="table-striped"}
 
 

@@ -2768,7 +2768,7 @@ try {
 
 
 
-> [DIDPoolEntityListing](DIDPoolEntityListing.html) getTelephonyProvidersEdgesDidpools(pageSize, pageNumber, sortBy)
+> [DIDPoolEntityListing](DIDPoolEntityListing.html) getTelephonyProvidersEdgesDidpools(pageSize, pageNumber, sortBy, id)
 
 Get a listing of DID Pools
 
@@ -2805,8 +2805,9 @@ TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortBy = "number"; // String | Sort by
+List<String> id = Arrays.asList("id_example"); // List<String> | Filter by a specific list of ID's
 try {
-    DIDPoolEntityListing result = apiInstance.getTelephonyProvidersEdgesDidpools(pageSize, pageNumber, sortBy);
+    DIDPoolEntityListing result = apiInstance.getTelephonyProvidersEdgesDidpools(pageSize, pageNumber, sortBy, id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesDidpools");
@@ -2822,6 +2823,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortBy** | **String**| Sort by | [optional] [default to number] 
+| **id** | [**List&lt;String&gt;**](String.html)| Filter by a specific list of ID&#39;s | [optional] 
 {: class="table-striped"}
 
 
@@ -2835,7 +2837,7 @@ try {
 
 
 
-> [DIDEntityListing](DIDEntityListing.html) getTelephonyProvidersEdgesDids(pageSize, pageNumber, sortBy, sortOrder, phoneNumber, ownerId, didPoolId)
+> [DIDEntityListing](DIDEntityListing.html) getTelephonyProvidersEdgesDids(pageSize, pageNumber, sortBy, sortOrder, phoneNumber, ownerId, didPoolId, id)
 
 Get a listing of DIDs
 
@@ -2876,8 +2878,9 @@ String sortOrder = "ASC"; // String | Sort order
 String phoneNumber = "phoneNumber_example"; // String | Filter by phoneNumber
 String ownerId = "ownerId_example"; // String | Filter by the owner of a phone number
 String didPoolId = "didPoolId_example"; // String | Filter by the DID Pool assignment
+List<String> id = Arrays.asList("id_example"); // List<String> | Filter by a specific list of ID's
 try {
-    DIDEntityListing result = apiInstance.getTelephonyProvidersEdgesDids(pageSize, pageNumber, sortBy, sortOrder, phoneNumber, ownerId, didPoolId);
+    DIDEntityListing result = apiInstance.getTelephonyProvidersEdgesDids(pageSize, pageNumber, sortBy, sortOrder, phoneNumber, ownerId, didPoolId, id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesDids");
@@ -2897,6 +2900,7 @@ try {
 | **phoneNumber** | **String**| Filter by phoneNumber | [optional] 
 | **ownerId** | **String**| Filter by the owner of a phone number | [optional] 
 | **didPoolId** | **String**| Filter by the DID Pool assignment | [optional] 
+| **id** | [**List&lt;String&gt;**](String.html)| Filter by a specific list of ID&#39;s | [optional] 
 {: class="table-striped"}
 
 

@@ -43,6 +43,7 @@ title: SegmentDetailQueryPredicate
 | ADDRESSOTHER | &quot;addressOther&quot; |
 | ADDRESSSELF | &quot;addressSelf&quot; |
 | ADDRESSTO | &quot;addressTo&quot; |
+| AGENTASSISTANTID | &quot;agentAssistantId&quot; |
 | AGENTSCORE | &quot;agentScore&quot; |
 | ANI | &quot;ani&quot; |
 | AUDIOMUTED | &quot;audioMuted&quot; |
@@ -87,6 +88,7 @@ title: SegmentDetailQueryPredicate
 | JOURNEYCUSTOMERIDTYPE | &quot;journeyCustomerIdType&quot; |
 | JOURNEYCUSTOMERSESSIONID | &quot;journeyCustomerSessionId&quot; |
 | JOURNEYCUSTOMERSESSIONIDTYPE | &quot;journeyCustomerSessionIdType&quot; |
+| JOURNEYSEGMENTSCOPE | &quot;journeySegmentScope&quot; |
 | MEDIABRIDGEID | &quot;mediaBridgeId&quot; |
 | MEDIACOUNT | &quot;mediaCount&quot; |
 | MEDIATYPE | &quot;mediaType&quot; |

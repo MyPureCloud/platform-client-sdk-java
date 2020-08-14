@@ -27,6 +27,7 @@ title: QueueConversationVideoEventTopicEmail
 | **draftAttachments** | <!----><!---->[**List&lt;QueueConversationVideoEventTopicAttachment&gt;**](QueueConversationVideoEventTopicAttachment.html)<!----> |  |  [optional] |
 | **spam** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **wrapup** | <!----><!---->[**QueueConversationVideoEventTopicWrapup**](QueueConversationVideoEventTopicWrapup.html)<!----> |  |  [optional] |
+| **afterCallWork** | <!----><!---->[**QueueConversationVideoEventTopicAfterCallWork**](QueueConversationVideoEventTopicAfterCallWork.html)<!----> |  |  [optional] |
 | **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

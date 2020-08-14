@@ -13,6 +13,7 @@ title: Contact
 | **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> |  |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
 | **extension** | <!----><!---->**String**<!----> | Use internal extension instead of address. Mutually exclusive with the address field. |  [optional] |
+| **countryCode** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

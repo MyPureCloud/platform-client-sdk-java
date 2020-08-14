@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AfterCallWork;
 import com.mypurecloud.sdk.v2.model.JourneyContext;
 import com.mypurecloud.sdk.v2.model.Segment;
 import com.mypurecloud.sdk.v2.model.Wrapup;
@@ -157,6 +158,7 @@ public class ConversationChat  implements Serializable {
   private String avatarImageUrl = null;
   private JourneyContext journeyContext = null;
   private Wrapup wrapup = null;
+  private AfterCallWork afterCallWork = null;
 
   
   /**
@@ -483,6 +485,24 @@ public class ConversationChat  implements Serializable {
   }
 
   
+  /**
+   * After-call work for the communication.
+   **/
+  public ConversationChat afterCallWork(AfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "After-call work for the communication.")
+  @JsonProperty("afterCallWork")
+  public AfterCallWork getAfterCallWork() {
+    return afterCallWork;
+  }
+  public void setAfterCallWork(AfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -510,12 +530,13 @@ public class ConversationChat  implements Serializable {
         Objects.equals(this.peerId, conversationChat.peerId) &&
         Objects.equals(this.avatarImageUrl, conversationChat.avatarImageUrl) &&
         Objects.equals(this.journeyContext, conversationChat.journeyContext) &&
-        Objects.equals(this.wrapup, conversationChat.wrapup);
+        Objects.equals(this.wrapup, conversationChat.wrapup) &&
+        Objects.equals(this.afterCallWork, conversationChat.afterCallWork);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, roomId, recordingId, segments, held, direction, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, scriptId, peerId, avatarImageUrl, journeyContext, wrapup);
+    return Objects.hash(state, id, roomId, recordingId, segments, held, direction, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, scriptId, peerId, avatarImageUrl, journeyContext, wrapup, afterCallWork);
   }
 
   @Override
@@ -541,6 +562,7 @@ public class ConversationChat  implements Serializable {
     sb.append("    avatarImageUrl: ").append(toIndentedString(avatarImageUrl)).append("\n");
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("}");
     return sb.toString();
   }

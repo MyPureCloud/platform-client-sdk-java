@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.ScimMetadata;
 import com.mypurecloud.sdk.v2.model.ScimV2SchemaAttribute;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,7 +22,6 @@ public class ScimV2SchemaDefinition  implements Serializable {
   private String name = null;
   private String description = null;
   private List<ScimV2SchemaAttribute> attributes = new ArrayList<ScimV2SchemaAttribute>();
-  private ScimMetadata meta = null;
 
   
   @ApiModelProperty(example = "null", value = "The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readOnly\". \"returned\" is set to \"always\".")
@@ -65,24 +63,6 @@ public class ScimV2SchemaDefinition  implements Serializable {
   }
 
   
-  /**
-   * The metadata of the SCIM resource.
-   **/
-  public ScimV2SchemaDefinition meta(ScimMetadata meta) {
-    this.meta = meta;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource.")
-  @JsonProperty("meta")
-  public ScimMetadata getMeta() {
-    return meta;
-  }
-  public void setMeta(ScimMetadata meta) {
-    this.meta = meta;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -96,13 +76,12 @@ public class ScimV2SchemaDefinition  implements Serializable {
     return Objects.equals(this.id, scimV2SchemaDefinition.id) &&
         Objects.equals(this.name, scimV2SchemaDefinition.name) &&
         Objects.equals(this.description, scimV2SchemaDefinition.description) &&
-        Objects.equals(this.attributes, scimV2SchemaDefinition.attributes) &&
-        Objects.equals(this.meta, scimV2SchemaDefinition.meta);
+        Objects.equals(this.attributes, scimV2SchemaDefinition.attributes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, attributes, meta);
+    return Objects.hash(id, name, description, attributes);
   }
 
   @Override
@@ -114,7 +93,6 @@ public class ScimV2SchemaDefinition  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
-    sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("}");
     return sb.toString();
   }

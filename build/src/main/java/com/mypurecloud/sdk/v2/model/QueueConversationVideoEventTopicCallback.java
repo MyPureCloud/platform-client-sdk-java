@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicAfterCallWork;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicDialerPreview;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicVoicemail;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicWrapup;
@@ -166,6 +167,7 @@ public class QueueConversationVideoEventTopicCallback  implements Serializable {
   private Date callbackScheduledTime = null;
   private String automatedCallbackConfigId = null;
   private QueueConversationVideoEventTopicWrapup wrapup = null;
+  private QueueConversationVideoEventTopicAfterCallWork afterCallWork = null;
   private Object additionalProperties = null;
 
   
@@ -528,6 +530,23 @@ public class QueueConversationVideoEventTopicCallback  implements Serializable {
   
   /**
    **/
+  public QueueConversationVideoEventTopicCallback afterCallWork(QueueConversationVideoEventTopicAfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("afterCallWork")
+  public QueueConversationVideoEventTopicAfterCallWork getAfterCallWork() {
+    return afterCallWork;
+  }
+  public void setAfterCallWork(QueueConversationVideoEventTopicAfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+  }
+
+  
+  /**
+   **/
   public QueueConversationVideoEventTopicCallback additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -574,12 +593,13 @@ public class QueueConversationVideoEventTopicCallback  implements Serializable {
         Objects.equals(this.callbackScheduledTime, queueConversationVideoEventTopicCallback.callbackScheduledTime) &&
         Objects.equals(this.automatedCallbackConfigId, queueConversationVideoEventTopicCallback.automatedCallbackConfigId) &&
         Objects.equals(this.wrapup, queueConversationVideoEventTopicCallback.wrapup) &&
+        Objects.equals(this.afterCallWork, queueConversationVideoEventTopicCallback.afterCallWork) &&
         Objects.equals(this.additionalProperties, queueConversationVideoEventTopicCallback.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, peerId, externalCampaign, skipEnabled, provider, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, wrapup, additionalProperties);
+    return Objects.hash(state, id, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, peerId, externalCampaign, skipEnabled, provider, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, wrapup, afterCallWork, additionalProperties);
   }
 
   @Override
@@ -608,6 +628,7 @@ public class QueueConversationVideoEventTopicCallback  implements Serializable {
     sb.append("    callbackScheduledTime: ").append(toIndentedString(callbackScheduledTime)).append("\n");
     sb.append("    automatedCallbackConfigId: ").append(toIndentedString(automatedCallbackConfigId)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

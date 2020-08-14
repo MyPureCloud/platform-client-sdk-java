@@ -34,6 +34,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsOrganizationsSchemas**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchemas) | Get a list of schemas. |
 | [**getExternalcontactsRelationship**](ExternalContactsApi.html#getExternalcontactsRelationship) | Fetch a relationship |
 | [**getExternalcontactsReversewhitepageslookup**](ExternalContactsApi.html#getExternalcontactsReversewhitepageslookup) | Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned. |
+| [**getExternalcontactsScanContacts**](ExternalContactsApi.html#getExternalcontactsScanContacts) | Scan for external contacts using paging |
+| [**getExternalcontactsScanNotes**](ExternalContactsApi.html#getExternalcontactsScanNotes) | Scan for notes using paging |
+| [**getExternalcontactsScanOrganizations**](ExternalContactsApi.html#getExternalcontactsScanOrganizations) | Scan for external organizations using paging |
+| [**getExternalcontactsScanRelationships**](ExternalContactsApi.html#getExternalcontactsScanRelationships) | Scan for relationships |
 | [**postExternalcontactsContactNotes**](ExternalContactsApi.html#postExternalcontactsContactNotes) | Create a note for an external contact |
 | [**postExternalcontactsContacts**](ExternalContactsApi.html#postExternalcontactsContacts) | Create an external contact |
 | [**postExternalcontactsContactsSchemas**](ExternalContactsApi.html#postExternalcontactsContactsSchemas) | Create a schema |
@@ -1828,6 +1832,266 @@ try {
 
 [**ReverseWhitepagesLookupResult**](ReverseWhitepagesLookupResult.html)
 
+<a name="getExternalcontactsScanContacts"></a>
+
+# **getExternalcontactsScanContacts**
+
+
+
+> [CursorContactListing](CursorContactListing.html) getExternalcontactsScanContacts(limit, cursor)
+
+Scan for external contacts using paging
+
+
+
+Wraps GET /api/v2/externalcontacts/scan/contacts  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+Integer limit = 56; // Integer | The number of contacts per page; must be between 10 and 200, default is 100)
+String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+try {
+    CursorContactListing result = apiInstance.getExternalcontactsScanContacts(limit, cursor);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsScanContacts");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **Integer**| The number of contacts per page; must be between 10 and 200, default is 100) | [optional] 
+| **cursor** | **String**| Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CursorContactListing**](CursorContactListing.html)
+
+<a name="getExternalcontactsScanNotes"></a>
+
+# **getExternalcontactsScanNotes**
+
+
+
+> [CursorNoteListing](CursorNoteListing.html) getExternalcontactsScanNotes(limit, cursor)
+
+Scan for notes using paging
+
+
+
+Wraps GET /api/v2/externalcontacts/scan/notes  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+Integer limit = 56; // Integer | The number of notes per page; must be between 10 and 200, default is 100)
+String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+try {
+    CursorNoteListing result = apiInstance.getExternalcontactsScanNotes(limit, cursor);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsScanNotes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **Integer**| The number of notes per page; must be between 10 and 200, default is 100) | [optional] 
+| **cursor** | **String**| Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CursorNoteListing**](CursorNoteListing.html)
+
+<a name="getExternalcontactsScanOrganizations"></a>
+
+# **getExternalcontactsScanOrganizations**
+
+
+
+> [CursorOrganizationListing](CursorOrganizationListing.html) getExternalcontactsScanOrganizations(limit, cursor)
+
+Scan for external organizations using paging
+
+
+
+Wraps GET /api/v2/externalcontacts/scan/organizations  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+Integer limit = 56; // Integer | The number of organizations per page; must be between 10 and 200, default is 100)
+String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+try {
+    CursorOrganizationListing result = apiInstance.getExternalcontactsScanOrganizations(limit, cursor);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsScanOrganizations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **Integer**| The number of organizations per page; must be between 10 and 200, default is 100) | [optional] 
+| **cursor** | **String**| Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CursorOrganizationListing**](CursorOrganizationListing.html)
+
+<a name="getExternalcontactsScanRelationships"></a>
+
+# **getExternalcontactsScanRelationships**
+
+
+
+> [CursorRelationshipListing](CursorRelationshipListing.html) getExternalcontactsScanRelationships(limit, cursor)
+
+Scan for relationships
+
+
+
+Wraps GET /api/v2/externalcontacts/scan/relationships  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+Integer limit = 56; // Integer | The number of relationships per page; must be between 10 and 200, default is 100)
+String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+try {
+    CursorRelationshipListing result = apiInstance.getExternalcontactsScanRelationships(limit, cursor);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsScanRelationships");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **Integer**| The number of relationships per page; must be between 10 and 200, default is 100) | [optional] 
+| **cursor** | **String**| Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CursorRelationshipListing**](CursorRelationshipListing.html)
+
 <a name="postExternalcontactsContactNotes"></a>
 
 # **postExternalcontactsContactNotes**
@@ -2478,7 +2742,7 @@ try {
 
 
 
-> Void putExternalcontactsConversation(conversationId, body)
+> Void putExternalcontactsConversation(body, conversationId)
 
 Associate/disassociate an external contact with a conversation
 
@@ -2512,10 +2776,10 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 ExternalContactsApi apiInstance = new ExternalContactsApi();
-String conversationId = "conversationId_example"; // String | Conversation ID
 ConversationAssociation body = new ConversationAssociation(); // ConversationAssociation | ConversationAssociation
+String conversationId = "conversationId_example"; // String | Conversation ID
 try {
-    apiInstance.putExternalcontactsConversation(conversationId, body);
+    apiInstance.putExternalcontactsConversation(body, conversationId);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#putExternalcontactsConversation");
     e.printStackTrace();
@@ -2527,8 +2791,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| Conversation ID | 
 | **body** | [**ConversationAssociation**](ConversationAssociation.html)| ConversationAssociation | 
+| **conversationId** | **String**| Conversation ID | 
 {: class="table-striped"}
 
 

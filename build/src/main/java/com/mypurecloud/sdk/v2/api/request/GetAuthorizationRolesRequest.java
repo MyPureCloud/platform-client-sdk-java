@@ -82,16 +82,16 @@ public class GetAuthorizationRolesRequest {
 	    return this;
 	} 
 	
-	private List<String> expand;
-	public List<String> getExpand() {
+	private List<Object> expand;
+	public List<Object> getExpand() {
 		return this.expand;
 	}
 
-	public void setExpand(List<String> expand) {
+	public void setExpand(List<Object> expand) {
 		this.expand = expand;
 	}
 
-	public GetAuthorizationRolesRequest withExpand(List<String> expand) {
+	public GetAuthorizationRolesRequest withExpand(List<Object> expand) {
 	    this.setExpand(expand);
 	    return this;
 	} 
@@ -138,30 +138,30 @@ public class GetAuthorizationRolesRequest {
 	    return this;
 	} 
 	
-	private List<String> permission;
-	public List<String> getPermission() {
+	private List<Object> permission;
+	public List<Object> getPermission() {
 		return this.permission;
 	}
 
-	public void setPermission(List<String> permission) {
+	public void setPermission(List<Object> permission) {
 		this.permission = permission;
 	}
 
-	public GetAuthorizationRolesRequest withPermission(List<String> permission) {
+	public GetAuthorizationRolesRequest withPermission(List<Object> permission) {
 	    this.setPermission(permission);
 	    return this;
 	} 
 	
-	private List<String> defaultRoleId;
-	public List<String> getDefaultRoleId() {
+	private List<Object> defaultRoleId;
+	public List<Object> getDefaultRoleId() {
 		return this.defaultRoleId;
 	}
 
-	public void setDefaultRoleId(List<String> defaultRoleId) {
+	public void setDefaultRoleId(List<Object> defaultRoleId) {
 		this.defaultRoleId = defaultRoleId;
 	}
 
-	public GetAuthorizationRolesRequest withDefaultRoleId(List<String> defaultRoleId) {
+	public GetAuthorizationRolesRequest withDefaultRoleId(List<Object> defaultRoleId) {
 	    this.setDefaultRoleId(defaultRoleId);
 	    return this;
 	} 
@@ -275,7 +275,7 @@ public class GetAuthorizationRolesRequest {
 			return this;
 		}
 		
-		public Builder withExpand(List<String> expand) {
+		public Builder withExpand(List<Object> expand) {
 			request.setExpand(expand);
 			return this;
 		}
@@ -295,12 +295,12 @@ public class GetAuthorizationRolesRequest {
 			return this;
 		}
 		
-		public Builder withPermission(List<String> permission) {
+		public Builder withPermission(List<Object> permission) {
 			request.setPermission(permission);
 			return this;
 		}
 		
-		public Builder withDefaultRoleId(List<String> defaultRoleId) {
+		public Builder withDefaultRoleId(List<Object> defaultRoleId) {
 			request.setDefaultRoleId(defaultRoleId);
 			return this;
 		}

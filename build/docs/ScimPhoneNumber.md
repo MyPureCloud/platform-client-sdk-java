@@ -28,6 +28,8 @@ title: ScimPhoneNumber
 | HOME | &quot;home&quot; |
 | MOBILE | &quot;mobile&quot; |
 | OTHER | &quot;other&quot; |
+| MICROSOFTTEAMS | &quot;microsoftteams&quot; |
+| ZOOMPHONE | &quot;zoomphone&quot; |
 {: class="table table-striped"}
 
 

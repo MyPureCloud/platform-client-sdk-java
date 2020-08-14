@@ -12,7 +12,6 @@ title: ScimV2SchemaDefinition
 | **name** | <!----><!---->**String**<!----> | The name of the schema. |  [optional] |
 | **description** | <!----><!---->**String**<!----> | The description of the schema. |  [optional] |
 | **attributes** | <!----><!---->[**List&lt;ScimV2SchemaAttribute&gt;**](ScimV2SchemaAttribute.html)<!----> | The list of service provider attributes. |  [optional] |
-| **meta** | <!----><!---->[**ScimMetadata**](ScimMetadata.html)<!----> | The metadata of the SCIM resource. |  [optional] |
 {: class="table table-striped"}
 
 

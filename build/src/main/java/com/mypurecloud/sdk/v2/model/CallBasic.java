@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Address;
+import com.mypurecloud.sdk.v2.model.AfterCallWork;
 import com.mypurecloud.sdk.v2.model.DisconnectReason;
 import com.mypurecloud.sdk.v2.model.ErrorInfo;
 import com.mypurecloud.sdk.v2.model.FaxStatus;
@@ -210,6 +211,7 @@ public class CallBasic  implements Serializable {
   private Address self = null;
   private Address other = null;
   private Wrapup wrapup = null;
+  private AfterCallWork afterCallWork = null;
 
   
   /**
@@ -679,6 +681,24 @@ public class CallBasic  implements Serializable {
   }
 
   
+  /**
+   * After-call work for the communication.
+   **/
+  public CallBasic afterCallWork(AfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "After-call work for the communication.")
+  @JsonProperty("afterCallWork")
+  public AfterCallWork getAfterCallWork() {
+    return afterCallWork;
+  }
+  public void setAfterCallWork(AfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -714,12 +734,13 @@ public class CallBasic  implements Serializable {
         Objects.equals(this.uuiData, callBasic.uuiData) &&
         Objects.equals(this.self, callBasic.self) &&
         Objects.equals(this.other, callBasic.other) &&
-        Objects.equals(this.wrapup, callBasic.wrapup);
+        Objects.equals(this.wrapup, callBasic.wrapup) &&
+        Objects.equals(this.afterCallWork, callBasic.afterCallWork);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, direction, recording, recordingState, muted, confined, held, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, startAlertingTime, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData, self, other, wrapup);
+    return Objects.hash(state, id, direction, recording, recordingState, muted, confined, held, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, startAlertingTime, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData, self, other, wrapup, afterCallWork);
   }
 
   @Override
@@ -753,6 +774,7 @@ public class CallBasic  implements Serializable {
     sb.append("    self: ").append(toIndentedString(self)).append("\n");
     sb.append("    other: ").append(toIndentedString(other)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("}");
     return sb.toString();
   }

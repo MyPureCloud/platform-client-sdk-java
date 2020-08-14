@@ -27,11 +27,11 @@ import com.mypurecloud.sdk.v2.model.ScimV2Group;
 import com.mypurecloud.sdk.v2.model.ScimGroupListResponse;
 import com.mypurecloud.sdk.v2.model.ScimConfigResourceType;
 import com.mypurecloud.sdk.v2.model.ScimConfigResourceTypesListResponse;
+import com.mypurecloud.sdk.v2.model.ScimV2SchemaDefinition;
+import com.mypurecloud.sdk.v2.model.ScimV2SchemaListResponse;
 import com.mypurecloud.sdk.v2.model.ScimServiceProviderConfig;
 import com.mypurecloud.sdk.v2.model.ScimV2User;
 import com.mypurecloud.sdk.v2.model.ScimUserListResponse;
-import com.mypurecloud.sdk.v2.model.ScimV2SchemaDefinition;
-import com.mypurecloud.sdk.v2.model.ScimV2SchemaListResponse;
 import com.mypurecloud.sdk.v2.model.ScimV2PatchRequest;
 import com.mypurecloud.sdk.v2.model.ScimV2CreateUser;
 
@@ -98,7 +98,13 @@ public class GetScimV2GroupsRequest {
 		DISPLAYNAME("displayName"), 
 		MEMBERS("members"), 
 		EXTERNALID("externalId"), 
+		META("meta"), 
+		META_VERSION("meta.version"), 
+		META_LASTMODIFIED("meta.lastModified"), 
 		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_GROUP_ID("urn:ietf:params:scim:schemas:core:2.0:Group:id"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_GROUP_META("urn:ietf:params:scim:schemas:core:2.0:Group:meta"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_GROUP_META_VERSION("urn:ietf:params:scim:schemas:core:2.0:Group:meta.version"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_GROUP_META_LASTMODIFIED("urn:ietf:params:scim:schemas:core:2.0:Group:meta.lastModified"), 
 		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_GROUP_DISPLAYNAME("urn:ietf:params:scim:schemas:core:2.0:Group:displayName"), 
 		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_GROUP_MEMBERS("urn:ietf:params:scim:schemas:core:2.0:Group:members"), 
 		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_GROUP_EXTERNALID("urn:ietf:params:scim:schemas:core:2.0:Group:externalId");
@@ -148,7 +154,13 @@ public class GetScimV2GroupsRequest {
 		DISPLAYNAME("displayName"), 
 		MEMBERS("members"), 
 		EXTERNALID("externalId"), 
+		META("meta"), 
+		META_VERSION("meta.version"), 
+		META_LASTMODIFIED("meta.lastModified"), 
 		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_GROUP_ID("urn:ietf:params:scim:schemas:core:2.0:Group:id"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_GROUP_META("urn:ietf:params:scim:schemas:core:2.0:Group:meta"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_GROUP_META_VERSION("urn:ietf:params:scim:schemas:core:2.0:Group:meta.version"), 
+		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_GROUP_META_LASTMODIFIED("urn:ietf:params:scim:schemas:core:2.0:Group:meta.lastModified"), 
 		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_GROUP_DISPLAYNAME("urn:ietf:params:scim:schemas:core:2.0:Group:displayName"), 
 		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_GROUP_MEMBERS("urn:ietf:params:scim:schemas:core:2.0:Group:members"), 
 		URN_IETF_PARAMS_SCIM_SCHEMAS_CORE_2_0_GROUP_EXTERNALID("urn:ietf:params:scim:schemas:core:2.0:Group:externalId");
@@ -218,8 +230,8 @@ public class GetScimV2GroupsRequest {
                 .withQueryParameters("filter", "", filter)
         
                 .withCustomHeaders(customHeaders)
-                .withContentTypes("application/json", "application/scim+json")
-                .withAccepts("application/json", "application/scim+json")
+                .withContentTypes("application/scim+json", "application/json")
+                .withAccepts("application/scim+json", "application/json")
                 .withAuthNames("PureCloud OAuth")
                 .build();
     }

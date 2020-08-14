@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicAddress;
+import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicAfterCallWork;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicErrorDetails;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicMessageDetails;
 import com.mypurecloud.sdk.v2.model.QueueConversationSocialExpressionEventTopicWrapup;
@@ -165,6 +166,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
   private String recipientCountry = null;
   private String recipientType = null;
   private QueueConversationSocialExpressionEventTopicWrapup wrapup = null;
+  private QueueConversationSocialExpressionEventTopicAfterCallWork afterCallWork = null;
   private Object additionalProperties = null;
 
   
@@ -493,6 +495,23 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
   
   /**
    **/
+  public QueueConversationSocialExpressionEventTopicMessage afterCallWork(QueueConversationSocialExpressionEventTopicAfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("afterCallWork")
+  public QueueConversationSocialExpressionEventTopicAfterCallWork getAfterCallWork() {
+    return afterCallWork;
+  }
+  public void setAfterCallWork(QueueConversationSocialExpressionEventTopicAfterCallWork afterCallWork) {
+    this.afterCallWork = afterCallWork;
+  }
+
+  
+  /**
+   **/
   public QueueConversationSocialExpressionEventTopicMessage additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -537,12 +556,13 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
         Objects.equals(this.recipientCountry, queueConversationSocialExpressionEventTopicMessage.recipientCountry) &&
         Objects.equals(this.recipientType, queueConversationSocialExpressionEventTopicMessage.recipientType) &&
         Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicMessage.wrapup) &&
+        Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicMessage.afterCallWork) &&
         Objects.equals(this.additionalProperties, queueConversationSocialExpressionEventTopicMessage.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, wrapup, additionalProperties);
+    return Objects.hash(id, state, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, wrapup, afterCallWork, additionalProperties);
   }
 
   @Override
@@ -569,6 +589,7 @@ public class QueueConversationSocialExpressionEventTopicMessage  implements Seri
     sb.append("    recipientCountry: ").append(toIndentedString(recipientCountry)).append("\n");
     sb.append("    recipientType: ").append(toIndentedString(recipientType)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
+    sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

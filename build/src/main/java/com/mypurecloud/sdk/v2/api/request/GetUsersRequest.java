@@ -230,6 +230,50 @@ public class GetUsersRequest {
 		}
 	}
 	
+	private String integrationPresenceSource;
+	public String getIntegrationPresenceSource() {
+		return this.integrationPresenceSource;
+	}
+
+	public void setIntegrationPresenceSource(String integrationPresenceSource) {
+		this.integrationPresenceSource = integrationPresenceSource;
+	}
+
+	public GetUsersRequest withIntegrationPresenceSource(String integrationPresenceSource) {
+	    this.setIntegrationPresenceSource(integrationPresenceSource);
+	    return this;
+	} 
+
+	public enum integrationPresenceSourceValues { 
+		MICROSOFTTEAMS("MicrosoftTeams"), 
+		ZOOMPHONE("ZoomPhone");
+
+		private String value;
+
+		integrationPresenceSourceValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static integrationPresenceSourceValues fromString(String key) {
+			if (key == null) return null;
+
+			for (integrationPresenceSourceValues value : integrationPresenceSourceValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return integrationPresenceSourceValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
 	private String state;
 	public String getState() {
 		return this.state;
@@ -311,6 +355,8 @@ public class GetUsersRequest {
         
                 .withQueryParameters("expand", "multi", expand)
         
+                .withQueryParameters("integrationPresenceSource", "", integrationPresenceSource)
+        
                 .withQueryParameters("state", "", state)
         
                 .withCustomHeaders(customHeaders)
@@ -375,6 +421,16 @@ public class GetUsersRequest {
 	        stringList.add(e.toString());
 	      }
 	      request.setExpand(stringList);
+		    return this;
+		}
+		
+		public Builder withIntegrationPresenceSource(String integrationPresenceSource) {
+			request.setIntegrationPresenceSource(integrationPresenceSource);
+			return this;
+		}
+
+		public Builder withIntegrationPresenceSource(integrationPresenceSourceValues integrationPresenceSource) {
+		    request.setIntegrationPresenceSource(integrationPresenceSource.toString());
 		    return this;
 		}
 		

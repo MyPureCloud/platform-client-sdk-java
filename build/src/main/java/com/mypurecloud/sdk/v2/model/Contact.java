@@ -95,6 +95,7 @@ public class Contact  implements Serializable {
   }
   private TypeEnum type = null;
   private String extension = null;
+  private String countryCode = null;
 
   
   /**
@@ -174,6 +175,23 @@ public class Contact  implements Serializable {
   }
 
   
+  /**
+   **/
+  public Contact countryCode(String countryCode) {
+    this.countryCode = countryCode;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("countryCode")
+  public String getCountryCode() {
+    return countryCode;
+  }
+  public void setCountryCode(String countryCode) {
+    this.countryCode = countryCode;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -188,12 +206,13 @@ public class Contact  implements Serializable {
         Objects.equals(this.display, contact.display) &&
         Objects.equals(this.mediaType, contact.mediaType) &&
         Objects.equals(this.type, contact.type) &&
-        Objects.equals(this.extension, contact.extension);
+        Objects.equals(this.extension, contact.extension) &&
+        Objects.equals(this.countryCode, contact.countryCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, display, mediaType, type, extension);
+    return Objects.hash(address, display, mediaType, type, extension, countryCode);
   }
 
   @Override
@@ -206,6 +225,7 @@ public class Contact  implements Serializable {
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    extension: ").append(toIndentedString(extension)).append("\n");
+    sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

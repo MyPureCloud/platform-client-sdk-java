@@ -92,16 +92,16 @@ public class GetQualityEvaluatorsActivityRequest {
 	    return this;
 	} 
 	
-	private List<String> expand;
-	public List<String> getExpand() {
+	private List<Object> expand;
+	public List<Object> getExpand() {
 		return this.expand;
 	}
 
-	public void setExpand(List<String> expand) {
+	public void setExpand(List<Object> expand) {
 		this.expand = expand;
 	}
 
-	public GetQualityEvaluatorsActivityRequest withExpand(List<String> expand) {
+	public GetQualityEvaluatorsActivityRequest withExpand(List<Object> expand) {
 	    this.setExpand(expand);
 	    return this;
 	} 
@@ -176,16 +176,16 @@ public class GetQualityEvaluatorsActivityRequest {
 	    return this;
 	} 
 	
-	private List<String> permission;
-	public List<String> getPermission() {
+	private List<Object> permission;
+	public List<Object> getPermission() {
 		return this.permission;
 	}
 
-	public void setPermission(List<String> permission) {
+	public void setPermission(List<Object> permission) {
 		this.permission = permission;
 	}
 
-	public GetQualityEvaluatorsActivityRequest withPermission(List<String> permission) {
+	public GetQualityEvaluatorsActivityRequest withPermission(List<Object> permission) {
 	    this.setPermission(permission);
 	    return this;
 	} 
@@ -285,7 +285,7 @@ public class GetQualityEvaluatorsActivityRequest {
 			return this;
 		}
 		
-		public Builder withExpand(List<String> expand) {
+		public Builder withExpand(List<Object> expand) {
 			request.setExpand(expand);
 			return this;
 		}
@@ -315,7 +315,7 @@ public class GetQualityEvaluatorsActivityRequest {
 			return this;
 		}
 		
-		public Builder withPermission(List<String> permission) {
+		public Builder withPermission(List<Object> permission) {
 			request.setPermission(permission);
 			return this;
 		}

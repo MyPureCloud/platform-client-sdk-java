@@ -60,6 +60,7 @@ public class PhoneCapabilities  implements Serializable {
     }
   }
   private List<MediaCodecsEnum> mediaCodecs = new ArrayList<MediaCodecsEnum>();
+  private Boolean cdm = null;
 
   
   /**
@@ -198,6 +199,23 @@ public class PhoneCapabilities  implements Serializable {
   }
 
   
+  /**
+   **/
+  public PhoneCapabilities cdm(Boolean cdm) {
+    this.cdm = cdm;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("cdm")
+  public Boolean getCdm() {
+    return cdm;
+  }
+  public void setCdm(Boolean cdm) {
+    this.cdm = cdm;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -215,12 +233,13 @@ public class PhoneCapabilities  implements Serializable {
         Objects.equals(this.allowReboot, phoneCapabilities.allowReboot) &&
         Objects.equals(this.noRebalance, phoneCapabilities.noRebalance) &&
         Objects.equals(this.noCloudProvisioning, phoneCapabilities.noCloudProvisioning) &&
-        Objects.equals(this.mediaCodecs, phoneCapabilities.mediaCodecs);
+        Objects.equals(this.mediaCodecs, phoneCapabilities.mediaCodecs) &&
+        Objects.equals(this.cdm, phoneCapabilities.cdm);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(provisions, registers, dualRegisters, hardwareIdType, allowReboot, noRebalance, noCloudProvisioning, mediaCodecs);
+    return Objects.hash(provisions, registers, dualRegisters, hardwareIdType, allowReboot, noRebalance, noCloudProvisioning, mediaCodecs, cdm);
   }
 
   @Override
@@ -236,6 +255,7 @@ public class PhoneCapabilities  implements Serializable {
     sb.append("    noRebalance: ").append(toIndentedString(noRebalance)).append("\n");
     sb.append("    noCloudProvisioning: ").append(toIndentedString(noCloudProvisioning)).append("\n");
     sb.append("    mediaCodecs: ").append(toIndentedString(mediaCodecs)).append("\n");
+    sb.append("    cdm: ").append(toIndentedString(cdm)).append("\n");
     sb.append("}");
     return sb.toString();
   }

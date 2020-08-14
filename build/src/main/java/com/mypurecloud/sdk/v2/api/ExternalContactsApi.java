@@ -23,6 +23,10 @@ import com.mypurecloud.sdk.v2.model.RelationshipListing;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationListing;
 import com.mypurecloud.sdk.v2.model.Relationship;
 import com.mypurecloud.sdk.v2.model.ReverseWhitepagesLookupResult;
+import com.mypurecloud.sdk.v2.model.CursorContactListing;
+import com.mypurecloud.sdk.v2.model.CursorNoteListing;
+import com.mypurecloud.sdk.v2.model.CursorOrganizationListing;
+import com.mypurecloud.sdk.v2.model.CursorRelationshipListing;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
 
@@ -54,6 +58,10 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchema
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsOrganizationsSchemasRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsRelationshipRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsReversewhitepageslookupRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanContactsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanNotesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanOrganizationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanRelationshipsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsSchemasRequest;
@@ -2370,6 +2378,338 @@ public class ExternalContactsApi {
 
   
   /**
+   * Scan for external contacts using paging
+   * 
+   * @param limit The number of contacts per page; must be between 10 and 200, default is 100) (optional)
+   * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @return CursorContactListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CursorContactListing getExternalcontactsScanContacts(Integer limit, String cursor) throws IOException, ApiException {
+    return  getExternalcontactsScanContacts(createGetExternalcontactsScanContactsRequest(limit, cursor));
+  }
+
+  /**
+   * Scan for external contacts using paging
+   * 
+   * @param limit The number of contacts per page; must be between 10 and 200, default is 100) (optional)
+   * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @return CursorContactListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CursorContactListing> getExternalcontactsScanContactsWithHttpInfo(Integer limit, String cursor) throws IOException {
+    return getExternalcontactsScanContacts(createGetExternalcontactsScanContactsRequest(limit, cursor).withHttpInfo());
+  }
+
+  private GetExternalcontactsScanContactsRequest createGetExternalcontactsScanContactsRequest(Integer limit, String cursor) {
+    return GetExternalcontactsScanContactsRequest.builder()
+            .withLimit(limit)
+    
+            .withCursor(cursor)
+    
+            .build();
+  }
+
+  /**
+   * Scan for external contacts using paging
+   * 
+   * @param request The request object
+   * @return CursorContactListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CursorContactListing getExternalcontactsScanContacts(GetExternalcontactsScanContactsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CursorContactListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CursorContactListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Scan for external contacts using paging
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CursorContactListing> getExternalcontactsScanContacts(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CursorContactListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CursorContactListing> response = (ApiResponse<CursorContactListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CursorContactListing> response = (ApiResponse<CursorContactListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Scan for notes using paging
+   * 
+   * @param limit The number of notes per page; must be between 10 and 200, default is 100) (optional)
+   * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @return CursorNoteListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CursorNoteListing getExternalcontactsScanNotes(Integer limit, String cursor) throws IOException, ApiException {
+    return  getExternalcontactsScanNotes(createGetExternalcontactsScanNotesRequest(limit, cursor));
+  }
+
+  /**
+   * Scan for notes using paging
+   * 
+   * @param limit The number of notes per page; must be between 10 and 200, default is 100) (optional)
+   * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @return CursorNoteListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CursorNoteListing> getExternalcontactsScanNotesWithHttpInfo(Integer limit, String cursor) throws IOException {
+    return getExternalcontactsScanNotes(createGetExternalcontactsScanNotesRequest(limit, cursor).withHttpInfo());
+  }
+
+  private GetExternalcontactsScanNotesRequest createGetExternalcontactsScanNotesRequest(Integer limit, String cursor) {
+    return GetExternalcontactsScanNotesRequest.builder()
+            .withLimit(limit)
+    
+            .withCursor(cursor)
+    
+            .build();
+  }
+
+  /**
+   * Scan for notes using paging
+   * 
+   * @param request The request object
+   * @return CursorNoteListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CursorNoteListing getExternalcontactsScanNotes(GetExternalcontactsScanNotesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CursorNoteListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CursorNoteListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Scan for notes using paging
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CursorNoteListing> getExternalcontactsScanNotes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CursorNoteListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CursorNoteListing> response = (ApiResponse<CursorNoteListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CursorNoteListing> response = (ApiResponse<CursorNoteListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Scan for external organizations using paging
+   * 
+   * @param limit The number of organizations per page; must be between 10 and 200, default is 100) (optional)
+   * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @return CursorOrganizationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CursorOrganizationListing getExternalcontactsScanOrganizations(Integer limit, String cursor) throws IOException, ApiException {
+    return  getExternalcontactsScanOrganizations(createGetExternalcontactsScanOrganizationsRequest(limit, cursor));
+  }
+
+  /**
+   * Scan for external organizations using paging
+   * 
+   * @param limit The number of organizations per page; must be between 10 and 200, default is 100) (optional)
+   * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @return CursorOrganizationListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CursorOrganizationListing> getExternalcontactsScanOrganizationsWithHttpInfo(Integer limit, String cursor) throws IOException {
+    return getExternalcontactsScanOrganizations(createGetExternalcontactsScanOrganizationsRequest(limit, cursor).withHttpInfo());
+  }
+
+  private GetExternalcontactsScanOrganizationsRequest createGetExternalcontactsScanOrganizationsRequest(Integer limit, String cursor) {
+    return GetExternalcontactsScanOrganizationsRequest.builder()
+            .withLimit(limit)
+    
+            .withCursor(cursor)
+    
+            .build();
+  }
+
+  /**
+   * Scan for external organizations using paging
+   * 
+   * @param request The request object
+   * @return CursorOrganizationListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CursorOrganizationListing getExternalcontactsScanOrganizations(GetExternalcontactsScanOrganizationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CursorOrganizationListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CursorOrganizationListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Scan for external organizations using paging
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CursorOrganizationListing> getExternalcontactsScanOrganizations(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CursorOrganizationListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CursorOrganizationListing> response = (ApiResponse<CursorOrganizationListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CursorOrganizationListing> response = (ApiResponse<CursorOrganizationListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Scan for relationships
+   * 
+   * @param limit The number of relationships per page; must be between 10 and 200, default is 100) (optional)
+   * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @return CursorRelationshipListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CursorRelationshipListing getExternalcontactsScanRelationships(Integer limit, String cursor) throws IOException, ApiException {
+    return  getExternalcontactsScanRelationships(createGetExternalcontactsScanRelationshipsRequest(limit, cursor));
+  }
+
+  /**
+   * Scan for relationships
+   * 
+   * @param limit The number of relationships per page; must be between 10 and 200, default is 100) (optional)
+   * @param cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+   * @return CursorRelationshipListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CursorRelationshipListing> getExternalcontactsScanRelationshipsWithHttpInfo(Integer limit, String cursor) throws IOException {
+    return getExternalcontactsScanRelationships(createGetExternalcontactsScanRelationshipsRequest(limit, cursor).withHttpInfo());
+  }
+
+  private GetExternalcontactsScanRelationshipsRequest createGetExternalcontactsScanRelationshipsRequest(Integer limit, String cursor) {
+    return GetExternalcontactsScanRelationshipsRequest.builder()
+            .withLimit(limit)
+    
+            .withCursor(cursor)
+    
+            .build();
+  }
+
+  /**
+   * Scan for relationships
+   * 
+   * @param request The request object
+   * @return CursorRelationshipListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CursorRelationshipListing getExternalcontactsScanRelationships(GetExternalcontactsScanRelationshipsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CursorRelationshipListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CursorRelationshipListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Scan for relationships
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CursorRelationshipListing> getExternalcontactsScanRelationships(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CursorRelationshipListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CursorRelationshipListing> response = (ApiResponse<CursorRelationshipListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CursorRelationshipListing> response = (ApiResponse<CursorRelationshipListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Create a note for an external contact
    * 
    * @param contactId ExternalContact Id (required)
@@ -3186,31 +3526,31 @@ public class ExternalContactsApi {
   /**
    * Associate/disassociate an external contact with a conversation
    * To associate, supply a value for the externalContactId.  To disassociate, do not include the property at all.
-   * @param conversationId Conversation ID (required)
    * @param body ConversationAssociation (required)
+   * @param conversationId Conversation ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void putExternalcontactsConversation(String conversationId, ConversationAssociation body) throws IOException, ApiException {
-     putExternalcontactsConversation(createPutExternalcontactsConversationRequest(conversationId, body));
+  public void putExternalcontactsConversation(ConversationAssociation body, String conversationId) throws IOException, ApiException {
+     putExternalcontactsConversation(createPutExternalcontactsConversationRequest(body, conversationId));
   }
 
   /**
    * Associate/disassociate an external contact with a conversation
    * To associate, supply a value for the externalContactId.  To disassociate, do not include the property at all.
-   * @param conversationId Conversation ID (required)
    * @param body ConversationAssociation (required)
+   * @param conversationId Conversation ID (required)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> putExternalcontactsConversationWithHttpInfo(String conversationId, ConversationAssociation body) throws IOException {
-    return putExternalcontactsConversation(createPutExternalcontactsConversationRequest(conversationId, body).withHttpInfo());
+  public ApiResponse<Void> putExternalcontactsConversationWithHttpInfo(ConversationAssociation body, String conversationId) throws IOException {
+    return putExternalcontactsConversation(createPutExternalcontactsConversationRequest(body, conversationId).withHttpInfo());
   }
 
-  private PutExternalcontactsConversationRequest createPutExternalcontactsConversationRequest(String conversationId, ConversationAssociation body) {
+  private PutExternalcontactsConversationRequest createPutExternalcontactsConversationRequest(ConversationAssociation body, String conversationId) {
     return PutExternalcontactsConversationRequest.builder()
-            .withConversationId(conversationId)
-    
             .withBody(body)
+    
+            .withConversationId(conversationId)
     
             .build();
   }

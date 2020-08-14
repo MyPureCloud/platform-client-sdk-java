@@ -188,6 +188,20 @@ public class GetTelephonyProvidersEdgesDidsRequest {
 	    return this;
 	} 
 	
+	private List<String> id;
+	public List<String> getId() {
+		return this.id;
+	}
+
+	public void setId(List<String> id) {
+		this.id = id;
+	}
+
+	public GetTelephonyProvidersEdgesDidsRequest withId(List<String> id) {
+	    this.setId(id);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -224,6 +238,8 @@ public class GetTelephonyProvidersEdgesDidsRequest {
                 .withQueryParameters("owner.id", "", ownerId)
         
                 .withQueryParameters("didPool.id", "", didPoolId)
+        
+                .withQueryParameters("id", "multi", id)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -278,6 +294,11 @@ public class GetTelephonyProvidersEdgesDidsRequest {
 		
 		public Builder withDidPoolId(String didPoolId) {
 			request.setDidPoolId(didPoolId);
+			return this;
+		}
+		
+		public Builder withId(List<String> id) {
+			request.setId(id);
 			return this;
 		}
 		

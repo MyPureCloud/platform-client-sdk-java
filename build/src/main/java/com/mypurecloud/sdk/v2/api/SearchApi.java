@@ -570,12 +570,13 @@ public class SearchApi {
    * 
    * @param q64 q64 (required)
    * @param expand expand (optional)
+   * @param integrationPresenceSource integrationPresenceSource (optional)
    * @return UsersSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UsersSearchResponse getUsersSearch(String q64, List<String> expand) throws IOException, ApiException {
-    return  getUsersSearch(createGetUsersSearchRequest(q64, expand));
+  public UsersSearchResponse getUsersSearch(String q64, List<String> expand, String integrationPresenceSource) throws IOException, ApiException {
+    return  getUsersSearch(createGetUsersSearchRequest(q64, expand, integrationPresenceSource));
   }
 
   /**
@@ -583,18 +584,21 @@ public class SearchApi {
    * 
    * @param q64 q64 (required)
    * @param expand expand (optional)
+   * @param integrationPresenceSource integrationPresenceSource (optional)
    * @return UsersSearchResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UsersSearchResponse> getUsersSearchWithHttpInfo(String q64, List<String> expand) throws IOException {
-    return getUsersSearch(createGetUsersSearchRequest(q64, expand).withHttpInfo());
+  public ApiResponse<UsersSearchResponse> getUsersSearchWithHttpInfo(String q64, List<String> expand, String integrationPresenceSource) throws IOException {
+    return getUsersSearch(createGetUsersSearchRequest(q64, expand, integrationPresenceSource).withHttpInfo());
   }
 
-  private GetUsersSearchRequest createGetUsersSearchRequest(String q64, List<String> expand) {
+  private GetUsersSearchRequest createGetUsersSearchRequest(String q64, List<String> expand, String integrationPresenceSource) {
     return GetUsersSearchRequest.builder()
             .withQ64(q64)
     
             .withExpand(expand)
+    
+            .withIntegrationPresenceSource(integrationPresenceSource)
     
             .build();
   }

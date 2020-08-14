@@ -193,7 +193,7 @@ public class SdkTests {
     @Test(priority = 7)
     public void getUser() {
         try {
-            User user = usersApi.getUser(userId, Collections.singletonList("profileSkills"), null);
+            User user = usersApi.getUser(userId, Collections.singletonList("profileSkills"), null, null);
 
             Assert.assertEquals(user.getId(), userId);
             Assert.assertEquals(user.getName(), userName);

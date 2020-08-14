@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScimConfigResourceTypeSchemaExtension;
-import com.mypurecloud.sdk.v2.model.ScimMetadata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -26,7 +25,6 @@ public class ScimConfigResourceType  implements Serializable {
   private String schema = null;
   private List<ScimConfigResourceTypeSchemaExtension> schemaExtensions = new ArrayList<ScimConfigResourceTypeSchemaExtension>();
   private String endpoint = null;
-  private ScimMetadata meta = null;
 
   
   @ApiModelProperty(example = "null", value = "The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readOnly\". \"returned\" is set to \"always\".")
@@ -100,24 +98,6 @@ public class ScimConfigResourceType  implements Serializable {
   }
 
   
-  /**
-   * The metadata of the SCIM resource.
-   **/
-  public ScimConfigResourceType meta(ScimMetadata meta) {
-    this.meta = meta;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource.")
-  @JsonProperty("meta")
-  public ScimMetadata getMeta() {
-    return meta;
-  }
-  public void setMeta(ScimMetadata meta) {
-    this.meta = meta;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -134,13 +114,12 @@ public class ScimConfigResourceType  implements Serializable {
         Objects.equals(this.description, scimConfigResourceType.description) &&
         Objects.equals(this.schema, scimConfigResourceType.schema) &&
         Objects.equals(this.schemaExtensions, scimConfigResourceType.schemaExtensions) &&
-        Objects.equals(this.endpoint, scimConfigResourceType.endpoint) &&
-        Objects.equals(this.meta, scimConfigResourceType.meta);
+        Objects.equals(this.endpoint, scimConfigResourceType.endpoint);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, schemas, name, description, schema, schemaExtensions, endpoint, meta);
+    return Objects.hash(id, schemas, name, description, schema, schemaExtensions, endpoint);
   }
 
   @Override
@@ -155,7 +134,6 @@ public class ScimConfigResourceType  implements Serializable {
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
     sb.append("    schemaExtensions: ").append(toIndentedString(schemaExtensions)).append("\n");
     sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
-    sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("}");
     return sb.toString();
   }

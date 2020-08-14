@@ -38,6 +38,7 @@ title: FlowAggregateQueryPredicate
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ADDRESSFROM | &quot;addressFrom&quot; |
 | ADDRESSTO | &quot;addressTo&quot; |
+| AGENTASSISTANTID | &quot;agentAssistantId&quot; |
 | AGENTSCORE | &quot;agentScore&quot; |
 | ANI | &quot;ani&quot; |
 | CONVERSATIONID | &quot;conversationId&quot; |

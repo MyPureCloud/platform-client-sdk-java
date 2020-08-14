@@ -57,6 +57,7 @@ import com.mypurecloud.sdk.v2.model.ParticipantAttributes;
 import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
 import com.mypurecloud.sdk.v2.model.ConsultTransferResponse;
+import com.mypurecloud.sdk.v2.model.FacebookIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.PropertyIndexRequest;
 import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
@@ -185,6 +186,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantCommunicationRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationDetailsPropertiesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesQueryRequest;
@@ -7671,6 +7673,89 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update Facebook messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @param body FacebookIntegrationUpdateRequest (required)
+   * @return FacebookIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FacebookIntegration patchConversationsMessagingIntegrationsFacebookIntegrationId(String integrationId, FacebookIntegrationUpdateRequest body) throws IOException, ApiException {
+    return  patchConversationsMessagingIntegrationsFacebookIntegrationId(createPatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest(integrationId, body));
+  }
+
+  /**
+   * Update Facebook messaging integration
+   * 
+   * @param integrationId Integration ID (required)
+   * @param body FacebookIntegrationUpdateRequest (required)
+   * @return FacebookIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FacebookIntegration> patchConversationsMessagingIntegrationsFacebookIntegrationIdWithHttpInfo(String integrationId, FacebookIntegrationUpdateRequest body) throws IOException {
+    return patchConversationsMessagingIntegrationsFacebookIntegrationId(createPatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest(integrationId, body).withHttpInfo());
+  }
+
+  private PatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest createPatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest(String integrationId, FacebookIntegrationUpdateRequest body) {
+    return PatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update Facebook messaging integration
+   * 
+   * @param request The request object
+   * @return FacebookIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FacebookIntegration patchConversationsMessagingIntegrationsFacebookIntegrationId(PatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FacebookIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FacebookIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update Facebook messaging integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FacebookIntegration> patchConversationsMessagingIntegrationsFacebookIntegrationId(ApiRequest<FacebookIntegrationUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FacebookIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FacebookIntegration> response = (ApiResponse<FacebookIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FacebookIntegration> response = (ApiResponse<FacebookIntegration>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

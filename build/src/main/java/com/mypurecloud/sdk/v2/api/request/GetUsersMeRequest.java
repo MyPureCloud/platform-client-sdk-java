@@ -146,6 +146,50 @@ public class GetUsersMeRequest {
 		}
 	}
 	
+	private String integrationPresenceSource;
+	public String getIntegrationPresenceSource() {
+		return this.integrationPresenceSource;
+	}
+
+	public void setIntegrationPresenceSource(String integrationPresenceSource) {
+		this.integrationPresenceSource = integrationPresenceSource;
+	}
+
+	public GetUsersMeRequest withIntegrationPresenceSource(String integrationPresenceSource) {
+	    this.setIntegrationPresenceSource(integrationPresenceSource);
+	    return this;
+	} 
+
+	public enum integrationPresenceSourceValues { 
+		MICROSOFTTEAMS("MicrosoftTeams"), 
+		ZOOMPHONE("ZoomPhone");
+
+		private String value;
+
+		integrationPresenceSourceValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static integrationPresenceSourceValues fromString(String key) {
+			if (key == null) return null;
+
+			for (integrationPresenceSourceValues value : integrationPresenceSourceValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return integrationPresenceSourceValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -170,6 +214,8 @@ public class GetUsersMeRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/users/me")
                 .withQueryParameters("expand", "multi", expand)
+        
+                .withQueryParameters("integrationPresenceSource", "", integrationPresenceSource)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -203,6 +249,16 @@ public class GetUsersMeRequest {
 	        stringList.add(e.toString());
 	      }
 	      request.setExpand(stringList);
+		    return this;
+		}
+		
+		public Builder withIntegrationPresenceSource(String integrationPresenceSource) {
+			request.setIntegrationPresenceSource(integrationPresenceSource);
+			return this;
+		}
+
+		public Builder withIntegrationPresenceSource(integrationPresenceSourceValues integrationPresenceSource) {
+		    request.setIntegrationPresenceSource(integrationPresenceSource.toString());
 		    return this;
 		}
 		

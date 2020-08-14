@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.Education;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public class Biography  implements Serializable {
   private List<String> interests = new ArrayList<String>();
   private List<String> hobbies = new ArrayList<String>();
   private String spouse = null;
+  private List<Education> education = new ArrayList<Education>();
 
   
   /**
@@ -91,6 +93,24 @@ public class Biography  implements Serializable {
   }
 
   
+  /**
+   * User education details
+   **/
+  public Biography education(List<Education> education) {
+    this.education = education;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "User education details")
+  @JsonProperty("education")
+  public List<Education> getEducation() {
+    return education;
+  }
+  public void setEducation(List<Education> education) {
+    this.education = education;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,12 +124,13 @@ public class Biography  implements Serializable {
     return Objects.equals(this.biography, biography.biography) &&
         Objects.equals(this.interests, biography.interests) &&
         Objects.equals(this.hobbies, biography.hobbies) &&
-        Objects.equals(this.spouse, biography.spouse);
+        Objects.equals(this.spouse, biography.spouse) &&
+        Objects.equals(this.education, biography.education);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(biography, interests, hobbies, spouse);
+    return Objects.hash(biography, interests, hobbies, spouse, education);
   }
 
   @Override
@@ -121,6 +142,7 @@ public class Biography  implements Serializable {
     sb.append("    interests: ").append(toIndentedString(interests)).append("\n");
     sb.append("    hobbies: ").append(toIndentedString(hobbies)).append("\n");
     sb.append("    spouse: ").append(toIndentedString(spouse)).append("\n");
+    sb.append("    education: ").append(toIndentedString(education)).append("\n");
     sb.append("}");
     return sb.toString();
   }
