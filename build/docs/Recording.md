@@ -35,6 +35,7 @@ title: Recording
 | **remainingRestorationsAllowedForOrg** | <!----><!---->**Integer**<!----> | The remaining archive restorations the organization has. |  [optional] |
 | **sessionId** | <!----><!---->**String**<!----> | The session id represents an external resource id, such as email, call, chat, etc |  [optional] |
 | **users** | <!----><!---->[**List&lt;User&gt;**](User.html)<!----> | The users participating in the conversation |  [optional] |
+| **recordingFileRole** | [**RecordingFileRoleEnum**](#RecordingFileRoleEnum)<!----> | Role of the file recording. It can be either customer_experience or adhoc. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
@@ -64,6 +65,18 @@ title: Recording
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | CLOUDARCHIVE | &quot;CLOUDARCHIVE&quot; |
+{: class="table table-striped"}
+
+
+<a name="RecordingFileRoleEnum"></a>
+
+## Enum: RecordingFileRoleEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| CUSTOMER_EXPERIENCE | &quot;CUSTOMER_EXPERIENCE&quot; |
+| ADHOC | &quot;ADHOC&quot; |
 {: class="table table-striped"}
 
 

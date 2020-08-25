@@ -125,6 +125,41 @@ public class Recording  implements Serializable {
   private Integer remainingRestorationsAllowedForOrg = null;
   private String sessionId = null;
   private List<User> users = new ArrayList<User>();
+
+  /**
+   * Role of the file recording. It can be either customer_experience or adhoc.
+   */
+  public enum RecordingFileRoleEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    CUSTOMER_EXPERIENCE("CUSTOMER_EXPERIENCE"),
+    ADHOC("ADHOC");
+
+    private String value;
+
+    RecordingFileRoleEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static RecordingFileRoleEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (RecordingFileRoleEnum value : RecordingFileRoleEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return RecordingFileRoleEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private RecordingFileRoleEnum recordingFileRole = null;
   private String selfUri = null;
 
   
@@ -598,6 +633,24 @@ public class Recording  implements Serializable {
   }
 
   
+  /**
+   * Role of the file recording. It can be either customer_experience or adhoc.
+   **/
+  public Recording recordingFileRole(RecordingFileRoleEnum recordingFileRole) {
+    this.recordingFileRole = recordingFileRole;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Role of the file recording. It can be either customer_experience or adhoc.")
+  @JsonProperty("recordingFileRole")
+  public RecordingFileRoleEnum getRecordingFileRole() {
+    return recordingFileRole;
+  }
+  public void setRecordingFileRole(RecordingFileRoleEnum recordingFileRole) {
+    this.recordingFileRole = recordingFileRole;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -642,12 +695,13 @@ public class Recording  implements Serializable {
         Objects.equals(this.remainingRestorationsAllowedForOrg, recording.remainingRestorationsAllowedForOrg) &&
         Objects.equals(this.sessionId, recording.sessionId) &&
         Objects.equals(this.users, recording.users) &&
+        Objects.equals(this.recordingFileRole, recording.recordingFileRole) &&
         Objects.equals(this.selfUri, recording.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, annotations, transcript, emailTranscript, messagingTranscript, fileState, restoreExpirationTime, mediaUris, estimatedTranscodeTimeMs, actualTranscodeTimeMs, archiveDate, archiveMedium, deleteDate, exportDate, exportedDate, outputDurationMs, outputSizeInBytes, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, users, selfUri);
+    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, annotations, transcript, emailTranscript, messagingTranscript, fileState, restoreExpirationTime, mediaUris, estimatedTranscodeTimeMs, actualTranscodeTimeMs, archiveDate, archiveMedium, deleteDate, exportDate, exportedDate, outputDurationMs, outputSizeInBytes, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, users, recordingFileRole, selfUri);
   }
 
   @Override
@@ -682,6 +736,7 @@ public class Recording  implements Serializable {
     sb.append("    remainingRestorationsAllowedForOrg: ").append(toIndentedString(remainingRestorationsAllowedForOrg)).append("\n");
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
     sb.append("    users: ").append(toIndentedString(users)).append("\n");
+    sb.append("    recordingFileRole: ").append(toIndentedString(recordingFileRole)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

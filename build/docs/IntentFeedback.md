@@ -25,6 +25,7 @@ title: IntentFeedback
 | INCORRECT | &quot;Incorrect&quot; |
 | CORRECT | &quot;Correct&quot; |
 | UNKNOWN | &quot;Unknown&quot; |
+| DISABLED | &quot;Disabled&quot; |
 {: class="table table-striped"}
 
 

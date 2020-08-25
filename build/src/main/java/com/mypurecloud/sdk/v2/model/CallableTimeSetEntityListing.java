@@ -25,8 +25,8 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
   private String firstUri = null;
   private String selfUri = null;
   private String nextUri = null;
-  private String previousUri = null;
   private String lastUri = null;
+  private String previousUri = null;
   private Integer pageCount = null;
 
   
@@ -151,23 +151,6 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
   
   /**
    **/
-  public CallableTimeSetEntityListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
-  }
-
-  
-  /**
-   **/
   public CallableTimeSetEntityListing lastUri(String lastUri) {
     this.lastUri = lastUri;
     return this;
@@ -180,6 +163,23 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
   }
   public void setLastUri(String lastUri) {
     this.lastUri = lastUri;
+  }
+
+  
+  /**
+   **/
+  public CallableTimeSetEntityListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
   }
 
   
@@ -217,14 +217,14 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
         Objects.equals(this.firstUri, callableTimeSetEntityListing.firstUri) &&
         Objects.equals(this.selfUri, callableTimeSetEntityListing.selfUri) &&
         Objects.equals(this.nextUri, callableTimeSetEntityListing.nextUri) &&
-        Objects.equals(this.previousUri, callableTimeSetEntityListing.previousUri) &&
         Objects.equals(this.lastUri, callableTimeSetEntityListing.lastUri) &&
+        Objects.equals(this.previousUri, callableTimeSetEntityListing.previousUri) &&
         Objects.equals(this.pageCount, callableTimeSetEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, previousUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, lastUri, previousUri, pageCount);
   }
 
   @Override
@@ -239,8 +239,8 @@ public class CallableTimeSetEntityListing  implements Serializable, PagedResourc
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

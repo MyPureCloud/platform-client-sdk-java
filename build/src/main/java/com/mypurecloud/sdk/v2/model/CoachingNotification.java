@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentReference;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponse;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -134,7 +134,7 @@ public class CoachingNotification  implements Serializable {
   }
   private StatusEnum status = null;
   private UserReference user = null;
-  private CoachingAppointmentReference appointment = null;
+  private CoachingAppointmentResponse appointment = null;
   private String selfUri = null;
 
   
@@ -226,17 +226,17 @@ public class CoachingNotification  implements Serializable {
   /**
    * The appointment
    **/
-  public CoachingNotification appointment(CoachingAppointmentReference appointment) {
+  public CoachingNotification appointment(CoachingAppointmentResponse appointment) {
     this.appointment = appointment;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The appointment")
   @JsonProperty("appointment")
-  public CoachingAppointmentReference getAppointment() {
+  public CoachingAppointmentResponse getAppointment() {
     return appointment;
   }
-  public void setAppointment(CoachingAppointmentReference appointment) {
+  public void setAppointment(CoachingAppointmentResponse appointment) {
     this.appointment = appointment;
   }
 

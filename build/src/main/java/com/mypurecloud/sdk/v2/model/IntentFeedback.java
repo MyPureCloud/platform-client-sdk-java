@@ -29,7 +29,8 @@ public class IntentFeedback  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INCORRECT("Incorrect"),
     CORRECT("Correct"),
-    UNKNOWN("Unknown");
+    UNKNOWN("Unknown"),
+    DISABLED("Disabled");
 
     private String value;
 

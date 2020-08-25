@@ -98,8 +98,8 @@ public class DeleteScimUserRequest {
                 .withHeaderParameter("If-Match", ifMatch)
         
                 .withCustomHeaders(customHeaders)
-                .withContentTypes("application/scim+json", "application/json")
-                .withAccepts("application/scim+json", "application/json")
+                .withContentTypes("application/json", "application/scim+json")
+                .withAccepts("application/json", "application/scim+json")
                 .withAuthNames("PureCloud OAuth")
                 .build();
     }

@@ -187,11 +187,11 @@ ObjectsApi apiInstance = new ObjectsApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<Object> expand = null; // List<Object> | variable name requested by expand list
+List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 Boolean objectCount = false; // Boolean | Include the count of objects contained in the division
-List<Object> id = null; // List<Object> | Optionally request specific divisions by their IDs
+List<String> id = Arrays.asList("id_example"); // List<String> | Optionally request specific divisions by their IDs
 String name = "name_example"; // String | Search term to filter by division name
 try {
     AuthzDivisionEntityListing result = apiInstance.getAuthorizationDivisions(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, objectCount, id, name);
@@ -210,11 +210,11 @@ try {
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
 | **sortBy** | **String**| variable name requested to sort by | [optional] 
-| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
 | **objectCount** | **Boolean**| Include the count of objects contained in the division | [optional] [default to false] 
-| **id** | [**List&lt;Object&gt;**](Object.html)| Optionally request specific divisions by their IDs | [optional] 
+| **id** | [**List&lt;String&gt;**](String.html)| Optionally request specific divisions by their IDs | [optional] 
 | **name** | **String**| Search term to filter by division name | [optional] 
 {: class="table-striped"}
 

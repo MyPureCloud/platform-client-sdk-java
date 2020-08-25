@@ -436,7 +436,7 @@ public class PresenceApiAsync {
   
   /**
    * Get a user&#39;s Microsoft Teams presence.
-   * Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to GenesysCloud presence with additional activity details in the message field. This presence source is read-only.
+   * Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -470,7 +470,7 @@ public class PresenceApiAsync {
 
   /**
    * Get a user&#39;s Microsoft Teams presence.
-   * Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to GenesysCloud presence with additional activity details in the message field. This presence source is read-only.
+   * Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -511,8 +511,8 @@ public class PresenceApiAsync {
 
   
   /**
-   * Get a user&#39;s GenesysCloud presence.
-   * Get the default GenesysCloud user presence source PURECLOUD
+   * Get a user&#39;s Genesys Cloud presence.
+   * Get the default Genesys Cloud user presence source PURECLOUD
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -545,8 +545,8 @@ public class PresenceApiAsync {
   }
 
   /**
-   * Get a user&#39;s GenesysCloud presence.
-   * Get the default GenesysCloud user presence source PURECLOUD
+   * Get a user&#39;s Genesys Cloud presence.
+   * Get the default Genesys Cloud user presence source PURECLOUD
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -663,7 +663,7 @@ public class PresenceApiAsync {
 
   
   /**
-   * Patch a GenesysCloud user&#39;s presence
+   * Patch a Genesys Cloud user&#39;s presence
    * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the PURECLOUD source as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -697,7 +697,7 @@ public class PresenceApiAsync {
   }
 
   /**
-   * Patch a GenesysCloud user&#39;s presence
+   * Patch a Genesys Cloud user&#39;s presence
    * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the PURECLOUD source as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
    * @param request the request object
    * @param callback the action to perform when the request is completed

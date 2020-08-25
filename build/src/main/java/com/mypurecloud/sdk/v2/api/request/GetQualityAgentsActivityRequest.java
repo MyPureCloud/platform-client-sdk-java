@@ -92,16 +92,16 @@ public class GetQualityAgentsActivityRequest {
 	    return this;
 	} 
 	
-	private List<Object> expand;
-	public List<Object> getExpand() {
+	private List<String> expand;
+	public List<String> getExpand() {
 		return this.expand;
 	}
 
-	public void setExpand(List<Object> expand) {
+	public void setExpand(List<String> expand) {
 		this.expand = expand;
 	}
 
-	public GetQualityAgentsActivityRequest withExpand(List<Object> expand) {
+	public GetQualityAgentsActivityRequest withExpand(List<String> expand) {
 	    this.setExpand(expand);
 	    return this;
 	} 
@@ -162,16 +162,16 @@ public class GetQualityAgentsActivityRequest {
 	    return this;
 	} 
 	
-	private List<Object> agentUserId;
-	public List<Object> getAgentUserId() {
+	private List<String> agentUserId;
+	public List<String> getAgentUserId() {
 		return this.agentUserId;
 	}
 
-	public void setAgentUserId(List<Object> agentUserId) {
+	public void setAgentUserId(List<String> agentUserId) {
 		this.agentUserId = agentUserId;
 	}
 
-	public GetQualityAgentsActivityRequest withAgentUserId(List<Object> agentUserId) {
+	public GetQualityAgentsActivityRequest withAgentUserId(List<String> agentUserId) {
 	    this.setAgentUserId(agentUserId);
 	    return this;
 	} 
@@ -301,7 +301,7 @@ public class GetQualityAgentsActivityRequest {
 			return this;
 		}
 		
-		public Builder withExpand(List<Object> expand) {
+		public Builder withExpand(List<String> expand) {
 			request.setExpand(expand);
 			return this;
 		}
@@ -326,7 +326,7 @@ public class GetQualityAgentsActivityRequest {
 			return this;
 		}
 		
-		public Builder withAgentUserId(List<Object> agentUserId) {
+		public Builder withAgentUserId(List<String> agentUserId) {
 			request.setAgentUserId(agentUserId);
 			return this;
 		}

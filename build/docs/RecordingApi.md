@@ -585,7 +585,7 @@ try {
 
 
 
-> [List&lt;Recording&gt;](Recording.html) getConversationRecordingmetadata(conversationId)
+> [List&lt;RecordingMetadata&gt;](RecordingMetadata.html) getConversationRecordingmetadata(conversationId)
 
 Get recording metadata for a conversation. Does not return playable media.
 
@@ -620,7 +620,7 @@ Configuration.setDefaultApiClient(apiClient);
 RecordingApi apiInstance = new RecordingApi();
 String conversationId = "conversationId_example"; // String | Conversation ID
 try {
-    List<Recording> result = apiInstance.getConversationRecordingmetadata(conversationId);
+    List<RecordingMetadata> result = apiInstance.getConversationRecordingmetadata(conversationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RecordingApi#getConversationRecordingmetadata");
@@ -639,7 +639,7 @@ try {
 
 ### Return type
 
-[**List&lt;Recording&gt;**](Recording.html)
+[**List&lt;RecordingMetadata&gt;**](RecordingMetadata.html)
 
 <a name="getConversationRecordingmetadataRecordingId"></a>
 
@@ -956,7 +956,7 @@ RecordingApi apiInstance = new RecordingApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<Object> expand = null; // List<Object> | variable name requested by expand list
+List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 Boolean hasConversation = false; // Boolean | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization.
@@ -978,7 +978,7 @@ try {
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
 | **sortBy** | **String**| variable name requested to sort by | [optional] 
-| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
 | **hasConversation** | **Boolean**| Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. | [optional] [default to false] 
@@ -1353,7 +1353,7 @@ RecordingApi apiInstance = new RecordingApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<Object> expand = null; // List<Object> | variable name requested by expand list
+List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 String name = "name_example"; // String | the policy name - used for filtering results in searches.
@@ -1377,7 +1377,7 @@ try {
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
 | **sortBy** | **String**| variable name requested to sort by | [optional] 
-| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
 | **name** | **String**| the policy name - used for filtering results in searches. | [optional] 

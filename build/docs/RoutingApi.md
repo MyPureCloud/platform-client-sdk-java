@@ -231,7 +231,7 @@ Delete a queue
 
 Wraps DELETE /api/v2/routing/queues/{queueId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:delete
 
@@ -295,7 +295,7 @@ Delete queue member
 
 Wraps DELETE /api/v2/routing/queues/{queueId}/users/{memberId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:edit
 
@@ -359,7 +359,7 @@ Delete a wrap-up code from a queue
 
 Wraps DELETE /api/v2/routing/queues/{queueId}/wrapupcodes/{codeId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:edit
 
@@ -1493,7 +1493,7 @@ Get details about this queue.
 
 Wraps GET /api/v2/routing/queues/{queueId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:view
 
@@ -1556,7 +1556,7 @@ Get Estimated Wait Time
 
 Wraps GET /api/v2/routing/queues/{queueId}/estimatedwaittime  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:view
 
@@ -1621,7 +1621,7 @@ Get Estimated Wait Time
 
 Wraps GET /api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:view
 
@@ -1686,7 +1686,7 @@ Get the members of this queue
 
 Wraps GET /api/v2/routing/queues/{queueId}/users  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:view
 
@@ -1771,7 +1771,7 @@ Get the wrap-up codes for a queue
 
 Wraps GET /api/v2/routing/queues/{queueId}/wrapupcodes  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:view
 
@@ -3296,7 +3296,7 @@ Update the ring number OR joined status for a User in a Queue
 
 Wraps PATCH /api/v2/routing/queues/{queueId}/users/{memberId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:edit
 
@@ -3363,7 +3363,7 @@ Join or unjoin a set of users for a queue
 
 Wraps PATCH /api/v2/routing/queues/{queueId}/users  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:edit
 
@@ -3490,7 +3490,7 @@ Join or unjoin a queue for a user
 
 Wraps PATCH /api/v2/users/{userId}/queues/{queueId}  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:join
 
@@ -4142,7 +4142,7 @@ Bulk add or delete up to 100 queue members
 
 Wraps POST /api/v2/routing/queues/{queueId}/users  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:edit
 
@@ -4209,7 +4209,7 @@ Add up to 100 wrap-up codes to a queue
 
 Wraps POST /api/v2/routing/queues/{queueId}/wrapupcodes  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:edit
 

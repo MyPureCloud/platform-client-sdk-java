@@ -81,7 +81,8 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 	public enum assessmentValues { 
 		INCORRECT("Incorrect"), 
 		CORRECT("Correct"), 
-		UNKNOWN("Unknown");
+		UNKNOWN("Unknown"), 
+		DISABLED("Disabled");
 
 		private String value;
 

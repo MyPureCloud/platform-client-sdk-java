@@ -570,7 +570,7 @@ try {
 
 
 
-> [CoachingNotification](CoachingNotification.html) getCoachingNotification(notificationId)
+> [CoachingNotification](CoachingNotification.html) getCoachingNotification(notificationId, expand)
 
 Get an existing notification
 
@@ -605,8 +605,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 CoachingApi apiInstance = new CoachingApi();
 String notificationId = "notificationId_example"; // String | The ID of the notification.
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Indicates a field in the response which should be expanded.
 try {
-    CoachingNotification result = apiInstance.getCoachingNotification(notificationId);
+    CoachingNotification result = apiInstance.getCoachingNotification(notificationId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CoachingApi#getCoachingNotification");
@@ -620,6 +621,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **notificationId** | **String**| The ID of the notification. | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Indicates a field in the response which should be expanded. | [optional]<br />**Values**: appointment 
 {: class="table-striped"}
 
 
@@ -633,7 +635,7 @@ try {
 
 
 
-> [CoachingNotificationList](CoachingNotificationList.html) getCoachingNotifications(pageNumber, pageSize)
+> [CoachingNotificationList](CoachingNotificationList.html) getCoachingNotifications(pageNumber, pageSize, expand)
 
 Retrieve the list of your notifications.
 
@@ -668,8 +670,9 @@ Configuration.setDefaultApiClient(apiClient);
 CoachingApi apiInstance = new CoachingApi();
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Indicates a field in the response which should be expanded.
 try {
-    CoachingNotificationList result = apiInstance.getCoachingNotifications(pageNumber, pageSize);
+    CoachingNotificationList result = apiInstance.getCoachingNotifications(pageNumber, pageSize, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CoachingApi#getCoachingNotifications");
@@ -684,6 +687,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **expand** | [**List&lt;String&gt;**](String.html)| Indicates a field in the response which should be expanded. | [optional]<br />**Values**: appointment 
 {: class="table-striped"}
 
 

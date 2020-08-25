@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ScimEmail;
+import com.mypurecloud.sdk.v2.model.ScimMetadata;
 import com.mypurecloud.sdk.v2.model.ScimPhoneNumber;
 import com.mypurecloud.sdk.v2.model.ScimUserExtensions;
 import com.mypurecloud.sdk.v2.model.ScimUserRole;
@@ -37,6 +38,7 @@ public class ScimV2User  implements Serializable {
   private List<ScimUserRole> roles = new ArrayList<ScimUserRole>();
   private ScimV2EnterpriseUser urnietfparamsscimschemasextensionenterprise20User = null;
   private ScimUserExtensions urnietfparamsscimschemasextensiongenesyspurecloud20User = null;
+  private ScimMetadata meta = null;
 
   
   @ApiModelProperty(example = "null", value = "The ID of the SCIM resource. Set by the service provider. \"caseExact\" is set to \"true\". \"mutability\" is set to \"readOnly\". \"returned\" is set to \"always\".")
@@ -280,6 +282,24 @@ public class ScimV2User  implements Serializable {
   }
 
   
+  /**
+   * The metadata of the SCIM resource.
+   **/
+  public ScimV2User meta(ScimMetadata meta) {
+    this.meta = meta;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource.")
+  @JsonProperty("meta")
+  public ScimMetadata getMeta() {
+    return meta;
+  }
+  public void setMeta(ScimMetadata meta) {
+    this.meta = meta;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -303,12 +323,13 @@ public class ScimV2User  implements Serializable {
         Objects.equals(this.groups, scimV2User.groups) &&
         Objects.equals(this.roles, scimV2User.roles) &&
         Objects.equals(this.urnietfparamsscimschemasextensionenterprise20User, scimV2User.urnietfparamsscimschemasextensionenterprise20User) &&
-        Objects.equals(this.urnietfparamsscimschemasextensiongenesyspurecloud20User, scimV2User.urnietfparamsscimschemasextensiongenesyspurecloud20User);
+        Objects.equals(this.urnietfparamsscimschemasextensiongenesyspurecloud20User, scimV2User.urnietfparamsscimschemasextensiongenesyspurecloud20User) &&
+        Objects.equals(this.meta, scimV2User.meta);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, schemas, active, userName, displayName, password, title, phoneNumbers, emails, externalId, groups, roles, urnietfparamsscimschemasextensionenterprise20User, urnietfparamsscimschemasextensiongenesyspurecloud20User);
+    return Objects.hash(id, schemas, active, userName, displayName, password, title, phoneNumbers, emails, externalId, groups, roles, urnietfparamsscimschemasextensionenterprise20User, urnietfparamsscimschemasextensiongenesyspurecloud20User, meta);
   }
 
   @Override
@@ -330,6 +351,7 @@ public class ScimV2User  implements Serializable {
     sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
     sb.append("    urnietfparamsscimschemasextensionenterprise20User: ").append(toIndentedString(urnietfparamsscimschemasextensionenterprise20User)).append("\n");
     sb.append("    urnietfparamsscimschemasextensiongenesyspurecloud20User: ").append(toIndentedString(urnietfparamsscimschemasextensiongenesyspurecloud20User)).append("\n");
+    sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
     sb.append("}");
     return sb.toString();
   }

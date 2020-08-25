@@ -25,6 +25,41 @@ public class AvailableTopic  implements Serializable {
   private Boolean requiresCurrentUser = null;
   private Boolean requiresCurrentUserOrPermission = null;
 
+  /**
+   * Gets or Sets transports
+   */
+  public enum TransportsEnum {
+    ALL("All"),
+    WEBSOCKET("Websocket"),
+    EVENTBRIDGE("EventBridge");
+
+    private String value;
+
+    TransportsEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TransportsEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TransportsEnum value : TransportsEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TransportsEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<TransportsEnum> transports = new ArrayList<TransportsEnum>();
+
   
   /**
    **/
@@ -131,6 +166,24 @@ public class AvailableTopic  implements Serializable {
   }
 
   
+  /**
+   * Transports that support events for the topic
+   **/
+  public AvailableTopic transports(List<TransportsEnum> transports) {
+    this.transports = transports;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Transports that support events for the topic")
+  @JsonProperty("transports")
+  public List<TransportsEnum> getTransports() {
+    return transports;
+  }
+  public void setTransports(List<TransportsEnum> transports) {
+    this.transports = transports;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -146,12 +199,13 @@ public class AvailableTopic  implements Serializable {
         Objects.equals(this.requiresPermissions, availableTopic.requiresPermissions) &&
         Objects.equals(this.schema, availableTopic.schema) &&
         Objects.equals(this.requiresCurrentUser, availableTopic.requiresCurrentUser) &&
-        Objects.equals(this.requiresCurrentUserOrPermission, availableTopic.requiresCurrentUserOrPermission);
+        Objects.equals(this.requiresCurrentUserOrPermission, availableTopic.requiresCurrentUserOrPermission) &&
+        Objects.equals(this.transports, availableTopic.transports);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, id, requiresPermissions, schema, requiresCurrentUser, requiresCurrentUserOrPermission);
+    return Objects.hash(description, id, requiresPermissions, schema, requiresCurrentUser, requiresCurrentUserOrPermission, transports);
   }
 
   @Override
@@ -165,6 +219,7 @@ public class AvailableTopic  implements Serializable {
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
     sb.append("    requiresCurrentUser: ").append(toIndentedString(requiresCurrentUser)).append("\n");
     sb.append("    requiresCurrentUserOrPermission: ").append(toIndentedString(requiresCurrentUserOrPermission)).append("\n");
+    sb.append("    transports: ").append(toIndentedString(transports)).append("\n");
     sb.append("}");
     return sb.toString();
   }

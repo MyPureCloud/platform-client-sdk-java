@@ -723,13 +723,13 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<Recording>> getConversationRecordingmetadataAsync(GetConversationRecordingmetadataRequest request, final AsyncApiCallback<List<Recording>> callback) {
+  public Future<List<RecordingMetadata>> getConversationRecordingmetadataAsync(GetConversationRecordingmetadataRequest request, final AsyncApiCallback<List<RecordingMetadata>> callback) {
     try {
-      final SettableFuture<List<Recording>> future = SettableFuture.create();
+      final SettableFuture<List<RecordingMetadata>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<Recording>>() {}, new AsyncApiCallback<ApiResponse<List<Recording>>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<RecordingMetadata>>() {}, new AsyncApiCallback<ApiResponse<List<RecordingMetadata>>>() {
         @Override
-        public void onCompleted(ApiResponse<List<Recording>> response) {
+        public void onCompleted(ApiResponse<List<RecordingMetadata>> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -757,13 +757,13 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<Recording>>> getConversationRecordingmetadataAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<Recording>>> callback) {
+  public Future<ApiResponse<List<RecordingMetadata>>> getConversationRecordingmetadataAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<RecordingMetadata>>> callback) {
     try {
-      final SettableFuture<ApiResponse<List<Recording>>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<List<RecordingMetadata>>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<List<Recording>>() {}, new AsyncApiCallback<ApiResponse<List<Recording>>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<List<RecordingMetadata>>() {}, new AsyncApiCallback<ApiResponse<List<RecordingMetadata>>>() {
         @Override
-        public void onCompleted(ApiResponse<List<Recording>> response) {
+        public void onCompleted(ApiResponse<List<RecordingMetadata>> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -771,7 +771,7 @@ public class RecordingApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<List<Recording>> response = (ApiResponse<List<Recording>>)(ApiResponse<?>)exception;
+            ApiResponse<List<RecordingMetadata>> response = (ApiResponse<List<RecordingMetadata>>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -779,7 +779,7 @@ public class RecordingApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<List<Recording>> response = (ApiResponse<List<Recording>>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<List<RecordingMetadata>> response = (ApiResponse<List<RecordingMetadata>>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

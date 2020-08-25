@@ -28,6 +28,7 @@ title: ScheduleGenerationMessage
 | WORKPLANNOTFOUND | &quot;WorkPlanNotFound&quot; |
 | AGENTWITHOUTCAPABILITY | &quot;AgentWithoutCapability&quot; |
 | NONEEDDAYS | &quot;NoNeedDays&quot; |
+| UNABLETOPRODUCEAGENTSCHEDULE | &quot;UnableToProduceAgentSchedule&quot; |
 | UNABLETOSCHEDULEMAXCONSECUTIVEWORKINGDAYS | &quot;UnableToScheduleMaxConsecutiveWorkingDays&quot; |
 | UNABLETOSCHEDULEMAXCONSECUTIVEWORKINGWEEKENDS | &quot;UnableToScheduleMaxConsecutiveWorkingWeekends&quot; |
 | UNABLETOSCHEDULEMAXWEEKLYPAIDTIME | &quot;UnableToScheduleMaxWeeklyPaidTime&quot; |

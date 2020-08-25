@@ -426,6 +426,82 @@ public class ViewFilter  implements Serializable {
   private List<String> callbackNumberList = new ArrayList<String>();
   private String callbackInterval = null;
 
+  /**
+   * Gets or Sets usedRoutingTypes
+   */
+  public enum UsedRoutingTypesEnum {
+    PREDICTIVE("Predictive"),
+    PREFERRED("Preferred"),
+    MANUAL("Manual"),
+    LAST("Last"),
+    BULLSEYE("Bullseye"),
+    STANDARD("Standard");
+
+    private String value;
+
+    UsedRoutingTypesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static UsedRoutingTypesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (UsedRoutingTypesEnum value : UsedRoutingTypesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return UsedRoutingTypesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<UsedRoutingTypesEnum> usedRoutingTypes = new ArrayList<UsedRoutingTypesEnum>();
+
+  /**
+   * Gets or Sets requestedRoutingTypes
+   */
+  public enum RequestedRoutingTypesEnum {
+    PREDICTIVE("Predictive"),
+    PREFERRED("Preferred"),
+    MANUAL("Manual"),
+    LAST("Last"),
+    BULLSEYE("Bullseye"),
+    STANDARD("Standard");
+
+    private String value;
+
+    RequestedRoutingTypesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static RequestedRoutingTypesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (RequestedRoutingTypesEnum value : RequestedRoutingTypesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return RequestedRoutingTypesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<RequestedRoutingTypesEnum> requestedRoutingTypes = new ArrayList<RequestedRoutingTypesEnum>();
+
   
   /**
    * The media types are used to filter the view
@@ -1867,6 +1943,42 @@ public class ViewFilter  implements Serializable {
   }
 
   
+  /**
+   * A list of routing types used
+   **/
+  public ViewFilter usedRoutingTypes(List<UsedRoutingTypesEnum> usedRoutingTypes) {
+    this.usedRoutingTypes = usedRoutingTypes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of routing types used")
+  @JsonProperty("usedRoutingTypes")
+  public List<UsedRoutingTypesEnum> getUsedRoutingTypes() {
+    return usedRoutingTypes;
+  }
+  public void setUsedRoutingTypes(List<UsedRoutingTypesEnum> usedRoutingTypes) {
+    this.usedRoutingTypes = usedRoutingTypes;
+  }
+
+  
+  /**
+   * A list of routing types requested
+   **/
+  public ViewFilter requestedRoutingTypes(List<RequestedRoutingTypesEnum> requestedRoutingTypes) {
+    this.requestedRoutingTypes = requestedRoutingTypes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of routing types requested")
+  @JsonProperty("requestedRoutingTypes")
+  public List<RequestedRoutingTypesEnum> getRequestedRoutingTypes() {
+    return requestedRoutingTypes;
+  }
+  public void setRequestedRoutingTypes(List<RequestedRoutingTypesEnum> requestedRoutingTypes) {
+    this.requestedRoutingTypes = requestedRoutingTypes;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1956,12 +2068,14 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.flowOutTypes, viewFilter.flowOutTypes) &&
         Objects.equals(this.providerList, viewFilter.providerList) &&
         Objects.equals(this.callbackNumberList, viewFilter.callbackNumberList) &&
-        Objects.equals(this.callbackInterval, viewFilter.callbackInterval);
+        Objects.equals(this.callbackInterval, viewFilter.callbackInterval) &&
+        Objects.equals(this.usedRoutingTypes, viewFilter.usedRoutingTypes) &&
+        Objects.equals(this.requestedRoutingTypes, viewFilter.requestedRoutingTypes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes);
   }
 
   @Override
@@ -2049,6 +2163,8 @@ public class ViewFilter  implements Serializable {
     sb.append("    providerList: ").append(toIndentedString(providerList)).append("\n");
     sb.append("    callbackNumberList: ").append(toIndentedString(callbackNumberList)).append("\n");
     sb.append("    callbackInterval: ").append(toIndentedString(callbackInterval)).append("\n");
+    sb.append("    usedRoutingTypes: ").append(toIndentedString(usedRoutingTypes)).append("\n");
+    sb.append("    requestedRoutingTypes: ").append(toIndentedString(requestedRoutingTypes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

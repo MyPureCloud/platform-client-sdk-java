@@ -46,7 +46,8 @@ public class GetNotificationsAvailabletopicsRequest {
 	public enum expandValues { 
 		DESCRIPTION("description"), 
 		REQUIRESPERMISSIONS("requiresPermissions"), 
-		SCHEMA("schema");
+		SCHEMA("schema"), 
+		TRANSPORTS("transports");
 
 		private String value;
 

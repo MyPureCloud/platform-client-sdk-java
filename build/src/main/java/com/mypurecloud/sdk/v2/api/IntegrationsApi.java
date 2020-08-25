@@ -443,7 +443,7 @@ public class IntegrationsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Integration getIntegration(String integrationId, Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage) throws IOException, ApiException {
+  public Integration getIntegration(String integrationId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) throws IOException, ApiException {
     return  getIntegration(createGetIntegrationRequest(integrationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage));
   }
 
@@ -460,11 +460,11 @@ public class IntegrationsApi {
    * @return Integration
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Integration> getIntegrationWithHttpInfo(String integrationId, Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage) throws IOException {
+  public ApiResponse<Integration> getIntegrationWithHttpInfo(String integrationId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) throws IOException {
     return getIntegration(createGetIntegrationRequest(integrationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage).withHttpInfo());
   }
 
-  private GetIntegrationRequest createGetIntegrationRequest(String integrationId, Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage) {
+  private GetIntegrationRequest createGetIntegrationRequest(String integrationId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) {
     return GetIntegrationRequest.builder()
             .withIntegrationId(integrationId)
     
@@ -624,7 +624,7 @@ public class IntegrationsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IntegrationEntityListing getIntegrations(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage) throws IOException, ApiException {
+  public IntegrationEntityListing getIntegrations(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) throws IOException, ApiException {
     return  getIntegrations(createGetIntegrationsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage));
   }
 
@@ -640,11 +640,11 @@ public class IntegrationsApi {
    * @return IntegrationEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IntegrationEntityListing> getIntegrationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage) throws IOException {
+  public ApiResponse<IntegrationEntityListing> getIntegrationsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) throws IOException {
     return getIntegrations(createGetIntegrationsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage).withHttpInfo());
   }
 
-  private GetIntegrationsRequest createGetIntegrationsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage) {
+  private GetIntegrationsRequest createGetIntegrationsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) {
     return GetIntegrationsRequest.builder()
             .withPageSize(pageSize)
     
@@ -1417,7 +1417,7 @@ public class IntegrationsApi {
    * @param pageNumber The page number requested (optional, default to 1)
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
-   * @param sortBy Root level field name to sort on.  Only &#39;name&#39; is supported on this endpoint. (optional)
+   * @param sortBy Root level field name to sort on. (optional)
    * @param sortOrder Direction to sort &#39;sortBy&#39; field. (optional, default to asc)
    * @param secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. (optional)
    * @return CategoryEntityListing
@@ -1435,7 +1435,7 @@ public class IntegrationsApi {
    * @param pageNumber The page number requested (optional, default to 1)
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
-   * @param sortBy Root level field name to sort on.  Only &#39;name&#39; is supported on this endpoint. (optional)
+   * @param sortBy Root level field name to sort on. (optional)
    * @param sortOrder Direction to sort &#39;sortBy&#39; field. (optional, default to asc)
    * @param secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. (optional)
    * @return CategoryEntityListing
@@ -1641,7 +1641,7 @@ public class IntegrationsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ClientAppEntityListing getIntegrationsClientapps(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage) throws IOException, ApiException {
+  public ClientAppEntityListing getIntegrationsClientapps(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) throws IOException, ApiException {
     return  getIntegrationsClientapps(createGetIntegrationsClientappsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage));
   }
 
@@ -1657,11 +1657,11 @@ public class IntegrationsApi {
    * @return ClientAppEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ClientAppEntityListing> getIntegrationsClientappsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage) throws IOException {
+  public ApiResponse<ClientAppEntityListing> getIntegrationsClientappsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) throws IOException {
     return getIntegrationsClientapps(createGetIntegrationsClientappsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage).withHttpInfo());
   }
 
-  private GetIntegrationsClientappsRequest createGetIntegrationsClientappsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage) {
+  private GetIntegrationsClientappsRequest createGetIntegrationsClientappsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) {
     return GetIntegrationsClientappsRequest.builder()
             .withPageSize(pageSize)
     
@@ -3163,7 +3163,7 @@ public class IntegrationsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IntegrationTypeEntityListing getIntegrationsTypes(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage) throws IOException, ApiException {
+  public IntegrationTypeEntityListing getIntegrationsTypes(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) throws IOException, ApiException {
     return  getIntegrationsTypes(createGetIntegrationsTypesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage));
   }
 
@@ -3179,11 +3179,11 @@ public class IntegrationsApi {
    * @return IntegrationTypeEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IntegrationTypeEntityListing> getIntegrationsTypesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage) throws IOException {
+  public ApiResponse<IntegrationTypeEntityListing> getIntegrationsTypesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) throws IOException {
     return getIntegrationsTypes(createGetIntegrationsTypesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage).withHttpInfo());
   }
 
-  private GetIntegrationsTypesRequest createGetIntegrationsTypesRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage) {
+  private GetIntegrationsTypesRequest createGetIntegrationsTypesRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) {
     return GetIntegrationsTypesRequest.builder()
             .withPageSize(pageSize)
     
@@ -3263,7 +3263,7 @@ public class IntegrationsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserAppEntityListing getIntegrationsUserapps(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String appHost) throws IOException, ApiException {
+  public UserAppEntityListing getIntegrationsUserapps(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String appHost) throws IOException, ApiException {
     return  getIntegrationsUserapps(createGetIntegrationsUserappsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, appHost));
   }
 
@@ -3280,11 +3280,11 @@ public class IntegrationsApi {
    * @return UserAppEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserAppEntityListing> getIntegrationsUserappsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String appHost) throws IOException {
+  public ApiResponse<UserAppEntityListing> getIntegrationsUserappsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String appHost) throws IOException {
     return getIntegrationsUserapps(createGetIntegrationsUserappsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, appHost).withHttpInfo());
   }
 
-  private GetIntegrationsUserappsRequest createGetIntegrationsUserappsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String appHost) {
+  private GetIntegrationsUserappsRequest createGetIntegrationsUserappsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String appHost) {
     return GetIntegrationsUserappsRequest.builder()
             .withPageSize(pageSize)
     
@@ -3367,7 +3367,7 @@ public class IntegrationsApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Integration patchIntegration(String integrationId, Integration body, Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage) throws IOException, ApiException {
+  public Integration patchIntegration(String integrationId, Integration body, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) throws IOException, ApiException {
     return  patchIntegration(createPatchIntegrationRequest(integrationId, body, pageSize, pageNumber, sortBy, expand, nextPage, previousPage));
   }
 
@@ -3385,11 +3385,11 @@ public class IntegrationsApi {
    * @return Integration
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Integration> patchIntegrationWithHttpInfo(String integrationId, Integration body, Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage) throws IOException {
+  public ApiResponse<Integration> patchIntegrationWithHttpInfo(String integrationId, Integration body, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) throws IOException {
     return patchIntegration(createPatchIntegrationRequest(integrationId, body, pageSize, pageNumber, sortBy, expand, nextPage, previousPage).withHttpInfo());
   }
 
-  private PatchIntegrationRequest createPatchIntegrationRequest(String integrationId, Integration body, Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage) {
+  private PatchIntegrationRequest createPatchIntegrationRequest(String integrationId, Integration body, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage) {
     return PatchIntegrationRequest.builder()
             .withIntegrationId(integrationId)
     

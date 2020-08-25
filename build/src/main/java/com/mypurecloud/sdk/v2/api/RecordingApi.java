@@ -780,11 +780,11 @@ public class RecordingApi {
    * Get recording metadata for a conversation. Does not return playable media.
    * 
    * @param conversationId Conversation ID (required)
-   * @return List<Recording>
+   * @return List<RecordingMetadata>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<Recording> getConversationRecordingmetadata(String conversationId) throws IOException, ApiException {
+  public List<RecordingMetadata> getConversationRecordingmetadata(String conversationId) throws IOException, ApiException {
     return  getConversationRecordingmetadata(createGetConversationRecordingmetadataRequest(conversationId));
   }
 
@@ -792,10 +792,10 @@ public class RecordingApi {
    * Get recording metadata for a conversation. Does not return playable media.
    * 
    * @param conversationId Conversation ID (required)
-   * @return List<Recording>
+   * @return List<RecordingMetadata>
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<Recording>> getConversationRecordingmetadataWithHttpInfo(String conversationId) throws IOException {
+  public ApiResponse<List<RecordingMetadata>> getConversationRecordingmetadataWithHttpInfo(String conversationId) throws IOException {
     return getConversationRecordingmetadata(createGetConversationRecordingmetadataRequest(conversationId).withHttpInfo());
   }
 
@@ -810,13 +810,13 @@ public class RecordingApi {
    * Get recording metadata for a conversation. Does not return playable media.
    * 
    * @param request The request object
-   * @return List<Recording>
+   * @return List<RecordingMetadata>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<Recording> getConversationRecordingmetadata(GetConversationRecordingmetadataRequest request) throws IOException, ApiException {
+  public List<RecordingMetadata> getConversationRecordingmetadata(GetConversationRecordingmetadataRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<List<Recording>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<Recording>>() {});
+      ApiResponse<List<RecordingMetadata>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<RecordingMetadata>>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -832,13 +832,13 @@ public class RecordingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<Recording>> getConversationRecordingmetadata(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<List<RecordingMetadata>> getConversationRecordingmetadata(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<List<Recording>>() {});
+      return pcapiClient.invoke(request, new TypeReference<List<RecordingMetadata>>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<List<Recording>> response = (ApiResponse<List<Recording>>)(ApiResponse<?>)exception;
+      ApiResponse<List<RecordingMetadata>> response = (ApiResponse<List<RecordingMetadata>>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -849,7 +849,7 @@ public class RecordingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<List<Recording>> response = (ApiResponse<List<Recording>>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<List<RecordingMetadata>> response = (ApiResponse<List<RecordingMetadata>>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1226,7 +1226,7 @@ public class RecordingApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OrphanRecordingListing getOrphanrecordings(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Boolean hasConversation, String media) throws IOException, ApiException {
+  public OrphanRecordingListing getOrphanrecordings(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Boolean hasConversation, String media) throws IOException, ApiException {
     return  getOrphanrecordings(createGetOrphanrecordingsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, hasConversation, media));
   }
 
@@ -1244,11 +1244,11 @@ public class RecordingApi {
    * @return OrphanRecordingListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OrphanRecordingListing> getOrphanrecordingsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Boolean hasConversation, String media) throws IOException {
+  public ApiResponse<OrphanRecordingListing> getOrphanrecordingsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Boolean hasConversation, String media) throws IOException {
     return getOrphanrecordings(createGetOrphanrecordingsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, hasConversation, media).withHttpInfo());
   }
 
-  private GetOrphanrecordingsRequest createGetOrphanrecordingsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, Boolean hasConversation, String media) {
+  private GetOrphanrecordingsRequest createGetOrphanrecordingsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, Boolean hasConversation, String media) {
     return GetOrphanrecordingsRequest.builder()
             .withPageSize(pageSize)
     
@@ -1746,7 +1746,7 @@ public class RecordingApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public PolicyEntityListing getRecordingMediaretentionpolicies(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) throws IOException, ApiException {
+  public PolicyEntityListing getRecordingMediaretentionpolicies(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) throws IOException, ApiException {
     return  getRecordingMediaretentionpolicies(createGetRecordingMediaretentionpoliciesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors));
   }
 
@@ -1766,11 +1766,11 @@ public class RecordingApi {
    * @return PolicyEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PolicyEntityListing> getRecordingMediaretentionpoliciesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) throws IOException {
+  public ApiResponse<PolicyEntityListing> getRecordingMediaretentionpoliciesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) throws IOException {
     return getRecordingMediaretentionpolicies(createGetRecordingMediaretentionpoliciesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors).withHttpInfo());
   }
 
-  private GetRecordingMediaretentionpoliciesRequest createGetRecordingMediaretentionpoliciesRequest(Integer pageSize, Integer pageNumber, String sortBy, List<Object> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) {
+  private GetRecordingMediaretentionpoliciesRequest createGetRecordingMediaretentionpoliciesRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) {
     return GetRecordingMediaretentionpoliciesRequest.builder()
             .withPageSize(pageSize)
     

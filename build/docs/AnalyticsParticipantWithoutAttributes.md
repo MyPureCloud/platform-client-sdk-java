@@ -16,7 +16,6 @@ title: AnalyticsParticipantWithoutAttributes
 | **externalOrganizationId** | <!----><!---->**String**<!----> | External Organization Identifier |  [optional] |
 | **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum)<!----> | Reason for which participant flagged conversation |  [optional] |
 | **teamId** | <!----><!---->**String**<!----> | The team id the user is a member of |  [optional] |
-| **agentAssistantIds** | <!----><!---->**List&lt;String&gt;**<!----> | Unique identifiers of the active virtual agent assistants |  [optional] |
 | **sessions** | <!----><!---->[**List&lt;AnalyticsSession&gt;**](AnalyticsSession.html)<!----> | List of sessions associated to this participant |  [optional] |
 {: class="table table-striped"}
 

@@ -762,28 +762,32 @@ public class CoachingApi {
    * Get an existing notification
    * Permission not required if you are the owner of the notification.
    * @param notificationId The ID of the notification. (required)
+   * @param expand Indicates a field in the response which should be expanded. (optional)
    * @return CoachingNotification
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CoachingNotification getCoachingNotification(String notificationId) throws IOException, ApiException {
-    return  getCoachingNotification(createGetCoachingNotificationRequest(notificationId));
+  public CoachingNotification getCoachingNotification(String notificationId, List<String> expand) throws IOException, ApiException {
+    return  getCoachingNotification(createGetCoachingNotificationRequest(notificationId, expand));
   }
 
   /**
    * Get an existing notification
    * Permission not required if you are the owner of the notification.
    * @param notificationId The ID of the notification. (required)
+   * @param expand Indicates a field in the response which should be expanded. (optional)
    * @return CoachingNotification
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CoachingNotification> getCoachingNotificationWithHttpInfo(String notificationId) throws IOException {
-    return getCoachingNotification(createGetCoachingNotificationRequest(notificationId).withHttpInfo());
+  public ApiResponse<CoachingNotification> getCoachingNotificationWithHttpInfo(String notificationId, List<String> expand) throws IOException {
+    return getCoachingNotification(createGetCoachingNotificationRequest(notificationId, expand).withHttpInfo());
   }
 
-  private GetCoachingNotificationRequest createGetCoachingNotificationRequest(String notificationId) {
+  private GetCoachingNotificationRequest createGetCoachingNotificationRequest(String notificationId, List<String> expand) {
     return GetCoachingNotificationRequest.builder()
             .withNotificationId(notificationId)
+    
+            .withExpand(expand)
     
             .build();
   }
@@ -842,12 +846,13 @@ public class CoachingApi {
    * 
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
+   * @param expand Indicates a field in the response which should be expanded. (optional)
    * @return CoachingNotificationList
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CoachingNotificationList getCoachingNotifications(Integer pageNumber, Integer pageSize) throws IOException, ApiException {
-    return  getCoachingNotifications(createGetCoachingNotificationsRequest(pageNumber, pageSize));
+  public CoachingNotificationList getCoachingNotifications(Integer pageNumber, Integer pageSize, List<String> expand) throws IOException, ApiException {
+    return  getCoachingNotifications(createGetCoachingNotificationsRequest(pageNumber, pageSize, expand));
   }
 
   /**
@@ -855,18 +860,21 @@ public class CoachingApi {
    * 
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
+   * @param expand Indicates a field in the response which should be expanded. (optional)
    * @return CoachingNotificationList
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CoachingNotificationList> getCoachingNotificationsWithHttpInfo(Integer pageNumber, Integer pageSize) throws IOException {
-    return getCoachingNotifications(createGetCoachingNotificationsRequest(pageNumber, pageSize).withHttpInfo());
+  public ApiResponse<CoachingNotificationList> getCoachingNotificationsWithHttpInfo(Integer pageNumber, Integer pageSize, List<String> expand) throws IOException {
+    return getCoachingNotifications(createGetCoachingNotificationsRequest(pageNumber, pageSize, expand).withHttpInfo());
   }
 
-  private GetCoachingNotificationsRequest createGetCoachingNotificationsRequest(Integer pageNumber, Integer pageSize) {
+  private GetCoachingNotificationsRequest createGetCoachingNotificationsRequest(Integer pageNumber, Integer pageSize, List<String> expand) {
     return GetCoachingNotificationsRequest.builder()
             .withPageNumber(pageNumber)
     
             .withPageSize(pageSize)
+    
+            .withExpand(expand)
     
             .build();
   }

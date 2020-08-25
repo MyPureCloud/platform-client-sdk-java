@@ -552,12 +552,12 @@ QualityApi apiInstance = new QualityApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<Object> expand = null; // List<Object> | variable name requested by expand list
+List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 Date startTime = new Date(); // Date | Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 Date endTime = new Date(); // Date | End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
-List<Object> agentUserId = null; // List<Object> | user id of agent requested
+List<String> agentUserId = Arrays.asList("agentUserId_example"); // List<String> | user id of agent requested
 String evaluatorUserId = "evaluatorUserId_example"; // String | user id of the evaluator
 String name = "name_example"; // String | name
 String group = "group_example"; // String | group id
@@ -578,12 +578,12 @@ try {
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
 | **sortBy** | **String**| variable name requested to sort by | [optional] 
-| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
 | **startTime** | **Date**| Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] 
 | **endTime** | **Date**| End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] 
-| **agentUserId** | [**List&lt;Object&gt;**](Object.html)| user id of agent requested | [optional] 
+| **agentUserId** | [**List&lt;String&gt;**](String.html)| user id of agent requested | [optional] 
 | **evaluatorUserId** | **String**| user id of the evaluator | [optional] 
 | **name** | **String**| name | [optional] 
 | **group** | **String**| group id | [optional] 
@@ -705,7 +705,7 @@ String calibratorId = "calibratorId_example"; // String | user id of calibrator
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<Object> expand = null; // List<Object> | variable name requested by expand list
+List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 String conversationId = "conversationId_example"; // String | conversation id
@@ -729,7 +729,7 @@ try {
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
 | **sortBy** | **String**| variable name requested to sort by | [optional] 
-| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
 | **conversationId** | **String**| conversation id | [optional] 
@@ -791,7 +791,7 @@ String conversationId = "conversationId_example"; // String | Conversation ID
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<Object> expand = null; // List<Object> | variable name requested by expand list
+List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 String recordingId = "recordingId_example"; // String | id of the recording
@@ -814,7 +814,7 @@ try {
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
 | **sortBy** | **String**| variable name requested to sort by | [optional] 
-| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
 | **recordingId** | **String**| id of the recording | [optional] 
@@ -999,7 +999,7 @@ QualityApi apiInstance = new QualityApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<Object> expand = null; // List<Object> | variable name requested by expand list
+List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 String conversationId = "conversationId_example"; // String | conversationId specified
@@ -1008,7 +1008,7 @@ String evaluatorUserId = "evaluatorUserId_example"; // String | evaluator user i
 String queueId = "queueId_example"; // String | queue id
 String startTime = "startTime_example"; // String | start time of the evaluation query
 String endTime = "endTime_example"; // String | end time of the evaluation query
-List<Object> evaluationState = null; // List<Object> | 
+List<String> evaluationState = Arrays.asList("evaluationState_example"); // List<String> | 
 Boolean isReleased = true; // Boolean | the evaluation has been released
 Boolean agentHasRead = true; // Boolean | agent has the evaluation
 Boolean expandAnswerTotalScores = true; // Boolean | get the total scores for evaluations
@@ -1031,7 +1031,7 @@ try {
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
 | **sortBy** | **String**| variable name requested to sort by | [optional] 
-| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
 | **conversationId** | **String**| conversationId specified | [optional] 
@@ -1040,7 +1040,7 @@ try {
 | **queueId** | **String**| queue id | [optional] 
 | **startTime** | **String**| start time of the evaluation query | [optional] 
 | **endTime** | **String**| end time of the evaluation query | [optional] 
-| **evaluationState** | [**List&lt;Object&gt;**](Object.html)|  | [optional] 
+| **evaluationState** | [**List&lt;String&gt;**](String.html)|  | [optional] 
 | **isReleased** | **Boolean**| the evaluation has been released | [optional] 
 | **agentHasRead** | **Boolean**| agent has the evaluation | [optional] 
 | **expandAnswerTotalScores** | **Boolean**| get the total scores for evaluations | [optional] 
@@ -1096,13 +1096,13 @@ QualityApi apiInstance = new QualityApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<Object> expand = null; // List<Object> | variable name requested by expand list
+List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 Date startTime = new Date(); // Date | The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 Date endTime = new Date(); // Date | The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 String name = "name_example"; // String | Evaluator name
-List<Object> permission = null; // List<Object> | permission strings
+List<String> permission = Arrays.asList("permission_example"); // List<String> | permission strings
 String group = "group_example"; // String | group id
 try {
     EvaluatorActivityEntityListing result = apiInstance.getQualityEvaluatorsActivity(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, startTime, endTime, name, permission, group);
@@ -1121,13 +1121,13 @@ try {
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
 | **sortBy** | **String**| variable name requested to sort by | [optional] 
-| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
 | **startTime** | **Date**| The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] 
 | **endTime** | **Date**| The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional] 
 | **name** | **String**| Evaluator name | [optional] 
-| **permission** | [**List&lt;Object&gt;**](Object.html)| permission strings | [optional] 
+| **permission** | [**List&lt;String&gt;**](String.html)| permission strings | [optional] 
 | **group** | **String**| group id | [optional] 
 {: class="table-striped"}
 
@@ -1991,7 +1991,7 @@ QualityApi apiInstance = new QualityApi();
 Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<Object> expand = null; // List<Object> | variable name requested by expand list
+List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
 String name = "name_example"; // String | the keyword set name - used for filtering results in searches.
@@ -2015,7 +2015,7 @@ try {
 | **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
 | **sortBy** | **String**| variable name requested to sort by | [optional] 
-| **expand** | [**List&lt;Object&gt;**](Object.html)| variable name requested by expand list | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
 | **name** | **String**| the keyword set name - used for filtering results in searches. | [optional] 

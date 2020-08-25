@@ -32,6 +32,7 @@ public class ScheduleGenerationMessage  implements Serializable {
     WORKPLANNOTFOUND("WorkPlanNotFound"),
     AGENTWITHOUTCAPABILITY("AgentWithoutCapability"),
     NONEEDDAYS("NoNeedDays"),
+    UNABLETOPRODUCEAGENTSCHEDULE("UnableToProduceAgentSchedule"),
     UNABLETOSCHEDULEMAXCONSECUTIVEWORKINGDAYS("UnableToScheduleMaxConsecutiveWorkingDays"),
     UNABLETOSCHEDULEMAXCONSECUTIVEWORKINGWEEKENDS("UnableToScheduleMaxConsecutiveWorkingWeekends"),
     UNABLETOSCHEDULEMAXWEEKLYPAIDTIME("UnableToScheduleMaxWeeklyPaidTime"),

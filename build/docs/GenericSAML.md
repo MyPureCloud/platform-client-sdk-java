@@ -10,8 +10,8 @@ title: GenericSAML
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **logoImageData** | <!----><!---->**String**<!----> |  |  [optional] |
 | **relyingPartyIdentifier** | <!----><!---->**String**<!----> |  |  [optional] |
+| **logoImageData** | <!----><!---->**String**<!----> |  |  [optional] |
 | **endpointCompression** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **certificate** | <!----><!---->**String**<!----> |  |  [optional] |
 | **issuerURI** | <!----><!---->**String**<!----> |  |  [optional] |

@@ -225,8 +225,8 @@ public class GetScimGroupsRequest {
                 .withQueryParameters("filter", "", filter)
         
                 .withCustomHeaders(customHeaders)
-                .withContentTypes("application/scim+json", "application/json")
-                .withAccepts("application/scim+json", "application/json")
+                .withContentTypes("application/json", "application/scim+json")
+                .withAccepts("application/json", "application/scim+json")
                 .withAuthNames("PureCloud OAuth")
                 .build();
     }

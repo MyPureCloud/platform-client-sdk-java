@@ -88,6 +88,8 @@ title: ViewFilter
 | **providerList** | <!----><!---->**List&lt;String&gt;**<!----> | A list of providers |  [optional] |
 | **callbackNumberList** | <!----><!---->**List&lt;String&gt;**<!----> | A list of callback numbers or substrings of numbers (ex: [\&quot;317\&quot;, \&quot;13172222222\&quot;]) |  [optional] |
 | **callbackInterval** | <!----><!---->**String**<!----> | An interval of time to filter for scheduled callbacks. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss |  [optional] |
+| **usedRoutingTypes** | <!---->[**List&lt;UsedRoutingTypesEnum&gt;**](#UsedRoutingTypesEnum)<!----> | A list of routing types used |  [optional] |
+| **requestedRoutingTypes** | <!---->[**List&lt;RequestedRoutingTypesEnum&gt;**](#RequestedRoutingTypesEnum)<!----> | A list of routing types requested |  [optional] |
 {: class="table table-striped"}
 
 
@@ -217,6 +219,36 @@ title: ViewFilter
 | FLOW | &quot;flow&quot; |
 | AGENT | &quot;agent&quot; |
 | OUTBOUND | &quot;outbound&quot; |
+{: class="table table-striped"}
+
+
+<a name="UsedRoutingTypesEnum"></a>
+
+## Enum: UsedRoutingTypesEnum
+
+| Name | Value |
+| ---- | ----- |
+| PREDICTIVE | &quot;Predictive&quot; |
+| PREFERRED | &quot;Preferred&quot; |
+| MANUAL | &quot;Manual&quot; |
+| LAST | &quot;Last&quot; |
+| BULLSEYE | &quot;Bullseye&quot; |
+| STANDARD | &quot;Standard&quot; |
+{: class="table table-striped"}
+
+
+<a name="RequestedRoutingTypesEnum"></a>
+
+## Enum: RequestedRoutingTypesEnum
+
+| Name | Value |
+| ---- | ----- |
+| PREDICTIVE | &quot;Predictive&quot; |
+| PREFERRED | &quot;Preferred&quot; |
+| MANUAL | &quot;Manual&quot; |
+| LAST | &quot;Last&quot; |
+| BULLSEYE | &quot;Bullseye&quot; |
+| STANDARD | &quot;Standard&quot; |
 {: class="table table-striped"}
 
 
