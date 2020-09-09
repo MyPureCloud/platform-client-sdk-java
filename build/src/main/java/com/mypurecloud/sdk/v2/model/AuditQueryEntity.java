@@ -41,7 +41,8 @@ public class AuditQueryEntity  implements Serializable {
     SEGMENT("Segment"),
     OUTCOME("Outcome"),
     CLICKSTREAMSETTINGS("ClickstreamSettings"),
-    SCHEDULE("Schedule");
+    SCHEDULE("Schedule"),
+    TRIGGER("Trigger");
 
     private String value;
 
@@ -90,6 +91,8 @@ public class AuditQueryEntity  implements Serializable {
     EXECUTE("Execute"),
     PUBLISH("Publish"),
     UNPUBLISH("Unpublish"),
+    ENABLE("Enable"),
+    DISABLE("Disable"),
     AUTHORIZE("Authorize"),
     DEAUTHORIZE("Deauthorize"),
     AUTHENTICATE("Authenticate"),

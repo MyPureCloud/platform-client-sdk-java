@@ -226,6 +226,7 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("UNKNOWN"),
     SMS("SMS"),
     TWITTER("TWITTER"),
     FACEBOOK("FACEBOOK"),
@@ -234,7 +235,8 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     WECHAT("WECHAT"),
     WHATSAPP("WHATSAPP"),
     TELEGRAM("TELEGRAM"),
-    KAKAO("KAKAO");
+    KAKAO("KAKAO"),
+    WEBMESSAGING("WEBMESSAGING");
 
     private String value;
 

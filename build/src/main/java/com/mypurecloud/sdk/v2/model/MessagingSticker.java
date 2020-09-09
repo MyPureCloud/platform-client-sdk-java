@@ -30,7 +30,8 @@ public class MessagingSticker  implements Serializable {
     FACEBOOK("facebook"),
     TWITTER("twitter"),
     LINE("line"),
-    WHATSAPP("whatsapp");
+    WHATSAPP("whatsapp"),
+    WEBMESSAGING("webmessaging");
 
     private String value;
 

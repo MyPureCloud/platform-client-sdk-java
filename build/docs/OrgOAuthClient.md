@@ -18,6 +18,7 @@ title: OrgOAuthClient
 | **scope** | <!----><!---->**List&lt;String&gt;**<!----> | The scope requested by this client. Scopes only apply to clients not using the client_credential grant |  [optional] |
 | **roleDivisions** | <!----><!---->[**List&lt;RoleDivision&gt;**](RoleDivision.html)<!----> | Set of roles and their corresponding divisions associated with this client. Roles and divisions only apply to clients using the client_credential grant |  [optional] |
 | **state** | [**StateEnum**](#StateEnum)<!----> | The state of the OAuth client. Active: The OAuth client can be used to create access tokens. This is the default state. Disabled: Access tokens created by the client are invalid and new ones cannot be created. Inactive: Access tokens cannot be created with this OAuth client and it will be deleted. |  [optional] |
+| **dateToDelete** | <!----><!---->[**Date**](Date.html)<!----> | The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
 | **organization** | <!----><!---->[**NamedEntity**](NamedEntity.html)<!----> | The  oauth client&#39;s organization. |  [optional] |
 {: class="table table-striped"}
 

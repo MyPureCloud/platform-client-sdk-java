@@ -38,6 +38,7 @@ title: AuditLogMessage
 | TOPICSDEFINITIONS | &quot;TopicsDefinitions&quot; |
 | PREDICTIVEENGAGEMENT | &quot;PredictiveEngagement&quot; |
 | WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; |
+| TRIGGERS | &quot;Triggers&quot; |
 {: class="table table-striped"}
 
 
@@ -64,6 +65,8 @@ title: AuditLogMessage
 | EXECUTE | &quot;Execute&quot; |
 | PUBLISH | &quot;Publish&quot; |
 | UNPUBLISH | &quot;Unpublish&quot; |
+| ENABLE | &quot;Enable&quot; |
+| DISABLE | &quot;Disable&quot; |
 | AUTHORIZE | &quot;Authorize&quot; |
 | DEAUTHORIZE | &quot;Deauthorize&quot; |
 | AUTHENTICATE | &quot;Authenticate&quot; |
@@ -97,6 +100,7 @@ title: AuditLogMessage
 | OUTCOME | &quot;Outcome&quot; |
 | CLICKSTREAMSETTINGS | &quot;ClickstreamSettings&quot; |
 | SCHEDULE | &quot;Schedule&quot; |
+| TRIGGER | &quot;Trigger&quot; |
 {: class="table table-striped"}
 
 

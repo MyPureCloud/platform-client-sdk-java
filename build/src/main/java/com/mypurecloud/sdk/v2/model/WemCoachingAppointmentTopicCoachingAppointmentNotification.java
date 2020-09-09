@@ -107,6 +107,7 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
     }
   }
   private ChangeTypeEnum changeType = null;
+  private Date dateCompleted = null;
 
   
   /**
@@ -347,6 +348,23 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
   }
 
   
+  /**
+   **/
+  public WemCoachingAppointmentTopicCoachingAppointmentNotification dateCompleted(Date dateCompleted) {
+    this.dateCompleted = dateCompleted;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("dateCompleted")
+  public Date getDateCompleted() {
+    return dateCompleted;
+  }
+  public void setDateCompleted(Date dateCompleted) {
+    this.dateCompleted = dateCompleted;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -370,12 +388,13 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
         Objects.equals(this.dateModified, wemCoachingAppointmentTopicCoachingAppointmentNotification.dateModified) &&
         Objects.equals(this.conversations, wemCoachingAppointmentTopicCoachingAppointmentNotification.conversations) &&
         Objects.equals(this.documents, wemCoachingAppointmentTopicCoachingAppointmentNotification.documents) &&
-        Objects.equals(this.changeType, wemCoachingAppointmentTopicCoachingAppointmentNotification.changeType);
+        Objects.equals(this.changeType, wemCoachingAppointmentTopicCoachingAppointmentNotification.changeType) &&
+        Objects.equals(this.dateCompleted, wemCoachingAppointmentTopicCoachingAppointmentNotification.dateCompleted);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateStart, lengthInMinutes, status, facilitator, attendees, createdBy, dateCreated, modifiedBy, dateModified, conversations, documents, changeType);
+    return Objects.hash(id, name, dateStart, lengthInMinutes, status, facilitator, attendees, createdBy, dateCreated, modifiedBy, dateModified, conversations, documents, changeType, dateCompleted);
   }
 
   @Override
@@ -397,6 +416,7 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
     sb.append("    conversations: ").append(toIndentedString(conversations)).append("\n");
     sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
     sb.append("    changeType: ").append(toIndentedString(changeType)).append("\n");
+    sb.append("    dateCompleted: ").append(toIndentedString(dateCompleted)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedTopicQueueReference;
+import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedTopicUriReference;
 import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedTopicUserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -22,6 +23,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
   
   private WfmUserScheduleAdherenceUpdatedTopicUserReference user = null;
   private String managementUnitId = null;
+  private WfmUserScheduleAdherenceUpdatedTopicUriReference team = null;
   private String scheduledActivityCategory = null;
   private String systemPresence = null;
   private String organizationSecondaryPresenceId = null;
@@ -144,6 +146,23 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
   }
   public void setManagementUnitId(String managementUnitId) {
     this.managementUnitId = managementUnitId;
+  }
+
+  
+  /**
+   **/
+  public WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate team(WfmUserScheduleAdherenceUpdatedTopicUriReference team) {
+    this.team = team;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("team")
+  public WfmUserScheduleAdherenceUpdatedTopicUriReference getTeam() {
+    return team;
+  }
+  public void setTeam(WfmUserScheduleAdherenceUpdatedTopicUriReference team) {
+    this.team = team;
   }
 
   
@@ -380,6 +399,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate = (WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate) o;
     return Objects.equals(this.user, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.user) &&
         Objects.equals(this.managementUnitId, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.managementUnitId) &&
+        Objects.equals(this.team, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.team) &&
         Objects.equals(this.scheduledActivityCategory, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.scheduledActivityCategory) &&
         Objects.equals(this.systemPresence, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.systemPresence) &&
         Objects.equals(this.organizationSecondaryPresenceId, wfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.organizationSecondaryPresenceId) &&
@@ -397,7 +417,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
 
   @Override
   public int hashCode() {
-    return Objects.hash(user, managementUnitId, scheduledActivityCategory, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, adherenceChangeTime, presenceUpdateTime, activeQueues, activeQueuesModifiedTime, removedFromManagementUnit);
+    return Objects.hash(user, managementUnitId, team, scheduledActivityCategory, systemPresence, organizationSecondaryPresenceId, routingStatus, actualActivityCategory, isOutOfOffice, adherenceState, impact, adherenceChangeTime, presenceUpdateTime, activeQueues, activeQueuesModifiedTime, removedFromManagementUnit);
   }
 
   @Override
@@ -407,6 +427,7 @@ public class WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate  im
     
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    managementUnitId: ").append(toIndentedString(managementUnitId)).append("\n");
+    sb.append("    team: ").append(toIndentedString(team)).append("\n");
     sb.append("    scheduledActivityCategory: ").append(toIndentedString(scheduledActivityCategory)).append("\n");
     sb.append("    systemPresence: ").append(toIndentedString(systemPresence)).append("\n");
     sb.append("    organizationSecondaryPresenceId: ").append(toIndentedString(organizationSecondaryPresenceId)).append("\n");

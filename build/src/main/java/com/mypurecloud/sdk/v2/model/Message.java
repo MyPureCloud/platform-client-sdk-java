@@ -160,13 +160,15 @@ public class Message  implements Serializable {
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("unknown"),
     SMS("sms"),
     TWITTER("twitter"),
     FACEBOOK("facebook"),
     LINE("line"),
     WHATSAPP("whatsapp"),
     TELEGRAM("telegram"),
-    KAKAO("kakao");
+    KAKAO("kakao"),
+    WEBMESSAGING("webmessaging");
 
     private String value;
 

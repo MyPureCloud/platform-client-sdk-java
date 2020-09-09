@@ -22,10 +22,21 @@ public class WfmScheduleReference  implements Serializable {
   private String selfUri = null;
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  /**
+   * The ID of the WFM schedule
+   **/
+  public WfmScheduleReference id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The ID of the WFM schedule")
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+  public void setId(String id) {
+    this.id = id;
   }
 
   
@@ -37,7 +48,7 @@ public class WfmScheduleReference  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A reference to a Workforce Management Business Unit")
+  @ApiModelProperty(example = "null", required = true, value = "A reference to a Workforce Management Business Unit")
   @JsonProperty("businessUnit")
   public WfmBusinessUnitReference getBusinessUnit() {
     return businessUnit;
@@ -55,7 +66,7 @@ public class WfmScheduleReference  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+  @ApiModelProperty(example = "null", required = true, value = "The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
   @JsonProperty("weekDate")
   public LocalDate getWeekDate() {
     return weekDate;

@@ -72,6 +72,7 @@ public class CoachingAppointmentResponse  implements Serializable {
   private Date dateModified = null;
   private List<ConversationReference> conversations = new ArrayList<ConversationReference>();
   private List<DocumentReference> documents = new ArrayList<DocumentReference>();
+  private Boolean isOverdue = null;
   private String selfUri = null;
 
   
@@ -239,6 +240,13 @@ public class CoachingAppointmentResponse  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "Whether the appointment is overdue.")
+  @JsonProperty("isOverdue")
+  public Boolean getIsOverdue() {
+    return isOverdue;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -270,12 +278,13 @@ public class CoachingAppointmentResponse  implements Serializable {
         Objects.equals(this.dateModified, coachingAppointmentResponse.dateModified) &&
         Objects.equals(this.conversations, coachingAppointmentResponse.conversations) &&
         Objects.equals(this.documents, coachingAppointmentResponse.documents) &&
+        Objects.equals(this.isOverdue, coachingAppointmentResponse.isOverdue) &&
         Objects.equals(this.selfUri, coachingAppointmentResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, dateStart, lengthInMinutes, status, facilitator, attendees, createdBy, dateCreated, modifiedBy, dateModified, conversations, documents, selfUri);
+    return Objects.hash(id, name, description, dateStart, lengthInMinutes, status, facilitator, attendees, createdBy, dateCreated, modifiedBy, dateModified, conversations, documents, isOverdue, selfUri);
   }
 
   @Override
@@ -297,6 +306,7 @@ public class CoachingAppointmentResponse  implements Serializable {
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    conversations: ").append(toIndentedString(conversations)).append("\n");
     sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
+    sb.append("    isOverdue: ").append(toIndentedString(isOverdue)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

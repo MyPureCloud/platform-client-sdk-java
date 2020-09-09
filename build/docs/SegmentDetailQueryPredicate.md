@@ -44,6 +44,7 @@ title: SegmentDetailQueryPredicate
 | ADDRESSSELF | &quot;addressSelf&quot; |
 | ADDRESSTO | &quot;addressTo&quot; |
 | AGENTASSISTANTID | &quot;agentAssistantId&quot; |
+| AGENTRANK | &quot;agentRank&quot; |
 | AGENTSCORE | &quot;agentScore&quot; |
 | ANI | &quot;ani&quot; |
 | AUDIOMUTED | &quot;audioMuted&quot; |
@@ -100,6 +101,7 @@ title: SegmentDetailQueryPredicate
 | PARTICIPANTID | &quot;participantId&quot; |
 | PARTICIPANTNAME | &quot;participantName&quot; |
 | PEERID | &quot;peerId&quot; |
+| PROPOSEDAGENTID | &quot;proposedAgentId&quot; |
 | PROTOCOLCALLID | &quot;protocolCallId&quot; |
 | PROVIDER | &quot;provider&quot; |
 | PURPOSE | &quot;purpose&quot; |

@@ -41,7 +41,8 @@ public class AuditLogMessage  implements Serializable {
     LANGUAGEUNDERSTANDING("LanguageUnderstanding"),
     TOPICSDEFINITIONS("TopicsDefinitions"),
     PREDICTIVEENGAGEMENT("PredictiveEngagement"),
-    WORKFORCEMANAGEMENT("WorkforceManagement");
+    WORKFORCEMANAGEMENT("WorkforceManagement"),
+    TRIGGERS("Triggers");
 
     private String value;
 
@@ -93,6 +94,8 @@ public class AuditLogMessage  implements Serializable {
     EXECUTE("Execute"),
     PUBLISH("Publish"),
     UNPUBLISH("Unpublish"),
+    ENABLE("Enable"),
+    DISABLE("Disable"),
     AUTHORIZE("Authorize"),
     DEAUTHORIZE("Deauthorize"),
     AUTHENTICATE("Authenticate"),
@@ -149,7 +152,8 @@ public class AuditLogMessage  implements Serializable {
     SEGMENT("Segment"),
     OUTCOME("Outcome"),
     CLICKSTREAMSETTINGS("ClickstreamSettings"),
-    SCHEDULE("Schedule");
+    SCHEDULE("Schedule"),
+    TRIGGER("Trigger");
 
     private String value;
 

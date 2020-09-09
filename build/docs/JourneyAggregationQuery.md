@@ -37,8 +37,8 @@ title: JourneyAggregationQuery
 | JOURNEYDEVICETYPE | &quot;journeyDeviceType&quot; |
 | JOURNEYOUTCOMEID | &quot;journeyOutcomeId&quot; |
 | JOURNEYSEGMENTID | &quot;journeySegmentId&quot; |
-| JOURNEYSESSIONTYPE | &quot;journeySessionType&quot; |
 | JOURNEYSEGMENTSCOPE | &quot;journeySegmentScope&quot; |
+| JOURNEYSESSIONTYPE | &quot;journeySessionType&quot; |
 {: class="table table-striped"}
 
 

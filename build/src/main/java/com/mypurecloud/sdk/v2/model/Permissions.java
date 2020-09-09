@@ -16,33 +16,7 @@ import java.io.Serializable;
 
 public class Permissions  implements Serializable {
   
-  private String id = null;
-  private String name = null;
   private List<String> ids = new ArrayList<String>();
-
-  
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-
-  
-  /**
-   **/
-  public Permissions name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
-  }
 
   
   /**
@@ -73,14 +47,12 @@ public class Permissions  implements Serializable {
       return false;
     }
     Permissions permissions = (Permissions) o;
-    return Objects.equals(this.id, permissions.id) &&
-        Objects.equals(this.name, permissions.name) &&
-        Objects.equals(this.ids, permissions.ids);
+    return Objects.equals(this.ids, permissions.ids);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, ids);
+    return Objects.hash(ids);
   }
 
   @Override
@@ -88,8 +60,6 @@ public class Permissions  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class Permissions {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    ids: ").append(toIndentedString(ids)).append("\n");
     sb.append("}");
     return sb.toString();

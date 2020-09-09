@@ -74,7 +74,8 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     LANGUAGEUNDERSTANDING("LanguageUnderstanding"),
     TOPICSDEFINITIONS("TopicsDefinitions"),
     PREDICTIVEENGAGEMENT("PredictiveEngagement"),
-    WORKFORCEMANAGEMENT("WorkforceManagement");
+    WORKFORCEMANAGEMENT("WorkforceManagement"),
+    TRIGGERS("Triggers");
 
     private String value;
 

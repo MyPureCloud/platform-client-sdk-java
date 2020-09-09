@@ -96,6 +96,7 @@ public class UserSearchRequest  implements Serializable {
     }
   }
   private IntegrationPresenceSourceEnum integrationPresenceSource = null;
+  private Boolean enforcePermissions = null;
 
   
   /**
@@ -241,6 +242,24 @@ public class UserSearchRequest  implements Serializable {
   }
 
   
+  /**
+   * Enforce view permission on request
+   **/
+  public UserSearchRequest enforcePermissions(Boolean enforcePermissions) {
+    this.enforcePermissions = enforcePermissions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Enforce view permission on request")
+  @JsonProperty("enforcePermissions")
+  public Boolean getEnforcePermissions() {
+    return enforcePermissions;
+  }
+  public void setEnforcePermissions(Boolean enforcePermissions) {
+    this.enforcePermissions = enforcePermissions;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -258,12 +277,13 @@ public class UserSearchRequest  implements Serializable {
         Objects.equals(this.sort, userSearchRequest.sort) &&
         Objects.equals(this.expand, userSearchRequest.expand) &&
         Objects.equals(this.query, userSearchRequest.query) &&
-        Objects.equals(this.integrationPresenceSource, userSearchRequest.integrationPresenceSource);
+        Objects.equals(this.integrationPresenceSource, userSearchRequest.integrationPresenceSource) &&
+        Objects.equals(this.enforcePermissions, userSearchRequest.enforcePermissions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sortOrder, sortBy, pageSize, pageNumber, sort, expand, query, integrationPresenceSource);
+    return Objects.hash(sortOrder, sortBy, pageSize, pageNumber, sort, expand, query, integrationPresenceSource, enforcePermissions);
   }
 
   @Override
@@ -279,6 +299,7 @@ public class UserSearchRequest  implements Serializable {
     sb.append("    expand: ").append(toIndentedString(expand)).append("\n");
     sb.append("    query: ").append(toIndentedString(query)).append("\n");
     sb.append("    integrationPresenceSource: ").append(toIndentedString(integrationPresenceSource)).append("\n");
+    sb.append("    enforcePermissions: ").append(toIndentedString(enforcePermissions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

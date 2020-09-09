@@ -26,6 +26,8 @@ import com.mypurecloud.sdk.v2.model.UpdateCoachingAppointmentRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusDto;
 import com.mypurecloud.sdk.v2.model.CoachingAnnotationCreateRequest;
 import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateRequest;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteCoachingAppointmentRequest;
@@ -44,6 +46,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchCoachingAppointmentStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCoachingNotificationRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentAnnotationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentsAggregatesQueryRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1269,6 +1272,82 @@ public class CoachingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CoachingAppointmentResponse> response = (ApiResponse<CoachingAppointmentResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Retrieve aggregated appointment data
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CoachingAppointmentAggregateResponse> postCoachingAppointmentsAggregatesQueryAsync(PostCoachingAppointmentsAggregatesQueryRequest request, final AsyncApiCallback<CoachingAppointmentAggregateResponse> callback) {
+    try {
+      final SettableFuture<CoachingAppointmentAggregateResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CoachingAppointmentAggregateResponse>() {}, new AsyncApiCallback<ApiResponse<CoachingAppointmentAggregateResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CoachingAppointmentAggregateResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve aggregated appointment data
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CoachingAppointmentAggregateResponse>> postCoachingAppointmentsAggregatesQueryAsync(ApiRequest<CoachingAppointmentAggregateRequest> request, final AsyncApiCallback<ApiResponse<CoachingAppointmentAggregateResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CoachingAppointmentAggregateResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CoachingAppointmentAggregateResponse>() {}, new AsyncApiCallback<ApiResponse<CoachingAppointmentAggregateResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CoachingAppointmentAggregateResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CoachingAppointmentAggregateResponse> response = (ApiResponse<CoachingAppointmentAggregateResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CoachingAppointmentAggregateResponse> response = (ApiResponse<CoachingAppointmentAggregateResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

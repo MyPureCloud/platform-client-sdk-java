@@ -23,6 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchCoachingNotification**](CoachingApi.html#patchCoachingNotification) | Update an existing notification. |
 | [**postCoachingAppointmentAnnotations**](CoachingApi.html#postCoachingAppointmentAnnotations) | Create a new annotation. |
 | [**postCoachingAppointments**](CoachingApi.html#postCoachingAppointments) | Create a new appointment |
+| [**postCoachingAppointmentsAggregatesQuery**](CoachingApi.html#postCoachingAppointmentsAggregatesQuery) | Retrieve aggregated appointment data |
 {: class="table-striped"}
 
 <a name="deleteCoachingAppointment"></a>
@@ -423,7 +424,7 @@ try {
 
 
 
-> [CoachingAppointmentResponseList](CoachingAppointmentResponseList.html) getCoachingAppointments(userIds, interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder)
+> [CoachingAppointmentResponseList](CoachingAppointmentResponseList.html) getCoachingAppointments(userIds, interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue)
 
 Get appointments for users and optional date range
 
@@ -464,8 +465,11 @@ Integer pageSize = 25; // Integer | Page size
 List<String> statuses = Arrays.asList("statuses_example"); // List<String> | Appointment Statuses to filter by
 List<String> facilitatorIds = Arrays.asList("facilitatorIds_example"); // List<String> | The facilitator IDs for which to retrieve appointments
 String sortOrder = "sortOrder_example"; // String | Sort (by due date) either Asc or Desc
+List<String> relationships = Arrays.asList("relationships_example"); // List<String> | Relationships to filter by
+String completionInterval = "completionInterval_example"; // String | Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+String overdue = "overdue_example"; // String | Overdue status to filter by
 try {
-    CoachingAppointmentResponseList result = apiInstance.getCoachingAppointments(userIds, interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder);
+    CoachingAppointmentResponseList result = apiInstance.getCoachingAppointments(userIds, interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CoachingApi#getCoachingAppointments");
@@ -485,6 +489,9 @@ try {
 | **statuses** | [**List&lt;String&gt;**](String.html)| Appointment Statuses to filter by | [optional]<br />**Values**: Scheduled, InProgress, Completed, InvalidSchedule 
 | **facilitatorIds** | [**List&lt;String&gt;**](String.html)| The facilitator IDs for which to retrieve appointments | [optional] 
 | **sortOrder** | **String**| Sort (by due date) either Asc or Desc | [optional]<br />**Values**: Desc, Asc 
+| **relationships** | [**List&lt;String&gt;**](String.html)| Relationships to filter by | [optional]<br />**Values**: Creator, Facilitator, Attendee 
+| **completionInterval** | **String**| Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] 
+| **overdue** | **String**| Overdue status to filter by | [optional]<br />**Values**: Any, True, False 
 {: class="table-striped"}
 
 
@@ -498,7 +505,7 @@ try {
 
 
 
-> [CoachingAppointmentResponseList](CoachingAppointmentResponseList.html) getCoachingAppointmentsMe(interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder)
+> [CoachingAppointmentResponseList](CoachingAppointmentResponseList.html) getCoachingAppointmentsMe(interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue)
 
 Get my appointments for a given date range
 
@@ -537,8 +544,11 @@ Integer pageSize = 25; // Integer | Page size
 List<String> statuses = Arrays.asList("statuses_example"); // List<String> | Appointment Statuses to filter by
 List<String> facilitatorIds = Arrays.asList("facilitatorIds_example"); // List<String> | The facilitator IDs for which to retrieve appointments
 String sortOrder = "sortOrder_example"; // String | Sort (by due date) either Asc or Desc
+List<String> relationships = Arrays.asList("relationships_example"); // List<String> | Relationships to filter by
+String completionInterval = "completionInterval_example"; // String | Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+String overdue = "overdue_example"; // String | Overdue status to filter by
 try {
-    CoachingAppointmentResponseList result = apiInstance.getCoachingAppointmentsMe(interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder);
+    CoachingAppointmentResponseList result = apiInstance.getCoachingAppointmentsMe(interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CoachingApi#getCoachingAppointmentsMe");
@@ -557,6 +567,9 @@ try {
 | **statuses** | [**List&lt;String&gt;**](String.html)| Appointment Statuses to filter by | [optional]<br />**Values**: Scheduled, InProgress, Completed 
 | **facilitatorIds** | [**List&lt;String&gt;**](String.html)| The facilitator IDs for which to retrieve appointments | [optional] 
 | **sortOrder** | **String**| Sort (by due date) either Asc or Desc | [optional]<br />**Values**: Desc, Asc 
+| **relationships** | [**List&lt;String&gt;**](String.html)| Relationships to filter by | [optional]<br />**Values**: Creator, Facilitator, Attendee 
+| **completionInterval** | **String**| Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] 
+| **overdue** | **String**| Overdue status to filter by | [optional]<br />**Values**: Any, True, False 
 {: class="table-striped"}
 
 
@@ -1085,4 +1098,67 @@ try {
 ### Return type
 
 [**CoachingAppointmentResponse**](CoachingAppointmentResponse.html)
+
+<a name="postCoachingAppointmentsAggregatesQuery"></a>
+
+# **postCoachingAppointmentsAggregatesQuery**
+
+
+
+> [CoachingAppointmentAggregateResponse](CoachingAppointmentAggregateResponse.html) postCoachingAppointmentsAggregatesQuery(body)
+
+Retrieve aggregated appointment data
+
+
+
+Wraps POST /api/v2/coaching/appointments/aggregates/query  
+
+Requires ANY permissions: 
+
+* coaching:appointment:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.CoachingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+CoachingApi apiInstance = new CoachingApi();
+CoachingAppointmentAggregateRequest body = new CoachingAppointmentAggregateRequest(); // CoachingAppointmentAggregateRequest | Aggregate Request
+try {
+    CoachingAppointmentAggregateResponse result = apiInstance.postCoachingAppointmentsAggregatesQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CoachingApi#postCoachingAppointmentsAggregatesQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CoachingAppointmentAggregateRequest**](CoachingAppointmentAggregateRequest.html)| Aggregate Request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CoachingAppointmentAggregateResponse**](CoachingAppointmentAggregateResponse.html)
 

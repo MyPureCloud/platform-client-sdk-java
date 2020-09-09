@@ -51,6 +51,7 @@ title: MessagingIntegration
 | TWITTER | &quot;twitter&quot; |
 | LINE | &quot;line&quot; |
 | WHATSAPP | &quot;whatsapp&quot; |
+| WEBMESSAGING | &quot;webmessaging&quot; |
 {: class="table table-striped"}
 
 

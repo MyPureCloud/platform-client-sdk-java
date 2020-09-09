@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.AuditRealtimeQueryRequest;
 import com.mypurecloud.sdk.v2.model.AuditRealtimeQueryResultsResponse;
 
 
+import com.mypurecloud.sdk.v2.api.request.GetAuditsQueryRealtimeServicemappingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuditsQueryServicemappingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuditsQueryTransactionIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuditsQueryTransactionIdResultsRequest;
@@ -41,6 +42,81 @@ public class AuditApi {
 
   public AuditApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Get service mapping information used in audits.
+   * 
+   * @return AuditQueryServiceMapping
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuditQueryServiceMapping getAuditsQueryRealtimeServicemapping() throws IOException, ApiException {
+    return  getAuditsQueryRealtimeServicemapping(createGetAuditsQueryRealtimeServicemappingRequest());
+  }
+
+  /**
+   * Get service mapping information used in audits.
+   * 
+   * @return AuditQueryServiceMapping
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuditQueryServiceMapping> getAuditsQueryRealtimeServicemappingWithHttpInfo() throws IOException {
+    return getAuditsQueryRealtimeServicemapping(createGetAuditsQueryRealtimeServicemappingRequest().withHttpInfo());
+  }
+
+  private GetAuditsQueryRealtimeServicemappingRequest createGetAuditsQueryRealtimeServicemappingRequest() {
+    return GetAuditsQueryRealtimeServicemappingRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get service mapping information used in audits.
+   * 
+   * @param request The request object
+   * @return AuditQueryServiceMapping
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuditQueryServiceMapping getAuditsQueryRealtimeServicemapping(GetAuditsQueryRealtimeServicemappingRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AuditQueryServiceMapping> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AuditQueryServiceMapping>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get service mapping information used in audits.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuditQueryServiceMapping> getAuditsQueryRealtimeServicemapping(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AuditQueryServiceMapping>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuditQueryServiceMapping> response = (ApiResponse<AuditQueryServiceMapping>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuditQueryServiceMapping> response = (ApiResponse<AuditQueryServiceMapping>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   

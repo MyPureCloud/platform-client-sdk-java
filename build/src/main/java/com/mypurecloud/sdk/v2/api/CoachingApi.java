@@ -23,6 +23,8 @@ import com.mypurecloud.sdk.v2.model.UpdateCoachingAppointmentRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusDto;
 import com.mypurecloud.sdk.v2.model.CoachingAnnotationCreateRequest;
 import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateRequest;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteCoachingAppointmentRequest;
@@ -41,6 +43,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchCoachingAppointmentStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCoachingNotificationRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentAnnotationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentsAggregatesQueryRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -566,12 +569,15 @@ public class CoachingApi {
    * @param statuses Appointment Statuses to filter by (optional)
    * @param facilitatorIds The facilitator IDs for which to retrieve appointments (optional)
    * @param sortOrder Sort (by due date) either Asc or Desc (optional)
+   * @param relationships Relationships to filter by (optional)
+   * @param completionInterval Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+   * @param overdue Overdue status to filter by (optional)
    * @return CoachingAppointmentResponseList
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CoachingAppointmentResponseList getCoachingAppointments(List<String> userIds, String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder) throws IOException, ApiException {
-    return  getCoachingAppointments(createGetCoachingAppointmentsRequest(userIds, interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder));
+  public CoachingAppointmentResponseList getCoachingAppointments(List<String> userIds, String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder, List<String> relationships, String completionInterval, String overdue) throws IOException, ApiException {
+    return  getCoachingAppointments(createGetCoachingAppointmentsRequest(userIds, interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue));
   }
 
   /**
@@ -584,14 +590,17 @@ public class CoachingApi {
    * @param statuses Appointment Statuses to filter by (optional)
    * @param facilitatorIds The facilitator IDs for which to retrieve appointments (optional)
    * @param sortOrder Sort (by due date) either Asc or Desc (optional)
+   * @param relationships Relationships to filter by (optional)
+   * @param completionInterval Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+   * @param overdue Overdue status to filter by (optional)
    * @return CoachingAppointmentResponseList
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CoachingAppointmentResponseList> getCoachingAppointmentsWithHttpInfo(List<String> userIds, String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder) throws IOException {
-    return getCoachingAppointments(createGetCoachingAppointmentsRequest(userIds, interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder).withHttpInfo());
+  public ApiResponse<CoachingAppointmentResponseList> getCoachingAppointmentsWithHttpInfo(List<String> userIds, String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder, List<String> relationships, String completionInterval, String overdue) throws IOException {
+    return getCoachingAppointments(createGetCoachingAppointmentsRequest(userIds, interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue).withHttpInfo());
   }
 
-  private GetCoachingAppointmentsRequest createGetCoachingAppointmentsRequest(List<String> userIds, String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder) {
+  private GetCoachingAppointmentsRequest createGetCoachingAppointmentsRequest(List<String> userIds, String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder, List<String> relationships, String completionInterval, String overdue) {
     return GetCoachingAppointmentsRequest.builder()
             .withUserIds(userIds)
     
@@ -606,6 +615,12 @@ public class CoachingApi {
             .withFacilitatorIds(facilitatorIds)
     
             .withSortOrder(sortOrder)
+    
+            .withRelationships(relationships)
+    
+            .withCompletionInterval(completionInterval)
+    
+            .withOverdue(overdue)
     
             .build();
   }
@@ -668,12 +683,15 @@ public class CoachingApi {
    * @param statuses Appointment Statuses to filter by (optional)
    * @param facilitatorIds The facilitator IDs for which to retrieve appointments (optional)
    * @param sortOrder Sort (by due date) either Asc or Desc (optional)
+   * @param relationships Relationships to filter by (optional)
+   * @param completionInterval Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+   * @param overdue Overdue status to filter by (optional)
    * @return CoachingAppointmentResponseList
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CoachingAppointmentResponseList getCoachingAppointmentsMe(String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder) throws IOException, ApiException {
-    return  getCoachingAppointmentsMe(createGetCoachingAppointmentsMeRequest(interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder));
+  public CoachingAppointmentResponseList getCoachingAppointmentsMe(String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder, List<String> relationships, String completionInterval, String overdue) throws IOException, ApiException {
+    return  getCoachingAppointmentsMe(createGetCoachingAppointmentsMeRequest(interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue));
   }
 
   /**
@@ -685,14 +703,17 @@ public class CoachingApi {
    * @param statuses Appointment Statuses to filter by (optional)
    * @param facilitatorIds The facilitator IDs for which to retrieve appointments (optional)
    * @param sortOrder Sort (by due date) either Asc or Desc (optional)
+   * @param relationships Relationships to filter by (optional)
+   * @param completionInterval Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+   * @param overdue Overdue status to filter by (optional)
    * @return CoachingAppointmentResponseList
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CoachingAppointmentResponseList> getCoachingAppointmentsMeWithHttpInfo(String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder) throws IOException {
-    return getCoachingAppointmentsMe(createGetCoachingAppointmentsMeRequest(interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder).withHttpInfo());
+  public ApiResponse<CoachingAppointmentResponseList> getCoachingAppointmentsMeWithHttpInfo(String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder, List<String> relationships, String completionInterval, String overdue) throws IOException {
+    return getCoachingAppointmentsMe(createGetCoachingAppointmentsMeRequest(interval, pageNumber, pageSize, statuses, facilitatorIds, sortOrder, relationships, completionInterval, overdue).withHttpInfo());
   }
 
-  private GetCoachingAppointmentsMeRequest createGetCoachingAppointmentsMeRequest(String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder) {
+  private GetCoachingAppointmentsMeRequest createGetCoachingAppointmentsMeRequest(String interval, Integer pageNumber, Integer pageSize, List<String> statuses, List<String> facilitatorIds, String sortOrder, List<String> relationships, String completionInterval, String overdue) {
     return GetCoachingAppointmentsMeRequest.builder()
             .withInterval(interval)
     
@@ -705,6 +726,12 @@ public class CoachingApi {
             .withFacilitatorIds(facilitatorIds)
     
             .withSortOrder(sortOrder)
+    
+            .withRelationships(relationships)
+    
+            .withCompletionInterval(completionInterval)
+    
+            .withOverdue(overdue)
     
             .build();
   }
@@ -1421,6 +1448,85 @@ public class CoachingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CoachingAppointmentResponse> response = (ApiResponse<CoachingAppointmentResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Retrieve aggregated appointment data
+   * 
+   * @param body Aggregate Request (required)
+   * @return CoachingAppointmentAggregateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CoachingAppointmentAggregateResponse postCoachingAppointmentsAggregatesQuery(CoachingAppointmentAggregateRequest body) throws IOException, ApiException {
+    return  postCoachingAppointmentsAggregatesQuery(createPostCoachingAppointmentsAggregatesQueryRequest(body));
+  }
+
+  /**
+   * Retrieve aggregated appointment data
+   * 
+   * @param body Aggregate Request (required)
+   * @return CoachingAppointmentAggregateResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CoachingAppointmentAggregateResponse> postCoachingAppointmentsAggregatesQueryWithHttpInfo(CoachingAppointmentAggregateRequest body) throws IOException {
+    return postCoachingAppointmentsAggregatesQuery(createPostCoachingAppointmentsAggregatesQueryRequest(body).withHttpInfo());
+  }
+
+  private PostCoachingAppointmentsAggregatesQueryRequest createPostCoachingAppointmentsAggregatesQueryRequest(CoachingAppointmentAggregateRequest body) {
+    return PostCoachingAppointmentsAggregatesQueryRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Retrieve aggregated appointment data
+   * 
+   * @param request The request object
+   * @return CoachingAppointmentAggregateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CoachingAppointmentAggregateResponse postCoachingAppointmentsAggregatesQuery(PostCoachingAppointmentsAggregatesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CoachingAppointmentAggregateResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CoachingAppointmentAggregateResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve aggregated appointment data
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CoachingAppointmentAggregateResponse> postCoachingAppointmentsAggregatesQuery(ApiRequest<CoachingAppointmentAggregateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CoachingAppointmentAggregateResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CoachingAppointmentAggregateResponse> response = (ApiResponse<CoachingAppointmentAggregateResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CoachingAppointmentAggregateResponse> response = (ApiResponse<CoachingAppointmentAggregateResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

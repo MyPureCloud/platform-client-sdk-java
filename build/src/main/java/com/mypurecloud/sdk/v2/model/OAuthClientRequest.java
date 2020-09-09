@@ -9,6 +9,7 @@ import com.mypurecloud.sdk.v2.model.RoleDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -99,6 +100,7 @@ public class OAuthClientRequest  implements Serializable {
     }
   }
   private StateEnum state = null;
+  private Date dateToDelete = null;
 
   
   /**
@@ -262,6 +264,24 @@ public class OAuthClientRequest  implements Serializable {
   }
 
   
+  /**
+   * The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public OAuthClientRequest dateToDelete(Date dateToDelete) {
+    this.dateToDelete = dateToDelete;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("dateToDelete")
+  public Date getDateToDelete() {
+    return dateToDelete;
+  }
+  public void setDateToDelete(Date dateToDelete) {
+    this.dateToDelete = dateToDelete;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -280,12 +300,13 @@ public class OAuthClientRequest  implements Serializable {
         Objects.equals(this.authorizedGrantType, oAuthClientRequest.authorizedGrantType) &&
         Objects.equals(this.scope, oAuthClientRequest.scope) &&
         Objects.equals(this.roleDivisions, oAuthClientRequest.roleDivisions) &&
-        Objects.equals(this.state, oAuthClientRequest.state);
+        Objects.equals(this.state, oAuthClientRequest.state) &&
+        Objects.equals(this.dateToDelete, oAuthClientRequest.dateToDelete);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, accessTokenValiditySeconds, description, registeredRedirectUri, roleIds, authorizedGrantType, scope, roleDivisions, state);
+    return Objects.hash(name, accessTokenValiditySeconds, description, registeredRedirectUri, roleIds, authorizedGrantType, scope, roleDivisions, state, dateToDelete);
   }
 
   @Override
@@ -302,6 +323,7 @@ public class OAuthClientRequest  implements Serializable {
     sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
     sb.append("    roleDivisions: ").append(toIndentedString(roleDivisions)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    dateToDelete: ").append(toIndentedString(dateToDelete)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -21,6 +21,7 @@ import java.io.Serializable;
 public class ReportingDataExportTopicDataExportNotification  implements Serializable {
   
   private String id = null;
+  private String runId = null;
   private String name = null;
 
   /**
@@ -274,6 +275,23 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
   
   /**
    **/
+  public ReportingDataExportTopicDataExportNotification runId(String runId) {
+    this.runId = runId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("runId")
+  public String getRunId() {
+    return runId;
+  }
+  public void setRunId(String runId) {
+    this.runId = runId;
+  }
+
+  
+  /**
+   **/
   public ReportingDataExportTopicDataExportNotification name(String name) {
     this.name = name;
     return this;
@@ -470,6 +488,7 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     }
     ReportingDataExportTopicDataExportNotification reportingDataExportTopicDataExportNotification = (ReportingDataExportTopicDataExportNotification) o;
     return Objects.equals(this.id, reportingDataExportTopicDataExportNotification.id) &&
+        Objects.equals(this.runId, reportingDataExportTopicDataExportNotification.runId) &&
         Objects.equals(this.name, reportingDataExportTopicDataExportNotification.name) &&
         Objects.equals(this.status, reportingDataExportTopicDataExportNotification.status) &&
         Objects.equals(this.exportFormat, reportingDataExportTopicDataExportNotification.exportFormat) &&
@@ -485,7 +504,7 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, status, exportFormat, downloadUrl, viewType, exportErrorMessagesType, read, createdDateTime, modifiedDateTime, percentageComplete, emailStatuses);
+    return Objects.hash(id, runId, name, status, exportFormat, downloadUrl, viewType, exportErrorMessagesType, read, createdDateTime, modifiedDateTime, percentageComplete, emailStatuses);
   }
 
   @Override
@@ -494,6 +513,7 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     sb.append("class ReportingDataExportTopicDataExportNotification {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    runId: ").append(toIndentedString(runId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    exportFormat: ").append(toIndentedString(exportFormat)).append("\n");

@@ -10,10 +10,12 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.ConversationMetrics;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.TranscriptUrl;
 
 
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlRequest;
 
 import java.io.IOException;
@@ -32,6 +34,85 @@ public class SpeechTextAnalyticsApi {
 
   public SpeechTextAnalyticsApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Get Speech and Text Analytics for a specific conversation
+   * 
+   * @param conversationId Conversation Id (required)
+   * @return ConversationMetrics
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationMetrics getSpeechandtextanalyticsConversation(String conversationId) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsConversation(createGetSpeechandtextanalyticsConversationRequest(conversationId));
+  }
+
+  /**
+   * Get Speech and Text Analytics for a specific conversation
+   * 
+   * @param conversationId Conversation Id (required)
+   * @return ConversationMetrics
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationMetrics> getSpeechandtextanalyticsConversationWithHttpInfo(String conversationId) throws IOException {
+    return getSpeechandtextanalyticsConversation(createGetSpeechandtextanalyticsConversationRequest(conversationId).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsConversationRequest createGetSpeechandtextanalyticsConversationRequest(String conversationId) {
+    return GetSpeechandtextanalyticsConversationRequest.builder()
+            .withConversationId(conversationId)
+    
+            .build();
+  }
+
+  /**
+   * Get Speech and Text Analytics for a specific conversation
+   * 
+   * @param request The request object
+   * @return ConversationMetrics
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ConversationMetrics getSpeechandtextanalyticsConversation(GetSpeechandtextanalyticsConversationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ConversationMetrics> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ConversationMetrics>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Speech and Text Analytics for a specific conversation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ConversationMetrics> getSpeechandtextanalyticsConversation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ConversationMetrics>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationMetrics> response = (ApiResponse<ConversationMetrics>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ConversationMetrics> response = (ApiResponse<ConversationMetrics>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   

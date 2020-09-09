@@ -22,6 +22,7 @@ title: WemCoachingAppointmentTopicCoachingAppointmentNotification
 | **conversations** | <!----><!---->[**List&lt;WemCoachingAppointmentTopicCoachingAppointmentConversation&gt;**](WemCoachingAppointmentTopicCoachingAppointmentConversation.html)<!----> |  |  [optional] |
 | **documents** | <!----><!---->[**List&lt;WemCoachingAppointmentTopicCoachingAppointmentDocument&gt;**](WemCoachingAppointmentTopicCoachingAppointmentDocument.html)<!----> |  |  [optional] |
 | **changeType** | [**ChangeTypeEnum**](#ChangeTypeEnum)<!----> |  |  [optional] |
+| **dateCompleted** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

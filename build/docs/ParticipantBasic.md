@@ -64,6 +64,7 @@ title: ParticipantBasic
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | MANDATORY | &quot;mandatory&quot; |
 | OPTIONAL | &quot;optional&quot; |
+| AGENTREQUESTED | &quot;agentRequested&quot; |
 | TIMEOUT | &quot;timeout&quot; |
 | FORCEDTIMEOUT | &quot;forcedTimeout&quot; |
 {: class="table table-striped"}

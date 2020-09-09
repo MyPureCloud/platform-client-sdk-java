@@ -18,6 +18,7 @@ import java.io.Serializable;
 public class BuAgentSchedulesQueryResponse  implements Serializable {
   
   private List<BuAgentScheduleQueryResponse> agentSchedules = new ArrayList<BuAgentScheduleQueryResponse>();
+  private String businessUnitTimeZone = null;
 
   
   /**
@@ -38,6 +39,24 @@ public class BuAgentSchedulesQueryResponse  implements Serializable {
   }
 
   
+  /**
+   * The time zone configured for the business unit to which these schedules apply
+   **/
+  public BuAgentSchedulesQueryResponse businessUnitTimeZone(String businessUnitTimeZone) {
+    this.businessUnitTimeZone = businessUnitTimeZone;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time zone configured for the business unit to which these schedules apply")
+  @JsonProperty("businessUnitTimeZone")
+  public String getBusinessUnitTimeZone() {
+    return businessUnitTimeZone;
+  }
+  public void setBusinessUnitTimeZone(String businessUnitTimeZone) {
+    this.businessUnitTimeZone = businessUnitTimeZone;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -48,12 +67,13 @@ public class BuAgentSchedulesQueryResponse  implements Serializable {
       return false;
     }
     BuAgentSchedulesQueryResponse buAgentSchedulesQueryResponse = (BuAgentSchedulesQueryResponse) o;
-    return Objects.equals(this.agentSchedules, buAgentSchedulesQueryResponse.agentSchedules);
+    return Objects.equals(this.agentSchedules, buAgentSchedulesQueryResponse.agentSchedules) &&
+        Objects.equals(this.businessUnitTimeZone, buAgentSchedulesQueryResponse.businessUnitTimeZone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(agentSchedules);
+    return Objects.hash(agentSchedules, businessUnitTimeZone);
   }
 
   @Override
@@ -62,6 +82,7 @@ public class BuAgentSchedulesQueryResponse  implements Serializable {
     sb.append("class BuAgentSchedulesQueryResponse {\n");
     
     sb.append("    agentSchedules: ").append(toIndentedString(agentSchedules)).append("\n");
+    sb.append("    businessUnitTimeZone: ").append(toIndentedString(businessUnitTimeZone)).append("\n");
     sb.append("}");
     return sb.toString();
   }

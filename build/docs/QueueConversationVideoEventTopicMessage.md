@@ -78,6 +78,7 @@ title: QueueConversationVideoEventTopicMessage
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| UNKNOWN | &quot;UNKNOWN&quot; |
 | SMS | &quot;SMS&quot; |
 | TWITTER | &quot;TWITTER&quot; |
 | FACEBOOK | &quot;FACEBOOK&quot; |
@@ -87,6 +88,7 @@ title: QueueConversationVideoEventTopicMessage
 | WHATSAPP | &quot;WHATSAPP&quot; |
 | TELEGRAM | &quot;TELEGRAM&quot; |
 | KAKAO | &quot;KAKAO&quot; |
+| WEBMESSAGING | &quot;WEBMESSAGING&quot; |
 {: class="table table-striped"}
 
 

@@ -69,6 +69,7 @@ public class OAuthClientListing  implements Serializable {
     }
   }
   private StateEnum state = null;
+  private Date dateToDelete = null;
   private String selfUri = null;
 
   
@@ -312,6 +313,24 @@ public class OAuthClientListing  implements Serializable {
   }
 
   
+  /**
+   * The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public OAuthClientListing dateToDelete(Date dateToDelete) {
+    this.dateToDelete = dateToDelete;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("dateToDelete")
+  public Date getDateToDelete() {
+    return dateToDelete;
+  }
+  public void setDateToDelete(Date dateToDelete) {
+    this.dateToDelete = dateToDelete;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -343,12 +362,13 @@ public class OAuthClientListing  implements Serializable {
         Objects.equals(this.scope, oAuthClientListing.scope) &&
         Objects.equals(this.roleDivisions, oAuthClientListing.roleDivisions) &&
         Objects.equals(this.state, oAuthClientListing.state) &&
+        Objects.equals(this.dateToDelete, oAuthClientListing.dateToDelete) &&
         Objects.equals(this.selfUri, oAuthClientListing.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, accessTokenValiditySeconds, description, registeredRedirectUri, secret, roleIds, dateCreated, dateModified, createdBy, modifiedBy, scope, roleDivisions, state, selfUri);
+    return Objects.hash(id, name, accessTokenValiditySeconds, description, registeredRedirectUri, secret, roleIds, dateCreated, dateModified, createdBy, modifiedBy, scope, roleDivisions, state, dateToDelete, selfUri);
   }
 
   @Override
@@ -370,6 +390,7 @@ public class OAuthClientListing  implements Serializable {
     sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
     sb.append("    roleDivisions: ").append(toIndentedString(roleDivisions)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    dateToDelete: ").append(toIndentedString(dateToDelete)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

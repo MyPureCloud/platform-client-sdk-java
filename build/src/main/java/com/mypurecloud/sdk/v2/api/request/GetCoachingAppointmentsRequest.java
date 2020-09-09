@@ -33,6 +33,8 @@ import com.mypurecloud.sdk.v2.model.UpdateCoachingAppointmentRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusDto;
 import com.mypurecloud.sdk.v2.model.CoachingAnnotationCreateRequest;
 import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateRequest;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateResponse;
 
 public class GetCoachingAppointmentsRequest {
     
@@ -196,6 +198,110 @@ public class GetCoachingAppointmentsRequest {
 		}
 	}
 	
+	private List<String> relationships;
+	public List<String> getRelationships() {
+		return this.relationships;
+	}
+
+	public void setRelationships(List<String> relationships) {
+		this.relationships = relationships;
+	}
+
+	public GetCoachingAppointmentsRequest withRelationships(List<String> relationships) {
+	    this.setRelationships(relationships);
+	    return this;
+	} 
+
+	public enum relationshipsValues { 
+		CREATOR("Creator"), 
+		FACILITATOR("Facilitator"), 
+		ATTENDEE("Attendee");
+
+		private String value;
+
+		relationshipsValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static relationshipsValues fromString(String key) {
+			if (key == null) return null;
+
+			for (relationshipsValues value : relationshipsValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return relationshipsValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
+	private String completionInterval;
+	public String getCompletionInterval() {
+		return this.completionInterval;
+	}
+
+	public void setCompletionInterval(String completionInterval) {
+		this.completionInterval = completionInterval;
+	}
+
+	public GetCoachingAppointmentsRequest withCompletionInterval(String completionInterval) {
+	    this.setCompletionInterval(completionInterval);
+	    return this;
+	} 
+	
+	private String overdue;
+	public String getOverdue() {
+		return this.overdue;
+	}
+
+	public void setOverdue(String overdue) {
+		this.overdue = overdue;
+	}
+
+	public GetCoachingAppointmentsRequest withOverdue(String overdue) {
+	    this.setOverdue(overdue);
+	    return this;
+	} 
+
+	public enum overdueValues { 
+		ANY("Any"), 
+		TRUE("True"), 
+		FALSE("False");
+
+		private String value;
+
+		overdueValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static overdueValues fromString(String key) {
+			if (key == null) return null;
+
+			for (overdueValues value : overdueValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return overdueValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -237,6 +343,12 @@ public class GetCoachingAppointmentsRequest {
                 .withQueryParameters("facilitatorIds", "multi", facilitatorIds)
         
                 .withQueryParameters("sortOrder", "", sortOrder)
+        
+                .withQueryParameters("relationships", "multi", relationships)
+        
+                .withQueryParameters("completionInterval", "", completionInterval)
+        
+                .withQueryParameters("overdue", "", overdue)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -310,6 +422,35 @@ public class GetCoachingAppointmentsRequest {
 
 		public Builder withSortOrder(sortOrderValues sortOrder) {
 		    request.setSortOrder(sortOrder.toString());
+		    return this;
+		}
+		
+		public Builder withRelationships(List<String> relationships) {
+			request.setRelationships(relationships);
+			return this;
+		}
+
+		public Builder withRelationshipsEnumValues(List<relationshipsValues> relationships) {
+		    List<String> stringList = new ArrayList<>();
+	      for (relationshipsValues e : relationships) {
+	        stringList.add(e.toString());
+	      }
+	      request.setRelationships(stringList);
+		    return this;
+		}
+		
+		public Builder withCompletionInterval(String completionInterval) {
+			request.setCompletionInterval(completionInterval);
+			return this;
+		}
+		
+		public Builder withOverdue(String overdue) {
+			request.setOverdue(overdue);
+			return this;
+		}
+
+		public Builder withOverdue(overdueValues overdue) {
+		    request.setOverdue(overdue.toString());
 		    return this;
 		}
 		

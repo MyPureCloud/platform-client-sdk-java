@@ -169,7 +169,8 @@ public class ViewFilter  implements Serializable {
     TWITTER("twitter"),
     LINE("line"),
     FACEBOOK("facebook"),
-    WHATSAPP("whatsapp");
+    WHATSAPP("whatsapp"),
+    WEBMESSAGING("webmessaging");
 
     private String value;
 

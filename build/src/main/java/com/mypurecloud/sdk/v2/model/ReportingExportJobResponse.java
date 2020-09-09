@@ -24,6 +24,7 @@ public class ReportingExportJobResponse  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private String runId = null;
 
   /**
    * The current status of the export request
@@ -294,6 +295,24 @@ public class ReportingExportJobResponse  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  
+  /**
+   * The unique run id of the export schedule execute
+   **/
+  public ReportingExportJobResponse runId(String runId) {
+    this.runId = runId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The unique run id of the export schedule execute")
+  @JsonProperty("runId")
+  public String getRunId() {
+    return runId;
+  }
+  public void setRunId(String runId) {
+    this.runId = runId;
   }
 
   
@@ -729,6 +748,7 @@ public class ReportingExportJobResponse  implements Serializable {
     ReportingExportJobResponse reportingExportJobResponse = (ReportingExportJobResponse) o;
     return Objects.equals(this.id, reportingExportJobResponse.id) &&
         Objects.equals(this.name, reportingExportJobResponse.name) &&
+        Objects.equals(this.runId, reportingExportJobResponse.runId) &&
         Objects.equals(this.status, reportingExportJobResponse.status) &&
         Objects.equals(this.timeZone, reportingExportJobResponse.timeZone) &&
         Objects.equals(this.exportFormat, reportingExportJobResponse.exportFormat) &&
@@ -757,7 +777,7 @@ public class ReportingExportJobResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, hasSplitFilters, excludeEmptyRows, hasSplitByMedia, selectedColumns, hasCustomParticipantAttributes, recipientEmails, emailStatuses, enabled, selfUri);
+    return Objects.hash(id, name, runId, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, hasSplitFilters, excludeEmptyRows, hasSplitByMedia, selectedColumns, hasCustomParticipantAttributes, recipientEmails, emailStatuses, enabled, selfUri);
   }
 
   @Override
@@ -767,6 +787,7 @@ public class ReportingExportJobResponse  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    runId: ").append(toIndentedString(runId)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    exportFormat: ").append(toIndentedString(exportFormat)).append("\n");

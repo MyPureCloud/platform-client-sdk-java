@@ -22,7 +22,8 @@ public class IpAddressRange  implements Serializable {
    */
   public enum ServiceEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    DATA_ACTIONS("data-actions");
+    DATA_ACTIONS("data-actions"),
+    SMTP("smtp");
 
     private String value;
 

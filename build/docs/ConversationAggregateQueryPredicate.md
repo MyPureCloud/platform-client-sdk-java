@@ -39,6 +39,7 @@ title: ConversationAggregateQueryPredicate
 | ADDRESSFROM | &quot;addressFrom&quot; |
 | ADDRESSTO | &quot;addressTo&quot; |
 | AGENTASSISTANTID | &quot;agentAssistantId&quot; |
+| AGENTRANK | &quot;agentRank&quot; |
 | AGENTSCORE | &quot;agentScore&quot; |
 | ANI | &quot;ani&quot; |
 | CONVERSATIONID | &quot;conversationId&quot; |
@@ -72,6 +73,7 @@ title: ConversationAggregateQueryPredicate
 | OUTBOUNDCONTACTLISTID | &quot;outboundContactListId&quot; |
 | PARTICIPANTNAME | &quot;participantName&quot; |
 | PEERID | &quot;peerId&quot; |
+| PROPOSEDAGENTID | &quot;proposedAgentId&quot; |
 | PROVIDER | &quot;provider&quot; |
 | PURPOSE | &quot;purpose&quot; |
 | QUEUEID | &quot;queueId&quot; |

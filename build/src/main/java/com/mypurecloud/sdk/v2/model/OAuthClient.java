@@ -107,6 +107,7 @@ public class OAuthClient  implements Serializable {
     }
   }
   private StateEnum state = null;
+  private Date dateToDelete = null;
   private String selfUri = null;
 
   
@@ -368,6 +369,24 @@ public class OAuthClient  implements Serializable {
   }
 
   
+  /**
+   * The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public OAuthClient dateToDelete(Date dateToDelete) {
+    this.dateToDelete = dateToDelete;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("dateToDelete")
+  public Date getDateToDelete() {
+    return dateToDelete;
+  }
+  public void setDateToDelete(Date dateToDelete) {
+    this.dateToDelete = dateToDelete;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -400,12 +419,13 @@ public class OAuthClient  implements Serializable {
         Objects.equals(this.scope, oAuthClient.scope) &&
         Objects.equals(this.roleDivisions, oAuthClient.roleDivisions) &&
         Objects.equals(this.state, oAuthClient.state) &&
+        Objects.equals(this.dateToDelete, oAuthClient.dateToDelete) &&
         Objects.equals(this.selfUri, oAuthClient.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, accessTokenValiditySeconds, description, registeredRedirectUri, secret, roleIds, dateCreated, dateModified, createdBy, modifiedBy, authorizedGrantType, scope, roleDivisions, state, selfUri);
+    return Objects.hash(id, name, accessTokenValiditySeconds, description, registeredRedirectUri, secret, roleIds, dateCreated, dateModified, createdBy, modifiedBy, authorizedGrantType, scope, roleDivisions, state, dateToDelete, selfUri);
   }
 
   @Override
@@ -428,6 +448,7 @@ public class OAuthClient  implements Serializable {
     sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
     sb.append("    roleDivisions: ").append(toIndentedString(roleDivisions)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    dateToDelete: ").append(toIndentedString(dateToDelete)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

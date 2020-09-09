@@ -7,12 +7,72 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**getAuditsQueryRealtimeServicemapping**](AuditApi.html#getAuditsQueryRealtimeServicemapping) | Get service mapping information used in audits. |
 | [**getAuditsQueryServicemapping**](AuditApi.html#getAuditsQueryServicemapping) | Get service mapping information used in audits. |
 | [**getAuditsQueryTransactionId**](AuditApi.html#getAuditsQueryTransactionId) | Get status of audit query execution |
 | [**getAuditsQueryTransactionIdResults**](AuditApi.html#getAuditsQueryTransactionIdResults) | Get results of audit query |
 | [**postAuditsQuery**](AuditApi.html#postAuditsQuery) | Create audit query execution |
 | [**postAuditsQueryRealtime**](AuditApi.html#postAuditsQueryRealtime) | This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits. |
 {: class="table-striped"}
+
+<a name="getAuditsQueryRealtimeServicemapping"></a>
+
+# **getAuditsQueryRealtimeServicemapping**
+
+
+
+> [AuditQueryServiceMapping](AuditQueryServiceMapping.html) getAuditsQueryRealtimeServicemapping()
+
+Get service mapping information used in audits.
+
+
+
+Wraps GET /api/v2/audits/query/realtime/servicemapping  
+
+Requires ALL permissions: 
+
+* audits:audit:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuditApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuditApi apiInstance = new AuditApi();
+try {
+    AuditQueryServiceMapping result = apiInstance.getAuditsQueryRealtimeServicemapping();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuditApi#getAuditsQueryRealtimeServicemapping");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**AuditQueryServiceMapping**](AuditQueryServiceMapping.html)
 
 <a name="getAuditsQueryServicemapping"></a>
 

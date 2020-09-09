@@ -9,6 +9,7 @@ title: ReportingDataExportTopicDataExportNotification
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> |  |  [optional] |
+| **runId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
 | **exportFormat** | [**ExportFormatEnum**](#ExportFormatEnum)<!----> |  |  [optional] |

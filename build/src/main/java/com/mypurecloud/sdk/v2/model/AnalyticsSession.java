@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationSegment;
 import com.mypurecloud.sdk.v2.model.AnalyticsFlow;
 import com.mypurecloud.sdk.v2.model.AnalyticsMediaEndpointStat;
+import com.mypurecloud.sdk.v2.model.AnalyticsProposedAgent;
 import com.mypurecloud.sdk.v2.model.AnalyticsSessionMetric;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -264,6 +265,8 @@ public class AnalyticsSession  implements Serializable {
   private UsedRoutingEnum usedRouting = null;
   private String selectedAgentId = null;
   private Integer selectedAgentRank = null;
+  private String agentAssistantId = null;
+  private List<AnalyticsProposedAgent> proposedAgents = new ArrayList<AnalyticsProposedAgent>();
 
   
   /**
@@ -1285,6 +1288,42 @@ public class AnalyticsSession  implements Serializable {
   }
 
   
+  /**
+   * Unique identifier of the active virtual agent assistant
+   **/
+  public AnalyticsSession agentAssistantId(String agentAssistantId) {
+    this.agentAssistantId = agentAssistantId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Unique identifier of the active virtual agent assistant")
+  @JsonProperty("agentAssistantId")
+  public String getAgentAssistantId() {
+    return agentAssistantId;
+  }
+  public void setAgentAssistantId(String agentAssistantId) {
+    this.agentAssistantId = agentAssistantId;
+  }
+
+  
+  /**
+   * Proposed agents
+   **/
+  public AnalyticsSession proposedAgents(List<AnalyticsProposedAgent> proposedAgents) {
+    this.proposedAgents = proposedAgents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Proposed agents")
+  @JsonProperty("proposedAgents")
+  public List<AnalyticsProposedAgent> getProposedAgents() {
+    return proposedAgents;
+  }
+  public void setProposedAgents(List<AnalyticsProposedAgent> proposedAgents) {
+    this.proposedAgents = proposedAgents;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1351,12 +1390,14 @@ public class AnalyticsSession  implements Serializable {
         Objects.equals(this.requestedRoutings, analyticsSession.requestedRoutings) &&
         Objects.equals(this.usedRouting, analyticsSession.usedRouting) &&
         Objects.equals(this.selectedAgentId, analyticsSession.selectedAgentId) &&
-        Objects.equals(this.selectedAgentRank, analyticsSession.selectedAgentRank);
+        Objects.equals(this.selectedAgentRank, analyticsSession.selectedAgentRank) &&
+        Objects.equals(this.agentAssistantId, analyticsSession.agentAssistantId) &&
+        Objects.equals(this.proposedAgents, analyticsSession.proposedAgents);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, sessionDnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments, metrics, flow, mediaEndpointStats, recording, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, journeyActionId, journeyActionMapId, journeyActionMapVersion, protocolCallId, provider, remote, mediaCount, flowOutType, requestedRoutings, usedRouting, selectedAgentId, selectedAgentRank);
+    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, sessionDnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments, metrics, flow, mediaEndpointStats, recording, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, journeyActionId, journeyActionMapId, journeyActionMapVersion, protocolCallId, provider, remote, mediaCount, flowOutType, requestedRoutings, usedRouting, selectedAgentId, selectedAgentRank, agentAssistantId, proposedAgents);
   }
 
   @Override
@@ -1421,6 +1462,8 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    usedRouting: ").append(toIndentedString(usedRouting)).append("\n");
     sb.append("    selectedAgentId: ").append(toIndentedString(selectedAgentId)).append("\n");
     sb.append("    selectedAgentRank: ").append(toIndentedString(selectedAgentRank)).append("\n");
+    sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
+    sb.append("    proposedAgents: ").append(toIndentedString(proposedAgents)).append("\n");
     sb.append("}");
     return sb.toString();
   }

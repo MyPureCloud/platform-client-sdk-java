@@ -226,6 +226,7 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("UNKNOWN"),
     SMS("SMS"),
     TWITTER("TWITTER"),
     FACEBOOK("FACEBOOK"),
@@ -234,7 +235,8 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
     WECHAT("WECHAT"),
     WHATSAPP("WHATSAPP"),
     TELEGRAM("TELEGRAM"),
-    KAKAO("KAKAO");
+    KAKAO("KAKAO"),
+    WEBMESSAGING("WEBMESSAGING");
 
     private String value;
 

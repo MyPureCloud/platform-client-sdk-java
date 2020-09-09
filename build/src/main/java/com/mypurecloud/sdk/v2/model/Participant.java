@@ -62,6 +62,7 @@ public class Participant  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     MANDATORY("mandatory"),
     OPTIONAL("optional"),
+    AGENTREQUESTED("agentRequested"),
     TIMEOUT("timeout"),
     FORCEDTIMEOUT("forcedTimeout");
 

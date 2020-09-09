@@ -32,6 +32,7 @@ title: AuditRealtimeQueryRequest
 | TOPICSDEFINITIONS | &quot;TopicsDefinitions&quot; |
 | PREDICTIVEENGAGEMENT | &quot;PredictiveEngagement&quot; |
 | WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; |
+| TRIGGERS | &quot;Triggers&quot; |
 {: class="table table-striped"}
 
 

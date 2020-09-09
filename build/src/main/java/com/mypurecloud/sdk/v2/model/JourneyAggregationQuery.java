@@ -38,8 +38,8 @@ public class JourneyAggregationQuery  implements Serializable {
     JOURNEYDEVICETYPE("journeyDeviceType"),
     JOURNEYOUTCOMEID("journeyOutcomeId"),
     JOURNEYSEGMENTID("journeySegmentId"),
-    JOURNEYSESSIONTYPE("journeySessionType"),
-    JOURNEYSEGMENTSCOPE("journeySegmentScope");
+    JOURNEYSEGMENTSCOPE("journeySegmentScope"),
+    JOURNEYSESSIONTYPE("journeySessionType");
 
     private String value;
 

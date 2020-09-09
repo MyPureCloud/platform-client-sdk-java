@@ -127,6 +127,7 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("UNKNOWN"),
     SMS("SMS"),
     TWITTER("TWITTER"),
     FACEBOOK("FACEBOOK"),
@@ -135,7 +136,8 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
     WECHAT("WECHAT"),
     WHATSAPP("WHATSAPP"),
     TELEGRAM("TELEGRAM"),
-    KAKAO("KAKAO");
+    KAKAO("KAKAO"),
+    WEBMESSAGING("WEBMESSAGING");
 
     private String value;
 

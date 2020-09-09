@@ -125,6 +125,7 @@ title: MessageMediaParticipant
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| UNKNOWN | &quot;unknown&quot; |
 | SMS | &quot;sms&quot; |
 | TWITTER | &quot;twitter&quot; |
 | FACEBOOK | &quot;facebook&quot; |
@@ -132,6 +133,7 @@ title: MessageMediaParticipant
 | WHATSAPP | &quot;whatsapp&quot; |
 | TELEGRAM | &quot;telegram&quot; |
 | KAKAO | &quot;kakao&quot; |
+| WEBMESSAGING | &quot;webmessaging&quot; |
 {: class="table table-striped"}
 
 

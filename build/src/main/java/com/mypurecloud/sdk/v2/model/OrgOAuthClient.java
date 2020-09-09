@@ -103,6 +103,7 @@ public class OrgOAuthClient  implements Serializable {
     }
   }
   private StateEnum state = null;
+  private Date dateToDelete = null;
   private NamedEntity organization = null;
 
   
@@ -276,6 +277,24 @@ public class OrgOAuthClient  implements Serializable {
 
   
   /**
+   * The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   **/
+  public OrgOAuthClient dateToDelete(Date dateToDelete) {
+    this.dateToDelete = dateToDelete;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @JsonProperty("dateToDelete")
+  public Date getDateToDelete() {
+    return dateToDelete;
+  }
+  public void setDateToDelete(Date dateToDelete) {
+    this.dateToDelete = dateToDelete;
+  }
+
+  
+  /**
    * The  oauth client's organization.
    **/
   public OrgOAuthClient organization(NamedEntity organization) {
@@ -313,12 +332,13 @@ public class OrgOAuthClient  implements Serializable {
         Objects.equals(this.scope, orgOAuthClient.scope) &&
         Objects.equals(this.roleDivisions, orgOAuthClient.roleDivisions) &&
         Objects.equals(this.state, orgOAuthClient.state) &&
+        Objects.equals(this.dateToDelete, orgOAuthClient.dateToDelete) &&
         Objects.equals(this.organization, orgOAuthClient.organization);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, createdBy, modifiedBy, authorizedGrantType, scope, roleDivisions, state, organization);
+    return Objects.hash(id, name, dateCreated, dateModified, createdBy, modifiedBy, authorizedGrantType, scope, roleDivisions, state, dateToDelete, organization);
   }
 
   @Override
@@ -336,6 +356,7 @@ public class OrgOAuthClient  implements Serializable {
     sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
     sb.append("    roleDivisions: ").append(toIndentedString(roleDivisions)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    dateToDelete: ").append(toIndentedString(dateToDelete)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
     sb.append("}");
     return sb.toString();
