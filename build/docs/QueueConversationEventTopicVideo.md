@@ -24,6 +24,7 @@ title: QueueConversationEventTopicVideo
 | **msids** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **wrapup** | <!----><!---->[**QueueConversationEventTopicWrapup**](QueueConversationEventTopicWrapup.html)<!----> |  |  [optional] |
 | **afterCallWork** | <!----><!---->[**QueueConversationEventTopicAfterCallWork**](QueueConversationEventTopicAfterCallWork.html)<!----> |  |  [optional] |
+| **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

@@ -169,6 +169,7 @@ public class ConversationEventTopicMessage  implements Serializable {
   private String recipientType = null;
   private ConversationEventTopicWrapup wrapup = null;
   private ConversationEventTopicAfterCallWork afterCallWork = null;
+  private Boolean afterCallWorkRequired = null;
   private Object additionalProperties = null;
 
   
@@ -514,6 +515,23 @@ public class ConversationEventTopicMessage  implements Serializable {
   
   /**
    **/
+  public ConversationEventTopicMessage afterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("afterCallWorkRequired")
+  public Boolean getAfterCallWorkRequired() {
+    return afterCallWorkRequired;
+  }
+  public void setAfterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+  }
+
+  
+  /**
+   **/
   public ConversationEventTopicMessage additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -559,12 +577,13 @@ public class ConversationEventTopicMessage  implements Serializable {
         Objects.equals(this.recipientType, conversationEventTopicMessage.recipientType) &&
         Objects.equals(this.wrapup, conversationEventTopicMessage.wrapup) &&
         Objects.equals(this.afterCallWork, conversationEventTopicMessage.afterCallWork) &&
+        Objects.equals(this.afterCallWorkRequired, conversationEventTopicMessage.afterCallWorkRequired) &&
         Objects.equals(this.additionalProperties, conversationEventTopicMessage.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, wrapup, afterCallWork, additionalProperties);
+    return Objects.hash(id, state, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
   }
 
   @Override
@@ -592,6 +611,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     sb.append("    recipientType: ").append(toIndentedString(recipientType)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
+    sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

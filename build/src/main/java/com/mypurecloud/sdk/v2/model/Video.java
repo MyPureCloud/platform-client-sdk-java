@@ -126,6 +126,7 @@ public class Video  implements Serializable {
   private Address self = null;
   private Wrapup wrapup = null;
   private AfterCallWork afterCallWork = null;
+  private Boolean afterCallWorkRequired = null;
 
   
   /**
@@ -434,6 +435,24 @@ public class Video  implements Serializable {
   }
 
   
+  /**
+   * Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
+   **/
+  public Video afterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.")
+  @JsonProperty("afterCallWorkRequired")
+  public Boolean getAfterCallWorkRequired() {
+    return afterCallWorkRequired;
+  }
+  public void setAfterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -460,12 +479,13 @@ public class Video  implements Serializable {
         Objects.equals(this.msids, video.msids) &&
         Objects.equals(this.self, video.self) &&
         Objects.equals(this.wrapup, video.wrapup) &&
-        Objects.equals(this.afterCallWork, video.afterCallWork);
+        Objects.equals(this.afterCallWork, video.afterCallWork) &&
+        Objects.equals(this.afterCallWorkRequired, video.afterCallWorkRequired);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, context, audioMuted, videoMuted, sharingScreen, peerCount, disconnectType, startAlertingTime, connectedTime, disconnectedTime, provider, peerId, msids, self, wrapup, afterCallWork);
+    return Objects.hash(state, id, context, audioMuted, videoMuted, sharingScreen, peerCount, disconnectType, startAlertingTime, connectedTime, disconnectedTime, provider, peerId, msids, self, wrapup, afterCallWork, afterCallWorkRequired);
   }
 
   @Override
@@ -490,6 +510,7 @@ public class Video  implements Serializable {
     sb.append("    self: ").append(toIndentedString(self)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
+    sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -22,7 +22,6 @@ import java.io.Serializable;
 
 public class AsyncConversationQuery  implements Serializable {
   
-  private String interval = null;
   private List<ConversationDetailQueryFilter> conversationFilters = new ArrayList<ConversationDetailQueryFilter>();
   private List<SegmentDetailQueryFilter> segmentFilters = new ArrayList<SegmentDetailQueryFilter>();
   private List<EvaluationDetailQueryFilter> evaluationFilters = new ArrayList<EvaluationDetailQueryFilter>();
@@ -100,26 +99,9 @@ public class AsyncConversationQuery  implements Serializable {
     }
   }
   private OrderByEnum orderBy = null;
+  private String interval = null;
   private Integer limit = null;
   private Boolean startOfDayIntervalMatching = null;
-
-  
-  /**
-   * Specifies the date and time range of data being queried. Results will include conversations that both started on a day touched by the interval AND either started, ended, or any activity during the interval. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
-   **/
-  public AsyncConversationQuery interval(String interval) {
-    this.interval = interval;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "Specifies the date and time range of data being queried. Results will include conversations that both started on a day touched by the interval AND either started, ended, or any activity during the interval. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
-  @JsonProperty("interval")
-  public String getInterval() {
-    return interval;
-  }
-  public void setInterval(String interval) {
-    this.interval = interval;
-  }
 
   
   /**
@@ -249,6 +231,24 @@ public class AsyncConversationQuery  implements Serializable {
 
   
   /**
+   * Specifies the date and time range of data being queried. Results will include all conversations that had activity during the interval. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+   **/
+  public AsyncConversationQuery interval(String interval) {
+    this.interval = interval;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Specifies the date and time range of data being queried. Results will include all conversations that had activity during the interval. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
+  @JsonProperty("interval")
+  public String getInterval() {
+    return interval;
+  }
+  public void setInterval(String interval) {
+    this.interval = interval;
+  }
+
+  
+  /**
    * Specify number of results to be returned
    **/
   public AsyncConversationQuery limit(Integer limit) {
@@ -294,21 +294,21 @@ public class AsyncConversationQuery  implements Serializable {
       return false;
     }
     AsyncConversationQuery asyncConversationQuery = (AsyncConversationQuery) o;
-    return Objects.equals(this.interval, asyncConversationQuery.interval) &&
-        Objects.equals(this.conversationFilters, asyncConversationQuery.conversationFilters) &&
+    return Objects.equals(this.conversationFilters, asyncConversationQuery.conversationFilters) &&
         Objects.equals(this.segmentFilters, asyncConversationQuery.segmentFilters) &&
         Objects.equals(this.evaluationFilters, asyncConversationQuery.evaluationFilters) &&
         Objects.equals(this.mediaEndpointStatFilters, asyncConversationQuery.mediaEndpointStatFilters) &&
         Objects.equals(this.surveyFilters, asyncConversationQuery.surveyFilters) &&
         Objects.equals(this.order, asyncConversationQuery.order) &&
         Objects.equals(this.orderBy, asyncConversationQuery.orderBy) &&
+        Objects.equals(this.interval, asyncConversationQuery.interval) &&
         Objects.equals(this.limit, asyncConversationQuery.limit) &&
         Objects.equals(this.startOfDayIntervalMatching, asyncConversationQuery.startOfDayIntervalMatching);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(interval, conversationFilters, segmentFilters, evaluationFilters, mediaEndpointStatFilters, surveyFilters, order, orderBy, limit, startOfDayIntervalMatching);
+    return Objects.hash(conversationFilters, segmentFilters, evaluationFilters, mediaEndpointStatFilters, surveyFilters, order, orderBy, interval, limit, startOfDayIntervalMatching);
   }
 
   @Override
@@ -316,7 +316,6 @@ public class AsyncConversationQuery  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class AsyncConversationQuery {\n");
     
-    sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    conversationFilters: ").append(toIndentedString(conversationFilters)).append("\n");
     sb.append("    segmentFilters: ").append(toIndentedString(segmentFilters)).append("\n");
     sb.append("    evaluationFilters: ").append(toIndentedString(evaluationFilters)).append("\n");
@@ -324,6 +323,7 @@ public class AsyncConversationQuery  implements Serializable {
     sb.append("    surveyFilters: ").append(toIndentedString(surveyFilters)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");
+    sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("    startOfDayIntervalMatching: ").append(toIndentedString(startOfDayIntervalMatching)).append("\n");
     sb.append("}");

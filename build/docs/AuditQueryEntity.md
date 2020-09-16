@@ -37,9 +37,12 @@ title: AuditQueryEntity
 | PROGRAM | &quot;Program&quot; |
 | SEGMENT | &quot;Segment&quot; |
 | OUTCOME | &quot;Outcome&quot; |
+| SESSIONTYPE | &quot;SessionType&quot; |
+| EVENTTYPE | &quot;EventType&quot; |
 | CLICKSTREAMSETTINGS | &quot;ClickstreamSettings&quot; |
 | SCHEDULE | &quot;Schedule&quot; |
 | TRIGGER | &quot;Trigger&quot; |
+| RESPONSE | &quot;Response&quot; |
 {: class="table table-striped"}
 
 

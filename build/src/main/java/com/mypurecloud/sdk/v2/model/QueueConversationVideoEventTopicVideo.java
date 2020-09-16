@@ -125,6 +125,7 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
   private List<String> msids = new ArrayList<String>();
   private QueueConversationVideoEventTopicWrapup wrapup = null;
   private QueueConversationVideoEventTopicAfterCallWork afterCallWork = null;
+  private Boolean afterCallWorkRequired = null;
   private Object additionalProperties = null;
 
   
@@ -402,6 +403,23 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
   
   /**
    **/
+  public QueueConversationVideoEventTopicVideo afterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("afterCallWorkRequired")
+  public Boolean getAfterCallWorkRequired() {
+    return afterCallWorkRequired;
+  }
+  public void setAfterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+  }
+
+  
+  /**
+   **/
   public QueueConversationVideoEventTopicVideo additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -443,12 +461,13 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
         Objects.equals(this.msids, queueConversationVideoEventTopicVideo.msids) &&
         Objects.equals(this.wrapup, queueConversationVideoEventTopicVideo.wrapup) &&
         Objects.equals(this.afterCallWork, queueConversationVideoEventTopicVideo.afterCallWork) &&
+        Objects.equals(this.afterCallWorkRequired, queueConversationVideoEventTopicVideo.afterCallWorkRequired) &&
         Objects.equals(this.additionalProperties, queueConversationVideoEventTopicVideo.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, self, id, context, audioMuted, videoMuted, sharingScreen, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, msids, wrapup, afterCallWork, additionalProperties);
+    return Objects.hash(state, self, id, context, audioMuted, videoMuted, sharingScreen, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, msids, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
   }
 
   @Override
@@ -472,6 +491,7 @@ public class QueueConversationVideoEventTopicVideo  implements Serializable {
     sb.append("    msids: ").append(toIndentedString(msids)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
+    sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

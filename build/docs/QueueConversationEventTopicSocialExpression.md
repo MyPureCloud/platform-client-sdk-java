@@ -25,6 +25,7 @@ title: QueueConversationEventTopicSocialExpression
 | **disconnectedTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **wrapup** | <!----><!---->[**QueueConversationEventTopicWrapup**](QueueConversationEventTopicWrapup.html)<!----> |  |  [optional] |
 | **afterCallWork** | <!----><!---->[**QueueConversationEventTopicAfterCallWork**](QueueConversationEventTopicAfterCallWork.html)<!----> |  |  [optional] |
+| **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

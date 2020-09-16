@@ -24,6 +24,7 @@ title: ConversationEventTopicVideo
 | **msids** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **wrapup** | <!----><!---->[**ConversationEventTopicWrapup**](ConversationEventTopicWrapup.html)<!----> |  |  [optional] |
 | **afterCallWork** | <!----><!---->[**ConversationEventTopicAfterCallWork**](ConversationEventTopicAfterCallWork.html)<!----> |  |  [optional] |
+| **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

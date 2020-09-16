@@ -125,6 +125,7 @@ public class ConversationEventTopicVideo  implements Serializable {
   private List<String> msids = new ArrayList<String>();
   private ConversationEventTopicWrapup wrapup = null;
   private ConversationEventTopicAfterCallWork afterCallWork = null;
+  private Boolean afterCallWorkRequired = null;
   private Object additionalProperties = null;
 
   
@@ -402,6 +403,23 @@ public class ConversationEventTopicVideo  implements Serializable {
   
   /**
    **/
+  public ConversationEventTopicVideo afterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("afterCallWorkRequired")
+  public Boolean getAfterCallWorkRequired() {
+    return afterCallWorkRequired;
+  }
+  public void setAfterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+  }
+
+  
+  /**
+   **/
   public ConversationEventTopicVideo additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -443,12 +461,13 @@ public class ConversationEventTopicVideo  implements Serializable {
         Objects.equals(this.msids, conversationEventTopicVideo.msids) &&
         Objects.equals(this.wrapup, conversationEventTopicVideo.wrapup) &&
         Objects.equals(this.afterCallWork, conversationEventTopicVideo.afterCallWork) &&
+        Objects.equals(this.afterCallWorkRequired, conversationEventTopicVideo.afterCallWorkRequired) &&
         Objects.equals(this.additionalProperties, conversationEventTopicVideo.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, self, id, context, audioMuted, videoMuted, sharingScreen, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, msids, wrapup, afterCallWork, additionalProperties);
+    return Objects.hash(state, self, id, context, audioMuted, videoMuted, sharingScreen, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, msids, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
   }
 
   @Override
@@ -472,6 +491,7 @@ public class ConversationEventTopicVideo  implements Serializable {
     sb.append("    msids: ").append(toIndentedString(msids)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
+    sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

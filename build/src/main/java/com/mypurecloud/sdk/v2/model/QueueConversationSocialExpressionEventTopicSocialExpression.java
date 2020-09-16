@@ -123,6 +123,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
   private Date disconnectedTime = null;
   private QueueConversationSocialExpressionEventTopicWrapup wrapup = null;
   private QueueConversationSocialExpressionEventTopicAfterCallWork afterCallWork = null;
+  private Boolean afterCallWorkRequired = null;
   private Object additionalProperties = null;
 
   
@@ -417,6 +418,23 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
   
   /**
    **/
+  public QueueConversationSocialExpressionEventTopicSocialExpression afterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("afterCallWorkRequired")
+  public Boolean getAfterCallWorkRequired() {
+    return afterCallWorkRequired;
+  }
+  public void setAfterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+  }
+
+  
+  /**
+   **/
   public QueueConversationSocialExpressionEventTopicSocialExpression additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -459,12 +477,13 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
         Objects.equals(this.disconnectedTime, queueConversationSocialExpressionEventTopicSocialExpression.disconnectedTime) &&
         Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicSocialExpression.wrapup) &&
         Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicSocialExpression.afterCallWork) &&
+        Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicSocialExpression.afterCallWorkRequired) &&
         Objects.equals(this.additionalProperties, queueConversationSocialExpressionEventTopicSocialExpression.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, wrapup, afterCallWork, additionalProperties);
+    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
   }
 
   @Override
@@ -489,6 +508,7 @@ public class QueueConversationSocialExpressionEventTopicSocialExpression  implem
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
+    sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

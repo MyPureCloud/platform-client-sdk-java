@@ -66,6 +66,7 @@ import com.mypurecloud.sdk.v2.model.AsyncConversationQuery;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.ConversationQuery;
+import com.mypurecloud.sdk.v2.model.ConversationUser;
 import com.mypurecloud.sdk.v2.model.CreateCallbackOnConversationCommand;
 import com.mypurecloud.sdk.v2.model.Digits;
 import com.mypurecloud.sdk.v2.model.TransferRequest;
@@ -192,6 +193,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationDetailsProper
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationAssignRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationDisconnectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantCallbacksRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantDigitsRequest;
@@ -8159,6 +8161,89 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AnalyticsConversationQueryResponse> response = (ApiResponse<AnalyticsConversationQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Attempts to manually assign a specified conversation to a specified agent.  Ignores bullseye ring, PAR score, skills, and languages.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param body Targeted user (required)
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String postConversationAssign(String conversationId, ConversationUser body) throws IOException, ApiException {
+    return  postConversationAssign(createPostConversationAssignRequest(conversationId, body));
+  }
+
+  /**
+   * Attempts to manually assign a specified conversation to a specified agent.  Ignores bullseye ring, PAR score, skills, and languages.
+   * 
+   * @param conversationId conversation ID (required)
+   * @param body Targeted user (required)
+   * @return String
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> postConversationAssignWithHttpInfo(String conversationId, ConversationUser body) throws IOException {
+    return postConversationAssign(createPostConversationAssignRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PostConversationAssignRequest createPostConversationAssignRequest(String conversationId, ConversationUser body) {
+    return PostConversationAssignRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Attempts to manually assign a specified conversation to a specified agent.  Ignores bullseye ring, PAR score, skills, and languages.
+   * 
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String postConversationAssign(PostConversationAssignRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Attempts to manually assign a specified conversation to a specified agent.  Ignores bullseye ring, PAR score, skills, and languages.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> postConversationAssign(ApiRequest<ConversationUser> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -212,6 +212,8 @@ public class CallBasic  implements Serializable {
   private Address other = null;
   private Wrapup wrapup = null;
   private AfterCallWork afterCallWork = null;
+  private Boolean afterCallWorkRequired = null;
+  private String agentAssistantId = null;
 
   
   /**
@@ -699,6 +701,42 @@ public class CallBasic  implements Serializable {
   }
 
   
+  /**
+   * Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
+   **/
+  public CallBasic afterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.")
+  @JsonProperty("afterCallWorkRequired")
+  public Boolean getAfterCallWorkRequired() {
+    return afterCallWorkRequired;
+  }
+  public void setAfterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+  }
+
+  
+  /**
+   * UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
+   **/
+  public CallBasic agentAssistantId(String agentAssistantId) {
+    this.agentAssistantId = agentAssistantId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.")
+  @JsonProperty("agentAssistantId")
+  public String getAgentAssistantId() {
+    return agentAssistantId;
+  }
+  public void setAgentAssistantId(String agentAssistantId) {
+    this.agentAssistantId = agentAssistantId;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -735,12 +773,14 @@ public class CallBasic  implements Serializable {
         Objects.equals(this.self, callBasic.self) &&
         Objects.equals(this.other, callBasic.other) &&
         Objects.equals(this.wrapup, callBasic.wrapup) &&
-        Objects.equals(this.afterCallWork, callBasic.afterCallWork);
+        Objects.equals(this.afterCallWork, callBasic.afterCallWork) &&
+        Objects.equals(this.afterCallWorkRequired, callBasic.afterCallWorkRequired) &&
+        Objects.equals(this.agentAssistantId, callBasic.agentAssistantId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, direction, recording, recordingState, muted, confined, held, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, startAlertingTime, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData, self, other, wrapup, afterCallWork);
+    return Objects.hash(state, id, direction, recording, recordingState, muted, confined, held, recordingId, segments, errorInfo, disconnectType, startHoldTime, documentId, startAlertingTime, connectedTime, disconnectedTime, disconnectReasons, faxStatus, provider, scriptId, peerId, uuiData, self, other, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId);
   }
 
   @Override
@@ -775,6 +815,8 @@ public class CallBasic  implements Serializable {
     sb.append("    other: ").append(toIndentedString(other)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
+    sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
+    sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

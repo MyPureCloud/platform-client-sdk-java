@@ -502,6 +502,7 @@ public class ViewFilter  implements Serializable {
     }
   }
   private List<RequestedRoutingTypesEnum> requestedRoutingTypes = new ArrayList<RequestedRoutingTypesEnum>();
+  private Boolean hasAgentAssistId = null;
 
   
   /**
@@ -1980,6 +1981,24 @@ public class ViewFilter  implements Serializable {
   }
 
   
+  /**
+   * Indicates filtering for agent assist id
+   **/
+  public ViewFilter hasAgentAssistId(Boolean hasAgentAssistId) {
+    this.hasAgentAssistId = hasAgentAssistId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates filtering for agent assist id")
+  @JsonProperty("hasAgentAssistId")
+  public Boolean getHasAgentAssistId() {
+    return hasAgentAssistId;
+  }
+  public void setHasAgentAssistId(Boolean hasAgentAssistId) {
+    this.hasAgentAssistId = hasAgentAssistId;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -2071,12 +2090,13 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.callbackNumberList, viewFilter.callbackNumberList) &&
         Objects.equals(this.callbackInterval, viewFilter.callbackInterval) &&
         Objects.equals(this.usedRoutingTypes, viewFilter.usedRoutingTypes) &&
-        Objects.equals(this.requestedRoutingTypes, viewFilter.requestedRoutingTypes);
+        Objects.equals(this.requestedRoutingTypes, viewFilter.requestedRoutingTypes) &&
+        Objects.equals(this.hasAgentAssistId, viewFilter.hasAgentAssistId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId);
   }
 
   @Override
@@ -2166,6 +2186,7 @@ public class ViewFilter  implements Serializable {
     sb.append("    callbackInterval: ").append(toIndentedString(callbackInterval)).append("\n");
     sb.append("    usedRoutingTypes: ").append(toIndentedString(usedRoutingTypes)).append("\n");
     sb.append("    requestedRoutingTypes: ").append(toIndentedString(requestedRoutingTypes)).append("\n");
+    sb.append("    hasAgentAssistId: ").append(toIndentedString(hasAgentAssistId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

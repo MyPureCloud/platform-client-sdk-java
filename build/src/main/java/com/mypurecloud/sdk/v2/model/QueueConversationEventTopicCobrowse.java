@@ -124,6 +124,7 @@ public class QueueConversationEventTopicCobrowse  implements Serializable {
   private Date disconnectedTime = null;
   private QueueConversationEventTopicWrapup wrapup = null;
   private QueueConversationEventTopicAfterCallWork afterCallWork = null;
+  private Boolean afterCallWorkRequired = null;
   private Object additionalProperties = null;
 
   
@@ -418,6 +419,23 @@ public class QueueConversationEventTopicCobrowse  implements Serializable {
   
   /**
    **/
+  public QueueConversationEventTopicCobrowse afterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("afterCallWorkRequired")
+  public Boolean getAfterCallWorkRequired() {
+    return afterCallWorkRequired;
+  }
+  public void setAfterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+  }
+
+  
+  /**
+   **/
   public QueueConversationEventTopicCobrowse additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -460,12 +478,13 @@ public class QueueConversationEventTopicCobrowse  implements Serializable {
         Objects.equals(this.disconnectedTime, queueConversationEventTopicCobrowse.disconnectedTime) &&
         Objects.equals(this.wrapup, queueConversationEventTopicCobrowse.wrapup) &&
         Objects.equals(this.afterCallWork, queueConversationEventTopicCobrowse.afterCallWork) &&
+        Objects.equals(this.afterCallWorkRequired, queueConversationEventTopicCobrowse.afterCallWorkRequired) &&
         Objects.equals(this.additionalProperties, queueConversationEventTopicCobrowse.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, disconnectType, id, self, roomId, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, provider, scriptId, peerId, providerEventTime, connectedTime, disconnectedTime, wrapup, afterCallWork, additionalProperties);
+    return Objects.hash(state, disconnectType, id, self, roomId, cobrowseSessionId, cobrowseRole, controlling, viewerUrl, provider, scriptId, peerId, providerEventTime, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
   }
 
   @Override
@@ -490,6 +509,7 @@ public class QueueConversationEventTopicCobrowse  implements Serializable {
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
+    sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

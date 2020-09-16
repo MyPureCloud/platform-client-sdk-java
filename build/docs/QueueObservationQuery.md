@@ -21,6 +21,7 @@ title: QueueObservationQuery
 | Name | Value |
 | ---- | ----- |
 | OACTIVEUSERS | &quot;oActiveUsers&quot; |
+| OALERTING | &quot;oAlerting&quot; |
 | OINTERACTING | &quot;oInteracting&quot; |
 | OMEMBERUSERS | &quot;oMemberUsers&quot; |
 | OOFFQUEUEUSERS | &quot;oOffQueueUsers&quot; |
@@ -38,6 +39,7 @@ title: QueueObservationQuery
 | Name | Value |
 | ---- | ----- |
 | OACTIVEUSERS | &quot;oActiveUsers&quot; |
+| OALERTING | &quot;oAlerting&quot; |
 | OINTERACTING | &quot;oInteracting&quot; |
 | OMEMBERUSERS | &quot;oMemberUsers&quot; |
 | OOFFQUEUEUSERS | &quot;oOffQueueUsers&quot; |

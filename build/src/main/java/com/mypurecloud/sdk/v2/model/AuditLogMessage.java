@@ -42,7 +42,8 @@ public class AuditLogMessage  implements Serializable {
     TOPICSDEFINITIONS("TopicsDefinitions"),
     PREDICTIVEENGAGEMENT("PredictiveEngagement"),
     WORKFORCEMANAGEMENT("WorkforceManagement"),
-    TRIGGERS("Triggers");
+    TRIGGERS("Triggers"),
+    RESPONSEMANAGEMENT("ResponseManagement");
 
     private String value;
 
@@ -151,9 +152,12 @@ public class AuditLogMessage  implements Serializable {
     PROGRAM("Program"),
     SEGMENT("Segment"),
     OUTCOME("Outcome"),
+    SESSIONTYPE("SessionType"),
+    EVENTTYPE("EventType"),
     CLICKSTREAMSETTINGS("ClickstreamSettings"),
     SCHEDULE("Schedule"),
-    TRIGGER("Trigger");
+    TRIGGER("Trigger"),
+    RESPONSE("Response");
 
     private String value;
 

@@ -139,6 +139,7 @@ public class GetWorkforcemanagementBusinessunitsRequest {
 	public enum featureValues { 
 		AGENTSCHEDULE("AgentSchedule"), 
 		AGENTTIMEOFFREQUEST("AgentTimeOffRequest"), 
+		COACHING("Coaching"), 
 		ACTIVITYCODES("ActivityCodes"), 
 		AGENTS("Agents"), 
 		BUACTIVITYCODES("BuActivityCodes"), 
@@ -157,6 +158,7 @@ public class GetWorkforcemanagementBusinessunitsRequest {
 		SHORTTERMFORECASTS("ShortTermForecasts"), 
 		BUSHORTTERMFORECASTS("BuShortTermForecasts"), 
 		TIMEOFFREQUESTS("TimeOffRequests"), 
+		WORKPLANROTATIONS("WorkPlanRotations"), 
 		WORKPLANS("WorkPlans");
 
 		private String value;

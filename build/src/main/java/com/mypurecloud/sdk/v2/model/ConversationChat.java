@@ -159,6 +159,7 @@ public class ConversationChat  implements Serializable {
   private JourneyContext journeyContext = null;
   private Wrapup wrapup = null;
   private AfterCallWork afterCallWork = null;
+  private Boolean afterCallWorkRequired = null;
 
   
   /**
@@ -503,6 +504,24 @@ public class ConversationChat  implements Serializable {
   }
 
   
+  /**
+   * Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
+   **/
+  public ConversationChat afterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.")
+  @JsonProperty("afterCallWorkRequired")
+  public Boolean getAfterCallWorkRequired() {
+    return afterCallWorkRequired;
+  }
+  public void setAfterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -531,12 +550,13 @@ public class ConversationChat  implements Serializable {
         Objects.equals(this.avatarImageUrl, conversationChat.avatarImageUrl) &&
         Objects.equals(this.journeyContext, conversationChat.journeyContext) &&
         Objects.equals(this.wrapup, conversationChat.wrapup) &&
-        Objects.equals(this.afterCallWork, conversationChat.afterCallWork);
+        Objects.equals(this.afterCallWork, conversationChat.afterCallWork) &&
+        Objects.equals(this.afterCallWorkRequired, conversationChat.afterCallWorkRequired);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, roomId, recordingId, segments, held, direction, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, scriptId, peerId, avatarImageUrl, journeyContext, wrapup, afterCallWork);
+    return Objects.hash(state, id, roomId, recordingId, segments, held, direction, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, scriptId, peerId, avatarImageUrl, journeyContext, wrapup, afterCallWork, afterCallWorkRequired);
   }
 
   @Override
@@ -563,6 +583,7 @@ public class ConversationChat  implements Serializable {
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
+    sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("}");
     return sb.toString();
   }

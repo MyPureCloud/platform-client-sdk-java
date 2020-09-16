@@ -122,6 +122,7 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
   private QueueConversationSocialExpressionEventTopicJourneyContext journeyContext = null;
   private QueueConversationSocialExpressionEventTopicWrapup wrapup = null;
   private QueueConversationSocialExpressionEventTopicAfterCallWork afterCallWork = null;
+  private Boolean afterCallWorkRequired = null;
   private Object additionalProperties = null;
 
   
@@ -382,6 +383,23 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
   
   /**
    **/
+  public QueueConversationSocialExpressionEventTopicChat afterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("afterCallWorkRequired")
+  public Boolean getAfterCallWorkRequired() {
+    return afterCallWorkRequired;
+  }
+  public void setAfterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+  }
+
+  
+  /**
+   **/
   public QueueConversationSocialExpressionEventTopicChat additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -422,12 +440,13 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
         Objects.equals(this.journeyContext, queueConversationSocialExpressionEventTopicChat.journeyContext) &&
         Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicChat.wrapup) &&
         Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicChat.afterCallWork) &&
+        Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicChat.afterCallWorkRequired) &&
         Objects.equals(this.additionalProperties, queueConversationSocialExpressionEventTopicChat.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, provider, scriptId, peerId, roomId, avatarImageUrl, held, disconnectType, startHoldTime, connectedTime, disconnectedTime, journeyContext, wrapup, afterCallWork, additionalProperties);
+    return Objects.hash(state, id, provider, scriptId, peerId, roomId, avatarImageUrl, held, disconnectType, startHoldTime, connectedTime, disconnectedTime, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
   }
 
   @Override
@@ -450,6 +469,7 @@ public class QueueConversationSocialExpressionEventTopicChat  implements Seriali
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
+    sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

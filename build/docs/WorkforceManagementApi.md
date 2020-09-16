@@ -1225,6 +1225,12 @@ Requires ANY permissions:
 * wfm:workPlan:delete
 * wfm:workPlan:edit
 * wfm:workPlan:view
+* wfm:workPlanRotation:add
+* wfm:workPlanRotation:delete
+* wfm:workPlanRotation:edit
+* wfm:workPlanRotation:view
+* coaching:appointment:add
+* coaching:appointment:edit
 
 ### Example
 
@@ -1568,7 +1574,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
-| **feature** | **String**|  | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlans 
+| **feature** | **String**|  | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlanRotations, WorkPlans 
 | **divisionId** | **String**|  | [optional] 
 {: class="table-striped"}
 
@@ -2713,7 +2719,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **feature** | **String**|  | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlans 
+| **feature** | **String**|  | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlanRotations, WorkPlans 
 | **divisionId** | **String**|  | [optional] 
 {: class="table-striped"}
 
@@ -2852,6 +2858,10 @@ Requires ANY permissions:
 * wfm:workPlan:delete
 * wfm:workPlan:edit
 * wfm:workPlan:view
+* wfm:workPlanRotation:add
+* wfm:workPlanRotation:delete
+* wfm:workPlanRotation:edit
+* wfm:workPlanRotation:view
 
 ### Example
 
@@ -3138,7 +3148,7 @@ try {
 
 
 
-> [WfmAgent](WfmAgent.html) getWorkforcemanagementManagementunitAgent(managementUnitId, agentId)
+> [WfmAgent](WfmAgent.html) getWorkforcemanagementManagementunitAgent(managementUnitId, agentId, excludeCapabilities)
 
 Get data for agent in the management unit
 
@@ -3174,8 +3184,9 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The id of the management unit, or 'mine' for the management unit of the logged-in user.
 String agentId = "agentId_example"; // String | The agent id
+Boolean excludeCapabilities = true; // Boolean | Excludes all capabilities of the agent such as queues, languages, and skills
 try {
-    WfmAgent result = apiInstance.getWorkforcemanagementManagementunitAgent(managementUnitId, agentId);
+    WfmAgent result = apiInstance.getWorkforcemanagementManagementunitAgent(managementUnitId, agentId, excludeCapabilities);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunitAgent");
@@ -3190,6 +3201,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **agentId** | **String**| The agent id | 
+| **excludeCapabilities** | **Boolean**| Excludes all capabilities of the agent such as queues, languages, and skills | [optional] 
 {: class="table-striped"}
 
 
@@ -3979,6 +3991,7 @@ Requires ANY permissions:
 * wfm:realtimeAdherence:view
 * wfm:schedule:view
 * wfm:timeOffRequest:view
+* wfm:workPlanRotation:view
 * wfm:workPlan:view
 
 ### Example
@@ -4447,6 +4460,7 @@ Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workpla
 
 Requires ANY permissions: 
 
+* wfm:workPlanRotation:view
 * wfm:workPlan:view
 * wfm:schedule:edit
 
@@ -4516,6 +4530,7 @@ Requires ANY permissions:
 * wfm:agent:view
 * wfm:publishedSchedule:view
 * wfm:schedule:view
+* wfm:workPlanRotation:view
 * wfm:workPlan:view
 
 ### Example
@@ -4626,7 +4641,7 @@ try {
 | **pageSize** | **Integer**|  | [optional] 
 | **pageNumber** | **Integer**|  | [optional] 
 | **expand** | **String**|  | [optional]<br />**Values**: details 
-| **feature** | **String**|  | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlans 
+| **feature** | **String**|  | [optional]<br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlanRotations, WorkPlans 
 | **divisionId** | **String**|  | [optional] 
 {: class="table-striped"}
 

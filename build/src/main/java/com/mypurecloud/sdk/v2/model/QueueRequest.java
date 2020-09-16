@@ -81,6 +81,8 @@ public class QueueRequest  implements Serializable {
   private DomainEntityRef queueFlow = null;
   private DomainEntityRef whisperPrompt = null;
   private Boolean autoAnswerOnly = null;
+  private Boolean enableTranscription = null;
+  private Boolean enableManualAssignment = null;
   private String callingPartyName = null;
   private String callingPartyNumber = null;
   private Map<String, Script> defaultScripts = null;
@@ -374,6 +376,42 @@ public class QueueRequest  implements Serializable {
 
   
   /**
+   * Indicates whether voice transcription is enabled for this queue.
+   **/
+  public QueueRequest enableTranscription(Boolean enableTranscription) {
+    this.enableTranscription = enableTranscription;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether voice transcription is enabled for this queue.")
+  @JsonProperty("enableTranscription")
+  public Boolean getEnableTranscription() {
+    return enableTranscription;
+  }
+  public void setEnableTranscription(Boolean enableTranscription) {
+    this.enableTranscription = enableTranscription;
+  }
+
+  
+  /**
+   * Indicates whether manual assignment is enabled for this queue.
+   **/
+  public QueueRequest enableManualAssignment(Boolean enableManualAssignment) {
+    this.enableManualAssignment = enableManualAssignment;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether manual assignment is enabled for this queue.")
+  @JsonProperty("enableManualAssignment")
+  public Boolean getEnableManualAssignment() {
+    return enableManualAssignment;
+  }
+  public void setEnableManualAssignment(Boolean enableManualAssignment) {
+    this.enableManualAssignment = enableManualAssignment;
+  }
+
+  
+  /**
    * The name to use for caller identification for outbound calls from this queue.
    **/
   public QueueRequest callingPartyName(String callingPartyName) {
@@ -496,6 +534,8 @@ public class QueueRequest  implements Serializable {
         Objects.equals(this.queueFlow, queueRequest.queueFlow) &&
         Objects.equals(this.whisperPrompt, queueRequest.whisperPrompt) &&
         Objects.equals(this.autoAnswerOnly, queueRequest.autoAnswerOnly) &&
+        Objects.equals(this.enableTranscription, queueRequest.enableTranscription) &&
+        Objects.equals(this.enableManualAssignment, queueRequest.enableManualAssignment) &&
         Objects.equals(this.callingPartyName, queueRequest.callingPartyName) &&
         Objects.equals(this.callingPartyNumber, queueRequest.callingPartyNumber) &&
         Objects.equals(this.defaultScripts, queueRequest.defaultScripts) &&
@@ -506,7 +546,7 @@ public class QueueRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisperPrompt, autoAnswerOnly, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisperPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, selfUri);
   }
 
   @Override
@@ -531,6 +571,8 @@ public class QueueRequest  implements Serializable {
     sb.append("    queueFlow: ").append(toIndentedString(queueFlow)).append("\n");
     sb.append("    whisperPrompt: ").append(toIndentedString(whisperPrompt)).append("\n");
     sb.append("    autoAnswerOnly: ").append(toIndentedString(autoAnswerOnly)).append("\n");
+    sb.append("    enableTranscription: ").append(toIndentedString(enableTranscription)).append("\n");
+    sb.append("    enableManualAssignment: ").append(toIndentedString(enableManualAssignment)).append("\n");
     sb.append("    callingPartyName: ").append(toIndentedString(callingPartyName)).append("\n");
     sb.append("    callingPartyNumber: ").append(toIndentedString(callingPartyNumber)).append("\n");
     sb.append("    defaultScripts: ").append(toIndentedString(defaultScripts)).append("\n");

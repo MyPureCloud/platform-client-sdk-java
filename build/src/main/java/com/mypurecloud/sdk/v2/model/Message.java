@@ -205,6 +205,7 @@ public class Message  implements Serializable {
   private List<MessageDetails> messages = new ArrayList<MessageDetails>();
   private Wrapup wrapup = null;
   private AfterCallWork afterCallWork = null;
+  private Boolean afterCallWorkRequired = null;
 
   
   /**
@@ -620,6 +621,24 @@ public class Message  implements Serializable {
   }
 
   
+  /**
+   * Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
+   **/
+  public Message afterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.")
+  @JsonProperty("afterCallWorkRequired")
+  public Boolean getAfterCallWorkRequired() {
+    return afterCallWorkRequired;
+  }
+  public void setAfterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -652,12 +671,13 @@ public class Message  implements Serializable {
         Objects.equals(this.fromAddress, message.fromAddress) &&
         Objects.equals(this.messages, message.messages) &&
         Objects.equals(this.wrapup, message.wrapup) &&
-        Objects.equals(this.afterCallWork, message.afterCallWork);
+        Objects.equals(this.afterCallWork, message.afterCallWork) &&
+        Objects.equals(this.afterCallWorkRequired, message.afterCallWorkRequired);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, held, segments, direction, recordingId, errorInfo, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, type, recipientCountry, recipientType, scriptId, peerId, toAddress, fromAddress, messages, wrapup, afterCallWork);
+    return Objects.hash(state, id, held, segments, direction, recordingId, errorInfo, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, type, recipientCountry, recipientType, scriptId, peerId, toAddress, fromAddress, messages, wrapup, afterCallWork, afterCallWorkRequired);
   }
 
   @Override
@@ -688,6 +708,7 @@ public class Message  implements Serializable {
     sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
+    sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("}");
     return sb.toString();
   }

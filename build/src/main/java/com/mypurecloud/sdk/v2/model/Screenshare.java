@@ -123,6 +123,7 @@ public class Screenshare  implements Serializable {
   private List<Segment> segments = new ArrayList<Segment>();
   private Wrapup wrapup = null;
   private AfterCallWork afterCallWork = null;
+  private Boolean afterCallWorkRequired = null;
 
   
   /**
@@ -377,6 +378,24 @@ public class Screenshare  implements Serializable {
   }
 
   
+  /**
+   * Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
+   **/
+  public Screenshare afterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.")
+  @JsonProperty("afterCallWorkRequired")
+  public Boolean getAfterCallWorkRequired() {
+    return afterCallWorkRequired;
+  }
+  public void setAfterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -400,12 +419,13 @@ public class Screenshare  implements Serializable {
         Objects.equals(this.peerId, screenshare.peerId) &&
         Objects.equals(this.segments, screenshare.segments) &&
         Objects.equals(this.wrapup, screenshare.wrapup) &&
-        Objects.equals(this.afterCallWork, screenshare.afterCallWork);
+        Objects.equals(this.afterCallWork, screenshare.afterCallWork) &&
+        Objects.equals(this.afterCallWorkRequired, screenshare.afterCallWorkRequired);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, context, sharing, peerCount, disconnectType, startAlertingTime, connectedTime, disconnectedTime, provider, peerId, segments, wrapup, afterCallWork);
+    return Objects.hash(state, id, context, sharing, peerCount, disconnectType, startAlertingTime, connectedTime, disconnectedTime, provider, peerId, segments, wrapup, afterCallWork, afterCallWorkRequired);
   }
 
   @Override
@@ -427,6 +447,7 @@ public class Screenshare  implements Serializable {
     sb.append("    segments: ").append(toIndentedString(segments)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
+    sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("}");
     return sb.toString();
   }

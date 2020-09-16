@@ -34,7 +34,8 @@ public class AuditRealtimeQueryRequest  implements Serializable {
     TOPICSDEFINITIONS("TopicsDefinitions"),
     PREDICTIVEENGAGEMENT("PredictiveEngagement"),
     WORKFORCEMANAGEMENT("WorkforceManagement"),
-    TRIGGERS("Triggers");
+    TRIGGERS("Triggers"),
+    RESPONSEMANAGEMENT("ResponseManagement");
 
     private String value;
 

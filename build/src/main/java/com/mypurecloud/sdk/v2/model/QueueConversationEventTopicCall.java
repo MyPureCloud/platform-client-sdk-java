@@ -208,6 +208,8 @@ public class QueueConversationEventTopicCall  implements Serializable {
   private String uuiData = null;
   private QueueConversationEventTopicWrapup wrapup = null;
   private QueueConversationEventTopicAfterCallWork afterCallWork = null;
+  private Boolean afterCallWorkRequired = null;
+  private String agentAssistantId = null;
   private Object additionalProperties = null;
 
   
@@ -621,6 +623,40 @@ public class QueueConversationEventTopicCall  implements Serializable {
   
   /**
    **/
+  public QueueConversationEventTopicCall afterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("afterCallWorkRequired")
+  public Boolean getAfterCallWorkRequired() {
+    return afterCallWorkRequired;
+  }
+  public void setAfterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+  }
+
+  
+  /**
+   **/
+  public QueueConversationEventTopicCall agentAssistantId(String agentAssistantId) {
+    this.agentAssistantId = agentAssistantId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("agentAssistantId")
+  public String getAgentAssistantId() {
+    return agentAssistantId;
+  }
+  public void setAgentAssistantId(String agentAssistantId) {
+    this.agentAssistantId = agentAssistantId;
+  }
+
+  
+  /**
+   **/
   public QueueConversationEventTopicCall additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -670,12 +706,14 @@ public class QueueConversationEventTopicCall  implements Serializable {
         Objects.equals(this.uuiData, queueConversationEventTopicCall.uuiData) &&
         Objects.equals(this.wrapup, queueConversationEventTopicCall.wrapup) &&
         Objects.equals(this.afterCallWork, queueConversationEventTopicCall.afterCallWork) &&
+        Objects.equals(this.afterCallWorkRequired, queueConversationEventTopicCall.afterCallWorkRequired) &&
+        Objects.equals(this.agentAssistantId, queueConversationEventTopicCall.agentAssistantId) &&
         Objects.equals(this.additionalProperties, queueConversationEventTopicCall.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, recording, recordingState, muted, confined, held, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, wrapup, afterCallWork, additionalProperties);
+    return Objects.hash(id, state, recording, recordingState, muted, confined, held, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, additionalProperties);
   }
 
   @Override
@@ -707,6 +745,8 @@ public class QueueConversationEventTopicCall  implements Serializable {
     sb.append("    uuiData: ").append(toIndentedString(uuiData)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
+    sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
+    sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

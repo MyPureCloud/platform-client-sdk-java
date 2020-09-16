@@ -123,6 +123,7 @@ public class QueueConversationEventTopicSocialExpression  implements Serializabl
   private Date disconnectedTime = null;
   private QueueConversationEventTopicWrapup wrapup = null;
   private QueueConversationEventTopicAfterCallWork afterCallWork = null;
+  private Boolean afterCallWorkRequired = null;
   private Object additionalProperties = null;
 
   
@@ -417,6 +418,23 @@ public class QueueConversationEventTopicSocialExpression  implements Serializabl
   
   /**
    **/
+  public QueueConversationEventTopicSocialExpression afterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("afterCallWorkRequired")
+  public Boolean getAfterCallWorkRequired() {
+    return afterCallWorkRequired;
+  }
+  public void setAfterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+  }
+
+  
+  /**
+   **/
   public QueueConversationEventTopicSocialExpression additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -459,12 +477,13 @@ public class QueueConversationEventTopicSocialExpression  implements Serializabl
         Objects.equals(this.disconnectedTime, queueConversationEventTopicSocialExpression.disconnectedTime) &&
         Objects.equals(this.wrapup, queueConversationEventTopicSocialExpression.wrapup) &&
         Objects.equals(this.afterCallWork, queueConversationEventTopicSocialExpression.afterCallWork) &&
+        Objects.equals(this.afterCallWorkRequired, queueConversationEventTopicSocialExpression.afterCallWorkRequired) &&
         Objects.equals(this.additionalProperties, queueConversationEventTopicSocialExpression.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, wrapup, afterCallWork, additionalProperties);
+    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, held, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
   }
 
   @Override
@@ -489,6 +508,7 @@ public class QueueConversationEventTopicSocialExpression  implements Serializabl
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
+    sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

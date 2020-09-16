@@ -128,6 +128,7 @@ public class SocialExpression  implements Serializable {
   private String peerId = null;
   private Wrapup wrapup = null;
   private AfterCallWork afterCallWork = null;
+  private Boolean afterCallWorkRequired = null;
 
   
   /**
@@ -472,6 +473,24 @@ public class SocialExpression  implements Serializable {
   }
 
   
+  /**
+   * Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
+   **/
+  public SocialExpression afterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.")
+  @JsonProperty("afterCallWorkRequired")
+  public Boolean getAfterCallWorkRequired() {
+    return afterCallWorkRequired;
+  }
+  public void setAfterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -500,12 +519,13 @@ public class SocialExpression  implements Serializable {
         Objects.equals(this.scriptId, socialExpression.scriptId) &&
         Objects.equals(this.peerId, socialExpression.peerId) &&
         Objects.equals(this.wrapup, socialExpression.wrapup) &&
-        Objects.equals(this.afterCallWork, socialExpression.afterCallWork);
+        Objects.equals(this.afterCallWork, socialExpression.afterCallWork) &&
+        Objects.equals(this.afterCallWorkRequired, socialExpression.afterCallWorkRequired);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, segments, held, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, scriptId, peerId, wrapup, afterCallWork);
+    return Objects.hash(state, id, socialMediaId, socialMediaHub, socialUserName, previewText, recordingId, segments, held, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, scriptId, peerId, wrapup, afterCallWork, afterCallWorkRequired);
   }
 
   @Override
@@ -532,6 +552,7 @@ public class SocialExpression  implements Serializable {
     sb.append("    peerId: ").append(toIndentedString(peerId)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
+    sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("}");
     return sb.toString();
   }

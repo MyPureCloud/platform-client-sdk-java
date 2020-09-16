@@ -8,9 +8,9 @@ import com.mypurecloud.sdk.v2.model.LanguageReference;
 import com.mypurecloud.sdk.v2.model.QueueReference;
 import com.mypurecloud.sdk.v2.model.RoutingSkillReference;
 import com.mypurecloud.sdk.v2.model.UserReference;
-import com.mypurecloud.sdk.v2.model.WfmTimeZone;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import com.mypurecloud.sdk.v2.model.WorkPlanReference;
+import com.mypurecloud.sdk.v2.model.WorkPlanRotationReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,13 +27,13 @@ public class WfmAgent  implements Serializable {
   private String id = null;
   private UserReference user = null;
   private WorkPlanReference workPlan = null;
-  private WfmTimeZone timeZone = null;
+  private WorkPlanRotationReference workPlanRotation = null;
   private Boolean acceptDirectShiftTrades = null;
-  private WfmVersionedEntityMetadata metadata = null;
   private List<QueueReference> queues = new ArrayList<QueueReference>();
   private List<LanguageReference> languages = new ArrayList<LanguageReference>();
   private List<RoutingSkillReference> skills = new ArrayList<RoutingSkillReference>();
   private Boolean schedulable = null;
+  private WfmVersionedEntityMetadata metadata = null;
   private String selfUri = null;
 
   
@@ -63,14 +63,14 @@ public class WfmAgent  implements Serializable {
 
   
   /**
-   * The work plan associated with this agent
+   * The work plan associated with this agent, if applicable
    **/
   public WfmAgent workPlan(WorkPlanReference workPlan) {
     this.workPlan = workPlan;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The work plan associated with this agent")
+  @ApiModelProperty(example = "null", value = "The work plan associated with this agent, if applicable")
   @JsonProperty("workPlan")
   public WorkPlanReference getWorkPlan() {
     return workPlan;
@@ -81,20 +81,20 @@ public class WfmAgent  implements Serializable {
 
   
   /**
-   * The time zone for this agent. Defaults to the time zone of the management unit to which the agent belongs
+   * The work plan rotation associated with this agent, if applicable
    **/
-  public WfmAgent timeZone(WfmTimeZone timeZone) {
-    this.timeZone = timeZone;
+  public WfmAgent workPlanRotation(WorkPlanRotationReference workPlanRotation) {
+    this.workPlanRotation = workPlanRotation;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The time zone for this agent. Defaults to the time zone of the management unit to which the agent belongs")
-  @JsonProperty("timeZone")
-  public WfmTimeZone getTimeZone() {
-    return timeZone;
+  @ApiModelProperty(example = "null", value = "The work plan rotation associated with this agent, if applicable")
+  @JsonProperty("workPlanRotation")
+  public WorkPlanRotationReference getWorkPlanRotation() {
+    return workPlanRotation;
   }
-  public void setTimeZone(WfmTimeZone timeZone) {
-    this.timeZone = timeZone;
+  public void setWorkPlanRotation(WorkPlanRotationReference workPlanRotation) {
+    this.workPlanRotation = workPlanRotation;
   }
 
   
@@ -117,32 +117,14 @@ public class WfmAgent  implements Serializable {
 
   
   /**
-   * Metadata for this agent
-   **/
-  public WfmAgent metadata(WfmVersionedEntityMetadata metadata) {
-    this.metadata = metadata;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Metadata for this agent")
-  @JsonProperty("metadata")
-  public WfmVersionedEntityMetadata getMetadata() {
-    return metadata;
-  }
-  public void setMetadata(WfmVersionedEntityMetadata metadata) {
-    this.metadata = metadata;
-  }
-
-  
-  /**
-   * List of queues to which the agent belongs and which are defined in the service goal groups in this management unit
+   * List of queues to which this agent is capable of handling
    **/
   public WfmAgent queues(List<QueueReference> queues) {
     this.queues = queues;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "List of queues to which the agent belongs and which are defined in the service goal groups in this management unit")
+  @ApiModelProperty(example = "null", value = "List of queues to which this agent is capable of handling")
   @JsonProperty("queues")
   public List<QueueReference> getQueues() {
     return queues;
@@ -153,14 +135,14 @@ public class WfmAgent  implements Serializable {
 
   
   /**
-   * The list of languages
+   * The list of languages this agent is capable of handling
    **/
   public WfmAgent languages(List<LanguageReference> languages) {
     this.languages = languages;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The list of languages")
+  @ApiModelProperty(example = "null", value = "The list of languages this agent is capable of handling")
   @JsonProperty("languages")
   public List<LanguageReference> getLanguages() {
     return languages;
@@ -171,14 +153,14 @@ public class WfmAgent  implements Serializable {
 
   
   /**
-   * The list of skills
+   * The list of skills this agent is capable of handling
    **/
   public WfmAgent skills(List<RoutingSkillReference> skills) {
     this.skills = skills;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The list of skills")
+  @ApiModelProperty(example = "null", value = "The list of skills this agent is capable of handling")
   @JsonProperty("skills")
   public List<RoutingSkillReference> getSkills() {
     return skills;
@@ -206,6 +188,24 @@ public class WfmAgent  implements Serializable {
   }
 
   
+  /**
+   * Metadata for this agent
+   **/
+  public WfmAgent metadata(WfmVersionedEntityMetadata metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Metadata for this agent")
+  @JsonProperty("metadata")
+  public WfmVersionedEntityMetadata getMetadata() {
+    return metadata;
+  }
+  public void setMetadata(WfmVersionedEntityMetadata metadata) {
+    this.metadata = metadata;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -226,19 +226,19 @@ public class WfmAgent  implements Serializable {
     return Objects.equals(this.id, wfmAgent.id) &&
         Objects.equals(this.user, wfmAgent.user) &&
         Objects.equals(this.workPlan, wfmAgent.workPlan) &&
-        Objects.equals(this.timeZone, wfmAgent.timeZone) &&
+        Objects.equals(this.workPlanRotation, wfmAgent.workPlanRotation) &&
         Objects.equals(this.acceptDirectShiftTrades, wfmAgent.acceptDirectShiftTrades) &&
-        Objects.equals(this.metadata, wfmAgent.metadata) &&
         Objects.equals(this.queues, wfmAgent.queues) &&
         Objects.equals(this.languages, wfmAgent.languages) &&
         Objects.equals(this.skills, wfmAgent.skills) &&
         Objects.equals(this.schedulable, wfmAgent.schedulable) &&
+        Objects.equals(this.metadata, wfmAgent.metadata) &&
         Objects.equals(this.selfUri, wfmAgent.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, user, workPlan, timeZone, acceptDirectShiftTrades, metadata, queues, languages, skills, schedulable, selfUri);
+    return Objects.hash(id, user, workPlan, workPlanRotation, acceptDirectShiftTrades, queues, languages, skills, schedulable, metadata, selfUri);
   }
 
   @Override
@@ -249,13 +249,13 @@ public class WfmAgent  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    workPlan: ").append(toIndentedString(workPlan)).append("\n");
-    sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
+    sb.append("    workPlanRotation: ").append(toIndentedString(workPlanRotation)).append("\n");
     sb.append("    acceptDirectShiftTrades: ").append(toIndentedString(acceptDirectShiftTrades)).append("\n");
-    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    queues: ").append(toIndentedString(queues)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    skills: ").append(toIndentedString(skills)).append("\n");
     sb.append("    schedulable: ").append(toIndentedString(schedulable)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

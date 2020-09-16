@@ -30,6 +30,7 @@ title: QueueConversationEventTopicCallback
 | **automatedCallbackConfigId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **wrapup** | <!----><!---->[**QueueConversationEventTopicWrapup**](QueueConversationEventTopicWrapup.html)<!----> |  |  [optional] |
 | **afterCallWork** | <!----><!---->[**QueueConversationEventTopicAfterCallWork**](QueueConversationEventTopicAfterCallWork.html)<!----> |  |  [optional] |
+| **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

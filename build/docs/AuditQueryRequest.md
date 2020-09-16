@@ -31,6 +31,7 @@ title: AuditQueryRequest
 | PREDICTIVEENGAGEMENT | &quot;PredictiveEngagement&quot; |
 | WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; |
 | TRIGGERS | &quot;Triggers&quot; |
+| RESPONSEMANAGEMENT | &quot;ResponseManagement&quot; |
 {: class="table table-striped"}
 
 

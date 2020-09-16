@@ -24,6 +24,7 @@ public class BuAgentScheduleRescheduleResponse  implements Serializable {
   private List<BuAgentScheduleShift> shifts = new ArrayList<BuAgentScheduleShift>();
   private List<BuFullDayTimeOffMarker> fullDayTimeOffMarkers = new ArrayList<BuFullDayTimeOffMarker>();
   private WorkPlanReference workPlan = null;
+  private List<WorkPlanReference> workPlansPerWeek = new ArrayList<WorkPlanReference>();
 
   
   /**
@@ -98,6 +99,24 @@ public class BuAgentScheduleRescheduleResponse  implements Serializable {
   }
 
   
+  /**
+   * The work plans per week for this user from the work plan rotation. Null values in the list denotes that user is not part of any work plan for that week
+   **/
+  public BuAgentScheduleRescheduleResponse workPlansPerWeek(List<WorkPlanReference> workPlansPerWeek) {
+    this.workPlansPerWeek = workPlansPerWeek;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The work plans per week for this user from the work plan rotation. Null values in the list denotes that user is not part of any work plan for that week")
+  @JsonProperty("workPlansPerWeek")
+  public List<WorkPlanReference> getWorkPlansPerWeek() {
+    return workPlansPerWeek;
+  }
+  public void setWorkPlansPerWeek(List<WorkPlanReference> workPlansPerWeek) {
+    this.workPlansPerWeek = workPlansPerWeek;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -111,12 +130,13 @@ public class BuAgentScheduleRescheduleResponse  implements Serializable {
     return Objects.equals(this.user, buAgentScheduleRescheduleResponse.user) &&
         Objects.equals(this.shifts, buAgentScheduleRescheduleResponse.shifts) &&
         Objects.equals(this.fullDayTimeOffMarkers, buAgentScheduleRescheduleResponse.fullDayTimeOffMarkers) &&
-        Objects.equals(this.workPlan, buAgentScheduleRescheduleResponse.workPlan);
+        Objects.equals(this.workPlan, buAgentScheduleRescheduleResponse.workPlan) &&
+        Objects.equals(this.workPlansPerWeek, buAgentScheduleRescheduleResponse.workPlansPerWeek);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(user, shifts, fullDayTimeOffMarkers, workPlan);
+    return Objects.hash(user, shifts, fullDayTimeOffMarkers, workPlan, workPlansPerWeek);
   }
 
   @Override
@@ -128,6 +148,7 @@ public class BuAgentScheduleRescheduleResponse  implements Serializable {
     sb.append("    shifts: ").append(toIndentedString(shifts)).append("\n");
     sb.append("    fullDayTimeOffMarkers: ").append(toIndentedString(fullDayTimeOffMarkers)).append("\n");
     sb.append("    workPlan: ").append(toIndentedString(workPlan)).append("\n");
+    sb.append("    workPlansPerWeek: ").append(toIndentedString(workPlansPerWeek)).append("\n");
     sb.append("}");
     return sb.toString();
   }

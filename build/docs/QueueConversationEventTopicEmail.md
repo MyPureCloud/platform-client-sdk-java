@@ -28,6 +28,7 @@ title: QueueConversationEventTopicEmail
 | **spam** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **wrapup** | <!----><!---->[**QueueConversationEventTopicWrapup**](QueueConversationEventTopicWrapup.html)<!----> |  |  [optional] |
 | **afterCallWork** | <!----><!---->[**QueueConversationEventTopicAfterCallWork**](QueueConversationEventTopicAfterCallWork.html)<!----> |  |  [optional] |
+| **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

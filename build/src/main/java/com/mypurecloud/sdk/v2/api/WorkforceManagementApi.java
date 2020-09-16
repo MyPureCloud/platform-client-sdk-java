@@ -3837,12 +3837,13 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param agentId The agent id (required)
+   * @param excludeCapabilities Excludes all capabilities of the agent such as queues, languages, and skills (optional)
    * @return WfmAgent
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WfmAgent getWorkforcemanagementManagementunitAgent(String managementUnitId, String agentId) throws IOException, ApiException {
-    return  getWorkforcemanagementManagementunitAgent(createGetWorkforcemanagementManagementunitAgentRequest(managementUnitId, agentId));
+  public WfmAgent getWorkforcemanagementManagementunitAgent(String managementUnitId, String agentId, Boolean excludeCapabilities) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitAgent(createGetWorkforcemanagementManagementunitAgentRequest(managementUnitId, agentId, excludeCapabilities));
   }
 
   /**
@@ -3850,18 +3851,21 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param agentId The agent id (required)
+   * @param excludeCapabilities Excludes all capabilities of the agent such as queues, languages, and skills (optional)
    * @return WfmAgent
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WfmAgent> getWorkforcemanagementManagementunitAgentWithHttpInfo(String managementUnitId, String agentId) throws IOException {
-    return getWorkforcemanagementManagementunitAgent(createGetWorkforcemanagementManagementunitAgentRequest(managementUnitId, agentId).withHttpInfo());
+  public ApiResponse<WfmAgent> getWorkforcemanagementManagementunitAgentWithHttpInfo(String managementUnitId, String agentId, Boolean excludeCapabilities) throws IOException {
+    return getWorkforcemanagementManagementunitAgent(createGetWorkforcemanagementManagementunitAgentRequest(managementUnitId, agentId, excludeCapabilities).withHttpInfo());
   }
 
-  private GetWorkforcemanagementManagementunitAgentRequest createGetWorkforcemanagementManagementunitAgentRequest(String managementUnitId, String agentId) {
+  private GetWorkforcemanagementManagementunitAgentRequest createGetWorkforcemanagementManagementunitAgentRequest(String managementUnitId, String agentId, Boolean excludeCapabilities) {
     return GetWorkforcemanagementManagementunitAgentRequest.builder()
             .withManagementUnitId(managementUnitId)
     
             .withAgentId(agentId)
+    
+            .withExcludeCapabilities(excludeCapabilities)
     
             .build();
   }

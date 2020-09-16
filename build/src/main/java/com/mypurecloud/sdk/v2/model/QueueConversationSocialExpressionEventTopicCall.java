@@ -208,6 +208,8 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
   private String uuiData = null;
   private QueueConversationSocialExpressionEventTopicWrapup wrapup = null;
   private QueueConversationSocialExpressionEventTopicAfterCallWork afterCallWork = null;
+  private Boolean afterCallWorkRequired = null;
+  private String agentAssistantId = null;
   private Object additionalProperties = null;
 
   
@@ -621,6 +623,40 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
   
   /**
    **/
+  public QueueConversationSocialExpressionEventTopicCall afterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("afterCallWorkRequired")
+  public Boolean getAfterCallWorkRequired() {
+    return afterCallWorkRequired;
+  }
+  public void setAfterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+  }
+
+  
+  /**
+   **/
+  public QueueConversationSocialExpressionEventTopicCall agentAssistantId(String agentAssistantId) {
+    this.agentAssistantId = agentAssistantId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("agentAssistantId")
+  public String getAgentAssistantId() {
+    return agentAssistantId;
+  }
+  public void setAgentAssistantId(String agentAssistantId) {
+    this.agentAssistantId = agentAssistantId;
+  }
+
+  
+  /**
+   **/
   public QueueConversationSocialExpressionEventTopicCall additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -670,12 +706,14 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
         Objects.equals(this.uuiData, queueConversationSocialExpressionEventTopicCall.uuiData) &&
         Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicCall.wrapup) &&
         Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicCall.afterCallWork) &&
+        Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicCall.afterCallWorkRequired) &&
+        Objects.equals(this.agentAssistantId, queueConversationSocialExpressionEventTopicCall.agentAssistantId) &&
         Objects.equals(this.additionalProperties, queueConversationSocialExpressionEventTopicCall.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, recording, recordingState, muted, confined, held, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, wrapup, afterCallWork, additionalProperties);
+    return Objects.hash(id, state, recording, recordingState, muted, confined, held, errorInfo, disconnectType, startHoldTime, direction, documentId, self, other, provider, scriptId, peerId, connectedTime, disconnectedTime, disconnectReasons, faxStatus, uuiData, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId, additionalProperties);
   }
 
   @Override
@@ -707,6 +745,8 @@ public class QueueConversationSocialExpressionEventTopicCall  implements Seriali
     sb.append("    uuiData: ").append(toIndentedString(uuiData)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
+    sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
+    sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

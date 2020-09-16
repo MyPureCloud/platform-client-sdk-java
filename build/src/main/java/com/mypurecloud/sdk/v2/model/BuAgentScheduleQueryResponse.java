@@ -25,6 +25,7 @@ public class BuAgentScheduleQueryResponse  implements Serializable {
   private List<BuAgentScheduleShift> shifts = new ArrayList<BuAgentScheduleShift>();
   private List<BuFullDayTimeOffMarker> fullDayTimeOffMarkers = new ArrayList<BuFullDayTimeOffMarker>();
   private WorkPlanReference workPlan = null;
+  private List<WorkPlanReference> workPlansPerWeek = new ArrayList<WorkPlanReference>();
   private WfmVersionedEntityMetadata metadata = null;
 
   
@@ -101,6 +102,24 @@ public class BuAgentScheduleQueryResponse  implements Serializable {
 
   
   /**
+   * The work plans per week for this user from the work plan rotation. Null values in the list denotes that user is not part of any work plan for that week
+   **/
+  public BuAgentScheduleQueryResponse workPlansPerWeek(List<WorkPlanReference> workPlansPerWeek) {
+    this.workPlansPerWeek = workPlansPerWeek;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The work plans per week for this user from the work plan rotation. Null values in the list denotes that user is not part of any work plan for that week")
+  @JsonProperty("workPlansPerWeek")
+  public List<WorkPlanReference> getWorkPlansPerWeek() {
+    return workPlansPerWeek;
+  }
+  public void setWorkPlansPerWeek(List<WorkPlanReference> workPlansPerWeek) {
+    this.workPlansPerWeek = workPlansPerWeek;
+  }
+
+  
+  /**
    * Versioned entity metadata for this agent schedule
    **/
   public BuAgentScheduleQueryResponse metadata(WfmVersionedEntityMetadata metadata) {
@@ -132,12 +151,13 @@ public class BuAgentScheduleQueryResponse  implements Serializable {
         Objects.equals(this.shifts, buAgentScheduleQueryResponse.shifts) &&
         Objects.equals(this.fullDayTimeOffMarkers, buAgentScheduleQueryResponse.fullDayTimeOffMarkers) &&
         Objects.equals(this.workPlan, buAgentScheduleQueryResponse.workPlan) &&
+        Objects.equals(this.workPlansPerWeek, buAgentScheduleQueryResponse.workPlansPerWeek) &&
         Objects.equals(this.metadata, buAgentScheduleQueryResponse.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(user, shifts, fullDayTimeOffMarkers, workPlan, metadata);
+    return Objects.hash(user, shifts, fullDayTimeOffMarkers, workPlan, workPlansPerWeek, metadata);
   }
 
   @Override
@@ -149,6 +169,7 @@ public class BuAgentScheduleQueryResponse  implements Serializable {
     sb.append("    shifts: ").append(toIndentedString(shifts)).append("\n");
     sb.append("    fullDayTimeOffMarkers: ").append(toIndentedString(fullDayTimeOffMarkers)).append("\n");
     sb.append("    workPlan: ").append(toIndentedString(workPlan)).append("\n");
+    sb.append("    workPlansPerWeek: ").append(toIndentedString(workPlansPerWeek)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -40,9 +40,12 @@ public class AuditQueryEntity  implements Serializable {
     PROGRAM("Program"),
     SEGMENT("Segment"),
     OUTCOME("Outcome"),
+    SESSIONTYPE("SessionType"),
+    EVENTTYPE("EventType"),
     CLICKSTREAMSETTINGS("ClickstreamSettings"),
     SCHEDULE("Schedule"),
-    TRIGGER("Trigger");
+    TRIGGER("Trigger"),
+    RESPONSE("Response");
 
     private String value;
 

@@ -24,6 +24,7 @@ public class QueueObservationQuery  implements Serializable {
    */
   public enum MetricsEnum {
     OACTIVEUSERS("oActiveUsers"),
+    OALERTING("oAlerting"),
     OINTERACTING("oInteracting"),
     OMEMBERUSERS("oMemberUsers"),
     OOFFQUEUEUSERS("oOffQueueUsers"),
@@ -64,6 +65,7 @@ public class QueueObservationQuery  implements Serializable {
    */
   public enum DetailMetricsEnum {
     OACTIVEUSERS("oActiveUsers"),
+    OALERTING("oAlerting"),
     OINTERACTING("oInteracting"),
     OMEMBERUSERS("oMemberUsers"),
     OOFFQUEUEUSERS("oOffQueueUsers"),

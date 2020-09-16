@@ -150,6 +150,20 @@ public class GetWorkforcemanagementManagementunitAgentRequest {
 	    return this;
 	} 
 	
+	private Boolean excludeCapabilities;
+	public Boolean getExcludeCapabilities() {
+		return this.excludeCapabilities;
+	}
+
+	public void setExcludeCapabilities(Boolean excludeCapabilities) {
+		this.excludeCapabilities = excludeCapabilities;
+	}
+
+	public GetWorkforcemanagementManagementunitAgentRequest withExcludeCapabilities(Boolean excludeCapabilities) {
+	    this.setExcludeCapabilities(excludeCapabilities);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -187,6 +201,8 @@ public class GetWorkforcemanagementManagementunitAgentRequest {
         
                 .withPathParameter("agentId", agentId)
         
+                .withQueryParameters("excludeCapabilities", "", excludeCapabilities)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -220,6 +236,11 @@ public class GetWorkforcemanagementManagementunitAgentRequest {
 		
 		public Builder withAgentId(String agentId) {
 			request.setAgentId(agentId);
+			return this;
+		}
+		
+		public Builder withExcludeCapabilities(Boolean excludeCapabilities) {
+			request.setExcludeCapabilities(excludeCapabilities);
 			return this;
 		}
 		

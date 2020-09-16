@@ -120,6 +120,7 @@ public class QueueConversationVideoEventTopicScreenshare  implements Serializabl
   private Date disconnectedTime = null;
   private QueueConversationVideoEventTopicWrapup wrapup = null;
   private QueueConversationVideoEventTopicAfterCallWork afterCallWork = null;
+  private Boolean afterCallWorkRequired = null;
   private Object additionalProperties = null;
 
   
@@ -346,6 +347,23 @@ public class QueueConversationVideoEventTopicScreenshare  implements Serializabl
   
   /**
    **/
+  public QueueConversationVideoEventTopicScreenshare afterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("afterCallWorkRequired")
+  public Boolean getAfterCallWorkRequired() {
+    return afterCallWorkRequired;
+  }
+  public void setAfterCallWorkRequired(Boolean afterCallWorkRequired) {
+    this.afterCallWorkRequired = afterCallWorkRequired;
+  }
+
+  
+  /**
+   **/
   public QueueConversationVideoEventTopicScreenshare additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -384,12 +402,13 @@ public class QueueConversationVideoEventTopicScreenshare  implements Serializabl
         Objects.equals(this.disconnectedTime, queueConversationVideoEventTopicScreenshare.disconnectedTime) &&
         Objects.equals(this.wrapup, queueConversationVideoEventTopicScreenshare.wrapup) &&
         Objects.equals(this.afterCallWork, queueConversationVideoEventTopicScreenshare.afterCallWork) &&
+        Objects.equals(this.afterCallWorkRequired, queueConversationVideoEventTopicScreenshare.afterCallWorkRequired) &&
         Objects.equals(this.additionalProperties, queueConversationVideoEventTopicScreenshare.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, self, id, context, sharing, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, wrapup, afterCallWork, additionalProperties);
+    return Objects.hash(state, self, id, context, sharing, provider, scriptId, peerId, disconnectType, connectedTime, disconnectedTime, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
   }
 
   @Override
@@ -410,6 +429,7 @@ public class QueueConversationVideoEventTopicScreenshare  implements Serializabl
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
+    sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

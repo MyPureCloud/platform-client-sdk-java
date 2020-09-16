@@ -25,6 +25,8 @@ title: Queue
 | **queueFlow** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The in-queue flow to use for conversations waiting in queue. |  [optional] |
 | **whisperPrompt** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The prompt used for whisper on the queue, if configured. |  [optional] |
 | **autoAnswerOnly** | <!----><!---->**Boolean**<!----> | Specifies whether the configured whisper should play for all ACD calls, or only for those which are auto-answered. |  [optional] |
+| **enableTranscription** | <!----><!---->**Boolean**<!----> | Indicates whether voice transcription is enabled for this queue. |  [optional] |
+| **enableManualAssignment** | <!----><!---->**Boolean**<!----> | Indicates whether manual assignment is enabled for this queue. |  [optional] |
 | **callingPartyName** | <!----><!---->**String**<!----> | The name to use for caller identification for outbound calls from this queue. |  [optional] |
 | **callingPartyNumber** | <!----><!---->**String**<!----> | The phone number to use for caller identification for outbound calls from this queue. |  [optional] |
 | **defaultScripts** | <!----><!---->[**Map&lt;String, Script&gt;**](Script.html)<!----> | The default script Ids for the communication types. |  [optional] |
