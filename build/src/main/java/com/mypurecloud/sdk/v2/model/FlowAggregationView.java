@@ -23,9 +23,11 @@ public class FlowAggregationView  implements Serializable {
   public enum TargetEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NFLOW("nFlow"),
+    NFLOWMILESTONE("nFlowMilestone"),
     NFLOWOUTCOME("nFlowOutcome"),
     NFLOWOUTCOMEFAILED("nFlowOutcomeFailed"),
     OFLOW("oFlow"),
+    OFLOWMILESTONE("oFlowMilestone"),
     TFLOW("tFlow"),
     TFLOWDISCONNECT("tFlowDisconnect"),
     TFLOWEXIT("tFlowExit"),

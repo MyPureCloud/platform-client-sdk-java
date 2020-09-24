@@ -49,6 +49,7 @@ title: FlowAggregationQuery
 | EXTERNALORGANIZATIONID | &quot;externalOrganizationId&quot; |
 | FLAGGEDREASON | &quot;flaggedReason&quot; |
 | FLOWID | &quot;flowId&quot; |
+| FLOWMILESTONEID | &quot;flowMilestoneId&quot; |
 | FLOWNAME | &quot;flowName&quot; |
 | FLOWOUTTYPE | &quot;flowOutType&quot; |
 | FLOWOUTCOME | &quot;flowOutcome&quot; |
@@ -108,9 +109,11 @@ title: FlowAggregationQuery
 | Name | Value |
 | ---- | ----- |
 | NFLOW | &quot;nFlow&quot; |
+| NFLOWMILESTONE | &quot;nFlowMilestone&quot; |
 | NFLOWOUTCOME | &quot;nFlowOutcome&quot; |
 | NFLOWOUTCOMEFAILED | &quot;nFlowOutcomeFailed&quot; |
 | OFLOW | &quot;oFlow&quot; |
+| OFLOWMILESTONE | &quot;oFlowMilestone&quot; |
 | TFLOW | &quot;tFlow&quot; |
 | TFLOWDISCONNECT | &quot;tFlowDisconnect&quot; |
 | TFLOWEXIT | &quot;tFlowExit&quot; |

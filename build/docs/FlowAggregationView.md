@@ -23,9 +23,11 @@ title: FlowAggregationView
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NFLOW | &quot;nFlow&quot; |
+| NFLOWMILESTONE | &quot;nFlowMilestone&quot; |
 | NFLOWOUTCOME | &quot;nFlowOutcome&quot; |
 | NFLOWOUTCOMEFAILED | &quot;nFlowOutcomeFailed&quot; |
 | OFLOW | &quot;oFlow&quot; |
+| OFLOWMILESTONE | &quot;oFlowMilestone&quot; |
 | TFLOW | &quot;tFlow&quot; |
 | TFLOWDISCONNECT | &quot;tFlowDisconnect&quot; |
 | TFLOWEXIT | &quot;tFlowExit&quot; |

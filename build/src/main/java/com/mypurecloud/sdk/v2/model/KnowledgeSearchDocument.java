@@ -29,7 +29,8 @@ public class KnowledgeSearchDocument  implements Serializable {
    */
   public enum LanguageCodeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    EN_US("en-US");
+    EN_US("en-US"),
+    DE_DE("de-DE");
 
     private String value;
 

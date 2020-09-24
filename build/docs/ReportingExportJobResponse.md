@@ -33,6 +33,7 @@ title: ReportingExportJobResponse
 | **hasCustomParticipantAttributes** | <!----><!---->**Boolean**<!----> | Indicates if custom participant attributes will be exported |  [optional] |
 | **recipientEmails** | <!----><!---->**List&lt;String&gt;**<!----> | The list of email recipients for the exports |  [optional] |
 | **emailStatuses** | <!---->[**Map&lt;String, String&gt;**](#InnerEnum)<!----> | The status of individual email addresses as a map |  [optional] |
+| **emailErrorDescription** | <!----><!---->**String**<!----> | The optional error message in case the export fail to email |  [optional] |
 | **enabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
@@ -136,6 +137,7 @@ title: ReportingExportJobResponse
 | REACHED_MAXIMUM_ATTEMPT_OF_RETRY | &quot;REACHED_MAXIMUM_ATTEMPT_OF_RETRY&quot; |
 | FAILED_LONG_RUNNING_EXPORT | &quot;FAILED_LONG_RUNNING_EXPORT&quot; |
 | TOO_MANY_REQUESTS_FROM_AN_ORGANIZATION | &quot;TOO_MANY_REQUESTS_FROM_AN_ORGANIZATION&quot; |
+| FAILED_AS_EXPORT_FILE_SIZE_IS_GREATER_THAN_10MB | &quot;FAILED_AS_EXPORT_FILE_SIZE_IS_GREATER_THAN_10MB&quot; |
 {: class="table table-striped"}
 
 

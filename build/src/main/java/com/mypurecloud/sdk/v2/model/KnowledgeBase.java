@@ -25,7 +25,8 @@ public class KnowledgeBase  implements Serializable {
    */
   public enum CoreLanguageEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    EN_US("en-US");
+    EN_US("en-US"),
+    DE_DE("de-DE");
 
     private String value;
 

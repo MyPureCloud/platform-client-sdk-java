@@ -22,6 +22,7 @@ import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Operation;
+import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.DependencyObjectEntityListing;
 import com.mypurecloud.sdk.v2.model.DependencyStatus;
 import com.mypurecloud.sdk.v2.model.ConsumedResourcesEntityListing;
@@ -58,6 +59,8 @@ import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
+import com.mypurecloud.sdk.v2.model.FlowMilestone;
+import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
 import com.mypurecloud.sdk.v2.model.FlowOutcome;
 import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
@@ -112,6 +115,7 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 		EMERGENCYGROUP("EMERGENCYGROUP"), 
 		FLOWACTION("FLOWACTION"), 
 		FLOWDATATYPE("FLOWDATATYPE"), 
+		FLOWMILESTONE("FLOWMILESTONE"), 
 		FLOWOUTCOME("FLOWOUTCOME"), 
 		GROUP("GROUP"), 
 		INBOUNDCALLFLOW("INBOUNDCALLFLOW"), 
@@ -213,6 +217,7 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 		EMERGENCYGROUP("EMERGENCYGROUP"), 
 		FLOWACTION("FLOWACTION"), 
 		FLOWDATATYPE("FLOWDATATYPE"), 
+		FLOWMILESTONE("FLOWMILESTONE"), 
 		FLOWOUTCOME("FLOWOUTCOME"), 
 		GROUP("GROUP"), 
 		INBOUNDCALLFLOW("INBOUNDCALLFLOW"), 

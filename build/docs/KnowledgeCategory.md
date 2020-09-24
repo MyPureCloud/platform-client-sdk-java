@@ -27,6 +27,7 @@ title: KnowledgeCategory
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | EN_US | &quot;en-US&quot; |
+| DE_DE | &quot;de-DE&quot; |
 {: class="table table-striped"}
 
 

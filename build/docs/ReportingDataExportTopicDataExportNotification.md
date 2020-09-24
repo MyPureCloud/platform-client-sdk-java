@@ -21,6 +21,8 @@ title: ReportingDataExportTopicDataExportNotification
 | **modifiedDateTime** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
 | **percentageComplete** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
 | **emailStatuses** | <!---->[**Map&lt;String, String&gt;**](#InnerEnum)<!----> |  |  [optional] |
+| **emailErrorDescription** | <!----><!---->**String**<!----> |  |  [optional] |
+| **scheduleExpression** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

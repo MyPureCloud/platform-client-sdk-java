@@ -50,6 +50,7 @@ public class FlowAggregationQuery  implements Serializable {
     EXTERNALORGANIZATIONID("externalOrganizationId"),
     FLAGGEDREASON("flaggedReason"),
     FLOWID("flowId"),
+    FLOWMILESTONEID("flowMilestoneId"),
     FLOWNAME("flowName"),
     FLOWOUTTYPE("flowOutType"),
     FLOWOUTCOME("flowOutcome"),
@@ -133,9 +134,11 @@ public class FlowAggregationQuery  implements Serializable {
    */
   public enum MetricsEnum {
     NFLOW("nFlow"),
+    NFLOWMILESTONE("nFlowMilestone"),
     NFLOWOUTCOME("nFlowOutcome"),
     NFLOWOUTCOMEFAILED("nFlowOutcomeFailed"),
     OFLOW("oFlow"),
+    OFLOWMILESTONE("oFlowMilestone"),
     TFLOW("tFlow"),
     TFLOWDISCONNECT("tFlowDisconnect"),
     TFLOWEXIT("tFlowExit"),

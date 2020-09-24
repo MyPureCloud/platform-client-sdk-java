@@ -193,7 +193,8 @@ public class ReportingExportJobResponse  implements Serializable {
     EXPORT_TYPE_NOT_IMPLEMENTED("EXPORT_TYPE_NOT_IMPLEMENTED"),
     REACHED_MAXIMUM_ATTEMPT_OF_RETRY("REACHED_MAXIMUM_ATTEMPT_OF_RETRY"),
     FAILED_LONG_RUNNING_EXPORT("FAILED_LONG_RUNNING_EXPORT"),
-    TOO_MANY_REQUESTS_FROM_AN_ORGANIZATION("TOO_MANY_REQUESTS_FROM_AN_ORGANIZATION");
+    TOO_MANY_REQUESTS_FROM_AN_ORGANIZATION("TOO_MANY_REQUESTS_FROM_AN_ORGANIZATION"),
+    FAILED_AS_EXPORT_FILE_SIZE_IS_GREATER_THAN_10MB("FAILED_AS_EXPORT_FILE_SIZE_IS_GREATER_THAN_10MB");
 
     private String value;
 
@@ -270,6 +271,7 @@ public class ReportingExportJobResponse  implements Serializable {
     }
   }
   private Map<String, String> emailStatuses = null;
+  private String emailErrorDescription = null;
   private Boolean enabled = null;
   private String selfUri = null;
 
@@ -713,6 +715,24 @@ public class ReportingExportJobResponse  implements Serializable {
 
   
   /**
+   * The optional error message in case the export fail to email
+   **/
+  public ReportingExportJobResponse emailErrorDescription(String emailErrorDescription) {
+    this.emailErrorDescription = emailErrorDescription;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The optional error message in case the export fail to email")
+  @JsonProperty("emailErrorDescription")
+  public String getEmailErrorDescription() {
+    return emailErrorDescription;
+  }
+  public void setEmailErrorDescription(String emailErrorDescription) {
+    this.emailErrorDescription = emailErrorDescription;
+  }
+
+  
+  /**
    **/
   public ReportingExportJobResponse enabled(Boolean enabled) {
     this.enabled = enabled;
@@ -771,13 +791,14 @@ public class ReportingExportJobResponse  implements Serializable {
         Objects.equals(this.hasCustomParticipantAttributes, reportingExportJobResponse.hasCustomParticipantAttributes) &&
         Objects.equals(this.recipientEmails, reportingExportJobResponse.recipientEmails) &&
         Objects.equals(this.emailStatuses, reportingExportJobResponse.emailStatuses) &&
+        Objects.equals(this.emailErrorDescription, reportingExportJobResponse.emailErrorDescription) &&
         Objects.equals(this.enabled, reportingExportJobResponse.enabled) &&
         Objects.equals(this.selfUri, reportingExportJobResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, runId, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, hasSplitFilters, excludeEmptyRows, hasSplitByMedia, selectedColumns, hasCustomParticipantAttributes, recipientEmails, emailStatuses, enabled, selfUri);
+    return Objects.hash(id, name, runId, status, timeZone, exportFormat, interval, downloadUrl, viewType, exportErrorMessagesType, period, filter, read, createdDateTime, modifiedDateTime, locale, percentageComplete, hasFormatDurations, hasSplitFilters, excludeEmptyRows, hasSplitByMedia, selectedColumns, hasCustomParticipantAttributes, recipientEmails, emailStatuses, emailErrorDescription, enabled, selfUri);
   }
 
   @Override
@@ -810,6 +831,7 @@ public class ReportingExportJobResponse  implements Serializable {
     sb.append("    hasCustomParticipantAttributes: ").append(toIndentedString(hasCustomParticipantAttributes)).append("\n");
     sb.append("    recipientEmails: ").append(toIndentedString(recipientEmails)).append("\n");
     sb.append("    emailStatuses: ").append(toIndentedString(emailStatuses)).append("\n");
+    sb.append("    emailErrorDescription: ").append(toIndentedString(emailErrorDescription)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

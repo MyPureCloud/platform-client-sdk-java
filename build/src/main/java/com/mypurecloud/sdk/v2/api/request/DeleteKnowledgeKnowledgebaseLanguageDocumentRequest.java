@@ -81,7 +81,8 @@ public class DeleteKnowledgeKnowledgebaseLanguageDocumentRequest {
 	} 
 
 	public enum languageCodeValues { 
-		EN_US("en-US");
+		EN_US("en-US"), 
+		DE_DE("de-DE");
 
 		private String value;
 

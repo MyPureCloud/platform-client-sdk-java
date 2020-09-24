@@ -12,6 +12,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Operation;
+import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.DependencyObjectEntityListing;
 import com.mypurecloud.sdk.v2.model.DependencyStatus;
 import com.mypurecloud.sdk.v2.model.ConsumedResourcesEntityListing;
@@ -48,6 +49,8 @@ import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
+import com.mypurecloud.sdk.v2.model.FlowMilestone;
+import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
 import com.mypurecloud.sdk.v2.model.FlowOutcome;
 import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
@@ -68,6 +71,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteFlowRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteFlowsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteFlowsDatatableRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteFlowsDatatableRowRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteFlowsMilestoneRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingBuildRequest;
 import com.mypurecloud.sdk.v2.api.request.GetArchitectDependencytrackingConsumedresourcesRequest;
@@ -111,6 +115,8 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsExecutionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestoneRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestonesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectDependencytrackingBuildRequest;
@@ -136,6 +142,7 @@ import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableImportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsDatatablesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsExecutionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowsMilestonesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectEmergencygroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PutArchitectIvrRequest;
@@ -147,6 +154,7 @@ import com.mypurecloud.sdk.v2.api.request.PutArchitectSystempromptResourceReques
 import com.mypurecloud.sdk.v2.api.request.PutFlowRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFlowsDatatableRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFlowsDatatableRowRequest;
+import com.mypurecloud.sdk.v2.api.request.PutFlowsMilestoneRequest;
 import com.mypurecloud.sdk.v2.api.request.PutFlowsOutcomeRequest;
 
 import java.io.IOException;
@@ -1181,6 +1189,85 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete a flow milestone.
+   * 
+   * @param milestoneId flow milestone ID (required)
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty deleteFlowsMilestone(String milestoneId) throws IOException, ApiException {
+    return  deleteFlowsMilestone(createDeleteFlowsMilestoneRequest(milestoneId));
+  }
+
+  /**
+   * Delete a flow milestone.
+   * 
+   * @param milestoneId flow milestone ID (required)
+   * @return Empty
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> deleteFlowsMilestoneWithHttpInfo(String milestoneId) throws IOException {
+    return deleteFlowsMilestone(createDeleteFlowsMilestoneRequest(milestoneId).withHttpInfo());
+  }
+
+  private DeleteFlowsMilestoneRequest createDeleteFlowsMilestoneRequest(String milestoneId) {
+    return DeleteFlowsMilestoneRequest.builder()
+            .withMilestoneId(milestoneId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a flow milestone.
+   * 
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty deleteFlowsMilestone(DeleteFlowsMilestoneRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Delete a flow milestone.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> deleteFlowsMilestone(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5156,6 +5243,192 @@ public class ArchitectApi {
 
   
   /**
+   * Get a flow milestone
+   * Returns a specified flow milestone
+   * @param milestoneId flow milestone ID (required)
+   * @return FlowMilestone
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowMilestone getFlowsMilestone(String milestoneId) throws IOException, ApiException {
+    return  getFlowsMilestone(createGetFlowsMilestoneRequest(milestoneId));
+  }
+
+  /**
+   * Get a flow milestone
+   * Returns a specified flow milestone
+   * @param milestoneId flow milestone ID (required)
+   * @return FlowMilestone
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowMilestone> getFlowsMilestoneWithHttpInfo(String milestoneId) throws IOException {
+    return getFlowsMilestone(createGetFlowsMilestoneRequest(milestoneId).withHttpInfo());
+  }
+
+  private GetFlowsMilestoneRequest createGetFlowsMilestoneRequest(String milestoneId) {
+    return GetFlowsMilestoneRequest.builder()
+            .withMilestoneId(milestoneId)
+    
+            .build();
+  }
+
+  /**
+   * Get a flow milestone
+   * Returns a specified flow milestone
+   * @param request The request object
+   * @return FlowMilestone
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowMilestone getFlowsMilestone(GetFlowsMilestoneRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowMilestone> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowMilestone>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a flow milestone
+   * Returns a specified flow milestone
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowMilestone> getFlowsMilestone(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowMilestone>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowMilestone> response = (ApiResponse<FlowMilestone>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowMilestone> response = (ApiResponse<FlowMilestone>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a pageable list of flow milestones, filtered by query parameters
+   * Multiple IDs can be specified, in which case all matching flow milestones will be returned, and no other parameters will be evaluated.
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to id)
+   * @param sortOrder Sort order (optional, default to asc)
+   * @param id ID (optional)
+   * @param name Name (optional)
+   * @param description Description (optional)
+   * @param nameOrDescription Name or description (optional)
+   * @return FlowMilestoneListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowMilestoneListing getFlowsMilestones(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription) throws IOException, ApiException {
+    return  getFlowsMilestones(createGetFlowsMilestonesRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription));
+  }
+
+  /**
+   * Get a pageable list of flow milestones, filtered by query parameters
+   * Multiple IDs can be specified, in which case all matching flow milestones will be returned, and no other parameters will be evaluated.
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to id)
+   * @param sortOrder Sort order (optional, default to asc)
+   * @param id ID (optional)
+   * @param name Name (optional)
+   * @param description Description (optional)
+   * @param nameOrDescription Name or description (optional)
+   * @return FlowMilestoneListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowMilestoneListing> getFlowsMilestonesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription) throws IOException {
+    return getFlowsMilestones(createGetFlowsMilestonesRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription).withHttpInfo());
+  }
+
+  private GetFlowsMilestonesRequest createGetFlowsMilestonesRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription) {
+    return GetFlowsMilestonesRequest.builder()
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .withSortBy(sortBy)
+    
+            .withSortOrder(sortOrder)
+    
+            .withId(id)
+    
+            .withName(name)
+    
+            .withDescription(description)
+    
+            .withNameOrDescription(nameOrDescription)
+    
+            .build();
+  }
+
+  /**
+   * Get a pageable list of flow milestones, filtered by query parameters
+   * Multiple IDs can be specified, in which case all matching flow milestones will be returned, and no other parameters will be evaluated.
+   * @param request The request object
+   * @return FlowMilestoneListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowMilestoneListing getFlowsMilestones(GetFlowsMilestonesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowMilestoneListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowMilestoneListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a pageable list of flow milestones, filtered by query parameters
+   * Multiple IDs can be specified, in which case all matching flow milestones will be returned, and no other parameters will be evaluated.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowMilestoneListing> getFlowsMilestones(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowMilestoneListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowMilestoneListing> response = (ApiResponse<FlowMilestoneListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowMilestoneListing> response = (ApiResponse<FlowMilestoneListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get a flow outcome
    * Returns a specified flow outcome
    * @param flowOutcomeId flow outcome ID (required)
@@ -7176,6 +7449,85 @@ public class ArchitectApi {
 
   
   /**
+   * Create a flow milestone
+   * 
+   * @param body  (optional)
+   * @return FlowMilestone
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowMilestone postFlowsMilestones(FlowMilestone body) throws IOException, ApiException {
+    return  postFlowsMilestones(createPostFlowsMilestonesRequest(body));
+  }
+
+  /**
+   * Create a flow milestone
+   * 
+   * @param body  (optional)
+   * @return FlowMilestone
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowMilestone> postFlowsMilestonesWithHttpInfo(FlowMilestone body) throws IOException {
+    return postFlowsMilestones(createPostFlowsMilestonesRequest(body).withHttpInfo());
+  }
+
+  private PostFlowsMilestonesRequest createPostFlowsMilestonesRequest(FlowMilestone body) {
+    return PostFlowsMilestonesRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a flow milestone
+   * 
+   * @param request The request object
+   * @return FlowMilestone
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowMilestone postFlowsMilestones(PostFlowsMilestonesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowMilestone> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowMilestone>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a flow milestone
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowMilestone> postFlowsMilestones(ApiRequest<FlowMilestone> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowMilestone>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowMilestone> response = (ApiResponse<FlowMilestone>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowMilestone> response = (ApiResponse<FlowMilestone>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Create a flow outcome
    * Asynchronous.  Notification topic: v2.flows.outcomes.{flowOutcomeId}
    * @param body  (optional)
@@ -8095,6 +8447,89 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Map<String, Object>> response = (ApiResponse<Map<String, Object>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Updates a flow milestone
+   * 
+   * @param milestoneId flow milestone ID (required)
+   * @param body  (optional)
+   * @return FlowMilestone
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowMilestone putFlowsMilestone(String milestoneId, FlowMilestone body) throws IOException, ApiException {
+    return  putFlowsMilestone(createPutFlowsMilestoneRequest(milestoneId, body));
+  }
+
+  /**
+   * Updates a flow milestone
+   * 
+   * @param milestoneId flow milestone ID (required)
+   * @param body  (optional)
+   * @return FlowMilestone
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowMilestone> putFlowsMilestoneWithHttpInfo(String milestoneId, FlowMilestone body) throws IOException {
+    return putFlowsMilestone(createPutFlowsMilestoneRequest(milestoneId, body).withHttpInfo());
+  }
+
+  private PutFlowsMilestoneRequest createPutFlowsMilestoneRequest(String milestoneId, FlowMilestone body) {
+    return PutFlowsMilestoneRequest.builder()
+            .withMilestoneId(milestoneId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Updates a flow milestone
+   * 
+   * @param request The request object
+   * @return FlowMilestone
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowMilestone putFlowsMilestone(PutFlowsMilestoneRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowMilestone> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowMilestone>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates a flow milestone
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowMilestone> putFlowsMilestone(ApiRequest<FlowMilestone> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowMilestone>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowMilestone> response = (ApiResponse<FlowMilestone>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowMilestone> response = (ApiResponse<FlowMilestone>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -59,6 +59,7 @@ title: ConversationDetailQueryPredicate
 | NCONSULTTRANSFERRED | &quot;nConsultTransferred&quot; |
 | NERROR | &quot;nError&quot; |
 | NFLOW | &quot;nFlow&quot; |
+| NFLOWMILESTONE | &quot;nFlowMilestone&quot; |
 | NFLOWOUTCOME | &quot;nFlowOutcome&quot; |
 | NFLOWOUTCOMEFAILED | &quot;nFlowOutcomeFailed&quot; |
 | NOFFERED | &quot;nOffered&quot; |
@@ -70,6 +71,7 @@ title: ConversationDetailQueryPredicate
 | NSTATETRANSITIONERROR | &quot;nStateTransitionError&quot; |
 | NTRANSFERRED | &quot;nTransferred&quot; |
 | OEXTERNALMEDIACOUNT | &quot;oExternalMediaCount&quot; |
+| OFLOWMILESTONE | &quot;oFlowMilestone&quot; |
 | OMEDIACOUNT | &quot;oMediaCount&quot; |
 | TABANDON | &quot;tAbandon&quot; |
 | TACD | &quot;tAcd&quot; |

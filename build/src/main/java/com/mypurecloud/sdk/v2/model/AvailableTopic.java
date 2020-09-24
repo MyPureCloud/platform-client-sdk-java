@@ -59,6 +59,7 @@ public class AvailableTopic  implements Serializable {
     }
   }
   private List<TransportsEnum> transports = new ArrayList<TransportsEnum>();
+  private List<String> publicApiTemplateUriPaths = new ArrayList<String>();
 
   
   /**
@@ -184,6 +185,23 @@ public class AvailableTopic  implements Serializable {
   }
 
   
+  /**
+   **/
+  public AvailableTopic publicApiTemplateUriPaths(List<String> publicApiTemplateUriPaths) {
+    this.publicApiTemplateUriPaths = publicApiTemplateUriPaths;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("publicApiTemplateUriPaths")
+  public List<String> getPublicApiTemplateUriPaths() {
+    return publicApiTemplateUriPaths;
+  }
+  public void setPublicApiTemplateUriPaths(List<String> publicApiTemplateUriPaths) {
+    this.publicApiTemplateUriPaths = publicApiTemplateUriPaths;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -200,12 +218,13 @@ public class AvailableTopic  implements Serializable {
         Objects.equals(this.schema, availableTopic.schema) &&
         Objects.equals(this.requiresCurrentUser, availableTopic.requiresCurrentUser) &&
         Objects.equals(this.requiresCurrentUserOrPermission, availableTopic.requiresCurrentUserOrPermission) &&
-        Objects.equals(this.transports, availableTopic.transports);
+        Objects.equals(this.transports, availableTopic.transports) &&
+        Objects.equals(this.publicApiTemplateUriPaths, availableTopic.publicApiTemplateUriPaths);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, id, requiresPermissions, schema, requiresCurrentUser, requiresCurrentUserOrPermission, transports);
+    return Objects.hash(description, id, requiresPermissions, schema, requiresCurrentUser, requiresCurrentUserOrPermission, transports, publicApiTemplateUriPaths);
   }
 
   @Override
@@ -220,6 +239,7 @@ public class AvailableTopic  implements Serializable {
     sb.append("    requiresCurrentUser: ").append(toIndentedString(requiresCurrentUser)).append("\n");
     sb.append("    requiresCurrentUserOrPermission: ").append(toIndentedString(requiresCurrentUserOrPermission)).append("\n");
     sb.append("    transports: ").append(toIndentedString(transports)).append("\n");
+    sb.append("    publicApiTemplateUriPaths: ").append(toIndentedString(publicApiTemplateUriPaths)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -45,6 +45,7 @@ title: DependencyObject
 | EMERGENCYGROUP | &quot;EMERGENCYGROUP&quot; |
 | FLOWACTION | &quot;FLOWACTION&quot; |
 | FLOWDATATYPE | &quot;FLOWDATATYPE&quot; |
+| FLOWMILESTONE | &quot;FLOWMILESTONE&quot; |
 | FLOWOUTCOME | &quot;FLOWOUTCOME&quot; |
 | GROUP | &quot;GROUP&quot; |
 | INBOUNDCALLFLOW | &quot;INBOUNDCALLFLOW&quot; |

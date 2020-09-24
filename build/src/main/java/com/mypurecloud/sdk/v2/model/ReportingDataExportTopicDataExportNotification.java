@@ -254,6 +254,8 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     }
   }
   private Map<String, String> emailStatuses = null;
+  private String emailErrorDescription = null;
+  private String scheduleExpression = null;
 
   
   /**
@@ -477,6 +479,40 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
   }
 
   
+  /**
+   **/
+  public ReportingDataExportTopicDataExportNotification emailErrorDescription(String emailErrorDescription) {
+    this.emailErrorDescription = emailErrorDescription;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("emailErrorDescription")
+  public String getEmailErrorDescription() {
+    return emailErrorDescription;
+  }
+  public void setEmailErrorDescription(String emailErrorDescription) {
+    this.emailErrorDescription = emailErrorDescription;
+  }
+
+  
+  /**
+   **/
+  public ReportingDataExportTopicDataExportNotification scheduleExpression(String scheduleExpression) {
+    this.scheduleExpression = scheduleExpression;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("scheduleExpression")
+  public String getScheduleExpression() {
+    return scheduleExpression;
+  }
+  public void setScheduleExpression(String scheduleExpression) {
+    this.scheduleExpression = scheduleExpression;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -499,12 +535,14 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
         Objects.equals(this.createdDateTime, reportingDataExportTopicDataExportNotification.createdDateTime) &&
         Objects.equals(this.modifiedDateTime, reportingDataExportTopicDataExportNotification.modifiedDateTime) &&
         Objects.equals(this.percentageComplete, reportingDataExportTopicDataExportNotification.percentageComplete) &&
-        Objects.equals(this.emailStatuses, reportingDataExportTopicDataExportNotification.emailStatuses);
+        Objects.equals(this.emailStatuses, reportingDataExportTopicDataExportNotification.emailStatuses) &&
+        Objects.equals(this.emailErrorDescription, reportingDataExportTopicDataExportNotification.emailErrorDescription) &&
+        Objects.equals(this.scheduleExpression, reportingDataExportTopicDataExportNotification.scheduleExpression);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, runId, name, status, exportFormat, downloadUrl, viewType, exportErrorMessagesType, read, createdDateTime, modifiedDateTime, percentageComplete, emailStatuses);
+    return Objects.hash(id, runId, name, status, exportFormat, downloadUrl, viewType, exportErrorMessagesType, read, createdDateTime, modifiedDateTime, percentageComplete, emailStatuses, emailErrorDescription, scheduleExpression);
   }
 
   @Override
@@ -525,6 +563,8 @@ public class ReportingDataExportTopicDataExportNotification  implements Serializ
     sb.append("    modifiedDateTime: ").append(toIndentedString(modifiedDateTime)).append("\n");
     sb.append("    percentageComplete: ").append(toIndentedString(percentageComplete)).append("\n");
     sb.append("    emailStatuses: ").append(toIndentedString(emailStatuses)).append("\n");
+    sb.append("    emailErrorDescription: ").append(toIndentedString(emailErrorDescription)).append("\n");
+    sb.append("    scheduleExpression: ").append(toIndentedString(scheduleExpression)).append("\n");
     sb.append("}");
     return sb.toString();
   }

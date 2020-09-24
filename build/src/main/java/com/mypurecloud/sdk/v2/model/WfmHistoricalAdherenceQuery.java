@@ -12,9 +12,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Query to request a historical adherence report from Workforce Management Service
+ * WfmHistoricalAdherenceQuery
  */
-@ApiModel(description = "Query to request a historical adherence report from Workforce Management Service")
 
 public class WfmHistoricalAdherenceQuery  implements Serializable {
   
@@ -22,6 +21,7 @@ public class WfmHistoricalAdherenceQuery  implements Serializable {
   private Date endDate = null;
   private String timeZone = null;
   private List<String> userIds = new ArrayList<String>();
+  private List<String> teamIds = new ArrayList<String>();
   private Boolean includeExceptions = null;
 
   
@@ -62,14 +62,14 @@ public class WfmHistoricalAdherenceQuery  implements Serializable {
 
   
   /**
-   * The time zone to use for returned results in olson format. If it is not set, the management unit time zone will be used to compute adherence
+   * The time zone to use for returned results in olson format. If it is not set, the business unit time zone will be used to compute adherence
    **/
   public WfmHistoricalAdherenceQuery timeZone(String timeZone) {
     this.timeZone = timeZone;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The time zone to use for returned results in olson format. If it is not set, the management unit time zone will be used to compute adherence")
+  @ApiModelProperty(example = "null", value = "The time zone to use for returned results in olson format. If it is not set, the business unit time zone will be used to compute adherence")
   @JsonProperty("timeZone")
   public String getTimeZone() {
     return timeZone;
@@ -80,20 +80,38 @@ public class WfmHistoricalAdherenceQuery  implements Serializable {
 
   
   /**
-   * The userIds to report on. If null or not set, adherence will be computed for all the users in management unit
+   * The userIds to report on. If null or not set, adherence will be computed for all the users in management unit or requested teamIds. Note: Only one of [teamIds, userIds] can be requested
    **/
   public WfmHistoricalAdherenceQuery userIds(List<String> userIds) {
     this.userIds = userIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The userIds to report on. If null or not set, adherence will be computed for all the users in management unit")
+  @ApiModelProperty(example = "null", value = "The userIds to report on. If null or not set, adherence will be computed for all the users in management unit or requested teamIds. Note: Only one of [teamIds, userIds] can be requested")
   @JsonProperty("userIds")
   public List<String> getUserIds() {
     return userIds;
   }
   public void setUserIds(List<String> userIds) {
     this.userIds = userIds;
+  }
+
+  
+  /**
+   * The teamIds to report on. If null or not set, adherence will be computed for requested users if applicable or otherwise all users in the management unit. Note: Only one of [teamIds, userIds] can be requested
+   **/
+  public WfmHistoricalAdherenceQuery teamIds(List<String> teamIds) {
+    this.teamIds = teamIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The teamIds to report on. If null or not set, adherence will be computed for requested users if applicable or otherwise all users in the management unit. Note: Only one of [teamIds, userIds] can be requested")
+  @JsonProperty("teamIds")
+  public List<String> getTeamIds() {
+    return teamIds;
+  }
+  public void setTeamIds(List<String> teamIds) {
+    this.teamIds = teamIds;
   }
 
   
@@ -129,12 +147,13 @@ public class WfmHistoricalAdherenceQuery  implements Serializable {
         Objects.equals(this.endDate, wfmHistoricalAdherenceQuery.endDate) &&
         Objects.equals(this.timeZone, wfmHistoricalAdherenceQuery.timeZone) &&
         Objects.equals(this.userIds, wfmHistoricalAdherenceQuery.userIds) &&
+        Objects.equals(this.teamIds, wfmHistoricalAdherenceQuery.teamIds) &&
         Objects.equals(this.includeExceptions, wfmHistoricalAdherenceQuery.includeExceptions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startDate, endDate, timeZone, userIds, includeExceptions);
+    return Objects.hash(startDate, endDate, timeZone, userIds, teamIds, includeExceptions);
   }
 
   @Override
@@ -146,6 +165,7 @@ public class WfmHistoricalAdherenceQuery  implements Serializable {
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");
+    sb.append("    teamIds: ").append(toIndentedString(teamIds)).append("\n");
     sb.append("    includeExceptions: ").append(toIndentedString(includeExceptions)).append("\n");
     sb.append("}");
     return sb.toString();
