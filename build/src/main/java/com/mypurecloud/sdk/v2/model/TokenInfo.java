@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.NamedEntity;
 import com.mypurecloud.sdk.v2.model.OrgOAuthClient;
+import com.mypurecloud.sdk.v2.model.TokenInfoClonedUser;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class TokenInfo  implements Serializable {
   private NamedEntity organization = null;
   private NamedEntity homeOrganization = null;
   private List<String> authorizedScope = new ArrayList<String>();
+  private TokenInfoClonedUser clonedUser = null;
   private OrgOAuthClient oAuthClient = null;
 
   
@@ -79,6 +81,24 @@ public class TokenInfo  implements Serializable {
 
   
   /**
+   * Only present when a user is a clone of trustee user in the trustor org.
+   **/
+  public TokenInfo clonedUser(TokenInfoClonedUser clonedUser) {
+    this.clonedUser = clonedUser;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Only present when a user is a clone of trustee user in the trustor org.")
+  @JsonProperty("clonedUser")
+  public TokenInfoClonedUser getClonedUser() {
+    return clonedUser;
+  }
+  public void setClonedUser(TokenInfoClonedUser clonedUser) {
+    this.clonedUser = clonedUser;
+  }
+
+  
+  /**
    **/
   public TokenInfo oAuthClient(OrgOAuthClient oAuthClient) {
     this.oAuthClient = oAuthClient;
@@ -108,12 +128,13 @@ public class TokenInfo  implements Serializable {
     return Objects.equals(this.organization, tokenInfo.organization) &&
         Objects.equals(this.homeOrganization, tokenInfo.homeOrganization) &&
         Objects.equals(this.authorizedScope, tokenInfo.authorizedScope) &&
+        Objects.equals(this.clonedUser, tokenInfo.clonedUser) &&
         Objects.equals(this.oAuthClient, tokenInfo.oAuthClient);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(organization, homeOrganization, authorizedScope, oAuthClient);
+    return Objects.hash(organization, homeOrganization, authorizedScope, clonedUser, oAuthClient);
   }
 
   @Override
@@ -124,6 +145,7 @@ public class TokenInfo  implements Serializable {
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
     sb.append("    homeOrganization: ").append(toIndentedString(homeOrganization)).append("\n");
     sb.append("    authorizedScope: ").append(toIndentedString(authorizedScope)).append("\n");
+    sb.append("    clonedUser: ").append(toIndentedString(clonedUser)).append("\n");
     sb.append("    oAuthClient: ").append(toIndentedString(oAuthClient)).append("\n");
     sb.append("}");
     return sb.toString();

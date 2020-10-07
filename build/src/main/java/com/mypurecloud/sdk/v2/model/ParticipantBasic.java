@@ -98,6 +98,7 @@ public class ParticipantBasic  implements Serializable {
   private ConversationRoutingData conversationRoutingData = null;
   private Integer alertingTimeoutMs = null;
   private String monitoredParticipantId = null;
+  private String coachedParticipantId = null;
   private Map<String, String> attributes = null;
   private List<CallBasic> calls = new ArrayList<CallBasic>();
   private List<CallbackBasic> callbacks = new ArrayList<CallbackBasic>();
@@ -709,6 +710,24 @@ public class ParticipantBasic  implements Serializable {
 
   
   /**
+   * If this participant is a coach, then this will be the id of the participant that is being coached.
+   **/
+  public ParticipantBasic coachedParticipantId(String coachedParticipantId) {
+    this.coachedParticipantId = coachedParticipantId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If this participant is a coach, then this will be the id of the participant that is being coached.")
+  @JsonProperty("coachedParticipantId")
+  public String getCoachedParticipantId() {
+    return coachedParticipantId;
+  }
+  public void setCoachedParticipantId(String coachedParticipantId) {
+    this.coachedParticipantId = coachedParticipantId;
+  }
+
+  
+  /**
    * Additional participant attributes
    **/
   public ParticipantBasic attributes(Map<String, String> attributes) {
@@ -1007,6 +1026,7 @@ public class ParticipantBasic  implements Serializable {
         Objects.equals(this.conversationRoutingData, participantBasic.conversationRoutingData) &&
         Objects.equals(this.alertingTimeoutMs, participantBasic.alertingTimeoutMs) &&
         Objects.equals(this.monitoredParticipantId, participantBasic.monitoredParticipantId) &&
+        Objects.equals(this.coachedParticipantId, participantBasic.coachedParticipantId) &&
         Objects.equals(this.attributes, participantBasic.attributes) &&
         Objects.equals(this.calls, participantBasic.calls) &&
         Objects.equals(this.callbacks, participantBasic.callbacks) &&
@@ -1026,7 +1046,7 @@ public class ParticipantBasic  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalOrganizationId, queueId, groupId, teamId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, evaluations, screenRecordingState, flaggedReason, startAcwTime, endAcwTime);
+    return Objects.hash(id, startTime, endTime, connectedTime, name, userUri, userId, externalContactId, externalOrganizationId, queueId, groupId, teamId, queueName, purpose, participantType, consultParticipantId, address, ani, aniName, dnis, locale, wrapupRequired, wrapupPrompt, wrapupTimeoutMs, wrapupSkipped, wrapup, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, evaluations, screenRecordingState, flaggedReason, startAcwTime, endAcwTime);
   }
 
   @Override
@@ -1063,6 +1083,7 @@ public class ParticipantBasic  implements Serializable {
     sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
     sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    monitoredParticipantId: ").append(toIndentedString(monitoredParticipantId)).append("\n");
+    sb.append("    coachedParticipantId: ").append(toIndentedString(coachedParticipantId)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    calls: ").append(toIndentedString(calls)).append("\n");
     sb.append("    callbacks: ").append(toIndentedString(callbacks)).append("\n");

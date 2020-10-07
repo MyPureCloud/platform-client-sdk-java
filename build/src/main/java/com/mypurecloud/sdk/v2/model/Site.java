@@ -81,6 +81,7 @@ public class Site  implements Serializable {
   private LocationDefinition location = null;
   private Boolean managed = null;
   private NTPSettings ntpSettings = null;
+  private Boolean coreSite = null;
   private String selfUri = null;
 
   
@@ -450,6 +451,13 @@ public class Site  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The core site")
+  @JsonProperty("coreSite")
+  public Boolean getCoreSite() {
+    return coreSite;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -489,12 +497,13 @@ public class Site  implements Serializable {
         Objects.equals(this.location, site.location) &&
         Objects.equals(this.managed, site.managed) &&
         Objects.equals(this.ntpSettings, site.ntpSettings) &&
+        Objects.equals(this.coreSite, site.coreSite) &&
         Objects.equals(this.selfUri, site.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, primarySites, secondarySites, primaryEdges, secondaryEdges, addresses, edges, edgeAutoUpdateConfig, mediaRegionsUseLatencyBased, location, managed, ntpSettings, selfUri);
+    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, primarySites, secondarySites, primaryEdges, secondaryEdges, addresses, edges, edgeAutoUpdateConfig, mediaRegionsUseLatencyBased, location, managed, ntpSettings, coreSite, selfUri);
   }
 
   @Override
@@ -524,6 +533,7 @@ public class Site  implements Serializable {
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("    managed: ").append(toIndentedString(managed)).append("\n");
     sb.append("    ntpSettings: ").append(toIndentedString(ntpSettings)).append("\n");
+    sb.append("    coreSite: ").append(toIndentedString(coreSite)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

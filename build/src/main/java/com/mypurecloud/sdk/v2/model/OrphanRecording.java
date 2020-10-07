@@ -176,6 +176,7 @@ public class OrphanRecording  implements Serializable {
     }
   }
   private OrphanStatusEnum orphanStatus = null;
+  private String sourceOrphaningId = null;
   private String selfUri = null;
 
   
@@ -359,6 +360,24 @@ public class OrphanRecording  implements Serializable {
   }
 
   
+  /**
+   * An identifier used during recovery operations by the supplying hybrid platform to track back and determine which interaction this recording is associated with
+   **/
+  public OrphanRecording sourceOrphaningId(String sourceOrphaningId) {
+    this.sourceOrphaningId = sourceOrphaningId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "An identifier used during recovery operations by the supplying hybrid platform to track back and determine which interaction this recording is associated with")
+  @JsonProperty("sourceOrphaningId")
+  public String getSourceOrphaningId() {
+    return sourceOrphaningId;
+  }
+  public void setSourceOrphaningId(String sourceOrphaningId) {
+    this.sourceOrphaningId = sourceOrphaningId;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -387,12 +406,13 @@ public class OrphanRecording  implements Serializable {
         Objects.equals(this.providerEndpoint, orphanRecording.providerEndpoint) &&
         Objects.equals(this.recording, orphanRecording.recording) &&
         Objects.equals(this.orphanStatus, orphanRecording.orphanStatus) &&
+        Objects.equals(this.sourceOrphaningId, orphanRecording.sourceOrphaningId) &&
         Objects.equals(this.selfUri, orphanRecording.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, createdTime, recoveredTime, providerType, mediaSizeBytes, mediaType, fileState, providerEndpoint, recording, orphanStatus, selfUri);
+    return Objects.hash(id, name, createdTime, recoveredTime, providerType, mediaSizeBytes, mediaType, fileState, providerEndpoint, recording, orphanStatus, sourceOrphaningId, selfUri);
   }
 
   @Override
@@ -411,6 +431,7 @@ public class OrphanRecording  implements Serializable {
     sb.append("    providerEndpoint: ").append(toIndentedString(providerEndpoint)).append("\n");
     sb.append("    recording: ").append(toIndentedString(recording)).append("\n");
     sb.append("    orphanStatus: ").append(toIndentedString(orphanStatus)).append("\n");
+    sb.append("    sourceOrphaningId: ").append(toIndentedString(sourceOrphaningId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

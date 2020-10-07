@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAnalyticsConversationsDetails**](AnalyticsApi.html#getAnalyticsConversationsDetails) | Gets multiple conversations by id |
 | [**getAnalyticsConversationsDetailsJob**](AnalyticsApi.html#getAnalyticsConversationsDetailsJob) | Get status for async query for conversation details |
 | [**getAnalyticsConversationsDetailsJobResults**](AnalyticsApi.html#getAnalyticsConversationsDetailsJobResults) | Fetch a page of results for an async query |
+| [**getAnalyticsConversationsDetailsJobsAvailability**](AnalyticsApi.html#getAnalyticsConversationsDetailsJobsAvailability) | Lookup the datalake availability date and time |
 | [**getAnalyticsReportingExports**](AnalyticsApi.html#getAnalyticsReportingExports) | Get all view export requests for a user |
 | [**getAnalyticsReportingExportsMetadata**](AnalyticsApi.html#getAnalyticsReportingExportsMetadata) | Get all export metadata |
 | [**getAnalyticsReportingMetadata**](AnalyticsApi.html#getAnalyticsReportingMetadata) | Get list of reporting metadata. |
@@ -27,6 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAnalyticsReportingTimeperiods**](AnalyticsApi.html#getAnalyticsReportingTimeperiods) | Get a list of report time periods. |
 | [**getAnalyticsUsersDetailsJob**](AnalyticsApi.html#getAnalyticsUsersDetailsJob) | Get status for async query for user details |
 | [**getAnalyticsUsersDetailsJobResults**](AnalyticsApi.html#getAnalyticsUsersDetailsJobResults) | Fetch a page of results for an async query |
+| [**getAnalyticsUsersDetailsJobsAvailability**](AnalyticsApi.html#getAnalyticsUsersDetailsJobsAvailability) | Lookup the datalake availability date and time |
 | [**postAnalyticsConversationDetailsProperties**](AnalyticsApi.html#postAnalyticsConversationDetailsProperties) | Index conversation properties |
 | [**postAnalyticsConversationsAggregatesQuery**](AnalyticsApi.html#postAnalyticsConversationsAggregatesQuery) | Query for conversation aggregates |
 | [**postAnalyticsConversationsDetailsJobs**](AnalyticsApi.html#postAnalyticsConversationsDetailsJobs) | Query for conversation details asynchronously |
@@ -40,6 +42,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsReportingScheduleRunreport**](AnalyticsApi.html#postAnalyticsReportingScheduleRunreport) | Place a scheduled report immediately into the reporting queue |
 | [**postAnalyticsReportingSchedules**](AnalyticsApi.html#postAnalyticsReportingSchedules) | Create a scheduled report job |
 | [**postAnalyticsSurveysAggregatesQuery**](AnalyticsApi.html#postAnalyticsSurveysAggregatesQuery) | Query for survey aggregates |
+| [**postAnalyticsTranscriptsAggregatesQuery**](AnalyticsApi.html#postAnalyticsTranscriptsAggregatesQuery) | Query for transcript aggregates |
 | [**postAnalyticsUsersAggregatesQuery**](AnalyticsApi.html#postAnalyticsUsersAggregatesQuery) | Query for user aggregates |
 | [**postAnalyticsUsersDetailsJobs**](AnalyticsApi.html#postAnalyticsUsersDetailsJobs) | Query for user details asynchronously |
 | [**postAnalyticsUsersDetailsQuery**](AnalyticsApi.html#postAnalyticsUsersDetailsQuery) | Query for user details |
@@ -487,6 +490,65 @@ try {
 ### Return type
 
 [**AnalyticsConversationAsyncQueryResponse**](AnalyticsConversationAsyncQueryResponse.html)
+
+<a name="getAnalyticsConversationsDetailsJobsAvailability"></a>
+
+# **getAnalyticsConversationsDetailsJobsAvailability**
+
+
+
+> [DataAvailabilityResponse](DataAvailabilityResponse.html) getAnalyticsConversationsDetailsJobsAvailability()
+
+Lookup the datalake availability date and time
+
+
+
+Wraps GET /api/v2/analytics/conversations/details/jobs/availability  
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+try {
+    DataAvailabilityResponse result = apiInstance.getAnalyticsConversationsDetailsJobsAvailability();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsConversationsDetailsJobsAvailability");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**DataAvailabilityResponse**](DataAvailabilityResponse.html)
 
 <a name="getAnalyticsReportingExports"></a>
 
@@ -1308,6 +1370,65 @@ try {
 
 [**AnalyticsUserDetailsAsyncQueryResponse**](AnalyticsUserDetailsAsyncQueryResponse.html)
 
+<a name="getAnalyticsUsersDetailsJobsAvailability"></a>
+
+# **getAnalyticsUsersDetailsJobsAvailability**
+
+
+
+> [DataAvailabilityResponse](DataAvailabilityResponse.html) getAnalyticsUsersDetailsJobsAvailability()
+
+Lookup the datalake availability date and time
+
+
+
+Wraps GET /api/v2/analytics/users/details/jobs/availability  
+
+Requires ANY permissions: 
+
+* analytics:userDetail:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+try {
+    DataAvailabilityResponse result = apiInstance.getAnalyticsUsersDetailsJobsAvailability();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsUsersDetailsJobsAvailability");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**DataAvailabilityResponse**](DataAvailabilityResponse.html)
+
 <a name="postAnalyticsConversationDetailsProperties"></a>
 
 # **postAnalyticsConversationDetailsProperties**
@@ -2127,6 +2248,69 @@ try {
 ### Return type
 
 [**SurveyAggregateQueryResponse**](SurveyAggregateQueryResponse.html)
+
+<a name="postAnalyticsTranscriptsAggregatesQuery"></a>
+
+# **postAnalyticsTranscriptsAggregatesQuery**
+
+
+
+> [TranscriptAggregateQueryResponse](TranscriptAggregateQueryResponse.html) postAnalyticsTranscriptsAggregatesQuery(body)
+
+Query for transcript aggregates
+
+
+
+Wraps POST /api/v2/analytics/transcripts/aggregates/query  
+
+Requires ANY permissions: 
+
+* analytics:speechAndTextAnalyticsAggregates:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+TranscriptAggregationQuery body = new TranscriptAggregationQuery(); // TranscriptAggregationQuery | query
+try {
+    TranscriptAggregateQueryResponse result = apiInstance.postAnalyticsTranscriptsAggregatesQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#postAnalyticsTranscriptsAggregatesQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**TranscriptAggregationQuery**](TranscriptAggregationQuery.html)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TranscriptAggregateQueryResponse**](TranscriptAggregateQueryResponse.html)
 
 <a name="postAnalyticsUsersAggregatesQuery"></a>
 

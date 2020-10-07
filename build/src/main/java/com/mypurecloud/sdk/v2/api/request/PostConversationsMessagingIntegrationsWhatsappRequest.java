@@ -26,6 +26,7 @@ import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiGetResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
+import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
 import com.mypurecloud.sdk.v2.model.Conversation;
 import com.mypurecloud.sdk.v2.model.SecureSession;
 import com.mypurecloud.sdk.v2.model.SecureSessionEntityListing;

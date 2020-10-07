@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsAsyncQueryResponse;
+import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
 import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzSubject;

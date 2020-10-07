@@ -12,7 +12,7 @@ title: ScimV2CreateUser
 | **active** | <!----><!---->**Boolean**<!----> | Indicates whether the user&#39;s administrative status is active. |  [optional] |
 | **userName** | <!----><!---->**String**<!----> | The user&#39;s Genesys Cloud email address. Must be unique. |  |
 | **displayName** | <!----><!---->**String**<!----> | The display name of the user. |  |
-| **password** | <!----><!---->**String**<!----> | The new password for the Genesys Cloud user. Does not return an existing password. |  [optional] |
+| **password** | <!----><!---->**String**<!----> | The new password for the Genesys Cloud user. Does not return an existing password. When creating a user if a password is not supplied a password will be randomly generated which is 40 characters in length and will contain five characters from each of the password policy groups. |  [optional] |
 | **title** | <!----><!---->**String**<!----> | The user&#39;s title. |  [optional] |
 | **phoneNumbers** | <!----><!---->[**List&lt;ScimPhoneNumber&gt;**](ScimPhoneNumber.html)<!----> | The list of the user&#39;s phone numbers. |  [optional] |
 | **emails** | <!----><!---->[**List&lt;ScimEmail&gt;**](ScimEmail.html)<!----> | The list of the user&#39;s email addresses. |  [optional] |

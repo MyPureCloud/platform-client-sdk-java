@@ -207,14 +207,14 @@ public class Annotation  implements Serializable {
 
   
   /**
-   * Text of annotation.
+   * Text of annotation. Maximum character limit is 300.
    **/
   public Annotation description(String description) {
     this.description = description;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Text of annotation.")
+  @ApiModelProperty(example = "null", value = "Text of annotation. Maximum character limit is 300.")
   @JsonProperty("description")
   public String getDescription() {
     return description;

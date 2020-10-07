@@ -94,6 +94,20 @@ public class GetKnowledgeKnowledgebasesRequest {
 	    return this;
 	} 
 	
+	private String name;
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public GetKnowledgeKnowledgebasesRequest withName(String name) {
+	    this.setName(name);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -124,6 +138,8 @@ public class GetKnowledgeKnowledgebasesRequest {
                 .withQueryParameters("limit", "", limit)
         
                 .withQueryParameters("pageSize", "", pageSize)
+        
+                .withQueryParameters("name", "", name)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -163,6 +179,11 @@ public class GetKnowledgeKnowledgebasesRequest {
 		
 		public Builder withPageSize(String pageSize) {
 			request.setPageSize(pageSize);
+			return this;
+		}
+		
+		public Builder withName(String name) {
+			request.setName(name);
 			return this;
 		}
 		

@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiGetResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
+import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobListing;
 import com.mypurecloud.sdk.v2.model.ReportingExportMetadataJobListing;
 import com.mypurecloud.sdk.v2.model.ReportMetaDataEntityListing;
@@ -49,6 +50,8 @@ import com.mypurecloud.sdk.v2.model.ReportingExportJobResponse;
 import com.mypurecloud.sdk.v2.model.RunNowResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
+import com.mypurecloud.sdk.v2.model.TranscriptAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.TranscriptAggregationQuery;
 import com.mypurecloud.sdk.v2.model.UserAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserAggregationQuery;
 import com.mypurecloud.sdk.v2.model.AsyncUserDetailsQuery;
@@ -65,6 +68,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationDetailsRequest
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobsAvailabilityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingExportsMetadataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingMetadataRequest;
@@ -78,6 +82,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingTimeperiodsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobsAvailabilityRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationDetailsPropertiesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsJobsRequest;
@@ -91,6 +96,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingScheduleRunreportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSurveysAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTranscriptsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsQueryRequest;
@@ -637,6 +643,82 @@ public class AnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AnalyticsConversationAsyncQueryResponse> response = (ApiResponse<AnalyticsConversationAsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Lookup the datalake availability date and time
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DataAvailabilityResponse> getAnalyticsConversationsDetailsJobsAvailabilityAsync(GetAnalyticsConversationsDetailsJobsAvailabilityRequest request, final AsyncApiCallback<DataAvailabilityResponse> callback) {
+    try {
+      final SettableFuture<DataAvailabilityResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataAvailabilityResponse>() {}, new AsyncApiCallback<ApiResponse<DataAvailabilityResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataAvailabilityResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Lookup the datalake availability date and time
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DataAvailabilityResponse>> getAnalyticsConversationsDetailsJobsAvailabilityAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataAvailabilityResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DataAvailabilityResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DataAvailabilityResponse>() {}, new AsyncApiCallback<ApiResponse<DataAvailabilityResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataAvailabilityResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataAvailabilityResponse> response = (ApiResponse<DataAvailabilityResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataAvailabilityResponse> response = (ApiResponse<DataAvailabilityResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1638,6 +1720,82 @@ public class AnalyticsApiAsync {
 
   
   /**
+   * Lookup the datalake availability date and time
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DataAvailabilityResponse> getAnalyticsUsersDetailsJobsAvailabilityAsync(GetAnalyticsUsersDetailsJobsAvailabilityRequest request, final AsyncApiCallback<DataAvailabilityResponse> callback) {
+    try {
+      final SettableFuture<DataAvailabilityResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataAvailabilityResponse>() {}, new AsyncApiCallback<ApiResponse<DataAvailabilityResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataAvailabilityResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Lookup the datalake availability date and time
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DataAvailabilityResponse>> getAnalyticsUsersDetailsJobsAvailabilityAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataAvailabilityResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DataAvailabilityResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DataAvailabilityResponse>() {}, new AsyncApiCallback<ApiResponse<DataAvailabilityResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataAvailabilityResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataAvailabilityResponse> response = (ApiResponse<DataAvailabilityResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataAvailabilityResponse> response = (ApiResponse<DataAvailabilityResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Index conversation properties
    * 
    * @param request the request object
@@ -2613,6 +2771,82 @@ public class AnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<SurveyAggregateQueryResponse> response = (ApiResponse<SurveyAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Query for transcript aggregates
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TranscriptAggregateQueryResponse> postAnalyticsTranscriptsAggregatesQueryAsync(PostAnalyticsTranscriptsAggregatesQueryRequest request, final AsyncApiCallback<TranscriptAggregateQueryResponse> callback) {
+    try {
+      final SettableFuture<TranscriptAggregateQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TranscriptAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<TranscriptAggregateQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<TranscriptAggregateQueryResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for transcript aggregates
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TranscriptAggregateQueryResponse>> postAnalyticsTranscriptsAggregatesQueryAsync(ApiRequest<TranscriptAggregationQuery> request, final AsyncApiCallback<ApiResponse<TranscriptAggregateQueryResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TranscriptAggregateQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TranscriptAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<TranscriptAggregateQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<TranscriptAggregateQueryResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TranscriptAggregateQueryResponse> response = (ApiResponse<TranscriptAggregateQueryResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TranscriptAggregateQueryResponse> response = (ApiResponse<TranscriptAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -33,8 +33,6 @@ public class DevelopmentActivity  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INFORMATIONAL("Informational"),
-    ASSESSEDCONTENT("AssessedContent"),
-    QUESTIONNAIRE("Questionnaire"),
     COACHING("Coaching");
 
     private String value;

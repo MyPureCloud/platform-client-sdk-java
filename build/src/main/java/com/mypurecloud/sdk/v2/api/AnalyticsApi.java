@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiGetResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationAsyncQueryResponse;
+import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
 import com.mypurecloud.sdk.v2.model.ReportingExportJobListing;
 import com.mypurecloud.sdk.v2.model.ReportingExportMetadataJobListing;
 import com.mypurecloud.sdk.v2.model.ReportMetaDataEntityListing;
@@ -46,6 +47,8 @@ import com.mypurecloud.sdk.v2.model.ReportingExportJobResponse;
 import com.mypurecloud.sdk.v2.model.RunNowResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
+import com.mypurecloud.sdk.v2.model.TranscriptAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.TranscriptAggregationQuery;
 import com.mypurecloud.sdk.v2.model.UserAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.UserAggregationQuery;
 import com.mypurecloud.sdk.v2.model.AsyncUserDetailsQuery;
@@ -62,6 +65,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationDetailsRequest
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobsAvailabilityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingExportsMetadataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingMetadataRequest;
@@ -75,6 +79,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingTimeperiodsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobsAvailabilityRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationDetailsPropertiesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsJobsRequest;
@@ -88,6 +93,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingExportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingScheduleRunreportRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsReportingSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSurveysAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTranscriptsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsUsersDetailsQueryRequest;
@@ -660,6 +666,81 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AnalyticsConversationAsyncQueryResponse> response = (ApiResponse<AnalyticsConversationAsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Lookup the datalake availability date and time
+   * 
+   * @return DataAvailabilityResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataAvailabilityResponse getAnalyticsConversationsDetailsJobsAvailability() throws IOException, ApiException {
+    return  getAnalyticsConversationsDetailsJobsAvailability(createGetAnalyticsConversationsDetailsJobsAvailabilityRequest());
+  }
+
+  /**
+   * Lookup the datalake availability date and time
+   * 
+   * @return DataAvailabilityResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataAvailabilityResponse> getAnalyticsConversationsDetailsJobsAvailabilityWithHttpInfo() throws IOException {
+    return getAnalyticsConversationsDetailsJobsAvailability(createGetAnalyticsConversationsDetailsJobsAvailabilityRequest().withHttpInfo());
+  }
+
+  private GetAnalyticsConversationsDetailsJobsAvailabilityRequest createGetAnalyticsConversationsDetailsJobsAvailabilityRequest() {
+    return GetAnalyticsConversationsDetailsJobsAvailabilityRequest.builder()
+            .build();
+  }
+
+  /**
+   * Lookup the datalake availability date and time
+   * 
+   * @param request The request object
+   * @return DataAvailabilityResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataAvailabilityResponse getAnalyticsConversationsDetailsJobsAvailability(GetAnalyticsConversationsDetailsJobsAvailabilityRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataAvailabilityResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataAvailabilityResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Lookup the datalake availability date and time
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataAvailabilityResponse> getAnalyticsConversationsDetailsJobsAvailability(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataAvailabilityResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataAvailabilityResponse> response = (ApiResponse<DataAvailabilityResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataAvailabilityResponse> response = (ApiResponse<DataAvailabilityResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1721,6 +1802,81 @@ public class AnalyticsApi {
 
   
   /**
+   * Lookup the datalake availability date and time
+   * 
+   * @return DataAvailabilityResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataAvailabilityResponse getAnalyticsUsersDetailsJobsAvailability() throws IOException, ApiException {
+    return  getAnalyticsUsersDetailsJobsAvailability(createGetAnalyticsUsersDetailsJobsAvailabilityRequest());
+  }
+
+  /**
+   * Lookup the datalake availability date and time
+   * 
+   * @return DataAvailabilityResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataAvailabilityResponse> getAnalyticsUsersDetailsJobsAvailabilityWithHttpInfo() throws IOException {
+    return getAnalyticsUsersDetailsJobsAvailability(createGetAnalyticsUsersDetailsJobsAvailabilityRequest().withHttpInfo());
+  }
+
+  private GetAnalyticsUsersDetailsJobsAvailabilityRequest createGetAnalyticsUsersDetailsJobsAvailabilityRequest() {
+    return GetAnalyticsUsersDetailsJobsAvailabilityRequest.builder()
+            .build();
+  }
+
+  /**
+   * Lookup the datalake availability date and time
+   * 
+   * @param request The request object
+   * @return DataAvailabilityResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataAvailabilityResponse getAnalyticsUsersDetailsJobsAvailability(GetAnalyticsUsersDetailsJobsAvailabilityRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataAvailabilityResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataAvailabilityResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Lookup the datalake availability date and time
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataAvailabilityResponse> getAnalyticsUsersDetailsJobsAvailability(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataAvailabilityResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataAvailabilityResponse> response = (ApiResponse<DataAvailabilityResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataAvailabilityResponse> response = (ApiResponse<DataAvailabilityResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Index conversation properties
    * 
    * @param conversationId conversationId (required)
@@ -2746,6 +2902,85 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SurveyAggregateQueryResponse> response = (ApiResponse<SurveyAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Query for transcript aggregates
+   * 
+   * @param body query (required)
+   * @return TranscriptAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TranscriptAggregateQueryResponse postAnalyticsTranscriptsAggregatesQuery(TranscriptAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsTranscriptsAggregatesQuery(createPostAnalyticsTranscriptsAggregatesQueryRequest(body));
+  }
+
+  /**
+   * Query for transcript aggregates
+   * 
+   * @param body query (required)
+   * @return TranscriptAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TranscriptAggregateQueryResponse> postAnalyticsTranscriptsAggregatesQueryWithHttpInfo(TranscriptAggregationQuery body) throws IOException {
+    return postAnalyticsTranscriptsAggregatesQuery(createPostAnalyticsTranscriptsAggregatesQueryRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsTranscriptsAggregatesQueryRequest createPostAnalyticsTranscriptsAggregatesQueryRequest(TranscriptAggregationQuery body) {
+    return PostAnalyticsTranscriptsAggregatesQueryRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Query for transcript aggregates
+   * 
+   * @param request The request object
+   * @return TranscriptAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TranscriptAggregateQueryResponse postAnalyticsTranscriptsAggregatesQuery(PostAnalyticsTranscriptsAggregatesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TranscriptAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TranscriptAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for transcript aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TranscriptAggregateQueryResponse> postAnalyticsTranscriptsAggregatesQuery(ApiRequest<TranscriptAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TranscriptAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TranscriptAggregateQueryResponse> response = (ApiResponse<TranscriptAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TranscriptAggregateQueryResponse> response = (ApiResponse<TranscriptAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

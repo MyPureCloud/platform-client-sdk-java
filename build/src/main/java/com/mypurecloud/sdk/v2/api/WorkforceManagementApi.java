@@ -103,6 +103,8 @@ import com.mypurecloud.sdk.v2.model.SearchShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
 import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlan;
+import com.mypurecloud.sdk.v2.model.ValidateWorkPlanResponse;
+import com.mypurecloud.sdk.v2.model.WorkPlanValidationRequest;
 import com.mypurecloud.sdk.v2.model.CreateWorkPlan;
 import com.mypurecloud.sdk.v2.model.CreateManagementUnitApiRequest;
 import com.mypurecloud.sdk.v2.model.UpdateNotificationsResponse;
@@ -237,6 +239,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitW
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShorttermforecastsGenerateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShorttermforecastsPartialuploadRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWorkplanCopyRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWorkplanValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWorkplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementNotificationsUpdateRequest;
@@ -2549,12 +2552,13 @@ public class WorkforceManagementApi {
    * @param businessUnitId The ID of the business unit (required)
    * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param scheduleId The ID of the schedule (required)
+   * @param expand expand (optional)
    * @return BuScheduleMetadata
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BuScheduleMetadata getWorkforcemanagementBusinessunitWeekSchedule(String businessUnitId, LocalDate weekId, String scheduleId) throws IOException, ApiException {
-    return  getWorkforcemanagementBusinessunitWeekSchedule(createGetWorkforcemanagementBusinessunitWeekScheduleRequest(businessUnitId, weekId, scheduleId));
+  public BuScheduleMetadata getWorkforcemanagementBusinessunitWeekSchedule(String businessUnitId, LocalDate weekId, String scheduleId, String expand) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitWeekSchedule(createGetWorkforcemanagementBusinessunitWeekScheduleRequest(businessUnitId, weekId, scheduleId, expand));
   }
 
   /**
@@ -2563,20 +2567,23 @@ public class WorkforceManagementApi {
    * @param businessUnitId The ID of the business unit (required)
    * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param scheduleId The ID of the schedule (required)
+   * @param expand expand (optional)
    * @return BuScheduleMetadata
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BuScheduleMetadata> getWorkforcemanagementBusinessunitWeekScheduleWithHttpInfo(String businessUnitId, LocalDate weekId, String scheduleId) throws IOException {
-    return getWorkforcemanagementBusinessunitWeekSchedule(createGetWorkforcemanagementBusinessunitWeekScheduleRequest(businessUnitId, weekId, scheduleId).withHttpInfo());
+  public ApiResponse<BuScheduleMetadata> getWorkforcemanagementBusinessunitWeekScheduleWithHttpInfo(String businessUnitId, LocalDate weekId, String scheduleId, String expand) throws IOException {
+    return getWorkforcemanagementBusinessunitWeekSchedule(createGetWorkforcemanagementBusinessunitWeekScheduleRequest(businessUnitId, weekId, scheduleId, expand).withHttpInfo());
   }
 
-  private GetWorkforcemanagementBusinessunitWeekScheduleRequest createGetWorkforcemanagementBusinessunitWeekScheduleRequest(String businessUnitId, LocalDate weekId, String scheduleId) {
+  private GetWorkforcemanagementBusinessunitWeekScheduleRequest createGetWorkforcemanagementBusinessunitWeekScheduleRequest(String businessUnitId, LocalDate weekId, String scheduleId, String expand) {
     return GetWorkforcemanagementBusinessunitWeekScheduleRequest.builder()
             .withBusinessUnitId(businessUnitId)
     
             .withWeekId(weekId)
     
             .withScheduleId(scheduleId)
+    
+            .withExpand(expand)
     
             .build();
   }
@@ -10769,6 +10776,97 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WorkPlan> response = (ApiResponse<WorkPlan>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Validate Work Plan
+   * 
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param workPlanId The ID of the work plan to validate. For new work plan, use the word &#39;new&#39; for the ID. (required)
+   * @param body body (optional)
+   * @param expand  (optional)
+   * @return ValidateWorkPlanResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ValidateWorkPlanResponse postWorkforcemanagementManagementunitWorkplanValidate(String managementUnitId, String workPlanId, WorkPlanValidationRequest body, List<String> expand) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitWorkplanValidate(createPostWorkforcemanagementManagementunitWorkplanValidateRequest(managementUnitId, workPlanId, body, expand));
+  }
+
+  /**
+   * Validate Work Plan
+   * 
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param workPlanId The ID of the work plan to validate. For new work plan, use the word &#39;new&#39; for the ID. (required)
+   * @param body body (optional)
+   * @param expand  (optional)
+   * @return ValidateWorkPlanResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ValidateWorkPlanResponse> postWorkforcemanagementManagementunitWorkplanValidateWithHttpInfo(String managementUnitId, String workPlanId, WorkPlanValidationRequest body, List<String> expand) throws IOException {
+    return postWorkforcemanagementManagementunitWorkplanValidate(createPostWorkforcemanagementManagementunitWorkplanValidateRequest(managementUnitId, workPlanId, body, expand).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitWorkplanValidateRequest createPostWorkforcemanagementManagementunitWorkplanValidateRequest(String managementUnitId, String workPlanId, WorkPlanValidationRequest body, List<String> expand) {
+    return PostWorkforcemanagementManagementunitWorkplanValidateRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withWorkPlanId(workPlanId)
+    
+            .withBody(body)
+    
+            .withExpand(expand)
+    
+            .build();
+  }
+
+  /**
+   * Validate Work Plan
+   * 
+   * @param request The request object
+   * @return ValidateWorkPlanResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ValidateWorkPlanResponse postWorkforcemanagementManagementunitWorkplanValidate(PostWorkforcemanagementManagementunitWorkplanValidateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ValidateWorkPlanResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ValidateWorkPlanResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Validate Work Plan
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ValidateWorkPlanResponse> postWorkforcemanagementManagementunitWorkplanValidate(ApiRequest<WorkPlanValidationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ValidateWorkPlanResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ValidateWorkPlanResponse> response = (ApiResponse<ValidateWorkPlanResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ValidateWorkPlanResponse> response = (ApiResponse<ValidateWorkPlanResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -56,6 +56,7 @@ public class KnowledgeBase  implements Serializable {
   private CoreLanguageEnum coreLanguage = null;
   private Date dateCreated = null;
   private Date dateModified = null;
+  private Integer faqCount = null;
   private String selfUri = null;
 
   
@@ -133,6 +134,24 @@ public class KnowledgeBase  implements Serializable {
   }
 
   
+  /**
+   * The count representing the number of documents of type FAQ per KnowledgeBase
+   **/
+  public KnowledgeBase faqCount(Integer faqCount) {
+    this.faqCount = faqCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The count representing the number of documents of type FAQ per KnowledgeBase")
+  @JsonProperty("faqCount")
+  public Integer getFaqCount() {
+    return faqCount;
+  }
+  public void setFaqCount(Integer faqCount) {
+    this.faqCount = faqCount;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -156,12 +175,13 @@ public class KnowledgeBase  implements Serializable {
         Objects.equals(this.coreLanguage, knowledgeBase.coreLanguage) &&
         Objects.equals(this.dateCreated, knowledgeBase.dateCreated) &&
         Objects.equals(this.dateModified, knowledgeBase.dateModified) &&
+        Objects.equals(this.faqCount, knowledgeBase.faqCount) &&
         Objects.equals(this.selfUri, knowledgeBase.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, coreLanguage, dateCreated, dateModified, selfUri);
+    return Objects.hash(id, name, description, coreLanguage, dateCreated, dateModified, faqCount, selfUri);
   }
 
   @Override
@@ -175,6 +195,7 @@ public class KnowledgeBase  implements Serializable {
     sb.append("    coreLanguage: ").append(toIndentedString(coreLanguage)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    faqCount: ").append(toIndentedString(faqCount)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

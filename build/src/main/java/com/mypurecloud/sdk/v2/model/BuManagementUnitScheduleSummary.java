@@ -99,14 +99,14 @@ public class BuManagementUnitScheduleSummary  implements Serializable {
 
   
   /**
-   * The changed agents in the management unit. Only populated in schedule update notifications
+   * The agents in the management unit who are part of this schedule, or in schedule change notifications, the agents that were changed. Note this will come back as an empty list unless the appropriate expand query parameter is passed
    **/
   public BuManagementUnitScheduleSummary agents(List<UserReference> agents) {
     this.agents = agents;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The changed agents in the management unit. Only populated in schedule update notifications")
+  @ApiModelProperty(example = "null", value = "The agents in the management unit who are part of this schedule, or in schedule change notifications, the agents that were changed. Note this will come back as an empty list unless the appropriate expand query parameter is passed")
   @JsonProperty("agents")
   public List<UserReference> getAgents() {
     return agents;

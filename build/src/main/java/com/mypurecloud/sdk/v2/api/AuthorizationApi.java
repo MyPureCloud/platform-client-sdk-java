@@ -12,6 +12,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
+import com.mypurecloud.sdk.v2.model.AuthzDivisionGrantEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
 import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
 import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
@@ -33,6 +34,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationDivisionRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationSubjectDivisionRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionGrantsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsHomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsLimitRequest;
@@ -404,6 +406,93 @@ public class AuthorizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AuthzDivision> response = (ApiResponse<AuthzDivision>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Gets all grants for a given division.
+   * 
+   * @param divisionId Division ID (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return AuthzDivisionGrantEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthzDivisionGrantEntityListing getAuthorizationDivisionGrants(String divisionId, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getAuthorizationDivisionGrants(createGetAuthorizationDivisionGrantsRequest(divisionId, pageNumber, pageSize));
+  }
+
+  /**
+   * Gets all grants for a given division.
+   * 
+   * @param divisionId Division ID (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return AuthzDivisionGrantEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthzDivisionGrantEntityListing> getAuthorizationDivisionGrantsWithHttpInfo(String divisionId, Integer pageNumber, Integer pageSize) throws IOException {
+    return getAuthorizationDivisionGrants(createGetAuthorizationDivisionGrantsRequest(divisionId, pageNumber, pageSize).withHttpInfo());
+  }
+
+  private GetAuthorizationDivisionGrantsRequest createGetAuthorizationDivisionGrantsRequest(String divisionId, Integer pageNumber, Integer pageSize) {
+    return GetAuthorizationDivisionGrantsRequest.builder()
+            .withDivisionId(divisionId)
+    
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .build();
+  }
+
+  /**
+   * Gets all grants for a given division.
+   * 
+   * @param request The request object
+   * @return AuthzDivisionGrantEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthzDivisionGrantEntityListing getAuthorizationDivisionGrants(GetAuthorizationDivisionGrantsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AuthzDivisionGrantEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AuthzDivisionGrantEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets all grants for a given division.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthzDivisionGrantEntityListing> getAuthorizationDivisionGrants(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AuthzDivisionGrantEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthzDivisionGrantEntityListing> response = (ApiResponse<AuthzDivisionGrantEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthzDivisionGrantEntityListing> response = (ApiResponse<AuthzDivisionGrantEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

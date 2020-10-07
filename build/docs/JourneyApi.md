@@ -7,8 +7,204 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**getJourneyActiontarget**](JourneyApi.html#getJourneyActiontarget) | Retrieve a single action target. |
+| [**getJourneyActiontargets**](JourneyApi.html#getJourneyActiontargets) | Retrieve all action targets. |
+| [**patchJourneyActiontarget**](JourneyApi.html#patchJourneyActiontarget) | Update a single action target. |
 | [**postAnalyticsJourneysAggregatesQuery**](JourneyApi.html#postAnalyticsJourneysAggregatesQuery) | Query for journey aggregates |
 {: class="table-striped"}
+
+<a name="getJourneyActiontarget"></a>
+
+# **getJourneyActiontarget**
+
+
+
+> [ActionTarget](ActionTarget.html) getJourneyActiontarget(actionTargetId)
+
+Retrieve a single action target.
+
+
+
+Wraps GET /api/v2/journey/actiontargets/{actionTargetId}  
+
+Requires ANY permissions: 
+
+* journey:actiontarget:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String actionTargetId = "actionTargetId_example"; // String | ID of the action target.
+try {
+    ActionTarget result = apiInstance.getJourneyActiontarget(actionTargetId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyActiontarget");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **actionTargetId** | **String**| ID of the action target. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActionTarget**](ActionTarget.html)
+
+<a name="getJourneyActiontargets"></a>
+
+# **getJourneyActiontargets**
+
+
+
+> [ActionTargetListing](ActionTargetListing.html) getJourneyActiontargets(pageNumber, pageSize)
+
+Retrieve all action targets.
+
+
+
+Wraps GET /api/v2/journey/actiontargets  
+
+Requires ANY permissions: 
+
+* journey:actiontarget:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+try {
+    ActionTargetListing result = apiInstance.getJourneyActiontargets(pageNumber, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyActiontargets");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActionTargetListing**](ActionTargetListing.html)
+
+<a name="patchJourneyActiontarget"></a>
+
+# **patchJourneyActiontarget**
+
+
+
+> [ActionTarget](ActionTarget.html) patchJourneyActiontarget(actionTargetId, body)
+
+Update a single action target.
+
+
+
+Wraps PATCH /api/v2/journey/actiontargets/{actionTargetId}  
+
+Requires ANY permissions: 
+
+* journey:actiontarget:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String actionTargetId = "actionTargetId_example"; // String | ID of the action target.
+PatchActionTarget body = new PatchActionTarget(); // PatchActionTarget | 
+try {
+    ActionTarget result = apiInstance.patchJourneyActiontarget(actionTargetId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#patchJourneyActiontarget");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **actionTargetId** | **String**| ID of the action target. | 
+| **body** | [**PatchActionTarget**](PatchActionTarget.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActionTarget**](ActionTarget.html)
 
 <a name="postAnalyticsJourneysAggregatesQuery"></a>
 

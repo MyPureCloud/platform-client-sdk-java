@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteUserStationDefaultstation**](UsersApi.html#deleteUserStationDefaultstation) | Clear default station |
 | [**getAnalyticsUsersDetailsJob**](UsersApi.html#getAnalyticsUsersDetailsJob) | Get status for async query for user details |
 | [**getAnalyticsUsersDetailsJobResults**](UsersApi.html#getAnalyticsUsersDetailsJobResults) | Fetch a page of results for an async query |
+| [**getAnalyticsUsersDetailsJobsAvailability**](UsersApi.html#getAnalyticsUsersDetailsJobsAvailability) | Lookup the datalake availability date and time |
 | [**getAuthorizationDivisionspermittedMe**](UsersApi.html#getAuthorizationDivisionspermittedMe) | Returns which divisions the current user has the given permission in. |
 | [**getAuthorizationDivisionspermittedPagedMe**](UsersApi.html#getAuthorizationDivisionspermittedPagedMe) | Returns which divisions the current user has the given permission in. |
 | [**getAuthorizationDivisionspermittedPagedSubjectId**](UsersApi.html#getAuthorizationDivisionspermittedPagedSubjectId) | Returns which divisions the specified user has the given permission in. |
@@ -715,6 +716,65 @@ try {
 ### Return type
 
 [**AnalyticsUserDetailsAsyncQueryResponse**](AnalyticsUserDetailsAsyncQueryResponse.html)
+
+<a name="getAnalyticsUsersDetailsJobsAvailability"></a>
+
+# **getAnalyticsUsersDetailsJobsAvailability**
+
+
+
+> [DataAvailabilityResponse](DataAvailabilityResponse.html) getAnalyticsUsersDetailsJobsAvailability()
+
+Lookup the datalake availability date and time
+
+
+
+Wraps GET /api/v2/analytics/users/details/jobs/availability  
+
+Requires ANY permissions: 
+
+* analytics:userDetail:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+try {
+    DataAvailabilityResponse result = apiInstance.getAnalyticsUsersDetailsJobsAvailability();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getAnalyticsUsersDetailsJobsAvailability");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**DataAvailabilityResponse**](DataAvailabilityResponse.html)
 
 <a name="getAuthorizationDivisionspermittedMe"></a>
 

@@ -31,8 +31,6 @@ title: DevelopmentActivity
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | INFORMATIONAL | &quot;Informational&quot; |
-| ASSESSEDCONTENT | &quot;AssessedContent&quot; |
-| QUESTIONNAIRE | &quot;Questionnaire&quot; |
 | COACHING | &quot;Coaching&quot; |
 {: class="table table-striped"}
 

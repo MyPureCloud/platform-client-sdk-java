@@ -17,6 +17,7 @@ title: PostTextRequest
 | **botSessionTimeoutMinutes** | <!----><!---->**Integer**<!----> | Override timeout for the bot session. This should be greater than 10 minutes. |  [optional] |
 | **botChannels** | <!---->[**List&lt;BotChannelsEnum&gt;**](#BotChannelsEnum)<!----> | The channels this bot is utilizing |  [optional] |
 | **botCorrelationId** | <!----><!---->**String**<!----> | Id for tracking the activity - this will be returned in the response |  [optional] |
+| **messagingPlatformType** | [**MessagingPlatformTypeEnum**](#MessagingPlatformTypeEnum)<!----> | If the channels list contains a &#39;Messaging&#39; item and the messaging platform is known, include it here to get accurate analytics |  [optional] |
 | **amazonLexRequest** | <!----><!---->[**AmazonLexRequest**](AmazonLexRequest.html)<!----> |  |  [optional] |
 | **googleDialogflow** | <!----><!---->[**GoogleDialogflowCustomSettings**](GoogleDialogflowCustomSettings.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
@@ -32,6 +33,31 @@ title: PostTextRequest
 | CALLBACK | &quot;Callback&quot; |
 | MESSAGING | &quot;Messaging&quot; |
 | WEBCHAT | &quot;Webchat&quot; |
+{: class="table table-striped"}
+
+
+<a name="MessagingPlatformTypeEnum"></a>
+
+## Enum: MessagingPlatformTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| PHONE | &quot;Phone&quot; |
+| SMS | &quot;SMS&quot; |
+| GENESYSWEBWIDGET | &quot;GenesysWebWidget&quot; |
+| FACEBOOKMESSENGER | &quot;FacebookMessenger&quot; |
+| WECHAT | &quot;WeChat&quot; |
+| WHATSAPP | &quot;Whatsapp&quot; |
+| APPLEBUSINESSCHAT | &quot;AppleBusinessChat&quot; |
+| TELEGRAM | &quot;Telegram&quot; |
+| SLACK | &quot;Slack&quot; |
+| SIGNAL | &quot;Signal&quot; |
+| LINE | &quot;Line&quot; |
+| DISCORD | &quot;Discord&quot; |
+| TWITTERDIRECTMESSAGE | &quot;TwitterDirectMessage&quot; |
+| OTHER | &quot;Other&quot; |
+| UNKNOWN | &quot;Unknown&quot; |
 {: class="table table-striped"}
 
 

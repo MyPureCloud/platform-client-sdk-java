@@ -718,7 +718,7 @@ try {
 
 
 
-> [KnowledgeBaseListing](KnowledgeBaseListing.html) getKnowledgeKnowledgebases(before, after, limit, pageSize)
+> [KnowledgeBaseListing](KnowledgeBaseListing.html) getKnowledgeKnowledgebases(before, after, limit, pageSize, name)
 
 Get knowledge bases
 
@@ -756,8 +756,9 @@ String before = "before_example"; // String | The cursor that points to the star
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
 String limit = "limit_example"; // String | Number of entities to return. Maximum of 200.
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String name = "name_example"; // String | Name of the KnowledgeBase to filter.
 try {
-    KnowledgeBaseListing result = apiInstance.getKnowledgeKnowledgebases(before, after, limit, pageSize);
+    KnowledgeBaseListing result = apiInstance.getKnowledgeKnowledgebases(before, after, limit, pageSize, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebases");
@@ -774,6 +775,7 @@ try {
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **limit** | **String**| Number of entities to return. Maximum of 200. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **name** | **String**| Name of the KnowledgeBase to filter. | [optional] 
 {: class="table-striped"}
 
 

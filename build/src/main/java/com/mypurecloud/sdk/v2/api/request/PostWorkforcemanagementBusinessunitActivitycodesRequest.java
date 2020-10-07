@@ -113,6 +113,8 @@ import com.mypurecloud.sdk.v2.model.SearchShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
 import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlan;
+import com.mypurecloud.sdk.v2.model.ValidateWorkPlanResponse;
+import com.mypurecloud.sdk.v2.model.WorkPlanValidationRequest;
 import com.mypurecloud.sdk.v2.model.CreateWorkPlan;
 import com.mypurecloud.sdk.v2.model.CreateManagementUnitApiRequest;
 import com.mypurecloud.sdk.v2.model.UpdateNotificationsResponse;

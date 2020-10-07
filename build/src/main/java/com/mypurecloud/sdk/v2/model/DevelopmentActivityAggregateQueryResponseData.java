@@ -22,14 +22,14 @@ public class DevelopmentActivityAggregateQueryResponseData  implements Serializa
 
   
   /**
-   * Specifies the range of due dates to be used for filtering. A maximum of 365 days can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+   * Specifies the range of due dates to be used for filtering. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
    **/
   public DevelopmentActivityAggregateQueryResponseData interval(String interval) {
     this.interval = interval;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Specifies the range of due dates to be used for filtering. A maximum of 365 days can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
+  @ApiModelProperty(example = "null", value = "Specifies the range of due dates to be used for filtering. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
   @JsonProperty("interval")
   public String getInterval() {
     return interval;

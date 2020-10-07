@@ -46,6 +46,7 @@ title: Organization
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| GENESYSCLOUD | &quot;GenesysCloud&quot; |
 | PURECLOUD | &quot;PureCloud&quot; |
 | PUREENGAGE | &quot;PureEngage&quot; |
 | PUREENGAGECLOUD | &quot;PureEngageCloud&quot; |

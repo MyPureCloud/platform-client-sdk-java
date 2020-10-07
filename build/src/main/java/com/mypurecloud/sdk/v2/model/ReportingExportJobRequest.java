@@ -138,6 +138,42 @@ public class ReportingExportJobRequest  implements Serializable {
   private Boolean hasSplitFilters = null;
   private Boolean excludeEmptyRows = null;
   private Boolean hasSplitByMedia = null;
+  private Boolean hasSummaryRow = null;
+
+  /**
+   * The user supplied csv delimiter string value either of type 'comma' or 'semicolon' permitted for the export request
+   */
+  public enum CsvDelimiterEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    SEMICOLON("SEMICOLON"),
+    COMMA("COMMA");
+
+    private String value;
+
+    CsvDelimiterEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static CsvDelimiterEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (CsvDelimiterEnum value : CsvDelimiterEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return CsvDelimiterEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private CsvDelimiterEnum csvDelimiter = null;
   private List<SelectedColumns> selectedColumns = new ArrayList<SelectedColumns>();
   private Boolean hasCustomParticipantAttributes = null;
   private List<String> recipientEmails = new ArrayList<String>();
@@ -378,6 +414,42 @@ public class ReportingExportJobRequest  implements Serializable {
 
   
   /**
+   * Indicates if summary row needs to be present in exports
+   **/
+  public ReportingExportJobRequest hasSummaryRow(Boolean hasSummaryRow) {
+    this.hasSummaryRow = hasSummaryRow;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates if summary row needs to be present in exports")
+  @JsonProperty("hasSummaryRow")
+  public Boolean getHasSummaryRow() {
+    return hasSummaryRow;
+  }
+  public void setHasSummaryRow(Boolean hasSummaryRow) {
+    this.hasSummaryRow = hasSummaryRow;
+  }
+
+  
+  /**
+   * The user supplied csv delimiter string value either of type 'comma' or 'semicolon' permitted for the export request
+   **/
+  public ReportingExportJobRequest csvDelimiter(CsvDelimiterEnum csvDelimiter) {
+    this.csvDelimiter = csvDelimiter;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The user supplied csv delimiter string value either of type 'comma' or 'semicolon' permitted for the export request")
+  @JsonProperty("csvDelimiter")
+  public CsvDelimiterEnum getCsvDelimiter() {
+    return csvDelimiter;
+  }
+  public void setCsvDelimiter(CsvDelimiterEnum csvDelimiter) {
+    this.csvDelimiter = csvDelimiter;
+  }
+
+  
+  /**
    * The list of ordered selected columns from the export view by the user
    **/
   public ReportingExportJobRequest selectedColumns(List<SelectedColumns> selectedColumns) {
@@ -454,6 +526,8 @@ public class ReportingExportJobRequest  implements Serializable {
         Objects.equals(this.hasSplitFilters, reportingExportJobRequest.hasSplitFilters) &&
         Objects.equals(this.excludeEmptyRows, reportingExportJobRequest.excludeEmptyRows) &&
         Objects.equals(this.hasSplitByMedia, reportingExportJobRequest.hasSplitByMedia) &&
+        Objects.equals(this.hasSummaryRow, reportingExportJobRequest.hasSummaryRow) &&
+        Objects.equals(this.csvDelimiter, reportingExportJobRequest.csvDelimiter) &&
         Objects.equals(this.selectedColumns, reportingExportJobRequest.selectedColumns) &&
         Objects.equals(this.hasCustomParticipantAttributes, reportingExportJobRequest.hasCustomParticipantAttributes) &&
         Objects.equals(this.recipientEmails, reportingExportJobRequest.recipientEmails);
@@ -461,7 +535,7 @@ public class ReportingExportJobRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, timeZone, exportFormat, interval, period, viewType, filter, read, locale, hasFormatDurations, hasSplitFilters, excludeEmptyRows, hasSplitByMedia, selectedColumns, hasCustomParticipantAttributes, recipientEmails);
+    return Objects.hash(name, timeZone, exportFormat, interval, period, viewType, filter, read, locale, hasFormatDurations, hasSplitFilters, excludeEmptyRows, hasSplitByMedia, hasSummaryRow, csvDelimiter, selectedColumns, hasCustomParticipantAttributes, recipientEmails);
   }
 
   @Override
@@ -482,6 +556,8 @@ public class ReportingExportJobRequest  implements Serializable {
     sb.append("    hasSplitFilters: ").append(toIndentedString(hasSplitFilters)).append("\n");
     sb.append("    excludeEmptyRows: ").append(toIndentedString(excludeEmptyRows)).append("\n");
     sb.append("    hasSplitByMedia: ").append(toIndentedString(hasSplitByMedia)).append("\n");
+    sb.append("    hasSummaryRow: ").append(toIndentedString(hasSummaryRow)).append("\n");
+    sb.append("    csvDelimiter: ").append(toIndentedString(csvDelimiter)).append("\n");
     sb.append("    selectedColumns: ").append(toIndentedString(selectedColumns)).append("\n");
     sb.append("    hasCustomParticipantAttributes: ").append(toIndentedString(hasCustomParticipantAttributes)).append("\n");
     sb.append("    recipientEmails: ").append(toIndentedString(recipientEmails)).append("\n");

@@ -14,10 +14,16 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ActionTarget;
+import com.mypurecloud.sdk.v2.model.ActionTargetListing;
+import com.mypurecloud.sdk.v2.model.PatchActionTarget;
 import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
 
 
+import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontargetRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontargetsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontargetRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsJourneysAggregatesQueryRequest;
 
 import java.io.IOException;
@@ -37,6 +43,234 @@ public class JourneyApiAsync {
 
   public JourneyApiAsync(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Retrieve a single action target.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ActionTarget> getJourneyActiontargetAsync(GetJourneyActiontargetRequest request, final AsyncApiCallback<ActionTarget> callback) {
+    try {
+      final SettableFuture<ActionTarget> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActionTarget>() {}, new AsyncApiCallback<ApiResponse<ActionTarget>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActionTarget> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve a single action target.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ActionTarget>> getJourneyActiontargetAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActionTarget>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ActionTarget>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ActionTarget>() {}, new AsyncApiCallback<ApiResponse<ActionTarget>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActionTarget> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActionTarget> response = (ApiResponse<ActionTarget>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActionTarget> response = (ApiResponse<ActionTarget>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Retrieve all action targets.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ActionTargetListing> getJourneyActiontargetsAsync(GetJourneyActiontargetsRequest request, final AsyncApiCallback<ActionTargetListing> callback) {
+    try {
+      final SettableFuture<ActionTargetListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActionTargetListing>() {}, new AsyncApiCallback<ApiResponse<ActionTargetListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActionTargetListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve all action targets.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ActionTargetListing>> getJourneyActiontargetsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActionTargetListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ActionTargetListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ActionTargetListing>() {}, new AsyncApiCallback<ApiResponse<ActionTargetListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActionTargetListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActionTargetListing> response = (ApiResponse<ActionTargetListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActionTargetListing> response = (ApiResponse<ActionTargetListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update a single action target.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ActionTarget> patchJourneyActiontargetAsync(PatchJourneyActiontargetRequest request, final AsyncApiCallback<ActionTarget> callback) {
+    try {
+      final SettableFuture<ActionTarget> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActionTarget>() {}, new AsyncApiCallback<ApiResponse<ActionTarget>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActionTarget> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a single action target.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ActionTarget>> patchJourneyActiontargetAsync(ApiRequest<PatchActionTarget> request, final AsyncApiCallback<ApiResponse<ActionTarget>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ActionTarget>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ActionTarget>() {}, new AsyncApiCallback<ApiResponse<ActionTarget>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActionTarget> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActionTarget> response = (ApiResponse<ActionTarget>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActionTarget> response = (ApiResponse<ActionTarget>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   

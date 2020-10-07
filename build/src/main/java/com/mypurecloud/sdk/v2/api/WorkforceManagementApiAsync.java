@@ -106,6 +106,8 @@ import com.mypurecloud.sdk.v2.model.SearchShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
 import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlan;
+import com.mypurecloud.sdk.v2.model.ValidateWorkPlanResponse;
+import com.mypurecloud.sdk.v2.model.WorkPlanValidationRequest;
 import com.mypurecloud.sdk.v2.model.CreateWorkPlan;
 import com.mypurecloud.sdk.v2.model.CreateManagementUnitApiRequest;
 import com.mypurecloud.sdk.v2.model.UpdateNotificationsResponse;
@@ -240,6 +242,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitW
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShorttermforecastsGenerateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShorttermforecastsPartialuploadRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWorkplanCopyRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWorkplanValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWorkplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementNotificationsUpdateRequest;
@@ -9830,6 +9833,82 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<WorkPlan> response = (ApiResponse<WorkPlan>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Validate Work Plan
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ValidateWorkPlanResponse> postWorkforcemanagementManagementunitWorkplanValidateAsync(PostWorkforcemanagementManagementunitWorkplanValidateRequest request, final AsyncApiCallback<ValidateWorkPlanResponse> callback) {
+    try {
+      final SettableFuture<ValidateWorkPlanResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ValidateWorkPlanResponse>() {}, new AsyncApiCallback<ApiResponse<ValidateWorkPlanResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ValidateWorkPlanResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Validate Work Plan
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ValidateWorkPlanResponse>> postWorkforcemanagementManagementunitWorkplanValidateAsync(ApiRequest<WorkPlanValidationRequest> request, final AsyncApiCallback<ApiResponse<ValidateWorkPlanResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ValidateWorkPlanResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ValidateWorkPlanResponse>() {}, new AsyncApiCallback<ApiResponse<ValidateWorkPlanResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ValidateWorkPlanResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ValidateWorkPlanResponse> response = (ApiResponse<ValidateWorkPlanResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ValidateWorkPlanResponse> response = (ApiResponse<ValidateWorkPlanResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

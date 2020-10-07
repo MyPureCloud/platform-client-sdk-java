@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsAsyncQueryResponse;
+import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
 import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzSubject;
@@ -71,6 +72,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteUserStationAssociatedstationRequ
 import com.mypurecloud.sdk.v2.api.request.DeleteUserStationDefaultstationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobResultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobsAvailabilityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedPagedMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionspermittedPagedSubjectIdRequest;
@@ -901,6 +903,82 @@ public class UsersApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AnalyticsUserDetailsAsyncQueryResponse> response = (ApiResponse<AnalyticsUserDetailsAsyncQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Lookup the datalake availability date and time
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DataAvailabilityResponse> getAnalyticsUsersDetailsJobsAvailabilityAsync(GetAnalyticsUsersDetailsJobsAvailabilityRequest request, final AsyncApiCallback<DataAvailabilityResponse> callback) {
+    try {
+      final SettableFuture<DataAvailabilityResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataAvailabilityResponse>() {}, new AsyncApiCallback<ApiResponse<DataAvailabilityResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataAvailabilityResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Lookup the datalake availability date and time
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DataAvailabilityResponse>> getAnalyticsUsersDetailsJobsAvailabilityAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataAvailabilityResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DataAvailabilityResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DataAvailabilityResponse>() {}, new AsyncApiCallback<ApiResponse<DataAvailabilityResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataAvailabilityResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataAvailabilityResponse> response = (ApiResponse<DataAvailabilityResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataAvailabilityResponse> response = (ApiResponse<DataAvailabilityResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -19,13 +19,14 @@ public class ServiceLevel  implements Serializable {
 
   
   /**
+   * The desired Service Level. A value between 0 and 1.
    **/
   public ServiceLevel percentage(Double percentage) {
     this.percentage = percentage;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The desired Service Level. A value between 0 and 1.")
   @JsonProperty("percentage")
   public Double getPercentage() {
     return percentage;
@@ -36,13 +37,14 @@ public class ServiceLevel  implements Serializable {
 
   
   /**
+   * Service Level target in milliseconds.
    **/
   public ServiceLevel durationMs(Long durationMs) {
     this.durationMs = durationMs;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Service Level target in milliseconds.")
   @JsonProperty("durationMs")
   public Long getDurationMs() {
     return durationMs;

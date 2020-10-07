@@ -34,6 +34,8 @@ import com.mypurecloud.sdk.v2.model.EvaluationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
+import com.mypurecloud.sdk.v2.model.TranscriptAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.TranscriptAggregationQuery;
 import com.mypurecloud.sdk.v2.model.CalibrationCreate;
 import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
@@ -81,6 +83,7 @@ import com.mypurecloud.sdk.v2.api.request.GetQualitySurveysScorableRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchQualityFormsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsEvaluationsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSurveysAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTranscriptsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityCalibrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityConversationEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityEvaluationsScoringRequest;
@@ -3073,6 +3076,82 @@ public class QualityApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<SurveyAggregateQueryResponse> response = (ApiResponse<SurveyAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Query for transcript aggregates
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TranscriptAggregateQueryResponse> postAnalyticsTranscriptsAggregatesQueryAsync(PostAnalyticsTranscriptsAggregatesQueryRequest request, final AsyncApiCallback<TranscriptAggregateQueryResponse> callback) {
+    try {
+      final SettableFuture<TranscriptAggregateQueryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TranscriptAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<TranscriptAggregateQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<TranscriptAggregateQueryResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query for transcript aggregates
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TranscriptAggregateQueryResponse>> postAnalyticsTranscriptsAggregatesQueryAsync(ApiRequest<TranscriptAggregationQuery> request, final AsyncApiCallback<ApiResponse<TranscriptAggregateQueryResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TranscriptAggregateQueryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TranscriptAggregateQueryResponse>() {}, new AsyncApiCallback<ApiResponse<TranscriptAggregateQueryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<TranscriptAggregateQueryResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TranscriptAggregateQueryResponse> response = (ApiResponse<TranscriptAggregateQueryResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TranscriptAggregateQueryResponse> response = (ApiResponse<TranscriptAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

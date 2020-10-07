@@ -21,6 +21,9 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ActionTarget;
+import com.mypurecloud.sdk.v2.model.ActionTargetListing;
+import com.mypurecloud.sdk.v2.model.PatchActionTarget;
 import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
 

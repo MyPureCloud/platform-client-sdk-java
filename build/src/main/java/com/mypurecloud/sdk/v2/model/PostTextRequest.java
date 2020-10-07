@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AmazonLexRequest;
 import com.mypurecloud.sdk.v2.model.GoogleDialogflowCustomSettings;
 import com.mypurecloud.sdk.v2.model.PostTextMessage;
@@ -63,6 +64,54 @@ public class PostTextRequest  implements Serializable {
   }
   private List<BotChannelsEnum> botChannels = new ArrayList<BotChannelsEnum>();
   private String botCorrelationId = null;
+
+  /**
+   * If the channels list contains a 'Messaging' item and the messaging platform is known, include it here to get accurate analytics
+   */
+  public enum MessagingPlatformTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    PHONE("Phone"),
+    SMS("SMS"),
+    GENESYSWEBWIDGET("GenesysWebWidget"),
+    FACEBOOKMESSENGER("FacebookMessenger"),
+    WECHAT("WeChat"),
+    WHATSAPP("Whatsapp"),
+    APPLEBUSINESSCHAT("AppleBusinessChat"),
+    TELEGRAM("Telegram"),
+    SLACK("Slack"),
+    SIGNAL("Signal"),
+    LINE("Line"),
+    DISCORD("Discord"),
+    TWITTERDIRECTMESSAGE("TwitterDirectMessage"),
+    OTHER("Other"),
+    UNKNOWN("Unknown");
+
+    private String value;
+
+    MessagingPlatformTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MessagingPlatformTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MessagingPlatformTypeEnum value : MessagingPlatformTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MessagingPlatformTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private MessagingPlatformTypeEnum messagingPlatformType = null;
   private AmazonLexRequest amazonLexRequest = null;
   private GoogleDialogflowCustomSettings googleDialogflow = null;
 
@@ -230,6 +279,24 @@ public class PostTextRequest  implements Serializable {
 
   
   /**
+   * If the channels list contains a 'Messaging' item and the messaging platform is known, include it here to get accurate analytics
+   **/
+  public PostTextRequest messagingPlatformType(MessagingPlatformTypeEnum messagingPlatformType) {
+    this.messagingPlatformType = messagingPlatformType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If the channels list contains a 'Messaging' item and the messaging platform is known, include it here to get accurate analytics")
+  @JsonProperty("messagingPlatformType")
+  public MessagingPlatformTypeEnum getMessagingPlatformType() {
+    return messagingPlatformType;
+  }
+  public void setMessagingPlatformType(MessagingPlatformTypeEnum messagingPlatformType) {
+    this.messagingPlatformType = messagingPlatformType;
+  }
+
+  
+  /**
    **/
   public PostTextRequest amazonLexRequest(AmazonLexRequest amazonLexRequest) {
     this.amazonLexRequest = amazonLexRequest;
@@ -282,13 +349,14 @@ public class PostTextRequest  implements Serializable {
         Objects.equals(this.botSessionTimeoutMinutes, postTextRequest.botSessionTimeoutMinutes) &&
         Objects.equals(this.botChannels, postTextRequest.botChannels) &&
         Objects.equals(this.botCorrelationId, postTextRequest.botCorrelationId) &&
+        Objects.equals(this.messagingPlatformType, postTextRequest.messagingPlatformType) &&
         Objects.equals(this.amazonLexRequest, postTextRequest.amazonLexRequest) &&
         Objects.equals(this.googleDialogflow, postTextRequest.googleDialogflow);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(botId, botAlias, integrationId, botSessionId, postTextMessage, languageCode, botSessionTimeoutMinutes, botChannels, botCorrelationId, amazonLexRequest, googleDialogflow);
+    return Objects.hash(botId, botAlias, integrationId, botSessionId, postTextMessage, languageCode, botSessionTimeoutMinutes, botChannels, botCorrelationId, messagingPlatformType, amazonLexRequest, googleDialogflow);
   }
 
   @Override
@@ -305,6 +373,7 @@ public class PostTextRequest  implements Serializable {
     sb.append("    botSessionTimeoutMinutes: ").append(toIndentedString(botSessionTimeoutMinutes)).append("\n");
     sb.append("    botChannels: ").append(toIndentedString(botChannels)).append("\n");
     sb.append("    botCorrelationId: ").append(toIndentedString(botCorrelationId)).append("\n");
+    sb.append("    messagingPlatformType: ").append(toIndentedString(messagingPlatformType)).append("\n");
     sb.append("    amazonLexRequest: ").append(toIndentedString(amazonLexRequest)).append("\n");
     sb.append("    googleDialogflow: ").append(toIndentedString(googleDialogflow)).append("\n");
     sb.append("}");

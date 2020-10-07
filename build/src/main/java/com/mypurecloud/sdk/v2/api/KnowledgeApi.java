@@ -969,12 +969,13 @@ public class KnowledgeApi {
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param limit Number of entities to return. Maximum of 200. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param name Name of the KnowledgeBase to filter. (optional)
    * @return KnowledgeBaseListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public KnowledgeBaseListing getKnowledgeKnowledgebases(String before, String after, String limit, String pageSize) throws IOException, ApiException {
-    return  getKnowledgeKnowledgebases(createGetKnowledgeKnowledgebasesRequest(before, after, limit, pageSize));
+  public KnowledgeBaseListing getKnowledgeKnowledgebases(String before, String after, String limit, String pageSize, String name) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebases(createGetKnowledgeKnowledgebasesRequest(before, after, limit, pageSize, name));
   }
 
   /**
@@ -984,14 +985,15 @@ public class KnowledgeApi {
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param limit Number of entities to return. Maximum of 200. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param name Name of the KnowledgeBase to filter. (optional)
    * @return KnowledgeBaseListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<KnowledgeBaseListing> getKnowledgeKnowledgebasesWithHttpInfo(String before, String after, String limit, String pageSize) throws IOException {
-    return getKnowledgeKnowledgebases(createGetKnowledgeKnowledgebasesRequest(before, after, limit, pageSize).withHttpInfo());
+  public ApiResponse<KnowledgeBaseListing> getKnowledgeKnowledgebasesWithHttpInfo(String before, String after, String limit, String pageSize, String name) throws IOException {
+    return getKnowledgeKnowledgebases(createGetKnowledgeKnowledgebasesRequest(before, after, limit, pageSize, name).withHttpInfo());
   }
 
-  private GetKnowledgeKnowledgebasesRequest createGetKnowledgeKnowledgebasesRequest(String before, String after, String limit, String pageSize) {
+  private GetKnowledgeKnowledgebasesRequest createGetKnowledgeKnowledgebasesRequest(String before, String after, String limit, String pageSize, String name) {
     return GetKnowledgeKnowledgebasesRequest.builder()
             .withBefore(before)
     
@@ -1000,6 +1002,8 @@ public class KnowledgeApi {
             .withLimit(limit)
     
             .withPageSize(pageSize)
+    
+            .withName(name)
     
             .build();
   }

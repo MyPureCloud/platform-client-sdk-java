@@ -18,7 +18,7 @@ title: Annotation
 | **recordingLocation** | <!----><!---->**Long**<!----> | Offset of annotation (milliseconds) from start of recording, adjusted for any recording cuts |  [optional] |
 | **recordingDurationMs** | <!----><!---->**Long**<!----> | Duration of annotation (milliseconds), adjusted for any recording cuts. |  [optional] |
 | **user** | <!----><!---->[**User**](User.html)<!----> | User that created this annotation (if any). |  [optional] |
-| **description** | <!----><!---->**String**<!----> | Text of annotation. |  [optional] |
+| **description** | <!----><!---->**String**<!----> | Text of annotation. Maximum character limit is 300. |  [optional] |
 | **keywordName** | <!----><!---->**String**<!----> | The word or phrase which is being looked for with speech recognition. |  [optional] |
 | **confidence** | <!----><!---->**Float**<!----> | Actual confidence that this is an accurate match. |  [optional] |
 | **keywordSetId** | <!----><!---->**String**<!----> | A unique identifier for the keyword set to which this spotted keyword belongs. |  [optional] |

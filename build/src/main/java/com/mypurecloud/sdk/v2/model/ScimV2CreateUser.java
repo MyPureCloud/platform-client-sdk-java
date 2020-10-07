@@ -111,14 +111,14 @@ public class ScimV2CreateUser  implements Serializable {
 
   
   /**
-   * The new password for the Genesys Cloud user. Does not return an existing password.
+   * The new password for the Genesys Cloud user. Does not return an existing password. When creating a user if a password is not supplied a password will be randomly generated which is 40 characters in length and will contain five characters from each of the password policy groups.
    **/
   public ScimV2CreateUser password(String password) {
     this.password = password;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The new password for the Genesys Cloud user. Does not return an existing password.")
+  @ApiModelProperty(example = "null", value = "The new password for the Genesys Cloud user. Does not return an existing password. When creating a user if a password is not supplied a password will be randomly generated which is 40 characters in length and will contain five characters from each of the password policy groups.")
   @JsonProperty("password")
   public String getPassword() {
     return password;

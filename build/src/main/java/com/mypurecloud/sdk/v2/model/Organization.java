@@ -71,6 +71,7 @@ public class Organization  implements Serializable {
    */
   public enum ProductPlatformEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    GENESYSCLOUD("GenesysCloud"),
     PURECLOUD("PureCloud"),
     PUREENGAGE("PureEngage"),
     PUREENGAGECLOUD("PureEngageCloud"),

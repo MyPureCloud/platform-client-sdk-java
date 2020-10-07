@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteAuthorizationRole**](AuthorizationApi.html#deleteAuthorizationRole) | Delete an organization role. |
 | [**deleteAuthorizationSubjectDivisionRole**](AuthorizationApi.html#deleteAuthorizationSubjectDivisionRole) | Delete a grant of a role in a division |
 | [**getAuthorizationDivision**](AuthorizationApi.html#getAuthorizationDivision) | Returns an authorization division. |
+| [**getAuthorizationDivisionGrants**](AuthorizationApi.html#getAuthorizationDivisionGrants) | Gets all grants for a given division. |
 | [**getAuthorizationDivisions**](AuthorizationApi.html#getAuthorizationDivisions) | Retrieve a list of all divisions defined for the organization |
 | [**getAuthorizationDivisionsHome**](AuthorizationApi.html#getAuthorizationDivisionsHome) | Retrieve the home division for the organization. |
 | [**getAuthorizationDivisionsLimit**](AuthorizationApi.html#getAuthorizationDivisionsLimit) | Returns the maximum allowed number of divisions. |
@@ -301,6 +302,73 @@ try {
 ### Return type
 
 [**AuthzDivision**](AuthzDivision.html)
+
+<a name="getAuthorizationDivisionGrants"></a>
+
+# **getAuthorizationDivisionGrants**
+
+
+
+> [AuthzDivisionGrantEntityListing](AuthzDivisionGrantEntityListing.html) getAuthorizationDivisionGrants(divisionId, pageNumber, pageSize)
+
+Gets all grants for a given division.
+
+
+
+Wraps GET /api/v2/authorization/divisions/{divisionId}/grants  
+
+Requires ANY permissions: 
+
+* authorization:grant:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+String divisionId = "divisionId_example"; // String | Division ID
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+try {
+    AuthzDivisionGrantEntityListing result = apiInstance.getAuthorizationDivisionGrants(divisionId, pageNumber, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#getAuthorizationDivisionGrants");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **divisionId** | **String**| Division ID | 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AuthzDivisionGrantEntityListing**](AuthzDivisionGrantEntityListing.html)
 
 <a name="getAuthorizationDivisions"></a>
 

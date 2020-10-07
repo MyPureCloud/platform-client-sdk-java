@@ -31,6 +31,8 @@ import com.mypurecloud.sdk.v2.model.EvaluationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
+import com.mypurecloud.sdk.v2.model.TranscriptAggregateQueryResponse;
+import com.mypurecloud.sdk.v2.model.TranscriptAggregationQuery;
 import com.mypurecloud.sdk.v2.model.CalibrationCreate;
 import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
@@ -78,6 +80,7 @@ import com.mypurecloud.sdk.v2.api.request.GetQualitySurveysScorableRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchQualityFormsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsEvaluationsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSurveysAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsTranscriptsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityCalibrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityConversationEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityEvaluationsScoringRequest;
@@ -3614,6 +3617,85 @@ public class QualityApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SurveyAggregateQueryResponse> response = (ApiResponse<SurveyAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Query for transcript aggregates
+   * 
+   * @param body query (required)
+   * @return TranscriptAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TranscriptAggregateQueryResponse postAnalyticsTranscriptsAggregatesQuery(TranscriptAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsTranscriptsAggregatesQuery(createPostAnalyticsTranscriptsAggregatesQueryRequest(body));
+  }
+
+  /**
+   * Query for transcript aggregates
+   * 
+   * @param body query (required)
+   * @return TranscriptAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TranscriptAggregateQueryResponse> postAnalyticsTranscriptsAggregatesQueryWithHttpInfo(TranscriptAggregationQuery body) throws IOException {
+    return postAnalyticsTranscriptsAggregatesQuery(createPostAnalyticsTranscriptsAggregatesQueryRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsTranscriptsAggregatesQueryRequest createPostAnalyticsTranscriptsAggregatesQueryRequest(TranscriptAggregationQuery body) {
+    return PostAnalyticsTranscriptsAggregatesQueryRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Query for transcript aggregates
+   * 
+   * @param request The request object
+   * @return TranscriptAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TranscriptAggregateQueryResponse postAnalyticsTranscriptsAggregatesQuery(PostAnalyticsTranscriptsAggregatesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TranscriptAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TranscriptAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for transcript aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TranscriptAggregateQueryResponse> postAnalyticsTranscriptsAggregatesQuery(ApiRequest<TranscriptAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TranscriptAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TranscriptAggregateQueryResponse> response = (ApiResponse<TranscriptAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TranscriptAggregateQueryResponse> response = (ApiResponse<TranscriptAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

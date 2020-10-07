@@ -133,6 +133,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate) | Gone. Use equivalent business unit resource instead |
 | [**postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload) | Gone. Use equivalent business unit resource instead |
 | [**postWorkforcemanagementManagementunitWorkplanCopy**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWorkplanCopy) | Create a copy of work plan |
+| [**postWorkforcemanagementManagementunitWorkplanValidate**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWorkplanValidate) | Validate Work Plan |
 | [**postWorkforcemanagementManagementunitWorkplans**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWorkplans) | Create a new work plan |
 | [**postWorkforcemanagementManagementunits**](WorkforceManagementApi.html#postWorkforcemanagementManagementunits) | Add a management unit |
 | [**postWorkforcemanagementNotificationsUpdate**](WorkforceManagementApi.html#postWorkforcemanagementNotificationsUpdate) | Mark a list of notifications as read or unread |
@@ -2052,7 +2053,7 @@ try {
 
 
 
-> [BuScheduleMetadata](BuScheduleMetadata.html) getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId)
+> [BuScheduleMetadata](BuScheduleMetadata.html) getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId, expand)
 
 Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
 
@@ -2090,8 +2091,9 @@ WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 LocalDate weekId = new LocalDate(); // LocalDate | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String scheduleId = "scheduleId_example"; // String | The ID of the schedule
+String expand = "expand_example"; // String | expand
 try {
-    BuScheduleMetadata result = apiInstance.getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId);
+    BuScheduleMetadata result = apiInstance.getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitWeekSchedule");
@@ -2107,6 +2109,7 @@ try {
 | **businessUnitId** | **String**| The ID of the business unit | 
 | **weekId** | **LocalDate**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **scheduleId** | **String**| The ID of the schedule | 
+| **expand** | **String**| expand | [optional]<br />**Values**: managementUnits.agents 
 {: class="table-striped"}
 
 
@@ -8571,6 +8574,76 @@ try {
 ### Return type
 
 [**WorkPlan**](WorkPlan.html)
+
+<a name="postWorkforcemanagementManagementunitWorkplanValidate"></a>
+
+# **postWorkforcemanagementManagementunitWorkplanValidate**
+
+
+
+> [ValidateWorkPlanResponse](ValidateWorkPlanResponse.html) postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, body, expand)
+
+Validate Work Plan
+
+
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate  
+
+Requires ANY permissions: 
+
+* wfm:workPlan:add
+* wfm:workPlan:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String workPlanId = "workPlanId_example"; // String | The ID of the work plan to validate. For new work plan, use the word 'new' for the ID.
+WorkPlanValidationRequest body = new WorkPlanValidationRequest(); // WorkPlanValidationRequest | body
+List<String> expand = Arrays.asList("expand_example"); // List<String> | 
+try {
+    ValidateWorkPlanResponse result = apiInstance.postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, body, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitWorkplanValidate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **workPlanId** | **String**| The ID of the work plan to validate. For new work plan, use the word &#39;new&#39; for the ID. | 
+| **body** | [**WorkPlanValidationRequest**](WorkPlanValidationRequest.html)| body | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)|  | [optional]<br />**Values**: messages 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ValidateWorkPlanResponse**](ValidateWorkPlanResponse.html)
 
 <a name="postWorkforcemanagementManagementunitWorkplans"></a>
 

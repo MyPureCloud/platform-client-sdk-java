@@ -20,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAnalyticsConversationsDetails**](ConversationsApi.html#getAnalyticsConversationsDetails) | Gets multiple conversations by id |
 | [**getAnalyticsConversationsDetailsJob**](ConversationsApi.html#getAnalyticsConversationsDetailsJob) | Get status for async query for conversation details |
 | [**getAnalyticsConversationsDetailsJobResults**](ConversationsApi.html#getAnalyticsConversationsDetailsJobResults) | Fetch a page of results for an async query |
+| [**getAnalyticsConversationsDetailsJobsAvailability**](ConversationsApi.html#getAnalyticsConversationsDetailsJobsAvailability) | Lookup the datalake availability date and time |
 | [**getConversation**](ConversationsApi.html#getConversation) | Get conversation |
 | [**getConversationParticipantSecureivrsession**](ConversationsApi.html#getConversationParticipantSecureivrsession) | Fetch info on a secure session |
 | [**getConversationParticipantSecureivrsessions**](ConversationsApi.html#getConversationParticipantSecureivrsessions) | Get a list of secure sessions for this participant. |
@@ -964,6 +965,65 @@ try {
 ### Return type
 
 [**AnalyticsConversationAsyncQueryResponse**](AnalyticsConversationAsyncQueryResponse.html)
+
+<a name="getAnalyticsConversationsDetailsJobsAvailability"></a>
+
+# **getAnalyticsConversationsDetailsJobsAvailability**
+
+
+
+> [DataAvailabilityResponse](DataAvailabilityResponse.html) getAnalyticsConversationsDetailsJobsAvailability()
+
+Lookup the datalake availability date and time
+
+
+
+Wraps GET /api/v2/analytics/conversations/details/jobs/availability  
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+try {
+    DataAvailabilityResponse result = apiInstance.getAnalyticsConversationsDetailsJobsAvailability();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getAnalyticsConversationsDetailsJobsAvailability");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**DataAvailabilityResponse**](DataAvailabilityResponse.html)
 
 <a name="getConversation"></a>
 

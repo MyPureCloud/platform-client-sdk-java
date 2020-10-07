@@ -29,6 +29,8 @@ title: ReportingExportJobResponse
 | **hasSplitFilters** | <!----><!---->**Boolean**<!----> | Indicates if filters will be split in aggregate detail exports |  [optional] |
 | **excludeEmptyRows** | <!----><!---->**Boolean**<!----> | Excludes empty rows from the exports |  [optional] |
 | **hasSplitByMedia** | <!----><!---->**Boolean**<!----> | Indicates if media type will be split in aggregate detail exports |  [optional] |
+| **hasSummaryRow** | <!----><!---->**Boolean**<!----> | Indicates if summary row needs to be present in exports |  [optional] |
+| **csvDelimiter** | [**CsvDelimiterEnum**](#CsvDelimiterEnum)<!----> | The user supplied csv delimiter string value either of type &#39;comma&#39; or &#39;semicolon&#39; permitted for the export request |  [optional] |
 | **selectedColumns** | <!----><!---->[**List&lt;SelectedColumns&gt;**](SelectedColumns.html)<!----> | The list of ordered selected columns from the export view by the user |  [optional] |
 | **hasCustomParticipantAttributes** | <!----><!---->**Boolean**<!----> | Indicates if custom participant attributes will be exported |  [optional] |
 | **recipientEmails** | <!----><!---->**List&lt;String&gt;**<!----> | The list of email recipients for the exports |  [optional] |
@@ -138,6 +140,18 @@ title: ReportingExportJobResponse
 | FAILED_LONG_RUNNING_EXPORT | &quot;FAILED_LONG_RUNNING_EXPORT&quot; |
 | TOO_MANY_REQUESTS_FROM_AN_ORGANIZATION | &quot;TOO_MANY_REQUESTS_FROM_AN_ORGANIZATION&quot; |
 | FAILED_AS_EXPORT_FILE_SIZE_IS_GREATER_THAN_10MB | &quot;FAILED_AS_EXPORT_FILE_SIZE_IS_GREATER_THAN_10MB&quot; |
+{: class="table table-striped"}
+
+
+<a name="CsvDelimiterEnum"></a>
+
+## Enum: CsvDelimiterEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| SEMICOLON | &quot;SEMICOLON&quot; |
+| COMMA | &quot;COMMA&quot; |
 {: class="table table-striped"}
 
 

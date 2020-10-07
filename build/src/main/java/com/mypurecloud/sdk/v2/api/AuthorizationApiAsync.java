@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.AuthzDivision;
+import com.mypurecloud.sdk.v2.model.AuthzDivisionGrantEntityListing;
 import com.mypurecloud.sdk.v2.model.AuthzDivisionEntityListing;
 import com.mypurecloud.sdk.v2.model.DivsPermittedEntityListing;
 import com.mypurecloud.sdk.v2.model.PermissionCollectionEntityListing;
@@ -36,6 +37,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationDivisionRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAuthorizationSubjectDivisionRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionGrantsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsHomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsLimitRequest;
@@ -382,6 +384,82 @@ public class AuthorizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AuthzDivision> response = (ApiResponse<AuthzDivision>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Gets all grants for a given division.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AuthzDivisionGrantEntityListing> getAuthorizationDivisionGrantsAsync(GetAuthorizationDivisionGrantsRequest request, final AsyncApiCallback<AuthzDivisionGrantEntityListing> callback) {
+    try {
+      final SettableFuture<AuthzDivisionGrantEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AuthzDivisionGrantEntityListing>() {}, new AsyncApiCallback<ApiResponse<AuthzDivisionGrantEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthzDivisionGrantEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets all grants for a given division.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AuthzDivisionGrantEntityListing>> getAuthorizationDivisionGrantsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AuthzDivisionGrantEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AuthzDivisionGrantEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AuthzDivisionGrantEntityListing>() {}, new AsyncApiCallback<ApiResponse<AuthzDivisionGrantEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthzDivisionGrantEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthzDivisionGrantEntityListing> response = (ApiResponse<AuthzDivisionGrantEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthzDivisionGrantEntityListing> response = (ApiResponse<AuthzDivisionGrantEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
