@@ -33,6 +33,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsConversationsAggregatesQuery**](AnalyticsApi.html#postAnalyticsConversationsAggregatesQuery) | Query for conversation aggregates |
 | [**postAnalyticsConversationsDetailsJobs**](AnalyticsApi.html#postAnalyticsConversationsDetailsJobs) | Query for conversation details asynchronously |
 | [**postAnalyticsConversationsDetailsQuery**](AnalyticsApi.html#postAnalyticsConversationsDetailsQuery) | Query for conversation details |
+| [**postAnalyticsConversationsTranscriptsQuery**](AnalyticsApi.html#postAnalyticsConversationsTranscriptsQuery) | Search resources. |
 | [**postAnalyticsEvaluationsAggregatesQuery**](AnalyticsApi.html#postAnalyticsEvaluationsAggregatesQuery) | Query for evaluation aggregates |
 | [**postAnalyticsFlowsAggregatesQuery**](AnalyticsApi.html#postAnalyticsFlowsAggregatesQuery) | Query for flow aggregates |
 | [**postAnalyticsFlowsObservationsQuery**](AnalyticsApi.html#postAnalyticsFlowsObservationsQuery) | Query for flow observations |
@@ -1682,6 +1683,69 @@ try {
 ### Return type
 
 [**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse.html)
+
+<a name="postAnalyticsConversationsTranscriptsQuery"></a>
+
+# **postAnalyticsConversationsTranscriptsQuery**
+
+
+
+> [AnalyticsConversationWithoutAttributesMultiGetResponse](AnalyticsConversationWithoutAttributesMultiGetResponse.html) postAnalyticsConversationsTranscriptsQuery(body)
+
+Search resources.
+
+
+
+Wraps POST /api/v2/analytics/conversations/transcripts/query  
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+TranscriptConversationDetailSearchRequest body = new TranscriptConversationDetailSearchRequest(); // TranscriptConversationDetailSearchRequest | Search request options
+try {
+    AnalyticsConversationWithoutAttributesMultiGetResponse result = apiInstance.postAnalyticsConversationsTranscriptsQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#postAnalyticsConversationsTranscriptsQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**TranscriptConversationDetailSearchRequest**](TranscriptConversationDetailSearchRequest.html)| Search request options | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse.html)
 
 <a name="postAnalyticsEvaluationsAggregatesQuery"></a>
 

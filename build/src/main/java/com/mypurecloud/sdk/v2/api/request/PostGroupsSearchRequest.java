@@ -28,6 +28,8 @@ import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
 import com.mypurecloud.sdk.v2.model.JsonNodeSearchResponse;
 import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
 import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
+import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiGetResponse;
+import com.mypurecloud.sdk.v2.model.TranscriptConversationDetailSearchRequest;
 import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.model.DocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.model.GroupSearchRequest;

@@ -128,7 +128,7 @@ public class AuditLogMessage  implements Serializable {
     }
   }
   private ActionEnum action = null;
-  private AddressableEntityRef entity = null;
+  private DomainEntityRef entity = null;
 
   /**
    * Type of the entity that was impacted.
@@ -336,17 +336,17 @@ public class AuditLogMessage  implements Serializable {
   /**
    * Entity that was impacted.
    **/
-  public AuditLogMessage entity(AddressableEntityRef entity) {
+  public AuditLogMessage entity(DomainEntityRef entity) {
     this.entity = entity;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Entity that was impacted.")
   @JsonProperty("entity")
-  public AddressableEntityRef getEntity() {
+  public DomainEntityRef getEntity() {
     return entity;
   }
-  public void setEntity(AddressableEntityRef entity) {
+  public void setEntity(DomainEntityRef entity) {
     this.entity = entity;
   }
 

@@ -21,6 +21,8 @@ import com.mypurecloud.sdk.v2.model.LocationsSearchResponse;
 import com.mypurecloud.sdk.v2.model.JsonNodeSearchResponse;
 import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
 import com.mypurecloud.sdk.v2.model.VoicemailsSearchResponse;
+import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiGetResponse;
+import com.mypurecloud.sdk.v2.model.TranscriptConversationDetailSearchRequest;
 import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.model.DocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.model.GroupSearchRequest;
@@ -41,6 +43,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSearchSuggestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.GetVoicemailSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsTranscriptsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostDocumentationGknSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostDocumentationSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGroupsSearchRequest;
@@ -667,6 +670,82 @@ public class SearchApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<VoicemailsSearchResponse> response = (ApiResponse<VoicemailsSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Search resources.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AnalyticsConversationWithoutAttributesMultiGetResponse> postAnalyticsConversationsTranscriptsQueryAsync(PostAnalyticsConversationsTranscriptsQueryRequest request, final AsyncApiCallback<AnalyticsConversationWithoutAttributesMultiGetResponse> callback) {
+    try {
+      final SettableFuture<AnalyticsConversationWithoutAttributesMultiGetResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AnalyticsConversationWithoutAttributesMultiGetResponse>() {}, new AsyncApiCallback<ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Search resources.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse>> postAnalyticsConversationsTranscriptsQueryAsync(ApiRequest<TranscriptConversationDetailSearchRequest> request, final AsyncApiCallback<ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AnalyticsConversationWithoutAttributesMultiGetResponse>() {}, new AsyncApiCallback<ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse> response = (ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse> response = (ApiResponse<AnalyticsConversationWithoutAttributesMultiGetResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

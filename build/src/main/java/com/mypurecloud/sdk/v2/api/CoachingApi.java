@@ -563,14 +563,14 @@ public class CoachingApi {
    * Get appointments for users and optional date range
    * 
    * @param userIds The user IDs for which to retrieve appointments (required)
-   * @param interval Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+   * @param interval Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param statuses Appointment Statuses to filter by (optional)
    * @param facilitatorIds The facilitator IDs for which to retrieve appointments (optional)
    * @param sortOrder Sort (by due date) either Asc or Desc (optional)
    * @param relationships Relationships to filter by (optional)
-   * @param completionInterval Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+   * @param completionInterval Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param overdue Overdue status to filter by (optional)
    * @return CoachingAppointmentResponseList
    * @throws ApiException if the request fails on the server
@@ -584,14 +584,14 @@ public class CoachingApi {
    * Get appointments for users and optional date range
    * 
    * @param userIds The user IDs for which to retrieve appointments (required)
-   * @param interval Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+   * @param interval Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param statuses Appointment Statuses to filter by (optional)
    * @param facilitatorIds The facilitator IDs for which to retrieve appointments (optional)
    * @param sortOrder Sort (by due date) either Asc or Desc (optional)
    * @param relationships Relationships to filter by (optional)
-   * @param completionInterval Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+   * @param completionInterval Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param overdue Overdue status to filter by (optional)
    * @return CoachingAppointmentResponseList
    * @throws IOException if the request fails to be processed
@@ -677,14 +677,14 @@ public class CoachingApi {
   /**
    * Get my appointments for a given date range
    * 
-   * @param interval Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+   * @param interval Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param statuses Appointment Statuses to filter by (optional)
    * @param facilitatorIds The facilitator IDs for which to retrieve appointments (optional)
    * @param sortOrder Sort (by due date) either Asc or Desc (optional)
    * @param relationships Relationships to filter by (optional)
-   * @param completionInterval Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+   * @param completionInterval Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param overdue Overdue status to filter by (optional)
    * @return CoachingAppointmentResponseList
    * @throws ApiException if the request fails on the server
@@ -697,14 +697,14 @@ public class CoachingApi {
   /**
    * Get my appointments for a given date range
    * 
-   * @param interval Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+   * @param interval Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param statuses Appointment Statuses to filter by (optional)
    * @param facilitatorIds The facilitator IDs for which to retrieve appointments (optional)
    * @param sortOrder Sort (by due date) either Asc or Desc (optional)
    * @param relationships Relationships to filter by (optional)
-   * @param completionInterval Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+   * @param completionInterval Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
    * @param overdue Overdue status to filter by (optional)
    * @return CoachingAppointmentResponseList
    * @throws IOException if the request fails to be processed

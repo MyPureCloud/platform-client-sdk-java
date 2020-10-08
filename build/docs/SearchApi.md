@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getSearchSuggest**](SearchApi.html#getSearchSuggest) | Suggest resources using the q64 value returned from a previous suggest query. |
 | [**getUsersSearch**](SearchApi.html#getUsersSearch) | Search users using the q64 value returned from a previous search |
 | [**getVoicemailSearch**](SearchApi.html#getVoicemailSearch) | Search voicemails using the q64 value returned from a previous search |
+| [**postAnalyticsConversationsTranscriptsQuery**](SearchApi.html#postAnalyticsConversationsTranscriptsQuery) | Search resources. |
 | [**postDocumentationGknSearch**](SearchApi.html#postDocumentationGknSearch) | Search gkn documentation |
 | [**postDocumentationSearch**](SearchApi.html#postDocumentationSearch) | Search documentation |
 | [**postGroupsSearch**](SearchApi.html#postGroupsSearch) | Search groups |
@@ -513,6 +514,69 @@ try {
 ### Return type
 
 [**VoicemailsSearchResponse**](VoicemailsSearchResponse.html)
+
+<a name="postAnalyticsConversationsTranscriptsQuery"></a>
+
+# **postAnalyticsConversationsTranscriptsQuery**
+
+
+
+> [AnalyticsConversationWithoutAttributesMultiGetResponse](AnalyticsConversationWithoutAttributesMultiGetResponse.html) postAnalyticsConversationsTranscriptsQuery(body)
+
+Search resources.
+
+
+
+Wraps POST /api/v2/analytics/conversations/transcripts/query  
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SearchApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SearchApi apiInstance = new SearchApi();
+TranscriptConversationDetailSearchRequest body = new TranscriptConversationDetailSearchRequest(); // TranscriptConversationDetailSearchRequest | Search request options
+try {
+    AnalyticsConversationWithoutAttributesMultiGetResponse result = apiInstance.postAnalyticsConversationsTranscriptsQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SearchApi#postAnalyticsConversationsTranscriptsQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**TranscriptConversationDetailSearchRequest**](TranscriptConversationDetailSearchRequest.html)| Search request options | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse.html)
 
 <a name="postDocumentationGknSearch"></a>
 

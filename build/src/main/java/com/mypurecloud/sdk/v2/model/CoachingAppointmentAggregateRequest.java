@@ -93,14 +93,14 @@ public class CoachingAppointmentAggregateRequest  implements Serializable {
 
   
   /**
-   * Interval to aggregate across. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+   * Interval to aggregate across. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
    **/
   public CoachingAppointmentAggregateRequest interval(String interval) {
     this.interval = interval;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Interval to aggregate across. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
+  @ApiModelProperty(example = "null", required = true, value = "Interval to aggregate across. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss")
   @JsonProperty("interval")
   public String getInterval() {
     return interval;

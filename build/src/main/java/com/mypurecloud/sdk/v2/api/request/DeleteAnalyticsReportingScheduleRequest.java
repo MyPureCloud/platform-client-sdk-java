@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.AsyncConversationQuery;
 import com.mypurecloud.sdk.v2.model.AsyncQueryResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationQueryResponse;
 import com.mypurecloud.sdk.v2.model.ConversationQuery;
+import com.mypurecloud.sdk.v2.model.TranscriptConversationDetailSearchRequest;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
 import com.mypurecloud.sdk.v2.model.FlowAggregateQueryResponse;

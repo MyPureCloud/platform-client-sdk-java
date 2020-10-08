@@ -68,6 +68,7 @@ title: ReportingExportMetadataJobResponse
 | FLOW_DESTINATION_SUMMARY_VIEW | &quot;FLOW_DESTINATION_SUMMARY_VIEW&quot; |
 | FLOW_DESTINATION_DETAIL_VIEW | &quot;FLOW_DESTINATION_DETAIL_VIEW&quot; |
 | API_USAGE_VIEW | &quot;API_USAGE_VIEW&quot; |
+| SCHEDULED_CALLBACKS_VIEW | &quot;SCHEDULED_CALLBACKS_VIEW&quot; |
 {: class="table table-striped"}
 
 
