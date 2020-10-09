@@ -26,8 +26,8 @@ public class DivsPermittedEntityListing  implements Serializable, PagedResource<
   private String firstUri = null;
   private String selfUri = null;
   private String nextUri = null;
-  private String lastUri = null;
   private String previousUri = null;
+  private String lastUri = null;
   private Integer pageCount = null;
 
   
@@ -169,23 +169,6 @@ public class DivsPermittedEntityListing  implements Serializable, PagedResource<
   
   /**
    **/
-  public DivsPermittedEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-  
-  /**
-   **/
   public DivsPermittedEntityListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -198,6 +181,23 @@ public class DivsPermittedEntityListing  implements Serializable, PagedResource<
   }
   public void setPreviousUri(String previousUri) {
     this.previousUri = previousUri;
+  }
+
+  
+  /**
+   **/
+  public DivsPermittedEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
   }
 
   
@@ -236,14 +236,14 @@ public class DivsPermittedEntityListing  implements Serializable, PagedResource<
         Objects.equals(this.firstUri, divsPermittedEntityListing.firstUri) &&
         Objects.equals(this.selfUri, divsPermittedEntityListing.selfUri) &&
         Objects.equals(this.nextUri, divsPermittedEntityListing.nextUri) &&
-        Objects.equals(this.lastUri, divsPermittedEntityListing.lastUri) &&
         Objects.equals(this.previousUri, divsPermittedEntityListing.previousUri) &&
+        Objects.equals(this.lastUri, divsPermittedEntityListing.lastUri) &&
         Objects.equals(this.pageCount, divsPermittedEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, allDivsPermitted, firstUri, selfUri, nextUri, lastUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, allDivsPermitted, firstUri, selfUri, nextUri, previousUri, lastUri, pageCount);
   }
 
   @Override
@@ -259,8 +259,8 @@ public class DivsPermittedEntityListing  implements Serializable, PagedResource<
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();
