@@ -21,12 +21,12 @@ title: HistoryListing
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
 | **description** | <!----><!---->**String**<!----> |  |  [optional] |
 | **system** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **started** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **completed** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **started** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **completed** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **entities** | <!----><!---->[**List&lt;HistoryEntry&gt;**](HistoryEntry.html)<!----> |  |  [optional] |
 | **total** | <!----><!---->**Long**<!----> |  |  [optional] |
-| **pageSize** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **pageNumber** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **pageSize** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **pageCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

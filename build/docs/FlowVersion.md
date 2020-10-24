@@ -23,6 +23,7 @@ title: FlowVersion
 | **publishResultUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **inputSchema** | <!----><!---->[**JsonSchemaDocument**](JsonSchemaDocument.html)<!----> |  |  [optional] |
 | **outputSchema** | <!----><!---->[**JsonSchemaDocument**](JsonSchemaDocument.html)<!----> |  |  [optional] |
+| **nluInfo** | <!----><!---->[**NluInfo**](NluInfo.html)<!----> | Information about the NLU domain version for the flow version |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

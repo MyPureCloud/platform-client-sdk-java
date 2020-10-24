@@ -187,14 +187,14 @@ public class CampaignInteraction  implements Serializable {
 
   
   /**
-   * The time when the last preview of the interaction was wrapped up. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The time when the last preview of the interaction was wrapped up. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public CampaignInteraction lastActivePreviewWrapupTime(Date lastActivePreviewWrapupTime) {
     this.lastActivePreviewWrapupTime = lastActivePreviewWrapupTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The time when the last preview of the interaction was wrapped up. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The time when the last preview of the interaction was wrapped up. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("lastActivePreviewWrapupTime")
   public Date getLastActivePreviewWrapupTime() {
     return lastActivePreviewWrapupTime;
@@ -205,14 +205,14 @@ public class CampaignInteraction  implements Serializable {
 
   
   /**
-   * The time when dialer created the interaction. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The time when dialer created the interaction. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public CampaignInteraction creationTime(Date creationTime) {
     this.creationTime = creationTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The time when dialer created the interaction. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The time when dialer created the interaction. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("creationTime")
   public Date getCreationTime() {
     return creationTime;
@@ -223,14 +223,14 @@ public class CampaignInteraction  implements Serializable {
 
   
   /**
-   * The time when the agent or system places the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The time when the agent or system places the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public CampaignInteraction callPlacedTime(Date callPlacedTime) {
     this.callPlacedTime = callPlacedTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The time when the agent or system places the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The time when the agent or system places the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("callPlacedTime")
   public Date getCallPlacedTime() {
     return callPlacedTime;
@@ -241,14 +241,14 @@ public class CampaignInteraction  implements Serializable {
 
   
   /**
-   * The time when the agent was connected to the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The time when the agent was connected to the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public CampaignInteraction callRoutedTime(Date callRoutedTime) {
     this.callRoutedTime = callRoutedTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The time when the agent was connected to the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The time when the agent was connected to the call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("callRoutedTime")
   public Date getCallRoutedTime() {
     return callRoutedTime;
@@ -259,14 +259,14 @@ public class CampaignInteraction  implements Serializable {
 
   
   /**
-   * The time when the customer and routing participant are connected. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The time when the customer and routing participant are connected. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public CampaignInteraction previewConnectedTime(Date previewConnectedTime) {
     this.previewConnectedTime = previewConnectedTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The time when the customer and routing participant are connected. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The time when the customer and routing participant are connected. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("previewConnectedTime")
   public Date getPreviewConnectedTime() {
     return previewConnectedTime;
@@ -363,14 +363,14 @@ public class CampaignInteraction  implements Serializable {
 
   
   /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public CampaignInteraction previewPopDeliveredTime(Date previewPopDeliveredTime) {
     this.previewPopDeliveredTime = previewPopDeliveredTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("previewPopDeliveredTime")
   public Date getPreviewPopDeliveredTime() {
     return previewPopDeliveredTime;

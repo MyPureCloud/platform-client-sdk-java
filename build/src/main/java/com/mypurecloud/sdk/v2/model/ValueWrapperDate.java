@@ -20,14 +20,14 @@ public class ValueWrapperDate  implements Serializable {
 
   
   /**
-   * The value for the associated field. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The value for the associated field. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public ValueWrapperDate value(Date value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The value for the associated field. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The value for the associated field. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("value")
   public Date getValue() {
     return value;

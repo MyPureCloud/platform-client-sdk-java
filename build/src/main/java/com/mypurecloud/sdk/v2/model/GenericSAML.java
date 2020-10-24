@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -17,11 +18,52 @@ public class GenericSAML  implements Serializable {
   private String id = null;
   private String name = null;
   private String logoImageData = null;
-  private Boolean endpointCompression = null;
   private String relyingPartyIdentifier = null;
+  private Boolean endpointCompression = null;
+
+  /**
+   * Gets or Sets nameIdentifierFormat
+   */
+  public enum NameIdentifierFormatEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    URN_OASIS_NAMES_TC_SAML_1_1_NAMEID_FORMAT_UNSPECIFIED("urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"),
+    URN_OASIS_NAMES_TC_SAML_1_1_NAMEID_FORMAT_EMAILADDRESS("urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"),
+    URN_OASIS_NAMES_TC_SAML_1_1_NAMEID_FORMAT_X509SUBJECTNAME("urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName"),
+    URN_OASIS_NAMES_TC_SAML_1_1_NAMEID_FORMAT_WINDOWSDOMAINQUALIFIEDNAME("urn:oasis:names:tc:SAML:1.1:nameid-format:WindowsDomainQualifiedName"),
+    URN_OASIS_NAMES_TC_SAML_2_0_NAMEID_FORMAT_KERBEROS("urn:oasis:names:tc:SAML:2.0:nameid-format:kerberos"),
+    URN_OASIS_NAMES_TC_SAML_2_0_NAMEID_FORMAT_ENTITY("urn:oasis:names:tc:SAML:2.0:nameid-format:entity"),
+    URN_OASIS_NAMES_TC_SAML_2_0_NAMEID_FORMAT_PERSISTENT("urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"),
+    URN_OASIS_NAMES_TC_SAML_2_0_NAMEID_FORMAT_TRANSIENT("urn:oasis:names:tc:SAML:2.0:nameid-format:transient");
+
+    private String value;
+
+    NameIdentifierFormatEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static NameIdentifierFormatEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (NameIdentifierFormatEnum value : NameIdentifierFormatEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return NameIdentifierFormatEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private NameIdentifierFormatEnum nameIdentifierFormat = null;
   private String certificate = null;
-  private String issuerURI = null;
   private String ssoTargetURI = null;
+  private String issuerURI = null;
   private Boolean disabled = null;
   private String selfUri = null;
 
@@ -69,6 +111,23 @@ public class GenericSAML  implements Serializable {
   
   /**
    **/
+  public GenericSAML relyingPartyIdentifier(String relyingPartyIdentifier) {
+    this.relyingPartyIdentifier = relyingPartyIdentifier;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("relyingPartyIdentifier")
+  public String getRelyingPartyIdentifier() {
+    return relyingPartyIdentifier;
+  }
+  public void setRelyingPartyIdentifier(String relyingPartyIdentifier) {
+    this.relyingPartyIdentifier = relyingPartyIdentifier;
+  }
+
+  
+  /**
+   **/
   public GenericSAML endpointCompression(Boolean endpointCompression) {
     this.endpointCompression = endpointCompression;
     return this;
@@ -86,18 +145,18 @@ public class GenericSAML  implements Serializable {
   
   /**
    **/
-  public GenericSAML relyingPartyIdentifier(String relyingPartyIdentifier) {
-    this.relyingPartyIdentifier = relyingPartyIdentifier;
+  public GenericSAML nameIdentifierFormat(NameIdentifierFormatEnum nameIdentifierFormat) {
+    this.nameIdentifierFormat = nameIdentifierFormat;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("relyingPartyIdentifier")
-  public String getRelyingPartyIdentifier() {
-    return relyingPartyIdentifier;
+  @JsonProperty("nameIdentifierFormat")
+  public NameIdentifierFormatEnum getNameIdentifierFormat() {
+    return nameIdentifierFormat;
   }
-  public void setRelyingPartyIdentifier(String relyingPartyIdentifier) {
-    this.relyingPartyIdentifier = relyingPartyIdentifier;
+  public void setNameIdentifierFormat(NameIdentifierFormatEnum nameIdentifierFormat) {
+    this.nameIdentifierFormat = nameIdentifierFormat;
   }
 
   
@@ -120,23 +179,6 @@ public class GenericSAML  implements Serializable {
   
   /**
    **/
-  public GenericSAML issuerURI(String issuerURI) {
-    this.issuerURI = issuerURI;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("issuerURI")
-  public String getIssuerURI() {
-    return issuerURI;
-  }
-  public void setIssuerURI(String issuerURI) {
-    this.issuerURI = issuerURI;
-  }
-
-  
-  /**
-   **/
   public GenericSAML ssoTargetURI(String ssoTargetURI) {
     this.ssoTargetURI = ssoTargetURI;
     return this;
@@ -149,6 +191,23 @@ public class GenericSAML  implements Serializable {
   }
   public void setSsoTargetURI(String ssoTargetURI) {
     this.ssoTargetURI = ssoTargetURI;
+  }
+
+  
+  /**
+   **/
+  public GenericSAML issuerURI(String issuerURI) {
+    this.issuerURI = issuerURI;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("issuerURI")
+  public String getIssuerURI() {
+    return issuerURI;
+  }
+  public void setIssuerURI(String issuerURI) {
+    this.issuerURI = issuerURI;
   }
 
   
@@ -189,18 +248,19 @@ public class GenericSAML  implements Serializable {
     return Objects.equals(this.id, genericSAML.id) &&
         Objects.equals(this.name, genericSAML.name) &&
         Objects.equals(this.logoImageData, genericSAML.logoImageData) &&
-        Objects.equals(this.endpointCompression, genericSAML.endpointCompression) &&
         Objects.equals(this.relyingPartyIdentifier, genericSAML.relyingPartyIdentifier) &&
+        Objects.equals(this.endpointCompression, genericSAML.endpointCompression) &&
+        Objects.equals(this.nameIdentifierFormat, genericSAML.nameIdentifierFormat) &&
         Objects.equals(this.certificate, genericSAML.certificate) &&
-        Objects.equals(this.issuerURI, genericSAML.issuerURI) &&
         Objects.equals(this.ssoTargetURI, genericSAML.ssoTargetURI) &&
+        Objects.equals(this.issuerURI, genericSAML.issuerURI) &&
         Objects.equals(this.disabled, genericSAML.disabled) &&
         Objects.equals(this.selfUri, genericSAML.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, logoImageData, endpointCompression, relyingPartyIdentifier, certificate, issuerURI, ssoTargetURI, disabled, selfUri);
+    return Objects.hash(id, name, logoImageData, relyingPartyIdentifier, endpointCompression, nameIdentifierFormat, certificate, ssoTargetURI, issuerURI, disabled, selfUri);
   }
 
   @Override
@@ -211,11 +271,12 @@ public class GenericSAML  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    logoImageData: ").append(toIndentedString(logoImageData)).append("\n");
-    sb.append("    endpointCompression: ").append(toIndentedString(endpointCompression)).append("\n");
     sb.append("    relyingPartyIdentifier: ").append(toIndentedString(relyingPartyIdentifier)).append("\n");
+    sb.append("    endpointCompression: ").append(toIndentedString(endpointCompression)).append("\n");
+    sb.append("    nameIdentifierFormat: ").append(toIndentedString(nameIdentifierFormat)).append("\n");
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
-    sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
     sb.append("    ssoTargetURI: ").append(toIndentedString(ssoTargetURI)).append("\n");
+    sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

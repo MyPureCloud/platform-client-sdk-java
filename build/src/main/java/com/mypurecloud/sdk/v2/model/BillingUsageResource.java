@@ -38,14 +38,14 @@ public class BillingUsageResource  implements Serializable {
 
   
   /**
-   * The date that the usage was first observed by the billing subsystem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The date that the usage was first observed by the billing subsystem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public BillingUsageResource date(Date date) {
     this.date = date;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The date that the usage was first observed by the billing subsystem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", required = true, value = "The date that the usage was first observed by the billing subsystem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("date")
   public Date getDate() {
     return date;

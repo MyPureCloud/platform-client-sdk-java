@@ -65,14 +65,14 @@ public class CreateCoachingAppointmentRequest  implements Serializable {
 
   
   /**
-   * The date/time the coaching appointment starts. Times will be rounded down to the minute. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The date/time the coaching appointment starts. Times will be rounded down to the minute. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public CreateCoachingAppointmentRequest dateStart(Date dateStart) {
     this.dateStart = dateStart;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The date/time the coaching appointment starts. Times will be rounded down to the minute. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", required = true, value = "The date/time the coaching appointment starts. Times will be rounded down to the minute. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateStart")
   public Date getDateStart() {
     return dateStart;

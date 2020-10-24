@@ -12,8 +12,8 @@ title: UserQueue
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
 | **division** | <!----><!---->[**Division**](Division.html)<!----> | The division to which this entity belongs. |  [optional] |
 | **description** | <!----><!---->**String**<!----> | The queue description. |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | The date the queue was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | The date of the last modification to the queue. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | The date the queue was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | The date of the last modification to the queue. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **modifiedBy** | <!----><!---->**String**<!----> | The ID of the user that last modified the queue. |  [optional] |
 | **createdBy** | <!----><!---->**String**<!----> | The ID of the user that created the queue. |  [optional] |
 | **memberCount** | <!----><!---->**Integer**<!----> | The number of users in the queue. |  [optional] |

@@ -20,7 +20,7 @@ public class TrustUserDetails  implements Serializable {
   private OrgUser createdBy = null;
 
   
-  @ApiModelProperty(example = "null", value = "Date Trust User was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date Trust User was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;

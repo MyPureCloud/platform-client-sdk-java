@@ -10,7 +10,7 @@ title: CommandStatus
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **expiration** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **expiration** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **userId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **statusCode** | [**StatusCodeEnum**](#StatusCodeEnum)<!----> |  |  [optional] |
 | **commandType** | [**CommandTypeEnum**](#CommandTypeEnum)<!----> |  |  [optional] |

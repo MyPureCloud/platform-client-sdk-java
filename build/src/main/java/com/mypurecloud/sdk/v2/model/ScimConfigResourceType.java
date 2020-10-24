@@ -101,14 +101,14 @@ public class ScimConfigResourceType  implements Serializable {
 
   
   /**
-   * The metadata of the SCIM resource. Only location and resourceType are set for ResourceType resources.
+   * The metadata of the SCIM resource. Only \"location\" and \"resourceType\" are set for \"ResourceType\" resources.
    **/
   public ScimConfigResourceType meta(ScimMetadata meta) {
     this.meta = meta;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource. Only location and resourceType are set for ResourceType resources.")
+  @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource. Only \"location\" and \"resourceType\" are set for \"ResourceType\" resources.")
   @JsonProperty("meta")
   public ScimMetadata getMeta() {
     return meta;

@@ -77,14 +77,14 @@ public class AnalyticsFlowOutcome  implements Serializable {
 
   
   /**
-   * Date/time the outcome started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Date/time the outcome started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public AnalyticsFlowOutcome flowOutcomeStartTimestamp(Date flowOutcomeStartTimestamp) {
     this.flowOutcomeStartTimestamp = flowOutcomeStartTimestamp;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date/time the outcome started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date/time the outcome started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("flowOutcomeStartTimestamp")
   public Date getFlowOutcomeStartTimestamp() {
     return flowOutcomeStartTimestamp;
@@ -95,14 +95,14 @@ public class AnalyticsFlowOutcome  implements Serializable {
 
   
   /**
-   * Date/time the outcome ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Date/time the outcome ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public AnalyticsFlowOutcome flowOutcomeEndTimestamp(Date flowOutcomeEndTimestamp) {
     this.flowOutcomeEndTimestamp = flowOutcomeEndTimestamp;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date/time the outcome ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date/time the outcome ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("flowOutcomeEndTimestamp")
   public Date getFlowOutcomeEndTimestamp() {
     return flowOutcomeEndTimestamp;

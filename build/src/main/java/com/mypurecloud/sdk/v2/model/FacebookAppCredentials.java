@@ -17,7 +17,7 @@ public class FacebookAppCredentials  implements Serializable {
   private String id = null;
 
   
-  @ApiModelProperty(example = "null", required = true, value = "Genesys Facebook App Id")
+  @ApiModelProperty(example = "null", required = true, value = "Genesys Cloud Facebook App Id")
   @JsonProperty("id")
   public String getId() {
     return id;

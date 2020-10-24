@@ -19,8 +19,8 @@ title: InteractionStatsAlert
 | **value** | <!----><!---->**Double**<!----> | The threshold value. |  |
 | **ruleId** | <!----><!---->**String**<!----> | The id of the rule. |  |
 | **unread** | <!----><!---->**Boolean**<!----> | Indicates if the alert has been read. |  |
-| **startDate** | <!----><!---->[**Date**](Date.html)<!----> | The date/time the alert was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  |
-| **endDate** | <!----><!---->[**Date**](Date.html)<!----> | The date/time the owning rule exiting in alarm status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **startDate** | <!----><!---->[**Date**](Date.html)<!----> | The date/time the alert was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
+| **endDate** | <!----><!---->[**Date**](Date.html)<!----> | The date/time the owning rule exiting in alarm status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **notificationUsers** | <!----><!---->[**List&lt;User&gt;**](User.html)<!----> | The ids of users who were notified of alarm state change. |  |
 | **alertTypes** | <!---->[**List&lt;AlertTypesEnum&gt;**](#AlertTypesEnum)<!----> | A collection of notification methods. |  |
 | **ruleUri** | <!----><!---->**String**<!----> |  |  [optional] |

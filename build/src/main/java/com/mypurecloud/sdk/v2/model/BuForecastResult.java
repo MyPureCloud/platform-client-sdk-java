@@ -25,14 +25,14 @@ public class BuForecastResult  implements Serializable {
 
   
   /**
-   * The reference start date for interval-based data for this forecast. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The reference start date for interval-based data for this forecast. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public BuForecastResult referenceStartDate(Date referenceStartDate) {
     this.referenceStartDate = referenceStartDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The reference start date for interval-based data for this forecast. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The reference start date for interval-based data for this forecast. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("referenceStartDate")
   public Date getReferenceStartDate() {
     return referenceStartDate;

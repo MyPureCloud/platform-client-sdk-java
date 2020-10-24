@@ -156,14 +156,14 @@ public class ShiftTradeNotification  implements Serializable {
 
   
   /**
-   * The start date and time of the initiating shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The start date and time of the initiating shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public ShiftTradeNotification initiatingShiftDate(Date initiatingShiftDate) {
     this.initiatingShiftDate = initiatingShiftDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The start date and time of the initiating shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The start date and time of the initiating shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("initiatingShiftDate")
   public Date getInitiatingShiftDate() {
     return initiatingShiftDate;
@@ -192,14 +192,14 @@ public class ShiftTradeNotification  implements Serializable {
 
   
   /**
-   * The start date and time of the receiving shift (null if not matched or if one-sided. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The start date and time of the receiving shift (null if not matched or if one-sided. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public ShiftTradeNotification receivingShiftDate(Date receivingShiftDate) {
     this.receivingShiftDate = receivingShiftDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The start date and time of the receiving shift (null if not matched or if one-sided. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The start date and time of the receiving shift (null if not matched or if one-sided. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("receivingShiftDate")
   public Date getReceivingShiftDate() {
     return receivingShiftDate;

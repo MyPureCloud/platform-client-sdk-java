@@ -13,8 +13,8 @@ title: FacetStatistics
 | **max** | <!----><!---->**Double**<!----> |  |  [optional] |
 | **mean** | <!----><!---->**Double**<!----> |  |  [optional] |
 | **stdDeviation** | <!----><!---->**Double**<!----> |  |  [optional] |
-| **dateMin** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **dateMax** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **dateMin** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateMax** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 {: class="table table-striped"}
 
 

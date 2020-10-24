@@ -58,7 +58,7 @@ public class VoicemailCopyRecord  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The date when the voicemail was copied. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The date when the voicemail was copied. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("date")
   public Date getDate() {
     return date;

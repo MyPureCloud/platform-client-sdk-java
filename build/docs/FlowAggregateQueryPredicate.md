@@ -59,6 +59,7 @@ title: FlowAggregateQueryPredicate
 | EXTERNALORGANIZATIONID | &quot;externalOrganizationId&quot; |
 | FLAGGEDREASON | &quot;flaggedReason&quot; |
 | FLOWID | &quot;flowId&quot; |
+| FLOWINTYPE | &quot;flowInType&quot; |
 | FLOWMILESTONEID | &quot;flowMilestoneId&quot; |
 | FLOWNAME | &quot;flowName&quot; |
 | FLOWOUTTYPE | &quot;flowOutType&quot; |

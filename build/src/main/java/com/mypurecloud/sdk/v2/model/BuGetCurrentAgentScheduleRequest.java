@@ -20,14 +20,14 @@ public class BuGetCurrentAgentScheduleRequest  implements Serializable {
 
   
   /**
-   * Start date of the range to search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Start date of the range to search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public BuGetCurrentAgentScheduleRequest startDate(Date startDate) {
     this.startDate = startDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Start date of the range to search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", required = true, value = "Start date of the range to search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("startDate")
   public Date getStartDate() {
     return startDate;
@@ -38,14 +38,14 @@ public class BuGetCurrentAgentScheduleRequest  implements Serializable {
 
   
   /**
-   * End date of the range to search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * End date of the range to search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public BuGetCurrentAgentScheduleRequest endDate(Date endDate) {
     this.endDate = endDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "End date of the range to search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", required = true, value = "End date of the range to search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("endDate")
   public Date getEndDate() {
     return endDate;

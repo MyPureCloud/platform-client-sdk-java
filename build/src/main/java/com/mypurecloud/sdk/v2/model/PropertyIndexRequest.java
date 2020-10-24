@@ -42,14 +42,14 @@ public class PropertyIndexRequest  implements Serializable {
 
   
   /**
-   * Attach properties to a segment covering a specific point in time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Attach properties to a segment covering a specific point in time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public PropertyIndexRequest targetDate(Date targetDate) {
     this.targetDate = targetDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Attach properties to a segment covering a specific point in time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", required = true, value = "Attach properties to a segment covering a specific point in time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("targetDate")
   public Date getTargetDate() {
     return targetDate;

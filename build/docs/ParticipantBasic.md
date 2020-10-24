@@ -9,9 +9,9 @@ title: ParticipantBasic
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | A globally unique identifier for this conversation. |  [optional] |
-| **startTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this participant joined the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **endTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this participant disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this participant was connected to the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **startTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this participant joined the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **endTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this participant disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **connectedTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this participant was connected to the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **name** | <!----><!---->**String**<!----> | A human readable name identifying the participant. |  [optional] |
 | **userUri** | <!----><!---->**String**<!----> | If this participant represents a user, then this will be an URI that can be used to fetch the user. |  [optional] |
 | **userId** | <!----><!---->**String**<!----> | If this participant represents a user, then this will be the globally unique identifier for the user. |  [optional] |
@@ -51,8 +51,8 @@ title: ParticipantBasic
 | **evaluations** | <!----><!---->[**List&lt;Evaluation&gt;**](Evaluation.html)<!----> |  |  [optional] |
 | **screenRecordingState** | [**ScreenRecordingStateEnum**](#ScreenRecordingStateEnum)<!----> | The current screen recording state for this participant. |  [optional] |
 | **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum)<!----> | The reason specifying why participant flagged the conversation. |  [optional] |
-| **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **startAcwTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this participant started after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **endAcwTime** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp when this participant ended after-call work. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 {: class="table table-striped"}
 
 

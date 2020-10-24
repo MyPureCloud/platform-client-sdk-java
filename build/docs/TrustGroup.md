@@ -11,7 +11,7 @@ title: TrustGroup
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> | The group name. |  |
 | **description** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **memberCount** | <!----><!---->**Long**<!----> | Number of members. |  [optional] |
 | **state** | [**StateEnum**](#StateEnum)<!----> | Active, inactive, or deleted state. |  [optional] |
 | **version** | <!----><!---->**Integer**<!----> | Current version for this resource. |  [optional] |
@@ -21,7 +21,7 @@ title: TrustGroup
 | **rulesVisible** | <!----><!---->**Boolean**<!----> | Are membership rules visible to the person requesting to view the group |  |
 | **visibility** | [**VisibilityEnum**](#VisibilityEnum)<!----> | Who can view this group |  |
 | **owners** | <!----><!---->[**List&lt;User&gt;**](User.html)<!----> | Owners of the group |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | The date on which the trusted group was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | The date on which the trusted group was added. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **createdBy** | <!----><!---->[**OrgUser**](OrgUser.html)<!----> | The user that added trusted group. |  [optional] |
 {: class="table table-striped"}
 

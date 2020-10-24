@@ -18,42 +18,7 @@ public class MessageMediaData  implements Serializable {
   private String id = null;
   private String name = null;
   private String url = null;
-
-  /**
-   * The optional internet media type of the the media object.  If null then the media type should be dictated by the url.
-   */
-  public enum MediaTypeEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    IMAGE_PNG("image/png"),
-    IMAGE_JPEG("image/jpeg"),
-    IMAGE_GIF("image/gif");
-
-    private String value;
-
-    MediaTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static MediaTypeEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (MediaTypeEnum value : MediaTypeEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return MediaTypeEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private MediaTypeEnum mediaType = null;
+  private String mediaType = null;
   private Integer contentLengthBytes = null;
   private String uploadUrl = null;
 
@@ -138,19 +103,19 @@ public class MessageMediaData  implements Serializable {
 
   
   /**
-   * The optional internet media type of the the media object.  If null then the media type should be dictated by the url.
+   * The detected internet media type of the the media object.  If null then the media type should be dictated by the url.
    **/
-  public MessageMediaData mediaType(MediaTypeEnum mediaType) {
+  public MessageMediaData mediaType(String mediaType) {
     this.mediaType = mediaType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The optional internet media type of the the media object.  If null then the media type should be dictated by the url.")
+  @ApiModelProperty(example = "null", value = "The detected internet media type of the the media object.  If null then the media type should be dictated by the url.")
   @JsonProperty("mediaType")
-  public MediaTypeEnum getMediaType() {
+  public String getMediaType() {
     return mediaType;
   }
-  public void setMediaType(MediaTypeEnum mediaType) {
+  public void setMediaType(String mediaType) {
     this.mediaType = mediaType;
   }
 

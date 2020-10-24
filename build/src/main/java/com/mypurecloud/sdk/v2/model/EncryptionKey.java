@@ -51,14 +51,14 @@ public class EncryptionKey  implements Serializable {
 
   
   /**
-   * create date of the key pair. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * create date of the key pair. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public EncryptionKey createDate(Date createDate) {
     this.createDate = createDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "create date of the key pair. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "create date of the key pair. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("createDate")
   public Date getCreateDate() {
     return createDate;

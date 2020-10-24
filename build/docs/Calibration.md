@@ -18,7 +18,7 @@ title: Calibration
 | **averageScore** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **highScore** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **lowScore** | <!----><!---->**Integer**<!----> |  |  [optional] |
-| **createdDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **createdDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **evaluations** | <!----><!---->[**List&lt;Evaluation&gt;**](Evaluation.html)<!----> |  |  [optional] |
 | **evaluators** | <!----><!---->[**List&lt;User&gt;**](User.html)<!----> |  |  [optional] |
 | **scoringIndex** | <!----><!---->[**Evaluation**](Evaluation.html)<!----> |  |  [optional] |

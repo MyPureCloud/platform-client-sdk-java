@@ -9532,7 +9532,7 @@ public class ConversationsApiAsync {
   
   /**
    * Send message
-   * 
+   * Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -9566,7 +9566,7 @@ public class ConversationsApiAsync {
 
   /**
    * Send message
-   * 
+   * Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

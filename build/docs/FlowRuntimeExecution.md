@@ -11,9 +11,9 @@ title: FlowRuntimeExecution
 | **id** | <!----><!---->**String**<!----> | The flow execution ID |  [optional] |
 | **name** | <!----><!---->**String**<!----> | The flow execution name. |  [optional] |
 | **flowVersion** | <!----><!---->[**FlowVersion**](FlowVersion.html)<!----> | The Version of the flow definition of the flow execution. |  |
-| **dateLaunched** | <!----><!---->[**Date**](Date.html)<!----> | The time the flow was launched. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  |
+| **dateLaunched** | <!----><!---->[**Date**](Date.html)<!----> | The time the flow was launched. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> | The flow&#39;s running status, which indicates whether the flow is running normally or completed, etc. |  |
-| **dateCompleted** | <!----><!---->[**Date**](Date.html)<!----> | The time the flow completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **dateCompleted** | <!----><!---->[**Date**](Date.html)<!----> | The time the flow completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **completionReason** | <!----><!---->**String**<!----> | The completion reason set at the flow completion time, if applicable. |  [optional] |
 | **flowErrorInfo** | <!----><!---->[**ErrorBody**](ErrorBody.html)<!----> | Additional information if the flow is in error |  [optional] |
 | **outputData** | <!----><!---->**Map&lt;String, Object&gt;**<!----> | List of the flow&#39;s output variables, if any. Output variables are only supplied for Completed flows. |  [optional] |

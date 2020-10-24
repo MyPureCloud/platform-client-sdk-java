@@ -81,6 +81,7 @@ public class FlowAggregateQueryPredicate  implements Serializable {
     EXTERNALORGANIZATIONID("externalOrganizationId"),
     FLAGGEDREASON("flaggedReason"),
     FLOWID("flowId"),
+    FLOWINTYPE("flowInType"),
     FLOWMILESTONEID("flowMilestoneId"),
     FLOWNAME("flowName"),
     FLOWOUTTYPE("flowOutType"),

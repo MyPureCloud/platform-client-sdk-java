@@ -98,14 +98,14 @@ public class AsyncQueryStatus  implements Serializable {
 
   
   /**
-   * The time at which results for this query will expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The time at which results for this query will expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public AsyncQueryStatus expirationDate(Date expirationDate) {
     this.expirationDate = expirationDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The time at which results for this query will expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The time at which results for this query will expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("expirationDate")
   public Date getExpirationDate() {
     return expirationDate;
@@ -116,14 +116,14 @@ public class AsyncQueryStatus  implements Serializable {
 
   
   /**
-   * The time at which the query was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The time at which the query was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public AsyncQueryStatus submissionDate(Date submissionDate) {
     this.submissionDate = submissionDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The time at which the query was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The time at which the query was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("submissionDate")
   public Date getSubmissionDate() {
     return submissionDate;
@@ -134,14 +134,14 @@ public class AsyncQueryStatus  implements Serializable {
 
   
   /**
-   * The time at which the query completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The time at which the query completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public AsyncQueryStatus completionDate(Date completionDate) {
     this.completionDate = completionDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The time at which the query completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The time at which the query completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("completionDate")
   public Date getCompletionDate() {
     return completionDate;

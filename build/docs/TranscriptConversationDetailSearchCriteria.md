@@ -42,6 +42,7 @@ title: TranscriptConversationDetailSearchCriteria
 | EXACT | &quot;EXACT&quot; |
 | EXACT_PHRASE | &quot;EXACT_PHRASE&quot; |
 | PHRASE | &quot;PHRASE&quot; |
+| DATE_RANGE | &quot;DATE_RANGE&quot; |
 {: class="table table-striped"}
 
 

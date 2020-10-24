@@ -11,7 +11,7 @@ title: MessageData
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
 | **providerMessageId** | <!----><!---->**String**<!----> | The unique identifier of the message from provider |  [optional] |
-| **timestamp** | <!----><!---->[**Date**](Date.html)<!----> | The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  |
+| **timestamp** | <!----><!---->[**Date**](Date.html)<!----> | The time when the message was received or sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
 | **fromAddress** | <!----><!---->**String**<!----> | The sender of the text message. |  [optional] |
 | **toAddress** | <!----><!---->**String**<!----> | The recipient of the text message. |  [optional] |
 | **direction** | [**DirectionEnum**](#DirectionEnum)<!----> | The direction of the message. |  [optional] |

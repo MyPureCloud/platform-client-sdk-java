@@ -164,14 +164,14 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
 
   
   /**
-   * The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public SendAgentlessOutboundMessageResponse timestamp(Date timestamp) {
     this.timestamp = timestamp;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("timestamp")
   public Date getTimestamp() {
     return timestamp;

@@ -229,14 +229,14 @@ public class BuScheduleRun  implements Serializable {
 
   
   /**
-   * When the schedule generation run started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * When the schedule generation run started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public BuScheduleRun schedulingStartTime(Date schedulingStartTime) {
     this.schedulingStartTime = schedulingStartTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "When the schedule generation run started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "When the schedule generation run started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("schedulingStartTime")
   public Date getSchedulingStartTime() {
     return schedulingStartTime;
@@ -283,14 +283,14 @@ public class BuScheduleRun  implements Serializable {
 
   
   /**
-   * When the scheduling run was completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * When the scheduling run was completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public BuScheduleRun schedulingCompletedTime(Date schedulingCompletedTime) {
     this.schedulingCompletedTime = schedulingCompletedTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "When the scheduling run was completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "When the scheduling run was completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("schedulingCompletedTime")
   public Date getSchedulingCompletedTime() {
     return schedulingCompletedTime;
@@ -337,14 +337,14 @@ public class BuScheduleRun  implements Serializable {
 
   
   /**
-   * When the reschedule result will expire.  Null unless intradayRescheduling is true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * When the reschedule result will expire.  Null unless intradayRescheduling is true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public BuScheduleRun reschedulingResultExpiration(Date reschedulingResultExpiration) {
     this.reschedulingResultExpiration = reschedulingResultExpiration;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "When the reschedule result will expire.  Null unless intradayRescheduling is true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "When the reschedule result will expire.  Null unless intradayRescheduling is true. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("reschedulingResultExpiration")
   public Date getReschedulingResultExpiration() {
     return reschedulingResultExpiration;

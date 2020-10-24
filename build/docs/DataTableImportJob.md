@@ -12,8 +12,8 @@ title: DataTableImportJob
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
 | **owner** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | The PureCloud user who started the import job |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> | The status of the import job |  |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp of when the import began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **dateCompleted** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp of when the import stopped (either successfully or unsuccessfully). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp of when the import began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateCompleted** | <!----><!---->[**Date**](Date.html)<!----> | The timestamp of when the import stopped (either successfully or unsuccessfully). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **uploadURI** | <!----><!---->**String**<!----> | The URL of the location at which the caller can upload the file to be imported |  [optional] |
 | **importMode** | [**ImportModeEnum**](#ImportModeEnum)<!----> | The indication of whether the processing should remove rows that don&#39;t appear in the import file |  [optional] |
 | **errorInformation** | <!----><!---->[**ErrorBody**](ErrorBody.html)<!----> | Any error information, or null of the processing is not in an error state |  [optional] |

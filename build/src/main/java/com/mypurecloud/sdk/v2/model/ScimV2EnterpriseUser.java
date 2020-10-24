@@ -77,14 +77,14 @@ public class ScimV2EnterpriseUser  implements Serializable {
 
   
   /**
-   * The users employee number.
+   * The user's employee number.
    **/
   public ScimV2EnterpriseUser employeeNumber(String employeeNumber) {
     this.employeeNumber = employeeNumber;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The users employee number.")
+  @ApiModelProperty(example = "null", value = "The user's employee number.")
   @JsonProperty("employeeNumber")
   public String getEmployeeNumber() {
     return employeeNumber;

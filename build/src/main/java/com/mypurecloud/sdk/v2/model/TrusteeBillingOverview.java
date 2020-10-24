@@ -176,14 +176,14 @@ public class TrusteeBillingOverview  implements Serializable {
 
   
   /**
-   * Date-time the ramp period starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Date-time the ramp period starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public TrusteeBillingOverview rampPeriodStartDate(Date rampPeriodStartDate) {
     this.rampPeriodStartDate = rampPeriodStartDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date-time the ramp period starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date-time the ramp period starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("rampPeriodStartDate")
   public Date getRampPeriodStartDate() {
     return rampPeriodStartDate;
@@ -194,14 +194,14 @@ public class TrusteeBillingOverview  implements Serializable {
 
   
   /**
-   * Date-time the ramp period ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Date-time the ramp period ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public TrusteeBillingOverview rampPeriodEndDate(Date rampPeriodEndDate) {
     this.rampPeriodEndDate = rampPeriodEndDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date-time the ramp period ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date-time the ramp period ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("rampPeriodEndDate")
   public Date getRampPeriodEndDate() {
     return rampPeriodEndDate;
@@ -212,14 +212,14 @@ public class TrusteeBillingOverview  implements Serializable {
 
   
   /**
-   * Date-time the billing period started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Date-time the billing period started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public TrusteeBillingOverview billingPeriodStartDate(Date billingPeriodStartDate) {
     this.billingPeriodStartDate = billingPeriodStartDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date-time the billing period started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date-time the billing period started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("billingPeriodStartDate")
   public Date getBillingPeriodStartDate() {
     return billingPeriodStartDate;
@@ -230,14 +230,14 @@ public class TrusteeBillingOverview  implements Serializable {
 
   
   /**
-   * Date-time the billing period ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Date-time the billing period ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public TrusteeBillingOverview billingPeriodEndDate(Date billingPeriodEndDate) {
     this.billingPeriodEndDate = billingPeriodEndDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date-time the billing period ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date-time the billing period ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("billingPeriodEndDate")
   public Date getBillingPeriodEndDate() {
     return billingPeriodEndDate;
@@ -266,14 +266,14 @@ public class TrusteeBillingOverview  implements Serializable {
 
   
   /**
-   * Date-time the contract was last amended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Date-time the contract was last amended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public TrusteeBillingOverview contractAmendmentDate(Date contractAmendmentDate) {
     this.contractAmendmentDate = contractAmendmentDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date-time the contract was last amended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date-time the contract was last amended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("contractAmendmentDate")
   public Date getContractAmendmentDate() {
     return contractAmendmentDate;
@@ -284,14 +284,14 @@ public class TrusteeBillingOverview  implements Serializable {
 
   
   /**
-   * Date-time the contract became effective. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Date-time the contract became effective. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public TrusteeBillingOverview contractEffectiveDate(Date contractEffectiveDate) {
     this.contractEffectiveDate = contractEffectiveDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date-time the contract became effective. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date-time the contract became effective. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("contractEffectiveDate")
   public Date getContractEffectiveDate() {
     return contractEffectiveDate;
@@ -302,14 +302,14 @@ public class TrusteeBillingOverview  implements Serializable {
 
   
   /**
-   * Date-time the contract ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Date-time the contract ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public TrusteeBillingOverview contractEndDate(Date contractEndDate) {
     this.contractEndDate = contractEndDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date-time the contract ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date-time the contract ends. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("contractEndDate")
   public Date getContractEndDate() {
     return contractEndDate;

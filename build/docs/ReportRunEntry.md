@@ -11,7 +11,7 @@ title: ReportRunEntry
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
 | **reportId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **runTime** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **runTime** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **runStatus** | [**RunStatusEnum**](#RunStatusEnum)<!----> |  |  [optional] |
 | **errorMessage** | <!----><!---->**String**<!----> |  |  [optional] |
 | **runDurationMsec** | <!----><!---->**Long**<!----> |  |  [optional] |

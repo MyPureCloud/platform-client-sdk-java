@@ -54,6 +54,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
   private QueueConversationEventTopicConversationRoutingData conversationRoutingData = null;
   private Integer alertingTimeoutMs = null;
   private String monitoredParticipantId = null;
+  private String coachedParticipantId = null;
 
   /**
    * Gets or Sets screenRecordingState
@@ -500,6 +501,23 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
   
   /**
    **/
+  public QueueConversationEventTopicParticipant coachedParticipantId(String coachedParticipantId) {
+    this.coachedParticipantId = coachedParticipantId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("coachedParticipantId")
+  public String getCoachedParticipantId() {
+    return coachedParticipantId;
+  }
+  public void setCoachedParticipantId(String coachedParticipantId) {
+    this.coachedParticipantId = coachedParticipantId;
+  }
+
+  
+  /**
+   **/
   public QueueConversationEventTopicParticipant screenRecordingState(ScreenRecordingStateEnum screenRecordingState) {
     this.screenRecordingState = screenRecordingState;
     return this;
@@ -752,6 +770,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
         Objects.equals(this.conversationRoutingData, queueConversationEventTopicParticipant.conversationRoutingData) &&
         Objects.equals(this.alertingTimeoutMs, queueConversationEventTopicParticipant.alertingTimeoutMs) &&
         Objects.equals(this.monitoredParticipantId, queueConversationEventTopicParticipant.monitoredParticipantId) &&
+        Objects.equals(this.coachedParticipantId, queueConversationEventTopicParticipant.coachedParticipantId) &&
         Objects.equals(this.screenRecordingState, queueConversationEventTopicParticipant.screenRecordingState) &&
         Objects.equals(this.flaggedReason, queueConversationEventTopicParticipant.flaggedReason) &&
         Objects.equals(this.attributes, queueConversationEventTopicParticipant.attributes) &&
@@ -769,7 +788,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, additionalProperties);
+    return Objects.hash(id, connectedTime, endTime, userId, externalContactId, externalOrganizationId, name, queueId, groupId, teamId, purpose, consultParticipantId, address, wrapupRequired, wrapupExpected, wrapupPrompt, wrapupTimeoutMs, wrapup, startAcwTime, endAcwTime, conversationRoutingData, alertingTimeoutMs, monitoredParticipantId, coachedParticipantId, screenRecordingState, flaggedReason, attributes, calls, callbacks, chats, cobrowsesessions, emails, messages, screenshares, socialExpressions, videos, additionalProperties);
   }
 
   @Override
@@ -800,6 +819,7 @@ public class QueueConversationEventTopicParticipant  implements Serializable {
     sb.append("    conversationRoutingData: ").append(toIndentedString(conversationRoutingData)).append("\n");
     sb.append("    alertingTimeoutMs: ").append(toIndentedString(alertingTimeoutMs)).append("\n");
     sb.append("    monitoredParticipantId: ").append(toIndentedString(monitoredParticipantId)).append("\n");
+    sb.append("    coachedParticipantId: ").append(toIndentedString(coachedParticipantId)).append("\n");
     sb.append("    screenRecordingState: ").append(toIndentedString(screenRecordingState)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");

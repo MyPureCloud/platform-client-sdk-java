@@ -21,14 +21,14 @@ public class OrphanUpdateRequest  implements Serializable {
 
   
   /**
-   * The orphan recording's archive date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The orphan recording's archive date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public OrphanUpdateRequest archiveDate(Date archiveDate) {
     this.archiveDate = archiveDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The orphan recording's archive date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The orphan recording's archive date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("archiveDate")
   public Date getArchiveDate() {
     return archiveDate;
@@ -39,14 +39,14 @@ public class OrphanUpdateRequest  implements Serializable {
 
   
   /**
-   * The orphan recording's delete date. Must be greater than archiveDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The orphan recording's delete date. Must be greater than archiveDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public OrphanUpdateRequest deleteDate(Date deleteDate) {
     this.deleteDate = deleteDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The orphan recording's delete date. Must be greater than archiveDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The orphan recording's delete date. Must be greater than archiveDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("deleteDate")
   public Date getDeleteDate() {
     return deleteDate;

@@ -366,14 +366,14 @@ public class Recording  implements Serializable {
 
   
   /**
-   * The amount of time a restored recording will remain restored before being archived again. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The amount of time a restored recording will remain restored before being archived again. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public Recording restoreExpirationTime(Date restoreExpirationTime) {
     this.restoreExpirationTime = restoreExpirationTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The amount of time a restored recording will remain restored before being archived again. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The amount of time a restored recording will remain restored before being archived again. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("restoreExpirationTime")
   public Date getRestoreExpirationTime() {
     return restoreExpirationTime;
@@ -436,14 +436,14 @@ public class Recording  implements Serializable {
 
   
   /**
-   * The date the recording will be archived. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The date the recording will be archived. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public Recording archiveDate(Date archiveDate) {
     this.archiveDate = archiveDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The date the recording will be archived. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The date the recording will be archived. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("archiveDate")
   public Date getArchiveDate() {
     return archiveDate;
@@ -472,14 +472,14 @@ public class Recording  implements Serializable {
 
   
   /**
-   * The date the recording will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The date the recording will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public Recording deleteDate(Date deleteDate) {
     this.deleteDate = deleteDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The date the recording will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The date the recording will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("deleteDate")
   public Date getDeleteDate() {
     return deleteDate;
@@ -490,14 +490,14 @@ public class Recording  implements Serializable {
 
   
   /**
-   * The date the recording will be exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The date the recording will be exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public Recording exportDate(Date exportDate) {
     this.exportDate = exportDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The date the recording will be exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The date the recording will be exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("exportDate")
   public Date getExportDate() {
     return exportDate;
@@ -508,14 +508,14 @@ public class Recording  implements Serializable {
 
   
   /**
-   * The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public Recording exportedDate(Date exportedDate) {
     this.exportedDate = exportedDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The date the recording was exported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("exportedDate")
   public Date getExportedDate() {
     return exportedDate;

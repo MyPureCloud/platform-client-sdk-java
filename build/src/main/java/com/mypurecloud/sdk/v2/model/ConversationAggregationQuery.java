@@ -45,6 +45,7 @@ public class ConversationAggregationQuery  implements Serializable {
     EXTERNALMEDIACOUNT("externalMediaCount"),
     EXTERNALORGANIZATIONID("externalOrganizationId"),
     FLAGGEDREASON("flaggedReason"),
+    FLOWINTYPE("flowInType"),
     FLOWOUTTYPE("flowOutType"),
     GROUPID("groupId"),
     INTERACTIONTYPE("interactionType"),
@@ -118,6 +119,7 @@ public class ConversationAggregationQuery  implements Serializable {
    */
   public enum MetricsEnum {
     NBLINDTRANSFERRED("nBlindTransferred"),
+    NCOBROWSESESSIONS("nCobrowseSessions"),
     NCONNECTED("nConnected"),
     NCONSULT("nConsult"),
     NCONSULTTRANSFERRED("nConsultTransferred"),
@@ -313,14 +315,14 @@ public class ConversationAggregationQuery  implements Serializable {
 
   
   /**
-   * Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *).
+   * Behaves like a SQL SELECT clause. Only named metrics will be retrieved.
    **/
   public ConversationAggregationQuery metrics(List<MetricsEnum> metrics) {
     this.metrics = metrics;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *).")
+  @ApiModelProperty(example = "null", required = true, value = "Behaves like a SQL SELECT clause. Only named metrics will be retrieved.")
   @JsonProperty("metrics")
   public List<MetricsEnum> getMetrics() {
     return metrics;

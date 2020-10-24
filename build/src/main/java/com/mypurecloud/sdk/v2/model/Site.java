@@ -81,6 +81,41 @@ public class Site  implements Serializable {
   private LocationDefinition location = null;
   private Boolean managed = null;
   private NTPSettings ntpSettings = null;
+
+  /**
+   * Media model for the site
+   */
+  public enum MediaModelEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    PREMISES("Premises"),
+    CLOUD("Cloud");
+
+    private String value;
+
+    MediaModelEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MediaModelEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MediaModelEnum value : MediaModelEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MediaModelEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private MediaModelEnum mediaModel = null;
   private Boolean coreSite = null;
   private String selfUri = null;
 
@@ -147,14 +182,14 @@ public class Site  implements Serializable {
 
   
   /**
-   * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public Site dateCreated(Date dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
@@ -165,14 +200,14 @@ public class Site  implements Serializable {
 
   
   /**
-   * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public Site dateModified(Date dateModified) {
     this.dateModified = dateModified;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
@@ -451,6 +486,24 @@ public class Site  implements Serializable {
   }
 
   
+  /**
+   * Media model for the site
+   **/
+  public Site mediaModel(MediaModelEnum mediaModel) {
+    this.mediaModel = mediaModel;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Media model for the site")
+  @JsonProperty("mediaModel")
+  public MediaModelEnum getMediaModel() {
+    return mediaModel;
+  }
+  public void setMediaModel(MediaModelEnum mediaModel) {
+    this.mediaModel = mediaModel;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The core site")
   @JsonProperty("coreSite")
   public Boolean getCoreSite() {
@@ -497,13 +550,14 @@ public class Site  implements Serializable {
         Objects.equals(this.location, site.location) &&
         Objects.equals(this.managed, site.managed) &&
         Objects.equals(this.ntpSettings, site.ntpSettings) &&
+        Objects.equals(this.mediaModel, site.mediaModel) &&
         Objects.equals(this.coreSite, site.coreSite) &&
         Objects.equals(this.selfUri, site.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, primarySites, secondarySites, primaryEdges, secondaryEdges, addresses, edges, edgeAutoUpdateConfig, mediaRegionsUseLatencyBased, location, managed, ntpSettings, coreSite, selfUri);
+    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, primarySites, secondarySites, primaryEdges, secondaryEdges, addresses, edges, edgeAutoUpdateConfig, mediaRegionsUseLatencyBased, location, managed, ntpSettings, mediaModel, coreSite, selfUri);
   }
 
   @Override
@@ -533,6 +587,7 @@ public class Site  implements Serializable {
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("    managed: ").append(toIndentedString(managed)).append("\n");
     sb.append("    ntpSettings: ").append(toIndentedString(ntpSettings)).append("\n");
+    sb.append("    mediaModel: ").append(toIndentedString(mediaModel)).append("\n");
     sb.append("    coreSite: ").append(toIndentedString(coreSite)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

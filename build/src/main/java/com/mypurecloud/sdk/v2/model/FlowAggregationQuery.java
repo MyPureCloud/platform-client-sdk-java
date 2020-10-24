@@ -50,6 +50,7 @@ public class FlowAggregationQuery  implements Serializable {
     EXTERNALORGANIZATIONID("externalOrganizationId"),
     FLAGGEDREASON("flaggedReason"),
     FLOWID("flowId"),
+    FLOWINTYPE("flowInType"),
     FLOWMILESTONEID("flowMilestoneId"),
     FLOWNAME("flowName"),
     FLOWOUTTYPE("flowOutType"),
@@ -299,14 +300,14 @@ public class FlowAggregationQuery  implements Serializable {
 
   
   /**
-   * Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *).
+   * Behaves like a SQL SELECT clause. Only named metrics will be retrieved.
    **/
   public FlowAggregationQuery metrics(List<MetricsEnum> metrics) {
     this.metrics = metrics;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *).")
+  @ApiModelProperty(example = "null", required = true, value = "Behaves like a SQL SELECT clause. Only named metrics will be retrieved.")
   @JsonProperty("metrics")
   public List<MetricsEnum> getMetrics() {
     return metrics;

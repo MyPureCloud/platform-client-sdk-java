@@ -214,7 +214,7 @@ public class ScimV2SchemaAttribute  implements Serializable {
   private List<ReferenceTypesEnum> referenceTypes = new ArrayList<ReferenceTypesEnum>();
 
   
-  @ApiModelProperty(example = "null", value = "The attribute's name")
+  @ApiModelProperty(example = "null", value = "The name of the attribute.")
   @JsonProperty("name")
   public String getName() {
     return name;

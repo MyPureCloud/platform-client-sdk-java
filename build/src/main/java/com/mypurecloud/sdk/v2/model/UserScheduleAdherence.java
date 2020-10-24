@@ -418,7 +418,7 @@ public class UserScheduleAdherence  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "Time when presence was last updated.  Used to calculate time in current status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Time when presence was last updated.  Used to calculate time in current status. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("presenceUpdateTime")
   public Date getPresenceUpdateTime() {
     return presenceUpdateTime;
@@ -443,7 +443,7 @@ public class UserScheduleAdherence  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "Time when the list of active queues for this user was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Time when the list of active queues for this user was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("activeQueuesModifiedTime")
   public Date getActiveQueuesModifiedTime() {
     return activeQueuesModifiedTime;

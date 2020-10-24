@@ -21,8 +21,8 @@ title: ReportingExportJobResponse
 | **period** | <!----><!---->**String**<!----> | The Period of the request in which to break down the intervals. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H |  |
 | **filter** | <!----><!---->[**ViewFilter**](ViewFilter.html)<!----> | Filters to apply to create the view |  |
 | **read** | <!----><!---->**Boolean**<!----> | Indicates if the request has been marked as read |  |
-| **createdDateTime** | <!----><!---->[**Date**](Date.html)<!----> | The created date/time of the request. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  |
-| **modifiedDateTime** | <!----><!---->[**Date**](Date.html)<!----> | The last modified date/time of the request. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  |
+| **createdDateTime** | <!----><!---->[**Date**](Date.html)<!----> | The created date/time of the request. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
+| **modifiedDateTime** | <!----><!---->[**Date**](Date.html)<!----> | The last modified date/time of the request. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
 | **locale** | <!----><!---->**String**<!----> | The locale use for localization of the exported data, i.e. en-us, es-mx   |  |
 | **percentageComplete** | <!----><!---->**Double**<!----> | The percentage of the job that has completed processing |  |
 | **hasFormatDurations** | <!----><!---->**Boolean**<!----> | Indicates if durations are formatted in hh:mm:ss format instead of ms |  [optional] |

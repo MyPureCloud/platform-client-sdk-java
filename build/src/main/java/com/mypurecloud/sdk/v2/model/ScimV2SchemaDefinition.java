@@ -66,14 +66,14 @@ public class ScimV2SchemaDefinition  implements Serializable {
 
   
   /**
-   * The metadata of the SCIM resource. Only location and resourceType are set for Schema resources.
+   * The metadata of the SCIM resource. Only \"location\" and \"resourceType\" are set for \"Schema\" resources.
    **/
   public ScimV2SchemaDefinition meta(ScimMetadata meta) {
     this.meta = meta;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource. Only location and resourceType are set for Schema resources.")
+  @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource. Only \"location\" and \"resourceType\" are set for \"Schema\" resources.")
   @JsonProperty("meta")
   public ScimMetadata getMeta() {
     return meta;

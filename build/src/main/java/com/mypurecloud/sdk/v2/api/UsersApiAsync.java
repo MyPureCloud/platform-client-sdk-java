@@ -38,6 +38,8 @@ import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
 import com.mypurecloud.sdk.v2.model.RoutingStatus;
 import com.mypurecloud.sdk.v2.model.UserStations;
 import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
+import com.mypurecloud.sdk.v2.model.DevelopmentActivityListing;
+import com.mypurecloud.sdk.v2.model.DevelopmentActivity;
 import com.mypurecloud.sdk.v2.model.UserMe;
 import com.mypurecloud.sdk.v2.model.UsersSearchResponse;
 import com.mypurecloud.sdk.v2.model.UpdateUser;
@@ -58,6 +60,8 @@ import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 import com.mypurecloud.sdk.v2.model.ChangePasswordRequest;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 import com.mypurecloud.sdk.v2.model.CreateUser;
+import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateResponse;
+import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateParam;
 import com.mypurecloud.sdk.v2.model.ChangeMyPasswordRequest;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 
@@ -99,6 +103,9 @@ import com.mypurecloud.sdk.v2.api.request.GetUserStationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserSuperiorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserTrustorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivitiesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivitiesMeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUsersDevelopmentActivityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRequest;
@@ -122,6 +129,7 @@ import com.mypurecloud.sdk.v2.api.request.PostUserPasswordRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutinglanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersRequest;
+import com.mypurecloud.sdk.v2.api.request.PostUsersDevelopmentActivitiesAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersMePasswordRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRoutingUserUtilizationRequest;
@@ -2968,6 +2976,234 @@ public class UsersApiAsync {
 
   
   /**
+   * Get list of Development Activities
+   * Either moduleId or userId is required. Results are filtered based on the applicable permissions.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DevelopmentActivityListing> getUsersDevelopmentActivitiesAsync(GetUsersDevelopmentActivitiesRequest request, final AsyncApiCallback<DevelopmentActivityListing> callback) {
+    try {
+      final SettableFuture<DevelopmentActivityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DevelopmentActivityListing>() {}, new AsyncApiCallback<ApiResponse<DevelopmentActivityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DevelopmentActivityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get list of Development Activities
+   * Either moduleId or userId is required. Results are filtered based on the applicable permissions.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DevelopmentActivityListing>> getUsersDevelopmentActivitiesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DevelopmentActivityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DevelopmentActivityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DevelopmentActivityListing>() {}, new AsyncApiCallback<ApiResponse<DevelopmentActivityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DevelopmentActivityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DevelopmentActivityListing> response = (ApiResponse<DevelopmentActivityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DevelopmentActivityListing> response = (ApiResponse<DevelopmentActivityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get list of Development Activities for current user
+   * Results are filtered based on the applicable permissions.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DevelopmentActivityListing> getUsersDevelopmentActivitiesMeAsync(GetUsersDevelopmentActivitiesMeRequest request, final AsyncApiCallback<DevelopmentActivityListing> callback) {
+    try {
+      final SettableFuture<DevelopmentActivityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DevelopmentActivityListing>() {}, new AsyncApiCallback<ApiResponse<DevelopmentActivityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DevelopmentActivityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get list of Development Activities for current user
+   * Results are filtered based on the applicable permissions.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DevelopmentActivityListing>> getUsersDevelopmentActivitiesMeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DevelopmentActivityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DevelopmentActivityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DevelopmentActivityListing>() {}, new AsyncApiCallback<ApiResponse<DevelopmentActivityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DevelopmentActivityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DevelopmentActivityListing> response = (ApiResponse<DevelopmentActivityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DevelopmentActivityListing> response = (ApiResponse<DevelopmentActivityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a Development Activity
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DevelopmentActivity> getUsersDevelopmentActivityAsync(GetUsersDevelopmentActivityRequest request, final AsyncApiCallback<DevelopmentActivity> callback) {
+    try {
+      final SettableFuture<DevelopmentActivity> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DevelopmentActivity>() {}, new AsyncApiCallback<ApiResponse<DevelopmentActivity>>() {
+        @Override
+        public void onCompleted(ApiResponse<DevelopmentActivity> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Development Activity
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DevelopmentActivity>> getUsersDevelopmentActivityAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DevelopmentActivity>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DevelopmentActivity>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DevelopmentActivity>() {}, new AsyncApiCallback<ApiResponse<DevelopmentActivity>>() {
+        @Override
+        public void onCompleted(ApiResponse<DevelopmentActivity> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DevelopmentActivity> response = (ApiResponse<DevelopmentActivity>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DevelopmentActivity> response = (ApiResponse<DevelopmentActivity>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get current user details.
    * This request is not valid when using the Client Credentials OAuth grant.
    * @param request the request object
@@ -4703,6 +4939,82 @@ public class UsersApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<User> response = (ApiResponse<User>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Retrieve aggregated development activity data
+   * Results are filtered based on the applicable permissions.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DevelopmentActivityAggregateResponse> postUsersDevelopmentActivitiesAggregatesQueryAsync(PostUsersDevelopmentActivitiesAggregatesQueryRequest request, final AsyncApiCallback<DevelopmentActivityAggregateResponse> callback) {
+    try {
+      final SettableFuture<DevelopmentActivityAggregateResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DevelopmentActivityAggregateResponse>() {}, new AsyncApiCallback<ApiResponse<DevelopmentActivityAggregateResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<DevelopmentActivityAggregateResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve aggregated development activity data
+   * Results are filtered based on the applicable permissions.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DevelopmentActivityAggregateResponse>> postUsersDevelopmentActivitiesAggregatesQueryAsync(ApiRequest<DevelopmentActivityAggregateParam> request, final AsyncApiCallback<ApiResponse<DevelopmentActivityAggregateResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DevelopmentActivityAggregateResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DevelopmentActivityAggregateResponse>() {}, new AsyncApiCallback<ApiResponse<DevelopmentActivityAggregateResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<DevelopmentActivityAggregateResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DevelopmentActivityAggregateResponse> response = (ApiResponse<DevelopmentActivityAggregateResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DevelopmentActivityAggregateResponse> response = (ApiResponse<DevelopmentActivityAggregateResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

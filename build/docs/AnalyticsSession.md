@@ -31,7 +31,7 @@ title: AnalyticsSession
 | **monitoredParticipantId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **callbackUserName** | <!----><!---->**String**<!----> | The name of the user requesting a call back |  [optional] |
 | **callbackNumbers** | <!----><!---->**List&lt;String&gt;**<!----> | List of numbers to callback |  [optional] |
-| **callbackScheduledTime** | <!----><!---->[**Date**](Date.html)<!----> | Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **callbackScheduledTime** | <!----><!---->[**Date**](Date.html)<!----> | Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **scriptId** | <!----><!---->**String**<!----> | A unique identifier for a script |  [optional] |
 | **peerId** | <!----><!---->**String**<!----> | A unique identifier for a peer |  [optional] |
 | **skipEnabled** | <!----><!---->**Boolean**<!----> | (Dialer) Whether the agent can skip the dialer contact |  [optional] |
@@ -60,6 +60,7 @@ title: AnalyticsSession
 | **provider** | <!----><!---->**String**<!----> | The source provider for the communication |  [optional] |
 | **remote** | <!----><!---->**String**<!----> | Name, phone number, or email address of the remote party. |  [optional] |
 | **mediaCount** | <!----><!---->**Integer**<!----> | Count of any media (images, files, etc) included in this session |  [optional] |
+| **flowInType** | <!----><!---->**String**<!----> | Type of flow in that occurred, e.g. acd, ivr, etc. |  [optional] |
 | **flowOutType** | <!----><!---->**String**<!----> | Type of flow out that occurred, e.g. voicemail, callback, or acd |  [optional] |
 | **requestedRoutings** | <!---->[**List&lt;RequestedRoutingsEnum&gt;**](#RequestedRoutingsEnum)<!----> | All routing types for requested/attempted routing methods. |  [optional] |
 | **usedRouting** | [**UsedRoutingEnum**](#UsedRoutingEnum)<!----> | Complete routing method |  [optional] |

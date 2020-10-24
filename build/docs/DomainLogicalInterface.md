@@ -12,8 +12,8 @@ title: DomainLogicalInterface
 | **name** | <!----><!---->**String**<!----> | The name of the entity. |  |
 | **description** | <!----><!---->**String**<!----> | The resource&#39;s description. |  [optional] |
 | **version** | <!----><!---->**Integer**<!----> | The current version of the resource. |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **modifiedBy** | <!----><!---->**String**<!----> | The ID of the user that last modified the resource. |  [optional] |
 | **createdBy** | <!----><!---->**String**<!----> | The ID of the user that created the resource. |  [optional] |
 | **state** | [**StateEnum**](#StateEnum)<!----> | Indicates if the resource is active, inactive, or deleted. |  [optional] |
@@ -45,8 +45,8 @@ title: DomainLogicalInterface
 | **externalTrunkBaseAssignments** | <!----><!---->[**List&lt;TrunkBaseAssignment&gt;**](TrunkBaseAssignment.html)<!----> | External trunk base settings to use for external communication from this interface. |  [optional] |
 | **phoneTrunkBaseAssignments** | <!----><!---->[**List&lt;TrunkBaseAssignment&gt;**](TrunkBaseAssignment.html)<!----> | Phone trunk base settings to use for phone communication from this interface.  These settings will be ignored when \&quot;inheritPhoneTrunkBases\&quot; is true. |  [optional] |
 | **traceEnabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **startDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **endDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **startDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **endDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

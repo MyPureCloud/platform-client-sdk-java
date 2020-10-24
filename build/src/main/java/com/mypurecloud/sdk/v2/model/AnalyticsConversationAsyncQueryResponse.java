@@ -42,14 +42,14 @@ public class AnalyticsConversationAsyncQueryResponse  implements Serializable {
 
   
   /**
-   * Data available up to at least this datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Data available up to at least this datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public AnalyticsConversationAsyncQueryResponse dataAvailabilityDate(Date dataAvailabilityDate) {
     this.dataAvailabilityDate = dataAvailabilityDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Data available up to at least this datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Data available up to at least this datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dataAvailabilityDate")
   public Date getDataAvailabilityDate() {
     return dataAvailabilityDate;

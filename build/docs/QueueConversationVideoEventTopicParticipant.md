@@ -31,6 +31,7 @@ title: QueueConversationVideoEventTopicParticipant
 | **conversationRoutingData** | <!----><!---->[**QueueConversationVideoEventTopicConversationRoutingData**](QueueConversationVideoEventTopicConversationRoutingData.html)<!----> |  |  [optional] |
 | **alertingTimeoutMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **monitoredParticipantId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **coachedParticipantId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **screenRecordingState** | [**ScreenRecordingStateEnum**](#ScreenRecordingStateEnum)<!----> |  |  [optional] |
 | **flaggedReason** | <!----><!---->**String**<!----> |  |  [optional] |
 | **attributes** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |

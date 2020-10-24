@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -66,6 +67,43 @@ public class TwitterIntegration  implements Serializable {
   private DomainEntityRef createdBy = null;
   private DomainEntityRef modifiedBy = null;
   private Integer version = null;
+
+  /**
+   * Status of asynchronous create operation
+   */
+  public enum CreateStatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    INITIATED("Initiated"),
+    COMPLETED("Completed"),
+    ERROR("Error");
+
+    private String value;
+
+    CreateStatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static CreateStatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (CreateStatusEnum value : CreateStatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return CreateStatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private CreateStatusEnum createStatus = null;
+  private ErrorBody createError = null;
   private String selfUri = null;
 
   
@@ -239,14 +277,14 @@ public class TwitterIntegration  implements Serializable {
 
   
   /**
-   * Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public TwitterIntegration dateCreated(Date dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
@@ -257,14 +295,14 @@ public class TwitterIntegration  implements Serializable {
 
   
   /**
-   * Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public TwitterIntegration dateModified(Date dateModified) {
     this.dateModified = dateModified;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date this Integration was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
@@ -328,6 +366,31 @@ public class TwitterIntegration  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "Status of asynchronous create operation")
+  @JsonProperty("createStatus")
+  public CreateStatusEnum getCreateStatus() {
+    return createStatus;
+  }
+
+  
+  /**
+   * Error information returned, if createStatus is set to Error
+   **/
+  public TwitterIntegration createError(ErrorBody createError) {
+    this.createError = createError;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Error information returned, if createStatus is set to Error")
+  @JsonProperty("createError")
+  public ErrorBody getCreateError() {
+    return createError;
+  }
+  public void setCreateError(ErrorBody createError) {
+    this.createError = createError;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -360,12 +423,14 @@ public class TwitterIntegration  implements Serializable {
         Objects.equals(this.createdBy, twitterIntegration.createdBy) &&
         Objects.equals(this.modifiedBy, twitterIntegration.modifiedBy) &&
         Objects.equals(this.version, twitterIntegration.version) &&
+        Objects.equals(this.createStatus, twitterIntegration.createStatus) &&
+        Objects.equals(this.createError, twitterIntegration.createError) &&
         Objects.equals(this.selfUri, twitterIntegration.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, accessTokenKey, consumerKey, username, userId, status, tier, envName, recipient, dateCreated, dateModified, createdBy, modifiedBy, version, selfUri);
+    return Objects.hash(id, name, accessTokenKey, consumerKey, username, userId, status, tier, envName, recipient, dateCreated, dateModified, createdBy, modifiedBy, version, createStatus, createError, selfUri);
   }
 
   @Override
@@ -388,6 +453,8 @@ public class TwitterIntegration  implements Serializable {
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    createStatus: ").append(toIndentedString(createStatus)).append("\n");
+    sb.append("    createError: ").append(toIndentedString(createError)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

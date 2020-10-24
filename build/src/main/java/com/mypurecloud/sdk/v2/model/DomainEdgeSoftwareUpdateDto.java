@@ -106,14 +106,14 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
 
   
   /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public DomainEdgeSoftwareUpdateDto downloadStartTime(Date downloadStartTime) {
     this.downloadStartTime = downloadStartTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("downloadStartTime")
   public Date getDownloadStartTime() {
     return downloadStartTime;
@@ -124,14 +124,14 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
 
   
   /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public DomainEdgeSoftwareUpdateDto executeStartTime(Date executeStartTime) {
     this.executeStartTime = executeStartTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("executeStartTime")
   public Date getExecuteStartTime() {
     return executeStartTime;
@@ -142,14 +142,14 @@ public class DomainEdgeSoftwareUpdateDto  implements Serializable {
 
   
   /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public DomainEdgeSoftwareUpdateDto executeStopTime(Date executeStopTime) {
     this.executeStopTime = executeStopTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("executeStopTime")
   public Date getExecuteStopTime() {
     return executeStopTime;

@@ -57,14 +57,14 @@ public class AnalyticsSessionMetric  implements Serializable {
 
   
   /**
-   * Metric emission date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Metric emission date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public AnalyticsSessionMetric emitDate(Date emitDate) {
     this.emitDate = emitDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Metric emission date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", required = true, value = "Metric emission date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("emitDate")
   public Date getEmitDate() {
     return emitDate;

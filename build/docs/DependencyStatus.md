@@ -13,8 +13,8 @@ title: DependencyStatus
 | **user** | <!----><!---->[**User**](User.html)<!----> | User that initiated the build. |  [optional] |
 | **client** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | OAuth client that initiated the build. |  [optional] |
 | **buildId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dateStarted** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **dateCompleted** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **dateStarted** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateCompleted** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
 | **failedObjects** | <!----><!---->[**List&lt;FailedObject&gt;**](FailedObject.html)<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |

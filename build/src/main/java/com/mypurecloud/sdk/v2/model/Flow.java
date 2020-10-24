@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.FlowVersion;
+import com.mypurecloud.sdk.v2.model.NluInfo;
 import com.mypurecloud.sdk.v2.model.Operation;
 import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.WritableDivision;
@@ -82,6 +83,7 @@ public class Flow  implements Serializable {
   private FlowVersion debugVersion = null;
   private User publishedBy = null;
   private Operation currentOperation = null;
+  private NluInfo nluInfo = null;
   private String selfUri = null;
 
   
@@ -398,6 +400,24 @@ public class Flow  implements Serializable {
   }
 
   
+  /**
+   * Information about the NLU domain version for the flow
+   **/
+  public Flow nluInfo(NluInfo nluInfo) {
+    this.nluInfo = nluInfo;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Information about the NLU domain version for the flow")
+  @JsonProperty("nluInfo")
+  public NluInfo getNluInfo() {
+    return nluInfo;
+  }
+  public void setNluInfo(NluInfo nluInfo) {
+    this.nluInfo = nluInfo;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -433,12 +453,13 @@ public class Flow  implements Serializable {
         Objects.equals(this.debugVersion, flow.debugVersion) &&
         Objects.equals(this.publishedBy, flow.publishedBy) &&
         Objects.equals(this.currentOperation, flow.currentOperation) &&
+        Objects.equals(this.nluInfo, flow.nluInfo) &&
         Objects.equals(this.selfUri, flow.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, type, lockedUser, lockedClient, active, system, deleted, publishedVersion, savedVersion, inputSchema, outputSchema, checkedInVersion, debugVersion, publishedBy, currentOperation, selfUri);
+    return Objects.hash(id, name, division, description, type, lockedUser, lockedClient, active, system, deleted, publishedVersion, savedVersion, inputSchema, outputSchema, checkedInVersion, debugVersion, publishedBy, currentOperation, nluInfo, selfUri);
   }
 
   @Override
@@ -464,6 +485,7 @@ public class Flow  implements Serializable {
     sb.append("    debugVersion: ").append(toIndentedString(debugVersion)).append("\n");
     sb.append("    publishedBy: ").append(toIndentedString(publishedBy)).append("\n");
     sb.append("    currentOperation: ").append(toIndentedString(currentOperation)).append("\n");
+    sb.append("    nluInfo: ").append(toIndentedString(nluInfo)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

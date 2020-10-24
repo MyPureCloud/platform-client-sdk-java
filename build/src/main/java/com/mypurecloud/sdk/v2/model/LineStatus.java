@@ -97,14 +97,14 @@ public class LineStatus  implements Serializable {
 
   
   /**
-   * The time the line entered its current reachable state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The time the line entered its current reachable state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public LineStatus reachableStateTime(Date reachableStateTime) {
     this.reachableStateTime = reachableStateTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The time the line entered its current reachable state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The time the line entered its current reachable state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("reachableStateTime")
   public Date getReachableStateTime() {
     return reachableStateTime;

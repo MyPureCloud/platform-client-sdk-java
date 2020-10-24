@@ -129,14 +129,14 @@ public class FlowRuntimeExecution  implements Serializable {
 
   
   /**
-   * The time the flow was launched. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The time the flow was launched. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public FlowRuntimeExecution dateLaunched(Date dateLaunched) {
     this.dateLaunched = dateLaunched;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The time the flow was launched. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", required = true, value = "The time the flow was launched. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateLaunched")
   public Date getDateLaunched() {
     return dateLaunched;
@@ -165,14 +165,14 @@ public class FlowRuntimeExecution  implements Serializable {
 
   
   /**
-   * The time the flow completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The time the flow completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public FlowRuntimeExecution dateCompleted(Date dateCompleted) {
     this.dateCompleted = dateCompleted;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The time the flow completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The time the flow completed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCompleted")
   public Date getDateCompleted() {
     return dateCompleted;

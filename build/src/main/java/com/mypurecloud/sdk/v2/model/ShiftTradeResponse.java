@@ -189,14 +189,14 @@ public class ShiftTradeResponse  implements Serializable {
 
   
   /**
-   * The start date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The start date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public ShiftTradeResponse initiatingShiftStart(Date initiatingShiftStart) {
     this.initiatingShiftStart = initiatingShiftStart;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The start date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The start date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("initiatingShiftStart")
   public Date getInitiatingShiftStart() {
     return initiatingShiftStart;
@@ -207,14 +207,14 @@ public class ShiftTradeResponse  implements Serializable {
 
   
   /**
-   * The end date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The end date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public ShiftTradeResponse initiatingShiftEnd(Date initiatingShiftEnd) {
     this.initiatingShiftEnd = initiatingShiftEnd;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The end date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The end date/time of the shift being offered for trade. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("initiatingShiftEnd")
   public Date getInitiatingShiftEnd() {
     return initiatingShiftEnd;
@@ -261,14 +261,14 @@ public class ShiftTradeResponse  implements Serializable {
 
   
   /**
-   * The start date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The start date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public ShiftTradeResponse receivingShiftStart(Date receivingShiftStart) {
     this.receivingShiftStart = receivingShiftStart;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The start date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The start date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("receivingShiftStart")
   public Date getReceivingShiftStart() {
     return receivingShiftStart;
@@ -279,14 +279,14 @@ public class ShiftTradeResponse  implements Serializable {
 
   
   /**
-   * The end date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The end date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public ShiftTradeResponse receivingShiftEnd(Date receivingShiftEnd) {
     this.receivingShiftEnd = receivingShiftEnd;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The end date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The end date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("receivingShiftEnd")
   public Date getReceivingShiftEnd() {
     return receivingShiftEnd;
@@ -297,14 +297,14 @@ public class ShiftTradeResponse  implements Serializable {
 
   
   /**
-   * When this shift trade offer will expire if not matched or approved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * When this shift trade offer will expire if not matched or approved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public ShiftTradeResponse expiration(Date expiration) {
     this.expiration = expiration;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "When this shift trade offer will expire if not matched or approved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "When this shift trade offer will expire if not matched or approved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("expiration")
   public Date getExpiration() {
     return expiration;
@@ -368,14 +368,14 @@ public class ShiftTradeResponse  implements Serializable {
 
   
   /**
-   * The timestamp when this shift trade was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The timestamp when this shift trade was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public ShiftTradeResponse reviewedDate(Date reviewedDate) {
     this.reviewedDate = reviewedDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The timestamp when this shift trade was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The timestamp when this shift trade was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("reviewedDate")
   public Date getReviewedDate() {
     return reviewedDate;

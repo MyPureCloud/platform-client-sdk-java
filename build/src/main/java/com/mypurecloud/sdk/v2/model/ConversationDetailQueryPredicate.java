@@ -98,6 +98,7 @@ public class ConversationDetailQueryPredicate  implements Serializable {
   public enum MetricEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NBLINDTRANSFERRED("nBlindTransferred"),
+    NCOBROWSESESSIONS("nCobrowseSessions"),
     NCONNECTED("nConnected"),
     NCONSULT("nConsult"),
     NCONSULTTRANSFERRED("nConsultTransferred"),

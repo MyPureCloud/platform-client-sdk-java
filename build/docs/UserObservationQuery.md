@@ -9,7 +9,7 @@ title: UserObservationQuery
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **filter** | <!----><!---->[**UserObservationQueryFilter**](UserObservationQueryFilter.html)<!----> | Filter to return a subset of observations. Expresses boolean logical predicates as well as dimensional filters |  |
-| **metrics** | <!---->[**List&lt;MetricsEnum&gt;**](#MetricsEnum)<!----> | Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *). |  [optional] |
+| **metrics** | <!---->[**List&lt;MetricsEnum&gt;**](#MetricsEnum)<!----> | Behaves like a SQL SELECT clause. Only named metrics will be retrieved. |  |
 | **detailMetrics** | <!---->[**List&lt;DetailMetricsEnum&gt;**](#DetailMetricsEnum)<!----> | Metrics for which to include additional detailed observations |  [optional] |
 {: class="table table-striped"}
 

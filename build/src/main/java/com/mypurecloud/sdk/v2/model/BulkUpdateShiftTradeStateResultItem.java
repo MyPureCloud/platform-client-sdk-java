@@ -149,14 +149,14 @@ public class BulkUpdateShiftTradeStateResultItem  implements Serializable {
 
   
   /**
-   * The date the request was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The date the request was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public BulkUpdateShiftTradeStateResultItem reviewedDate(Date reviewedDate) {
     this.reviewedDate = reviewedDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The date the request was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The date the request was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("reviewedDate")
   public Date getReviewedDate() {
     return reviewedDate;

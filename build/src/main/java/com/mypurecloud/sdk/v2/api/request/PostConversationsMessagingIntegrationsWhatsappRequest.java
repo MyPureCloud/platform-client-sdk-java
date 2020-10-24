@@ -123,6 +123,20 @@ public class PostConversationsMessagingIntegrationsWhatsappRequest {
 	    return this;
 	} 
 	
+	private Boolean async;
+	public Boolean getAsync() {
+		return this.async;
+	}
+
+	public void setAsync(Boolean async) {
+		this.async = async;
+	}
+
+	public PostConversationsMessagingIntegrationsWhatsappRequest withAsync(Boolean async) {
+	    this.setAsync(async);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -151,6 +165,8 @@ public class PostConversationsMessagingIntegrationsWhatsappRequest {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/conversations/messaging/integrations/whatsapp")
+                .withQueryParameters("async", "", async)
+        
                 .withBody(body)
         
                 .withCustomHeaders(customHeaders)
@@ -181,6 +197,11 @@ public class PostConversationsMessagingIntegrationsWhatsappRequest {
 		
 		public Builder withBody(WhatsAppIntegrationRequest body) {
 			request.setBody(body);
+			return this;
+		}
+		
+		public Builder withAsync(Boolean async) {
+			request.setAsync(async);
 			return this;
 		}
 		

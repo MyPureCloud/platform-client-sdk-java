@@ -142,14 +142,14 @@ public class SIPSearchPublicRequest  implements Serializable {
 
   
   /**
-   * Start date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Start date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public SIPSearchPublicRequest dateStart(Date dateStart) {
     this.dateStart = dateStart;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Start date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", required = true, value = "Start date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateStart")
   public Date getDateStart() {
     return dateStart;
@@ -160,14 +160,14 @@ public class SIPSearchPublicRequest  implements Serializable {
 
   
   /**
-   * End date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * End date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public SIPSearchPublicRequest dateEnd(Date dateEnd) {
     this.dateEnd = dateEnd;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "End date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", required = true, value = "End date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateEnd")
   public Date getDateEnd() {
     return dateEnd;

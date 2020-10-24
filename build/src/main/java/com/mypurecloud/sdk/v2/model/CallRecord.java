@@ -19,7 +19,7 @@ public class CallRecord  implements Serializable {
   private String lastResult = null;
 
   
-  @ApiModelProperty(example = "null", value = "Timestamp of the last attempt to reach this number. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Timestamp of the last attempt to reach this number. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("lastAttempt")
   public Date getLastAttempt() {
     return lastAttempt;

@@ -144,14 +144,14 @@ public class AnalyticsConversationSegment  implements Serializable {
 
   
   /**
-   * The timestamp when this segment began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The timestamp when this segment began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public AnalyticsConversationSegment segmentStart(Date segmentStart) {
     this.segmentStart = segmentStart;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The timestamp when this segment began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The timestamp when this segment began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("segmentStart")
   public Date getSegmentStart() {
     return segmentStart;
@@ -162,14 +162,14 @@ public class AnalyticsConversationSegment  implements Serializable {
 
   
   /**
-   * The timestamp when this segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The timestamp when this segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public AnalyticsConversationSegment segmentEnd(Date segmentEnd) {
     this.segmentEnd = segmentEnd;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The timestamp when this segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The timestamp when this segment ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("segmentEnd")
   public Date getSegmentEnd() {
     return segmentEnd;

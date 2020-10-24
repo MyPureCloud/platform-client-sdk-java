@@ -79,14 +79,14 @@ public class AddShiftTradeRequest  implements Serializable {
 
   
   /**
-   * When this shift trade request should expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * When this shift trade request should expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public AddShiftTradeRequest expiration(Date expiration) {
     this.expiration = expiration;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "When this shift trade request should expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "When this shift trade request should expire. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("expiration")
   public Date getExpiration() {
     return expiration;

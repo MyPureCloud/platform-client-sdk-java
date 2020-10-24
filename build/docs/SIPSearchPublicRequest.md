@@ -15,8 +15,8 @@ title: SIPSearchPublicRequest
 | **fromUser** | <!----><!---->**String**<!----> | SIP user who placed the call |  [optional] |
 | **conversationId** | <!----><!---->**String**<!----> | Unique identification of the conversation |  [optional] |
 | **participantId** | <!----><!---->**String**<!----> | Unique identification of the participant |  [optional] |
-| **dateStart** | <!----><!---->[**Date**](Date.html)<!----> | Start date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  |
-| **dateEnd** | <!----><!---->[**Date**](Date.html)<!----> | End date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  |
+| **dateStart** | <!----><!---->[**Date**](Date.html)<!----> | Start date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
+| **dateEnd** | <!----><!---->[**Date**](Date.html)<!----> | End date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

@@ -40,14 +40,14 @@ public class BuHeadcountForecast  implements Serializable {
 
   
   /**
-   * Reference start date for the interval values in each forecast entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Reference start date for the interval values in each forecast entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public BuHeadcountForecast referenceStartDate(Date referenceStartDate) {
     this.referenceStartDate = referenceStartDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Reference start date for the interval values in each forecast entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Reference start date for the interval values in each forecast entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("referenceStartDate")
   public Date getReferenceStartDate() {
     return referenceStartDate;

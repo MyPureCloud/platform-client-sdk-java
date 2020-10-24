@@ -250,14 +250,14 @@ public class WebChatMemberInfo  implements Serializable {
 
   
   /**
-   * The time the member joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The time the member joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public WebChatMemberInfo joinDate(Date joinDate) {
     this.joinDate = joinDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The time the member joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The time the member joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("joinDate")
   public Date getJoinDate() {
     return joinDate;
@@ -268,14 +268,14 @@ public class WebChatMemberInfo  implements Serializable {
 
   
   /**
-   * The time the member left the conversation, or null if the member is still active in the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The time the member left the conversation, or null if the member is still active in the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public WebChatMemberInfo leaveDate(Date leaveDate) {
     this.leaveDate = leaveDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The time the member left the conversation, or null if the member is still active in the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The time the member left the conversation, or null if the member is still active in the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("leaveDate")
   public Date getLeaveDate() {
     return leaveDate;

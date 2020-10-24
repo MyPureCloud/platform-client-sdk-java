@@ -273,14 +273,14 @@ public class TimeOffRequest  implements Serializable {
 
   
   /**
-   * The timestamp when this request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The timestamp when this request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public TimeOffRequest submittedDate(Date submittedDate) {
     this.submittedDate = submittedDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The timestamp when this request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The timestamp when this request was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("submittedDate")
   public Date getSubmittedDate() {
     return submittedDate;
@@ -309,14 +309,14 @@ public class TimeOffRequest  implements Serializable {
 
   
   /**
-   * The timestamp when this request was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The timestamp when this request was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public TimeOffRequest reviewedDate(Date reviewedDate) {
     this.reviewedDate = reviewedDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The timestamp when this request was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The timestamp when this request was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("reviewedDate")
   public Date getReviewedDate() {
     return reviewedDate;

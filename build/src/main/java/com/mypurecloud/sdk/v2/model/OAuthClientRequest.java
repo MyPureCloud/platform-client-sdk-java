@@ -265,14 +265,14 @@ public class OAuthClientRequest  implements Serializable {
 
   
   /**
-   * The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public OAuthClientRequest dateToDelete(Date dateToDelete) {
     this.dateToDelete = dateToDelete;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The time at which this client will be deleted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateToDelete")
   public Date getDateToDelete() {
     return dateToDelete;

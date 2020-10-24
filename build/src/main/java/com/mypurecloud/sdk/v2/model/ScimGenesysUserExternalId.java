@@ -20,14 +20,14 @@ public class ScimGenesysUserExternalId  implements Serializable {
 
   
   /**
-   * Authority, or scope, of the external id.  Allows multiple external ids to be defined and should represent the source of the external identifier
+   * Authority, or scope, of \"externalId\". Allows multiple external identifiers to be defined. Represents the source of the external identifier.
    **/
   public ScimGenesysUserExternalId authority(String authority) {
     this.authority = authority;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Authority, or scope, of the external id.  Allows multiple external ids to be defined and should represent the source of the external identifier")
+  @ApiModelProperty(example = "null", value = "Authority, or scope, of \"externalId\". Allows multiple external identifiers to be defined. Represents the source of the external identifier.")
   @JsonProperty("authority")
   public String getAuthority() {
     return authority;

@@ -48,7 +48,9 @@ title: JourneyAggregateQueryPredicate
 | JOURNEYOUTCOMEID | &quot;journeyOutcomeId&quot; |
 | JOURNEYSEGMENTID | &quot;journeySegmentId&quot; |
 | JOURNEYSEGMENTSCOPE | &quot;journeySegmentScope&quot; |
+| JOURNEYSESSIONSEGMENTID | &quot;journeySessionSegmentId&quot; |
 | JOURNEYSESSIONTYPE | &quot;journeySessionType&quot; |
+| TOUCHPOINTACTIONMAPID | &quot;touchpointActionMapId&quot; |
 {: class="table table-striped"}
 
 

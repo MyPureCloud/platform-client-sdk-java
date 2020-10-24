@@ -54,6 +54,7 @@ title: ConversationAggregateQueryPredicate
 | EXTERNALMEDIACOUNT | &quot;externalMediaCount&quot; |
 | EXTERNALORGANIZATIONID | &quot;externalOrganizationId&quot; |
 | FLAGGEDREASON | &quot;flaggedReason&quot; |
+| FLOWINTYPE | &quot;flowInType&quot; |
 | FLOWOUTTYPE | &quot;flowOutType&quot; |
 | GROUPID | &quot;groupId&quot; |
 | INTERACTIONTYPE | &quot;interactionType&quot; |

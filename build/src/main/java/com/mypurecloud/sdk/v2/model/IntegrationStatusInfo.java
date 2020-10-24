@@ -93,7 +93,7 @@ public class IntegrationStatusInfo  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "Date and time (in UTC) when the integration status (i.e. the code field) was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date and time (in UTC) when the integration status (i.e. the code field) was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("lastUpdated")
   public Date getLastUpdated() {
     return lastUpdated;

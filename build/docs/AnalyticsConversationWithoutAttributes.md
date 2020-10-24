@@ -9,8 +9,8 @@ title: AnalyticsConversationWithoutAttributes
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **conversationId** | <!----><!---->**String**<!----> | Unique identifier for the conversation |  [optional] |
-| **conversationStart** | <!----><!---->[**Date**](Date.html)<!----> | Date/time the conversation started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **conversationEnd** | <!----><!---->[**Date**](Date.html)<!----> | Date/time the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **conversationStart** | <!----><!---->[**Date**](Date.html)<!----> | Date/time the conversation started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **conversationEnd** | <!----><!---->[**Date**](Date.html)<!----> | Date/time the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **mediaStatsMinConversationMos** | <!----><!---->**Double**<!----> | The lowest estimated average MOS among all the audio streams belonging to this conversation |  [optional] |
 | **mediaStatsMinConversationRFactor** | <!----><!---->**Double**<!----> | The lowest R-factor value among all of the audio streams belonging to this conversation |  [optional] |
 | **originatingDirection** | [**OriginatingDirectionEnum**](#OriginatingDirectionEnum)<!----> | The original direction of the conversation |  [optional] |

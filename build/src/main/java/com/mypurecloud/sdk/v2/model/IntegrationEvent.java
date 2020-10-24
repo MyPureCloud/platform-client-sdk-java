@@ -94,7 +94,7 @@ public class IntegrationEvent  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "Time the event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Time the event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("timestamp")
   public Date getTimestamp() {
     return timestamp;

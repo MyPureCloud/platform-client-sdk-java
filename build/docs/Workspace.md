@@ -14,8 +14,8 @@ title: Workspace
 | **isCurrentUserWorkspace** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **user** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
 | **bucket** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **summary** | <!----><!---->[**WorkspaceSummary**](WorkspaceSummary.html)<!----> |  |  [optional] |
 | **acl** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **description** | <!----><!---->**String**<!----> |  |  [optional] |

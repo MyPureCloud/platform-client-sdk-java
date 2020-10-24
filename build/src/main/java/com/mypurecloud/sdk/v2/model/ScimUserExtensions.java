@@ -62,14 +62,14 @@ public class ScimUserExtensions  implements Serializable {
 
   
   /**
-   * External Identifiers assigned to user. SCIM External ID will be visible here with authority prefix 'x-pc:scimv2:v1' but will be immutable.
+   * The list of external identifiers assigned to user. Always includes an immutable SCIM authority prefixed with \"x-pc:scimv2:v1\".
    **/
   public ScimUserExtensions externalIds(List<ScimGenesysUserExternalId> externalIds) {
     this.externalIds = externalIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "External Identifiers assigned to user. SCIM External ID will be visible here with authority prefix 'x-pc:scimv2:v1' but will be immutable.")
+  @ApiModelProperty(example = "null", value = "The list of external identifiers assigned to user. Always includes an immutable SCIM authority prefixed with \"x-pc:scimv2:v1\".")
   @JsonProperty("externalIds")
   public List<ScimGenesysUserExternalId> getExternalIds() {
     return externalIds;

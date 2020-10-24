@@ -13,7 +13,7 @@ title: JourneyAggregationQuery
 | **timeZone** | <!----><!---->**String**<!----> | Time zone context used to calculate response intervals (this allows resolving DST changes). The interval offset is used even when timeZone is specified. Default is UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London |  [optional] |
 | **groupBy** | <!---->[**List&lt;GroupByEnum&gt;**](#GroupByEnum)<!----> | Behaves like a SQL GROUPBY. Allows for multiple levels of grouping as a list of dimensions. Partitions resulting aggregate computations into distinct named subgroups rather than across the entire result set as if it were one group. |  [optional] |
 | **filter** | <!----><!---->[**JourneyAggregateQueryFilter**](JourneyAggregateQueryFilter.html)<!----> | Behaves like a SQL WHERE clause. This is ANDed with the interval parameter. Expresses boolean logical predicates as well as dimensional filters |  [optional] |
-| **metrics** | <!---->[**List&lt;MetricsEnum&gt;**](#MetricsEnum)<!----> | Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *). |  [optional] |
+| **metrics** | <!---->[**List&lt;MetricsEnum&gt;**](#MetricsEnum)<!----> | Behaves like a SQL SELECT clause. Only named metrics will be retrieved. |  |
 | **flattenMultivaluedDimensions** | <!----><!---->**Boolean**<!----> | Flattens any multivalued dimensions used in response groups (e.g. [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]-&gt;&#39;a,b,c&#39;) |  [optional] |
 | **views** | <!----><!---->[**List&lt;JourneyAggregationView&gt;**](JourneyAggregationView.html)<!----> | Custom derived metric views |  [optional] |
 | **alternateTimeDimension** | [**AlternateTimeDimensionEnum**](#AlternateTimeDimensionEnum)<!----> | Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \&quot;eventTime\&quot; uses the actual time of the data event. |  [optional] |
@@ -38,7 +38,9 @@ title: JourneyAggregationQuery
 | JOURNEYOUTCOMEID | &quot;journeyOutcomeId&quot; |
 | JOURNEYSEGMENTID | &quot;journeySegmentId&quot; |
 | JOURNEYSEGMENTSCOPE | &quot;journeySegmentScope&quot; |
+| JOURNEYSESSIONSEGMENTID | &quot;journeySessionSegmentId&quot; |
 | JOURNEYSESSIONTYPE | &quot;journeySessionType&quot; |
+| TOUCHPOINTACTIONMAPID | &quot;touchpointActionMapId&quot; |
 {: class="table table-striped"}
 
 
@@ -49,6 +51,7 @@ title: JourneyAggregationQuery
 | Name | Value |
 | ---- | ----- |
 | NJOURNEYOUTCOMESACHIEVED | &quot;nJourneyOutcomesAchieved&quot; |
+| NJOURNEYOUTCOMESATTRIBUTED | &quot;nJourneyOutcomesAttributed&quot; |
 | NJOURNEYSEGMENTSASSIGNED | &quot;nJourneySegmentsAssigned&quot; |
 | NJOURNEYSESSIONS | &quot;nJourneySessions&quot; |
 | NWEBACTIONSABANDONED | &quot;nWebActionsAbandoned&quot; |

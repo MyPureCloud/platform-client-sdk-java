@@ -11,7 +11,7 @@ title: GroupCreate
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> | The group name. |  |
 | **description** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Last modified date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **memberCount** | <!----><!---->**Long**<!----> | Number of members. |  [optional] |
 | **state** | [**StateEnum**](#StateEnum)<!----> | Active, inactive, or deleted state. |  [optional] |
 | **version** | <!----><!---->**Integer**<!----> | Current version for this resource. |  [optional] |

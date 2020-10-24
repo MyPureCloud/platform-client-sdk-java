@@ -68,7 +68,8 @@ public class TranscriptConversationDetailSearchCriteria  implements Serializable
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     EXACT("EXACT"),
     EXACT_PHRASE("EXACT_PHRASE"),
-    PHRASE("PHRASE");
+    PHRASE("PHRASE"),
+    DATE_RANGE("DATE_RANGE");
 
     private String value;
 

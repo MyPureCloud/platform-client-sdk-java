@@ -76,6 +76,7 @@ public class ConversationAggregateQueryPredicate  implements Serializable {
     EXTERNALMEDIACOUNT("externalMediaCount"),
     EXTERNALORGANIZATIONID("externalOrganizationId"),
     FLAGGEDREASON("flaggedReason"),
+    FLOWINTYPE("flowInType"),
     FLOWOUTTYPE("flowOutType"),
     GROUPID("groupId"),
     INTERACTIONTYPE("interactionType"),

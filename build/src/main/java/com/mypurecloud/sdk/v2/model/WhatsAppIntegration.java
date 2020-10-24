@@ -107,6 +107,43 @@ public class WhatsAppIntegration  implements Serializable {
   }
   private ActivationStatusCodeEnum activationStatusCode = null;
   private ErrorBody activationErrorInfo = null;
+
+  /**
+   * Status of asynchronous create operation
+   */
+  public enum CreateStatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    INITIATED("Initiated"),
+    COMPLETED("Completed"),
+    ERROR("Error");
+
+    private String value;
+
+    CreateStatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static CreateStatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (CreateStatusEnum value : CreateStatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return CreateStatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private CreateStatusEnum createStatus = null;
+  private ErrorBody createError = null;
   private String selfUri = null;
 
   
@@ -190,14 +227,14 @@ public class WhatsAppIntegration  implements Serializable {
 
   
   /**
-   * Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public WhatsAppIntegration dateCreated(Date dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date this Integration was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
@@ -208,14 +245,14 @@ public class WhatsAppIntegration  implements Serializable {
 
   
   /**
-   * Date this Integration was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Date this Integration was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public WhatsAppIntegration dateModified(Date dateModified) {
     this.dateModified = dateModified;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date this Integration was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date this Integration was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateModified")
   public Date getDateModified() {
     return dateModified;
@@ -304,6 +341,31 @@ public class WhatsAppIntegration  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "Status of asynchronous create operation")
+  @JsonProperty("createStatus")
+  public CreateStatusEnum getCreateStatus() {
+    return createStatus;
+  }
+
+  
+  /**
+   * Error information returned, if createStatus is set to Error
+   **/
+  public WhatsAppIntegration createError(ErrorBody createError) {
+    this.createError = createError;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Error information returned, if createStatus is set to Error")
+  @JsonProperty("createError")
+  public ErrorBody getCreateError() {
+    return createError;
+  }
+  public void setCreateError(ErrorBody createError) {
+    this.createError = createError;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -333,12 +395,14 @@ public class WhatsAppIntegration  implements Serializable {
         Objects.equals(this.version, whatsAppIntegration.version) &&
         Objects.equals(this.activationStatusCode, whatsAppIntegration.activationStatusCode) &&
         Objects.equals(this.activationErrorInfo, whatsAppIntegration.activationErrorInfo) &&
+        Objects.equals(this.createStatus, whatsAppIntegration.createStatus) &&
+        Objects.equals(this.createError, whatsAppIntegration.createError) &&
         Objects.equals(this.selfUri, whatsAppIntegration.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, phoneNumber, status, recipient, dateCreated, dateModified, createdBy, modifiedBy, version, activationStatusCode, activationErrorInfo, selfUri);
+    return Objects.hash(id, name, phoneNumber, status, recipient, dateCreated, dateModified, createdBy, modifiedBy, version, activationStatusCode, activationErrorInfo, createStatus, createError, selfUri);
   }
 
   @Override
@@ -358,6 +422,8 @@ public class WhatsAppIntegration  implements Serializable {
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    activationStatusCode: ").append(toIndentedString(activationStatusCode)).append("\n");
     sb.append("    activationErrorInfo: ").append(toIndentedString(activationErrorInfo)).append("\n");
+    sb.append("    createStatus: ").append(toIndentedString(createStatus)).append("\n");
+    sb.append("    createError: ").append(toIndentedString(createError)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

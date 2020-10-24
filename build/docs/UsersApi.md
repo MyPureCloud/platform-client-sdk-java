@@ -44,6 +44,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUserSuperiors**](UsersApi.html#getUserSuperiors) | Get superiors |
 | [**getUserTrustors**](UsersApi.html#getUserTrustors) | List the organizations that have authorized/trusted the user. |
 | [**getUsers**](UsersApi.html#getUsers) | Get the list of available users. |
+| [**getUsersDevelopmentActivities**](UsersApi.html#getUsersDevelopmentActivities) | Get list of Development Activities |
+| [**getUsersDevelopmentActivitiesMe**](UsersApi.html#getUsersDevelopmentActivitiesMe) | Get list of Development Activities for current user |
+| [**getUsersDevelopmentActivity**](UsersApi.html#getUsersDevelopmentActivity) | Get a Development Activity |
 | [**getUsersMe**](UsersApi.html#getUsersMe) | Get current user details. |
 | [**getUsersSearch**](UsersApi.html#getUsersSearch) | Search users using the q64 value returned from a previous search |
 | [**patchUser**](UsersApi.html#patchUser) | Update user |
@@ -67,6 +70,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postUserRoutinglanguages**](UsersApi.html#postUserRoutinglanguages) | Add routing language to user |
 | [**postUserRoutingskills**](UsersApi.html#postUserRoutingskills) | Add routing skill to user |
 | [**postUsers**](UsersApi.html#postUsers) | Create user |
+| [**postUsersDevelopmentActivitiesAggregatesQuery**](UsersApi.html#postUsersDevelopmentActivitiesAggregatesQuery) | Retrieve aggregated development activity data |
 | [**postUsersMePassword**](UsersApi.html#postUsersMePassword) | Change your password |
 | [**postUsersSearch**](UsersApi.html#postUsersSearch) | Search users |
 | [**putRoutingUserUtilization**](UsersApi.html#putRoutingUserUtilization) | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration. |
@@ -1896,6 +1900,7 @@ Requires ANY permissions:
 
 * routing:queue:view
 * routing:queue:join
+* routing:queueMember:manage
 
 ### Example
 
@@ -2480,6 +2485,236 @@ try {
 
 [**UserEntityListing**](UserEntityListing.html)
 
+<a name="getUsersDevelopmentActivities"></a>
+
+# **getUsersDevelopmentActivities**
+
+
+
+> [DevelopmentActivityListing](DevelopmentActivityListing.html) getUsersDevelopmentActivities(userId, moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, types, statuses, relationship)
+
+Get list of Development Activities
+
+Either moduleId or userId is required. Results are filtered based on the applicable permissions.
+
+Wraps GET /api/v2/users/development/activities  
+
+Requires ANY permissions: 
+
+* learning:assignment:view
+* coaching:appointment:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+List<String> userId = Arrays.asList("userId_example"); // List<String> | Specifies the list of user IDs to be queried, up to 100 user IDs. It searches for any relationship for the userId.
+String moduleId = "moduleId_example"; // String | Specifies the ID of the learning module.
+String interval = "interval_example"; // String | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+String completionInterval = "completionInterval_example"; // String | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+String overdue = "Any"; // String | Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String sortOrder = "Desc"; // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
+List<String> types = Arrays.asList("types_example"); // List<String> | Specifies the activity types.
+List<String> statuses = Arrays.asList("statuses_example"); // List<String> | Specifies the activity statuses to filter by
+List<String> relationship = Arrays.asList("relationship_example"); // List<String> | Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned.
+try {
+    DevelopmentActivityListing result = apiInstance.getUsersDevelopmentActivities(userId, moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, types, statuses, relationship);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUsersDevelopmentActivities");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | [**List&lt;String&gt;**](String.html)| Specifies the list of user IDs to be queried, up to 100 user IDs. It searches for any relationship for the userId. | [optional] 
+| **moduleId** | **String**| Specifies the ID of the learning module. | [optional] 
+| **interval** | **String**| Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] 
+| **completionInterval** | **String**| Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] 
+| **overdue** | **String**| Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned | [optional] [default to Any]<br />**Values**: True, False, Any 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortOrder** | **String**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc 
+| **types** | [**List&lt;String&gt;**](String.html)| Specifies the activity types. | [optional]<br />**Values**: Informational, Coaching 
+| **statuses** | [**List&lt;String&gt;**](String.html)| Specifies the activity statuses to filter by | [optional]<br />**Values**: Planned, InProgress, Completed, InvalidSchedule 
+| **relationship** | [**List&lt;String&gt;**](String.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned. | [optional]<br />**Values**: Creator, Facilitator, Attendee 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DevelopmentActivityListing**](DevelopmentActivityListing.html)
+
+<a name="getUsersDevelopmentActivitiesMe"></a>
+
+# **getUsersDevelopmentActivitiesMe**
+
+
+
+> [DevelopmentActivityListing](DevelopmentActivityListing.html) getUsersDevelopmentActivitiesMe(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, types, statuses, relationship)
+
+Get list of Development Activities for current user
+
+Results are filtered based on the applicable permissions.
+
+Wraps GET /api/v2/users/development/activities/me  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String moduleId = "moduleId_example"; // String | Specifies the ID of the learning module.
+String interval = "interval_example"; // String | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+String completionInterval = "completionInterval_example"; // String | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+String overdue = "Any"; // String | Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String sortOrder = "Desc"; // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
+List<String> types = Arrays.asList("types_example"); // List<String> | Specifies the activity types.
+List<String> statuses = Arrays.asList("statuses_example"); // List<String> | Specifies the activity statuses to filter by
+List<String> relationship = Arrays.asList("relationship_example"); // List<String> | Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned.
+try {
+    DevelopmentActivityListing result = apiInstance.getUsersDevelopmentActivitiesMe(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, types, statuses, relationship);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUsersDevelopmentActivitiesMe");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **moduleId** | **String**| Specifies the ID of the learning module. | [optional] 
+| **interval** | **String**| Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] 
+| **completionInterval** | **String**| Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] 
+| **overdue** | **String**| Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned | [optional] [default to Any]<br />**Values**: True, False, Any 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortOrder** | **String**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc 
+| **types** | [**List&lt;String&gt;**](String.html)| Specifies the activity types. | [optional]<br />**Values**: Informational, Coaching 
+| **statuses** | [**List&lt;String&gt;**](String.html)| Specifies the activity statuses to filter by | [optional]<br />**Values**: Planned, InProgress, Completed, InvalidSchedule 
+| **relationship** | [**List&lt;String&gt;**](String.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned. | [optional]<br />**Values**: Creator, Facilitator, Attendee 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DevelopmentActivityListing**](DevelopmentActivityListing.html)
+
+<a name="getUsersDevelopmentActivity"></a>
+
+# **getUsersDevelopmentActivity**
+
+
+
+> [DevelopmentActivity](DevelopmentActivity.html) getUsersDevelopmentActivity(activityId, type)
+
+Get a Development Activity
+
+
+
+Wraps GET /api/v2/users/development/activities/{activityId}  
+
+Requires ANY permissions: 
+
+* learning:assignment:view
+* coaching:appointment:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String activityId = "activityId_example"; // String | Specifies the activity ID, maps to either assignment or appointment ID
+String type = "type_example"; // String | Specifies the activity type.
+try {
+    DevelopmentActivity result = apiInstance.getUsersDevelopmentActivity(activityId, type);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUsersDevelopmentActivity");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **activityId** | **String**| Specifies the activity ID, maps to either assignment or appointment ID | 
+| **type** | **String**| Specifies the activity type. |<br />**Values**: Informational, Coaching 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DevelopmentActivity**](DevelopmentActivity.html)
+
 <a name="getUsersMe"></a>
 
 # **getUsersMe**
@@ -2819,9 +3054,10 @@ Join or unjoin a queue for a user
 
 Wraps PATCH /api/v2/users/{userId}/queues/{queueId}  
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * routing:queue:join
+* routing:queueMember:manage
 
 ### Example
 
@@ -2889,6 +3125,7 @@ Wraps PATCH /api/v2/users/{userId}/queues
 Requires ANY permissions: 
 
 * routing:queue:join
+* routing:queueMember:manage
 
 ### Example
 
@@ -3973,6 +4210,70 @@ try {
 ### Return type
 
 [**User**](User.html)
+
+<a name="postUsersDevelopmentActivitiesAggregatesQuery"></a>
+
+# **postUsersDevelopmentActivitiesAggregatesQuery**
+
+
+
+> [DevelopmentActivityAggregateResponse](DevelopmentActivityAggregateResponse.html) postUsersDevelopmentActivitiesAggregatesQuery(body)
+
+Retrieve aggregated development activity data
+
+Results are filtered based on the applicable permissions.
+
+Wraps POST /api/v2/users/development/activities/aggregates/query  
+
+Requires ANY permissions: 
+
+* learning:assignment:view
+* coaching:appointment:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+DevelopmentActivityAggregateParam body = new DevelopmentActivityAggregateParam(); // DevelopmentActivityAggregateParam | Aggregate Request
+try {
+    DevelopmentActivityAggregateResponse result = apiInstance.postUsersDevelopmentActivitiesAggregatesQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#postUsersDevelopmentActivitiesAggregatesQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**DevelopmentActivityAggregateParam**](DevelopmentActivityAggregateParam.html)| Aggregate Request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DevelopmentActivityAggregateResponse**](DevelopmentActivityAggregateResponse.html)
 
 <a name="postUsersMePassword"></a>
 

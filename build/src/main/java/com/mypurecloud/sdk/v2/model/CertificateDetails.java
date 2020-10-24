@@ -62,14 +62,14 @@ public class CertificateDetails  implements Serializable {
 
   
   /**
-   * The expiration date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The expiration date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public CertificateDetails expirationDate(Date expirationDate) {
     this.expirationDate = expirationDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The expiration date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The expiration date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("expirationDate")
   public Date getExpirationDate() {
     return expirationDate;
@@ -80,14 +80,14 @@ public class CertificateDetails  implements Serializable {
 
   
   /**
-   * The issue date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The issue date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public CertificateDetails issueDate(Date issueDate) {
     this.issueDate = issueDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The issue date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The issue date of the certificate. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("issueDate")
   public Date getIssueDate() {
     return issueDate;

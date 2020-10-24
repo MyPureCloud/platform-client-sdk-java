@@ -78,14 +78,14 @@ public class LocationAddressVerificationDetails  implements Serializable {
 
   
   /**
-   * Finished time of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Finished time of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public LocationAddressVerificationDetails dateFinished(Date dateFinished) {
     this.dateFinished = dateFinished;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Finished time of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Finished time of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateFinished")
   public Date getDateFinished() {
     return dateFinished;
@@ -96,14 +96,14 @@ public class LocationAddressVerificationDetails  implements Serializable {
 
   
   /**
-   * Time started of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Time started of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public LocationAddressVerificationDetails dateStarted(Date dateStarted) {
     this.dateStarted = dateStarted;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Time started of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Time started of address verification process. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateStarted")
   public Date getDateStarted() {
     return dateStarted;

@@ -185,6 +185,7 @@ public class AnalyticsSession  implements Serializable {
   private String provider = null;
   private String remote = null;
   private Integer mediaCount = null;
+  private String flowInType = null;
   private String flowOutType = null;
 
   /**
@@ -678,14 +679,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
-   * Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public AnalyticsSession callbackScheduledTime(Date callbackScheduledTime) {
     this.callbackScheduledTime = callbackScheduledTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("callbackScheduledTime")
   public Date getCallbackScheduledTime() {
     return callbackScheduledTime;
@@ -1199,6 +1200,24 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * Type of flow in that occurred, e.g. acd, ivr, etc.
+   **/
+  public AnalyticsSession flowInType(String flowInType) {
+    this.flowInType = flowInType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Type of flow in that occurred, e.g. acd, ivr, etc.")
+  @JsonProperty("flowInType")
+  public String getFlowInType() {
+    return flowInType;
+  }
+  public void setFlowInType(String flowInType) {
+    this.flowInType = flowInType;
+  }
+
+  
+  /**
    * Type of flow out that occurred, e.g. voicemail, callback, or acd
    **/
   public AnalyticsSession flowOutType(String flowOutType) {
@@ -1386,6 +1405,7 @@ public class AnalyticsSession  implements Serializable {
         Objects.equals(this.provider, analyticsSession.provider) &&
         Objects.equals(this.remote, analyticsSession.remote) &&
         Objects.equals(this.mediaCount, analyticsSession.mediaCount) &&
+        Objects.equals(this.flowInType, analyticsSession.flowInType) &&
         Objects.equals(this.flowOutType, analyticsSession.flowOutType) &&
         Objects.equals(this.requestedRoutings, analyticsSession.requestedRoutings) &&
         Objects.equals(this.usedRouting, analyticsSession.usedRouting) &&
@@ -1397,7 +1417,7 @@ public class AnalyticsSession  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, sessionDnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments, metrics, flow, mediaEndpointStats, recording, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, journeyActionId, journeyActionMapId, journeyActionMapVersion, protocolCallId, provider, remote, mediaCount, flowOutType, requestedRoutings, usedRouting, selectedAgentId, selectedAgentRank, agentAssistantId, proposedAgents);
+    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, sessionDnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments, metrics, flow, mediaEndpointStats, recording, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, journeyActionId, journeyActionMapId, journeyActionMapVersion, protocolCallId, provider, remote, mediaCount, flowInType, flowOutType, requestedRoutings, usedRouting, selectedAgentId, selectedAgentRank, agentAssistantId, proposedAgents);
   }
 
   @Override
@@ -1457,6 +1477,7 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
     sb.append("    remote: ").append(toIndentedString(remote)).append("\n");
     sb.append("    mediaCount: ").append(toIndentedString(mediaCount)).append("\n");
+    sb.append("    flowInType: ").append(toIndentedString(flowInType)).append("\n");
     sb.append("    flowOutType: ").append(toIndentedString(flowOutType)).append("\n");
     sb.append("    requestedRoutings: ").append(toIndentedString(requestedRoutings)).append("\n");
     sb.append("    usedRouting: ").append(toIndentedString(usedRouting)).append("\n");

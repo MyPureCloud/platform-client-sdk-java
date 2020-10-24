@@ -73,14 +73,14 @@ public class ScreenRecordingSessionRequest  implements Serializable {
 
   
   /**
-   * The screen recording session's archive date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The screen recording session's archive date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public ScreenRecordingSessionRequest archiveDate(Date archiveDate) {
     this.archiveDate = archiveDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The screen recording session's archive date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The screen recording session's archive date. Must be greater than 1 day from now if set. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("archiveDate")
   public Date getArchiveDate() {
     return archiveDate;
@@ -91,14 +91,14 @@ public class ScreenRecordingSessionRequest  implements Serializable {
 
   
   /**
-   * The screen recording session's delete date. Must be greater than archiveDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The screen recording session's delete date. Must be greater than archiveDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public ScreenRecordingSessionRequest deleteDate(Date deleteDate) {
     this.deleteDate = deleteDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The screen recording session's delete date. Must be greater than archiveDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "The screen recording session's delete date. Must be greater than archiveDate if set, otherwise one day from now. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("deleteDate")
   public Date getDeleteDate() {
     return deleteDate;

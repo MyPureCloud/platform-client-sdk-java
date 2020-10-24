@@ -10,8 +10,8 @@ title: BillingUsageReport
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **startDate** | <!----><!---->[**Date**](Date.html)<!----> | The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  |
-| **endDate** | <!----><!---->[**Date**](Date.html)<!----> | The period end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  |
+| **startDate** | <!----><!---->[**Date**](Date.html)<!----> | The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
+| **endDate** | <!----><!---->[**Date**](Date.html)<!----> | The period end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> | Generation status of report |  [optional] |
 | **usages** | <!----><!---->[**List&lt;BillingUsage&gt;**](BillingUsage.html)<!----> | The usages for the given period. |  |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |

@@ -23,6 +23,7 @@ title: JourneyAggregationView
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NJOURNEYOUTCOMESACHIEVED | &quot;nJourneyOutcomesAchieved&quot; |
+| NJOURNEYOUTCOMESATTRIBUTED | &quot;nJourneyOutcomesAttributed&quot; |
 | NJOURNEYSEGMENTSASSIGNED | &quot;nJourneySegmentsAssigned&quot; |
 | NJOURNEYSESSIONS | &quot;nJourneySessions&quot; |
 | NWEBACTIONSABANDONED | &quot;nWebActionsAbandoned&quot; |

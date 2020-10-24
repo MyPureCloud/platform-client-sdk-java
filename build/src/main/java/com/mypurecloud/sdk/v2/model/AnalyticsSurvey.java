@@ -101,14 +101,14 @@ public class AnalyticsSurvey  implements Serializable {
 
   
   /**
-   * Specifies when a survey occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Specifies when a survey occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public AnalyticsSurvey eventTime(Date eventTime) {
     this.eventTime = eventTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Specifies when a survey occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Specifies when a survey occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("eventTime")
   public Date getEventTime() {
     return eventTime;
@@ -191,14 +191,14 @@ public class AnalyticsSurvey  implements Serializable {
 
   
   /**
-   * Completion date/time of the survey. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Completion date/time of the survey. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public AnalyticsSurvey surveyCompletedDate(Date surveyCompletedDate) {
     this.surveyCompletedDate = surveyCompletedDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Completion date/time of the survey. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Completion date/time of the survey. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("surveyCompletedDate")
   public Date getSurveyCompletedDate() {
     return surveyCompletedDate;

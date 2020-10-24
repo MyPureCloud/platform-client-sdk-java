@@ -13,8 +13,8 @@ title: KnowledgeSearchDocument
 | **languageCode** | [**LanguageCodeEnum**](#LanguageCodeEnum)<!----> | Language of the document |  |
 | **type** | [**TypeEnum**](#TypeEnum)<!----> | Document type |  |
 | **faq** | <!----><!---->[**DocumentFaq**](DocumentFaq.html)<!----> | FAQ document details |  [optional] |
-| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Document creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Document last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Document creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Document last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **categories** | <!----><!---->[**List&lt;KnowledgeCategory&gt;**](KnowledgeCategory.html)<!----> | Document categories |  [optional] |
 | **knowledgeBase** | <!----><!---->[**KnowledgeBase**](KnowledgeBase.html)<!----> | Knowledge base which document does belong to |  [optional] |
 | **externalUrl** | <!----><!---->**String**<!----> | External URL to the document |  [optional] |

@@ -7979,7 +7979,7 @@ try {
 
 Send message
 
-
+Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages  
 
@@ -8363,7 +8363,7 @@ try {
 
 
 
-> [FacebookIntegration](FacebookIntegration.html) postConversationsMessagingIntegrationsFacebook(body)
+> [FacebookIntegration](FacebookIntegration.html) postConversationsMessagingIntegrationsFacebook(body, async)
 
 Create a Facebook Integration
 
@@ -8398,8 +8398,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
 FacebookIntegrationRequest body = new FacebookIntegrationRequest(); // FacebookIntegrationRequest | FacebookIntegrationRequest
+Boolean async = false; // Boolean | Create a Facebook integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Facebook integration. An integration ID is returned, it can be used to query the integration. Check the integration's createStatus for Completed or Error to detect the create is finished.
 try {
-    FacebookIntegration result = apiInstance.postConversationsMessagingIntegrationsFacebook(body);
+    FacebookIntegration result = apiInstance.postConversationsMessagingIntegrationsFacebook(body, async);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsMessagingIntegrationsFacebook");
@@ -8413,6 +8414,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**FacebookIntegrationRequest**](FacebookIntegrationRequest.html)| FacebookIntegrationRequest | 
+| **async** | **Boolean**| Create a Facebook integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Facebook integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -8426,7 +8428,7 @@ try {
 
 
 
-> [LineIntegration](LineIntegration.html) postConversationsMessagingIntegrationsLine(body)
+> [LineIntegration](LineIntegration.html) postConversationsMessagingIntegrationsLine(body, async)
 
 Create a LINE messenger Integration
 
@@ -8461,8 +8463,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
 LineIntegrationRequest body = new LineIntegrationRequest(); // LineIntegrationRequest | LineIntegrationRequest
+Boolean async = false; // Boolean | Create a LINE integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new LINE integration. An integration ID is returned, it can be used to query the integration. Check the integration's createStatus for Completed or Error to detect the create is finished.
 try {
-    LineIntegration result = apiInstance.postConversationsMessagingIntegrationsLine(body);
+    LineIntegration result = apiInstance.postConversationsMessagingIntegrationsLine(body, async);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsMessagingIntegrationsLine");
@@ -8476,6 +8479,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**LineIntegrationRequest**](LineIntegrationRequest.html)| LineIntegrationRequest | 
+| **async** | **Boolean**| Create a LINE integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new LINE integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -8489,7 +8493,7 @@ try {
 
 
 
-> [TwitterIntegration](TwitterIntegration.html) postConversationsMessagingIntegrationsTwitter(body)
+> [TwitterIntegration](TwitterIntegration.html) postConversationsMessagingIntegrationsTwitter(body, async)
 
 Create a Twitter Integration
 
@@ -8524,8 +8528,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
 TwitterIntegrationRequest body = new TwitterIntegrationRequest(); // TwitterIntegrationRequest | TwitterIntegrationRequest
+Boolean async = false; // Boolean | Create a Twitter integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Twitter integration. An integration ID is returned, it can be used to query the integration. Check the integration's createStatus for Completed or Error to detect the create is finished.
 try {
-    TwitterIntegration result = apiInstance.postConversationsMessagingIntegrationsTwitter(body);
+    TwitterIntegration result = apiInstance.postConversationsMessagingIntegrationsTwitter(body, async);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsMessagingIntegrationsTwitter");
@@ -8539,6 +8544,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**TwitterIntegrationRequest**](TwitterIntegrationRequest.html)| TwitterIntegrationRequest | 
+| **async** | **Boolean**| Create a Twitter integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Twitter integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -8552,7 +8558,7 @@ try {
 
 
 
-> [WhatsAppIntegration](WhatsAppIntegration.html) postConversationsMessagingIntegrationsWhatsapp(body)
+> [WhatsAppIntegration](WhatsAppIntegration.html) postConversationsMessagingIntegrationsWhatsapp(body, async)
 
 Create a WhatsApp Integration
 
@@ -8587,8 +8593,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 ConversationsApi apiInstance = new ConversationsApi();
 WhatsAppIntegrationRequest body = new WhatsAppIntegrationRequest(); // WhatsAppIntegrationRequest | WhatsAppIntegrationRequest
+Boolean async = false; // Boolean | Create a WhatsApp integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new WhatsApp integration. An integration ID is returned, it can be used to query the integration. Check the integration's createStatus for Completed or Error to detect the create is finished.
 try {
-    WhatsAppIntegration result = apiInstance.postConversationsMessagingIntegrationsWhatsapp(body);
+    WhatsAppIntegration result = apiInstance.postConversationsMessagingIntegrationsWhatsapp(body, async);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#postConversationsMessagingIntegrationsWhatsapp");
@@ -8602,6 +8609,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**WhatsAppIntegrationRequest**](WhatsAppIntegrationRequest.html)| WhatsAppIntegrationRequest | 
+| **async** | **Boolean**| Create a WhatsApp integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new WhatsApp integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. | [optional] [default to false] 
 {: class="table-striped"}
 
 

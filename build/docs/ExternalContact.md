@@ -26,8 +26,8 @@ title: ExternalContact
 | **lineId** | <!----><!---->[**LineId**](LineId.html)<!----> |  |  [optional] |
 | **whatsAppId** | <!----><!---->[**WhatsAppId**](WhatsAppId.html)<!----> |  |  [optional] |
 | **facebookId** | <!----><!---->[**FacebookId**](FacebookId.html)<!----> |  |  [optional] |
-| **modifyDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
-| **createDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **modifyDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **createDate** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **externalOrganization** | <!----><!---->[**ExternalOrganization**](ExternalOrganization.html)<!----> |  |  [optional] |
 | **surveyOptOut** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **externalSystemUrl** | <!----><!---->**String**<!----> | A string that identifies an external system-of-record resource that may have more detailed information on the contact. It should be a valid URL (including the http/https protocol, port, and path [if any]). The value is automatically trimmed of any leading and trailing whitespace. |  [optional] |

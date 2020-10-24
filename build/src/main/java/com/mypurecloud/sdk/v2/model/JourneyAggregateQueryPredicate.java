@@ -70,7 +70,9 @@ public class JourneyAggregateQueryPredicate  implements Serializable {
     JOURNEYOUTCOMEID("journeyOutcomeId"),
     JOURNEYSEGMENTID("journeySegmentId"),
     JOURNEYSEGMENTSCOPE("journeySegmentScope"),
-    JOURNEYSESSIONTYPE("journeySessionType");
+    JOURNEYSESSIONSEGMENTID("journeySessionSegmentId"),
+    JOURNEYSESSIONTYPE("journeySessionType"),
+    TOUCHPOINTACTIONMAPID("touchpointActionMapId");
 
     private String value;
 

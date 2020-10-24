@@ -12,7 +12,7 @@ title: RecordingMessagingMessage
 | **fromUser** | <!----><!---->[**User**](User.html)<!----> |  |  [optional] |
 | **fromExternalContact** | <!----><!---->[**ExternalContact**](ExternalContact.html)<!----> |  |  [optional] |
 | **to** | <!----><!---->**String**<!----> |  |  [optional] |
-| **timestamp** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **timestamp** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **id** | <!----><!---->**String**<!----> |  |  [optional] |
 | **messageText** | <!----><!---->**String**<!----> |  |  [optional] |
 | **messageMediaAttachments** | <!----><!---->[**List&lt;MessageMediaAttachment&gt;**](MessageMediaAttachment.html)<!----> |  |  [optional] |

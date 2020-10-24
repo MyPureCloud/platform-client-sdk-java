@@ -150,14 +150,14 @@ public class ObservationValue  implements Serializable {
 
   
   /**
-   * The time at which the observation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * The time at which the observation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public ObservationValue observationDate(Date observationDate) {
     this.observationDate = observationDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The time at which the observation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", required = true, value = "The time at which the observation occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("observationDate")
   public Date getObservationDate() {
     return observationDate;

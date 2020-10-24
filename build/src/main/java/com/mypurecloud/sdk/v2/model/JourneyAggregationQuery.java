@@ -39,7 +39,9 @@ public class JourneyAggregationQuery  implements Serializable {
     JOURNEYOUTCOMEID("journeyOutcomeId"),
     JOURNEYSEGMENTID("journeySegmentId"),
     JOURNEYSEGMENTSCOPE("journeySegmentScope"),
-    JOURNEYSESSIONTYPE("journeySessionType");
+    JOURNEYSESSIONSEGMENTID("journeySessionSegmentId"),
+    JOURNEYSESSIONTYPE("journeySessionType"),
+    TOUCHPOINTACTIONMAPID("touchpointActionMapId");
 
     private String value;
 
@@ -74,6 +76,7 @@ public class JourneyAggregationQuery  implements Serializable {
    */
   public enum MetricsEnum {
     NJOURNEYOUTCOMESACHIEVED("nJourneyOutcomesAchieved"),
+    NJOURNEYOUTCOMESATTRIBUTED("nJourneyOutcomesAttributed"),
     NJOURNEYSEGMENTSASSIGNED("nJourneySegmentsAssigned"),
     NJOURNEYSESSIONS("nJourneySessions"),
     NWEBACTIONSABANDONED("nWebActionsAbandoned"),
@@ -243,14 +246,14 @@ public class JourneyAggregationQuery  implements Serializable {
 
   
   /**
-   * Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *).
+   * Behaves like a SQL SELECT clause. Only named metrics will be retrieved.
    **/
   public JourneyAggregationQuery metrics(List<MetricsEnum> metrics) {
     this.metrics = metrics;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Behaves like a SQL SELECT clause. Enables retrieving only named metrics. If omitted, all metrics that are available will be returned (like SELECT *).")
+  @ApiModelProperty(example = "null", required = true, value = "Behaves like a SQL SELECT clause. Only named metrics will be retrieved.")
   @JsonProperty("metrics")
   public List<MetricsEnum> getMetrics() {
     return metrics;

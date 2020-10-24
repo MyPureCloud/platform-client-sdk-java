@@ -86,14 +86,14 @@ public class AnalyticsConversation  implements Serializable {
 
   
   /**
-   * Date/time the conversation started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Date/time the conversation started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public AnalyticsConversation conversationStart(Date conversationStart) {
     this.conversationStart = conversationStart;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date/time the conversation started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date/time the conversation started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("conversationStart")
   public Date getConversationStart() {
     return conversationStart;
@@ -104,14 +104,14 @@ public class AnalyticsConversation  implements Serializable {
 
   
   /**
-   * Date/time the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
+   * Date/time the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public AnalyticsConversation conversationEnd(Date conversationEnd) {
     this.conversationEnd = conversationEnd;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date/time the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Date/time the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("conversationEnd")
   public Date getConversationEnd() {
     return conversationEnd;

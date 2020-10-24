@@ -54,6 +54,7 @@ title: ConversationDetailQueryPredicate
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NBLINDTRANSFERRED | &quot;nBlindTransferred&quot; |
+| NCOBROWSESESSIONS | &quot;nCobrowseSessions&quot; |
 | NCONNECTED | &quot;nConnected&quot; |
 | NCONSULT | &quot;nConsult&quot; |
 | NCONSULTTRANSFERRED | &quot;nConsultTransferred&quot; |

@@ -19,7 +19,7 @@ public class ScimEmail  implements Serializable {
   private String value = null;
 
   /**
-   * The type of email address.
+   * The type of email address. \"value\" is immutable if \"type\" is set to \"other\".
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -56,14 +56,14 @@ public class ScimEmail  implements Serializable {
 
   
   /**
-   * The email address. Note value for type 'other'is immutable.
+   * The email address. Is immutable if \"type\" is set to \"other\".
    **/
   public ScimEmail value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The email address. Note value for type 'other'is immutable.")
+  @ApiModelProperty(example = "null", value = "The email address. Is immutable if \"type\" is set to \"other\".")
   @JsonProperty("value")
   public String getValue() {
     return value;
@@ -74,14 +74,14 @@ public class ScimEmail  implements Serializable {
 
   
   /**
-   * The type of email address.
+   * The type of email address. \"value\" is immutable if \"type\" is set to \"other\".
    **/
   public ScimEmail type(TypeEnum type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The type of email address.")
+  @ApiModelProperty(example = "null", value = "The type of email address. \"value\" is immutable if \"type\" is set to \"other\".")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;

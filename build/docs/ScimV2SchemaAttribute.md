@@ -8,7 +8,7 @@ title: ScimV2SchemaAttribute
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | <!----><!---->**String**<!----> | The attribute&#39;s name |  [optional] |
+| **name** | <!----><!---->**String**<!----> | The name of the attribute. |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum)<!----> | The data type of the attribute. |  [optional] |
 | **subAttributes** | <!----><!---->[**List&lt;ScimV2SchemaAttribute&gt;**](ScimV2SchemaAttribute.html)<!----> | The list of subattributes for an attribute of the type \&quot;complex\&quot;. Uses the same schema as \&quot;attributes\&quot;. |  [optional] |
 | **multiValued** | <!----><!---->**Boolean**<!----> | Indicates whether an attribute contains multiple values. |  [optional] |

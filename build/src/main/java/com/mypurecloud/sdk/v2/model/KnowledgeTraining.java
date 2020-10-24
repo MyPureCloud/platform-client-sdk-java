@@ -126,14 +126,14 @@ public class KnowledgeTraining  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "Trigger date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Trigger date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateTriggered")
   public Date getDateTriggered() {
     return dateTriggered;
   }
 
   
-  @ApiModelProperty(example = "null", value = "Training completed date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Training completed date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCompleted")
   public Date getDateCompleted() {
     return dateCompleted;
@@ -186,7 +186,7 @@ public class KnowledgeTraining  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "Trained Documents Promoted date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ")
+  @ApiModelProperty(example = "null", value = "Trained Documents Promoted date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("datePromoted")
   public Date getDatePromoted() {
     return datePromoted;

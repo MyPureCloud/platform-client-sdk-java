@@ -17,7 +17,7 @@ title: DocumentAudit
 | **application** | <!----><!---->**String**<!----> |  |  [optional] |
 | **serviceName** | <!----><!---->**String**<!----> |  |  [optional] |
 | **level** | [**LevelEnum**](#LevelEnum)<!----> |  |  [optional] |
-| **timestamp** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ |  [optional] |
+| **timestamp** | <!----><!---->[**Date**](Date.html)<!----> | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
 | **actionContext** | [**ActionContextEnum**](#ActionContextEnum)<!----> |  |  [optional] |
 | **action** | [**ActionEnum**](#ActionEnum)<!----> |  |  [optional] |
