@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicAddress;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicAfterCallWork;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicErrorDetails;
+import com.mypurecloud.sdk.v2.model.ConversationEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicMessageDetails;
 import com.mypurecloud.sdk.v2.model.ConversationEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -167,6 +168,7 @@ public class ConversationEventTopicMessage  implements Serializable {
   private TypeEnum type = null;
   private String recipientCountry = null;
   private String recipientType = null;
+  private ConversationEventTopicJourneyContext journeyContext = null;
   private ConversationEventTopicWrapup wrapup = null;
   private ConversationEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
@@ -481,6 +483,23 @@ public class ConversationEventTopicMessage  implements Serializable {
   
   /**
    **/
+  public ConversationEventTopicMessage journeyContext(ConversationEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("journeyContext")
+  public ConversationEventTopicJourneyContext getJourneyContext() {
+    return journeyContext;
+  }
+  public void setJourneyContext(ConversationEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+  }
+
+  
+  /**
+   **/
   public ConversationEventTopicMessage wrapup(ConversationEventTopicWrapup wrapup) {
     this.wrapup = wrapup;
     return this;
@@ -575,6 +594,7 @@ public class ConversationEventTopicMessage  implements Serializable {
         Objects.equals(this.type, conversationEventTopicMessage.type) &&
         Objects.equals(this.recipientCountry, conversationEventTopicMessage.recipientCountry) &&
         Objects.equals(this.recipientType, conversationEventTopicMessage.recipientType) &&
+        Objects.equals(this.journeyContext, conversationEventTopicMessage.journeyContext) &&
         Objects.equals(this.wrapup, conversationEventTopicMessage.wrapup) &&
         Objects.equals(this.afterCallWork, conversationEventTopicMessage.afterCallWork) &&
         Objects.equals(this.afterCallWorkRequired, conversationEventTopicMessage.afterCallWorkRequired) &&
@@ -583,7 +603,7 @@ public class ConversationEventTopicMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
+    return Objects.hash(id, state, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
   }
 
   @Override
@@ -609,6 +629,7 @@ public class ConversationEventTopicMessage  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    recipientCountry: ").append(toIndentedString(recipientCountry)).append("\n");
     sb.append("    recipientType: ").append(toIndentedString(recipientType)).append("\n");
+    sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");

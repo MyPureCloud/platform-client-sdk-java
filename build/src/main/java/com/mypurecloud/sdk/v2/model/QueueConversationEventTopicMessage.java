@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicAddress;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicAfterCallWork;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicErrorDetails;
+import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicMessageDetails;
 import com.mypurecloud.sdk.v2.model.QueueConversationEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -167,6 +168,7 @@ public class QueueConversationEventTopicMessage  implements Serializable {
   private TypeEnum type = null;
   private String recipientCountry = null;
   private String recipientType = null;
+  private QueueConversationEventTopicJourneyContext journeyContext = null;
   private QueueConversationEventTopicWrapup wrapup = null;
   private QueueConversationEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
@@ -481,6 +483,23 @@ public class QueueConversationEventTopicMessage  implements Serializable {
   
   /**
    **/
+  public QueueConversationEventTopicMessage journeyContext(QueueConversationEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("journeyContext")
+  public QueueConversationEventTopicJourneyContext getJourneyContext() {
+    return journeyContext;
+  }
+  public void setJourneyContext(QueueConversationEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+  }
+
+  
+  /**
+   **/
   public QueueConversationEventTopicMessage wrapup(QueueConversationEventTopicWrapup wrapup) {
     this.wrapup = wrapup;
     return this;
@@ -575,6 +594,7 @@ public class QueueConversationEventTopicMessage  implements Serializable {
         Objects.equals(this.type, queueConversationEventTopicMessage.type) &&
         Objects.equals(this.recipientCountry, queueConversationEventTopicMessage.recipientCountry) &&
         Objects.equals(this.recipientType, queueConversationEventTopicMessage.recipientType) &&
+        Objects.equals(this.journeyContext, queueConversationEventTopicMessage.journeyContext) &&
         Objects.equals(this.wrapup, queueConversationEventTopicMessage.wrapup) &&
         Objects.equals(this.afterCallWork, queueConversationEventTopicMessage.afterCallWork) &&
         Objects.equals(this.afterCallWorkRequired, queueConversationEventTopicMessage.afterCallWorkRequired) &&
@@ -583,7 +603,7 @@ public class QueueConversationEventTopicMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
+    return Objects.hash(id, state, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
   }
 
   @Override
@@ -609,6 +629,7 @@ public class QueueConversationEventTopicMessage  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    recipientCountry: ").append(toIndentedString(recipientCountry)).append("\n");
     sb.append("    recipientType: ").append(toIndentedString(recipientType)).append("\n");
+    sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");

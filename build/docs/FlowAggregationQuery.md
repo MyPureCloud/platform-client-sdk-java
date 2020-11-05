@@ -32,6 +32,7 @@ title: FlowAggregationQuery
 | AGENTRANK | &quot;agentRank&quot; |
 | AGENTSCORE | &quot;agentScore&quot; |
 | ANI | &quot;ani&quot; |
+| ASSIGNERID | &quot;assignerId&quot; |
 | CONVERSATIONID | &quot;conversationId&quot; |
 | CONVERTEDFROM | &quot;convertedFrom&quot; |
 | CONVERTEDTO | &quot;convertedTo&quot; |
@@ -47,6 +48,7 @@ title: FlowAggregationQuery
 | EXTERNALCONTACTID | &quot;externalContactId&quot; |
 | EXTERNALMEDIACOUNT | &quot;externalMediaCount&quot; |
 | EXTERNALORGANIZATIONID | &quot;externalOrganizationId&quot; |
+| FIRSTQUEUE | &quot;firstQueue&quot; |
 | FLAGGEDREASON | &quot;flaggedReason&quot; |
 | FLOWID | &quot;flowId&quot; |
 | FLOWINTYPE | &quot;flowInType&quot; |

@@ -26,6 +26,7 @@ title: QueueConversationEventTopicMessage
 | **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
 | **recipientCountry** | <!----><!---->**String**<!----> |  |  [optional] |
 | **recipientType** | <!----><!---->**String**<!----> |  |  [optional] |
+| **journeyContext** | <!----><!---->[**QueueConversationEventTopicJourneyContext**](QueueConversationEventTopicJourneyContext.html)<!----> |  |  [optional] |
 | **wrapup** | <!----><!---->[**QueueConversationEventTopicWrapup**](QueueConversationEventTopicWrapup.html)<!----> |  |  [optional] |
 | **afterCallWork** | <!----><!---->[**QueueConversationEventTopicAfterCallWork**](QueueConversationEventTopicAfterCallWork.html)<!----> |  |  [optional] |
 | **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> |  |  [optional] |

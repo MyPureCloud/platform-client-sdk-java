@@ -268,6 +268,8 @@ public class AnalyticsSession  implements Serializable {
   private Integer selectedAgentRank = null;
   private String agentAssistantId = null;
   private List<AnalyticsProposedAgent> proposedAgents = new ArrayList<AnalyticsProposedAgent>();
+  private String assignerId = null;
+  private Boolean acwSkipped = null;
 
   
   /**
@@ -1343,6 +1345,42 @@ public class AnalyticsSession  implements Serializable {
   }
 
   
+  /**
+   * ID of the user that manually assigned a conversation
+   **/
+  public AnalyticsSession assignerId(String assignerId) {
+    this.assignerId = assignerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "ID of the user that manually assigned a conversation")
+  @JsonProperty("assignerId")
+  public String getAssignerId() {
+    return assignerId;
+  }
+  public void setAssignerId(String assignerId) {
+    this.assignerId = assignerId;
+  }
+
+  
+  /**
+   * Marker for an agent that skipped after call work
+   **/
+  public AnalyticsSession acwSkipped(Boolean acwSkipped) {
+    this.acwSkipped = acwSkipped;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Marker for an agent that skipped after call work")
+  @JsonProperty("acwSkipped")
+  public Boolean getAcwSkipped() {
+    return acwSkipped;
+  }
+  public void setAcwSkipped(Boolean acwSkipped) {
+    this.acwSkipped = acwSkipped;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1412,12 +1450,14 @@ public class AnalyticsSession  implements Serializable {
         Objects.equals(this.selectedAgentId, analyticsSession.selectedAgentId) &&
         Objects.equals(this.selectedAgentRank, analyticsSession.selectedAgentRank) &&
         Objects.equals(this.agentAssistantId, analyticsSession.agentAssistantId) &&
-        Objects.equals(this.proposedAgents, analyticsSession.proposedAgents);
+        Objects.equals(this.proposedAgents, analyticsSession.proposedAgents) &&
+        Objects.equals(this.assignerId, analyticsSession.assignerId) &&
+        Objects.equals(this.acwSkipped, analyticsSession.acwSkipped);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, sessionDnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments, metrics, flow, mediaEndpointStats, recording, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, journeyActionId, journeyActionMapId, journeyActionMapVersion, protocolCallId, provider, remote, mediaCount, flowInType, flowOutType, requestedRoutings, usedRouting, selectedAgentId, selectedAgentRank, agentAssistantId, proposedAgents);
+    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, sessionDnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments, metrics, flow, mediaEndpointStats, recording, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, journeyActionId, journeyActionMapId, journeyActionMapVersion, protocolCallId, provider, remote, mediaCount, flowInType, flowOutType, requestedRoutings, usedRouting, selectedAgentId, selectedAgentRank, agentAssistantId, proposedAgents, assignerId, acwSkipped);
   }
 
   @Override
@@ -1485,6 +1525,8 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    selectedAgentRank: ").append(toIndentedString(selectedAgentRank)).append("\n");
     sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
     sb.append("    proposedAgents: ").append(toIndentedString(proposedAgents)).append("\n");
+    sb.append("    assignerId: ").append(toIndentedString(assignerId)).append("\n");
+    sb.append("    acwSkipped: ").append(toIndentedString(acwSkipped)).append("\n");
     sb.append("}");
     return sb.toString();
   }

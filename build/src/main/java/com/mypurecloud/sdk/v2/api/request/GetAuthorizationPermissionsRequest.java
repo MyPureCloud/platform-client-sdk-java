@@ -69,6 +69,64 @@ public class GetAuthorizationPermissionsRequest {
 	    return this;
 	} 
 	
+	private String queryType;
+	public String getQueryType() {
+		return this.queryType;
+	}
+
+	public void setQueryType(String queryType) {
+		this.queryType = queryType;
+	}
+
+	public GetAuthorizationPermissionsRequest withQueryType(String queryType) {
+	    this.setQueryType(queryType);
+	    return this;
+	} 
+
+	public enum queryTypeValues { 
+		DOMAIN("domain"), 
+		PERMISSION("permission");
+
+		private String value;
+
+		queryTypeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static queryTypeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (queryTypeValues value : queryTypeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return queryTypeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
+	private String query;
+	public String getQuery() {
+		return this.query;
+	}
+
+	public void setQuery(String query) {
+		this.query = query;
+	}
+
+	public GetAuthorizationPermissionsRequest withQuery(String query) {
+	    this.setQuery(query);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -95,6 +153,10 @@ public class GetAuthorizationPermissionsRequest {
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
+        
+                .withQueryParameters("queryType", "", queryType)
+        
+                .withQueryParameters("query", "", query)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -124,6 +186,21 @@ public class GetAuthorizationPermissionsRequest {
 		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
+			return this;
+		}
+		
+		public Builder withQueryType(String queryType) {
+			request.setQueryType(queryType);
+			return this;
+		}
+
+		public Builder withQueryType(queryTypeValues queryType) {
+		    request.setQueryType(queryType.toString());
+		    return this;
+		}
+		
+		public Builder withQuery(String query) {
+			request.setQuery(query);
 			return this;
 		}
 		

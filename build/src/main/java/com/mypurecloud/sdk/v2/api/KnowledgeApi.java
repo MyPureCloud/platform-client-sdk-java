@@ -864,7 +864,7 @@ public class KnowledgeApi {
 
   
   /**
-   * Get All trainings information for a knowledgebase
+   * Get all trainings information for a knowledgebase
    * 
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param languageCode Language code, format: iso2-LOCALE (required)
@@ -872,16 +872,17 @@ public class KnowledgeApi {
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param limit Number of entities to return. Maximum of 200. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param knowledgeDocumentsState Return the training with the specified state of the trained documents. (optional)
    * @return TrainingListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public TrainingListing getKnowledgeKnowledgebaseLanguageTrainings(String knowledgeBaseId, String languageCode, String before, String after, String limit, String pageSize) throws IOException, ApiException {
-    return  getKnowledgeKnowledgebaseLanguageTrainings(createGetKnowledgeKnowledgebaseLanguageTrainingsRequest(knowledgeBaseId, languageCode, before, after, limit, pageSize));
+  public TrainingListing getKnowledgeKnowledgebaseLanguageTrainings(String knowledgeBaseId, String languageCode, String before, String after, String limit, String pageSize, String knowledgeDocumentsState) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseLanguageTrainings(createGetKnowledgeKnowledgebaseLanguageTrainingsRequest(knowledgeBaseId, languageCode, before, after, limit, pageSize, knowledgeDocumentsState));
   }
 
   /**
-   * Get All trainings information for a knowledgebase
+   * Get all trainings information for a knowledgebase
    * 
    * @param knowledgeBaseId Knowledge base ID (required)
    * @param languageCode Language code, format: iso2-LOCALE (required)
@@ -889,14 +890,15 @@ public class KnowledgeApi {
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param limit Number of entities to return. Maximum of 200. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param knowledgeDocumentsState Return the training with the specified state of the trained documents. (optional)
    * @return TrainingListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TrainingListing> getKnowledgeKnowledgebaseLanguageTrainingsWithHttpInfo(String knowledgeBaseId, String languageCode, String before, String after, String limit, String pageSize) throws IOException {
-    return getKnowledgeKnowledgebaseLanguageTrainings(createGetKnowledgeKnowledgebaseLanguageTrainingsRequest(knowledgeBaseId, languageCode, before, after, limit, pageSize).withHttpInfo());
+  public ApiResponse<TrainingListing> getKnowledgeKnowledgebaseLanguageTrainingsWithHttpInfo(String knowledgeBaseId, String languageCode, String before, String after, String limit, String pageSize, String knowledgeDocumentsState) throws IOException {
+    return getKnowledgeKnowledgebaseLanguageTrainings(createGetKnowledgeKnowledgebaseLanguageTrainingsRequest(knowledgeBaseId, languageCode, before, after, limit, pageSize, knowledgeDocumentsState).withHttpInfo());
   }
 
-  private GetKnowledgeKnowledgebaseLanguageTrainingsRequest createGetKnowledgeKnowledgebaseLanguageTrainingsRequest(String knowledgeBaseId, String languageCode, String before, String after, String limit, String pageSize) {
+  private GetKnowledgeKnowledgebaseLanguageTrainingsRequest createGetKnowledgeKnowledgebaseLanguageTrainingsRequest(String knowledgeBaseId, String languageCode, String before, String after, String limit, String pageSize, String knowledgeDocumentsState) {
     return GetKnowledgeKnowledgebaseLanguageTrainingsRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
     
@@ -910,11 +912,13 @@ public class KnowledgeApi {
     
             .withPageSize(pageSize)
     
+            .withKnowledgeDocumentsState(knowledgeDocumentsState)
+    
             .build();
   }
 
   /**
-   * Get All trainings information for a knowledgebase
+   * Get all trainings information for a knowledgebase
    * 
    * @param request The request object
    * @return TrainingListing
@@ -933,7 +937,7 @@ public class KnowledgeApi {
   }
 
   /**
-   * Get All trainings information for a knowledgebase
+   * Get all trainings information for a knowledgebase
    * 
    * @param request The request object
    * @return the response

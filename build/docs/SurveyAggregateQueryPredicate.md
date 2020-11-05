@@ -55,6 +55,7 @@ title: SurveyAggregateQueryPredicate
 | SURVEYQUESTIONGROUPID | &quot;surveyQuestionGroupId&quot; |
 | SURVEYQUESTIONID | &quot;surveyQuestionId&quot; |
 | SURVEYSTATUS | &quot;surveyStatus&quot; |
+| TEAMID | &quot;teamId&quot; |
 | USERID | &quot;userId&quot; |
 | WRAPUPCODE | &quot;wrapUpCode&quot; |
 {: class="table table-striped"}

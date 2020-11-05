@@ -18,6 +18,7 @@ public class NluDomain  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private String language = null;
   private NluDomainVersion draftVersion = null;
   private NluDomainVersion lastPublishedVersion = null;
   private Date dateCreated = null;
@@ -47,6 +48,24 @@ public class NluDomain  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  
+  /**
+   * The ISO 639-1 language code of the NLU domain, e.g. `en`.
+   **/
+  public NluDomain language(String language) {
+    this.language = language;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ISO 639-1 language code of the NLU domain, e.g. `en`.")
+  @JsonProperty("language")
+  public String getLanguage() {
+    return language;
+  }
+  public void setLanguage(String language) {
+    this.language = language;
   }
 
   
@@ -119,6 +138,7 @@ public class NluDomain  implements Serializable {
     NluDomain nluDomain = (NluDomain) o;
     return Objects.equals(this.id, nluDomain.id) &&
         Objects.equals(this.name, nluDomain.name) &&
+        Objects.equals(this.language, nluDomain.language) &&
         Objects.equals(this.draftVersion, nluDomain.draftVersion) &&
         Objects.equals(this.lastPublishedVersion, nluDomain.lastPublishedVersion) &&
         Objects.equals(this.dateCreated, nluDomain.dateCreated) &&
@@ -128,7 +148,7 @@ public class NluDomain  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, draftVersion, lastPublishedVersion, dateCreated, dateModified, selfUri);
+    return Objects.hash(id, name, language, draftVersion, lastPublishedVersion, dateCreated, dateModified, selfUri);
   }
 
   @Override
@@ -138,6 +158,7 @@ public class NluDomain  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    draftVersion: ").append(toIndentedString(draftVersion)).append("\n");
     sb.append("    lastPublishedVersion: ").append(toIndentedString(lastPublishedVersion)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");

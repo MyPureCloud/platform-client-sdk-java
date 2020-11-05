@@ -26,6 +26,7 @@ title: ConversationEventTopicMessage
 | **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
 | **recipientCountry** | <!----><!---->**String**<!----> |  |  [optional] |
 | **recipientType** | <!----><!---->**String**<!----> |  |  [optional] |
+| **journeyContext** | <!----><!---->[**ConversationEventTopicJourneyContext**](ConversationEventTopicJourneyContext.html)<!----> |  |  [optional] |
 | **wrapup** | <!----><!---->[**ConversationEventTopicWrapup**](ConversationEventTopicWrapup.html)<!----> |  |  [optional] |
 | **afterCallWork** | <!----><!---->[**ConversationEventTopicAfterCallWork**](ConversationEventTopicAfterCallWork.html)<!----> |  |  [optional] |
 | **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> |  |  [optional] |

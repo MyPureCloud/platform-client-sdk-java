@@ -68,6 +68,8 @@ title: AnalyticsSession
 | **selectedAgentRank** | <!----><!---->**Integer**<!----> | Selected agent GPR rank |  [optional] |
 | **agentAssistantId** | <!----><!---->**String**<!----> | Unique identifier of the active virtual agent assistant |  [optional] |
 | **proposedAgents** | <!----><!---->[**List&lt;AnalyticsProposedAgent&gt;**](AnalyticsProposedAgent.html)<!----> | Proposed agents |  [optional] |
+| **assignerId** | <!----><!---->**String**<!----> | ID of the user that manually assigned a conversation |  [optional] |
+| **acwSkipped** | <!----><!---->**Boolean**<!----> | Marker for an agent that skipped after call work |  [optional] |
 {: class="table table-striped"}
 
 

@@ -34,6 +34,7 @@ public class AuditLogMessage  implements Serializable {
    */
   public enum ServiceNameEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ARCHITECT("Architect"),
     CONTACTCENTER("ContactCenter"),
     CONTENTMANAGEMENT("ContentManagement"),
     PEOPLEPERMISSIONS("PeoplePermissions"),
@@ -43,7 +44,8 @@ public class AuditLogMessage  implements Serializable {
     PREDICTIVEENGAGEMENT("PredictiveEngagement"),
     WORKFORCEMANAGEMENT("WorkforceManagement"),
     TRIGGERS("Triggers"),
-    RESPONSEMANAGEMENT("ResponseManagement");
+    RESPONSEMANAGEMENT("ResponseManagement"),
+    GROUPS("Groups");
 
     private String value;
 
@@ -84,6 +86,7 @@ public class AuditLogMessage  implements Serializable {
     UPDATE("Update"),
     DELETE("Delete"),
     DOWNLOAD("Download"),
+    UPLOAD("Upload"),
     MEMBERADD("MemberAdd"),
     MEMBERUPDATE("MemberUpdate"),
     MEMBERREMOVE("MemberRemove"),
@@ -95,6 +98,14 @@ public class AuditLogMessage  implements Serializable {
     EXECUTE("Execute"),
     PUBLISH("Publish"),
     UNPUBLISH("Unpublish"),
+    ACTIVATE("Activate"),
+    CHECKIN("Checkin"),
+    CHECKOUT("Checkout"),
+    DEACTIVATE("Deactivate"),
+    DEBUG("Debug"),
+    SAVE("Save"),
+    REVERT("Revert"),
+    TRANSCODE("Transcode"),
     ENABLE("Enable"),
     DISABLE("Disable"),
     AUTHORIZE("Authorize"),
@@ -157,7 +168,14 @@ public class AuditLogMessage  implements Serializable {
     CLICKSTREAMSETTINGS("ClickstreamSettings"),
     SCHEDULE("Schedule"),
     TRIGGER("Trigger"),
-    RESPONSE("Response");
+    RESPONSE("Response"),
+    DEPENDENCYTRACKINGBUILD("DependencyTrackingBuild"),
+    FLOW("Flow"),
+    PROMPT("Prompt"),
+    PROMPTRESOURCE("PromptResource"),
+    FLOWOUTCOME("FlowOutcome"),
+    FLOWMILESTONE("FlowMilestone"),
+    TEAM("Team");
 
     private String value;
 

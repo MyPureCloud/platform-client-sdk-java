@@ -46,6 +46,7 @@ public class SurveyAggregationQuery  implements Serializable {
     SURVEYQUESTIONGROUPID("surveyQuestionGroupId"),
     SURVEYQUESTIONID("surveyQuestionId"),
     SURVEYSTATUS("surveyStatus"),
+    TEAMID("teamId"),
     USERID("userId"),
     WRAPUPCODE("wrapUpCode");
 

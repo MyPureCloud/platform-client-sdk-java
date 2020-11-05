@@ -67,6 +67,7 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
    */
   public enum ServiceNameEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ARCHITECT("Architect"),
     CONTACTCENTER("ContactCenter"),
     CONTENTMANAGEMENT("ContentManagement"),
     PEOPLEPERMISSIONS("PeoplePermissions"),
@@ -76,7 +77,8 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     PREDICTIVEENGAGEMENT("PredictiveEngagement"),
     WORKFORCEMANAGEMENT("WorkforceManagement"),
     TRIGGERS("Triggers"),
-    RESPONSEMANAGEMENT("ResponseManagement");
+    RESPONSEMANAGEMENT("ResponseManagement"),
+    GROUPS("Groups");
 
     private String value;
 

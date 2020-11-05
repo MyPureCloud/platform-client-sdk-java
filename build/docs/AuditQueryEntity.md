@@ -43,6 +43,13 @@ title: AuditQueryEntity
 | SCHEDULE | &quot;Schedule&quot; |
 | TRIGGER | &quot;Trigger&quot; |
 | RESPONSE | &quot;Response&quot; |
+| DEPENDENCYTRACKINGBUILD | &quot;DependencyTrackingBuild&quot; |
+| FLOW | &quot;Flow&quot; |
+| PROMPT | &quot;Prompt&quot; |
+| PROMPTRESOURCE | &quot;PromptResource&quot; |
+| FLOWOUTCOME | &quot;FlowOutcome&quot; |
+| FLOWMILESTONE | &quot;FlowMilestone&quot; |
+| TEAM | &quot;Team&quot; |
 {: class="table table-striped"}
 
 
@@ -57,6 +64,7 @@ title: AuditQueryEntity
 | UPDATE | &quot;Update&quot; |
 | DELETE | &quot;Delete&quot; |
 | DOWNLOAD | &quot;Download&quot; |
+| UPLOAD | &quot;Upload&quot; |
 | MEMBERADD | &quot;MemberAdd&quot; |
 | MEMBERUPDATE | &quot;MemberUpdate&quot; |
 | MEMBERREMOVE | &quot;MemberRemove&quot; |
@@ -68,6 +76,14 @@ title: AuditQueryEntity
 | EXECUTE | &quot;Execute&quot; |
 | PUBLISH | &quot;Publish&quot; |
 | UNPUBLISH | &quot;Unpublish&quot; |
+| ACTIVATE | &quot;Activate&quot; |
+| CHECKIN | &quot;Checkin&quot; |
+| CHECKOUT | &quot;Checkout&quot; |
+| DEACTIVATE | &quot;Deactivate&quot; |
+| DEBUG | &quot;Debug&quot; |
+| SAVE | &quot;Save&quot; |
+| REVERT | &quot;Revert&quot; |
+| TRANSCODE | &quot;Transcode&quot; |
 | ENABLE | &quot;Enable&quot; |
 | DISABLE | &quot;Disable&quot; |
 | AUTHORIZE | &quot;Authorize&quot; |

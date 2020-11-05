@@ -57,6 +57,7 @@ public class KnowledgeBase  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private Integer faqCount = null;
+  private Date dateDocumentLastModified = null;
   private String selfUri = null;
 
   
@@ -134,21 +135,17 @@ public class KnowledgeBase  implements Serializable {
   }
 
   
-  /**
-   * The count representing the number of documents of type FAQ per KnowledgeBase
-   **/
-  public KnowledgeBase faqCount(Integer faqCount) {
-    this.faqCount = faqCount;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The count representing the number of documents of type FAQ per KnowledgeBase")
   @JsonProperty("faqCount")
   public Integer getFaqCount() {
     return faqCount;
   }
-  public void setFaqCount(Integer faqCount) {
-    this.faqCount = faqCount;
+
+  
+  @ApiModelProperty(example = "null", value = "The date representing when the last document is modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateDocumentLastModified")
+  public Date getDateDocumentLastModified() {
+    return dateDocumentLastModified;
   }
 
   
@@ -176,12 +173,13 @@ public class KnowledgeBase  implements Serializable {
         Objects.equals(this.dateCreated, knowledgeBase.dateCreated) &&
         Objects.equals(this.dateModified, knowledgeBase.dateModified) &&
         Objects.equals(this.faqCount, knowledgeBase.faqCount) &&
+        Objects.equals(this.dateDocumentLastModified, knowledgeBase.dateDocumentLastModified) &&
         Objects.equals(this.selfUri, knowledgeBase.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, coreLanguage, dateCreated, dateModified, faqCount, selfUri);
+    return Objects.hash(id, name, description, coreLanguage, dateCreated, dateModified, faqCount, dateDocumentLastModified, selfUri);
   }
 
   @Override
@@ -196,6 +194,7 @@ public class KnowledgeBase  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    faqCount: ").append(toIndentedString(faqCount)).append("\n");
+    sb.append("    dateDocumentLastModified: ").append(toIndentedString(dateDocumentLastModified)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

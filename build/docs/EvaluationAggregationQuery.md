@@ -37,6 +37,7 @@ title: EvaluationAggregationQuery
 | QUEUEID | &quot;queueId&quot; |
 | RESCIND | &quot;rescind&quot; |
 | RESCORED | &quot;rescored&quot; |
+| TEAMID | &quot;teamId&quot; |
 | USERID | &quot;userId&quot; |
 {: class="table table-striped"}
 

@@ -50,6 +50,8 @@ import com.mypurecloud.sdk.v2.model.WeekScheduleResponse;
 import com.mypurecloud.sdk.v2.model.WeekScheduleListResponse;
 import com.mypurecloud.sdk.v2.model.WeekShiftTradeListResponse;
 import com.mypurecloud.sdk.v2.model.WorkPlan;
+import com.mypurecloud.sdk.v2.model.WorkPlanRotationResponse;
+import com.mypurecloud.sdk.v2.model.WorkPlanRotationListResponse;
 import com.mypurecloud.sdk.v2.model.WorkPlanListResponse;
 import com.mypurecloud.sdk.v2.model.NotificationsResponse;
 import com.mypurecloud.sdk.v2.model.SchedulingStatusResponse;
@@ -62,6 +64,7 @@ import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.ShiftTradeResponse;
 import com.mypurecloud.sdk.v2.model.PatchShiftTradeRequest;
+import com.mypurecloud.sdk.v2.model.UpdateWorkPlanRotationRequest;
 import com.mypurecloud.sdk.v2.model.AgentTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceResponse;
 import com.mypurecloud.sdk.v2.model.WfmHistoricalAdherenceQueryForUsers;
@@ -103,6 +106,8 @@ import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlan;
 import com.mypurecloud.sdk.v2.model.ValidateWorkPlanResponse;
 import com.mypurecloud.sdk.v2.model.WorkPlanValidationRequest;
+import com.mypurecloud.sdk.v2.model.CopyWorkPlanRotationRequest;
+import com.mypurecloud.sdk.v2.model.AddWorkPlanRotationRequest;
 import com.mypurecloud.sdk.v2.model.CreateWorkPlan;
 import com.mypurecloud.sdk.v2.model.CreateManagementUnitApiRequest;
 import com.mypurecloud.sdk.v2.model.UpdateNotificationsResponse;
@@ -120,6 +125,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitW
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitWeekShorttermforecastRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanrotationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdhocmodelingjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitRequest;
@@ -159,6 +165,8 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWe
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWeekSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWeekShifttradesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWorkplanRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWorkplanrotationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWorkplanrotationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWorkplansRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitsDivisionviewsRequest;
@@ -176,6 +184,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunit
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWeekShifttradeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWorkplanRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWorkplanrotationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistoricalRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentschedulesMineRequest;
@@ -204,6 +213,8 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitW
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShifttradesStateBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWorkplanCopyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWorkplanValidateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWorkplanrotationCopyRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWorkplanrotationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWorkplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementNotificationsUpdateRequest;
@@ -930,6 +941,86 @@ public class WorkforceManagementApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteWorkforcemanagementManagementunitWorkplan(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete a work plan rotation
+   * 
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param workPlanRotationId The ID of the work plan rotation to be deleted (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementManagementunitWorkplanrotation(String managementUnitId, String workPlanRotationId) throws IOException, ApiException {
+     deleteWorkforcemanagementManagementunitWorkplanrotation(createDeleteWorkforcemanagementManagementunitWorkplanrotationRequest(managementUnitId, workPlanRotationId));
+  }
+
+  /**
+   * Delete a work plan rotation
+   * 
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param workPlanRotationId The ID of the work plan rotation to be deleted (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementManagementunitWorkplanrotationWithHttpInfo(String managementUnitId, String workPlanRotationId) throws IOException {
+    return deleteWorkforcemanagementManagementunitWorkplanrotation(createDeleteWorkforcemanagementManagementunitWorkplanrotationRequest(managementUnitId, workPlanRotationId).withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementManagementunitWorkplanrotationRequest createDeleteWorkforcemanagementManagementunitWorkplanrotationRequest(String managementUnitId, String workPlanRotationId) {
+    return DeleteWorkforcemanagementManagementunitWorkplanrotationRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withWorkPlanRotationId(workPlanRotationId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a work plan rotation
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementManagementunitWorkplanrotation(DeleteWorkforcemanagementManagementunitWorkplanrotationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a work plan rotation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementManagementunitWorkplanrotation(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -4254,6 +4345,172 @@ public class WorkforceManagementApi {
 
   
   /**
+   * Get a work plan rotation
+   * 
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param workPlanRotationId The ID of the work plan rotation to fetch (required)
+   * @return WorkPlanRotationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanRotationResponse getWorkforcemanagementManagementunitWorkplanrotation(String managementUnitId, String workPlanRotationId) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitWorkplanrotation(createGetWorkforcemanagementManagementunitWorkplanrotationRequest(managementUnitId, workPlanRotationId));
+  }
+
+  /**
+   * Get a work plan rotation
+   * 
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param workPlanRotationId The ID of the work plan rotation to fetch (required)
+   * @return WorkPlanRotationResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanRotationResponse> getWorkforcemanagementManagementunitWorkplanrotationWithHttpInfo(String managementUnitId, String workPlanRotationId) throws IOException {
+    return getWorkforcemanagementManagementunitWorkplanrotation(createGetWorkforcemanagementManagementunitWorkplanrotationRequest(managementUnitId, workPlanRotationId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementManagementunitWorkplanrotationRequest createGetWorkforcemanagementManagementunitWorkplanrotationRequest(String managementUnitId, String workPlanRotationId) {
+    return GetWorkforcemanagementManagementunitWorkplanrotationRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withWorkPlanRotationId(workPlanRotationId)
+    
+            .build();
+  }
+
+  /**
+   * Get a work plan rotation
+   * 
+   * @param request The request object
+   * @return WorkPlanRotationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanRotationResponse getWorkforcemanagementManagementunitWorkplanrotation(GetWorkforcemanagementManagementunitWorkplanrotationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkPlanRotationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkPlanRotationResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a work plan rotation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanRotationResponse> getWorkforcemanagementManagementunitWorkplanrotation(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkPlanRotationResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanRotationResponse> response = (ApiResponse<WorkPlanRotationResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanRotationResponse> response = (ApiResponse<WorkPlanRotationResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get work plan rotations
+   * 
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param expand  (optional)
+   * @return WorkPlanRotationListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanRotationListResponse getWorkforcemanagementManagementunitWorkplanrotations(String managementUnitId, List<String> expand) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitWorkplanrotations(createGetWorkforcemanagementManagementunitWorkplanrotationsRequest(managementUnitId, expand));
+  }
+
+  /**
+   * Get work plan rotations
+   * 
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param expand  (optional)
+   * @return WorkPlanRotationListResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanRotationListResponse> getWorkforcemanagementManagementunitWorkplanrotationsWithHttpInfo(String managementUnitId, List<String> expand) throws IOException {
+    return getWorkforcemanagementManagementunitWorkplanrotations(createGetWorkforcemanagementManagementunitWorkplanrotationsRequest(managementUnitId, expand).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementManagementunitWorkplanrotationsRequest createGetWorkforcemanagementManagementunitWorkplanrotationsRequest(String managementUnitId, List<String> expand) {
+    return GetWorkforcemanagementManagementunitWorkplanrotationsRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withExpand(expand)
+    
+            .build();
+  }
+
+  /**
+   * Get work plan rotations
+   * 
+   * @param request The request object
+   * @return WorkPlanRotationListResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanRotationListResponse getWorkforcemanagementManagementunitWorkplanrotations(GetWorkforcemanagementManagementunitWorkplanrotationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkPlanRotationListResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkPlanRotationListResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get work plan rotations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanRotationListResponse> getWorkforcemanagementManagementunitWorkplanrotations(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkPlanRotationListResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanRotationListResponse> response = (ApiResponse<WorkPlanRotationListResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanRotationListResponse> response = (ApiResponse<WorkPlanRotationListResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get work plans
    * 
    * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
@@ -5672,6 +5929,93 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WorkPlan> response = (ApiResponse<WorkPlan>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update a work plan rotation
+   * 
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param workPlanRotationId The ID of the work plan rotation to update (required)
+   * @param body body (optional)
+   * @return WorkPlanRotationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanRotationResponse patchWorkforcemanagementManagementunitWorkplanrotation(String managementUnitId, String workPlanRotationId, UpdateWorkPlanRotationRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementManagementunitWorkplanrotation(createPatchWorkforcemanagementManagementunitWorkplanrotationRequest(managementUnitId, workPlanRotationId, body));
+  }
+
+  /**
+   * Update a work plan rotation
+   * 
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param workPlanRotationId The ID of the work plan rotation to update (required)
+   * @param body body (optional)
+   * @return WorkPlanRotationResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanRotationResponse> patchWorkforcemanagementManagementunitWorkplanrotationWithHttpInfo(String managementUnitId, String workPlanRotationId, UpdateWorkPlanRotationRequest body) throws IOException {
+    return patchWorkforcemanagementManagementunitWorkplanrotation(createPatchWorkforcemanagementManagementunitWorkplanrotationRequest(managementUnitId, workPlanRotationId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementManagementunitWorkplanrotationRequest createPatchWorkforcemanagementManagementunitWorkplanrotationRequest(String managementUnitId, String workPlanRotationId, UpdateWorkPlanRotationRequest body) {
+    return PatchWorkforcemanagementManagementunitWorkplanrotationRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withWorkPlanRotationId(workPlanRotationId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update a work plan rotation
+   * 
+   * @param request The request object
+   * @return WorkPlanRotationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanRotationResponse patchWorkforcemanagementManagementunitWorkplanrotation(PatchWorkforcemanagementManagementunitWorkplanrotationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkPlanRotationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkPlanRotationResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a work plan rotation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanRotationResponse> patchWorkforcemanagementManagementunitWorkplanrotation(ApiRequest<UpdateWorkPlanRotationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkPlanRotationResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanRotationResponse> response = (ApiResponse<WorkPlanRotationResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanRotationResponse> response = (ApiResponse<WorkPlanRotationResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -8100,6 +8444,176 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ValidateWorkPlanResponse> response = (ApiResponse<ValidateWorkPlanResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create a copy of work plan rotation
+   * 
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param workPlanRotationId The ID of the work plan rotation to create a copy (required)
+   * @param body body (optional)
+   * @return WorkPlanRotationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanRotationResponse postWorkforcemanagementManagementunitWorkplanrotationCopy(String managementUnitId, String workPlanRotationId, CopyWorkPlanRotationRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitWorkplanrotationCopy(createPostWorkforcemanagementManagementunitWorkplanrotationCopyRequest(managementUnitId, workPlanRotationId, body));
+  }
+
+  /**
+   * Create a copy of work plan rotation
+   * 
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param workPlanRotationId The ID of the work plan rotation to create a copy (required)
+   * @param body body (optional)
+   * @return WorkPlanRotationResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanRotationResponse> postWorkforcemanagementManagementunitWorkplanrotationCopyWithHttpInfo(String managementUnitId, String workPlanRotationId, CopyWorkPlanRotationRequest body) throws IOException {
+    return postWorkforcemanagementManagementunitWorkplanrotationCopy(createPostWorkforcemanagementManagementunitWorkplanrotationCopyRequest(managementUnitId, workPlanRotationId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitWorkplanrotationCopyRequest createPostWorkforcemanagementManagementunitWorkplanrotationCopyRequest(String managementUnitId, String workPlanRotationId, CopyWorkPlanRotationRequest body) {
+    return PostWorkforcemanagementManagementunitWorkplanrotationCopyRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withWorkPlanRotationId(workPlanRotationId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a copy of work plan rotation
+   * 
+   * @param request The request object
+   * @return WorkPlanRotationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanRotationResponse postWorkforcemanagementManagementunitWorkplanrotationCopy(PostWorkforcemanagementManagementunitWorkplanrotationCopyRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkPlanRotationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkPlanRotationResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a copy of work plan rotation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanRotationResponse> postWorkforcemanagementManagementunitWorkplanrotationCopy(ApiRequest<CopyWorkPlanRotationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkPlanRotationResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanRotationResponse> response = (ApiResponse<WorkPlanRotationResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanRotationResponse> response = (ApiResponse<WorkPlanRotationResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create a new work plan rotation
+   * 
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param body body (optional)
+   * @return WorkPlanRotationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanRotationResponse postWorkforcemanagementManagementunitWorkplanrotations(String managementUnitId, AddWorkPlanRotationRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitWorkplanrotations(createPostWorkforcemanagementManagementunitWorkplanrotationsRequest(managementUnitId, body));
+  }
+
+  /**
+   * Create a new work plan rotation
+   * 
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param body body (optional)
+   * @return WorkPlanRotationResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanRotationResponse> postWorkforcemanagementManagementunitWorkplanrotationsWithHttpInfo(String managementUnitId, AddWorkPlanRotationRequest body) throws IOException {
+    return postWorkforcemanagementManagementunitWorkplanrotations(createPostWorkforcemanagementManagementunitWorkplanrotationsRequest(managementUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitWorkplanrotationsRequest createPostWorkforcemanagementManagementunitWorkplanrotationsRequest(String managementUnitId, AddWorkPlanRotationRequest body) {
+    return PostWorkforcemanagementManagementunitWorkplanrotationsRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a new work plan rotation
+   * 
+   * @param request The request object
+   * @return WorkPlanRotationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WorkPlanRotationResponse postWorkforcemanagementManagementunitWorkplanrotations(PostWorkforcemanagementManagementunitWorkplanrotationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WorkPlanRotationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WorkPlanRotationResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a new work plan rotation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WorkPlanRotationResponse> postWorkforcemanagementManagementunitWorkplanrotations(ApiRequest<AddWorkPlanRotationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WorkPlanRotationResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanRotationResponse> response = (ApiResponse<WorkPlanRotationResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WorkPlanRotationResponse> response = (ApiResponse<WorkPlanRotationResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

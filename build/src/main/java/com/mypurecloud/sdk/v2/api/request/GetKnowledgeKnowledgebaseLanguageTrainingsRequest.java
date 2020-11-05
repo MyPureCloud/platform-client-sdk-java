@@ -152,6 +152,52 @@ public class GetKnowledgeKnowledgebaseLanguageTrainingsRequest {
 	    return this;
 	} 
 	
+	private String knowledgeDocumentsState;
+	public String getKnowledgeDocumentsState() {
+		return this.knowledgeDocumentsState;
+	}
+
+	public void setKnowledgeDocumentsState(String knowledgeDocumentsState) {
+		this.knowledgeDocumentsState = knowledgeDocumentsState;
+	}
+
+	public GetKnowledgeKnowledgebaseLanguageTrainingsRequest withKnowledgeDocumentsState(String knowledgeDocumentsState) {
+	    this.setKnowledgeDocumentsState(knowledgeDocumentsState);
+	    return this;
+	} 
+
+	public enum knowledgeDocumentsStateValues { 
+		DRAFT("Draft"), 
+		ACTIVE("Active"), 
+		DISCARDED("Discarded"), 
+		ARCHIVED("Archived");
+
+		private String value;
+
+		knowledgeDocumentsStateValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static knowledgeDocumentsStateValues fromString(String key) {
+			if (key == null) return null;
+
+			for (knowledgeDocumentsStateValues value : knowledgeDocumentsStateValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return knowledgeDocumentsStateValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -196,6 +242,8 @@ public class GetKnowledgeKnowledgebaseLanguageTrainingsRequest {
                 .withQueryParameters("limit", "", limit)
         
                 .withQueryParameters("pageSize", "", pageSize)
+        
+                .withQueryParameters("knowledgeDocumentsState", "", knowledgeDocumentsState)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -256,6 +304,16 @@ public class GetKnowledgeKnowledgebaseLanguageTrainingsRequest {
 		public Builder withPageSize(String pageSize) {
 			request.setPageSize(pageSize);
 			return this;
+		}
+		
+		public Builder withKnowledgeDocumentsState(String knowledgeDocumentsState) {
+			request.setKnowledgeDocumentsState(knowledgeDocumentsState);
+			return this;
+		}
+
+		public Builder withKnowledgeDocumentsState(knowledgeDocumentsStateValues knowledgeDocumentsState) {
+		    request.setKnowledgeDocumentsState(knowledgeDocumentsState.toString());
+		    return this;
 		}
 		
 

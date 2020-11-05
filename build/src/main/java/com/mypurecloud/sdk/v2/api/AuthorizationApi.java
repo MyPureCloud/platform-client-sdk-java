@@ -1025,12 +1025,14 @@ public class AuthorizationApi {
    * Retrieve a list of all permission defined in the system.
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param queryType Query filter type (optional)
+   * @param query Comma-separated list of permissions or domains to query (optional)
    * @return PermissionCollectionEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public PermissionCollectionEntityListing getAuthorizationPermissions(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return  getAuthorizationPermissions(createGetAuthorizationPermissionsRequest(pageSize, pageNumber));
+  public PermissionCollectionEntityListing getAuthorizationPermissions(Integer pageSize, Integer pageNumber, String queryType, String query) throws IOException, ApiException {
+    return  getAuthorizationPermissions(createGetAuthorizationPermissionsRequest(pageSize, pageNumber, queryType, query));
   }
 
   /**
@@ -1038,18 +1040,24 @@ public class AuthorizationApi {
    * Retrieve a list of all permission defined in the system.
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param queryType Query filter type (optional)
+   * @param query Comma-separated list of permissions or domains to query (optional)
    * @return PermissionCollectionEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PermissionCollectionEntityListing> getAuthorizationPermissionsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
-    return getAuthorizationPermissions(createGetAuthorizationPermissionsRequest(pageSize, pageNumber).withHttpInfo());
+  public ApiResponse<PermissionCollectionEntityListing> getAuthorizationPermissionsWithHttpInfo(Integer pageSize, Integer pageNumber, String queryType, String query) throws IOException {
+    return getAuthorizationPermissions(createGetAuthorizationPermissionsRequest(pageSize, pageNumber, queryType, query).withHttpInfo());
   }
 
-  private GetAuthorizationPermissionsRequest createGetAuthorizationPermissionsRequest(Integer pageSize, Integer pageNumber) {
+  private GetAuthorizationPermissionsRequest createGetAuthorizationPermissionsRequest(Integer pageSize, Integer pageNumber, String queryType, String query) {
     return GetAuthorizationPermissionsRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withQueryType(queryType)
+    
+            .withQuery(query)
     
             .build();
   }

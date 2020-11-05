@@ -12,6 +12,7 @@ title: ContentQuickReply
 | **text** | <!----><!---->**String**<!----> | Text to show inside the quick reply. This is also used as the response text after clicking on the quick reply. |  |
 | **image** | <!----><!---->**String**<!----> | Image associated with quick reply |  [optional] |
 | **action** | [**ActionEnum**](#ActionEnum)<!----> | Specifies the type of action that is triggered upon clicking the quick reply. Currently, the only supported action is \&quot;Message\&quot; which sends a message using the quick reply text. |  [optional] |
+| **payload** | <!----><!---->**String**<!----> | Payload content for the quick reply. |  [optional] |
 {: class="table table-striped"}
 
 

@@ -45,7 +45,14 @@ public class AuditQueryEntity  implements Serializable {
     CLICKSTREAMSETTINGS("ClickstreamSettings"),
     SCHEDULE("Schedule"),
     TRIGGER("Trigger"),
-    RESPONSE("Response");
+    RESPONSE("Response"),
+    DEPENDENCYTRACKINGBUILD("DependencyTrackingBuild"),
+    FLOW("Flow"),
+    PROMPT("Prompt"),
+    PROMPTRESOURCE("PromptResource"),
+    FLOWOUTCOME("FlowOutcome"),
+    FLOWMILESTONE("FlowMilestone"),
+    TEAM("Team");
 
     private String value;
 
@@ -83,6 +90,7 @@ public class AuditQueryEntity  implements Serializable {
     UPDATE("Update"),
     DELETE("Delete"),
     DOWNLOAD("Download"),
+    UPLOAD("Upload"),
     MEMBERADD("MemberAdd"),
     MEMBERUPDATE("MemberUpdate"),
     MEMBERREMOVE("MemberRemove"),
@@ -94,6 +102,14 @@ public class AuditQueryEntity  implements Serializable {
     EXECUTE("Execute"),
     PUBLISH("Publish"),
     UNPUBLISH("Unpublish"),
+    ACTIVATE("Activate"),
+    CHECKIN("Checkin"),
+    CHECKOUT("Checkout"),
+    DEACTIVATE("Deactivate"),
+    DEBUG("Debug"),
+    SAVE("Save"),
+    REVERT("Revert"),
+    TRANSCODE("Transcode"),
     ENABLE("Enable"),
     DISABLE("Disable"),
     AUTHORIZE("Authorize"),

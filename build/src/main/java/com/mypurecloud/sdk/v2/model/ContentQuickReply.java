@@ -53,6 +53,7 @@ public class ContentQuickReply  implements Serializable {
     }
   }
   private ActionEnum action = null;
+  private String payload = null;
 
   
   /**
@@ -127,6 +128,24 @@ public class ContentQuickReply  implements Serializable {
   }
 
   
+  /**
+   * Payload content for the quick reply.
+   **/
+  public ContentQuickReply payload(String payload) {
+    this.payload = payload;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Payload content for the quick reply.")
+  @JsonProperty("payload")
+  public String getPayload() {
+    return payload;
+  }
+  public void setPayload(String payload) {
+    this.payload = payload;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -140,12 +159,13 @@ public class ContentQuickReply  implements Serializable {
     return Objects.equals(this.id, contentQuickReply.id) &&
         Objects.equals(this.text, contentQuickReply.text) &&
         Objects.equals(this.image, contentQuickReply.image) &&
-        Objects.equals(this.action, contentQuickReply.action);
+        Objects.equals(this.action, contentQuickReply.action) &&
+        Objects.equals(this.payload, contentQuickReply.payload);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, text, image, action);
+    return Objects.hash(id, text, image, action, payload);
   }
 
   @Override
@@ -157,6 +177,7 @@ public class ContentQuickReply  implements Serializable {
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
+    sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
     sb.append("}");
     return sb.toString();
   }

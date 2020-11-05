@@ -18,12 +18,11 @@ import java.io.Serializable;
 public class KnowledgeTraining  implements Serializable {
   
   private String id = null;
-  private String name = null;
   private Date dateTriggered = null;
   private Date dateCompleted = null;
 
   /**
-   * Training status
+   * Training status.
    */
   public enum StatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -109,23 +108,6 @@ public class KnowledgeTraining  implements Serializable {
   }
 
   
-  /**
-   **/
-  public KnowledgeTraining name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  
   @ApiModelProperty(example = "null", value = "Trigger date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateTriggered")
   public Date getDateTriggered() {
@@ -140,14 +122,14 @@ public class KnowledgeTraining  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "Training status")
+  @ApiModelProperty(example = "null", value = "Training status.")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
 
   
-  @ApiModelProperty(example = "null", value = "Actual language of the Training")
+  @ApiModelProperty(example = "null", value = "Language of the documents that are trained.")
   @JsonProperty("languageCode")
   public String getLanguageCode() {
     return languageCode;
@@ -155,14 +137,14 @@ public class KnowledgeTraining  implements Serializable {
 
   
   /**
-   * Knowledge base which Training does belong to
+   * Knowledge Base that the training belongs to.
    **/
   public KnowledgeTraining knowledgeBase(KnowledgeBase knowledgeBase) {
     this.knowledgeBase = knowledgeBase;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Knowledge base which Training does belong to")
+  @ApiModelProperty(example = "null", value = "Knowledge Base that the training belongs to.")
   @JsonProperty("knowledgeBase")
   public KnowledgeBase getKnowledgeBase() {
     return knowledgeBase;
@@ -211,7 +193,6 @@ public class KnowledgeTraining  implements Serializable {
     }
     KnowledgeTraining knowledgeTraining = (KnowledgeTraining) o;
     return Objects.equals(this.id, knowledgeTraining.id) &&
-        Objects.equals(this.name, knowledgeTraining.name) &&
         Objects.equals(this.dateTriggered, knowledgeTraining.dateTriggered) &&
         Objects.equals(this.dateCompleted, knowledgeTraining.dateCompleted) &&
         Objects.equals(this.status, knowledgeTraining.status) &&
@@ -225,7 +206,7 @@ public class KnowledgeTraining  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateTriggered, dateCompleted, status, languageCode, knowledgeBase, errorMessage, knowledgeDocumentsState, datePromoted, selfUri);
+    return Objects.hash(id, dateTriggered, dateCompleted, status, languageCode, knowledgeBase, errorMessage, knowledgeDocumentsState, datePromoted, selfUri);
   }
 
   @Override
@@ -234,7 +215,6 @@ public class KnowledgeTraining  implements Serializable {
     sb.append("class KnowledgeTraining {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    dateTriggered: ").append(toIndentedString(dateTriggered)).append("\n");
     sb.append("    dateCompleted: ").append(toIndentedString(dateCompleted)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");

@@ -41,14 +41,14 @@ public class ButtonComponent  implements Serializable {
 
   
   /**
-   * Text to show inside the button
+   * Deprecated - Use title instead
    **/
   public ButtonComponent text(String text) {
     this.text = text;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Text to show inside the button")
+  @ApiModelProperty(example = "null", value = "Deprecated - Use title instead")
   @JsonProperty("text")
   public String getText() {
     return text;
@@ -59,14 +59,14 @@ public class ButtonComponent  implements Serializable {
 
   
   /**
-   * Tooltip text to show when hovering over the button
+   * Text to show inside the button
    **/
   public ButtonComponent title(String title) {
     this.title = title;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Tooltip text to show when hovering over the button")
+  @ApiModelProperty(example = "null", value = "Text to show inside the button")
   @JsonProperty("title")
   public String getTitle() {
     return title;

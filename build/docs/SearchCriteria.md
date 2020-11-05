@@ -15,6 +15,7 @@ title: SearchCriteria
 | **value** | <!----><!---->**String**<!----> | A value for the search to match against |  [optional] |
 | **operator** | [**OperatorEnum**](#OperatorEnum)<!----> | How to apply this search criteria against other criteria |  [optional] |
 | **group** | <!----><!---->[**List&lt;SearchCriteria&gt;**](SearchCriteria.html)<!----> | Groups multiple conditions |  [optional] |
+| **dateFormat** | <!----><!---->**String**<!----> | Set date format for criteria values when using date range search type.  Supports Java date format syntax, example yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSX. |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
 {: class="table table-striped"}
 

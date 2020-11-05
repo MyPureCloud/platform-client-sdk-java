@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicAddress;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicAfterCallWork;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicErrorDetails;
+import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicJourneyContext;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicMessageDetails;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicWrapup;
 import io.swagger.annotations.ApiModel;
@@ -167,6 +168,7 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
   private TypeEnum type = null;
   private String recipientCountry = null;
   private String recipientType = null;
+  private QueueConversationVideoEventTopicJourneyContext journeyContext = null;
   private QueueConversationVideoEventTopicWrapup wrapup = null;
   private QueueConversationVideoEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
@@ -481,6 +483,23 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
   
   /**
    **/
+  public QueueConversationVideoEventTopicMessage journeyContext(QueueConversationVideoEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("journeyContext")
+  public QueueConversationVideoEventTopicJourneyContext getJourneyContext() {
+    return journeyContext;
+  }
+  public void setJourneyContext(QueueConversationVideoEventTopicJourneyContext journeyContext) {
+    this.journeyContext = journeyContext;
+  }
+
+  
+  /**
+   **/
   public QueueConversationVideoEventTopicMessage wrapup(QueueConversationVideoEventTopicWrapup wrapup) {
     this.wrapup = wrapup;
     return this;
@@ -575,6 +594,7 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
         Objects.equals(this.type, queueConversationVideoEventTopicMessage.type) &&
         Objects.equals(this.recipientCountry, queueConversationVideoEventTopicMessage.recipientCountry) &&
         Objects.equals(this.recipientType, queueConversationVideoEventTopicMessage.recipientType) &&
+        Objects.equals(this.journeyContext, queueConversationVideoEventTopicMessage.journeyContext) &&
         Objects.equals(this.wrapup, queueConversationVideoEventTopicMessage.wrapup) &&
         Objects.equals(this.afterCallWork, queueConversationVideoEventTopicMessage.afterCallWork) &&
         Objects.equals(this.afterCallWorkRequired, queueConversationVideoEventTopicMessage.afterCallWorkRequired) &&
@@ -583,7 +603,7 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
+    return Objects.hash(id, state, held, errorInfo, provider, scriptId, peerId, disconnectType, startHoldTime, connectedTime, disconnectedTime, toAddress, fromAddress, messages, messagesTranscriptUri, type, recipientCountry, recipientType, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
   }
 
   @Override
@@ -609,6 +629,7 @@ public class QueueConversationVideoEventTopicMessage  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    recipientCountry: ").append(toIndentedString(recipientCountry)).append("\n");
     sb.append("    recipientType: ").append(toIndentedString(recipientType)).append("\n");
+    sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");

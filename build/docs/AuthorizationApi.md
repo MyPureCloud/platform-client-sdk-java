@@ -768,7 +768,7 @@ try {
 
 
 
-> [PermissionCollectionEntityListing](PermissionCollectionEntityListing.html) getAuthorizationPermissions(pageSize, pageNumber)
+> [PermissionCollectionEntityListing](PermissionCollectionEntityListing.html) getAuthorizationPermissions(pageSize, pageNumber, queryType, query)
 
 Get all permissions.
 
@@ -803,8 +803,10 @@ Configuration.setDefaultApiClient(apiClient);
 AuthorizationApi apiInstance = new AuthorizationApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
+String queryType = "queryType_example"; // String | Query filter type
+String query = "query_example"; // String | Comma-separated list of permissions or domains to query
 try {
-    PermissionCollectionEntityListing result = apiInstance.getAuthorizationPermissions(pageSize, pageNumber);
+    PermissionCollectionEntityListing result = apiInstance.getAuthorizationPermissions(pageSize, pageNumber, queryType, query);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthorizationApi#getAuthorizationPermissions");
@@ -819,6 +821,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **queryType** | **String**| Query filter type | [optional]<br />**Values**: domain, permission 
+| **query** | **String**| Comma-separated list of permissions or domains to query | [optional] 
 {: class="table-striped"}
 
 

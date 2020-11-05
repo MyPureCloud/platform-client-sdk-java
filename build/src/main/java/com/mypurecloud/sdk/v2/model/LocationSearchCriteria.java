@@ -60,6 +60,7 @@ public class LocationSearchCriteria  implements Serializable {
   }
   private OperatorEnum operator = null;
   private List<LocationSearchCriteria> group = new ArrayList<LocationSearchCriteria>();
+  private String dateFormat = null;
 
   /**
    * Search Type
@@ -230,6 +231,24 @@ public class LocationSearchCriteria  implements Serializable {
 
   
   /**
+   * Set date format for criteria values when using date range search type.  Supports Java date format syntax, example yyyy-MM-dd'T'HH:mm:ss.SSSX.
+   **/
+  public LocationSearchCriteria dateFormat(String dateFormat) {
+    this.dateFormat = dateFormat;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Set date format for criteria values when using date range search type.  Supports Java date format syntax, example yyyy-MM-dd'T'HH:mm:ss.SSSX.")
+  @JsonProperty("dateFormat")
+  public String getDateFormat() {
+    return dateFormat;
+  }
+  public void setDateFormat(String dateFormat) {
+    this.dateFormat = dateFormat;
+  }
+
+  
+  /**
    * Search Type
    **/
   public LocationSearchCriteria type(TypeEnum type) {
@@ -264,12 +283,13 @@ public class LocationSearchCriteria  implements Serializable {
         Objects.equals(this.value, locationSearchCriteria.value) &&
         Objects.equals(this.operator, locationSearchCriteria.operator) &&
         Objects.equals(this.group, locationSearchCriteria.group) &&
+        Objects.equals(this.dateFormat, locationSearchCriteria.dateFormat) &&
         Objects.equals(this.type, locationSearchCriteria.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(endValue, values, startValue, fields, value, operator, group, type);
+    return Objects.hash(endValue, values, startValue, fields, value, operator, group, dateFormat, type);
   }
 
   @Override
@@ -284,6 +304,7 @@ public class LocationSearchCriteria  implements Serializable {
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
     sb.append("    group: ").append(toIndentedString(group)).append("\n");
+    sb.append("    dateFormat: ").append(toIndentedString(dateFormat)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
