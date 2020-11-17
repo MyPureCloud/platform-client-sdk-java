@@ -42,6 +42,7 @@ title: AuditLogMessage
 | TRIGGERS | &quot;Triggers&quot; |
 | RESPONSEMANAGEMENT | &quot;ResponseManagement&quot; |
 | GROUPS | &quot;Groups&quot; |
+| TELEPHONY | &quot;Telephony&quot; |
 {: class="table table-striped"}
 
 
@@ -114,6 +115,9 @@ title: AuditLogMessage
 | EVENTTYPE | &quot;EventType&quot; |
 | CLICKSTREAMSETTINGS | &quot;ClickstreamSettings&quot; |
 | SCHEDULE | &quot;Schedule&quot; |
+| SCHEDULEGROUP | &quot;ScheduleGroup&quot; |
+| EMERGENCYGROUP | &quot;EmergencyGroup&quot; |
+| IVR | &quot;IVR&quot; |
 | TRIGGER | &quot;Trigger&quot; |
 | RESPONSE | &quot;Response&quot; |
 | DEPENDENCYTRACKINGBUILD | &quot;DependencyTrackingBuild&quot; |
@@ -123,6 +127,21 @@ title: AuditLogMessage
 | FLOWOUTCOME | &quot;FlowOutcome&quot; |
 | FLOWMILESTONE | &quot;FlowMilestone&quot; |
 | TEAM | &quot;Team&quot; |
+| EDGE | &quot;Edge&quot; |
+| EDGEGROUP | &quot;EdgeGroup&quot; |
+| TRUNK | &quot;Trunk&quot; |
+| TRUNKBASE | &quot;TrunkBase&quot; |
+| DID | &quot;DID&quot; |
+| DIDPOOL | &quot;DIDPool&quot; |
+| EXTENSION | &quot;Extension&quot; |
+| EXTENSIONPOOL | &quot;ExtensionPool&quot; |
+| PHONE | &quot;Phone&quot; |
+| PHONEBASE | &quot;PhoneBase&quot; |
+| LINE | &quot;Line&quot; |
+| LINEBASE | &quot;LineBase&quot; |
+| OUTBOUNDROUTE | &quot;OutboundRoute&quot; |
+| NUMBERPLAN | &quot;NumberPlan&quot; |
+| SITE | &quot;Site&quot; |
 {: class="table table-striped"}
 
 

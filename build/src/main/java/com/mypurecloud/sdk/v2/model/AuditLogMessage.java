@@ -45,7 +45,8 @@ public class AuditLogMessage  implements Serializable {
     WORKFORCEMANAGEMENT("WorkforceManagement"),
     TRIGGERS("Triggers"),
     RESPONSEMANAGEMENT("ResponseManagement"),
-    GROUPS("Groups");
+    GROUPS("Groups"),
+    TELEPHONY("Telephony");
 
     private String value;
 
@@ -167,6 +168,9 @@ public class AuditLogMessage  implements Serializable {
     EVENTTYPE("EventType"),
     CLICKSTREAMSETTINGS("ClickstreamSettings"),
     SCHEDULE("Schedule"),
+    SCHEDULEGROUP("ScheduleGroup"),
+    EMERGENCYGROUP("EmergencyGroup"),
+    IVR("IVR"),
     TRIGGER("Trigger"),
     RESPONSE("Response"),
     DEPENDENCYTRACKINGBUILD("DependencyTrackingBuild"),
@@ -175,7 +179,22 @@ public class AuditLogMessage  implements Serializable {
     PROMPTRESOURCE("PromptResource"),
     FLOWOUTCOME("FlowOutcome"),
     FLOWMILESTONE("FlowMilestone"),
-    TEAM("Team");
+    TEAM("Team"),
+    EDGE("Edge"),
+    EDGEGROUP("EdgeGroup"),
+    TRUNK("Trunk"),
+    TRUNKBASE("TrunkBase"),
+    DID("DID"),
+    DIDPOOL("DIDPool"),
+    EXTENSION("Extension"),
+    EXTENSIONPOOL("ExtensionPool"),
+    PHONE("Phone"),
+    PHONEBASE("PhoneBase"),
+    LINE("Line"),
+    LINEBASE("LineBase"),
+    OUTBOUNDROUTE("OutboundRoute"),
+    NUMBERPLAN("NumberPlan"),
+    SITE("Site");
 
     private String value;
 

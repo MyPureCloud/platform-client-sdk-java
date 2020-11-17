@@ -23,11 +23,9 @@ import java.util.regex.Pattern;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ActionTarget;
 import com.mypurecloud.sdk.v2.model.ActionTargetListing;
-import com.mypurecloud.sdk.v2.model.SegmentAssignmentListing;
 import com.mypurecloud.sdk.v2.model.PatchActionTarget;
 import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
-import com.mypurecloud.sdk.v2.model.SegmentAssignmentsUpdate;
 
 public class PostAnalyticsJourneysAggregatesQueryRequest {
     

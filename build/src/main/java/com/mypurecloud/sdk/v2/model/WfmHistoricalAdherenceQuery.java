@@ -21,8 +21,8 @@ public class WfmHistoricalAdherenceQuery  implements Serializable {
   private Date endDate = null;
   private String timeZone = null;
   private List<String> userIds = new ArrayList<String>();
-  private List<String> teamIds = new ArrayList<String>();
   private Boolean includeExceptions = null;
+  private List<String> teamIds = new ArrayList<String>();
 
   
   /**
@@ -98,24 +98,6 @@ public class WfmHistoricalAdherenceQuery  implements Serializable {
 
   
   /**
-   * The teamIds to report on. If null or not set, adherence will be computed for requested users if applicable or otherwise all users in the management unit. Note: Only one of [teamIds, userIds] can be requested
-   **/
-  public WfmHistoricalAdherenceQuery teamIds(List<String> teamIds) {
-    this.teamIds = teamIds;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The teamIds to report on. If null or not set, adherence will be computed for requested users if applicable or otherwise all users in the management unit. Note: Only one of [teamIds, userIds] can be requested")
-  @JsonProperty("teamIds")
-  public List<String> getTeamIds() {
-    return teamIds;
-  }
-  public void setTeamIds(List<String> teamIds) {
-    this.teamIds = teamIds;
-  }
-
-  
-  /**
    * Whether user exceptions should be returned as part of the results
    **/
   public WfmHistoricalAdherenceQuery includeExceptions(Boolean includeExceptions) {
@@ -133,6 +115,24 @@ public class WfmHistoricalAdherenceQuery  implements Serializable {
   }
 
   
+  /**
+   * The teamIds to report on. If null or not set, adherence will be computed for requested users if applicable or otherwise all users in the management unit. Note: Only one of [teamIds, userIds] can be requested
+   **/
+  public WfmHistoricalAdherenceQuery teamIds(List<String> teamIds) {
+    this.teamIds = teamIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The teamIds to report on. If null or not set, adherence will be computed for requested users if applicable or otherwise all users in the management unit. Note: Only one of [teamIds, userIds] can be requested")
+  @JsonProperty("teamIds")
+  public List<String> getTeamIds() {
+    return teamIds;
+  }
+  public void setTeamIds(List<String> teamIds) {
+    this.teamIds = teamIds;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -147,13 +147,13 @@ public class WfmHistoricalAdherenceQuery  implements Serializable {
         Objects.equals(this.endDate, wfmHistoricalAdherenceQuery.endDate) &&
         Objects.equals(this.timeZone, wfmHistoricalAdherenceQuery.timeZone) &&
         Objects.equals(this.userIds, wfmHistoricalAdherenceQuery.userIds) &&
-        Objects.equals(this.teamIds, wfmHistoricalAdherenceQuery.teamIds) &&
-        Objects.equals(this.includeExceptions, wfmHistoricalAdherenceQuery.includeExceptions);
+        Objects.equals(this.includeExceptions, wfmHistoricalAdherenceQuery.includeExceptions) &&
+        Objects.equals(this.teamIds, wfmHistoricalAdherenceQuery.teamIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startDate, endDate, timeZone, userIds, teamIds, includeExceptions);
+    return Objects.hash(startDate, endDate, timeZone, userIds, includeExceptions, teamIds);
   }
 
   @Override
@@ -165,8 +165,8 @@ public class WfmHistoricalAdherenceQuery  implements Serializable {
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");
-    sb.append("    teamIds: ").append(toIndentedString(teamIds)).append("\n");
     sb.append("    includeExceptions: ").append(toIndentedString(includeExceptions)).append("\n");
+    sb.append("    teamIds: ").append(toIndentedString(teamIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

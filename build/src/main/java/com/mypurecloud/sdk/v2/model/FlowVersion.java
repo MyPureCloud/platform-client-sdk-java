@@ -8,9 +8,12 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import com.mypurecloud.sdk.v2.model.NluInfo;
+import com.mypurecloud.sdk.v2.model.SupportedLanguage;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -70,6 +73,7 @@ public class FlowVersion  implements Serializable {
   private JsonSchemaDocument inputSchema = null;
   private JsonSchemaDocument outputSchema = null;
   private NluInfo nluInfo = null;
+  private List<SupportedLanguage> supportedLanguages = new ArrayList<SupportedLanguage>();
   private String selfUri = null;
 
   
@@ -330,20 +334,38 @@ public class FlowVersion  implements Serializable {
 
   
   /**
-   * Information about the NLU domain version for the flow version
+   * Information about the natural language understanding configuration for the flow version
    **/
   public FlowVersion nluInfo(NluInfo nluInfo) {
     this.nluInfo = nluInfo;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Information about the NLU domain version for the flow version")
+  @ApiModelProperty(example = "null", value = "Information about the natural language understanding configuration for the flow version")
   @JsonProperty("nluInfo")
   public NluInfo getNluInfo() {
     return nluInfo;
   }
   public void setNluInfo(NluInfo nluInfo) {
     this.nluInfo = nluInfo;
+  }
+
+  
+  /**
+   * List of supported languages for this version of the flow
+   **/
+  public FlowVersion supportedLanguages(List<SupportedLanguage> supportedLanguages) {
+    this.supportedLanguages = supportedLanguages;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of supported languages for this version of the flow")
+  @JsonProperty("supportedLanguages")
+  public List<SupportedLanguage> getSupportedLanguages() {
+    return supportedLanguages;
+  }
+  public void setSupportedLanguages(List<SupportedLanguage> supportedLanguages) {
+    this.supportedLanguages = supportedLanguages;
   }
 
   
@@ -380,12 +402,13 @@ public class FlowVersion  implements Serializable {
         Objects.equals(this.inputSchema, flowVersion.inputSchema) &&
         Objects.equals(this.outputSchema, flowVersion.outputSchema) &&
         Objects.equals(this.nluInfo, flowVersion.nluInfo) &&
+        Objects.equals(this.supportedLanguages, flowVersion.supportedLanguages) &&
         Objects.equals(this.selfUri, flowVersion.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, commitVersion, configurationVersion, type, secure, debug, createdBy, createdByClient, configurationUri, dateCreated, generationId, publishResultUri, inputSchema, outputSchema, nluInfo, selfUri);
+    return Objects.hash(id, name, commitVersion, configurationVersion, type, secure, debug, createdBy, createdByClient, configurationUri, dateCreated, generationId, publishResultUri, inputSchema, outputSchema, nluInfo, supportedLanguages, selfUri);
   }
 
   @Override
@@ -409,6 +432,7 @@ public class FlowVersion  implements Serializable {
     sb.append("    inputSchema: ").append(toIndentedString(inputSchema)).append("\n");
     sb.append("    outputSchema: ").append(toIndentedString(outputSchema)).append("\n");
     sb.append("    nluInfo: ").append(toIndentedString(nluInfo)).append("\n");
+    sb.append("    supportedLanguages: ").append(toIndentedString(supportedLanguages)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

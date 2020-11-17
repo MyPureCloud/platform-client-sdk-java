@@ -18,6 +18,7 @@ public class ContentQuickReply  implements Serializable {
   
   private String id = null;
   private String text = null;
+  private String payload = null;
   private String image = null;
 
   /**
@@ -53,7 +54,6 @@ public class ContentQuickReply  implements Serializable {
     }
   }
   private ActionEnum action = null;
-  private String payload = null;
 
   
   /**
@@ -93,6 +93,24 @@ public class ContentQuickReply  implements Serializable {
 
   
   /**
+   * Content of the textback payload after clicking a quick reply
+   **/
+  public ContentQuickReply payload(String payload) {
+    this.payload = payload;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Content of the textback payload after clicking a quick reply")
+  @JsonProperty("payload")
+  public String getPayload() {
+    return payload;
+  }
+  public void setPayload(String payload) {
+    this.payload = payload;
+  }
+
+  
+  /**
    * Image associated with quick reply
    **/
   public ContentQuickReply image(String image) {
@@ -128,24 +146,6 @@ public class ContentQuickReply  implements Serializable {
   }
 
   
-  /**
-   * Payload content for the quick reply.
-   **/
-  public ContentQuickReply payload(String payload) {
-    this.payload = payload;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Payload content for the quick reply.")
-  @JsonProperty("payload")
-  public String getPayload() {
-    return payload;
-  }
-  public void setPayload(String payload) {
-    this.payload = payload;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -158,14 +158,14 @@ public class ContentQuickReply  implements Serializable {
     ContentQuickReply contentQuickReply = (ContentQuickReply) o;
     return Objects.equals(this.id, contentQuickReply.id) &&
         Objects.equals(this.text, contentQuickReply.text) &&
+        Objects.equals(this.payload, contentQuickReply.payload) &&
         Objects.equals(this.image, contentQuickReply.image) &&
-        Objects.equals(this.action, contentQuickReply.action) &&
-        Objects.equals(this.payload, contentQuickReply.payload);
+        Objects.equals(this.action, contentQuickReply.action);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, text, image, action, payload);
+    return Objects.hash(id, text, payload, image, action);
   }
 
   @Override
@@ -175,9 +175,9 @@ public class ContentQuickReply  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
-    sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
     sb.append("}");
     return sb.toString();
   }

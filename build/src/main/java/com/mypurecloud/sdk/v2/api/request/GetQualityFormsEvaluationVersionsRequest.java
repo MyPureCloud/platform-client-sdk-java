@@ -94,6 +94,20 @@ public class GetQualityFormsEvaluationVersionsRequest {
 	    return this;
 	} 
 	
+	private String sortOrder;
+	public String getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(String sortOrder) {
+		this.sortOrder = sortOrder;
+	}
+
+	public GetQualityFormsEvaluationVersionsRequest withSortOrder(String sortOrder) {
+	    this.setSortOrder(sortOrder);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -127,6 +141,8 @@ public class GetQualityFormsEvaluationVersionsRequest {
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
+        
+                .withQueryParameters("sortOrder", "", sortOrder)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -166,6 +182,11 @@ public class GetQualityFormsEvaluationVersionsRequest {
 		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
+			return this;
+		}
+		
+		public Builder withSortOrder(String sortOrder) {
+			request.setSortOrder(sortOrder);
 			return this;
 		}
 		

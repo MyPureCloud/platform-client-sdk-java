@@ -1413,7 +1413,7 @@ try {
 
 
 
-> [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityFormsEvaluationVersions(formId, pageSize, pageNumber)
+> [EvaluationFormEntityListing](EvaluationFormEntityListing.html) getQualityFormsEvaluationVersions(formId, pageSize, pageNumber, sortOrder)
 
 Gets all the revisions for a specific evaluation.
 
@@ -1450,8 +1450,9 @@ QualityApi apiInstance = new QualityApi();
 String formId = "formId_example"; // String | Form ID
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
+String sortOrder = "asc"; // String | Sort order
 try {
-    EvaluationFormEntityListing result = apiInstance.getQualityFormsEvaluationVersions(formId, pageSize, pageNumber);
+    EvaluationFormEntityListing result = apiInstance.getQualityFormsEvaluationVersions(formId, pageSize, pageNumber, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityFormsEvaluationVersions");
@@ -1467,6 +1468,7 @@ try {
 | **formId** | **String**| Form ID | 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortOrder** | **String**| Sort order | [optional] [default to asc] 
 {: class="table-striped"}
 
 

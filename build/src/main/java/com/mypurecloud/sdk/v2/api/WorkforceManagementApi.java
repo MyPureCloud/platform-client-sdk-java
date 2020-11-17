@@ -5853,12 +5853,13 @@ public class WorkforceManagementApi {
    * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param workPlanId The ID of the work plan to update (required)
    * @param body body (optional)
+   * @param validationMode Allows to update work plan even if validation result is invalid (optional)
    * @return WorkPlan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WorkPlan patchWorkforcemanagementManagementunitWorkplan(String managementUnitId, String workPlanId, WorkPlan body) throws IOException, ApiException {
-    return  patchWorkforcemanagementManagementunitWorkplan(createPatchWorkforcemanagementManagementunitWorkplanRequest(managementUnitId, workPlanId, body));
+  public WorkPlan patchWorkforcemanagementManagementunitWorkplan(String managementUnitId, String workPlanId, WorkPlan body, String validationMode) throws IOException, ApiException {
+    return  patchWorkforcemanagementManagementunitWorkplan(createPatchWorkforcemanagementManagementunitWorkplanRequest(managementUnitId, workPlanId, body, validationMode));
   }
 
   /**
@@ -5867,20 +5868,23 @@ public class WorkforceManagementApi {
    * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param workPlanId The ID of the work plan to update (required)
    * @param body body (optional)
+   * @param validationMode Allows to update work plan even if validation result is invalid (optional)
    * @return WorkPlan
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkPlan> patchWorkforcemanagementManagementunitWorkplanWithHttpInfo(String managementUnitId, String workPlanId, WorkPlan body) throws IOException {
-    return patchWorkforcemanagementManagementunitWorkplan(createPatchWorkforcemanagementManagementunitWorkplanRequest(managementUnitId, workPlanId, body).withHttpInfo());
+  public ApiResponse<WorkPlan> patchWorkforcemanagementManagementunitWorkplanWithHttpInfo(String managementUnitId, String workPlanId, WorkPlan body, String validationMode) throws IOException {
+    return patchWorkforcemanagementManagementunitWorkplan(createPatchWorkforcemanagementManagementunitWorkplanRequest(managementUnitId, workPlanId, body, validationMode).withHttpInfo());
   }
 
-  private PatchWorkforcemanagementManagementunitWorkplanRequest createPatchWorkforcemanagementManagementunitWorkplanRequest(String managementUnitId, String workPlanId, WorkPlan body) {
+  private PatchWorkforcemanagementManagementunitWorkplanRequest createPatchWorkforcemanagementManagementunitWorkplanRequest(String managementUnitId, String workPlanId, WorkPlan body, String validationMode) {
     return PatchWorkforcemanagementManagementunitWorkplanRequest.builder()
             .withManagementUnitId(managementUnitId)
     
             .withWorkPlanId(workPlanId)
     
             .withBody(body)
+    
+            .withValidationMode(validationMode)
     
             .build();
   }
@@ -8624,12 +8628,13 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
+   * @param validationMode Allows to create work plan even if the validation result is invalid (optional)
    * @return WorkPlan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WorkPlan postWorkforcemanagementManagementunitWorkplans(String managementUnitId, CreateWorkPlan body) throws IOException, ApiException {
-    return  postWorkforcemanagementManagementunitWorkplans(createPostWorkforcemanagementManagementunitWorkplansRequest(managementUnitId, body));
+  public WorkPlan postWorkforcemanagementManagementunitWorkplans(String managementUnitId, CreateWorkPlan body, String validationMode) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitWorkplans(createPostWorkforcemanagementManagementunitWorkplansRequest(managementUnitId, body, validationMode));
   }
 
   /**
@@ -8637,18 +8642,21 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
+   * @param validationMode Allows to create work plan even if the validation result is invalid (optional)
    * @return WorkPlan
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkPlan> postWorkforcemanagementManagementunitWorkplansWithHttpInfo(String managementUnitId, CreateWorkPlan body) throws IOException {
-    return postWorkforcemanagementManagementunitWorkplans(createPostWorkforcemanagementManagementunitWorkplansRequest(managementUnitId, body).withHttpInfo());
+  public ApiResponse<WorkPlan> postWorkforcemanagementManagementunitWorkplansWithHttpInfo(String managementUnitId, CreateWorkPlan body, String validationMode) throws IOException {
+    return postWorkforcemanagementManagementunitWorkplans(createPostWorkforcemanagementManagementunitWorkplansRequest(managementUnitId, body, validationMode).withHttpInfo());
   }
 
-  private PostWorkforcemanagementManagementunitWorkplansRequest createPostWorkforcemanagementManagementunitWorkplansRequest(String managementUnitId, CreateWorkPlan body) {
+  private PostWorkforcemanagementManagementunitWorkplansRequest createPostWorkforcemanagementManagementunitWorkplansRequest(String managementUnitId, CreateWorkPlan body, String validationMode) {
     return PostWorkforcemanagementManagementunitWorkplansRequest.builder()
             .withManagementUnitId(managementUnitId)
     
             .withBody(body)
+    
+            .withValidationMode(validationMode)
     
             .build();
   }

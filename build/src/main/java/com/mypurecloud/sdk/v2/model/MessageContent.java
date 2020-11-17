@@ -10,9 +10,14 @@ import com.mypurecloud.sdk.v2.model.ContentGeneric;
 import com.mypurecloud.sdk.v2.model.ContentList;
 import com.mypurecloud.sdk.v2.model.ContentLocation;
 import com.mypurecloud.sdk.v2.model.ContentNotificationTemplate;
+import com.mypurecloud.sdk.v2.model.ContentPostback;
 import com.mypurecloud.sdk.v2.model.ContentQuickReply;
+import com.mypurecloud.sdk.v2.model.ContentReaction;
+import com.mypurecloud.sdk.v2.model.MessagingRecipient;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -33,7 +38,10 @@ public class MessageContent  implements Serializable {
     QUICKREPLY("QuickReply"),
     NOTIFICATION("Notification"),
     GENERICTEMPLATE("GenericTemplate"),
-    LISTTEMPLATE("ListTemplate");
+    LISTTEMPLATE("ListTemplate"),
+    POSTBACK("Postback"),
+    REACTIONS("Reactions"),
+    MENTION("Mention");
 
     private String value;
 
@@ -67,6 +75,9 @@ public class MessageContent  implements Serializable {
   private ContentGeneric generic = null;
   private ContentList list = null;
   private ContentNotificationTemplate template = null;
+  private List<ContentReaction> reactions = new ArrayList<ContentReaction>();
+  private MessagingRecipient mention = null;
+  private ContentPostback postback = null;
 
   
   /**
@@ -195,6 +206,60 @@ public class MessageContent  implements Serializable {
   }
 
   
+  /**
+   * A list of reactions
+   **/
+  public MessageContent reactions(List<ContentReaction> reactions) {
+    this.reactions = reactions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of reactions")
+  @JsonProperty("reactions")
+  public List<ContentReaction> getReactions() {
+    return reactions;
+  }
+  public void setReactions(List<ContentReaction> reactions) {
+    this.reactions = reactions;
+  }
+
+  
+  /**
+   * This is used to identify who the message is sent to, as well as who it was sent from. This information is channel specific - depends on capabilities to describe party by the platform
+   **/
+  public MessageContent mention(MessagingRecipient mention) {
+    this.mention = mention;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "This is used to identify who the message is sent to, as well as who it was sent from. This information is channel specific - depends on capabilities to describe party by the platform")
+  @JsonProperty("mention")
+  public MessagingRecipient getMention() {
+    return mention;
+  }
+  public void setMention(MessagingRecipient mention) {
+    this.mention = mention;
+  }
+
+  
+  /**
+   * The postback object result of a user clicking in a button
+   **/
+  public MessageContent postback(ContentPostback postback) {
+    this.postback = postback;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The postback object result of a user clicking in a button")
+  @JsonProperty("postback")
+  public ContentPostback getPostback() {
+    return postback;
+  }
+  public void setPostback(ContentPostback postback) {
+    this.postback = postback;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -211,12 +276,15 @@ public class MessageContent  implements Serializable {
         Objects.equals(this.quickReply, messageContent.quickReply) &&
         Objects.equals(this.generic, messageContent.generic) &&
         Objects.equals(this.list, messageContent.list) &&
-        Objects.equals(this.template, messageContent.template);
+        Objects.equals(this.template, messageContent.template) &&
+        Objects.equals(this.reactions, messageContent.reactions) &&
+        Objects.equals(this.mention, messageContent.mention) &&
+        Objects.equals(this.postback, messageContent.postback);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentType, location, attachment, quickReply, generic, list, template);
+    return Objects.hash(contentType, location, attachment, quickReply, generic, list, template, reactions, mention, postback);
   }
 
   @Override
@@ -231,6 +299,9 @@ public class MessageContent  implements Serializable {
     sb.append("    generic: ").append(toIndentedString(generic)).append("\n");
     sb.append("    list: ").append(toIndentedString(list)).append("\n");
     sb.append("    template: ").append(toIndentedString(template)).append("\n");
+    sb.append("    reactions: ").append(toIndentedString(reactions)).append("\n");
+    sb.append("    mention: ").append(toIndentedString(mention)).append("\n");
+    sb.append("    postback: ").append(toIndentedString(postback)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -1896,12 +1896,13 @@ public class QualityApi {
    * @param formId Form ID (required)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param sortOrder Sort order (optional, default to asc)
    * @return EvaluationFormEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EvaluationFormEntityListing getQualityFormsEvaluationVersions(String formId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return  getQualityFormsEvaluationVersions(createGetQualityFormsEvaluationVersionsRequest(formId, pageSize, pageNumber));
+  public EvaluationFormEntityListing getQualityFormsEvaluationVersions(String formId, Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
+    return  getQualityFormsEvaluationVersions(createGetQualityFormsEvaluationVersionsRequest(formId, pageSize, pageNumber, sortOrder));
   }
 
   /**
@@ -1910,20 +1911,23 @@ public class QualityApi {
    * @param formId Form ID (required)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param sortOrder Sort order (optional, default to asc)
    * @return EvaluationFormEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EvaluationFormEntityListing> getQualityFormsEvaluationVersionsWithHttpInfo(String formId, Integer pageSize, Integer pageNumber) throws IOException {
-    return getQualityFormsEvaluationVersions(createGetQualityFormsEvaluationVersionsRequest(formId, pageSize, pageNumber).withHttpInfo());
+  public ApiResponse<EvaluationFormEntityListing> getQualityFormsEvaluationVersionsWithHttpInfo(String formId, Integer pageSize, Integer pageNumber, String sortOrder) throws IOException {
+    return getQualityFormsEvaluationVersions(createGetQualityFormsEvaluationVersionsRequest(formId, pageSize, pageNumber, sortOrder).withHttpInfo());
   }
 
-  private GetQualityFormsEvaluationVersionsRequest createGetQualityFormsEvaluationVersionsRequest(String formId, Integer pageSize, Integer pageNumber) {
+  private GetQualityFormsEvaluationVersionsRequest createGetQualityFormsEvaluationVersionsRequest(String formId, Integer pageSize, Integer pageNumber, String sortOrder) {
     return GetQualityFormsEvaluationVersionsRequest.builder()
             .withFormId(formId)
     
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withSortOrder(sortOrder)
     
             .build();
   }

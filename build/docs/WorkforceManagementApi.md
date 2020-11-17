@@ -4724,7 +4724,7 @@ try {
 
 
 
-> [WorkPlan](WorkPlan.html) patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, body)
+> [WorkPlan](WorkPlan.html) patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, body, validationMode)
 
 Update a work plan
 
@@ -4761,8 +4761,9 @@ WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 String workPlanId = "workPlanId_example"; // String | The ID of the work plan to update
 WorkPlan body = new WorkPlan(); // WorkPlan | body
+String validationMode = "validationMode_example"; // String | Allows to update work plan even if validation result is invalid
 try {
-    WorkPlan result = apiInstance.patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, body);
+    WorkPlan result = apiInstance.patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, body, validationMode);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementManagementunitWorkplan");
@@ -4778,6 +4779,7 @@ try {
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **workPlanId** | **String**| The ID of the work plan to update | 
 | **body** | [**WorkPlan**](WorkPlan.html)| body | [optional] 
+| **validationMode** | **String**| Allows to update work plan even if validation result is invalid | [optional]<br />**Values**: Ignore 
 {: class="table-striped"}
 
 
@@ -6868,7 +6870,7 @@ try {
 
 
 
-> [WorkPlan](WorkPlan.html) postWorkforcemanagementManagementunitWorkplans(managementUnitId, body)
+> [WorkPlan](WorkPlan.html) postWorkforcemanagementManagementunitWorkplans(managementUnitId, body, validationMode)
 
 Create a new work plan
 
@@ -6904,8 +6906,9 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 CreateWorkPlan body = new CreateWorkPlan(); // CreateWorkPlan | body
+String validationMode = "validationMode_example"; // String | Allows to create work plan even if the validation result is invalid
 try {
-    WorkPlan result = apiInstance.postWorkforcemanagementManagementunitWorkplans(managementUnitId, body);
+    WorkPlan result = apiInstance.postWorkforcemanagementManagementunitWorkplans(managementUnitId, body, validationMode);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitWorkplans");
@@ -6920,6 +6923,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **body** | [**CreateWorkPlan**](CreateWorkPlan.html)| body | [optional] 
+| **validationMode** | **String**| Allows to create work plan even if the validation result is invalid | [optional]<br />**Values**: Ignore 
 {: class="table-striped"}
 
 

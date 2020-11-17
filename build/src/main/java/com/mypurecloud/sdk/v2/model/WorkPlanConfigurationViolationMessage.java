@@ -24,10 +24,39 @@ public class WorkPlanConfigurationViolationMessage  implements Serializable {
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACTIVITIESOVERLAP("ActivitiesOverlap"),
+    ACTIVITYENDGREATERTHANSHIFTSTOP("ActivityEndGreaterThanShiftStop"),
+    ACTIVITYPAIDTIMEGREATERTHANSHIFTPAIDTIME("ActivityPaidTimeGreaterThanShiftPaidTime"),
+    ACTIVITYSTARTBEFORESHIFTSTART("ActivityStartBeforeShiftStart"),
+    ACTIVITYSTARTGREATERTHANEQUALTOSHIFTSTOP("ActivityStartGreaterThanEqualToShiftStop"),
+    ACTIVITYSTARTINCREMENTMINUTESNOTDIVISIBLEBYSCHEDULEINTERVALMINUTES("ActivityStartIncrementMinutesNotDivisibleByScheduleIntervalMinutes"),
     DAILYEXACTPAIDMINUTES("DailyExactPaidMinutes"),
-    DAILYSHIFTMAXIMUMPOSSIBILITIESVIOLATED("DailyShiftMaximumPossibilitiesViolated"),
+    DAILYMAXTOTALLESSTHANWEEKLYMIN("DailyMaxTotalLessThanWeeklyMin"),
+    DAILYMAXTOTALLESSTHANWEEKLYMINWITHOPTIONAL("DailyMaxTotalLessThanWeeklyMinWithOptional"),
+    DAILYMAXTOTALLESSTHANWEEKLYMINWITHOUTOPTIONAL("DailyMaxTotalLessThanWeeklyMinWithoutOptional"),
+    DAILYMINTOTALGREATERTHANWEEKLYMAX("DailyMinTotalGreaterThanWeeklyMax"),
+    DAILYMINTOTALGREATERTHANWEEKLYMAXWITHOPTIONAL("DailyMinTotalGreaterThanWeeklyMaxWithOptional"),
+    DAILYMINTOTALGREATERTHANWEEKLYMAXWITHOUTOPTIONAL("DailyMinTotalGreaterThanWeeklyMaxWithoutOptional"),
+    DAILYREQUIREDDAYSGREATERTHANWEEKLYMAXDAYS("DailyRequiredDaysGreaterThanWeeklyMaxDays"),
+    DAILYSHIFTHASNODAYSSELECTED("DailyShiftHasNoDaysSelected"),
+    DAILYSHIFTMAXPOSSIBILITIESVIOLATED("DailyShiftMaxPossibilitiesViolated"),
+    EARLIESTSHIFTSTOPISTOOLATE("EarliestShiftStopIsTooLate"),
+    EXACTPAIDTIMENOTDIVISIBLEBYGRANULARITY("ExactPaidTimeNotDivisibleByGranularity"),
+    MAXCONSECUTIVEWORKINGDAYSNOMORETHANDOUBLEMAXWORKINGDAYSPERWEEK("MaxConsecutiveWorkingDaysNoMoreThanDoubleMaxWorkingDaysPerWeek"),
+    MAXDAYSOFFPERPLANNINGPERIODNOTCORRECT("MaxDaysOffPerPlanningPeriodNotCorrect"),
+    MAXPAIDTIMEISMORETHANSHIFTLENGTH("MaxPaidTimeIsMoreThanShiftLength"),
+    MAXPAIDTIMENOTDIVISIBLEBYGRANULARITY("MaxPaidTimeNotDivisibleByGranularity"),
+    MAXPAIDTIMEPERPLANNINGPERIOD("MaxPaidTimePerPlanningPeriod"),
     MAXSHIFTS("MaxShifts"),
+    MINPAIDTIMENOTDIVISIBLEBYGRANULARITY("MinPaidTimeNotDivisibleByGranularity"),
+    MINPAIDTIMEPERPLANNINGPERIOD("MinPaidTimePerPlanningPeriod"),
     NOSHIFTS("NoShifts"),
+    PAIDTIMEGREATERTHANMAXWORKTIME("PaidTimeGreaterThanMaxWorkTime"),
+    PAIDTIMELESSTHANMINWORKTIME("PaidTimeLessThanMinWorkTime"),
+    PAIDTIMENOTMETBYSHIFTSTARTSTOP("PaidTimeNotMetByShiftStartStop"),
+    SHIFTDAYSSELECTMORETHANMINWORKINGDAYS("ShiftDaysSelectMoreThanMinWorkingDays"),
+    SHIFTSTOPEARLIERTHANSTART("ShiftStopEarlierThanStart"),
+    SHIFTVARIANCECANNOTBEMET("ShiftVarianceCannotBeMet"),
     WEEKLYEXACTPAIDMINUTES("WeeklyExactPaidMinutes");
 
     private String value;
@@ -57,6 +86,42 @@ public class WorkPlanConfigurationViolationMessage  implements Serializable {
   }
   private TypeEnum type = null;
   private List<WorkPlanValidationMessageArgument> arguments = new ArrayList<WorkPlanValidationMessageArgument>();
+
+  /**
+   * Severity of the message. A message with Error severity indicates the scheduler won't be able to produce schedules and thus the work plan is invalid.
+   */
+  public enum SeverityEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    INFORMATION("Information"),
+    WARNING("Warning"),
+    ERROR("Error");
+
+    private String value;
+
+    SeverityEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SeverityEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SeverityEnum value : SeverityEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SeverityEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SeverityEnum severity = null;
 
   
   /**
@@ -95,6 +160,24 @@ public class WorkPlanConfigurationViolationMessage  implements Serializable {
   }
 
   
+  /**
+   * Severity of the message. A message with Error severity indicates the scheduler won't be able to produce schedules and thus the work plan is invalid.
+   **/
+  public WorkPlanConfigurationViolationMessage severity(SeverityEnum severity) {
+    this.severity = severity;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Severity of the message. A message with Error severity indicates the scheduler won't be able to produce schedules and thus the work plan is invalid.")
+  @JsonProperty("severity")
+  public SeverityEnum getSeverity() {
+    return severity;
+  }
+  public void setSeverity(SeverityEnum severity) {
+    this.severity = severity;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,12 +189,13 @@ public class WorkPlanConfigurationViolationMessage  implements Serializable {
     }
     WorkPlanConfigurationViolationMessage workPlanConfigurationViolationMessage = (WorkPlanConfigurationViolationMessage) o;
     return Objects.equals(this.type, workPlanConfigurationViolationMessage.type) &&
-        Objects.equals(this.arguments, workPlanConfigurationViolationMessage.arguments);
+        Objects.equals(this.arguments, workPlanConfigurationViolationMessage.arguments) &&
+        Objects.equals(this.severity, workPlanConfigurationViolationMessage.severity);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, arguments);
+    return Objects.hash(type, arguments, severity);
   }
 
   @Override
@@ -121,6 +205,7 @@ public class WorkPlanConfigurationViolationMessage  implements Serializable {
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    arguments: ").append(toIndentedString(arguments)).append("\n");
+    sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
     sb.append("}");
     return sb.toString();
   }

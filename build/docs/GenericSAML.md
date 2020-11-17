@@ -10,12 +10,12 @@ title: GenericSAML
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **logoImageData** | <!----><!---->**String**<!----> |  |  [optional] |
 | **relyingPartyIdentifier** | <!----><!---->**String**<!----> |  |  [optional] |
+| **logoImageData** | <!----><!---->**String**<!----> |  |  [optional] |
 | **endpointCompression** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **nameIdentifierFormat** | [**NameIdentifierFormatEnum**](#NameIdentifierFormatEnum)<!----> |  |  [optional] |
-| **certificate** | <!----><!---->**String**<!----> |  |  [optional] |
 | **issuerURI** | <!----><!---->**String**<!----> |  |  [optional] |
+| **certificate** | <!----><!---->**String**<!----> |  |  [optional] |
 | **ssoTargetURI** | <!----><!---->**String**<!----> |  |  [optional] |
 | **disabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |

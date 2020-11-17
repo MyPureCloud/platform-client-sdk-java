@@ -9,10 +9,13 @@ import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.FlowVersion;
 import com.mypurecloud.sdk.v2.model.NluInfo;
 import com.mypurecloud.sdk.v2.model.Operation;
+import com.mypurecloud.sdk.v2.model.SupportedLanguage;
 import com.mypurecloud.sdk.v2.model.User;
 import com.mypurecloud.sdk.v2.model.WritableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -84,6 +87,7 @@ public class Flow  implements Serializable {
   private User publishedBy = null;
   private Operation currentOperation = null;
   private NluInfo nluInfo = null;
+  private List<SupportedLanguage> supportedLanguages = new ArrayList<SupportedLanguage>();
   private String selfUri = null;
 
   
@@ -401,20 +405,38 @@ public class Flow  implements Serializable {
 
   
   /**
-   * Information about the NLU domain version for the flow
+   * Information about the natural language understanding configuration for the published version of the flow
    **/
   public Flow nluInfo(NluInfo nluInfo) {
     this.nluInfo = nluInfo;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Information about the NLU domain version for the flow")
+  @ApiModelProperty(example = "null", value = "Information about the natural language understanding configuration for the published version of the flow")
   @JsonProperty("nluInfo")
   public NluInfo getNluInfo() {
     return nluInfo;
   }
   public void setNluInfo(NluInfo nluInfo) {
     this.nluInfo = nluInfo;
+  }
+
+  
+  /**
+   * List of supported languages for the published version of the flow.
+   **/
+  public Flow supportedLanguages(List<SupportedLanguage> supportedLanguages) {
+    this.supportedLanguages = supportedLanguages;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of supported languages for the published version of the flow.")
+  @JsonProperty("supportedLanguages")
+  public List<SupportedLanguage> getSupportedLanguages() {
+    return supportedLanguages;
+  }
+  public void setSupportedLanguages(List<SupportedLanguage> supportedLanguages) {
+    this.supportedLanguages = supportedLanguages;
   }
 
   
@@ -454,12 +476,13 @@ public class Flow  implements Serializable {
         Objects.equals(this.publishedBy, flow.publishedBy) &&
         Objects.equals(this.currentOperation, flow.currentOperation) &&
         Objects.equals(this.nluInfo, flow.nluInfo) &&
+        Objects.equals(this.supportedLanguages, flow.supportedLanguages) &&
         Objects.equals(this.selfUri, flow.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, type, lockedUser, lockedClient, active, system, deleted, publishedVersion, savedVersion, inputSchema, outputSchema, checkedInVersion, debugVersion, publishedBy, currentOperation, nluInfo, selfUri);
+    return Objects.hash(id, name, division, description, type, lockedUser, lockedClient, active, system, deleted, publishedVersion, savedVersion, inputSchema, outputSchema, checkedInVersion, debugVersion, publishedBy, currentOperation, nluInfo, supportedLanguages, selfUri);
   }
 
   @Override
@@ -486,6 +509,7 @@ public class Flow  implements Serializable {
     sb.append("    publishedBy: ").append(toIndentedString(publishedBy)).append("\n");
     sb.append("    currentOperation: ").append(toIndentedString(currentOperation)).append("\n");
     sb.append("    nluInfo: ").append(toIndentedString(nluInfo)).append("\n");
+    sb.append("    supportedLanguages: ").append(toIndentedString(supportedLanguages)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -26,7 +26,8 @@ title: Flow
 | **debugVersion** | <!----><!---->[**FlowVersion**](FlowVersion.html)<!----> |  |  [optional] |
 | **publishedBy** | <!----><!---->[**User**](User.html)<!----> |  |  [optional] |
 | **currentOperation** | <!----><!---->[**Operation**](Operation.html)<!----> |  |  [optional] |
-| **nluInfo** | <!----><!---->[**NluInfo**](NluInfo.html)<!----> | Information about the NLU domain version for the flow |  [optional] |
+| **nluInfo** | <!----><!---->[**NluInfo**](NluInfo.html)<!----> | Information about the natural language understanding configuration for the published version of the flow |  [optional] |
+| **supportedLanguages** | <!----><!---->[**List&lt;SupportedLanguage&gt;**](SupportedLanguage.html)<!----> | List of supported languages for the published version of the flow. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

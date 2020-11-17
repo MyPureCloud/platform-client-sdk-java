@@ -35,7 +35,8 @@ public class AuditQueryService  implements Serializable {
     WORKFORCEMANAGEMENT("WorkforceManagement"),
     TRIGGERS("Triggers"),
     RESPONSEMANAGEMENT("ResponseManagement"),
-    GROUPS("Groups");
+    GROUPS("Groups"),
+    TELEPHONY("Telephony");
 
     private String value;
 

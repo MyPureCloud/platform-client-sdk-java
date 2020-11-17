@@ -10,8 +10,8 @@ title: WfmHistoricalDataUploadRequestStatusTopicDateTime
 | ------------ | ------------- | ------------- | ------------- |
 | **iMillis** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **beforeNow** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **equalNow** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **afterNow** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **equalNow** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

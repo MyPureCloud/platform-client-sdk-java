@@ -155,6 +155,49 @@ public class PostWorkforcemanagementManagementunitWorkplansRequest {
 	    return this;
 	} 
 	
+	private String validationMode;
+	public String getValidationMode() {
+		return this.validationMode;
+	}
+
+	public void setValidationMode(String validationMode) {
+		this.validationMode = validationMode;
+	}
+
+	public PostWorkforcemanagementManagementunitWorkplansRequest withValidationMode(String validationMode) {
+	    this.setValidationMode(validationMode);
+	    return this;
+	} 
+
+	public enum validationModeValues { 
+		IGNORE("Ignore");
+
+		private String value;
+
+		validationModeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static validationModeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (validationModeValues value : validationModeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return validationModeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -184,6 +227,8 @@ public class PostWorkforcemanagementManagementunitWorkplansRequest {
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans")
                 .withPathParameter("managementUnitId", managementUnitId)
+        
+                .withQueryParameters("validationMode", "", validationMode)
         
                 .withBody(body)
         
@@ -221,6 +266,16 @@ public class PostWorkforcemanagementManagementunitWorkplansRequest {
 		public Builder withBody(CreateWorkPlan body) {
 			request.setBody(body);
 			return this;
+		}
+		
+		public Builder withValidationMode(String validationMode) {
+			request.setValidationMode(validationMode);
+			return this;
+		}
+
+		public Builder withValidationMode(validationModeValues validationMode) {
+		    request.setValidationMode(validationMode.toString());
+		    return this;
 		}
 		
 

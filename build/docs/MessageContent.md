@@ -15,6 +15,9 @@ title: MessageContent
 | **generic** | <!----><!---->[**ContentGeneric**](ContentGeneric.html)<!----> | Generic content object |  [optional] |
 | **list** | <!----><!---->[**ContentList**](ContentList.html)<!----> | List content object |  [optional] |
 | **template** | <!----><!---->[**ContentNotificationTemplate**](ContentNotificationTemplate.html)<!----> | Template notification object |  [optional] |
+| **reactions** | <!----><!---->[**List&lt;ContentReaction&gt;**](ContentReaction.html)<!----> | A list of reactions |  [optional] |
+| **mention** | <!----><!---->[**MessagingRecipient**](MessagingRecipient.html)<!----> | This is used to identify who the message is sent to, as well as who it was sent from. This information is channel specific - depends on capabilities to describe party by the platform |  [optional] |
+| **postback** | <!----><!---->[**ContentPostback**](ContentPostback.html)<!----> | The postback object result of a user clicking in a button |  [optional] |
 {: class="table table-striped"}
 
 
@@ -31,6 +34,9 @@ title: MessageContent
 | NOTIFICATION | &quot;Notification&quot; |
 | GENERICTEMPLATE | &quot;GenericTemplate&quot; |
 | LISTTEMPLATE | &quot;ListTemplate&quot; |
+| POSTBACK | &quot;Postback&quot; |
+| REACTIONS | &quot;Reactions&quot; |
+| MENTION | &quot;Mention&quot; |
 {: class="table table-striped"}
 
 

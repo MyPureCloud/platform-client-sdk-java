@@ -21,10 +21,28 @@ public class WorkPlanValidationMessageArgument  implements Serializable {
    */
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACTIVITYID("ActivityId"),
+    ACTIVITYID2("ActivityId2"),
+    ACTIVITYPAIDTIMEMINUTES("ActivityPaidTimeMinutes"),
+    ACTIVITYSTARTTIMEMINUTES("ActivityStartTimeMinutes"),
+    ACTIVITYVALIDATIONID("ActivityValidationId"),
+    ACTIVITYVALIDATIONID2("ActivityValidationId2"),
+    APPLICABLEDAYS("ApplicableDays"),
     COUNT("Count"),
+    DAILYPAIDTIMEMINUTES("DailyPaidTimeMinutes"),
+    MAXIMUMDAYS("MaximumDays"),
     MAXSHIFTCOUNT("MaxShiftCount"),
     MINUTES("Minutes"),
-    SHIFTID("ShiftId");
+    PAIDTIMEGRANULARITYMINUTES("PaidTimeGranularityMinutes"),
+    REQUIREDDAYS("RequiredDays"),
+    SHIFTID("ShiftId"),
+    SHIFTPAIDTIMEMINUTES("ShiftPaidTimeMinutes"),
+    SHIFTSTARTTIMEMINUTES("ShiftStartTimeMinutes"),
+    SHIFTSTOPTIMEMINUTES("ShiftStopTimeMinutes"),
+    SHIFTVALIDATIONID("ShiftValidationId"),
+    WEEKLYPAIDTIMEMINUTES("WeeklyPaidTimeMinutes"),
+    WEEKS("Weeks"),
+    WORKTIMEMINUTES("WorkTimeMinutes");
 
     private String value;
 
