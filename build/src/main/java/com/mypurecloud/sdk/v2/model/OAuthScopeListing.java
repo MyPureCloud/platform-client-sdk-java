@@ -17,8 +17,26 @@ import java.io.Serializable;
 
 public class OAuthScopeListing  implements Serializable {
   
+  private Long total = null;
   private List<OAuthScope> entities = new ArrayList<OAuthScope>();
   private String selfUri = null;
+
+  
+  /**
+   **/
+  public OAuthScopeListing total(Long total) {
+    this.total = total;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("total")
+  public Long getTotal() {
+    return total;
+  }
+  public void setTotal(Long total) {
+    this.total = total;
+  }
 
   
   /**
@@ -65,13 +83,14 @@ public class OAuthScopeListing  implements Serializable {
       return false;
     }
     OAuthScopeListing oAuthScopeListing = (OAuthScopeListing) o;
-    return Objects.equals(this.entities, oAuthScopeListing.entities) &&
+    return Objects.equals(this.total, oAuthScopeListing.total) &&
+        Objects.equals(this.entities, oAuthScopeListing.entities) &&
         Objects.equals(this.selfUri, oAuthScopeListing.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, selfUri);
+    return Objects.hash(total, entities, selfUri);
   }
 
   @Override
@@ -79,6 +98,7 @@ public class OAuthScopeListing  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class OAuthScopeListing {\n");
     
+    sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

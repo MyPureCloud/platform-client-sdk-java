@@ -3489,7 +3489,7 @@ public class UsersApi {
   
   /**
    * Get a Development Activity
-   * 
+   * Permission not required if you are the attendee, creator or facilitator of the coaching appointment or you are the assigned user of the learning assignment.
    * @param activityId Specifies the activity ID, maps to either assignment or appointment ID (required)
    * @param type Specifies the activity type. (required)
    * @return DevelopmentActivity
@@ -3502,7 +3502,7 @@ public class UsersApi {
 
   /**
    * Get a Development Activity
-   * 
+   * Permission not required if you are the attendee, creator or facilitator of the coaching appointment or you are the assigned user of the learning assignment.
    * @param activityId Specifies the activity ID, maps to either assignment or appointment ID (required)
    * @param type Specifies the activity type. (required)
    * @return DevelopmentActivity
@@ -3523,7 +3523,7 @@ public class UsersApi {
 
   /**
    * Get a Development Activity
-   * 
+   * Permission not required if you are the attendee, creator or facilitator of the coaching appointment or you are the assigned user of the learning assignment.
    * @param request The request object
    * @return DevelopmentActivity
    * @throws ApiException if the request fails on the server
@@ -3542,7 +3542,7 @@ public class UsersApi {
 
   /**
    * Get a Development Activity
-   * 
+   * Permission not required if you are the attendee, creator or facilitator of the coaching appointment or you are the assigned user of the learning assignment.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

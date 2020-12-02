@@ -17,9 +17,9 @@ public class ADFS  implements Serializable {
   private String id = null;
   private String name = null;
   private String relyingPartyIdentifier = null;
-  private String issuerURI = null;
   private String certificate = null;
   private String ssoTargetURI = null;
+  private String issuerURI = null;
   private Boolean disabled = null;
   private String selfUri = null;
 
@@ -67,23 +67,6 @@ public class ADFS  implements Serializable {
   
   /**
    **/
-  public ADFS issuerURI(String issuerURI) {
-    this.issuerURI = issuerURI;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("issuerURI")
-  public String getIssuerURI() {
-    return issuerURI;
-  }
-  public void setIssuerURI(String issuerURI) {
-    this.issuerURI = issuerURI;
-  }
-
-  
-  /**
-   **/
   public ADFS certificate(String certificate) {
     this.certificate = certificate;
     return this;
@@ -113,6 +96,23 @@ public class ADFS  implements Serializable {
   }
   public void setSsoTargetURI(String ssoTargetURI) {
     this.ssoTargetURI = ssoTargetURI;
+  }
+
+  
+  /**
+   **/
+  public ADFS issuerURI(String issuerURI) {
+    this.issuerURI = issuerURI;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("issuerURI")
+  public String getIssuerURI() {
+    return issuerURI;
+  }
+  public void setIssuerURI(String issuerURI) {
+    this.issuerURI = issuerURI;
   }
 
   
@@ -153,16 +153,16 @@ public class ADFS  implements Serializable {
     return Objects.equals(this.id, ADFS.id) &&
         Objects.equals(this.name, ADFS.name) &&
         Objects.equals(this.relyingPartyIdentifier, ADFS.relyingPartyIdentifier) &&
-        Objects.equals(this.issuerURI, ADFS.issuerURI) &&
         Objects.equals(this.certificate, ADFS.certificate) &&
         Objects.equals(this.ssoTargetURI, ADFS.ssoTargetURI) &&
+        Objects.equals(this.issuerURI, ADFS.issuerURI) &&
         Objects.equals(this.disabled, ADFS.disabled) &&
         Objects.equals(this.selfUri, ADFS.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, relyingPartyIdentifier, issuerURI, certificate, ssoTargetURI, disabled, selfUri);
+    return Objects.hash(id, name, relyingPartyIdentifier, certificate, ssoTargetURI, issuerURI, disabled, selfUri);
   }
 
   @Override
@@ -173,9 +173,9 @@ public class ADFS  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    relyingPartyIdentifier: ").append(toIndentedString(relyingPartyIdentifier)).append("\n");
-    sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
     sb.append("    ssoTargetURI: ").append(toIndentedString(ssoTargetURI)).append("\n");
+    sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

@@ -18,6 +18,7 @@ public class PatchActionTarget  implements Serializable {
   private String id = null;
   private String name = null;
   private ServiceLevel serviceLevel = null;
+  private Integer shortAbandonThreshold = null;
   private String selfUri = null;
 
   
@@ -63,6 +64,24 @@ public class PatchActionTarget  implements Serializable {
   }
 
   
+  /**
+   * Indicates the non-default short abandon threshold
+   **/
+  public PatchActionTarget shortAbandonThreshold(Integer shortAbandonThreshold) {
+    this.shortAbandonThreshold = shortAbandonThreshold;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates the non-default short abandon threshold")
+  @JsonProperty("shortAbandonThreshold")
+  public Integer getShortAbandonThreshold() {
+    return shortAbandonThreshold;
+  }
+  public void setShortAbandonThreshold(Integer shortAbandonThreshold) {
+    this.shortAbandonThreshold = shortAbandonThreshold;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -83,12 +102,13 @@ public class PatchActionTarget  implements Serializable {
     return Objects.equals(this.id, patchActionTarget.id) &&
         Objects.equals(this.name, patchActionTarget.name) &&
         Objects.equals(this.serviceLevel, patchActionTarget.serviceLevel) &&
+        Objects.equals(this.shortAbandonThreshold, patchActionTarget.shortAbandonThreshold) &&
         Objects.equals(this.selfUri, patchActionTarget.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, serviceLevel, selfUri);
+    return Objects.hash(id, name, serviceLevel, shortAbandonThreshold, selfUri);
   }
 
   @Override
@@ -99,6 +119,7 @@ public class PatchActionTarget  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    serviceLevel: ").append(toIndentedString(serviceLevel)).append("\n");
+    sb.append("    shortAbandonThreshold: ").append(toIndentedString(shortAbandonThreshold)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

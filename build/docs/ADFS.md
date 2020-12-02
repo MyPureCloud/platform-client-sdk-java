@@ -11,9 +11,9 @@ title: ADFS
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
 | **relyingPartyIdentifier** | <!----><!---->**String**<!----> |  |  [optional] |
-| **issuerURI** | <!----><!---->**String**<!----> |  |  [optional] |
 | **certificate** | <!----><!---->**String**<!----> |  |  [optional] |
 | **ssoTargetURI** | <!----><!---->**String**<!----> |  |  [optional] |
+| **issuerURI** | <!----><!---->**String**<!----> |  |  [optional] |
 | **disabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}

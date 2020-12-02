@@ -17,8 +17,26 @@ import java.io.Serializable;
 
 public class OAuthAuthorizationListing  implements Serializable {
   
+  private Long total = null;
   private List<OAuthAuthorization> entities = new ArrayList<OAuthAuthorization>();
   private String selfUri = null;
+
+  
+  /**
+   **/
+  public OAuthAuthorizationListing total(Long total) {
+    this.total = total;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("total")
+  public Long getTotal() {
+    return total;
+  }
+  public void setTotal(Long total) {
+    this.total = total;
+  }
 
   
   /**
@@ -65,13 +83,14 @@ public class OAuthAuthorizationListing  implements Serializable {
       return false;
     }
     OAuthAuthorizationListing oAuthAuthorizationListing = (OAuthAuthorizationListing) o;
-    return Objects.equals(this.entities, oAuthAuthorizationListing.entities) &&
+    return Objects.equals(this.total, oAuthAuthorizationListing.total) &&
+        Objects.equals(this.entities, oAuthAuthorizationListing.entities) &&
         Objects.equals(this.selfUri, oAuthAuthorizationListing.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, selfUri);
+    return Objects.hash(total, entities, selfUri);
   }
 
   @Override
@@ -79,6 +98,7 @@ public class OAuthAuthorizationListing  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class OAuthAuthorizationListing {\n");
     
+    sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

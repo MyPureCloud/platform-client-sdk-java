@@ -152,6 +152,20 @@ public class GetKnowledgeKnowledgebaseLanguageCategoriesRequest {
 	    return this;
 	} 
 	
+	private String name;
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public GetKnowledgeKnowledgebaseLanguageCategoriesRequest withName(String name) {
+	    this.setName(name);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -196,6 +210,8 @@ public class GetKnowledgeKnowledgebaseLanguageCategoriesRequest {
                 .withQueryParameters("limit", "", limit)
         
                 .withQueryParameters("pageSize", "", pageSize)
+        
+                .withQueryParameters("name", "", name)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -255,6 +271,11 @@ public class GetKnowledgeKnowledgebaseLanguageCategoriesRequest {
 		
 		public Builder withPageSize(String pageSize) {
 			request.setPageSize(pageSize);
+			return this;
+		}
+		
+		public Builder withName(String name) {
+			request.setName(name);
 			return this;
 		}
 		

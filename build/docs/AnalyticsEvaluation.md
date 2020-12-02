@@ -19,8 +19,8 @@ title: AnalyticsEvaluation
 | **calibrationId** | <!----><!---->**String**<!----> | The calibration id used for the purpose of training evaluators |  [optional] |
 | **rescored** | <!----><!---->**Boolean**<!----> | Whether this evaluation has ever been rescored |  [optional] |
 | **deleted** | <!----><!---->**Boolean**<!----> | Whether this evaluation has been deleted |  [optional] |
-| **oTotalCriticalScore** | <!----><!---->**Long**<!----> |  |  [optional] |
 | **oTotalScore** | <!----><!---->**Long**<!----> |  |  [optional] |
+| **oTotalCriticalScore** | <!----><!---->**Long**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

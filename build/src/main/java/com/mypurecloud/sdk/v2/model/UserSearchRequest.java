@@ -68,7 +68,8 @@ public class UserSearchRequest  implements Serializable {
   public enum IntegrationPresenceSourceEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     MICROSOFTTEAMS("MicrosoftTeams"),
-    ZOOMPHONE("ZoomPhone");
+    ZOOMPHONE("ZoomPhone"),
+    RINGCENTRAL("RingCentral");
 
     private String value;
 

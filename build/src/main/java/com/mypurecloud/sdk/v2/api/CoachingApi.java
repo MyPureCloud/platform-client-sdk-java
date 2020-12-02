@@ -15,12 +15,13 @@ import com.mypurecloud.sdk.v2.model.CoachingAppointmentReference;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponse;
 import com.mypurecloud.sdk.v2.model.CoachingAnnotation;
 import com.mypurecloud.sdk.v2.model.CoachingAnnotationList;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusDtoList;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponseList;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponseList;
 import com.mypurecloud.sdk.v2.model.CoachingNotification;
 import com.mypurecloud.sdk.v2.model.CoachingNotificationList;
 import com.mypurecloud.sdk.v2.model.UpdateCoachingAppointmentRequest;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusDto;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusRequest;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponse;
 import com.mypurecloud.sdk.v2.model.CoachingAnnotationCreateRequest;
 import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateRequest;
@@ -478,11 +479,11 @@ public class CoachingApi {
    * @param appointmentId The ID of the coaching appointment. (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
-   * @return CoachingAppointmentStatusDtoList
+   * @return CoachingAppointmentStatusResponseList
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CoachingAppointmentStatusDtoList getCoachingAppointmentStatuses(String appointmentId, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+  public CoachingAppointmentStatusResponseList getCoachingAppointmentStatuses(String appointmentId, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
     return  getCoachingAppointmentStatuses(createGetCoachingAppointmentStatusesRequest(appointmentId, pageNumber, pageSize));
   }
 
@@ -492,10 +493,10 @@ public class CoachingApi {
    * @param appointmentId The ID of the coaching appointment. (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
-   * @return CoachingAppointmentStatusDtoList
+   * @return CoachingAppointmentStatusResponseList
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CoachingAppointmentStatusDtoList> getCoachingAppointmentStatusesWithHttpInfo(String appointmentId, Integer pageNumber, Integer pageSize) throws IOException {
+  public ApiResponse<CoachingAppointmentStatusResponseList> getCoachingAppointmentStatusesWithHttpInfo(String appointmentId, Integer pageNumber, Integer pageSize) throws IOException {
     return getCoachingAppointmentStatuses(createGetCoachingAppointmentStatusesRequest(appointmentId, pageNumber, pageSize).withHttpInfo());
   }
 
@@ -514,13 +515,13 @@ public class CoachingApi {
    * Get the list of status changes for a coaching appointment.
    * Permission not required if you are an attendee, creator or facilitator of the appointment
    * @param request The request object
-   * @return CoachingAppointmentStatusDtoList
+   * @return CoachingAppointmentStatusResponseList
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CoachingAppointmentStatusDtoList getCoachingAppointmentStatuses(GetCoachingAppointmentStatusesRequest request) throws IOException, ApiException {
+  public CoachingAppointmentStatusResponseList getCoachingAppointmentStatuses(GetCoachingAppointmentStatusesRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<CoachingAppointmentStatusDtoList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CoachingAppointmentStatusDtoList>() {});
+      ApiResponse<CoachingAppointmentStatusResponseList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CoachingAppointmentStatusResponseList>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -536,13 +537,13 @@ public class CoachingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CoachingAppointmentStatusDtoList> getCoachingAppointmentStatuses(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<CoachingAppointmentStatusResponseList> getCoachingAppointmentStatuses(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<CoachingAppointmentStatusDtoList>() {});
+      return pcapiClient.invoke(request, new TypeReference<CoachingAppointmentStatusResponseList>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<CoachingAppointmentStatusDtoList> response = (ApiResponse<CoachingAppointmentStatusDtoList>)(ApiResponse<?>)exception;
+      ApiResponse<CoachingAppointmentStatusResponseList> response = (ApiResponse<CoachingAppointmentStatusResponseList>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -553,7 +554,7 @@ public class CoachingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<CoachingAppointmentStatusDtoList> response = (ApiResponse<CoachingAppointmentStatusDtoList>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<CoachingAppointmentStatusResponseList> response = (ApiResponse<CoachingAppointmentStatusResponseList>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1130,11 +1131,11 @@ public class CoachingApi {
    * Permission not required if you are an attendee, creator or facilitator of the appointment
    * @param appointmentId The ID of the coaching appointment. (required)
    * @param body Updated status of the coaching appointment (required)
-   * @return CoachingAppointmentStatusDto
+   * @return CoachingAppointmentStatusResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CoachingAppointmentStatusDto patchCoachingAppointmentStatus(String appointmentId, CoachingAppointmentStatusDto body) throws IOException, ApiException {
+  public CoachingAppointmentStatusResponse patchCoachingAppointmentStatus(String appointmentId, CoachingAppointmentStatusRequest body) throws IOException, ApiException {
     return  patchCoachingAppointmentStatus(createPatchCoachingAppointmentStatusRequest(appointmentId, body));
   }
 
@@ -1143,14 +1144,14 @@ public class CoachingApi {
    * Permission not required if you are an attendee, creator or facilitator of the appointment
    * @param appointmentId The ID of the coaching appointment. (required)
    * @param body Updated status of the coaching appointment (required)
-   * @return CoachingAppointmentStatusDto
+   * @return CoachingAppointmentStatusResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CoachingAppointmentStatusDto> patchCoachingAppointmentStatusWithHttpInfo(String appointmentId, CoachingAppointmentStatusDto body) throws IOException {
+  public ApiResponse<CoachingAppointmentStatusResponse> patchCoachingAppointmentStatusWithHttpInfo(String appointmentId, CoachingAppointmentStatusRequest body) throws IOException {
     return patchCoachingAppointmentStatus(createPatchCoachingAppointmentStatusRequest(appointmentId, body).withHttpInfo());
   }
 
-  private PatchCoachingAppointmentStatusRequest createPatchCoachingAppointmentStatusRequest(String appointmentId, CoachingAppointmentStatusDto body) {
+  private PatchCoachingAppointmentStatusRequest createPatchCoachingAppointmentStatusRequest(String appointmentId, CoachingAppointmentStatusRequest body) {
     return PatchCoachingAppointmentStatusRequest.builder()
             .withAppointmentId(appointmentId)
     
@@ -1163,13 +1164,13 @@ public class CoachingApi {
    * Update the status of a coaching appointment
    * Permission not required if you are an attendee, creator or facilitator of the appointment
    * @param request The request object
-   * @return CoachingAppointmentStatusDto
+   * @return CoachingAppointmentStatusResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CoachingAppointmentStatusDto patchCoachingAppointmentStatus(PatchCoachingAppointmentStatusRequest request) throws IOException, ApiException {
+  public CoachingAppointmentStatusResponse patchCoachingAppointmentStatus(PatchCoachingAppointmentStatusRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<CoachingAppointmentStatusDto> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CoachingAppointmentStatusDto>() {});
+      ApiResponse<CoachingAppointmentStatusResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CoachingAppointmentStatusResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1185,13 +1186,13 @@ public class CoachingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CoachingAppointmentStatusDto> patchCoachingAppointmentStatus(ApiRequest<CoachingAppointmentStatusDto> request) throws IOException {
+  public ApiResponse<CoachingAppointmentStatusResponse> patchCoachingAppointmentStatus(ApiRequest<CoachingAppointmentStatusRequest> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<CoachingAppointmentStatusDto>() {});
+      return pcapiClient.invoke(request, new TypeReference<CoachingAppointmentStatusResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<CoachingAppointmentStatusDto> response = (ApiResponse<CoachingAppointmentStatusDto>)(ApiResponse<?>)exception;
+      ApiResponse<CoachingAppointmentStatusResponse> response = (ApiResponse<CoachingAppointmentStatusResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1202,7 +1203,7 @@ public class CoachingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<CoachingAppointmentStatusDto> response = (ApiResponse<CoachingAppointmentStatusDto>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<CoachingAppointmentStatusResponse> response = (ApiResponse<CoachingAppointmentStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

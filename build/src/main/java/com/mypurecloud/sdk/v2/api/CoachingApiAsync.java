@@ -18,12 +18,13 @@ import com.mypurecloud.sdk.v2.model.CoachingAppointmentReference;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponse;
 import com.mypurecloud.sdk.v2.model.CoachingAnnotation;
 import com.mypurecloud.sdk.v2.model.CoachingAnnotationList;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusDtoList;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponseList;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponseList;
 import com.mypurecloud.sdk.v2.model.CoachingNotification;
 import com.mypurecloud.sdk.v2.model.CoachingNotificationList;
 import com.mypurecloud.sdk.v2.model.UpdateCoachingAppointmentRequest;
-import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusDto;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusRequest;
+import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponse;
 import com.mypurecloud.sdk.v2.model.CoachingAnnotationCreateRequest;
 import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateRequest;
@@ -455,13 +456,13 @@ public class CoachingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CoachingAppointmentStatusDtoList> getCoachingAppointmentStatusesAsync(GetCoachingAppointmentStatusesRequest request, final AsyncApiCallback<CoachingAppointmentStatusDtoList> callback) {
+  public Future<CoachingAppointmentStatusResponseList> getCoachingAppointmentStatusesAsync(GetCoachingAppointmentStatusesRequest request, final AsyncApiCallback<CoachingAppointmentStatusResponseList> callback) {
     try {
-      final SettableFuture<CoachingAppointmentStatusDtoList> future = SettableFuture.create();
+      final SettableFuture<CoachingAppointmentStatusResponseList> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CoachingAppointmentStatusDtoList>() {}, new AsyncApiCallback<ApiResponse<CoachingAppointmentStatusDtoList>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CoachingAppointmentStatusResponseList>() {}, new AsyncApiCallback<ApiResponse<CoachingAppointmentStatusResponseList>>() {
         @Override
-        public void onCompleted(ApiResponse<CoachingAppointmentStatusDtoList> response) {
+        public void onCompleted(ApiResponse<CoachingAppointmentStatusResponseList> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -489,13 +490,13 @@ public class CoachingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CoachingAppointmentStatusDtoList>> getCoachingAppointmentStatusesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CoachingAppointmentStatusDtoList>> callback) {
+  public Future<ApiResponse<CoachingAppointmentStatusResponseList>> getCoachingAppointmentStatusesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CoachingAppointmentStatusResponseList>> callback) {
     try {
-      final SettableFuture<ApiResponse<CoachingAppointmentStatusDtoList>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<CoachingAppointmentStatusResponseList>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<CoachingAppointmentStatusDtoList>() {}, new AsyncApiCallback<ApiResponse<CoachingAppointmentStatusDtoList>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<CoachingAppointmentStatusResponseList>() {}, new AsyncApiCallback<ApiResponse<CoachingAppointmentStatusResponseList>>() {
         @Override
-        public void onCompleted(ApiResponse<CoachingAppointmentStatusDtoList> response) {
+        public void onCompleted(ApiResponse<CoachingAppointmentStatusResponseList> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -503,7 +504,7 @@ public class CoachingApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<CoachingAppointmentStatusDtoList> response = (ApiResponse<CoachingAppointmentStatusDtoList>)(ApiResponse<?>)exception;
+            ApiResponse<CoachingAppointmentStatusResponseList> response = (ApiResponse<CoachingAppointmentStatusResponseList>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -511,7 +512,7 @@ public class CoachingApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<CoachingAppointmentStatusDtoList> response = (ApiResponse<CoachingAppointmentStatusDtoList>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<CoachingAppointmentStatusResponseList> response = (ApiResponse<CoachingAppointmentStatusResponseList>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -987,13 +988,13 @@ public class CoachingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<CoachingAppointmentStatusDto> patchCoachingAppointmentStatusAsync(PatchCoachingAppointmentStatusRequest request, final AsyncApiCallback<CoachingAppointmentStatusDto> callback) {
+  public Future<CoachingAppointmentStatusResponse> patchCoachingAppointmentStatusAsync(PatchCoachingAppointmentStatusRequest request, final AsyncApiCallback<CoachingAppointmentStatusResponse> callback) {
     try {
-      final SettableFuture<CoachingAppointmentStatusDto> future = SettableFuture.create();
+      final SettableFuture<CoachingAppointmentStatusResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CoachingAppointmentStatusDto>() {}, new AsyncApiCallback<ApiResponse<CoachingAppointmentStatusDto>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CoachingAppointmentStatusResponse>() {}, new AsyncApiCallback<ApiResponse<CoachingAppointmentStatusResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<CoachingAppointmentStatusDto> response) {
+        public void onCompleted(ApiResponse<CoachingAppointmentStatusResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1021,13 +1022,13 @@ public class CoachingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CoachingAppointmentStatusDto>> patchCoachingAppointmentStatusAsync(ApiRequest<CoachingAppointmentStatusDto> request, final AsyncApiCallback<ApiResponse<CoachingAppointmentStatusDto>> callback) {
+  public Future<ApiResponse<CoachingAppointmentStatusResponse>> patchCoachingAppointmentStatusAsync(ApiRequest<CoachingAppointmentStatusRequest> request, final AsyncApiCallback<ApiResponse<CoachingAppointmentStatusResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<CoachingAppointmentStatusDto>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<CoachingAppointmentStatusResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<CoachingAppointmentStatusDto>() {}, new AsyncApiCallback<ApiResponse<CoachingAppointmentStatusDto>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<CoachingAppointmentStatusResponse>() {}, new AsyncApiCallback<ApiResponse<CoachingAppointmentStatusResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<CoachingAppointmentStatusDto> response) {
+        public void onCompleted(ApiResponse<CoachingAppointmentStatusResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1035,7 +1036,7 @@ public class CoachingApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<CoachingAppointmentStatusDto> response = (ApiResponse<CoachingAppointmentStatusDto>)(ApiResponse<?>)exception;
+            ApiResponse<CoachingAppointmentStatusResponse> response = (ApiResponse<CoachingAppointmentStatusResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1043,7 +1044,7 @@ public class CoachingApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<CoachingAppointmentStatusDto> response = (ApiResponse<CoachingAppointmentStatusDto>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<CoachingAppointmentStatusResponse> response = (ApiResponse<CoachingAppointmentStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

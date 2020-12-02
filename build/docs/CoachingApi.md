@@ -357,7 +357,7 @@ try {
 
 
 
-> [CoachingAppointmentStatusDtoList](CoachingAppointmentStatusDtoList.html) getCoachingAppointmentStatuses(appointmentId, pageNumber, pageSize)
+> [CoachingAppointmentStatusResponseList](CoachingAppointmentStatusResponseList.html) getCoachingAppointmentStatuses(appointmentId, pageNumber, pageSize)
 
 Get the list of status changes for a coaching appointment.
 
@@ -395,7 +395,7 @@ String appointmentId = "appointmentId_example"; // String | The ID of the coachi
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 try {
-    CoachingAppointmentStatusDtoList result = apiInstance.getCoachingAppointmentStatuses(appointmentId, pageNumber, pageSize);
+    CoachingAppointmentStatusResponseList result = apiInstance.getCoachingAppointmentStatuses(appointmentId, pageNumber, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CoachingApi#getCoachingAppointmentStatuses");
@@ -416,7 +416,7 @@ try {
 
 ### Return type
 
-[**CoachingAppointmentStatusDtoList**](CoachingAppointmentStatusDtoList.html)
+[**CoachingAppointmentStatusResponseList**](CoachingAppointmentStatusResponseList.html)
 
 <a name="getCoachingAppointments"></a>
 
@@ -847,7 +847,7 @@ try {
 
 
 
-> [CoachingAppointmentStatusDto](CoachingAppointmentStatusDto.html) patchCoachingAppointmentStatus(appointmentId, body)
+> [CoachingAppointmentStatusResponse](CoachingAppointmentStatusResponse.html) patchCoachingAppointmentStatus(appointmentId, body)
 
 Update the status of a coaching appointment
 
@@ -882,9 +882,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 CoachingApi apiInstance = new CoachingApi();
 String appointmentId = "appointmentId_example"; // String | The ID of the coaching appointment.
-CoachingAppointmentStatusDto body = new CoachingAppointmentStatusDto(); // CoachingAppointmentStatusDto | Updated status of the coaching appointment
+CoachingAppointmentStatusRequest body = new CoachingAppointmentStatusRequest(); // CoachingAppointmentStatusRequest | Updated status of the coaching appointment
 try {
-    CoachingAppointmentStatusDto result = apiInstance.patchCoachingAppointmentStatus(appointmentId, body);
+    CoachingAppointmentStatusResponse result = apiInstance.patchCoachingAppointmentStatus(appointmentId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CoachingApi#patchCoachingAppointmentStatus");
@@ -898,13 +898,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **appointmentId** | **String**| The ID of the coaching appointment. | 
-| **body** | [**CoachingAppointmentStatusDto**](CoachingAppointmentStatusDto.html)| Updated status of the coaching appointment | 
+| **body** | [**CoachingAppointmentStatusRequest**](CoachingAppointmentStatusRequest.html)| Updated status of the coaching appointment | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**CoachingAppointmentStatusDto**](CoachingAppointmentStatusDto.html)
+[**CoachingAppointmentStatusResponse**](CoachingAppointmentStatusResponse.html)
 
 <a name="patchCoachingNotification"></a>
 

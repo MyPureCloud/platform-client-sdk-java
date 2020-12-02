@@ -3820,13 +3820,14 @@ public class RoutingApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ascending)
    * @param name Name (optional)
    * @return WrapupCodeEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WrapupCodeEntityListing getRoutingWrapupcodes(Integer pageSize, Integer pageNumber, String sortBy, String name) throws IOException, ApiException {
-    return  getRoutingWrapupcodes(createGetRoutingWrapupcodesRequest(pageSize, pageNumber, sortBy, name));
+  public WrapupCodeEntityListing getRoutingWrapupcodes(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name) throws IOException, ApiException {
+    return  getRoutingWrapupcodes(createGetRoutingWrapupcodesRequest(pageSize, pageNumber, sortBy, sortOrder, name));
   }
 
   /**
@@ -3835,21 +3836,24 @@ public class RoutingApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional, default to name)
+   * @param sortOrder Sort order (optional, default to ascending)
    * @param name Name (optional)
    * @return WrapupCodeEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WrapupCodeEntityListing> getRoutingWrapupcodesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String name) throws IOException {
-    return getRoutingWrapupcodes(createGetRoutingWrapupcodesRequest(pageSize, pageNumber, sortBy, name).withHttpInfo());
+  public ApiResponse<WrapupCodeEntityListing> getRoutingWrapupcodesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name) throws IOException {
+    return getRoutingWrapupcodes(createGetRoutingWrapupcodesRequest(pageSize, pageNumber, sortBy, sortOrder, name).withHttpInfo());
   }
 
-  private GetRoutingWrapupcodesRequest createGetRoutingWrapupcodesRequest(Integer pageSize, Integer pageNumber, String sortBy, String name) {
+  private GetRoutingWrapupcodesRequest createGetRoutingWrapupcodesRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder, String name) {
     return GetRoutingWrapupcodesRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
     
             .withSortBy(sortBy)
+    
+            .withSortOrder(sortOrder)
     
             .withName(name)
     

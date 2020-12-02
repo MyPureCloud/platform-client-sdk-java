@@ -3129,7 +3129,7 @@ public class UsersApiAsync {
   
   /**
    * Get a Development Activity
-   * 
+   * Permission not required if you are the attendee, creator or facilitator of the coaching appointment or you are the assigned user of the learning assignment.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3163,7 +3163,7 @@ public class UsersApiAsync {
 
   /**
    * Get a Development Activity
-   * 
+   * Permission not required if you are the attendee, creator or facilitator of the coaching appointment or you are the assigned user of the learning assignment.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

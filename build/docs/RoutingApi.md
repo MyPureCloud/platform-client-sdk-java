@@ -2948,7 +2948,7 @@ try {
 
 
 
-> [WrapupCodeEntityListing](WrapupCodeEntityListing.html) getRoutingWrapupcodes(pageSize, pageNumber, sortBy, name)
+> [WrapupCodeEntityListing](WrapupCodeEntityListing.html) getRoutingWrapupcodes(pageSize, pageNumber, sortBy, sortOrder, name)
 
 Get list of wrapup codes.
 
@@ -2985,9 +2985,10 @@ RoutingApi apiInstance = new RoutingApi();
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortBy = "name"; // String | Sort by
+String sortOrder = "ascending"; // String | Sort order
 String name = "name_example"; // String | Name
 try {
-    WrapupCodeEntityListing result = apiInstance.getRoutingWrapupcodes(pageSize, pageNumber, sortBy, name);
+    WrapupCodeEntityListing result = apiInstance.getRoutingWrapupcodes(pageSize, pageNumber, sortBy, sortOrder, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingWrapupcodes");
@@ -3003,6 +3004,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortBy** | **String**| Sort by | [optional] [default to name]<br />**Values**: name, id 
+| **sortOrder** | **String**| Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending 
 | **name** | **String**| Name | [optional] 
 {: class="table-striped"}
 

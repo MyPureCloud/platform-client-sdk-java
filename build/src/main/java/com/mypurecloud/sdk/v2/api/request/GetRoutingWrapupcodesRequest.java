@@ -141,6 +141,50 @@ public class GetRoutingWrapupcodesRequest {
 		}
 	}
 	
+	private String sortOrder;
+	public String getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(String sortOrder) {
+		this.sortOrder = sortOrder;
+	}
+
+	public GetRoutingWrapupcodesRequest withSortOrder(String sortOrder) {
+	    this.setSortOrder(sortOrder);
+	    return this;
+	} 
+
+	public enum sortOrderValues { 
+		ASCENDING("ascending"), 
+		DESCENDING("descending");
+
+		private String value;
+
+		sortOrderValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static sortOrderValues fromString(String key) {
+			if (key == null) return null;
+
+			for (sortOrderValues value : sortOrderValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return sortOrderValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
 	private String name;
 	public String getName() {
 		return this.name;
@@ -184,6 +228,8 @@ public class GetRoutingWrapupcodesRequest {
         
                 .withQueryParameters("sortBy", "", sortBy)
         
+                .withQueryParameters("sortOrder", "", sortOrder)
+        
                 .withQueryParameters("name", "", name)
         
                 .withCustomHeaders(customHeaders)
@@ -224,6 +270,16 @@ public class GetRoutingWrapupcodesRequest {
 
 		public Builder withSortBy(sortByValues sortBy) {
 		    request.setSortBy(sortBy.toString());
+		    return this;
+		}
+		
+		public Builder withSortOrder(String sortOrder) {
+			request.setSortOrder(sortOrder);
+			return this;
+		}
+
+		public Builder withSortOrder(sortOrderValues sortOrder) {
+		    request.setSortOrder(sortOrder.toString());
 		    return this;
 		}
 		

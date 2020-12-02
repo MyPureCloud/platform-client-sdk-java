@@ -16,9 +16,9 @@ public class OneLogin  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private String issuerURI = null;
   private String certificate = null;
   private String ssoTargetURI = null;
+  private String issuerURI = null;
   private Boolean disabled = null;
   private String selfUri = null;
 
@@ -44,23 +44,6 @@ public class OneLogin  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
-  }
-
-  
-  /**
-   **/
-  public OneLogin issuerURI(String issuerURI) {
-    this.issuerURI = issuerURI;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("issuerURI")
-  public String getIssuerURI() {
-    return issuerURI;
-  }
-  public void setIssuerURI(String issuerURI) {
-    this.issuerURI = issuerURI;
   }
 
   
@@ -100,6 +83,23 @@ public class OneLogin  implements Serializable {
   
   /**
    **/
+  public OneLogin issuerURI(String issuerURI) {
+    this.issuerURI = issuerURI;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("issuerURI")
+  public String getIssuerURI() {
+    return issuerURI;
+  }
+  public void setIssuerURI(String issuerURI) {
+    this.issuerURI = issuerURI;
+  }
+
+  
+  /**
+   **/
   public OneLogin disabled(Boolean disabled) {
     this.disabled = disabled;
     return this;
@@ -134,16 +134,16 @@ public class OneLogin  implements Serializable {
     OneLogin oneLogin = (OneLogin) o;
     return Objects.equals(this.id, oneLogin.id) &&
         Objects.equals(this.name, oneLogin.name) &&
-        Objects.equals(this.issuerURI, oneLogin.issuerURI) &&
         Objects.equals(this.certificate, oneLogin.certificate) &&
         Objects.equals(this.ssoTargetURI, oneLogin.ssoTargetURI) &&
+        Objects.equals(this.issuerURI, oneLogin.issuerURI) &&
         Objects.equals(this.disabled, oneLogin.disabled) &&
         Objects.equals(this.selfUri, oneLogin.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, issuerURI, certificate, ssoTargetURI, disabled, selfUri);
+    return Objects.hash(id, name, certificate, ssoTargetURI, issuerURI, disabled, selfUri);
   }
 
   @Override
@@ -153,9 +153,9 @@ public class OneLogin  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
     sb.append("    ssoTargetURI: ").append(toIndentedString(ssoTargetURI)).append("\n");
+    sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

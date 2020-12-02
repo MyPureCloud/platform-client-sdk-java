@@ -18,13 +18,21 @@ import java.io.Serializable;
 public class UploadUrlResponse  implements Serializable {
   
   private String url = null;
+  private String uploadKey = null;
   private Map<String, String> headers = null;
 
   
-  @ApiModelProperty(example = "null", value = "Presigned url to PUT the file to")
+  @ApiModelProperty(example = "null", value = "Presigned URL to PUT the file to")
   @JsonProperty("url")
   public String getUrl() {
     return url;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "Key that identifies the file in the storage including the file name")
+  @JsonProperty("uploadKey")
+  public String getUploadKey() {
+    return uploadKey;
   }
 
   
@@ -57,12 +65,13 @@ public class UploadUrlResponse  implements Serializable {
     }
     UploadUrlResponse uploadUrlResponse = (UploadUrlResponse) o;
     return Objects.equals(this.url, uploadUrlResponse.url) &&
+        Objects.equals(this.uploadKey, uploadUrlResponse.uploadKey) &&
         Objects.equals(this.headers, uploadUrlResponse.headers);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url, headers);
+    return Objects.hash(url, uploadKey, headers);
   }
 
   @Override
@@ -71,6 +80,7 @@ public class UploadUrlResponse  implements Serializable {
     sb.append("class UploadUrlResponse {\n");
     
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    sb.append("    uploadKey: ").append(toIndentedString(uploadKey)).append("\n");
     sb.append("    headers: ").append(toIndentedString(headers)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -24,9 +24,9 @@ public class TrustorEntityListing  implements Serializable, PagedResource<Trusto
   private Long total = null;
   private String firstUri = null;
   private String selfUri = null;
-  private String nextUri = null;
   private String previousUri = null;
   private String lastUri = null;
+  private String nextUri = null;
   private Integer pageCount = null;
 
   
@@ -134,23 +134,6 @@ public class TrustorEntityListing  implements Serializable, PagedResource<Trusto
   
   /**
    **/
-  public TrustorEntityListing nextUri(String nextUri) {
-    this.nextUri = nextUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("nextUri")
-  public String getNextUri() {
-    return nextUri;
-  }
-  public void setNextUri(String nextUri) {
-    this.nextUri = nextUri;
-  }
-
-  
-  /**
-   **/
   public TrustorEntityListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
@@ -180,6 +163,23 @@ public class TrustorEntityListing  implements Serializable, PagedResource<Trusto
   }
   public void setLastUri(String lastUri) {
     this.lastUri = lastUri;
+  }
+
+  
+  /**
+   **/
+  public TrustorEntityListing nextUri(String nextUri) {
+    this.nextUri = nextUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nextUri")
+  public String getNextUri() {
+    return nextUri;
+  }
+  public void setNextUri(String nextUri) {
+    this.nextUri = nextUri;
   }
 
   
@@ -216,15 +216,15 @@ public class TrustorEntityListing  implements Serializable, PagedResource<Trusto
         Objects.equals(this.total, trustorEntityListing.total) &&
         Objects.equals(this.firstUri, trustorEntityListing.firstUri) &&
         Objects.equals(this.selfUri, trustorEntityListing.selfUri) &&
-        Objects.equals(this.nextUri, trustorEntityListing.nextUri) &&
         Objects.equals(this.previousUri, trustorEntityListing.previousUri) &&
         Objects.equals(this.lastUri, trustorEntityListing.lastUri) &&
+        Objects.equals(this.nextUri, trustorEntityListing.nextUri) &&
         Objects.equals(this.pageCount, trustorEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, previousUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, previousUri, lastUri, nextUri, pageCount);
   }
 
   @Override
@@ -238,9 +238,9 @@ public class TrustorEntityListing  implements Serializable, PagedResource<Trusto
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

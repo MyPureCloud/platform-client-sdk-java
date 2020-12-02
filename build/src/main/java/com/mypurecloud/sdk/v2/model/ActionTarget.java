@@ -100,6 +100,7 @@ public class ActionTarget  implements Serializable {
   private StateEnum state = null;
   private String description = null;
   private ServiceLevel serviceLevel = null;
+  private Integer shortAbandonThreshold = null;
   private String selfUri = null;
   private Date createdDate = null;
   private Date modifiedDate = null;
@@ -219,6 +220,24 @@ public class ActionTarget  implements Serializable {
   }
 
   
+  /**
+   * Indicates the non-default short abandon threshold
+   **/
+  public ActionTarget shortAbandonThreshold(Integer shortAbandonThreshold) {
+    this.shortAbandonThreshold = shortAbandonThreshold;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates the non-default short abandon threshold")
+  @JsonProperty("shortAbandonThreshold")
+  public Integer getShortAbandonThreshold() {
+    return shortAbandonThreshold;
+  }
+  public void setShortAbandonThreshold(Integer shortAbandonThreshold) {
+    this.shortAbandonThreshold = shortAbandonThreshold;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -279,6 +298,7 @@ public class ActionTarget  implements Serializable {
         Objects.equals(this.state, actionTarget.state) &&
         Objects.equals(this.description, actionTarget.description) &&
         Objects.equals(this.serviceLevel, actionTarget.serviceLevel) &&
+        Objects.equals(this.shortAbandonThreshold, actionTarget.shortAbandonThreshold) &&
         Objects.equals(this.selfUri, actionTarget.selfUri) &&
         Objects.equals(this.createdDate, actionTarget.createdDate) &&
         Objects.equals(this.modifiedDate, actionTarget.modifiedDate);
@@ -286,7 +306,7 @@ public class ActionTarget  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, userData, supportedMediaTypes, state, description, serviceLevel, selfUri, createdDate, modifiedDate);
+    return Objects.hash(id, name, userData, supportedMediaTypes, state, description, serviceLevel, shortAbandonThreshold, selfUri, createdDate, modifiedDate);
   }
 
   @Override
@@ -301,6 +321,7 @@ public class ActionTarget  implements Serializable {
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    serviceLevel: ").append(toIndentedString(serviceLevel)).append("\n");
+    sb.append("    shortAbandonThreshold: ").append(toIndentedString(shortAbandonThreshold)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");

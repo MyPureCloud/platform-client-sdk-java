@@ -15,6 +15,7 @@ title: ActionTarget
 | **state** | [**StateEnum**](#StateEnum)<!----> | Indicates the state of the target. |  [optional] |
 | **description** | <!----><!---->**String**<!----> | Description of the target. |  [optional] |
 | **serviceLevel** | <!----><!---->[**ServiceLevel**](ServiceLevel.html)<!----> | Service Level of the action target. Chat offers for the target will be throttled with the aim of achieving this service level. |  [optional] |
+| **shortAbandonThreshold** | <!----><!---->**Integer**<!----> | Indicates the non-default short abandon threshold |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 | **createdDate** | <!----><!---->[**Date**](Date.html)<!----> | The date the target was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **modifiedDate** | <!----><!---->[**Date**](Date.html)<!----> | The date the target was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |

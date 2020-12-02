@@ -33,8 +33,7 @@ public class UpdateCoachingAppointmentRequest  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SCHEDULED("Scheduled"),
     INPROGRESS("InProgress"),
-    COMPLETED("Completed"),
-    INVALIDSCHEDULE("InvalidSchedule");
+    COMPLETED("Completed");
 
     private String value;
 

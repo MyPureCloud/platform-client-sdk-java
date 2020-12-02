@@ -296,7 +296,7 @@ try {
 
 
 
-> [CategoryListing](CategoryListing.html) getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, before, after, limit, pageSize)
+> [CategoryListing](CategoryListing.html) getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, before, after, limit, pageSize, name)
 
 Get categories
 
@@ -336,8 +336,9 @@ String before = "before_example"; // String | The cursor that points to the star
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
 String limit = "limit_example"; // String | Number of entities to return. Maximum of 200.
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String name = "name_example"; // String | Filter to return the categories that starts with the given category name.
 try {
-    CategoryListing result = apiInstance.getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, before, after, limit, pageSize);
+    CategoryListing result = apiInstance.getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, before, after, limit, pageSize, name);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseLanguageCategories");
@@ -356,6 +357,7 @@ try {
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **limit** | **String**| Number of entities to return. Maximum of 200. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **name** | **String**| Filter to return the categories that starts with the given category name. | [optional] 
 {: class="table-striped"}
 
 

@@ -52,14 +52,14 @@ public class NluDomain  implements Serializable {
 
   
   /**
-   * The ISO 639-1 language code of the NLU domain, e.g. `en`.
+   * The language culture of the NLU domain, e.g. `en-us`, `de-de`.
    **/
   public NluDomain language(String language) {
     this.language = language;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ISO 639-1 language code of the NLU domain, e.g. `en`.")
+  @ApiModelProperty(example = "null", value = "The language culture of the NLU domain, e.g. `en-us`, `de-de`.")
   @JsonProperty("language")
   public String getLanguage() {
     return language;
