@@ -28,6 +28,7 @@ title: AuditRealtimeQueryRequest
 | CONTACTCENTER | &quot;ContactCenter&quot; |
 | CONTENTMANAGEMENT | &quot;ContentManagement&quot; |
 | PEOPLEPERMISSIONS | &quot;PeoplePermissions&quot; |
+| PRESENCE | &quot;Presence&quot; |
 | QUALITY | &quot;Quality&quot; |
 | LANGUAGEUNDERSTANDING | &quot;LanguageUnderstanding&quot; |
 | TOPICSDEFINITIONS | &quot;TopicsDefinitions&quot; |

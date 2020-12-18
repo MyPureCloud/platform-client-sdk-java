@@ -20,11 +20,12 @@ import com.mypurecloud.sdk.v2.model.Annotation;
 import com.mypurecloud.sdk.v2.model.RecordingMetadata;
 import com.mypurecloud.sdk.v2.model.OrphanRecordingListing;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobStatusResult;
+import com.mypurecloud.sdk.v2.model.PolicyEntityListing;
+import com.mypurecloud.sdk.v2.model.CrossPlatformPolicy;
 import com.mypurecloud.sdk.v2.model.RecordingJob;
 import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
-import com.mypurecloud.sdk.v2.model.PolicyEntityListing;
 import com.mypurecloud.sdk.v2.model.Policy;
 import com.mypurecloud.sdk.v2.model.EncryptionKeyEntityListing;
 import com.mypurecloud.sdk.v2.model.KeyRotationSchedule;
@@ -33,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmission;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmissionResult;
+import com.mypurecloud.sdk.v2.model.CrossPlatformPolicyCreate;
 import com.mypurecloud.sdk.v2.model.RecordingJobsQuery;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionKeyRequest;
 import com.mypurecloud.sdk.v2.model.EncryptionKey;
@@ -45,6 +47,8 @@ import com.mypurecloud.sdk.v2.model.ExecuteRecordingJobsQuery;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationRecordingAnnotationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrphanrecordingRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRecordingCrossplatformMediaretentionpoliciesRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRecordingCrossplatformMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRecordingJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRecordingMediaretentionpoliciesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRecordingMediaretentionpolicyRequest;
@@ -58,6 +62,8 @@ import com.mypurecloud.sdk.v2.api.request.GetOrphanrecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrphanrecordingMediaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrphanrecordingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingBatchrequestRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingCrossplatformMediaretentionpoliciesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingCrossplatformMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingLocalkeysSettingRequest;
@@ -68,10 +74,12 @@ import com.mypurecloud.sdk.v2.api.request.GetRecordingRecordingkeysRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingRecordingkeysRotationscheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingsScreensessionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRecordingCrossplatformMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingsScreensessionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationRecordingAnnotationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingBatchrequestsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRecordingCrossplatformMediaretentionpoliciesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysSettingsRequest;
@@ -81,6 +89,7 @@ import com.mypurecloud.sdk.v2.api.request.PostRecordingsDeletionprotectionReques
 import com.mypurecloud.sdk.v2.api.request.PutConversationRecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationRecordingAnnotationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrphanrecordingRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRecordingCrossplatformMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingLocalkeysSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingMediaretentionpolicyRequest;
@@ -248,6 +257,158 @@ public class RecordingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<OrphanRecording> response = (ApiResponse<OrphanRecording>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Delete media retention policies
+   * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteRecordingCrossplatformMediaretentionpoliciesAsync(DeleteRecordingCrossplatformMediaretentionpoliciesRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete media retention policies
+   * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteRecordingCrossplatformMediaretentionpoliciesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Delete a media retention policy
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteRecordingCrossplatformMediaretentionpolicyAsync(DeleteRecordingCrossplatformMediaretentionpolicyRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete a media retention policy
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteRecordingCrossplatformMediaretentionpolicyAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -1249,6 +1410,158 @@ public class RecordingApiAsync {
 
   
   /**
+   * Gets media retention policy list with query options to filter on name and enabled.
+   * for a less verbose response, add summary=true to this endpoint
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PolicyEntityListing> getRecordingCrossplatformMediaretentionpoliciesAsync(GetRecordingCrossplatformMediaretentionpoliciesRequest request, final AsyncApiCallback<PolicyEntityListing> callback) {
+    try {
+      final SettableFuture<PolicyEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PolicyEntityListing>() {}, new AsyncApiCallback<ApiResponse<PolicyEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PolicyEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets media retention policy list with query options to filter on name and enabled.
+   * for a less verbose response, add summary=true to this endpoint
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PolicyEntityListing>> getRecordingCrossplatformMediaretentionpoliciesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PolicyEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PolicyEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PolicyEntityListing>() {}, new AsyncApiCallback<ApiResponse<PolicyEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PolicyEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PolicyEntityListing> response = (ApiResponse<PolicyEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PolicyEntityListing> response = (ApiResponse<PolicyEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a media retention policy
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CrossPlatformPolicy> getRecordingCrossplatformMediaretentionpolicyAsync(GetRecordingCrossplatformMediaretentionpolicyRequest request, final AsyncApiCallback<CrossPlatformPolicy> callback) {
+    try {
+      final SettableFuture<CrossPlatformPolicy> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CrossPlatformPolicy>() {}, new AsyncApiCallback<ApiResponse<CrossPlatformPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<CrossPlatformPolicy> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a media retention policy
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CrossPlatformPolicy>> getRecordingCrossplatformMediaretentionpolicyAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CrossPlatformPolicy>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CrossPlatformPolicy>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CrossPlatformPolicy>() {}, new AsyncApiCallback<ApiResponse<CrossPlatformPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<CrossPlatformPolicy> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CrossPlatformPolicy> response = (ApiResponse<CrossPlatformPolicy>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CrossPlatformPolicy> response = (ApiResponse<CrossPlatformPolicy>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get the status of the job associated with the job id.
    * 
    * @param request the request object
@@ -2015,6 +2328,82 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
+  public Future<CrossPlatformPolicy> patchRecordingCrossplatformMediaretentionpolicyAsync(PatchRecordingCrossplatformMediaretentionpolicyRequest request, final AsyncApiCallback<CrossPlatformPolicy> callback) {
+    try {
+      final SettableFuture<CrossPlatformPolicy> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CrossPlatformPolicy>() {}, new AsyncApiCallback<ApiResponse<CrossPlatformPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<CrossPlatformPolicy> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Patch a media retention policy
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CrossPlatformPolicy>> patchRecordingCrossplatformMediaretentionpolicyAsync(ApiRequest<CrossPlatformPolicy> request, final AsyncApiCallback<ApiResponse<CrossPlatformPolicy>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CrossPlatformPolicy>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CrossPlatformPolicy>() {}, new AsyncApiCallback<ApiResponse<CrossPlatformPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<CrossPlatformPolicy> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CrossPlatformPolicy> response = (ApiResponse<CrossPlatformPolicy>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CrossPlatformPolicy> response = (ApiResponse<CrossPlatformPolicy>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Patch a media retention policy
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
   public Future<Policy> patchRecordingMediaretentionpolicyAsync(PatchRecordingMediaretentionpolicyRequest request, final AsyncApiCallback<Policy> callback) {
     try {
       final SettableFuture<Policy> future = SettableFuture.create();
@@ -2300,6 +2689,82 @@ public class RecordingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<BatchDownloadJobSubmissionResult> response = (ApiResponse<BatchDownloadJobSubmissionResult>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Create media retention policy
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CrossPlatformPolicy> postRecordingCrossplatformMediaretentionpoliciesAsync(PostRecordingCrossplatformMediaretentionpoliciesRequest request, final AsyncApiCallback<CrossPlatformPolicy> callback) {
+    try {
+      final SettableFuture<CrossPlatformPolicy> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CrossPlatformPolicy>() {}, new AsyncApiCallback<ApiResponse<CrossPlatformPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<CrossPlatformPolicy> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create media retention policy
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CrossPlatformPolicy>> postRecordingCrossplatformMediaretentionpoliciesAsync(ApiRequest<CrossPlatformPolicyCreate> request, final AsyncApiCallback<ApiResponse<CrossPlatformPolicy>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CrossPlatformPolicy>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CrossPlatformPolicy>() {}, new AsyncApiCallback<ApiResponse<CrossPlatformPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<CrossPlatformPolicy> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CrossPlatformPolicy> response = (ApiResponse<CrossPlatformPolicy>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CrossPlatformPolicy> response = (ApiResponse<CrossPlatformPolicy>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2984,6 +3449,82 @@ public class RecordingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update a media retention policy
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CrossPlatformPolicy> putRecordingCrossplatformMediaretentionpolicyAsync(PutRecordingCrossplatformMediaretentionpolicyRequest request, final AsyncApiCallback<CrossPlatformPolicy> callback) {
+    try {
+      final SettableFuture<CrossPlatformPolicy> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CrossPlatformPolicy>() {}, new AsyncApiCallback<ApiResponse<CrossPlatformPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<CrossPlatformPolicy> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a media retention policy
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CrossPlatformPolicy>> putRecordingCrossplatformMediaretentionpolicyAsync(ApiRequest<CrossPlatformPolicy> request, final AsyncApiCallback<ApiResponse<CrossPlatformPolicy>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CrossPlatformPolicy>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CrossPlatformPolicy>() {}, new AsyncApiCallback<ApiResponse<CrossPlatformPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<CrossPlatformPolicy> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CrossPlatformPolicy> response = (ApiResponse<CrossPlatformPolicy>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CrossPlatformPolicy> response = (ApiResponse<CrossPlatformPolicy>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

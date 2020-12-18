@@ -25,6 +25,7 @@ import java.io.Serializable;
 public class AuditLogMessage  implements Serializable {
   
   private String id = null;
+  private String userHomeOrgId = null;
   private DomainEntityRef user = null;
   private AddressableEntityRef client = null;
   private List<String> remoteIp = new ArrayList<String>();
@@ -38,6 +39,7 @@ public class AuditLogMessage  implements Serializable {
     CONTACTCENTER("ContactCenter"),
     CONTENTMANAGEMENT("ContentManagement"),
     PEOPLEPERMISSIONS("PeoplePermissions"),
+    PRESENCE("Presence"),
     QUALITY("Quality"),
     LANGUAGEUNDERSTANDING("LanguageUnderstanding"),
     TOPICSDEFINITIONS("TopicsDefinitions"),
@@ -112,7 +114,8 @@ public class AuditLogMessage  implements Serializable {
     AUTHORIZE("Authorize"),
     DEAUTHORIZE("Deauthorize"),
     AUTHENTICATE("Authenticate"),
-    CHANGEPASSWORD("ChangePassword");
+    CHANGEPASSWORD("ChangePassword"),
+    REVOKE("Revoke");
 
     private String value;
 
@@ -152,12 +155,16 @@ public class AuditLogMessage  implements Serializable {
     RECORDING("Recording"),
     ROLE("Role"),
     VOICEMAILUSERPOLICY("VoicemailUserPolicy"),
+    USERPRESENCE("UserPresence"),
     WRAPUPCODE("WrapupCode"),
+    MAXORGROUTINGUTILIZATIONCAPACITY("MaxOrgRoutingUtilizationCapacity"),
     ACCESSTOKEN("AccessToken"),
     OAUTHCLIENT("OAuthClient"),
     OAUTHCLIENTAUTHORIZATION("OAuthClientAuthorization"),
     AUTHORGANIZATION("AuthOrganization"),
     AUTHUSER("AuthUser"),
+    ORGANIZATIONAUTHORIZATIONTRUST("OrganizationAuthorizationTrust"),
+    ORGANIZATIONAUTHORIZATIONUSERTRUST("OrganizationAuthorizationUserTrust"),
     BULKACTIONS("BulkActions"),
     FEEDBACK("Feedback"),
     TOPIC("Topic"),
@@ -241,6 +248,24 @@ public class AuditLogMessage  implements Serializable {
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+  
+  /**
+   * Home Organization Id associated with this audit message.
+   **/
+  public AuditLogMessage userHomeOrgId(String userHomeOrgId) {
+    this.userHomeOrgId = userHomeOrgId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Home Organization Id associated with this audit message.")
+  @JsonProperty("userHomeOrgId")
+  public String getUserHomeOrgId() {
+    return userHomeOrgId;
+  }
+  public void setUserHomeOrgId(String userHomeOrgId) {
+    this.userHomeOrgId = userHomeOrgId;
   }
 
   
@@ -453,6 +478,7 @@ public class AuditLogMessage  implements Serializable {
     }
     AuditLogMessage auditLogMessage = (AuditLogMessage) o;
     return Objects.equals(this.id, auditLogMessage.id) &&
+        Objects.equals(this.userHomeOrgId, auditLogMessage.userHomeOrgId) &&
         Objects.equals(this.user, auditLogMessage.user) &&
         Objects.equals(this.client, auditLogMessage.client) &&
         Objects.equals(this.remoteIp, auditLogMessage.remoteIp) &&
@@ -468,7 +494,7 @@ public class AuditLogMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, user, client, remoteIp, serviceName, eventDate, message, action, entity, entityType, propertyChanges, context);
+    return Objects.hash(id, userHomeOrgId, user, client, remoteIp, serviceName, eventDate, message, action, entity, entityType, propertyChanges, context);
   }
 
   @Override
@@ -477,6 +503,7 @@ public class AuditLogMessage  implements Serializable {
     sb.append("class AuditLogMessage {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    userHomeOrgId: ").append(toIndentedString(userHomeOrgId)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    client: ").append(toIndentedString(client)).append("\n");
     sb.append("    remoteIp: ").append(toIndentedString(remoteIp)).append("\n");

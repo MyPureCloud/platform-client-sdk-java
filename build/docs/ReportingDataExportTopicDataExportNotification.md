@@ -102,6 +102,7 @@ title: ReportingDataExportTopicDataExportNotification
 | FLOW_DESTINATION_SUMMARY_VIEW | &quot;FLOW_DESTINATION_SUMMARY_VIEW&quot; |
 | FLOW_DESTINATION_DETAIL_VIEW | &quot;FLOW_DESTINATION_DETAIL_VIEW&quot; |
 | SCHEDULED_CALLBACKS_VIEW | &quot;SCHEDULED_CALLBACKS_VIEW&quot; |
+| CONTENT_SEARCH_VIEW | &quot;CONTENT_SEARCH_VIEW&quot; |
 {: class="table table-striped"}
 
 

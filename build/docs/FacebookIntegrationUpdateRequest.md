@@ -8,8 +8,11 @@ title: FacebookIntegrationUpdateRequest
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
+| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
+| **name** | <!----><!---->**String**<!----> | The name of the Facebook Integration |  [optional] |
 | **pageAccessToken** | <!----><!---->**String**<!----> | The long-lived Page Access Token of a facebook page.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided. |  [optional] |
 | **userAccessToken** | <!----><!---->**String**<!----> | The short-lived User Access Token of the facebook user logged into the facebook app.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided. |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
 

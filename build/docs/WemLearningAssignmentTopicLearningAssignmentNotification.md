@@ -31,6 +31,7 @@ title: WemLearningAssignmentTopicLearningAssignmentNotification
 | ASSIGNED | &quot;Assigned&quot; |
 | INPROGRESS | &quot;InProgress&quot; |
 | COMPLETED | &quot;Completed&quot; |
+| DELETED | &quot;Deleted&quot; |
 {: class="table table-striped"}
 
 

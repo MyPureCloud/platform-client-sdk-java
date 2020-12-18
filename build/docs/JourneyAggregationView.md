@@ -37,6 +37,7 @@ title: JourneyAggregationView
 | NWEBACTIONSREJECTED | &quot;nWebActionsRejected&quot; |
 | NWEBACTIONSSTARTED | &quot;nWebActionsStarted&quot; |
 | NWEBACTIONSTIMEDOUT | &quot;nWebActionsTimedout&quot; |
+| NWEBACTIONSFREQUENCYCAPREACHED | &quot;nWebActionsFrequencyCapReached&quot; |
 {: class="table table-striped"}
 
 

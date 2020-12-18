@@ -491,7 +491,7 @@ try {
 | **sortOrder** | **String**| Sort (by due date) either Asc or Desc | [optional]<br />**Values**: Desc, Asc 
 | **relationships** | [**List&lt;String&gt;**](String.html)| Relationships to filter by | [optional]<br />**Values**: Creator, Facilitator, Attendee 
 | **completionInterval** | **String**| Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] 
-| **overdue** | **String**| Overdue status to filter by | [optional]<br />**Values**: Any, True, False 
+| **overdue** | **String**| Overdue status to filter by | [optional]<br />**Values**: True, False, Any 
 {: class="table-striped"}
 
 
@@ -569,7 +569,7 @@ try {
 | **sortOrder** | **String**| Sort (by due date) either Asc or Desc | [optional]<br />**Values**: Desc, Asc 
 | **relationships** | [**List&lt;String&gt;**](String.html)| Relationships to filter by | [optional]<br />**Values**: Creator, Facilitator, Attendee 
 | **completionInterval** | **String**| Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] 
-| **overdue** | **String**| Overdue status to filter by | [optional]<br />**Values**: Any, True, False 
+| **overdue** | **String**| Overdue status to filter by | [optional]<br />**Values**: True, False, Any 
 {: class="table-striped"}
 
 

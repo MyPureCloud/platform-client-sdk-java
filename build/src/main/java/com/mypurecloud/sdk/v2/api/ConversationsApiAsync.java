@@ -62,6 +62,7 @@ import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
 import com.mypurecloud.sdk.v2.model.ConsultTransferResponse;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationUpdateRequest;
+import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.PropertyIndexRequest;
 import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
@@ -96,7 +97,6 @@ import com.mypurecloud.sdk.v2.model.SendAgentlessOutboundMessageRequest;
 import com.mypurecloud.sdk.v2.model.SendAgentlessOutboundMessageResponse;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.LineIntegrationRequest;
-import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
 
@@ -193,6 +193,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantRe
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantCommunicationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationDetailsPropertiesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesQueryRequest;
@@ -7251,7 +7252,83 @@ public class ConversationsApiAsync {
 
   
   /**
-   * Activate a WhatsApp messaging integration.
+   * Update Twitter messaging integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TwitterIntegration> patchConversationsMessagingIntegrationsTwitterIntegrationIdAsync(PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest request, final AsyncApiCallback<TwitterIntegration> callback) {
+    try {
+      final SettableFuture<TwitterIntegration> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TwitterIntegration>() {}, new AsyncApiCallback<ApiResponse<TwitterIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<TwitterIntegration> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update Twitter messaging integration
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TwitterIntegration>> patchConversationsMessagingIntegrationsTwitterIntegrationIdAsync(ApiRequest<TwitterIntegrationRequest> request, final AsyncApiCallback<ApiResponse<TwitterIntegration>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TwitterIntegration>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TwitterIntegration>() {}, new AsyncApiCallback<ApiResponse<TwitterIntegration>>() {
+        @Override
+        public void onCompleted(ApiResponse<TwitterIntegration> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TwitterIntegration> response = (ApiResponse<TwitterIntegration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update or activate a WhatsApp messaging integration.
    * The following steps are required in order to fully activate a Whatsapp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -7285,7 +7362,7 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Activate a WhatsApp messaging integration.
+   * Update or activate a WhatsApp messaging integration.
    * The following steps are required in order to fully activate a Whatsapp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
    * @param request the request object
    * @param callback the action to perform when the request is completed

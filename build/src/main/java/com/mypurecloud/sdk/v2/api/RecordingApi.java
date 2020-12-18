@@ -17,11 +17,12 @@ import com.mypurecloud.sdk.v2.model.Annotation;
 import com.mypurecloud.sdk.v2.model.RecordingMetadata;
 import com.mypurecloud.sdk.v2.model.OrphanRecordingListing;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobStatusResult;
+import com.mypurecloud.sdk.v2.model.PolicyEntityListing;
+import com.mypurecloud.sdk.v2.model.CrossPlatformPolicy;
 import com.mypurecloud.sdk.v2.model.RecordingJob;
 import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
-import com.mypurecloud.sdk.v2.model.PolicyEntityListing;
 import com.mypurecloud.sdk.v2.model.Policy;
 import com.mypurecloud.sdk.v2.model.EncryptionKeyEntityListing;
 import com.mypurecloud.sdk.v2.model.KeyRotationSchedule;
@@ -30,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmission;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmissionResult;
+import com.mypurecloud.sdk.v2.model.CrossPlatformPolicyCreate;
 import com.mypurecloud.sdk.v2.model.RecordingJobsQuery;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionKeyRequest;
 import com.mypurecloud.sdk.v2.model.EncryptionKey;
@@ -42,6 +44,8 @@ import com.mypurecloud.sdk.v2.model.ExecuteRecordingJobsQuery;
 
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationRecordingAnnotationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrphanrecordingRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRecordingCrossplatformMediaretentionpoliciesRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRecordingCrossplatformMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRecordingJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRecordingMediaretentionpoliciesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRecordingMediaretentionpolicyRequest;
@@ -55,6 +59,8 @@ import com.mypurecloud.sdk.v2.api.request.GetOrphanrecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrphanrecordingMediaRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrphanrecordingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingBatchrequestRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingCrossplatformMediaretentionpoliciesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingCrossplatformMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingLocalkeysSettingRequest;
@@ -65,10 +71,12 @@ import com.mypurecloud.sdk.v2.api.request.GetRecordingRecordingkeysRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingRecordingkeysRotationscheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingsScreensessionsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRecordingCrossplatformMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRecordingsScreensessionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationRecordingAnnotationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingBatchrequestsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRecordingCrossplatformMediaretentionpoliciesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysSettingsRequest;
@@ -78,6 +86,7 @@ import com.mypurecloud.sdk.v2.api.request.PostRecordingsDeletionprotectionReques
 import com.mypurecloud.sdk.v2.api.request.PutConversationRecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationRecordingAnnotationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrphanrecordingRequest;
+import com.mypurecloud.sdk.v2.api.request.PutRecordingCrossplatformMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingJobRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingLocalkeysSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutRecordingMediaretentionpolicyRequest;
@@ -262,6 +271,158 @@ public class RecordingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<OrphanRecording> response = (ApiResponse<OrphanRecording>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete media retention policies
+   * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
+   * @param ids  (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRecordingCrossplatformMediaretentionpolicies(String ids) throws IOException, ApiException {
+     deleteRecordingCrossplatformMediaretentionpolicies(createDeleteRecordingCrossplatformMediaretentionpoliciesRequest(ids));
+  }
+
+  /**
+   * Delete media retention policies
+   * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
+   * @param ids  (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRecordingCrossplatformMediaretentionpoliciesWithHttpInfo(String ids) throws IOException {
+    return deleteRecordingCrossplatformMediaretentionpolicies(createDeleteRecordingCrossplatformMediaretentionpoliciesRequest(ids).withHttpInfo());
+  }
+
+  private DeleteRecordingCrossplatformMediaretentionpoliciesRequest createDeleteRecordingCrossplatformMediaretentionpoliciesRequest(String ids) {
+    return DeleteRecordingCrossplatformMediaretentionpoliciesRequest.builder()
+            .withIds(ids)
+    
+            .build();
+  }
+
+  /**
+   * Delete media retention policies
+   * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRecordingCrossplatformMediaretentionpolicies(DeleteRecordingCrossplatformMediaretentionpoliciesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete media retention policies
+   * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRecordingCrossplatformMediaretentionpolicies(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete a media retention policy
+   * 
+   * @param policyId Policy ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRecordingCrossplatformMediaretentionpolicy(String policyId) throws IOException, ApiException {
+     deleteRecordingCrossplatformMediaretentionpolicy(createDeleteRecordingCrossplatformMediaretentionpolicyRequest(policyId));
+  }
+
+  /**
+   * Delete a media retention policy
+   * 
+   * @param policyId Policy ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRecordingCrossplatformMediaretentionpolicyWithHttpInfo(String policyId) throws IOException {
+    return deleteRecordingCrossplatformMediaretentionpolicy(createDeleteRecordingCrossplatformMediaretentionpolicyRequest(policyId).withHttpInfo());
+  }
+
+  private DeleteRecordingCrossplatformMediaretentionpolicyRequest createDeleteRecordingCrossplatformMediaretentionpolicyRequest(String policyId) {
+    return DeleteRecordingCrossplatformMediaretentionpolicyRequest.builder()
+            .withPolicyId(policyId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a media retention policy
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRecordingCrossplatformMediaretentionpolicy(DeleteRecordingCrossplatformMediaretentionpolicyRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a media retention policy
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRecordingCrossplatformMediaretentionpolicy(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1398,6 +1559,200 @@ public class RecordingApi {
 
   
   /**
+   * Gets media retention policy list with query options to filter on name and enabled.
+   * for a less verbose response, add summary=true to this endpoint
+   * @param pageSize The total page size requested (optional, default to 25)
+   * @param pageNumber The page number requested (optional, default to 1)
+   * @param sortBy variable name requested to sort by (optional)
+   * @param expand variable name requested by expand list (optional)
+   * @param nextPage next page token (optional)
+   * @param previousPage Previous page token (optional)
+   * @param name the policy name - used for filtering results in searches. (optional)
+   * @param enabled checks to see if policy is enabled - use enabled = true or enabled = false (optional)
+   * @param summary provides a less verbose response of policy lists. (optional, default to false)
+   * @param hasErrors provides a way to fetch all policies with errors or policies that do not have errors (optional)
+   * @return PolicyEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PolicyEntityListing getRecordingCrossplatformMediaretentionpolicies(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) throws IOException, ApiException {
+    return  getRecordingCrossplatformMediaretentionpolicies(createGetRecordingCrossplatformMediaretentionpoliciesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors));
+  }
+
+  /**
+   * Gets media retention policy list with query options to filter on name and enabled.
+   * for a less verbose response, add summary=true to this endpoint
+   * @param pageSize The total page size requested (optional, default to 25)
+   * @param pageNumber The page number requested (optional, default to 1)
+   * @param sortBy variable name requested to sort by (optional)
+   * @param expand variable name requested by expand list (optional)
+   * @param nextPage next page token (optional)
+   * @param previousPage Previous page token (optional)
+   * @param name the policy name - used for filtering results in searches. (optional)
+   * @param enabled checks to see if policy is enabled - use enabled = true or enabled = false (optional)
+   * @param summary provides a less verbose response of policy lists. (optional, default to false)
+   * @param hasErrors provides a way to fetch all policies with errors or policies that do not have errors (optional)
+   * @return PolicyEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PolicyEntityListing> getRecordingCrossplatformMediaretentionpoliciesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) throws IOException {
+    return getRecordingCrossplatformMediaretentionpolicies(createGetRecordingCrossplatformMediaretentionpoliciesRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors).withHttpInfo());
+  }
+
+  private GetRecordingCrossplatformMediaretentionpoliciesRequest createGetRecordingCrossplatformMediaretentionpoliciesRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, Boolean enabled, Boolean summary, Boolean hasErrors) {
+    return GetRecordingCrossplatformMediaretentionpoliciesRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withSortBy(sortBy)
+    
+            .withExpand(expand)
+    
+            .withNextPage(nextPage)
+    
+            .withPreviousPage(previousPage)
+    
+            .withName(name)
+    
+            .withEnabled(enabled)
+    
+            .withSummary(summary)
+    
+            .withHasErrors(hasErrors)
+    
+            .build();
+  }
+
+  /**
+   * Gets media retention policy list with query options to filter on name and enabled.
+   * for a less verbose response, add summary=true to this endpoint
+   * @param request The request object
+   * @return PolicyEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PolicyEntityListing getRecordingCrossplatformMediaretentionpolicies(GetRecordingCrossplatformMediaretentionpoliciesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PolicyEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PolicyEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets media retention policy list with query options to filter on name and enabled.
+   * for a less verbose response, add summary=true to this endpoint
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PolicyEntityListing> getRecordingCrossplatformMediaretentionpolicies(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PolicyEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PolicyEntityListing> response = (ApiResponse<PolicyEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PolicyEntityListing> response = (ApiResponse<PolicyEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a media retention policy
+   * 
+   * @param policyId Policy ID (required)
+   * @return CrossPlatformPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CrossPlatformPolicy getRecordingCrossplatformMediaretentionpolicy(String policyId) throws IOException, ApiException {
+    return  getRecordingCrossplatformMediaretentionpolicy(createGetRecordingCrossplatformMediaretentionpolicyRequest(policyId));
+  }
+
+  /**
+   * Get a media retention policy
+   * 
+   * @param policyId Policy ID (required)
+   * @return CrossPlatformPolicy
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CrossPlatformPolicy> getRecordingCrossplatformMediaretentionpolicyWithHttpInfo(String policyId) throws IOException {
+    return getRecordingCrossplatformMediaretentionpolicy(createGetRecordingCrossplatformMediaretentionpolicyRequest(policyId).withHttpInfo());
+  }
+
+  private GetRecordingCrossplatformMediaretentionpolicyRequest createGetRecordingCrossplatformMediaretentionpolicyRequest(String policyId) {
+    return GetRecordingCrossplatformMediaretentionpolicyRequest.builder()
+            .withPolicyId(policyId)
+    
+            .build();
+  }
+
+  /**
+   * Get a media retention policy
+   * 
+   * @param request The request object
+   * @return CrossPlatformPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CrossPlatformPolicy getRecordingCrossplatformMediaretentionpolicy(GetRecordingCrossplatformMediaretentionpolicyRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CrossPlatformPolicy> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CrossPlatformPolicy>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a media retention policy
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CrossPlatformPolicy> getRecordingCrossplatformMediaretentionpolicy(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CrossPlatformPolicy>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CrossPlatformPolicy> response = (ApiResponse<CrossPlatformPolicy>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CrossPlatformPolicy> response = (ApiResponse<CrossPlatformPolicy>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get the status of the job associated with the job id.
    * 
    * @param jobId jobId (required)
@@ -2248,6 +2603,89 @@ public class RecordingApi {
    * 
    * @param policyId Policy ID (required)
    * @param body Policy (required)
+   * @return CrossPlatformPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CrossPlatformPolicy patchRecordingCrossplatformMediaretentionpolicy(String policyId, CrossPlatformPolicy body) throws IOException, ApiException {
+    return  patchRecordingCrossplatformMediaretentionpolicy(createPatchRecordingCrossplatformMediaretentionpolicyRequest(policyId, body));
+  }
+
+  /**
+   * Patch a media retention policy
+   * 
+   * @param policyId Policy ID (required)
+   * @param body Policy (required)
+   * @return CrossPlatformPolicy
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CrossPlatformPolicy> patchRecordingCrossplatformMediaretentionpolicyWithHttpInfo(String policyId, CrossPlatformPolicy body) throws IOException {
+    return patchRecordingCrossplatformMediaretentionpolicy(createPatchRecordingCrossplatformMediaretentionpolicyRequest(policyId, body).withHttpInfo());
+  }
+
+  private PatchRecordingCrossplatformMediaretentionpolicyRequest createPatchRecordingCrossplatformMediaretentionpolicyRequest(String policyId, CrossPlatformPolicy body) {
+    return PatchRecordingCrossplatformMediaretentionpolicyRequest.builder()
+            .withPolicyId(policyId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Patch a media retention policy
+   * 
+   * @param request The request object
+   * @return CrossPlatformPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CrossPlatformPolicy patchRecordingCrossplatformMediaretentionpolicy(PatchRecordingCrossplatformMediaretentionpolicyRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CrossPlatformPolicy> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CrossPlatformPolicy>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Patch a media retention policy
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CrossPlatformPolicy> patchRecordingCrossplatformMediaretentionpolicy(ApiRequest<CrossPlatformPolicy> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CrossPlatformPolicy>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CrossPlatformPolicy> response = (ApiResponse<CrossPlatformPolicy>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CrossPlatformPolicy> response = (ApiResponse<CrossPlatformPolicy>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Patch a media retention policy
+   * 
+   * @param policyId Policy ID (required)
+   * @param body Policy (required)
    * @return Policy
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -2567,6 +3005,85 @@ public class RecordingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BatchDownloadJobSubmissionResult> response = (ApiResponse<BatchDownloadJobSubmissionResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create media retention policy
+   * 
+   * @param body Policy (required)
+   * @return CrossPlatformPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CrossPlatformPolicy postRecordingCrossplatformMediaretentionpolicies(CrossPlatformPolicyCreate body) throws IOException, ApiException {
+    return  postRecordingCrossplatformMediaretentionpolicies(createPostRecordingCrossplatformMediaretentionpoliciesRequest(body));
+  }
+
+  /**
+   * Create media retention policy
+   * 
+   * @param body Policy (required)
+   * @return CrossPlatformPolicy
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CrossPlatformPolicy> postRecordingCrossplatformMediaretentionpoliciesWithHttpInfo(CrossPlatformPolicyCreate body) throws IOException {
+    return postRecordingCrossplatformMediaretentionpolicies(createPostRecordingCrossplatformMediaretentionpoliciesRequest(body).withHttpInfo());
+  }
+
+  private PostRecordingCrossplatformMediaretentionpoliciesRequest createPostRecordingCrossplatformMediaretentionpoliciesRequest(CrossPlatformPolicyCreate body) {
+    return PostRecordingCrossplatformMediaretentionpoliciesRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create media retention policy
+   * 
+   * @param request The request object
+   * @return CrossPlatformPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CrossPlatformPolicy postRecordingCrossplatformMediaretentionpolicies(PostRecordingCrossplatformMediaretentionpoliciesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CrossPlatformPolicy> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CrossPlatformPolicy>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create media retention policy
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CrossPlatformPolicy> postRecordingCrossplatformMediaretentionpolicies(ApiRequest<CrossPlatformPolicyCreate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CrossPlatformPolicy>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CrossPlatformPolicy> response = (ApiResponse<CrossPlatformPolicy>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CrossPlatformPolicy> response = (ApiResponse<CrossPlatformPolicy>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3298,6 +3815,89 @@ public class RecordingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Recording> response = (ApiResponse<Recording>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update a media retention policy
+   * 
+   * @param policyId Policy ID (required)
+   * @param body Policy (required)
+   * @return CrossPlatformPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CrossPlatformPolicy putRecordingCrossplatformMediaretentionpolicy(String policyId, CrossPlatformPolicy body) throws IOException, ApiException {
+    return  putRecordingCrossplatformMediaretentionpolicy(createPutRecordingCrossplatformMediaretentionpolicyRequest(policyId, body));
+  }
+
+  /**
+   * Update a media retention policy
+   * 
+   * @param policyId Policy ID (required)
+   * @param body Policy (required)
+   * @return CrossPlatformPolicy
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CrossPlatformPolicy> putRecordingCrossplatformMediaretentionpolicyWithHttpInfo(String policyId, CrossPlatformPolicy body) throws IOException {
+    return putRecordingCrossplatformMediaretentionpolicy(createPutRecordingCrossplatformMediaretentionpolicyRequest(policyId, body).withHttpInfo());
+  }
+
+  private PutRecordingCrossplatformMediaretentionpolicyRequest createPutRecordingCrossplatformMediaretentionpolicyRequest(String policyId, CrossPlatformPolicy body) {
+    return PutRecordingCrossplatformMediaretentionpolicyRequest.builder()
+            .withPolicyId(policyId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update a media retention policy
+   * 
+   * @param request The request object
+   * @return CrossPlatformPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CrossPlatformPolicy putRecordingCrossplatformMediaretentionpolicy(PutRecordingCrossplatformMediaretentionpolicyRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CrossPlatformPolicy> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CrossPlatformPolicy>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a media retention policy
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CrossPlatformPolicy> putRecordingCrossplatformMediaretentionpolicy(ApiRequest<CrossPlatformPolicy> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CrossPlatformPolicy>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CrossPlatformPolicy> response = (ApiResponse<CrossPlatformPolicy>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CrossPlatformPolicy> response = (ApiResponse<CrossPlatformPolicy>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -99,7 +99,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchConversationsMessageParticipantAttributes**](ConversationsApi.html#patchConversationsMessageParticipantAttributes) | Update the attributes on a conversation participant. |
 | [**patchConversationsMessageParticipantCommunication**](ConversationsApi.html#patchConversationsMessageParticipantCommunication) | Update conversation participant&#39;s communication by disconnecting it. |
 | [**patchConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsFacebookIntegrationId) | Update Facebook messaging integration |
-| [**patchConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsWhatsappIntegrationId) | Activate a WhatsApp messaging integration. |
+| [**patchConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsTwitterIntegrationId) | Update Twitter messaging integration |
+| [**patchConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsWhatsappIntegrationId) | Update or activate a WhatsApp messaging integration. |
 | [**postAnalyticsConversationDetailsProperties**](ConversationsApi.html#postAnalyticsConversationDetailsProperties) | Index conversation properties |
 | [**postAnalyticsConversationsAggregatesQuery**](ConversationsApi.html#postAnalyticsConversationsAggregatesQuery) | Query for conversation aggregates |
 | [**postAnalyticsConversationsDetailsJobs**](ConversationsApi.html#postAnalyticsConversationsDetailsJobs) | Query for conversation details asynchronously |
@@ -6032,6 +6033,71 @@ try {
 
 [**FacebookIntegration**](FacebookIntegration.html)
 
+<a name="patchConversationsMessagingIntegrationsTwitterIntegrationId"></a>
+
+# **patchConversationsMessagingIntegrationsTwitterIntegrationId**
+
+
+
+> [TwitterIntegration](TwitterIntegration.html) patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body)
+
+Update Twitter messaging integration
+
+
+
+Wraps PATCH /api/v2/conversations/messaging/integrations/twitter/{integrationId}  
+
+Requires ALL permissions: 
+
+* messaging:integration:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration ID
+TwitterIntegrationRequest body = new TwitterIntegrationRequest(); // TwitterIntegrationRequest | TwitterIntegrationRequest
+try {
+    TwitterIntegration result = apiInstance.patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationsMessagingIntegrationsTwitterIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration ID | 
+| **body** | [**TwitterIntegrationRequest**](TwitterIntegrationRequest.html)| TwitterIntegrationRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TwitterIntegration**](TwitterIntegration.html)
+
 <a name="patchConversationsMessagingIntegrationsWhatsappIntegrationId"></a>
 
 # **patchConversationsMessagingIntegrationsWhatsappIntegrationId**
@@ -6040,7 +6106,7 @@ try {
 
 > [WhatsAppIntegration](WhatsAppIntegration.html) patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, body)
 
-Activate a WhatsApp messaging integration.
+Update or activate a WhatsApp messaging integration.
 
 The following steps are required in order to fully activate a Whatsapp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
 

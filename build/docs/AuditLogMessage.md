@@ -9,6 +9,7 @@ title: AuditLogMessage
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | Id of the audit message. |  [optional] |
+| **userHomeOrgId** | <!----><!---->**String**<!----> | Home Organization Id associated with this audit message. |  [optional] |
 | **user** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | User associated with this audit message. |  [optional] |
 | **client** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | Client associated with this audit message. |  [optional] |
 | **remoteIp** | <!----><!---->**List&lt;String&gt;**<!----> | List of IP addresses of systems that originated or handled the request. |  [optional] |
@@ -34,6 +35,7 @@ title: AuditLogMessage
 | CONTACTCENTER | &quot;ContactCenter&quot; |
 | CONTENTMANAGEMENT | &quot;ContentManagement&quot; |
 | PEOPLEPERMISSIONS | &quot;PeoplePermissions&quot; |
+| PRESENCE | &quot;Presence&quot; |
 | QUALITY | &quot;Quality&quot; |
 | LANGUAGEUNDERSTANDING | &quot;LanguageUnderstanding&quot; |
 | TOPICSDEFINITIONS | &quot;TopicsDefinitions&quot; |
@@ -84,6 +86,7 @@ title: AuditLogMessage
 | DEAUTHORIZE | &quot;Deauthorize&quot; |
 | AUTHENTICATE | &quot;Authenticate&quot; |
 | CHANGEPASSWORD | &quot;ChangePassword&quot; |
+| REVOKE | &quot;Revoke&quot; |
 {: class="table table-striped"}
 
 
@@ -99,12 +102,16 @@ title: AuditLogMessage
 | RECORDING | &quot;Recording&quot; |
 | ROLE | &quot;Role&quot; |
 | VOICEMAILUSERPOLICY | &quot;VoicemailUserPolicy&quot; |
+| USERPRESENCE | &quot;UserPresence&quot; |
 | WRAPUPCODE | &quot;WrapupCode&quot; |
+| MAXORGROUTINGUTILIZATIONCAPACITY | &quot;MaxOrgRoutingUtilizationCapacity&quot; |
 | ACCESSTOKEN | &quot;AccessToken&quot; |
 | OAUTHCLIENT | &quot;OAuthClient&quot; |
 | OAUTHCLIENTAUTHORIZATION | &quot;OAuthClientAuthorization&quot; |
 | AUTHORGANIZATION | &quot;AuthOrganization&quot; |
 | AUTHUSER | &quot;AuthUser&quot; |
+| ORGANIZATIONAUTHORIZATIONTRUST | &quot;OrganizationAuthorizationTrust&quot; |
+| ORGANIZATIONAUTHORIZATIONUSERTRUST | &quot;OrganizationAuthorizationUserTrust&quot; |
 | BULKACTIONS | &quot;BulkActions&quot; |
 | FEEDBACK | &quot;Feedback&quot; |
 | TOPIC | &quot;Topic&quot; |

@@ -10,7 +10,7 @@ title: WhatsAppIntegrationUpdateRequest
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> | WhatsApp Integration name |  [optional] |
-| **action** | [**ActionEnum**](#ActionEnum)<!----> | The action used to activate and then confirm a WhatsApp Integration. |  |
+| **action** | [**ActionEnum**](#ActionEnum)<!----> | The action used to activate and then confirm a WhatsApp Integration. |  [optional] |
 | **authenticationMethod** | [**AuthenticationMethodEnum**](#AuthenticationMethodEnum)<!----> | The authentication method used to confirm a WhatsApp Integration activation. If action is set to Activate, then authenticationMethod is a required field.  |  [optional] |
 | **confirmationCode** | <!----><!---->**String**<!----> | The confirmation code sent by Whatsapp to you during the activation step. If action is set to Confirm, then confirmationCode is a required field. |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |

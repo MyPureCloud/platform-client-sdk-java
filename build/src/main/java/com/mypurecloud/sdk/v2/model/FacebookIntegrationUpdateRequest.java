@@ -14,8 +14,36 @@ import java.io.Serializable;
 
 public class FacebookIntegrationUpdateRequest  implements Serializable {
   
+  private String id = null;
+  private String name = null;
   private String pageAccessToken = null;
   private String userAccessToken = null;
+  private String selfUri = null;
+
+  
+  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  @JsonProperty("id")
+  public String getId() {
+    return id;
+  }
+
+  
+  /**
+   * The name of the Facebook Integration
+   **/
+  public FacebookIntegrationUpdateRequest name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The name of the Facebook Integration")
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
 
   
   /**
@@ -54,6 +82,13 @@ public class FacebookIntegrationUpdateRequest  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The URI for this object")
+  @JsonProperty("selfUri")
+  public String getSelfUri() {
+    return selfUri;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -64,13 +99,16 @@ public class FacebookIntegrationUpdateRequest  implements Serializable {
       return false;
     }
     FacebookIntegrationUpdateRequest facebookIntegrationUpdateRequest = (FacebookIntegrationUpdateRequest) o;
-    return Objects.equals(this.pageAccessToken, facebookIntegrationUpdateRequest.pageAccessToken) &&
-        Objects.equals(this.userAccessToken, facebookIntegrationUpdateRequest.userAccessToken);
+    return Objects.equals(this.id, facebookIntegrationUpdateRequest.id) &&
+        Objects.equals(this.name, facebookIntegrationUpdateRequest.name) &&
+        Objects.equals(this.pageAccessToken, facebookIntegrationUpdateRequest.pageAccessToken) &&
+        Objects.equals(this.userAccessToken, facebookIntegrationUpdateRequest.userAccessToken) &&
+        Objects.equals(this.selfUri, facebookIntegrationUpdateRequest.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(pageAccessToken, userAccessToken);
+    return Objects.hash(id, name, pageAccessToken, userAccessToken, selfUri);
   }
 
   @Override
@@ -78,8 +116,11 @@ public class FacebookIntegrationUpdateRequest  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class FacebookIntegrationUpdateRequest {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    pageAccessToken: ").append(toIndentedString(pageAccessToken)).append("\n");
     sb.append("    userAccessToken: ").append(toIndentedString(userAccessToken)).append("\n");
+    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

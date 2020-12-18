@@ -3821,7 +3821,7 @@ public class RoutingApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional, default to name)
    * @param sortOrder Sort order (optional, default to ascending)
-   * @param name Name (optional)
+   * @param name Wrapup code&#39;s name (&#39;Sort by&#39; param is ignored unless this field is provided) (optional)
    * @return WrapupCodeEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3837,7 +3837,7 @@ public class RoutingApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional, default to name)
    * @param sortOrder Sort order (optional, default to ascending)
-   * @param name Name (optional)
+   * @param name Wrapup code&#39;s name (&#39;Sort by&#39; param is ignored unless this field is provided) (optional)
    * @return WrapupCodeEntityListing
    * @throws IOException if the request fails to be processed
    */

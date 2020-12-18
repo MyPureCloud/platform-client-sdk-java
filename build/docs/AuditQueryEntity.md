@@ -25,12 +25,16 @@ title: AuditQueryEntity
 | RECORDING | &quot;Recording&quot; |
 | ROLE | &quot;Role&quot; |
 | VOICEMAILUSERPOLICY | &quot;VoicemailUserPolicy&quot; |
+| USERPRESENCE | &quot;UserPresence&quot; |
 | WRAPUPCODE | &quot;WrapupCode&quot; |
+| MAXORGROUTINGUTILIZATIONCAPACITY | &quot;MaxOrgRoutingUtilizationCapacity&quot; |
 | ACCESSTOKEN | &quot;AccessToken&quot; |
 | OAUTHCLIENT | &quot;OAuthClient&quot; |
 | OAUTHCLIENTAUTHORIZATION | &quot;OAuthClientAuthorization&quot; |
 | AUTHORGANIZATION | &quot;AuthOrganization&quot; |
 | AUTHUSER | &quot;AuthUser&quot; |
+| ORGANIZATIONAUTHORIZATIONTRUST | &quot;OrganizationAuthorizationTrust&quot; |
+| ORGANIZATIONAUTHORIZATIONUSERTRUST | &quot;OrganizationAuthorizationUserTrust&quot; |
 | BULKACTIONS | &quot;BulkActions&quot; |
 | FEEDBACK | &quot;Feedback&quot; |
 | TOPIC | &quot;Topic&quot; |
@@ -108,6 +112,7 @@ title: AuditQueryEntity
 | DEAUTHORIZE | &quot;Deauthorize&quot; |
 | AUTHENTICATE | &quot;Authenticate&quot; |
 | CHANGEPASSWORD | &quot;ChangePassword&quot; |
+| REVOKE | &quot;Revoke&quot; |
 {: class="table table-striped"}
 
 

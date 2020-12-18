@@ -89,7 +89,8 @@ public class JourneyAggregationQuery  implements Serializable {
     NWEBACTIONSQUALIFIEDOUTSIDESCHEDULE("nWebActionsQualifiedOutsideSchedule"),
     NWEBACTIONSREJECTED("nWebActionsRejected"),
     NWEBACTIONSSTARTED("nWebActionsStarted"),
-    NWEBACTIONSTIMEDOUT("nWebActionsTimedout");
+    NWEBACTIONSTIMEDOUT("nWebActionsTimedout"),
+    NWEBACTIONSFREQUENCYCAPREACHED("nWebActionsFrequencyCapReached");
 
     private String value;
 

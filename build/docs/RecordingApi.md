@@ -9,6 +9,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**deleteConversationRecordingAnnotation**](RecordingApi.html#deleteConversationRecordingAnnotation) | Delete annotation |
 | [**deleteOrphanrecording**](RecordingApi.html#deleteOrphanrecording) | Deletes a single orphan recording |
+| [**deleteRecordingCrossplatformMediaretentionpolicies**](RecordingApi.html#deleteRecordingCrossplatformMediaretentionpolicies) | Delete media retention policies |
+| [**deleteRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#deleteRecordingCrossplatformMediaretentionpolicy) | Delete a media retention policy |
 | [**deleteRecordingJob**](RecordingApi.html#deleteRecordingJob) | Delete the recording bulk job |
 | [**deleteRecordingMediaretentionpolicies**](RecordingApi.html#deleteRecordingMediaretentionpolicies) | Delete media retention policies |
 | [**deleteRecordingMediaretentionpolicy**](RecordingApi.html#deleteRecordingMediaretentionpolicy) | Delete a media retention policy |
@@ -22,6 +24,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOrphanrecordingMedia**](RecordingApi.html#getOrphanrecordingMedia) | Gets the media of a single orphan recording |
 | [**getOrphanrecordings**](RecordingApi.html#getOrphanrecordings) | Gets all orphan recordings |
 | [**getRecordingBatchrequest**](RecordingApi.html#getRecordingBatchrequest) | Get the status and results for a batch request job, only the user that submitted the job may retrieve results |
+| [**getRecordingCrossplatformMediaretentionpolicies**](RecordingApi.html#getRecordingCrossplatformMediaretentionpolicies) | Gets media retention policy list with query options to filter on name and enabled. |
+| [**getRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#getRecordingCrossplatformMediaretentionpolicy) | Get a media retention policy |
 | [**getRecordingJob**](RecordingApi.html#getRecordingJob) | Get the status of the job associated with the job id. |
 | [**getRecordingJobs**](RecordingApi.html#getRecordingJobs) | Get the status of all jobs within the user&#39;s organization |
 | [**getRecordingLocalkeysSetting**](RecordingApi.html#getRecordingLocalkeysSetting) | Get the local encryption settings |
@@ -32,10 +36,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRecordingRecordingkeysRotationschedule**](RecordingApi.html#getRecordingRecordingkeysRotationschedule) | Get key rotation schedule |
 | [**getRecordingSettings**](RecordingApi.html#getRecordingSettings) | Get the Recording Settings for the Organization |
 | [**getRecordingsScreensessions**](RecordingApi.html#getRecordingsScreensessions) | Retrieves a paged listing of screen recording sessions |
+| [**patchRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#patchRecordingCrossplatformMediaretentionpolicy) | Patch a media retention policy |
 | [**patchRecordingMediaretentionpolicy**](RecordingApi.html#patchRecordingMediaretentionpolicy) | Patch a media retention policy |
 | [**patchRecordingsScreensession**](RecordingApi.html#patchRecordingsScreensession) | Update a screen recording session |
 | [**postConversationRecordingAnnotations**](RecordingApi.html#postConversationRecordingAnnotations) | Create annotation |
 | [**postRecordingBatchrequests**](RecordingApi.html#postRecordingBatchrequests) | Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. |
+| [**postRecordingCrossplatformMediaretentionpolicies**](RecordingApi.html#postRecordingCrossplatformMediaretentionpolicies) | Create media retention policy |
 | [**postRecordingJobs**](RecordingApi.html#postRecordingJobs) | Create a recording bulk job |
 | [**postRecordingLocalkeys**](RecordingApi.html#postRecordingLocalkeys) | create a local recording key |
 | [**postRecordingLocalkeysSettings**](RecordingApi.html#postRecordingLocalkeysSettings) | create settings for local key creation |
@@ -45,6 +51,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putConversationRecording**](RecordingApi.html#putConversationRecording) | Updates the retention records on a recording. |
 | [**putConversationRecordingAnnotation**](RecordingApi.html#putConversationRecordingAnnotation) | Update annotation |
 | [**putOrphanrecording**](RecordingApi.html#putOrphanrecording) | Updates an orphan recording to a regular recording with retention values |
+| [**putRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#putRecordingCrossplatformMediaretentionpolicy) | Update a media retention policy |
 | [**putRecordingJob**](RecordingApi.html#putRecordingJob) | Execute the recording bulk job. |
 | [**putRecordingLocalkeysSetting**](RecordingApi.html#putRecordingLocalkeysSetting) | Update the local encryption settings |
 | [**putRecordingMediaretentionpolicy**](RecordingApi.html#putRecordingMediaretentionpolicy) | Update a media retention policy |
@@ -181,6 +188,130 @@ try {
 ### Return type
 
 [**OrphanRecording**](OrphanRecording.html)
+
+<a name="deleteRecordingCrossplatformMediaretentionpolicies"></a>
+
+# **deleteRecordingCrossplatformMediaretentionpolicies**
+
+
+
+> Void deleteRecordingCrossplatformMediaretentionpolicies(ids)
+
+Delete media retention policies
+
+Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
+
+Wraps DELETE /api/v2/recording/crossplatform/mediaretentionpolicies  
+
+Requires ANY permissions: 
+
+* recording:crossPlatformRetentionPolicy:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+String ids = "ids_example"; // String | 
+try {
+    apiInstance.deleteRecordingCrossplatformMediaretentionpolicies(ids);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#deleteRecordingCrossplatformMediaretentionpolicies");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ids** | **String**|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteRecordingCrossplatformMediaretentionpolicy"></a>
+
+# **deleteRecordingCrossplatformMediaretentionpolicy**
+
+
+
+> Void deleteRecordingCrossplatformMediaretentionpolicy(policyId)
+
+Delete a media retention policy
+
+
+
+Wraps DELETE /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}  
+
+Requires ANY permissions: 
+
+* recording:crossPlatformRetentionPolicy:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+String policyId = "policyId_example"; // String | Policy ID
+try {
+    apiInstance.deleteRecordingCrossplatformMediaretentionpolicy(policyId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#deleteRecordingCrossplatformMediaretentionpolicy");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **policyId** | **String**| Policy ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="deleteRecordingJob"></a>
 
@@ -1052,6 +1183,150 @@ try {
 
 [**BatchDownloadJobStatusResult**](BatchDownloadJobStatusResult.html)
 
+<a name="getRecordingCrossplatformMediaretentionpolicies"></a>
+
+# **getRecordingCrossplatformMediaretentionpolicies**
+
+
+
+> [PolicyEntityListing](PolicyEntityListing.html) getRecordingCrossplatformMediaretentionpolicies(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors)
+
+Gets media retention policy list with query options to filter on name and enabled.
+
+for a less verbose response, add summary=true to this endpoint
+
+Wraps GET /api/v2/recording/crossplatform/mediaretentionpolicies  
+
+Requires ANY permissions: 
+
+* recording:crossPlatformRetentionPolicy:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+Integer pageSize = 25; // Integer | The total page size requested
+Integer pageNumber = 1; // Integer | The page number requested
+String sortBy = "sortBy_example"; // String | variable name requested to sort by
+List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
+String nextPage = "nextPage_example"; // String | next page token
+String previousPage = "previousPage_example"; // String | Previous page token
+String name = "name_example"; // String | the policy name - used for filtering results in searches.
+Boolean enabled = true; // Boolean | checks to see if policy is enabled - use enabled = true or enabled = false
+Boolean summary = false; // Boolean | provides a less verbose response of policy lists.
+Boolean hasErrors = true; // Boolean | provides a way to fetch all policies with errors or policies that do not have errors
+try {
+    PolicyEntityListing result = apiInstance.getRecordingCrossplatformMediaretentionpolicies(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, enabled, summary, hasErrors);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#getRecordingCrossplatformMediaretentionpolicies");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
+| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
+| **sortBy** | **String**| variable name requested to sort by | [optional] 
+| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
+| **nextPage** | **String**| next page token | [optional] 
+| **previousPage** | **String**| Previous page token | [optional] 
+| **name** | **String**| the policy name - used for filtering results in searches. | [optional] 
+| **enabled** | **Boolean**| checks to see if policy is enabled - use enabled = true or enabled = false | [optional] 
+| **summary** | **Boolean**| provides a less verbose response of policy lists. | [optional] [default to false] 
+| **hasErrors** | **Boolean**| provides a way to fetch all policies with errors or policies that do not have errors | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PolicyEntityListing**](PolicyEntityListing.html)
+
+<a name="getRecordingCrossplatformMediaretentionpolicy"></a>
+
+# **getRecordingCrossplatformMediaretentionpolicy**
+
+
+
+> [CrossPlatformPolicy](CrossPlatformPolicy.html) getRecordingCrossplatformMediaretentionpolicy(policyId)
+
+Get a media retention policy
+
+
+
+Wraps GET /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}  
+
+Requires ANY permissions: 
+
+* recording:crossPlatformRetentionPolicy:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+String policyId = "policyId_example"; // String | Policy ID
+try {
+    CrossPlatformPolicy result = apiInstance.getRecordingCrossplatformMediaretentionpolicy(policyId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#getRecordingCrossplatformMediaretentionpolicy");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **policyId** | **String**| Policy ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CrossPlatformPolicy**](CrossPlatformPolicy.html)
+
 <a name="getRecordingJob"></a>
 
 # **getRecordingJob**
@@ -1707,6 +1982,71 @@ try {
 
 [**ScreenRecordingSessionListing**](ScreenRecordingSessionListing.html)
 
+<a name="patchRecordingCrossplatformMediaretentionpolicy"></a>
+
+# **patchRecordingCrossplatformMediaretentionpolicy**
+
+
+
+> [CrossPlatformPolicy](CrossPlatformPolicy.html) patchRecordingCrossplatformMediaretentionpolicy(policyId, body)
+
+Patch a media retention policy
+
+
+
+Wraps PATCH /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}  
+
+Requires ANY permissions: 
+
+* recording:crossPlatformRetentionPolicy:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+String policyId = "policyId_example"; // String | Policy ID
+CrossPlatformPolicy body = new CrossPlatformPolicy(); // CrossPlatformPolicy | Policy
+try {
+    CrossPlatformPolicy result = apiInstance.patchRecordingCrossplatformMediaretentionpolicy(policyId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#patchRecordingCrossplatformMediaretentionpolicy");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **policyId** | **String**| Policy ID | 
+| **body** | [**CrossPlatformPolicy**](CrossPlatformPolicy.html)| Policy | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CrossPlatformPolicy**](CrossPlatformPolicy.html)
+
 <a name="patchRecordingMediaretentionpolicy"></a>
 
 # **patchRecordingMediaretentionpolicy**
@@ -1964,6 +2304,69 @@ try {
 ### Return type
 
 [**BatchDownloadJobSubmissionResult**](BatchDownloadJobSubmissionResult.html)
+
+<a name="postRecordingCrossplatformMediaretentionpolicies"></a>
+
+# **postRecordingCrossplatformMediaretentionpolicies**
+
+
+
+> [CrossPlatformPolicy](CrossPlatformPolicy.html) postRecordingCrossplatformMediaretentionpolicies(body)
+
+Create media retention policy
+
+
+
+Wraps POST /api/v2/recording/crossplatform/mediaretentionpolicies  
+
+Requires ANY permissions: 
+
+* recording:crossPlatformRetentionPolicy:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+CrossPlatformPolicyCreate body = new CrossPlatformPolicyCreate(); // CrossPlatformPolicyCreate | Policy
+try {
+    CrossPlatformPolicy result = apiInstance.postRecordingCrossplatformMediaretentionpolicies(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#postRecordingCrossplatformMediaretentionpolicies");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CrossPlatformPolicyCreate**](CrossPlatformPolicyCreate.html)| Policy | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CrossPlatformPolicy**](CrossPlatformPolicy.html)
 
 <a name="postRecordingJobs"></a>
 
@@ -2540,6 +2943,71 @@ try {
 ### Return type
 
 [**Recording**](Recording.html)
+
+<a name="putRecordingCrossplatformMediaretentionpolicy"></a>
+
+# **putRecordingCrossplatformMediaretentionpolicy**
+
+
+
+> [CrossPlatformPolicy](CrossPlatformPolicy.html) putRecordingCrossplatformMediaretentionpolicy(policyId, body)
+
+Update a media retention policy
+
+
+
+Wraps PUT /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}  
+
+Requires ANY permissions: 
+
+* recording:crossPlatformRetentionPolicy:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+String policyId = "policyId_example"; // String | Policy ID
+CrossPlatformPolicy body = new CrossPlatformPolicy(); // CrossPlatformPolicy | Policy
+try {
+    CrossPlatformPolicy result = apiInstance.putRecordingCrossplatformMediaretentionpolicy(policyId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#putRecordingCrossplatformMediaretentionpolicy");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **policyId** | **String**| Policy ID | 
+| **body** | [**CrossPlatformPolicy**](CrossPlatformPolicy.html)| Policy | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CrossPlatformPolicy**](CrossPlatformPolicy.html)
 
 <a name="putRecordingJob"></a>
 

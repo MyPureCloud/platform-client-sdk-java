@@ -2986,7 +2986,7 @@ Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 String sortBy = "name"; // String | Sort by
 String sortOrder = "ascending"; // String | Sort order
-String name = "name_example"; // String | Name
+String name = "name_example"; // String | Wrapup code's name ('Sort by' param is ignored unless this field is provided)
 try {
     WrapupCodeEntityListing result = apiInstance.getRoutingWrapupcodes(pageSize, pageNumber, sortBy, sortOrder, name);
     System.out.println(result);
@@ -3005,7 +3005,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortBy** | **String**| Sort by | [optional] [default to name]<br />**Values**: name, id 
 | **sortOrder** | **String**| Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending 
-| **name** | **String**| Name | [optional] 
+| **name** | **String**| Wrapup code&#39;s name (&#39;Sort by&#39; param is ignored unless this field is provided) | [optional] 
 {: class="table-striped"}
 
 

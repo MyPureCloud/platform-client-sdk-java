@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ConversationProperties;
 import com.mypurecloud.sdk.v2.model.NumericRange;
+import com.mypurecloud.sdk.v2.model.Transcripts;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -503,6 +504,45 @@ public class ViewFilter  implements Serializable {
   }
   private List<RequestedRoutingTypesEnum> requestedRoutingTypes = new ArrayList<RequestedRoutingTypesEnum>();
   private Boolean hasAgentAssistId = null;
+  private List<Transcripts> transcripts = new ArrayList<Transcripts>();
+  private List<String> transcriptLanguages = new ArrayList<String>();
+
+  /**
+   * Gets or Sets participantPurposes
+   */
+  public enum ParticipantPurposesEnum {
+    INTERNAL("internal"),
+    EXTERNAL("external");
+
+    private String value;
+
+    ParticipantPurposesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ParticipantPurposesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ParticipantPurposesEnum value : ParticipantPurposesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ParticipantPurposesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<ParticipantPurposesEnum> participantPurposes = new ArrayList<ParticipantPurposesEnum>();
+  private Boolean showFirstQueue = null;
+  private List<String> teamIds = new ArrayList<String>();
+  private List<String> filterUsersByTeamIds = new ArrayList<String>();
 
   
   /**
@@ -1999,6 +2039,114 @@ public class ViewFilter  implements Serializable {
   }
 
   
+  /**
+   * A list of transcript contents requested
+   **/
+  public ViewFilter transcripts(List<Transcripts> transcripts) {
+    this.transcripts = transcripts;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of transcript contents requested")
+  @JsonProperty("transcripts")
+  public List<Transcripts> getTranscripts() {
+    return transcripts;
+  }
+  public void setTranscripts(List<Transcripts> transcripts) {
+    this.transcripts = transcripts;
+  }
+
+  
+  /**
+   * A list of transcript languages requested
+   **/
+  public ViewFilter transcriptLanguages(List<String> transcriptLanguages) {
+    this.transcriptLanguages = transcriptLanguages;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of transcript languages requested")
+  @JsonProperty("transcriptLanguages")
+  public List<String> getTranscriptLanguages() {
+    return transcriptLanguages;
+  }
+  public void setTranscriptLanguages(List<String> transcriptLanguages) {
+    this.transcriptLanguages = transcriptLanguages;
+  }
+
+  
+  /**
+   * A list of participant purpose requested
+   **/
+  public ViewFilter participantPurposes(List<ParticipantPurposesEnum> participantPurposes) {
+    this.participantPurposes = participantPurposes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of participant purpose requested")
+  @JsonProperty("participantPurposes")
+  public List<ParticipantPurposesEnum> getParticipantPurposes() {
+    return participantPurposes;
+  }
+  public void setParticipantPurposes(List<ParticipantPurposesEnum> participantPurposes) {
+    this.participantPurposes = participantPurposes;
+  }
+
+  
+  /**
+   * Indicates filtering for first queue data
+   **/
+  public ViewFilter showFirstQueue(Boolean showFirstQueue) {
+    this.showFirstQueue = showFirstQueue;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates filtering for first queue data")
+  @JsonProperty("showFirstQueue")
+  public Boolean getShowFirstQueue() {
+    return showFirstQueue;
+  }
+  public void setShowFirstQueue(Boolean showFirstQueue) {
+    this.showFirstQueue = showFirstQueue;
+  }
+
+  
+  /**
+   * The team ids used to filter the view data
+   **/
+  public ViewFilter teamIds(List<String> teamIds) {
+    this.teamIds = teamIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The team ids used to filter the view data")
+  @JsonProperty("teamIds")
+  public List<String> getTeamIds() {
+    return teamIds;
+  }
+  public void setTeamIds(List<String> teamIds) {
+    this.teamIds = teamIds;
+  }
+
+  
+  /**
+   * The team ids are used to fetch associated users for the view
+   **/
+  public ViewFilter filterUsersByTeamIds(List<String> filterUsersByTeamIds) {
+    this.filterUsersByTeamIds = filterUsersByTeamIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The team ids are used to fetch associated users for the view")
+  @JsonProperty("filterUsersByTeamIds")
+  public List<String> getFilterUsersByTeamIds() {
+    return filterUsersByTeamIds;
+  }
+  public void setFilterUsersByTeamIds(List<String> filterUsersByTeamIds) {
+    this.filterUsersByTeamIds = filterUsersByTeamIds;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -2091,12 +2239,18 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.callbackInterval, viewFilter.callbackInterval) &&
         Objects.equals(this.usedRoutingTypes, viewFilter.usedRoutingTypes) &&
         Objects.equals(this.requestedRoutingTypes, viewFilter.requestedRoutingTypes) &&
-        Objects.equals(this.hasAgentAssistId, viewFilter.hasAgentAssistId);
+        Objects.equals(this.hasAgentAssistId, viewFilter.hasAgentAssistId) &&
+        Objects.equals(this.transcripts, viewFilter.transcripts) &&
+        Objects.equals(this.transcriptLanguages, viewFilter.transcriptLanguages) &&
+        Objects.equals(this.participantPurposes, viewFilter.participantPurposes) &&
+        Objects.equals(this.showFirstQueue, viewFilter.showFirstQueue) &&
+        Objects.equals(this.teamIds, viewFilter.teamIds) &&
+        Objects.equals(this.filterUsersByTeamIds, viewFilter.filterUsersByTeamIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds);
   }
 
   @Override
@@ -2187,6 +2341,12 @@ public class ViewFilter  implements Serializable {
     sb.append("    usedRoutingTypes: ").append(toIndentedString(usedRoutingTypes)).append("\n");
     sb.append("    requestedRoutingTypes: ").append(toIndentedString(requestedRoutingTypes)).append("\n");
     sb.append("    hasAgentAssistId: ").append(toIndentedString(hasAgentAssistId)).append("\n");
+    sb.append("    transcripts: ").append(toIndentedString(transcripts)).append("\n");
+    sb.append("    transcriptLanguages: ").append(toIndentedString(transcriptLanguages)).append("\n");
+    sb.append("    participantPurposes: ").append(toIndentedString(participantPurposes)).append("\n");
+    sb.append("    showFirstQueue: ").append(toIndentedString(showFirstQueue)).append("\n");
+    sb.append("    teamIds: ").append(toIndentedString(teamIds)).append("\n");
+    sb.append("    filterUsersByTeamIds: ").append(toIndentedString(filterUsersByTeamIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -273,9 +273,9 @@ public class GetCoachingAppointmentsRequest {
 	} 
 
 	public enum overdueValues { 
-		ANY("Any"), 
 		TRUE("True"), 
-		FALSE("False");
+		FALSE("False"), 
+		ANY("Any");
 
 		private String value;
 

@@ -28,12 +28,16 @@ public class AuditQueryEntity  implements Serializable {
     RECORDING("Recording"),
     ROLE("Role"),
     VOICEMAILUSERPOLICY("VoicemailUserPolicy"),
+    USERPRESENCE("UserPresence"),
     WRAPUPCODE("WrapupCode"),
+    MAXORGROUTINGUTILIZATIONCAPACITY("MaxOrgRoutingUtilizationCapacity"),
     ACCESSTOKEN("AccessToken"),
     OAUTHCLIENT("OAuthClient"),
     OAUTHCLIENTAUTHORIZATION("OAuthClientAuthorization"),
     AUTHORGANIZATION("AuthOrganization"),
     AUTHUSER("AuthUser"),
+    ORGANIZATIONAUTHORIZATIONTRUST("OrganizationAuthorizationTrust"),
+    ORGANIZATIONAUTHORIZATIONUSERTRUST("OrganizationAuthorizationUserTrust"),
     BULKACTIONS("BulkActions"),
     FEEDBACK("Feedback"),
     TOPIC("Topic"),
@@ -133,7 +137,8 @@ public class AuditQueryEntity  implements Serializable {
     AUTHORIZE("Authorize"),
     DEAUTHORIZE("Deauthorize"),
     AUTHENTICATE("Authenticate"),
-    CHANGEPASSWORD("ChangePassword");
+    CHANGEPASSWORD("ChangePassword"),
+    REVOKE("Revoke");
 
     private String value;
 

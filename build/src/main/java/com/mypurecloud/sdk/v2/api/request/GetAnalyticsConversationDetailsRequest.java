@@ -69,6 +69,7 @@ import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
 import com.mypurecloud.sdk.v2.model.ConsultTransferResponse;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationUpdateRequest;
+import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.PropertyIndexRequest;
 import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
@@ -103,7 +104,6 @@ import com.mypurecloud.sdk.v2.model.SendAgentlessOutboundMessageRequest;
 import com.mypurecloud.sdk.v2.model.SendAgentlessOutboundMessageResponse;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.LineIntegrationRequest;
-import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
 

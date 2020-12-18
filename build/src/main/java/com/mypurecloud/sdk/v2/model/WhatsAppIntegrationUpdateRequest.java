@@ -113,7 +113,7 @@ public class WhatsAppIntegrationUpdateRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The action used to activate and then confirm a WhatsApp Integration.")
+  @ApiModelProperty(example = "null", value = "The action used to activate and then confirm a WhatsApp Integration.")
   @JsonProperty("action")
   public ActionEnum getAction() {
     return action;

@@ -91,6 +91,12 @@ title: ViewFilter
 | **usedRoutingTypes** | <!---->[**List&lt;UsedRoutingTypesEnum&gt;**](#UsedRoutingTypesEnum)<!----> | A list of routing types used |  [optional] |
 | **requestedRoutingTypes** | <!---->[**List&lt;RequestedRoutingTypesEnum&gt;**](#RequestedRoutingTypesEnum)<!----> | A list of routing types requested |  [optional] |
 | **hasAgentAssistId** | <!----><!---->**Boolean**<!----> | Indicates filtering for agent assist id |  [optional] |
+| **transcripts** | <!----><!---->[**List&lt;Transcripts&gt;**](Transcripts.html)<!----> | A list of transcript contents requested |  [optional] |
+| **transcriptLanguages** | <!----><!---->**List&lt;String&gt;**<!----> | A list of transcript languages requested |  [optional] |
+| **participantPurposes** | <!---->[**List&lt;ParticipantPurposesEnum&gt;**](#ParticipantPurposesEnum)<!----> | A list of participant purpose requested |  [optional] |
+| **showFirstQueue** | <!----><!---->**Boolean**<!----> | Indicates filtering for first queue data |  [optional] |
+| **teamIds** | <!----><!---->**List&lt;String&gt;**<!----> | The team ids used to filter the view data |  [optional] |
+| **filterUsersByTeamIds** | <!----><!---->**List&lt;String&gt;**<!----> | The team ids are used to fetch associated users for the view |  [optional] |
 {: class="table table-striped"}
 
 
@@ -251,6 +257,17 @@ title: ViewFilter
 | LAST | &quot;Last&quot; |
 | BULLSEYE | &quot;Bullseye&quot; |
 | STANDARD | &quot;Standard&quot; |
+{: class="table table-striped"}
+
+
+<a name="ParticipantPurposesEnum"></a>
+
+## Enum: ParticipantPurposesEnum
+
+| Name | Value |
+| ---- | ----- |
+| INTERNAL | &quot;internal&quot; |
+| EXTERNAL | &quot;external&quot; |
 {: class="table table-striped"}
 
 

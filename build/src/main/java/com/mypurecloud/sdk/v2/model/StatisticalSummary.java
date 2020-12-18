@@ -18,6 +18,8 @@ public class StatisticalSummary  implements Serializable {
   private BigDecimal max = null;
   private BigDecimal min = null;
   private Long count = null;
+  private Long countNegative = null;
+  private Long countPositive = null;
   private BigDecimal sum = null;
   private BigDecimal current = null;
   private BigDecimal ratio = null;
@@ -74,6 +76,40 @@ public class StatisticalSummary  implements Serializable {
   }
   public void setCount(Long count) {
     this.count = count;
+  }
+
+  
+  /**
+   **/
+  public StatisticalSummary countNegative(Long countNegative) {
+    this.countNegative = countNegative;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("countNegative")
+  public Long getCountNegative() {
+    return countNegative;
+  }
+  public void setCountNegative(Long countNegative) {
+    this.countNegative = countNegative;
+  }
+
+  
+  /**
+   **/
+  public StatisticalSummary countPositive(Long countPositive) {
+    this.countPositive = countPositive;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("countPositive")
+  public Long getCountPositive() {
+    return countPositive;
+  }
+  public void setCountPositive(Long countPositive) {
+    this.countPositive = countPositive;
   }
 
   
@@ -192,6 +228,8 @@ public class StatisticalSummary  implements Serializable {
     return Objects.equals(this.max, statisticalSummary.max) &&
         Objects.equals(this.min, statisticalSummary.min) &&
         Objects.equals(this.count, statisticalSummary.count) &&
+        Objects.equals(this.countNegative, statisticalSummary.countNegative) &&
+        Objects.equals(this.countPositive, statisticalSummary.countPositive) &&
         Objects.equals(this.sum, statisticalSummary.sum) &&
         Objects.equals(this.current, statisticalSummary.current) &&
         Objects.equals(this.ratio, statisticalSummary.ratio) &&
@@ -202,7 +240,7 @@ public class StatisticalSummary  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(max, min, count, sum, current, ratio, numerator, denominator, target);
+    return Objects.hash(max, min, count, countNegative, countPositive, sum, current, ratio, numerator, denominator, target);
   }
 
   @Override
@@ -213,6 +251,8 @@ public class StatisticalSummary  implements Serializable {
     sb.append("    max: ").append(toIndentedString(max)).append("\n");
     sb.append("    min: ").append(toIndentedString(min)).append("\n");
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
+    sb.append("    countNegative: ").append(toIndentedString(countNegative)).append("\n");
+    sb.append("    countPositive: ").append(toIndentedString(countPositive)).append("\n");
     sb.append("    sum: ").append(toIndentedString(sum)).append("\n");
     sb.append("    current: ").append(toIndentedString(current)).append("\n");
     sb.append("    ratio: ").append(toIndentedString(ratio)).append("\n");

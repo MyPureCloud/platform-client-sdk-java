@@ -1603,7 +1603,7 @@ try {
 
 # **getTelephonyProvidersEdgeLine**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [EdgeLine](EdgeLine.html) getTelephonyProvidersEdgeLine(edgeId, lineId)
 
@@ -1668,7 +1668,7 @@ try {
 
 # **getTelephonyProvidersEdgeLines**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [EdgeLineEntityListing](EdgeLineEntityListing.html) getTelephonyProvidersEdgeLines(edgeId, pageSize, pageNumber)
 
@@ -7430,7 +7430,7 @@ try {
 
 # **putTelephonyProvidersEdgeLine**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [EdgeLine](EdgeLine.html) putTelephonyProvidersEdgeLine(edgeId, lineId, body)
 
@@ -7629,7 +7629,7 @@ try {
 
 # **putTelephonyProvidersEdgesDid**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [DID](DID.html) putTelephonyProvidersEdgesDid(didId, body)
 
@@ -7891,7 +7891,7 @@ try {
 
 # **putTelephonyProvidersEdgesExtension**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [Extension](Extension.html) putTelephonyProvidersEdgesExtension(extensionId, body)
 

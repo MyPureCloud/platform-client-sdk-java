@@ -118,6 +118,10 @@ title: ReportingExportJobResponse
 | FLOW_DESTINATION_DETAIL_VIEW | &quot;FLOW_DESTINATION_DETAIL_VIEW&quot; |
 | API_USAGE_VIEW | &quot;API_USAGE_VIEW&quot; |
 | SCHEDULED_CALLBACKS_VIEW | &quot;SCHEDULED_CALLBACKS_VIEW&quot; |
+| CONTENT_SEARCH_VIEW | &quot;CONTENT_SEARCH_VIEW&quot; |
+| LANDING_PAGE | &quot;LANDING_PAGE&quot; |
+| DASHBOARD_SUMMARY | &quot;DASHBOARD_SUMMARY&quot; |
+| DASHBOARD_DETAIL | &quot;DASHBOARD_DETAIL&quot; |
 {: class="table table-striped"}
 
 

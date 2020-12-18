@@ -62,8 +62,8 @@ public class GenericSAML  implements Serializable {
   }
   private NameIdentifierFormatEnum nameIdentifierFormat = null;
   private String certificate = null;
-  private String ssoTargetURI = null;
   private String issuerURI = null;
+  private String ssoTargetURI = null;
   private Boolean disabled = null;
   private String selfUri = null;
 
@@ -179,23 +179,6 @@ public class GenericSAML  implements Serializable {
   
   /**
    **/
-  public GenericSAML ssoTargetURI(String ssoTargetURI) {
-    this.ssoTargetURI = ssoTargetURI;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("ssoTargetURI")
-  public String getSsoTargetURI() {
-    return ssoTargetURI;
-  }
-  public void setSsoTargetURI(String ssoTargetURI) {
-    this.ssoTargetURI = ssoTargetURI;
-  }
-
-  
-  /**
-   **/
   public GenericSAML issuerURI(String issuerURI) {
     this.issuerURI = issuerURI;
     return this;
@@ -208,6 +191,23 @@ public class GenericSAML  implements Serializable {
   }
   public void setIssuerURI(String issuerURI) {
     this.issuerURI = issuerURI;
+  }
+
+  
+  /**
+   **/
+  public GenericSAML ssoTargetURI(String ssoTargetURI) {
+    this.ssoTargetURI = ssoTargetURI;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("ssoTargetURI")
+  public String getSsoTargetURI() {
+    return ssoTargetURI;
+  }
+  public void setSsoTargetURI(String ssoTargetURI) {
+    this.ssoTargetURI = ssoTargetURI;
   }
 
   
@@ -252,15 +252,15 @@ public class GenericSAML  implements Serializable {
         Objects.equals(this.endpointCompression, genericSAML.endpointCompression) &&
         Objects.equals(this.nameIdentifierFormat, genericSAML.nameIdentifierFormat) &&
         Objects.equals(this.certificate, genericSAML.certificate) &&
-        Objects.equals(this.ssoTargetURI, genericSAML.ssoTargetURI) &&
         Objects.equals(this.issuerURI, genericSAML.issuerURI) &&
+        Objects.equals(this.ssoTargetURI, genericSAML.ssoTargetURI) &&
         Objects.equals(this.disabled, genericSAML.disabled) &&
         Objects.equals(this.selfUri, genericSAML.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, logoImageData, relyingPartyIdentifier, endpointCompression, nameIdentifierFormat, certificate, ssoTargetURI, issuerURI, disabled, selfUri);
+    return Objects.hash(id, name, logoImageData, relyingPartyIdentifier, endpointCompression, nameIdentifierFormat, certificate, issuerURI, ssoTargetURI, disabled, selfUri);
   }
 
   @Override
@@ -275,8 +275,8 @@ public class GenericSAML  implements Serializable {
     sb.append("    endpointCompression: ").append(toIndentedString(endpointCompression)).append("\n");
     sb.append("    nameIdentifierFormat: ").append(toIndentedString(nameIdentifierFormat)).append("\n");
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
-    sb.append("    ssoTargetURI: ").append(toIndentedString(ssoTargetURI)).append("\n");
     sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
+    sb.append("    ssoTargetURI: ").append(toIndentedString(ssoTargetURI)).append("\n");
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

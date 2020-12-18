@@ -71,6 +71,7 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     CONTACTCENTER("ContactCenter"),
     CONTENTMANAGEMENT("ContentManagement"),
     PEOPLEPERMISSIONS("PeoplePermissions"),
+    PRESENCE("Presence"),
     QUALITY("Quality"),
     LANGUAGEUNDERSTANDING("LanguageUnderstanding"),
     TOPICSDEFINITIONS("TopicsDefinitions"),

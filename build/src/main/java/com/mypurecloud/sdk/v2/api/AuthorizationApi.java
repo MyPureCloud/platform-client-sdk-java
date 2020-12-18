@@ -413,7 +413,7 @@ public class AuthorizationApi {
   
   /**
    * Gets all grants for a given division.
-   * 
+   * Returns all grants assigned to a given division. Maximum page size is 500.
    * @param divisionId Division ID (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -427,7 +427,7 @@ public class AuthorizationApi {
 
   /**
    * Gets all grants for a given division.
-   * 
+   * Returns all grants assigned to a given division. Maximum page size is 500.
    * @param divisionId Division ID (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
@@ -451,7 +451,7 @@ public class AuthorizationApi {
 
   /**
    * Gets all grants for a given division.
-   * 
+   * Returns all grants assigned to a given division. Maximum page size is 500.
    * @param request The request object
    * @return AuthzDivisionGrantEntityListing
    * @throws ApiException if the request fails on the server
@@ -470,7 +470,7 @@ public class AuthorizationApi {
 
   /**
    * Gets all grants for a given division.
-   * 
+   * Returns all grants assigned to a given division. Maximum page size is 500.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
