@@ -24,9 +24,9 @@ public class MessagingCampaignDivisionViewEntityListing  implements Serializable
   private Long total = null;
   private String firstUri = null;
   private String selfUri = null;
-  private String previousUri = null;
   private String nextUri = null;
   private String lastUri = null;
+  private String previousUri = null;
   private Integer pageCount = null;
 
   
@@ -134,23 +134,6 @@ public class MessagingCampaignDivisionViewEntityListing  implements Serializable
   
   /**
    **/
-  public MessagingCampaignDivisionViewEntityListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
-  }
-
-  
-  /**
-   **/
   public MessagingCampaignDivisionViewEntityListing nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -180,6 +163,23 @@ public class MessagingCampaignDivisionViewEntityListing  implements Serializable
   }
   public void setLastUri(String lastUri) {
     this.lastUri = lastUri;
+  }
+
+  
+  /**
+   **/
+  public MessagingCampaignDivisionViewEntityListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
   }
 
   
@@ -216,15 +216,15 @@ public class MessagingCampaignDivisionViewEntityListing  implements Serializable
         Objects.equals(this.total, messagingCampaignDivisionViewEntityListing.total) &&
         Objects.equals(this.firstUri, messagingCampaignDivisionViewEntityListing.firstUri) &&
         Objects.equals(this.selfUri, messagingCampaignDivisionViewEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, messagingCampaignDivisionViewEntityListing.previousUri) &&
         Objects.equals(this.nextUri, messagingCampaignDivisionViewEntityListing.nextUri) &&
         Objects.equals(this.lastUri, messagingCampaignDivisionViewEntityListing.lastUri) &&
+        Objects.equals(this.previousUri, messagingCampaignDivisionViewEntityListing.previousUri) &&
         Objects.equals(this.pageCount, messagingCampaignDivisionViewEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, previousUri, nextUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, lastUri, previousUri, pageCount);
   }
 
   @Override
@@ -238,9 +238,9 @@ public class MessagingCampaignDivisionViewEntityListing  implements Serializable
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

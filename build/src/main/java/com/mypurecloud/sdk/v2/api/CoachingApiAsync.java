@@ -26,6 +26,8 @@ import com.mypurecloud.sdk.v2.model.UpdateCoachingAppointmentRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponse;
 import com.mypurecloud.sdk.v2.model.CoachingAnnotationCreateRequest;
+import com.mypurecloud.sdk.v2.model.AddConversationResponse;
+import com.mypurecloud.sdk.v2.model.AddConversationRequest;
 import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateResponse;
@@ -46,6 +48,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchCoachingAppointmentAnnotationRequ
 import com.mypurecloud.sdk.v2.api.request.PatchCoachingAppointmentStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCoachingNotificationRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentAnnotationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentConversationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentsAggregatesQueryRequest;
 
@@ -1197,6 +1200,82 @@ public class CoachingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CoachingAnnotation> response = (ApiResponse<CoachingAnnotation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Add a conversation to an appointment
+   * Permission not required if you are the creator or facilitator of the appointment
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AddConversationResponse> postCoachingAppointmentConversationsAsync(PostCoachingAppointmentConversationsRequest request, final AsyncApiCallback<AddConversationResponse> callback) {
+    try {
+      final SettableFuture<AddConversationResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AddConversationResponse>() {}, new AsyncApiCallback<ApiResponse<AddConversationResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AddConversationResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Add a conversation to an appointment
+   * Permission not required if you are the creator or facilitator of the appointment
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AddConversationResponse>> postCoachingAppointmentConversationsAsync(ApiRequest<AddConversationRequest> request, final AsyncApiCallback<ApiResponse<AddConversationResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AddConversationResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AddConversationResponse>() {}, new AsyncApiCallback<ApiResponse<AddConversationResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<AddConversationResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AddConversationResponse> response = (ApiResponse<AddConversationResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AddConversationResponse> response = (ApiResponse<AddConversationResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

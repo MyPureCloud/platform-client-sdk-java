@@ -180,6 +180,34 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 	    return this;
 	} 
 	
+	private Boolean enableCursorPagination;
+	public Boolean getEnableCursorPagination() {
+		return this.enableCursorPagination;
+	}
+
+	public void setEnableCursorPagination(Boolean enableCursorPagination) {
+		this.enableCursorPagination = enableCursorPagination;
+	}
+
+	public GetLanguageunderstandingDomainFeedbackRequest withEnableCursorPagination(Boolean enableCursorPagination) {
+	    this.setEnableCursorPagination(enableCursorPagination);
+	    return this;
+	} 
+	
+	private String after;
+	public String getAfter() {
+		return this.after;
+	}
+
+	public void setAfter(String after) {
+		this.after = after;
+	}
+
+	public GetLanguageunderstandingDomainFeedbackRequest withAfter(String after) {
+	    this.setAfter(after);
+	    return this;
+	} 
+	
 	private List<String> fields;
 	public List<String> getFields() {
 		return this.fields;
@@ -270,6 +298,10 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
         
                 .withQueryParameters("pageSize", "", pageSize)
         
+                .withQueryParameters("enableCursorPagination", "", enableCursorPagination)
+        
+                .withQueryParameters("after", "", after)
+        
                 .withQueryParameters("fields", "multi", fields)
         
                 .withCustomHeaders(customHeaders)
@@ -340,6 +372,16 @@ public class GetLanguageunderstandingDomainFeedbackRequest {
 		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
+			return this;
+		}
+		
+		public Builder withEnableCursorPagination(Boolean enableCursorPagination) {
+			request.setEnableCursorPagination(enableCursorPagination);
+			return this;
+		}
+		
+		public Builder withAfter(String after) {
+			request.setAfter(after);
 			return this;
 		}
 		

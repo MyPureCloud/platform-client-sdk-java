@@ -66,6 +66,7 @@ title: JourneyAggregationQuery
 | NWEBACTIONSSTARTED | &quot;nWebActionsStarted&quot; |
 | NWEBACTIONSTIMEDOUT | &quot;nWebActionsTimedout&quot; |
 | NWEBACTIONSFREQUENCYCAPREACHED | &quot;nWebActionsFrequencyCapReached&quot; |
+| NWEBACTIONSOFFEREDOUTSIDESCHEDULE | &quot;nWebActionsOfferedOutsideSchedule&quot; |
 {: class="table table-striped"}
 
 

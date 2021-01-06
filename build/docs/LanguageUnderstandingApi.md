@@ -290,7 +290,7 @@ try {
 
 
 
-> [NluFeedbackListing](NluFeedbackListing.html) getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, pageNumber, pageSize, fields)
+> [NluFeedbackListing](NluFeedbackListing.html) getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, pageNumber, pageSize, enableCursorPagination, after, fields)
 
 Get all feedback in the given NLU Domain Version.
 
@@ -333,9 +333,11 @@ LocalDate dateEnd = new LocalDate(); // LocalDate | End of time window as ISO-86
 Boolean includeDeleted = true; // Boolean | Whether to include soft-deleted items in the result.
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
+Boolean enableCursorPagination = false; // Boolean | Enable Cursor Pagination
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true
 List<String> fields = Arrays.asList("fields_example"); // List<String> | Fields and properties to get, comma-separated
 try {
-    NluFeedbackListing result = apiInstance.getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, pageNumber, pageSize, fields);
+    NluFeedbackListing result = apiInstance.getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, pageNumber, pageSize, enableCursorPagination, after, fields);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LanguageUnderstandingApi#getLanguageunderstandingDomainFeedback");
@@ -356,6 +358,8 @@ try {
 | **includeDeleted** | **Boolean**| Whether to include soft-deleted items in the result. | [optional] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **enableCursorPagination** | **Boolean**| Enable Cursor Pagination | [optional] [default to false] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true | [optional] 
 | **fields** | [**List&lt;String&gt;**](String.html)| Fields and properties to get, comma-separated | [optional]<br />**Values**: version, dateCreated, text, intents 
 {: class="table-striped"}
 

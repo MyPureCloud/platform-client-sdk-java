@@ -23,6 +23,8 @@ import com.mypurecloud.sdk.v2.model.UpdateCoachingAppointmentRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentStatusResponse;
 import com.mypurecloud.sdk.v2.model.CoachingAnnotationCreateRequest;
+import com.mypurecloud.sdk.v2.model.AddConversationResponse;
+import com.mypurecloud.sdk.v2.model.AddConversationRequest;
 import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateResponse;
@@ -43,6 +45,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchCoachingAppointmentAnnotationRequ
 import com.mypurecloud.sdk.v2.api.request.PatchCoachingAppointmentStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCoachingNotificationRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentAnnotationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentConversationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentsAggregatesQueryRequest;
 
@@ -1370,6 +1373,89 @@ public class CoachingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CoachingAnnotation> response = (ApiResponse<CoachingAnnotation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Add a conversation to an appointment
+   * Permission not required if you are the creator or facilitator of the appointment
+   * @param appointmentId The ID of the coaching appointment. (required)
+   * @param body body (required)
+   * @return AddConversationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AddConversationResponse postCoachingAppointmentConversations(String appointmentId, AddConversationRequest body) throws IOException, ApiException {
+    return  postCoachingAppointmentConversations(createPostCoachingAppointmentConversationsRequest(appointmentId, body));
+  }
+
+  /**
+   * Add a conversation to an appointment
+   * Permission not required if you are the creator or facilitator of the appointment
+   * @param appointmentId The ID of the coaching appointment. (required)
+   * @param body body (required)
+   * @return AddConversationResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AddConversationResponse> postCoachingAppointmentConversationsWithHttpInfo(String appointmentId, AddConversationRequest body) throws IOException {
+    return postCoachingAppointmentConversations(createPostCoachingAppointmentConversationsRequest(appointmentId, body).withHttpInfo());
+  }
+
+  private PostCoachingAppointmentConversationsRequest createPostCoachingAppointmentConversationsRequest(String appointmentId, AddConversationRequest body) {
+    return PostCoachingAppointmentConversationsRequest.builder()
+            .withAppointmentId(appointmentId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Add a conversation to an appointment
+   * Permission not required if you are the creator or facilitator of the appointment
+   * @param request The request object
+   * @return AddConversationResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AddConversationResponse postCoachingAppointmentConversations(PostCoachingAppointmentConversationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AddConversationResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AddConversationResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Add a conversation to an appointment
+   * Permission not required if you are the creator or facilitator of the appointment
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AddConversationResponse> postCoachingAppointmentConversations(ApiRequest<AddConversationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AddConversationResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AddConversationResponse> response = (ApiResponse<AddConversationResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AddConversationResponse> response = (ApiResponse<AddConversationResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

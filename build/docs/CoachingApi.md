@@ -22,6 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchCoachingAppointmentStatus**](CoachingApi.html#patchCoachingAppointmentStatus) | Update the status of a coaching appointment |
 | [**patchCoachingNotification**](CoachingApi.html#patchCoachingNotification) | Update an existing notification. |
 | [**postCoachingAppointmentAnnotations**](CoachingApi.html#postCoachingAppointmentAnnotations) | Create a new annotation. |
+| [**postCoachingAppointmentConversations**](CoachingApi.html#postCoachingAppointmentConversations) | Add a conversation to an appointment |
 | [**postCoachingAppointments**](CoachingApi.html#postCoachingAppointments) | Create a new appointment |
 | [**postCoachingAppointmentsAggregatesQuery**](CoachingApi.html#postCoachingAppointmentsAggregatesQuery) | Retrieve aggregated appointment data |
 {: class="table-striped"}
@@ -1035,6 +1036,72 @@ try {
 ### Return type
 
 [**CoachingAnnotation**](CoachingAnnotation.html)
+
+<a name="postCoachingAppointmentConversations"></a>
+
+# **postCoachingAppointmentConversations**
+
+
+
+> [AddConversationResponse](AddConversationResponse.html) postCoachingAppointmentConversations(appointmentId, body)
+
+Add a conversation to an appointment
+
+Permission not required if you are the creator or facilitator of the appointment
+
+Wraps POST /api/v2/coaching/appointments/{appointmentId}/conversations  
+
+Requires ANY permissions: 
+
+* coaching:appointment:edit
+* coaching:appointmentConversation:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.CoachingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+CoachingApi apiInstance = new CoachingApi();
+String appointmentId = "appointmentId_example"; // String | The ID of the coaching appointment.
+AddConversationRequest body = new AddConversationRequest(); // AddConversationRequest | body
+try {
+    AddConversationResponse result = apiInstance.postCoachingAppointmentConversations(appointmentId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CoachingApi#postCoachingAppointmentConversations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **appointmentId** | **String**| The ID of the coaching appointment. | 
+| **body** | [**AddConversationRequest**](AddConversationRequest.html)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AddConversationResponse**](AddConversationResponse.html)
 
 <a name="postCoachingAppointments"></a>
 

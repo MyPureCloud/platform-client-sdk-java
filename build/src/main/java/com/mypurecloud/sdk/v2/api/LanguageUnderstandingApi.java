@@ -389,13 +389,15 @@ public class LanguageUnderstandingApi {
    * @param includeDeleted Whether to include soft-deleted items in the result. (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
+   * @param enableCursorPagination Enable Cursor Pagination (optional, default to false)
+   * @param after The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true (optional)
    * @param fields Fields and properties to get, comma-separated (optional)
    * @return NluFeedbackListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public NluFeedbackListing getLanguageunderstandingDomainFeedback(String domainId, String intentName, String assessment, LocalDate dateStart, LocalDate dateEnd, Boolean includeDeleted, Integer pageNumber, Integer pageSize, List<String> fields) throws IOException, ApiException {
-    return  getLanguageunderstandingDomainFeedback(createGetLanguageunderstandingDomainFeedbackRequest(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, pageNumber, pageSize, fields));
+  public NluFeedbackListing getLanguageunderstandingDomainFeedback(String domainId, String intentName, String assessment, LocalDate dateStart, LocalDate dateEnd, Boolean includeDeleted, Integer pageNumber, Integer pageSize, Boolean enableCursorPagination, String after, List<String> fields) throws IOException, ApiException {
+    return  getLanguageunderstandingDomainFeedback(createGetLanguageunderstandingDomainFeedbackRequest(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, pageNumber, pageSize, enableCursorPagination, after, fields));
   }
 
   /**
@@ -409,15 +411,17 @@ public class LanguageUnderstandingApi {
    * @param includeDeleted Whether to include soft-deleted items in the result. (optional)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
+   * @param enableCursorPagination Enable Cursor Pagination (optional, default to false)
+   * @param after The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true (optional)
    * @param fields Fields and properties to get, comma-separated (optional)
    * @return NluFeedbackListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<NluFeedbackListing> getLanguageunderstandingDomainFeedbackWithHttpInfo(String domainId, String intentName, String assessment, LocalDate dateStart, LocalDate dateEnd, Boolean includeDeleted, Integer pageNumber, Integer pageSize, List<String> fields) throws IOException {
-    return getLanguageunderstandingDomainFeedback(createGetLanguageunderstandingDomainFeedbackRequest(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, pageNumber, pageSize, fields).withHttpInfo());
+  public ApiResponse<NluFeedbackListing> getLanguageunderstandingDomainFeedbackWithHttpInfo(String domainId, String intentName, String assessment, LocalDate dateStart, LocalDate dateEnd, Boolean includeDeleted, Integer pageNumber, Integer pageSize, Boolean enableCursorPagination, String after, List<String> fields) throws IOException {
+    return getLanguageunderstandingDomainFeedback(createGetLanguageunderstandingDomainFeedbackRequest(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, pageNumber, pageSize, enableCursorPagination, after, fields).withHttpInfo());
   }
 
-  private GetLanguageunderstandingDomainFeedbackRequest createGetLanguageunderstandingDomainFeedbackRequest(String domainId, String intentName, String assessment, LocalDate dateStart, LocalDate dateEnd, Boolean includeDeleted, Integer pageNumber, Integer pageSize, List<String> fields) {
+  private GetLanguageunderstandingDomainFeedbackRequest createGetLanguageunderstandingDomainFeedbackRequest(String domainId, String intentName, String assessment, LocalDate dateStart, LocalDate dateEnd, Boolean includeDeleted, Integer pageNumber, Integer pageSize, Boolean enableCursorPagination, String after, List<String> fields) {
     return GetLanguageunderstandingDomainFeedbackRequest.builder()
             .withDomainId(domainId)
     
@@ -434,6 +438,10 @@ public class LanguageUnderstandingApi {
             .withPageNumber(pageNumber)
     
             .withPageSize(pageSize)
+    
+            .withEnableCursorPagination(enableCursorPagination)
+    
+            .withAfter(after)
     
             .withFields(fields)
     

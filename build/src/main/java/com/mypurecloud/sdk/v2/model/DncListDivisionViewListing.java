@@ -24,9 +24,9 @@ public class DncListDivisionViewListing  implements Serializable, PagedResource<
   private Long total = null;
   private String firstUri = null;
   private String selfUri = null;
-  private String previousUri = null;
   private String nextUri = null;
   private String lastUri = null;
+  private String previousUri = null;
   private Integer pageCount = null;
 
   
@@ -134,23 +134,6 @@ public class DncListDivisionViewListing  implements Serializable, PagedResource<
   
   /**
    **/
-  public DncListDivisionViewListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
-  }
-
-  
-  /**
-   **/
   public DncListDivisionViewListing nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -180,6 +163,23 @@ public class DncListDivisionViewListing  implements Serializable, PagedResource<
   }
   public void setLastUri(String lastUri) {
     this.lastUri = lastUri;
+  }
+
+  
+  /**
+   **/
+  public DncListDivisionViewListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
   }
 
   
@@ -216,15 +216,15 @@ public class DncListDivisionViewListing  implements Serializable, PagedResource<
         Objects.equals(this.total, dncListDivisionViewListing.total) &&
         Objects.equals(this.firstUri, dncListDivisionViewListing.firstUri) &&
         Objects.equals(this.selfUri, dncListDivisionViewListing.selfUri) &&
-        Objects.equals(this.previousUri, dncListDivisionViewListing.previousUri) &&
         Objects.equals(this.nextUri, dncListDivisionViewListing.nextUri) &&
         Objects.equals(this.lastUri, dncListDivisionViewListing.lastUri) &&
+        Objects.equals(this.previousUri, dncListDivisionViewListing.previousUri) &&
         Objects.equals(this.pageCount, dncListDivisionViewListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, previousUri, nextUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, lastUri, previousUri, pageCount);
   }
 
   @Override
@@ -238,9 +238,9 @@ public class DncListDivisionViewListing  implements Serializable, PagedResource<
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();
