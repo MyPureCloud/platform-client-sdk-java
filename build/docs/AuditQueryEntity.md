@@ -72,6 +72,16 @@ title: AuditQueryEntity
 | OUTBOUNDROUTE | &quot;OutboundRoute&quot; |
 | NUMBERPLAN | &quot;NumberPlan&quot; |
 | SITE | &quot;Site&quot; |
+| ATTEMPTLIMITS | &quot;AttemptLimits&quot; |
+| CALLABLETIMESET | &quot;CallableTimeSet&quot; |
+| CAMPAIGN | &quot;Campaign&quot; |
+| CAMPAIGNRULE | &quot;CampaignRule&quot; |
+| SEQUENCE | &quot;Sequence&quot; |
+| CONTACTLIST | &quot;ContactList&quot; |
+| CONTACTLISTFILTER | &quot;ContactListFilter&quot; |
+| DNCLIST | &quot;DNCList&quot; |
+| CALLANALYSISRESPONSESET | &quot;CallAnalysisResponseSet&quot; |
+| RULESET | &quot;RuleSet&quot; |
 {: class="table table-striped"}
 
 
@@ -113,6 +123,9 @@ title: AuditQueryEntity
 | AUTHENTICATE | &quot;Authenticate&quot; |
 | CHANGEPASSWORD | &quot;ChangePassword&quot; |
 | REVOKE | &quot;Revoke&quot; |
+| EXPORT | &quot;Export&quot; |
+| APPEND | &quot;Append&quot; |
+| RECYCLE | &quot;Recycle&quot; |
 {: class="table table-striped"}
 
 

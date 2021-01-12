@@ -60,6 +60,7 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CONVERSATIONEND("conversationEnd"),
     CONVERSATIONID("conversationId"),
+    CONVERSATIONSTART("conversationStart"),
     DIVISIONID("divisionId"),
     MEDIASTATSMINCONVERSATIONMOS("mediaStatsMinConversationMos"),
     MEDIASTATSMINCONVERSATIONRFACTOR("mediaStatsMinConversationRFactor"),

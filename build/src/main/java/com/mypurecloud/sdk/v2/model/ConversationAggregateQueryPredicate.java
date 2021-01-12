@@ -103,6 +103,7 @@ public class ConversationAggregateQueryPredicate  implements Serializable {
     PURPOSE("purpose"),
     QUEUEID("queueId"),
     REMOTE("remote"),
+    REOFFERED("reoffered"),
     REQUESTEDLANGUAGEID("requestedLanguageId"),
     REQUESTEDROUTING("requestedRouting"),
     REQUESTEDROUTINGSKILLID("requestedRoutingSkillId"),

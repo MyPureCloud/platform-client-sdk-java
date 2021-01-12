@@ -203,6 +203,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantDigitsReque
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationParticipantSecureivrsessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantCoachRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantConsultRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantMonitorRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsCallParticipantReplaceRequest;
@@ -8906,6 +8907,86 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Conversation> response = (ApiResponse<Conversation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationsCallParticipantCoach(String conversationId, String participantId) throws IOException, ApiException {
+     postConversationsCallParticipantCoach(createPostConversationsCallParticipantCoachRequest(conversationId, participantId));
+  }
+
+  /**
+   * Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
+   * 
+   * @param conversationId conversationId (required)
+   * @param participantId participantId (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationsCallParticipantCoachWithHttpInfo(String conversationId, String participantId) throws IOException {
+    return postConversationsCallParticipantCoach(createPostConversationsCallParticipantCoachRequest(conversationId, participantId).withHttpInfo());
+  }
+
+  private PostConversationsCallParticipantCoachRequest createPostConversationsCallParticipantCoachRequest(String conversationId, String participantId) {
+    return PostConversationsCallParticipantCoachRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withParticipantId(participantId)
+    
+            .build();
+  }
+
+  /**
+   * Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationsCallParticipantCoach(PostConversationsCallParticipantCoachRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationsCallParticipantCoach(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

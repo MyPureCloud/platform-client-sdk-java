@@ -2900,7 +2900,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ArchitectApi apiInstance = new ArchitectApi();
 String flowId = "flowId_example"; // String | Flow ID
-Boolean deleted = false; // Boolean | Include deleted flows
+Boolean deleted = false; // Boolean | Deleted flows
 try {
     Flow result = apiInstance.getFlow(flowId, deleted);
     System.out.println(result);
@@ -2916,7 +2916,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **flowId** | **String**| Flow ID | 
-| **deleted** | **Boolean**| Include deleted flows | [optional] [default to false] 
+| **deleted** | **Boolean**| Deleted flows | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -3040,7 +3040,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 ArchitectApi apiInstance = new ArchitectApi();
 String flowId = "flowId_example"; // String | Flow ID
-Boolean deleted = false; // Boolean | Include deleted flows
+Boolean deleted = false; // Boolean | Deleted flows
 try {
     Object result = apiInstance.getFlowLatestconfiguration(flowId, deleted);
     System.out.println(result);
@@ -3056,7 +3056,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **flowId** | **String**| Flow ID | 
-| **deleted** | **Boolean**| Include deleted flows | [optional] [default to false] 
+| **deleted** | **Boolean**| Deleted flows | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -3106,7 +3106,7 @@ Configuration.setDefaultApiClient(apiClient);
 ArchitectApi apiInstance = new ArchitectApi();
 String flowId = "flowId_example"; // String | Flow ID
 String versionId = "versionId_example"; // String | Version ID
-String deleted = "deleted_example"; // String | Include deleted flows
+String deleted = "deleted_example"; // String | Deleted flows
 try {
     FlowVersion result = apiInstance.getFlowVersion(flowId, versionId, deleted);
     System.out.println(result);
@@ -3123,7 +3123,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **flowId** | **String**| Flow ID | 
 | **versionId** | **String**| Version ID | 
-| **deleted** | **String**| Include deleted flows | [optional] 
+| **deleted** | **String**| Deleted flows | [optional] 
 {: class="table-striped"}
 
 
@@ -3173,7 +3173,7 @@ Configuration.setDefaultApiClient(apiClient);
 ArchitectApi apiInstance = new ArchitectApi();
 String flowId = "flowId_example"; // String | Flow ID
 String versionId = "versionId_example"; // String | Version ID
-String deleted = "deleted_example"; // String | Include deleted flows
+String deleted = "deleted_example"; // String | Deleted flows
 try {
     Object result = apiInstance.getFlowVersionConfiguration(flowId, versionId, deleted);
     System.out.println(result);
@@ -3190,7 +3190,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **flowId** | **String**| Flow ID | 
 | **versionId** | **String**| Version ID | 
-| **deleted** | **String**| Include deleted flows | [optional] 
+| **deleted** | **String**| Deleted flows | [optional] 
 {: class="table-striped"}
 
 
@@ -3241,7 +3241,7 @@ ArchitectApi apiInstance = new ArchitectApi();
 String flowId = "flowId_example"; // String | Flow ID
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
-Boolean deleted = true; // Boolean | Include deleted flows
+Boolean deleted = true; // Boolean | Include Deleted flows
 try {
     FlowVersionEntityListing result = apiInstance.getFlowVersions(flowId, pageNumber, pageSize, deleted);
     System.out.println(result);
@@ -3259,7 +3259,7 @@ try {
 | **flowId** | **String**| Flow ID | 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-| **deleted** | **Boolean**| Include deleted flows | [optional] 
+| **deleted** | **Boolean**| Include Deleted flows | [optional] 
 {: class="table-striped"}
 
 

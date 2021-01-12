@@ -81,6 +81,7 @@ title: ConversationAggregateQueryPredicate
 | PURPOSE | &quot;purpose&quot; |
 | QUEUEID | &quot;queueId&quot; |
 | REMOTE | &quot;remote&quot; |
+| REOFFERED | &quot;reoffered&quot; |
 | REQUESTEDLANGUAGEID | &quot;requestedLanguageId&quot; |
 | REQUESTEDROUTING | &quot;requestedRouting&quot; |
 | REQUESTEDROUTINGSKILLID | &quot;requestedRoutingSkillId&quot; |

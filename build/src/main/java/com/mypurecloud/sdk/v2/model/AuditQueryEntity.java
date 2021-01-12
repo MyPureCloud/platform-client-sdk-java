@@ -74,7 +74,17 @@ public class AuditQueryEntity  implements Serializable {
     LINEBASE("LineBase"),
     OUTBOUNDROUTE("OutboundRoute"),
     NUMBERPLAN("NumberPlan"),
-    SITE("Site");
+    SITE("Site"),
+    ATTEMPTLIMITS("AttemptLimits"),
+    CALLABLETIMESET("CallableTimeSet"),
+    CAMPAIGN("Campaign"),
+    CAMPAIGNRULE("CampaignRule"),
+    SEQUENCE("Sequence"),
+    CONTACTLIST("ContactList"),
+    CONTACTLISTFILTER("ContactListFilter"),
+    DNCLIST("DNCList"),
+    CALLANALYSISRESPONSESET("CallAnalysisResponseSet"),
+    RULESET("RuleSet");
 
     private String value;
 
@@ -138,7 +148,10 @@ public class AuditQueryEntity  implements Serializable {
     DEAUTHORIZE("Deauthorize"),
     AUTHENTICATE("Authenticate"),
     CHANGEPASSWORD("ChangePassword"),
-    REVOKE("Revoke");
+    REVOKE("Revoke"),
+    EXPORT("Export"),
+    APPEND("Append"),
+    RECYCLE("Recycle");
 
     private String value;
 

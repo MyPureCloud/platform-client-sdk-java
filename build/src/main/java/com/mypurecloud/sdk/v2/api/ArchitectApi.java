@@ -3750,7 +3750,7 @@ public class ArchitectApi {
    * Get flow
    * 
    * @param flowId Flow ID (required)
-   * @param deleted Include deleted flows (optional, default to false)
+   * @param deleted Deleted flows (optional, default to false)
    * @return Flow
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3763,7 +3763,7 @@ public class ArchitectApi {
    * Get flow
    * 
    * @param flowId Flow ID (required)
-   * @param deleted Include deleted flows (optional, default to false)
+   * @param deleted Deleted flows (optional, default to false)
    * @return Flow
    * @throws IOException if the request fails to be processed
    */
@@ -3936,7 +3936,7 @@ public class ArchitectApi {
    * Get the latest configuration for flow
    * 
    * @param flowId Flow ID (required)
-   * @param deleted Include deleted flows (optional, default to false)
+   * @param deleted Deleted flows (optional, default to false)
    * @return Object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3949,7 +3949,7 @@ public class ArchitectApi {
    * Get the latest configuration for flow
    * 
    * @param flowId Flow ID (required)
-   * @param deleted Include deleted flows (optional, default to false)
+   * @param deleted Deleted flows (optional, default to false)
    * @return Object
    * @throws IOException if the request fails to be processed
    */
@@ -4020,7 +4020,7 @@ public class ArchitectApi {
    * 
    * @param flowId Flow ID (required)
    * @param versionId Version ID (required)
-   * @param deleted Include deleted flows (optional)
+   * @param deleted Deleted flows (optional)
    * @return FlowVersion
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4034,7 +4034,7 @@ public class ArchitectApi {
    * 
    * @param flowId Flow ID (required)
    * @param versionId Version ID (required)
-   * @param deleted Include deleted flows (optional)
+   * @param deleted Deleted flows (optional)
    * @return FlowVersion
    * @throws IOException if the request fails to be processed
    */
@@ -4107,7 +4107,7 @@ public class ArchitectApi {
    * 
    * @param flowId Flow ID (required)
    * @param versionId Version ID (required)
-   * @param deleted Include deleted flows (optional)
+   * @param deleted Deleted flows (optional)
    * @return Object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4121,7 +4121,7 @@ public class ArchitectApi {
    * 
    * @param flowId Flow ID (required)
    * @param versionId Version ID (required)
-   * @param deleted Include deleted flows (optional)
+   * @param deleted Deleted flows (optional)
    * @return Object
    * @throws IOException if the request fails to be processed
    */
@@ -4195,7 +4195,7 @@ public class ArchitectApi {
    * @param flowId Flow ID (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
-   * @param deleted Include deleted flows (optional)
+   * @param deleted Include Deleted flows (optional)
    * @return FlowVersionEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4210,7 +4210,7 @@ public class ArchitectApi {
    * @param flowId Flow ID (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
-   * @param deleted Include deleted flows (optional)
+   * @param deleted Include Deleted flows (optional)
    * @return FlowVersionEntityListing
    * @throws IOException if the request fails to be processed
    */

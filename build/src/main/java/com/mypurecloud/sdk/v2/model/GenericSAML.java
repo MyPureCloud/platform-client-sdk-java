@@ -17,7 +17,6 @@ public class GenericSAML  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private String logoImageData = null;
   private String relyingPartyIdentifier = null;
   private Boolean endpointCompression = null;
 
@@ -61,6 +60,7 @@ public class GenericSAML  implements Serializable {
     }
   }
   private NameIdentifierFormatEnum nameIdentifierFormat = null;
+  private String logoImageData = null;
   private String certificate = null;
   private String issuerURI = null;
   private String ssoTargetURI = null;
@@ -89,23 +89,6 @@ public class GenericSAML  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
-  }
-
-  
-  /**
-   **/
-  public GenericSAML logoImageData(String logoImageData) {
-    this.logoImageData = logoImageData;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("logoImageData")
-  public String getLogoImageData() {
-    return logoImageData;
-  }
-  public void setLogoImageData(String logoImageData) {
-    this.logoImageData = logoImageData;
   }
 
   
@@ -157,6 +140,23 @@ public class GenericSAML  implements Serializable {
   }
   public void setNameIdentifierFormat(NameIdentifierFormatEnum nameIdentifierFormat) {
     this.nameIdentifierFormat = nameIdentifierFormat;
+  }
+
+  
+  /**
+   **/
+  public GenericSAML logoImageData(String logoImageData) {
+    this.logoImageData = logoImageData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("logoImageData")
+  public String getLogoImageData() {
+    return logoImageData;
+  }
+  public void setLogoImageData(String logoImageData) {
+    this.logoImageData = logoImageData;
   }
 
   
@@ -247,10 +247,10 @@ public class GenericSAML  implements Serializable {
     GenericSAML genericSAML = (GenericSAML) o;
     return Objects.equals(this.id, genericSAML.id) &&
         Objects.equals(this.name, genericSAML.name) &&
-        Objects.equals(this.logoImageData, genericSAML.logoImageData) &&
         Objects.equals(this.relyingPartyIdentifier, genericSAML.relyingPartyIdentifier) &&
         Objects.equals(this.endpointCompression, genericSAML.endpointCompression) &&
         Objects.equals(this.nameIdentifierFormat, genericSAML.nameIdentifierFormat) &&
+        Objects.equals(this.logoImageData, genericSAML.logoImageData) &&
         Objects.equals(this.certificate, genericSAML.certificate) &&
         Objects.equals(this.issuerURI, genericSAML.issuerURI) &&
         Objects.equals(this.ssoTargetURI, genericSAML.ssoTargetURI) &&
@@ -260,7 +260,7 @@ public class GenericSAML  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, logoImageData, relyingPartyIdentifier, endpointCompression, nameIdentifierFormat, certificate, issuerURI, ssoTargetURI, disabled, selfUri);
+    return Objects.hash(id, name, relyingPartyIdentifier, endpointCompression, nameIdentifierFormat, logoImageData, certificate, issuerURI, ssoTargetURI, disabled, selfUri);
   }
 
   @Override
@@ -270,10 +270,10 @@ public class GenericSAML  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    logoImageData: ").append(toIndentedString(logoImageData)).append("\n");
     sb.append("    relyingPartyIdentifier: ").append(toIndentedString(relyingPartyIdentifier)).append("\n");
     sb.append("    endpointCompression: ").append(toIndentedString(endpointCompression)).append("\n");
     sb.append("    nameIdentifierFormat: ").append(toIndentedString(nameIdentifierFormat)).append("\n");
+    sb.append("    logoImageData: ").append(toIndentedString(logoImageData)).append("\n");
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
     sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
     sb.append("    ssoTargetURI: ").append(toIndentedString(ssoTargetURI)).append("\n");

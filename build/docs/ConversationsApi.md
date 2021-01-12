@@ -112,6 +112,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationParticipantReplace**](ConversationsApi.html#postConversationParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationParticipantSecureivrsessions**](ConversationsApi.html#postConversationParticipantSecureivrsessions) | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR. |
 | [**postConversationsCall**](ConversationsApi.html#postConversationsCall) | Place a new call as part of a callback conversation. |
+| [**postConversationsCallParticipantCoach**](ConversationsApi.html#postConversationsCallParticipantCoach) | Listen in on the conversation from the point of view of a given participant while speaking to just the given participant. |
 | [**postConversationsCallParticipantConsult**](ConversationsApi.html#postConversationsCallParticipantConsult) | Initiate and update consult transfer |
 | [**postConversationsCallParticipantMonitor**](ConversationsApi.html#postConversationsCallParticipantMonitor) | Listen in on the conversation from the point of view of a given participant. |
 | [**postConversationsCallParticipantReplace**](ConversationsApi.html#postConversationsCallParticipantReplace) | Replace this participant with the specified user and/or address |
@@ -6879,6 +6880,70 @@ try {
 ### Return type
 
 [**Conversation**](Conversation.html)
+
+<a name="postConversationsCallParticipantCoach"></a>
+
+# **postConversationsCallParticipantCoach**
+
+
+
+> Void postConversationsCallParticipantCoach(conversationId, participantId)
+
+Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
+
+
+
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/coach  
+
+Requires ANY permissions: 
+
+* conversation:call:coach
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | conversationId
+String participantId = "participantId_example"; // String | participantId
+try {
+    apiInstance.postConversationsCallParticipantCoach(conversationId, participantId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsCallParticipantCoach");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| conversationId | 
+| **participantId** | **String**| participantId | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="postConversationsCallParticipantConsult"></a>
 

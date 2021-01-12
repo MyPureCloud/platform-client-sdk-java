@@ -34,6 +34,7 @@ title: AuditQueryService
 | RESPONSEMANAGEMENT | &quot;ResponseManagement&quot; |
 | GROUPS | &quot;Groups&quot; |
 | TELEPHONY | &quot;Telephony&quot; |
+| OUTBOUND | &quot;Outbound&quot; |
 {: class="table table-striped"}
 
 

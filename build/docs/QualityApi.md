@@ -46,7 +46,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchQualityFormsSurvey**](QualityApi.html#patchQualityFormsSurvey) | Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form. |
 | [**postAnalyticsEvaluationsAggregatesQuery**](QualityApi.html#postAnalyticsEvaluationsAggregatesQuery) | Query for evaluation aggregates |
 | [**postAnalyticsSurveysAggregatesQuery**](QualityApi.html#postAnalyticsSurveysAggregatesQuery) | Query for survey aggregates |
-| [**postAnalyticsTranscriptsAggregatesQuery**](QualityApi.html#postAnalyticsTranscriptsAggregatesQuery) | Query for transcript aggregates |
 | [**postQualityCalibrations**](QualityApi.html#postQualityCalibrations) | Create a calibration |
 | [**postQualityConversationEvaluations**](QualityApi.html#postQualityConversationEvaluations) | Create an evaluation |
 | [**postQualityEvaluationsScoring**](QualityApi.html#postQualityEvaluationsScoring) | Score evaluation |
@@ -2730,69 +2729,6 @@ try {
 ### Return type
 
 [**SurveyAggregateQueryResponse**](SurveyAggregateQueryResponse.html)
-
-<a name="postAnalyticsTranscriptsAggregatesQuery"></a>
-
-# **postAnalyticsTranscriptsAggregatesQuery**
-
-
-
-> [TranscriptAggregateQueryResponse](TranscriptAggregateQueryResponse.html) postAnalyticsTranscriptsAggregatesQuery(body)
-
-Query for transcript aggregates
-
-
-
-Wraps POST /api/v2/analytics/transcripts/aggregates/query  
-
-Requires ANY permissions: 
-
-* analytics:speechAndTextAnalyticsAggregates:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.QualityApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-QualityApi apiInstance = new QualityApi();
-TranscriptAggregationQuery body = new TranscriptAggregationQuery(); // TranscriptAggregationQuery | query
-try {
-    TranscriptAggregateQueryResponse result = apiInstance.postAnalyticsTranscriptsAggregatesQuery(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling QualityApi#postAnalyticsTranscriptsAggregatesQuery");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **body** | [**TranscriptAggregationQuery**](TranscriptAggregationQuery.html)| query | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**TranscriptAggregateQueryResponse**](TranscriptAggregateQueryResponse.html)
 
 <a name="postQualityCalibrations"></a>
 

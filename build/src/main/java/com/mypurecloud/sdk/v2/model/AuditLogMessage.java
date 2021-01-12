@@ -48,7 +48,8 @@ public class AuditLogMessage  implements Serializable {
     TRIGGERS("Triggers"),
     RESPONSEMANAGEMENT("ResponseManagement"),
     GROUPS("Groups"),
-    TELEPHONY("Telephony");
+    TELEPHONY("Telephony"),
+    OUTBOUND("Outbound");
 
     private String value;
 
@@ -115,7 +116,10 @@ public class AuditLogMessage  implements Serializable {
     DEAUTHORIZE("Deauthorize"),
     AUTHENTICATE("Authenticate"),
     CHANGEPASSWORD("ChangePassword"),
-    REVOKE("Revoke");
+    REVOKE("Revoke"),
+    EXPORT("Export"),
+    APPEND("Append"),
+    RECYCLE("Recycle");
 
     private String value;
 
@@ -201,7 +205,17 @@ public class AuditLogMessage  implements Serializable {
     LINEBASE("LineBase"),
     OUTBOUNDROUTE("OutboundRoute"),
     NUMBERPLAN("NumberPlan"),
-    SITE("Site");
+    SITE("Site"),
+    ATTEMPTLIMITS("AttemptLimits"),
+    CALLABLETIMESET("CallableTimeSet"),
+    CAMPAIGN("Campaign"),
+    CAMPAIGNRULE("CampaignRule"),
+    SEQUENCE("Sequence"),
+    CONTACTLIST("ContactList"),
+    CONTACTLISTFILTER("ContactListFilter"),
+    DNCLIST("DNCList"),
+    CALLANALYSISRESPONSESET("CallAnalysisResponseSet"),
+    RULESET("RuleSet");
 
     private String value;
 
