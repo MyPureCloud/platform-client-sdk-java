@@ -33,6 +33,7 @@ import com.mypurecloud.sdk.v2.model.ServiceGoalTemplateList;
 import com.mypurecloud.sdk.v2.model.BuScheduleMetadata;
 import com.mypurecloud.sdk.v2.model.ScheduleGenerationResult;
 import com.mypurecloud.sdk.v2.model.BuHeadcountForecastResponse;
+import com.mypurecloud.sdk.v2.model.BuAgentScheduleHistoryResponse;
 import com.mypurecloud.sdk.v2.model.BuScheduleListing;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecast;
 import com.mypurecloud.sdk.v2.model.BuForecastResultResponse;
@@ -146,6 +147,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitServ
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleGenerationresultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleHistoryAgentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastDataRequest;
@@ -2284,6 +2286,82 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<BuHeadcountForecastResponse> response = (ApiResponse<BuHeadcountForecastResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Loads agent&#39;s schedule history.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BuAgentScheduleHistoryResponse> getWorkforcemanagementBusinessunitWeekScheduleHistoryAgentAsync(GetWorkforcemanagementBusinessunitWeekScheduleHistoryAgentRequest request, final AsyncApiCallback<BuAgentScheduleHistoryResponse> callback) {
+    try {
+      final SettableFuture<BuAgentScheduleHistoryResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BuAgentScheduleHistoryResponse>() {}, new AsyncApiCallback<ApiResponse<BuAgentScheduleHistoryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuAgentScheduleHistoryResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Loads agent&#39;s schedule history.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BuAgentScheduleHistoryResponse>> getWorkforcemanagementBusinessunitWeekScheduleHistoryAgentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BuAgentScheduleHistoryResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BuAgentScheduleHistoryResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BuAgentScheduleHistoryResponse>() {}, new AsyncApiCallback<ApiResponse<BuAgentScheduleHistoryResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuAgentScheduleHistoryResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuAgentScheduleHistoryResponse> response = (ApiResponse<BuAgentScheduleHistoryResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuAgentScheduleHistoryResponse> response = (ApiResponse<BuAgentScheduleHistoryResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

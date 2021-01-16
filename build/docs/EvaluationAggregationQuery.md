@@ -35,7 +35,6 @@ title: EvaluationAggregationQuery
 | EVALUATORID | &quot;evaluatorId&quot; |
 | FORMID | &quot;formId&quot; |
 | QUEUEID | &quot;queueId&quot; |
-| RESCIND | &quot;rescind&quot; |
 | RESCORED | &quot;rescored&quot; |
 | TEAMID | &quot;teamId&quot; |
 | USERID | &quot;userId&quot; |

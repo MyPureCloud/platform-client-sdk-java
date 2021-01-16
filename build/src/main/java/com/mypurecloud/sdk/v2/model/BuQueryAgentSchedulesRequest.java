@@ -40,14 +40,14 @@ public class BuQueryAgentSchedulesRequest  implements Serializable {
 
   
   /**
-   * The IDs of the users to query.  Omit to query all user schedules in the management unit. Note: Only one of [teamIds, userIds] can be requested
+   * The IDs of the users to query.  Omit to query all user schedules in the management unit. Note: If teamIds is also specified, only schedules for users in the requested teams will be returned
    **/
   public BuQueryAgentSchedulesRequest userIds(List<String> userIds) {
     this.userIds = userIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The IDs of the users to query.  Omit to query all user schedules in the management unit. Note: Only one of [teamIds, userIds] can be requested")
+  @ApiModelProperty(example = "null", value = "The IDs of the users to query.  Omit to query all user schedules in the management unit. Note: If teamIds is also specified, only schedules for users in the requested teams will be returned")
   @JsonProperty("userIds")
   public List<String> getUserIds() {
     return userIds;
@@ -58,14 +58,14 @@ public class BuQueryAgentSchedulesRequest  implements Serializable {
 
   
   /**
-   * The teamIds to report on. If null or not set, results will be queried for requested users if applicable or otherwise all users in the management unit. Note: Only one of [teamIds, userIds] can be requested
+   * The teamIds to report on. If null or not set, results will be queried for requested users if applicable or otherwise all users in the management unit
    **/
   public BuQueryAgentSchedulesRequest teamIds(List<String> teamIds) {
     this.teamIds = teamIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The teamIds to report on. If null or not set, results will be queried for requested users if applicable or otherwise all users in the management unit. Note: Only one of [teamIds, userIds] can be requested")
+  @ApiModelProperty(example = "null", value = "The teamIds to report on. If null or not set, results will be queried for requested users if applicable or otherwise all users in the management unit")
   @JsonProperty("teamIds")
   public List<String> getTeamIds() {
     return teamIds;

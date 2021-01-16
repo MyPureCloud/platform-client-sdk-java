@@ -97,6 +97,10 @@ title: ViewFilter
 | **showFirstQueue** | <!----><!---->**Boolean**<!----> | Indicates filtering for first queue data |  [optional] |
 | **teamIds** | <!----><!---->**List&lt;String&gt;**<!----> | The team ids used to filter the view data |  [optional] |
 | **filterUsersByTeamIds** | <!----><!---->**List&lt;String&gt;**<!----> | The team ids are used to fetch associated users for the view |  [optional] |
+| **journeyActionMapIds** | <!----><!---->**List&lt;String&gt;**<!----> | The journey action map ids are used to fetch action maps for the associated view |  [optional] |
+| **journeyOutcomeIds** | <!----><!---->**List&lt;String&gt;**<!----> | The journey outcome ids are used to fetch outcomes for the associated view |  [optional] |
+| **journeySegmentIds** | <!----><!---->**List&lt;String&gt;**<!----> | The journey segment ids are used to fetch segments for the associated view |  [optional] |
+| **journeyActionMapTypes** | <!---->[**List&lt;JourneyActionMapTypesEnum&gt;**](#JourneyActionMapTypesEnum)<!----> | The journey action map types are used to filter action map data for the associated view |  [optional] |
 {: class="table table-striped"}
 
 
@@ -268,6 +272,20 @@ title: ViewFilter
 | ---- | ----- |
 | INTERNAL | &quot;internal&quot; |
 | EXTERNAL | &quot;external&quot; |
+{: class="table table-striped"}
+
+
+<a name="JourneyActionMapTypesEnum"></a>
+
+## Enum: JourneyActionMapTypesEnum
+
+| Name | Value |
+| ---- | ----- |
+| WEBCHAT | &quot;webchat&quot; |
+| WEBMESSAGINGOFFER | &quot;webMessagingOffer&quot; |
+| CONTENTOFFER | &quot;contentOffer&quot; |
+| INTEGRATIONACTION | &quot;integrationAction&quot; |
+| ARCHITECTFLOW | &quot;architectFlow&quot; |
 {: class="table table-striped"}
 
 

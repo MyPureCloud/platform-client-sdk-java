@@ -63,7 +63,6 @@ public class SurveyDetailQueryPredicate  implements Serializable {
     SURVEYCOMPLETEDDATE("surveyCompletedDate"),
     SURVEYFORMCONTEXTID("surveyFormContextId"),
     SURVEYFORMID("surveyFormId"),
-    SURVEYFORMNAME("surveyFormName"),
     SURVEYID("surveyId"),
     SURVEYPROMOTERSCORE("surveyPromoterScore"),
     SURVEYSTATUS("surveyStatus"),

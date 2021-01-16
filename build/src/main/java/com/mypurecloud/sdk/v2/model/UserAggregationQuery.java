@@ -27,9 +27,6 @@ public class UserAggregationQuery  implements Serializable {
    * Gets or Sets groupBy
    */
   public enum GroupByEnum {
-    ORGANIZATIONPRESENCEID("organizationPresenceId"),
-    ROUTINGSTATUS("routingStatus"),
-    SYSTEMPRESENCE("systemPresence"),
     USERID("userId");
 
     private String value;

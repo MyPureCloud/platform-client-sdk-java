@@ -42,7 +42,6 @@ title: ConversationDetailQueryPredicate
 | CONVERSATIONSTART | &quot;conversationStart&quot; |
 | DIVISIONID | &quot;divisionId&quot; |
 | MEDIASTATSMINCONVERSATIONMOS | &quot;mediaStatsMinConversationMos&quot; |
-| MEDIASTATSMINCONVERSATIONRFACTOR | &quot;mediaStatsMinConversationRFactor&quot; |
 | ORIGINATINGDIRECTION | &quot;originatingDirection&quot; |
 {: class="table table-striped"}
 

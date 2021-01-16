@@ -36,9 +36,6 @@ title: UserAggregateQueryPredicate
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ORGANIZATIONPRESENCEID | &quot;organizationPresenceId&quot; |
-| ROUTINGSTATUS | &quot;routingStatus&quot; |
-| SYSTEMPRESENCE | &quot;systemPresence&quot; |
 | USERID | &quot;userId&quot; |
 {: class="table table-striped"}
 

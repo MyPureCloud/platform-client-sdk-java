@@ -37,11 +37,9 @@ title: ConversationAggregationView
 | NSTATETRANSITIONERROR | &quot;nStateTransitionError&quot; |
 | NTRANSFERRED | &quot;nTransferred&quot; |
 | OEXTERNALMEDIACOUNT | &quot;oExternalMediaCount&quot; |
-| OINTERACTING | &quot;oInteracting&quot; |
 | OMEDIACOUNT | &quot;oMediaCount&quot; |
 | OSERVICELEVEL | &quot;oServiceLevel&quot; |
 | OSERVICETARGET | &quot;oServiceTarget&quot; |
-| OWAITING | &quot;oWaiting&quot; |
 | TABANDON | &quot;tAbandon&quot; |
 | TACD | &quot;tAcd&quot; |
 | TACW | &quot;tAcw&quot; |

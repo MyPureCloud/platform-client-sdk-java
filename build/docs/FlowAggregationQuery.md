@@ -116,7 +116,6 @@ title: FlowAggregationQuery
 | NFLOWMILESTONE | &quot;nFlowMilestone&quot; |
 | NFLOWOUTCOME | &quot;nFlowOutcome&quot; |
 | NFLOWOUTCOMEFAILED | &quot;nFlowOutcomeFailed&quot; |
-| OFLOW | &quot;oFlow&quot; |
 | OFLOWMILESTONE | &quot;oFlowMilestone&quot; |
 | TFLOW | &quot;tFlow&quot; |
 | TFLOWDISCONNECT | &quot;tFlowDisconnect&quot; |

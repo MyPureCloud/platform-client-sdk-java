@@ -63,7 +63,6 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     CONVERSATIONSTART("conversationStart"),
     DIVISIONID("divisionId"),
     MEDIASTATSMINCONVERSATIONMOS("mediaStatsMinConversationMos"),
-    MEDIASTATSMINCONVERSATIONRFACTOR("mediaStatsMinConversationRFactor"),
     ORIGINATINGDIRECTION("originatingDirection");
 
     private String value;

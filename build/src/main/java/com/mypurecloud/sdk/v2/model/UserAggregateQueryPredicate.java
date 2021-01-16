@@ -58,9 +58,6 @@ public class UserAggregateQueryPredicate  implements Serializable {
    */
   public enum DimensionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ORGANIZATIONPRESENCEID("organizationPresenceId"),
-    ROUTINGSTATUS("routingStatus"),
-    SYSTEMPRESENCE("systemPresence"),
     USERID("userId");
 
     private String value;

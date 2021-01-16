@@ -64,8 +64,6 @@ public class MediaEndpointStatDetailQueryPredicate  implements Serializable {
     EVENTTIME("eventTime"),
     INVALIDPACKETS("invalidPackets"),
     MAXLATENCYMS("maxLatencyMs"),
-    MINMOS("minMos"),
-    MINRFACTOR("minRFactor"),
     OVERRUNPACKETS("overrunPackets"),
     RECEIVEDPACKETS("receivedPackets"),
     UNDERRUNPACKETS("underrunPackets");

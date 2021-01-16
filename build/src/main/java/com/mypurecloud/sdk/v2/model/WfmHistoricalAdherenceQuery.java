@@ -80,14 +80,14 @@ public class WfmHistoricalAdherenceQuery  implements Serializable {
 
   
   /**
-   * The userIds to report on. If null or not set, adherence will be computed for all the users in management unit or requested teamIds. Note: Only one of [teamIds, userIds] can be requested
+   * The userIds to report on. If null or not set, adherence will be computed for all the users in management unit or requested teamIds
    **/
   public WfmHistoricalAdherenceQuery userIds(List<String> userIds) {
     this.userIds = userIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The userIds to report on. If null or not set, adherence will be computed for all the users in management unit or requested teamIds. Note: Only one of [teamIds, userIds] can be requested")
+  @ApiModelProperty(example = "null", value = "The userIds to report on. If null or not set, adherence will be computed for all the users in management unit or requested teamIds")
   @JsonProperty("userIds")
   public List<String> getUserIds() {
     return userIds;
@@ -116,14 +116,14 @@ public class WfmHistoricalAdherenceQuery  implements Serializable {
 
   
   /**
-   * The teamIds to report on. If null or not set, adherence will be computed for requested users if applicable or otherwise all users in the management unit. Note: Only one of [teamIds, userIds] can be requested
+   * The teamIds to report on. If null or not set, adherence will be computed for requested users if applicable or otherwise all users in the management unit. Note: If teamIds is also specified, only adherence for users in the requested teams will be returned
    **/
   public WfmHistoricalAdherenceQuery teamIds(List<String> teamIds) {
     this.teamIds = teamIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The teamIds to report on. If null or not set, adherence will be computed for requested users if applicable or otherwise all users in the management unit. Note: Only one of [teamIds, userIds] can be requested")
+  @ApiModelProperty(example = "null", value = "The teamIds to report on. If null or not set, adherence will be computed for requested users if applicable or otherwise all users in the management unit. Note: If teamIds is also specified, only adherence for users in the requested teams will be returned")
   @JsonProperty("teamIds")
   public List<String> getTeamIds() {
     return teamIds;

@@ -67,7 +67,6 @@ public class EvaluationAggregateQueryPredicate  implements Serializable {
     EVALUATORID("evaluatorId"),
     FORMID("formId"),
     QUEUEID("queueId"),
-    RESCIND("rescind"),
     RESCORED("rescored"),
     TEAMID("teamId"),
     USERID("userId");

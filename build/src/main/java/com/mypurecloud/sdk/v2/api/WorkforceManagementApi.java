@@ -30,6 +30,7 @@ import com.mypurecloud.sdk.v2.model.ServiceGoalTemplateList;
 import com.mypurecloud.sdk.v2.model.BuScheduleMetadata;
 import com.mypurecloud.sdk.v2.model.ScheduleGenerationResult;
 import com.mypurecloud.sdk.v2.model.BuHeadcountForecastResponse;
+import com.mypurecloud.sdk.v2.model.BuAgentScheduleHistoryResponse;
 import com.mypurecloud.sdk.v2.model.BuScheduleListing;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecast;
 import com.mypurecloud.sdk.v2.model.BuForecastResultResponse;
@@ -143,6 +144,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitServ
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleGenerationresultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleHeadcountforecastRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekScheduleHistoryAgentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastDataRequest;
@@ -2457,6 +2459,97 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BuHeadcountForecastResponse> response = (ApiResponse<BuHeadcountForecastResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Loads agent&#39;s schedule history.
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param scheduleId The ID of the schedule (required)
+   * @param agentId THe ID of the agent (required)
+   * @return BuAgentScheduleHistoryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAgentScheduleHistoryResponse getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(String businessUnitId, LocalDate weekId, String scheduleId, String agentId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(createGetWorkforcemanagementBusinessunitWeekScheduleHistoryAgentRequest(businessUnitId, weekId, scheduleId, agentId));
+  }
+
+  /**
+   * Loads agent&#39;s schedule history.
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param scheduleId The ID of the schedule (required)
+   * @param agentId THe ID of the agent (required)
+   * @return BuAgentScheduleHistoryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAgentScheduleHistoryResponse> getWorkforcemanagementBusinessunitWeekScheduleHistoryAgentWithHttpInfo(String businessUnitId, LocalDate weekId, String scheduleId, String agentId) throws IOException {
+    return getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(createGetWorkforcemanagementBusinessunitWeekScheduleHistoryAgentRequest(businessUnitId, weekId, scheduleId, agentId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitWeekScheduleHistoryAgentRequest createGetWorkforcemanagementBusinessunitWeekScheduleHistoryAgentRequest(String businessUnitId, LocalDate weekId, String scheduleId, String agentId) {
+    return GetWorkforcemanagementBusinessunitWeekScheduleHistoryAgentRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekId(weekId)
+    
+            .withScheduleId(scheduleId)
+    
+            .withAgentId(agentId)
+    
+            .build();
+  }
+
+  /**
+   * Loads agent&#39;s schedule history.
+   * 
+   * @param request The request object
+   * @return BuAgentScheduleHistoryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAgentScheduleHistoryResponse getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(GetWorkforcemanagementBusinessunitWeekScheduleHistoryAgentRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuAgentScheduleHistoryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuAgentScheduleHistoryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Loads agent&#39;s schedule history.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAgentScheduleHistoryResponse> getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuAgentScheduleHistoryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAgentScheduleHistoryResponse> response = (ApiResponse<BuAgentScheduleHistoryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAgentScheduleHistoryResponse> response = (ApiResponse<BuAgentScheduleHistoryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

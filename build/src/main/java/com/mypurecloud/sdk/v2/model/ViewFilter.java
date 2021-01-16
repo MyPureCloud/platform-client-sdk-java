@@ -543,6 +543,46 @@ public class ViewFilter  implements Serializable {
   private Boolean showFirstQueue = null;
   private List<String> teamIds = new ArrayList<String>();
   private List<String> filterUsersByTeamIds = new ArrayList<String>();
+  private List<String> journeyActionMapIds = new ArrayList<String>();
+  private List<String> journeyOutcomeIds = new ArrayList<String>();
+  private List<String> journeySegmentIds = new ArrayList<String>();
+
+  /**
+   * Gets or Sets journeyActionMapTypes
+   */
+  public enum JourneyActionMapTypesEnum {
+    WEBCHAT("webchat"),
+    WEBMESSAGINGOFFER("webMessagingOffer"),
+    CONTENTOFFER("contentOffer"),
+    INTEGRATIONACTION("integrationAction"),
+    ARCHITECTFLOW("architectFlow");
+
+    private String value;
+
+    JourneyActionMapTypesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static JourneyActionMapTypesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (JourneyActionMapTypesEnum value : JourneyActionMapTypesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return JourneyActionMapTypesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<JourneyActionMapTypesEnum> journeyActionMapTypes = new ArrayList<JourneyActionMapTypesEnum>();
 
   
   /**
@@ -2147,6 +2187,78 @@ public class ViewFilter  implements Serializable {
   }
 
   
+  /**
+   * The journey action map ids are used to fetch action maps for the associated view
+   **/
+  public ViewFilter journeyActionMapIds(List<String> journeyActionMapIds) {
+    this.journeyActionMapIds = journeyActionMapIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The journey action map ids are used to fetch action maps for the associated view")
+  @JsonProperty("journeyActionMapIds")
+  public List<String> getJourneyActionMapIds() {
+    return journeyActionMapIds;
+  }
+  public void setJourneyActionMapIds(List<String> journeyActionMapIds) {
+    this.journeyActionMapIds = journeyActionMapIds;
+  }
+
+  
+  /**
+   * The journey outcome ids are used to fetch outcomes for the associated view
+   **/
+  public ViewFilter journeyOutcomeIds(List<String> journeyOutcomeIds) {
+    this.journeyOutcomeIds = journeyOutcomeIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The journey outcome ids are used to fetch outcomes for the associated view")
+  @JsonProperty("journeyOutcomeIds")
+  public List<String> getJourneyOutcomeIds() {
+    return journeyOutcomeIds;
+  }
+  public void setJourneyOutcomeIds(List<String> journeyOutcomeIds) {
+    this.journeyOutcomeIds = journeyOutcomeIds;
+  }
+
+  
+  /**
+   * The journey segment ids are used to fetch segments for the associated view
+   **/
+  public ViewFilter journeySegmentIds(List<String> journeySegmentIds) {
+    this.journeySegmentIds = journeySegmentIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The journey segment ids are used to fetch segments for the associated view")
+  @JsonProperty("journeySegmentIds")
+  public List<String> getJourneySegmentIds() {
+    return journeySegmentIds;
+  }
+  public void setJourneySegmentIds(List<String> journeySegmentIds) {
+    this.journeySegmentIds = journeySegmentIds;
+  }
+
+  
+  /**
+   * The journey action map types are used to filter action map data for the associated view
+   **/
+  public ViewFilter journeyActionMapTypes(List<JourneyActionMapTypesEnum> journeyActionMapTypes) {
+    this.journeyActionMapTypes = journeyActionMapTypes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The journey action map types are used to filter action map data for the associated view")
+  @JsonProperty("journeyActionMapTypes")
+  public List<JourneyActionMapTypesEnum> getJourneyActionMapTypes() {
+    return journeyActionMapTypes;
+  }
+  public void setJourneyActionMapTypes(List<JourneyActionMapTypesEnum> journeyActionMapTypes) {
+    this.journeyActionMapTypes = journeyActionMapTypes;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -2245,12 +2357,16 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.participantPurposes, viewFilter.participantPurposes) &&
         Objects.equals(this.showFirstQueue, viewFilter.showFirstQueue) &&
         Objects.equals(this.teamIds, viewFilter.teamIds) &&
-        Objects.equals(this.filterUsersByTeamIds, viewFilter.filterUsersByTeamIds);
+        Objects.equals(this.filterUsersByTeamIds, viewFilter.filterUsersByTeamIds) &&
+        Objects.equals(this.journeyActionMapIds, viewFilter.journeyActionMapIds) &&
+        Objects.equals(this.journeyOutcomeIds, viewFilter.journeyOutcomeIds) &&
+        Objects.equals(this.journeySegmentIds, viewFilter.journeySegmentIds) &&
+        Objects.equals(this.journeyActionMapTypes, viewFilter.journeyActionMapTypes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes);
   }
 
   @Override
@@ -2347,6 +2463,10 @@ public class ViewFilter  implements Serializable {
     sb.append("    showFirstQueue: ").append(toIndentedString(showFirstQueue)).append("\n");
     sb.append("    teamIds: ").append(toIndentedString(teamIds)).append("\n");
     sb.append("    filterUsersByTeamIds: ").append(toIndentedString(filterUsersByTeamIds)).append("\n");
+    sb.append("    journeyActionMapIds: ").append(toIndentedString(journeyActionMapIds)).append("\n");
+    sb.append("    journeyOutcomeIds: ").append(toIndentedString(journeyOutcomeIds)).append("\n");
+    sb.append("    journeySegmentIds: ").append(toIndentedString(journeySegmentIds)).append("\n");
+    sb.append("    journeyActionMapTypes: ").append(toIndentedString(journeyActionMapTypes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

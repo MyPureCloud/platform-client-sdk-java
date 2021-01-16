@@ -26,9 +26,6 @@ title: UserAggregationQuery
 
 | Name | Value |
 | ---- | ----- |
-| ORGANIZATIONPRESENCEID | &quot;organizationPresenceId&quot; |
-| ROUTINGSTATUS | &quot;routingStatus&quot; |
-| SYSTEMPRESENCE | &quot;systemPresence&quot; |
 | USERID | &quot;userId&quot; |
 {: class="table table-striped"}
 

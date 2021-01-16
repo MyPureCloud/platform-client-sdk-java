@@ -31,7 +31,8 @@ public class ScimPhoneNumber  implements Serializable {
     MOBILE("mobile"),
     OTHER("other"),
     MICROSOFTTEAMS("microsoftteams"),
-    ZOOMPHONE("zoomphone");
+    ZOOMPHONE("zoomphone"),
+    RINGCENTRAL("ringcentral");
 
     private String value;
 

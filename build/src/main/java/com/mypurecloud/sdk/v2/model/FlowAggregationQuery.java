@@ -141,7 +141,6 @@ public class FlowAggregationQuery  implements Serializable {
     NFLOWMILESTONE("nFlowMilestone"),
     NFLOWOUTCOME("nFlowOutcome"),
     NFLOWOUTCOMEFAILED("nFlowOutcomeFailed"),
-    OFLOW("oFlow"),
     OFLOWMILESTONE("oFlowMilestone"),
     TFLOW("tFlow"),
     TFLOWDISCONNECT("tFlowDisconnect"),

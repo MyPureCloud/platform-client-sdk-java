@@ -42,8 +42,6 @@ title: MediaEndpointStatDetailQueryPredicate
 | EVENTTIME | &quot;eventTime&quot; |
 | INVALIDPACKETS | &quot;invalidPackets&quot; |
 | MAXLATENCYMS | &quot;maxLatencyMs&quot; |
-| MINMOS | &quot;minMos&quot; |
-| MINRFACTOR | &quot;minRFactor&quot; |
 | OVERRUNPACKETS | &quot;overrunPackets&quot; |
 | RECEIVEDPACKETS | &quot;receivedPackets&quot; |
 | UNDERRUNPACKETS | &quot;underrunPackets&quot; |

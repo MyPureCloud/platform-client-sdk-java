@@ -42,7 +42,6 @@ title: SurveyDetailQueryPredicate
 | SURVEYCOMPLETEDDATE | &quot;surveyCompletedDate&quot; |
 | SURVEYFORMCONTEXTID | &quot;surveyFormContextId&quot; |
 | SURVEYFORMID | &quot;surveyFormId&quot; |
-| SURVEYFORMNAME | &quot;surveyFormName&quot; |
 | SURVEYID | &quot;surveyId&quot; |
 | SURVEYPROMOTERSCORE | &quot;surveyPromoterScore&quot; |
 | SURVEYSTATUS | &quot;surveyStatus&quot; |

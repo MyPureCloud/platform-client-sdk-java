@@ -13,15 +13,23 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ActionTarget;
 import com.mypurecloud.sdk.v2.model.ActionTargetListing;
+import com.mypurecloud.sdk.v2.model.JourneySegment;
+import com.mypurecloud.sdk.v2.model.SegmentListing;
 import com.mypurecloud.sdk.v2.model.PatchActionTarget;
+import com.mypurecloud.sdk.v2.model.PatchSegment;
 import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteJourneySegmentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontargetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyActiontargetsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneySegmentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneySegmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontargetRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchJourneySegmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsJourneysAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostJourneySegmentsRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -39,6 +47,82 @@ public class JourneyApi {
 
   public JourneyApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Delete a segment.
+   * 
+   * @param segmentId ID of the segment. (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteJourneySegment(String segmentId) throws IOException, ApiException {
+     deleteJourneySegment(createDeleteJourneySegmentRequest(segmentId));
+  }
+
+  /**
+   * Delete a segment.
+   * 
+   * @param segmentId ID of the segment. (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteJourneySegmentWithHttpInfo(String segmentId) throws IOException {
+    return deleteJourneySegment(createDeleteJourneySegmentRequest(segmentId).withHttpInfo());
+  }
+
+  private DeleteJourneySegmentRequest createDeleteJourneySegmentRequest(String segmentId) {
+    return DeleteJourneySegmentRequest.builder()
+            .withSegmentId(segmentId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a segment.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteJourneySegment(DeleteJourneySegmentRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a segment.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteJourneySegment(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   
@@ -205,6 +289,176 @@ public class JourneyApi {
 
   
   /**
+   * Retrieve a single segment.
+   * 
+   * @param segmentId ID of the segment. (required)
+   * @return JourneySegment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneySegment getJourneySegment(String segmentId) throws IOException, ApiException {
+    return  getJourneySegment(createGetJourneySegmentRequest(segmentId));
+  }
+
+  /**
+   * Retrieve a single segment.
+   * 
+   * @param segmentId ID of the segment. (required)
+   * @return JourneySegment
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneySegment> getJourneySegmentWithHttpInfo(String segmentId) throws IOException {
+    return getJourneySegment(createGetJourneySegmentRequest(segmentId).withHttpInfo());
+  }
+
+  private GetJourneySegmentRequest createGetJourneySegmentRequest(String segmentId) {
+    return GetJourneySegmentRequest.builder()
+            .withSegmentId(segmentId)
+    
+            .build();
+  }
+
+  /**
+   * Retrieve a single segment.
+   * 
+   * @param request The request object
+   * @return JourneySegment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneySegment getJourneySegment(GetJourneySegmentRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneySegment> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneySegment>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve a single segment.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneySegment> getJourneySegment(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneySegment>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneySegment> response = (ApiResponse<JourneySegment>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneySegment> response = (ApiResponse<JourneySegment>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Retrieve all segments.
+   * 
+   * @param sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). (optional)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param isActive Determines whether or not to show only active segments. (optional)
+   * @return SegmentListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SegmentListing getJourneySegments(String sortBy, Integer pageSize, Integer pageNumber, Boolean isActive) throws IOException, ApiException {
+    return  getJourneySegments(createGetJourneySegmentsRequest(sortBy, pageSize, pageNumber, isActive));
+  }
+
+  /**
+   * Retrieve all segments.
+   * 
+   * @param sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). (optional)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param isActive Determines whether or not to show only active segments. (optional)
+   * @return SegmentListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SegmentListing> getJourneySegmentsWithHttpInfo(String sortBy, Integer pageSize, Integer pageNumber, Boolean isActive) throws IOException {
+    return getJourneySegments(createGetJourneySegmentsRequest(sortBy, pageSize, pageNumber, isActive).withHttpInfo());
+  }
+
+  private GetJourneySegmentsRequest createGetJourneySegmentsRequest(String sortBy, Integer pageSize, Integer pageNumber, Boolean isActive) {
+    return GetJourneySegmentsRequest.builder()
+            .withSortBy(sortBy)
+    
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withIsActive(isActive)
+    
+            .build();
+  }
+
+  /**
+   * Retrieve all segments.
+   * 
+   * @param request The request object
+   * @return SegmentListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SegmentListing getJourneySegments(GetJourneySegmentsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SegmentListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SegmentListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve all segments.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SegmentListing> getJourneySegments(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SegmentListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SegmentListing> response = (ApiResponse<SegmentListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SegmentListing> response = (ApiResponse<SegmentListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Update a single action target.
    * 
    * @param actionTargetId ID of the action target. (required)
@@ -288,6 +542,89 @@ public class JourneyApi {
 
   
   /**
+   * Update a segment.
+   * 
+   * @param segmentId ID of the segment. (required)
+   * @param body  (optional)
+   * @return JourneySegment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneySegment patchJourneySegment(String segmentId, PatchSegment body) throws IOException, ApiException {
+    return  patchJourneySegment(createPatchJourneySegmentRequest(segmentId, body));
+  }
+
+  /**
+   * Update a segment.
+   * 
+   * @param segmentId ID of the segment. (required)
+   * @param body  (optional)
+   * @return JourneySegment
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneySegment> patchJourneySegmentWithHttpInfo(String segmentId, PatchSegment body) throws IOException {
+    return patchJourneySegment(createPatchJourneySegmentRequest(segmentId, body).withHttpInfo());
+  }
+
+  private PatchJourneySegmentRequest createPatchJourneySegmentRequest(String segmentId, PatchSegment body) {
+    return PatchJourneySegmentRequest.builder()
+            .withSegmentId(segmentId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update a segment.
+   * 
+   * @param request The request object
+   * @return JourneySegment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneySegment patchJourneySegment(PatchJourneySegmentRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneySegment> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneySegment>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a segment.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneySegment> patchJourneySegment(ApiRequest<PatchSegment> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneySegment>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneySegment> response = (ApiResponse<JourneySegment>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneySegment> response = (ApiResponse<JourneySegment>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Query for journey aggregates
    * 
    * @param body query (required)
@@ -361,6 +698,85 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<JourneyAggregateQueryResponse> response = (ApiResponse<JourneyAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create a segment.
+   * 
+   * @param body  (optional)
+   * @return JourneySegment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneySegment postJourneySegments(JourneySegment body) throws IOException, ApiException {
+    return  postJourneySegments(createPostJourneySegmentsRequest(body));
+  }
+
+  /**
+   * Create a segment.
+   * 
+   * @param body  (optional)
+   * @return JourneySegment
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneySegment> postJourneySegmentsWithHttpInfo(JourneySegment body) throws IOException {
+    return postJourneySegments(createPostJourneySegmentsRequest(body).withHttpInfo());
+  }
+
+  private PostJourneySegmentsRequest createPostJourneySegmentsRequest(JourneySegment body) {
+    return PostJourneySegmentsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a segment.
+   * 
+   * @param request The request object
+   * @return JourneySegment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JourneySegment postJourneySegments(PostJourneySegmentsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JourneySegment> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JourneySegment>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a segment.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JourneySegment> postJourneySegments(ApiRequest<JourneySegment> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JourneySegment>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneySegment> response = (ApiResponse<JourneySegment>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JourneySegment> response = (ApiResponse<JourneySegment>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

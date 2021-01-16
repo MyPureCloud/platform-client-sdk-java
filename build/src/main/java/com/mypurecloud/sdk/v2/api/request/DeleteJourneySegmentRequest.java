@@ -1,0 +1,129 @@
+package com.mypurecloud.sdk.v2.api.request;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiRequest;
+import com.mypurecloud.sdk.v2.ApiRequestBuilder;
+import com.mypurecloud.sdk.v2.ApiResponse;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.model.*;
+import com.mypurecloud.sdk.v2.Pair;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Pattern;
+
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ActionTarget;
+import com.mypurecloud.sdk.v2.model.ActionTargetListing;
+import com.mypurecloud.sdk.v2.model.JourneySegment;
+import com.mypurecloud.sdk.v2.model.SegmentListing;
+import com.mypurecloud.sdk.v2.model.PatchActionTarget;
+import com.mypurecloud.sdk.v2.model.PatchSegment;
+import com.mypurecloud.sdk.v2.model.JourneyAggregationQuery;
+import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryResponse;
+
+public class DeleteJourneySegmentRequest {
+    
+	private String segmentId;
+	public String getSegmentId() {
+		return this.segmentId;
+	}
+
+	public void setSegmentId(String segmentId) {
+		this.segmentId = segmentId;
+	}
+
+	public DeleteJourneySegmentRequest withSegmentId(String segmentId) {
+	    this.setSegmentId(segmentId);
+	    return this;
+	} 
+	
+	private final Map<String, String> customHeaders = new HashMap<>();
+    public Map<String, String> getCustomHeaders() {
+        return this.customHeaders;
+    }
+
+    public void setCustomHeaders(Map<String, String> customHeaders) {
+        this.customHeaders.clear();
+        this.customHeaders.putAll(customHeaders);
+    }
+
+    public void addCustomHeader(String name, String value) {
+        this.customHeaders.put(name, value);
+    }
+
+    public DeleteJourneySegmentRequest withCustomHeader(String name, String value) {
+        this.addCustomHeader(name, value);
+        return this;
+    }
+
+    public ApiRequest<Void> withHttpInfo() {
+        
+        // verify the required parameter 'segmentId' is set
+        if (this.segmentId == null) {
+            throw new IllegalStateException("Missing the required parameter 'segmentId' when building request for DeleteJourneySegmentRequest.");
+        }
+        
+
+        return ApiRequestBuilder.create("DELETE", "/api/v2/journey/segments/{segmentId}")
+                .withPathParameter("segmentId", segmentId)
+        
+                .withCustomHeaders(customHeaders)
+                .withContentTypes("application/json")
+                .withAccepts("application/json")
+                .withAuthNames("PureCloud OAuth")
+                .build();
+    }
+
+	public static Builder builder() {
+		return new Builder();
+	}
+
+	
+	public static Builder builder(String segmentId) {
+	    return new Builder()
+	            .withRequiredParams(segmentId);
+	}
+	
+
+	public static class Builder {
+		private final DeleteJourneySegmentRequest request;
+
+		private Builder() {
+			request = new DeleteJourneySegmentRequest();
+		}
+
+		
+		public Builder withSegmentId(String segmentId) {
+			request.setSegmentId(segmentId);
+			return this;
+		}
+		
+
+		
+		public Builder withRequiredParams(String segmentId) {
+			request.setSegmentId(segmentId);
+			
+			return this;
+		}
+		
+
+		public DeleteJourneySegmentRequest build() {
+            
+            // verify the required parameter 'segmentId' is set
+            if (request.segmentId == null) {
+                throw new IllegalStateException("Missing the required parameter 'segmentId' when building request for DeleteJourneySegmentRequest.");
+            }
+            
+			return request;
+		}
+	}
+}
