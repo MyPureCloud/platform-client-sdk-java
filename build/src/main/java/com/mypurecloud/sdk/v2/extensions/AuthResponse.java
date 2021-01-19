@@ -4,12 +4,17 @@ import java.io.Serializable;
 
 public class AuthResponse implements Serializable {
     private String access_token;
+    private String refresh_token;
     private String token_type;
     private int expires_in;
     private String error;
 
     public String getAccess_token() {
         return access_token;
+    }
+
+    public String getRefresh_token() {
+        return refresh_token;
     }
 
     public void setAccess_token(String access_token) {
@@ -44,6 +49,7 @@ public class AuthResponse implements Serializable {
     public String toString() {
         return "[AuthResponse]\n" +
                 "  access_token=" + access_token + "\n" +
+                "  refresh_token=" + refresh_token + "\n" +
                 "  token_type=" + token_type + "\n" +
                 "  expires_in=" + expires_in + "\n" +
                 "  error=" + error + "\n";

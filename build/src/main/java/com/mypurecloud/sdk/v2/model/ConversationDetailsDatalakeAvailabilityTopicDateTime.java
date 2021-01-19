@@ -15,9 +15,9 @@ import java.io.Serializable;
 public class ConversationDetailsDatalakeAvailabilityTopicDateTime  implements Serializable {
   
   private Integer iMillis = null;
-  private Boolean beforeNow = null;
   private Boolean afterNow = null;
   private Boolean equalNow = null;
+  private Boolean beforeNow = null;
 
   
   /**
@@ -34,23 +34,6 @@ public class ConversationDetailsDatalakeAvailabilityTopicDateTime  implements Se
   }
   public void setIMillis(Integer iMillis) {
     this.iMillis = iMillis;
-  }
-
-  
-  /**
-   **/
-  public ConversationDetailsDatalakeAvailabilityTopicDateTime beforeNow(Boolean beforeNow) {
-    this.beforeNow = beforeNow;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("beforeNow")
-  public Boolean getBeforeNow() {
-    return beforeNow;
-  }
-  public void setBeforeNow(Boolean beforeNow) {
-    this.beforeNow = beforeNow;
   }
 
   
@@ -88,6 +71,23 @@ public class ConversationDetailsDatalakeAvailabilityTopicDateTime  implements Se
   }
 
   
+  /**
+   **/
+  public ConversationDetailsDatalakeAvailabilityTopicDateTime beforeNow(Boolean beforeNow) {
+    this.beforeNow = beforeNow;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("beforeNow")
+  public Boolean getBeforeNow() {
+    return beforeNow;
+  }
+  public void setBeforeNow(Boolean beforeNow) {
+    this.beforeNow = beforeNow;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -99,14 +99,14 @@ public class ConversationDetailsDatalakeAvailabilityTopicDateTime  implements Se
     }
     ConversationDetailsDatalakeAvailabilityTopicDateTime conversationDetailsDatalakeAvailabilityTopicDateTime = (ConversationDetailsDatalakeAvailabilityTopicDateTime) o;
     return Objects.equals(this.iMillis, conversationDetailsDatalakeAvailabilityTopicDateTime.iMillis) &&
-        Objects.equals(this.beforeNow, conversationDetailsDatalakeAvailabilityTopicDateTime.beforeNow) &&
         Objects.equals(this.afterNow, conversationDetailsDatalakeAvailabilityTopicDateTime.afterNow) &&
-        Objects.equals(this.equalNow, conversationDetailsDatalakeAvailabilityTopicDateTime.equalNow);
+        Objects.equals(this.equalNow, conversationDetailsDatalakeAvailabilityTopicDateTime.equalNow) &&
+        Objects.equals(this.beforeNow, conversationDetailsDatalakeAvailabilityTopicDateTime.beforeNow);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iMillis, beforeNow, afterNow, equalNow);
+    return Objects.hash(iMillis, afterNow, equalNow, beforeNow);
   }
 
   @Override
@@ -115,9 +115,9 @@ public class ConversationDetailsDatalakeAvailabilityTopicDateTime  implements Se
     sb.append("class ConversationDetailsDatalakeAvailabilityTopicDateTime {\n");
     
     sb.append("    iMillis: ").append(toIndentedString(iMillis)).append("\n");
-    sb.append("    beforeNow: ").append(toIndentedString(beforeNow)).append("\n");
     sb.append("    afterNow: ").append(toIndentedString(afterNow)).append("\n");
     sb.append("    equalNow: ").append(toIndentedString(equalNow)).append("\n");
+    sb.append("    beforeNow: ").append(toIndentedString(beforeNow)).append("\n");
     sb.append("}");
     return sb.toString();
   }

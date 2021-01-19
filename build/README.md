@@ -5,7 +5,7 @@ title: Platform API Client SDK - Java
 ## Resources
 
 [![platform-client-v2](https://maven-badges.herokuapp.com/maven-central/com.mypurecloud/platform-client-v2/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.mypurecloud/platform-client-v2)
-[![Release Notes Badge](https://developer.mypurecloud.com/images/sdk-release-notes.png)](releaseNotes.md)
+[![Release Notes Badge](https://developer.mypurecloud.com/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-java/blob/master/releaseNotes.md)
 
 * **Documentation** https://developer.mypurecloud.com/api/rest/client-libraries/java/
 * **Source** https://github.com/MyPureCloud/platform-client-sdk-java
@@ -61,7 +61,7 @@ UserEntityListing response = apiInstance.getUsers(null, null, null, null, null, 
 
 For user applications, the consuming application must complete an implicit, auth token, or SAML2 Bearer OAuth flow to get an access token outside the scope of the SDK. Once an access token is obtained, it should be set on the SDK via constructing a new ApiClient instance (use `withAccessToken(String token)`). For more information about authenticating with OAuth, see the Developer Center article [Authorization](https://developer.mypurecloud.com/api/rest/authorization/index.html). For more information about SAML2 Bearer Oauth flow view the example below 
 
-##Authentication with SAML2Bearer token
+#### Authentication with SAML2Bearer token
 
 ```{"language":"java"}
 String clientId = "a0bda580-cb41-4ff6-8f06-28ffb4227594";
@@ -76,6 +76,42 @@ ApiClient apiClient = ApiClient.Builder.standard().withBasePath(region).build();
 ApiResponse<AuthResponse> authResponse = apiClient.authorizeSaml2Bearer(clientId,clientSecret,orgName,encodedSamlAssertion);
 System.out.println("Authentication successful. Access token expires in " + authResponse.getBody().getExpires_in() + " seconds");
 
+```
+
+#### Authentication with Authorization Code
+
+See example on how to authenticate with an authorization code below. For more information see the article on [Code Authorization](https://developer.mypurecloud.com/api/rest/authorization/use-authorization-code.html)
+
+```{"language":"java"}
+String clientId = "a0bda580-cb41-4ff6-8f06-28ffb4227594";
+String clientSecret = "e4meQ53cXGq53j6uffdULVjRl8It8M3FVsupKei0nSg";
+String authorizationCode = "YourAuthorizationCode"; // Your authorization code 
+String redirectUri= ""; // Your redirect URI
+
+//Set Region
+PureCloudRegionHosts region = PureCloudRegionHosts.us_east_1;
+
+ApiClient apiClient = ApiClient.Builder.standard().withBasePath(region).build();
+ApiResponse<AuthResponse> authResponse = apiClient.authorizeCodeAuthorization(clientId,clientSecret,authorizationCode,redirectUri);
+System.out.println("Authentication successful. Access token expires in " + authResponse.getBody().getExpires_in() + " seconds");
+```
+
+By default the SDK will transparently request a new access token when it expires. If you wish to apply the refresh logic yourself, build the ApiClient with `withShouldRefreshAccessToken(false)` and store the refresh token. The `getExpires_in()` value of the `authResponse` can be used to preemptively request a new token. Use `refreshCodeAuthorization` to request a new token when necessary
+
+```{"language":"java"}
+ApiClient apiClient = ApiClient.Builder.standard()
+                        .withBasePath(region)
+                        .withShouldRefreshAccessToken(false)
+                        .build();
+ApiResponse<AuthResponse> authResponse = apiClient.authorizeCodeAuthorization(clientId,clientSecret,authorizationCode,redirectUri);
+String refreshToken = authResponse.getBody().getRefresh_token();
+int expiresIn = authResponse.getBody().getExpires_in();
+System.out.println("Authentication successful. Access token expires in " + expiresIn + " seconds");
+
+// When token expires
+authResponse = apiClient.refreshCodeAuthorization(clientId,clientSecret,refreshToken);
+refreshToken = authResponse.getBody().getRefresh_token();
+expiresIn = authResponse.getBody().getExpires_in();
 ```
 
 ### Building an ApiClient Instance
@@ -101,7 +137,7 @@ UserEntityListing response = apiInstance.getUsers(null, null, null, null, null, 
 
 #### Setting the access token
 
-If not authorizing using the `authorizeClientCredentials(...)` helper, provide the access token to use for API requests:
+If not authorizing using the authorization method helpers, provide the access token to use for API requests:
 
 ```{"language":"java"}
 .withAccessToken("aisuefh89734hfkhsaldkh348jf")
@@ -158,6 +194,7 @@ The best practices are documented in the [Rate Limiting](https://developer.mypur
 * `withShouldThrowErrors(boolean shouldThrowErrors)` Set to `false` to suppress throwing of all errors
 * `withProxy(Proxy proxy)` Sets a proxy to use for requests
 * `withAuthenticatedProxy(Proxy proxy, String user, String pass)` Sets an authenticated proxy to use for requests
+* `withRefreshTokenWaitTime(int refreshTokenWaitTime)` Overrides the default time a thread will wait for another thread to request a new access token. The default is 10 seconds
 
 ### Making Requests
 
