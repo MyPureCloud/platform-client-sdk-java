@@ -397,7 +397,7 @@ public class RoutingApi {
 
   
   /**
-   * Delete queue member
+   * DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.
    * 
    * @param queueId Queue ID (required)
    * @param memberId Member ID (required)
@@ -409,7 +409,7 @@ public class RoutingApi {
   }
 
   /**
-   * Delete queue member
+   * DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.
    * 
    * @param queueId Queue ID (required)
    * @param memberId Member ID (required)
@@ -429,7 +429,7 @@ public class RoutingApi {
   }
 
   /**
-   * Delete queue member
+   * DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.
    * 
    * @param request The request object
    * @throws ApiException if the request fails on the server
@@ -447,7 +447,7 @@ public class RoutingApi {
   }
 
   /**
-   * Delete queue member
+   * DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.
    * 
    * @param request The request object
    * @return the response
@@ -2150,10 +2150,10 @@ public class RoutingApi {
 
   
   /**
-   * Get the members of this queue
+   * DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
    * 
    * @param queueId Queue ID (required)
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size [max 100] (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional, default to name)
    * @param expand Which fields, if any, to expand. (optional)
@@ -2173,10 +2173,10 @@ public class RoutingApi {
   }
 
   /**
-   * Get the members of this queue
+   * DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
    * 
    * @param queueId Queue ID (required)
-   * @param pageSize Page size (optional, default to 25)
+   * @param pageSize Page size [max 100] (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param sortBy Sort by (optional, default to name)
    * @param expand Which fields, if any, to expand. (optional)
@@ -2224,7 +2224,7 @@ public class RoutingApi {
   }
 
   /**
-   * Get the members of this queue
+   * DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
    * 
    * @param request The request object
    * @return QueueMemberEntityListing
@@ -2243,7 +2243,7 @@ public class RoutingApi {
   }
 
   /**
-   * Get the members of this queue
+   * DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
    * 
    * @param request The request object
    * @return the response
@@ -4270,7 +4270,7 @@ public class RoutingApi {
 
   
   /**
-   * Update the ring number OR joined status for a User in a Queue
+   * DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
    * 
    * @param queueId Queue ID (required)
    * @param memberId Member ID (required)
@@ -4284,7 +4284,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update the ring number OR joined status for a User in a Queue
+   * DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
    * 
    * @param queueId Queue ID (required)
    * @param memberId Member ID (required)
@@ -4308,7 +4308,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update the ring number OR joined status for a User in a Queue
+   * DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
    * 
    * @param request The request object
    * @return QueueMember
@@ -4327,7 +4327,7 @@ public class RoutingApi {
   }
 
   /**
-   * Update the ring number OR joined status for a User in a Queue
+   * DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
    * 
    * @param request The request object
    * @return the response
@@ -4357,7 +4357,7 @@ public class RoutingApi {
 
   
   /**
-   * Join or unjoin a set of users for a queue
+   * DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
    * 
    * @param queueId Queue ID (required)
    * @param body Queue Members (required)
@@ -4370,7 +4370,7 @@ public class RoutingApi {
   }
 
   /**
-   * Join or unjoin a set of users for a queue
+   * DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
    * 
    * @param queueId Queue ID (required)
    * @param body Queue Members (required)
@@ -4391,7 +4391,7 @@ public class RoutingApi {
   }
 
   /**
-   * Join or unjoin a set of users for a queue
+   * DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
    * 
    * @param request The request object
    * @return QueueMemberEntityListing
@@ -4410,7 +4410,7 @@ public class RoutingApi {
   }
 
   /**
-   * Join or unjoin a set of users for a queue
+   * DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
    * 
    * @param request The request object
    * @return the response
@@ -5346,7 +5346,7 @@ public class RoutingApi {
 
   
   /**
-   * Bulk add or delete up to 100 queue members
+   * DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
    * 
    * @param queueId Queue ID (required)
    * @param body Queue Members (required)
@@ -5360,7 +5360,7 @@ public class RoutingApi {
   }
 
   /**
-   * Bulk add or delete up to 100 queue members
+   * DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
    * 
    * @param queueId Queue ID (required)
    * @param body Queue Members (required)
@@ -5384,7 +5384,7 @@ public class RoutingApi {
   }
 
   /**
-   * Bulk add or delete up to 100 queue members
+   * DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
    * 
    * @param request The request object
    * @return String
@@ -5403,7 +5403,7 @@ public class RoutingApi {
   }
 
   /**
-   * Bulk add or delete up to 100 queue members
+   * DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
    * 
    * @param request The request object
    * @return the response

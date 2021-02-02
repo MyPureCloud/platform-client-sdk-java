@@ -14,7 +14,7 @@ title: UpdateActivityCodeRequest
 | **countsAsPaidTime** | <!----><!---->**Boolean**<!----> | Whether an agent is paid while performing this activity |  [optional] |
 | **countsAsWorkTime** | <!----><!---->**Boolean**<!----> | Indicates whether or not the activity should be counted as work time |  [optional] |
 | **agentTimeOffSelectable** | <!----><!---->**Boolean**<!----> | Whether an agent can select this activity code when creating or editing a time off request |  [optional] |
-| **metadata** | <!----><!---->[**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html)<!----> | Version metadata for the associated management unit&#39;s list of activity codes |  |
+| **metadata** | <!----><!---->[**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html)<!----> | Version metadata for the associated business unit&#39;s list of activity codes |  |
 {: class="table table-striped"}
 
 

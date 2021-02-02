@@ -6,6 +6,8 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -16,11 +18,12 @@ public class PureEngage  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private Boolean autoProvisionUsers = null;
-  private String certificate = null;
+  private Boolean disabled = null;
   private String issuerURI = null;
   private String ssoTargetURI = null;
-  private Boolean disabled = null;
+  private String certificate = null;
+  private List<String> certificates = new ArrayList<String>();
+  private Boolean autoProvisionUsers = null;
   private String selfUri = null;
 
   
@@ -50,35 +53,18 @@ public class PureEngage  implements Serializable {
   
   /**
    **/
-  public PureEngage autoProvisionUsers(Boolean autoProvisionUsers) {
-    this.autoProvisionUsers = autoProvisionUsers;
+  public PureEngage disabled(Boolean disabled) {
+    this.disabled = disabled;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("autoProvisionUsers")
-  public Boolean getAutoProvisionUsers() {
-    return autoProvisionUsers;
+  @JsonProperty("disabled")
+  public Boolean getDisabled() {
+    return disabled;
   }
-  public void setAutoProvisionUsers(Boolean autoProvisionUsers) {
-    this.autoProvisionUsers = autoProvisionUsers;
-  }
-
-  
-  /**
-   **/
-  public PureEngage certificate(String certificate) {
-    this.certificate = certificate;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("certificate")
-  public String getCertificate() {
-    return certificate;
-  }
-  public void setCertificate(String certificate) {
-    this.certificate = certificate;
+  public void setDisabled(Boolean disabled) {
+    this.disabled = disabled;
   }
 
   
@@ -118,18 +104,52 @@ public class PureEngage  implements Serializable {
   
   /**
    **/
-  public PureEngage disabled(Boolean disabled) {
-    this.disabled = disabled;
+  public PureEngage certificate(String certificate) {
+    this.certificate = certificate;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("disabled")
-  public Boolean getDisabled() {
-    return disabled;
+  @JsonProperty("certificate")
+  public String getCertificate() {
+    return certificate;
   }
-  public void setDisabled(Boolean disabled) {
-    this.disabled = disabled;
+  public void setCertificate(String certificate) {
+    this.certificate = certificate;
+  }
+
+  
+  /**
+   **/
+  public PureEngage certificates(List<String> certificates) {
+    this.certificates = certificates;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("certificates")
+  public List<String> getCertificates() {
+    return certificates;
+  }
+  public void setCertificates(List<String> certificates) {
+    this.certificates = certificates;
+  }
+
+  
+  /**
+   **/
+  public PureEngage autoProvisionUsers(Boolean autoProvisionUsers) {
+    this.autoProvisionUsers = autoProvisionUsers;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("autoProvisionUsers")
+  public Boolean getAutoProvisionUsers() {
+    return autoProvisionUsers;
+  }
+  public void setAutoProvisionUsers(Boolean autoProvisionUsers) {
+    this.autoProvisionUsers = autoProvisionUsers;
   }
 
   
@@ -152,17 +172,18 @@ public class PureEngage  implements Serializable {
     PureEngage pureEngage = (PureEngage) o;
     return Objects.equals(this.id, pureEngage.id) &&
         Objects.equals(this.name, pureEngage.name) &&
-        Objects.equals(this.autoProvisionUsers, pureEngage.autoProvisionUsers) &&
-        Objects.equals(this.certificate, pureEngage.certificate) &&
+        Objects.equals(this.disabled, pureEngage.disabled) &&
         Objects.equals(this.issuerURI, pureEngage.issuerURI) &&
         Objects.equals(this.ssoTargetURI, pureEngage.ssoTargetURI) &&
-        Objects.equals(this.disabled, pureEngage.disabled) &&
+        Objects.equals(this.certificate, pureEngage.certificate) &&
+        Objects.equals(this.certificates, pureEngage.certificates) &&
+        Objects.equals(this.autoProvisionUsers, pureEngage.autoProvisionUsers) &&
         Objects.equals(this.selfUri, pureEngage.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, autoProvisionUsers, certificate, issuerURI, ssoTargetURI, disabled, selfUri);
+    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, certificate, certificates, autoProvisionUsers, selfUri);
   }
 
   @Override
@@ -172,11 +193,12 @@ public class PureEngage  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    autoProvisionUsers: ").append(toIndentedString(autoProvisionUsers)).append("\n");
-    sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
+    sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
     sb.append("    ssoTargetURI: ").append(toIndentedString(ssoTargetURI)).append("\n");
-    sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
+    sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
+    sb.append("    certificates: ").append(toIndentedString(certificates)).append("\n");
+    sb.append("    autoProvisionUsers: ").append(toIndentedString(autoProvisionUsers)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -31,6 +31,8 @@ import com.mypurecloud.sdk.v2.model.KnowledgeSearchResponse;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
 import com.mypurecloud.sdk.v2.model.SearchRequest;
 import com.mypurecloud.sdk.v2.model.SuggestSearchRequest;
+import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
+import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
@@ -51,6 +53,7 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseSearchReques
 import com.mypurecloud.sdk.v2.api.request.PostLocationsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSearchSuggestRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTranscriptsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostVoicemailSearchRequest;
 
@@ -1278,6 +1281,82 @@ public class SearchApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<JsonNodeSearchResponse> response = (ApiResponse<JsonNodeSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Search resources.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<JsonSearchResponse> postSpeechandtextanalyticsTranscriptsSearchAsync(PostSpeechandtextanalyticsTranscriptsSearchRequest request, final AsyncApiCallback<JsonSearchResponse> callback) {
+    try {
+      final SettableFuture<JsonSearchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JsonSearchResponse>() {}, new AsyncApiCallback<ApiResponse<JsonSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<JsonSearchResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Search resources.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<JsonSearchResponse>> postSpeechandtextanalyticsTranscriptsSearchAsync(ApiRequest<TranscriptSearchRequest> request, final AsyncApiCallback<ApiResponse<JsonSearchResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<JsonSearchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<JsonSearchResponse>() {}, new AsyncApiCallback<ApiResponse<JsonSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<JsonSearchResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JsonSearchResponse> response = (ApiResponse<JsonSearchResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JsonSearchResponse> response = (ApiResponse<JsonSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

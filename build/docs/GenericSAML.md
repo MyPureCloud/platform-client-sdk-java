@@ -10,14 +10,15 @@ title: GenericSAML
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
-| **logoImageData** | <!----><!---->**String**<!----> |  |  [optional] |
-| **relyingPartyIdentifier** | <!----><!---->**String**<!----> |  |  [optional] |
-| **endpointCompression** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **nameIdentifierFormat** | [**NameIdentifierFormatEnum**](#NameIdentifierFormatEnum)<!----> |  |  [optional] |
-| **certificate** | <!----><!---->**String**<!----> |  |  [optional] |
+| **disabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **issuerURI** | <!----><!---->**String**<!----> |  |  [optional] |
 | **ssoTargetURI** | <!----><!---->**String**<!----> |  |  [optional] |
-| **disabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **certificate** | <!----><!---->**String**<!----> |  |  [optional] |
+| **certificates** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
+| **relyingPartyIdentifier** | <!----><!---->**String**<!----> |  |  [optional] |
+| **logoImageData** | <!----><!---->**String**<!----> |  |  [optional] |
+| **endpointCompression** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **nameIdentifierFormat** | [**NameIdentifierFormatEnum**](#NameIdentifierFormatEnum)<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

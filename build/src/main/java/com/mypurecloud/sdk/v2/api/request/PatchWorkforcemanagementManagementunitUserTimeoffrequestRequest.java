@@ -128,17 +128,17 @@ import com.mypurecloud.sdk.v2.model.CreateAgentTimeOffRequest;
 
 public class PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest {
     
-	private String muId;
-	public String getMuId() {
-		return this.muId;
+	private String managementUnitId;
+	public String getManagementUnitId() {
+		return this.managementUnitId;
 	}
 
-	public void setMuId(String muId) {
-		this.muId = muId;
+	public void setManagementUnitId(String managementUnitId) {
+		this.managementUnitId = managementUnitId;
 	}
 
-	public PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest withMuId(String muId) {
-	    this.setMuId(muId);
+	public PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest withManagementUnitId(String managementUnitId) {
+	    this.setManagementUnitId(managementUnitId);
 	    return this;
 	} 
 	
@@ -205,9 +205,9 @@ public class PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest {
 
     public ApiRequest<AdminTimeOffRequestPatch> withHttpInfo() {
         
-        // verify the required parameter 'muId' is set
-        if (this.muId == null) {
-            throw new IllegalStateException("Missing the required parameter 'muId' when building request for PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest.");
+        // verify the required parameter 'managementUnitId' is set
+        if (this.managementUnitId == null) {
+            throw new IllegalStateException("Missing the required parameter 'managementUnitId' when building request for PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest.");
         }
         
         // verify the required parameter 'userId' is set
@@ -221,8 +221,8 @@ public class PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest {
         }
         
 
-        return ApiRequestBuilder.create("PATCH", "/api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId}")
-                .withPathParameter("muId", muId)
+        return ApiRequestBuilder.create("PATCH", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}")
+                .withPathParameter("managementUnitId", managementUnitId)
         
                 .withPathParameter("userId", userId)
         
@@ -242,9 +242,9 @@ public class PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest {
 	}
 
 	
-	public static Builder builder(String muId, String userId, String timeOffRequestId) {
+	public static Builder builder(String managementUnitId, String userId, String timeOffRequestId) {
 	    return new Builder()
-	            .withRequiredParams(muId, userId, timeOffRequestId);
+	            .withRequiredParams(managementUnitId, userId, timeOffRequestId);
 	}
 	
 
@@ -256,8 +256,8 @@ public class PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest {
 		}
 
 		
-		public Builder withMuId(String muId) {
-			request.setMuId(muId);
+		public Builder withManagementUnitId(String managementUnitId) {
+			request.setManagementUnitId(managementUnitId);
 			return this;
 		}
 		
@@ -278,8 +278,8 @@ public class PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest {
 		
 
 		
-		public Builder withRequiredParams(String muId, String userId, String timeOffRequestId) {
-			request.setMuId(muId);
+		public Builder withRequiredParams(String managementUnitId, String userId, String timeOffRequestId) {
+			request.setManagementUnitId(managementUnitId);
 						request.setUserId(userId);
 						request.setTimeOffRequestId(timeOffRequestId);
 			
@@ -289,9 +289,9 @@ public class PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest {
 
 		public PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest build() {
             
-            // verify the required parameter 'muId' is set
-            if (request.muId == null) {
-                throw new IllegalStateException("Missing the required parameter 'muId' when building request for PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest.");
+            // verify the required parameter 'managementUnitId' is set
+            if (request.managementUnitId == null) {
+                throw new IllegalStateException("Missing the required parameter 'managementUnitId' when building request for PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest.");
             }
             
             // verify the required parameter 'userId' is set

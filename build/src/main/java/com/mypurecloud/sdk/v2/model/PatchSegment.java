@@ -26,6 +26,7 @@ public class PatchSegment  implements Serializable {
   private Boolean shouldDisplayToAgent = null;
   private Context context = null;
   private Journey journey = null;
+  private Integer assignmentExpirationDays = null;
   private String selfUri = null;
   private Date createdDate = null;
   private Date modifiedDate = null;
@@ -182,6 +183,24 @@ public class PatchSegment  implements Serializable {
   }
 
   
+  /**
+   * Time, in days, from when the segment is assigned until it is automatically unassigned.
+   **/
+  public PatchSegment assignmentExpirationDays(Integer assignmentExpirationDays) {
+    this.assignmentExpirationDays = assignmentExpirationDays;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Time, in days, from when the segment is assigned until it is automatically unassigned.")
+  @JsonProperty("assignmentExpirationDays")
+  public Integer getAssignmentExpirationDays() {
+    return assignmentExpirationDays;
+  }
+  public void setAssignmentExpirationDays(Integer assignmentExpirationDays) {
+    this.assignmentExpirationDays = assignmentExpirationDays;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -244,6 +263,7 @@ public class PatchSegment  implements Serializable {
         Objects.equals(this.shouldDisplayToAgent, patchSegment.shouldDisplayToAgent) &&
         Objects.equals(this.context, patchSegment.context) &&
         Objects.equals(this.journey, patchSegment.journey) &&
+        Objects.equals(this.assignmentExpirationDays, patchSegment.assignmentExpirationDays) &&
         Objects.equals(this.selfUri, patchSegment.selfUri) &&
         Objects.equals(this.createdDate, patchSegment.createdDate) &&
         Objects.equals(this.modifiedDate, patchSegment.modifiedDate);
@@ -251,7 +271,7 @@ public class PatchSegment  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, isActive, displayName, version, description, color, shouldDisplayToAgent, context, journey, selfUri, createdDate, modifiedDate);
+    return Objects.hash(id, isActive, displayName, version, description, color, shouldDisplayToAgent, context, journey, assignmentExpirationDays, selfUri, createdDate, modifiedDate);
   }
 
   @Override
@@ -268,6 +288,7 @@ public class PatchSegment  implements Serializable {
     sb.append("    shouldDisplayToAgent: ").append(toIndentedString(shouldDisplayToAgent)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    journey: ").append(toIndentedString(journey)).append("\n");
+    sb.append("    assignmentExpirationDays: ").append(toIndentedString(assignmentExpirationDays)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");

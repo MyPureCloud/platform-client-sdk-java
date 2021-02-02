@@ -6,6 +6,8 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -16,10 +18,11 @@ public class OneLogin  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private String certificate = null;
+  private Boolean disabled = null;
   private String issuerURI = null;
   private String ssoTargetURI = null;
-  private Boolean disabled = null;
+  private String certificate = null;
+  private List<String> certificates = new ArrayList<String>();
   private String selfUri = null;
 
   
@@ -49,18 +52,18 @@ public class OneLogin  implements Serializable {
   
   /**
    **/
-  public OneLogin certificate(String certificate) {
-    this.certificate = certificate;
+  public OneLogin disabled(Boolean disabled) {
+    this.disabled = disabled;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("certificate")
-  public String getCertificate() {
-    return certificate;
+  @JsonProperty("disabled")
+  public Boolean getDisabled() {
+    return disabled;
   }
-  public void setCertificate(String certificate) {
-    this.certificate = certificate;
+  public void setDisabled(Boolean disabled) {
+    this.disabled = disabled;
   }
 
   
@@ -100,18 +103,35 @@ public class OneLogin  implements Serializable {
   
   /**
    **/
-  public OneLogin disabled(Boolean disabled) {
-    this.disabled = disabled;
+  public OneLogin certificate(String certificate) {
+    this.certificate = certificate;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("disabled")
-  public Boolean getDisabled() {
-    return disabled;
+  @JsonProperty("certificate")
+  public String getCertificate() {
+    return certificate;
   }
-  public void setDisabled(Boolean disabled) {
-    this.disabled = disabled;
+  public void setCertificate(String certificate) {
+    this.certificate = certificate;
+  }
+
+  
+  /**
+   **/
+  public OneLogin certificates(List<String> certificates) {
+    this.certificates = certificates;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("certificates")
+  public List<String> getCertificates() {
+    return certificates;
+  }
+  public void setCertificates(List<String> certificates) {
+    this.certificates = certificates;
   }
 
   
@@ -134,16 +154,17 @@ public class OneLogin  implements Serializable {
     OneLogin oneLogin = (OneLogin) o;
     return Objects.equals(this.id, oneLogin.id) &&
         Objects.equals(this.name, oneLogin.name) &&
-        Objects.equals(this.certificate, oneLogin.certificate) &&
+        Objects.equals(this.disabled, oneLogin.disabled) &&
         Objects.equals(this.issuerURI, oneLogin.issuerURI) &&
         Objects.equals(this.ssoTargetURI, oneLogin.ssoTargetURI) &&
-        Objects.equals(this.disabled, oneLogin.disabled) &&
+        Objects.equals(this.certificate, oneLogin.certificate) &&
+        Objects.equals(this.certificates, oneLogin.certificates) &&
         Objects.equals(this.selfUri, oneLogin.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, certificate, issuerURI, ssoTargetURI, disabled, selfUri);
+    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, certificate, certificates, selfUri);
   }
 
   @Override
@@ -153,10 +174,11 @@ public class OneLogin  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
+    sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
     sb.append("    ssoTargetURI: ").append(toIndentedString(ssoTargetURI)).append("\n");
-    sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
+    sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
+    sb.append("    certificates: ").append(toIndentedString(certificates)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

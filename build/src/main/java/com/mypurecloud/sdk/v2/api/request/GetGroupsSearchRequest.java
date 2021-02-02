@@ -38,6 +38,8 @@ import com.mypurecloud.sdk.v2.model.KnowledgeSearchResponse;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
 import com.mypurecloud.sdk.v2.model.SearchRequest;
 import com.mypurecloud.sdk.v2.model.SuggestSearchRequest;
+import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
+import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 

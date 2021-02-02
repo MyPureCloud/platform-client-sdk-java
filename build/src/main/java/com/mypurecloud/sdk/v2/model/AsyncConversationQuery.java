@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationDetailQueryFilter;
 import com.mypurecloud.sdk.v2.model.EvaluationDetailQueryFilter;
 import com.mypurecloud.sdk.v2.model.MediaEndpointStatDetailQueryFilter;
+import com.mypurecloud.sdk.v2.model.ResolutionDetailQueryFilter;
 import com.mypurecloud.sdk.v2.model.SegmentDetailQueryFilter;
 import com.mypurecloud.sdk.v2.model.SurveyDetailQueryFilter;
 import io.swagger.annotations.ApiModel;
@@ -27,6 +28,7 @@ public class AsyncConversationQuery  implements Serializable {
   private List<EvaluationDetailQueryFilter> evaluationFilters = new ArrayList<EvaluationDetailQueryFilter>();
   private List<MediaEndpointStatDetailQueryFilter> mediaEndpointStatFilters = new ArrayList<MediaEndpointStatDetailQueryFilter>();
   private List<SurveyDetailQueryFilter> surveyFilters = new ArrayList<SurveyDetailQueryFilter>();
+  private List<ResolutionDetailQueryFilter> resolutionFilters = new ArrayList<ResolutionDetailQueryFilter>();
 
   /**
    * Sort the result set in ascending/descending order. Default is ascending
@@ -195,6 +197,24 @@ public class AsyncConversationQuery  implements Serializable {
 
   
   /**
+   * Filters that target resolutions
+   **/
+  public AsyncConversationQuery resolutionFilters(List<ResolutionDetailQueryFilter> resolutionFilters) {
+    this.resolutionFilters = resolutionFilters;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filters that target resolutions")
+  @JsonProperty("resolutionFilters")
+  public List<ResolutionDetailQueryFilter> getResolutionFilters() {
+    return resolutionFilters;
+  }
+  public void setResolutionFilters(List<ResolutionDetailQueryFilter> resolutionFilters) {
+    this.resolutionFilters = resolutionFilters;
+  }
+
+  
+  /**
    * Sort the result set in ascending/descending order. Default is ascending
    **/
   public AsyncConversationQuery order(OrderEnum order) {
@@ -299,6 +319,7 @@ public class AsyncConversationQuery  implements Serializable {
         Objects.equals(this.evaluationFilters, asyncConversationQuery.evaluationFilters) &&
         Objects.equals(this.mediaEndpointStatFilters, asyncConversationQuery.mediaEndpointStatFilters) &&
         Objects.equals(this.surveyFilters, asyncConversationQuery.surveyFilters) &&
+        Objects.equals(this.resolutionFilters, asyncConversationQuery.resolutionFilters) &&
         Objects.equals(this.order, asyncConversationQuery.order) &&
         Objects.equals(this.orderBy, asyncConversationQuery.orderBy) &&
         Objects.equals(this.interval, asyncConversationQuery.interval) &&
@@ -308,7 +329,7 @@ public class AsyncConversationQuery  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationFilters, segmentFilters, evaluationFilters, mediaEndpointStatFilters, surveyFilters, order, orderBy, interval, limit, startOfDayIntervalMatching);
+    return Objects.hash(conversationFilters, segmentFilters, evaluationFilters, mediaEndpointStatFilters, surveyFilters, resolutionFilters, order, orderBy, interval, limit, startOfDayIntervalMatching);
   }
 
   @Override
@@ -321,6 +342,7 @@ public class AsyncConversationQuery  implements Serializable {
     sb.append("    evaluationFilters: ").append(toIndentedString(evaluationFilters)).append("\n");
     sb.append("    mediaEndpointStatFilters: ").append(toIndentedString(mediaEndpointStatFilters)).append("\n");
     sb.append("    surveyFilters: ").append(toIndentedString(surveyFilters)).append("\n");
+    sb.append("    resolutionFilters: ").append(toIndentedString(resolutionFilters)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");

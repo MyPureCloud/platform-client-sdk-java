@@ -46,7 +46,7 @@ public class AuditApi {
 
   
   /**
-   * Get service mapping information used in audits.
+   * Get service mapping information used in realtime audits.
    * 
    * @return AuditQueryServiceMapping
    * @throws ApiException if the request fails on the server
@@ -57,7 +57,7 @@ public class AuditApi {
   }
 
   /**
-   * Get service mapping information used in audits.
+   * Get service mapping information used in realtime audits.
    * 
    * @return AuditQueryServiceMapping
    * @throws IOException if the request fails to be processed
@@ -72,7 +72,7 @@ public class AuditApi {
   }
 
   /**
-   * Get service mapping information used in audits.
+   * Get service mapping information used in realtime audits.
    * 
    * @param request The request object
    * @return AuditQueryServiceMapping
@@ -91,7 +91,7 @@ public class AuditApi {
   }
 
   /**
-   * Get service mapping information used in audits.
+   * Get service mapping information used in realtime audits.
    * 
    * @param request The request object
    * @return the response

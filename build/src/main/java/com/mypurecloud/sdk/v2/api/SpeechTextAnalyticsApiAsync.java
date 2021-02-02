@@ -16,10 +16,17 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ConversationMetrics;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.TranscriptUrl;
+import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsResponse;
+import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
+import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
+import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchSpeechandtextanalyticsSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTranscriptsSearchRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -181,6 +188,234 @@ public class SpeechTextAnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<TranscriptUrl> response = (ApiResponse<TranscriptUrl>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get Speech And Text Analytics Settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SpeechTextAnalyticsSettingsResponse> getSpeechandtextanalyticsSettingsAsync(GetSpeechandtextanalyticsSettingsRequest request, final AsyncApiCallback<SpeechTextAnalyticsSettingsResponse> callback) {
+    try {
+      final SettableFuture<SpeechTextAnalyticsSettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SpeechTextAnalyticsSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<SpeechTextAnalyticsSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SpeechTextAnalyticsSettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get Speech And Text Analytics Settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SpeechTextAnalyticsSettingsResponse>> getSpeechandtextanalyticsSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SpeechTextAnalyticsSettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SpeechTextAnalyticsSettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SpeechTextAnalyticsSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<SpeechTextAnalyticsSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SpeechTextAnalyticsSettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SpeechTextAnalyticsSettingsResponse> response = (ApiResponse<SpeechTextAnalyticsSettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SpeechTextAnalyticsSettingsResponse> response = (ApiResponse<SpeechTextAnalyticsSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Patch Speech And Text Analytics Settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SpeechTextAnalyticsSettingsResponse> patchSpeechandtextanalyticsSettingsAsync(PatchSpeechandtextanalyticsSettingsRequest request, final AsyncApiCallback<SpeechTextAnalyticsSettingsResponse> callback) {
+    try {
+      final SettableFuture<SpeechTextAnalyticsSettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SpeechTextAnalyticsSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<SpeechTextAnalyticsSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SpeechTextAnalyticsSettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Patch Speech And Text Analytics Settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SpeechTextAnalyticsSettingsResponse>> patchSpeechandtextanalyticsSettingsAsync(ApiRequest<SpeechTextAnalyticsSettingsRequest> request, final AsyncApiCallback<ApiResponse<SpeechTextAnalyticsSettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SpeechTextAnalyticsSettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SpeechTextAnalyticsSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<SpeechTextAnalyticsSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SpeechTextAnalyticsSettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SpeechTextAnalyticsSettingsResponse> response = (ApiResponse<SpeechTextAnalyticsSettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SpeechTextAnalyticsSettingsResponse> response = (ApiResponse<SpeechTextAnalyticsSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Search resources.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<JsonSearchResponse> postSpeechandtextanalyticsTranscriptsSearchAsync(PostSpeechandtextanalyticsTranscriptsSearchRequest request, final AsyncApiCallback<JsonSearchResponse> callback) {
+    try {
+      final SettableFuture<JsonSearchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<JsonSearchResponse>() {}, new AsyncApiCallback<ApiResponse<JsonSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<JsonSearchResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Search resources.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<JsonSearchResponse>> postSpeechandtextanalyticsTranscriptsSearchAsync(ApiRequest<TranscriptSearchRequest> request, final AsyncApiCallback<ApiResponse<JsonSearchResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<JsonSearchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<JsonSearchResponse>() {}, new AsyncApiCallback<ApiResponse<JsonSearchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<JsonSearchResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JsonSearchResponse> response = (ApiResponse<JsonSearchResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<JsonSearchResponse> response = (ApiResponse<JsonSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

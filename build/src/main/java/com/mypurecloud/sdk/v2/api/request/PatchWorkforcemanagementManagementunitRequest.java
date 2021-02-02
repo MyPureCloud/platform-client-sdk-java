@@ -128,17 +128,17 @@ import com.mypurecloud.sdk.v2.model.CreateAgentTimeOffRequest;
 
 public class PatchWorkforcemanagementManagementunitRequest {
     
-	private String muId;
-	public String getMuId() {
-		return this.muId;
+	private String managementUnitId;
+	public String getManagementUnitId() {
+		return this.managementUnitId;
 	}
 
-	public void setMuId(String muId) {
-		this.muId = muId;
+	public void setManagementUnitId(String managementUnitId) {
+		this.managementUnitId = managementUnitId;
 	}
 
-	public PatchWorkforcemanagementManagementunitRequest withMuId(String muId) {
-	    this.setMuId(muId);
+	public PatchWorkforcemanagementManagementunitRequest withManagementUnitId(String managementUnitId) {
+	    this.setManagementUnitId(managementUnitId);
 	    return this;
 	} 
 	
@@ -177,14 +177,14 @@ public class PatchWorkforcemanagementManagementunitRequest {
 
     public ApiRequest<UpdateManagementUnitRequest> withHttpInfo() {
         
-        // verify the required parameter 'muId' is set
-        if (this.muId == null) {
-            throw new IllegalStateException("Missing the required parameter 'muId' when building request for PatchWorkforcemanagementManagementunitRequest.");
+        // verify the required parameter 'managementUnitId' is set
+        if (this.managementUnitId == null) {
+            throw new IllegalStateException("Missing the required parameter 'managementUnitId' when building request for PatchWorkforcemanagementManagementunitRequest.");
         }
         
 
-        return ApiRequestBuilder.create("PATCH", "/api/v2/workforcemanagement/managementunits/{muId}")
-                .withPathParameter("muId", muId)
+        return ApiRequestBuilder.create("PATCH", "/api/v2/workforcemanagement/managementunits/{managementUnitId}")
+                .withPathParameter("managementUnitId", managementUnitId)
         
                 .withBody(body)
         
@@ -200,9 +200,9 @@ public class PatchWorkforcemanagementManagementunitRequest {
 	}
 
 	
-	public static Builder builder(String muId) {
+	public static Builder builder(String managementUnitId) {
 	    return new Builder()
-	            .withRequiredParams(muId);
+	            .withRequiredParams(managementUnitId);
 	}
 	
 
@@ -214,8 +214,8 @@ public class PatchWorkforcemanagementManagementunitRequest {
 		}
 
 		
-		public Builder withMuId(String muId) {
-			request.setMuId(muId);
+		public Builder withManagementUnitId(String managementUnitId) {
+			request.setManagementUnitId(managementUnitId);
 			return this;
 		}
 		
@@ -226,8 +226,8 @@ public class PatchWorkforcemanagementManagementunitRequest {
 		
 
 		
-		public Builder withRequiredParams(String muId) {
-			request.setMuId(muId);
+		public Builder withRequiredParams(String managementUnitId) {
+			request.setManagementUnitId(managementUnitId);
 			
 			return this;
 		}
@@ -235,9 +235,9 @@ public class PatchWorkforcemanagementManagementunitRequest {
 
 		public PatchWorkforcemanagementManagementunitRequest build() {
             
-            // verify the required parameter 'muId' is set
-            if (request.muId == null) {
-                throw new IllegalStateException("Missing the required parameter 'muId' when building request for PatchWorkforcemanagementManagementunitRequest.");
+            // verify the required parameter 'managementUnitId' is set
+            if (request.managementUnitId == null) {
+                throw new IllegalStateException("Missing the required parameter 'managementUnitId' when building request for PatchWorkforcemanagementManagementunitRequest.");
             }
             
 			return request;

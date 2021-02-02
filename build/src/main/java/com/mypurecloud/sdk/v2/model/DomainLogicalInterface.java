@@ -164,6 +164,7 @@ public class DomainLogicalInterface  implements Serializable {
   private Boolean useForInternalEdgeCommunication = null;
   private Boolean useForIndirectEdgeCommunication = null;
   private Boolean useForCloudProxyEdgeCommunication = null;
+  private Boolean useForWanInterface = null;
   private List<TrunkBaseAssignment> externalTrunkBaseAssignments = new ArrayList<TrunkBaseAssignment>();
   private List<TrunkBaseAssignment> phoneTrunkBaseAssignments = new ArrayList<TrunkBaseAssignment>();
   private Boolean traceEnabled = null;
@@ -743,6 +744,13 @@ public class DomainLogicalInterface  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "This interface will be used for all communication with the internet.")
+  @JsonProperty("useForWanInterface")
+  public Boolean getUseForWanInterface() {
+    return useForWanInterface;
+  }
+
+  
   /**
    * External trunk base settings to use for external communication from this interface.
    **/
@@ -883,6 +891,7 @@ public class DomainLogicalInterface  implements Serializable {
         Objects.equals(this.useForInternalEdgeCommunication, domainLogicalInterface.useForInternalEdgeCommunication) &&
         Objects.equals(this.useForIndirectEdgeCommunication, domainLogicalInterface.useForIndirectEdgeCommunication) &&
         Objects.equals(this.useForCloudProxyEdgeCommunication, domainLogicalInterface.useForCloudProxyEdgeCommunication) &&
+        Objects.equals(this.useForWanInterface, domainLogicalInterface.useForWanInterface) &&
         Objects.equals(this.externalTrunkBaseAssignments, domainLogicalInterface.externalTrunkBaseAssignments) &&
         Objects.equals(this.phoneTrunkBaseAssignments, domainLogicalInterface.phoneTrunkBaseAssignments) &&
         Objects.equals(this.traceEnabled, domainLogicalInterface.traceEnabled) &&
@@ -893,7 +902,7 @@ public class DomainLogicalInterface  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, edgeUri, edgeAssignedId, friendlyName, vlanTagId, hardwareAddress, physicalAdapterId, ifStatus, interfaceType, publicNatAddressIpV4, publicNatAddressIpV6, routes, addresses, ipv4Capabilities, ipv6Capabilities, currentState, lastModifiedUserId, lastModifiedCorrelationId, commandResponses, inheritPhoneTrunkBasesIPv4, inheritPhoneTrunkBasesIPv6, useForInternalEdgeCommunication, useForIndirectEdgeCommunication, useForCloudProxyEdgeCommunication, externalTrunkBaseAssignments, phoneTrunkBaseAssignments, traceEnabled, startDate, endDate, selfUri);
+    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, edgeUri, edgeAssignedId, friendlyName, vlanTagId, hardwareAddress, physicalAdapterId, ifStatus, interfaceType, publicNatAddressIpV4, publicNatAddressIpV6, routes, addresses, ipv4Capabilities, ipv6Capabilities, currentState, lastModifiedUserId, lastModifiedCorrelationId, commandResponses, inheritPhoneTrunkBasesIPv4, inheritPhoneTrunkBasesIPv6, useForInternalEdgeCommunication, useForIndirectEdgeCommunication, useForCloudProxyEdgeCommunication, useForWanInterface, externalTrunkBaseAssignments, phoneTrunkBaseAssignments, traceEnabled, startDate, endDate, selfUri);
   }
 
   @Override
@@ -935,6 +944,7 @@ public class DomainLogicalInterface  implements Serializable {
     sb.append("    useForInternalEdgeCommunication: ").append(toIndentedString(useForInternalEdgeCommunication)).append("\n");
     sb.append("    useForIndirectEdgeCommunication: ").append(toIndentedString(useForIndirectEdgeCommunication)).append("\n");
     sb.append("    useForCloudProxyEdgeCommunication: ").append(toIndentedString(useForCloudProxyEdgeCommunication)).append("\n");
+    sb.append("    useForWanInterface: ").append(toIndentedString(useForWanInterface)).append("\n");
     sb.append("    externalTrunkBaseAssignments: ").append(toIndentedString(externalTrunkBaseAssignments)).append("\n");
     sb.append("    phoneTrunkBaseAssignments: ").append(toIndentedString(phoneTrunkBaseAssignments)).append("\n");
     sb.append("    traceEnabled: ").append(toIndentedString(traceEnabled)).append("\n");

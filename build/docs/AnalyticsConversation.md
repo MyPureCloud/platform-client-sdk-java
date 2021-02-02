@@ -16,6 +16,7 @@ title: AnalyticsConversation
 | **originatingDirection** | [**OriginatingDirectionEnum**](#OriginatingDirectionEnum)<!----> | The original direction of the conversation |  [optional] |
 | **evaluations** | <!----><!---->[**List&lt;AnalyticsEvaluation&gt;**](AnalyticsEvaluation.html)<!----> | Evaluations tied to this conversation |  [optional] |
 | **surveys** | <!----><!---->[**List&lt;AnalyticsSurvey&gt;**](AnalyticsSurvey.html)<!----> | Surveys tied to this conversation |  [optional] |
+| **resolutions** | <!----><!---->[**List&lt;AnalyticsResolution&gt;**](AnalyticsResolution.html)<!----> | Resolutions tied to this conversation |  [optional] |
 | **divisionIds** | <!----><!---->**List&lt;String&gt;**<!----> | Identifiers of divisions associated with this conversation |  [optional] |
 | **participants** | <!----><!---->[**List&lt;AnalyticsParticipant&gt;**](AnalyticsParticipant.html)<!----> | Participants in the conversation |  [optional] |
 {: class="table table-striped"}

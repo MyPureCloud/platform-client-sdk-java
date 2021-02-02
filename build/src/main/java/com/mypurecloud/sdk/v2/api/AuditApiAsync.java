@@ -50,7 +50,7 @@ public class AuditApiAsync {
 
   
   /**
-   * Get service mapping information used in audits.
+   * Get service mapping information used in realtime audits.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -84,7 +84,7 @@ public class AuditApiAsync {
   }
 
   /**
-   * Get service mapping information used in audits.
+   * Get service mapping information used in realtime audits.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

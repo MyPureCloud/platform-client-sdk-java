@@ -374,12 +374,13 @@ public class JourneyApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param isActive Determines whether or not to show only active segments. (optional)
+   * @param segmentIds IDs of segments to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 100 segments are allowed per request. (optional)
    * @return SegmentListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SegmentListing getJourneySegments(String sortBy, Integer pageSize, Integer pageNumber, Boolean isActive) throws IOException, ApiException {
-    return  getJourneySegments(createGetJourneySegmentsRequest(sortBy, pageSize, pageNumber, isActive));
+  public SegmentListing getJourneySegments(String sortBy, Integer pageSize, Integer pageNumber, Boolean isActive, List<String> segmentIds) throws IOException, ApiException {
+    return  getJourneySegments(createGetJourneySegmentsRequest(sortBy, pageSize, pageNumber, isActive, segmentIds));
   }
 
   /**
@@ -389,14 +390,15 @@ public class JourneyApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param isActive Determines whether or not to show only active segments. (optional)
+   * @param segmentIds IDs of segments to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 100 segments are allowed per request. (optional)
    * @return SegmentListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SegmentListing> getJourneySegmentsWithHttpInfo(String sortBy, Integer pageSize, Integer pageNumber, Boolean isActive) throws IOException {
-    return getJourneySegments(createGetJourneySegmentsRequest(sortBy, pageSize, pageNumber, isActive).withHttpInfo());
+  public ApiResponse<SegmentListing> getJourneySegmentsWithHttpInfo(String sortBy, Integer pageSize, Integer pageNumber, Boolean isActive, List<String> segmentIds) throws IOException {
+    return getJourneySegments(createGetJourneySegmentsRequest(sortBy, pageSize, pageNumber, isActive, segmentIds).withHttpInfo());
   }
 
-  private GetJourneySegmentsRequest createGetJourneySegmentsRequest(String sortBy, Integer pageSize, Integer pageNumber, Boolean isActive) {
+  private GetJourneySegmentsRequest createGetJourneySegmentsRequest(String sortBy, Integer pageSize, Integer pageNumber, Boolean isActive, List<String> segmentIds) {
     return GetJourneySegmentsRequest.builder()
             .withSortBy(sortBy)
     
@@ -405,6 +407,8 @@ public class JourneyApi {
             .withPageNumber(pageNumber)
     
             .withIsActive(isActive)
+    
+            .withSegmentIds(segmentIds)
     
             .build();
   }

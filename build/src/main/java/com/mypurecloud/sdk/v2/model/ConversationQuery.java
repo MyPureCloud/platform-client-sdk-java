@@ -10,6 +10,7 @@ import com.mypurecloud.sdk.v2.model.ConversationDetailQueryFilter;
 import com.mypurecloud.sdk.v2.model.EvaluationDetailQueryFilter;
 import com.mypurecloud.sdk.v2.model.MediaEndpointStatDetailQueryFilter;
 import com.mypurecloud.sdk.v2.model.PagingSpec;
+import com.mypurecloud.sdk.v2.model.ResolutionDetailQueryFilter;
 import com.mypurecloud.sdk.v2.model.SegmentDetailQueryFilter;
 import com.mypurecloud.sdk.v2.model.SurveyDetailQueryFilter;
 import io.swagger.annotations.ApiModel;
@@ -29,6 +30,7 @@ public class ConversationQuery  implements Serializable {
   private List<EvaluationDetailQueryFilter> evaluationFilters = new ArrayList<EvaluationDetailQueryFilter>();
   private List<MediaEndpointStatDetailQueryFilter> mediaEndpointStatFilters = new ArrayList<MediaEndpointStatDetailQueryFilter>();
   private List<SurveyDetailQueryFilter> surveyFilters = new ArrayList<SurveyDetailQueryFilter>();
+  private List<ResolutionDetailQueryFilter> resolutionFilters = new ArrayList<ResolutionDetailQueryFilter>();
 
   /**
    * Sort the result set in ascending/descending order. Default is ascending
@@ -197,6 +199,24 @@ public class ConversationQuery  implements Serializable {
 
   
   /**
+   * Filters that target resolutions
+   **/
+  public ConversationQuery resolutionFilters(List<ResolutionDetailQueryFilter> resolutionFilters) {
+    this.resolutionFilters = resolutionFilters;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filters that target resolutions")
+  @JsonProperty("resolutionFilters")
+  public List<ResolutionDetailQueryFilter> getResolutionFilters() {
+    return resolutionFilters;
+  }
+  public void setResolutionFilters(List<ResolutionDetailQueryFilter> resolutionFilters) {
+    this.resolutionFilters = resolutionFilters;
+  }
+
+  
+  /**
    * Sort the result set in ascending/descending order. Default is ascending
    **/
   public ConversationQuery order(OrderEnum order) {
@@ -301,6 +321,7 @@ public class ConversationQuery  implements Serializable {
         Objects.equals(this.evaluationFilters, conversationQuery.evaluationFilters) &&
         Objects.equals(this.mediaEndpointStatFilters, conversationQuery.mediaEndpointStatFilters) &&
         Objects.equals(this.surveyFilters, conversationQuery.surveyFilters) &&
+        Objects.equals(this.resolutionFilters, conversationQuery.resolutionFilters) &&
         Objects.equals(this.order, conversationQuery.order) &&
         Objects.equals(this.orderBy, conversationQuery.orderBy) &&
         Objects.equals(this.interval, conversationQuery.interval) &&
@@ -310,7 +331,7 @@ public class ConversationQuery  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationFilters, segmentFilters, evaluationFilters, mediaEndpointStatFilters, surveyFilters, order, orderBy, interval, aggregations, paging);
+    return Objects.hash(conversationFilters, segmentFilters, evaluationFilters, mediaEndpointStatFilters, surveyFilters, resolutionFilters, order, orderBy, interval, aggregations, paging);
   }
 
   @Override
@@ -323,6 +344,7 @@ public class ConversationQuery  implements Serializable {
     sb.append("    evaluationFilters: ").append(toIndentedString(evaluationFilters)).append("\n");
     sb.append("    mediaEndpointStatFilters: ").append(toIndentedString(mediaEndpointStatFilters)).append("\n");
     sb.append("    surveyFilters: ").append(toIndentedString(surveyFilters)).append("\n");
+    sb.append("    resolutionFilters: ").append(toIndentedString(resolutionFilters)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");

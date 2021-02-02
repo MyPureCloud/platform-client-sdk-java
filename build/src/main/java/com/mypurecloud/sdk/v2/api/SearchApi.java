@@ -28,6 +28,8 @@ import com.mypurecloud.sdk.v2.model.KnowledgeSearchResponse;
 import com.mypurecloud.sdk.v2.model.LocationSearchRequest;
 import com.mypurecloud.sdk.v2.model.SearchRequest;
 import com.mypurecloud.sdk.v2.model.SuggestSearchRequest;
+import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
+import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
 import com.mypurecloud.sdk.v2.model.UserSearchRequest;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchRequest;
 
@@ -48,6 +50,7 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseSearchReques
 import com.mypurecloud.sdk.v2.api.request.PostLocationsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSearchSuggestRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTranscriptsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUsersSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostVoicemailSearchRequest;
 
@@ -1377,6 +1380,85 @@ public class SearchApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<JsonNodeSearchResponse> response = (ApiResponse<JsonNodeSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Search resources.
+   * 
+   * @param body Search request options (required)
+   * @return JsonSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JsonSearchResponse postSpeechandtextanalyticsTranscriptsSearch(TranscriptSearchRequest body) throws IOException, ApiException {
+    return  postSpeechandtextanalyticsTranscriptsSearch(createPostSpeechandtextanalyticsTranscriptsSearchRequest(body));
+  }
+
+  /**
+   * Search resources.
+   * 
+   * @param body Search request options (required)
+   * @return JsonSearchResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JsonSearchResponse> postSpeechandtextanalyticsTranscriptsSearchWithHttpInfo(TranscriptSearchRequest body) throws IOException {
+    return postSpeechandtextanalyticsTranscriptsSearch(createPostSpeechandtextanalyticsTranscriptsSearchRequest(body).withHttpInfo());
+  }
+
+  private PostSpeechandtextanalyticsTranscriptsSearchRequest createPostSpeechandtextanalyticsTranscriptsSearchRequest(TranscriptSearchRequest body) {
+    return PostSpeechandtextanalyticsTranscriptsSearchRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Search resources.
+   * 
+   * @param request The request object
+   * @return JsonSearchResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public JsonSearchResponse postSpeechandtextanalyticsTranscriptsSearch(PostSpeechandtextanalyticsTranscriptsSearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<JsonSearchResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<JsonSearchResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Search resources.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<JsonSearchResponse> postSpeechandtextanalyticsTranscriptsSearch(ApiRequest<TranscriptSearchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<JsonSearchResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<JsonSearchResponse> response = (ApiResponse<JsonSearchResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<JsonSearchResponse> response = (ApiResponse<JsonSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

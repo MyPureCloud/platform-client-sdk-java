@@ -88,6 +88,20 @@ public class GetJourneySegmentsRequest {
 	    return this;
 	} 
 	
+	private List<String> segmentIds;
+	public List<String> getSegmentIds() {
+		return this.segmentIds;
+	}
+
+	public void setSegmentIds(List<String> segmentIds) {
+		this.segmentIds = segmentIds;
+	}
+
+	public GetJourneySegmentsRequest withSegmentIds(List<String> segmentIds) {
+	    this.setSegmentIds(segmentIds);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -118,6 +132,8 @@ public class GetJourneySegmentsRequest {
                 .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withQueryParameters("isActive", "", isActive)
+        
+                .withQueryParameters("segmentIds", "multi", segmentIds)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -157,6 +173,11 @@ public class GetJourneySegmentsRequest {
 		
 		public Builder withIsActive(Boolean isActive) {
 			request.setIsActive(isActive);
+			return this;
+		}
+		
+		public Builder withSegmentIds(List<String> segmentIds) {
+			request.setSegmentIds(segmentIds);
 			return this;
 		}
 		

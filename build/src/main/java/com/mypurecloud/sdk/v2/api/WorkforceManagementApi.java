@@ -321,31 +321,31 @@ public class WorkforceManagementApi {
   /**
    * Deletes an activity code
    * 
-   * @param buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
-   * @param acId The ID of the activity code to delete (required)
+   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param activityCodeId The ID of the activity code to delete (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteWorkforcemanagementBusinessunitActivitycode(String buId, String acId) throws IOException, ApiException {
-     deleteWorkforcemanagementBusinessunitActivitycode(createDeleteWorkforcemanagementBusinessunitActivitycodeRequest(buId, acId));
+  public void deleteWorkforcemanagementBusinessunitActivitycode(String businessUnitId, String activityCodeId) throws IOException, ApiException {
+     deleteWorkforcemanagementBusinessunitActivitycode(createDeleteWorkforcemanagementBusinessunitActivitycodeRequest(businessUnitId, activityCodeId));
   }
 
   /**
    * Deletes an activity code
    * 
-   * @param buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
-   * @param acId The ID of the activity code to delete (required)
+   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param activityCodeId The ID of the activity code to delete (required)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitActivitycodeWithHttpInfo(String buId, String acId) throws IOException {
-    return deleteWorkforcemanagementBusinessunitActivitycode(createDeleteWorkforcemanagementBusinessunitActivitycodeRequest(buId, acId).withHttpInfo());
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitActivitycodeWithHttpInfo(String businessUnitId, String activityCodeId) throws IOException {
+    return deleteWorkforcemanagementBusinessunitActivitycode(createDeleteWorkforcemanagementBusinessunitActivitycodeRequest(businessUnitId, activityCodeId).withHttpInfo());
   }
 
-  private DeleteWorkforcemanagementBusinessunitActivitycodeRequest createDeleteWorkforcemanagementBusinessunitActivitycodeRequest(String buId, String acId) {
+  private DeleteWorkforcemanagementBusinessunitActivitycodeRequest createDeleteWorkforcemanagementBusinessunitActivitycodeRequest(String businessUnitId, String activityCodeId) {
     return DeleteWorkforcemanagementBusinessunitActivitycodeRequest.builder()
-            .withBuId(buId)
+            .withBusinessUnitId(businessUnitId)
     
-            .withAcId(acId)
+            .withActivityCodeId(activityCodeId)
     
             .build();
   }
@@ -812,27 +812,27 @@ public class WorkforceManagementApi {
   /**
    * Delete management unit
    * 
-   * @param muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteWorkforcemanagementManagementunit(String muId) throws IOException, ApiException {
-     deleteWorkforcemanagementManagementunit(createDeleteWorkforcemanagementManagementunitRequest(muId));
+  public void deleteWorkforcemanagementManagementunit(String managementUnitId) throws IOException, ApiException {
+     deleteWorkforcemanagementManagementunit(createDeleteWorkforcemanagementManagementunitRequest(managementUnitId));
   }
 
   /**
    * Delete management unit
    * 
-   * @param muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteWorkforcemanagementManagementunitWithHttpInfo(String muId) throws IOException {
-    return deleteWorkforcemanagementManagementunit(createDeleteWorkforcemanagementManagementunitRequest(muId).withHttpInfo());
+  public ApiResponse<Void> deleteWorkforcemanagementManagementunitWithHttpInfo(String managementUnitId) throws IOException {
+    return deleteWorkforcemanagementManagementunit(createDeleteWorkforcemanagementManagementunitRequest(managementUnitId).withHttpInfo());
   }
 
-  private DeleteWorkforcemanagementManagementunitRequest createDeleteWorkforcemanagementManagementunitRequest(String muId) {
+  private DeleteWorkforcemanagementManagementunitRequest createDeleteWorkforcemanagementManagementunitRequest(String managementUnitId) {
     return DeleteWorkforcemanagementManagementunitRequest.builder()
-            .withMuId(muId)
+            .withManagementUnitId(managementUnitId)
     
             .build();
   }
@@ -1289,33 +1289,33 @@ public class WorkforceManagementApi {
   /**
    * Get an activity code
    * 
-   * @param buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
-   * @param acId The ID of the activity code to fetch (required)
+   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param activityCodeId The ID of the activity code to fetch (required)
    * @return BusinessUnitActivityCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BusinessUnitActivityCode getWorkforcemanagementBusinessunitActivitycode(String buId, String acId) throws IOException, ApiException {
-    return  getWorkforcemanagementBusinessunitActivitycode(createGetWorkforcemanagementBusinessunitActivitycodeRequest(buId, acId));
+  public BusinessUnitActivityCode getWorkforcemanagementBusinessunitActivitycode(String businessUnitId, String activityCodeId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitActivitycode(createGetWorkforcemanagementBusinessunitActivitycodeRequest(businessUnitId, activityCodeId));
   }
 
   /**
    * Get an activity code
    * 
-   * @param buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
-   * @param acId The ID of the activity code to fetch (required)
+   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param activityCodeId The ID of the activity code to fetch (required)
    * @return BusinessUnitActivityCode
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BusinessUnitActivityCode> getWorkforcemanagementBusinessunitActivitycodeWithHttpInfo(String buId, String acId) throws IOException {
-    return getWorkforcemanagementBusinessunitActivitycode(createGetWorkforcemanagementBusinessunitActivitycodeRequest(buId, acId).withHttpInfo());
+  public ApiResponse<BusinessUnitActivityCode> getWorkforcemanagementBusinessunitActivitycodeWithHttpInfo(String businessUnitId, String activityCodeId) throws IOException {
+    return getWorkforcemanagementBusinessunitActivitycode(createGetWorkforcemanagementBusinessunitActivitycodeRequest(businessUnitId, activityCodeId).withHttpInfo());
   }
 
-  private GetWorkforcemanagementBusinessunitActivitycodeRequest createGetWorkforcemanagementBusinessunitActivitycodeRequest(String buId, String acId) {
+  private GetWorkforcemanagementBusinessunitActivitycodeRequest createGetWorkforcemanagementBusinessunitActivitycodeRequest(String businessUnitId, String activityCodeId) {
     return GetWorkforcemanagementBusinessunitActivitycodeRequest.builder()
-            .withBuId(buId)
+            .withBusinessUnitId(businessUnitId)
     
-            .withAcId(acId)
+            .withActivityCodeId(activityCodeId)
     
             .build();
   }
@@ -1372,29 +1372,29 @@ public class WorkforceManagementApi {
   /**
    * Get activity codes
    * 
-   * @param buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
    * @return BusinessUnitActivityCodeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BusinessUnitActivityCodeListing getWorkforcemanagementBusinessunitActivitycodes(String buId) throws IOException, ApiException {
-    return  getWorkforcemanagementBusinessunitActivitycodes(createGetWorkforcemanagementBusinessunitActivitycodesRequest(buId));
+  public BusinessUnitActivityCodeListing getWorkforcemanagementBusinessunitActivitycodes(String businessUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitActivitycodes(createGetWorkforcemanagementBusinessunitActivitycodesRequest(businessUnitId));
   }
 
   /**
    * Get activity codes
    * 
-   * @param buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
    * @return BusinessUnitActivityCodeListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BusinessUnitActivityCodeListing> getWorkforcemanagementBusinessunitActivitycodesWithHttpInfo(String buId) throws IOException {
-    return getWorkforcemanagementBusinessunitActivitycodes(createGetWorkforcemanagementBusinessunitActivitycodesRequest(buId).withHttpInfo());
+  public ApiResponse<BusinessUnitActivityCodeListing> getWorkforcemanagementBusinessunitActivitycodesWithHttpInfo(String businessUnitId) throws IOException {
+    return getWorkforcemanagementBusinessunitActivitycodes(createGetWorkforcemanagementBusinessunitActivitycodesRequest(businessUnitId).withHttpInfo());
   }
 
-  private GetWorkforcemanagementBusinessunitActivitycodesRequest createGetWorkforcemanagementBusinessunitActivitycodesRequest(String buId) {
+  private GetWorkforcemanagementBusinessunitActivitycodesRequest createGetWorkforcemanagementBusinessunitActivitycodesRequest(String businessUnitId) {
     return GetWorkforcemanagementBusinessunitActivitycodesRequest.builder()
-            .withBuId(buId)
+            .withBusinessUnitId(businessUnitId)
     
             .build();
   }
@@ -3254,31 +3254,31 @@ public class WorkforceManagementApi {
   /**
    * Get management unit
    * 
-   * @param muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param expand  (optional)
    * @return ManagementUnit
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ManagementUnit getWorkforcemanagementManagementunit(String muId, List<String> expand) throws IOException, ApiException {
-    return  getWorkforcemanagementManagementunit(createGetWorkforcemanagementManagementunitRequest(muId, expand));
+  public ManagementUnit getWorkforcemanagementManagementunit(String managementUnitId, List<String> expand) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunit(createGetWorkforcemanagementManagementunitRequest(managementUnitId, expand));
   }
 
   /**
    * Get management unit
    * 
-   * @param muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param expand  (optional)
    * @return ManagementUnit
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ManagementUnit> getWorkforcemanagementManagementunitWithHttpInfo(String muId, List<String> expand) throws IOException {
-    return getWorkforcemanagementManagementunit(createGetWorkforcemanagementManagementunitRequest(muId, expand).withHttpInfo());
+  public ApiResponse<ManagementUnit> getWorkforcemanagementManagementunitWithHttpInfo(String managementUnitId, List<String> expand) throws IOException {
+    return getWorkforcemanagementManagementunit(createGetWorkforcemanagementManagementunitRequest(managementUnitId, expand).withHttpInfo());
   }
 
-  private GetWorkforcemanagementManagementunitRequest createGetWorkforcemanagementManagementunitRequest(String muId, List<String> expand) {
+  private GetWorkforcemanagementManagementunitRequest createGetWorkforcemanagementManagementunitRequest(String managementUnitId, List<String> expand) {
     return GetWorkforcemanagementManagementunitRequest.builder()
-            .withMuId(muId)
+            .withManagementUnitId(managementUnitId)
     
             .withExpand(expand)
     
@@ -3337,29 +3337,29 @@ public class WorkforceManagementApi {
   /**
    * Get activity codes
    * 
-   * @param muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @return ActivityCodeContainer
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ActivityCodeContainer getWorkforcemanagementManagementunitActivitycodes(String muId) throws IOException, ApiException {
-    return  getWorkforcemanagementManagementunitActivitycodes(createGetWorkforcemanagementManagementunitActivitycodesRequest(muId));
+  public ActivityCodeContainer getWorkforcemanagementManagementunitActivitycodes(String managementUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitActivitycodes(createGetWorkforcemanagementManagementunitActivitycodesRequest(managementUnitId));
   }
 
   /**
    * Get activity codes
    * 
-   * @param muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @return ActivityCodeContainer
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ActivityCodeContainer> getWorkforcemanagementManagementunitActivitycodesWithHttpInfo(String muId) throws IOException {
-    return getWorkforcemanagementManagementunitActivitycodes(createGetWorkforcemanagementManagementunitActivitycodesRequest(muId).withHttpInfo());
+  public ApiResponse<ActivityCodeContainer> getWorkforcemanagementManagementunitActivitycodesWithHttpInfo(String managementUnitId) throws IOException {
+    return getWorkforcemanagementManagementunitActivitycodes(createGetWorkforcemanagementManagementunitActivitycodesRequest(managementUnitId).withHttpInfo());
   }
 
-  private GetWorkforcemanagementManagementunitActivitycodesRequest createGetWorkforcemanagementManagementunitActivitycodesRequest(String muId) {
+  private GetWorkforcemanagementManagementunitActivitycodesRequest createGetWorkforcemanagementManagementunitActivitycodesRequest(String managementUnitId) {
     return GetWorkforcemanagementManagementunitActivitycodesRequest.builder()
-            .withMuId(muId)
+            .withManagementUnitId(managementUnitId)
     
             .build();
   }
@@ -3669,29 +3669,29 @@ public class WorkforceManagementApi {
   /**
    * Gets a summary of all shift trades in the matched state
    * 
-   * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @return ShiftTradeMatchesSummaryResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ShiftTradeMatchesSummaryResponse getWorkforcemanagementManagementunitShifttradesMatched(String muId) throws IOException, ApiException {
-    return  getWorkforcemanagementManagementunitShifttradesMatched(createGetWorkforcemanagementManagementunitShifttradesMatchedRequest(muId));
+  public ShiftTradeMatchesSummaryResponse getWorkforcemanagementManagementunitShifttradesMatched(String managementUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitShifttradesMatched(createGetWorkforcemanagementManagementunitShifttradesMatchedRequest(managementUnitId));
   }
 
   /**
    * Gets a summary of all shift trades in the matched state
    * 
-   * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @return ShiftTradeMatchesSummaryResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ShiftTradeMatchesSummaryResponse> getWorkforcemanagementManagementunitShifttradesMatchedWithHttpInfo(String muId) throws IOException {
-    return getWorkforcemanagementManagementunitShifttradesMatched(createGetWorkforcemanagementManagementunitShifttradesMatchedRequest(muId).withHttpInfo());
+  public ApiResponse<ShiftTradeMatchesSummaryResponse> getWorkforcemanagementManagementunitShifttradesMatchedWithHttpInfo(String managementUnitId) throws IOException {
+    return getWorkforcemanagementManagementunitShifttradesMatched(createGetWorkforcemanagementManagementunitShifttradesMatchedRequest(managementUnitId).withHttpInfo());
   }
 
-  private GetWorkforcemanagementManagementunitShifttradesMatchedRequest createGetWorkforcemanagementManagementunitShifttradesMatchedRequest(String muId) {
+  private GetWorkforcemanagementManagementunitShifttradesMatchedRequest createGetWorkforcemanagementManagementunitShifttradesMatchedRequest(String managementUnitId) {
     return GetWorkforcemanagementManagementunitShifttradesMatchedRequest.builder()
-            .withMuId(muId)
+            .withManagementUnitId(managementUnitId)
     
             .build();
   }
@@ -3748,29 +3748,29 @@ public class WorkforceManagementApi {
   /**
    * Gets list of users available for whom you can send direct shift trade requests
    * 
-   * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @return WfmUserEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WfmUserEntityListing getWorkforcemanagementManagementunitShifttradesUsers(String muId) throws IOException, ApiException {
-    return  getWorkforcemanagementManagementunitShifttradesUsers(createGetWorkforcemanagementManagementunitShifttradesUsersRequest(muId));
+  public WfmUserEntityListing getWorkforcemanagementManagementunitShifttradesUsers(String managementUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitShifttradesUsers(createGetWorkforcemanagementManagementunitShifttradesUsersRequest(managementUnitId));
   }
 
   /**
    * Gets list of users available for whom you can send direct shift trade requests
    * 
-   * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @return WfmUserEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WfmUserEntityListing> getWorkforcemanagementManagementunitShifttradesUsersWithHttpInfo(String muId) throws IOException {
-    return getWorkforcemanagementManagementunitShifttradesUsers(createGetWorkforcemanagementManagementunitShifttradesUsersRequest(muId).withHttpInfo());
+  public ApiResponse<WfmUserEntityListing> getWorkforcemanagementManagementunitShifttradesUsersWithHttpInfo(String managementUnitId) throws IOException {
+    return getWorkforcemanagementManagementunitShifttradesUsers(createGetWorkforcemanagementManagementunitShifttradesUsersRequest(managementUnitId).withHttpInfo());
   }
 
-  private GetWorkforcemanagementManagementunitShifttradesUsersRequest createGetWorkforcemanagementManagementunitShifttradesUsersRequest(String muId) {
+  private GetWorkforcemanagementManagementunitShifttradesUsersRequest createGetWorkforcemanagementManagementunitShifttradesUsersRequest(String managementUnitId) {
     return GetWorkforcemanagementManagementunitShifttradesUsersRequest.builder()
-            .withMuId(muId)
+            .withManagementUnitId(managementUnitId)
     
             .build();
   }
@@ -3827,33 +3827,33 @@ public class WorkforceManagementApi {
   /**
    * Get a time off request
    * 
-   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param userId The userId to whom the Time Off Request applies. (required)
    * @param timeOffRequestId Time Off Request Id (required)
    * @return TimeOffRequestResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public TimeOffRequestResponse getWorkforcemanagementManagementunitUserTimeoffrequest(String muId, String userId, String timeOffRequestId) throws IOException, ApiException {
-    return  getWorkforcemanagementManagementunitUserTimeoffrequest(createGetWorkforcemanagementManagementunitUserTimeoffrequestRequest(muId, userId, timeOffRequestId));
+  public TimeOffRequestResponse getWorkforcemanagementManagementunitUserTimeoffrequest(String managementUnitId, String userId, String timeOffRequestId) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitUserTimeoffrequest(createGetWorkforcemanagementManagementunitUserTimeoffrequestRequest(managementUnitId, userId, timeOffRequestId));
   }
 
   /**
    * Get a time off request
    * 
-   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param userId The userId to whom the Time Off Request applies. (required)
    * @param timeOffRequestId Time Off Request Id (required)
    * @return TimeOffRequestResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeOffRequestResponse> getWorkforcemanagementManagementunitUserTimeoffrequestWithHttpInfo(String muId, String userId, String timeOffRequestId) throws IOException {
-    return getWorkforcemanagementManagementunitUserTimeoffrequest(createGetWorkforcemanagementManagementunitUserTimeoffrequestRequest(muId, userId, timeOffRequestId).withHttpInfo());
+  public ApiResponse<TimeOffRequestResponse> getWorkforcemanagementManagementunitUserTimeoffrequestWithHttpInfo(String managementUnitId, String userId, String timeOffRequestId) throws IOException {
+    return getWorkforcemanagementManagementunitUserTimeoffrequest(createGetWorkforcemanagementManagementunitUserTimeoffrequestRequest(managementUnitId, userId, timeOffRequestId).withHttpInfo());
   }
 
-  private GetWorkforcemanagementManagementunitUserTimeoffrequestRequest createGetWorkforcemanagementManagementunitUserTimeoffrequestRequest(String muId, String userId, String timeOffRequestId) {
+  private GetWorkforcemanagementManagementunitUserTimeoffrequestRequest createGetWorkforcemanagementManagementunitUserTimeoffrequestRequest(String managementUnitId, String userId, String timeOffRequestId) {
     return GetWorkforcemanagementManagementunitUserTimeoffrequestRequest.builder()
-            .withMuId(muId)
+            .withManagementUnitId(managementUnitId)
     
             .withUserId(userId)
     
@@ -3914,33 +3914,33 @@ public class WorkforceManagementApi {
   /**
    * Get a list of time off requests for a given user
    * 
-   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param userId The userId to whom the Time Off Request applies. (required)
    * @param recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (optional, default to false)
    * @return TimeOffRequestList
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public TimeOffRequestList getWorkforcemanagementManagementunitUserTimeoffrequests(String muId, String userId, Boolean recentlyReviewed) throws IOException, ApiException {
-    return  getWorkforcemanagementManagementunitUserTimeoffrequests(createGetWorkforcemanagementManagementunitUserTimeoffrequestsRequest(muId, userId, recentlyReviewed));
+  public TimeOffRequestList getWorkforcemanagementManagementunitUserTimeoffrequests(String managementUnitId, String userId, Boolean recentlyReviewed) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitUserTimeoffrequests(createGetWorkforcemanagementManagementunitUserTimeoffrequestsRequest(managementUnitId, userId, recentlyReviewed));
   }
 
   /**
    * Get a list of time off requests for a given user
    * 
-   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param userId The userId to whom the Time Off Request applies. (required)
    * @param recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (optional, default to false)
    * @return TimeOffRequestList
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeOffRequestList> getWorkforcemanagementManagementunitUserTimeoffrequestsWithHttpInfo(String muId, String userId, Boolean recentlyReviewed) throws IOException {
-    return getWorkforcemanagementManagementunitUserTimeoffrequests(createGetWorkforcemanagementManagementunitUserTimeoffrequestsRequest(muId, userId, recentlyReviewed).withHttpInfo());
+  public ApiResponse<TimeOffRequestList> getWorkforcemanagementManagementunitUserTimeoffrequestsWithHttpInfo(String managementUnitId, String userId, Boolean recentlyReviewed) throws IOException {
+    return getWorkforcemanagementManagementunitUserTimeoffrequests(createGetWorkforcemanagementManagementunitUserTimeoffrequestsRequest(managementUnitId, userId, recentlyReviewed).withHttpInfo());
   }
 
-  private GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest createGetWorkforcemanagementManagementunitUserTimeoffrequestsRequest(String muId, String userId, Boolean recentlyReviewed) {
+  private GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest createGetWorkforcemanagementManagementunitUserTimeoffrequestsRequest(String managementUnitId, String userId, Boolean recentlyReviewed) {
     return GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest.builder()
-            .withMuId(muId)
+            .withManagementUnitId(managementUnitId)
     
             .withUserId(userId)
     
@@ -4001,29 +4001,29 @@ public class WorkforceManagementApi {
   /**
    * Get users in the management unit
    * 
-   * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @return WfmUserEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WfmUserEntityListing getWorkforcemanagementManagementunitUsers(String muId) throws IOException, ApiException {
-    return  getWorkforcemanagementManagementunitUsers(createGetWorkforcemanagementManagementunitUsersRequest(muId));
+  public WfmUserEntityListing getWorkforcemanagementManagementunitUsers(String managementUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitUsers(createGetWorkforcemanagementManagementunitUsersRequest(managementUnitId));
   }
 
   /**
    * Get users in the management unit
    * 
-   * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @return WfmUserEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WfmUserEntityListing> getWorkforcemanagementManagementunitUsersWithHttpInfo(String muId) throws IOException {
-    return getWorkforcemanagementManagementunitUsers(createGetWorkforcemanagementManagementunitUsersRequest(muId).withHttpInfo());
+  public ApiResponse<WfmUserEntityListing> getWorkforcemanagementManagementunitUsersWithHttpInfo(String managementUnitId) throws IOException {
+    return getWorkforcemanagementManagementunitUsers(createGetWorkforcemanagementManagementunitUsersRequest(managementUnitId).withHttpInfo());
   }
 
-  private GetWorkforcemanagementManagementunitUsersRequest createGetWorkforcemanagementManagementunitUsersRequest(String muId) {
+  private GetWorkforcemanagementManagementunitUsersRequest createGetWorkforcemanagementManagementunitUsersRequest(String managementUnitId) {
     return GetWorkforcemanagementManagementunitUsersRequest.builder()
-            .withMuId(muId)
+            .withManagementUnitId(managementUnitId)
     
             .build();
   }
@@ -5333,35 +5333,35 @@ public class WorkforceManagementApi {
   /**
    * Update an activity code
    * 
-   * @param buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
-   * @param acId The ID of the activity code to update (required)
+   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param activityCodeId The ID of the activity code to update (required)
    * @param body body (optional)
    * @return BusinessUnitActivityCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BusinessUnitActivityCode patchWorkforcemanagementBusinessunitActivitycode(String buId, String acId, UpdateActivityCodeRequest body) throws IOException, ApiException {
-    return  patchWorkforcemanagementBusinessunitActivitycode(createPatchWorkforcemanagementBusinessunitActivitycodeRequest(buId, acId, body));
+  public BusinessUnitActivityCode patchWorkforcemanagementBusinessunitActivitycode(String businessUnitId, String activityCodeId, UpdateActivityCodeRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitActivitycode(createPatchWorkforcemanagementBusinessunitActivitycodeRequest(businessUnitId, activityCodeId, body));
   }
 
   /**
    * Update an activity code
    * 
-   * @param buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
-   * @param acId The ID of the activity code to update (required)
+   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param activityCodeId The ID of the activity code to update (required)
    * @param body body (optional)
    * @return BusinessUnitActivityCode
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BusinessUnitActivityCode> patchWorkforcemanagementBusinessunitActivitycodeWithHttpInfo(String buId, String acId, UpdateActivityCodeRequest body) throws IOException {
-    return patchWorkforcemanagementBusinessunitActivitycode(createPatchWorkforcemanagementBusinessunitActivitycodeRequest(buId, acId, body).withHttpInfo());
+  public ApiResponse<BusinessUnitActivityCode> patchWorkforcemanagementBusinessunitActivitycodeWithHttpInfo(String businessUnitId, String activityCodeId, UpdateActivityCodeRequest body) throws IOException {
+    return patchWorkforcemanagementBusinessunitActivitycode(createPatchWorkforcemanagementBusinessunitActivitycodeRequest(businessUnitId, activityCodeId, body).withHttpInfo());
   }
 
-  private PatchWorkforcemanagementBusinessunitActivitycodeRequest createPatchWorkforcemanagementBusinessunitActivitycodeRequest(String buId, String acId, UpdateActivityCodeRequest body) {
+  private PatchWorkforcemanagementBusinessunitActivitycodeRequest createPatchWorkforcemanagementBusinessunitActivitycodeRequest(String businessUnitId, String activityCodeId, UpdateActivityCodeRequest body) {
     return PatchWorkforcemanagementBusinessunitActivitycodeRequest.builder()
-            .withBuId(buId)
+            .withBusinessUnitId(businessUnitId)
     
-            .withAcId(acId)
+            .withActivityCodeId(activityCodeId)
     
             .withBody(body)
     
@@ -5678,31 +5678,31 @@ public class WorkforceManagementApi {
   /**
    * Update the requested management unit
    * 
-   * @param muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return ManagementUnit
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ManagementUnit patchWorkforcemanagementManagementunit(String muId, UpdateManagementUnitRequest body) throws IOException, ApiException {
-    return  patchWorkforcemanagementManagementunit(createPatchWorkforcemanagementManagementunitRequest(muId, body));
+  public ManagementUnit patchWorkforcemanagementManagementunit(String managementUnitId, UpdateManagementUnitRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementManagementunit(createPatchWorkforcemanagementManagementunitRequest(managementUnitId, body));
   }
 
   /**
    * Update the requested management unit
    * 
-   * @param muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return ManagementUnit
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ManagementUnit> patchWorkforcemanagementManagementunitWithHttpInfo(String muId, UpdateManagementUnitRequest body) throws IOException {
-    return patchWorkforcemanagementManagementunit(createPatchWorkforcemanagementManagementunitRequest(muId, body).withHttpInfo());
+  public ApiResponse<ManagementUnit> patchWorkforcemanagementManagementunitWithHttpInfo(String managementUnitId, UpdateManagementUnitRequest body) throws IOException {
+    return patchWorkforcemanagementManagementunit(createPatchWorkforcemanagementManagementunitRequest(managementUnitId, body).withHttpInfo());
   }
 
-  private PatchWorkforcemanagementManagementunitRequest createPatchWorkforcemanagementManagementunitRequest(String muId, UpdateManagementUnitRequest body) {
+  private PatchWorkforcemanagementManagementunitRequest createPatchWorkforcemanagementManagementunitRequest(String managementUnitId, UpdateManagementUnitRequest body) {
     return PatchWorkforcemanagementManagementunitRequest.builder()
-            .withMuId(muId)
+            .withManagementUnitId(managementUnitId)
     
             .withBody(body)
     
@@ -5761,7 +5761,7 @@ public class WorkforceManagementApi {
   /**
    * Update a time off request
    * 
-   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param userId The id of the user the requested time off request belongs to (required)
    * @param timeOffRequestId The id of the time off request to update (required)
    * @param body body (optional)
@@ -5769,27 +5769,27 @@ public class WorkforceManagementApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public TimeOffRequestResponse patchWorkforcemanagementManagementunitUserTimeoffrequest(String muId, String userId, String timeOffRequestId, AdminTimeOffRequestPatch body) throws IOException, ApiException {
-    return  patchWorkforcemanagementManagementunitUserTimeoffrequest(createPatchWorkforcemanagementManagementunitUserTimeoffrequestRequest(muId, userId, timeOffRequestId, body));
+  public TimeOffRequestResponse patchWorkforcemanagementManagementunitUserTimeoffrequest(String managementUnitId, String userId, String timeOffRequestId, AdminTimeOffRequestPatch body) throws IOException, ApiException {
+    return  patchWorkforcemanagementManagementunitUserTimeoffrequest(createPatchWorkforcemanagementManagementunitUserTimeoffrequestRequest(managementUnitId, userId, timeOffRequestId, body));
   }
 
   /**
    * Update a time off request
    * 
-   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param userId The id of the user the requested time off request belongs to (required)
    * @param timeOffRequestId The id of the time off request to update (required)
    * @param body body (optional)
    * @return TimeOffRequestResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeOffRequestResponse> patchWorkforcemanagementManagementunitUserTimeoffrequestWithHttpInfo(String muId, String userId, String timeOffRequestId, AdminTimeOffRequestPatch body) throws IOException {
-    return patchWorkforcemanagementManagementunitUserTimeoffrequest(createPatchWorkforcemanagementManagementunitUserTimeoffrequestRequest(muId, userId, timeOffRequestId, body).withHttpInfo());
+  public ApiResponse<TimeOffRequestResponse> patchWorkforcemanagementManagementunitUserTimeoffrequestWithHttpInfo(String managementUnitId, String userId, String timeOffRequestId, AdminTimeOffRequestPatch body) throws IOException {
+    return patchWorkforcemanagementManagementunitUserTimeoffrequest(createPatchWorkforcemanagementManagementunitUserTimeoffrequestRequest(managementUnitId, userId, timeOffRequestId, body).withHttpInfo());
   }
 
-  private PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest createPatchWorkforcemanagementManagementunitUserTimeoffrequestRequest(String muId, String userId, String timeOffRequestId, AdminTimeOffRequestPatch body) {
+  private PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest createPatchWorkforcemanagementManagementunitUserTimeoffrequestRequest(String managementUnitId, String userId, String timeOffRequestId, AdminTimeOffRequestPatch body) {
     return PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest.builder()
-            .withMuId(muId)
+            .withManagementUnitId(managementUnitId)
     
             .withUserId(userId)
     
@@ -6362,31 +6362,31 @@ public class WorkforceManagementApi {
   /**
    * Create a new activity code
    * 
-   * @param buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
    * @param body body (optional)
    * @return BusinessUnitActivityCode
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BusinessUnitActivityCode postWorkforcemanagementBusinessunitActivitycodes(String buId, CreateActivityCodeRequest body) throws IOException, ApiException {
-    return  postWorkforcemanagementBusinessunitActivitycodes(createPostWorkforcemanagementBusinessunitActivitycodesRequest(buId, body));
+  public BusinessUnitActivityCode postWorkforcemanagementBusinessunitActivitycodes(String businessUnitId, CreateActivityCodeRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitActivitycodes(createPostWorkforcemanagementBusinessunitActivitycodesRequest(businessUnitId, body));
   }
 
   /**
    * Create a new activity code
    * 
-   * @param buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
+   * @param businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. (required)
    * @param body body (optional)
    * @return BusinessUnitActivityCode
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BusinessUnitActivityCode> postWorkforcemanagementBusinessunitActivitycodesWithHttpInfo(String buId, CreateActivityCodeRequest body) throws IOException {
-    return postWorkforcemanagementBusinessunitActivitycodes(createPostWorkforcemanagementBusinessunitActivitycodesRequest(buId, body).withHttpInfo());
+  public ApiResponse<BusinessUnitActivityCode> postWorkforcemanagementBusinessunitActivitycodesWithHttpInfo(String businessUnitId, CreateActivityCodeRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitActivitycodes(createPostWorkforcemanagementBusinessunitActivitycodesRequest(businessUnitId, body).withHttpInfo());
   }
 
-  private PostWorkforcemanagementBusinessunitActivitycodesRequest createPostWorkforcemanagementBusinessunitActivitycodesRequest(String buId, CreateActivityCodeRequest body) {
+  private PostWorkforcemanagementBusinessunitActivitycodesRequest createPostWorkforcemanagementBusinessunitActivitycodesRequest(String businessUnitId, CreateActivityCodeRequest body) {
     return PostWorkforcemanagementBusinessunitActivitycodesRequest.builder()
-            .withBuId(buId)
+            .withBusinessUnitId(businessUnitId)
     
             .withBody(body)
     
@@ -7509,7 +7509,7 @@ public class WorkforceManagementApi {
   /**
    * Query published schedules for given given time range for set of users
    * 
-   * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
    * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
@@ -7517,27 +7517,27 @@ public class WorkforceManagementApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementManagementunitAgentschedulesSearch(String muId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException, ApiException {
-    return  postWorkforcemanagementManagementunitAgentschedulesSearch(createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(muId, body, forceAsync, forceDownloadService));
+  public BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementManagementunitAgentschedulesSearch(String managementUnitId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitAgentschedulesSearch(createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(managementUnitId, body, forceAsync, forceDownloadService));
   }
 
   /**
    * Query published schedules for given given time range for set of users
    * 
-   * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @param forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
    * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
    * @return BuAsyncAgentSchedulesSearchResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BuAsyncAgentSchedulesSearchResponse> postWorkforcemanagementManagementunitAgentschedulesSearchWithHttpInfo(String muId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException {
-    return postWorkforcemanagementManagementunitAgentschedulesSearch(createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(muId, body, forceAsync, forceDownloadService).withHttpInfo());
+  public ApiResponse<BuAsyncAgentSchedulesSearchResponse> postWorkforcemanagementManagementunitAgentschedulesSearchWithHttpInfo(String managementUnitId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) throws IOException {
+    return postWorkforcemanagementManagementunitAgentschedulesSearch(createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(managementUnitId, body, forceAsync, forceDownloadService).withHttpInfo());
   }
 
-  private PostWorkforcemanagementManagementunitAgentschedulesSearchRequest createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(String muId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) {
+  private PostWorkforcemanagementManagementunitAgentschedulesSearchRequest createPostWorkforcemanagementManagementunitAgentschedulesSearchRequest(String managementUnitId, BuSearchAgentSchedulesRequest body, Boolean forceAsync, Boolean forceDownloadService) {
     return PostWorkforcemanagementManagementunitAgentschedulesSearchRequest.builder()
-            .withMuId(muId)
+            .withManagementUnitId(managementUnitId)
     
             .withBody(body)
     
@@ -7600,31 +7600,31 @@ public class WorkforceManagementApi {
   /**
    * Request a historical adherence report
    * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
-   * @param muId The management unit ID of the management unit (required)
+   * @param managementUnitId The management unit ID of the management unit (required)
    * @param body body (optional)
    * @return WfmHistoricalAdherenceResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WfmHistoricalAdherenceResponse postWorkforcemanagementManagementunitHistoricaladherencequery(String muId, WfmHistoricalAdherenceQuery body) throws IOException, ApiException {
-    return  postWorkforcemanagementManagementunitHistoricaladherencequery(createPostWorkforcemanagementManagementunitHistoricaladherencequeryRequest(muId, body));
+  public WfmHistoricalAdherenceResponse postWorkforcemanagementManagementunitHistoricaladherencequery(String managementUnitId, WfmHistoricalAdherenceQuery body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitHistoricaladherencequery(createPostWorkforcemanagementManagementunitHistoricaladherencequeryRequest(managementUnitId, body));
   }
 
   /**
    * Request a historical adherence report
    * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
-   * @param muId The management unit ID of the management unit (required)
+   * @param managementUnitId The management unit ID of the management unit (required)
    * @param body body (optional)
    * @return WfmHistoricalAdherenceResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WfmHistoricalAdherenceResponse> postWorkforcemanagementManagementunitHistoricaladherencequeryWithHttpInfo(String muId, WfmHistoricalAdherenceQuery body) throws IOException {
-    return postWorkforcemanagementManagementunitHistoricaladherencequery(createPostWorkforcemanagementManagementunitHistoricaladherencequeryRequest(muId, body).withHttpInfo());
+  public ApiResponse<WfmHistoricalAdherenceResponse> postWorkforcemanagementManagementunitHistoricaladherencequeryWithHttpInfo(String managementUnitId, WfmHistoricalAdherenceQuery body) throws IOException {
+    return postWorkforcemanagementManagementunitHistoricaladherencequery(createPostWorkforcemanagementManagementunitHistoricaladherencequeryRequest(managementUnitId, body).withHttpInfo());
   }
 
-  private PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest createPostWorkforcemanagementManagementunitHistoricaladherencequeryRequest(String muId, WfmHistoricalAdherenceQuery body) {
+  private PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest createPostWorkforcemanagementManagementunitHistoricaladherencequeryRequest(String managementUnitId, WfmHistoricalAdherenceQuery body) {
     return PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest.builder()
-            .withMuId(muId)
+            .withManagementUnitId(managementUnitId)
     
             .withBody(body)
     
@@ -7683,31 +7683,31 @@ public class WorkforceManagementApi {
   /**
    * Move the requested management unit to a new business unit
    * Returns status 200 if the management unit is already in the requested business unit
-   * @param muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return MoveManagementUnitResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public MoveManagementUnitResponse postWorkforcemanagementManagementunitMove(String muId, MoveManagementUnitRequest body) throws IOException, ApiException {
-    return  postWorkforcemanagementManagementunitMove(createPostWorkforcemanagementManagementunitMoveRequest(muId, body));
+  public MoveManagementUnitResponse postWorkforcemanagementManagementunitMove(String managementUnitId, MoveManagementUnitRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitMove(createPostWorkforcemanagementManagementunitMoveRequest(managementUnitId, body));
   }
 
   /**
    * Move the requested management unit to a new business unit
    * Returns status 200 if the management unit is already in the requested business unit
-   * @param muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return MoveManagementUnitResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<MoveManagementUnitResponse> postWorkforcemanagementManagementunitMoveWithHttpInfo(String muId, MoveManagementUnitRequest body) throws IOException {
-    return postWorkforcemanagementManagementunitMove(createPostWorkforcemanagementManagementunitMoveRequest(muId, body).withHttpInfo());
+  public ApiResponse<MoveManagementUnitResponse> postWorkforcemanagementManagementunitMoveWithHttpInfo(String managementUnitId, MoveManagementUnitRequest body) throws IOException {
+    return postWorkforcemanagementManagementunitMove(createPostWorkforcemanagementManagementunitMoveRequest(managementUnitId, body).withHttpInfo());
   }
 
-  private PostWorkforcemanagementManagementunitMoveRequest createPostWorkforcemanagementManagementunitMoveRequest(String muId, MoveManagementUnitRequest body) {
+  private PostWorkforcemanagementManagementunitMoveRequest createPostWorkforcemanagementManagementunitMoveRequest(String managementUnitId, MoveManagementUnitRequest body) {
     return PostWorkforcemanagementManagementunitMoveRequest.builder()
-            .withMuId(muId)
+            .withManagementUnitId(managementUnitId)
     
             .withBody(body)
     
@@ -7766,31 +7766,31 @@ public class WorkforceManagementApi {
   /**
    * Query published schedules for given given time range for set of users
    * 
-   * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return UserScheduleContainer
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserScheduleContainer postWorkforcemanagementManagementunitSchedulesSearch(String muId, UserListScheduleRequestBody body) throws IOException, ApiException {
-    return  postWorkforcemanagementManagementunitSchedulesSearch(createPostWorkforcemanagementManagementunitSchedulesSearchRequest(muId, body));
+  public UserScheduleContainer postWorkforcemanagementManagementunitSchedulesSearch(String managementUnitId, UserListScheduleRequestBody body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitSchedulesSearch(createPostWorkforcemanagementManagementunitSchedulesSearchRequest(managementUnitId, body));
   }
 
   /**
    * Query published schedules for given given time range for set of users
    * 
-   * @param muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return UserScheduleContainer
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserScheduleContainer> postWorkforcemanagementManagementunitSchedulesSearchWithHttpInfo(String muId, UserListScheduleRequestBody body) throws IOException {
-    return postWorkforcemanagementManagementunitSchedulesSearch(createPostWorkforcemanagementManagementunitSchedulesSearchRequest(muId, body).withHttpInfo());
+  public ApiResponse<UserScheduleContainer> postWorkforcemanagementManagementunitSchedulesSearchWithHttpInfo(String managementUnitId, UserListScheduleRequestBody body) throws IOException {
+    return postWorkforcemanagementManagementunitSchedulesSearch(createPostWorkforcemanagementManagementunitSchedulesSearchRequest(managementUnitId, body).withHttpInfo());
   }
 
-  private PostWorkforcemanagementManagementunitSchedulesSearchRequest createPostWorkforcemanagementManagementunitSchedulesSearchRequest(String muId, UserListScheduleRequestBody body) {
+  private PostWorkforcemanagementManagementunitSchedulesSearchRequest createPostWorkforcemanagementManagementunitSchedulesSearchRequest(String managementUnitId, UserListScheduleRequestBody body) {
     return PostWorkforcemanagementManagementunitSchedulesSearchRequest.builder()
-            .withMuId(muId)
+            .withManagementUnitId(managementUnitId)
     
             .withBody(body)
     
@@ -7849,31 +7849,31 @@ public class WorkforceManagementApi {
   /**
    * Create a new time off request
    * 
-   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return TimeOffRequestList
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public TimeOffRequestList postWorkforcemanagementManagementunitTimeoffrequests(String muId, CreateAdminTimeOffRequest body) throws IOException, ApiException {
-    return  postWorkforcemanagementManagementunitTimeoffrequests(createPostWorkforcemanagementManagementunitTimeoffrequestsRequest(muId, body));
+  public TimeOffRequestList postWorkforcemanagementManagementunitTimeoffrequests(String managementUnitId, CreateAdminTimeOffRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitTimeoffrequests(createPostWorkforcemanagementManagementunitTimeoffrequestsRequest(managementUnitId, body));
   }
 
   /**
    * Create a new time off request
    * 
-   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return TimeOffRequestList
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeOffRequestList> postWorkforcemanagementManagementunitTimeoffrequestsWithHttpInfo(String muId, CreateAdminTimeOffRequest body) throws IOException {
-    return postWorkforcemanagementManagementunitTimeoffrequests(createPostWorkforcemanagementManagementunitTimeoffrequestsRequest(muId, body).withHttpInfo());
+  public ApiResponse<TimeOffRequestList> postWorkforcemanagementManagementunitTimeoffrequestsWithHttpInfo(String managementUnitId, CreateAdminTimeOffRequest body) throws IOException {
+    return postWorkforcemanagementManagementunitTimeoffrequests(createPostWorkforcemanagementManagementunitTimeoffrequestsRequest(managementUnitId, body).withHttpInfo());
   }
 
-  private PostWorkforcemanagementManagementunitTimeoffrequestsRequest createPostWorkforcemanagementManagementunitTimeoffrequestsRequest(String muId, CreateAdminTimeOffRequest body) {
+  private PostWorkforcemanagementManagementunitTimeoffrequestsRequest createPostWorkforcemanagementManagementunitTimeoffrequestsRequest(String managementUnitId, CreateAdminTimeOffRequest body) {
     return PostWorkforcemanagementManagementunitTimeoffrequestsRequest.builder()
-            .withMuId(muId)
+            .withManagementUnitId(managementUnitId)
     
             .withBody(body)
     
@@ -7932,31 +7932,31 @@ public class WorkforceManagementApi {
   /**
    * Gets the lookup ids to fetch the specified set of requests
    * 
-   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return TimeOffRequestListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public TimeOffRequestListing postWorkforcemanagementManagementunitTimeoffrequestsQuery(String muId, TimeOffRequestQueryBody body) throws IOException, ApiException {
-    return  postWorkforcemanagementManagementunitTimeoffrequestsQuery(createPostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest(muId, body));
+  public TimeOffRequestListing postWorkforcemanagementManagementunitTimeoffrequestsQuery(String managementUnitId, TimeOffRequestQueryBody body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitTimeoffrequestsQuery(createPostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest(managementUnitId, body));
   }
 
   /**
    * Gets the lookup ids to fetch the specified set of requests
    * 
-   * @param muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return TimeOffRequestListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TimeOffRequestListing> postWorkforcemanagementManagementunitTimeoffrequestsQueryWithHttpInfo(String muId, TimeOffRequestQueryBody body) throws IOException {
-    return postWorkforcemanagementManagementunitTimeoffrequestsQuery(createPostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest(muId, body).withHttpInfo());
+  public ApiResponse<TimeOffRequestListing> postWorkforcemanagementManagementunitTimeoffrequestsQueryWithHttpInfo(String managementUnitId, TimeOffRequestQueryBody body) throws IOException {
+    return postWorkforcemanagementManagementunitTimeoffrequestsQuery(createPostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest(managementUnitId, body).withHttpInfo());
   }
 
-  private PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest createPostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest(String muId, TimeOffRequestQueryBody body) {
+  private PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest createPostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest(String managementUnitId, TimeOffRequestQueryBody body) {
     return PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest.builder()
-            .withMuId(muId)
+            .withManagementUnitId(managementUnitId)
     
             .withBody(body)
     

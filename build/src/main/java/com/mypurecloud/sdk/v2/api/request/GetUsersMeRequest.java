@@ -123,7 +123,8 @@ public class GetUsersMeRequest {
 		ROUTINGLANGUAGES("routinglanguages"), 
 		FIELDCONFIGS("fieldconfigs"), 
 		TOKEN("token"), 
-		TRUSTORS("trustors");
+		TRUSTORS("trustors"), 
+		LOGCAPTURE("logCapture");
 
 		private String value;
 

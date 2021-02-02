@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -17,8 +19,13 @@ public class GenericSAML  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private String logoImageData = null;
+  private Boolean disabled = null;
+  private String issuerURI = null;
+  private String ssoTargetURI = null;
+  private String certificate = null;
+  private List<String> certificates = new ArrayList<String>();
   private String relyingPartyIdentifier = null;
+  private String logoImageData = null;
   private Boolean endpointCompression = null;
 
   /**
@@ -61,10 +68,6 @@ public class GenericSAML  implements Serializable {
     }
   }
   private NameIdentifierFormatEnum nameIdentifierFormat = null;
-  private String certificate = null;
-  private String issuerURI = null;
-  private String ssoTargetURI = null;
-  private Boolean disabled = null;
   private String selfUri = null;
 
   
@@ -94,86 +97,18 @@ public class GenericSAML  implements Serializable {
   
   /**
    **/
-  public GenericSAML logoImageData(String logoImageData) {
-    this.logoImageData = logoImageData;
+  public GenericSAML disabled(Boolean disabled) {
+    this.disabled = disabled;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("logoImageData")
-  public String getLogoImageData() {
-    return logoImageData;
+  @JsonProperty("disabled")
+  public Boolean getDisabled() {
+    return disabled;
   }
-  public void setLogoImageData(String logoImageData) {
-    this.logoImageData = logoImageData;
-  }
-
-  
-  /**
-   **/
-  public GenericSAML relyingPartyIdentifier(String relyingPartyIdentifier) {
-    this.relyingPartyIdentifier = relyingPartyIdentifier;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("relyingPartyIdentifier")
-  public String getRelyingPartyIdentifier() {
-    return relyingPartyIdentifier;
-  }
-  public void setRelyingPartyIdentifier(String relyingPartyIdentifier) {
-    this.relyingPartyIdentifier = relyingPartyIdentifier;
-  }
-
-  
-  /**
-   **/
-  public GenericSAML endpointCompression(Boolean endpointCompression) {
-    this.endpointCompression = endpointCompression;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("endpointCompression")
-  public Boolean getEndpointCompression() {
-    return endpointCompression;
-  }
-  public void setEndpointCompression(Boolean endpointCompression) {
-    this.endpointCompression = endpointCompression;
-  }
-
-  
-  /**
-   **/
-  public GenericSAML nameIdentifierFormat(NameIdentifierFormatEnum nameIdentifierFormat) {
-    this.nameIdentifierFormat = nameIdentifierFormat;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("nameIdentifierFormat")
-  public NameIdentifierFormatEnum getNameIdentifierFormat() {
-    return nameIdentifierFormat;
-  }
-  public void setNameIdentifierFormat(NameIdentifierFormatEnum nameIdentifierFormat) {
-    this.nameIdentifierFormat = nameIdentifierFormat;
-  }
-
-  
-  /**
-   **/
-  public GenericSAML certificate(String certificate) {
-    this.certificate = certificate;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("certificate")
-  public String getCertificate() {
-    return certificate;
-  }
-  public void setCertificate(String certificate) {
-    this.certificate = certificate;
+  public void setDisabled(Boolean disabled) {
+    this.disabled = disabled;
   }
 
   
@@ -213,18 +148,103 @@ public class GenericSAML  implements Serializable {
   
   /**
    **/
-  public GenericSAML disabled(Boolean disabled) {
-    this.disabled = disabled;
+  public GenericSAML certificate(String certificate) {
+    this.certificate = certificate;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("disabled")
-  public Boolean getDisabled() {
-    return disabled;
+  @JsonProperty("certificate")
+  public String getCertificate() {
+    return certificate;
   }
-  public void setDisabled(Boolean disabled) {
-    this.disabled = disabled;
+  public void setCertificate(String certificate) {
+    this.certificate = certificate;
+  }
+
+  
+  /**
+   **/
+  public GenericSAML certificates(List<String> certificates) {
+    this.certificates = certificates;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("certificates")
+  public List<String> getCertificates() {
+    return certificates;
+  }
+  public void setCertificates(List<String> certificates) {
+    this.certificates = certificates;
+  }
+
+  
+  /**
+   **/
+  public GenericSAML relyingPartyIdentifier(String relyingPartyIdentifier) {
+    this.relyingPartyIdentifier = relyingPartyIdentifier;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("relyingPartyIdentifier")
+  public String getRelyingPartyIdentifier() {
+    return relyingPartyIdentifier;
+  }
+  public void setRelyingPartyIdentifier(String relyingPartyIdentifier) {
+    this.relyingPartyIdentifier = relyingPartyIdentifier;
+  }
+
+  
+  /**
+   **/
+  public GenericSAML logoImageData(String logoImageData) {
+    this.logoImageData = logoImageData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("logoImageData")
+  public String getLogoImageData() {
+    return logoImageData;
+  }
+  public void setLogoImageData(String logoImageData) {
+    this.logoImageData = logoImageData;
+  }
+
+  
+  /**
+   **/
+  public GenericSAML endpointCompression(Boolean endpointCompression) {
+    this.endpointCompression = endpointCompression;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("endpointCompression")
+  public Boolean getEndpointCompression() {
+    return endpointCompression;
+  }
+  public void setEndpointCompression(Boolean endpointCompression) {
+    this.endpointCompression = endpointCompression;
+  }
+
+  
+  /**
+   **/
+  public GenericSAML nameIdentifierFormat(NameIdentifierFormatEnum nameIdentifierFormat) {
+    this.nameIdentifierFormat = nameIdentifierFormat;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nameIdentifierFormat")
+  public NameIdentifierFormatEnum getNameIdentifierFormat() {
+    return nameIdentifierFormat;
+  }
+  public void setNameIdentifierFormat(NameIdentifierFormatEnum nameIdentifierFormat) {
+    this.nameIdentifierFormat = nameIdentifierFormat;
   }
 
   
@@ -247,20 +267,21 @@ public class GenericSAML  implements Serializable {
     GenericSAML genericSAML = (GenericSAML) o;
     return Objects.equals(this.id, genericSAML.id) &&
         Objects.equals(this.name, genericSAML.name) &&
-        Objects.equals(this.logoImageData, genericSAML.logoImageData) &&
-        Objects.equals(this.relyingPartyIdentifier, genericSAML.relyingPartyIdentifier) &&
-        Objects.equals(this.endpointCompression, genericSAML.endpointCompression) &&
-        Objects.equals(this.nameIdentifierFormat, genericSAML.nameIdentifierFormat) &&
-        Objects.equals(this.certificate, genericSAML.certificate) &&
+        Objects.equals(this.disabled, genericSAML.disabled) &&
         Objects.equals(this.issuerURI, genericSAML.issuerURI) &&
         Objects.equals(this.ssoTargetURI, genericSAML.ssoTargetURI) &&
-        Objects.equals(this.disabled, genericSAML.disabled) &&
+        Objects.equals(this.certificate, genericSAML.certificate) &&
+        Objects.equals(this.certificates, genericSAML.certificates) &&
+        Objects.equals(this.relyingPartyIdentifier, genericSAML.relyingPartyIdentifier) &&
+        Objects.equals(this.logoImageData, genericSAML.logoImageData) &&
+        Objects.equals(this.endpointCompression, genericSAML.endpointCompression) &&
+        Objects.equals(this.nameIdentifierFormat, genericSAML.nameIdentifierFormat) &&
         Objects.equals(this.selfUri, genericSAML.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, logoImageData, relyingPartyIdentifier, endpointCompression, nameIdentifierFormat, certificate, issuerURI, ssoTargetURI, disabled, selfUri);
+    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, certificate, certificates, relyingPartyIdentifier, logoImageData, endpointCompression, nameIdentifierFormat, selfUri);
   }
 
   @Override
@@ -270,14 +291,15 @@ public class GenericSAML  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    logoImageData: ").append(toIndentedString(logoImageData)).append("\n");
-    sb.append("    relyingPartyIdentifier: ").append(toIndentedString(relyingPartyIdentifier)).append("\n");
-    sb.append("    endpointCompression: ").append(toIndentedString(endpointCompression)).append("\n");
-    sb.append("    nameIdentifierFormat: ").append(toIndentedString(nameIdentifierFormat)).append("\n");
-    sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
+    sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
     sb.append("    ssoTargetURI: ").append(toIndentedString(ssoTargetURI)).append("\n");
-    sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
+    sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
+    sb.append("    certificates: ").append(toIndentedString(certificates)).append("\n");
+    sb.append("    relyingPartyIdentifier: ").append(toIndentedString(relyingPartyIdentifier)).append("\n");
+    sb.append("    logoImageData: ").append(toIndentedString(logoImageData)).append("\n");
+    sb.append("    endpointCompression: ").append(toIndentedString(endpointCompression)).append("\n");
+    sb.append("    nameIdentifierFormat: ").append(toIndentedString(nameIdentifierFormat)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

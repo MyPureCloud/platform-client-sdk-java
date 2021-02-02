@@ -23,6 +23,10 @@ import java.util.regex.Pattern;
 import com.mypurecloud.sdk.v2.model.ConversationMetrics;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.TranscriptUrl;
+import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsResponse;
+import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
+import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
+import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
 
 public class GetSpeechandtextanalyticsConversationRequest {
     

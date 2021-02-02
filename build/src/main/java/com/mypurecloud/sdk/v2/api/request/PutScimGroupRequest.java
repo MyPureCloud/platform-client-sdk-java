@@ -21,8 +21,8 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.ScimError;
-import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.Empty;
+import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ScimV2Group;
 import com.mypurecloud.sdk.v2.model.ScimGroupListResponse;
 import com.mypurecloud.sdk.v2.model.ScimConfigResourceType;

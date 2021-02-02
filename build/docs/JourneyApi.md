@@ -277,7 +277,7 @@ try {
 
 
 
-> [SegmentListing](SegmentListing.html) getJourneySegments(sortBy, pageSize, pageNumber, isActive)
+> [SegmentListing](SegmentListing.html) getJourneySegments(sortBy, pageSize, pageNumber, isActive, segmentIds)
 
 Retrieve all segments.
 
@@ -315,8 +315,9 @@ String sortBy = "sortBy_example"; // String | Field(s) to sort by. The response 
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 Boolean isActive = true; // Boolean | Determines whether or not to show only active segments.
+List<String> segmentIds = Arrays.asList("segmentIds_example"); // List<String> | IDs of segments to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 100 segments are allowed per request.
 try {
-    SegmentListing result = apiInstance.getJourneySegments(sortBy, pageSize, pageNumber, isActive);
+    SegmentListing result = apiInstance.getJourneySegments(sortBy, pageSize, pageNumber, isActive, segmentIds);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling JourneyApi#getJourneySegments");
@@ -333,6 +334,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **isActive** | **Boolean**| Determines whether or not to show only active segments. | [optional] 
+| **segmentIds** | [**List&lt;String&gt;**](String.html)| IDs of segments to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 100 segments are allowed per request. | [optional] 
 {: class="table-striped"}
 
 

@@ -176,14 +176,14 @@ public class UpdateActivityCodeRequest  implements Serializable {
 
   
   /**
-   * Version metadata for the associated management unit's list of activity codes
+   * Version metadata for the associated business unit's list of activity codes
    **/
   public UpdateActivityCodeRequest metadata(WfmVersionedEntityMetadata metadata) {
     this.metadata = metadata;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Version metadata for the associated management unit's list of activity codes")
+  @ApiModelProperty(example = "null", required = true, value = "Version metadata for the associated business unit's list of activity codes")
   @JsonProperty("metadata")
   public WfmVersionedEntityMetadata getMetadata() {
     return metadata;

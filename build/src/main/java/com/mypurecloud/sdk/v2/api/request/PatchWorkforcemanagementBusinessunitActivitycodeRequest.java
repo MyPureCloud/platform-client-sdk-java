@@ -128,31 +128,31 @@ import com.mypurecloud.sdk.v2.model.CreateAgentTimeOffRequest;
 
 public class PatchWorkforcemanagementBusinessunitActivitycodeRequest {
     
-	private String buId;
-	public String getBuId() {
-		return this.buId;
+	private String businessUnitId;
+	public String getBusinessUnitId() {
+		return this.businessUnitId;
 	}
 
-	public void setBuId(String buId) {
-		this.buId = buId;
+	public void setBusinessUnitId(String businessUnitId) {
+		this.businessUnitId = businessUnitId;
 	}
 
-	public PatchWorkforcemanagementBusinessunitActivitycodeRequest withBuId(String buId) {
-	    this.setBuId(buId);
+	public PatchWorkforcemanagementBusinessunitActivitycodeRequest withBusinessUnitId(String businessUnitId) {
+	    this.setBusinessUnitId(businessUnitId);
 	    return this;
 	} 
 	
-	private String acId;
-	public String getAcId() {
-		return this.acId;
+	private String activityCodeId;
+	public String getActivityCodeId() {
+		return this.activityCodeId;
 	}
 
-	public void setAcId(String acId) {
-		this.acId = acId;
+	public void setActivityCodeId(String activityCodeId) {
+		this.activityCodeId = activityCodeId;
 	}
 
-	public PatchWorkforcemanagementBusinessunitActivitycodeRequest withAcId(String acId) {
-	    this.setAcId(acId);
+	public PatchWorkforcemanagementBusinessunitActivitycodeRequest withActivityCodeId(String activityCodeId) {
+	    this.setActivityCodeId(activityCodeId);
 	    return this;
 	} 
 	
@@ -191,21 +191,21 @@ public class PatchWorkforcemanagementBusinessunitActivitycodeRequest {
 
     public ApiRequest<UpdateActivityCodeRequest> withHttpInfo() {
         
-        // verify the required parameter 'buId' is set
-        if (this.buId == null) {
-            throw new IllegalStateException("Missing the required parameter 'buId' when building request for PatchWorkforcemanagementBusinessunitActivitycodeRequest.");
+        // verify the required parameter 'businessUnitId' is set
+        if (this.businessUnitId == null) {
+            throw new IllegalStateException("Missing the required parameter 'businessUnitId' when building request for PatchWorkforcemanagementBusinessunitActivitycodeRequest.");
         }
         
-        // verify the required parameter 'acId' is set
-        if (this.acId == null) {
-            throw new IllegalStateException("Missing the required parameter 'acId' when building request for PatchWorkforcemanagementBusinessunitActivitycodeRequest.");
+        // verify the required parameter 'activityCodeId' is set
+        if (this.activityCodeId == null) {
+            throw new IllegalStateException("Missing the required parameter 'activityCodeId' when building request for PatchWorkforcemanagementBusinessunitActivitycodeRequest.");
         }
         
 
-        return ApiRequestBuilder.create("PATCH", "/api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId}")
-                .withPathParameter("buId", buId)
+        return ApiRequestBuilder.create("PATCH", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}")
+                .withPathParameter("businessUnitId", businessUnitId)
         
-                .withPathParameter("acId", acId)
+                .withPathParameter("activityCodeId", activityCodeId)
         
                 .withBody(body)
         
@@ -221,9 +221,9 @@ public class PatchWorkforcemanagementBusinessunitActivitycodeRequest {
 	}
 
 	
-	public static Builder builder(String buId, String acId) {
+	public static Builder builder(String businessUnitId, String activityCodeId) {
 	    return new Builder()
-	            .withRequiredParams(buId, acId);
+	            .withRequiredParams(businessUnitId, activityCodeId);
 	}
 	
 
@@ -235,13 +235,13 @@ public class PatchWorkforcemanagementBusinessunitActivitycodeRequest {
 		}
 
 		
-		public Builder withBuId(String buId) {
-			request.setBuId(buId);
+		public Builder withBusinessUnitId(String businessUnitId) {
+			request.setBusinessUnitId(businessUnitId);
 			return this;
 		}
 		
-		public Builder withAcId(String acId) {
-			request.setAcId(acId);
+		public Builder withActivityCodeId(String activityCodeId) {
+			request.setActivityCodeId(activityCodeId);
 			return this;
 		}
 		
@@ -252,9 +252,9 @@ public class PatchWorkforcemanagementBusinessunitActivitycodeRequest {
 		
 
 		
-		public Builder withRequiredParams(String buId, String acId) {
-			request.setBuId(buId);
-						request.setAcId(acId);
+		public Builder withRequiredParams(String businessUnitId, String activityCodeId) {
+			request.setBusinessUnitId(businessUnitId);
+						request.setActivityCodeId(activityCodeId);
 			
 			return this;
 		}
@@ -262,14 +262,14 @@ public class PatchWorkforcemanagementBusinessunitActivitycodeRequest {
 
 		public PatchWorkforcemanagementBusinessunitActivitycodeRequest build() {
             
-            // verify the required parameter 'buId' is set
-            if (request.buId == null) {
-                throw new IllegalStateException("Missing the required parameter 'buId' when building request for PatchWorkforcemanagementBusinessunitActivitycodeRequest.");
+            // verify the required parameter 'businessUnitId' is set
+            if (request.businessUnitId == null) {
+                throw new IllegalStateException("Missing the required parameter 'businessUnitId' when building request for PatchWorkforcemanagementBusinessunitActivitycodeRequest.");
             }
             
-            // verify the required parameter 'acId' is set
-            if (request.acId == null) {
-                throw new IllegalStateException("Missing the required parameter 'acId' when building request for PatchWorkforcemanagementBusinessunitActivitycodeRequest.");
+            // verify the required parameter 'activityCodeId' is set
+            if (request.activityCodeId == null) {
+                throw new IllegalStateException("Missing the required parameter 'activityCodeId' when building request for PatchWorkforcemanagementBusinessunitActivitycodeRequest.");
             }
             
 			return request;

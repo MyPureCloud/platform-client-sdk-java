@@ -128,17 +128,17 @@ import com.mypurecloud.sdk.v2.model.CreateAgentTimeOffRequest;
 
 public class GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest {
     
-	private String muId;
-	public String getMuId() {
-		return this.muId;
+	private String managementUnitId;
+	public String getManagementUnitId() {
+		return this.managementUnitId;
 	}
 
-	public void setMuId(String muId) {
-		this.muId = muId;
+	public void setManagementUnitId(String managementUnitId) {
+		this.managementUnitId = managementUnitId;
 	}
 
-	public GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest withMuId(String muId) {
-	    this.setMuId(muId);
+	public GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest withManagementUnitId(String managementUnitId) {
+	    this.setManagementUnitId(managementUnitId);
 	    return this;
 	} 
 	
@@ -191,9 +191,9 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest {
 
     public ApiRequest<Void> withHttpInfo() {
         
-        // verify the required parameter 'muId' is set
-        if (this.muId == null) {
-            throw new IllegalStateException("Missing the required parameter 'muId' when building request for GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest.");
+        // verify the required parameter 'managementUnitId' is set
+        if (this.managementUnitId == null) {
+            throw new IllegalStateException("Missing the required parameter 'managementUnitId' when building request for GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest.");
         }
         
         // verify the required parameter 'userId' is set
@@ -202,8 +202,8 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest {
         }
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests")
-                .withPathParameter("muId", muId)
+        return ApiRequestBuilder.create("GET", "/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests")
+                .withPathParameter("managementUnitId", managementUnitId)
         
                 .withPathParameter("userId", userId)
         
@@ -221,9 +221,9 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest {
 	}
 
 	
-	public static Builder builder(String muId, String userId) {
+	public static Builder builder(String managementUnitId, String userId) {
 	    return new Builder()
-	            .withRequiredParams(muId, userId);
+	            .withRequiredParams(managementUnitId, userId);
 	}
 	
 
@@ -235,8 +235,8 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest {
 		}
 
 		
-		public Builder withMuId(String muId) {
-			request.setMuId(muId);
+		public Builder withManagementUnitId(String managementUnitId) {
+			request.setManagementUnitId(managementUnitId);
 			return this;
 		}
 		
@@ -252,8 +252,8 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest {
 		
 
 		
-		public Builder withRequiredParams(String muId, String userId) {
-			request.setMuId(muId);
+		public Builder withRequiredParams(String managementUnitId, String userId) {
+			request.setManagementUnitId(managementUnitId);
 						request.setUserId(userId);
 			
 			return this;
@@ -262,9 +262,9 @@ public class GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest {
 
 		public GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest build() {
             
-            // verify the required parameter 'muId' is set
-            if (request.muId == null) {
-                throw new IllegalStateException("Missing the required parameter 'muId' when building request for GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest.");
+            // verify the required parameter 'managementUnitId' is set
+            if (request.managementUnitId == null) {
+                throw new IllegalStateException("Missing the required parameter 'managementUnitId' when building request for GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest.");
             }
             
             // verify the required parameter 'userId' is set

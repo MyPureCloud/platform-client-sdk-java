@@ -182,13 +182,13 @@ null (empty response body)
 
 
 
-> Void deleteWorkforcemanagementBusinessunitActivitycode(buId, acId)
+> Void deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId)
 
 Deletes an activity code
 
 
 
-Wraps DELETE /api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId}  
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}  
 
 Requires ANY permissions: 
 
@@ -216,10 +216,10 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String buId = "buId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-String acId = "acId_example"; // String | The ID of the activity code to delete
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+String activityCodeId = "activityCodeId_example"; // String | The ID of the activity code to delete
 try {
-    apiInstance.deleteWorkforcemanagementBusinessunitActivitycode(buId, acId);
+    apiInstance.deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#deleteWorkforcemanagementBusinessunitActivitycode");
     e.printStackTrace();
@@ -231,8 +231,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **buId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
-| **acId** | **String**| The ID of the activity code to delete | 
+| **businessUnitId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
+| **activityCodeId** | **String**| The ID of the activity code to delete | 
 {: class="table-striped"}
 
 
@@ -571,13 +571,13 @@ null (empty response body)
 
 
 
-> Void deleteWorkforcemanagementManagementunit(muId)
+> Void deleteWorkforcemanagementManagementunit(managementUnitId)
 
 Delete management unit
 
 
 
-Wraps DELETE /api/v2/workforcemanagement/managementunits/{muId}  
+Wraps DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}  
 
 Requires ANY permissions: 
 
@@ -605,9 +605,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 try {
-    apiInstance.deleteWorkforcemanagementManagementunit(muId);
+    apiInstance.deleteWorkforcemanagementManagementunit(managementUnitId);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#deleteWorkforcemanagementManagementunit");
     e.printStackTrace();
@@ -619,7 +619,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 {: class="table-striped"}
 
 
@@ -1004,13 +1004,13 @@ try {
 
 
 
-> [BusinessUnitActivityCode](BusinessUnitActivityCode.html) getWorkforcemanagementBusinessunitActivitycode(buId, acId)
+> [BusinessUnitActivityCode](BusinessUnitActivityCode.html) getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId)
 
 Get an activity code
 
 
 
-Wraps GET /api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId}  
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}  
 
 Requires ANY permissions: 
 
@@ -1038,10 +1038,10 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String buId = "buId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-String acId = "acId_example"; // String | The ID of the activity code to fetch
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+String activityCodeId = "activityCodeId_example"; // String | The ID of the activity code to fetch
 try {
-    BusinessUnitActivityCode result = apiInstance.getWorkforcemanagementBusinessunitActivitycode(buId, acId);
+    BusinessUnitActivityCode result = apiInstance.getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitActivitycode");
@@ -1054,8 +1054,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **buId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
-| **acId** | **String**| The ID of the activity code to fetch | 
+| **businessUnitId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
+| **activityCodeId** | **String**| The ID of the activity code to fetch | 
 {: class="table-striped"}
 
 
@@ -1069,13 +1069,13 @@ try {
 
 
 
-> [BusinessUnitActivityCodeListing](BusinessUnitActivityCodeListing.html) getWorkforcemanagementBusinessunitActivitycodes(buId)
+> [BusinessUnitActivityCodeListing](BusinessUnitActivityCodeListing.html) getWorkforcemanagementBusinessunitActivitycodes(businessUnitId)
 
 Get activity codes
 
 
 
-Wraps GET /api/v2/workforcemanagement/businessunits/{buId}/activitycodes  
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes  
 
 Requires ANY permissions: 
 
@@ -1148,9 +1148,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String buId = "buId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 try {
-    BusinessUnitActivityCodeListing result = apiInstance.getWorkforcemanagementBusinessunitActivitycodes(buId);
+    BusinessUnitActivityCodeListing result = apiInstance.getWorkforcemanagementBusinessunitActivitycodes(businessUnitId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitActivitycodes");
@@ -1163,7 +1163,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **buId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
+| **businessUnitId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
 {: class="table-striped"}
 
 
@@ -2587,13 +2587,13 @@ try {
 
 
 
-> [ManagementUnit](ManagementUnit.html) getWorkforcemanagementManagementunit(muId, expand)
+> [ManagementUnit](ManagementUnit.html) getWorkforcemanagementManagementunit(managementUnitId, expand)
 
 Get management unit
 
 
 
-Wraps GET /api/v2/workforcemanagement/managementunits/{muId}  
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}  
 
 Requires ANY permissions: 
 
@@ -2675,10 +2675,10 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 List<String> expand = Arrays.asList("expand_example"); // List<String> | 
 try {
-    ManagementUnit result = apiInstance.getWorkforcemanagementManagementunit(muId, expand);
+    ManagementUnit result = apiInstance.getWorkforcemanagementManagementunit(managementUnitId, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunit");
@@ -2691,7 +2691,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **expand** | [**List&lt;String&gt;**](String.html)|  | [optional]<br />**Values**: settings, settings.adherence, settings.timeOff, settings.scheduling, settings.shortTermForecasting, settings.shiftTrading 
 {: class="table-striped"}
 
@@ -2706,13 +2706,13 @@ try {
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-> [ActivityCodeContainer](ActivityCodeContainer.html) getWorkforcemanagementManagementunitActivitycodes(muId)
+> [ActivityCodeContainer](ActivityCodeContainer.html) getWorkforcemanagementManagementunitActivitycodes(managementUnitId)
 
 Get activity codes
 
 
 
-Wraps GET /api/v2/workforcemanagement/managementunits/{muId}/activitycodes  
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/activitycodes  
 
 Requires ANY permissions: 
 
@@ -2779,9 +2779,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 try {
-    ActivityCodeContainer result = apiInstance.getWorkforcemanagementManagementunitActivitycodes(muId);
+    ActivityCodeContainer result = apiInstance.getWorkforcemanagementManagementunitActivitycodes(managementUnitId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunitActivitycodes");
@@ -2794,7 +2794,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 {: class="table-striped"}
 
 
@@ -3006,13 +3006,13 @@ try {
 
 
 
-> [ShiftTradeMatchesSummaryResponse](ShiftTradeMatchesSummaryResponse.html) getWorkforcemanagementManagementunitShifttradesMatched(muId)
+> [ShiftTradeMatchesSummaryResponse](ShiftTradeMatchesSummaryResponse.html) getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId)
 
 Gets a summary of all shift trades in the matched state
 
 
 
-Wraps GET /api/v2/workforcemanagement/managementunits/{muId}/shifttrades/matched  
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/matched  
 
 Requires ANY permissions: 
 
@@ -3041,9 +3041,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 try {
-    ShiftTradeMatchesSummaryResponse result = apiInstance.getWorkforcemanagementManagementunitShifttradesMatched(muId);
+    ShiftTradeMatchesSummaryResponse result = apiInstance.getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunitShifttradesMatched");
@@ -3056,7 +3056,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 {: class="table-striped"}
 
 
@@ -3070,13 +3070,13 @@ try {
 
 
 
-> [WfmUserEntityListing](WfmUserEntityListing.html) getWorkforcemanagementManagementunitShifttradesUsers(muId)
+> [WfmUserEntityListing](WfmUserEntityListing.html) getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId)
 
 Gets list of users available for whom you can send direct shift trade requests
 
 
 
-Wraps GET /api/v2/workforcemanagement/managementunits/{muId}/shifttrades/users  
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users  
 
 Requires ANY permissions: 
 
@@ -3104,9 +3104,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 try {
-    WfmUserEntityListing result = apiInstance.getWorkforcemanagementManagementunitShifttradesUsers(muId);
+    WfmUserEntityListing result = apiInstance.getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunitShifttradesUsers");
@@ -3119,7 +3119,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 {: class="table-striped"}
 
 
@@ -3133,13 +3133,13 @@ try {
 
 
 
-> [TimeOffRequestResponse](TimeOffRequestResponse.html) getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId)
+> [TimeOffRequestResponse](TimeOffRequestResponse.html) getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId)
 
 Get a time off request
 
 
 
-Wraps GET /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId}  
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}  
 
 Requires ANY permissions: 
 
@@ -3167,11 +3167,11 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 String userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
 String timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
 try {
-    TimeOffRequestResponse result = apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId);
+    TimeOffRequestResponse result = apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunitUserTimeoffrequest");
@@ -3184,7 +3184,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **userId** | **String**| The userId to whom the Time Off Request applies. | 
 | **timeOffRequestId** | **String**| Time Off Request Id | 
 {: class="table-striped"}
@@ -3200,13 +3200,13 @@ try {
 
 
 
-> [TimeOffRequestList](TimeOffRequestList.html) getWorkforcemanagementManagementunitUserTimeoffrequests(muId, userId, recentlyReviewed)
+> [TimeOffRequestList](TimeOffRequestList.html) getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId, recentlyReviewed)
 
 Get a list of time off requests for a given user
 
 
 
-Wraps GET /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests  
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests  
 
 Requires ANY permissions: 
 
@@ -3234,11 +3234,11 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 String userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
 Boolean recentlyReviewed = false; // Boolean | Limit results to requests that have been reviewed within the preceding 30 days
 try {
-    TimeOffRequestList result = apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(muId, userId, recentlyReviewed);
+    TimeOffRequestList result = apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId, recentlyReviewed);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunitUserTimeoffrequests");
@@ -3251,7 +3251,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **userId** | **String**| The userId to whom the Time Off Request applies. | 
 | **recentlyReviewed** | **Boolean**| Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] 
 {: class="table-striped"}
@@ -3267,13 +3267,13 @@ try {
 
 
 
-> [WfmUserEntityListing](WfmUserEntityListing.html) getWorkforcemanagementManagementunitUsers(muId)
+> [WfmUserEntityListing](WfmUserEntityListing.html) getWorkforcemanagementManagementunitUsers(managementUnitId)
 
 Get users in the management unit
 
 
 
-Wraps GET /api/v2/workforcemanagement/managementunits/{muId}/users  
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users  
 
 Requires ANY permissions: 
 
@@ -3308,9 +3308,9 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 try {
-    WfmUserEntityListing result = apiInstance.getWorkforcemanagementManagementunitUsers(muId);
+    WfmUserEntityListing result = apiInstance.getWorkforcemanagementManagementunitUsers(managementUnitId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunitUsers");
@@ -3323,7 +3323,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 {: class="table-striped"}
 
 
@@ -4324,13 +4324,13 @@ try {
 
 
 
-> [BusinessUnitActivityCode](BusinessUnitActivityCode.html) patchWorkforcemanagementBusinessunitActivitycode(buId, acId, body)
+> [BusinessUnitActivityCode](BusinessUnitActivityCode.html) patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, body)
 
 Update an activity code
 
 
 
-Wraps PATCH /api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId}  
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}  
 
 Requires ANY permissions: 
 
@@ -4358,11 +4358,11 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String buId = "buId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-String acId = "acId_example"; // String | The ID of the activity code to update
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+String activityCodeId = "activityCodeId_example"; // String | The ID of the activity code to update
 UpdateActivityCodeRequest body = new UpdateActivityCodeRequest(); // UpdateActivityCodeRequest | body
 try {
-    BusinessUnitActivityCode result = apiInstance.patchWorkforcemanagementBusinessunitActivitycode(buId, acId, body);
+    BusinessUnitActivityCode result = apiInstance.patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitActivitycode");
@@ -4375,8 +4375,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **buId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
-| **acId** | **String**| The ID of the activity code to update | 
+| **businessUnitId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
+| **activityCodeId** | **String**| The ID of the activity code to update | 
 | **body** | [**UpdateActivityCodeRequest**](UpdateActivityCodeRequest.html)| body | [optional] 
 {: class="table-striped"}
 
@@ -4591,13 +4591,13 @@ try {
 
 
 
-> [ManagementUnit](ManagementUnit.html) patchWorkforcemanagementManagementunit(muId, body)
+> [ManagementUnit](ManagementUnit.html) patchWorkforcemanagementManagementunit(managementUnitId, body)
 
 Update the requested management unit
 
 
 
-Wraps PATCH /api/v2/workforcemanagement/managementunits/{muId}  
+Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}  
 
 Requires ANY permissions: 
 
@@ -4625,10 +4625,10 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 UpdateManagementUnitRequest body = new UpdateManagementUnitRequest(); // UpdateManagementUnitRequest | body
 try {
-    ManagementUnit result = apiInstance.patchWorkforcemanagementManagementunit(muId, body);
+    ManagementUnit result = apiInstance.patchWorkforcemanagementManagementunit(managementUnitId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementManagementunit");
@@ -4641,7 +4641,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **body** | [**UpdateManagementUnitRequest**](UpdateManagementUnitRequest.html)| body | [optional] 
 {: class="table-striped"}
 
@@ -4656,13 +4656,13 @@ try {
 
 
 
-> [TimeOffRequestResponse](TimeOffRequestResponse.html) patchWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId, body)
+> [TimeOffRequestResponse](TimeOffRequestResponse.html) patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, body)
 
 Update a time off request
 
 
 
-Wraps PATCH /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId}  
+Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}  
 
 Requires ANY permissions: 
 
@@ -4690,12 +4690,12 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 String userId = "userId_example"; // String | The id of the user the requested time off request belongs to
 String timeOffRequestId = "timeOffRequestId_example"; // String | The id of the time off request to update
 AdminTimeOffRequestPatch body = new AdminTimeOffRequestPatch(); // AdminTimeOffRequestPatch | body
 try {
-    TimeOffRequestResponse result = apiInstance.patchWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId, body);
+    TimeOffRequestResponse result = apiInstance.patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementManagementunitUserTimeoffrequest");
@@ -4708,7 +4708,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **userId** | **String**| The id of the user the requested time off request belongs to | 
 | **timeOffRequestId** | **String**| The id of the time off request to update | 
 | **body** | [**AdminTimeOffRequestPatch**](AdminTimeOffRequestPatch.html)| body | [optional] 
@@ -5121,13 +5121,13 @@ try {
 
 
 
-> [BusinessUnitActivityCode](BusinessUnitActivityCode.html) postWorkforcemanagementBusinessunitActivitycodes(buId, body)
+> [BusinessUnitActivityCode](BusinessUnitActivityCode.html) postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, body)
 
 Create a new activity code
 
 
 
-Wraps POST /api/v2/workforcemanagement/businessunits/{buId}/activitycodes  
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes  
 
 Requires ANY permissions: 
 
@@ -5155,10 +5155,10 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String buId = "buId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 CreateActivityCodeRequest body = new CreateActivityCodeRequest(); // CreateActivityCodeRequest | body
 try {
-    BusinessUnitActivityCode result = apiInstance.postWorkforcemanagementBusinessunitActivitycodes(buId, body);
+    BusinessUnitActivityCode result = apiInstance.postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitActivitycodes");
@@ -5171,7 +5171,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **buId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
+| **businessUnitId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
 | **body** | [**CreateActivityCodeRequest**](CreateActivityCodeRequest.html)| body | [optional] 
 {: class="table-striped"}
 
@@ -6002,13 +6002,13 @@ try {
 
 
 
-> [BuAsyncAgentSchedulesSearchResponse](BuAsyncAgentSchedulesSearchResponse.html) postWorkforcemanagementManagementunitAgentschedulesSearch(muId, body, forceAsync, forceDownloadService)
+> [BuAsyncAgentSchedulesSearchResponse](BuAsyncAgentSchedulesSearchResponse.html) postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, body, forceAsync, forceDownloadService)
 
 Query published schedules for given given time range for set of users
 
 
 
-Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/agentschedules/search  
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search  
 
 Requires ANY permissions: 
 
@@ -6037,12 +6037,12 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 BuSearchAgentSchedulesRequest body = new BuSearchAgentSchedulesRequest(); // BuSearchAgentSchedulesRequest | body
 Boolean forceAsync = true; // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
 try {
-    BuAsyncAgentSchedulesSearchResponse result = apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(muId, body, forceAsync, forceDownloadService);
+    BuAsyncAgentSchedulesSearchResponse result = apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, body, forceAsync, forceDownloadService);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitAgentschedulesSearch");
@@ -6055,7 +6055,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest.html)| body | [optional] 
 | **forceAsync** | **Boolean**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional] 
 | **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional] 
@@ -6072,13 +6072,13 @@ try {
 
 
 
-> [WfmHistoricalAdherenceResponse](WfmHistoricalAdherenceResponse.html) postWorkforcemanagementManagementunitHistoricaladherencequery(muId, body)
+> [WfmHistoricalAdherenceResponse](WfmHistoricalAdherenceResponse.html) postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, body)
 
 Request a historical adherence report
 
 The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
 
-Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/historicaladherencequery  
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery  
 
 Requires ANY permissions: 
 
@@ -6106,10 +6106,10 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The management unit ID of the management unit
+String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit
 WfmHistoricalAdherenceQuery body = new WfmHistoricalAdherenceQuery(); // WfmHistoricalAdherenceQuery | body
 try {
-    WfmHistoricalAdherenceResponse result = apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(muId, body);
+    WfmHistoricalAdherenceResponse result = apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitHistoricaladherencequery");
@@ -6122,7 +6122,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The management unit ID of the management unit | 
+| **managementUnitId** | **String**| The management unit ID of the management unit | 
 | **body** | [**WfmHistoricalAdherenceQuery**](WfmHistoricalAdherenceQuery.html)| body | [optional] 
 {: class="table-striped"}
 
@@ -6137,13 +6137,13 @@ try {
 
 
 
-> [MoveManagementUnitResponse](MoveManagementUnitResponse.html) postWorkforcemanagementManagementunitMove(muId, body)
+> [MoveManagementUnitResponse](MoveManagementUnitResponse.html) postWorkforcemanagementManagementunitMove(managementUnitId, body)
 
 Move the requested management unit to a new business unit
 
 Returns status 200 if the management unit is already in the requested business unit
 
-Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/move  
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/move  
 
 Requires ANY permissions: 
 
@@ -6171,10 +6171,10 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 MoveManagementUnitRequest body = new MoveManagementUnitRequest(); // MoveManagementUnitRequest | body
 try {
-    MoveManagementUnitResponse result = apiInstance.postWorkforcemanagementManagementunitMove(muId, body);
+    MoveManagementUnitResponse result = apiInstance.postWorkforcemanagementManagementunitMove(managementUnitId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitMove");
@@ -6187,7 +6187,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **body** | [**MoveManagementUnitRequest**](MoveManagementUnitRequest.html)| body | [optional] 
 {: class="table-striped"}
 
@@ -6202,13 +6202,13 @@ try {
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-> [UserScheduleContainer](UserScheduleContainer.html) postWorkforcemanagementManagementunitSchedulesSearch(muId, body)
+> [UserScheduleContainer](UserScheduleContainer.html) postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, body)
 
 Query published schedules for given given time range for set of users
 
 
 
-Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/schedules/search  
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search  
 
 Requires ANY permissions: 
 
@@ -6237,10 +6237,10 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 UserListScheduleRequestBody body = new UserListScheduleRequestBody(); // UserListScheduleRequestBody | body
 try {
-    UserScheduleContainer result = apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(muId, body);
+    UserScheduleContainer result = apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitSchedulesSearch");
@@ -6253,7 +6253,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **body** | [**UserListScheduleRequestBody**](UserListScheduleRequestBody.html)| body | [optional] 
 {: class="table-striped"}
 
@@ -6268,13 +6268,13 @@ try {
 
 
 
-> [TimeOffRequestList](TimeOffRequestList.html) postWorkforcemanagementManagementunitTimeoffrequests(muId, body)
+> [TimeOffRequestList](TimeOffRequestList.html) postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, body)
 
 Create a new time off request
 
 
 
-Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/timeoffrequests  
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests  
 
 Requires ANY permissions: 
 
@@ -6302,10 +6302,10 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 CreateAdminTimeOffRequest body = new CreateAdminTimeOffRequest(); // CreateAdminTimeOffRequest | body
 try {
-    TimeOffRequestList result = apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(muId, body);
+    TimeOffRequestList result = apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitTimeoffrequests");
@@ -6318,7 +6318,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **body** | [**CreateAdminTimeOffRequest**](CreateAdminTimeOffRequest.html)| body | [optional] 
 {: class="table-striped"}
 
@@ -6333,13 +6333,13 @@ try {
 
 
 
-> [TimeOffRequestListing](TimeOffRequestListing.html) postWorkforcemanagementManagementunitTimeoffrequestsQuery(muId, body)
+> [TimeOffRequestListing](TimeOffRequestListing.html) postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, body)
 
 Gets the lookup ids to fetch the specified set of requests
 
 
 
-Wraps POST /api/v2/workforcemanagement/managementunits/{muId}/timeoffrequests/query  
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query  
 
 Requires ANY permissions: 
 
@@ -6367,10 +6367,10 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
-String muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+String managementUnitId = "managementUnitId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 TimeOffRequestQueryBody body = new TimeOffRequestQueryBody(); // TimeOffRequestQueryBody | body
 try {
-    TimeOffRequestListing result = apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(muId, body);
+    TimeOffRequestListing result = apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementManagementunitTimeoffrequestsQuery");
@@ -6383,7 +6383,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **muId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
+| **managementUnitId** | **String**| The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **body** | [**TimeOffRequestQueryBody**](TimeOffRequestQueryBody.html)| body | [optional] 
 {: class="table-striped"}
 

@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WemCoachingAppointmentTopicCoachingAppointmentConversation;
 import com.mypurecloud.sdk.v2.model.WemCoachingAppointmentTopicCoachingAppointmentDocument;
+import com.mypurecloud.sdk.v2.model.WemCoachingAppointmentTopicCoachingAppointmentExternalLink;
 import com.mypurecloud.sdk.v2.model.WemCoachingAppointmentTopicUserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -108,6 +109,7 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
   }
   private ChangeTypeEnum changeType = null;
   private Date dateCompleted = null;
+  private List<WemCoachingAppointmentTopicCoachingAppointmentExternalLink> externalLinks = new ArrayList<WemCoachingAppointmentTopicCoachingAppointmentExternalLink>();
 
   
   /**
@@ -365,6 +367,23 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
   }
 
   
+  /**
+   **/
+  public WemCoachingAppointmentTopicCoachingAppointmentNotification externalLinks(List<WemCoachingAppointmentTopicCoachingAppointmentExternalLink> externalLinks) {
+    this.externalLinks = externalLinks;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("externalLinks")
+  public List<WemCoachingAppointmentTopicCoachingAppointmentExternalLink> getExternalLinks() {
+    return externalLinks;
+  }
+  public void setExternalLinks(List<WemCoachingAppointmentTopicCoachingAppointmentExternalLink> externalLinks) {
+    this.externalLinks = externalLinks;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -389,12 +408,13 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
         Objects.equals(this.conversations, wemCoachingAppointmentTopicCoachingAppointmentNotification.conversations) &&
         Objects.equals(this.documents, wemCoachingAppointmentTopicCoachingAppointmentNotification.documents) &&
         Objects.equals(this.changeType, wemCoachingAppointmentTopicCoachingAppointmentNotification.changeType) &&
-        Objects.equals(this.dateCompleted, wemCoachingAppointmentTopicCoachingAppointmentNotification.dateCompleted);
+        Objects.equals(this.dateCompleted, wemCoachingAppointmentTopicCoachingAppointmentNotification.dateCompleted) &&
+        Objects.equals(this.externalLinks, wemCoachingAppointmentTopicCoachingAppointmentNotification.externalLinks);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateStart, lengthInMinutes, status, facilitator, attendees, createdBy, dateCreated, modifiedBy, dateModified, conversations, documents, changeType, dateCompleted);
+    return Objects.hash(id, name, dateStart, lengthInMinutes, status, facilitator, attendees, createdBy, dateCreated, modifiedBy, dateModified, conversations, documents, changeType, dateCompleted, externalLinks);
   }
 
   @Override
@@ -417,6 +437,7 @@ public class WemCoachingAppointmentTopicCoachingAppointmentNotification  impleme
     sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
     sb.append("    changeType: ").append(toIndentedString(changeType)).append("\n");
     sb.append("    dateCompleted: ").append(toIndentedString(dateCompleted)).append("\n");
+    sb.append("    externalLinks: ").append(toIndentedString(externalLinks)).append("\n");
     sb.append("}");
     return sb.toString();
   }

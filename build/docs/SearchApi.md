@@ -23,6 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postLocationsSearch**](SearchApi.html#postLocationsSearch) | Search locations |
 | [**postSearch**](SearchApi.html#postSearch) | Search resources. |
 | [**postSearchSuggest**](SearchApi.html#postSearchSuggest) | Suggest resources. |
+| [**postSpeechandtextanalyticsTranscriptsSearch**](SearchApi.html#postSpeechandtextanalyticsTranscriptsSearch) | Search resources. |
 | [**postUsersSearch**](SearchApi.html#postUsersSearch) | Search users |
 | [**postVoicemailSearch**](SearchApi.html#postVoicemailSearch) | Search voicemails |
 {: class="table-striped"}
@@ -992,6 +993,70 @@ try {
 ### Return type
 
 [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+
+<a name="postSpeechandtextanalyticsTranscriptsSearch"></a>
+
+# **postSpeechandtextanalyticsTranscriptsSearch**
+
+
+
+> [JsonSearchResponse](JsonSearchResponse.html) postSpeechandtextanalyticsTranscriptsSearch(body)
+
+Search resources.
+
+
+
+Wraps POST /api/v2/speechandtextanalytics/transcripts/search  
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+* recording:recording:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SearchApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SearchApi apiInstance = new SearchApi();
+TranscriptSearchRequest body = new TranscriptSearchRequest(); // TranscriptSearchRequest | Search request options
+try {
+    JsonSearchResponse result = apiInstance.postSpeechandtextanalyticsTranscriptsSearch(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SearchApi#postSpeechandtextanalyticsTranscriptsSearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**TranscriptSearchRequest**](TranscriptSearchRequest.html)| Search request options | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**JsonSearchResponse**](JsonSearchResponse.html)
 
 <a name="postUsersSearch"></a>
 

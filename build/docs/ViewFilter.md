@@ -155,6 +155,7 @@ title: ViewFilter
 | FACEBOOK | &quot;facebook&quot; |
 | WHATSAPP | &quot;whatsapp&quot; |
 | WEBMESSAGING | &quot;webmessaging&quot; |
+| GENERAL | &quot;general&quot; |
 {: class="table table-striped"}
 
 

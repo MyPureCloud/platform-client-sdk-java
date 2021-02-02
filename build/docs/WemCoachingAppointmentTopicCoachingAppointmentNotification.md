@@ -23,6 +23,7 @@ title: WemCoachingAppointmentTopicCoachingAppointmentNotification
 | **documents** | <!----><!---->[**List&lt;WemCoachingAppointmentTopicCoachingAppointmentDocument&gt;**](WemCoachingAppointmentTopicCoachingAppointmentDocument.html)<!----> |  |  [optional] |
 | **changeType** | [**ChangeTypeEnum**](#ChangeTypeEnum)<!----> |  |  [optional] |
 | **dateCompleted** | <!----><!---->[**Date**](Date.html)<!----> |  |  [optional] |
+| **externalLinks** | <!----><!---->[**List&lt;WemCoachingAppointmentTopicCoachingAppointmentExternalLink&gt;**](WemCoachingAppointmentTopicCoachingAppointmentExternalLink.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -393,7 +393,7 @@ public class RoutingApiAsync {
 
   
   /**
-   * Delete queue member
+   * DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -427,7 +427,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Delete queue member
+   * DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2065,7 +2065,7 @@ public class RoutingApiAsync {
 
   
   /**
-   * Get the members of this queue
+   * DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2099,7 +2099,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Get the members of this queue
+   * DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3889,7 +3889,7 @@ public class RoutingApiAsync {
 
   
   /**
-   * Update the ring number OR joined status for a User in a Queue
+   * DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3923,7 +3923,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Update the ring number OR joined status for a User in a Queue
+   * DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3965,7 +3965,7 @@ public class RoutingApiAsync {
 
   
   /**
-   * Join or unjoin a set of users for a queue
+   * DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3999,7 +3999,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Join or unjoin a set of users for a queue
+   * DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -4877,7 +4877,7 @@ public class RoutingApiAsync {
 
   
   /**
-   * Bulk add or delete up to 100 queue members
+   * DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -4911,7 +4911,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Bulk add or delete up to 100 queue members
+   * DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

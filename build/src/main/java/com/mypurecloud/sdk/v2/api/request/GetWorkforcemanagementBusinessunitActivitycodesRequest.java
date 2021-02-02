@@ -128,17 +128,17 @@ import com.mypurecloud.sdk.v2.model.CreateAgentTimeOffRequest;
 
 public class GetWorkforcemanagementBusinessunitActivitycodesRequest {
     
-	private String buId;
-	public String getBuId() {
-		return this.buId;
+	private String businessUnitId;
+	public String getBusinessUnitId() {
+		return this.businessUnitId;
 	}
 
-	public void setBuId(String buId) {
-		this.buId = buId;
+	public void setBusinessUnitId(String businessUnitId) {
+		this.businessUnitId = businessUnitId;
 	}
 
-	public GetWorkforcemanagementBusinessunitActivitycodesRequest withBuId(String buId) {
-	    this.setBuId(buId);
+	public GetWorkforcemanagementBusinessunitActivitycodesRequest withBusinessUnitId(String businessUnitId) {
+	    this.setBusinessUnitId(businessUnitId);
 	    return this;
 	} 
 	
@@ -163,14 +163,14 @@ public class GetWorkforcemanagementBusinessunitActivitycodesRequest {
 
     public ApiRequest<Void> withHttpInfo() {
         
-        // verify the required parameter 'buId' is set
-        if (this.buId == null) {
-            throw new IllegalStateException("Missing the required parameter 'buId' when building request for GetWorkforcemanagementBusinessunitActivitycodesRequest.");
+        // verify the required parameter 'businessUnitId' is set
+        if (this.businessUnitId == null) {
+            throw new IllegalStateException("Missing the required parameter 'businessUnitId' when building request for GetWorkforcemanagementBusinessunitActivitycodesRequest.");
         }
         
 
-        return ApiRequestBuilder.create("GET", "/api/v2/workforcemanagement/businessunits/{buId}/activitycodes")
-                .withPathParameter("buId", buId)
+        return ApiRequestBuilder.create("GET", "/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes")
+                .withPathParameter("businessUnitId", businessUnitId)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -184,9 +184,9 @@ public class GetWorkforcemanagementBusinessunitActivitycodesRequest {
 	}
 
 	
-	public static Builder builder(String buId) {
+	public static Builder builder(String businessUnitId) {
 	    return new Builder()
-	            .withRequiredParams(buId);
+	            .withRequiredParams(businessUnitId);
 	}
 	
 
@@ -198,15 +198,15 @@ public class GetWorkforcemanagementBusinessunitActivitycodesRequest {
 		}
 
 		
-		public Builder withBuId(String buId) {
-			request.setBuId(buId);
+		public Builder withBusinessUnitId(String businessUnitId) {
+			request.setBusinessUnitId(businessUnitId);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(String buId) {
-			request.setBuId(buId);
+		public Builder withRequiredParams(String businessUnitId) {
+			request.setBusinessUnitId(businessUnitId);
 			
 			return this;
 		}
@@ -214,9 +214,9 @@ public class GetWorkforcemanagementBusinessunitActivitycodesRequest {
 
 		public GetWorkforcemanagementBusinessunitActivitycodesRequest build() {
             
-            // verify the required parameter 'buId' is set
-            if (request.buId == null) {
-                throw new IllegalStateException("Missing the required parameter 'buId' when building request for GetWorkforcemanagementBusinessunitActivitycodesRequest.");
+            // verify the required parameter 'businessUnitId' is set
+            if (request.businessUnitId == null) {
+                throw new IllegalStateException("Missing the required parameter 'businessUnitId' when building request for GetWorkforcemanagementBusinessunitActivitycodesRequest.");
             }
             
 			return request;
