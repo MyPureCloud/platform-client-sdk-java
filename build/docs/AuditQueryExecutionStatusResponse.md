@@ -55,6 +55,7 @@ title: AuditQueryExecutionStatusResponse
 | GROUPS | &quot;Groups&quot; |
 | TELEPHONY | &quot;Telephony&quot; |
 | OUTBOUND | &quot;Outbound&quot; |
+| SPEECHANDTEXTANALYTICS | &quot;SpeechAndTextAnalytics&quot; |
 {: class="table table-striped"}
 
 

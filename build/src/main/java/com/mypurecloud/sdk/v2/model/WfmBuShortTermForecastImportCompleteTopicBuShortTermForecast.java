@@ -69,6 +69,7 @@ public class WfmBuShortTermForecastImportCompleteTopicBuShortTermForecast  imple
   private Integer planningGroupsVersion = null;
   private Integer weekCount = null;
   private WfmBuShortTermForecastImportCompleteTopicWfmVersionedEntityMetadata metadata = null;
+  private Boolean canUseForScheduling = null;
 
   
   /**
@@ -275,6 +276,23 @@ public class WfmBuShortTermForecastImportCompleteTopicBuShortTermForecast  imple
   }
 
   
+  /**
+   **/
+  public WfmBuShortTermForecastImportCompleteTopicBuShortTermForecast canUseForScheduling(Boolean canUseForScheduling) {
+    this.canUseForScheduling = canUseForScheduling;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("canUseForScheduling")
+  public Boolean getCanUseForScheduling() {
+    return canUseForScheduling;
+  }
+  public void setCanUseForScheduling(Boolean canUseForScheduling) {
+    this.canUseForScheduling = canUseForScheduling;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -296,12 +314,13 @@ public class WfmBuShortTermForecastImportCompleteTopicBuShortTermForecast  imple
         Objects.equals(this.timeZone, wfmBuShortTermForecastImportCompleteTopicBuShortTermForecast.timeZone) &&
         Objects.equals(this.planningGroupsVersion, wfmBuShortTermForecastImportCompleteTopicBuShortTermForecast.planningGroupsVersion) &&
         Objects.equals(this.weekCount, wfmBuShortTermForecastImportCompleteTopicBuShortTermForecast.weekCount) &&
-        Objects.equals(this.metadata, wfmBuShortTermForecastImportCompleteTopicBuShortTermForecast.metadata);
+        Objects.equals(this.metadata, wfmBuShortTermForecastImportCompleteTopicBuShortTermForecast.metadata) &&
+        Objects.equals(this.canUseForScheduling, wfmBuShortTermForecastImportCompleteTopicBuShortTermForecast.canUseForScheduling);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, weekDate, creationMethod, description, legacy, referenceStartDate, sourceDays, modifications, timeZone, planningGroupsVersion, weekCount, metadata);
+    return Objects.hash(id, weekDate, creationMethod, description, legacy, referenceStartDate, sourceDays, modifications, timeZone, planningGroupsVersion, weekCount, metadata, canUseForScheduling);
   }
 
   @Override
@@ -321,6 +340,7 @@ public class WfmBuShortTermForecastImportCompleteTopicBuShortTermForecast  imple
     sb.append("    planningGroupsVersion: ").append(toIndentedString(planningGroupsVersion)).append("\n");
     sb.append("    weekCount: ").append(toIndentedString(weekCount)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    canUseForScheduling: ").append(toIndentedString(canUseForScheduling)).append("\n");
     sb.append("}");
     return sb.toString();
   }

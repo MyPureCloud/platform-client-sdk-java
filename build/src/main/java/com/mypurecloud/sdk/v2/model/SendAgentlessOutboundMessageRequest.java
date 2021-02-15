@@ -19,7 +19,7 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
   private String toAddress = null;
 
   /**
-   * The recipient messaging address messenger type.
+   * The recipient messaging address messenger type. Currently SMS is the only supported type.
    */
   public enum ToAddressMessengerTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -78,14 +78,14 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
 
   
   /**
-   * The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234
+   * The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234.
    **/
   public SendAgentlessOutboundMessageRequest toAddress(String toAddress) {
     this.toAddress = toAddress;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234")
+  @ApiModelProperty(example = "null", required = true, value = "The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234.")
   @JsonProperty("toAddress")
   public String getToAddress() {
     return toAddress;
@@ -96,14 +96,14 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
 
   
   /**
-   * The recipient messaging address messenger type.
+   * The recipient messaging address messenger type. Currently SMS is the only supported type.
    **/
   public SendAgentlessOutboundMessageRequest toAddressMessengerType(ToAddressMessengerTypeEnum toAddressMessengerType) {
     this.toAddressMessengerType = toAddressMessengerType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The recipient messaging address messenger type.")
+  @ApiModelProperty(example = "null", required = true, value = "The recipient messaging address messenger type. Currently SMS is the only supported type.")
   @JsonProperty("toAddressMessengerType")
   public ToAddressMessengerTypeEnum getToAddressMessengerType() {
     return toAddressMessengerType;

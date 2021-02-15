@@ -1,0 +1,32 @@
+---
+title: ActionMapAction
+---
+## ActionMapAction
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **actionTemplate** | <!----><!---->[**ActionMapActionTemplate**](ActionMapActionTemplate.html)<!----> | Action template associated with the action map. |  [optional] |
+| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> | Media type of action. |  [optional] |
+| **architectFlowFields** | <!----><!---->[**ArchitectFlowFields**](ArchitectFlowFields.html)<!----> | Architect Flow Id and input contract. |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="MediaTypeEnum"></a>
+
+## Enum: MediaTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| WEBCHAT | &quot;webchat&quot; |
+| WEBMESSAGINGOFFER | &quot;webMessagingOffer&quot; |
+| CONTENTOFFER | &quot;contentOffer&quot; |
+| INTEGRATIONACTION | &quot;integrationAction&quot; |
+| ARCHITECTFLOW | &quot;architectFlow&quot; |
+{: class="table table-striped"}
+
+
+

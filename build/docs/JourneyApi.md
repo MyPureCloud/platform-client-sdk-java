@@ -7,16 +7,219 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteJourneyActionmap**](JourneyApi.html#deleteJourneyActionmap) | Delete single action map. |
+| [**deleteJourneyActiontemplate**](JourneyApi.html#deleteJourneyActiontemplate) | Delete a single action template. |
+| [**deleteJourneyOutcome**](JourneyApi.html#deleteJourneyOutcome) | Delete an outcome. |
 | [**deleteJourneySegment**](JourneyApi.html#deleteJourneySegment) | Delete a segment. |
+| [**getJourneyActionmap**](JourneyApi.html#getJourneyActionmap) | Retrieve a single action map. |
+| [**getJourneyActionmaps**](JourneyApi.html#getJourneyActionmaps) | Retrieve all action maps. |
 | [**getJourneyActiontarget**](JourneyApi.html#getJourneyActiontarget) | Retrieve a single action target. |
 | [**getJourneyActiontargets**](JourneyApi.html#getJourneyActiontargets) | Retrieve all action targets. |
+| [**getJourneyActiontemplate**](JourneyApi.html#getJourneyActiontemplate) | Retrieve a single action template. |
+| [**getJourneyActiontemplates**](JourneyApi.html#getJourneyActiontemplates) | Retrieve all action templates. |
+| [**getJourneyOutcome**](JourneyApi.html#getJourneyOutcome) | Retrieve a single outcome. |
+| [**getJourneyOutcomes**](JourneyApi.html#getJourneyOutcomes) | Retrieve all outcomes. |
 | [**getJourneySegment**](JourneyApi.html#getJourneySegment) | Retrieve a single segment. |
 | [**getJourneySegments**](JourneyApi.html#getJourneySegments) | Retrieve all segments. |
+| [**patchJourneyActionmap**](JourneyApi.html#patchJourneyActionmap) | Update single action map. |
 | [**patchJourneyActiontarget**](JourneyApi.html#patchJourneyActiontarget) | Update a single action target. |
+| [**patchJourneyActiontemplate**](JourneyApi.html#patchJourneyActiontemplate) | Update a single action template. |
+| [**patchJourneyOutcome**](JourneyApi.html#patchJourneyOutcome) | Update an outcome. |
 | [**patchJourneySegment**](JourneyApi.html#patchJourneySegment) | Update a segment. |
 | [**postAnalyticsJourneysAggregatesQuery**](JourneyApi.html#postAnalyticsJourneysAggregatesQuery) | Query for journey aggregates |
+| [**postJourneyActionmaps**](JourneyApi.html#postJourneyActionmaps) | Create an action map. |
+| [**postJourneyActiontemplates**](JourneyApi.html#postJourneyActiontemplates) | Create a single action template. |
+| [**postJourneyOutcomes**](JourneyApi.html#postJourneyOutcomes) | Create an outcome. |
 | [**postJourneySegments**](JourneyApi.html#postJourneySegments) | Create a segment. |
 {: class="table-striped"}
+
+<a name="deleteJourneyActionmap"></a>
+
+# **deleteJourneyActionmap**
+
+
+
+> Void deleteJourneyActionmap(actionMapId)
+
+Delete single action map.
+
+
+
+Wraps DELETE /api/v2/journey/actionmaps/{actionMapId}  
+
+Requires ANY permissions: 
+
+* journey:actionmap:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String actionMapId = "actionMapId_example"; // String | ID of the action map.
+try {
+    apiInstance.deleteJourneyActionmap(actionMapId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#deleteJourneyActionmap");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **actionMapId** | **String**| ID of the action map. | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteJourneyActiontemplate"></a>
+
+# **deleteJourneyActiontemplate**
+
+
+
+> Void deleteJourneyActiontemplate(actionTemplateId, hardDelete)
+
+Delete a single action template.
+
+
+
+Wraps DELETE /api/v2/journey/actiontemplates/{actionTemplateId}  
+
+Requires ANY permissions: 
+
+* journey:actiontemplate:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String actionTemplateId = "actionTemplateId_example"; // String | ID of the action template.
+Boolean hardDelete = true; // Boolean | Determines whether Action Template should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+try {
+    apiInstance.deleteJourneyActiontemplate(actionTemplateId, hardDelete);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#deleteJourneyActiontemplate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **actionTemplateId** | **String**| ID of the action template. | 
+| **hardDelete** | **Boolean**| Determines whether Action Template should be soft-deleted (have it&#39;s state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteJourneyOutcome"></a>
+
+# **deleteJourneyOutcome**
+
+
+
+> Void deleteJourneyOutcome(outcomeId)
+
+Delete an outcome.
+
+
+
+Wraps DELETE /api/v2/journey/outcomes/{outcomeId}  
+
+Requires ANY permissions: 
+
+* journey:outcome:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String outcomeId = "outcomeId_example"; // String | ID of the outcome.
+try {
+    apiInstance.deleteJourneyOutcome(outcomeId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#deleteJourneyOutcome");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **outcomeId** | **String**| ID of the outcome. | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="deleteJourneySegment"></a>
 
@@ -79,6 +282,142 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="getJourneyActionmap"></a>
+
+# **getJourneyActionmap**
+
+
+
+> [ActionMap](ActionMap.html) getJourneyActionmap(actionMapId)
+
+Retrieve a single action map.
+
+
+
+Wraps GET /api/v2/journey/actionmaps/{actionMapId}  
+
+Requires ANY permissions: 
+
+* journey:actionmap:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String actionMapId = "actionMapId_example"; // String | ID of the action map.
+try {
+    ActionMap result = apiInstance.getJourneyActionmap(actionMapId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyActionmap");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **actionMapId** | **String**| ID of the action map. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActionMap**](ActionMap.html)
+
+<a name="getJourneyActionmaps"></a>
+
+# **getJourneyActionmaps**
+
+
+
+> [ActionMapListing](ActionMapListing.html) getJourneyActionmaps(pageNumber, pageSize, sortBy, filterField, filterValue, actionMapIds)
+
+Retrieve all action maps.
+
+
+
+Wraps GET /api/v2/journey/actionmaps  
+
+Requires ANY permissions: 
+
+* journey:actionmap:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortBy = "sortBy_example"; // String | Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate).
+String filterField = "filterField_example"; // String | Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires 'filterField' to also be set.
+String filterValue = "filterValue_example"; // String | Value to filter by. Requires 'filterValue' to also be set.
+List<String> actionMapIds = Arrays.asList("actionMapIds_example"); // List<String> | IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering or sorting. A maximum of 100 action maps are allowed per request.
+try {
+    ActionMapListing result = apiInstance.getJourneyActionmaps(pageNumber, pageSize, sortBy, filterField, filterValue, actionMapIds);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyActionmaps");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **sortBy** | **String**| Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). | [optional] 
+| **filterField** | **String**| Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires &#39;filterField&#39; to also be set. | [optional] 
+| **filterValue** | **String**| Value to filter by. Requires &#39;filterValue&#39; to also be set. | [optional] 
+| **actionMapIds** | [**List&lt;String&gt;**](String.html)| IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering or sorting. A maximum of 100 action maps are allowed per request. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActionMapListing**](ActionMapListing.html)
 
 <a name="getJourneyActiontarget"></a>
 
@@ -207,6 +546,272 @@ try {
 ### Return type
 
 [**ActionTargetListing**](ActionTargetListing.html)
+
+<a name="getJourneyActiontemplate"></a>
+
+# **getJourneyActiontemplate**
+
+
+
+> [ActionTemplate](ActionTemplate.html) getJourneyActiontemplate(actionTemplateId)
+
+Retrieve a single action template.
+
+
+
+Wraps GET /api/v2/journey/actiontemplates/{actionTemplateId}  
+
+Requires ANY permissions: 
+
+* journey:actiontemplate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String actionTemplateId = "actionTemplateId_example"; // String | ID of the action template.
+try {
+    ActionTemplate result = apiInstance.getJourneyActiontemplate(actionTemplateId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyActiontemplate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **actionTemplateId** | **String**| ID of the action template. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActionTemplate**](ActionTemplate.html)
+
+<a name="getJourneyActiontemplates"></a>
+
+# **getJourneyActiontemplates**
+
+
+
+> [ActionTemplateListing](ActionTemplateListing.html) getJourneyActiontemplates(pageNumber, pageSize, sortBy, mediaType, state)
+
+Retrieve all action templates.
+
+
+
+Wraps GET /api/v2/journey/actiontemplates  
+
+Requires ANY permissions: 
+
+* journey:actiontemplate:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortBy = "sortBy_example"; // String | Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=name,-createdDate).
+String mediaType = "mediaType_example"; // String | Media type
+String state = "state_example"; // String | Action template state
+try {
+    ActionTemplateListing result = apiInstance.getJourneyActiontemplates(pageNumber, pageSize, sortBy, mediaType, state);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyActiontemplates");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **sortBy** | **String**| Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=name,-createdDate). | [optional] 
+| **mediaType** | **String**| Media type | [optional]<br />**Values**: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow 
+| **state** | **String**| Action template state | [optional]<br />**Values**: Active, Inactive, Deleted 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActionTemplateListing**](ActionTemplateListing.html)
+
+<a name="getJourneyOutcome"></a>
+
+# **getJourneyOutcome**
+
+
+
+> [Outcome](Outcome.html) getJourneyOutcome(outcomeId)
+
+Retrieve a single outcome.
+
+
+
+Wraps GET /api/v2/journey/outcomes/{outcomeId}  
+
+Requires ANY permissions: 
+
+* journey:outcome:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String outcomeId = "outcomeId_example"; // String | ID of the outcome.
+try {
+    Outcome result = apiInstance.getJourneyOutcome(outcomeId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyOutcome");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **outcomeId** | **String**| ID of the outcome. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Outcome**](Outcome.html)
+
+<a name="getJourneyOutcomes"></a>
+
+# **getJourneyOutcomes**
+
+
+
+> [OutcomeListing](OutcomeListing.html) getJourneyOutcomes(pageNumber, pageSize, sortBy, outcomeIds)
+
+Retrieve all outcomes.
+
+
+
+Wraps GET /api/v2/journey/outcomes  
+
+Requires ANY permissions: 
+
+* journey:outcome:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortBy = "sortBy_example"; // String | Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate).
+List<String> outcomeIds = Arrays.asList("outcomeIds_example"); // List<String> | IDs of outcomes to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 20 outcomes are allowed per request.
+try {
+    OutcomeListing result = apiInstance.getJourneyOutcomes(pageNumber, pageSize, sortBy, outcomeIds);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneyOutcomes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **sortBy** | **String**| Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). | [optional] 
+| **outcomeIds** | [**List&lt;String&gt;**](String.html)| IDs of outcomes to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 20 outcomes are allowed per request. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OutcomeListing**](OutcomeListing.html)
 
 <a name="getJourneySegment"></a>
 
@@ -342,6 +947,71 @@ try {
 
 [**SegmentListing**](SegmentListing.html)
 
+<a name="patchJourneyActionmap"></a>
+
+# **patchJourneyActionmap**
+
+
+
+> [ActionMap](ActionMap.html) patchJourneyActionmap(actionMapId, body)
+
+Update single action map.
+
+
+
+Wraps PATCH /api/v2/journey/actionmaps/{actionMapId}  
+
+Requires ANY permissions: 
+
+* journey:actionmap:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String actionMapId = "actionMapId_example"; // String | ID of the action map.
+PatchActionMap body = new PatchActionMap(); // PatchActionMap | 
+try {
+    ActionMap result = apiInstance.patchJourneyActionmap(actionMapId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#patchJourneyActionmap");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **actionMapId** | **String**| ID of the action map. | 
+| **body** | [**PatchActionMap**](PatchActionMap.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActionMap**](ActionMap.html)
+
 <a name="patchJourneyActiontarget"></a>
 
 # **patchJourneyActiontarget**
@@ -406,6 +1076,136 @@ try {
 ### Return type
 
 [**ActionTarget**](ActionTarget.html)
+
+<a name="patchJourneyActiontemplate"></a>
+
+# **patchJourneyActiontemplate**
+
+
+
+> [ActionTemplate](ActionTemplate.html) patchJourneyActiontemplate(actionTemplateId, body)
+
+Update a single action template.
+
+
+
+Wraps PATCH /api/v2/journey/actiontemplates/{actionTemplateId}  
+
+Requires ANY permissions: 
+
+* journey:actiontemplate:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String actionTemplateId = "actionTemplateId_example"; // String | ID of the action template.
+PatchActionTemplate body = new PatchActionTemplate(); // PatchActionTemplate | 
+try {
+    ActionTemplate result = apiInstance.patchJourneyActiontemplate(actionTemplateId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#patchJourneyActiontemplate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **actionTemplateId** | **String**| ID of the action template. | 
+| **body** | [**PatchActionTemplate**](PatchActionTemplate.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActionTemplate**](ActionTemplate.html)
+
+<a name="patchJourneyOutcome"></a>
+
+# **patchJourneyOutcome**
+
+
+
+> [Outcome](Outcome.html) patchJourneyOutcome(outcomeId, body)
+
+Update an outcome.
+
+
+
+Wraps PATCH /api/v2/journey/outcomes/{outcomeId}  
+
+Requires ANY permissions: 
+
+* journey:outcome:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String outcomeId = "outcomeId_example"; // String | ID of the outcome.
+PatchOutcome body = new PatchOutcome(); // PatchOutcome | 
+try {
+    Outcome result = apiInstance.patchJourneyOutcome(outcomeId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#patchJourneyOutcome");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **outcomeId** | **String**| ID of the outcome. | 
+| **body** | [**PatchOutcome**](PatchOutcome.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Outcome**](Outcome.html)
 
 <a name="patchJourneySegment"></a>
 
@@ -534,6 +1334,195 @@ try {
 ### Return type
 
 [**JourneyAggregateQueryResponse**](JourneyAggregateQueryResponse.html)
+
+<a name="postJourneyActionmaps"></a>
+
+# **postJourneyActionmaps**
+
+
+
+> [ActionMap](ActionMap.html) postJourneyActionmaps(body)
+
+Create an action map.
+
+
+
+Wraps POST /api/v2/journey/actionmaps  
+
+Requires ANY permissions: 
+
+* journey:actionmap:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+ActionMap body = new ActionMap(); // ActionMap | 
+try {
+    ActionMap result = apiInstance.postJourneyActionmaps(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#postJourneyActionmaps");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ActionMap**](ActionMap.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActionMap**](ActionMap.html)
+
+<a name="postJourneyActiontemplates"></a>
+
+# **postJourneyActiontemplates**
+
+
+
+> [ActionTemplate](ActionTemplate.html) postJourneyActiontemplates(body)
+
+Create a single action template.
+
+
+
+Wraps POST /api/v2/journey/actiontemplates  
+
+Requires ANY permissions: 
+
+* journey:actiontemplate:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+ActionTemplate body = new ActionTemplate(); // ActionTemplate | 
+try {
+    ActionTemplate result = apiInstance.postJourneyActiontemplates(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#postJourneyActiontemplates");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ActionTemplate**](ActionTemplate.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActionTemplate**](ActionTemplate.html)
+
+<a name="postJourneyOutcomes"></a>
+
+# **postJourneyOutcomes**
+
+
+
+> [Outcome](Outcome.html) postJourneyOutcomes(body)
+
+Create an outcome.
+
+
+
+Wraps POST /api/v2/journey/outcomes  
+
+Requires ANY permissions: 
+
+* journey:outcome:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+Outcome body = new Outcome(); // Outcome | 
+try {
+    Outcome result = apiInstance.postJourneyOutcomes(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#postJourneyOutcomes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**Outcome**](Outcome.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Outcome**](Outcome.html)
 
 <a name="postJourneySegments"></a>
 

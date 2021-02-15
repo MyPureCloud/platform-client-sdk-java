@@ -40,7 +40,6 @@ public class TranscriptAggregationQuery  implements Serializable {
     MESSAGETYPE("messageType"),
     QUEUEID("queueId"),
     TEAMID("teamId"),
-    TOPIC("topic"),
     USERID("userId");
 
     private String value;

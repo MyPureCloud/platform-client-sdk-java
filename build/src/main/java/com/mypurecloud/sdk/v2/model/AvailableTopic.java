@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -21,6 +22,43 @@ public class AvailableTopic  implements Serializable {
   private String description = null;
   private String id = null;
   private List<String> requiresPermissions = new ArrayList<String>();
+  private Boolean requiresDivisionPermissions = null;
+  private Boolean enforced = null;
+
+  /**
+   * Visibility of this topic (Public or Preview)
+   */
+  public enum VisibilityEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    PUBLIC("Public"),
+    PREVIEW("Preview");
+
+    private String value;
+
+    VisibilityEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static VisibilityEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (VisibilityEnum value : VisibilityEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return VisibilityEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private VisibilityEnum visibility = null;
   private Map<String, Object> schema = null;
   private Boolean requiresCurrentUser = null;
   private Boolean requiresCurrentUserOrPermission = null;
@@ -111,6 +149,60 @@ public class AvailableTopic  implements Serializable {
   }
   public void setRequiresPermissions(List<String> requiresPermissions) {
     this.requiresPermissions = requiresPermissions;
+  }
+
+  
+  /**
+   * True if the subscribing user must belong to the same division as the topic object ID
+   **/
+  public AvailableTopic requiresDivisionPermissions(Boolean requiresDivisionPermissions) {
+    this.requiresDivisionPermissions = requiresDivisionPermissions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "True if the subscribing user must belong to the same division as the topic object ID")
+  @JsonProperty("requiresDivisionPermissions")
+  public Boolean getRequiresDivisionPermissions() {
+    return requiresDivisionPermissions;
+  }
+  public void setRequiresDivisionPermissions(Boolean requiresDivisionPermissions) {
+    this.requiresDivisionPermissions = requiresDivisionPermissions;
+  }
+
+  
+  /**
+   * Whether or not the permissions on this topic are enforced
+   **/
+  public AvailableTopic enforced(Boolean enforced) {
+    this.enforced = enforced;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether or not the permissions on this topic are enforced")
+  @JsonProperty("enforced")
+  public Boolean getEnforced() {
+    return enforced;
+  }
+  public void setEnforced(Boolean enforced) {
+    this.enforced = enforced;
+  }
+
+  
+  /**
+   * Visibility of this topic (Public or Preview)
+   **/
+  public AvailableTopic visibility(VisibilityEnum visibility) {
+    this.visibility = visibility;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Visibility of this topic (Public or Preview)")
+  @JsonProperty("visibility")
+  public VisibilityEnum getVisibility() {
+    return visibility;
+  }
+  public void setVisibility(VisibilityEnum visibility) {
+    this.visibility = visibility;
   }
 
   
@@ -215,6 +307,9 @@ public class AvailableTopic  implements Serializable {
     return Objects.equals(this.description, availableTopic.description) &&
         Objects.equals(this.id, availableTopic.id) &&
         Objects.equals(this.requiresPermissions, availableTopic.requiresPermissions) &&
+        Objects.equals(this.requiresDivisionPermissions, availableTopic.requiresDivisionPermissions) &&
+        Objects.equals(this.enforced, availableTopic.enforced) &&
+        Objects.equals(this.visibility, availableTopic.visibility) &&
         Objects.equals(this.schema, availableTopic.schema) &&
         Objects.equals(this.requiresCurrentUser, availableTopic.requiresCurrentUser) &&
         Objects.equals(this.requiresCurrentUserOrPermission, availableTopic.requiresCurrentUserOrPermission) &&
@@ -224,7 +319,7 @@ public class AvailableTopic  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, id, requiresPermissions, schema, requiresCurrentUser, requiresCurrentUserOrPermission, transports, publicApiTemplateUriPaths);
+    return Objects.hash(description, id, requiresPermissions, requiresDivisionPermissions, enforced, visibility, schema, requiresCurrentUser, requiresCurrentUserOrPermission, transports, publicApiTemplateUriPaths);
   }
 
   @Override
@@ -235,6 +330,9 @@ public class AvailableTopic  implements Serializable {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    requiresPermissions: ").append(toIndentedString(requiresPermissions)).append("\n");
+    sb.append("    requiresDivisionPermissions: ").append(toIndentedString(requiresDivisionPermissions)).append("\n");
+    sb.append("    enforced: ").append(toIndentedString(enforced)).append("\n");
+    sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
     sb.append("    requiresCurrentUser: ").append(toIndentedString(requiresCurrentUser)).append("\n");
     sb.append("    requiresCurrentUserOrPermission: ").append(toIndentedString(requiresCurrentUserOrPermission)).append("\n");

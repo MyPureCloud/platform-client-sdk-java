@@ -8,7 +8,7 @@ title: ForecastPlanningGroupData
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **planningGroupId** | <!----><!---->**String**<!----> | The id of the planning group to which this data applies |  [optional] |
+| **planningGroupId** | <!----><!---->**String**<!----> | The ID of the planning group to which this data applies. Note this is a snapshot of the planning group at the time of forecast creation and may not correspond to the current configuration |  [optional] |
 | **offeredPerInterval** | <!----><!---->**List&lt;Double&gt;**<!----> | Forecast offered counts per interval for this week of the forecast |  [optional] |
 | **averageHandleTimeSecondsPerInterval** | <!----><!---->**List&lt;Double&gt;**<!----> | Forecast average handle time per interval in seconds |  [optional] |
 {: class="table table-striped"}

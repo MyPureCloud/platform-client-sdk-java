@@ -49,7 +49,6 @@ title: TranscriptAggregateQueryPredicate
 | MESSAGETYPE | &quot;messageType&quot; |
 | QUEUEID | &quot;queueId&quot; |
 | TEAMID | &quot;teamId&quot; |
-| TOPIC | &quot;topic&quot; |
 | USERID | &quot;userId&quot; |
 {: class="table table-striped"}
 

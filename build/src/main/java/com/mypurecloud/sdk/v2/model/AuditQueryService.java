@@ -38,7 +38,8 @@ public class AuditQueryService  implements Serializable {
     RESPONSEMANAGEMENT("ResponseManagement"),
     GROUPS("Groups"),
     TELEPHONY("Telephony"),
-    OUTBOUND("Outbound");
+    OUTBOUND("Outbound"),
+    SPEECHANDTEXTANALYTICS("SpeechAndTextAnalytics");
 
     private String value;
 

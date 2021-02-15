@@ -24,6 +24,7 @@ public class EvaluatorActivity  implements Serializable {
   private Integer numCalibrationsAssigned = null;
   private Integer numCalibrationsStarted = null;
   private Integer numCalibrationsCompleted = null;
+  private Integer numEvaluationsWithoutViewPermission = null;
   private String selfUri = null;
 
   
@@ -170,6 +171,23 @@ public class EvaluatorActivity  implements Serializable {
   }
 
   
+  /**
+   **/
+  public EvaluatorActivity numEvaluationsWithoutViewPermission(Integer numEvaluationsWithoutViewPermission) {
+    this.numEvaluationsWithoutViewPermission = numEvaluationsWithoutViewPermission;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("numEvaluationsWithoutViewPermission")
+  public Integer getNumEvaluationsWithoutViewPermission() {
+    return numEvaluationsWithoutViewPermission;
+  }
+  public void setNumEvaluationsWithoutViewPermission(Integer numEvaluationsWithoutViewPermission) {
+    this.numEvaluationsWithoutViewPermission = numEvaluationsWithoutViewPermission;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -196,12 +214,13 @@ public class EvaluatorActivity  implements Serializable {
         Objects.equals(this.numCalibrationsAssigned, evaluatorActivity.numCalibrationsAssigned) &&
         Objects.equals(this.numCalibrationsStarted, evaluatorActivity.numCalibrationsStarted) &&
         Objects.equals(this.numCalibrationsCompleted, evaluatorActivity.numCalibrationsCompleted) &&
+        Objects.equals(this.numEvaluationsWithoutViewPermission, evaluatorActivity.numEvaluationsWithoutViewPermission) &&
         Objects.equals(this.selfUri, evaluatorActivity.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, evaluator, numEvaluationsAssigned, numEvaluationsStarted, numEvaluationsCompleted, numCalibrationsAssigned, numCalibrationsStarted, numCalibrationsCompleted, selfUri);
+    return Objects.hash(id, name, evaluator, numEvaluationsAssigned, numEvaluationsStarted, numEvaluationsCompleted, numCalibrationsAssigned, numCalibrationsStarted, numCalibrationsCompleted, numEvaluationsWithoutViewPermission, selfUri);
   }
 
   @Override
@@ -218,6 +237,7 @@ public class EvaluatorActivity  implements Serializable {
     sb.append("    numCalibrationsAssigned: ").append(toIndentedString(numCalibrationsAssigned)).append("\n");
     sb.append("    numCalibrationsStarted: ").append(toIndentedString(numCalibrationsStarted)).append("\n");
     sb.append("    numCalibrationsCompleted: ").append(toIndentedString(numCalibrationsCompleted)).append("\n");
+    sb.append("    numEvaluationsWithoutViewPermission: ").append(toIndentedString(numEvaluationsWithoutViewPermission)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

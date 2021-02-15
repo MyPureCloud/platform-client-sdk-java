@@ -101,6 +101,12 @@ title: ViewFilter
 | **journeyOutcomeIds** | <!----><!---->**List&lt;String&gt;**<!----> | The journey outcome ids are used to fetch outcomes for the associated view |  [optional] |
 | **journeySegmentIds** | <!----><!---->**List&lt;String&gt;**<!----> | The journey segment ids are used to fetch segments for the associated view |  [optional] |
 | **journeyActionMapTypes** | <!---->[**List&lt;JourneyActionMapTypesEnum&gt;**](#JourneyActionMapTypesEnum)<!----> | The journey action map types are used to filter action map data for the associated view |  [optional] |
+| **developmentRoleList** | <!---->[**List&lt;DevelopmentRoleListEnum&gt;**](#DevelopmentRoleListEnum)<!----> | The list of development roles used to filter agent development view |  [optional] |
+| **developmentTypeList** | <!---->[**List&lt;DevelopmentTypeListEnum&gt;**](#DevelopmentTypeListEnum)<!----> | The list of development types used to filter agent development view |  [optional] |
+| **developmentStatusList** | <!---->[**List&lt;DevelopmentStatusListEnum&gt;**](#DevelopmentStatusListEnum)<!----> | The list of development status used to filter agent development view |  [optional] |
+| **developmentModuleIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of development moduleIds used to filter agent development view |  [optional] |
+| **developmentKeyType** | [**DevelopmentKeyTypeEnum**](#DevelopmentKeyTypeEnum)<!----> | Represents due or completed to filter agent development view |  [optional] |
+| **developmentActivityOverdue** | <!----><!---->**Boolean**<!----> | Indicates filtering for development activities |  [optional] |
 {: class="table table-striped"}
 
 
@@ -287,6 +293,55 @@ title: ViewFilter
 | CONTENTOFFER | &quot;contentOffer&quot; |
 | INTEGRATIONACTION | &quot;integrationAction&quot; |
 | ARCHITECTFLOW | &quot;architectFlow&quot; |
+{: class="table table-striped"}
+
+
+<a name="DevelopmentRoleListEnum"></a>
+
+## Enum: DevelopmentRoleListEnum
+
+| Name | Value |
+| ---- | ----- |
+| CREATOR | &quot;Creator&quot; |
+| FACILITATOR | &quot;Facilitator&quot; |
+| ATTENDEE | &quot;Attendee&quot; |
+{: class="table table-striped"}
+
+
+<a name="DevelopmentTypeListEnum"></a>
+
+## Enum: DevelopmentTypeListEnum
+
+| Name | Value |
+| ---- | ----- |
+| INFORMATIONAL | &quot;Informational&quot; |
+| COACHING | &quot;Coaching&quot; |
+{: class="table table-striped"}
+
+
+<a name="DevelopmentStatusListEnum"></a>
+
+## Enum: DevelopmentStatusListEnum
+
+| Name | Value |
+| ---- | ----- |
+| PLANNED | &quot;Planned&quot; |
+| SCHEDULED | &quot;Scheduled&quot; |
+| INVALIDSCHEDULE | &quot;InvalidSchedule&quot; |
+| INPROGRESS | &quot;InProgress&quot; |
+| COMPLETED | &quot;Completed&quot; |
+{: class="table table-striped"}
+
+
+<a name="DevelopmentKeyTypeEnum"></a>
+
+## Enum: DevelopmentKeyTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| DUE | &quot;Due&quot; |
+| COMPLETED | &quot;Completed&quot; |
 {: class="table table-striped"}
 
 

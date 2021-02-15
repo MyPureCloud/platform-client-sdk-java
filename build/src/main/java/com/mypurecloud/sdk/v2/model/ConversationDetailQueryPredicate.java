@@ -124,6 +124,8 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     TAGENTRESPONSETIME("tAgentResponseTime"),
     TALERT("tAlert"),
     TANSWERED("tAnswered"),
+    TCALLBACK("tCallback"),
+    TCALLBACKCOMPLETE("tCallbackComplete"),
     TCONTACTING("tContacting"),
     TCONVERSATIONDURATION("tConversationDuration"),
     TDIALING("tDialing"),

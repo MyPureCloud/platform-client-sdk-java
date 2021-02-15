@@ -35,6 +35,7 @@ import com.mypurecloud.sdk.v2.model.DomainCertificateAuthority;
 import com.mypurecloud.sdk.v2.model.DID;
 import com.mypurecloud.sdk.v2.model.DIDPool;
 import com.mypurecloud.sdk.v2.model.DIDPoolEntityListing;
+import com.mypurecloud.sdk.v2.model.DIDNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.DIDEntityListing;
 import com.mypurecloud.sdk.v2.model.EdgeGroup;
 import com.mypurecloud.sdk.v2.model.EdgeTrunkBase;
@@ -121,6 +122,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesCertificatea
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesDidRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesDidpoolRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesDidpoolsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesDidpoolsDidsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesDidsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest;
@@ -3649,6 +3651,105 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DIDPoolEntityListing> response = (ApiResponse<DIDPoolEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a listing of unassigned and/or assigned numbers in a set of DID Pools.
+   * 
+   * @param type The type of numbers to return. (required)
+   * @param id Filter by a specific list of DID Pools.  If this is not provided, numbers from all DID Pools will be returned. (optional)
+   * @param numberMatch A number to filter the results by. (optional)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortOrder Sort order (optional, default to ascending)
+   * @return DIDNumberEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DIDNumberEntityListing getTelephonyProvidersEdgesDidpoolsDids(String type, List<String> id, String numberMatch, Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
+    return  getTelephonyProvidersEdgesDidpoolsDids(createGetTelephonyProvidersEdgesDidpoolsDidsRequest(type, id, numberMatch, pageSize, pageNumber, sortOrder));
+  }
+
+  /**
+   * Get a listing of unassigned and/or assigned numbers in a set of DID Pools.
+   * 
+   * @param type The type of numbers to return. (required)
+   * @param id Filter by a specific list of DID Pools.  If this is not provided, numbers from all DID Pools will be returned. (optional)
+   * @param numberMatch A number to filter the results by. (optional)
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortOrder Sort order (optional, default to ascending)
+   * @return DIDNumberEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DIDNumberEntityListing> getTelephonyProvidersEdgesDidpoolsDidsWithHttpInfo(String type, List<String> id, String numberMatch, Integer pageSize, Integer pageNumber, String sortOrder) throws IOException {
+    return getTelephonyProvidersEdgesDidpoolsDids(createGetTelephonyProvidersEdgesDidpoolsDidsRequest(type, id, numberMatch, pageSize, pageNumber, sortOrder).withHttpInfo());
+  }
+
+  private GetTelephonyProvidersEdgesDidpoolsDidsRequest createGetTelephonyProvidersEdgesDidpoolsDidsRequest(String type, List<String> id, String numberMatch, Integer pageSize, Integer pageNumber, String sortOrder) {
+    return GetTelephonyProvidersEdgesDidpoolsDidsRequest.builder()
+            .withType(type)
+    
+            .withId(id)
+    
+            .withNumberMatch(numberMatch)
+    
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withSortOrder(sortOrder)
+    
+            .build();
+  }
+
+  /**
+   * Get a listing of unassigned and/or assigned numbers in a set of DID Pools.
+   * 
+   * @param request The request object
+   * @return DIDNumberEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DIDNumberEntityListing getTelephonyProvidersEdgesDidpoolsDids(GetTelephonyProvidersEdgesDidpoolsDidsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DIDNumberEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DIDNumberEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a listing of unassigned and/or assigned numbers in a set of DID Pools.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DIDNumberEntityListing> getTelephonyProvidersEdgesDidpoolsDids(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DIDNumberEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DIDNumberEntityListing> response = (ApiResponse<DIDNumberEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DIDNumberEntityListing> response = (ApiResponse<DIDNumberEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

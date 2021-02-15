@@ -82,6 +82,8 @@ title: AuditQueryEntity
 | DNCLIST | &quot;DNCList&quot; |
 | CALLANALYSISRESPONSESET | &quot;CallAnalysisResponseSet&quot; |
 | RULESET | &quot;RuleSet&quot; |
+| TRANSCRIPTIONSETTINGS | &quot;TranscriptionSettings&quot; |
+| SPEECHTEXTANALYTICSSETTINGS | &quot;SpeechTextAnalyticsSettings&quot; |
 {: class="table table-striped"}
 
 

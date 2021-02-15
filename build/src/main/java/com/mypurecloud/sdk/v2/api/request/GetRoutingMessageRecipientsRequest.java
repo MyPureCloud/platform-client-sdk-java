@@ -88,8 +88,7 @@ public class GetRoutingMessageRecipientsRequest {
 		FACEBOOK("facebook"), 
 		TWITTER("twitter"), 
 		LINE("line"), 
-		WHATSAPP("whatsapp"), 
-		WEBMESSAGING("webmessaging");
+		WHATSAPP("whatsapp");
 
 		private String value;
 

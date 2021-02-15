@@ -6,6 +6,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AmazonLexRequest;
+import com.mypurecloud.sdk.v2.model.GenesysBotConnector;
 import com.mypurecloud.sdk.v2.model.GoogleDialogflowCustomSettings;
 import com.mypurecloud.sdk.v2.model.PostTextMessage;
 import io.swagger.annotations.ApiModel;
@@ -114,6 +115,7 @@ public class PostTextRequest  implements Serializable {
   private MessagingPlatformTypeEnum messagingPlatformType = null;
   private AmazonLexRequest amazonLexRequest = null;
   private GoogleDialogflowCustomSettings googleDialogflow = null;
+  private GenesysBotConnector genesysBotConnector = null;
 
   
   /**
@@ -330,6 +332,23 @@ public class PostTextRequest  implements Serializable {
   }
 
   
+  /**
+   **/
+  public PostTextRequest genesysBotConnector(GenesysBotConnector genesysBotConnector) {
+    this.genesysBotConnector = genesysBotConnector;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("genesysBotConnector")
+  public GenesysBotConnector getGenesysBotConnector() {
+    return genesysBotConnector;
+  }
+  public void setGenesysBotConnector(GenesysBotConnector genesysBotConnector) {
+    this.genesysBotConnector = genesysBotConnector;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -351,12 +370,13 @@ public class PostTextRequest  implements Serializable {
         Objects.equals(this.botCorrelationId, postTextRequest.botCorrelationId) &&
         Objects.equals(this.messagingPlatformType, postTextRequest.messagingPlatformType) &&
         Objects.equals(this.amazonLexRequest, postTextRequest.amazonLexRequest) &&
-        Objects.equals(this.googleDialogflow, postTextRequest.googleDialogflow);
+        Objects.equals(this.googleDialogflow, postTextRequest.googleDialogflow) &&
+        Objects.equals(this.genesysBotConnector, postTextRequest.genesysBotConnector);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(botId, botAlias, integrationId, botSessionId, postTextMessage, languageCode, botSessionTimeoutMinutes, botChannels, botCorrelationId, messagingPlatformType, amazonLexRequest, googleDialogflow);
+    return Objects.hash(botId, botAlias, integrationId, botSessionId, postTextMessage, languageCode, botSessionTimeoutMinutes, botChannels, botCorrelationId, messagingPlatformType, amazonLexRequest, googleDialogflow, genesysBotConnector);
   }
 
   @Override
@@ -376,6 +396,7 @@ public class PostTextRequest  implements Serializable {
     sb.append("    messagingPlatformType: ").append(toIndentedString(messagingPlatformType)).append("\n");
     sb.append("    amazonLexRequest: ").append(toIndentedString(amazonLexRequest)).append("\n");
     sb.append("    googleDialogflow: ").append(toIndentedString(googleDialogflow)).append("\n");
+    sb.append("    genesysBotConnector: ").append(toIndentedString(genesysBotConnector)).append("\n");
     sb.append("}");
     return sb.toString();
   }

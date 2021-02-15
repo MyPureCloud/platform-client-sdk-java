@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.DomainCertificateAuthority;
 import com.mypurecloud.sdk.v2.model.DID;
 import com.mypurecloud.sdk.v2.model.DIDPool;
 import com.mypurecloud.sdk.v2.model.DIDPoolEntityListing;
+import com.mypurecloud.sdk.v2.model.DIDNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.DIDEntityListing;
 import com.mypurecloud.sdk.v2.model.EdgeGroup;
 import com.mypurecloud.sdk.v2.model.EdgeTrunkBase;
@@ -124,6 +125,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesCertificatea
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesDidRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesDidpoolRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesDidpoolsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesDidpoolsDidsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesDidsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgegroupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesEdgegroupEdgetrunkbaseRequest;
@@ -3411,6 +3413,82 @@ public class TelephonyProvidersEdgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<DIDPoolEntityListing> response = (ApiResponse<DIDPoolEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a listing of unassigned and/or assigned numbers in a set of DID Pools.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DIDNumberEntityListing> getTelephonyProvidersEdgesDidpoolsDidsAsync(GetTelephonyProvidersEdgesDidpoolsDidsRequest request, final AsyncApiCallback<DIDNumberEntityListing> callback) {
+    try {
+      final SettableFuture<DIDNumberEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DIDNumberEntityListing>() {}, new AsyncApiCallback<ApiResponse<DIDNumberEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DIDNumberEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a listing of unassigned and/or assigned numbers in a set of DID Pools.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DIDNumberEntityListing>> getTelephonyProvidersEdgesDidpoolsDidsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DIDNumberEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DIDNumberEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DIDNumberEntityListing>() {}, new AsyncApiCallback<ApiResponse<DIDNumberEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DIDNumberEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DIDNumberEntityListing> response = (ApiResponse<DIDNumberEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DIDNumberEntityListing> response = (ApiResponse<DIDNumberEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

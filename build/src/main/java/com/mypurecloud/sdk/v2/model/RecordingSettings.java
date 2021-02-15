@@ -15,22 +15,42 @@ import java.io.Serializable;
 public class RecordingSettings  implements Serializable {
   
   private Integer maxSimultaneousStreams = null;
+  private Integer maxConfigurableScreenRecordingStreams = null;
 
   
   /**
+   * Maximum number of simultaneous screen recording streams
    **/
   public RecordingSettings maxSimultaneousStreams(Integer maxSimultaneousStreams) {
     this.maxSimultaneousStreams = maxSimultaneousStreams;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Maximum number of simultaneous screen recording streams")
   @JsonProperty("maxSimultaneousStreams")
   public Integer getMaxSimultaneousStreams() {
     return maxSimultaneousStreams;
   }
   public void setMaxSimultaneousStreams(Integer maxSimultaneousStreams) {
     this.maxSimultaneousStreams = maxSimultaneousStreams;
+  }
+
+  
+  /**
+   * Upper limit that maxSimultaneousStreams can be configured
+   **/
+  public RecordingSettings maxConfigurableScreenRecordingStreams(Integer maxConfigurableScreenRecordingStreams) {
+    this.maxConfigurableScreenRecordingStreams = maxConfigurableScreenRecordingStreams;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Upper limit that maxSimultaneousStreams can be configured")
+  @JsonProperty("maxConfigurableScreenRecordingStreams")
+  public Integer getMaxConfigurableScreenRecordingStreams() {
+    return maxConfigurableScreenRecordingStreams;
+  }
+  public void setMaxConfigurableScreenRecordingStreams(Integer maxConfigurableScreenRecordingStreams) {
+    this.maxConfigurableScreenRecordingStreams = maxConfigurableScreenRecordingStreams;
   }
 
   
@@ -44,12 +64,13 @@ public class RecordingSettings  implements Serializable {
       return false;
     }
     RecordingSettings recordingSettings = (RecordingSettings) o;
-    return Objects.equals(this.maxSimultaneousStreams, recordingSettings.maxSimultaneousStreams);
+    return Objects.equals(this.maxSimultaneousStreams, recordingSettings.maxSimultaneousStreams) &&
+        Objects.equals(this.maxConfigurableScreenRecordingStreams, recordingSettings.maxConfigurableScreenRecordingStreams);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(maxSimultaneousStreams);
+    return Objects.hash(maxSimultaneousStreams, maxConfigurableScreenRecordingStreams);
   }
 
   @Override
@@ -58,6 +79,7 @@ public class RecordingSettings  implements Serializable {
     sb.append("class RecordingSettings {\n");
     
     sb.append("    maxSimultaneousStreams: ").append(toIndentedString(maxSimultaneousStreams)).append("\n");
+    sb.append("    maxConfigurableScreenRecordingStreams: ").append(toIndentedString(maxConfigurableScreenRecordingStreams)).append("\n");
     sb.append("}");
     return sb.toString();
   }

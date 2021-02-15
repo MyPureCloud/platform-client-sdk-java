@@ -145,6 +145,8 @@ public class ConversationAggregationQuery  implements Serializable {
     TAGENTRESPONSETIME("tAgentResponseTime"),
     TALERT("tAlert"),
     TANSWERED("tAnswered"),
+    TCALLBACK("tCallback"),
+    TCALLBACKCOMPLETE("tCallbackComplete"),
     TCONTACTING("tContacting"),
     TDIALING("tDialing"),
     TFLOWOUT("tFlowOut"),

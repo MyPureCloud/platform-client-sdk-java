@@ -20,6 +20,7 @@ title: PostTextRequest
 | **messagingPlatformType** | [**MessagingPlatformTypeEnum**](#MessagingPlatformTypeEnum)<!----> | If the channels list contains a &#39;Messaging&#39; item and the messaging platform is known, include it here to get accurate analytics |  [optional] |
 | **amazonLexRequest** | <!----><!---->[**AmazonLexRequest**](AmazonLexRequest.html)<!----> |  |  [optional] |
 | **googleDialogflow** | <!----><!---->[**GoogleDialogflowCustomSettings**](GoogleDialogflowCustomSettings.html)<!----> |  |  [optional] |
+| **genesysBotConnector** | <!----><!---->[**GenesysBotConnector**](GenesysBotConnector.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

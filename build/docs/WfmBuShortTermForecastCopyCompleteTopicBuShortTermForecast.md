@@ -20,6 +20,7 @@ title: WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast
 | **planningGroupsVersion** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **weekCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **metadata** | <!----><!---->[**WfmBuShortTermForecastCopyCompleteTopicWfmVersionedEntityMetadata**](WfmBuShortTermForecastCopyCompleteTopicWfmVersionedEntityMetadata.html)<!----> |  |  [optional] |
+| **canUseForScheduling** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

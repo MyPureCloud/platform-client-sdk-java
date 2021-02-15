@@ -26,14 +26,14 @@ public class PostActionInput  implements Serializable {
 
   
   /**
-   * Category of action
+   * Category of action, Can be up to 256 characters long
    **/
   public PostActionInput category(String category) {
     this.category = category;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Category of action")
+  @ApiModelProperty(example = "null", required = true, value = "Category of action, Can be up to 256 characters long")
   @JsonProperty("category")
   public String getCategory() {
     return category;
@@ -44,14 +44,14 @@ public class PostActionInput  implements Serializable {
 
   
   /**
-   * Name of action
+   * Name of action, Can be up to 256 characters long
    **/
   public PostActionInput name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Name of action")
+  @ApiModelProperty(example = "null", required = true, value = "Name of action, Can be up to 256 characters long")
   @JsonProperty("name")
   public String getName() {
     return name;

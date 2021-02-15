@@ -20,6 +20,7 @@ title: WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast
 | **planningGroupsVersion** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **weekCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **metadata** | <!----><!---->[**WfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetadata**](WfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetadata.html)<!----> |  |  [optional] |
+| **canUseForScheduling** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

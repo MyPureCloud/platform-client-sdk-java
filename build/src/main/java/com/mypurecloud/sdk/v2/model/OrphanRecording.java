@@ -31,7 +31,9 @@ public class OrphanRecording  implements Serializable {
     EDGE("EDGE"),
     CHAT("CHAT"),
     EMAIL("EMAIL"),
-    SCREEN_RECORDING("SCREEN_RECORDING");
+    SCREEN_RECORDING("SCREEN_RECORDING"),
+    PUREENGAGE("PUREENGAGE"),
+    PURECONNECT("PURECONNECT");
 
     private String value;
 

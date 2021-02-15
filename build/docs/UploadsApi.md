@@ -8,6 +8,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**postUploadsPublicassetsImages**](UploadsApi.html#postUploadsPublicassetsImages) | Creates presigned url for uploading a public asset image |
+| [**postUploadsRecordings**](UploadsApi.html#postUploadsRecordings) | Creates presigned url for uploading a recording file |
+| [**postUploadsWorkforcemanagementHistoricaldataCsv**](UploadsApi.html#postUploadsWorkforcemanagementHistoricaldataCsv) | Creates presigned url for uploading WFM historical data file. Requires data in csv format. |
+| [**postUploadsWorkforcemanagementHistoricaldataJson**](UploadsApi.html#postUploadsWorkforcemanagementHistoricaldataJson) | Creates presigned url for uploading WFM historical data file. Requires data in json format. |
 {: class="table-striped"}
 
 <a name="postUploadsPublicassetsImages"></a>
@@ -56,6 +59,195 @@ try {
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UploadsApi#postUploadsPublicassetsImages");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**UploadUrlRequest**](UploadUrlRequest.html)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse.html)
+
+<a name="postUploadsRecordings"></a>
+
+# **postUploadsRecordings**
+
+
+
+> [UploadUrlResponse](UploadUrlResponse.html) postUploadsRecordings(body)
+
+Creates presigned url for uploading a recording file
+
+
+
+Wraps POST /api/v2/uploads/recordings  
+
+Requires ALL permissions: 
+
+* recording:recording:upload
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UploadsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UploadsApi apiInstance = new UploadsApi();
+UploadUrlRequest body = new UploadUrlRequest(); // UploadUrlRequest | query
+try {
+    UploadUrlResponse result = apiInstance.postUploadsRecordings(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UploadsApi#postUploadsRecordings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**UploadUrlRequest**](UploadUrlRequest.html)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse.html)
+
+<a name="postUploadsWorkforcemanagementHistoricaldataCsv"></a>
+
+# **postUploadsWorkforcemanagementHistoricaldataCsv**
+
+
+
+> [UploadUrlResponse](UploadUrlResponse.html) postUploadsWorkforcemanagementHistoricaldataCsv(body)
+
+Creates presigned url for uploading WFM historical data file. Requires data in csv format.
+
+
+
+Wraps POST /api/v2/uploads/workforcemanagement/historicaldata/csv  
+
+Requires ALL permissions: 
+
+* wfm:historicalData:upload
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UploadsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UploadsApi apiInstance = new UploadsApi();
+UploadUrlRequest body = new UploadUrlRequest(); // UploadUrlRequest | query
+try {
+    UploadUrlResponse result = apiInstance.postUploadsWorkforcemanagementHistoricaldataCsv(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UploadsApi#postUploadsWorkforcemanagementHistoricaldataCsv");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**UploadUrlRequest**](UploadUrlRequest.html)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse.html)
+
+<a name="postUploadsWorkforcemanagementHistoricaldataJson"></a>
+
+# **postUploadsWorkforcemanagementHistoricaldataJson**
+
+
+
+> [UploadUrlResponse](UploadUrlResponse.html) postUploadsWorkforcemanagementHistoricaldataJson(body)
+
+Creates presigned url for uploading WFM historical data file. Requires data in json format.
+
+
+
+Wraps POST /api/v2/uploads/workforcemanagement/historicaldata/json  
+
+Requires ALL permissions: 
+
+* wfm:historicalData:upload
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UploadsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UploadsApi apiInstance = new UploadsApi();
+UploadUrlRequest body = new UploadUrlRequest(); // UploadUrlRequest | query
+try {
+    UploadUrlResponse result = apiInstance.postUploadsWorkforcemanagementHistoricaldataJson(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UploadsApi#postUploadsWorkforcemanagementHistoricaldataJson");
     e.printStackTrace();
 }
 ```

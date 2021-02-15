@@ -84,7 +84,9 @@ public class AuditQueryEntity  implements Serializable {
     CONTACTLISTFILTER("ContactListFilter"),
     DNCLIST("DNCList"),
     CALLANALYSISRESPONSESET("CallAnalysisResponseSet"),
-    RULESET("RuleSet");
+    RULESET("RuleSet"),
+    TRANSCRIPTIONSETTINGS("TranscriptionSettings"),
+    SPEECHTEXTANALYTICSSETTINGS("SpeechTextAnalyticsSettings");
 
     private String value;
 

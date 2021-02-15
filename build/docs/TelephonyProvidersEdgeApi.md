@@ -49,6 +49,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyProvidersEdgesDid**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesDid) | Get a DID by ID. |
 | [**getTelephonyProvidersEdgesDidpool**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesDidpool) | Get a DID Pool by ID. |
 | [**getTelephonyProvidersEdgesDidpools**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesDidpools) | Get a listing of DID Pools |
+| [**getTelephonyProvidersEdgesDidpoolsDids**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesDidpoolsDids) | Get a listing of unassigned and/or assigned numbers in a set of DID Pools. |
 | [**getTelephonyProvidersEdgesDids**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesDids) | Get a listing of DIDs |
 | [**getTelephonyProvidersEdgesEdgegroup**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEdgegroup) | Get edge group. |
 | [**getTelephonyProvidersEdgesEdgegroupEdgetrunkbase**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesEdgegroupEdgetrunkbase) | Gets the edge trunk base associated with the edge group |
@@ -2830,6 +2831,79 @@ try {
 ### Return type
 
 [**DIDPoolEntityListing**](DIDPoolEntityListing.html)
+
+<a name="getTelephonyProvidersEdgesDidpoolsDids"></a>
+
+# **getTelephonyProvidersEdgesDidpoolsDids**
+
+
+
+> [DIDNumberEntityListing](DIDNumberEntityListing.html) getTelephonyProvidersEdgesDidpoolsDids(type, id, numberMatch, pageSize, pageNumber, sortOrder)
+
+Get a listing of unassigned and/or assigned numbers in a set of DID Pools.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/didpools/dids  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+String type = "type_example"; // String | The type of numbers to return.
+List<String> id = Arrays.asList("id_example"); // List<String> | Filter by a specific list of DID Pools.  If this is not provided, numbers from all DID Pools will be returned.
+String numberMatch = "numberMatch_example"; // String | A number to filter the results by.
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String sortOrder = "ascending"; // String | Sort order
+try {
+    DIDNumberEntityListing result = apiInstance.getTelephonyProvidersEdgesDidpoolsDids(type, id, numberMatch, pageSize, pageNumber, sortOrder);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesDidpoolsDids");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **type** | **String**| The type of numbers to return. |<br />**Values**: ASSIGNED_AND_UNASSIGNED, UNASSIGNED 
+| **id** | [**List&lt;String&gt;**](String.html)| Filter by a specific list of DID Pools.  If this is not provided, numbers from all DID Pools will be returned. | [optional] 
+| **numberMatch** | **String**| A number to filter the results by. | [optional] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortOrder** | **String**| Sort order | [optional] [default to ascending] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DIDNumberEntityListing**](DIDNumberEntityListing.html)
 
 <a name="getTelephonyProvidersEdgesDids"></a>
 

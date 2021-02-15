@@ -33,6 +33,7 @@ title: WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdat
 | FAILED | &quot;Failed&quot; |
 | CANCELLED | &quot;Cancelled&quot; |
 | PURGED | &quot;Purged&quot; |
+| PURGEPENDING | &quot;PurgePending&quot; |
 {: class="table table-striped"}
 
 

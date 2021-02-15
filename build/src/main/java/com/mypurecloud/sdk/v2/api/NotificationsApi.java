@@ -125,28 +125,32 @@ public class NotificationsApi {
    * Get available notification topics.
    * 
    * @param expand Which fields, if any, to expand (optional)
+   * @param includePreview Whether or not to include Preview topics (optional, default to true)
    * @return AvailableTopicEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AvailableTopicEntityListing getNotificationsAvailabletopics(List<String> expand) throws IOException, ApiException {
-    return  getNotificationsAvailabletopics(createGetNotificationsAvailabletopicsRequest(expand));
+  public AvailableTopicEntityListing getNotificationsAvailabletopics(List<String> expand, Boolean includePreview) throws IOException, ApiException {
+    return  getNotificationsAvailabletopics(createGetNotificationsAvailabletopicsRequest(expand, includePreview));
   }
 
   /**
    * Get available notification topics.
    * 
    * @param expand Which fields, if any, to expand (optional)
+   * @param includePreview Whether or not to include Preview topics (optional, default to true)
    * @return AvailableTopicEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AvailableTopicEntityListing> getNotificationsAvailabletopicsWithHttpInfo(List<String> expand) throws IOException {
-    return getNotificationsAvailabletopics(createGetNotificationsAvailabletopicsRequest(expand).withHttpInfo());
+  public ApiResponse<AvailableTopicEntityListing> getNotificationsAvailabletopicsWithHttpInfo(List<String> expand, Boolean includePreview) throws IOException {
+    return getNotificationsAvailabletopics(createGetNotificationsAvailabletopicsRequest(expand, includePreview).withHttpInfo());
   }
 
-  private GetNotificationsAvailabletopicsRequest createGetNotificationsAvailabletopicsRequest(List<String> expand) {
+  private GetNotificationsAvailabletopicsRequest createGetNotificationsAvailabletopicsRequest(List<String> expand, Boolean includePreview) {
     return GetNotificationsAvailabletopicsRequest.builder()
             .withExpand(expand)
+    
+            .withIncludePreview(includePreview)
     
             .build();
   }

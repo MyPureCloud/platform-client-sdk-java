@@ -208,7 +208,7 @@ public class Edge  implements Serializable {
   private EdgeDeploymentTypeEnum edgeDeploymentType = null;
 
   /**
-   * Gets or Sets callDrainingState
+   * The current state of the Edge's call draining process before it can be safely rebooted or updated.
    */
   public enum CallDrainingStateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
@@ -840,37 +840,17 @@ public class Edge  implements Serializable {
   }
 
   
-  /**
-   **/
-  public Edge callDrainingState(CallDrainingStateEnum callDrainingState) {
-    this.callDrainingState = callDrainingState;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The current state of the Edge's call draining process before it can be safely rebooted or updated.")
   @JsonProperty("callDrainingState")
   public CallDrainingStateEnum getCallDrainingState() {
     return callDrainingState;
   }
-  public void setCallDrainingState(CallDrainingStateEnum callDrainingState) {
-    this.callDrainingState = callDrainingState;
-  }
 
   
-  /**
-   **/
-  public Edge conversationCount(Integer conversationCount) {
-    this.conversationCount = conversationCount;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The remaining number of conversations the Edge has to drain before it can be safely rebooted or updated. When an Edge is not draining conversations, this will be NULL or 0.")
   @JsonProperty("conversationCount")
   public Integer getConversationCount() {
     return conversationCount;
-  }
-  public void setConversationCount(Integer conversationCount) {
-    this.conversationCount = conversationCount;
   }
 
   

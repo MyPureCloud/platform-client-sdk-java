@@ -83,7 +83,7 @@ null (empty response body)
 
 
 
-> [AvailableTopicEntityListing](AvailableTopicEntityListing.html) getNotificationsAvailabletopics(expand)
+> [AvailableTopicEntityListing](AvailableTopicEntityListing.html) getNotificationsAvailabletopics(expand, includePreview)
 
 Get available notification topics.
 
@@ -117,8 +117,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 NotificationsApi apiInstance = new NotificationsApi();
 List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+Boolean includePreview = true; // Boolean | Whether or not to include Preview topics
 try {
-    AvailableTopicEntityListing result = apiInstance.getNotificationsAvailabletopics(expand);
+    AvailableTopicEntityListing result = apiInstance.getNotificationsAvailabletopics(expand, includePreview);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling NotificationsApi#getNotificationsAvailabletopics");
@@ -131,7 +132,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: description, requiresPermissions, schema, transports, publicApiTemplateUriPaths 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: description, requiresPermissions, enforced, schema, visibility, transports, publicApiTemplateUriPaths 
+| **includePreview** | **Boolean**| Whether or not to include Preview topics | [optional] [default to true] 
 {: class="table-striped"}
 
 

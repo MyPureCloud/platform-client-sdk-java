@@ -33,7 +33,8 @@ public class WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadReques
     SUCCESS("Success"),
     FAILED("Failed"),
     CANCELLED("Cancelled"),
-    PURGED("Purged");
+    PURGED("Purged"),
+    PURGEPENDING("PurgePending");
 
     private String value;
 

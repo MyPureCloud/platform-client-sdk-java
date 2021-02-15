@@ -85,6 +85,7 @@ title: AnalyticsConversationSegment
 | CONVERTING | &quot;converting&quot; |
 | UPLOADING | &quot;uploading&quot; |
 | SHARING | &quot;sharing&quot; |
+| CALLBACK | &quot;callback&quot; |
 {: class="table table-striped"}
 
 

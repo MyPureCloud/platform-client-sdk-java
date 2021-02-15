@@ -46,7 +46,9 @@ public class GetNotificationsAvailabletopicsRequest {
 	public enum expandValues { 
 		DESCRIPTION("description"), 
 		REQUIRESPERMISSIONS("requiresPermissions"), 
+		ENFORCED("enforced"), 
 		SCHEMA("schema"), 
+		VISIBILITY("visibility"), 
 		TRANSPORTS("transports"), 
 		PUBLICAPITEMPLATEURIPATHS("publicApiTemplateUriPaths");
 
@@ -76,6 +78,20 @@ public class GetNotificationsAvailabletopicsRequest {
 		}
 	}
 	
+	private Boolean includePreview;
+	public Boolean getIncludePreview() {
+		return this.includePreview;
+	}
+
+	public void setIncludePreview(Boolean includePreview) {
+		this.includePreview = includePreview;
+	}
+
+	public GetNotificationsAvailabletopicsRequest withIncludePreview(Boolean includePreview) {
+	    this.setIncludePreview(includePreview);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -100,6 +116,8 @@ public class GetNotificationsAvailabletopicsRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/notifications/availabletopics")
                 .withQueryParameters("expand", "multi", expand)
+        
+                .withQueryParameters("includePreview", "", includePreview)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -134,6 +152,11 @@ public class GetNotificationsAvailabletopicsRequest {
 	      }
 	      request.setExpand(stringList);
 		    return this;
+		}
+		
+		public Builder withIncludePreview(Boolean includePreview) {
+			request.setIncludePreview(includePreview);
+			return this;
 		}
 		
 

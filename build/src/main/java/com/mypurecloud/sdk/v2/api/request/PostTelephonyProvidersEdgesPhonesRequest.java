@@ -45,6 +45,7 @@ import com.mypurecloud.sdk.v2.model.DomainCertificateAuthority;
 import com.mypurecloud.sdk.v2.model.DID;
 import com.mypurecloud.sdk.v2.model.DIDPool;
 import com.mypurecloud.sdk.v2.model.DIDPoolEntityListing;
+import com.mypurecloud.sdk.v2.model.DIDNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.DIDEntityListing;
 import com.mypurecloud.sdk.v2.model.EdgeGroup;
 import com.mypurecloud.sdk.v2.model.EdgeTrunkBase;

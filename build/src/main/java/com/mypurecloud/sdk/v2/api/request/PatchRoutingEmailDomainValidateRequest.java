@@ -1,0 +1,198 @@
+package com.mypurecloud.sdk.v2.api.request;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiRequest;
+import com.mypurecloud.sdk.v2.ApiRequestBuilder;
+import com.mypurecloud.sdk.v2.ApiResponse;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.model.*;
+import com.mypurecloud.sdk.v2.Pair;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Pattern;
+
+import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.InboundDomain;
+import com.mypurecloud.sdk.v2.model.InboundRoute;
+import com.mypurecloud.sdk.v2.model.InboundRouteEntityListing;
+import com.mypurecloud.sdk.v2.model.InboundDomainEntityListing;
+import com.mypurecloud.sdk.v2.model.EmailSetup;
+import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
+import com.mypurecloud.sdk.v2.model.Recipient;
+import com.mypurecloud.sdk.v2.model.RecipientListing;
+import com.mypurecloud.sdk.v2.model.Queue;
+import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
+import com.mypurecloud.sdk.v2.model.QueueMemberEntityListing;
+import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
+import com.mypurecloud.sdk.v2.model.QueueEntityListing;
+import com.mypurecloud.sdk.v2.model.UserQueueEntityListing;
+import com.mypurecloud.sdk.v2.model.RoutingSettings;
+import com.mypurecloud.sdk.v2.model.ContactCenterSettings;
+import com.mypurecloud.sdk.v2.model.TranscriptionSettings;
+import com.mypurecloud.sdk.v2.model.RoutingSkill;
+import com.mypurecloud.sdk.v2.model.SkillEntityListing;
+import com.mypurecloud.sdk.v2.model.SmsAddress;
+import com.mypurecloud.sdk.v2.model.SmsAddressEntityListing;
+import com.mypurecloud.sdk.v2.model.SMSAvailablePhoneNumberEntityListing;
+import com.mypurecloud.sdk.v2.model.SmsPhoneNumber;
+import com.mypurecloud.sdk.v2.model.SmsPhoneNumberEntityListing;
+import com.mypurecloud.sdk.v2.model.Utilization;
+import com.mypurecloud.sdk.v2.model.WrapupCode;
+import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
+import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
+import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
+import com.mypurecloud.sdk.v2.model.QueueMember;
+import com.mypurecloud.sdk.v2.model.UserQueue;
+import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
+import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
+import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
+import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
+import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
+import com.mypurecloud.sdk.v2.model.TestMessage;
+import com.mypurecloud.sdk.v2.model.Language;
+import com.mypurecloud.sdk.v2.model.WritableEntity;
+import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
+import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
+import com.mypurecloud.sdk.v2.model.SmsAddressProvision;
+import com.mypurecloud.sdk.v2.model.SmsPhoneNumberProvision;
+import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
+import com.mypurecloud.sdk.v2.model.QueueRequest;
+
+public class PatchRoutingEmailDomainValidateRequest {
+    
+	private String domainId;
+	public String getDomainId() {
+		return this.domainId;
+	}
+
+	public void setDomainId(String domainId) {
+		this.domainId = domainId;
+	}
+
+	public PatchRoutingEmailDomainValidateRequest withDomainId(String domainId) {
+	    this.setDomainId(domainId);
+	    return this;
+	} 
+	
+	private InboundDomainPatchRequest body;
+	public InboundDomainPatchRequest getBody() {
+		return this.body;
+	}
+
+	public void setBody(InboundDomainPatchRequest body) {
+		this.body = body;
+	}
+
+	public PatchRoutingEmailDomainValidateRequest withBody(InboundDomainPatchRequest body) {
+	    this.setBody(body);
+	    return this;
+	} 
+	
+	private final Map<String, String> customHeaders = new HashMap<>();
+    public Map<String, String> getCustomHeaders() {
+        return this.customHeaders;
+    }
+
+    public void setCustomHeaders(Map<String, String> customHeaders) {
+        this.customHeaders.clear();
+        this.customHeaders.putAll(customHeaders);
+    }
+
+    public void addCustomHeader(String name, String value) {
+        this.customHeaders.put(name, value);
+    }
+
+    public PatchRoutingEmailDomainValidateRequest withCustomHeader(String name, String value) {
+        this.addCustomHeader(name, value);
+        return this;
+    }
+
+    public ApiRequest<InboundDomainPatchRequest> withHttpInfo() {
+        
+        // verify the required parameter 'domainId' is set
+        if (this.domainId == null) {
+            throw new IllegalStateException("Missing the required parameter 'domainId' when building request for PatchRoutingEmailDomainValidateRequest.");
+        }
+        
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchRoutingEmailDomainValidateRequest.");
+        }
+        
+
+        return ApiRequestBuilder.create("PATCH", "/api/v2/routing/email/domains/{domainId}/validate")
+                .withPathParameter("domainId", domainId)
+        
+                .withBody(body)
+        
+                .withCustomHeaders(customHeaders)
+                .withContentTypes("application/json")
+                .withAccepts("application/json")
+                .withAuthNames("PureCloud OAuth")
+                .build();
+    }
+
+	public static Builder builder() {
+		return new Builder();
+	}
+
+	
+	public static Builder builder(String domainId, InboundDomainPatchRequest body) {
+	    return new Builder()
+	            .withRequiredParams(domainId, body);
+	}
+	
+
+	public static class Builder {
+		private final PatchRoutingEmailDomainValidateRequest request;
+
+		private Builder() {
+			request = new PatchRoutingEmailDomainValidateRequest();
+		}
+
+		
+		public Builder withDomainId(String domainId) {
+			request.setDomainId(domainId);
+			return this;
+		}
+		
+		public Builder withBody(InboundDomainPatchRequest body) {
+			request.setBody(body);
+			return this;
+		}
+		
+
+		
+		public Builder withRequiredParams(String domainId, InboundDomainPatchRequest body) {
+			request.setDomainId(domainId);
+						request.setBody(body);
+			
+			return this;
+		}
+		
+
+		public PatchRoutingEmailDomainValidateRequest build() {
+            
+            // verify the required parameter 'domainId' is set
+            if (request.domainId == null) {
+                throw new IllegalStateException("Missing the required parameter 'domainId' when building request for PatchRoutingEmailDomainValidateRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PatchRoutingEmailDomainValidateRequest.");
+            }
+            
+			return request;
+		}
+	}
+}

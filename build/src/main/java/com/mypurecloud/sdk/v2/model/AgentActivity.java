@@ -30,6 +30,7 @@ public class AgentActivity  implements Serializable {
   private Float highestCriticalScore = null;
   private Float lowestCriticalScore = null;
   private List<AgentEvaluatorActivity> agentEvaluatorActivityList = new ArrayList<AgentEvaluatorActivity>();
+  private Integer numEvaluationsWithoutViewPermission = null;
   private String selfUri = null;
 
   
@@ -227,6 +228,23 @@ public class AgentActivity  implements Serializable {
   }
 
   
+  /**
+   **/
+  public AgentActivity numEvaluationsWithoutViewPermission(Integer numEvaluationsWithoutViewPermission) {
+    this.numEvaluationsWithoutViewPermission = numEvaluationsWithoutViewPermission;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("numEvaluationsWithoutViewPermission")
+  public Integer getNumEvaluationsWithoutViewPermission() {
+    return numEvaluationsWithoutViewPermission;
+  }
+  public void setNumEvaluationsWithoutViewPermission(Integer numEvaluationsWithoutViewPermission) {
+    this.numEvaluationsWithoutViewPermission = numEvaluationsWithoutViewPermission;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -256,12 +274,13 @@ public class AgentActivity  implements Serializable {
         Objects.equals(this.highestCriticalScore, agentActivity.highestCriticalScore) &&
         Objects.equals(this.lowestCriticalScore, agentActivity.lowestCriticalScore) &&
         Objects.equals(this.agentEvaluatorActivityList, agentActivity.agentEvaluatorActivityList) &&
+        Objects.equals(this.numEvaluationsWithoutViewPermission, agentActivity.numEvaluationsWithoutViewPermission) &&
         Objects.equals(this.selfUri, agentActivity.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, agent, numEvaluations, averageEvaluationScore, numCriticalEvaluations, averageCriticalScore, highestEvaluationScore, lowestEvaluationScore, highestCriticalScore, lowestCriticalScore, agentEvaluatorActivityList, selfUri);
+    return Objects.hash(id, name, agent, numEvaluations, averageEvaluationScore, numCriticalEvaluations, averageCriticalScore, highestEvaluationScore, lowestEvaluationScore, highestCriticalScore, lowestCriticalScore, agentEvaluatorActivityList, numEvaluationsWithoutViewPermission, selfUri);
   }
 
   @Override
@@ -281,6 +300,7 @@ public class AgentActivity  implements Serializable {
     sb.append("    highestCriticalScore: ").append(toIndentedString(highestCriticalScore)).append("\n");
     sb.append("    lowestCriticalScore: ").append(toIndentedString(lowestCriticalScore)).append("\n");
     sb.append("    agentEvaluatorActivityList: ").append(toIndentedString(agentEvaluatorActivityList)).append("\n");
+    sb.append("    numEvaluationsWithoutViewPermission: ").append(toIndentedString(numEvaluationsWithoutViewPermission)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

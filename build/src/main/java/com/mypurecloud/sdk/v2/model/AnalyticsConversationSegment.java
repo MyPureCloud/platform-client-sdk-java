@@ -97,7 +97,8 @@ public class AnalyticsConversationSegment  implements Serializable {
     TRANSMITTING("transmitting"),
     CONVERTING("converting"),
     UPLOADING("uploading"),
-    SHARING("sharing");
+    SHARING("sharing"),
+    CALLBACK("callback");
 
     private String value;
 

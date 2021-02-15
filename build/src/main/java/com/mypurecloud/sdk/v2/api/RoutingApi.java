@@ -61,6 +61,7 @@ import com.mypurecloud.sdk.v2.model.QueueRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailDomainRouteRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueMemberRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueUserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingSettingsRequest;
@@ -83,6 +84,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingMessageRecipientsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueEstimatedwaittimeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueMediatypeEstimatedwaittimeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueuesRequest;
@@ -107,6 +109,9 @@ import com.mypurecloud.sdk.v2.api.request.GetUserQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutinglanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainValidateRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMemberRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUserRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingSettingsContactcenterRequest;
@@ -120,6 +125,7 @@ import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainRoutesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainTestconnectionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingLanguagesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueuesRequest;
@@ -374,6 +380,86 @@ public class RoutingApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteRoutingQueue(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete a queue member.
+   * 
+   * @param queueId Queue ID (required)
+   * @param memberId Member ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingQueueMember(String queueId, String memberId) throws IOException, ApiException {
+     deleteRoutingQueueMember(createDeleteRoutingQueueMemberRequest(queueId, memberId));
+  }
+
+  /**
+   * Delete a queue member.
+   * 
+   * @param queueId Queue ID (required)
+   * @param memberId Member ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingQueueMemberWithHttpInfo(String queueId, String memberId) throws IOException {
+    return deleteRoutingQueueMember(createDeleteRoutingQueueMemberRequest(queueId, memberId).withHttpInfo());
+  }
+
+  private DeleteRoutingQueueMemberRequest createDeleteRoutingQueueMemberRequest(String queueId, String memberId) {
+    return DeleteRoutingQueueMemberRequest.builder()
+            .withQueueId(queueId)
+    
+            .withMemberId(memberId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a queue member.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingQueueMember(DeleteRoutingQueueMemberRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a queue member.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingQueueMember(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -2144,6 +2230,129 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EstimatedWaitTimePredictions> response = (ApiResponse<EstimatedWaitTimePredictions>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the members of this queue.
+   * 
+   * @param queueId Queue ID (required)
+   * @param pageSize Page size [max 100] (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortBy Sort by (optional, default to name)
+   * @param expand Which fields, if any, to expand. (optional)
+   * @param joined Filter by joined status (optional)
+   * @param name Filter by queue member name (optional)
+   * @param profileSkills Filter by profile skill (optional)
+   * @param skills Filter by skill (optional)
+   * @param languages Filter by language (optional)
+   * @param routingStatus Filter by routing status (optional)
+   * @param presence Filter by presence (optional)
+   * @return QueueMemberEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueueMemberEntityListing getRoutingQueueMembers(String queueId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) throws IOException, ApiException {
+    return  getRoutingQueueMembers(createGetRoutingQueueMembersRequest(queueId, pageSize, pageNumber, sortBy, expand, joined, name, profileSkills, skills, languages, routingStatus, presence));
+  }
+
+  /**
+   * Get the members of this queue.
+   * 
+   * @param queueId Queue ID (required)
+   * @param pageSize Page size [max 100] (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param sortBy Sort by (optional, default to name)
+   * @param expand Which fields, if any, to expand. (optional)
+   * @param joined Filter by joined status (optional)
+   * @param name Filter by queue member name (optional)
+   * @param profileSkills Filter by profile skill (optional)
+   * @param skills Filter by skill (optional)
+   * @param languages Filter by language (optional)
+   * @param routingStatus Filter by routing status (optional)
+   * @param presence Filter by presence (optional)
+   * @return QueueMemberEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueueMemberEntityListing> getRoutingQueueMembersWithHttpInfo(String queueId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) throws IOException {
+    return getRoutingQueueMembers(createGetRoutingQueueMembersRequest(queueId, pageSize, pageNumber, sortBy, expand, joined, name, profileSkills, skills, languages, routingStatus, presence).withHttpInfo());
+  }
+
+  private GetRoutingQueueMembersRequest createGetRoutingQueueMembersRequest(String queueId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) {
+    return GetRoutingQueueMembersRequest.builder()
+            .withQueueId(queueId)
+    
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withSortBy(sortBy)
+    
+            .withExpand(expand)
+    
+            .withJoined(joined)
+    
+            .withName(name)
+    
+            .withProfileSkills(profileSkills)
+    
+            .withSkills(skills)
+    
+            .withLanguages(languages)
+    
+            .withRoutingStatus(routingStatus)
+    
+            .withPresence(presence)
+    
+            .build();
+  }
+
+  /**
+   * Get the members of this queue.
+   * 
+   * @param request The request object
+   * @return QueueMemberEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueueMemberEntityListing getRoutingQueueMembers(GetRoutingQueueMembersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<QueueMemberEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueueMemberEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the members of this queue.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueueMemberEntityListing> getRoutingQueueMembers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<QueueMemberEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueueMemberEntityListing> response = (ApiResponse<QueueMemberEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueueMemberEntityListing> response = (ApiResponse<QueueMemberEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4270,6 +4479,259 @@ public class RoutingApi {
 
   
   /**
+   * Validate domain settings
+   * 
+   * @param domainId domain ID (required)
+   * @param body Domain settings (required)
+   * @return InboundDomain
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InboundDomain patchRoutingEmailDomainValidate(String domainId, InboundDomainPatchRequest body) throws IOException, ApiException {
+    return  patchRoutingEmailDomainValidate(createPatchRoutingEmailDomainValidateRequest(domainId, body));
+  }
+
+  /**
+   * Validate domain settings
+   * 
+   * @param domainId domain ID (required)
+   * @param body Domain settings (required)
+   * @return InboundDomain
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InboundDomain> patchRoutingEmailDomainValidateWithHttpInfo(String domainId, InboundDomainPatchRequest body) throws IOException {
+    return patchRoutingEmailDomainValidate(createPatchRoutingEmailDomainValidateRequest(domainId, body).withHttpInfo());
+  }
+
+  private PatchRoutingEmailDomainValidateRequest createPatchRoutingEmailDomainValidateRequest(String domainId, InboundDomainPatchRequest body) {
+    return PatchRoutingEmailDomainValidateRequest.builder()
+            .withDomainId(domainId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Validate domain settings
+   * 
+   * @param request The request object
+   * @return InboundDomain
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public InboundDomain patchRoutingEmailDomainValidate(PatchRoutingEmailDomainValidateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<InboundDomain> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<InboundDomain>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Validate domain settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<InboundDomain> patchRoutingEmailDomainValidate(ApiRequest<InboundDomainPatchRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<InboundDomain>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<InboundDomain> response = (ApiResponse<InboundDomain>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<InboundDomain> response = (ApiResponse<InboundDomain>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update the ring number OR joined status for a queue member.
+   * 
+   * @param queueId Queue ID (required)
+   * @param memberId Member ID (required)
+   * @param body Queue Member (required)
+   * @return QueueMember
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueueMember patchRoutingQueueMember(String queueId, String memberId, QueueMember body) throws IOException, ApiException {
+    return  patchRoutingQueueMember(createPatchRoutingQueueMemberRequest(queueId, memberId, body));
+  }
+
+  /**
+   * Update the ring number OR joined status for a queue member.
+   * 
+   * @param queueId Queue ID (required)
+   * @param memberId Member ID (required)
+   * @param body Queue Member (required)
+   * @return QueueMember
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueueMember> patchRoutingQueueMemberWithHttpInfo(String queueId, String memberId, QueueMember body) throws IOException {
+    return patchRoutingQueueMember(createPatchRoutingQueueMemberRequest(queueId, memberId, body).withHttpInfo());
+  }
+
+  private PatchRoutingQueueMemberRequest createPatchRoutingQueueMemberRequest(String queueId, String memberId, QueueMember body) {
+    return PatchRoutingQueueMemberRequest.builder()
+            .withQueueId(queueId)
+    
+            .withMemberId(memberId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update the ring number OR joined status for a queue member.
+   * 
+   * @param request The request object
+   * @return QueueMember
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueueMember patchRoutingQueueMember(PatchRoutingQueueMemberRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<QueueMember> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueueMember>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the ring number OR joined status for a queue member.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueueMember> patchRoutingQueueMember(ApiRequest<QueueMember> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<QueueMember>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueueMember> response = (ApiResponse<QueueMember>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueueMember> response = (ApiResponse<QueueMember>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Join or unjoin a set of users for a queue
+   * 
+   * @param queueId Queue ID (required)
+   * @param body Queue Members (required)
+   * @return QueueMemberEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueueMemberEntityListing patchRoutingQueueMembers(String queueId, List<QueueMember> body) throws IOException, ApiException {
+    return  patchRoutingQueueMembers(createPatchRoutingQueueMembersRequest(queueId, body));
+  }
+
+  /**
+   * Join or unjoin a set of users for a queue
+   * 
+   * @param queueId Queue ID (required)
+   * @param body Queue Members (required)
+   * @return QueueMemberEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueueMemberEntityListing> patchRoutingQueueMembersWithHttpInfo(String queueId, List<QueueMember> body) throws IOException {
+    return patchRoutingQueueMembers(createPatchRoutingQueueMembersRequest(queueId, body).withHttpInfo());
+  }
+
+  private PatchRoutingQueueMembersRequest createPatchRoutingQueueMembersRequest(String queueId, List<QueueMember> body) {
+    return PatchRoutingQueueMembersRequest.builder()
+            .withQueueId(queueId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Join or unjoin a set of users for a queue
+   * 
+   * @param request The request object
+   * @return QueueMemberEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueueMemberEntityListing patchRoutingQueueMembers(PatchRoutingQueueMembersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<QueueMemberEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueueMemberEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Join or unjoin a set of users for a queue
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueueMemberEntityListing> patchRoutingQueueMembers(ApiRequest<List<QueueMember>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<QueueMemberEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueueMemberEntityListing> response = (ApiResponse<QueueMemberEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueueMemberEntityListing> response = (ApiResponse<QueueMemberEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
    * 
    * @param queueId Queue ID (required)
@@ -5340,6 +5802,93 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Language> response = (ApiResponse<Language>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Bulk add or delete up to 100 queue members
+   * 
+   * @param queueId Queue ID (required)
+   * @param body Queue Members (required)
+   * @param delete True to delete queue members (optional, default to false)
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String postRoutingQueueMembers(String queueId, List<WritableEntity> body, Boolean delete) throws IOException, ApiException {
+    return  postRoutingQueueMembers(createPostRoutingQueueMembersRequest(queueId, body, delete));
+  }
+
+  /**
+   * Bulk add or delete up to 100 queue members
+   * 
+   * @param queueId Queue ID (required)
+   * @param body Queue Members (required)
+   * @param delete True to delete queue members (optional, default to false)
+   * @return String
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> postRoutingQueueMembersWithHttpInfo(String queueId, List<WritableEntity> body, Boolean delete) throws IOException {
+    return postRoutingQueueMembers(createPostRoutingQueueMembersRequest(queueId, body, delete).withHttpInfo());
+  }
+
+  private PostRoutingQueueMembersRequest createPostRoutingQueueMembersRequest(String queueId, List<WritableEntity> body, Boolean delete) {
+    return PostRoutingQueueMembersRequest.builder()
+            .withQueueId(queueId)
+    
+            .withBody(body)
+    
+            .withDelete(delete)
+    
+            .build();
+  }
+
+  /**
+   * Bulk add or delete up to 100 queue members
+   * 
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String postRoutingQueueMembers(PostRoutingQueueMembersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk add or delete up to 100 queue members
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> postRoutingQueueMembers(ApiRequest<List<WritableEntity>> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

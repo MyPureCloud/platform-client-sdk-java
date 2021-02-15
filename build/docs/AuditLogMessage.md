@@ -46,6 +46,7 @@ title: AuditLogMessage
 | GROUPS | &quot;Groups&quot; |
 | TELEPHONY | &quot;Telephony&quot; |
 | OUTBOUND | &quot;Outbound&quot; |
+| SPEECHANDTEXTANALYTICS | &quot;SpeechAndTextAnalytics&quot; |
 {: class="table table-striped"}
 
 
@@ -163,6 +164,8 @@ title: AuditLogMessage
 | DNCLIST | &quot;DNCList&quot; |
 | CALLANALYSISRESPONSESET | &quot;CallAnalysisResponseSet&quot; |
 | RULESET | &quot;RuleSet&quot; |
+| TRANSCRIPTIONSETTINGS | &quot;TranscriptionSettings&quot; |
+| SPEECHTEXTANALYTICSSETTINGS | &quot;SpeechTextAnalyticsSettings&quot; |
 {: class="table table-striped"}
 
 

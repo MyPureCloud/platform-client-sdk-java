@@ -35,6 +35,8 @@ title: OrphanRecording
 | CHAT | &quot;CHAT&quot; |
 | EMAIL | &quot;EMAIL&quot; |
 | SCREEN_RECORDING | &quot;SCREEN_RECORDING&quot; |
+| PUREENGAGE | &quot;PUREENGAGE&quot; |
+| PURECONNECT | &quot;PURECONNECT&quot; |
 {: class="table table-striped"}
 
 

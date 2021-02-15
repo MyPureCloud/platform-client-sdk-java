@@ -22,14 +22,14 @@ public class ForecastPlanningGroupData  implements Serializable {
 
   
   /**
-   * The id of the planning group to which this data applies
+   * The ID of the planning group to which this data applies. Note this is a snapshot of the planning group at the time of forecast creation and may not correspond to the current configuration
    **/
   public ForecastPlanningGroupData planningGroupId(String planningGroupId) {
     this.planningGroupId = planningGroupId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The id of the planning group to which this data applies")
+  @ApiModelProperty(example = "null", value = "The ID of the planning group to which this data applies. Note this is a snapshot of the planning group at the time of forecast creation and may not correspond to the current configuration")
   @JsonProperty("planningGroupId")
   public String getPlanningGroupId() {
     return planningGroupId;

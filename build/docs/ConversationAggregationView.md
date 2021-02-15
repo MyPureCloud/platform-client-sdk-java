@@ -46,6 +46,8 @@ title: ConversationAggregationView
 | TAGENTRESPONSETIME | &quot;tAgentResponseTime&quot; |
 | TALERT | &quot;tAlert&quot; |
 | TANSWERED | &quot;tAnswered&quot; |
+| TCALLBACK | &quot;tCallback&quot; |
+| TCALLBACKCOMPLETE | &quot;tCallbackComplete&quot; |
 | TCONTACTING | &quot;tContacting&quot; |
 | TDIALING | &quot;tDialing&quot; |
 | TFLOWOUT | &quot;tFlowOut&quot; |

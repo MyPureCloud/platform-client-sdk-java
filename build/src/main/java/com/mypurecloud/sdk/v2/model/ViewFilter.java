@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationProperties;
 import com.mypurecloud.sdk.v2.model.NumericRange;
 import com.mypurecloud.sdk.v2.model.Transcripts;
@@ -584,6 +585,149 @@ public class ViewFilter  implements Serializable {
     }
   }
   private List<JourneyActionMapTypesEnum> journeyActionMapTypes = new ArrayList<JourneyActionMapTypesEnum>();
+
+  /**
+   * Gets or Sets developmentRoleList
+   */
+  public enum DevelopmentRoleListEnum {
+    CREATOR("Creator"),
+    FACILITATOR("Facilitator"),
+    ATTENDEE("Attendee");
+
+    private String value;
+
+    DevelopmentRoleListEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DevelopmentRoleListEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DevelopmentRoleListEnum value : DevelopmentRoleListEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DevelopmentRoleListEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<DevelopmentRoleListEnum> developmentRoleList = new ArrayList<DevelopmentRoleListEnum>();
+
+  /**
+   * Gets or Sets developmentTypeList
+   */
+  public enum DevelopmentTypeListEnum {
+    INFORMATIONAL("Informational"),
+    COACHING("Coaching");
+
+    private String value;
+
+    DevelopmentTypeListEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DevelopmentTypeListEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DevelopmentTypeListEnum value : DevelopmentTypeListEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DevelopmentTypeListEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<DevelopmentTypeListEnum> developmentTypeList = new ArrayList<DevelopmentTypeListEnum>();
+
+  /**
+   * Gets or Sets developmentStatusList
+   */
+  public enum DevelopmentStatusListEnum {
+    PLANNED("Planned"),
+    SCHEDULED("Scheduled"),
+    INVALIDSCHEDULE("InvalidSchedule"),
+    INPROGRESS("InProgress"),
+    COMPLETED("Completed");
+
+    private String value;
+
+    DevelopmentStatusListEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DevelopmentStatusListEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DevelopmentStatusListEnum value : DevelopmentStatusListEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DevelopmentStatusListEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<DevelopmentStatusListEnum> developmentStatusList = new ArrayList<DevelopmentStatusListEnum>();
+  private List<String> developmentModuleIds = new ArrayList<String>();
+
+  /**
+   * Represents due or completed to filter agent development view
+   */
+  public enum DevelopmentKeyTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    DUE("Due"),
+    COMPLETED("Completed");
+
+    private String value;
+
+    DevelopmentKeyTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DevelopmentKeyTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DevelopmentKeyTypeEnum value : DevelopmentKeyTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DevelopmentKeyTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DevelopmentKeyTypeEnum developmentKeyType = null;
+  private Boolean developmentActivityOverdue = null;
 
   
   /**
@@ -2260,6 +2404,114 @@ public class ViewFilter  implements Serializable {
   }
 
   
+  /**
+   * The list of development roles used to filter agent development view
+   **/
+  public ViewFilter developmentRoleList(List<DevelopmentRoleListEnum> developmentRoleList) {
+    this.developmentRoleList = developmentRoleList;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of development roles used to filter agent development view")
+  @JsonProperty("developmentRoleList")
+  public List<DevelopmentRoleListEnum> getDevelopmentRoleList() {
+    return developmentRoleList;
+  }
+  public void setDevelopmentRoleList(List<DevelopmentRoleListEnum> developmentRoleList) {
+    this.developmentRoleList = developmentRoleList;
+  }
+
+  
+  /**
+   * The list of development types used to filter agent development view
+   **/
+  public ViewFilter developmentTypeList(List<DevelopmentTypeListEnum> developmentTypeList) {
+    this.developmentTypeList = developmentTypeList;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of development types used to filter agent development view")
+  @JsonProperty("developmentTypeList")
+  public List<DevelopmentTypeListEnum> getDevelopmentTypeList() {
+    return developmentTypeList;
+  }
+  public void setDevelopmentTypeList(List<DevelopmentTypeListEnum> developmentTypeList) {
+    this.developmentTypeList = developmentTypeList;
+  }
+
+  
+  /**
+   * The list of development status used to filter agent development view
+   **/
+  public ViewFilter developmentStatusList(List<DevelopmentStatusListEnum> developmentStatusList) {
+    this.developmentStatusList = developmentStatusList;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of development status used to filter agent development view")
+  @JsonProperty("developmentStatusList")
+  public List<DevelopmentStatusListEnum> getDevelopmentStatusList() {
+    return developmentStatusList;
+  }
+  public void setDevelopmentStatusList(List<DevelopmentStatusListEnum> developmentStatusList) {
+    this.developmentStatusList = developmentStatusList;
+  }
+
+  
+  /**
+   * The list of development moduleIds used to filter agent development view
+   **/
+  public ViewFilter developmentModuleIds(List<String> developmentModuleIds) {
+    this.developmentModuleIds = developmentModuleIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of development moduleIds used to filter agent development view")
+  @JsonProperty("developmentModuleIds")
+  public List<String> getDevelopmentModuleIds() {
+    return developmentModuleIds;
+  }
+  public void setDevelopmentModuleIds(List<String> developmentModuleIds) {
+    this.developmentModuleIds = developmentModuleIds;
+  }
+
+  
+  /**
+   * Represents due or completed to filter agent development view
+   **/
+  public ViewFilter developmentKeyType(DevelopmentKeyTypeEnum developmentKeyType) {
+    this.developmentKeyType = developmentKeyType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Represents due or completed to filter agent development view")
+  @JsonProperty("developmentKeyType")
+  public DevelopmentKeyTypeEnum getDevelopmentKeyType() {
+    return developmentKeyType;
+  }
+  public void setDevelopmentKeyType(DevelopmentKeyTypeEnum developmentKeyType) {
+    this.developmentKeyType = developmentKeyType;
+  }
+
+  
+  /**
+   * Indicates filtering for development activities
+   **/
+  public ViewFilter developmentActivityOverdue(Boolean developmentActivityOverdue) {
+    this.developmentActivityOverdue = developmentActivityOverdue;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates filtering for development activities")
+  @JsonProperty("developmentActivityOverdue")
+  public Boolean getDevelopmentActivityOverdue() {
+    return developmentActivityOverdue;
+  }
+  public void setDevelopmentActivityOverdue(Boolean developmentActivityOverdue) {
+    this.developmentActivityOverdue = developmentActivityOverdue;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -2362,12 +2614,18 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.journeyActionMapIds, viewFilter.journeyActionMapIds) &&
         Objects.equals(this.journeyOutcomeIds, viewFilter.journeyOutcomeIds) &&
         Objects.equals(this.journeySegmentIds, viewFilter.journeySegmentIds) &&
-        Objects.equals(this.journeyActionMapTypes, viewFilter.journeyActionMapTypes);
+        Objects.equals(this.journeyActionMapTypes, viewFilter.journeyActionMapTypes) &&
+        Objects.equals(this.developmentRoleList, viewFilter.developmentRoleList) &&
+        Objects.equals(this.developmentTypeList, viewFilter.developmentTypeList) &&
+        Objects.equals(this.developmentStatusList, viewFilter.developmentStatusList) &&
+        Objects.equals(this.developmentModuleIds, viewFilter.developmentModuleIds) &&
+        Objects.equals(this.developmentKeyType, viewFilter.developmentKeyType) &&
+        Objects.equals(this.developmentActivityOverdue, viewFilter.developmentActivityOverdue);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentKeyType, developmentActivityOverdue);
   }
 
   @Override
@@ -2468,6 +2726,12 @@ public class ViewFilter  implements Serializable {
     sb.append("    journeyOutcomeIds: ").append(toIndentedString(journeyOutcomeIds)).append("\n");
     sb.append("    journeySegmentIds: ").append(toIndentedString(journeySegmentIds)).append("\n");
     sb.append("    journeyActionMapTypes: ").append(toIndentedString(journeyActionMapTypes)).append("\n");
+    sb.append("    developmentRoleList: ").append(toIndentedString(developmentRoleList)).append("\n");
+    sb.append("    developmentTypeList: ").append(toIndentedString(developmentTypeList)).append("\n");
+    sb.append("    developmentStatusList: ").append(toIndentedString(developmentStatusList)).append("\n");
+    sb.append("    developmentModuleIds: ").append(toIndentedString(developmentModuleIds)).append("\n");
+    sb.append("    developmentKeyType: ").append(toIndentedString(developmentKeyType)).append("\n");
+    sb.append("    developmentActivityOverdue: ").append(toIndentedString(developmentActivityOverdue)).append("\n");
     sb.append("}");
     return sb.toString();
   }

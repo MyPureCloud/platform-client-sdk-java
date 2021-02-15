@@ -21,6 +21,7 @@ public class AgentEvaluatorActivity  implements Serializable {
   private User evaluator = null;
   private Integer numEvaluations = null;
   private Integer averageEvaluationScore = null;
+  private Integer numEvaluationsWithoutViewPermission = null;
   private String selfUri = null;
 
   
@@ -116,6 +117,23 @@ public class AgentEvaluatorActivity  implements Serializable {
   }
 
   
+  /**
+   **/
+  public AgentEvaluatorActivity numEvaluationsWithoutViewPermission(Integer numEvaluationsWithoutViewPermission) {
+    this.numEvaluationsWithoutViewPermission = numEvaluationsWithoutViewPermission;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("numEvaluationsWithoutViewPermission")
+  public Integer getNumEvaluationsWithoutViewPermission() {
+    return numEvaluationsWithoutViewPermission;
+  }
+  public void setNumEvaluationsWithoutViewPermission(Integer numEvaluationsWithoutViewPermission) {
+    this.numEvaluationsWithoutViewPermission = numEvaluationsWithoutViewPermission;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -139,12 +157,13 @@ public class AgentEvaluatorActivity  implements Serializable {
         Objects.equals(this.evaluator, agentEvaluatorActivity.evaluator) &&
         Objects.equals(this.numEvaluations, agentEvaluatorActivity.numEvaluations) &&
         Objects.equals(this.averageEvaluationScore, agentEvaluatorActivity.averageEvaluationScore) &&
+        Objects.equals(this.numEvaluationsWithoutViewPermission, agentEvaluatorActivity.numEvaluationsWithoutViewPermission) &&
         Objects.equals(this.selfUri, agentEvaluatorActivity.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, agent, evaluator, numEvaluations, averageEvaluationScore, selfUri);
+    return Objects.hash(id, name, agent, evaluator, numEvaluations, averageEvaluationScore, numEvaluationsWithoutViewPermission, selfUri);
   }
 
   @Override
@@ -158,6 +177,7 @@ public class AgentEvaluatorActivity  implements Serializable {
     sb.append("    evaluator: ").append(toIndentedString(evaluator)).append("\n");
     sb.append("    numEvaluations: ").append(toIndentedString(numEvaluations)).append("\n");
     sb.append("    averageEvaluationScore: ").append(toIndentedString(averageEvaluationScore)).append("\n");
+    sb.append("    numEvaluationsWithoutViewPermission: ").append(toIndentedString(numEvaluationsWithoutViewPermission)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

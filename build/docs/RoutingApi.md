@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteRoutingEmailDomain**](RoutingApi.html#deleteRoutingEmailDomain) | Delete a domain |
 | [**deleteRoutingEmailDomainRoute**](RoutingApi.html#deleteRoutingEmailDomainRoute) | Delete a route |
 | [**deleteRoutingQueue**](RoutingApi.html#deleteRoutingQueue) | Delete a queue |
+| [**deleteRoutingQueueMember**](RoutingApi.html#deleteRoutingQueueMember) | Delete a queue member. |
 | [**deleteRoutingQueueUser**](RoutingApi.html#deleteRoutingQueueUser) | DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member. |
 | [**deleteRoutingQueueWrapupcode**](RoutingApi.html#deleteRoutingQueueWrapupcode) | Delete a wrap-up code from a queue |
 | [**deleteRoutingSettings**](RoutingApi.html#deleteRoutingSettings) | Delete an organization&#39;s routing settings |
@@ -32,6 +33,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingQueue**](RoutingApi.html#getRoutingQueue) | Get details about this queue. |
 | [**getRoutingQueueEstimatedwaittime**](RoutingApi.html#getRoutingQueueEstimatedwaittime) | Get Estimated Wait Time |
 | [**getRoutingQueueMediatypeEstimatedwaittime**](RoutingApi.html#getRoutingQueueMediatypeEstimatedwaittime) | Get Estimated Wait Time |
+| [**getRoutingQueueMembers**](RoutingApi.html#getRoutingQueueMembers) | Get the members of this queue. |
 | [**getRoutingQueueUsers**](RoutingApi.html#getRoutingQueueUsers) | DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue. |
 | [**getRoutingQueueWrapupcodes**](RoutingApi.html#getRoutingQueueWrapupcodes) | Get the wrap-up codes for a queue |
 | [**getRoutingQueues**](RoutingApi.html#getRoutingQueues) | Get list of queues. |
@@ -56,6 +58,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUserRoutinglanguages**](RoutingApi.html#getUserRoutinglanguages) | List routing language for user |
 | [**getUserRoutingskills**](RoutingApi.html#getUserRoutingskills) | List routing skills for user |
 | [**patchRoutingEmailDomain**](RoutingApi.html#patchRoutingEmailDomain) | Update domain settings |
+| [**patchRoutingEmailDomainValidate**](RoutingApi.html#patchRoutingEmailDomainValidate) | Validate domain settings |
+| [**patchRoutingQueueMember**](RoutingApi.html#patchRoutingQueueMember) | Update the ring number OR joined status for a queue member. |
+| [**patchRoutingQueueMembers**](RoutingApi.html#patchRoutingQueueMembers) | Join or unjoin a set of users for a queue |
 | [**patchRoutingQueueUser**](RoutingApi.html#patchRoutingQueueUser) | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue. |
 | [**patchRoutingQueueUsers**](RoutingApi.html#patchRoutingQueueUsers) | DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue. |
 | [**patchRoutingSettingsContactcenter**](RoutingApi.html#patchRoutingSettingsContactcenter) | Update Contact Center Settings |
@@ -69,6 +74,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postRoutingEmailDomainTestconnection**](RoutingApi.html#postRoutingEmailDomainTestconnection) | Tests the custom SMTP server integration connection set on this domain |
 | [**postRoutingEmailDomains**](RoutingApi.html#postRoutingEmailDomains) | Create a domain |
 | [**postRoutingLanguages**](RoutingApi.html#postRoutingLanguages) | Create Language |
+| [**postRoutingQueueMembers**](RoutingApi.html#postRoutingQueueMembers) | Bulk add or delete up to 100 queue members |
 | [**postRoutingQueueUsers**](RoutingApi.html#postRoutingQueueUsers) | DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members. |
 | [**postRoutingQueueWrapupcodes**](RoutingApi.html#postRoutingQueueWrapupcodes) | Add up to 100 wrap-up codes to a queue |
 | [**postRoutingQueues**](RoutingApi.html#postRoutingQueues) | Create a queue |
@@ -281,11 +287,76 @@ try {
 
 null (empty response body)
 
+<a name="deleteRoutingQueueMember"></a>
+
+# **deleteRoutingQueueMember**
+
+
+
+> Void deleteRoutingQueueMember(queueId, memberId)
+
+Delete a queue member.
+
+
+
+Wraps DELETE /api/v2/routing/queues/{queueId}/members/{memberId}  
+
+Requires ANY permissions: 
+
+* routing:queue:edit
+* routing:queueMember:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String queueId = "queueId_example"; // String | Queue ID
+String memberId = "memberId_example"; // String | Member ID
+try {
+    apiInstance.deleteRoutingQueueMember(queueId, memberId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#deleteRoutingQueueMember");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **queueId** | **String**| Queue ID | 
+| **memberId** | **String**| Member ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
 <a name="deleteRoutingQueueUser"></a>
 
 # **deleteRoutingQueueUser**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > Void deleteRoutingQueueUser(queueId, memberId)
 
@@ -1470,7 +1541,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **messengerType** | **String**| Messenger Type | [optional]<br />**Values**: sms, facebook, twitter, line, whatsapp, webmessaging 
+| **messengerType** | **String**| Messenger Type | [optional]<br />**Values**: sms, facebook, twitter, line, whatsapp 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 {: class="table-striped"}
@@ -1673,11 +1744,97 @@ try {
 
 [**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions.html)
 
+<a name="getRoutingQueueMembers"></a>
+
+# **getRoutingQueueMembers**
+
+
+
+> [QueueMemberEntityListing](QueueMemberEntityListing.html) getRoutingQueueMembers(queueId, pageSize, pageNumber, sortBy, expand, joined, name, profileSkills, skills, languages, routingStatus, presence)
+
+Get the members of this queue.
+
+
+
+Wraps GET /api/v2/routing/queues/{queueId}/members  
+
+Requires ANY permissions: 
+
+* routing:queue:view
+* routing:queueMember:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String queueId = "queueId_example"; // String | Queue ID
+Integer pageSize = 25; // Integer | Page size [max 100]
+Integer pageNumber = 1; // Integer | Page number
+String sortBy = "name"; // String | Sort by
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+Boolean joined = true; // Boolean | Filter by joined status
+String name = "name_example"; // String | Filter by queue member name
+List<String> profileSkills = Arrays.asList("profileSkills_example"); // List<String> | Filter by profile skill
+List<String> skills = Arrays.asList("skills_example"); // List<String> | Filter by skill
+List<String> languages = Arrays.asList("languages_example"); // List<String> | Filter by language
+List<String> routingStatus = Arrays.asList("routingStatus_example"); // List<String> | Filter by routing status
+List<String> presence = Arrays.asList("presence_example"); // List<String> | Filter by presence
+try {
+    QueueMemberEntityListing result = apiInstance.getRoutingQueueMembers(queueId, pageSize, pageNumber, sortBy, expand, joined, name, profileSkills, skills, languages, routingStatus, presence);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingQueueMembers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **queueId** | **String**| Queue ID | 
+| **pageSize** | **Integer**| Page size [max 100] | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **sortBy** | **String**| Sort by | [optional] [default to name] 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
+| **joined** | **Boolean**| Filter by joined status | [optional] 
+| **name** | **String**| Filter by queue member name | [optional] 
+| **profileSkills** | [**List&lt;String&gt;**](String.html)| Filter by profile skill | [optional] 
+| **skills** | [**List&lt;String&gt;**](String.html)| Filter by skill | [optional] 
+| **languages** | [**List&lt;String&gt;**](String.html)| Filter by language | [optional] 
+| **routingStatus** | [**List&lt;String&gt;**](String.html)| Filter by routing status | [optional] 
+| **presence** | [**List&lt;String&gt;**](String.html)| Filter by presence | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**QueueMemberEntityListing**](QueueMemberEntityListing.html)
+
 <a name="getRoutingQueueUsers"></a>
 
 # **getRoutingQueueUsers**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [QueueMemberEntityListing](QueueMemberEntityListing.html) getRoutingQueueUsers(queueId, pageSize, pageNumber, sortBy, expand, joined, name, profileSkills, skills, languages, routingStatus, presence)
 
@@ -3287,11 +3444,210 @@ try {
 
 [**InboundDomain**](InboundDomain.html)
 
+<a name="patchRoutingEmailDomainValidate"></a>
+
+# **patchRoutingEmailDomainValidate**
+
+
+
+> [InboundDomain](InboundDomain.html) patchRoutingEmailDomainValidate(domainId, body)
+
+Validate domain settings
+
+
+
+Wraps PATCH /api/v2/routing/email/domains/{domainId}/validate  
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String domainId = "domainId_example"; // String | domain ID
+InboundDomainPatchRequest body = new InboundDomainPatchRequest(); // InboundDomainPatchRequest | Domain settings
+try {
+    InboundDomain result = apiInstance.patchRoutingEmailDomainValidate(domainId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#patchRoutingEmailDomainValidate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domainId** | **String**| domain ID | 
+| **body** | [**InboundDomainPatchRequest**](InboundDomainPatchRequest.html)| Domain settings | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**InboundDomain**](InboundDomain.html)
+
+<a name="patchRoutingQueueMember"></a>
+
+# **patchRoutingQueueMember**
+
+
+
+> [QueueMember](QueueMember.html) patchRoutingQueueMember(queueId, memberId, body)
+
+Update the ring number OR joined status for a queue member.
+
+
+
+Wraps PATCH /api/v2/routing/queues/{queueId}/members/{memberId}  
+
+Requires ANY permissions: 
+
+* routing:queue:edit
+* routing:queueMember:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String queueId = "queueId_example"; // String | Queue ID
+String memberId = "memberId_example"; // String | Member ID
+QueueMember body = new QueueMember(); // QueueMember | Queue Member
+try {
+    QueueMember result = apiInstance.patchRoutingQueueMember(queueId, memberId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#patchRoutingQueueMember");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **queueId** | **String**| Queue ID | 
+| **memberId** | **String**| Member ID | 
+| **body** | [**QueueMember**](QueueMember.html)| Queue Member | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**QueueMember**](QueueMember.html)
+
+<a name="patchRoutingQueueMembers"></a>
+
+# **patchRoutingQueueMembers**
+
+
+
+> [QueueMemberEntityListing](QueueMemberEntityListing.html) patchRoutingQueueMembers(queueId, body)
+
+Join or unjoin a set of users for a queue
+
+
+
+Wraps PATCH /api/v2/routing/queues/{queueId}/members  
+
+Requires ANY permissions: 
+
+* routing:queue:edit
+* routing:queueMember:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String queueId = "queueId_example"; // String | Queue ID
+List<QueueMember> body = Arrays.asList(new QueueMember()); // List<QueueMember> | Queue Members
+try {
+    QueueMemberEntityListing result = apiInstance.patchRoutingQueueMembers(queueId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#patchRoutingQueueMembers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **queueId** | **String**| Queue ID | 
+| **body** | [**List&lt;QueueMember&gt;**](QueueMember.html)| Queue Members | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**QueueMemberEntityListing**](QueueMemberEntityListing.html)
+
 <a name="patchRoutingQueueUser"></a>
 
 # **patchRoutingQueueUser**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [QueueMember](QueueMember.html) patchRoutingQueueUser(queueId, memberId, body)
 
@@ -3359,7 +3715,7 @@ try {
 
 # **patchRoutingQueueUsers**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [QueueMemberEntityListing](QueueMemberEntityListing.html) patchRoutingQueueUsers(queueId, body)
 
@@ -4137,11 +4493,79 @@ try {
 
 [**Language**](Language.html)
 
+<a name="postRoutingQueueMembers"></a>
+
+# **postRoutingQueueMembers**
+
+
+
+> String postRoutingQueueMembers(queueId, body, delete)
+
+Bulk add or delete up to 100 queue members
+
+
+
+Wraps POST /api/v2/routing/queues/{queueId}/members  
+
+Requires ANY permissions: 
+
+* routing:queue:edit
+* routing:queueMember:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String queueId = "queueId_example"; // String | Queue ID
+List<WritableEntity> body = Arrays.asList(new WritableEntity()); // List<WritableEntity> | Queue Members
+Boolean delete = false; // Boolean | True to delete queue members
+try {
+    String result = apiInstance.postRoutingQueueMembers(queueId, body, delete);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#postRoutingQueueMembers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **queueId** | **String**| Queue ID | 
+| **body** | [**List&lt;WritableEntity&gt;**](WritableEntity.html)| Queue Members | 
+| **delete** | **Boolean**| True to delete queue members | [optional] [default to false] 
+{: class="table-striped"}
+
+
+### Return type
+
+**String**
+
 <a name="postRoutingQueueUsers"></a>
 
 # **postRoutingQueueUsers**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > String postRoutingQueueUsers(queueId, body, delete)
 
