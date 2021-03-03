@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -17,9 +23,22 @@ public class SystemMessageSystemMessage  implements Serializable {
   
   private String channelId = null;
 
+  private static class SystemTopicTypeEnumDeserializer extends StdDeserializer<SystemTopicTypeEnum> {
+    public SystemTopicTypeEnumDeserializer() {
+      super(SystemTopicTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public SystemTopicTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SystemTopicTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets systemTopicType
    */
+ @JsonDeserialize(using = SystemTopicTypeEnumDeserializer.class)
   public enum SystemTopicTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NO_LONGER_SUBSCRIBED("no_longer_subscribed"),
@@ -57,9 +76,22 @@ public class SystemMessageSystemMessage  implements Serializable {
   private String userId = null;
   private String oauthClientId = null;
 
+  private static class ReasonEnumDeserializer extends StdDeserializer<ReasonEnum> {
+    public ReasonEnumDeserializer() {
+      super(ReasonEnumDeserializer.class);
+    }
+
+    @Override
+    public ReasonEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ReasonEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets reason
    */
+ @JsonDeserialize(using = ReasonEnumDeserializer.class)
   public enum ReasonEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ANOTHER_CHANNEL_SUBSCRIBED("another_channel_subscribed"),

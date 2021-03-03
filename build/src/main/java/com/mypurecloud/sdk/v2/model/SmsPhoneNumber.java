@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SmsAddress;
@@ -24,9 +30,22 @@ public class SmsPhoneNumber  implements Serializable {
   private String name = null;
   private String phoneNumber = null;
 
+  private static class PhoneNumberTypeEnumDeserializer extends StdDeserializer<PhoneNumberTypeEnum> {
+    public PhoneNumberTypeEnumDeserializer() {
+      super(PhoneNumberTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public PhoneNumberTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return PhoneNumberTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Type of the phone number provisioned.
    */
+ @JsonDeserialize(using = PhoneNumberTypeEnumDeserializer.class)
   public enum PhoneNumberTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     LOCAL("local"),
@@ -62,9 +81,22 @@ public class SmsPhoneNumber  implements Serializable {
   private PhoneNumberTypeEnum phoneNumberType = null;
   private Boolean provisionedThroughPureCloud = null;
 
+  private static class PhoneNumberStatusEnumDeserializer extends StdDeserializer<PhoneNumberStatusEnum> {
+    public PhoneNumberStatusEnumDeserializer() {
+      super(PhoneNumberStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public PhoneNumberStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return PhoneNumberStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Status of the provisioned phone number.
    */
+ @JsonDeserialize(using = PhoneNumberStatusEnumDeserializer.class)
   public enum PhoneNumberStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INVALID("INVALID"),
@@ -100,9 +132,22 @@ public class SmsPhoneNumber  implements Serializable {
   }
   private PhoneNumberStatusEnum phoneNumberStatus = null;
 
+  private static class CapabilitiesEnumDeserializer extends StdDeserializer<CapabilitiesEnum> {
+    public CapabilitiesEnumDeserializer() {
+      super(CapabilitiesEnumDeserializer.class);
+    }
+
+    @Override
+    public CapabilitiesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CapabilitiesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets capabilities
    */
+ @JsonDeserialize(using = CapabilitiesEnumDeserializer.class)
   public enum CapabilitiesEnum {
     SMS("sms"),
     MMS("mms"),
@@ -144,9 +189,22 @@ public class SmsPhoneNumber  implements Serializable {
   private Date cancellationDate = null;
   private Date renewalDate = null;
 
+  private static class AutoRenewableEnumDeserializer extends StdDeserializer<AutoRenewableEnum> {
+    public AutoRenewableEnumDeserializer() {
+      super(AutoRenewableEnumDeserializer.class);
+    }
+
+    @Override
+    public AutoRenewableEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return AutoRenewableEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Renewal time period of this phone number, if the phoneNumberType is shortcode.
    */
+ @JsonDeserialize(using = AutoRenewableEnumDeserializer.class)
   public enum AutoRenewableEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     QUARTERLY("Quarterly");
@@ -179,9 +237,22 @@ public class SmsPhoneNumber  implements Serializable {
   private AutoRenewableEnum autoRenewable = null;
   private SmsAddress addressId = null;
 
+  private static class ShortCodeBillingTypeEnumDeserializer extends StdDeserializer<ShortCodeBillingTypeEnum> {
+    public ShortCodeBillingTypeEnumDeserializer() {
+      super(ShortCodeBillingTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ShortCodeBillingTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ShortCodeBillingTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * BillingType of this phone number, if the phoneNumberType is shortcode.
    */
+ @JsonDeserialize(using = ShortCodeBillingTypeEnumDeserializer.class)
   public enum ShortCodeBillingTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BASIC("Basic"),

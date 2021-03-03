@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmBuShortTermForecastUpdateCompleteTopicModificationIntervalOffsetValue;
@@ -20,9 +26,22 @@ import java.io.Serializable;
 public class WfmBuShortTermForecastUpdateCompleteTopicBuForecastModification  implements Serializable {
   
 
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets type
    */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     MINIMUMPERINTERVAL("MinimumPerInterval"),
@@ -63,9 +82,22 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuForecastModification  im
   private Integer startIntervalIndex = null;
   private Integer endIntervalIndex = null;
 
+  private static class MetricEnumDeserializer extends StdDeserializer<MetricEnum> {
+    public MetricEnumDeserializer() {
+      super(MetricEnumDeserializer.class);
+    }
+
+    @Override
+    public MetricEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MetricEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets metric
    */
+ @JsonDeserialize(using = MetricEnumDeserializer.class)
   public enum MetricEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     OFFERED("Offered"),
@@ -98,9 +130,22 @@ public class WfmBuShortTermForecastUpdateCompleteTopicBuForecastModification  im
   }
   private MetricEnum metric = null;
 
+  private static class LegacyMetricEnumDeserializer extends StdDeserializer<LegacyMetricEnum> {
+    public LegacyMetricEnumDeserializer() {
+      super(LegacyMetricEnumDeserializer.class);
+    }
+
+    @Override
+    public LegacyMetricEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return LegacyMetricEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets legacyMetric
    */
+ @JsonDeserialize(using = LegacyMetricEnumDeserializer.class)
   public enum LegacyMetricEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     AVERAGEAFTERCALLWORKTIMESECONDS("AverageAfterCallWorkTimeSeconds"),

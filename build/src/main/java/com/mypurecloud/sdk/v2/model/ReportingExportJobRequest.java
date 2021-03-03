@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SelectedColumns;
@@ -22,9 +28,22 @@ public class ReportingExportJobRequest  implements Serializable {
   private String name = null;
   private String timeZone = null;
 
+  private static class ExportFormatEnumDeserializer extends StdDeserializer<ExportFormatEnum> {
+    public ExportFormatEnumDeserializer() {
+      super(ExportFormatEnumDeserializer.class);
+    }
+
+    @Override
+    public ExportFormatEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ExportFormatEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The requested format of the exported data
    */
+ @JsonDeserialize(using = ExportFormatEnumDeserializer.class)
   public enum ExportFormatEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CSV("CSV"),
@@ -59,9 +78,22 @@ public class ReportingExportJobRequest  implements Serializable {
   private String interval = null;
   private String period = null;
 
+  private static class ViewTypeEnumDeserializer extends StdDeserializer<ViewTypeEnum> {
+    public ViewTypeEnumDeserializer() {
+      super(ViewTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ViewTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ViewTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The type of view export job to be created
    */
+ @JsonDeserialize(using = ViewTypeEnumDeserializer.class)
   public enum ViewTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     QUEUE_PERFORMANCE_SUMMARY_VIEW("QUEUE_PERFORMANCE_SUMMARY_VIEW"),
@@ -154,9 +186,22 @@ public class ReportingExportJobRequest  implements Serializable {
   private Boolean hasSplitByMedia = null;
   private Boolean hasSummaryRow = null;
 
+  private static class CsvDelimiterEnumDeserializer extends StdDeserializer<CsvDelimiterEnum> {
+    public CsvDelimiterEnumDeserializer() {
+      super(CsvDelimiterEnumDeserializer.class);
+    }
+
+    @Override
+    public CsvDelimiterEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CsvDelimiterEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The user supplied csv delimiter string value either of type 'comma' or 'semicolon' permitted for the export request
    */
+ @JsonDeserialize(using = CsvDelimiterEnumDeserializer.class)
   public enum CsvDelimiterEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SEMICOLON("SEMICOLON"),

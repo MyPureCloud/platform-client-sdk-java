@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AggregationRange;
@@ -17,9 +23,22 @@ import java.io.Serializable;
 public class JourneyAggregationView  implements Serializable {
   
 
+  private static class TargetEnumDeserializer extends StdDeserializer<TargetEnum> {
+    public TargetEnumDeserializer() {
+      super(TargetEnumDeserializer.class);
+    }
+
+    @Override
+    public TargetEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TargetEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Target metric name
    */
+ @JsonDeserialize(using = TargetEnumDeserializer.class)
   public enum TargetEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NJOURNEYOUTCOMESACHIEVED("nJourneyOutcomesAchieved"),
@@ -68,9 +87,22 @@ public class JourneyAggregationView  implements Serializable {
   private TargetEnum target = null;
   private String name = null;
 
+  private static class FunctionEnumDeserializer extends StdDeserializer<FunctionEnum> {
+    public FunctionEnumDeserializer() {
+      super(FunctionEnumDeserializer.class);
+    }
+
+    @Override
+    public FunctionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return FunctionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Type of view you wish to create
    */
+ @JsonDeserialize(using = FunctionEnumDeserializer.class)
   public enum FunctionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     RANGEBOUND("rangeBound");

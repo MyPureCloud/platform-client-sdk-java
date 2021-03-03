@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WemLearningAssignmentTopicLearningModuleReference;
@@ -23,9 +29,22 @@ public class WemLearningAssignmentTopicLearningAssignmentNotification  implement
   private WemLearningAssignmentTopicLearningModuleReference module = null;
   private Integer version = null;
 
+  private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
+    public StateEnumDeserializer() {
+      super(StateEnumDeserializer.class);
+    }
+
+    @Override
+    public StateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets state
    */
+ @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ASSIGNED("Assigned"),
@@ -64,6 +83,7 @@ public class WemLearningAssignmentTopicLearningAssignmentNotification  implement
   private Date dateCreated = null;
   private WemLearningAssignmentTopicUserReference modifiedBy = null;
   private Date dateModified = null;
+  private Boolean isOverdue = null;
 
   
   /**
@@ -236,6 +256,23 @@ public class WemLearningAssignmentTopicLearningAssignmentNotification  implement
   }
 
   
+  /**
+   **/
+  public WemLearningAssignmentTopicLearningAssignmentNotification isOverdue(Boolean isOverdue) {
+    this.isOverdue = isOverdue;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("isOverdue")
+  public Boolean getIsOverdue() {
+    return isOverdue;
+  }
+  public void setIsOverdue(Boolean isOverdue) {
+    this.isOverdue = isOverdue;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -255,12 +292,13 @@ public class WemLearningAssignmentTopicLearningAssignmentNotification  implement
         Objects.equals(this.createdBy, wemLearningAssignmentTopicLearningAssignmentNotification.createdBy) &&
         Objects.equals(this.dateCreated, wemLearningAssignmentTopicLearningAssignmentNotification.dateCreated) &&
         Objects.equals(this.modifiedBy, wemLearningAssignmentTopicLearningAssignmentNotification.modifiedBy) &&
-        Objects.equals(this.dateModified, wemLearningAssignmentTopicLearningAssignmentNotification.dateModified);
+        Objects.equals(this.dateModified, wemLearningAssignmentTopicLearningAssignmentNotification.dateModified) &&
+        Objects.equals(this.isOverdue, wemLearningAssignmentTopicLearningAssignmentNotification.isOverdue);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, user, module, version, state, dateRecommendedForCompletion, createdBy, dateCreated, modifiedBy, dateModified);
+    return Objects.hash(id, user, module, version, state, dateRecommendedForCompletion, createdBy, dateCreated, modifiedBy, dateModified, isOverdue);
   }
 
   @Override
@@ -278,6 +316,7 @@ public class WemLearningAssignmentTopicLearningAssignmentNotification  implement
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    isOverdue: ").append(toIndentedString(isOverdue)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CoverSheet;
@@ -24,9 +30,22 @@ public class FaxSendRequest  implements Serializable {
   private List<String> addresses = new ArrayList<String>();
   private String documentId = null;
 
+  private static class ContentTypeEnumDeserializer extends StdDeserializer<ContentTypeEnum> {
+    public ContentTypeEnumDeserializer() {
+      super(ContentTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ContentTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ContentTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The content type that is going to be uploaded. If Content Management document is used for faxing, contentType will be ignored
    */
+ @JsonDeserialize(using = ContentTypeEnumDeserializer.class)
   public enum ContentTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     APPLICATION_PDF("application/pdf"),

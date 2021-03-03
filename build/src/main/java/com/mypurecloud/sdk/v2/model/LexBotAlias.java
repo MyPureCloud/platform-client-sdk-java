@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.LexBot;
@@ -24,9 +30,22 @@ public class LexBotAlias  implements Serializable {
   private LexBot bot = null;
   private String botVersion = null;
 
+  private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
+    public StatusEnumDeserializer() {
+      super(StatusEnumDeserializer.class);
+    }
+
+    @Override
+    public StatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The status of the Lex bot alias
    */
+ @JsonDeserialize(using = StatusEnumDeserializer.class)
   public enum StatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BUILDING("BUILDING"),
@@ -62,9 +81,22 @@ public class LexBotAlias  implements Serializable {
   private StatusEnum status = null;
   private String failureReason = null;
 
+  private static class LanguageEnumDeserializer extends StdDeserializer<LanguageEnum> {
+    public LanguageEnumDeserializer() {
+      super(LanguageEnumDeserializer.class);
+    }
+
+    @Override
+    public LanguageEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return LanguageEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The target language of the Lex bot
    */
+ @JsonDeserialize(using = LanguageEnumDeserializer.class)
   public enum LanguageEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     EN_US("en-US");

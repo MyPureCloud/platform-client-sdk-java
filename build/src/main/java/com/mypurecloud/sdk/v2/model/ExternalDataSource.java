@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -17,9 +23,22 @@ import java.io.Serializable;
 public class ExternalDataSource  implements Serializable {
   
 
+  private static class PlatformEnumDeserializer extends StdDeserializer<PlatformEnum> {
+    public PlatformEnumDeserializer() {
+      super(PlatformEnumDeserializer.class);
+    }
+
+    @Override
+    public PlatformEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return PlatformEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The platform that was the source of the data.  Example: a CRM like SALESFORCE.
    */
+ @JsonDeserialize(using = PlatformEnumDeserializer.class)
   public enum PlatformEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SALESFORCE("SALESFORCE");

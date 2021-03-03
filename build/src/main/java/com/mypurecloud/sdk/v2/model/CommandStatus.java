@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Document;
@@ -22,9 +28,22 @@ public class CommandStatus  implements Serializable {
   private Date expiration = null;
   private String userId = null;
 
+  private static class StatusCodeEnumDeserializer extends StdDeserializer<StatusCodeEnum> {
+    public StatusCodeEnumDeserializer() {
+      super(StatusCodeEnumDeserializer.class);
+    }
+
+    @Override
+    public StatusCodeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StatusCodeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets statusCode
    */
+ @JsonDeserialize(using = StatusCodeEnumDeserializer.class)
   public enum StatusCodeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INPROGRESS("INPROGRESS"),
@@ -60,9 +79,22 @@ public class CommandStatus  implements Serializable {
   }
   private StatusCodeEnum statusCode = null;
 
+  private static class CommandTypeEnumDeserializer extends StdDeserializer<CommandTypeEnum> {
+    public CommandTypeEnumDeserializer() {
+      super(CommandTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public CommandTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CommandTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets commandType
    */
+ @JsonDeserialize(using = CommandTypeEnumDeserializer.class)
   public enum CommandTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UPLOAD("UPLOAD"),

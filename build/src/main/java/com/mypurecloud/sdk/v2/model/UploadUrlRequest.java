@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -19,9 +25,22 @@ public class UploadUrlRequest  implements Serializable {
   private String contentMd5 = null;
   private Integer signedUrlTimeoutSeconds = null;
 
+  private static class ServerSideEncryptionEnumDeserializer extends StdDeserializer<ServerSideEncryptionEnum> {
+    public ServerSideEncryptionEnumDeserializer() {
+      super(ServerSideEncryptionEnumDeserializer.class);
+    }
+
+    @Override
+    public ServerSideEncryptionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ServerSideEncryptionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets serverSideEncryption
    */
+ @JsonDeserialize(using = ServerSideEncryptionEnumDeserializer.class)
   public enum ServerSideEncryptionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     AES256("AES256");

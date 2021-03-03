@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationVideoEventTopicAfterCallWork;
@@ -19,9 +25,22 @@ import java.io.Serializable;
 public class QueueConversationVideoEventTopicSocialExpression  implements Serializable {
   
 
+  private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
+    public StateEnumDeserializer() {
+      super(StateEnumDeserializer.class);
+    }
+
+    @Override
+    public StateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets state
    */
+ @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ALERTING("ALERTING"),
@@ -70,9 +89,22 @@ public class QueueConversationVideoEventTopicSocialExpression  implements Serial
   private String scriptId = null;
   private String peerId = null;
 
+  private static class DisconnectTypeEnumDeserializer extends StdDeserializer<DisconnectTypeEnum> {
+    public DisconnectTypeEnumDeserializer() {
+      super(DisconnectTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public DisconnectTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DisconnectTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets disconnectType
    */
+ @JsonDeserialize(using = DisconnectTypeEnumDeserializer.class)
   public enum DisconnectTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ENDPOINT("ENDPOINT"),

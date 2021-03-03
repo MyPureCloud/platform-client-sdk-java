@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -19,9 +25,22 @@ public class ApiUsageQuery  implements Serializable {
   
   private String interval = null;
 
+  private static class GranularityEnumDeserializer extends StdDeserializer<GranularityEnum> {
+    public GranularityEnumDeserializer() {
+      super(GranularityEnumDeserializer.class);
+    }
+
+    @Override
+    public GranularityEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return GranularityEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Date granularity of the results
    */
+ @JsonDeserialize(using = GranularityEnumDeserializer.class)
   public enum GranularityEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DAY("Day"),
@@ -55,9 +74,22 @@ public class ApiUsageQuery  implements Serializable {
   }
   private GranularityEnum granularity = null;
 
+  private static class GroupByEnumDeserializer extends StdDeserializer<GroupByEnum> {
+    public GroupByEnumDeserializer() {
+      super(GroupByEnumDeserializer.class);
+    }
+
+    @Override
+    public GroupByEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return GroupByEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets groupBy
    */
+ @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
     OAUTHCLIENTID("OAuthClientId"),
     ORGANIZATIONID("OrganizationId"),
@@ -92,9 +124,22 @@ public class ApiUsageQuery  implements Serializable {
   }
   private List<GroupByEnum> groupBy = new ArrayList<GroupByEnum>();
 
+  private static class MetricsEnumDeserializer extends StdDeserializer<MetricsEnum> {
+    public MetricsEnumDeserializer() {
+      super(MetricsEnumDeserializer.class);
+    }
+
+    @Override
+    public MetricsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MetricsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets metrics
    */
+ @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
     STATUS200("Status200"),
     STATUS300("Status300"),

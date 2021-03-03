@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DialerCampaignRuleConfigChangeCampaignRuleActionEntities;
@@ -22,9 +28,22 @@ public class DialerCampaignRuleConfigChangeCampaignRuleAction  implements Serial
   private String id = null;
   private Map<String, String> parameters = null;
 
+  private static class ActionTypeEnumDeserializer extends StdDeserializer<ActionTypeEnum> {
+    public ActionTypeEnumDeserializer() {
+      super(ActionTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ActionTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ActionTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets actionType
    */
+ @JsonDeserialize(using = ActionTypeEnumDeserializer.class)
   public enum ActionTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TURN_ON_CAMPAIGN("TURN_ON_CAMPAIGN"),

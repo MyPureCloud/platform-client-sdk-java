@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -33,9 +39,22 @@ public class Response  implements Serializable {
   private User createdBy = null;
   private Date dateCreated = null;
 
+  private static class InteractionTypeEnumDeserializer extends StdDeserializer<InteractionTypeEnum> {
+    public InteractionTypeEnumDeserializer() {
+      super(InteractionTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public InteractionTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return InteractionTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The interaction type for this response.
    */
+ @JsonDeserialize(using = InteractionTypeEnumDeserializer.class)
   public enum InteractionTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CHAT("chat"),
@@ -71,9 +90,22 @@ public class Response  implements Serializable {
   private List<ResponseSubstitution> substitutions = new ArrayList<ResponseSubstitution>();
   private JsonSchemaDocument substitutionsSchema = null;
 
+  private static class ResponseTypeEnumDeserializer extends StdDeserializer<ResponseTypeEnum> {
+    public ResponseTypeEnumDeserializer() {
+      super(ResponseTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ResponseTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ResponseTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The response type represented by the response.
    */
+ @JsonDeserialize(using = ResponseTypeEnumDeserializer.class)
   public enum ResponseTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     MESSAGINGTEMPLATE("MessagingTemplate"),

@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AnalyticsEvaluation;
@@ -28,9 +34,22 @@ public class AnalyticsConversationWithoutAttributes  implements Serializable {
   private Double mediaStatsMinConversationMos = null;
   private Double mediaStatsMinConversationRFactor = null;
 
+  private static class OriginatingDirectionEnumDeserializer extends StdDeserializer<OriginatingDirectionEnum> {
+    public OriginatingDirectionEnumDeserializer() {
+      super(OriginatingDirectionEnumDeserializer.class);
+    }
+
+    @Override
+    public OriginatingDirectionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OriginatingDirectionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The original direction of the conversation
    */
+ @JsonDeserialize(using = OriginatingDirectionEnumDeserializer.class)
   public enum OriginatingDirectionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INBOUND("inbound"),

@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -27,9 +33,22 @@ public class WidgetDeployment  implements Serializable {
   private DomainEntityRef flow = null;
   private List<String> allowedDomains = new ArrayList<String>();
 
+  private static class ClientTypeEnumDeserializer extends StdDeserializer<ClientTypeEnum> {
+    public ClientTypeEnumDeserializer() {
+      super(ClientTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ClientTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ClientTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The type of display widget for which this Deployment is configured, which controls the administrator settings shown.
    */
+ @JsonDeserialize(using = ClientTypeEnumDeserializer.class)
   public enum ClientTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     V1("v1"),

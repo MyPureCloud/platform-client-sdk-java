@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.VoicemailSearchCriteria;
@@ -24,9 +30,22 @@ public class VoicemailSearchCriteria  implements Serializable {
   private List<String> fields = new ArrayList<String>();
   private String value = null;
 
+  private static class OperatorEnumDeserializer extends StdDeserializer<OperatorEnum> {
+    public OperatorEnumDeserializer() {
+      super(OperatorEnumDeserializer.class);
+    }
+
+    @Override
+    public OperatorEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OperatorEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * How to apply this search criteria against other criteria
    */
+ @JsonDeserialize(using = OperatorEnumDeserializer.class)
   public enum OperatorEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     AND("AND"),
@@ -62,9 +81,22 @@ public class VoicemailSearchCriteria  implements Serializable {
   private List<VoicemailSearchCriteria> group = new ArrayList<VoicemailSearchCriteria>();
   private String dateFormat = null;
 
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Search Type
    */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     EXACT("EXACT"),

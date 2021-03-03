@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -24,9 +30,22 @@ public class EventLog  implements Serializable {
   private DomainEntityRef relatedEntity = null;
   private Date timestamp = null;
 
+  private static class LevelEnumDeserializer extends StdDeserializer<LevelEnum> {
+    public LevelEnumDeserializer() {
+      super(LevelEnumDeserializer.class);
+    }
+
+    @Override
+    public LevelEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return LevelEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets level
    */
+ @JsonDeserialize(using = LevelEnumDeserializer.class)
   public enum LevelEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INFO("INFO"),
@@ -60,9 +79,22 @@ public class EventLog  implements Serializable {
   }
   private LevelEnum level = null;
 
+  private static class CategoryEnumDeserializer extends StdDeserializer<CategoryEnum> {
+    public CategoryEnumDeserializer() {
+      super(CategoryEnumDeserializer.class);
+    }
+
+    @Override
+    public CategoryEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CategoryEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets category
    */
+ @JsonDeserialize(using = CategoryEnumDeserializer.class)
   public enum CategoryEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CALLBACK("CALLBACK"),

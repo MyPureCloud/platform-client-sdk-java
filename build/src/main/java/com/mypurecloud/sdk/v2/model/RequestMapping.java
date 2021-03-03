@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -17,9 +23,22 @@ public class RequestMapping  implements Serializable {
   
   private String name = null;
 
+  private static class AttributeTypeEnumDeserializer extends StdDeserializer<AttributeTypeEnum> {
+    public AttributeTypeEnumDeserializer() {
+      super(AttributeTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public AttributeTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return AttributeTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Type of the value supplied
    */
+ @JsonDeserialize(using = AttributeTypeEnumDeserializer.class)
   public enum AttributeTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     STRING("String"),
@@ -54,9 +73,22 @@ public class RequestMapping  implements Serializable {
   }
   private AttributeTypeEnum attributeType = null;
 
+  private static class MappingTypeEnumDeserializer extends StdDeserializer<MappingTypeEnum> {
+    public MappingTypeEnumDeserializer() {
+      super(MappingTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MappingTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MappingTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Method of finding value to use with Attribute
    */
+ @JsonDeserialize(using = MappingTypeEnumDeserializer.class)
   public enum MappingTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     LOOKUP("Lookup"),

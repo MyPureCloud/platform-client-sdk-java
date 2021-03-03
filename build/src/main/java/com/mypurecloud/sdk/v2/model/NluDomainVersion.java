@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.IntentDefinition;
@@ -31,9 +37,22 @@ public class NluDomainVersion  implements Serializable {
   private Date dateTrained = null;
   private Date datePublished = null;
 
+  private static class TrainingStatusEnumDeserializer extends StdDeserializer<TrainingStatusEnum> {
+    public TrainingStatusEnumDeserializer() {
+      super(TrainingStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public TrainingStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TrainingStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The training status of the NLU domain version.
    */
+ @JsonDeserialize(using = TrainingStatusEnumDeserializer.class)
   public enum TrainingStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UNTRAINED("Untrained"),
@@ -69,9 +88,22 @@ public class NluDomainVersion  implements Serializable {
   }
   private TrainingStatusEnum trainingStatus = null;
 
+  private static class EvaluationStatusEnumDeserializer extends StdDeserializer<EvaluationStatusEnum> {
+    public EvaluationStatusEnumDeserializer() {
+      super(EvaluationStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public EvaluationStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return EvaluationStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The evaluation status of the NLU domain version.
    */
+ @JsonDeserialize(using = EvaluationStatusEnumDeserializer.class)
   public enum EvaluationStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UNEVALUATED("Unevaluated"),

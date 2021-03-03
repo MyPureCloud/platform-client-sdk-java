@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.NumericRange;
@@ -17,9 +23,22 @@ import java.io.Serializable;
 public class ConversationDetailQueryPredicate  implements Serializable {
   
 
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Optional type, can usually be inferred
    */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DIMENSION("dimension"),
@@ -53,9 +72,22 @@ public class ConversationDetailQueryPredicate  implements Serializable {
   }
   private TypeEnum type = null;
 
+  private static class DimensionEnumDeserializer extends StdDeserializer<DimensionEnum> {
+    public DimensionEnumDeserializer() {
+      super(DimensionEnumDeserializer.class);
+    }
+
+    @Override
+    public DimensionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DimensionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Left hand side for dimension predicates
    */
+ @JsonDeserialize(using = DimensionEnumDeserializer.class)
   public enum DimensionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CONVERSATIONEND("conversationEnd"),
@@ -92,9 +124,22 @@ public class ConversationDetailQueryPredicate  implements Serializable {
   }
   private DimensionEnum dimension = null;
 
+  private static class MetricEnumDeserializer extends StdDeserializer<MetricEnum> {
+    public MetricEnumDeserializer() {
+      super(MetricEnumDeserializer.class);
+    }
+
+    @Override
+    public MetricEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MetricEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Left hand side for metric predicates
    */
+ @JsonDeserialize(using = MetricEnumDeserializer.class)
   public enum MetricEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NBLINDTRANSFERRED("nBlindTransferred"),
@@ -173,9 +218,22 @@ public class ConversationDetailQueryPredicate  implements Serializable {
   }
   private MetricEnum metric = null;
 
+  private static class OperatorEnumDeserializer extends StdDeserializer<OperatorEnum> {
+    public OperatorEnumDeserializer() {
+      super(OperatorEnumDeserializer.class);
+    }
+
+    @Override
+    public OperatorEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OperatorEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Optional operator, default is matches
    */
+ @JsonDeserialize(using = OperatorEnumDeserializer.class)
   public enum OperatorEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     MATCHES("matches"),

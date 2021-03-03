@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -18,9 +24,22 @@ public class KeyRotationSchedule  implements Serializable {
   private String id = null;
   private String name = null;
 
+  private static class PeriodEnumDeserializer extends StdDeserializer<PeriodEnum> {
+    public PeriodEnumDeserializer() {
+      super(PeriodEnumDeserializer.class);
+    }
+
+    @Override
+    public PeriodEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return PeriodEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Value to set schedule to
    */
+ @JsonDeserialize(using = PeriodEnumDeserializer.class)
   public enum PeriodEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DISABLED("DISABLED"),

@@ -5,7 +5,7 @@
   <artifactId>platform-client-v2</artifactId>
   <packaging>jar</packaging>
   <name>platform-client-v2</name>
-  <version>116.0.0</version>
+  <version>116.0.1</version>
   <description>A Java package to interface with the PureCloud Platform API</description>
   <url>https://developer.mypurecloud.com/api/rest/client-libraries/java/latest/</url>
   
@@ -331,7 +331,7 @@
     <swagger-annotations-version>1.5.8</swagger-annotations-version>
     <slf4j-version>1.7.21</slf4j-version>
     <jersey-version>1.19.1</jersey-version>
-    <jackson-version>2.10.3</jackson-version>
+    <jackson-version>2.12.1</jackson-version>
     <jodatime-version>2.9.3</jodatime-version>
     <maven-plugin-version>1.0.0</maven-plugin-version>
     <testng-version>6.14.3</testng-version>

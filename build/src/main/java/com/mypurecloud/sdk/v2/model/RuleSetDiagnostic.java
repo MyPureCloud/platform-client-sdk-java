@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import io.swagger.annotations.ApiModel;
@@ -19,9 +25,22 @@ public class RuleSetDiagnostic  implements Serializable {
   
   private DomainEntityRef ruleSet = null;
 
+  private static class WarningsEnumDeserializer extends StdDeserializer<WarningsEnum> {
+    public WarningsEnumDeserializer() {
+      super(WarningsEnumDeserializer.class);
+    }
+
+    @Override
+    public WarningsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return WarningsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets warnings
    */
+ @JsonDeserialize(using = WarningsEnumDeserializer.class)
   public enum WarningsEnum {
     WRAPUP_CODE_NOT_IN_QUEUE("WRAPUP_CODE_NOT_IN_QUEUE"),
     CONTACT_ATTRIBUTE_NOT_IN_CONTACT_LIST("CONTACT_ATTRIBUTE_NOT_IN_CONTACT_LIST"),

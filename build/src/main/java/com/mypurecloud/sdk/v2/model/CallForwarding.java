@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CallRoute;
@@ -27,9 +33,22 @@ public class CallForwarding  implements Serializable {
   private String phoneNumber = null;
   private List<CallRoute> calls = new ArrayList<CallRoute>();
 
+  private static class VoicemailEnumDeserializer extends StdDeserializer<VoicemailEnum> {
+    public VoicemailEnumDeserializer() {
+      super(VoicemailEnumDeserializer.class);
+    }
+
+    @Override
+    public VoicemailEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return VoicemailEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The type of voicemail to use with the callForwarding configuration
    */
+ @JsonDeserialize(using = VoicemailEnumDeserializer.class)
   public enum VoicemailEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     PURECLOUD("PURECLOUD"),

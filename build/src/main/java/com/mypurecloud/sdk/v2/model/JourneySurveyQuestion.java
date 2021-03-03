@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -18,9 +24,22 @@ import java.io.Serializable;
 public class JourneySurveyQuestion  implements Serializable {
   
 
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Type of survey question.
    */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TEXT("text"),
@@ -57,9 +76,22 @@ public class JourneySurveyQuestion  implements Serializable {
   private TypeEnum type = null;
   private String label = null;
 
+  private static class CustomerPropertyEnumDeserializer extends StdDeserializer<CustomerPropertyEnum> {
+    public CustomerPropertyEnumDeserializer() {
+      super(CustomerPropertyEnumDeserializer.class);
+    }
+
+    @Override
+    public CustomerPropertyEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CustomerPropertyEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The customer property that the answer maps to.
    */
+ @JsonDeserialize(using = CustomerPropertyEnumDeserializer.class)
   public enum CustomerPropertyEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     GIVENNAME("givenName"),

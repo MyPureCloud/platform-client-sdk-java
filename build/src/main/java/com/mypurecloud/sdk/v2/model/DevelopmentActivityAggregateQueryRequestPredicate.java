@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -16,9 +22,22 @@ import java.io.Serializable;
 public class DevelopmentActivityAggregateQueryRequestPredicate  implements Serializable {
   
 
+  private static class DimensionEnumDeserializer extends StdDeserializer<DimensionEnum> {
+    public DimensionEnumDeserializer() {
+      super(DimensionEnumDeserializer.class);
+    }
+
+    @Override
+    public DimensionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DimensionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Each predicates specifies a dimension.
    */
+ @JsonDeserialize(using = DimensionEnumDeserializer.class)
   public enum DimensionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ATTENDEEID("attendeeId"),

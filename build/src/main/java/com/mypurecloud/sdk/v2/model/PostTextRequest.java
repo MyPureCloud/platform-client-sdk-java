@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AmazonLexRequest;
@@ -29,9 +35,22 @@ public class PostTextRequest  implements Serializable {
   private String languageCode = null;
   private Integer botSessionTimeoutMinutes = null;
 
+  private static class BotChannelsEnumDeserializer extends StdDeserializer<BotChannelsEnum> {
+    public BotChannelsEnumDeserializer() {
+      super(BotChannelsEnumDeserializer.class);
+    }
+
+    @Override
+    public BotChannelsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return BotChannelsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets botChannels
    */
+ @JsonDeserialize(using = BotChannelsEnumDeserializer.class)
   public enum BotChannelsEnum {
     CALL("Call"),
     CALLBACK("Callback"),
@@ -66,9 +85,22 @@ public class PostTextRequest  implements Serializable {
   private List<BotChannelsEnum> botChannels = new ArrayList<BotChannelsEnum>();
   private String botCorrelationId = null;
 
+  private static class MessagingPlatformTypeEnumDeserializer extends StdDeserializer<MessagingPlatformTypeEnum> {
+    public MessagingPlatformTypeEnumDeserializer() {
+      super(MessagingPlatformTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MessagingPlatformTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MessagingPlatformTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * If the channels list contains a 'Messaging' item and the messaging platform is known, include it here to get accurate analytics
    */
+ @JsonDeserialize(using = MessagingPlatformTypeEnumDeserializer.class)
   public enum MessagingPlatformTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     PHONE("Phone"),

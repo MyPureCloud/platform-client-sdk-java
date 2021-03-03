@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Detail;
@@ -31,9 +37,22 @@ public class Operation  implements Serializable {
   private List<Detail> errorDetails = new ArrayList<Detail>();
   private Map<String, String> errorMessageParams = null;
 
+  private static class ActionNameEnumDeserializer extends StdDeserializer<ActionNameEnum> {
+    public ActionNameEnumDeserializer() {
+      super(ActionNameEnumDeserializer.class);
+    }
+
+    @Override
+    public ActionNameEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ActionNameEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Action name
    */
+ @JsonDeserialize(using = ActionNameEnumDeserializer.class)
   public enum ActionNameEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CREATE("CREATE"),
@@ -73,9 +92,22 @@ public class Operation  implements Serializable {
   }
   private ActionNameEnum actionName = null;
 
+  private static class ActionStatusEnumDeserializer extends StdDeserializer<ActionStatusEnum> {
+    public ActionStatusEnumDeserializer() {
+      super(ActionStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public ActionStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ActionStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Action status
    */
+ @JsonDeserialize(using = ActionStatusEnumDeserializer.class)
   public enum ActionStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     LOCKED("LOCKED"),

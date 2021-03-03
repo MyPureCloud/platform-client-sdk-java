@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -32,9 +38,22 @@ public class CreateEmailRequest  implements Serializable {
   private String fromName = null;
   private String subject = null;
 
+  private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
+    public DirectionEnumDeserializer() {
+      super(DirectionEnumDeserializer.class);
+    }
+
+    @Override
+    public DirectionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DirectionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloud based.
    */
+ @JsonDeserialize(using = DirectionEnumDeserializer.class)
   public enum DirectionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     OUTBOUND("OUTBOUND"),

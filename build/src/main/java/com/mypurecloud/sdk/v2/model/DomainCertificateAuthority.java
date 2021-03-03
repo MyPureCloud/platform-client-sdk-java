@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CertificateDetails;
@@ -29,9 +35,22 @@ public class DomainCertificateAuthority  implements Serializable {
   private String modifiedBy = null;
   private String createdBy = null;
 
+  private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
+    public StateEnumDeserializer() {
+      super(StateEnumDeserializer.class);
+    }
+
+    @Override
+    public StateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Indicates if the resource is active, inactive, or deleted.
    */
+ @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTIVE("active"),
@@ -68,9 +87,22 @@ public class DomainCertificateAuthority  implements Serializable {
   private String createdByApp = null;
   private String certificate = null;
 
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The certificate authorities type.  Managed certificate authorities are generated and maintained by Interactive Intelligence.  These are read-only and not modifiable by clients.  Remote authorities are customer managed.
    */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     MANAGED("MANAGED"),
@@ -103,9 +135,22 @@ public class DomainCertificateAuthority  implements Serializable {
   }
   private TypeEnum type = null;
 
+  private static class ServicesEnumDeserializer extends StdDeserializer<ServicesEnum> {
+    public ServicesEnumDeserializer() {
+      super(ServicesEnumDeserializer.class);
+    }
+
+    @Override
+    public ServicesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ServicesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets services
    */
+ @JsonDeserialize(using = ServicesEnumDeserializer.class)
   public enum ServicesEnum {
     SIP("SIP"),
     PROVISION("PROVISION"),

@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,9 +30,22 @@ public class PhoneCapabilities  implements Serializable {
   private Boolean noRebalance = null;
   private Boolean noCloudProvisioning = null;
 
+  private static class MediaCodecsEnumDeserializer extends StdDeserializer<MediaCodecsEnum> {
+    public MediaCodecsEnumDeserializer() {
+      super(MediaCodecsEnumDeserializer.class);
+    }
+
+    @Override
+    public MediaCodecsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MediaCodecsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets mediaCodecs
    */
+ @JsonDeserialize(using = MediaCodecsEnumDeserializer.class)
   public enum MediaCodecsEnum {
     AUDIO_OPUS("audio/opus"),
     AUDIO_PCMU("audio/pcmu"),

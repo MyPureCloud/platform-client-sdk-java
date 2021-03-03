@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.FlowObservationQueryFilter;
 import io.swagger.annotations.ApiModel;
@@ -19,9 +25,22 @@ public class FlowObservationQuery  implements Serializable {
   
   private FlowObservationQueryFilter filter = null;
 
+  private static class MetricsEnumDeserializer extends StdDeserializer<MetricsEnum> {
+    public MetricsEnumDeserializer() {
+      super(MetricsEnumDeserializer.class);
+    }
+
+    @Override
+    public MetricsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MetricsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets metrics
    */
+ @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
     OFLOW("oFlow");
 
@@ -52,9 +71,22 @@ public class FlowObservationQuery  implements Serializable {
   }
   private List<MetricsEnum> metrics = new ArrayList<MetricsEnum>();
 
+  private static class DetailMetricsEnumDeserializer extends StdDeserializer<DetailMetricsEnum> {
+    public DetailMetricsEnumDeserializer() {
+      super(DetailMetricsEnumDeserializer.class);
+    }
+
+    @Override
+    public DetailMetricsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DetailMetricsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets detailMetrics
    */
+ @JsonDeserialize(using = DetailMetricsEnumDeserializer.class)
   public enum DetailMetricsEnum {
     OFLOW("oFlow");
 

@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AuditChange;
@@ -30,9 +36,22 @@ public class DocumentAudit  implements Serializable {
   private String application = null;
   private String serviceName = null;
 
+  private static class LevelEnumDeserializer extends StdDeserializer<LevelEnum> {
+    public LevelEnumDeserializer() {
+      super(LevelEnumDeserializer.class);
+    }
+
+    @Override
+    public LevelEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return LevelEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets level
    */
+ @JsonDeserialize(using = LevelEnumDeserializer.class)
   public enum LevelEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     USER("USER"),
@@ -66,9 +85,22 @@ public class DocumentAudit  implements Serializable {
   private LevelEnum level = null;
   private Date timestamp = null;
 
+  private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
+    public StatusEnumDeserializer() {
+      super(StatusEnumDeserializer.class);
+    }
+
+    @Override
+    public StatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets status
    */
+ @JsonDeserialize(using = StatusEnumDeserializer.class)
   public enum StatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SUCCESS("SUCCESS"),
@@ -102,9 +134,22 @@ public class DocumentAudit  implements Serializable {
   }
   private StatusEnum status = null;
 
+  private static class ActionContextEnumDeserializer extends StdDeserializer<ActionContextEnum> {
+    public ActionContextEnumDeserializer() {
+      super(ActionContextEnumDeserializer.class);
+    }
+
+    @Override
+    public ActionContextEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ActionContextEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets actionContext
    */
+ @JsonDeserialize(using = ActionContextEnumDeserializer.class)
   public enum ActionContextEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CREATE("CREATE"),
@@ -176,9 +221,22 @@ public class DocumentAudit  implements Serializable {
   }
   private ActionContextEnum actionContext = null;
 
+  private static class ActionEnumDeserializer extends StdDeserializer<ActionEnum> {
+    public ActionEnumDeserializer() {
+      super(ActionEnumDeserializer.class);
+    }
+
+    @Override
+    public ActionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ActionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets action
    */
+ @JsonDeserialize(using = ActionEnumDeserializer.class)
   public enum ActionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CREATE("CREATE"),

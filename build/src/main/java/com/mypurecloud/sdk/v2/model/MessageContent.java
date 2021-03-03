@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContentAttachment;
@@ -28,9 +34,22 @@ import java.io.Serializable;
 public class MessageContent  implements Serializable {
   
 
+  private static class ContentTypeEnumDeserializer extends StdDeserializer<ContentTypeEnum> {
+    public ContentTypeEnumDeserializer() {
+      super(ContentTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ContentTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ContentTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Type of this content element. If contentType = \"Attachment\" only one item is allowed.
    */
+ @JsonDeserialize(using = ContentTypeEnumDeserializer.class)
   public enum ContentTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ATTACHMENT("Attachment"),

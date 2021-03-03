@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SelectedColumns;
@@ -26,9 +32,22 @@ public class ReportingExportJobResponse  implements Serializable {
   private String name = null;
   private String runId = null;
 
+  private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
+    public StatusEnumDeserializer() {
+      super(StatusEnumDeserializer.class);
+    }
+
+    @Override
+    public StatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The current status of the export request
    */
+ @JsonDeserialize(using = StatusEnumDeserializer.class)
   public enum StatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SUBMITTED("SUBMITTED"),
@@ -67,9 +86,22 @@ public class ReportingExportJobResponse  implements Serializable {
   private StatusEnum status = null;
   private String timeZone = null;
 
+  private static class ExportFormatEnumDeserializer extends StdDeserializer<ExportFormatEnum> {
+    public ExportFormatEnumDeserializer() {
+      super(ExportFormatEnumDeserializer.class);
+    }
+
+    @Override
+    public ExportFormatEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ExportFormatEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The requested format of the exported data
    */
+ @JsonDeserialize(using = ExportFormatEnumDeserializer.class)
   public enum ExportFormatEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CSV("CSV"),
@@ -104,9 +136,22 @@ public class ReportingExportJobResponse  implements Serializable {
   private String interval = null;
   private String downloadUrl = null;
 
+  private static class ViewTypeEnumDeserializer extends StdDeserializer<ViewTypeEnum> {
+    public ViewTypeEnumDeserializer() {
+      super(ViewTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ViewTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ViewTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The type of view export job to be created
    */
+ @JsonDeserialize(using = ViewTypeEnumDeserializer.class)
   public enum ViewTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     QUEUE_PERFORMANCE_SUMMARY_VIEW("QUEUE_PERFORMANCE_SUMMARY_VIEW"),
@@ -191,9 +236,22 @@ public class ReportingExportJobResponse  implements Serializable {
   }
   private ViewTypeEnum viewType = null;
 
+  private static class ExportErrorMessagesTypeEnumDeserializer extends StdDeserializer<ExportErrorMessagesTypeEnum> {
+    public ExportErrorMessagesTypeEnumDeserializer() {
+      super(ExportErrorMessagesTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ExportErrorMessagesTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ExportErrorMessagesTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The error message in case the export request failed
    */
+ @JsonDeserialize(using = ExportErrorMessagesTypeEnumDeserializer.class)
   public enum ExportErrorMessagesTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     FAILED_CONVERTING_EXPORT_JOB("FAILED_CONVERTING_EXPORT_JOB"),
@@ -250,9 +308,22 @@ public class ReportingExportJobResponse  implements Serializable {
   private Boolean hasSplitByMedia = null;
   private Boolean hasSummaryRow = null;
 
+  private static class CsvDelimiterEnumDeserializer extends StdDeserializer<CsvDelimiterEnum> {
+    public CsvDelimiterEnumDeserializer() {
+      super(CsvDelimiterEnumDeserializer.class);
+    }
+
+    @Override
+    public CsvDelimiterEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CsvDelimiterEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The user supplied csv delimiter string value either of type 'comma' or 'semicolon' permitted for the export request
    */
+ @JsonDeserialize(using = CsvDelimiterEnumDeserializer.class)
   public enum CsvDelimiterEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SEMICOLON("SEMICOLON"),
@@ -288,9 +359,22 @@ public class ReportingExportJobResponse  implements Serializable {
   private Boolean hasCustomParticipantAttributes = null;
   private List<String> recipientEmails = new ArrayList<String>();
 
+  private static class InnerEnumDeserializer extends StdDeserializer<InnerEnum> {
+    public InnerEnumDeserializer() {
+      super(InnerEnumDeserializer.class);
+    }
+
+    @Override
+    public InnerEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return InnerEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets inner
    */
+ @JsonDeserialize(using = InnerEnumDeserializer.class)
   public enum InnerEnum {
     SENT("Sent"),
     PENDING("Pending"),

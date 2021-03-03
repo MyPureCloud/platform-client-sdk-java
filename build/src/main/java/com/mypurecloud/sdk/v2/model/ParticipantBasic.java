@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CallBasic;
@@ -55,9 +61,22 @@ public class ParticipantBasic  implements Serializable {
   private String locale = null;
   private Boolean wrapupRequired = null;
 
+  private static class WrapupPromptEnumDeserializer extends StdDeserializer<WrapupPromptEnum> {
+    public WrapupPromptEnumDeserializer() {
+      super(WrapupPromptEnumDeserializer.class);
+    }
+
+    @Override
+    public WrapupPromptEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return WrapupPromptEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * This field controls how the UI prompts the agent for a wrapup.
    */
+ @JsonDeserialize(using = WrapupPromptEnumDeserializer.class)
   public enum WrapupPromptEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     MANDATORY("mandatory"),
@@ -111,9 +130,22 @@ public class ParticipantBasic  implements Serializable {
   private List<Video> videos = new ArrayList<Video>();
   private List<Evaluation> evaluations = new ArrayList<Evaluation>();
 
+  private static class ScreenRecordingStateEnumDeserializer extends StdDeserializer<ScreenRecordingStateEnum> {
+    public ScreenRecordingStateEnumDeserializer() {
+      super(ScreenRecordingStateEnumDeserializer.class);
+    }
+
+    @Override
+    public ScreenRecordingStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ScreenRecordingStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The current screen recording state for this participant.
    */
+ @JsonDeserialize(using = ScreenRecordingStateEnumDeserializer.class)
   public enum ScreenRecordingStateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     REQUESTED("requested"),
@@ -150,9 +182,22 @@ public class ParticipantBasic  implements Serializable {
   }
   private ScreenRecordingStateEnum screenRecordingState = null;
 
+  private static class FlaggedReasonEnumDeserializer extends StdDeserializer<FlaggedReasonEnum> {
+    public FlaggedReasonEnumDeserializer() {
+      super(FlaggedReasonEnumDeserializer.class);
+    }
+
+    @Override
+    public FlaggedReasonEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return FlaggedReasonEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The reason specifying why participant flagged the conversation.
    */
+ @JsonDeserialize(using = FlaggedReasonEnumDeserializer.class)
   public enum FlaggedReasonEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     GENERAL("general");

@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentResponse;
@@ -22,9 +28,22 @@ public class CoachingNotification  implements Serializable {
   private String name = null;
   private Boolean markedAsRead = null;
 
+  private static class ActionTypeEnumDeserializer extends StdDeserializer<ActionTypeEnum> {
+    public ActionTypeEnumDeserializer() {
+      super(ActionTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ActionTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ActionTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Action causing the notification.
    */
+ @JsonDeserialize(using = ActionTypeEnumDeserializer.class)
   public enum ActionTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CREATE("Create"),
@@ -59,9 +78,22 @@ public class CoachingNotification  implements Serializable {
   }
   private ActionTypeEnum actionType = null;
 
+  private static class RelationshipEnumDeserializer extends StdDeserializer<RelationshipEnum> {
+    public RelationshipEnumDeserializer() {
+      super(RelationshipEnumDeserializer.class);
+    }
+
+    @Override
+    public RelationshipEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return RelationshipEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The relationship of this user to this notification's appointment
    */
+ @JsonDeserialize(using = RelationshipEnumDeserializer.class)
   public enum RelationshipEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ATTENDEE("Attendee"),
@@ -97,9 +129,22 @@ public class CoachingNotification  implements Serializable {
   private Date dateStart = null;
   private Integer lengthInMinutes = null;
 
+  private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
+    public StatusEnumDeserializer() {
+      super(StatusEnumDeserializer.class);
+    }
+
+    @Override
+    public StatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The status of the appointment for this notification
    */
+ @JsonDeserialize(using = StatusEnumDeserializer.class)
   public enum StatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SCHEDULED("Scheduled"),

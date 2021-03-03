@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationDivisionMembership;
@@ -29,9 +35,22 @@ public class Conversation  implements Serializable {
   private List<String> conversationIds = new ArrayList<String>();
   private Integer maxParticipants = null;
 
+  private static class RecordingStateEnumDeserializer extends StdDeserializer<RecordingStateEnum> {
+    public RecordingStateEnumDeserializer() {
+      super(RecordingStateEnumDeserializer.class);
+    }
+
+    @Override
+    public RecordingStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return RecordingStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings; otherwise indicates state of conversation recording.
    */
+ @JsonDeserialize(using = RecordingStateEnumDeserializer.class)
   public enum RecordingStateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTIVE("ACTIVE"),
@@ -65,9 +84,22 @@ public class Conversation  implements Serializable {
   }
   private RecordingStateEnum recordingState = null;
 
+  private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
+    public StateEnumDeserializer() {
+      super(StateEnumDeserializer.class);
+    }
+
+    @Override
+    public StateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The conversation's state
    */
+ @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ALERTING("alerting"),

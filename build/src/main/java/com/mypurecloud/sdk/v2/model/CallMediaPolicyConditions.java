@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DurationCondition;
 import com.mypurecloud.sdk.v2.model.Language;
@@ -29,9 +35,22 @@ public class CallMediaPolicyConditions  implements Serializable {
   private List<Language> languages = new ArrayList<Language>();
   private TimeAllowed timeAllowed = null;
 
+  private static class DirectionsEnumDeserializer extends StdDeserializer<DirectionsEnum> {
+    public DirectionsEnumDeserializer() {
+      super(DirectionsEnumDeserializer.class);
+    }
+
+    @Override
+    public DirectionsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DirectionsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets directions
    */
+ @JsonDeserialize(using = DirectionsEnumDeserializer.class)
   public enum DirectionsEnum {
     INBOUND("INBOUND"),
     OUTBOUND("OUTBOUND");

@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -17,9 +23,22 @@ public class Parameter  implements Serializable {
   
   private String name = null;
 
+  private static class ParameterTypeEnumDeserializer extends StdDeserializer<ParameterTypeEnum> {
+    public ParameterTypeEnumDeserializer() {
+      super(ParameterTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ParameterTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ParameterTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets parameterType
    */
+ @JsonDeserialize(using = ParameterTypeEnumDeserializer.class)
   public enum ParameterTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UUID("UUID"),
@@ -54,9 +73,22 @@ public class Parameter  implements Serializable {
   }
   private ParameterTypeEnum parameterType = null;
 
+  private static class DomainEnumDeserializer extends StdDeserializer<DomainEnum> {
+    public DomainEnumDeserializer() {
+      super(DomainEnumDeserializer.class);
+    }
+
+    @Override
+    public DomainEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DomainEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets domain
    */
+ @JsonDeserialize(using = DomainEnumDeserializer.class)
   public enum DomainEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     USERID("USERID"),

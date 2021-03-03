@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -16,9 +22,22 @@ import java.io.Serializable;
 public class BuForecastTimeSeriesResult  implements Serializable {
   
 
+  private static class MetricEnumDeserializer extends StdDeserializer<MetricEnum> {
+    public MetricEnumDeserializer() {
+      super(MetricEnumDeserializer.class);
+    }
+
+    @Override
+    public MetricEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MetricEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The metric this result applies to
    */
+ @JsonDeserialize(using = MetricEnumDeserializer.class)
   public enum MetricEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     OFFERED("Offered"),
@@ -51,9 +70,22 @@ public class BuForecastTimeSeriesResult  implements Serializable {
   }
   private MetricEnum metric = null;
 
+  private static class ForecastingMethodEnumDeserializer extends StdDeserializer<ForecastingMethodEnum> {
+    public ForecastingMethodEnumDeserializer() {
+      super(ForecastingMethodEnumDeserializer.class);
+    }
+
+    @Override
+    public ForecastingMethodEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ForecastingMethodEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The forecasting method that was used for this metric
    */
+ @JsonDeserialize(using = ForecastingMethodEnumDeserializer.class)
   public enum ForecastingMethodEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     AUTOREGRESSIVEINTEGRATEDMOVINGAVERAGE("AutoRegressiveIntegratedMovingAverage"),

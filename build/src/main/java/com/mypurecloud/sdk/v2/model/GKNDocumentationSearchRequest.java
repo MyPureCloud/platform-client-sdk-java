@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.GKNDocumentationSearchCriteria;
@@ -20,9 +26,22 @@ import java.io.Serializable;
 public class GKNDocumentationSearchRequest  implements Serializable {
   
 
+  private static class SortOrderEnumDeserializer extends StdDeserializer<SortOrderEnum> {
+    public SortOrderEnumDeserializer() {
+      super(SortOrderEnumDeserializer.class);
+    }
+
+    @Override
+    public SortOrderEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SortOrderEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The sort order for results
    */
+ @JsonDeserialize(using = SortOrderEnumDeserializer.class)
   public enum SortOrderEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ASC("ASC"),

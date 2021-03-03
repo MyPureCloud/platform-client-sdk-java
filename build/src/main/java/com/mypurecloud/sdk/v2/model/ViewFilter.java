@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationProperties;
@@ -21,9 +27,22 @@ import java.io.Serializable;
 public class ViewFilter  implements Serializable {
   
 
+  private static class MediaTypesEnumDeserializer extends StdDeserializer<MediaTypesEnum> {
+    public MediaTypesEnumDeserializer() {
+      super(MediaTypesEnumDeserializer.class);
+    }
+
+    @Override
+    public MediaTypesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MediaTypesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets mediaTypes
    */
+ @JsonDeserialize(using = MediaTypesEnumDeserializer.class)
   public enum MediaTypesEnum {
     VOICE("voice"),
     CHAT("chat"),
@@ -66,9 +85,22 @@ public class ViewFilter  implements Serializable {
   private List<String> languageIds = new ArrayList<String>();
   private List<String> languageGroups = new ArrayList<String>();
 
+  private static class DirectionsEnumDeserializer extends StdDeserializer<DirectionsEnum> {
+    public DirectionsEnumDeserializer() {
+      super(DirectionsEnumDeserializer.class);
+    }
+
+    @Override
+    public DirectionsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DirectionsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets directions
    */
+ @JsonDeserialize(using = DirectionsEnumDeserializer.class)
   public enum DirectionsEnum {
     INBOUND("inbound"),
     OUTBOUND("outbound");
@@ -100,9 +132,22 @@ public class ViewFilter  implements Serializable {
   }
   private List<DirectionsEnum> directions = new ArrayList<DirectionsEnum>();
 
+  private static class OriginatingDirectionsEnumDeserializer extends StdDeserializer<OriginatingDirectionsEnum> {
+    public OriginatingDirectionsEnumDeserializer() {
+      super(OriginatingDirectionsEnumDeserializer.class);
+    }
+
+    @Override
+    public OriginatingDirectionsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OriginatingDirectionsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets originatingDirections
    */
+ @JsonDeserialize(using = OriginatingDirectionsEnumDeserializer.class)
   public enum OriginatingDirectionsEnum {
     INBOUND("inbound"),
     OUTBOUND("outbound");
@@ -163,9 +208,22 @@ public class ViewFilter  implements Serializable {
   private Boolean abandoned = null;
   private Boolean answered = null;
 
+  private static class MessageTypesEnumDeserializer extends StdDeserializer<MessageTypesEnum> {
+    public MessageTypesEnumDeserializer() {
+      super(MessageTypesEnumDeserializer.class);
+    }
+
+    @Override
+    public MessageTypesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MessageTypesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets messageTypes
    */
+ @JsonDeserialize(using = MessageTypesEnumDeserializer.class)
   public enum MessageTypesEnum {
     SMS("sms"),
     TWITTER("twitter"),
@@ -225,9 +283,22 @@ public class ViewFilter  implements Serializable {
   private List<String> flowIds = new ArrayList<String>();
   private List<String> flowOutcomeIds = new ArrayList<String>();
 
+  private static class FlowOutcomeValuesEnumDeserializer extends StdDeserializer<FlowOutcomeValuesEnum> {
+    public FlowOutcomeValuesEnumDeserializer() {
+      super(FlowOutcomeValuesEnumDeserializer.class);
+    }
+
+    @Override
+    public FlowOutcomeValuesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return FlowOutcomeValuesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets flowOutcomeValues
    */
+ @JsonDeserialize(using = FlowOutcomeValuesEnumDeserializer.class)
   public enum FlowOutcomeValuesEnum {
     SUCCESS("SUCCESS"),
     FAILURE("FAILURE");
@@ -259,9 +330,22 @@ public class ViewFilter  implements Serializable {
   }
   private List<FlowOutcomeValuesEnum> flowOutcomeValues = new ArrayList<FlowOutcomeValuesEnum>();
 
+  private static class FlowDestinationTypesEnumDeserializer extends StdDeserializer<FlowDestinationTypesEnum> {
+    public FlowDestinationTypesEnumDeserializer() {
+      super(FlowDestinationTypesEnumDeserializer.class);
+    }
+
+    @Override
+    public FlowDestinationTypesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return FlowDestinationTypesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets flowDestinationTypes
    */
+ @JsonDeserialize(using = FlowDestinationTypesEnumDeserializer.class)
   public enum FlowDestinationTypesEnum {
     ACD("ACD"),
     USER("USER"),
@@ -301,9 +385,22 @@ public class ViewFilter  implements Serializable {
   }
   private List<FlowDestinationTypesEnum> flowDestinationTypes = new ArrayList<FlowDestinationTypesEnum>();
 
+  private static class FlowDisconnectReasonsEnumDeserializer extends StdDeserializer<FlowDisconnectReasonsEnum> {
+    public FlowDisconnectReasonsEnumDeserializer() {
+      super(FlowDisconnectReasonsEnumDeserializer.class);
+    }
+
+    @Override
+    public FlowDisconnectReasonsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return FlowDisconnectReasonsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets flowDisconnectReasons
    */
+ @JsonDeserialize(using = FlowDisconnectReasonsEnumDeserializer.class)
   public enum FlowDisconnectReasonsEnum {
     FLOW_DISCONNECT("FLOW_DISCONNECT"),
     FLOW_ERROR_DISCONNECT("FLOW_ERROR_DISCONNECT"),
@@ -336,9 +433,22 @@ public class ViewFilter  implements Serializable {
   }
   private List<FlowDisconnectReasonsEnum> flowDisconnectReasons = new ArrayList<FlowDisconnectReasonsEnum>();
 
+  private static class FlowTypesEnumDeserializer extends StdDeserializer<FlowTypesEnum> {
+    public FlowTypesEnumDeserializer() {
+      super(FlowTypesEnumDeserializer.class);
+    }
+
+    @Override
+    public FlowTypesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return FlowTypesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets flowTypes
    */
+ @JsonDeserialize(using = FlowTypesEnumDeserializer.class)
   public enum FlowTypesEnum {
     BOT("bot"),
     COMMONMODULE("commonmodule"),
@@ -379,9 +489,22 @@ public class ViewFilter  implements Serializable {
   }
   private List<FlowTypesEnum> flowTypes = new ArrayList<FlowTypesEnum>();
 
+  private static class FlowEntryTypesEnumDeserializer extends StdDeserializer<FlowEntryTypesEnum> {
+    public FlowEntryTypesEnumDeserializer() {
+      super(FlowEntryTypesEnumDeserializer.class);
+    }
+
+    @Override
+    public FlowEntryTypesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return FlowEntryTypesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets flowEntryTypes
    */
+ @JsonDeserialize(using = FlowEntryTypesEnumDeserializer.class)
   public enum FlowEntryTypesEnum {
     DNIS("dnis"),
     DIRECT("direct"),
@@ -430,9 +553,22 @@ public class ViewFilter  implements Serializable {
   private List<String> callbackNumberList = new ArrayList<String>();
   private String callbackInterval = null;
 
+  private static class UsedRoutingTypesEnumDeserializer extends StdDeserializer<UsedRoutingTypesEnum> {
+    public UsedRoutingTypesEnumDeserializer() {
+      super(UsedRoutingTypesEnumDeserializer.class);
+    }
+
+    @Override
+    public UsedRoutingTypesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return UsedRoutingTypesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets usedRoutingTypes
    */
+ @JsonDeserialize(using = UsedRoutingTypesEnumDeserializer.class)
   public enum UsedRoutingTypesEnum {
     PREDICTIVE("Predictive"),
     PREFERRED("Preferred"),
@@ -468,9 +604,22 @@ public class ViewFilter  implements Serializable {
   }
   private List<UsedRoutingTypesEnum> usedRoutingTypes = new ArrayList<UsedRoutingTypesEnum>();
 
+  private static class RequestedRoutingTypesEnumDeserializer extends StdDeserializer<RequestedRoutingTypesEnum> {
+    public RequestedRoutingTypesEnumDeserializer() {
+      super(RequestedRoutingTypesEnumDeserializer.class);
+    }
+
+    @Override
+    public RequestedRoutingTypesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return RequestedRoutingTypesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets requestedRoutingTypes
    */
+ @JsonDeserialize(using = RequestedRoutingTypesEnumDeserializer.class)
   public enum RequestedRoutingTypesEnum {
     PREDICTIVE("Predictive"),
     PREFERRED("Preferred"),
@@ -509,9 +658,22 @@ public class ViewFilter  implements Serializable {
   private List<Transcripts> transcripts = new ArrayList<Transcripts>();
   private List<String> transcriptLanguages = new ArrayList<String>();
 
+  private static class ParticipantPurposesEnumDeserializer extends StdDeserializer<ParticipantPurposesEnum> {
+    public ParticipantPurposesEnumDeserializer() {
+      super(ParticipantPurposesEnumDeserializer.class);
+    }
+
+    @Override
+    public ParticipantPurposesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ParticipantPurposesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets participantPurposes
    */
+ @JsonDeserialize(using = ParticipantPurposesEnumDeserializer.class)
   public enum ParticipantPurposesEnum {
     INTERNAL("internal"),
     EXTERNAL("external");
@@ -549,9 +711,22 @@ public class ViewFilter  implements Serializable {
   private List<String> journeyOutcomeIds = new ArrayList<String>();
   private List<String> journeySegmentIds = new ArrayList<String>();
 
+  private static class JourneyActionMapTypesEnumDeserializer extends StdDeserializer<JourneyActionMapTypesEnum> {
+    public JourneyActionMapTypesEnumDeserializer() {
+      super(JourneyActionMapTypesEnumDeserializer.class);
+    }
+
+    @Override
+    public JourneyActionMapTypesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return JourneyActionMapTypesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets journeyActionMapTypes
    */
+ @JsonDeserialize(using = JourneyActionMapTypesEnumDeserializer.class)
   public enum JourneyActionMapTypesEnum {
     WEBCHAT("webchat"),
     WEBMESSAGINGOFFER("webMessagingOffer"),
@@ -586,9 +761,22 @@ public class ViewFilter  implements Serializable {
   }
   private List<JourneyActionMapTypesEnum> journeyActionMapTypes = new ArrayList<JourneyActionMapTypesEnum>();
 
+  private static class DevelopmentRoleListEnumDeserializer extends StdDeserializer<DevelopmentRoleListEnum> {
+    public DevelopmentRoleListEnumDeserializer() {
+      super(DevelopmentRoleListEnumDeserializer.class);
+    }
+
+    @Override
+    public DevelopmentRoleListEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DevelopmentRoleListEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets developmentRoleList
    */
+ @JsonDeserialize(using = DevelopmentRoleListEnumDeserializer.class)
   public enum DevelopmentRoleListEnum {
     CREATOR("Creator"),
     FACILITATOR("Facilitator"),
@@ -621,9 +809,22 @@ public class ViewFilter  implements Serializable {
   }
   private List<DevelopmentRoleListEnum> developmentRoleList = new ArrayList<DevelopmentRoleListEnum>();
 
+  private static class DevelopmentTypeListEnumDeserializer extends StdDeserializer<DevelopmentTypeListEnum> {
+    public DevelopmentTypeListEnumDeserializer() {
+      super(DevelopmentTypeListEnumDeserializer.class);
+    }
+
+    @Override
+    public DevelopmentTypeListEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DevelopmentTypeListEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets developmentTypeList
    */
+ @JsonDeserialize(using = DevelopmentTypeListEnumDeserializer.class)
   public enum DevelopmentTypeListEnum {
     INFORMATIONAL("Informational"),
     COACHING("Coaching");
@@ -655,9 +856,22 @@ public class ViewFilter  implements Serializable {
   }
   private List<DevelopmentTypeListEnum> developmentTypeList = new ArrayList<DevelopmentTypeListEnum>();
 
+  private static class DevelopmentStatusListEnumDeserializer extends StdDeserializer<DevelopmentStatusListEnum> {
+    public DevelopmentStatusListEnumDeserializer() {
+      super(DevelopmentStatusListEnumDeserializer.class);
+    }
+
+    @Override
+    public DevelopmentStatusListEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DevelopmentStatusListEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets developmentStatusList
    */
+ @JsonDeserialize(using = DevelopmentStatusListEnumDeserializer.class)
   public enum DevelopmentStatusListEnum {
     PLANNED("Planned"),
     SCHEDULED("Scheduled"),
@@ -693,9 +907,22 @@ public class ViewFilter  implements Serializable {
   private List<DevelopmentStatusListEnum> developmentStatusList = new ArrayList<DevelopmentStatusListEnum>();
   private List<String> developmentModuleIds = new ArrayList<String>();
 
+  private static class DevelopmentKeyTypeEnumDeserializer extends StdDeserializer<DevelopmentKeyTypeEnum> {
+    public DevelopmentKeyTypeEnumDeserializer() {
+      super(DevelopmentKeyTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public DevelopmentKeyTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DevelopmentKeyTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Represents due or completed to filter agent development view
    */
+ @JsonDeserialize(using = DevelopmentKeyTypeEnumDeserializer.class)
   public enum DevelopmentKeyTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DUE("Due"),

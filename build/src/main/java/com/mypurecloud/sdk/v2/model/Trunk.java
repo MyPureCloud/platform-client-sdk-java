@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -32,9 +38,22 @@ public class Trunk  implements Serializable {
   private String modifiedBy = null;
   private String createdBy = null;
 
+  private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
+    public StateEnumDeserializer() {
+      super(StateEnumDeserializer.class);
+    }
+
+    @Override
+    public StateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Indicates if the resource is active, inactive, or deleted.
    */
+ @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTIVE("active"),
@@ -70,9 +89,22 @@ public class Trunk  implements Serializable {
   private String modifiedByApp = null;
   private String createdByApp = null;
 
+  private static class TrunkTypeEnumDeserializer extends StdDeserializer<TrunkTypeEnum> {
+    public TrunkTypeEnumDeserializer() {
+      super(TrunkTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TrunkTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TrunkTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The type of this trunk.
    */
+ @JsonDeserialize(using = TrunkTypeEnumDeserializer.class)
   public enum TrunkTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     EXTERNAL("EXTERNAL"),
@@ -117,9 +149,22 @@ public class Trunk  implements Serializable {
   private List<TrunkMetricsRegisters> registersStatus = new ArrayList<TrunkMetricsRegisters>();
   private TrunkMetricsNetworkTypeIp ipStatus = null;
 
+  private static class OptionsEnabledStatusEnumDeserializer extends StdDeserializer<OptionsEnabledStatusEnum> {
+    public OptionsEnabledStatusEnumDeserializer() {
+      super(OptionsEnabledStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public OptionsEnabledStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OptionsEnabledStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Returns Enabled when the trunk base supports the availability interval and it has a value greater than 0.
    */
+ @JsonDeserialize(using = OptionsEnabledStatusEnumDeserializer.class)
   public enum OptionsEnabledStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ENABLED("ENABLED"),
@@ -153,9 +198,22 @@ public class Trunk  implements Serializable {
   }
   private OptionsEnabledStatusEnum optionsEnabledStatus = null;
 
+  private static class RegistersEnabledStatusEnumDeserializer extends StdDeserializer<RegistersEnabledStatusEnum> {
+    public RegistersEnabledStatusEnumDeserializer() {
+      super(RegistersEnabledStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public RegistersEnabledStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return RegistersEnabledStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Returns Enabled when the trunk base supports the registration interval and it has a value greater than 0.
    */
+ @JsonDeserialize(using = RegistersEnabledStatusEnumDeserializer.class)
   public enum RegistersEnabledStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ENABLED("ENABLED"),

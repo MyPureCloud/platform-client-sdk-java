@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationMessageEventTopicConversationRoutingData;
@@ -35,9 +41,22 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
   private Date startHoldTime = null;
   private String purpose = null;
 
+  private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
+    public StateEnumDeserializer() {
+      super(StateEnumDeserializer.class);
+    }
+
+    @Override
+    public StateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets state
    */
+ @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ALERTING("alerting"),
@@ -80,9 +99,22 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
   }
   private StateEnum state = null;
 
+  private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
+    public DirectionEnumDeserializer() {
+      super(DirectionEnumDeserializer.class);
+    }
+
+    @Override
+    public DirectionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DirectionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets direction
    */
+ @JsonDeserialize(using = DirectionEnumDeserializer.class)
   public enum DirectionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INBOUND("inbound"),
@@ -115,9 +147,22 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
   }
   private DirectionEnum direction = null;
 
+  private static class DisconnectTypeEnumDeserializer extends StdDeserializer<DisconnectTypeEnum> {
+    public DisconnectTypeEnumDeserializer() {
+      super(DisconnectTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public DisconnectTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DisconnectTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets disconnectType
    */
+ @JsonDeserialize(using = DisconnectTypeEnumDeserializer.class)
   public enum DisconnectTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ENDPOINT("endpoint"),
@@ -183,9 +228,22 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
   private String peer = null;
   private String screenRecordingState = null;
 
+  private static class FlaggedReasonEnumDeserializer extends StdDeserializer<FlaggedReasonEnum> {
+    public FlaggedReasonEnumDeserializer() {
+      super(FlaggedReasonEnumDeserializer.class);
+    }
+
+    @Override
+    public FlaggedReasonEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return FlaggedReasonEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets flaggedReason
    */
+ @JsonDeserialize(using = FlaggedReasonEnumDeserializer.class)
   public enum FlaggedReasonEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     GENERAL("general");
@@ -221,9 +279,22 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
   private Date endAcwTime = null;
   private List<QueueConversationMessageEventTopicMessageDetails> messages = new ArrayList<QueueConversationMessageEventTopicMessageDetails>();
 
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets type
    */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UNKNOWN("UNKNOWN"),

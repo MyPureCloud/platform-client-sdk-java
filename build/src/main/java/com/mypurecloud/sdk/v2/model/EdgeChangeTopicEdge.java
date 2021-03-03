@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -17,9 +23,22 @@ public class EdgeChangeTopicEdge  implements Serializable {
   
   private String id = null;
 
+  private static class OnlineStatusEnumDeserializer extends StdDeserializer<OnlineStatusEnum> {
+    public OnlineStatusEnumDeserializer() {
+      super(OnlineStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public OnlineStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OnlineStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets onlineStatus
    */
+ @JsonDeserialize(using = OnlineStatusEnumDeserializer.class)
   public enum OnlineStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ONLINE("ONLINE"),

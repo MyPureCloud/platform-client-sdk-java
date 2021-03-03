@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -16,9 +22,22 @@ import java.io.Serializable;
 public class DomainNetworkAddress  implements Serializable {
   
 
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The type of address.
    */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     IP("ip"),
@@ -55,9 +74,22 @@ public class DomainNetworkAddress  implements Serializable {
   private String address = null;
   private Boolean persistent = null;
 
+  private static class FamilyEnumDeserializer extends StdDeserializer<FamilyEnum> {
+    public FamilyEnumDeserializer() {
+      super(FamilyEnumDeserializer.class);
+    }
+
+    @Override
+    public FamilyEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return FamilyEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The address family for this address.
    */
+ @JsonDeserialize(using = FamilyEnumDeserializer.class)
   public enum FamilyEnum {
     OUTDATEDSDKVERSION(-1),
     NUMBER_2(2),

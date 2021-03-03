@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -27,9 +33,22 @@ public class WebChatMemberInfo  implements Serializable {
   private String phoneNumber = null;
   private String avatarImageUrl = null;
 
+  private static class RoleEnumDeserializer extends StdDeserializer<RoleEnum> {
+    public RoleEnumDeserializer() {
+      super(RoleEnumDeserializer.class);
+    }
+
+    @Override
+    public RoleEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return RoleEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The role of the member, one of [agent, customer, acd, workflow]
    */
+ @JsonDeserialize(using = RoleEnumDeserializer.class)
   public enum RoleEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     AGENT("AGENT"),
@@ -68,9 +87,22 @@ public class WebChatMemberInfo  implements Serializable {
   private Boolean authenticatedGuest = null;
   private Map<String, String> customFields = null;
 
+  private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
+    public StateEnumDeserializer() {
+      super(StateEnumDeserializer.class);
+    }
+
+    @Override
+    public StateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The connection state of this member.
    */
+ @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CONNECTED("CONNECTED"),

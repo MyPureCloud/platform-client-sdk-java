@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmMoveAgentsCompleteTopicUserReference;
@@ -18,9 +24,22 @@ public class WfmMoveAgentsCompleteTopicWfmMoveAgentData  implements Serializable
   
   private WfmMoveAgentsCompleteTopicUserReference user = null;
 
+  private static class ResultEnumDeserializer extends StdDeserializer<ResultEnum> {
+    public ResultEnumDeserializer() {
+      super(ResultEnumDeserializer.class);
+    }
+
+    @Override
+    public ResultEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ResultEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets result
    */
+ @JsonDeserialize(using = ResultEnumDeserializer.class)
   public enum ResultEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ALREADYMOVED("AlreadyMoved"),

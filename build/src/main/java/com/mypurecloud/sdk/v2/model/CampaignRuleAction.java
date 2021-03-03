@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CampaignRuleActionEntities;
@@ -20,9 +26,22 @@ public class CampaignRuleAction  implements Serializable {
   private String id = null;
   private CampaignRuleParameters parameters = null;
 
+  private static class ActionTypeEnumDeserializer extends StdDeserializer<ActionTypeEnum> {
+    public ActionTypeEnumDeserializer() {
+      super(ActionTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ActionTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ActionTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The action to take on the campaignRuleActionEntities.
    */
+ @JsonDeserialize(using = ActionTypeEnumDeserializer.class)
   public enum ActionTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TURNONCAMPAIGN("turnOnCampaign"),

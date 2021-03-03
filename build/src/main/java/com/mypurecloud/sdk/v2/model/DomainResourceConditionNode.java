@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainResourceConditionNode;
@@ -21,9 +27,22 @@ public class DomainResourceConditionNode  implements Serializable {
   
   private String variableName = null;
 
+  private static class OperatorEnumDeserializer extends StdDeserializer<OperatorEnum> {
+    public OperatorEnumDeserializer() {
+      super(OperatorEnumDeserializer.class);
+    }
+
+    @Override
+    public OperatorEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OperatorEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets operator
    */
+ @JsonDeserialize(using = OperatorEnumDeserializer.class)
   public enum OperatorEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     EQ("EQ"),
@@ -61,9 +80,22 @@ public class DomainResourceConditionNode  implements Serializable {
   private OperatorEnum operator = null;
   private List<DomainResourceConditionValue> operands = new ArrayList<DomainResourceConditionValue>();
 
+  private static class ConjunctionEnumDeserializer extends StdDeserializer<ConjunctionEnum> {
+    public ConjunctionEnumDeserializer() {
+      super(ConjunctionEnumDeserializer.class);
+    }
+
+    @Override
+    public ConjunctionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ConjunctionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets conjunction
    */
+ @JsonDeserialize(using = ConjunctionEnumDeserializer.class)
   public enum ConjunctionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     AND("AND"),

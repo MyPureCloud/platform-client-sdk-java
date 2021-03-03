@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -22,9 +28,22 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
   private String fromAddress = null;
   private String toAddress = null;
 
+  private static class MessengerTypeEnumDeserializer extends StdDeserializer<MessengerTypeEnum> {
+    public MessengerTypeEnumDeserializer() {
+      super(MessengerTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MessengerTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MessengerTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Type of text messenger.
    */
+ @JsonDeserialize(using = MessengerTypeEnumDeserializer.class)
   public enum MessengerTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SMS("sms"),

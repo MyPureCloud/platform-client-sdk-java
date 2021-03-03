@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -19,9 +25,22 @@ public class KnowledgeSearchRequest  implements Serializable {
   private Integer pageSize = null;
   private Integer pageNumber = null;
 
+  private static class DocumentTypeEnumDeserializer extends StdDeserializer<DocumentTypeEnum> {
+    public DocumentTypeEnumDeserializer() {
+      super(DocumentTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public DocumentTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DocumentTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Document type to be used while searching
    */
+ @JsonDeserialize(using = DocumentTypeEnumDeserializer.class)
   public enum DocumentTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     FAQ("Faq");

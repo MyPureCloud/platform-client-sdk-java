@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -16,9 +22,22 @@ import java.io.Serializable;
 public class CampaignRuleParameters  implements Serializable {
   
 
+  private static class OperatorEnumDeserializer extends StdDeserializer<OperatorEnum> {
+    public OperatorEnumDeserializer() {
+      super(OperatorEnumDeserializer.class);
+    }
+
+    @Override
+    public OperatorEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OperatorEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The operator for comparison. Required for a CampaignRuleCondition.
    */
+ @JsonDeserialize(using = OperatorEnumDeserializer.class)
   public enum OperatorEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     EQUALS("equals"),
@@ -55,9 +74,22 @@ public class CampaignRuleParameters  implements Serializable {
   private OperatorEnum operator = null;
   private String value = null;
 
+  private static class PriorityEnumDeserializer extends StdDeserializer<PriorityEnum> {
+    public PriorityEnumDeserializer() {
+      super(PriorityEnumDeserializer.class);
+    }
+
+    @Override
+    public PriorityEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return PriorityEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The priority to set a campaign to. Required for the 'setCampaignPriority' action.
    */
+ @JsonDeserialize(using = PriorityEnumDeserializer.class)
   public enum PriorityEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     _1("1"),
@@ -93,9 +125,22 @@ public class CampaignRuleParameters  implements Serializable {
   }
   private PriorityEnum priority = null;
 
+  private static class DialingModeEnumDeserializer extends StdDeserializer<DialingModeEnum> {
+    public DialingModeEnumDeserializer() {
+      super(DialingModeEnumDeserializer.class);
+    }
+
+    @Override
+    public DialingModeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DialingModeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The dialing mode to set a campaign to. Required for the 'setCampaignDialingMode' action.
    */
+ @JsonDeserialize(using = DialingModeEnumDeserializer.class)
   public enum DialingModeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     AGENTLESS("agentless"),

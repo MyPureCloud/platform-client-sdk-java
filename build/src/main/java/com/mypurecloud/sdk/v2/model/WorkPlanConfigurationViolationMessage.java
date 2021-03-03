@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WorkPlanValidationMessageArgument;
@@ -19,9 +25,22 @@ import java.io.Serializable;
 public class WorkPlanConfigurationViolationMessage  implements Serializable {
   
 
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Type of configuration violation message for this work plan
    */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTIVITIESOVERLAP("ActivitiesOverlap"),
@@ -87,9 +106,22 @@ public class WorkPlanConfigurationViolationMessage  implements Serializable {
   private TypeEnum type = null;
   private List<WorkPlanValidationMessageArgument> arguments = new ArrayList<WorkPlanValidationMessageArgument>();
 
+  private static class SeverityEnumDeserializer extends StdDeserializer<SeverityEnum> {
+    public SeverityEnumDeserializer() {
+      super(SeverityEnumDeserializer.class);
+    }
+
+    @Override
+    public SeverityEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SeverityEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Severity of the message. A message with Error severity indicates the scheduler won't be able to produce schedules and thus the work plan is invalid.
    */
+ @JsonDeserialize(using = SeverityEnumDeserializer.class)
   public enum SeverityEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INFORMATION("Information"),

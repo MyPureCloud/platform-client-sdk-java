@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AnalyticsFlowOutcome;
@@ -22,9 +28,22 @@ public class AnalyticsFlow  implements Serializable {
   private String flowName = null;
   private String flowVersion = null;
 
+  private static class FlowTypeEnumDeserializer extends StdDeserializer<FlowTypeEnum> {
+    public FlowTypeEnumDeserializer() {
+      super(FlowTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public FlowTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return FlowTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The type of this flow
    */
+ @JsonDeserialize(using = FlowTypeEnumDeserializer.class)
   public enum FlowTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BOT("BOT"),
@@ -69,9 +88,22 @@ public class AnalyticsFlow  implements Serializable {
   private String exitReason = null;
   private String entryReason = null;
 
+  private static class EntryTypeEnumDeserializer extends StdDeserializer<EntryTypeEnum> {
+    public EntryTypeEnumDeserializer() {
+      super(EntryTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public EntryTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return EntryTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The entry type for this flow
    */
+ @JsonDeserialize(using = EntryTypeEnumDeserializer.class)
   public enum EntryTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DNIS("dnis"),

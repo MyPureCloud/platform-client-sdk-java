@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.PatchCallToAction;
@@ -19,9 +25,22 @@ public class PatchContentOffer  implements Serializable {
   
   private String imageUrl = null;
 
+  private static class DisplayModeEnumDeserializer extends StdDeserializer<DisplayModeEnum> {
+    public DisplayModeEnumDeserializer() {
+      super(DisplayModeEnumDeserializer.class);
+    }
+
+    @Override
+    public DisplayModeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DisplayModeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The display mode of Genesys Widgets when displaying content offer.
    */
+ @JsonDeserialize(using = DisplayModeEnumDeserializer.class)
   public enum DisplayModeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     MODAL("Modal"),
@@ -55,9 +74,22 @@ public class PatchContentOffer  implements Serializable {
   }
   private DisplayModeEnum displayMode = null;
 
+  private static class LayoutModeEnumDeserializer extends StdDeserializer<LayoutModeEnum> {
+    public LayoutModeEnumDeserializer() {
+      super(LayoutModeEnumDeserializer.class);
+    }
+
+    @Override
+    public LayoutModeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return LayoutModeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The layout mode of the text shown to the user when displaying content offer.
    */
+ @JsonDeserialize(using = LayoutModeEnumDeserializer.class)
   public enum LayoutModeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TEXTONLY("TextOnly"),

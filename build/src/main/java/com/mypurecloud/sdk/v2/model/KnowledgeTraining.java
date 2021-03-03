@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.KnowledgeBase;
@@ -21,9 +27,22 @@ public class KnowledgeTraining  implements Serializable {
   private Date dateTriggered = null;
   private Date dateCompleted = null;
 
+  private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
+    public StatusEnumDeserializer() {
+      super(StatusEnumDeserializer.class);
+    }
+
+    @Override
+    public StatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Training status.
    */
+ @JsonDeserialize(using = StatusEnumDeserializer.class)
   public enum StatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     QUEUED("Queued"),
@@ -61,9 +80,22 @@ public class KnowledgeTraining  implements Serializable {
   private KnowledgeBase knowledgeBase = null;
   private String errorMessage = null;
 
+  private static class KnowledgeDocumentsStateEnumDeserializer extends StdDeserializer<KnowledgeDocumentsStateEnum> {
+    public KnowledgeDocumentsStateEnumDeserializer() {
+      super(KnowledgeDocumentsStateEnumDeserializer.class);
+    }
+
+    @Override
+    public KnowledgeDocumentsStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return KnowledgeDocumentsStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * State of the Trained Documents, which can be one of these Draft, Active, Discarded, Archived.
    */
+ @JsonDeserialize(using = KnowledgeDocumentsStateEnumDeserializer.class)
   public enum KnowledgeDocumentsStateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DRAFT("Draft"),

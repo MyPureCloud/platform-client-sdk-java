@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.QueueConversationCallEventTopicCallMediaParticipant;
@@ -23,9 +29,22 @@ public class QueueConversationCallEventTopicCallConversation  implements Seriali
   private List<QueueConversationCallEventTopicCallMediaParticipant> participants = new ArrayList<QueueConversationCallEventTopicCallMediaParticipant>();
   private List<String> otherMediaUris = new ArrayList<String>();
 
+  private static class RecordingStateEnumDeserializer extends StdDeserializer<RecordingStateEnum> {
+    public RecordingStateEnumDeserializer() {
+      super(RecordingStateEnumDeserializer.class);
+    }
+
+    @Override
+    public RecordingStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return RecordingStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets recordingState
    */
+ @JsonDeserialize(using = RecordingStateEnumDeserializer.class)
   public enum RecordingStateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NONE("none"),

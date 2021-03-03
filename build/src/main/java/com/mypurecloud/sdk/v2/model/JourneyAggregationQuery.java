@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.JourneyAggregateQueryFilter;
@@ -23,9 +29,22 @@ public class JourneyAggregationQuery  implements Serializable {
   private String granularity = null;
   private String timeZone = null;
 
+  private static class GroupByEnumDeserializer extends StdDeserializer<GroupByEnum> {
+    public GroupByEnumDeserializer() {
+      super(GroupByEnumDeserializer.class);
+    }
+
+    @Override
+    public GroupByEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return GroupByEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets groupBy
    */
+ @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
     JOURNEYACTIONID("journeyActionId"),
     JOURNEYACTIONMAPID("journeyActionMapId"),
@@ -71,9 +90,22 @@ public class JourneyAggregationQuery  implements Serializable {
   private List<GroupByEnum> groupBy = new ArrayList<GroupByEnum>();
   private JourneyAggregateQueryFilter filter = null;
 
+  private static class MetricsEnumDeserializer extends StdDeserializer<MetricsEnum> {
+    public MetricsEnumDeserializer() {
+      super(MetricsEnumDeserializer.class);
+    }
+
+    @Override
+    public MetricsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MetricsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets metrics
    */
+ @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
     NJOURNEYOUTCOMESACHIEVED("nJourneyOutcomesAchieved"),
     NJOURNEYOUTCOMESATTRIBUTED("nJourneyOutcomesAttributed"),
@@ -122,9 +154,22 @@ public class JourneyAggregationQuery  implements Serializable {
   private Boolean flattenMultivaluedDimensions = null;
   private List<JourneyAggregationView> views = new ArrayList<JourneyAggregationView>();
 
+  private static class AlternateTimeDimensionEnumDeserializer extends StdDeserializer<AlternateTimeDimensionEnum> {
+    public AlternateTimeDimensionEnumDeserializer() {
+      super(AlternateTimeDimensionEnumDeserializer.class);
+    }
+
+    @Override
+    public AlternateTimeDimensionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return AlternateTimeDimensionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.
    */
+ @JsonDeserialize(using = AlternateTimeDimensionEnumDeserializer.class)
   public enum AlternateTimeDimensionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     EVENTTIME("eventTime");

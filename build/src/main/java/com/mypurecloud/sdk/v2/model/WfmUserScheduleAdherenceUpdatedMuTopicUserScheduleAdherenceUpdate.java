@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmUserScheduleAdherenceUpdatedMuTopicQueueReference;
@@ -28,9 +34,22 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate  
   private String systemPresence = null;
   private String organizationSecondaryPresenceId = null;
 
+  private static class RoutingStatusEnumDeserializer extends StdDeserializer<RoutingStatusEnum> {
+    public RoutingStatusEnumDeserializer() {
+      super(RoutingStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public RoutingStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return RoutingStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets routingStatus
    */
+ @JsonDeserialize(using = RoutingStatusEnumDeserializer.class)
   public enum RoutingStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     _EMPTY_("__EMPTY__"),
@@ -70,9 +89,22 @@ public class WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate  
   private String actualActivityCategory = null;
   private Boolean isOutOfOffice = null;
 
+  private static class AdherenceStateEnumDeserializer extends StdDeserializer<AdherenceStateEnum> {
+    public AdherenceStateEnumDeserializer() {
+      super(AdherenceStateEnumDeserializer.class);
+    }
+
+    @Override
+    public AdherenceStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return AdherenceStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets adherenceState
    */
+ @JsonDeserialize(using = AdherenceStateEnumDeserializer.class)
   public enum AdherenceStateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INADHERENCE("InAdherence"),

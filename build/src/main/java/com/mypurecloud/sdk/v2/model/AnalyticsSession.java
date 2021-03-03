@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationSegment;
@@ -24,9 +30,22 @@ import java.io.Serializable;
 public class AnalyticsSession  implements Serializable {
   
 
+  private static class MediaTypeEnumDeserializer extends StdDeserializer<MediaTypeEnum> {
+    public MediaTypeEnumDeserializer() {
+      super(MediaTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MediaTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MediaTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The session media type
    */
+ @JsonDeserialize(using = MediaTypeEnumDeserializer.class)
   public enum MediaTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     VOICE("voice"),
@@ -70,9 +89,22 @@ public class AnalyticsSession  implements Serializable {
   private String addressFrom = null;
   private String addressTo = null;
 
+  private static class MessageTypeEnumDeserializer extends StdDeserializer<MessageTypeEnum> {
+    public MessageTypeEnumDeserializer() {
+      super(MessageTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MessageTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MessageTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Message type for messaging services such as sms
    */
+ @JsonDeserialize(using = MessageTypeEnumDeserializer.class)
   public enum MessageTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SMS("sms"),
@@ -108,9 +140,22 @@ public class AnalyticsSession  implements Serializable {
   private MessageTypeEnum messageType = null;
   private String ani = null;
 
+  private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
+    public DirectionEnumDeserializer() {
+      super(DirectionEnumDeserializer.class);
+    }
+
+    @Override
+    public DirectionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DirectionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Direction
    */
+ @JsonDeserialize(using = DirectionEnumDeserializer.class)
   public enum DirectionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INBOUND("inbound"),
@@ -188,9 +233,22 @@ public class AnalyticsSession  implements Serializable {
   private String flowInType = null;
   private String flowOutType = null;
 
+  private static class RequestedRoutingsEnumDeserializer extends StdDeserializer<RequestedRoutingsEnum> {
+    public RequestedRoutingsEnumDeserializer() {
+      super(RequestedRoutingsEnumDeserializer.class);
+    }
+
+    @Override
+    public RequestedRoutingsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return RequestedRoutingsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets requestedRoutings
    */
+ @JsonDeserialize(using = RequestedRoutingsEnumDeserializer.class)
   public enum RequestedRoutingsEnum {
     PREDICTIVE("Predictive"),
     PREFERRED("Preferred"),
@@ -226,9 +284,22 @@ public class AnalyticsSession  implements Serializable {
   }
   private List<RequestedRoutingsEnum> requestedRoutings = new ArrayList<RequestedRoutingsEnum>();
 
+  private static class UsedRoutingEnumDeserializer extends StdDeserializer<UsedRoutingEnum> {
+    public UsedRoutingEnumDeserializer() {
+      super(UsedRoutingEnumDeserializer.class);
+    }
+
+    @Override
+    public UsedRoutingEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return UsedRoutingEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Complete routing method
    */
+ @JsonDeserialize(using = UsedRoutingEnumDeserializer.class)
   public enum UsedRoutingEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     PREDICTIVE("Predictive"),

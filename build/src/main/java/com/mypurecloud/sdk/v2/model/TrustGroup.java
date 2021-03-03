@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.GroupContact;
@@ -28,9 +34,22 @@ public class TrustGroup  implements Serializable {
   private Date dateModified = null;
   private Long memberCount = null;
 
+  private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
+    public StateEnumDeserializer() {
+      super(StateEnumDeserializer.class);
+    }
+
+    @Override
+    public StateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Active, inactive, or deleted state.
    */
+ @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTIVE("active"),
@@ -65,9 +84,22 @@ public class TrustGroup  implements Serializable {
   private StateEnum state = null;
   private Integer version = null;
 
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Type of group.
    */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     OFFICIAL("official"),
@@ -103,9 +135,22 @@ public class TrustGroup  implements Serializable {
   private List<GroupContact> addresses = new ArrayList<GroupContact>();
   private Boolean rulesVisible = null;
 
+  private static class VisibilityEnumDeserializer extends StdDeserializer<VisibilityEnum> {
+    public VisibilityEnumDeserializer() {
+      super(VisibilityEnumDeserializer.class);
+    }
+
+    @Override
+    public VisibilityEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return VisibilityEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Who can view this group
    */
+ @JsonDeserialize(using = VisibilityEnumDeserializer.class)
   public enum VisibilityEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     PUBLIC("public"),

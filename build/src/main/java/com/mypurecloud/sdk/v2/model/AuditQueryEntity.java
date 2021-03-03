@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -18,9 +24,22 @@ import java.io.Serializable;
 public class AuditQueryEntity  implements Serializable {
   
 
+  private static class NameEnumDeserializer extends StdDeserializer<NameEnum> {
+    public NameEnumDeserializer() {
+      super(NameEnumDeserializer.class);
+    }
+
+    @Override
+    public NameEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return NameEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Name of the Entity
    */
+ @JsonDeserialize(using = NameEnumDeserializer.class)
   public enum NameEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DOCUMENT("Document"),
@@ -115,9 +134,22 @@ public class AuditQueryEntity  implements Serializable {
   }
   private NameEnum name = null;
 
+  private static class ActionsEnumDeserializer extends StdDeserializer<ActionsEnum> {
+    public ActionsEnumDeserializer() {
+      super(ActionsEnumDeserializer.class);
+    }
+
+    @Override
+    public ActionsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ActionsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets actions
    */
+ @JsonDeserialize(using = ActionsEnumDeserializer.class)
   public enum ActionsEnum {
     CREATE("Create"),
     VIEW("View"),

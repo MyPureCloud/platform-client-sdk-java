@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -18,9 +24,22 @@ public class WhatsAppIntegrationUpdateRequest  implements Serializable {
   private String id = null;
   private String name = null;
 
+  private static class ActionEnumDeserializer extends StdDeserializer<ActionEnum> {
+    public ActionEnumDeserializer() {
+      super(ActionEnumDeserializer.class);
+    }
+
+    @Override
+    public ActionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ActionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The action used to activate and then confirm a WhatsApp Integration.
    */
+ @JsonDeserialize(using = ActionEnumDeserializer.class)
   public enum ActionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTIVATE("Activate"),
@@ -53,9 +72,22 @@ public class WhatsAppIntegrationUpdateRequest  implements Serializable {
   }
   private ActionEnum action = null;
 
+  private static class AuthenticationMethodEnumDeserializer extends StdDeserializer<AuthenticationMethodEnum> {
+    public AuthenticationMethodEnumDeserializer() {
+      super(AuthenticationMethodEnumDeserializer.class);
+    }
+
+    @Override
+    public AuthenticationMethodEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return AuthenticationMethodEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The authentication method used to confirm a WhatsApp Integration activation. If action is set to Activate, then authenticationMethod is a required field. 
    */
+ @JsonDeserialize(using = AuthenticationMethodEnumDeserializer.class)
   public enum AuthenticationMethodEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SMS("Sms"),

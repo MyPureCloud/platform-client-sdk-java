@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Destination;
@@ -17,9 +23,22 @@ import java.io.Serializable;
 public class ConsultTransfer  implements Serializable {
   
 
+  private static class SpeakToEnumDeserializer extends StdDeserializer<SpeakToEnum> {
+    public SpeakToEnumDeserializer() {
+      super(SpeakToEnumDeserializer.class);
+    }
+
+    @Override
+    public SpeakToEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SpeakToEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Determines to whom the initiating participant is speaking. Defaults to DESTINATION
    */
+ @JsonDeserialize(using = SpeakToEnumDeserializer.class)
   public enum SpeakToEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DESTINATION("DESTINATION"),

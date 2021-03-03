@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ShiftTradeActivityRule;
@@ -23,9 +29,22 @@ public class ShiftTradeSettings  implements Serializable {
   private Boolean allowDirectTrades = null;
   private Integer minHoursInFuture = null;
 
+  private static class UnequalPaidEnumDeserializer extends StdDeserializer<UnequalPaidEnum> {
+    public UnequalPaidEnumDeserializer() {
+      super(UnequalPaidEnumDeserializer.class);
+    }
+
+    @Override
+    public UnequalPaidEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return UnequalPaidEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * How to handle shift trades which involve unequal paid times
    */
+ @JsonDeserialize(using = UnequalPaidEnumDeserializer.class)
   public enum UnequalPaidEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ALLOW("Allow"),
@@ -59,9 +78,22 @@ public class ShiftTradeSettings  implements Serializable {
   }
   private UnequalPaidEnum unequalPaid = null;
 
+  private static class OneSidedEnumDeserializer extends StdDeserializer<OneSidedEnum> {
+    public OneSidedEnumDeserializer() {
+      super(OneSidedEnumDeserializer.class);
+    }
+
+    @Override
+    public OneSidedEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OneSidedEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * How to handle one-sided shift trades
    */
+ @JsonDeserialize(using = OneSidedEnumDeserializer.class)
   public enum OneSidedEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ALLOW("Allow"),
@@ -95,9 +127,22 @@ public class ShiftTradeSettings  implements Serializable {
   }
   private OneSidedEnum oneSided = null;
 
+  private static class WeeklyMinPaidViolationsEnumDeserializer extends StdDeserializer<WeeklyMinPaidViolationsEnum> {
+    public WeeklyMinPaidViolationsEnumDeserializer() {
+      super(WeeklyMinPaidViolationsEnumDeserializer.class);
+    }
+
+    @Override
+    public WeeklyMinPaidViolationsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return WeeklyMinPaidViolationsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * How to handle shift trades which result in violations of weekly minimum paid time constraint
    */
+ @JsonDeserialize(using = WeeklyMinPaidViolationsEnumDeserializer.class)
   public enum WeeklyMinPaidViolationsEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ALLOW("Allow"),
@@ -131,9 +176,22 @@ public class ShiftTradeSettings  implements Serializable {
   }
   private WeeklyMinPaidViolationsEnum weeklyMinPaidViolations = null;
 
+  private static class WeeklyMaxPaidViolationsEnumDeserializer extends StdDeserializer<WeeklyMaxPaidViolationsEnum> {
+    public WeeklyMaxPaidViolationsEnumDeserializer() {
+      super(WeeklyMaxPaidViolationsEnumDeserializer.class);
+    }
+
+    @Override
+    public WeeklyMaxPaidViolationsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return WeeklyMaxPaidViolationsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * How to handle shift trades which result in violations of weekly maximum paid time constraint
    */
+ @JsonDeserialize(using = WeeklyMaxPaidViolationsEnumDeserializer.class)
   public enum WeeklyMaxPaidViolationsEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ALLOW("Allow"),

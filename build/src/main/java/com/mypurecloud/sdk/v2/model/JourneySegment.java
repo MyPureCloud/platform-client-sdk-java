@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Context;
@@ -25,9 +31,22 @@ public class JourneySegment  implements Serializable {
   private String description = null;
   private String color = null;
 
+  private static class ScopeEnumDeserializer extends StdDeserializer<ScopeEnum> {
+    public ScopeEnumDeserializer() {
+      super(ScopeEnumDeserializer.class);
+    }
+
+    @Override
+    public ScopeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ScopeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The target entity that a segment applies to.
    */
+ @JsonDeserialize(using = ScopeEnumDeserializer.class)
   public enum ScopeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SESSION("Session"),

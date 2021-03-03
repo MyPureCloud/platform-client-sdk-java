@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -16,9 +22,22 @@ import java.io.Serializable;
 public class FreeSeatingConfiguration  implements Serializable {
   
 
+  private static class FreeSeatingStateEnumDeserializer extends StdDeserializer<FreeSeatingStateEnum> {
+    public FreeSeatingStateEnumDeserializer() {
+      super(FreeSeatingStateEnumDeserializer.class);
+    }
+
+    @Override
+    public FreeSeatingStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return FreeSeatingStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The FreeSeatingState for FreeSeatingConfiguration. Can be ON, OFF, or PARTIAL. ON meaning disassociate the user after the ttl expires, OFF meaning never disassociate the user, and PARTIAL meaning only disassociate when a user explicitly clicks log out.
    */
+ @JsonDeserialize(using = FreeSeatingStateEnumDeserializer.class)
   public enum FreeSeatingStateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ON("ON"),

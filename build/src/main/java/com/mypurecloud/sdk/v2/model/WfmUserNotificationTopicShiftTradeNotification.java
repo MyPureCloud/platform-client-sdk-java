@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WfmUserNotificationTopicUserReference;
@@ -21,9 +27,22 @@ public class WfmUserNotificationTopicShiftTradeNotification  implements Serializ
   private String tradeId = null;
   private Boolean oneSided = null;
 
+  private static class NewStateEnumDeserializer extends StdDeserializer<NewStateEnum> {
+    public NewStateEnumDeserializer() {
+      super(NewStateEnumDeserializer.class);
+    }
+
+    @Override
+    public NewStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return NewStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets newState
    */
+ @JsonDeserialize(using = NewStateEnumDeserializer.class)
   public enum NewStateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UNMATCHED("Unmatched"),

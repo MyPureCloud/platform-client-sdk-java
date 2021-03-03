@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -22,9 +28,22 @@ public class WhatsAppIntegration  implements Serializable {
   private String name = null;
   private String phoneNumber = null;
 
+  private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
+    public StatusEnumDeserializer() {
+      super(StatusEnumDeserializer.class);
+    }
+
+    @Override
+    public StatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The status of the WhatsApp Integration
    */
+ @JsonDeserialize(using = StatusEnumDeserializer.class)
   public enum StatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTIVE("Active"),
@@ -68,9 +87,22 @@ public class WhatsAppIntegration  implements Serializable {
   private DomainEntityRef modifiedBy = null;
   private Integer version = null;
 
+  private static class ActivationStatusCodeEnumDeserializer extends StdDeserializer<ActivationStatusCodeEnum> {
+    public ActivationStatusCodeEnumDeserializer() {
+      super(ActivationStatusCodeEnumDeserializer.class);
+    }
+
+    @Override
+    public ActivationStatusCodeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ActivationStatusCodeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The status code of WhatsApp Integration activation process
    */
+ @JsonDeserialize(using = ActivationStatusCodeEnumDeserializer.class)
   public enum ActivationStatusCodeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CODESENT("CodeSent"),
@@ -108,9 +140,22 @@ public class WhatsAppIntegration  implements Serializable {
   private ActivationStatusCodeEnum activationStatusCode = null;
   private ErrorBody activationErrorInfo = null;
 
+  private static class CreateStatusEnumDeserializer extends StdDeserializer<CreateStatusEnum> {
+    public CreateStatusEnumDeserializer() {
+      super(CreateStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public CreateStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CreateStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Status of asynchronous create operation
    */
+ @JsonDeserialize(using = CreateStatusEnumDeserializer.class)
   public enum CreateStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INITIATED("Initiated"),

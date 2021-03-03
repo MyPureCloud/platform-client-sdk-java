@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AnalyticsQueryAggregation;
@@ -27,9 +33,22 @@ public class UserDetailsQuery  implements Serializable {
   private List<PresenceDetailQueryFilter> presenceFilters = new ArrayList<PresenceDetailQueryFilter>();
   private List<RoutingStatusDetailQueryFilter> routingStatusFilters = new ArrayList<RoutingStatusDetailQueryFilter>();
 
+  private static class OrderEnumDeserializer extends StdDeserializer<OrderEnum> {
+    public OrderEnumDeserializer() {
+      super(OrderEnumDeserializer.class);
+    }
+
+    @Override
+    public OrderEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OrderEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Sort the result set in ascending/descending order. Default is ascending
    */
+ @JsonDeserialize(using = OrderEnumDeserializer.class)
   public enum OrderEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ASC("asc"),

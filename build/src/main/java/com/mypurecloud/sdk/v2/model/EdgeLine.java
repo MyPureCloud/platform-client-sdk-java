@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -32,9 +38,22 @@ public class EdgeLine  implements Serializable {
   private String modifiedBy = null;
   private String createdBy = null;
 
+  private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
+    public StateEnumDeserializer() {
+      super(StateEnumDeserializer.class);
+    }
+
+    @Override
+    public StateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Indicates if the resource is active, inactive, or deleted.
    */
+ @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTIVE("active"),
@@ -74,9 +93,22 @@ public class EdgeLine  implements Serializable {
   private Edge edge = null;
   private EdgeGroup edgeGroup = null;
 
+  private static class LineTypeEnumDeserializer extends StdDeserializer<LineTypeEnum> {
+    public LineTypeEnumDeserializer() {
+      super(LineTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public LineTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return LineTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets lineType
    */
+ @JsonDeserialize(using = LineTypeEnumDeserializer.class)
   public enum LineTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TIE("TIE"),

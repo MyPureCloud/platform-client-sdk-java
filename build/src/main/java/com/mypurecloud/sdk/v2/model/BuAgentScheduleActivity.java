@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -24,9 +30,22 @@ public class BuAgentScheduleActivity  implements Serializable {
   private String timeOffRequestId = null;
   private String externalActivityId = null;
 
+  private static class ExternalActivityTypeEnumDeserializer extends StdDeserializer<ExternalActivityTypeEnum> {
+    public ExternalActivityTypeEnumDeserializer() {
+      super(ExternalActivityTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ExternalActivityTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ExternalActivityTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The type of the external activity associated with this activity, if applicable
    */
+ @JsonDeserialize(using = ExternalActivityTypeEnumDeserializer.class)
   public enum ExternalActivityTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     COACHING("Coaching");

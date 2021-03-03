@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationDetailQueryFilter;
@@ -30,9 +36,22 @@ public class AsyncConversationQuery  implements Serializable {
   private List<SurveyDetailQueryFilter> surveyFilters = new ArrayList<SurveyDetailQueryFilter>();
   private List<ResolutionDetailQueryFilter> resolutionFilters = new ArrayList<ResolutionDetailQueryFilter>();
 
+  private static class OrderEnumDeserializer extends StdDeserializer<OrderEnum> {
+    public OrderEnumDeserializer() {
+      super(OrderEnumDeserializer.class);
+    }
+
+    @Override
+    public OrderEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OrderEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Sort the result set in ascending/descending order. Default is ascending
    */
+ @JsonDeserialize(using = OrderEnumDeserializer.class)
   public enum OrderEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ASC("asc"),
@@ -65,9 +84,22 @@ public class AsyncConversationQuery  implements Serializable {
   }
   private OrderEnum order = null;
 
+  private static class OrderByEnumDeserializer extends StdDeserializer<OrderByEnum> {
+    public OrderByEnumDeserializer() {
+      super(OrderByEnumDeserializer.class);
+    }
+
+    @Override
+    public OrderByEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OrderByEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Specify which data element within the result set to use for sorting. The options  to use as a basis for sorting the results: conversationStart, segmentStart, and segmentEnd. If not specified, the default is conversationStart
    */
+ @JsonDeserialize(using = OrderByEnumDeserializer.class)
   public enum OrderByEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CONVERSATIONSTART("conversationStart"),

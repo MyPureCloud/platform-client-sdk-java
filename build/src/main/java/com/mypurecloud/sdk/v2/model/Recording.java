@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Annotation;
@@ -38,9 +44,22 @@ public class Recording  implements Serializable {
   private List<RecordingEmailMessage> emailTranscript = new ArrayList<RecordingEmailMessage>();
   private List<RecordingMessagingMessage> messagingTranscript = new ArrayList<RecordingMessagingMessage>();
 
+  private static class FileStateEnumDeserializer extends StdDeserializer<FileStateEnum> {
+    public FileStateEnumDeserializer() {
+      super(FileStateEnumDeserializer.class);
+    }
+
+    @Override
+    public FileStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return FileStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Represents the current file state for a recording. Examples: Uploading, Archived, etc
    */
+ @JsonDeserialize(using = FileStateEnumDeserializer.class)
   public enum FileStateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ARCHIVED("ARCHIVED"),
@@ -83,9 +102,22 @@ public class Recording  implements Serializable {
   private Long actualTranscodeTimeMs = null;
   private Date archiveDate = null;
 
+  private static class ArchiveMediumEnumDeserializer extends StdDeserializer<ArchiveMediumEnum> {
+    public ArchiveMediumEnumDeserializer() {
+      super(ArchiveMediumEnumDeserializer.class);
+    }
+
+    @Override
+    public ArchiveMediumEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ArchiveMediumEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The type of archive medium used. Example: CloudArchive
    */
+ @JsonDeserialize(using = ArchiveMediumEnumDeserializer.class)
   public enum ArchiveMediumEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CLOUDARCHIVE("CLOUDARCHIVE");
@@ -126,9 +158,22 @@ public class Recording  implements Serializable {
   private String sessionId = null;
   private List<User> users = new ArrayList<User>();
 
+  private static class RecordingFileRoleEnumDeserializer extends StdDeserializer<RecordingFileRoleEnum> {
+    public RecordingFileRoleEnumDeserializer() {
+      super(RecordingFileRoleEnumDeserializer.class);
+    }
+
+    @Override
+    public RecordingFileRoleEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return RecordingFileRoleEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Role of the file recording. It can be either customer_experience or adhoc.
    */
+ @JsonDeserialize(using = RecordingFileRoleEnumDeserializer.class)
   public enum RecordingFileRoleEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CUSTOMER_EXPERIENCE("CUSTOMER_EXPERIENCE"),

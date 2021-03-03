@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.KlaxonHeartBeatRulesTopicNotificationUser;
@@ -27,9 +33,22 @@ public class KlaxonHeartBeatRulesTopicHeartBeatRule  implements Serializable {
   private Boolean inAlarm = null;
   private List<KlaxonHeartBeatRulesTopicNotificationUser> notificationUsers = new ArrayList<KlaxonHeartBeatRulesTopicNotificationUser>();
 
+  private static class AlertTypesEnumDeserializer extends StdDeserializer<AlertTypesEnum> {
+    public AlertTypesEnumDeserializer() {
+      super(AlertTypesEnumDeserializer.class);
+    }
+
+    @Override
+    public AlertTypesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return AlertTypesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets alertTypes
    */
+ @JsonDeserialize(using = AlertTypesEnumDeserializer.class)
   public enum AlertTypesEnum {
     SMS("SMS"),
     DEVICE("DEVICE"),
@@ -62,9 +81,22 @@ public class KlaxonHeartBeatRulesTopicHeartBeatRule  implements Serializable {
   }
   private List<AlertTypesEnum> alertTypes = new ArrayList<AlertTypesEnum>();
 
+  private static class RuleTypeEnumDeserializer extends StdDeserializer<RuleTypeEnum> {
+    public RuleTypeEnumDeserializer() {
+      super(RuleTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public RuleTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return RuleTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets ruleType
    */
+ @JsonDeserialize(using = RuleTypeEnumDeserializer.class)
   public enum RuleTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     EDGE("EDGE");

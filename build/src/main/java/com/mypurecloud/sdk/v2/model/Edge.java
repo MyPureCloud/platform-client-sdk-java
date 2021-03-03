@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEdgeSoftwareUpdateDto;
@@ -31,9 +37,22 @@ public class Edge  implements Serializable {
   private String modifiedBy = null;
   private String createdBy = null;
 
+  private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
+    public StateEnumDeserializer() {
+      super(StateEnumDeserializer.class);
+    }
+
+    @Override
+    public StateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Indicates if the resource is active, inactive, or deleted.
    */
+ @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTIVE("active"),
@@ -84,9 +103,22 @@ public class Edge  implements Serializable {
   private String stagedVersion = null;
   private String patch = null;
 
+  private static class StatusCodeEnumDeserializer extends StdDeserializer<StatusCodeEnum> {
+    public StatusCodeEnumDeserializer() {
+      super(StatusCodeEnumDeserializer.class);
+    }
+
+    @Override
+    public StatusCodeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StatusCodeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The current status of the Edge.
    */
+ @JsonDeserialize(using = StatusCodeEnumDeserializer.class)
   public enum StatusCodeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NEW("NEW"),
@@ -132,9 +164,22 @@ public class Edge  implements Serializable {
   private Site site = null;
   private DomainEdgeSoftwareUpdateDto softwareStatus = null;
 
+  private static class OnlineStatusEnumDeserializer extends StdDeserializer<OnlineStatusEnum> {
+    public OnlineStatusEnumDeserializer() {
+      super(OnlineStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public OnlineStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OnlineStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets onlineStatus
    */
+ @JsonDeserialize(using = OnlineStatusEnumDeserializer.class)
   public enum OnlineStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ONLINE("ONLINE"),
@@ -170,9 +215,22 @@ public class Edge  implements Serializable {
   private Boolean physicalEdge = null;
   private Boolean managed = null;
 
+  private static class EdgeDeploymentTypeEnumDeserializer extends StdDeserializer<EdgeDeploymentTypeEnum> {
+    public EdgeDeploymentTypeEnumDeserializer() {
+      super(EdgeDeploymentTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public EdgeDeploymentTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return EdgeDeploymentTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets edgeDeploymentType
    */
+ @JsonDeserialize(using = EdgeDeploymentTypeEnumDeserializer.class)
   public enum EdgeDeploymentTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     HARDWARE("HARDWARE"),
@@ -207,9 +265,22 @@ public class Edge  implements Serializable {
   }
   private EdgeDeploymentTypeEnum edgeDeploymentType = null;
 
+  private static class CallDrainingStateEnumDeserializer extends StdDeserializer<CallDrainingStateEnum> {
+    public CallDrainingStateEnumDeserializer() {
+      super(CallDrainingStateEnumDeserializer.class);
+    }
+
+    @Override
+    public CallDrainingStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CallDrainingStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The current state of the Edge's call draining process before it can be safely rebooted or updated.
    */
+ @JsonDeserialize(using = CallDrainingStateEnumDeserializer.class)
   public enum CallDrainingStateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NONE("NONE"),

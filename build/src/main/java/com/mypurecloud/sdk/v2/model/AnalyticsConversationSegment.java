@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AnalyticsProperty;
@@ -28,9 +34,22 @@ public class AnalyticsConversationSegment  implements Serializable {
   private List<String> wrapUpTags = new ArrayList<String>();
   private String errorCode = null;
 
+  private static class DisconnectTypeEnumDeserializer extends StdDeserializer<DisconnectTypeEnum> {
+    public DisconnectTypeEnumDeserializer() {
+      super(DisconnectTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public DisconnectTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DisconnectTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * A description of the event that disconnected the segment
    */
+ @JsonDeserialize(using = DisconnectTypeEnumDeserializer.class)
   public enum DisconnectTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ENDPOINT("endpoint"),
@@ -77,9 +96,22 @@ public class AnalyticsConversationSegment  implements Serializable {
   }
   private DisconnectTypeEnum disconnectType = null;
 
+  private static class SegmentTypeEnumDeserializer extends StdDeserializer<SegmentTypeEnum> {
+    public SegmentTypeEnumDeserializer() {
+      super(SegmentTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public SegmentTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SegmentTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The activity taking place for the participant in the segment
    */
+ @JsonDeserialize(using = SegmentTypeEnumDeserializer.class)
   public enum SegmentTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UNKNOWN("unknown"),

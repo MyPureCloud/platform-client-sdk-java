@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Address;
@@ -26,9 +32,22 @@ import java.io.Serializable;
 public class Message  implements Serializable {
   
 
+  private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
+    public StateEnumDeserializer() {
+      super(StateEnumDeserializer.class);
+    }
+
+    @Override
+    public StateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The connection state of this communication.
    */
+ @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ALERTING("alerting"),
@@ -65,9 +84,22 @@ public class Message  implements Serializable {
   private Boolean held = null;
   private List<Segment> segments = new ArrayList<Segment>();
 
+  private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
+    public DirectionEnumDeserializer() {
+      super(DirectionEnumDeserializer.class);
+    }
+
+    @Override
+    public DirectionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DirectionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The direction of the message.
    */
+ @JsonDeserialize(using = DirectionEnumDeserializer.class)
   public enum DirectionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INBOUND("inbound"),
@@ -102,9 +134,22 @@ public class Message  implements Serializable {
   private String recordingId = null;
   private ErrorBody errorInfo = null;
 
+  private static class DisconnectTypeEnumDeserializer extends StdDeserializer<DisconnectTypeEnum> {
+    public DisconnectTypeEnumDeserializer() {
+      super(DisconnectTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public DisconnectTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DisconnectTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
    */
+ @JsonDeserialize(using = DisconnectTypeEnumDeserializer.class)
   public enum DisconnectTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ENDPOINT("endpoint"),
@@ -156,9 +201,22 @@ public class Message  implements Serializable {
   private Date disconnectedTime = null;
   private String provider = null;
 
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Indicates the type of message platform from which the message originated.
    */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     UNKNOWN("unknown"),

@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ManagementUnit;
@@ -28,9 +34,22 @@ public class UserScheduleAdherence  implements Serializable {
   private ManagementUnit managementUnit = null;
   private Team team = null;
 
+  private static class ScheduledActivityCategoryEnumDeserializer extends StdDeserializer<ScheduledActivityCategoryEnum> {
+    public ScheduledActivityCategoryEnumDeserializer() {
+      super(ScheduledActivityCategoryEnumDeserializer.class);
+    }
+
+    @Override
+    public ScheduledActivityCategoryEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ScheduledActivityCategoryEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Activity for which the user is scheduled
    */
+ @JsonDeserialize(using = ScheduledActivityCategoryEnumDeserializer.class)
   public enum ScheduledActivityCategoryEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ONQUEUEWORK("OnQueueWork"),
@@ -70,9 +89,22 @@ public class UserScheduleAdherence  implements Serializable {
   }
   private ScheduledActivityCategoryEnum scheduledActivityCategory = null;
 
+  private static class SystemPresenceEnumDeserializer extends StdDeserializer<SystemPresenceEnum> {
+    public SystemPresenceEnumDeserializer() {
+      super(SystemPresenceEnumDeserializer.class);
+    }
+
+    @Override
+    public SystemPresenceEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SystemPresenceEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Actual underlying system presence value
    */
+ @JsonDeserialize(using = SystemPresenceEnumDeserializer.class)
   public enum SystemPresenceEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     AVAILABLE("Available"),
@@ -114,9 +146,22 @@ public class UserScheduleAdherence  implements Serializable {
   private SystemPresenceEnum systemPresence = null;
   private String organizationSecondaryPresenceId = null;
 
+  private static class RoutingStatusEnumDeserializer extends StdDeserializer<RoutingStatusEnum> {
+    public RoutingStatusEnumDeserializer() {
+      super(RoutingStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public RoutingStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return RoutingStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Actual underlying routing status, used to determine whether a user is actually in adherence when OnQueue
    */
+ @JsonDeserialize(using = RoutingStatusEnumDeserializer.class)
   public enum RoutingStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     OFF_QUEUE("OFF_QUEUE"),
@@ -152,9 +197,22 @@ public class UserScheduleAdherence  implements Serializable {
   }
   private RoutingStatusEnum routingStatus = null;
 
+  private static class ActualActivityCategoryEnumDeserializer extends StdDeserializer<ActualActivityCategoryEnum> {
+    public ActualActivityCategoryEnumDeserializer() {
+      super(ActualActivityCategoryEnumDeserializer.class);
+    }
+
+    @Override
+    public ActualActivityCategoryEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ActualActivityCategoryEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Activity in which the user is actually engaged
    */
+ @JsonDeserialize(using = ActualActivityCategoryEnumDeserializer.class)
   public enum ActualActivityCategoryEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ONQUEUEWORK("OnQueueWork"),
@@ -195,9 +253,22 @@ public class UserScheduleAdherence  implements Serializable {
   private ActualActivityCategoryEnum actualActivityCategory = null;
   private Boolean isOutOfOffice = null;
 
+  private static class AdherenceStateEnumDeserializer extends StdDeserializer<AdherenceStateEnum> {
+    public AdherenceStateEnumDeserializer() {
+      super(AdherenceStateEnumDeserializer.class);
+    }
+
+    @Override
+    public AdherenceStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return AdherenceStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The user's current adherence state
    */
+ @JsonDeserialize(using = AdherenceStateEnumDeserializer.class)
   public enum AdherenceStateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INADHERENCE("InAdherence"),
@@ -233,9 +304,22 @@ public class UserScheduleAdherence  implements Serializable {
   }
   private AdherenceStateEnum adherenceState = null;
 
+  private static class ImpactEnumDeserializer extends StdDeserializer<ImpactEnum> {
+    public ImpactEnumDeserializer() {
+      super(ImpactEnumDeserializer.class);
+    }
+
+    @Override
+    public ImpactEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ImpactEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The impact of the user's current adherenceState
    */
+ @JsonDeserialize(using = ImpactEnumDeserializer.class)
   public enum ImpactEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     POSITIVE("Positive"),

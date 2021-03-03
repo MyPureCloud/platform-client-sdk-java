@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Calibration;
@@ -32,9 +38,22 @@ public class Evaluation  implements Serializable {
   private User agent = null;
   private Calibration calibration = null;
 
+  private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
+    public StatusEnumDeserializer() {
+      super(StatusEnumDeserializer.class);
+    }
+
+    @Override
+    public StatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets status
    */
+ @JsonDeserialize(using = StatusEnumDeserializer.class)
   public enum StatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     PENDING("PENDING"),
@@ -74,9 +93,22 @@ public class Evaluation  implements Serializable {
   private Date changedDate = null;
   private Queue queue = null;
 
+  private static class MediaTypeEnumDeserializer extends StdDeserializer<MediaTypeEnum> {
+    public MediaTypeEnumDeserializer() {
+      super(MediaTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MediaTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MediaTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets mediaType
    */
+ @JsonDeserialize(using = MediaTypeEnumDeserializer.class)
   public enum MediaTypeEnum {
     CALL("CALL"),
     CALLBACK("CALLBACK"),
@@ -120,9 +152,22 @@ public class Evaluation  implements Serializable {
   private Boolean neverRelease = null;
   private String resourceId = null;
 
+  private static class ResourceTypeEnumDeserializer extends StdDeserializer<ResourceTypeEnum> {
+    public ResourceTypeEnumDeserializer() {
+      super(ResourceTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ResourceTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ResourceTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The type of resource. Only used for email evaluations. Will be null for evaluations on all other resources.
    */
+ @JsonDeserialize(using = ResourceTypeEnumDeserializer.class)
   public enum ResourceTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     EMAIL("EMAIL");

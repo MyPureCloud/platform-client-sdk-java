@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Keyword;
 import com.mypurecloud.sdk.v2.model.Queue;
@@ -27,9 +33,22 @@ public class KeywordSet  implements Serializable {
   private List<User> agents = new ArrayList<User>();
   private List<Keyword> keywords = new ArrayList<Keyword>();
 
+  private static class ParticipantPurposesEnumDeserializer extends StdDeserializer<ParticipantPurposesEnum> {
+    public ParticipantPurposesEnumDeserializer() {
+      super(ParticipantPurposesEnumDeserializer.class);
+    }
+
+    @Override
+    public ParticipantPurposesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ParticipantPurposesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets participantPurposes
    */
+ @JsonDeserialize(using = ParticipantPurposesEnumDeserializer.class)
   public enum ParticipantPurposesEnum {
     AGENT("AGENT"),
     CUSTOMER("CUSTOMER");

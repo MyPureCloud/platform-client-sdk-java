@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -28,9 +34,22 @@ public class GenericSAML  implements Serializable {
   private String logoImageData = null;
   private Boolean endpointCompression = null;
 
+  private static class NameIdentifierFormatEnumDeserializer extends StdDeserializer<NameIdentifierFormatEnum> {
+    public NameIdentifierFormatEnumDeserializer() {
+      super(NameIdentifierFormatEnumDeserializer.class);
+    }
+
+    @Override
+    public NameIdentifierFormatEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return NameIdentifierFormatEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets nameIdentifierFormat
    */
+ @JsonDeserialize(using = NameIdentifierFormatEnumDeserializer.class)
   public enum NameIdentifierFormatEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     URN_OASIS_NAMES_TC_SAML_1_1_NAMEID_FORMAT_UNSPECIFIED("urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"),

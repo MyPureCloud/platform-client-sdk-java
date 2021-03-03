@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -16,9 +22,22 @@ import java.io.Serializable;
 public class TranscriptionSettings  implements Serializable {
   
 
+  private static class TranscriptionEnumDeserializer extends StdDeserializer<TranscriptionEnum> {
+    public TranscriptionEnumDeserializer() {
+      super(TranscriptionEnumDeserializer.class);
+    }
+
+    @Override
+    public TranscriptionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TranscriptionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Setting to enable/disable transcription capability
    */
+ @JsonDeserialize(using = TranscriptionEnumDeserializer.class)
   public enum TranscriptionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DISABLED("Disabled"),

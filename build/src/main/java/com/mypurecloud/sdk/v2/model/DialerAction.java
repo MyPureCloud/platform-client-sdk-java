@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -19,9 +25,22 @@ import java.io.Serializable;
 public class DialerAction  implements Serializable {
   
 
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The type of this DialerAction.
    */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTION("Action"),
@@ -54,9 +73,22 @@ public class DialerAction  implements Serializable {
   }
   private TypeEnum type = null;
 
+  private static class ActionTypeNameEnumDeserializer extends StdDeserializer<ActionTypeNameEnum> {
+    public ActionTypeNameEnumDeserializer() {
+      super(ActionTypeNameEnumDeserializer.class);
+    }
+
+    @Override
+    public ActionTypeNameEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ActionTypeNameEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Additional type specification for this DialerAction.
    */
+ @JsonDeserialize(using = ActionTypeNameEnumDeserializer.class)
   public enum ActionTypeNameEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DO_NOT_DIAL("DO_NOT_DIAL"),
@@ -96,9 +128,22 @@ public class DialerAction  implements Serializable {
   }
   private ActionTypeNameEnum actionTypeName = null;
 
+  private static class UpdateOptionEnumDeserializer extends StdDeserializer<UpdateOptionEnum> {
+    public UpdateOptionEnumDeserializer() {
+      super(UpdateOptionEnumDeserializer.class);
+    }
+
+    @Override
+    public UpdateOptionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return UpdateOptionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Specifies how a contact attribute should be updated. Required for MODIFY_CONTACT_ATTRIBUTE.
    */
+ @JsonDeserialize(using = UpdateOptionEnumDeserializer.class)
   public enum UpdateOptionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SET("SET"),

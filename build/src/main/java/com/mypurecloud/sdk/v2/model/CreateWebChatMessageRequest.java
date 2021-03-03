@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -17,9 +23,22 @@ public class CreateWebChatMessageRequest  implements Serializable {
   
   private String body = null;
 
+  private static class BodyTypeEnumDeserializer extends StdDeserializer<BodyTypeEnum> {
+    public BodyTypeEnumDeserializer() {
+      super(BodyTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public BodyTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return BodyTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The purpose of the message within the conversation, such as a standard text entry versus a greeting.
    */
+ @JsonDeserialize(using = BodyTypeEnumDeserializer.class)
   public enum BodyTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     STANDARD("standard"),

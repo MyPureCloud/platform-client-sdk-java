@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -19,9 +25,22 @@ public class AnalyticsRoutingStatusRecord  implements Serializable {
   private Date startTime = null;
   private Date endTime = null;
 
+  private static class RoutingStatusEnumDeserializer extends StdDeserializer<RoutingStatusEnum> {
+    public RoutingStatusEnumDeserializer() {
+      super(RoutingStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public RoutingStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return RoutingStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The user's ACD routing status
    */
+ @JsonDeserialize(using = RoutingStatusEnumDeserializer.class)
   public enum RoutingStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     OFF_QUEUE("OFF_QUEUE"),

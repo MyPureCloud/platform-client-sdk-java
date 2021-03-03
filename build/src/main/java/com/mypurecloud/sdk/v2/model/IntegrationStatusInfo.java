@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.MessageInfo;
@@ -19,9 +25,22 @@ import java.io.Serializable;
 public class IntegrationStatusInfo  implements Serializable {
   
 
+  private static class CodeEnumDeserializer extends StdDeserializer<CodeEnum> {
+    public CodeEnumDeserializer() {
+      super(CodeEnumDeserializer.class);
+    }
+
+    @Override
+    public CodeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CodeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Machine-readable status as reported by the integration.
    */
+ @JsonDeserialize(using = CodeEnumDeserializer.class)
   public enum CodeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTIVE("ACTIVE"),

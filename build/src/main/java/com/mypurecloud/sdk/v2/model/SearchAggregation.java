@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -20,9 +26,22 @@ public class SearchAggregation  implements Serializable {
   private String field = null;
   private String name = null;
 
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The type of aggregation to perform
    */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     COUNT("COUNT"),
@@ -62,9 +81,22 @@ public class SearchAggregation  implements Serializable {
   private String value = null;
   private Integer size = null;
 
+  private static class OrderEnumDeserializer extends StdDeserializer<OrderEnum> {
+    public OrderEnumDeserializer() {
+      super(OrderEnumDeserializer.class);
+    }
+
+    @Override
+    public OrderEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OrderEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets order
    */
+ @JsonDeserialize(using = OrderEnumDeserializer.class)
   public enum OrderEnum {
     VALUE_DESC("VALUE_DESC"),
     VALUE_ASC("VALUE_ASC"),

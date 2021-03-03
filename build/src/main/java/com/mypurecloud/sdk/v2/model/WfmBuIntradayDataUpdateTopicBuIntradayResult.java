@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmBuIntradayDataUpdateTopicBuIntradayDataGroup;
 import com.mypurecloud.sdk.v2.model.WfmBuIntradayDataUpdateTopicBuScheduleReference;
@@ -25,9 +31,22 @@ public class WfmBuIntradayDataUpdateTopicBuIntradayResult  implements Serializab
   private Integer intervalLengthMinutes = null;
   private List<WfmBuIntradayDataUpdateTopicBuIntradayDataGroup> intradayDataGroupings = new ArrayList<WfmBuIntradayDataUpdateTopicBuIntradayDataGroup>();
 
+  private static class CategoriesEnumDeserializer extends StdDeserializer<CategoriesEnum> {
+    public CategoriesEnumDeserializer() {
+      super(CategoriesEnumDeserializer.class);
+    }
+
+    @Override
+    public CategoriesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CategoriesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets categories
    */
+ @JsonDeserialize(using = CategoriesEnumDeserializer.class)
   public enum CategoriesEnum {
     FORECASTDATA("ForecastData"),
     SCHEDULEDATA("ScheduleData"),

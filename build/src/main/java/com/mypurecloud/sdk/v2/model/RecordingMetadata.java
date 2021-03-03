@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Annotation;
@@ -28,9 +34,22 @@ public class RecordingMetadata  implements Serializable {
   private String media = null;
   private List<Annotation> annotations = new ArrayList<Annotation>();
 
+  private static class FileStateEnumDeserializer extends StdDeserializer<FileStateEnum> {
+    public FileStateEnumDeserializer() {
+      super(FileStateEnumDeserializer.class);
+    }
+
+    @Override
+    public FileStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return FileStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Represents the current file state for a recording. Examples: Uploading, Archived, etc
    */
+ @JsonDeserialize(using = FileStateEnumDeserializer.class)
   public enum FileStateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ARCHIVED("ARCHIVED"),
@@ -70,9 +89,22 @@ public class RecordingMetadata  implements Serializable {
   private Date restoreExpirationTime = null;
   private Date archiveDate = null;
 
+  private static class ArchiveMediumEnumDeserializer extends StdDeserializer<ArchiveMediumEnum> {
+    public ArchiveMediumEnumDeserializer() {
+      super(ArchiveMediumEnumDeserializer.class);
+    }
+
+    @Override
+    public ArchiveMediumEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ArchiveMediumEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The type of archive medium used. Example: CloudArchive
    */
+ @JsonDeserialize(using = ArchiveMediumEnumDeserializer.class)
   public enum ArchiveMediumEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CLOUDARCHIVE("CLOUDARCHIVE");

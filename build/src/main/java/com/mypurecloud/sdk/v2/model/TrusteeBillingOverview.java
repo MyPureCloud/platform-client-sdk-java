@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.NamedEntity;
@@ -26,9 +32,22 @@ public class TrusteeBillingOverview  implements Serializable {
   private String currency = null;
   private List<String> enabledProducts = new ArrayList<String>();
 
+  private static class SubscriptionTypeEnumDeserializer extends StdDeserializer<SubscriptionTypeEnum> {
+    public SubscriptionTypeEnumDeserializer() {
+      super(SubscriptionTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public SubscriptionTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SubscriptionTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The subscription type.
    */
+ @JsonDeserialize(using = SubscriptionTypeEnumDeserializer.class)
   public enum SubscriptionTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ININ("ININ"),

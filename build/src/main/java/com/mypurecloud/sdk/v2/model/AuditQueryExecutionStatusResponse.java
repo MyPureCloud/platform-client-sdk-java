@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AuditQueryFilter;
@@ -22,9 +28,22 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
   
   private String id = null;
 
+  private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
+    public StateEnumDeserializer() {
+      super(StateEnumDeserializer.class);
+    }
+
+    @Override
+    public StateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Status of the audit query execution request.
    */
+ @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     QUEUED("Queued"),
@@ -62,9 +81,22 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
   private Date startDate = null;
   private String interval = null;
 
+  private static class ServiceNameEnumDeserializer extends StdDeserializer<ServiceNameEnum> {
+    public ServiceNameEnumDeserializer() {
+      super(ServiceNameEnumDeserializer.class);
+    }
+
+    @Override
+    public ServiceNameEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ServiceNameEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Service name for the audit query.
    */
+ @JsonDeserialize(using = ServiceNameEnumDeserializer.class)
   public enum ServiceNameEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ARCHITECT("Architect"),

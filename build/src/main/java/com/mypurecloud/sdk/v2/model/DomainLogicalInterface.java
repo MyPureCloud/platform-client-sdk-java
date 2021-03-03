@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainCapabilities;
@@ -32,9 +38,22 @@ public class DomainLogicalInterface  implements Serializable {
   private String modifiedBy = null;
   private String createdBy = null;
 
+  private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
+    public StateEnumDeserializer() {
+      super(StateEnumDeserializer.class);
+    }
+
+    @Override
+    public StateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Indicates if the resource is active, inactive, or deleted.
    */
+ @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTIVE("active"),
@@ -77,9 +96,22 @@ public class DomainLogicalInterface  implements Serializable {
   private String physicalAdapterId = null;
   private String ifStatus = null;
 
+  private static class InterfaceTypeEnumDeserializer extends StdDeserializer<InterfaceTypeEnum> {
+    public InterfaceTypeEnumDeserializer() {
+      super(InterfaceTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public InterfaceTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return InterfaceTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The type of this network interface.
    */
+ @JsonDeserialize(using = InterfaceTypeEnumDeserializer.class)
   public enum InterfaceTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DIAGNOSTIC("DIAGNOSTIC"),
@@ -118,9 +150,22 @@ public class DomainLogicalInterface  implements Serializable {
   private DomainCapabilities ipv4Capabilities = null;
   private DomainCapabilities ipv6Capabilities = null;
 
+  private static class CurrentStateEnumDeserializer extends StdDeserializer<CurrentStateEnum> {
+    public CurrentStateEnumDeserializer() {
+      super(CurrentStateEnumDeserializer.class);
+    }
+
+    @Override
+    public CurrentStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CurrentStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets currentState
    */
+ @JsonDeserialize(using = CurrentStateEnumDeserializer.class)
   public enum CurrentStateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INIT("INIT"),

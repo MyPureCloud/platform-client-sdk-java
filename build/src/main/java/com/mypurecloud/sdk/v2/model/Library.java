@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.User;
@@ -23,9 +29,22 @@ public class Library  implements Serializable {
   private User createdBy = null;
   private Date dateCreated = null;
 
+  private static class ResponseTypeEnumDeserializer extends StdDeserializer<ResponseTypeEnum> {
+    public ResponseTypeEnumDeserializer() {
+      super(ResponseTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ResponseTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ResponseTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * This value is deprecated. Responses representing message templates may be added to any library.
    */
+ @JsonDeserialize(using = ResponseTypeEnumDeserializer.class)
   public enum ResponseTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     MESSAGINGTEMPLATE("MessagingTemplate"),

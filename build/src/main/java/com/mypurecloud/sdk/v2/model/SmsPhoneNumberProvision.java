@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -19,9 +25,22 @@ public class SmsPhoneNumberProvision  implements Serializable {
   private String name = null;
   private String phoneNumber = null;
 
+  private static class PhoneNumberTypeEnumDeserializer extends StdDeserializer<PhoneNumberTypeEnum> {
+    public PhoneNumberTypeEnumDeserializer() {
+      super(PhoneNumberTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public PhoneNumberTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return PhoneNumberTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Type of the phone number provisioned.
    */
+ @JsonDeserialize(using = PhoneNumberTypeEnumDeserializer.class)
   public enum PhoneNumberTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     LOCAL("local"),

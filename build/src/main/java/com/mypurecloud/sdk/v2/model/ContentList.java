@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContentActions;
@@ -22,9 +28,22 @@ public class ContentList  implements Serializable {
   
   private String id = null;
 
+  private static class ListTypeEnumDeserializer extends StdDeserializer<ListTypeEnum> {
+    public ListTypeEnumDeserializer() {
+      super(ListTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ListTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ListTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The type of list this instance represents
    */
+ @JsonDeserialize(using = ListTypeEnumDeserializer.class)
   public enum ListTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SELECTION("Selection"),

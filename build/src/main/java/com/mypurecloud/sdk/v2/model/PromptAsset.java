@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -26,9 +32,22 @@ public class PromptAsset  implements Serializable {
   private String ttsString = null;
   private String text = null;
 
+  private static class UploadStatusEnumDeserializer extends StdDeserializer<UploadStatusEnum> {
+    public UploadStatusEnumDeserializer() {
+      super(UploadStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public UploadStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return UploadStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Audio upload status
    */
+ @JsonDeserialize(using = UploadStatusEnumDeserializer.class)
   public enum UploadStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CREATED("created"),

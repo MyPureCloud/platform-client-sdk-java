@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.KlaxonInteractionStatsRulesTopicNotificationUser;
@@ -22,9 +28,22 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
   private String id = null;
   private String name = null;
 
+  private static class DimensionEnumDeserializer extends StdDeserializer<DimensionEnum> {
+    public DimensionEnumDeserializer() {
+      super(DimensionEnumDeserializer.class);
+    }
+
+    @Override
+    public DimensionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DimensionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets dimension
    */
+ @JsonDeserialize(using = DimensionEnumDeserializer.class)
   public enum DimensionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     QUEUEID("queueId"),
@@ -59,9 +78,22 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
   private String dimensionValue = null;
   private String dimensionValueName = null;
 
+  private static class MetricEnumDeserializer extends StdDeserializer<MetricEnum> {
+    public MetricEnumDeserializer() {
+      super(MetricEnumDeserializer.class);
+    }
+
+    @Override
+    public MetricEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MetricEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets metric
    */
+ @JsonDeserialize(using = MetricEnumDeserializer.class)
   public enum MetricEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TABANDON("tAbandon"),
@@ -102,9 +134,22 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
   }
   private MetricEnum metric = null;
 
+  private static class MediaTypeEnumDeserializer extends StdDeserializer<MediaTypeEnum> {
+    public MediaTypeEnumDeserializer() {
+      super(MediaTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MediaTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MediaTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets mediaType
    */
+ @JsonDeserialize(using = MediaTypeEnumDeserializer.class)
   public enum MediaTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     VOICE("voice"),
@@ -140,9 +185,22 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
   }
   private MediaTypeEnum mediaType = null;
 
+  private static class NumericRangeEnumDeserializer extends StdDeserializer<NumericRangeEnum> {
+    public NumericRangeEnumDeserializer() {
+      super(NumericRangeEnumDeserializer.class);
+    }
+
+    @Override
+    public NumericRangeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return NumericRangeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets numericRange
    */
+ @JsonDeserialize(using = NumericRangeEnumDeserializer.class)
   public enum NumericRangeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     GT("gt"),
@@ -179,9 +237,22 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
   }
   private NumericRangeEnum numericRange = null;
 
+  private static class StatisticEnumDeserializer extends StdDeserializer<StatisticEnum> {
+    public StatisticEnumDeserializer() {
+      super(StatisticEnumDeserializer.class);
+    }
+
+    @Override
+    public StatisticEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StatisticEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets statistic
    */
+ @JsonDeserialize(using = StatisticEnumDeserializer.class)
   public enum StatisticEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     COUNT("count"),
@@ -220,9 +291,22 @@ public class KlaxonInteractionStatsRulesTopicInteractionStatRule  implements Ser
   private Boolean enabled = null;
   private List<KlaxonInteractionStatsRulesTopicNotificationUser> notificationUsers = new ArrayList<KlaxonInteractionStatsRulesTopicNotificationUser>();
 
+  private static class AlertTypesEnumDeserializer extends StdDeserializer<AlertTypesEnum> {
+    public AlertTypesEnumDeserializer() {
+      super(AlertTypesEnumDeserializer.class);
+    }
+
+    @Override
+    public AlertTypesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return AlertTypesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets alertTypes
    */
+ @JsonDeserialize(using = AlertTypesEnumDeserializer.class)
   public enum AlertTypesEnum {
     SMS("SMS"),
     DEVICE("DEVICE"),

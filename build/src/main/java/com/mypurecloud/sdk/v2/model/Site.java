@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Contact;
@@ -33,9 +39,22 @@ public class Site  implements Serializable {
   private String modifiedBy = null;
   private String createdBy = null;
 
+  private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
+    public StateEnumDeserializer() {
+      super(StateEnumDeserializer.class);
+    }
+
+    @Override
+    public StateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Indicates if the resource is active, inactive, or deleted.
    */
+ @JsonDeserialize(using = StateEnumDeserializer.class)
   public enum StateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTIVE("active"),
@@ -82,9 +101,22 @@ public class Site  implements Serializable {
   private Boolean managed = null;
   private NTPSettings ntpSettings = null;
 
+  private static class MediaModelEnumDeserializer extends StdDeserializer<MediaModelEnum> {
+    public MediaModelEnumDeserializer() {
+      super(MediaModelEnumDeserializer.class);
+    }
+
+    @Override
+    public MediaModelEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MediaModelEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Media model for the site
    */
+ @JsonDeserialize(using = MediaModelEnumDeserializer.class)
   public enum MediaModelEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     PREMISES("Premises"),

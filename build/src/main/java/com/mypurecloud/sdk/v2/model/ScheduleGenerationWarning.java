@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -21,9 +27,22 @@ public class ScheduleGenerationWarning  implements Serializable {
   private Boolean userNotLicensed = null;
   private Boolean unableToMeetMaxDays = null;
 
+  private static class UnableToScheduleRequiredDaysEnumDeserializer extends StdDeserializer<UnableToScheduleRequiredDaysEnum> {
+    public UnableToScheduleRequiredDaysEnumDeserializer() {
+      super(UnableToScheduleRequiredDaysEnumDeserializer.class);
+    }
+
+    @Override
+    public UnableToScheduleRequiredDaysEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return UnableToScheduleRequiredDaysEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets unableToScheduleRequiredDays
    */
+ @JsonDeserialize(using = UnableToScheduleRequiredDaysEnumDeserializer.class)
   public enum UnableToScheduleRequiredDaysEnum {
     SUNDAY("Sunday"),
     MONDAY("Monday"),
@@ -62,9 +81,22 @@ public class ScheduleGenerationWarning  implements Serializable {
   private Boolean unableToMeetMinPaidForTheWeek = null;
   private Boolean unableToMeetMaxPaidForTheWeek = null;
 
+  private static class NoNeedDaysEnumDeserializer extends StdDeserializer<NoNeedDaysEnum> {
+    public NoNeedDaysEnumDeserializer() {
+      super(NoNeedDaysEnumDeserializer.class);
+    }
+
+    @Override
+    public NoNeedDaysEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return NoNeedDaysEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets noNeedDays
    */
+ @JsonDeserialize(using = NoNeedDaysEnumDeserializer.class)
   public enum NoNeedDaysEnum {
     SUNDAY("Sunday"),
     MONDAY("Monday"),

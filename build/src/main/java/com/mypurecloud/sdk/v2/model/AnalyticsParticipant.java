@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AnalyticsSession;
@@ -24,9 +30,22 @@ public class AnalyticsParticipant  implements Serializable {
   private String participantName = null;
   private String userId = null;
 
+  private static class PurposeEnumDeserializer extends StdDeserializer<PurposeEnum> {
+    public PurposeEnumDeserializer() {
+      super(PurposeEnumDeserializer.class);
+    }
+
+    @Override
+    public PurposeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return PurposeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The participant's purpose
    */
+ @JsonDeserialize(using = PurposeEnumDeserializer.class)
   public enum PurposeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     MANUAL("manual"),
@@ -76,9 +95,22 @@ public class AnalyticsParticipant  implements Serializable {
   private String externalContactId = null;
   private String externalOrganizationId = null;
 
+  private static class FlaggedReasonEnumDeserializer extends StdDeserializer<FlaggedReasonEnum> {
+    public FlaggedReasonEnumDeserializer() {
+      super(FlaggedReasonEnumDeserializer.class);
+    }
+
+    @Override
+    public FlaggedReasonEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return FlaggedReasonEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Reason for which participant flagged conversation
    */
+ @JsonDeserialize(using = FlaggedReasonEnumDeserializer.class)
   public enum FlaggedReasonEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     GENERAL("general");

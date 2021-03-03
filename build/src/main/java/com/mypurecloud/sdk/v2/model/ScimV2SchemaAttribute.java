@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ScimV2SchemaAttribute;
@@ -21,9 +27,22 @@ public class ScimV2SchemaAttribute  implements Serializable {
   
   private String name = null;
 
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The data type of the attribute.
    */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     STRING("STRING"),
@@ -67,9 +86,22 @@ public class ScimV2SchemaAttribute  implements Serializable {
   private List<String> canonicalValues = new ArrayList<String>();
   private Boolean caseExact = null;
 
+  private static class MutabilityEnumDeserializer extends StdDeserializer<MutabilityEnum> {
+    public MutabilityEnumDeserializer() {
+      super(MutabilityEnumDeserializer.class);
+    }
+
+    @Override
+    public MutabilityEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MutabilityEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The circumstances under which an attribute can be defined or redefined. The default is \"readWrite\".
    */
+ @JsonDeserialize(using = MutabilityEnumDeserializer.class)
   public enum MutabilityEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     READWRITE("readWrite"),
@@ -104,9 +136,22 @@ public class ScimV2SchemaAttribute  implements Serializable {
   }
   private MutabilityEnum mutability = null;
 
+  private static class ReturnedEnumDeserializer extends StdDeserializer<ReturnedEnum> {
+    public ReturnedEnumDeserializer() {
+      super(ReturnedEnumDeserializer.class);
+    }
+
+    @Override
+    public ReturnedEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ReturnedEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The circumstances under which an attribute and its values are returned in response to a GET, PUT, POST, or PATCH request.
    */
+ @JsonDeserialize(using = ReturnedEnumDeserializer.class)
   public enum ReturnedEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ALWAYS("ALWAYS"),
@@ -141,9 +186,22 @@ public class ScimV2SchemaAttribute  implements Serializable {
   }
   private ReturnedEnum returned = null;
 
+  private static class UniquenessEnumDeserializer extends StdDeserializer<UniquenessEnum> {
+    public UniquenessEnumDeserializer() {
+      super(UniquenessEnumDeserializer.class);
+    }
+
+    @Override
+    public UniquenessEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return UniquenessEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The method by which the service provider enforces the uniqueness of an attribute value. A server can reject a value by returning the HTTP response code 400 (Bad Request). A client can enforce uniqueness to a greater degree than the server provider enforces. For example, a client could make a value unique even though the server has \"uniqueness\" set to \"none\".
    */
+ @JsonDeserialize(using = UniquenessEnumDeserializer.class)
   public enum UniquenessEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NONE("NONE"),
@@ -177,9 +235,22 @@ public class ScimV2SchemaAttribute  implements Serializable {
   }
   private UniquenessEnum uniqueness = null;
 
+  private static class ReferenceTypesEnumDeserializer extends StdDeserializer<ReferenceTypesEnum> {
+    public ReferenceTypesEnumDeserializer() {
+      super(ReferenceTypesEnumDeserializer.class);
+    }
+
+    @Override
+    public ReferenceTypesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ReferenceTypesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets referenceTypes
    */
+ @JsonDeserialize(using = ReferenceTypesEnumDeserializer.class)
   public enum ReferenceTypesEnum {
     USER("USER"),
     GROUP("GROUP"),

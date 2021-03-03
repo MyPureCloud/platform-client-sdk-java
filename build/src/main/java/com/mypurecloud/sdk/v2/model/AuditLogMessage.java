@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
@@ -30,9 +36,22 @@ public class AuditLogMessage  implements Serializable {
   private AddressableEntityRef client = null;
   private List<String> remoteIp = new ArrayList<String>();
 
+  private static class ServiceNameEnumDeserializer extends StdDeserializer<ServiceNameEnum> {
+    public ServiceNameEnumDeserializer() {
+      super(ServiceNameEnumDeserializer.class);
+    }
+
+    @Override
+    public ServiceNameEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ServiceNameEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Name of the service that logged this audit message.
    */
+ @JsonDeserialize(using = ServiceNameEnumDeserializer.class)
   public enum ServiceNameEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ARCHITECT("Architect"),
@@ -81,9 +100,22 @@ public class AuditLogMessage  implements Serializable {
   private Date eventDate = null;
   private MessageInfo message = null;
 
+  private static class ActionEnumDeserializer extends StdDeserializer<ActionEnum> {
+    public ActionEnumDeserializer() {
+      super(ActionEnumDeserializer.class);
+    }
+
+    @Override
+    public ActionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ActionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Action that took place.
    */
+ @JsonDeserialize(using = ActionEnumDeserializer.class)
   public enum ActionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CREATE("Create"),
@@ -150,9 +182,22 @@ public class AuditLogMessage  implements Serializable {
   private ActionEnum action = null;
   private DomainEntityRef entity = null;
 
+  private static class EntityTypeEnumDeserializer extends StdDeserializer<EntityTypeEnum> {
+    public EntityTypeEnumDeserializer() {
+      super(EntityTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public EntityTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return EntityTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Type of the entity that was impacted.
    */
+ @JsonDeserialize(using = EntityTypeEnumDeserializer.class)
   public enum EntityTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DOCUMENT("Document"),

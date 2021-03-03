@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DocumentAttribute;
@@ -36,9 +42,22 @@ public class Document  implements Serializable {
   private String contentType = null;
   private Long contentLength = null;
 
+  private static class SystemTypeEnumDeserializer extends StdDeserializer<SystemTypeEnum> {
+    public SystemTypeEnumDeserializer() {
+      super(SystemTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public SystemTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SystemTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets systemType
    */
+ @JsonDeserialize(using = SystemTypeEnumDeserializer.class)
   public enum SystemTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DOCUMENT("DOCUMENT"),
@@ -83,9 +102,22 @@ public class Document  implements Serializable {
   private DomainEntityRef uploadStatus = null;
   private String uploadDestinationUri = null;
 
+  private static class UploadMethodEnumDeserializer extends StdDeserializer<UploadMethodEnum> {
+    public UploadMethodEnumDeserializer() {
+      super(UploadMethodEnumDeserializer.class);
+    }
+
+    @Override
+    public UploadMethodEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return UploadMethodEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets uploadMethod
    */
+ @JsonDeserialize(using = UploadMethodEnumDeserializer.class)
   public enum UploadMethodEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     SINGLE_PUT("SINGLE_PUT"),
@@ -120,9 +152,22 @@ public class Document  implements Serializable {
   private LockInfo lockInfo = null;
   private List<String> acl = new ArrayList<String>();
 
+  private static class SharingStatusEnumDeserializer extends StdDeserializer<SharingStatusEnum> {
+    public SharingStatusEnumDeserializer() {
+      super(SharingStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public SharingStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SharingStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets sharingStatus
    */
+ @JsonDeserialize(using = SharingStatusEnumDeserializer.class)
   public enum SharingStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NONE("NONE"),

@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.MessageMedia;
@@ -23,9 +29,22 @@ public class MessageDetails  implements Serializable {
   private String messageId = null;
   private String messageURI = null;
 
+  private static class MessageStatusEnumDeserializer extends StdDeserializer<MessageStatusEnum> {
+    public MessageStatusEnumDeserializer() {
+      super(MessageStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public MessageStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MessageStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Indicates the delivery status of the message.
    */
+ @JsonDeserialize(using = MessageStatusEnumDeserializer.class)
   public enum MessageStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     QUEUED("queued"),

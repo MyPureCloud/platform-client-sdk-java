@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Criteria;
@@ -21,9 +27,22 @@ public class JourneyPattern  implements Serializable {
   private List<Criteria> criteria = new ArrayList<Criteria>();
   private Integer count = null;
 
+  private static class StreamTypeEnumDeserializer extends StdDeserializer<StreamTypeEnum> {
+    public StreamTypeEnumDeserializer() {
+      super(StreamTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public StreamTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StreamTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The stream type for which this pattern can be matched on.
    */
+ @JsonDeserialize(using = StreamTypeEnumDeserializer.class)
   public enum StreamTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     WEB("Web"),

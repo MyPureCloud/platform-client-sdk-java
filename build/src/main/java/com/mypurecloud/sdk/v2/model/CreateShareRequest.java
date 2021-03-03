@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.CreateShareRequestMember;
@@ -20,9 +26,22 @@ import java.io.Serializable;
 public class CreateShareRequest  implements Serializable {
   
 
+  private static class SharedEntityTypeEnumDeserializer extends StdDeserializer<SharedEntityTypeEnum> {
+    public SharedEntityTypeEnumDeserializer() {
+      super(SharedEntityTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public SharedEntityTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SharedEntityTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The share entity type
    */
+ @JsonDeserialize(using = SharedEntityTypeEnumDeserializer.class)
   public enum SharedEntityTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DOCUMENT("DOCUMENT");
@@ -55,9 +74,22 @@ public class CreateShareRequest  implements Serializable {
   private SharedEntityTypeEnum sharedEntityType = null;
   private SharedEntity sharedEntity = null;
 
+  private static class MemberTypeEnumDeserializer extends StdDeserializer<MemberTypeEnum> {
+    public MemberTypeEnumDeserializer() {
+      super(MemberTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MemberTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MemberTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets memberType
    */
+ @JsonDeserialize(using = MemberTypeEnumDeserializer.class)
   public enum MemberTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     USER("USER"),

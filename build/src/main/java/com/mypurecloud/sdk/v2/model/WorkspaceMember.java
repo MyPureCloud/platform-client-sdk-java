@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -23,9 +29,22 @@ public class WorkspaceMember  implements Serializable {
   private String name = null;
   private DomainEntityRef workspace = null;
 
+  private static class MemberTypeEnumDeserializer extends StdDeserializer<MemberTypeEnum> {
+    public MemberTypeEnumDeserializer() {
+      super(MemberTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MemberTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MemberTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The workspace member type.
    */
+ @JsonDeserialize(using = MemberTypeEnumDeserializer.class)
   public enum MemberTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     USER("USER"),

@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -24,9 +30,22 @@ public class SmsAvailablePhoneNumber  implements Serializable {
   private String region = null;
   private String city = null;
 
+  private static class CapabilitiesEnumDeserializer extends StdDeserializer<CapabilitiesEnum> {
+    public CapabilitiesEnumDeserializer() {
+      super(CapabilitiesEnumDeserializer.class);
+    }
+
+    @Override
+    public CapabilitiesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CapabilitiesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets capabilities
    */
+ @JsonDeserialize(using = CapabilitiesEnumDeserializer.class)
   public enum CapabilitiesEnum {
     SMS("sms"),
     MMS("mms"),
@@ -59,9 +78,22 @@ public class SmsAvailablePhoneNumber  implements Serializable {
   }
   private List<CapabilitiesEnum> capabilities = new ArrayList<CapabilitiesEnum>();
 
+  private static class PhoneNumberTypeEnumDeserializer extends StdDeserializer<PhoneNumberTypeEnum> {
+    public PhoneNumberTypeEnumDeserializer() {
+      super(PhoneNumberTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public PhoneNumberTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return PhoneNumberTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The type of phone number available for provisioning.
    */
+ @JsonDeserialize(using = PhoneNumberTypeEnumDeserializer.class)
   public enum PhoneNumberTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     LOCAL("local"),
@@ -96,9 +128,22 @@ public class SmsAvailablePhoneNumber  implements Serializable {
   }
   private PhoneNumberTypeEnum phoneNumberType = null;
 
+  private static class AddressRequirementEnumDeserializer extends StdDeserializer<AddressRequirementEnum> {
+    public AddressRequirementEnumDeserializer() {
+      super(AddressRequirementEnumDeserializer.class);
+    }
+
+    @Override
+    public AddressRequirementEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return AddressRequirementEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The address requirement needed for provisioning this number. If there is a requirement, the address must be the residence or place of business of the individual or entity using the phone number.
    */
+ @JsonDeserialize(using = AddressRequirementEnumDeserializer.class)
   public enum AddressRequirementEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NONE("none"),

@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -16,9 +22,22 @@ import java.io.Serializable;
 public class HistoricalAdherenceActuals  implements Serializable {
   
 
+  private static class ActualActivityCategoryEnumDeserializer extends StdDeserializer<ActualActivityCategoryEnum> {
+    public ActualActivityCategoryEnumDeserializer() {
+      super(ActualActivityCategoryEnumDeserializer.class);
+    }
+
+    @Override
+    public ActualActivityCategoryEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ActualActivityCategoryEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Activity in which the user is actually engaged
    */
+ @JsonDeserialize(using = ActualActivityCategoryEnumDeserializer.class)
   public enum ActualActivityCategoryEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ONQUEUEWORK("OnQueueWork"),

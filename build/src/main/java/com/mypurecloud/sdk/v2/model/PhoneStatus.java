@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -23,9 +29,22 @@ public class PhoneStatus  implements Serializable {
   private String id = null;
   private String name = null;
 
+  private static class OperationalStatusEnumDeserializer extends StdDeserializer<OperationalStatusEnum> {
+    public OperationalStatusEnumDeserializer() {
+      super(OperationalStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public OperationalStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OperationalStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The Operational Status of this phone
    */
+ @JsonDeserialize(using = OperationalStatusEnumDeserializer.class)
   public enum OperationalStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     OPERATIONAL("OPERATIONAL"),
@@ -59,9 +78,22 @@ public class PhoneStatus  implements Serializable {
   }
   private OperationalStatusEnum operationalStatus = null;
 
+  private static class EdgesStatusEnumDeserializer extends StdDeserializer<EdgesStatusEnum> {
+    public EdgesStatusEnumDeserializer() {
+      super(EdgesStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public EdgesStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return EdgesStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The status of the primary or secondary Edges assigned to the phone lines.
    */
+ @JsonDeserialize(using = EdgesStatusEnumDeserializer.class)
   public enum EdgesStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     IN_SERVICE("IN_SERVICE"),
@@ -99,9 +131,22 @@ public class PhoneStatus  implements Serializable {
   private ProvisionInfo provision = null;
   private List<LineStatus> lineStatuses = new ArrayList<LineStatus>();
 
+  private static class PhoneAssignmentToEdgeTypeEnumDeserializer extends StdDeserializer<PhoneAssignmentToEdgeTypeEnum> {
+    public PhoneAssignmentToEdgeTypeEnumDeserializer() {
+      super(PhoneAssignmentToEdgeTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public PhoneAssignmentToEdgeTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return PhoneAssignmentToEdgeTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The phone status's edge assignment type.
    */
+ @JsonDeserialize(using = PhoneAssignmentToEdgeTypeEnumDeserializer.class)
   public enum PhoneAssignmentToEdgeTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     PRIMARY("PRIMARY"),

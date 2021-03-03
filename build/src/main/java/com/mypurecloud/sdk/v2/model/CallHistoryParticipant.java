@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Campaign;
@@ -31,9 +37,22 @@ public class CallHistoryParticipant  implements Serializable {
   private Date endTime = null;
   private String purpose = null;
 
+  private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
+    public DirectionEnumDeserializer() {
+      super(DirectionEnumDeserializer.class);
+    }
+
+    @Override
+    public DirectionEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DirectionEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The participant's direction.  Values can be: 'inbound' or 'outbound'
    */
+ @JsonDeserialize(using = DirectionEnumDeserializer.class)
   public enum DirectionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INBOUND("inbound"),
@@ -71,9 +90,22 @@ public class CallHistoryParticipant  implements Serializable {
   private Queue queue = null;
   private Group group = null;
 
+  private static class DisconnectTypeEnumDeserializer extends StdDeserializer<DisconnectTypeEnum> {
+    public DisconnectTypeEnumDeserializer() {
+      super(DisconnectTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public DisconnectTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DisconnectTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The reason the participant was disconnected from the conversation.
    */
+ @JsonDeserialize(using = DisconnectTypeEnumDeserializer.class)
   public enum DisconnectTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ENDPOINT("endpoint"),
@@ -122,9 +154,22 @@ public class CallHistoryParticipant  implements Serializable {
   private Boolean didInteract = null;
   private List<Long> sipResponseCodes = new ArrayList<Long>();
 
+  private static class FlaggedReasonEnumDeserializer extends StdDeserializer<FlaggedReasonEnum> {
+    public FlaggedReasonEnumDeserializer() {
+      super(FlaggedReasonEnumDeserializer.class);
+    }
+
+    @Override
+    public FlaggedReasonEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return FlaggedReasonEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The reason specifying why participant flagged the conversation.
    */
+ @JsonDeserialize(using = FlaggedReasonEnumDeserializer.class)
   public enum FlaggedReasonEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     GENERAL("general");

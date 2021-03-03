@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Endpoint;
@@ -23,9 +29,22 @@ public class OrphanRecording  implements Serializable {
   private Date createdTime = null;
   private Date recoveredTime = null;
 
+  private static class ProviderTypeEnumDeserializer extends StdDeserializer<ProviderTypeEnum> {
+    public ProviderTypeEnumDeserializer() {
+      super(ProviderTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ProviderTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ProviderTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets providerType
    */
+ @JsonDeserialize(using = ProviderTypeEnumDeserializer.class)
   public enum ProviderTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     EDGE("EDGE"),
@@ -63,9 +82,22 @@ public class OrphanRecording  implements Serializable {
   private ProviderTypeEnum providerType = null;
   private Long mediaSizeBytes = null;
 
+  private static class MediaTypeEnumDeserializer extends StdDeserializer<MediaTypeEnum> {
+    public MediaTypeEnumDeserializer() {
+      super(MediaTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MediaTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MediaTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets mediaType
    */
+ @JsonDeserialize(using = MediaTypeEnumDeserializer.class)
   public enum MediaTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CALL("CALL"),
@@ -100,9 +132,22 @@ public class OrphanRecording  implements Serializable {
   }
   private MediaTypeEnum mediaType = null;
 
+  private static class FileStateEnumDeserializer extends StdDeserializer<FileStateEnum> {
+    public FileStateEnumDeserializer() {
+      super(FileStateEnumDeserializer.class);
+    }
+
+    @Override
+    public FileStateEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return FileStateEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets fileState
    */
+ @JsonDeserialize(using = FileStateEnumDeserializer.class)
   public enum FileStateEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ARCHIVED("ARCHIVED"),
@@ -141,9 +186,22 @@ public class OrphanRecording  implements Serializable {
   private Endpoint providerEndpoint = null;
   private Recording recording = null;
 
+  private static class OrphanStatusEnumDeserializer extends StdDeserializer<OrphanStatusEnum> {
+    public OrphanStatusEnumDeserializer() {
+      super(OrphanStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public OrphanStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OrphanStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The status of the orphaned recording's conversation.
    */
+ @JsonDeserialize(using = OrphanStatusEnumDeserializer.class)
   public enum OrphanStatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NO_CONVERSATION("NO_CONVERSATION"),

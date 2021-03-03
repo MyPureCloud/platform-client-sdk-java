@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DialerRulesetConfigChangeContactColumnToDataActionFieldMapping;
@@ -25,9 +31,22 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
   private String attributeName = null;
   private String value = null;
 
+  private static class ValueTypeEnumDeserializer extends StdDeserializer<ValueTypeEnum> {
+    public ValueTypeEnumDeserializer() {
+      super(ValueTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ValueTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ValueTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets valueType
    */
+ @JsonDeserialize(using = ValueTypeEnumDeserializer.class)
   public enum ValueTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     STRING("STRING"),
@@ -62,9 +81,22 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
   }
   private ValueTypeEnum valueType = null;
 
+  private static class OperatorEnumDeserializer extends StdDeserializer<OperatorEnum> {
+    public OperatorEnumDeserializer() {
+      super(OperatorEnumDeserializer.class);
+    }
+
+    @Override
+    public OperatorEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OperatorEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets operator
    */
+ @JsonDeserialize(using = OperatorEnumDeserializer.class)
   public enum OperatorEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     EQUALS("EQUALS"),
@@ -106,9 +138,22 @@ public class DialerRulesetConfigChangeCondition  implements Serializable {
   private OperatorEnum operator = null;
   private List<String> codes = new ArrayList<String>();
 
+  private static class PropertyTypeEnumDeserializer extends StdDeserializer<PropertyTypeEnum> {
+    public PropertyTypeEnumDeserializer() {
+      super(PropertyTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public PropertyTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return PropertyTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * Gets or Sets propertyType
    */
+ @JsonDeserialize(using = PropertyTypeEnumDeserializer.class)
   public enum PropertyTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     LAST_ATTEMPT_BY_COLUMN("LAST_ATTEMPT_BY_COLUMN"),

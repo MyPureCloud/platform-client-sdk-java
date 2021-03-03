@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
@@ -20,9 +26,22 @@ public class EventCondition  implements Serializable {
   private String key = null;
   private List<String> values = new ArrayList<String>();
 
+  private static class OperatorEnumDeserializer extends StdDeserializer<OperatorEnum> {
+    public OperatorEnumDeserializer() {
+      super(OperatorEnumDeserializer.class);
+    }
+
+    @Override
+    public OperatorEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return OperatorEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The comparison operator.
    */
+ @JsonDeserialize(using = OperatorEnumDeserializer.class)
   public enum OperatorEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CONTAINSALL("containsAll"),
@@ -65,9 +84,22 @@ public class EventCondition  implements Serializable {
   }
   private OperatorEnum operator = null;
 
+  private static class StreamTypeEnumDeserializer extends StdDeserializer<StreamTypeEnum> {
+    public StreamTypeEnumDeserializer() {
+      super(StreamTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public StreamTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StreamTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The stream type for which this condition can be satisfied.
    */
+ @JsonDeserialize(using = StreamTypeEnumDeserializer.class)
   public enum StreamTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     WEB("Web"),

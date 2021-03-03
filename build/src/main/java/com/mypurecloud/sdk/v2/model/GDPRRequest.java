@@ -2,7 +2,13 @@ package com.mypurecloud.sdk.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
+import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -26,9 +32,22 @@ public class GDPRRequest  implements Serializable {
   private DomainEntityRef createdBy = null;
   private List<ReplacementTerm> replacementTerms = new ArrayList<ReplacementTerm>();
 
+  private static class RequestTypeEnumDeserializer extends StdDeserializer<RequestTypeEnum> {
+    public RequestTypeEnumDeserializer() {
+      super(RequestTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public RequestTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return RequestTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The type of GDPR request
    */
+ @JsonDeserialize(using = RequestTypeEnumDeserializer.class)
   public enum RequestTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     GDPR_EXPORT("GDPR_EXPORT"),
@@ -63,9 +82,22 @@ public class GDPRRequest  implements Serializable {
   private RequestTypeEnum requestType = null;
   private Date createdDate = null;
 
+  private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
+    public StatusEnumDeserializer() {
+      super(StatusEnumDeserializer.class);
+    }
+
+    @Override
+    public StatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return StatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
   /**
    * The status of the request
    */
+ @JsonDeserialize(using = StatusEnumDeserializer.class)
   public enum StatusEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INITIATED("INITIATED"),
