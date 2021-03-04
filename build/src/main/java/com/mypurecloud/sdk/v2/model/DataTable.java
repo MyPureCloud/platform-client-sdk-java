@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,6 +25,7 @@ public class DataTable  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private Division division = null;
   private String description = null;
   private JsonSchemaDocument schema = null;
   private String selfUri = null;
@@ -50,6 +52,24 @@ public class DataTable  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  
+  /**
+   * The division to which this entity belongs.
+   **/
+  public DataTable division(Division division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public Division getDivision() {
+    return division;
+  }
+  public void setDivision(Division division) {
+    this.division = division;
   }
 
   
@@ -108,6 +128,7 @@ public class DataTable  implements Serializable {
     DataTable dataTable = (DataTable) o;
     return Objects.equals(this.id, dataTable.id) &&
         Objects.equals(this.name, dataTable.name) &&
+        Objects.equals(this.division, dataTable.division) &&
         Objects.equals(this.description, dataTable.description) &&
         Objects.equals(this.schema, dataTable.schema) &&
         Objects.equals(this.selfUri, dataTable.selfUri);
@@ -115,7 +136,7 @@ public class DataTable  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, schema, selfUri);
+    return Objects.hash(id, name, division, description, schema, selfUri);
   }
 
   @Override
@@ -125,6 +146,7 @@ public class DataTable  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

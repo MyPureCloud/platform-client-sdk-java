@@ -3770,7 +3770,7 @@ try {
 
 
 
-> [DataTablesDomainEntityListing](DataTablesDomainEntityListing.html) getFlowsDatatables(expand, pageNumber, pageSize, sortBy, sortOrder)
+> [DataTablesDomainEntityListing](DataTablesDomainEntityListing.html) getFlowsDatatables(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId)
 
 Retrieve a list of datatables for the org
 
@@ -3809,8 +3809,9 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortBy = "id"; // String | Sort by
 String sortOrder = "ascending"; // String | Sort order
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | division ID(s)
 try {
-    DataTablesDomainEntityListing result = apiInstance.getFlowsDatatables(expand, pageNumber, pageSize, sortBy, sortOrder);
+    DataTablesDomainEntityListing result = apiInstance.getFlowsDatatables(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getFlowsDatatables");
@@ -3828,6 +3829,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortBy** | **String**| Sort by | [optional] [default to id]<br />**Values**: id, name 
 | **sortOrder** | **String**| Sort order | [optional] [default to ascending] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| division ID(s) | [optional] 
 {: class="table-striped"}
 
 

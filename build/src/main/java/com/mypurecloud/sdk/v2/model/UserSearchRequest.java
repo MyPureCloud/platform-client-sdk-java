@@ -276,14 +276,14 @@ public class UserSearchRequest  implements Serializable {
 
   
   /**
-   * Enforce view permission on request
+   * When set to true add additional search criteria to filter users by directory:user:view
    **/
   public UserSearchRequest enforcePermissions(Boolean enforcePermissions) {
     this.enforcePermissions = enforcePermissions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Enforce view permission on request")
+  @ApiModelProperty(example = "null", value = "When set to true add additional search criteria to filter users by directory:user:view")
   @JsonProperty("enforcePermissions")
   public Boolean getEnforcePermissions() {
     return enforcePermissions;

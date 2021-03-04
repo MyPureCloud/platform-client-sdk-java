@@ -10,8 +10,8 @@ title: UserDetailsDatalakeAvailabilityTopicDateTime
 | ------------ | ------------- | ------------- | ------------- |
 | **iMillis** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **beforeNow** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **afterNow** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **equalNow** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **afterNow** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

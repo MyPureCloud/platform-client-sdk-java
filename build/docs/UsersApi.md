@@ -2536,7 +2536,7 @@ Integer pageNumber = 1; // Integer | Page number
 String sortOrder = "Desc"; // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
 List<String> types = Arrays.asList("types_example"); // List<String> | Specifies the activity types.
 List<String> statuses = Arrays.asList("statuses_example"); // List<String> | Specifies the activity statuses to filter by
-List<String> relationship = Arrays.asList("relationship_example"); // List<String> | Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned.
+List<String> relationship = Arrays.asList("relationship_example"); // List<String> | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
 try {
     DevelopmentActivityListing result = apiInstance.getUsersDevelopmentActivities(userId, moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, types, statuses, relationship);
     System.out.println(result);
@@ -2561,7 +2561,7 @@ try {
 | **sortOrder** | **String**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc 
 | **types** | [**List&lt;String&gt;**](String.html)| Specifies the activity types. | [optional]<br />**Values**: Informational, Coaching 
 | **statuses** | [**List&lt;String&gt;**](String.html)| Specifies the activity statuses to filter by | [optional]<br />**Values**: Planned, InProgress, Completed, InvalidSchedule 
-| **relationship** | [**List&lt;String&gt;**](String.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned. | [optional]<br />**Values**: Creator, Facilitator, Attendee 
+| **relationship** | [**List&lt;String&gt;**](String.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional]<br />**Values**: Creator, Facilitator, Attendee 
 {: class="table-striped"}
 
 
@@ -2617,7 +2617,7 @@ Integer pageNumber = 1; // Integer | Page number
 String sortOrder = "Desc"; // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
 List<String> types = Arrays.asList("types_example"); // List<String> | Specifies the activity types.
 List<String> statuses = Arrays.asList("statuses_example"); // List<String> | Specifies the activity statuses to filter by
-List<String> relationship = Arrays.asList("relationship_example"); // List<String> | Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned.
+List<String> relationship = Arrays.asList("relationship_example"); // List<String> | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
 try {
     DevelopmentActivityListing result = apiInstance.getUsersDevelopmentActivitiesMe(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, types, statuses, relationship);
     System.out.println(result);
@@ -2641,7 +2641,7 @@ try {
 | **sortOrder** | **String**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc 
 | **types** | [**List&lt;String&gt;**](String.html)| Specifies the activity types. | [optional]<br />**Values**: Informational, Coaching 
 | **statuses** | [**List&lt;String&gt;**](String.html)| Specifies the activity statuses to filter by | [optional]<br />**Values**: Planned, InProgress, Completed, InvalidSchedule 
-| **relationship** | [**List&lt;String&gt;**](String.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned. | [optional]<br />**Values**: Creator, Facilitator, Attendee 
+| **relationship** | [**List&lt;String&gt;**](String.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional]<br />**Values**: Creator, Facilitator, Attendee 
 {: class="table-striped"}
 
 
@@ -4350,9 +4350,8 @@ Search users
 
 Wraps POST /api/v2/users/search  
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* directory:user:view
 
 ### Example
 

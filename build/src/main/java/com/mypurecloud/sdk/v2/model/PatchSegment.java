@@ -12,6 +12,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Context;
 import com.mypurecloud.sdk.v2.model.Journey;
+import com.mypurecloud.sdk.v2.model.PatchExternalSegment;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -32,6 +33,7 @@ public class PatchSegment  implements Serializable {
   private Boolean shouldDisplayToAgent = null;
   private Context context = null;
   private Journey journey = null;
+  private PatchExternalSegment externalSegment = null;
   private Integer assignmentExpirationDays = null;
   private String selfUri = null;
   private Date createdDate = null;
@@ -190,6 +192,24 @@ public class PatchSegment  implements Serializable {
 
   
   /**
+   * Details of an entity corresponding to this segment in an external system.
+   **/
+  public PatchSegment externalSegment(PatchExternalSegment externalSegment) {
+    this.externalSegment = externalSegment;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Details of an entity corresponding to this segment in an external system.")
+  @JsonProperty("externalSegment")
+  public PatchExternalSegment getExternalSegment() {
+    return externalSegment;
+  }
+  public void setExternalSegment(PatchExternalSegment externalSegment) {
+    this.externalSegment = externalSegment;
+  }
+
+  
+  /**
    * Time, in days, from when the segment is assigned until it is automatically unassigned.
    **/
   public PatchSegment assignmentExpirationDays(Integer assignmentExpirationDays) {
@@ -269,6 +289,7 @@ public class PatchSegment  implements Serializable {
         Objects.equals(this.shouldDisplayToAgent, patchSegment.shouldDisplayToAgent) &&
         Objects.equals(this.context, patchSegment.context) &&
         Objects.equals(this.journey, patchSegment.journey) &&
+        Objects.equals(this.externalSegment, patchSegment.externalSegment) &&
         Objects.equals(this.assignmentExpirationDays, patchSegment.assignmentExpirationDays) &&
         Objects.equals(this.selfUri, patchSegment.selfUri) &&
         Objects.equals(this.createdDate, patchSegment.createdDate) &&
@@ -277,7 +298,7 @@ public class PatchSegment  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, isActive, displayName, version, description, color, shouldDisplayToAgent, context, journey, assignmentExpirationDays, selfUri, createdDate, modifiedDate);
+    return Objects.hash(id, isActive, displayName, version, description, color, shouldDisplayToAgent, context, journey, externalSegment, assignmentExpirationDays, selfUri, createdDate, modifiedDate);
   }
 
   @Override
@@ -294,6 +315,7 @@ public class PatchSegment  implements Serializable {
     sb.append("    shouldDisplayToAgent: ").append(toIndentedString(shouldDisplayToAgent)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    journey: ").append(toIndentedString(journey)).append("\n");
+    sb.append("    externalSegment: ").append(toIndentedString(externalSegment)).append("\n");
     sb.append("    assignmentExpirationDays: ").append(toIndentedString(assignmentExpirationDays)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");

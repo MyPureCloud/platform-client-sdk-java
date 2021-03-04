@@ -7,12 +7,157 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteSpeechandtextanalyticsProgram**](SpeechTextAnalyticsApi.html#deleteSpeechandtextanalyticsProgram) | Delete a Speech &amp; Text Analytics program by id |
+| [**deleteSpeechandtextanalyticsTopic**](SpeechTextAnalyticsApi.html#deleteSpeechandtextanalyticsTopic) | Delete a Speech &amp; Text Analytics topic by id |
 | [**getSpeechandtextanalyticsConversation**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsConversation) | Get Speech and Text Analytics for a specific conversation |
 | [**getSpeechandtextanalyticsConversationCommunicationTranscripturl**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsConversationCommunicationTranscripturl) | Get the pre-signed S3 URL for the transcript of a specific communication of a conversation |
+| [**getSpeechandtextanalyticsDialects**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsDialects) | Get list of supported Speech &amp; Text Analytics dialects |
+| [**getSpeechandtextanalyticsProgram**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgram) | Get a Speech &amp; Text Analytics program by id |
+| [**getSpeechandtextanalyticsPrograms**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsPrograms) | Get the list of Speech &amp; Text Analytics programs |
+| [**getSpeechandtextanalyticsProgramsGeneralJob**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgramsGeneralJob) | Get a Speech &amp; Text Analytics general program job by id |
+| [**getSpeechandtextanalyticsProgramsPublishjob**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgramsPublishjob) | Get a Speech &amp; Text Analytics publish programs job by id |
+| [**getSpeechandtextanalyticsProgramsUnpublished**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgramsUnpublished) | Get the list of Speech &amp; Text Analytics unpublished programs |
 | [**getSpeechandtextanalyticsSettings**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsSettings) | Get Speech And Text Analytics Settings |
+| [**getSpeechandtextanalyticsTopic**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsTopic) | Get a Speech &amp; Text Analytics topic by id |
+| [**getSpeechandtextanalyticsTopics**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsTopics) | Get the list of Speech &amp; Text Analytics topics |
+| [**getSpeechandtextanalyticsTopicsGeneral**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsTopicsGeneral) | Get the Speech &amp; Text Analytics general topics for a given dialect |
+| [**getSpeechandtextanalyticsTopicsPublishjob**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsTopicsPublishjob) | Get a Speech &amp; Text Analytics publish topics job by id |
 | [**patchSpeechandtextanalyticsSettings**](SpeechTextAnalyticsApi.html#patchSpeechandtextanalyticsSettings) | Patch Speech And Text Analytics Settings |
+| [**postSpeechandtextanalyticsPrograms**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsPrograms) | Create new Speech &amp; Text Analytics program |
+| [**postSpeechandtextanalyticsProgramsGeneralJobs**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsProgramsGeneralJobs) | Create new Speech &amp; Text Analytics general program job |
+| [**postSpeechandtextanalyticsProgramsPublishjobs**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsProgramsPublishjobs) | Create new Speech &amp; Text Analytics publish programs job |
+| [**postSpeechandtextanalyticsTopics**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsTopics) | Create new Speech &amp; Text Analytics topic |
+| [**postSpeechandtextanalyticsTopicsPublishjobs**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsTopicsPublishjobs) | Create new Speech &amp; Text Analytics publish topics job |
 | [**postSpeechandtextanalyticsTranscriptsSearch**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsTranscriptsSearch) | Search resources. |
+| [**putSpeechandtextanalyticsProgram**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsProgram) | Update existing Speech &amp; Text Analytics program |
+| [**putSpeechandtextanalyticsTopic**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsTopic) | Update existing Speech &amp; Text Analytics topic |
 {: class="table-striped"}
+
+<a name="deleteSpeechandtextanalyticsProgram"></a>
+
+# **deleteSpeechandtextanalyticsProgram**
+
+
+
+> Void deleteSpeechandtextanalyticsProgram(programId, forceDelete)
+
+Delete a Speech &amp; Text Analytics program by id
+
+
+
+Wraps DELETE /api/v2/speechandtextanalytics/programs/{programId}  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String programId = "programId_example"; // String | The id of the program
+Boolean forceDelete = false; // Boolean | Indicates whether the program is forced to be deleted or not. Required when the program to delete is the default program.
+try {
+    apiInstance.deleteSpeechandtextanalyticsProgram(programId, forceDelete);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#deleteSpeechandtextanalyticsProgram");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **programId** | **String**| The id of the program | 
+| **forceDelete** | **Boolean**| Indicates whether the program is forced to be deleted or not. Required when the program to delete is the default program. | [optional] [default to false] 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteSpeechandtextanalyticsTopic"></a>
+
+# **deleteSpeechandtextanalyticsTopic**
+
+
+
+> Void deleteSpeechandtextanalyticsTopic(topicId)
+
+Delete a Speech &amp; Text Analytics topic by id
+
+
+
+Wraps DELETE /api/v2/speechandtextanalytics/topics/{topicId}  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:topic:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String topicId = "topicId_example"; // String | The id of the topic
+try {
+    apiInstance.deleteSpeechandtextanalyticsTopic(topicId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#deleteSpeechandtextanalyticsTopic");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **topicId** | **String**| The id of the topic | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="getSpeechandtextanalyticsConversation"></a>
 
@@ -142,6 +287,386 @@ try {
 
 [**TranscriptUrl**](TranscriptUrl.html)
 
+<a name="getSpeechandtextanalyticsDialects"></a>
+
+# **getSpeechandtextanalyticsDialects**
+
+
+
+> List&lt;Object&gt; getSpeechandtextanalyticsDialects()
+
+Get list of supported Speech &amp; Text Analytics dialects
+
+
+
+Wraps GET /api/v2/speechandtextanalytics/dialects  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+try {
+    List<Object> result = apiInstance.getSpeechandtextanalyticsDialects();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsDialects");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+**List&lt;Object&gt;**
+
+<a name="getSpeechandtextanalyticsProgram"></a>
+
+# **getSpeechandtextanalyticsProgram**
+
+
+
+> [Program](Program.html) getSpeechandtextanalyticsProgram(programId)
+
+Get a Speech &amp; Text Analytics program by id
+
+
+
+Wraps GET /api/v2/speechandtextanalytics/programs/{programId}  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String programId = "programId_example"; // String | The id of the program
+try {
+    Program result = apiInstance.getSpeechandtextanalyticsProgram(programId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgram");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **programId** | **String**| The id of the program | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Program**](Program.html)
+
+<a name="getSpeechandtextanalyticsPrograms"></a>
+
+# **getSpeechandtextanalyticsPrograms**
+
+
+
+> [ProgramsEntityListing](ProgramsEntityListing.html) getSpeechandtextanalyticsPrograms(nextPage, pageSize)
+
+Get the list of Speech &amp; Text Analytics programs
+
+
+
+Wraps GET /api/v2/speechandtextanalytics/programs  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String nextPage = "nextPage_example"; // String | The key for listing the next page
+Integer pageSize = 20; // Integer | The page size for the listing
+try {
+    ProgramsEntityListing result = apiInstance.getSpeechandtextanalyticsPrograms(nextPage, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsPrograms");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **nextPage** | **String**| The key for listing the next page | [optional] 
+| **pageSize** | **Integer**| The page size for the listing | [optional] [default to 20] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ProgramsEntityListing**](ProgramsEntityListing.html)
+
+<a name="getSpeechandtextanalyticsProgramsGeneralJob"></a>
+
+# **getSpeechandtextanalyticsProgramsGeneralJob**
+
+
+
+> [GeneralProgramJob](GeneralProgramJob.html) getSpeechandtextanalyticsProgramsGeneralJob(jobId)
+
+Get a Speech &amp; Text Analytics general program job by id
+
+
+
+Wraps GET /api/v2/speechandtextanalytics/programs/general/jobs/{jobId}  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:add
+* speechAndTextAnalytics:program:edit
+* speechAndTextAnalytics:topic:add
+* speechAndTextAnalytics:topic:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String jobId = "jobId_example"; // String | The id of the publish programs job
+try {
+    GeneralProgramJob result = apiInstance.getSpeechandtextanalyticsProgramsGeneralJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsGeneralJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The id of the publish programs job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GeneralProgramJob**](GeneralProgramJob.html)
+
+<a name="getSpeechandtextanalyticsProgramsPublishjob"></a>
+
+# **getSpeechandtextanalyticsProgramsPublishjob**
+
+
+
+> [ProgramJob](ProgramJob.html) getSpeechandtextanalyticsProgramsPublishjob(jobId)
+
+Get a Speech &amp; Text Analytics publish programs job by id
+
+
+
+Wraps GET /api/v2/speechandtextanalytics/programs/publishjobs/{jobId}  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:publish
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String jobId = "jobId_example"; // String | The id of the publish programs job
+try {
+    ProgramJob result = apiInstance.getSpeechandtextanalyticsProgramsPublishjob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsPublishjob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The id of the publish programs job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ProgramJob**](ProgramJob.html)
+
+<a name="getSpeechandtextanalyticsProgramsUnpublished"></a>
+
+# **getSpeechandtextanalyticsProgramsUnpublished**
+
+
+
+> [UnpublishedProgramsEntityListing](UnpublishedProgramsEntityListing.html) getSpeechandtextanalyticsProgramsUnpublished(nextPage, pageSize)
+
+Get the list of Speech &amp; Text Analytics unpublished programs
+
+
+
+Wraps GET /api/v2/speechandtextanalytics/programs/unpublished  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String nextPage = "nextPage_example"; // String | The key for listing the next page
+Integer pageSize = 20; // Integer | The page size for the listing
+try {
+    UnpublishedProgramsEntityListing result = apiInstance.getSpeechandtextanalyticsProgramsUnpublished(nextPage, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsUnpublished");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **nextPage** | **String**| The key for listing the next page | [optional] 
+| **pageSize** | **Integer**| The page size for the listing | [optional] [default to 20] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UnpublishedProgramsEntityListing**](UnpublishedProgramsEntityListing.html)
+
 <a name="getSpeechandtextanalyticsSettings"></a>
 
 # **getSpeechandtextanalyticsSettings**
@@ -200,6 +725,260 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**SpeechTextAnalyticsSettingsResponse**](SpeechTextAnalyticsSettingsResponse.html)
+
+<a name="getSpeechandtextanalyticsTopic"></a>
+
+# **getSpeechandtextanalyticsTopic**
+
+
+
+> [Topic](Topic.html) getSpeechandtextanalyticsTopic(topicId)
+
+Get a Speech &amp; Text Analytics topic by id
+
+
+
+Wraps GET /api/v2/speechandtextanalytics/topics/{topicId}  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:topic:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String topicId = "topicId_example"; // String | The id of the topic
+try {
+    Topic result = apiInstance.getSpeechandtextanalyticsTopic(topicId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopic");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **topicId** | **String**| The id of the topic | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Topic**](Topic.html)
+
+<a name="getSpeechandtextanalyticsTopics"></a>
+
+# **getSpeechandtextanalyticsTopics**
+
+
+
+> [TopicsEntityListing](TopicsEntityListing.html) getSpeechandtextanalyticsTopics(nextPage, pageSize)
+
+Get the list of Speech &amp; Text Analytics topics
+
+
+
+Wraps GET /api/v2/speechandtextanalytics/topics  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:topic:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String nextPage = "nextPage_example"; // String | The key for listing the next page
+Integer pageSize = 20; // Integer | The page size for the listing
+try {
+    TopicsEntityListing result = apiInstance.getSpeechandtextanalyticsTopics(nextPage, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopics");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **nextPage** | **String**| The key for listing the next page | [optional] 
+| **pageSize** | **Integer**| The page size for the listing | [optional] [default to 20] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TopicsEntityListing**](TopicsEntityListing.html)
+
+<a name="getSpeechandtextanalyticsTopicsGeneral"></a>
+
+# **getSpeechandtextanalyticsTopicsGeneral**
+
+
+
+> [GeneralTopicsEntityListing](GeneralTopicsEntityListing.html) getSpeechandtextanalyticsTopicsGeneral(dialect)
+
+Get the Speech &amp; Text Analytics general topics for a given dialect
+
+
+
+Wraps GET /api/v2/speechandtextanalytics/topics/general  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:topic:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String dialect = "dialect_example"; // String | The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+try {
+    GeneralTopicsEntityListing result = apiInstance.getSpeechandtextanalyticsTopicsGeneral(dialect);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsGeneral");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dialect** | **String**| The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional]<br />**Values**: en-US, es-US 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GeneralTopicsEntityListing**](GeneralTopicsEntityListing.html)
+
+<a name="getSpeechandtextanalyticsTopicsPublishjob"></a>
+
+# **getSpeechandtextanalyticsTopicsPublishjob**
+
+
+
+> [TopicJob](TopicJob.html) getSpeechandtextanalyticsTopicsPublishjob(jobId)
+
+Get a Speech &amp; Text Analytics publish topics job by id
+
+
+
+Wraps GET /api/v2/speechandtextanalytics/topics/publishjobs/{jobId}  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:topic:publish
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String jobId = "jobId_example"; // String | The id of the publish topics job
+try {
+    TopicJob result = apiInstance.getSpeechandtextanalyticsTopicsPublishjob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopicsPublishjob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The id of the publish topics job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TopicJob**](TopicJob.html)
 
 <a name="patchSpeechandtextanalyticsSettings"></a>
 
@@ -264,6 +1043,324 @@ try {
 
 [**SpeechTextAnalyticsSettingsResponse**](SpeechTextAnalyticsSettingsResponse.html)
 
+<a name="postSpeechandtextanalyticsPrograms"></a>
+
+# **postSpeechandtextanalyticsPrograms**
+
+
+
+> [Program](Program.html) postSpeechandtextanalyticsPrograms(body)
+
+Create new Speech &amp; Text Analytics program
+
+
+
+Wraps POST /api/v2/speechandtextanalytics/programs  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+ProgramRequest body = new ProgramRequest(); // ProgramRequest | The program to create
+try {
+    Program result = apiInstance.postSpeechandtextanalyticsPrograms(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#postSpeechandtextanalyticsPrograms");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ProgramRequest**](ProgramRequest.html)| The program to create | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Program**](Program.html)
+
+<a name="postSpeechandtextanalyticsProgramsGeneralJobs"></a>
+
+# **postSpeechandtextanalyticsProgramsGeneralJobs**
+
+
+
+> [GeneralProgramJob](GeneralProgramJob.html) postSpeechandtextanalyticsProgramsGeneralJobs(body)
+
+Create new Speech &amp; Text Analytics general program job
+
+
+
+Wraps POST /api/v2/speechandtextanalytics/programs/general/jobs  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:add
+* speechAndTextAnalytics:program:edit
+* speechAndTextAnalytics:topic:add
+* speechAndTextAnalytics:topic:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+GeneralProgramJobRequest body = new GeneralProgramJobRequest(); // GeneralProgramJobRequest | The general programs job to create
+try {
+    GeneralProgramJob result = apiInstance.postSpeechandtextanalyticsProgramsGeneralJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#postSpeechandtextanalyticsProgramsGeneralJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**GeneralProgramJobRequest**](GeneralProgramJobRequest.html)| The general programs job to create | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GeneralProgramJob**](GeneralProgramJob.html)
+
+<a name="postSpeechandtextanalyticsProgramsPublishjobs"></a>
+
+# **postSpeechandtextanalyticsProgramsPublishjobs**
+
+
+
+> [ProgramJob](ProgramJob.html) postSpeechandtextanalyticsProgramsPublishjobs(body)
+
+Create new Speech &amp; Text Analytics publish programs job
+
+
+
+Wraps POST /api/v2/speechandtextanalytics/programs/publishjobs  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:publish
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+ProgramJobRequest body = new ProgramJobRequest(); // ProgramJobRequest | The publish programs job to create
+try {
+    ProgramJob result = apiInstance.postSpeechandtextanalyticsProgramsPublishjobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#postSpeechandtextanalyticsProgramsPublishjobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ProgramJobRequest**](ProgramJobRequest.html)| The publish programs job to create | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ProgramJob**](ProgramJob.html)
+
+<a name="postSpeechandtextanalyticsTopics"></a>
+
+# **postSpeechandtextanalyticsTopics**
+
+
+
+> [Topic](Topic.html) postSpeechandtextanalyticsTopics(body)
+
+Create new Speech &amp; Text Analytics topic
+
+
+
+Wraps POST /api/v2/speechandtextanalytics/topics  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:topic:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+TopicRequest body = new TopicRequest(); // TopicRequest | The topic to create
+try {
+    Topic result = apiInstance.postSpeechandtextanalyticsTopics(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#postSpeechandtextanalyticsTopics");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**TopicRequest**](TopicRequest.html)| The topic to create | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Topic**](Topic.html)
+
+<a name="postSpeechandtextanalyticsTopicsPublishjobs"></a>
+
+# **postSpeechandtextanalyticsTopicsPublishjobs**
+
+
+
+> [TopicJob](TopicJob.html) postSpeechandtextanalyticsTopicsPublishjobs(body)
+
+Create new Speech &amp; Text Analytics publish topics job
+
+
+
+Wraps POST /api/v2/speechandtextanalytics/topics/publishjobs  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:topic:publish
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+TopicJobRequest body = new TopicJobRequest(); // TopicJobRequest | The publish topics job to create
+try {
+    TopicJob result = apiInstance.postSpeechandtextanalyticsTopicsPublishjobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#postSpeechandtextanalyticsTopicsPublishjobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**TopicJobRequest**](TopicJobRequest.html)| The publish topics job to create | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TopicJob**](TopicJob.html)
+
 <a name="postSpeechandtextanalyticsTranscriptsSearch"></a>
 
 # **postSpeechandtextanalyticsTranscriptsSearch**
@@ -327,4 +1424,134 @@ try {
 ### Return type
 
 [**JsonSearchResponse**](JsonSearchResponse.html)
+
+<a name="putSpeechandtextanalyticsProgram"></a>
+
+# **putSpeechandtextanalyticsProgram**
+
+
+
+> [Program](Program.html) putSpeechandtextanalyticsProgram(programId, body)
+
+Update existing Speech &amp; Text Analytics program
+
+
+
+Wraps PUT /api/v2/speechandtextanalytics/programs/{programId}  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String programId = "programId_example"; // String | The id of the program
+ProgramRequest body = new ProgramRequest(); // ProgramRequest | The program to update
+try {
+    Program result = apiInstance.putSpeechandtextanalyticsProgram(programId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#putSpeechandtextanalyticsProgram");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **programId** | **String**| The id of the program | 
+| **body** | [**ProgramRequest**](ProgramRequest.html)| The program to update | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Program**](Program.html)
+
+<a name="putSpeechandtextanalyticsTopic"></a>
+
+# **putSpeechandtextanalyticsTopic**
+
+
+
+> [Topic](Topic.html) putSpeechandtextanalyticsTopic(topicId, body)
+
+Update existing Speech &amp; Text Analytics topic
+
+
+
+Wraps PUT /api/v2/speechandtextanalytics/topics/{topicId}  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:topic:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String topicId = "topicId_example"; // String | The id of the topic
+TopicRequest body = new TopicRequest(); // TopicRequest | The topic to update
+try {
+    Topic result = apiInstance.putSpeechandtextanalyticsTopic(topicId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#putSpeechandtextanalyticsTopic");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **topicId** | **String**| The id of the topic | 
+| **body** | [**TopicRequest**](TopicRequest.html)| The topic to update | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Topic**](Topic.html)
 

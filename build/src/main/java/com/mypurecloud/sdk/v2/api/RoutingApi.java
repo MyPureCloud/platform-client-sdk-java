@@ -5813,12 +5813,11 @@ public class RoutingApi {
    * @param queueId Queue ID (required)
    * @param body Queue Members (required)
    * @param delete True to delete queue members (optional, default to false)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String postRoutingQueueMembers(String queueId, List<WritableEntity> body, Boolean delete) throws IOException, ApiException {
-    return  postRoutingQueueMembers(createPostRoutingQueueMembersRequest(queueId, body, delete));
+  public void postRoutingQueueMembers(String queueId, List<WritableEntity> body, Boolean delete) throws IOException, ApiException {
+     postRoutingQueueMembers(createPostRoutingQueueMembersRequest(queueId, body, delete));
   }
 
   /**
@@ -5827,10 +5826,9 @@ public class RoutingApi {
    * @param queueId Queue ID (required)
    * @param body Queue Members (required)
    * @param delete True to delete queue members (optional, default to false)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> postRoutingQueueMembersWithHttpInfo(String queueId, List<WritableEntity> body, Boolean delete) throws IOException {
+  public ApiResponse<Void> postRoutingQueueMembersWithHttpInfo(String queueId, List<WritableEntity> body, Boolean delete) throws IOException {
     return postRoutingQueueMembers(createPostRoutingQueueMembersRequest(queueId, body, delete).withHttpInfo());
   }
 
@@ -5849,18 +5847,17 @@ public class RoutingApi {
    * Bulk add or delete up to 100 queue members
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String postRoutingQueueMembers(PostRoutingQueueMembersRequest request) throws IOException, ApiException {
+  public void postRoutingQueueMembers(PostRoutingQueueMembersRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -5871,13 +5868,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> postRoutingQueueMembers(ApiRequest<List<WritableEntity>> request) throws IOException {
+  public ApiResponse<Void> postRoutingQueueMembers(ApiRequest<List<WritableEntity>> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -5888,7 +5885,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5900,12 +5897,11 @@ public class RoutingApi {
    * @param queueId Queue ID (required)
    * @param body Queue Members (required)
    * @param delete True to delete queue members (optional, default to false)
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String postRoutingQueueUsers(String queueId, List<WritableEntity> body, Boolean delete) throws IOException, ApiException {
-    return  postRoutingQueueUsers(createPostRoutingQueueUsersRequest(queueId, body, delete));
+  public void postRoutingQueueUsers(String queueId, List<WritableEntity> body, Boolean delete) throws IOException, ApiException {
+     postRoutingQueueUsers(createPostRoutingQueueUsersRequest(queueId, body, delete));
   }
 
   /**
@@ -5914,10 +5910,9 @@ public class RoutingApi {
    * @param queueId Queue ID (required)
    * @param body Queue Members (required)
    * @param delete True to delete queue members (optional, default to false)
-   * @return String
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> postRoutingQueueUsersWithHttpInfo(String queueId, List<WritableEntity> body, Boolean delete) throws IOException {
+  public ApiResponse<Void> postRoutingQueueUsersWithHttpInfo(String queueId, List<WritableEntity> body, Boolean delete) throws IOException {
     return postRoutingQueueUsers(createPostRoutingQueueUsersRequest(queueId, body, delete).withHttpInfo());
   }
 
@@ -5936,18 +5931,17 @@ public class RoutingApi {
    * DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
    * 
    * @param request The request object
-   * @return String
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public String postRoutingQueueUsers(PostRoutingQueueUsersRequest request) throws IOException, ApiException {
+  public void postRoutingQueueUsers(PostRoutingQueueUsersRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -5958,13 +5952,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<String> postRoutingQueueUsers(ApiRequest<List<WritableEntity>> request) throws IOException {
+  public ApiResponse<Void> postRoutingQueueUsers(ApiRequest<List<WritableEntity>> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<String>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -5975,7 +5969,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

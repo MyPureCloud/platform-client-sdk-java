@@ -3253,7 +3253,7 @@ public class WorkforceManagementApi {
   
   /**
    * Get management unit
-   * 
+   * settings.shortTermForecasting is deprecated and now lives on the business unit
    * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param expand  (optional)
    * @return ManagementUnit
@@ -3266,7 +3266,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get management unit
-   * 
+   * settings.shortTermForecasting is deprecated and now lives on the business unit
    * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param expand  (optional)
    * @return ManagementUnit
@@ -3287,7 +3287,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get management unit
-   * 
+   * settings.shortTermForecasting is deprecated and now lives on the business unit
    * @param request The request object
    * @return ManagementUnit
    * @throws ApiException if the request fails on the server
@@ -3306,7 +3306,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get management unit
-   * 
+   * settings.shortTermForecasting is deprecated and now lives on the business unit
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4689,9 +4689,9 @@ public class WorkforceManagementApi {
   /**
    * Get management units
    * 
-   * @param pageSize  (optional)
-   * @param pageNumber  (optional)
-   * @param expand  (optional)
+   * @param pageSize Deprecated, paging is not supported (optional)
+   * @param pageNumber Deprecated, paging is not supported (optional)
+   * @param expand Deprecated, expand settings on the single MU route (optional)
    * @param feature  (optional)
    * @param divisionId  (optional)
    * @return ManagementUnitListing
@@ -4705,9 +4705,9 @@ public class WorkforceManagementApi {
   /**
    * Get management units
    * 
-   * @param pageSize  (optional)
-   * @param pageNumber  (optional)
-   * @param expand  (optional)
+   * @param pageSize Deprecated, paging is not supported (optional)
+   * @param pageNumber Deprecated, paging is not supported (optional)
+   * @param expand Deprecated, expand settings on the single MU route (optional)
    * @param feature  (optional)
    * @param divisionId  (optional)
    * @return ManagementUnitListing

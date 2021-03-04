@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.BusinessUnitReference;
 import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.ManagementUnitSettingsResponse;
 import com.mypurecloud.sdk.v2.model.UserReference;
@@ -30,6 +31,7 @@ public class ManagementUnit  implements Serializable {
   private String id = null;
   private String name = null;
   private Division division = null;
+  private BusinessUnitReference businessUnit = null;
 
   private static class StartDayOfWeekEnumDeserializer extends StdDeserializer<StartDayOfWeekEnum> {
     public StartDayOfWeekEnumDeserializer() {
@@ -131,6 +133,24 @@ public class ManagementUnit  implements Serializable {
   }
   public void setDivision(Division division) {
     this.division = division;
+  }
+
+  
+  /**
+   * The business unit to which this management unit belongs
+   **/
+  public ManagementUnit businessUnit(BusinessUnitReference businessUnit) {
+    this.businessUnit = businessUnit;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The business unit to which this management unit belongs")
+  @JsonProperty("businessUnit")
+  public BusinessUnitReference getBusinessUnit() {
+    return businessUnit;
+  }
+  public void setBusinessUnit(BusinessUnitReference businessUnit) {
+    this.businessUnit = businessUnit;
   }
 
   
@@ -258,6 +278,7 @@ public class ManagementUnit  implements Serializable {
     return Objects.equals(this.id, managementUnit.id) &&
         Objects.equals(this.name, managementUnit.name) &&
         Objects.equals(this.division, managementUnit.division) &&
+        Objects.equals(this.businessUnit, managementUnit.businessUnit) &&
         Objects.equals(this.startDayOfWeek, managementUnit.startDayOfWeek) &&
         Objects.equals(this.timeZone, managementUnit.timeZone) &&
         Objects.equals(this.settings, managementUnit.settings) &&
@@ -270,7 +291,7 @@ public class ManagementUnit  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, startDayOfWeek, timeZone, settings, metadata, version, dateModified, modifiedBy, selfUri);
+    return Objects.hash(id, name, division, businessUnit, startDayOfWeek, timeZone, settings, metadata, version, dateModified, modifiedBy, selfUri);
   }
 
   @Override
@@ -281,6 +302,7 @@ public class ManagementUnit  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
+    sb.append("    businessUnit: ").append(toIndentedString(businessUnit)).append("\n");
     sb.append("    startDayOfWeek: ").append(toIndentedString(startDayOfWeek)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    settings: ").append(toIndentedString(settings)).append("\n");

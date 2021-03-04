@@ -3266,7 +3266,7 @@ public class UsersApi {
    * @param sortOrder Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional, default to Desc)
    * @param types Specifies the activity types. (optional)
    * @param statuses Specifies the activity statuses to filter by (optional)
-   * @param relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned. (optional)
+   * @param relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. (optional)
    * @return DevelopmentActivityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3288,7 +3288,7 @@ public class UsersApi {
    * @param sortOrder Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional, default to Desc)
    * @param types Specifies the activity types. (optional)
    * @param statuses Specifies the activity statuses to filter by (optional)
-   * @param relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned. (optional)
+   * @param relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. (optional)
    * @return DevelopmentActivityListing
    * @throws IOException if the request fails to be processed
    */
@@ -3384,7 +3384,7 @@ public class UsersApi {
    * @param sortOrder Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional, default to Desc)
    * @param types Specifies the activity types. (optional)
    * @param statuses Specifies the activity statuses to filter by (optional)
-   * @param relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned. (optional)
+   * @param relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. (optional)
    * @return DevelopmentActivityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3405,7 +3405,7 @@ public class UsersApi {
    * @param sortOrder Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional, default to Desc)
    * @param types Specifies the activity types. (optional)
    * @param statuses Specifies the activity statuses to filter by (optional)
-   * @param relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned. (optional)
+   * @param relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. (optional)
    * @return DevelopmentActivityListing
    * @throws IOException if the request fails to be processed
    */

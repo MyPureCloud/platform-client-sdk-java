@@ -174,14 +174,14 @@ public class CreateManagementUnitApiRequest  implements Serializable {
 
   
   /**
-   * The id of the business unit to which this management unit belongs.  Required after business unit launch
+   * The id of the business unit to which this management unit belongs
    **/
   public CreateManagementUnitApiRequest businessUnitId(String businessUnitId) {
     this.businessUnitId = businessUnitId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The id of the business unit to which this management unit belongs.  Required after business unit launch")
+  @ApiModelProperty(example = "null", required = true, value = "The id of the business unit to which this management unit belongs")
   @JsonProperty("businessUnitId")
   public String getBusinessUnitId() {
     return businessUnitId;

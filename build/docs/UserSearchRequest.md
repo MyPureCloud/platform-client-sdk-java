@@ -16,7 +16,7 @@ title: UserSearchRequest
 | **expand** | <!----><!---->**List&lt;String&gt;**<!----> | Provides more details about a specified resource |  [optional] |
 | **query** | <!----><!---->[**List&lt;UserSearchCriteria&gt;**](UserSearchCriteria.html)<!----> |  |  [optional] |
 | **integrationPresenceSource** | [**IntegrationPresenceSourceEnum**](#IntegrationPresenceSourceEnum)<!----> | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 10. |  [optional] |
-| **enforcePermissions** | <!----><!---->**Boolean**<!----> | Enforce view permission on request |  [optional] |
+| **enforcePermissions** | <!----><!---->**Boolean**<!----> | When set to true add additional search criteria to filter users by directory:user:view |  [optional] |
 {: class="table table-striped"}
 
 

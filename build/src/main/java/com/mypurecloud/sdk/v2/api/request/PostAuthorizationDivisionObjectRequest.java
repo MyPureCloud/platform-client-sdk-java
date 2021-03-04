@@ -63,7 +63,8 @@ public class PostAuthorizationDivisionObjectRequest {
 		MANAGEMENTUNIT("MANAGEMENTUNIT"), 
 		BUSINESSUNIT("BUSINESSUNIT"), 
 		FLOW("FLOW"), 
-		USER("USER");
+		USER("USER"), 
+		DATATABLES("DATATABLES");
 
 		private String value;
 

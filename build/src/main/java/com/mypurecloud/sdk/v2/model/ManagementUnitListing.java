@@ -54,13 +54,14 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
 
   
   /**
+   * Deprecated, paging is not supported
    **/
   public ManagementUnitListing pageSize(Integer pageSize) {
     this.pageSize = pageSize;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Deprecated, paging is not supported")
   @JsonProperty("pageSize")
   public Integer getPageSize() {
     return pageSize;
@@ -71,13 +72,14 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
 
   
   /**
+   * Deprecated, paging is not supported
    **/
   public ManagementUnitListing pageNumber(Integer pageNumber) {
     this.pageNumber = pageNumber;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Deprecated, paging is not supported")
   @JsonProperty("pageNumber")
   public Integer getPageNumber() {
     return pageNumber;
@@ -88,13 +90,14 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
 
   
   /**
+   * Deprecated, paging is not supported
    **/
   public ManagementUnitListing total(Long total) {
     this.total = total;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Deprecated, paging is not supported")
   @JsonProperty("total")
   public Long getTotal() {
     return total;
@@ -105,13 +108,14 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
 
   
   /**
+   * Deprecated, paging is not supported
    **/
   public ManagementUnitListing firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Deprecated, paging is not supported")
   @JsonProperty("firstUri")
   public String getFirstUri() {
     return firstUri;
@@ -122,13 +126,14 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
 
   
   /**
+   * Deprecated, paging is not supported
    **/
   public ManagementUnitListing nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Deprecated, paging is not supported")
   @JsonProperty("nextUri")
   public String getNextUri() {
     return nextUri;
@@ -139,13 +144,14 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
 
   
   /**
+   * Deprecated, paging is not supported
    **/
   public ManagementUnitListing pageCount(Integer pageCount) {
     this.pageCount = pageCount;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Deprecated, paging is not supported")
   @JsonProperty("pageCount")
   public Integer getPageCount() {
     return pageCount;
@@ -156,13 +162,14 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
 
   
   /**
+   * Deprecated, paging is not supported
    **/
   public ManagementUnitListing lastUri(String lastUri) {
     this.lastUri = lastUri;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Deprecated, paging is not supported")
   @JsonProperty("lastUri")
   public String getLastUri() {
     return lastUri;
@@ -173,13 +180,14 @@ public class ManagementUnitListing  implements Serializable, PagedResource<Manag
 
   
   /**
+   * Deprecated, paging is not supported
    **/
   public ManagementUnitListing previousUri(String previousUri) {
     this.previousUri = previousUri;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Deprecated, paging is not supported")
   @JsonProperty("previousUri")
   public String getPreviousUri() {
     return previousUri;

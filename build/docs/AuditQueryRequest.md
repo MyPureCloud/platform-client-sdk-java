@@ -38,6 +38,7 @@ title: AuditQueryRequest
 | TELEPHONY | &quot;Telephony&quot; |
 | OUTBOUND | &quot;Outbound&quot; |
 | SPEECHANDTEXTANALYTICS | &quot;SpeechAndTextAnalytics&quot; |
+| ROUTING | &quot;Routing&quot; |
 {: class="table table-striped"}
 
 

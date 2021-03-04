@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.ScoredAgent;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class RoutingData  implements Serializable {
   private Integer priority = null;
   private List<String> skillIds = new ArrayList<String>();
   private List<String> preferredAgentIds = new ArrayList<String>();
+  private List<ScoredAgent> scoredAgents = new ArrayList<ScoredAgent>();
 
   
   /**
@@ -119,6 +121,24 @@ public class RoutingData  implements Serializable {
   }
 
   
+  /**
+   * A list of scored agents for routing decisions
+   **/
+  public RoutingData scoredAgents(List<ScoredAgent> scoredAgents) {
+    this.scoredAgents = scoredAgents;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A list of scored agents for routing decisions")
+  @JsonProperty("scoredAgents")
+  public List<ScoredAgent> getScoredAgents() {
+    return scoredAgents;
+  }
+  public void setScoredAgents(List<ScoredAgent> scoredAgents) {
+    this.scoredAgents = scoredAgents;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -133,12 +153,13 @@ public class RoutingData  implements Serializable {
         Objects.equals(this.languageId, routingData.languageId) &&
         Objects.equals(this.priority, routingData.priority) &&
         Objects.equals(this.skillIds, routingData.skillIds) &&
-        Objects.equals(this.preferredAgentIds, routingData.preferredAgentIds);
+        Objects.equals(this.preferredAgentIds, routingData.preferredAgentIds) &&
+        Objects.equals(this.scoredAgents, routingData.scoredAgents);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(queueId, languageId, priority, skillIds, preferredAgentIds);
+    return Objects.hash(queueId, languageId, priority, skillIds, preferredAgentIds, scoredAgents);
   }
 
   @Override
@@ -151,6 +172,7 @@ public class RoutingData  implements Serializable {
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    skillIds: ").append(toIndentedString(skillIds)).append("\n");
     sb.append("    preferredAgentIds: ").append(toIndentedString(preferredAgentIds)).append("\n");
+    sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");
     sb.append("}");
     return sb.toString();
   }

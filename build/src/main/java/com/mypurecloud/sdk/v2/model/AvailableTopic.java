@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.PermissionDetails;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class AvailableTopic  implements Serializable {
   
   private String description = null;
   private String id = null;
+  private List<PermissionDetails> permissionDetails = new ArrayList<PermissionDetails>();
   private List<String> requiresPermissions = new ArrayList<String>();
   private Boolean requiresDivisionPermissions = null;
   private Boolean enforced = null;
@@ -163,6 +165,24 @@ public class AvailableTopic  implements Serializable {
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+  
+  /**
+   * Full detailed permissions required to subscribe to the topic
+   **/
+  public AvailableTopic permissionDetails(List<PermissionDetails> permissionDetails) {
+    this.permissionDetails = permissionDetails;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Full detailed permissions required to subscribe to the topic")
+  @JsonProperty("permissionDetails")
+  public List<PermissionDetails> getPermissionDetails() {
+    return permissionDetails;
+  }
+  public void setPermissionDetails(List<PermissionDetails> permissionDetails) {
+    this.permissionDetails = permissionDetails;
   }
 
   
@@ -338,6 +358,7 @@ public class AvailableTopic  implements Serializable {
     AvailableTopic availableTopic = (AvailableTopic) o;
     return Objects.equals(this.description, availableTopic.description) &&
         Objects.equals(this.id, availableTopic.id) &&
+        Objects.equals(this.permissionDetails, availableTopic.permissionDetails) &&
         Objects.equals(this.requiresPermissions, availableTopic.requiresPermissions) &&
         Objects.equals(this.requiresDivisionPermissions, availableTopic.requiresDivisionPermissions) &&
         Objects.equals(this.enforced, availableTopic.enforced) &&
@@ -351,7 +372,7 @@ public class AvailableTopic  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, id, requiresPermissions, requiresDivisionPermissions, enforced, visibility, schema, requiresCurrentUser, requiresCurrentUserOrPermission, transports, publicApiTemplateUriPaths);
+    return Objects.hash(description, id, permissionDetails, requiresPermissions, requiresDivisionPermissions, enforced, visibility, schema, requiresCurrentUser, requiresCurrentUserOrPermission, transports, publicApiTemplateUriPaths);
   }
 
   @Override
@@ -361,6 +382,7 @@ public class AvailableTopic  implements Serializable {
     
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    permissionDetails: ").append(toIndentedString(permissionDetails)).append("\n");
     sb.append("    requiresPermissions: ").append(toIndentedString(requiresPermissions)).append("\n");
     sb.append("    requiresDivisionPermissions: ").append(toIndentedString(requiresDivisionPermissions)).append("\n");
     sb.append("    enforced: ").append(toIndentedString(enforced)).append("\n");

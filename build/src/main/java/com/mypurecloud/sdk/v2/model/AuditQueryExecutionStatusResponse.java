@@ -114,7 +114,8 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     GROUPS("Groups"),
     TELEPHONY("Telephony"),
     OUTBOUND("Outbound"),
-    SPEECHANDTEXTANALYTICS("SpeechAndTextAnalytics");
+    SPEECHANDTEXTANALYTICS("SpeechAndTextAnalytics"),
+    ROUTING("Routing");
 
     private String value;
 

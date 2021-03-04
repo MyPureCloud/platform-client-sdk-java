@@ -22,8 +22,8 @@ public class WfmHistoricalDataUploadRequestStatusTopicDateTime  implements Seria
   
   private Integer iMillis = null;
   private Boolean beforeNow = null;
-  private Boolean afterNow = null;
   private Boolean equalNow = null;
+  private Boolean afterNow = null;
 
   
   /**
@@ -62,23 +62,6 @@ public class WfmHistoricalDataUploadRequestStatusTopicDateTime  implements Seria
   
   /**
    **/
-  public WfmHistoricalDataUploadRequestStatusTopicDateTime afterNow(Boolean afterNow) {
-    this.afterNow = afterNow;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("afterNow")
-  public Boolean getAfterNow() {
-    return afterNow;
-  }
-  public void setAfterNow(Boolean afterNow) {
-    this.afterNow = afterNow;
-  }
-
-  
-  /**
-   **/
   public WfmHistoricalDataUploadRequestStatusTopicDateTime equalNow(Boolean equalNow) {
     this.equalNow = equalNow;
     return this;
@@ -94,6 +77,23 @@ public class WfmHistoricalDataUploadRequestStatusTopicDateTime  implements Seria
   }
 
   
+  /**
+   **/
+  public WfmHistoricalDataUploadRequestStatusTopicDateTime afterNow(Boolean afterNow) {
+    this.afterNow = afterNow;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("afterNow")
+  public Boolean getAfterNow() {
+    return afterNow;
+  }
+  public void setAfterNow(Boolean afterNow) {
+    this.afterNow = afterNow;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -106,13 +106,13 @@ public class WfmHistoricalDataUploadRequestStatusTopicDateTime  implements Seria
     WfmHistoricalDataUploadRequestStatusTopicDateTime wfmHistoricalDataUploadRequestStatusTopicDateTime = (WfmHistoricalDataUploadRequestStatusTopicDateTime) o;
     return Objects.equals(this.iMillis, wfmHistoricalDataUploadRequestStatusTopicDateTime.iMillis) &&
         Objects.equals(this.beforeNow, wfmHistoricalDataUploadRequestStatusTopicDateTime.beforeNow) &&
-        Objects.equals(this.afterNow, wfmHistoricalDataUploadRequestStatusTopicDateTime.afterNow) &&
-        Objects.equals(this.equalNow, wfmHistoricalDataUploadRequestStatusTopicDateTime.equalNow);
+        Objects.equals(this.equalNow, wfmHistoricalDataUploadRequestStatusTopicDateTime.equalNow) &&
+        Objects.equals(this.afterNow, wfmHistoricalDataUploadRequestStatusTopicDateTime.afterNow);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(iMillis, beforeNow, afterNow, equalNow);
+    return Objects.hash(iMillis, beforeNow, equalNow, afterNow);
   }
 
   @Override
@@ -122,8 +122,8 @@ public class WfmHistoricalDataUploadRequestStatusTopicDateTime  implements Seria
     
     sb.append("    iMillis: ").append(toIndentedString(iMillis)).append("\n");
     sb.append("    beforeNow: ").append(toIndentedString(beforeNow)).append("\n");
-    sb.append("    afterNow: ").append(toIndentedString(afterNow)).append("\n");
     sb.append("    equalNow: ").append(toIndentedString(equalNow)).append("\n");
+    sb.append("    afterNow: ").append(toIndentedString(afterNow)).append("\n");
     sb.append("}");
     return sb.toString();
   }

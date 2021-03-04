@@ -1,0 +1,42 @@
+---
+title: GeneralProgramJobRequest
+---
+## GeneralProgramJobRequest
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **dialect** | [**DialectEnum**](#DialectEnum)<!----> | The dialect of the topics to link with the general program, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard |  |
+| **mode** | [**ModeEnum**](#ModeEnum)<!----> | The mode to use for the general program job, default value is Skip |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="DialectEnum"></a>
+
+## Enum: DialectEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| EN_US | &quot;en-US&quot; |
+| ES_US | &quot;es-US&quot; |
+| EN_AU | &quot;en-AU&quot; |
+| EN_GB | &quot;en-GB&quot; |
+{: class="table table-striped"}
+
+
+<a name="ModeEnum"></a>
+
+## Enum: ModeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| SKIP | &quot;Skip&quot; |
+| MERGE | &quot;Merge&quot; |
+{: class="table table-striped"}
+
+
+

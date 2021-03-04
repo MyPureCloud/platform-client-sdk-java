@@ -4499,7 +4499,7 @@ try {
 
 
 
-> String postRoutingQueueMembers(queueId, body, delete)
+> Void postRoutingQueueMembers(queueId, body, delete)
 
 Bulk add or delete up to 100 queue members
 
@@ -4538,8 +4538,7 @@ String queueId = "queueId_example"; // String | Queue ID
 List<WritableEntity> body = Arrays.asList(new WritableEntity()); // List<WritableEntity> | Queue Members
 Boolean delete = false; // Boolean | True to delete queue members
 try {
-    String result = apiInstance.postRoutingQueueMembers(queueId, body, delete);
-    System.out.println(result);
+    apiInstance.postRoutingQueueMembers(queueId, body, delete);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#postRoutingQueueMembers");
     e.printStackTrace();
@@ -4559,7 +4558,7 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="postRoutingQueueUsers"></a>
 
@@ -4567,7 +4566,7 @@ try {
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-> String postRoutingQueueUsers(queueId, body, delete)
+> Void postRoutingQueueUsers(queueId, body, delete)
 
 DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
 
@@ -4606,8 +4605,7 @@ String queueId = "queueId_example"; // String | Queue ID
 List<WritableEntity> body = Arrays.asList(new WritableEntity()); // List<WritableEntity> | Queue Members
 Boolean delete = false; // Boolean | True to delete queue members
 try {
-    String result = apiInstance.postRoutingQueueUsers(queueId, body, delete);
-    System.out.println(result);
+    apiInstance.postRoutingQueueUsers(queueId, body, delete);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#postRoutingQueueUsers");
     e.printStackTrace();
@@ -4627,7 +4625,7 @@ try {
 
 ### Return type
 
-**String**
+null (empty response body)
 
 <a name="postRoutingQueueWrapupcodes"></a>
 

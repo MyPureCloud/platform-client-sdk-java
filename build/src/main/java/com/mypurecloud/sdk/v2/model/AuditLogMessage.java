@@ -69,7 +69,8 @@ public class AuditLogMessage  implements Serializable {
     GROUPS("Groups"),
     TELEPHONY("Telephony"),
     OUTBOUND("Outbound"),
-    SPEECHANDTEXTANALYTICS("SpeechAndTextAnalytics");
+    SPEECHANDTEXTANALYTICS("SpeechAndTextAnalytics"),
+    ROUTING("Routing");
 
     private String value;
 
@@ -262,8 +263,14 @@ public class AuditLogMessage  implements Serializable {
     DNCLIST("DNCList"),
     CALLANALYSISRESPONSESET("CallAnalysisResponseSet"),
     RULESET("RuleSet"),
+    CAMPAIGNSCHEDULE("CampaignSchedule"),
+    SEQUENCESCHEDULE("SequenceSchedule"),
+    ORGANIZATIONPROPERTIES("OrganizationProperties"),
+    WRAPUPCODEMAPPING("WrapUpCodeMapping"),
+    MESSAGINGCAMPAIGN("MessagingCampaign"),
     TRANSCRIPTIONSETTINGS("TranscriptionSettings"),
-    SPEECHTEXTANALYTICSSETTINGS("SpeechTextAnalyticsSettings");
+    SPEECHTEXTANALYTICSSETTINGS("SpeechTextAnalyticsSettings"),
+    PREDICTOR("Predictor");
 
     private String value;
 

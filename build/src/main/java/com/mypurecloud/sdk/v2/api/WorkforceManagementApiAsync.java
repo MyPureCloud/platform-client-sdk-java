@@ -2984,7 +2984,7 @@ public class WorkforceManagementApiAsync {
   
   /**
    * Get management unit
-   * 
+   * settings.shortTermForecasting is deprecated and now lives on the business unit
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3018,7 +3018,7 @@ public class WorkforceManagementApiAsync {
 
   /**
    * Get management unit
-   * 
+   * settings.shortTermForecasting is deprecated and now lives on the business unit
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

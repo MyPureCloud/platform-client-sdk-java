@@ -5269,13 +5269,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> postRoutingQueueMembersAsync(PostRoutingQueueMembersRequest request, final AsyncApiCallback<String> callback) {
+  public Future<Void> postRoutingQueueMembersAsync(PostRoutingQueueMembersRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      final SettableFuture<String> future = SettableFuture.create();
+      final SettableFuture<Void> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -5303,13 +5303,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> postRoutingQueueMembersAsync(ApiRequest<List<WritableEntity>> request, final AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<Void>> postRoutingQueueMembersAsync(ApiRequest<List<WritableEntity>> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -5317,7 +5317,7 @@ public class RoutingApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -5325,7 +5325,7 @@ public class RoutingApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -5345,13 +5345,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<String> postRoutingQueueUsersAsync(PostRoutingQueueUsersRequest request, final AsyncApiCallback<String> callback) {
+  public Future<Void> postRoutingQueueUsersAsync(PostRoutingQueueUsersRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      final SettableFuture<String> future = SettableFuture.create();
+      final SettableFuture<Void> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -5379,13 +5379,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<String>> postRoutingQueueUsersAsync(ApiRequest<List<WritableEntity>> request, final AsyncApiCallback<ApiResponse<String>> callback) {
+  public Future<ApiResponse<Void>> postRoutingQueueUsersAsync(ApiRequest<List<WritableEntity>> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      final SettableFuture<ApiResponse<String>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<String>() {}, new AsyncApiCallback<ApiResponse<String>>() {
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<String> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -5393,7 +5393,7 @@ public class RoutingApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -5401,7 +5401,7 @@ public class RoutingApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -157,7 +157,6 @@ public class GetWorkforcemanagementBusinessunitsRequest {
 		REALTIMEADHERENCE("RealTimeAdherence"), 
 		SCHEDULES("Schedules"), 
 		BUSCHEDULES("BuSchedules"), 
-		SERVICEGOALGROUPS("ServiceGoalGroups"), 
 		SERVICEGOALTEMPLATES("ServiceGoalTemplates"), 
 		PLANNINGGROUPS("PlanningGroups"), 
 		SHIFTTRADING("ShiftTrading"), 

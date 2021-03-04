@@ -10975,32 +10975,28 @@ public class ConversationsApi {
    * Create a Facebook Integration
    * 
    * @param body FacebookIntegrationRequest (required)
-   * @param async Create a Facebook integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Facebook integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. (optional, default to false)
    * @return FacebookIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public FacebookIntegration postConversationsMessagingIntegrationsFacebook(FacebookIntegrationRequest body, Boolean async) throws IOException, ApiException {
-    return  postConversationsMessagingIntegrationsFacebook(createPostConversationsMessagingIntegrationsFacebookRequest(body, async));
+  public FacebookIntegration postConversationsMessagingIntegrationsFacebook(FacebookIntegrationRequest body) throws IOException, ApiException {
+    return  postConversationsMessagingIntegrationsFacebook(createPostConversationsMessagingIntegrationsFacebookRequest(body));
   }
 
   /**
    * Create a Facebook Integration
    * 
    * @param body FacebookIntegrationRequest (required)
-   * @param async Create a Facebook integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Facebook integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. (optional, default to false)
    * @return FacebookIntegration
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FacebookIntegration> postConversationsMessagingIntegrationsFacebookWithHttpInfo(FacebookIntegrationRequest body, Boolean async) throws IOException {
-    return postConversationsMessagingIntegrationsFacebook(createPostConversationsMessagingIntegrationsFacebookRequest(body, async).withHttpInfo());
+  public ApiResponse<FacebookIntegration> postConversationsMessagingIntegrationsFacebookWithHttpInfo(FacebookIntegrationRequest body) throws IOException {
+    return postConversationsMessagingIntegrationsFacebook(createPostConversationsMessagingIntegrationsFacebookRequest(body).withHttpInfo());
   }
 
-  private PostConversationsMessagingIntegrationsFacebookRequest createPostConversationsMessagingIntegrationsFacebookRequest(FacebookIntegrationRequest body, Boolean async) {
+  private PostConversationsMessagingIntegrationsFacebookRequest createPostConversationsMessagingIntegrationsFacebookRequest(FacebookIntegrationRequest body) {
     return PostConversationsMessagingIntegrationsFacebookRequest.builder()
             .withBody(body)
-    
-            .withAsync(async)
     
             .build();
   }
@@ -11058,32 +11054,28 @@ public class ConversationsApi {
    * Create a LINE messenger Integration
    * 
    * @param body LineIntegrationRequest (required)
-   * @param async Create a LINE integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new LINE integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. (optional, default to false)
    * @return LineIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LineIntegration postConversationsMessagingIntegrationsLine(LineIntegrationRequest body, Boolean async) throws IOException, ApiException {
-    return  postConversationsMessagingIntegrationsLine(createPostConversationsMessagingIntegrationsLineRequest(body, async));
+  public LineIntegration postConversationsMessagingIntegrationsLine(LineIntegrationRequest body) throws IOException, ApiException {
+    return  postConversationsMessagingIntegrationsLine(createPostConversationsMessagingIntegrationsLineRequest(body));
   }
 
   /**
    * Create a LINE messenger Integration
    * 
    * @param body LineIntegrationRequest (required)
-   * @param async Create a LINE integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new LINE integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. (optional, default to false)
    * @return LineIntegration
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LineIntegration> postConversationsMessagingIntegrationsLineWithHttpInfo(LineIntegrationRequest body, Boolean async) throws IOException {
-    return postConversationsMessagingIntegrationsLine(createPostConversationsMessagingIntegrationsLineRequest(body, async).withHttpInfo());
+  public ApiResponse<LineIntegration> postConversationsMessagingIntegrationsLineWithHttpInfo(LineIntegrationRequest body) throws IOException {
+    return postConversationsMessagingIntegrationsLine(createPostConversationsMessagingIntegrationsLineRequest(body).withHttpInfo());
   }
 
-  private PostConversationsMessagingIntegrationsLineRequest createPostConversationsMessagingIntegrationsLineRequest(LineIntegrationRequest body, Boolean async) {
+  private PostConversationsMessagingIntegrationsLineRequest createPostConversationsMessagingIntegrationsLineRequest(LineIntegrationRequest body) {
     return PostConversationsMessagingIntegrationsLineRequest.builder()
             .withBody(body)
-    
-            .withAsync(async)
     
             .build();
   }
@@ -11141,32 +11133,28 @@ public class ConversationsApi {
    * Create a Twitter Integration
    * 
    * @param body TwitterIntegrationRequest (required)
-   * @param async Create a Twitter integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Twitter integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. (optional, default to false)
    * @return TwitterIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public TwitterIntegration postConversationsMessagingIntegrationsTwitter(TwitterIntegrationRequest body, Boolean async) throws IOException, ApiException {
-    return  postConversationsMessagingIntegrationsTwitter(createPostConversationsMessagingIntegrationsTwitterRequest(body, async));
+  public TwitterIntegration postConversationsMessagingIntegrationsTwitter(TwitterIntegrationRequest body) throws IOException, ApiException {
+    return  postConversationsMessagingIntegrationsTwitter(createPostConversationsMessagingIntegrationsTwitterRequest(body));
   }
 
   /**
    * Create a Twitter Integration
    * 
    * @param body TwitterIntegrationRequest (required)
-   * @param async Create a Twitter integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Twitter integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. (optional, default to false)
    * @return TwitterIntegration
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TwitterIntegration> postConversationsMessagingIntegrationsTwitterWithHttpInfo(TwitterIntegrationRequest body, Boolean async) throws IOException {
-    return postConversationsMessagingIntegrationsTwitter(createPostConversationsMessagingIntegrationsTwitterRequest(body, async).withHttpInfo());
+  public ApiResponse<TwitterIntegration> postConversationsMessagingIntegrationsTwitterWithHttpInfo(TwitterIntegrationRequest body) throws IOException {
+    return postConversationsMessagingIntegrationsTwitter(createPostConversationsMessagingIntegrationsTwitterRequest(body).withHttpInfo());
   }
 
-  private PostConversationsMessagingIntegrationsTwitterRequest createPostConversationsMessagingIntegrationsTwitterRequest(TwitterIntegrationRequest body, Boolean async) {
+  private PostConversationsMessagingIntegrationsTwitterRequest createPostConversationsMessagingIntegrationsTwitterRequest(TwitterIntegrationRequest body) {
     return PostConversationsMessagingIntegrationsTwitterRequest.builder()
             .withBody(body)
-    
-            .withAsync(async)
     
             .build();
   }
@@ -11224,32 +11212,28 @@ public class ConversationsApi {
    * Create a WhatsApp Integration
    * You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
    * @param body WhatsAppIntegrationRequest (required)
-   * @param async Create a WhatsApp integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new WhatsApp integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. (optional, default to false)
    * @return WhatsAppIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WhatsAppIntegration postConversationsMessagingIntegrationsWhatsapp(WhatsAppIntegrationRequest body, Boolean async) throws IOException, ApiException {
-    return  postConversationsMessagingIntegrationsWhatsapp(createPostConversationsMessagingIntegrationsWhatsappRequest(body, async));
+  public WhatsAppIntegration postConversationsMessagingIntegrationsWhatsapp(WhatsAppIntegrationRequest body) throws IOException, ApiException {
+    return  postConversationsMessagingIntegrationsWhatsapp(createPostConversationsMessagingIntegrationsWhatsappRequest(body));
   }
 
   /**
    * Create a WhatsApp Integration
    * You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
    * @param body WhatsAppIntegrationRequest (required)
-   * @param async Create a WhatsApp integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new WhatsApp integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. (optional, default to false)
    * @return WhatsAppIntegration
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WhatsAppIntegration> postConversationsMessagingIntegrationsWhatsappWithHttpInfo(WhatsAppIntegrationRequest body, Boolean async) throws IOException {
-    return postConversationsMessagingIntegrationsWhatsapp(createPostConversationsMessagingIntegrationsWhatsappRequest(body, async).withHttpInfo());
+  public ApiResponse<WhatsAppIntegration> postConversationsMessagingIntegrationsWhatsappWithHttpInfo(WhatsAppIntegrationRequest body) throws IOException {
+    return postConversationsMessagingIntegrationsWhatsapp(createPostConversationsMessagingIntegrationsWhatsappRequest(body).withHttpInfo());
   }
 
-  private PostConversationsMessagingIntegrationsWhatsappRequest createPostConversationsMessagingIntegrationsWhatsappRequest(WhatsAppIntegrationRequest body, Boolean async) {
+  private PostConversationsMessagingIntegrationsWhatsappRequest createPostConversationsMessagingIntegrationsWhatsappRequest(WhatsAppIntegrationRequest body) {
     return PostConversationsMessagingIntegrationsWhatsappRequest.builder()
             .withBody(body)
-    
-            .withAsync(async)
     
             .build();
   }

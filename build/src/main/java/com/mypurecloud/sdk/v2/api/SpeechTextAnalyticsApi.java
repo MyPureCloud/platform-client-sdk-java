@@ -10,20 +10,53 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.ConversationMetrics;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ConversationMetrics;
 import com.mypurecloud.sdk.v2.model.TranscriptUrl;
+import com.mypurecloud.sdk.v2.model.Program;
+import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
+import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
+import com.mypurecloud.sdk.v2.model.ProgramJob;
+import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsResponse;
+import com.mypurecloud.sdk.v2.model.Topic;
+import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
+import com.mypurecloud.sdk.v2.model.GeneralTopicsEntityListing;
+import com.mypurecloud.sdk.v2.model.TopicJob;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
+import com.mypurecloud.sdk.v2.model.ProgramRequest;
+import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
+import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
+import com.mypurecloud.sdk.v2.model.TopicRequest;
+import com.mypurecloud.sdk.v2.model.TopicJobRequest;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
 import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsProgramRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsTopicRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsDialectsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsGeneralJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsPublishjobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsUnpublishedRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsGeneralRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsPublishjobRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSpeechandtextanalyticsSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsGeneralJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsPublishjobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsPublishjobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTranscriptsSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramRequest;
+import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsTopicRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -41,6 +74,162 @@ public class SpeechTextAnalyticsApi {
 
   public SpeechTextAnalyticsApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Delete a Speech &amp; Text Analytics program by id
+   * 
+   * @param programId The id of the program (required)
+   * @param forceDelete Indicates whether the program is forced to be deleted or not. Required when the program to delete is the default program. (optional, default to false)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteSpeechandtextanalyticsProgram(String programId, Boolean forceDelete) throws IOException, ApiException {
+     deleteSpeechandtextanalyticsProgram(createDeleteSpeechandtextanalyticsProgramRequest(programId, forceDelete));
+  }
+
+  /**
+   * Delete a Speech &amp; Text Analytics program by id
+   * 
+   * @param programId The id of the program (required)
+   * @param forceDelete Indicates whether the program is forced to be deleted or not. Required when the program to delete is the default program. (optional, default to false)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteSpeechandtextanalyticsProgramWithHttpInfo(String programId, Boolean forceDelete) throws IOException {
+    return deleteSpeechandtextanalyticsProgram(createDeleteSpeechandtextanalyticsProgramRequest(programId, forceDelete).withHttpInfo());
+  }
+
+  private DeleteSpeechandtextanalyticsProgramRequest createDeleteSpeechandtextanalyticsProgramRequest(String programId, Boolean forceDelete) {
+    return DeleteSpeechandtextanalyticsProgramRequest.builder()
+            .withProgramId(programId)
+    
+            .withForceDelete(forceDelete)
+    
+            .build();
+  }
+
+  /**
+   * Delete a Speech &amp; Text Analytics program by id
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteSpeechandtextanalyticsProgram(DeleteSpeechandtextanalyticsProgramRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a Speech &amp; Text Analytics program by id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteSpeechandtextanalyticsProgram(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete a Speech &amp; Text Analytics topic by id
+   * 
+   * @param topicId The id of the topic (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteSpeechandtextanalyticsTopic(String topicId) throws IOException, ApiException {
+     deleteSpeechandtextanalyticsTopic(createDeleteSpeechandtextanalyticsTopicRequest(topicId));
+  }
+
+  /**
+   * Delete a Speech &amp; Text Analytics topic by id
+   * 
+   * @param topicId The id of the topic (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteSpeechandtextanalyticsTopicWithHttpInfo(String topicId) throws IOException {
+    return deleteSpeechandtextanalyticsTopic(createDeleteSpeechandtextanalyticsTopicRequest(topicId).withHttpInfo());
+  }
+
+  private DeleteSpeechandtextanalyticsTopicRequest createDeleteSpeechandtextanalyticsTopicRequest(String topicId) {
+    return DeleteSpeechandtextanalyticsTopicRequest.builder()
+            .withTopicId(topicId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a Speech &amp; Text Analytics topic by id
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteSpeechandtextanalyticsTopic(DeleteSpeechandtextanalyticsTopicRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a Speech &amp; Text Analytics topic by id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteSpeechandtextanalyticsTopic(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   
@@ -207,6 +396,484 @@ public class SpeechTextAnalyticsApi {
 
   
   /**
+   * Get list of supported Speech &amp; Text Analytics dialects
+   * 
+   * @return List<Object>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<Object> getSpeechandtextanalyticsDialects() throws IOException, ApiException {
+    return  getSpeechandtextanalyticsDialects(createGetSpeechandtextanalyticsDialectsRequest());
+  }
+
+  /**
+   * Get list of supported Speech &amp; Text Analytics dialects
+   * 
+   * @return List<Object>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<Object>> getSpeechandtextanalyticsDialectsWithHttpInfo() throws IOException {
+    return getSpeechandtextanalyticsDialects(createGetSpeechandtextanalyticsDialectsRequest().withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsDialectsRequest createGetSpeechandtextanalyticsDialectsRequest() {
+    return GetSpeechandtextanalyticsDialectsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get list of supported Speech &amp; Text Analytics dialects
+   * 
+   * @param request The request object
+   * @return List<Object>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<Object> getSpeechandtextanalyticsDialects(GetSpeechandtextanalyticsDialectsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<Object>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<Object>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get list of supported Speech &amp; Text Analytics dialects
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<Object>> getSpeechandtextanalyticsDialects(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<Object>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<Object>> response = (ApiResponse<List<Object>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<Object>> response = (ApiResponse<List<Object>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a Speech &amp; Text Analytics program by id
+   * 
+   * @param programId The id of the program (required)
+   * @return Program
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Program getSpeechandtextanalyticsProgram(String programId) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsProgram(createGetSpeechandtextanalyticsProgramRequest(programId));
+  }
+
+  /**
+   * Get a Speech &amp; Text Analytics program by id
+   * 
+   * @param programId The id of the program (required)
+   * @return Program
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Program> getSpeechandtextanalyticsProgramWithHttpInfo(String programId) throws IOException {
+    return getSpeechandtextanalyticsProgram(createGetSpeechandtextanalyticsProgramRequest(programId).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsProgramRequest createGetSpeechandtextanalyticsProgramRequest(String programId) {
+    return GetSpeechandtextanalyticsProgramRequest.builder()
+            .withProgramId(programId)
+    
+            .build();
+  }
+
+  /**
+   * Get a Speech &amp; Text Analytics program by id
+   * 
+   * @param request The request object
+   * @return Program
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Program getSpeechandtextanalyticsProgram(GetSpeechandtextanalyticsProgramRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Program> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Program>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Speech &amp; Text Analytics program by id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Program> getSpeechandtextanalyticsProgram(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Program>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Program> response = (ApiResponse<Program>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Program> response = (ApiResponse<Program>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the list of Speech &amp; Text Analytics programs
+   * 
+   * @param nextPage The key for listing the next page (optional)
+   * @param pageSize The page size for the listing (optional, default to 20)
+   * @return ProgramsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramsEntityListing getSpeechandtextanalyticsPrograms(String nextPage, Integer pageSize) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsPrograms(createGetSpeechandtextanalyticsProgramsRequest(nextPage, pageSize));
+  }
+
+  /**
+   * Get the list of Speech &amp; Text Analytics programs
+   * 
+   * @param nextPage The key for listing the next page (optional)
+   * @param pageSize The page size for the listing (optional, default to 20)
+   * @return ProgramsEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramsEntityListing> getSpeechandtextanalyticsProgramsWithHttpInfo(String nextPage, Integer pageSize) throws IOException {
+    return getSpeechandtextanalyticsPrograms(createGetSpeechandtextanalyticsProgramsRequest(nextPage, pageSize).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsProgramsRequest createGetSpeechandtextanalyticsProgramsRequest(String nextPage, Integer pageSize) {
+    return GetSpeechandtextanalyticsProgramsRequest.builder()
+            .withNextPage(nextPage)
+    
+            .withPageSize(pageSize)
+    
+            .build();
+  }
+
+  /**
+   * Get the list of Speech &amp; Text Analytics programs
+   * 
+   * @param request The request object
+   * @return ProgramsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramsEntityListing getSpeechandtextanalyticsPrograms(GetSpeechandtextanalyticsProgramsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ProgramsEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ProgramsEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of Speech &amp; Text Analytics programs
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramsEntityListing> getSpeechandtextanalyticsPrograms(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ProgramsEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramsEntityListing> response = (ApiResponse<ProgramsEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramsEntityListing> response = (ApiResponse<ProgramsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a Speech &amp; Text Analytics general program job by id
+   * 
+   * @param jobId The id of the publish programs job (required)
+   * @return GeneralProgramJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GeneralProgramJob getSpeechandtextanalyticsProgramsGeneralJob(String jobId) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsProgramsGeneralJob(createGetSpeechandtextanalyticsProgramsGeneralJobRequest(jobId));
+  }
+
+  /**
+   * Get a Speech &amp; Text Analytics general program job by id
+   * 
+   * @param jobId The id of the publish programs job (required)
+   * @return GeneralProgramJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GeneralProgramJob> getSpeechandtextanalyticsProgramsGeneralJobWithHttpInfo(String jobId) throws IOException {
+    return getSpeechandtextanalyticsProgramsGeneralJob(createGetSpeechandtextanalyticsProgramsGeneralJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsProgramsGeneralJobRequest createGetSpeechandtextanalyticsProgramsGeneralJobRequest(String jobId) {
+    return GetSpeechandtextanalyticsProgramsGeneralJobRequest.builder()
+            .withJobId(jobId)
+    
+            .build();
+  }
+
+  /**
+   * Get a Speech &amp; Text Analytics general program job by id
+   * 
+   * @param request The request object
+   * @return GeneralProgramJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GeneralProgramJob getSpeechandtextanalyticsProgramsGeneralJob(GetSpeechandtextanalyticsProgramsGeneralJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GeneralProgramJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GeneralProgramJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Speech &amp; Text Analytics general program job by id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GeneralProgramJob> getSpeechandtextanalyticsProgramsGeneralJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GeneralProgramJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GeneralProgramJob> response = (ApiResponse<GeneralProgramJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GeneralProgramJob> response = (ApiResponse<GeneralProgramJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a Speech &amp; Text Analytics publish programs job by id
+   * 
+   * @param jobId The id of the publish programs job (required)
+   * @return ProgramJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramJob getSpeechandtextanalyticsProgramsPublishjob(String jobId) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsProgramsPublishjob(createGetSpeechandtextanalyticsProgramsPublishjobRequest(jobId));
+  }
+
+  /**
+   * Get a Speech &amp; Text Analytics publish programs job by id
+   * 
+   * @param jobId The id of the publish programs job (required)
+   * @return ProgramJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramJob> getSpeechandtextanalyticsProgramsPublishjobWithHttpInfo(String jobId) throws IOException {
+    return getSpeechandtextanalyticsProgramsPublishjob(createGetSpeechandtextanalyticsProgramsPublishjobRequest(jobId).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsProgramsPublishjobRequest createGetSpeechandtextanalyticsProgramsPublishjobRequest(String jobId) {
+    return GetSpeechandtextanalyticsProgramsPublishjobRequest.builder()
+            .withJobId(jobId)
+    
+            .build();
+  }
+
+  /**
+   * Get a Speech &amp; Text Analytics publish programs job by id
+   * 
+   * @param request The request object
+   * @return ProgramJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramJob getSpeechandtextanalyticsProgramsPublishjob(GetSpeechandtextanalyticsProgramsPublishjobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ProgramJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ProgramJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Speech &amp; Text Analytics publish programs job by id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramJob> getSpeechandtextanalyticsProgramsPublishjob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ProgramJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramJob> response = (ApiResponse<ProgramJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramJob> response = (ApiResponse<ProgramJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the list of Speech &amp; Text Analytics unpublished programs
+   * 
+   * @param nextPage The key for listing the next page (optional)
+   * @param pageSize The page size for the listing (optional, default to 20)
+   * @return UnpublishedProgramsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UnpublishedProgramsEntityListing getSpeechandtextanalyticsProgramsUnpublished(String nextPage, Integer pageSize) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsProgramsUnpublished(createGetSpeechandtextanalyticsProgramsUnpublishedRequest(nextPage, pageSize));
+  }
+
+  /**
+   * Get the list of Speech &amp; Text Analytics unpublished programs
+   * 
+   * @param nextPage The key for listing the next page (optional)
+   * @param pageSize The page size for the listing (optional, default to 20)
+   * @return UnpublishedProgramsEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UnpublishedProgramsEntityListing> getSpeechandtextanalyticsProgramsUnpublishedWithHttpInfo(String nextPage, Integer pageSize) throws IOException {
+    return getSpeechandtextanalyticsProgramsUnpublished(createGetSpeechandtextanalyticsProgramsUnpublishedRequest(nextPage, pageSize).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsProgramsUnpublishedRequest createGetSpeechandtextanalyticsProgramsUnpublishedRequest(String nextPage, Integer pageSize) {
+    return GetSpeechandtextanalyticsProgramsUnpublishedRequest.builder()
+            .withNextPage(nextPage)
+    
+            .withPageSize(pageSize)
+    
+            .build();
+  }
+
+  /**
+   * Get the list of Speech &amp; Text Analytics unpublished programs
+   * 
+   * @param request The request object
+   * @return UnpublishedProgramsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UnpublishedProgramsEntityListing getSpeechandtextanalyticsProgramsUnpublished(GetSpeechandtextanalyticsProgramsUnpublishedRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UnpublishedProgramsEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UnpublishedProgramsEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of Speech &amp; Text Analytics unpublished programs
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UnpublishedProgramsEntityListing> getSpeechandtextanalyticsProgramsUnpublished(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UnpublishedProgramsEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UnpublishedProgramsEntityListing> response = (ApiResponse<UnpublishedProgramsEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UnpublishedProgramsEntityListing> response = (ApiResponse<UnpublishedProgramsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get Speech And Text Analytics Settings
    * 
    * @return SpeechTextAnalyticsSettingsResponse
@@ -276,6 +943,326 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SpeechTextAnalyticsSettingsResponse> response = (ApiResponse<SpeechTextAnalyticsSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a Speech &amp; Text Analytics topic by id
+   * 
+   * @param topicId The id of the topic (required)
+   * @return Topic
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Topic getSpeechandtextanalyticsTopic(String topicId) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsTopic(createGetSpeechandtextanalyticsTopicRequest(topicId));
+  }
+
+  /**
+   * Get a Speech &amp; Text Analytics topic by id
+   * 
+   * @param topicId The id of the topic (required)
+   * @return Topic
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Topic> getSpeechandtextanalyticsTopicWithHttpInfo(String topicId) throws IOException {
+    return getSpeechandtextanalyticsTopic(createGetSpeechandtextanalyticsTopicRequest(topicId).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsTopicRequest createGetSpeechandtextanalyticsTopicRequest(String topicId) {
+    return GetSpeechandtextanalyticsTopicRequest.builder()
+            .withTopicId(topicId)
+    
+            .build();
+  }
+
+  /**
+   * Get a Speech &amp; Text Analytics topic by id
+   * 
+   * @param request The request object
+   * @return Topic
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Topic getSpeechandtextanalyticsTopic(GetSpeechandtextanalyticsTopicRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Topic> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Topic>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Speech &amp; Text Analytics topic by id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Topic> getSpeechandtextanalyticsTopic(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Topic>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Topic> response = (ApiResponse<Topic>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Topic> response = (ApiResponse<Topic>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the list of Speech &amp; Text Analytics topics
+   * 
+   * @param nextPage The key for listing the next page (optional)
+   * @param pageSize The page size for the listing (optional, default to 20)
+   * @return TopicsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TopicsEntityListing getSpeechandtextanalyticsTopics(String nextPage, Integer pageSize) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsTopics(createGetSpeechandtextanalyticsTopicsRequest(nextPage, pageSize));
+  }
+
+  /**
+   * Get the list of Speech &amp; Text Analytics topics
+   * 
+   * @param nextPage The key for listing the next page (optional)
+   * @param pageSize The page size for the listing (optional, default to 20)
+   * @return TopicsEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TopicsEntityListing> getSpeechandtextanalyticsTopicsWithHttpInfo(String nextPage, Integer pageSize) throws IOException {
+    return getSpeechandtextanalyticsTopics(createGetSpeechandtextanalyticsTopicsRequest(nextPage, pageSize).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsTopicsRequest createGetSpeechandtextanalyticsTopicsRequest(String nextPage, Integer pageSize) {
+    return GetSpeechandtextanalyticsTopicsRequest.builder()
+            .withNextPage(nextPage)
+    
+            .withPageSize(pageSize)
+    
+            .build();
+  }
+
+  /**
+   * Get the list of Speech &amp; Text Analytics topics
+   * 
+   * @param request The request object
+   * @return TopicsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TopicsEntityListing getSpeechandtextanalyticsTopics(GetSpeechandtextanalyticsTopicsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TopicsEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TopicsEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of Speech &amp; Text Analytics topics
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TopicsEntityListing> getSpeechandtextanalyticsTopics(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TopicsEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TopicsEntityListing> response = (ApiResponse<TopicsEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TopicsEntityListing> response = (ApiResponse<TopicsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the Speech &amp; Text Analytics general topics for a given dialect
+   * 
+   * @param dialect The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)
+   * @return GeneralTopicsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GeneralTopicsEntityListing getSpeechandtextanalyticsTopicsGeneral(String dialect) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsTopicsGeneral(createGetSpeechandtextanalyticsTopicsGeneralRequest(dialect));
+  }
+
+  /**
+   * Get the Speech &amp; Text Analytics general topics for a given dialect
+   * 
+   * @param dialect The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)
+   * @return GeneralTopicsEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GeneralTopicsEntityListing> getSpeechandtextanalyticsTopicsGeneralWithHttpInfo(String dialect) throws IOException {
+    return getSpeechandtextanalyticsTopicsGeneral(createGetSpeechandtextanalyticsTopicsGeneralRequest(dialect).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsTopicsGeneralRequest createGetSpeechandtextanalyticsTopicsGeneralRequest(String dialect) {
+    return GetSpeechandtextanalyticsTopicsGeneralRequest.builder()
+            .withDialect(dialect)
+    
+            .build();
+  }
+
+  /**
+   * Get the Speech &amp; Text Analytics general topics for a given dialect
+   * 
+   * @param request The request object
+   * @return GeneralTopicsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GeneralTopicsEntityListing getSpeechandtextanalyticsTopicsGeneral(GetSpeechandtextanalyticsTopicsGeneralRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GeneralTopicsEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GeneralTopicsEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the Speech &amp; Text Analytics general topics for a given dialect
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GeneralTopicsEntityListing> getSpeechandtextanalyticsTopicsGeneral(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GeneralTopicsEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GeneralTopicsEntityListing> response = (ApiResponse<GeneralTopicsEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GeneralTopicsEntityListing> response = (ApiResponse<GeneralTopicsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a Speech &amp; Text Analytics publish topics job by id
+   * 
+   * @param jobId The id of the publish topics job (required)
+   * @return TopicJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TopicJob getSpeechandtextanalyticsTopicsPublishjob(String jobId) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsTopicsPublishjob(createGetSpeechandtextanalyticsTopicsPublishjobRequest(jobId));
+  }
+
+  /**
+   * Get a Speech &amp; Text Analytics publish topics job by id
+   * 
+   * @param jobId The id of the publish topics job (required)
+   * @return TopicJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TopicJob> getSpeechandtextanalyticsTopicsPublishjobWithHttpInfo(String jobId) throws IOException {
+    return getSpeechandtextanalyticsTopicsPublishjob(createGetSpeechandtextanalyticsTopicsPublishjobRequest(jobId).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsTopicsPublishjobRequest createGetSpeechandtextanalyticsTopicsPublishjobRequest(String jobId) {
+    return GetSpeechandtextanalyticsTopicsPublishjobRequest.builder()
+            .withJobId(jobId)
+    
+            .build();
+  }
+
+  /**
+   * Get a Speech &amp; Text Analytics publish topics job by id
+   * 
+   * @param request The request object
+   * @return TopicJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TopicJob getSpeechandtextanalyticsTopicsPublishjob(GetSpeechandtextanalyticsTopicsPublishjobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TopicJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TopicJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Speech &amp; Text Analytics publish topics job by id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TopicJob> getSpeechandtextanalyticsTopicsPublishjob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TopicJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TopicJob> response = (ApiResponse<TopicJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TopicJob> response = (ApiResponse<TopicJob>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -361,6 +1348,401 @@ public class SpeechTextAnalyticsApi {
 
   
   /**
+   * Create new Speech &amp; Text Analytics program
+   * 
+   * @param body The program to create (required)
+   * @return Program
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Program postSpeechandtextanalyticsPrograms(ProgramRequest body) throws IOException, ApiException {
+    return  postSpeechandtextanalyticsPrograms(createPostSpeechandtextanalyticsProgramsRequest(body));
+  }
+
+  /**
+   * Create new Speech &amp; Text Analytics program
+   * 
+   * @param body The program to create (required)
+   * @return Program
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Program> postSpeechandtextanalyticsProgramsWithHttpInfo(ProgramRequest body) throws IOException {
+    return postSpeechandtextanalyticsPrograms(createPostSpeechandtextanalyticsProgramsRequest(body).withHttpInfo());
+  }
+
+  private PostSpeechandtextanalyticsProgramsRequest createPostSpeechandtextanalyticsProgramsRequest(ProgramRequest body) {
+    return PostSpeechandtextanalyticsProgramsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create new Speech &amp; Text Analytics program
+   * 
+   * @param request The request object
+   * @return Program
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Program postSpeechandtextanalyticsPrograms(PostSpeechandtextanalyticsProgramsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Program> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Program>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create new Speech &amp; Text Analytics program
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Program> postSpeechandtextanalyticsPrograms(ApiRequest<ProgramRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Program>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Program> response = (ApiResponse<Program>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Program> response = (ApiResponse<Program>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create new Speech &amp; Text Analytics general program job
+   * 
+   * @param body The general programs job to create (required)
+   * @return GeneralProgramJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GeneralProgramJob postSpeechandtextanalyticsProgramsGeneralJobs(GeneralProgramJobRequest body) throws IOException, ApiException {
+    return  postSpeechandtextanalyticsProgramsGeneralJobs(createPostSpeechandtextanalyticsProgramsGeneralJobsRequest(body));
+  }
+
+  /**
+   * Create new Speech &amp; Text Analytics general program job
+   * 
+   * @param body The general programs job to create (required)
+   * @return GeneralProgramJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GeneralProgramJob> postSpeechandtextanalyticsProgramsGeneralJobsWithHttpInfo(GeneralProgramJobRequest body) throws IOException {
+    return postSpeechandtextanalyticsProgramsGeneralJobs(createPostSpeechandtextanalyticsProgramsGeneralJobsRequest(body).withHttpInfo());
+  }
+
+  private PostSpeechandtextanalyticsProgramsGeneralJobsRequest createPostSpeechandtextanalyticsProgramsGeneralJobsRequest(GeneralProgramJobRequest body) {
+    return PostSpeechandtextanalyticsProgramsGeneralJobsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create new Speech &amp; Text Analytics general program job
+   * 
+   * @param request The request object
+   * @return GeneralProgramJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GeneralProgramJob postSpeechandtextanalyticsProgramsGeneralJobs(PostSpeechandtextanalyticsProgramsGeneralJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GeneralProgramJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GeneralProgramJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create new Speech &amp; Text Analytics general program job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GeneralProgramJob> postSpeechandtextanalyticsProgramsGeneralJobs(ApiRequest<GeneralProgramJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GeneralProgramJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GeneralProgramJob> response = (ApiResponse<GeneralProgramJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GeneralProgramJob> response = (ApiResponse<GeneralProgramJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create new Speech &amp; Text Analytics publish programs job
+   * 
+   * @param body The publish programs job to create (required)
+   * @return ProgramJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramJob postSpeechandtextanalyticsProgramsPublishjobs(ProgramJobRequest body) throws IOException, ApiException {
+    return  postSpeechandtextanalyticsProgramsPublishjobs(createPostSpeechandtextanalyticsProgramsPublishjobsRequest(body));
+  }
+
+  /**
+   * Create new Speech &amp; Text Analytics publish programs job
+   * 
+   * @param body The publish programs job to create (required)
+   * @return ProgramJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramJob> postSpeechandtextanalyticsProgramsPublishjobsWithHttpInfo(ProgramJobRequest body) throws IOException {
+    return postSpeechandtextanalyticsProgramsPublishjobs(createPostSpeechandtextanalyticsProgramsPublishjobsRequest(body).withHttpInfo());
+  }
+
+  private PostSpeechandtextanalyticsProgramsPublishjobsRequest createPostSpeechandtextanalyticsProgramsPublishjobsRequest(ProgramJobRequest body) {
+    return PostSpeechandtextanalyticsProgramsPublishjobsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create new Speech &amp; Text Analytics publish programs job
+   * 
+   * @param request The request object
+   * @return ProgramJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramJob postSpeechandtextanalyticsProgramsPublishjobs(PostSpeechandtextanalyticsProgramsPublishjobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ProgramJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ProgramJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create new Speech &amp; Text Analytics publish programs job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramJob> postSpeechandtextanalyticsProgramsPublishjobs(ApiRequest<ProgramJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ProgramJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramJob> response = (ApiResponse<ProgramJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramJob> response = (ApiResponse<ProgramJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create new Speech &amp; Text Analytics topic
+   * 
+   * @param body The topic to create (required)
+   * @return Topic
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Topic postSpeechandtextanalyticsTopics(TopicRequest body) throws IOException, ApiException {
+    return  postSpeechandtextanalyticsTopics(createPostSpeechandtextanalyticsTopicsRequest(body));
+  }
+
+  /**
+   * Create new Speech &amp; Text Analytics topic
+   * 
+   * @param body The topic to create (required)
+   * @return Topic
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Topic> postSpeechandtextanalyticsTopicsWithHttpInfo(TopicRequest body) throws IOException {
+    return postSpeechandtextanalyticsTopics(createPostSpeechandtextanalyticsTopicsRequest(body).withHttpInfo());
+  }
+
+  private PostSpeechandtextanalyticsTopicsRequest createPostSpeechandtextanalyticsTopicsRequest(TopicRequest body) {
+    return PostSpeechandtextanalyticsTopicsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create new Speech &amp; Text Analytics topic
+   * 
+   * @param request The request object
+   * @return Topic
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Topic postSpeechandtextanalyticsTopics(PostSpeechandtextanalyticsTopicsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Topic> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Topic>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create new Speech &amp; Text Analytics topic
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Topic> postSpeechandtextanalyticsTopics(ApiRequest<TopicRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Topic>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Topic> response = (ApiResponse<Topic>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Topic> response = (ApiResponse<Topic>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create new Speech &amp; Text Analytics publish topics job
+   * 
+   * @param body The publish topics job to create (required)
+   * @return TopicJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TopicJob postSpeechandtextanalyticsTopicsPublishjobs(TopicJobRequest body) throws IOException, ApiException {
+    return  postSpeechandtextanalyticsTopicsPublishjobs(createPostSpeechandtextanalyticsTopicsPublishjobsRequest(body));
+  }
+
+  /**
+   * Create new Speech &amp; Text Analytics publish topics job
+   * 
+   * @param body The publish topics job to create (required)
+   * @return TopicJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TopicJob> postSpeechandtextanalyticsTopicsPublishjobsWithHttpInfo(TopicJobRequest body) throws IOException {
+    return postSpeechandtextanalyticsTopicsPublishjobs(createPostSpeechandtextanalyticsTopicsPublishjobsRequest(body).withHttpInfo());
+  }
+
+  private PostSpeechandtextanalyticsTopicsPublishjobsRequest createPostSpeechandtextanalyticsTopicsPublishjobsRequest(TopicJobRequest body) {
+    return PostSpeechandtextanalyticsTopicsPublishjobsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create new Speech &amp; Text Analytics publish topics job
+   * 
+   * @param request The request object
+   * @return TopicJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TopicJob postSpeechandtextanalyticsTopicsPublishjobs(PostSpeechandtextanalyticsTopicsPublishjobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TopicJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TopicJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create new Speech &amp; Text Analytics publish topics job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TopicJob> postSpeechandtextanalyticsTopicsPublishjobs(ApiRequest<TopicJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TopicJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TopicJob> response = (ApiResponse<TopicJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TopicJob> response = (ApiResponse<TopicJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Search resources.
    * 
    * @param body Search request options (required)
@@ -434,6 +1816,172 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<JsonSearchResponse> response = (ApiResponse<JsonSearchResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update existing Speech &amp; Text Analytics program
+   * 
+   * @param programId The id of the program (required)
+   * @param body The program to update (required)
+   * @return Program
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Program putSpeechandtextanalyticsProgram(String programId, ProgramRequest body) throws IOException, ApiException {
+    return  putSpeechandtextanalyticsProgram(createPutSpeechandtextanalyticsProgramRequest(programId, body));
+  }
+
+  /**
+   * Update existing Speech &amp; Text Analytics program
+   * 
+   * @param programId The id of the program (required)
+   * @param body The program to update (required)
+   * @return Program
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Program> putSpeechandtextanalyticsProgramWithHttpInfo(String programId, ProgramRequest body) throws IOException {
+    return putSpeechandtextanalyticsProgram(createPutSpeechandtextanalyticsProgramRequest(programId, body).withHttpInfo());
+  }
+
+  private PutSpeechandtextanalyticsProgramRequest createPutSpeechandtextanalyticsProgramRequest(String programId, ProgramRequest body) {
+    return PutSpeechandtextanalyticsProgramRequest.builder()
+            .withProgramId(programId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update existing Speech &amp; Text Analytics program
+   * 
+   * @param request The request object
+   * @return Program
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Program putSpeechandtextanalyticsProgram(PutSpeechandtextanalyticsProgramRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Program> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Program>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update existing Speech &amp; Text Analytics program
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Program> putSpeechandtextanalyticsProgram(ApiRequest<ProgramRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Program>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Program> response = (ApiResponse<Program>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Program> response = (ApiResponse<Program>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update existing Speech &amp; Text Analytics topic
+   * 
+   * @param topicId The id of the topic (required)
+   * @param body The topic to update (required)
+   * @return Topic
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Topic putSpeechandtextanalyticsTopic(String topicId, TopicRequest body) throws IOException, ApiException {
+    return  putSpeechandtextanalyticsTopic(createPutSpeechandtextanalyticsTopicRequest(topicId, body));
+  }
+
+  /**
+   * Update existing Speech &amp; Text Analytics topic
+   * 
+   * @param topicId The id of the topic (required)
+   * @param body The topic to update (required)
+   * @return Topic
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Topic> putSpeechandtextanalyticsTopicWithHttpInfo(String topicId, TopicRequest body) throws IOException {
+    return putSpeechandtextanalyticsTopic(createPutSpeechandtextanalyticsTopicRequest(topicId, body).withHttpInfo());
+  }
+
+  private PutSpeechandtextanalyticsTopicRequest createPutSpeechandtextanalyticsTopicRequest(String topicId, TopicRequest body) {
+    return PutSpeechandtextanalyticsTopicRequest.builder()
+            .withTopicId(topicId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update existing Speech &amp; Text Analytics topic
+   * 
+   * @param request The request object
+   * @return Topic
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Topic putSpeechandtextanalyticsTopic(PutSpeechandtextanalyticsTopicRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Topic> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Topic>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update existing Speech &amp; Text Analytics topic
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Topic> putSpeechandtextanalyticsTopic(ApiRequest<TopicRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Topic>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Topic> response = (ApiResponse<Topic>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Topic> response = (ApiResponse<Topic>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

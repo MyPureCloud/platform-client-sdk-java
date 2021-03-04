@@ -45,12 +45,13 @@ public class GetNotificationsAvailabletopicsRequest {
 
 	public enum expandValues { 
 		DESCRIPTION("description"), 
-		REQUIRESPERMISSIONS("requiresPermissions"), 
 		ENFORCED("enforced"), 
 		SCHEMA("schema"), 
 		VISIBILITY("visibility"), 
 		TRANSPORTS("transports"), 
-		PUBLICAPITEMPLATEURIPATHS("publicApiTemplateUriPaths");
+		PUBLICAPITEMPLATEURIPATHS("publicApiTemplateUriPaths"), 
+		REQUIRESPERMISSIONS("requiresPermissions"), 
+		PERMISSIONDETAILS("permissionDetails");
 
 		private String value;
 

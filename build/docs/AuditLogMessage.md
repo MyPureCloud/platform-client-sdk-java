@@ -47,6 +47,7 @@ title: AuditLogMessage
 | TELEPHONY | &quot;Telephony&quot; |
 | OUTBOUND | &quot;Outbound&quot; |
 | SPEECHANDTEXTANALYTICS | &quot;SpeechAndTextAnalytics&quot; |
+| ROUTING | &quot;Routing&quot; |
 {: class="table table-striped"}
 
 
@@ -164,8 +165,14 @@ title: AuditLogMessage
 | DNCLIST | &quot;DNCList&quot; |
 | CALLANALYSISRESPONSESET | &quot;CallAnalysisResponseSet&quot; |
 | RULESET | &quot;RuleSet&quot; |
+| CAMPAIGNSCHEDULE | &quot;CampaignSchedule&quot; |
+| SEQUENCESCHEDULE | &quot;SequenceSchedule&quot; |
+| ORGANIZATIONPROPERTIES | &quot;OrganizationProperties&quot; |
+| WRAPUPCODEMAPPING | &quot;WrapUpCodeMapping&quot; |
+| MESSAGINGCAMPAIGN | &quot;MessagingCampaign&quot; |
 | TRANSCRIPTIONSETTINGS | &quot;TranscriptionSettings&quot; |
 | SPEECHTEXTANALYTICSSETTINGS | &quot;SpeechTextAnalyticsSettings&quot; |
+| PREDICTOR | &quot;Predictor&quot; |
 {: class="table table-striped"}
 
 

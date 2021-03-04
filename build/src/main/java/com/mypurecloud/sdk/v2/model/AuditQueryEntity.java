@@ -104,8 +104,14 @@ public class AuditQueryEntity  implements Serializable {
     DNCLIST("DNCList"),
     CALLANALYSISRESPONSESET("CallAnalysisResponseSet"),
     RULESET("RuleSet"),
+    CAMPAIGNSCHEDULE("CampaignSchedule"),
+    SEQUENCESCHEDULE("SequenceSchedule"),
+    ORGANIZATIONPROPERTIES("OrganizationProperties"),
+    WRAPUPCODEMAPPING("WrapUpCodeMapping"),
+    MESSAGINGCAMPAIGN("MessagingCampaign"),
     TRANSCRIPTIONSETTINGS("TranscriptionSettings"),
-    SPEECHTEXTANALYTICSSETTINGS("SpeechTextAnalyticsSettings");
+    SPEECHTEXTANALYTICSSETTINGS("SpeechTextAnalyticsSettings"),
+    PREDICTOR("Predictor");
 
     private String value;
 

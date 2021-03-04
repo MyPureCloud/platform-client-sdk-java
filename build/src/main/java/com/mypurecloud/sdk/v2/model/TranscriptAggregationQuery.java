@@ -55,10 +55,12 @@ public class TranscriptAggregationQuery  implements Serializable {
     DIVISIONID("divisionId"),
     DNIS("dnis"),
     FLOWID("flowId"),
+    FLOWVERSION("flowVersion"),
     MEDIATYPE("mediaType"),
     MESSAGETYPE("messageType"),
     QUEUEID("queueId"),
     TEAMID("teamId"),
+    TOPICID("topicId"),
     USERID("userId");
 
     private String value;

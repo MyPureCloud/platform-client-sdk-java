@@ -35,10 +35,12 @@ title: TranscriptAggregationQuery
 | DIVISIONID | &quot;divisionId&quot; |
 | DNIS | &quot;dnis&quot; |
 | FLOWID | &quot;flowId&quot; |
+| FLOWVERSION | &quot;flowVersion&quot; |
 | MEDIATYPE | &quot;mediaType&quot; |
 | MESSAGETYPE | &quot;messageType&quot; |
 | QUEUEID | &quot;queueId&quot; |
 | TEAMID | &quot;teamId&quot; |
+| TOPICID | &quot;topicId&quot; |
 | USERID | &quot;userId&quot; |
 {: class="table table-striped"}
 

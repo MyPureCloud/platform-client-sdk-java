@@ -198,6 +198,20 @@ public class GetFlowsDatatablesRequest {
 	    return this;
 	} 
 	
+	private List<String> divisionId;
+	public List<String> getDivisionId() {
+		return this.divisionId;
+	}
+
+	public void setDivisionId(List<String> divisionId) {
+		this.divisionId = divisionId;
+	}
+
+	public GetFlowsDatatablesRequest withDivisionId(List<String> divisionId) {
+	    this.setDivisionId(divisionId);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -230,6 +244,8 @@ public class GetFlowsDatatablesRequest {
                 .withQueryParameters("sortBy", "", sortBy)
         
                 .withQueryParameters("sortOrder", "", sortOrder)
+        
+                .withQueryParameters("divisionId", "multi", divisionId)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -284,6 +300,11 @@ public class GetFlowsDatatablesRequest {
 		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
+			return this;
+		}
+		
+		public Builder withDivisionId(List<String> divisionId) {
+			request.setDivisionId(divisionId);
 			return this;
 		}
 		
