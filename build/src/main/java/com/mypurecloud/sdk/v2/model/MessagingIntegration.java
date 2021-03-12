@@ -102,7 +102,8 @@ public class MessagingIntegration  implements Serializable {
     TWITTER("twitter"),
     LINE("line"),
     WHATSAPP("whatsapp"),
-    WEBMESSAGING("webmessaging");
+    WEBMESSAGING("webmessaging"),
+    OPEN("open");
 
     private String value;
 

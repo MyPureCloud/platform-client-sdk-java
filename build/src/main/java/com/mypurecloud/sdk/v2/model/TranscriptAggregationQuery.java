@@ -59,6 +59,7 @@ public class TranscriptAggregationQuery  implements Serializable {
     MEDIATYPE("mediaType"),
     MESSAGETYPE("messageType"),
     QUEUEID("queueId"),
+    RESULTSBY("resultsBy"),
     TEAMID("teamId"),
     TOPICID("topicId"),
     USERID("userId");
@@ -109,7 +110,6 @@ public class TranscriptAggregationQuery  implements Serializable {
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
     NTOPICCOMMUNICATIONS("nTopicCommunications"),
-    NTOPICSEGMENTS("nTopicSegments"),
     OCUSTOMERSENTIMENT("oCustomerSentiment");
 
     private String value;

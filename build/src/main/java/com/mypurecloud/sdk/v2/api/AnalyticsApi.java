@@ -25,6 +25,8 @@ import com.mypurecloud.sdk.v2.model.ReportRunEntryEntityDomainListing;
 import com.mypurecloud.sdk.v2.model.ReportRunEntry;
 import com.mypurecloud.sdk.v2.model.ReportScheduleEntityListing;
 import com.mypurecloud.sdk.v2.model.AnalyticsUserDetailsAsyncQueryResponse;
+import com.mypurecloud.sdk.v2.model.BotAggregationQuery;
+import com.mypurecloud.sdk.v2.model.BotAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.PropertyIndexRequest;
 import com.mypurecloud.sdk.v2.model.ConversationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.ConversationAggregationQuery;
@@ -81,6 +83,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAnalyticsReportingTimeperiodsReques
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsUsersDetailsJobsAvailabilityRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAnalyticsBotsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationDetailsPropertiesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationsDetailsJobsRequest;
@@ -1873,6 +1876,85 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DataAvailabilityResponse> response = (ApiResponse<DataAvailabilityResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Query for bot aggregates
+   * 
+   * @param body query (required)
+   * @return BotAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BotAggregateQueryResponse postAnalyticsBotsAggregatesQuery(BotAggregationQuery body) throws IOException, ApiException {
+    return  postAnalyticsBotsAggregatesQuery(createPostAnalyticsBotsAggregatesQueryRequest(body));
+  }
+
+  /**
+   * Query for bot aggregates
+   * 
+   * @param body query (required)
+   * @return BotAggregateQueryResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BotAggregateQueryResponse> postAnalyticsBotsAggregatesQueryWithHttpInfo(BotAggregationQuery body) throws IOException {
+    return postAnalyticsBotsAggregatesQuery(createPostAnalyticsBotsAggregatesQueryRequest(body).withHttpInfo());
+  }
+
+  private PostAnalyticsBotsAggregatesQueryRequest createPostAnalyticsBotsAggregatesQueryRequest(BotAggregationQuery body) {
+    return PostAnalyticsBotsAggregatesQueryRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Query for bot aggregates
+   * 
+   * @param request The request object
+   * @return BotAggregateQueryResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BotAggregateQueryResponse postAnalyticsBotsAggregatesQuery(PostAnalyticsBotsAggregatesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BotAggregateQueryResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BotAggregateQueryResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query for bot aggregates
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BotAggregateQueryResponse> postAnalyticsBotsAggregatesQuery(ApiRequest<BotAggregationQuery> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BotAggregateQueryResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BotAggregateQueryResponse> response = (ApiResponse<BotAggregateQueryResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BotAggregateQueryResponse> response = (ApiResponse<BotAggregateQueryResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

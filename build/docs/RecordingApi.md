@@ -879,7 +879,7 @@ Configuration.setDefaultApiClient(apiClient);
 RecordingApi apiInstance = new RecordingApi();
 String conversationId = "conversationId_example"; // String | Conversation ID
 Integer maxWaitMs = 5000; // Integer | The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value.
-String formatId = "WEBM"; // String | The desired media format. Possible values: NONE, MP3, WAV, or WEBM
+String formatId = "WEBM"; // String | The desired media format
 try {
     List<Recording> result = apiInstance.getConversationRecordings(conversationId, maxWaitMs, formatId);
     System.out.println(result);
@@ -896,7 +896,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| Conversation ID | 
 | **maxWaitMs** | **Integer**| The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. | [optional] [default to 5000] 
-| **formatId** | **String**| The desired media format. Possible values: NONE, MP3, WAV, or WEBM | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
+| **formatId** | **String**| The desired media format | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE 
 {: class="table-striped"}
 
 

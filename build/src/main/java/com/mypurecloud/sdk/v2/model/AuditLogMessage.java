@@ -205,6 +205,7 @@ public class AuditLogMessage  implements Serializable {
     QUEUE("Queue"),
     RECORDING("Recording"),
     ROLE("Role"),
+    VOICEMAILPOLICY("VoicemailPolicy"),
     VOICEMAILUSERPOLICY("VoicemailUserPolicy"),
     USERPRESENCE("UserPresence"),
     WRAPUPCODE("WrapupCode"),
@@ -265,10 +266,11 @@ public class AuditLogMessage  implements Serializable {
     RULESET("RuleSet"),
     CAMPAIGNSCHEDULE("CampaignSchedule"),
     SEQUENCESCHEDULE("SequenceSchedule"),
-    ORGANIZATIONPROPERTIES("OrganizationProperties"),
+    ORGANIZATIONSETTINGS("OrganizationSettings"),
     WRAPUPCODEMAPPING("WrapUpCodeMapping"),
     MESSAGINGCAMPAIGN("MessagingCampaign"),
     TRANSCRIPTIONSETTINGS("TranscriptionSettings"),
+    ROUTINGTRANSCRIPTIONSETTINGS("RoutingTranscriptionSettings"),
     SPEECHTEXTANALYTICSSETTINGS("SpeechTextAnalyticsSettings"),
     PREDICTOR("Predictor");
 

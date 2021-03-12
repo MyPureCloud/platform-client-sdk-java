@@ -24,6 +24,7 @@ title: AuditQueryEntity
 | QUEUE | &quot;Queue&quot; |
 | RECORDING | &quot;Recording&quot; |
 | ROLE | &quot;Role&quot; |
+| VOICEMAILPOLICY | &quot;VoicemailPolicy&quot; |
 | VOICEMAILUSERPOLICY | &quot;VoicemailUserPolicy&quot; |
 | USERPRESENCE | &quot;UserPresence&quot; |
 | WRAPUPCODE | &quot;WrapupCode&quot; |
@@ -84,10 +85,11 @@ title: AuditQueryEntity
 | RULESET | &quot;RuleSet&quot; |
 | CAMPAIGNSCHEDULE | &quot;CampaignSchedule&quot; |
 | SEQUENCESCHEDULE | &quot;SequenceSchedule&quot; |
-| ORGANIZATIONPROPERTIES | &quot;OrganizationProperties&quot; |
+| ORGANIZATIONSETTINGS | &quot;OrganizationSettings&quot; |
 | WRAPUPCODEMAPPING | &quot;WrapUpCodeMapping&quot; |
 | MESSAGINGCAMPAIGN | &quot;MessagingCampaign&quot; |
 | TRANSCRIPTIONSETTINGS | &quot;TranscriptionSettings&quot; |
+| ROUTINGTRANSCRIPTIONSETTINGS | &quot;RoutingTranscriptionSettings&quot; |
 | SPEECHTEXTANALYTICSSETTINGS | &quot;SpeechTextAnalyticsSettings&quot; |
 | PREDICTOR | &quot;Predictor&quot; |
 {: class="table table-striped"}

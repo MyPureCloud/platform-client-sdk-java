@@ -7930,8 +7930,8 @@ public class WorkforceManagementApi {
 
   
   /**
-   * Gets the lookup ids to fetch the specified set of requests
-   * 
+   * Fetches time off requests matching the conditions specified in the request body
+   * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
    * @param managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return TimeOffRequestListing
@@ -7943,8 +7943,8 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Gets the lookup ids to fetch the specified set of requests
-   * 
+   * Fetches time off requests matching the conditions specified in the request body
+   * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
    * @param managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param body body (optional)
    * @return TimeOffRequestListing
@@ -7964,8 +7964,8 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Gets the lookup ids to fetch the specified set of requests
-   * 
+   * Fetches time off requests matching the conditions specified in the request body
+   * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
    * @param request The request object
    * @return TimeOffRequestListing
    * @throws ApiException if the request fails on the server
@@ -7983,8 +7983,8 @@ public class WorkforceManagementApi {
   }
 
   /**
-   * Gets the lookup ids to fetch the specified set of requests
-   * 
+   * Fetches time off requests matching the conditions specified in the request body
+   * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

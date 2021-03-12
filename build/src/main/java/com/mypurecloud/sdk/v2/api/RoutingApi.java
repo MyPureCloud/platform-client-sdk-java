@@ -39,6 +39,7 @@ import com.mypurecloud.sdk.v2.model.Utilization;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
+import com.mypurecloud.sdk.v2.model.RoutingConversationAttributes;
 import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
 import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.UserQueue;
@@ -108,6 +109,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingWrapupcodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserQueuesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutinglanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutingskillsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRoutingConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMemberRequest;
@@ -4390,6 +4392,89 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UserSkillEntityListing> response = (ApiResponse<UserSkillEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update attributes of an in-queue conversation
+   * Returns an object indicating the updated values of all settable attributes.  Supported attributes: priority (each point of priority is equivalent to one minute of time in queue).
+   * @param conversationId Conversation ID (required)
+   * @param body Conversation Attributes (required)
+   * @return RoutingConversationAttributes
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RoutingConversationAttributes patchRoutingConversation(String conversationId, RoutingConversationAttributes body) throws IOException, ApiException {
+    return  patchRoutingConversation(createPatchRoutingConversationRequest(conversationId, body));
+  }
+
+  /**
+   * Update attributes of an in-queue conversation
+   * Returns an object indicating the updated values of all settable attributes.  Supported attributes: priority (each point of priority is equivalent to one minute of time in queue).
+   * @param conversationId Conversation ID (required)
+   * @param body Conversation Attributes (required)
+   * @return RoutingConversationAttributes
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RoutingConversationAttributes> patchRoutingConversationWithHttpInfo(String conversationId, RoutingConversationAttributes body) throws IOException {
+    return patchRoutingConversation(createPatchRoutingConversationRequest(conversationId, body).withHttpInfo());
+  }
+
+  private PatchRoutingConversationRequest createPatchRoutingConversationRequest(String conversationId, RoutingConversationAttributes body) {
+    return PatchRoutingConversationRequest.builder()
+            .withConversationId(conversationId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update attributes of an in-queue conversation
+   * Returns an object indicating the updated values of all settable attributes.  Supported attributes: priority (each point of priority is equivalent to one minute of time in queue).
+   * @param request The request object
+   * @return RoutingConversationAttributes
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public RoutingConversationAttributes patchRoutingConversation(PatchRoutingConversationRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<RoutingConversationAttributes> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RoutingConversationAttributes>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update attributes of an in-queue conversation
+   * Returns an object indicating the updated values of all settable attributes.  Supported attributes: priority (each point of priority is equivalent to one minute of time in queue).
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<RoutingConversationAttributes> patchRoutingConversation(ApiRequest<RoutingConversationAttributes> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<RoutingConversationAttributes>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingConversationAttributes> response = (ApiResponse<RoutingConversationAttributes>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<RoutingConversationAttributes> response = (ApiResponse<RoutingConversationAttributes>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

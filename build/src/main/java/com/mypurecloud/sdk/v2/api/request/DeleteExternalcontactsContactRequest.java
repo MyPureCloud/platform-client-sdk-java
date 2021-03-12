@@ -37,6 +37,14 @@ import com.mypurecloud.sdk.v2.model.CursorContactListing;
 import com.mypurecloud.sdk.v2.model.CursorNoteListing;
 import com.mypurecloud.sdk.v2.model.CursorOrganizationListing;
 import com.mypurecloud.sdk.v2.model.CursorRelationshipListing;
+import com.mypurecloud.sdk.v2.model.BulkFetchContactsResponse;
+import com.mypurecloud.sdk.v2.model.BulkIdsRequest;
+import com.mypurecloud.sdk.v2.model.BulkContactsResponse;
+import com.mypurecloud.sdk.v2.model.BulkContactsRequest;
+import com.mypurecloud.sdk.v2.model.BulkDeleteResponse;
+import com.mypurecloud.sdk.v2.model.BulkFetchOrganizationsResponse;
+import com.mypurecloud.sdk.v2.model.BulkOrganizationsRequest;
+import com.mypurecloud.sdk.v2.model.BulkOrganizationsResponse;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
 

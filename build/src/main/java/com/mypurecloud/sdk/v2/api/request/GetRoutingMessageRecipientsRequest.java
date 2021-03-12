@@ -49,6 +49,7 @@ import com.mypurecloud.sdk.v2.model.Utilization;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
+import com.mypurecloud.sdk.v2.model.RoutingConversationAttributes;
 import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
 import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.UserQueue;
@@ -88,7 +89,8 @@ public class GetRoutingMessageRecipientsRequest {
 		FACEBOOK("facebook"), 
 		TWITTER("twitter"), 
 		LINE("line"), 
-		WHATSAPP("whatsapp");
+		WHATSAPP("whatsapp"), 
+		OPEN("open");
 
 		private String value;
 

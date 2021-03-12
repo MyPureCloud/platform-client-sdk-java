@@ -23,7 +23,6 @@ title: TranscriptAggregationView
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NTOPICCOMMUNICATIONS | &quot;nTopicCommunications&quot; |
-| NTOPICSEGMENTS | &quot;nTopicSegments&quot; |
 | OCUSTOMERSENTIMENT | &quot;oCustomerSentiment&quot; |
 {: class="table table-striped"}
 

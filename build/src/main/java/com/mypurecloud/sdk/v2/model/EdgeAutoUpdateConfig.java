@@ -28,13 +28,14 @@ public class EdgeAutoUpdateConfig  implements Serializable {
 
   
   /**
+   * The timezone of the window in which any updates to the edges assigned to the site can be applied. The minimum size of the window is 2 hours.
    **/
   public EdgeAutoUpdateConfig timeZone(String timeZone) {
     this.timeZone = timeZone;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The timezone of the window in which any updates to the edges assigned to the site can be applied. The minimum size of the window is 2 hours.")
   @JsonProperty("timeZone")
   public String getTimeZone() {
     return timeZone;
@@ -45,13 +46,14 @@ public class EdgeAutoUpdateConfig  implements Serializable {
 
   
   /**
+   * The recurrence rule for updating the Edges assigned to the site. The only supported frequencies are daily and weekly. Weekly frequencies require a day list with at least oneday specified. All other configurations are not supported.
    **/
   public EdgeAutoUpdateConfig rrule(String rrule) {
     this.rrule = rrule;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The recurrence rule for updating the Edges assigned to the site. The only supported frequencies are daily and weekly. Weekly frequencies require a day list with at least oneday specified. All other configurations are not supported.")
   @JsonProperty("rrule")
   public String getRrule() {
     return rrule;
@@ -69,7 +71,7 @@ public class EdgeAutoUpdateConfig  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS")
+  @ApiModelProperty(example = "null", required = true, value = "Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS")
   @JsonProperty("start")
   public LocalDateTime getStart() {
     return start;
@@ -87,7 +89,7 @@ public class EdgeAutoUpdateConfig  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS")
+  @ApiModelProperty(example = "null", required = true, value = "Date time is represented as an ISO-8601 string without a timezone. For example: yyyy-MM-ddTHH:mm:ss.SSS")
   @JsonProperty("end")
   public LocalDateTime getEnd() {
     return end;

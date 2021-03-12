@@ -39,6 +39,7 @@ title: TranscriptAggregationQuery
 | MEDIATYPE | &quot;mediaType&quot; |
 | MESSAGETYPE | &quot;messageType&quot; |
 | QUEUEID | &quot;queueId&quot; |
+| RESULTSBY | &quot;resultsBy&quot; |
 | TEAMID | &quot;teamId&quot; |
 | TOPICID | &quot;topicId&quot; |
 | USERID | &quot;userId&quot; |
@@ -52,7 +53,6 @@ title: TranscriptAggregationQuery
 | Name | Value |
 | ---- | ----- |
 | NTOPICCOMMUNICATIONS | &quot;nTopicCommunications&quot; |
-| NTOPICSEGMENTS | &quot;nTopicSegments&quot; |
 | OCUSTOMERSENTIMENT | &quot;oCustomerSentiment&quot; |
 {: class="table table-striped"}
 

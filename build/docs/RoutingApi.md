@@ -57,6 +57,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUserQueues**](RoutingApi.html#getUserQueues) | Get queues for user |
 | [**getUserRoutinglanguages**](RoutingApi.html#getUserRoutinglanguages) | List routing language for user |
 | [**getUserRoutingskills**](RoutingApi.html#getUserRoutingskills) | List routing skills for user |
+| [**patchRoutingConversation**](RoutingApi.html#patchRoutingConversation) | Update attributes of an in-queue conversation |
 | [**patchRoutingEmailDomain**](RoutingApi.html#patchRoutingEmailDomain) | Update domain settings |
 | [**patchRoutingEmailDomainValidate**](RoutingApi.html#patchRoutingEmailDomainValidate) | Validate domain settings |
 | [**patchRoutingQueueMember**](RoutingApi.html#patchRoutingQueueMember) | Update the ring number OR joined status for a queue member. |
@@ -1541,7 +1542,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **messengerType** | **String**| Messenger Type | [optional]<br />**Values**: sms, facebook, twitter, line, whatsapp 
+| **messengerType** | **String**| Messenger Type | [optional]<br />**Values**: sms, facebook, twitter, line, whatsapp, open 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 {: class="table-striped"}
@@ -3378,6 +3379,71 @@ try {
 ### Return type
 
 [**UserSkillEntityListing**](UserSkillEntityListing.html)
+
+<a name="patchRoutingConversation"></a>
+
+# **patchRoutingConversation**
+
+
+
+> [RoutingConversationAttributes](RoutingConversationAttributes.html) patchRoutingConversation(conversationId, body)
+
+Update attributes of an in-queue conversation
+
+Returns an object indicating the updated values of all settable attributes.  Supported attributes: priority (each point of priority is equivalent to one minute of time in queue).
+
+Wraps PATCH /api/v2/routing/conversations/{conversationId}  
+
+Requires ANY permissions: 
+
+* routing:conversation:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String conversationId = "conversationId_example"; // String | Conversation ID
+RoutingConversationAttributes body = new RoutingConversationAttributes(); // RoutingConversationAttributes | Conversation Attributes
+try {
+    RoutingConversationAttributes result = apiInstance.patchRoutingConversation(conversationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#patchRoutingConversation");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| Conversation ID | 
+| **body** | [**RoutingConversationAttributes**](RoutingConversationAttributes.html)| Conversation Attributes | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**RoutingConversationAttributes**](RoutingConversationAttributes.html)
 
 <a name="patchRoutingEmailDomain"></a>
 

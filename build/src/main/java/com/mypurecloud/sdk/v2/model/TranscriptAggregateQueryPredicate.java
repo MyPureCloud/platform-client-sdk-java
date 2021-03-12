@@ -103,6 +103,7 @@ public class TranscriptAggregateQueryPredicate  implements Serializable {
     MEDIATYPE("mediaType"),
     MESSAGETYPE("messageType"),
     QUEUEID("queueId"),
+    RESULTSBY("resultsBy"),
     TEAMID("teamId"),
     TOPICID("topicId"),
     USERID("userId");

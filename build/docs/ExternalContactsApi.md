@@ -38,6 +38,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getExternalcontactsScanNotes**](ExternalContactsApi.html#getExternalcontactsScanNotes) | Scan for notes using paging |
 | [**getExternalcontactsScanOrganizations**](ExternalContactsApi.html#getExternalcontactsScanOrganizations) | Scan for external organizations using paging |
 | [**getExternalcontactsScanRelationships**](ExternalContactsApi.html#getExternalcontactsScanRelationships) | Scan for relationships |
+| [**postExternalcontactsBulkContacts**](ExternalContactsApi.html#postExternalcontactsBulkContacts) | Bulk fetch contacts |
+| [**postExternalcontactsBulkContactsAdd**](ExternalContactsApi.html#postExternalcontactsBulkContactsAdd) | Bulk add contacts |
+| [**postExternalcontactsBulkContactsRemove**](ExternalContactsApi.html#postExternalcontactsBulkContactsRemove) | Bulk remove contacts |
+| [**postExternalcontactsBulkContactsUpdate**](ExternalContactsApi.html#postExternalcontactsBulkContactsUpdate) | Bulk update contacts |
+| [**postExternalcontactsBulkOrganizations**](ExternalContactsApi.html#postExternalcontactsBulkOrganizations) | Bulk fetch organizations |
+| [**postExternalcontactsBulkOrganizationsAdd**](ExternalContactsApi.html#postExternalcontactsBulkOrganizationsAdd) | Bulk add organizations |
+| [**postExternalcontactsBulkOrganizationsRemove**](ExternalContactsApi.html#postExternalcontactsBulkOrganizationsRemove) | Bulk remove organizations |
+| [**postExternalcontactsBulkOrganizationsUpdate**](ExternalContactsApi.html#postExternalcontactsBulkOrganizationsUpdate) | Bulk update organizations |
 | [**postExternalcontactsContactNotes**](ExternalContactsApi.html#postExternalcontactsContactNotes) | Create a note for an external contact |
 | [**postExternalcontactsContacts**](ExternalContactsApi.html#postExternalcontactsContacts) | Create an external contact |
 | [**postExternalcontactsContactsSchemas**](ExternalContactsApi.html#postExternalcontactsContactsSchemas) | Create a schema |
@@ -2091,6 +2099,510 @@ try {
 ### Return type
 
 [**CursorRelationshipListing**](CursorRelationshipListing.html)
+
+<a name="postExternalcontactsBulkContacts"></a>
+
+# **postExternalcontactsBulkContacts**
+
+
+
+> [BulkFetchContactsResponse](BulkFetchContactsResponse.html) postExternalcontactsBulkContacts(body)
+
+Bulk fetch contacts
+
+
+
+Wraps POST /api/v2/externalcontacts/bulk/contacts  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+BulkIdsRequest body = new BulkIdsRequest(); // BulkIdsRequest | Contact ids
+try {
+    BulkFetchContactsResponse result = apiInstance.postExternalcontactsBulkContacts(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsBulkContacts");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**BulkIdsRequest**](BulkIdsRequest.html)| Contact ids | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkFetchContactsResponse**](BulkFetchContactsResponse.html)
+
+<a name="postExternalcontactsBulkContactsAdd"></a>
+
+# **postExternalcontactsBulkContactsAdd**
+
+
+
+> [BulkContactsResponse](BulkContactsResponse.html) postExternalcontactsBulkContactsAdd(body)
+
+Bulk add contacts
+
+
+
+Wraps POST /api/v2/externalcontacts/bulk/contacts/add  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+BulkContactsRequest body = new BulkContactsRequest(); // BulkContactsRequest | Contacts
+try {
+    BulkContactsResponse result = apiInstance.postExternalcontactsBulkContactsAdd(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsBulkContactsAdd");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**BulkContactsRequest**](BulkContactsRequest.html)| Contacts | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkContactsResponse**](BulkContactsResponse.html)
+
+<a name="postExternalcontactsBulkContactsRemove"></a>
+
+# **postExternalcontactsBulkContactsRemove**
+
+
+
+> [BulkDeleteResponse](BulkDeleteResponse.html) postExternalcontactsBulkContactsRemove(body)
+
+Bulk remove contacts
+
+
+
+Wraps POST /api/v2/externalcontacts/bulk/contacts/remove  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+BulkIdsRequest body = new BulkIdsRequest(); // BulkIdsRequest | Contact ids
+try {
+    BulkDeleteResponse result = apiInstance.postExternalcontactsBulkContactsRemove(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsBulkContactsRemove");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**BulkIdsRequest**](BulkIdsRequest.html)| Contact ids | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkDeleteResponse**](BulkDeleteResponse.html)
+
+<a name="postExternalcontactsBulkContactsUpdate"></a>
+
+# **postExternalcontactsBulkContactsUpdate**
+
+
+
+> [BulkContactsResponse](BulkContactsResponse.html) postExternalcontactsBulkContactsUpdate(body)
+
+Bulk update contacts
+
+
+
+Wraps POST /api/v2/externalcontacts/bulk/contacts/update  
+
+Requires ANY permissions: 
+
+* externalContacts:contact:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+BulkContactsRequest body = new BulkContactsRequest(); // BulkContactsRequest | Contacts
+try {
+    BulkContactsResponse result = apiInstance.postExternalcontactsBulkContactsUpdate(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsBulkContactsUpdate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**BulkContactsRequest**](BulkContactsRequest.html)| Contacts | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkContactsResponse**](BulkContactsResponse.html)
+
+<a name="postExternalcontactsBulkOrganizations"></a>
+
+# **postExternalcontactsBulkOrganizations**
+
+
+
+> [BulkFetchOrganizationsResponse](BulkFetchOrganizationsResponse.html) postExternalcontactsBulkOrganizations(body)
+
+Bulk fetch organizations
+
+
+
+Wraps POST /api/v2/externalcontacts/bulk/organizations  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+BulkIdsRequest body = new BulkIdsRequest(); // BulkIdsRequest | Organizations ids
+try {
+    BulkFetchOrganizationsResponse result = apiInstance.postExternalcontactsBulkOrganizations(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsBulkOrganizations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**BulkIdsRequest**](BulkIdsRequest.html)| Organizations ids | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkFetchOrganizationsResponse**](BulkFetchOrganizationsResponse.html)
+
+<a name="postExternalcontactsBulkOrganizationsAdd"></a>
+
+# **postExternalcontactsBulkOrganizationsAdd**
+
+
+
+> [BulkOrganizationsResponse](BulkOrganizationsResponse.html) postExternalcontactsBulkOrganizationsAdd(body)
+
+Bulk add organizations
+
+
+
+Wraps POST /api/v2/externalcontacts/bulk/organizations/add  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+BulkOrganizationsRequest body = new BulkOrganizationsRequest(); // BulkOrganizationsRequest | Organizations
+try {
+    BulkOrganizationsResponse result = apiInstance.postExternalcontactsBulkOrganizationsAdd(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsBulkOrganizationsAdd");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**BulkOrganizationsRequest**](BulkOrganizationsRequest.html)| Organizations | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkOrganizationsResponse**](BulkOrganizationsResponse.html)
+
+<a name="postExternalcontactsBulkOrganizationsRemove"></a>
+
+# **postExternalcontactsBulkOrganizationsRemove**
+
+
+
+> [BulkDeleteResponse](BulkDeleteResponse.html) postExternalcontactsBulkOrganizationsRemove(body)
+
+Bulk remove organizations
+
+
+
+Wraps POST /api/v2/externalcontacts/bulk/organizations/remove  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+BulkIdsRequest body = new BulkIdsRequest(); // BulkIdsRequest | Organization ids
+try {
+    BulkDeleteResponse result = apiInstance.postExternalcontactsBulkOrganizationsRemove(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsBulkOrganizationsRemove");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**BulkIdsRequest**](BulkIdsRequest.html)| Organization ids | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkDeleteResponse**](BulkDeleteResponse.html)
+
+<a name="postExternalcontactsBulkOrganizationsUpdate"></a>
+
+# **postExternalcontactsBulkOrganizationsUpdate**
+
+
+
+> [BulkOrganizationsResponse](BulkOrganizationsResponse.html) postExternalcontactsBulkOrganizationsUpdate(body)
+
+Bulk update organizations
+
+
+
+Wraps POST /api/v2/externalcontacts/bulk/organizations/update  
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ExternalContactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ExternalContactsApi apiInstance = new ExternalContactsApi();
+BulkOrganizationsRequest body = new BulkOrganizationsRequest(); // BulkOrganizationsRequest | Organizations
+try {
+    BulkOrganizationsResponse result = apiInstance.postExternalcontactsBulkOrganizationsUpdate(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExternalContactsApi#postExternalcontactsBulkOrganizationsUpdate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**BulkOrganizationsRequest**](BulkOrganizationsRequest.html)| Organizations | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkOrganizationsResponse**](BulkOrganizationsResponse.html)
 
 <a name="postExternalcontactsContactNotes"></a>
 

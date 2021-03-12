@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -23,6 +24,55 @@ public class MessagingRecipient  implements Serializable {
   
   private String nickname = null;
   private String id = null;
+
+  private static class IdTypeEnumDeserializer extends StdDeserializer<IdTypeEnum> {
+    public IdTypeEnumDeserializer() {
+      super(IdTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public IdTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return IdTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The recipient identifier type. This is used to indicate the format used by the recipient identifier.
+   */
+ @JsonDeserialize(using = IdTypeEnumDeserializer.class)
+  public enum IdTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    EMAIL("Email"),
+    PHONE("Phone"),
+    OPAQUE("Opaque");
+
+    private String value;
+
+    IdTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static IdTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (IdTypeEnum value : IdTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return IdTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private IdTypeEnum idType = null;
   private String image = null;
   private String firstName = null;
   private String lastName = null;
@@ -51,6 +101,24 @@ public class MessagingRecipient  implements Serializable {
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+  
+  /**
+   * The recipient identifier type. This is used to indicate the format used by the recipient identifier.
+   **/
+  public MessagingRecipient idType(IdTypeEnum idType) {
+    this.idType = idType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The recipient identifier type. This is used to indicate the format used by the recipient identifier.")
+  @JsonProperty("idType")
+  public IdTypeEnum getIdType() {
+    return idType;
+  }
+  public void setIdType(IdTypeEnum idType) {
+    this.idType = idType;
   }
 
   
@@ -94,6 +162,7 @@ public class MessagingRecipient  implements Serializable {
     MessagingRecipient messagingRecipient = (MessagingRecipient) o;
     return Objects.equals(this.nickname, messagingRecipient.nickname) &&
         Objects.equals(this.id, messagingRecipient.id) &&
+        Objects.equals(this.idType, messagingRecipient.idType) &&
         Objects.equals(this.image, messagingRecipient.image) &&
         Objects.equals(this.firstName, messagingRecipient.firstName) &&
         Objects.equals(this.lastName, messagingRecipient.lastName) &&
@@ -102,7 +171,7 @@ public class MessagingRecipient  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(nickname, id, image, firstName, lastName, email);
+    return Objects.hash(nickname, id, idType, image, firstName, lastName, email);
   }
 
   @Override
@@ -112,6 +181,7 @@ public class MessagingRecipient  implements Serializable {
     
     sb.append("    nickname: ").append(toIndentedString(nickname)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    idType: ").append(toIndentedString(idType)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");

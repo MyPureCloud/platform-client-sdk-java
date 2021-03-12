@@ -7163,8 +7163,8 @@ public class WorkforceManagementApiAsync {
 
   
   /**
-   * Gets the lookup ids to fetch the specified set of requests
-   * 
+   * Fetches time off requests matching the conditions specified in the request body
+   * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7197,8 +7197,8 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
-   * Gets the lookup ids to fetch the specified set of requests
-   * 
+   * Fetches time off requests matching the conditions specified in the request body
+   * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

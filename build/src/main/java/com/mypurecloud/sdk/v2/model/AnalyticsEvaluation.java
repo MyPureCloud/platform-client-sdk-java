@@ -32,8 +32,8 @@ public class AnalyticsEvaluation  implements Serializable {
   private String calibrationId = null;
   private Boolean rescored = null;
   private Boolean deleted = null;
-  private Long oTotalCriticalScore = null;
   private Long oTotalScore = null;
+  private Long oTotalCriticalScore = null;
 
   
   /**
@@ -236,23 +236,6 @@ public class AnalyticsEvaluation  implements Serializable {
   
   /**
    **/
-  public AnalyticsEvaluation oTotalCriticalScore(Long oTotalCriticalScore) {
-    this.oTotalCriticalScore = oTotalCriticalScore;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("oTotalCriticalScore")
-  public Long getOTotalCriticalScore() {
-    return oTotalCriticalScore;
-  }
-  public void setOTotalCriticalScore(Long oTotalCriticalScore) {
-    this.oTotalCriticalScore = oTotalCriticalScore;
-  }
-
-  
-  /**
-   **/
   public AnalyticsEvaluation oTotalScore(Long oTotalScore) {
     this.oTotalScore = oTotalScore;
     return this;
@@ -265,6 +248,23 @@ public class AnalyticsEvaluation  implements Serializable {
   }
   public void setOTotalScore(Long oTotalScore) {
     this.oTotalScore = oTotalScore;
+  }
+
+  
+  /**
+   **/
+  public AnalyticsEvaluation oTotalCriticalScore(Long oTotalCriticalScore) {
+    this.oTotalCriticalScore = oTotalCriticalScore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("oTotalCriticalScore")
+  public Long getOTotalCriticalScore() {
+    return oTotalCriticalScore;
+  }
+  public void setOTotalCriticalScore(Long oTotalCriticalScore) {
+    this.oTotalCriticalScore = oTotalCriticalScore;
   }
 
   
@@ -289,13 +289,13 @@ public class AnalyticsEvaluation  implements Serializable {
         Objects.equals(this.calibrationId, analyticsEvaluation.calibrationId) &&
         Objects.equals(this.rescored, analyticsEvaluation.rescored) &&
         Objects.equals(this.deleted, analyticsEvaluation.deleted) &&
-        Objects.equals(this.oTotalCriticalScore, analyticsEvaluation.oTotalCriticalScore) &&
-        Objects.equals(this.oTotalScore, analyticsEvaluation.oTotalScore);
+        Objects.equals(this.oTotalScore, analyticsEvaluation.oTotalScore) &&
+        Objects.equals(this.oTotalCriticalScore, analyticsEvaluation.oTotalCriticalScore);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(evaluationId, evaluatorId, userId, eventTime, queueId, formId, contextId, formName, calibrationId, rescored, deleted, oTotalCriticalScore, oTotalScore);
+    return Objects.hash(evaluationId, evaluatorId, userId, eventTime, queueId, formId, contextId, formName, calibrationId, rescored, deleted, oTotalScore, oTotalCriticalScore);
   }
 
   @Override
@@ -314,8 +314,8 @@ public class AnalyticsEvaluation  implements Serializable {
     sb.append("    calibrationId: ").append(toIndentedString(calibrationId)).append("\n");
     sb.append("    rescored: ").append(toIndentedString(rescored)).append("\n");
     sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
-    sb.append("    oTotalCriticalScore: ").append(toIndentedString(oTotalCriticalScore)).append("\n");
     sb.append("    oTotalScore: ").append(toIndentedString(oTotalScore)).append("\n");
+    sb.append("    oTotalCriticalScore: ").append(toIndentedString(oTotalCriticalScore)).append("\n");
     sb.append("}");
     return sb.toString();
   }

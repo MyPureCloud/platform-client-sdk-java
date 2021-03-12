@@ -109,7 +109,8 @@ public class Response  implements Serializable {
   public enum ResponseTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     MESSAGINGTEMPLATE("MessagingTemplate"),
-    CAMPAIGNSMSTEMPLATE("CampaignSmsTemplate");
+    CAMPAIGNSMSTEMPLATE("CampaignSmsTemplate"),
+    CAMPAIGNEMAILTEMPLATE("CampaignEmailTemplate");
 
     private String value;
 

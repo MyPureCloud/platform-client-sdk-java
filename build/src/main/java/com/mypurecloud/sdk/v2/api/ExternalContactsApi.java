@@ -27,6 +27,14 @@ import com.mypurecloud.sdk.v2.model.CursorContactListing;
 import com.mypurecloud.sdk.v2.model.CursorNoteListing;
 import com.mypurecloud.sdk.v2.model.CursorOrganizationListing;
 import com.mypurecloud.sdk.v2.model.CursorRelationshipListing;
+import com.mypurecloud.sdk.v2.model.BulkFetchContactsResponse;
+import com.mypurecloud.sdk.v2.model.BulkIdsRequest;
+import com.mypurecloud.sdk.v2.model.BulkContactsResponse;
+import com.mypurecloud.sdk.v2.model.BulkContactsRequest;
+import com.mypurecloud.sdk.v2.model.BulkDeleteResponse;
+import com.mypurecloud.sdk.v2.model.BulkFetchOrganizationsResponse;
+import com.mypurecloud.sdk.v2.model.BulkOrganizationsRequest;
+import com.mypurecloud.sdk.v2.model.BulkOrganizationsResponse;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
 
@@ -62,6 +70,14 @@ import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanContactsRequest
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanOrganizationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsScanRelationshipsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsAddRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsUpdateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsAddRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsSchemasRequest;
@@ -2704,6 +2720,638 @@ public class ExternalContactsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CursorRelationshipListing> response = (ApiResponse<CursorRelationshipListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Bulk fetch contacts
+   * 
+   * @param body Contact ids (required)
+   * @return BulkFetchContactsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkFetchContactsResponse postExternalcontactsBulkContacts(BulkIdsRequest body) throws IOException, ApiException {
+    return  postExternalcontactsBulkContacts(createPostExternalcontactsBulkContactsRequest(body));
+  }
+
+  /**
+   * Bulk fetch contacts
+   * 
+   * @param body Contact ids (required)
+   * @return BulkFetchContactsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkFetchContactsResponse> postExternalcontactsBulkContactsWithHttpInfo(BulkIdsRequest body) throws IOException {
+    return postExternalcontactsBulkContacts(createPostExternalcontactsBulkContactsRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsBulkContactsRequest createPostExternalcontactsBulkContactsRequest(BulkIdsRequest body) {
+    return PostExternalcontactsBulkContactsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Bulk fetch contacts
+   * 
+   * @param request The request object
+   * @return BulkFetchContactsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkFetchContactsResponse postExternalcontactsBulkContacts(PostExternalcontactsBulkContactsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkFetchContactsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkFetchContactsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk fetch contacts
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkFetchContactsResponse> postExternalcontactsBulkContacts(ApiRequest<BulkIdsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkFetchContactsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkFetchContactsResponse> response = (ApiResponse<BulkFetchContactsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkFetchContactsResponse> response = (ApiResponse<BulkFetchContactsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Bulk add contacts
+   * 
+   * @param body Contacts (required)
+   * @return BulkContactsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkContactsResponse postExternalcontactsBulkContactsAdd(BulkContactsRequest body) throws IOException, ApiException {
+    return  postExternalcontactsBulkContactsAdd(createPostExternalcontactsBulkContactsAddRequest(body));
+  }
+
+  /**
+   * Bulk add contacts
+   * 
+   * @param body Contacts (required)
+   * @return BulkContactsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkContactsResponse> postExternalcontactsBulkContactsAddWithHttpInfo(BulkContactsRequest body) throws IOException {
+    return postExternalcontactsBulkContactsAdd(createPostExternalcontactsBulkContactsAddRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsBulkContactsAddRequest createPostExternalcontactsBulkContactsAddRequest(BulkContactsRequest body) {
+    return PostExternalcontactsBulkContactsAddRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Bulk add contacts
+   * 
+   * @param request The request object
+   * @return BulkContactsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkContactsResponse postExternalcontactsBulkContactsAdd(PostExternalcontactsBulkContactsAddRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkContactsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkContactsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk add contacts
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkContactsResponse> postExternalcontactsBulkContactsAdd(ApiRequest<BulkContactsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkContactsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkContactsResponse> response = (ApiResponse<BulkContactsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkContactsResponse> response = (ApiResponse<BulkContactsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Bulk remove contacts
+   * 
+   * @param body Contact ids (required)
+   * @return BulkDeleteResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkDeleteResponse postExternalcontactsBulkContactsRemove(BulkIdsRequest body) throws IOException, ApiException {
+    return  postExternalcontactsBulkContactsRemove(createPostExternalcontactsBulkContactsRemoveRequest(body));
+  }
+
+  /**
+   * Bulk remove contacts
+   * 
+   * @param body Contact ids (required)
+   * @return BulkDeleteResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkDeleteResponse> postExternalcontactsBulkContactsRemoveWithHttpInfo(BulkIdsRequest body) throws IOException {
+    return postExternalcontactsBulkContactsRemove(createPostExternalcontactsBulkContactsRemoveRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsBulkContactsRemoveRequest createPostExternalcontactsBulkContactsRemoveRequest(BulkIdsRequest body) {
+    return PostExternalcontactsBulkContactsRemoveRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Bulk remove contacts
+   * 
+   * @param request The request object
+   * @return BulkDeleteResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkDeleteResponse postExternalcontactsBulkContactsRemove(PostExternalcontactsBulkContactsRemoveRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkDeleteResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkDeleteResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk remove contacts
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkDeleteResponse> postExternalcontactsBulkContactsRemove(ApiRequest<BulkIdsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkDeleteResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkDeleteResponse> response = (ApiResponse<BulkDeleteResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkDeleteResponse> response = (ApiResponse<BulkDeleteResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Bulk update contacts
+   * 
+   * @param body Contacts (required)
+   * @return BulkContactsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkContactsResponse postExternalcontactsBulkContactsUpdate(BulkContactsRequest body) throws IOException, ApiException {
+    return  postExternalcontactsBulkContactsUpdate(createPostExternalcontactsBulkContactsUpdateRequest(body));
+  }
+
+  /**
+   * Bulk update contacts
+   * 
+   * @param body Contacts (required)
+   * @return BulkContactsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkContactsResponse> postExternalcontactsBulkContactsUpdateWithHttpInfo(BulkContactsRequest body) throws IOException {
+    return postExternalcontactsBulkContactsUpdate(createPostExternalcontactsBulkContactsUpdateRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsBulkContactsUpdateRequest createPostExternalcontactsBulkContactsUpdateRequest(BulkContactsRequest body) {
+    return PostExternalcontactsBulkContactsUpdateRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Bulk update contacts
+   * 
+   * @param request The request object
+   * @return BulkContactsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkContactsResponse postExternalcontactsBulkContactsUpdate(PostExternalcontactsBulkContactsUpdateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkContactsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkContactsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk update contacts
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkContactsResponse> postExternalcontactsBulkContactsUpdate(ApiRequest<BulkContactsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkContactsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkContactsResponse> response = (ApiResponse<BulkContactsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkContactsResponse> response = (ApiResponse<BulkContactsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Bulk fetch organizations
+   * 
+   * @param body Organizations ids (required)
+   * @return BulkFetchOrganizationsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkFetchOrganizationsResponse postExternalcontactsBulkOrganizations(BulkIdsRequest body) throws IOException, ApiException {
+    return  postExternalcontactsBulkOrganizations(createPostExternalcontactsBulkOrganizationsRequest(body));
+  }
+
+  /**
+   * Bulk fetch organizations
+   * 
+   * @param body Organizations ids (required)
+   * @return BulkFetchOrganizationsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkFetchOrganizationsResponse> postExternalcontactsBulkOrganizationsWithHttpInfo(BulkIdsRequest body) throws IOException {
+    return postExternalcontactsBulkOrganizations(createPostExternalcontactsBulkOrganizationsRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsBulkOrganizationsRequest createPostExternalcontactsBulkOrganizationsRequest(BulkIdsRequest body) {
+    return PostExternalcontactsBulkOrganizationsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Bulk fetch organizations
+   * 
+   * @param request The request object
+   * @return BulkFetchOrganizationsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkFetchOrganizationsResponse postExternalcontactsBulkOrganizations(PostExternalcontactsBulkOrganizationsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkFetchOrganizationsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkFetchOrganizationsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk fetch organizations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkFetchOrganizationsResponse> postExternalcontactsBulkOrganizations(ApiRequest<BulkIdsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkFetchOrganizationsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkFetchOrganizationsResponse> response = (ApiResponse<BulkFetchOrganizationsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkFetchOrganizationsResponse> response = (ApiResponse<BulkFetchOrganizationsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Bulk add organizations
+   * 
+   * @param body Organizations (required)
+   * @return BulkOrganizationsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkOrganizationsResponse postExternalcontactsBulkOrganizationsAdd(BulkOrganizationsRequest body) throws IOException, ApiException {
+    return  postExternalcontactsBulkOrganizationsAdd(createPostExternalcontactsBulkOrganizationsAddRequest(body));
+  }
+
+  /**
+   * Bulk add organizations
+   * 
+   * @param body Organizations (required)
+   * @return BulkOrganizationsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkOrganizationsResponse> postExternalcontactsBulkOrganizationsAddWithHttpInfo(BulkOrganizationsRequest body) throws IOException {
+    return postExternalcontactsBulkOrganizationsAdd(createPostExternalcontactsBulkOrganizationsAddRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsBulkOrganizationsAddRequest createPostExternalcontactsBulkOrganizationsAddRequest(BulkOrganizationsRequest body) {
+    return PostExternalcontactsBulkOrganizationsAddRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Bulk add organizations
+   * 
+   * @param request The request object
+   * @return BulkOrganizationsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkOrganizationsResponse postExternalcontactsBulkOrganizationsAdd(PostExternalcontactsBulkOrganizationsAddRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkOrganizationsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkOrganizationsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk add organizations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkOrganizationsResponse> postExternalcontactsBulkOrganizationsAdd(ApiRequest<BulkOrganizationsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkOrganizationsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkOrganizationsResponse> response = (ApiResponse<BulkOrganizationsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkOrganizationsResponse> response = (ApiResponse<BulkOrganizationsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Bulk remove organizations
+   * 
+   * @param body Organization ids (required)
+   * @return BulkDeleteResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkDeleteResponse postExternalcontactsBulkOrganizationsRemove(BulkIdsRequest body) throws IOException, ApiException {
+    return  postExternalcontactsBulkOrganizationsRemove(createPostExternalcontactsBulkOrganizationsRemoveRequest(body));
+  }
+
+  /**
+   * Bulk remove organizations
+   * 
+   * @param body Organization ids (required)
+   * @return BulkDeleteResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkDeleteResponse> postExternalcontactsBulkOrganizationsRemoveWithHttpInfo(BulkIdsRequest body) throws IOException {
+    return postExternalcontactsBulkOrganizationsRemove(createPostExternalcontactsBulkOrganizationsRemoveRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsBulkOrganizationsRemoveRequest createPostExternalcontactsBulkOrganizationsRemoveRequest(BulkIdsRequest body) {
+    return PostExternalcontactsBulkOrganizationsRemoveRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Bulk remove organizations
+   * 
+   * @param request The request object
+   * @return BulkDeleteResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkDeleteResponse postExternalcontactsBulkOrganizationsRemove(PostExternalcontactsBulkOrganizationsRemoveRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkDeleteResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkDeleteResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk remove organizations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkDeleteResponse> postExternalcontactsBulkOrganizationsRemove(ApiRequest<BulkIdsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkDeleteResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkDeleteResponse> response = (ApiResponse<BulkDeleteResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkDeleteResponse> response = (ApiResponse<BulkDeleteResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Bulk update organizations
+   * 
+   * @param body Organizations (required)
+   * @return BulkOrganizationsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkOrganizationsResponse postExternalcontactsBulkOrganizationsUpdate(BulkOrganizationsRequest body) throws IOException, ApiException {
+    return  postExternalcontactsBulkOrganizationsUpdate(createPostExternalcontactsBulkOrganizationsUpdateRequest(body));
+  }
+
+  /**
+   * Bulk update organizations
+   * 
+   * @param body Organizations (required)
+   * @return BulkOrganizationsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkOrganizationsResponse> postExternalcontactsBulkOrganizationsUpdateWithHttpInfo(BulkOrganizationsRequest body) throws IOException {
+    return postExternalcontactsBulkOrganizationsUpdate(createPostExternalcontactsBulkOrganizationsUpdateRequest(body).withHttpInfo());
+  }
+
+  private PostExternalcontactsBulkOrganizationsUpdateRequest createPostExternalcontactsBulkOrganizationsUpdateRequest(BulkOrganizationsRequest body) {
+    return PostExternalcontactsBulkOrganizationsUpdateRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Bulk update organizations
+   * 
+   * @param request The request object
+   * @return BulkOrganizationsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkOrganizationsResponse postExternalcontactsBulkOrganizationsUpdate(PostExternalcontactsBulkOrganizationsUpdateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkOrganizationsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkOrganizationsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk update organizations
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkOrganizationsResponse> postExternalcontactsBulkOrganizationsUpdate(ApiRequest<BulkOrganizationsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkOrganizationsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkOrganizationsResponse> response = (ApiResponse<BulkOrganizationsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkOrganizationsResponse> response = (ApiResponse<BulkOrganizationsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
