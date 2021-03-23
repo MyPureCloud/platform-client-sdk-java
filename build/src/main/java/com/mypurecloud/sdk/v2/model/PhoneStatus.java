@@ -49,7 +49,8 @@ public class PhoneStatus  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     OPERATIONAL("OPERATIONAL"),
     DEGRADED("DEGRADED"),
-    OFFLINE("OFFLINE");
+    OFFLINE("OFFLINE"),
+    UNKNOWN("UNKNOWN");
 
     private String value;
 

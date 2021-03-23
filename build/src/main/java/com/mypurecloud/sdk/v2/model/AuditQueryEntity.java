@@ -113,7 +113,8 @@ public class AuditQueryEntity  implements Serializable {
     TRANSCRIPTIONSETTINGS("TranscriptionSettings"),
     ROUTINGTRANSCRIPTIONSETTINGS("RoutingTranscriptionSettings"),
     SPEECHTEXTANALYTICSSETTINGS("SpeechTextAnalyticsSettings"),
-    PREDICTOR("Predictor");
+    PREDICTOR("Predictor"),
+    WORKPLAN("WorkPlan");
 
     private String value;
 

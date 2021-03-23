@@ -304,7 +304,8 @@ public class MessageMediaParticipant  implements Serializable {
     WHATSAPP("whatsapp"),
     TELEGRAM("telegram"),
     KAKAO("kakao"),
-    WEBMESSAGING("webmessaging");
+    WEBMESSAGING("webmessaging"),
+    OPEN("open");
 
     private String value;
 

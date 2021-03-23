@@ -107,6 +107,63 @@ public class Flow  implements Serializable {
   private Operation currentOperation = null;
   private NluInfo nluInfo = null;
   private List<SupportedLanguage> supportedLanguages = new ArrayList<SupportedLanguage>();
+
+  private static class CompatibleFlowTypesEnumDeserializer extends StdDeserializer<CompatibleFlowTypesEnum> {
+    public CompatibleFlowTypesEnumDeserializer() {
+      super(CompatibleFlowTypesEnumDeserializer.class);
+    }
+
+    @Override
+    public CompatibleFlowTypesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return CompatibleFlowTypesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets compatibleFlowTypes
+   */
+ @JsonDeserialize(using = CompatibleFlowTypesEnumDeserializer.class)
+  public enum CompatibleFlowTypesEnum {
+    BOT("BOT"),
+    COMMONMODULE("COMMONMODULE"),
+    INBOUNDCALL("INBOUNDCALL"),
+    INBOUNDCHAT("INBOUNDCHAT"),
+    INBOUNDEMAIL("INBOUNDEMAIL"),
+    INBOUNDSHORTMESSAGE("INBOUNDSHORTMESSAGE"),
+    INQUEUECALL("INQUEUECALL"),
+    OUTBOUNDCALL("OUTBOUNDCALL"),
+    SECURECALL("SECURECALL"),
+    SPEECH("SPEECH"),
+    SURVEYINVITE("SURVEYINVITE"),
+    WORKFLOW("WORKFLOW");
+
+    private String value;
+
+    CompatibleFlowTypesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static CompatibleFlowTypesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (CompatibleFlowTypesEnum value : CompatibleFlowTypesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return CompatibleFlowTypesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<CompatibleFlowTypesEnum> compatibleFlowTypes = new ArrayList<CompatibleFlowTypesEnum>();
   private String selfUri = null;
 
   
@@ -459,6 +516,24 @@ public class Flow  implements Serializable {
   }
 
   
+  /**
+   * Compatible flow types designate which flow types are allowed to embed a flow’s configuration within their own flow configuration.  Currently the only flows that can be embedded are Common Module flows and the embedding flow can invoke them using the Call Common Module action.
+   **/
+  public Flow compatibleFlowTypes(List<CompatibleFlowTypesEnum> compatibleFlowTypes) {
+    this.compatibleFlowTypes = compatibleFlowTypes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Compatible flow types designate which flow types are allowed to embed a flow’s configuration within their own flow configuration.  Currently the only flows that can be embedded are Common Module flows and the embedding flow can invoke them using the Call Common Module action.")
+  @JsonProperty("compatibleFlowTypes")
+  public List<CompatibleFlowTypesEnum> getCompatibleFlowTypes() {
+    return compatibleFlowTypes;
+  }
+  public void setCompatibleFlowTypes(List<CompatibleFlowTypesEnum> compatibleFlowTypes) {
+    this.compatibleFlowTypes = compatibleFlowTypes;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -496,12 +571,13 @@ public class Flow  implements Serializable {
         Objects.equals(this.currentOperation, flow.currentOperation) &&
         Objects.equals(this.nluInfo, flow.nluInfo) &&
         Objects.equals(this.supportedLanguages, flow.supportedLanguages) &&
+        Objects.equals(this.compatibleFlowTypes, flow.compatibleFlowTypes) &&
         Objects.equals(this.selfUri, flow.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, type, lockedUser, lockedClient, active, system, deleted, publishedVersion, savedVersion, inputSchema, outputSchema, checkedInVersion, debugVersion, publishedBy, currentOperation, nluInfo, supportedLanguages, selfUri);
+    return Objects.hash(id, name, division, description, type, lockedUser, lockedClient, active, system, deleted, publishedVersion, savedVersion, inputSchema, outputSchema, checkedInVersion, debugVersion, publishedBy, currentOperation, nluInfo, supportedLanguages, compatibleFlowTypes, selfUri);
   }
 
   @Override
@@ -529,6 +605,7 @@ public class Flow  implements Serializable {
     sb.append("    currentOperation: ").append(toIndentedString(currentOperation)).append("\n");
     sb.append("    nluInfo: ").append(toIndentedString(nluInfo)).append("\n");
     sb.append("    supportedLanguages: ").append(toIndentedString(supportedLanguages)).append("\n");
+    sb.append("    compatibleFlowTypes: ").append(toIndentedString(compatibleFlowTypes)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

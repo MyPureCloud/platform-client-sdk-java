@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallRecord;
+import com.mypurecloud.sdk.v2.model.ConfigurationOverrides;
 import com.mypurecloud.sdk.v2.model.ContactColumnTimeZone;
 import com.mypurecloud.sdk.v2.model.PhoneNumberStatus;
 import io.swagger.annotations.ApiModel;
@@ -34,6 +35,7 @@ public class DialerContact  implements Serializable {
   private Boolean callable = null;
   private Map<String, PhoneNumberStatus> phoneNumberStatus = null;
   private Map<String, ContactColumnTimeZone> contactColumnTimeZones = null;
+  private ConfigurationOverrides configurationOverrides = null;
   private String selfUri = null;
 
   
@@ -169,6 +171,24 @@ public class DialerContact  implements Serializable {
   }
 
   
+  /**
+   * the priority property within ConfigurationOverides indicates whether or not the contact to be placed in front of the queue or at the end of the queue
+   **/
+  public DialerContact configurationOverrides(ConfigurationOverrides configurationOverrides) {
+    this.configurationOverrides = configurationOverrides;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "the priority property within ConfigurationOverides indicates whether or not the contact to be placed in front of the queue or at the end of the queue")
+  @JsonProperty("configurationOverrides")
+  public ConfigurationOverrides getConfigurationOverrides() {
+    return configurationOverrides;
+  }
+  public void setConfigurationOverrides(ConfigurationOverrides configurationOverrides) {
+    this.configurationOverrides = configurationOverrides;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -194,12 +214,13 @@ public class DialerContact  implements Serializable {
         Objects.equals(this.callable, dialerContact.callable) &&
         Objects.equals(this.phoneNumberStatus, dialerContact.phoneNumberStatus) &&
         Objects.equals(this.contactColumnTimeZones, dialerContact.contactColumnTimeZones) &&
+        Objects.equals(this.configurationOverrides, dialerContact.configurationOverrides) &&
         Objects.equals(this.selfUri, dialerContact.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, contactListId, data, callRecords, callable, phoneNumberStatus, contactColumnTimeZones, selfUri);
+    return Objects.hash(id, name, contactListId, data, callRecords, callable, phoneNumberStatus, contactColumnTimeZones, configurationOverrides, selfUri);
   }
 
   @Override
@@ -215,6 +236,7 @@ public class DialerContact  implements Serializable {
     sb.append("    callable: ").append(toIndentedString(callable)).append("\n");
     sb.append("    phoneNumberStatus: ").append(toIndentedString(phoneNumberStatus)).append("\n");
     sb.append("    contactColumnTimeZones: ").append(toIndentedString(contactColumnTimeZones)).append("\n");
+    sb.append("    configurationOverrides: ").append(toIndentedString(configurationOverrides)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

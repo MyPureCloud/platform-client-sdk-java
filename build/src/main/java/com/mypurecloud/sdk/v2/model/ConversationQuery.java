@@ -14,7 +14,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AnalyticsQueryAggregation;
 import com.mypurecloud.sdk.v2.model.ConversationDetailQueryFilter;
 import com.mypurecloud.sdk.v2.model.EvaluationDetailQueryFilter;
-import com.mypurecloud.sdk.v2.model.MediaEndpointStatDetailQueryFilter;
 import com.mypurecloud.sdk.v2.model.PagingSpec;
 import com.mypurecloud.sdk.v2.model.ResolutionDetailQueryFilter;
 import com.mypurecloud.sdk.v2.model.SegmentDetailQueryFilter;
@@ -34,7 +33,6 @@ public class ConversationQuery  implements Serializable {
   private List<ConversationDetailQueryFilter> conversationFilters = new ArrayList<ConversationDetailQueryFilter>();
   private List<SegmentDetailQueryFilter> segmentFilters = new ArrayList<SegmentDetailQueryFilter>();
   private List<EvaluationDetailQueryFilter> evaluationFilters = new ArrayList<EvaluationDetailQueryFilter>();
-  private List<MediaEndpointStatDetailQueryFilter> mediaEndpointStatFilters = new ArrayList<MediaEndpointStatDetailQueryFilter>();
   private List<SurveyDetailQueryFilter> surveyFilters = new ArrayList<SurveyDetailQueryFilter>();
   private List<ResolutionDetailQueryFilter> resolutionFilters = new ArrayList<ResolutionDetailQueryFilter>();
 
@@ -195,24 +193,6 @@ public class ConversationQuery  implements Serializable {
 
   
   /**
-   * Filters that target mediaEndpointStats
-   **/
-  public ConversationQuery mediaEndpointStatFilters(List<MediaEndpointStatDetailQueryFilter> mediaEndpointStatFilters) {
-    this.mediaEndpointStatFilters = mediaEndpointStatFilters;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Filters that target mediaEndpointStats")
-  @JsonProperty("mediaEndpointStatFilters")
-  public List<MediaEndpointStatDetailQueryFilter> getMediaEndpointStatFilters() {
-    return mediaEndpointStatFilters;
-  }
-  public void setMediaEndpointStatFilters(List<MediaEndpointStatDetailQueryFilter> mediaEndpointStatFilters) {
-    this.mediaEndpointStatFilters = mediaEndpointStatFilters;
-  }
-
-  
-  /**
    * Filters that target surveys
    **/
   public ConversationQuery surveyFilters(List<SurveyDetailQueryFilter> surveyFilters) {
@@ -351,7 +331,6 @@ public class ConversationQuery  implements Serializable {
     return Objects.equals(this.conversationFilters, conversationQuery.conversationFilters) &&
         Objects.equals(this.segmentFilters, conversationQuery.segmentFilters) &&
         Objects.equals(this.evaluationFilters, conversationQuery.evaluationFilters) &&
-        Objects.equals(this.mediaEndpointStatFilters, conversationQuery.mediaEndpointStatFilters) &&
         Objects.equals(this.surveyFilters, conversationQuery.surveyFilters) &&
         Objects.equals(this.resolutionFilters, conversationQuery.resolutionFilters) &&
         Objects.equals(this.order, conversationQuery.order) &&
@@ -363,7 +342,7 @@ public class ConversationQuery  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationFilters, segmentFilters, evaluationFilters, mediaEndpointStatFilters, surveyFilters, resolutionFilters, order, orderBy, interval, aggregations, paging);
+    return Objects.hash(conversationFilters, segmentFilters, evaluationFilters, surveyFilters, resolutionFilters, order, orderBy, interval, aggregations, paging);
   }
 
   @Override
@@ -374,7 +353,6 @@ public class ConversationQuery  implements Serializable {
     sb.append("    conversationFilters: ").append(toIndentedString(conversationFilters)).append("\n");
     sb.append("    segmentFilters: ").append(toIndentedString(segmentFilters)).append("\n");
     sb.append("    evaluationFilters: ").append(toIndentedString(evaluationFilters)).append("\n");
-    sb.append("    mediaEndpointStatFilters: ").append(toIndentedString(mediaEndpointStatFilters)).append("\n");
     sb.append("    surveyFilters: ").append(toIndentedString(surveyFilters)).append("\n");
     sb.append("    resolutionFilters: ").append(toIndentedString(resolutionFilters)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");

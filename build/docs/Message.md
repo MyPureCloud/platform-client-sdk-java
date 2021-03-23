@@ -103,6 +103,7 @@ title: Message
 | TELEGRAM | &quot;telegram&quot; |
 | KAKAO | &quot;kakao&quot; |
 | WEBMESSAGING | &quot;webmessaging&quot; |
+| OPEN | &quot;open&quot; |
 {: class="table table-striped"}
 
 

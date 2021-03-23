@@ -11,7 +11,6 @@ title: ConversationQuery
 | **conversationFilters** | <!----><!---->[**List&lt;ConversationDetailQueryFilter&gt;**](ConversationDetailQueryFilter.html)<!----> | Filters that target conversation-level data |  [optional] |
 | **segmentFilters** | <!----><!---->[**List&lt;SegmentDetailQueryFilter&gt;**](SegmentDetailQueryFilter.html)<!----> | Filters that target individual segments within a conversation |  [optional] |
 | **evaluationFilters** | <!----><!---->[**List&lt;EvaluationDetailQueryFilter&gt;**](EvaluationDetailQueryFilter.html)<!----> | Filters that target evaluations |  [optional] |
-| **mediaEndpointStatFilters** | <!----><!---->[**List&lt;MediaEndpointStatDetailQueryFilter&gt;**](MediaEndpointStatDetailQueryFilter.html)<!----> | Filters that target mediaEndpointStats |  [optional] |
 | **surveyFilters** | <!----><!---->[**List&lt;SurveyDetailQueryFilter&gt;**](SurveyDetailQueryFilter.html)<!----> | Filters that target surveys |  [optional] |
 | **resolutionFilters** | <!----><!---->[**List&lt;ResolutionDetailQueryFilter&gt;**](ResolutionDetailQueryFilter.html)<!----> | Filters that target resolutions |  [optional] |
 | **order** | [**OrderEnum**](#OrderEnum)<!----> | Sort the result set in ascending/descending order. Default is ascending |  [optional] |

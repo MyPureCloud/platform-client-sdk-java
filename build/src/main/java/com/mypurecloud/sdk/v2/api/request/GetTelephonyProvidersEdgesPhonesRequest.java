@@ -132,6 +132,37 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 	    this.setSortBy(sortBy);
 	    return this;
 	} 
+
+	public enum sortByValues { 
+		NAME("name"), 
+		STATUS_OPERATIONALSTATUS("status.operationalStatus"), 
+		SECONDARYSTATUS_OPERATIONALSTATUS("secondaryStatus.operationalStatus");
+
+		private String value;
+
+		sortByValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static sortByValues fromString(String key) {
+			if (key == null) return null;
+
+			for (sortByValues value : sortByValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return sortByValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private String sortOrder;
 	public String getSortOrder() {
@@ -270,6 +301,34 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 
 	public GetTelephonyProvidersEdgesPhonesRequest withName(String name) {
 	    this.setName(name);
+	    return this;
+	} 
+	
+	private String statusOperationalStatus;
+	public String getStatusOperationalStatus() {
+		return this.statusOperationalStatus;
+	}
+
+	public void setStatusOperationalStatus(String statusOperationalStatus) {
+		this.statusOperationalStatus = statusOperationalStatus;
+	}
+
+	public GetTelephonyProvidersEdgesPhonesRequest withStatusOperationalStatus(String statusOperationalStatus) {
+	    this.setStatusOperationalStatus(statusOperationalStatus);
+	    return this;
+	} 
+	
+	private String secondaryStatusOperationalStatus;
+	public String getSecondaryStatusOperationalStatus() {
+		return this.secondaryStatusOperationalStatus;
+	}
+
+	public void setSecondaryStatusOperationalStatus(String secondaryStatusOperationalStatus) {
+		this.secondaryStatusOperationalStatus = secondaryStatusOperationalStatus;
+	}
+
+	public GetTelephonyProvidersEdgesPhonesRequest withSecondaryStatusOperationalStatus(String secondaryStatusOperationalStatus) {
+	    this.setSecondaryStatusOperationalStatus(secondaryStatusOperationalStatus);
 	    return this;
 	} 
 	
@@ -417,6 +476,10 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
         
                 .withQueryParameters("name", "", name)
         
+                .withQueryParameters("status.operationalStatus", "", statusOperationalStatus)
+        
+                .withQueryParameters("secondaryStatus.operationalStatus", "", secondaryStatusOperationalStatus)
+        
                 .withQueryParameters("expand", "multi", expand)
         
                 .withQueryParameters("fields", "multi", fields)
@@ -455,6 +518,11 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 		public Builder withSortBy(String sortBy) {
 			request.setSortBy(sortBy);
 			return this;
+		}
+
+		public Builder withSortBy(sortByValues sortBy) {
+		    request.setSortBy(sortBy.toString());
+		    return this;
 		}
 		
 		public Builder withSortOrder(String sortOrder) {
@@ -504,6 +572,16 @@ public class GetTelephonyProvidersEdgesPhonesRequest {
 		
 		public Builder withName(String name) {
 			request.setName(name);
+			return this;
+		}
+		
+		public Builder withStatusOperationalStatus(String statusOperationalStatus) {
+			request.setStatusOperationalStatus(statusOperationalStatus);
+			return this;
+		}
+		
+		public Builder withSecondaryStatusOperationalStatus(String secondaryStatusOperationalStatus) {
+			request.setSecondaryStatusOperationalStatus(secondaryStatusOperationalStatus);
 			return this;
 		}
 		

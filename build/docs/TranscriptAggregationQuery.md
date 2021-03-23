@@ -39,7 +39,6 @@ title: TranscriptAggregationQuery
 | MEDIATYPE | &quot;mediaType&quot; |
 | MESSAGETYPE | &quot;messageType&quot; |
 | QUEUEID | &quot;queueId&quot; |
-| RESULTSBY | &quot;resultsBy&quot; |
 | TEAMID | &quot;teamId&quot; |
 | TOPICID | &quot;topicId&quot; |
 | USERID | &quot;userId&quot; |

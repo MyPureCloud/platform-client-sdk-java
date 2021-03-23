@@ -31,6 +31,7 @@ title: PhoneStatus
 | OPERATIONAL | &quot;OPERATIONAL&quot; |
 | DEGRADED | &quot;DEGRADED&quot; |
 | OFFLINE | &quot;OFFLINE&quot; |
+| UNKNOWN | &quot;UNKNOWN&quot; |
 {: class="table table-striped"}
 
 

@@ -59,7 +59,6 @@ public class TranscriptAggregationQuery  implements Serializable {
     MEDIATYPE("mediaType"),
     MESSAGETYPE("messageType"),
     QUEUEID("queueId"),
-    RESULTSBY("resultsBy"),
     TEAMID("teamId"),
     TOPICID("topicId"),
     USERID("userId");

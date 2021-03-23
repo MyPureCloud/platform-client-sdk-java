@@ -15,7 +15,7 @@ title: ContactList
 | **version** | <!----><!---->**Integer**<!----> | Required for updates, must match the version number of the most recent update |  [optional] |
 | **division** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> | The division this entity belongs to. |  [optional] |
 | **columnNames** | <!----><!---->**List&lt;String&gt;**<!----> | The names of the contact data columns. |  |
-| **phoneColumns** | <!----><!---->[**List&lt;ContactPhoneNumberColumn&gt;**](ContactPhoneNumberColumn.html)<!----> | Indicates which columns are phone numbers. |  |
+| **phoneColumns** | <!----><!---->[**List&lt;ContactPhoneNumberColumn&gt;**](ContactPhoneNumberColumn.html)<!----> | Indicates which columns are phone numbers. |  [optional] |
 | **importStatus** | <!----><!---->[**ImportStatus**](ImportStatus.html)<!----> | The status of the import process. |  [optional] |
 | **previewModeColumnName** | <!----><!---->**String**<!----> | A column to check if a contact should always be dialed in preview mode. |  [optional] |
 | **previewModeAcceptedValues** | <!----><!---->**List&lt;String&gt;**<!----> | The values in the previewModeColumnName column that indicate a contact should always be dialed in preview mode. |  [optional] |
