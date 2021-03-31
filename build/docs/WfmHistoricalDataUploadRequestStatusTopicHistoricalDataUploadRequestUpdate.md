@@ -9,13 +9,10 @@ title: WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdat
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **requestId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **dateImportStarted** | <!----><!---->[**WfmHistoricalDataUploadRequestStatusTopicDateTime**](WfmHistoricalDataUploadRequestStatusTopicDateTime.html)<!----> |  |  [optional] |
-| **dateImportEnded** | <!----><!---->[**WfmHistoricalDataUploadRequestStatusTopicDateTime**](WfmHistoricalDataUploadRequestStatusTopicDateTime.html)<!----> |  |  [optional] |
-| **dateCreated** | <!----><!---->[**WfmHistoricalDataUploadRequestStatusTopicDateTime**](WfmHistoricalDataUploadRequestStatusTopicDateTime.html)<!----> |  |  [optional] |
-| **dateModified** | <!----><!---->[**WfmHistoricalDataUploadRequestStatusTopicDateTime**](WfmHistoricalDataUploadRequestStatusTopicDateTime.html)<!----> |  |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
 | **error** | <!----><!---->**String**<!----> |  |  [optional] |
 | **active** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 
@@ -34,6 +31,18 @@ title: WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdat
 | CANCELLED | &quot;Cancelled&quot; |
 | PURGED | &quot;Purged&quot; |
 | PURGEPENDING | &quot;PurgePending&quot; |
+{: class="table table-striped"}
+
+
+<a name="TypeEnum"></a>
+
+## Enum: TypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| CSV | &quot;Csv&quot; |
+| JSON | &quot;Json&quot; |
 {: class="table table-striped"}
 
 

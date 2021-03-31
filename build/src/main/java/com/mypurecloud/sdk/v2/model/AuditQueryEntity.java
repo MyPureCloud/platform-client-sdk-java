@@ -114,7 +114,8 @@ public class AuditQueryEntity  implements Serializable {
     ROUTINGTRANSCRIPTIONSETTINGS("RoutingTranscriptionSettings"),
     SPEECHTEXTANALYTICSSETTINGS("SpeechTextAnalyticsSettings"),
     PREDICTOR("Predictor"),
-    WORKPLAN("WorkPlan");
+    WORKPLAN("WorkPlan"),
+    SENTIMENTFEEDBACK("SentimentFeedback");
 
     private String value;
 
@@ -164,6 +165,7 @@ public class AuditQueryEntity  implements Serializable {
     VIEW("View"),
     UPDATE("Update"),
     DELETE("Delete"),
+    DELETEALL("DeleteAll"),
     DOWNLOAD("Download"),
     UPLOAD("Upload"),
     MEMBERADD("MemberAdd"),

@@ -29,6 +29,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
   private Boolean isFullDayRequest = null;
   private Boolean markedAsRead = null;
   private String activityCodeId = null;
+  private Boolean paid = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -79,6 +80,57 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     }
   }
   private StatusEnum status = null;
+
+  private static class SubstatusEnumDeserializer extends StdDeserializer<SubstatusEnum> {
+    public SubstatusEnumDeserializer() {
+      super(SubstatusEnumDeserializer.class);
+    }
+
+    @Override
+    public SubstatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SubstatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets substatus
+   */
+ @JsonDeserialize(using = SubstatusEnumDeserializer.class)
+  public enum SubstatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ADVANCETIMEELAPSED("AdvanceTimeElapsed"),
+    AUTOAPPROVED("AutoApproved"),
+    INVALIDDAILYDURATION("InvalidDailyDuration"),
+    OUTSIDESHIFT("OutsideShift"),
+    WAITLISTED("Waitlisted");
+
+    private String value;
+
+    SubstatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SubstatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SubstatusEnum value : SubstatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SubstatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SubstatusEnum substatus = null;
   private List<String> partialDayStartDateTimes = new ArrayList<String>();
   private List<String> fullDayManagementUnitDates = new ArrayList<String>();
   private Integer dailyDurationMinutes = null;
@@ -178,6 +230,23 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
   
   /**
    **/
+  public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate paid(Boolean paid) {
+    this.paid = paid;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("paid")
+  public Boolean getPaid() {
+    return paid;
+  }
+  public void setPaid(Boolean paid) {
+    this.paid = paid;
+  }
+
+  
+  /**
+   **/
   public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate status(StatusEnum status) {
     this.status = status;
     return this;
@@ -190,6 +259,23 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
   }
   public void setStatus(StatusEnum status) {
     this.status = status;
+  }
+
+  
+  /**
+   **/
+  public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate substatus(SubstatusEnum substatus) {
+    this.substatus = substatus;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("substatus")
+  public SubstatusEnum getSubstatus() {
+    return substatus;
+  }
+  public void setSubstatus(SubstatusEnum substatus) {
+    this.substatus = substatus;
   }
 
   
@@ -378,7 +464,9 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
         Objects.equals(this.isFullDayRequest, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.isFullDayRequest) &&
         Objects.equals(this.markedAsRead, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.markedAsRead) &&
         Objects.equals(this.activityCodeId, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.activityCodeId) &&
+        Objects.equals(this.paid, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.paid) &&
         Objects.equals(this.status, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.status) &&
+        Objects.equals(this.substatus, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.substatus) &&
         Objects.equals(this.partialDayStartDateTimes, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.partialDayStartDateTimes) &&
         Objects.equals(this.fullDayManagementUnitDates, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.fullDayManagementUnitDates) &&
         Objects.equals(this.dailyDurationMinutes, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.dailyDurationMinutes) &&
@@ -393,7 +481,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, user, isFullDayRequest, markedAsRead, activityCodeId, status, partialDayStartDateTimes, fullDayManagementUnitDates, dailyDurationMinutes, notes, reviewedDate, reviewedBy, submittedDate, submittedBy, modifiedDate, modifiedBy);
+    return Objects.hash(id, user, isFullDayRequest, markedAsRead, activityCodeId, paid, status, substatus, partialDayStartDateTimes, fullDayManagementUnitDates, dailyDurationMinutes, notes, reviewedDate, reviewedBy, submittedDate, submittedBy, modifiedDate, modifiedBy);
   }
 
   @Override
@@ -406,7 +494,9 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     sb.append("    isFullDayRequest: ").append(toIndentedString(isFullDayRequest)).append("\n");
     sb.append("    markedAsRead: ").append(toIndentedString(markedAsRead)).append("\n");
     sb.append("    activityCodeId: ").append(toIndentedString(activityCodeId)).append("\n");
+    sb.append("    paid: ").append(toIndentedString(paid)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    substatus: ").append(toIndentedString(substatus)).append("\n");
     sb.append("    partialDayStartDateTimes: ").append(toIndentedString(partialDayStartDateTimes)).append("\n");
     sb.append("    fullDayManagementUnitDates: ").append(toIndentedString(fullDayManagementUnitDates)).append("\n");
     sb.append("    dailyDurationMinutes: ").append(toIndentedString(dailyDurationMinutes)).append("\n");

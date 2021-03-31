@@ -9,10 +9,6 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.ConversationDetailsDatalakeAvailabilityTopicDateTime;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
@@ -21,24 +17,6 @@ import java.io.Serializable;
 
 public class ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification  implements Serializable {
   
-  private ConversationDetailsDatalakeAvailabilityTopicDateTime dataAvailabilityDate = null;
-
-  
-  /**
-   **/
-  public ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification dataAvailabilityDate(ConversationDetailsDatalakeAvailabilityTopicDateTime dataAvailabilityDate) {
-    this.dataAvailabilityDate = dataAvailabilityDate;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("dataAvailabilityDate")
-  public ConversationDetailsDatalakeAvailabilityTopicDateTime getDataAvailabilityDate() {
-    return dataAvailabilityDate;
-  }
-  public void setDataAvailabilityDate(ConversationDetailsDatalakeAvailabilityTopicDateTime dataAvailabilityDate) {
-    this.dataAvailabilityDate = dataAvailabilityDate;
-  }
 
   
 
@@ -50,13 +28,12 @@ public class ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeN
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification conversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification = (ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification) o;
-    return Objects.equals(this.dataAvailabilityDate, conversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification.dataAvailabilityDate);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dataAvailabilityDate);
+    return Objects.hash();
   }
 
   @Override
@@ -64,7 +41,6 @@ public class ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeN
     StringBuilder sb = new StringBuilder();
     sb.append("class ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification {\n");
     
-    sb.append("    dataAvailabilityDate: ").append(toIndentedString(dataAvailabilityDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -1241,7 +1241,7 @@ try {
 
 
 
-> [Utilization](Utilization.html) getRoutingUserUtilization(userId)
+> [AgentMaxUtilization](AgentMaxUtilization.html) getRoutingUserUtilization(userId)
 
 Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
 
@@ -1278,7 +1278,7 @@ Configuration.setDefaultApiClient(apiClient);
 UsersApi apiInstance = new UsersApi();
 String userId = "userId_example"; // String | User ID
 try {
-    Utilization result = apiInstance.getRoutingUserUtilization(userId);
+    AgentMaxUtilization result = apiInstance.getRoutingUserUtilization(userId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getRoutingUserUtilization");
@@ -1297,7 +1297,7 @@ try {
 
 ### Return type
 
-[**Utilization**](Utilization.html)
+[**AgentMaxUtilization**](AgentMaxUtilization.html)
 
 <a name="getUser"></a>
 
@@ -4405,7 +4405,7 @@ try {
 
 
 
-> [Utilization](Utilization.html) putRoutingUserUtilization(userId, body)
+> [AgentMaxUtilization](AgentMaxUtilization.html) putRoutingUserUtilization(userId, body)
 
 Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
 
@@ -4442,7 +4442,7 @@ UsersApi apiInstance = new UsersApi();
 String userId = "userId_example"; // String | User ID
 Utilization body = new Utilization(); // Utilization | utilization
 try {
-    Utilization result = apiInstance.putRoutingUserUtilization(userId, body);
+    AgentMaxUtilization result = apiInstance.putRoutingUserUtilization(userId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#putRoutingUserUtilization");
@@ -4462,7 +4462,7 @@ try {
 
 ### Return type
 
-[**Utilization**](Utilization.html)
+[**AgentMaxUtilization**](AgentMaxUtilization.html)
 
 <a name="putUserCallforwarding"></a>
 

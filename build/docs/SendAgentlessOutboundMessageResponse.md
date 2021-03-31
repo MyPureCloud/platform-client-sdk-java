@@ -10,10 +10,11 @@ title: SendAgentlessOutboundMessageResponse
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **conversationId** | <!----><!---->**String**<!----> | The identifier of the conversation. |  [optional] |
-| **fromAddress** | <!----><!---->**String**<!----> | The sender of the text message. |  [optional] |
-| **toAddress** | <!----><!---->**String**<!----> | The recipient of the text message. |  [optional] |
-| **messengerType** | [**MessengerTypeEnum**](#MessengerTypeEnum)<!----> | Type of text messenger. |  [optional] |
+| **fromAddress** | <!----><!---->**String**<!----> | The sender of the message. |  [optional] |
+| **toAddress** | <!----><!---->**String**<!----> | The recipient of the message. |  [optional] |
+| **messengerType** | [**MessengerTypeEnum**](#MessengerTypeEnum)<!----> | Type of messenger. |  [optional] |
 | **textBody** | <!----><!---->**String**<!----> | The body of the text message. |  [optional] |
+| **messagingTemplate** | <!----><!---->[**MessagingTemplateRequest**](MessagingTemplateRequest.html)<!----> | The messaging template sent |  [optional] |
 | **timestamp** | <!----><!---->[**Date**](Date.html)<!----> | The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 | **user** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | Details of the user created the job |  [optional] |

@@ -12,6 +12,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
+import com.mypurecloud.sdk.v2.model.MessagingTemplateRequest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -41,7 +42,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
     }
   }
   /**
-   * Type of text messenger.
+   * Type of messenger.
    */
  @JsonDeserialize(using = MessengerTypeEnumDeserializer.class)
   public enum MessengerTypeEnum {
@@ -81,6 +82,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
   }
   private MessengerTypeEnum messengerType = null;
   private String textBody = null;
+  private MessagingTemplateRequest messagingTemplate = null;
   private Date timestamp = null;
   private String selfUri = null;
   private AddressableEntityRef user = null;
@@ -112,14 +114,14 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
 
   
   /**
-   * The sender of the text message.
+   * The sender of the message.
    **/
   public SendAgentlessOutboundMessageResponse fromAddress(String fromAddress) {
     this.fromAddress = fromAddress;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The sender of the text message.")
+  @ApiModelProperty(example = "null", value = "The sender of the message.")
   @JsonProperty("fromAddress")
   public String getFromAddress() {
     return fromAddress;
@@ -130,14 +132,14 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
 
   
   /**
-   * The recipient of the text message.
+   * The recipient of the message.
    **/
   public SendAgentlessOutboundMessageResponse toAddress(String toAddress) {
     this.toAddress = toAddress;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The recipient of the text message.")
+  @ApiModelProperty(example = "null", value = "The recipient of the message.")
   @JsonProperty("toAddress")
   public String getToAddress() {
     return toAddress;
@@ -148,14 +150,14 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
 
   
   /**
-   * Type of text messenger.
+   * Type of messenger.
    **/
   public SendAgentlessOutboundMessageResponse messengerType(MessengerTypeEnum messengerType) {
     this.messengerType = messengerType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Type of text messenger.")
+  @ApiModelProperty(example = "null", value = "Type of messenger.")
   @JsonProperty("messengerType")
   public MessengerTypeEnum getMessengerType() {
     return messengerType;
@@ -180,6 +182,24 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
   }
   public void setTextBody(String textBody) {
     this.textBody = textBody;
+  }
+
+  
+  /**
+   * The messaging template sent
+   **/
+  public SendAgentlessOutboundMessageResponse messagingTemplate(MessagingTemplateRequest messagingTemplate) {
+    this.messagingTemplate = messagingTemplate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The messaging template sent")
+  @JsonProperty("messagingTemplate")
+  public MessagingTemplateRequest getMessagingTemplate() {
+    return messagingTemplate;
+  }
+  public void setMessagingTemplate(MessagingTemplateRequest messagingTemplate) {
+    this.messagingTemplate = messagingTemplate;
   }
 
   
@@ -242,6 +262,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
         Objects.equals(this.toAddress, sendAgentlessOutboundMessageResponse.toAddress) &&
         Objects.equals(this.messengerType, sendAgentlessOutboundMessageResponse.messengerType) &&
         Objects.equals(this.textBody, sendAgentlessOutboundMessageResponse.textBody) &&
+        Objects.equals(this.messagingTemplate, sendAgentlessOutboundMessageResponse.messagingTemplate) &&
         Objects.equals(this.timestamp, sendAgentlessOutboundMessageResponse.timestamp) &&
         Objects.equals(this.selfUri, sendAgentlessOutboundMessageResponse.selfUri) &&
         Objects.equals(this.user, sendAgentlessOutboundMessageResponse.user);
@@ -249,7 +270,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, conversationId, fromAddress, toAddress, messengerType, textBody, timestamp, selfUri, user);
+    return Objects.hash(id, conversationId, fromAddress, toAddress, messengerType, textBody, messagingTemplate, timestamp, selfUri, user);
   }
 
   @Override
@@ -263,6 +284,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
     sb.append("    toAddress: ").append(toIndentedString(toAddress)).append("\n");
     sb.append("    messengerType: ").append(toIndentedString(messengerType)).append("\n");
     sb.append("    textBody: ").append(toIndentedString(textBody)).append("\n");
+    sb.append("    messagingTemplate: ").append(toIndentedString(messagingTemplate)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");

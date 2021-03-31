@@ -15,7 +15,6 @@ import com.mypurecloud.sdk.v2.model.EdgeMetricsTopicEdgeMetricMemory;
 import com.mypurecloud.sdk.v2.model.EdgeMetricsTopicEdgeMetricNetworks;
 import com.mypurecloud.sdk.v2.model.EdgeMetricsTopicEdgeMetricProcessor;
 import com.mypurecloud.sdk.v2.model.EdgeMetricsTopicEdgeMetricSubsystem;
-import com.mypurecloud.sdk.v2.model.EdgeMetricsTopicOffsetDateTime;
 import com.mypurecloud.sdk.v2.model.EdgeMetricsTopicUriReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -30,7 +29,6 @@ import java.io.Serializable;
 public class EdgeMetricsTopicEdgeMetrics  implements Serializable {
   
   private EdgeMetricsTopicUriReference edge = null;
-  private EdgeMetricsTopicOffsetDateTime eventTime = null;
   private Integer upTimeMsec = null;
   private List<EdgeMetricsTopicEdgeMetricProcessor> processors = new ArrayList<EdgeMetricsTopicEdgeMetricProcessor>();
   private List<EdgeMetricsTopicEdgeMetricMemory> memory = new ArrayList<EdgeMetricsTopicEdgeMetricMemory>();
@@ -53,23 +51,6 @@ public class EdgeMetricsTopicEdgeMetrics  implements Serializable {
   }
   public void setEdge(EdgeMetricsTopicUriReference edge) {
     this.edge = edge;
-  }
-
-  
-  /**
-   **/
-  public EdgeMetricsTopicEdgeMetrics eventTime(EdgeMetricsTopicOffsetDateTime eventTime) {
-    this.eventTime = eventTime;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("eventTime")
-  public EdgeMetricsTopicOffsetDateTime getEventTime() {
-    return eventTime;
-  }
-  public void setEventTime(EdgeMetricsTopicOffsetDateTime eventTime) {
-    this.eventTime = eventTime;
   }
 
   
@@ -186,7 +167,6 @@ public class EdgeMetricsTopicEdgeMetrics  implements Serializable {
     }
     EdgeMetricsTopicEdgeMetrics edgeMetricsTopicEdgeMetrics = (EdgeMetricsTopicEdgeMetrics) o;
     return Objects.equals(this.edge, edgeMetricsTopicEdgeMetrics.edge) &&
-        Objects.equals(this.eventTime, edgeMetricsTopicEdgeMetrics.eventTime) &&
         Objects.equals(this.upTimeMsec, edgeMetricsTopicEdgeMetrics.upTimeMsec) &&
         Objects.equals(this.processors, edgeMetricsTopicEdgeMetrics.processors) &&
         Objects.equals(this.memory, edgeMetricsTopicEdgeMetrics.memory) &&
@@ -197,7 +177,7 @@ public class EdgeMetricsTopicEdgeMetrics  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(edge, eventTime, upTimeMsec, processors, memory, disks, subsystems, networks);
+    return Objects.hash(edge, upTimeMsec, processors, memory, disks, subsystems, networks);
   }
 
   @Override
@@ -206,7 +186,6 @@ public class EdgeMetricsTopicEdgeMetrics  implements Serializable {
     sb.append("class EdgeMetricsTopicEdgeMetrics {\n");
     
     sb.append("    edge: ").append(toIndentedString(edge)).append("\n");
-    sb.append("    eventTime: ").append(toIndentedString(eventTime)).append("\n");
     sb.append("    upTimeMsec: ").append(toIndentedString(upTimeMsec)).append("\n");
     sb.append("    processors: ").append(toIndentedString(processors)).append("\n");
     sb.append("    memory: ").append(toIndentedString(memory)).append("\n");

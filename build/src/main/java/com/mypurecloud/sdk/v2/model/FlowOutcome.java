@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Operation;
+import com.mypurecloud.sdk.v2.model.WritableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -23,6 +24,7 @@ public class FlowOutcome  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private WritableDivision division = null;
   private String description = null;
   private Operation currentOperation = null;
   private String selfUri = null;
@@ -61,6 +63,24 @@ public class FlowOutcome  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  
+  /**
+   * The division to which this entity belongs.
+   **/
+  public FlowOutcome division(WritableDivision division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public WritableDivision getDivision() {
+    return division;
+  }
+  public void setDivision(WritableDivision division) {
+    this.division = division;
   }
 
   
@@ -117,6 +137,7 @@ public class FlowOutcome  implements Serializable {
     FlowOutcome flowOutcome = (FlowOutcome) o;
     return Objects.equals(this.id, flowOutcome.id) &&
         Objects.equals(this.name, flowOutcome.name) &&
+        Objects.equals(this.division, flowOutcome.division) &&
         Objects.equals(this.description, flowOutcome.description) &&
         Objects.equals(this.currentOperation, flowOutcome.currentOperation) &&
         Objects.equals(this.selfUri, flowOutcome.selfUri);
@@ -124,7 +145,7 @@ public class FlowOutcome  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, currentOperation, selfUri);
+    return Objects.hash(id, name, division, description, currentOperation, selfUri);
   }
 
   @Override
@@ -134,6 +155,7 @@ public class FlowOutcome  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    currentOperation: ").append(toIndentedString(currentOperation)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

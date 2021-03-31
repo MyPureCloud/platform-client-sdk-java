@@ -26,11 +26,11 @@ import java.io.Serializable;
 
 public class ConversationSocialExpressionEventTopicErrorBody  implements Serializable {
   
-  private Integer status = null;
+  private String message = null;
   private String code = null;
+  private Integer status = null;
   private String entityId = null;
   private String entityName = null;
-  private String message = null;
   private String messageWithParams = null;
   private Map<String, String> messageParams = null;
   private String contextId = null;
@@ -40,18 +40,18 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
   
   /**
    **/
-  public ConversationSocialExpressionEventTopicErrorBody status(Integer status) {
-    this.status = status;
+  public ConversationSocialExpressionEventTopicErrorBody message(String message) {
+    this.message = message;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("status")
-  public Integer getStatus() {
-    return status;
+  @JsonProperty("message")
+  public String getMessage() {
+    return message;
   }
-  public void setStatus(Integer status) {
-    this.status = status;
+  public void setMessage(String message) {
+    this.message = message;
   }
 
   
@@ -69,6 +69,23 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
   }
   public void setCode(String code) {
     this.code = code;
+  }
+
+  
+  /**
+   **/
+  public ConversationSocialExpressionEventTopicErrorBody status(Integer status) {
+    this.status = status;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("status")
+  public Integer getStatus() {
+    return status;
+  }
+  public void setStatus(Integer status) {
+    this.status = status;
   }
 
   
@@ -103,23 +120,6 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
   }
   public void setEntityName(String entityName) {
     this.entityName = entityName;
-  }
-
-  
-  /**
-   **/
-  public ConversationSocialExpressionEventTopicErrorBody message(String message) {
-    this.message = message;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("message")
-  public String getMessage() {
-    return message;
-  }
-  public void setMessage(String message) {
-    this.message = message;
   }
 
   
@@ -218,11 +218,11 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
       return false;
     }
     ConversationSocialExpressionEventTopicErrorBody conversationSocialExpressionEventTopicErrorBody = (ConversationSocialExpressionEventTopicErrorBody) o;
-    return Objects.equals(this.status, conversationSocialExpressionEventTopicErrorBody.status) &&
+    return Objects.equals(this.message, conversationSocialExpressionEventTopicErrorBody.message) &&
         Objects.equals(this.code, conversationSocialExpressionEventTopicErrorBody.code) &&
+        Objects.equals(this.status, conversationSocialExpressionEventTopicErrorBody.status) &&
         Objects.equals(this.entityId, conversationSocialExpressionEventTopicErrorBody.entityId) &&
         Objects.equals(this.entityName, conversationSocialExpressionEventTopicErrorBody.entityName) &&
-        Objects.equals(this.message, conversationSocialExpressionEventTopicErrorBody.message) &&
         Objects.equals(this.messageWithParams, conversationSocialExpressionEventTopicErrorBody.messageWithParams) &&
         Objects.equals(this.messageParams, conversationSocialExpressionEventTopicErrorBody.messageParams) &&
         Objects.equals(this.contextId, conversationSocialExpressionEventTopicErrorBody.contextId) &&
@@ -232,7 +232,7 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, code, entityId, entityName, message, messageWithParams, messageParams, contextId, details, errors);
+    return Objects.hash(message, code, status, entityId, entityName, messageWithParams, messageParams, contextId, details, errors);
   }
 
   @Override
@@ -240,11 +240,11 @@ public class ConversationSocialExpressionEventTopicErrorBody  implements Seriali
     StringBuilder sb = new StringBuilder();
     sb.append("class ConversationSocialExpressionEventTopicErrorBody {\n");
     
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    entityId: ").append(toIndentedString(entityId)).append("\n");
     sb.append("    entityName: ").append(toIndentedString(entityName)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    messageWithParams: ").append(toIndentedString(messageWithParams)).append("\n");
     sb.append("    messageParams: ").append(toIndentedString(messageParams)).append("\n");
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");

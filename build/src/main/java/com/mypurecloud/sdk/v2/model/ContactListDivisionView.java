@@ -103,7 +103,7 @@ public class ContactListDivisionView  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Indicates which columns are phone numbers.")
+  @ApiModelProperty(example = "null", value = "Indicates which columns are phone numbers.")
   @JsonProperty("phoneColumns")
   public List<ContactPhoneNumberColumn> getPhoneColumns() {
     return phoneColumns;

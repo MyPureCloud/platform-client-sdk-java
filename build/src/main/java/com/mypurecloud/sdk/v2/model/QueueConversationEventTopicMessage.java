@@ -183,7 +183,8 @@ public class QueueConversationEventTopicMessage  implements Serializable {
     WHATSAPP("WHATSAPP"),
     TELEGRAM("TELEGRAM"),
     KAKAO("KAKAO"),
-    WEBMESSAGING("WEBMESSAGING");
+    WEBMESSAGING("WEBMESSAGING"),
+    OPEN("OPEN");
 
     private String value;
 

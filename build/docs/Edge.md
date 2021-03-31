@@ -109,6 +109,7 @@ title: Edge
 | HARDWARE | &quot;HARDWARE&quot; |
 | LDM | &quot;LDM&quot; |
 | CDM | &quot;CDM&quot; |
+| BYOH | &quot;BYOH&quot; |
 | INVALID | &quot;INVALID&quot; |
 {: class="table table-striped"}
 

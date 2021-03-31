@@ -57,7 +57,6 @@ public class OAuthClient  implements Serializable {
   public enum AuthorizedGrantTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CODE("CODE"),
-    CODE_PKCE("CODE_PKCE"),
     TOKEN("TOKEN"),
     SAML2BEARER("SAML2BEARER"),
     PASSWORD("PASSWORD"),

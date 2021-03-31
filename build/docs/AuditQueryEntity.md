@@ -93,6 +93,7 @@ title: AuditQueryEntity
 | SPEECHTEXTANALYTICSSETTINGS | &quot;SpeechTextAnalyticsSettings&quot; |
 | PREDICTOR | &quot;Predictor&quot; |
 | WORKPLAN | &quot;WorkPlan&quot; |
+| SENTIMENTFEEDBACK | &quot;SentimentFeedback&quot; |
 {: class="table table-striped"}
 
 
@@ -106,6 +107,7 @@ title: AuditQueryEntity
 | VIEW | &quot;View&quot; |
 | UPDATE | &quot;Update&quot; |
 | DELETE | &quot;Delete&quot; |
+| DELETEALL | &quot;DeleteAll&quot; |
 | DOWNLOAD | &quot;Download&quot; |
 | UPLOAD | &quot;Upload&quot; |
 | MEMBERADD | &quot;MemberAdd&quot; |

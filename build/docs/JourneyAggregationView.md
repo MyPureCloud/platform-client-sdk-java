@@ -22,6 +22,8 @@ title: JourneyAggregationView
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| NDISTINCTJOURNEYACTIONS | &quot;nDistinctJourneyActions&quot; |
+| NJOURNEYACTIONSBLOCKED | &quot;nJourneyActionsBlocked&quot; |
 | NJOURNEYOUTCOMESACHIEVED | &quot;nJourneyOutcomesAchieved&quot; |
 | NJOURNEYOUTCOMESATTRIBUTED | &quot;nJourneyOutcomesAttributed&quot; |
 | NJOURNEYSEGMENTSASSIGNED | &quot;nJourneySegmentsAssigned&quot; |

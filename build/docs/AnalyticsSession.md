@@ -27,7 +27,6 @@ title: AnalyticsSession
 | **edgeId** | <!----><!---->**String**<!----> | Unique identifier of the edge device |  [optional] |
 | **remoteNameDisplayable** | <!----><!---->**String**<!----> |  |  [optional] |
 | **roomId** | <!----><!---->**String**<!----> | Unique identifier for the room |  [optional] |
-| **monitoredSessionId** | <!----><!---->**String**<!----> | The sessionID being monitored |  [optional] |
 | **monitoredParticipantId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **callbackUserName** | <!----><!---->**String**<!----> | The name of the user requesting a call back |  [optional] |
 | **callbackNumbers** | <!----><!---->**List&lt;String&gt;**<!----> | List of numbers to callback |  [optional] |
@@ -70,6 +69,11 @@ title: AnalyticsSession
 | **proposedAgents** | <!----><!---->[**List&lt;AnalyticsProposedAgent&gt;**](AnalyticsProposedAgent.html)<!----> | Proposed agents |  [optional] |
 | **assignerId** | <!----><!---->**String**<!----> | ID of the user that manually assigned a conversation |  [optional] |
 | **acwSkipped** | <!----><!---->**Boolean**<!----> | Marker for an agent that skipped after call work |  [optional] |
+| **bullseyeRing** | <!----><!---->**Integer**<!----> | Bullseye ring of the conversation |  [optional] |
+| **agentBullseyeRing** | <!----><!---->**Integer**<!----> | Bullseye ring of the targeted agent |  [optional] |
+| **routingRule** | <!----><!---->**Integer**<!----> | Routing rule the conversation is in for preferred agent routing |  [optional] |
+| **removedSkillIds** | <!----><!---->**List&lt;String&gt;**<!----> | IDs of skills that have been removed by bullseye routing |  [optional] |
+| **activeSkillIds** | <!----><!---->**List&lt;String&gt;**<!----> | IDs of Skills that are active on the conversation |  [optional] |
 {: class="table table-striped"}
 
 

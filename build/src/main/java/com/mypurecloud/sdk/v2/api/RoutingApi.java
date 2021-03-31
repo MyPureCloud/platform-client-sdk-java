@@ -35,6 +35,7 @@ import com.mypurecloud.sdk.v2.model.SmsAddressEntityListing;
 import com.mypurecloud.sdk.v2.model.SMSAvailablePhoneNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumber;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberEntityListing;
+import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
 import com.mypurecloud.sdk.v2.model.Utilization;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
@@ -3796,11 +3797,11 @@ public class RoutingApi {
    * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
    * 
    * @param userId User ID (required)
-   * @return Utilization
+   * @return AgentMaxUtilization
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Utilization getRoutingUserUtilization(String userId) throws IOException, ApiException {
+  public AgentMaxUtilization getRoutingUserUtilization(String userId) throws IOException, ApiException {
     return  getRoutingUserUtilization(createGetRoutingUserUtilizationRequest(userId));
   }
 
@@ -3808,10 +3809,10 @@ public class RoutingApi {
    * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
    * 
    * @param userId User ID (required)
-   * @return Utilization
+   * @return AgentMaxUtilization
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Utilization> getRoutingUserUtilizationWithHttpInfo(String userId) throws IOException {
+  public ApiResponse<AgentMaxUtilization> getRoutingUserUtilizationWithHttpInfo(String userId) throws IOException {
     return getRoutingUserUtilization(createGetRoutingUserUtilizationRequest(userId).withHttpInfo());
   }
 
@@ -3826,13 +3827,13 @@ public class RoutingApi {
    * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
    * 
    * @param request The request object
-   * @return Utilization
+   * @return AgentMaxUtilization
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Utilization getRoutingUserUtilization(GetRoutingUserUtilizationRequest request) throws IOException, ApiException {
+  public AgentMaxUtilization getRoutingUserUtilization(GetRoutingUserUtilizationRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Utilization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Utilization>() {});
+      ApiResponse<AgentMaxUtilization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentMaxUtilization>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -3848,13 +3849,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Utilization> getRoutingUserUtilization(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<AgentMaxUtilization> getRoutingUserUtilization(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<Utilization>() {});
+      return pcapiClient.invoke(request, new TypeReference<AgentMaxUtilization>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Utilization> response = (ApiResponse<Utilization>)(ApiResponse<?>)exception;
+      ApiResponse<AgentMaxUtilization> response = (ApiResponse<AgentMaxUtilization>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -3865,7 +3866,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Utilization> response = (ApiResponse<Utilization>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<AgentMaxUtilization> response = (ApiResponse<AgentMaxUtilization>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -7203,11 +7204,11 @@ public class RoutingApi {
    * 
    * @param userId User ID (required)
    * @param body utilization (required)
-   * @return Utilization
+   * @return AgentMaxUtilization
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Utilization putRoutingUserUtilization(String userId, Utilization body) throws IOException, ApiException {
+  public AgentMaxUtilization putRoutingUserUtilization(String userId, Utilization body) throws IOException, ApiException {
     return  putRoutingUserUtilization(createPutRoutingUserUtilizationRequest(userId, body));
   }
 
@@ -7216,10 +7217,10 @@ public class RoutingApi {
    * 
    * @param userId User ID (required)
    * @param body utilization (required)
-   * @return Utilization
+   * @return AgentMaxUtilization
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Utilization> putRoutingUserUtilizationWithHttpInfo(String userId, Utilization body) throws IOException {
+  public ApiResponse<AgentMaxUtilization> putRoutingUserUtilizationWithHttpInfo(String userId, Utilization body) throws IOException {
     return putRoutingUserUtilization(createPutRoutingUserUtilizationRequest(userId, body).withHttpInfo());
   }
 
@@ -7236,13 +7237,13 @@ public class RoutingApi {
    * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
    * 
    * @param request The request object
-   * @return Utilization
+   * @return AgentMaxUtilization
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Utilization putRoutingUserUtilization(PutRoutingUserUtilizationRequest request) throws IOException, ApiException {
+  public AgentMaxUtilization putRoutingUserUtilization(PutRoutingUserUtilizationRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Utilization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Utilization>() {});
+      ApiResponse<AgentMaxUtilization> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentMaxUtilization>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -7258,13 +7259,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Utilization> putRoutingUserUtilization(ApiRequest<Utilization> request) throws IOException {
+  public ApiResponse<AgentMaxUtilization> putRoutingUserUtilization(ApiRequest<Utilization> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<Utilization>() {});
+      return pcapiClient.invoke(request, new TypeReference<AgentMaxUtilization>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Utilization> response = (ApiResponse<Utilization>)(ApiResponse<?>)exception;
+      ApiResponse<AgentMaxUtilization> response = (ApiResponse<AgentMaxUtilization>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -7275,7 +7276,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Utilization> response = (ApiResponse<Utilization>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<AgentMaxUtilization> response = (ApiResponse<AgentMaxUtilization>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

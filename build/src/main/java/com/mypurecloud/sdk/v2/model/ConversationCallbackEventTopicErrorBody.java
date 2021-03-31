@@ -26,11 +26,11 @@ import java.io.Serializable;
 
 public class ConversationCallbackEventTopicErrorBody  implements Serializable {
   
-  private Integer status = null;
+  private String message = null;
   private String code = null;
+  private Integer status = null;
   private String entityId = null;
   private String entityName = null;
-  private String message = null;
   private String messageWithParams = null;
   private Map<String, String> messageParams = null;
   private String contextId = null;
@@ -40,18 +40,18 @@ public class ConversationCallbackEventTopicErrorBody  implements Serializable {
   
   /**
    **/
-  public ConversationCallbackEventTopicErrorBody status(Integer status) {
-    this.status = status;
+  public ConversationCallbackEventTopicErrorBody message(String message) {
+    this.message = message;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("status")
-  public Integer getStatus() {
-    return status;
+  @JsonProperty("message")
+  public String getMessage() {
+    return message;
   }
-  public void setStatus(Integer status) {
-    this.status = status;
+  public void setMessage(String message) {
+    this.message = message;
   }
 
   
@@ -69,6 +69,23 @@ public class ConversationCallbackEventTopicErrorBody  implements Serializable {
   }
   public void setCode(String code) {
     this.code = code;
+  }
+
+  
+  /**
+   **/
+  public ConversationCallbackEventTopicErrorBody status(Integer status) {
+    this.status = status;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("status")
+  public Integer getStatus() {
+    return status;
+  }
+  public void setStatus(Integer status) {
+    this.status = status;
   }
 
   
@@ -103,23 +120,6 @@ public class ConversationCallbackEventTopicErrorBody  implements Serializable {
   }
   public void setEntityName(String entityName) {
     this.entityName = entityName;
-  }
-
-  
-  /**
-   **/
-  public ConversationCallbackEventTopicErrorBody message(String message) {
-    this.message = message;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("message")
-  public String getMessage() {
-    return message;
-  }
-  public void setMessage(String message) {
-    this.message = message;
   }
 
   
@@ -218,11 +218,11 @@ public class ConversationCallbackEventTopicErrorBody  implements Serializable {
       return false;
     }
     ConversationCallbackEventTopicErrorBody conversationCallbackEventTopicErrorBody = (ConversationCallbackEventTopicErrorBody) o;
-    return Objects.equals(this.status, conversationCallbackEventTopicErrorBody.status) &&
+    return Objects.equals(this.message, conversationCallbackEventTopicErrorBody.message) &&
         Objects.equals(this.code, conversationCallbackEventTopicErrorBody.code) &&
+        Objects.equals(this.status, conversationCallbackEventTopicErrorBody.status) &&
         Objects.equals(this.entityId, conversationCallbackEventTopicErrorBody.entityId) &&
         Objects.equals(this.entityName, conversationCallbackEventTopicErrorBody.entityName) &&
-        Objects.equals(this.message, conversationCallbackEventTopicErrorBody.message) &&
         Objects.equals(this.messageWithParams, conversationCallbackEventTopicErrorBody.messageWithParams) &&
         Objects.equals(this.messageParams, conversationCallbackEventTopicErrorBody.messageParams) &&
         Objects.equals(this.contextId, conversationCallbackEventTopicErrorBody.contextId) &&
@@ -232,7 +232,7 @@ public class ConversationCallbackEventTopicErrorBody  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, code, entityId, entityName, message, messageWithParams, messageParams, contextId, details, errors);
+    return Objects.hash(message, code, status, entityId, entityName, messageWithParams, messageParams, contextId, details, errors);
   }
 
   @Override
@@ -240,11 +240,11 @@ public class ConversationCallbackEventTopicErrorBody  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConversationCallbackEventTopicErrorBody {\n");
     
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    entityId: ").append(toIndentedString(entityId)).append("\n");
     sb.append("    entityName: ").append(toIndentedString(entityName)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    messageWithParams: ").append(toIndentedString(messageWithParams)).append("\n");
     sb.append("    messageParams: ").append(toIndentedString(messageParams)).append("\n");
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");

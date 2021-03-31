@@ -11,7 +11,6 @@ title: WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNot
 | **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
 | **operationId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **result** | <!----><!---->[**WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResultListing**](WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateResultListing.html)<!----> |  |  [optional] |
-| **weekDate** | <!----><!---->[**WfmBulkShiftTradeStateUpdateNotificationTopicLocalDate**](WfmBulkShiftTradeStateUpdateNotificationTopicLocalDate.html)<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

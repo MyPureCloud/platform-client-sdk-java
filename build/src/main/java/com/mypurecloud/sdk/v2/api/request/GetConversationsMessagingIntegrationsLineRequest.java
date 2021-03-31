@@ -137,6 +137,63 @@ public class GetConversationsMessagingIntegrationsLineRequest {
 	    return this;
 	} 
 	
+	private String expand;
+	public String getExpand() {
+		return this.expand;
+	}
+
+	public void setExpand(String expand) {
+		this.expand = expand;
+	}
+
+	public GetConversationsMessagingIntegrationsLineRequest withExpand(String expand) {
+	    this.setExpand(expand);
+	    return this;
+	} 
+
+	public enum expandValues { 
+		SUPPORTEDCONTENT("supportedContent");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
+	private String supportedContentId;
+	public String getSupportedContentId() {
+		return this.supportedContentId;
+	}
+
+	public void setSupportedContentId(String supportedContentId) {
+		this.supportedContentId = supportedContentId;
+	}
+
+	public GetConversationsMessagingIntegrationsLineRequest withSupportedContentId(String supportedContentId) {
+	    this.setSupportedContentId(supportedContentId);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -163,6 +220,10 @@ public class GetConversationsMessagingIntegrationsLineRequest {
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
+        
+                .withQueryParameters("expand", "", expand)
+        
+                .withQueryParameters("supportedContent.id", "", supportedContentId)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -192,6 +253,21 @@ public class GetConversationsMessagingIntegrationsLineRequest {
 		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
+			return this;
+		}
+		
+		public Builder withExpand(String expand) {
+			request.setExpand(expand);
+			return this;
+		}
+
+		public Builder withExpand(expandValues expand) {
+		    request.setExpand(expand.toString());
+		    return this;
+		}
+		
+		public Builder withSupportedContentId(String supportedContentId) {
+			request.setSupportedContentId(supportedContentId);
 			return this;
 		}
 		

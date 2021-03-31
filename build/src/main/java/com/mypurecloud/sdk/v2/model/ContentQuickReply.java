@@ -130,14 +130,14 @@ public class ContentQuickReply  implements Serializable {
 
   
   /**
-   * Image associated with quick reply
+   * Path or URI to an image file associated with quick reply
    **/
   public ContentQuickReply image(String image) {
     this.image = image;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Image associated with quick reply")
+  @ApiModelProperty(example = "null", value = "Path or URI to an image file associated with quick reply")
   @JsonProperty("image")
   public String getImage() {
     return image;

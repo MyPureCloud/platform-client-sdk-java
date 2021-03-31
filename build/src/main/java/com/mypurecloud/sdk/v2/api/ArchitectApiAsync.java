@@ -54,8 +54,10 @@ import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
 import com.mypurecloud.sdk.v2.model.FlowMilestone;
 import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
+import com.mypurecloud.sdk.v2.model.FlowMilestoneDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowOutcome;
 import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
+import com.mypurecloud.sdk.v2.model.FlowOutcomeDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchResponse;
 import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchRequest;
@@ -120,8 +122,10 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsExecutionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestoneRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestonesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestonesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectDependencytrackingBuildRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectEmergencygroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectIvrsRequest;
@@ -4665,6 +4669,82 @@ public class ArchitectApiAsync {
 
   
   /**
+   * Get a pageable list of basic flow milestone information objects filterable by query parameters.
+   * This returns flow milestones consisting of name and division. If one or more IDs are specified, the search will fetch flow milestones that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FlowMilestoneDivisionViewEntityListing> getFlowsMilestonesDivisionviewsAsync(GetFlowsMilestonesDivisionviewsRequest request, final AsyncApiCallback<FlowMilestoneDivisionViewEntityListing> callback) {
+    try {
+      final SettableFuture<FlowMilestoneDivisionViewEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowMilestoneDivisionViewEntityListing>() {}, new AsyncApiCallback<ApiResponse<FlowMilestoneDivisionViewEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowMilestoneDivisionViewEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a pageable list of basic flow milestone information objects filterable by query parameters.
+   * This returns flow milestones consisting of name and division. If one or more IDs are specified, the search will fetch flow milestones that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FlowMilestoneDivisionViewEntityListing>> getFlowsMilestonesDivisionviewsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FlowMilestoneDivisionViewEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FlowMilestoneDivisionViewEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FlowMilestoneDivisionViewEntityListing>() {}, new AsyncApiCallback<ApiResponse<FlowMilestoneDivisionViewEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowMilestoneDivisionViewEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowMilestoneDivisionViewEntityListing> response = (ApiResponse<FlowMilestoneDivisionViewEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowMilestoneDivisionViewEntityListing> response = (ApiResponse<FlowMilestoneDivisionViewEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get a flow outcome
    * Returns a specified flow outcome
    * @param request the request object
@@ -4804,6 +4884,82 @@ public class ArchitectApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<FlowOutcomeListing> response = (ApiResponse<FlowOutcomeListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a pageable list of basic flow outcome information objects filterable by query parameters.
+   * This returns flow outcomes consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FlowOutcomeDivisionViewEntityListing> getFlowsOutcomesDivisionviewsAsync(GetFlowsOutcomesDivisionviewsRequest request, final AsyncApiCallback<FlowOutcomeDivisionViewEntityListing> callback) {
+    try {
+      final SettableFuture<FlowOutcomeDivisionViewEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FlowOutcomeDivisionViewEntityListing>() {}, new AsyncApiCallback<ApiResponse<FlowOutcomeDivisionViewEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowOutcomeDivisionViewEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a pageable list of basic flow outcome information objects filterable by query parameters.
+   * This returns flow outcomes consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FlowOutcomeDivisionViewEntityListing>> getFlowsOutcomesDivisionviewsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FlowOutcomeDivisionViewEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FlowOutcomeDivisionViewEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FlowOutcomeDivisionViewEntityListing>() {}, new AsyncApiCallback<ApiResponse<FlowOutcomeDivisionViewEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<FlowOutcomeDivisionViewEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowOutcomeDivisionViewEntityListing> response = (ApiResponse<FlowOutcomeDivisionViewEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FlowOutcomeDivisionViewEntityListing> response = (ApiResponse<FlowOutcomeDivisionViewEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

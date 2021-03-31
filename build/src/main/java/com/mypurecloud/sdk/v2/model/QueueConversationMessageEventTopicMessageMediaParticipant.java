@@ -307,7 +307,8 @@ public class QueueConversationMessageEventTopicMessageMediaParticipant  implemen
     WHATSAPP("WHATSAPP"),
     TELEGRAM("TELEGRAM"),
     KAKAO("KAKAO"),
-    WEBMESSAGING("WEBMESSAGING");
+    WEBMESSAGING("WEBMESSAGING"),
+    OPEN("OPEN");
 
     private String value;
 

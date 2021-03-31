@@ -26,11 +26,11 @@ import java.io.Serializable;
 
 public class QueueConversationCallEventTopicErrorBody  implements Serializable {
   
-  private Integer status = null;
+  private String message = null;
   private String code = null;
+  private Integer status = null;
   private String entityId = null;
   private String entityName = null;
-  private String message = null;
   private String messageWithParams = null;
   private Map<String, String> messageParams = null;
   private String contextId = null;
@@ -40,18 +40,18 @@ public class QueueConversationCallEventTopicErrorBody  implements Serializable {
   
   /**
    **/
-  public QueueConversationCallEventTopicErrorBody status(Integer status) {
-    this.status = status;
+  public QueueConversationCallEventTopicErrorBody message(String message) {
+    this.message = message;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("status")
-  public Integer getStatus() {
-    return status;
+  @JsonProperty("message")
+  public String getMessage() {
+    return message;
   }
-  public void setStatus(Integer status) {
-    this.status = status;
+  public void setMessage(String message) {
+    this.message = message;
   }
 
   
@@ -69,6 +69,23 @@ public class QueueConversationCallEventTopicErrorBody  implements Serializable {
   }
   public void setCode(String code) {
     this.code = code;
+  }
+
+  
+  /**
+   **/
+  public QueueConversationCallEventTopicErrorBody status(Integer status) {
+    this.status = status;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("status")
+  public Integer getStatus() {
+    return status;
+  }
+  public void setStatus(Integer status) {
+    this.status = status;
   }
 
   
@@ -103,23 +120,6 @@ public class QueueConversationCallEventTopicErrorBody  implements Serializable {
   }
   public void setEntityName(String entityName) {
     this.entityName = entityName;
-  }
-
-  
-  /**
-   **/
-  public QueueConversationCallEventTopicErrorBody message(String message) {
-    this.message = message;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("message")
-  public String getMessage() {
-    return message;
-  }
-  public void setMessage(String message) {
-    this.message = message;
   }
 
   
@@ -218,11 +218,11 @@ public class QueueConversationCallEventTopicErrorBody  implements Serializable {
       return false;
     }
     QueueConversationCallEventTopicErrorBody queueConversationCallEventTopicErrorBody = (QueueConversationCallEventTopicErrorBody) o;
-    return Objects.equals(this.status, queueConversationCallEventTopicErrorBody.status) &&
+    return Objects.equals(this.message, queueConversationCallEventTopicErrorBody.message) &&
         Objects.equals(this.code, queueConversationCallEventTopicErrorBody.code) &&
+        Objects.equals(this.status, queueConversationCallEventTopicErrorBody.status) &&
         Objects.equals(this.entityId, queueConversationCallEventTopicErrorBody.entityId) &&
         Objects.equals(this.entityName, queueConversationCallEventTopicErrorBody.entityName) &&
-        Objects.equals(this.message, queueConversationCallEventTopicErrorBody.message) &&
         Objects.equals(this.messageWithParams, queueConversationCallEventTopicErrorBody.messageWithParams) &&
         Objects.equals(this.messageParams, queueConversationCallEventTopicErrorBody.messageParams) &&
         Objects.equals(this.contextId, queueConversationCallEventTopicErrorBody.contextId) &&
@@ -232,7 +232,7 @@ public class QueueConversationCallEventTopicErrorBody  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, code, entityId, entityName, message, messageWithParams, messageParams, contextId, details, errors);
+    return Objects.hash(message, code, status, entityId, entityName, messageWithParams, messageParams, contextId, details, errors);
   }
 
   @Override
@@ -240,11 +240,11 @@ public class QueueConversationCallEventTopicErrorBody  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class QueueConversationCallEventTopicErrorBody {\n");
     
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    entityId: ").append(toIndentedString(entityId)).append("\n");
     sb.append("    entityName: ").append(toIndentedString(entityName)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    messageWithParams: ").append(toIndentedString(messageWithParams)).append("\n");
     sb.append("    messageParams: ").append(toIndentedString(messageParams)).append("\n");
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");

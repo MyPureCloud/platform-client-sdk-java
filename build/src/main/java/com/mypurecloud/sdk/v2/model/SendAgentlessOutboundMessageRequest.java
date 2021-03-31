@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.MessagingTemplateRequest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -37,7 +38,7 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
     }
   }
   /**
-   * The recipient messaging address messenger type. Currently SMS is the only supported type.
+   * The recipient messaging address messenger type. Currently SMS and WhatsApp is the only supported type.
    */
  @JsonDeserialize(using = ToAddressMessengerTypeEnumDeserializer.class)
   public enum ToAddressMessengerTypeEnum {
@@ -77,17 +78,18 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
   }
   private ToAddressMessengerTypeEnum toAddressMessengerType = null;
   private String textBody = null;
+  private MessagingTemplateRequest messagingTemplate = null;
 
   
   /**
-   * The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned sms phone number.
+   * The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned SMS phone number. For a WhatsApp messenger type use the provisioned WhatsApp integration’s ID
    **/
   public SendAgentlessOutboundMessageRequest fromAddress(String fromAddress) {
     this.fromAddress = fromAddress;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned sms phone number.")
+  @ApiModelProperty(example = "null", required = true, value = "The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned SMS phone number. For a WhatsApp messenger type use the provisioned WhatsApp integration’s ID")
   @JsonProperty("fromAddress")
   public String getFromAddress() {
     return fromAddress;
@@ -116,14 +118,14 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
 
   
   /**
-   * The recipient messaging address messenger type. Currently SMS is the only supported type.
+   * The recipient messaging address messenger type. Currently SMS and WhatsApp is the only supported type.
    **/
   public SendAgentlessOutboundMessageRequest toAddressMessengerType(ToAddressMessengerTypeEnum toAddressMessengerType) {
     this.toAddressMessengerType = toAddressMessengerType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The recipient messaging address messenger type. Currently SMS is the only supported type.")
+  @ApiModelProperty(example = "null", required = true, value = "The recipient messaging address messenger type. Currently SMS and WhatsApp is the only supported type.")
   @JsonProperty("toAddressMessengerType")
   public ToAddressMessengerTypeEnum getToAddressMessengerType() {
     return toAddressMessengerType;
@@ -134,20 +136,38 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
 
   
   /**
-   * The text of the message to send
+   * The text of the message to send. This field is required in the case of SMS messenger type
    **/
   public SendAgentlessOutboundMessageRequest textBody(String textBody) {
     this.textBody = textBody;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The text of the message to send")
+  @ApiModelProperty(example = "null", value = "The text of the message to send. This field is required in the case of SMS messenger type")
   @JsonProperty("textBody")
   public String getTextBody() {
     return textBody;
   }
   public void setTextBody(String textBody) {
     this.textBody = textBody;
+  }
+
+  
+  /**
+   * The messaging template to use in the case of WhatsApp messenger type. This field is required when using WhatsApp messenger type
+   **/
+  public SendAgentlessOutboundMessageRequest messagingTemplate(MessagingTemplateRequest messagingTemplate) {
+    this.messagingTemplate = messagingTemplate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The messaging template to use in the case of WhatsApp messenger type. This field is required when using WhatsApp messenger type")
+  @JsonProperty("messagingTemplate")
+  public MessagingTemplateRequest getMessagingTemplate() {
+    return messagingTemplate;
+  }
+  public void setMessagingTemplate(MessagingTemplateRequest messagingTemplate) {
+    this.messagingTemplate = messagingTemplate;
   }
 
   
@@ -164,12 +184,13 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
     return Objects.equals(this.fromAddress, sendAgentlessOutboundMessageRequest.fromAddress) &&
         Objects.equals(this.toAddress, sendAgentlessOutboundMessageRequest.toAddress) &&
         Objects.equals(this.toAddressMessengerType, sendAgentlessOutboundMessageRequest.toAddressMessengerType) &&
-        Objects.equals(this.textBody, sendAgentlessOutboundMessageRequest.textBody);
+        Objects.equals(this.textBody, sendAgentlessOutboundMessageRequest.textBody) &&
+        Objects.equals(this.messagingTemplate, sendAgentlessOutboundMessageRequest.messagingTemplate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fromAddress, toAddress, toAddressMessengerType, textBody);
+    return Objects.hash(fromAddress, toAddress, toAddressMessengerType, textBody, messagingTemplate);
   }
 
   @Override
@@ -181,6 +202,7 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
     sb.append("    toAddress: ").append(toIndentedString(toAddress)).append("\n");
     sb.append("    toAddressMessengerType: ").append(toIndentedString(toAddressMessengerType)).append("\n");
     sb.append("    textBody: ").append(toIndentedString(textBody)).append("\n");
+    sb.append("    messagingTemplate: ").append(toIndentedString(messagingTemplate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

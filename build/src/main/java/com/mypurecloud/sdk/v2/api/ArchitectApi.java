@@ -51,8 +51,10 @@ import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
 import com.mypurecloud.sdk.v2.model.FlowMilestone;
 import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
+import com.mypurecloud.sdk.v2.model.FlowMilestoneDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowOutcome;
 import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
+import com.mypurecloud.sdk.v2.model.FlowOutcomeDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchResponse;
 import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchRequest;
@@ -117,8 +119,10 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsExecutionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestoneRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestonesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestonesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsOutcomesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectDependencytrackingBuildRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectEmergencygroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectIvrsRequest;
@@ -5336,12 +5340,13 @@ public class ArchitectApi {
    * @param name Name (optional)
    * @param description Description (optional)
    * @param nameOrDescription Name or description (optional)
+   * @param divisionId division ID(s) (optional)
    * @return FlowMilestoneListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public FlowMilestoneListing getFlowsMilestones(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription) throws IOException, ApiException {
-    return  getFlowsMilestones(createGetFlowsMilestonesRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription));
+  public FlowMilestoneListing getFlowsMilestones(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, List<String> divisionId) throws IOException, ApiException {
+    return  getFlowsMilestones(createGetFlowsMilestonesRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, divisionId));
   }
 
   /**
@@ -5355,14 +5360,15 @@ public class ArchitectApi {
    * @param name Name (optional)
    * @param description Description (optional)
    * @param nameOrDescription Name or description (optional)
+   * @param divisionId division ID(s) (optional)
    * @return FlowMilestoneListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FlowMilestoneListing> getFlowsMilestonesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription) throws IOException {
-    return getFlowsMilestones(createGetFlowsMilestonesRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription).withHttpInfo());
+  public ApiResponse<FlowMilestoneListing> getFlowsMilestonesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, List<String> divisionId) throws IOException {
+    return getFlowsMilestones(createGetFlowsMilestonesRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, divisionId).withHttpInfo());
   }
 
-  private GetFlowsMilestonesRequest createGetFlowsMilestonesRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription) {
+  private GetFlowsMilestonesRequest createGetFlowsMilestonesRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, List<String> divisionId) {
     return GetFlowsMilestonesRequest.builder()
             .withPageNumber(pageNumber)
     
@@ -5379,6 +5385,8 @@ public class ArchitectApi {
             .withDescription(description)
     
             .withNameOrDescription(nameOrDescription)
+    
+            .withDivisionId(divisionId)
     
             .build();
   }
@@ -5427,6 +5435,109 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<FlowMilestoneListing> response = (ApiResponse<FlowMilestoneListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a pageable list of basic flow milestone information objects filterable by query parameters.
+   * This returns flow milestones consisting of name and division. If one or more IDs are specified, the search will fetch flow milestones that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to id)
+   * @param sortOrder Sort order (optional, default to asc)
+   * @param id ID (optional)
+   * @param name Name (optional)
+   * @param divisionId division ID(s) (optional)
+   * @return FlowMilestoneDivisionViewEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowMilestoneDivisionViewEntityListing getFlowsMilestonesDivisionviews(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) throws IOException, ApiException {
+    return  getFlowsMilestonesDivisionviews(createGetFlowsMilestonesDivisionviewsRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId));
+  }
+
+  /**
+   * Get a pageable list of basic flow milestone information objects filterable by query parameters.
+   * This returns flow milestones consisting of name and division. If one or more IDs are specified, the search will fetch flow milestones that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to id)
+   * @param sortOrder Sort order (optional, default to asc)
+   * @param id ID (optional)
+   * @param name Name (optional)
+   * @param divisionId division ID(s) (optional)
+   * @return FlowMilestoneDivisionViewEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowMilestoneDivisionViewEntityListing> getFlowsMilestonesDivisionviewsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) throws IOException {
+    return getFlowsMilestonesDivisionviews(createGetFlowsMilestonesDivisionviewsRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId).withHttpInfo());
+  }
+
+  private GetFlowsMilestonesDivisionviewsRequest createGetFlowsMilestonesDivisionviewsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) {
+    return GetFlowsMilestonesDivisionviewsRequest.builder()
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .withSortBy(sortBy)
+    
+            .withSortOrder(sortOrder)
+    
+            .withId(id)
+    
+            .withName(name)
+    
+            .withDivisionId(divisionId)
+    
+            .build();
+  }
+
+  /**
+   * Get a pageable list of basic flow milestone information objects filterable by query parameters.
+   * This returns flow milestones consisting of name and division. If one or more IDs are specified, the search will fetch flow milestones that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param request The request object
+   * @return FlowMilestoneDivisionViewEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowMilestoneDivisionViewEntityListing getFlowsMilestonesDivisionviews(GetFlowsMilestonesDivisionviewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowMilestoneDivisionViewEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowMilestoneDivisionViewEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a pageable list of basic flow milestone information objects filterable by query parameters.
+   * This returns flow milestones consisting of name and division. If one or more IDs are specified, the search will fetch flow milestones that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowMilestoneDivisionViewEntityListing> getFlowsMilestonesDivisionviews(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowMilestoneDivisionViewEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowMilestoneDivisionViewEntityListing> response = (ApiResponse<FlowMilestoneDivisionViewEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowMilestoneDivisionViewEntityListing> response = (ApiResponse<FlowMilestoneDivisionViewEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5522,12 +5633,13 @@ public class ArchitectApi {
    * @param name Name (optional)
    * @param description Description (optional)
    * @param nameOrDescription Name or description (optional)
+   * @param divisionId division ID(s) (optional)
    * @return FlowOutcomeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public FlowOutcomeListing getFlowsOutcomes(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription) throws IOException, ApiException {
-    return  getFlowsOutcomes(createGetFlowsOutcomesRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription));
+  public FlowOutcomeListing getFlowsOutcomes(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, List<String> divisionId) throws IOException, ApiException {
+    return  getFlowsOutcomes(createGetFlowsOutcomesRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, divisionId));
   }
 
   /**
@@ -5541,14 +5653,15 @@ public class ArchitectApi {
    * @param name Name (optional)
    * @param description Description (optional)
    * @param nameOrDescription Name or description (optional)
+   * @param divisionId division ID(s) (optional)
    * @return FlowOutcomeListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FlowOutcomeListing> getFlowsOutcomesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription) throws IOException {
-    return getFlowsOutcomes(createGetFlowsOutcomesRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription).withHttpInfo());
+  public ApiResponse<FlowOutcomeListing> getFlowsOutcomesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, List<String> divisionId) throws IOException {
+    return getFlowsOutcomes(createGetFlowsOutcomesRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, divisionId).withHttpInfo());
   }
 
-  private GetFlowsOutcomesRequest createGetFlowsOutcomesRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription) {
+  private GetFlowsOutcomesRequest createGetFlowsOutcomesRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, String description, String nameOrDescription, List<String> divisionId) {
     return GetFlowsOutcomesRequest.builder()
             .withPageNumber(pageNumber)
     
@@ -5565,6 +5678,8 @@ public class ArchitectApi {
             .withDescription(description)
     
             .withNameOrDescription(nameOrDescription)
+    
+            .withDivisionId(divisionId)
     
             .build();
   }
@@ -5613,6 +5728,109 @@ public class ArchitectApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<FlowOutcomeListing> response = (ApiResponse<FlowOutcomeListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a pageable list of basic flow outcome information objects filterable by query parameters.
+   * This returns flow outcomes consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to id)
+   * @param sortOrder Sort order (optional, default to asc)
+   * @param id ID (optional)
+   * @param name Name (optional)
+   * @param divisionId division ID(s) (optional)
+   * @return FlowOutcomeDivisionViewEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowOutcomeDivisionViewEntityListing getFlowsOutcomesDivisionviews(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) throws IOException, ApiException {
+    return  getFlowsOutcomesDivisionviews(createGetFlowsOutcomesDivisionviewsRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId));
+  }
+
+  /**
+   * Get a pageable list of basic flow outcome information objects filterable by query parameters.
+   * This returns flow outcomes consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to id)
+   * @param sortOrder Sort order (optional, default to asc)
+   * @param id ID (optional)
+   * @param name Name (optional)
+   * @param divisionId division ID(s) (optional)
+   * @return FlowOutcomeDivisionViewEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowOutcomeDivisionViewEntityListing> getFlowsOutcomesDivisionviewsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) throws IOException {
+    return getFlowsOutcomesDivisionviews(createGetFlowsOutcomesDivisionviewsRequest(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId).withHttpInfo());
+  }
+
+  private GetFlowsOutcomesDivisionviewsRequest createGetFlowsOutcomesDivisionviewsRequest(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> id, String name, List<String> divisionId) {
+    return GetFlowsOutcomesDivisionviewsRequest.builder()
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .withSortBy(sortBy)
+    
+            .withSortOrder(sortOrder)
+    
+            .withId(id)
+    
+            .withName(name)
+    
+            .withDivisionId(divisionId)
+    
+            .build();
+  }
+
+  /**
+   * Get a pageable list of basic flow outcome information objects filterable by query parameters.
+   * This returns flow outcomes consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param request The request object
+   * @return FlowOutcomeDivisionViewEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FlowOutcomeDivisionViewEntityListing getFlowsOutcomesDivisionviews(GetFlowsOutcomesDivisionviewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FlowOutcomeDivisionViewEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FlowOutcomeDivisionViewEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a pageable list of basic flow outcome information objects filterable by query parameters.
+   * This returns flow outcomes consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FlowOutcomeDivisionViewEntityListing> getFlowsOutcomesDivisionviews(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FlowOutcomeDivisionViewEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowOutcomeDivisionViewEntityListing> response = (ApiResponse<FlowOutcomeDivisionViewEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FlowOutcomeDivisionViewEntityListing> response = (ApiResponse<FlowOutcomeDivisionViewEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

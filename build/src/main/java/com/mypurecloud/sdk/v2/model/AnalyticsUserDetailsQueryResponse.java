@@ -26,6 +26,7 @@ public class AnalyticsUserDetailsQueryResponse  implements Serializable {
   
   private List<AnalyticsUserDetail> userDetails = new ArrayList<AnalyticsUserDetail>();
   private List<AggregationResult> aggregations = new ArrayList<AggregationResult>();
+  private Integer totalHits = null;
 
   
   /**
@@ -62,6 +63,23 @@ public class AnalyticsUserDetailsQueryResponse  implements Serializable {
   }
 
   
+  /**
+   **/
+  public AnalyticsUserDetailsQueryResponse totalHits(Integer totalHits) {
+    this.totalHits = totalHits;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("totalHits")
+  public Integer getTotalHits() {
+    return totalHits;
+  }
+  public void setTotalHits(Integer totalHits) {
+    this.totalHits = totalHits;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,12 +91,13 @@ public class AnalyticsUserDetailsQueryResponse  implements Serializable {
     }
     AnalyticsUserDetailsQueryResponse analyticsUserDetailsQueryResponse = (AnalyticsUserDetailsQueryResponse) o;
     return Objects.equals(this.userDetails, analyticsUserDetailsQueryResponse.userDetails) &&
-        Objects.equals(this.aggregations, analyticsUserDetailsQueryResponse.aggregations);
+        Objects.equals(this.aggregations, analyticsUserDetailsQueryResponse.aggregations) &&
+        Objects.equals(this.totalHits, analyticsUserDetailsQueryResponse.totalHits);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(userDetails, aggregations);
+    return Objects.hash(userDetails, aggregations, totalHits);
   }
 
   @Override
@@ -88,6 +107,7 @@ public class AnalyticsUserDetailsQueryResponse  implements Serializable {
     
     sb.append("    userDetails: ").append(toIndentedString(userDetails)).append("\n");
     sb.append("    aggregations: ").append(toIndentedString(aggregations)).append("\n");
+    sb.append("    totalHits: ").append(toIndentedString(totalHits)).append("\n");
     sb.append("}");
     return sb.toString();
   }

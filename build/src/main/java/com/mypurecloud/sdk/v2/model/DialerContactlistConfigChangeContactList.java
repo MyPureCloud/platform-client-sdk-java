@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DialerContactlistConfigChangeContactPhoneNumberColumn;
+import com.mypurecloud.sdk.v2.model.DialerContactlistConfigChangeEmailColumn;
 import com.mypurecloud.sdk.v2.model.DialerContactlistConfigChangeImportStatus;
 import com.mypurecloud.sdk.v2.model.DialerContactlistConfigChangeUriReference;
 import io.swagger.annotations.ApiModel;
@@ -33,6 +34,7 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
   private Integer version = null;
   private List<String> columnNames = new ArrayList<String>();
   private List<DialerContactlistConfigChangeContactPhoneNumberColumn> phoneColumns = new ArrayList<DialerContactlistConfigChangeContactPhoneNumberColumn>();
+  private List<DialerContactlistConfigChangeEmailColumn> emailColumns = new ArrayList<DialerContactlistConfigChangeEmailColumn>();
   private DialerContactlistConfigChangeImportStatus importStatus = null;
   private String previewModeColumnName = null;
   private List<String> previewModeAcceptedValues = new ArrayList<String>();
@@ -160,6 +162,23 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
   }
   public void setPhoneColumns(List<DialerContactlistConfigChangeContactPhoneNumberColumn> phoneColumns) {
     this.phoneColumns = phoneColumns;
+  }
+
+  
+  /**
+   **/
+  public DialerContactlistConfigChangeContactList emailColumns(List<DialerContactlistConfigChangeEmailColumn> emailColumns) {
+    this.emailColumns = emailColumns;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("emailColumns")
+  public List<DialerContactlistConfigChangeEmailColumn> getEmailColumns() {
+    return emailColumns;
+  }
+  public void setEmailColumns(List<DialerContactlistConfigChangeEmailColumn> emailColumns) {
+    this.emailColumns = emailColumns;
   }
 
   
@@ -333,6 +352,7 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
         Objects.equals(this.version, dialerContactlistConfigChangeContactList.version) &&
         Objects.equals(this.columnNames, dialerContactlistConfigChangeContactList.columnNames) &&
         Objects.equals(this.phoneColumns, dialerContactlistConfigChangeContactList.phoneColumns) &&
+        Objects.equals(this.emailColumns, dialerContactlistConfigChangeContactList.emailColumns) &&
         Objects.equals(this.importStatus, dialerContactlistConfigChangeContactList.importStatus) &&
         Objects.equals(this.previewModeColumnName, dialerContactlistConfigChangeContactList.previewModeColumnName) &&
         Objects.equals(this.previewModeAcceptedValues, dialerContactlistConfigChangeContactList.previewModeAcceptedValues) &&
@@ -346,7 +366,7 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, columnNames, phoneColumns, importStatus, previewModeColumnName, previewModeAcceptedValues, size, attemptLimits, automaticTimeZoneMapping, zipCodeColumnName, division, additionalProperties);
+    return Objects.hash(id, name, dateCreated, dateModified, version, columnNames, phoneColumns, emailColumns, importStatus, previewModeColumnName, previewModeAcceptedValues, size, attemptLimits, automaticTimeZoneMapping, zipCodeColumnName, division, additionalProperties);
   }
 
   @Override
@@ -361,6 +381,7 @@ public class DialerContactlistConfigChangeContactList  implements Serializable {
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    columnNames: ").append(toIndentedString(columnNames)).append("\n");
     sb.append("    phoneColumns: ").append(toIndentedString(phoneColumns)).append("\n");
+    sb.append("    emailColumns: ").append(toIndentedString(emailColumns)).append("\n");
     sb.append("    importStatus: ").append(toIndentedString(importStatus)).append("\n");
     sb.append("    previewModeColumnName: ").append(toIndentedString(previewModeColumnName)).append("\n");
     sb.append("    previewModeAcceptedValues: ").append(toIndentedString(previewModeAcceptedValues)).append("\n");

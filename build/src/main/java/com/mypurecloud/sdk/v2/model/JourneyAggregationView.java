@@ -41,6 +41,8 @@ public class JourneyAggregationView  implements Serializable {
  @JsonDeserialize(using = TargetEnumDeserializer.class)
   public enum TargetEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NDISTINCTJOURNEYACTIONS("nDistinctJourneyActions"),
+    NJOURNEYACTIONSBLOCKED("nJourneyActionsBlocked"),
     NJOURNEYOUTCOMESACHIEVED("nJourneyOutcomesAchieved"),
     NJOURNEYOUTCOMESATTRIBUTED("nJourneyOutcomesAttributed"),
     NJOURNEYSEGMENTSASSIGNED("nJourneySegmentsAssigned"),

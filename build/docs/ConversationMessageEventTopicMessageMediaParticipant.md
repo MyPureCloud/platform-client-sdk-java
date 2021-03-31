@@ -138,6 +138,7 @@ title: ConversationMessageEventTopicMessageMediaParticipant
 | TELEGRAM | &quot;TELEGRAM&quot; |
 | KAKAO | &quot;KAKAO&quot; |
 | WEBMESSAGING | &quot;WEBMESSAGING&quot; |
+| OPEN | &quot;OPEN&quot; |
 {: class="table table-striped"}
 
 

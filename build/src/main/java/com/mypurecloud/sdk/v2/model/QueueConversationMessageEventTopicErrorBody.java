@@ -26,11 +26,11 @@ import java.io.Serializable;
 
 public class QueueConversationMessageEventTopicErrorBody  implements Serializable {
   
-  private Integer status = null;
+  private String message = null;
   private String code = null;
+  private Integer status = null;
   private String entityId = null;
   private String entityName = null;
-  private String message = null;
   private String messageWithParams = null;
   private Map<String, String> messageParams = null;
   private String contextId = null;
@@ -40,18 +40,18 @@ public class QueueConversationMessageEventTopicErrorBody  implements Serializabl
   
   /**
    **/
-  public QueueConversationMessageEventTopicErrorBody status(Integer status) {
-    this.status = status;
+  public QueueConversationMessageEventTopicErrorBody message(String message) {
+    this.message = message;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("status")
-  public Integer getStatus() {
-    return status;
+  @JsonProperty("message")
+  public String getMessage() {
+    return message;
   }
-  public void setStatus(Integer status) {
-    this.status = status;
+  public void setMessage(String message) {
+    this.message = message;
   }
 
   
@@ -69,6 +69,23 @@ public class QueueConversationMessageEventTopicErrorBody  implements Serializabl
   }
   public void setCode(String code) {
     this.code = code;
+  }
+
+  
+  /**
+   **/
+  public QueueConversationMessageEventTopicErrorBody status(Integer status) {
+    this.status = status;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("status")
+  public Integer getStatus() {
+    return status;
+  }
+  public void setStatus(Integer status) {
+    this.status = status;
   }
 
   
@@ -103,23 +120,6 @@ public class QueueConversationMessageEventTopicErrorBody  implements Serializabl
   }
   public void setEntityName(String entityName) {
     this.entityName = entityName;
-  }
-
-  
-  /**
-   **/
-  public QueueConversationMessageEventTopicErrorBody message(String message) {
-    this.message = message;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("message")
-  public String getMessage() {
-    return message;
-  }
-  public void setMessage(String message) {
-    this.message = message;
   }
 
   
@@ -218,11 +218,11 @@ public class QueueConversationMessageEventTopicErrorBody  implements Serializabl
       return false;
     }
     QueueConversationMessageEventTopicErrorBody queueConversationMessageEventTopicErrorBody = (QueueConversationMessageEventTopicErrorBody) o;
-    return Objects.equals(this.status, queueConversationMessageEventTopicErrorBody.status) &&
+    return Objects.equals(this.message, queueConversationMessageEventTopicErrorBody.message) &&
         Objects.equals(this.code, queueConversationMessageEventTopicErrorBody.code) &&
+        Objects.equals(this.status, queueConversationMessageEventTopicErrorBody.status) &&
         Objects.equals(this.entityId, queueConversationMessageEventTopicErrorBody.entityId) &&
         Objects.equals(this.entityName, queueConversationMessageEventTopicErrorBody.entityName) &&
-        Objects.equals(this.message, queueConversationMessageEventTopicErrorBody.message) &&
         Objects.equals(this.messageWithParams, queueConversationMessageEventTopicErrorBody.messageWithParams) &&
         Objects.equals(this.messageParams, queueConversationMessageEventTopicErrorBody.messageParams) &&
         Objects.equals(this.contextId, queueConversationMessageEventTopicErrorBody.contextId) &&
@@ -232,7 +232,7 @@ public class QueueConversationMessageEventTopicErrorBody  implements Serializabl
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, code, entityId, entityName, message, messageWithParams, messageParams, contextId, details, errors);
+    return Objects.hash(message, code, status, entityId, entityName, messageWithParams, messageParams, contextId, details, errors);
   }
 
   @Override
@@ -240,11 +240,11 @@ public class QueueConversationMessageEventTopicErrorBody  implements Serializabl
     StringBuilder sb = new StringBuilder();
     sb.append("class QueueConversationMessageEventTopicErrorBody {\n");
     
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    entityId: ").append(toIndentedString(entityId)).append("\n");
     sb.append("    entityName: ").append(toIndentedString(entityName)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    messageWithParams: ").append(toIndentedString(messageWithParams)).append("\n");
     sb.append("    messageParams: ").append(toIndentedString(messageParams)).append("\n");
     sb.append("    contextId: ").append(toIndentedString(contextId)).append("\n");

@@ -13,7 +13,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.WfmBuScheduleTopicBuManagementUnitScheduleSummary;
 import com.mypurecloud.sdk.v2.model.WfmBuScheduleTopicBuScheduleGenerationResultSummary;
 import com.mypurecloud.sdk.v2.model.WfmBuScheduleTopicBuShortTermForecastReference;
-import com.mypurecloud.sdk.v2.model.WfmBuScheduleTopicLocalDate;
 import com.mypurecloud.sdk.v2.model.WfmBuScheduleTopicWfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -28,7 +27,6 @@ import java.io.Serializable;
 public class WfmBuScheduleTopicBuScheduleMetadata  implements Serializable {
   
   private String id = null;
-  private WfmBuScheduleTopicLocalDate weekDate = null;
   private Integer weekCount = null;
   private String description = null;
   private Boolean published = null;
@@ -52,23 +50,6 @@ public class WfmBuScheduleTopicBuScheduleMetadata  implements Serializable {
   }
   public void setId(String id) {
     this.id = id;
-  }
-
-  
-  /**
-   **/
-  public WfmBuScheduleTopicBuScheduleMetadata weekDate(WfmBuScheduleTopicLocalDate weekDate) {
-    this.weekDate = weekDate;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("weekDate")
-  public WfmBuScheduleTopicLocalDate getWeekDate() {
-    return weekDate;
-  }
-  public void setWeekDate(WfmBuScheduleTopicLocalDate weekDate) {
-    this.weekDate = weekDate;
   }
 
   
@@ -202,7 +183,6 @@ public class WfmBuScheduleTopicBuScheduleMetadata  implements Serializable {
     }
     WfmBuScheduleTopicBuScheduleMetadata wfmBuScheduleTopicBuScheduleMetadata = (WfmBuScheduleTopicBuScheduleMetadata) o;
     return Objects.equals(this.id, wfmBuScheduleTopicBuScheduleMetadata.id) &&
-        Objects.equals(this.weekDate, wfmBuScheduleTopicBuScheduleMetadata.weekDate) &&
         Objects.equals(this.weekCount, wfmBuScheduleTopicBuScheduleMetadata.weekCount) &&
         Objects.equals(this.description, wfmBuScheduleTopicBuScheduleMetadata.description) &&
         Objects.equals(this.published, wfmBuScheduleTopicBuScheduleMetadata.published) &&
@@ -214,7 +194,7 @@ public class WfmBuScheduleTopicBuScheduleMetadata  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, weekDate, weekCount, description, published, shortTermForecast, managementUnits, generationResults, metadata);
+    return Objects.hash(id, weekCount, description, published, shortTermForecast, managementUnits, generationResults, metadata);
   }
 
   @Override
@@ -223,7 +203,6 @@ public class WfmBuScheduleTopicBuScheduleMetadata  implements Serializable {
     sb.append("class WfmBuScheduleTopicBuScheduleMetadata {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    weekDate: ").append(toIndentedString(weekDate)).append("\n");
     sb.append("    weekCount: ").append(toIndentedString(weekCount)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    published: ").append(toIndentedString(published)).append("\n");

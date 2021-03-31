@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.WritableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -22,6 +23,7 @@ public class FlowMilestone  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private WritableDivision division = null;
   private String description = null;
   private String selfUri = null;
 
@@ -48,6 +50,24 @@ public class FlowMilestone  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  
+  /**
+   * The division to which this entity belongs.
+   **/
+  public FlowMilestone division(WritableDivision division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public WritableDivision getDivision() {
+    return division;
+  }
+  public void setDivision(WritableDivision division) {
+    this.division = division;
   }
 
   
@@ -88,13 +108,14 @@ public class FlowMilestone  implements Serializable {
     FlowMilestone flowMilestone = (FlowMilestone) o;
     return Objects.equals(this.id, flowMilestone.id) &&
         Objects.equals(this.name, flowMilestone.name) &&
+        Objects.equals(this.division, flowMilestone.division) &&
         Objects.equals(this.description, flowMilestone.description) &&
         Objects.equals(this.selfUri, flowMilestone.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, selfUri);
+    return Objects.hash(id, name, division, description, selfUri);
   }
 
   @Override
@@ -104,6 +125,7 @@ public class FlowMilestone  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

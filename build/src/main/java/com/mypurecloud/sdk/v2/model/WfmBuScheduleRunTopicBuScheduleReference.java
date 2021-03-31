@@ -10,7 +10,6 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.WfmBuScheduleRunTopicLocalDate;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -22,7 +21,6 @@ import java.io.Serializable;
 public class WfmBuScheduleRunTopicBuScheduleReference  implements Serializable {
   
   private String id = null;
-  private WfmBuScheduleRunTopicLocalDate weekDate = null;
 
   
   /**
@@ -42,23 +40,6 @@ public class WfmBuScheduleRunTopicBuScheduleReference  implements Serializable {
   }
 
   
-  /**
-   **/
-  public WfmBuScheduleRunTopicBuScheduleReference weekDate(WfmBuScheduleRunTopicLocalDate weekDate) {
-    this.weekDate = weekDate;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("weekDate")
-  public WfmBuScheduleRunTopicLocalDate getWeekDate() {
-    return weekDate;
-  }
-  public void setWeekDate(WfmBuScheduleRunTopicLocalDate weekDate) {
-    this.weekDate = weekDate;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -69,13 +50,12 @@ public class WfmBuScheduleRunTopicBuScheduleReference  implements Serializable {
       return false;
     }
     WfmBuScheduleRunTopicBuScheduleReference wfmBuScheduleRunTopicBuScheduleReference = (WfmBuScheduleRunTopicBuScheduleReference) o;
-    return Objects.equals(this.id, wfmBuScheduleRunTopicBuScheduleReference.id) &&
-        Objects.equals(this.weekDate, wfmBuScheduleRunTopicBuScheduleReference.weekDate);
+    return Objects.equals(this.id, wfmBuScheduleRunTopicBuScheduleReference.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, weekDate);
+    return Objects.hash(id);
   }
 
   @Override
@@ -84,7 +64,6 @@ public class WfmBuScheduleRunTopicBuScheduleReference  implements Serializable {
     sb.append("class WfmBuScheduleRunTopicBuScheduleReference {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    weekDate: ").append(toIndentedString(weekDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

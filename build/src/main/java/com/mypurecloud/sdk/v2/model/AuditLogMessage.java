@@ -123,6 +123,7 @@ public class AuditLogMessage  implements Serializable {
     VIEW("View"),
     UPDATE("Update"),
     DELETE("Delete"),
+    DELETEALL("DeleteAll"),
     DOWNLOAD("Download"),
     UPLOAD("Upload"),
     MEMBERADD("MemberAdd"),
@@ -273,7 +274,8 @@ public class AuditLogMessage  implements Serializable {
     ROUTINGTRANSCRIPTIONSETTINGS("RoutingTranscriptionSettings"),
     SPEECHTEXTANALYTICSSETTINGS("SpeechTextAnalyticsSettings"),
     PREDICTOR("Predictor"),
-    WORKPLAN("WorkPlan");
+    WORKPLAN("WorkPlan"),
+    SENTIMENTFEEDBACK("SentimentFeedback");
 
     private String value;
 

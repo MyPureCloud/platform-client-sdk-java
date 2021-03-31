@@ -46,20 +46,37 @@ public class JourneyAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = GroupByEnumDeserializer.class)
   public enum GroupByEnum {
+    CONTAINSALLCONDITION("containsAllCondition"),
+    CONTAINSANYCONDITION("containsAnyCondition"),
+    ENDSWITHCONDITION("endsWithCondition"),
+    EQUALCONDITION("equalCondition"),
+    GREATERTHANCONDITION("greaterThanCondition"),
+    GREATERTHANOREQUALCONDITION("greaterThanOrEqualCondition"),
     JOURNEYACTIONID("journeyActionId"),
     JOURNEYACTIONMAPID("journeyActionMapId"),
     JOURNEYACTIONMAPVERSION("journeyActionMapVersion"),
     JOURNEYACTIONMEDIATYPE("journeyActionMediaType"),
+    JOURNEYACTIONTARGETID("journeyActionTargetId"),
     JOURNEYACTIONTEMPLATEID("journeyActionTemplateId"),
+    JOURNEYBLOCKINGACTIONMAPID("journeyBlockingActionMapId"),
+    JOURNEYBLOCKINGREASON("journeyBlockingReason"),
+    JOURNEYBLOCKINGSCHEDULEGROUPID("journeyBlockingScheduleGroupId"),
     JOURNEYCUSTOMERID("journeyCustomerId"),
     JOURNEYCUSTOMERIDTYPE("journeyCustomerIdType"),
     JOURNEYDEVICECATEGORY("journeyDeviceCategory"),
     JOURNEYDEVICETYPE("journeyDeviceType"),
+    JOURNEYFREQUENCYCAPREASON("journeyFrequencyCapReason"),
     JOURNEYOUTCOMEID("journeyOutcomeId"),
     JOURNEYSEGMENTID("journeySegmentId"),
     JOURNEYSEGMENTSCOPE("journeySegmentScope"),
     JOURNEYSESSIONSEGMENTID("journeySessionSegmentId"),
     JOURNEYSESSIONTYPE("journeySessionType"),
+    LESSTHANCONDITION("lessThanCondition"),
+    LESSTHANOREQUALCONDITION("lessThanOrEqualCondition"),
+    NOTCONTAINSALLCONDITION("notContainsAllCondition"),
+    NOTCONTAINSANYCONDITION("notContainsAnyCondition"),
+    NOTEQUALCONDITION("notEqualCondition"),
+    STARTSWITHCONDITION("startsWithCondition"),
     TOUCHPOINTACTIONMAPID("touchpointActionMapId");
 
     private String value;
@@ -107,6 +124,8 @@ public class JourneyAggregationQuery  implements Serializable {
    */
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
+    NDISTINCTJOURNEYACTIONS("nDistinctJourneyActions"),
+    NJOURNEYACTIONSBLOCKED("nJourneyActionsBlocked"),
     NJOURNEYOUTCOMESACHIEVED("nJourneyOutcomesAchieved"),
     NJOURNEYOUTCOMESATTRIBUTED("nJourneyOutcomesAttributed"),
     NJOURNEYSEGMENTSASSIGNED("nJourneySegmentsAssigned"),

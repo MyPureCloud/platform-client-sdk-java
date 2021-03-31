@@ -12,6 +12,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContentAttachment;
+import com.mypurecloud.sdk.v2.model.ContentButtonResponse;
 import com.mypurecloud.sdk.v2.model.ContentGeneric;
 import com.mypurecloud.sdk.v2.model.ContentList;
 import com.mypurecloud.sdk.v2.model.ContentLocation;
@@ -55,6 +56,7 @@ public class MessageContent  implements Serializable {
     ATTACHMENT("Attachment"),
     LOCATION("Location"),
     QUICKREPLY("QuickReply"),
+    BUTTONRESPONSE("ButtonResponse"),
     NOTIFICATION("Notification"),
     GENERICTEMPLATE("GenericTemplate"),
     LISTTEMPLATE("ListTemplate"),
@@ -91,6 +93,7 @@ public class MessageContent  implements Serializable {
   private ContentLocation location = null;
   private ContentAttachment attachment = null;
   private ContentQuickReply quickReply = null;
+  private ContentButtonResponse buttonResponse = null;
   private ContentGeneric generic = null;
   private ContentList list = null;
   private ContentNotificationTemplate template = null;
@@ -168,6 +171,24 @@ public class MessageContent  implements Serializable {
   }
   public void setQuickReply(ContentQuickReply quickReply) {
     this.quickReply = quickReply;
+  }
+
+  
+  /**
+   * Button response object
+   **/
+  public MessageContent buttonResponse(ContentButtonResponse buttonResponse) {
+    this.buttonResponse = buttonResponse;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Button response object")
+  @JsonProperty("buttonResponse")
+  public ContentButtonResponse getButtonResponse() {
+    return buttonResponse;
+  }
+  public void setButtonResponse(ContentButtonResponse buttonResponse) {
+    this.buttonResponse = buttonResponse;
   }
 
   
@@ -293,6 +314,7 @@ public class MessageContent  implements Serializable {
         Objects.equals(this.location, messageContent.location) &&
         Objects.equals(this.attachment, messageContent.attachment) &&
         Objects.equals(this.quickReply, messageContent.quickReply) &&
+        Objects.equals(this.buttonResponse, messageContent.buttonResponse) &&
         Objects.equals(this.generic, messageContent.generic) &&
         Objects.equals(this.list, messageContent.list) &&
         Objects.equals(this.template, messageContent.template) &&
@@ -303,7 +325,7 @@ public class MessageContent  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentType, location, attachment, quickReply, generic, list, template, reactions, mention, postback);
+    return Objects.hash(contentType, location, attachment, quickReply, buttonResponse, generic, list, template, reactions, mention, postback);
   }
 
   @Override
@@ -315,6 +337,7 @@ public class MessageContent  implements Serializable {
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("    attachment: ").append(toIndentedString(attachment)).append("\n");
     sb.append("    quickReply: ").append(toIndentedString(quickReply)).append("\n");
+    sb.append("    buttonResponse: ").append(toIndentedString(buttonResponse)).append("\n");
     sb.append("    generic: ").append(toIndentedString(generic)).append("\n");
     sb.append("    list: ").append(toIndentedString(list)).append("\n");
     sb.append("    template: ").append(toIndentedString(template)).append("\n");

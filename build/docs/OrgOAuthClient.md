@@ -31,7 +31,6 @@ title: OrgOAuthClient
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | CODE | &quot;CODE&quot; |
-| CODE_PKCE | &quot;CODE_PKCE&quot; |
 | TOKEN | &quot;TOKEN&quot; |
 | SAML2BEARER | &quot;SAML2BEARER&quot; |
 | PASSWORD | &quot;PASSWORD&quot; |

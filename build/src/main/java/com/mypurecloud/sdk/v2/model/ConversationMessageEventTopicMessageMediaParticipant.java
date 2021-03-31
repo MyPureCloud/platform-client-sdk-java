@@ -307,7 +307,8 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     WHATSAPP("WHATSAPP"),
     TELEGRAM("TELEGRAM"),
     KAKAO("KAKAO"),
-    WEBMESSAGING("WEBMESSAGING");
+    WEBMESSAGING("WEBMESSAGING"),
+    OPEN("OPEN");
 
     private String value;
 

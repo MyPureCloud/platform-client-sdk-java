@@ -236,6 +236,7 @@ public class Edge  implements Serializable {
     HARDWARE("HARDWARE"),
     LDM("LDM"),
     CDM("CDM"),
+    BYOH("BYOH"),
     INVALID("INVALID");
 
     private String value;

@@ -122,7 +122,7 @@ public class MessagingRecipient  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "Avatar image")
+  @ApiModelProperty(example = "null", value = "Path or URI to an image file containing an avatar")
   @JsonProperty("image")
   public String getImage() {
     return image;

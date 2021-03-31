@@ -8,11 +8,11 @@ title: ConversationMessageEventTopicErrorBody
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **status** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **message** | <!----><!---->**String**<!----> |  |  [optional] |
 | **code** | <!----><!---->**String**<!----> |  |  [optional] |
+| **status** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **entityId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **entityName** | <!----><!---->**String**<!----> |  |  [optional] |
-| **message** | <!----><!---->**String**<!----> |  |  [optional] |
 | **messageWithParams** | <!----><!---->**String**<!----> |  |  [optional] |
 | **messageParams** | <!----><!---->**Map&lt;String, String&gt;**<!----> |  |  [optional] |
 | **contextId** | <!----><!---->**String**<!----> |  |  [optional] |

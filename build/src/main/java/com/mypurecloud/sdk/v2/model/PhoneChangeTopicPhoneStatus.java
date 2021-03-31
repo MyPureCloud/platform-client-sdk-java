@@ -13,7 +13,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.PhoneChangeTopicEdgeReference;
 import com.mypurecloud.sdk.v2.model.PhoneChangeTopicLineStatus;
-import com.mypurecloud.sdk.v2.model.PhoneChangeTopicOffsetDateTime;
 import com.mypurecloud.sdk.v2.model.PhoneChangeTopicProvisionInfo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -80,7 +79,6 @@ public class PhoneChangeTopicPhoneStatus  implements Serializable {
   private PhoneChangeTopicEdgeReference edge = null;
   private PhoneChangeTopicProvisionInfo provision = null;
   private List<PhoneChangeTopicLineStatus> lineStatuses = new ArrayList<PhoneChangeTopicLineStatus>();
-  private PhoneChangeTopicOffsetDateTime eventCreationTime = null;
 
   
   /**
@@ -168,23 +166,6 @@ public class PhoneChangeTopicPhoneStatus  implements Serializable {
   }
 
   
-  /**
-   **/
-  public PhoneChangeTopicPhoneStatus eventCreationTime(PhoneChangeTopicOffsetDateTime eventCreationTime) {
-    this.eventCreationTime = eventCreationTime;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("eventCreationTime")
-  public PhoneChangeTopicOffsetDateTime getEventCreationTime() {
-    return eventCreationTime;
-  }
-  public void setEventCreationTime(PhoneChangeTopicOffsetDateTime eventCreationTime) {
-    this.eventCreationTime = eventCreationTime;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -199,13 +180,12 @@ public class PhoneChangeTopicPhoneStatus  implements Serializable {
         Objects.equals(this.operationalStatus, phoneChangeTopicPhoneStatus.operationalStatus) &&
         Objects.equals(this.edge, phoneChangeTopicPhoneStatus.edge) &&
         Objects.equals(this.provision, phoneChangeTopicPhoneStatus.provision) &&
-        Objects.equals(this.lineStatuses, phoneChangeTopicPhoneStatus.lineStatuses) &&
-        Objects.equals(this.eventCreationTime, phoneChangeTopicPhoneStatus.eventCreationTime);
+        Objects.equals(this.lineStatuses, phoneChangeTopicPhoneStatus.lineStatuses);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, operationalStatus, edge, provision, lineStatuses, eventCreationTime);
+    return Objects.hash(id, operationalStatus, edge, provision, lineStatuses);
   }
 
   @Override
@@ -218,7 +198,6 @@ public class PhoneChangeTopicPhoneStatus  implements Serializable {
     sb.append("    edge: ").append(toIndentedString(edge)).append("\n");
     sb.append("    provision: ").append(toIndentedString(provision)).append("\n");
     sb.append("    lineStatuses: ").append(toIndentedString(lineStatuses)).append("\n");
-    sb.append("    eventCreationTime: ").append(toIndentedString(eventCreationTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -2919,7 +2919,7 @@ try {
 
 
 
-> [Utilization](Utilization.html) getRoutingUserUtilization(userId)
+> [AgentMaxUtilization](AgentMaxUtilization.html) getRoutingUserUtilization(userId)
 
 Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
 
@@ -2956,7 +2956,7 @@ Configuration.setDefaultApiClient(apiClient);
 RoutingApi apiInstance = new RoutingApi();
 String userId = "userId_example"; // String | User ID
 try {
-    Utilization result = apiInstance.getRoutingUserUtilization(userId);
+    AgentMaxUtilization result = apiInstance.getRoutingUserUtilization(userId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingUserUtilization");
@@ -2975,7 +2975,7 @@ try {
 
 ### Return type
 
-[**Utilization**](Utilization.html)
+[**AgentMaxUtilization**](AgentMaxUtilization.html)
 
 <a name="getRoutingUtilization"></a>
 
@@ -5598,7 +5598,7 @@ try {
 
 
 
-> [Utilization](Utilization.html) putRoutingUserUtilization(userId, body)
+> [AgentMaxUtilization](AgentMaxUtilization.html) putRoutingUserUtilization(userId, body)
 
 Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
 
@@ -5635,7 +5635,7 @@ RoutingApi apiInstance = new RoutingApi();
 String userId = "userId_example"; // String | User ID
 Utilization body = new Utilization(); // Utilization | utilization
 try {
-    Utilization result = apiInstance.putRoutingUserUtilization(userId, body);
+    AgentMaxUtilization result = apiInstance.putRoutingUserUtilization(userId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#putRoutingUserUtilization");
@@ -5655,7 +5655,7 @@ try {
 
 ### Return type
 
-[**Utilization**](Utilization.html)
+[**AgentMaxUtilization**](AgentMaxUtilization.html)
 
 <a name="putRoutingUtilization"></a>
 

@@ -66,8 +66,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFlowsExecution**](ArchitectApi.html#getFlowsExecution) | Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started. |
 | [**getFlowsMilestone**](ArchitectApi.html#getFlowsMilestone) | Get a flow milestone |
 | [**getFlowsMilestones**](ArchitectApi.html#getFlowsMilestones) | Get a pageable list of flow milestones, filtered by query parameters |
+| [**getFlowsMilestonesDivisionviews**](ArchitectApi.html#getFlowsMilestonesDivisionviews) | Get a pageable list of basic flow milestone information objects filterable by query parameters. |
 | [**getFlowsOutcome**](ArchitectApi.html#getFlowsOutcome) | Get a flow outcome |
 | [**getFlowsOutcomes**](ArchitectApi.html#getFlowsOutcomes) | Get a pageable list of flow outcomes, filtered by query parameters |
+| [**getFlowsOutcomesDivisionviews**](ArchitectApi.html#getFlowsOutcomesDivisionviews) | Get a pageable list of basic flow outcome information objects filterable by query parameters. |
 | [**postArchitectDependencytrackingBuild**](ArchitectApi.html#postArchitectDependencytrackingBuild) | Rebuild Dependency Tracking data for an organization |
 | [**postArchitectEmergencygroups**](ArchitectApi.html#postArchitectEmergencygroups) | Creates a new emergency group |
 | [**postArchitectIvrs**](ArchitectApi.html#postArchitectIvrs) | Create IVR config. |
@@ -4054,7 +4056,7 @@ try {
 
 
 
-> [FlowMilestoneListing](FlowMilestoneListing.html) getFlowsMilestones(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription)
+> [FlowMilestoneListing](FlowMilestoneListing.html) getFlowsMilestones(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, divisionId)
 
 Get a pageable list of flow milestones, filtered by query parameters
 
@@ -4096,8 +4098,9 @@ List<String> id = Arrays.asList("id_example"); // List<String> | ID
 String name = "name_example"; // String | Name
 String description = "description_example"; // String | Description
 String nameOrDescription = "nameOrDescription_example"; // String | Name or description
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | division ID(s)
 try {
-    FlowMilestoneListing result = apiInstance.getFlowsMilestones(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription);
+    FlowMilestoneListing result = apiInstance.getFlowsMilestones(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, divisionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getFlowsMilestones");
@@ -4118,12 +4121,88 @@ try {
 | **name** | **String**| Name | [optional] 
 | **description** | **String**| Description | [optional] 
 | **nameOrDescription** | **String**| Name or description | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| division ID(s) | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
 [**FlowMilestoneListing**](FlowMilestoneListing.html)
+
+<a name="getFlowsMilestonesDivisionviews"></a>
+
+# **getFlowsMilestonesDivisionviews**
+
+
+
+> [FlowMilestoneDivisionViewEntityListing](FlowMilestoneDivisionViewEntityListing.html) getFlowsMilestonesDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
+
+Get a pageable list of basic flow milestone information objects filterable by query parameters.
+
+This returns flow milestones consisting of name and division. If one or more IDs are specified, the search will fetch flow milestones that match the given ID(s) and not use any additional supplied query parameters in the search.
+
+Wraps GET /api/v2/flows/milestones/divisionviews  
+
+Requires ALL permissions: 
+
+* architect:flowMilestone:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortBy = "id"; // String | Sort by
+String sortOrder = "asc"; // String | Sort order
+List<String> id = Arrays.asList("id_example"); // List<String> | ID
+String name = "name_example"; // String | Name
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | division ID(s)
+try {
+    FlowMilestoneDivisionViewEntityListing result = apiInstance.getFlowsMilestonesDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowsMilestonesDivisionviews");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **sortBy** | **String**| Sort by | [optional] [default to id] 
+| **sortOrder** | **String**| Sort order | [optional] [default to asc] 
+| **id** | [**List&lt;String&gt;**](String.html)| ID | [optional] 
+| **name** | **String**| Name | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| division ID(s) | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FlowMilestoneDivisionViewEntityListing**](FlowMilestoneDivisionViewEntityListing.html)
 
 <a name="getFlowsOutcome"></a>
 
@@ -4194,7 +4273,7 @@ try {
 
 
 
-> [FlowOutcomeListing](FlowOutcomeListing.html) getFlowsOutcomes(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription)
+> [FlowOutcomeListing](FlowOutcomeListing.html) getFlowsOutcomes(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, divisionId)
 
 Get a pageable list of flow outcomes, filtered by query parameters
 
@@ -4236,8 +4315,9 @@ List<String> id = Arrays.asList("id_example"); // List<String> | ID
 String name = "name_example"; // String | Name
 String description = "description_example"; // String | Description
 String nameOrDescription = "nameOrDescription_example"; // String | Name or description
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | division ID(s)
 try {
-    FlowOutcomeListing result = apiInstance.getFlowsOutcomes(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription);
+    FlowOutcomeListing result = apiInstance.getFlowsOutcomes(pageNumber, pageSize, sortBy, sortOrder, id, name, description, nameOrDescription, divisionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getFlowsOutcomes");
@@ -4258,12 +4338,88 @@ try {
 | **name** | **String**| Name | [optional] 
 | **description** | **String**| Description | [optional] 
 | **nameOrDescription** | **String**| Name or description | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| division ID(s) | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
 [**FlowOutcomeListing**](FlowOutcomeListing.html)
+
+<a name="getFlowsOutcomesDivisionviews"></a>
+
+# **getFlowsOutcomesDivisionviews**
+
+
+
+> [FlowOutcomeDivisionViewEntityListing](FlowOutcomeDivisionViewEntityListing.html) getFlowsOutcomesDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId)
+
+Get a pageable list of basic flow outcome information objects filterable by query parameters.
+
+This returns flow outcomes consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+
+Wraps GET /api/v2/flows/outcomes/divisionviews  
+
+Requires ALL permissions: 
+
+* architect:flowOutcome:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortBy = "id"; // String | Sort by
+String sortOrder = "asc"; // String | Sort order
+List<String> id = Arrays.asList("id_example"); // List<String> | ID
+String name = "name_example"; // String | Name
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | division ID(s)
+try {
+    FlowOutcomeDivisionViewEntityListing result = apiInstance.getFlowsOutcomesDivisionviews(pageNumber, pageSize, sortBy, sortOrder, id, name, divisionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowsOutcomesDivisionviews");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **sortBy** | **String**| Sort by | [optional] [default to id] 
+| **sortOrder** | **String**| Sort order | [optional] [default to asc] 
+| **id** | [**List&lt;String&gt;**](String.html)| ID | [optional] 
+| **name** | **String**| Name | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| division ID(s) | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FlowOutcomeDivisionViewEntityListing**](FlowOutcomeDivisionViewEntityListing.html)
 
 <a name="postArchitectDependencytrackingBuild"></a>
 

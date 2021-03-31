@@ -13,7 +13,9 @@ title: WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate
 | **isFullDayRequest** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **markedAsRead** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **activityCodeId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **paid** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> |  |  [optional] |
+| **substatus** | [**SubstatusEnum**](#SubstatusEnum)<!----> |  |  [optional] |
 | **partialDayStartDateTimes** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **fullDayManagementUnitDates** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **dailyDurationMinutes** | <!----><!---->**Integer**<!----> |  |  [optional] |
@@ -38,6 +40,21 @@ title: WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate
 | APPROVED | &quot;APPROVED&quot; |
 | DENIED | &quot;DENIED&quot; |
 | CANCELED | &quot;CANCELED&quot; |
+{: class="table table-striped"}
+
+
+<a name="SubstatusEnum"></a>
+
+## Enum: SubstatusEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| ADVANCETIMEELAPSED | &quot;AdvanceTimeElapsed&quot; |
+| AUTOAPPROVED | &quot;AutoApproved&quot; |
+| INVALIDDAILYDURATION | &quot;InvalidDailyDuration&quot; |
+| OUTSIDESHIFT | &quot;OutsideShift&quot; |
+| WAITLISTED | &quot;Waitlisted&quot; |
 {: class="table table-striped"}
 
 

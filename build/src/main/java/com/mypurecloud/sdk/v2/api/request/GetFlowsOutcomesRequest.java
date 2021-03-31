@@ -61,8 +61,10 @@ import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowRuntimeExecution;
 import com.mypurecloud.sdk.v2.model.FlowMilestone;
 import com.mypurecloud.sdk.v2.model.FlowMilestoneListing;
+import com.mypurecloud.sdk.v2.model.FlowMilestoneDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowOutcome;
 import com.mypurecloud.sdk.v2.model.FlowOutcomeListing;
+import com.mypurecloud.sdk.v2.model.FlowOutcomeDivisionViewEntityListing;
 import com.mypurecloud.sdk.v2.model.PromptAssetCreate;
 import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchResponse;
 import com.mypurecloud.sdk.v2.model.FlowExecutionLaunchRequest;
@@ -181,6 +183,20 @@ public class GetFlowsOutcomesRequest {
 	    return this;
 	} 
 	
+	private List<String> divisionId;
+	public List<String> getDivisionId() {
+		return this.divisionId;
+	}
+
+	public void setDivisionId(List<String> divisionId) {
+		this.divisionId = divisionId;
+	}
+
+	public GetFlowsOutcomesRequest withDivisionId(List<String> divisionId) {
+	    this.setDivisionId(divisionId);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -219,6 +235,8 @@ public class GetFlowsOutcomesRequest {
                 .withQueryParameters("description", "", description)
         
                 .withQueryParameters("nameOrDescription", "", nameOrDescription)
+        
+                .withQueryParameters("divisionId", "multi", divisionId)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -278,6 +296,11 @@ public class GetFlowsOutcomesRequest {
 		
 		public Builder withNameOrDescription(String nameOrDescription) {
 			request.setNameOrDescription(nameOrDescription);
+			return this;
+		}
+		
+		public Builder withDivisionId(List<String> divisionId) {
+			request.setDivisionId(divisionId);
 			return this;
 		}
 		

@@ -197,7 +197,6 @@ public class AnalyticsSession  implements Serializable {
   private String edgeId = null;
   private String remoteNameDisplayable = null;
   private String roomId = null;
-  private String monitoredSessionId = null;
   private String monitoredParticipantId = null;
   private String callbackUserName = null;
   private List<String> callbackNumbers = new ArrayList<String>();
@@ -341,6 +340,11 @@ public class AnalyticsSession  implements Serializable {
   private List<AnalyticsProposedAgent> proposedAgents = new ArrayList<AnalyticsProposedAgent>();
   private String assignerId = null;
   private Boolean acwSkipped = null;
+  private Integer bullseyeRing = null;
+  private Integer agentBullseyeRing = null;
+  private Integer routingRule = null;
+  private List<String> removedSkillIds = new ArrayList<String>();
+  private List<String> activeSkillIds = new ArrayList<String>();
 
   
   /**
@@ -677,24 +681,6 @@ public class AnalyticsSession  implements Serializable {
   }
   public void setRoomId(String roomId) {
     this.roomId = roomId;
-  }
-
-  
-  /**
-   * The sessionID being monitored
-   **/
-  public AnalyticsSession monitoredSessionId(String monitoredSessionId) {
-    this.monitoredSessionId = monitoredSessionId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The sessionID being monitored")
-  @JsonProperty("monitoredSessionId")
-  public String getMonitoredSessionId() {
-    return monitoredSessionId;
-  }
-  public void setMonitoredSessionId(String monitoredSessionId) {
-    this.monitoredSessionId = monitoredSessionId;
   }
 
   
@@ -1452,6 +1438,96 @@ public class AnalyticsSession  implements Serializable {
   }
 
   
+  /**
+   * Bullseye ring of the conversation
+   **/
+  public AnalyticsSession bullseyeRing(Integer bullseyeRing) {
+    this.bullseyeRing = bullseyeRing;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Bullseye ring of the conversation")
+  @JsonProperty("bullseyeRing")
+  public Integer getBullseyeRing() {
+    return bullseyeRing;
+  }
+  public void setBullseyeRing(Integer bullseyeRing) {
+    this.bullseyeRing = bullseyeRing;
+  }
+
+  
+  /**
+   * Bullseye ring of the targeted agent
+   **/
+  public AnalyticsSession agentBullseyeRing(Integer agentBullseyeRing) {
+    this.agentBullseyeRing = agentBullseyeRing;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Bullseye ring of the targeted agent")
+  @JsonProperty("agentBullseyeRing")
+  public Integer getAgentBullseyeRing() {
+    return agentBullseyeRing;
+  }
+  public void setAgentBullseyeRing(Integer agentBullseyeRing) {
+    this.agentBullseyeRing = agentBullseyeRing;
+  }
+
+  
+  /**
+   * Routing rule the conversation is in for preferred agent routing
+   **/
+  public AnalyticsSession routingRule(Integer routingRule) {
+    this.routingRule = routingRule;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Routing rule the conversation is in for preferred agent routing")
+  @JsonProperty("routingRule")
+  public Integer getRoutingRule() {
+    return routingRule;
+  }
+  public void setRoutingRule(Integer routingRule) {
+    this.routingRule = routingRule;
+  }
+
+  
+  /**
+   * IDs of skills that have been removed by bullseye routing
+   **/
+  public AnalyticsSession removedSkillIds(List<String> removedSkillIds) {
+    this.removedSkillIds = removedSkillIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "IDs of skills that have been removed by bullseye routing")
+  @JsonProperty("removedSkillIds")
+  public List<String> getRemovedSkillIds() {
+    return removedSkillIds;
+  }
+  public void setRemovedSkillIds(List<String> removedSkillIds) {
+    this.removedSkillIds = removedSkillIds;
+  }
+
+  
+  /**
+   * IDs of Skills that are active on the conversation
+   **/
+  public AnalyticsSession activeSkillIds(List<String> activeSkillIds) {
+    this.activeSkillIds = activeSkillIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "IDs of Skills that are active on the conversation")
+  @JsonProperty("activeSkillIds")
+  public List<String> getActiveSkillIds() {
+    return activeSkillIds;
+  }
+  public void setActiveSkillIds(List<String> activeSkillIds) {
+    this.activeSkillIds = activeSkillIds;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1481,7 +1557,6 @@ public class AnalyticsSession  implements Serializable {
         Objects.equals(this.edgeId, analyticsSession.edgeId) &&
         Objects.equals(this.remoteNameDisplayable, analyticsSession.remoteNameDisplayable) &&
         Objects.equals(this.roomId, analyticsSession.roomId) &&
-        Objects.equals(this.monitoredSessionId, analyticsSession.monitoredSessionId) &&
         Objects.equals(this.monitoredParticipantId, analyticsSession.monitoredParticipantId) &&
         Objects.equals(this.callbackUserName, analyticsSession.callbackUserName) &&
         Objects.equals(this.callbackNumbers, analyticsSession.callbackNumbers) &&
@@ -1523,12 +1598,17 @@ public class AnalyticsSession  implements Serializable {
         Objects.equals(this.agentAssistantId, analyticsSession.agentAssistantId) &&
         Objects.equals(this.proposedAgents, analyticsSession.proposedAgents) &&
         Objects.equals(this.assignerId, analyticsSession.assignerId) &&
-        Objects.equals(this.acwSkipped, analyticsSession.acwSkipped);
+        Objects.equals(this.acwSkipped, analyticsSession.acwSkipped) &&
+        Objects.equals(this.bullseyeRing, analyticsSession.bullseyeRing) &&
+        Objects.equals(this.agentBullseyeRing, analyticsSession.agentBullseyeRing) &&
+        Objects.equals(this.routingRule, analyticsSession.routingRule) &&
+        Objects.equals(this.removedSkillIds, analyticsSession.removedSkillIds) &&
+        Objects.equals(this.activeSkillIds, analyticsSession.activeSkillIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, sessionDnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredSessionId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments, metrics, flow, mediaEndpointStats, recording, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, journeyActionId, journeyActionMapId, journeyActionMapVersion, protocolCallId, provider, remote, mediaCount, flowInType, flowOutType, requestedRoutings, usedRouting, selectedAgentId, selectedAgentRank, agentAssistantId, proposedAgents, assignerId, acwSkipped);
+    return Objects.hash(mediaType, sessionId, addressOther, addressSelf, addressFrom, addressTo, messageType, ani, direction, dnis, sessionDnis, outboundCampaignId, outboundContactId, outboundContactListId, dispositionAnalyzer, dispositionName, edgeId, remoteNameDisplayable, roomId, monitoredParticipantId, callbackUserName, callbackNumbers, callbackScheduledTime, scriptId, peerId, skipEnabled, timeoutSeconds, cobrowseRole, cobrowseRoomId, mediaBridgeId, screenShareAddressSelf, sharingScreen, screenShareRoomId, videoRoomId, videoAddressSelf, segments, metrics, flow, mediaEndpointStats, recording, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, journeyActionId, journeyActionMapId, journeyActionMapVersion, protocolCallId, provider, remote, mediaCount, flowInType, flowOutType, requestedRoutings, usedRouting, selectedAgentId, selectedAgentRank, agentAssistantId, proposedAgents, assignerId, acwSkipped, bullseyeRing, agentBullseyeRing, routingRule, removedSkillIds, activeSkillIds);
   }
 
   @Override
@@ -1555,7 +1635,6 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    edgeId: ").append(toIndentedString(edgeId)).append("\n");
     sb.append("    remoteNameDisplayable: ").append(toIndentedString(remoteNameDisplayable)).append("\n");
     sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
-    sb.append("    monitoredSessionId: ").append(toIndentedString(monitoredSessionId)).append("\n");
     sb.append("    monitoredParticipantId: ").append(toIndentedString(monitoredParticipantId)).append("\n");
     sb.append("    callbackUserName: ").append(toIndentedString(callbackUserName)).append("\n");
     sb.append("    callbackNumbers: ").append(toIndentedString(callbackNumbers)).append("\n");
@@ -1598,6 +1677,11 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    proposedAgents: ").append(toIndentedString(proposedAgents)).append("\n");
     sb.append("    assignerId: ").append(toIndentedString(assignerId)).append("\n");
     sb.append("    acwSkipped: ").append(toIndentedString(acwSkipped)).append("\n");
+    sb.append("    bullseyeRing: ").append(toIndentedString(bullseyeRing)).append("\n");
+    sb.append("    agentBullseyeRing: ").append(toIndentedString(agentBullseyeRing)).append("\n");
+    sb.append("    routingRule: ").append(toIndentedString(routingRule)).append("\n");
+    sb.append("    removedSkillIds: ").append(toIndentedString(removedSkillIds)).append("\n");
+    sb.append("    activeSkillIds: ").append(toIndentedString(activeSkillIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

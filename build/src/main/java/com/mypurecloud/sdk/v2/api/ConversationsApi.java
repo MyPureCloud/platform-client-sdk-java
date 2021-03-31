@@ -4639,12 +4639,14 @@ public class ConversationsApi {
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param expand Expand instructions for the return value. (optional)
+   * @param supportedContentId Filter integrations returned based on the supported content ID (optional)
    * @return MessagingIntegrationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public MessagingIntegrationEntityListing getConversationsMessagingIntegrations(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return  getConversationsMessagingIntegrations(createGetConversationsMessagingIntegrationsRequest(pageSize, pageNumber));
+  public MessagingIntegrationEntityListing getConversationsMessagingIntegrations(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrations(createGetConversationsMessagingIntegrationsRequest(pageSize, pageNumber, expand, supportedContentId));
   }
 
   /**
@@ -4652,18 +4654,24 @@ public class ConversationsApi {
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param expand Expand instructions for the return value. (optional)
+   * @param supportedContentId Filter integrations returned based on the supported content ID (optional)
    * @return MessagingIntegrationEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<MessagingIntegrationEntityListing> getConversationsMessagingIntegrationsWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
-    return getConversationsMessagingIntegrations(createGetConversationsMessagingIntegrationsRequest(pageSize, pageNumber).withHttpInfo());
+  public ApiResponse<MessagingIntegrationEntityListing> getConversationsMessagingIntegrationsWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) throws IOException {
+    return getConversationsMessagingIntegrations(createGetConversationsMessagingIntegrationsRequest(pageSize, pageNumber, expand, supportedContentId).withHttpInfo());
   }
 
-  private GetConversationsMessagingIntegrationsRequest createGetConversationsMessagingIntegrationsRequest(Integer pageSize, Integer pageNumber) {
+  private GetConversationsMessagingIntegrationsRequest createGetConversationsMessagingIntegrationsRequest(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) {
     return GetConversationsMessagingIntegrationsRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withExpand(expand)
+    
+            .withSupportedContentId(supportedContentId)
     
             .build();
   }
@@ -4722,12 +4730,14 @@ public class ConversationsApi {
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param expand Expand instructions for the return value. (optional)
+   * @param supportedContentId Filter integrations returned based on the supported content ID (optional)
    * @return FacebookIntegrationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public FacebookIntegrationEntityListing getConversationsMessagingIntegrationsFacebook(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return  getConversationsMessagingIntegrationsFacebook(createGetConversationsMessagingIntegrationsFacebookRequest(pageSize, pageNumber));
+  public FacebookIntegrationEntityListing getConversationsMessagingIntegrationsFacebook(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsFacebook(createGetConversationsMessagingIntegrationsFacebookRequest(pageSize, pageNumber, expand, supportedContentId));
   }
 
   /**
@@ -4735,18 +4745,24 @@ public class ConversationsApi {
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param expand Expand instructions for the return value. (optional)
+   * @param supportedContentId Filter integrations returned based on the supported content ID (optional)
    * @return FacebookIntegrationEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FacebookIntegrationEntityListing> getConversationsMessagingIntegrationsFacebookWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
-    return getConversationsMessagingIntegrationsFacebook(createGetConversationsMessagingIntegrationsFacebookRequest(pageSize, pageNumber).withHttpInfo());
+  public ApiResponse<FacebookIntegrationEntityListing> getConversationsMessagingIntegrationsFacebookWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) throws IOException {
+    return getConversationsMessagingIntegrationsFacebook(createGetConversationsMessagingIntegrationsFacebookRequest(pageSize, pageNumber, expand, supportedContentId).withHttpInfo());
   }
 
-  private GetConversationsMessagingIntegrationsFacebookRequest createGetConversationsMessagingIntegrationsFacebookRequest(Integer pageSize, Integer pageNumber) {
+  private GetConversationsMessagingIntegrationsFacebookRequest createGetConversationsMessagingIntegrationsFacebookRequest(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) {
     return GetConversationsMessagingIntegrationsFacebookRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withExpand(expand)
+    
+            .withSupportedContentId(supportedContentId)
     
             .build();
   }
@@ -4804,28 +4820,32 @@ public class ConversationsApi {
    * Get a Facebook messaging integration
    * 
    * @param integrationId Integration ID (required)
+   * @param expand Expand instructions for the return value. (optional)
    * @return FacebookIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public FacebookIntegration getConversationsMessagingIntegrationsFacebookIntegrationId(String integrationId) throws IOException, ApiException {
-    return  getConversationsMessagingIntegrationsFacebookIntegrationId(createGetConversationsMessagingIntegrationsFacebookIntegrationIdRequest(integrationId));
+  public FacebookIntegration getConversationsMessagingIntegrationsFacebookIntegrationId(String integrationId, String expand) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsFacebookIntegrationId(createGetConversationsMessagingIntegrationsFacebookIntegrationIdRequest(integrationId, expand));
   }
 
   /**
    * Get a Facebook messaging integration
    * 
    * @param integrationId Integration ID (required)
+   * @param expand Expand instructions for the return value. (optional)
    * @return FacebookIntegration
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FacebookIntegration> getConversationsMessagingIntegrationsFacebookIntegrationIdWithHttpInfo(String integrationId) throws IOException {
-    return getConversationsMessagingIntegrationsFacebookIntegrationId(createGetConversationsMessagingIntegrationsFacebookIntegrationIdRequest(integrationId).withHttpInfo());
+  public ApiResponse<FacebookIntegration> getConversationsMessagingIntegrationsFacebookIntegrationIdWithHttpInfo(String integrationId, String expand) throws IOException {
+    return getConversationsMessagingIntegrationsFacebookIntegrationId(createGetConversationsMessagingIntegrationsFacebookIntegrationIdRequest(integrationId, expand).withHttpInfo());
   }
 
-  private GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest createGetConversationsMessagingIntegrationsFacebookIntegrationIdRequest(String integrationId) {
+  private GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest createGetConversationsMessagingIntegrationsFacebookIntegrationIdRequest(String integrationId, String expand) {
     return GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
+    
+            .withExpand(expand)
     
             .build();
   }
@@ -4884,12 +4904,14 @@ public class ConversationsApi {
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param expand Expand instructions for the return value. (optional)
+   * @param supportedContentId Filter integrations returned based on the supported content ID (optional)
    * @return LineIntegrationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LineIntegrationEntityListing getConversationsMessagingIntegrationsLine(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return  getConversationsMessagingIntegrationsLine(createGetConversationsMessagingIntegrationsLineRequest(pageSize, pageNumber));
+  public LineIntegrationEntityListing getConversationsMessagingIntegrationsLine(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsLine(createGetConversationsMessagingIntegrationsLineRequest(pageSize, pageNumber, expand, supportedContentId));
   }
 
   /**
@@ -4897,18 +4919,24 @@ public class ConversationsApi {
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param expand Expand instructions for the return value. (optional)
+   * @param supportedContentId Filter integrations returned based on the supported content ID (optional)
    * @return LineIntegrationEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LineIntegrationEntityListing> getConversationsMessagingIntegrationsLineWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
-    return getConversationsMessagingIntegrationsLine(createGetConversationsMessagingIntegrationsLineRequest(pageSize, pageNumber).withHttpInfo());
+  public ApiResponse<LineIntegrationEntityListing> getConversationsMessagingIntegrationsLineWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) throws IOException {
+    return getConversationsMessagingIntegrationsLine(createGetConversationsMessagingIntegrationsLineRequest(pageSize, pageNumber, expand, supportedContentId).withHttpInfo());
   }
 
-  private GetConversationsMessagingIntegrationsLineRequest createGetConversationsMessagingIntegrationsLineRequest(Integer pageSize, Integer pageNumber) {
+  private GetConversationsMessagingIntegrationsLineRequest createGetConversationsMessagingIntegrationsLineRequest(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) {
     return GetConversationsMessagingIntegrationsLineRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withExpand(expand)
+    
+            .withSupportedContentId(supportedContentId)
     
             .build();
   }
@@ -4966,28 +4994,32 @@ public class ConversationsApi {
    * Get a LINE messenger integration
    * 
    * @param integrationId Integration ID (required)
+   * @param expand Expand instructions for the return value. (optional)
    * @return LineIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LineIntegration getConversationsMessagingIntegrationsLineIntegrationId(String integrationId) throws IOException, ApiException {
-    return  getConversationsMessagingIntegrationsLineIntegrationId(createGetConversationsMessagingIntegrationsLineIntegrationIdRequest(integrationId));
+  public LineIntegration getConversationsMessagingIntegrationsLineIntegrationId(String integrationId, String expand) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsLineIntegrationId(createGetConversationsMessagingIntegrationsLineIntegrationIdRequest(integrationId, expand));
   }
 
   /**
    * Get a LINE messenger integration
    * 
    * @param integrationId Integration ID (required)
+   * @param expand Expand instructions for the return value. (optional)
    * @return LineIntegration
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LineIntegration> getConversationsMessagingIntegrationsLineIntegrationIdWithHttpInfo(String integrationId) throws IOException {
-    return getConversationsMessagingIntegrationsLineIntegrationId(createGetConversationsMessagingIntegrationsLineIntegrationIdRequest(integrationId).withHttpInfo());
+  public ApiResponse<LineIntegration> getConversationsMessagingIntegrationsLineIntegrationIdWithHttpInfo(String integrationId, String expand) throws IOException {
+    return getConversationsMessagingIntegrationsLineIntegrationId(createGetConversationsMessagingIntegrationsLineIntegrationIdRequest(integrationId, expand).withHttpInfo());
   }
 
-  private GetConversationsMessagingIntegrationsLineIntegrationIdRequest createGetConversationsMessagingIntegrationsLineIntegrationIdRequest(String integrationId) {
+  private GetConversationsMessagingIntegrationsLineIntegrationIdRequest createGetConversationsMessagingIntegrationsLineIntegrationIdRequest(String integrationId, String expand) {
     return GetConversationsMessagingIntegrationsLineIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
+    
+            .withExpand(expand)
     
             .build();
   }
@@ -5046,12 +5078,14 @@ public class ConversationsApi {
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param expand Expand instructions for the return value. (optional)
+   * @param supportedContentId Filter integrations returned based on the supported content ID (optional)
    * @return TwitterIntegrationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public TwitterIntegrationEntityListing getConversationsMessagingIntegrationsTwitter(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return  getConversationsMessagingIntegrationsTwitter(createGetConversationsMessagingIntegrationsTwitterRequest(pageSize, pageNumber));
+  public TwitterIntegrationEntityListing getConversationsMessagingIntegrationsTwitter(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsTwitter(createGetConversationsMessagingIntegrationsTwitterRequest(pageSize, pageNumber, expand, supportedContentId));
   }
 
   /**
@@ -5059,18 +5093,24 @@ public class ConversationsApi {
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param expand Expand instructions for the return value. (optional)
+   * @param supportedContentId Filter integrations returned based on the supported content ID (optional)
    * @return TwitterIntegrationEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TwitterIntegrationEntityListing> getConversationsMessagingIntegrationsTwitterWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
-    return getConversationsMessagingIntegrationsTwitter(createGetConversationsMessagingIntegrationsTwitterRequest(pageSize, pageNumber).withHttpInfo());
+  public ApiResponse<TwitterIntegrationEntityListing> getConversationsMessagingIntegrationsTwitterWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) throws IOException {
+    return getConversationsMessagingIntegrationsTwitter(createGetConversationsMessagingIntegrationsTwitterRequest(pageSize, pageNumber, expand, supportedContentId).withHttpInfo());
   }
 
-  private GetConversationsMessagingIntegrationsTwitterRequest createGetConversationsMessagingIntegrationsTwitterRequest(Integer pageSize, Integer pageNumber) {
+  private GetConversationsMessagingIntegrationsTwitterRequest createGetConversationsMessagingIntegrationsTwitterRequest(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) {
     return GetConversationsMessagingIntegrationsTwitterRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withExpand(expand)
+    
+            .withSupportedContentId(supportedContentId)
     
             .build();
   }
@@ -5128,28 +5168,32 @@ public class ConversationsApi {
    * Get a Twitter messaging integration
    * 
    * @param integrationId Integration ID (required)
+   * @param expand Expand instructions for the return value. (optional)
    * @return TwitterIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public TwitterIntegration getConversationsMessagingIntegrationsTwitterIntegrationId(String integrationId) throws IOException, ApiException {
-    return  getConversationsMessagingIntegrationsTwitterIntegrationId(createGetConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId));
+  public TwitterIntegration getConversationsMessagingIntegrationsTwitterIntegrationId(String integrationId, String expand) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsTwitterIntegrationId(createGetConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId, expand));
   }
 
   /**
    * Get a Twitter messaging integration
    * 
    * @param integrationId Integration ID (required)
+   * @param expand Expand instructions for the return value. (optional)
    * @return TwitterIntegration
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<TwitterIntegration> getConversationsMessagingIntegrationsTwitterIntegrationIdWithHttpInfo(String integrationId) throws IOException {
-    return getConversationsMessagingIntegrationsTwitterIntegrationId(createGetConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId).withHttpInfo());
+  public ApiResponse<TwitterIntegration> getConversationsMessagingIntegrationsTwitterIntegrationIdWithHttpInfo(String integrationId, String expand) throws IOException {
+    return getConversationsMessagingIntegrationsTwitterIntegrationId(createGetConversationsMessagingIntegrationsTwitterIntegrationIdRequest(integrationId, expand).withHttpInfo());
   }
 
-  private GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest createGetConversationsMessagingIntegrationsTwitterIntegrationIdRequest(String integrationId) {
+  private GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest createGetConversationsMessagingIntegrationsTwitterIntegrationIdRequest(String integrationId, String expand) {
     return GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
+    
+            .withExpand(expand)
     
             .build();
   }
@@ -5208,12 +5252,14 @@ public class ConversationsApi {
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param expand Expand instructions for the return value. (optional)
+   * @param supportedContentId Filter integrations returned based on the supported content ID (optional)
    * @return WhatsAppIntegrationEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WhatsAppIntegrationEntityListing getConversationsMessagingIntegrationsWhatsapp(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return  getConversationsMessagingIntegrationsWhatsapp(createGetConversationsMessagingIntegrationsWhatsappRequest(pageSize, pageNumber));
+  public WhatsAppIntegrationEntityListing getConversationsMessagingIntegrationsWhatsapp(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsWhatsapp(createGetConversationsMessagingIntegrationsWhatsappRequest(pageSize, pageNumber, expand, supportedContentId));
   }
 
   /**
@@ -5221,18 +5267,24 @@ public class ConversationsApi {
    * 
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param expand Expand instructions for the return value. (optional)
+   * @param supportedContentId Filter integrations returned based on the supported content ID (optional)
    * @return WhatsAppIntegrationEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WhatsAppIntegrationEntityListing> getConversationsMessagingIntegrationsWhatsappWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
-    return getConversationsMessagingIntegrationsWhatsapp(createGetConversationsMessagingIntegrationsWhatsappRequest(pageSize, pageNumber).withHttpInfo());
+  public ApiResponse<WhatsAppIntegrationEntityListing> getConversationsMessagingIntegrationsWhatsappWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) throws IOException {
+    return getConversationsMessagingIntegrationsWhatsapp(createGetConversationsMessagingIntegrationsWhatsappRequest(pageSize, pageNumber, expand, supportedContentId).withHttpInfo());
   }
 
-  private GetConversationsMessagingIntegrationsWhatsappRequest createGetConversationsMessagingIntegrationsWhatsappRequest(Integer pageSize, Integer pageNumber) {
+  private GetConversationsMessagingIntegrationsWhatsappRequest createGetConversationsMessagingIntegrationsWhatsappRequest(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) {
     return GetConversationsMessagingIntegrationsWhatsappRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withExpand(expand)
+    
+            .withSupportedContentId(supportedContentId)
     
             .build();
   }
@@ -5290,28 +5342,32 @@ public class ConversationsApi {
    * Get a WhatsApp messaging integration
    * 
    * @param integrationId Integration ID (required)
+   * @param expand Expand instructions for the return value. (optional)
    * @return WhatsAppIntegration
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WhatsAppIntegration getConversationsMessagingIntegrationsWhatsappIntegrationId(String integrationId) throws IOException, ApiException {
-    return  getConversationsMessagingIntegrationsWhatsappIntegrationId(createGetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest(integrationId));
+  public WhatsAppIntegration getConversationsMessagingIntegrationsWhatsappIntegrationId(String integrationId, String expand) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsWhatsappIntegrationId(createGetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest(integrationId, expand));
   }
 
   /**
    * Get a WhatsApp messaging integration
    * 
    * @param integrationId Integration ID (required)
+   * @param expand Expand instructions for the return value. (optional)
    * @return WhatsAppIntegration
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WhatsAppIntegration> getConversationsMessagingIntegrationsWhatsappIntegrationIdWithHttpInfo(String integrationId) throws IOException {
-    return getConversationsMessagingIntegrationsWhatsappIntegrationId(createGetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest(integrationId).withHttpInfo());
+  public ApiResponse<WhatsAppIntegration> getConversationsMessagingIntegrationsWhatsappIntegrationIdWithHttpInfo(String integrationId, String expand) throws IOException {
+    return getConversationsMessagingIntegrationsWhatsappIntegrationId(createGetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest(integrationId, expand).withHttpInfo());
   }
 
-  private GetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest createGetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest(String integrationId) {
+  private GetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest createGetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest(String integrationId, String expand) {
     return GetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest.builder()
             .withIntegrationId(integrationId)
+    
+            .withExpand(expand)
     
             .build();
   }

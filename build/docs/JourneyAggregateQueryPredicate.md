@@ -36,20 +36,37 @@ title: JourneyAggregateQueryPredicate
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| CONTAINSALLCONDITION | &quot;containsAllCondition&quot; |
+| CONTAINSANYCONDITION | &quot;containsAnyCondition&quot; |
+| ENDSWITHCONDITION | &quot;endsWithCondition&quot; |
+| EQUALCONDITION | &quot;equalCondition&quot; |
+| GREATERTHANCONDITION | &quot;greaterThanCondition&quot; |
+| GREATERTHANOREQUALCONDITION | &quot;greaterThanOrEqualCondition&quot; |
 | JOURNEYACTIONID | &quot;journeyActionId&quot; |
 | JOURNEYACTIONMAPID | &quot;journeyActionMapId&quot; |
 | JOURNEYACTIONMAPVERSION | &quot;journeyActionMapVersion&quot; |
 | JOURNEYACTIONMEDIATYPE | &quot;journeyActionMediaType&quot; |
+| JOURNEYACTIONTARGETID | &quot;journeyActionTargetId&quot; |
 | JOURNEYACTIONTEMPLATEID | &quot;journeyActionTemplateId&quot; |
+| JOURNEYBLOCKINGACTIONMAPID | &quot;journeyBlockingActionMapId&quot; |
+| JOURNEYBLOCKINGREASON | &quot;journeyBlockingReason&quot; |
+| JOURNEYBLOCKINGSCHEDULEGROUPID | &quot;journeyBlockingScheduleGroupId&quot; |
 | JOURNEYCUSTOMERID | &quot;journeyCustomerId&quot; |
 | JOURNEYCUSTOMERIDTYPE | &quot;journeyCustomerIdType&quot; |
 | JOURNEYDEVICECATEGORY | &quot;journeyDeviceCategory&quot; |
 | JOURNEYDEVICETYPE | &quot;journeyDeviceType&quot; |
+| JOURNEYFREQUENCYCAPREASON | &quot;journeyFrequencyCapReason&quot; |
 | JOURNEYOUTCOMEID | &quot;journeyOutcomeId&quot; |
 | JOURNEYSEGMENTID | &quot;journeySegmentId&quot; |
 | JOURNEYSEGMENTSCOPE | &quot;journeySegmentScope&quot; |
 | JOURNEYSESSIONSEGMENTID | &quot;journeySessionSegmentId&quot; |
 | JOURNEYSESSIONTYPE | &quot;journeySessionType&quot; |
+| LESSTHANCONDITION | &quot;lessThanCondition&quot; |
+| LESSTHANOREQUALCONDITION | &quot;lessThanOrEqualCondition&quot; |
+| NOTCONTAINSALLCONDITION | &quot;notContainsAllCondition&quot; |
+| NOTCONTAINSANYCONDITION | &quot;notContainsAnyCondition&quot; |
+| NOTEQUALCONDITION | &quot;notEqualCondition&quot; |
+| STARTSWITHCONDITION | &quot;startsWithCondition&quot; |
 | TOUCHPOINTACTIONMAPID | &quot;touchpointActionMapId&quot; |
 {: class="table table-striped"}
 

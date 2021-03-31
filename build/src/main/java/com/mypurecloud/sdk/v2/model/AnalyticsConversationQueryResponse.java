@@ -26,6 +26,7 @@ public class AnalyticsConversationQueryResponse  implements Serializable {
   
   private List<AggregationResult> aggregations = new ArrayList<AggregationResult>();
   private List<AnalyticsConversationWithoutAttributes> conversations = new ArrayList<AnalyticsConversationWithoutAttributes>();
+  private Integer totalHits = null;
 
   
   /**
@@ -62,6 +63,23 @@ public class AnalyticsConversationQueryResponse  implements Serializable {
   }
 
   
+  /**
+   **/
+  public AnalyticsConversationQueryResponse totalHits(Integer totalHits) {
+    this.totalHits = totalHits;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("totalHits")
+  public Integer getTotalHits() {
+    return totalHits;
+  }
+  public void setTotalHits(Integer totalHits) {
+    this.totalHits = totalHits;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -73,12 +91,13 @@ public class AnalyticsConversationQueryResponse  implements Serializable {
     }
     AnalyticsConversationQueryResponse analyticsConversationQueryResponse = (AnalyticsConversationQueryResponse) o;
     return Objects.equals(this.aggregations, analyticsConversationQueryResponse.aggregations) &&
-        Objects.equals(this.conversations, analyticsConversationQueryResponse.conversations);
+        Objects.equals(this.conversations, analyticsConversationQueryResponse.conversations) &&
+        Objects.equals(this.totalHits, analyticsConversationQueryResponse.totalHits);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(aggregations, conversations);
+    return Objects.hash(aggregations, conversations, totalHits);
   }
 
   @Override
@@ -88,6 +107,7 @@ public class AnalyticsConversationQueryResponse  implements Serializable {
     
     sb.append("    aggregations: ").append(toIndentedString(aggregations)).append("\n");
     sb.append("    conversations: ").append(toIndentedString(conversations)).append("\n");
+    sb.append("    totalHits: ").append(toIndentedString(totalHits)).append("\n");
     sb.append("}");
     return sb.toString();
   }

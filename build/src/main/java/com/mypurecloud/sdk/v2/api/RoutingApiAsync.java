@@ -38,6 +38,7 @@ import com.mypurecloud.sdk.v2.model.SmsAddressEntityListing;
 import com.mypurecloud.sdk.v2.model.SMSAvailablePhoneNumberEntityListing;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumber;
 import com.mypurecloud.sdk.v2.model.SmsPhoneNumberEntityListing;
+import com.mypurecloud.sdk.v2.model.AgentMaxUtilization;
 import com.mypurecloud.sdk.v2.model.Utilization;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
@@ -3447,13 +3448,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Utilization> getRoutingUserUtilizationAsync(GetRoutingUserUtilizationRequest request, final AsyncApiCallback<Utilization> callback) {
+  public Future<AgentMaxUtilization> getRoutingUserUtilizationAsync(GetRoutingUserUtilizationRequest request, final AsyncApiCallback<AgentMaxUtilization> callback) {
     try {
-      final SettableFuture<Utilization> future = SettableFuture.create();
+      final SettableFuture<AgentMaxUtilization> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Utilization>() {}, new AsyncApiCallback<ApiResponse<Utilization>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentMaxUtilization>() {}, new AsyncApiCallback<ApiResponse<AgentMaxUtilization>>() {
         @Override
-        public void onCompleted(ApiResponse<Utilization> response) {
+        public void onCompleted(ApiResponse<AgentMaxUtilization> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -3481,13 +3482,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Utilization>> getRoutingUserUtilizationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Utilization>> callback) {
+  public Future<ApiResponse<AgentMaxUtilization>> getRoutingUserUtilizationAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AgentMaxUtilization>> callback) {
     try {
-      final SettableFuture<ApiResponse<Utilization>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<AgentMaxUtilization>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<Utilization>() {}, new AsyncApiCallback<ApiResponse<Utilization>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<AgentMaxUtilization>() {}, new AsyncApiCallback<ApiResponse<AgentMaxUtilization>>() {
         @Override
-        public void onCompleted(ApiResponse<Utilization> response) {
+        public void onCompleted(ApiResponse<AgentMaxUtilization> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -3495,7 +3496,7 @@ public class RoutingApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<Utilization> response = (ApiResponse<Utilization>)(ApiResponse<?>)exception;
+            ApiResponse<AgentMaxUtilization> response = (ApiResponse<AgentMaxUtilization>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -3503,7 +3504,7 @@ public class RoutingApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<Utilization> response = (ApiResponse<Utilization>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<AgentMaxUtilization> response = (ApiResponse<AgentMaxUtilization>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -6563,13 +6564,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Utilization> putRoutingUserUtilizationAsync(PutRoutingUserUtilizationRequest request, final AsyncApiCallback<Utilization> callback) {
+  public Future<AgentMaxUtilization> putRoutingUserUtilizationAsync(PutRoutingUserUtilizationRequest request, final AsyncApiCallback<AgentMaxUtilization> callback) {
     try {
-      final SettableFuture<Utilization> future = SettableFuture.create();
+      final SettableFuture<AgentMaxUtilization> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Utilization>() {}, new AsyncApiCallback<ApiResponse<Utilization>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentMaxUtilization>() {}, new AsyncApiCallback<ApiResponse<AgentMaxUtilization>>() {
         @Override
-        public void onCompleted(ApiResponse<Utilization> response) {
+        public void onCompleted(ApiResponse<AgentMaxUtilization> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -6597,13 +6598,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Utilization>> putRoutingUserUtilizationAsync(ApiRequest<Utilization> request, final AsyncApiCallback<ApiResponse<Utilization>> callback) {
+  public Future<ApiResponse<AgentMaxUtilization>> putRoutingUserUtilizationAsync(ApiRequest<Utilization> request, final AsyncApiCallback<ApiResponse<AgentMaxUtilization>> callback) {
     try {
-      final SettableFuture<ApiResponse<Utilization>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<AgentMaxUtilization>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<Utilization>() {}, new AsyncApiCallback<ApiResponse<Utilization>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<AgentMaxUtilization>() {}, new AsyncApiCallback<ApiResponse<AgentMaxUtilization>>() {
         @Override
-        public void onCompleted(ApiResponse<Utilization> response) {
+        public void onCompleted(ApiResponse<AgentMaxUtilization> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -6611,7 +6612,7 @@ public class RoutingApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<Utilization> response = (ApiResponse<Utilization>)(ApiResponse<?>)exception;
+            ApiResponse<AgentMaxUtilization> response = (ApiResponse<AgentMaxUtilization>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -6619,7 +6620,7 @@ public class RoutingApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<Utilization> response = (ApiResponse<Utilization>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<AgentMaxUtilization> response = (ApiResponse<AgentMaxUtilization>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
