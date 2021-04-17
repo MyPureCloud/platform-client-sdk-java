@@ -28,9 +28,11 @@ import java.io.Serializable;
 
 public class AnalyticsConversation  implements Serializable {
   
+  private Date conversationEnd = null;
   private String conversationId = null;
   private Date conversationStart = null;
-  private Date conversationEnd = null;
+  private List<String> divisionIds = new ArrayList<String>();
+  private String externalTag = null;
   private Double mediaStatsMinConversationMos = null;
   private Double mediaStatsMinConversationRFactor = null;
 
@@ -84,8 +86,25 @@ public class AnalyticsConversation  implements Serializable {
   private List<AnalyticsEvaluation> evaluations = new ArrayList<AnalyticsEvaluation>();
   private List<AnalyticsSurvey> surveys = new ArrayList<AnalyticsSurvey>();
   private List<AnalyticsResolution> resolutions = new ArrayList<AnalyticsResolution>();
-  private List<String> divisionIds = new ArrayList<String>();
   private List<AnalyticsParticipant> participants = new ArrayList<AnalyticsParticipant>();
+
+  
+  /**
+   * The end time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public AnalyticsConversation conversationEnd(Date conversationEnd) {
+    this.conversationEnd = conversationEnd;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The end time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("conversationEnd")
+  public Date getConversationEnd() {
+    return conversationEnd;
+  }
+  public void setConversationEnd(Date conversationEnd) {
+    this.conversationEnd = conversationEnd;
+  }
 
   
   /**
@@ -107,14 +126,14 @@ public class AnalyticsConversation  implements Serializable {
 
   
   /**
-   * Date/time the conversation started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   * The start time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public AnalyticsConversation conversationStart(Date conversationStart) {
     this.conversationStart = conversationStart;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date/time the conversation started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", value = "The start time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("conversationStart")
   public Date getConversationStart() {
     return conversationStart;
@@ -125,20 +144,38 @@ public class AnalyticsConversation  implements Serializable {
 
   
   /**
-   * Date/time the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   * Identifier(s) of division(s) associated with a conversation
    **/
-  public AnalyticsConversation conversationEnd(Date conversationEnd) {
-    this.conversationEnd = conversationEnd;
+  public AnalyticsConversation divisionIds(List<String> divisionIds) {
+    this.divisionIds = divisionIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date/time the conversation ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
-  @JsonProperty("conversationEnd")
-  public Date getConversationEnd() {
-    return conversationEnd;
+  @ApiModelProperty(example = "null", value = "Identifier(s) of division(s) associated with a conversation")
+  @JsonProperty("divisionIds")
+  public List<String> getDivisionIds() {
+    return divisionIds;
   }
-  public void setConversationEnd(Date conversationEnd) {
-    this.conversationEnd = conversationEnd;
+  public void setDivisionIds(List<String> divisionIds) {
+    this.divisionIds = divisionIds;
+  }
+
+  
+  /**
+   * External tag for the conversation
+   **/
+  public AnalyticsConversation externalTag(String externalTag) {
+    this.externalTag = externalTag;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "External tag for the conversation")
+  @JsonProperty("externalTag")
+  public String getExternalTag() {
+    return externalTag;
+  }
+  public void setExternalTag(String externalTag) {
+    this.externalTag = externalTag;
   }
 
   
@@ -197,14 +234,14 @@ public class AnalyticsConversation  implements Serializable {
 
   
   /**
-   * Evaluations tied to this conversation
+   * Evaluations associated with this conversation
    **/
   public AnalyticsConversation evaluations(List<AnalyticsEvaluation> evaluations) {
     this.evaluations = evaluations;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Evaluations tied to this conversation")
+  @ApiModelProperty(example = "null", value = "Evaluations associated with this conversation")
   @JsonProperty("evaluations")
   public List<AnalyticsEvaluation> getEvaluations() {
     return evaluations;
@@ -215,14 +252,14 @@ public class AnalyticsConversation  implements Serializable {
 
   
   /**
-   * Surveys tied to this conversation
+   * Surveys associated with this conversation
    **/
   public AnalyticsConversation surveys(List<AnalyticsSurvey> surveys) {
     this.surveys = surveys;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Surveys tied to this conversation")
+  @ApiModelProperty(example = "null", value = "Surveys associated with this conversation")
   @JsonProperty("surveys")
   public List<AnalyticsSurvey> getSurveys() {
     return surveys;
@@ -233,38 +270,20 @@ public class AnalyticsConversation  implements Serializable {
 
   
   /**
-   * Resolutions tied to this conversation
+   * Resolutions associated with this conversation
    **/
   public AnalyticsConversation resolutions(List<AnalyticsResolution> resolutions) {
     this.resolutions = resolutions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Resolutions tied to this conversation")
+  @ApiModelProperty(example = "null", value = "Resolutions associated with this conversation")
   @JsonProperty("resolutions")
   public List<AnalyticsResolution> getResolutions() {
     return resolutions;
   }
   public void setResolutions(List<AnalyticsResolution> resolutions) {
     this.resolutions = resolutions;
-  }
-
-  
-  /**
-   * Identifiers of divisions associated with this conversation
-   **/
-  public AnalyticsConversation divisionIds(List<String> divisionIds) {
-    this.divisionIds = divisionIds;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Identifiers of divisions associated with this conversation")
-  @JsonProperty("divisionIds")
-  public List<String> getDivisionIds() {
-    return divisionIds;
-  }
-  public void setDivisionIds(List<String> divisionIds) {
-    this.divisionIds = divisionIds;
   }
 
   
@@ -296,22 +315,23 @@ public class AnalyticsConversation  implements Serializable {
       return false;
     }
     AnalyticsConversation analyticsConversation = (AnalyticsConversation) o;
-    return Objects.equals(this.conversationId, analyticsConversation.conversationId) &&
+    return Objects.equals(this.conversationEnd, analyticsConversation.conversationEnd) &&
+        Objects.equals(this.conversationId, analyticsConversation.conversationId) &&
         Objects.equals(this.conversationStart, analyticsConversation.conversationStart) &&
-        Objects.equals(this.conversationEnd, analyticsConversation.conversationEnd) &&
+        Objects.equals(this.divisionIds, analyticsConversation.divisionIds) &&
+        Objects.equals(this.externalTag, analyticsConversation.externalTag) &&
         Objects.equals(this.mediaStatsMinConversationMos, analyticsConversation.mediaStatsMinConversationMos) &&
         Objects.equals(this.mediaStatsMinConversationRFactor, analyticsConversation.mediaStatsMinConversationRFactor) &&
         Objects.equals(this.originatingDirection, analyticsConversation.originatingDirection) &&
         Objects.equals(this.evaluations, analyticsConversation.evaluations) &&
         Objects.equals(this.surveys, analyticsConversation.surveys) &&
         Objects.equals(this.resolutions, analyticsConversation.resolutions) &&
-        Objects.equals(this.divisionIds, analyticsConversation.divisionIds) &&
         Objects.equals(this.participants, analyticsConversation.participants);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, conversationStart, conversationEnd, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, originatingDirection, evaluations, surveys, resolutions, divisionIds, participants);
+    return Objects.hash(conversationEnd, conversationId, conversationStart, divisionIds, externalTag, mediaStatsMinConversationMos, mediaStatsMinConversationRFactor, originatingDirection, evaluations, surveys, resolutions, participants);
   }
 
   @Override
@@ -319,16 +339,17 @@ public class AnalyticsConversation  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class AnalyticsConversation {\n");
     
+    sb.append("    conversationEnd: ").append(toIndentedString(conversationEnd)).append("\n");
     sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
     sb.append("    conversationStart: ").append(toIndentedString(conversationStart)).append("\n");
-    sb.append("    conversationEnd: ").append(toIndentedString(conversationEnd)).append("\n");
+    sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
+    sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
     sb.append("    mediaStatsMinConversationMos: ").append(toIndentedString(mediaStatsMinConversationMos)).append("\n");
     sb.append("    mediaStatsMinConversationRFactor: ").append(toIndentedString(mediaStatsMinConversationRFactor)).append("\n");
     sb.append("    originatingDirection: ").append(toIndentedString(originatingDirection)).append("\n");
     sb.append("    evaluations: ").append(toIndentedString(evaluations)).append("\n");
     sb.append("    surveys: ").append(toIndentedString(surveys)).append("\n");
     sb.append("    resolutions: ").append(toIndentedString(resolutions)).append("\n");
-    sb.append("    divisionIds: ").append(toIndentedString(divisionIds)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("}");
     return sb.toString();

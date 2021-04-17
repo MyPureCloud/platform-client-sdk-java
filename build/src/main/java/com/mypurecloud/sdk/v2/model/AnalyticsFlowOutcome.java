@@ -21,28 +21,82 @@ import java.io.Serializable;
 
 public class AnalyticsFlowOutcome  implements Serializable {
   
-  private String flowOutcomeId = null;
-  private String flowOutcomeValue = null;
   private String flowOutcome = null;
-  private Date flowOutcomeStartTimestamp = null;
   private Date flowOutcomeEndTimestamp = null;
+  private String flowOutcomeId = null;
+  private Date flowOutcomeStartTimestamp = null;
+  private String flowOutcomeValue = null;
 
   
   /**
-   * Unique identifiers of a flow outcome
+   * Combination of unique flow outcome identifier and its value separated by colon
+   **/
+  public AnalyticsFlowOutcome flowOutcome(String flowOutcome) {
+    this.flowOutcome = flowOutcome;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Combination of unique flow outcome identifier and its value separated by colon")
+  @JsonProperty("flowOutcome")
+  public String getFlowOutcome() {
+    return flowOutcome;
+  }
+  public void setFlowOutcome(String flowOutcome) {
+    this.flowOutcome = flowOutcome;
+  }
+
+  
+  /**
+   * The outcome ending timestamp in ISO 8601 format. This may be null if the outcome did not succeed.
+   **/
+  public AnalyticsFlowOutcome flowOutcomeEndTimestamp(Date flowOutcomeEndTimestamp) {
+    this.flowOutcomeEndTimestamp = flowOutcomeEndTimestamp;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The outcome ending timestamp in ISO 8601 format. This may be null if the outcome did not succeed.")
+  @JsonProperty("flowOutcomeEndTimestamp")
+  public Date getFlowOutcomeEndTimestamp() {
+    return flowOutcomeEndTimestamp;
+  }
+  public void setFlowOutcomeEndTimestamp(Date flowOutcomeEndTimestamp) {
+    this.flowOutcomeEndTimestamp = flowOutcomeEndTimestamp;
+  }
+
+  
+  /**
+   * Unique identifier of a flow outcome
    **/
   public AnalyticsFlowOutcome flowOutcomeId(String flowOutcomeId) {
     this.flowOutcomeId = flowOutcomeId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Unique identifiers of a flow outcome")
+  @ApiModelProperty(example = "null", value = "Unique identifier of a flow outcome")
   @JsonProperty("flowOutcomeId")
   public String getFlowOutcomeId() {
     return flowOutcomeId;
   }
   public void setFlowOutcomeId(String flowOutcomeId) {
     this.flowOutcomeId = flowOutcomeId;
+  }
+
+  
+  /**
+   * The outcome starting timestamp in ISO 8601 format
+   **/
+  public AnalyticsFlowOutcome flowOutcomeStartTimestamp(Date flowOutcomeStartTimestamp) {
+    this.flowOutcomeStartTimestamp = flowOutcomeStartTimestamp;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The outcome starting timestamp in ISO 8601 format")
+  @JsonProperty("flowOutcomeStartTimestamp")
+  public Date getFlowOutcomeStartTimestamp() {
+    return flowOutcomeStartTimestamp;
+  }
+  public void setFlowOutcomeStartTimestamp(Date flowOutcomeStartTimestamp) {
+    this.flowOutcomeStartTimestamp = flowOutcomeStartTimestamp;
   }
 
   
@@ -64,60 +118,6 @@ public class AnalyticsFlowOutcome  implements Serializable {
   }
 
   
-  /**
-   * Colon-separated combinations of unique flow outcome identifier and value
-   **/
-  public AnalyticsFlowOutcome flowOutcome(String flowOutcome) {
-    this.flowOutcome = flowOutcome;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Colon-separated combinations of unique flow outcome identifier and value")
-  @JsonProperty("flowOutcome")
-  public String getFlowOutcome() {
-    return flowOutcome;
-  }
-  public void setFlowOutcome(String flowOutcome) {
-    this.flowOutcome = flowOutcome;
-  }
-
-  
-  /**
-   * Date/time the outcome started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-   **/
-  public AnalyticsFlowOutcome flowOutcomeStartTimestamp(Date flowOutcomeStartTimestamp) {
-    this.flowOutcomeStartTimestamp = flowOutcomeStartTimestamp;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Date/time the outcome started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
-  @JsonProperty("flowOutcomeStartTimestamp")
-  public Date getFlowOutcomeStartTimestamp() {
-    return flowOutcomeStartTimestamp;
-  }
-  public void setFlowOutcomeStartTimestamp(Date flowOutcomeStartTimestamp) {
-    this.flowOutcomeStartTimestamp = flowOutcomeStartTimestamp;
-  }
-
-  
-  /**
-   * Date/time the outcome ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-   **/
-  public AnalyticsFlowOutcome flowOutcomeEndTimestamp(Date flowOutcomeEndTimestamp) {
-    this.flowOutcomeEndTimestamp = flowOutcomeEndTimestamp;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Date/time the outcome ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
-  @JsonProperty("flowOutcomeEndTimestamp")
-  public Date getFlowOutcomeEndTimestamp() {
-    return flowOutcomeEndTimestamp;
-  }
-  public void setFlowOutcomeEndTimestamp(Date flowOutcomeEndTimestamp) {
-    this.flowOutcomeEndTimestamp = flowOutcomeEndTimestamp;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -128,16 +128,16 @@ public class AnalyticsFlowOutcome  implements Serializable {
       return false;
     }
     AnalyticsFlowOutcome analyticsFlowOutcome = (AnalyticsFlowOutcome) o;
-    return Objects.equals(this.flowOutcomeId, analyticsFlowOutcome.flowOutcomeId) &&
-        Objects.equals(this.flowOutcomeValue, analyticsFlowOutcome.flowOutcomeValue) &&
-        Objects.equals(this.flowOutcome, analyticsFlowOutcome.flowOutcome) &&
+    return Objects.equals(this.flowOutcome, analyticsFlowOutcome.flowOutcome) &&
+        Objects.equals(this.flowOutcomeEndTimestamp, analyticsFlowOutcome.flowOutcomeEndTimestamp) &&
+        Objects.equals(this.flowOutcomeId, analyticsFlowOutcome.flowOutcomeId) &&
         Objects.equals(this.flowOutcomeStartTimestamp, analyticsFlowOutcome.flowOutcomeStartTimestamp) &&
-        Objects.equals(this.flowOutcomeEndTimestamp, analyticsFlowOutcome.flowOutcomeEndTimestamp);
+        Objects.equals(this.flowOutcomeValue, analyticsFlowOutcome.flowOutcomeValue);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(flowOutcomeId, flowOutcomeValue, flowOutcome, flowOutcomeStartTimestamp, flowOutcomeEndTimestamp);
+    return Objects.hash(flowOutcome, flowOutcomeEndTimestamp, flowOutcomeId, flowOutcomeStartTimestamp, flowOutcomeValue);
   }
 
   @Override
@@ -145,11 +145,11 @@ public class AnalyticsFlowOutcome  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class AnalyticsFlowOutcome {\n");
     
-    sb.append("    flowOutcomeId: ").append(toIndentedString(flowOutcomeId)).append("\n");
-    sb.append("    flowOutcomeValue: ").append(toIndentedString(flowOutcomeValue)).append("\n");
     sb.append("    flowOutcome: ").append(toIndentedString(flowOutcome)).append("\n");
-    sb.append("    flowOutcomeStartTimestamp: ").append(toIndentedString(flowOutcomeStartTimestamp)).append("\n");
     sb.append("    flowOutcomeEndTimestamp: ").append(toIndentedString(flowOutcomeEndTimestamp)).append("\n");
+    sb.append("    flowOutcomeId: ").append(toIndentedString(flowOutcomeId)).append("\n");
+    sb.append("    flowOutcomeStartTimestamp: ").append(toIndentedString(flowOutcomeStartTimestamp)).append("\n");
+    sb.append("    flowOutcomeValue: ").append(toIndentedString(flowOutcomeValue)).append("\n");
     sb.append("}");
     return sb.toString();
   }

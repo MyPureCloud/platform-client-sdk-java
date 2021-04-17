@@ -10,7 +10,6 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationProperties;
 import com.mypurecloud.sdk.v2.model.NumericRange;
 import com.mypurecloud.sdk.v2.model.Transcripts;
@@ -44,14 +43,14 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = MediaTypesEnumDeserializer.class)
   public enum MediaTypesEnum {
-    VOICE("voice"),
-    CHAT("chat"),
-    EMAIL("email"),
     CALLBACK("callback"),
+    CHAT("chat"),
     COBROWSE("cobrowse"),
-    VIDEO("video"),
+    EMAIL("email"),
+    MESSAGE("message"),
     SCREENSHARE("screenshare"),
-    MESSAGE("message");
+    VIDEO("video"),
+    VOICE("voice");
 
     private String value;
 
@@ -506,10 +505,10 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = FlowEntryTypesEnumDeserializer.class)
   public enum FlowEntryTypesEnum {
-    DNIS("dnis"),
-    DIRECT("direct"),
-    FLOW("flow"),
     AGENT("agent"),
+    DIRECT("direct"),
+    DNIS("dnis"),
+    FLOW("flow"),
     OUTBOUND("outbound");
 
     private String value;
@@ -570,11 +569,11 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = UsedRoutingTypesEnumDeserializer.class)
   public enum UsedRoutingTypesEnum {
+    BULLSEYE("Bullseye"),
+    LAST("Last"),
+    MANUAL("Manual"),
     PREDICTIVE("Predictive"),
     PREFERRED("Preferred"),
-    MANUAL("Manual"),
-    LAST("Last"),
-    BULLSEYE("Bullseye"),
     STANDARD("Standard");
 
     private String value;
@@ -621,11 +620,11 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = RequestedRoutingTypesEnumDeserializer.class)
   public enum RequestedRoutingTypesEnum {
+    BULLSEYE("Bullseye"),
+    LAST("Last"),
+    MANUAL("Manual"),
     PREDICTIVE("Predictive"),
     PREFERRED("Preferred"),
-    MANUAL("Manual"),
-    LAST("Last"),
-    BULLSEYE("Bullseye"),
     STANDARD("Standard");
 
     private String value;
@@ -906,55 +905,11 @@ public class ViewFilter  implements Serializable {
   }
   private List<DevelopmentStatusListEnum> developmentStatusList = new ArrayList<DevelopmentStatusListEnum>();
   private List<String> developmentModuleIds = new ArrayList<String>();
-
-  private static class DevelopmentKeyTypeEnumDeserializer extends StdDeserializer<DevelopmentKeyTypeEnum> {
-    public DevelopmentKeyTypeEnumDeserializer() {
-      super(DevelopmentKeyTypeEnumDeserializer.class);
-    }
-
-    @Override
-    public DevelopmentKeyTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
-            throws IOException {
-      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
-      return DevelopmentKeyTypeEnum.fromString(node.toString().replace("\"", ""));
-    }
-  }
-  /**
-   * Represents due or completed to filter agent development view
-   */
- @JsonDeserialize(using = DevelopmentKeyTypeEnumDeserializer.class)
-  public enum DevelopmentKeyTypeEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    DUE("Due"),
-    COMPLETED("Completed");
-
-    private String value;
-
-    DevelopmentKeyTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static DevelopmentKeyTypeEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (DevelopmentKeyTypeEnum value : DevelopmentKeyTypeEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return DevelopmentKeyTypeEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private DevelopmentKeyTypeEnum developmentKeyType = null;
   private Boolean developmentActivityOverdue = null;
+  private NumericRange customerSentimentScore = null;
+  private NumericRange customerSentimentTrend = null;
+  private List<String> flowTransferTargets = new ArrayList<String>();
+  private String developmentName = null;
 
   
   /**
@@ -2704,24 +2659,6 @@ public class ViewFilter  implements Serializable {
 
   
   /**
-   * Represents due or completed to filter agent development view
-   **/
-  public ViewFilter developmentKeyType(DevelopmentKeyTypeEnum developmentKeyType) {
-    this.developmentKeyType = developmentKeyType;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Represents due or completed to filter agent development view")
-  @JsonProperty("developmentKeyType")
-  public DevelopmentKeyTypeEnum getDevelopmentKeyType() {
-    return developmentKeyType;
-  }
-  public void setDevelopmentKeyType(DevelopmentKeyTypeEnum developmentKeyType) {
-    this.developmentKeyType = developmentKeyType;
-  }
-
-  
-  /**
    * Indicates filtering for development activities
    **/
   public ViewFilter developmentActivityOverdue(Boolean developmentActivityOverdue) {
@@ -2736,6 +2673,78 @@ public class ViewFilter  implements Serializable {
   }
   public void setDevelopmentActivityOverdue(Boolean developmentActivityOverdue) {
     this.developmentActivityOverdue = developmentActivityOverdue;
+  }
+
+  
+  /**
+   * The customer sentiment score used to filter the view
+   **/
+  public ViewFilter customerSentimentScore(NumericRange customerSentimentScore) {
+    this.customerSentimentScore = customerSentimentScore;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The customer sentiment score used to filter the view")
+  @JsonProperty("customerSentimentScore")
+  public NumericRange getCustomerSentimentScore() {
+    return customerSentimentScore;
+  }
+  public void setCustomerSentimentScore(NumericRange customerSentimentScore) {
+    this.customerSentimentScore = customerSentimentScore;
+  }
+
+  
+  /**
+   * The customer sentiment trend used to filter the view
+   **/
+  public ViewFilter customerSentimentTrend(NumericRange customerSentimentTrend) {
+    this.customerSentimentTrend = customerSentimentTrend;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The customer sentiment trend used to filter the view")
+  @JsonProperty("customerSentimentTrend")
+  public NumericRange getCustomerSentimentTrend() {
+    return customerSentimentTrend;
+  }
+  public void setCustomerSentimentTrend(NumericRange customerSentimentTrend) {
+    this.customerSentimentTrend = customerSentimentTrend;
+  }
+
+  
+  /**
+   * The list of transfer targets used to filter flow data
+   **/
+  public ViewFilter flowTransferTargets(List<String> flowTransferTargets) {
+    this.flowTransferTargets = flowTransferTargets;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of transfer targets used to filter flow data")
+  @JsonProperty("flowTransferTargets")
+  public List<String> getFlowTransferTargets() {
+    return flowTransferTargets;
+  }
+  public void setFlowTransferTargets(List<String> flowTransferTargets) {
+    this.flowTransferTargets = flowTransferTargets;
+  }
+
+  
+  /**
+   * Filter for development name
+   **/
+  public ViewFilter developmentName(String developmentName) {
+    this.developmentName = developmentName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Filter for development name")
+  @JsonProperty("developmentName")
+  public String getDevelopmentName() {
+    return developmentName;
+  }
+  public void setDevelopmentName(String developmentName) {
+    this.developmentName = developmentName;
   }
 
   
@@ -2846,13 +2855,16 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.developmentTypeList, viewFilter.developmentTypeList) &&
         Objects.equals(this.developmentStatusList, viewFilter.developmentStatusList) &&
         Objects.equals(this.developmentModuleIds, viewFilter.developmentModuleIds) &&
-        Objects.equals(this.developmentKeyType, viewFilter.developmentKeyType) &&
-        Objects.equals(this.developmentActivityOverdue, viewFilter.developmentActivityOverdue);
+        Objects.equals(this.developmentActivityOverdue, viewFilter.developmentActivityOverdue) &&
+        Objects.equals(this.customerSentimentScore, viewFilter.customerSentimentScore) &&
+        Objects.equals(this.customerSentimentTrend, viewFilter.customerSentimentTrend) &&
+        Objects.equals(this.flowTransferTargets, viewFilter.flowTransferTargets) &&
+        Objects.equals(this.developmentName, viewFilter.developmentName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentKeyType, developmentActivityOverdue);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName);
   }
 
   @Override
@@ -2957,8 +2969,11 @@ public class ViewFilter  implements Serializable {
     sb.append("    developmentTypeList: ").append(toIndentedString(developmentTypeList)).append("\n");
     sb.append("    developmentStatusList: ").append(toIndentedString(developmentStatusList)).append("\n");
     sb.append("    developmentModuleIds: ").append(toIndentedString(developmentModuleIds)).append("\n");
-    sb.append("    developmentKeyType: ").append(toIndentedString(developmentKeyType)).append("\n");
     sb.append("    developmentActivityOverdue: ").append(toIndentedString(developmentActivityOverdue)).append("\n");
+    sb.append("    customerSentimentScore: ").append(toIndentedString(customerSentimentScore)).append("\n");
+    sb.append("    customerSentimentTrend: ").append(toIndentedString(customerSentimentTrend)).append("\n");
+    sb.append("    flowTransferTargets: ").append(toIndentedString(flowTransferTargets)).append("\n");
+    sb.append("    developmentName: ").append(toIndentedString(developmentName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -57,6 +57,7 @@ public class AuditLogMessage  implements Serializable {
     ARCHITECT("Architect"),
     CONTACTCENTER("ContactCenter"),
     CONTENTMANAGEMENT("ContentManagement"),
+    INTEGRATIONS("Integrations"),
     PEOPLEPERMISSIONS("PeoplePermissions"),
     PRESENCE("Presence"),
     QUALITY("Quality"),
@@ -275,7 +276,8 @@ public class AuditLogMessage  implements Serializable {
     SPEECHTEXTANALYTICSSETTINGS("SpeechTextAnalyticsSettings"),
     PREDICTOR("Predictor"),
     WORKPLAN("WorkPlan"),
-    SENTIMENTFEEDBACK("SentimentFeedback");
+    SENTIMENTFEEDBACK("SentimentFeedback"),
+    INTEGRATION("Integration");
 
     private String value;
 

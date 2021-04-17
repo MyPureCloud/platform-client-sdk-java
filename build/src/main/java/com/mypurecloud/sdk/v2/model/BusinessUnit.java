@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BusinessUnitSettings;
-import com.mypurecloud.sdk.v2.model.Division;
+import com.mypurecloud.sdk.v2.model.DivisionReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -24,8 +24,8 @@ public class BusinessUnit  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private Division division = null;
   private BusinessUnitSettings settings = null;
+  private DivisionReference division = null;
   private String selfUri = null;
 
   
@@ -54,24 +54,6 @@ public class BusinessUnit  implements Serializable {
 
   
   /**
-   * The division to which this entity belongs.
-   **/
-  public BusinessUnit division(Division division) {
-    this.division = division;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
-  @JsonProperty("division")
-  public Division getDivision() {
-    return division;
-  }
-  public void setDivision(Division division) {
-    this.division = division;
-  }
-
-  
-  /**
    * Settings for this business unit
    **/
   public BusinessUnit settings(BusinessUnitSettings settings) {
@@ -86,6 +68,24 @@ public class BusinessUnit  implements Serializable {
   }
   public void setSettings(BusinessUnitSettings settings) {
     this.settings = settings;
+  }
+
+  
+  /**
+   * The division to which this entity belongs.
+   **/
+  public BusinessUnit division(DivisionReference division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public DivisionReference getDivision() {
+    return division;
+  }
+  public void setDivision(DivisionReference division) {
+    this.division = division;
   }
 
   
@@ -108,14 +108,14 @@ public class BusinessUnit  implements Serializable {
     BusinessUnit businessUnit = (BusinessUnit) o;
     return Objects.equals(this.id, businessUnit.id) &&
         Objects.equals(this.name, businessUnit.name) &&
-        Objects.equals(this.division, businessUnit.division) &&
         Objects.equals(this.settings, businessUnit.settings) &&
+        Objects.equals(this.division, businessUnit.division) &&
         Objects.equals(this.selfUri, businessUnit.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, settings, selfUri);
+    return Objects.hash(id, name, settings, division, selfUri);
   }
 
   @Override
@@ -125,8 +125,8 @@ public class BusinessUnit  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

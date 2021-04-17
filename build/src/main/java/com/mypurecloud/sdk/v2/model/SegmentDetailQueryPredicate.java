@@ -94,6 +94,7 @@ public class SegmentDetailQueryPredicate  implements Serializable {
     ADDRESSTO("addressTo"),
     AGENTASSISTANTID("agentAssistantId"),
     ANI("ani"),
+    AUTHENTICATED("authenticated"),
     CALLBACKNUMBER("callbackNumber"),
     CALLBACKSCHEDULEDTIME("callbackScheduledTime"),
     CONFERENCE("conference"),

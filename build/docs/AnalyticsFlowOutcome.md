@@ -8,11 +8,11 @@ title: AnalyticsFlowOutcome
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **flowOutcomeId** | <!----><!---->**String**<!----> | Unique identifiers of a flow outcome |  [optional] |
+| **flowOutcome** | <!----><!---->**String**<!----> | Combination of unique flow outcome identifier and its value separated by colon |  [optional] |
+| **flowOutcomeEndTimestamp** | <!----><!---->[**Date**](Date.html)<!----> | The outcome ending timestamp in ISO 8601 format. This may be null if the outcome did not succeed. |  [optional] |
+| **flowOutcomeId** | <!----><!---->**String**<!----> | Unique identifier of a flow outcome |  [optional] |
+| **flowOutcomeStartTimestamp** | <!----><!---->[**Date**](Date.html)<!----> | The outcome starting timestamp in ISO 8601 format |  [optional] |
 | **flowOutcomeValue** | <!----><!---->**String**<!----> | Flow outcome value, e.g. SUCCESS |  [optional] |
-| **flowOutcome** | <!----><!---->**String**<!----> | Colon-separated combinations of unique flow outcome identifier and value |  [optional] |
-| **flowOutcomeStartTimestamp** | <!----><!---->[**Date**](Date.html)<!----> | Date/time the outcome started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **flowOutcomeEndTimestamp** | <!----><!---->[**Date**](Date.html)<!----> | Date/time the outcome ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 {: class="table table-striped"}
 
 

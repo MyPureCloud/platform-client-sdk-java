@@ -505,7 +505,7 @@ try {
 
 
 
-> [DocumentListing](DocumentListing.html) getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title)
+> [DocumentListing](DocumentListing.html) getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title, documentIds)
 
 Get documents
 
@@ -547,8 +547,9 @@ String limit = "limit_example"; // String | Number of entities to return. Maximu
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
 String categories = "categories_example"; // String | Filter by categories ids, comma separated values expected.
 String title = "title_example"; // String | Filter by document title.
+List<String> documentIds = Arrays.asList("documentIds_example"); // List<String> | Comma-separated list of document identifiers to fetch by.
 try {
-    DocumentListing result = apiInstance.getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title);
+    DocumentListing result = apiInstance.getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title, documentIds);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseLanguageDocuments");
@@ -569,6 +570,7 @@ try {
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
 | **categories** | **String**| Filter by categories ids, comma separated values expected. | [optional] 
 | **title** | **String**| Filter by document title. | [optional] 
+| **documentIds** | [**List&lt;String&gt;**](String.html)| Comma-separated list of document identifiers to fetch by. | [optional] 
 {: class="table-striped"}
 
 

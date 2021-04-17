@@ -61,6 +61,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAuthorizationRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationRolesDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectBulkaddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectBulkremoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectBulkreplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationSubjectDivisionRoleRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAuthorizationDivisionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAuthorizationRoleRequest;
@@ -2690,6 +2691,90 @@ public class AuthorizationApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> postAuthorizationSubjectBulkremove(ApiRequest<RoleDivisionGrants> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Replace subject&#39;s roles and divisions with the exact list supplied in the request.
+   * This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
+   * @param subjectId Subject ID (user or group) (required)
+   * @param body Pairs of role and division IDs (required)
+   * @param subjectType what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (optional, default to PC_USER)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postAuthorizationSubjectBulkreplace(String subjectId, RoleDivisionGrants body, String subjectType) throws IOException, ApiException {
+     postAuthorizationSubjectBulkreplace(createPostAuthorizationSubjectBulkreplaceRequest(subjectId, body, subjectType));
+  }
+
+  /**
+   * Replace subject&#39;s roles and divisions with the exact list supplied in the request.
+   * This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
+   * @param subjectId Subject ID (user or group) (required)
+   * @param body Pairs of role and division IDs (required)
+   * @param subjectType what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (optional, default to PC_USER)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postAuthorizationSubjectBulkreplaceWithHttpInfo(String subjectId, RoleDivisionGrants body, String subjectType) throws IOException {
+    return postAuthorizationSubjectBulkreplace(createPostAuthorizationSubjectBulkreplaceRequest(subjectId, body, subjectType).withHttpInfo());
+  }
+
+  private PostAuthorizationSubjectBulkreplaceRequest createPostAuthorizationSubjectBulkreplaceRequest(String subjectId, RoleDivisionGrants body, String subjectType) {
+    return PostAuthorizationSubjectBulkreplaceRequest.builder()
+            .withSubjectId(subjectId)
+    
+            .withBody(body)
+    
+            .withSubjectType(subjectType)
+    
+            .build();
+  }
+
+  /**
+   * Replace subject&#39;s roles and divisions with the exact list supplied in the request.
+   * This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postAuthorizationSubjectBulkreplace(PostAuthorizationSubjectBulkreplaceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Replace subject&#39;s roles and divisions with the exact list supplied in the request.
+   * This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postAuthorizationSubjectBulkreplace(ApiRequest<RoleDivisionGrants> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }

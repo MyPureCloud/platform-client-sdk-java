@@ -3581,7 +3581,7 @@ try {
 
 
 
-> [QueueMember](QueueMember.html) patchRoutingQueueMember(queueId, memberId, body)
+> Void patchRoutingQueueMember(queueId, memberId, body)
 
 Update the ring number OR joined status for a queue member.
 
@@ -3620,8 +3620,7 @@ String queueId = "queueId_example"; // String | Queue ID
 String memberId = "memberId_example"; // String | Member ID
 QueueMember body = new QueueMember(); // QueueMember | Queue Member
 try {
-    QueueMember result = apiInstance.patchRoutingQueueMember(queueId, memberId, body);
-    System.out.println(result);
+    apiInstance.patchRoutingQueueMember(queueId, memberId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#patchRoutingQueueMember");
     e.printStackTrace();
@@ -3641,7 +3640,7 @@ try {
 
 ### Return type
 
-[**QueueMember**](QueueMember.html)
+null (empty response body)
 
 <a name="patchRoutingQueueMembers"></a>
 
@@ -3715,7 +3714,7 @@ try {
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-> [QueueMember](QueueMember.html) patchRoutingQueueUser(queueId, memberId, body)
+> Void patchRoutingQueueUser(queueId, memberId, body)
 
 DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
 
@@ -3754,8 +3753,7 @@ String queueId = "queueId_example"; // String | Queue ID
 String memberId = "memberId_example"; // String | Member ID
 QueueMember body = new QueueMember(); // QueueMember | Queue Member
 try {
-    QueueMember result = apiInstance.patchRoutingQueueUser(queueId, memberId, body);
-    System.out.println(result);
+    apiInstance.patchRoutingQueueUser(queueId, memberId, body);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#patchRoutingQueueUser");
     e.printStackTrace();
@@ -3775,7 +3773,7 @@ try {
 
 ### Return type
 
-[**QueueMember**](QueueMember.html)
+null (empty response body)
 
 <a name="patchRoutingQueueUsers"></a>
 

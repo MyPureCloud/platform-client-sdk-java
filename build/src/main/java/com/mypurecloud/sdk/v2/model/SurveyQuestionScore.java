@@ -64,13 +64,14 @@ public class SurveyQuestionScore  implements Serializable {
 
   
   /**
+   * Unweighted score of the question
    **/
   public SurveyQuestionScore score(Integer score) {
     this.score = score;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Unweighted score of the question")
   @JsonProperty("score")
   public Integer getScore() {
     return score;

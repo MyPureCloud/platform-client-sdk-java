@@ -24,72 +24,6 @@ import java.io.Serializable;
 
 public class AnalyticsParticipantWithoutAttributes  implements Serializable {
   
-  private String participantId = null;
-  private String participantName = null;
-  private String userId = null;
-
-  private static class PurposeEnumDeserializer extends StdDeserializer<PurposeEnum> {
-    public PurposeEnumDeserializer() {
-      super(PurposeEnumDeserializer.class);
-    }
-
-    @Override
-    public PurposeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
-            throws IOException {
-      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
-      return PurposeEnum.fromString(node.toString().replace("\"", ""));
-    }
-  }
-  /**
-   * The participant's purpose
-   */
- @JsonDeserialize(using = PurposeEnumDeserializer.class)
-  public enum PurposeEnum {
-    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    MANUAL("manual"),
-    DIALER("dialer"),
-    INBOUND("inbound"),
-    ACD("acd"),
-    IVR("ivr"),
-    VOICEMAIL("voicemail"),
-    OUTBOUND("outbound"),
-    AGENT("agent"),
-    USER("user"),
-    STATION("station"),
-    GROUP("group"),
-    CUSTOMER("customer"),
-    EXTERNAL("external"),
-    FAX("fax"),
-    WORKFLOW("workflow"),
-    CAMPAIGN("campaign"),
-    API("api");
-
-    private String value;
-
-    PurposeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonCreator
-    public static PurposeEnum fromString(String key) {
-      if (key == null) return null;
-
-      for (PurposeEnum value : PurposeEnum.values()) {
-        if (key.equalsIgnoreCase(value.toString())) {
-          return value;
-        }
-      }
-
-      return PurposeEnum.values()[0];
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-  private PurposeEnum purpose = null;
   private String externalContactId = null;
   private String externalOrganizationId = null;
 
@@ -139,8 +73,128 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
     }
   }
   private FlaggedReasonEnum flaggedReason = null;
+  private String participantId = null;
+  private String participantName = null;
+
+  private static class PurposeEnumDeserializer extends StdDeserializer<PurposeEnum> {
+    public PurposeEnumDeserializer() {
+      super(PurposeEnumDeserializer.class);
+    }
+
+    @Override
+    public PurposeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return PurposeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The participant's purpose
+   */
+ @JsonDeserialize(using = PurposeEnumDeserializer.class)
+  public enum PurposeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ACD("acd"),
+    AGENT("agent"),
+    API("api"),
+    CAMPAIGN("campaign"),
+    CUSTOMER("customer"),
+    DIALER("dialer"),
+    EXTERNAL("external"),
+    FAX("fax"),
+    GROUP("group"),
+    INBOUND("inbound"),
+    IVR("ivr"),
+    MANUAL("manual"),
+    OUTBOUND("outbound"),
+    STATION("station"),
+    USER("user"),
+    VOICEMAIL("voicemail"),
+    WORKFLOW("workflow");
+
+    private String value;
+
+    PurposeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static PurposeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (PurposeEnum value : PurposeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return PurposeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private PurposeEnum purpose = null;
   private String teamId = null;
+  private String userId = null;
   private List<AnalyticsSession> sessions = new ArrayList<AnalyticsSession>();
+
+  
+  /**
+   * External contact identifier
+   **/
+  public AnalyticsParticipantWithoutAttributes externalContactId(String externalContactId) {
+    this.externalContactId = externalContactId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "External contact identifier")
+  @JsonProperty("externalContactId")
+  public String getExternalContactId() {
+    return externalContactId;
+  }
+  public void setExternalContactId(String externalContactId) {
+    this.externalContactId = externalContactId;
+  }
+
+  
+  /**
+   * External organization identifier
+   **/
+  public AnalyticsParticipantWithoutAttributes externalOrganizationId(String externalOrganizationId) {
+    this.externalOrganizationId = externalOrganizationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "External organization identifier")
+  @JsonProperty("externalOrganizationId")
+  public String getExternalOrganizationId() {
+    return externalOrganizationId;
+  }
+  public void setExternalOrganizationId(String externalOrganizationId) {
+    this.externalOrganizationId = externalOrganizationId;
+  }
+
+  
+  /**
+   * Reason for which participant flagged conversation
+   **/
+  public AnalyticsParticipantWithoutAttributes flaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Reason for which participant flagged conversation")
+  @JsonProperty("flaggedReason")
+  public FlaggedReasonEnum getFlaggedReason() {
+    return flaggedReason;
+  }
+  public void setFlaggedReason(FlaggedReasonEnum flaggedReason) {
+    this.flaggedReason = flaggedReason;
+  }
 
   
   /**
@@ -180,24 +234,6 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
 
   
   /**
-   * If a user, then this will be the unique identifier for the user
-   **/
-  public AnalyticsParticipantWithoutAttributes userId(String userId) {
-    this.userId = userId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "If a user, then this will be the unique identifier for the user")
-  @JsonProperty("userId")
-  public String getUserId() {
-    return userId;
-  }
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
-
-  
-  /**
    * The participant's purpose
    **/
   public AnalyticsParticipantWithoutAttributes purpose(PurposeEnum purpose) {
@@ -216,74 +252,38 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
 
   
   /**
-   * External Contact Identifier
-   **/
-  public AnalyticsParticipantWithoutAttributes externalContactId(String externalContactId) {
-    this.externalContactId = externalContactId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "External Contact Identifier")
-  @JsonProperty("externalContactId")
-  public String getExternalContactId() {
-    return externalContactId;
-  }
-  public void setExternalContactId(String externalContactId) {
-    this.externalContactId = externalContactId;
-  }
-
-  
-  /**
-   * External Organization Identifier
-   **/
-  public AnalyticsParticipantWithoutAttributes externalOrganizationId(String externalOrganizationId) {
-    this.externalOrganizationId = externalOrganizationId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "External Organization Identifier")
-  @JsonProperty("externalOrganizationId")
-  public String getExternalOrganizationId() {
-    return externalOrganizationId;
-  }
-  public void setExternalOrganizationId(String externalOrganizationId) {
-    this.externalOrganizationId = externalOrganizationId;
-  }
-
-  
-  /**
-   * Reason for which participant flagged conversation
-   **/
-  public AnalyticsParticipantWithoutAttributes flaggedReason(FlaggedReasonEnum flaggedReason) {
-    this.flaggedReason = flaggedReason;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Reason for which participant flagged conversation")
-  @JsonProperty("flaggedReason")
-  public FlaggedReasonEnum getFlaggedReason() {
-    return flaggedReason;
-  }
-  public void setFlaggedReason(FlaggedReasonEnum flaggedReason) {
-    this.flaggedReason = flaggedReason;
-  }
-
-  
-  /**
-   * The team id the user is a member of
+   * The team ID the user is a member of
    **/
   public AnalyticsParticipantWithoutAttributes teamId(String teamId) {
     this.teamId = teamId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The team id the user is a member of")
+  @ApiModelProperty(example = "null", value = "The team ID the user is a member of")
   @JsonProperty("teamId")
   public String getTeamId() {
     return teamId;
   }
   public void setTeamId(String teamId) {
     this.teamId = teamId;
+  }
+
+  
+  /**
+   * Unique identifier for the user
+   **/
+  public AnalyticsParticipantWithoutAttributes userId(String userId) {
+    this.userId = userId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Unique identifier for the user")
+  @JsonProperty("userId")
+  public String getUserId() {
+    return userId;
+  }
+  public void setUserId(String userId) {
+    this.userId = userId;
   }
 
   
@@ -315,20 +315,20 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
       return false;
     }
     AnalyticsParticipantWithoutAttributes analyticsParticipantWithoutAttributes = (AnalyticsParticipantWithoutAttributes) o;
-    return Objects.equals(this.participantId, analyticsParticipantWithoutAttributes.participantId) &&
-        Objects.equals(this.participantName, analyticsParticipantWithoutAttributes.participantName) &&
-        Objects.equals(this.userId, analyticsParticipantWithoutAttributes.userId) &&
-        Objects.equals(this.purpose, analyticsParticipantWithoutAttributes.purpose) &&
-        Objects.equals(this.externalContactId, analyticsParticipantWithoutAttributes.externalContactId) &&
+    return Objects.equals(this.externalContactId, analyticsParticipantWithoutAttributes.externalContactId) &&
         Objects.equals(this.externalOrganizationId, analyticsParticipantWithoutAttributes.externalOrganizationId) &&
         Objects.equals(this.flaggedReason, analyticsParticipantWithoutAttributes.flaggedReason) &&
+        Objects.equals(this.participantId, analyticsParticipantWithoutAttributes.participantId) &&
+        Objects.equals(this.participantName, analyticsParticipantWithoutAttributes.participantName) &&
+        Objects.equals(this.purpose, analyticsParticipantWithoutAttributes.purpose) &&
         Objects.equals(this.teamId, analyticsParticipantWithoutAttributes.teamId) &&
+        Objects.equals(this.userId, analyticsParticipantWithoutAttributes.userId) &&
         Objects.equals(this.sessions, analyticsParticipantWithoutAttributes.sessions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(participantId, participantName, userId, purpose, externalContactId, externalOrganizationId, flaggedReason, teamId, sessions);
+    return Objects.hash(externalContactId, externalOrganizationId, flaggedReason, participantId, participantName, purpose, teamId, userId, sessions);
   }
 
   @Override
@@ -336,14 +336,14 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class AnalyticsParticipantWithoutAttributes {\n");
     
-    sb.append("    participantId: ").append(toIndentedString(participantId)).append("\n");
-    sb.append("    participantName: ").append(toIndentedString(participantName)).append("\n");
-    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-    sb.append("    purpose: ").append(toIndentedString(purpose)).append("\n");
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("    externalOrganizationId: ").append(toIndentedString(externalOrganizationId)).append("\n");
     sb.append("    flaggedReason: ").append(toIndentedString(flaggedReason)).append("\n");
+    sb.append("    participantId: ").append(toIndentedString(participantId)).append("\n");
+    sb.append("    participantName: ").append(toIndentedString(participantName)).append("\n");
+    sb.append("    purpose: ").append(toIndentedString(purpose)).append("\n");
     sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
+    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    sessions: ").append(toIndentedString(sessions)).append("\n");
     sb.append("}");
     return sb.toString();

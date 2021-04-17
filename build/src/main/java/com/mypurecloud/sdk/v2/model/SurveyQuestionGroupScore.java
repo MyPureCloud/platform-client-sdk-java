@@ -48,13 +48,14 @@ public class SurveyQuestionGroupScore  implements Serializable {
 
   
   /**
+   * Score of all questions in the group
    **/
   public SurveyQuestionGroupScore totalScore(Float totalScore) {
     this.totalScore = totalScore;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Score of all questions in the group")
   @JsonProperty("totalScore")
   public Float getTotalScore() {
     return totalScore;
@@ -65,13 +66,14 @@ public class SurveyQuestionGroupScore  implements Serializable {
 
   
   /**
+   * Maximum possible score of all questions in the group
    **/
   public SurveyQuestionGroupScore maxTotalScore(Float maxTotalScore) {
     this.maxTotalScore = maxTotalScore;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Maximum possible score of all questions in the group")
   @JsonProperty("maxTotalScore")
   public Float getMaxTotalScore() {
     return maxTotalScore;

@@ -106,11 +106,11 @@ public class ObservationValue  implements Serializable {
    */
  @JsonDeserialize(using = RequestedRoutingsEnumDeserializer.class)
   public enum RequestedRoutingsEnum {
+    BULLSEYE("Bullseye"),
+    LAST("Last"),
+    MANUAL("Manual"),
     PREDICTIVE("Predictive"),
     PREFERRED("Preferred"),
-    MANUAL("Manual"),
-    LAST("Last"),
-    BULLSEYE("Bullseye"),
     STANDARD("Standard");
 
     private String value;
@@ -158,11 +158,11 @@ public class ObservationValue  implements Serializable {
  @JsonDeserialize(using = UsedRoutingEnumDeserializer.class)
   public enum UsedRoutingEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    BULLSEYE("Bullseye"),
+    LAST("Last"),
+    MANUAL("Manual"),
     PREDICTIVE("Predictive"),
     PREFERRED("Preferred"),
-    MANUAL("Manual"),
-    LAST("Last"),
-    BULLSEYE("Bullseye"),
     STANDARD("Standard");
 
     private String value;

@@ -43,6 +43,7 @@ title: SegmentDetailQueryPredicate
 | ADDRESSTO | &quot;addressTo&quot; |
 | AGENTASSISTANTID | &quot;agentAssistantId&quot; |
 | ANI | &quot;ani&quot; |
+| AUTHENTICATED | &quot;authenticated&quot; |
 | CALLBACKNUMBER | &quot;callbackNumber&quot; |
 | CALLBACKSCHEDULEDTIME | &quot;callbackScheduledTime&quot; |
 | CONFERENCE | &quot;conference&quot; |

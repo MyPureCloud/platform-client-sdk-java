@@ -8,104 +8,72 @@ title: AnalyticsSession
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> | The session media type |  [optional] |
-| **sessionId** | <!----><!---->**String**<!----> | The unique identifier of this session |  [optional] |
-| **addressOther** | <!----><!---->**String**<!----> |  |  [optional] |
-| **addressSelf** | <!----><!---->**String**<!----> |  |  [optional] |
-| **addressFrom** | <!----><!---->**String**<!----> |  |  [optional] |
-| **addressTo** | <!----><!---->**String**<!----> |  |  [optional] |
-| **messageType** | [**MessageTypeEnum**](#MessageTypeEnum)<!----> | Message type for messaging services such as sms |  [optional] |
+| **activeSkillIds** | <!----><!---->**List&lt;String&gt;**<!----> | ID(s) of Skill(s) that are active on the conversation |  [optional] |
+| **acwSkipped** | <!----><!---->**Boolean**<!----> | Marker for an agent that skipped after call work |  [optional] |
+| **addressFrom** | <!----><!---->**String**<!----> | The address that initiated an action |  [optional] |
+| **addressOther** | <!----><!---->**String**<!----> | The email address for the participant on the other side of the email conversation |  [optional] |
+| **addressSelf** | <!----><!---->**String**<!----> | The email address for the participant on this side of the email conversation |  [optional] |
+| **addressTo** | <!----><!---->**String**<!----> | The address receiving an action |  [optional] |
+| **agentAssistantId** | <!----><!---->**String**<!----> | Unique identifier of the active virtual agent assistant |  [optional] |
+| **agentBullseyeRing** | <!----><!---->**Integer**<!----> | Bullseye ring of the targeted agent |  [optional] |
 | **ani** | <!----><!---->**String**<!----> | Automatic Number Identification (caller&#39;s number) |  [optional] |
-| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> | Direction |  [optional] |
+| **assignerId** | <!----><!---->**String**<!----> | ID of the user that manually assigned a conversation |  [optional] |
+| **authenticated** | <!----><!---->**Boolean**<!----> | Flag that indicates that the identity of the customer has been asserted as verified by the provider. |  [optional] |
+| **callbackNumbers** | <!----><!---->**List&lt;String&gt;**<!----> | Callback phone number(s) |  [optional] |
+| **callbackScheduledTime** | <!----><!---->[**Date**](Date.html)<!----> | Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **callbackUserName** | <!----><!---->**String**<!----> | The name of the user requesting a call back |  [optional] |
+| **cobrowseRole** | <!----><!---->**String**<!----> | Describes side of the cobrowse (sharer or viewer) |  [optional] |
+| **cobrowseRoomId** | <!----><!---->**String**<!----> | A unique identifier for a PureCloud cobrowse room |  [optional] |
+| **direction** | [**DirectionEnum**](#DirectionEnum)<!----> | The direction of the communication |  [optional] |
+| **dispositionAnalyzer** | <!----><!---->**String**<!----> | (Dialer) Analyzer (for example speech.person) |  [optional] |
+| **dispositionName** | <!----><!---->**String**<!----> | (Dialer) Result of the analysis (for example disposition.classification.callable.machine) |  [optional] |
 | **dnis** | <!----><!---->**String**<!----> | Dialed number identification service (number dialed by the calling party) |  [optional] |
-| **sessionDnis** | <!----><!---->**String**<!----> | Dialed number for the current session; this can be different from dnis, e.g. if the call was transferred |  [optional] |
+| **edgeId** | <!----><!---->**String**<!----> | Unique identifier of the edge device |  [optional] |
+| **flowInType** | <!----><!---->**String**<!----> | Type of flow in that occurred when entering ACD. |  [optional] |
+| **flowOutType** | <!----><!---->**String**<!----> | Type of flow out that occurred when emitting tFlowOut. |  [optional] |
+| **journeyActionId** | <!----><!---->**String**<!----> | Identifier of the journey action. |  [optional] |
+| **journeyActionMapId** | <!----><!---->**String**<!----> | Identifier of the journey action map that triggered the action. |  [optional] |
+| **journeyActionMapVersion** | <!----><!---->**Integer**<!----> | Version of the journey action map that triggered the action. |  [optional] |
+| **journeyCustomerId** | <!----><!---->**String**<!----> | Primary identifier of the journey customer in the source where the activities originate from. |  [optional] |
+| **journeyCustomerIdType** | <!----><!---->**String**<!----> | Type of primary identifier of the journey customer (e.g. cookie). |  [optional] |
+| **journeyCustomerSessionId** | <!----><!---->**String**<!----> | Unique identifier of the journey session. |  [optional] |
+| **journeyCustomerSessionIdType** | <!----><!---->**String**<!----> | Type or category of journey sessions (e.g. web, ticket, delivery, atm). |  [optional] |
+| **mediaBridgeId** | <!----><!---->**String**<!----> | Media bridge ID for the conference session consistent across all participants |  [optional] |
+| **mediaCount** | <!----><!---->**Integer**<!----> | Count of any media (images, files, etc) included in this session |  [optional] |
+| **mediaType** | [**MediaTypeEnum**](#MediaTypeEnum)<!----> | The session media type |  [optional] |
+| **messageType** | <!----><!---->**String**<!----> | Message type for messaging services. E.g.: sms, facebook, twitter, line |  [optional] |
+| **monitoredParticipantId** | <!----><!---->**String**<!----> | The participantId being monitored (if someone (e.g. an agent) is being monitored, this would be the ID of the participant that was monitored that would correspond to other participantIds present in the conversation) |  [optional] |
 | **outboundCampaignId** | <!----><!---->**String**<!----> | (Dialer) Unique identifier of the outbound campaign |  [optional] |
 | **outboundContactId** | <!----><!---->**String**<!----> | (Dialer) Unique identifier of the contact |  [optional] |
 | **outboundContactListId** | <!----><!---->**String**<!----> | (Dialer) Unique identifier of the contact list that this contact belongs to |  [optional] |
-| **dispositionAnalyzer** | <!----><!---->**String**<!----> | (Dialer) Unique identifier of the contact list that this contact belongs to |  [optional] |
-| **dispositionName** | <!----><!---->**String**<!----> | (Dialer) Result of the analysis |  [optional] |
-| **edgeId** | <!----><!---->**String**<!----> | Unique identifier of the edge device |  [optional] |
-| **remoteNameDisplayable** | <!----><!---->**String**<!----> |  |  [optional] |
-| **roomId** | <!----><!---->**String**<!----> | Unique identifier for the room |  [optional] |
-| **monitoredParticipantId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **callbackUserName** | <!----><!---->**String**<!----> | The name of the user requesting a call back |  [optional] |
-| **callbackNumbers** | <!----><!---->**List&lt;String&gt;**<!----> | List of numbers to callback |  [optional] |
-| **callbackScheduledTime** | <!----><!---->[**Date**](Date.html)<!----> | Scheduled callback date/time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
-| **scriptId** | <!----><!---->**String**<!----> | A unique identifier for a script |  [optional] |
-| **peerId** | <!----><!---->**String**<!----> | A unique identifier for a peer |  [optional] |
-| **skipEnabled** | <!----><!---->**Boolean**<!----> | (Dialer) Whether the agent can skip the dialer contact |  [optional] |
-| **timeoutSeconds** | <!----><!---->**Integer**<!----> | The number of seconds before PureCloud begins the call for a call back. 0 disables automatic calling |  [optional] |
-| **cobrowseRole** | <!----><!---->**String**<!----> | Describe side of the cobrowse (sharer or viewer) |  [optional] |
-| **cobrowseRoomId** | <!----><!---->**String**<!----> | A unique identifier for a PureCloud Cobrowse room. |  [optional] |
-| **mediaBridgeId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **screenShareAddressSelf** | <!----><!---->**String**<!----> | Direct ScreenShare address |  [optional] |
-| **sharingScreen** | <!----><!---->**Boolean**<!----> | Flag determining if screenShare is started or not (true/false) |  [optional] |
-| **screenShareRoomId** | <!----><!---->**String**<!----> | A unique identifier for a PureCloud ScreenShare room. |  [optional] |
-| **videoRoomId** | <!----><!---->**String**<!----> | A unique identifier for a PureCloud video room. |  [optional] |
-| **videoAddressSelf** | <!----><!---->**String**<!----> | Direct Video address |  [optional] |
-| **segments** | <!----><!---->[**List&lt;AnalyticsConversationSegment&gt;**](AnalyticsConversationSegment.html)<!----> | List of segments for this session |  [optional] |
-| **metrics** | <!----><!---->[**List&lt;AnalyticsSessionMetric&gt;**](AnalyticsSessionMetric.html)<!----> | List of metrics for this session |  [optional] |
-| **flow** | <!----><!---->[**AnalyticsFlow**](AnalyticsFlow.html)<!----> | IVR flow execution associated with this session |  [optional] |
-| **mediaEndpointStats** | <!----><!---->[**List&lt;AnalyticsMediaEndpointStat&gt;**](AnalyticsMediaEndpointStat.html)<!----> | Media endpoint stats associated with this session |  [optional] |
-| **recording** | <!----><!---->**Boolean**<!----> | Flag determining if an audio recording was started or not |  [optional] |
-| **journeyCustomerId** | <!----><!---->**String**<!----> | ID of the journey customer |  [optional] |
-| **journeyCustomerIdType** | <!----><!---->**String**<!----> | Type of the journey customer ID |  [optional] |
-| **journeyCustomerSessionId** | <!----><!---->**String**<!----> | ID of the journey customer session |  [optional] |
-| **journeyCustomerSessionIdType** | <!----><!---->**String**<!----> | Type of the journey customer session ID |  [optional] |
-| **journeyActionId** | <!----><!---->**String**<!----> | Journey action ID |  [optional] |
-| **journeyActionMapId** | <!----><!---->**String**<!----> | Journey action map ID |  [optional] |
-| **journeyActionMapVersion** | <!----><!---->**String**<!----> | Journey action map version |  [optional] |
+| **peerId** | <!----><!---->**String**<!----> | This identifies pairs of related sessions on a conversation. E.g. an external session’s peerId will be the session that the call originally connected to, e.g. if an IVR was dialed, the IVR session, which will also have the external session’s ID as its peer. After that point, any transfers of that session to other internal components (acd, agent, etc.) will all spawn new sessions whose peerIds point back to that original external session. |  [optional] |
 | **protocolCallId** | <!----><!---->**String**<!----> | The original voice protocol call ID, e.g. a SIP call ID |  [optional] |
-| **provider** | <!----><!---->**String**<!----> | The source provider for the communication |  [optional] |
+| **provider** | <!----><!---->**String**<!----> | The source provider for the communication. |  [optional] |
+| **recording** | <!----><!---->**Boolean**<!----> | Flag determining if an audio recording was started or not |  [optional] |
 | **remote** | <!----><!---->**String**<!----> | Name, phone number, or email address of the remote party. |  [optional] |
-| **mediaCount** | <!----><!---->**Integer**<!----> | Count of any media (images, files, etc) included in this session |  [optional] |
-| **flowInType** | <!----><!---->**String**<!----> | Type of flow in that occurred, e.g. acd, ivr, etc. |  [optional] |
-| **flowOutType** | <!----><!---->**String**<!----> | Type of flow out that occurred, e.g. voicemail, callback, or acd |  [optional] |
-| **requestedRoutings** | <!---->[**List&lt;RequestedRoutingsEnum&gt;**](#RequestedRoutingsEnum)<!----> | All routing types for requested/attempted routing methods. |  [optional] |
-| **usedRouting** | [**UsedRoutingEnum**](#UsedRoutingEnum)<!----> | Complete routing method |  [optional] |
-| **selectedAgentId** | <!----><!---->**String**<!----> | Selected agent id |  [optional] |
+| **remoteNameDisplayable** | <!----><!---->**String**<!----> | Unique identifier for the remote party |  [optional] |
+| **removedSkillIds** | <!----><!---->**List&lt;String&gt;**<!----> | ID(s) of Skill(s) that have been removed by bullseye routing |  [optional] |
+| **requestedRoutings** | <!---->[**List&lt;RequestedRoutingsEnum&gt;**](#RequestedRoutingsEnum)<!----> | Routing type(s) for requested/attempted routing methods. |  [optional] |
+| **roomId** | <!----><!---->**String**<!----> | Unique identifier for the room |  [optional] |
+| **routingRing** | <!----><!---->**Integer**<!----> | Routing ring for bullseye or preferred agent routing |  [optional] |
+| **screenShareAddressSelf** | <!----><!---->**String**<!----> | Direct ScreenShare address |  [optional] |
+| **screenShareRoomId** | <!----><!---->**String**<!----> | A unique identifier for a PureCloud ScreenShare room |  [optional] |
+| **scriptId** | <!----><!---->**String**<!----> | A unique identifier for a script |  [optional] |
+| **selectedAgentId** | <!----><!---->**String**<!----> | Selected agent ID |  [optional] |
 | **selectedAgentRank** | <!----><!---->**Integer**<!----> | Selected agent GPR rank |  [optional] |
-| **agentAssistantId** | <!----><!---->**String**<!----> | Unique identifier of the active virtual agent assistant |  [optional] |
+| **sessionDnis** | <!----><!---->**String**<!----> | Dialed number for the current session; this can be different from dnis, e.g. if the call was transferred |  [optional] |
+| **sessionId** | <!----><!---->**String**<!----> | The unique identifier of this session |  [optional] |
+| **sharingScreen** | <!----><!---->**Boolean**<!----> | Flag determining if screenShare is started or not (true/false) |  [optional] |
+| **skipEnabled** | <!----><!---->**Boolean**<!----> | (Dialer) Whether the agent can skip the dialer contact |  [optional] |
+| **timeoutSeconds** | <!----><!---->**Integer**<!----> | The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling) |  [optional] |
+| **usedRouting** | [**UsedRoutingEnum**](#UsedRoutingEnum)<!----> | Complete routing method |  [optional] |
+| **videoAddressSelf** | <!----><!---->**String**<!----> | Direct Video address |  [optional] |
+| **videoRoomId** | <!----><!---->**String**<!----> | A unique identifier for a PureCloud video room |  [optional] |
 | **proposedAgents** | <!----><!---->[**List&lt;AnalyticsProposedAgent&gt;**](AnalyticsProposedAgent.html)<!----> | Proposed agents |  [optional] |
-| **assignerId** | <!----><!---->**String**<!----> | ID of the user that manually assigned a conversation |  [optional] |
-| **acwSkipped** | <!----><!---->**Boolean**<!----> | Marker for an agent that skipped after call work |  [optional] |
-| **bullseyeRing** | <!----><!---->**Integer**<!----> | Bullseye ring of the conversation |  [optional] |
-| **agentBullseyeRing** | <!----><!---->**Integer**<!----> | Bullseye ring of the targeted agent |  [optional] |
-| **routingRule** | <!----><!---->**Integer**<!----> | Routing rule the conversation is in for preferred agent routing |  [optional] |
-| **removedSkillIds** | <!----><!---->**List&lt;String&gt;**<!----> | IDs of skills that have been removed by bullseye routing |  [optional] |
-| **activeSkillIds** | <!----><!---->**List&lt;String&gt;**<!----> | IDs of Skills that are active on the conversation |  [optional] |
-{: class="table table-striped"}
-
-
-<a name="MediaTypeEnum"></a>
-
-## Enum: MediaTypeEnum
-
-| Name | Value |
-| ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| VOICE | &quot;voice&quot; |
-| CHAT | &quot;chat&quot; |
-| EMAIL | &quot;email&quot; |
-| CALLBACK | &quot;callback&quot; |
-| COBROWSE | &quot;cobrowse&quot; |
-| VIDEO | &quot;video&quot; |
-| SCREENSHARE | &quot;screenshare&quot; |
-| MESSAGE | &quot;message&quot; |
-{: class="table table-striped"}
-
-
-<a name="MessageTypeEnum"></a>
-
-## Enum: MessageTypeEnum
-
-| Name | Value |
-| ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| SMS | &quot;sms&quot; |
-| FACEBOOK | &quot;facebook&quot; |
-| TWITTER | &quot;twitter&quot; |
-| LINE | &quot;line&quot; |
+| **mediaEndpointStats** | <!----><!---->[**List&lt;AnalyticsMediaEndpointStat&gt;**](AnalyticsMediaEndpointStat.html)<!----> | MediaEndpointStats associated with this session |  [optional] |
+| **flow** | <!----><!---->[**AnalyticsFlow**](AnalyticsFlow.html)<!----> | IVR flow execution associated with this session |  [optional] |
+| **metrics** | <!----><!---->[**List&lt;AnalyticsSessionMetric&gt;**](AnalyticsSessionMetric.html)<!----> | List of metrics for this session |  [optional] |
+| **segments** | <!----><!---->[**List&lt;AnalyticsConversationSegment&gt;**](AnalyticsConversationSegment.html)<!----> | List of segments for this session |  [optional] |
 {: class="table table-striped"}
 
 
@@ -121,17 +89,35 @@ title: AnalyticsSession
 {: class="table table-striped"}
 
 
+<a name="MediaTypeEnum"></a>
+
+## Enum: MediaTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| CALLBACK | &quot;callback&quot; |
+| CHAT | &quot;chat&quot; |
+| COBROWSE | &quot;cobrowse&quot; |
+| EMAIL | &quot;email&quot; |
+| MESSAGE | &quot;message&quot; |
+| SCREENSHARE | &quot;screenshare&quot; |
+| VIDEO | &quot;video&quot; |
+| VOICE | &quot;voice&quot; |
+{: class="table table-striped"}
+
+
 <a name="RequestedRoutingsEnum"></a>
 
 ## Enum: RequestedRoutingsEnum
 
 | Name | Value |
 | ---- | ----- |
+| BULLSEYE | &quot;Bullseye&quot; |
+| LAST | &quot;Last&quot; |
+| MANUAL | &quot;Manual&quot; |
 | PREDICTIVE | &quot;Predictive&quot; |
 | PREFERRED | &quot;Preferred&quot; |
-| MANUAL | &quot;Manual&quot; |
-| LAST | &quot;Last&quot; |
-| BULLSEYE | &quot;Bullseye&quot; |
 | STANDARD | &quot;Standard&quot; |
 {: class="table table-striped"}
 
@@ -143,11 +129,11 @@ title: AnalyticsSession
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| BULLSEYE | &quot;Bullseye&quot; |
+| LAST | &quot;Last&quot; |
+| MANUAL | &quot;Manual&quot; |
 | PREDICTIVE | &quot;Predictive&quot; |
 | PREFERRED | &quot;Preferred&quot; |
-| MANUAL | &quot;Manual&quot; |
-| LAST | &quot;Last&quot; |
-| BULLSEYE | &quot;Bullseye&quot; |
 | STANDARD | &quot;Standard&quot; |
 {: class="table table-striped"}
 

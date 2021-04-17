@@ -115,7 +115,8 @@ public class AuditQueryEntity  implements Serializable {
     SPEECHTEXTANALYTICSSETTINGS("SpeechTextAnalyticsSettings"),
     PREDICTOR("Predictor"),
     WORKPLAN("WorkPlan"),
-    SENTIMENTFEEDBACK("SentimentFeedback");
+    SENTIMENTFEEDBACK("SentimentFeedback"),
+    INTEGRATION("Integration");
 
     private String value;
 

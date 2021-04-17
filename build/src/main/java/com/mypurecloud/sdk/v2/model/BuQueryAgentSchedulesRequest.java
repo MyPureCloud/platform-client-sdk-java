@@ -24,7 +24,6 @@ public class BuQueryAgentSchedulesRequest  implements Serializable {
   
   private String managementUnitId = null;
   private List<String> userIds = new ArrayList<String>();
-  private List<String> teamIds = new ArrayList<String>();
 
   
   /**
@@ -46,38 +45,20 @@ public class BuQueryAgentSchedulesRequest  implements Serializable {
 
   
   /**
-   * The IDs of the users to query.  Omit to query all user schedules in the management unit. Note: If teamIds is also specified, only schedules for users in the requested teams will be returned
+   * The IDs of the users to query.  Omit to query all user schedules in the management unit. 
    **/
   public BuQueryAgentSchedulesRequest userIds(List<String> userIds) {
     this.userIds = userIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The IDs of the users to query.  Omit to query all user schedules in the management unit. Note: If teamIds is also specified, only schedules for users in the requested teams will be returned")
+  @ApiModelProperty(example = "null", value = "The IDs of the users to query.  Omit to query all user schedules in the management unit. ")
   @JsonProperty("userIds")
   public List<String> getUserIds() {
     return userIds;
   }
   public void setUserIds(List<String> userIds) {
     this.userIds = userIds;
-  }
-
-  
-  /**
-   * The teamIds to report on. If null or not set, results will be queried for requested users if applicable or otherwise all users in the management unit
-   **/
-  public BuQueryAgentSchedulesRequest teamIds(List<String> teamIds) {
-    this.teamIds = teamIds;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The teamIds to report on. If null or not set, results will be queried for requested users if applicable or otherwise all users in the management unit")
-  @JsonProperty("teamIds")
-  public List<String> getTeamIds() {
-    return teamIds;
-  }
-  public void setTeamIds(List<String> teamIds) {
-    this.teamIds = teamIds;
   }
 
   
@@ -92,13 +73,12 @@ public class BuQueryAgentSchedulesRequest  implements Serializable {
     }
     BuQueryAgentSchedulesRequest buQueryAgentSchedulesRequest = (BuQueryAgentSchedulesRequest) o;
     return Objects.equals(this.managementUnitId, buQueryAgentSchedulesRequest.managementUnitId) &&
-        Objects.equals(this.userIds, buQueryAgentSchedulesRequest.userIds) &&
-        Objects.equals(this.teamIds, buQueryAgentSchedulesRequest.teamIds);
+        Objects.equals(this.userIds, buQueryAgentSchedulesRequest.userIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(managementUnitId, userIds, teamIds);
+    return Objects.hash(managementUnitId, userIds);
   }
 
   @Override
@@ -108,7 +88,6 @@ public class BuQueryAgentSchedulesRequest  implements Serializable {
     
     sb.append("    managementUnitId: ").append(toIndentedString(managementUnitId)).append("\n");
     sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");
-    sb.append("    teamIds: ").append(toIndentedString(teamIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

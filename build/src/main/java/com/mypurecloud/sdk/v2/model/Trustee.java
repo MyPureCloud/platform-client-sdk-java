@@ -25,6 +25,7 @@ public class Trustee  implements Serializable {
   
   private String id = null;
   private Boolean enabled = null;
+  private Boolean usesDefaultRole = null;
   private Date dateCreated = null;
   private OrgUser createdBy = null;
   private Organization organization = null;
@@ -53,6 +54,24 @@ public class Trustee  implements Serializable {
   }
   public void setEnabled(Boolean enabled) {
     this.enabled = enabled;
+  }
+
+  
+  /**
+   * Denotes if trustee uses admin role by default.
+   **/
+  public Trustee usesDefaultRole(Boolean usesDefaultRole) {
+    this.usesDefaultRole = usesDefaultRole;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Denotes if trustee uses admin role by default.")
+  @JsonProperty("usesDefaultRole")
+  public Boolean getUsesDefaultRole() {
+    return usesDefaultRole;
+  }
+  public void setUsesDefaultRole(Boolean usesDefaultRole) {
+    this.usesDefaultRole = usesDefaultRole;
   }
 
   
@@ -118,6 +137,7 @@ public class Trustee  implements Serializable {
     Trustee trustee = (Trustee) o;
     return Objects.equals(this.id, trustee.id) &&
         Objects.equals(this.enabled, trustee.enabled) &&
+        Objects.equals(this.usesDefaultRole, trustee.usesDefaultRole) &&
         Objects.equals(this.dateCreated, trustee.dateCreated) &&
         Objects.equals(this.createdBy, trustee.createdBy) &&
         Objects.equals(this.organization, trustee.organization) &&
@@ -126,7 +146,7 @@ public class Trustee  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, enabled, dateCreated, createdBy, organization, selfUri);
+    return Objects.hash(id, enabled, usesDefaultRole, dateCreated, createdBy, organization, selfUri);
   }
 
   @Override
@@ -136,6 +156,7 @@ public class Trustee  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    sb.append("    usesDefaultRole: ").append(toIndentedString(usesDefaultRole)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");

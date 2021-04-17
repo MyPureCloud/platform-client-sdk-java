@@ -10,10 +10,10 @@ title: EvaluationQuestionScore
 | ------------ | ------------- | ------------- | ------------- |
 | **questionId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **answerId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **score** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **score** | <!----><!---->**Integer**<!----> | Unweighted score of the question |  [optional] |
 | **markedNA** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **failedKillQuestion** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **comments** | <!----><!---->**String**<!----> |  |  [optional] |
+| **failedKillQuestion** | <!----><!---->**Boolean**<!----> | Applicable only on fatal questions. Indicates that the answer selected was not the highest score available for the question |  [optional] |
+| **comments** | <!----><!---->**String**<!----> | Comments from the evaluator specific to this question |  [optional] |
 {: class="table table-striped"}
 
 

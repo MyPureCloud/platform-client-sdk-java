@@ -35,7 +35,7 @@ title: ConversationAggregationQuery
 | AGENTSCORE | &quot;agentScore&quot; |
 | ANI | &quot;ani&quot; |
 | ASSIGNERID | &quot;assignerId&quot; |
-| BULLSEYERING | &quot;bullseyeRing&quot; |
+| AUTHENTICATED | &quot;authenticated&quot; |
 | CONVERSATIONID | &quot;conversationId&quot; |
 | CONVERTEDFROM | &quot;convertedFrom&quot; |
 | CONVERTEDTO | &quot;convertedTo&quot; |
@@ -47,6 +47,7 @@ title: ConversationAggregationQuery
 | EXTERNALCONTACTID | &quot;externalContactId&quot; |
 | EXTERNALMEDIACOUNT | &quot;externalMediaCount&quot; |
 | EXTERNALORGANIZATIONID | &quot;externalOrganizationId&quot; |
+| EXTERNALTAG | &quot;externalTag&quot; |
 | FIRSTQUEUE | &quot;firstQueue&quot; |
 | FLAGGEDREASON | &quot;flaggedReason&quot; |
 | FLOWINTYPE | &quot;flowInType&quot; |
@@ -81,7 +82,7 @@ title: ConversationAggregationQuery
 | REQUESTEDROUTINGSKILLID | &quot;requestedRoutingSkillId&quot; |
 | ROOMID | &quot;roomId&quot; |
 | ROUTINGPRIORITY | &quot;routingPriority&quot; |
-| ROUTINGRULE | &quot;routingRule&quot; |
+| ROUTINGRING | &quot;routingRing&quot; |
 | SCOREDAGENTID | &quot;scoredAgentId&quot; |
 | SELECTEDAGENTID | &quot;selectedAgentId&quot; |
 | SELECTEDAGENTRANK | &quot;selectedAgentRank&quot; |

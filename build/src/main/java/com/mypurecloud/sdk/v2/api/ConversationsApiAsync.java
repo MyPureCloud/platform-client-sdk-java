@@ -3910,7 +3910,7 @@ public class ConversationsApiAsync {
   
   /**
    * Get media
-   * 
+   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3944,7 +3944,7 @@ public class ConversationsApiAsync {
 
   /**
    * Get media
-   * 
+   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -9762,7 +9762,7 @@ public class ConversationsApiAsync {
   
   /**
    * Create media
-   * 
+   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -9796,7 +9796,7 @@ public class ConversationsApiAsync {
 
   /**
    * Create media
-   * 
+   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

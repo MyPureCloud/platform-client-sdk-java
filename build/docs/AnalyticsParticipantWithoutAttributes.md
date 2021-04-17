@@ -8,42 +8,15 @@ title: AnalyticsParticipantWithoutAttributes
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
+| **externalContactId** | <!----><!---->**String**<!----> | External contact identifier |  [optional] |
+| **externalOrganizationId** | <!----><!---->**String**<!----> | External organization identifier |  [optional] |
+| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum)<!----> | Reason for which participant flagged conversation |  [optional] |
 | **participantId** | <!----><!---->**String**<!----> | Unique identifier for the participant |  [optional] |
 | **participantName** | <!----><!---->**String**<!----> | A human readable name identifying the participant |  [optional] |
-| **userId** | <!----><!---->**String**<!----> | If a user, then this will be the unique identifier for the user |  [optional] |
 | **purpose** | [**PurposeEnum**](#PurposeEnum)<!----> | The participant&#39;s purpose |  [optional] |
-| **externalContactId** | <!----><!---->**String**<!----> | External Contact Identifier |  [optional] |
-| **externalOrganizationId** | <!----><!---->**String**<!----> | External Organization Identifier |  [optional] |
-| **flaggedReason** | [**FlaggedReasonEnum**](#FlaggedReasonEnum)<!----> | Reason for which participant flagged conversation |  [optional] |
-| **teamId** | <!----><!---->**String**<!----> | The team id the user is a member of |  [optional] |
+| **teamId** | <!----><!---->**String**<!----> | The team ID the user is a member of |  [optional] |
+| **userId** | <!----><!---->**String**<!----> | Unique identifier for the user |  [optional] |
 | **sessions** | <!----><!---->[**List&lt;AnalyticsSession&gt;**](AnalyticsSession.html)<!----> | List of sessions associated to this participant |  [optional] |
-{: class="table table-striped"}
-
-
-<a name="PurposeEnum"></a>
-
-## Enum: PurposeEnum
-
-| Name | Value |
-| ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| MANUAL | &quot;manual&quot; |
-| DIALER | &quot;dialer&quot; |
-| INBOUND | &quot;inbound&quot; |
-| ACD | &quot;acd&quot; |
-| IVR | &quot;ivr&quot; |
-| VOICEMAIL | &quot;voicemail&quot; |
-| OUTBOUND | &quot;outbound&quot; |
-| AGENT | &quot;agent&quot; |
-| USER | &quot;user&quot; |
-| STATION | &quot;station&quot; |
-| GROUP | &quot;group&quot; |
-| CUSTOMER | &quot;customer&quot; |
-| EXTERNAL | &quot;external&quot; |
-| FAX | &quot;fax&quot; |
-| WORKFLOW | &quot;workflow&quot; |
-| CAMPAIGN | &quot;campaign&quot; |
-| API | &quot;api&quot; |
 {: class="table table-striped"}
 
 
@@ -55,6 +28,33 @@ title: AnalyticsParticipantWithoutAttributes
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | GENERAL | &quot;general&quot; |
+{: class="table table-striped"}
+
+
+<a name="PurposeEnum"></a>
+
+## Enum: PurposeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| ACD | &quot;acd&quot; |
+| AGENT | &quot;agent&quot; |
+| API | &quot;api&quot; |
+| CAMPAIGN | &quot;campaign&quot; |
+| CUSTOMER | &quot;customer&quot; |
+| DIALER | &quot;dialer&quot; |
+| EXTERNAL | &quot;external&quot; |
+| FAX | &quot;fax&quot; |
+| GROUP | &quot;group&quot; |
+| INBOUND | &quot;inbound&quot; |
+| IVR | &quot;ivr&quot; |
+| MANUAL | &quot;manual&quot; |
+| OUTBOUND | &quot;outbound&quot; |
+| STATION | &quot;station&quot; |
+| USER | &quot;user&quot; |
+| VOICEMAIL | &quot;voicemail&quot; |
+| WORKFLOW | &quot;workflow&quot; |
 {: class="table table-striped"}
 
 

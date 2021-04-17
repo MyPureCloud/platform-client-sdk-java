@@ -4653,12 +4653,11 @@ public class RoutingApi {
    * @param queueId Queue ID (required)
    * @param memberId Member ID (required)
    * @param body Queue Member (required)
-   * @return QueueMember
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public QueueMember patchRoutingQueueMember(String queueId, String memberId, QueueMember body) throws IOException, ApiException {
-    return  patchRoutingQueueMember(createPatchRoutingQueueMemberRequest(queueId, memberId, body));
+  public void patchRoutingQueueMember(String queueId, String memberId, QueueMember body) throws IOException, ApiException {
+     patchRoutingQueueMember(createPatchRoutingQueueMemberRequest(queueId, memberId, body));
   }
 
   /**
@@ -4667,10 +4666,9 @@ public class RoutingApi {
    * @param queueId Queue ID (required)
    * @param memberId Member ID (required)
    * @param body Queue Member (required)
-   * @return QueueMember
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueueMember> patchRoutingQueueMemberWithHttpInfo(String queueId, String memberId, QueueMember body) throws IOException {
+  public ApiResponse<Void> patchRoutingQueueMemberWithHttpInfo(String queueId, String memberId, QueueMember body) throws IOException {
     return patchRoutingQueueMember(createPatchRoutingQueueMemberRequest(queueId, memberId, body).withHttpInfo());
   }
 
@@ -4689,18 +4687,17 @@ public class RoutingApi {
    * Update the ring number OR joined status for a queue member.
    * 
    * @param request The request object
-   * @return QueueMember
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public QueueMember patchRoutingQueueMember(PatchRoutingQueueMemberRequest request) throws IOException, ApiException {
+  public void patchRoutingQueueMember(PatchRoutingQueueMemberRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<QueueMember> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueueMember>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -4711,13 +4708,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueueMember> patchRoutingQueueMember(ApiRequest<QueueMember> request) throws IOException {
+  public ApiResponse<Void> patchRoutingQueueMember(ApiRequest<QueueMember> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<QueueMember>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<QueueMember> response = (ApiResponse<QueueMember>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -4728,7 +4725,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<QueueMember> response = (ApiResponse<QueueMember>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4823,12 +4820,11 @@ public class RoutingApi {
    * @param queueId Queue ID (required)
    * @param memberId Member ID (required)
    * @param body Queue Member (required)
-   * @return QueueMember
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public QueueMember patchRoutingQueueUser(String queueId, String memberId, QueueMember body) throws IOException, ApiException {
-    return  patchRoutingQueueUser(createPatchRoutingQueueUserRequest(queueId, memberId, body));
+  public void patchRoutingQueueUser(String queueId, String memberId, QueueMember body) throws IOException, ApiException {
+     patchRoutingQueueUser(createPatchRoutingQueueUserRequest(queueId, memberId, body));
   }
 
   /**
@@ -4837,10 +4833,9 @@ public class RoutingApi {
    * @param queueId Queue ID (required)
    * @param memberId Member ID (required)
    * @param body Queue Member (required)
-   * @return QueueMember
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueueMember> patchRoutingQueueUserWithHttpInfo(String queueId, String memberId, QueueMember body) throws IOException {
+  public ApiResponse<Void> patchRoutingQueueUserWithHttpInfo(String queueId, String memberId, QueueMember body) throws IOException {
     return patchRoutingQueueUser(createPatchRoutingQueueUserRequest(queueId, memberId, body).withHttpInfo());
   }
 
@@ -4859,18 +4854,17 @@ public class RoutingApi {
    * DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
    * 
    * @param request The request object
-   * @return QueueMember
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public QueueMember patchRoutingQueueUser(PatchRoutingQueueUserRequest request) throws IOException, ApiException {
+  public void patchRoutingQueueUser(PatchRoutingQueueUserRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<QueueMember> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueueMember>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
@@ -4881,13 +4875,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueueMember> patchRoutingQueueUser(ApiRequest<QueueMember> request) throws IOException {
+  public ApiResponse<Void> patchRoutingQueueUser(ApiRequest<QueueMember> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<QueueMember>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<QueueMember> response = (ApiResponse<QueueMember>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -4898,7 +4892,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<QueueMember> response = (ApiResponse<QueueMember>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

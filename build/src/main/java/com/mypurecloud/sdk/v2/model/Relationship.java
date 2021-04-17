@@ -26,7 +26,6 @@ import java.io.Serializable;
 public class Relationship  implements Serializable {
   
   private String id = null;
-  private String name = null;
   private User user = null;
   private ExternalOrganization externalOrganization = null;
   private String relationship = null;
@@ -42,31 +41,14 @@ public class Relationship  implements Serializable {
 
   
   /**
-   **/
-  public Relationship name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  
-  /**
-   * The user associated with the external organization
+   * The user associated with the external organization. When creating or updating a relationship, only User.id is required. User object is fully populated when expanding a note.
    **/
   public Relationship user(User user) {
     this.user = user;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The user associated with the external organization")
+  @ApiModelProperty(example = "null", required = true, value = "The user associated with the external organization. When creating or updating a relationship, only User.id is required. User object is fully populated when expanding a note.")
   @JsonProperty("user")
   public User getUser() {
     return user;
@@ -148,7 +130,6 @@ public class Relationship  implements Serializable {
     }
     Relationship relationship = (Relationship) o;
     return Objects.equals(this.id, relationship.id) &&
-        Objects.equals(this.name, relationship.name) &&
         Objects.equals(this.user, relationship.user) &&
         Objects.equals(this.externalOrganization, relationship.externalOrganization) &&
         Objects.equals(this.relationship, relationship.relationship) &&
@@ -158,7 +139,7 @@ public class Relationship  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, user, externalOrganization, relationship, externalDataSources, selfUri);
+    return Objects.hash(id, user, externalOrganization, relationship, externalDataSources, selfUri);
   }
 
   @Override
@@ -167,7 +148,6 @@ public class Relationship  implements Serializable {
     sb.append("class Relationship {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    externalOrganization: ").append(toIndentedString(externalOrganization)).append("\n");
     sb.append("    relationship: ").append(toIndentedString(relationship)).append("\n");

@@ -33,13 +33,14 @@ public class EvaluationScoringSet  implements Serializable {
 
   
   /**
+   * Score of all questions
    **/
   public EvaluationScoringSet totalScore(Float totalScore) {
     this.totalScore = totalScore;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Score of all questions")
   @JsonProperty("totalScore")
   public Float getTotalScore() {
     return totalScore;
@@ -50,13 +51,14 @@ public class EvaluationScoringSet  implements Serializable {
 
   
   /**
+   * Score of only the critical questions
    **/
   public EvaluationScoringSet totalCriticalScore(Float totalCriticalScore) {
     this.totalCriticalScore = totalCriticalScore;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Score of only the critical questions")
   @JsonProperty("totalCriticalScore")
   public Float getTotalCriticalScore() {
     return totalCriticalScore;
@@ -67,13 +69,14 @@ public class EvaluationScoringSet  implements Serializable {
 
   
   /**
+   * Score of only the non-critical questions
    **/
   public EvaluationScoringSet totalNonCriticalScore(Float totalNonCriticalScore) {
     this.totalNonCriticalScore = totalNonCriticalScore;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Score of only the non-critical questions")
   @JsonProperty("totalNonCriticalScore")
   public Float getTotalNonCriticalScore() {
     return totalNonCriticalScore;
@@ -101,13 +104,14 @@ public class EvaluationScoringSet  implements Serializable {
 
   
   /**
+   * Indicates that at least one fatal question was answered without having the highest score available for the question
    **/
   public EvaluationScoringSet anyFailedKillQuestions(Boolean anyFailedKillQuestions) {
     this.anyFailedKillQuestions = anyFailedKillQuestions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Indicates that at least one fatal question was answered without having the highest score available for the question")
   @JsonProperty("anyFailedKillQuestions")
   public Boolean getAnyFailedKillQuestions() {
     return anyFailedKillQuestions;
@@ -118,13 +122,14 @@ public class EvaluationScoringSet  implements Serializable {
 
   
   /**
+   * Overall comments from the evaluator
    **/
   public EvaluationScoringSet comments(String comments) {
     this.comments = comments;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Overall comments from the evaluator")
   @JsonProperty("comments")
   public String getComments() {
     return comments;
@@ -135,13 +140,14 @@ public class EvaluationScoringSet  implements Serializable {
 
   
   /**
+   * Comments from the agent while reviewing evaluation results
    **/
   public EvaluationScoringSet agentComments(String agentComments) {
     this.agentComments = agentComments;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Comments from the agent while reviewing evaluation results")
   @JsonProperty("agentComments")
   public String getAgentComments() {
     return agentComments;

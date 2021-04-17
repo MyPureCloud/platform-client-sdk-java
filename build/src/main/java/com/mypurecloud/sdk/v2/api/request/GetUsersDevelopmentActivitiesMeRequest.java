@@ -250,7 +250,9 @@ public class GetUsersDevelopmentActivitiesMeRequest {
 
 	public enum typesValues { 
 		INFORMATIONAL("Informational"), 
-		COACHING("Coaching");
+		COACHING("Coaching"), 
+		ASSESSEDCONTENT("AssessedContent"), 
+		QUESTIONNAIRE("Questionnaire");
 
 		private String value;
 

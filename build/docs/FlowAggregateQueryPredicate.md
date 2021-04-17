@@ -45,7 +45,7 @@ title: FlowAggregateQueryPredicate
 | AGENTSCORE | &quot;agentScore&quot; |
 | ANI | &quot;ani&quot; |
 | ASSIGNERID | &quot;assignerId&quot; |
-| BULLSEYERING | &quot;bullseyeRing&quot; |
+| AUTHENTICATED | &quot;authenticated&quot; |
 | CONVERSATIONID | &quot;conversationId&quot; |
 | CONVERTEDFROM | &quot;convertedFrom&quot; |
 | CONVERTEDTO | &quot;convertedTo&quot; |
@@ -61,6 +61,7 @@ title: FlowAggregateQueryPredicate
 | EXTERNALCONTACTID | &quot;externalContactId&quot; |
 | EXTERNALMEDIACOUNT | &quot;externalMediaCount&quot; |
 | EXTERNALORGANIZATIONID | &quot;externalOrganizationId&quot; |
+| EXTERNALTAG | &quot;externalTag&quot; |
 | FIRSTQUEUE | &quot;firstQueue&quot; |
 | FLAGGEDREASON | &quot;flaggedReason&quot; |
 | FLOWID | &quot;flowId&quot; |
@@ -95,6 +96,7 @@ title: FlowAggregateQueryPredicate
 | PROVIDER | &quot;provider&quot; |
 | PURPOSE | &quot;purpose&quot; |
 | QUEUEID | &quot;queueId&quot; |
+| RECOGNITIONFAILUREREASON | &quot;recognitionFailureReason&quot; |
 | REMOTE | &quot;remote&quot; |
 | REMOVEDSKILLID | &quot;removedSkillId&quot; |
 | REOFFERED | &quot;reoffered&quot; |
@@ -103,7 +105,7 @@ title: FlowAggregateQueryPredicate
 | REQUESTEDROUTINGSKILLID | &quot;requestedRoutingSkillId&quot; |
 | ROOMID | &quot;roomId&quot; |
 | ROUTINGPRIORITY | &quot;routingPriority&quot; |
-| ROUTINGRULE | &quot;routingRule&quot; |
+| ROUTINGRING | &quot;routingRing&quot; |
 | SCOREDAGENTID | &quot;scoredAgentId&quot; |
 | SELECTEDAGENTID | &quot;selectedAgentId&quot; |
 | SELECTEDAGENTRANK | &quot;selectedAgentRank&quot; |

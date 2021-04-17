@@ -114,7 +114,7 @@ public class TokensApi {
 
   
   /**
-   * Delete  auth token used to make the request.
+   * Delete auth token used to make the request.
    * 
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -124,7 +124,7 @@ public class TokensApi {
   }
 
   /**
-   * Delete  auth token used to make the request.
+   * Delete auth token used to make the request.
    * 
    * @throws IOException if the request fails to be processed
    */
@@ -138,7 +138,7 @@ public class TokensApi {
   }
 
   /**
-   * Delete  auth token used to make the request.
+   * Delete auth token used to make the request.
    * 
    * @param request The request object
    * @throws ApiException if the request fails on the server
@@ -156,7 +156,7 @@ public class TokensApi {
   }
 
   /**
-   * Delete  auth token used to make the request.
+   * Delete auth token used to make the request.
    * 
    * @param request The request object
    * @return the response

@@ -41,6 +41,7 @@ title: ConversationDetailQueryPredicate
 | CONVERSATIONID | &quot;conversationId&quot; |
 | CONVERSATIONSTART | &quot;conversationStart&quot; |
 | DIVISIONID | &quot;divisionId&quot; |
+| EXTERNALTAG | &quot;externalTag&quot; |
 | MEDIASTATSMINCONVERSATIONMOS | &quot;mediaStatsMinConversationMos&quot; |
 | ORIGINATINGDIRECTION | &quot;originatingDirection&quot; |
 {: class="table table-striped"}

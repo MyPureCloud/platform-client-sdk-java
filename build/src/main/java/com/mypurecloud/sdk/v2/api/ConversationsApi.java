@@ -4146,7 +4146,7 @@ public class ConversationsApi {
   
   /**
    * Get media
-   * 
+   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @param mediaId mediaId (required)
@@ -4160,7 +4160,7 @@ public class ConversationsApi {
 
   /**
    * Get media
-   * 
+   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @param mediaId mediaId (required)
@@ -4184,7 +4184,7 @@ public class ConversationsApi {
 
   /**
    * Get media
-   * 
+   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
    * @param request The request object
    * @return MessageMediaData
    * @throws ApiException if the request fails on the server
@@ -4203,7 +4203,7 @@ public class ConversationsApi {
 
   /**
    * Get media
-   * 
+   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -10621,7 +10621,7 @@ public class ConversationsApi {
   
   /**
    * Create media
-   * 
+   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @return MessageMediaData
@@ -10634,7 +10634,7 @@ public class ConversationsApi {
 
   /**
    * Create media
-   * 
+   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
    * @param conversationId conversationId (required)
    * @param communicationId communicationId (required)
    * @return MessageMediaData
@@ -10655,7 +10655,7 @@ public class ConversationsApi {
 
   /**
    * Create media
-   * 
+   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
    * @param request The request object
    * @return MessageMediaData
    * @throws ApiException if the request fails on the server
@@ -10674,7 +10674,7 @@ public class ConversationsApi {
 
   /**
    * Create media
-   * 
+   * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

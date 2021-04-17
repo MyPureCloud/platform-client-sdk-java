@@ -21,9 +21,27 @@ import java.io.Serializable;
 
 public class AnalyticsSessionMetric  implements Serializable {
   
+  private Date emitDate = null;
   private String name = null;
   private Long value = null;
-  private Date emitDate = null;
+
+  
+  /**
+   * Metric emission date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public AnalyticsSessionMetric emitDate(Date emitDate) {
+    this.emitDate = emitDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Metric emission date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("emitDate")
+  public Date getEmitDate() {
+    return emitDate;
+  }
+  public void setEmitDate(Date emitDate) {
+    this.emitDate = emitDate;
+  }
 
   
   /**
@@ -34,7 +52,7 @@ public class AnalyticsSessionMetric  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Unique name of this metric")
+  @ApiModelProperty(example = "null", value = "Unique name of this metric")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -52,31 +70,13 @@ public class AnalyticsSessionMetric  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The metric value")
+  @ApiModelProperty(example = "null", value = "The metric value")
   @JsonProperty("value")
   public Long getValue() {
     return value;
   }
   public void setValue(Long value) {
     this.value = value;
-  }
-
-  
-  /**
-   * Metric emission date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-   **/
-  public AnalyticsSessionMetric emitDate(Date emitDate) {
-    this.emitDate = emitDate;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "Metric emission date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
-  @JsonProperty("emitDate")
-  public Date getEmitDate() {
-    return emitDate;
-  }
-  public void setEmitDate(Date emitDate) {
-    this.emitDate = emitDate;
   }
 
   
@@ -90,14 +90,14 @@ public class AnalyticsSessionMetric  implements Serializable {
       return false;
     }
     AnalyticsSessionMetric analyticsSessionMetric = (AnalyticsSessionMetric) o;
-    return Objects.equals(this.name, analyticsSessionMetric.name) &&
-        Objects.equals(this.value, analyticsSessionMetric.value) &&
-        Objects.equals(this.emitDate, analyticsSessionMetric.emitDate);
+    return Objects.equals(this.emitDate, analyticsSessionMetric.emitDate) &&
+        Objects.equals(this.name, analyticsSessionMetric.name) &&
+        Objects.equals(this.value, analyticsSessionMetric.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, value, emitDate);
+    return Objects.hash(emitDate, name, value);
   }
 
   @Override
@@ -105,9 +105,9 @@ public class AnalyticsSessionMetric  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class AnalyticsSessionMetric {\n");
     
+    sb.append("    emitDate: ").append(toIndentedString(emitDate)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
-    sb.append("    emitDate: ").append(toIndentedString(emitDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

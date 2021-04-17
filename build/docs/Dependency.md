@@ -57,6 +57,8 @@ title: Dependency
 | LANGUAGE | &quot;LANGUAGE&quot; |
 | LEXBOT | &quot;LEXBOT&quot; |
 | LEXBOTALIAS | &quot;LEXBOTALIAS&quot; |
+| LEXV2BOT | &quot;LEXV2BOT&quot; |
+| LEXV2BOTALIAS | &quot;LEXV2BOTALIAS&quot; |
 | NLUDOMAIN | &quot;NLUDOMAIN&quot; |
 | OUTBOUNDCALLFLOW | &quot;OUTBOUNDCALLFLOW&quot; |
 | QUEUE | &quot;QUEUE&quot; |

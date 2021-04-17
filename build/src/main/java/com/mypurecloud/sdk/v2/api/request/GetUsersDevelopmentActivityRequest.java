@@ -105,7 +105,9 @@ public class GetUsersDevelopmentActivityRequest {
 
 	public enum typeValues { 
 		INFORMATIONAL("Informational"), 
-		COACHING("Coaching");
+		COACHING("Coaching"), 
+		ASSESSEDCONTENT("AssessedContent"), 
+		QUESTIONNAIRE("Questionnaire");
 
 		private String value;
 

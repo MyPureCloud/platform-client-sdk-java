@@ -7532,7 +7532,7 @@ public class OutboundApi {
 
   
   /**
-   * Add phone numbers to a Dialer DNC list.
+   * Add phone numbers to a DNC list.
    * Only Internal DNC lists may be appended to
    * @param dncListId DncList ID (required)
    * @param body DNC Phone Numbers (required)
@@ -7544,7 +7544,7 @@ public class OutboundApi {
   }
 
   /**
-   * Add phone numbers to a Dialer DNC list.
+   * Add phone numbers to a DNC list.
    * Only Internal DNC lists may be appended to
    * @param dncListId DncList ID (required)
    * @param body DNC Phone Numbers (required)
@@ -7564,7 +7564,7 @@ public class OutboundApi {
   }
 
   /**
-   * Add phone numbers to a Dialer DNC list.
+   * Add phone numbers to a DNC list.
    * Only Internal DNC lists may be appended to
    * @param request The request object
    * @throws ApiException if the request fails on the server
@@ -7582,7 +7582,7 @@ public class OutboundApi {
   }
 
   /**
-   * Add phone numbers to a Dialer DNC list.
+   * Add phone numbers to a DNC list.
    * Only Internal DNC lists may be appended to
    * @param request The request object
    * @return the response

@@ -688,12 +688,13 @@ public class KnowledgeApi {
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param categories Filter by categories ids, comma separated values expected. (optional)
    * @param title Filter by document title. (optional)
+   * @param documentIds Comma-separated list of document identifiers to fetch by. (optional)
    * @return DocumentListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DocumentListing getKnowledgeKnowledgebaseLanguageDocuments(String knowledgeBaseId, String languageCode, String before, String after, String limit, String pageSize, String categories, String title) throws IOException, ApiException {
-    return  getKnowledgeKnowledgebaseLanguageDocuments(createGetKnowledgeKnowledgebaseLanguageDocumentsRequest(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title));
+  public DocumentListing getKnowledgeKnowledgebaseLanguageDocuments(String knowledgeBaseId, String languageCode, String before, String after, String limit, String pageSize, String categories, String title, List<String> documentIds) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseLanguageDocuments(createGetKnowledgeKnowledgebaseLanguageDocumentsRequest(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title, documentIds));
   }
 
   /**
@@ -707,14 +708,15 @@ public class KnowledgeApi {
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param categories Filter by categories ids, comma separated values expected. (optional)
    * @param title Filter by document title. (optional)
+   * @param documentIds Comma-separated list of document identifiers to fetch by. (optional)
    * @return DocumentListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DocumentListing> getKnowledgeKnowledgebaseLanguageDocumentsWithHttpInfo(String knowledgeBaseId, String languageCode, String before, String after, String limit, String pageSize, String categories, String title) throws IOException {
-    return getKnowledgeKnowledgebaseLanguageDocuments(createGetKnowledgeKnowledgebaseLanguageDocumentsRequest(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title).withHttpInfo());
+  public ApiResponse<DocumentListing> getKnowledgeKnowledgebaseLanguageDocumentsWithHttpInfo(String knowledgeBaseId, String languageCode, String before, String after, String limit, String pageSize, String categories, String title, List<String> documentIds) throws IOException {
+    return getKnowledgeKnowledgebaseLanguageDocuments(createGetKnowledgeKnowledgebaseLanguageDocumentsRequest(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title, documentIds).withHttpInfo());
   }
 
-  private GetKnowledgeKnowledgebaseLanguageDocumentsRequest createGetKnowledgeKnowledgebaseLanguageDocumentsRequest(String knowledgeBaseId, String languageCode, String before, String after, String limit, String pageSize, String categories, String title) {
+  private GetKnowledgeKnowledgebaseLanguageDocumentsRequest createGetKnowledgeKnowledgebaseLanguageDocumentsRequest(String knowledgeBaseId, String languageCode, String before, String after, String limit, String pageSize, String categories, String title, List<String> documentIds) {
     return GetKnowledgeKnowledgebaseLanguageDocumentsRequest.builder()
             .withKnowledgeBaseId(knowledgeBaseId)
     
@@ -731,6 +733,8 @@ public class KnowledgeApi {
             .withCategories(categories)
     
             .withTitle(title)
+    
+            .withDocumentIds(documentIds)
     
             .build();
   }

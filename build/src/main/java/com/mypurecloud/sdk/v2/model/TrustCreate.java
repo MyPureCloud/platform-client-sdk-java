@@ -30,14 +30,14 @@ public class TrustCreate  implements Serializable {
 
   
   /**
-   * The pairing Id created by the trustee. This is required to prove that the trustee agrees to the relationship.
+   * The pairing Id created by the trustee. This is required to prove that the trustee agrees to the relationship.  Not required when creating a default pairing with Customer Care.
    **/
   public TrustCreate pairingId(String pairingId) {
     this.pairingId = pairingId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The pairing Id created by the trustee. This is required to prove that the trustee agrees to the relationship.")
+  @ApiModelProperty(example = "null", value = "The pairing Id created by the trustee. This is required to prove that the trustee agrees to the relationship.  Not required when creating a default pairing with Customer Care.")
   @JsonProperty("pairingId")
   public String getPairingId() {
     return pairingId;

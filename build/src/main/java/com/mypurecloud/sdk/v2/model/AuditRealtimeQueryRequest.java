@@ -48,6 +48,7 @@ public class AuditRealtimeQueryRequest  implements Serializable {
     ARCHITECT("Architect"),
     CONTACTCENTER("ContactCenter"),
     CONTENTMANAGEMENT("ContentManagement"),
+    INTEGRATIONS("Integrations"),
     PEOPLEPERMISSIONS("PeoplePermissions"),
     PRESENCE("Presence"),
     QUALITY("Quality"),

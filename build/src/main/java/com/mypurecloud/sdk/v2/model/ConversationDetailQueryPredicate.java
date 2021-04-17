@@ -94,6 +94,7 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     CONVERSATIONID("conversationId"),
     CONVERSATIONSTART("conversationStart"),
     DIVISIONID("divisionId"),
+    EXTERNALTAG("externalTag"),
     MEDIASTATSMINCONVERSATIONMOS("mediaStatsMinConversationMos"),
     ORIGINATINGDIRECTION("originatingDirection");
 

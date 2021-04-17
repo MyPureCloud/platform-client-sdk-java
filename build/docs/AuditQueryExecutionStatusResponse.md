@@ -43,6 +43,7 @@ title: AuditQueryExecutionStatusResponse
 | ARCHITECT | &quot;Architect&quot; |
 | CONTACTCENTER | &quot;ContactCenter&quot; |
 | CONTENTMANAGEMENT | &quot;ContentManagement&quot; |
+| INTEGRATIONS | &quot;Integrations&quot; |
 | PEOPLEPERMISSIONS | &quot;PeoplePermissions&quot; |
 | PRESENCE | &quot;Presence&quot; |
 | QUALITY | &quot;Quality&quot; |

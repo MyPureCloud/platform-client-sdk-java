@@ -94,6 +94,7 @@ title: AuditQueryEntity
 | PREDICTOR | &quot;Predictor&quot; |
 | WORKPLAN | &quot;WorkPlan&quot; |
 | SENTIMENTFEEDBACK | &quot;SentimentFeedback&quot; |
+| INTEGRATION | &quot;Integration&quot; |
 {: class="table table-striped"}
 
 

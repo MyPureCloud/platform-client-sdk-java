@@ -58,13 +58,14 @@ public class EvaluationQuestionGroupScore  implements Serializable {
 
   
   /**
+   * Score of all questions in the group
    **/
   public EvaluationQuestionGroupScore totalScore(Float totalScore) {
     this.totalScore = totalScore;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Score of all questions in the group")
   @JsonProperty("totalScore")
   public Float getTotalScore() {
     return totalScore;
@@ -75,13 +76,14 @@ public class EvaluationQuestionGroupScore  implements Serializable {
 
   
   /**
+   * Maximum possible score of all questions in the group
    **/
   public EvaluationQuestionGroupScore maxTotalScore(Float maxTotalScore) {
     this.maxTotalScore = maxTotalScore;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Maximum possible score of all questions in the group")
   @JsonProperty("maxTotalScore")
   public Float getMaxTotalScore() {
     return maxTotalScore;
@@ -109,13 +111,14 @@ public class EvaluationQuestionGroupScore  implements Serializable {
 
   
   /**
+   * Score of only the critical questions in the group
    **/
   public EvaluationQuestionGroupScore totalCriticalScore(Float totalCriticalScore) {
     this.totalCriticalScore = totalCriticalScore;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Score of only the critical questions in the group")
   @JsonProperty("totalCriticalScore")
   public Float getTotalCriticalScore() {
     return totalCriticalScore;
@@ -126,13 +129,14 @@ public class EvaluationQuestionGroupScore  implements Serializable {
 
   
   /**
+   * Maximum possible score of only the critical questions in the group
    **/
   public EvaluationQuestionGroupScore maxTotalCriticalScore(Float maxTotalCriticalScore) {
     this.maxTotalCriticalScore = maxTotalCriticalScore;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Maximum possible score of only the critical questions in the group")
   @JsonProperty("maxTotalCriticalScore")
   public Float getMaxTotalCriticalScore() {
     return maxTotalCriticalScore;
@@ -143,13 +147,14 @@ public class EvaluationQuestionGroupScore  implements Serializable {
 
   
   /**
+   * Score of only the non critical questions in the group
    **/
   public EvaluationQuestionGroupScore totalNonCriticalScore(Float totalNonCriticalScore) {
     this.totalNonCriticalScore = totalNonCriticalScore;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Score of only the non critical questions in the group")
   @JsonProperty("totalNonCriticalScore")
   public Float getTotalNonCriticalScore() {
     return totalNonCriticalScore;
@@ -160,13 +165,14 @@ public class EvaluationQuestionGroupScore  implements Serializable {
 
   
   /**
+   * Maximum possible score of only the non critical questions in the group
    **/
   public EvaluationQuestionGroupScore maxTotalNonCriticalScore(Float maxTotalNonCriticalScore) {
     this.maxTotalNonCriticalScore = maxTotalNonCriticalScore;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Maximum possible score of only the non critical questions in the group")
   @JsonProperty("maxTotalNonCriticalScore")
   public Float getMaxTotalNonCriticalScore() {
     return maxTotalNonCriticalScore;
@@ -177,13 +183,14 @@ public class EvaluationQuestionGroupScore  implements Serializable {
 
   
   /**
+   * Unweighted score of all questions in the group
    **/
   public EvaluationQuestionGroupScore totalScoreUnweighted(Float totalScoreUnweighted) {
     this.totalScoreUnweighted = totalScoreUnweighted;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Unweighted score of all questions in the group")
   @JsonProperty("totalScoreUnweighted")
   public Float getTotalScoreUnweighted() {
     return totalScoreUnweighted;
@@ -194,13 +201,14 @@ public class EvaluationQuestionGroupScore  implements Serializable {
 
   
   /**
+   * Maximum possible unweighted score of all questions in the group
    **/
   public EvaluationQuestionGroupScore maxTotalScoreUnweighted(Float maxTotalScoreUnweighted) {
     this.maxTotalScoreUnweighted = maxTotalScoreUnweighted;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Maximum possible unweighted score of all questions in the group")
   @JsonProperty("maxTotalScoreUnweighted")
   public Float getMaxTotalScoreUnweighted() {
     return maxTotalScoreUnweighted;
@@ -211,13 +219,14 @@ public class EvaluationQuestionGroupScore  implements Serializable {
 
   
   /**
+   * Unweighted score of only the critical questions in the group
    **/
   public EvaluationQuestionGroupScore totalCriticalScoreUnweighted(Float totalCriticalScoreUnweighted) {
     this.totalCriticalScoreUnweighted = totalCriticalScoreUnweighted;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Unweighted score of only the critical questions in the group")
   @JsonProperty("totalCriticalScoreUnweighted")
   public Float getTotalCriticalScoreUnweighted() {
     return totalCriticalScoreUnweighted;
@@ -228,13 +237,14 @@ public class EvaluationQuestionGroupScore  implements Serializable {
 
   
   /**
+   * Maximum possible unweighted score of only the critical questions in the group
    **/
   public EvaluationQuestionGroupScore maxTotalCriticalScoreUnweighted(Float maxTotalCriticalScoreUnweighted) {
     this.maxTotalCriticalScoreUnweighted = maxTotalCriticalScoreUnweighted;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Maximum possible unweighted score of only the critical questions in the group")
   @JsonProperty("maxTotalCriticalScoreUnweighted")
   public Float getMaxTotalCriticalScoreUnweighted() {
     return maxTotalCriticalScoreUnweighted;
@@ -245,13 +255,14 @@ public class EvaluationQuestionGroupScore  implements Serializable {
 
   
   /**
+   * Unweighted score of only the non critical questions in the group
    **/
   public EvaluationQuestionGroupScore totalNonCriticalScoreUnweighted(Float totalNonCriticalScoreUnweighted) {
     this.totalNonCriticalScoreUnweighted = totalNonCriticalScoreUnweighted;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Unweighted score of only the non critical questions in the group")
   @JsonProperty("totalNonCriticalScoreUnweighted")
   public Float getTotalNonCriticalScoreUnweighted() {
     return totalNonCriticalScoreUnweighted;
@@ -262,13 +273,14 @@ public class EvaluationQuestionGroupScore  implements Serializable {
 
   
   /**
+   * Maximum possible unweighted score of only the non critical questions in the group
    **/
   public EvaluationQuestionGroupScore maxTotalNonCriticalScoreUnweighted(Float maxTotalNonCriticalScoreUnweighted) {
     this.maxTotalNonCriticalScoreUnweighted = maxTotalNonCriticalScoreUnweighted;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Maximum possible unweighted score of only the non critical questions in the group")
   @JsonProperty("maxTotalNonCriticalScoreUnweighted")
   public Float getMaxTotalNonCriticalScoreUnweighted() {
     return maxTotalNonCriticalScoreUnweighted;

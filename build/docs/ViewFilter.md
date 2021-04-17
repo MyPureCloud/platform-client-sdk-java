@@ -105,8 +105,11 @@ title: ViewFilter
 | **developmentTypeList** | <!---->[**List&lt;DevelopmentTypeListEnum&gt;**](#DevelopmentTypeListEnum)<!----> | The list of development types used to filter agent development view |  [optional] |
 | **developmentStatusList** | <!---->[**List&lt;DevelopmentStatusListEnum&gt;**](#DevelopmentStatusListEnum)<!----> | The list of development status used to filter agent development view |  [optional] |
 | **developmentModuleIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of development moduleIds used to filter agent development view |  [optional] |
-| **developmentKeyType** | [**DevelopmentKeyTypeEnum**](#DevelopmentKeyTypeEnum)<!----> | Represents due or completed to filter agent development view |  [optional] |
 | **developmentActivityOverdue** | <!----><!---->**Boolean**<!----> | Indicates filtering for development activities |  [optional] |
+| **customerSentimentScore** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The customer sentiment score used to filter the view |  [optional] |
+| **customerSentimentTrend** | <!----><!---->[**NumericRange**](NumericRange.html)<!----> | The customer sentiment trend used to filter the view |  [optional] |
+| **flowTransferTargets** | <!----><!---->**List&lt;String&gt;**<!----> | The list of transfer targets used to filter flow data |  [optional] |
+| **developmentName** | <!----><!---->**String**<!----> | Filter for development name |  [optional] |
 {: class="table table-striped"}
 
 
@@ -116,14 +119,14 @@ title: ViewFilter
 
 | Name | Value |
 | ---- | ----- |
-| VOICE | &quot;voice&quot; |
-| CHAT | &quot;chat&quot; |
-| EMAIL | &quot;email&quot; |
 | CALLBACK | &quot;callback&quot; |
+| CHAT | &quot;chat&quot; |
 | COBROWSE | &quot;cobrowse&quot; |
-| VIDEO | &quot;video&quot; |
-| SCREENSHARE | &quot;screenshare&quot; |
+| EMAIL | &quot;email&quot; |
 | MESSAGE | &quot;message&quot; |
+| SCREENSHARE | &quot;screenshare&quot; |
+| VIDEO | &quot;video&quot; |
+| VOICE | &quot;voice&quot; |
 {: class="table table-striped"}
 
 
@@ -233,10 +236,10 @@ title: ViewFilter
 
 | Name | Value |
 | ---- | ----- |
-| DNIS | &quot;dnis&quot; |
-| DIRECT | &quot;direct&quot; |
-| FLOW | &quot;flow&quot; |
 | AGENT | &quot;agent&quot; |
+| DIRECT | &quot;direct&quot; |
+| DNIS | &quot;dnis&quot; |
+| FLOW | &quot;flow&quot; |
 | OUTBOUND | &quot;outbound&quot; |
 {: class="table table-striped"}
 
@@ -247,11 +250,11 @@ title: ViewFilter
 
 | Name | Value |
 | ---- | ----- |
+| BULLSEYE | &quot;Bullseye&quot; |
+| LAST | &quot;Last&quot; |
+| MANUAL | &quot;Manual&quot; |
 | PREDICTIVE | &quot;Predictive&quot; |
 | PREFERRED | &quot;Preferred&quot; |
-| MANUAL | &quot;Manual&quot; |
-| LAST | &quot;Last&quot; |
-| BULLSEYE | &quot;Bullseye&quot; |
 | STANDARD | &quot;Standard&quot; |
 {: class="table table-striped"}
 
@@ -262,11 +265,11 @@ title: ViewFilter
 
 | Name | Value |
 | ---- | ----- |
+| BULLSEYE | &quot;Bullseye&quot; |
+| LAST | &quot;Last&quot; |
+| MANUAL | &quot;Manual&quot; |
 | PREDICTIVE | &quot;Predictive&quot; |
 | PREFERRED | &quot;Preferred&quot; |
-| MANUAL | &quot;Manual&quot; |
-| LAST | &quot;Last&quot; |
-| BULLSEYE | &quot;Bullseye&quot; |
 | STANDARD | &quot;Standard&quot; |
 {: class="table table-striped"}
 
@@ -329,18 +332,6 @@ title: ViewFilter
 | SCHEDULED | &quot;Scheduled&quot; |
 | INVALIDSCHEDULE | &quot;InvalidSchedule&quot; |
 | INPROGRESS | &quot;InProgress&quot; |
-| COMPLETED | &quot;Completed&quot; |
-{: class="table table-striped"}
-
-
-<a name="DevelopmentKeyTypeEnum"></a>
-
-## Enum: DevelopmentKeyTypeEnum
-
-| Name | Value |
-| ---- | ----- |
-| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| DUE | &quot;Due&quot; |
 | COMPLETED | &quot;Completed&quot; |
 {: class="table table-striped"}
 

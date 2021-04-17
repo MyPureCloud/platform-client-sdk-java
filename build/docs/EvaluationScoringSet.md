@@ -8,13 +8,13 @@ title: EvaluationScoringSet
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **totalScore** | <!----><!---->**Float**<!----> |  |  [optional] |
-| **totalCriticalScore** | <!----><!---->**Float**<!----> |  |  [optional] |
-| **totalNonCriticalScore** | <!----><!---->**Float**<!----> |  |  [optional] |
+| **totalScore** | <!----><!---->**Float**<!----> | Score of all questions |  [optional] |
+| **totalCriticalScore** | <!----><!---->**Float**<!----> | Score of only the critical questions |  [optional] |
+| **totalNonCriticalScore** | <!----><!---->**Float**<!----> | Score of only the non-critical questions |  [optional] |
 | **questionGroupScores** | <!----><!---->[**List&lt;EvaluationQuestionGroupScore&gt;**](EvaluationQuestionGroupScore.html)<!----> |  |  [optional] |
-| **anyFailedKillQuestions** | <!----><!---->**Boolean**<!----> |  |  [optional] |
-| **comments** | <!----><!---->**String**<!----> |  |  [optional] |
-| **agentComments** | <!----><!---->**String**<!----> |  |  [optional] |
+| **anyFailedKillQuestions** | <!----><!---->**Boolean**<!----> | Indicates that at least one fatal question was answered without having the highest score available for the question |  [optional] |
+| **comments** | <!----><!---->**String**<!----> | Overall comments from the evaluator |  [optional] |
+| **agentComments** | <!----><!---->**String**<!----> | Comments from the agent while reviewing evaluation results |  [optional] |
 {: class="table table-striped"}
 
 

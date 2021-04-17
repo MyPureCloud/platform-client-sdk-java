@@ -34,6 +34,7 @@ title: AuditLogMessage
 | ARCHITECT | &quot;Architect&quot; |
 | CONTACTCENTER | &quot;ContactCenter&quot; |
 | CONTENTMANAGEMENT | &quot;ContentManagement&quot; |
+| INTEGRATIONS | &quot;Integrations&quot; |
 | PEOPLEPERMISSIONS | &quot;PeoplePermissions&quot; |
 | PRESENCE | &quot;Presence&quot; |
 | QUALITY | &quot;Quality&quot; |
@@ -178,6 +179,7 @@ title: AuditLogMessage
 | PREDICTOR | &quot;Predictor&quot; |
 | WORKPLAN | &quot;WorkPlan&quot; |
 | SENTIMENTFEEDBACK | &quot;SentimentFeedback&quot; |
+| INTEGRATION | &quot;Integration&quot; |
 {: class="table table-striped"}
 
 

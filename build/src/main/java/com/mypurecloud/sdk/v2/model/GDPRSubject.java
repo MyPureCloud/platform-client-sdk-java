@@ -31,6 +31,7 @@ public class GDPRSubject  implements Serializable {
   private DialerContactId dialerContactId = null;
   private GDPRJourneyCustomer journeyCustomer = null;
   private SocialHandle socialHandle = null;
+  private String externalId = null;
   private List<String> addresses = new ArrayList<String>();
   private List<String> phoneNumbers = new ArrayList<String>();
   private List<String> emailAddresses = new ArrayList<String>();
@@ -140,6 +141,23 @@ public class GDPRSubject  implements Serializable {
   
   /**
    **/
+  public GDPRSubject externalId(String externalId) {
+    this.externalId = externalId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("externalId")
+  public String getExternalId() {
+    return externalId;
+  }
+  public void setExternalId(String externalId) {
+    this.externalId = externalId;
+  }
+
+  
+  /**
+   **/
   public GDPRSubject addresses(List<String> addresses) {
     this.addresses = addresses;
     return this;
@@ -205,6 +223,7 @@ public class GDPRSubject  implements Serializable {
         Objects.equals(this.dialerContactId, gDPRSubject.dialerContactId) &&
         Objects.equals(this.journeyCustomer, gDPRSubject.journeyCustomer) &&
         Objects.equals(this.socialHandle, gDPRSubject.socialHandle) &&
+        Objects.equals(this.externalId, gDPRSubject.externalId) &&
         Objects.equals(this.addresses, gDPRSubject.addresses) &&
         Objects.equals(this.phoneNumbers, gDPRSubject.phoneNumbers) &&
         Objects.equals(this.emailAddresses, gDPRSubject.emailAddresses);
@@ -212,7 +231,7 @@ public class GDPRSubject  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, userId, externalContactId, dialerContactId, journeyCustomer, socialHandle, addresses, phoneNumbers, emailAddresses);
+    return Objects.hash(name, userId, externalContactId, dialerContactId, journeyCustomer, socialHandle, externalId, addresses, phoneNumbers, emailAddresses);
   }
 
   @Override
@@ -226,6 +245,7 @@ public class GDPRSubject  implements Serializable {
     sb.append("    dialerContactId: ").append(toIndentedString(dialerContactId)).append("\n");
     sb.append("    journeyCustomer: ").append(toIndentedString(journeyCustomer)).append("\n");
     sb.append("    socialHandle: ").append(toIndentedString(socialHandle)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
     sb.append("    phoneNumbers: ").append(toIndentedString(phoneNumbers)).append("\n");
     sb.append("    emailAddresses: ").append(toIndentedString(emailAddresses)).append("\n");

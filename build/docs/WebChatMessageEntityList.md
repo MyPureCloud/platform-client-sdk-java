@@ -11,8 +11,8 @@ title: WebChatMessageEntityList
 | **pageSize** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **entities** | <!----><!---->[**List&lt;WebChatMessage&gt;**](WebChatMessage.html)<!----> |  |  [optional] |
 | **previousPage** | <!----><!---->**String**<!----> |  |  [optional] |
-| **next** | <!----><!---->**String**<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **next** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

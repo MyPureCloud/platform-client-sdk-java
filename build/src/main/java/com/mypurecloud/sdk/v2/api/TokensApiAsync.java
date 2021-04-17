@@ -118,7 +118,7 @@ public class TokensApiAsync {
 
   
   /**
-   * Delete  auth token used to make the request.
+   * Delete auth token used to make the request.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -152,7 +152,7 @@ public class TokensApiAsync {
   }
 
   /**
-   * Delete  auth token used to make the request.
+   * Delete auth token used to make the request.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

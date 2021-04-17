@@ -63,13 +63,14 @@ public class EvaluationQuestionScore  implements Serializable {
 
   
   /**
+   * Unweighted score of the question
    **/
   public EvaluationQuestionScore score(Integer score) {
     this.score = score;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Unweighted score of the question")
   @JsonProperty("score")
   public Integer getScore() {
     return score;
@@ -97,13 +98,14 @@ public class EvaluationQuestionScore  implements Serializable {
 
   
   /**
+   * Applicable only on fatal questions. Indicates that the answer selected was not the highest score available for the question
    **/
   public EvaluationQuestionScore failedKillQuestion(Boolean failedKillQuestion) {
     this.failedKillQuestion = failedKillQuestion;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Applicable only on fatal questions. Indicates that the answer selected was not the highest score available for the question")
   @JsonProperty("failedKillQuestion")
   public Boolean getFailedKillQuestion() {
     return failedKillQuestion;
@@ -114,13 +116,14 @@ public class EvaluationQuestionScore  implements Serializable {
 
   
   /**
+   * Comments from the evaluator specific to this question
    **/
   public EvaluationQuestionScore comments(String comments) {
     this.comments = comments;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Comments from the evaluator specific to this question")
   @JsonProperty("comments")
   public String getComments() {
     return comments;

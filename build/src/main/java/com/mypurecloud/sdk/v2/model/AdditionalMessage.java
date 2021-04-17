@@ -48,14 +48,14 @@ public class AdditionalMessage  implements Serializable {
 
   
   /**
-   * The media ids associated with the text message.
+   * The media ids associated with the text message. See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
    **/
   public AdditionalMessage mediaIds(List<String> mediaIds) {
     this.mediaIds = mediaIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The media ids associated with the text message.")
+  @ApiModelProperty(example = "null", value = "The media ids associated with the text message. See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.")
   @JsonProperty("mediaIds")
   public List<String> getMediaIds() {
     return mediaIds;

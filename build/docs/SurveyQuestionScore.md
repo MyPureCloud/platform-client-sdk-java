@@ -10,7 +10,7 @@ title: SurveyQuestionScore
 | ------------ | ------------- | ------------- | ------------- |
 | **questionId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **answerId** | <!----><!---->**String**<!----> |  |  [optional] |
-| **score** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **score** | <!----><!---->**Integer**<!----> | Unweighted score of the question |  [optional] |
 | **markedNA** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **npsScore** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **npsTextAnswer** | <!----><!---->**String**<!----> |  |  [optional] |

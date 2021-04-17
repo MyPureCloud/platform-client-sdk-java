@@ -12,7 +12,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.BusinessUnitReference;
-import com.mypurecloud.sdk.v2.model.Division;
+import com.mypurecloud.sdk.v2.model.DivisionReference;
 import com.mypurecloud.sdk.v2.model.ManagementUnitSettingsResponse;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
@@ -30,7 +30,6 @@ public class ManagementUnit  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private Division division = null;
   private BusinessUnitReference businessUnit = null;
 
   private static class StartDayOfWeekEnumDeserializer extends StdDeserializer<StartDayOfWeekEnum> {
@@ -88,6 +87,7 @@ public class ManagementUnit  implements Serializable {
   private String timeZone = null;
   private ManagementUnitSettingsResponse settings = null;
   private WfmVersionedEntityMetadata metadata = null;
+  private DivisionReference division = null;
   private Integer version = null;
   private Date dateModified = null;
   private UserReference modifiedBy = null;
@@ -115,24 +115,6 @@ public class ManagementUnit  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
-  }
-
-  
-  /**
-   * The division to which this entity belongs.
-   **/
-  public ManagementUnit division(Division division) {
-    this.division = division;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
-  @JsonProperty("division")
-  public Division getDivision() {
-    return division;
-  }
-  public void setDivision(Division division) {
-    this.division = division;
   }
 
   
@@ -226,6 +208,24 @@ public class ManagementUnit  implements Serializable {
   }
 
   
+  /**
+   * The division to which this entity belongs.
+   **/
+  public ManagementUnit division(DivisionReference division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public DivisionReference getDivision() {
+    return division;
+  }
+  public void setDivision(DivisionReference division) {
+    this.division = division;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The version of the underlying entity.  Deprecated, use field from settings.metadata instead")
   @JsonProperty("version")
   public Integer getVersion() {
@@ -277,12 +277,12 @@ public class ManagementUnit  implements Serializable {
     ManagementUnit managementUnit = (ManagementUnit) o;
     return Objects.equals(this.id, managementUnit.id) &&
         Objects.equals(this.name, managementUnit.name) &&
-        Objects.equals(this.division, managementUnit.division) &&
         Objects.equals(this.businessUnit, managementUnit.businessUnit) &&
         Objects.equals(this.startDayOfWeek, managementUnit.startDayOfWeek) &&
         Objects.equals(this.timeZone, managementUnit.timeZone) &&
         Objects.equals(this.settings, managementUnit.settings) &&
         Objects.equals(this.metadata, managementUnit.metadata) &&
+        Objects.equals(this.division, managementUnit.division) &&
         Objects.equals(this.version, managementUnit.version) &&
         Objects.equals(this.dateModified, managementUnit.dateModified) &&
         Objects.equals(this.modifiedBy, managementUnit.modifiedBy) &&
@@ -291,7 +291,7 @@ public class ManagementUnit  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, businessUnit, startDayOfWeek, timeZone, settings, metadata, version, dateModified, modifiedBy, selfUri);
+    return Objects.hash(id, name, businessUnit, startDayOfWeek, timeZone, settings, metadata, division, version, dateModified, modifiedBy, selfUri);
   }
 
   @Override
@@ -301,12 +301,12 @@ public class ManagementUnit  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    businessUnit: ").append(toIndentedString(businessUnit)).append("\n");
     sb.append("    startDayOfWeek: ").append(toIndentedString(startDayOfWeek)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");

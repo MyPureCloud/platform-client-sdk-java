@@ -20,26 +20,8 @@ import java.io.Serializable;
 
 public class AnalyticsProposedAgent  implements Serializable {
   
-  private String proposedAgentId = null;
   private Integer agentRank = null;
-
-  
-  /**
-   * Unique identifier of an agent that was proposed by predictive routing
-   **/
-  public AnalyticsProposedAgent proposedAgentId(String proposedAgentId) {
-    this.proposedAgentId = proposedAgentId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Unique identifier of an agent that was proposed by predictive routing")
-  @JsonProperty("proposedAgentId")
-  public String getProposedAgentId() {
-    return proposedAgentId;
-  }
-  public void setProposedAgentId(String proposedAgentId) {
-    this.proposedAgentId = proposedAgentId;
-  }
+  private String proposedAgentId = null;
 
   
   /**
@@ -60,6 +42,24 @@ public class AnalyticsProposedAgent  implements Serializable {
   }
 
   
+  /**
+   * Unique identifier for the agent that was proposed by predictive routing
+   **/
+  public AnalyticsProposedAgent proposedAgentId(String proposedAgentId) {
+    this.proposedAgentId = proposedAgentId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Unique identifier for the agent that was proposed by predictive routing")
+  @JsonProperty("proposedAgentId")
+  public String getProposedAgentId() {
+    return proposedAgentId;
+  }
+  public void setProposedAgentId(String proposedAgentId) {
+    this.proposedAgentId = proposedAgentId;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,13 +70,13 @@ public class AnalyticsProposedAgent  implements Serializable {
       return false;
     }
     AnalyticsProposedAgent analyticsProposedAgent = (AnalyticsProposedAgent) o;
-    return Objects.equals(this.proposedAgentId, analyticsProposedAgent.proposedAgentId) &&
-        Objects.equals(this.agentRank, analyticsProposedAgent.agentRank);
+    return Objects.equals(this.agentRank, analyticsProposedAgent.agentRank) &&
+        Objects.equals(this.proposedAgentId, analyticsProposedAgent.proposedAgentId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(proposedAgentId, agentRank);
+    return Objects.hash(agentRank, proposedAgentId);
   }
 
   @Override
@@ -84,8 +84,8 @@ public class AnalyticsProposedAgent  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class AnalyticsProposedAgent {\n");
     
-    sb.append("    proposedAgentId: ").append(toIndentedString(proposedAgentId)).append("\n");
     sb.append("    agentRank: ").append(toIndentedString(agentRank)).append("\n");
+    sb.append("    proposedAgentId: ").append(toIndentedString(proposedAgentId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

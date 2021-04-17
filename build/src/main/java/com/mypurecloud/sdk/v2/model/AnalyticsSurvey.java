@@ -21,70 +21,70 @@ import java.io.Serializable;
 
 public class AnalyticsSurvey  implements Serializable {
   
-  private String surveyId = null;
+  private Date eventTime = null;
+  private String queueId = null;
+  private Date surveyCompletedDate = null;
+  private String surveyFormContextId = null;
   private String surveyFormId = null;
   private String surveyFormName = null;
-  private String surveyFormContextId = null;
-  private Date eventTime = null;
-  private String userId = null;
-  private String queueId = null;
-  private String surveyStatus = null;
+  private String surveyId = null;
   private Integer surveyPromoterScore = null;
-  private Date surveyCompletedDate = null;
+  private String surveyStatus = null;
+  private String userId = null;
   private Long oSurveyTotalScore = null;
 
   
   /**
-   * Unique identifier for the survey
+   * Specifies when an event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
-  public AnalyticsSurvey surveyId(String surveyId) {
-    this.surveyId = surveyId;
+  public AnalyticsSurvey eventTime(Date eventTime) {
+    this.eventTime = eventTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Unique identifier for the survey")
-  @JsonProperty("surveyId")
-  public String getSurveyId() {
-    return surveyId;
+  @ApiModelProperty(example = "null", value = "Specifies when an event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("eventTime")
+  public Date getEventTime() {
+    return eventTime;
   }
-  public void setSurveyId(String surveyId) {
-    this.surveyId = surveyId;
+  public void setEventTime(Date eventTime) {
+    this.eventTime = eventTime;
   }
 
   
   /**
-   * Unique identifier for the survey form
+   * The ID of the associated queue
    **/
-  public AnalyticsSurvey surveyFormId(String surveyFormId) {
-    this.surveyFormId = surveyFormId;
+  public AnalyticsSurvey queueId(String queueId) {
+    this.queueId = queueId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Unique identifier for the survey form")
-  @JsonProperty("surveyFormId")
-  public String getSurveyFormId() {
-    return surveyFormId;
+  @ApiModelProperty(example = "null", value = "The ID of the associated queue")
+  @JsonProperty("queueId")
+  public String getQueueId() {
+    return queueId;
   }
-  public void setSurveyFormId(String surveyFormId) {
-    this.surveyFormId = surveyFormId;
+  public void setQueueId(String queueId) {
+    this.queueId = queueId;
   }
 
   
   /**
-   * Name of the survey form
+   * Completion datetime of the survey in ISO 8601 format
    **/
-  public AnalyticsSurvey surveyFormName(String surveyFormName) {
-    this.surveyFormName = surveyFormName;
+  public AnalyticsSurvey surveyCompletedDate(Date surveyCompletedDate) {
+    this.surveyCompletedDate = surveyCompletedDate;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Name of the survey form")
-  @JsonProperty("surveyFormName")
-  public String getSurveyFormName() {
-    return surveyFormName;
+  @ApiModelProperty(example = "null", value = "Completion datetime of the survey in ISO 8601 format")
+  @JsonProperty("surveyCompletedDate")
+  public Date getSurveyCompletedDate() {
+    return surveyCompletedDate;
   }
-  public void setSurveyFormName(String surveyFormName) {
-    this.surveyFormName = surveyFormName;
+  public void setSurveyCompletedDate(Date surveyCompletedDate) {
+    this.surveyCompletedDate = surveyCompletedDate;
   }
 
   
@@ -107,86 +107,68 @@ public class AnalyticsSurvey  implements Serializable {
 
   
   /**
-   * Specifies when a survey occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   * ID of the survey form used
    **/
-  public AnalyticsSurvey eventTime(Date eventTime) {
-    this.eventTime = eventTime;
+  public AnalyticsSurvey surveyFormId(String surveyFormId) {
+    this.surveyFormId = surveyFormId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Specifies when a survey occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
-  @JsonProperty("eventTime")
-  public Date getEventTime() {
-    return eventTime;
+  @ApiModelProperty(example = "null", value = "ID of the survey form used")
+  @JsonProperty("surveyFormId")
+  public String getSurveyFormId() {
+    return surveyFormId;
   }
-  public void setEventTime(Date eventTime) {
-    this.eventTime = eventTime;
+  public void setSurveyFormId(String surveyFormId) {
+    this.surveyFormId = surveyFormId;
   }
 
   
   /**
-   * A unique identifier of the PureCloud user
+   * Name of the survey form used
    **/
-  public AnalyticsSurvey userId(String userId) {
-    this.userId = userId;
+  public AnalyticsSurvey surveyFormName(String surveyFormName) {
+    this.surveyFormName = surveyFormName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A unique identifier of the PureCloud user")
-  @JsonProperty("userId")
-  public String getUserId() {
-    return userId;
+  @ApiModelProperty(example = "null", value = "Name of the survey form used")
+  @JsonProperty("surveyFormName")
+  public String getSurveyFormName() {
+    return surveyFormName;
   }
-  public void setUserId(String userId) {
-    this.userId = userId;
+  public void setSurveyFormName(String surveyFormName) {
+    this.surveyFormName = surveyFormName;
   }
 
   
   /**
-   * Unique identifier for the queue the conversation was on
+   * ID of the survey
    **/
-  public AnalyticsSurvey queueId(String queueId) {
-    this.queueId = queueId;
+  public AnalyticsSurvey surveyId(String surveyId) {
+    this.surveyId = surveyId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Unique identifier for the queue the conversation was on")
-  @JsonProperty("queueId")
-  public String getQueueId() {
-    return queueId;
+  @ApiModelProperty(example = "null", value = "ID of the survey")
+  @JsonProperty("surveyId")
+  public String getSurveyId() {
+    return surveyId;
   }
-  public void setQueueId(String queueId) {
-    this.queueId = queueId;
+  public void setSurveyId(String surveyId) {
+    this.surveyId = surveyId;
   }
 
   
   /**
-   * Survey status
-   **/
-  public AnalyticsSurvey surveyStatus(String surveyStatus) {
-    this.surveyStatus = surveyStatus;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Survey status")
-  @JsonProperty("surveyStatus")
-  public String getSurveyStatus() {
-    return surveyStatus;
-  }
-  public void setSurveyStatus(String surveyStatus) {
-    this.surveyStatus = surveyStatus;
-  }
-
-  
-  /**
-   * Promoter score of the survey
+   * Score of the survey used with NPS
    **/
   public AnalyticsSurvey surveyPromoterScore(Integer surveyPromoterScore) {
     this.surveyPromoterScore = surveyPromoterScore;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Promoter score of the survey")
+  @ApiModelProperty(example = "null", value = "Score of the survey used with NPS")
   @JsonProperty("surveyPromoterScore")
   public Integer getSurveyPromoterScore() {
     return surveyPromoterScore;
@@ -197,20 +179,38 @@ public class AnalyticsSurvey  implements Serializable {
 
   
   /**
-   * Completion date/time of the survey. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   * The status of the survey
    **/
-  public AnalyticsSurvey surveyCompletedDate(Date surveyCompletedDate) {
-    this.surveyCompletedDate = surveyCompletedDate;
+  public AnalyticsSurvey surveyStatus(String surveyStatus) {
+    this.surveyStatus = surveyStatus;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Completion date/time of the survey. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
-  @JsonProperty("surveyCompletedDate")
-  public Date getSurveyCompletedDate() {
-    return surveyCompletedDate;
+  @ApiModelProperty(example = "null", value = "The status of the survey")
+  @JsonProperty("surveyStatus")
+  public String getSurveyStatus() {
+    return surveyStatus;
   }
-  public void setSurveyCompletedDate(Date surveyCompletedDate) {
-    this.surveyCompletedDate = surveyCompletedDate;
+  public void setSurveyStatus(String surveyStatus) {
+    this.surveyStatus = surveyStatus;
+  }
+
+  
+  /**
+   * ID of the agent the survey was performed against
+   **/
+  public AnalyticsSurvey userId(String userId) {
+    this.userId = userId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "ID of the agent the survey was performed against")
+  @JsonProperty("userId")
+  public String getUserId() {
+    return userId;
+  }
+  public void setUserId(String userId) {
+    this.userId = userId;
   }
 
   
@@ -241,22 +241,22 @@ public class AnalyticsSurvey  implements Serializable {
       return false;
     }
     AnalyticsSurvey analyticsSurvey = (AnalyticsSurvey) o;
-    return Objects.equals(this.surveyId, analyticsSurvey.surveyId) &&
+    return Objects.equals(this.eventTime, analyticsSurvey.eventTime) &&
+        Objects.equals(this.queueId, analyticsSurvey.queueId) &&
+        Objects.equals(this.surveyCompletedDate, analyticsSurvey.surveyCompletedDate) &&
+        Objects.equals(this.surveyFormContextId, analyticsSurvey.surveyFormContextId) &&
         Objects.equals(this.surveyFormId, analyticsSurvey.surveyFormId) &&
         Objects.equals(this.surveyFormName, analyticsSurvey.surveyFormName) &&
-        Objects.equals(this.surveyFormContextId, analyticsSurvey.surveyFormContextId) &&
-        Objects.equals(this.eventTime, analyticsSurvey.eventTime) &&
-        Objects.equals(this.userId, analyticsSurvey.userId) &&
-        Objects.equals(this.queueId, analyticsSurvey.queueId) &&
-        Objects.equals(this.surveyStatus, analyticsSurvey.surveyStatus) &&
+        Objects.equals(this.surveyId, analyticsSurvey.surveyId) &&
         Objects.equals(this.surveyPromoterScore, analyticsSurvey.surveyPromoterScore) &&
-        Objects.equals(this.surveyCompletedDate, analyticsSurvey.surveyCompletedDate) &&
+        Objects.equals(this.surveyStatus, analyticsSurvey.surveyStatus) &&
+        Objects.equals(this.userId, analyticsSurvey.userId) &&
         Objects.equals(this.oSurveyTotalScore, analyticsSurvey.oSurveyTotalScore);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(surveyId, surveyFormId, surveyFormName, surveyFormContextId, eventTime, userId, queueId, surveyStatus, surveyPromoterScore, surveyCompletedDate, oSurveyTotalScore);
+    return Objects.hash(eventTime, queueId, surveyCompletedDate, surveyFormContextId, surveyFormId, surveyFormName, surveyId, surveyPromoterScore, surveyStatus, userId, oSurveyTotalScore);
   }
 
   @Override
@@ -264,16 +264,16 @@ public class AnalyticsSurvey  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class AnalyticsSurvey {\n");
     
-    sb.append("    surveyId: ").append(toIndentedString(surveyId)).append("\n");
+    sb.append("    eventTime: ").append(toIndentedString(eventTime)).append("\n");
+    sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
+    sb.append("    surveyCompletedDate: ").append(toIndentedString(surveyCompletedDate)).append("\n");
+    sb.append("    surveyFormContextId: ").append(toIndentedString(surveyFormContextId)).append("\n");
     sb.append("    surveyFormId: ").append(toIndentedString(surveyFormId)).append("\n");
     sb.append("    surveyFormName: ").append(toIndentedString(surveyFormName)).append("\n");
-    sb.append("    surveyFormContextId: ").append(toIndentedString(surveyFormContextId)).append("\n");
-    sb.append("    eventTime: ").append(toIndentedString(eventTime)).append("\n");
-    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-    sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
-    sb.append("    surveyStatus: ").append(toIndentedString(surveyStatus)).append("\n");
+    sb.append("    surveyId: ").append(toIndentedString(surveyId)).append("\n");
     sb.append("    surveyPromoterScore: ").append(toIndentedString(surveyPromoterScore)).append("\n");
-    sb.append("    surveyCompletedDate: ").append(toIndentedString(surveyCompletedDate)).append("\n");
+    sb.append("    surveyStatus: ").append(toIndentedString(surveyStatus)).append("\n");
+    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    oSurveyTotalScore: ").append(toIndentedString(oSurveyTotalScore)).append("\n");
     sb.append("}");
     return sb.toString();

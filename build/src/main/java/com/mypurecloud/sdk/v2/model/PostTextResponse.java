@@ -82,6 +82,7 @@ public class PostTextResponse  implements Serializable {
   private Map<String, Object> amazonLex = null;
   private Map<String, Object> googleDialogFlow = null;
   private Map<String, Object> genesysDialogEngine = null;
+  private Map<String, Object> genesysBotConnector = null;
 
   
   /**
@@ -228,6 +229,24 @@ public class PostTextResponse  implements Serializable {
   }
 
   
+  /**
+   * Raw data response from Genesys' BotConnector (if called)
+   **/
+  public PostTextResponse genesysBotConnector(Map<String, Object> genesysBotConnector) {
+    this.genesysBotConnector = genesysBotConnector;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Raw data response from Genesys' BotConnector (if called)")
+  @JsonProperty("genesysBotConnector")
+  public Map<String, Object> getGenesysBotConnector() {
+    return genesysBotConnector;
+  }
+  public void setGenesysBotConnector(Map<String, Object> genesysBotConnector) {
+    this.genesysBotConnector = genesysBotConnector;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -245,12 +264,13 @@ public class PostTextResponse  implements Serializable {
         Objects.equals(this.botCorrelationId, postTextResponse.botCorrelationId) &&
         Objects.equals(this.amazonLex, postTextResponse.amazonLex) &&
         Objects.equals(this.googleDialogFlow, postTextResponse.googleDialogFlow) &&
-        Objects.equals(this.genesysDialogEngine, postTextResponse.genesysDialogEngine);
+        Objects.equals(this.genesysDialogEngine, postTextResponse.genesysDialogEngine) &&
+        Objects.equals(this.genesysBotConnector, postTextResponse.genesysBotConnector);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(botState, replyMessages, intentName, slots, botCorrelationId, amazonLex, googleDialogFlow, genesysDialogEngine);
+    return Objects.hash(botState, replyMessages, intentName, slots, botCorrelationId, amazonLex, googleDialogFlow, genesysDialogEngine, genesysBotConnector);
   }
 
   @Override
@@ -266,6 +286,7 @@ public class PostTextResponse  implements Serializable {
     sb.append("    amazonLex: ").append(toIndentedString(amazonLex)).append("\n");
     sb.append("    googleDialogFlow: ").append(toIndentedString(googleDialogFlow)).append("\n");
     sb.append("    genesysDialogEngine: ").append(toIndentedString(genesysDialogEngine)).append("\n");
+    sb.append("    genesysBotConnector: ").append(toIndentedString(genesysBotConnector)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -180,6 +180,20 @@ public class GetKnowledgeKnowledgebaseLanguageDocumentsRequest {
 	    return this;
 	} 
 	
+	private List<String> documentIds;
+	public List<String> getDocumentIds() {
+		return this.documentIds;
+	}
+
+	public void setDocumentIds(List<String> documentIds) {
+		this.documentIds = documentIds;
+	}
+
+	public GetKnowledgeKnowledgebaseLanguageDocumentsRequest withDocumentIds(List<String> documentIds) {
+	    this.setDocumentIds(documentIds);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -228,6 +242,8 @@ public class GetKnowledgeKnowledgebaseLanguageDocumentsRequest {
                 .withQueryParameters("categories", "", categories)
         
                 .withQueryParameters("title", "", title)
+        
+                .withQueryParameters("documentIds", "multi", documentIds)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -297,6 +313,11 @@ public class GetKnowledgeKnowledgebaseLanguageDocumentsRequest {
 		
 		public Builder withTitle(String title) {
 			request.setTitle(title);
+			return this;
+		}
+		
+		public Builder withDocumentIds(List<String> documentIds) {
+			request.setDocumentIds(documentIds);
 			return this;
 		}
 		

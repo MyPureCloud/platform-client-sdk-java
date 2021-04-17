@@ -20,26 +20,8 @@ import java.io.Serializable;
 
 public class AnalyticsScoredAgent  implements Serializable {
   
-  private String scoredAgentId = null;
   private Integer agentScore = null;
-
-  
-  /**
-   * Unique identifier of an agent that was scored for this conversation
-   **/
-  public AnalyticsScoredAgent scoredAgentId(String scoredAgentId) {
-    this.scoredAgentId = scoredAgentId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Unique identifier of an agent that was scored for this conversation")
-  @JsonProperty("scoredAgentId")
-  public String getScoredAgentId() {
-    return scoredAgentId;
-  }
-  public void setScoredAgentId(String scoredAgentId) {
-    this.scoredAgentId = scoredAgentId;
-  }
+  private String scoredAgentId = null;
 
   
   /**
@@ -60,6 +42,24 @@ public class AnalyticsScoredAgent  implements Serializable {
   }
 
   
+  /**
+   * Unique identifier for the agent that was scored for this conversation
+   **/
+  public AnalyticsScoredAgent scoredAgentId(String scoredAgentId) {
+    this.scoredAgentId = scoredAgentId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Unique identifier for the agent that was scored for this conversation")
+  @JsonProperty("scoredAgentId")
+  public String getScoredAgentId() {
+    return scoredAgentId;
+  }
+  public void setScoredAgentId(String scoredAgentId) {
+    this.scoredAgentId = scoredAgentId;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -70,13 +70,13 @@ public class AnalyticsScoredAgent  implements Serializable {
       return false;
     }
     AnalyticsScoredAgent analyticsScoredAgent = (AnalyticsScoredAgent) o;
-    return Objects.equals(this.scoredAgentId, analyticsScoredAgent.scoredAgentId) &&
-        Objects.equals(this.agentScore, analyticsScoredAgent.agentScore);
+    return Objects.equals(this.agentScore, analyticsScoredAgent.agentScore) &&
+        Objects.equals(this.scoredAgentId, analyticsScoredAgent.scoredAgentId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(scoredAgentId, agentScore);
+    return Objects.hash(agentScore, scoredAgentId);
   }
 
   @Override
@@ -84,8 +84,8 @@ public class AnalyticsScoredAgent  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class AnalyticsScoredAgent {\n");
     
-    sb.append("    scoredAgentId: ").append(toIndentedString(scoredAgentId)).append("\n");
     sb.append("    agentScore: ").append(toIndentedString(agentScore)).append("\n");
+    sb.append("    scoredAgentId: ").append(toIndentedString(scoredAgentId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
