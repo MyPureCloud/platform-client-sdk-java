@@ -19,6 +19,7 @@ title: DialerDnclistConfigChangeDncList
 | **loginId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **dncCodes** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **licenseId** | <!----><!---->**String**<!----> |  |  [optional] |
+| **contactMethod** | [**ContactMethodEnum**](#ContactMethodEnum)<!----> |  |  [optional] |
 | **division** | <!----><!---->[**DialerDnclistConfigChangeUriReference**](DialerDnclistConfigChangeUriReference.html)<!----> |  |  [optional] |
 | **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
@@ -34,6 +35,18 @@ title: DialerDnclistConfigChangeDncList
 | RDS | &quot;RDS&quot; |
 | DNC_COM | &quot;DNC_COM&quot; |
 | GRYPHON | &quot;GRYPHON&quot; |
+{: class="table table-striped"}
+
+
+<a name="ContactMethodEnum"></a>
+
+## Enum: ContactMethodEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| EMAIL | &quot;EMAIL&quot; |
+| PHONE | &quot;PHONE&quot; |
 {: class="table table-striped"}
 
 

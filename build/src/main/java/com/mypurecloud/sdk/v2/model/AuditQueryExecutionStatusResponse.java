@@ -102,21 +102,22 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     ARCHITECT("Architect"),
     CONTACTCENTER("ContactCenter"),
     CONTENTMANAGEMENT("ContentManagement"),
+    GROUPS("Groups"),
     INTEGRATIONS("Integrations"),
+    LANGUAGEUNDERSTANDING("LanguageUnderstanding"),
+    LIMITS("Limits"),
+    OUTBOUND("Outbound"),
     PEOPLEPERMISSIONS("PeoplePermissions"),
+    PREDICTIVEENGAGEMENT("PredictiveEngagement"),
     PRESENCE("Presence"),
     QUALITY("Quality"),
-    LANGUAGEUNDERSTANDING("LanguageUnderstanding"),
-    TOPICSDEFINITIONS("TopicsDefinitions"),
-    PREDICTIVEENGAGEMENT("PredictiveEngagement"),
-    WORKFORCEMANAGEMENT("WorkforceManagement"),
-    TRIGGERS("Triggers"),
     RESPONSEMANAGEMENT("ResponseManagement"),
-    GROUPS("Groups"),
-    TELEPHONY("Telephony"),
-    OUTBOUND("Outbound"),
+    ROUTING("Routing"),
     SPEECHANDTEXTANALYTICS("SpeechAndTextAnalytics"),
-    ROUTING("Routing");
+    TELEPHONY("Telephony"),
+    TOPICSDEFINITIONS("TopicsDefinitions"),
+    TRIGGERS("Triggers"),
+    WORKFORCEMANAGEMENT("WorkforceManagement");
 
     private String value;
 

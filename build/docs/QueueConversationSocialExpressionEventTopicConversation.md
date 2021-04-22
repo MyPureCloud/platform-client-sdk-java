@@ -13,6 +13,7 @@ title: QueueConversationSocialExpressionEventTopicConversation
 | **participants** | <!----><!---->[**List&lt;QueueConversationSocialExpressionEventTopicParticipant&gt;**](QueueConversationSocialExpressionEventTopicParticipant.html)<!----> |  |  [optional] |
 | **recordingState** | <!----><!---->**String**<!----> |  |  [optional] |
 | **address** | <!----><!---->**String**<!----> |  |  [optional] |
+| **externalTag** | <!----><!---->**String**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

@@ -23,21 +23,22 @@ title: AuditQueryService
 | ARCHITECT | &quot;Architect&quot; |
 | CONTACTCENTER | &quot;ContactCenter&quot; |
 | CONTENTMANAGEMENT | &quot;ContentManagement&quot; |
+| GROUPS | &quot;Groups&quot; |
 | INTEGRATIONS | &quot;Integrations&quot; |
+| LANGUAGEUNDERSTANDING | &quot;LanguageUnderstanding&quot; |
+| LIMITS | &quot;Limits&quot; |
+| OUTBOUND | &quot;Outbound&quot; |
 | PEOPLEPERMISSIONS | &quot;PeoplePermissions&quot; |
+| PREDICTIVEENGAGEMENT | &quot;PredictiveEngagement&quot; |
 | PRESENCE | &quot;Presence&quot; |
 | QUALITY | &quot;Quality&quot; |
-| LANGUAGEUNDERSTANDING | &quot;LanguageUnderstanding&quot; |
-| TOPICSDEFINITIONS | &quot;TopicsDefinitions&quot; |
-| PREDICTIVEENGAGEMENT | &quot;PredictiveEngagement&quot; |
-| WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; |
-| TRIGGERS | &quot;Triggers&quot; |
 | RESPONSEMANAGEMENT | &quot;ResponseManagement&quot; |
-| GROUPS | &quot;Groups&quot; |
-| TELEPHONY | &quot;Telephony&quot; |
-| OUTBOUND | &quot;Outbound&quot; |
-| SPEECHANDTEXTANALYTICS | &quot;SpeechAndTextAnalytics&quot; |
 | ROUTING | &quot;Routing&quot; |
+| SPEECHANDTEXTANALYTICS | &quot;SpeechAndTextAnalytics&quot; |
+| TELEPHONY | &quot;Telephony&quot; |
+| TOPICSDEFINITIONS | &quot;TopicsDefinitions&quot; |
+| TRIGGERS | &quot;Triggers&quot; |
+| WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; |
 {: class="table table-striped"}
 
 

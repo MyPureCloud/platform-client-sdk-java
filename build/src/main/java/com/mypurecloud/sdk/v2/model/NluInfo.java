@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.Intent;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,7 +24,25 @@ import java.io.Serializable;
 
 public class NluInfo  implements Serializable {
   
+  private AddressableEntityRef domain = null;
   private List<Intent> intents = new ArrayList<Intent>();
+
+  
+  /**
+   **/
+  public NluInfo domain(AddressableEntityRef domain) {
+    this.domain = domain;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("domain")
+  public AddressableEntityRef getDomain() {
+    return domain;
+  }
+  public void setDomain(AddressableEntityRef domain) {
+    this.domain = domain;
+  }
 
   
   /**
@@ -53,12 +72,13 @@ public class NluInfo  implements Serializable {
       return false;
     }
     NluInfo nluInfo = (NluInfo) o;
-    return Objects.equals(this.intents, nluInfo.intents);
+    return Objects.equals(this.domain, nluInfo.domain) &&
+        Objects.equals(this.intents, nluInfo.intents);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(intents);
+    return Objects.hash(domain, intents);
   }
 
   @Override
@@ -66,6 +86,7 @@ public class NluInfo  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class NluInfo {\n");
     
+    sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
     sb.append("    intents: ").append(toIndentedString(intents)).append("\n");
     sb.append("}");
     return sb.toString();

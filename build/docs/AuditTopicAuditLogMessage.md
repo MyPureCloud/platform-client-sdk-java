@@ -177,6 +177,7 @@ title: AuditTopicAuditLogMessage
 | ROUTINGTRANSCRIPTIONSETTINGS | &quot;RoutingTranscriptionSettings&quot; |
 | SPEECHTEXTANALYTICSSETTINGS | &quot;SpeechTextAnalyticsSettings&quot; |
 | PREDICTOR | &quot;Predictor&quot; |
+| WORKPLAN | &quot;WorkPlan&quot; |
 {: class="table table-striped"}
 
 

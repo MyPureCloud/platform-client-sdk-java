@@ -17,6 +17,10 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.FieldConfig;
 import com.mypurecloud.sdk.v2.model.EmbeddedIntegration;
 import com.mypurecloud.sdk.v2.model.IpAddressAuthentication;
+import com.mypurecloud.sdk.v2.model.LimitChangeRequestDetails;
+import com.mypurecloud.sdk.v2.model.LimitChangeRequestsEntityListing;
+import com.mypurecloud.sdk.v2.model.UrlResponse;
+import com.mypurecloud.sdk.v2.model.LimitsEntityListing;
 import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrgWhitelistSettings;
 import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
@@ -26,6 +30,11 @@ import com.mypurecloud.sdk.v2.model.FeatureState;
 import com.mypurecloud.sdk.v2.api.request.GetFieldconfigRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsEmbeddedintegrationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsIpaddressauthenticationRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsChangerequestRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsChangerequestsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsDocsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespaceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespacesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsWhitelistRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchOrganizationsFeatureRequest;
@@ -270,6 +279,386 @@ public class OrganizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<IpAddressAuthentication> response = (ApiResponse<IpAddressAuthentication>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a limit change request
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LimitChangeRequestDetails> getOrganizationsLimitsChangerequestAsync(GetOrganizationsLimitsChangerequestRequest request, final AsyncApiCallback<LimitChangeRequestDetails> callback) {
+    try {
+      final SettableFuture<LimitChangeRequestDetails> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LimitChangeRequestDetails>() {}, new AsyncApiCallback<ApiResponse<LimitChangeRequestDetails>>() {
+        @Override
+        public void onCompleted(ApiResponse<LimitChangeRequestDetails> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a limit change request
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LimitChangeRequestDetails>> getOrganizationsLimitsChangerequestAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LimitChangeRequestDetails>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LimitChangeRequestDetails>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LimitChangeRequestDetails>() {}, new AsyncApiCallback<ApiResponse<LimitChangeRequestDetails>>() {
+        @Override
+        public void onCompleted(ApiResponse<LimitChangeRequestDetails> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LimitChangeRequestDetails> response = (ApiResponse<LimitChangeRequestDetails>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LimitChangeRequestDetails> response = (ApiResponse<LimitChangeRequestDetails>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the available limit change requests
+   * Timestamp interval defaults to the last 365 days if both query parameters are omitted. If only one parameter is omitted, the interval will default to a 180 day range in the specified direction.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LimitChangeRequestsEntityListing> getOrganizationsLimitsChangerequestsAsync(GetOrganizationsLimitsChangerequestsRequest request, final AsyncApiCallback<LimitChangeRequestsEntityListing> callback) {
+    try {
+      final SettableFuture<LimitChangeRequestsEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LimitChangeRequestsEntityListing>() {}, new AsyncApiCallback<ApiResponse<LimitChangeRequestsEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LimitChangeRequestsEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the available limit change requests
+   * Timestamp interval defaults to the last 365 days if both query parameters are omitted. If only one parameter is omitted, the interval will default to a 180 day range in the specified direction.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LimitChangeRequestsEntityListing>> getOrganizationsLimitsChangerequestsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LimitChangeRequestsEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LimitChangeRequestsEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LimitChangeRequestsEntityListing>() {}, new AsyncApiCallback<ApiResponse<LimitChangeRequestsEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LimitChangeRequestsEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LimitChangeRequestsEntityListing> response = (ApiResponse<LimitChangeRequestsEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LimitChangeRequestsEntityListing> response = (ApiResponse<LimitChangeRequestsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a link to the limit documentation
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UrlResponse> getOrganizationsLimitsDocsAsync(GetOrganizationsLimitsDocsRequest request, final AsyncApiCallback<UrlResponse> callback) {
+    try {
+      final SettableFuture<UrlResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UrlResponse>() {}, new AsyncApiCallback<ApiResponse<UrlResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UrlResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a link to the limit documentation
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UrlResponse>> getOrganizationsLimitsDocsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UrlResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UrlResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UrlResponse>() {}, new AsyncApiCallback<ApiResponse<UrlResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<UrlResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UrlResponse> response = (ApiResponse<UrlResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UrlResponse> response = (ApiResponse<UrlResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the effective limits in a namespace for an organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LimitsEntityListing> getOrganizationsLimitsNamespaceAsync(GetOrganizationsLimitsNamespaceRequest request, final AsyncApiCallback<LimitsEntityListing> callback) {
+    try {
+      final SettableFuture<LimitsEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LimitsEntityListing>() {}, new AsyncApiCallback<ApiResponse<LimitsEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LimitsEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the effective limits in a namespace for an organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LimitsEntityListing>> getOrganizationsLimitsNamespaceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LimitsEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LimitsEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LimitsEntityListing>() {}, new AsyncApiCallback<ApiResponse<LimitsEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LimitsEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LimitsEntityListing> response = (ApiResponse<LimitsEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LimitsEntityListing> response = (ApiResponse<LimitsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the available limit namespaces
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LimitsEntityListing> getOrganizationsLimitsNamespacesAsync(GetOrganizationsLimitsNamespacesRequest request, final AsyncApiCallback<LimitsEntityListing> callback) {
+    try {
+      final SettableFuture<LimitsEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LimitsEntityListing>() {}, new AsyncApiCallback<ApiResponse<LimitsEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LimitsEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the available limit namespaces
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LimitsEntityListing>> getOrganizationsLimitsNamespacesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LimitsEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LimitsEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LimitsEntityListing>() {}, new AsyncApiCallback<ApiResponse<LimitsEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<LimitsEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LimitsEntityListing> response = (ApiResponse<LimitsEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LimitsEntityListing> response = (ApiResponse<LimitsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

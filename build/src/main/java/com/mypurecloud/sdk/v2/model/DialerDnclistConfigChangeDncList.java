@@ -85,6 +85,54 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
   private String loginId = null;
   private List<String> dncCodes = new ArrayList<String>();
   private String licenseId = null;
+
+  private static class ContactMethodEnumDeserializer extends StdDeserializer<ContactMethodEnum> {
+    public ContactMethodEnumDeserializer() {
+      super(ContactMethodEnumDeserializer.class);
+    }
+
+    @Override
+    public ContactMethodEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ContactMethodEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets contactMethod
+   */
+ @JsonDeserialize(using = ContactMethodEnumDeserializer.class)
+  public enum ContactMethodEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    EMAIL("EMAIL"),
+    PHONE("PHONE");
+
+    private String value;
+
+    ContactMethodEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ContactMethodEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ContactMethodEnum value : ContactMethodEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ContactMethodEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ContactMethodEnum contactMethod = null;
   private DialerDnclistConfigChangeUriReference division = null;
   private Object additionalProperties = null;
 
@@ -278,6 +326,23 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
   
   /**
    **/
+  public DialerDnclistConfigChangeDncList contactMethod(ContactMethodEnum contactMethod) {
+    this.contactMethod = contactMethod;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("contactMethod")
+  public ContactMethodEnum getContactMethod() {
+    return contactMethod;
+  }
+  public void setContactMethod(ContactMethodEnum contactMethod) {
+    this.contactMethod = contactMethod;
+  }
+
+  
+  /**
+   **/
   public DialerDnclistConfigChangeDncList division(DialerDnclistConfigChangeUriReference division) {
     this.division = division;
     return this;
@@ -331,13 +396,14 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
         Objects.equals(this.loginId, dialerDnclistConfigChangeDncList.loginId) &&
         Objects.equals(this.dncCodes, dialerDnclistConfigChangeDncList.dncCodes) &&
         Objects.equals(this.licenseId, dialerDnclistConfigChangeDncList.licenseId) &&
+        Objects.equals(this.contactMethod, dialerDnclistConfigChangeDncList.contactMethod) &&
         Objects.equals(this.division, dialerDnclistConfigChangeDncList.division) &&
         Objects.equals(this.additionalProperties, dialerDnclistConfigChangeDncList.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, importStatus, size, dncSourceType, loginId, dncCodes, licenseId, division, additionalProperties);
+    return Objects.hash(id, name, dateCreated, dateModified, version, importStatus, size, dncSourceType, loginId, dncCodes, licenseId, contactMethod, division, additionalProperties);
   }
 
   @Override
@@ -356,6 +422,7 @@ public class DialerDnclistConfigChangeDncList  implements Serializable {
     sb.append("    loginId: ").append(toIndentedString(loginId)).append("\n");
     sb.append("    dncCodes: ").append(toIndentedString(dncCodes)).append("\n");
     sb.append("    licenseId: ").append(toIndentedString(licenseId)).append("\n");
+    sb.append("    contactMethod: ").append(toIndentedString(contactMethod)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");

@@ -16,7 +16,8 @@ title: CreateQueueRequest
 | **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | The date of the last modification to the queue. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **modifiedBy** | <!----><!---->**String**<!----> | The ID of the user that last modified the queue. |  [optional] |
 | **createdBy** | <!----><!---->**String**<!----> | The ID of the user that created the queue. |  [optional] |
-| **memberCount** | <!----><!---->**Integer**<!----> | The number of users in the queue. |  [optional] |
+| **memberCount** | <!----><!---->**Integer**<!----> | The total number of members (joined or unjoined) in the queue. |  [optional] |
+| **joinedMemberCount** | <!----><!---->**Integer**<!----> | The number of joined members in the queue. |  [optional] |
 | **mediaSettings** | <!----><!---->[**Map&lt;String, MediaSetting&gt;**](MediaSetting.html)<!----> | The media settings for the queue. Valid key values: CALL, CALLBACK, CHAT, EMAIL, MESSAGE, SOCIAL_EXPRESSION, VIDEO_COMM |  [optional] |
 | **routingRules** | <!----><!---->[**List&lt;RoutingRule&gt;**](RoutingRule.html)<!----> | The routing rules for the queue, used for routing to known or preferred agents. |  [optional] |
 | **bullseye** | <!----><!---->[**Bullseye**](Bullseye.html)<!----> | The bulls-eye settings for the queue. |  [optional] |

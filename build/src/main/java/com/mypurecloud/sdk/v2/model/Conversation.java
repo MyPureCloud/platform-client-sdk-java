@@ -28,6 +28,7 @@ public class Conversation  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private String externalTag = null;
   private Date startTime = null;
   private Date endTime = null;
   private String address = null;
@@ -165,6 +166,24 @@ public class Conversation  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  
+  /**
+   * The external tag associated with the conversation.
+   **/
+  public Conversation externalTag(String externalTag) {
+    this.externalTag = externalTag;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The external tag associated with the conversation.")
+  @JsonProperty("externalTag")
+  public String getExternalTag() {
+    return externalTag;
+  }
+  public void setExternalTag(String externalTag) {
+    this.externalTag = externalTag;
   }
 
   
@@ -349,6 +368,7 @@ public class Conversation  implements Serializable {
     Conversation conversation = (Conversation) o;
     return Objects.equals(this.id, conversation.id) &&
         Objects.equals(this.name, conversation.name) &&
+        Objects.equals(this.externalTag, conversation.externalTag) &&
         Objects.equals(this.startTime, conversation.startTime) &&
         Objects.equals(this.endTime, conversation.endTime) &&
         Objects.equals(this.address, conversation.address) &&
@@ -363,7 +383,7 @@ public class Conversation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, startTime, endTime, address, participants, conversationIds, maxParticipants, recordingState, state, divisions, selfUri);
+    return Objects.hash(id, name, externalTag, startTime, endTime, address, participants, conversationIds, maxParticipants, recordingState, state, divisions, selfUri);
   }
 
   @Override
@@ -373,6 +393,7 @@ public class Conversation  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
     sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
     sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");

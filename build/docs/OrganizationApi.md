@@ -10,6 +10,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFieldconfig**](OrganizationApi.html#getFieldconfig) | Fetch field config for an entity type |
 | [**getOrganizationsEmbeddedintegration**](OrganizationApi.html#getOrganizationsEmbeddedintegration) | Get the list of domains that will be allowed to embed PureCloud applications |
 | [**getOrganizationsIpaddressauthentication**](OrganizationApi.html#getOrganizationsIpaddressauthentication) | Get organization IP address whitelist settings |
+| [**getOrganizationsLimitsChangerequest**](OrganizationApi.html#getOrganizationsLimitsChangerequest) | Get a limit change request |
+| [**getOrganizationsLimitsChangerequests**](OrganizationApi.html#getOrganizationsLimitsChangerequests) | Get the available limit change requests |
+| [**getOrganizationsLimitsDocs**](OrganizationApi.html#getOrganizationsLimitsDocs) | Get a link to the limit documentation |
+| [**getOrganizationsLimitsNamespace**](OrganizationApi.html#getOrganizationsLimitsNamespace) | Get the effective limits in a namespace for an organization |
+| [**getOrganizationsLimitsNamespaces**](OrganizationApi.html#getOrganizationsLimitsNamespaces) | Get the available limit namespaces |
 | [**getOrganizationsMe**](OrganizationApi.html#getOrganizationsMe) | Get organization. |
 | [**getOrganizationsWhitelist**](OrganizationApi.html#getOrganizationsWhitelist) | Use PUT /api/v2/organizations/embeddedintegration instead |
 | [**patchOrganizationsFeature**](OrganizationApi.html#patchOrganizationsFeature) | Update organization |
@@ -197,6 +202,326 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**IpAddressAuthentication**](IpAddressAuthentication.html)
+
+<a name="getOrganizationsLimitsChangerequest"></a>
+
+# **getOrganizationsLimitsChangerequest**
+
+
+
+> [LimitChangeRequestDetails](LimitChangeRequestDetails.html) getOrganizationsLimitsChangerequest(requestId)
+
+Get a limit change request
+
+
+
+Wraps GET /api/v2/organizations/limits/changerequests/{requestId}  
+
+Requires ANY permissions: 
+
+* limits:organization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationApi apiInstance = new OrganizationApi();
+String requestId = "requestId_example"; // String | Unique id for the limit change request
+try {
+    LimitChangeRequestDetails result = apiInstance.getOrganizationsLimitsChangerequest(requestId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationApi#getOrganizationsLimitsChangerequest");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **requestId** | **String**| Unique id for the limit change request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LimitChangeRequestDetails**](LimitChangeRequestDetails.html)
+
+<a name="getOrganizationsLimitsChangerequests"></a>
+
+# **getOrganizationsLimitsChangerequests**
+
+
+
+> [LimitChangeRequestsEntityListing](LimitChangeRequestsEntityListing.html) getOrganizationsLimitsChangerequests(after, before, status, pageSize, expand)
+
+Get the available limit change requests
+
+Timestamp interval defaults to the last 365 days if both query parameters are omitted. If only one parameter is omitted, the interval will default to a 180 day range in the specified direction.
+
+Wraps GET /api/v2/organizations/limits/changerequests  
+
+Requires ANY permissions: 
+
+* limits:organization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationApi apiInstance = new OrganizationApi();
+Long after = 789L; // Long | Timestamp indicating the date to begin after when searching for requests.
+Long before = 789L; // Long | Timestamp indicating the date to end before when searching for requests.
+String status = "status_example"; // String | Status of the request to be filtered by
+Integer pageSize = 25; // Integer | Page Size
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+try {
+    LimitChangeRequestsEntityListing result = apiInstance.getOrganizationsLimitsChangerequests(after, before, status, pageSize, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationApi#getOrganizationsLimitsChangerequests");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **after** | **Long**| Timestamp indicating the date to begin after when searching for requests. | [optional] 
+| **before** | **Long**| Timestamp indicating the date to end before when searching for requests. | [optional] 
+| **status** | **String**| Status of the request to be filtered by | [optional]<br />**Values**: Open, Approved, ImplementingChange, ChangeImplemented, Rejected, Rollback, ImplementingRollback, RollbackImplemented 
+| **pageSize** | **Integer**| Page Size | [optional] [default to 25] 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: statusHistory 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LimitChangeRequestsEntityListing**](LimitChangeRequestsEntityListing.html)
+
+<a name="getOrganizationsLimitsDocs"></a>
+
+# **getOrganizationsLimitsDocs**
+
+
+
+> [UrlResponse](UrlResponse.html) getOrganizationsLimitsDocs()
+
+Get a link to the limit documentation
+
+
+
+Wraps GET /api/v2/organizations/limits/docs  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationApi apiInstance = new OrganizationApi();
+try {
+    UrlResponse result = apiInstance.getOrganizationsLimitsDocs();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationApi#getOrganizationsLimitsDocs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**UrlResponse**](UrlResponse.html)
+
+<a name="getOrganizationsLimitsNamespace"></a>
+
+# **getOrganizationsLimitsNamespace**
+
+
+
+> [LimitsEntityListing](LimitsEntityListing.html) getOrganizationsLimitsNamespace(namespaceName)
+
+Get the effective limits in a namespace for an organization
+
+
+
+Wraps GET /api/v2/organizations/limits/namespaces/{namespaceName}  
+
+Requires ANY permissions: 
+
+* limits:organization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationApi apiInstance = new OrganizationApi();
+String namespaceName = "namespaceName_example"; // String | The namespace to fetch limits for
+try {
+    LimitsEntityListing result = apiInstance.getOrganizationsLimitsNamespace(namespaceName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationApi#getOrganizationsLimitsNamespace");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **namespaceName** | **String**| The namespace to fetch limits for | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LimitsEntityListing**](LimitsEntityListing.html)
+
+<a name="getOrganizationsLimitsNamespaces"></a>
+
+# **getOrganizationsLimitsNamespaces**
+
+
+
+> [LimitsEntityListing](LimitsEntityListing.html) getOrganizationsLimitsNamespaces(pageSize, pageNumber)
+
+Get the available limit namespaces
+
+
+
+Wraps GET /api/v2/organizations/limits/namespaces  
+
+Requires ANY permissions: 
+
+* limits:organization:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationApi apiInstance = new OrganizationApi();
+Integer pageSize = 100; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+try {
+    LimitsEntityListing result = apiInstance.getOrganizationsLimitsNamespaces(pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationApi#getOrganizationsLimitsNamespaces");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 100] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LimitsEntityListing**](LimitsEntityListing.html)
 
 <a name="getOrganizationsMe"></a>
 

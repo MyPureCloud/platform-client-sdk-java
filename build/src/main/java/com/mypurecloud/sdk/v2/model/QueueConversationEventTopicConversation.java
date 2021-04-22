@@ -28,6 +28,7 @@ public class QueueConversationEventTopicConversation  implements Serializable {
   private List<QueueConversationEventTopicParticipant> participants = new ArrayList<QueueConversationEventTopicParticipant>();
   private String recordingState = null;
   private String address = null;
+  private String externalTag = null;
 
   
   /**
@@ -115,6 +116,23 @@ public class QueueConversationEventTopicConversation  implements Serializable {
   }
 
   
+  /**
+   **/
+  public QueueConversationEventTopicConversation externalTag(String externalTag) {
+    this.externalTag = externalTag;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("externalTag")
+  public String getExternalTag() {
+    return externalTag;
+  }
+  public void setExternalTag(String externalTag) {
+    this.externalTag = externalTag;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -129,12 +147,13 @@ public class QueueConversationEventTopicConversation  implements Serializable {
         Objects.equals(this.maxParticipants, queueConversationEventTopicConversation.maxParticipants) &&
         Objects.equals(this.participants, queueConversationEventTopicConversation.participants) &&
         Objects.equals(this.recordingState, queueConversationEventTopicConversation.recordingState) &&
-        Objects.equals(this.address, queueConversationEventTopicConversation.address);
+        Objects.equals(this.address, queueConversationEventTopicConversation.address) &&
+        Objects.equals(this.externalTag, queueConversationEventTopicConversation.externalTag);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, maxParticipants, participants, recordingState, address);
+    return Objects.hash(id, maxParticipants, participants, recordingState, address, externalTag);
   }
 
   @Override
@@ -147,6 +166,7 @@ public class QueueConversationEventTopicConversation  implements Serializable {
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    recordingState: ").append(toIndentedString(recordingState)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    externalTag: ").append(toIndentedString(externalTag)).append("\n");
     sb.append("}");
     return sb.toString();
   }

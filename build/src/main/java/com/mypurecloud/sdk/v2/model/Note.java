@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ExternalDataSource;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
@@ -26,7 +27,55 @@ import java.io.Serializable;
 public class Note  implements Serializable {
   
   private String id = null;
-  private String name = null;
+  private String entityId = null;
+
+  private static class EntityTypeEnumDeserializer extends StdDeserializer<EntityTypeEnum> {
+    public EntityTypeEnumDeserializer() {
+      super(EntityTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public EntityTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return EntityTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * This is only need to be set when using Bulk API. Using any other value than contact or organization will result in null being used.
+   */
+ @JsonDeserialize(using = EntityTypeEnumDeserializer.class)
+  public enum EntityTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    CONTACT("contact"),
+    ORGANIZATION("organization");
+
+    private String value;
+
+    EntityTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static EntityTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (EntityTypeEnum value : EntityTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return EntityTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private EntityTypeEnum entityType = null;
   private String noteText = null;
   private Date modifyDate = null;
   private Date createDate = null;
@@ -43,19 +92,38 @@ public class Note  implements Serializable {
 
   
   /**
+   * The id of the contact or organization to which this note refers. This only needs to be set for input when using the Bulk APIs.
    **/
-  public Note name(String name) {
-    this.name = name;
+  public Note entityId(String entityId) {
+    this.entityId = entityId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
+  @ApiModelProperty(example = "null", value = "The id of the contact or organization to which this note refers. This only needs to be set for input when using the Bulk APIs.")
+  @JsonProperty("entityId")
+  public String getEntityId() {
+    return entityId;
   }
-  public void setName(String name) {
-    this.name = name;
+  public void setEntityId(String entityId) {
+    this.entityId = entityId;
+  }
+
+  
+  /**
+   * This is only need to be set when using Bulk API. Using any other value than contact or organization will result in null being used.
+   **/
+  public Note entityType(EntityTypeEnum entityType) {
+    this.entityType = entityType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "This is only need to be set when using Bulk API. Using any other value than contact or organization will result in null being used.")
+  @JsonProperty("entityType")
+  public EntityTypeEnum getEntityType() {
+    return entityType;
+  }
+  public void setEntityType(EntityTypeEnum entityType) {
+    this.entityType = entityType;
   }
 
   
@@ -113,14 +181,14 @@ public class Note  implements Serializable {
 
   
   /**
-   * The author of this note
+   * When creating or updating a note, only User.id is required. User object is fully populated when expanding a note.
    **/
   public Note createdBy(User createdBy) {
     this.createdBy = createdBy;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The author of this note")
+  @ApiModelProperty(example = "null", required = true, value = "When creating or updating a note, only User.id is required. User object is fully populated when expanding a note.")
   @JsonProperty("createdBy")
   public User getCreatedBy() {
     return createdBy;
@@ -166,7 +234,8 @@ public class Note  implements Serializable {
     }
     Note note = (Note) o;
     return Objects.equals(this.id, note.id) &&
-        Objects.equals(this.name, note.name) &&
+        Objects.equals(this.entityId, note.entityId) &&
+        Objects.equals(this.entityType, note.entityType) &&
         Objects.equals(this.noteText, note.noteText) &&
         Objects.equals(this.modifyDate, note.modifyDate) &&
         Objects.equals(this.createDate, note.createDate) &&
@@ -177,7 +246,7 @@ public class Note  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, noteText, modifyDate, createDate, createdBy, externalDataSources, selfUri);
+    return Objects.hash(id, entityId, entityType, noteText, modifyDate, createDate, createdBy, externalDataSources, selfUri);
   }
 
   @Override
@@ -186,7 +255,8 @@ public class Note  implements Serializable {
     sb.append("class Note {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    entityId: ").append(toIndentedString(entityId)).append("\n");
+    sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
     sb.append("    noteText: ").append(toIndentedString(noteText)).append("\n");
     sb.append("    modifyDate: ").append(toIndentedString(modifyDate)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");

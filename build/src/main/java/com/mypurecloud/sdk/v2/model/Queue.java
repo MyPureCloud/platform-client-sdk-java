@@ -44,6 +44,7 @@ public class Queue  implements Serializable {
   private String modifiedBy = null;
   private String createdBy = null;
   private Integer memberCount = null;
+  private Integer joinedMemberCount = null;
   private Map<String, MediaSetting> mediaSettings = null;
   private List<RoutingRule> routingRules = new ArrayList<RoutingRule>();
   private Bullseye bullseye = null;
@@ -242,10 +243,17 @@ public class Queue  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The number of users in the queue.")
+  @ApiModelProperty(example = "null", value = "The total number of members (joined or unjoined) in the queue.")
   @JsonProperty("memberCount")
   public Integer getMemberCount() {
     return memberCount;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "The number of joined members in the queue.")
+  @JsonProperty("joinedMemberCount")
+  public Integer getJoinedMemberCount() {
+    return joinedMemberCount;
   }
 
   
@@ -544,6 +552,7 @@ public class Queue  implements Serializable {
         Objects.equals(this.modifiedBy, queue.modifiedBy) &&
         Objects.equals(this.createdBy, queue.createdBy) &&
         Objects.equals(this.memberCount, queue.memberCount) &&
+        Objects.equals(this.joinedMemberCount, queue.joinedMemberCount) &&
         Objects.equals(this.mediaSettings, queue.mediaSettings) &&
         Objects.equals(this.routingRules, queue.routingRules) &&
         Objects.equals(this.bullseye, queue.bullseye) &&
@@ -564,7 +573,7 @@ public class Queue  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisperPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, joinedMemberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisperPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, selfUri);
   }
 
   @Override
@@ -581,6 +590,7 @@ public class Queue  implements Serializable {
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    memberCount: ").append(toIndentedString(memberCount)).append("\n");
+    sb.append("    joinedMemberCount: ").append(toIndentedString(joinedMemberCount)).append("\n");
     sb.append("    mediaSettings: ").append(toIndentedString(mediaSettings)).append("\n");
     sb.append("    routingRules: ").append(toIndentedString(routingRules)).append("\n");
     sb.append("    bullseye: ").append(toIndentedString(bullseye)).append("\n");
