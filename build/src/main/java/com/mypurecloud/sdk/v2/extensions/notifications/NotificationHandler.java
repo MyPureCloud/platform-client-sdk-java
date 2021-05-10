@@ -12,15 +12,11 @@ import com.mypurecloud.sdk.v2.model.ChannelTopicEntityListing;
 import com.mypurecloud.sdk.v2.model.SystemMessageSystemMessage;
 import com.mypurecloud.sdk.v2.api.request.PostNotificationsChannelsRequest;
 import com.neovisionaries.ws.client.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.*;
 
 public class NotificationHandler extends Object {
-    private static final Logger LOGGER = LoggerFactory.getLogger(NotificationHandler.class);
-
     private NotificationsApi notificationsApi = new NotificationsApi();
     private WebSocket webSocket;
     private Channel channel;
@@ -113,9 +109,6 @@ public class NotificationHandler extends Object {
                     @Override
                     public void onTextMessage(WebSocket websocket, String message) {
                         try {
-                            if (LOGGER.isDebugEnabled()) {
-                                LOGGER.debug("---WEBSOCKET MESSAGE---\n"+message);
-                            }
                             // Deserialize without knowing body type to figure out topic name
                             JavaType genericEventType = objectMapper.getTypeFactory().constructParametricType(NotificationEvent.class, Object.class);
                             NotificationEvent<Object> genericEventData = objectMapper.readValue(message, genericEventType);
@@ -139,7 +132,7 @@ public class NotificationHandler extends Object {
                                     webSocketListener.onUnhandledEvent(message);
                             }
                         } catch (Exception ex) {
-                            LOGGER.error(ex.getMessage(), ex);
+                            // no-op
                         }
                     }
 
@@ -251,7 +244,7 @@ public class NotificationHandler extends Object {
             try {
                 webSocket = webSocket.recreate();
             } catch (Exception ex) {
-                LOGGER.error(ex.getMessage(), ex);
+                // no-op
             }
         }
     }
@@ -332,7 +325,7 @@ public class NotificationHandler extends Object {
             // Ensure socket is closed on GC
             this.disconnect();
         } catch (Exception ex) {
-            LOGGER.error(ex.getMessage(), ex);
+            // no-op
         }
         super.finalize();
     }

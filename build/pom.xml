@@ -5,7 +5,7 @@
   <artifactId>platform-client-v2</artifactId>
   <packaging>jar</packaging>
   <name>platform-client-v2</name>
-  <version>123.0.0</version>
+  <version>124.0.0</version>
   <description>A Java package to interface with the PureCloud Platform API</description>
   <url>https://developer.mypurecloud.com/api/rest/client-libraries/java/latest/</url>
   
@@ -223,11 +223,10 @@
     <artifactId>jaxb-api</artifactId>
     <version>2.2.12</version>
 </dependency>
- <!-- Logging: SLF4J -->
     <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>${slf4j-version}</version>
+      <groupId>org.ini4j</groupId>
+      <artifactId>ini4j</artifactId>
+      <version>${ini4j-version}</version>
     </dependency>
    <!-- HTTP client: apache httpclient -->
     <dependency>
@@ -329,7 +328,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <opensaml.version>3.3.0</opensaml.version>
     <swagger-annotations-version>1.5.8</swagger-annotations-version>
-    <slf4j-version>1.7.21</slf4j-version>
     <jersey-version>1.19.1</jersey-version>
     <jackson-version>2.12.1</jackson-version>
     <jodatime-version>2.10.10</jodatime-version>
@@ -341,5 +339,6 @@
     <nv-websocket-client-version>1.31</nv-websocket-client-version>
     <guava-version>21.0</guava-version>
     <mockito.version>1.10.19</mockito.version>
+    <ini4j-version>0.5.4</ini4j-version>
   </properties>
 </project>

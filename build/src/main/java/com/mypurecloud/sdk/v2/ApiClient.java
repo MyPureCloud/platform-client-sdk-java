@@ -12,6 +12,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.io.File;
 import java.net.URLEncoder;
 import java.net.Proxy;
 import java.text.DateFormat;
@@ -20,35 +21,9 @@ import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.Future;
 import com.mypurecloud.sdk.v2.extensions.AuthResponse;
-import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.httpclient.UsernamePasswordCredentials;
-import org.apache.commons.httpclient.auth.BasicScheme;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.ResponseHandler;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.util.EntityUtils;
 import com.google.common.base.Stopwatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.joda.time.DateTime;
-import org.opensaml.saml2.core.Response;
-import org.opensaml.saml2.core.impl.ResponseMarshaller;
-import org.opensaml.xml.io.MarshallingException;
-import org.opensaml.xml.util.XMLHelper;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import java.io.IOException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.xml.bind.DatatypeConverter;
 
@@ -59,7 +34,8 @@ import com.mypurecloud.sdk.v2.auth.Authentication;
 import com.mypurecloud.sdk.v2.auth.OAuth;
 import com.mypurecloud.sdk.v2.connector.*;
 import com.mypurecloud.sdk.v2.extensions.AuthResponse;
-
+import com.mypurecloud.sdk.v2.Logger;
+import com.mypurecloud.sdk.v2.LocalDateSerializer;
 
 
 public class ApiClient implements AutoCloseable {
@@ -76,10 +52,10 @@ public class ApiClient implements AutoCloseable {
     }
 
     private final Map<String, String> defaultHeaderMap;
-    private final String basePath;
+    private String basePath;
     private final Boolean shouldThrowErrors;
     private Boolean shouldRefreshAccessToken;
-    private final int refreshTokenWaitTime;
+    private int refreshTokenWaitTime;
 
     private final DateFormat dateFormat;
     private final ObjectMapper objectMapper;
@@ -89,13 +65,17 @@ public class ApiClient implements AutoCloseable {
     private final Map<String, Authentication> authentications;
     private final ApiClientConnector connector;
 
-    private final RetryConfiguration retryConfiguration;
-    private static final RetryConfiguration DEFAULT_RETRY_CONFIG = new RetryConfiguration();
+    private RetryConfiguration retryConfiguration;
+    private LoggingConfiguration loggingConfiguration;
+    private static RetryConfiguration DEFAULT_RETRY_CONFIG = new RetryConfiguration();
     // These fields are only applicable to the Code Authorization OAuth flow:
     private String clientId;
     private String clientSecret;
     private String refreshToken;
     private AtomicBoolean refreshInProgress = new AtomicBoolean(false);
+    private Logger logger;
+    private String configFilePath;
+    private Boolean autoReloadConfig;
 
     public ApiClient() {
         this(Builder.standard());
@@ -135,6 +115,30 @@ public class ApiClient implements AutoCloseable {
         this.authentications = buildAuthentications(builder);
 
         this.connector = buildHttpConnector(builder);
+
+        Logger logger = builder.logger;
+
+        if (logger == null) {
+            logger = new Logger();
+        }
+        this.logger = logger;
+
+        this.loggingConfiguration = builder.loggingConfiguration;
+        if (this.loggingConfiguration != null) {
+            applyLoggingConfiguration(this.loggingConfiguration);
+        }
+        
+        String configFilePath = builder.configFilePath;
+        if (configFilePath == null || configFilePath.isEmpty()) {
+            String homePath = System.getProperty("user.home");
+            File homeDir = new File(homePath);
+            File subDir = new File(homeDir, ".genesyscloudjava");
+            File fullDir = new File(subDir, "config");
+            configFilePath = fullDir.getPath();
+        }
+        this.configFilePath = configFilePath;
+
+        this.autoReloadConfig = builder.autoReloadConfig;
     }
 
     @Override
@@ -185,8 +189,16 @@ public class ApiClient implements AutoCloseable {
         return refreshTokenWaitTime;
     }
 
+    public void setRefreshTokenWaitTime(int refreshTokenWaitTime) {
+        this.refreshTokenWaitTime = refreshTokenWaitTime;
+    }
+
     public boolean getShouldRefreshAccessToken() {
         return shouldRefreshAccessToken;
+    }
+
+    public void setShouldRefreshAccessToken(boolean shouldRefreshAccessToken) {
+        this.shouldRefreshAccessToken = shouldRefreshAccessToken;
     }
 
     public String getBasePath() {
@@ -194,7 +206,35 @@ public class ApiClient implements AutoCloseable {
     }
 
     public ObjectMapper getObjectMapper() {
-        return this.objectMapper;
+        return objectMapper;
+    }
+
+    public String getConfigFilePath() {
+        return configFilePath;
+    }
+
+    public LoggingConfiguration getLoggingConfiguration() {
+        return loggingConfiguration;
+    }
+
+    public Logger getLogger() {
+        return logger;
+    }
+
+    public boolean getAutoReloadConfig() {
+        return autoReloadConfig;
+    }
+
+    public void setAutoReloadConfig(boolean autoReloadConfig) {
+        this.autoReloadConfig = autoReloadConfig;
+    }
+
+    public RetryConfiguration getRetryConfiguration() {
+        return retryConfiguration;
+    }
+
+    public void setRetryConfiguration(RetryConfiguration retryConfig) {
+        this.retryConfiguration = retryConfig;
     }
 
     /**
@@ -208,6 +248,40 @@ public class ApiClient implements AutoCloseable {
             }
         }
         throw new RuntimeException("No OAuth2 authentication configured!");
+    }
+
+    public void setBasePath(String basePath) {
+        this.basePath = basePath;
+    }
+
+    /**
+     * Helper method to apply logging settings to logger 
+     */
+    private void applyLoggingConfiguration(LoggingConfiguration loggingConfiguration) {
+        // Logging
+        String logLevel = loggingConfiguration.getLogLevel();
+        if (logLevel != null && !logLevel.isEmpty()) {
+            logger.setLevel(logger.logLevelFromString(logLevel));
+        }
+
+        String logFormat = loggingConfiguration.getLogFormat();
+        if (logFormat != null && !logFormat.isEmpty()) {
+            logger.setFormat(logger.logFormatFromString(logFormat));
+        }
+
+        boolean logToConsole = loggingConfiguration.getLogToConsole();
+        logger.setLogToConsole(logToConsole);
+
+        String logFilePath = loggingConfiguration.getLogFilePath();
+        if (logFilePath != null && !logFilePath.isEmpty()) {
+            logger.setLogFilePath(logFilePath);
+        }
+
+        boolean logRequestBody = loggingConfiguration.getLogRequestBody();
+        logger.setLogRequestBody(logRequestBody);
+
+        boolean logResponseBody = loggingConfiguration.getLogResponseBody();
+        logger.setLogResponseBody(logResponseBody);
     }
 
     /**
@@ -667,18 +741,26 @@ public class ApiClient implements AutoCloseable {
     private <T> ApiResponse<T> getAPIResponse(ApiRequest<?> request, TypeReference<T> returnType, boolean isAuthRequest) throws IOException, ApiException {
         ApiClientConnectorRequest connectorRequest = prepareConnectorRequest(request, isAuthRequest);
         ApiClientConnectorResponse connectorResponse = null;
+        Map<String,String> requestHeaderCopy = new HashMap<>(connectorRequest.getHeaders());
         try {
             Retry retry = new Retry(retryConfiguration);
             do {
                 connectorResponse = connector.invoke(connectorRequest);
+                // copy unmodifiable maps to make modifiable
+                Map<String,String> responseHeaderCopy = new HashMap<>(connectorResponse.getHeaders());
+                logger.debug(connectorRequest.getMethod(), connectorRequest.getUrl(), connectorRequest.readBody(), connectorResponse.getStatusCode(), requestHeaderCopy);
+                logger.trace(connectorRequest.getMethod(), connectorRequest.getUrl(), connectorRequest.readBody(), connectorResponse.getStatusCode(), requestHeaderCopy, responseHeaderCopy);
             } while (retry.shouldRetry(connectorResponse));
-
             try {
                 return interpretConnectorResponse(connectorResponse, returnType);
             } catch (ApiException e) {
                 if (e.getStatusCode() == 401 && shouldRefreshAccessToken) {
                     handleExpiredAccessToken();
                     return getAPIResponse(request, returnType, isAuthRequest);
+                } else if (e.getStatusCode() < 200 || e.getStatusCode() >= 300) {
+                    Map<String,String> responseHeaderCopy = new HashMap<>(e.getHeaders());
+                    logger.error(connectorRequest.getMethod(), connectorRequest.getUrl(), connectorRequest.readBody(), e.getRawBody(), e.getStatusCode(), requestHeaderCopy, responseHeaderCopy);
+                    throw e;
                 } else {
                     throw e;
                 }
@@ -847,9 +929,13 @@ public class ApiClient implements AutoCloseable {
             builder.objectMapper = client.objectMapper;
             builder.basePath = client.basePath;
             builder.retryConfiguration = client.retryConfiguration;
+            builder.loggingConfiguration = client.loggingConfiguration;
             builder.shouldThrowErrors = client.shouldThrowErrors;
             builder.shouldRefreshAccessToken = client.shouldRefreshAccessToken;
             builder.refreshTokenWaitTime = client.refreshTokenWaitTime;
+            builder.logger = client.logger;
+            builder.configFilePath = client.configFilePath;
+            builder.autoReloadConfig = client.autoReloadConfig;
             return builder;
         }
 
@@ -864,14 +950,18 @@ public class ApiClient implements AutoCloseable {
         private DateFormat dateFormat;
         private String basePath;
         private RetryConfiguration retryConfiguration;
+        private LoggingConfiguration loggingConfiguration;
         private Boolean shouldThrowErrors = true;
         private Boolean shouldRefreshAccessToken = true;
         private int refreshTokenWaitTime = 10;
+        private Logger logger = null;
+        private String configFilePath = null;
+        private Boolean autoReloadConfig = true;
 
         private Builder(ConnectorProperties properties) {
             this.properties = (properties != null) ? properties.copy() : new ConnectorProperties();
             withUserAgent(DEFAULT_USER_AGENT);
-            withDefaultHeader("purecloud-sdk", "123.0.0");
+            withDefaultHeader("purecloud-sdk", "124.0.0");
         }
 
         public Builder withDefaultHeader(String header, String value) {
@@ -913,6 +1003,11 @@ public class ApiClient implements AutoCloseable {
         return this;
         }
 
+        public Builder withLoggingConfiguration(LoggingConfiguration loggingConfiguration) {
+            this.loggingConfiguration = loggingConfiguration;
+            return this;
+        }
+
         public Builder withConnectionTimeout(int connectionTimeout) {
             properties.setProperty(ApiClientConnectorProperty.CONNECTION_TIMEOUT, connectionTimeout);
             return this;
@@ -952,6 +1047,16 @@ public class ApiClient implements AutoCloseable {
 
         public Builder withProperty(String name, Object value) {
             properties.setProperty(name, value);
+            return this;
+        }
+
+        public Builder withConfigFilePath(String configFilePath) {
+            this.configFilePath = configFilePath;
+            return this;
+        }
+
+        public Builder withAutoReloadConfig(boolean autoReloadConfig) {
+            this.autoReloadConfig = autoReloadConfig;
             return this;
         }
 
@@ -1149,6 +1254,7 @@ public class ApiClient implements AutoCloseable {
         private long retryAfterDefaultMs = 3000L;
         private int maxRetryTimeSec = 0;
         private int maxRetriesBeforeBackoff = 5;
+        private int retryMax = 5;
 
         public void setBackoffIntervalMs(long backoffIntervalMs) {
             if (backoffIntervalMs < 0) {
@@ -1177,7 +1283,82 @@ public class ApiClient implements AutoCloseable {
             }
             this.maxRetriesBeforeBackoff = maxRetriesBeforeBackoff;
         }
+
+        public void setRetryMax(int retryMax) {
+            if (retryMax < 0) {
+                throw new IllegalArgumentException("retryMax should be a positive integer");
+            }
+            this.retryMax = retryMax;
+        }
     }
+
+    public static class LoggingConfiguration {
+        private String logLevel = "none";
+        private String logFilePath = null;
+        private String logFormat = "text";
+        private Boolean logToConsole = true;
+        private Boolean logRequestBody = false;
+        private Boolean logResponseBody = false;
+
+        public void setLogLevel(String logLevel) {
+            List<String> validArguments = Arrays.asList("trace", "debug", "error", "none");
+            String match = validArguments.stream()
+                .filter(validArgument -> logLevel.trim().equalsIgnoreCase(validArgument))
+                .findFirst()
+                .orElse(null);
+            if (match == null)
+                throw new IllegalArgumentException("logLevel should be one of \"trace\", \"debug\", \"error\", or \"none\"");
+            this.logLevel = logLevel.trim();
+        }
+
+        public void setLogFormat(String logFormat) {
+            List<String> validArguments = Arrays.asList("json", "text");
+            String match = validArguments.stream()
+                .filter(validArgument -> logFormat.trim().equalsIgnoreCase(validArgument))
+                .findFirst()
+                .orElse(null);
+            if (match == null)
+                throw new IllegalArgumentException("logFormat should be one of \"json\" or \"text\"");
+            this.logFormat = logFormat.trim();
+        }
+
+        public void setLogToConsole(boolean logToConsole) {
+            this.logToConsole = logToConsole;
+        }
+
+        public void setLogRequestBody(boolean logRequestBody) {
+            this.logRequestBody = logRequestBody;
+        }
+
+        public void setLogResponseBody(boolean logResponseBody) {
+            this.logResponseBody = logResponseBody;
+        }
+
+        public String getLogLevel() {
+            return logLevel;
+        }
+
+        public String getLogFormat() {
+            return logFormat;
+        }
+
+        public boolean getLogToConsole() {
+            return logToConsole;
+        }
+
+        public boolean getLogRequestBody() {
+            return logRequestBody;
+        }
+
+        public boolean getLogResponseBody() {
+            return logResponseBody;
+        }
+
+        public String getLogFilePath() {
+            return logFilePath;
+        }
+    }
+
 
     public static class Retry {
         private long backoffIntervalMs;
@@ -1185,22 +1366,24 @@ public class ApiClient implements AutoCloseable {
         private int maxRetryTimeSec;
         private int maxRetriesBeforeBackoff;
         private int retryCountBeforeBackOff = 0;
+        private int retryMax = 5;
+        private int retryCount;
         private long retryAfterMs;
         private Stopwatch stopwatch = null;
 
         private final List<Integer> statusCodes = Arrays.asList(429, 502, 503, 504);
-        private static Logger LOGGER = LoggerFactory.getLogger(Retry.class);
 
         public Retry(RetryConfiguration retryConfiguration) {
             this.backoffIntervalMs = retryConfiguration.backoffIntervalMs;
             this.retryAfterDefaultMs = retryConfiguration.retryAfterDefaultMs;
             this.maxRetryTimeSec = retryConfiguration.maxRetryTimeSec;
             this.maxRetriesBeforeBackoff = retryConfiguration.maxRetriesBeforeBackoff;
+            this.retryMax = retryConfiguration.retryMax;
             stopwatch = Stopwatch.createStarted();
         }
 
         public boolean shouldRetry(ApiClientConnectorResponse connectorResponse) {
-            if (stopwatch.elapsed(TimeUnit.MILLISECONDS) < maxRetryTimeSec * 1000L && statusCodes.contains(connectorResponse.getStatusCode())) {
+            if (stopwatch.elapsed(TimeUnit.MILLISECONDS) < maxRetryTimeSec * 1000L && statusCodes.contains(connectorResponse.getStatusCode()) && retryCount <= retryMax) {
 
                 if (connectorResponse.getHeaders().containsKey("Retry-After")) {
                     retryAfterMs = Integer.parseInt(connectorResponse.getHeaders().getOrDefault("Retry-After", "3")) * 1000L;
@@ -1209,6 +1392,7 @@ public class ApiClient implements AutoCloseable {
                 }
                 //If status code is 429 then wait until retry-after time and retry. OR If status code is retryable then for the first 5 times: wait until retry-after time and retry.
                 if (connectorResponse.getStatusCode() == 429 || retryCountBeforeBackOff++ < maxRetriesBeforeBackoff) {
+                    retryCount++;
                     return waitBeforeRetry(retryAfterMs);
                 }
 
@@ -1222,7 +1406,6 @@ public class ApiClient implements AutoCloseable {
 
         private boolean waitBeforeRetry(long retryAfterMs){
             try {
-                LOGGER.info("SDK will be sleeping for: " + retryAfterMs + " milliseconds before retrying.");
                 Thread.sleep(retryAfterMs);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();

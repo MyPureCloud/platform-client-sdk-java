@@ -168,12 +168,13 @@ Specify the connector in the builder:
 #### Setting the max retry time
 
 By default, the Java SDK does not automatically retry any failed requests.
-To enable automatic retries, provide a RetryConfiguration object with the maximum number of seconds to retry requests when building the ApiClient instance.
+To enable automatic retries, provide a RetryConfiguration object with the maximum number of seconds to retry requests and the max number of retries when building the ApiClient instance.
 
 Building a `RetryConfiguration` instance:  
 ```{"language":"java"}
 ApiClient.RetryConfiguration retryConfiguration = new ApiClient.RetryConfiguration();
 retryConfiguration.setMaxRetryTimeSec(30);
+retryConfiguration.setRetryMax(5);
 ```
 
 Setting `RetryConfiguration` instance to `ApiClient`:
@@ -181,8 +182,113 @@ Setting `RetryConfiguration` instance to `ApiClient`:
         .withRetryConfiguration(retryConfiguration)
 ```
 Set the `maxRetryTimeSec` to the number of seconds to process retries before returning an error.
+Set the 'MaxRetryTimeSec' to the number of seconds to process retries before returning an error.
 When the retry time is a a positive integer, the SDK will follow the recommended backoff logic using the provided configuration.
 The best practices are documented in the [Rate Limiting](https://developer.mypurecloud.com/api/rest/rate_limits.html) Developer Center article.
+
+#### SDK Logging
+
+Logging of API requests and responses can be controlled programatically by creating an instance of `ApiClient.LoggingConfiguration` and passing it to the `withLoggingConfiguration` builder method of the `APIClient`.
+
+`LogLevel` values:
+1. trace (HTTP Method, URL, Request Body, HTTP Status Code, Request Headers, Response Headers)
+2. debug (HTTP Method, URL, Request Body, HTTP Status Code, Request Headers)
+3. error (HTTP Method, URL, Request Body, Response Body, HTTP Status Code, Request Headers, Response Headers)
+4. none - default
+
+`LogFormat` values:
+1. JSON
+2. Text - default
+
+By default, the request and response bodies are not logged because these can contain PII. Be mindful of this data if choosing to log it.  
+To log to a file, provide a value to `setLogFilePath`. SDK users are responsible for the rotation of the log file.
+
+Example logging configuration:
+```{"language":"java"}
+ApiClient.LoggingConfiguration loggingConfiguration = new ApiClient.LoggingConfiguration();
+loggingConfiguration.setLogLevel("trace");
+loggingConfiguration.setLogFormat("json");
+loggingConfiguration.setLogRequestBody(true);
+loggingConfiguration.setLogResponseBody(true);
+loggingConfiguration.setLogToConsole(true);
+loggingConfiguration.setLogFilePath("/var/log/javasdk.log");
+
+ApiClient apiClient = ApiClient.Builder.standard()
+                        .withLoggingConfiguration(loggingConfiguration)
+                        .build();
+```
+
+#### Configuration file
+
+A number of configuration parameters can be applied using a configuration file. There are two sources for this file:
+
+1. The SDK will look for `%HOMEDRIVE%%HOMEPATH%\.genesyscloudjava\config` on Windows, or `$HOME/.genesyscloudjava/config` on Unix.
+2. Provide a valid file path to the ApiClient
+
+Example setting the configuration file:
+
+```{"language": "java"}
+ApiClient apiClient = ApiClient.Builder.standard()
+                        .withConfigFilePath("/path/to/config")
+                        .build();
+```
+
+The SDK will take an event-driven approach to monitor for config file changes and will apply changes in near real-time, regardless of whether a config file was present at start-up. To disable this behaviour, set `autoReloadConfig` to false like so:  
+
+```{"language": "java"}
+ApiClient apiClient = ApiClient.Builder.standard()
+                       .withAutoReloadConfig(false)
+                       .build();
+```
+INI and JSON formats are supported. See below for examples of configuration values in both formats:
+
+INI:
+```{"language":"ini"}
+[logging]
+log_level = trace
+log_format = text
+log_to_console = false
+log_file_path = /var/log/javasdk.log
+log_response_body = false
+log_request_body = false
+[retry]
+retry_wait_min = 3
+retry_wait_max = 10
+retry_max = 5
+[reauthentication]
+refresh_access_token = true
+refresh_token_wait_max = 10
+[general]
+live_reload_config = true
+host = https://api.mypurecloud.com
+```
+
+JSON:
+```{"language":"json"}
+{
+    "logging": {
+        "log_level": "trace",
+        "log_format": "text",
+        "log_to_console": false,
+        "log_file_path": "/var/log/javasdk.log",
+        "log_response_body": false,
+        "log_request_body": false
+    },
+    "retry": {
+        "retry_wait_min": 3,
+        "retry_wait_max": 10,
+        "retry_max": 5
+    },
+    "reauthentication": {
+        "refresh_access_token": true,
+        "refresh_token_wait_max": 10
+    },
+    "general": {
+        "live_reload_config": true,
+        "host": "https://api.mypurecloud.com"
+    }
+}
+```
 
 #### Other ApiClient.Builder methods
 

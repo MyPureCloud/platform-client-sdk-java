@@ -109,7 +109,7 @@ class Logger {
             return null;
         }
     }
-
+    
     static LogFormat logFormatFromString(String logFormat) {
         try {
             LogFormat logFormatValue = null;
@@ -123,7 +123,7 @@ class Logger {
             return null;
         }
     }
-
+    
     void trace(
         String method,
         String url,
@@ -163,7 +163,7 @@ class Logger {
         );
         log(LogLevel.LDebug, logStatement);
     }
-
+    
     void error(
         String method,
         String url,
@@ -220,7 +220,7 @@ class Logger {
         JSON,
         Text
     }
-
+    
     enum LogLevel {
         LNone(3),
         LError(2),
@@ -228,11 +228,11 @@ class Logger {
         LTrace(0);
 
         private int order;
-
+    
         LogLevel(int order) {
             this.order = order;
         }
-
+    
         int getOrder() {
             return this.order;
         }
@@ -273,7 +273,7 @@ class Logger {
             this.requestBody = requestBody;
             this.responseBody = responseBody;
         }
-
+    
         // trace constructor
         LogStatement(
             Date date,
@@ -350,7 +350,7 @@ class Logger {
         public String getResponseBody() {
             return responseBody;
         }
-
+    
         String asString(LogFormat logFormat, boolean logRequestBody, boolean logResponseBody) {
             this.requestHeaders.put("Authorization", "[REDACTED]");
             if (!logRequestBody)
@@ -379,11 +379,11 @@ class Logger {
                 formatValue("CorrelationId", correlationId),
                 formatValue("Body", responseBody));
         }
-
+    
         private String formatValue(String name, String value) {
             return (value == null || value.isEmpty()) ? "" : String.format("\n%s: %s", name, value);
         }
-
+    
         private String formatHeaders(Map<String, String> headers) {
             if (headers == null) {
                 return "";
@@ -394,7 +394,7 @@ class Logger {
             }
             return result.toString();
         }
-
+    
         private String getCorrelationId(Map<String, String> headers) {
             if (headers == null) {
                 return "";
@@ -404,3 +404,4 @@ class Logger {
         }
     }
 }
+
