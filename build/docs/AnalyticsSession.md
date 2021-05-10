@@ -65,7 +65,6 @@ title: AnalyticsSession
 | **sessionId** | <!----><!---->**String**<!----> | The unique identifier of this session |  [optional] |
 | **sharingScreen** | <!----><!---->**Boolean**<!----> | Flag determining if screenShare is started or not (true/false) |  [optional] |
 | **skipEnabled** | <!----><!---->**Boolean**<!----> | (Dialer) Whether the agent can skip the dialer contact |  [optional] |
-| **timeoutSeconds** | <!----><!---->**Integer**<!----> | The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling) |  [optional] |
 | **usedRouting** | [**UsedRoutingEnum**](#UsedRoutingEnum)<!----> | Complete routing method |  [optional] |
 | **videoAddressSelf** | <!----><!---->**String**<!----> | Direct Video address |  [optional] |
 | **videoRoomId** | <!----><!---->**String**<!----> | A unique identifier for a PureCloud video room |  [optional] |
@@ -74,6 +73,7 @@ title: AnalyticsSession
 | **flow** | <!----><!---->[**AnalyticsFlow**](AnalyticsFlow.html)<!----> | IVR flow execution associated with this session |  [optional] |
 | **metrics** | <!----><!---->[**List&lt;AnalyticsSessionMetric&gt;**](AnalyticsSessionMetric.html)<!----> | List of metrics for this session |  [optional] |
 | **segments** | <!----><!---->[**List&lt;AnalyticsConversationSegment&gt;**](AnalyticsConversationSegment.html)<!----> | List of segments for this session |  [optional] |
+| **timeoutSeconds** | <!----><!---->**Integer**<!----> | The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling) |  [optional] |
 {: class="table table-striped"}
 
 

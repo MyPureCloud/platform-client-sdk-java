@@ -34,8 +34,6 @@ import com.mypurecloud.sdk.v2.model.EvaluationForm;
 import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;
 import com.mypurecloud.sdk.v2.model.SurveyForm;
 import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
-import com.mypurecloud.sdk.v2.model.KeywordSet;
-import com.mypurecloud.sdk.v2.model.KeywordSetEntityListing;
 import com.mypurecloud.sdk.v2.model.ScorableSurvey;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;

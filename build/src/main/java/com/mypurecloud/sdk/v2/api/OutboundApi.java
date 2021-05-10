@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.CallableTimeSet;
 import com.mypurecloud.sdk.v2.model.CallableTimeSetEntityListing;
 import com.mypurecloud.sdk.v2.model.ResponseSet;
 import com.mypurecloud.sdk.v2.model.ResponseSetEntityListing;
+import com.mypurecloud.sdk.v2.model.AgentOwnedMappingPreviewListing;
 import com.mypurecloud.sdk.v2.model.CampaignDiagnostics;
 import com.mypurecloud.sdk.v2.model.CampaignInteractions;
 import com.mypurecloud.sdk.v2.model.CampaignProgress;
@@ -59,6 +60,7 @@ import com.mypurecloud.sdk.v2.model.OutboundSettings;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeMapping;
 import com.mypurecloud.sdk.v2.model.AuditSearchResult;
 import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
+import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ContactCallbackRequest;
 import com.mypurecloud.sdk.v2.model.WritableDialerContact;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -91,6 +93,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundCallabletimesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCallanalysisresponsesetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCallanalysisresponsesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignAgentownedmappingpreviewResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignDiagnosticsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignInteractionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignProgressRequest;
@@ -140,6 +143,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundAttemptlimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCallabletimesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCallanalysisresponsesetsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignAgentownedmappingpreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignCallbackScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsRequest;
@@ -2121,6 +2125,85 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Campaign> response = (ApiResponse<Campaign>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * 
+   * @param campaignId Campaign ID (required)
+   * @return AgentOwnedMappingPreviewListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentOwnedMappingPreviewListing getOutboundCampaignAgentownedmappingpreviewResults(String campaignId) throws IOException, ApiException {
+    return  getOutboundCampaignAgentownedmappingpreviewResults(createGetOutboundCampaignAgentownedmappingpreviewResultsRequest(campaignId));
+  }
+
+  /**
+   * Get a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * 
+   * @param campaignId Campaign ID (required)
+   * @return AgentOwnedMappingPreviewListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentOwnedMappingPreviewListing> getOutboundCampaignAgentownedmappingpreviewResultsWithHttpInfo(String campaignId) throws IOException {
+    return getOutboundCampaignAgentownedmappingpreviewResults(createGetOutboundCampaignAgentownedmappingpreviewResultsRequest(campaignId).withHttpInfo());
+  }
+
+  private GetOutboundCampaignAgentownedmappingpreviewResultsRequest createGetOutboundCampaignAgentownedmappingpreviewResultsRequest(String campaignId) {
+    return GetOutboundCampaignAgentownedmappingpreviewResultsRequest.builder()
+            .withCampaignId(campaignId)
+    
+            .build();
+  }
+
+  /**
+   * Get a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * 
+   * @param request The request object
+   * @return AgentOwnedMappingPreviewListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentOwnedMappingPreviewListing getOutboundCampaignAgentownedmappingpreviewResults(GetOutboundCampaignAgentownedmappingpreviewResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentOwnedMappingPreviewListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentOwnedMappingPreviewListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentOwnedMappingPreviewListing> getOutboundCampaignAgentownedmappingpreviewResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentOwnedMappingPreviewListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentOwnedMappingPreviewListing> response = (ApiResponse<AgentOwnedMappingPreviewListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentOwnedMappingPreviewListing> response = (ApiResponse<AgentOwnedMappingPreviewListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6481,6 +6564,85 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ResponseSet> response = (ApiResponse<ResponseSet>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * 
+   * @param campaignId Campaign ID (required)
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty postOutboundCampaignAgentownedmappingpreview(String campaignId) throws IOException, ApiException {
+    return  postOutboundCampaignAgentownedmappingpreview(createPostOutboundCampaignAgentownedmappingpreviewRequest(campaignId));
+  }
+
+  /**
+   * Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * 
+   * @param campaignId Campaign ID (required)
+   * @return Empty
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> postOutboundCampaignAgentownedmappingpreviewWithHttpInfo(String campaignId) throws IOException {
+    return postOutboundCampaignAgentownedmappingpreview(createPostOutboundCampaignAgentownedmappingpreviewRequest(campaignId).withHttpInfo());
+  }
+
+  private PostOutboundCampaignAgentownedmappingpreviewRequest createPostOutboundCampaignAgentownedmappingpreviewRequest(String campaignId) {
+    return PostOutboundCampaignAgentownedmappingpreviewRequest.builder()
+            .withCampaignId(campaignId)
+    
+            .build();
+  }
+
+  /**
+   * Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * 
+   * @param request The request object
+   * @return Empty
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Empty postOutboundCampaignAgentownedmappingpreview(PostOutboundCampaignAgentownedmappingpreviewRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Empty> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Empty>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Empty> postOutboundCampaignAgentownedmappingpreview(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Empty>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

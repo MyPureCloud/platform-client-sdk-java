@@ -124,6 +124,7 @@ public class AuditLogMessage  implements Serializable {
     CREATE("Create"),
     VIEW("View"),
     UPDATE("Update"),
+    MOVE("Move"),
     DELETE("Delete"),
     DELETEALL("DeleteAll"),
     DOWNLOAD("Download"),
@@ -286,6 +287,7 @@ public class AuditLogMessage  implements Serializable {
     VOICEMAILPOLICY("VoicemailPolicy"),
     VOICEMAILUSERPOLICY("VoicemailUserPolicy"),
     WORKPLAN("WorkPlan"),
+    WORKSPACE("Workspace"),
     WRAPUPCODE("WrapupCode"),
     WRAPUPCODEMAPPING("WrapUpCodeMapping");
 

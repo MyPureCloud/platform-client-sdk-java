@@ -26,6 +26,9 @@ title: BotAggregationView
 | OBOTINTENT | &quot;oBotIntent&quot; |
 | OBOTSESSIONTURN | &quot;oBotSessionTurn&quot; |
 | OBOTSLOT | &quot;oBotSlot&quot; |
+| TBOTDISCONNECT | &quot;tBotDisconnect&quot; |
+| TBOTEXIT | &quot;tBotExit&quot; |
+| TBOTRECOGNITIONFAILURE | &quot;tBotRecognitionFailure&quot; |
 | TBOTSESSION | &quot;tBotSession&quot; |
 {: class="table table-striped"}
 

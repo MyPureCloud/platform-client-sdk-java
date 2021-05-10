@@ -45,6 +45,9 @@ public class BotAggregationView  implements Serializable {
     OBOTINTENT("oBotIntent"),
     OBOTSESSIONTURN("oBotSessionTurn"),
     OBOTSLOT("oBotSlot"),
+    TBOTDISCONNECT("tBotDisconnect"),
+    TBOTEXIT("tBotExit"),
+    TBOTRECOGNITIONFAILURE("tBotRecognitionFailure"),
     TBOTSESSION("tBotSession");
 
     private String value;

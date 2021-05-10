@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.DataTableImportJob;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -22,23 +23,95 @@ import java.io.Serializable;
 
 public class EntityListing  implements Serializable {
   
-  private List<Object> entities = new ArrayList<Object>();
+  private List<DataTableImportJob> entities = new ArrayList<DataTableImportJob>();
+  private Integer pageSize = null;
+  private Integer pageNumber = null;
+  private Long total = null;
+  private Integer pageCount = null;
 
   
   /**
    **/
-  public EntityListing entities(List<Object> entities) {
+  public EntityListing entities(List<DataTableImportJob> entities) {
     this.entities = entities;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("entities")
-  public List<Object> getEntities() {
+  public List<DataTableImportJob> getEntities() {
     return entities;
   }
-  public void setEntities(List<Object> entities) {
+  public void setEntities(List<DataTableImportJob> entities) {
     this.entities = entities;
+  }
+
+  
+  /**
+   **/
+  public EntityListing pageSize(Integer pageSize) {
+    this.pageSize = pageSize;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("pageSize")
+  public Integer getPageSize() {
+    return pageSize;
+  }
+  public void setPageSize(Integer pageSize) {
+    this.pageSize = pageSize;
+  }
+
+  
+  /**
+   **/
+  public EntityListing pageNumber(Integer pageNumber) {
+    this.pageNumber = pageNumber;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("pageNumber")
+  public Integer getPageNumber() {
+    return pageNumber;
+  }
+  public void setPageNumber(Integer pageNumber) {
+    this.pageNumber = pageNumber;
+  }
+
+  
+  /**
+   **/
+  public EntityListing total(Long total) {
+    this.total = total;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("total")
+  public Long getTotal() {
+    return total;
+  }
+  public void setTotal(Long total) {
+    this.total = total;
+  }
+
+  
+  /**
+   **/
+  public EntityListing pageCount(Integer pageCount) {
+    this.pageCount = pageCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("pageCount")
+  public Integer getPageCount() {
+    return pageCount;
+  }
+  public void setPageCount(Integer pageCount) {
+    this.pageCount = pageCount;
   }
 
   
@@ -52,12 +125,16 @@ public class EntityListing  implements Serializable {
       return false;
     }
     EntityListing entityListing = (EntityListing) o;
-    return Objects.equals(this.entities, entityListing.entities);
+    return Objects.equals(this.entities, entityListing.entities) &&
+        Objects.equals(this.pageSize, entityListing.pageSize) &&
+        Objects.equals(this.pageNumber, entityListing.pageNumber) &&
+        Objects.equals(this.total, entityListing.total) &&
+        Objects.equals(this.pageCount, entityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities);
+    return Objects.hash(entities, pageSize, pageNumber, total, pageCount);
   }
 
   @Override
@@ -66,6 +143,10 @@ public class EntityListing  implements Serializable {
     sb.append("class EntityListing {\n");
     
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
+    sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
+    sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
+    sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

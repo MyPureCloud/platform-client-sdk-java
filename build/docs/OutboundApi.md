@@ -31,6 +31,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOutboundCallanalysisresponseset**](OutboundApi.html#getOutboundCallanalysisresponseset) | Get a dialer call analysis response set. |
 | [**getOutboundCallanalysisresponsesets**](OutboundApi.html#getOutboundCallanalysisresponsesets) | Query a list of dialer call analysis response sets. |
 | [**getOutboundCampaign**](OutboundApi.html#getOutboundCampaign) | Get dialer campaign. |
+| [**getOutboundCampaignAgentownedmappingpreviewResults**](OutboundApi.html#getOutboundCampaignAgentownedmappingpreviewResults) | Get a preview of how agents will be mapped to this campaign&#39;s contact list. |
 | [**getOutboundCampaignDiagnostics**](OutboundApi.html#getOutboundCampaignDiagnostics) | Get campaign diagnostics |
 | [**getOutboundCampaignInteractions**](OutboundApi.html#getOutboundCampaignInteractions) | Get dialer campaign interactions. |
 | [**getOutboundCampaignProgress**](OutboundApi.html#getOutboundCampaignProgress) | Get campaign progress |
@@ -80,6 +81,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postOutboundAudits**](OutboundApi.html#postOutboundAudits) | Retrieves audits for dialer. |
 | [**postOutboundCallabletimesets**](OutboundApi.html#postOutboundCallabletimesets) | Create callable time set |
 | [**postOutboundCallanalysisresponsesets**](OutboundApi.html#postOutboundCallanalysisresponsesets) | Create a dialer call analysis response set. |
+| [**postOutboundCampaignAgentownedmappingpreview**](OutboundApi.html#postOutboundCampaignAgentownedmappingpreview) | Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list. |
 | [**postOutboundCampaignCallbackSchedule**](OutboundApi.html#postOutboundCampaignCallbackSchedule) | Schedule a Callback for a Dialer Campaign (Deprecated) |
 | [**postOutboundCampaignrules**](OutboundApi.html#postOutboundCampaignrules) | Create Campaign Rule |
 | [**postOutboundCampaigns**](OutboundApi.html#postOutboundCampaigns) | Create a campaign. |
@@ -1653,6 +1655,71 @@ try {
 ### Return type
 
 [**Campaign**](Campaign.html)
+
+<a name="getOutboundCampaignAgentownedmappingpreviewResults"></a>
+
+# **getOutboundCampaignAgentownedmappingpreviewResults**
+
+
+
+> [AgentOwnedMappingPreviewListing](AgentOwnedMappingPreviewListing.html) getOutboundCampaignAgentownedmappingpreviewResults(campaignId)
+
+Get a preview of how agents will be mapped to this campaign&#39;s contact list.
+
+
+
+Wraps GET /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results  
+
+Requires ALL permissions: 
+
+* outbound:campaign:view
+* outbound:contact:view
+* routing:queue:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String campaignId = "campaignId_example"; // String | Campaign ID
+try {
+    AgentOwnedMappingPreviewListing result = apiInstance.getOutboundCampaignAgentownedmappingpreviewResults(campaignId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#getOutboundCampaignAgentownedmappingpreviewResults");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaignId** | **String**| Campaign ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentOwnedMappingPreviewListing**](AgentOwnedMappingPreviewListing.html)
 
 <a name="getOutboundCampaignDiagnostics"></a>
 
@@ -4981,6 +5048,71 @@ try {
 ### Return type
 
 [**ResponseSet**](ResponseSet.html)
+
+<a name="postOutboundCampaignAgentownedmappingpreview"></a>
+
+# **postOutboundCampaignAgentownedmappingpreview**
+
+
+
+> [Empty](Empty.html) postOutboundCampaignAgentownedmappingpreview(campaignId)
+
+Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.
+
+
+
+Wraps POST /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview  
+
+Requires ALL permissions: 
+
+* outbound:campaign:view
+* outbound:contact:view
+* directory:user:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+String campaignId = "campaignId_example"; // String | Campaign ID
+try {
+    Empty result = apiInstance.postOutboundCampaignAgentownedmappingpreview(campaignId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundCampaignAgentownedmappingpreview");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **campaignId** | **String**| Campaign ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Empty**](Empty.html)
 
 <a name="postOutboundCampaignCallbackSchedule"></a>
 

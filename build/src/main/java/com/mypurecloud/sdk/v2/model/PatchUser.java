@@ -10,12 +10,8 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.Biography;
-import com.mypurecloud.sdk.v2.model.EmployerInfo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -26,9 +22,6 @@ public class PatchUser  implements Serializable {
   
   private String id = null;
   private Boolean acdAutoAnswer = null;
-  private List<String> certifications = new ArrayList<String>();
-  private Biography biography = null;
-  private EmployerInfo employerInfo = null;
 
   
   /**
@@ -67,57 +60,6 @@ public class PatchUser  implements Serializable {
   }
 
   
-  /**
-   **/
-  public PatchUser certifications(List<String> certifications) {
-    this.certifications = certifications;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("certifications")
-  public List<String> getCertifications() {
-    return certifications;
-  }
-  public void setCertifications(List<String> certifications) {
-    this.certifications = certifications;
-  }
-
-  
-  /**
-   **/
-  public PatchUser biography(Biography biography) {
-    this.biography = biography;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("biography")
-  public Biography getBiography() {
-    return biography;
-  }
-  public void setBiography(Biography biography) {
-    this.biography = biography;
-  }
-
-  
-  /**
-   **/
-  public PatchUser employerInfo(EmployerInfo employerInfo) {
-    this.employerInfo = employerInfo;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("employerInfo")
-  public EmployerInfo getEmployerInfo() {
-    return employerInfo;
-  }
-  public void setEmployerInfo(EmployerInfo employerInfo) {
-    this.employerInfo = employerInfo;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -129,15 +71,12 @@ public class PatchUser  implements Serializable {
     }
     PatchUser patchUser = (PatchUser) o;
     return Objects.equals(this.id, patchUser.id) &&
-        Objects.equals(this.acdAutoAnswer, patchUser.acdAutoAnswer) &&
-        Objects.equals(this.certifications, patchUser.certifications) &&
-        Objects.equals(this.biography, patchUser.biography) &&
-        Objects.equals(this.employerInfo, patchUser.employerInfo);
+        Objects.equals(this.acdAutoAnswer, patchUser.acdAutoAnswer);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, acdAutoAnswer, certifications, biography, employerInfo);
+    return Objects.hash(id, acdAutoAnswer);
   }
 
   @Override
@@ -147,9 +86,6 @@ public class PatchUser  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
-    sb.append("    certifications: ").append(toIndentedString(certifications)).append("\n");
-    sb.append("    biography: ").append(toIndentedString(biography)).append("\n");
-    sb.append("    employerInfo: ").append(toIndentedString(employerInfo)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -28,6 +28,8 @@ import com.mypurecloud.sdk.v2.model.AddConversationRequest;
 import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateResponse;
+import com.mypurecloud.sdk.v2.model.CoachingSlotsRequest;
+import com.mypurecloud.sdk.v2.model.CoachingSlotsResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteCoachingAppointmentRequest;
@@ -48,6 +50,7 @@ import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentAnnotationsRequ
 import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentConversationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentsAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostCoachingScheduleslotsQueryRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1614,6 +1617,85 @@ public class CoachingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CoachingAppointmentAggregateResponse> response = (ApiResponse<CoachingAppointmentAggregateResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get list of possible slots where a coaching appointment can be scheduled.
+   * 
+   * @param body The slot search request (required)
+   * @return CoachingSlotsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CoachingSlotsResponse postCoachingScheduleslotsQuery(CoachingSlotsRequest body) throws IOException, ApiException {
+    return  postCoachingScheduleslotsQuery(createPostCoachingScheduleslotsQueryRequest(body));
+  }
+
+  /**
+   * Get list of possible slots where a coaching appointment can be scheduled.
+   * 
+   * @param body The slot search request (required)
+   * @return CoachingSlotsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CoachingSlotsResponse> postCoachingScheduleslotsQueryWithHttpInfo(CoachingSlotsRequest body) throws IOException {
+    return postCoachingScheduleslotsQuery(createPostCoachingScheduleslotsQueryRequest(body).withHttpInfo());
+  }
+
+  private PostCoachingScheduleslotsQueryRequest createPostCoachingScheduleslotsQueryRequest(CoachingSlotsRequest body) {
+    return PostCoachingScheduleslotsQueryRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Get list of possible slots where a coaching appointment can be scheduled.
+   * 
+   * @param request The request object
+   * @return CoachingSlotsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CoachingSlotsResponse postCoachingScheduleslotsQuery(PostCoachingScheduleslotsQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CoachingSlotsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CoachingSlotsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get list of possible slots where a coaching appointment can be scheduled.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CoachingSlotsResponse> postCoachingScheduleslotsQuery(ApiRequest<CoachingSlotsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CoachingSlotsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CoachingSlotsResponse> response = (ApiResponse<CoachingSlotsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CoachingSlotsResponse> response = (ApiResponse<CoachingSlotsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

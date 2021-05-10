@@ -31,7 +31,7 @@ public class AnalyticsSurvey  implements Serializable {
   private Integer surveyPromoterScore = null;
   private String surveyStatus = null;
   private String userId = null;
-  private Long oSurveyTotalScore = null;
+  private Long getoSurveyTotalScore = null;
 
   
   /**
@@ -215,19 +215,20 @@ public class AnalyticsSurvey  implements Serializable {
 
   
   /**
+   * Total score of the survey
    **/
-  public AnalyticsSurvey oSurveyTotalScore(Long oSurveyTotalScore) {
-    this.oSurveyTotalScore = oSurveyTotalScore;
+  public AnalyticsSurvey getoSurveyTotalScore(Long getoSurveyTotalScore) {
+    this.getoSurveyTotalScore = getoSurveyTotalScore;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("oSurveyTotalScore")
-  public Long getOSurveyTotalScore() {
-    return oSurveyTotalScore;
+  @ApiModelProperty(example = "null", value = "Total score of the survey")
+  @JsonProperty("getoSurveyTotalScore")
+  public Long getGetoSurveyTotalScore() {
+    return getoSurveyTotalScore;
   }
-  public void setOSurveyTotalScore(Long oSurveyTotalScore) {
-    this.oSurveyTotalScore = oSurveyTotalScore;
+  public void setGetoSurveyTotalScore(Long getoSurveyTotalScore) {
+    this.getoSurveyTotalScore = getoSurveyTotalScore;
   }
 
   
@@ -251,12 +252,12 @@ public class AnalyticsSurvey  implements Serializable {
         Objects.equals(this.surveyPromoterScore, analyticsSurvey.surveyPromoterScore) &&
         Objects.equals(this.surveyStatus, analyticsSurvey.surveyStatus) &&
         Objects.equals(this.userId, analyticsSurvey.userId) &&
-        Objects.equals(this.oSurveyTotalScore, analyticsSurvey.oSurveyTotalScore);
+        Objects.equals(this.getoSurveyTotalScore, analyticsSurvey.getoSurveyTotalScore);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, queueId, surveyCompletedDate, surveyFormContextId, surveyFormId, surveyFormName, surveyId, surveyPromoterScore, surveyStatus, userId, oSurveyTotalScore);
+    return Objects.hash(eventTime, queueId, surveyCompletedDate, surveyFormContextId, surveyFormId, surveyFormName, surveyId, surveyPromoterScore, surveyStatus, userId, getoSurveyTotalScore);
   }
 
   @Override
@@ -274,7 +275,7 @@ public class AnalyticsSurvey  implements Serializable {
     sb.append("    surveyPromoterScore: ").append(toIndentedString(surveyPromoterScore)).append("\n");
     sb.append("    surveyStatus: ").append(toIndentedString(surveyStatus)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-    sb.append("    oSurveyTotalScore: ").append(toIndentedString(oSurveyTotalScore)).append("\n");
+    sb.append("    getoSurveyTotalScore: ").append(toIndentedString(getoSurveyTotalScore)).append("\n");
     sb.append("}");
     return sb.toString();
   }

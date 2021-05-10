@@ -25,6 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postCoachingAppointmentConversations**](CoachingApi.html#postCoachingAppointmentConversations) | Add a conversation to an appointment |
 | [**postCoachingAppointments**](CoachingApi.html#postCoachingAppointments) | Create a new appointment |
 | [**postCoachingAppointmentsAggregatesQuery**](CoachingApi.html#postCoachingAppointmentsAggregatesQuery) | Retrieve aggregated appointment data |
+| [**postCoachingScheduleslotsQuery**](CoachingApi.html#postCoachingScheduleslotsQuery) | Get list of possible slots where a coaching appointment can be scheduled. |
 {: class="table-striped"}
 
 <a name="deleteCoachingAppointment"></a>
@@ -1228,4 +1229,67 @@ try {
 ### Return type
 
 [**CoachingAppointmentAggregateResponse**](CoachingAppointmentAggregateResponse.html)
+
+<a name="postCoachingScheduleslotsQuery"></a>
+
+# **postCoachingScheduleslotsQuery**
+
+
+
+> [CoachingSlotsResponse](CoachingSlotsResponse.html) postCoachingScheduleslotsQuery(body)
+
+Get list of possible slots where a coaching appointment can be scheduled.
+
+
+
+Wraps POST /api/v2/coaching/scheduleslots/query  
+
+Requires ANY permissions: 
+
+* coaching:scheduleSlot:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.CoachingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+CoachingApi apiInstance = new CoachingApi();
+CoachingSlotsRequest body = new CoachingSlotsRequest(); // CoachingSlotsRequest | The slot search request
+try {
+    CoachingSlotsResponse result = apiInstance.postCoachingScheduleslotsQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CoachingApi#postCoachingScheduleslotsQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CoachingSlotsRequest**](CoachingSlotsRequest.html)| The slot search request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CoachingSlotsResponse**](CoachingSlotsResponse.html)
 

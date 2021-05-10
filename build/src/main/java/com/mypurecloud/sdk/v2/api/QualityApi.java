@@ -24,8 +24,6 @@ import com.mypurecloud.sdk.v2.model.EvaluationForm;
 import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;
 import com.mypurecloud.sdk.v2.model.SurveyForm;
 import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
-import com.mypurecloud.sdk.v2.model.KeywordSet;
-import com.mypurecloud.sdk.v2.model.KeywordSetEntityListing;
 import com.mypurecloud.sdk.v2.model.ScorableSurvey;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
@@ -44,8 +42,6 @@ import com.mypurecloud.sdk.v2.api.request.DeleteQualityConversationEvaluationReq
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityFormRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityFormsEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityFormsSurveyRequest;
-import com.mypurecloud.sdk.v2.api.request.DeleteQualityKeywordsetRequest;
-import com.mypurecloud.sdk.v2.api.request.DeleteQualityKeywordsetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityAgentsActivityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityCalibrationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityCalibrationsRequest;
@@ -65,8 +61,6 @@ import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveyVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysBulkContextsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetQualityKeywordsetRequest;
-import com.mypurecloud.sdk.v2.api.request.GetQualityKeywordsetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsEvaluationRequest;
@@ -84,18 +78,15 @@ import com.mypurecloud.sdk.v2.api.request.PostQualityEvaluationsScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsSurveysRequest;
-import com.mypurecloud.sdk.v2.api.request.PostQualityKeywordsetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsSurveysRequest;
-import com.mypurecloud.sdk.v2.api.request.PostQualitySpotabilityRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualitySurveysScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityCalibrationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityConversationEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormsEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormsSurveyRequest;
-import com.mypurecloud.sdk.v2.api.request.PutQualityKeywordsetRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualitySurveysScorableRequest;
 
 import java.io.IOException;
@@ -493,158 +484,6 @@ public class QualityApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteQualityFormsSurvey(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, null);
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Delete a keywordSet by id.
-   * 
-   * @param keywordSetId KeywordSet ID (required)
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void deleteQualityKeywordset(String keywordSetId) throws IOException, ApiException {
-     deleteQualityKeywordset(createDeleteQualityKeywordsetRequest(keywordSetId));
-  }
-
-  /**
-   * Delete a keywordSet by id.
-   * 
-   * @param keywordSetId KeywordSet ID (required)
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> deleteQualityKeywordsetWithHttpInfo(String keywordSetId) throws IOException {
-    return deleteQualityKeywordset(createDeleteQualityKeywordsetRequest(keywordSetId).withHttpInfo());
-  }
-
-  private DeleteQualityKeywordsetRequest createDeleteQualityKeywordsetRequest(String keywordSetId) {
-    return DeleteQualityKeywordsetRequest.builder()
-            .withKeywordSetId(keywordSetId)
-    
-            .build();
-  }
-
-  /**
-   * Delete a keywordSet by id.
-   * 
-   * @param request The request object
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void deleteQualityKeywordset(DeleteQualityKeywordsetRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
-    }
-  }
-
-  /**
-   * Delete a keywordSet by id.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> deleteQualityKeywordset(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, null);
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Delete keyword sets
-   * Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
-   * @param ids A comma-delimited list of valid KeywordSet ids (required)
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void deleteQualityKeywordsets(String ids) throws IOException, ApiException {
-     deleteQualityKeywordsets(createDeleteQualityKeywordsetsRequest(ids));
-  }
-
-  /**
-   * Delete keyword sets
-   * Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
-   * @param ids A comma-delimited list of valid KeywordSet ids (required)
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> deleteQualityKeywordsetsWithHttpInfo(String ids) throws IOException {
-    return deleteQualityKeywordsets(createDeleteQualityKeywordsetsRequest(ids).withHttpInfo());
-  }
-
-  private DeleteQualityKeywordsetsRequest createDeleteQualityKeywordsetsRequest(String ids) {
-    return DeleteQualityKeywordsetsRequest.builder()
-            .withIds(ids)
-    
-            .build();
-  }
-
-  /**
-   * Delete keyword sets
-   * Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
-   * @param request The request object
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public void deleteQualityKeywordsets(DeleteQualityKeywordsetsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
-    }
-  }
-
-  /**
-   * Delete keyword sets
-   * Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<Void> deleteQualityKeywordsets(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -2521,200 +2360,6 @@ public class QualityApi {
 
   
   /**
-   * Get a keywordSet by id.
-   * 
-   * @param keywordSetId KeywordSet ID (required)
-   * @return KeywordSet
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public KeywordSet getQualityKeywordset(String keywordSetId) throws IOException, ApiException {
-    return  getQualityKeywordset(createGetQualityKeywordsetRequest(keywordSetId));
-  }
-
-  /**
-   * Get a keywordSet by id.
-   * 
-   * @param keywordSetId KeywordSet ID (required)
-   * @return KeywordSet
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<KeywordSet> getQualityKeywordsetWithHttpInfo(String keywordSetId) throws IOException {
-    return getQualityKeywordset(createGetQualityKeywordsetRequest(keywordSetId).withHttpInfo());
-  }
-
-  private GetQualityKeywordsetRequest createGetQualityKeywordsetRequest(String keywordSetId) {
-    return GetQualityKeywordsetRequest.builder()
-            .withKeywordSetId(keywordSetId)
-    
-            .build();
-  }
-
-  /**
-   * Get a keywordSet by id.
-   * 
-   * @param request The request object
-   * @return KeywordSet
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public KeywordSet getQualityKeywordset(GetQualityKeywordsetRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<KeywordSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KeywordSet>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get a keywordSet by id.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<KeywordSet> getQualityKeywordset(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<KeywordSet>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Get the list of keyword sets
-   * 
-   * @param pageSize The total page size requested (optional, default to 25)
-   * @param pageNumber The page number requested (optional, default to 1)
-   * @param sortBy variable name requested to sort by (optional)
-   * @param expand variable name requested by expand list (optional)
-   * @param nextPage next page token (optional)
-   * @param previousPage Previous page token (optional)
-   * @param name the keyword set name - used for filtering results in searches. (optional)
-   * @param queueId the queue id - used for filtering results in searches. (optional)
-   * @param agentId the agent id - used for filtering results in searches. (optional)
-   * @param operator If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters. (optional)
-   * @return KeywordSetEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public KeywordSetEntityListing getQualityKeywordsets(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, String queueId, String agentId, String operator) throws IOException, ApiException {
-    return  getQualityKeywordsets(createGetQualityKeywordsetsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, queueId, agentId, operator));
-  }
-
-  /**
-   * Get the list of keyword sets
-   * 
-   * @param pageSize The total page size requested (optional, default to 25)
-   * @param pageNumber The page number requested (optional, default to 1)
-   * @param sortBy variable name requested to sort by (optional)
-   * @param expand variable name requested by expand list (optional)
-   * @param nextPage next page token (optional)
-   * @param previousPage Previous page token (optional)
-   * @param name the keyword set name - used for filtering results in searches. (optional)
-   * @param queueId the queue id - used for filtering results in searches. (optional)
-   * @param agentId the agent id - used for filtering results in searches. (optional)
-   * @param operator If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters. (optional)
-   * @return KeywordSetEntityListing
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<KeywordSetEntityListing> getQualityKeywordsetsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, String queueId, String agentId, String operator) throws IOException {
-    return getQualityKeywordsets(createGetQualityKeywordsetsRequest(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, queueId, agentId, operator).withHttpInfo());
-  }
-
-  private GetQualityKeywordsetsRequest createGetQualityKeywordsetsRequest(Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String name, String queueId, String agentId, String operator) {
-    return GetQualityKeywordsetsRequest.builder()
-            .withPageSize(pageSize)
-    
-            .withPageNumber(pageNumber)
-    
-            .withSortBy(sortBy)
-    
-            .withExpand(expand)
-    
-            .withNextPage(nextPage)
-    
-            .withPreviousPage(previousPage)
-    
-            .withName(name)
-    
-            .withQueueId(queueId)
-    
-            .withAgentId(agentId)
-    
-            .withOperator(operator)
-    
-            .build();
-  }
-
-  /**
-   * Get the list of keyword sets
-   * 
-   * @param request The request object
-   * @return KeywordSetEntityListing
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public KeywordSetEntityListing getQualityKeywordsets(GetQualityKeywordsetsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<KeywordSetEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KeywordSetEntityListing>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get the list of keyword sets
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<KeywordSetEntityListing> getQualityKeywordsets(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<KeywordSetEntityListing>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<KeywordSetEntityListing> response = (ApiResponse<KeywordSetEntityListing>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<KeywordSetEntityListing> response = (ApiResponse<KeywordSetEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
    * Get the published evaluation forms.
    * 
    * @param formId Form ID (required)
@@ -4110,89 +3755,6 @@ public class QualityApi {
 
   
   /**
-   * Create a Keyword Set
-   * 
-   * @param body keywordSet (required)
-   * @param expand queueId (optional)
-   * @return KeywordSet
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public KeywordSet postQualityKeywordsets(KeywordSet body, String expand) throws IOException, ApiException {
-    return  postQualityKeywordsets(createPostQualityKeywordsetsRequest(body, expand));
-  }
-
-  /**
-   * Create a Keyword Set
-   * 
-   * @param body keywordSet (required)
-   * @param expand queueId (optional)
-   * @return KeywordSet
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<KeywordSet> postQualityKeywordsetsWithHttpInfo(KeywordSet body, String expand) throws IOException {
-    return postQualityKeywordsets(createPostQualityKeywordsetsRequest(body, expand).withHttpInfo());
-  }
-
-  private PostQualityKeywordsetsRequest createPostQualityKeywordsetsRequest(KeywordSet body, String expand) {
-    return PostQualityKeywordsetsRequest.builder()
-            .withBody(body)
-    
-            .withExpand(expand)
-    
-            .build();
-  }
-
-  /**
-   * Create a Keyword Set
-   * 
-   * @param request The request object
-   * @return KeywordSet
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public KeywordSet postQualityKeywordsets(PostQualityKeywordsetsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<KeywordSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KeywordSet>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Create a Keyword Set
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<KeywordSet> postQualityKeywordsets(ApiRequest<KeywordSet> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<KeywordSet>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
    * Publish an evaluation form.
    * 
    * @param body Publish request containing id of form to publish (required)
@@ -4424,85 +3986,6 @@ public class QualityApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Retrieve the spotability statistic
-   * 
-   * @param body Keyword Set (optional)
-   * @return KeywordSet
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public KeywordSet postQualitySpotability(KeywordSet body) throws IOException, ApiException {
-    return  postQualitySpotability(createPostQualitySpotabilityRequest(body));
-  }
-
-  /**
-   * Retrieve the spotability statistic
-   * 
-   * @param body Keyword Set (optional)
-   * @return KeywordSet
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<KeywordSet> postQualitySpotabilityWithHttpInfo(KeywordSet body) throws IOException {
-    return postQualitySpotability(createPostQualitySpotabilityRequest(body).withHttpInfo());
-  }
-
-  private PostQualitySpotabilityRequest createPostQualitySpotabilityRequest(KeywordSet body) {
-    return PostQualitySpotabilityRequest.builder()
-            .withBody(body)
-    
-            .build();
-  }
-
-  /**
-   * Retrieve the spotability statistic
-   * 
-   * @param request The request object
-   * @return KeywordSet
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public KeywordSet postQualitySpotability(PostQualitySpotabilityRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<KeywordSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KeywordSet>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Retrieve the spotability statistic
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<KeywordSet> postQualitySpotability(ApiRequest<KeywordSet> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<KeywordSet>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5005,89 +4488,6 @@ public class QualityApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Update a keywordSet to the specified keywordSet via PUT.
-   * 
-   * @param keywordSetId KeywordSet ID (required)
-   * @param body keywordSet (required)
-   * @return KeywordSet
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public KeywordSet putQualityKeywordset(String keywordSetId, KeywordSet body) throws IOException, ApiException {
-    return  putQualityKeywordset(createPutQualityKeywordsetRequest(keywordSetId, body));
-  }
-
-  /**
-   * Update a keywordSet to the specified keywordSet via PUT.
-   * 
-   * @param keywordSetId KeywordSet ID (required)
-   * @param body keywordSet (required)
-   * @return KeywordSet
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<KeywordSet> putQualityKeywordsetWithHttpInfo(String keywordSetId, KeywordSet body) throws IOException {
-    return putQualityKeywordset(createPutQualityKeywordsetRequest(keywordSetId, body).withHttpInfo());
-  }
-
-  private PutQualityKeywordsetRequest createPutQualityKeywordsetRequest(String keywordSetId, KeywordSet body) {
-    return PutQualityKeywordsetRequest.builder()
-            .withKeywordSetId(keywordSetId)
-    
-            .withBody(body)
-    
-            .build();
-  }
-
-  /**
-   * Update a keywordSet to the specified keywordSet via PUT.
-   * 
-   * @param request The request object
-   * @return KeywordSet
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public KeywordSet putQualityKeywordset(PutQualityKeywordsetRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<KeywordSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KeywordSet>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Update a keywordSet to the specified keywordSet via PUT.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<KeywordSet> putQualityKeywordset(ApiRequest<KeywordSet> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<KeywordSet>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

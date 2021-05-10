@@ -24,7 +24,7 @@ public class AnalyticsResolution  implements Serializable {
   private Date eventTime = null;
   private String queueId = null;
   private String userId = null;
-  private Long nNextContactAvoided = null;
+  private Long getnNextContactAvoided = null;
 
   
   /**
@@ -82,19 +82,20 @@ public class AnalyticsResolution  implements Serializable {
 
   
   /**
+   * The number of interactions for which next contact was avoided.
    **/
-  public AnalyticsResolution nNextContactAvoided(Long nNextContactAvoided) {
-    this.nNextContactAvoided = nNextContactAvoided;
+  public AnalyticsResolution getnNextContactAvoided(Long getnNextContactAvoided) {
+    this.getnNextContactAvoided = getnNextContactAvoided;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("nNextContactAvoided")
-  public Long getNNextContactAvoided() {
-    return nNextContactAvoided;
+  @ApiModelProperty(example = "null", value = "The number of interactions for which next contact was avoided.")
+  @JsonProperty("getnNextContactAvoided")
+  public Long getGetnNextContactAvoided() {
+    return getnNextContactAvoided;
   }
-  public void setNNextContactAvoided(Long nNextContactAvoided) {
-    this.nNextContactAvoided = nNextContactAvoided;
+  public void setGetnNextContactAvoided(Long getnNextContactAvoided) {
+    this.getnNextContactAvoided = getnNextContactAvoided;
   }
 
   
@@ -111,12 +112,12 @@ public class AnalyticsResolution  implements Serializable {
     return Objects.equals(this.eventTime, analyticsResolution.eventTime) &&
         Objects.equals(this.queueId, analyticsResolution.queueId) &&
         Objects.equals(this.userId, analyticsResolution.userId) &&
-        Objects.equals(this.nNextContactAvoided, analyticsResolution.nNextContactAvoided);
+        Objects.equals(this.getnNextContactAvoided, analyticsResolution.getnNextContactAvoided);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, queueId, userId, nNextContactAvoided);
+    return Objects.hash(eventTime, queueId, userId, getnNextContactAvoided);
   }
 
   @Override
@@ -127,7 +128,7 @@ public class AnalyticsResolution  implements Serializable {
     sb.append("    eventTime: ").append(toIndentedString(eventTime)).append("\n");
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-    sb.append("    nNextContactAvoided: ").append(toIndentedString(nNextContactAvoided)).append("\n");
+    sb.append("    getnNextContactAvoided: ").append(toIndentedString(getnNextContactAvoided)).append("\n");
     sb.append("}");
     return sb.toString();
   }

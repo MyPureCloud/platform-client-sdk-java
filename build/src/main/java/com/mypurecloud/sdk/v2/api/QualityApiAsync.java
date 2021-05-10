@@ -27,8 +27,6 @@ import com.mypurecloud.sdk.v2.model.EvaluationForm;
 import com.mypurecloud.sdk.v2.model.EvaluationFormEntityListing;
 import com.mypurecloud.sdk.v2.model.SurveyForm;
 import com.mypurecloud.sdk.v2.model.SurveyFormEntityListing;
-import com.mypurecloud.sdk.v2.model.KeywordSet;
-import com.mypurecloud.sdk.v2.model.KeywordSetEntityListing;
 import com.mypurecloud.sdk.v2.model.ScorableSurvey;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
@@ -47,8 +45,6 @@ import com.mypurecloud.sdk.v2.api.request.DeleteQualityConversationEvaluationReq
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityFormRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityFormsEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteQualityFormsSurveyRequest;
-import com.mypurecloud.sdk.v2.api.request.DeleteQualityKeywordsetRequest;
-import com.mypurecloud.sdk.v2.api.request.DeleteQualityKeywordsetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityAgentsActivityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityCalibrationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityCalibrationsRequest;
@@ -68,8 +64,6 @@ import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveyVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormsSurveysBulkContextsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetQualityKeywordsetRequest;
-import com.mypurecloud.sdk.v2.api.request.GetQualityKeywordsetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityPublishedformsEvaluationRequest;
@@ -87,18 +81,15 @@ import com.mypurecloud.sdk.v2.api.request.PostQualityEvaluationsScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsSurveysRequest;
-import com.mypurecloud.sdk.v2.api.request.PostQualityKeywordsetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsEvaluationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityPublishedformsSurveysRequest;
-import com.mypurecloud.sdk.v2.api.request.PostQualitySpotabilityRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualitySurveysScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityCalibrationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityConversationEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormsEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualityFormsSurveyRequest;
-import com.mypurecloud.sdk.v2.api.request.PutQualityKeywordsetRequest;
 import com.mypurecloud.sdk.v2.api.request.PutQualitySurveysScorableRequest;
 
 import java.io.IOException;
@@ -467,158 +458,6 @@ public class QualityApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteQualityFormsSurveyAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
-    try {
-      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
-        @Override
-        public void onCompleted(ApiResponse<Void> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  
-  /**
-   * Delete a keywordSet by id.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<Void> deleteQualityKeywordsetAsync(DeleteQualityKeywordsetRequest request, final AsyncApiCallback<Void> callback) {
-    try {
-      final SettableFuture<Void> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
-        @Override
-        public void onCompleted(ApiResponse<Void> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Delete a keywordSet by id.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<Void>> deleteQualityKeywordsetAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
-    try {
-      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
-        @Override
-        public void onCompleted(ApiResponse<Void> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  
-  /**
-   * Delete keyword sets
-   * Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<Void> deleteQualityKeywordsetsAsync(DeleteQualityKeywordsetsRequest request, final AsyncApiCallback<Void> callback) {
-    try {
-      final SettableFuture<Void> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
-        @Override
-        public void onCompleted(ApiResponse<Void> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Delete keyword sets
-   * Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<Void>> deleteQualityKeywordsetsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -2098,158 +1937,6 @@ public class QualityApiAsync {
 
   
   /**
-   * Get a keywordSet by id.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<KeywordSet> getQualityKeywordsetAsync(GetQualityKeywordsetRequest request, final AsyncApiCallback<KeywordSet> callback) {
-    try {
-      final SettableFuture<KeywordSet> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KeywordSet>() {}, new AsyncApiCallback<ApiResponse<KeywordSet>>() {
-        @Override
-        public void onCompleted(ApiResponse<KeywordSet> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get a keywordSet by id.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<KeywordSet>> getQualityKeywordsetAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KeywordSet>> callback) {
-    try {
-      final SettableFuture<ApiResponse<KeywordSet>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<KeywordSet>() {}, new AsyncApiCallback<ApiResponse<KeywordSet>>() {
-        @Override
-        public void onCompleted(ApiResponse<KeywordSet> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  
-  /**
-   * Get the list of keyword sets
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<KeywordSetEntityListing> getQualityKeywordsetsAsync(GetQualityKeywordsetsRequest request, final AsyncApiCallback<KeywordSetEntityListing> callback) {
-    try {
-      final SettableFuture<KeywordSetEntityListing> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KeywordSetEntityListing>() {}, new AsyncApiCallback<ApiResponse<KeywordSetEntityListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<KeywordSetEntityListing> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get the list of keyword sets
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<KeywordSetEntityListing>> getQualityKeywordsetsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KeywordSetEntityListing>> callback) {
-    try {
-      final SettableFuture<ApiResponse<KeywordSetEntityListing>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<KeywordSetEntityListing>() {}, new AsyncApiCallback<ApiResponse<KeywordSetEntityListing>>() {
-        @Override
-        public void onCompleted(ApiResponse<KeywordSetEntityListing> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<KeywordSetEntityListing> response = (ApiResponse<KeywordSetEntityListing>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<KeywordSetEntityListing> response = (ApiResponse<KeywordSetEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  
-  /**
    * Get the published evaluation forms.
    * 
    * @param request the request object
@@ -3542,82 +3229,6 @@ public class QualityApiAsync {
 
   
   /**
-   * Create a Keyword Set
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<KeywordSet> postQualityKeywordsetsAsync(PostQualityKeywordsetsRequest request, final AsyncApiCallback<KeywordSet> callback) {
-    try {
-      final SettableFuture<KeywordSet> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KeywordSet>() {}, new AsyncApiCallback<ApiResponse<KeywordSet>>() {
-        @Override
-        public void onCompleted(ApiResponse<KeywordSet> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Create a Keyword Set
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<KeywordSet>> postQualityKeywordsetsAsync(ApiRequest<KeywordSet> request, final AsyncApiCallback<ApiResponse<KeywordSet>> callback) {
-    try {
-      final SettableFuture<ApiResponse<KeywordSet>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<KeywordSet>() {}, new AsyncApiCallback<ApiResponse<KeywordSet>>() {
-        @Override
-        public void onCompleted(ApiResponse<KeywordSet> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  
-  /**
    * Publish an evaluation form.
    * 
    * @param request the request object
@@ -3833,82 +3444,6 @@ public class QualityApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  
-  /**
-   * Retrieve the spotability statistic
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<KeywordSet> postQualitySpotabilityAsync(PostQualitySpotabilityRequest request, final AsyncApiCallback<KeywordSet> callback) {
-    try {
-      final SettableFuture<KeywordSet> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KeywordSet>() {}, new AsyncApiCallback<ApiResponse<KeywordSet>>() {
-        @Override
-        public void onCompleted(ApiResponse<KeywordSet> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Retrieve the spotability statistic
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<KeywordSet>> postQualitySpotabilityAsync(ApiRequest<KeywordSet> request, final AsyncApiCallback<ApiResponse<KeywordSet>> callback) {
-    try {
-      final SettableFuture<ApiResponse<KeywordSet>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<KeywordSet>() {}, new AsyncApiCallback<ApiResponse<KeywordSet>>() {
-        @Override
-        public void onCompleted(ApiResponse<KeywordSet> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -4365,82 +3900,6 @@ public class QualityApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<SurveyForm> response = (ApiResponse<SurveyForm>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  
-  /**
-   * Update a keywordSet to the specified keywordSet via PUT.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<KeywordSet> putQualityKeywordsetAsync(PutQualityKeywordsetRequest request, final AsyncApiCallback<KeywordSet> callback) {
-    try {
-      final SettableFuture<KeywordSet> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KeywordSet>() {}, new AsyncApiCallback<ApiResponse<KeywordSet>>() {
-        @Override
-        public void onCompleted(ApiResponse<KeywordSet> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Update a keywordSet to the specified keywordSet via PUT.
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<KeywordSet>> putQualityKeywordsetAsync(ApiRequest<KeywordSet> request, final AsyncApiCallback<ApiResponse<KeywordSet>> callback) {
-    try {
-      final SettableFuture<ApiResponse<KeywordSet>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<KeywordSet>() {}, new AsyncApiCallback<ApiResponse<KeywordSet>>() {
-        @Override
-        public void onCompleted(ApiResponse<KeywordSet> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<KeywordSet> response = (ApiResponse<KeywordSet>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

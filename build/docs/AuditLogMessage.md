@@ -63,6 +63,7 @@ title: AuditLogMessage
 | CREATE | &quot;Create&quot; |
 | VIEW | &quot;View&quot; |
 | UPDATE | &quot;Update&quot; |
+| MOVE | &quot;Move&quot; |
 | DELETE | &quot;Delete&quot; |
 | DELETEALL | &quot;DeleteAll&quot; |
 | DOWNLOAD | &quot;Download&quot; |
@@ -188,6 +189,7 @@ title: AuditLogMessage
 | VOICEMAILPOLICY | &quot;VoicemailPolicy&quot; |
 | VOICEMAILUSERPOLICY | &quot;VoicemailUserPolicy&quot; |
 | WORKPLAN | &quot;WorkPlan&quot; |
+| WORKSPACE | &quot;Workspace&quot; |
 | WRAPUPCODE | &quot;WrapupCode&quot; |
 | WRAPUPCODEMAPPING | &quot;WrapUpCodeMapping&quot; |
 {: class="table table-striped"}

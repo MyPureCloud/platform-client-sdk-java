@@ -116,6 +116,7 @@ public class AuditQueryEntity  implements Serializable {
     VOICEMAILPOLICY("VoicemailPolicy"),
     VOICEMAILUSERPOLICY("VoicemailUserPolicy"),
     WORKPLAN("WorkPlan"),
+    WORKSPACE("Workspace"),
     WRAPUPCODE("WrapupCode"),
     WRAPUPCODEMAPPING("WrapUpCodeMapping");
 
@@ -166,6 +167,7 @@ public class AuditQueryEntity  implements Serializable {
     CREATE("Create"),
     VIEW("View"),
     UPDATE("Update"),
+    MOVE("Move"),
     DELETE("Delete"),
     DELETEALL("DeleteAll"),
     DOWNLOAD("Download"),

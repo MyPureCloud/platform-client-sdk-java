@@ -12,6 +12,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.IntentDefinition;
+import com.mypurecloud.sdk.v2.model.NamedEntityDefinition;
 import com.mypurecloud.sdk.v2.model.NamedEntityTypeDefinition;
 import com.mypurecloud.sdk.v2.model.NluDomain;
 import io.swagger.annotations.ApiModel;
@@ -139,6 +140,7 @@ public class NluDomainVersion  implements Serializable {
   private EvaluationStatusEnum evaluationStatus = null;
   private List<IntentDefinition> intents = new ArrayList<IntentDefinition>();
   private List<NamedEntityTypeDefinition> entityTypes = new ArrayList<NamedEntityTypeDefinition>();
+  private List<NamedEntityDefinition> entities = new ArrayList<NamedEntityDefinition>();
   private String selfUri = null;
 
   
@@ -288,6 +290,24 @@ public class NluDomainVersion  implements Serializable {
   }
 
   
+  /**
+   * The entities defined for this NLU domain version.This field is mutually exclusive with entityTypeBindings
+   **/
+  public NluDomainVersion entities(List<NamedEntityDefinition> entities) {
+    this.entities = entities;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The entities defined for this NLU domain version.This field is mutually exclusive with entityTypeBindings")
+  @JsonProperty("entities")
+  public List<NamedEntityDefinition> getEntities() {
+    return entities;
+  }
+  public void setEntities(List<NamedEntityDefinition> entities) {
+    this.entities = entities;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -318,12 +338,13 @@ public class NluDomainVersion  implements Serializable {
         Objects.equals(this.evaluationStatus, nluDomainVersion.evaluationStatus) &&
         Objects.equals(this.intents, nluDomainVersion.intents) &&
         Objects.equals(this.entityTypes, nluDomainVersion.entityTypes) &&
+        Objects.equals(this.entities, nluDomainVersion.entities) &&
         Objects.equals(this.selfUri, nluDomainVersion.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, domain, description, language, published, dateCreated, dateModified, dateTrained, datePublished, trainingStatus, evaluationStatus, intents, entityTypes, selfUri);
+    return Objects.hash(id, domain, description, language, published, dateCreated, dateModified, dateTrained, datePublished, trainingStatus, evaluationStatus, intents, entityTypes, entities, selfUri);
   }
 
   @Override
@@ -344,6 +365,7 @@ public class NluDomainVersion  implements Serializable {
     sb.append("    evaluationStatus: ").append(toIndentedString(evaluationStatus)).append("\n");
     sb.append("    intents: ").append(toIndentedString(intents)).append("\n");
     sb.append("    entityTypes: ").append(toIndentedString(entityTypes)).append("\n");
+    sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

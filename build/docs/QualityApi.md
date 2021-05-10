@@ -12,8 +12,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteQualityForm**](QualityApi.html#deleteQualityForm) | Delete an evaluation form. |
 | [**deleteQualityFormsEvaluation**](QualityApi.html#deleteQualityFormsEvaluation) | Delete an evaluation form. |
 | [**deleteQualityFormsSurvey**](QualityApi.html#deleteQualityFormsSurvey) | Delete a survey form. |
-| [**deleteQualityKeywordset**](QualityApi.html#deleteQualityKeywordset) | Delete a keywordSet by id. |
-| [**deleteQualityKeywordsets**](QualityApi.html#deleteQualityKeywordsets) | Delete keyword sets |
 | [**getQualityAgentsActivity**](QualityApi.html#getQualityAgentsActivity) | Gets a list of Agent Activities |
 | [**getQualityCalibration**](QualityApi.html#getQualityCalibration) | Get a calibration by id.  Requires either calibrator id or conversation id |
 | [**getQualityCalibrations**](QualityApi.html#getQualityCalibrations) | Get the list of calibrations |
@@ -33,8 +31,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getQualityFormsSurveys**](QualityApi.html#getQualityFormsSurveys) | Get the list of survey forms |
 | [**getQualityFormsSurveysBulk**](QualityApi.html#getQualityFormsSurveysBulk) | Retrieve a list of survey forms by their ids |
 | [**getQualityFormsSurveysBulkContexts**](QualityApi.html#getQualityFormsSurveysBulkContexts) | Retrieve a list of the latest form versions by context ids |
-| [**getQualityKeywordset**](QualityApi.html#getQualityKeywordset) | Get a keywordSet by id. |
-| [**getQualityKeywordsets**](QualityApi.html#getQualityKeywordsets) | Get the list of keyword sets |
 | [**getQualityPublishedform**](QualityApi.html#getQualityPublishedform) | Get the published evaluation forms. |
 | [**getQualityPublishedforms**](QualityApi.html#getQualityPublishedforms) | Get the published evaluation forms. |
 | [**getQualityPublishedformsEvaluation**](QualityApi.html#getQualityPublishedformsEvaluation) | Get the most recent published version of an evaluation form. |
@@ -52,18 +48,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postQualityForms**](QualityApi.html#postQualityForms) | Create an evaluation form. |
 | [**postQualityFormsEvaluations**](QualityApi.html#postQualityFormsEvaluations) | Create an evaluation form. |
 | [**postQualityFormsSurveys**](QualityApi.html#postQualityFormsSurveys) | Create a survey form. |
-| [**postQualityKeywordsets**](QualityApi.html#postQualityKeywordsets) | Create a Keyword Set |
 | [**postQualityPublishedforms**](QualityApi.html#postQualityPublishedforms) | Publish an evaluation form. |
 | [**postQualityPublishedformsEvaluations**](QualityApi.html#postQualityPublishedformsEvaluations) | Publish an evaluation form. |
 | [**postQualityPublishedformsSurveys**](QualityApi.html#postQualityPublishedformsSurveys) | Publish a survey form. |
-| [**postQualitySpotability**](QualityApi.html#postQualitySpotability) | Retrieve the spotability statistic |
 | [**postQualitySurveysScoring**](QualityApi.html#postQualitySurveysScoring) | Score survey |
 | [**putQualityCalibration**](QualityApi.html#putQualityCalibration) | Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex |
 | [**putQualityConversationEvaluation**](QualityApi.html#putQualityConversationEvaluation) | Update an evaluation |
 | [**putQualityForm**](QualityApi.html#putQualityForm) | Update an evaluation form. |
 | [**putQualityFormsEvaluation**](QualityApi.html#putQualityFormsEvaluation) | Update an evaluation form. |
 | [**putQualityFormsSurvey**](QualityApi.html#putQualityFormsSurvey) | Update a survey form. |
-| [**putQualityKeywordset**](QualityApi.html#putQualityKeywordset) | Update a keywordSet to the specified keywordSet via PUT. |
 | [**putQualitySurveysScorable**](QualityApi.html#putQualitySurveysScorable) | Update a survey as an end-customer, for the purposes of scoring it. |
 {: class="table-striped"}
 
@@ -378,130 +371,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **formId** | **String**| Form ID | 
-{: class="table-striped"}
-
-
-### Return type
-
-null (empty response body)
-
-<a name="deleteQualityKeywordset"></a>
-
-# **deleteQualityKeywordset**
-
-
-
-> Void deleteQualityKeywordset(keywordSetId)
-
-Delete a keywordSet by id.
-
-
-
-Wraps DELETE /api/v2/quality/keywordsets/{keywordSetId}  
-
-Requires ANY permissions: 
-
-* quality:keywordset:delete
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.QualityApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-QualityApi apiInstance = new QualityApi();
-String keywordSetId = "keywordSetId_example"; // String | KeywordSet ID
-try {
-    apiInstance.deleteQualityKeywordset(keywordSetId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling QualityApi#deleteQualityKeywordset");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **keywordSetId** | **String**| KeywordSet ID | 
-{: class="table-striped"}
-
-
-### Return type
-
-null (empty response body)
-
-<a name="deleteQualityKeywordsets"></a>
-
-# **deleteQualityKeywordsets**
-
-
-
-> Void deleteQualityKeywordsets(ids)
-
-Delete keyword sets
-
-Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
-
-Wraps DELETE /api/v2/quality/keywordsets  
-
-Requires ANY permissions: 
-
-* quality:keywordset:delete
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.QualityApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-QualityApi apiInstance = new QualityApi();
-String ids = "ids_example"; // String | A comma-delimited list of valid KeywordSet ids
-try {
-    apiInstance.deleteQualityKeywordsets(ids);
-} catch (ApiException e) {
-    System.err.println("Exception when calling QualityApi#deleteQualityKeywordsets");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **ids** | **String**| A comma-delimited list of valid KeywordSet ids | 
 {: class="table-striped"}
 
 
@@ -1887,150 +1756,6 @@ try {
 
 [**SurveyFormEntityListing**](SurveyFormEntityListing.html)
 
-<a name="getQualityKeywordset"></a>
-
-# **getQualityKeywordset**
-
-
-
-> [KeywordSet](KeywordSet.html) getQualityKeywordset(keywordSetId)
-
-Get a keywordSet by id.
-
-
-
-Wraps GET /api/v2/quality/keywordsets/{keywordSetId}  
-
-Requires ANY permissions: 
-
-* quality:keywordset:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.QualityApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-QualityApi apiInstance = new QualityApi();
-String keywordSetId = "keywordSetId_example"; // String | KeywordSet ID
-try {
-    KeywordSet result = apiInstance.getQualityKeywordset(keywordSetId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling QualityApi#getQualityKeywordset");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **keywordSetId** | **String**| KeywordSet ID | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**KeywordSet**](KeywordSet.html)
-
-<a name="getQualityKeywordsets"></a>
-
-# **getQualityKeywordsets**
-
-
-
-> [KeywordSetEntityListing](KeywordSetEntityListing.html) getQualityKeywordsets(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, queueId, agentId, operator)
-
-Get the list of keyword sets
-
-
-
-Wraps GET /api/v2/quality/keywordsets  
-
-Requires ANY permissions: 
-
-* quality:keywordset:view
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.QualityApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-QualityApi apiInstance = new QualityApi();
-Integer pageSize = 25; // Integer | The total page size requested
-Integer pageNumber = 1; // Integer | The page number requested
-String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
-String nextPage = "nextPage_example"; // String | next page token
-String previousPage = "previousPage_example"; // String | Previous page token
-String name = "name_example"; // String | the keyword set name - used for filtering results in searches.
-String queueId = "queueId_example"; // String | the queue id - used for filtering results in searches.
-String agentId = "agentId_example"; // String | the agent id - used for filtering results in searches.
-String operator = "operator_example"; // String | If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters.
-try {
-    KeywordSetEntityListing result = apiInstance.getQualityKeywordsets(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, name, queueId, agentId, operator);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling QualityApi#getQualityKeywordsets");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
-| **sortBy** | **String**| variable name requested to sort by | [optional] 
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
-| **nextPage** | **String**| next page token | [optional] 
-| **previousPage** | **String**| Previous page token | [optional] 
-| **name** | **String**| the keyword set name - used for filtering results in searches. | [optional] 
-| **queueId** | **String**| the queue id - used for filtering results in searches. | [optional] 
-| **agentId** | **String**| the agent id - used for filtering results in searches. | [optional] 
-| **operator** | **String**| If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters. | [optional]<br />**Values**: AND, OR 
-{: class="table-striped"}
-
-
-### Return type
-
-[**KeywordSetEntityListing**](KeywordSetEntityListing.html)
-
 <a name="getQualityPublishedform"></a>
 
 # **getQualityPublishedform**
@@ -3113,71 +2838,6 @@ try {
 
 [**SurveyForm**](SurveyForm.html)
 
-<a name="postQualityKeywordsets"></a>
-
-# **postQualityKeywordsets**
-
-
-
-> [KeywordSet](KeywordSet.html) postQualityKeywordsets(body, expand)
-
-Create a Keyword Set
-
-
-
-Wraps POST /api/v2/quality/keywordsets  
-
-Requires ANY permissions: 
-
-* quality:keywordset:add
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.QualityApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-QualityApi apiInstance = new QualityApi();
-KeywordSet body = new KeywordSet(); // KeywordSet | keywordSet
-String expand = "expand_example"; // String | queueId
-try {
-    KeywordSet result = apiInstance.postQualityKeywordsets(body, expand);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling QualityApi#postQualityKeywordsets");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **body** | [**KeywordSet**](KeywordSet.html)| keywordSet | 
-| **expand** | **String**| queueId | [optional] 
-{: class="table-striped"}
-
-
-### Return type
-
-[**KeywordSet**](KeywordSet.html)
-
 <a name="postQualityPublishedforms"></a>
 
 # **postQualityPublishedforms**
@@ -3366,68 +3026,6 @@ try {
 ### Return type
 
 [**SurveyForm**](SurveyForm.html)
-
-<a name="postQualitySpotability"></a>
-
-# **postQualitySpotability**
-
-
-
-> [KeywordSet](KeywordSet.html) postQualitySpotability(body)
-
-Retrieve the spotability statistic
-
-
-
-Wraps POST /api/v2/quality/spotability  
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.QualityApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-QualityApi apiInstance = new QualityApi();
-KeywordSet body = new KeywordSet(); // KeywordSet | Keyword Set
-try {
-    KeywordSet result = apiInstance.postQualitySpotability(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling QualityApi#postQualitySpotability");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **body** | [**KeywordSet**](KeywordSet.html)| Keyword Set | [optional] 
-{: class="table-striped"}
-
-
-### Return type
-
-[**KeywordSet**](KeywordSet.html)
 
 <a name="postQualitySurveysScoring"></a>
 
@@ -3821,71 +3419,6 @@ try {
 ### Return type
 
 [**SurveyForm**](SurveyForm.html)
-
-<a name="putQualityKeywordset"></a>
-
-# **putQualityKeywordset**
-
-
-
-> [KeywordSet](KeywordSet.html) putQualityKeywordset(keywordSetId, body)
-
-Update a keywordSet to the specified keywordSet via PUT.
-
-
-
-Wraps PUT /api/v2/quality/keywordsets/{keywordSetId}  
-
-Requires ANY permissions: 
-
-* quality:keywordset:edit
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.QualityApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-QualityApi apiInstance = new QualityApi();
-String keywordSetId = "keywordSetId_example"; // String | KeywordSet ID
-KeywordSet body = new KeywordSet(); // KeywordSet | keywordSet
-try {
-    KeywordSet result = apiInstance.putQualityKeywordset(keywordSetId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling QualityApi#putQualityKeywordset");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **keywordSetId** | **String**| KeywordSet ID | 
-| **body** | [**KeywordSet**](KeywordSet.html)| keywordSet | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**KeywordSet**](KeywordSet.html)
 
 <a name="putQualitySurveysScorable"></a>
 

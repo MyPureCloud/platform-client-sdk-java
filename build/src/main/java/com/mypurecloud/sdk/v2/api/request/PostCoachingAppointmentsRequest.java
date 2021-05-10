@@ -38,6 +38,8 @@ import com.mypurecloud.sdk.v2.model.AddConversationRequest;
 import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateResponse;
+import com.mypurecloud.sdk.v2.model.CoachingSlotsRequest;
+import com.mypurecloud.sdk.v2.model.CoachingSlotsResponse;
 
 public class PostCoachingAppointmentsRequest {
     

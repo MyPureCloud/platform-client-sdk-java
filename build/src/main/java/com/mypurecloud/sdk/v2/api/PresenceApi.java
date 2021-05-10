@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSystempresencesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserPresencesMicrosoftteamsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserPresencesPurecloudRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUserPresencesZoomphoneRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserPresencesPurecloudRequest;
 import com.mypurecloud.sdk.v2.api.request.PostPresencedefinitionsRequest;
@@ -611,6 +612,85 @@ public class PresenceApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UserPresence> response = (ApiResponse<UserPresence>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a user&#39;s Zoom Phone presence.
+   * Gets the presence for a Zoom user.  This will return the Zoom Phone presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
+   * @param userId user Id (required)
+   * @return PresenceExpand
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PresenceExpand getUserPresencesZoomphone(String userId) throws IOException, ApiException {
+    return  getUserPresencesZoomphone(createGetUserPresencesZoomphoneRequest(userId));
+  }
+
+  /**
+   * Get a user&#39;s Zoom Phone presence.
+   * Gets the presence for a Zoom user.  This will return the Zoom Phone presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
+   * @param userId user Id (required)
+   * @return PresenceExpand
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PresenceExpand> getUserPresencesZoomphoneWithHttpInfo(String userId) throws IOException {
+    return getUserPresencesZoomphone(createGetUserPresencesZoomphoneRequest(userId).withHttpInfo());
+  }
+
+  private GetUserPresencesZoomphoneRequest createGetUserPresencesZoomphoneRequest(String userId) {
+    return GetUserPresencesZoomphoneRequest.builder()
+            .withUserId(userId)
+    
+            .build();
+  }
+
+  /**
+   * Get a user&#39;s Zoom Phone presence.
+   * Gets the presence for a Zoom user.  This will return the Zoom Phone presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
+   * @param request The request object
+   * @return PresenceExpand
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PresenceExpand getUserPresencesZoomphone(GetUserPresencesZoomphoneRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PresenceExpand> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PresenceExpand>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a user&#39;s Zoom Phone presence.
+   * Gets the presence for a Zoom user.  This will return the Zoom Phone presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PresenceExpand> getUserPresencesZoomphone(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PresenceExpand>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PresenceExpand> response = (ApiResponse<PresenceExpand>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PresenceExpand> response = (ApiResponse<PresenceExpand>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

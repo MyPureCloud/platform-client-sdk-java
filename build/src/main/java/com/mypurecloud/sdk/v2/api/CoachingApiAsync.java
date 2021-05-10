@@ -31,6 +31,8 @@ import com.mypurecloud.sdk.v2.model.AddConversationRequest;
 import com.mypurecloud.sdk.v2.model.CreateCoachingAppointmentRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateRequest;
 import com.mypurecloud.sdk.v2.model.CoachingAppointmentAggregateResponse;
+import com.mypurecloud.sdk.v2.model.CoachingSlotsRequest;
+import com.mypurecloud.sdk.v2.model.CoachingSlotsResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteCoachingAppointmentRequest;
@@ -51,6 +53,7 @@ import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentAnnotationsRequ
 import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentConversationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCoachingAppointmentsAggregatesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostCoachingScheduleslotsQueryRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1428,6 +1431,82 @@ public class CoachingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CoachingAppointmentAggregateResponse> response = (ApiResponse<CoachingAppointmentAggregateResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get list of possible slots where a coaching appointment can be scheduled.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CoachingSlotsResponse> postCoachingScheduleslotsQueryAsync(PostCoachingScheduleslotsQueryRequest request, final AsyncApiCallback<CoachingSlotsResponse> callback) {
+    try {
+      final SettableFuture<CoachingSlotsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CoachingSlotsResponse>() {}, new AsyncApiCallback<ApiResponse<CoachingSlotsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CoachingSlotsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get list of possible slots where a coaching appointment can be scheduled.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CoachingSlotsResponse>> postCoachingScheduleslotsQueryAsync(ApiRequest<CoachingSlotsRequest> request, final AsyncApiCallback<ApiResponse<CoachingSlotsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CoachingSlotsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CoachingSlotsResponse>() {}, new AsyncApiCallback<ApiResponse<CoachingSlotsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CoachingSlotsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CoachingSlotsResponse> response = (ApiResponse<CoachingSlotsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CoachingSlotsResponse> response = (ApiResponse<CoachingSlotsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

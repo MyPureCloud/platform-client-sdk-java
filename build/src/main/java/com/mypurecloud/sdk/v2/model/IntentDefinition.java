@@ -26,6 +26,7 @@ public class IntentDefinition  implements Serializable {
   
   private String name = null;
   private List<NamedEntityTypeBinding> entityTypeBindings = new ArrayList<NamedEntityTypeBinding>();
+  private List<String> entityNameReferences = new ArrayList<String>();
   private List<NluUtterance> utterances = new ArrayList<NluUtterance>();
 
   
@@ -48,20 +49,38 @@ public class IntentDefinition  implements Serializable {
 
   
   /**
-   * The bindings for the named entity types used in this intent.
+   * The bindings for the named entity types used in this intent.This field is mutually exclusive with entityNameReferences and entities
    **/
   public IntentDefinition entityTypeBindings(List<NamedEntityTypeBinding> entityTypeBindings) {
     this.entityTypeBindings = entityTypeBindings;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The bindings for the named entity types used in this intent.")
+  @ApiModelProperty(example = "null", value = "The bindings for the named entity types used in this intent.This field is mutually exclusive with entityNameReferences and entities")
   @JsonProperty("entityTypeBindings")
   public List<NamedEntityTypeBinding> getEntityTypeBindings() {
     return entityTypeBindings;
   }
   public void setEntityTypeBindings(List<NamedEntityTypeBinding> entityTypeBindings) {
     this.entityTypeBindings = entityTypeBindings;
+  }
+
+  
+  /**
+   * The references for the named entity used in this intent.This field is mutually exclusive with entityTypeBindings
+   **/
+  public IntentDefinition entityNameReferences(List<String> entityNameReferences) {
+    this.entityNameReferences = entityNameReferences;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The references for the named entity used in this intent.This field is mutually exclusive with entityTypeBindings")
+  @JsonProperty("entityNameReferences")
+  public List<String> getEntityNameReferences() {
+    return entityNameReferences;
+  }
+  public void setEntityNameReferences(List<String> entityNameReferences) {
+    this.entityNameReferences = entityNameReferences;
   }
 
   
@@ -95,12 +114,13 @@ public class IntentDefinition  implements Serializable {
     IntentDefinition intentDefinition = (IntentDefinition) o;
     return Objects.equals(this.name, intentDefinition.name) &&
         Objects.equals(this.entityTypeBindings, intentDefinition.entityTypeBindings) &&
+        Objects.equals(this.entityNameReferences, intentDefinition.entityNameReferences) &&
         Objects.equals(this.utterances, intentDefinition.utterances);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, entityTypeBindings, utterances);
+    return Objects.hash(name, entityTypeBindings, entityNameReferences, utterances);
   }
 
   @Override
@@ -110,6 +130,7 @@ public class IntentDefinition  implements Serializable {
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    entityTypeBindings: ").append(toIndentedString(entityTypeBindings)).append("\n");
+    sb.append("    entityNameReferences: ").append(toIndentedString(entityNameReferences)).append("\n");
     sb.append("    utterances: ").append(toIndentedString(utterances)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUserPresence**](PresenceApi.html#getUserPresence) | Get a user&#39;s Presence |
 | [**getUserPresencesMicrosoftteams**](PresenceApi.html#getUserPresencesMicrosoftteams) | Get a user&#39;s Microsoft Teams presence. |
 | [**getUserPresencesPurecloud**](PresenceApi.html#getUserPresencesPurecloud) | Get a user&#39;s Genesys Cloud presence. |
+| [**getUserPresencesZoomphone**](PresenceApi.html#getUserPresencesZoomphone) | Get a user&#39;s Zoom Phone presence. |
 | [**patchUserPresence**](PresenceApi.html#patchUserPresence) | Patch a user&#39;s Presence |
 | [**patchUserPresencesPurecloud**](PresenceApi.html#patchUserPresencesPurecloud) | Patch a Genesys Cloud user&#39;s presence |
 | [**postPresencedefinitions**](PresenceApi.html#postPresencedefinitions) | Create a Presence Definition |
@@ -462,6 +463,70 @@ try {
 ### Return type
 
 [**UserPresence**](UserPresence.html)
+
+<a name="getUserPresencesZoomphone"></a>
+
+# **getUserPresencesZoomphone**
+
+
+
+> [PresenceExpand](PresenceExpand.html) getUserPresencesZoomphone(userId)
+
+Get a user&#39;s Zoom Phone presence.
+
+Gets the presence for a Zoom user.  This will return the Zoom Phone presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
+
+Wraps GET /api/v2/users/{userId}/presences/zoomphone  
+
+Requires ANY permissions: 
+
+* integration:zoomPhone:view
+* integrations:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.PresenceApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+PresenceApi apiInstance = new PresenceApi();
+String userId = "userId_example"; // String | user Id
+try {
+    PresenceExpand result = apiInstance.getUserPresencesZoomphone(userId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PresenceApi#getUserPresencesZoomphone");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| user Id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PresenceExpand**](PresenceExpand.html)
 
 <a name="patchUserPresence"></a>
 

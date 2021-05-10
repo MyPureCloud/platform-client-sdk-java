@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.model.CallableTimeSet;
 import com.mypurecloud.sdk.v2.model.CallableTimeSetEntityListing;
 import com.mypurecloud.sdk.v2.model.ResponseSet;
 import com.mypurecloud.sdk.v2.model.ResponseSetEntityListing;
+import com.mypurecloud.sdk.v2.model.AgentOwnedMappingPreviewListing;
 import com.mypurecloud.sdk.v2.model.CampaignDiagnostics;
 import com.mypurecloud.sdk.v2.model.CampaignInteractions;
 import com.mypurecloud.sdk.v2.model.CampaignProgress;
@@ -62,6 +63,7 @@ import com.mypurecloud.sdk.v2.model.OutboundSettings;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeMapping;
 import com.mypurecloud.sdk.v2.model.AuditSearchResult;
 import com.mypurecloud.sdk.v2.model.DialerAuditRequest;
+import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ContactCallbackRequest;
 import com.mypurecloud.sdk.v2.model.WritableDialerContact;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -94,6 +96,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOutboundCallabletimesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCallanalysisresponsesetRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCallanalysisresponsesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignAgentownedmappingpreviewResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignDiagnosticsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignInteractionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOutboundCampaignProgressRequest;
@@ -143,6 +146,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundAttemptlimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCallabletimesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCallanalysisresponsesetsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignAgentownedmappingpreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignCallbackScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignrulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundCampaignsRequest;
@@ -2011,6 +2015,82 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Campaign> response = (ApiResponse<Campaign>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentOwnedMappingPreviewListing> getOutboundCampaignAgentownedmappingpreviewResultsAsync(GetOutboundCampaignAgentownedmappingpreviewResultsRequest request, final AsyncApiCallback<AgentOwnedMappingPreviewListing> callback) {
+    try {
+      final SettableFuture<AgentOwnedMappingPreviewListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentOwnedMappingPreviewListing>() {}, new AsyncApiCallback<ApiResponse<AgentOwnedMappingPreviewListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentOwnedMappingPreviewListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentOwnedMappingPreviewListing>> getOutboundCampaignAgentownedmappingpreviewResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AgentOwnedMappingPreviewListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentOwnedMappingPreviewListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentOwnedMappingPreviewListing>() {}, new AsyncApiCallback<ApiResponse<AgentOwnedMappingPreviewListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentOwnedMappingPreviewListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentOwnedMappingPreviewListing> response = (ApiResponse<AgentOwnedMappingPreviewListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentOwnedMappingPreviewListing> response = (ApiResponse<AgentOwnedMappingPreviewListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -5735,6 +5815,82 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ResponseSet> response = (ApiResponse<ResponseSet>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Empty> postOutboundCampaignAgentownedmappingpreviewAsync(PostOutboundCampaignAgentownedmappingpreviewRequest request, final AsyncApiCallback<Empty> callback) {
+    try {
+      final SettableFuture<Empty> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Empty>> postOutboundCampaignAgentownedmappingpreviewAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Empty>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Empty>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Empty>() {}, new AsyncApiCallback<ApiResponse<Empty>>() {
+        @Override
+        public void onCompleted(ApiResponse<Empty> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Empty> response = (ApiResponse<Empty>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
