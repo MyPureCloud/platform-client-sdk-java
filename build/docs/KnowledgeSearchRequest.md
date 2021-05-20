@@ -25,6 +25,7 @@ title: KnowledgeSearchRequest
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | FAQ | &quot;Faq&quot; |
+| ARTICLE | &quot;Article&quot; |
 {: class="table table-striped"}
 
 

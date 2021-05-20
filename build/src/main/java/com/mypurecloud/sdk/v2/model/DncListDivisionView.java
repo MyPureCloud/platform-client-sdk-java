@@ -90,7 +90,7 @@ public class DncListDivisionView  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The number of contacts in the ContactList.")
+  @ApiModelProperty(example = "null", value = "The number of contacts in the DncList.")
   @JsonProperty("size")
   public Long getSize() {
     return size;

@@ -35,9 +35,15 @@ import com.mypurecloud.sdk.v2.model.BulkIdsRequest;
 import com.mypurecloud.sdk.v2.model.BulkContactsResponse;
 import com.mypurecloud.sdk.v2.model.BulkContactsRequest;
 import com.mypurecloud.sdk.v2.model.BulkDeleteResponse;
+import com.mypurecloud.sdk.v2.model.BulkFetchNotesResponse;
+import com.mypurecloud.sdk.v2.model.BulkNotesResponse;
+import com.mypurecloud.sdk.v2.model.BulkNotesRequest;
 import com.mypurecloud.sdk.v2.model.BulkFetchOrganizationsResponse;
 import com.mypurecloud.sdk.v2.model.BulkOrganizationsRequest;
 import com.mypurecloud.sdk.v2.model.BulkOrganizationsResponse;
+import com.mypurecloud.sdk.v2.model.BulkFetchRelationshipsResponse;
+import com.mypurecloud.sdk.v2.model.BulkRelationshipsRequest;
+import com.mypurecloud.sdk.v2.model.BulkRelationshipsResponse;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
 
@@ -77,10 +83,18 @@ import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsReques
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkContactsUpdateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkNotesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkNotesAddRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkNotesRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkNotesUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkOrganizationsUpdateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkRelationshipsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkRelationshipsAddRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkRelationshipsRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsBulkRelationshipsUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactNotesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostExternalcontactsContactsSchemasRequest;
@@ -2779,6 +2793,310 @@ public class ExternalContactsApiAsync {
 
   
   /**
+   * Bulk fetch notes
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkFetchNotesResponse> postExternalcontactsBulkNotesAsync(PostExternalcontactsBulkNotesRequest request, final AsyncApiCallback<BulkFetchNotesResponse> callback) {
+    try {
+      final SettableFuture<BulkFetchNotesResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkFetchNotesResponse>() {}, new AsyncApiCallback<ApiResponse<BulkFetchNotesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkFetchNotesResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk fetch notes
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkFetchNotesResponse>> postExternalcontactsBulkNotesAsync(ApiRequest<BulkIdsRequest> request, final AsyncApiCallback<ApiResponse<BulkFetchNotesResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkFetchNotesResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkFetchNotesResponse>() {}, new AsyncApiCallback<ApiResponse<BulkFetchNotesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkFetchNotesResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkFetchNotesResponse> response = (ApiResponse<BulkFetchNotesResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkFetchNotesResponse> response = (ApiResponse<BulkFetchNotesResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Bulk add notes
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkNotesResponse> postExternalcontactsBulkNotesAddAsync(PostExternalcontactsBulkNotesAddRequest request, final AsyncApiCallback<BulkNotesResponse> callback) {
+    try {
+      final SettableFuture<BulkNotesResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkNotesResponse>() {}, new AsyncApiCallback<ApiResponse<BulkNotesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkNotesResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk add notes
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkNotesResponse>> postExternalcontactsBulkNotesAddAsync(ApiRequest<BulkNotesRequest> request, final AsyncApiCallback<ApiResponse<BulkNotesResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkNotesResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkNotesResponse>() {}, new AsyncApiCallback<ApiResponse<BulkNotesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkNotesResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkNotesResponse> response = (ApiResponse<BulkNotesResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkNotesResponse> response = (ApiResponse<BulkNotesResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Bulk remove notes
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkDeleteResponse> postExternalcontactsBulkNotesRemoveAsync(PostExternalcontactsBulkNotesRemoveRequest request, final AsyncApiCallback<BulkDeleteResponse> callback) {
+    try {
+      final SettableFuture<BulkDeleteResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkDeleteResponse>() {}, new AsyncApiCallback<ApiResponse<BulkDeleteResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkDeleteResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk remove notes
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkDeleteResponse>> postExternalcontactsBulkNotesRemoveAsync(ApiRequest<BulkIdsRequest> request, final AsyncApiCallback<ApiResponse<BulkDeleteResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkDeleteResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkDeleteResponse>() {}, new AsyncApiCallback<ApiResponse<BulkDeleteResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkDeleteResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkDeleteResponse> response = (ApiResponse<BulkDeleteResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkDeleteResponse> response = (ApiResponse<BulkDeleteResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Bulk update notes
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkNotesResponse> postExternalcontactsBulkNotesUpdateAsync(PostExternalcontactsBulkNotesUpdateRequest request, final AsyncApiCallback<BulkNotesResponse> callback) {
+    try {
+      final SettableFuture<BulkNotesResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkNotesResponse>() {}, new AsyncApiCallback<ApiResponse<BulkNotesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkNotesResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk update notes
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkNotesResponse>> postExternalcontactsBulkNotesUpdateAsync(ApiRequest<BulkNotesRequest> request, final AsyncApiCallback<ApiResponse<BulkNotesResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkNotesResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkNotesResponse>() {}, new AsyncApiCallback<ApiResponse<BulkNotesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkNotesResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkNotesResponse> response = (ApiResponse<BulkNotesResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkNotesResponse> response = (ApiResponse<BulkNotesResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Bulk fetch organizations
    * 
    * @param request the request object
@@ -3070,6 +3388,310 @@ public class ExternalContactsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<BulkOrganizationsResponse> response = (ApiResponse<BulkOrganizationsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Bulk fetch relationships
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkFetchRelationshipsResponse> postExternalcontactsBulkRelationshipsAsync(PostExternalcontactsBulkRelationshipsRequest request, final AsyncApiCallback<BulkFetchRelationshipsResponse> callback) {
+    try {
+      final SettableFuture<BulkFetchRelationshipsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkFetchRelationshipsResponse>() {}, new AsyncApiCallback<ApiResponse<BulkFetchRelationshipsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkFetchRelationshipsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk fetch relationships
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkFetchRelationshipsResponse>> postExternalcontactsBulkRelationshipsAsync(ApiRequest<BulkIdsRequest> request, final AsyncApiCallback<ApiResponse<BulkFetchRelationshipsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkFetchRelationshipsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkFetchRelationshipsResponse>() {}, new AsyncApiCallback<ApiResponse<BulkFetchRelationshipsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkFetchRelationshipsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkFetchRelationshipsResponse> response = (ApiResponse<BulkFetchRelationshipsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkFetchRelationshipsResponse> response = (ApiResponse<BulkFetchRelationshipsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Bulk add relationships
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkRelationshipsResponse> postExternalcontactsBulkRelationshipsAddAsync(PostExternalcontactsBulkRelationshipsAddRequest request, final AsyncApiCallback<BulkRelationshipsResponse> callback) {
+    try {
+      final SettableFuture<BulkRelationshipsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkRelationshipsResponse>() {}, new AsyncApiCallback<ApiResponse<BulkRelationshipsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkRelationshipsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk add relationships
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkRelationshipsResponse>> postExternalcontactsBulkRelationshipsAddAsync(ApiRequest<BulkRelationshipsRequest> request, final AsyncApiCallback<ApiResponse<BulkRelationshipsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkRelationshipsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkRelationshipsResponse>() {}, new AsyncApiCallback<ApiResponse<BulkRelationshipsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkRelationshipsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkRelationshipsResponse> response = (ApiResponse<BulkRelationshipsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkRelationshipsResponse> response = (ApiResponse<BulkRelationshipsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Bulk remove relationships
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkDeleteResponse> postExternalcontactsBulkRelationshipsRemoveAsync(PostExternalcontactsBulkRelationshipsRemoveRequest request, final AsyncApiCallback<BulkDeleteResponse> callback) {
+    try {
+      final SettableFuture<BulkDeleteResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkDeleteResponse>() {}, new AsyncApiCallback<ApiResponse<BulkDeleteResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkDeleteResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk remove relationships
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkDeleteResponse>> postExternalcontactsBulkRelationshipsRemoveAsync(ApiRequest<BulkIdsRequest> request, final AsyncApiCallback<ApiResponse<BulkDeleteResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkDeleteResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkDeleteResponse>() {}, new AsyncApiCallback<ApiResponse<BulkDeleteResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkDeleteResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkDeleteResponse> response = (ApiResponse<BulkDeleteResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkDeleteResponse> response = (ApiResponse<BulkDeleteResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Bulk update relationships
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkRelationshipsResponse> postExternalcontactsBulkRelationshipsUpdateAsync(PostExternalcontactsBulkRelationshipsUpdateRequest request, final AsyncApiCallback<BulkRelationshipsResponse> callback) {
+    try {
+      final SettableFuture<BulkRelationshipsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkRelationshipsResponse>() {}, new AsyncApiCallback<ApiResponse<BulkRelationshipsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkRelationshipsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk update relationships
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkRelationshipsResponse>> postExternalcontactsBulkRelationshipsUpdateAsync(ApiRequest<BulkRelationshipsRequest> request, final AsyncApiCallback<ApiResponse<BulkRelationshipsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkRelationshipsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkRelationshipsResponse>() {}, new AsyncApiCallback<ApiResponse<BulkRelationshipsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkRelationshipsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkRelationshipsResponse> response = (ApiResponse<BulkRelationshipsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkRelationshipsResponse> response = (ApiResponse<BulkRelationshipsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

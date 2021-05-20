@@ -3533,7 +3533,7 @@ try {
 
 
 
-> [DncListDivisionViewListing](DncListDivisionViewListing.html) getOutboundDnclistsDivisionviews(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder)
+> [DncListDivisionViewListing](DncListDivisionViewListing.html) getOutboundDnclistsDivisionviews(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, dncSourceType, id, sortBy, sortOrder)
 
 Query a list of simplified dnc list objects.
 
@@ -3573,11 +3573,12 @@ Integer pageSize = 25; // Integer | Page size. The max that will be returned is 
 Integer pageNumber = 1; // Integer | Page number
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
+String dncSourceType = "dncSourceType_example"; // String | DncSourceType
 List<String> id = Arrays.asList("id_example"); // List<String> | id
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "a"; // String | Sort order
 try {
-    DncListDivisionViewListing result = apiInstance.getOutboundDnclistsDivisionviews(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder);
+    DncListDivisionViewListing result = apiInstance.getOutboundDnclistsDivisionviews(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, dncSourceType, id, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundDnclistsDivisionviews");
@@ -3596,6 +3597,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith 
 | **name** | **String**| Name | [optional] 
+| **dncSourceType** | **String**| DncSourceType | [optional]<br />**Values**: rds, dnc.com, gryphon 
 | **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
 | **sortBy** | **String**| Sort by | [optional] 
 | **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending 
@@ -3941,7 +3943,7 @@ try {
 | **name** | **String**| Name | [optional] 
 | **contactListId** | **String**| Contact List ID | [optional] 
 | **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
-| **type** | **String**| Campaign Type | [optional]<br />**Values**: SMS 
+| **type** | **String**| Campaign Type | [optional]<br />**Values**: EMAIL, SMS 
 | **senderSmsPhoneNumber** | **String**| Sender SMS Phone Number | [optional] 
 | **id** | [**List&lt;String&gt;**](String.html)| A list of messaging campaign ids to bulk fetch | [optional] 
 {: class="table-striped"}

@@ -128,6 +128,7 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 		INBOUNDSHORTMESSAGEFLOW("INBOUNDSHORTMESSAGEFLOW"), 
 		INQUEUECALLFLOW("INQUEUECALLFLOW"), 
 		IVRCONFIGURATION("IVRCONFIGURATION"), 
+		KNOWLEDGEBASE("KNOWLEDGEBASE"), 
 		LANGUAGE("LANGUAGE"), 
 		LEXBOT("LEXBOT"), 
 		LEXBOTALIAS("LEXBOTALIAS"), 
@@ -149,7 +150,8 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 		USER("USER"), 
 		USERPROMPT("USERPROMPT"), 
 		WIDGET("WIDGET"), 
-		WORKFLOW("WORKFLOW");
+		WORKFLOW("WORKFLOW"), 
+		WORKITEMFLOW("WORKITEMFLOW");
 
 		private String value;
 
@@ -234,6 +236,7 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 		INBOUNDSHORTMESSAGEFLOW("INBOUNDSHORTMESSAGEFLOW"), 
 		INQUEUECALLFLOW("INQUEUECALLFLOW"), 
 		IVRCONFIGURATION("IVRCONFIGURATION"), 
+		KNOWLEDGEBASE("KNOWLEDGEBASE"), 
 		LANGUAGE("LANGUAGE"), 
 		LEXBOT("LEXBOT"), 
 		LEXBOTALIAS("LEXBOTALIAS"), 
@@ -255,7 +258,8 @@ public class GetArchitectDependencytrackingUpdatedresourceconsumersRequest {
 		USER("USER"), 
 		USERPROMPT("USERPROMPT"), 
 		WIDGET("WIDGET"), 
-		WORKFLOW("WORKFLOW");
+		WORKFLOW("WORKFLOW"), 
+		WORKITEMFLOW("WORKITEMFLOW");
 
 		private String value;
 

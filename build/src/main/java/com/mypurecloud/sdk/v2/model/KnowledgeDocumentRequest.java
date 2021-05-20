@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DocumentArticle;
 import com.mypurecloud.sdk.v2.model.DocumentCategoryInput;
 import com.mypurecloud.sdk.v2.model.DocumentFaq;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,8 @@ public class KnowledgeDocumentRequest  implements Serializable {
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    FAQ("Faq");
+    FAQ("Faq"),
+    ARTICLE("Article");
 
     private String value;
 
@@ -75,6 +77,7 @@ public class KnowledgeDocumentRequest  implements Serializable {
   private String externalUrl = null;
   private DocumentFaq faq = null;
   private List<DocumentCategoryInput> categories = new ArrayList<DocumentCategoryInput>();
+  private DocumentArticle article = null;
 
   
   /**
@@ -149,6 +152,24 @@ public class KnowledgeDocumentRequest  implements Serializable {
   }
 
   
+  /**
+   * Article details
+   **/
+  public KnowledgeDocumentRequest article(DocumentArticle article) {
+    this.article = article;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Article details")
+  @JsonProperty("article")
+  public DocumentArticle getArticle() {
+    return article;
+  }
+  public void setArticle(DocumentArticle article) {
+    this.article = article;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -162,12 +183,13 @@ public class KnowledgeDocumentRequest  implements Serializable {
     return Objects.equals(this.type, knowledgeDocumentRequest.type) &&
         Objects.equals(this.externalUrl, knowledgeDocumentRequest.externalUrl) &&
         Objects.equals(this.faq, knowledgeDocumentRequest.faq) &&
-        Objects.equals(this.categories, knowledgeDocumentRequest.categories);
+        Objects.equals(this.categories, knowledgeDocumentRequest.categories) &&
+        Objects.equals(this.article, knowledgeDocumentRequest.article);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, externalUrl, faq, categories);
+    return Objects.hash(type, externalUrl, faq, categories, article);
   }
 
   @Override
@@ -179,6 +201,7 @@ public class KnowledgeDocumentRequest  implements Serializable {
     sb.append("    externalUrl: ").append(toIndentedString(externalUrl)).append("\n");
     sb.append("    faq: ").append(toIndentedString(faq)).append("\n");
     sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
+    sb.append("    article: ").append(toIndentedString(article)).append("\n");
     sb.append("}");
     return sb.toString();
   }

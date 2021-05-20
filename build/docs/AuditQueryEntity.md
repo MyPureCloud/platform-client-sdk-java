@@ -34,6 +34,7 @@ title: AuditQueryEntity
 | CLICKSTREAMSETTINGS | &quot;ClickstreamSettings&quot; |
 | CONTACTLIST | &quot;ContactList&quot; |
 | CONTACTLISTFILTER | &quot;ContactListFilter&quot; |
+| DASHBOARDSETTINGS | &quot;DashboardSettings&quot; |
 | DEPENDENCYTRACKINGBUILD | &quot;DependencyTrackingBuild&quot; |
 | DID | &quot;DID&quot; |
 | DIDPOOL | &quot;DIDPool&quot; |
@@ -43,12 +44,16 @@ title: AuditQueryEntity
 | EDGEGROUP | &quot;EdgeGroup&quot; |
 | EMERGENCYGROUP | &quot;EmergencyGroup&quot; |
 | EVENTTYPE | &quot;EventType&quot; |
+| EXPORTS | &quot;Exports&quot; |
 | EXTENSION | &quot;Extension&quot; |
 | EXTENSIONPOOL | &quot;ExtensionPool&quot; |
+| EXTERNALMETRICDEFINITION | &quot;ExternalMetricDefinition&quot; |
 | FEEDBACK | &quot;Feedback&quot; |
 | FLOW | &quot;Flow&quot; |
 | FLOWMILESTONE | &quot;FlowMilestone&quot; |
 | FLOWOUTCOME | &quot;FlowOutcome&quot; |
+| FORECAST | &quot;Forecast&quot; |
+| INSIGHTSETTINGS | &quot;InsightSettings&quot; |
 | INTEGRATION | &quot;Integration&quot; |
 | IVR | &quot;IVR&quot; |
 | LINE | &quot;Line&quot; |
@@ -76,6 +81,7 @@ title: AuditQueryEntity
 | ROUTINGTRANSCRIPTIONSETTINGS | &quot;RoutingTranscriptionSettings&quot; |
 | RULESET | &quot;RuleSet&quot; |
 | SCHEDULE | &quot;Schedule&quot; |
+| SCHEDULEDEXPORTS | &quot;ScheduledExports&quot; |
 | SCHEDULEGROUP | &quot;ScheduleGroup&quot; |
 | SEGMENT | &quot;Segment&quot; |
 | SENTIMENTFEEDBACK | &quot;SentimentFeedback&quot; |

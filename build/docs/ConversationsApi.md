@@ -71,6 +71,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsMessagingIntegrationsWhatsapp**](ConversationsApi.html#getConversationsMessagingIntegrationsWhatsapp) | Get a list of WhatsApp Integrations |
 | [**getConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsWhatsappIntegrationId) | Get a WhatsApp messaging integration |
 | [**getConversationsMessagingSticker**](ConversationsApi.html#getConversationsMessagingSticker) | Get a list of Messaging Stickers |
+| [**getConversationsMessagingThreadingtimeline**](ConversationsApi.html#getConversationsMessagingThreadingtimeline) | Get conversation threading window timeline for each messaging type |
 | [**patchConversationParticipant**](ConversationsApi.html#patchConversationParticipant) | Update a participant. |
 | [**patchConversationParticipantAttributes**](ConversationsApi.html#patchConversationParticipantAttributes) | Update the attributes on a conversation participant. |
 | [**patchConversationsCall**](ConversationsApi.html#patchConversationsCall) | Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants |
@@ -145,6 +146,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi.html#putConversationsCallParticipantCommunicationUuidata) | Set uuiData to be sent on future commands. |
 | [**putConversationsEmailMessagesDraft**](ConversationsApi.html#putConversationsEmailMessagesDraft) | Update conversation draft reply |
 | [**putConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#putConversationsMessagingIntegrationsLineIntegrationId) | Update a LINE messenger integration |
+| [**putConversationsMessagingThreadingtimeline**](ConversationsApi.html#putConversationsMessagingThreadingtimeline) | Update conversation threading window timeline for each messaging type |
 {: class="table-striped"}
 
 <a name="deleteAnalyticsConversationsDetailsJob"></a>
@@ -4222,6 +4224,65 @@ try {
 ### Return type
 
 [**MessagingStickerEntityListing**](MessagingStickerEntityListing.html)
+
+<a name="getConversationsMessagingThreadingtimeline"></a>
+
+# **getConversationsMessagingThreadingtimeline**
+
+
+
+> [ConversationThreadingWindow](ConversationThreadingWindow.html) getConversationsMessagingThreadingtimeline()
+
+Get conversation threading window timeline for each messaging type
+
+Conversation messaging threading timeline is a setting defined for each messenger type in your organization. This setting will dictate whether a new message is added to the most recent existing conversation, or creates a new Conversation. If the existing Conversation is still in a connected state the threading timeline setting will never play a role. After the conversation is disconnected, if an inbound message is received or an outbound message is sent after the setting for threading timeline expires, a new conversation is created.
+
+Wraps GET /api/v2/conversations/messaging/threadingtimeline  
+
+Requires ALL permissions: 
+
+* conversation:threadingTimeline:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+try {
+    ConversationThreadingWindow result = apiInstance.getConversationsMessagingThreadingtimeline();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingThreadingtimeline");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**ConversationThreadingWindow**](ConversationThreadingWindow.html)
 
 <a name="patchConversationParticipant"></a>
 
@@ -9027,4 +9088,67 @@ try {
 ### Return type
 
 [**LineIntegration**](LineIntegration.html)
+
+<a name="putConversationsMessagingThreadingtimeline"></a>
+
+# **putConversationsMessagingThreadingtimeline**
+
+
+
+> [ConversationThreadingWindow](ConversationThreadingWindow.html) putConversationsMessagingThreadingtimeline(body)
+
+Update conversation threading window timeline for each messaging type
+
+PUT Conversation messaging threading timeline is intended to set the conversation threading settings for ALL messengerTypes. If you omit a messengerType in the request body then the setting for that messengerType will use the platform default value. The PUT replaces the existing setting(s) that were previously set for each messengerType.
+
+Wraps PUT /api/v2/conversations/messaging/threadingtimeline  
+
+Requires ALL permissions: 
+
+* conversation:threadingTimeline:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+ConversationThreadingWindow body = new ConversationThreadingWindow(); // ConversationThreadingWindow | ConversationThreadingWindowRequest
+try {
+    ConversationThreadingWindow result = apiInstance.putConversationsMessagingThreadingtimeline(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#putConversationsMessagingThreadingtimeline");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ConversationThreadingWindow**](ConversationThreadingWindow.html)| ConversationThreadingWindowRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ConversationThreadingWindow**](ConversationThreadingWindow.html)
 

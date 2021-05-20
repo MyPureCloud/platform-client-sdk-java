@@ -24,6 +24,7 @@ title: AuditRealtimeQueryRequest
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| ANALYTICSREPORTING | &quot;AnalyticsReporting&quot; |
 | ARCHITECT | &quot;Architect&quot; |
 | CONTACTCENTER | &quot;ContactCenter&quot; |
 | CONTENTMANAGEMENT | &quot;ContentManagement&quot; |
@@ -33,6 +34,7 @@ title: AuditRealtimeQueryRequest
 | LIMITS | &quot;Limits&quot; |
 | OUTBOUND | &quot;Outbound&quot; |
 | PEOPLEPERMISSIONS | &quot;PeoplePermissions&quot; |
+| PERFORMANCE | &quot;Performance&quot; |
 | PREDICTIVEENGAGEMENT | &quot;PredictiveEngagement&quot; |
 | PRESENCE | &quot;Presence&quot; |
 | QUALITY | &quot;Quality&quot; |

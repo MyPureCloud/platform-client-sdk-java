@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -27,6 +28,7 @@ public class TrustCreate  implements Serializable {
   private Boolean enabled = null;
   private List<TrustMemberCreate> users = new ArrayList<TrustMemberCreate>();
   private List<TrustMemberCreate> groups = new ArrayList<TrustMemberCreate>();
+  private Date dateExpired = null;
 
   
   /**
@@ -101,6 +103,24 @@ public class TrustCreate  implements Serializable {
   }
 
   
+  /**
+   * The expiration date of the trust. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public TrustCreate dateExpired(Date dateExpired) {
+    this.dateExpired = dateExpired;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The expiration date of the trust. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateExpired")
+  public Date getDateExpired() {
+    return dateExpired;
+  }
+  public void setDateExpired(Date dateExpired) {
+    this.dateExpired = dateExpired;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -114,12 +134,13 @@ public class TrustCreate  implements Serializable {
     return Objects.equals(this.pairingId, trustCreate.pairingId) &&
         Objects.equals(this.enabled, trustCreate.enabled) &&
         Objects.equals(this.users, trustCreate.users) &&
-        Objects.equals(this.groups, trustCreate.groups);
+        Objects.equals(this.groups, trustCreate.groups) &&
+        Objects.equals(this.dateExpired, trustCreate.dateExpired);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(pairingId, enabled, users, groups);
+    return Objects.hash(pairingId, enabled, users, groups, dateExpired);
   }
 
   @Override
@@ -131,6 +152,7 @@ public class TrustCreate  implements Serializable {
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    users: ").append(toIndentedString(users)).append("\n");
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
+    sb.append("    dateExpired: ").append(toIndentedString(dateExpired)).append("\n");
     sb.append("}");
     return sb.toString();
   }

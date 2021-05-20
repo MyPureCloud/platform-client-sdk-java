@@ -30,6 +30,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postSpeechandtextanalyticsTopicsPublishjobs**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsTopicsPublishjobs) | Create new Speech &amp; Text Analytics publish topics job |
 | [**postSpeechandtextanalyticsTranscriptsSearch**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsTranscriptsSearch) | Search resources. |
 | [**putSpeechandtextanalyticsProgram**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsProgram) | Update existing Speech &amp; Text Analytics program |
+| [**putSpeechandtextanalyticsSettings**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsSettings) | Update Speech And Text Analytics Settings |
 | [**putSpeechandtextanalyticsTopic**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsTopic) | Update existing Speech &amp; Text Analytics topic |
 {: class="table-striped"}
 
@@ -1489,6 +1490,69 @@ try {
 ### Return type
 
 [**Program**](Program.html)
+
+<a name="putSpeechandtextanalyticsSettings"></a>
+
+# **putSpeechandtextanalyticsSettings**
+
+
+
+> [SpeechTextAnalyticsSettingsResponse](SpeechTextAnalyticsSettingsResponse.html) putSpeechandtextanalyticsSettings(body)
+
+Update Speech And Text Analytics Settings
+
+
+
+Wraps PUT /api/v2/speechandtextanalytics/settings  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:settings:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+SpeechTextAnalyticsSettingsRequest body = new SpeechTextAnalyticsSettingsRequest(); // SpeechTextAnalyticsSettingsRequest | Speech And Text Analytics Settings
+try {
+    SpeechTextAnalyticsSettingsResponse result = apiInstance.putSpeechandtextanalyticsSettings(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#putSpeechandtextanalyticsSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**SpeechTextAnalyticsSettingsRequest**](SpeechTextAnalyticsSettingsRequest.html)| Speech And Text Analytics Settings | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SpeechTextAnalyticsSettingsResponse**](SpeechTextAnalyticsSettingsResponse.html)
 
 <a name="putSpeechandtextanalyticsTopic"></a>
 

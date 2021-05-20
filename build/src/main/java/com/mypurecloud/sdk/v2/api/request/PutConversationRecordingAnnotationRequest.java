@@ -48,6 +48,8 @@ import com.mypurecloud.sdk.v2.model.EncryptionKey;
 import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.ConversationDeletionProtectionQuery;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
+import com.mypurecloud.sdk.v2.model.AcknowledgeScreenRecordingRequest;
+import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaDataRequest;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 import com.mypurecloud.sdk.v2.model.ExecuteRecordingJobsQuery;
 

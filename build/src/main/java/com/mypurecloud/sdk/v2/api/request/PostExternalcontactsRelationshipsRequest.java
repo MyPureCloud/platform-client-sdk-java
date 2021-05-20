@@ -42,9 +42,15 @@ import com.mypurecloud.sdk.v2.model.BulkIdsRequest;
 import com.mypurecloud.sdk.v2.model.BulkContactsResponse;
 import com.mypurecloud.sdk.v2.model.BulkContactsRequest;
 import com.mypurecloud.sdk.v2.model.BulkDeleteResponse;
+import com.mypurecloud.sdk.v2.model.BulkFetchNotesResponse;
+import com.mypurecloud.sdk.v2.model.BulkNotesResponse;
+import com.mypurecloud.sdk.v2.model.BulkNotesRequest;
 import com.mypurecloud.sdk.v2.model.BulkFetchOrganizationsResponse;
 import com.mypurecloud.sdk.v2.model.BulkOrganizationsRequest;
 import com.mypurecloud.sdk.v2.model.BulkOrganizationsResponse;
+import com.mypurecloud.sdk.v2.model.BulkFetchRelationshipsResponse;
+import com.mypurecloud.sdk.v2.model.BulkRelationshipsRequest;
+import com.mypurecloud.sdk.v2.model.BulkRelationshipsResponse;
 import com.mypurecloud.sdk.v2.model.ConversationAssociation;
 import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
 

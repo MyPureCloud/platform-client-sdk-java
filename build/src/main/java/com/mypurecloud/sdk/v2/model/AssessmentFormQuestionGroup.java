@@ -56,13 +56,14 @@ public class AssessmentFormQuestionGroup  implements Serializable {
 
   
   /**
+   * The question group name
    **/
   public AssessmentFormQuestionGroup name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The question group name")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -73,13 +74,14 @@ public class AssessmentFormQuestionGroup  implements Serializable {
 
   
   /**
+   * The question group type
    **/
   public AssessmentFormQuestionGroup type(String type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The question group type")
   @JsonProperty("type")
   public String getType() {
     return type;
@@ -175,13 +177,14 @@ public class AssessmentFormQuestionGroup  implements Serializable {
 
   
   /**
+   * The list of questions for this question group
    **/
   public AssessmentFormQuestionGroup questions(List<AssessmentFormQuestion> questions) {
     this.questions = questions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The list of questions for this question group")
   @JsonProperty("questions")
   public List<AssessmentFormQuestion> getQuestions() {
     return questions;

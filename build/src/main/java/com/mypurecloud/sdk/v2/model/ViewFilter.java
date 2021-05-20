@@ -459,7 +459,8 @@ public class ViewFilter  implements Serializable {
     OUTBOUNDCALL("outboundcall"),
     SECURECALL("securecall"),
     SURVEYINVITE("surveyinvite"),
-    WORKFLOW("workflow");
+    WORKFLOW("workflow"),
+    WORKITEM("workitem");
 
     private String value;
 
@@ -910,6 +911,8 @@ public class ViewFilter  implements Serializable {
   private NumericRange customerSentimentTrend = null;
   private List<String> flowTransferTargets = new ArrayList<String>();
   private String developmentName = null;
+  private List<String> topicIds = new ArrayList<String>();
+  private List<String> externalTags = new ArrayList<String>();
 
   
   /**
@@ -2748,6 +2751,42 @@ public class ViewFilter  implements Serializable {
   }
 
   
+  /**
+   * Represents the topics detected in the transcript
+   **/
+  public ViewFilter topicIds(List<String> topicIds) {
+    this.topicIds = topicIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Represents the topics detected in the transcript")
+  @JsonProperty("topicIds")
+  public List<String> getTopicIds() {
+    return topicIds;
+  }
+  public void setTopicIds(List<String> topicIds) {
+    this.topicIds = topicIds;
+  }
+
+  
+  /**
+   * The list of external Tags used to filter conversation data
+   **/
+  public ViewFilter externalTags(List<String> externalTags) {
+    this.externalTags = externalTags;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of external Tags used to filter conversation data")
+  @JsonProperty("externalTags")
+  public List<String> getExternalTags() {
+    return externalTags;
+  }
+  public void setExternalTags(List<String> externalTags) {
+    this.externalTags = externalTags;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -2859,12 +2898,14 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.customerSentimentScore, viewFilter.customerSentimentScore) &&
         Objects.equals(this.customerSentimentTrend, viewFilter.customerSentimentTrend) &&
         Objects.equals(this.flowTransferTargets, viewFilter.flowTransferTargets) &&
-        Objects.equals(this.developmentName, viewFilter.developmentName);
+        Objects.equals(this.developmentName, viewFilter.developmentName) &&
+        Objects.equals(this.topicIds, viewFilter.topicIds) &&
+        Objects.equals(this.externalTags, viewFilter.externalTags);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags);
   }
 
   @Override
@@ -2974,6 +3015,8 @@ public class ViewFilter  implements Serializable {
     sb.append("    customerSentimentTrend: ").append(toIndentedString(customerSentimentTrend)).append("\n");
     sb.append("    flowTransferTargets: ").append(toIndentedString(flowTransferTargets)).append("\n");
     sb.append("    developmentName: ").append(toIndentedString(developmentName)).append("\n");
+    sb.append("    topicIds: ").append(toIndentedString(topicIds)).append("\n");
+    sb.append("    externalTags: ").append(toIndentedString(externalTags)).append("\n");
     sb.append("}");
     return sb.toString();
   }

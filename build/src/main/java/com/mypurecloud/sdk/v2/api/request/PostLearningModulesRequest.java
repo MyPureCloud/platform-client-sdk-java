@@ -28,6 +28,8 @@ import com.mypurecloud.sdk.v2.model.LearningModuleRule;
 import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateParam;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkAddResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
 import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;

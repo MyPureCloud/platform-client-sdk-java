@@ -27,6 +27,7 @@ public class Trustee  implements Serializable {
   private Boolean enabled = null;
   private Boolean usesDefaultRole = null;
   private Date dateCreated = null;
+  private Date dateExpired = null;
   private OrgUser createdBy = null;
   private Organization organization = null;
   private String selfUri = null;
@@ -79,6 +80,24 @@ public class Trustee  implements Serializable {
   @JsonProperty("dateCreated")
   public Date getDateCreated() {
     return dateCreated;
+  }
+
+  
+  /**
+   * The expiration date of the trust. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public Trustee dateExpired(Date dateExpired) {
+    this.dateExpired = dateExpired;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The expiration date of the trust. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateExpired")
+  public Date getDateExpired() {
+    return dateExpired;
+  }
+  public void setDateExpired(Date dateExpired) {
+    this.dateExpired = dateExpired;
   }
 
   
@@ -139,6 +158,7 @@ public class Trustee  implements Serializable {
         Objects.equals(this.enabled, trustee.enabled) &&
         Objects.equals(this.usesDefaultRole, trustee.usesDefaultRole) &&
         Objects.equals(this.dateCreated, trustee.dateCreated) &&
+        Objects.equals(this.dateExpired, trustee.dateExpired) &&
         Objects.equals(this.createdBy, trustee.createdBy) &&
         Objects.equals(this.organization, trustee.organization) &&
         Objects.equals(this.selfUri, trustee.selfUri);
@@ -146,7 +166,7 @@ public class Trustee  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, enabled, usesDefaultRole, dateCreated, createdBy, organization, selfUri);
+    return Objects.hash(id, enabled, usesDefaultRole, dateCreated, dateExpired, createdBy, organization, selfUri);
   }
 
   @Override
@@ -158,6 +178,7 @@ public class Trustee  implements Serializable {
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    usesDefaultRole: ").append(toIndentedString(usesDefaultRole)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    dateExpired: ").append(toIndentedString(dateExpired)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

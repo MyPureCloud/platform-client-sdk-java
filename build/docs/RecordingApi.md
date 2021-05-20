@@ -48,6 +48,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postRecordingMediaretentionpolicies**](RecordingApi.html#postRecordingMediaretentionpolicies) | Create media retention policy |
 | [**postRecordingRecordingkeys**](RecordingApi.html#postRecordingRecordingkeys) | Create encryption key |
 | [**postRecordingsDeletionprotection**](RecordingApi.html#postRecordingsDeletionprotection) | Get a list of conversations with protected recordings |
+| [**postRecordingsScreensessionsAcknowledge**](RecordingApi.html#postRecordingsScreensessionsAcknowledge) | Acknowledge a screen recording. |
+| [**postRecordingsScreensessionsMetadata**](RecordingApi.html#postRecordingsScreensessionsMetadata) | Provide meta-data a screen recording. |
 | [**putConversationRecording**](RecordingApi.html#putConversationRecording) | Updates the retention records on a recording. |
 | [**putConversationRecordingAnnotation**](RecordingApi.html#putConversationRecordingAnnotation) | Update annotation |
 | [**putOrphanrecording**](RecordingApi.html#putOrphanrecording) | Updates an orphan recording to a regular recording with retention values |
@@ -2740,6 +2742,128 @@ try {
 ### Return type
 
 [**List&lt;AddressableEntityRef&gt;**](AddressableEntityRef.html)
+
+<a name="postRecordingsScreensessionsAcknowledge"></a>
+
+# **postRecordingsScreensessionsAcknowledge**
+
+
+
+> Void postRecordingsScreensessionsAcknowledge(body)
+
+Acknowledge a screen recording.
+
+
+
+Wraps POST /api/v2/recordings/screensessions/acknowledge  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+AcknowledgeScreenRecordingRequest body = new AcknowledgeScreenRecordingRequest(); // AcknowledgeScreenRecordingRequest | AcknowledgeScreenRecordingRequest
+try {
+    apiInstance.postRecordingsScreensessionsAcknowledge(body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#postRecordingsScreensessionsAcknowledge");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AcknowledgeScreenRecordingRequest**](AcknowledgeScreenRecordingRequest.html)| AcknowledgeScreenRecordingRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="postRecordingsScreensessionsMetadata"></a>
+
+# **postRecordingsScreensessionsMetadata**
+
+
+
+> Void postRecordingsScreensessionsMetadata(body)
+
+Provide meta-data a screen recording.
+
+
+
+Wraps POST /api/v2/recordings/screensessions/metadata  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+ScreenRecordingMetaDataRequest body = new ScreenRecordingMetaDataRequest(); // ScreenRecordingMetaDataRequest | ScreenRecordingMetaDataRequest
+try {
+    apiInstance.postRecordingsScreensessionsMetadata(body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#postRecordingsScreensessionsMetadata");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ScreenRecordingMetaDataRequest**](ScreenRecordingMetaDataRequest.html)| ScreenRecordingMetaDataRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="putConversationRecording"></a>
 

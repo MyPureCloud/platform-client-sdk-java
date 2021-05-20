@@ -102,6 +102,11 @@ public class PutQualitySurveysScorableRequest {
             throw new IllegalStateException("Missing the required parameter 'body' when building request for PutQualitySurveysScorableRequest.");
         }
         
+        // verify the required parameter 'customerSurveyUrl' is set
+        if (this.customerSurveyUrl == null) {
+            throw new IllegalStateException("Missing the required parameter 'customerSurveyUrl' when building request for PutQualitySurveysScorableRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PUT", "/api/v2/quality/surveys/scorable")
                 .withQueryParameters("customerSurveyUrl", "", customerSurveyUrl)
@@ -120,9 +125,9 @@ public class PutQualitySurveysScorableRequest {
 	}
 
 	
-	public static Builder builder(ScorableSurvey body) {
+	public static Builder builder(ScorableSurvey body, String customerSurveyUrl) {
 	    return new Builder()
-	            .withRequiredParams(body);
+	            .withRequiredParams(body, customerSurveyUrl);
 	}
 	
 
@@ -146,8 +151,9 @@ public class PutQualitySurveysScorableRequest {
 		
 
 		
-		public Builder withRequiredParams(ScorableSurvey body) {
+		public Builder withRequiredParams(ScorableSurvey body, String customerSurveyUrl) {
 			request.setBody(body);
+						request.setCustomerSurveyUrl(customerSurveyUrl);
 			
 			return this;
 		}
@@ -158,6 +164,11 @@ public class PutQualitySurveysScorableRequest {
             // verify the required parameter 'body' is set
             if (request.body == null) {
                 throw new IllegalStateException("Missing the required parameter 'body' when building request for PutQualitySurveysScorableRequest.");
+            }
+            
+            // verify the required parameter 'customerSurveyUrl' is set
+            if (request.customerSurveyUrl == null) {
+                throw new IllegalStateException("Missing the required parameter 'customerSurveyUrl' when building request for PutQualitySurveysScorableRequest.");
             }
             
 			return request;

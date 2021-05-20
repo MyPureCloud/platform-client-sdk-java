@@ -30,9 +30,9 @@ public class PhysicalInterfaceEntityListing  implements Serializable, PagedResou
   private Long total = null;
   private String firstUri = null;
   private String selfUri = null;
-  private String lastUri = null;
   private String nextUri = null;
   private String previousUri = null;
+  private String lastUri = null;
   private Integer pageCount = null;
 
   
@@ -140,23 +140,6 @@ public class PhysicalInterfaceEntityListing  implements Serializable, PagedResou
   
   /**
    **/
-  public PhysicalInterfaceEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-  
-  /**
-   **/
   public PhysicalInterfaceEntityListing nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -186,6 +169,23 @@ public class PhysicalInterfaceEntityListing  implements Serializable, PagedResou
   }
   public void setPreviousUri(String previousUri) {
     this.previousUri = previousUri;
+  }
+
+  
+  /**
+   **/
+  public PhysicalInterfaceEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
   }
 
   
@@ -222,15 +222,15 @@ public class PhysicalInterfaceEntityListing  implements Serializable, PagedResou
         Objects.equals(this.total, physicalInterfaceEntityListing.total) &&
         Objects.equals(this.firstUri, physicalInterfaceEntityListing.firstUri) &&
         Objects.equals(this.selfUri, physicalInterfaceEntityListing.selfUri) &&
-        Objects.equals(this.lastUri, physicalInterfaceEntityListing.lastUri) &&
         Objects.equals(this.nextUri, physicalInterfaceEntityListing.nextUri) &&
         Objects.equals(this.previousUri, physicalInterfaceEntityListing.previousUri) &&
+        Objects.equals(this.lastUri, physicalInterfaceEntityListing.lastUri) &&
         Objects.equals(this.pageCount, physicalInterfaceEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, lastUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, previousUri, lastUri, pageCount);
   }
 
   @Override
@@ -244,9 +244,9 @@ public class PhysicalInterfaceEntityListing  implements Serializable, PagedResou
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

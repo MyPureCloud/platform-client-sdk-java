@@ -202,6 +202,51 @@ public class GetOutboundDnclistsDivisionviewsRequest {
 	    return this;
 	} 
 	
+	private String dncSourceType;
+	public String getDncSourceType() {
+		return this.dncSourceType;
+	}
+
+	public void setDncSourceType(String dncSourceType) {
+		this.dncSourceType = dncSourceType;
+	}
+
+	public GetOutboundDnclistsDivisionviewsRequest withDncSourceType(String dncSourceType) {
+	    this.setDncSourceType(dncSourceType);
+	    return this;
+	} 
+
+	public enum dncSourceTypeValues { 
+		RDS("rds"), 
+		DNC_COM("dnc.com"), 
+		GRYPHON("gryphon");
+
+		private String value;
+
+		dncSourceTypeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static dncSourceTypeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (dncSourceTypeValues value : dncSourceTypeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return dncSourceTypeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
 	private List<String> id;
 	public List<String> getId() {
 		return this.id;
@@ -309,6 +354,8 @@ public class GetOutboundDnclistsDivisionviewsRequest {
         
                 .withQueryParameters("name", "", name)
         
+                .withQueryParameters("dncSourceType", "", dncSourceType)
+        
                 .withQueryParameters("id", "multi", id)
         
                 .withQueryParameters("sortBy", "", sortBy)
@@ -369,6 +416,16 @@ public class GetOutboundDnclistsDivisionviewsRequest {
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
+		}
+		
+		public Builder withDncSourceType(String dncSourceType) {
+			request.setDncSourceType(dncSourceType);
+			return this;
+		}
+
+		public Builder withDncSourceType(dncSourceTypeValues dncSourceType) {
+		    request.setDncSourceType(dncSourceType.toString());
+		    return this;
 		}
 		
 		public Builder withId(List<String> id) {

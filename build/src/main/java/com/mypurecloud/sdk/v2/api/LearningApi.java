@@ -18,6 +18,8 @@ import com.mypurecloud.sdk.v2.model.LearningModuleRule;
 import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateParam;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkAddResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
 import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
@@ -37,6 +39,7 @@ import com.mypurecloud.sdk.v2.api.request.GetLearningModuleVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsBulkaddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsBulkremoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningModulePublishRequest;
@@ -1054,6 +1057,85 @@ public class LearningApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<LearningAssignment> response = (ApiResponse<LearningAssignment>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Retrieve aggregated assignment data
+   * 
+   * @param body Aggregate Request (required)
+   * @return LearningAssignmentAggregateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningAssignmentAggregateResponse postLearningAssignmentsAggregatesQuery(LearningAssignmentAggregateParam body) throws IOException, ApiException {
+    return  postLearningAssignmentsAggregatesQuery(createPostLearningAssignmentsAggregatesQueryRequest(body));
+  }
+
+  /**
+   * Retrieve aggregated assignment data
+   * 
+   * @param body Aggregate Request (required)
+   * @return LearningAssignmentAggregateResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningAssignmentAggregateResponse> postLearningAssignmentsAggregatesQueryWithHttpInfo(LearningAssignmentAggregateParam body) throws IOException {
+    return postLearningAssignmentsAggregatesQuery(createPostLearningAssignmentsAggregatesQueryRequest(body).withHttpInfo());
+  }
+
+  private PostLearningAssignmentsAggregatesQueryRequest createPostLearningAssignmentsAggregatesQueryRequest(LearningAssignmentAggregateParam body) {
+    return PostLearningAssignmentsAggregatesQueryRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Retrieve aggregated assignment data
+   * 
+   * @param request The request object
+   * @return LearningAssignmentAggregateResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LearningAssignmentAggregateResponse postLearningAssignmentsAggregatesQuery(PostLearningAssignmentsAggregatesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LearningAssignmentAggregateResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LearningAssignmentAggregateResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve aggregated assignment data
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LearningAssignmentAggregateResponse> postLearningAssignmentsAggregatesQuery(ApiRequest<LearningAssignmentAggregateParam> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LearningAssignmentAggregateResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningAssignmentAggregateResponse> response = (ApiResponse<LearningAssignmentAggregateResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LearningAssignmentAggregateResponse> response = (ApiResponse<LearningAssignmentAggregateResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

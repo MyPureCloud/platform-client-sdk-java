@@ -10,7 +10,7 @@ title: AssessmentFormQuestion
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> |  |  [optional] |
 | **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
-| **text** | <!----><!---->**String**<!----> |  |  [optional] |
+| **text** | <!----><!---->**String**<!----> | The question text |  |
 | **helpText** | <!----><!---->**String**<!----> |  |  [optional] |
 | **naEnabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **commentsRequired** | <!----><!---->**Boolean**<!----> |  |  [optional] |

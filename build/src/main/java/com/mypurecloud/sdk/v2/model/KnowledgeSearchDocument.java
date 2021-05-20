@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DocumentArticle;
 import com.mypurecloud.sdk.v2.model.DocumentFaq;
 import com.mypurecloud.sdk.v2.model.KnowledgeBase;
 import com.mypurecloud.sdk.v2.model.KnowledgeCategory;
@@ -96,7 +97,8 @@ public class KnowledgeSearchDocument  implements Serializable {
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    FAQ("Faq");
+    FAQ("Faq"),
+    ARTICLE("Article");
 
     private String value;
 
@@ -130,6 +132,7 @@ public class KnowledgeSearchDocument  implements Serializable {
   private List<KnowledgeCategory> categories = new ArrayList<KnowledgeCategory>();
   private KnowledgeBase knowledgeBase = null;
   private String externalUrl = null;
+  private DocumentArticle article = null;
   private Double confidence = null;
   private String selfUri = null;
 
@@ -280,6 +283,24 @@ public class KnowledgeSearchDocument  implements Serializable {
   }
 
   
+  /**
+   * Article
+   **/
+  public KnowledgeSearchDocument article(DocumentArticle article) {
+    this.article = article;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Article")
+  @JsonProperty("article")
+  public DocumentArticle getArticle() {
+    return article;
+  }
+  public void setArticle(DocumentArticle article) {
+    this.article = article;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The confidence associated with a document with respect to a search query")
   @JsonProperty("confidence")
   public Double getConfidence() {
@@ -314,13 +335,14 @@ public class KnowledgeSearchDocument  implements Serializable {
         Objects.equals(this.categories, knowledgeSearchDocument.categories) &&
         Objects.equals(this.knowledgeBase, knowledgeSearchDocument.knowledgeBase) &&
         Objects.equals(this.externalUrl, knowledgeSearchDocument.externalUrl) &&
+        Objects.equals(this.article, knowledgeSearchDocument.article) &&
         Objects.equals(this.confidence, knowledgeSearchDocument.confidence) &&
         Objects.equals(this.selfUri, knowledgeSearchDocument.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, languageCode, type, faq, dateCreated, dateModified, categories, knowledgeBase, externalUrl, confidence, selfUri);
+    return Objects.hash(id, name, languageCode, type, faq, dateCreated, dateModified, categories, knowledgeBase, externalUrl, article, confidence, selfUri);
   }
 
   @Override
@@ -338,6 +360,7 @@ public class KnowledgeSearchDocument  implements Serializable {
     sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
     sb.append("    knowledgeBase: ").append(toIndentedString(knowledgeBase)).append("\n");
     sb.append("    externalUrl: ").append(toIndentedString(externalUrl)).append("\n");
+    sb.append("    article: ").append(toIndentedString(article)).append("\n");
     sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

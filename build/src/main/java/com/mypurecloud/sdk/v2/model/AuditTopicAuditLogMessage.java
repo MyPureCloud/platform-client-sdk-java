@@ -124,6 +124,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     CREATE("Create"),
     VIEW("View"),
     UPDATE("Update"),
+    MOVE("Move"),
     DELETE("Delete"),
     DOWNLOAD("Download"),
     UPLOAD("Upload"),
@@ -274,7 +275,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     ROUTINGTRANSCRIPTIONSETTINGS("RoutingTranscriptionSettings"),
     SPEECHTEXTANALYTICSSETTINGS("SpeechTextAnalyticsSettings"),
     PREDICTOR("Predictor"),
-    WORKPLAN("WorkPlan");
+    WORKPLAN("WorkPlan"),
+    WORKSPACE("Workspace");
 
     private String value;
 

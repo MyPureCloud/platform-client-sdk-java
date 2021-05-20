@@ -43,7 +43,8 @@ public class KnowledgeSearchRequest  implements Serializable {
  @JsonDeserialize(using = DocumentTypeEnumDeserializer.class)
   public enum DocumentTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    FAQ("Faq");
+    FAQ("Faq"),
+    ARTICLE("Article");
 
     private String value;
 

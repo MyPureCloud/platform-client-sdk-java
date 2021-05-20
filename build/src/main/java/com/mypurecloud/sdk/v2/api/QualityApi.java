@@ -4497,7 +4497,7 @@ public class QualityApi {
    * Update a survey as an end-customer, for the purposes of scoring it.
    * 
    * @param body survey (required)
-   * @param customerSurveyUrl customerSurveyUrl (optional)
+   * @param customerSurveyUrl customerSurveyUrl (required)
    * @return ScorableSurvey
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -4510,7 +4510,7 @@ public class QualityApi {
    * Update a survey as an end-customer, for the purposes of scoring it.
    * 
    * @param body survey (required)
-   * @param customerSurveyUrl customerSurveyUrl (optional)
+   * @param customerSurveyUrl customerSurveyUrl (required)
    * @return ScorableSurvey
    * @throws IOException if the request fails to be processed
    */

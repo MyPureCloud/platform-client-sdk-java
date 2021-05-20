@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ActionMapActionTemplate;
 import com.mypurecloud.sdk.v2.model.ArchitectFlowFields;
+import com.mypurecloud.sdk.v2.model.WebMessagingOfferFields;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -76,6 +77,7 @@ public class PatchAction  implements Serializable {
   private MediaTypeEnum mediaType = null;
   private ActionMapActionTemplate actionTemplate = null;
   private ArchitectFlowFields architectFlowFields = null;
+  private WebMessagingOfferFields webMessagingOfferFields = null;
 
   
   /**
@@ -132,6 +134,24 @@ public class PatchAction  implements Serializable {
   }
 
   
+  /**
+   * Admin-configurable fields of a web messaging offer action.
+   **/
+  public PatchAction webMessagingOfferFields(WebMessagingOfferFields webMessagingOfferFields) {
+    this.webMessagingOfferFields = webMessagingOfferFields;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Admin-configurable fields of a web messaging offer action.")
+  @JsonProperty("webMessagingOfferFields")
+  public WebMessagingOfferFields getWebMessagingOfferFields() {
+    return webMessagingOfferFields;
+  }
+  public void setWebMessagingOfferFields(WebMessagingOfferFields webMessagingOfferFields) {
+    this.webMessagingOfferFields = webMessagingOfferFields;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -144,12 +164,13 @@ public class PatchAction  implements Serializable {
     PatchAction patchAction = (PatchAction) o;
     return Objects.equals(this.mediaType, patchAction.mediaType) &&
         Objects.equals(this.actionTemplate, patchAction.actionTemplate) &&
-        Objects.equals(this.architectFlowFields, patchAction.architectFlowFields);
+        Objects.equals(this.architectFlowFields, patchAction.architectFlowFields) &&
+        Objects.equals(this.webMessagingOfferFields, patchAction.webMessagingOfferFields);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaType, actionTemplate, architectFlowFields);
+    return Objects.hash(mediaType, actionTemplate, architectFlowFields, webMessagingOfferFields);
   }
 
   @Override
@@ -160,6 +181,7 @@ public class PatchAction  implements Serializable {
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    actionTemplate: ").append(toIndentedString(actionTemplate)).append("\n");
     sb.append("    architectFlowFields: ").append(toIndentedString(architectFlowFields)).append("\n");
+    sb.append("    webMessagingOfferFields: ").append(toIndentedString(webMessagingOfferFields)).append("\n");
     sb.append("}");
     return sb.toString();
   }

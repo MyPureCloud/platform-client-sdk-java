@@ -3463,7 +3463,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**ScorableSurvey**](ScorableSurvey.html)| survey | 
-| **customerSurveyUrl** | **String**| customerSurveyUrl | [optional] 
+| **customerSurveyUrl** | **String**| customerSurveyUrl | 
 {: class="table-striped"}
 
 

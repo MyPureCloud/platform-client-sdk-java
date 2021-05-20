@@ -63,6 +63,7 @@ title: AuditTopicAuditLogMessage
 | CREATE | &quot;Create&quot; |
 | VIEW | &quot;View&quot; |
 | UPDATE | &quot;Update&quot; |
+| MOVE | &quot;Move&quot; |
 | DELETE | &quot;Delete&quot; |
 | DOWNLOAD | &quot;Download&quot; |
 | UPLOAD | &quot;Upload&quot; |
@@ -178,6 +179,7 @@ title: AuditTopicAuditLogMessage
 | SPEECHTEXTANALYTICSSETTINGS | &quot;SpeechTextAnalyticsSettings&quot; |
 | PREDICTOR | &quot;Predictor&quot; |
 | WORKPLAN | &quot;WorkPlan&quot; |
+| WORKSPACE | &quot;Workspace&quot; |
 {: class="table table-striped"}
 
 

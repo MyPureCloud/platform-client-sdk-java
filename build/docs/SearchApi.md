@@ -400,8 +400,9 @@ Search users using the q64 value returned from a previous search
 
 Wraps GET /api/v2/users/search  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* directory:user:divisionview
 
 ### Example
 
@@ -1072,8 +1073,9 @@ Search users
 
 Wraps POST /api/v2/users/search  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* directory:user:divisionview
 
 ### Example
 

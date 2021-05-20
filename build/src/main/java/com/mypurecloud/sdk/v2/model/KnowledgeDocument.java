@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DocumentArticle;
 import com.mypurecloud.sdk.v2.model.DocumentFaq;
 import com.mypurecloud.sdk.v2.model.KnowledgeBase;
 import com.mypurecloud.sdk.v2.model.KnowledgeCategory;
@@ -96,7 +97,8 @@ public class KnowledgeDocument  implements Serializable {
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    FAQ("Faq");
+    FAQ("Faq"),
+    ARTICLE("Article");
 
     private String value;
 
@@ -130,6 +132,7 @@ public class KnowledgeDocument  implements Serializable {
   private List<KnowledgeCategory> categories = new ArrayList<KnowledgeCategory>();
   private KnowledgeBase knowledgeBase = null;
   private String externalUrl = null;
+  private DocumentArticle article = null;
   private String selfUri = null;
 
   
@@ -279,6 +282,24 @@ public class KnowledgeDocument  implements Serializable {
   }
 
   
+  /**
+   * Article
+   **/
+  public KnowledgeDocument article(DocumentArticle article) {
+    this.article = article;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Article")
+  @JsonProperty("article")
+  public DocumentArticle getArticle() {
+    return article;
+  }
+  public void setArticle(DocumentArticle article) {
+    this.article = article;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -306,12 +327,13 @@ public class KnowledgeDocument  implements Serializable {
         Objects.equals(this.categories, knowledgeDocument.categories) &&
         Objects.equals(this.knowledgeBase, knowledgeDocument.knowledgeBase) &&
         Objects.equals(this.externalUrl, knowledgeDocument.externalUrl) &&
+        Objects.equals(this.article, knowledgeDocument.article) &&
         Objects.equals(this.selfUri, knowledgeDocument.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, languageCode, type, faq, dateCreated, dateModified, categories, knowledgeBase, externalUrl, selfUri);
+    return Objects.hash(id, name, languageCode, type, faq, dateCreated, dateModified, categories, knowledgeBase, externalUrl, article, selfUri);
   }
 
   @Override
@@ -329,6 +351,7 @@ public class KnowledgeDocument  implements Serializable {
     sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
     sb.append("    knowledgeBase: ").append(toIndentedString(knowledgeBase)).append("\n");
     sb.append("    externalUrl: ").append(toIndentedString(externalUrl)).append("\n");
+    sb.append("    article: ").append(toIndentedString(article)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

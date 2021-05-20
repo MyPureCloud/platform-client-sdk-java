@@ -41,6 +41,8 @@ import com.mypurecloud.sdk.v2.model.EncryptionKey;
 import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.ConversationDeletionProtectionQuery;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
+import com.mypurecloud.sdk.v2.model.AcknowledgeScreenRecordingRequest;
+import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaDataRequest;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 import com.mypurecloud.sdk.v2.model.ExecuteRecordingJobsQuery;
 
@@ -86,6 +88,8 @@ import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingMediaretentionpoliciesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingRecordingkeysRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingsDeletionprotectionRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRecordingsScreensessionsAcknowledgeRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRecordingsScreensessionsMetadataRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationRecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationRecordingAnnotationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrphanrecordingRequest;
@@ -3221,6 +3225,158 @@ public class RecordingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<List<AddressableEntityRef>> response = (ApiResponse<List<AddressableEntityRef>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Acknowledge a screen recording.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> postRecordingsScreensessionsAcknowledgeAsync(PostRecordingsScreensessionsAcknowledgeRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Acknowledge a screen recording.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> postRecordingsScreensessionsAcknowledgeAsync(ApiRequest<AcknowledgeScreenRecordingRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Provide meta-data a screen recording.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> postRecordingsScreensessionsMetadataAsync(PostRecordingsScreensessionsMetadataRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Provide meta-data a screen recording.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> postRecordingsScreensessionsMetadataAsync(ApiRequest<ScreenRecordingMetaDataRequest> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

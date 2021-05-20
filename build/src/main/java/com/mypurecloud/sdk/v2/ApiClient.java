@@ -29,6 +29,9 @@ import javax.xml.bind.DatatypeConverter;
 
 import com.google.common.util.concurrent.SettableFuture;
 
+import org.apache.http.HttpRequestInterceptor;
+import org.apache.http.HttpResponseInterceptor;
+
 import com.mypurecloud.sdk.v2.auth.ApiKeyAuth;
 import com.mypurecloud.sdk.v2.auth.Authentication;
 import com.mypurecloud.sdk.v2.auth.OAuth;
@@ -961,7 +964,7 @@ public class ApiClient implements AutoCloseable {
         private Builder(ConnectorProperties properties) {
             this.properties = (properties != null) ? properties.copy() : new ConnectorProperties();
             withUserAgent(DEFAULT_USER_AGENT);
-            withDefaultHeader("purecloud-sdk", "124.0.0");
+            withDefaultHeader("purecloud-sdk", "125.0.0");
         }
 
         public Builder withDefaultHeader(String header, String value) {
@@ -1005,6 +1008,16 @@ public class ApiClient implements AutoCloseable {
 
         public Builder withLoggingConfiguration(LoggingConfiguration loggingConfiguration) {
             this.loggingConfiguration = loggingConfiguration;
+            return this;
+        }
+
+        public Builder withHttpRequestInterceptor(HttpRequestInterceptor interceptor) {
+            properties.setProperty(ApiClientConnectorProperty.HTTP_REQUEST_INTERCEPTOR, interceptor);
+            return this;
+        }
+
+        public Builder withHttpResponseInterceptor(HttpResponseInterceptor interceptor) {
+            properties.setProperty(ApiClientConnectorProperty.HTTP_RESPONSE_INTERCEPTOR, interceptor);
             return this;
         }
 

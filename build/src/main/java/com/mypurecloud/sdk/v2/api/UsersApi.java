@@ -2042,7 +2042,7 @@ public class UsersApi {
 
   
   /**
-   * Get favorites
+   * Deprecated; will be revived with new contract
    * 
    * @param userId User ID (required)
    * @param pageSize Page size (optional, default to 25)
@@ -2058,7 +2058,7 @@ public class UsersApi {
   }
 
   /**
-   * Get favorites
+   * Deprecated; will be revived with new contract
    * 
    * @param userId User ID (required)
    * @param pageSize Page size (optional, default to 25)
@@ -2088,7 +2088,7 @@ public class UsersApi {
   }
 
   /**
-   * Get favorites
+   * Deprecated; will be revived with new contract
    * 
    * @param request The request object
    * @return UserEntityListing
@@ -2107,7 +2107,7 @@ public class UsersApi {
   }
 
   /**
-   * Get favorites
+   * Deprecated; will be revived with new contract
    * 
    * @param request The request object
    * @return the response

@@ -122,13 +122,14 @@ public class AssessmentFormQuestion  implements Serializable {
 
   
   /**
+   * The question text
    **/
   public AssessmentFormQuestion text(String text) {
     this.text = text;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "The question text")
   @JsonProperty("text")
   public String getText() {
     return text;

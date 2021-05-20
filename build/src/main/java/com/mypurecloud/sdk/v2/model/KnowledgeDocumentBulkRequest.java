@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.DocumentArticle;
 import com.mypurecloud.sdk.v2.model.DocumentCategoryInput;
 import com.mypurecloud.sdk.v2.model.DocumentFaq;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +45,8 @@ public class KnowledgeDocumentBulkRequest  implements Serializable {
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    FAQ("Faq");
+    FAQ("Faq"),
+    ARTICLE("Article");
 
     private String value;
 
@@ -75,6 +77,7 @@ public class KnowledgeDocumentBulkRequest  implements Serializable {
   private String externalUrl = null;
   private DocumentFaq faq = null;
   private List<DocumentCategoryInput> categories = new ArrayList<DocumentCategoryInput>();
+  private DocumentArticle article = null;
   private String id = null;
 
   
@@ -151,6 +154,24 @@ public class KnowledgeDocumentBulkRequest  implements Serializable {
 
   
   /**
+   * Article details
+   **/
+  public KnowledgeDocumentBulkRequest article(DocumentArticle article) {
+    this.article = article;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Article details")
+  @JsonProperty("article")
+  public DocumentArticle getArticle() {
+    return article;
+  }
+  public void setArticle(DocumentArticle article) {
+    this.article = article;
+  }
+
+  
+  /**
    * Identifier of document for update. Omit for create new Document.
    **/
   public KnowledgeDocumentBulkRequest id(String id) {
@@ -182,12 +203,13 @@ public class KnowledgeDocumentBulkRequest  implements Serializable {
         Objects.equals(this.externalUrl, knowledgeDocumentBulkRequest.externalUrl) &&
         Objects.equals(this.faq, knowledgeDocumentBulkRequest.faq) &&
         Objects.equals(this.categories, knowledgeDocumentBulkRequest.categories) &&
+        Objects.equals(this.article, knowledgeDocumentBulkRequest.article) &&
         Objects.equals(this.id, knowledgeDocumentBulkRequest.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, externalUrl, faq, categories, id);
+    return Objects.hash(type, externalUrl, faq, categories, article, id);
   }
 
   @Override
@@ -199,6 +221,7 @@ public class KnowledgeDocumentBulkRequest  implements Serializable {
     sb.append("    externalUrl: ").append(toIndentedString(externalUrl)).append("\n");
     sb.append("    faq: ").append(toIndentedString(faq)).append("\n");
     sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
+    sb.append("    article: ").append(toIndentedString(article)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();

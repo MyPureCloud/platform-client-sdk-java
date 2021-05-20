@@ -31,6 +31,7 @@ title: AuditLogMessage
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| ANALYTICSREPORTING | &quot;AnalyticsReporting&quot; |
 | ARCHITECT | &quot;Architect&quot; |
 | CONTACTCENTER | &quot;ContactCenter&quot; |
 | CONTENTMANAGEMENT | &quot;ContentManagement&quot; |
@@ -40,6 +41,7 @@ title: AuditLogMessage
 | LIMITS | &quot;Limits&quot; |
 | OUTBOUND | &quot;Outbound&quot; |
 | PEOPLEPERMISSIONS | &quot;PeoplePermissions&quot; |
+| PERFORMANCE | &quot;Performance&quot; |
 | PREDICTIVEENGAGEMENT | &quot;PredictiveEngagement&quot; |
 | PRESENCE | &quot;Presence&quot; |
 | QUALITY | &quot;Quality&quot; |
@@ -129,6 +131,7 @@ title: AuditLogMessage
 | CLICKSTREAMSETTINGS | &quot;ClickstreamSettings&quot; |
 | CONTACTLIST | &quot;ContactList&quot; |
 | CONTACTLISTFILTER | &quot;ContactListFilter&quot; |
+| DASHBOARDSETTINGS | &quot;DashboardSettings&quot; |
 | DEPENDENCYTRACKINGBUILD | &quot;DependencyTrackingBuild&quot; |
 | DID | &quot;DID&quot; |
 | DIDPOOL | &quot;DIDPool&quot; |
@@ -138,12 +141,16 @@ title: AuditLogMessage
 | EDGEGROUP | &quot;EdgeGroup&quot; |
 | EMERGENCYGROUP | &quot;EmergencyGroup&quot; |
 | EVENTTYPE | &quot;EventType&quot; |
+| EXPORTS | &quot;Exports&quot; |
 | EXTENSION | &quot;Extension&quot; |
 | EXTENSIONPOOL | &quot;ExtensionPool&quot; |
+| EXTERNALMETRICDEFINITION | &quot;ExternalMetricDefinition&quot; |
 | FEEDBACK | &quot;Feedback&quot; |
 | FLOW | &quot;Flow&quot; |
 | FLOWMILESTONE | &quot;FlowMilestone&quot; |
 | FLOWOUTCOME | &quot;FlowOutcome&quot; |
+| FORECAST | &quot;Forecast&quot; |
+| INSIGHTSETTINGS | &quot;InsightSettings&quot; |
 | INTEGRATION | &quot;Integration&quot; |
 | IVR | &quot;IVR&quot; |
 | LINE | &quot;Line&quot; |
@@ -171,6 +178,7 @@ title: AuditLogMessage
 | ROUTINGTRANSCRIPTIONSETTINGS | &quot;RoutingTranscriptionSettings&quot; |
 | RULESET | &quot;RuleSet&quot; |
 | SCHEDULE | &quot;Schedule&quot; |
+| SCHEDULEDEXPORTS | &quot;ScheduledExports&quot; |
 | SCHEDULEGROUP | &quot;ScheduleGroup&quot; |
 | SEGMENT | &quot;Segment&quot; |
 | SENTIMENTFEEDBACK | &quot;SentimentFeedback&quot; |

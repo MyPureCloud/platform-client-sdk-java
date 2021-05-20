@@ -56,6 +56,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsReques
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsPublishjobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTranscriptsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramRequest;
+import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsTopicRequest;
 
 import java.io.IOException;
@@ -1899,6 +1900,85 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Program> response = (ApiResponse<Program>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update Speech And Text Analytics Settings
+   * 
+   * @param body Speech And Text Analytics Settings (required)
+   * @return SpeechTextAnalyticsSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SpeechTextAnalyticsSettingsResponse putSpeechandtextanalyticsSettings(SpeechTextAnalyticsSettingsRequest body) throws IOException, ApiException {
+    return  putSpeechandtextanalyticsSettings(createPutSpeechandtextanalyticsSettingsRequest(body));
+  }
+
+  /**
+   * Update Speech And Text Analytics Settings
+   * 
+   * @param body Speech And Text Analytics Settings (required)
+   * @return SpeechTextAnalyticsSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SpeechTextAnalyticsSettingsResponse> putSpeechandtextanalyticsSettingsWithHttpInfo(SpeechTextAnalyticsSettingsRequest body) throws IOException {
+    return putSpeechandtextanalyticsSettings(createPutSpeechandtextanalyticsSettingsRequest(body).withHttpInfo());
+  }
+
+  private PutSpeechandtextanalyticsSettingsRequest createPutSpeechandtextanalyticsSettingsRequest(SpeechTextAnalyticsSettingsRequest body) {
+    return PutSpeechandtextanalyticsSettingsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update Speech And Text Analytics Settings
+   * 
+   * @param request The request object
+   * @return SpeechTextAnalyticsSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SpeechTextAnalyticsSettingsResponse putSpeechandtextanalyticsSettings(PutSpeechandtextanalyticsSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SpeechTextAnalyticsSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SpeechTextAnalyticsSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update Speech And Text Analytics Settings
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SpeechTextAnalyticsSettingsResponse> putSpeechandtextanalyticsSettings(ApiRequest<SpeechTextAnalyticsSettingsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SpeechTextAnalyticsSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SpeechTextAnalyticsSettingsResponse> response = (ApiResponse<SpeechTextAnalyticsSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SpeechTextAnalyticsSettingsResponse> response = (ApiResponse<SpeechTextAnalyticsSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

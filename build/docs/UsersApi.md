@@ -30,7 +30,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUserAdjacents**](UsersApi.html#getUserAdjacents) | Get adjacents |
 | [**getUserCallforwarding**](UsersApi.html#getUserCallforwarding) | Get a user&#39;s CallForwarding |
 | [**getUserDirectreports**](UsersApi.html#getUserDirectreports) | Get direct reports |
-| [**getUserFavorites**](UsersApi.html#getUserFavorites) | Get favorites |
+| [**getUserFavorites**](UsersApi.html#getUserFavorites) | Deprecated; will be revived with new contract |
 | [**getUserGeolocation**](UsersApi.html#getUserGeolocation) | Get a user&#39;s Geolocation |
 | [**getUserOutofoffice**](UsersApi.html#getUserOutofoffice) | Get a OutOfOffice |
 | [**getUserProfile**](UsersApi.html#getUserProfile) | Get user profile |
@@ -1562,11 +1562,11 @@ try {
 
 # **getUserFavorites**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [UserEntityListing](UserEntityListing.html) getUserFavorites(userId, pageSize, pageNumber, sortOrder, expand)
 
-Get favorites
+Deprecated; will be revived with new contract
 
 
 
@@ -2794,8 +2794,9 @@ Search users using the q64 value returned from a previous search
 
 Wraps GET /api/v2/users/search  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* directory:user:divisionview
 
 ### Example
 
@@ -4419,8 +4420,9 @@ Search users
 
 Wraps POST /api/v2/users/search  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* directory:user:divisionview
 
 ### Example
 

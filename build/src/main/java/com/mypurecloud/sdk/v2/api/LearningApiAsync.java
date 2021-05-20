@@ -21,6 +21,8 @@ import com.mypurecloud.sdk.v2.model.LearningModuleRule;
 import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateParam;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkAddResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
 import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
@@ -40,6 +42,7 @@ import com.mypurecloud.sdk.v2.api.request.GetLearningModuleVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsBulkaddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsBulkremoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningModulePublishRequest;
@@ -892,6 +895,82 @@ public class LearningApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<LearningAssignment> response = (ApiResponse<LearningAssignment>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Retrieve aggregated assignment data
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LearningAssignmentAggregateResponse> postLearningAssignmentsAggregatesQueryAsync(PostLearningAssignmentsAggregatesQueryRequest request, final AsyncApiCallback<LearningAssignmentAggregateResponse> callback) {
+    try {
+      final SettableFuture<LearningAssignmentAggregateResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LearningAssignmentAggregateResponse>() {}, new AsyncApiCallback<ApiResponse<LearningAssignmentAggregateResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<LearningAssignmentAggregateResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve aggregated assignment data
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LearningAssignmentAggregateResponse>> postLearningAssignmentsAggregatesQueryAsync(ApiRequest<LearningAssignmentAggregateParam> request, final AsyncApiCallback<ApiResponse<LearningAssignmentAggregateResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LearningAssignmentAggregateResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LearningAssignmentAggregateResponse>() {}, new AsyncApiCallback<ApiResponse<LearningAssignmentAggregateResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<LearningAssignmentAggregateResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LearningAssignmentAggregateResponse> response = (ApiResponse<LearningAssignmentAggregateResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LearningAssignmentAggregateResponse> response = (ApiResponse<LearningAssignmentAggregateResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

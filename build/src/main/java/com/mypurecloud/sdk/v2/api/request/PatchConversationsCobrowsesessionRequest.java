@@ -63,6 +63,7 @@ import com.mypurecloud.sdk.v2.model.TwitterIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.TwitterIntegration;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.MessagingStickerEntityListing;
+import com.mypurecloud.sdk.v2.model.ConversationThreadingWindow;
 import com.mypurecloud.sdk.v2.model.MediaParticipantRequest;
 import com.mypurecloud.sdk.v2.model.ParticipantAttributes;
 import com.mypurecloud.sdk.v2.model.Empty;

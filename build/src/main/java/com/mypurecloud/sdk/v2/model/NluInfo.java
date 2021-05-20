@@ -25,6 +25,7 @@ import java.io.Serializable;
 public class NluInfo  implements Serializable {
   
   private AddressableEntityRef domain = null;
+  private AddressableEntityRef version = null;
   private List<Intent> intents = new ArrayList<Intent>();
 
   
@@ -42,6 +43,23 @@ public class NluInfo  implements Serializable {
   }
   public void setDomain(AddressableEntityRef domain) {
     this.domain = domain;
+  }
+
+  
+  /**
+   **/
+  public NluInfo version(AddressableEntityRef version) {
+    this.version = version;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("version")
+  public AddressableEntityRef getVersion() {
+    return version;
+  }
+  public void setVersion(AddressableEntityRef version) {
+    this.version = version;
   }
 
   
@@ -73,12 +91,13 @@ public class NluInfo  implements Serializable {
     }
     NluInfo nluInfo = (NluInfo) o;
     return Objects.equals(this.domain, nluInfo.domain) &&
+        Objects.equals(this.version, nluInfo.version) &&
         Objects.equals(this.intents, nluInfo.intents);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(domain, intents);
+    return Objects.hash(domain, version, intents);
   }
 
   @Override
@@ -87,6 +106,7 @@ public class NluInfo  implements Serializable {
     sb.append("class NluInfo {\n");
     
     sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    intents: ").append(toIndentedString(intents)).append("\n");
     sb.append("}");
     return sb.toString();

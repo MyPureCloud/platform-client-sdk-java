@@ -254,6 +254,7 @@ public class GetOutboundMessagingcampaignsRequest {
 	} 
 
 	public enum typeValues { 
+		EMAIL("EMAIL"), 
 		SMS("SMS");
 
 		private String value;

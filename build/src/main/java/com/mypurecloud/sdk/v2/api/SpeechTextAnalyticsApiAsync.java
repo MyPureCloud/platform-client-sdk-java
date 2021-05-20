@@ -59,6 +59,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsReques
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsPublishjobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTranscriptsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramRequest;
+import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsTopicRequest;
 
 import java.io.IOException;
@@ -1817,6 +1818,82 @@ public class SpeechTextAnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Program> response = (ApiResponse<Program>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update Speech And Text Analytics Settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SpeechTextAnalyticsSettingsResponse> putSpeechandtextanalyticsSettingsAsync(PutSpeechandtextanalyticsSettingsRequest request, final AsyncApiCallback<SpeechTextAnalyticsSettingsResponse> callback) {
+    try {
+      final SettableFuture<SpeechTextAnalyticsSettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SpeechTextAnalyticsSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<SpeechTextAnalyticsSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SpeechTextAnalyticsSettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update Speech And Text Analytics Settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SpeechTextAnalyticsSettingsResponse>> putSpeechandtextanalyticsSettingsAsync(ApiRequest<SpeechTextAnalyticsSettingsRequest> request, final AsyncApiCallback<ApiResponse<SpeechTextAnalyticsSettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SpeechTextAnalyticsSettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SpeechTextAnalyticsSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<SpeechTextAnalyticsSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SpeechTextAnalyticsSettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SpeechTextAnalyticsSettingsResponse> response = (ApiResponse<SpeechTextAnalyticsSettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SpeechTextAnalyticsSettingsResponse> response = (ApiResponse<SpeechTextAnalyticsSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

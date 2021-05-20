@@ -18,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getLearningModules**](LearningApi.html#getLearningModules) | Get all learning modules of an organization |
 | [**patchLearningAssignment**](LearningApi.html#patchLearningAssignment) | Update Learning Assignment |
 | [**postLearningAssignments**](LearningApi.html#postLearningAssignments) | Create Learning Assignment |
+| [**postLearningAssignmentsAggregatesQuery**](LearningApi.html#postLearningAssignmentsAggregatesQuery) | Retrieve aggregated assignment data |
 | [**postLearningAssignmentsBulkadd**](LearningApi.html#postLearningAssignmentsBulkadd) | Add multiple learning assignments |
 | [**postLearningAssignmentsBulkremove**](LearningApi.html#postLearningAssignmentsBulkremove) | Remove multiple Learning Assignments |
 | [**postLearningModulePublish**](LearningApi.html#postLearningModulePublish) | Publish a Learning module |
@@ -781,6 +782,69 @@ try {
 ### Return type
 
 [**LearningAssignment**](LearningAssignment.html)
+
+<a name="postLearningAssignmentsAggregatesQuery"></a>
+
+# **postLearningAssignmentsAggregatesQuery**
+
+
+
+> [LearningAssignmentAggregateResponse](LearningAssignmentAggregateResponse.html) postLearningAssignmentsAggregatesQuery(body)
+
+Retrieve aggregated assignment data
+
+
+
+Wraps POST /api/v2/learning/assignments/aggregates/query  
+
+Requires ANY permissions: 
+
+* learning:assignment:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LearningApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LearningApi apiInstance = new LearningApi();
+LearningAssignmentAggregateParam body = new LearningAssignmentAggregateParam(); // LearningAssignmentAggregateParam | Aggregate Request
+try {
+    LearningAssignmentAggregateResponse result = apiInstance.postLearningAssignmentsAggregatesQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LearningApi#postLearningAssignmentsAggregatesQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**LearningAssignmentAggregateParam**](LearningAssignmentAggregateParam.html)| Aggregate Request | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LearningAssignmentAggregateResponse**](LearningAssignmentAggregateResponse.html)
 
 <a name="postLearningAssignmentsBulkadd"></a>
 

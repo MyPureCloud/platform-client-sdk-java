@@ -97,7 +97,8 @@ public class GetFlowsRequest {
 		SPEECH("speech"), 
 		SECURECALL("securecall"), 
 		SURVEYINVITE("surveyinvite"), 
-		WORKFLOW("workflow");
+		WORKFLOW("workflow"), 
+		WORKITEM("workitem");
 
 		private String value;
 

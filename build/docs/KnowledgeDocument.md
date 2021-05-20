@@ -18,6 +18,7 @@ title: KnowledgeDocument
 | **categories** | <!----><!---->[**List&lt;KnowledgeCategory&gt;**](KnowledgeCategory.html)<!----> | Document categories |  [optional] |
 | **knowledgeBase** | <!----><!---->[**KnowledgeBase**](KnowledgeBase.html)<!----> | Knowledge base which document does belong to |  [optional] |
 | **externalUrl** | <!----><!---->**String**<!----> | External URL to the document |  [optional] |
+| **article** | <!----><!---->[**DocumentArticle**](DocumentArticle.html)<!----> | Article |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
@@ -42,6 +43,7 @@ title: KnowledgeDocument
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | FAQ | &quot;Faq&quot; |
+| ARTICLE | &quot;Article&quot; |
 {: class="table table-striped"}
 
 

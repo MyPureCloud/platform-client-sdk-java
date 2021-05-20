@@ -50,8 +50,18 @@ public class ApacheHttpClientConnectorProvider implements ApiClientConnectorProv
         }
 
         DetailLevel detailLevel = properties.getProperty(ApiClientConnectorProperty.DETAIL_LEVEL, DetailLevel.class, DetailLevel.MINIMAL);
+        SLF4JInterceptor defaultInterceptor = new SLF4JInterceptor(detailLevel);
+        HttpRequestInterceptor requestInterceptor = properties.getProperty(ApiClientConnectorProperty.HTTP_REQUEST_INTERCEPTOR,
+            HttpRequestInterceptor.class,
+            defaultInterceptor);
+        HttpResponseInterceptor responseInterceptor = properties.getProperty(ApiClientConnectorProperty.HTTP_RESPONSE_INTERCEPTOR,
+            HttpResponseInterceptor.class,
+            defaultInterceptor);
 
         HttpClientBuilder builder = HttpClients.custom()
+                .setDefaultRequestConfig(requestBuilder.build())
+                .addInterceptorFirst(requestInterceptor)
+                .addInterceptorLast(responseInterceptor)
                 .setDefaultRequestConfig(requestBuilder.build());
         if (credentialsProvider != null) {
             builder.setDefaultCredentialsProvider(credentialsProvider);

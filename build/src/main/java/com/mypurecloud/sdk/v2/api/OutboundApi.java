@@ -4600,6 +4600,7 @@ public class OutboundApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
+   * @param dncSourceType DncSourceType (optional)
    * @param id id (optional)
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
@@ -4607,8 +4608,8 @@ public class OutboundApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DncListDivisionViewListing getOutboundDnclistsDivisionviews(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getOutboundDnclistsDivisionviews(createGetOutboundDnclistsDivisionviewsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder));
+  public DncListDivisionViewListing getOutboundDnclistsDivisionviews(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String dncSourceType, List<String> id, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundDnclistsDivisionviews(createGetOutboundDnclistsDivisionviewsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, dncSourceType, id, sortBy, sortOrder));
   }
 
   /**
@@ -4620,17 +4621,18 @@ public class OutboundApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
+   * @param dncSourceType DncSourceType (optional)
    * @param id id (optional)
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return DncListDivisionViewListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DncListDivisionViewListing> getOutboundDnclistsDivisionviewsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String sortBy, String sortOrder) throws IOException {
-    return getOutboundDnclistsDivisionviews(createGetOutboundDnclistsDivisionviewsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, id, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<DncListDivisionViewListing> getOutboundDnclistsDivisionviewsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String dncSourceType, List<String> id, String sortBy, String sortOrder) throws IOException {
+    return getOutboundDnclistsDivisionviews(createGetOutboundDnclistsDivisionviewsRequest(includeImportStatus, includeSize, pageSize, pageNumber, filterType, name, dncSourceType, id, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetOutboundDnclistsDivisionviewsRequest createGetOutboundDnclistsDivisionviewsRequest(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, List<String> id, String sortBy, String sortOrder) {
+  private GetOutboundDnclistsDivisionviewsRequest createGetOutboundDnclistsDivisionviewsRequest(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, String filterType, String name, String dncSourceType, List<String> id, String sortBy, String sortOrder) {
     return GetOutboundDnclistsDivisionviewsRequest.builder()
             .withIncludeImportStatus(includeImportStatus)
     
@@ -4643,6 +4645,8 @@ public class OutboundApi {
             .withFilterType(filterType)
     
             .withName(name)
+    
+            .withDncSourceType(dncSourceType)
     
             .withId(id)
     

@@ -56,6 +56,7 @@ import com.mypurecloud.sdk.v2.model.TwitterIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.TwitterIntegration;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.MessagingStickerEntityListing;
+import com.mypurecloud.sdk.v2.model.ConversationThreadingWindow;
 import com.mypurecloud.sdk.v2.model.MediaParticipantRequest;
 import com.mypurecloud.sdk.v2.model.ParticipantAttributes;
 import com.mypurecloud.sdk.v2.model.Empty;
@@ -165,6 +166,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsT
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsWhatsappRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingStickerRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingThreadingtimelineRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsCallRequest;
@@ -239,6 +241,7 @@ import com.mypurecloud.sdk.v2.api.request.PutConversationParticipantFlaggedreaso
 import com.mypurecloud.sdk.v2.api.request.PutConversationsCallParticipantCommunicationUuidataRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsEmailMessagesDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingIntegrationsLineIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PutConversationsMessagingThreadingtimelineRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -5112,6 +5115,82 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<MessagingStickerEntityListing> response = (ApiResponse<MessagingStickerEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get conversation threading window timeline for each messaging type
+   * Conversation messaging threading timeline is a setting defined for each messenger type in your organization. This setting will dictate whether a new message is added to the most recent existing conversation, or creates a new Conversation. If the existing Conversation is still in a connected state the threading timeline setting will never play a role. After the conversation is disconnected, if an inbound message is received or an outbound message is sent after the setting for threading timeline expires, a new conversation is created.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConversationThreadingWindow> getConversationsMessagingThreadingtimelineAsync(GetConversationsMessagingThreadingtimelineRequest request, final AsyncApiCallback<ConversationThreadingWindow> callback) {
+    try {
+      final SettableFuture<ConversationThreadingWindow> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConversationThreadingWindow>() {}, new AsyncApiCallback<ApiResponse<ConversationThreadingWindow>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationThreadingWindow> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get conversation threading window timeline for each messaging type
+   * Conversation messaging threading timeline is a setting defined for each messenger type in your organization. This setting will dictate whether a new message is added to the most recent existing conversation, or creates a new Conversation. If the existing Conversation is still in a connected state the threading timeline setting will never play a role. After the conversation is disconnected, if an inbound message is received or an outbound message is sent after the setting for threading timeline expires, a new conversation is created.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConversationThreadingWindow>> getConversationsMessagingThreadingtimelineAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ConversationThreadingWindow>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConversationThreadingWindow>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConversationThreadingWindow>() {}, new AsyncApiCallback<ApiResponse<ConversationThreadingWindow>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationThreadingWindow> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationThreadingWindow> response = (ApiResponse<ConversationThreadingWindow>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationThreadingWindow> response = (ApiResponse<ConversationThreadingWindow>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -10736,6 +10815,82 @@ public class ConversationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update conversation threading window timeline for each messaging type
+   * PUT Conversation messaging threading timeline is intended to set the conversation threading settings for ALL messengerTypes. If you omit a messengerType in the request body then the setting for that messengerType will use the platform default value. The PUT replaces the existing setting(s) that were previously set for each messengerType.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ConversationThreadingWindow> putConversationsMessagingThreadingtimelineAsync(PutConversationsMessagingThreadingtimelineRequest request, final AsyncApiCallback<ConversationThreadingWindow> callback) {
+    try {
+      final SettableFuture<ConversationThreadingWindow> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ConversationThreadingWindow>() {}, new AsyncApiCallback<ApiResponse<ConversationThreadingWindow>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationThreadingWindow> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update conversation threading window timeline for each messaging type
+   * PUT Conversation messaging threading timeline is intended to set the conversation threading settings for ALL messengerTypes. If you omit a messengerType in the request body then the setting for that messengerType will use the platform default value. The PUT replaces the existing setting(s) that were previously set for each messengerType.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ConversationThreadingWindow>> putConversationsMessagingThreadingtimelineAsync(ApiRequest<ConversationThreadingWindow> request, final AsyncApiCallback<ApiResponse<ConversationThreadingWindow>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ConversationThreadingWindow>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ConversationThreadingWindow>() {}, new AsyncApiCallback<ApiResponse<ConversationThreadingWindow>>() {
+        @Override
+        public void onCompleted(ApiResponse<ConversationThreadingWindow> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationThreadingWindow> response = (ApiResponse<ConversationThreadingWindow>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ConversationThreadingWindow> response = (ApiResponse<ConversationThreadingWindow>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

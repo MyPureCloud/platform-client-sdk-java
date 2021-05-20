@@ -38,6 +38,8 @@ import com.mypurecloud.sdk.v2.model.EncryptionKey;
 import com.mypurecloud.sdk.v2.model.PolicyCreate;
 import com.mypurecloud.sdk.v2.model.ConversationDeletionProtectionQuery;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
+import com.mypurecloud.sdk.v2.model.AcknowledgeScreenRecordingRequest;
+import com.mypurecloud.sdk.v2.model.ScreenRecordingMetaDataRequest;
 import com.mypurecloud.sdk.v2.model.OrphanUpdateRequest;
 import com.mypurecloud.sdk.v2.model.ExecuteRecordingJobsQuery;
 
@@ -83,6 +85,8 @@ import com.mypurecloud.sdk.v2.api.request.PostRecordingLocalkeysSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingMediaretentionpoliciesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingRecordingkeysRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRecordingsDeletionprotectionRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRecordingsScreensessionsAcknowledgeRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRecordingsScreensessionsMetadataRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationRecordingRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationRecordingAnnotationRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrphanrecordingRequest;
@@ -3554,6 +3558,158 @@ public class RecordingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<List<AddressableEntityRef>> response = (ApiResponse<List<AddressableEntityRef>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Acknowledge a screen recording.
+   * 
+   * @param body AcknowledgeScreenRecordingRequest (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postRecordingsScreensessionsAcknowledge(AcknowledgeScreenRecordingRequest body) throws IOException, ApiException {
+     postRecordingsScreensessionsAcknowledge(createPostRecordingsScreensessionsAcknowledgeRequest(body));
+  }
+
+  /**
+   * Acknowledge a screen recording.
+   * 
+   * @param body AcknowledgeScreenRecordingRequest (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postRecordingsScreensessionsAcknowledgeWithHttpInfo(AcknowledgeScreenRecordingRequest body) throws IOException {
+    return postRecordingsScreensessionsAcknowledge(createPostRecordingsScreensessionsAcknowledgeRequest(body).withHttpInfo());
+  }
+
+  private PostRecordingsScreensessionsAcknowledgeRequest createPostRecordingsScreensessionsAcknowledgeRequest(AcknowledgeScreenRecordingRequest body) {
+    return PostRecordingsScreensessionsAcknowledgeRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Acknowledge a screen recording.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postRecordingsScreensessionsAcknowledge(PostRecordingsScreensessionsAcknowledgeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Acknowledge a screen recording.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postRecordingsScreensessionsAcknowledge(ApiRequest<AcknowledgeScreenRecordingRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Provide meta-data a screen recording.
+   * 
+   * @param body ScreenRecordingMetaDataRequest (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postRecordingsScreensessionsMetadata(ScreenRecordingMetaDataRequest body) throws IOException, ApiException {
+     postRecordingsScreensessionsMetadata(createPostRecordingsScreensessionsMetadataRequest(body));
+  }
+
+  /**
+   * Provide meta-data a screen recording.
+   * 
+   * @param body ScreenRecordingMetaDataRequest (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postRecordingsScreensessionsMetadataWithHttpInfo(ScreenRecordingMetaDataRequest body) throws IOException {
+    return postRecordingsScreensessionsMetadata(createPostRecordingsScreensessionsMetadataRequest(body).withHttpInfo());
+  }
+
+  private PostRecordingsScreensessionsMetadataRequest createPostRecordingsScreensessionsMetadataRequest(ScreenRecordingMetaDataRequest body) {
+    return PostRecordingsScreensessionsMetadataRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Provide meta-data a screen recording.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postRecordingsScreensessionsMetadata(PostRecordingsScreensessionsMetadataRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Provide meta-data a screen recording.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postRecordingsScreensessionsMetadata(ApiRequest<ScreenRecordingMetaDataRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

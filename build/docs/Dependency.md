@@ -54,6 +54,7 @@ title: Dependency
 | INBOUNDSHORTMESSAGEFLOW | &quot;INBOUNDSHORTMESSAGEFLOW&quot; |
 | INQUEUECALLFLOW | &quot;INQUEUECALLFLOW&quot; |
 | IVRCONFIGURATION | &quot;IVRCONFIGURATION&quot; |
+| KNOWLEDGEBASE | &quot;KNOWLEDGEBASE&quot; |
 | LANGUAGE | &quot;LANGUAGE&quot; |
 | LEXBOT | &quot;LEXBOT&quot; |
 | LEXBOTALIAS | &quot;LEXBOTALIAS&quot; |
@@ -76,6 +77,7 @@ title: Dependency
 | USERPROMPT | &quot;USERPROMPT&quot; |
 | WIDGET | &quot;WIDGET&quot; |
 | WORKFLOW | &quot;WORKFLOW&quot; |
+| WORKITEMFLOW | &quot;WORKITEMFLOW&quot; |
 {: class="table table-striped"}
 
 

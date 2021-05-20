@@ -1914,7 +1914,7 @@ public class UsersApiAsync {
 
   
   /**
-   * Get favorites
+   * Deprecated; will be revived with new contract
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1948,7 +1948,7 @@ public class UsersApiAsync {
   }
 
   /**
-   * Get favorites
+   * Deprecated; will be revived with new contract
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
