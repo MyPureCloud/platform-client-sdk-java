@@ -80,6 +80,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postArchitectSchedules**](ArchitectApi.html#postArchitectSchedules) | Create a new schedule. |
 | [**postArchitectSystempromptHistory**](ArchitectApi.html#postArchitectSystempromptHistory) | Generate system prompt history |
 | [**postArchitectSystempromptResources**](ArchitectApi.html#postArchitectSystempromptResources) | Create system prompt resource override. |
+| [**postFlowHistory**](ArchitectApi.html#postFlowHistory) | Generate flow history |
 | [**postFlowVersions**](ArchitectApi.html#postFlowVersions) | Create flow version |
 | [**postFlows**](ArchitectApi.html#postFlows) | Create flow |
 | [**postFlowsActionsCheckin**](ArchitectApi.html#postFlowsActionsCheckin) | Check-in flow |
@@ -5050,6 +5051,69 @@ try {
 
 [**SystemPromptAsset**](SystemPromptAsset.html)
 
+<a name="postFlowHistory"></a>
+
+# **postFlowHistory**
+
+
+
+> [Operation](Operation.html) postFlowHistory(flowId)
+
+Generate flow history
+
+Asynchronous.  Notification topic: v2.flows.{flowId}
+
+Wraps POST /api/v2/flows/{flowId}/history  
+
+Requires ANY permissions: 
+
+* architect:flow:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String flowId = "flowId_example"; // String | Flow ID
+try {
+    Operation result = apiInstance.postFlowHistory(flowId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#postFlowHistory");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **flowId** | **String**| Flow ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Operation**](Operation.html)
+
 <a name="postFlowVersions"></a>
 
 # **postFlowVersions**
@@ -5121,7 +5185,7 @@ try {
 
 
 
-> [Flow](Flow.html) postFlows(body)
+> [Flow](Flow.html) postFlows(body, language)
 
 Create flow
 
@@ -5156,8 +5220,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 ArchitectApi apiInstance = new ArchitectApi();
 Flow body = new Flow(); // Flow | 
+String language = "language_example"; // String | Language
 try {
-    Flow result = apiInstance.postFlows(body);
+    Flow result = apiInstance.postFlows(body, language);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#postFlows");
@@ -5171,6 +5236,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**Flow**](Flow.html)|  | 
+| **language** | **String**| Language | [optional] 
 {: class="table-striped"}
 
 

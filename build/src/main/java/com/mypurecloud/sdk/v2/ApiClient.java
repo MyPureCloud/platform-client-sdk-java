@@ -13,6 +13,8 @@ import java.io.InputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.net.URLEncoder;
 import java.net.Proxy;
 import java.text.DateFormat;
@@ -134,10 +136,7 @@ public class ApiClient implements AutoCloseable {
         String configFilePath = builder.configFilePath;
         if (configFilePath == null || configFilePath.isEmpty()) {
             String homePath = System.getProperty("user.home");
-            File homeDir = new File(homePath);
-            File subDir = new File(homeDir, ".genesyscloudjava");
-            File fullDir = new File(subDir, "config");
-            configFilePath = fullDir.getPath();
+            configFilePath = Paths.get(homePath, ".genesyscloudjava", "config").toString();
         }
         this.configFilePath = configFilePath;
 
@@ -964,7 +963,7 @@ public class ApiClient implements AutoCloseable {
         private Builder(ConnectorProperties properties) {
             this.properties = (properties != null) ? properties.copy() : new ConnectorProperties();
             withUserAgent(DEFAULT_USER_AGENT);
-            withDefaultHeader("purecloud-sdk", "125.0.0");
+            withDefaultHeader("purecloud-sdk", "126.0.0");
         }
 
         public Builder withDefaultHeader(String header, String value) {
@@ -1333,6 +1332,10 @@ public class ApiClient implements AutoCloseable {
             if (match == null)
                 throw new IllegalArgumentException("logFormat should be one of \"json\" or \"text\"");
             this.logFormat = logFormat.trim();
+        }
+
+        public void setLogFilePath(String logFilePath) {
+            this.logFilePath = logFilePath;
         }
 
         public void setLogToConsole(boolean logToConsole) {

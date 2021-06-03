@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.Edge;
 import com.mypurecloud.sdk.v2.model.EdgeAutoUpdateConfig;
 import com.mypurecloud.sdk.v2.model.LocationDefinition;
 import com.mypurecloud.sdk.v2.model.NTPSettings;
+import com.mypurecloud.sdk.v2.model.SiteConnection;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -149,6 +150,7 @@ public class Site  implements Serializable {
   }
   private MediaModelEnum mediaModel = null;
   private Boolean coreSite = null;
+  private List<SiteConnection> siteConnections = new ArrayList<SiteConnection>();
   private String selfUri = null;
 
   
@@ -536,10 +538,39 @@ public class Site  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The core site")
+  /**
+   * Is this site a core site
+   **/
+  public Site coreSite(Boolean coreSite) {
+    this.coreSite = coreSite;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Is this site a core site")
   @JsonProperty("coreSite")
   public Boolean getCoreSite() {
     return coreSite;
+  }
+  public void setCoreSite(Boolean coreSite) {
+    this.coreSite = coreSite;
+  }
+
+  
+  /**
+   * The site connections
+   **/
+  public Site siteConnections(List<SiteConnection> siteConnections) {
+    this.siteConnections = siteConnections;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The site connections")
+  @JsonProperty("siteConnections")
+  public List<SiteConnection> getSiteConnections() {
+    return siteConnections;
+  }
+  public void setSiteConnections(List<SiteConnection> siteConnections) {
+    this.siteConnections = siteConnections;
   }
 
   
@@ -584,12 +615,13 @@ public class Site  implements Serializable {
         Objects.equals(this.ntpSettings, site.ntpSettings) &&
         Objects.equals(this.mediaModel, site.mediaModel) &&
         Objects.equals(this.coreSite, site.coreSite) &&
+        Objects.equals(this.siteConnections, site.siteConnections) &&
         Objects.equals(this.selfUri, site.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, primarySites, secondarySites, primaryEdges, secondaryEdges, addresses, edges, edgeAutoUpdateConfig, mediaRegionsUseLatencyBased, location, managed, ntpSettings, mediaModel, coreSite, selfUri);
+    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, primarySites, secondarySites, primaryEdges, secondaryEdges, addresses, edges, edgeAutoUpdateConfig, mediaRegionsUseLatencyBased, location, managed, ntpSettings, mediaModel, coreSite, siteConnections, selfUri);
   }
 
   @Override
@@ -621,6 +653,7 @@ public class Site  implements Serializable {
     sb.append("    ntpSettings: ").append(toIndentedString(ntpSettings)).append("\n");
     sb.append("    mediaModel: ").append(toIndentedString(mediaModel)).append("\n");
     sb.append("    coreSite: ").append(toIndentedString(coreSite)).append("\n");
+    sb.append("    siteConnections: ").append(toIndentedString(siteConnections)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

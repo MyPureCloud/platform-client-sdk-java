@@ -8,13 +8,13 @@ title: MessagingRecipient
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **nickname** | <!----><!---->**String**<!----> | Nickname/user name |  [optional] |
-| **id** | <!----><!---->**String**<!----> | The recipient identifier specific for particular channel/integration. This is required when sending a message. |  |
-| **idType** | [**IdTypeEnum**](#IdTypeEnum)<!----> | The recipient identifier type. This is used to indicate the format used by the recipient identifier. |  [optional] |
-| **image** | <!----><!---->**String**<!----> | Path or URI to an image file containing an avatar |  [optional] |
-| **firstName** | <!----><!---->**String**<!----> | Sender&#39;s first name |  [optional] |
-| **lastName** | <!----><!---->**String**<!----> | Sender&#39;s last name |  [optional] |
-| **email** | <!----><!---->**String**<!----> | Sender&#39;s email address |  [optional] |
+| **nickname** | <!----><!---->**String**<!----> | Nickname or display name of the recipient. |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The recipient ID specific to the provider. |  |
+| **idType** | [**IdTypeEnum**](#IdTypeEnum)<!----> | The recipient ID type. This is used to indicate the format used for the ID. |  [optional] |
+| **image** | <!----><!---->**String**<!----> | URL of an image that represents the recipient. |  [optional] |
+| **firstName** | <!----><!---->**String**<!----> | First name of the recipient. |  [optional] |
+| **lastName** | <!----><!---->**String**<!----> | Last name of the recipient. |  [optional] |
+| **email** | <!----><!---->**String**<!----> | E-mail address of the recipient. |  [optional] |
 {: class="table table-striped"}
 
 

@@ -5,7 +5,7 @@ title: Platform API Client SDK - Java
 ## Resources
 
 [![platform-client-v2](https://maven-badges.herokuapp.com/maven-central/com.mypurecloud/platform-client-v2/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.mypurecloud/platform-client-v2)
-[![Release Notes Badge](https://developer.mypurecloud.com/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-java/blob/master/releaseNotes.md)
+[![Release Notes Badge](https://developer-content.genesys.cloud/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-java/blob/master/releaseNotes.md)
 
 * **Documentation** https://developer.mypurecloud.com/api/rest/client-libraries/java/
 * **Source** https://github.com/MyPureCloud/platform-client-sdk-java

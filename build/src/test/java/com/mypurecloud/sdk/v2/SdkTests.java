@@ -250,6 +250,10 @@ public class SdkTests {
                 return PureCloudRegionHosts.ap_northeast_2;
             case "euw2.pure.cloud":
                 return PureCloudRegionHosts.eu_west_2;
+            case "aps1.pure.cloud":
+                return PureCloudRegionHosts.ap_south_1;
+            case "use2.us-gov-pure.cloud":
+                return PureCloudRegionHosts.us_east_2;
             default:
                 System.out.println("Not in PureCloudRegionHosts using string value");
                 return null;

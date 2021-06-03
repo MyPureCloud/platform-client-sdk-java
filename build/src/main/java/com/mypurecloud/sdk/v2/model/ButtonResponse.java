@@ -21,7 +21,6 @@ import java.io.Serializable;
 
 public class ButtonResponse  implements Serializable {
   
-  private String id = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {
@@ -72,24 +71,6 @@ public class ButtonResponse  implements Serializable {
   private TypeEnum type = null;
   private String text = null;
   private String payload = null;
-
-  
-  /**
-   * An ID assigned to the button response.
-   **/
-  public ButtonResponse id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "An ID assigned to the button response.")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-  public void setId(String id) {
-    this.id = id;
-  }
 
   
   /**
@@ -156,15 +137,14 @@ public class ButtonResponse  implements Serializable {
       return false;
     }
     ButtonResponse buttonResponse = (ButtonResponse) o;
-    return Objects.equals(this.id, buttonResponse.id) &&
-        Objects.equals(this.type, buttonResponse.type) &&
+    return Objects.equals(this.type, buttonResponse.type) &&
         Objects.equals(this.text, buttonResponse.text) &&
         Objects.equals(this.payload, buttonResponse.payload);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, text, payload);
+    return Objects.hash(type, text, payload);
   }
 
   @Override
@@ -172,7 +152,6 @@ public class ButtonResponse  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ButtonResponse {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    payload: ").append(toIndentedString(payload)).append("\n");

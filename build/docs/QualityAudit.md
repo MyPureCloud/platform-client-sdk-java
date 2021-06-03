@@ -14,8 +14,8 @@ title: QualityAudit
 | **jobId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **level** | <!----><!---->**String**<!----> |  |  [optional] |
 | **entity** | <!----><!---->[**AuditEntity**](AuditEntity.html)<!----> |  |  [optional] |
-| **timestamp** | <!----><!---->**String**<!----> |  |  [optional] |
 | **action** | <!----><!---->**String**<!----> |  |  [optional] |
+| **timestamp** | <!----><!---->**String**<!----> |  |  [optional] |
 | **status** | <!----><!---->**String**<!----> |  |  [optional] |
 | **changes** | <!----><!---->[**List&lt;Change&gt;**](Change.html)<!----> |  |  [optional] |
 | **entityType** | <!----><!---->**String**<!----> |  |  [optional] |

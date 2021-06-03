@@ -21,7 +21,6 @@ import java.io.Serializable;
 
 public class QuickReply  implements Serializable {
   
-  private String id = null;
   private String text = null;
   private String payload = null;
   private String url = null;
@@ -73,24 +72,6 @@ public class QuickReply  implements Serializable {
   }
   private ActionEnum action = null;
   private Boolean isSelected = null;
-
-  
-  /**
-   * An ID assigned to the quick reply.
-   **/
-  public QuickReply id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "An ID assigned to the quick reply.")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-  public void setId(String id) {
-    this.id = id;
-  }
 
   
   /**
@@ -193,8 +174,7 @@ public class QuickReply  implements Serializable {
       return false;
     }
     QuickReply quickReply = (QuickReply) o;
-    return Objects.equals(this.id, quickReply.id) &&
-        Objects.equals(this.text, quickReply.text) &&
+    return Objects.equals(this.text, quickReply.text) &&
         Objects.equals(this.payload, quickReply.payload) &&
         Objects.equals(this.url, quickReply.url) &&
         Objects.equals(this.action, quickReply.action) &&
@@ -203,7 +183,7 @@ public class QuickReply  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, text, payload, url, action, isSelected);
+    return Objects.hash(text, payload, url, action, isSelected);
   }
 
   @Override
@@ -211,7 +191,6 @@ public class QuickReply  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class QuickReply {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");

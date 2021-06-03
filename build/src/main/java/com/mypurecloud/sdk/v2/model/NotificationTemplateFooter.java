@@ -15,9 +15,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Template footer object
+ * Template footer object.
  */
-@ApiModel(description = "Template footer object")
+@ApiModel(description = "Template footer object.")
 
 public class NotificationTemplateFooter  implements Serializable {
   
@@ -25,14 +25,14 @@ public class NotificationTemplateFooter  implements Serializable {
 
   
   /**
-   * Footer text. For WhatsApp, ignored
+   * Footer text. For WhatsApp, ignored.
    **/
   public NotificationTemplateFooter text(String text) {
     this.text = text;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Footer text. For WhatsApp, ignored")
+  @ApiModelProperty(example = "null", value = "Footer text. For WhatsApp, ignored.")
   @JsonProperty("text")
   public String getText() {
     return text;

@@ -85,6 +85,20 @@ public class PostFlowsRequest {
 	    return this;
 	} 
 	
+	private String language;
+	public String getLanguage() {
+		return this.language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+
+	public PostFlowsRequest withLanguage(String language) {
+	    this.setLanguage(language);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -113,6 +127,8 @@ public class PostFlowsRequest {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/flows")
+                .withQueryParameters("language", "", language)
+        
                 .withBody(body)
         
                 .withCustomHeaders(customHeaders)
@@ -143,6 +159,11 @@ public class PostFlowsRequest {
 		
 		public Builder withBody(Flow body) {
 			request.setBody(body);
+			return this;
+		}
+		
+		public Builder withLanguage(String language) {
+			request.setLanguage(language);
 			return this;
 		}
 		

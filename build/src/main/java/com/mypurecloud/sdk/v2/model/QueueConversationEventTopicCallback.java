@@ -214,6 +214,8 @@ public class QueueConversationEventTopicCallback  implements Serializable {
   private QueueConversationEventTopicWrapup wrapup = null;
   private QueueConversationEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
+  private String callerId = null;
+  private String callerIdName = null;
   private Object additionalProperties = null;
 
   
@@ -610,6 +612,40 @@ public class QueueConversationEventTopicCallback  implements Serializable {
   
   /**
    **/
+  public QueueConversationEventTopicCallback callerId(String callerId) {
+    this.callerId = callerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("callerId")
+  public String getCallerId() {
+    return callerId;
+  }
+  public void setCallerId(String callerId) {
+    this.callerId = callerId;
+  }
+
+  
+  /**
+   **/
+  public QueueConversationEventTopicCallback callerIdName(String callerIdName) {
+    this.callerIdName = callerIdName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("callerIdName")
+  public String getCallerIdName() {
+    return callerIdName;
+  }
+  public void setCallerIdName(String callerIdName) {
+    this.callerIdName = callerIdName;
+  }
+
+  
+  /**
+   **/
   public QueueConversationEventTopicCallback additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -658,12 +694,14 @@ public class QueueConversationEventTopicCallback  implements Serializable {
         Objects.equals(this.wrapup, queueConversationEventTopicCallback.wrapup) &&
         Objects.equals(this.afterCallWork, queueConversationEventTopicCallback.afterCallWork) &&
         Objects.equals(this.afterCallWorkRequired, queueConversationEventTopicCallback.afterCallWorkRequired) &&
+        Objects.equals(this.callerId, queueConversationEventTopicCallback.callerId) &&
+        Objects.equals(this.callerIdName, queueConversationEventTopicCallback.callerIdName) &&
         Objects.equals(this.additionalProperties, queueConversationEventTopicCallback.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, peerId, externalCampaign, skipEnabled, provider, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
+    return Objects.hash(state, id, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, peerId, externalCampaign, skipEnabled, provider, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, wrapup, afterCallWork, afterCallWorkRequired, callerId, callerIdName, additionalProperties);
   }
 
   @Override
@@ -694,6 +732,8 @@ public class QueueConversationEventTopicCallback  implements Serializable {
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
+    sb.append("    callerId: ").append(toIndentedString(callerId)).append("\n");
+    sb.append("    callerIdName: ").append(toIndentedString(callerIdName)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

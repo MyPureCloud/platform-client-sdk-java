@@ -31,7 +31,8 @@ title: Site
 | **managed** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **ntpSettings** | <!----><!---->[**NTPSettings**](NTPSettings.html)<!----> | Network Time Protocol settings for the site |  [optional] |
 | **mediaModel** | [**MediaModelEnum**](#MediaModelEnum)<!----> | Media model for the site |  [optional] |
-| **coreSite** | <!----><!---->**Boolean**<!----> | The core site |  [optional] |
+| **coreSite** | <!----><!---->**Boolean**<!----> | Is this site a core site |  [optional] |
+| **siteConnections** | <!----><!---->[**List&lt;SiteConnection&gt;**](SiteConnection.html)<!----> | The site connections |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

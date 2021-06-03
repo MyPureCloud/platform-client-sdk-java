@@ -15,9 +15,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Parameters for placeholders in template
+ * Template parameters for placeholders in template.
  */
-@ApiModel(description = "Parameters for placeholders in template")
+@ApiModel(description = "Template parameters for placeholders in template.")
 
 public class NotificationTemplateParameter  implements Serializable {
   
@@ -26,14 +26,14 @@ public class NotificationTemplateParameter  implements Serializable {
 
   
   /**
-   * Parameter name
+   * Parameter name.
    **/
   public NotificationTemplateParameter name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Parameter name")
+  @ApiModelProperty(example = "null", value = "Parameter name.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -44,14 +44,14 @@ public class NotificationTemplateParameter  implements Serializable {
 
   
   /**
-   * Parameter text value
+   * Parameter text value.
    **/
   public NotificationTemplateParameter text(String text) {
     this.text = text;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Parameter text value")
+  @ApiModelProperty(example = "null", required = true, value = "Parameter text value.")
   @JsonProperty("text")
   public String getText() {
     return text;

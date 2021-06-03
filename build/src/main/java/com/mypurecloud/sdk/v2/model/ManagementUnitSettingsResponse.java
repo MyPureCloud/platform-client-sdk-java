@@ -89,14 +89,14 @@ public class ManagementUnitSettingsResponse  implements Serializable {
 
   
   /**
-   * Scheduling settings for this management unit
+   * Scheduling settings for this management unit. These settings are only available if you have the permission wfm:managementUnit:view
    **/
   public ManagementUnitSettingsResponse scheduling(SchedulingSettingsResponse scheduling) {
     this.scheduling = scheduling;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Scheduling settings for this management unit")
+  @ApiModelProperty(example = "null", value = "Scheduling settings for this management unit. These settings are only available if you have the permission wfm:managementUnit:view")
   @JsonProperty("scheduling")
   public SchedulingSettingsResponse getScheduling() {
     return scheduling;

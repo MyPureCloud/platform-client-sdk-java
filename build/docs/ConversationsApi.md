@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteConversationsEmailMessagesDraftAttachment**](ConversationsApi.html#deleteConversationsEmailMessagesDraftAttachment) | Delete attachment from draft |
 | [**deleteConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsFacebookIntegrationId) | Delete a Facebook messaging integration |
 | [**deleteConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsLineIntegrationId) | Delete a LINE messenger integration |
+| [**deleteConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsOpenIntegrationId) | Delete an Open messaging integration |
 | [**deleteConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsTwitterIntegrationId) | Delete a Twitter messaging integration |
 | [**deleteConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsWhatsappIntegrationId) | Delete a WhatsApp messaging integration |
 | [**getAnalyticsConversationDetails**](ConversationsApi.html#getAnalyticsConversationDetails) | Get a conversation by id |
@@ -66,6 +67,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsFacebookIntegrationId) | Get a Facebook messaging integration |
 | [**getConversationsMessagingIntegrationsLine**](ConversationsApi.html#getConversationsMessagingIntegrationsLine) | Get a list of LINE messenger Integrations |
 | [**getConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsLineIntegrationId) | Get a LINE messenger integration |
+| [**getConversationsMessagingIntegrationsOpen**](ConversationsApi.html#getConversationsMessagingIntegrationsOpen) | Get a list of Open messaging integrations |
+| [**getConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsOpenIntegrationId) | Get an Open messaging integration |
 | [**getConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#getConversationsMessagingIntegrationsTwitter) | Get a list of Twitter Integrations |
 | [**getConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsTwitterIntegrationId) | Get a Twitter messaging integration |
 | [**getConversationsMessagingIntegrationsWhatsapp**](ConversationsApi.html#getConversationsMessagingIntegrationsWhatsapp) | Get a list of WhatsApp Integrations |
@@ -100,6 +103,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchConversationsMessageParticipantAttributes**](ConversationsApi.html#patchConversationsMessageParticipantAttributes) | Update the attributes on a conversation participant. |
 | [**patchConversationsMessageParticipantCommunication**](ConversationsApi.html#patchConversationsMessageParticipantCommunication) | Update conversation participant&#39;s communication by disconnecting it. |
 | [**patchConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsFacebookIntegrationId) | Update Facebook messaging integration |
+| [**patchConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsOpenIntegrationId) | Update an Open messaging integration |
 | [**patchConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsTwitterIntegrationId) | Update Twitter messaging integration |
 | [**patchConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsWhatsappIntegrationId) | Update or activate a WhatsApp messaging integration. |
 | [**postAnalyticsConversationDetailsProperties**](ConversationsApi.html#postAnalyticsConversationDetailsProperties) | Index conversation properties |
@@ -138,8 +142,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsMessageParticipantReplace**](ConversationsApi.html#postConversationsMessageParticipantReplace) | Replace this participant with the specified user and/or address |
 | [**postConversationsMessages**](ConversationsApi.html#postConversationsMessages) | Create an outbound messaging conversation. |
 | [**postConversationsMessagesAgentless**](ConversationsApi.html#postConversationsMessagesAgentless) | Send an agentless outbound message |
+| [**postConversationsMessagesInboundOpen**](ConversationsApi.html#postConversationsMessagesInboundOpen) | Send an inbound Open Message |
 | [**postConversationsMessagingIntegrationsFacebook**](ConversationsApi.html#postConversationsMessagingIntegrationsFacebook) | Create a Facebook Integration |
 | [**postConversationsMessagingIntegrationsLine**](ConversationsApi.html#postConversationsMessagingIntegrationsLine) | Create a LINE messenger Integration |
+| [**postConversationsMessagingIntegrationsOpen**](ConversationsApi.html#postConversationsMessagingIntegrationsOpen) | Create an Open messaging integration |
 | [**postConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#postConversationsMessagingIntegrationsTwitter) | Create a Twitter Integration |
 | [**postConversationsMessagingIntegrationsWhatsapp**](ConversationsApi.html#postConversationsMessagingIntegrationsWhatsapp) | Create a WhatsApp Integration |
 | [**putConversationParticipantFlaggedreason**](ConversationsApi.html#putConversationParticipantFlaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality. |
@@ -572,6 +578,68 @@ try {
     apiInstance.deleteConversationsMessagingIntegrationsLineIntegrationId(integrationId);
 } catch (ApiException e) {
     System.err.println("Exception when calling ConversationsApi#deleteConversationsMessagingIntegrationsLineIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteConversationsMessagingIntegrationsOpenIntegrationId"></a>
+
+# **deleteConversationsMessagingIntegrationsOpenIntegrationId**
+
+
+
+> Void deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId)
+
+Delete an Open messaging integration
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+Wraps DELETE /api/v2/conversations/messaging/integrations/open/{integrationId}  
+
+Requires ALL permissions: 
+
+* messaging:integration:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration ID
+try {
+    apiInstance.deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#deleteConversationsMessagingIntegrationsOpenIntegrationId");
     e.printStackTrace();
 }
 ```
@@ -3191,6 +3259,7 @@ Wraps GET /api/v2/conversations/messages/{conversationId}/communications/{commun
 Requires ANY permissions: 
 
 * conversation:message:view
+* conversation:webmessaging:view
 
 ### Example
 
@@ -3258,6 +3327,7 @@ Wraps GET /api/v2/conversations/messages/{conversationId}/messages/{messageId}
 Requires ANY permissions: 
 
 * conversation:message:view
+* conversation:webmessaging:view
 
 ### Example
 
@@ -3889,6 +3959,140 @@ try {
 ### Return type
 
 [**LineIntegration**](LineIntegration.html)
+
+<a name="getConversationsMessagingIntegrationsOpen"></a>
+
+# **getConversationsMessagingIntegrationsOpen**
+
+
+
+> [OpenIntegrationEntityListing](OpenIntegrationEntityListing.html) getConversationsMessagingIntegrationsOpen(pageSize, pageNumber, expand, supportedContentId)
+
+Get a list of Open messaging integrations
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+Wraps GET /api/v2/conversations/messaging/integrations/open  
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+Integer pageSize = 25; // Integer | Page size
+Integer pageNumber = 1; // Integer | Page number
+String expand = "expand_example"; // String | Expand instructions for the return value.
+String supportedContentId = "supportedContentId_example"; // String | Filter integrations returned based on the supported content ID
+try {
+    OpenIntegrationEntityListing result = apiInstance.getConversationsMessagingIntegrationsOpen(pageSize, pageNumber, expand, supportedContentId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsOpen");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent 
+| **supportedContentId** | **String**| Filter integrations returned based on the supported content ID | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OpenIntegrationEntityListing**](OpenIntegrationEntityListing.html)
+
+<a name="getConversationsMessagingIntegrationsOpenIntegrationId"></a>
+
+# **getConversationsMessagingIntegrationsOpenIntegrationId**
+
+
+
+> [OpenIntegration](OpenIntegration.html) getConversationsMessagingIntegrationsOpenIntegrationId(integrationId, expand)
+
+Get an Open messaging integration
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+Wraps GET /api/v2/conversations/messaging/integrations/open/{integrationId}  
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration ID
+String expand = "expand_example"; // String | Expand instructions for the return value.
+try {
+    OpenIntegration result = apiInstance.getConversationsMessagingIntegrationsOpenIntegrationId(integrationId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessagingIntegrationsOpenIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration ID | 
+| **expand** | **String**| Expand instructions for the return value. | [optional]<br />**Values**: supportedContent 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OpenIntegration**](OpenIntegration.html)
 
 <a name="getConversationsMessagingIntegrationsTwitter"></a>
 
@@ -6123,6 +6327,71 @@ try {
 
 [**FacebookIntegration**](FacebookIntegration.html)
 
+<a name="patchConversationsMessagingIntegrationsOpenIntegrationId"></a>
+
+# **patchConversationsMessagingIntegrationsOpenIntegrationId**
+
+
+
+> [OpenIntegration](OpenIntegration.html) patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId, body)
+
+Update an Open messaging integration
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+Wraps PATCH /api/v2/conversations/messaging/integrations/open/{integrationId}  
+
+Requires ALL permissions: 
+
+* messaging:integration:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String integrationId = "integrationId_example"; // String | Integration ID
+OpenIntegrationUpdateRequest body = new OpenIntegrationUpdateRequest(); // OpenIntegrationUpdateRequest | OpenIntegrationUpdateRequest
+try {
+    OpenIntegration result = apiInstance.patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#patchConversationsMessagingIntegrationsOpenIntegrationId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| Integration ID | 
+| **body** | [**OpenIntegrationUpdateRequest**](OpenIntegrationUpdateRequest.html)| OpenIntegrationUpdateRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OpenIntegration**](OpenIntegration.html)
+
 <a name="patchConversationsMessagingIntegrationsTwitterIntegrationId"></a>
 
 # **patchConversationsMessagingIntegrationsTwitterIntegrationId**
@@ -8203,9 +8472,10 @@ Send message on existing conversation/communication. Only one message body field
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages  
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * conversation:message:create
+* conversation:webmessaging:create
 
 ### Example
 
@@ -8270,9 +8540,10 @@ See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-up
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media  
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * conversation:message:create
+* conversation:webmessaging:create
 
 ### Example
 
@@ -8338,6 +8609,7 @@ Wraps POST /api/v2/conversations/messages/{conversationId}/messages/bulk
 Requires ANY permissions: 
 
 * conversation:message:view
+* conversation:webmessaging:view
 
 ### Example
 
@@ -8577,6 +8849,69 @@ try {
 
 [**SendAgentlessOutboundMessageResponse**](SendAgentlessOutboundMessageResponse.html)
 
+<a name="postConversationsMessagesInboundOpen"></a>
+
+# **postConversationsMessagesInboundOpen**
+
+
+
+> [OpenNormalizedMessage](OpenNormalizedMessage.html) postConversationsMessagesInboundOpen(body)
+
+Send an inbound Open Message
+
+Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+
+Wraps POST /api/v2/conversations/messages/inbound/open  
+
+Requires ALL permissions: 
+
+* conversation:message:receive
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+OpenNormalizedMessage body = new OpenNormalizedMessage(); // OpenNormalizedMessage | NormalizedMessage
+try {
+    OpenNormalizedMessage result = apiInstance.postConversationsMessagesInboundOpen(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessagesInboundOpen");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**OpenNormalizedMessage**](OpenNormalizedMessage.html)| NormalizedMessage | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OpenNormalizedMessage**](OpenNormalizedMessage.html)
+
 <a name="postConversationsMessagingIntegrationsFacebook"></a>
 
 # **postConversationsMessagingIntegrationsFacebook**
@@ -8702,6 +9037,69 @@ try {
 ### Return type
 
 [**LineIntegration**](LineIntegration.html)
+
+<a name="postConversationsMessagingIntegrationsOpen"></a>
+
+# **postConversationsMessagingIntegrationsOpen**
+
+
+
+> [OpenIntegration](OpenIntegration.html) postConversationsMessagingIntegrationsOpen(body)
+
+Create an Open messaging integration
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+Wraps POST /api/v2/conversations/messaging/integrations/open  
+
+Requires ALL permissions: 
+
+* messaging:integration:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+OpenIntegrationRequest body = new OpenIntegrationRequest(); // OpenIntegrationRequest | OpenIntegrationRequest
+try {
+    OpenIntegration result = apiInstance.postConversationsMessagingIntegrationsOpen(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessagingIntegrationsOpen");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**OpenIntegrationRequest**](OpenIntegrationRequest.html)| OpenIntegrationRequest | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OpenIntegration**](OpenIntegration.html)
 
 <a name="postConversationsMessagingIntegrationsTwitter"></a>
 

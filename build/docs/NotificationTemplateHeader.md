@@ -8,10 +8,10 @@ title: NotificationTemplateHeader
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **type** | [**TypeEnum**](#TypeEnum)<!----> | Template header type |  |
-| **text** | <!----><!---->**String**<!----> | Header text. For WhatsApp, ignored |  [optional] |
-| **media** | <!----><!---->[**ContentAttachment**](ContentAttachment.html)<!----> | Attachment object |  [optional] |
-| **parameters** | <!----><!---->[**List&lt;NotificationTemplateParameter&gt;**](NotificationTemplateParameter.html)<!----> | Template parameters for placeholders in template |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> | Template header type. |  |
+| **text** | <!----><!---->**String**<!----> | Header text. For WhatsApp, ignored. |  [optional] |
+| **media** | <!----><!---->[**ContentAttachment**](ContentAttachment.html)<!----> | Media template header image. |  [optional] |
+| **parameters** | <!----><!---->[**List&lt;NotificationTemplateParameter&gt;**](NotificationTemplateParameter.html)<!----> | Template parameters for placeholders in template. |  [optional] |
 {: class="table table-striped"}
 
 

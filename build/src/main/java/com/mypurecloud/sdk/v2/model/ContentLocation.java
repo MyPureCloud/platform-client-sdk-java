@@ -15,9 +15,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Location object
+ * Location object.
  */
-@ApiModel(description = "Location object")
+@ApiModel(description = "Location object.")
 
 public class ContentLocation  implements Serializable {
   
@@ -29,14 +29,14 @@ public class ContentLocation  implements Serializable {
 
   
   /**
-   * Location map url
+   * URL of the Location.
    **/
   public ContentLocation url(String url) {
     this.url = url;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Location map url")
+  @ApiModelProperty(example = "null", value = "URL of the Location.")
   @JsonProperty("url")
   public String getUrl() {
     return url;
@@ -47,14 +47,14 @@ public class ContentLocation  implements Serializable {
 
   
   /**
-   * Location postal address
+   * Location postal address.
    **/
   public ContentLocation address(String address) {
     this.address = address;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Location postal address")
+  @ApiModelProperty(example = "null", value = "Location postal address.")
   @JsonProperty("address")
   public String getAddress() {
     return address;
@@ -65,14 +65,14 @@ public class ContentLocation  implements Serializable {
 
   
   /**
-   * Location name
+   * Location name.
    **/
   public ContentLocation text(String text) {
     this.text = text;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Location name")
+  @ApiModelProperty(example = "null", value = "Location name.")
   @JsonProperty("text")
   public String getText() {
     return text;
@@ -83,14 +83,14 @@ public class ContentLocation  implements Serializable {
 
   
   /**
-   * Latitude of the location
+   * Latitude of the location.
    **/
   public ContentLocation latitude(Double latitude) {
     this.latitude = latitude;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Latitude of the location")
+  @ApiModelProperty(example = "null", value = "Latitude of the location.")
   @JsonProperty("latitude")
   public Double getLatitude() {
     return latitude;
@@ -101,14 +101,14 @@ public class ContentLocation  implements Serializable {
 
   
   /**
-   * Longitude of the location
+   * Longitude of the location.
    **/
   public ContentLocation longitude(Double longitude) {
     this.longitude = longitude;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Longitude of the location")
+  @ApiModelProperty(example = "null", value = "Longitude of the location.")
   @JsonProperty("longitude")
   public Double getLongitude() {
     return longitude;

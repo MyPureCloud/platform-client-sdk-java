@@ -8,8 +8,8 @@ title: ContentReaction
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **reactionType** | [**ReactionTypeEnum**](#ReactionTypeEnum)<!----> | Type of reaction |  [optional] |
-| **count** | <!----><!---->**Integer**<!----> | Number of users that reacted this way to this public message |  [optional] |
+| **reactionType** | [**ReactionTypeEnum**](#ReactionTypeEnum)<!----> | Type of reaction. |  [optional] |
+| **count** | <!----><!---->**Integer**<!----> | Number of users that reacted this way to the message. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -20,7 +20,6 @@ title: ContentReaction
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NONE | &quot;None&quot; |
 | LIKE | &quot;Like&quot; |
 | LOVE | &quot;Love&quot; |
 | WOW | &quot;Wow&quot; |

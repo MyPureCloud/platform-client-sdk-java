@@ -21,6 +21,8 @@ import java.util.Date;
 import com.mypurecloud.sdk.v2.model.CalibrationEntityListing;
 import com.mypurecloud.sdk.v2.model.QualityAuditPage;
 import com.mypurecloud.sdk.v2.model.Survey;
+import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionStatusResponse;
+import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionResultsResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
@@ -33,6 +35,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.CalibrationCreate;
+import com.mypurecloud.sdk.v2.model.QMAuditQueryRequest;
 import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 import com.mypurecloud.sdk.v2.model.PublishForm;
@@ -51,6 +54,8 @@ import com.mypurecloud.sdk.v2.api.request.GetQualityCalibrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityConversationAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityConversationEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityConversationSurveysRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityConversationsAuditsQueryTransactionIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityConversationsAuditsQueryTransactionIdResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityEvaluationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityEvaluatorsActivityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormRequest;
@@ -77,6 +82,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsEvaluationsAggregatesQuer
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSurveysAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityCalibrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityConversationEvaluationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostQualityConversationsAuditsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityEvaluationsScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsEvaluationsRequest;
@@ -722,7 +728,7 @@ public class QualityApiAsync {
   
   /**
    * Get audits for conversation or recording
-   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.
+   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.This endpoint is deprecated. Use following async endpoints, To query for audits POST /api/v2/quality/conversations/audits/queryTo get status of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}To get results of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}/results
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -756,7 +762,7 @@ public class QualityApiAsync {
 
   /**
    * Get audits for conversation or recording
-   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.
+   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.This endpoint is deprecated. Use following async endpoints, To query for audits POST /api/v2/quality/conversations/audits/queryTo get status of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}To get results of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}/results
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -936,6 +942,158 @@ public class QualityApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<List<Survey>> response = (ApiResponse<List<Survey>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get status of audit query execution
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<QualityAuditQueryExecutionStatusResponse> getQualityConversationsAuditsQueryTransactionIdAsync(GetQualityConversationsAuditsQueryTransactionIdRequest request, final AsyncApiCallback<QualityAuditQueryExecutionStatusResponse> callback) {
+    try {
+      final SettableFuture<QualityAuditQueryExecutionStatusResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QualityAuditQueryExecutionStatusResponse>() {}, new AsyncApiCallback<ApiResponse<QualityAuditQueryExecutionStatusResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<QualityAuditQueryExecutionStatusResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get status of audit query execution
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<QualityAuditQueryExecutionStatusResponse>> getQualityConversationsAuditsQueryTransactionIdAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<QualityAuditQueryExecutionStatusResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<QualityAuditQueryExecutionStatusResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<QualityAuditQueryExecutionStatusResponse>() {}, new AsyncApiCallback<ApiResponse<QualityAuditQueryExecutionStatusResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<QualityAuditQueryExecutionStatusResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<QualityAuditQueryExecutionStatusResponse> response = (ApiResponse<QualityAuditQueryExecutionStatusResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<QualityAuditQueryExecutionStatusResponse> response = (ApiResponse<QualityAuditQueryExecutionStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get results of audit query
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<QualityAuditQueryExecutionResultsResponse> getQualityConversationsAuditsQueryTransactionIdResultsAsync(GetQualityConversationsAuditsQueryTransactionIdResultsRequest request, final AsyncApiCallback<QualityAuditQueryExecutionResultsResponse> callback) {
+    try {
+      final SettableFuture<QualityAuditQueryExecutionResultsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QualityAuditQueryExecutionResultsResponse>() {}, new AsyncApiCallback<ApiResponse<QualityAuditQueryExecutionResultsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<QualityAuditQueryExecutionResultsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get results of audit query
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<QualityAuditQueryExecutionResultsResponse>> getQualityConversationsAuditsQueryTransactionIdResultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<QualityAuditQueryExecutionResultsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<QualityAuditQueryExecutionResultsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<QualityAuditQueryExecutionResultsResponse>() {}, new AsyncApiCallback<ApiResponse<QualityAuditQueryExecutionResultsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<QualityAuditQueryExecutionResultsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<QualityAuditQueryExecutionResultsResponse> response = (ApiResponse<QualityAuditQueryExecutionResultsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<QualityAuditQueryExecutionResultsResponse> response = (ApiResponse<QualityAuditQueryExecutionResultsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2912,6 +3070,82 @@ public class QualityApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Create audit query execution
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<QualityAuditQueryExecutionStatusResponse> postQualityConversationsAuditsQueryAsync(PostQualityConversationsAuditsQueryRequest request, final AsyncApiCallback<QualityAuditQueryExecutionStatusResponse> callback) {
+    try {
+      final SettableFuture<QualityAuditQueryExecutionStatusResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QualityAuditQueryExecutionStatusResponse>() {}, new AsyncApiCallback<ApiResponse<QualityAuditQueryExecutionStatusResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<QualityAuditQueryExecutionStatusResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create audit query execution
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<QualityAuditQueryExecutionStatusResponse>> postQualityConversationsAuditsQueryAsync(ApiRequest<QMAuditQueryRequest> request, final AsyncApiCallback<ApiResponse<QualityAuditQueryExecutionStatusResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<QualityAuditQueryExecutionStatusResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<QualityAuditQueryExecutionStatusResponse>() {}, new AsyncApiCallback<ApiResponse<QualityAuditQueryExecutionStatusResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<QualityAuditQueryExecutionStatusResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<QualityAuditQueryExecutionStatusResponse> response = (ApiResponse<QualityAuditQueryExecutionStatusResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<QualityAuditQueryExecutionStatusResponse> response = (ApiResponse<QualityAuditQueryExecutionStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

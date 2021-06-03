@@ -16,9 +16,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Attachment object
+ * Attachment object.
  */
-@ApiModel(description = "Attachment object")
+@ApiModel(description = "Attachment object.")
 
 public class ContentAttachment  implements Serializable {
   
@@ -37,7 +37,7 @@ public class ContentAttachment  implements Serializable {
     }
   }
   /**
-   * The type of media this instance represents
+   * The type of attachment this instance represents.
    */
  @JsonDeserialize(using = MediaTypeEnumDeserializer.class)
   public enum MediaTypeEnum {
@@ -81,14 +81,14 @@ public class ContentAttachment  implements Serializable {
 
   
   /**
-   * Vendor specific ID for media. For example, a LINE sticker ID
+   * Provider specific ID for attachment. For example, a LINE sticker ID.
    **/
   public ContentAttachment id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Vendor specific ID for media. For example, a LINE sticker ID")
+  @ApiModelProperty(example = "null", value = "Provider specific ID for attachment. For example, a LINE sticker ID.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -99,14 +99,14 @@ public class ContentAttachment  implements Serializable {
 
   
   /**
-   * The type of media this instance represents
+   * The type of attachment this instance represents.
    **/
   public ContentAttachment mediaType(MediaTypeEnum mediaType) {
     this.mediaType = mediaType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The type of media this instance represents")
+  @ApiModelProperty(example = "null", required = true, value = "The type of attachment this instance represents.")
   @JsonProperty("mediaType")
   public MediaTypeEnum getMediaType() {
     return mediaType;
@@ -117,14 +117,14 @@ public class ContentAttachment  implements Serializable {
 
   
   /**
-   * Content element url
+   * URL of the attachment.
    **/
   public ContentAttachment url(String url) {
     this.url = url;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Content element url")
+  @ApiModelProperty(example = "null", value = "URL of the attachment.")
   @JsonProperty("url")
   public String getUrl() {
     return url;
@@ -135,14 +135,14 @@ public class ContentAttachment  implements Serializable {
 
   
   /**
-   * Content mime type from https://www.iana.org/assignments/media-types/media-types.xhtml
+   * Attachment mime type (https://www.iana.org/assignments/media-types/media-types.xhtml).
    **/
   public ContentAttachment mime(String mime) {
     this.mime = mime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Content mime type from https://www.iana.org/assignments/media-types/media-types.xhtml")
+  @ApiModelProperty(example = "null", value = "Attachment mime type (https://www.iana.org/assignments/media-types/media-types.xhtml).")
   @JsonProperty("mime")
   public String getMime() {
     return mime;
@@ -153,14 +153,14 @@ public class ContentAttachment  implements Serializable {
 
   
   /**
-   * Text message associated with media element: e.g. caption in case of image.
+   * Text associated with attachment such as an image caption.
    **/
   public ContentAttachment text(String text) {
     this.text = text;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Text message associated with media element: e.g. caption in case of image.")
+  @ApiModelProperty(example = "null", value = "Text associated with attachment such as an image caption.")
   @JsonProperty("text")
   public String getText() {
     return text;
@@ -171,14 +171,14 @@ public class ContentAttachment  implements Serializable {
 
   
   /**
-   * Secure hash of the media content
+   * Secure hash of the attachment content.
    **/
   public ContentAttachment sha256(String sha256) {
     this.sha256 = sha256;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Secure hash of the media content")
+  @ApiModelProperty(example = "null", value = "Secure hash of the attachment content.")
   @JsonProperty("sha256")
   public String getSha256() {
     return sha256;
@@ -189,14 +189,14 @@ public class ContentAttachment  implements Serializable {
 
   
   /**
-   * Suggested file name for media file
+   * Suggested file name for attachment.
    **/
   public ContentAttachment filename(String filename) {
     this.filename = filename;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Suggested file name for media file")
+  @ApiModelProperty(example = "null", value = "Suggested file name for attachment.")
   @JsonProperty("filename")
   public String getFilename() {
     return filename;

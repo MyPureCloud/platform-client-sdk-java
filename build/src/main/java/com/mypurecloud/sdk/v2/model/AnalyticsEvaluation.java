@@ -32,8 +32,8 @@ public class AnalyticsEvaluation  implements Serializable {
   private String queueId = null;
   private Boolean rescored = null;
   private String userId = null;
-  private Long getoTotalCriticalScore = null;
-  private Long getoTotalScore = null;
+  private Long oTotalCriticalScore = null;
+  private Long oTotalScore = null;
 
   
   /**
@@ -235,38 +235,36 @@ public class AnalyticsEvaluation  implements Serializable {
 
   
   /**
-   * Total critical score of the evaluation
    **/
-  public AnalyticsEvaluation getoTotalCriticalScore(Long getoTotalCriticalScore) {
-    this.getoTotalCriticalScore = getoTotalCriticalScore;
+  public AnalyticsEvaluation oTotalCriticalScore(Long oTotalCriticalScore) {
+    this.oTotalCriticalScore = oTotalCriticalScore;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Total critical score of the evaluation")
-  @JsonProperty("getoTotalCriticalScore")
-  public Long getGetoTotalCriticalScore() {
-    return getoTotalCriticalScore;
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("oTotalCriticalScore")
+  public Long getOTotalCriticalScore() {
+    return oTotalCriticalScore;
   }
-  public void setGetoTotalCriticalScore(Long getoTotalCriticalScore) {
-    this.getoTotalCriticalScore = getoTotalCriticalScore;
+  public void setOTotalCriticalScore(Long oTotalCriticalScore) {
+    this.oTotalCriticalScore = oTotalCriticalScore;
   }
 
   
   /**
-   * Total score of the evaluation
    **/
-  public AnalyticsEvaluation getoTotalScore(Long getoTotalScore) {
-    this.getoTotalScore = getoTotalScore;
+  public AnalyticsEvaluation oTotalScore(Long oTotalScore) {
+    this.oTotalScore = oTotalScore;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Total score of the evaluation")
-  @JsonProperty("getoTotalScore")
-  public Long getGetoTotalScore() {
-    return getoTotalScore;
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("oTotalScore")
+  public Long getOTotalScore() {
+    return oTotalScore;
   }
-  public void setGetoTotalScore(Long getoTotalScore) {
-    this.getoTotalScore = getoTotalScore;
+  public void setOTotalScore(Long oTotalScore) {
+    this.oTotalScore = oTotalScore;
   }
 
   
@@ -291,13 +289,13 @@ public class AnalyticsEvaluation  implements Serializable {
         Objects.equals(this.queueId, analyticsEvaluation.queueId) &&
         Objects.equals(this.rescored, analyticsEvaluation.rescored) &&
         Objects.equals(this.userId, analyticsEvaluation.userId) &&
-        Objects.equals(this.getoTotalCriticalScore, analyticsEvaluation.getoTotalCriticalScore) &&
-        Objects.equals(this.getoTotalScore, analyticsEvaluation.getoTotalScore);
+        Objects.equals(this.oTotalCriticalScore, analyticsEvaluation.oTotalCriticalScore) &&
+        Objects.equals(this.oTotalScore, analyticsEvaluation.oTotalScore);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(calibrationId, contextId, deleted, evaluationId, evaluatorId, eventTime, formId, formName, queueId, rescored, userId, getoTotalCriticalScore, getoTotalScore);
+    return Objects.hash(calibrationId, contextId, deleted, evaluationId, evaluatorId, eventTime, formId, formName, queueId, rescored, userId, oTotalCriticalScore, oTotalScore);
   }
 
   @Override
@@ -316,8 +314,8 @@ public class AnalyticsEvaluation  implements Serializable {
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
     sb.append("    rescored: ").append(toIndentedString(rescored)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-    sb.append("    getoTotalCriticalScore: ").append(toIndentedString(getoTotalCriticalScore)).append("\n");
-    sb.append("    getoTotalScore: ").append(toIndentedString(getoTotalScore)).append("\n");
+    sb.append("    oTotalCriticalScore: ").append(toIndentedString(oTotalCriticalScore)).append("\n");
+    sb.append("    oTotalScore: ").append(toIndentedString(oTotalScore)).append("\n");
     sb.append("}");
     return sb.toString();
   }

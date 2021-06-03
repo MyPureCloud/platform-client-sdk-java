@@ -68,6 +68,7 @@ title: JourneyAggregationQuery
 | Name | Value |
 | ---- | ----- |
 | NDISTINCTJOURNEYACTIONS | &quot;nDistinctJourneyActions&quot; |
+| NDISTINCTJOURNEYSESSIONS | &quot;nDistinctJourneySessions&quot; |
 | NJOURNEYACTIONSBLOCKED | &quot;nJourneyActionsBlocked&quot; |
 | NJOURNEYOUTCOMESACHIEVED | &quot;nJourneyOutcomesAchieved&quot; |
 | NJOURNEYOUTCOMESATTRIBUTED | &quot;nJourneyOutcomesAttributed&quot; |

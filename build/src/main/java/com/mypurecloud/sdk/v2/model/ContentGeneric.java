@@ -19,9 +19,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Generic content object
+ * Generic content object.
  */
-@ApiModel(description = "Generic content object")
+@ApiModel(description = "Generic content object.")
 
 public class ContentGeneric  implements Serializable {
   
@@ -35,14 +35,14 @@ public class ContentGeneric  implements Serializable {
 
   
   /**
-   * An ID assigned to this rich message content. Each instance inside the content array has a unique ID.
+   * A unique ID assigned to this rich message content.
    **/
   public ContentGeneric id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "An ID assigned to this rich message content. Each instance inside the content array has a unique ID.")
+  @ApiModelProperty(example = "null", value = "A unique ID assigned to this rich message content.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -53,14 +53,14 @@ public class ContentGeneric  implements Serializable {
 
   
   /**
-   * Text to show in the title row
+   * Text to show in the title.
    **/
   public ContentGeneric title(String title) {
     this.title = title;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Text to show in the title row")
+  @ApiModelProperty(example = "null", value = "Text to show in the title.")
   @JsonProperty("title")
   public String getTitle() {
     return title;
@@ -71,14 +71,14 @@ public class ContentGeneric  implements Serializable {
 
   
   /**
-   * Text to show in the description row. This is immediately below the title
+   * Text to show in the description.
    **/
   public ContentGeneric description(String description) {
     this.description = description;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Text to show in the description row. This is immediately below the title")
+  @ApiModelProperty(example = "null", value = "Text to show in the description.")
   @JsonProperty("description")
   public String getDescription() {
     return description;
@@ -89,14 +89,14 @@ public class ContentGeneric  implements Serializable {
 
   
   /**
-   * Path or URI to an image file
+   * URL of an image.
    **/
   public ContentGeneric image(String image) {
     this.image = image;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Path or URI to an image file")
+  @ApiModelProperty(example = "null", value = "URL of an image.")
   @JsonProperty("image")
   public String getImage() {
     return image;
@@ -107,14 +107,14 @@ public class ContentGeneric  implements Serializable {
 
   
   /**
-   * Path or URI to a video file
+   * URL of a video.
    **/
   public ContentGeneric video(String video) {
     this.video = video;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Path or URI to a video file")
+  @ApiModelProperty(example = "null", value = "URL of a video.")
   @JsonProperty("video")
   public String getVideo() {
     return video;
@@ -125,14 +125,14 @@ public class ContentGeneric  implements Serializable {
 
   
   /**
-   * User actions available on the content. All actions are optional and all actions are executed simultaneously.
+   * Actions to be taken.
    **/
   public ContentGeneric actions(ContentActions actions) {
     this.actions = actions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "User actions available on the content. All actions are optional and all actions are executed simultaneously.")
+  @ApiModelProperty(example = "null", value = "Actions to be taken.")
   @JsonProperty("actions")
   public ContentActions getActions() {
     return actions;
@@ -143,14 +143,14 @@ public class ContentGeneric  implements Serializable {
 
   
   /**
-   * An array of component objects
+   * An array of component objects.
    **/
   public ContentGeneric components(List<ButtonComponent> components) {
     this.components = components;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "An array of component objects")
+  @ApiModelProperty(example = "null", value = "An array of component objects.")
   @JsonProperty("components")
   public List<ButtonComponent> getComponents() {
     return components;

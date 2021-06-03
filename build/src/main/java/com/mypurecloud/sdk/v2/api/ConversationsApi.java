@@ -49,6 +49,8 @@ import com.mypurecloud.sdk.v2.model.FacebookIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.FacebookIntegration;
 import com.mypurecloud.sdk.v2.model.LineIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.LineIntegration;
+import com.mypurecloud.sdk.v2.model.OpenIntegrationEntityListing;
+import com.mypurecloud.sdk.v2.model.OpenIntegration;
 import com.mypurecloud.sdk.v2.model.TwitterIntegrationEntityListing;
 import com.mypurecloud.sdk.v2.model.TwitterIntegration;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationEntityListing;
@@ -60,6 +62,7 @@ import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ConsultTransferUpdate;
 import com.mypurecloud.sdk.v2.model.ConsultTransferResponse;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationUpdateRequest;
+import com.mypurecloud.sdk.v2.model.OpenIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.TwitterIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationUpdateRequest;
 import com.mypurecloud.sdk.v2.model.PropertyIndexRequest;
@@ -93,8 +96,10 @@ import com.mypurecloud.sdk.v2.model.TextMessageListing;
 import com.mypurecloud.sdk.v2.model.CreateOutboundMessagingConversationRequest;
 import com.mypurecloud.sdk.v2.model.SendAgentlessOutboundMessageRequest;
 import com.mypurecloud.sdk.v2.model.SendAgentlessOutboundMessageResponse;
+import com.mypurecloud.sdk.v2.model.OpenNormalizedMessage;
 import com.mypurecloud.sdk.v2.model.FacebookIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.LineIntegrationRequest;
+import com.mypurecloud.sdk.v2.model.OpenIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.WhatsAppIntegrationRequest;
 import com.mypurecloud.sdk.v2.model.SetUuiDataRequest;
 
@@ -106,6 +111,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteConversationsCallParticipantCons
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsEmailMessagesDraftAttachmentRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsLineIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationDetailsRequest;
@@ -158,6 +164,8 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsF
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsLineRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsLineIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsOpenRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsOpenIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsTwitterRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessagingIntegrationsWhatsappRequest;
@@ -192,6 +200,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantRe
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantAttributesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessageParticipantCommunicationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsFacebookIntegrationIdRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsOpenIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsTwitterIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchConversationsMessagingIntegrationsWhatsappIntegrationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsConversationDetailsPropertiesRequest;
@@ -230,8 +239,10 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageMessagesBulkRe
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantReplaceRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesAgentlessRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesInboundOpenRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsFacebookRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsLineRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsOpenRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsTwitterRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagingIntegrationsWhatsappRequest;
 import com.mypurecloud.sdk.v2.api.request.PutConversationParticipantFlaggedreasonRequest;
@@ -789,6 +800,82 @@ public class ConversationsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteConversationsMessagingIntegrationsLineIntegrationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete an Open messaging integration
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * @param integrationId Integration ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagingIntegrationsOpenIntegrationId(String integrationId) throws IOException, ApiException {
+     deleteConversationsMessagingIntegrationsOpenIntegrationId(createDeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest(integrationId));
+  }
+
+  /**
+   * Delete an Open messaging integration
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * @param integrationId Integration ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagingIntegrationsOpenIntegrationIdWithHttpInfo(String integrationId) throws IOException {
+    return deleteConversationsMessagingIntegrationsOpenIntegrationId(createDeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest(integrationId).withHttpInfo());
+  }
+
+  private DeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest createDeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest(String integrationId) {
+    return DeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+    
+            .build();
+  }
+
+  /**
+   * Delete an Open messaging integration
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteConversationsMessagingIntegrationsOpenIntegrationId(DeleteConversationsMessagingIntegrationsOpenIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete an Open messaging integration
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteConversationsMessagingIntegrationsOpenIntegrationId(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -5077,6 +5164,180 @@ public class ConversationsApi {
 
   
   /**
+   * Get a list of Open messaging integrations
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param expand Expand instructions for the return value. (optional)
+   * @param supportedContentId Filter integrations returned based on the supported content ID (optional)
+   * @return OpenIntegrationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenIntegrationEntityListing getConversationsMessagingIntegrationsOpen(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsOpen(createGetConversationsMessagingIntegrationsOpenRequest(pageSize, pageNumber, expand, supportedContentId));
+  }
+
+  /**
+   * Get a list of Open messaging integrations
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * @param pageSize Page size (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param expand Expand instructions for the return value. (optional)
+   * @param supportedContentId Filter integrations returned based on the supported content ID (optional)
+   * @return OpenIntegrationEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenIntegrationEntityListing> getConversationsMessagingIntegrationsOpenWithHttpInfo(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) throws IOException {
+    return getConversationsMessagingIntegrationsOpen(createGetConversationsMessagingIntegrationsOpenRequest(pageSize, pageNumber, expand, supportedContentId).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationsOpenRequest createGetConversationsMessagingIntegrationsOpenRequest(Integer pageSize, Integer pageNumber, String expand, String supportedContentId) {
+    return GetConversationsMessagingIntegrationsOpenRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .withExpand(expand)
+    
+            .withSupportedContentId(supportedContentId)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of Open messaging integrations
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * @param request The request object
+   * @return OpenIntegrationEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenIntegrationEntityListing getConversationsMessagingIntegrationsOpen(GetConversationsMessagingIntegrationsOpenRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OpenIntegrationEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OpenIntegrationEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Open messaging integrations
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenIntegrationEntityListing> getConversationsMessagingIntegrationsOpen(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OpenIntegrationEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenIntegrationEntityListing> response = (ApiResponse<OpenIntegrationEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenIntegrationEntityListing> response = (ApiResponse<OpenIntegrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get an Open messaging integration
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * @param integrationId Integration ID (required)
+   * @param expand Expand instructions for the return value. (optional)
+   * @return OpenIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenIntegration getConversationsMessagingIntegrationsOpenIntegrationId(String integrationId, String expand) throws IOException, ApiException {
+    return  getConversationsMessagingIntegrationsOpenIntegrationId(createGetConversationsMessagingIntegrationsOpenIntegrationIdRequest(integrationId, expand));
+  }
+
+  /**
+   * Get an Open messaging integration
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * @param integrationId Integration ID (required)
+   * @param expand Expand instructions for the return value. (optional)
+   * @return OpenIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenIntegration> getConversationsMessagingIntegrationsOpenIntegrationIdWithHttpInfo(String integrationId, String expand) throws IOException {
+    return getConversationsMessagingIntegrationsOpenIntegrationId(createGetConversationsMessagingIntegrationsOpenIntegrationIdRequest(integrationId, expand).withHttpInfo());
+  }
+
+  private GetConversationsMessagingIntegrationsOpenIntegrationIdRequest createGetConversationsMessagingIntegrationsOpenIntegrationIdRequest(String integrationId, String expand) {
+    return GetConversationsMessagingIntegrationsOpenIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+    
+            .withExpand(expand)
+    
+            .build();
+  }
+
+  /**
+   * Get an Open messaging integration
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * @param request The request object
+   * @return OpenIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenIntegration getConversationsMessagingIntegrationsOpenIntegrationId(GetConversationsMessagingIntegrationsOpenIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OpenIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OpenIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an Open messaging integration
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenIntegration> getConversationsMessagingIntegrationsOpenIntegrationId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OpenIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenIntegration> response = (ApiResponse<OpenIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenIntegration> response = (ApiResponse<OpenIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get a list of Twitter Integrations
    * 
    * @param pageSize Page size (optional, default to 25)
@@ -7971,6 +8232,89 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<FacebookIntegration> response = (ApiResponse<FacebookIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update an Open messaging integration
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * @param integrationId Integration ID (required)
+   * @param body OpenIntegrationUpdateRequest (required)
+   * @return OpenIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenIntegration patchConversationsMessagingIntegrationsOpenIntegrationId(String integrationId, OpenIntegrationUpdateRequest body) throws IOException, ApiException {
+    return  patchConversationsMessagingIntegrationsOpenIntegrationId(createPatchConversationsMessagingIntegrationsOpenIntegrationIdRequest(integrationId, body));
+  }
+
+  /**
+   * Update an Open messaging integration
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * @param integrationId Integration ID (required)
+   * @param body OpenIntegrationUpdateRequest (required)
+   * @return OpenIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenIntegration> patchConversationsMessagingIntegrationsOpenIntegrationIdWithHttpInfo(String integrationId, OpenIntegrationUpdateRequest body) throws IOException {
+    return patchConversationsMessagingIntegrationsOpenIntegrationId(createPatchConversationsMessagingIntegrationsOpenIntegrationIdRequest(integrationId, body).withHttpInfo());
+  }
+
+  private PatchConversationsMessagingIntegrationsOpenIntegrationIdRequest createPatchConversationsMessagingIntegrationsOpenIntegrationIdRequest(String integrationId, OpenIntegrationUpdateRequest body) {
+    return PatchConversationsMessagingIntegrationsOpenIntegrationIdRequest.builder()
+            .withIntegrationId(integrationId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update an Open messaging integration
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * @param request The request object
+   * @return OpenIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenIntegration patchConversationsMessagingIntegrationsOpenIntegrationId(PatchConversationsMessagingIntegrationsOpenIntegrationIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OpenIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OpenIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an Open messaging integration
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenIntegration> patchConversationsMessagingIntegrationsOpenIntegrationId(ApiRequest<OpenIntegrationUpdateRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OpenIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenIntegration> response = (ApiResponse<OpenIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenIntegration> response = (ApiResponse<OpenIntegration>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -11106,6 +11450,85 @@ public class ConversationsApi {
 
   
   /**
+   * Send an inbound Open Message
+   * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param body NormalizedMessage (required)
+   * @return OpenNormalizedMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenNormalizedMessage postConversationsMessagesInboundOpen(OpenNormalizedMessage body) throws IOException, ApiException {
+    return  postConversationsMessagesInboundOpen(createPostConversationsMessagesInboundOpenRequest(body));
+  }
+
+  /**
+   * Send an inbound Open Message
+   * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param body NormalizedMessage (required)
+   * @return OpenNormalizedMessage
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenNormalizedMessage> postConversationsMessagesInboundOpenWithHttpInfo(OpenNormalizedMessage body) throws IOException {
+    return postConversationsMessagesInboundOpen(createPostConversationsMessagesInboundOpenRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsMessagesInboundOpenRequest createPostConversationsMessagesInboundOpenRequest(OpenNormalizedMessage body) {
+    return PostConversationsMessagesInboundOpenRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Send an inbound Open Message
+   * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param request The request object
+   * @return OpenNormalizedMessage
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenNormalizedMessage postConversationsMessagesInboundOpen(PostConversationsMessagesInboundOpenRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OpenNormalizedMessage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OpenNormalizedMessage>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Send an inbound Open Message
+   * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenNormalizedMessage> postConversationsMessagesInboundOpen(ApiRequest<OpenNormalizedMessage> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OpenNormalizedMessage>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenNormalizedMessage> response = (ApiResponse<OpenNormalizedMessage>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenNormalizedMessage> response = (ApiResponse<OpenNormalizedMessage>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Create a Facebook Integration
    * 
    * @param body FacebookIntegrationRequest (required)
@@ -11258,6 +11681,85 @@ public class ConversationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<LineIntegration> response = (ApiResponse<LineIntegration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create an Open messaging integration
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * @param body OpenIntegrationRequest (required)
+   * @return OpenIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenIntegration postConversationsMessagingIntegrationsOpen(OpenIntegrationRequest body) throws IOException, ApiException {
+    return  postConversationsMessagingIntegrationsOpen(createPostConversationsMessagingIntegrationsOpenRequest(body));
+  }
+
+  /**
+   * Create an Open messaging integration
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * @param body OpenIntegrationRequest (required)
+   * @return OpenIntegration
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenIntegration> postConversationsMessagingIntegrationsOpenWithHttpInfo(OpenIntegrationRequest body) throws IOException {
+    return postConversationsMessagingIntegrationsOpen(createPostConversationsMessagingIntegrationsOpenRequest(body).withHttpInfo());
+  }
+
+  private PostConversationsMessagingIntegrationsOpenRequest createPostConversationsMessagingIntegrationsOpenRequest(OpenIntegrationRequest body) {
+    return PostConversationsMessagingIntegrationsOpenRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create an Open messaging integration
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * @param request The request object
+   * @return OpenIntegration
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OpenIntegration postConversationsMessagingIntegrationsOpen(PostConversationsMessagingIntegrationsOpenRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OpenIntegration> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OpenIntegration>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create an Open messaging integration
+   * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OpenIntegration> postConversationsMessagingIntegrationsOpen(ApiRequest<OpenIntegrationRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OpenIntegration>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenIntegration> response = (ApiResponse<OpenIntegration>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OpenIntegration> response = (ApiResponse<OpenIntegration>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

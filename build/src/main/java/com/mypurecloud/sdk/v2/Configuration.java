@@ -1,11 +1,11 @@
 package com.mypurecloud.sdk.v2;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.File;
-import java.io.FileReader;
-import java.nio.file.Path;
+
+import java.io.*;
+import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.io.FileNotFoundException;
+
 import org.ini4j.Ini;
 import java.util.Map;
 
@@ -61,6 +61,10 @@ public class Configuration {
     return false;
   }
 
+  private String regexEscape(String str) {
+    return str.replace("\\", "\\\\");
+  }
+
   private void initializeFileWatcher() {
     File configFile = new File(configFilePath);
     File parentFolder = configFile.getParentFile();
@@ -69,7 +73,7 @@ public class Configuration {
       File temp = parentFolder.getParentFile();
       if (temp != null) {
         parentFolder = temp;
-        String[] splitPaths = configFile.getAbsolutePath().split(parentFolder.getAbsolutePath());
+        String[] splitPaths = regexEscape(configFile.getAbsolutePath()).split(regexEscape(parentFolder.getAbsolutePath()));
         configFileName = new StringBuilder(splitPaths[splitPaths.length - 1]);
       } else {
         break;
@@ -168,10 +172,14 @@ public class Configuration {
     private boolean read() {
       boolean emptyData = true;
       try {
-        File configFile = new File(filePath);
-        iniData = new Ini(new FileReader(configFile));
+        byte[] data = Files.readAllBytes(Paths.get(filePath));
+        String contents = new String(data).replaceAll("\\\\", "/");
+        InputStream stream = new ByteArrayInputStream(contents.getBytes());
+
+        iniData = new Ini(stream);
+        
         fileFormat = FileFormat.INI;
-        emptyData = iniData == null || iniData.isEmpty();
+        emptyData = iniData.isEmpty();
       } catch (FileNotFoundException e) {
         return false;
       } catch (Exception e) {

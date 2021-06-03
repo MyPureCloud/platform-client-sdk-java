@@ -25,6 +25,7 @@ title: AuditQueryEntity
 | AUTHORGANIZATION | &quot;AuthOrganization&quot; |
 | AUTHUSER | &quot;AuthUser&quot; |
 | BULKACTIONS | &quot;BulkActions&quot; |
+| CALIBRATION | &quot;Calibration&quot; |
 | CALLABLETIMESET | &quot;CallableTimeSet&quot; |
 | CALLANALYSISRESPONSESET | &quot;CallAnalysisResponseSet&quot; |
 | CAMPAIGN | &quot;Campaign&quot; |
@@ -32,8 +33,11 @@ title: AuditQueryEntity
 | CAMPAIGNSCHEDULE | &quot;CampaignSchedule&quot; |
 | CHANGEREQUEST | &quot;ChangeRequest&quot; |
 | CLICKSTREAMSETTINGS | &quot;ClickstreamSettings&quot; |
+| CONFIGURATION | &quot;Configuration&quot; |
+| CONFIGURATIONVERSION | &quot;ConfigurationVersion&quot; |
 | CONTACTLIST | &quot;ContactList&quot; |
 | CONTACTLISTFILTER | &quot;ContactListFilter&quot; |
+| DEPLOYMENT | &quot;Deployment&quot; |
 | DASHBOARDSETTINGS | &quot;DashboardSettings&quot; |
 | DEPENDENCYTRACKINGBUILD | &quot;DependencyTrackingBuild&quot; |
 | DID | &quot;DID&quot; |
@@ -43,6 +47,8 @@ title: AuditQueryEntity
 | EDGE | &quot;Edge&quot; |
 | EDGEGROUP | &quot;EdgeGroup&quot; |
 | EMERGENCYGROUP | &quot;EmergencyGroup&quot; |
+| EVALUATION | &quot;Evaluation&quot; |
+| EVALUATIONFORM | &quot;EvaluationForm&quot; |
 | EVENTTYPE | &quot;EventType&quot; |
 | EXPORTS | &quot;Exports&quot; |
 | EXTENSION | &quot;Extension&quot; |
@@ -66,16 +72,20 @@ title: AuditQueryEntity
 | ORGANIZATIONAUTHORIZATIONTRUST | &quot;OrganizationAuthorizationTrust&quot; |
 | ORGANIZATIONAUTHORIZATIONUSERTRUST | &quot;OrganizationAuthorizationUserTrust&quot; |
 | ORGANIZATIONSETTINGS | &quot;OrganizationSettings&quot; |
+| ORPHANEDRECORDING | &quot;OrphanedRecording&quot; |
 | OUTBOUNDROUTE | &quot;OutboundRoute&quot; |
 | OUTCOME | &quot;Outcome&quot; |
 | PHONE | &quot;Phone&quot; |
 | PHONEBASE | &quot;PhoneBase&quot; |
+| POLICY | &quot;Policy&quot; |
 | PREDICTOR | &quot;Predictor&quot; |
 | PROGRAM | &quot;Program&quot; |
 | PROMPT | &quot;Prompt&quot; |
 | PROMPTRESOURCE | &quot;PromptResource&quot; |
 | QUEUE | &quot;Queue&quot; |
 | RECORDING | &quot;Recording&quot; |
+| RECORDINGANNOTATION | &quot;RecordingAnnotation&quot; |
+| RECORDINGSETTINGS | &quot;RecordingSettings&quot; |
 | RESPONSE | &quot;Response&quot; |
 | ROLE | &quot;Role&quot; |
 | ROUTINGTRANSCRIPTIONSETTINGS | &quot;RoutingTranscriptionSettings&quot; |
@@ -83,6 +93,7 @@ title: AuditQueryEntity
 | SCHEDULE | &quot;Schedule&quot; |
 | SCHEDULEDEXPORTS | &quot;ScheduledExports&quot; |
 | SCHEDULEGROUP | &quot;ScheduleGroup&quot; |
+| SCREENRECORDING | &quot;ScreenRecording&quot; |
 | SEGMENT | &quot;Segment&quot; |
 | SENTIMENTFEEDBACK | &quot;SentimentFeedback&quot; |
 | SEQUENCE | &quot;Sequence&quot; |
@@ -90,6 +101,8 @@ title: AuditQueryEntity
 | SESSIONTYPE | &quot;SessionType&quot; |
 | SITE | &quot;Site&quot; |
 | SPEECHTEXTANALYTICSSETTINGS | &quot;SpeechTextAnalyticsSettings&quot; |
+| SURVEY | &quot;Survey&quot; |
+| SURVEYFORM | &quot;SurveyForm&quot; |
 | TEAM | &quot;Team&quot; |
 | TOPIC | &quot;Topic&quot; |
 | TRANSCRIPTIONSETTINGS | &quot;TranscriptionSettings&quot; |
@@ -99,10 +112,16 @@ title: AuditQueryEntity
 | USERPRESENCE | &quot;UserPresence&quot; |
 | VOICEMAILPOLICY | &quot;VoicemailPolicy&quot; |
 | VOICEMAILUSERPOLICY | &quot;VoicemailUserPolicy&quot; |
+| WEBHOOK | &quot;Webhook&quot; |
 | WORKPLAN | &quot;WorkPlan&quot; |
 | WORKSPACE | &quot;Workspace&quot; |
 | WRAPUPCODE | &quot;WrapupCode&quot; |
 | WRAPUPCODEMAPPING | &quot;WrapUpCodeMapping&quot; |
+| PHONENUMBER | &quot;PhoneNumber&quot; |
+| RECIPIENT | &quot;Recipient&quot; |
+| ACCOUNT | &quot;Account&quot; |
+| DEFAULTSUPPORTEDCONTENT | &quot;DefaultSupportedContent&quot; |
+| CONVERSATIONTHREADINGWINDOW | &quot;ConversationThreadingWindow&quot; |
 {: class="table table-striped"}
 
 
@@ -124,11 +143,15 @@ title: AuditQueryEntity
 | MEMBERUPDATE | &quot;MemberUpdate&quot; |
 | MEMBERREMOVE | &quot;MemberRemove&quot; |
 | READ | &quot;Read&quot; |
+| READALL | &quot;ReadAll&quot; |
+| EXECUTE | &quot;Execute&quot; |
 | APPLYPROTECTION | &quot;ApplyProtection&quot; |
 | REVOKEPROTECTION | &quot;RevokeProtection&quot; |
 | UPDATERETENTION | &quot;UpdateRetention&quot; |
-| READALL | &quot;ReadAll&quot; |
-| EXECUTE | &quot;Execute&quot; |
+| ABANDON | &quot;Abandon&quot; |
+| ARCHIVE | &quot;Archive&quot; |
+| RESTOREREQUEST | &quot;RestoreRequest&quot; |
+| RESTORECOMPLETE | &quot;RestoreComplete&quot; |
 | PUBLISH | &quot;Publish&quot; |
 | UNPUBLISH | &quot;Unpublish&quot; |
 | ACTIVATE | &quot;Activate&quot; |

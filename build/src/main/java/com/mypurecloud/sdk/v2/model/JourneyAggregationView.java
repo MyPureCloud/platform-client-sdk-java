@@ -42,6 +42,7 @@ public class JourneyAggregationView  implements Serializable {
   public enum TargetEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NDISTINCTJOURNEYACTIONS("nDistinctJourneyActions"),
+    NDISTINCTJOURNEYSESSIONS("nDistinctJourneySessions"),
     NJOURNEYACTIONSBLOCKED("nJourneyActionsBlocked"),
     NJOURNEYOUTCOMESACHIEVED("nJourneyOutcomesAchieved"),
     NJOURNEYOUTCOMESATTRIBUTED("nJourneyOutcomesAttributed"),

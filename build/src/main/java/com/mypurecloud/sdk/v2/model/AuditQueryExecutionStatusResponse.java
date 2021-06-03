@@ -119,7 +119,10 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     TELEPHONY("Telephony"),
     TOPICSDEFINITIONS("TopicsDefinitions"),
     TRIGGERS("Triggers"),
-    WORKFORCEMANAGEMENT("WorkforceManagement");
+    WEBDEPLOYMENTS("WebDeployments"),
+    WEBHOOKS("Webhooks"),
+    WORKFORCEMANAGEMENT("WorkforceManagement"),
+    CONVERSATIONMESSAGING("ConversationMessaging");
 
     private String value;
 

@@ -28,9 +28,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Message content element
+ * Message content element.
  */
-@ApiModel(description = "Message content element")
+@ApiModel(description = "Message content element.")
 
 public class MessageContent  implements Serializable {
   
@@ -56,13 +56,13 @@ public class MessageContent  implements Serializable {
     ATTACHMENT("Attachment"),
     LOCATION("Location"),
     QUICKREPLY("QuickReply"),
-    BUTTONRESPONSE("ButtonResponse"),
     NOTIFICATION("Notification"),
     GENERICTEMPLATE("GenericTemplate"),
     LISTTEMPLATE("ListTemplate"),
     POSTBACK("Postback"),
     REACTIONS("Reactions"),
-    MENTION("Mention");
+    MENTION("Mention"),
+    BUTTONRESPONSE("ButtonResponse");
 
     private String value;
 
@@ -121,14 +121,14 @@ public class MessageContent  implements Serializable {
 
   
   /**
-   * Location object
+   * Location content.
    **/
   public MessageContent location(ContentLocation location) {
     this.location = location;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Location object")
+  @ApiModelProperty(example = "null", value = "Location content.")
   @JsonProperty("location")
   public ContentLocation getLocation() {
     return location;
@@ -139,14 +139,14 @@ public class MessageContent  implements Serializable {
 
   
   /**
-   * Attachment object
+   * Attachment content.
    **/
   public MessageContent attachment(ContentAttachment attachment) {
     this.attachment = attachment;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Attachment object")
+  @ApiModelProperty(example = "null", value = "Attachment content.")
   @JsonProperty("attachment")
   public ContentAttachment getAttachment() {
     return attachment;
@@ -157,14 +157,14 @@ public class MessageContent  implements Serializable {
 
   
   /**
-   * Quick reply object
+   * Quick reply content.
    **/
   public MessageContent quickReply(ContentQuickReply quickReply) {
     this.quickReply = quickReply;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Quick reply object")
+  @ApiModelProperty(example = "null", value = "Quick reply content.")
   @JsonProperty("quickReply")
   public ContentQuickReply getQuickReply() {
     return quickReply;
@@ -175,14 +175,14 @@ public class MessageContent  implements Serializable {
 
   
   /**
-   * Button response object
+   * Button response content.
    **/
   public MessageContent buttonResponse(ContentButtonResponse buttonResponse) {
     this.buttonResponse = buttonResponse;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Button response object")
+  @ApiModelProperty(example = "null", value = "Button response content.")
   @JsonProperty("buttonResponse")
   public ContentButtonResponse getButtonResponse() {
     return buttonResponse;
@@ -193,14 +193,14 @@ public class MessageContent  implements Serializable {
 
   
   /**
-   * Generic content object
+   * Generic content.
    **/
   public MessageContent generic(ContentGeneric generic) {
     this.generic = generic;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Generic content object")
+  @ApiModelProperty(example = "null", value = "Generic content.")
   @JsonProperty("generic")
   public ContentGeneric getGeneric() {
     return generic;
@@ -211,14 +211,14 @@ public class MessageContent  implements Serializable {
 
   
   /**
-   * List content object
+   * List content.
    **/
   public MessageContent list(ContentList list) {
     this.list = list;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "List content object")
+  @ApiModelProperty(example = "null", value = "List content.")
   @JsonProperty("list")
   public ContentList getList() {
     return list;
@@ -229,14 +229,14 @@ public class MessageContent  implements Serializable {
 
   
   /**
-   * Template notification object
+   * Template notification content.
    **/
   public MessageContent template(ContentNotificationTemplate template) {
     this.template = template;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Template notification object")
+  @ApiModelProperty(example = "null", value = "Template notification content.")
   @JsonProperty("template")
   public ContentNotificationTemplate getTemplate() {
     return template;
@@ -247,14 +247,14 @@ public class MessageContent  implements Serializable {
 
   
   /**
-   * A list of reactions
+   * A set of reactions to a message.
    **/
   public MessageContent reactions(List<ContentReaction> reactions) {
     this.reactions = reactions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A list of reactions")
+  @ApiModelProperty(example = "null", value = "A set of reactions to a message.")
   @JsonProperty("reactions")
   public List<ContentReaction> getReactions() {
     return reactions;
@@ -265,14 +265,14 @@ public class MessageContent  implements Serializable {
 
   
   /**
-   * This is used to identify who the message is sent to, as well as who it was sent from. This information is channel specific - depends on capabilities to describe party by the platform
+   * Mention content.
    **/
   public MessageContent mention(MessagingRecipient mention) {
     this.mention = mention;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "This is used to identify who the message is sent to, as well as who it was sent from. This information is channel specific - depends on capabilities to describe party by the platform")
+  @ApiModelProperty(example = "null", value = "Mention content.")
   @JsonProperty("mention")
   public MessagingRecipient getMention() {
     return mention;
@@ -283,14 +283,14 @@ public class MessageContent  implements Serializable {
 
   
   /**
-   * The postback object result of a user clicking in a button
+   * Structured message postback (Deprecated).
    **/
   public MessageContent postback(ContentPostback postback) {
     this.postback = postback;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The postback object result of a user clicking in a button")
+  @ApiModelProperty(example = "null", value = "Structured message postback (Deprecated).")
   @JsonProperty("postback")
   public ContentPostback getPostback() {
     return postback;

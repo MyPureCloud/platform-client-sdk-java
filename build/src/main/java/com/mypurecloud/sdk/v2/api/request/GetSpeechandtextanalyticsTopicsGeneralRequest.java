@@ -24,8 +24,10 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ConversationMetrics;
 import com.mypurecloud.sdk.v2.model.TranscriptUrl;
 import com.mypurecloud.sdk.v2.model.Program;
+import com.mypurecloud.sdk.v2.model.ProgramMappings;
 import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
 import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
+import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
 import com.mypurecloud.sdk.v2.model.ProgramJob;
 import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsResponse;
@@ -41,6 +43,7 @@ import com.mypurecloud.sdk.v2.model.TopicRequest;
 import com.mypurecloud.sdk.v2.model.TopicJobRequest;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
 import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
+import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
 
 public class GetSpeechandtextanalyticsTopicsGeneralRequest {
     
@@ -60,7 +63,12 @@ public class GetSpeechandtextanalyticsTopicsGeneralRequest {
 
 	public enum dialectValues { 
 		EN_US("en-US"), 
-		ES_US("es-US");
+		ES_US("es-US"), 
+		EN_AU("en-AU"), 
+		EN_GB("en-GB"), 
+		EN_ZA("en-ZA"), 
+		ES_ES("es-ES"), 
+		EN_IN("en-IN");
 
 		private String value;
 

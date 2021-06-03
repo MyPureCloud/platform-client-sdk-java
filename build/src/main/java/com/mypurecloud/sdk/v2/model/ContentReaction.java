@@ -16,9 +16,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * User reaction to public message
+ * User reaction to public message.
  */
-@ApiModel(description = "User reaction to public message")
+@ApiModel(description = "User reaction to public message.")
 
 public class ContentReaction  implements Serializable {
   
@@ -36,12 +36,11 @@ public class ContentReaction  implements Serializable {
     }
   }
   /**
-   * Type of reaction
+   * Type of reaction.
    */
  @JsonDeserialize(using = ReactionTypeEnumDeserializer.class)
   public enum ReactionTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    NONE("None"),
     LIKE("Like"),
     LOVE("Love"),
     WOW("Wow"),
@@ -82,14 +81,14 @@ public class ContentReaction  implements Serializable {
 
   
   /**
-   * Type of reaction
+   * Type of reaction.
    **/
   public ContentReaction reactionType(ReactionTypeEnum reactionType) {
     this.reactionType = reactionType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Type of reaction")
+  @ApiModelProperty(example = "null", value = "Type of reaction.")
   @JsonProperty("reactionType")
   public ReactionTypeEnum getReactionType() {
     return reactionType;
@@ -100,14 +99,14 @@ public class ContentReaction  implements Serializable {
 
   
   /**
-   * Number of users that reacted this way to this public message
+   * Number of users that reacted this way to the message.
    **/
   public ContentReaction count(Integer count) {
     this.count = count;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Number of users that reacted this way to this public message")
+  @ApiModelProperty(example = "null", value = "Number of users that reacted this way to the message.")
   @JsonProperty("count")
   public Integer getCount() {
     return count;

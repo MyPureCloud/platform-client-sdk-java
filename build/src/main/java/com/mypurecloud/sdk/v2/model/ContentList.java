@@ -20,9 +20,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * List content object
+ * List content object.
  */
-@ApiModel(description = "List content object")
+@ApiModel(description = "List content object.")
 
 public class ContentList  implements Serializable {
   
@@ -41,7 +41,7 @@ public class ContentList  implements Serializable {
     }
   }
   /**
-   * The type of list this instance represents
+   * The type of list this instance represents.
    */
  @JsonDeserialize(using = ListTypeEnumDeserializer.class)
   public enum ListTypeEnum {
@@ -83,14 +83,14 @@ public class ContentList  implements Serializable {
 
   
   /**
-   * An ID assigned to this rich message content. Each instance inside the content array has a unique ID.
+   * A unique ID assigned to this rich message content.
    **/
   public ContentList id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "An ID assigned to this rich message content. Each instance inside the content array has a unique ID.")
+  @ApiModelProperty(example = "null", value = "A unique ID assigned to this rich message content.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -101,14 +101,14 @@ public class ContentList  implements Serializable {
 
   
   /**
-   * The type of list this instance represents
+   * The type of list this instance represents.
    **/
   public ContentList listType(ListTypeEnum listType) {
     this.listType = listType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The type of list this instance represents")
+  @ApiModelProperty(example = "null", value = "The type of list this instance represents.")
   @JsonProperty("listType")
   public ListTypeEnum getListType() {
     return listType;
@@ -119,14 +119,14 @@ public class ContentList  implements Serializable {
 
   
   /**
-   * Text to show in the title row
+   * Text to show in the title.
    **/
   public ContentList title(String title) {
     this.title = title;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Text to show in the title row")
+  @ApiModelProperty(example = "null", value = "Text to show in the title.")
   @JsonProperty("title")
   public String getTitle() {
     return title;
@@ -137,14 +137,14 @@ public class ContentList  implements Serializable {
 
   
   /**
-   * Text to show in the description row. This is immediately below the title
+   * Text to show in the description.
    **/
   public ContentList description(String description) {
     this.description = description;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Text to show in the description row. This is immediately below the title")
+  @ApiModelProperty(example = "null", value = "Text to show in the description.")
   @JsonProperty("description")
   public String getDescription() {
     return description;
@@ -155,14 +155,14 @@ public class ContentList  implements Serializable {
 
   
   /**
-   * Label for Submit button
+   * Label for Submit button.
    **/
   public ContentList submitLabel(String submitLabel) {
     this.submitLabel = submitLabel;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Label for Submit button")
+  @ApiModelProperty(example = "null", value = "Label for Submit button.")
   @JsonProperty("submitLabel")
   public String getSubmitLabel() {
     return submitLabel;
@@ -173,14 +173,14 @@ public class ContentList  implements Serializable {
 
   
   /**
-   * User actions available on the content. All actions are optional and all actions are executed simultaneously.
+   * The list actions.
    **/
   public ContentList actions(ContentActions actions) {
     this.actions = actions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "User actions available on the content. All actions are optional and all actions are executed simultaneously.")
+  @ApiModelProperty(example = "null", value = "The list actions.")
   @JsonProperty("actions")
   public ContentActions getActions() {
     return actions;
@@ -191,14 +191,14 @@ public class ContentList  implements Serializable {
 
   
   /**
-   * An array of component objects
+   * An array of component objects.
    **/
   public ContentList components(List<ListItemComponent> components) {
     this.components = components;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "An array of component objects")
+  @ApiModelProperty(example = "null", value = "An array of component objects.")
   @JsonProperty("components")
   public List<ListItemComponent> getComponents() {
     return components;

@@ -18,6 +18,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getQualityConversationAudits**](QualityApi.html#getQualityConversationAudits) | Get audits for conversation or recording |
 | [**getQualityConversationEvaluation**](QualityApi.html#getQualityConversationEvaluation) | Get an evaluation |
 | [**getQualityConversationSurveys**](QualityApi.html#getQualityConversationSurveys) | Get the surveys for a conversation |
+| [**getQualityConversationsAuditsQueryTransactionId**](QualityApi.html#getQualityConversationsAuditsQueryTransactionId) | Get status of audit query execution |
+| [**getQualityConversationsAuditsQueryTransactionIdResults**](QualityApi.html#getQualityConversationsAuditsQueryTransactionIdResults) | Get results of audit query |
 | [**getQualityEvaluationsQuery**](QualityApi.html#getQualityEvaluationsQuery) | Queries Evaluations and returns a paged list |
 | [**getQualityEvaluatorsActivity**](QualityApi.html#getQualityEvaluatorsActivity) | Get an evaluator activity |
 | [**getQualityForm**](QualityApi.html#getQualityForm) | Get an evaluation form |
@@ -44,6 +46,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postAnalyticsSurveysAggregatesQuery**](QualityApi.html#postAnalyticsSurveysAggregatesQuery) | Query for survey aggregates |
 | [**postQualityCalibrations**](QualityApi.html#postQualityCalibrations) | Create a calibration |
 | [**postQualityConversationEvaluations**](QualityApi.html#postQualityConversationEvaluations) | Create an evaluation |
+| [**postQualityConversationsAuditsQuery**](QualityApi.html#postQualityConversationsAuditsQuery) | Create audit query execution |
 | [**postQualityEvaluationsScoring**](QualityApi.html#postQualityEvaluationsScoring) | Score evaluation |
 | [**postQualityForms**](QualityApi.html#postQualityForms) | Create an evaluation form. |
 | [**postQualityFormsEvaluations**](QualityApi.html#postQualityFormsEvaluations) | Create an evaluation form. |
@@ -615,13 +618,13 @@ try {
 
 # **getQualityConversationAudits**
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 > [QualityAuditPage](QualityAuditPage.html) getQualityConversationAudits(conversationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, recordingId, entityType)
 
 Get audits for conversation or recording
 
-Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.
+Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.This endpoint is deprecated. Use following async endpoints, To query for audits POST /api/v2/quality/conversations/audits/queryTo get status of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}To get results of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}/results
 
 Wraps GET /api/v2/quality/conversations/{conversationId}/audits  
 
@@ -824,6 +827,138 @@ try {
 ### Return type
 
 [**List&lt;Survey&gt;**](Survey.html)
+
+<a name="getQualityConversationsAuditsQueryTransactionId"></a>
+
+# **getQualityConversationsAuditsQueryTransactionId**
+
+
+
+> [QualityAuditQueryExecutionStatusResponse](QualityAuditQueryExecutionStatusResponse.html) getQualityConversationsAuditsQueryTransactionId(transactionId)
+
+Get status of audit query execution
+
+
+
+Wraps GET /api/v2/quality/conversations/audits/query/{transactionId}  
+
+Requires ALL permissions: 
+
+* audits:interactionDetails:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+QualityApi apiInstance = new QualityApi();
+String transactionId = "transactionId_example"; // String | Transaction ID
+try {
+    QualityAuditQueryExecutionStatusResponse result = apiInstance.getQualityConversationsAuditsQueryTransactionId(transactionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityConversationsAuditsQueryTransactionId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **transactionId** | **String**| Transaction ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**QualityAuditQueryExecutionStatusResponse**](QualityAuditQueryExecutionStatusResponse.html)
+
+<a name="getQualityConversationsAuditsQueryTransactionIdResults"></a>
+
+# **getQualityConversationsAuditsQueryTransactionIdResults**
+
+
+
+> [QualityAuditQueryExecutionResultsResponse](QualityAuditQueryExecutionResultsResponse.html) getQualityConversationsAuditsQueryTransactionIdResults(transactionId, cursor, pageSize, expand)
+
+Get results of audit query
+
+
+
+Wraps GET /api/v2/quality/conversations/audits/query/{transactionId}/results  
+
+Requires ALL permissions: 
+
+* audits:interactionDetails:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+QualityApi apiInstance = new QualityApi();
+String transactionId = "transactionId_example"; // String | Transaction ID
+String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page)
+Integer pageSize = 25; // Integer | Page size
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand
+try {
+    QualityAuditQueryExecutionResultsResponse result = apiInstance.getQualityConversationsAuditsQueryTransactionIdResults(transactionId, cursor, pageSize, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#getQualityConversationsAuditsQueryTransactionIdResults");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **transactionId** | **String**| Transaction ID | 
+| **cursor** | **String**| Indicates where to resume query results (not required for first page) | [optional] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand | [optional]<br />**Values**: user 
+{: class="table-striped"}
+
+
+### Return type
+
+[**QualityAuditQueryExecutionResultsResponse**](QualityAuditQueryExecutionResultsResponse.html)
 
 <a name="getQualityEvaluationsQuery"></a>
 
@@ -2586,6 +2721,69 @@ try {
 ### Return type
 
 [**Evaluation**](Evaluation.html)
+
+<a name="postQualityConversationsAuditsQuery"></a>
+
+# **postQualityConversationsAuditsQuery**
+
+
+
+> [QualityAuditQueryExecutionStatusResponse](QualityAuditQueryExecutionStatusResponse.html) postQualityConversationsAuditsQuery(body)
+
+Create audit query execution
+
+
+
+Wraps POST /api/v2/quality/conversations/audits/query  
+
+Requires ALL permissions: 
+
+* audits:interactionDetails:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.QualityApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+QualityApi apiInstance = new QualityApi();
+QMAuditQueryRequest body = new QMAuditQueryRequest(); // QMAuditQueryRequest | query
+try {
+    QualityAuditQueryExecutionStatusResponse result = apiInstance.postQualityConversationsAuditsQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QualityApi#postQualityConversationsAuditsQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**QMAuditQueryRequest**](QMAuditQueryRequest.html)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**QualityAuditQueryExecutionStatusResponse**](QualityAuditQueryExecutionStatusResponse.html)
 
 <a name="postQualityEvaluationsScoring"></a>
 

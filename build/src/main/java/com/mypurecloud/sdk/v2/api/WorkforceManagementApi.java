@@ -40,6 +40,7 @@ import com.mypurecloud.sdk.v2.model.BuShortTermForecastListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitListing;
 import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteJobResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalImportStatusListing;
+import com.mypurecloud.sdk.v2.model.ManagementUnit;
 import com.mypurecloud.sdk.v2.model.ActivityCodeContainer;
 import com.mypurecloud.sdk.v2.model.UserScheduleAdherenceListing;
 import com.mypurecloud.sdk.v2.model.WfmAgent;
@@ -62,6 +63,7 @@ import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.UpdatePlanningGroupRequest;
 import com.mypurecloud.sdk.v2.model.PatchBuScheduleRunRequest;
 import com.mypurecloud.sdk.v2.model.UpdateServiceGoalTemplate;
+import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.ShiftTradeResponse;
 import com.mypurecloud.sdk.v2.model.PatchShiftTradeRequest;
@@ -112,7 +114,6 @@ import com.mypurecloud.sdk.v2.model.CopyWorkPlanRotationRequest;
 import com.mypurecloud.sdk.v2.model.AddWorkPlanRotationRequest;
 import com.mypurecloud.sdk.v2.model.CreateWorkPlan;
 import com.mypurecloud.sdk.v2.model.CreateManagementUnitApiRequest;
-import com.mypurecloud.sdk.v2.model.ManagementUnit;
 import com.mypurecloud.sdk.v2.model.UpdateNotificationsResponse;
 import com.mypurecloud.sdk.v2.model.UpdateNotificationsRequest;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
@@ -126,6 +127,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitS
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitServicegoaltemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitWeekScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitWeekShorttermforecastRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanrotationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceRequest;
@@ -156,6 +158,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitsReq
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataDeletejobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataImportstatusRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitActivitycodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAdherenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAgentRequest;
@@ -184,6 +187,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAc
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitPlanninggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWeekShifttradeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWorkplanRequest;
@@ -790,6 +794,82 @@ public class WorkforceManagementApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteWorkforcemanagementBusinessunitWeekShorttermforecast(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete management unit
+   * 
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementManagementunit(String managementUnitId) throws IOException, ApiException {
+     deleteWorkforcemanagementManagementunit(createDeleteWorkforcemanagementManagementunitRequest(managementUnitId));
+  }
+
+  /**
+   * Delete management unit
+   * 
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementManagementunitWithHttpInfo(String managementUnitId) throws IOException {
+    return deleteWorkforcemanagementManagementunit(createDeleteWorkforcemanagementManagementunitRequest(managementUnitId).withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementManagementunitRequest createDeleteWorkforcemanagementManagementunitRequest(String managementUnitId) {
+    return DeleteWorkforcemanagementManagementunitRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .build();
+  }
+
+  /**
+   * Delete management unit
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementManagementunit(DeleteWorkforcemanagementManagementunitRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete management unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementManagementunit(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -3329,6 +3409,89 @@ public class WorkforceManagementApi {
 
   
   /**
+   * Get management unit
+   * settings.shortTermForecasting is deprecated and now lives on the business unit
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param expand  (optional)
+   * @return ManagementUnit
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ManagementUnit getWorkforcemanagementManagementunit(String managementUnitId, List<String> expand) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunit(createGetWorkforcemanagementManagementunitRequest(managementUnitId, expand));
+  }
+
+  /**
+   * Get management unit
+   * settings.shortTermForecasting is deprecated and now lives on the business unit
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param expand  (optional)
+   * @return ManagementUnit
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ManagementUnit> getWorkforcemanagementManagementunitWithHttpInfo(String managementUnitId, List<String> expand) throws IOException {
+    return getWorkforcemanagementManagementunit(createGetWorkforcemanagementManagementunitRequest(managementUnitId, expand).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementManagementunitRequest createGetWorkforcemanagementManagementunitRequest(String managementUnitId, List<String> expand) {
+    return GetWorkforcemanagementManagementunitRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withExpand(expand)
+    
+            .build();
+  }
+
+  /**
+   * Get management unit
+   * settings.shortTermForecasting is deprecated and now lives on the business unit
+   * @param request The request object
+   * @return ManagementUnit
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ManagementUnit getWorkforcemanagementManagementunit(GetWorkforcemanagementManagementunitRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ManagementUnit> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ManagementUnit>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get management unit
+   * settings.shortTermForecasting is deprecated and now lives on the business unit
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ManagementUnit> getWorkforcemanagementManagementunit(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ManagementUnit>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ManagementUnit> response = (ApiResponse<ManagementUnit>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ManagementUnit> response = (ApiResponse<ManagementUnit>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get activity codes
    * 
    * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
@@ -4599,7 +4762,7 @@ public class WorkforceManagementApi {
   
   /**
    * Get work plans
-   * 
+   * \&quot;expand=details\&quot; is deprecated
    * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param expand  (optional)
    * @return WorkPlanListResponse
@@ -4612,7 +4775,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get work plans
-   * 
+   * \&quot;expand=details\&quot; is deprecated
    * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param expand  (optional)
    * @return WorkPlanListResponse
@@ -4633,7 +4796,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get work plans
-   * 
+   * \&quot;expand=details\&quot; is deprecated
    * @param request The request object
    * @return WorkPlanListResponse
    * @throws ApiException if the request fails on the server
@@ -4652,7 +4815,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get work plans
-   * 
+   * \&quot;expand=details\&quot; is deprecated
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5664,6 +5827,89 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ServiceGoalTemplate> response = (ApiResponse<ServiceGoalTemplate>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update the requested management unit
+   * 
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param body body (optional)
+   * @return ManagementUnit
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ManagementUnit patchWorkforcemanagementManagementunit(String managementUnitId, UpdateManagementUnitRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementManagementunit(createPatchWorkforcemanagementManagementunitRequest(managementUnitId, body));
+  }
+
+  /**
+   * Update the requested management unit
+   * 
+   * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
+   * @param body body (optional)
+   * @return ManagementUnit
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ManagementUnit> patchWorkforcemanagementManagementunitWithHttpInfo(String managementUnitId, UpdateManagementUnitRequest body) throws IOException {
+    return patchWorkforcemanagementManagementunit(createPatchWorkforcemanagementManagementunitRequest(managementUnitId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementManagementunitRequest createPatchWorkforcemanagementManagementunitRequest(String managementUnitId, UpdateManagementUnitRequest body) {
+    return PatchWorkforcemanagementManagementunitRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update the requested management unit
+   * 
+   * @param request The request object
+   * @return ManagementUnit
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ManagementUnit patchWorkforcemanagementManagementunit(PatchWorkforcemanagementManagementunitRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ManagementUnit> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ManagementUnit>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the requested management unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ManagementUnit> patchWorkforcemanagementManagementunit(ApiRequest<UpdateManagementUnitRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ManagementUnit>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ManagementUnit> response = (ApiResponse<ManagementUnit>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ManagementUnit> response = (ApiResponse<ManagementUnit>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

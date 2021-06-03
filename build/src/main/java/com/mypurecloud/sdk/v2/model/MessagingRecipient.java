@@ -16,9 +16,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * This is used to identify who the message is sent to, as well as who it was sent from. This information is channel specific - depends on capabilities to describe party by the platform
+ * Information about the recipient the message is sent to or received from.
  */
-@ApiModel(description = "This is used to identify who the message is sent to, as well as who it was sent from. This information is channel specific - depends on capabilities to describe party by the platform")
+@ApiModel(description = "Information about the recipient the message is sent to or received from.")
 
 public class MessagingRecipient  implements Serializable {
   
@@ -38,7 +38,7 @@ public class MessagingRecipient  implements Serializable {
     }
   }
   /**
-   * The recipient identifier type. This is used to indicate the format used by the recipient identifier.
+   * The recipient ID type. This is used to indicate the format used for the ID.
    */
  @JsonDeserialize(using = IdTypeEnumDeserializer.class)
   public enum IdTypeEnum {
@@ -79,7 +79,7 @@ public class MessagingRecipient  implements Serializable {
   private String email = null;
 
   
-  @ApiModelProperty(example = "null", value = "Nickname/user name")
+  @ApiModelProperty(example = "null", value = "Nickname or display name of the recipient.")
   @JsonProperty("nickname")
   public String getNickname() {
     return nickname;
@@ -87,14 +87,14 @@ public class MessagingRecipient  implements Serializable {
 
   
   /**
-   * The recipient identifier specific for particular channel/integration. This is required when sending a message.
+   * The recipient ID specific to the provider.
    **/
   public MessagingRecipient id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The recipient identifier specific for particular channel/integration. This is required when sending a message.")
+  @ApiModelProperty(example = "null", required = true, value = "The recipient ID specific to the provider.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -105,14 +105,14 @@ public class MessagingRecipient  implements Serializable {
 
   
   /**
-   * The recipient identifier type. This is used to indicate the format used by the recipient identifier.
+   * The recipient ID type. This is used to indicate the format used for the ID.
    **/
   public MessagingRecipient idType(IdTypeEnum idType) {
     this.idType = idType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The recipient identifier type. This is used to indicate the format used by the recipient identifier.")
+  @ApiModelProperty(example = "null", value = "The recipient ID type. This is used to indicate the format used for the ID.")
   @JsonProperty("idType")
   public IdTypeEnum getIdType() {
     return idType;
@@ -122,28 +122,28 @@ public class MessagingRecipient  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "Path or URI to an image file containing an avatar")
+  @ApiModelProperty(example = "null", value = "URL of an image that represents the recipient.")
   @JsonProperty("image")
   public String getImage() {
     return image;
   }
 
   
-  @ApiModelProperty(example = "null", value = "Sender's first name")
+  @ApiModelProperty(example = "null", value = "First name of the recipient.")
   @JsonProperty("firstName")
   public String getFirstName() {
     return firstName;
   }
 
   
-  @ApiModelProperty(example = "null", value = "Sender's last name")
+  @ApiModelProperty(example = "null", value = "Last name of the recipient.")
   @JsonProperty("lastName")
   public String getLastName() {
     return lastName;
   }
 
   
-  @ApiModelProperty(example = "null", value = "Sender's email address")
+  @ApiModelProperty(example = "null", value = "E-mail address of the recipient.")
   @JsonProperty("email")
   public String getEmail() {
     return email;

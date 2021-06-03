@@ -32,14 +32,14 @@ public class ContentActions  implements Serializable {
 
   
   /**
-   * A URL for a web page to redirect the user to
+   * A URL of a web page to direct the user to.
    **/
   public ContentActions url(String url) {
     this.url = url;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A URL for a web page to redirect the user to")
+  @ApiModelProperty(example = "null", value = "A URL of a web page to direct the user to.")
   @JsonProperty("url")
   public String getUrl() {
     return url;
@@ -50,14 +50,14 @@ public class ContentActions  implements Serializable {
 
   
   /**
-   * The target window or tab within the URL's web page. If empty will open a blank page or tab.
+   * The target window in which to open the URL. If empty will open a blank page or tab.
    **/
   public ContentActions urlTarget(String urlTarget) {
     this.urlTarget = urlTarget;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The target window or tab within the URL's web page. If empty will open a blank page or tab.")
+  @ApiModelProperty(example = "null", value = "The target window in which to open the URL. If empty will open a blank page or tab.")
   @JsonProperty("urlTarget")
   public String getUrlTarget() {
     return urlTarget;
@@ -68,14 +68,14 @@ public class ContentActions  implements Serializable {
 
   
   /**
-   * Text to be sent back in reply when a list item is selected
+   * Text to be sent back in reply when the item is selected.
    **/
   public ContentActions textback(String textback) {
     this.textback = textback;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Text to be sent back in reply when a list item is selected")
+  @ApiModelProperty(example = "null", value = "Text to be sent back in reply when the item is selected.")
   @JsonProperty("textback")
   public String getTextback() {
     return textback;
@@ -86,14 +86,14 @@ public class ContentActions  implements Serializable {
 
   
   /**
-   * Execute an organization's specific command
+   * Execute an organization's specific command.
    **/
   public ContentActions commandName(String commandName) {
     this.commandName = commandName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Execute an organization's specific command")
+  @ApiModelProperty(example = "null", value = "Execute an organization's specific command.")
   @JsonProperty("commandName")
   public String getCommandName() {
     return commandName;
@@ -104,14 +104,14 @@ public class ContentActions  implements Serializable {
 
   
   /**
-   * Additional context for the command
+   * Additional context for the command.
    **/
   public ContentActions context(Map<String, Object> context) {
     this.context = context;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Additional context for the command")
+  @ApiModelProperty(example = "null", value = "Additional context for the command.")
   @JsonProperty("context")
   public Map<String, Object> getContext() {
     return context;

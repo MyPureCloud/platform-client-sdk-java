@@ -44,7 +44,10 @@ title: AuditRealtimeQueryRequest
 | TELEPHONY | &quot;Telephony&quot; |
 | TOPICSDEFINITIONS | &quot;TopicsDefinitions&quot; |
 | TRIGGERS | &quot;Triggers&quot; |
+| WEBDEPLOYMENTS | &quot;WebDeployments&quot; |
+| WEBHOOKS | &quot;Webhooks&quot; |
 | WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; |
+| CONVERSATIONMESSAGING | &quot;ConversationMessaging&quot; |
 {: class="table table-striped"}
 
 

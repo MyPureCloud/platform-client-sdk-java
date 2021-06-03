@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateParam;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkAddResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkRemoveResponse;
 import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserListing;
@@ -1066,13 +1067,13 @@ public class LearningApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Void> postLearningAssignmentsBulkremoveAsync(PostLearningAssignmentsBulkremoveRequest request, final AsyncApiCallback<Void> callback) {
+  public Future<LearningAssignmentBulkRemoveResponse> postLearningAssignmentsBulkremoveAsync(PostLearningAssignmentsBulkremoveRequest request, final AsyncApiCallback<LearningAssignmentBulkRemoveResponse> callback) {
     try {
-      final SettableFuture<Void> future = SettableFuture.create();
+      final SettableFuture<LearningAssignmentBulkRemoveResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LearningAssignmentBulkRemoveResponse>() {}, new AsyncApiCallback<ApiResponse<LearningAssignmentBulkRemoveResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<Void> response) {
+        public void onCompleted(ApiResponse<LearningAssignmentBulkRemoveResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1100,13 +1101,13 @@ public class LearningApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Void>> postLearningAssignmentsBulkremoveAsync(ApiRequest<List<String>> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+  public Future<ApiResponse<LearningAssignmentBulkRemoveResponse>> postLearningAssignmentsBulkremoveAsync(ApiRequest<List<String>> request, final AsyncApiCallback<ApiResponse<LearningAssignmentBulkRemoveResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<LearningAssignmentBulkRemoveResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<LearningAssignmentBulkRemoveResponse>() {}, new AsyncApiCallback<ApiResponse<LearningAssignmentBulkRemoveResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<Void> response) {
+        public void onCompleted(ApiResponse<LearningAssignmentBulkRemoveResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1114,7 +1115,7 @@ public class LearningApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            ApiResponse<LearningAssignmentBulkRemoveResponse> response = (ApiResponse<LearningAssignmentBulkRemoveResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -1122,7 +1123,7 @@ public class LearningApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<LearningAssignmentBulkRemoveResponse> response = (ApiResponse<LearningAssignmentBulkRemoveResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

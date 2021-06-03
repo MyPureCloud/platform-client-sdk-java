@@ -14,8 +14,10 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ConversationMetrics;
 import com.mypurecloud.sdk.v2.model.TranscriptUrl;
 import com.mypurecloud.sdk.v2.model.Program;
+import com.mypurecloud.sdk.v2.model.ProgramMappings;
 import com.mypurecloud.sdk.v2.model.ProgramsEntityListing;
 import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
+import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
 import com.mypurecloud.sdk.v2.model.ProgramJob;
 import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsResponse;
@@ -31,6 +33,7 @@ import com.mypurecloud.sdk.v2.model.TopicRequest;
 import com.mypurecloud.sdk.v2.model.TopicJobRequest;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
 import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
+import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsProgramRequest;
@@ -39,8 +42,10 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationR
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsDialectsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramMappingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsGeneralJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsMappingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsPublishjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsUnpublishedRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsSettingsRequest;
@@ -56,6 +61,7 @@ import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsReques
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsPublishjobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTranscriptsSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramRequest;
+import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsProgramMappingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutSpeechandtextanalyticsTopicRequest;
 
@@ -551,6 +557,85 @@ public class SpeechTextAnalyticsApi {
 
   
   /**
+   * Get Speech &amp; Text Analytics program mappings to queues and flows by id
+   * 
+   * @param programId The id of the program (required)
+   * @return ProgramMappings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramMappings getSpeechandtextanalyticsProgramMappings(String programId) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsProgramMappings(createGetSpeechandtextanalyticsProgramMappingsRequest(programId));
+  }
+
+  /**
+   * Get Speech &amp; Text Analytics program mappings to queues and flows by id
+   * 
+   * @param programId The id of the program (required)
+   * @return ProgramMappings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramMappings> getSpeechandtextanalyticsProgramMappingsWithHttpInfo(String programId) throws IOException {
+    return getSpeechandtextanalyticsProgramMappings(createGetSpeechandtextanalyticsProgramMappingsRequest(programId).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsProgramMappingsRequest createGetSpeechandtextanalyticsProgramMappingsRequest(String programId) {
+    return GetSpeechandtextanalyticsProgramMappingsRequest.builder()
+            .withProgramId(programId)
+    
+            .build();
+  }
+
+  /**
+   * Get Speech &amp; Text Analytics program mappings to queues and flows by id
+   * 
+   * @param request The request object
+   * @return ProgramMappings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramMappings getSpeechandtextanalyticsProgramMappings(GetSpeechandtextanalyticsProgramMappingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ProgramMappings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ProgramMappings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Speech &amp; Text Analytics program mappings to queues and flows by id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramMappings> getSpeechandtextanalyticsProgramMappings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ProgramMappings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramMappings> response = (ApiResponse<ProgramMappings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramMappings> response = (ApiResponse<ProgramMappings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get the list of Speech &amp; Text Analytics programs
    * 
    * @param nextPage The key for listing the next page (optional)
@@ -707,6 +792,89 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<GeneralProgramJob> response = (ApiResponse<GeneralProgramJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the list of Speech &amp; Text Analytics programs mappings to queues and flows
+   * 
+   * @param nextPage The key for listing the next page (optional)
+   * @param pageSize The page size for the listing (optional, default to 20)
+   * @return ProgramsMappingsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramsMappingsEntityListing getSpeechandtextanalyticsProgramsMappings(String nextPage, Integer pageSize) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsProgramsMappings(createGetSpeechandtextanalyticsProgramsMappingsRequest(nextPage, pageSize));
+  }
+
+  /**
+   * Get the list of Speech &amp; Text Analytics programs mappings to queues and flows
+   * 
+   * @param nextPage The key for listing the next page (optional)
+   * @param pageSize The page size for the listing (optional, default to 20)
+   * @return ProgramsMappingsEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramsMappingsEntityListing> getSpeechandtextanalyticsProgramsMappingsWithHttpInfo(String nextPage, Integer pageSize) throws IOException {
+    return getSpeechandtextanalyticsProgramsMappings(createGetSpeechandtextanalyticsProgramsMappingsRequest(nextPage, pageSize).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsProgramsMappingsRequest createGetSpeechandtextanalyticsProgramsMappingsRequest(String nextPage, Integer pageSize) {
+    return GetSpeechandtextanalyticsProgramsMappingsRequest.builder()
+            .withNextPage(nextPage)
+    
+            .withPageSize(pageSize)
+    
+            .build();
+  }
+
+  /**
+   * Get the list of Speech &amp; Text Analytics programs mappings to queues and flows
+   * 
+   * @param request The request object
+   * @return ProgramsMappingsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramsMappingsEntityListing getSpeechandtextanalyticsProgramsMappings(GetSpeechandtextanalyticsProgramsMappingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ProgramsMappingsEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ProgramsMappingsEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of Speech &amp; Text Analytics programs mappings to queues and flows
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramsMappingsEntityListing> getSpeechandtextanalyticsProgramsMappings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ProgramsMappingsEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramsMappingsEntityListing> response = (ApiResponse<ProgramsMappingsEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramsMappingsEntityListing> response = (ApiResponse<ProgramsMappingsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1900,6 +2068,89 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Program> response = (ApiResponse<Program>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Set Speech &amp; Text Analytics program mappings to queues and flows
+   * 
+   * @param programId The id of the program (required)
+   * @param body The program to set mappings for (required)
+   * @return ProgramMappings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramMappings putSpeechandtextanalyticsProgramMappings(String programId, ProgramMappingsRequest body) throws IOException, ApiException {
+    return  putSpeechandtextanalyticsProgramMappings(createPutSpeechandtextanalyticsProgramMappingsRequest(programId, body));
+  }
+
+  /**
+   * Set Speech &amp; Text Analytics program mappings to queues and flows
+   * 
+   * @param programId The id of the program (required)
+   * @param body The program to set mappings for (required)
+   * @return ProgramMappings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramMappings> putSpeechandtextanalyticsProgramMappingsWithHttpInfo(String programId, ProgramMappingsRequest body) throws IOException {
+    return putSpeechandtextanalyticsProgramMappings(createPutSpeechandtextanalyticsProgramMappingsRequest(programId, body).withHttpInfo());
+  }
+
+  private PutSpeechandtextanalyticsProgramMappingsRequest createPutSpeechandtextanalyticsProgramMappingsRequest(String programId, ProgramMappingsRequest body) {
+    return PutSpeechandtextanalyticsProgramMappingsRequest.builder()
+            .withProgramId(programId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Set Speech &amp; Text Analytics program mappings to queues and flows
+   * 
+   * @param request The request object
+   * @return ProgramMappings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ProgramMappings putSpeechandtextanalyticsProgramMappings(PutSpeechandtextanalyticsProgramMappingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ProgramMappings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ProgramMappings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Set Speech &amp; Text Analytics program mappings to queues and flows
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ProgramMappings> putSpeechandtextanalyticsProgramMappings(ApiRequest<ProgramMappingsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ProgramMappings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramMappings> response = (ApiResponse<ProgramMappings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ProgramMappings> response = (ApiResponse<ProgramMappings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

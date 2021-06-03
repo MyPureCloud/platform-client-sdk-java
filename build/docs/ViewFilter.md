@@ -112,6 +112,7 @@ title: ViewFilter
 | **developmentName** | <!----><!---->**String**<!----> | Filter for development name |  [optional] |
 | **topicIds** | <!----><!---->**List&lt;String&gt;**<!----> | Represents the topics detected in the transcript |  [optional] |
 | **externalTags** | <!----><!---->**List&lt;String&gt;**<!----> | The list of external Tags used to filter conversation data |  [optional] |
+| **isAuthenticated** | <!----><!---->**Boolean**<!----> | Indicates filtering for the authenticated chat |  [optional] |
 {: class="table table-striped"}
 
 

@@ -27,8 +27,8 @@ public class CertificateDetails  implements Serializable {
   private Date expirationDate = null;
   private Date issueDate = null;
   private Boolean expired = null;
-  private Boolean valid = null;
   private Boolean signatureValid = null;
+  private Boolean valid = null;
 
   
   /**
@@ -123,23 +123,6 @@ public class CertificateDetails  implements Serializable {
   
   /**
    **/
-  public CertificateDetails valid(Boolean valid) {
-    this.valid = valid;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("valid")
-  public Boolean getValid() {
-    return valid;
-  }
-  public void setValid(Boolean valid) {
-    this.valid = valid;
-  }
-
-  
-  /**
-   **/
   public CertificateDetails signatureValid(Boolean signatureValid) {
     this.signatureValid = signatureValid;
     return this;
@@ -152,6 +135,23 @@ public class CertificateDetails  implements Serializable {
   }
   public void setSignatureValid(Boolean signatureValid) {
     this.signatureValid = signatureValid;
+  }
+
+  
+  /**
+   **/
+  public CertificateDetails valid(Boolean valid) {
+    this.valid = valid;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("valid")
+  public Boolean getValid() {
+    return valid;
+  }
+  public void setValid(Boolean valid) {
+    this.valid = valid;
   }
 
   
@@ -170,13 +170,13 @@ public class CertificateDetails  implements Serializable {
         Objects.equals(this.expirationDate, certificateDetails.expirationDate) &&
         Objects.equals(this.issueDate, certificateDetails.issueDate) &&
         Objects.equals(this.expired, certificateDetails.expired) &&
-        Objects.equals(this.valid, certificateDetails.valid) &&
-        Objects.equals(this.signatureValid, certificateDetails.signatureValid);
+        Objects.equals(this.signatureValid, certificateDetails.signatureValid) &&
+        Objects.equals(this.valid, certificateDetails.valid);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(issuer, subject, expirationDate, issueDate, expired, valid, signatureValid);
+    return Objects.hash(issuer, subject, expirationDate, issueDate, expired, signatureValid, valid);
   }
 
   @Override
@@ -189,8 +189,8 @@ public class CertificateDetails  implements Serializable {
     sb.append("    expirationDate: ").append(toIndentedString(expirationDate)).append("\n");
     sb.append("    issueDate: ").append(toIndentedString(issueDate)).append("\n");
     sb.append("    expired: ").append(toIndentedString(expired)).append("\n");
-    sb.append("    valid: ").append(toIndentedString(valid)).append("\n");
     sb.append("    signatureValid: ").append(toIndentedString(signatureValid)).append("\n");
+    sb.append("    valid: ").append(toIndentedString(valid)).append("\n");
     sb.append("}");
     return sb.toString();
   }

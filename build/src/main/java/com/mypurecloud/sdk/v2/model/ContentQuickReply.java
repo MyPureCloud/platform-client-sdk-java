@@ -16,9 +16,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Quick reply object
+ * Quick reply object.
  */
-@ApiModel(description = "Quick reply object")
+@ApiModel(description = "Quick reply object.")
 
 public class ContentQuickReply  implements Serializable {
   
@@ -40,7 +40,7 @@ public class ContentQuickReply  implements Serializable {
     }
   }
   /**
-   * Specifies the type of action that is triggered upon clicking the quick reply. Currently, the only supported action is \"Message\" which sends a message using the quick reply text.
+   * Specifies the type of action that is triggered upon clicking the quick reply.
    */
  @JsonDeserialize(using = ActionEnumDeserializer.class)
   public enum ActionEnum {
@@ -76,14 +76,14 @@ public class ContentQuickReply  implements Serializable {
 
   
   /**
-   * An ID assigned to the quick reply. Each object inside the content array has a unique ID.
+   * A unique ID assigned to the quick reply (Deprecated).
    **/
   public ContentQuickReply id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "An ID assigned to the quick reply. Each object inside the content array has a unique ID.")
+  @ApiModelProperty(example = "null", value = "A unique ID assigned to the quick reply (Deprecated).")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -112,14 +112,14 @@ public class ContentQuickReply  implements Serializable {
 
   
   /**
-   * Content of the textback payload after clicking a quick reply
+   * Content of the payload included in the quick reply response. Could be an ID identifying the quick reply response.
    **/
   public ContentQuickReply payload(String payload) {
     this.payload = payload;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Content of the textback payload after clicking a quick reply")
+  @ApiModelProperty(example = "null", value = "Content of the payload included in the quick reply response. Could be an ID identifying the quick reply response.")
   @JsonProperty("payload")
   public String getPayload() {
     return payload;
@@ -130,14 +130,14 @@ public class ContentQuickReply  implements Serializable {
 
   
   /**
-   * Path or URI to an image file associated with quick reply
+   * URL of an image associated with the quick reply.
    **/
   public ContentQuickReply image(String image) {
     this.image = image;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Path or URI to an image file associated with quick reply")
+  @ApiModelProperty(example = "null", value = "URL of an image associated with the quick reply.")
   @JsonProperty("image")
   public String getImage() {
     return image;
@@ -148,14 +148,14 @@ public class ContentQuickReply  implements Serializable {
 
   
   /**
-   * Specifies the type of action that is triggered upon clicking the quick reply. Currently, the only supported action is \"Message\" which sends a message using the quick reply text.
+   * Specifies the type of action that is triggered upon clicking the quick reply.
    **/
   public ContentQuickReply action(ActionEnum action) {
     this.action = action;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Specifies the type of action that is triggered upon clicking the quick reply. Currently, the only supported action is \"Message\" which sends a message using the quick reply text.")
+  @ApiModelProperty(example = "null", value = "Specifies the type of action that is triggered upon clicking the quick reply.")
   @JsonProperty("action")
   public ActionEnum getAction() {
     return action;

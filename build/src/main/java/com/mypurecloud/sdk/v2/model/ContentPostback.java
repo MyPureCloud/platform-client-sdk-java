@@ -15,9 +15,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * The postback object result of a user clicking in a button
+ * Postback response object representing the click of a rich media button (Deprecated).
  */
-@ApiModel(description = "The postback object result of a user clicking in a button")
+@ApiModel(description = "Postback response object representing the click of a rich media button (Deprecated).")
 
 public class ContentPostback  implements Serializable {
   
@@ -27,14 +27,14 @@ public class ContentPostback  implements Serializable {
 
   
   /**
-   * An ID assigned to the postback reply. Each object inside the content array has a unique ID.
+   * An ID assigned to the button response.
    **/
   public ContentPostback id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "An ID assigned to the postback reply. Each object inside the content array has a unique ID.")
+  @ApiModelProperty(example = "null", value = "An ID assigned to the button response.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -45,14 +45,14 @@ public class ContentPostback  implements Serializable {
 
   
   /**
-   * The text inside the button clicked (in the structured message template)
+   * The response text from the button click.
    **/
   public ContentPostback text(String text) {
     this.text = text;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The text inside the button clicked (in the structured message template)")
+  @ApiModelProperty(example = "null", value = "The response text from the button click.")
   @JsonProperty("text")
   public String getText() {
     return text;
@@ -63,14 +63,14 @@ public class ContentPostback  implements Serializable {
 
   
   /**
-   * Content of the textback payload after clicking a quick reply
+   * The response payload associated with the clicked button.
    **/
   public ContentPostback payload(String payload) {
     this.payload = payload;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Content of the textback payload after clicking a quick reply")
+  @ApiModelProperty(example = "null", required = true, value = "The response payload associated with the clicked button.")
   @JsonProperty("payload")
   public String getPayload() {
     return payload;

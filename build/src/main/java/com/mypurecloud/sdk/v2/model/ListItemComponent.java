@@ -17,9 +17,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * An entry in List template
+ * An entry in a List template.
  */
-@ApiModel(description = "An entry in List template")
+@ApiModel(description = "An entry in a List template.")
 
 public class ListItemComponent  implements Serializable {
   
@@ -39,7 +39,7 @@ public class ListItemComponent  implements Serializable {
     }
   }
   /**
-   * The type of component to render
+   * The type of list item to render.
    */
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
@@ -80,14 +80,14 @@ public class ListItemComponent  implements Serializable {
 
   
   /**
-   * An ID assigned to this component
+   * An ID assigned to this list item.
    **/
   public ListItemComponent id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "An ID assigned to this component")
+  @ApiModelProperty(example = "null", value = "An ID assigned to this list item.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -98,14 +98,14 @@ public class ListItemComponent  implements Serializable {
 
   
   /**
-   * An ID of the rich message instance
+   * An ID of the rich message instance.
    **/
   public ListItemComponent rmid(String rmid) {
     this.rmid = rmid;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "An ID of the rich message instance")
+  @ApiModelProperty(example = "null", value = "An ID of the rich message instance.")
   @JsonProperty("rmid")
   public String getRmid() {
     return rmid;
@@ -116,14 +116,14 @@ public class ListItemComponent  implements Serializable {
 
   
   /**
-   * The type of component to render
+   * The type of list item to render.
    **/
   public ListItemComponent type(TypeEnum type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The type of component to render")
+  @ApiModelProperty(example = "null", value = "The type of list item to render.")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
@@ -134,14 +134,14 @@ public class ListItemComponent  implements Serializable {
 
   
   /**
-   * Path or URI to an image file
+   * URL of an image.
    **/
   public ListItemComponent image(String image) {
     this.image = image;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Path or URI to an image file")
+  @ApiModelProperty(example = "null", value = "URL of an image.")
   @JsonProperty("image")
   public String getImage() {
     return image;
@@ -152,14 +152,14 @@ public class ListItemComponent  implements Serializable {
 
   
   /**
-   * The main headline of the list item
+   * The main headline of the list item.
    **/
   public ListItemComponent title(String title) {
     this.title = title;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The main headline of the list item")
+  @ApiModelProperty(example = "null", value = "The main headline of the list item.")
   @JsonProperty("title")
   public String getTitle() {
     return title;
@@ -170,14 +170,14 @@ public class ListItemComponent  implements Serializable {
 
   
   /**
-   * Text to show in the description row
+   * Text to show in the list item description.
    **/
   public ListItemComponent description(String description) {
     this.description = description;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Text to show in the description row")
+  @ApiModelProperty(example = "null", value = "Text to show in the list item description.")
   @JsonProperty("description")
   public String getDescription() {
     return description;
@@ -188,14 +188,14 @@ public class ListItemComponent  implements Serializable {
 
   
   /**
-   * User actions available on the content. All actions are optional and all actions are executed simultaneously.
+   * The list item actions.
    **/
   public ListItemComponent actions(ContentActions actions) {
     this.actions = actions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "User actions available on the content. All actions are optional and all actions are executed simultaneously.")
+  @ApiModelProperty(example = "null", value = "The list item actions.")
   @JsonProperty("actions")
   public ContentActions getActions() {
     return actions;

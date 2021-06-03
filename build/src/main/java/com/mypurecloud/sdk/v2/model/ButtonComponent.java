@@ -16,9 +16,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Structured template button object
+ * Structured template button object.
  */
-@ApiModel(description = "Structured template button object")
+@ApiModel(description = "Structured template button object.")
 
 public class ButtonComponent  implements Serializable {
   
@@ -29,14 +29,14 @@ public class ButtonComponent  implements Serializable {
 
   
   /**
-   * An ID assigned to this component
+   * The ID of this component.
    **/
   public ButtonComponent id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "An ID assigned to this component")
+  @ApiModelProperty(example = "null", value = "The ID of this component.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -47,14 +47,14 @@ public class ButtonComponent  implements Serializable {
 
   
   /**
-   * Deprecated - Use title instead
+   * Deprecated - Use title instead.
    **/
   public ButtonComponent text(String text) {
     this.text = text;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Deprecated - Use title instead")
+  @ApiModelProperty(example = "null", value = "Deprecated - Use title instead.")
   @JsonProperty("text")
   public String getText() {
     return text;
@@ -65,14 +65,14 @@ public class ButtonComponent  implements Serializable {
 
   
   /**
-   * Text to show inside the button
+   * Text to show inside the button.
    **/
   public ButtonComponent title(String title) {
     this.title = title;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Text to show inside the button")
+  @ApiModelProperty(example = "null", value = "Text to show inside the button.")
   @JsonProperty("title")
   public String getTitle() {
     return title;
@@ -83,14 +83,14 @@ public class ButtonComponent  implements Serializable {
 
   
   /**
-   * User actions available on the content. All actions are optional and all actions are executed simultaneously.
+   * The button actions.
    **/
   public ButtonComponent actions(ContentActions actions) {
     this.actions = actions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "User actions available on the content. All actions are optional and all actions are executed simultaneously.")
+  @ApiModelProperty(example = "null", value = "The button actions.")
   @JsonProperty("actions")
   public ContentActions getActions() {
     return actions;

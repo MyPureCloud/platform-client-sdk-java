@@ -31,8 +31,8 @@ public class GreetingListing  implements Serializable, PagedResource<Greeting> {
   private String firstUri = null;
   private String selfUri = null;
   private String nextUri = null;
-  private String previousUri = null;
   private String lastUri = null;
+  private String previousUri = null;
   private Integer pageCount = null;
 
   
@@ -157,23 +157,6 @@ public class GreetingListing  implements Serializable, PagedResource<Greeting> {
   
   /**
    **/
-  public GreetingListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
-  }
-
-  
-  /**
-   **/
   public GreetingListing lastUri(String lastUri) {
     this.lastUri = lastUri;
     return this;
@@ -186,6 +169,23 @@ public class GreetingListing  implements Serializable, PagedResource<Greeting> {
   }
   public void setLastUri(String lastUri) {
     this.lastUri = lastUri;
+  }
+
+  
+  /**
+   **/
+  public GreetingListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
   }
 
   
@@ -223,14 +223,14 @@ public class GreetingListing  implements Serializable, PagedResource<Greeting> {
         Objects.equals(this.firstUri, greetingListing.firstUri) &&
         Objects.equals(this.selfUri, greetingListing.selfUri) &&
         Objects.equals(this.nextUri, greetingListing.nextUri) &&
-        Objects.equals(this.previousUri, greetingListing.previousUri) &&
         Objects.equals(this.lastUri, greetingListing.lastUri) &&
+        Objects.equals(this.previousUri, greetingListing.previousUri) &&
         Objects.equals(this.pageCount, greetingListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, previousUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, lastUri, previousUri, pageCount);
   }
 
   @Override
@@ -245,8 +245,8 @@ public class GreetingListing  implements Serializable, PagedResource<Greeting> {
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

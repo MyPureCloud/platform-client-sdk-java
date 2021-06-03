@@ -216,6 +216,8 @@ public class CallbackBasic  implements Serializable {
   private Wrapup wrapup = null;
   private AfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
+  private String callerId = null;
+  private String callerIdName = null;
 
   
   /**
@@ -668,6 +670,42 @@ public class CallbackBasic  implements Serializable {
   }
 
   
+  /**
+   * The phone number displayed to recipients of the phone call. The value should conform to the E164 format.
+   **/
+  public CallbackBasic callerId(String callerId) {
+    this.callerId = callerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The phone number displayed to recipients of the phone call. The value should conform to the E164 format.")
+  @JsonProperty("callerId")
+  public String getCallerId() {
+    return callerId;
+  }
+  public void setCallerId(String callerId) {
+    this.callerId = callerId;
+  }
+
+  
+  /**
+   * The name displayed to recipients of the phone call.
+   **/
+  public CallbackBasic callerIdName(String callerIdName) {
+    this.callerIdName = callerIdName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The name displayed to recipients of the phone call.")
+  @JsonProperty("callerIdName")
+  public String getCallerIdName() {
+    return callerIdName;
+  }
+  public void setCallerIdName(String callerIdName) {
+    this.callerIdName = callerIdName;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -702,12 +740,14 @@ public class CallbackBasic  implements Serializable {
         Objects.equals(this.peerId, callbackBasic.peerId) &&
         Objects.equals(this.wrapup, callbackBasic.wrapup) &&
         Objects.equals(this.afterCallWork, callbackBasic.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, callbackBasic.afterCallWorkRequired);
+        Objects.equals(this.afterCallWorkRequired, callbackBasic.afterCallWorkRequired) &&
+        Objects.equals(this.callerId, callbackBasic.callerId) &&
+        Objects.equals(this.callerIdName, callbackBasic.callerIdName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, segments, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, externalCampaign, skipEnabled, timeoutSeconds, startAlertingTime, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, provider, peerId, wrapup, afterCallWork, afterCallWorkRequired);
+    return Objects.hash(state, id, segments, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, externalCampaign, skipEnabled, timeoutSeconds, startAlertingTime, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, provider, peerId, wrapup, afterCallWork, afterCallWorkRequired, callerId, callerIdName);
   }
 
   @Override
@@ -740,6 +780,8 @@ public class CallbackBasic  implements Serializable {
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
+    sb.append("    callerId: ").append(toIndentedString(callerId)).append("\n");
+    sb.append("    callerIdName: ").append(toIndentedString(callerIdName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

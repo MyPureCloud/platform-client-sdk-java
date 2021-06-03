@@ -3639,7 +3639,7 @@ try {
 
 
 
-> [LineBaseEntityListing](LineBaseEntityListing.html) getTelephonyProvidersEdgesLinebasesettings(pageNumber, pageSize, sortBy, sortOrder)
+> [LineBaseEntityListing](LineBaseEntityListing.html) getTelephonyProvidersEdgesLinebasesettings(pageNumber, pageSize, sortBy, sortOrder, expand)
 
 Get a listing of line base settings objects
 
@@ -3677,8 +3677,9 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortBy = "name"; // String | Value by which to sort
 String sortOrder = "ASC"; // String | Sort order
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Fields to expand in the response, comma-separated
 try {
-    LineBaseEntityListing result = apiInstance.getTelephonyProvidersEdgesLinebasesettings(pageNumber, pageSize, sortBy, sortOrder);
+    LineBaseEntityListing result = apiInstance.getTelephonyProvidersEdgesLinebasesettings(pageNumber, pageSize, sortBy, sortOrder, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesLinebasesettings");
@@ -3695,6 +3696,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortBy** | **String**| Value by which to sort | [optional] [default to name] 
 | **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
+| **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in the response, comma-separated | [optional]<br />**Values**: properties 
 {: class="table-striped"}
 
 

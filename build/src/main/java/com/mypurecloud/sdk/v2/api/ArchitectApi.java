@@ -133,6 +133,7 @@ import com.mypurecloud.sdk.v2.api.request.PostArchitectSchedulegroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectSystempromptHistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostArchitectSystempromptResourcesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostFlowHistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostFlowsActionsCheckinRequest;
@@ -6628,6 +6629,85 @@ public class ArchitectApi {
 
   
   /**
+   * Generate flow history
+   * Asynchronous.  Notification topic: v2.flows.{flowId}
+   * @param flowId Flow ID (required)
+   * @return Operation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Operation postFlowHistory(String flowId) throws IOException, ApiException {
+    return  postFlowHistory(createPostFlowHistoryRequest(flowId));
+  }
+
+  /**
+   * Generate flow history
+   * Asynchronous.  Notification topic: v2.flows.{flowId}
+   * @param flowId Flow ID (required)
+   * @return Operation
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Operation> postFlowHistoryWithHttpInfo(String flowId) throws IOException {
+    return postFlowHistory(createPostFlowHistoryRequest(flowId).withHttpInfo());
+  }
+
+  private PostFlowHistoryRequest createPostFlowHistoryRequest(String flowId) {
+    return PostFlowHistoryRequest.builder()
+            .withFlowId(flowId)
+    
+            .build();
+  }
+
+  /**
+   * Generate flow history
+   * Asynchronous.  Notification topic: v2.flows.{flowId}
+   * @param request The request object
+   * @return Operation
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Operation postFlowHistory(PostFlowHistoryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Operation> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Operation>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Generate flow history
+   * Asynchronous.  Notification topic: v2.flows.{flowId}
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Operation> postFlowHistory(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Operation>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Operation> response = (ApiResponse<Operation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Create flow version
    * 
    * @param flowId Flow ID (required)
@@ -6714,28 +6794,32 @@ public class ArchitectApi {
    * Create flow
    * 
    * @param body  (required)
+   * @param language Language (optional)
    * @return Flow
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Flow postFlows(Flow body) throws IOException, ApiException {
-    return  postFlows(createPostFlowsRequest(body));
+  public Flow postFlows(Flow body, String language) throws IOException, ApiException {
+    return  postFlows(createPostFlowsRequest(body, language));
   }
 
   /**
    * Create flow
    * 
    * @param body  (required)
+   * @param language Language (optional)
    * @return Flow
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Flow> postFlowsWithHttpInfo(Flow body) throws IOException {
-    return postFlows(createPostFlowsRequest(body).withHttpInfo());
+  public ApiResponse<Flow> postFlowsWithHttpInfo(Flow body, String language) throws IOException {
+    return postFlows(createPostFlowsRequest(body, language).withHttpInfo());
   }
 
-  private PostFlowsRequest createPostFlowsRequest(Flow body) {
+  private PostFlowsRequest createPostFlowsRequest(Flow body, String language) {
     return PostFlowsRequest.builder()
             .withBody(body)
+    
+            .withLanguage(language)
     
             .build();
   }

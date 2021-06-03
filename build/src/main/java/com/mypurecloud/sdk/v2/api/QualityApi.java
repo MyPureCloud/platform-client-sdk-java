@@ -18,6 +18,8 @@ import java.util.Date;
 import com.mypurecloud.sdk.v2.model.CalibrationEntityListing;
 import com.mypurecloud.sdk.v2.model.QualityAuditPage;
 import com.mypurecloud.sdk.v2.model.Survey;
+import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionStatusResponse;
+import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionResultsResponse;
 import com.mypurecloud.sdk.v2.model.EvaluationEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluatorActivityEntityListing;
 import com.mypurecloud.sdk.v2.model.EvaluationForm;
@@ -30,6 +32,7 @@ import com.mypurecloud.sdk.v2.model.EvaluationAggregationQuery;
 import com.mypurecloud.sdk.v2.model.SurveyAggregateQueryResponse;
 import com.mypurecloud.sdk.v2.model.SurveyAggregationQuery;
 import com.mypurecloud.sdk.v2.model.CalibrationCreate;
+import com.mypurecloud.sdk.v2.model.QMAuditQueryRequest;
 import com.mypurecloud.sdk.v2.model.EvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationFormAndScoringSet;
 import com.mypurecloud.sdk.v2.model.PublishForm;
@@ -48,6 +51,8 @@ import com.mypurecloud.sdk.v2.api.request.GetQualityCalibrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityConversationAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityConversationEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityConversationSurveysRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityConversationsAuditsQueryTransactionIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetQualityConversationsAuditsQueryTransactionIdResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityEvaluationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityEvaluatorsActivityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityFormRequest;
@@ -74,6 +79,7 @@ import com.mypurecloud.sdk.v2.api.request.PostAnalyticsEvaluationsAggregatesQuer
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsSurveysAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityCalibrationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityConversationEvaluationsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostQualityConversationsAuditsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityEvaluationsScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostQualityFormsEvaluationsRequest;
@@ -833,7 +839,7 @@ public class QualityApi {
   
   /**
    * Get audits for conversation or recording
-   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.
+   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.This endpoint is deprecated. Use following async endpoints, To query for audits POST /api/v2/quality/conversations/audits/queryTo get status of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}To get results of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}/results
    * @param conversationId Conversation ID (required)
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
@@ -853,7 +859,7 @@ public class QualityApi {
 
   /**
    * Get audits for conversation or recording
-   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.
+   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.This endpoint is deprecated. Use following async endpoints, To query for audits POST /api/v2/quality/conversations/audits/queryTo get status of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}To get results of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}/results
    * @param conversationId Conversation ID (required)
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
@@ -895,7 +901,7 @@ public class QualityApi {
 
   /**
    * Get audits for conversation or recording
-   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.
+   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.This endpoint is deprecated. Use following async endpoints, To query for audits POST /api/v2/quality/conversations/audits/queryTo get status of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}To get results of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}/results
    * @param request The request object
    * @return QualityAuditPage
    * @throws ApiException if the request fails on the server
@@ -914,7 +920,7 @@ public class QualityApi {
 
   /**
    * Get audits for conversation or recording
-   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.
+   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.This endpoint is deprecated. Use following async endpoints, To query for audits POST /api/v2/quality/conversations/audits/queryTo get status of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}To get results of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}/results
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -1103,6 +1109,176 @@ public class QualityApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<List<Survey>> response = (ApiResponse<List<Survey>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get status of audit query execution
+   * 
+   * @param transactionId Transaction ID (required)
+   * @return QualityAuditQueryExecutionStatusResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QualityAuditQueryExecutionStatusResponse getQualityConversationsAuditsQueryTransactionId(String transactionId) throws IOException, ApiException {
+    return  getQualityConversationsAuditsQueryTransactionId(createGetQualityConversationsAuditsQueryTransactionIdRequest(transactionId));
+  }
+
+  /**
+   * Get status of audit query execution
+   * 
+   * @param transactionId Transaction ID (required)
+   * @return QualityAuditQueryExecutionStatusResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QualityAuditQueryExecutionStatusResponse> getQualityConversationsAuditsQueryTransactionIdWithHttpInfo(String transactionId) throws IOException {
+    return getQualityConversationsAuditsQueryTransactionId(createGetQualityConversationsAuditsQueryTransactionIdRequest(transactionId).withHttpInfo());
+  }
+
+  private GetQualityConversationsAuditsQueryTransactionIdRequest createGetQualityConversationsAuditsQueryTransactionIdRequest(String transactionId) {
+    return GetQualityConversationsAuditsQueryTransactionIdRequest.builder()
+            .withTransactionId(transactionId)
+    
+            .build();
+  }
+
+  /**
+   * Get status of audit query execution
+   * 
+   * @param request The request object
+   * @return QualityAuditQueryExecutionStatusResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QualityAuditQueryExecutionStatusResponse getQualityConversationsAuditsQueryTransactionId(GetQualityConversationsAuditsQueryTransactionIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<QualityAuditQueryExecutionStatusResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QualityAuditQueryExecutionStatusResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get status of audit query execution
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QualityAuditQueryExecutionStatusResponse> getQualityConversationsAuditsQueryTransactionId(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<QualityAuditQueryExecutionStatusResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<QualityAuditQueryExecutionStatusResponse> response = (ApiResponse<QualityAuditQueryExecutionStatusResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<QualityAuditQueryExecutionStatusResponse> response = (ApiResponse<QualityAuditQueryExecutionStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get results of audit query
+   * 
+   * @param transactionId Transaction ID (required)
+   * @param cursor Indicates where to resume query results (not required for first page) (optional)
+   * @param pageSize Page size (optional, default to 25)
+   * @param expand Which fields, if any, to expand (optional)
+   * @return QualityAuditQueryExecutionResultsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QualityAuditQueryExecutionResultsResponse getQualityConversationsAuditsQueryTransactionIdResults(String transactionId, String cursor, Integer pageSize, List<String> expand) throws IOException, ApiException {
+    return  getQualityConversationsAuditsQueryTransactionIdResults(createGetQualityConversationsAuditsQueryTransactionIdResultsRequest(transactionId, cursor, pageSize, expand));
+  }
+
+  /**
+   * Get results of audit query
+   * 
+   * @param transactionId Transaction ID (required)
+   * @param cursor Indicates where to resume query results (not required for first page) (optional)
+   * @param pageSize Page size (optional, default to 25)
+   * @param expand Which fields, if any, to expand (optional)
+   * @return QualityAuditQueryExecutionResultsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QualityAuditQueryExecutionResultsResponse> getQualityConversationsAuditsQueryTransactionIdResultsWithHttpInfo(String transactionId, String cursor, Integer pageSize, List<String> expand) throws IOException {
+    return getQualityConversationsAuditsQueryTransactionIdResults(createGetQualityConversationsAuditsQueryTransactionIdResultsRequest(transactionId, cursor, pageSize, expand).withHttpInfo());
+  }
+
+  private GetQualityConversationsAuditsQueryTransactionIdResultsRequest createGetQualityConversationsAuditsQueryTransactionIdResultsRequest(String transactionId, String cursor, Integer pageSize, List<String> expand) {
+    return GetQualityConversationsAuditsQueryTransactionIdResultsRequest.builder()
+            .withTransactionId(transactionId)
+    
+            .withCursor(cursor)
+    
+            .withPageSize(pageSize)
+    
+            .withExpand(expand)
+    
+            .build();
+  }
+
+  /**
+   * Get results of audit query
+   * 
+   * @param request The request object
+   * @return QualityAuditQueryExecutionResultsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QualityAuditQueryExecutionResultsResponse getQualityConversationsAuditsQueryTransactionIdResults(GetQualityConversationsAuditsQueryTransactionIdResultsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<QualityAuditQueryExecutionResultsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QualityAuditQueryExecutionResultsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get results of audit query
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QualityAuditQueryExecutionResultsResponse> getQualityConversationsAuditsQueryTransactionIdResults(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<QualityAuditQueryExecutionResultsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<QualityAuditQueryExecutionResultsResponse> response = (ApiResponse<QualityAuditQueryExecutionResultsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<QualityAuditQueryExecutionResultsResponse> response = (ApiResponse<QualityAuditQueryExecutionResultsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3433,6 +3609,85 @@ public class QualityApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Evaluation> response = (ApiResponse<Evaluation>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create audit query execution
+   * 
+   * @param body query (required)
+   * @return QualityAuditQueryExecutionStatusResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QualityAuditQueryExecutionStatusResponse postQualityConversationsAuditsQuery(QMAuditQueryRequest body) throws IOException, ApiException {
+    return  postQualityConversationsAuditsQuery(createPostQualityConversationsAuditsQueryRequest(body));
+  }
+
+  /**
+   * Create audit query execution
+   * 
+   * @param body query (required)
+   * @return QualityAuditQueryExecutionStatusResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QualityAuditQueryExecutionStatusResponse> postQualityConversationsAuditsQueryWithHttpInfo(QMAuditQueryRequest body) throws IOException {
+    return postQualityConversationsAuditsQuery(createPostQualityConversationsAuditsQueryRequest(body).withHttpInfo());
+  }
+
+  private PostQualityConversationsAuditsQueryRequest createPostQualityConversationsAuditsQueryRequest(QMAuditQueryRequest body) {
+    return PostQualityConversationsAuditsQueryRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create audit query execution
+   * 
+   * @param request The request object
+   * @return QualityAuditQueryExecutionStatusResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QualityAuditQueryExecutionStatusResponse postQualityConversationsAuditsQuery(PostQualityConversationsAuditsQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<QualityAuditQueryExecutionStatusResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QualityAuditQueryExecutionStatusResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create audit query execution
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QualityAuditQueryExecutionStatusResponse> postQualityConversationsAuditsQuery(ApiRequest<QMAuditQueryRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<QualityAuditQueryExecutionStatusResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<QualityAuditQueryExecutionStatusResponse> response = (ApiResponse<QualityAuditQueryExecutionStatusResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<QualityAuditQueryExecutionStatusResponse> response = (ApiResponse<QualityAuditQueryExecutionStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

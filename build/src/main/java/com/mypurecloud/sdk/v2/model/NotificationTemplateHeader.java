@@ -20,9 +20,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Template header object
+ * Template header object.
  */
-@ApiModel(description = "Template header object")
+@ApiModel(description = "Template header object.")
 
 public class NotificationTemplateHeader  implements Serializable {
   
@@ -40,7 +40,7 @@ public class NotificationTemplateHeader  implements Serializable {
     }
   }
   /**
-   * Template header type
+   * Template header type.
    */
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
@@ -80,14 +80,14 @@ public class NotificationTemplateHeader  implements Serializable {
 
   
   /**
-   * Template header type
+   * Template header type.
    **/
   public NotificationTemplateHeader type(TypeEnum type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Template header type")
+  @ApiModelProperty(example = "null", required = true, value = "Template header type.")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
@@ -98,14 +98,14 @@ public class NotificationTemplateHeader  implements Serializable {
 
   
   /**
-   * Header text. For WhatsApp, ignored
+   * Header text. For WhatsApp, ignored.
    **/
   public NotificationTemplateHeader text(String text) {
     this.text = text;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Header text. For WhatsApp, ignored")
+  @ApiModelProperty(example = "null", value = "Header text. For WhatsApp, ignored.")
   @JsonProperty("text")
   public String getText() {
     return text;
@@ -116,14 +116,14 @@ public class NotificationTemplateHeader  implements Serializable {
 
   
   /**
-   * Attachment object
+   * Media template header image.
    **/
   public NotificationTemplateHeader media(ContentAttachment media) {
     this.media = media;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Attachment object")
+  @ApiModelProperty(example = "null", value = "Media template header image.")
   @JsonProperty("media")
   public ContentAttachment getMedia() {
     return media;
@@ -134,14 +134,14 @@ public class NotificationTemplateHeader  implements Serializable {
 
   
   /**
-   * Template parameters for placeholders in template
+   * Template parameters for placeholders in template.
    **/
   public NotificationTemplateHeader parameters(List<NotificationTemplateParameter> parameters) {
     this.parameters = parameters;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Template parameters for placeholders in template")
+  @ApiModelProperty(example = "null", value = "Template parameters for placeholders in template.")
   @JsonProperty("parameters")
   public List<NotificationTemplateParameter> getParameters() {
     return parameters;

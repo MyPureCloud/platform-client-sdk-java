@@ -18,9 +18,9 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Template body object
+ * Template body object.
  */
-@ApiModel(description = "Template body object")
+@ApiModel(description = "Template body object.")
 
 public class NotificationTemplateBody  implements Serializable {
   
@@ -29,14 +29,14 @@ public class NotificationTemplateBody  implements Serializable {
 
   
   /**
-   * Body text. For WhatsApp, ignored
+   * Body text. For WhatsApp, ignored.
    **/
   public NotificationTemplateBody text(String text) {
     this.text = text;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Body text. For WhatsApp, ignored")
+  @ApiModelProperty(example = "null", value = "Body text. For WhatsApp, ignored.")
   @JsonProperty("text")
   public String getText() {
     return text;
@@ -47,14 +47,14 @@ public class NotificationTemplateBody  implements Serializable {
 
   
   /**
-   * Template parameters for placeholders in template
+   * Template parameters for placeholders in template.
    **/
   public NotificationTemplateBody parameters(List<NotificationTemplateParameter> parameters) {
     this.parameters = parameters;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Template parameters for placeholders in template")
+  @ApiModelProperty(example = "null", required = true, value = "Template parameters for placeholders in template.")
   @JsonProperty("parameters")
   public List<NotificationTemplateParameter> getParameters() {
     return parameters;

@@ -43,7 +43,10 @@ public class GeneralProgramJobRequest  implements Serializable {
     EN_US("en-US"),
     ES_US("es-US"),
     EN_AU("en-AU"),
-    EN_GB("en-GB");
+    EN_GB("en-GB"),
+    EN_ZA("en-ZA"),
+    ES_ES("es-ES"),
+    EN_IN("en-IN");
 
     private String value;
 

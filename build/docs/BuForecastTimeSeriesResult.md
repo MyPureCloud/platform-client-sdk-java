@@ -55,6 +55,7 @@ title: BuForecastTimeSeriesResult
 | CURVEFIT | &quot;CurveFit&quot; |
 | MULTILINEARREGRESSION | &quot;MultiLinearRegression&quot; |
 | DYNAMICHARMONICREGRESSION | &quot;DynamicHarmonicRegression&quot; |
+| THETA | &quot;Theta&quot; |
 | OTHER | &quot;Other&quot; |
 {: class="table table-striped"}
 

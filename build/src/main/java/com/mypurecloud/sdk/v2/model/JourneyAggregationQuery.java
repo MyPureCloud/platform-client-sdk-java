@@ -125,6 +125,7 @@ public class JourneyAggregationQuery  implements Serializable {
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
     NDISTINCTJOURNEYACTIONS("nDistinctJourneyActions"),
+    NDISTINCTJOURNEYSESSIONS("nDistinctJourneySessions"),
     NJOURNEYACTIONSBLOCKED("nJourneyActionsBlocked"),
     NJOURNEYOUTCOMESACHIEVED("nJourneyOutcomesAchieved"),
     NJOURNEYOUTCOMESATTRIBUTED("nJourneyOutcomesAttributed"),

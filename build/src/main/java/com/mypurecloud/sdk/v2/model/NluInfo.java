@@ -12,6 +12,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.Intent;
+import com.mypurecloud.sdk.v2.model.NluDomainVersion;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ import java.io.Serializable;
 public class NluInfo  implements Serializable {
   
   private AddressableEntityRef domain = null;
-  private AddressableEntityRef version = null;
+  private NluDomainVersion version = null;
   private List<Intent> intents = new ArrayList<Intent>();
 
   
@@ -48,17 +49,17 @@ public class NluInfo  implements Serializable {
   
   /**
    **/
-  public NluInfo version(AddressableEntityRef version) {
+  public NluInfo version(NluDomainVersion version) {
     this.version = version;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("version")
-  public AddressableEntityRef getVersion() {
+  public NluDomainVersion getVersion() {
     return version;
   }
-  public void setVersion(AddressableEntityRef version) {
+  public void setVersion(NluDomainVersion version) {
     this.version = version;
   }
 

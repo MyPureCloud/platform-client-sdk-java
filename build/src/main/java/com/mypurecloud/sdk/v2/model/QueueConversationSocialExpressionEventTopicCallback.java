@@ -214,6 +214,8 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
   private QueueConversationSocialExpressionEventTopicWrapup wrapup = null;
   private QueueConversationSocialExpressionEventTopicAfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
+  private String callerId = null;
+  private String callerIdName = null;
   private Object additionalProperties = null;
 
   
@@ -610,6 +612,40 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
   
   /**
    **/
+  public QueueConversationSocialExpressionEventTopicCallback callerId(String callerId) {
+    this.callerId = callerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("callerId")
+  public String getCallerId() {
+    return callerId;
+  }
+  public void setCallerId(String callerId) {
+    this.callerId = callerId;
+  }
+
+  
+  /**
+   **/
+  public QueueConversationSocialExpressionEventTopicCallback callerIdName(String callerIdName) {
+    this.callerIdName = callerIdName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("callerIdName")
+  public String getCallerIdName() {
+    return callerIdName;
+  }
+  public void setCallerIdName(String callerIdName) {
+    this.callerIdName = callerIdName;
+  }
+
+  
+  /**
+   **/
   public QueueConversationSocialExpressionEventTopicCallback additionalProperties(Object additionalProperties) {
     this.additionalProperties = additionalProperties;
     return this;
@@ -658,12 +694,14 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
         Objects.equals(this.wrapup, queueConversationSocialExpressionEventTopicCallback.wrapup) &&
         Objects.equals(this.afterCallWork, queueConversationSocialExpressionEventTopicCallback.afterCallWork) &&
         Objects.equals(this.afterCallWorkRequired, queueConversationSocialExpressionEventTopicCallback.afterCallWorkRequired) &&
+        Objects.equals(this.callerId, queueConversationSocialExpressionEventTopicCallback.callerId) &&
+        Objects.equals(this.callerIdName, queueConversationSocialExpressionEventTopicCallback.callerIdName) &&
         Objects.equals(this.additionalProperties, queueConversationSocialExpressionEventTopicCallback.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, peerId, externalCampaign, skipEnabled, provider, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, wrapup, afterCallWork, afterCallWorkRequired, additionalProperties);
+    return Objects.hash(state, id, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, peerId, externalCampaign, skipEnabled, provider, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, wrapup, afterCallWork, afterCallWorkRequired, callerId, callerIdName, additionalProperties);
   }
 
   @Override
@@ -694,6 +732,8 @@ public class QueueConversationSocialExpressionEventTopicCallback  implements Ser
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
+    sb.append("    callerId: ").append(toIndentedString(callerId)).append("\n");
+    sb.append("    callerIdName: ").append(toIndentedString(callerIdName)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -915,7 +915,7 @@ try {
 
 
 
-> Void postLearningAssignmentsBulkremove(body)
+> [LearningAssignmentBulkRemoveResponse](LearningAssignmentBulkRemoveResponse.html) postLearningAssignmentsBulkremove(body)
 
 Remove multiple Learning Assignments
 
@@ -951,7 +951,8 @@ Configuration.setDefaultApiClient(apiClient);
 LearningApi apiInstance = new LearningApi();
 List<String> body = Arrays.asList(new List<String>()); // List<String> | The IDs of the learning assignments to be removed
 try {
-    apiInstance.postLearningAssignmentsBulkremove(body);
+    LearningAssignmentBulkRemoveResponse result = apiInstance.postLearningAssignmentsBulkremove(body);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LearningApi#postLearningAssignmentsBulkremove");
     e.printStackTrace();
@@ -969,7 +970,7 @@ try {
 
 ### Return type
 
-null (empty response body)
+[**LearningAssignmentBulkRemoveResponse**](LearningAssignmentBulkRemoveResponse.html)
 
 <a name="postLearningModulePublish"></a>
 

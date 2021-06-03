@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateParam;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkAddResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentItem;
+import com.mypurecloud.sdk.v2.model.LearningAssignmentBulkRemoveResponse;
 import com.mypurecloud.sdk.v2.model.LearningModulePublishResponse;
 import com.mypurecloud.sdk.v2.model.LearningModuleRequest;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUserListing;
@@ -1224,20 +1225,22 @@ public class LearningApi {
    * Remove multiple Learning Assignments
    * 
    * @param body The IDs of the learning assignments to be removed (optional)
+   * @return LearningAssignmentBulkRemoveResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void postLearningAssignmentsBulkremove(List<String> body) throws IOException, ApiException {
-     postLearningAssignmentsBulkremove(createPostLearningAssignmentsBulkremoveRequest(body));
+  public LearningAssignmentBulkRemoveResponse postLearningAssignmentsBulkremove(List<String> body) throws IOException, ApiException {
+    return  postLearningAssignmentsBulkremove(createPostLearningAssignmentsBulkremoveRequest(body));
   }
 
   /**
    * Remove multiple Learning Assignments
    * 
    * @param body The IDs of the learning assignments to be removed (optional)
+   * @return LearningAssignmentBulkRemoveResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postLearningAssignmentsBulkremoveWithHttpInfo(List<String> body) throws IOException {
+  public ApiResponse<LearningAssignmentBulkRemoveResponse> postLearningAssignmentsBulkremoveWithHttpInfo(List<String> body) throws IOException {
     return postLearningAssignmentsBulkremove(createPostLearningAssignmentsBulkremoveRequest(body).withHttpInfo());
   }
 
@@ -1252,17 +1255,18 @@ public class LearningApi {
    * Remove multiple Learning Assignments
    * 
    * @param request The request object
+   * @return LearningAssignmentBulkRemoveResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void postLearningAssignmentsBulkremove(PostLearningAssignmentsBulkremoveRequest request) throws IOException, ApiException {
+  public LearningAssignmentBulkRemoveResponse postLearningAssignmentsBulkremove(PostLearningAssignmentsBulkremoveRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
+      ApiResponse<LearningAssignmentBulkRemoveResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LearningAssignmentBulkRemoveResponse>() {});
+      return response.getBody();
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
+      return null;
     }
   }
 
@@ -1273,13 +1277,13 @@ public class LearningApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> postLearningAssignmentsBulkremove(ApiRequest<List<String>> request) throws IOException {
+  public ApiResponse<LearningAssignmentBulkRemoveResponse> postLearningAssignmentsBulkremove(ApiRequest<List<String>> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, null);
+      return pcapiClient.invoke(request, new TypeReference<LearningAssignmentBulkRemoveResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      ApiResponse<LearningAssignmentBulkRemoveResponse> response = (ApiResponse<LearningAssignmentBulkRemoveResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1290,7 +1294,7 @@ public class LearningApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<LearningAssignmentBulkRemoveResponse> response = (ApiResponse<LearningAssignmentBulkRemoveResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

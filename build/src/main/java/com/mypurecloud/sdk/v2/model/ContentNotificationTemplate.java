@@ -18,9 +18,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Template notification object
+ * Template notification object.
  */
-@ApiModel(description = "Template notification object")
+@ApiModel(description = "Template notification object.")
 
 public class ContentNotificationTemplate  implements Serializable {
   
@@ -32,14 +32,14 @@ public class ContentNotificationTemplate  implements Serializable {
 
   
   /**
-   * The messaging channel template id. For WhatsApp, 'namespace@name'
+   * The messaging provider template ID. For WhatsApp, 'namespace@name'.
    **/
   public ContentNotificationTemplate id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The messaging channel template id. For WhatsApp, 'namespace@name'")
+  @ApiModelProperty(example = "null", value = "The messaging provider template ID. For WhatsApp, 'namespace@name'.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -50,14 +50,14 @@ public class ContentNotificationTemplate  implements Serializable {
 
   
   /**
-   * Template language
+   * Template language.
    **/
   public ContentNotificationTemplate language(String language) {
     this.language = language;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Template language")
+  @ApiModelProperty(example = "null", value = "Template language.")
   @JsonProperty("language")
   public String getLanguage() {
     return language;
@@ -68,14 +68,14 @@ public class ContentNotificationTemplate  implements Serializable {
 
   
   /**
-   * Template header object
+   * The template header.
    **/
   public ContentNotificationTemplate header(NotificationTemplateHeader header) {
     this.header = header;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Template header object")
+  @ApiModelProperty(example = "null", value = "The template header.")
   @JsonProperty("header")
   public NotificationTemplateHeader getHeader() {
     return header;
@@ -86,14 +86,14 @@ public class ContentNotificationTemplate  implements Serializable {
 
   
   /**
-   * Template body object
+   * The template body.
    **/
   public ContentNotificationTemplate body(NotificationTemplateBody body) {
     this.body = body;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Template body object")
+  @ApiModelProperty(example = "null", required = true, value = "The template body.")
   @JsonProperty("body")
   public NotificationTemplateBody getBody() {
     return body;
@@ -104,14 +104,14 @@ public class ContentNotificationTemplate  implements Serializable {
 
   
   /**
-   * Template footer object
+   * The template footer.
    **/
   public ContentNotificationTemplate footer(NotificationTemplateFooter footer) {
     this.footer = footer;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Template footer object")
+  @ApiModelProperty(example = "null", value = "The template footer.")
   @JsonProperty("footer")
   public NotificationTemplateFooter getFooter() {
     return footer;
