@@ -88,7 +88,7 @@ public class GamificationApi {
 
   
   /**
-   * Leaderboard of the requesting user&#39;s division
+   * Leaderboard of the requesting user&#39;s division or performance profile
    * 
    * @param startWorkday Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param endWorkday End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
@@ -102,7 +102,7 @@ public class GamificationApi {
   }
 
   /**
-   * Leaderboard of the requesting user&#39;s division
+   * Leaderboard of the requesting user&#39;s division or performance profile
    * 
    * @param startWorkday Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param endWorkday End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
@@ -126,7 +126,7 @@ public class GamificationApi {
   }
 
   /**
-   * Leaderboard of the requesting user&#39;s division
+   * Leaderboard of the requesting user&#39;s division or performance profile
    * 
    * @param request The request object
    * @return Leaderboard
@@ -145,7 +145,7 @@ public class GamificationApi {
   }
 
   /**
-   * Leaderboard of the requesting user&#39;s division
+   * Leaderboard of the requesting user&#39;s division or performance profile
    * 
    * @param request The request object
    * @return the response
@@ -175,7 +175,7 @@ public class GamificationApi {
 
   
   /**
-   * Leaderboard by division
+   * Leaderboard by filter type
    * 
    * @param filterType Filter type for the query request. (required)
    * @param filterId ID for the filter type. For example, division Id (required)
@@ -191,7 +191,7 @@ public class GamificationApi {
   }
 
   /**
-   * Leaderboard by division
+   * Leaderboard by filter type
    * 
    * @param filterType Filter type for the query request. (required)
    * @param filterId ID for the filter type. For example, division Id (required)
@@ -221,7 +221,7 @@ public class GamificationApi {
   }
 
   /**
-   * Leaderboard by division
+   * Leaderboard by filter type
    * 
    * @param request The request object
    * @return Leaderboard
@@ -240,7 +240,7 @@ public class GamificationApi {
   }
 
   /**
-   * Leaderboard by division
+   * Leaderboard by filter type
    * 
    * @param request The request object
    * @return the response
@@ -431,28 +431,32 @@ public class GamificationApi {
    * Gamified metric by id
    * 
    * @param metricId metric Id (required)
+   * @param performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
    * @return Metric
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Metric getGamificationMetric(String metricId) throws IOException, ApiException {
-    return  getGamificationMetric(createGetGamificationMetricRequest(metricId));
+  public Metric getGamificationMetric(String metricId, String performanceProfileId) throws IOException, ApiException {
+    return  getGamificationMetric(createGetGamificationMetricRequest(metricId, performanceProfileId));
   }
 
   /**
    * Gamified metric by id
    * 
    * @param metricId metric Id (required)
+   * @param performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
    * @return Metric
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Metric> getGamificationMetricWithHttpInfo(String metricId) throws IOException {
-    return getGamificationMetric(createGetGamificationMetricRequest(metricId).withHttpInfo());
+  public ApiResponse<Metric> getGamificationMetricWithHttpInfo(String metricId, String performanceProfileId) throws IOException {
+    return getGamificationMetric(createGetGamificationMetricRequest(metricId, performanceProfileId).withHttpInfo());
   }
 
-  private GetGamificationMetricRequest createGetGamificationMetricRequest(String metricId) {
+  private GetGamificationMetricRequest createGetGamificationMetricRequest(String metricId, String performanceProfileId) {
     return GetGamificationMetricRequest.builder()
             .withMetricId(metricId)
+    
+            .withPerformanceProfileId(performanceProfileId)
     
             .build();
   }
@@ -896,7 +900,7 @@ public class GamificationApi {
   /**
    * Workday performance metrics of the requesting user
    * 
-   * @param workday Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param workday Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @return WorkdayMetricListing
    * @throws ApiException if the request fails on the server
@@ -909,7 +913,7 @@ public class GamificationApi {
   /**
    * Workday performance metrics of the requesting user
    * 
-   * @param workday Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param workday Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @return WorkdayMetricListing
    * @throws IOException if the request fails to be processed
@@ -979,8 +983,8 @@ public class GamificationApi {
   /**
    * Attendance status metrics of the requesting user
    * 
-   * @param startWorkday Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-   * @param endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @return AttendanceStatusListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -992,8 +996,8 @@ public class GamificationApi {
   /**
    * Attendance status metrics of the requesting user
    * 
-   * @param startWorkday Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-   * @param endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @return AttendanceStatusListing
    * @throws IOException if the request fails to be processed
    */
@@ -1137,7 +1141,7 @@ public class GamificationApi {
   /**
    * All-time points of the requesting user
    * 
-   * @param endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @return AllTimePoints
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1149,7 +1153,7 @@ public class GamificationApi {
   /**
    * All-time points of the requesting user
    * 
-   * @param endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @return AllTimePoints
    * @throws IOException if the request fails to be processed
    */
@@ -1295,8 +1299,8 @@ public class GamificationApi {
   /**
    * Points trends of the requesting user
    * 
-   * @param startWorkday Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-   * @param endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param dayOfWeek Optional filter to specify which day of weeks to be included in the response (optional)
    * @return WorkdayPointsTrend
    * @throws ApiException if the request fails on the server
@@ -1309,8 +1313,8 @@ public class GamificationApi {
   /**
    * Points trends of the requesting user
    * 
-   * @param startWorkday Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-   * @param endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param dayOfWeek Optional filter to specify which day of weeks to be included in the response (optional)
    * @return WorkdayPointsTrend
    * @throws IOException if the request fails to be processed
@@ -1383,7 +1387,7 @@ public class GamificationApi {
    * Workday performance metrics for a user
    * 
    * @param userId  (required)
-   * @param workday Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param workday Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @return WorkdayMetricListing
    * @throws ApiException if the request fails on the server
@@ -1397,7 +1401,7 @@ public class GamificationApi {
    * Workday performance metrics for a user
    * 
    * @param userId  (required)
-   * @param workday Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param workday Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @return WorkdayMetricListing
    * @throws IOException if the request fails to be processed
@@ -1470,8 +1474,8 @@ public class GamificationApi {
    * Attendance status metrics for a user
    * 
    * @param userId  (required)
-   * @param startWorkday Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-   * @param endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @return AttendanceStatusListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1484,8 +1488,8 @@ public class GamificationApi {
    * Attendance status metrics for a user
    * 
    * @param userId  (required)
-   * @param startWorkday Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-   * @param endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @return AttendanceStatusListing
    * @throws IOException if the request fails to be processed
    */
@@ -1636,7 +1640,7 @@ public class GamificationApi {
    * All-time points for a user
    * 
    * @param userId  (required)
-   * @param endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @return AllTimePoints
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -1649,7 +1653,7 @@ public class GamificationApi {
    * All-time points for a user
    * 
    * @param userId  (required)
-   * @param endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @return AllTimePoints
    * @throws IOException if the request fails to be processed
    */
@@ -1719,8 +1723,8 @@ public class GamificationApi {
    * Points trend for a user
    * 
    * @param userId  (required)
-   * @param startWorkday Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-   * @param endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param dayOfWeek Optional filter to specify which day of weeks to be included in the response (optional)
    * @return WorkdayPointsTrend
    * @throws ApiException if the request fails on the server
@@ -1734,8 +1738,8 @@ public class GamificationApi {
    * Points trend for a user
    * 
    * @param userId  (required)
-   * @param startWorkday Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-   * @param endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param dayOfWeek Optional filter to specify which day of weeks to be included in the response (optional)
    * @return WorkdayPointsTrend
    * @throws IOException if the request fails to be processed
@@ -1810,8 +1814,8 @@ public class GamificationApi {
    * Values Trends of a user
    * 
    * @param userId  (required)
-   * @param startWorkday Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-   * @param endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param timeZone Timezone for the workday. Defaults to UTC (optional, default to UTC)
    * @return WorkdayValuesTrend
    * @throws ApiException if the request fails on the server
@@ -1825,8 +1829,8 @@ public class GamificationApi {
    * Values Trends of a user
    * 
    * @param userId  (required)
-   * @param startWorkday Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-   * @param endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param timeZone Timezone for the workday. Defaults to UTC (optional, default to UTC)
    * @return WorkdayValuesTrend
    * @throws IOException if the request fails to be processed
@@ -2080,8 +2084,8 @@ public class GamificationApi {
    * 
    * @param filterType Filter type for the query request. (required)
    * @param filterId ID for the filter type. (required)
-   * @param startWorkday Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-   * @param endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param timeZone Timezone for the workday. Defaults to UTC (optional, default to UTC)
    * @return WorkdayValuesTrend
    * @throws ApiException if the request fails on the server
@@ -2096,8 +2100,8 @@ public class GamificationApi {
    * 
    * @param filterType Filter type for the query request. (required)
    * @param filterId ID for the filter type. (required)
-   * @param startWorkday Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-   * @param endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param timeZone Timezone for the workday. Defaults to UTC (optional, default to UTC)
    * @return WorkdayValuesTrend
    * @throws IOException if the request fails to be processed
@@ -2256,8 +2260,8 @@ public class GamificationApi {
   /**
    * Values trends of the requesting user or group
    * 
-   * @param startWorkday Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-   * @param endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param filterType Filter type for the query request. If not set, then the request is for the requesting user. (optional)
    * @param timeZone Timezone for the workday. Defaults to UTC (optional, default to UTC)
    * @return WorkdayValuesTrend
@@ -2271,8 +2275,8 @@ public class GamificationApi {
   /**
    * Values trends of the requesting user or group
    * 
-   * @param startWorkday Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-   * @param endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param filterType Filter type for the query request. If not set, then the request is for the requesting user. (optional)
    * @param timeZone Timezone for the workday. Defaults to UTC (optional, default to UTC)
    * @return WorkdayValuesTrend
@@ -2657,12 +2661,13 @@ public class GamificationApi {
    * 
    * @param metricId metric Id (required)
    * @param body Metric (required)
+   * @param performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
    * @return Metric
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Metric putGamificationMetric(String metricId, Metric body) throws IOException, ApiException {
-    return  putGamificationMetric(createPutGamificationMetricRequest(metricId, body));
+  public Metric putGamificationMetric(String metricId, Metric body, String performanceProfileId) throws IOException, ApiException {
+    return  putGamificationMetric(createPutGamificationMetricRequest(metricId, body, performanceProfileId));
   }
 
   /**
@@ -2670,18 +2675,21 @@ public class GamificationApi {
    * 
    * @param metricId metric Id (required)
    * @param body Metric (required)
+   * @param performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
    * @return Metric
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Metric> putGamificationMetricWithHttpInfo(String metricId, Metric body) throws IOException {
-    return putGamificationMetric(createPutGamificationMetricRequest(metricId, body).withHttpInfo());
+  public ApiResponse<Metric> putGamificationMetricWithHttpInfo(String metricId, Metric body, String performanceProfileId) throws IOException {
+    return putGamificationMetric(createPutGamificationMetricRequest(metricId, body, performanceProfileId).withHttpInfo());
   }
 
-  private PutGamificationMetricRequest createPutGamificationMetricRequest(String metricId, Metric body) {
+  private PutGamificationMetricRequest createPutGamificationMetricRequest(String metricId, Metric body, String performanceProfileId) {
     return PutGamificationMetricRequest.builder()
             .withMetricId(metricId)
     
             .withBody(body)
+    
+            .withPerformanceProfileId(performanceProfileId)
     
             .build();
   }

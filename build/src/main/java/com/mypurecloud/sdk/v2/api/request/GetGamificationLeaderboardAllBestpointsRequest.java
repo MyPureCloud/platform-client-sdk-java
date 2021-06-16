@@ -59,6 +59,7 @@ public class GetGamificationLeaderboardAllBestpointsRequest {
 	} 
 
 	public enum filterTypeValues { 
+		PERFORMANCEPROFILE("PerformanceProfile"), 
 		DIVISION("Division");
 
 		private String value;

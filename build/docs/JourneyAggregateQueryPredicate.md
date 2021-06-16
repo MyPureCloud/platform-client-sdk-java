@@ -49,6 +49,7 @@ title: JourneyAggregateQueryPredicate
 | JOURNEYACTIONTARGETID | &quot;journeyActionTargetId&quot; |
 | JOURNEYACTIONTEMPLATEID | &quot;journeyActionTemplateId&quot; |
 | JOURNEYBLOCKINGACTIONMAPID | &quot;journeyBlockingActionMapId&quot; |
+| JOURNEYBLOCKINGEMERGENCYSCHEDULEGROUPID | &quot;journeyBlockingEmergencyScheduleGroupId&quot; |
 | JOURNEYBLOCKINGREASON | &quot;journeyBlockingReason&quot; |
 | JOURNEYBLOCKINGSCHEDULEGROUPID | &quot;journeyBlockingScheduleGroupId&quot; |
 | JOURNEYCUSTOMERID | &quot;journeyCustomerId&quot; |

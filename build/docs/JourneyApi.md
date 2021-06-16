@@ -616,7 +616,7 @@ try {
 
 
 
-> [ActionTemplateListing](ActionTemplateListing.html) getJourneyActiontemplates(pageNumber, pageSize, sortBy, mediaType, state)
+> [ActionTemplateListing](ActionTemplateListing.html) getJourneyActiontemplates(pageNumber, pageSize, sortBy, mediaType, state, queryFields, queryValue)
 
 Retrieve all action templates.
 
@@ -654,9 +654,11 @@ Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortBy = "sortBy_example"; // String | Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=name,-createdDate).
 String mediaType = "mediaType_example"; // String | Media type
-String state = "state_example"; // String | Action template state
+String state = "state_example"; // String | Action template state.
+List<String> queryFields = Arrays.asList("queryFields_example"); // List<String> | ActionTemplate field(s) to query on. Requires 'queryValue' to also be set.
+String queryValue = "queryValue_example"; // String | Value to query on. Requires 'queryFields' to also be set.
 try {
-    ActionTemplateListing result = apiInstance.getJourneyActiontemplates(pageNumber, pageSize, sortBy, mediaType, state);
+    ActionTemplateListing result = apiInstance.getJourneyActiontemplates(pageNumber, pageSize, sortBy, mediaType, state, queryFields, queryValue);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling JourneyApi#getJourneyActiontemplates");
@@ -673,7 +675,9 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortBy** | **String**| Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=name,-createdDate). | [optional] 
 | **mediaType** | **String**| Media type | [optional]<br />**Values**: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow 
-| **state** | **String**| Action template state | [optional]<br />**Values**: Active, Inactive, Deleted 
+| **state** | **String**| Action template state. | [optional]<br />**Values**: Active, Inactive, Deleted 
+| **queryFields** | [**List&lt;String&gt;**](String.html)| ActionTemplate field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional] 
+| **queryValue** | **String**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional] 
 {: class="table-striped"}
 
 

@@ -92,7 +92,7 @@ public class GamificationApiAsync {
 
   
   /**
-   * Leaderboard of the requesting user&#39;s division
+   * Leaderboard of the requesting user&#39;s division or performance profile
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -126,7 +126,7 @@ public class GamificationApiAsync {
   }
 
   /**
-   * Leaderboard of the requesting user&#39;s division
+   * Leaderboard of the requesting user&#39;s division or performance profile
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -168,7 +168,7 @@ public class GamificationApiAsync {
 
   
   /**
-   * Leaderboard by division
+   * Leaderboard by filter type
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -202,7 +202,7 @@ public class GamificationApiAsync {
   }
 
   /**
-   * Leaderboard by division
+   * Leaderboard by filter type
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

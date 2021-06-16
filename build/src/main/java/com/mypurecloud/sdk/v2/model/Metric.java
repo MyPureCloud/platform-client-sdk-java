@@ -62,7 +62,7 @@ public class Metric  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The id of associated metric definition")
+  @ApiModelProperty(example = "null", value = "The id of associated metric definition")
   @JsonProperty("metricDefinitionId")
   public String getMetricDefinitionId() {
     return metricDefinitionId;
@@ -80,7 +80,7 @@ public class Metric  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Associated objective for this metric")
+  @ApiModelProperty(example = "null", value = "Associated objective for this metric")
   @JsonProperty("objective")
   public Objective getObjective() {
     return objective;

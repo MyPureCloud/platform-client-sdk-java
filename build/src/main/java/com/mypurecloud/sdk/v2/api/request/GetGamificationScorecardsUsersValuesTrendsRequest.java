@@ -59,6 +59,7 @@ public class GetGamificationScorecardsUsersValuesTrendsRequest {
 	} 
 
 	public enum filterTypeValues { 
+		PERFORMANCEPROFILE("PerformanceProfile"), 
 		DIVISION("Division");
 
 		private String value;

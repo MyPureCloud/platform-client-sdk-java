@@ -24,6 +24,7 @@ title: AuditQueryEntity
 | ATTEMPTLIMITS | &quot;AttemptLimits&quot; |
 | AUTHORGANIZATION | &quot;AuthOrganization&quot; |
 | AUTHUSER | &quot;AuthUser&quot; |
+| BULK | &quot;Bulk&quot; |
 | BULKACTIONS | &quot;BulkActions&quot; |
 | CALIBRATION | &quot;Calibration&quot; |
 | CALLABLETIMESET | &quot;CallableTimeSet&quot; |
@@ -88,11 +89,13 @@ title: AuditQueryEntity
 | RECORDINGSETTINGS | &quot;RecordingSettings&quot; |
 | RESPONSE | &quot;Response&quot; |
 | ROLE | &quot;Role&quot; |
+| ROW | &quot;Row&quot; |
 | ROUTINGTRANSCRIPTIONSETTINGS | &quot;RoutingTranscriptionSettings&quot; |
 | RULESET | &quot;RuleSet&quot; |
 | SCHEDULE | &quot;Schedule&quot; |
 | SCHEDULEDEXPORTS | &quot;ScheduledExports&quot; |
 | SCHEDULEGROUP | &quot;ScheduleGroup&quot; |
+| SCHEMA | &quot;Schema&quot; |
 | SCREENRECORDING | &quot;ScreenRecording&quot; |
 | SEGMENT | &quot;Segment&quot; |
 | SENTIMENTFEEDBACK | &quot;SentimentFeedback&quot; |
@@ -117,10 +120,10 @@ title: AuditQueryEntity
 | WORKSPACE | &quot;Workspace&quot; |
 | WRAPUPCODE | &quot;WrapupCode&quot; |
 | WRAPUPCODEMAPPING | &quot;WrapUpCodeMapping&quot; |
-| PHONENUMBER | &quot;PhoneNumber&quot; |
-| RECIPIENT | &quot;Recipient&quot; |
-| ACCOUNT | &quot;Account&quot; |
-| DEFAULTSUPPORTEDCONTENT | &quot;DefaultSupportedContent&quot; |
+| CONVERSATIONPHONENUMBER | &quot;ConversationPhoneNumber&quot; |
+| CONVERSATIONRECIPIENT | &quot;ConversationRecipient&quot; |
+| CONVERSATIONACCOUNT | &quot;ConversationAccount&quot; |
+| CONVERSATIONDEFAULTSUPPORTEDCONTENT | &quot;ConversationDefaultSupportedContent&quot; |
 | CONVERSATIONTHREADINGWINDOW | &quot;ConversationThreadingWindow&quot; |
 {: class="table table-striped"}
 

@@ -38,6 +38,8 @@ import com.mypurecloud.sdk.v2.model.EncryptionKeyEntityListing;
 import com.mypurecloud.sdk.v2.model.KeyRotationSchedule;
 import com.mypurecloud.sdk.v2.model.RecordingSettings;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
+import com.mypurecloud.sdk.v2.model.CrossPlatformPolicyUpdate;
+import com.mypurecloud.sdk.v2.model.PolicyUpdate;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmission;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmissionResult;
@@ -69,16 +71,16 @@ public class PatchRecordingMediaretentionpolicyRequest {
 	    return this;
 	} 
 	
-	private Policy body;
-	public Policy getBody() {
+	private PolicyUpdate body;
+	public PolicyUpdate getBody() {
 		return this.body;
 	}
 
-	public void setBody(Policy body) {
+	public void setBody(PolicyUpdate body) {
 		this.body = body;
 	}
 
-	public PatchRecordingMediaretentionpolicyRequest withBody(Policy body) {
+	public PatchRecordingMediaretentionpolicyRequest withBody(PolicyUpdate body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -102,7 +104,7 @@ public class PatchRecordingMediaretentionpolicyRequest {
         return this;
     }
 
-    public ApiRequest<Policy> withHttpInfo() {
+    public ApiRequest<PolicyUpdate> withHttpInfo() {
         
         // verify the required parameter 'policyId' is set
         if (this.policyId == null) {
@@ -132,7 +134,7 @@ public class PatchRecordingMediaretentionpolicyRequest {
 	}
 
 	
-	public static Builder builder(String policyId, Policy body) {
+	public static Builder builder(String policyId, PolicyUpdate body) {
 	    return new Builder()
 	            .withRequiredParams(policyId, body);
 	}
@@ -151,14 +153,14 @@ public class PatchRecordingMediaretentionpolicyRequest {
 			return this;
 		}
 		
-		public Builder withBody(Policy body) {
+		public Builder withBody(PolicyUpdate body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(String policyId, Policy body) {
+		public Builder withRequiredParams(String policyId, PolicyUpdate body) {
 			request.setPolicyId(policyId);
 						request.setBody(body);
 			

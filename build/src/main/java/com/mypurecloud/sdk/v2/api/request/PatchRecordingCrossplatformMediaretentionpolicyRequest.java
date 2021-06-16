@@ -38,6 +38,8 @@ import com.mypurecloud.sdk.v2.model.EncryptionKeyEntityListing;
 import com.mypurecloud.sdk.v2.model.KeyRotationSchedule;
 import com.mypurecloud.sdk.v2.model.RecordingSettings;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
+import com.mypurecloud.sdk.v2.model.CrossPlatformPolicyUpdate;
+import com.mypurecloud.sdk.v2.model.PolicyUpdate;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmission;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmissionResult;
@@ -69,16 +71,16 @@ public class PatchRecordingCrossplatformMediaretentionpolicyRequest {
 	    return this;
 	} 
 	
-	private CrossPlatformPolicy body;
-	public CrossPlatformPolicy getBody() {
+	private CrossPlatformPolicyUpdate body;
+	public CrossPlatformPolicyUpdate getBody() {
 		return this.body;
 	}
 
-	public void setBody(CrossPlatformPolicy body) {
+	public void setBody(CrossPlatformPolicyUpdate body) {
 		this.body = body;
 	}
 
-	public PatchRecordingCrossplatformMediaretentionpolicyRequest withBody(CrossPlatformPolicy body) {
+	public PatchRecordingCrossplatformMediaretentionpolicyRequest withBody(CrossPlatformPolicyUpdate body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -102,7 +104,7 @@ public class PatchRecordingCrossplatformMediaretentionpolicyRequest {
         return this;
     }
 
-    public ApiRequest<CrossPlatformPolicy> withHttpInfo() {
+    public ApiRequest<CrossPlatformPolicyUpdate> withHttpInfo() {
         
         // verify the required parameter 'policyId' is set
         if (this.policyId == null) {
@@ -132,7 +134,7 @@ public class PatchRecordingCrossplatformMediaretentionpolicyRequest {
 	}
 
 	
-	public static Builder builder(String policyId, CrossPlatformPolicy body) {
+	public static Builder builder(String policyId, CrossPlatformPolicyUpdate body) {
 	    return new Builder()
 	            .withRequiredParams(policyId, body);
 	}
@@ -151,14 +153,14 @@ public class PatchRecordingCrossplatformMediaretentionpolicyRequest {
 			return this;
 		}
 		
-		public Builder withBody(CrossPlatformPolicy body) {
+		public Builder withBody(CrossPlatformPolicyUpdate body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(String policyId, CrossPlatformPolicy body) {
+		public Builder withRequiredParams(String policyId, CrossPlatformPolicyUpdate body) {
 			request.setPolicyId(policyId);
 						request.setBody(body);
 			

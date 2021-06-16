@@ -30,6 +30,7 @@ title: WorkPlanShift
 | **activities** | <!----><!---->[**List&lt;WorkPlanActivity&gt;**](WorkPlanActivity.html)<!----> | Activities configured for this shift |  [optional] |
 | **id** | <!----><!---->**String**<!----> | ID of the shift. This is required only for the case of updating an existing shift |  [optional] |
 | **delete** | <!----><!---->**Boolean**<!----> | If marked true for updating an existing shift, the shift will be permanently deleted |  [optional] |
+| **validationId** | <!----><!---->**String**<!----> | ID of shift in the context of work plan validation |  [optional] |
 {: class="table table-striped"}
 
 

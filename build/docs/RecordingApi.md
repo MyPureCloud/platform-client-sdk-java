@@ -2025,7 +2025,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 RecordingApi apiInstance = new RecordingApi();
 String policyId = "policyId_example"; // String | Policy ID
-CrossPlatformPolicy body = new CrossPlatformPolicy(); // CrossPlatformPolicy | Policy
+CrossPlatformPolicyUpdate body = new CrossPlatformPolicyUpdate(); // CrossPlatformPolicyUpdate | Policy
 try {
     CrossPlatformPolicy result = apiInstance.patchRecordingCrossplatformMediaretentionpolicy(policyId, body);
     System.out.println(result);
@@ -2041,7 +2041,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **policyId** | **String**| Policy ID | 
-| **body** | [**CrossPlatformPolicy**](CrossPlatformPolicy.html)| Policy | 
+| **body** | [**CrossPlatformPolicyUpdate**](CrossPlatformPolicyUpdate.html)| Policy | 
 {: class="table-striped"}
 
 
@@ -2090,7 +2090,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 RecordingApi apiInstance = new RecordingApi();
 String policyId = "policyId_example"; // String | Policy ID
-Policy body = new Policy(); // Policy | Policy
+PolicyUpdate body = new PolicyUpdate(); // PolicyUpdate | Policy
 try {
     Policy result = apiInstance.patchRecordingMediaretentionpolicy(policyId, body);
     System.out.println(result);
@@ -2106,7 +2106,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **policyId** | **String**| Policy ID | 
-| **body** | [**Policy**](Policy.html)| Policy | 
+| **body** | [**PolicyUpdate**](PolicyUpdate.html)| Policy | 
 {: class="table-striped"}
 
 

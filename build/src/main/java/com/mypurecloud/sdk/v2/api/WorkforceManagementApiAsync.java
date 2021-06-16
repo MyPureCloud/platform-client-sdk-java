@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.BuAsyncScheduleResponse;
 import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.UserScheduleAdherence;
 import com.mypurecloud.sdk.v2.model.ModelingStatusResponse;
+import com.mypurecloud.sdk.v2.model.AgentManagementUnitReference;
 import com.mypurecloud.sdk.v2.model.BusinessUnit;
 import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCode;
 import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCodeListing;
@@ -135,6 +136,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementuni
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanrotationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdhocmodelingjobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentManagementunitRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentsMeManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivitycodeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivitycodesRequest;
@@ -1153,6 +1156,158 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ModelingStatusResponse> response = (ApiResponse<ModelingStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the management unit to which the agent belongs
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentManagementUnitReference> getWorkforcemanagementAgentManagementunitAsync(GetWorkforcemanagementAgentManagementunitRequest request, final AsyncApiCallback<AgentManagementUnitReference> callback) {
+    try {
+      final SettableFuture<AgentManagementUnitReference> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentManagementUnitReference>() {}, new AsyncApiCallback<ApiResponse<AgentManagementUnitReference>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentManagementUnitReference> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the management unit to which the agent belongs
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentManagementUnitReference>> getWorkforcemanagementAgentManagementunitAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AgentManagementUnitReference>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentManagementUnitReference>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentManagementUnitReference>() {}, new AsyncApiCallback<ApiResponse<AgentManagementUnitReference>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentManagementUnitReference> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentManagementUnitReference> response = (ApiResponse<AgentManagementUnitReference>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentManagementUnitReference> response = (ApiResponse<AgentManagementUnitReference>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the management unit to which the currently logged in agent belongs
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentManagementUnitReference> getWorkforcemanagementAgentsMeManagementunitAsync(GetWorkforcemanagementAgentsMeManagementunitRequest request, final AsyncApiCallback<AgentManagementUnitReference> callback) {
+    try {
+      final SettableFuture<AgentManagementUnitReference> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentManagementUnitReference>() {}, new AsyncApiCallback<ApiResponse<AgentManagementUnitReference>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentManagementUnitReference> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the management unit to which the currently logged in agent belongs
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentManagementUnitReference>> getWorkforcemanagementAgentsMeManagementunitAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AgentManagementUnitReference>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentManagementUnitReference>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentManagementUnitReference>() {}, new AsyncApiCallback<ApiResponse<AgentManagementUnitReference>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentManagementUnitReference> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentManagementUnitReference> response = (ApiResponse<AgentManagementUnitReference>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentManagementUnitReference> response = (ApiResponse<AgentManagementUnitReference>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

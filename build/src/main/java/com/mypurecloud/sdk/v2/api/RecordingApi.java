@@ -28,6 +28,8 @@ import com.mypurecloud.sdk.v2.model.EncryptionKeyEntityListing;
 import com.mypurecloud.sdk.v2.model.KeyRotationSchedule;
 import com.mypurecloud.sdk.v2.model.RecordingSettings;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
+import com.mypurecloud.sdk.v2.model.CrossPlatformPolicyUpdate;
+import com.mypurecloud.sdk.v2.model.PolicyUpdate;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmission;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmissionResult;
@@ -2611,7 +2613,7 @@ public class RecordingApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CrossPlatformPolicy patchRecordingCrossplatformMediaretentionpolicy(String policyId, CrossPlatformPolicy body) throws IOException, ApiException {
+  public CrossPlatformPolicy patchRecordingCrossplatformMediaretentionpolicy(String policyId, CrossPlatformPolicyUpdate body) throws IOException, ApiException {
     return  patchRecordingCrossplatformMediaretentionpolicy(createPatchRecordingCrossplatformMediaretentionpolicyRequest(policyId, body));
   }
 
@@ -2623,11 +2625,11 @@ public class RecordingApi {
    * @return CrossPlatformPolicy
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CrossPlatformPolicy> patchRecordingCrossplatformMediaretentionpolicyWithHttpInfo(String policyId, CrossPlatformPolicy body) throws IOException {
+  public ApiResponse<CrossPlatformPolicy> patchRecordingCrossplatformMediaretentionpolicyWithHttpInfo(String policyId, CrossPlatformPolicyUpdate body) throws IOException {
     return patchRecordingCrossplatformMediaretentionpolicy(createPatchRecordingCrossplatformMediaretentionpolicyRequest(policyId, body).withHttpInfo());
   }
 
-  private PatchRecordingCrossplatformMediaretentionpolicyRequest createPatchRecordingCrossplatformMediaretentionpolicyRequest(String policyId, CrossPlatformPolicy body) {
+  private PatchRecordingCrossplatformMediaretentionpolicyRequest createPatchRecordingCrossplatformMediaretentionpolicyRequest(String policyId, CrossPlatformPolicyUpdate body) {
     return PatchRecordingCrossplatformMediaretentionpolicyRequest.builder()
             .withPolicyId(policyId)
     
@@ -2662,7 +2664,7 @@ public class RecordingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CrossPlatformPolicy> patchRecordingCrossplatformMediaretentionpolicy(ApiRequest<CrossPlatformPolicy> request) throws IOException {
+  public ApiResponse<CrossPlatformPolicy> patchRecordingCrossplatformMediaretentionpolicy(ApiRequest<CrossPlatformPolicyUpdate> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<CrossPlatformPolicy>() {});
     }
@@ -2694,7 +2696,7 @@ public class RecordingApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Policy patchRecordingMediaretentionpolicy(String policyId, Policy body) throws IOException, ApiException {
+  public Policy patchRecordingMediaretentionpolicy(String policyId, PolicyUpdate body) throws IOException, ApiException {
     return  patchRecordingMediaretentionpolicy(createPatchRecordingMediaretentionpolicyRequest(policyId, body));
   }
 
@@ -2706,11 +2708,11 @@ public class RecordingApi {
    * @return Policy
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Policy> patchRecordingMediaretentionpolicyWithHttpInfo(String policyId, Policy body) throws IOException {
+  public ApiResponse<Policy> patchRecordingMediaretentionpolicyWithHttpInfo(String policyId, PolicyUpdate body) throws IOException {
     return patchRecordingMediaretentionpolicy(createPatchRecordingMediaretentionpolicyRequest(policyId, body).withHttpInfo());
   }
 
-  private PatchRecordingMediaretentionpolicyRequest createPatchRecordingMediaretentionpolicyRequest(String policyId, Policy body) {
+  private PatchRecordingMediaretentionpolicyRequest createPatchRecordingMediaretentionpolicyRequest(String policyId, PolicyUpdate body) {
     return PatchRecordingMediaretentionpolicyRequest.builder()
             .withPolicyId(policyId)
     
@@ -2745,7 +2747,7 @@ public class RecordingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Policy> patchRecordingMediaretentionpolicy(ApiRequest<Policy> request) throws IOException {
+  public ApiResponse<Policy> patchRecordingMediaretentionpolicy(ApiRequest<PolicyUpdate> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<Policy>() {});
     }

@@ -26,6 +26,7 @@ title: AuditQueryRequest
 | ARCHITECT | &quot;Architect&quot; |
 | CONTACTCENTER | &quot;ContactCenter&quot; |
 | CONTENTMANAGEMENT | &quot;ContentManagement&quot; |
+| DATATABLES | &quot;Datatables&quot; |
 | GROUPS | &quot;Groups&quot; |
 | INTEGRATIONS | &quot;Integrations&quot; |
 | LANGUAGEUNDERSTANDING | &quot;LanguageUnderstanding&quot; |
@@ -45,7 +46,7 @@ title: AuditQueryRequest
 | WEBDEPLOYMENTS | &quot;WebDeployments&quot; |
 | WEBHOOKS | &quot;Webhooks&quot; |
 | WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; |
-| CONVERSATIONMESSAGING | &quot;ConversationMessaging&quot; |
+| MESSAGING | &quot;Messaging&quot; |
 {: class="table table-striped"}
 
 

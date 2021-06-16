@@ -2375,7 +2375,7 @@ try {
 
 
 
-> [ScheduleGroupEntityListing](ScheduleGroupEntityListing.html) getArchitectSchedulegroups(pageNumber, pageSize, sortBy, sortOrder, name, scheduleIds)
+> [ScheduleGroupEntityListing](ScheduleGroupEntityListing.html) getArchitectSchedulegroups(pageNumber, pageSize, sortBy, sortOrder, name, scheduleIds, divisionId)
 
 Get a list of schedule groups.
 
@@ -2415,8 +2415,9 @@ String sortBy = "name"; // String | Sort by
 String sortOrder = "ASC"; // String | Sort order
 String name = "name_example"; // String | Name of the Schedule Group to filter by.
 String scheduleIds = "scheduleIds_example"; // String | A comma-delimited list of Schedule IDs to filter by.
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | List of divisionIds on which to filter.
 try {
-    ScheduleGroupEntityListing result = apiInstance.getArchitectSchedulegroups(pageNumber, pageSize, sortBy, sortOrder, name, scheduleIds);
+    ScheduleGroupEntityListing result = apiInstance.getArchitectSchedulegroups(pageNumber, pageSize, sortBy, sortOrder, name, scheduleIds, divisionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getArchitectSchedulegroups");
@@ -2435,6 +2436,7 @@ try {
 | **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
 | **name** | **String**| Name of the Schedule Group to filter by. | [optional] 
 | **scheduleIds** | **String**| A comma-delimited list of Schedule IDs to filter by. | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| List of divisionIds on which to filter. | [optional] 
 {: class="table-striped"}
 
 
@@ -2448,7 +2450,7 @@ try {
 
 
 
-> [ScheduleEntityListing](ScheduleEntityListing.html) getArchitectSchedules(pageNumber, pageSize, sortBy, sortOrder, name)
+> [ScheduleEntityListing](ScheduleEntityListing.html) getArchitectSchedules(pageNumber, pageSize, sortBy, sortOrder, name, divisionId)
 
 Get a list of schedules.
 
@@ -2487,8 +2489,9 @@ Integer pageSize = 25; // Integer | Page size
 String sortBy = "name"; // String | Sort by
 String sortOrder = "ASC"; // String | Sort order
 String name = "name_example"; // String | Name of the Schedule to filter by.
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | List of divisionIds on which to filter.
 try {
-    ScheduleEntityListing result = apiInstance.getArchitectSchedules(pageNumber, pageSize, sortBy, sortOrder, name);
+    ScheduleEntityListing result = apiInstance.getArchitectSchedules(pageNumber, pageSize, sortBy, sortOrder, name, divisionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getArchitectSchedules");
@@ -2506,6 +2509,7 @@ try {
 | **sortBy** | **String**| Sort by | [optional] [default to name] 
 | **sortOrder** | **String**| Sort order | [optional] [default to ASC] 
 | **name** | **String**| Name of the Schedule to filter by. | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| List of divisionIds on which to filter. | [optional] 
 {: class="table-striped"}
 
 

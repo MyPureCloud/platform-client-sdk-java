@@ -175,6 +175,34 @@ public class GetJourneyActiontemplatesRequest {
 		}
 	}
 	
+	private List<String> queryFields;
+	public List<String> getQueryFields() {
+		return this.queryFields;
+	}
+
+	public void setQueryFields(List<String> queryFields) {
+		this.queryFields = queryFields;
+	}
+
+	public GetJourneyActiontemplatesRequest withQueryFields(List<String> queryFields) {
+	    this.setQueryFields(queryFields);
+	    return this;
+	} 
+	
+	private String queryValue;
+	public String getQueryValue() {
+		return this.queryValue;
+	}
+
+	public void setQueryValue(String queryValue) {
+		this.queryValue = queryValue;
+	}
+
+	public GetJourneyActiontemplatesRequest withQueryValue(String queryValue) {
+	    this.setQueryValue(queryValue);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -207,6 +235,10 @@ public class GetJourneyActiontemplatesRequest {
                 .withQueryParameters("mediaType", "", mediaType)
         
                 .withQueryParameters("state", "", state)
+        
+                .withQueryParameters("queryFields", "multi", queryFields)
+        
+                .withQueryParameters("queryValue", "", queryValue)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -262,6 +294,16 @@ public class GetJourneyActiontemplatesRequest {
 		public Builder withState(stateValues state) {
 		    request.setState(state.toString());
 		    return this;
+		}
+		
+		public Builder withQueryFields(List<String> queryFields) {
+			request.setQueryFields(queryFields);
+			return this;
+		}
+		
+		public Builder withQueryValue(String queryValue) {
+			request.setQueryValue(queryValue);
+			return this;
 		}
 		
 

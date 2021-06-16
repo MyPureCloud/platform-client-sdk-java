@@ -103,6 +103,7 @@ public class JourneyAggregateQueryPredicate  implements Serializable {
     JOURNEYACTIONTARGETID("journeyActionTargetId"),
     JOURNEYACTIONTEMPLATEID("journeyActionTemplateId"),
     JOURNEYBLOCKINGACTIONMAPID("journeyBlockingActionMapId"),
+    JOURNEYBLOCKINGEMERGENCYSCHEDULEGROUPID("journeyBlockingEmergencyScheduleGroupId"),
     JOURNEYBLOCKINGREASON("journeyBlockingReason"),
     JOURNEYBLOCKINGSCHEDULEGROUPID("journeyBlockingScheduleGroupId"),
     JOURNEYCUSTOMERID("journeyCustomerId"),

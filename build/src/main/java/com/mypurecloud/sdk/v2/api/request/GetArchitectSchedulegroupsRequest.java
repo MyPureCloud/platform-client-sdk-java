@@ -155,6 +155,20 @@ public class GetArchitectSchedulegroupsRequest {
 	    return this;
 	} 
 	
+	private List<String> divisionId;
+	public List<String> getDivisionId() {
+		return this.divisionId;
+	}
+
+	public void setDivisionId(List<String> divisionId) {
+		this.divisionId = divisionId;
+	}
+
+	public GetArchitectSchedulegroupsRequest withDivisionId(List<String> divisionId) {
+	    this.setDivisionId(divisionId);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -189,6 +203,8 @@ public class GetArchitectSchedulegroupsRequest {
                 .withQueryParameters("name", "", name)
         
                 .withQueryParameters("scheduleIds", "", scheduleIds)
+        
+                .withQueryParameters("divisionId", "multi", divisionId)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -238,6 +254,11 @@ public class GetArchitectSchedulegroupsRequest {
 		
 		public Builder withScheduleIds(String scheduleIds) {
 			request.setScheduleIds(scheduleIds);
+			return this;
+		}
+		
+		public Builder withDivisionId(List<String> divisionId) {
+			request.setDivisionId(divisionId);
 			return this;
 		}
 		

@@ -7,8 +7,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
-| [**getGamificationLeaderboard**](GamificationApi.html#getGamificationLeaderboard) | Leaderboard of the requesting user&#39;s division |
-| [**getGamificationLeaderboardAll**](GamificationApi.html#getGamificationLeaderboardAll) | Leaderboard by division |
+| [**getGamificationLeaderboard**](GamificationApi.html#getGamificationLeaderboard) | Leaderboard of the requesting user&#39;s division or performance profile |
+| [**getGamificationLeaderboardAll**](GamificationApi.html#getGamificationLeaderboardAll) | Leaderboard by filter type |
 | [**getGamificationLeaderboardAllBestpoints**](GamificationApi.html#getGamificationLeaderboardAllBestpoints) | Best Points by division |
 | [**getGamificationLeaderboardBestpoints**](GamificationApi.html#getGamificationLeaderboardBestpoints) | Best Points of the requesting user&#39;s division |
 | [**getGamificationMetric**](GamificationApi.html#getGamificationMetric) | Gamified metric by id |
@@ -51,7 +51,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 > [Leaderboard](Leaderboard.html) getGamificationLeaderboard(startWorkday, endWorkday, metricId)
 
-Leaderboard of the requesting user&#39;s division
+Leaderboard of the requesting user&#39;s division or performance profile
 
 
 
@@ -118,7 +118,7 @@ try {
 
 > [Leaderboard](Leaderboard.html) getGamificationLeaderboardAll(filterType, filterId, startWorkday, endWorkday, metricId)
 
-Leaderboard by division
+Leaderboard by filter type
 
 
 
@@ -169,7 +169,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **filterType** | **String**| Filter type for the query request. |<br />**Values**: Division 
+| **filterType** | **String**| Filter type for the query request. |<br />**Values**: PerformanceProfile, Division 
 | **filterId** | **String**| ID for the filter type. For example, division Id | 
 | **startWorkday** | **LocalDate**| Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **endWorkday** | **LocalDate**| End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
@@ -237,7 +237,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **filterType** | **String**| Filter type for the query request. |<br />**Values**: Division 
+| **filterType** | **String**| Filter type for the query request. |<br />**Values**: PerformanceProfile, Division 
 | **filterId** | **String**| ID for the filter type. For example, division Id | 
 {: class="table-striped"}
 
@@ -311,7 +311,7 @@ This endpoint does not require any parameters.
 
 
 
-> [Metric](Metric.html) getGamificationMetric(metricId)
+> [Metric](Metric.html) getGamificationMetric(metricId, performanceProfileId)
 
 Gamified metric by id
 
@@ -348,8 +348,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
 String metricId = "metricId_example"; // String | metric Id
+String performanceProfileId = "performanceProfileId_example"; // String | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
 try {
-    Metric result = apiInstance.getGamificationMetric(metricId);
+    Metric result = apiInstance.getGamificationMetric(metricId, performanceProfileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationApi#getGamificationMetric");
@@ -363,6 +364,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **metricId** | **String**| metric Id | 
+| **performanceProfileId** | **String**| The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. | [optional] 
 {: class="table-striped"}
 
 
@@ -719,7 +721,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
-LocalDate workday = new LocalDate(); // LocalDate | Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate workday = new LocalDate(); // LocalDate | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
 try {
     WorkdayMetricListing result = apiInstance.getGamificationScorecards(workday, expand);
@@ -735,7 +737,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **workday** | **LocalDate**| Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **workday** | **LocalDate**| Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: objective 
 {: class="table-striped"}
 
@@ -784,8 +786,8 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
-LocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 try {
     AttendanceStatusListing result = apiInstance.getGamificationScorecardsAttendance(startWorkday, endWorkday);
     System.out.println(result);
@@ -800,8 +802,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **startWorkday** | **LocalDate**| Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd | 
-| **endWorkday** | **LocalDate**| End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **startWorkday** | **LocalDate**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **endWorkday** | **LocalDate**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 {: class="table-striped"}
 
 
@@ -908,7 +910,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
-LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 try {
     AllTimePoints result = apiInstance.getGamificationScorecardsPointsAlltime(endWorkday);
     System.out.println(result);
@@ -923,7 +925,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **endWorkday** | **LocalDate**| End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **endWorkday** | **LocalDate**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 {: class="table-striped"}
 
 
@@ -1034,8 +1036,8 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
-LocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String dayOfWeek = "dayOfWeek_example"; // String | Optional filter to specify which day of weeks to be included in the response
 try {
     WorkdayPointsTrend result = apiInstance.getGamificationScorecardsPointsTrends(startWorkday, endWorkday, dayOfWeek);
@@ -1051,8 +1053,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **startWorkday** | **LocalDate**| Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd | 
-| **endWorkday** | **LocalDate**| End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **startWorkday** | **LocalDate**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **endWorkday** | **LocalDate**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **dayOfWeek** | **String**| Optional filter to specify which day of weeks to be included in the response | [optional]<br />**Values**: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday 
 {: class="table-striped"}
 
@@ -1102,7 +1104,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
 String userId = "userId_example"; // String | 
-LocalDate workday = new LocalDate(); // LocalDate | Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate workday = new LocalDate(); // LocalDate | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
 try {
     WorkdayMetricListing result = apiInstance.getGamificationScorecardsUser(userId, workday, expand);
@@ -1119,7 +1121,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**|  | 
-| **workday** | **LocalDate**| Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **workday** | **LocalDate**| Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: objective 
 {: class="table-striped"}
 
@@ -1169,8 +1171,8 @@ Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
 String userId = "userId_example"; // String | 
-LocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 try {
     AttendanceStatusListing result = apiInstance.getGamificationScorecardsUserAttendance(userId, startWorkday, endWorkday);
     System.out.println(result);
@@ -1186,8 +1188,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**|  | 
-| **startWorkday** | **LocalDate**| Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd | 
-| **endWorkday** | **LocalDate**| End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **startWorkday** | **LocalDate**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **endWorkday** | **LocalDate**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 {: class="table-striped"}
 
 
@@ -1299,7 +1301,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
 String userId = "userId_example"; // String | 
-LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 try {
     AllTimePoints result = apiInstance.getGamificationScorecardsUserPointsAlltime(userId, endWorkday);
     System.out.println(result);
@@ -1315,7 +1317,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**|  | 
-| **endWorkday** | **LocalDate**| End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **endWorkday** | **LocalDate**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 {: class="table-striped"}
 
 
@@ -1364,8 +1366,8 @@ Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
 String userId = "userId_example"; // String | 
-LocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String dayOfWeek = "dayOfWeek_example"; // String | Optional filter to specify which day of weeks to be included in the response
 try {
     WorkdayPointsTrend result = apiInstance.getGamificationScorecardsUserPointsTrends(userId, startWorkday, endWorkday, dayOfWeek);
@@ -1382,8 +1384,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**|  | 
-| **startWorkday** | **LocalDate**| Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd | 
-| **endWorkday** | **LocalDate**| End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **startWorkday** | **LocalDate**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **endWorkday** | **LocalDate**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **dayOfWeek** | **String**| Optional filter to specify which day of weeks to be included in the response | [optional]<br />**Values**: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday 
 {: class="table-striped"}
 
@@ -1433,8 +1435,8 @@ Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
 String userId = "userId_example"; // String | 
-LocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String timeZone = "UTC"; // String | Timezone for the workday. Defaults to UTC
 try {
     WorkdayValuesTrend result = apiInstance.getGamificationScorecardsUserValuesTrends(userId, startWorkday, endWorkday, timeZone);
@@ -1451,8 +1453,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **userId** | **String**|  | 
-| **startWorkday** | **LocalDate**| Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd | 
-| **endWorkday** | **LocalDate**| End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **startWorkday** | **LocalDate**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **endWorkday** | **LocalDate**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **timeZone** | **String**| Timezone for the workday. Defaults to UTC | [optional] [default to UTC] 
 {: class="table-striped"}
 
@@ -1518,7 +1520,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **filterType** | **String**| Filter type for the query request. |<br />**Values**: Division 
+| **filterType** | **String**| Filter type for the query request. |<br />**Values**: PerformanceProfile, Division 
 | **filterId** | **String**| ID for the filter type. | 
 | **workday** | **LocalDate**| The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 {: class="table-striped"}
@@ -1586,7 +1588,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **filterType** | **String**| Filter type for the query request. |<br />**Values**: Division 
+| **filterType** | **String**| Filter type for the query request. |<br />**Values**: PerformanceProfile, Division 
 | **filterId** | **String**| ID for the filter type. For example, division Id | 
 | **workday** | **LocalDate**| The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **timeZone** | **String**| Timezone for the workday. Defaults to UTC | [optional] [default to UTC] 
@@ -1639,8 +1641,8 @@ Configuration.setDefaultApiClient(apiClient);
 GamificationApi apiInstance = new GamificationApi();
 String filterType = "filterType_example"; // String | Filter type for the query request.
 String filterId = "filterId_example"; // String | ID for the filter type.
-LocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String timeZone = "UTC"; // String | Timezone for the workday. Defaults to UTC
 try {
     WorkdayValuesTrend result = apiInstance.getGamificationScorecardsUsersValuesTrends(filterType, filterId, startWorkday, endWorkday, timeZone);
@@ -1656,10 +1658,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **filterType** | **String**| Filter type for the query request. |<br />**Values**: Division 
+| **filterType** | **String**| Filter type for the query request. |<br />**Values**: PerformanceProfile, Division 
 | **filterId** | **String**| ID for the filter type. | 
-| **startWorkday** | **LocalDate**| Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd | 
-| **endWorkday** | **LocalDate**| End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **startWorkday** | **LocalDate**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **endWorkday** | **LocalDate**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **timeZone** | **String**| Timezone for the workday. Defaults to UTC | [optional] [default to UTC] 
 {: class="table-striped"}
 
@@ -1773,8 +1775,8 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
-LocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate startWorkday = new LocalDate(); // LocalDate | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+LocalDate endWorkday = new LocalDate(); // LocalDate | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String filterType = "filterType_example"; // String | Filter type for the query request. If not set, then the request is for the requesting user.
 String timeZone = "UTC"; // String | Timezone for the workday. Defaults to UTC
 try {
@@ -1791,9 +1793,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **startWorkday** | **LocalDate**| Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd | 
-| **endWorkday** | **LocalDate**| End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd | 
-| **filterType** | **String**| Filter type for the query request. If not set, then the request is for the requesting user. | [optional]<br />**Values**: Division 
+| **startWorkday** | **LocalDate**| Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **endWorkday** | **LocalDate**| End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
+| **filterType** | **String**| Filter type for the query request. If not set, then the request is for the requesting user. | [optional]<br />**Values**: PerformanceProfile, Division 
 | **timeZone** | **String**| Timezone for the workday. Defaults to UTC | [optional] [default to UTC] 
 {: class="table-striped"}
 
@@ -2054,7 +2056,7 @@ try {
 
 
 
-> [Metric](Metric.html) putGamificationMetric(metricId, body)
+> [Metric](Metric.html) putGamificationMetric(metricId, body, performanceProfileId)
 
 Updates a metric
 
@@ -2090,8 +2092,9 @@ Configuration.setDefaultApiClient(apiClient);
 GamificationApi apiInstance = new GamificationApi();
 String metricId = "metricId_example"; // String | metric Id
 Metric body = new Metric(); // Metric | Metric
+String performanceProfileId = "performanceProfileId_example"; // String | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
 try {
-    Metric result = apiInstance.putGamificationMetric(metricId, body);
+    Metric result = apiInstance.putGamificationMetric(metricId, body, performanceProfileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationApi#putGamificationMetric");
@@ -2106,6 +2109,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **metricId** | **String**| metric Id | 
 | **body** | [**Metric**](Metric.html)| Metric | 
+| **performanceProfileId** | **String**| The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. | [optional] 
 {: class="table-striped"}
 
 

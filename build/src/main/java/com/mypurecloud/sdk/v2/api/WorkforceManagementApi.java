@@ -15,6 +15,7 @@ import com.mypurecloud.sdk.v2.model.BuAsyncScheduleResponse;
 import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.UserScheduleAdherence;
 import com.mypurecloud.sdk.v2.model.ModelingStatusResponse;
+import com.mypurecloud.sdk.v2.model.AgentManagementUnitReference;
 import com.mypurecloud.sdk.v2.model.BusinessUnit;
 import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCode;
 import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCodeListing;
@@ -132,6 +133,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementuni
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanrotationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdhocmodelingjobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentManagementunitRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentsMeManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivitycodeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivitycodesRequest;
@@ -1205,6 +1208,160 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ModelingStatusResponse> response = (ApiResponse<ModelingStatusResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the management unit to which the agent belongs
+   * 
+   * @param agentId The ID of the agent to look up (required)
+   * @return AgentManagementUnitReference
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentManagementUnitReference getWorkforcemanagementAgentManagementunit(String agentId) throws IOException, ApiException {
+    return  getWorkforcemanagementAgentManagementunit(createGetWorkforcemanagementAgentManagementunitRequest(agentId));
+  }
+
+  /**
+   * Get the management unit to which the agent belongs
+   * 
+   * @param agentId The ID of the agent to look up (required)
+   * @return AgentManagementUnitReference
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentManagementUnitReference> getWorkforcemanagementAgentManagementunitWithHttpInfo(String agentId) throws IOException {
+    return getWorkforcemanagementAgentManagementunit(createGetWorkforcemanagementAgentManagementunitRequest(agentId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementAgentManagementunitRequest createGetWorkforcemanagementAgentManagementunitRequest(String agentId) {
+    return GetWorkforcemanagementAgentManagementunitRequest.builder()
+            .withAgentId(agentId)
+    
+            .build();
+  }
+
+  /**
+   * Get the management unit to which the agent belongs
+   * 
+   * @param request The request object
+   * @return AgentManagementUnitReference
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentManagementUnitReference getWorkforcemanagementAgentManagementunit(GetWorkforcemanagementAgentManagementunitRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentManagementUnitReference> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentManagementUnitReference>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the management unit to which the agent belongs
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentManagementUnitReference> getWorkforcemanagementAgentManagementunit(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentManagementUnitReference>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentManagementUnitReference> response = (ApiResponse<AgentManagementUnitReference>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentManagementUnitReference> response = (ApiResponse<AgentManagementUnitReference>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the management unit to which the currently logged in agent belongs
+   * 
+   * @return AgentManagementUnitReference
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentManagementUnitReference getWorkforcemanagementAgentsMeManagementunit() throws IOException, ApiException {
+    return  getWorkforcemanagementAgentsMeManagementunit(createGetWorkforcemanagementAgentsMeManagementunitRequest());
+  }
+
+  /**
+   * Get the management unit to which the currently logged in agent belongs
+   * 
+   * @return AgentManagementUnitReference
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentManagementUnitReference> getWorkforcemanagementAgentsMeManagementunitWithHttpInfo() throws IOException {
+    return getWorkforcemanagementAgentsMeManagementunit(createGetWorkforcemanagementAgentsMeManagementunitRequest().withHttpInfo());
+  }
+
+  private GetWorkforcemanagementAgentsMeManagementunitRequest createGetWorkforcemanagementAgentsMeManagementunitRequest() {
+    return GetWorkforcemanagementAgentsMeManagementunitRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get the management unit to which the currently logged in agent belongs
+   * 
+   * @param request The request object
+   * @return AgentManagementUnitReference
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentManagementUnitReference getWorkforcemanagementAgentsMeManagementunit(GetWorkforcemanagementAgentsMeManagementunitRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentManagementUnitReference> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentManagementUnitReference>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the management unit to which the currently logged in agent belongs
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentManagementUnitReference> getWorkforcemanagementAgentsMeManagementunit(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentManagementUnitReference>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentManagementUnitReference> response = (ApiResponse<AgentManagementUnitReference>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentManagementUnitReference> response = (ApiResponse<AgentManagementUnitReference>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

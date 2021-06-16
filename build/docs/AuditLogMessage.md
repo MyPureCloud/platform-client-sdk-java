@@ -35,6 +35,7 @@ title: AuditLogMessage
 | ARCHITECT | &quot;Architect&quot; |
 | CONTACTCENTER | &quot;ContactCenter&quot; |
 | CONTENTMANAGEMENT | &quot;ContentManagement&quot; |
+| DATATABLES | &quot;Datatables&quot; |
 | GROUPS | &quot;Groups&quot; |
 | INTEGRATIONS | &quot;Integrations&quot; |
 | LANGUAGEUNDERSTANDING | &quot;LanguageUnderstanding&quot; |
@@ -54,7 +55,7 @@ title: AuditLogMessage
 | WEBDEPLOYMENTS | &quot;WebDeployments&quot; |
 | WEBHOOKS | &quot;Webhooks&quot; |
 | WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; |
-| CONVERSATIONMESSAGING | &quot;ConversationMessaging&quot; |
+| MESSAGING | &quot;Messaging&quot; |
 {: class="table table-striped"}
 
 
@@ -128,6 +129,7 @@ title: AuditLogMessage
 | ATTEMPTLIMITS | &quot;AttemptLimits&quot; |
 | AUTHORGANIZATION | &quot;AuthOrganization&quot; |
 | AUTHUSER | &quot;AuthUser&quot; |
+| BULK | &quot;Bulk&quot; |
 | BULKACTIONS | &quot;BulkActions&quot; |
 | CALIBRATION | &quot;Calibration&quot; |
 | CALLABLETIMESET | &quot;CallableTimeSet&quot; |
@@ -192,11 +194,13 @@ title: AuditLogMessage
 | RECORDINGSETTINGS | &quot;RecordingSettings&quot; |
 | RESPONSE | &quot;Response&quot; |
 | ROLE | &quot;Role&quot; |
+| ROW | &quot;Row&quot; |
 | ROUTINGTRANSCRIPTIONSETTINGS | &quot;RoutingTranscriptionSettings&quot; |
 | RULESET | &quot;RuleSet&quot; |
 | SCHEDULE | &quot;Schedule&quot; |
 | SCHEDULEDEXPORTS | &quot;ScheduledExports&quot; |
 | SCHEDULEGROUP | &quot;ScheduleGroup&quot; |
+| SCHEMA | &quot;Schema&quot; |
 | SCREENRECORDING | &quot;ScreenRecording&quot; |
 | SEGMENT | &quot;Segment&quot; |
 | SENTIMENTFEEDBACK | &quot;SentimentFeedback&quot; |
@@ -221,10 +225,10 @@ title: AuditLogMessage
 | WORKSPACE | &quot;Workspace&quot; |
 | WRAPUPCODE | &quot;WrapupCode&quot; |
 | WRAPUPCODEMAPPING | &quot;WrapUpCodeMapping&quot; |
-| PHONENUMBER | &quot;PhoneNumber&quot; |
-| RECIPIENT | &quot;Recipient&quot; |
-| ACCOUNT | &quot;Account&quot; |
-| DEFAULTSUPPORTEDCONTENT | &quot;DefaultSupportedContent&quot; |
+| CONVERSATIONPHONENUMBER | &quot;ConversationPhoneNumber&quot; |
+| CONVERSATIONRECIPIENT | &quot;ConversationRecipient&quot; |
+| CONVERSATIONACCOUNT | &quot;ConversationAccount&quot; |
+| CONVERSATIONDEFAULTSUPPORTEDCONTENT | &quot;ConversationDefaultSupportedContent&quot; |
 | CONVERSATIONTHREADINGWINDOW | &quot;ConversationThreadingWindow&quot; |
 {: class="table table-striped"}
 

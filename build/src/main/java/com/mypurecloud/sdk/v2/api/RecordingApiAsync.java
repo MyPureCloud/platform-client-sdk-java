@@ -31,6 +31,8 @@ import com.mypurecloud.sdk.v2.model.EncryptionKeyEntityListing;
 import com.mypurecloud.sdk.v2.model.KeyRotationSchedule;
 import com.mypurecloud.sdk.v2.model.RecordingSettings;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionListing;
+import com.mypurecloud.sdk.v2.model.CrossPlatformPolicyUpdate;
+import com.mypurecloud.sdk.v2.model.PolicyUpdate;
 import com.mypurecloud.sdk.v2.model.ScreenRecordingSessionRequest;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmission;
 import com.mypurecloud.sdk.v2.model.BatchDownloadJobSubmissionResult;
@@ -2366,7 +2368,7 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<CrossPlatformPolicy>> patchRecordingCrossplatformMediaretentionpolicyAsync(ApiRequest<CrossPlatformPolicy> request, final AsyncApiCallback<ApiResponse<CrossPlatformPolicy>> callback) {
+  public Future<ApiResponse<CrossPlatformPolicy>> patchRecordingCrossplatformMediaretentionpolicyAsync(ApiRequest<CrossPlatformPolicyUpdate> request, final AsyncApiCallback<ApiResponse<CrossPlatformPolicy>> callback) {
     try {
       final SettableFuture<ApiResponse<CrossPlatformPolicy>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -2442,7 +2444,7 @@ public class RecordingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Policy>> patchRecordingMediaretentionpolicyAsync(ApiRequest<Policy> request, final AsyncApiCallback<ApiResponse<Policy>> callback) {
+  public Future<ApiResponse<Policy>> patchRecordingMediaretentionpolicyAsync(ApiRequest<PolicyUpdate> request, final AsyncApiCallback<ApiResponse<Policy>> callback) {
     try {
       final SettableFuture<ApiResponse<Policy>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

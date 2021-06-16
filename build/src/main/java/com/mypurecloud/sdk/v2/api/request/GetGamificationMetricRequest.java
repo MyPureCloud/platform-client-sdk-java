@@ -58,6 +58,20 @@ public class GetGamificationMetricRequest {
 	    return this;
 	} 
 	
+	private String performanceProfileId;
+	public String getPerformanceProfileId() {
+		return this.performanceProfileId;
+	}
+
+	public void setPerformanceProfileId(String performanceProfileId) {
+		this.performanceProfileId = performanceProfileId;
+	}
+
+	public GetGamificationMetricRequest withPerformanceProfileId(String performanceProfileId) {
+	    this.setPerformanceProfileId(performanceProfileId);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -88,6 +102,8 @@ public class GetGamificationMetricRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/gamification/metrics/{metricId}")
                 .withPathParameter("metricId", metricId)
         
+                .withQueryParameters("performance profile id", "", performanceProfileId)
+        
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -116,6 +132,11 @@ public class GetGamificationMetricRequest {
 		
 		public Builder withMetricId(String metricId) {
 			request.setMetricId(metricId);
+			return this;
+		}
+		
+		public Builder withPerformanceProfileId(String performanceProfileId) {
+			request.setPerformanceProfileId(performanceProfileId);
 			return this;
 		}
 		

@@ -36,6 +36,7 @@ public class WorkPlanActivity  implements Serializable {
   private Integer minimumLengthFromShiftEndMinutes = null;
   private String id = null;
   private Boolean delete = null;
+  private String validationId = null;
 
   
   /**
@@ -308,6 +309,24 @@ public class WorkPlanActivity  implements Serializable {
   }
 
   
+  /**
+   * ID of the activity in the context of work plan validation
+   **/
+  public WorkPlanActivity validationId(String validationId) {
+    this.validationId = validationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "ID of the activity in the context of work plan validation")
+  @JsonProperty("validationId")
+  public String getValidationId() {
+    return validationId;
+  }
+  public void setValidationId(String validationId) {
+    this.validationId = validationId;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -332,12 +351,13 @@ public class WorkPlanActivity  implements Serializable {
         Objects.equals(this.minimumLengthFromShiftStartMinutes, workPlanActivity.minimumLengthFromShiftStartMinutes) &&
         Objects.equals(this.minimumLengthFromShiftEndMinutes, workPlanActivity.minimumLengthFromShiftEndMinutes) &&
         Objects.equals(this.id, workPlanActivity.id) &&
-        Objects.equals(this.delete, workPlanActivity.delete);
+        Objects.equals(this.delete, workPlanActivity.delete) &&
+        Objects.equals(this.validationId, workPlanActivity.validationId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(activityCodeId, description, lengthMinutes, startTimeIsRelativeToShiftStart, flexibleStartTime, earliestStartTimeMinutes, latestStartTimeMinutes, exactStartTimeMinutes, startTimeIncrementMinutes, countsAsPaidTime, countsAsContiguousWorkTime, minimumLengthFromShiftStartMinutes, minimumLengthFromShiftEndMinutes, id, delete);
+    return Objects.hash(activityCodeId, description, lengthMinutes, startTimeIsRelativeToShiftStart, flexibleStartTime, earliestStartTimeMinutes, latestStartTimeMinutes, exactStartTimeMinutes, startTimeIncrementMinutes, countsAsPaidTime, countsAsContiguousWorkTime, minimumLengthFromShiftStartMinutes, minimumLengthFromShiftEndMinutes, id, delete, validationId);
   }
 
   @Override
@@ -360,6 +380,7 @@ public class WorkPlanActivity  implements Serializable {
     sb.append("    minimumLengthFromShiftEndMinutes: ").append(toIndentedString(minimumLengthFromShiftEndMinutes)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    delete: ").append(toIndentedString(delete)).append("\n");
+    sb.append("    validationId: ").append(toIndentedString(validationId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

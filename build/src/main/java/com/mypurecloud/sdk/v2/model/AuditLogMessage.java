@@ -58,6 +58,7 @@ public class AuditLogMessage  implements Serializable {
     ARCHITECT("Architect"),
     CONTACTCENTER("ContactCenter"),
     CONTENTMANAGEMENT("ContentManagement"),
+    DATATABLES("Datatables"),
     GROUPS("Groups"),
     INTEGRATIONS("Integrations"),
     LANGUAGEUNDERSTANDING("LanguageUnderstanding"),
@@ -77,7 +78,7 @@ public class AuditLogMessage  implements Serializable {
     WEBDEPLOYMENTS("WebDeployments"),
     WEBHOOKS("Webhooks"),
     WORKFORCEMANAGEMENT("WorkforceManagement"),
-    CONVERSATIONMESSAGING("ConversationMessaging");
+    MESSAGING("Messaging");
 
     private String value;
 
@@ -226,6 +227,7 @@ public class AuditLogMessage  implements Serializable {
     ATTEMPTLIMITS("AttemptLimits"),
     AUTHORGANIZATION("AuthOrganization"),
     AUTHUSER("AuthUser"),
+    BULK("Bulk"),
     BULKACTIONS("BulkActions"),
     CALIBRATION("Calibration"),
     CALLABLETIMESET("CallableTimeSet"),
@@ -290,11 +292,13 @@ public class AuditLogMessage  implements Serializable {
     RECORDINGSETTINGS("RecordingSettings"),
     RESPONSE("Response"),
     ROLE("Role"),
+    ROW("Row"),
     ROUTINGTRANSCRIPTIONSETTINGS("RoutingTranscriptionSettings"),
     RULESET("RuleSet"),
     SCHEDULE("Schedule"),
     SCHEDULEDEXPORTS("ScheduledExports"),
     SCHEDULEGROUP("ScheduleGroup"),
+    SCHEMA("Schema"),
     SCREENRECORDING("ScreenRecording"),
     SEGMENT("Segment"),
     SENTIMENTFEEDBACK("SentimentFeedback"),
@@ -319,10 +323,10 @@ public class AuditLogMessage  implements Serializable {
     WORKSPACE("Workspace"),
     WRAPUPCODE("WrapupCode"),
     WRAPUPCODEMAPPING("WrapUpCodeMapping"),
-    PHONENUMBER("PhoneNumber"),
-    RECIPIENT("Recipient"),
-    ACCOUNT("Account"),
-    DEFAULTSUPPORTEDCONTENT("DefaultSupportedContent"),
+    CONVERSATIONPHONENUMBER("ConversationPhoneNumber"),
+    CONVERSATIONRECIPIENT("ConversationRecipient"),
+    CONVERSATIONACCOUNT("ConversationAccount"),
+    CONVERSATIONDEFAULTSUPPORTEDCONTENT("ConversationDefaultSupportedContent"),
     CONVERSATIONTHREADINGWINDOW("ConversationThreadingWindow");
 
     private String value;

@@ -808,13 +808,15 @@ public class JourneyApi {
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=name,-createdDate). (optional)
    * @param mediaType Media type (optional)
-   * @param state Action template state (optional)
+   * @param state Action template state. (optional)
+   * @param queryFields ActionTemplate field(s) to query on. Requires &#39;queryValue&#39; to also be set. (optional)
+   * @param queryValue Value to query on. Requires &#39;queryFields&#39; to also be set. (optional)
    * @return ActionTemplateListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ActionTemplateListing getJourneyActiontemplates(Integer pageNumber, Integer pageSize, String sortBy, String mediaType, String state) throws IOException, ApiException {
-    return  getJourneyActiontemplates(createGetJourneyActiontemplatesRequest(pageNumber, pageSize, sortBy, mediaType, state));
+  public ActionTemplateListing getJourneyActiontemplates(Integer pageNumber, Integer pageSize, String sortBy, String mediaType, String state, List<String> queryFields, String queryValue) throws IOException, ApiException {
+    return  getJourneyActiontemplates(createGetJourneyActiontemplatesRequest(pageNumber, pageSize, sortBy, mediaType, state, queryFields, queryValue));
   }
 
   /**
@@ -824,15 +826,17 @@ public class JourneyApi {
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=name,-createdDate). (optional)
    * @param mediaType Media type (optional)
-   * @param state Action template state (optional)
+   * @param state Action template state. (optional)
+   * @param queryFields ActionTemplate field(s) to query on. Requires &#39;queryValue&#39; to also be set. (optional)
+   * @param queryValue Value to query on. Requires &#39;queryFields&#39; to also be set. (optional)
    * @return ActionTemplateListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ActionTemplateListing> getJourneyActiontemplatesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String mediaType, String state) throws IOException {
-    return getJourneyActiontemplates(createGetJourneyActiontemplatesRequest(pageNumber, pageSize, sortBy, mediaType, state).withHttpInfo());
+  public ApiResponse<ActionTemplateListing> getJourneyActiontemplatesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String mediaType, String state, List<String> queryFields, String queryValue) throws IOException {
+    return getJourneyActiontemplates(createGetJourneyActiontemplatesRequest(pageNumber, pageSize, sortBy, mediaType, state, queryFields, queryValue).withHttpInfo());
   }
 
-  private GetJourneyActiontemplatesRequest createGetJourneyActiontemplatesRequest(Integer pageNumber, Integer pageSize, String sortBy, String mediaType, String state) {
+  private GetJourneyActiontemplatesRequest createGetJourneyActiontemplatesRequest(Integer pageNumber, Integer pageSize, String sortBy, String mediaType, String state, List<String> queryFields, String queryValue) {
     return GetJourneyActiontemplatesRequest.builder()
             .withPageNumber(pageNumber)
     
@@ -843,6 +847,10 @@ public class JourneyApi {
             .withMediaType(mediaType)
     
             .withState(state)
+    
+            .withQueryFields(queryFields)
+    
+            .withQueryValue(queryValue)
     
             .build();
   }

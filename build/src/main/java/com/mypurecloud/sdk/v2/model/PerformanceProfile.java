@@ -10,9 +10,12 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.Division;
+import com.mypurecloud.sdk.v2.model.ReportingInterval;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -24,8 +27,13 @@ public class PerformanceProfile  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private Division division = null;
   private String description = null;
   private List<String> metricOrders = new ArrayList<String>();
+  private Date dateCreated = null;
+  private List<ReportingInterval> reportingIntervals = new ArrayList<ReportingInterval>();
+  private Boolean active = null;
+  private Integer maxLeaderboardRankSize = null;
   private String selfUri = null;
 
   
@@ -51,6 +59,24 @@ public class PerformanceProfile  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  
+  /**
+   * The division for this performance profile associate to
+   **/
+  public PerformanceProfile division(Division division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division for this performance profile associate to")
+  @JsonProperty("division")
+  public Division getDivision() {
+    return division;
+  }
+  public void setDivision(Division division) {
+    this.division = division;
   }
 
   
@@ -90,6 +116,67 @@ public class PerformanceProfile  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "Creation date for this performance profile. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+
+  
+  /**
+   * The reporting interval periods for this performance profile
+   **/
+  public PerformanceProfile reportingIntervals(List<ReportingInterval> reportingIntervals) {
+    this.reportingIntervals = reportingIntervals;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The reporting interval periods for this performance profile")
+  @JsonProperty("reportingIntervals")
+  public List<ReportingInterval> getReportingIntervals() {
+    return reportingIntervals;
+  }
+  public void setReportingIntervals(List<ReportingInterval> reportingIntervals) {
+    this.reportingIntervals = reportingIntervals;
+  }
+
+  
+  /**
+   * The flag for active profiles
+   **/
+  public PerformanceProfile active(Boolean active) {
+    this.active = active;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The flag for active profiles")
+  @JsonProperty("active")
+  public Boolean getActive() {
+    return active;
+  }
+  public void setActive(Boolean active) {
+    this.active = active;
+  }
+
+  
+  /**
+   * The maximum rank size for the leaderboard. This counts the number of ranks can be retrieved in a leaderboard queries
+   **/
+  public PerformanceProfile maxLeaderboardRankSize(Integer maxLeaderboardRankSize) {
+    this.maxLeaderboardRankSize = maxLeaderboardRankSize;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The maximum rank size for the leaderboard. This counts the number of ranks can be retrieved in a leaderboard queries")
+  @JsonProperty("maxLeaderboardRankSize")
+  public Integer getMaxLeaderboardRankSize() {
+    return maxLeaderboardRankSize;
+  }
+  public void setMaxLeaderboardRankSize(Integer maxLeaderboardRankSize) {
+    this.maxLeaderboardRankSize = maxLeaderboardRankSize;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -109,14 +196,19 @@ public class PerformanceProfile  implements Serializable {
     PerformanceProfile performanceProfile = (PerformanceProfile) o;
     return Objects.equals(this.id, performanceProfile.id) &&
         Objects.equals(this.name, performanceProfile.name) &&
+        Objects.equals(this.division, performanceProfile.division) &&
         Objects.equals(this.description, performanceProfile.description) &&
         Objects.equals(this.metricOrders, performanceProfile.metricOrders) &&
+        Objects.equals(this.dateCreated, performanceProfile.dateCreated) &&
+        Objects.equals(this.reportingIntervals, performanceProfile.reportingIntervals) &&
+        Objects.equals(this.active, performanceProfile.active) &&
+        Objects.equals(this.maxLeaderboardRankSize, performanceProfile.maxLeaderboardRankSize) &&
         Objects.equals(this.selfUri, performanceProfile.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, metricOrders, selfUri);
+    return Objects.hash(id, name, division, description, metricOrders, dateCreated, reportingIntervals, active, maxLeaderboardRankSize, selfUri);
   }
 
   @Override
@@ -126,8 +218,13 @@ public class PerformanceProfile  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    metricOrders: ").append(toIndentedString(metricOrders)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    reportingIntervals: ").append(toIndentedString(reportingIntervals)).append("\n");
+    sb.append("    active: ").append(toIndentedString(active)).append("\n");
+    sb.append("    maxLeaderboardRankSize: ").append(toIndentedString(maxLeaderboardRankSize)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

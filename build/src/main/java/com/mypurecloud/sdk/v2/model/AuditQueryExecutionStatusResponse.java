@@ -103,6 +103,7 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     ARCHITECT("Architect"),
     CONTACTCENTER("ContactCenter"),
     CONTENTMANAGEMENT("ContentManagement"),
+    DATATABLES("Datatables"),
     GROUPS("Groups"),
     INTEGRATIONS("Integrations"),
     LANGUAGEUNDERSTANDING("LanguageUnderstanding"),
@@ -122,7 +123,7 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     WEBDEPLOYMENTS("WebDeployments"),
     WEBHOOKS("Webhooks"),
     WORKFORCEMANAGEMENT("WorkforceManagement"),
-    CONVERSATIONMESSAGING("ConversationMessaging");
+    MESSAGING("Messaging");
 
     private String value;
 

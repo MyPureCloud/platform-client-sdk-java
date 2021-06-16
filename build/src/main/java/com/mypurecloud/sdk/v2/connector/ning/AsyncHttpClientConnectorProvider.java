@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.net.*;
 import java.util.Collections;
 import java.util.List;
+import java.util.Properties;
 
 public class AsyncHttpClientConnectorProvider implements ApiClientConnectorProvider {
     @Override
@@ -27,23 +28,9 @@ public class AsyncHttpClientConnectorProvider implements ApiClientConnectorProvi
             builder.setReadTimeout(connectionTimeout);
             builder.setRequestTimeout(connectionTimeout);
         }
-
-        final Proxy proxy = properties.getProperty(ApiClientConnectorProperty.PROXY, Proxy.class, null);
-        if (proxy != null) {
-            ProxySelector proxySelector = new ProxySelector() {
-                @Override
-                public List<Proxy> select(URI uri) {
-                    return Collections.singletonList(proxy);
-                }
-
-                @Override
-                public void connectFailed(URI uri, SocketAddress sa, IOException ioe) { }
-            };
-            ProxyServerSelector proxyServerSelector = ProxyUtils.createProxyServerSelector(proxySelector);
-            builder.setProxyServerSelector(proxyServerSelector);
-            builder.setUseProxySelector(true);
-        }
-
+        ProxyServerSelector proxyServerSelector = ProxyUtils.createProxyServerSelector((Properties) properties);
+        builder.setProxyServerSelector(proxyServerSelector);
+        builder.setUseProxySelector(true);
         AsyncHttpClientConfig config = builder.build();
         AsyncHttpClient client = new DefaultAsyncHttpClient(config);
         return new AsyncHttpClientConnector(client);

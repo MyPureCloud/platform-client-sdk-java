@@ -47,6 +47,7 @@ public class WorkPlanShift  implements Serializable {
   private List<WorkPlanActivity> activities = new ArrayList<WorkPlanActivity>();
   private String id = null;
   private Boolean delete = null;
+  private String validationId = null;
 
   
   /**
@@ -445,6 +446,24 @@ public class WorkPlanShift  implements Serializable {
   }
 
   
+  /**
+   * ID of shift in the context of work plan validation
+   **/
+  public WorkPlanShift validationId(String validationId) {
+    this.validationId = validationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "ID of shift in the context of work plan validation")
+  @JsonProperty("validationId")
+  public String getValidationId() {
+    return validationId;
+  }
+  public void setValidationId(String validationId) {
+    this.validationId = validationId;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -476,12 +495,13 @@ public class WorkPlanShift  implements Serializable {
         Objects.equals(this.maximumContiguousWorkTimeMinutes, workPlanShift.maximumContiguousWorkTimeMinutes) &&
         Objects.equals(this.activities, workPlanShift.activities) &&
         Objects.equals(this.id, workPlanShift.id) &&
-        Objects.equals(this.delete, workPlanShift.delete);
+        Objects.equals(this.delete, workPlanShift.delete) &&
+        Objects.equals(this.validationId, workPlanShift.validationId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, days, flexibleStartTime, exactStartTimeMinutesFromMidnight, earliestStartTimeMinutesFromMidnight, latestStartTimeMinutesFromMidnight, constrainStopTime, constrainLatestStopTime, latestStopTimeMinutesFromMidnight, constrainEarliestStopTime, earliestStopTimeMinutesFromMidnight, startIncrementMinutes, flexiblePaidTime, exactPaidTimeMinutes, minimumPaidTimeMinutes, maximumPaidTimeMinutes, constrainContiguousWorkTime, minimumContiguousWorkTimeMinutes, maximumContiguousWorkTimeMinutes, activities, id, delete);
+    return Objects.hash(name, days, flexibleStartTime, exactStartTimeMinutesFromMidnight, earliestStartTimeMinutesFromMidnight, latestStartTimeMinutesFromMidnight, constrainStopTime, constrainLatestStopTime, latestStopTimeMinutesFromMidnight, constrainEarliestStopTime, earliestStopTimeMinutesFromMidnight, startIncrementMinutes, flexiblePaidTime, exactPaidTimeMinutes, minimumPaidTimeMinutes, maximumPaidTimeMinutes, constrainContiguousWorkTime, minimumContiguousWorkTimeMinutes, maximumContiguousWorkTimeMinutes, activities, id, delete, validationId);
   }
 
   @Override
@@ -511,6 +531,7 @@ public class WorkPlanShift  implements Serializable {
     sb.append("    activities: ").append(toIndentedString(activities)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    delete: ").append(toIndentedString(delete)).append("\n");
+    sb.append("    validationId: ").append(toIndentedString(validationId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -29,8 +29,8 @@ public class QualityAudit  implements Serializable {
   private String name = null;
   private User user = null;
   private String jobId = null;
-  private String level = null;
   private AuditEntity entity = null;
+  private String level = null;
   private String action = null;
   private String timestamp = null;
   private String status = null;
@@ -99,23 +99,6 @@ public class QualityAudit  implements Serializable {
   
   /**
    **/
-  public QualityAudit level(String level) {
-    this.level = level;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("level")
-  public String getLevel() {
-    return level;
-  }
-  public void setLevel(String level) {
-    this.level = level;
-  }
-
-  
-  /**
-   **/
   public QualityAudit entity(AuditEntity entity) {
     this.entity = entity;
     return this;
@@ -128,6 +111,23 @@ public class QualityAudit  implements Serializable {
   }
   public void setEntity(AuditEntity entity) {
     this.entity = entity;
+  }
+
+  
+  /**
+   **/
+  public QualityAudit level(String level) {
+    this.level = level;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("level")
+  public String getLevel() {
+    return level;
+  }
+  public void setLevel(String level) {
+    this.level = level;
   }
 
   
@@ -237,8 +237,8 @@ public class QualityAudit  implements Serializable {
         Objects.equals(this.name, qualityAudit.name) &&
         Objects.equals(this.user, qualityAudit.user) &&
         Objects.equals(this.jobId, qualityAudit.jobId) &&
-        Objects.equals(this.level, qualityAudit.level) &&
         Objects.equals(this.entity, qualityAudit.entity) &&
+        Objects.equals(this.level, qualityAudit.level) &&
         Objects.equals(this.action, qualityAudit.action) &&
         Objects.equals(this.timestamp, qualityAudit.timestamp) &&
         Objects.equals(this.status, qualityAudit.status) &&
@@ -249,7 +249,7 @@ public class QualityAudit  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, user, jobId, level, entity, action, timestamp, status, changes, entityType, selfUri);
+    return Objects.hash(id, name, user, jobId, entity, level, action, timestamp, status, changes, entityType, selfUri);
   }
 
   @Override
@@ -261,8 +261,8 @@ public class QualityAudit  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
-    sb.append("    level: ").append(toIndentedString(level)).append("\n");
     sb.append("    entity: ").append(toIndentedString(entity)).append("\n");
+    sb.append("    level: ").append(toIndentedString(level)).append("\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");

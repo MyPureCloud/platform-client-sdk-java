@@ -31,6 +31,7 @@ public class Leaderboard  implements Serializable {
   private LocalDate dateStartWorkday = null;
   private LocalDate dateEndWorkday = null;
   private List<LeaderboardItem> leaders = new ArrayList<LeaderboardItem>();
+  private LeaderboardItem userRank = null;
 
   
   /**
@@ -101,6 +102,24 @@ public class Leaderboard  implements Serializable {
   }
 
   
+  /**
+   * The requesting user's rank
+   **/
+  public Leaderboard userRank(LeaderboardItem userRank) {
+    this.userRank = userRank;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The requesting user's rank")
+  @JsonProperty("userRank")
+  public LeaderboardItem getUserRank() {
+    return userRank;
+  }
+  public void setUserRank(LeaderboardItem userRank) {
+    this.userRank = userRank;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -115,12 +134,13 @@ public class Leaderboard  implements Serializable {
         Objects.equals(this.metric, leaderboard.metric) &&
         Objects.equals(this.dateStartWorkday, leaderboard.dateStartWorkday) &&
         Objects.equals(this.dateEndWorkday, leaderboard.dateEndWorkday) &&
-        Objects.equals(this.leaders, leaderboard.leaders);
+        Objects.equals(this.leaders, leaderboard.leaders) &&
+        Objects.equals(this.userRank, leaderboard.userRank);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(division, metric, dateStartWorkday, dateEndWorkday, leaders);
+    return Objects.hash(division, metric, dateStartWorkday, dateEndWorkday, leaders, userRank);
   }
 
   @Override
@@ -133,6 +153,7 @@ public class Leaderboard  implements Serializable {
     sb.append("    dateStartWorkday: ").append(toIndentedString(dateStartWorkday)).append("\n");
     sb.append("    dateEndWorkday: ").append(toIndentedString(dateEndWorkday)).append("\n");
     sb.append("    leaders: ").append(toIndentedString(leaders)).append("\n");
+    sb.append("    userRank: ").append(toIndentedString(userRank)).append("\n");
     sb.append("}");
     return sb.toString();
   }
