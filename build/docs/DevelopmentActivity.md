@@ -33,6 +33,7 @@ title: DevelopmentActivity
 | INFORMATIONAL | &quot;Informational&quot; |
 | COACHING | &quot;Coaching&quot; |
 | ASSESSEDCONTENT | &quot;AssessedContent&quot; |
+| ASSESSMENT | &quot;Assessment&quot; |
 | QUESTIONNAIRE | &quot;Questionnaire&quot; |
 {: class="table table-striped"}
 

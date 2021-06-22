@@ -566,7 +566,7 @@ try {
 | **interval** | **String**| Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
-| **statuses** | [**List&lt;String&gt;**](String.html)| Appointment Statuses to filter by | [optional]<br />**Values**: Scheduled, InProgress, Completed 
+| **statuses** | [**List&lt;String&gt;**](String.html)| Appointment Statuses to filter by | [optional]<br />**Values**: Scheduled, InProgress, Completed, InvalidSchedule 
 | **facilitatorIds** | [**List&lt;String&gt;**](String.html)| The facilitator IDs for which to retrieve appointments | [optional] 
 | **sortOrder** | **String**| Sort (by due date) either Asc or Desc | [optional]<br />**Values**: Desc, Asc 
 | **relationships** | [**List&lt;String&gt;**](String.html)| Relationships to filter by | [optional]<br />**Values**: Creator, Facilitator, Attendee 

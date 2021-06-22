@@ -35,6 +35,8 @@ public class CreateCallbackOnConversationCommand  implements Serializable {
   private String countryCode = null;
   private Boolean validateCallbackNumbers = null;
   private Map<String, String> data = null;
+  private String callerId = null;
+  private String callerIdName = null;
 
   
   /**
@@ -199,6 +201,42 @@ public class CreateCallbackOnConversationCommand  implements Serializable {
   }
 
   
+  /**
+   * The phone number displayed to recipients when a phone call is placed as part of the callback. Must conform to the E.164 format. May be overridden by other settings in the system such as external trunk settings. Telco support for \"callerId\" varies.
+   **/
+  public CreateCallbackOnConversationCommand callerId(String callerId) {
+    this.callerId = callerId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The phone number displayed to recipients when a phone call is placed as part of the callback. Must conform to the E.164 format. May be overridden by other settings in the system such as external trunk settings. Telco support for \"callerId\" varies.")
+  @JsonProperty("callerId")
+  public String getCallerId() {
+    return callerId;
+  }
+  public void setCallerId(String callerId) {
+    this.callerId = callerId;
+  }
+
+  
+  /**
+   * The name displayed to recipients when a phone call is placed as part of the callback. May be overridden by other settings in the system such as external trunk settings. Telco support for \"callerIdName\" varies.
+   **/
+  public CreateCallbackOnConversationCommand callerIdName(String callerIdName) {
+    this.callerIdName = callerIdName;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The name displayed to recipients when a phone call is placed as part of the callback. May be overridden by other settings in the system such as external trunk settings. Telco support for \"callerIdName\" varies.")
+  @JsonProperty("callerIdName")
+  public String getCallerIdName() {
+    return callerIdName;
+  }
+  public void setCallerIdName(String callerIdName) {
+    this.callerIdName = callerIdName;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -217,12 +255,14 @@ public class CreateCallbackOnConversationCommand  implements Serializable {
         Objects.equals(this.callbackScheduledTime, createCallbackOnConversationCommand.callbackScheduledTime) &&
         Objects.equals(this.countryCode, createCallbackOnConversationCommand.countryCode) &&
         Objects.equals(this.validateCallbackNumbers, createCallbackOnConversationCommand.validateCallbackNumbers) &&
-        Objects.equals(this.data, createCallbackOnConversationCommand.data);
+        Objects.equals(this.data, createCallbackOnConversationCommand.data) &&
+        Objects.equals(this.callerId, createCallbackOnConversationCommand.callerId) &&
+        Objects.equals(this.callerIdName, createCallbackOnConversationCommand.callerIdName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(scriptId, queueId, routingData, callbackUserName, callbackNumbers, callbackScheduledTime, countryCode, validateCallbackNumbers, data);
+    return Objects.hash(scriptId, queueId, routingData, callbackUserName, callbackNumbers, callbackScheduledTime, countryCode, validateCallbackNumbers, data, callerId, callerIdName);
   }
 
   @Override
@@ -239,6 +279,8 @@ public class CreateCallbackOnConversationCommand  implements Serializable {
     sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
     sb.append("    validateCallbackNumbers: ").append(toIndentedString(validateCallbackNumbers)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    callerId: ").append(toIndentedString(callerId)).append("\n");
+    sb.append("    callerIdName: ").append(toIndentedString(callerIdName)).append("\n");
     sb.append("}");
     return sb.toString();
   }

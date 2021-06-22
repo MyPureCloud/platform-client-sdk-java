@@ -56,9 +56,11 @@ public class AuditLogMessage  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ANALYTICSREPORTING("AnalyticsReporting"),
     ARCHITECT("Architect"),
+    COACHING("Coaching"),
     CONTACTCENTER("ContactCenter"),
     CONTENTMANAGEMENT("ContentManagement"),
     DATATABLES("Datatables"),
+    GAMIFICATION("Gamification"),
     GROUPS("Groups"),
     INTEGRATIONS("Integrations"),
     LANGUAGEUNDERSTANDING("LanguageUnderstanding"),
@@ -175,7 +177,10 @@ public class AuditLogMessage  implements Serializable {
     IMPLEMENTINGCHANGE("ImplementingChange"),
     CHANGEIMPLEMENTED("ChangeImplemented"),
     IMPLEMENTINGROLLBACK("ImplementingRollback"),
-    ROLLBACKIMPLEMENTED("RollbackImplemented");
+    ROLLBACKIMPLEMENTED("RollbackImplemented"),
+    WRITE("Write"),
+    PURGE("Purge"),
+    PROCESSED("Processed");
 
     private String value;
 
@@ -224,6 +229,8 @@ public class AuditLogMessage  implements Serializable {
   public enum EntityTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACCESSTOKEN("AccessToken"),
+    ANNOTATION("Annotation"),
+    APPOINTMENT("Appointment"),
     ATTEMPTLIMITS("AttemptLimits"),
     AUTHORGANIZATION("AuthOrganization"),
     AUTHUSER("AuthUser"),
@@ -257,12 +264,14 @@ public class AuditLogMessage  implements Serializable {
     EXPORTS("Exports"),
     EXTENSION("Extension"),
     EXTENSIONPOOL("ExtensionPool"),
+    EXTERNALMETRICDATA("ExternalMetricData"),
     EXTERNALMETRICDEFINITION("ExternalMetricDefinition"),
     FEEDBACK("Feedback"),
     FLOW("Flow"),
     FLOWMILESTONE("FlowMilestone"),
     FLOWOUTCOME("FlowOutcome"),
     FORECAST("Forecast"),
+    HISTORICALDATA("HistoricalData"),
     INSIGHTSETTINGS("InsightSettings"),
     INTEGRATION("Integration"),
     IVR("IVR"),
@@ -270,6 +279,7 @@ public class AuditLogMessage  implements Serializable {
     LINEBASE("LineBase"),
     MAXORGROUTINGUTILIZATIONCAPACITY("MaxOrgRoutingUtilizationCapacity"),
     MESSAGINGCAMPAIGN("MessagingCampaign"),
+    METRIC("Metric"),
     NUMBERPLAN("NumberPlan"),
     OAUTHCLIENT("OAuthClient"),
     OAUTHCLIENTAUTHORIZATION("OAuthClientAuthorization"),
@@ -307,6 +317,7 @@ public class AuditLogMessage  implements Serializable {
     SESSIONTYPE("SessionType"),
     SITE("Site"),
     SPEECHTEXTANALYTICSSETTINGS("SpeechTextAnalyticsSettings"),
+    STATUS("Status"),
     SURVEY("Survey"),
     SURVEYFORM("SurveyForm"),
     TEAM("Team"),
@@ -327,7 +338,8 @@ public class AuditLogMessage  implements Serializable {
     CONVERSATIONRECIPIENT("ConversationRecipient"),
     CONVERSATIONACCOUNT("ConversationAccount"),
     CONVERSATIONDEFAULTSUPPORTEDCONTENT("ConversationDefaultSupportedContent"),
-    CONVERSATIONTHREADINGWINDOW("ConversationThreadingWindow");
+    CONVERSATIONTHREADINGWINDOW("ConversationThreadingWindow"),
+    SUPPORTEDCONTENT("SupportedContent");
 
     private String value;
 

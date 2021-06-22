@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.model.TrustCreate;
 import com.mypurecloud.sdk.v2.model.AuditQueryResponse;
 import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
 import com.mypurecloud.sdk.v2.model.TrustorAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.TrustUpdate;
 import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 
 
@@ -1730,7 +1731,7 @@ public class OrganizationAuthorizationApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Trustee putOrgauthorizationTrustee(String trusteeOrgId, Trustee body) throws IOException, ApiException {
+  public Trustee putOrgauthorizationTrustee(String trusteeOrgId, TrustUpdate body) throws IOException, ApiException {
     return  putOrgauthorizationTrustee(createPutOrgauthorizationTrusteeRequest(trusteeOrgId, body));
   }
 
@@ -1742,11 +1743,11 @@ public class OrganizationAuthorizationApi {
    * @return Trustee
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Trustee> putOrgauthorizationTrusteeWithHttpInfo(String trusteeOrgId, Trustee body) throws IOException {
+  public ApiResponse<Trustee> putOrgauthorizationTrusteeWithHttpInfo(String trusteeOrgId, TrustUpdate body) throws IOException {
     return putOrgauthorizationTrustee(createPutOrgauthorizationTrusteeRequest(trusteeOrgId, body).withHttpInfo());
   }
 
-  private PutOrgauthorizationTrusteeRequest createPutOrgauthorizationTrusteeRequest(String trusteeOrgId, Trustee body) {
+  private PutOrgauthorizationTrusteeRequest createPutOrgauthorizationTrusteeRequest(String trusteeOrgId, TrustUpdate body) {
     return PutOrgauthorizationTrusteeRequest.builder()
             .withTrusteeOrgId(trusteeOrgId)
     
@@ -1781,7 +1782,7 @@ public class OrganizationAuthorizationApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Trustee> putOrgauthorizationTrustee(ApiRequest<Trustee> request) throws IOException {
+  public ApiResponse<Trustee> putOrgauthorizationTrustee(ApiRequest<TrustUpdate> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<Trustee>() {});
     }

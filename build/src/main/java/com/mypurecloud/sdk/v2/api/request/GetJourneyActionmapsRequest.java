@@ -125,6 +125,34 @@ public class GetJourneyActionmapsRequest {
 	    return this;
 	} 
 	
+	private List<String> queryFields;
+	public List<String> getQueryFields() {
+		return this.queryFields;
+	}
+
+	public void setQueryFields(List<String> queryFields) {
+		this.queryFields = queryFields;
+	}
+
+	public GetJourneyActionmapsRequest withQueryFields(List<String> queryFields) {
+	    this.setQueryFields(queryFields);
+	    return this;
+	} 
+	
+	private String queryValue;
+	public String getQueryValue() {
+		return this.queryValue;
+	}
+
+	public void setQueryValue(String queryValue) {
+		this.queryValue = queryValue;
+	}
+
+	public GetJourneyActionmapsRequest withQueryValue(String queryValue) {
+	    this.setQueryValue(queryValue);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -159,6 +187,10 @@ public class GetJourneyActionmapsRequest {
                 .withQueryParameters("filterValue", "", filterValue)
         
                 .withQueryParameters("actionMapIds", "multi", actionMapIds)
+        
+                .withQueryParameters("queryFields", "multi", queryFields)
+        
+                .withQueryParameters("queryValue", "", queryValue)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -208,6 +240,16 @@ public class GetJourneyActionmapsRequest {
 		
 		public Builder withActionMapIds(List<String> actionMapIds) {
 			request.setActionMapIds(actionMapIds);
+			return this;
+		}
+		
+		public Builder withQueryFields(List<String> queryFields) {
+			request.setQueryFields(queryFields);
+			return this;
+		}
+		
+		public Builder withQueryValue(String queryValue) {
+			request.setQueryValue(queryValue);
 			return this;
 		}
 		

@@ -230,7 +230,8 @@ public class ViewFilter  implements Serializable {
     FACEBOOK("facebook"),
     WHATSAPP("whatsapp"),
     WEBMESSAGING("webmessaging"),
-    OPEN("open");
+    OPEN("open"),
+    INSTAGRAM("instagram");
 
     private String value;
 
@@ -456,6 +457,8 @@ public class ViewFilter  implements Serializable {
     INBOUNDEMAIL("inboundemail"),
     INBOUNDSHORTMESSAGE("inboundshortmessage"),
     INQUEUECALL("inqueuecall"),
+    INQUEUESHORTMESSAGE("inqueueshortmessage"),
+    INQUEUEEMAIL("inqueueemail"),
     OUTBOUNDCALL("outboundcall"),
     SECURECALL("securecall"),
     SURVEYINVITE("surveyinvite"),

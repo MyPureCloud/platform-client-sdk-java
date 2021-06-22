@@ -35,6 +35,7 @@ import com.mypurecloud.sdk.v2.model.TrustCreate;
 import com.mypurecloud.sdk.v2.model.AuditQueryResponse;
 import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
 import com.mypurecloud.sdk.v2.model.TrustorAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.TrustUpdate;
 import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 
 public class PutOrgauthorizationTrusteeRequest {
@@ -53,16 +54,16 @@ public class PutOrgauthorizationTrusteeRequest {
 	    return this;
 	} 
 	
-	private Trustee body;
-	public Trustee getBody() {
+	private TrustUpdate body;
+	public TrustUpdate getBody() {
 		return this.body;
 	}
 
-	public void setBody(Trustee body) {
+	public void setBody(TrustUpdate body) {
 		this.body = body;
 	}
 
-	public PutOrgauthorizationTrusteeRequest withBody(Trustee body) {
+	public PutOrgauthorizationTrusteeRequest withBody(TrustUpdate body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -86,7 +87,7 @@ public class PutOrgauthorizationTrusteeRequest {
         return this;
     }
 
-    public ApiRequest<Trustee> withHttpInfo() {
+    public ApiRequest<TrustUpdate> withHttpInfo() {
         
         // verify the required parameter 'trusteeOrgId' is set
         if (this.trusteeOrgId == null) {
@@ -116,7 +117,7 @@ public class PutOrgauthorizationTrusteeRequest {
 	}
 
 	
-	public static Builder builder(String trusteeOrgId, Trustee body) {
+	public static Builder builder(String trusteeOrgId, TrustUpdate body) {
 	    return new Builder()
 	            .withRequiredParams(trusteeOrgId, body);
 	}
@@ -135,14 +136,14 @@ public class PutOrgauthorizationTrusteeRequest {
 			return this;
 		}
 		
-		public Builder withBody(Trustee body) {
+		public Builder withBody(TrustUpdate body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(String trusteeOrgId, Trustee body) {
+		public Builder withRequiredParams(String trusteeOrgId, TrustUpdate body) {
 			request.setTrusteeOrgId(trusteeOrgId);
 						request.setBody(body);
 			

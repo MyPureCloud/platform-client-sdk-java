@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.EvaluationQualityV2TopicCalibration;
 import com.mypurecloud.sdk.v2.model.EvaluationQualityV2TopicEvaluationScoringSet;
 import com.mypurecloud.sdk.v2.model.EvaluationQualityV2TopicUser;
 import io.swagger.annotations.ApiModel;
@@ -95,6 +96,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
   private Boolean rescore = null;
   private Date conversationDate = null;
   private List<String> mediaType = new ArrayList<String>();
+  private EvaluationQualityV2TopicCalibration calibration = null;
 
   
   /**
@@ -454,6 +456,23 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
   }
 
   
+  /**
+   **/
+  public EvaluationQualityV2TopicEvaluationV2 calibration(EvaluationQualityV2TopicCalibration calibration) {
+    this.calibration = calibration;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("calibration")
+  public EvaluationQualityV2TopicCalibration getCalibration() {
+    return calibration;
+  }
+  public void setCalibration(EvaluationQualityV2TopicCalibration calibration) {
+    this.calibration = calibration;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -484,12 +503,13 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
         Objects.equals(this.divisionIds, evaluationQualityV2TopicEvaluationV2.divisionIds) &&
         Objects.equals(this.rescore, evaluationQualityV2TopicEvaluationV2.rescore) &&
         Objects.equals(this.conversationDate, evaluationQualityV2TopicEvaluationV2.conversationDate) &&
-        Objects.equals(this.mediaType, evaluationQualityV2TopicEvaluationV2.mediaType);
+        Objects.equals(this.mediaType, evaluationQualityV2TopicEvaluationV2.mediaType) &&
+        Objects.equals(this.calibration, evaluationQualityV2TopicEvaluationV2.calibration);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, conversationId, agent, evaluator, eventTime, evaluationFormId, formName, scoringSet, contextId, status, agentHasRead, releaseDate, assignedDate, changedDate, eventType, resourceId, resourceType, divisionIds, rescore, conversationDate, mediaType);
+    return Objects.hash(id, conversationId, agent, evaluator, eventTime, evaluationFormId, formName, scoringSet, contextId, status, agentHasRead, releaseDate, assignedDate, changedDate, eventType, resourceId, resourceType, divisionIds, rescore, conversationDate, mediaType, calibration);
   }
 
   @Override
@@ -518,6 +538,7 @@ public class EvaluationQualityV2TopicEvaluationV2  implements Serializable {
     sb.append("    rescore: ").append(toIndentedString(rescore)).append("\n");
     sb.append("    conversationDate: ").append(toIndentedString(conversationDate)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
+    sb.append("    calibration: ").append(toIndentedString(calibration)).append("\n");
     sb.append("}");
     return sb.toString();
   }

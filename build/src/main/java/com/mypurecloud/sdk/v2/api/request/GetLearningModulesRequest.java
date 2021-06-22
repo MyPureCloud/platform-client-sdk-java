@@ -71,7 +71,8 @@ public class GetLearningModulesRequest {
 	public enum typesValues { 
 		INFORMATIONAL("Informational"), 
 		ASSESSEDCONTENT("AssessedContent"), 
-		QUESTIONNAIRE("Questionnaire");
+		QUESTIONNAIRE("Questionnaire"), 
+		ASSESSMENT("Assessment");
 
 		private String value;
 

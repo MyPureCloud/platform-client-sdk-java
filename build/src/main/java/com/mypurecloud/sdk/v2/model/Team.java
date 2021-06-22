@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.Division;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -23,6 +24,7 @@ public class Team  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private Division division = null;
   private String description = null;
   private Date dateModified = null;
   private Long memberCount = null;
@@ -51,6 +53,24 @@ public class Team  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  
+  /**
+   * The division to which this entity belongs.
+   **/
+  public Team division(Division division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public Division getDivision() {
+    return division;
+  }
+  public void setDivision(Division division) {
+    this.division = division;
   }
 
   
@@ -105,6 +125,7 @@ public class Team  implements Serializable {
     Team team = (Team) o;
     return Objects.equals(this.id, team.id) &&
         Objects.equals(this.name, team.name) &&
+        Objects.equals(this.division, team.division) &&
         Objects.equals(this.description, team.description) &&
         Objects.equals(this.dateModified, team.dateModified) &&
         Objects.equals(this.memberCount, team.memberCount) &&
@@ -113,7 +134,7 @@ public class Team  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, dateModified, memberCount, selfUri);
+    return Objects.hash(id, name, division, description, dateModified, memberCount, selfUri);
   }
 
   @Override
@@ -123,6 +144,7 @@ public class Team  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    memberCount: ").append(toIndentedString(memberCount)).append("\n");

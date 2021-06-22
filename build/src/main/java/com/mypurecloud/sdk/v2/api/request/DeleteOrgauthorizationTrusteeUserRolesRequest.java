@@ -35,6 +35,7 @@ import com.mypurecloud.sdk.v2.model.TrustCreate;
 import com.mypurecloud.sdk.v2.model.AuditQueryResponse;
 import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
 import com.mypurecloud.sdk.v2.model.TrustorAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.TrustUpdate;
 import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 
 public class DeleteOrgauthorizationTrusteeUserRolesRequest {

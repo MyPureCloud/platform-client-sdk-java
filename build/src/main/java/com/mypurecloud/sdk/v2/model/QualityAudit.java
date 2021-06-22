@@ -29,12 +29,12 @@ public class QualityAudit  implements Serializable {
   private String name = null;
   private User user = null;
   private String jobId = null;
+  private String action = null;
   private AuditEntity entity = null;
   private String level = null;
-  private String action = null;
   private String timestamp = null;
-  private String status = null;
   private List<Change> changes = new ArrayList<Change>();
+  private String status = null;
   private String entityType = null;
   private String selfUri = null;
 
@@ -99,6 +99,23 @@ public class QualityAudit  implements Serializable {
   
   /**
    **/
+  public QualityAudit action(String action) {
+    this.action = action;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("action")
+  public String getAction() {
+    return action;
+  }
+  public void setAction(String action) {
+    this.action = action;
+  }
+
+  
+  /**
+   **/
   public QualityAudit entity(AuditEntity entity) {
     this.entity = entity;
     return this;
@@ -133,23 +150,6 @@ public class QualityAudit  implements Serializable {
   
   /**
    **/
-  public QualityAudit action(String action) {
-    this.action = action;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("action")
-  public String getAction() {
-    return action;
-  }
-  public void setAction(String action) {
-    this.action = action;
-  }
-
-  
-  /**
-   **/
   public QualityAudit timestamp(String timestamp) {
     this.timestamp = timestamp;
     return this;
@@ -167,23 +167,6 @@ public class QualityAudit  implements Serializable {
   
   /**
    **/
-  public QualityAudit status(String status) {
-    this.status = status;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("status")
-  public String getStatus() {
-    return status;
-  }
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-  
-  /**
-   **/
   public QualityAudit changes(List<Change> changes) {
     this.changes = changes;
     return this;
@@ -196,6 +179,23 @@ public class QualityAudit  implements Serializable {
   }
   public void setChanges(List<Change> changes) {
     this.changes = changes;
+  }
+
+  
+  /**
+   **/
+  public QualityAudit status(String status) {
+    this.status = status;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("status")
+  public String getStatus() {
+    return status;
+  }
+  public void setStatus(String status) {
+    this.status = status;
   }
 
   
@@ -237,19 +237,19 @@ public class QualityAudit  implements Serializable {
         Objects.equals(this.name, qualityAudit.name) &&
         Objects.equals(this.user, qualityAudit.user) &&
         Objects.equals(this.jobId, qualityAudit.jobId) &&
+        Objects.equals(this.action, qualityAudit.action) &&
         Objects.equals(this.entity, qualityAudit.entity) &&
         Objects.equals(this.level, qualityAudit.level) &&
-        Objects.equals(this.action, qualityAudit.action) &&
         Objects.equals(this.timestamp, qualityAudit.timestamp) &&
-        Objects.equals(this.status, qualityAudit.status) &&
         Objects.equals(this.changes, qualityAudit.changes) &&
+        Objects.equals(this.status, qualityAudit.status) &&
         Objects.equals(this.entityType, qualityAudit.entityType) &&
         Objects.equals(this.selfUri, qualityAudit.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, user, jobId, entity, level, action, timestamp, status, changes, entityType, selfUri);
+    return Objects.hash(id, name, user, jobId, action, entity, level, timestamp, changes, status, entityType, selfUri);
   }
 
   @Override
@@ -261,12 +261,12 @@ public class QualityAudit  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+    sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    entity: ").append(toIndentedString(entity)).append("\n");
     sb.append("    level: ").append(toIndentedString(level)).append("\n");
-    sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    changes: ").append(toIndentedString(changes)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

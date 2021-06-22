@@ -40,8 +40,6 @@ title: JourneyAggregateQueryPredicate
 | CONTAINSANYCONDITION | &quot;containsAnyCondition&quot; |
 | ENDSWITHCONDITION | &quot;endsWithCondition&quot; |
 | EQUALCONDITION | &quot;equalCondition&quot; |
-| GREATERTHANCONDITION | &quot;greaterThanCondition&quot; |
-| GREATERTHANOREQUALCONDITION | &quot;greaterThanOrEqualCondition&quot; |
 | JOURNEYACTIONID | &quot;journeyActionId&quot; |
 | JOURNEYACTIONMAPID | &quot;journeyActionMapId&quot; |
 | JOURNEYACTIONMAPVERSION | &quot;journeyActionMapVersion&quot; |
@@ -62,8 +60,6 @@ title: JourneyAggregateQueryPredicate
 | JOURNEYSEGMENTSCOPE | &quot;journeySegmentScope&quot; |
 | JOURNEYSESSIONSEGMENTID | &quot;journeySessionSegmentId&quot; |
 | JOURNEYSESSIONTYPE | &quot;journeySessionType&quot; |
-| LESSTHANCONDITION | &quot;lessThanCondition&quot; |
-| LESSTHANOREQUALCONDITION | &quot;lessThanOrEqualCondition&quot; |
 | NOTCONTAINSALLCONDITION | &quot;notContainsAllCondition&quot; |
 | NOTCONTAINSANYCONDITION | &quot;notContainsAnyCondition&quot; |
 | NOTEQUALCONDITION | &quot;notEqualCondition&quot; |

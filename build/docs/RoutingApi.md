@@ -7,8 +7,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteRoutingAssessment**](RoutingApi.html#deleteRoutingAssessment) | Delete single benefit assessment. |
 | [**deleteRoutingEmailDomain**](RoutingApi.html#deleteRoutingEmailDomain) | Delete a domain |
 | [**deleteRoutingEmailDomainRoute**](RoutingApi.html#deleteRoutingEmailDomainRoute) | Delete a route |
+| [**deleteRoutingPredictor**](RoutingApi.html#deleteRoutingPredictor) | Delete single predictor. |
 | [**deleteRoutingQueue**](RoutingApi.html#deleteRoutingQueue) | Delete a queue |
 | [**deleteRoutingQueueMember**](RoutingApi.html#deleteRoutingQueueMember) | Delete a queue member. |
 | [**deleteRoutingQueueUser**](RoutingApi.html#deleteRoutingQueueUser) | DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member. |
@@ -22,6 +24,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteRoutingWrapupcode**](RoutingApi.html#deleteRoutingWrapupcode) | Delete wrap-up code |
 | [**deleteUserRoutinglanguage**](RoutingApi.html#deleteUserRoutinglanguage) | Remove routing language from user |
 | [**deleteUserRoutingskill**](RoutingApi.html#deleteUserRoutingskill) | Remove routing skill from user |
+| [**getRoutingAssessment**](RoutingApi.html#getRoutingAssessment) | Retrieve a single benefit assessment. |
+| [**getRoutingAssessments**](RoutingApi.html#getRoutingAssessments) | Retrieve all benefit assessments. |
+| [**getRoutingAssessmentsJob**](RoutingApi.html#getRoutingAssessmentsJob) | Retrieve a single benefit assessments job. |
+| [**getRoutingAssessmentsJobs**](RoutingApi.html#getRoutingAssessmentsJobs) | Retrieve all benefit assessment jobs. |
 | [**getRoutingEmailDomain**](RoutingApi.html#getRoutingEmailDomain) | Get domain |
 | [**getRoutingEmailDomainRoute**](RoutingApi.html#getRoutingEmailDomainRoute) | Get a route |
 | [**getRoutingEmailDomainRoutes**](RoutingApi.html#getRoutingEmailDomainRoutes) | Get routes |
@@ -30,7 +36,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingLanguages**](RoutingApi.html#getRoutingLanguages) | Get the list of supported languages. |
 | [**getRoutingMessageRecipient**](RoutingApi.html#getRoutingMessageRecipient) | Get a recipient |
 | [**getRoutingMessageRecipients**](RoutingApi.html#getRoutingMessageRecipients) | Get recipients |
+| [**getRoutingPredictor**](RoutingApi.html#getRoutingPredictor) | Retrieve a single predictor. |
+| [**getRoutingPredictors**](RoutingApi.html#getRoutingPredictors) | Retrieve all predictors. |
+| [**getRoutingPredictorsKeyperformanceindicators**](RoutingApi.html#getRoutingPredictorsKeyperformanceindicators) | Get a list of Key Performance Indicators available for the predictors. |
 | [**getRoutingQueue**](RoutingApi.html#getRoutingQueue) | Get details about this queue. |
+| [**getRoutingQueueComparisonperiod**](RoutingApi.html#getRoutingQueueComparisonperiod) | Get a Comparison Period. |
+| [**getRoutingQueueComparisonperiods**](RoutingApi.html#getRoutingQueueComparisonperiods) | Get list of comparison periods |
 | [**getRoutingQueueEstimatedwaittime**](RoutingApi.html#getRoutingQueueEstimatedwaittime) | Get Estimated Wait Time |
 | [**getRoutingQueueMediatypeEstimatedwaittime**](RoutingApi.html#getRoutingQueueMediatypeEstimatedwaittime) | Get Estimated Wait Time |
 | [**getRoutingQueueMembers**](RoutingApi.html#getRoutingQueueMembers) | Get the members of this queue. |
@@ -60,6 +71,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchRoutingConversation**](RoutingApi.html#patchRoutingConversation) | Update attributes of an in-queue conversation |
 | [**patchRoutingEmailDomain**](RoutingApi.html#patchRoutingEmailDomain) | Update domain settings |
 | [**patchRoutingEmailDomainValidate**](RoutingApi.html#patchRoutingEmailDomainValidate) | Validate domain settings |
+| [**patchRoutingPredictor**](RoutingApi.html#patchRoutingPredictor) | Update single predictor. |
 | [**patchRoutingQueueMember**](RoutingApi.html#patchRoutingQueueMember) | Update the ring number OR joined status for a queue member. |
 | [**patchRoutingQueueMembers**](RoutingApi.html#patchRoutingQueueMembers) | Join or unjoin a set of users for a queue |
 | [**patchRoutingQueueUser**](RoutingApi.html#patchRoutingQueueUser) | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue. |
@@ -71,10 +83,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchUserRoutinglanguagesBulk**](RoutingApi.html#patchUserRoutinglanguagesBulk) | Add bulk routing language to user. Max limit 50 languages |
 | [**patchUserRoutingskillsBulk**](RoutingApi.html#patchUserRoutingskillsBulk) | Bulk add routing skills to user |
 | [**postAnalyticsQueuesObservationsQuery**](RoutingApi.html#postAnalyticsQueuesObservationsQuery) | Query for queue observations |
+| [**postRoutingAssessments**](RoutingApi.html#postRoutingAssessments) | Create a benefit assessment. |
+| [**postRoutingAssessmentsJobs**](RoutingApi.html#postRoutingAssessmentsJobs) | Create a benefit assessment job. |
 | [**postRoutingEmailDomainRoutes**](RoutingApi.html#postRoutingEmailDomainRoutes) | Create a route |
 | [**postRoutingEmailDomainTestconnection**](RoutingApi.html#postRoutingEmailDomainTestconnection) | Tests the custom SMTP server integration connection set on this domain |
 | [**postRoutingEmailDomains**](RoutingApi.html#postRoutingEmailDomains) | Create a domain |
 | [**postRoutingLanguages**](RoutingApi.html#postRoutingLanguages) | Create Language |
+| [**postRoutingPredictors**](RoutingApi.html#postRoutingPredictors) | Create a predictor. |
 | [**postRoutingQueueMembers**](RoutingApi.html#postRoutingQueueMembers) | Bulk add or delete up to 100 queue members |
 | [**postRoutingQueueUsers**](RoutingApi.html#postRoutingQueueUsers) | DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members. |
 | [**postRoutingQueueWrapupcodes**](RoutingApi.html#postRoutingQueueWrapupcodes) | Add up to 100 wrap-up codes to a queue |
@@ -97,6 +112,68 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putUserRoutingskill**](RoutingApi.html#putUserRoutingskill) | Update routing skill proficiency or state. |
 | [**putUserRoutingskillsBulk**](RoutingApi.html#putUserRoutingskillsBulk) | Replace all routing skills assigned to a user |
 {: class="table-striped"}
+
+<a name="deleteRoutingAssessment"></a>
+
+# **deleteRoutingAssessment**
+
+
+
+> Void deleteRoutingAssessment(assessmentId)
+
+Delete single benefit assessment.
+
+
+
+Wraps DELETE /api/v2/routing/assessments/{assessmentId}  
+
+Requires ANY permissions: 
+
+* routing:assessment:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String assessmentId = "assessmentId_example"; // String | Benefit Assessment ID
+try {
+    apiInstance.deleteRoutingAssessment(assessmentId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#deleteRoutingAssessment");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **assessmentId** | **String**| Benefit Assessment ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="deleteRoutingEmailDomain"></a>
 
@@ -217,6 +294,69 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **domainName** | **String**| email domain | 
 | **routeId** | **String**| route ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteRoutingPredictor"></a>
+
+# **deleteRoutingPredictor**
+
+
+
+> Void deleteRoutingPredictor(predictorId)
+
+Delete single predictor.
+
+
+
+Wraps DELETE /api/v2/routing/predictors/{predictorId}  
+
+Requires ALL permissions: 
+
+* routing:predictor:delete
+* routing:queue:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String predictorId = "predictorId_example"; // String | Predictor ID
+try {
+    apiInstance.deleteRoutingPredictor(predictorId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#deleteRoutingPredictor");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **predictorId** | **String**| Predictor ID | 
 {: class="table-striped"}
 
 
@@ -1037,6 +1177,267 @@ try {
 
 null (empty response body)
 
+<a name="getRoutingAssessment"></a>
+
+# **getRoutingAssessment**
+
+
+
+> [BenefitAssessment](BenefitAssessment.html) getRoutingAssessment(assessmentId)
+
+Retrieve a single benefit assessment.
+
+
+
+Wraps GET /api/v2/routing/assessments/{assessmentId}  
+
+Requires ANY permissions: 
+
+* routing:assessment:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String assessmentId = "assessmentId_example"; // String | Benefit Assessment ID
+try {
+    BenefitAssessment result = apiInstance.getRoutingAssessment(assessmentId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingAssessment");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **assessmentId** | **String**| Benefit Assessment ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BenefitAssessment**](BenefitAssessment.html)
+
+<a name="getRoutingAssessments"></a>
+
+# **getRoutingAssessments**
+
+
+
+> [AssessmentListing](AssessmentListing.html) getRoutingAssessments(before, after, limit, pageSize, queueId)
+
+Retrieve all benefit assessments.
+
+
+
+Wraps GET /api/v2/routing/assessments  
+
+Requires ANY permissions: 
+
+* routing:queue:view
+* routing:assessment:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+List<String> queueId = Arrays.asList("queueId_example"); // List<String> | Queue ID(s) to filter assessments by.
+try {
+    AssessmentListing result = apiInstance.getRoutingAssessments(before, after, limit, pageSize, queueId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingAssessments");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **queueId** | [**List&lt;String&gt;**](String.html)| Queue ID(s) to filter assessments by. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AssessmentListing**](AssessmentListing.html)
+
+<a name="getRoutingAssessmentsJob"></a>
+
+# **getRoutingAssessmentsJob**
+
+
+
+> [BenefitAssessmentJob](BenefitAssessmentJob.html) getRoutingAssessmentsJob(jobId)
+
+Retrieve a single benefit assessments job.
+
+
+
+Wraps GET /api/v2/routing/assessments/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* routing:assessment:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String jobId = "jobId_example"; // String | Benefit Assessment Job ID
+try {
+    BenefitAssessmentJob result = apiInstance.getRoutingAssessmentsJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingAssessmentsJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| Benefit Assessment Job ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BenefitAssessmentJob**](BenefitAssessmentJob.html)
+
+<a name="getRoutingAssessmentsJobs"></a>
+
+# **getRoutingAssessmentsJobs**
+
+
+
+> [AssessmentJobListing](AssessmentJobListing.html) getRoutingAssessmentsJobs(divisionId)
+
+Retrieve all benefit assessment jobs.
+
+
+
+Wraps GET /api/v2/routing/assessments/jobs  
+
+Requires ANY permissions: 
+
+* routing:queue:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s) to filter assessment jobs by.
+try {
+    AssessmentJobListing result = apiInstance.getRoutingAssessmentsJobs(divisionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingAssessmentsJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) to filter assessment jobs by. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AssessmentJobListing**](AssessmentJobListing.html)
+
 <a name="getRoutingEmailDomain"></a>
 
 # **getRoutingEmailDomain**
@@ -1552,6 +1953,200 @@ try {
 
 [**RecipientListing**](RecipientListing.html)
 
+<a name="getRoutingPredictor"></a>
+
+# **getRoutingPredictor**
+
+
+
+> [Predictor](Predictor.html) getRoutingPredictor(predictorId)
+
+Retrieve a single predictor.
+
+
+
+Wraps GET /api/v2/routing/predictors/{predictorId}  
+
+Requires ANY permissions: 
+
+* routing:predictor:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String predictorId = "predictorId_example"; // String | Predictor ID
+try {
+    Predictor result = apiInstance.getRoutingPredictor(predictorId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingPredictor");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **predictorId** | **String**| Predictor ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Predictor**](Predictor.html)
+
+<a name="getRoutingPredictors"></a>
+
+# **getRoutingPredictors**
+
+
+
+> [PredictorListing](PredictorListing.html) getRoutingPredictors(before, after, limit, pageSize, queueId)
+
+Retrieve all predictors.
+
+
+
+Wraps GET /api/v2/routing/predictors  
+
+Requires ANY permissions: 
+
+* routing:predictor:view
+* routing:queue:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+List<String> queueId = Arrays.asList("queueId_example"); // List<String> | Comma-separated list of queue Ids to filter by.
+try {
+    PredictorListing result = apiInstance.getRoutingPredictors(before, after, limit, pageSize, queueId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingPredictors");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **queueId** | [**List&lt;String&gt;**](String.html)| Comma-separated list of queue Ids to filter by. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PredictorListing**](PredictorListing.html)
+
+<a name="getRoutingPredictorsKeyperformanceindicators"></a>
+
+# **getRoutingPredictorsKeyperformanceindicators**
+
+
+
+> [List&lt;KeyPerformanceIndicator&gt;](KeyPerformanceIndicator.html) getRoutingPredictorsKeyperformanceindicators()
+
+Get a list of Key Performance Indicators available for the predictors.
+
+
+
+Wraps GET /api/v2/routing/predictors/keyperformanceindicators  
+
+Requires ANY permissions: 
+
+* routing:keyPerformanceIndicator:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+try {
+    List<KeyPerformanceIndicator> result = apiInstance.getRoutingPredictorsKeyperformanceindicators();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingPredictorsKeyperformanceindicators");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**List&lt;KeyPerformanceIndicator&gt;**](KeyPerformanceIndicator.html)
+
 <a name="getRoutingQueue"></a>
 
 # **getRoutingQueue**
@@ -1614,6 +2209,136 @@ try {
 ### Return type
 
 [**Queue**](Queue.html)
+
+<a name="getRoutingQueueComparisonperiod"></a>
+
+# **getRoutingQueueComparisonperiod**
+
+
+
+> [ComparisonPeriod](ComparisonPeriod.html) getRoutingQueueComparisonperiod(queueId, comparisonPeriodId)
+
+Get a Comparison Period.
+
+
+
+Wraps GET /api/v2/routing/queues/{queueId}/comparisonperiods/{comparisonPeriodId}  
+
+Requires ALL permissions: 
+
+* routing:comparisonPeriod:view
+* routing:queue:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String queueId = "queueId_example"; // String | Queue id
+String comparisonPeriodId = "comparisonPeriodId_example"; // String | ComparisonPeriod id
+try {
+    ComparisonPeriod result = apiInstance.getRoutingQueueComparisonperiod(queueId, comparisonPeriodId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingQueueComparisonperiod");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **queueId** | **String**| Queue id | 
+| **comparisonPeriodId** | **String**| ComparisonPeriod id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ComparisonPeriod**](ComparisonPeriod.html)
+
+<a name="getRoutingQueueComparisonperiods"></a>
+
+# **getRoutingQueueComparisonperiods**
+
+
+
+> [ComparisonPeriodListing](ComparisonPeriodListing.html) getRoutingQueueComparisonperiods(queueId)
+
+Get list of comparison periods
+
+
+
+Wraps GET /api/v2/routing/queues/{queueId}/comparisonperiods  
+
+Requires ALL permissions: 
+
+* routing:comparisonPeriod:view
+* routing:queue:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String queueId = "queueId_example"; // String | Queue id
+try {
+    ComparisonPeriodListing result = apiInstance.getRoutingQueueComparisonperiods(queueId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#getRoutingQueueComparisonperiods");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **queueId** | **String**| Queue id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ComparisonPeriodListing**](ComparisonPeriodListing.html)
 
 <a name="getRoutingQueueEstimatedwaittime"></a>
 
@@ -3575,6 +4300,72 @@ try {
 
 [**InboundDomain**](InboundDomain.html)
 
+<a name="patchRoutingPredictor"></a>
+
+# **patchRoutingPredictor**
+
+
+
+> [Predictor](Predictor.html) patchRoutingPredictor(predictorId, body)
+
+Update single predictor.
+
+
+
+Wraps PATCH /api/v2/routing/predictors/{predictorId}  
+
+Requires ALL permissions: 
+
+* routing:predictor:edit
+* routing:queue:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String predictorId = "predictorId_example"; // String | Predictor ID
+PatchPredictorRequest body = new PatchPredictorRequest(); // PatchPredictorRequest | 
+try {
+    Predictor result = apiInstance.patchRoutingPredictor(predictorId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#patchRoutingPredictor");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **predictorId** | **String**| Predictor ID | 
+| **body** | [**PatchPredictorRequest**](PatchPredictorRequest.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Predictor**](Predictor.html)
+
 <a name="patchRoutingQueueMember"></a>
 
 # **patchRoutingQueueMember**
@@ -4301,6 +5092,133 @@ try {
 
 [**QueueObservationQueryResponse**](QueueObservationQueryResponse.html)
 
+<a name="postRoutingAssessments"></a>
+
+# **postRoutingAssessments**
+
+
+
+> [BenefitAssessment](BenefitAssessment.html) postRoutingAssessments(body)
+
+Create a benefit assessment.
+
+
+
+Wraps POST /api/v2/routing/assessments  
+
+Requires ALL permissions: 
+
+* routing:assessment:add
+* routing:queue:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+CreateBenefitAssessmentRequest body = new CreateBenefitAssessmentRequest(); // CreateBenefitAssessmentRequest | 
+try {
+    BenefitAssessment result = apiInstance.postRoutingAssessments(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#postRoutingAssessments");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CreateBenefitAssessmentRequest**](CreateBenefitAssessmentRequest.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BenefitAssessment**](BenefitAssessment.html)
+
+<a name="postRoutingAssessmentsJobs"></a>
+
+# **postRoutingAssessmentsJobs**
+
+
+
+> [BenefitAssessmentJob](BenefitAssessmentJob.html) postRoutingAssessmentsJobs(body)
+
+Create a benefit assessment job.
+
+
+
+Wraps POST /api/v2/routing/assessments/jobs  
+
+Requires ANY permissions: 
+
+* routing:assessment:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+CreateBenefitAssessmentJobRequest body = new CreateBenefitAssessmentJobRequest(); // CreateBenefitAssessmentJobRequest | 
+try {
+    BenefitAssessmentJob result = apiInstance.postRoutingAssessmentsJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#postRoutingAssessmentsJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CreateBenefitAssessmentJobRequest**](CreateBenefitAssessmentJobRequest.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BenefitAssessmentJob**](BenefitAssessmentJob.html)
+
 <a name="postRoutingEmailDomainRoutes"></a>
 
 # **postRoutingEmailDomainRoutes**
@@ -4556,6 +5474,70 @@ try {
 ### Return type
 
 [**Language**](Language.html)
+
+<a name="postRoutingPredictors"></a>
+
+# **postRoutingPredictors**
+
+
+
+> [Predictor](Predictor.html) postRoutingPredictors(body)
+
+Create a predictor.
+
+
+
+Wraps POST /api/v2/routing/predictors  
+
+Requires ALL permissions: 
+
+* routing:predictor:add
+* routing:queue:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+CreatePredictorRequest body = new CreatePredictorRequest(); // CreatePredictorRequest | 
+try {
+    Predictor result = apiInstance.postRoutingPredictors(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#postRoutingPredictors");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**CreatePredictorRequest**](CreatePredictorRequest.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Predictor**](Predictor.html)
 
 <a name="postRoutingQueueMembers"></a>
 

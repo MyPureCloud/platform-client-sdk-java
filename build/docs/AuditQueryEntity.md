@@ -21,6 +21,8 @@ title: AuditQueryEntity
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ACCESSTOKEN | &quot;AccessToken&quot; |
+| ANNOTATION | &quot;Annotation&quot; |
+| APPOINTMENT | &quot;Appointment&quot; |
 | ATTEMPTLIMITS | &quot;AttemptLimits&quot; |
 | AUTHORGANIZATION | &quot;AuthOrganization&quot; |
 | AUTHUSER | &quot;AuthUser&quot; |
@@ -54,12 +56,14 @@ title: AuditQueryEntity
 | EXPORTS | &quot;Exports&quot; |
 | EXTENSION | &quot;Extension&quot; |
 | EXTENSIONPOOL | &quot;ExtensionPool&quot; |
+| EXTERNALMETRICDATA | &quot;ExternalMetricData&quot; |
 | EXTERNALMETRICDEFINITION | &quot;ExternalMetricDefinition&quot; |
 | FEEDBACK | &quot;Feedback&quot; |
 | FLOW | &quot;Flow&quot; |
 | FLOWMILESTONE | &quot;FlowMilestone&quot; |
 | FLOWOUTCOME | &quot;FlowOutcome&quot; |
 | FORECAST | &quot;Forecast&quot; |
+| HISTORICALDATA | &quot;HistoricalData&quot; |
 | INSIGHTSETTINGS | &quot;InsightSettings&quot; |
 | INTEGRATION | &quot;Integration&quot; |
 | IVR | &quot;IVR&quot; |
@@ -67,6 +71,7 @@ title: AuditQueryEntity
 | LINEBASE | &quot;LineBase&quot; |
 | MAXORGROUTINGUTILIZATIONCAPACITY | &quot;MaxOrgRoutingUtilizationCapacity&quot; |
 | MESSAGINGCAMPAIGN | &quot;MessagingCampaign&quot; |
+| METRIC | &quot;Metric&quot; |
 | NUMBERPLAN | &quot;NumberPlan&quot; |
 | OAUTHCLIENT | &quot;OAuthClient&quot; |
 | OAUTHCLIENTAUTHORIZATION | &quot;OAuthClientAuthorization&quot; |
@@ -104,6 +109,7 @@ title: AuditQueryEntity
 | SESSIONTYPE | &quot;SessionType&quot; |
 | SITE | &quot;Site&quot; |
 | SPEECHTEXTANALYTICSSETTINGS | &quot;SpeechTextAnalyticsSettings&quot; |
+| STATUS | &quot;Status&quot; |
 | SURVEY | &quot;Survey&quot; |
 | SURVEYFORM | &quot;SurveyForm&quot; |
 | TEAM | &quot;Team&quot; |
@@ -125,6 +131,7 @@ title: AuditQueryEntity
 | CONVERSATIONACCOUNT | &quot;ConversationAccount&quot; |
 | CONVERSATIONDEFAULTSUPPORTEDCONTENT | &quot;ConversationDefaultSupportedContent&quot; |
 | CONVERSATIONTHREADINGWINDOW | &quot;ConversationThreadingWindow&quot; |
+| SUPPORTEDCONTENT | &quot;SupportedContent&quot; |
 {: class="table table-striped"}
 
 
@@ -183,6 +190,9 @@ title: AuditQueryEntity
 | CHANGEIMPLEMENTED | &quot;ChangeImplemented&quot; |
 | IMPLEMENTINGROLLBACK | &quot;ImplementingRollback&quot; |
 | ROLLBACKIMPLEMENTED | &quot;RollbackImplemented&quot; |
+| WRITE | &quot;Write&quot; |
+| PURGE | &quot;Purge&quot; |
+| PROCESSED | &quot;Processed&quot; |
 {: class="table table-striped"}
 
 

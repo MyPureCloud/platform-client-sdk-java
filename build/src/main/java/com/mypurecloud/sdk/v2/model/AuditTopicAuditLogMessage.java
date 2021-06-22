@@ -157,7 +157,9 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     REVOKE("Revoke"),
     EXPORT("Export"),
     APPEND("Append"),
-    RECYCLE("Recycle");
+    RECYCLE("Recycle"),
+    PURGE("Purge"),
+    PROCESSED("Processed");
 
     private String value;
 
@@ -236,6 +238,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     FLOWMILESTONE("FlowMilestone"),
     FLOWOUTCOME("FlowOutcome"),
     FORECAST("Forecast"),
+    HISTORICALDATA("HistoricalData"),
     IVR("IVR"),
     LINE("Line"),
     LINEBASE("LineBase"),

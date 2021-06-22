@@ -266,7 +266,8 @@ public class GetUsersDevelopmentActivitiesRequest {
 		INFORMATIONAL("Informational"), 
 		COACHING("Coaching"), 
 		ASSESSEDCONTENT("AssessedContent"), 
-		QUESTIONNAIRE("Questionnaire");
+		QUESTIONNAIRE("Questionnaire"), 
+		ASSESSMENT("Assessment");
 
 		private String value;
 

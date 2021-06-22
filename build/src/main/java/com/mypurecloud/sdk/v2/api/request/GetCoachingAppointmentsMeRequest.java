@@ -102,7 +102,8 @@ public class GetCoachingAppointmentsMeRequest {
 	public enum statusesValues { 
 		SCHEDULED("Scheduled"), 
 		INPROGRESS("InProgress"), 
-		COMPLETED("Completed");
+		COMPLETED("Completed"), 
+		INVALIDSCHEDULE("InvalidSchedule");
 
 		private String value;
 

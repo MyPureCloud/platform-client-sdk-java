@@ -14,6 +14,10 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.BenefitAssessment;
+import com.mypurecloud.sdk.v2.model.AssessmentListing;
+import com.mypurecloud.sdk.v2.model.BenefitAssessmentJob;
+import com.mypurecloud.sdk.v2.model.AssessmentJobListing;
 import com.mypurecloud.sdk.v2.model.InboundDomain;
 import com.mypurecloud.sdk.v2.model.InboundRoute;
 import com.mypurecloud.sdk.v2.model.InboundRouteEntityListing;
@@ -22,7 +26,12 @@ import com.mypurecloud.sdk.v2.model.EmailSetup;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.Recipient;
 import com.mypurecloud.sdk.v2.model.RecipientListing;
+import com.mypurecloud.sdk.v2.model.Predictor;
+import com.mypurecloud.sdk.v2.model.PredictorListing;
+import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
 import com.mypurecloud.sdk.v2.model.Queue;
+import com.mypurecloud.sdk.v2.model.ComparisonPeriod;
+import com.mypurecloud.sdk.v2.model.ComparisonPeriodListing;
 import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
 import com.mypurecloud.sdk.v2.model.QueueMemberEntityListing;
 import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
@@ -45,6 +54,7 @@ import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
 import com.mypurecloud.sdk.v2.model.RoutingConversationAttributes;
 import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
+import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
 import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.UserQueue;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
@@ -52,8 +62,11 @@ import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
+import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentRequest;
+import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentJobRequest;
 import com.mypurecloud.sdk.v2.model.TestMessage;
 import com.mypurecloud.sdk.v2.model.Language;
+import com.mypurecloud.sdk.v2.model.CreatePredictorRequest;
 import com.mypurecloud.sdk.v2.model.WritableEntity;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
@@ -63,8 +76,10 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 import com.mypurecloud.sdk.v2.model.QueueRequest;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingAssessmentRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailDomainRouteRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueMemberRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueUserRequest;
@@ -78,6 +93,10 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutinglanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutingskillRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingAssessmentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingAssessmentsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingAssessmentsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingAssessmentsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRouteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRoutesRequest;
@@ -86,7 +105,12 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailSetupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingLanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingMessageRecipientRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingMessageRecipientsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorsKeyperformanceindicatorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueComparisonperiodRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueComparisonperiodsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueEstimatedwaittimeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueMediatypeEstimatedwaittimeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueMembersRequest;
@@ -116,6 +140,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainValidateRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRoutingPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMemberRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUserRequest;
@@ -127,10 +152,13 @@ import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguagesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutingskillsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsQueuesObservationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingAssessmentsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingAssessmentsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainRoutesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainTestconnectionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingLanguagesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingPredictorsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueWrapupcodesRequest;
@@ -170,6 +198,82 @@ public class RoutingApiAsync {
 
   public RoutingApiAsync(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Delete single benefit assessment.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteRoutingAssessmentAsync(DeleteRoutingAssessmentRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete single benefit assessment.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteRoutingAssessmentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   
@@ -291,6 +395,82 @@ public class RoutingApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteRoutingEmailDomainRouteAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Delete single predictor.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteRoutingPredictorAsync(DeleteRoutingPredictorRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete single predictor.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteRoutingPredictorAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -1314,6 +1494,310 @@ public class RoutingApiAsync {
 
   
   /**
+   * Retrieve a single benefit assessment.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BenefitAssessment> getRoutingAssessmentAsync(GetRoutingAssessmentRequest request, final AsyncApiCallback<BenefitAssessment> callback) {
+    try {
+      final SettableFuture<BenefitAssessment> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BenefitAssessment>() {}, new AsyncApiCallback<ApiResponse<BenefitAssessment>>() {
+        @Override
+        public void onCompleted(ApiResponse<BenefitAssessment> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve a single benefit assessment.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BenefitAssessment>> getRoutingAssessmentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BenefitAssessment>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BenefitAssessment>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BenefitAssessment>() {}, new AsyncApiCallback<ApiResponse<BenefitAssessment>>() {
+        @Override
+        public void onCompleted(ApiResponse<BenefitAssessment> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BenefitAssessment> response = (ApiResponse<BenefitAssessment>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BenefitAssessment> response = (ApiResponse<BenefitAssessment>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Retrieve all benefit assessments.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AssessmentListing> getRoutingAssessmentsAsync(GetRoutingAssessmentsRequest request, final AsyncApiCallback<AssessmentListing> callback) {
+    try {
+      final SettableFuture<AssessmentListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AssessmentListing>() {}, new AsyncApiCallback<ApiResponse<AssessmentListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AssessmentListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve all benefit assessments.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AssessmentListing>> getRoutingAssessmentsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AssessmentListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AssessmentListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AssessmentListing>() {}, new AsyncApiCallback<ApiResponse<AssessmentListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AssessmentListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AssessmentListing> response = (ApiResponse<AssessmentListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AssessmentListing> response = (ApiResponse<AssessmentListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Retrieve a single benefit assessments job.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BenefitAssessmentJob> getRoutingAssessmentsJobAsync(GetRoutingAssessmentsJobRequest request, final AsyncApiCallback<BenefitAssessmentJob> callback) {
+    try {
+      final SettableFuture<BenefitAssessmentJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BenefitAssessmentJob>() {}, new AsyncApiCallback<ApiResponse<BenefitAssessmentJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<BenefitAssessmentJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve a single benefit assessments job.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BenefitAssessmentJob>> getRoutingAssessmentsJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BenefitAssessmentJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BenefitAssessmentJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BenefitAssessmentJob>() {}, new AsyncApiCallback<ApiResponse<BenefitAssessmentJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<BenefitAssessmentJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BenefitAssessmentJob> response = (ApiResponse<BenefitAssessmentJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BenefitAssessmentJob> response = (ApiResponse<BenefitAssessmentJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Retrieve all benefit assessment jobs.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AssessmentJobListing> getRoutingAssessmentsJobsAsync(GetRoutingAssessmentsJobsRequest request, final AsyncApiCallback<AssessmentJobListing> callback) {
+    try {
+      final SettableFuture<AssessmentJobListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AssessmentJobListing>() {}, new AsyncApiCallback<ApiResponse<AssessmentJobListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AssessmentJobListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve all benefit assessment jobs.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AssessmentJobListing>> getRoutingAssessmentsJobsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AssessmentJobListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AssessmentJobListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AssessmentJobListing>() {}, new AsyncApiCallback<ApiResponse<AssessmentJobListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AssessmentJobListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AssessmentJobListing> response = (ApiResponse<AssessmentJobListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AssessmentJobListing> response = (ApiResponse<AssessmentJobListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get domain
    * 
    * @param request the request object
@@ -1922,6 +2406,234 @@ public class RoutingApiAsync {
 
   
   /**
+   * Retrieve a single predictor.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Predictor> getRoutingPredictorAsync(GetRoutingPredictorRequest request, final AsyncApiCallback<Predictor> callback) {
+    try {
+      final SettableFuture<Predictor> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Predictor>() {}, new AsyncApiCallback<ApiResponse<Predictor>>() {
+        @Override
+        public void onCompleted(ApiResponse<Predictor> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve a single predictor.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Predictor>> getRoutingPredictorAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Predictor>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Predictor>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Predictor>() {}, new AsyncApiCallback<ApiResponse<Predictor>>() {
+        @Override
+        public void onCompleted(ApiResponse<Predictor> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Predictor> response = (ApiResponse<Predictor>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Predictor> response = (ApiResponse<Predictor>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Retrieve all predictors.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PredictorListing> getRoutingPredictorsAsync(GetRoutingPredictorsRequest request, final AsyncApiCallback<PredictorListing> callback) {
+    try {
+      final SettableFuture<PredictorListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PredictorListing>() {}, new AsyncApiCallback<ApiResponse<PredictorListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PredictorListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve all predictors.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PredictorListing>> getRoutingPredictorsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PredictorListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PredictorListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PredictorListing>() {}, new AsyncApiCallback<ApiResponse<PredictorListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PredictorListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PredictorListing> response = (ApiResponse<PredictorListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PredictorListing> response = (ApiResponse<PredictorListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a list of Key Performance Indicators available for the predictors.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<List<KeyPerformanceIndicator>> getRoutingPredictorsKeyperformanceindicatorsAsync(GetRoutingPredictorsKeyperformanceindicatorsRequest request, final AsyncApiCallback<List<KeyPerformanceIndicator>> callback) {
+    try {
+      final SettableFuture<List<KeyPerformanceIndicator>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<KeyPerformanceIndicator>>() {}, new AsyncApiCallback<ApiResponse<List<KeyPerformanceIndicator>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<KeyPerformanceIndicator>> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of Key Performance Indicators available for the predictors.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<List<KeyPerformanceIndicator>>> getRoutingPredictorsKeyperformanceindicatorsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<KeyPerformanceIndicator>>> callback) {
+    try {
+      final SettableFuture<ApiResponse<List<KeyPerformanceIndicator>>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<List<KeyPerformanceIndicator>>() {}, new AsyncApiCallback<ApiResponse<List<KeyPerformanceIndicator>>>() {
+        @Override
+        public void onCompleted(ApiResponse<List<KeyPerformanceIndicator>> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<KeyPerformanceIndicator>> response = (ApiResponse<List<KeyPerformanceIndicator>>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<List<KeyPerformanceIndicator>> response = (ApiResponse<List<KeyPerformanceIndicator>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Get details about this queue.
    * 
    * @param request the request object
@@ -1985,6 +2697,158 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Queue> response = (ApiResponse<Queue>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get a Comparison Period.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ComparisonPeriod> getRoutingQueueComparisonperiodAsync(GetRoutingQueueComparisonperiodRequest request, final AsyncApiCallback<ComparisonPeriod> callback) {
+    try {
+      final SettableFuture<ComparisonPeriod> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ComparisonPeriod>() {}, new AsyncApiCallback<ApiResponse<ComparisonPeriod>>() {
+        @Override
+        public void onCompleted(ApiResponse<ComparisonPeriod> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a Comparison Period.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ComparisonPeriod>> getRoutingQueueComparisonperiodAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ComparisonPeriod>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ComparisonPeriod>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ComparisonPeriod>() {}, new AsyncApiCallback<ApiResponse<ComparisonPeriod>>() {
+        @Override
+        public void onCompleted(ApiResponse<ComparisonPeriod> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ComparisonPeriod> response = (ApiResponse<ComparisonPeriod>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ComparisonPeriod> response = (ApiResponse<ComparisonPeriod>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get list of comparison periods
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ComparisonPeriodListing> getRoutingQueueComparisonperiodsAsync(GetRoutingQueueComparisonperiodsRequest request, final AsyncApiCallback<ComparisonPeriodListing> callback) {
+    try {
+      final SettableFuture<ComparisonPeriodListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ComparisonPeriodListing>() {}, new AsyncApiCallback<ApiResponse<ComparisonPeriodListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ComparisonPeriodListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get list of comparison periods
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ComparisonPeriodListing>> getRoutingQueueComparisonperiodsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ComparisonPeriodListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ComparisonPeriodListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ComparisonPeriodListing>() {}, new AsyncApiCallback<ApiResponse<ComparisonPeriodListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ComparisonPeriodListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ComparisonPeriodListing> response = (ApiResponse<ComparisonPeriodListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ComparisonPeriodListing> response = (ApiResponse<ComparisonPeriodListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -4202,6 +5066,82 @@ public class RoutingApiAsync {
 
   
   /**
+   * Update single predictor.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Predictor> patchRoutingPredictorAsync(PatchRoutingPredictorRequest request, final AsyncApiCallback<Predictor> callback) {
+    try {
+      final SettableFuture<Predictor> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Predictor>() {}, new AsyncApiCallback<ApiResponse<Predictor>>() {
+        @Override
+        public void onCompleted(ApiResponse<Predictor> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update single predictor.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Predictor>> patchRoutingPredictorAsync(ApiRequest<PatchPredictorRequest> request, final AsyncApiCallback<ApiResponse<Predictor>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Predictor>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Predictor>() {}, new AsyncApiCallback<ApiResponse<Predictor>>() {
+        @Override
+        public void onCompleted(ApiResponse<Predictor> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Predictor> response = (ApiResponse<Predictor>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Predictor> response = (ApiResponse<Predictor>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Update the ring number OR joined status for a queue member.
    * 
    * @param request the request object
@@ -5038,6 +5978,158 @@ public class RoutingApiAsync {
 
   
   /**
+   * Create a benefit assessment.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BenefitAssessment> postRoutingAssessmentsAsync(PostRoutingAssessmentsRequest request, final AsyncApiCallback<BenefitAssessment> callback) {
+    try {
+      final SettableFuture<BenefitAssessment> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BenefitAssessment>() {}, new AsyncApiCallback<ApiResponse<BenefitAssessment>>() {
+        @Override
+        public void onCompleted(ApiResponse<BenefitAssessment> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a benefit assessment.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BenefitAssessment>> postRoutingAssessmentsAsync(ApiRequest<CreateBenefitAssessmentRequest> request, final AsyncApiCallback<ApiResponse<BenefitAssessment>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BenefitAssessment>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BenefitAssessment>() {}, new AsyncApiCallback<ApiResponse<BenefitAssessment>>() {
+        @Override
+        public void onCompleted(ApiResponse<BenefitAssessment> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BenefitAssessment> response = (ApiResponse<BenefitAssessment>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BenefitAssessment> response = (ApiResponse<BenefitAssessment>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Create a benefit assessment job.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BenefitAssessmentJob> postRoutingAssessmentsJobsAsync(PostRoutingAssessmentsJobsRequest request, final AsyncApiCallback<BenefitAssessmentJob> callback) {
+    try {
+      final SettableFuture<BenefitAssessmentJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BenefitAssessmentJob>() {}, new AsyncApiCallback<ApiResponse<BenefitAssessmentJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<BenefitAssessmentJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a benefit assessment job.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BenefitAssessmentJob>> postRoutingAssessmentsJobsAsync(ApiRequest<CreateBenefitAssessmentJobRequest> request, final AsyncApiCallback<ApiResponse<BenefitAssessmentJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BenefitAssessmentJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BenefitAssessmentJob>() {}, new AsyncApiCallback<ApiResponse<BenefitAssessmentJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<BenefitAssessmentJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BenefitAssessmentJob> response = (ApiResponse<BenefitAssessmentJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BenefitAssessmentJob> response = (ApiResponse<BenefitAssessmentJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
    * Create a route
    * 
    * @param request the request object
@@ -5329,6 +6421,82 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Language> response = (ApiResponse<Language>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Create a predictor.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Predictor> postRoutingPredictorsAsync(PostRoutingPredictorsRequest request, final AsyncApiCallback<Predictor> callback) {
+    try {
+      final SettableFuture<Predictor> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Predictor>() {}, new AsyncApiCallback<ApiResponse<Predictor>>() {
+        @Override
+        public void onCompleted(ApiResponse<Predictor> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a predictor.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Predictor>> postRoutingPredictorsAsync(ApiRequest<CreatePredictorRequest> request, final AsyncApiCallback<ApiResponse<Predictor>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Predictor>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Predictor>() {}, new AsyncApiCallback<ApiResponse<Predictor>>() {
+        @Override
+        public void onCompleted(ApiResponse<Predictor> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Predictor> response = (ApiResponse<Predictor>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Predictor> response = (ApiResponse<Predictor>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -131,7 +131,7 @@ public class PerformanceProfile  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The reporting interval periods for this performance profile")
+  @ApiModelProperty(example = "null", value = "The reporting interval periods for this performance profile")
   @JsonProperty("reportingIntervals")
   public List<ReportingInterval> getReportingIntervals() {
     return reportingIntervals;
@@ -149,7 +149,7 @@ public class PerformanceProfile  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The flag for active profiles")
+  @ApiModelProperty(example = "null", value = "The flag for active profiles")
   @JsonProperty("active")
   public Boolean getActive() {
     return active;
@@ -167,7 +167,7 @@ public class PerformanceProfile  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The maximum rank size for the leaderboard. This counts the number of ranks can be retrieved in a leaderboard queries")
+  @ApiModelProperty(example = "null", value = "The maximum rank size for the leaderboard. This counts the number of ranks can be retrieved in a leaderboard queries")
   @JsonProperty("maxLeaderboardRankSize")
   public Integer getMaxLeaderboardRankSize() {
     return maxLeaderboardRankSize;

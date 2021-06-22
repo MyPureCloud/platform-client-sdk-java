@@ -22,9 +22,11 @@ title: AuditQueryService
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ANALYTICSREPORTING | &quot;AnalyticsReporting&quot; |
 | ARCHITECT | &quot;Architect&quot; |
+| COACHING | &quot;Coaching&quot; |
 | CONTACTCENTER | &quot;ContactCenter&quot; |
 | CONTENTMANAGEMENT | &quot;ContentManagement&quot; |
 | DATATABLES | &quot;Datatables&quot; |
+| GAMIFICATION | &quot;Gamification&quot; |
 | GROUPS | &quot;Groups&quot; |
 | INTEGRATIONS | &quot;Integrations&quot; |
 | LANGUAGEUNDERSTANDING | &quot;LanguageUnderstanding&quot; |

@@ -17,6 +17,8 @@ title: CreateCallbackCommand
 | **countryCode** | <!----><!---->**String**<!----> | The country code to be associated with the callback numbers. |  [optional] |
 | **validateCallbackNumbers** | <!----><!---->**Boolean**<!----> | Whether or not to validate the callback numbers for phone number format. |  [optional] |
 | **data** | <!----><!---->**Map&lt;String, String&gt;**<!----> | A map of key-value pairs containing additional data that can be associated to the callback. These values will appear in the attributes property on the conversation participant. Example: { \&quot;notes\&quot;: \&quot;ready to close the deal!\&quot;, \&quot;customerPreferredName\&quot;: \&quot;Doc\&quot; } |  [optional] |
+| **callerId** | <!----><!---->**String**<!----> | The phone number displayed to recipients when a phone call is placed as part of the callback. Must conform to the E.164 format. May be overridden by other settings in the system such as external trunk settings. Telco support for \&quot;callerId\&quot; varies. |  [optional] |
+| **callerIdName** | <!----><!---->**String**<!----> | The name displayed to recipients when a phone call is placed as part of the callback. May be overridden by other settings in the system such as external trunk settings. Telco support for \&quot;callerIdName\&quot; varies. |  [optional] |
 {: class="table table-striped"}
 
 

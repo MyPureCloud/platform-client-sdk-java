@@ -1373,7 +1373,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();
 String trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
-Trustee body = new Trustee(); // Trustee | Client
+TrustUpdate body = new TrustUpdate(); // TrustUpdate | Client
 try {
     Trustee result = apiInstance.putOrgauthorizationTrustee(trusteeOrgId, body);
     System.out.println(result);
@@ -1389,7 +1389,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **trusteeOrgId** | **String**| Trustee Organization Id | 
-| **body** | [**Trustee**](Trustee.html)| Client | 
+| **body** | [**TrustUpdate**](TrustUpdate.html)| Client | 
 {: class="table-striped"}
 
 

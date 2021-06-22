@@ -292,7 +292,7 @@ try {
 | **sortOrder** | **String**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc 
 | **sortBy** | **String**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional]<br />**Values**: RecommendedCompletionDate, DateModified 
 | **userId** | [**List&lt;String&gt;**](String.html)| Specifies the list of user IDs to be queried, up to 100 user IDs. | [optional] 
-| **types** | [**List&lt;String&gt;**](String.html)| Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned | [optional]<br />**Values**: Informational, AssessedContent, Questionnaire 
+| **types** | [**List&lt;String&gt;**](String.html)| Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned | [optional]<br />**Values**: Informational, AssessedContent, Questionnaire, Assessment 
 | **states** | [**List&lt;String&gt;**](String.html)| Specifies the assignment states to filter by | [optional]<br />**Values**: Assigned, InProgress, Completed 
 | **expand** | [**List&lt;String&gt;**](String.html)| Specifies the expand option for returning additional information | [optional]<br />**Values**: ModuleSummary 
 {: class="table-striped"}
@@ -374,7 +374,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortOrder** | **String**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc 
 | **sortBy** | **String**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional]<br />**Values**: RecommendedCompletionDate, DateModified 
-| **types** | [**List&lt;String&gt;**](String.html)| Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned | [optional]<br />**Values**: Informational, AssessedContent, Questionnaire 
+| **types** | [**List&lt;String&gt;**](String.html)| Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned | [optional]<br />**Values**: Informational, AssessedContent, Questionnaire, Assessment 
 | **states** | [**List&lt;String&gt;**](String.html)| Specifies the assignment states to filter by | [optional]<br />**Values**: Assigned, InProgress, Completed 
 | **expand** | [**List&lt;String&gt;**](String.html)| Specifies the expand option for returning additional information | [optional]<br />**Values**: ModuleSummary 
 {: class="table-striped"}
@@ -642,7 +642,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **isArchived** | **Boolean**| Archive status | [optional] [default to false] 
-| **types** | [**List&lt;String&gt;**](String.html)| Specifies the module types. | [optional]<br />**Values**: Informational, AssessedContent, Questionnaire 
+| **types** | [**List&lt;String&gt;**](String.html)| Specifies the module types. | [optional]<br />**Values**: Informational, AssessedContent, Questionnaire, Assessment 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortOrder** | **String**| Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending 

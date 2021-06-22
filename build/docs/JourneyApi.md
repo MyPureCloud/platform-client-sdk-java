@@ -352,7 +352,7 @@ try {
 
 
 
-> [ActionMapListing](ActionMapListing.html) getJourneyActionmaps(pageNumber, pageSize, sortBy, filterField, filterValue, actionMapIds)
+> [ActionMapListing](ActionMapListing.html) getJourneyActionmaps(pageNumber, pageSize, sortBy, filterField, filterValue, actionMapIds, queryFields, queryValue)
 
 Retrieve all action maps.
 
@@ -391,9 +391,11 @@ Integer pageSize = 25; // Integer | Page size
 String sortBy = "sortBy_example"; // String | Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate).
 String filterField = "filterField_example"; // String | Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires 'filterField' to also be set.
 String filterValue = "filterValue_example"; // String | Value to filter by. Requires 'filterValue' to also be set.
-List<String> actionMapIds = Arrays.asList("actionMapIds_example"); // List<String> | IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering or sorting. A maximum of 100 action maps are allowed per request.
+List<String> actionMapIds = Arrays.asList("actionMapIds_example"); // List<String> | IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request.
+List<String> queryFields = Arrays.asList("queryFields_example"); // List<String> | Action Map field(s) to query on. Requires 'queryValue' to also be set.
+String queryValue = "queryValue_example"; // String | Value to query on. Requires 'queryFields' to also be set.
 try {
-    ActionMapListing result = apiInstance.getJourneyActionmaps(pageNumber, pageSize, sortBy, filterField, filterValue, actionMapIds);
+    ActionMapListing result = apiInstance.getJourneyActionmaps(pageNumber, pageSize, sortBy, filterField, filterValue, actionMapIds, queryFields, queryValue);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling JourneyApi#getJourneyActionmaps");
@@ -411,7 +413,9 @@ try {
 | **sortBy** | **String**| Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). | [optional] 
 | **filterField** | **String**| Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires &#39;filterField&#39; to also be set. | [optional] 
 | **filterValue** | **String**| Value to filter by. Requires &#39;filterValue&#39; to also be set. | [optional] 
-| **actionMapIds** | [**List&lt;String&gt;**](String.html)| IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering or sorting. A maximum of 100 action maps are allowed per request. | [optional] 
+| **actionMapIds** | [**List&lt;String&gt;**](String.html)| IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. | [optional] 
+| **queryFields** | [**List&lt;String&gt;**](String.html)| Action Map field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional] 
+| **queryValue** | **String**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional] 
 {: class="table-striped"}
 
 
@@ -754,7 +758,7 @@ try {
 
 
 
-> [OutcomeListing](OutcomeListing.html) getJourneyOutcomes(pageNumber, pageSize, sortBy, outcomeIds)
+> [OutcomeListing](OutcomeListing.html) getJourneyOutcomes(pageNumber, pageSize, sortBy, outcomeIds, queryFields, queryValue)
 
 Retrieve all outcomes.
 
@@ -791,9 +795,11 @@ JourneyApi apiInstance = new JourneyApi();
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 String sortBy = "sortBy_example"; // String | Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate).
-List<String> outcomeIds = Arrays.asList("outcomeIds_example"); // List<String> | IDs of outcomes to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 20 outcomes are allowed per request.
+List<String> outcomeIds = Arrays.asList("outcomeIds_example"); // List<String> | IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request.
+List<String> queryFields = Arrays.asList("queryFields_example"); // List<String> | Outcome field(s) to query on. Requires 'queryValue' to also be set.
+String queryValue = "queryValue_example"; // String | Value to query on. Requires 'queryFields' to also be set.
 try {
-    OutcomeListing result = apiInstance.getJourneyOutcomes(pageNumber, pageSize, sortBy, outcomeIds);
+    OutcomeListing result = apiInstance.getJourneyOutcomes(pageNumber, pageSize, sortBy, outcomeIds, queryFields, queryValue);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling JourneyApi#getJourneyOutcomes");
@@ -809,7 +815,9 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortBy** | **String**| Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). | [optional] 
-| **outcomeIds** | [**List&lt;String&gt;**](String.html)| IDs of outcomes to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 20 outcomes are allowed per request. | [optional] 
+| **outcomeIds** | [**List&lt;String&gt;**](String.html)| IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. | [optional] 
+| **queryFields** | [**List&lt;String&gt;**](String.html)| Outcome field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional] 
+| **queryValue** | **String**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional] 
 {: class="table-striped"}
 
 
@@ -886,7 +894,7 @@ try {
 
 
 
-> [SegmentListing](SegmentListing.html) getJourneySegments(sortBy, pageSize, pageNumber, isActive, segmentIds)
+> [SegmentListing](SegmentListing.html) getJourneySegments(sortBy, pageSize, pageNumber, isActive, segmentIds, queryFields, queryValue)
 
 Retrieve all segments.
 
@@ -924,9 +932,11 @@ String sortBy = "sortBy_example"; // String | Field(s) to sort by. The response 
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 Boolean isActive = true; // Boolean | Determines whether or not to show only active segments.
-List<String> segmentIds = Arrays.asList("segmentIds_example"); // List<String> | IDs of segments to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 100 segments are allowed per request.
+List<String> segmentIds = Arrays.asList("segmentIds_example"); // List<String> | IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request.
+List<String> queryFields = Arrays.asList("queryFields_example"); // List<String> | Segment field(s) to query on. Requires 'queryValue' to also be set.
+String queryValue = "queryValue_example"; // String | Value to query on. Requires 'queryFields' to also be set.
 try {
-    SegmentListing result = apiInstance.getJourneySegments(sortBy, pageSize, pageNumber, isActive, segmentIds);
+    SegmentListing result = apiInstance.getJourneySegments(sortBy, pageSize, pageNumber, isActive, segmentIds, queryFields, queryValue);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling JourneyApi#getJourneySegments");
@@ -943,7 +953,9 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **isActive** | **Boolean**| Determines whether or not to show only active segments. | [optional] 
-| **segmentIds** | [**List&lt;String&gt;**](String.html)| IDs of segments to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 100 segments are allowed per request. | [optional] 
+| **segmentIds** | [**List&lt;String&gt;**](String.html)| IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. | [optional] 
+| **queryFields** | [**List&lt;String&gt;**](String.html)| Segment field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional] 
+| **queryValue** | **String**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional] 
 {: class="table-striped"}
 
 

@@ -33,9 +33,11 @@ title: AuditLogMessage
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ANALYTICSREPORTING | &quot;AnalyticsReporting&quot; |
 | ARCHITECT | &quot;Architect&quot; |
+| COACHING | &quot;Coaching&quot; |
 | CONTACTCENTER | &quot;ContactCenter&quot; |
 | CONTENTMANAGEMENT | &quot;ContentManagement&quot; |
 | DATATABLES | &quot;Datatables&quot; |
+| GAMIFICATION | &quot;Gamification&quot; |
 | GROUPS | &quot;Groups&quot; |
 | INTEGRATIONS | &quot;Integrations&quot; |
 | LANGUAGEUNDERSTANDING | &quot;LanguageUnderstanding&quot; |
@@ -115,6 +117,9 @@ title: AuditLogMessage
 | CHANGEIMPLEMENTED | &quot;ChangeImplemented&quot; |
 | IMPLEMENTINGROLLBACK | &quot;ImplementingRollback&quot; |
 | ROLLBACKIMPLEMENTED | &quot;RollbackImplemented&quot; |
+| WRITE | &quot;Write&quot; |
+| PURGE | &quot;Purge&quot; |
+| PROCESSED | &quot;Processed&quot; |
 {: class="table table-striped"}
 
 
@@ -126,6 +131,8 @@ title: AuditLogMessage
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ACCESSTOKEN | &quot;AccessToken&quot; |
+| ANNOTATION | &quot;Annotation&quot; |
+| APPOINTMENT | &quot;Appointment&quot; |
 | ATTEMPTLIMITS | &quot;AttemptLimits&quot; |
 | AUTHORGANIZATION | &quot;AuthOrganization&quot; |
 | AUTHUSER | &quot;AuthUser&quot; |
@@ -159,12 +166,14 @@ title: AuditLogMessage
 | EXPORTS | &quot;Exports&quot; |
 | EXTENSION | &quot;Extension&quot; |
 | EXTENSIONPOOL | &quot;ExtensionPool&quot; |
+| EXTERNALMETRICDATA | &quot;ExternalMetricData&quot; |
 | EXTERNALMETRICDEFINITION | &quot;ExternalMetricDefinition&quot; |
 | FEEDBACK | &quot;Feedback&quot; |
 | FLOW | &quot;Flow&quot; |
 | FLOWMILESTONE | &quot;FlowMilestone&quot; |
 | FLOWOUTCOME | &quot;FlowOutcome&quot; |
 | FORECAST | &quot;Forecast&quot; |
+| HISTORICALDATA | &quot;HistoricalData&quot; |
 | INSIGHTSETTINGS | &quot;InsightSettings&quot; |
 | INTEGRATION | &quot;Integration&quot; |
 | IVR | &quot;IVR&quot; |
@@ -172,6 +181,7 @@ title: AuditLogMessage
 | LINEBASE | &quot;LineBase&quot; |
 | MAXORGROUTINGUTILIZATIONCAPACITY | &quot;MaxOrgRoutingUtilizationCapacity&quot; |
 | MESSAGINGCAMPAIGN | &quot;MessagingCampaign&quot; |
+| METRIC | &quot;Metric&quot; |
 | NUMBERPLAN | &quot;NumberPlan&quot; |
 | OAUTHCLIENT | &quot;OAuthClient&quot; |
 | OAUTHCLIENTAUTHORIZATION | &quot;OAuthClientAuthorization&quot; |
@@ -209,6 +219,7 @@ title: AuditLogMessage
 | SESSIONTYPE | &quot;SessionType&quot; |
 | SITE | &quot;Site&quot; |
 | SPEECHTEXTANALYTICSSETTINGS | &quot;SpeechTextAnalyticsSettings&quot; |
+| STATUS | &quot;Status&quot; |
 | SURVEY | &quot;Survey&quot; |
 | SURVEYFORM | &quot;SurveyForm&quot; |
 | TEAM | &quot;Team&quot; |
@@ -230,6 +241,7 @@ title: AuditLogMessage
 | CONVERSATIONACCOUNT | &quot;ConversationAccount&quot; |
 | CONVERSATIONDEFAULTSUPPORTEDCONTENT | &quot;ConversationDefaultSupportedContent&quot; |
 | CONVERSATIONTHREADINGWINDOW | &quot;ConversationThreadingWindow&quot; |
+| SUPPORTEDCONTENT | &quot;SupportedContent&quot; |
 {: class="table table-striped"}
 
 

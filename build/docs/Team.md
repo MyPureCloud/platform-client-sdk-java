@@ -10,6 +10,7 @@ title: Team
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> | The team name |  |
+| **division** | <!----><!---->[**Division**](Division.html)<!----> | The division to which this entity belongs. |  [optional] |
 | **description** | <!----><!---->**String**<!----> | Team information. |  [optional] |
 | **dateModified** | <!----><!---->[**Date**](Date.html)<!----> | Last modified datetime. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **memberCount** | <!----><!---->**Long**<!----> | Number of members in a team |  [optional] |

@@ -169,6 +169,7 @@ title: ViewFilter
 | WHATSAPP | &quot;whatsapp&quot; |
 | WEBMESSAGING | &quot;webmessaging&quot; |
 | OPEN | &quot;open&quot; |
+| INSTAGRAM | &quot;instagram&quot; |
 {: class="table table-striped"}
 
 
@@ -227,6 +228,8 @@ title: ViewFilter
 | INBOUNDEMAIL | &quot;inboundemail&quot; |
 | INBOUNDSHORTMESSAGE | &quot;inboundshortmessage&quot; |
 | INQUEUECALL | &quot;inqueuecall&quot; |
+| INQUEUESHORTMESSAGE | &quot;inqueueshortmessage&quot; |
+| INQUEUEEMAIL | &quot;inqueueemail&quot; |
 | OUTBOUNDCALL | &quot;outboundcall&quot; |
 | SECURECALL | &quot;securecall&quot; |
 | SURVEYINVITE | &quot;surveyinvite&quot; |

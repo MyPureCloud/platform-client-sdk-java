@@ -103,6 +103,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     AUTOAPPROVED("AutoApproved"),
     INVALIDDAILYDURATION("InvalidDailyDuration"),
     OUTSIDESHIFT("OutsideShift"),
+    REMOVEDFROMWAITLIST("RemovedFromWaitlist"),
     WAITLISTED("Waitlisted");
 
     private String value;

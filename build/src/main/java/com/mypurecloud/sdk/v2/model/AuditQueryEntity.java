@@ -43,6 +43,8 @@ public class AuditQueryEntity  implements Serializable {
   public enum NameEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACCESSTOKEN("AccessToken"),
+    ANNOTATION("Annotation"),
+    APPOINTMENT("Appointment"),
     ATTEMPTLIMITS("AttemptLimits"),
     AUTHORGANIZATION("AuthOrganization"),
     AUTHUSER("AuthUser"),
@@ -76,12 +78,14 @@ public class AuditQueryEntity  implements Serializable {
     EXPORTS("Exports"),
     EXTENSION("Extension"),
     EXTENSIONPOOL("ExtensionPool"),
+    EXTERNALMETRICDATA("ExternalMetricData"),
     EXTERNALMETRICDEFINITION("ExternalMetricDefinition"),
     FEEDBACK("Feedback"),
     FLOW("Flow"),
     FLOWMILESTONE("FlowMilestone"),
     FLOWOUTCOME("FlowOutcome"),
     FORECAST("Forecast"),
+    HISTORICALDATA("HistoricalData"),
     INSIGHTSETTINGS("InsightSettings"),
     INTEGRATION("Integration"),
     IVR("IVR"),
@@ -89,6 +93,7 @@ public class AuditQueryEntity  implements Serializable {
     LINEBASE("LineBase"),
     MAXORGROUTINGUTILIZATIONCAPACITY("MaxOrgRoutingUtilizationCapacity"),
     MESSAGINGCAMPAIGN("MessagingCampaign"),
+    METRIC("Metric"),
     NUMBERPLAN("NumberPlan"),
     OAUTHCLIENT("OAuthClient"),
     OAUTHCLIENTAUTHORIZATION("OAuthClientAuthorization"),
@@ -126,6 +131,7 @@ public class AuditQueryEntity  implements Serializable {
     SESSIONTYPE("SessionType"),
     SITE("Site"),
     SPEECHTEXTANALYTICSSETTINGS("SpeechTextAnalyticsSettings"),
+    STATUS("Status"),
     SURVEY("Survey"),
     SURVEYFORM("SurveyForm"),
     TEAM("Team"),
@@ -146,7 +152,8 @@ public class AuditQueryEntity  implements Serializable {
     CONVERSATIONRECIPIENT("ConversationRecipient"),
     CONVERSATIONACCOUNT("ConversationAccount"),
     CONVERSATIONDEFAULTSUPPORTEDCONTENT("ConversationDefaultSupportedContent"),
-    CONVERSATIONTHREADINGWINDOW("ConversationThreadingWindow");
+    CONVERSATIONTHREADINGWINDOW("ConversationThreadingWindow"),
+    SUPPORTEDCONTENT("SupportedContent");
 
     private String value;
 
@@ -240,7 +247,10 @@ public class AuditQueryEntity  implements Serializable {
     IMPLEMENTINGCHANGE("ImplementingChange"),
     CHANGEIMPLEMENTED("ChangeImplemented"),
     IMPLEMENTINGROLLBACK("ImplementingRollback"),
-    ROLLBACKIMPLEMENTED("RollbackImplemented");
+    ROLLBACKIMPLEMENTED("RollbackImplemented"),
+    WRITE("Write"),
+    PURGE("Purge"),
+    PROCESSED("Processed");
 
     private String value;
 

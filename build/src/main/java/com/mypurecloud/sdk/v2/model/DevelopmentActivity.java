@@ -54,6 +54,7 @@ public class DevelopmentActivity  implements Serializable {
     INFORMATIONAL("Informational"),
     COACHING("Coaching"),
     ASSESSEDCONTENT("AssessedContent"),
+    ASSESSMENT("Assessment"),
     QUESTIONNAIRE("Questionnaire");
 
     private String value;

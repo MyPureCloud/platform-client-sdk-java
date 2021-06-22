@@ -54,6 +54,7 @@ title: WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate
 | AUTOAPPROVED | &quot;AutoApproved&quot; |
 | INVALIDDAILYDURATION | &quot;InvalidDailyDuration&quot; |
 | OUTSIDESHIFT | &quot;OutsideShift&quot; |
+| REMOVEDFROMWAITLIST | &quot;RemovedFromWaitlist&quot; |
 | WAITLISTED | &quot;Waitlisted&quot; |
 {: class="table table-striped"}
 

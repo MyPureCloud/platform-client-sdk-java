@@ -97,6 +97,8 @@ title: AuditTopicAuditLogMessage
 | EXPORT | &quot;Export&quot; |
 | APPEND | &quot;Append&quot; |
 | RECYCLE | &quot;Recycle&quot; |
+| PURGE | &quot;Purge&quot; |
+| PROCESSED | &quot;Processed&quot; |
 {: class="table table-striped"}
 
 
@@ -139,6 +141,7 @@ title: AuditTopicAuditLogMessage
 | FLOWMILESTONE | &quot;FlowMilestone&quot; |
 | FLOWOUTCOME | &quot;FlowOutcome&quot; |
 | FORECAST | &quot;Forecast&quot; |
+| HISTORICALDATA | &quot;HistoricalData&quot; |
 | IVR | &quot;IVR&quot; |
 | LINE | &quot;Line&quot; |
 | LINEBASE | &quot;LineBase&quot; |

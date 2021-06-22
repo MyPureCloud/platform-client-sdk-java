@@ -28,6 +28,7 @@ import com.mypurecloud.sdk.v2.model.TrustCreate;
 import com.mypurecloud.sdk.v2.model.AuditQueryResponse;
 import com.mypurecloud.sdk.v2.model.TrusteeAuditQueryRequest;
 import com.mypurecloud.sdk.v2.model.TrustorAuditQueryRequest;
+import com.mypurecloud.sdk.v2.model.TrustUpdate;
 import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 
 
@@ -1637,7 +1638,7 @@ public class OrganizationAuthorizationApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Trustee>> putOrgauthorizationTrusteeAsync(ApiRequest<Trustee> request, final AsyncApiCallback<ApiResponse<Trustee>> callback) {
+  public Future<ApiResponse<Trustee>> putOrgauthorizationTrusteeAsync(ApiRequest<TrustUpdate> request, final AsyncApiCallback<ApiResponse<Trustee>> callback) {
     try {
       final SettableFuture<ApiResponse<Trustee>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

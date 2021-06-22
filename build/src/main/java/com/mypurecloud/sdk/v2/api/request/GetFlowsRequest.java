@@ -94,6 +94,8 @@ public class GetFlowsRequest {
 		INBOUNDSHORTMESSAGE("inboundshortmessage"), 
 		OUTBOUNDCALL("outboundcall"), 
 		INQUEUECALL("inqueuecall"), 
+		INQUEUEEMAIL("inqueueemail"), 
+		INQUEUESHORTMESSAGE("inqueueshortmessage"), 
 		SPEECH("speech"), 
 		SECURECALL("securecall"), 
 		SURVEYINVITE("surveyinvite"), 

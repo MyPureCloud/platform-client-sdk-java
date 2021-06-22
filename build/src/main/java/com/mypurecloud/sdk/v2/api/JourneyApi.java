@@ -469,13 +469,15 @@ public class JourneyApi {
    * @param sortBy Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). (optional)
    * @param filterField Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires &#39;filterField&#39; to also be set. (optional)
    * @param filterValue Value to filter by. Requires &#39;filterValue&#39; to also be set. (optional)
-   * @param actionMapIds IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering or sorting. A maximum of 100 action maps are allowed per request. (optional)
+   * @param actionMapIds IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. (optional)
+   * @param queryFields Action Map field(s) to query on. Requires &#39;queryValue&#39; to also be set. (optional)
+   * @param queryValue Value to query on. Requires &#39;queryFields&#39; to also be set. (optional)
    * @return ActionMapListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ActionMapListing getJourneyActionmaps(Integer pageNumber, Integer pageSize, String sortBy, String filterField, String filterValue, List<String> actionMapIds) throws IOException, ApiException {
-    return  getJourneyActionmaps(createGetJourneyActionmapsRequest(pageNumber, pageSize, sortBy, filterField, filterValue, actionMapIds));
+  public ActionMapListing getJourneyActionmaps(Integer pageNumber, Integer pageSize, String sortBy, String filterField, String filterValue, List<String> actionMapIds, List<String> queryFields, String queryValue) throws IOException, ApiException {
+    return  getJourneyActionmaps(createGetJourneyActionmapsRequest(pageNumber, pageSize, sortBy, filterField, filterValue, actionMapIds, queryFields, queryValue));
   }
 
   /**
@@ -486,15 +488,17 @@ public class JourneyApi {
    * @param sortBy Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). (optional)
    * @param filterField Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires &#39;filterField&#39; to also be set. (optional)
    * @param filterValue Value to filter by. Requires &#39;filterValue&#39; to also be set. (optional)
-   * @param actionMapIds IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering or sorting. A maximum of 100 action maps are allowed per request. (optional)
+   * @param actionMapIds IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. (optional)
+   * @param queryFields Action Map field(s) to query on. Requires &#39;queryValue&#39; to also be set. (optional)
+   * @param queryValue Value to query on. Requires &#39;queryFields&#39; to also be set. (optional)
    * @return ActionMapListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ActionMapListing> getJourneyActionmapsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String filterField, String filterValue, List<String> actionMapIds) throws IOException {
-    return getJourneyActionmaps(createGetJourneyActionmapsRequest(pageNumber, pageSize, sortBy, filterField, filterValue, actionMapIds).withHttpInfo());
+  public ApiResponse<ActionMapListing> getJourneyActionmapsWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, String filterField, String filterValue, List<String> actionMapIds, List<String> queryFields, String queryValue) throws IOException {
+    return getJourneyActionmaps(createGetJourneyActionmapsRequest(pageNumber, pageSize, sortBy, filterField, filterValue, actionMapIds, queryFields, queryValue).withHttpInfo());
   }
 
-  private GetJourneyActionmapsRequest createGetJourneyActionmapsRequest(Integer pageNumber, Integer pageSize, String sortBy, String filterField, String filterValue, List<String> actionMapIds) {
+  private GetJourneyActionmapsRequest createGetJourneyActionmapsRequest(Integer pageNumber, Integer pageSize, String sortBy, String filterField, String filterValue, List<String> actionMapIds, List<String> queryFields, String queryValue) {
     return GetJourneyActionmapsRequest.builder()
             .withPageNumber(pageNumber)
     
@@ -507,6 +511,10 @@ public class JourneyApi {
             .withFilterValue(filterValue)
     
             .withActionMapIds(actionMapIds)
+    
+            .withQueryFields(queryFields)
+    
+            .withQueryValue(queryValue)
     
             .build();
   }
@@ -989,13 +997,15 @@ public class JourneyApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). (optional)
-   * @param outcomeIds IDs of outcomes to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 20 outcomes are allowed per request. (optional)
+   * @param outcomeIds IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. (optional)
+   * @param queryFields Outcome field(s) to query on. Requires &#39;queryValue&#39; to also be set. (optional)
+   * @param queryValue Value to query on. Requires &#39;queryFields&#39; to also be set. (optional)
    * @return OutcomeListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public OutcomeListing getJourneyOutcomes(Integer pageNumber, Integer pageSize, String sortBy, List<String> outcomeIds) throws IOException, ApiException {
-    return  getJourneyOutcomes(createGetJourneyOutcomesRequest(pageNumber, pageSize, sortBy, outcomeIds));
+  public OutcomeListing getJourneyOutcomes(Integer pageNumber, Integer pageSize, String sortBy, List<String> outcomeIds, List<String> queryFields, String queryValue) throws IOException, ApiException {
+    return  getJourneyOutcomes(createGetJourneyOutcomesRequest(pageNumber, pageSize, sortBy, outcomeIds, queryFields, queryValue));
   }
 
   /**
@@ -1004,15 +1014,17 @@ public class JourneyApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
    * @param sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). (optional)
-   * @param outcomeIds IDs of outcomes to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 20 outcomes are allowed per request. (optional)
+   * @param outcomeIds IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. (optional)
+   * @param queryFields Outcome field(s) to query on. Requires &#39;queryValue&#39; to also be set. (optional)
+   * @param queryValue Value to query on. Requires &#39;queryFields&#39; to also be set. (optional)
    * @return OutcomeListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<OutcomeListing> getJourneyOutcomesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, List<String> outcomeIds) throws IOException {
-    return getJourneyOutcomes(createGetJourneyOutcomesRequest(pageNumber, pageSize, sortBy, outcomeIds).withHttpInfo());
+  public ApiResponse<OutcomeListing> getJourneyOutcomesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortBy, List<String> outcomeIds, List<String> queryFields, String queryValue) throws IOException {
+    return getJourneyOutcomes(createGetJourneyOutcomesRequest(pageNumber, pageSize, sortBy, outcomeIds, queryFields, queryValue).withHttpInfo());
   }
 
-  private GetJourneyOutcomesRequest createGetJourneyOutcomesRequest(Integer pageNumber, Integer pageSize, String sortBy, List<String> outcomeIds) {
+  private GetJourneyOutcomesRequest createGetJourneyOutcomesRequest(Integer pageNumber, Integer pageSize, String sortBy, List<String> outcomeIds, List<String> queryFields, String queryValue) {
     return GetJourneyOutcomesRequest.builder()
             .withPageNumber(pageNumber)
     
@@ -1021,6 +1033,10 @@ public class JourneyApi {
             .withSortBy(sortBy)
     
             .withOutcomeIds(outcomeIds)
+    
+            .withQueryFields(queryFields)
+    
+            .withQueryValue(queryValue)
     
             .build();
   }
@@ -1160,13 +1176,15 @@ public class JourneyApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param isActive Determines whether or not to show only active segments. (optional)
-   * @param segmentIds IDs of segments to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 100 segments are allowed per request. (optional)
+   * @param segmentIds IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. (optional)
+   * @param queryFields Segment field(s) to query on. Requires &#39;queryValue&#39; to also be set. (optional)
+   * @param queryValue Value to query on. Requires &#39;queryFields&#39; to also be set. (optional)
    * @return SegmentListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SegmentListing getJourneySegments(String sortBy, Integer pageSize, Integer pageNumber, Boolean isActive, List<String> segmentIds) throws IOException, ApiException {
-    return  getJourneySegments(createGetJourneySegmentsRequest(sortBy, pageSize, pageNumber, isActive, segmentIds));
+  public SegmentListing getJourneySegments(String sortBy, Integer pageSize, Integer pageNumber, Boolean isActive, List<String> segmentIds, List<String> queryFields, String queryValue) throws IOException, ApiException {
+    return  getJourneySegments(createGetJourneySegmentsRequest(sortBy, pageSize, pageNumber, isActive, segmentIds, queryFields, queryValue));
   }
 
   /**
@@ -1176,15 +1194,17 @@ public class JourneyApi {
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
    * @param isActive Determines whether or not to show only active segments. (optional)
-   * @param segmentIds IDs of segments to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 100 segments are allowed per request. (optional)
+   * @param segmentIds IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. (optional)
+   * @param queryFields Segment field(s) to query on. Requires &#39;queryValue&#39; to also be set. (optional)
+   * @param queryValue Value to query on. Requires &#39;queryFields&#39; to also be set. (optional)
    * @return SegmentListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SegmentListing> getJourneySegmentsWithHttpInfo(String sortBy, Integer pageSize, Integer pageNumber, Boolean isActive, List<String> segmentIds) throws IOException {
-    return getJourneySegments(createGetJourneySegmentsRequest(sortBy, pageSize, pageNumber, isActive, segmentIds).withHttpInfo());
+  public ApiResponse<SegmentListing> getJourneySegmentsWithHttpInfo(String sortBy, Integer pageSize, Integer pageNumber, Boolean isActive, List<String> segmentIds, List<String> queryFields, String queryValue) throws IOException {
+    return getJourneySegments(createGetJourneySegmentsRequest(sortBy, pageSize, pageNumber, isActive, segmentIds, queryFields, queryValue).withHttpInfo());
   }
 
-  private GetJourneySegmentsRequest createGetJourneySegmentsRequest(String sortBy, Integer pageSize, Integer pageNumber, Boolean isActive, List<String> segmentIds) {
+  private GetJourneySegmentsRequest createGetJourneySegmentsRequest(String sortBy, Integer pageSize, Integer pageNumber, Boolean isActive, List<String> segmentIds, List<String> queryFields, String queryValue) {
     return GetJourneySegmentsRequest.builder()
             .withSortBy(sortBy)
     
@@ -1195,6 +1215,10 @@ public class JourneyApi {
             .withIsActive(isActive)
     
             .withSegmentIds(segmentIds)
+    
+            .withQueryFields(queryFields)
+    
+            .withQueryValue(queryValue)
     
             .build();
   }

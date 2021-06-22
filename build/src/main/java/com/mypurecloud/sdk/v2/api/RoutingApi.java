@@ -11,6 +11,10 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.BenefitAssessment;
+import com.mypurecloud.sdk.v2.model.AssessmentListing;
+import com.mypurecloud.sdk.v2.model.BenefitAssessmentJob;
+import com.mypurecloud.sdk.v2.model.AssessmentJobListing;
 import com.mypurecloud.sdk.v2.model.InboundDomain;
 import com.mypurecloud.sdk.v2.model.InboundRoute;
 import com.mypurecloud.sdk.v2.model.InboundRouteEntityListing;
@@ -19,7 +23,12 @@ import com.mypurecloud.sdk.v2.model.EmailSetup;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.Recipient;
 import com.mypurecloud.sdk.v2.model.RecipientListing;
+import com.mypurecloud.sdk.v2.model.Predictor;
+import com.mypurecloud.sdk.v2.model.PredictorListing;
+import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
 import com.mypurecloud.sdk.v2.model.Queue;
+import com.mypurecloud.sdk.v2.model.ComparisonPeriod;
+import com.mypurecloud.sdk.v2.model.ComparisonPeriodListing;
 import com.mypurecloud.sdk.v2.model.EstimatedWaitTimePredictions;
 import com.mypurecloud.sdk.v2.model.QueueMemberEntityListing;
 import com.mypurecloud.sdk.v2.model.WrapupCodeEntityListing;
@@ -42,6 +51,7 @@ import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
 import com.mypurecloud.sdk.v2.model.RoutingConversationAttributes;
 import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
+import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
 import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.UserQueue;
 import com.mypurecloud.sdk.v2.model.UserRoutingLanguage;
@@ -49,8 +59,11 @@ import com.mypurecloud.sdk.v2.model.UserRoutingLanguagePost;
 import com.mypurecloud.sdk.v2.model.UserRoutingSkillPost;
 import com.mypurecloud.sdk.v2.model.QueueObservationQueryResponse;
 import com.mypurecloud.sdk.v2.model.QueueObservationQuery;
+import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentRequest;
+import com.mypurecloud.sdk.v2.model.CreateBenefitAssessmentJobRequest;
 import com.mypurecloud.sdk.v2.model.TestMessage;
 import com.mypurecloud.sdk.v2.model.Language;
+import com.mypurecloud.sdk.v2.model.CreatePredictorRequest;
 import com.mypurecloud.sdk.v2.model.WritableEntity;
 import com.mypurecloud.sdk.v2.model.WrapUpCodeReference;
 import com.mypurecloud.sdk.v2.model.CreateQueueRequest;
@@ -60,8 +73,10 @@ import com.mypurecloud.sdk.v2.model.UserRoutingSkill;
 import com.mypurecloud.sdk.v2.model.QueueRequest;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingAssessmentRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingEmailDomainRouteRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteRoutingPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueMemberRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingQueueUserRequest;
@@ -75,6 +90,10 @@ import com.mypurecloud.sdk.v2.api.request.DeleteRoutingUtilizationRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteRoutingWrapupcodeRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutinglanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteUserRoutingskillRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingAssessmentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingAssessmentsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingAssessmentsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingAssessmentsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRouteRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailDomainRoutesRequest;
@@ -83,7 +102,12 @@ import com.mypurecloud.sdk.v2.api.request.GetRoutingEmailSetupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingLanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingMessageRecipientRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingMessageRecipientsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingPredictorsKeyperformanceindicatorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueComparisonperiodRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueComparisonperiodsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueEstimatedwaittimeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueMediatypeEstimatedwaittimeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRoutingQueueMembersRequest;
@@ -113,6 +137,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainValidateRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRoutingPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMemberRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueUserRequest;
@@ -124,10 +149,13 @@ import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguageRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutinglanguagesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUserRoutingskillsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAnalyticsQueuesObservationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingAssessmentsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingAssessmentsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainRoutesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainTestconnectionRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingEmailDomainsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingLanguagesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostRoutingPredictorsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueMembersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostRoutingQueueWrapupcodesRequest;
@@ -166,6 +194,82 @@ public class RoutingApi {
 
   public RoutingApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Delete single benefit assessment.
+   * 
+   * @param assessmentId Benefit Assessment ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingAssessment(String assessmentId) throws IOException, ApiException {
+     deleteRoutingAssessment(createDeleteRoutingAssessmentRequest(assessmentId));
+  }
+
+  /**
+   * Delete single benefit assessment.
+   * 
+   * @param assessmentId Benefit Assessment ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingAssessmentWithHttpInfo(String assessmentId) throws IOException {
+    return deleteRoutingAssessment(createDeleteRoutingAssessmentRequest(assessmentId).withHttpInfo());
+  }
+
+  private DeleteRoutingAssessmentRequest createDeleteRoutingAssessmentRequest(String assessmentId) {
+    return DeleteRoutingAssessmentRequest.builder()
+            .withAssessmentId(assessmentId)
+    
+            .build();
+  }
+
+  /**
+   * Delete single benefit assessment.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingAssessment(DeleteRoutingAssessmentRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete single benefit assessment.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingAssessment(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   
@@ -303,6 +407,82 @@ public class RoutingApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteRoutingEmailDomainRoute(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete single predictor.
+   * 
+   * @param predictorId Predictor ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingPredictor(String predictorId) throws IOException, ApiException {
+     deleteRoutingPredictor(createDeleteRoutingPredictorRequest(predictorId));
+  }
+
+  /**
+   * Delete single predictor.
+   * 
+   * @param predictorId Predictor ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingPredictorWithHttpInfo(String predictorId) throws IOException {
+    return deleteRoutingPredictor(createDeleteRoutingPredictorRequest(predictorId).withHttpInfo());
+  }
+
+  private DeleteRoutingPredictorRequest createDeleteRoutingPredictorRequest(String predictorId) {
+    return DeleteRoutingPredictorRequest.builder()
+            .withPredictorId(predictorId)
+    
+            .build();
+  }
+
+  /**
+   * Delete single predictor.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteRoutingPredictor(DeleteRoutingPredictorRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete single predictor.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteRoutingPredictor(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -1330,6 +1510,338 @@ public class RoutingApi {
 
   
   /**
+   * Retrieve a single benefit assessment.
+   * 
+   * @param assessmentId Benefit Assessment ID (required)
+   * @return BenefitAssessment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BenefitAssessment getRoutingAssessment(String assessmentId) throws IOException, ApiException {
+    return  getRoutingAssessment(createGetRoutingAssessmentRequest(assessmentId));
+  }
+
+  /**
+   * Retrieve a single benefit assessment.
+   * 
+   * @param assessmentId Benefit Assessment ID (required)
+   * @return BenefitAssessment
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BenefitAssessment> getRoutingAssessmentWithHttpInfo(String assessmentId) throws IOException {
+    return getRoutingAssessment(createGetRoutingAssessmentRequest(assessmentId).withHttpInfo());
+  }
+
+  private GetRoutingAssessmentRequest createGetRoutingAssessmentRequest(String assessmentId) {
+    return GetRoutingAssessmentRequest.builder()
+            .withAssessmentId(assessmentId)
+    
+            .build();
+  }
+
+  /**
+   * Retrieve a single benefit assessment.
+   * 
+   * @param request The request object
+   * @return BenefitAssessment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BenefitAssessment getRoutingAssessment(GetRoutingAssessmentRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BenefitAssessment> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BenefitAssessment>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve a single benefit assessment.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BenefitAssessment> getRoutingAssessment(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BenefitAssessment>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BenefitAssessment> response = (ApiResponse<BenefitAssessment>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BenefitAssessment> response = (ApiResponse<BenefitAssessment>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Retrieve all benefit assessments.
+   * 
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param queueId Queue ID(s) to filter assessments by. (optional)
+   * @return AssessmentListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AssessmentListing getRoutingAssessments(String before, String after, String limit, String pageSize, List<String> queueId) throws IOException, ApiException {
+    return  getRoutingAssessments(createGetRoutingAssessmentsRequest(before, after, limit, pageSize, queueId));
+  }
+
+  /**
+   * Retrieve all benefit assessments.
+   * 
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param queueId Queue ID(s) to filter assessments by. (optional)
+   * @return AssessmentListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AssessmentListing> getRoutingAssessmentsWithHttpInfo(String before, String after, String limit, String pageSize, List<String> queueId) throws IOException {
+    return getRoutingAssessments(createGetRoutingAssessmentsRequest(before, after, limit, pageSize, queueId).withHttpInfo());
+  }
+
+  private GetRoutingAssessmentsRequest createGetRoutingAssessmentsRequest(String before, String after, String limit, String pageSize, List<String> queueId) {
+    return GetRoutingAssessmentsRequest.builder()
+            .withBefore(before)
+    
+            .withAfter(after)
+    
+            .withLimit(limit)
+    
+            .withPageSize(pageSize)
+    
+            .withQueueId(queueId)
+    
+            .build();
+  }
+
+  /**
+   * Retrieve all benefit assessments.
+   * 
+   * @param request The request object
+   * @return AssessmentListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AssessmentListing getRoutingAssessments(GetRoutingAssessmentsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AssessmentListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AssessmentListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve all benefit assessments.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AssessmentListing> getRoutingAssessments(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AssessmentListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AssessmentListing> response = (ApiResponse<AssessmentListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AssessmentListing> response = (ApiResponse<AssessmentListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Retrieve a single benefit assessments job.
+   * 
+   * @param jobId Benefit Assessment Job ID (required)
+   * @return BenefitAssessmentJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BenefitAssessmentJob getRoutingAssessmentsJob(String jobId) throws IOException, ApiException {
+    return  getRoutingAssessmentsJob(createGetRoutingAssessmentsJobRequest(jobId));
+  }
+
+  /**
+   * Retrieve a single benefit assessments job.
+   * 
+   * @param jobId Benefit Assessment Job ID (required)
+   * @return BenefitAssessmentJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BenefitAssessmentJob> getRoutingAssessmentsJobWithHttpInfo(String jobId) throws IOException {
+    return getRoutingAssessmentsJob(createGetRoutingAssessmentsJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetRoutingAssessmentsJobRequest createGetRoutingAssessmentsJobRequest(String jobId) {
+    return GetRoutingAssessmentsJobRequest.builder()
+            .withJobId(jobId)
+    
+            .build();
+  }
+
+  /**
+   * Retrieve a single benefit assessments job.
+   * 
+   * @param request The request object
+   * @return BenefitAssessmentJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BenefitAssessmentJob getRoutingAssessmentsJob(GetRoutingAssessmentsJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BenefitAssessmentJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BenefitAssessmentJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve a single benefit assessments job.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BenefitAssessmentJob> getRoutingAssessmentsJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BenefitAssessmentJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BenefitAssessmentJob> response = (ApiResponse<BenefitAssessmentJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BenefitAssessmentJob> response = (ApiResponse<BenefitAssessmentJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Retrieve all benefit assessment jobs.
+   * 
+   * @param divisionId Division ID(s) to filter assessment jobs by. (optional)
+   * @return AssessmentJobListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AssessmentJobListing getRoutingAssessmentsJobs(List<String> divisionId) throws IOException, ApiException {
+    return  getRoutingAssessmentsJobs(createGetRoutingAssessmentsJobsRequest(divisionId));
+  }
+
+  /**
+   * Retrieve all benefit assessment jobs.
+   * 
+   * @param divisionId Division ID(s) to filter assessment jobs by. (optional)
+   * @return AssessmentJobListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AssessmentJobListing> getRoutingAssessmentsJobsWithHttpInfo(List<String> divisionId) throws IOException {
+    return getRoutingAssessmentsJobs(createGetRoutingAssessmentsJobsRequest(divisionId).withHttpInfo());
+  }
+
+  private GetRoutingAssessmentsJobsRequest createGetRoutingAssessmentsJobsRequest(List<String> divisionId) {
+    return GetRoutingAssessmentsJobsRequest.builder()
+            .withDivisionId(divisionId)
+    
+            .build();
+  }
+
+  /**
+   * Retrieve all benefit assessment jobs.
+   * 
+   * @param request The request object
+   * @return AssessmentJobListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AssessmentJobListing getRoutingAssessmentsJobs(GetRoutingAssessmentsJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AssessmentJobListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AssessmentJobListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve all benefit assessment jobs.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AssessmentJobListing> getRoutingAssessmentsJobs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AssessmentJobListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AssessmentJobListing> response = (ApiResponse<AssessmentJobListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AssessmentJobListing> response = (ApiResponse<AssessmentJobListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get domain
    * 
    * @param domainId domain ID (required)
@@ -1994,6 +2506,255 @@ public class RoutingApi {
 
   
   /**
+   * Retrieve a single predictor.
+   * 
+   * @param predictorId Predictor ID (required)
+   * @return Predictor
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Predictor getRoutingPredictor(String predictorId) throws IOException, ApiException {
+    return  getRoutingPredictor(createGetRoutingPredictorRequest(predictorId));
+  }
+
+  /**
+   * Retrieve a single predictor.
+   * 
+   * @param predictorId Predictor ID (required)
+   * @return Predictor
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Predictor> getRoutingPredictorWithHttpInfo(String predictorId) throws IOException {
+    return getRoutingPredictor(createGetRoutingPredictorRequest(predictorId).withHttpInfo());
+  }
+
+  private GetRoutingPredictorRequest createGetRoutingPredictorRequest(String predictorId) {
+    return GetRoutingPredictorRequest.builder()
+            .withPredictorId(predictorId)
+    
+            .build();
+  }
+
+  /**
+   * Retrieve a single predictor.
+   * 
+   * @param request The request object
+   * @return Predictor
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Predictor getRoutingPredictor(GetRoutingPredictorRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Predictor> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Predictor>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve a single predictor.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Predictor> getRoutingPredictor(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Predictor>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Predictor> response = (ApiResponse<Predictor>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Predictor> response = (ApiResponse<Predictor>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Retrieve all predictors.
+   * 
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param queueId Comma-separated list of queue Ids to filter by. (optional)
+   * @return PredictorListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PredictorListing getRoutingPredictors(String before, String after, String limit, String pageSize, List<String> queueId) throws IOException, ApiException {
+    return  getRoutingPredictors(createGetRoutingPredictorsRequest(before, after, limit, pageSize, queueId));
+  }
+
+  /**
+   * Retrieve all predictors.
+   * 
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. (optional)
+   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param queueId Comma-separated list of queue Ids to filter by. (optional)
+   * @return PredictorListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PredictorListing> getRoutingPredictorsWithHttpInfo(String before, String after, String limit, String pageSize, List<String> queueId) throws IOException {
+    return getRoutingPredictors(createGetRoutingPredictorsRequest(before, after, limit, pageSize, queueId).withHttpInfo());
+  }
+
+  private GetRoutingPredictorsRequest createGetRoutingPredictorsRequest(String before, String after, String limit, String pageSize, List<String> queueId) {
+    return GetRoutingPredictorsRequest.builder()
+            .withBefore(before)
+    
+            .withAfter(after)
+    
+            .withLimit(limit)
+    
+            .withPageSize(pageSize)
+    
+            .withQueueId(queueId)
+    
+            .build();
+  }
+
+  /**
+   * Retrieve all predictors.
+   * 
+   * @param request The request object
+   * @return PredictorListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PredictorListing getRoutingPredictors(GetRoutingPredictorsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PredictorListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PredictorListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve all predictors.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PredictorListing> getRoutingPredictors(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PredictorListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PredictorListing> response = (ApiResponse<PredictorListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PredictorListing> response = (ApiResponse<PredictorListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of Key Performance Indicators available for the predictors.
+   * 
+   * @return List<KeyPerformanceIndicator>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<KeyPerformanceIndicator> getRoutingPredictorsKeyperformanceindicators() throws IOException, ApiException {
+    return  getRoutingPredictorsKeyperformanceindicators(createGetRoutingPredictorsKeyperformanceindicatorsRequest());
+  }
+
+  /**
+   * Get a list of Key Performance Indicators available for the predictors.
+   * 
+   * @return List<KeyPerformanceIndicator>
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<KeyPerformanceIndicator>> getRoutingPredictorsKeyperformanceindicatorsWithHttpInfo() throws IOException {
+    return getRoutingPredictorsKeyperformanceindicators(createGetRoutingPredictorsKeyperformanceindicatorsRequest().withHttpInfo());
+  }
+
+  private GetRoutingPredictorsKeyperformanceindicatorsRequest createGetRoutingPredictorsKeyperformanceindicatorsRequest() {
+    return GetRoutingPredictorsKeyperformanceindicatorsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get a list of Key Performance Indicators available for the predictors.
+   * 
+   * @param request The request object
+   * @return List<KeyPerformanceIndicator>
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public List<KeyPerformanceIndicator> getRoutingPredictorsKeyperformanceindicators(GetRoutingPredictorsKeyperformanceindicatorsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<List<KeyPerformanceIndicator>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<KeyPerformanceIndicator>>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of Key Performance Indicators available for the predictors.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<List<KeyPerformanceIndicator>> getRoutingPredictorsKeyperformanceindicators(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<List<KeyPerformanceIndicator>>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<KeyPerformanceIndicator>> response = (ApiResponse<List<KeyPerformanceIndicator>>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<List<KeyPerformanceIndicator>> response = (ApiResponse<List<KeyPerformanceIndicator>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get details about this queue.
    * 
    * @param queueId Queue ID (required)
@@ -2067,6 +2828,168 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Queue> response = (ApiResponse<Queue>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a Comparison Period.
+   * 
+   * @param queueId Queue id (required)
+   * @param comparisonPeriodId ComparisonPeriod id (required)
+   * @return ComparisonPeriod
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ComparisonPeriod getRoutingQueueComparisonperiod(String queueId, String comparisonPeriodId) throws IOException, ApiException {
+    return  getRoutingQueueComparisonperiod(createGetRoutingQueueComparisonperiodRequest(queueId, comparisonPeriodId));
+  }
+
+  /**
+   * Get a Comparison Period.
+   * 
+   * @param queueId Queue id (required)
+   * @param comparisonPeriodId ComparisonPeriod id (required)
+   * @return ComparisonPeriod
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ComparisonPeriod> getRoutingQueueComparisonperiodWithHttpInfo(String queueId, String comparisonPeriodId) throws IOException {
+    return getRoutingQueueComparisonperiod(createGetRoutingQueueComparisonperiodRequest(queueId, comparisonPeriodId).withHttpInfo());
+  }
+
+  private GetRoutingQueueComparisonperiodRequest createGetRoutingQueueComparisonperiodRequest(String queueId, String comparisonPeriodId) {
+    return GetRoutingQueueComparisonperiodRequest.builder()
+            .withQueueId(queueId)
+    
+            .withComparisonPeriodId(comparisonPeriodId)
+    
+            .build();
+  }
+
+  /**
+   * Get a Comparison Period.
+   * 
+   * @param request The request object
+   * @return ComparisonPeriod
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ComparisonPeriod getRoutingQueueComparisonperiod(GetRoutingQueueComparisonperiodRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ComparisonPeriod> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ComparisonPeriod>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a Comparison Period.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ComparisonPeriod> getRoutingQueueComparisonperiod(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ComparisonPeriod>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ComparisonPeriod> response = (ApiResponse<ComparisonPeriod>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ComparisonPeriod> response = (ApiResponse<ComparisonPeriod>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get list of comparison periods
+   * 
+   * @param queueId Queue id (required)
+   * @return ComparisonPeriodListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ComparisonPeriodListing getRoutingQueueComparisonperiods(String queueId) throws IOException, ApiException {
+    return  getRoutingQueueComparisonperiods(createGetRoutingQueueComparisonperiodsRequest(queueId));
+  }
+
+  /**
+   * Get list of comparison periods
+   * 
+   * @param queueId Queue id (required)
+   * @return ComparisonPeriodListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ComparisonPeriodListing> getRoutingQueueComparisonperiodsWithHttpInfo(String queueId) throws IOException {
+    return getRoutingQueueComparisonperiods(createGetRoutingQueueComparisonperiodsRequest(queueId).withHttpInfo());
+  }
+
+  private GetRoutingQueueComparisonperiodsRequest createGetRoutingQueueComparisonperiodsRequest(String queueId) {
+    return GetRoutingQueueComparisonperiodsRequest.builder()
+            .withQueueId(queueId)
+    
+            .build();
+  }
+
+  /**
+   * Get list of comparison periods
+   * 
+   * @param request The request object
+   * @return ComparisonPeriodListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ComparisonPeriodListing getRoutingQueueComparisonperiods(GetRoutingQueueComparisonperiodsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ComparisonPeriodListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ComparisonPeriodListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get list of comparison periods
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ComparisonPeriodListing> getRoutingQueueComparisonperiods(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ComparisonPeriodListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ComparisonPeriodListing> response = (ApiResponse<ComparisonPeriodListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ComparisonPeriodListing> response = (ApiResponse<ComparisonPeriodListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4648,6 +5571,89 @@ public class RoutingApi {
 
   
   /**
+   * Update single predictor.
+   * 
+   * @param predictorId Predictor ID (required)
+   * @param body  (optional)
+   * @return Predictor
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Predictor patchRoutingPredictor(String predictorId, PatchPredictorRequest body) throws IOException, ApiException {
+    return  patchRoutingPredictor(createPatchRoutingPredictorRequest(predictorId, body));
+  }
+
+  /**
+   * Update single predictor.
+   * 
+   * @param predictorId Predictor ID (required)
+   * @param body  (optional)
+   * @return Predictor
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Predictor> patchRoutingPredictorWithHttpInfo(String predictorId, PatchPredictorRequest body) throws IOException {
+    return patchRoutingPredictor(createPatchRoutingPredictorRequest(predictorId, body).withHttpInfo());
+  }
+
+  private PatchRoutingPredictorRequest createPatchRoutingPredictorRequest(String predictorId, PatchPredictorRequest body) {
+    return PatchRoutingPredictorRequest.builder()
+            .withPredictorId(predictorId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update single predictor.
+   * 
+   * @param request The request object
+   * @return Predictor
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Predictor patchRoutingPredictor(PatchRoutingPredictorRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Predictor> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Predictor>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update single predictor.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Predictor> patchRoutingPredictor(ApiRequest<PatchPredictorRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Predictor>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Predictor> response = (ApiResponse<Predictor>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Predictor> response = (ApiResponse<Predictor>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Update the ring number OR joined status for a queue member.
    * 
    * @param queueId Queue ID (required)
@@ -5564,6 +6570,164 @@ public class RoutingApi {
 
   
   /**
+   * Create a benefit assessment.
+   * 
+   * @param body  (optional)
+   * @return BenefitAssessment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BenefitAssessment postRoutingAssessments(CreateBenefitAssessmentRequest body) throws IOException, ApiException {
+    return  postRoutingAssessments(createPostRoutingAssessmentsRequest(body));
+  }
+
+  /**
+   * Create a benefit assessment.
+   * 
+   * @param body  (optional)
+   * @return BenefitAssessment
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BenefitAssessment> postRoutingAssessmentsWithHttpInfo(CreateBenefitAssessmentRequest body) throws IOException {
+    return postRoutingAssessments(createPostRoutingAssessmentsRequest(body).withHttpInfo());
+  }
+
+  private PostRoutingAssessmentsRequest createPostRoutingAssessmentsRequest(CreateBenefitAssessmentRequest body) {
+    return PostRoutingAssessmentsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a benefit assessment.
+   * 
+   * @param request The request object
+   * @return BenefitAssessment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BenefitAssessment postRoutingAssessments(PostRoutingAssessmentsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BenefitAssessment> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BenefitAssessment>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a benefit assessment.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BenefitAssessment> postRoutingAssessments(ApiRequest<CreateBenefitAssessmentRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BenefitAssessment>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BenefitAssessment> response = (ApiResponse<BenefitAssessment>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BenefitAssessment> response = (ApiResponse<BenefitAssessment>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create a benefit assessment job.
+   * 
+   * @param body  (optional)
+   * @return BenefitAssessmentJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BenefitAssessmentJob postRoutingAssessmentsJobs(CreateBenefitAssessmentJobRequest body) throws IOException, ApiException {
+    return  postRoutingAssessmentsJobs(createPostRoutingAssessmentsJobsRequest(body));
+  }
+
+  /**
+   * Create a benefit assessment job.
+   * 
+   * @param body  (optional)
+   * @return BenefitAssessmentJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BenefitAssessmentJob> postRoutingAssessmentsJobsWithHttpInfo(CreateBenefitAssessmentJobRequest body) throws IOException {
+    return postRoutingAssessmentsJobs(createPostRoutingAssessmentsJobsRequest(body).withHttpInfo());
+  }
+
+  private PostRoutingAssessmentsJobsRequest createPostRoutingAssessmentsJobsRequest(CreateBenefitAssessmentJobRequest body) {
+    return PostRoutingAssessmentsJobsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a benefit assessment job.
+   * 
+   * @param request The request object
+   * @return BenefitAssessmentJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BenefitAssessmentJob postRoutingAssessmentsJobs(PostRoutingAssessmentsJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BenefitAssessmentJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BenefitAssessmentJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a benefit assessment job.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BenefitAssessmentJob> postRoutingAssessmentsJobs(ApiRequest<CreateBenefitAssessmentJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BenefitAssessmentJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BenefitAssessmentJob> response = (ApiResponse<BenefitAssessmentJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BenefitAssessmentJob> response = (ApiResponse<BenefitAssessmentJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Create a route
    * 
    * @param domainName email domain (required)
@@ -5882,6 +7046,85 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Language> response = (ApiResponse<Language>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create a predictor.
+   * 
+   * @param body  (optional)
+   * @return Predictor
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Predictor postRoutingPredictors(CreatePredictorRequest body) throws IOException, ApiException {
+    return  postRoutingPredictors(createPostRoutingPredictorsRequest(body));
+  }
+
+  /**
+   * Create a predictor.
+   * 
+   * @param body  (optional)
+   * @return Predictor
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Predictor> postRoutingPredictorsWithHttpInfo(CreatePredictorRequest body) throws IOException {
+    return postRoutingPredictors(createPostRoutingPredictorsRequest(body).withHttpInfo());
+  }
+
+  private PostRoutingPredictorsRequest createPostRoutingPredictorsRequest(CreatePredictorRequest body) {
+    return PostRoutingPredictorsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a predictor.
+   * 
+   * @param request The request object
+   * @return Predictor
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Predictor postRoutingPredictors(PostRoutingPredictorsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Predictor> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Predictor>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a predictor.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Predictor> postRoutingPredictors(ApiRequest<CreatePredictorRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Predictor>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Predictor> response = (ApiResponse<Predictor>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Predictor> response = (ApiResponse<Predictor>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

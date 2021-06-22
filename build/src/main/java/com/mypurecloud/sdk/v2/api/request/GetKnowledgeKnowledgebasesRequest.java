@@ -108,6 +108,50 @@ public class GetKnowledgeKnowledgebasesRequest {
 	    return this;
 	} 
 	
+	private String coreLanguage;
+	public String getCoreLanguage() {
+		return this.coreLanguage;
+	}
+
+	public void setCoreLanguage(String coreLanguage) {
+		this.coreLanguage = coreLanguage;
+	}
+
+	public GetKnowledgeKnowledgebasesRequest withCoreLanguage(String coreLanguage) {
+	    this.setCoreLanguage(coreLanguage);
+	    return this;
+	} 
+
+	public enum coreLanguageValues { 
+		EN_US("en-US"), 
+		DE_DE("de-DE");
+
+		private String value;
+
+		coreLanguageValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static coreLanguageValues fromString(String key) {
+			if (key == null) return null;
+
+			for (coreLanguageValues value : coreLanguageValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return coreLanguageValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -140,6 +184,8 @@ public class GetKnowledgeKnowledgebasesRequest {
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("name", "", name)
+        
+                .withQueryParameters("coreLanguage", "", coreLanguage)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -185,6 +231,16 @@ public class GetKnowledgeKnowledgebasesRequest {
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
+		}
+		
+		public Builder withCoreLanguage(String coreLanguage) {
+			request.setCoreLanguage(coreLanguage);
+			return this;
+		}
+
+		public Builder withCoreLanguage(coreLanguageValues coreLanguage) {
+		    request.setCoreLanguage(coreLanguage.toString());
+		    return this;
 		}
 		
 

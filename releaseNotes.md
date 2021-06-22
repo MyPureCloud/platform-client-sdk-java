@@ -1,250 +1,300 @@
-Platform API version: 4770
+Platform API version: 4784
 
 
-Switching guava dependency from Android to JRE
+# Release notes
 
-# Major Changes (27 changes)
+* Forcing a major release to ensure SDKs align with API definition
 
-**GET /api/v2/architect/schedulegroups** (1 change)
+# Major Changes (15 changes)
 
-* Parameter divisionId was added
-
-**GET /api/v2/architect/schedules** (1 change)
-
-* Parameter divisionId was added
-
-**GET /api/v2/gamification/metrics/{metricId}** (1 change)
-
-* Parameter performance profile id was added
-
-**PUT /api/v2/gamification/metrics/{metricId}** (1 change)
-
-* Parameter performance profile id was added
-
-**GET /api/v2/journey/actiontemplates** (2 changes)
+**GET /api/v2/journey/outcomes** (2 changes)
 
 * Parameter queryFields was added
 * Parameter queryValue was added
 
-**PerformanceProfile** (3 changes)
+**GET /api/v2/journey/segments** (2 changes)
 
-* Required property reportingIntervals was added
-* Required property active was added
-* Required property maxLeaderboardRankSize was added
+* Parameter queryFields was added
+* Parameter queryValue was added
 
-**EntityListing** (5 changes)
+**GET /api/v2/journey/actionmaps** (2 changes)
 
-* Property pageSize was removed
-* Property pageNumber was removed
-* Property total was removed
-* Property pageCount was removed
-* Property entities was changed from DataTableImportJob[] to object[]
+* Parameter queryFields was added
+* Parameter queryValue was added
 
-**AuditLogMessage** (5 changes)
+**GET /api/v2/knowledge/knowledgebases** (1 change)
 
-* Enum value ConversationMessaging was removed from property serviceName
-* Enum value PhoneNumber was removed from property entityType
-* Enum value Recipient was removed from property entityType
-* Enum value Account was removed from property entityType
-* Enum value DefaultSupportedContent was removed from property entityType
+* Parameter coreLanguage was added
 
-**AuditRealtimeQueryRequest** (1 change)
+**JourneyAggregateQueryPredicate** (4 changes)
 
-* Enum value ConversationMessaging was removed from property serviceName
+* Enum value greaterThanCondition was removed from property dimension
+* Enum value greaterThanOrEqualCondition was removed from property dimension
+* Enum value lessThanCondition was removed from property dimension
+* Enum value lessThanOrEqualCondition was removed from property dimension
 
-**AuditQueryExecutionStatusResponse** (1 change)
+**JourneyAggregationQuery** (4 changes)
 
-* Enum value ConversationMessaging was removed from property serviceName
-
-**AuditQueryEntity** (4 changes)
-
-* Enum value PhoneNumber was removed from property name
-* Enum value Recipient was removed from property name
-* Enum value Account was removed from property name
-* Enum value DefaultSupportedContent was removed from property name
-
-**AuditQueryService** (1 change)
-
-* Enum value ConversationMessaging was removed from property name
-
-**AuditQueryRequest** (1 change)
-
-* Enum value ConversationMessaging was removed from property serviceName
+* Enum value greaterThanCondition was removed from property groupBy
+* Enum value greaterThanOrEqualCondition was removed from property groupBy
+* Enum value lessThanCondition was removed from property groupBy
+* Enum value lessThanOrEqualCondition was removed from property groupBy
 
 
-# Minor Changes (43 changes)
+# Minor Changes (100 changes)
 
-**/api/v2/workforcemanagement/agents/{agentId}/managementunit** (2 changes)
+**/api/v2/routing/predictors** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**/api/v2/routing/assessments/jobs/{jobId}** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/workforcemanagement/agents/me/managementunit** (2 changes)
+**/api/v2/routing/queues/{queueId}/comparisonperiods/{comparisonPeriodId}** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**PerformanceProfile** (2 changes)
+**/api/v2/routing/predictors/{predictorId}** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+* Operation PATCH was added
+
+**/api/v2/routing/predictors/keyperformanceindicators** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/routing/assessments/{assessmentId}** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+
+**/api/v2/routing/assessments/jobs** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**/api/v2/routing/assessments** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**/api/v2/routing/queues/{queueId}/comparisonperiods** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**Team** (1 change)
 
 * Optional property division was added
-* Optional property dateCreated was added
 
-**ReportingInterval** (1 change)
+**FlowVersion** (2 changes)
 
-* Model was added
+* Enum value INQUEUEEMAIL was added to property compatibleFlowTypes
+* Enum value INQUEUESHORTMESSAGE was added to property compatibleFlowTypes
 
-**ViewFilter** (1 change)
+**AnalyticsFlow** (2 changes)
 
-* Optional property isNotResponding was added
+* Enum value INQUEUEEMAIL was added to property flowType
+* Enum value INQUEUESHORTMESSAGE was added to property flowType
 
-**Leaderboard** (1 change)
-
-* Optional property userRank was added
-
-**WorkPlan** (1 change)
-
-* Optional property valid was added
-
-**WorkPlanActivity** (1 change)
-
-* Optional property validationId was added
-
-**WorkPlanShift** (1 change)
-
-* Optional property validationId was added
-
-**WorkPlanListItemResponse** (1 change)
-
-* Optional property valid was added
-
-**WorkPlanValidationRequest** (1 change)
-
-* Optional property valid was added
-
-**AgentManagementUnitReference** (1 change)
+**Predictor** (1 change)
 
 * Model was added
 
-**AuditLogMessage** (9 changes)
+**PredictorListing** (1 change)
 
-* Enum value Datatables was added to property serviceName
-* Enum value Messaging was added to property serviceName
-* Enum value Bulk was added to property entityType
-* Enum value Row was added to property entityType
-* Enum value Schema was added to property entityType
-* Enum value ConversationPhoneNumber was added to property entityType
-* Enum value ConversationRecipient was added to property entityType
-* Enum value ConversationAccount was added to property entityType
-* Enum value ConversationDefaultSupportedContent was added to property entityType
+* Model was added
 
-**AuditRealtimeQueryRequest** (2 changes)
+**PredictorSchedule** (1 change)
 
-* Enum value Datatables was added to property serviceName
-* Enum value Messaging was added to property serviceName
+* Model was added
+
+**PredictorWorkloadBalancing** (1 change)
+
+* Model was added
+
+**CreatePredictorRequest** (1 change)
+
+* Model was added
+
+**ViewFilter** (3 changes)
+
+* Enum value instagram was added to property messageTypes
+* Enum value inqueueshortmessage was added to property flowTypes
+* Enum value inqueueemail was added to property flowTypes
+
+**EventMessage** (3 changes)
+
+* Enum value IMPORT_INVALID_EMAIL_ADDRESSES was added to property code
+* Enum value IMPORT_INVALID_EXPIRATION_DATE was added to property code
+* Enum value IMPORT_EXPIRATION_DATE_EXCEEDS_MAX_DAYS was added to property code
+
+**DevelopmentActivity** (1 change)
+
+* Enum value Assessment was added to property type
+
+**BenefitAssessmentJob** (1 change)
+
+* Model was added
+
+**Flow** (4 changes)
+
+* Enum value INQUEUEEMAIL was added to property type
+* Enum value INQUEUESHORTMESSAGE was added to property type
+* Enum value INQUEUEEMAIL was added to property compatibleFlowTypes
+* Enum value INQUEUESHORTMESSAGE was added to property compatibleFlowTypes
+
+**ComparisonPeriod** (1 change)
+
+* Model was added
+
+**CreateCallbackCommand** (2 changes)
+
+* Optional property callerId was added
+* Optional property callerIdName was added
+
+**Dependency** (2 changes)
+
+* Enum value INQUEUEEMAILFLOW was added to property type
+* Enum value INQUEUESHORTMESSAGEFLOW was added to property type
+
+**VoicemailGroupPolicy** (1 change)
+
+* Optional property disableEmailPii was added
+
+**DependencyObject** (2 changes)
+
+* Enum value INQUEUEEMAILFLOW was added to property type
+* Enum value INQUEUESHORTMESSAGEFLOW was added to property type
+
+**PatchPredictorRequest** (1 change)
+
+* Model was added
+
+**KeyPerformanceIndicator** (1 change)
+
+* Model was added
+
+**TrustUpdate** (1 change)
+
+* Model was added
+
+**BenefitAssessment** (1 change)
+
+* Model was added
+
+**Check** (1 change)
+
+* Model was added
+
+**KeyPerformanceIndicatorAssessment** (1 change)
+
+* Model was added
+
+**AssessmentJobListing** (1 change)
+
+* Model was added
+
+**CreateBenefitAssessmentJobRequest** (1 change)
+
+* Model was added
+
+**AssessmentListing** (1 change)
+
+* Model was added
+
+**CreateBenefitAssessmentRequest** (1 change)
+
+* Model was added
+
+**CreateCallbackOnConversationCommand** (2 changes)
+
+* Optional property callerId was added
+* Optional property callerIdName was added
+
+**VoicemailOrganizationPolicy** (1 change)
+
+* Optional property disableEmailPii was added
+
+**ComparisonPeriodListing** (1 change)
+
+* Model was added
+
+**FlowDivisionView** (2 changes)
+
+* Enum value INQUEUEEMAIL was added to property type
+* Enum value INQUEUESHORTMESSAGE was added to property type
 
 **AuditQueryExecutionStatusResponse** (2 changes)
 
-* Enum value Datatables was added to property serviceName
-* Enum value Messaging was added to property serviceName
-
-**AuditQueryEntity** (7 changes)
-
-* Enum value Bulk was added to property name
-* Enum value Row was added to property name
-* Enum value Schema was added to property name
-* Enum value ConversationPhoneNumber was added to property name
-* Enum value ConversationRecipient was added to property name
-* Enum value ConversationAccount was added to property name
-* Enum value ConversationDefaultSupportedContent was added to property name
-
-**AuditQueryService** (2 changes)
-
-* Enum value Datatables was added to property name
-* Enum value Messaging was added to property name
+* Enum value Coaching was added to property serviceName
+* Enum value Gamification was added to property serviceName
 
 **AuditQueryRequest** (2 changes)
 
-* Enum value Datatables was added to property serviceName
-* Enum value Messaging was added to property serviceName
+* Enum value Coaching was added to property serviceName
+* Enum value Gamification was added to property serviceName
 
-**JourneyAggregateQueryPredicate** (1 change)
+**AuditLogMessage** (12 changes)
 
-* Enum value journeyBlockingEmergencyScheduleGroupId was added to property dimension
+* Enum value Coaching was added to property serviceName
+* Enum value Gamification was added to property serviceName
+* Enum value Write was added to property action
+* Enum value Purge was added to property action
+* Enum value Processed was added to property action
+* Enum value Annotation was added to property entityType
+* Enum value Appointment was added to property entityType
+* Enum value ExternalMetricData was added to property entityType
+* Enum value HistoricalData was added to property entityType
+* Enum value Metric was added to property entityType
+* Enum value Status was added to property entityType
+* Enum value SupportedContent was added to property entityType
 
-**JourneyAggregationQuery** (1 change)
+**AuditRealtimeQueryRequest** (2 changes)
 
-* Enum value journeyBlockingEmergencyScheduleGroupId was added to property groupBy
+* Enum value Coaching was added to property serviceName
+* Enum value Gamification was added to property serviceName
 
-**CrossPlatformPolicyUpdate** (1 change)
+**AuditQueryEntity** (10 changes)
 
-* Model was added
+* Enum value Annotation was added to property name
+* Enum value Appointment was added to property name
+* Enum value ExternalMetricData was added to property name
+* Enum value HistoricalData was added to property name
+* Enum value Metric was added to property name
+* Enum value Status was added to property name
+* Enum value SupportedContent was added to property name
+* Enum value Write was added to property actions
+* Enum value Purge was added to property actions
+* Enum value Processed was added to property actions
 
-**PolicyUpdate** (1 change)
+**AuditQueryService** (2 changes)
 
-* Model was added
+* Enum value Coaching was added to property name
+* Enum value Gamification was added to property name
 
 
-# Point Changes (21 changes)
+# Point Changes (3 changes)
 
-**GET /api/v2/gamification/leaderboard** (1 change)
+**GET /api/v2/journey/outcomes** (1 change)
 
-* Summary was changed
+* Description was changed for parameter outcomeIds
 
-**GET /api/v2/gamification/leaderboard/all** (1 change)
+**GET /api/v2/journey/segments** (1 change)
 
-* Summary was changed
+* Description was changed for parameter segmentIds
 
-**GET /api/v2/gamification/scorecards/users/{userId}** (1 change)
+**GET /api/v2/journey/actionmaps** (1 change)
 
-* Description was changed for parameter workday
-
-**GET /api/v2/gamification/scorecards/users/{userId}/attendance** (2 changes)
-
-* Description was changed for parameter startWorkday
-* Description was changed for parameter endWorkday
-
-**GET /api/v2/gamification/scorecards/users/{userId}/points/trends** (2 changes)
-
-* Description was changed for parameter startWorkday
-* Description was changed for parameter endWorkday
-
-**GET /api/v2/gamification/scorecards/users/{userId}/points/alltime** (1 change)
-
-* Description was changed for parameter endWorkday
-
-**GET /api/v2/gamification/scorecards/users/{userId}/values/trends** (2 changes)
-
-* Description was changed for parameter startWorkday
-* Description was changed for parameter endWorkday
-
-**GET /api/v2/gamification/scorecards/users/values/trends** (2 changes)
-
-* Description was changed for parameter startWorkday
-* Description was changed for parameter endWorkday
-
-**GET /api/v2/journey/actiontemplates** (1 change)
-
-* Description was changed for parameter state
-
-**GET /api/v2/gamification/scorecards** (1 change)
-
-* Description was changed for parameter workday
-
-**GET /api/v2/gamification/scorecards/attendance** (2 changes)
-
-* Description was changed for parameter startWorkday
-* Description was changed for parameter endWorkday
-
-**GET /api/v2/gamification/scorecards/points/alltime** (1 change)
-
-* Description was changed for parameter endWorkday
-
-**GET /api/v2/gamification/scorecards/points/trends** (2 changes)
-
-* Description was changed for parameter startWorkday
-* Description was changed for parameter endWorkday
-
-**GET /api/v2/gamification/scorecards/values/trends** (2 changes)
-
-* Description was changed for parameter startWorkday
-* Description was changed for parameter endWorkday
+* Description was changed for parameter actionMapIds
