@@ -44,7 +44,7 @@ title: AuditLogMessage
 | LIMITS | &quot;Limits&quot; |
 | OUTBOUND | &quot;Outbound&quot; |
 | PEOPLEPERMISSIONS | &quot;PeoplePermissions&quot; |
-| PERFORMANCE | &quot;Performance&quot; |
+| EMPLOYEEPERFORMANCE | &quot;EmployeePerformance&quot; |
 | PREDICTIVEENGAGEMENT | &quot;PredictiveEngagement&quot; |
 | PRESENCE | &quot;Presence&quot; |
 | QUALITY | &quot;Quality&quot; |
@@ -58,6 +58,7 @@ title: AuditLogMessage
 | WEBHOOKS | &quot;Webhooks&quot; |
 | WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; |
 | MESSAGING | &quot;Messaging&quot; |
+| SUPPORTABILITY | &quot;Supportability&quot; |
 {: class="table table-striped"}
 
 
@@ -120,6 +121,14 @@ title: AuditLogMessage
 | WRITE | &quot;Write&quot; |
 | PURGE | &quot;Purge&quot; |
 | PROCESSED | &quot;Processed&quot; |
+| REPLACE | &quot;Replace&quot; |
+| UPDATEINSERVICE | &quot;UpdateInService&quot; |
+| UPDATEOUTOFSERVICE | &quot;UpdateOutOfService&quot; |
+| CYCLE | &quot;Cycle&quot; |
+| SCALE | &quot;Scale&quot; |
+| IPALLOWLISTCLEAR | &quot;IpAllowlistClear&quot; |
+| ADDPAIRINGROLE | &quot;AddPairingRole&quot; |
+| ADD | &quot;Add&quot; |
 {: class="table table-striped"}
 
 
@@ -131,6 +140,8 @@ title: AuditLogMessage
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ACCESSTOKEN | &quot;AccessToken&quot; |
+| ACTIONMAP | &quot;ActionMap&quot; |
+| ACTIONTEMPLATE | &quot;ActionTemplate&quot; |
 | ANNOTATION | &quot;Annotation&quot; |
 | APPOINTMENT | &quot;Appointment&quot; |
 | ATTEMPTLIMITS | &quot;AttemptLimits&quot; |
@@ -150,15 +161,25 @@ title: AuditLogMessage
 | CONFIGURATIONVERSION | &quot;ConfigurationVersion&quot; |
 | CONTACTLIST | &quot;ContactList&quot; |
 | CONTACTLISTFILTER | &quot;ContactListFilter&quot; |
-| DEPLOYMENT | &quot;Deployment&quot; |
+| CONVERSATIONACCOUNT | &quot;ConversationAccount&quot; |
+| CONVERSATIONDEFAULTSUPPORTEDCONTENT | &quot;ConversationDefaultSupportedContent&quot; |
+| CONVERSATIONPHONENUMBER | &quot;ConversationPhoneNumber&quot; |
+| CONVERSATIONRECIPIENT | &quot;ConversationRecipient&quot; |
+| CONVERSATIONTHREADINGWINDOW | &quot;ConversationThreadingWindow&quot; |
 | DASHBOARDSETTINGS | &quot;DashboardSettings&quot; |
 | DEPENDENCYTRACKINGBUILD | &quot;DependencyTrackingBuild&quot; |
+| DEPLOYMENT | &quot;Deployment&quot; |
 | DID | &quot;DID&quot; |
 | DIDPOOL | &quot;DIDPool&quot; |
 | DNCLIST | &quot;DNCList&quot; |
 | DOCUMENT | &quot;Document&quot; |
 | EDGE | &quot;Edge&quot; |
 | EDGEGROUP | &quot;EdgeGroup&quot; |
+| EDGELOG | &quot;EdgeLog&quot; |
+| EDGELOGZIP | &quot;EdgeLogZip&quot; |
+| EDGEPCAPS | &quot;EdgePcaps&quot; |
+| EDGEPREFERENCES | &quot;EdgePreferences&quot; |
+| EDGETRACELEVEL | &quot;EdgeTraceLevel&quot; |
 | EMERGENCYGROUP | &quot;EmergencyGroup&quot; |
 | EVALUATION | &quot;Evaluation&quot; |
 | EVALUATIONFORM | &quot;EvaluationForm&quot; |
@@ -166,8 +187,8 @@ title: AuditLogMessage
 | EXPORTS | &quot;Exports&quot; |
 | EXTENSION | &quot;Extension&quot; |
 | EXTENSIONPOOL | &quot;ExtensionPool&quot; |
-| EXTERNALMETRICDATA | &quot;ExternalMetricData&quot; |
-| EXTERNALMETRICDEFINITION | &quot;ExternalMetricDefinition&quot; |
+| EXTERNALMETRICSDATA | &quot;ExternalMetricsData&quot; |
+| EXTERNALMETRICSDEFINITION | &quot;ExternalMetricsDefinition&quot; |
 | FEEDBACK | &quot;Feedback&quot; |
 | FLOW | &quot;Flow&quot; |
 | FLOWMILESTONE | &quot;FlowMilestone&quot; |
@@ -180,6 +201,7 @@ title: AuditLogMessage
 | LINE | &quot;Line&quot; |
 | LINEBASE | &quot;LineBase&quot; |
 | MAXORGROUTINGUTILIZATIONCAPACITY | &quot;MaxOrgRoutingUtilizationCapacity&quot; |
+| MEDIADIAGNOSTICSTRACEFILE | &quot;MediaDiagnosticsTraceFile&quot; |
 | MESSAGINGCAMPAIGN | &quot;MessagingCampaign&quot; |
 | METRIC | &quot;Metric&quot; |
 | NUMBERPLAN | &quot;NumberPlan&quot; |
@@ -187,14 +209,18 @@ title: AuditLogMessage
 | OAUTHCLIENTAUTHORIZATION | &quot;OAuthClientAuthorization&quot; |
 | ORGANIZATIONAUTHORIZATIONTRUST | &quot;OrganizationAuthorizationTrust&quot; |
 | ORGANIZATIONAUTHORIZATIONUSERTRUST | &quot;OrganizationAuthorizationUserTrust&quot; |
+| ORGANIZATIONFEATURE | &quot;OrganizationFeature&quot; |
+| ORGANIZATIONINTEGRATIONSACCESS | &quot;OrganizationIntegrationsAccess&quot; |
 | ORGANIZATIONSETTINGS | &quot;OrganizationSettings&quot; |
 | ORPHANEDRECORDING | &quot;OrphanedRecording&quot; |
 | OUTBOUNDROUTE | &quot;OutboundRoute&quot; |
 | OUTCOME | &quot;Outcome&quot; |
+| PCAPS | &quot;Pcaps&quot; |
 | PHONE | &quot;Phone&quot; |
 | PHONEBASE | &quot;PhoneBase&quot; |
 | POLICY | &quot;Policy&quot; |
 | PREDICTOR | &quot;Predictor&quot; |
+| PRODUCT | &quot;Product&quot; |
 | PROGRAM | &quot;Program&quot; |
 | PROMPT | &quot;Prompt&quot; |
 | PROMPTRESOURCE | &quot;PromptResource&quot; |
@@ -220,6 +246,8 @@ title: AuditLogMessage
 | SITE | &quot;Site&quot; |
 | SPEECHTEXTANALYTICSSETTINGS | &quot;SpeechTextAnalyticsSettings&quot; |
 | STATUS | &quot;Status&quot; |
+| SUPPORTEDCONTENT | &quot;SupportedContent&quot; |
+| SUPPORTFILE | &quot;SupportFile&quot; |
 | SURVEY | &quot;Survey&quot; |
 | SURVEYFORM | &quot;SurveyForm&quot; |
 | TEAM | &quot;Team&quot; |
@@ -228,6 +256,7 @@ title: AuditLogMessage
 | TRIGGER | &quot;Trigger&quot; |
 | TRUNK | &quot;Trunk&quot; |
 | TRUNKBASE | &quot;TrunkBase&quot; |
+| USER | &quot;User&quot; |
 | USERPRESENCE | &quot;UserPresence&quot; |
 | VOICEMAILPOLICY | &quot;VoicemailPolicy&quot; |
 | VOICEMAILUSERPOLICY | &quot;VoicemailUserPolicy&quot; |
@@ -236,12 +265,6 @@ title: AuditLogMessage
 | WORKSPACE | &quot;Workspace&quot; |
 | WRAPUPCODE | &quot;WrapupCode&quot; |
 | WRAPUPCODEMAPPING | &quot;WrapUpCodeMapping&quot; |
-| CONVERSATIONPHONENUMBER | &quot;ConversationPhoneNumber&quot; |
-| CONVERSATIONRECIPIENT | &quot;ConversationRecipient&quot; |
-| CONVERSATIONACCOUNT | &quot;ConversationAccount&quot; |
-| CONVERSATIONDEFAULTSUPPORTEDCONTENT | &quot;ConversationDefaultSupportedContent&quot; |
-| CONVERSATIONTHREADINGWINDOW | &quot;ConversationThreadingWindow&quot; |
-| SUPPORTEDCONTENT | &quot;SupportedContent&quot; |
 {: class="table table-striped"}
 
 

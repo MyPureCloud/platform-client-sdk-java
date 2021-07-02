@@ -112,7 +112,7 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     LIMITS("Limits"),
     OUTBOUND("Outbound"),
     PEOPLEPERMISSIONS("PeoplePermissions"),
-    PERFORMANCE("Performance"),
+    EMPLOYEEPERFORMANCE("EmployeePerformance"),
     PREDICTIVEENGAGEMENT("PredictiveEngagement"),
     PRESENCE("Presence"),
     QUALITY("Quality"),
@@ -125,7 +125,8 @@ public class AuditQueryExecutionStatusResponse  implements Serializable {
     WEBDEPLOYMENTS("WebDeployments"),
     WEBHOOKS("Webhooks"),
     WORKFORCEMANAGEMENT("WorkforceManagement"),
-    MESSAGING("Messaging");
+    MESSAGING("Messaging"),
+    SUPPORTABILITY("Supportability");
 
     private String value;
 

@@ -33,7 +33,7 @@ title: AuditQueryService
 | LIMITS | &quot;Limits&quot; |
 | OUTBOUND | &quot;Outbound&quot; |
 | PEOPLEPERMISSIONS | &quot;PeoplePermissions&quot; |
-| PERFORMANCE | &quot;Performance&quot; |
+| EMPLOYEEPERFORMANCE | &quot;EmployeePerformance&quot; |
 | PREDICTIVEENGAGEMENT | &quot;PredictiveEngagement&quot; |
 | PRESENCE | &quot;Presence&quot; |
 | QUALITY | &quot;Quality&quot; |
@@ -47,6 +47,7 @@ title: AuditQueryService
 | WEBHOOKS | &quot;Webhooks&quot; |
 | WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; |
 | MESSAGING | &quot;Messaging&quot; |
+| SUPPORTABILITY | &quot;Supportability&quot; |
 {: class="table table-striped"}
 
 

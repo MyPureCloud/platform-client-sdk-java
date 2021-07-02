@@ -39,6 +39,7 @@ import com.mypurecloud.sdk.v2.model.BuScheduleListing;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecast;
 import com.mypurecloud.sdk.v2.model.BuForecastResultResponse;
 import com.mypurecloud.sdk.v2.model.BuForecastGenerationResult;
+import com.mypurecloud.sdk.v2.model.LongTermForecastResultResponse;
 import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupsResponse;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecastListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitListing;
@@ -158,6 +159,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeek
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastDataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitsRequest;
@@ -2828,6 +2830,82 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<BuForecastGenerationResult> response = (ApiResponse<BuForecastGenerationResult>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the result of a long term forecast calculation
+   * Includes modifications unless you pass the doNotApplyModifications query parameter
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<LongTermForecastResultResponse> getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdataAsync(GetWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdataRequest request, final AsyncApiCallback<LongTermForecastResultResponse> callback) {
+    try {
+      final SettableFuture<LongTermForecastResultResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LongTermForecastResultResponse>() {}, new AsyncApiCallback<ApiResponse<LongTermForecastResultResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<LongTermForecastResultResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the result of a long term forecast calculation
+   * Includes modifications unless you pass the doNotApplyModifications query parameter
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<LongTermForecastResultResponse>> getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdataAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LongTermForecastResultResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<LongTermForecastResultResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<LongTermForecastResultResponse>() {}, new AsyncApiCallback<ApiResponse<LongTermForecastResultResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<LongTermForecastResultResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LongTermForecastResultResponse> response = (ApiResponse<LongTermForecastResultResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<LongTermForecastResultResponse> response = (ApiResponse<LongTermForecastResultResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

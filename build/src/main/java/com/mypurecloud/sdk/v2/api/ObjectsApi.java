@@ -21,6 +21,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsHomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsLimitRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationDivisionObjectRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAuthorizationDivisionRestoreRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationDivisionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAuthorizationDivisionRequest;
 
@@ -546,6 +547,89 @@ public class ObjectsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Recreate a previously deleted division.
+   * 
+   * @param divisionId Division ID (required)
+   * @param body Recreated division data (required)
+   * @return AuthzDivision
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthzDivision postAuthorizationDivisionRestore(String divisionId, AuthzDivision body) throws IOException, ApiException {
+    return  postAuthorizationDivisionRestore(createPostAuthorizationDivisionRestoreRequest(divisionId, body));
+  }
+
+  /**
+   * Recreate a previously deleted division.
+   * 
+   * @param divisionId Division ID (required)
+   * @param body Recreated division data (required)
+   * @return AuthzDivision
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthzDivision> postAuthorizationDivisionRestoreWithHttpInfo(String divisionId, AuthzDivision body) throws IOException {
+    return postAuthorizationDivisionRestore(createPostAuthorizationDivisionRestoreRequest(divisionId, body).withHttpInfo());
+  }
+
+  private PostAuthorizationDivisionRestoreRequest createPostAuthorizationDivisionRestoreRequest(String divisionId, AuthzDivision body) {
+    return PostAuthorizationDivisionRestoreRequest.builder()
+            .withDivisionId(divisionId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Recreate a previously deleted division.
+   * 
+   * @param request The request object
+   * @return AuthzDivision
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AuthzDivision postAuthorizationDivisionRestore(PostAuthorizationDivisionRestoreRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AuthzDivision> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AuthzDivision>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Recreate a previously deleted division.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AuthzDivision> postAuthorizationDivisionRestore(ApiRequest<AuthzDivision> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AuthzDivision>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthzDivision> response = (ApiResponse<AuthzDivision>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AuthzDivision> response = (ApiResponse<AuthzDivision>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

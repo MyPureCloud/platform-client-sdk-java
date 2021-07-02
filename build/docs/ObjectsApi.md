@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getAuthorizationDivisionsHome**](ObjectsApi.html#getAuthorizationDivisionsHome) | Retrieve the home division for the organization. |
 | [**getAuthorizationDivisionsLimit**](ObjectsApi.html#getAuthorizationDivisionsLimit) | Returns the maximum allowed number of divisions. |
 | [**postAuthorizationDivisionObject**](ObjectsApi.html#postAuthorizationDivisionObject) | Assign a list of objects to a division |
+| [**postAuthorizationDivisionRestore**](ObjectsApi.html#postAuthorizationDivisionRestore) | Recreate a previously deleted division. |
 | [**postAuthorizationDivisions**](ObjectsApi.html#postAuthorizationDivisions) | Create a division. |
 | [**putAuthorizationDivision**](ObjectsApi.html#putAuthorizationDivision) | Update a division. |
 {: class="table-striped"}
@@ -403,6 +404,71 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="postAuthorizationDivisionRestore"></a>
+
+# **postAuthorizationDivisionRestore**
+
+
+
+> [AuthzDivision](AuthzDivision.html) postAuthorizationDivisionRestore(divisionId, body)
+
+Recreate a previously deleted division.
+
+
+
+Wraps POST /api/v2/authorization/divisions/{divisionId}/restore  
+
+Requires ANY permissions: 
+
+* authorization:division:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ObjectsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ObjectsApi apiInstance = new ObjectsApi();
+String divisionId = "divisionId_example"; // String | Division ID
+AuthzDivision body = new AuthzDivision(); // AuthzDivision | Recreated division data
+try {
+    AuthzDivision result = apiInstance.postAuthorizationDivisionRestore(divisionId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ObjectsApi#postAuthorizationDivisionRestore");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **divisionId** | **String**| Division ID | 
+| **body** | [**AuthzDivision**](AuthzDivision.html)| Recreated division data | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AuthzDivision**](AuthzDivision.html)
 
 <a name="postAuthorizationDivisions"></a>
 

@@ -141,6 +141,54 @@ public class BuForecastTimeSeriesResult  implements Serializable {
   }
   private ForecastingMethodEnum forecastingMethod = null;
 
+  private static class ForecastTypeEnumDeserializer extends StdDeserializer<ForecastTypeEnum> {
+    public ForecastTypeEnumDeserializer() {
+      super(ForecastTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ForecastTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ForecastTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The forecasting type in this forecast result
+   */
+ @JsonDeserialize(using = ForecastTypeEnumDeserializer.class)
+  public enum ForecastTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    LONGTERM("LongTerm"),
+    SHORTTERM("ShortTerm");
+
+    private String value;
+
+    ForecastTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ForecastTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ForecastTypeEnum value : ForecastTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ForecastTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ForecastTypeEnum forecastType = null;
+
   
   /**
    * The metric this result applies to
@@ -178,6 +226,24 @@ public class BuForecastTimeSeriesResult  implements Serializable {
   }
 
   
+  /**
+   * The forecasting type in this forecast result
+   **/
+  public BuForecastTimeSeriesResult forecastType(ForecastTypeEnum forecastType) {
+    this.forecastType = forecastType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The forecasting type in this forecast result")
+  @JsonProperty("forecastType")
+  public ForecastTypeEnum getForecastType() {
+    return forecastType;
+  }
+  public void setForecastType(ForecastTypeEnum forecastType) {
+    this.forecastType = forecastType;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -189,12 +255,13 @@ public class BuForecastTimeSeriesResult  implements Serializable {
     }
     BuForecastTimeSeriesResult buForecastTimeSeriesResult = (BuForecastTimeSeriesResult) o;
     return Objects.equals(this.metric, buForecastTimeSeriesResult.metric) &&
-        Objects.equals(this.forecastingMethod, buForecastTimeSeriesResult.forecastingMethod);
+        Objects.equals(this.forecastingMethod, buForecastTimeSeriesResult.forecastingMethod) &&
+        Objects.equals(this.forecastType, buForecastTimeSeriesResult.forecastType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(metric, forecastingMethod);
+    return Objects.hash(metric, forecastingMethod, forecastType);
   }
 
   @Override
@@ -204,6 +271,7 @@ public class BuForecastTimeSeriesResult  implements Serializable {
     
     sb.append("    metric: ").append(toIndentedString(metric)).append("\n");
     sb.append("    forecastingMethod: ").append(toIndentedString(forecastingMethod)).append("\n");
+    sb.append("    forecastType: ").append(toIndentedString(forecastType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

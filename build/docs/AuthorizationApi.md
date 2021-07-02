@@ -31,6 +31,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUserRoles**](AuthorizationApi.html#getUserRoles) | Returns a listing of roles and permissions for a user. |
 | [**patchAuthorizationRole**](AuthorizationApi.html#patchAuthorizationRole) | Patch Organization Role for needsUpdate Field |
 | [**postAuthorizationDivisionObject**](AuthorizationApi.html#postAuthorizationDivisionObject) | Assign a list of objects to a division |
+| [**postAuthorizationDivisionRestore**](AuthorizationApi.html#postAuthorizationDivisionRestore) | Recreate a previously deleted division. |
 | [**postAuthorizationDivisions**](AuthorizationApi.html#postAuthorizationDivisions) | Create a division. |
 | [**postAuthorizationRole**](AuthorizationApi.html#postAuthorizationRole) | Bulk-grant subjects and divisions with an organization role. |
 | [**postAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi.html#postAuthorizationRoleComparedefaultRightRoleId) | Get an unsaved org role to default role comparison |
@@ -1619,6 +1620,71 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="postAuthorizationDivisionRestore"></a>
+
+# **postAuthorizationDivisionRestore**
+
+
+
+> [AuthzDivision](AuthzDivision.html) postAuthorizationDivisionRestore(divisionId, body)
+
+Recreate a previously deleted division.
+
+
+
+Wraps POST /api/v2/authorization/divisions/{divisionId}/restore  
+
+Requires ANY permissions: 
+
+* authorization:division:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AuthorizationApi apiInstance = new AuthorizationApi();
+String divisionId = "divisionId_example"; // String | Division ID
+AuthzDivision body = new AuthzDivision(); // AuthzDivision | Recreated division data
+try {
+    AuthzDivision result = apiInstance.postAuthorizationDivisionRestore(divisionId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuthorizationApi#postAuthorizationDivisionRestore");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **divisionId** | **String**| Division ID | 
+| **body** | [**AuthzDivision**](AuthzDivision.html)| Recreated division data | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AuthzDivision**](AuthzDivision.html)
 
 <a name="postAuthorizationDivisions"></a>
 

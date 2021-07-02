@@ -97,6 +97,7 @@ public class AnalyticsParticipantWithoutAttributes  implements Serializable {
     ACD("acd"),
     AGENT("agent"),
     API("api"),
+    BOTFLOW("botflow"),
     CAMPAIGN("campaign"),
     CUSTOMER("customer"),
     DIALER("dialer"),

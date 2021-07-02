@@ -51,6 +51,7 @@ import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
 import com.mypurecloud.sdk.v2.model.RoutingConversationAttributes;
 import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
+import com.mypurecloud.sdk.v2.model.OutboundDomain;
 import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
 import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.UserQueue;
@@ -137,6 +138,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainValidateRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailOutboundDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMemberRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMembersRequest;
@@ -5565,6 +5567,89 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<InboundDomain> response = (ApiResponse<InboundDomain>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Request an update of the emails from /replyTo of an outbound domain
+   * 
+   * @param domainId domain ID (required)
+   * @param body domain with emails that need update set (required)
+   * @return OutboundDomain
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OutboundDomain patchRoutingEmailOutboundDomain(String domainId, OutboundDomain body) throws IOException, ApiException {
+    return  patchRoutingEmailOutboundDomain(createPatchRoutingEmailOutboundDomainRequest(domainId, body));
+  }
+
+  /**
+   * Request an update of the emails from /replyTo of an outbound domain
+   * 
+   * @param domainId domain ID (required)
+   * @param body domain with emails that need update set (required)
+   * @return OutboundDomain
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OutboundDomain> patchRoutingEmailOutboundDomainWithHttpInfo(String domainId, OutboundDomain body) throws IOException {
+    return patchRoutingEmailOutboundDomain(createPatchRoutingEmailOutboundDomainRequest(domainId, body).withHttpInfo());
+  }
+
+  private PatchRoutingEmailOutboundDomainRequest createPatchRoutingEmailOutboundDomainRequest(String domainId, OutboundDomain body) {
+    return PatchRoutingEmailOutboundDomainRequest.builder()
+            .withDomainId(domainId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Request an update of the emails from /replyTo of an outbound domain
+   * 
+   * @param request The request object
+   * @return OutboundDomain
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OutboundDomain patchRoutingEmailOutboundDomain(PatchRoutingEmailOutboundDomainRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OutboundDomain> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutboundDomain>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Request an update of the emails from /replyTo of an outbound domain
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OutboundDomain> patchRoutingEmailOutboundDomain(ApiRequest<OutboundDomain> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OutboundDomain>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundDomain> response = (ApiResponse<OutboundDomain>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutboundDomain> response = (ApiResponse<OutboundDomain>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

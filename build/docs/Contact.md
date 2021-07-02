@@ -14,6 +14,7 @@ title: Contact
 | **type** | [**TypeEnum**](#TypeEnum)<!----> |  |  [optional] |
 | **extension** | <!----><!---->**String**<!----> | Use internal extension instead of address. Mutually exclusive with the address field. |  [optional] |
 | **countryCode** | <!----><!---->**String**<!----> |  |  [optional] |
+| **integration** | <!----><!---->**String**<!----> | Integration tag value if this number is associated with an external integration. |  [optional] |
 {: class="table table-striped"}
 
 

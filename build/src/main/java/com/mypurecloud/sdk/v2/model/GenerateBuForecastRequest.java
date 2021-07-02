@@ -22,6 +22,7 @@ public class GenerateBuForecastRequest  implements Serializable {
   
   private String description = null;
   private Integer weekCount = null;
+  private Boolean canUseForScheduling = null;
 
   
   /**
@@ -60,6 +61,24 @@ public class GenerateBuForecastRequest  implements Serializable {
   }
 
   
+  /**
+   * Whether this forecast can be used for scheduling
+   **/
+  public GenerateBuForecastRequest canUseForScheduling(Boolean canUseForScheduling) {
+    this.canUseForScheduling = canUseForScheduling;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether this forecast can be used for scheduling")
+  @JsonProperty("canUseForScheduling")
+  public Boolean getCanUseForScheduling() {
+    return canUseForScheduling;
+  }
+  public void setCanUseForScheduling(Boolean canUseForScheduling) {
+    this.canUseForScheduling = canUseForScheduling;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -71,12 +90,13 @@ public class GenerateBuForecastRequest  implements Serializable {
     }
     GenerateBuForecastRequest generateBuForecastRequest = (GenerateBuForecastRequest) o;
     return Objects.equals(this.description, generateBuForecastRequest.description) &&
-        Objects.equals(this.weekCount, generateBuForecastRequest.weekCount);
+        Objects.equals(this.weekCount, generateBuForecastRequest.weekCount) &&
+        Objects.equals(this.canUseForScheduling, generateBuForecastRequest.canUseForScheduling);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, weekCount);
+    return Objects.hash(description, weekCount, canUseForScheduling);
   }
 
   @Override
@@ -86,6 +106,7 @@ public class GenerateBuForecastRequest  implements Serializable {
     
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    weekCount: ").append(toIndentedString(weekCount)).append("\n");
+    sb.append("    canUseForScheduling: ").append(toIndentedString(canUseForScheduling)).append("\n");
     sb.append("}");
     return sb.toString();
   }

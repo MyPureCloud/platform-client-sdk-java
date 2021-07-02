@@ -10,6 +10,7 @@ title: BuForecastTimeSeriesResult
 | ------------ | ------------- | ------------- | ------------- |
 | **metric** | [**MetricEnum**](#MetricEnum)<!----> | The metric this result applies to |  [optional] |
 | **forecastingMethod** | [**ForecastingMethodEnum**](#ForecastingMethodEnum)<!----> | The forecasting method that was used for this metric |  [optional] |
+| **forecastType** | [**ForecastTypeEnum**](#ForecastTypeEnum)<!----> | The forecasting type in this forecast result |  [optional] |
 {: class="table table-striped"}
 
 
@@ -57,6 +58,18 @@ title: BuForecastTimeSeriesResult
 | DYNAMICHARMONICREGRESSION | &quot;DynamicHarmonicRegression&quot; |
 | THETA | &quot;Theta&quot; |
 | OTHER | &quot;Other&quot; |
+{: class="table table-striped"}
+
+
+<a name="ForecastTypeEnum"></a>
+
+## Enum: ForecastTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| LONGTERM | &quot;LongTerm&quot; |
+| SHORTTERM | &quot;ShortTerm&quot; |
 {: class="table table-striped"}
 
 

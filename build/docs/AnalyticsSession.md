@@ -16,6 +16,7 @@ title: AnalyticsSession
 | **addressTo** | <!----><!---->**String**<!----> | The address receiving an action |  [optional] |
 | **agentAssistantId** | <!----><!---->**String**<!----> | Unique identifier of the active virtual agent assistant |  [optional] |
 | **agentBullseyeRing** | <!----><!---->**Integer**<!----> | Bullseye ring of the targeted agent |  [optional] |
+| **agentOwned** | <!----><!---->**Boolean**<!----> | Flag indicating an agent-owned callback |  [optional] |
 | **ani** | <!----><!---->**String**<!----> | Automatic Number Identification (caller&#39;s number) |  [optional] |
 | **assignerId** | <!----><!---->**String**<!----> | ID of the user that manually assigned a conversation |  [optional] |
 | **authenticated** | <!----><!---->**Boolean**<!----> | Flag that indicates that the identity of the customer has been asserted as verified by the provider. |  [optional] |
@@ -65,6 +66,7 @@ title: AnalyticsSession
 | **sessionId** | <!----><!---->**String**<!----> | The unique identifier of this session |  [optional] |
 | **sharingScreen** | <!----><!---->**Boolean**<!----> | Flag determining if screenShare is started or not (true/false) |  [optional] |
 | **skipEnabled** | <!----><!---->**Boolean**<!----> | (Dialer) Whether the agent can skip the dialer contact |  [optional] |
+| **timeoutSeconds** | <!----><!---->**Integer**<!----> | The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling) |  [optional] |
 | **usedRouting** | [**UsedRoutingEnum**](#UsedRoutingEnum)<!----> | Complete routing method |  [optional] |
 | **videoAddressSelf** | <!----><!---->**String**<!----> | Direct Video address |  [optional] |
 | **videoRoomId** | <!----><!---->**String**<!----> | A unique identifier for a PureCloud video room |  [optional] |
@@ -73,7 +75,6 @@ title: AnalyticsSession
 | **flow** | <!----><!---->[**AnalyticsFlow**](AnalyticsFlow.html)<!----> | IVR flow execution associated with this session |  [optional] |
 | **metrics** | <!----><!---->[**List&lt;AnalyticsSessionMetric&gt;**](AnalyticsSessionMetric.html)<!----> | List of metrics for this session |  [optional] |
 | **segments** | <!----><!---->[**List&lt;AnalyticsConversationSegment&gt;**](AnalyticsConversationSegment.html)<!----> | List of segments for this session |  [optional] |
-| **timeoutSeconds** | <!----><!---->**Integer**<!----> | The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling) |  [optional] |
 {: class="table table-striped"}
 
 

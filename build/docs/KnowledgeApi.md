@@ -726,7 +726,7 @@ try {
 
 
 
-> [KnowledgeBaseListing](KnowledgeBaseListing.html) getKnowledgeKnowledgebases(before, after, limit, pageSize, name, coreLanguage)
+> [KnowledgeBaseListing](KnowledgeBaseListing.html) getKnowledgeKnowledgebases(before, after, limit, pageSize, name, coreLanguage, published)
 
 Get knowledge bases
 
@@ -764,10 +764,11 @@ String before = "before_example"; // String | The cursor that points to the star
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
 String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
-String name = "name_example"; // String | Name of the KnowledgeBase to filter.
-String coreLanguage = "coreLanguage_example"; // String | To filter knowledgebases by corelanguage.
+String name = "name_example"; // String | Filter by Name.
+String coreLanguage = "coreLanguage_example"; // String | Filter by core language.
+Boolean published = true; // Boolean | Filter by published status.
 try {
-    KnowledgeBaseListing result = apiInstance.getKnowledgeKnowledgebases(before, after, limit, pageSize, name, coreLanguage);
+    KnowledgeBaseListing result = apiInstance.getKnowledgeKnowledgebases(before, after, limit, pageSize, name, coreLanguage, published);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebases");
@@ -784,8 +785,9 @@ try {
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
-| **name** | **String**| Name of the KnowledgeBase to filter. | [optional] 
-| **coreLanguage** | **String**| To filter knowledgebases by corelanguage. | [optional]<br />**Values**: en-US, de-DE 
+| **name** | **String**| Filter by Name. | [optional] 
+| **coreLanguage** | **String**| Filter by core language. | [optional]<br />**Values**: en-US, de-DE 
+| **published** | **Boolean**| Filter by published status. | [optional] 
 {: class="table-striped"}
 
 

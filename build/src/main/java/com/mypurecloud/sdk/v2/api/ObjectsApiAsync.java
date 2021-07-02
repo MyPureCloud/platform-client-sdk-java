@@ -24,6 +24,7 @@ import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsHomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAuthorizationDivisionsLimitRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationDivisionObjectRequest;
+import com.mypurecloud.sdk.v2.api.request.PostAuthorizationDivisionRestoreRequest;
 import com.mypurecloud.sdk.v2.api.request.PostAuthorizationDivisionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutAuthorizationDivisionRequest;
 
@@ -491,6 +492,82 @@ public class ObjectsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Recreate a previously deleted division.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AuthzDivision> postAuthorizationDivisionRestoreAsync(PostAuthorizationDivisionRestoreRequest request, final AsyncApiCallback<AuthzDivision> callback) {
+    try {
+      final SettableFuture<AuthzDivision> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AuthzDivision>() {}, new AsyncApiCallback<ApiResponse<AuthzDivision>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthzDivision> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Recreate a previously deleted division.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AuthzDivision>> postAuthorizationDivisionRestoreAsync(ApiRequest<AuthzDivision> request, final AsyncApiCallback<ApiResponse<AuthzDivision>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AuthzDivision>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AuthzDivision>() {}, new AsyncApiCallback<ApiResponse<AuthzDivision>>() {
+        @Override
+        public void onCompleted(ApiResponse<AuthzDivision> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthzDivision> response = (ApiResponse<AuthzDivision>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AuthzDivision> response = (ApiResponse<AuthzDivision>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

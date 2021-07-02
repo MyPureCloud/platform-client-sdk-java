@@ -41,6 +41,7 @@ title: FlowAggregateQueryPredicate
 | ADDRESSTO | &quot;addressTo&quot; |
 | AGENTASSISTANTID | &quot;agentAssistantId&quot; |
 | AGENTBULLSEYERING | &quot;agentBullseyeRing&quot; |
+| AGENTOWNED | &quot;agentOwned&quot; |
 | AGENTRANK | &quot;agentRank&quot; |
 | AGENTSCORE | &quot;agentScore&quot; |
 | ANI | &quot;ani&quot; |

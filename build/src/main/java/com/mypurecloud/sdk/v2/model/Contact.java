@@ -128,6 +128,7 @@ public class Contact  implements Serializable {
   private TypeEnum type = null;
   private String extension = null;
   private String countryCode = null;
+  private String integration = null;
 
   
   /**
@@ -224,6 +225,24 @@ public class Contact  implements Serializable {
   }
 
   
+  /**
+   * Integration tag value if this number is associated with an external integration.
+   **/
+  public Contact integration(String integration) {
+    this.integration = integration;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "microsoftteams", value = "Integration tag value if this number is associated with an external integration.")
+  @JsonProperty("integration")
+  public String getIntegration() {
+    return integration;
+  }
+  public void setIntegration(String integration) {
+    this.integration = integration;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -239,12 +258,13 @@ public class Contact  implements Serializable {
         Objects.equals(this.mediaType, contact.mediaType) &&
         Objects.equals(this.type, contact.type) &&
         Objects.equals(this.extension, contact.extension) &&
-        Objects.equals(this.countryCode, contact.countryCode);
+        Objects.equals(this.countryCode, contact.countryCode) &&
+        Objects.equals(this.integration, contact.integration);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, display, mediaType, type, extension, countryCode);
+    return Objects.hash(address, display, mediaType, type, extension, countryCode, integration);
   }
 
   @Override
@@ -258,6 +278,7 @@ public class Contact  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    extension: ").append(toIndentedString(extension)).append("\n");
     sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
+    sb.append("    integration: ").append(toIndentedString(integration)).append("\n");
     sb.append("}");
     return sb.toString();
   }

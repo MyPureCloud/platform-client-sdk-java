@@ -36,6 +36,7 @@ import com.mypurecloud.sdk.v2.model.BuScheduleListing;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecast;
 import com.mypurecloud.sdk.v2.model.BuForecastResultResponse;
 import com.mypurecloud.sdk.v2.model.BuForecastGenerationResult;
+import com.mypurecloud.sdk.v2.model.LongTermForecastResultResponse;
 import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupsResponse;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecastListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitListing;
@@ -155,6 +156,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeek
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastDataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresultsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroupsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitsRequest;
@@ -3078,6 +3080,97 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BuForecastGenerationResult> response = (ApiResponse<BuForecastGenerationResult>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the result of a long term forecast calculation
+   * Includes modifications unless you pass the doNotApplyModifications query parameter
+   * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param forecastId The ID of the forecast (required)
+   * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+   * @return LongTermForecastResultResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LongTermForecastResultResponse getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata(String businessUnitId, LocalDate weekDateId, String forecastId, Boolean forceDownloadService) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata(createGetWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdataRequest(businessUnitId, weekDateId, forecastId, forceDownloadService));
+  }
+
+  /**
+   * Get the result of a long term forecast calculation
+   * Includes modifications unless you pass the doNotApplyModifications query parameter
+   * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+   * @param forecastId The ID of the forecast (required)
+   * @param forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes (optional)
+   * @return LongTermForecastResultResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LongTermForecastResultResponse> getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdataWithHttpInfo(String businessUnitId, LocalDate weekDateId, String forecastId, Boolean forceDownloadService) throws IOException {
+    return getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata(createGetWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdataRequest(businessUnitId, weekDateId, forecastId, forceDownloadService).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdataRequest createGetWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdataRequest(String businessUnitId, LocalDate weekDateId, String forecastId, Boolean forceDownloadService) {
+    return GetWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdataRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+    
+            .withWeekDateId(weekDateId)
+    
+            .withForecastId(forecastId)
+    
+            .withForceDownloadService(forceDownloadService)
+    
+            .build();
+  }
+
+  /**
+   * Get the result of a long term forecast calculation
+   * Includes modifications unless you pass the doNotApplyModifications query parameter
+   * @param request The request object
+   * @return LongTermForecastResultResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public LongTermForecastResultResponse getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata(GetWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdataRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<LongTermForecastResultResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LongTermForecastResultResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the result of a long term forecast calculation
+   * Includes modifications unless you pass the doNotApplyModifications query parameter
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<LongTermForecastResultResponse> getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<LongTermForecastResultResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<LongTermForecastResultResponse> response = (ApiResponse<LongTermForecastResultResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<LongTermForecastResultResponse> response = (ApiResponse<LongTermForecastResultResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

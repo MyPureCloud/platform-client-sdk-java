@@ -78,6 +78,8 @@ import com.mypurecloud.sdk.v2.model.TrunkBase;
 import com.mypurecloud.sdk.v2.model.TrunkBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkMetabaseEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkRecordingEnabledCount;
+import com.mypurecloud.sdk.v2.model.AsgScaleRequest;
+import com.mypurecloud.sdk.v2.model.ScaleASGResponse;
 import com.mypurecloud.sdk.v2.model.EdgeNetworkDiagnostic;
 import com.mypurecloud.sdk.v2.model.EdgeNetworkDiagnosticRequest;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJobUploadRequest;

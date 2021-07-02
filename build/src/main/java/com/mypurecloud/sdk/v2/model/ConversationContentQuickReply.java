@@ -100,7 +100,7 @@ public class ConversationContentQuickReply  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Content of the payload included in the quick reply response. Could be an ID identifying the quick reply response.")
+  @ApiModelProperty(example = "null", required = true, value = "Content of the payload included in the quick reply response. Could be an ID identifying the quick reply response.")
   @JsonProperty("payload")
   public String getPayload() {
     return payload;

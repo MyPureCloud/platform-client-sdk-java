@@ -25,6 +25,7 @@ public class ConversationThreadingWindow  implements Serializable {
   
   private String id = null;
   private List<ConversationThreadingWindowSetting> settings = new ArrayList<ConversationThreadingWindowSetting>();
+  private Long defaultTimeoutMinutes = null;
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
@@ -52,6 +53,13 @@ public class ConversationThreadingWindow  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The default conversation threading window timeout (Minutes)")
+  @JsonProperty("defaultTimeoutMinutes")
+  public Long getDefaultTimeoutMinutes() {
+    return defaultTimeoutMinutes;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -63,12 +71,13 @@ public class ConversationThreadingWindow  implements Serializable {
     }
     ConversationThreadingWindow conversationThreadingWindow = (ConversationThreadingWindow) o;
     return Objects.equals(this.id, conversationThreadingWindow.id) &&
-        Objects.equals(this.settings, conversationThreadingWindow.settings);
+        Objects.equals(this.settings, conversationThreadingWindow.settings) &&
+        Objects.equals(this.defaultTimeoutMinutes, conversationThreadingWindow.defaultTimeoutMinutes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, settings);
+    return Objects.hash(id, settings, defaultTimeoutMinutes);
   }
 
   @Override
@@ -78,6 +87,7 @@ public class ConversationThreadingWindow  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
+    sb.append("    defaultTimeoutMinutes: ").append(toIndentedString(defaultTimeoutMinutes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -152,6 +152,20 @@ public class GetKnowledgeKnowledgebasesRequest {
 		}
 	}
 	
+	private Boolean published;
+	public Boolean getPublished() {
+		return this.published;
+	}
+
+	public void setPublished(Boolean published) {
+		this.published = published;
+	}
+
+	public GetKnowledgeKnowledgebasesRequest withPublished(Boolean published) {
+	    this.setPublished(published);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -186,6 +200,8 @@ public class GetKnowledgeKnowledgebasesRequest {
                 .withQueryParameters("name", "", name)
         
                 .withQueryParameters("coreLanguage", "", coreLanguage)
+        
+                .withQueryParameters("published", "", published)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -241,6 +257,11 @@ public class GetKnowledgeKnowledgebasesRequest {
 		public Builder withCoreLanguage(coreLanguageValues coreLanguage) {
 		    request.setCoreLanguage(coreLanguage.toString());
 		    return this;
+		}
+		
+		public Builder withPublished(Boolean published) {
+			request.setPublished(published);
+			return this;
 		}
 		
 

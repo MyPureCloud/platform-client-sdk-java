@@ -118,7 +118,7 @@ public class ConversationContentButtonResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The response payload associated with the clicked button.")
+  @ApiModelProperty(example = "null", required = true, value = "The response payload associated with the clicked button.")
   @JsonProperty("payload")
   public String getPayload() {
     return payload;

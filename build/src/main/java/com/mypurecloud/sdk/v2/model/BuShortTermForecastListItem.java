@@ -79,6 +79,7 @@ public class BuShortTermForecastListItem  implements Serializable {
   private String description = null;
   private Boolean legacy = null;
   private WfmVersionedEntityMetadata metadata = null;
+  private Boolean canUseForScheduling = null;
   private String selfUri = null;
 
   
@@ -186,6 +187,24 @@ public class BuShortTermForecastListItem  implements Serializable {
   }
 
   
+  /**
+   * Whether this forecast can be used for scheduling
+   **/
+  public BuShortTermForecastListItem canUseForScheduling(Boolean canUseForScheduling) {
+    this.canUseForScheduling = canUseForScheduling;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether this forecast can be used for scheduling")
+  @JsonProperty("canUseForScheduling")
+  public Boolean getCanUseForScheduling() {
+    return canUseForScheduling;
+  }
+  public void setCanUseForScheduling(Boolean canUseForScheduling) {
+    this.canUseForScheduling = canUseForScheduling;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -210,12 +229,13 @@ public class BuShortTermForecastListItem  implements Serializable {
         Objects.equals(this.description, buShortTermForecastListItem.description) &&
         Objects.equals(this.legacy, buShortTermForecastListItem.legacy) &&
         Objects.equals(this.metadata, buShortTermForecastListItem.metadata) &&
+        Objects.equals(this.canUseForScheduling, buShortTermForecastListItem.canUseForScheduling) &&
         Objects.equals(this.selfUri, buShortTermForecastListItem.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, weekDate, weekCount, creationMethod, description, legacy, metadata, selfUri);
+    return Objects.hash(id, weekDate, weekCount, creationMethod, description, legacy, metadata, canUseForScheduling, selfUri);
   }
 
   @Override
@@ -230,6 +250,7 @@ public class BuShortTermForecastListItem  implements Serializable {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    legacy: ").append(toIndentedString(legacy)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    canUseForScheduling: ").append(toIndentedString(canUseForScheduling)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

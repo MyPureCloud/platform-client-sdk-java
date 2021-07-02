@@ -42,6 +42,7 @@ title: SegmentDetailQueryPredicate
 | ADDRESSFROM | &quot;addressFrom&quot; |
 | ADDRESSTO | &quot;addressTo&quot; |
 | AGENTASSISTANTID | &quot;agentAssistantId&quot; |
+| AGENTOWNED | &quot;agentOwned&quot; |
 | ANI | &quot;ani&quot; |
 | AUTHENTICATED | &quot;authenticated&quot; |
 | CALLBACKNUMBER | &quot;callbackNumber&quot; |

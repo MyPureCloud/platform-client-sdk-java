@@ -93,6 +93,7 @@ public class SegmentDetailQueryPredicate  implements Serializable {
     ADDRESSFROM("addressFrom"),
     ADDRESSTO("addressTo"),
     AGENTASSISTANTID("agentAssistantId"),
+    AGENTOWNED("agentOwned"),
     ANI("ani"),
     AUTHENTICATED("authenticated"),
     CALLBACKNUMBER("callbackNumber"),

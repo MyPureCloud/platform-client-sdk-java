@@ -46,6 +46,7 @@ import com.mypurecloud.sdk.v2.model.BuScheduleListing;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecast;
 import com.mypurecloud.sdk.v2.model.BuForecastResultResponse;
 import com.mypurecloud.sdk.v2.model.BuForecastGenerationResult;
+import com.mypurecloud.sdk.v2.model.LongTermForecastResultResponse;
 import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupsResponse;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecastListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitListing;

@@ -86,6 +86,7 @@ public class BuShortTermForecast  implements Serializable {
   private String description = null;
   private Boolean legacy = null;
   private WfmVersionedEntityMetadata metadata = null;
+  private Boolean canUseForScheduling = null;
   private Date referenceStartDate = null;
   private List<ForecastSourceDayPointer> sourceDays = new ArrayList<ForecastSourceDayPointer>();
   private List<BuForecastModification> modifications = new ArrayList<BuForecastModification>();
@@ -197,6 +198,24 @@ public class BuShortTermForecast  implements Serializable {
   }
   public void setMetadata(WfmVersionedEntityMetadata metadata) {
     this.metadata = metadata;
+  }
+
+  
+  /**
+   * Whether this forecast can be used for scheduling
+   **/
+  public BuShortTermForecast canUseForScheduling(Boolean canUseForScheduling) {
+    this.canUseForScheduling = canUseForScheduling;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether this forecast can be used for scheduling")
+  @JsonProperty("canUseForScheduling")
+  public Boolean getCanUseForScheduling() {
+    return canUseForScheduling;
+  }
+  public void setCanUseForScheduling(Boolean canUseForScheduling) {
+    this.canUseForScheduling = canUseForScheduling;
   }
 
   
@@ -350,6 +369,7 @@ public class BuShortTermForecast  implements Serializable {
         Objects.equals(this.description, buShortTermForecast.description) &&
         Objects.equals(this.legacy, buShortTermForecast.legacy) &&
         Objects.equals(this.metadata, buShortTermForecast.metadata) &&
+        Objects.equals(this.canUseForScheduling, buShortTermForecast.canUseForScheduling) &&
         Objects.equals(this.referenceStartDate, buShortTermForecast.referenceStartDate) &&
         Objects.equals(this.sourceDays, buShortTermForecast.sourceDays) &&
         Objects.equals(this.modifications, buShortTermForecast.modifications) &&
@@ -362,7 +382,7 @@ public class BuShortTermForecast  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, weekDate, weekCount, creationMethod, description, legacy, metadata, referenceStartDate, sourceDays, modifications, generationResults, timeZone, planningGroupsVersion, planningGroups, selfUri);
+    return Objects.hash(id, weekDate, weekCount, creationMethod, description, legacy, metadata, canUseForScheduling, referenceStartDate, sourceDays, modifications, generationResults, timeZone, planningGroupsVersion, planningGroups, selfUri);
   }
 
   @Override
@@ -377,6 +397,7 @@ public class BuShortTermForecast  implements Serializable {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    legacy: ").append(toIndentedString(legacy)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    canUseForScheduling: ").append(toIndentedString(canUseForScheduling)).append("\n");
     sb.append("    referenceStartDate: ").append(toIndentedString(referenceStartDate)).append("\n");
     sb.append("    sourceDays: ").append(toIndentedString(sourceDays)).append("\n");
     sb.append("    modifications: ").append(toIndentedString(modifications)).append("\n");

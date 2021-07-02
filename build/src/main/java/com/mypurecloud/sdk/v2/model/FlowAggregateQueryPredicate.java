@@ -95,6 +95,7 @@ public class FlowAggregateQueryPredicate  implements Serializable {
     ADDRESSTO("addressTo"),
     AGENTASSISTANTID("agentAssistantId"),
     AGENTBULLSEYERING("agentBullseyeRing"),
+    AGENTOWNED("agentOwned"),
     AGENTRANK("agentRank"),
     AGENTSCORE("agentScore"),
     ANI("ani"),

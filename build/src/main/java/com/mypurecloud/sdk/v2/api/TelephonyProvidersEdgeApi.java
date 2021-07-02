@@ -68,6 +68,8 @@ import com.mypurecloud.sdk.v2.model.TrunkBase;
 import com.mypurecloud.sdk.v2.model.TrunkBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkMetabaseEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkRecordingEnabledCount;
+import com.mypurecloud.sdk.v2.model.AsgScaleRequest;
+import com.mypurecloud.sdk.v2.model.ScaleASGResponse;
 import com.mypurecloud.sdk.v2.model.EdgeNetworkDiagnostic;
 import com.mypurecloud.sdk.v2.model.EdgeNetworkDiagnosticRequest;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJobUploadRequest;
@@ -166,6 +168,7 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbaseset
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkswithrecordingRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchTelephonyProvidersEdgesAutoscalinggroupCapacityRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticNslookupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticPingRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticRouteRequest;
@@ -7495,6 +7498,89 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TrunkRecordingEnabledCount> response = (ApiResponse<TrunkRecordingEnabledCount>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Scales the ASG to match the desired capacity
+   * 
+   * @param asgId Id of the asg that is to be scaled (required)
+   * @param body AsgScaleRequest (required)
+   * @return ScaleASGResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScaleASGResponse patchTelephonyProvidersEdgesAutoscalinggroupCapacity(String asgId, AsgScaleRequest body) throws IOException, ApiException {
+    return  patchTelephonyProvidersEdgesAutoscalinggroupCapacity(createPatchTelephonyProvidersEdgesAutoscalinggroupCapacityRequest(asgId, body));
+  }
+
+  /**
+   * Scales the ASG to match the desired capacity
+   * 
+   * @param asgId Id of the asg that is to be scaled (required)
+   * @param body AsgScaleRequest (required)
+   * @return ScaleASGResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScaleASGResponse> patchTelephonyProvidersEdgesAutoscalinggroupCapacityWithHttpInfo(String asgId, AsgScaleRequest body) throws IOException {
+    return patchTelephonyProvidersEdgesAutoscalinggroupCapacity(createPatchTelephonyProvidersEdgesAutoscalinggroupCapacityRequest(asgId, body).withHttpInfo());
+  }
+
+  private PatchTelephonyProvidersEdgesAutoscalinggroupCapacityRequest createPatchTelephonyProvidersEdgesAutoscalinggroupCapacityRequest(String asgId, AsgScaleRequest body) {
+    return PatchTelephonyProvidersEdgesAutoscalinggroupCapacityRequest.builder()
+            .withAsgId(asgId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Scales the ASG to match the desired capacity
+   * 
+   * @param request The request object
+   * @return ScaleASGResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ScaleASGResponse patchTelephonyProvidersEdgesAutoscalinggroupCapacity(PatchTelephonyProvidersEdgesAutoscalinggroupCapacityRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ScaleASGResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScaleASGResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Scales the ASG to match the desired capacity
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ScaleASGResponse> patchTelephonyProvidersEdgesAutoscalinggroupCapacity(ApiRequest<AsgScaleRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ScaleASGResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScaleASGResponse> response = (ApiResponse<ScaleASGResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ScaleASGResponse> response = (ApiResponse<ScaleASGResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

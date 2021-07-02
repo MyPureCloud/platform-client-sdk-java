@@ -71,6 +71,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchRoutingConversation**](RoutingApi.html#patchRoutingConversation) | Update attributes of an in-queue conversation |
 | [**patchRoutingEmailDomain**](RoutingApi.html#patchRoutingEmailDomain) | Update domain settings |
 | [**patchRoutingEmailDomainValidate**](RoutingApi.html#patchRoutingEmailDomainValidate) | Validate domain settings |
+| [**patchRoutingEmailOutboundDomain**](RoutingApi.html#patchRoutingEmailOutboundDomain) | Request an update of the emails from /replyTo of an outbound domain |
 | [**patchRoutingPredictor**](RoutingApi.html#patchRoutingPredictor) | Update single predictor. |
 | [**patchRoutingQueueMember**](RoutingApi.html#patchRoutingQueueMember) | Update the ring number OR joined status for a queue member. |
 | [**patchRoutingQueueMembers**](RoutingApi.html#patchRoutingQueueMembers) | Join or unjoin a set of users for a queue |
@@ -4299,6 +4300,71 @@ try {
 ### Return type
 
 [**InboundDomain**](InboundDomain.html)
+
+<a name="patchRoutingEmailOutboundDomain"></a>
+
+# **patchRoutingEmailOutboundDomain**
+
+
+
+> [OutboundDomain](OutboundDomain.html) patchRoutingEmailOutboundDomain(domainId, body)
+
+Request an update of the emails from /replyTo of an outbound domain
+
+
+
+Wraps PATCH /api/v2/routing/email/outbound/domains/{domainId}  
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RoutingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RoutingApi apiInstance = new RoutingApi();
+String domainId = "domainId_example"; // String | domain ID
+OutboundDomain body = new OutboundDomain(); // OutboundDomain | domain with emails that need update set
+try {
+    OutboundDomain result = apiInstance.patchRoutingEmailOutboundDomain(domainId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RoutingApi#patchRoutingEmailOutboundDomain");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domainId** | **String**| domain ID | 
+| **body** | [**OutboundDomain**](OutboundDomain.html)| domain with emails that need update set | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OutboundDomain**](OutboundDomain.html)
 
 <a name="patchRoutingPredictor"></a>
 

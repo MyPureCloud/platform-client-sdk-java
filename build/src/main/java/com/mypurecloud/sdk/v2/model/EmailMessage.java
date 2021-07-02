@@ -31,6 +31,7 @@ public class EmailMessage  implements Serializable {
   private List<EmailAddress> cc = new ArrayList<EmailAddress>();
   private List<EmailAddress> bcc = new ArrayList<EmailAddress>();
   private EmailAddress from = null;
+  private EmailAddress replyTo = null;
   private String subject = null;
   private List<Attachment> attachments = new ArrayList<Attachment>();
   private String textBody = null;
@@ -133,6 +134,24 @@ public class EmailMessage  implements Serializable {
   }
   public void setFrom(EmailAddress from) {
     this.from = from;
+  }
+
+  
+  /**
+   * The receiver of the reply email message.
+   **/
+  public EmailMessage replyTo(EmailAddress replyTo) {
+    this.replyTo = replyTo;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The receiver of the reply email message.")
+  @JsonProperty("replyTo")
+  public EmailAddress getReplyTo() {
+    return replyTo;
+  }
+  public void setReplyTo(EmailAddress replyTo) {
+    this.replyTo = replyTo;
   }
 
   
@@ -267,6 +286,7 @@ public class EmailMessage  implements Serializable {
         Objects.equals(this.cc, emailMessage.cc) &&
         Objects.equals(this.bcc, emailMessage.bcc) &&
         Objects.equals(this.from, emailMessage.from) &&
+        Objects.equals(this.replyTo, emailMessage.replyTo) &&
         Objects.equals(this.subject, emailMessage.subject) &&
         Objects.equals(this.attachments, emailMessage.attachments) &&
         Objects.equals(this.textBody, emailMessage.textBody) &&
@@ -278,7 +298,7 @@ public class EmailMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, to, cc, bcc, from, subject, attachments, textBody, htmlBody, time, historyIncluded, selfUri);
+    return Objects.hash(id, name, to, cc, bcc, from, replyTo, subject, attachments, textBody, htmlBody, time, historyIncluded, selfUri);
   }
 
   @Override
@@ -292,6 +312,7 @@ public class EmailMessage  implements Serializable {
     sb.append("    cc: ").append(toIndentedString(cc)).append("\n");
     sb.append("    bcc: ").append(toIndentedString(bcc)).append("\n");
     sb.append("    from: ").append(toIndentedString(from)).append("\n");
+    sb.append("    replyTo: ").append(toIndentedString(replyTo)).append("\n");
     sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
     sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
     sb.append("    textBody: ").append(toIndentedString(textBody)).append("\n");

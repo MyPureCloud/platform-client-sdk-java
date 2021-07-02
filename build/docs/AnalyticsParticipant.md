@@ -42,6 +42,7 @@ title: AnalyticsParticipant
 | ACD | &quot;acd&quot; |
 | AGENT | &quot;agent&quot; |
 | API | &quot;api&quot; |
+| BOTFLOW | &quot;botflow&quot; |
 | CAMPAIGN | &quot;campaign&quot; |
 | CUSTOMER | &quot;customer&quot; |
 | DIALER | &quot;dialer&quot; |

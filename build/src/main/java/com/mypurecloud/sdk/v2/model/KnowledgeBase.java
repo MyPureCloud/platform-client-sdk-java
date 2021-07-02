@@ -78,6 +78,7 @@ public class KnowledgeBase  implements Serializable {
   private Integer faqCount = null;
   private Date dateDocumentLastModified = null;
   private Integer articleCount = null;
+  private Boolean published = null;
   private String selfUri = null;
 
   
@@ -176,6 +177,13 @@ public class KnowledgeBase  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "Flag that indicates the knowledge base is published")
+  @JsonProperty("published")
+  public Boolean getPublished() {
+    return published;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -202,12 +210,13 @@ public class KnowledgeBase  implements Serializable {
         Objects.equals(this.faqCount, knowledgeBase.faqCount) &&
         Objects.equals(this.dateDocumentLastModified, knowledgeBase.dateDocumentLastModified) &&
         Objects.equals(this.articleCount, knowledgeBase.articleCount) &&
+        Objects.equals(this.published, knowledgeBase.published) &&
         Objects.equals(this.selfUri, knowledgeBase.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, coreLanguage, dateCreated, dateModified, faqCount, dateDocumentLastModified, articleCount, selfUri);
+    return Objects.hash(id, name, description, coreLanguage, dateCreated, dateModified, faqCount, dateDocumentLastModified, articleCount, published, selfUri);
   }
 
   @Override
@@ -224,6 +233,7 @@ public class KnowledgeBase  implements Serializable {
     sb.append("    faqCount: ").append(toIndentedString(faqCount)).append("\n");
     sb.append("    dateDocumentLastModified: ").append(toIndentedString(dateDocumentLastModified)).append("\n");
     sb.append("    articleCount: ").append(toIndentedString(articleCount)).append("\n");
+    sb.append("    published: ").append(toIndentedString(published)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

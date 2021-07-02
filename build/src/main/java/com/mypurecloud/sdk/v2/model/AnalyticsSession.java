@@ -37,6 +37,7 @@ public class AnalyticsSession  implements Serializable {
   private String addressTo = null;
   private String agentAssistantId = null;
   private Integer agentBullseyeRing = null;
+  private Boolean agentOwned = null;
   private String ani = null;
   private String assignerId = null;
   private Boolean authenticated = null;
@@ -236,6 +237,7 @@ public class AnalyticsSession  implements Serializable {
   private String sessionId = null;
   private Boolean sharingScreen = null;
   private Boolean skipEnabled = null;
+  private Integer timeoutSeconds = null;
 
   private static class UsedRoutingEnumDeserializer extends StdDeserializer<UsedRoutingEnum> {
     public UsedRoutingEnumDeserializer() {
@@ -295,7 +297,6 @@ public class AnalyticsSession  implements Serializable {
   private AnalyticsFlow flow = null;
   private List<AnalyticsSessionMetric> metrics = new ArrayList<AnalyticsSessionMetric>();
   private List<AnalyticsConversationSegment> segments = new ArrayList<AnalyticsConversationSegment>();
-  private Integer timeoutSeconds = null;
 
   
   /**
@@ -439,6 +440,24 @@ public class AnalyticsSession  implements Serializable {
   }
   public void setAgentBullseyeRing(Integer agentBullseyeRing) {
     this.agentBullseyeRing = agentBullseyeRing;
+  }
+
+  
+  /**
+   * Flag indicating an agent-owned callback
+   **/
+  public AnalyticsSession agentOwned(Boolean agentOwned) {
+    this.agentOwned = agentOwned;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flag indicating an agent-owned callback")
+  @JsonProperty("agentOwned")
+  public Boolean getAgentOwned() {
+    return agentOwned;
+  }
+  public void setAgentOwned(Boolean agentOwned) {
+    this.agentOwned = agentOwned;
   }
 
   
@@ -1325,6 +1344,24 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling)
+   **/
+  public AnalyticsSession timeoutSeconds(Integer timeoutSeconds) {
+    this.timeoutSeconds = timeoutSeconds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling)")
+  @JsonProperty("timeoutSeconds")
+  public Integer getTimeoutSeconds() {
+    return timeoutSeconds;
+  }
+  public void setTimeoutSeconds(Integer timeoutSeconds) {
+    this.timeoutSeconds = timeoutSeconds;
+  }
+
+  
+  /**
    * Complete routing method
    **/
   public AnalyticsSession usedRouting(UsedRoutingEnum usedRouting) {
@@ -1468,24 +1505,6 @@ public class AnalyticsSession  implements Serializable {
   }
 
   
-  /**
-   * The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling)
-   **/
-  public AnalyticsSession timeoutSeconds(Integer timeoutSeconds) {
-    this.timeoutSeconds = timeoutSeconds;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The number of seconds before PureCloud begins the call for a call back (0 disables automatic calling)")
-  @JsonProperty("timeoutSeconds")
-  public Integer getTimeoutSeconds() {
-    return timeoutSeconds;
-  }
-  public void setTimeoutSeconds(Integer timeoutSeconds) {
-    this.timeoutSeconds = timeoutSeconds;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -1504,6 +1523,7 @@ public class AnalyticsSession  implements Serializable {
         Objects.equals(this.addressTo, analyticsSession.addressTo) &&
         Objects.equals(this.agentAssistantId, analyticsSession.agentAssistantId) &&
         Objects.equals(this.agentBullseyeRing, analyticsSession.agentBullseyeRing) &&
+        Objects.equals(this.agentOwned, analyticsSession.agentOwned) &&
         Objects.equals(this.ani, analyticsSession.ani) &&
         Objects.equals(this.assignerId, analyticsSession.assignerId) &&
         Objects.equals(this.authenticated, analyticsSession.authenticated) &&
@@ -1553,6 +1573,7 @@ public class AnalyticsSession  implements Serializable {
         Objects.equals(this.sessionId, analyticsSession.sessionId) &&
         Objects.equals(this.sharingScreen, analyticsSession.sharingScreen) &&
         Objects.equals(this.skipEnabled, analyticsSession.skipEnabled) &&
+        Objects.equals(this.timeoutSeconds, analyticsSession.timeoutSeconds) &&
         Objects.equals(this.usedRouting, analyticsSession.usedRouting) &&
         Objects.equals(this.videoAddressSelf, analyticsSession.videoAddressSelf) &&
         Objects.equals(this.videoRoomId, analyticsSession.videoRoomId) &&
@@ -1560,13 +1581,12 @@ public class AnalyticsSession  implements Serializable {
         Objects.equals(this.mediaEndpointStats, analyticsSession.mediaEndpointStats) &&
         Objects.equals(this.flow, analyticsSession.flow) &&
         Objects.equals(this.metrics, analyticsSession.metrics) &&
-        Objects.equals(this.segments, analyticsSession.segments) &&
-        Objects.equals(this.timeoutSeconds, analyticsSession.timeoutSeconds);
+        Objects.equals(this.segments, analyticsSession.segments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, ani, assignerId, authenticated, callbackNumbers, callbackScheduledTime, callbackUserName, cobrowseRole, cobrowseRoomId, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, usedRouting, videoAddressSelf, videoRoomId, proposedAgents, mediaEndpointStats, flow, metrics, segments, timeoutSeconds);
+    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, callbackNumbers, callbackScheduledTime, callbackUserName, cobrowseRole, cobrowseRoomId, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, proposedAgents, mediaEndpointStats, flow, metrics, segments);
   }
 
   @Override
@@ -1582,6 +1602,7 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    addressTo: ").append(toIndentedString(addressTo)).append("\n");
     sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
     sb.append("    agentBullseyeRing: ").append(toIndentedString(agentBullseyeRing)).append("\n");
+    sb.append("    agentOwned: ").append(toIndentedString(agentOwned)).append("\n");
     sb.append("    ani: ").append(toIndentedString(ani)).append("\n");
     sb.append("    assignerId: ").append(toIndentedString(assignerId)).append("\n");
     sb.append("    authenticated: ").append(toIndentedString(authenticated)).append("\n");
@@ -1631,6 +1652,7 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
     sb.append("    sharingScreen: ").append(toIndentedString(sharingScreen)).append("\n");
     sb.append("    skipEnabled: ").append(toIndentedString(skipEnabled)).append("\n");
+    sb.append("    timeoutSeconds: ").append(toIndentedString(timeoutSeconds)).append("\n");
     sb.append("    usedRouting: ").append(toIndentedString(usedRouting)).append("\n");
     sb.append("    videoAddressSelf: ").append(toIndentedString(videoAddressSelf)).append("\n");
     sb.append("    videoRoomId: ").append(toIndentedString(videoRoomId)).append("\n");
@@ -1639,7 +1661,6 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    flow: ").append(toIndentedString(flow)).append("\n");
     sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");
     sb.append("    segments: ").append(toIndentedString(segments)).append("\n");
-    sb.append("    timeoutSeconds: ").append(toIndentedString(timeoutSeconds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
