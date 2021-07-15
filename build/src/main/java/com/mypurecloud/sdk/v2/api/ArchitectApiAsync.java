@@ -47,7 +47,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTable;
 import com.mypurecloud.sdk.v2.model.DataTableExportJob;
 import com.mypurecloud.sdk.v2.model.DataTableImportJob;
-import com.mypurecloud.sdk.v2.model.EntityListing;
+import com.mypurecloud.sdk.v2.model.DataTableImportEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
@@ -4068,13 +4068,13 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<EntityListing> getFlowsDatatableImportJobsAsync(GetFlowsDatatableImportJobsRequest request, final AsyncApiCallback<EntityListing> callback) {
+  public Future<DataTableImportEntityListing> getFlowsDatatableImportJobsAsync(GetFlowsDatatableImportJobsRequest request, final AsyncApiCallback<DataTableImportEntityListing> callback) {
     try {
-      final SettableFuture<EntityListing> future = SettableFuture.create();
+      final SettableFuture<DataTableImportEntityListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<EntityListing>() {}, new AsyncApiCallback<ApiResponse<EntityListing>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataTableImportEntityListing>() {}, new AsyncApiCallback<ApiResponse<DataTableImportEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<EntityListing> response) {
+        public void onCompleted(ApiResponse<DataTableImportEntityListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -4102,13 +4102,13 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<EntityListing>> getFlowsDatatableImportJobsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<EntityListing>> callback) {
+  public Future<ApiResponse<DataTableImportEntityListing>> getFlowsDatatableImportJobsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataTableImportEntityListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<EntityListing>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<DataTableImportEntityListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<EntityListing>() {}, new AsyncApiCallback<ApiResponse<EntityListing>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<DataTableImportEntityListing>() {}, new AsyncApiCallback<ApiResponse<DataTableImportEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<EntityListing> response) {
+        public void onCompleted(ApiResponse<DataTableImportEntityListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -4116,7 +4116,7 @@ public class ArchitectApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)exception;
+            ApiResponse<DataTableImportEntityListing> response = (ApiResponse<DataTableImportEntityListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -4124,7 +4124,7 @@ public class ArchitectApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<DataTableImportEntityListing> response = (ApiResponse<DataTableImportEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

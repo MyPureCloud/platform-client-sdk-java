@@ -121,7 +121,7 @@ public class PutGamificationMetricRequest {
         return ApiRequestBuilder.create("PUT", "/api/v2/gamification/metrics/{metricId}")
                 .withPathParameter("metricId", metricId)
         
-                .withQueryParameters("performance profile id", "", performanceProfileId)
+                .withQueryParameters("performanceProfileId", "", performanceProfileId)
         
                 .withBody(body)
         

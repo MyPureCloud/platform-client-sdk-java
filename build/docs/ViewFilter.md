@@ -114,6 +114,16 @@ title: ViewFilter
 | **externalTags** | <!----><!---->**List&lt;String&gt;**<!----> | The list of external Tags used to filter conversation data |  [optional] |
 | **isNotResponding** | <!----><!---->**Boolean**<!----> | Indicates filtering for not responding users |  [optional] |
 | **isAuthenticated** | <!----><!---->**Boolean**<!----> | Indicates filtering for the authenticated chat |  [optional] |
+| **botIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of bot IDs used to filter bot views |  [optional] |
+| **botVersions** | <!----><!---->**List&lt;String&gt;**<!----> | The list of bot versions used to filter bot views |  [optional] |
+| **botMessageTypes** | <!---->[**List&lt;BotMessageTypesEnum&gt;**](#BotMessageTypesEnum)<!----> | The list of bot message types used to filter bot views |  [optional] |
+| **botProviderList** | <!---->[**List&lt;BotProviderListEnum&gt;**](#BotProviderListEnum)<!----> | The list of bot providers used to filter bot views |  [optional] |
+| **botProductList** | <!---->[**List&lt;BotProductListEnum&gt;**](#BotProductListEnum)<!----> | The list of bot products used to filter bot views |  [optional] |
+| **botRecognitionFailureReasonList** | <!---->[**List&lt;BotRecognitionFailureReasonListEnum&gt;**](#BotRecognitionFailureReasonListEnum)<!----> | The list of bot recognition failure reasons used to filter bot views |  [optional] |
+| **botIntentList** | <!----><!---->**List&lt;String&gt;**<!----> | The list of bot intents used to filter bot views |  [optional] |
+| **botFinalIntentList** | <!----><!---->**List&lt;String&gt;**<!----> | The list of bot final intents used to filter bot views |  [optional] |
+| **botSlotList** | <!----><!---->**List&lt;String&gt;**<!----> | The list of bot slots used to filter bot views |  [optional] |
+| **botResultList** | <!---->[**List&lt;BotResultListEnum&gt;**](#BotResultListEnum)<!----> | The list of bot results used to filter bot views |  [optional] |
 {: class="table table-striped"}
 
 
@@ -123,6 +133,7 @@ title: ViewFilter
 
 | Name | Value |
 | ---- | ----- |
+| UNKNOWN | &quot;unknown&quot; |
 | CALLBACK | &quot;callback&quot; |
 | CHAT | &quot;chat&quot; |
 | COBROWSE | &quot;cobrowse&quot; |
@@ -341,6 +352,96 @@ title: ViewFilter
 | INVALIDSCHEDULE | &quot;InvalidSchedule&quot; |
 | INPROGRESS | &quot;InProgress&quot; |
 | COMPLETED | &quot;Completed&quot; |
+{: class="table table-striped"}
+
+
+<a name="BotMessageTypesEnum"></a>
+
+## Enum: BotMessageTypesEnum
+
+| Name | Value |
+| ---- | ----- |
+| UNKNOWN | &quot;Unknown&quot; |
+| PHONE | &quot;Phone&quot; |
+| SMS | &quot;SMS&quot; |
+| GENESYSCHATWIDGET | &quot;GenesysChatWidget&quot; |
+| FACEBOOKMESSENGER | &quot;FacebookMessenger&quot; |
+| WECHAT | &quot;WeChat&quot; |
+| WHATSAPP | &quot;Whatsapp&quot; |
+| APPLEBUSINESSCHAT | &quot;AppleBusinessChat&quot; |
+| TELEGRAM | &quot;Telegram&quot; |
+| SLACK | &quot;Slack&quot; |
+| SIGNAL | &quot;Signal&quot; |
+| LINE | &quot;Line&quot; |
+| DISCORD | &quot;Discord&quot; |
+| TWITTERDIRECTMESSAGE | &quot;TwitterDirectMessage&quot; |
+| OTHER | &quot;Other&quot; |
+{: class="table table-striped"}
+
+
+<a name="BotProviderListEnum"></a>
+
+## Enum: BotProviderListEnum
+
+| Name | Value |
+| ---- | ----- |
+| UNKNOWN | &quot;Unknown&quot; |
+| GENESYS | &quot;Genesys&quot; |
+| AMAZON | &quot;Amazon&quot; |
+| GOOGLE | &quot;Google&quot; |
+| NUANCE | &quot;Nuance&quot; |
+{: class="table table-striped"}
+
+
+<a name="BotProductListEnum"></a>
+
+## Enum: BotProductListEnum
+
+| Name | Value |
+| ---- | ----- |
+| UNKNOWN | &quot;Unknown&quot; |
+| GENESYSDIALOGENGINE | &quot;GenesysDialogEngine&quot; |
+| AMAZONLEX | &quot;AmazonLex&quot; |
+| GOOGLEDIALOGFLOW | &quot;GoogleDialogFlow&quot; |
+| GOOGLEDIALOGFLOWRESELL | &quot;GoogleDialogFlowResell&quot; |
+| GENESYSBOTFLOW | &quot;GenesysBotFlow&quot; |
+| NUANCEDLG | &quot;NuanceDlg&quot; |
+| GOOGLEDIALOGFLOWCX | &quot;GoogleDialogFlowCx&quot; |
+| GENESYSBYOB | &quot;GenesysByob&quot; |
+{: class="table table-striped"}
+
+
+<a name="BotRecognitionFailureReasonListEnum"></a>
+
+## Enum: BotRecognitionFailureReasonListEnum
+
+| Name | Value |
+| ---- | ----- |
+| UNKNOWN | &quot;Unknown&quot; |
+| NOINPUTCOLLECTION | &quot;NoInputCollection&quot; |
+| NOINPUTCONFIRMATION | &quot;NoInputConfirmation&quot; |
+| NOMATCHCOLLECTION | &quot;NoMatchCollection&quot; |
+| NOMATCHCONFIRMATION | &quot;NoMatchConfirmation&quot; |
+| MAXWRONGMATCH | &quot;MaxWrongMatch&quot; |
+{: class="table table-striped"}
+
+
+<a name="BotResultListEnum"></a>
+
+## Enum: BotResultListEnum
+
+| Name | Value |
+| ---- | ----- |
+| UNKNOWN | &quot;Unknown&quot; |
+| EXITREQUESTEDBYUSER | &quot;ExitRequestedByUser&quot; |
+| EXITREQUESTEDBYBOT | &quot;ExitRequestedByBot&quot; |
+| EXITERROR | &quot;ExitError&quot; |
+| EXITRECOGNITIONFAILURE | &quot;ExitRecognitionFailure&quot; |
+| DISCONNECTREQUESTEDBYUSER | &quot;DisconnectRequestedByUser&quot; |
+| DISCONNECTREQUESTEDBYBOT | &quot;DisconnectRequestedByBot&quot; |
+| DISCONNECTSESSIONEXPIRED | &quot;DisconnectSessionExpired&quot; |
+| DISCONNECTERROR | &quot;DisconnectError&quot; |
+| DISCONNECTRECOGNITIONFAILURE | &quot;DisconnectRecognitionFailure&quot; |
 {: class="table table-striped"}
 
 

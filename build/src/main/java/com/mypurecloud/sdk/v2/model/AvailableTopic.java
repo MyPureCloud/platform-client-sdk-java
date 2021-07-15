@@ -31,6 +31,7 @@ public class AvailableTopic  implements Serializable {
   private List<PermissionDetails> permissionDetails = new ArrayList<PermissionDetails>();
   private List<String> requiresPermissions = new ArrayList<String>();
   private Boolean requiresDivisionPermissions = null;
+  private Boolean requiresAnyValidator = null;
   private Boolean enforced = null;
 
   private static class VisibilityEnumDeserializer extends StdDeserializer<VisibilityEnum> {
@@ -223,6 +224,24 @@ public class AvailableTopic  implements Serializable {
 
   
   /**
+   * If multiple permissions are required for this topic, such as both requiresCurrentUser and requiresDivisionPermissions, then true here indicates that meeting any one condition will satisfy the requirements; false indicates all conditions must be met.
+   **/
+  public AvailableTopic requiresAnyValidator(Boolean requiresAnyValidator) {
+    this.requiresAnyValidator = requiresAnyValidator;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If multiple permissions are required for this topic, such as both requiresCurrentUser and requiresDivisionPermissions, then true here indicates that meeting any one condition will satisfy the requirements; false indicates all conditions must be met.")
+  @JsonProperty("requiresAnyValidator")
+  public Boolean getRequiresAnyValidator() {
+    return requiresAnyValidator;
+  }
+  public void setRequiresAnyValidator(Boolean requiresAnyValidator) {
+    this.requiresAnyValidator = requiresAnyValidator;
+  }
+
+  
+  /**
    * Whether or not the permissions on this topic are enforced
    **/
   public AvailableTopic enforced(Boolean enforced) {
@@ -361,6 +380,7 @@ public class AvailableTopic  implements Serializable {
         Objects.equals(this.permissionDetails, availableTopic.permissionDetails) &&
         Objects.equals(this.requiresPermissions, availableTopic.requiresPermissions) &&
         Objects.equals(this.requiresDivisionPermissions, availableTopic.requiresDivisionPermissions) &&
+        Objects.equals(this.requiresAnyValidator, availableTopic.requiresAnyValidator) &&
         Objects.equals(this.enforced, availableTopic.enforced) &&
         Objects.equals(this.visibility, availableTopic.visibility) &&
         Objects.equals(this.schema, availableTopic.schema) &&
@@ -372,7 +392,7 @@ public class AvailableTopic  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, id, permissionDetails, requiresPermissions, requiresDivisionPermissions, enforced, visibility, schema, requiresCurrentUser, requiresCurrentUserOrPermission, transports, publicApiTemplateUriPaths);
+    return Objects.hash(description, id, permissionDetails, requiresPermissions, requiresDivisionPermissions, requiresAnyValidator, enforced, visibility, schema, requiresCurrentUser, requiresCurrentUserOrPermission, transports, publicApiTemplateUriPaths);
   }
 
   @Override
@@ -385,6 +405,7 @@ public class AvailableTopic  implements Serializable {
     sb.append("    permissionDetails: ").append(toIndentedString(permissionDetails)).append("\n");
     sb.append("    requiresPermissions: ").append(toIndentedString(requiresPermissions)).append("\n");
     sb.append("    requiresDivisionPermissions: ").append(toIndentedString(requiresDivisionPermissions)).append("\n");
+    sb.append("    requiresAnyValidator: ").append(toIndentedString(requiresAnyValidator)).append("\n");
     sb.append("    enforced: ").append(toIndentedString(enforced)).append("\n");
     sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
     sb.append("    schema: ").append(toIndentedString(schema)).append("\n");

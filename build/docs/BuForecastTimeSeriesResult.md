@@ -57,6 +57,7 @@ title: BuForecastTimeSeriesResult
 | MULTILINEARREGRESSION | &quot;MultiLinearRegression&quot; |
 | DYNAMICHARMONICREGRESSION | &quot;DynamicHarmonicRegression&quot; |
 | THETA | &quot;Theta&quot; |
+| ENSEMBLE | &quot;Ensemble&quot; |
 | OTHER | &quot;Other&quot; |
 {: class="table table-striped"}
 

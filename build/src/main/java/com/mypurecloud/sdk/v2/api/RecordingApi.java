@@ -3018,7 +3018,7 @@ public class RecordingApi {
   
   /**
    * Create media retention policy
-   * 
+   * Policy does not work retroactively
    * @param body Policy (required)
    * @return CrossPlatformPolicy
    * @throws ApiException if the request fails on the server
@@ -3030,7 +3030,7 @@ public class RecordingApi {
 
   /**
    * Create media retention policy
-   * 
+   * Policy does not work retroactively
    * @param body Policy (required)
    * @return CrossPlatformPolicy
    * @throws IOException if the request fails to be processed
@@ -3048,7 +3048,7 @@ public class RecordingApi {
 
   /**
    * Create media retention policy
-   * 
+   * Policy does not work retroactively
    * @param request The request object
    * @return CrossPlatformPolicy
    * @throws ApiException if the request fails on the server
@@ -3067,7 +3067,7 @@ public class RecordingApi {
 
   /**
    * Create media retention policy
-   * 
+   * Policy does not work retroactively
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3334,7 +3334,7 @@ public class RecordingApi {
   
   /**
    * Create media retention policy
-   * 
+   * Policy does not work retroactively
    * @param body Policy (required)
    * @return Policy
    * @throws ApiException if the request fails on the server
@@ -3346,7 +3346,7 @@ public class RecordingApi {
 
   /**
    * Create media retention policy
-   * 
+   * Policy does not work retroactively
    * @param body Policy (required)
    * @return Policy
    * @throws IOException if the request fails to be processed
@@ -3364,7 +3364,7 @@ public class RecordingApi {
 
   /**
    * Create media retention policy
-   * 
+   * Policy does not work retroactively
    * @param request The request object
    * @return Policy
    * @throws ApiException if the request fails on the server
@@ -3383,7 +3383,7 @@ public class RecordingApi {
 
   /**
    * Create media retention policy
-   * 
+   * Policy does not work retroactively
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3980,7 +3980,7 @@ public class RecordingApi {
   
   /**
    * Update a media retention policy
-   * 
+   * Policy does not work retroactively
    * @param policyId Policy ID (required)
    * @param body Policy (required)
    * @return CrossPlatformPolicy
@@ -3993,7 +3993,7 @@ public class RecordingApi {
 
   /**
    * Update a media retention policy
-   * 
+   * Policy does not work retroactively
    * @param policyId Policy ID (required)
    * @param body Policy (required)
    * @return CrossPlatformPolicy
@@ -4014,7 +4014,7 @@ public class RecordingApi {
 
   /**
    * Update a media retention policy
-   * 
+   * Policy does not work retroactively
    * @param request The request object
    * @return CrossPlatformPolicy
    * @throws ApiException if the request fails on the server
@@ -4033,7 +4033,7 @@ public class RecordingApi {
 
   /**
    * Update a media retention policy
-   * 
+   * Policy does not work retroactively
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4229,7 +4229,7 @@ public class RecordingApi {
   
   /**
    * Update a media retention policy
-   * 
+   * Policy does not work retroactively
    * @param policyId Policy ID (required)
    * @param body Policy (required)
    * @return Policy
@@ -4242,7 +4242,7 @@ public class RecordingApi {
 
   /**
    * Update a media retention policy
-   * 
+   * Policy does not work retroactively
    * @param policyId Policy ID (required)
    * @param body Policy (required)
    * @return Policy
@@ -4263,7 +4263,7 @@ public class RecordingApi {
 
   /**
    * Update a media retention policy
-   * 
+   * Policy does not work retroactively
    * @param request The request object
    * @return Policy
    * @throws ApiException if the request fails on the server
@@ -4282,7 +4282,7 @@ public class RecordingApi {
 
   /**
    * Update a media retention policy
-   * 
+   * Policy does not work retroactively
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

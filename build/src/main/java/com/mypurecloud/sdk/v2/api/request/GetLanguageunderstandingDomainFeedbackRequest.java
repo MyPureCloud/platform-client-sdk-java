@@ -29,10 +29,18 @@ import com.mypurecloud.sdk.v2.model.NluDomainVersion;
 import com.mypurecloud.sdk.v2.model.NluDomainVersionQualityReport;
 import com.mypurecloud.sdk.v2.model.NluDomainVersionListing;
 import com.mypurecloud.sdk.v2.model.NluDomainListing;
+import com.mypurecloud.sdk.v2.model.Miner;
+import com.mypurecloud.sdk.v2.model.Draft;
+import com.mypurecloud.sdk.v2.model.DraftListing;
+import com.mypurecloud.sdk.v2.model.MinerIntent;
+import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
+import com.mypurecloud.sdk.v2.model.MinerListing;
+import com.mypurecloud.sdk.v2.model.DraftRequest;
 import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
 import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
 import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
 import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
+import com.mypurecloud.sdk.v2.model.MinerExecuteRequest;
 
 public class GetLanguageunderstandingDomainFeedbackRequest {
     

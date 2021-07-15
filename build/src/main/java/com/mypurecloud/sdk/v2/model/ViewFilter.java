@@ -43,6 +43,7 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = MediaTypesEnumDeserializer.class)
   public enum MediaTypesEnum {
+    UNKNOWN("unknown"),
     CALLBACK("callback"),
     CHAT("chat"),
     COBROWSE("cobrowse"),
@@ -918,6 +919,281 @@ public class ViewFilter  implements Serializable {
   private List<String> externalTags = new ArrayList<String>();
   private Boolean isNotResponding = null;
   private Boolean isAuthenticated = null;
+  private List<String> botIds = new ArrayList<String>();
+  private List<String> botVersions = new ArrayList<String>();
+
+  private static class BotMessageTypesEnumDeserializer extends StdDeserializer<BotMessageTypesEnum> {
+    public BotMessageTypesEnumDeserializer() {
+      super(BotMessageTypesEnumDeserializer.class);
+    }
+
+    @Override
+    public BotMessageTypesEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return BotMessageTypesEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets botMessageTypes
+   */
+ @JsonDeserialize(using = BotMessageTypesEnumDeserializer.class)
+  public enum BotMessageTypesEnum {
+    UNKNOWN("Unknown"),
+    PHONE("Phone"),
+    SMS("SMS"),
+    GENESYSCHATWIDGET("GenesysChatWidget"),
+    FACEBOOKMESSENGER("FacebookMessenger"),
+    WECHAT("WeChat"),
+    WHATSAPP("Whatsapp"),
+    APPLEBUSINESSCHAT("AppleBusinessChat"),
+    TELEGRAM("Telegram"),
+    SLACK("Slack"),
+    SIGNAL("Signal"),
+    LINE("Line"),
+    DISCORD("Discord"),
+    TWITTERDIRECTMESSAGE("TwitterDirectMessage"),
+    OTHER("Other");
+
+    private String value;
+
+    BotMessageTypesEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static BotMessageTypesEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (BotMessageTypesEnum value : BotMessageTypesEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return BotMessageTypesEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<BotMessageTypesEnum> botMessageTypes = new ArrayList<BotMessageTypesEnum>();
+
+  private static class BotProviderListEnumDeserializer extends StdDeserializer<BotProviderListEnum> {
+    public BotProviderListEnumDeserializer() {
+      super(BotProviderListEnumDeserializer.class);
+    }
+
+    @Override
+    public BotProviderListEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return BotProviderListEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets botProviderList
+   */
+ @JsonDeserialize(using = BotProviderListEnumDeserializer.class)
+  public enum BotProviderListEnum {
+    UNKNOWN("Unknown"),
+    GENESYS("Genesys"),
+    AMAZON("Amazon"),
+    GOOGLE("Google"),
+    NUANCE("Nuance");
+
+    private String value;
+
+    BotProviderListEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static BotProviderListEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (BotProviderListEnum value : BotProviderListEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return BotProviderListEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<BotProviderListEnum> botProviderList = new ArrayList<BotProviderListEnum>();
+
+  private static class BotProductListEnumDeserializer extends StdDeserializer<BotProductListEnum> {
+    public BotProductListEnumDeserializer() {
+      super(BotProductListEnumDeserializer.class);
+    }
+
+    @Override
+    public BotProductListEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return BotProductListEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets botProductList
+   */
+ @JsonDeserialize(using = BotProductListEnumDeserializer.class)
+  public enum BotProductListEnum {
+    UNKNOWN("Unknown"),
+    GENESYSDIALOGENGINE("GenesysDialogEngine"),
+    AMAZONLEX("AmazonLex"),
+    GOOGLEDIALOGFLOW("GoogleDialogFlow"),
+    GOOGLEDIALOGFLOWRESELL("GoogleDialogFlowResell"),
+    GENESYSBOTFLOW("GenesysBotFlow"),
+    NUANCEDLG("NuanceDlg"),
+    GOOGLEDIALOGFLOWCX("GoogleDialogFlowCx"),
+    GENESYSBYOB("GenesysByob");
+
+    private String value;
+
+    BotProductListEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static BotProductListEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (BotProductListEnum value : BotProductListEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return BotProductListEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<BotProductListEnum> botProductList = new ArrayList<BotProductListEnum>();
+
+  private static class BotRecognitionFailureReasonListEnumDeserializer extends StdDeserializer<BotRecognitionFailureReasonListEnum> {
+    public BotRecognitionFailureReasonListEnumDeserializer() {
+      super(BotRecognitionFailureReasonListEnumDeserializer.class);
+    }
+
+    @Override
+    public BotRecognitionFailureReasonListEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return BotRecognitionFailureReasonListEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets botRecognitionFailureReasonList
+   */
+ @JsonDeserialize(using = BotRecognitionFailureReasonListEnumDeserializer.class)
+  public enum BotRecognitionFailureReasonListEnum {
+    UNKNOWN("Unknown"),
+    NOINPUTCOLLECTION("NoInputCollection"),
+    NOINPUTCONFIRMATION("NoInputConfirmation"),
+    NOMATCHCOLLECTION("NoMatchCollection"),
+    NOMATCHCONFIRMATION("NoMatchConfirmation"),
+    MAXWRONGMATCH("MaxWrongMatch");
+
+    private String value;
+
+    BotRecognitionFailureReasonListEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static BotRecognitionFailureReasonListEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (BotRecognitionFailureReasonListEnum value : BotRecognitionFailureReasonListEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return BotRecognitionFailureReasonListEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<BotRecognitionFailureReasonListEnum> botRecognitionFailureReasonList = new ArrayList<BotRecognitionFailureReasonListEnum>();
+  private List<String> botIntentList = new ArrayList<String>();
+  private List<String> botFinalIntentList = new ArrayList<String>();
+  private List<String> botSlotList = new ArrayList<String>();
+
+  private static class BotResultListEnumDeserializer extends StdDeserializer<BotResultListEnum> {
+    public BotResultListEnumDeserializer() {
+      super(BotResultListEnumDeserializer.class);
+    }
+
+    @Override
+    public BotResultListEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return BotResultListEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets botResultList
+   */
+ @JsonDeserialize(using = BotResultListEnumDeserializer.class)
+  public enum BotResultListEnum {
+    UNKNOWN("Unknown"),
+    EXITREQUESTEDBYUSER("ExitRequestedByUser"),
+    EXITREQUESTEDBYBOT("ExitRequestedByBot"),
+    EXITERROR("ExitError"),
+    EXITRECOGNITIONFAILURE("ExitRecognitionFailure"),
+    DISCONNECTREQUESTEDBYUSER("DisconnectRequestedByUser"),
+    DISCONNECTREQUESTEDBYBOT("DisconnectRequestedByBot"),
+    DISCONNECTSESSIONEXPIRED("DisconnectSessionExpired"),
+    DISCONNECTERROR("DisconnectError"),
+    DISCONNECTRECOGNITIONFAILURE("DisconnectRecognitionFailure");
+
+    private String value;
+
+    BotResultListEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static BotResultListEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (BotResultListEnum value : BotResultListEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return BotResultListEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<BotResultListEnum> botResultList = new ArrayList<BotResultListEnum>();
 
   
   /**
@@ -2828,6 +3104,186 @@ public class ViewFilter  implements Serializable {
   }
 
   
+  /**
+   * The list of bot IDs used to filter bot views
+   **/
+  public ViewFilter botIds(List<String> botIds) {
+    this.botIds = botIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of bot IDs used to filter bot views")
+  @JsonProperty("botIds")
+  public List<String> getBotIds() {
+    return botIds;
+  }
+  public void setBotIds(List<String> botIds) {
+    this.botIds = botIds;
+  }
+
+  
+  /**
+   * The list of bot versions used to filter bot views
+   **/
+  public ViewFilter botVersions(List<String> botVersions) {
+    this.botVersions = botVersions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of bot versions used to filter bot views")
+  @JsonProperty("botVersions")
+  public List<String> getBotVersions() {
+    return botVersions;
+  }
+  public void setBotVersions(List<String> botVersions) {
+    this.botVersions = botVersions;
+  }
+
+  
+  /**
+   * The list of bot message types used to filter bot views
+   **/
+  public ViewFilter botMessageTypes(List<BotMessageTypesEnum> botMessageTypes) {
+    this.botMessageTypes = botMessageTypes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of bot message types used to filter bot views")
+  @JsonProperty("botMessageTypes")
+  public List<BotMessageTypesEnum> getBotMessageTypes() {
+    return botMessageTypes;
+  }
+  public void setBotMessageTypes(List<BotMessageTypesEnum> botMessageTypes) {
+    this.botMessageTypes = botMessageTypes;
+  }
+
+  
+  /**
+   * The list of bot providers used to filter bot views
+   **/
+  public ViewFilter botProviderList(List<BotProviderListEnum> botProviderList) {
+    this.botProviderList = botProviderList;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of bot providers used to filter bot views")
+  @JsonProperty("botProviderList")
+  public List<BotProviderListEnum> getBotProviderList() {
+    return botProviderList;
+  }
+  public void setBotProviderList(List<BotProviderListEnum> botProviderList) {
+    this.botProviderList = botProviderList;
+  }
+
+  
+  /**
+   * The list of bot products used to filter bot views
+   **/
+  public ViewFilter botProductList(List<BotProductListEnum> botProductList) {
+    this.botProductList = botProductList;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of bot products used to filter bot views")
+  @JsonProperty("botProductList")
+  public List<BotProductListEnum> getBotProductList() {
+    return botProductList;
+  }
+  public void setBotProductList(List<BotProductListEnum> botProductList) {
+    this.botProductList = botProductList;
+  }
+
+  
+  /**
+   * The list of bot recognition failure reasons used to filter bot views
+   **/
+  public ViewFilter botRecognitionFailureReasonList(List<BotRecognitionFailureReasonListEnum> botRecognitionFailureReasonList) {
+    this.botRecognitionFailureReasonList = botRecognitionFailureReasonList;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of bot recognition failure reasons used to filter bot views")
+  @JsonProperty("botRecognitionFailureReasonList")
+  public List<BotRecognitionFailureReasonListEnum> getBotRecognitionFailureReasonList() {
+    return botRecognitionFailureReasonList;
+  }
+  public void setBotRecognitionFailureReasonList(List<BotRecognitionFailureReasonListEnum> botRecognitionFailureReasonList) {
+    this.botRecognitionFailureReasonList = botRecognitionFailureReasonList;
+  }
+
+  
+  /**
+   * The list of bot intents used to filter bot views
+   **/
+  public ViewFilter botIntentList(List<String> botIntentList) {
+    this.botIntentList = botIntentList;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of bot intents used to filter bot views")
+  @JsonProperty("botIntentList")
+  public List<String> getBotIntentList() {
+    return botIntentList;
+  }
+  public void setBotIntentList(List<String> botIntentList) {
+    this.botIntentList = botIntentList;
+  }
+
+  
+  /**
+   * The list of bot final intents used to filter bot views
+   **/
+  public ViewFilter botFinalIntentList(List<String> botFinalIntentList) {
+    this.botFinalIntentList = botFinalIntentList;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of bot final intents used to filter bot views")
+  @JsonProperty("botFinalIntentList")
+  public List<String> getBotFinalIntentList() {
+    return botFinalIntentList;
+  }
+  public void setBotFinalIntentList(List<String> botFinalIntentList) {
+    this.botFinalIntentList = botFinalIntentList;
+  }
+
+  
+  /**
+   * The list of bot slots used to filter bot views
+   **/
+  public ViewFilter botSlotList(List<String> botSlotList) {
+    this.botSlotList = botSlotList;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of bot slots used to filter bot views")
+  @JsonProperty("botSlotList")
+  public List<String> getBotSlotList() {
+    return botSlotList;
+  }
+  public void setBotSlotList(List<String> botSlotList) {
+    this.botSlotList = botSlotList;
+  }
+
+  
+  /**
+   * The list of bot results used to filter bot views
+   **/
+  public ViewFilter botResultList(List<BotResultListEnum> botResultList) {
+    this.botResultList = botResultList;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of bot results used to filter bot views")
+  @JsonProperty("botResultList")
+  public List<BotResultListEnum> getBotResultList() {
+    return botResultList;
+  }
+  public void setBotResultList(List<BotResultListEnum> botResultList) {
+    this.botResultList = botResultList;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -2943,12 +3399,22 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.topicIds, viewFilter.topicIds) &&
         Objects.equals(this.externalTags, viewFilter.externalTags) &&
         Objects.equals(this.isNotResponding, viewFilter.isNotResponding) &&
-        Objects.equals(this.isAuthenticated, viewFilter.isAuthenticated);
+        Objects.equals(this.isAuthenticated, viewFilter.isAuthenticated) &&
+        Objects.equals(this.botIds, viewFilter.botIds) &&
+        Objects.equals(this.botVersions, viewFilter.botVersions) &&
+        Objects.equals(this.botMessageTypes, viewFilter.botMessageTypes) &&
+        Objects.equals(this.botProviderList, viewFilter.botProviderList) &&
+        Objects.equals(this.botProductList, viewFilter.botProductList) &&
+        Objects.equals(this.botRecognitionFailureReasonList, viewFilter.botRecognitionFailureReasonList) &&
+        Objects.equals(this.botIntentList, viewFilter.botIntentList) &&
+        Objects.equals(this.botFinalIntentList, viewFilter.botFinalIntentList) &&
+        Objects.equals(this.botSlotList, viewFilter.botSlotList) &&
+        Objects.equals(this.botResultList, viewFilter.botResultList);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList);
   }
 
   @Override
@@ -3062,6 +3528,16 @@ public class ViewFilter  implements Serializable {
     sb.append("    externalTags: ").append(toIndentedString(externalTags)).append("\n");
     sb.append("    isNotResponding: ").append(toIndentedString(isNotResponding)).append("\n");
     sb.append("    isAuthenticated: ").append(toIndentedString(isAuthenticated)).append("\n");
+    sb.append("    botIds: ").append(toIndentedString(botIds)).append("\n");
+    sb.append("    botVersions: ").append(toIndentedString(botVersions)).append("\n");
+    sb.append("    botMessageTypes: ").append(toIndentedString(botMessageTypes)).append("\n");
+    sb.append("    botProviderList: ").append(toIndentedString(botProviderList)).append("\n");
+    sb.append("    botProductList: ").append(toIndentedString(botProductList)).append("\n");
+    sb.append("    botRecognitionFailureReasonList: ").append(toIndentedString(botRecognitionFailureReasonList)).append("\n");
+    sb.append("    botIntentList: ").append(toIndentedString(botIntentList)).append("\n");
+    sb.append("    botFinalIntentList: ").append(toIndentedString(botFinalIntentList)).append("\n");
+    sb.append("    botSlotList: ").append(toIndentedString(botSlotList)).append("\n");
+    sb.append("    botResultList: ").append(toIndentedString(botResultList)).append("\n");
     sb.append("}");
     return sb.toString();
   }

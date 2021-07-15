@@ -112,6 +112,7 @@ public class BuForecastTimeSeriesResult  implements Serializable {
     MULTILINEARREGRESSION("MultiLinearRegression"),
     DYNAMICHARMONICREGRESSION("DynamicHarmonicRegression"),
     THETA("Theta"),
+    ENSEMBLE("Ensemble"),
     OTHER("Other");
 
     private String value;

@@ -17,6 +17,7 @@ title: PostTextResponse
 | **googleDialogFlow** | <!----><!---->**Map&lt;String, Object&gt;**<!----> | Raw data response from Google Dialogflow (if called) |  [optional] |
 | **genesysDialogEngine** | <!----><!---->**Map&lt;String, Object&gt;**<!----> | Raw data response from Genesys&#39; Dialogengine (if called) |  [optional] |
 | **genesysBotConnector** | <!----><!---->**Map&lt;String, Object&gt;**<!----> | Raw data response from Genesys&#39; BotConnector (if called) |  [optional] |
+| **nuanceMixDlg** | <!----><!---->**Map&lt;String, Object&gt;**<!----> | Raw data response from Nuance Mix Dlg (if called) |  [optional] |
 {: class="table table-striped"}
 
 

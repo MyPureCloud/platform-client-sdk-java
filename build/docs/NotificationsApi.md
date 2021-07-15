@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getNotificationsAvailabletopics**](NotificationsApi.html#getNotificationsAvailabletopics) | Get available notification topics. |
 | [**getNotificationsChannelSubscriptions**](NotificationsApi.html#getNotificationsChannelSubscriptions) | The list of all subscriptions for this channel |
 | [**getNotificationsChannels**](NotificationsApi.html#getNotificationsChannels) | The list of existing channels |
+| [**headNotificationsChannel**](NotificationsApi.html#headNotificationsChannel) | Verify a channel still exists and is valid |
 | [**postNotificationsChannelSubscriptions**](NotificationsApi.html#postNotificationsChannelSubscriptions) | Add a list of subscriptions to the existing list of subscriptions |
 | [**postNotificationsChannels**](NotificationsApi.html#postNotificationsChannels) | Create a new channel |
 | [**putNotificationsChannelSubscriptions**](NotificationsApi.html#putNotificationsChannelSubscriptions) | Replace the current list of subscriptions with a new list. |
@@ -264,6 +265,68 @@ try {
 ### Return type
 
 [**ChannelEntityListing**](ChannelEntityListing.html)
+
+<a name="headNotificationsChannel"></a>
+
+# **headNotificationsChannel**
+
+
+
+> Boolean headNotificationsChannel(channelId)
+
+Verify a channel still exists and is valid
+
+
+
+Wraps HEAD /api/v2/notifications/channels/{channelId}  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.NotificationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+NotificationsApi apiInstance = new NotificationsApi();
+String channelId = "channelId_example"; // String | Channel ID
+try {
+    Boolean result = apiInstance.headNotificationsChannel(channelId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling NotificationsApi#headNotificationsChannel");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **channelId** | **String**| Channel ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+**Boolean**
 
 <a name="postNotificationsChannelSubscriptions"></a>
 

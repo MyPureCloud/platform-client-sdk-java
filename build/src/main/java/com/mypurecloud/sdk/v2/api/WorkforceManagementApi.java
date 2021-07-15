@@ -40,6 +40,7 @@ import com.mypurecloud.sdk.v2.model.LongTermForecastResultResponse;
 import com.mypurecloud.sdk.v2.model.ForecastPlanningGroupsResponse;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecastListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitListing;
+import com.mypurecloud.sdk.v2.model.CalendarUrlResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalImportDeleteJobResponse;
 import com.mypurecloud.sdk.v2.model.HistoricalImportStatusListing;
 import com.mypurecloud.sdk.v2.model.ManagementUnit;
@@ -129,6 +130,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitS
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitServicegoaltemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitWeekScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitWeekShorttermforecastRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementCalendarUrlIcsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanrotationRequest;
@@ -161,6 +163,8 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeek
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitWeekShorttermforecastsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitsDivisionviewsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementCalendarDataIcsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementCalendarUrlIcsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataDeletejobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementHistoricaldataImportstatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitRequest;
@@ -213,6 +217,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWee
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekShorttermforecastCopyRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementCalendarUrlIcsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementHistoricaldataDeletejobRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementHistoricaldataValidateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitAgentschedulesSearchRequest;
@@ -799,6 +804,78 @@ public class WorkforceManagementApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteWorkforcemanagementBusinessunitWeekShorttermforecast(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Disable generated calendar link for the current user
+   * 
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementCalendarUrlIcs() throws IOException, ApiException {
+     deleteWorkforcemanagementCalendarUrlIcs(createDeleteWorkforcemanagementCalendarUrlIcsRequest());
+  }
+
+  /**
+   * Disable generated calendar link for the current user
+   * 
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementCalendarUrlIcsWithHttpInfo() throws IOException {
+    return deleteWorkforcemanagementCalendarUrlIcs(createDeleteWorkforcemanagementCalendarUrlIcsRequest().withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementCalendarUrlIcsRequest createDeleteWorkforcemanagementCalendarUrlIcsRequest() {
+    return DeleteWorkforcemanagementCalendarUrlIcsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Disable generated calendar link for the current user
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementCalendarUrlIcs(DeleteWorkforcemanagementCalendarUrlIcsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Disable generated calendar link for the current user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementCalendarUrlIcs(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -3509,6 +3586,160 @@ public class WorkforceManagementApi {
 
   
   /**
+   * Get ics formatted calendar based on shareable link
+   * 
+   * @param calendarId The id of the ics-formatted calendar (required)
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String getWorkforcemanagementCalendarDataIcs(String calendarId) throws IOException, ApiException {
+    return  getWorkforcemanagementCalendarDataIcs(createGetWorkforcemanagementCalendarDataIcsRequest(calendarId));
+  }
+
+  /**
+   * Get ics formatted calendar based on shareable link
+   * 
+   * @param calendarId The id of the ics-formatted calendar (required)
+   * @return String
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> getWorkforcemanagementCalendarDataIcsWithHttpInfo(String calendarId) throws IOException {
+    return getWorkforcemanagementCalendarDataIcs(createGetWorkforcemanagementCalendarDataIcsRequest(calendarId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementCalendarDataIcsRequest createGetWorkforcemanagementCalendarDataIcsRequest(String calendarId) {
+    return GetWorkforcemanagementCalendarDataIcsRequest.builder()
+            .withCalendarId(calendarId)
+    
+            .build();
+  }
+
+  /**
+   * Get ics formatted calendar based on shareable link
+   * 
+   * @param request The request object
+   * @return String
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public String getWorkforcemanagementCalendarDataIcs(GetWorkforcemanagementCalendarDataIcsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<String> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<String>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get ics formatted calendar based on shareable link
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<String> getWorkforcemanagementCalendarDataIcs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<String>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<String> response = (ApiResponse<String>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get existing calendar link for the current user
+   * 
+   * @return CalendarUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CalendarUrlResponse getWorkforcemanagementCalendarUrlIcs() throws IOException, ApiException {
+    return  getWorkforcemanagementCalendarUrlIcs(createGetWorkforcemanagementCalendarUrlIcsRequest());
+  }
+
+  /**
+   * Get existing calendar link for the current user
+   * 
+   * @return CalendarUrlResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CalendarUrlResponse> getWorkforcemanagementCalendarUrlIcsWithHttpInfo() throws IOException {
+    return getWorkforcemanagementCalendarUrlIcs(createGetWorkforcemanagementCalendarUrlIcsRequest().withHttpInfo());
+  }
+
+  private GetWorkforcemanagementCalendarUrlIcsRequest createGetWorkforcemanagementCalendarUrlIcsRequest() {
+    return GetWorkforcemanagementCalendarUrlIcsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get existing calendar link for the current user
+   * 
+   * @param request The request object
+   * @return CalendarUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CalendarUrlResponse getWorkforcemanagementCalendarUrlIcs(GetWorkforcemanagementCalendarUrlIcsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CalendarUrlResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CalendarUrlResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get existing calendar link for the current user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CalendarUrlResponse> getWorkforcemanagementCalendarUrlIcs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CalendarUrlResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CalendarUrlResponse> response = (ApiResponse<CalendarUrlResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CalendarUrlResponse> response = (ApiResponse<CalendarUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Retrieves delete job status for historical data imports of the organization
    * 
    * @return HistoricalImportDeleteJobResponse
@@ -4766,12 +4997,13 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param workPlanId The ID of the work plan to fetch (required)
+   * @param includeOnly limit response to the specified fields (optional)
    * @return WorkPlan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WorkPlan getWorkforcemanagementManagementunitWorkplan(String managementUnitId, String workPlanId) throws IOException, ApiException {
-    return  getWorkforcemanagementManagementunitWorkplan(createGetWorkforcemanagementManagementunitWorkplanRequest(managementUnitId, workPlanId));
+  public WorkPlan getWorkforcemanagementManagementunitWorkplan(String managementUnitId, String workPlanId, List<String> includeOnly) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitWorkplan(createGetWorkforcemanagementManagementunitWorkplanRequest(managementUnitId, workPlanId, includeOnly));
   }
 
   /**
@@ -4779,18 +5011,21 @@ public class WorkforceManagementApi {
    * 
    * @param managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
    * @param workPlanId The ID of the work plan to fetch (required)
+   * @param includeOnly limit response to the specified fields (optional)
    * @return WorkPlan
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkPlan> getWorkforcemanagementManagementunitWorkplanWithHttpInfo(String managementUnitId, String workPlanId) throws IOException {
-    return getWorkforcemanagementManagementunitWorkplan(createGetWorkforcemanagementManagementunitWorkplanRequest(managementUnitId, workPlanId).withHttpInfo());
+  public ApiResponse<WorkPlan> getWorkforcemanagementManagementunitWorkplanWithHttpInfo(String managementUnitId, String workPlanId, List<String> includeOnly) throws IOException {
+    return getWorkforcemanagementManagementunitWorkplan(createGetWorkforcemanagementManagementunitWorkplanRequest(managementUnitId, workPlanId, includeOnly).withHttpInfo());
   }
 
-  private GetWorkforcemanagementManagementunitWorkplanRequest createGetWorkforcemanagementManagementunitWorkplanRequest(String managementUnitId, String workPlanId) {
+  private GetWorkforcemanagementManagementunitWorkplanRequest createGetWorkforcemanagementManagementunitWorkplanRequest(String managementUnitId, String workPlanId, List<String> includeOnly) {
     return GetWorkforcemanagementManagementunitWorkplanRequest.builder()
             .withManagementUnitId(managementUnitId)
     
             .withWorkPlanId(workPlanId)
+    
+            .withIncludeOnly(includeOnly)
     
             .build();
   }
@@ -7908,6 +8143,85 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BusinessUnit> response = (ApiResponse<BusinessUnit>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
+   * 
+   * @param language A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize default activity code names in the ics-formatted calendar (optional, default to en-US)
+   * @return CalendarUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CalendarUrlResponse postWorkforcemanagementCalendarUrlIcs(String language) throws IOException, ApiException {
+    return  postWorkforcemanagementCalendarUrlIcs(createPostWorkforcemanagementCalendarUrlIcsRequest(language));
+  }
+
+  /**
+   * Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
+   * 
+   * @param language A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize default activity code names in the ics-formatted calendar (optional, default to en-US)
+   * @return CalendarUrlResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CalendarUrlResponse> postWorkforcemanagementCalendarUrlIcsWithHttpInfo(String language) throws IOException {
+    return postWorkforcemanagementCalendarUrlIcs(createPostWorkforcemanagementCalendarUrlIcsRequest(language).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementCalendarUrlIcsRequest createPostWorkforcemanagementCalendarUrlIcsRequest(String language) {
+    return PostWorkforcemanagementCalendarUrlIcsRequest.builder()
+            .withLanguage(language)
+    
+            .build();
+  }
+
+  /**
+   * Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
+   * 
+   * @param request The request object
+   * @return CalendarUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CalendarUrlResponse postWorkforcemanagementCalendarUrlIcs(PostWorkforcemanagementCalendarUrlIcsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CalendarUrlResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CalendarUrlResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CalendarUrlResponse> postWorkforcemanagementCalendarUrlIcs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CalendarUrlResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CalendarUrlResponse> response = (ApiResponse<CalendarUrlResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CalendarUrlResponse> response = (ApiResponse<CalendarUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -10,9 +10,9 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.LeaderboardItem;
-import com.mypurecloud.sdk.v2.model.Metric;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.LocalDate;
@@ -27,7 +27,7 @@ import java.io.Serializable;
 public class Leaderboard  implements Serializable {
   
   private Division division = null;
-  private Metric metric = null;
+  private AddressableEntityRef metric = null;
   private LocalDate dateStartWorkday = null;
   private LocalDate dateEndWorkday = null;
   private List<LeaderboardItem> leaders = new ArrayList<LeaderboardItem>();
@@ -55,17 +55,17 @@ public class Leaderboard  implements Serializable {
   /**
    * The metric id if the leaderboard is about a specific metric
    **/
-  public Leaderboard metric(Metric metric) {
+  public Leaderboard metric(AddressableEntityRef metric) {
     this.metric = metric;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The metric id if the leaderboard is about a specific metric")
   @JsonProperty("metric")
-  public Metric getMetric() {
+  public AddressableEntityRef getMetric() {
     return metric;
   }
-  public void setMetric(Metric metric) {
+  public void setMetric(AddressableEntityRef metric) {
     this.metric = metric;
   }
 

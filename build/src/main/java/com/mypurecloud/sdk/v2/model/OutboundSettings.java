@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AutomaticTimeZoneMappingSettings;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -79,6 +80,7 @@ public class OutboundSettings  implements Serializable {
     }
   }
   private ComplianceAbandonRateDenominatorEnum complianceAbandonRateDenominator = null;
+  private AutomaticTimeZoneMappingSettings automaticTimeZoneMapping = null;
   private String selfUri = null;
 
   
@@ -217,6 +219,24 @@ public class OutboundSettings  implements Serializable {
   }
 
   
+  /**
+   * The settings for automatic time zone mapping. Note that changing these settings will change them for both voice and messaging campaigns.
+   **/
+  public OutboundSettings automaticTimeZoneMapping(AutomaticTimeZoneMappingSettings automaticTimeZoneMapping) {
+    this.automaticTimeZoneMapping = automaticTimeZoneMapping;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The settings for automatic time zone mapping. Note that changing these settings will change them for both voice and messaging campaigns.")
+  @JsonProperty("automaticTimeZoneMapping")
+  public AutomaticTimeZoneMappingSettings getAutomaticTimeZoneMapping() {
+    return automaticTimeZoneMapping;
+  }
+  public void setAutomaticTimeZoneMapping(AutomaticTimeZoneMappingSettings automaticTimeZoneMapping) {
+    this.automaticTimeZoneMapping = automaticTimeZoneMapping;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -244,12 +264,13 @@ public class OutboundSettings  implements Serializable {
         Objects.equals(this.maxLineUtilization, outboundSettings.maxLineUtilization) &&
         Objects.equals(this.abandonSeconds, outboundSettings.abandonSeconds) &&
         Objects.equals(this.complianceAbandonRateDenominator, outboundSettings.complianceAbandonRateDenominator) &&
+        Objects.equals(this.automaticTimeZoneMapping, outboundSettings.automaticTimeZoneMapping) &&
         Objects.equals(this.selfUri, outboundSettings.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, maxCallsPerAgent, maxConfigurableCallsPerAgent, maxLineUtilization, abandonSeconds, complianceAbandonRateDenominator, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, maxCallsPerAgent, maxConfigurableCallsPerAgent, maxLineUtilization, abandonSeconds, complianceAbandonRateDenominator, automaticTimeZoneMapping, selfUri);
   }
 
   @Override
@@ -267,6 +288,7 @@ public class OutboundSettings  implements Serializable {
     sb.append("    maxLineUtilization: ").append(toIndentedString(maxLineUtilization)).append("\n");
     sb.append("    abandonSeconds: ").append(toIndentedString(abandonSeconds)).append("\n");
     sb.append("    complianceAbandonRateDenominator: ").append(toIndentedString(complianceAbandonRateDenominator)).append("\n");
+    sb.append("    automaticTimeZoneMapping: ").append(toIndentedString(automaticTimeZoneMapping)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

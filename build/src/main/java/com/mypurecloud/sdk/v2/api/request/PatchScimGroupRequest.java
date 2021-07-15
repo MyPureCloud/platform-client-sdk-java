@@ -119,8 +119,8 @@ public class PatchScimGroupRequest {
                 .withBody(body)
         
                 .withCustomHeaders(customHeaders)
-                .withContentTypes("application/json", "application/scim+json")
-                .withAccepts("application/json", "application/scim+json")
+                .withContentTypes("application/scim+json", "application/json")
+                .withAccepts("application/scim+json", "application/json")
                 .withAuthNames("PureCloud OAuth")
                 .build();
     }

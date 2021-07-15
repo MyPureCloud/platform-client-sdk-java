@@ -97,6 +97,7 @@ title: AnalyticsSession
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| UNKNOWN | &quot;unknown&quot; |
 | CALLBACK | &quot;callback&quot; |
 | CHAT | &quot;chat&quot; |
 | COBROWSE | &quot;cobrowse&quot; |

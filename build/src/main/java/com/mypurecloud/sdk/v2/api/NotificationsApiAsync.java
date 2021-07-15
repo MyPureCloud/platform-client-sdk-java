@@ -25,6 +25,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteNotificationsChannelSubscription
 import com.mypurecloud.sdk.v2.api.request.GetNotificationsAvailabletopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetNotificationsChannelSubscriptionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetNotificationsChannelsRequest;
+import com.mypurecloud.sdk.v2.api.request.HeadNotificationsChannelRequest;
 import com.mypurecloud.sdk.v2.api.request.PostNotificationsChannelSubscriptionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostNotificationsChannelsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutNotificationsChannelSubscriptionsRequest;
@@ -341,6 +342,82 @@ public class NotificationsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ChannelEntityListing> response = (ApiResponse<ChannelEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Verify a channel still exists and is valid
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Boolean> headNotificationsChannelAsync(HeadNotificationsChannelRequest request, final AsyncApiCallback<Boolean> callback) {
+    try {
+      final SettableFuture<Boolean> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Boolean>() {}, new AsyncApiCallback<ApiResponse<Boolean>>() {
+        @Override
+        public void onCompleted(ApiResponse<Boolean> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Verify a channel still exists and is valid
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Boolean>> headNotificationsChannelAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Boolean>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Boolean>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<Boolean>() {}, new AsyncApiCallback<ApiResponse<Boolean>>() {
+        @Override
+        public void onCompleted(ApiResponse<Boolean> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Boolean> response = (ApiResponse<Boolean>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Boolean> response = (ApiResponse<Boolean>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

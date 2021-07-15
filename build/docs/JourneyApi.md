@@ -527,7 +527,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 JourneyApi apiInstance = new JourneyApi();
 Integer pageNumber = 1; // Integer | Page number
-Integer pageSize = 25; // Integer | Page size. The max that will be returned is 100.
+Integer pageSize = 25; // Integer | Page size
 try {
     ActionTargetListing result = apiInstance.getJourneyActiontargets(pageNumber, pageSize);
     System.out.println(result);
@@ -543,7 +543,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **pageSize** | **Integer**| Page size. The max that will be returned is 100. | [optional] [default to 25] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 {: class="table-striped"}
 
 

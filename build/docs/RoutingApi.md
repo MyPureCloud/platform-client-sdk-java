@@ -1284,7 +1284,7 @@ Configuration.setDefaultApiClient(apiClient);
 RoutingApi apiInstance = new RoutingApi();
 String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
-String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
+String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
 List<String> queueId = Arrays.asList("queueId_example"); // List<String> | Queue ID(s) to filter assessments by.
 try {
@@ -1303,7 +1303,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
-| **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. | [optional] 
+| **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
 | **queueId** | [**List&lt;String&gt;**](String.html)| Queue ID(s) to filter assessments by. | [optional] 
 {: class="table-striped"}
@@ -2060,7 +2060,7 @@ Configuration.setDefaultApiClient(apiClient);
 RoutingApi apiInstance = new RoutingApi();
 String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
-String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
+String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
 List<String> queueId = Arrays.asList("queueId_example"); // List<String> | Comma-separated list of queue Ids to filter by.
 try {
@@ -2079,7 +2079,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
-| **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. | [optional] 
+| **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
 | **queueId** | [**List&lt;String&gt;**](String.html)| Comma-separated list of queue Ids to filter by. | [optional] 
 {: class="table-striped"}

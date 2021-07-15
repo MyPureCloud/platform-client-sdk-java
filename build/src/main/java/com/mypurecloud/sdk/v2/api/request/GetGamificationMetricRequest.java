@@ -58,6 +58,20 @@ public class GetGamificationMetricRequest {
 	    return this;
 	} 
 	
+	private LocalDate workday;
+	public LocalDate getWorkday() {
+		return this.workday;
+	}
+
+	public void setWorkday(LocalDate workday) {
+		this.workday = workday;
+	}
+
+	public GetGamificationMetricRequest withWorkday(LocalDate workday) {
+	    this.setWorkday(workday);
+	    return this;
+	} 
+	
 	private String performanceProfileId;
 	public String getPerformanceProfileId() {
 		return this.performanceProfileId;
@@ -102,7 +116,9 @@ public class GetGamificationMetricRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/gamification/metrics/{metricId}")
                 .withPathParameter("metricId", metricId)
         
-                .withQueryParameters("performance profile id", "", performanceProfileId)
+                .withQueryParameters("workday", "", workday)
+        
+                .withQueryParameters("performanceProfileId", "", performanceProfileId)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -132,6 +148,11 @@ public class GetGamificationMetricRequest {
 		
 		public Builder withMetricId(String metricId) {
 			request.setMetricId(metricId);
+			return this;
+		}
+		
+		public Builder withWorkday(LocalDate workday) {
+			request.setWorkday(workday);
 			return this;
 		}
 		

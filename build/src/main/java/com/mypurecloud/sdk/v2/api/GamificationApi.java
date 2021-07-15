@@ -431,30 +431,34 @@ public class GamificationApi {
    * Gamified metric by id
    * 
    * @param metricId metric Id (required)
+   * @param workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @param performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
    * @return Metric
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Metric getGamificationMetric(String metricId, String performanceProfileId) throws IOException, ApiException {
-    return  getGamificationMetric(createGetGamificationMetricRequest(metricId, performanceProfileId));
+  public Metric getGamificationMetric(String metricId, LocalDate workday, String performanceProfileId) throws IOException, ApiException {
+    return  getGamificationMetric(createGetGamificationMetricRequest(metricId, workday, performanceProfileId));
   }
 
   /**
    * Gamified metric by id
    * 
    * @param metricId metric Id (required)
+   * @param workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @param performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
    * @return Metric
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Metric> getGamificationMetricWithHttpInfo(String metricId, String performanceProfileId) throws IOException {
-    return getGamificationMetric(createGetGamificationMetricRequest(metricId, performanceProfileId).withHttpInfo());
+  public ApiResponse<Metric> getGamificationMetricWithHttpInfo(String metricId, LocalDate workday, String performanceProfileId) throws IOException {
+    return getGamificationMetric(createGetGamificationMetricRequest(metricId, workday, performanceProfileId).withHttpInfo());
   }
 
-  private GetGamificationMetricRequest createGetGamificationMetricRequest(String metricId, String performanceProfileId) {
+  private GetGamificationMetricRequest createGetGamificationMetricRequest(String metricId, LocalDate workday, String performanceProfileId) {
     return GetGamificationMetricRequest.builder()
             .withMetricId(metricId)
+    
+            .withWorkday(workday)
     
             .withPerformanceProfileId(performanceProfileId)
     
@@ -668,28 +672,32 @@ public class GamificationApi {
    * All gamified metrics for a given profile
    * 
    * @param performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
+   * @param workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @return GetMetricsResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public GetMetricsResponse getGamificationMetrics(String performanceProfileId) throws IOException, ApiException {
-    return  getGamificationMetrics(createGetGamificationMetricsRequest(performanceProfileId));
+  public GetMetricsResponse getGamificationMetrics(String performanceProfileId, LocalDate workday) throws IOException, ApiException {
+    return  getGamificationMetrics(createGetGamificationMetricsRequest(performanceProfileId, workday));
   }
 
   /**
    * All gamified metrics for a given profile
    * 
    * @param performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. (optional)
+   * @param workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @return GetMetricsResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<GetMetricsResponse> getGamificationMetricsWithHttpInfo(String performanceProfileId) throws IOException {
-    return getGamificationMetrics(createGetGamificationMetricsRequest(performanceProfileId).withHttpInfo());
+  public ApiResponse<GetMetricsResponse> getGamificationMetricsWithHttpInfo(String performanceProfileId, LocalDate workday) throws IOException {
+    return getGamificationMetrics(createGetGamificationMetricsRequest(performanceProfileId, workday).withHttpInfo());
   }
 
-  private GetGamificationMetricsRequest createGetGamificationMetricsRequest(String performanceProfileId) {
+  private GetGamificationMetricsRequest createGetGamificationMetricsRequest(String performanceProfileId, LocalDate workday) {
     return GetGamificationMetricsRequest.builder()
             .withPerformanceProfileId(performanceProfileId)
+    
+            .withWorkday(workday)
     
             .build();
   }

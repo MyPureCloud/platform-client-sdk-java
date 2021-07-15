@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitServicegoaltemplate) | Delete a service goal template |
 | [**deleteWorkforcemanagementBusinessunitWeekSchedule**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitWeekSchedule) | Delete a schedule |
 | [**deleteWorkforcemanagementBusinessunitWeekShorttermforecast**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitWeekShorttermforecast) | Delete a short term forecast |
+| [**deleteWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi.html#deleteWorkforcemanagementCalendarUrlIcs) | Disable generated calendar link for the current user |
 | [**deleteWorkforcemanagementManagementunit**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunit) | Delete management unit |
 | [**deleteWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunitWorkplan) | Delete a work plan |
 | [**deleteWorkforcemanagementManagementunitWorkplanrotation**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunitWorkplanrotation) | Delete a work plan rotation |
@@ -46,6 +47,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementBusinessunitWeekShorttermforecasts**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecasts) | Get short term forecasts |
 | [**getWorkforcemanagementBusinessunits**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunits) | Get business units |
 | [**getWorkforcemanagementBusinessunitsDivisionviews**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitsDivisionviews) | Get business units across divisions |
+| [**getWorkforcemanagementCalendarDataIcs**](WorkforceManagementApi.html#getWorkforcemanagementCalendarDataIcs) | Get ics formatted calendar based on shareable link |
+| [**getWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi.html#getWorkforcemanagementCalendarUrlIcs) | Get existing calendar link for the current user |
 | [**getWorkforcemanagementHistoricaldataDeletejob**](WorkforceManagementApi.html#getWorkforcemanagementHistoricaldataDeletejob) | Retrieves delete job status for historical data imports of the organization |
 | [**getWorkforcemanagementHistoricaldataImportstatus**](WorkforceManagementApi.html#getWorkforcemanagementHistoricaldataImportstatus) | Retrieves status of the historical data imports of the organization |
 | [**getWorkforcemanagementManagementunit**](WorkforceManagementApi.html#getWorkforcemanagementManagementunit) | Get management unit |
@@ -98,6 +101,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementBusinessunitWeekShorttermforecastCopy**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekShorttermforecastCopy) | Copy a short term forecast |
 | [**postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate) | Generate a short term forecast |
 | [**postWorkforcemanagementBusinessunits**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunits) | Add a new business unit |
+| [**postWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi.html#postWorkforcemanagementCalendarUrlIcs) | Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned |
 | [**postWorkforcemanagementHistoricaldataDeletejob**](WorkforceManagementApi.html#postWorkforcemanagementHistoricaldataDeletejob) | Delete the entries of the historical data imports in the organization |
 | [**postWorkforcemanagementHistoricaldataValidate**](WorkforceManagementApi.html#postWorkforcemanagementHistoricaldataValidate) | Trigger validation process for historical import |
 | [**postWorkforcemanagementManagementunitAgentschedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitAgentschedulesSearch) | Query published schedules for given given time range for set of users |
@@ -566,6 +570,64 @@ try {
 | **weekDateId** | **LocalDate**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **forecastId** | **String**| The ID of the forecast | 
 {: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteWorkforcemanagementCalendarUrlIcs"></a>
+
+# **deleteWorkforcemanagementCalendarUrlIcs**
+
+
+
+> Void deleteWorkforcemanagementCalendarUrlIcs()
+
+Disable generated calendar link for the current user
+
+
+
+Wraps DELETE /api/v2/workforcemanagement/calendar/url/ics  
+
+Requires ALL permissions: 
+
+* wfm:agentSchedule:sync
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+try {
+    apiInstance.deleteWorkforcemanagementCalendarUrlIcs();
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#deleteWorkforcemanagementCalendarUrlIcs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
 
 
 ### Return type
@@ -2864,6 +2926,115 @@ try {
 
 [**BusinessUnitListing**](BusinessUnitListing.html)
 
+<a name="getWorkforcemanagementCalendarDataIcs"></a>
+
+# **getWorkforcemanagementCalendarDataIcs**
+
+
+
+> String getWorkforcemanagementCalendarDataIcs(calendarId)
+
+Get ics formatted calendar based on shareable link
+
+
+
+Wraps GET /api/v2/workforcemanagement/calendar/data/ics  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String calendarId = "calendarId_example"; // String | The id of the ics-formatted calendar
+try {
+    String result = apiInstance.getWorkforcemanagementCalendarDataIcs(calendarId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementCalendarDataIcs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **calendarId** | **String**| The id of the ics-formatted calendar | 
+{: class="table-striped"}
+
+
+### Return type
+
+**String**
+
+<a name="getWorkforcemanagementCalendarUrlIcs"></a>
+
+# **getWorkforcemanagementCalendarUrlIcs**
+
+
+
+> [CalendarUrlResponse](CalendarUrlResponse.html) getWorkforcemanagementCalendarUrlIcs()
+
+Get existing calendar link for the current user
+
+
+
+Wraps GET /api/v2/workforcemanagement/calendar/url/ics  
+
+Requires ALL permissions: 
+
+* wfm:agentSchedule:sync
+* wfm:agentSchedule:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+try {
+    CalendarUrlResponse result = apiInstance.getWorkforcemanagementCalendarUrlIcs();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementCalendarUrlIcs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**CalendarUrlResponse**](CalendarUrlResponse.html)
+
 <a name="getWorkforcemanagementHistoricaldataDeletejob"></a>
 
 # **getWorkforcemanagementHistoricaldataDeletejob**
@@ -3954,7 +4125,7 @@ try {
 
 
 
-> [WorkPlan](WorkPlan.html) getWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId)
+> [WorkPlan](WorkPlan.html) getWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, includeOnly)
 
 Get a work plan
 
@@ -3992,8 +4163,9 @@ Configuration.setDefaultApiClient(apiClient);
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 String workPlanId = "workPlanId_example"; // String | The ID of the work plan to fetch
+List<String> includeOnly = Arrays.asList("includeOnly_example"); // List<String> | limit response to the specified fields
 try {
-    WorkPlan result = apiInstance.getWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId);
+    WorkPlan result = apiInstance.getWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, includeOnly);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunitWorkplan");
@@ -4008,6 +4180,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **workPlanId** | **String**| The ID of the work plan to fetch | 
+| **includeOnly** | [**List&lt;String&gt;**](String.html)| limit response to the specified fields | [optional]<br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances 
 {: class="table-striped"}
 
 
@@ -6400,6 +6573,70 @@ try {
 ### Return type
 
 [**BusinessUnit**](BusinessUnit.html)
+
+<a name="postWorkforcemanagementCalendarUrlIcs"></a>
+
+# **postWorkforcemanagementCalendarUrlIcs**
+
+
+
+> [CalendarUrlResponse](CalendarUrlResponse.html) postWorkforcemanagementCalendarUrlIcs(language)
+
+Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
+
+
+
+Wraps POST /api/v2/workforcemanagement/calendar/url/ics  
+
+Requires ALL permissions: 
+
+* wfm:agentSchedule:sync
+* wfm:agentSchedule:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String language = "en-US"; // String | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize default activity code names in the ics-formatted calendar
+try {
+    CalendarUrlResponse result = apiInstance.postWorkforcemanagementCalendarUrlIcs(language);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementCalendarUrlIcs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **language** | **String**| A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize default activity code names in the ics-formatted calendar | [optional] [default to en-US] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CalendarUrlResponse**](CalendarUrlResponse.html)
 
 <a name="postWorkforcemanagementHistoricaldataDeletejob"></a>
 

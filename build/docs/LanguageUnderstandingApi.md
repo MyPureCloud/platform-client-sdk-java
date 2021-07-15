@@ -10,6 +10,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteLanguageunderstandingDomain**](LanguageUnderstandingApi.html#deleteLanguageunderstandingDomain) | Delete an NLU Domain. |
 | [**deleteLanguageunderstandingDomainFeedbackFeedbackId**](LanguageUnderstandingApi.html#deleteLanguageunderstandingDomainFeedbackFeedbackId) | Delete the feedback on the NLU Domain Version. |
 | [**deleteLanguageunderstandingDomainVersion**](LanguageUnderstandingApi.html#deleteLanguageunderstandingDomainVersion) | Delete an NLU Domain Version |
+| [**deleteLanguageunderstandingMiner**](LanguageUnderstandingApi.html#deleteLanguageunderstandingMiner) | Delete a miner. |
+| [**deleteLanguageunderstandingMinerDraft**](LanguageUnderstandingApi.html#deleteLanguageunderstandingMinerDraft) | Delete a draft |
 | [**getLanguageunderstandingDomain**](LanguageUnderstandingApi.html#getLanguageunderstandingDomain) | Find an NLU Domain. |
 | [**getLanguageunderstandingDomainFeedback**](LanguageUnderstandingApi.html#getLanguageunderstandingDomainFeedback) | Get all feedback in the given NLU Domain Version. |
 | [**getLanguageunderstandingDomainFeedbackFeedbackId**](LanguageUnderstandingApi.html#getLanguageunderstandingDomainFeedbackFeedbackId) | Find a Feedback |
@@ -17,13 +19,23 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getLanguageunderstandingDomainVersionReport**](LanguageUnderstandingApi.html#getLanguageunderstandingDomainVersionReport) | Retrieved quality report for the specified NLU Domain Version |
 | [**getLanguageunderstandingDomainVersions**](LanguageUnderstandingApi.html#getLanguageunderstandingDomainVersions) | Get all NLU Domain Versions for a given Domain. |
 | [**getLanguageunderstandingDomains**](LanguageUnderstandingApi.html#getLanguageunderstandingDomains) | Get all NLU Domains. |
+| [**getLanguageunderstandingMiner**](LanguageUnderstandingApi.html#getLanguageunderstandingMiner) | Get information about a miner. |
+| [**getLanguageunderstandingMinerDraft**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerDraft) | Get information about a draft. |
+| [**getLanguageunderstandingMinerDrafts**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerDrafts) | Retrieve the list of drafts created. |
+| [**getLanguageunderstandingMinerIntent**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerIntent) | Get information about a mined intent |
+| [**getLanguageunderstandingMinerIntents**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerIntents) | Retrieve a list of mined intents. |
+| [**getLanguageunderstandingMiners**](LanguageUnderstandingApi.html#getLanguageunderstandingMiners) | Retrieve the list of miners created. |
 | [**patchLanguageunderstandingDomain**](LanguageUnderstandingApi.html#patchLanguageunderstandingDomain) | Update an NLU Domain. |
+| [**patchLanguageunderstandingMinerDraft**](LanguageUnderstandingApi.html#patchLanguageunderstandingMinerDraft) | Save information for the draft |
 | [**postLanguageunderstandingDomainFeedback**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainFeedback) | Create feedback for the NLU Domain Version. |
 | [**postLanguageunderstandingDomainVersionDetect**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainVersionDetect) | Detect intent, entities, etc. in the submitted text using the specified NLU domain version. |
 | [**postLanguageunderstandingDomainVersionPublish**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainVersionPublish) | Publish the draft NLU Domain Version. |
 | [**postLanguageunderstandingDomainVersionTrain**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainVersionTrain) | Train the draft NLU Domain Version. |
 | [**postLanguageunderstandingDomainVersions**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainVersions) | Create an NLU Domain Version. |
 | [**postLanguageunderstandingDomains**](LanguageUnderstandingApi.html#postLanguageunderstandingDomains) | Create an NLU Domain. |
+| [**postLanguageunderstandingMinerDrafts**](LanguageUnderstandingApi.html#postLanguageunderstandingMinerDrafts) | Create a new draft resource. |
+| [**postLanguageunderstandingMinerExecute**](LanguageUnderstandingApi.html#postLanguageunderstandingMinerExecute) | Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file. |
+| [**postLanguageunderstandingMiners**](LanguageUnderstandingApi.html#postLanguageunderstandingMiners) | Create a unique miner. |
 | [**putLanguageunderstandingDomainVersion**](LanguageUnderstandingApi.html#putLanguageunderstandingDomainVersion) | Update an NLU Domain Version. |
 {: class="table-striped"}
 
@@ -213,6 +225,132 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **domainId** | **String**| ID of the NLU domain. | 
 | **domainVersionId** | **String**| ID of the NLU domain version. | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteLanguageunderstandingMiner"></a>
+
+# **deleteLanguageunderstandingMiner**
+
+
+
+> Void deleteLanguageunderstandingMiner(minerId)
+
+Delete a miner.
+
+
+
+Wraps DELETE /api/v2/languageunderstanding/miners/{minerId}  
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+String minerId = "minerId_example"; // String | Miner ID
+try {
+    apiInstance.deleteLanguageunderstandingMiner(minerId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#deleteLanguageunderstandingMiner");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **minerId** | **String**| Miner ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteLanguageunderstandingMinerDraft"></a>
+
+# **deleteLanguageunderstandingMinerDraft**
+
+
+
+> Void deleteLanguageunderstandingMinerDraft(minerId, draftId)
+
+Delete a draft
+
+
+
+Wraps DELETE /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}  
+
+Requires ALL permissions: 
+
+* languageUnderstanding:draft:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+String minerId = "minerId_example"; // String | Miner ID
+String draftId = "draftId_example"; // String | Draft ID
+try {
+    apiInstance.deleteLanguageunderstandingMinerDraft(minerId, draftId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#deleteLanguageunderstandingMinerDraft");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **minerId** | **String**| Miner ID | 
+| **draftId** | **String**| Draft ID | 
 {: class="table-striped"}
 
 
@@ -706,6 +844,388 @@ try {
 
 [**NluDomainListing**](NluDomainListing.html)
 
+<a name="getLanguageunderstandingMiner"></a>
+
+# **getLanguageunderstandingMiner**
+
+
+
+> [Miner](Miner.html) getLanguageunderstandingMiner(minerId)
+
+Get information about a miner.
+
+
+
+Wraps GET /api/v2/languageunderstanding/miners/{minerId}  
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+String minerId = "minerId_example"; // String | Miner ID
+try {
+    Miner result = apiInstance.getLanguageunderstandingMiner(minerId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#getLanguageunderstandingMiner");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **minerId** | **String**| Miner ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Miner**](Miner.html)
+
+<a name="getLanguageunderstandingMinerDraft"></a>
+
+# **getLanguageunderstandingMinerDraft**
+
+
+
+> [Draft](Draft.html) getLanguageunderstandingMinerDraft(minerId, draftId)
+
+Get information about a draft.
+
+
+
+Wraps GET /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}  
+
+Requires ALL permissions: 
+
+* languageUnderstanding:draft:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+String minerId = "minerId_example"; // String | Miner ID
+String draftId = "draftId_example"; // String | Draft ID
+try {
+    Draft result = apiInstance.getLanguageunderstandingMinerDraft(minerId, draftId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#getLanguageunderstandingMinerDraft");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **minerId** | **String**| Miner ID | 
+| **draftId** | **String**| Draft ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Draft**](Draft.html)
+
+<a name="getLanguageunderstandingMinerDrafts"></a>
+
+# **getLanguageunderstandingMinerDrafts**
+
+
+
+> [DraftListing](DraftListing.html) getLanguageunderstandingMinerDrafts(minerId)
+
+Retrieve the list of drafts created.
+
+
+
+Wraps GET /api/v2/languageunderstanding/miners/{minerId}/drafts  
+
+Requires ALL permissions: 
+
+* languageUnderstanding:draft:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+String minerId = "minerId_example"; // String | Miner ID
+try {
+    DraftListing result = apiInstance.getLanguageunderstandingMinerDrafts(minerId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#getLanguageunderstandingMinerDrafts");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **minerId** | **String**| Miner ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DraftListing**](DraftListing.html)
+
+<a name="getLanguageunderstandingMinerIntent"></a>
+
+# **getLanguageunderstandingMinerIntent**
+
+
+
+> [MinerIntent](MinerIntent.html) getLanguageunderstandingMinerIntent(minerId, intentId, expand)
+
+Get information about a mined intent
+
+
+
+Wraps GET /api/v2/languageunderstanding/miners/{minerId}/intents/{intentId}  
+
+Requires ALL permissions: 
+
+* languageUnderstanding:minerIntent:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+String minerId = "minerId_example"; // String | Miner ID
+String intentId = "intentId_example"; // String | The ID of the intent to be retrieved.
+String expand = "expand_example"; // String | Option to fetch utterances
+try {
+    MinerIntent result = apiInstance.getLanguageunderstandingMinerIntent(minerId, intentId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#getLanguageunderstandingMinerIntent");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **minerId** | **String**| Miner ID | 
+| **intentId** | **String**| The ID of the intent to be retrieved. | 
+| **expand** | **String**| Option to fetch utterances | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MinerIntent**](MinerIntent.html)
+
+<a name="getLanguageunderstandingMinerIntents"></a>
+
+# **getLanguageunderstandingMinerIntents**
+
+
+
+> [MinedIntentsListing](MinedIntentsListing.html) getLanguageunderstandingMinerIntents(minerId, expand)
+
+Retrieve a list of mined intents.
+
+
+
+Wraps GET /api/v2/languageunderstanding/miners/{minerId}/intents  
+
+Requires ALL permissions: 
+
+* languageUnderstanding:minerIntent:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+String minerId = "minerId_example"; // String | Miner ID
+String expand = "expand_example"; // String | Option to fetch utterances.
+try {
+    MinedIntentsListing result = apiInstance.getLanguageunderstandingMinerIntents(minerId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#getLanguageunderstandingMinerIntents");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **minerId** | **String**| Miner ID | 
+| **expand** | **String**| Option to fetch utterances. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MinedIntentsListing**](MinedIntentsListing.html)
+
+<a name="getLanguageunderstandingMiners"></a>
+
+# **getLanguageunderstandingMiners**
+
+
+
+> [MinerListing](MinerListing.html) getLanguageunderstandingMiners()
+
+Retrieve the list of miners created.
+
+
+
+Wraps GET /api/v2/languageunderstanding/miners  
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+try {
+    MinerListing result = apiInstance.getLanguageunderstandingMiners();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#getLanguageunderstandingMiners");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**MinerListing**](MinerListing.html)
+
 <a name="patchLanguageunderstandingDomain"></a>
 
 # **patchLanguageunderstandingDomain**
@@ -771,6 +1291,73 @@ try {
 ### Return type
 
 [**NluDomain**](NluDomain.html)
+
+<a name="patchLanguageunderstandingMinerDraft"></a>
+
+# **patchLanguageunderstandingMinerDraft**
+
+
+
+> [Draft](Draft.html) patchLanguageunderstandingMinerDraft(minerId, draftId, body)
+
+Save information for the draft
+
+
+
+Wraps PATCH /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}  
+
+Requires ALL permissions: 
+
+* languageUnderstanding:draft:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+String minerId = "minerId_example"; // String | Miner ID
+String draftId = "draftId_example"; // String | Draft ID
+DraftRequest body = new DraftRequest(); // DraftRequest | 
+try {
+    Draft result = apiInstance.patchLanguageunderstandingMinerDraft(minerId, draftId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#patchLanguageunderstandingMinerDraft");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **minerId** | **String**| Miner ID | 
+| **draftId** | **String**| Draft ID | 
+| **body** | [**DraftRequest**](DraftRequest.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Draft**](Draft.html)
 
 <a name="postLanguageunderstandingDomainFeedback"></a>
 
@@ -1167,6 +1754,199 @@ try {
 ### Return type
 
 [**NluDomain**](NluDomain.html)
+
+<a name="postLanguageunderstandingMinerDrafts"></a>
+
+# **postLanguageunderstandingMinerDrafts**
+
+
+
+> [Draft](Draft.html) postLanguageunderstandingMinerDrafts(minerId, body)
+
+Create a new draft resource.
+
+
+
+Wraps POST /api/v2/languageunderstanding/miners/{minerId}/drafts  
+
+Requires ALL permissions: 
+
+* languageUnderstanding:draft:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+String minerId = "minerId_example"; // String | Miner ID
+Draft body = new Draft(); // Draft | Details for creating draft resource
+try {
+    Draft result = apiInstance.postLanguageunderstandingMinerDrafts(minerId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#postLanguageunderstandingMinerDrafts");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **minerId** | **String**| Miner ID | 
+| **body** | [**Draft**](Draft.html)| Details for creating draft resource | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Draft**](Draft.html)
+
+<a name="postLanguageunderstandingMinerExecute"></a>
+
+# **postLanguageunderstandingMinerExecute**
+
+
+
+> [Miner](Miner.html) postLanguageunderstandingMinerExecute(minerId, body)
+
+Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+
+
+
+Wraps POST /api/v2/languageunderstanding/miners/{minerId}/execute  
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:execute
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+String minerId = "minerId_example"; // String | Miner ID
+MinerExecuteRequest body = new MinerExecuteRequest(); // MinerExecuteRequest | 
+try {
+    Miner result = apiInstance.postLanguageunderstandingMinerExecute(minerId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#postLanguageunderstandingMinerExecute");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **minerId** | **String**| Miner ID | 
+| **body** | [**MinerExecuteRequest**](MinerExecuteRequest.html)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Miner**](Miner.html)
+
+<a name="postLanguageunderstandingMiners"></a>
+
+# **postLanguageunderstandingMiners**
+
+
+
+> [Miner](Miner.html) postLanguageunderstandingMiners(body)
+
+Create a unique miner.
+
+
+
+Wraps POST /api/v2/languageunderstanding/miners  
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LanguageUnderstandingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LanguageUnderstandingApi apiInstance = new LanguageUnderstandingApi();
+Miner body = new Miner(); // Miner | Details for creating a new miner resource.
+try {
+    Miner result = apiInstance.postLanguageunderstandingMiners(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LanguageUnderstandingApi#postLanguageunderstandingMiners");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**Miner**](Miner.html)| Details for creating a new miner resource. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Miner**](Miner.html)
 
 <a name="putLanguageunderstandingDomainVersion"></a>
 

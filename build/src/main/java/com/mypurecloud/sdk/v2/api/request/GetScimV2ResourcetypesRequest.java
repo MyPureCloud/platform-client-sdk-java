@@ -61,8 +61,8 @@ public class GetScimV2ResourcetypesRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/scim/v2/resourcetypes")
                 .withCustomHeaders(customHeaders)
-                .withContentTypes("application/json", "application/scim+json")
-                .withAccepts("application/json", "application/scim+json")
+                .withContentTypes("application/scim+json", "application/json")
+                .withAccepts("application/scim+json", "application/json")
                 .withAuthNames("PureCloud OAuth")
                 .build();
     }

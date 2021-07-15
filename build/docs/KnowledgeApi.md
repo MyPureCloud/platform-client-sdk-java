@@ -334,7 +334,7 @@ String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base I
 String languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
 String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
-String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
+String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
 String name = "name_example"; // String | Filter to return the categories that starts with the given category name.
 try {
@@ -355,7 +355,7 @@ try {
 | **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, de-DE 
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
-| **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. | [optional] 
+| **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
 | **name** | **String**| Filter to return the categories that starts with the given category name. | [optional] 
 {: class="table-striped"}
@@ -543,7 +543,7 @@ String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base I
 String languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
 String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
-String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
+String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
 String categories = "categories_example"; // String | Filter by categories ids, comma separated values expected.
 String title = "title_example"; // String | Filter by document title.
@@ -566,7 +566,7 @@ try {
 | **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, de-DE 
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
-| **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. | [optional] 
+| **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
 | **categories** | **String**| Filter by categories ids, comma separated values expected. | [optional] 
 | **title** | **String**| Filter by document title. | [optional] 
@@ -689,7 +689,7 @@ String knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base I
 String languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
 String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
-String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
+String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
 String knowledgeDocumentsState = "knowledgeDocumentsState_example"; // String | Return the training with the specified state of the trained documents.
 try {
@@ -710,7 +710,7 @@ try {
 | **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, de-DE 
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
-| **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. | [optional] 
+| **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
 | **knowledgeDocumentsState** | **String**| Return the training with the specified state of the trained documents. | [optional]<br />**Values**: Draft, Active, Discarded, Archived 
 {: class="table-striped"}
@@ -762,7 +762,7 @@ Configuration.setDefaultApiClient(apiClient);
 KnowledgeApi apiInstance = new KnowledgeApi();
 String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
-String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
+String limit = "limit_example"; // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
 String name = "name_example"; // String | Filter by Name.
 String coreLanguage = "coreLanguage_example"; // String | Filter by core language.
@@ -783,7 +783,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
-| **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. | [optional] 
+| **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
 | **name** | **String**| Filter by Name. | [optional] 
 | **coreLanguage** | **String**| Filter by core language. | [optional]<br />**Values**: en-US, de-DE 

@@ -106,8 +106,8 @@ public class WorkPlanListItemResponse  implements Serializable {
   private ListWrapperShiftStartVariance shiftStartVariances = null;
   private List<WorkPlanShift> shifts = new ArrayList<WorkPlanShift>();
   private List<DeletableUserReference> agents = new ArrayList<DeletableUserReference>();
-  private WfmVersionedEntityMetadata metadata = null;
   private Integer agentCount = null;
+  private WfmVersionedEntityMetadata metadata = null;
   private String selfUri = null;
 
   
@@ -629,24 +629,6 @@ public class WorkPlanListItemResponse  implements Serializable {
 
   
   /**
-   * Version metadata for this work plan
-   **/
-  public WorkPlanListItemResponse metadata(WfmVersionedEntityMetadata metadata) {
-    this.metadata = metadata;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "Version metadata for this work plan")
-  @JsonProperty("metadata")
-  public WfmVersionedEntityMetadata getMetadata() {
-    return metadata;
-  }
-  public void setMetadata(WfmVersionedEntityMetadata metadata) {
-    this.metadata = metadata;
-  }
-
-  
-  /**
    * Number of agents in this work plan.  Populate with expand=agentCount
    **/
   public WorkPlanListItemResponse agentCount(Integer agentCount) {
@@ -661,6 +643,24 @@ public class WorkPlanListItemResponse  implements Serializable {
   }
   public void setAgentCount(Integer agentCount) {
     this.agentCount = agentCount;
+  }
+
+  
+  /**
+   * Version metadata for this work plan
+   **/
+  public WorkPlanListItemResponse metadata(WfmVersionedEntityMetadata metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Version metadata for this work plan")
+  @JsonProperty("metadata")
+  public WfmVersionedEntityMetadata getMetadata() {
+    return metadata;
+  }
+  public void setMetadata(WfmVersionedEntityMetadata metadata) {
+    this.metadata = metadata;
   }
 
   
@@ -711,14 +711,14 @@ public class WorkPlanListItemResponse  implements Serializable {
         Objects.equals(this.shiftStartVariances, workPlanListItemResponse.shiftStartVariances) &&
         Objects.equals(this.shifts, workPlanListItemResponse.shifts) &&
         Objects.equals(this.agents, workPlanListItemResponse.agents) &&
-        Objects.equals(this.metadata, workPlanListItemResponse.metadata) &&
         Objects.equals(this.agentCount, workPlanListItemResponse.agentCount) &&
+        Objects.equals(this.metadata, workPlanListItemResponse.metadata) &&
         Objects.equals(this.selfUri, workPlanListItemResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, enabled, valid, constrainWeeklyPaidTime, flexibleWeeklyPaidTime, weeklyExactPaidMinutes, weeklyMinimumPaidMinutes, weeklyMaximumPaidMinutes, constrainPaidTimeGranularity, paidTimeGranularityMinutes, constrainMinimumTimeBetweenShifts, minimumTimeBetweenShiftsMinutes, maximumDays, minimumConsecutiveNonWorkingMinutesPerWeek, constrainMaximumConsecutiveWorkingWeekends, maximumConsecutiveWorkingWeekends, minimumWorkingDaysPerWeek, constrainMaximumConsecutiveWorkingDays, maximumConsecutiveWorkingDays, minimumShiftStartDistanceMinutes, minimumDaysOffPerPlanningPeriod, maximumDaysOffPerPlanningPeriod, minimumPaidMinutesPerPlanningPeriod, maximumPaidMinutesPerPlanningPeriod, optionalDays, shiftStartVarianceType, shiftStartVariances, shifts, agents, metadata, agentCount, selfUri);
+    return Objects.hash(id, name, enabled, valid, constrainWeeklyPaidTime, flexibleWeeklyPaidTime, weeklyExactPaidMinutes, weeklyMinimumPaidMinutes, weeklyMaximumPaidMinutes, constrainPaidTimeGranularity, paidTimeGranularityMinutes, constrainMinimumTimeBetweenShifts, minimumTimeBetweenShiftsMinutes, maximumDays, minimumConsecutiveNonWorkingMinutesPerWeek, constrainMaximumConsecutiveWorkingWeekends, maximumConsecutiveWorkingWeekends, minimumWorkingDaysPerWeek, constrainMaximumConsecutiveWorkingDays, maximumConsecutiveWorkingDays, minimumShiftStartDistanceMinutes, minimumDaysOffPerPlanningPeriod, maximumDaysOffPerPlanningPeriod, minimumPaidMinutesPerPlanningPeriod, maximumPaidMinutesPerPlanningPeriod, optionalDays, shiftStartVarianceType, shiftStartVariances, shifts, agents, agentCount, metadata, selfUri);
   }
 
   @Override
@@ -756,8 +756,8 @@ public class WorkPlanListItemResponse  implements Serializable {
     sb.append("    shiftStartVariances: ").append(toIndentedString(shiftStartVariances)).append("\n");
     sb.append("    shifts: ").append(toIndentedString(shifts)).append("\n");
     sb.append("    agents: ").append(toIndentedString(agents)).append("\n");
-    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    agentCount: ").append(toIndentedString(agentCount)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

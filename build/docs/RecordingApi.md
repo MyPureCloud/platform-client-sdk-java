@@ -2317,7 +2317,7 @@ try {
 
 Create media retention policy
 
-
+Policy does not work retroactively
 
 Wraps POST /api/v2/recording/crossplatform/mediaretentionpolicies  
 
@@ -2569,7 +2569,7 @@ try {
 
 Create media retention policy
 
-
+Policy does not work retroactively
 
 Wraps POST /api/v2/recording/mediaretentionpolicies  
 
@@ -3078,7 +3078,7 @@ try {
 
 Update a media retention policy
 
-
+Policy does not work retroactively
 
 Wraps PUT /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}  
 
@@ -3275,7 +3275,7 @@ try {
 
 Update a media retention policy
 
-
+Policy does not work retroactively
 
 Wraps PUT /api/v2/recording/mediaretentionpolicies/{policyId}  
 

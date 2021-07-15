@@ -19,6 +19,10 @@ import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import com.mypurecloud.sdk.v2.model.DraftValidationResult;
 import com.mypurecloud.sdk.v2.model.ActionEntityListing;
 import com.mypurecloud.sdk.v2.model.CategoryEntityListing;
+import com.mypurecloud.sdk.v2.model.BotConnectorBot;
+import com.mypurecloud.sdk.v2.model.BotConnectorBotVersionSummaryEntityListing;
+import com.mypurecloud.sdk.v2.model.BotList;
+import com.mypurecloud.sdk.v2.model.BotConnectorBotSummaryEntityListing;
 import com.mypurecloud.sdk.v2.model.ClientAppEntityListing;
 import com.mypurecloud.sdk.v2.model.Credential;
 import com.mypurecloud.sdk.v2.model.CredentialInfoListing;
@@ -66,6 +70,10 @@ import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsActionsDraftsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegrationIdBotRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegrationIdBotVersionsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegrationIdBotsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetIntegrationsBotconnectorIntegrationIdBotsSummariesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsClientappsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIntegrationsCredentialsRequest;
@@ -100,6 +108,7 @@ import com.mypurecloud.sdk.v2.api.request.PostIntegrationsActionsDraftsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsCredentialsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntegrationsWorkforcemanagementVendorconnectionRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationConfigCurrentRequest;
+import com.mypurecloud.sdk.v2.api.request.PutIntegrationsBotconnectorIntegrationIdBotsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsCredentialRequest;
 import com.mypurecloud.sdk.v2.api.request.PutIntegrationsSpeechTtsSettingsRequest;
 
@@ -1417,7 +1426,7 @@ public class IntegrationsApi {
    * @param pageNumber The page number requested (optional, default to 1)
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
-   * @param sortBy Root level field name to sort on. (optional)
+   * @param sortBy Root level field name to sort on.  Only &#39;name&#39; is supported on this endpoint. (optional)
    * @param sortOrder Direction to sort &#39;sortBy&#39; field. (optional, default to asc)
    * @param secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. (optional)
    * @return CategoryEntityListing
@@ -1435,7 +1444,7 @@ public class IntegrationsApi {
    * @param pageNumber The page number requested (optional, default to 1)
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
-   * @param sortBy Root level field name to sort on. (optional)
+   * @param sortBy Root level field name to sort on.  Only &#39;name&#39; is supported on this endpoint. (optional)
    * @param sortOrder Direction to sort &#39;sortBy&#39; field. (optional, default to asc)
    * @param secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. (optional)
    * @return CategoryEntityListing
@@ -1623,6 +1632,350 @@ public class IntegrationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ActionEntityListing> response = (ApiResponse<ActionEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a specific botConnector bot, plus versions, for this integration
+   * 
+   * @param integrationId The integration ID for this group of bots (required)
+   * @param botId The botID for this bot (required)
+   * @param version Specific Version (optional)
+   * @return BotConnectorBot
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BotConnectorBot getIntegrationsBotconnectorIntegrationIdBot(String integrationId, String botId, String version) throws IOException, ApiException {
+    return  getIntegrationsBotconnectorIntegrationIdBot(createGetIntegrationsBotconnectorIntegrationIdBotRequest(integrationId, botId, version));
+  }
+
+  /**
+   * Get a specific botConnector bot, plus versions, for this integration
+   * 
+   * @param integrationId The integration ID for this group of bots (required)
+   * @param botId The botID for this bot (required)
+   * @param version Specific Version (optional)
+   * @return BotConnectorBot
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BotConnectorBot> getIntegrationsBotconnectorIntegrationIdBotWithHttpInfo(String integrationId, String botId, String version) throws IOException {
+    return getIntegrationsBotconnectorIntegrationIdBot(createGetIntegrationsBotconnectorIntegrationIdBotRequest(integrationId, botId, version).withHttpInfo());
+  }
+
+  private GetIntegrationsBotconnectorIntegrationIdBotRequest createGetIntegrationsBotconnectorIntegrationIdBotRequest(String integrationId, String botId, String version) {
+    return GetIntegrationsBotconnectorIntegrationIdBotRequest.builder()
+            .withIntegrationId(integrationId)
+    
+            .withBotId(botId)
+    
+            .withVersion(version)
+    
+            .build();
+  }
+
+  /**
+   * Get a specific botConnector bot, plus versions, for this integration
+   * 
+   * @param request The request object
+   * @return BotConnectorBot
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BotConnectorBot getIntegrationsBotconnectorIntegrationIdBot(GetIntegrationsBotconnectorIntegrationIdBotRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BotConnectorBot> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BotConnectorBot>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a specific botConnector bot, plus versions, for this integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BotConnectorBot> getIntegrationsBotconnectorIntegrationIdBot(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BotConnectorBot>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BotConnectorBot> response = (ApiResponse<BotConnectorBot>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BotConnectorBot> response = (ApiResponse<BotConnectorBot>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of bot versions for a bot
+   * 
+   * @param integrationId The integration ID for this bot group (required)
+   * @param botId The botID for this bot (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return BotConnectorBotVersionSummaryEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BotConnectorBotVersionSummaryEntityListing getIntegrationsBotconnectorIntegrationIdBotVersions(String integrationId, String botId, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getIntegrationsBotconnectorIntegrationIdBotVersions(createGetIntegrationsBotconnectorIntegrationIdBotVersionsRequest(integrationId, botId, pageNumber, pageSize));
+  }
+
+  /**
+   * Get a list of bot versions for a bot
+   * 
+   * @param integrationId The integration ID for this bot group (required)
+   * @param botId The botID for this bot (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return BotConnectorBotVersionSummaryEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BotConnectorBotVersionSummaryEntityListing> getIntegrationsBotconnectorIntegrationIdBotVersionsWithHttpInfo(String integrationId, String botId, Integer pageNumber, Integer pageSize) throws IOException {
+    return getIntegrationsBotconnectorIntegrationIdBotVersions(createGetIntegrationsBotconnectorIntegrationIdBotVersionsRequest(integrationId, botId, pageNumber, pageSize).withHttpInfo());
+  }
+
+  private GetIntegrationsBotconnectorIntegrationIdBotVersionsRequest createGetIntegrationsBotconnectorIntegrationIdBotVersionsRequest(String integrationId, String botId, Integer pageNumber, Integer pageSize) {
+    return GetIntegrationsBotconnectorIntegrationIdBotVersionsRequest.builder()
+            .withIntegrationId(integrationId)
+    
+            .withBotId(botId)
+    
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of bot versions for a bot
+   * 
+   * @param request The request object
+   * @return BotConnectorBotVersionSummaryEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BotConnectorBotVersionSummaryEntityListing getIntegrationsBotconnectorIntegrationIdBotVersions(GetIntegrationsBotconnectorIntegrationIdBotVersionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BotConnectorBotVersionSummaryEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BotConnectorBotVersionSummaryEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of bot versions for a bot
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BotConnectorBotVersionSummaryEntityListing> getIntegrationsBotconnectorIntegrationIdBotVersions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BotConnectorBotVersionSummaryEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BotConnectorBotVersionSummaryEntityListing> response = (ApiResponse<BotConnectorBotVersionSummaryEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BotConnectorBotVersionSummaryEntityListing> response = (ApiResponse<BotConnectorBotVersionSummaryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a list of botConnector bots for this integration
+   * 
+   * @param integrationId The integration ID for this group of bots (required)
+   * @return BotList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BotList getIntegrationsBotconnectorIntegrationIdBots(String integrationId) throws IOException, ApiException {
+    return  getIntegrationsBotconnectorIntegrationIdBots(createGetIntegrationsBotconnectorIntegrationIdBotsRequest(integrationId));
+  }
+
+  /**
+   * Get a list of botConnector bots for this integration
+   * 
+   * @param integrationId The integration ID for this group of bots (required)
+   * @return BotList
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BotList> getIntegrationsBotconnectorIntegrationIdBotsWithHttpInfo(String integrationId) throws IOException {
+    return getIntegrationsBotconnectorIntegrationIdBots(createGetIntegrationsBotconnectorIntegrationIdBotsRequest(integrationId).withHttpInfo());
+  }
+
+  private GetIntegrationsBotconnectorIntegrationIdBotsRequest createGetIntegrationsBotconnectorIntegrationIdBotsRequest(String integrationId) {
+    return GetIntegrationsBotconnectorIntegrationIdBotsRequest.builder()
+            .withIntegrationId(integrationId)
+    
+            .build();
+  }
+
+  /**
+   * Get a list of botConnector bots for this integration
+   * 
+   * @param request The request object
+   * @return BotList
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BotList getIntegrationsBotconnectorIntegrationIdBots(GetIntegrationsBotconnectorIntegrationIdBotsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BotList> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BotList>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of botConnector bots for this integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BotList> getIntegrationsBotconnectorIntegrationIdBots(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BotList>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BotList> response = (ApiResponse<BotList>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BotList> response = (ApiResponse<BotList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get a summary list of botConnector bots for this integration
+   * 
+   * @param integrationId The integration ID for this group of bots (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return BotConnectorBotSummaryEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BotConnectorBotSummaryEntityListing getIntegrationsBotconnectorIntegrationIdBotsSummaries(String integrationId, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+    return  getIntegrationsBotconnectorIntegrationIdBotsSummaries(createGetIntegrationsBotconnectorIntegrationIdBotsSummariesRequest(integrationId, pageNumber, pageSize));
+  }
+
+  /**
+   * Get a summary list of botConnector bots for this integration
+   * 
+   * @param integrationId The integration ID for this group of bots (required)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @return BotConnectorBotSummaryEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BotConnectorBotSummaryEntityListing> getIntegrationsBotconnectorIntegrationIdBotsSummariesWithHttpInfo(String integrationId, Integer pageNumber, Integer pageSize) throws IOException {
+    return getIntegrationsBotconnectorIntegrationIdBotsSummaries(createGetIntegrationsBotconnectorIntegrationIdBotsSummariesRequest(integrationId, pageNumber, pageSize).withHttpInfo());
+  }
+
+  private GetIntegrationsBotconnectorIntegrationIdBotsSummariesRequest createGetIntegrationsBotconnectorIntegrationIdBotsSummariesRequest(String integrationId, Integer pageNumber, Integer pageSize) {
+    return GetIntegrationsBotconnectorIntegrationIdBotsSummariesRequest.builder()
+            .withIntegrationId(integrationId)
+    
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .build();
+  }
+
+  /**
+   * Get a summary list of botConnector bots for this integration
+   * 
+   * @param request The request object
+   * @return BotConnectorBotSummaryEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BotConnectorBotSummaryEntityListing getIntegrationsBotconnectorIntegrationIdBotsSummaries(GetIntegrationsBotconnectorIntegrationIdBotsSummariesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BotConnectorBotSummaryEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BotConnectorBotSummaryEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a summary list of botConnector bots for this integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BotConnectorBotSummaryEntityListing> getIntegrationsBotconnectorIntegrationIdBotsSummaries(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BotConnectorBotSummaryEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BotConnectorBotSummaryEntityListing> response = (ApiResponse<BotConnectorBotSummaryEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BotConnectorBotSummaryEntityListing> response = (ApiResponse<BotConnectorBotSummaryEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4509,6 +4862,86 @@ public class IntegrationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<IntegrationConfiguration> response = (ApiResponse<IntegrationConfiguration>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Set a list of botConnector bots plus versions for this integration
+   * 
+   * @param integrationId The integration ID for this group of bots (required)
+   * @param botList  (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void putIntegrationsBotconnectorIntegrationIdBots(String integrationId, BotList botList) throws IOException, ApiException {
+     putIntegrationsBotconnectorIntegrationIdBots(createPutIntegrationsBotconnectorIntegrationIdBotsRequest(integrationId, botList));
+  }
+
+  /**
+   * Set a list of botConnector bots plus versions for this integration
+   * 
+   * @param integrationId The integration ID for this group of bots (required)
+   * @param botList  (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> putIntegrationsBotconnectorIntegrationIdBotsWithHttpInfo(String integrationId, BotList botList) throws IOException {
+    return putIntegrationsBotconnectorIntegrationIdBots(createPutIntegrationsBotconnectorIntegrationIdBotsRequest(integrationId, botList).withHttpInfo());
+  }
+
+  private PutIntegrationsBotconnectorIntegrationIdBotsRequest createPutIntegrationsBotconnectorIntegrationIdBotsRequest(String integrationId, BotList botList) {
+    return PutIntegrationsBotconnectorIntegrationIdBotsRequest.builder()
+            .withIntegrationId(integrationId)
+    
+            .withBotList(botList)
+    
+            .build();
+  }
+
+  /**
+   * Set a list of botConnector bots plus versions for this integration
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void putIntegrationsBotconnectorIntegrationIdBots(PutIntegrationsBotconnectorIntegrationIdBotsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Set a list of botConnector bots plus versions for this integration
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> putIntegrationsBotconnectorIntegrationIdBots(ApiRequest<BotList> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

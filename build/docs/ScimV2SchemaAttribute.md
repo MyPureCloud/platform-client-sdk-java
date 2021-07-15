@@ -30,13 +30,13 @@ title: ScimV2SchemaAttribute
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| STRING | &quot;STRING&quot; |
-| BOOLEAN | &quot;BOOLEAN&quot; |
-| DECIMAL | &quot;DECIMAL&quot; |
-| INTEGER | &quot;INTEGER&quot; |
-| DATE_TIME | &quot;DATE_TIME&quot; |
-| REFERENCE | &quot;REFERENCE&quot; |
-| COMPLEX | &quot;COMPLEX&quot; |
+| STRING | &quot;string&quot; |
+| BOOLEAN | &quot;boolean&quot; |
+| DECIMAL | &quot;decimal&quot; |
+| INTEGER | &quot;integer&quot; |
+| DATETIME | &quot;dateTime&quot; |
+| REFERENCE | &quot;reference&quot; |
+| COMPLEX | &quot;complex&quot; |
 {: class="table table-striped"}
 
 
@@ -61,10 +61,10 @@ title: ScimV2SchemaAttribute
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| ALWAYS | &quot;ALWAYS&quot; |
-| NEVER | &quot;NEVER&quot; |
-| DEFAULT | &quot;DEFAULT&quot; |
-| REQUEST | &quot;REQUEST&quot; |
+| ALWAYS | &quot;always&quot; |
+| NEVER | &quot;never&quot; |
+| DEFAULT | &quot;default&quot; |
+| REQUEST | &quot;request&quot; |
 {: class="table table-striped"}
 
 
@@ -75,9 +75,9 @@ title: ScimV2SchemaAttribute
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
-| NONE | &quot;NONE&quot; |
-| SERVER | &quot;SERVER&quot; |
-| GLOBAL | &quot;GLOBAL&quot; |
+| NONE | &quot;none&quot; |
+| SERVER | &quot;server&quot; |
+| GLOBAL | &quot;global&quot; |
 {: class="table table-striped"}
 
 
@@ -87,10 +87,10 @@ title: ScimV2SchemaAttribute
 
 | Name | Value |
 | ---- | ----- |
-| USER | &quot;USER&quot; |
-| GROUP | &quot;GROUP&quot; |
-| EXTERNAL | &quot;EXTERNAL&quot; |
-| URI | &quot;URI&quot; |
+| USER | &quot;User&quot; |
+| GROUP | &quot;Group&quot; |
+| EXTERNAL | &quot;external&quot; |
+| URI | &quot;uri&quot; |
 {: class="table table-striped"}
 
 

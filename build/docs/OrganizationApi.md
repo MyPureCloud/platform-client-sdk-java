@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getOrganizationsLimitsChangerequests**](OrganizationApi.html#getOrganizationsLimitsChangerequests) | Get the available limit change requests |
 | [**getOrganizationsLimitsDocs**](OrganizationApi.html#getOrganizationsLimitsDocs) | Get a link to the limit documentation |
 | [**getOrganizationsLimitsNamespace**](OrganizationApi.html#getOrganizationsLimitsNamespace) | Get the effective limits in a namespace for an organization |
+| [**getOrganizationsLimitsNamespaceDefaults**](OrganizationApi.html#getOrganizationsLimitsNamespaceDefaults) | Get the default limits in a namespace for an organization |
 | [**getOrganizationsLimitsNamespaces**](OrganizationApi.html#getOrganizationsLimitsNamespaces) | Get the available limit namespaces |
 | [**getOrganizationsMe**](OrganizationApi.html#getOrganizationsMe) | Get organization. |
 | [**getOrganizationsWhitelist**](OrganizationApi.html#getOrganizationsWhitelist) | Use PUT /api/v2/organizations/embeddedintegration instead |
@@ -458,13 +459,75 @@ try {
 
 [**LimitsEntityListing**](LimitsEntityListing.html)
 
+<a name="getOrganizationsLimitsNamespaceDefaults"></a>
+
+# **getOrganizationsLimitsNamespaceDefaults**
+
+
+
+> [LimitsEntityListing](LimitsEntityListing.html) getOrganizationsLimitsNamespaceDefaults(namespaceName)
+
+Get the default limits in a namespace for an organization
+
+
+
+Wraps GET /api/v2/organizations/limits/namespaces/{namespaceName}/defaults  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationApi apiInstance = new OrganizationApi();
+String namespaceName = "namespaceName_example"; // String | The namespace to fetch defaults limits for
+try {
+    LimitsEntityListing result = apiInstance.getOrganizationsLimitsNamespaceDefaults(namespaceName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationApi#getOrganizationsLimitsNamespaceDefaults");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **namespaceName** | **String**| The namespace to fetch defaults limits for | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**LimitsEntityListing**](LimitsEntityListing.html)
+
 <a name="getOrganizationsLimitsNamespaces"></a>
 
 # **getOrganizationsLimitsNamespaces**
 
 
 
-> [LimitsEntityListing](LimitsEntityListing.html) getOrganizationsLimitsNamespaces(pageSize, pageNumber)
+> [PagedNamespaceListing](PagedNamespaceListing.html) getOrganizationsLimitsNamespaces(pageSize, pageNumber)
 
 Get the available limit namespaces
 
@@ -501,7 +564,7 @@ OrganizationApi apiInstance = new OrganizationApi();
 Integer pageSize = 100; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
 try {
-    LimitsEntityListing result = apiInstance.getOrganizationsLimitsNamespaces(pageSize, pageNumber);
+    PagedNamespaceListing result = apiInstance.getOrganizationsLimitsNamespaces(pageSize, pageNumber);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationApi#getOrganizationsLimitsNamespaces");
@@ -521,7 +584,7 @@ try {
 
 ### Return type
 
-[**LimitsEntityListing**](LimitsEntityListing.html)
+[**PagedNamespaceListing**](PagedNamespaceListing.html)
 
 <a name="getOrganizationsMe"></a>
 

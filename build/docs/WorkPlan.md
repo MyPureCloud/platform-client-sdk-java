@@ -38,6 +38,7 @@ title: WorkPlan
 | **shiftStartVariances** | <!----><!---->[**ListWrapperShiftStartVariance**](ListWrapperShiftStartVariance.html)<!----> | Variance in minutes among start times of shifts in this work plan |  [optional] |
 | **shifts** | <!----><!---->[**List&lt;WorkPlanShift&gt;**](WorkPlanShift.html)<!----> | Shifts in this work plan |  [optional] |
 | **agents** | <!----><!---->[**List&lt;DeletableUserReference&gt;**](DeletableUserReference.html)<!----> | Agents in this work plan |  [optional] |
+| **agentCount** | <!----><!---->**Integer**<!----> | Number of agents in this work plan |  [optional] |
 | **metadata** | <!----><!---->[**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html)<!----> | Version metadata for this work plan |  |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}

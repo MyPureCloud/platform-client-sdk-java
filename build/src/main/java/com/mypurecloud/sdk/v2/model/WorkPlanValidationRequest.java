@@ -105,6 +105,7 @@ public class WorkPlanValidationRequest  implements Serializable {
   private ListWrapperShiftStartVariance shiftStartVariances = null;
   private List<WorkPlanShift> shifts = new ArrayList<WorkPlanShift>();
   private List<DeletableUserReference> agents = new ArrayList<DeletableUserReference>();
+  private Integer agentCount = null;
   private String selfUri = null;
 
   
@@ -625,6 +626,24 @@ public class WorkPlanValidationRequest  implements Serializable {
   }
 
   
+  /**
+   * Number of agents in this work plan
+   **/
+  public WorkPlanValidationRequest agentCount(Integer agentCount) {
+    this.agentCount = agentCount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Number of agents in this work plan")
+  @JsonProperty("agentCount")
+  public Integer getAgentCount() {
+    return agentCount;
+  }
+  public void setAgentCount(Integer agentCount) {
+    this.agentCount = agentCount;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -672,12 +691,13 @@ public class WorkPlanValidationRequest  implements Serializable {
         Objects.equals(this.shiftStartVariances, workPlanValidationRequest.shiftStartVariances) &&
         Objects.equals(this.shifts, workPlanValidationRequest.shifts) &&
         Objects.equals(this.agents, workPlanValidationRequest.agents) &&
+        Objects.equals(this.agentCount, workPlanValidationRequest.agentCount) &&
         Objects.equals(this.selfUri, workPlanValidationRequest.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, enabled, valid, constrainWeeklyPaidTime, flexibleWeeklyPaidTime, weeklyExactPaidMinutes, weeklyMinimumPaidMinutes, weeklyMaximumPaidMinutes, constrainPaidTimeGranularity, paidTimeGranularityMinutes, constrainMinimumTimeBetweenShifts, minimumTimeBetweenShiftsMinutes, maximumDays, minimumConsecutiveNonWorkingMinutesPerWeek, constrainMaximumConsecutiveWorkingWeekends, maximumConsecutiveWorkingWeekends, minimumWorkingDaysPerWeek, constrainMaximumConsecutiveWorkingDays, maximumConsecutiveWorkingDays, minimumShiftStartDistanceMinutes, minimumDaysOffPerPlanningPeriod, maximumDaysOffPerPlanningPeriod, minimumPaidMinutesPerPlanningPeriod, maximumPaidMinutesPerPlanningPeriod, optionalDays, shiftStartVarianceType, shiftStartVariances, shifts, agents, selfUri);
+    return Objects.hash(id, name, enabled, valid, constrainWeeklyPaidTime, flexibleWeeklyPaidTime, weeklyExactPaidMinutes, weeklyMinimumPaidMinutes, weeklyMaximumPaidMinutes, constrainPaidTimeGranularity, paidTimeGranularityMinutes, constrainMinimumTimeBetweenShifts, minimumTimeBetweenShiftsMinutes, maximumDays, minimumConsecutiveNonWorkingMinutesPerWeek, constrainMaximumConsecutiveWorkingWeekends, maximumConsecutiveWorkingWeekends, minimumWorkingDaysPerWeek, constrainMaximumConsecutiveWorkingDays, maximumConsecutiveWorkingDays, minimumShiftStartDistanceMinutes, minimumDaysOffPerPlanningPeriod, maximumDaysOffPerPlanningPeriod, minimumPaidMinutesPerPlanningPeriod, maximumPaidMinutesPerPlanningPeriod, optionalDays, shiftStartVarianceType, shiftStartVariances, shifts, agents, agentCount, selfUri);
   }
 
   @Override
@@ -715,6 +735,7 @@ public class WorkPlanValidationRequest  implements Serializable {
     sb.append("    shiftStartVariances: ").append(toIndentedString(shiftStartVariances)).append("\n");
     sb.append("    shifts: ").append(toIndentedString(shifts)).append("\n");
     sb.append("    agents: ").append(toIndentedString(agents)).append("\n");
+    sb.append("    agentCount: ").append(toIndentedString(agentCount)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

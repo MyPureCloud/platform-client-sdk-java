@@ -13,8 +13,8 @@ title: QualityAudit
 | **user** | <!----><!---->[**User**](User.html)<!----> |  |  [optional] |
 | **jobId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **action** | <!----><!---->**String**<!----> |  |  [optional] |
-| **level** | <!----><!---->**String**<!----> |  |  [optional] |
 | **entity** | <!----><!---->[**AuditEntity**](AuditEntity.html)<!----> |  |  [optional] |
+| **level** | <!----><!---->**String**<!----> |  |  [optional] |
 | **timestamp** | <!----><!---->**String**<!----> |  |  [optional] |
 | **status** | <!----><!---->**String**<!----> |  |  [optional] |
 | **changes** | <!----><!---->[**List&lt;Change&gt;**](Change.html)<!----> |  |  [optional] |

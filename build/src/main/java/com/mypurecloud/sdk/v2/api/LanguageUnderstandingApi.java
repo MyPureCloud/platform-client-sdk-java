@@ -19,15 +19,25 @@ import com.mypurecloud.sdk.v2.model.NluDomainVersion;
 import com.mypurecloud.sdk.v2.model.NluDomainVersionQualityReport;
 import com.mypurecloud.sdk.v2.model.NluDomainVersionListing;
 import com.mypurecloud.sdk.v2.model.NluDomainListing;
+import com.mypurecloud.sdk.v2.model.Miner;
+import com.mypurecloud.sdk.v2.model.Draft;
+import com.mypurecloud.sdk.v2.model.DraftListing;
+import com.mypurecloud.sdk.v2.model.MinerIntent;
+import com.mypurecloud.sdk.v2.model.MinedIntentsListing;
+import com.mypurecloud.sdk.v2.model.MinerListing;
+import com.mypurecloud.sdk.v2.model.DraftRequest;
 import com.mypurecloud.sdk.v2.model.NluFeedbackRequest;
 import com.mypurecloud.sdk.v2.model.NluDetectionResponse;
 import com.mypurecloud.sdk.v2.model.NluDetectionRequest;
 import com.mypurecloud.sdk.v2.model.NluDomainVersionTrainingResponse;
+import com.mypurecloud.sdk.v2.model.MinerExecuteRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteLanguageunderstandingDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteLanguageunderstandingDomainFeedbackFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteLanguageunderstandingDomainVersionRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteLanguageunderstandingMinerRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteLanguageunderstandingMinerDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingDomainFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingDomainFeedbackFeedbackIdRequest;
@@ -35,13 +45,23 @@ import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingDomainVersionR
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingDomainVersionReportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingDomainVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingDomainsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerDraftRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerDraftsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerIntentRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinerIntentsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetLanguageunderstandingMinersRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLanguageunderstandingDomainRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchLanguageunderstandingMinerDraftRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainFeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainVersionDetectRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainVersionPublishRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainVersionTrainRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainVersionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingDomainsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingMinerDraftsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingMinerExecuteRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingMinersRequest;
 import com.mypurecloud.sdk.v2.api.request.PutLanguageunderstandingDomainVersionRequest;
 
 import java.io.IOException;
@@ -277,6 +297,162 @@ public class LanguageUnderstandingApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteLanguageunderstandingDomainVersion(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete a miner.
+   * 
+   * @param minerId Miner ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteLanguageunderstandingMiner(String minerId) throws IOException, ApiException {
+     deleteLanguageunderstandingMiner(createDeleteLanguageunderstandingMinerRequest(minerId));
+  }
+
+  /**
+   * Delete a miner.
+   * 
+   * @param minerId Miner ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteLanguageunderstandingMinerWithHttpInfo(String minerId) throws IOException {
+    return deleteLanguageunderstandingMiner(createDeleteLanguageunderstandingMinerRequest(minerId).withHttpInfo());
+  }
+
+  private DeleteLanguageunderstandingMinerRequest createDeleteLanguageunderstandingMinerRequest(String minerId) {
+    return DeleteLanguageunderstandingMinerRequest.builder()
+            .withMinerId(minerId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a miner.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteLanguageunderstandingMiner(DeleteLanguageunderstandingMinerRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a miner.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteLanguageunderstandingMiner(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete a draft
+   * 
+   * @param minerId Miner ID (required)
+   * @param draftId Draft ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteLanguageunderstandingMinerDraft(String minerId, String draftId) throws IOException, ApiException {
+     deleteLanguageunderstandingMinerDraft(createDeleteLanguageunderstandingMinerDraftRequest(minerId, draftId));
+  }
+
+  /**
+   * Delete a draft
+   * 
+   * @param minerId Miner ID (required)
+   * @param draftId Draft ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteLanguageunderstandingMinerDraftWithHttpInfo(String minerId, String draftId) throws IOException {
+    return deleteLanguageunderstandingMinerDraft(createDeleteLanguageunderstandingMinerDraftRequest(minerId, draftId).withHttpInfo());
+  }
+
+  private DeleteLanguageunderstandingMinerDraftRequest createDeleteLanguageunderstandingMinerDraftRequest(String minerId, String draftId) {
+    return DeleteLanguageunderstandingMinerDraftRequest.builder()
+            .withMinerId(minerId)
+    
+            .withDraftId(draftId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a draft
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteLanguageunderstandingMinerDraft(DeleteLanguageunderstandingMinerDraftRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a draft
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteLanguageunderstandingMinerDraft(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -929,6 +1105,492 @@ public class LanguageUnderstandingApi {
 
   
   /**
+   * Get information about a miner.
+   * 
+   * @param minerId Miner ID (required)
+   * @return Miner
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Miner getLanguageunderstandingMiner(String minerId) throws IOException, ApiException {
+    return  getLanguageunderstandingMiner(createGetLanguageunderstandingMinerRequest(minerId));
+  }
+
+  /**
+   * Get information about a miner.
+   * 
+   * @param minerId Miner ID (required)
+   * @return Miner
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Miner> getLanguageunderstandingMinerWithHttpInfo(String minerId) throws IOException {
+    return getLanguageunderstandingMiner(createGetLanguageunderstandingMinerRequest(minerId).withHttpInfo());
+  }
+
+  private GetLanguageunderstandingMinerRequest createGetLanguageunderstandingMinerRequest(String minerId) {
+    return GetLanguageunderstandingMinerRequest.builder()
+            .withMinerId(minerId)
+    
+            .build();
+  }
+
+  /**
+   * Get information about a miner.
+   * 
+   * @param request The request object
+   * @return Miner
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Miner getLanguageunderstandingMiner(GetLanguageunderstandingMinerRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Miner> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Miner>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get information about a miner.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Miner> getLanguageunderstandingMiner(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Miner>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Miner> response = (ApiResponse<Miner>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Miner> response = (ApiResponse<Miner>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get information about a draft.
+   * 
+   * @param minerId Miner ID (required)
+   * @param draftId Draft ID (required)
+   * @return Draft
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Draft getLanguageunderstandingMinerDraft(String minerId, String draftId) throws IOException, ApiException {
+    return  getLanguageunderstandingMinerDraft(createGetLanguageunderstandingMinerDraftRequest(minerId, draftId));
+  }
+
+  /**
+   * Get information about a draft.
+   * 
+   * @param minerId Miner ID (required)
+   * @param draftId Draft ID (required)
+   * @return Draft
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Draft> getLanguageunderstandingMinerDraftWithHttpInfo(String minerId, String draftId) throws IOException {
+    return getLanguageunderstandingMinerDraft(createGetLanguageunderstandingMinerDraftRequest(minerId, draftId).withHttpInfo());
+  }
+
+  private GetLanguageunderstandingMinerDraftRequest createGetLanguageunderstandingMinerDraftRequest(String minerId, String draftId) {
+    return GetLanguageunderstandingMinerDraftRequest.builder()
+            .withMinerId(minerId)
+    
+            .withDraftId(draftId)
+    
+            .build();
+  }
+
+  /**
+   * Get information about a draft.
+   * 
+   * @param request The request object
+   * @return Draft
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Draft getLanguageunderstandingMinerDraft(GetLanguageunderstandingMinerDraftRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Draft> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Draft>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get information about a draft.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Draft> getLanguageunderstandingMinerDraft(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Draft>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Draft> response = (ApiResponse<Draft>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Draft> response = (ApiResponse<Draft>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Retrieve the list of drafts created.
+   * 
+   * @param minerId Miner ID (required)
+   * @return DraftListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DraftListing getLanguageunderstandingMinerDrafts(String minerId) throws IOException, ApiException {
+    return  getLanguageunderstandingMinerDrafts(createGetLanguageunderstandingMinerDraftsRequest(minerId));
+  }
+
+  /**
+   * Retrieve the list of drafts created.
+   * 
+   * @param minerId Miner ID (required)
+   * @return DraftListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DraftListing> getLanguageunderstandingMinerDraftsWithHttpInfo(String minerId) throws IOException {
+    return getLanguageunderstandingMinerDrafts(createGetLanguageunderstandingMinerDraftsRequest(minerId).withHttpInfo());
+  }
+
+  private GetLanguageunderstandingMinerDraftsRequest createGetLanguageunderstandingMinerDraftsRequest(String minerId) {
+    return GetLanguageunderstandingMinerDraftsRequest.builder()
+            .withMinerId(minerId)
+    
+            .build();
+  }
+
+  /**
+   * Retrieve the list of drafts created.
+   * 
+   * @param request The request object
+   * @return DraftListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DraftListing getLanguageunderstandingMinerDrafts(GetLanguageunderstandingMinerDraftsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DraftListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DraftListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve the list of drafts created.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DraftListing> getLanguageunderstandingMinerDrafts(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DraftListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DraftListing> response = (ApiResponse<DraftListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DraftListing> response = (ApiResponse<DraftListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get information about a mined intent
+   * 
+   * @param minerId Miner ID (required)
+   * @param intentId The ID of the intent to be retrieved. (required)
+   * @param expand Option to fetch utterances (optional)
+   * @return MinerIntent
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MinerIntent getLanguageunderstandingMinerIntent(String minerId, String intentId, String expand) throws IOException, ApiException {
+    return  getLanguageunderstandingMinerIntent(createGetLanguageunderstandingMinerIntentRequest(minerId, intentId, expand));
+  }
+
+  /**
+   * Get information about a mined intent
+   * 
+   * @param minerId Miner ID (required)
+   * @param intentId The ID of the intent to be retrieved. (required)
+   * @param expand Option to fetch utterances (optional)
+   * @return MinerIntent
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MinerIntent> getLanguageunderstandingMinerIntentWithHttpInfo(String minerId, String intentId, String expand) throws IOException {
+    return getLanguageunderstandingMinerIntent(createGetLanguageunderstandingMinerIntentRequest(minerId, intentId, expand).withHttpInfo());
+  }
+
+  private GetLanguageunderstandingMinerIntentRequest createGetLanguageunderstandingMinerIntentRequest(String minerId, String intentId, String expand) {
+    return GetLanguageunderstandingMinerIntentRequest.builder()
+            .withMinerId(minerId)
+    
+            .withIntentId(intentId)
+    
+            .withExpand(expand)
+    
+            .build();
+  }
+
+  /**
+   * Get information about a mined intent
+   * 
+   * @param request The request object
+   * @return MinerIntent
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MinerIntent getLanguageunderstandingMinerIntent(GetLanguageunderstandingMinerIntentRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MinerIntent> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MinerIntent>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get information about a mined intent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MinerIntent> getLanguageunderstandingMinerIntent(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MinerIntent>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MinerIntent> response = (ApiResponse<MinerIntent>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MinerIntent> response = (ApiResponse<MinerIntent>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Retrieve a list of mined intents.
+   * 
+   * @param minerId Miner ID (required)
+   * @param expand Option to fetch utterances. (optional)
+   * @return MinedIntentsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MinedIntentsListing getLanguageunderstandingMinerIntents(String minerId, String expand) throws IOException, ApiException {
+    return  getLanguageunderstandingMinerIntents(createGetLanguageunderstandingMinerIntentsRequest(minerId, expand));
+  }
+
+  /**
+   * Retrieve a list of mined intents.
+   * 
+   * @param minerId Miner ID (required)
+   * @param expand Option to fetch utterances. (optional)
+   * @return MinedIntentsListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MinedIntentsListing> getLanguageunderstandingMinerIntentsWithHttpInfo(String minerId, String expand) throws IOException {
+    return getLanguageunderstandingMinerIntents(createGetLanguageunderstandingMinerIntentsRequest(minerId, expand).withHttpInfo());
+  }
+
+  private GetLanguageunderstandingMinerIntentsRequest createGetLanguageunderstandingMinerIntentsRequest(String minerId, String expand) {
+    return GetLanguageunderstandingMinerIntentsRequest.builder()
+            .withMinerId(minerId)
+    
+            .withExpand(expand)
+    
+            .build();
+  }
+
+  /**
+   * Retrieve a list of mined intents.
+   * 
+   * @param request The request object
+   * @return MinedIntentsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MinedIntentsListing getLanguageunderstandingMinerIntents(GetLanguageunderstandingMinerIntentsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MinedIntentsListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MinedIntentsListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve a list of mined intents.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MinedIntentsListing> getLanguageunderstandingMinerIntents(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MinedIntentsListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MinedIntentsListing> response = (ApiResponse<MinedIntentsListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MinedIntentsListing> response = (ApiResponse<MinedIntentsListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Retrieve the list of miners created.
+   * 
+   * @return MinerListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MinerListing getLanguageunderstandingMiners() throws IOException, ApiException {
+    return  getLanguageunderstandingMiners(createGetLanguageunderstandingMinersRequest());
+  }
+
+  /**
+   * Retrieve the list of miners created.
+   * 
+   * @return MinerListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MinerListing> getLanguageunderstandingMinersWithHttpInfo() throws IOException {
+    return getLanguageunderstandingMiners(createGetLanguageunderstandingMinersRequest().withHttpInfo());
+  }
+
+  private GetLanguageunderstandingMinersRequest createGetLanguageunderstandingMinersRequest() {
+    return GetLanguageunderstandingMinersRequest.builder()
+            .build();
+  }
+
+  /**
+   * Retrieve the list of miners created.
+   * 
+   * @param request The request object
+   * @return MinerListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MinerListing getLanguageunderstandingMiners(GetLanguageunderstandingMinersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MinerListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MinerListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve the list of miners created.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MinerListing> getLanguageunderstandingMiners(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MinerListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MinerListing> response = (ApiResponse<MinerListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MinerListing> response = (ApiResponse<MinerListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Update an NLU Domain.
    * 
    * @param domainId ID of the NLU domain. (required)
@@ -1006,6 +1668,93 @@ public class LanguageUnderstandingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<NluDomain> response = (ApiResponse<NluDomain>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Save information for the draft
+   * 
+   * @param minerId Miner ID (required)
+   * @param draftId Draft ID (required)
+   * @param body  (optional)
+   * @return Draft
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Draft patchLanguageunderstandingMinerDraft(String minerId, String draftId, DraftRequest body) throws IOException, ApiException {
+    return  patchLanguageunderstandingMinerDraft(createPatchLanguageunderstandingMinerDraftRequest(minerId, draftId, body));
+  }
+
+  /**
+   * Save information for the draft
+   * 
+   * @param minerId Miner ID (required)
+   * @param draftId Draft ID (required)
+   * @param body  (optional)
+   * @return Draft
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Draft> patchLanguageunderstandingMinerDraftWithHttpInfo(String minerId, String draftId, DraftRequest body) throws IOException {
+    return patchLanguageunderstandingMinerDraft(createPatchLanguageunderstandingMinerDraftRequest(minerId, draftId, body).withHttpInfo());
+  }
+
+  private PatchLanguageunderstandingMinerDraftRequest createPatchLanguageunderstandingMinerDraftRequest(String minerId, String draftId, DraftRequest body) {
+    return PatchLanguageunderstandingMinerDraftRequest.builder()
+            .withMinerId(minerId)
+    
+            .withDraftId(draftId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Save information for the draft
+   * 
+   * @param request The request object
+   * @return Draft
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Draft patchLanguageunderstandingMinerDraft(PatchLanguageunderstandingMinerDraftRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Draft> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Draft>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Save information for the draft
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Draft> patchLanguageunderstandingMinerDraft(ApiRequest<DraftRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Draft>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Draft> response = (ApiResponse<Draft>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Draft> response = (ApiResponse<Draft>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1504,6 +2253,251 @@ public class LanguageUnderstandingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<NluDomain> response = (ApiResponse<NluDomain>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create a new draft resource.
+   * 
+   * @param minerId Miner ID (required)
+   * @param body Details for creating draft resource (required)
+   * @return Draft
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Draft postLanguageunderstandingMinerDrafts(String minerId, Draft body) throws IOException, ApiException {
+    return  postLanguageunderstandingMinerDrafts(createPostLanguageunderstandingMinerDraftsRequest(minerId, body));
+  }
+
+  /**
+   * Create a new draft resource.
+   * 
+   * @param minerId Miner ID (required)
+   * @param body Details for creating draft resource (required)
+   * @return Draft
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Draft> postLanguageunderstandingMinerDraftsWithHttpInfo(String minerId, Draft body) throws IOException {
+    return postLanguageunderstandingMinerDrafts(createPostLanguageunderstandingMinerDraftsRequest(minerId, body).withHttpInfo());
+  }
+
+  private PostLanguageunderstandingMinerDraftsRequest createPostLanguageunderstandingMinerDraftsRequest(String minerId, Draft body) {
+    return PostLanguageunderstandingMinerDraftsRequest.builder()
+            .withMinerId(minerId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a new draft resource.
+   * 
+   * @param request The request object
+   * @return Draft
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Draft postLanguageunderstandingMinerDrafts(PostLanguageunderstandingMinerDraftsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Draft> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Draft>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a new draft resource.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Draft> postLanguageunderstandingMinerDrafts(ApiRequest<Draft> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Draft>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Draft> response = (ApiResponse<Draft>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Draft> response = (ApiResponse<Draft>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+   * 
+   * @param minerId Miner ID (required)
+   * @param body  (optional)
+   * @return Miner
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Miner postLanguageunderstandingMinerExecute(String minerId, MinerExecuteRequest body) throws IOException, ApiException {
+    return  postLanguageunderstandingMinerExecute(createPostLanguageunderstandingMinerExecuteRequest(minerId, body));
+  }
+
+  /**
+   * Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+   * 
+   * @param minerId Miner ID (required)
+   * @param body  (optional)
+   * @return Miner
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Miner> postLanguageunderstandingMinerExecuteWithHttpInfo(String minerId, MinerExecuteRequest body) throws IOException {
+    return postLanguageunderstandingMinerExecute(createPostLanguageunderstandingMinerExecuteRequest(minerId, body).withHttpInfo());
+  }
+
+  private PostLanguageunderstandingMinerExecuteRequest createPostLanguageunderstandingMinerExecuteRequest(String minerId, MinerExecuteRequest body) {
+    return PostLanguageunderstandingMinerExecuteRequest.builder()
+            .withMinerId(minerId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+   * 
+   * @param request The request object
+   * @return Miner
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Miner postLanguageunderstandingMinerExecute(PostLanguageunderstandingMinerExecuteRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Miner> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Miner>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Miner> postLanguageunderstandingMinerExecute(ApiRequest<MinerExecuteRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Miner>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Miner> response = (ApiResponse<Miner>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Miner> response = (ApiResponse<Miner>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create a unique miner.
+   * 
+   * @param body Details for creating a new miner resource. (required)
+   * @return Miner
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Miner postLanguageunderstandingMiners(Miner body) throws IOException, ApiException {
+    return  postLanguageunderstandingMiners(createPostLanguageunderstandingMinersRequest(body));
+  }
+
+  /**
+   * Create a unique miner.
+   * 
+   * @param body Details for creating a new miner resource. (required)
+   * @return Miner
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Miner> postLanguageunderstandingMinersWithHttpInfo(Miner body) throws IOException {
+    return postLanguageunderstandingMiners(createPostLanguageunderstandingMinersRequest(body).withHttpInfo());
+  }
+
+  private PostLanguageunderstandingMinersRequest createPostLanguageunderstandingMinersRequest(Miner body) {
+    return PostLanguageunderstandingMinersRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a unique miner.
+   * 
+   * @param request The request object
+   * @return Miner
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Miner postLanguageunderstandingMiners(PostLanguageunderstandingMinersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Miner> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Miner>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a unique miner.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Miner> postLanguageunderstandingMiners(ApiRequest<Miner> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Miner>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Miner> response = (ApiResponse<Miner>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Miner> response = (ApiResponse<Miner>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

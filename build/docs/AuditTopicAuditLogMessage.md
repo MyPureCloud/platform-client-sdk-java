@@ -36,6 +36,8 @@ title: AuditTopicAuditLogMessage
 | ARCHITECT | &quot;Architect&quot; |
 | CONTACTCENTER | &quot;ContactCenter&quot; |
 | CONTENTMANAGEMENT | &quot;ContentManagement&quot; |
+| EMPLOYEEPERFORMANCE | &quot;EmployeePerformance&quot; |
+| GAMIFICATION | &quot;Gamification&quot; |
 | GROUPS | &quot;Groups&quot; |
 | LANGUAGEUNDERSTANDING | &quot;LanguageUnderstanding&quot; |
 | OUTBOUND | &quot;Outbound&quot; |
@@ -72,6 +74,7 @@ title: AuditTopicAuditLogMessage
 | MEMBERUPDATE | &quot;MemberUpdate&quot; |
 | MEMBERREMOVE | &quot;MemberRemove&quot; |
 | READ | &quot;Read&quot; |
+| WRITE | &quot;Write&quot; |
 | APPLYPROTECTION | &quot;ApplyProtection&quot; |
 | REVOKEPROTECTION | &quot;RevokeProtection&quot; |
 | UPDATERETENTION | &quot;UpdateRetention&quot; |
@@ -136,6 +139,8 @@ title: AuditTopicAuditLogMessage
 | EVENTTYPE | &quot;EventType&quot; |
 | EXTENSION | &quot;Extension&quot; |
 | EXTENSIONPOOL | &quot;ExtensionPool&quot; |
+| EXTERNALMETRICSDEFINITION | &quot;ExternalMetricsDefinition&quot; |
+| EXTERNALMETRICSDATA | &quot;ExternalMetricsData&quot; |
 | FEEDBACK | &quot;Feedback&quot; |
 | FLOW | &quot;Flow&quot; |
 | FLOWMILESTONE | &quot;FlowMilestone&quot; |
@@ -147,6 +152,7 @@ title: AuditTopicAuditLogMessage
 | LINEBASE | &quot;LineBase&quot; |
 | MAXORGROUTINGUTILIZATIONCAPACITY | &quot;MaxOrgRoutingUtilizationCapacity&quot; |
 | MESSAGINGCAMPAIGN | &quot;MessagingCampaign&quot; |
+| METRIC | &quot;Metric&quot; |
 | NUMBERPLAN | &quot;NumberPlan&quot; |
 | OAUTHCLIENT | &quot;OAuthClient&quot; |
 | OAUTHCLIENTAUTHORIZATION | &quot;OAuthClientAuthorization&quot; |
@@ -175,6 +181,7 @@ title: AuditTopicAuditLogMessage
 | SESSIONTYPE | &quot;SessionType&quot; |
 | SITE | &quot;Site&quot; |
 | SPEECHTEXTANALYTICSSETTINGS | &quot;SpeechTextAnalyticsSettings&quot; |
+| STATUS | &quot;Status&quot; |
 | TEAM | &quot;Team&quot; |
 | TOPIC | &quot;Topic&quot; |
 | TRANSCRIPTIONSETTINGS | &quot;TranscriptionSettings&quot; |

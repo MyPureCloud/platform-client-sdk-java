@@ -884,7 +884,8 @@ Wraps DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}
 
 Requires ANY permissions: 
 
-* outbound:campaign:delete
+* outbound:messagingCampaign:delete
+* outbound:emailCampaign:delete
 
 ### Example
 
@@ -3763,6 +3764,7 @@ Wraps GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}
 Requires ANY permissions: 
 
 * outbound:messagingCampaign:view
+* outbound:emailCampaign:view
 
 ### Example
 
@@ -3826,6 +3828,7 @@ Wraps GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress
 Requires ANY permissions: 
 
 * outbound:messagingCampaign:view
+* outbound:emailCampaign:view
 
 ### Example
 
@@ -6090,6 +6093,7 @@ Wraps POST /api/v2/outbound/messagingcampaigns
 Requires ANY permissions: 
 
 * outbound:messagingCampaign:add
+* outbound:emailCampaign:add
 
 ### Example
 
@@ -6995,6 +6999,7 @@ Wraps PUT /api/v2/outbound/messagingcampaigns/{messagingCampaignId}
 Requires ANY permissions: 
 
 * outbound:messagingCampaign:edit
+* outbound:emailCampaign:edit
 
 ### Example
 

@@ -45,13 +45,13 @@ public class ScimV2SchemaAttribute  implements Serializable {
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    STRING("STRING"),
-    BOOLEAN("BOOLEAN"),
-    DECIMAL("DECIMAL"),
-    INTEGER("INTEGER"),
-    DATE_TIME("DATE_TIME"),
-    REFERENCE("REFERENCE"),
-    COMPLEX("COMPLEX");
+    STRING("string"),
+    BOOLEAN("boolean"),
+    DECIMAL("decimal"),
+    INTEGER("integer"),
+    DATETIME("dateTime"),
+    REFERENCE("reference"),
+    COMPLEX("complex");
 
     private String value;
 
@@ -154,10 +154,10 @@ public class ScimV2SchemaAttribute  implements Serializable {
  @JsonDeserialize(using = ReturnedEnumDeserializer.class)
   public enum ReturnedEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    ALWAYS("ALWAYS"),
-    NEVER("NEVER"),
-    DEFAULT("DEFAULT"),
-    REQUEST("REQUEST");
+    ALWAYS("always"),
+    NEVER("never"),
+    DEFAULT("default"),
+    REQUEST("request");
 
     private String value;
 
@@ -204,9 +204,9 @@ public class ScimV2SchemaAttribute  implements Serializable {
  @JsonDeserialize(using = UniquenessEnumDeserializer.class)
   public enum UniquenessEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    NONE("NONE"),
-    SERVER("SERVER"),
-    GLOBAL("GLOBAL");
+    NONE("none"),
+    SERVER("server"),
+    GLOBAL("global");
 
     private String value;
 
@@ -252,10 +252,10 @@ public class ScimV2SchemaAttribute  implements Serializable {
    */
  @JsonDeserialize(using = ReferenceTypesEnumDeserializer.class)
   public enum ReferenceTypesEnum {
-    USER("USER"),
-    GROUP("GROUP"),
-    EXTERNAL("EXTERNAL"),
-    URI("URI");
+    USER("User"),
+    GROUP("Group"),
+    EXTERNAL("external"),
+    URI("uri");
 
     private String value;
 

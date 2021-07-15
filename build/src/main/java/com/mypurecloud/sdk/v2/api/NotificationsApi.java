@@ -22,6 +22,7 @@ import com.mypurecloud.sdk.v2.api.request.DeleteNotificationsChannelSubscription
 import com.mypurecloud.sdk.v2.api.request.GetNotificationsAvailabletopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetNotificationsChannelSubscriptionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetNotificationsChannelsRequest;
+import com.mypurecloud.sdk.v2.api.request.HeadNotificationsChannelRequest;
 import com.mypurecloud.sdk.v2.api.request.PostNotificationsChannelSubscriptionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostNotificationsChannelsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutNotificationsChannelSubscriptionsRequest;
@@ -357,6 +358,85 @@ public class NotificationsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ChannelEntityListing> response = (ApiResponse<ChannelEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Verify a channel still exists and is valid
+   * 
+   * @param channelId Channel ID (required)
+   * @return Boolean
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Boolean headNotificationsChannel(String channelId) throws IOException, ApiException {
+    return  headNotificationsChannel(createHeadNotificationsChannelRequest(channelId));
+  }
+
+  /**
+   * Verify a channel still exists and is valid
+   * 
+   * @param channelId Channel ID (required)
+   * @return Boolean
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Boolean> headNotificationsChannelWithHttpInfo(String channelId) throws IOException {
+    return headNotificationsChannel(createHeadNotificationsChannelRequest(channelId).withHttpInfo());
+  }
+
+  private HeadNotificationsChannelRequest createHeadNotificationsChannelRequest(String channelId) {
+    return HeadNotificationsChannelRequest.builder()
+            .withChannelId(channelId)
+    
+            .build();
+  }
+
+  /**
+   * Verify a channel still exists and is valid
+   * 
+   * @param request The request object
+   * @return Boolean
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Boolean headNotificationsChannel(HeadNotificationsChannelRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Boolean> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Boolean>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Verify a channel still exists and is valid
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Boolean> headNotificationsChannel(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Boolean>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Boolean> response = (ApiResponse<Boolean>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Boolean> response = (ApiResponse<Boolean>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

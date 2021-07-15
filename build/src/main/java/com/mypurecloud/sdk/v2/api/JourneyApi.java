@@ -651,7 +651,7 @@ public class JourneyApi {
    * Retrieve all action targets.
    * 
    * @param pageNumber Page number (optional, default to 1)
-   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
+   * @param pageSize Page size (optional, default to 25)
    * @return ActionTargetListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -664,7 +664,7 @@ public class JourneyApi {
    * Retrieve all action targets.
    * 
    * @param pageNumber Page number (optional, default to 1)
-   * @param pageSize Page size. The max that will be returned is 100. (optional, default to 25)
+   * @param pageSize Page size (optional, default to 25)
    * @return ActionTargetListing
    * @throws IOException if the request fails to be processed
    */

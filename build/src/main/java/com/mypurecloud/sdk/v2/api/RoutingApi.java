@@ -1595,7 +1595,7 @@ public class RoutingApi {
    * 
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. (optional)
+   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param queueId Queue ID(s) to filter assessments by. (optional)
    * @return AssessmentListing
@@ -1611,7 +1611,7 @@ public class RoutingApi {
    * 
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. (optional)
+   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param queueId Queue ID(s) to filter assessments by. (optional)
    * @return AssessmentListing
@@ -2591,7 +2591,7 @@ public class RoutingApi {
    * 
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. (optional)
+   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param queueId Comma-separated list of queue Ids to filter by. (optional)
    * @return PredictorListing
@@ -2607,7 +2607,7 @@ public class RoutingApi {
    * 
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. (optional)
+   * @param limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
    * @param queueId Comma-separated list of queue Ids to filter by. (optional)
    * @return PredictorListing

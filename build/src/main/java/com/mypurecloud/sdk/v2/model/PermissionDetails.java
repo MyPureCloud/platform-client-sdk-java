@@ -45,7 +45,8 @@ public class PermissionDetails  implements Serializable {
     REQUIRESCURRENTUSER("requiresCurrentUser"),
     REQUIRESPERMISSIONS("requiresPermissions"),
     REQUIRESDIVISIONPERMISSIONS("requiresDivisionPermissions"),
-    REQUIRESANYDIVISIONPERMISSIONS("requiresAnyDivisionPermissions");
+    REQUIRESANYDIVISIONPERMISSIONS("requiresAnyDivisionPermissions"),
+    REQUIRESUSERBECONVERSATIONPARTICIPANT("requiresUserBeConversationParticipant");
 
     private String value;
 

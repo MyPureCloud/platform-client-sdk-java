@@ -21,6 +21,7 @@ import com.mypurecloud.sdk.v2.model.LimitChangeRequestDetails;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestsEntityListing;
 import com.mypurecloud.sdk.v2.model.UrlResponse;
 import com.mypurecloud.sdk.v2.model.LimitsEntityListing;
+import com.mypurecloud.sdk.v2.model.PagedNamespaceListing;
 import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrgWhitelistSettings;
 import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
@@ -34,6 +35,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsChangerequestReq
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsChangerequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsDocsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespaceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespaceDefaultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespacesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsWhitelistRequest;
@@ -596,13 +598,13 @@ public class OrganizationApiAsync {
 
   
   /**
-   * Get the available limit namespaces
+   * Get the default limits in a namespace for an organization
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<LimitsEntityListing> getOrganizationsLimitsNamespacesAsync(GetOrganizationsLimitsNamespacesRequest request, final AsyncApiCallback<LimitsEntityListing> callback) {
+  public Future<LimitsEntityListing> getOrganizationsLimitsNamespaceDefaultsAsync(GetOrganizationsLimitsNamespaceDefaultsRequest request, final AsyncApiCallback<LimitsEntityListing> callback) {
     try {
       final SettableFuture<LimitsEntityListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -630,13 +632,13 @@ public class OrganizationApiAsync {
   }
 
   /**
-   * Get the available limit namespaces
+   * Get the default limits in a namespace for an organization
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<LimitsEntityListing>> getOrganizationsLimitsNamespacesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LimitsEntityListing>> callback) {
+  public Future<ApiResponse<LimitsEntityListing>> getOrganizationsLimitsNamespaceDefaultsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LimitsEntityListing>> callback) {
     try {
       final SettableFuture<ApiResponse<LimitsEntityListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -659,6 +661,82 @@ public class OrganizationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<LimitsEntityListing> response = (ApiResponse<LimitsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get the available limit namespaces
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PagedNamespaceListing> getOrganizationsLimitsNamespacesAsync(GetOrganizationsLimitsNamespacesRequest request, final AsyncApiCallback<PagedNamespaceListing> callback) {
+    try {
+      final SettableFuture<PagedNamespaceListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PagedNamespaceListing>() {}, new AsyncApiCallback<ApiResponse<PagedNamespaceListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PagedNamespaceListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the available limit namespaces
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PagedNamespaceListing>> getOrganizationsLimitsNamespacesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PagedNamespaceListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PagedNamespaceListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PagedNamespaceListing>() {}, new AsyncApiCallback<ApiResponse<PagedNamespaceListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<PagedNamespaceListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PagedNamespaceListing> response = (ApiResponse<PagedNamespaceListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PagedNamespaceListing> response = (ApiResponse<PagedNamespaceListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

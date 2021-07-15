@@ -26,6 +26,7 @@ title: PermissionDetails
 | REQUIRESPERMISSIONS | &quot;requiresPermissions&quot; |
 | REQUIRESDIVISIONPERMISSIONS | &quot;requiresDivisionPermissions&quot; |
 | REQUIRESANYDIVISIONPERMISSIONS | &quot;requiresAnyDivisionPermissions&quot; |
+| REQUIRESUSERBECONVERSATIONPARTICIPANT | &quot;requiresUserBeConversationParticipant&quot; |
 {: class="table table-striped"}
 
 

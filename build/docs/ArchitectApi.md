@@ -3574,7 +3574,7 @@ try {
 
 
 
-> [EntityListing](EntityListing.html) getFlowsDatatableImportJobs(datatableId, pageNumber, pageSize)
+> [DataTableImportEntityListing](DataTableImportEntityListing.html) getFlowsDatatableImportJobs(datatableId, pageNumber, pageSize)
 
 Get all recent import jobs
 
@@ -3612,7 +3612,7 @@ String datatableId = "datatableId_example"; // String | id of datatable
 Integer pageNumber = 1; // Integer | Page number
 Integer pageSize = 25; // Integer | Page size
 try {
-    EntityListing result = apiInstance.getFlowsDatatableImportJobs(datatableId, pageNumber, pageSize);
+    DataTableImportEntityListing result = apiInstance.getFlowsDatatableImportJobs(datatableId, pageNumber, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getFlowsDatatableImportJobs");
@@ -3633,7 +3633,7 @@ try {
 
 ### Return type
 
-[**EntityListing**](EntityListing.html)
+[**DataTableImportEntityListing**](DataTableImportEntityListing.html)
 
 <a name="getFlowsDatatableRow"></a>
 

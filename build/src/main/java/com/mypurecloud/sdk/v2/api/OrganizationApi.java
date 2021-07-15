@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.LimitChangeRequestDetails;
 import com.mypurecloud.sdk.v2.model.LimitChangeRequestsEntityListing;
 import com.mypurecloud.sdk.v2.model.UrlResponse;
 import com.mypurecloud.sdk.v2.model.LimitsEntityListing;
+import com.mypurecloud.sdk.v2.model.PagedNamespaceListing;
 import com.mypurecloud.sdk.v2.model.Organization;
 import com.mypurecloud.sdk.v2.model.OrgWhitelistSettings;
 import com.mypurecloud.sdk.v2.model.OrganizationFeatures;
@@ -31,6 +32,7 @@ import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsChangerequestReq
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsChangerequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsDocsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespaceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespaceDefaultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsLimitsNamespacesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrganizationsWhitelistRequest;
@@ -617,48 +619,44 @@ public class OrganizationApi {
 
   
   /**
-   * Get the available limit namespaces
+   * Get the default limits in a namespace for an organization
    * 
-   * @param pageSize Page size (optional, default to 100)
-   * @param pageNumber Page number (optional, default to 1)
+   * @param namespaceName The namespace to fetch defaults limits for (required)
    * @return LimitsEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LimitsEntityListing getOrganizationsLimitsNamespaces(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return  getOrganizationsLimitsNamespaces(createGetOrganizationsLimitsNamespacesRequest(pageSize, pageNumber));
+  public LimitsEntityListing getOrganizationsLimitsNamespaceDefaults(String namespaceName) throws IOException, ApiException {
+    return  getOrganizationsLimitsNamespaceDefaults(createGetOrganizationsLimitsNamespaceDefaultsRequest(namespaceName));
   }
 
   /**
-   * Get the available limit namespaces
+   * Get the default limits in a namespace for an organization
    * 
-   * @param pageSize Page size (optional, default to 100)
-   * @param pageNumber Page number (optional, default to 1)
+   * @param namespaceName The namespace to fetch defaults limits for (required)
    * @return LimitsEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LimitsEntityListing> getOrganizationsLimitsNamespacesWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
-    return getOrganizationsLimitsNamespaces(createGetOrganizationsLimitsNamespacesRequest(pageSize, pageNumber).withHttpInfo());
+  public ApiResponse<LimitsEntityListing> getOrganizationsLimitsNamespaceDefaultsWithHttpInfo(String namespaceName) throws IOException {
+    return getOrganizationsLimitsNamespaceDefaults(createGetOrganizationsLimitsNamespaceDefaultsRequest(namespaceName).withHttpInfo());
   }
 
-  private GetOrganizationsLimitsNamespacesRequest createGetOrganizationsLimitsNamespacesRequest(Integer pageSize, Integer pageNumber) {
-    return GetOrganizationsLimitsNamespacesRequest.builder()
-            .withPageSize(pageSize)
-    
-            .withPageNumber(pageNumber)
+  private GetOrganizationsLimitsNamespaceDefaultsRequest createGetOrganizationsLimitsNamespaceDefaultsRequest(String namespaceName) {
+    return GetOrganizationsLimitsNamespaceDefaultsRequest.builder()
+            .withNamespaceName(namespaceName)
     
             .build();
   }
 
   /**
-   * Get the available limit namespaces
+   * Get the default limits in a namespace for an organization
    * 
    * @param request The request object
    * @return LimitsEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LimitsEntityListing getOrganizationsLimitsNamespaces(GetOrganizationsLimitsNamespacesRequest request) throws IOException, ApiException {
+  public LimitsEntityListing getOrganizationsLimitsNamespaceDefaults(GetOrganizationsLimitsNamespaceDefaultsRequest request) throws IOException, ApiException {
     try {
       ApiResponse<LimitsEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LimitsEntityListing>() {});
       return response.getBody();
@@ -670,13 +668,13 @@ public class OrganizationApi {
   }
 
   /**
-   * Get the available limit namespaces
+   * Get the default limits in a namespace for an organization
    * 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LimitsEntityListing> getOrganizationsLimitsNamespaces(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<LimitsEntityListing> getOrganizationsLimitsNamespaceDefaults(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<LimitsEntityListing>() {});
     }
@@ -694,6 +692,89 @@ public class OrganizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<LimitsEntityListing> response = (ApiResponse<LimitsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get the available limit namespaces
+   * 
+   * @param pageSize Page size (optional, default to 100)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return PagedNamespaceListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PagedNamespaceListing getOrganizationsLimitsNamespaces(Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getOrganizationsLimitsNamespaces(createGetOrganizationsLimitsNamespacesRequest(pageSize, pageNumber));
+  }
+
+  /**
+   * Get the available limit namespaces
+   * 
+   * @param pageSize Page size (optional, default to 100)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return PagedNamespaceListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PagedNamespaceListing> getOrganizationsLimitsNamespacesWithHttpInfo(Integer pageSize, Integer pageNumber) throws IOException {
+    return getOrganizationsLimitsNamespaces(createGetOrganizationsLimitsNamespacesRequest(pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetOrganizationsLimitsNamespacesRequest createGetOrganizationsLimitsNamespacesRequest(Integer pageSize, Integer pageNumber) {
+    return GetOrganizationsLimitsNamespacesRequest.builder()
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .build();
+  }
+
+  /**
+   * Get the available limit namespaces
+   * 
+   * @param request The request object
+   * @return PagedNamespaceListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PagedNamespaceListing getOrganizationsLimitsNamespaces(GetOrganizationsLimitsNamespacesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PagedNamespaceListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PagedNamespaceListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the available limit namespaces
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PagedNamespaceListing> getOrganizationsLimitsNamespaces(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PagedNamespaceListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PagedNamespaceListing> response = (ApiResponse<PagedNamespaceListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PagedNamespaceListing> response = (ApiResponse<PagedNamespaceListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

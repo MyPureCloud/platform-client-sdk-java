@@ -83,6 +83,7 @@ public class PostTextResponse  implements Serializable {
   private Map<String, Object> googleDialogFlow = null;
   private Map<String, Object> genesysDialogEngine = null;
   private Map<String, Object> genesysBotConnector = null;
+  private Map<String, Object> nuanceMixDlg = null;
 
   
   /**
@@ -247,6 +248,24 @@ public class PostTextResponse  implements Serializable {
   }
 
   
+  /**
+   * Raw data response from Nuance Mix Dlg (if called)
+   **/
+  public PostTextResponse nuanceMixDlg(Map<String, Object> nuanceMixDlg) {
+    this.nuanceMixDlg = nuanceMixDlg;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Raw data response from Nuance Mix Dlg (if called)")
+  @JsonProperty("nuanceMixDlg")
+  public Map<String, Object> getNuanceMixDlg() {
+    return nuanceMixDlg;
+  }
+  public void setNuanceMixDlg(Map<String, Object> nuanceMixDlg) {
+    this.nuanceMixDlg = nuanceMixDlg;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -265,12 +284,13 @@ public class PostTextResponse  implements Serializable {
         Objects.equals(this.amazonLex, postTextResponse.amazonLex) &&
         Objects.equals(this.googleDialogFlow, postTextResponse.googleDialogFlow) &&
         Objects.equals(this.genesysDialogEngine, postTextResponse.genesysDialogEngine) &&
-        Objects.equals(this.genesysBotConnector, postTextResponse.genesysBotConnector);
+        Objects.equals(this.genesysBotConnector, postTextResponse.genesysBotConnector) &&
+        Objects.equals(this.nuanceMixDlg, postTextResponse.nuanceMixDlg);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(botState, replyMessages, intentName, slots, botCorrelationId, amazonLex, googleDialogFlow, genesysDialogEngine, genesysBotConnector);
+    return Objects.hash(botState, replyMessages, intentName, slots, botCorrelationId, amazonLex, googleDialogFlow, genesysDialogEngine, genesysBotConnector, nuanceMixDlg);
   }
 
   @Override
@@ -287,6 +307,7 @@ public class PostTextResponse  implements Serializable {
     sb.append("    googleDialogFlow: ").append(toIndentedString(googleDialogFlow)).append("\n");
     sb.append("    genesysDialogEngine: ").append(toIndentedString(genesysDialogEngine)).append("\n");
     sb.append("    genesysBotConnector: ").append(toIndentedString(genesysBotConnector)).append("\n");
+    sb.append("    nuanceMixDlg: ").append(toIndentedString(nuanceMixDlg)).append("\n");
     sb.append("}");
     return sb.toString();
   }

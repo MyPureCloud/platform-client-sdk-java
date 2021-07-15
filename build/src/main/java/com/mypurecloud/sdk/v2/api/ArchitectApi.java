@@ -44,7 +44,7 @@ import com.mypurecloud.sdk.v2.model.FlowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTable;
 import com.mypurecloud.sdk.v2.model.DataTableExportJob;
 import com.mypurecloud.sdk.v2.model.DataTableImportJob;
-import com.mypurecloud.sdk.v2.model.EntityListing;
+import com.mypurecloud.sdk.v2.model.DataTableImportEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTableRowEntityListing;
 import com.mypurecloud.sdk.v2.model.DataTablesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.FlowDivisionViewEntityListing;
@@ -4699,11 +4699,11 @@ public class ArchitectApi {
    * @param datatableId id of datatable (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
-   * @return EntityListing
+   * @return DataTableImportEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EntityListing getFlowsDatatableImportJobs(String datatableId, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
+  public DataTableImportEntityListing getFlowsDatatableImportJobs(String datatableId, Integer pageNumber, Integer pageSize) throws IOException, ApiException {
     return  getFlowsDatatableImportJobs(createGetFlowsDatatableImportJobsRequest(datatableId, pageNumber, pageSize));
   }
 
@@ -4713,10 +4713,10 @@ public class ArchitectApi {
    * @param datatableId id of datatable (required)
    * @param pageNumber Page number (optional, default to 1)
    * @param pageSize Page size (optional, default to 25)
-   * @return EntityListing
+   * @return DataTableImportEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EntityListing> getFlowsDatatableImportJobsWithHttpInfo(String datatableId, Integer pageNumber, Integer pageSize) throws IOException {
+  public ApiResponse<DataTableImportEntityListing> getFlowsDatatableImportJobsWithHttpInfo(String datatableId, Integer pageNumber, Integer pageSize) throws IOException {
     return getFlowsDatatableImportJobs(createGetFlowsDatatableImportJobsRequest(datatableId, pageNumber, pageSize).withHttpInfo());
   }
 
@@ -4735,13 +4735,13 @@ public class ArchitectApi {
    * Get all recent import jobs
    * Get all recent import jobs
    * @param request The request object
-   * @return EntityListing
+   * @return DataTableImportEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public EntityListing getFlowsDatatableImportJobs(GetFlowsDatatableImportJobsRequest request) throws IOException, ApiException {
+  public DataTableImportEntityListing getFlowsDatatableImportJobs(GetFlowsDatatableImportJobsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<EntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<EntityListing>() {});
+      ApiResponse<DataTableImportEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataTableImportEntityListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -4757,13 +4757,13 @@ public class ArchitectApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<EntityListing> getFlowsDatatableImportJobs(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<DataTableImportEntityListing> getFlowsDatatableImportJobs(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<EntityListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<DataTableImportEntityListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)exception;
+      ApiResponse<DataTableImportEntityListing> response = (ApiResponse<DataTableImportEntityListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -4774,7 +4774,7 @@ public class ArchitectApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<EntityListing> response = (ApiResponse<EntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<DataTableImportEntityListing> response = (ApiResponse<DataTableImportEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

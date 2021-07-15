@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteToken**](TokensApi.html#deleteToken) | Delete all auth tokens for the specified user. |
 | [**deleteTokensMe**](TokensApi.html#deleteTokensMe) | Delete auth token used to make the request. |
 | [**getTokensMe**](TokensApi.html#getTokensMe) | Fetch information about the current token |
+| [**headTokensMe**](TokensApi.html#headTokensMe) | Verify user token |
 {: class="table-striped"}
 
 <a name="deleteToken"></a>
@@ -188,4 +189,61 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**TokenInfo**](TokenInfo.html)
+
+<a name="headTokensMe"></a>
+
+# **headTokensMe**
+
+
+
+> Void headTokensMe()
+
+Verify user token
+
+
+
+Wraps HEAD /api/v2/tokens/me  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TokensApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TokensApi apiInstance = new TokensApi();
+try {
+    apiInstance.headTokensMe();
+} catch (ApiException e) {
+    System.err.println("Exception when calling TokensApi#headTokensMe");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+null (empty response body)
 

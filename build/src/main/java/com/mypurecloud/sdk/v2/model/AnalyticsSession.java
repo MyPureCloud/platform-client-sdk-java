@@ -128,6 +128,7 @@ public class AnalyticsSession  implements Serializable {
  @JsonDeserialize(using = MediaTypeEnumDeserializer.class)
   public enum MediaTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("unknown"),
     CALLBACK("callback"),
     CHAT("chat"),
     COBROWSE("cobrowse"),

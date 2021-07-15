@@ -10,9 +10,13 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.Objective;
+import com.mypurecloud.sdk.v2.model.PerformanceProfile;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.time.LocalDate;
+import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -26,6 +30,10 @@ public class Metric  implements Serializable {
   private String metricDefinitionId = null;
   private Objective objective = null;
   private String performanceProfileId = null;
+  private AddressableEntityRef linkedMetric = null;
+  private Date dateCreated = null;
+  private LocalDate dateUnlinked = null;
+  private PerformanceProfile sourcePerformanceProfile = null;
   private String selfUri = null;
 
   
@@ -98,13 +106,63 @@ public class Metric  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Performance profile id of this metric")
+  @ApiModelProperty(example = "null", value = "Performance profile id of this metric")
   @JsonProperty("performanceProfileId")
   public String getPerformanceProfileId() {
     return performanceProfileId;
   }
   public void setPerformanceProfileId(String performanceProfileId) {
     this.performanceProfileId = performanceProfileId;
+  }
+
+  
+  /**
+   * The linked metric entity reference
+   **/
+  public Metric linkedMetric(AddressableEntityRef linkedMetric) {
+    this.linkedMetric = linkedMetric;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The linked metric entity reference")
+  @JsonProperty("linkedMetric")
+  public AddressableEntityRef getLinkedMetric() {
+    return linkedMetric;
+  }
+  public void setLinkedMetric(AddressableEntityRef linkedMetric) {
+    this.linkedMetric = linkedMetric;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "The created date of this metric. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateCreated")
+  public Date getDateCreated() {
+    return dateCreated;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "The unlinked workday for this metric if this metric was ever unlinked. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+  @JsonProperty("dateUnlinked")
+  public LocalDate getDateUnlinked() {
+    return dateUnlinked;
+  }
+
+  
+  /**
+   * The source performance profile when this metric is linked
+   **/
+  public Metric sourcePerformanceProfile(PerformanceProfile sourcePerformanceProfile) {
+    this.sourcePerformanceProfile = sourcePerformanceProfile;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The source performance profile when this metric is linked")
+  @JsonProperty("sourcePerformanceProfile")
+  public PerformanceProfile getSourcePerformanceProfile() {
+    return sourcePerformanceProfile;
+  }
+  public void setSourcePerformanceProfile(PerformanceProfile sourcePerformanceProfile) {
+    this.sourcePerformanceProfile = sourcePerformanceProfile;
   }
 
   
@@ -130,12 +188,16 @@ public class Metric  implements Serializable {
         Objects.equals(this.metricDefinitionId, metric.metricDefinitionId) &&
         Objects.equals(this.objective, metric.objective) &&
         Objects.equals(this.performanceProfileId, metric.performanceProfileId) &&
+        Objects.equals(this.linkedMetric, metric.linkedMetric) &&
+        Objects.equals(this.dateCreated, metric.dateCreated) &&
+        Objects.equals(this.dateUnlinked, metric.dateUnlinked) &&
+        Objects.equals(this.sourcePerformanceProfile, metric.sourcePerformanceProfile) &&
         Objects.equals(this.selfUri, metric.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, metricDefinitionId, objective, performanceProfileId, selfUri);
+    return Objects.hash(id, name, metricDefinitionId, objective, performanceProfileId, linkedMetric, dateCreated, dateUnlinked, sourcePerformanceProfile, selfUri);
   }
 
   @Override
@@ -148,6 +210,10 @@ public class Metric  implements Serializable {
     sb.append("    metricDefinitionId: ").append(toIndentedString(metricDefinitionId)).append("\n");
     sb.append("    objective: ").append(toIndentedString(objective)).append("\n");
     sb.append("    performanceProfileId: ").append(toIndentedString(performanceProfileId)).append("\n");
+    sb.append("    linkedMetric: ").append(toIndentedString(linkedMetric)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    dateUnlinked: ").append(toIndentedString(dateUnlinked)).append("\n");
+    sb.append("    sourcePerformanceProfile: ").append(toIndentedString(sourcePerformanceProfile)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

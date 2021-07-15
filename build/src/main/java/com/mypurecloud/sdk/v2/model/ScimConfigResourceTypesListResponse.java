@@ -24,11 +24,29 @@ import java.io.Serializable;
 
 public class ScimConfigResourceTypesListResponse  implements Serializable {
   
+  private List<String> schemas = new ArrayList<String>();
   private Long totalResults = null;
   private Long startIndex = null;
   private Long itemsPerPage = null;
   private List<ScimConfigResourceType> resources = new ArrayList<ScimConfigResourceType>();
-  private List<String> schemas = new ArrayList<String>();
+
+  
+  /**
+   * The list of supported schemas.
+   **/
+  public ScimConfigResourceTypesListResponse schemas(List<String> schemas) {
+    this.schemas = schemas;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of supported schemas.")
+  @JsonProperty("schemas")
+  public List<String> getSchemas() {
+    return schemas;
+  }
+  public void setSchemas(List<String> schemas) {
+    this.schemas = schemas;
+  }
 
   
   @ApiModelProperty(example = "null", value = "The total number of results.")
@@ -70,24 +88,6 @@ public class ScimConfigResourceTypesListResponse  implements Serializable {
   }
 
   
-  /**
-   * The list of supported schemas.
-   **/
-  public ScimConfigResourceTypesListResponse schemas(List<String> schemas) {
-    this.schemas = schemas;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The list of supported schemas.")
-  @JsonProperty("schemas")
-  public List<String> getSchemas() {
-    return schemas;
-  }
-  public void setSchemas(List<String> schemas) {
-    this.schemas = schemas;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -98,16 +98,16 @@ public class ScimConfigResourceTypesListResponse  implements Serializable {
       return false;
     }
     ScimConfigResourceTypesListResponse scimConfigResourceTypesListResponse = (ScimConfigResourceTypesListResponse) o;
-    return Objects.equals(this.totalResults, scimConfigResourceTypesListResponse.totalResults) &&
+    return Objects.equals(this.schemas, scimConfigResourceTypesListResponse.schemas) &&
+        Objects.equals(this.totalResults, scimConfigResourceTypesListResponse.totalResults) &&
         Objects.equals(this.startIndex, scimConfigResourceTypesListResponse.startIndex) &&
         Objects.equals(this.itemsPerPage, scimConfigResourceTypesListResponse.itemsPerPage) &&
-        Objects.equals(this.resources, scimConfigResourceTypesListResponse.resources) &&
-        Objects.equals(this.schemas, scimConfigResourceTypesListResponse.schemas);
+        Objects.equals(this.resources, scimConfigResourceTypesListResponse.resources);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalResults, startIndex, itemsPerPage, resources, schemas);
+    return Objects.hash(schemas, totalResults, startIndex, itemsPerPage, resources);
   }
 
   @Override
@@ -115,11 +115,11 @@ public class ScimConfigResourceTypesListResponse  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ScimConfigResourceTypesListResponse {\n");
     
+    sb.append("    schemas: ").append(toIndentedString(schemas)).append("\n");
     sb.append("    totalResults: ").append(toIndentedString(totalResults)).append("\n");
     sb.append("    startIndex: ").append(toIndentedString(startIndex)).append("\n");
     sb.append("    itemsPerPage: ").append(toIndentedString(itemsPerPage)).append("\n");
     sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
-    sb.append("    schemas: ").append(toIndentedString(schemas)).append("\n");
     sb.append("}");
     return sb.toString();
   }

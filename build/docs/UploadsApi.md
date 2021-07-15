@@ -7,11 +7,77 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**postLanguageunderstandingMinerUploads**](UploadsApi.html#postLanguageunderstandingMinerUploads) | Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner |
 | [**postUploadsPublicassetsImages**](UploadsApi.html#postUploadsPublicassetsImages) | Creates presigned url for uploading a public asset image |
 | [**postUploadsRecordings**](UploadsApi.html#postUploadsRecordings) | Creates presigned url for uploading a recording file |
 | [**postUploadsWorkforcemanagementHistoricaldataCsv**](UploadsApi.html#postUploadsWorkforcemanagementHistoricaldataCsv) | Creates presigned url for uploading WFM historical data file. Requires data in csv format. |
 | [**postUploadsWorkforcemanagementHistoricaldataJson**](UploadsApi.html#postUploadsWorkforcemanagementHistoricaldataJson) | Creates presigned url for uploading WFM historical data file. Requires data in json format. |
 {: class="table-striped"}
+
+<a name="postLanguageunderstandingMinerUploads"></a>
+
+# **postLanguageunderstandingMinerUploads**
+
+
+
+> [UploadUrlResponse](UploadUrlResponse.html) postLanguageunderstandingMinerUploads(minerId, body)
+
+Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
+
+
+
+Wraps POST /api/v2/languageunderstanding/miners/{minerId}/uploads  
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:upload
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UploadsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UploadsApi apiInstance = new UploadsApi();
+String minerId = "minerId_example"; // String | Miner ID
+Empty body = new Empty(); // Empty | query
+try {
+    UploadUrlResponse result = apiInstance.postLanguageunderstandingMinerUploads(minerId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UploadsApi#postLanguageunderstandingMinerUploads");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **minerId** | **String**| Miner ID | 
+| **body** | [**Empty**](Empty.html)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse.html)
 
 <a name="postUploadsPublicassetsImages"></a>
 

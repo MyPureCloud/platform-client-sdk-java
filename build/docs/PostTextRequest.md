@@ -18,9 +18,10 @@ title: PostTextRequest
 | **botChannels** | <!---->[**List&lt;BotChannelsEnum&gt;**](#BotChannelsEnum)<!----> | The channels this bot is utilizing |  [optional] |
 | **botCorrelationId** | <!----><!---->**String**<!----> | Id for tracking the activity - this will be returned in the response |  [optional] |
 | **messagingPlatformType** | [**MessagingPlatformTypeEnum**](#MessagingPlatformTypeEnum)<!----> | If the channels list contains a &#39;Messaging&#39; item and the messaging platform is known, include it here to get accurate analytics |  [optional] |
-| **amazonLexRequest** | <!----><!---->[**AmazonLexRequest**](AmazonLexRequest.html)<!----> |  |  [optional] |
-| **googleDialogflow** | <!----><!---->[**GoogleDialogflowCustomSettings**](GoogleDialogflowCustomSettings.html)<!----> |  |  [optional] |
-| **genesysBotConnector** | <!----><!---->[**GenesysBotConnector**](GenesysBotConnector.html)<!----> |  |  [optional] |
+| **amazonLexRequest** | <!----><!---->[**AmazonLexRequest**](AmazonLexRequest.html)<!----> | Provider specific settings, if any |  [optional] |
+| **googleDialogflow** | <!----><!---->[**GoogleDialogflowCustomSettings**](GoogleDialogflowCustomSettings.html)<!----> | Provider specific settings, if any |  [optional] |
+| **genesysBotConnector** | <!----><!---->[**GenesysBotConnector**](GenesysBotConnector.html)<!----> | Provider specific settings, if any |  [optional] |
+| **nuanceMixDlg** | <!----><!---->[**NuanceMixDlgSettings**](NuanceMixDlgSettings.html)<!----> | Provider specific settings, if any |  [optional] |
 {: class="table table-striped"}
 
 

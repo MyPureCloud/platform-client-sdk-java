@@ -24,6 +24,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getIntegrationsActions**](IntegrationsApi.html#getIntegrationsActions) | Retrieves all actions associated with filters passed in via query param. |
 | [**getIntegrationsActionsCategories**](IntegrationsApi.html#getIntegrationsActionsCategories) | Retrieves all categories of available Actions |
 | [**getIntegrationsActionsDrafts**](IntegrationsApi.html#getIntegrationsActionsDrafts) | Retrieves all action drafts associated with the filters passed in via query param. |
+| [**getIntegrationsBotconnectorIntegrationIdBot**](IntegrationsApi.html#getIntegrationsBotconnectorIntegrationIdBot) | Get a specific botConnector bot, plus versions, for this integration |
+| [**getIntegrationsBotconnectorIntegrationIdBotVersions**](IntegrationsApi.html#getIntegrationsBotconnectorIntegrationIdBotVersions) | Get a list of bot versions for a bot |
+| [**getIntegrationsBotconnectorIntegrationIdBots**](IntegrationsApi.html#getIntegrationsBotconnectorIntegrationIdBots) | Get a list of botConnector bots for this integration |
+| [**getIntegrationsBotconnectorIntegrationIdBotsSummaries**](IntegrationsApi.html#getIntegrationsBotconnectorIntegrationIdBotsSummaries) | Get a summary list of botConnector bots for this integration |
 | [**getIntegrationsClientapps**](IntegrationsApi.html#getIntegrationsClientapps) | List permitted client app integrations for the logged in user |
 | [**getIntegrationsCredential**](IntegrationsApi.html#getIntegrationsCredential) | Get a single credential with sensitive fields redacted |
 | [**getIntegrationsCredentials**](IntegrationsApi.html#getIntegrationsCredentials) | List multiple sets of credentials |
@@ -58,6 +62,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postIntegrationsCredentials**](IntegrationsApi.html#postIntegrationsCredentials) | Create a set of credentials |
 | [**postIntegrationsWorkforcemanagementVendorconnection**](IntegrationsApi.html#postIntegrationsWorkforcemanagementVendorconnection) | Add a vendor connection |
 | [**putIntegrationConfigCurrent**](IntegrationsApi.html#putIntegrationConfigCurrent) | Update integration configuration. |
+| [**putIntegrationsBotconnectorIntegrationIdBots**](IntegrationsApi.html#putIntegrationsBotconnectorIntegrationIdBots) | Set a list of botConnector bots plus versions for this integration |
 | [**putIntegrationsCredential**](IntegrationsApi.html#putIntegrationsCredential) | Update a set of credentials |
 | [**putIntegrationsSpeechTtsSettings**](IntegrationsApi.html#putIntegrationsSpeechTtsSettings) | Update TTS settings for an org |
 {: class="table-striped"}
@@ -1107,7 +1112,7 @@ Integer pageSize = 25; // Integer | The total page size requested
 Integer pageNumber = 1; // Integer | The page number requested
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
-String sortBy = "sortBy_example"; // String | Root level field name to sort on.
+String sortBy = "sortBy_example"; // String | Root level field name to sort on.  Only 'name' is supported on this endpoint.
 String sortOrder = "asc"; // String | Direction to sort 'sortBy' field.
 String secure = "secure_example"; // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
 try {
@@ -1128,7 +1133,7 @@ try {
 | **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
-| **sortBy** | **String**| Root level field name to sort on. | [optional] 
+| **sortBy** | **String**| Root level field name to sort on.  Only &#39;name&#39; is supported on this endpoint. | [optional] 
 | **sortOrder** | **String**| Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC 
 | **secure** | **String**| Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional]<br />**Values**: true, false 
 {: class="table-striped"}
@@ -1219,6 +1224,272 @@ try {
 ### Return type
 
 [**ActionEntityListing**](ActionEntityListing.html)
+
+<a name="getIntegrationsBotconnectorIntegrationIdBot"></a>
+
+# **getIntegrationsBotconnectorIntegrationIdBot**
+
+
+
+> [BotConnectorBot](BotConnectorBot.html) getIntegrationsBotconnectorIntegrationIdBot(integrationId, botId, version)
+
+Get a specific botConnector bot, plus versions, for this integration
+
+
+
+Wraps GET /api/v2/integrations/botconnector/{integrationId}/bots/{botId}  
+
+Requires ANY permissions: 
+
+* integration:botconnector:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String integrationId = "integrationId_example"; // String | The integration ID for this group of bots
+String botId = "botId_example"; // String | The botID for this bot
+String version = "version_example"; // String | Specific Version
+try {
+    BotConnectorBot result = apiInstance.getIntegrationsBotconnectorIntegrationIdBot(integrationId, botId, version);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsBotconnectorIntegrationIdBot");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| The integration ID for this group of bots | 
+| **botId** | **String**| The botID for this bot | 
+| **version** | **String**| Specific Version | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BotConnectorBot**](BotConnectorBot.html)
+
+<a name="getIntegrationsBotconnectorIntegrationIdBotVersions"></a>
+
+# **getIntegrationsBotconnectorIntegrationIdBotVersions**
+
+
+
+> [BotConnectorBotVersionSummaryEntityListing](BotConnectorBotVersionSummaryEntityListing.html) getIntegrationsBotconnectorIntegrationIdBotVersions(integrationId, botId, pageNumber, pageSize)
+
+Get a list of bot versions for a bot
+
+
+
+Wraps GET /api/v2/integrations/botconnector/{integrationId}/bots/{botId}/versions  
+
+Requires ANY permissions: 
+
+* integration:botconnector:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String integrationId = "integrationId_example"; // String | The integration ID for this bot group
+String botId = "botId_example"; // String | The botID for this bot
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+try {
+    BotConnectorBotVersionSummaryEntityListing result = apiInstance.getIntegrationsBotconnectorIntegrationIdBotVersions(integrationId, botId, pageNumber, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsBotconnectorIntegrationIdBotVersions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| The integration ID for this bot group | 
+| **botId** | **String**| The botID for this bot | 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BotConnectorBotVersionSummaryEntityListing**](BotConnectorBotVersionSummaryEntityListing.html)
+
+<a name="getIntegrationsBotconnectorIntegrationIdBots"></a>
+
+# **getIntegrationsBotconnectorIntegrationIdBots**
+
+
+
+> [BotList](BotList.html) getIntegrationsBotconnectorIntegrationIdBots(integrationId)
+
+Get a list of botConnector bots for this integration
+
+
+
+Wraps GET /api/v2/integrations/botconnector/{integrationId}/bots  
+
+Requires ANY permissions: 
+
+* integration:botconnector:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String integrationId = "integrationId_example"; // String | The integration ID for this group of bots
+try {
+    BotList result = apiInstance.getIntegrationsBotconnectorIntegrationIdBots(integrationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsBotconnectorIntegrationIdBots");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| The integration ID for this group of bots | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BotList**](BotList.html)
+
+<a name="getIntegrationsBotconnectorIntegrationIdBotsSummaries"></a>
+
+# **getIntegrationsBotconnectorIntegrationIdBotsSummaries**
+
+
+
+> [BotConnectorBotSummaryEntityListing](BotConnectorBotSummaryEntityListing.html) getIntegrationsBotconnectorIntegrationIdBotsSummaries(integrationId, pageNumber, pageSize)
+
+Get a summary list of botConnector bots for this integration
+
+
+
+Wraps GET /api/v2/integrations/botconnector/{integrationId}/bots/summaries  
+
+Requires ANY permissions: 
+
+* integration:botconnector:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String integrationId = "integrationId_example"; // String | The integration ID for this group of bots
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+try {
+    BotConnectorBotSummaryEntityListing result = apiInstance.getIntegrationsBotconnectorIntegrationIdBotsSummaries(integrationId, pageNumber, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#getIntegrationsBotconnectorIntegrationIdBotsSummaries");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| The integration ID for this group of bots | 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BotConnectorBotSummaryEntityListing**](BotConnectorBotSummaryEntityListing.html)
 
 <a name="getIntegrationsClientapps"></a>
 
@@ -3448,6 +3719,70 @@ try {
 ### Return type
 
 [**IntegrationConfiguration**](IntegrationConfiguration.html)
+
+<a name="putIntegrationsBotconnectorIntegrationIdBots"></a>
+
+# **putIntegrationsBotconnectorIntegrationIdBots**
+
+
+
+> Void putIntegrationsBotconnectorIntegrationIdBots(integrationId, botList)
+
+Set a list of botConnector bots plus versions for this integration
+
+
+
+Wraps PUT /api/v2/integrations/botconnector/{integrationId}/bots  
+
+Requires ANY permissions: 
+
+* integration:botconnector:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+String integrationId = "integrationId_example"; // String | The integration ID for this group of bots
+BotList botList = new BotList(); // BotList | 
+try {
+    apiInstance.putIntegrationsBotconnectorIntegrationIdBots(integrationId, botList);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#putIntegrationsBotconnectorIntegrationIdBots");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **integrationId** | **String**| The integration ID for this group of bots | 
+| **botList** | [**BotList**](BotList.html)|  | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
 
 <a name="putIntegrationsCredential"></a>
 

@@ -10,11 +10,13 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
+import com.mypurecloud.sdk.v2.model.Empty;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
-import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
+import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
 
 
+import com.mypurecloud.sdk.v2.api.request.PostLanguageunderstandingMinerUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUploadsPublicassetsImagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUploadsRecordingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostUploadsWorkforcemanagementHistoricaldataCsvRequest;
@@ -36,6 +38,89 @@ public class UploadsApi {
 
   public UploadsApi(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
+   * 
+   * @param minerId Miner ID (required)
+   * @param body query (required)
+   * @return UploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadUrlResponse postLanguageunderstandingMinerUploads(String minerId, Empty body) throws IOException, ApiException {
+    return  postLanguageunderstandingMinerUploads(createPostLanguageunderstandingMinerUploadsRequest(minerId, body));
+  }
+
+  /**
+   * Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
+   * 
+   * @param minerId Miner ID (required)
+   * @param body query (required)
+   * @return UploadUrlResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadUrlResponse> postLanguageunderstandingMinerUploadsWithHttpInfo(String minerId, Empty body) throws IOException {
+    return postLanguageunderstandingMinerUploads(createPostLanguageunderstandingMinerUploadsRequest(minerId, body).withHttpInfo());
+  }
+
+  private PostLanguageunderstandingMinerUploadsRequest createPostLanguageunderstandingMinerUploadsRequest(String minerId, Empty body) {
+    return PostLanguageunderstandingMinerUploadsRequest.builder()
+            .withMinerId(minerId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
+   * 
+   * @param request The request object
+   * @return UploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadUrlResponse postLanguageunderstandingMinerUploads(PostLanguageunderstandingMinerUploadsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UploadUrlResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UploadUrlResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadUrlResponse> postLanguageunderstandingMinerUploads(ApiRequest<Empty> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UploadUrlResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
   }
 
   

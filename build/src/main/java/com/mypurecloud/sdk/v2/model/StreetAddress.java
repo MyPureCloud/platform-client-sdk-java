@@ -85,13 +85,14 @@ public class StreetAddress  implements Serializable {
 
   
   /**
+   * Number and street
    **/
   public StreetAddress RD(String RD) {
     this.RD = RD;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "Number and street")
   @JsonProperty("RD")
   public String getRD() {
     return RD;
@@ -102,13 +103,14 @@ public class StreetAddress  implements Serializable {
 
   
   /**
+   * House Number
    **/
   public StreetAddress HNO(String HNO) {
     this.HNO = HNO;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "House Number")
   @JsonProperty("HNO")
   public String getHNO() {
     return HNO;
@@ -119,13 +121,14 @@ public class StreetAddress  implements Serializable {
 
   
   /**
+   * extra location info like suite 300
    **/
   public StreetAddress LOC(String LOC) {
     this.LOC = LOC;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "extra location info like suite 300")
   @JsonProperty("LOC")
   public String getLOC() {
     return LOC;
@@ -136,13 +139,14 @@ public class StreetAddress  implements Serializable {
 
   
   /**
+   * Name of the customer
    **/
   public StreetAddress NAM(String NAM) {
     this.NAM = NAM;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Name of the customer")
   @JsonProperty("NAM")
   public String getNAM() {
     return NAM;
@@ -153,13 +157,14 @@ public class StreetAddress  implements Serializable {
 
   
   /**
+   * Postal code
    **/
   public StreetAddress PC(String PC) {
     this.PC = PC;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "Postal code")
   @JsonProperty("PC")
   public String getPC() {
     return PC;

@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.TokenInfo;
 import com.mypurecloud.sdk.v2.api.request.DeleteTokenRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteTokensMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTokensMeRequest;
+import com.mypurecloud.sdk.v2.api.request.HeadTokensMeRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -255,6 +256,78 @@ public class TokensApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TokenInfo> response = (ApiResponse<TokenInfo>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Verify user token
+   * 
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void headTokensMe() throws IOException, ApiException {
+     headTokensMe(createHeadTokensMeRequest());
+  }
+
+  /**
+   * Verify user token
+   * 
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> headTokensMeWithHttpInfo() throws IOException {
+    return headTokensMe(createHeadTokensMeRequest().withHttpInfo());
+  }
+
+  private HeadTokensMeRequest createHeadTokensMeRequest() {
+    return HeadTokensMeRequest.builder()
+            .build();
+  }
+
+  /**
+   * Verify user token
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void headTokensMe(HeadTokensMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Verify user token
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> headTokensMe(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

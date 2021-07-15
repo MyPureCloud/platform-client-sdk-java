@@ -311,7 +311,7 @@ This endpoint does not require any parameters.
 
 
 
-> [Metric](Metric.html) getGamificationMetric(metricId, performanceProfileId)
+> [Metric](Metric.html) getGamificationMetric(metricId, workday, performanceProfileId)
 
 Gamified metric by id
 
@@ -348,9 +348,10 @@ Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
 String metricId = "metricId_example"; // String | metric Id
+LocalDate workday = new LocalDate(); // LocalDate | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String performanceProfileId = "performanceProfileId_example"; // String | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
 try {
-    Metric result = apiInstance.getGamificationMetric(metricId, performanceProfileId);
+    Metric result = apiInstance.getGamificationMetric(metricId, workday, performanceProfileId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationApi#getGamificationMetric");
@@ -364,6 +365,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **metricId** | **String**| metric Id | 
+| **workday** | **LocalDate**| The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
 | **performanceProfileId** | **String**| The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. | [optional] 
 {: class="table-striped"}
 
@@ -500,7 +502,7 @@ This endpoint does not require any parameters.
 
 
 
-> [GetMetricsResponse](GetMetricsResponse.html) getGamificationMetrics(performanceProfileId)
+> [GetMetricsResponse](GetMetricsResponse.html) getGamificationMetrics(performanceProfileId, workday)
 
 All gamified metrics for a given profile
 
@@ -537,8 +539,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
 String performanceProfileId = "performanceProfileId_example"; // String | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
+LocalDate workday = new LocalDate(); // LocalDate | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 try {
-    GetMetricsResponse result = apiInstance.getGamificationMetrics(performanceProfileId);
+    GetMetricsResponse result = apiInstance.getGamificationMetrics(performanceProfileId, workday);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GamificationApi#getGamificationMetrics");
@@ -552,6 +555,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **performanceProfileId** | **String**| The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. | [optional] 
+| **workday** | **LocalDate**| The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
 {: class="table-striped"}
 
 

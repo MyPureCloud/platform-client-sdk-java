@@ -24,6 +24,7 @@ import java.io.Serializable;
 
 public class ScimError  implements Serializable {
   
+  private List<String> schemas = new ArrayList<String>();
   private String status = null;
 
   private static class ScimTypeEnumDeserializer extends StdDeserializer<ScimTypeEnum> {
@@ -82,7 +83,24 @@ public class ScimError  implements Serializable {
   }
   private ScimTypeEnum scimType = null;
   private String detail = null;
-  private List<String> schemas = new ArrayList<String>();
+
+  
+  /**
+   * The list of schemas for the SCIM error.
+   **/
+  public ScimError schemas(List<String> schemas) {
+    this.schemas = schemas;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of schemas for the SCIM error.")
+  @JsonProperty("schemas")
+  public List<String> getSchemas() {
+    return schemas;
+  }
+  public void setSchemas(List<String> schemas) {
+    this.schemas = schemas;
+  }
 
   
   @ApiModelProperty(example = "null", value = "The HTTP status code returned for the SCIM error.")
@@ -106,24 +124,6 @@ public class ScimError  implements Serializable {
   }
 
   
-  /**
-   * The list of schemas for the SCIM error.
-   **/
-  public ScimError schemas(List<String> schemas) {
-    this.schemas = schemas;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The list of schemas for the SCIM error.")
-  @JsonProperty("schemas")
-  public List<String> getSchemas() {
-    return schemas;
-  }
-  public void setSchemas(List<String> schemas) {
-    this.schemas = schemas;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -134,15 +134,15 @@ public class ScimError  implements Serializable {
       return false;
     }
     ScimError scimError = (ScimError) o;
-    return Objects.equals(this.status, scimError.status) &&
+    return Objects.equals(this.schemas, scimError.schemas) &&
+        Objects.equals(this.status, scimError.status) &&
         Objects.equals(this.scimType, scimError.scimType) &&
-        Objects.equals(this.detail, scimError.detail) &&
-        Objects.equals(this.schemas, scimError.schemas);
+        Objects.equals(this.detail, scimError.detail);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, scimType, detail, schemas);
+    return Objects.hash(schemas, status, scimType, detail);
   }
 
   @Override
@@ -150,10 +150,10 @@ public class ScimError  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ScimError {\n");
     
+    sb.append("    schemas: ").append(toIndentedString(schemas)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    scimType: ").append(toIndentedString(scimType)).append("\n");
     sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
-    sb.append("    schemas: ").append(toIndentedString(schemas)).append("\n");
     sb.append("}");
     return sb.toString();
   }
