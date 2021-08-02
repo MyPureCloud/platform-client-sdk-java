@@ -14,10 +14,10 @@ title: LearningAssignmentUserListing
 | **total** | <!----><!---->**Long**<!----> | The number of users matching search term |  [optional] |
 | **unfilteredTotal** | <!----><!---->**Integer**<!----> | The total number of users |  [optional] |
 | **firstUri** | <!----><!---->**String**<!----> |  |  [optional] |
+| **previousUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **nextUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **lastUri** | <!----><!---->**String**<!----> |  |  [optional] |
-| **previousUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **pageCount** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

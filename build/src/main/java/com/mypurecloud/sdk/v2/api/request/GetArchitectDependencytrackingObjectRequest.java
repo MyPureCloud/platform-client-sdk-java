@@ -168,6 +168,7 @@ public class GetArchitectDependencytrackingObjectRequest {
 		TTSVOICE("TTSVOICE"), 
 		USER("USER"), 
 		USERPROMPT("USERPROMPT"), 
+		VOICEMAILFLOW("VOICEMAILFLOW"), 
 		WIDGET("WIDGET"), 
 		WORKFLOW("WORKFLOW"), 
 		WORKITEMFLOW("WORKITEMFLOW");
@@ -295,6 +296,7 @@ public class GetArchitectDependencytrackingObjectRequest {
 		TTSVOICE("TTSVOICE"), 
 		USER("USER"), 
 		USERPROMPT("USERPROMPT"), 
+		VOICEMAILFLOW("VOICEMAILFLOW"), 
 		WIDGET("WIDGET"), 
 		WORKFLOW("WORKFLOW"), 
 		WORKITEMFLOW("WORKITEMFLOW");
@@ -394,6 +396,7 @@ public class GetArchitectDependencytrackingObjectRequest {
 		TTSVOICE("TTSVOICE"), 
 		USER("USER"), 
 		USERPROMPT("USERPROMPT"), 
+		VOICEMAILFLOW("VOICEMAILFLOW"), 
 		WIDGET("WIDGET"), 
 		WORKFLOW("WORKFLOW"), 
 		WORKITEMFLOW("WORKITEMFLOW");

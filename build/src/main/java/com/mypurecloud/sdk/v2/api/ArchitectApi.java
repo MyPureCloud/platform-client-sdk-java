@@ -4967,12 +4967,13 @@ public class ArchitectApi {
    * @param sortBy Sort by (optional, default to id)
    * @param sortOrder Sort order (optional, default to ascending)
    * @param divisionId division ID(s) (optional)
+   * @param name Name to filter by (optional)
    * @return DataTablesDomainEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DataTablesDomainEntityListing getFlowsDatatables(String expand, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> divisionId) throws IOException, ApiException {
-    return  getFlowsDatatables(createGetFlowsDatatablesRequest(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId));
+  public DataTablesDomainEntityListing getFlowsDatatables(String expand, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> divisionId, String name) throws IOException, ApiException {
+    return  getFlowsDatatables(createGetFlowsDatatablesRequest(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId, name));
   }
 
   /**
@@ -4984,14 +4985,15 @@ public class ArchitectApi {
    * @param sortBy Sort by (optional, default to id)
    * @param sortOrder Sort order (optional, default to ascending)
    * @param divisionId division ID(s) (optional)
+   * @param name Name to filter by (optional)
    * @return DataTablesDomainEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DataTablesDomainEntityListing> getFlowsDatatablesWithHttpInfo(String expand, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> divisionId) throws IOException {
-    return getFlowsDatatables(createGetFlowsDatatablesRequest(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId).withHttpInfo());
+  public ApiResponse<DataTablesDomainEntityListing> getFlowsDatatablesWithHttpInfo(String expand, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> divisionId, String name) throws IOException {
+    return getFlowsDatatables(createGetFlowsDatatablesRequest(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId, name).withHttpInfo());
   }
 
-  private GetFlowsDatatablesRequest createGetFlowsDatatablesRequest(String expand, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> divisionId) {
+  private GetFlowsDatatablesRequest createGetFlowsDatatablesRequest(String expand, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> divisionId, String name) {
     return GetFlowsDatatablesRequest.builder()
             .withExpand(expand)
     
@@ -5004,6 +5006,8 @@ public class ArchitectApi {
             .withSortOrder(sortOrder)
     
             .withDivisionId(divisionId)
+    
+            .withName(name)
     
             .build();
   }

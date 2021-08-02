@@ -113,6 +113,8 @@ title: AuditTopicAuditLogMessage
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ACCESSTOKEN | &quot;AccessToken&quot; |
+| ACTIONMAP | &quot;ActionMap&quot; |
+| ACTIONTEMPLATE | &quot;ActionTemplate&quot; |
 | ATTEMPTLIMITS | &quot;AttemptLimits&quot; |
 | AUTHORGANIZATION | &quot;AuthOrganization&quot; |
 | AUTHUSER | &quot;AuthUser&quot; |

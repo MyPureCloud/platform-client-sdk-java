@@ -60,11 +60,13 @@ public class FlowAggregationQuery  implements Serializable {
     CONVERSATIONID("conversationId"),
     CONVERTEDFROM("convertedFrom"),
     CONVERTEDTO("convertedTo"),
+    DELIVERYSTATUS("deliveryStatus"),
     DIRECTION("direction"),
     DISCONNECTTYPE("disconnectType"),
     DIVISIONID("divisionId"),
     DNIS("dnis"),
     EDGEID("edgeId"),
+    ELIGIBLEAGENTCOUNT("eligibleAgentCount"),
     ENDINGLANGUAGE("endingLanguage"),
     ENTRYREASON("entryReason"),
     ENTRYTYPE("entryType"),
@@ -130,6 +132,7 @@ public class FlowAggregationQuery  implements Serializable {
     TRANSFERTYPE("transferType"),
     USEDROUTING("usedRouting"),
     USERID("userId"),
+    WAITINGINTERACTIONCOUNT("waitingInteractionCount"),
     WRAPUPCODE("wrapUpCode");
 
     private String value;

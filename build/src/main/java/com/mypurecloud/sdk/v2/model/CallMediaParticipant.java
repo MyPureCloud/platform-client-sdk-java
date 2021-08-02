@@ -330,6 +330,7 @@ public class CallMediaParticipant  implements Serializable {
   private String documentId = null;
   private FaxStatus faxStatus = null;
   private String monitoredParticipantId = null;
+  private String coachedParticipantId = null;
   private String consultParticipantId = null;
   private String uuiData = null;
 
@@ -1109,6 +1110,24 @@ public class CallMediaParticipant  implements Serializable {
 
   
   /**
+   * The ID of the participant being coached when performing a call coach.
+   **/
+  public CallMediaParticipant coachedParticipantId(String coachedParticipantId) {
+    this.coachedParticipantId = coachedParticipantId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ID of the participant being coached when performing a call coach.")
+  @JsonProperty("coachedParticipantId")
+  public String getCoachedParticipantId() {
+    return coachedParticipantId;
+  }
+  public void setCoachedParticipantId(String coachedParticipantId) {
+    this.coachedParticipantId = coachedParticipantId;
+  }
+
+  
+  /**
    * The ID of the consult transfer target participant when performing a consult transfer.
    **/
   public CallMediaParticipant consultParticipantId(String consultParticipantId) {
@@ -1197,13 +1216,14 @@ public class CallMediaParticipant  implements Serializable {
         Objects.equals(this.documentId, callMediaParticipant.documentId) &&
         Objects.equals(this.faxStatus, callMediaParticipant.faxStatus) &&
         Objects.equals(this.monitoredParticipantId, callMediaParticipant.monitoredParticipantId) &&
+        Objects.equals(this.coachedParticipantId, callMediaParticipant.coachedParticipantId) &&
         Objects.equals(this.consultParticipantId, callMediaParticipant.consultParticipantId) &&
         Objects.equals(this.uuiData, callMediaParticipant.uuiData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, consultParticipantId, uuiData);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, faxStatus, monitoredParticipantId, coachedParticipantId, consultParticipantId, uuiData);
   }
 
   @Override
@@ -1254,6 +1274,7 @@ public class CallMediaParticipant  implements Serializable {
     sb.append("    documentId: ").append(toIndentedString(documentId)).append("\n");
     sb.append("    faxStatus: ").append(toIndentedString(faxStatus)).append("\n");
     sb.append("    monitoredParticipantId: ").append(toIndentedString(monitoredParticipantId)).append("\n");
+    sb.append("    coachedParticipantId: ").append(toIndentedString(coachedParticipantId)).append("\n");
     sb.append("    consultParticipantId: ").append(toIndentedString(consultParticipantId)).append("\n");
     sb.append("    uuiData: ").append(toIndentedString(uuiData)).append("\n");
     sb.append("}");

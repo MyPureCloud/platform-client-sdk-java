@@ -48,6 +48,7 @@ title: SegmentDetailQueryPredicate
 | CALLBACKNUMBER | &quot;callbackNumber&quot; |
 | CALLBACKSCHEDULEDTIME | &quot;callbackScheduledTime&quot; |
 | CONFERENCE | &quot;conference&quot; |
+| DELIVERYSTATUS | &quot;deliveryStatus&quot; |
 | DESTINATIONCONVERSATIONID | &quot;destinationConversationId&quot; |
 | DIRECTION | &quot;direction&quot; |
 | DISCONNECTTYPE | &quot;disconnectType&quot; |

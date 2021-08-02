@@ -25,31 +25,12 @@ import java.io.Serializable;
 
 public class ContentGeneric  implements Serializable {
   
-  private String id = null;
   private String title = null;
   private String description = null;
   private String image = null;
   private String video = null;
   private ContentActions actions = null;
   private List<ButtonComponent> components = new ArrayList<ButtonComponent>();
-
-  
-  /**
-   * A unique ID assigned to this rich message content.
-   **/
-  public ContentGeneric id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "A unique ID assigned to this rich message content.")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-  public void setId(String id) {
-    this.id = id;
-  }
 
   
   /**
@@ -170,8 +151,7 @@ public class ContentGeneric  implements Serializable {
       return false;
     }
     ContentGeneric contentGeneric = (ContentGeneric) o;
-    return Objects.equals(this.id, contentGeneric.id) &&
-        Objects.equals(this.title, contentGeneric.title) &&
+    return Objects.equals(this.title, contentGeneric.title) &&
         Objects.equals(this.description, contentGeneric.description) &&
         Objects.equals(this.image, contentGeneric.image) &&
         Objects.equals(this.video, contentGeneric.video) &&
@@ -181,7 +161,7 @@ public class ContentGeneric  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, title, description, image, video, actions, components);
+    return Objects.hash(title, description, image, video, actions, components);
   }
 
   @Override
@@ -189,7 +169,6 @@ public class ContentGeneric  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ContentGeneric {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");

@@ -13,6 +13,8 @@ title: GenericSAML
 | **disabled** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **issuerURI** | <!----><!---->**String**<!----> |  |  [optional] |
 | **ssoTargetURI** | <!----><!---->**String**<!----> |  |  [optional] |
+| **sloURI** | <!----><!---->**String**<!----> |  |  [optional] |
+| **sloBinding** | <!----><!---->**String**<!----> |  |  [optional] |
 | **certificate** | <!----><!---->**String**<!----> |  |  [optional] |
 | **certificates** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **relyingPartyIdentifier** | <!----><!---->**String**<!----> |  |  [optional] |

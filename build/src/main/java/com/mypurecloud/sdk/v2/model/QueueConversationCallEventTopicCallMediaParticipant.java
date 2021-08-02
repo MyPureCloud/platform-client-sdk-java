@@ -333,6 +333,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
   private String dnis = null;
   private String documentId = null;
   private String monitoredParticipantId = null;
+  private String coachedParticipantId = null;
   private String consultParticipantId = null;
   private QueueConversationCallEventTopicFaxStatus faxStatus = null;
 
@@ -1070,6 +1071,23 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
   
   /**
    **/
+  public QueueConversationCallEventTopicCallMediaParticipant coachedParticipantId(String coachedParticipantId) {
+    this.coachedParticipantId = coachedParticipantId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("coachedParticipantId")
+  public String getCoachedParticipantId() {
+    return coachedParticipantId;
+  }
+  public void setCoachedParticipantId(String coachedParticipantId) {
+    this.coachedParticipantId = coachedParticipantId;
+  }
+
+  
+  /**
+   **/
   public QueueConversationCallEventTopicCallMediaParticipant consultParticipantId(String consultParticipantId) {
     this.consultParticipantId = consultParticipantId;
     return this;
@@ -1155,13 +1173,14 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
         Objects.equals(this.dnis, queueConversationCallEventTopicCallMediaParticipant.dnis) &&
         Objects.equals(this.documentId, queueConversationCallEventTopicCallMediaParticipant.documentId) &&
         Objects.equals(this.monitoredParticipantId, queueConversationCallEventTopicCallMediaParticipant.monitoredParticipantId) &&
+        Objects.equals(this.coachedParticipantId, queueConversationCallEventTopicCallMediaParticipant.coachedParticipantId) &&
         Objects.equals(this.consultParticipantId, queueConversationCallEventTopicCallMediaParticipant.consultParticipantId) &&
         Objects.equals(this.faxStatus, queueConversationCallEventTopicCallMediaParticipant.faxStatus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, consultParticipantId, faxStatus);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, muted, confined, recording, recordingState, group, ani, dnis, documentId, monitoredParticipantId, coachedParticipantId, consultParticipantId, faxStatus);
   }
 
   @Override
@@ -1212,6 +1231,7 @@ public class QueueConversationCallEventTopicCallMediaParticipant  implements Ser
     sb.append("    dnis: ").append(toIndentedString(dnis)).append("\n");
     sb.append("    documentId: ").append(toIndentedString(documentId)).append("\n");
     sb.append("    monitoredParticipantId: ").append(toIndentedString(monitoredParticipantId)).append("\n");
+    sb.append("    coachedParticipantId: ").append(toIndentedString(coachedParticipantId)).append("\n");
     sb.append("    consultParticipantId: ").append(toIndentedString(consultParticipantId)).append("\n");
     sb.append("    faxStatus: ").append(toIndentedString(faxStatus)).append("\n");
     sb.append("}");

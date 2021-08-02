@@ -152,9 +152,9 @@ public class HistoryListing  implements Serializable {
   private Date started = null;
   private Date completed = null;
   private List<HistoryEntry> entities = new ArrayList<HistoryEntry>();
-  private Long total = null;
-  private Integer pageSize = null;
   private Integer pageNumber = null;
+  private Integer pageSize = null;
+  private Long total = null;
   private Integer pageCount = null;
 
   
@@ -436,18 +436,18 @@ public class HistoryListing  implements Serializable {
   
   /**
    **/
-  public HistoryListing total(Long total) {
-    this.total = total;
+  public HistoryListing pageNumber(Integer pageNumber) {
+    this.pageNumber = pageNumber;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("total")
-  public Long getTotal() {
-    return total;
+  @JsonProperty("pageNumber")
+  public Integer getPageNumber() {
+    return pageNumber;
   }
-  public void setTotal(Long total) {
-    this.total = total;
+  public void setPageNumber(Integer pageNumber) {
+    this.pageNumber = pageNumber;
   }
 
   
@@ -470,18 +470,18 @@ public class HistoryListing  implements Serializable {
   
   /**
    **/
-  public HistoryListing pageNumber(Integer pageNumber) {
-    this.pageNumber = pageNumber;
+  public HistoryListing total(Long total) {
+    this.total = total;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("pageNumber")
-  public Integer getPageNumber() {
-    return pageNumber;
+  @JsonProperty("total")
+  public Long getTotal() {
+    return total;
   }
-  public void setPageNumber(Integer pageNumber) {
-    this.pageNumber = pageNumber;
+  public void setTotal(Long total) {
+    this.total = total;
   }
 
   
@@ -528,15 +528,15 @@ public class HistoryListing  implements Serializable {
         Objects.equals(this.started, historyListing.started) &&
         Objects.equals(this.completed, historyListing.completed) &&
         Objects.equals(this.entities, historyListing.entities) &&
-        Objects.equals(this.total, historyListing.total) &&
-        Objects.equals(this.pageSize, historyListing.pageSize) &&
         Objects.equals(this.pageNumber, historyListing.pageNumber) &&
+        Objects.equals(this.pageSize, historyListing.pageSize) &&
+        Objects.equals(this.total, historyListing.total) &&
         Objects.equals(this.pageCount, historyListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, complete, user, client, errorMessage, errorCode, errorDetails, errorMessageParams, actionName, actionStatus, name, description, system, started, completed, entities, total, pageSize, pageNumber, pageCount);
+    return Objects.hash(id, complete, user, client, errorMessage, errorCode, errorDetails, errorMessageParams, actionName, actionStatus, name, description, system, started, completed, entities, pageNumber, pageSize, total, pageCount);
   }
 
   @Override
@@ -560,9 +560,9 @@ public class HistoryListing  implements Serializable {
     sb.append("    started: ").append(toIndentedString(started)).append("\n");
     sb.append("    completed: ").append(toIndentedString(completed)).append("\n");
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
-    sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
+    sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
+    sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");
     return sb.toString();

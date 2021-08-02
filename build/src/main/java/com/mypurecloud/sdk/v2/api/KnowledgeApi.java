@@ -17,12 +17,16 @@ import com.mypurecloud.sdk.v2.model.KnowledgeDocument;
 import com.mypurecloud.sdk.v2.model.CategoryListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeExtendedCategory;
 import com.mypurecloud.sdk.v2.model.DocumentListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeImport;
 import com.mypurecloud.sdk.v2.model.KnowledgeTraining;
 import com.mypurecloud.sdk.v2.model.TrainingListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeBaseListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeCategoryRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRequest;
+import com.mypurecloud.sdk.v2.model.ImportStatusRequest;
+import com.mypurecloud.sdk.v2.model.UploadUrlRequest;
+import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeSearchResponse;
 
@@ -30,11 +34,13 @@ import com.mypurecloud.sdk.v2.model.KnowledgeSearchResponse;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseLanguageCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseLanguageDocumentRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteKnowledgeKnowledgebaseLanguageDocumentsImportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageDocumentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageDocumentsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageDocumentsImportRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageTrainingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageTrainingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebasesRequest;
@@ -42,8 +48,11 @@ import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageDocumentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageDocumentsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageDocumentsImportRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeDocumentuploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLanguageCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLanguageDocumentsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLanguageDocumentsImportsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLanguageTrainingPromoteRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseLanguageTrainingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeKnowledgebaseSearchRequest;
@@ -316,6 +325,90 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<KnowledgeDocument> response = (ApiResponse<KnowledgeDocument>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete import operation
+   * 
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param languageCode Language code, format: iso2-LOCALE (required)
+   * @param importId Import ID (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteKnowledgeKnowledgebaseLanguageDocumentsImport(String knowledgeBaseId, String languageCode, String importId) throws IOException, ApiException {
+     deleteKnowledgeKnowledgebaseLanguageDocumentsImport(createDeleteKnowledgeKnowledgebaseLanguageDocumentsImportRequest(knowledgeBaseId, languageCode, importId));
+  }
+
+  /**
+   * Delete import operation
+   * 
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param languageCode Language code, format: iso2-LOCALE (required)
+   * @param importId Import ID (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteKnowledgeKnowledgebaseLanguageDocumentsImportWithHttpInfo(String knowledgeBaseId, String languageCode, String importId) throws IOException {
+    return deleteKnowledgeKnowledgebaseLanguageDocumentsImport(createDeleteKnowledgeKnowledgebaseLanguageDocumentsImportRequest(knowledgeBaseId, languageCode, importId).withHttpInfo());
+  }
+
+  private DeleteKnowledgeKnowledgebaseLanguageDocumentsImportRequest createDeleteKnowledgeKnowledgebaseLanguageDocumentsImportRequest(String knowledgeBaseId, String languageCode, String importId) {
+    return DeleteKnowledgeKnowledgebaseLanguageDocumentsImportRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+    
+            .withLanguageCode(languageCode)
+    
+            .withImportId(importId)
+    
+            .build();
+  }
+
+  /**
+   * Delete import operation
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteKnowledgeKnowledgebaseLanguageDocumentsImport(DeleteKnowledgeKnowledgebaseLanguageDocumentsImportRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete import operation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteKnowledgeKnowledgebaseLanguageDocumentsImport(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -783,6 +876,93 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<DocumentListing> response = (ApiResponse<DocumentListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get import operation report
+   * 
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param languageCode Language code, format: iso2-LOCALE (required)
+   * @param importId Import ID (required)
+   * @return KnowledgeImport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeImport getKnowledgeKnowledgebaseLanguageDocumentsImport(String knowledgeBaseId, String languageCode, String importId) throws IOException, ApiException {
+    return  getKnowledgeKnowledgebaseLanguageDocumentsImport(createGetKnowledgeKnowledgebaseLanguageDocumentsImportRequest(knowledgeBaseId, languageCode, importId));
+  }
+
+  /**
+   * Get import operation report
+   * 
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param languageCode Language code, format: iso2-LOCALE (required)
+   * @param importId Import ID (required)
+   * @return KnowledgeImport
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeImport> getKnowledgeKnowledgebaseLanguageDocumentsImportWithHttpInfo(String knowledgeBaseId, String languageCode, String importId) throws IOException {
+    return getKnowledgeKnowledgebaseLanguageDocumentsImport(createGetKnowledgeKnowledgebaseLanguageDocumentsImportRequest(knowledgeBaseId, languageCode, importId).withHttpInfo());
+  }
+
+  private GetKnowledgeKnowledgebaseLanguageDocumentsImportRequest createGetKnowledgeKnowledgebaseLanguageDocumentsImportRequest(String knowledgeBaseId, String languageCode, String importId) {
+    return GetKnowledgeKnowledgebaseLanguageDocumentsImportRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+    
+            .withLanguageCode(languageCode)
+    
+            .withImportId(importId)
+    
+            .build();
+  }
+
+  /**
+   * Get import operation report
+   * 
+   * @param request The request object
+   * @return KnowledgeImport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeImport getKnowledgeKnowledgebaseLanguageDocumentsImport(GetKnowledgeKnowledgebaseLanguageDocumentsImportRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeImport> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeImport>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get import operation report
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeImport> getKnowledgeKnowledgebaseLanguageDocumentsImport(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeImport>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeImport> response = (ApiResponse<KnowledgeImport>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeImport> response = (ApiResponse<KnowledgeImport>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1434,6 +1614,176 @@ public class KnowledgeApi {
 
   
   /**
+   * Start import operation
+   * 
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param languageCode Language code, format: iso2-LOCALE (required)
+   * @param importId Import ID (required)
+   * @param body  (required)
+   * @return KnowledgeImport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeImport patchKnowledgeKnowledgebaseLanguageDocumentsImport(String knowledgeBaseId, String languageCode, String importId, ImportStatusRequest body) throws IOException, ApiException {
+    return  patchKnowledgeKnowledgebaseLanguageDocumentsImport(createPatchKnowledgeKnowledgebaseLanguageDocumentsImportRequest(knowledgeBaseId, languageCode, importId, body));
+  }
+
+  /**
+   * Start import operation
+   * 
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param languageCode Language code, format: iso2-LOCALE (required)
+   * @param importId Import ID (required)
+   * @param body  (required)
+   * @return KnowledgeImport
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeImport> patchKnowledgeKnowledgebaseLanguageDocumentsImportWithHttpInfo(String knowledgeBaseId, String languageCode, String importId, ImportStatusRequest body) throws IOException {
+    return patchKnowledgeKnowledgebaseLanguageDocumentsImport(createPatchKnowledgeKnowledgebaseLanguageDocumentsImportRequest(knowledgeBaseId, languageCode, importId, body).withHttpInfo());
+  }
+
+  private PatchKnowledgeKnowledgebaseLanguageDocumentsImportRequest createPatchKnowledgeKnowledgebaseLanguageDocumentsImportRequest(String knowledgeBaseId, String languageCode, String importId, ImportStatusRequest body) {
+    return PatchKnowledgeKnowledgebaseLanguageDocumentsImportRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+    
+            .withLanguageCode(languageCode)
+    
+            .withImportId(importId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Start import operation
+   * 
+   * @param request The request object
+   * @return KnowledgeImport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeImport patchKnowledgeKnowledgebaseLanguageDocumentsImport(PatchKnowledgeKnowledgebaseLanguageDocumentsImportRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeImport> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeImport>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Start import operation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeImport> patchKnowledgeKnowledgebaseLanguageDocumentsImport(ApiRequest<ImportStatusRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeImport>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeImport> response = (ApiResponse<KnowledgeImport>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeImport> response = (ApiResponse<KnowledgeImport>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Creates a presigned URL for uploading a knowledge import file with a set of documents
+   * 
+   * @param body query (required)
+   * @return UploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadUrlResponse postKnowledgeDocumentuploads(UploadUrlRequest body) throws IOException, ApiException {
+    return  postKnowledgeDocumentuploads(createPostKnowledgeDocumentuploadsRequest(body));
+  }
+
+  /**
+   * Creates a presigned URL for uploading a knowledge import file with a set of documents
+   * 
+   * @param body query (required)
+   * @return UploadUrlResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadUrlResponse> postKnowledgeDocumentuploadsWithHttpInfo(UploadUrlRequest body) throws IOException {
+    return postKnowledgeDocumentuploads(createPostKnowledgeDocumentuploadsRequest(body).withHttpInfo());
+  }
+
+  private PostKnowledgeDocumentuploadsRequest createPostKnowledgeDocumentuploadsRequest(UploadUrlRequest body) {
+    return PostKnowledgeDocumentuploadsRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Creates a presigned URL for uploading a knowledge import file with a set of documents
+   * 
+   * @param request The request object
+   * @return UploadUrlResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UploadUrlResponse postKnowledgeDocumentuploads(PostKnowledgeDocumentuploadsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UploadUrlResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UploadUrlResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a presigned URL for uploading a knowledge import file with a set of documents
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UploadUrlResponse> postKnowledgeDocumentuploads(ApiRequest<UploadUrlRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UploadUrlResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UploadUrlResponse> response = (ApiResponse<UploadUrlResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Create new category
    * 
    * @param knowledgeBaseId Knowledge base ID (required)
@@ -1602,6 +1952,93 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<KnowledgeDocument> response = (ApiResponse<KnowledgeDocument>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create import operation
+   * 
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param languageCode Language code, format: iso2-LOCALE (required)
+   * @param body  (required)
+   * @return KnowledgeImport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeImport postKnowledgeKnowledgebaseLanguageDocumentsImports(String knowledgeBaseId, String languageCode, KnowledgeImport body) throws IOException, ApiException {
+    return  postKnowledgeKnowledgebaseLanguageDocumentsImports(createPostKnowledgeKnowledgebaseLanguageDocumentsImportsRequest(knowledgeBaseId, languageCode, body));
+  }
+
+  /**
+   * Create import operation
+   * 
+   * @param knowledgeBaseId Knowledge base ID (required)
+   * @param languageCode Language code, format: iso2-LOCALE (required)
+   * @param body  (required)
+   * @return KnowledgeImport
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeImport> postKnowledgeKnowledgebaseLanguageDocumentsImportsWithHttpInfo(String knowledgeBaseId, String languageCode, KnowledgeImport body) throws IOException {
+    return postKnowledgeKnowledgebaseLanguageDocumentsImports(createPostKnowledgeKnowledgebaseLanguageDocumentsImportsRequest(knowledgeBaseId, languageCode, body).withHttpInfo());
+  }
+
+  private PostKnowledgeKnowledgebaseLanguageDocumentsImportsRequest createPostKnowledgeKnowledgebaseLanguageDocumentsImportsRequest(String knowledgeBaseId, String languageCode, KnowledgeImport body) {
+    return PostKnowledgeKnowledgebaseLanguageDocumentsImportsRequest.builder()
+            .withKnowledgeBaseId(knowledgeBaseId)
+    
+            .withLanguageCode(languageCode)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create import operation
+   * 
+   * @param request The request object
+   * @return KnowledgeImport
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public KnowledgeImport postKnowledgeKnowledgebaseLanguageDocumentsImports(PostKnowledgeKnowledgebaseLanguageDocumentsImportsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<KnowledgeImport> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeImport>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create import operation
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<KnowledgeImport> postKnowledgeKnowledgebaseLanguageDocumentsImports(ApiRequest<KnowledgeImport> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<KnowledgeImport>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeImport> response = (ApiResponse<KnowledgeImport>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<KnowledgeImport> response = (ApiResponse<KnowledgeImport>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

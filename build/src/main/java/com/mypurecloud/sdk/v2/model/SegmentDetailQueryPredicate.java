@@ -99,6 +99,7 @@ public class SegmentDetailQueryPredicate  implements Serializable {
     CALLBACKNUMBER("callbackNumber"),
     CALLBACKSCHEDULEDTIME("callbackScheduledTime"),
     CONFERENCE("conference"),
+    DELIVERYSTATUS("deliveryStatus"),
     DESTINATIONCONVERSATIONID("destinationConversationId"),
     DIRECTION("direction"),
     DISCONNECTTYPE("disconnectType"),

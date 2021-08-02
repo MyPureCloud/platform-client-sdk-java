@@ -12,6 +12,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingMessagingCampaignConfigChangeContactSort;
+import com.mypurecloud.sdk.v2.model.OutboundMessagingMessagingCampaignConfigChangeEmailConfig;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingMessagingCampaignConfigChangeErrorDetail;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingMessagingCampaignConfigChangeSmsConfig;
 import com.mypurecloud.sdk.v2.model.OutboundMessagingMessagingCampaignConfigChangeUriReference;
@@ -93,6 +94,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
   private List<OutboundMessagingMessagingCampaignConfigChangeContactSort> contactSorts = new ArrayList<OutboundMessagingMessagingCampaignConfigChangeContactSort>();
   private Integer messagesPerMinute = null;
   private OutboundMessagingMessagingCampaignConfigChangeSmsConfig smsConfig = null;
+  private OutboundMessagingMessagingCampaignConfigChangeEmailConfig emailConfig = null;
   private List<OutboundMessagingMessagingCampaignConfigChangeErrorDetail> errors = new ArrayList<OutboundMessagingMessagingCampaignConfigChangeErrorDetail>();
 
   
@@ -353,6 +355,23 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
   
   /**
    **/
+  public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign emailConfig(OutboundMessagingMessagingCampaignConfigChangeEmailConfig emailConfig) {
+    this.emailConfig = emailConfig;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("emailConfig")
+  public OutboundMessagingMessagingCampaignConfigChangeEmailConfig getEmailConfig() {
+    return emailConfig;
+  }
+  public void setEmailConfig(OutboundMessagingMessagingCampaignConfigChangeEmailConfig emailConfig) {
+    this.emailConfig = emailConfig;
+  }
+
+  
+  /**
+   **/
   public OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign errors(List<OutboundMessagingMessagingCampaignConfigChangeErrorDetail> errors) {
     this.errors = errors;
     return this;
@@ -393,12 +412,13 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
         Objects.equals(this.contactSorts, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.contactSorts) &&
         Objects.equals(this.messagesPerMinute, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.messagesPerMinute) &&
         Objects.equals(this.smsConfig, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.smsConfig) &&
+        Objects.equals(this.emailConfig, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.emailConfig) &&
         Objects.equals(this.errors, outboundMessagingMessagingCampaignConfigChangeMessagingCampaign.errors);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, division, name, dateCreated, dateModified, version, campaignStatus, callableTimeSet, contactList, dncLists, contactListFilters, alwaysRunning, contactSorts, messagesPerMinute, smsConfig, errors);
+    return Objects.hash(id, division, name, dateCreated, dateModified, version, campaignStatus, callableTimeSet, contactList, dncLists, contactListFilters, alwaysRunning, contactSorts, messagesPerMinute, smsConfig, emailConfig, errors);
   }
 
   @Override
@@ -421,6 +441,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign  im
     sb.append("    contactSorts: ").append(toIndentedString(contactSorts)).append("\n");
     sb.append("    messagesPerMinute: ").append(toIndentedString(messagesPerMinute)).append("\n");
     sb.append("    smsConfig: ").append(toIndentedString(smsConfig)).append("\n");
+    sb.append("    emailConfig: ").append(toIndentedString(emailConfig)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");
     return sb.toString();

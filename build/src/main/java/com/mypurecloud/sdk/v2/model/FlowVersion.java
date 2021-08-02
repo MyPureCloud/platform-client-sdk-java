@@ -124,6 +124,7 @@ public class FlowVersion  implements Serializable {
     SECURECALL("SECURECALL"),
     SPEECH("SPEECH"),
     SURVEYINVITE("SURVEYINVITE"),
+    VOICEMAIL("VOICEMAIL"),
     WORKFLOW("WORKFLOW"),
     WORKITEM("WORKITEM");
 

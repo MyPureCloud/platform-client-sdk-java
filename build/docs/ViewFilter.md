@@ -124,6 +124,7 @@ title: ViewFilter
 | **botFinalIntentList** | <!----><!---->**List&lt;String&gt;**<!----> | The list of bot final intents used to filter bot views |  [optional] |
 | **botSlotList** | <!----><!---->**List&lt;String&gt;**<!----> | The list of bot slots used to filter bot views |  [optional] |
 | **botResultList** | <!---->[**List&lt;BotResultListEnum&gt;**](#BotResultListEnum)<!----> | The list of bot results used to filter bot views |  [optional] |
+| **blockedReasons** | <!---->[**List&lt;BlockedReasonsEnum&gt;**](#BlockedReasonsEnum)<!----> | The list of blocked reason used to filter action map constraints views |  [optional] |
 {: class="table table-striped"}
 
 
@@ -244,6 +245,7 @@ title: ViewFilter
 | OUTBOUNDCALL | &quot;outboundcall&quot; |
 | SECURECALL | &quot;securecall&quot; |
 | SURVEYINVITE | &quot;surveyinvite&quot; |
+| VOICEMAIL | &quot;voicemail&quot; |
 | WORKFLOW | &quot;workflow&quot; |
 | WORKITEM | &quot;workitem&quot; |
 {: class="table table-striped"}
@@ -442,6 +444,23 @@ title: ViewFilter
 | DISCONNECTSESSIONEXPIRED | &quot;DisconnectSessionExpired&quot; |
 | DISCONNECTERROR | &quot;DisconnectError&quot; |
 | DISCONNECTRECOGNITIONFAILURE | &quot;DisconnectRecognitionFailure&quot; |
+{: class="table table-striped"}
+
+
+<a name="BlockedReasonsEnum"></a>
+
+## Enum: BlockedReasonsEnum
+
+| Name | Value |
+| ---- | ----- |
+| PAGEURLCONDITIONSNOTMATCHING | &quot;PageUrlConditionsNotMatching&quot; |
+| ALREADYEXISTINGOFFER | &quot;AlreadyExistingOffer&quot; |
+| TRIGGERDATEINFUTURE | &quot;TriggerDateInFuture&quot; |
+| MULTIPLESIMULTANEOUSOFFERS | &quot;MultipleSimultaneousOffers&quot; |
+| FREQUENCYCAPPING | &quot;FrequencyCapping&quot; |
+| OFFEREDOUTSIDESCHEDULE | &quot;OfferedOutsideSchedule&quot; |
+| SERVICELEVELTHROTTLING | &quot;ServiceLevelThrottling&quot; |
+| NOAVAILABLEAGENTS | &quot;NoAvailableAgents&quot; |
 {: class="table table-striped"}
 
 

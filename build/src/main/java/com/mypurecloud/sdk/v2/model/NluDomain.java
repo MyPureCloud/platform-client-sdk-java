@@ -29,6 +29,7 @@ public class NluDomain  implements Serializable {
   private NluDomainVersion lastPublishedVersion = null;
   private Date dateCreated = null;
   private Date dateModified = null;
+  private String engineVersion = null;
   private String selfUri = null;
 
   
@@ -125,6 +126,24 @@ public class NluDomain  implements Serializable {
   }
 
   
+  /**
+   * The version of the NLU engine to use.
+   **/
+  public NluDomain engineVersion(String engineVersion) {
+    this.engineVersion = engineVersion;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The version of the NLU engine to use.")
+  @JsonProperty("engineVersion")
+  public String getEngineVersion() {
+    return engineVersion;
+  }
+  public void setEngineVersion(String engineVersion) {
+    this.engineVersion = engineVersion;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -149,12 +168,13 @@ public class NluDomain  implements Serializable {
         Objects.equals(this.lastPublishedVersion, nluDomain.lastPublishedVersion) &&
         Objects.equals(this.dateCreated, nluDomain.dateCreated) &&
         Objects.equals(this.dateModified, nluDomain.dateModified) &&
+        Objects.equals(this.engineVersion, nluDomain.engineVersion) &&
         Objects.equals(this.selfUri, nluDomain.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, language, draftVersion, lastPublishedVersion, dateCreated, dateModified, selfUri);
+    return Objects.hash(id, name, language, draftVersion, lastPublishedVersion, dateCreated, dateModified, engineVersion, selfUri);
   }
 
   @Override
@@ -169,6 +189,7 @@ public class NluDomain  implements Serializable {
     sb.append("    lastPublishedVersion: ").append(toIndentedString(lastPublishedVersion)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

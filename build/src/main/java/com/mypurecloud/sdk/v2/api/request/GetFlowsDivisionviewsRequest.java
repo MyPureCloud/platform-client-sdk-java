@@ -99,6 +99,7 @@ public class GetFlowsDivisionviewsRequest {
 		SPEECH("speech"), 
 		SECURECALL("securecall"), 
 		SURVEYINVITE("surveyinvite"), 
+		VOICEMAIL("voicemail"), 
 		WORKFLOW("workflow"), 
 		WORKITEM("workitem");
 

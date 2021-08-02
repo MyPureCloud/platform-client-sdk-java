@@ -22,46 +22,8 @@ import java.io.Serializable;
 
 public class ButtonComponent  implements Serializable {
   
-  private String id = null;
-  private String text = null;
   private String title = null;
   private ContentActions actions = null;
-
-  
-  /**
-   * The ID of this component.
-   **/
-  public ButtonComponent id(String id) {
-    this.id = id;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The ID of this component.")
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  
-  /**
-   * Deprecated - Use title instead.
-   **/
-  public ButtonComponent text(String text) {
-    this.text = text;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Deprecated - Use title instead.")
-  @JsonProperty("text")
-  public String getText() {
-    return text;
-  }
-  public void setText(String text) {
-    this.text = text;
-  }
 
   
   /**
@@ -110,15 +72,13 @@ public class ButtonComponent  implements Serializable {
       return false;
     }
     ButtonComponent buttonComponent = (ButtonComponent) o;
-    return Objects.equals(this.id, buttonComponent.id) &&
-        Objects.equals(this.text, buttonComponent.text) &&
-        Objects.equals(this.title, buttonComponent.title) &&
+    return Objects.equals(this.title, buttonComponent.title) &&
         Objects.equals(this.actions, buttonComponent.actions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, text, title, actions);
+    return Objects.hash(title, actions);
   }
 
   @Override
@@ -126,8 +86,6 @@ public class ButtonComponent  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class ButtonComponent {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    actions: ").append(toIndentedString(actions)).append("\n");
     sb.append("}");

@@ -47,6 +47,60 @@ public class AnalyticsSession  implements Serializable {
   private String cobrowseRole = null;
   private String cobrowseRoomId = null;
 
+  private static class DeliveryStatusEnumDeserializer extends StdDeserializer<DeliveryStatusEnum> {
+    public DeliveryStatusEnumDeserializer() {
+      super(DeliveryStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public DeliveryStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DeliveryStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The email delivery status
+   */
+ @JsonDeserialize(using = DeliveryStatusEnumDeserializer.class)
+  public enum DeliveryStatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    DELIVERYFAILED("DeliveryFailed"),
+    DELIVERYSUCCESS("DeliverySuccess"),
+    FAILED("Failed"),
+    QUEUED("Queued"),
+    READ("Read"),
+    RECEIVED("Received"),
+    SENT("Sent");
+
+    private String value;
+
+    DeliveryStatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DeliveryStatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DeliveryStatusEnum value : DeliveryStatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DeliveryStatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DeliveryStatusEnum deliveryStatus = null;
+  private Date deliveryStatusChangeDate = null;
+
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
     public DirectionEnumDeserializer() {
       super(DirectionEnumDeserializer.class);
@@ -98,6 +152,7 @@ public class AnalyticsSession  implements Serializable {
   private String dispositionName = null;
   private String dnis = null;
   private String edgeId = null;
+  private List<Integer> eligibleAgentCounts = new ArrayList<Integer>();
   private String flowInType = null;
   private String flowOutType = null;
   private String journeyActionId = null;
@@ -293,6 +348,7 @@ public class AnalyticsSession  implements Serializable {
   private UsedRoutingEnum usedRouting = null;
   private String videoAddressSelf = null;
   private String videoRoomId = null;
+  private List<Integer> waitingInteractionCounts = new ArrayList<Integer>();
   private List<AnalyticsProposedAgent> proposedAgents = new ArrayList<AnalyticsProposedAgent>();
   private List<AnalyticsMediaEndpointStat> mediaEndpointStats = new ArrayList<AnalyticsMediaEndpointStat>();
   private AnalyticsFlow flow = null;
@@ -607,6 +663,42 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * The email delivery status
+   **/
+  public AnalyticsSession deliveryStatus(DeliveryStatusEnum deliveryStatus) {
+    this.deliveryStatus = deliveryStatus;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The email delivery status")
+  @JsonProperty("deliveryStatus")
+  public DeliveryStatusEnum getDeliveryStatus() {
+    return deliveryStatus;
+  }
+  public void setDeliveryStatus(DeliveryStatusEnum deliveryStatus) {
+    this.deliveryStatus = deliveryStatus;
+  }
+
+  
+  /**
+   * Date and time of the most recent delivery status change. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public AnalyticsSession deliveryStatusChangeDate(Date deliveryStatusChangeDate) {
+    this.deliveryStatusChangeDate = deliveryStatusChangeDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Date and time of the most recent delivery status change. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("deliveryStatusChangeDate")
+  public Date getDeliveryStatusChangeDate() {
+    return deliveryStatusChangeDate;
+  }
+  public void setDeliveryStatusChangeDate(Date deliveryStatusChangeDate) {
+    this.deliveryStatusChangeDate = deliveryStatusChangeDate;
+  }
+
+  
+  /**
    * The direction of the communication
    **/
   public AnalyticsSession direction(DirectionEnum direction) {
@@ -693,6 +785,24 @@ public class AnalyticsSession  implements Serializable {
   }
   public void setEdgeId(String edgeId) {
     this.edgeId = edgeId;
+  }
+
+  
+  /**
+   * Number of eligible agents for each predictive routing attempt
+   **/
+  public AnalyticsSession eligibleAgentCounts(List<Integer> eligibleAgentCounts) {
+    this.eligibleAgentCounts = eligibleAgentCounts;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Number of eligible agents for each predictive routing attempt")
+  @JsonProperty("eligibleAgentCounts")
+  public List<Integer> getEligibleAgentCounts() {
+    return eligibleAgentCounts;
+  }
+  public void setEligibleAgentCounts(List<Integer> eligibleAgentCounts) {
+    this.eligibleAgentCounts = eligibleAgentCounts;
   }
 
   
@@ -1417,6 +1527,24 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
+   * Number of waiting interactions for each predictive routing attempt
+   **/
+  public AnalyticsSession waitingInteractionCounts(List<Integer> waitingInteractionCounts) {
+    this.waitingInteractionCounts = waitingInteractionCounts;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Number of waiting interactions for each predictive routing attempt")
+  @JsonProperty("waitingInteractionCounts")
+  public List<Integer> getWaitingInteractionCounts() {
+    return waitingInteractionCounts;
+  }
+  public void setWaitingInteractionCounts(List<Integer> waitingInteractionCounts) {
+    this.waitingInteractionCounts = waitingInteractionCounts;
+  }
+
+  
+  /**
    * Proposed agents
    **/
   public AnalyticsSession proposedAgents(List<AnalyticsProposedAgent> proposedAgents) {
@@ -1533,11 +1661,14 @@ public class AnalyticsSession  implements Serializable {
         Objects.equals(this.callbackUserName, analyticsSession.callbackUserName) &&
         Objects.equals(this.cobrowseRole, analyticsSession.cobrowseRole) &&
         Objects.equals(this.cobrowseRoomId, analyticsSession.cobrowseRoomId) &&
+        Objects.equals(this.deliveryStatus, analyticsSession.deliveryStatus) &&
+        Objects.equals(this.deliveryStatusChangeDate, analyticsSession.deliveryStatusChangeDate) &&
         Objects.equals(this.direction, analyticsSession.direction) &&
         Objects.equals(this.dispositionAnalyzer, analyticsSession.dispositionAnalyzer) &&
         Objects.equals(this.dispositionName, analyticsSession.dispositionName) &&
         Objects.equals(this.dnis, analyticsSession.dnis) &&
         Objects.equals(this.edgeId, analyticsSession.edgeId) &&
+        Objects.equals(this.eligibleAgentCounts, analyticsSession.eligibleAgentCounts) &&
         Objects.equals(this.flowInType, analyticsSession.flowInType) &&
         Objects.equals(this.flowOutType, analyticsSession.flowOutType) &&
         Objects.equals(this.journeyActionId, analyticsSession.journeyActionId) &&
@@ -1578,6 +1709,7 @@ public class AnalyticsSession  implements Serializable {
         Objects.equals(this.usedRouting, analyticsSession.usedRouting) &&
         Objects.equals(this.videoAddressSelf, analyticsSession.videoAddressSelf) &&
         Objects.equals(this.videoRoomId, analyticsSession.videoRoomId) &&
+        Objects.equals(this.waitingInteractionCounts, analyticsSession.waitingInteractionCounts) &&
         Objects.equals(this.proposedAgents, analyticsSession.proposedAgents) &&
         Objects.equals(this.mediaEndpointStats, analyticsSession.mediaEndpointStats) &&
         Objects.equals(this.flow, analyticsSession.flow) &&
@@ -1587,7 +1719,7 @@ public class AnalyticsSession  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, callbackNumbers, callbackScheduledTime, callbackUserName, cobrowseRole, cobrowseRoomId, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, proposedAgents, mediaEndpointStats, flow, metrics, segments);
+    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, callbackNumbers, callbackScheduledTime, callbackUserName, cobrowseRole, cobrowseRoomId, deliveryStatus, deliveryStatusChangeDate, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, proposedAgents, mediaEndpointStats, flow, metrics, segments);
   }
 
   @Override
@@ -1612,11 +1744,14 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    callbackUserName: ").append(toIndentedString(callbackUserName)).append("\n");
     sb.append("    cobrowseRole: ").append(toIndentedString(cobrowseRole)).append("\n");
     sb.append("    cobrowseRoomId: ").append(toIndentedString(cobrowseRoomId)).append("\n");
+    sb.append("    deliveryStatus: ").append(toIndentedString(deliveryStatus)).append("\n");
+    sb.append("    deliveryStatusChangeDate: ").append(toIndentedString(deliveryStatusChangeDate)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    dispositionAnalyzer: ").append(toIndentedString(dispositionAnalyzer)).append("\n");
     sb.append("    dispositionName: ").append(toIndentedString(dispositionName)).append("\n");
     sb.append("    dnis: ").append(toIndentedString(dnis)).append("\n");
     sb.append("    edgeId: ").append(toIndentedString(edgeId)).append("\n");
+    sb.append("    eligibleAgentCounts: ").append(toIndentedString(eligibleAgentCounts)).append("\n");
     sb.append("    flowInType: ").append(toIndentedString(flowInType)).append("\n");
     sb.append("    flowOutType: ").append(toIndentedString(flowOutType)).append("\n");
     sb.append("    journeyActionId: ").append(toIndentedString(journeyActionId)).append("\n");
@@ -1657,6 +1792,7 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    usedRouting: ").append(toIndentedString(usedRouting)).append("\n");
     sb.append("    videoAddressSelf: ").append(toIndentedString(videoAddressSelf)).append("\n");
     sb.append("    videoRoomId: ").append(toIndentedString(videoRoomId)).append("\n");
+    sb.append("    waitingInteractionCounts: ").append(toIndentedString(waitingInteractionCounts)).append("\n");
     sb.append("    proposedAgents: ").append(toIndentedString(proposedAgents)).append("\n");
     sb.append("    mediaEndpointStats: ").append(toIndentedString(mediaEndpointStats)).append("\n");
     sb.append("    flow: ").append(toIndentedString(flow)).append("\n");

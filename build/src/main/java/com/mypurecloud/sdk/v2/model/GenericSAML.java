@@ -28,6 +28,8 @@ public class GenericSAML  implements Serializable {
   private Boolean disabled = null;
   private String issuerURI = null;
   private String ssoTargetURI = null;
+  private String sloURI = null;
+  private String sloBinding = null;
   private String certificate = null;
   private List<String> certificates = new ArrayList<String>();
   private String relyingPartyIdentifier = null;
@@ -167,6 +169,40 @@ public class GenericSAML  implements Serializable {
   
   /**
    **/
+  public GenericSAML sloURI(String sloURI) {
+    this.sloURI = sloURI;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("sloURI")
+  public String getSloURI() {
+    return sloURI;
+  }
+  public void setSloURI(String sloURI) {
+    this.sloURI = sloURI;
+  }
+
+  
+  /**
+   **/
+  public GenericSAML sloBinding(String sloBinding) {
+    this.sloBinding = sloBinding;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("sloBinding")
+  public String getSloBinding() {
+    return sloBinding;
+  }
+  public void setSloBinding(String sloBinding) {
+    this.sloBinding = sloBinding;
+  }
+
+  
+  /**
+   **/
   public GenericSAML certificate(String certificate) {
     this.certificate = certificate;
     return this;
@@ -289,6 +325,8 @@ public class GenericSAML  implements Serializable {
         Objects.equals(this.disabled, genericSAML.disabled) &&
         Objects.equals(this.issuerURI, genericSAML.issuerURI) &&
         Objects.equals(this.ssoTargetURI, genericSAML.ssoTargetURI) &&
+        Objects.equals(this.sloURI, genericSAML.sloURI) &&
+        Objects.equals(this.sloBinding, genericSAML.sloBinding) &&
         Objects.equals(this.certificate, genericSAML.certificate) &&
         Objects.equals(this.certificates, genericSAML.certificates) &&
         Objects.equals(this.relyingPartyIdentifier, genericSAML.relyingPartyIdentifier) &&
@@ -300,7 +338,7 @@ public class GenericSAML  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, certificate, certificates, relyingPartyIdentifier, logoImageData, endpointCompression, nameIdentifierFormat, selfUri);
+    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, certificate, certificates, relyingPartyIdentifier, logoImageData, endpointCompression, nameIdentifierFormat, selfUri);
   }
 
   @Override
@@ -313,6 +351,8 @@ public class GenericSAML  implements Serializable {
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
     sb.append("    ssoTargetURI: ").append(toIndentedString(ssoTargetURI)).append("\n");
+    sb.append("    sloURI: ").append(toIndentedString(sloURI)).append("\n");
+    sb.append("    sloBinding: ").append(toIndentedString(sloBinding)).append("\n");
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
     sb.append("    certificates: ").append(toIndentedString(certificates)).append("\n");
     sb.append("    relyingPartyIdentifier: ").append(toIndentedString(relyingPartyIdentifier)).append("\n");

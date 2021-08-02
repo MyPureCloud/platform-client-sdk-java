@@ -39,6 +39,7 @@ public class Document  implements Serializable {
   private DomainEntityRef workspace = null;
   private DomainEntityRef createdBy = null;
   private DomainEntityRef uploadedBy = null;
+  private String sharingUri = null;
   private String contentType = null;
   private Long contentLength = null;
 
@@ -200,7 +201,6 @@ public class Document  implements Serializable {
     }
   }
   private SharingStatusEnum sharingStatus = null;
-  private String sharingUri = null;
   private String downloadSharingUri = null;
   private String selfUri = null;
 
@@ -365,6 +365,23 @@ public class Document  implements Serializable {
   }
   public void setUploadedBy(DomainEntityRef uploadedBy) {
     this.uploadedBy = uploadedBy;
+  }
+
+  
+  /**
+   **/
+  public Document sharingUri(String sharingUri) {
+    this.sharingUri = sharingUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("sharingUri")
+  public String getSharingUri() {
+    return sharingUri;
+  }
+  public void setSharingUri(String sharingUri) {
+    this.sharingUri = sharingUri;
   }
 
   
@@ -677,23 +694,6 @@ public class Document  implements Serializable {
   
   /**
    **/
-  public Document sharingUri(String sharingUri) {
-    this.sharingUri = sharingUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("sharingUri")
-  public String getSharingUri() {
-    return sharingUri;
-  }
-  public void setSharingUri(String sharingUri) {
-    this.sharingUri = sharingUri;
-  }
-
-  
-  /**
-   **/
   public Document downloadSharingUri(String downloadSharingUri) {
     this.downloadSharingUri = downloadSharingUri;
     return this;
@@ -736,6 +736,7 @@ public class Document  implements Serializable {
         Objects.equals(this.workspace, document.workspace) &&
         Objects.equals(this.createdBy, document.createdBy) &&
         Objects.equals(this.uploadedBy, document.uploadedBy) &&
+        Objects.equals(this.sharingUri, document.sharingUri) &&
         Objects.equals(this.contentType, document.contentType) &&
         Objects.equals(this.contentLength, document.contentLength) &&
         Objects.equals(this.systemType, document.systemType) &&
@@ -754,14 +755,13 @@ public class Document  implements Serializable {
         Objects.equals(this.lockInfo, document.lockInfo) &&
         Objects.equals(this.acl, document.acl) &&
         Objects.equals(this.sharingStatus, document.sharingStatus) &&
-        Objects.equals(this.sharingUri, document.sharingUri) &&
         Objects.equals(this.downloadSharingUri, document.downloadSharingUri) &&
         Objects.equals(this.selfUri, document.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, changeNumber, dateCreated, dateModified, dateUploaded, contentUri, workspace, createdBy, uploadedBy, contentType, contentLength, systemType, filename, pageCount, read, callerAddress, receiverAddress, tags, tagValues, attributes, thumbnails, uploadStatus, uploadDestinationUri, uploadMethod, lockInfo, acl, sharingStatus, sharingUri, downloadSharingUri, selfUri);
+    return Objects.hash(id, name, changeNumber, dateCreated, dateModified, dateUploaded, contentUri, workspace, createdBy, uploadedBy, sharingUri, contentType, contentLength, systemType, filename, pageCount, read, callerAddress, receiverAddress, tags, tagValues, attributes, thumbnails, uploadStatus, uploadDestinationUri, uploadMethod, lockInfo, acl, sharingStatus, downloadSharingUri, selfUri);
   }
 
   @Override
@@ -779,6 +779,7 @@ public class Document  implements Serializable {
     sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    uploadedBy: ").append(toIndentedString(uploadedBy)).append("\n");
+    sb.append("    sharingUri: ").append(toIndentedString(sharingUri)).append("\n");
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("    contentLength: ").append(toIndentedString(contentLength)).append("\n");
     sb.append("    systemType: ").append(toIndentedString(systemType)).append("\n");
@@ -797,7 +798,6 @@ public class Document  implements Serializable {
     sb.append("    lockInfo: ").append(toIndentedString(lockInfo)).append("\n");
     sb.append("    acl: ").append(toIndentedString(acl)).append("\n");
     sb.append("    sharingStatus: ").append(toIndentedString(sharingStatus)).append("\n");
-    sb.append("    sharingUri: ").append(toIndentedString(sharingUri)).append("\n");
     sb.append("    downloadSharingUri: ").append(toIndentedString(downloadSharingUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

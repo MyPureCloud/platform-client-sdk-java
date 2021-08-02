@@ -27,6 +27,8 @@ public class Salesforce  implements Serializable {
   private Boolean disabled = null;
   private String issuerURI = null;
   private String ssoTargetURI = null;
+  private String sloURI = null;
+  private String sloBinding = null;
   private String certificate = null;
   private List<String> certificates = new ArrayList<String>();
   private String selfUri = null;
@@ -109,6 +111,40 @@ public class Salesforce  implements Serializable {
   
   /**
    **/
+  public Salesforce sloURI(String sloURI) {
+    this.sloURI = sloURI;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("sloURI")
+  public String getSloURI() {
+    return sloURI;
+  }
+  public void setSloURI(String sloURI) {
+    this.sloURI = sloURI;
+  }
+
+  
+  /**
+   **/
+  public Salesforce sloBinding(String sloBinding) {
+    this.sloBinding = sloBinding;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("sloBinding")
+  public String getSloBinding() {
+    return sloBinding;
+  }
+  public void setSloBinding(String sloBinding) {
+    this.sloBinding = sloBinding;
+  }
+
+  
+  /**
+   **/
   public Salesforce certificate(String certificate) {
     this.certificate = certificate;
     return this;
@@ -163,6 +199,8 @@ public class Salesforce  implements Serializable {
         Objects.equals(this.disabled, salesforce.disabled) &&
         Objects.equals(this.issuerURI, salesforce.issuerURI) &&
         Objects.equals(this.ssoTargetURI, salesforce.ssoTargetURI) &&
+        Objects.equals(this.sloURI, salesforce.sloURI) &&
+        Objects.equals(this.sloBinding, salesforce.sloBinding) &&
         Objects.equals(this.certificate, salesforce.certificate) &&
         Objects.equals(this.certificates, salesforce.certificates) &&
         Objects.equals(this.selfUri, salesforce.selfUri);
@@ -170,7 +208,7 @@ public class Salesforce  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, certificate, certificates, selfUri);
+    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, certificate, certificates, selfUri);
   }
 
   @Override
@@ -183,6 +221,8 @@ public class Salesforce  implements Serializable {
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
     sb.append("    ssoTargetURI: ").append(toIndentedString(ssoTargetURI)).append("\n");
+    sb.append("    sloURI: ").append(toIndentedString(sloURI)).append("\n");
+    sb.append("    sloBinding: ").append(toIndentedString(sloBinding)).append("\n");
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
     sb.append("    certificates: ").append(toIndentedString(certificates)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

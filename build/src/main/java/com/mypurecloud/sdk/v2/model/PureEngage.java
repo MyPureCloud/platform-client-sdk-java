@@ -27,6 +27,8 @@ public class PureEngage  implements Serializable {
   private Boolean disabled = null;
   private String issuerURI = null;
   private String ssoTargetURI = null;
+  private String sloURI = null;
+  private String sloBinding = null;
   private String certificate = null;
   private List<String> certificates = new ArrayList<String>();
   private Boolean autoProvisionUsers = null;
@@ -110,6 +112,40 @@ public class PureEngage  implements Serializable {
   
   /**
    **/
+  public PureEngage sloURI(String sloURI) {
+    this.sloURI = sloURI;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("sloURI")
+  public String getSloURI() {
+    return sloURI;
+  }
+  public void setSloURI(String sloURI) {
+    this.sloURI = sloURI;
+  }
+
+  
+  /**
+   **/
+  public PureEngage sloBinding(String sloBinding) {
+    this.sloBinding = sloBinding;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("sloBinding")
+  public String getSloBinding() {
+    return sloBinding;
+  }
+  public void setSloBinding(String sloBinding) {
+    this.sloBinding = sloBinding;
+  }
+
+  
+  /**
+   **/
   public PureEngage certificate(String certificate) {
     this.certificate = certificate;
     return this;
@@ -181,6 +217,8 @@ public class PureEngage  implements Serializable {
         Objects.equals(this.disabled, pureEngage.disabled) &&
         Objects.equals(this.issuerURI, pureEngage.issuerURI) &&
         Objects.equals(this.ssoTargetURI, pureEngage.ssoTargetURI) &&
+        Objects.equals(this.sloURI, pureEngage.sloURI) &&
+        Objects.equals(this.sloBinding, pureEngage.sloBinding) &&
         Objects.equals(this.certificate, pureEngage.certificate) &&
         Objects.equals(this.certificates, pureEngage.certificates) &&
         Objects.equals(this.autoProvisionUsers, pureEngage.autoProvisionUsers) &&
@@ -189,7 +227,7 @@ public class PureEngage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, certificate, certificates, autoProvisionUsers, selfUri);
+    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, certificate, certificates, autoProvisionUsers, selfUri);
   }
 
   @Override
@@ -202,6 +240,8 @@ public class PureEngage  implements Serializable {
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("    issuerURI: ").append(toIndentedString(issuerURI)).append("\n");
     sb.append("    ssoTargetURI: ").append(toIndentedString(ssoTargetURI)).append("\n");
+    sb.append("    sloURI: ").append(toIndentedString(sloURI)).append("\n");
+    sb.append("    sloBinding: ").append(toIndentedString(sloBinding)).append("\n");
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
     sb.append("    certificates: ").append(toIndentedString(certificates)).append("\n");
     sb.append("    autoProvisionUsers: ").append(toIndentedString(autoProvisionUsers)).append("\n");

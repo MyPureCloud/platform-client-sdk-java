@@ -18,6 +18,7 @@ title: Document
 | **workspace** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
 | **createdBy** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
 | **uploadedBy** | <!----><!---->[**DomainEntityRef**](DomainEntityRef.html)<!----> |  |  [optional] |
+| **sharingUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **contentType** | <!----><!---->**String**<!----> |  |  [optional] |
 | **contentLength** | <!----><!---->**Long**<!----> |  |  [optional] |
 | **systemType** | [**SystemTypeEnum**](#SystemTypeEnum)<!----> |  |  [optional] |
@@ -36,7 +37,6 @@ title: Document
 | **lockInfo** | <!----><!---->[**LockInfo**](LockInfo.html)<!----> |  |  [optional] |
 | **acl** | <!----><!---->**List&lt;String&gt;**<!----> | A list of permitted action rights for the user making the request |  [optional] |
 | **sharingStatus** | [**SharingStatusEnum**](#SharingStatusEnum)<!----> |  |  [optional] |
-| **sharingUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **downloadSharingUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}

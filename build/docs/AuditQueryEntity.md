@@ -79,6 +79,9 @@ title: AuditQueryEntity
 | INSIGHTSETTINGS | &quot;InsightSettings&quot; |
 | INTEGRATION | &quot;Integration&quot; |
 | IVR | &quot;IVR&quot; |
+| KNOWLEDGEBASE | &quot;KnowledgeBase&quot; |
+| KNOWLEDGECATEGORY | &quot;KnowledgeCategory&quot; |
+| KNOWLEDGEDOCUMENT | &quot;KnowledgeDocument&quot; |
 | LINE | &quot;Line&quot; |
 | LINEBASE | &quot;LineBase&quot; |
 | MAXORGROUTINGUTILIZATIONCAPACITY | &quot;MaxOrgRoutingUtilizationCapacity&quot; |

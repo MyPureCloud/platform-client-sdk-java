@@ -40,6 +40,7 @@ title: AuditLogMessage
 | GAMIFICATION | &quot;Gamification&quot; |
 | GROUPS | &quot;Groups&quot; |
 | INTEGRATIONS | &quot;Integrations&quot; |
+| KNOWLEDGE | &quot;Knowledge&quot; |
 | LANGUAGEUNDERSTANDING | &quot;LanguageUnderstanding&quot; |
 | LIMITS | &quot;Limits&quot; |
 | OUTBOUND | &quot;Outbound&quot; |
@@ -54,6 +55,7 @@ title: AuditLogMessage
 | TELEPHONY | &quot;Telephony&quot; |
 | TOPICSDEFINITIONS | &quot;TopicsDefinitions&quot; |
 | TRIGGERS | &quot;Triggers&quot; |
+| PROCESSAUTOMATION | &quot;ProcessAutomation&quot; |
 | WEBDEPLOYMENTS | &quot;WebDeployments&quot; |
 | WEBHOOKS | &quot;Webhooks&quot; |
 | WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; |
@@ -198,6 +200,9 @@ title: AuditLogMessage
 | INSIGHTSETTINGS | &quot;InsightSettings&quot; |
 | INTEGRATION | &quot;Integration&quot; |
 | IVR | &quot;IVR&quot; |
+| KNOWLEDGEBASE | &quot;KnowledgeBase&quot; |
+| KNOWLEDGECATEGORY | &quot;KnowledgeCategory&quot; |
+| KNOWLEDGEDOCUMENT | &quot;KnowledgeDocument&quot; |
 | LINE | &quot;Line&quot; |
 | LINEBASE | &quot;LineBase&quot; |
 | MAXORGROUTINGUTILIZATIONCAPACITY | &quot;MaxOrgRoutingUtilizationCapacity&quot; |

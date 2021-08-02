@@ -7,12 +7,76 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**postKnowledgeDocumentuploads**](UploadsApi.html#postKnowledgeDocumentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents |
 | [**postLanguageunderstandingMinerUploads**](UploadsApi.html#postLanguageunderstandingMinerUploads) | Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner |
 | [**postUploadsPublicassetsImages**](UploadsApi.html#postUploadsPublicassetsImages) | Creates presigned url for uploading a public asset image |
 | [**postUploadsRecordings**](UploadsApi.html#postUploadsRecordings) | Creates presigned url for uploading a recording file |
 | [**postUploadsWorkforcemanagementHistoricaldataCsv**](UploadsApi.html#postUploadsWorkforcemanagementHistoricaldataCsv) | Creates presigned url for uploading WFM historical data file. Requires data in csv format. |
 | [**postUploadsWorkforcemanagementHistoricaldataJson**](UploadsApi.html#postUploadsWorkforcemanagementHistoricaldataJson) | Creates presigned url for uploading WFM historical data file. Requires data in json format. |
 {: class="table-striped"}
+
+<a name="postKnowledgeDocumentuploads"></a>
+
+# **postKnowledgeDocumentuploads**
+
+
+
+> [UploadUrlResponse](UploadUrlResponse.html) postKnowledgeDocumentuploads(body)
+
+Creates a presigned URL for uploading a knowledge import file with a set of documents
+
+
+
+Wraps POST /api/v2/knowledge/documentuploads  
+
+Requires ALL permissions: 
+
+* knowledge:document:upload
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UploadsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UploadsApi apiInstance = new UploadsApi();
+UploadUrlRequest body = new UploadUrlRequest(); // UploadUrlRequest | query
+try {
+    UploadUrlResponse result = apiInstance.postKnowledgeDocumentuploads(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UploadsApi#postKnowledgeDocumentuploads");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**UploadUrlRequest**](UploadUrlRequest.html)| query | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse.html)
 
 <a name="postLanguageunderstandingMinerUploads"></a>
 

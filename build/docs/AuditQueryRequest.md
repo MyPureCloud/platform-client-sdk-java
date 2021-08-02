@@ -31,6 +31,7 @@ title: AuditQueryRequest
 | GAMIFICATION | &quot;Gamification&quot; |
 | GROUPS | &quot;Groups&quot; |
 | INTEGRATIONS | &quot;Integrations&quot; |
+| KNOWLEDGE | &quot;Knowledge&quot; |
 | LANGUAGEUNDERSTANDING | &quot;LanguageUnderstanding&quot; |
 | LIMITS | &quot;Limits&quot; |
 | OUTBOUND | &quot;Outbound&quot; |
@@ -45,6 +46,7 @@ title: AuditQueryRequest
 | TELEPHONY | &quot;Telephony&quot; |
 | TOPICSDEFINITIONS | &quot;TopicsDefinitions&quot; |
 | TRIGGERS | &quot;Triggers&quot; |
+| PROCESSAUTOMATION | &quot;ProcessAutomation&quot; |
 | WEBDEPLOYMENTS | &quot;WebDeployments&quot; |
 | WEBHOOKS | &quot;Webhooks&quot; |
 | WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; |

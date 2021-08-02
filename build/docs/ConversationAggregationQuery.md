@@ -40,11 +40,13 @@ title: ConversationAggregationQuery
 | CONVERSATIONID | &quot;conversationId&quot; |
 | CONVERTEDFROM | &quot;convertedFrom&quot; |
 | CONVERTEDTO | &quot;convertedTo&quot; |
+| DELIVERYSTATUS | &quot;deliveryStatus&quot; |
 | DIRECTION | &quot;direction&quot; |
 | DISCONNECTTYPE | &quot;disconnectType&quot; |
 | DIVISIONID | &quot;divisionId&quot; |
 | DNIS | &quot;dnis&quot; |
 | EDGEID | &quot;edgeId&quot; |
+| ELIGIBLEAGENTCOUNT | &quot;eligibleAgentCount&quot; |
 | EXTERNALCONTACTID | &quot;externalContactId&quot; |
 | EXTERNALMEDIACOUNT | &quot;externalMediaCount&quot; |
 | EXTERNALORGANIZATIONID | &quot;externalOrganizationId&quot; |
@@ -93,6 +95,7 @@ title: ConversationAggregationQuery
 | TEAMID | &quot;teamId&quot; |
 | USEDROUTING | &quot;usedRouting&quot; |
 | USERID | &quot;userId&quot; |
+| WAITINGINTERACTIONCOUNT | &quot;waitingInteractionCount&quot; |
 | WRAPUPCODE | &quot;wrapUpCode&quot; |
 {: class="table table-striped"}
 

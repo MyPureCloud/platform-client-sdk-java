@@ -40,11 +40,13 @@ title: FlowAggregationQuery
 | CONVERSATIONID | &quot;conversationId&quot; |
 | CONVERTEDFROM | &quot;convertedFrom&quot; |
 | CONVERTEDTO | &quot;convertedTo&quot; |
+| DELIVERYSTATUS | &quot;deliveryStatus&quot; |
 | DIRECTION | &quot;direction&quot; |
 | DISCONNECTTYPE | &quot;disconnectType&quot; |
 | DIVISIONID | &quot;divisionId&quot; |
 | DNIS | &quot;dnis&quot; |
 | EDGEID | &quot;edgeId&quot; |
+| ELIGIBLEAGENTCOUNT | &quot;eligibleAgentCount&quot; |
 | ENDINGLANGUAGE | &quot;endingLanguage&quot; |
 | ENTRYREASON | &quot;entryReason&quot; |
 | ENTRYTYPE | &quot;entryType&quot; |
@@ -110,6 +112,7 @@ title: FlowAggregationQuery
 | TRANSFERTYPE | &quot;transferType&quot; |
 | USEDROUTING | &quot;usedRouting&quot; |
 | USERID | &quot;userId&quot; |
+| WAITINGINTERACTIONCOUNT | &quot;waitingInteractionCount&quot; |
 | WRAPUPCODE | &quot;wrapUpCode&quot; |
 {: class="table table-striped"}
 

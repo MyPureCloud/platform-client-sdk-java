@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import com.mypurecloud.sdk.v2.model.MessagingTemplate;
@@ -139,6 +140,7 @@ public class Response  implements Serializable {
   }
   private ResponseTypeEnum responseType = null;
   private MessagingTemplate messagingTemplate = null;
+  private List<AddressableEntityRef> assets = new ArrayList<AddressableEntityRef>();
   private String selfUri = null;
 
   
@@ -335,6 +337,24 @@ public class Response  implements Serializable {
   }
 
   
+  /**
+   * Assets used in the response
+   **/
+  public Response assets(List<AddressableEntityRef> assets) {
+    this.assets = assets;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Assets used in the response")
+  @JsonProperty("assets")
+  public List<AddressableEntityRef> getAssets() {
+    return assets;
+  }
+  public void setAssets(List<AddressableEntityRef> assets) {
+    this.assets = assets;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -364,12 +384,13 @@ public class Response  implements Serializable {
         Objects.equals(this.substitutionsSchema, response.substitutionsSchema) &&
         Objects.equals(this.responseType, response.responseType) &&
         Objects.equals(this.messagingTemplate, response.messagingTemplate) &&
+        Objects.equals(this.assets, response.assets) &&
         Objects.equals(this.selfUri, response.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, version, libraries, texts, createdBy, dateCreated, interactionType, substitutions, substitutionsSchema, responseType, messagingTemplate, selfUri);
+    return Objects.hash(id, name, version, libraries, texts, createdBy, dateCreated, interactionType, substitutions, substitutionsSchema, responseType, messagingTemplate, assets, selfUri);
   }
 
   @Override
@@ -389,6 +410,7 @@ public class Response  implements Serializable {
     sb.append("    substitutionsSchema: ").append(toIndentedString(substitutionsSchema)).append("\n");
     sb.append("    responseType: ").append(toIndentedString(responseType)).append("\n");
     sb.append("    messagingTemplate: ").append(toIndentedString(messagingTemplate)).append("\n");
+    sb.append("    assets: ").append(toIndentedString(assets)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

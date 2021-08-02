@@ -40,6 +40,7 @@ title: FlowDivisionView
 | SECURECALL | &quot;SECURECALL&quot; |
 | SPEECH | &quot;SPEECH&quot; |
 | SURVEYINVITE | &quot;SURVEYINVITE&quot; |
+| VOICEMAIL | &quot;VOICEMAIL&quot; |
 | WORKFLOW | &quot;WORKFLOW&quot; |
 | WORKITEM | &quot;WORKITEM&quot; |
 {: class="table table-striped"}

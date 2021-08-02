@@ -463,6 +463,7 @@ public class ViewFilter  implements Serializable {
     OUTBOUNDCALL("outboundcall"),
     SECURECALL("securecall"),
     SURVEYINVITE("surveyinvite"),
+    VOICEMAIL("voicemail"),
     WORKFLOW("workflow"),
     WORKITEM("workitem");
 
@@ -1194,6 +1195,59 @@ public class ViewFilter  implements Serializable {
     }
   }
   private List<BotResultListEnum> botResultList = new ArrayList<BotResultListEnum>();
+
+  private static class BlockedReasonsEnumDeserializer extends StdDeserializer<BlockedReasonsEnum> {
+    public BlockedReasonsEnumDeserializer() {
+      super(BlockedReasonsEnumDeserializer.class);
+    }
+
+    @Override
+    public BlockedReasonsEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return BlockedReasonsEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets blockedReasons
+   */
+ @JsonDeserialize(using = BlockedReasonsEnumDeserializer.class)
+  public enum BlockedReasonsEnum {
+    PAGEURLCONDITIONSNOTMATCHING("PageUrlConditionsNotMatching"),
+    ALREADYEXISTINGOFFER("AlreadyExistingOffer"),
+    TRIGGERDATEINFUTURE("TriggerDateInFuture"),
+    MULTIPLESIMULTANEOUSOFFERS("MultipleSimultaneousOffers"),
+    FREQUENCYCAPPING("FrequencyCapping"),
+    OFFEREDOUTSIDESCHEDULE("OfferedOutsideSchedule"),
+    SERVICELEVELTHROTTLING("ServiceLevelThrottling"),
+    NOAVAILABLEAGENTS("NoAvailableAgents");
+
+    private String value;
+
+    BlockedReasonsEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static BlockedReasonsEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (BlockedReasonsEnum value : BlockedReasonsEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return BlockedReasonsEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<BlockedReasonsEnum> blockedReasons = new ArrayList<BlockedReasonsEnum>();
 
   
   /**
@@ -3284,6 +3338,24 @@ public class ViewFilter  implements Serializable {
   }
 
   
+  /**
+   * The list of blocked reason used to filter action map constraints views
+   **/
+  public ViewFilter blockedReasons(List<BlockedReasonsEnum> blockedReasons) {
+    this.blockedReasons = blockedReasons;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of blocked reason used to filter action map constraints views")
+  @JsonProperty("blockedReasons")
+  public List<BlockedReasonsEnum> getBlockedReasons() {
+    return blockedReasons;
+  }
+  public void setBlockedReasons(List<BlockedReasonsEnum> blockedReasons) {
+    this.blockedReasons = blockedReasons;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -3409,12 +3481,13 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.botIntentList, viewFilter.botIntentList) &&
         Objects.equals(this.botFinalIntentList, viewFilter.botFinalIntentList) &&
         Objects.equals(this.botSlotList, viewFilter.botSlotList) &&
-        Objects.equals(this.botResultList, viewFilter.botResultList);
+        Objects.equals(this.botResultList, viewFilter.botResultList) &&
+        Objects.equals(this.blockedReasons, viewFilter.blockedReasons);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons);
   }
 
   @Override
@@ -3538,6 +3611,7 @@ public class ViewFilter  implements Serializable {
     sb.append("    botFinalIntentList: ").append(toIndentedString(botFinalIntentList)).append("\n");
     sb.append("    botSlotList: ").append(toIndentedString(botSlotList)).append("\n");
     sb.append("    botResultList: ").append(toIndentedString(botResultList)).append("\n");
+    sb.append("    blockedReasons: ").append(toIndentedString(blockedReasons)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -12,9 +12,6 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -27,8 +24,6 @@ public class ContentActions  implements Serializable {
   private String url = null;
   private String urlTarget = null;
   private String textback = null;
-  private String commandName = null;
-  private Map<String, Object> context = null;
 
   
   /**
@@ -85,42 +80,6 @@ public class ContentActions  implements Serializable {
   }
 
   
-  /**
-   * Execute an organization's specific command.
-   **/
-  public ContentActions commandName(String commandName) {
-    this.commandName = commandName;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Execute an organization's specific command.")
-  @JsonProperty("commandName")
-  public String getCommandName() {
-    return commandName;
-  }
-  public void setCommandName(String commandName) {
-    this.commandName = commandName;
-  }
-
-  
-  /**
-   * Additional context for the command.
-   **/
-  public ContentActions context(Map<String, Object> context) {
-    this.context = context;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Additional context for the command.")
-  @JsonProperty("context")
-  public Map<String, Object> getContext() {
-    return context;
-  }
-  public void setContext(Map<String, Object> context) {
-    this.context = context;
-  }
-
-  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -133,14 +92,12 @@ public class ContentActions  implements Serializable {
     ContentActions contentActions = (ContentActions) o;
     return Objects.equals(this.url, contentActions.url) &&
         Objects.equals(this.urlTarget, contentActions.urlTarget) &&
-        Objects.equals(this.textback, contentActions.textback) &&
-        Objects.equals(this.commandName, contentActions.commandName) &&
-        Objects.equals(this.context, contentActions.context);
+        Objects.equals(this.textback, contentActions.textback);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url, urlTarget, textback, commandName, context);
+    return Objects.hash(url, urlTarget, textback);
   }
 
   @Override
@@ -151,8 +108,6 @@ public class ContentActions  implements Serializable {
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    urlTarget: ").append(toIndentedString(urlTarget)).append("\n");
     sb.append("    textback: ").append(toIndentedString(textback)).append("\n");
-    sb.append("    commandName: ").append(toIndentedString(commandName)).append("\n");
-    sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("}");
     return sb.toString();
   }
