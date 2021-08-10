@@ -54,6 +54,7 @@ public class AuditQueryService  implements Serializable {
     INTEGRATIONS("Integrations"),
     KNOWLEDGE("Knowledge"),
     LANGUAGEUNDERSTANDING("LanguageUnderstanding"),
+    LEARNING("Learning"),
     LIMITS("Limits"),
     OUTBOUND("Outbound"),
     PEOPLEPERMISSIONS("PeoplePermissions"),

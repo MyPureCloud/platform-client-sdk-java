@@ -21,6 +21,8 @@ import com.mypurecloud.sdk.v2.model.Certificate;
 import com.mypurecloud.sdk.v2.api.request.GetDateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetIprangesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTimezonesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUploadsV1PublicassetRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWebdeploymentsV1SubResourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostCertificateDetailsRequest;
 
 import java.io.IOException;
@@ -270,6 +272,150 @@ public class UtilitiesApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TimeZoneEntityListing> response = (ApiResponse<TimeZoneEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * 301 redirect.
+   * 
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void getUploadsV1Publicasset() throws IOException, ApiException {
+     getUploadsV1Publicasset(createGetUploadsV1PublicassetRequest());
+  }
+
+  /**
+   * 301 redirect.
+   * 
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> getUploadsV1PublicassetWithHttpInfo() throws IOException {
+    return getUploadsV1Publicasset(createGetUploadsV1PublicassetRequest().withHttpInfo());
+  }
+
+  private GetUploadsV1PublicassetRequest createGetUploadsV1PublicassetRequest() {
+    return GetUploadsV1PublicassetRequest.builder()
+            .build();
+  }
+
+  /**
+   * 301 redirect.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void getUploadsV1Publicasset(GetUploadsV1PublicassetRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * 301 redirect.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> getUploadsV1Publicasset(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * 301 redirect.
+   * 
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void getWebdeploymentsV1SubResources() throws IOException, ApiException {
+     getWebdeploymentsV1SubResources(createGetWebdeploymentsV1SubResourcesRequest());
+  }
+
+  /**
+   * 301 redirect.
+   * 
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> getWebdeploymentsV1SubResourcesWithHttpInfo() throws IOException {
+    return getWebdeploymentsV1SubResources(createGetWebdeploymentsV1SubResourcesRequest().withHttpInfo());
+  }
+
+  private GetWebdeploymentsV1SubResourcesRequest createGetWebdeploymentsV1SubResourcesRequest() {
+    return GetWebdeploymentsV1SubResourcesRequest.builder()
+            .build();
+  }
+
+  /**
+   * 301 redirect.
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void getWebdeploymentsV1SubResources(GetWebdeploymentsV1SubResourcesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * 301 redirect.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> getWebdeploymentsV1SubResources(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -165,6 +165,7 @@ public class GetOutboundCampaignsAllRequest {
 	} 
 
 	public enum mediaTypeValues { 
+		EMAIL("email"), 
 		SMS("sms"), 
 		VOICE("voice");
 

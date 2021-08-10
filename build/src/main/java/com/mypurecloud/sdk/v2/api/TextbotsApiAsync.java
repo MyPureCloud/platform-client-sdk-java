@@ -13,11 +13,17 @@ import com.mypurecloud.sdk.v2.Configuration;
 import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
-import com.mypurecloud.sdk.v2.model.PostTextResponse;
+import com.mypurecloud.sdk.v2.model.TextBotFlowTurnRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.TextBotFlowTurnResponse;
+import com.mypurecloud.sdk.v2.model.TextBotFlowLaunchRequest;
+import com.mypurecloud.sdk.v2.model.TextBotFlowLaunchResponse;
+import com.mypurecloud.sdk.v2.model.PostTextResponse;
 import com.mypurecloud.sdk.v2.model.PostTextRequest;
 
 
+import com.mypurecloud.sdk.v2.api.request.PostTextbotsBotflowsSessionTurnsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostTextbotsBotflowsSessionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTextbotsBotsExecuteRequest;
 
 import java.io.IOException;
@@ -37,6 +43,158 @@ public class TextbotsApiAsync {
 
   public TextbotsApiAsync(ApiClient apiClient) {
     this.pcapiClient = apiClient;
+  }
+
+  
+  /**
+   * Issue a bot flow turn event
+   * Send a turn event to an executing bot flow and produce the next action to take.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TextBotFlowTurnResponse> postTextbotsBotflowsSessionTurnsAsync(PostTextbotsBotflowsSessionTurnsRequest request, final AsyncApiCallback<TextBotFlowTurnResponse> callback) {
+    try {
+      final SettableFuture<TextBotFlowTurnResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TextBotFlowTurnResponse>() {}, new AsyncApiCallback<ApiResponse<TextBotFlowTurnResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<TextBotFlowTurnResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Issue a bot flow turn event
+   * Send a turn event to an executing bot flow and produce the next action to take.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TextBotFlowTurnResponse>> postTextbotsBotflowsSessionTurnsAsync(ApiRequest<TextBotFlowTurnRequest> request, final AsyncApiCallback<ApiResponse<TextBotFlowTurnResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TextBotFlowTurnResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TextBotFlowTurnResponse>() {}, new AsyncApiCallback<ApiResponse<TextBotFlowTurnResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<TextBotFlowTurnResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TextBotFlowTurnResponse> response = (ApiResponse<TextBotFlowTurnResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TextBotFlowTurnResponse> response = (ApiResponse<TextBotFlowTurnResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Create an execution instance of a bot flow definition.
+   * The launch is asynchronous; use the returned instance ID to post turns to it using &#39;POST /api/v2/textbots/botflows/sessions/{sessionId}/turns&#39;.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TextBotFlowLaunchResponse> postTextbotsBotflowsSessionsAsync(PostTextbotsBotflowsSessionsRequest request, final AsyncApiCallback<TextBotFlowLaunchResponse> callback) {
+    try {
+      final SettableFuture<TextBotFlowLaunchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TextBotFlowLaunchResponse>() {}, new AsyncApiCallback<ApiResponse<TextBotFlowLaunchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<TextBotFlowLaunchResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create an execution instance of a bot flow definition.
+   * The launch is asynchronous; use the returned instance ID to post turns to it using &#39;POST /api/v2/textbots/botflows/sessions/{sessionId}/turns&#39;.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TextBotFlowLaunchResponse>> postTextbotsBotflowsSessionsAsync(ApiRequest<TextBotFlowLaunchRequest> request, final AsyncApiCallback<ApiResponse<TextBotFlowLaunchResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TextBotFlowLaunchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TextBotFlowLaunchResponse>() {}, new AsyncApiCallback<ApiResponse<TextBotFlowLaunchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<TextBotFlowLaunchResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TextBotFlowLaunchResponse> response = (ApiResponse<TextBotFlowLaunchResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TextBotFlowLaunchResponse> response = (ApiResponse<TextBotFlowLaunchResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
   }
 
   

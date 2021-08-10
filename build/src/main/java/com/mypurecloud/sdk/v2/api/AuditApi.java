@@ -445,7 +445,7 @@ public class AuditApi {
 
   
   /**
-   * This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+   * This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
    * 
    * @param body query (required)
    * @param expand Which fields, if any, to expand (optional)
@@ -458,7 +458,7 @@ public class AuditApi {
   }
 
   /**
-   * This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+   * This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
    * 
    * @param body query (required)
    * @param expand Which fields, if any, to expand (optional)
@@ -479,7 +479,7 @@ public class AuditApi {
   }
 
   /**
-   * This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+   * This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
    * 
    * @param request The request object
    * @return AuditRealtimeQueryResultsResponse
@@ -498,7 +498,7 @@ public class AuditApi {
   }
 
   /**
-   * This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+   * This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
    * 
    * @param request The request object
    * @return the response

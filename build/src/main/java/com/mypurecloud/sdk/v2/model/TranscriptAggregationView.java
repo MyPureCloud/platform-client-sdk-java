@@ -42,7 +42,8 @@ public class TranscriptAggregationView  implements Serializable {
   public enum TargetEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NTOPICCOMMUNICATIONS("nTopicCommunications"),
-    OCUSTOMERSENTIMENT("oCustomerSentiment");
+    OCUSTOMERSENTIMENT("oCustomerSentiment"),
+    OSENTIMENTSCORE("oSentimentScore");
 
     private String value;
 

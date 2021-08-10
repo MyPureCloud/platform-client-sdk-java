@@ -23,6 +23,7 @@ title: CommonCampaignDivisionView
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| EMAIL | &quot;email&quot; |
 | SMS | &quot;sms&quot; |
 | VOICE | &quot;voice&quot; |
 {: class="table table-striped"}

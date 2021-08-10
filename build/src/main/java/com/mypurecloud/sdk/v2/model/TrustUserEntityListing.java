@@ -29,9 +29,9 @@ public class TrustUserEntityListing  implements Serializable, PagedResource<Trus
   private Integer pageNumber = null;
   private Long total = null;
   private String firstUri = null;
-  private String previousUri = null;
   private String selfUri = null;
   private String nextUri = null;
+  private String previousUri = null;
   private String lastUri = null;
   private Integer pageCount = null;
 
@@ -123,23 +123,6 @@ public class TrustUserEntityListing  implements Serializable, PagedResource<Trus
   
   /**
    **/
-  public TrustUserEntityListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
-  }
-
-  
-  /**
-   **/
   public TrustUserEntityListing selfUri(String selfUri) {
     this.selfUri = selfUri;
     return this;
@@ -169,6 +152,23 @@ public class TrustUserEntityListing  implements Serializable, PagedResource<Trus
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
+  }
+
+  
+  /**
+   **/
+  public TrustUserEntityListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
   }
 
   
@@ -221,16 +221,16 @@ public class TrustUserEntityListing  implements Serializable, PagedResource<Trus
         Objects.equals(this.pageNumber, trustUserEntityListing.pageNumber) &&
         Objects.equals(this.total, trustUserEntityListing.total) &&
         Objects.equals(this.firstUri, trustUserEntityListing.firstUri) &&
-        Objects.equals(this.previousUri, trustUserEntityListing.previousUri) &&
         Objects.equals(this.selfUri, trustUserEntityListing.selfUri) &&
         Objects.equals(this.nextUri, trustUserEntityListing.nextUri) &&
+        Objects.equals(this.previousUri, trustUserEntityListing.previousUri) &&
         Objects.equals(this.lastUri, trustUserEntityListing.lastUri) &&
         Objects.equals(this.pageCount, trustUserEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, previousUri, selfUri, nextUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, previousUri, lastUri, pageCount);
   }
 
   @Override
@@ -243,9 +243,9 @@ public class TrustUserEntityListing  implements Serializable, PagedResource<Trus
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");

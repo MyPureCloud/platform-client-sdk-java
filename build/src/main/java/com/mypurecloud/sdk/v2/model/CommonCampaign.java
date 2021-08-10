@@ -44,6 +44,7 @@ public class CommonCampaign  implements Serializable {
  @JsonDeserialize(using = MediaTypeEnumDeserializer.class)
   public enum MediaTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    EMAIL("email"),
     SMS("sms"),
     VOICE("voice");
 

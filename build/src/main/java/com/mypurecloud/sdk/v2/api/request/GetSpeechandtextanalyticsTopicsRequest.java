@@ -75,6 +75,78 @@ public class GetSpeechandtextanalyticsTopicsRequest {
 	    return this;
 	} 
 	
+	private String state;
+	public String getState() {
+		return this.state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public GetSpeechandtextanalyticsTopicsRequest withState(String state) {
+	    this.setState(state);
+	    return this;
+	} 
+
+	public enum stateValues { 
+		LATEST("latest"), 
+		PUBLISHED("published");
+
+		private String value;
+
+		stateValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static stateValues fromString(String key) {
+			if (key == null) return null;
+
+			for (stateValues value : stateValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return stateValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
+	private String name;
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public GetSpeechandtextanalyticsTopicsRequest withName(String name) {
+	    this.setName(name);
+	    return this;
+	} 
+	
+	private List<String> ids;
+	public List<String> getIds() {
+		return this.ids;
+	}
+
+	public void setIds(List<String> ids) {
+		this.ids = ids;
+	}
+
+	public GetSpeechandtextanalyticsTopicsRequest withIds(List<String> ids) {
+	    this.setIds(ids);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -101,6 +173,12 @@ public class GetSpeechandtextanalyticsTopicsRequest {
                 .withQueryParameters("nextPage", "", nextPage)
         
                 .withQueryParameters("pageSize", "", pageSize)
+        
+                .withQueryParameters("state", "", state)
+        
+                .withQueryParameters("name", "", name)
+        
+                .withQueryParameters("ids", "multi", ids)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -130,6 +208,26 @@ public class GetSpeechandtextanalyticsTopicsRequest {
 		
 		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
+			return this;
+		}
+		
+		public Builder withState(String state) {
+			request.setState(state);
+			return this;
+		}
+
+		public Builder withState(stateValues state) {
+		    request.setState(state.toString());
+		    return this;
+		}
+		
+		public Builder withName(String name) {
+			request.setName(name);
+			return this;
+		}
+		
+		public Builder withIds(List<String> ids) {
+			request.setIds(ids);
 			return this;
 		}
 		

@@ -23,6 +23,7 @@ public class GamificationStatus  implements Serializable {
   
   private Boolean isActive = null;
   private LocalDate dateStart = null;
+  private Boolean automaticUserAssignment = null;
 
   
   /**
@@ -61,6 +62,24 @@ public class GamificationStatus  implements Serializable {
   }
 
   
+  /**
+   * Automatic assignment of users to the default profile
+   **/
+  public GamificationStatus automaticUserAssignment(Boolean automaticUserAssignment) {
+    this.automaticUserAssignment = automaticUserAssignment;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Automatic assignment of users to the default profile")
+  @JsonProperty("automaticUserAssignment")
+  public Boolean getAutomaticUserAssignment() {
+    return automaticUserAssignment;
+  }
+  public void setAutomaticUserAssignment(Boolean automaticUserAssignment) {
+    this.automaticUserAssignment = automaticUserAssignment;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -72,12 +91,13 @@ public class GamificationStatus  implements Serializable {
     }
     GamificationStatus gamificationStatus = (GamificationStatus) o;
     return Objects.equals(this.isActive, gamificationStatus.isActive) &&
-        Objects.equals(this.dateStart, gamificationStatus.dateStart);
+        Objects.equals(this.dateStart, gamificationStatus.dateStart) &&
+        Objects.equals(this.automaticUserAssignment, gamificationStatus.automaticUserAssignment);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(isActive, dateStart);
+    return Objects.hash(isActive, dateStart, automaticUserAssignment);
   }
 
   @Override
@@ -87,6 +107,7 @@ public class GamificationStatus  implements Serializable {
     
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    dateStart: ").append(toIndentedString(dateStart)).append("\n");
+    sb.append("    automaticUserAssignment: ").append(toIndentedString(automaticUserAssignment)).append("\n");
     sb.append("}");
     return sb.toString();
   }

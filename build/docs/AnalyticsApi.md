@@ -1134,8 +1134,9 @@ Get a list of scheduled report jobs.
 
 Wraps GET /api/v2/analytics/reporting/schedules  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
 
 ### Example
 
@@ -2203,8 +2204,9 @@ Place a scheduled report immediately into the reporting queue
 
 Wraps POST /api/v2/analytics/reporting/schedules/{scheduleId}/runreport  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
 
 ### Example
 

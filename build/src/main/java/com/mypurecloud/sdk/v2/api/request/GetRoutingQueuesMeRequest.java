@@ -59,9 +59,9 @@ import com.mypurecloud.sdk.v2.model.Utilization;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
-import com.mypurecloud.sdk.v2.model.RoutingConversationAttributes;
+import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesRequest;
+import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesResponse;
 import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
-import com.mypurecloud.sdk.v2.model.OutboundDomain;
 import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
 import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.UserQueue;
@@ -85,17 +85,17 @@ import com.mypurecloud.sdk.v2.model.QueueRequest;
 
 public class GetRoutingQueuesMeRequest {
     
-	private Boolean joined;
-	public Boolean getJoined() {
-		return this.joined;
+	private Integer pageNumber;
+	public Integer getPageNumber() {
+		return this.pageNumber;
 	}
 
-	public void setJoined(Boolean joined) {
-		this.joined = joined;
+	public void setPageNumber(Integer pageNumber) {
+		this.pageNumber = pageNumber;
 	}
 
-	public GetRoutingQueuesMeRequest withJoined(Boolean joined) {
-	    this.setJoined(joined);
+	public GetRoutingQueuesMeRequest withPageNumber(Integer pageNumber) {
+	    this.setPageNumber(pageNumber);
 	    return this;
 	} 
 	
@@ -113,31 +113,17 @@ public class GetRoutingQueuesMeRequest {
 	    return this;
 	} 
 	
-	private Integer pageNumber;
-	public Integer getPageNumber() {
-		return this.pageNumber;
+	private Boolean joined;
+	public Boolean getJoined() {
+		return this.joined;
 	}
 
-	public void setPageNumber(Integer pageNumber) {
-		this.pageNumber = pageNumber;
+	public void setJoined(Boolean joined) {
+		this.joined = joined;
 	}
 
-	public GetRoutingQueuesMeRequest withPageNumber(Integer pageNumber) {
-	    this.setPageNumber(pageNumber);
-	    return this;
-	} 
-	
-	private String sortBy;
-	public String getSortBy() {
-		return this.sortBy;
-	}
-
-	public void setSortBy(String sortBy) {
-		this.sortBy = sortBy;
-	}
-
-	public GetRoutingQueuesMeRequest withSortBy(String sortBy) {
-	    this.setSortBy(sortBy);
+	public GetRoutingQueuesMeRequest withJoined(Boolean joined) {
+	    this.setJoined(joined);
 	    return this;
 	} 
 	
@@ -154,6 +140,36 @@ public class GetRoutingQueuesMeRequest {
 	    this.setSortOrder(sortOrder);
 	    return this;
 	} 
+
+	public enum sortOrderValues { 
+		ASC("asc"), 
+		DESC("desc");
+
+		private String value;
+
+		sortOrderValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static sortOrderValues fromString(String key) {
+			if (key == null) return null;
+
+			for (sortOrderValues value : sortOrderValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return sortOrderValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
@@ -178,13 +194,11 @@ public class GetRoutingQueuesMeRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/routing/queues/me")
-                .withQueryParameters("joined", "", joined)
+                .withQueryParameters("pageNumber", "", pageNumber)
         
                 .withQueryParameters("pageSize", "", pageSize)
         
-                .withQueryParameters("pageNumber", "", pageNumber)
-        
-                .withQueryParameters("sortBy", "", sortBy)
+                .withQueryParameters("joined", "", joined)
         
                 .withQueryParameters("sortOrder", "", sortOrder)
         
@@ -209,8 +223,8 @@ public class GetRoutingQueuesMeRequest {
 		}
 
 		
-		public Builder withJoined(Boolean joined) {
-			request.setJoined(joined);
+		public Builder withPageNumber(Integer pageNumber) {
+			request.setPageNumber(pageNumber);
 			return this;
 		}
 		
@@ -219,19 +233,19 @@ public class GetRoutingQueuesMeRequest {
 			return this;
 		}
 		
-		public Builder withPageNumber(Integer pageNumber) {
-			request.setPageNumber(pageNumber);
-			return this;
-		}
-		
-		public Builder withSortBy(String sortBy) {
-			request.setSortBy(sortBy);
+		public Builder withJoined(Boolean joined) {
+			request.setJoined(joined);
 			return this;
 		}
 		
 		public Builder withSortOrder(String sortOrder) {
 			request.setSortOrder(sortOrder);
 			return this;
+		}
+
+		public Builder withSortOrder(sortOrderValues sortOrder) {
+		    request.setSortOrder(sortOrder.toString());
+		    return this;
 		}
 		
 

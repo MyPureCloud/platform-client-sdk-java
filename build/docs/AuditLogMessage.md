@@ -42,6 +42,7 @@ title: AuditLogMessage
 | INTEGRATIONS | &quot;Integrations&quot; |
 | KNOWLEDGE | &quot;Knowledge&quot; |
 | LANGUAGEUNDERSTANDING | &quot;LanguageUnderstanding&quot; |
+| LEARNING | &quot;Learning&quot; |
 | LIMITS | &quot;Limits&quot; |
 | OUTBOUND | &quot;Outbound&quot; |
 | PEOPLEPERMISSIONS | &quot;PeoplePermissions&quot; |
@@ -92,6 +93,7 @@ title: AuditLogMessage
 | ARCHIVE | &quot;Archive&quot; |
 | RESTOREREQUEST | &quot;RestoreRequest&quot; |
 | RESTORECOMPLETE | &quot;RestoreComplete&quot; |
+| PROMOTE | &quot;Promote&quot; |
 | PUBLISH | &quot;Publish&quot; |
 | UNPUBLISH | &quot;Unpublish&quot; |
 | ACTIVATE | &quot;Activate&quot; |
@@ -146,6 +148,7 @@ title: AuditLogMessage
 | ACTIONTEMPLATE | &quot;ActionTemplate&quot; |
 | ANNOTATION | &quot;Annotation&quot; |
 | APPOINTMENT | &quot;Appointment&quot; |
+| ASSIGNMENT | &quot;Assignment&quot; |
 | ATTEMPTLIMITS | &quot;AttemptLimits&quot; |
 | AUTHORGANIZATION | &quot;AuthOrganization&quot; |
 | AUTHUSER | &quot;AuthUser&quot; |
@@ -203,12 +206,15 @@ title: AuditLogMessage
 | KNOWLEDGEBASE | &quot;KnowledgeBase&quot; |
 | KNOWLEDGECATEGORY | &quot;KnowledgeCategory&quot; |
 | KNOWLEDGEDOCUMENT | &quot;KnowledgeDocument&quot; |
+| KNOWLEDGESEARCHFEEDBACK | &quot;KnowledgeSearchFeedback&quot; |
+| KNOWLEDGETRAINING | &quot;KnowledgeTraining&quot; |
 | LINE | &quot;Line&quot; |
 | LINEBASE | &quot;LineBase&quot; |
 | MAXORGROUTINGUTILIZATIONCAPACITY | &quot;MaxOrgRoutingUtilizationCapacity&quot; |
 | MEDIADIAGNOSTICSTRACEFILE | &quot;MediaDiagnosticsTraceFile&quot; |
 | MESSAGINGCAMPAIGN | &quot;MessagingCampaign&quot; |
 | METRIC | &quot;Metric&quot; |
+| MODULE | &quot;Module&quot; |
 | NUMBERPLAN | &quot;NumberPlan&quot; |
 | OAUTHCLIENT | &quot;OAuthClient&quot; |
 | OAUTHCLIENTAUTHORIZATION | &quot;OAuthClientAuthorization&quot; |
@@ -237,6 +243,7 @@ title: AuditLogMessage
 | ROLE | &quot;Role&quot; |
 | ROW | &quot;Row&quot; |
 | ROUTINGTRANSCRIPTIONSETTINGS | &quot;RoutingTranscriptionSettings&quot; |
+| RULE | &quot;Rule&quot; |
 | RULESET | &quot;RuleSet&quot; |
 | SCHEDULE | &quot;Schedule&quot; |
 | SCHEDULEDEXPORTS | &quot;ScheduledExports&quot; |

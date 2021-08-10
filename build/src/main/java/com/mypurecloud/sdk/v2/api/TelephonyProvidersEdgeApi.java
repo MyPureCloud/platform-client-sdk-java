@@ -68,8 +68,6 @@ import com.mypurecloud.sdk.v2.model.TrunkBase;
 import com.mypurecloud.sdk.v2.model.TrunkBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkMetabaseEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkRecordingEnabledCount;
-import com.mypurecloud.sdk.v2.model.AsgScaleRequest;
-import com.mypurecloud.sdk.v2.model.ScaleASGResponse;
 import com.mypurecloud.sdk.v2.model.EdgeNetworkDiagnostic;
 import com.mypurecloud.sdk.v2.model.EdgeNetworkDiagnosticRequest;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJobUploadRequest;
@@ -168,7 +166,6 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbaseset
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkswithrecordingRequest;
-import com.mypurecloud.sdk.v2.api.request.PatchTelephonyProvidersEdgesAutoscalinggroupCapacityRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticNslookupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticPingRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticRouteRequest;
@@ -770,7 +767,7 @@ public class TelephonyProvidersEdgeApi {
   
   /**
    * Delete Outbound Route
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
    * @param outboundRouteId Outbound route ID (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -781,7 +778,7 @@ public class TelephonyProvidersEdgeApi {
 
   /**
    * Delete Outbound Route
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
    * @param outboundRouteId Outbound route ID (required)
    * @throws IOException if the request fails to be processed
    */
@@ -798,7 +795,7 @@ public class TelephonyProvidersEdgeApi {
 
   /**
    * Delete Outbound Route
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -816,7 +813,7 @@ public class TelephonyProvidersEdgeApi {
 
   /**
    * Delete Outbound Route
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -5136,7 +5133,7 @@ public class TelephonyProvidersEdgeApi {
   
   /**
    * Get outbound route
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
    * @param outboundRouteId Outbound route ID (required)
    * @return OutboundRoute
    * @throws ApiException if the request fails on the server
@@ -5148,7 +5145,7 @@ public class TelephonyProvidersEdgeApi {
 
   /**
    * Get outbound route
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
    * @param outboundRouteId Outbound route ID (required)
    * @return OutboundRoute
    * @throws IOException if the request fails to be processed
@@ -5166,7 +5163,7 @@ public class TelephonyProvidersEdgeApi {
 
   /**
    * Get outbound route
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
    * @param request The request object
    * @return OutboundRoute
    * @throws ApiException if the request fails on the server
@@ -5185,7 +5182,7 @@ public class TelephonyProvidersEdgeApi {
 
   /**
    * Get outbound route
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -7504,89 +7501,6 @@ public class TelephonyProvidersEdgeApi {
 
   
   /**
-   * Scales the ASG to match the desired capacity
-   * 
-   * @param asgId Id of the asg that is to be scaled (required)
-   * @param body AsgScaleRequest (required)
-   * @return ScaleASGResponse
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public ScaleASGResponse patchTelephonyProvidersEdgesAutoscalinggroupCapacity(String asgId, AsgScaleRequest body) throws IOException, ApiException {
-    return  patchTelephonyProvidersEdgesAutoscalinggroupCapacity(createPatchTelephonyProvidersEdgesAutoscalinggroupCapacityRequest(asgId, body));
-  }
-
-  /**
-   * Scales the ASG to match the desired capacity
-   * 
-   * @param asgId Id of the asg that is to be scaled (required)
-   * @param body AsgScaleRequest (required)
-   * @return ScaleASGResponse
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<ScaleASGResponse> patchTelephonyProvidersEdgesAutoscalinggroupCapacityWithHttpInfo(String asgId, AsgScaleRequest body) throws IOException {
-    return patchTelephonyProvidersEdgesAutoscalinggroupCapacity(createPatchTelephonyProvidersEdgesAutoscalinggroupCapacityRequest(asgId, body).withHttpInfo());
-  }
-
-  private PatchTelephonyProvidersEdgesAutoscalinggroupCapacityRequest createPatchTelephonyProvidersEdgesAutoscalinggroupCapacityRequest(String asgId, AsgScaleRequest body) {
-    return PatchTelephonyProvidersEdgesAutoscalinggroupCapacityRequest.builder()
-            .withAsgId(asgId)
-    
-            .withBody(body)
-    
-            .build();
-  }
-
-  /**
-   * Scales the ASG to match the desired capacity
-   * 
-   * @param request The request object
-   * @return ScaleASGResponse
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public ScaleASGResponse patchTelephonyProvidersEdgesAutoscalinggroupCapacity(PatchTelephonyProvidersEdgesAutoscalinggroupCapacityRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<ScaleASGResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ScaleASGResponse>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Scales the ASG to match the desired capacity
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<ScaleASGResponse> patchTelephonyProvidersEdgesAutoscalinggroupCapacity(ApiRequest<AsgScaleRequest> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<ScaleASGResponse>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<ScaleASGResponse> response = (ApiResponse<ScaleASGResponse>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<ScaleASGResponse> response = (ApiResponse<ScaleASGResponse>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
    * Nslookup request command to collect networking-related information from an Edge for a target IP or host.
    * 
    * @param edgeId Edge Id (required)
@@ -8972,7 +8886,7 @@ public class TelephonyProvidersEdgeApi {
   
   /**
    * Create outbound rule
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes instead.
    * @param body OutboundRoute (required)
    * @return OutboundRoute
    * @throws ApiException if the request fails on the server
@@ -8984,7 +8898,7 @@ public class TelephonyProvidersEdgeApi {
 
   /**
    * Create outbound rule
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes instead.
    * @param body OutboundRoute (required)
    * @return OutboundRoute
    * @throws IOException if the request fails to be processed
@@ -9002,7 +8916,7 @@ public class TelephonyProvidersEdgeApi {
 
   /**
    * Create outbound rule
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes instead.
    * @param request The request object
    * @return OutboundRoute
    * @throws ApiException if the request fails on the server
@@ -9021,7 +8935,7 @@ public class TelephonyProvidersEdgeApi {
 
   /**
    * Create outbound rule
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes instead.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -10520,7 +10434,7 @@ public class TelephonyProvidersEdgeApi {
   
   /**
    * Update outbound route
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
    * @param outboundRouteId Outbound route ID (required)
    * @param body OutboundRoute (required)
    * @return OutboundRoute
@@ -10533,7 +10447,7 @@ public class TelephonyProvidersEdgeApi {
 
   /**
    * Update outbound route
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
    * @param outboundRouteId Outbound route ID (required)
    * @param body OutboundRoute (required)
    * @return OutboundRoute
@@ -10554,7 +10468,7 @@ public class TelephonyProvidersEdgeApi {
 
   /**
    * Update outbound route
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
    * @param request The request object
    * @return OutboundRoute
    * @throws ApiException if the request fails on the server
@@ -10573,7 +10487,7 @@ public class TelephonyProvidersEdgeApi {
 
   /**
    * Update outbound route
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

@@ -59,9 +59,9 @@ import com.mypurecloud.sdk.v2.model.Utilization;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
-import com.mypurecloud.sdk.v2.model.RoutingConversationAttributes;
+import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesRequest;
+import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesResponse;
 import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
-import com.mypurecloud.sdk.v2.model.OutboundDomain;
 import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
 import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.UserQueue;
@@ -99,20 +99,6 @@ public class GetRoutingQueueMembersRequest {
 	    return this;
 	} 
 	
-	private Integer pageSize;
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public GetRoutingQueueMembersRequest withPageSize(Integer pageSize) {
-	    this.setPageSize(pageSize);
-	    return this;
-	} 
-	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -127,19 +113,63 @@ public class GetRoutingQueueMembersRequest {
 	    return this;
 	} 
 	
-	private String sortBy;
-	public String getSortBy() {
-		return this.sortBy;
+	private Integer pageSize;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setSortBy(String sortBy) {
-		this.sortBy = sortBy;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
-	public GetRoutingQueueMembersRequest withSortBy(String sortBy) {
-	    this.setSortBy(sortBy);
+	public GetRoutingQueueMembersRequest withPageSize(Integer pageSize) {
+	    this.setPageSize(pageSize);
 	    return this;
 	} 
+	
+	private String sortOrder;
+	public String getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(String sortOrder) {
+		this.sortOrder = sortOrder;
+	}
+
+	public GetRoutingQueueMembersRequest withSortOrder(String sortOrder) {
+	    this.setSortOrder(sortOrder);
+	    return this;
+	} 
+
+	public enum sortOrderValues { 
+		ASC("asc"), 
+		DESC("desc");
+
+		private String value;
+
+		sortOrderValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static sortOrderValues fromString(String key) {
+			if (key == null) return null;
+
+			for (sortOrderValues value : sortOrderValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return sortOrderValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private List<String> expand;
 	public List<String> getExpand() {
@@ -201,20 +231,6 @@ public class GetRoutingQueueMembersRequest {
 			return String.valueOf(value);
 		}
 	}
-	
-	private Boolean joined;
-	public Boolean getJoined() {
-		return this.joined;
-	}
-
-	public void setJoined(Boolean joined) {
-		this.joined = joined;
-	}
-
-	public GetRoutingQueueMembersRequest withJoined(Boolean joined) {
-	    this.setJoined(joined);
-	    return this;
-	} 
 	
 	private String name;
 	public String getName() {
@@ -300,6 +316,64 @@ public class GetRoutingQueueMembersRequest {
 	    return this;
 	} 
 	
+	private String memberBy;
+	public String getMemberBy() {
+		return this.memberBy;
+	}
+
+	public void setMemberBy(String memberBy) {
+		this.memberBy = memberBy;
+	}
+
+	public GetRoutingQueueMembersRequest withMemberBy(String memberBy) {
+	    this.setMemberBy(memberBy);
+	    return this;
+	} 
+
+	public enum memberByValues { 
+		USER("user"), 
+		GROUP("group");
+
+		private String value;
+
+		memberByValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static memberByValues fromString(String key) {
+			if (key == null) return null;
+
+			for (memberByValues value : memberByValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return memberByValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
+	private Boolean joined;
+	public Boolean getJoined() {
+		return this.joined;
+	}
+
+	public void setJoined(Boolean joined) {
+		this.joined = joined;
+	}
+
+	public GetRoutingQueueMembersRequest withJoined(Boolean joined) {
+	    this.setJoined(joined);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -330,15 +404,13 @@ public class GetRoutingQueueMembersRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/routing/queues/{queueId}/members")
                 .withPathParameter("queueId", queueId)
         
-                .withQueryParameters("pageSize", "", pageSize)
-        
                 .withQueryParameters("pageNumber", "", pageNumber)
         
-                .withQueryParameters("sortBy", "", sortBy)
+                .withQueryParameters("pageSize", "", pageSize)
+        
+                .withQueryParameters("sortOrder", "", sortOrder)
         
                 .withQueryParameters("expand", "multi", expand)
-        
-                .withQueryParameters("joined", "", joined)
         
                 .withQueryParameters("name", "", name)
         
@@ -351,6 +423,10 @@ public class GetRoutingQueueMembersRequest {
                 .withQueryParameters("routingStatus", "multi", routingStatus)
         
                 .withQueryParameters("presence", "multi", presence)
+        
+                .withQueryParameters("memberBy", "", memberBy)
+        
+                .withQueryParameters("joined", "", joined)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -383,19 +459,24 @@ public class GetRoutingQueueMembersRequest {
 			return this;
 		}
 		
-		public Builder withPageSize(Integer pageSize) {
-			request.setPageSize(pageSize);
-			return this;
-		}
-		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
 		
-		public Builder withSortBy(String sortBy) {
-			request.setSortBy(sortBy);
+		public Builder withPageSize(Integer pageSize) {
+			request.setPageSize(pageSize);
 			return this;
+		}
+		
+		public Builder withSortOrder(String sortOrder) {
+			request.setSortOrder(sortOrder);
+			return this;
+		}
+
+		public Builder withSortOrder(sortOrderValues sortOrder) {
+		    request.setSortOrder(sortOrder.toString());
+		    return this;
 		}
 		
 		public Builder withExpand(List<String> expand) {
@@ -410,11 +491,6 @@ public class GetRoutingQueueMembersRequest {
 	      }
 	      request.setExpand(stringList);
 		    return this;
-		}
-		
-		public Builder withJoined(Boolean joined) {
-			request.setJoined(joined);
-			return this;
 		}
 		
 		public Builder withName(String name) {
@@ -444,6 +520,21 @@ public class GetRoutingQueueMembersRequest {
 		
 		public Builder withPresence(List<String> presence) {
 			request.setPresence(presence);
+			return this;
+		}
+		
+		public Builder withMemberBy(String memberBy) {
+			request.setMemberBy(memberBy);
+			return this;
+		}
+
+		public Builder withMemberBy(memberByValues memberBy) {
+		    request.setMemberBy(memberBy.toString());
+		    return this;
+		}
+		
+		public Builder withJoined(Boolean joined) {
+			request.setJoined(joined);
 			return this;
 		}
 		

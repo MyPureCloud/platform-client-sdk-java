@@ -52,9 +52,9 @@ import com.mypurecloud.sdk.v2.model.Utilization;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
-import com.mypurecloud.sdk.v2.model.RoutingConversationAttributes;
+import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesRequest;
+import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesResponse;
 import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
-import com.mypurecloud.sdk.v2.model.OutboundDomain;
 import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
 import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.UserQueue;
@@ -141,7 +141,6 @@ import com.mypurecloud.sdk.v2.api.request.GetUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainValidateRequest;
-import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailOutboundDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMemberRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMembersRequest;
@@ -4841,18 +4840,18 @@ public class RoutingApiAsync {
   
   /**
    * Update attributes of an in-queue conversation
-   * Returns an object indicating the updated values of all settable attributes.  Supported attributes: priority (each point of priority is equivalent to one minute of time in queue).
+   * Returns an object indicating the updated values of all settable attributes. Supported attributes: priority (each point of priority is equivalent to one minute of time in queue), skillIds and languageId.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<RoutingConversationAttributes> patchRoutingConversationAsync(PatchRoutingConversationRequest request, final AsyncApiCallback<RoutingConversationAttributes> callback) {
+  public Future<RoutingConversationAttributesResponse> patchRoutingConversationAsync(PatchRoutingConversationRequest request, final AsyncApiCallback<RoutingConversationAttributesResponse> callback) {
     try {
-      final SettableFuture<RoutingConversationAttributes> future = SettableFuture.create();
+      final SettableFuture<RoutingConversationAttributesResponse> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RoutingConversationAttributes>() {}, new AsyncApiCallback<ApiResponse<RoutingConversationAttributes>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<RoutingConversationAttributesResponse>() {}, new AsyncApiCallback<ApiResponse<RoutingConversationAttributesResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<RoutingConversationAttributes> response) {
+        public void onCompleted(ApiResponse<RoutingConversationAttributesResponse> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -4875,18 +4874,18 @@ public class RoutingApiAsync {
 
   /**
    * Update attributes of an in-queue conversation
-   * Returns an object indicating the updated values of all settable attributes.  Supported attributes: priority (each point of priority is equivalent to one minute of time in queue).
+   * Returns an object indicating the updated values of all settable attributes. Supported attributes: priority (each point of priority is equivalent to one minute of time in queue), skillIds and languageId.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<RoutingConversationAttributes>> patchRoutingConversationAsync(ApiRequest<RoutingConversationAttributes> request, final AsyncApiCallback<ApiResponse<RoutingConversationAttributes>> callback) {
+  public Future<ApiResponse<RoutingConversationAttributesResponse>> patchRoutingConversationAsync(ApiRequest<RoutingConversationAttributesRequest> request, final AsyncApiCallback<ApiResponse<RoutingConversationAttributesResponse>> callback) {
     try {
-      final SettableFuture<ApiResponse<RoutingConversationAttributes>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<RoutingConversationAttributesResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<RoutingConversationAttributes>() {}, new AsyncApiCallback<ApiResponse<RoutingConversationAttributes>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<RoutingConversationAttributesResponse>() {}, new AsyncApiCallback<ApiResponse<RoutingConversationAttributesResponse>>() {
         @Override
-        public void onCompleted(ApiResponse<RoutingConversationAttributes> response) {
+        public void onCompleted(ApiResponse<RoutingConversationAttributesResponse> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -4894,7 +4893,7 @@ public class RoutingApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<RoutingConversationAttributes> response = (ApiResponse<RoutingConversationAttributes>)(ApiResponse<?>)exception;
+            ApiResponse<RoutingConversationAttributesResponse> response = (ApiResponse<RoutingConversationAttributesResponse>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -4902,7 +4901,7 @@ public class RoutingApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<RoutingConversationAttributes> response = (ApiResponse<RoutingConversationAttributes>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<RoutingConversationAttributesResponse> response = (ApiResponse<RoutingConversationAttributesResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -5055,82 +5054,6 @@ public class RoutingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<InboundDomain> response = (ApiResponse<InboundDomain>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  
-  /**
-   * Request an update of the emails from /replyTo of an outbound domain
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<OutboundDomain> patchRoutingEmailOutboundDomainAsync(PatchRoutingEmailOutboundDomainRequest request, final AsyncApiCallback<OutboundDomain> callback) {
-    try {
-      final SettableFuture<OutboundDomain> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OutboundDomain>() {}, new AsyncApiCallback<ApiResponse<OutboundDomain>>() {
-        @Override
-        public void onCompleted(ApiResponse<OutboundDomain> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Request an update of the emails from /replyTo of an outbound domain
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<OutboundDomain>> patchRoutingEmailOutboundDomainAsync(ApiRequest<OutboundDomain> request, final AsyncApiCallback<ApiResponse<OutboundDomain>> callback) {
-    try {
-      final SettableFuture<ApiResponse<OutboundDomain>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<OutboundDomain>() {}, new AsyncApiCallback<ApiResponse<OutboundDomain>>() {
-        @Override
-        public void onCompleted(ApiResponse<OutboundDomain> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<OutboundDomain> response = (ApiResponse<OutboundDomain>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<OutboundDomain> response = (ApiResponse<OutboundDomain>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

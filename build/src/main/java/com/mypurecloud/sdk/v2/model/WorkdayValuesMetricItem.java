@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.MetricDefinition;
+import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.WorkdayValuesTrendItem;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -25,7 +25,7 @@ import java.io.Serializable;
 
 public class WorkdayValuesMetricItem  implements Serializable {
   
-  private MetricDefinition metricDefinition = null;
+  private DomainEntityRef metricDefinition = null;
   private Double average = null;
 
   private static class UnitTypeEnumDeserializer extends StdDeserializer<UnitTypeEnum> {
@@ -85,17 +85,17 @@ public class WorkdayValuesMetricItem  implements Serializable {
   /**
    * Gamification metric for the average and the trend
    **/
-  public WorkdayValuesMetricItem metricDefinition(MetricDefinition metricDefinition) {
+  public WorkdayValuesMetricItem metricDefinition(DomainEntityRef metricDefinition) {
     this.metricDefinition = metricDefinition;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Gamification metric for the average and the trend")
   @JsonProperty("metricDefinition")
-  public MetricDefinition getMetricDefinition() {
+  public DomainEntityRef getMetricDefinition() {
     return metricDefinition;
   }
-  public void setMetricDefinition(MetricDefinition metricDefinition) {
+  public void setMetricDefinition(DomainEntityRef metricDefinition) {
     this.metricDefinition = metricDefinition;
   }
 

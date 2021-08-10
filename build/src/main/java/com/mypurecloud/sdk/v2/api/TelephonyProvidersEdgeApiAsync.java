@@ -71,8 +71,6 @@ import com.mypurecloud.sdk.v2.model.TrunkBase;
 import com.mypurecloud.sdk.v2.model.TrunkBaseEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkMetabaseEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkRecordingEnabledCount;
-import com.mypurecloud.sdk.v2.model.AsgScaleRequest;
-import com.mypurecloud.sdk.v2.model.ScaleASGResponse;
 import com.mypurecloud.sdk.v2.model.EdgeNetworkDiagnostic;
 import com.mypurecloud.sdk.v2.model.EdgeNetworkDiagnosticRequest;
 import com.mypurecloud.sdk.v2.model.EdgeLogsJobUploadRequest;
@@ -171,7 +169,6 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbaseset
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkswithrecordingRequest;
-import com.mypurecloud.sdk.v2.api.request.PatchTelephonyProvidersEdgesAutoscalinggroupCapacityRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticNslookupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticPingRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticRouteRequest;
@@ -770,7 +767,7 @@ public class TelephonyProvidersEdgeApiAsync {
   
   /**
    * Delete Outbound Route
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -804,7 +801,7 @@ public class TelephonyProvidersEdgeApiAsync {
 
   /**
    * Delete Outbound Route
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4722,7 +4719,7 @@ public class TelephonyProvidersEdgeApiAsync {
   
   /**
    * Get outbound route
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4756,7 +4753,7 @@ public class TelephonyProvidersEdgeApiAsync {
 
   /**
    * Get outbound route
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -6773,82 +6770,6 @@ public class TelephonyProvidersEdgeApiAsync {
 
   
   /**
-   * Scales the ASG to match the desired capacity
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ScaleASGResponse> patchTelephonyProvidersEdgesAutoscalinggroupCapacityAsync(PatchTelephonyProvidersEdgesAutoscalinggroupCapacityRequest request, final AsyncApiCallback<ScaleASGResponse> callback) {
-    try {
-      final SettableFuture<ScaleASGResponse> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ScaleASGResponse>() {}, new AsyncApiCallback<ApiResponse<ScaleASGResponse>>() {
-        @Override
-        public void onCompleted(ApiResponse<ScaleASGResponse> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Scales the ASG to match the desired capacity
-   * 
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<ScaleASGResponse>> patchTelephonyProvidersEdgesAutoscalinggroupCapacityAsync(ApiRequest<AsgScaleRequest> request, final AsyncApiCallback<ApiResponse<ScaleASGResponse>> callback) {
-    try {
-      final SettableFuture<ApiResponse<ScaleASGResponse>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ScaleASGResponse>() {}, new AsyncApiCallback<ApiResponse<ScaleASGResponse>>() {
-        @Override
-        public void onCompleted(ApiResponse<ScaleASGResponse> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ScaleASGResponse> response = (ApiResponse<ScaleASGResponse>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ScaleASGResponse> response = (ApiResponse<ScaleASGResponse>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  
-  /**
    * Nslookup request command to collect networking-related information from an Edge for a target IP or host.
    * 
    * @param request the request object
@@ -8142,7 +8063,7 @@ public class TelephonyProvidersEdgeApiAsync {
   
   /**
    * Create outbound rule
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -8176,7 +8097,7 @@ public class TelephonyProvidersEdgeApiAsync {
 
   /**
    * Create outbound rule
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -9586,7 +9507,7 @@ public class TelephonyProvidersEdgeApiAsync {
   
   /**
    * Update outbound route
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -9620,7 +9541,7 @@ public class TelephonyProvidersEdgeApiAsync {
 
   /**
    * Update outbound route
-   * 
+   * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

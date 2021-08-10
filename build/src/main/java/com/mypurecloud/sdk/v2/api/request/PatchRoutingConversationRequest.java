@@ -59,9 +59,9 @@ import com.mypurecloud.sdk.v2.model.Utilization;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
-import com.mypurecloud.sdk.v2.model.RoutingConversationAttributes;
+import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesRequest;
+import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesResponse;
 import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
-import com.mypurecloud.sdk.v2.model.OutboundDomain;
 import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
 import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.UserQueue;
@@ -99,16 +99,16 @@ public class PatchRoutingConversationRequest {
 	    return this;
 	} 
 	
-	private RoutingConversationAttributes body;
-	public RoutingConversationAttributes getBody() {
+	private RoutingConversationAttributesRequest body;
+	public RoutingConversationAttributesRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(RoutingConversationAttributes body) {
+	public void setBody(RoutingConversationAttributesRequest body) {
 		this.body = body;
 	}
 
-	public PatchRoutingConversationRequest withBody(RoutingConversationAttributes body) {
+	public PatchRoutingConversationRequest withBody(RoutingConversationAttributesRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -132,7 +132,7 @@ public class PatchRoutingConversationRequest {
         return this;
     }
 
-    public ApiRequest<RoutingConversationAttributes> withHttpInfo() {
+    public ApiRequest<RoutingConversationAttributesRequest> withHttpInfo() {
         
         // verify the required parameter 'conversationId' is set
         if (this.conversationId == null) {
@@ -162,7 +162,7 @@ public class PatchRoutingConversationRequest {
 	}
 
 	
-	public static Builder builder(String conversationId, RoutingConversationAttributes body) {
+	public static Builder builder(String conversationId, RoutingConversationAttributesRequest body) {
 	    return new Builder()
 	            .withRequiredParams(conversationId, body);
 	}
@@ -181,14 +181,14 @@ public class PatchRoutingConversationRequest {
 			return this;
 		}
 		
-		public Builder withBody(RoutingConversationAttributes body) {
+		public Builder withBody(RoutingConversationAttributesRequest body) {
 			request.setBody(body);
 			return this;
 		}
 		
 
 		
-		public Builder withRequiredParams(String conversationId, RoutingConversationAttributes body) {
+		public Builder withRequiredParams(String conversationId, RoutingConversationAttributesRequest body) {
 			request.setConversationId(conversationId);
 						request.setBody(body);
 			

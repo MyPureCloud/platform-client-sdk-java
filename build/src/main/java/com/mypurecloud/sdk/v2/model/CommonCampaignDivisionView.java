@@ -44,6 +44,7 @@ public class CommonCampaignDivisionView  implements Serializable {
  @JsonDeserialize(using = MediaTypeEnumDeserializer.class)
   public enum MediaTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    EMAIL("email"),
     SMS("sms"),
     VOICE("voice");
 

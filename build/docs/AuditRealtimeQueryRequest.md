@@ -35,6 +35,7 @@ title: AuditRealtimeQueryRequest
 | INTEGRATIONS | &quot;Integrations&quot; |
 | KNOWLEDGE | &quot;Knowledge&quot; |
 | LANGUAGEUNDERSTANDING | &quot;LanguageUnderstanding&quot; |
+| LEARNING | &quot;Learning&quot; |
 | LIMITS | &quot;Limits&quot; |
 | OUTBOUND | &quot;Outbound&quot; |
 | PEOPLEPERMISSIONS | &quot;PeoplePermissions&quot; |

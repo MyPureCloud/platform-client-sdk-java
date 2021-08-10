@@ -71,7 +71,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchRoutingConversation**](RoutingApi.html#patchRoutingConversation) | Update attributes of an in-queue conversation |
 | [**patchRoutingEmailDomain**](RoutingApi.html#patchRoutingEmailDomain) | Update domain settings |
 | [**patchRoutingEmailDomainValidate**](RoutingApi.html#patchRoutingEmailDomainValidate) | Validate domain settings |
-| [**patchRoutingEmailOutboundDomain**](RoutingApi.html#patchRoutingEmailOutboundDomain) | Request an update of the emails from /replyTo of an outbound domain |
 | [**patchRoutingPredictor**](RoutingApi.html#patchRoutingPredictor) | Update single predictor. |
 | [**patchRoutingQueueMember**](RoutingApi.html#patchRoutingQueueMember) | Update the ring number OR joined status for a queue member. |
 | [**patchRoutingQueueMembers**](RoutingApi.html#patchRoutingQueueMembers) | Join or unjoin a set of users for a queue |
@@ -2477,7 +2476,7 @@ try {
 
 
 
-> [QueueMemberEntityListing](QueueMemberEntityListing.html) getRoutingQueueMembers(queueId, pageSize, pageNumber, sortBy, expand, joined, name, profileSkills, skills, languages, routingStatus, presence)
+> [QueueMemberEntityListing](QueueMemberEntityListing.html) getRoutingQueueMembers(queueId, pageNumber, pageSize, sortOrder, expand, name, profileSkills, skills, languages, routingStatus, presence, memberBy, joined)
 
 Get the members of this queue.
 
@@ -2513,19 +2512,20 @@ Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
-Integer pageSize = 25; // Integer | Page size [max 100]
-Integer pageNumber = 1; // Integer | Page number
-String sortBy = "name"; // String | Sort by
+Integer pageNumber = 1; // Integer | 
+Integer pageSize = 25; // Integer | Max value is 100
+String sortOrder = "asc"; // String | Note: results are sorted by name.
 List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
-Boolean joined = true; // Boolean | Filter by joined status
 String name = "name_example"; // String | Filter by queue member name
 List<String> profileSkills = Arrays.asList("profileSkills_example"); // List<String> | Filter by profile skill
 List<String> skills = Arrays.asList("skills_example"); // List<String> | Filter by skill
 List<String> languages = Arrays.asList("languages_example"); // List<String> | Filter by language
 List<String> routingStatus = Arrays.asList("routingStatus_example"); // List<String> | Filter by routing status
 List<String> presence = Arrays.asList("presence_example"); // List<String> | Filter by presence
+String memberBy = "memberBy_example"; // String | Filter by member type
+Boolean joined = true; // Boolean | Filter by joined status
 try {
-    QueueMemberEntityListing result = apiInstance.getRoutingQueueMembers(queueId, pageSize, pageNumber, sortBy, expand, joined, name, profileSkills, skills, languages, routingStatus, presence);
+    QueueMemberEntityListing result = apiInstance.getRoutingQueueMembers(queueId, pageNumber, pageSize, sortOrder, expand, name, profileSkills, skills, languages, routingStatus, presence, memberBy, joined);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingQueueMembers");
@@ -2539,17 +2539,18 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **queueId** | **String**| Queue ID | 
-| **pageSize** | **Integer**| Page size [max 100] | [optional] [default to 25] 
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **sortBy** | **String**| Sort by | [optional] [default to name] 
+| **pageNumber** | **Integer**|  | [optional] [default to 1] 
+| **pageSize** | **Integer**| Max value is 100 | [optional] [default to 25] 
+| **sortOrder** | **String**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc 
 | **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
-| **joined** | **Boolean**| Filter by joined status | [optional] 
 | **name** | **String**| Filter by queue member name | [optional] 
 | **profileSkills** | [**List&lt;String&gt;**](String.html)| Filter by profile skill | [optional] 
 | **skills** | [**List&lt;String&gt;**](String.html)| Filter by skill | [optional] 
 | **languages** | [**List&lt;String&gt;**](String.html)| Filter by language | [optional] 
 | **routingStatus** | [**List&lt;String&gt;**](String.html)| Filter by routing status | [optional] 
 | **presence** | [**List&lt;String&gt;**](String.html)| Filter by presence | [optional] 
+| **memberBy** | **String**| Filter by member type | [optional]<br />**Values**: user, group 
+| **joined** | **Boolean**| Filter by joined status | [optional] 
 {: class="table-striped"}
 
 
@@ -2563,7 +2564,7 @@ try {
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-> [QueueMemberEntityListing](QueueMemberEntityListing.html) getRoutingQueueUsers(queueId, pageSize, pageNumber, sortBy, expand, joined, name, profileSkills, skills, languages, routingStatus, presence)
+> [QueueMemberEntityListing](QueueMemberEntityListing.html) getRoutingQueueUsers(queueId, pageNumber, pageSize, sortOrder, expand, joined, name, profileSkills, skills, languages, routingStatus, presence)
 
 DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
 
@@ -2599,9 +2600,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
-Integer pageSize = 25; // Integer | Page size [max 100]
-Integer pageNumber = 1; // Integer | Page number
-String sortBy = "name"; // String | Sort by
+Integer pageNumber = 1; // Integer | 
+Integer pageSize = 25; // Integer | Max value is 100
+String sortOrder = "asc"; // String | Note: results are sorted by name.
 List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
 Boolean joined = true; // Boolean | Filter by joined status
 String name = "name_example"; // String | Filter by queue member name
@@ -2611,7 +2612,7 @@ List<String> languages = Arrays.asList("languages_example"); // List<String> | F
 List<String> routingStatus = Arrays.asList("routingStatus_example"); // List<String> | Filter by routing status
 List<String> presence = Arrays.asList("presence_example"); // List<String> | Filter by presence
 try {
-    QueueMemberEntityListing result = apiInstance.getRoutingQueueUsers(queueId, pageSize, pageNumber, sortBy, expand, joined, name, profileSkills, skills, languages, routingStatus, presence);
+    QueueMemberEntityListing result = apiInstance.getRoutingQueueUsers(queueId, pageNumber, pageSize, sortOrder, expand, joined, name, profileSkills, skills, languages, routingStatus, presence);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingQueueUsers");
@@ -2625,9 +2626,9 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **queueId** | **String**| Queue ID | 
-| **pageSize** | **Integer**| Page size [max 100] | [optional] [default to 25] 
-| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **sortBy** | **String**| Sort by | [optional] [default to name] 
+| **pageNumber** | **Integer**|  | [optional] [default to 1] 
+| **pageSize** | **Integer**| Max value is 100 | [optional] [default to 25] 
+| **sortOrder** | **String**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc 
 | **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography 
 | **joined** | **Boolean**| Filter by joined status | [optional] 
 | **name** | **String**| Filter by queue member name | [optional] 
@@ -2716,7 +2717,7 @@ try {
 
 
 
-> [QueueEntityListing](QueueEntityListing.html) getRoutingQueues(pageSize, pageNumber, sortBy, name, id, divisionId)
+> [QueueEntityListing](QueueEntityListing.html) getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId)
 
 Get list of queues.
 
@@ -2750,14 +2751,14 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
-Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
-String sortBy = "name"; // String | Sort by
-String name = "name_example"; // String | Name
-List<String> id = Arrays.asList("id_example"); // List<String> | ID(s)
-List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Division ID(s)
+Integer pageSize = 25; // Integer | Page size
+String sortOrder = "asc"; // String | Note: results are sorted by name.
+String name = "name_example"; // String | Filter by queue name
+List<String> id = Arrays.asList("id_example"); // List<String> | Filter by queue ID(s)
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | Filter by queue division ID(s)
 try {
-    QueueEntityListing result = apiInstance.getRoutingQueues(pageSize, pageNumber, sortBy, name, id, divisionId);
+    QueueEntityListing result = apiInstance.getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingQueues");
@@ -2770,12 +2771,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **sortBy** | **String**| Sort by | [optional] [default to name] 
-| **name** | **String**| Name | [optional] 
-| **id** | [**List&lt;String&gt;**](String.html)| ID(s) | [optional] 
-| **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **sortOrder** | **String**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc 
+| **name** | **String**| Filter by queue name | [optional] 
+| **id** | [**List&lt;String&gt;**](String.html)| Filter by queue ID(s) | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| Filter by queue division ID(s) | [optional] 
 {: class="table-striped"}
 
 
@@ -2933,7 +2934,7 @@ try {
 
 
 
-> [UserQueueEntityListing](UserQueueEntityListing.html) getRoutingQueuesMe(joined, pageSize, pageNumber, sortBy, sortOrder)
+> [UserQueueEntityListing](UserQueueEntityListing.html) getRoutingQueuesMe(pageNumber, pageSize, joined, sortOrder)
 
 Get a paged listing of queues the user is a member of.
 
@@ -2966,13 +2967,12 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
-Boolean joined = true; // Boolean | Joined
-Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
-String sortBy = "name"; // String | Sort by
-String sortOrder = "asc"; // String | Sort order
+Integer pageSize = 25; // Integer | Page size
+Boolean joined = true; // Boolean | Filter by joined status.
+String sortOrder = "asc"; // String | Note: results are sorted by name.
 try {
-    UserQueueEntityListing result = apiInstance.getRoutingQueuesMe(joined, pageSize, pageNumber, sortBy, sortOrder);
+    UserQueueEntityListing result = apiInstance.getRoutingQueuesMe(pageNumber, pageSize, joined, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingQueuesMe");
@@ -2985,11 +2985,10 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **joined** | **Boolean**| Joined | [optional] 
-| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **sortBy** | **String**| Sort by | [optional] [default to name] 
-| **sortOrder** | **String**| Sort order | [optional] [default to asc] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **joined** | **Boolean**| Filter by joined status. | [optional] 
+| **sortOrder** | **String**| Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc 
 {: class="table-striped"}
 
 
@@ -4112,11 +4111,11 @@ try {
 
 
 
-> [RoutingConversationAttributes](RoutingConversationAttributes.html) patchRoutingConversation(conversationId, body)
+> [RoutingConversationAttributesResponse](RoutingConversationAttributesResponse.html) patchRoutingConversation(conversationId, body)
 
 Update attributes of an in-queue conversation
 
-Returns an object indicating the updated values of all settable attributes.  Supported attributes: priority (each point of priority is equivalent to one minute of time in queue).
+Returns an object indicating the updated values of all settable attributes. Supported attributes: priority (each point of priority is equivalent to one minute of time in queue), skillIds and languageId.
 
 Wraps PATCH /api/v2/routing/conversations/{conversationId}  
 
@@ -4147,9 +4146,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 RoutingApi apiInstance = new RoutingApi();
 String conversationId = "conversationId_example"; // String | Conversation ID
-RoutingConversationAttributes body = new RoutingConversationAttributes(); // RoutingConversationAttributes | Conversation Attributes
+RoutingConversationAttributesRequest body = new RoutingConversationAttributesRequest(); // RoutingConversationAttributesRequest | Conversation Attributes
 try {
-    RoutingConversationAttributes result = apiInstance.patchRoutingConversation(conversationId, body);
+    RoutingConversationAttributesResponse result = apiInstance.patchRoutingConversation(conversationId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#patchRoutingConversation");
@@ -4163,13 +4162,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **conversationId** | **String**| Conversation ID | 
-| **body** | [**RoutingConversationAttributes**](RoutingConversationAttributes.html)| Conversation Attributes | 
+| **body** | [**RoutingConversationAttributesRequest**](RoutingConversationAttributesRequest.html)| Conversation Attributes | 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**RoutingConversationAttributes**](RoutingConversationAttributes.html)
+[**RoutingConversationAttributesResponse**](RoutingConversationAttributesResponse.html)
 
 <a name="patchRoutingEmailDomain"></a>
 
@@ -4300,71 +4299,6 @@ try {
 ### Return type
 
 [**InboundDomain**](InboundDomain.html)
-
-<a name="patchRoutingEmailOutboundDomain"></a>
-
-# **patchRoutingEmailOutboundDomain**
-
-
-
-> [OutboundDomain](OutboundDomain.html) patchRoutingEmailOutboundDomain(domainId, body)
-
-Request an update of the emails from /replyTo of an outbound domain
-
-
-
-Wraps PATCH /api/v2/routing/email/outbound/domains/{domainId}  
-
-Requires ALL permissions: 
-
-* routing:email:manage
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.RoutingApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-RoutingApi apiInstance = new RoutingApi();
-String domainId = "domainId_example"; // String | domain ID
-OutboundDomain body = new OutboundDomain(); // OutboundDomain | domain with emails that need update set
-try {
-    OutboundDomain result = apiInstance.patchRoutingEmailOutboundDomain(domainId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling RoutingApi#patchRoutingEmailOutboundDomain");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **domainId** | **String**| domain ID | 
-| **body** | [**OutboundDomain**](OutboundDomain.html)| domain with emails that need update set | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**OutboundDomain**](OutboundDomain.html)
 
 <a name="patchRoutingPredictor"></a>
 

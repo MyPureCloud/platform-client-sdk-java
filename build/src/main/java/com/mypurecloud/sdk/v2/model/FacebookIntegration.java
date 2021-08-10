@@ -28,6 +28,8 @@ public class FacebookIntegration  implements Serializable {
   private String name = null;
   private String appId = null;
   private String pageId = null;
+  private String pageName = null;
+  private String pageProfileImageUrl = null;
   private String status = null;
   private DomainEntityRef recipient = null;
   private Date dateCreated = null;
@@ -146,6 +148,20 @@ public class FacebookIntegration  implements Serializable {
   }
   public void setPageId(String pageId) {
     this.pageId = pageId;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "The name of the Facebook page")
+  @JsonProperty("pageName")
+  public String getPageName() {
+    return pageName;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "The url of the profile image of the Facebook page")
+  @JsonProperty("pageProfileImageUrl")
+  public String getPageProfileImageUrl() {
+    return pageProfileImageUrl;
   }
 
   
@@ -321,6 +337,8 @@ public class FacebookIntegration  implements Serializable {
         Objects.equals(this.name, facebookIntegration.name) &&
         Objects.equals(this.appId, facebookIntegration.appId) &&
         Objects.equals(this.pageId, facebookIntegration.pageId) &&
+        Objects.equals(this.pageName, facebookIntegration.pageName) &&
+        Objects.equals(this.pageProfileImageUrl, facebookIntegration.pageProfileImageUrl) &&
         Objects.equals(this.status, facebookIntegration.status) &&
         Objects.equals(this.recipient, facebookIntegration.recipient) &&
         Objects.equals(this.dateCreated, facebookIntegration.dateCreated) &&
@@ -335,7 +353,7 @@ public class FacebookIntegration  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, appId, pageId, status, recipient, dateCreated, dateModified, createdBy, modifiedBy, version, createStatus, createError, selfUri);
+    return Objects.hash(id, name, appId, pageId, pageName, pageProfileImageUrl, status, recipient, dateCreated, dateModified, createdBy, modifiedBy, version, createStatus, createError, selfUri);
   }
 
   @Override
@@ -347,6 +365,8 @@ public class FacebookIntegration  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
     sb.append("    pageId: ").append(toIndentedString(pageId)).append("\n");
+    sb.append("    pageName: ").append(toIndentedString(pageName)).append("\n");
+    sb.append("    pageProfileImageUrl: ").append(toIndentedString(pageProfileImageUrl)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    recipient: ").append(toIndentedString(recipient)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");

@@ -25,6 +25,7 @@ title: AuditQueryEntity
 | ACTIONTEMPLATE | &quot;ActionTemplate&quot; |
 | ANNOTATION | &quot;Annotation&quot; |
 | APPOINTMENT | &quot;Appointment&quot; |
+| ASSIGNMENT | &quot;Assignment&quot; |
 | ATTEMPTLIMITS | &quot;AttemptLimits&quot; |
 | AUTHORGANIZATION | &quot;AuthOrganization&quot; |
 | AUTHUSER | &quot;AuthUser&quot; |
@@ -82,12 +83,15 @@ title: AuditQueryEntity
 | KNOWLEDGEBASE | &quot;KnowledgeBase&quot; |
 | KNOWLEDGECATEGORY | &quot;KnowledgeCategory&quot; |
 | KNOWLEDGEDOCUMENT | &quot;KnowledgeDocument&quot; |
+| KNOWLEDGESEARCHFEEDBACK | &quot;KnowledgeSearchFeedback&quot; |
+| KNOWLEDGETRAINING | &quot;KnowledgeTraining&quot; |
 | LINE | &quot;Line&quot; |
 | LINEBASE | &quot;LineBase&quot; |
 | MAXORGROUTINGUTILIZATIONCAPACITY | &quot;MaxOrgRoutingUtilizationCapacity&quot; |
 | MEDIADIAGNOSTICSTRACEFILE | &quot;MediaDiagnosticsTraceFile&quot; |
 | MESSAGINGCAMPAIGN | &quot;MessagingCampaign&quot; |
 | METRIC | &quot;Metric&quot; |
+| MODULE | &quot;Module&quot; |
 | NUMBERPLAN | &quot;NumberPlan&quot; |
 | OAUTHCLIENT | &quot;OAuthClient&quot; |
 | OAUTHCLIENTAUTHORIZATION | &quot;OAuthClientAuthorization&quot; |
@@ -116,6 +120,7 @@ title: AuditQueryEntity
 | ROLE | &quot;Role&quot; |
 | ROW | &quot;Row&quot; |
 | ROUTINGTRANSCRIPTIONSETTINGS | &quot;RoutingTranscriptionSettings&quot; |
+| RULE | &quot;Rule&quot; |
 | RULESET | &quot;RuleSet&quot; |
 | SCHEDULE | &quot;Schedule&quot; |
 | SCHEDULEDEXPORTS | &quot;ScheduledExports&quot; |
@@ -179,6 +184,7 @@ title: AuditQueryEntity
 | ARCHIVE | &quot;Archive&quot; |
 | RESTOREREQUEST | &quot;RestoreRequest&quot; |
 | RESTORECOMPLETE | &quot;RestoreComplete&quot; |
+| PROMOTE | &quot;Promote&quot; |
 | PUBLISH | &quot;Publish&quot; |
 | UNPUBLISH | &quot;Unpublish&quot; |
 | ACTIVATE | &quot;Activate&quot; |

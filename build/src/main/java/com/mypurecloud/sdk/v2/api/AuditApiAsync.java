@@ -430,7 +430,7 @@ public class AuditApiAsync {
 
   
   /**
-   * This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+   * This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -464,7 +464,7 @@ public class AuditApiAsync {
   }
 
   /**
-   * This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+   * This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

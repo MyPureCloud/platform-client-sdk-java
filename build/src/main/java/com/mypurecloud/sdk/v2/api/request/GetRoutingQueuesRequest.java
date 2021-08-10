@@ -59,9 +59,9 @@ import com.mypurecloud.sdk.v2.model.Utilization;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
-import com.mypurecloud.sdk.v2.model.RoutingConversationAttributes;
+import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesRequest;
+import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesResponse;
 import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
-import com.mypurecloud.sdk.v2.model.OutboundDomain;
 import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
 import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.UserQueue;
@@ -85,20 +85,6 @@ import com.mypurecloud.sdk.v2.model.QueueRequest;
 
 public class GetRoutingQueuesRequest {
     
-	private Integer pageSize;
-	public Integer getPageSize() {
-		return this.pageSize;
-	}
-
-	public void setPageSize(Integer pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public GetRoutingQueuesRequest withPageSize(Integer pageSize) {
-	    this.setPageSize(pageSize);
-	    return this;
-	} 
-	
 	private Integer pageNumber;
 	public Integer getPageNumber() {
 		return this.pageNumber;
@@ -113,19 +99,63 @@ public class GetRoutingQueuesRequest {
 	    return this;
 	} 
 	
-	private String sortBy;
-	public String getSortBy() {
-		return this.sortBy;
+	private Integer pageSize;
+	public Integer getPageSize() {
+		return this.pageSize;
 	}
 
-	public void setSortBy(String sortBy) {
-		this.sortBy = sortBy;
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 
-	public GetRoutingQueuesRequest withSortBy(String sortBy) {
-	    this.setSortBy(sortBy);
+	public GetRoutingQueuesRequest withPageSize(Integer pageSize) {
+	    this.setPageSize(pageSize);
 	    return this;
 	} 
+	
+	private String sortOrder;
+	public String getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(String sortOrder) {
+		this.sortOrder = sortOrder;
+	}
+
+	public GetRoutingQueuesRequest withSortOrder(String sortOrder) {
+	    this.setSortOrder(sortOrder);
+	    return this;
+	} 
+
+	public enum sortOrderValues { 
+		ASC("asc"), 
+		DESC("desc");
+
+		private String value;
+
+		sortOrderValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static sortOrderValues fromString(String key) {
+			if (key == null) return null;
+
+			for (sortOrderValues value : sortOrderValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return sortOrderValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
 	
 	private String name;
 	public String getName() {
@@ -192,11 +222,11 @@ public class GetRoutingQueuesRequest {
         
 
         return ApiRequestBuilder.create("GET", "/api/v2/routing/queues")
-                .withQueryParameters("pageSize", "", pageSize)
-        
                 .withQueryParameters("pageNumber", "", pageNumber)
         
-                .withQueryParameters("sortBy", "", sortBy)
+                .withQueryParameters("pageSize", "", pageSize)
+        
+                .withQueryParameters("sortOrder", "", sortOrder)
         
                 .withQueryParameters("name", "", name)
         
@@ -225,19 +255,24 @@ public class GetRoutingQueuesRequest {
 		}
 
 		
-		public Builder withPageSize(Integer pageSize) {
-			request.setPageSize(pageSize);
-			return this;
-		}
-		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
 			return this;
 		}
 		
-		public Builder withSortBy(String sortBy) {
-			request.setSortBy(sortBy);
+		public Builder withPageSize(Integer pageSize) {
+			request.setPageSize(pageSize);
 			return this;
+		}
+		
+		public Builder withSortOrder(String sortOrder) {
+			request.setSortOrder(sortOrder);
+			return this;
+		}
+
+		public Builder withSortOrder(sortOrderValues sortOrder) {
+		    request.setSortOrder(sortOrder.toString());
+		    return this;
 		}
 		
 		public Builder withName(String name) {

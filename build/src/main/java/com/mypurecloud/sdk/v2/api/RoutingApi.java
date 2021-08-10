@@ -49,9 +49,9 @@ import com.mypurecloud.sdk.v2.model.Utilization;
 import com.mypurecloud.sdk.v2.model.WrapupCode;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
-import com.mypurecloud.sdk.v2.model.RoutingConversationAttributes;
+import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesRequest;
+import com.mypurecloud.sdk.v2.model.RoutingConversationAttributesResponse;
 import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
-import com.mypurecloud.sdk.v2.model.OutboundDomain;
 import com.mypurecloud.sdk.v2.model.PatchPredictorRequest;
 import com.mypurecloud.sdk.v2.model.QueueMember;
 import com.mypurecloud.sdk.v2.model.UserQueue;
@@ -138,7 +138,6 @@ import com.mypurecloud.sdk.v2.api.request.GetUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailDomainValidateRequest;
-import com.mypurecloud.sdk.v2.api.request.PatchRoutingEmailOutboundDomainRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingPredictorRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMemberRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchRoutingQueueMembersRequest;
@@ -3167,60 +3166,60 @@ public class RoutingApi {
    * Get the members of this queue.
    * 
    * @param queueId Queue ID (required)
-   * @param pageSize Page size [max 100] (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @param sortBy Sort by (optional, default to name)
+   * @param pageNumber  (optional, default to 1)
+   * @param pageSize Max value is 100 (optional, default to 25)
+   * @param sortOrder Note: results are sorted by name. (optional, default to asc)
    * @param expand Which fields, if any, to expand. (optional)
-   * @param joined Filter by joined status (optional)
    * @param name Filter by queue member name (optional)
    * @param profileSkills Filter by profile skill (optional)
    * @param skills Filter by skill (optional)
    * @param languages Filter by language (optional)
    * @param routingStatus Filter by routing status (optional)
    * @param presence Filter by presence (optional)
+   * @param memberBy Filter by member type (optional)
+   * @param joined Filter by joined status (optional)
    * @return QueueMemberEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public QueueMemberEntityListing getRoutingQueueMembers(String queueId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) throws IOException, ApiException {
-    return  getRoutingQueueMembers(createGetRoutingQueueMembersRequest(queueId, pageSize, pageNumber, sortBy, expand, joined, name, profileSkills, skills, languages, routingStatus, presence));
+  public QueueMemberEntityListing getRoutingQueueMembers(String queueId, Integer pageNumber, Integer pageSize, String sortOrder, List<String> expand, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence, String memberBy, Boolean joined) throws IOException, ApiException {
+    return  getRoutingQueueMembers(createGetRoutingQueueMembersRequest(queueId, pageNumber, pageSize, sortOrder, expand, name, profileSkills, skills, languages, routingStatus, presence, memberBy, joined));
   }
 
   /**
    * Get the members of this queue.
    * 
    * @param queueId Queue ID (required)
-   * @param pageSize Page size [max 100] (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @param sortBy Sort by (optional, default to name)
+   * @param pageNumber  (optional, default to 1)
+   * @param pageSize Max value is 100 (optional, default to 25)
+   * @param sortOrder Note: results are sorted by name. (optional, default to asc)
    * @param expand Which fields, if any, to expand. (optional)
-   * @param joined Filter by joined status (optional)
    * @param name Filter by queue member name (optional)
    * @param profileSkills Filter by profile skill (optional)
    * @param skills Filter by skill (optional)
    * @param languages Filter by language (optional)
    * @param routingStatus Filter by routing status (optional)
    * @param presence Filter by presence (optional)
+   * @param memberBy Filter by member type (optional)
+   * @param joined Filter by joined status (optional)
    * @return QueueMemberEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueueMemberEntityListing> getRoutingQueueMembersWithHttpInfo(String queueId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) throws IOException {
-    return getRoutingQueueMembers(createGetRoutingQueueMembersRequest(queueId, pageSize, pageNumber, sortBy, expand, joined, name, profileSkills, skills, languages, routingStatus, presence).withHttpInfo());
+  public ApiResponse<QueueMemberEntityListing> getRoutingQueueMembersWithHttpInfo(String queueId, Integer pageNumber, Integer pageSize, String sortOrder, List<String> expand, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence, String memberBy, Boolean joined) throws IOException {
+    return getRoutingQueueMembers(createGetRoutingQueueMembersRequest(queueId, pageNumber, pageSize, sortOrder, expand, name, profileSkills, skills, languages, routingStatus, presence, memberBy, joined).withHttpInfo());
   }
 
-  private GetRoutingQueueMembersRequest createGetRoutingQueueMembersRequest(String queueId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) {
+  private GetRoutingQueueMembersRequest createGetRoutingQueueMembersRequest(String queueId, Integer pageNumber, Integer pageSize, String sortOrder, List<String> expand, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence, String memberBy, Boolean joined) {
     return GetRoutingQueueMembersRequest.builder()
             .withQueueId(queueId)
     
-            .withPageSize(pageSize)
-    
             .withPageNumber(pageNumber)
     
-            .withSortBy(sortBy)
+            .withPageSize(pageSize)
+    
+            .withSortOrder(sortOrder)
     
             .withExpand(expand)
-    
-            .withJoined(joined)
     
             .withName(name)
     
@@ -3233,6 +3232,10 @@ public class RoutingApi {
             .withRoutingStatus(routingStatus)
     
             .withPresence(presence)
+    
+            .withMemberBy(memberBy)
+    
+            .withJoined(joined)
     
             .build();
   }
@@ -3290,9 +3293,9 @@ public class RoutingApi {
    * DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
    * 
    * @param queueId Queue ID (required)
-   * @param pageSize Page size [max 100] (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @param sortBy Sort by (optional, default to name)
+   * @param pageNumber  (optional, default to 1)
+   * @param pageSize Max value is 100 (optional, default to 25)
+   * @param sortOrder Note: results are sorted by name. (optional, default to asc)
    * @param expand Which fields, if any, to expand. (optional)
    * @param joined Filter by joined status (optional)
    * @param name Filter by queue member name (optional)
@@ -3305,17 +3308,17 @@ public class RoutingApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public QueueMemberEntityListing getRoutingQueueUsers(String queueId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) throws IOException, ApiException {
-    return  getRoutingQueueUsers(createGetRoutingQueueUsersRequest(queueId, pageSize, pageNumber, sortBy, expand, joined, name, profileSkills, skills, languages, routingStatus, presence));
+  public QueueMemberEntityListing getRoutingQueueUsers(String queueId, Integer pageNumber, Integer pageSize, String sortOrder, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) throws IOException, ApiException {
+    return  getRoutingQueueUsers(createGetRoutingQueueUsersRequest(queueId, pageNumber, pageSize, sortOrder, expand, joined, name, profileSkills, skills, languages, routingStatus, presence));
   }
 
   /**
    * DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
    * 
    * @param queueId Queue ID (required)
-   * @param pageSize Page size [max 100] (optional, default to 25)
-   * @param pageNumber Page number (optional, default to 1)
-   * @param sortBy Sort by (optional, default to name)
+   * @param pageNumber  (optional, default to 1)
+   * @param pageSize Max value is 100 (optional, default to 25)
+   * @param sortOrder Note: results are sorted by name. (optional, default to asc)
    * @param expand Which fields, if any, to expand. (optional)
    * @param joined Filter by joined status (optional)
    * @param name Filter by queue member name (optional)
@@ -3327,19 +3330,19 @@ public class RoutingApi {
    * @return QueueMemberEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueueMemberEntityListing> getRoutingQueueUsersWithHttpInfo(String queueId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) throws IOException {
-    return getRoutingQueueUsers(createGetRoutingQueueUsersRequest(queueId, pageSize, pageNumber, sortBy, expand, joined, name, profileSkills, skills, languages, routingStatus, presence).withHttpInfo());
+  public ApiResponse<QueueMemberEntityListing> getRoutingQueueUsersWithHttpInfo(String queueId, Integer pageNumber, Integer pageSize, String sortOrder, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) throws IOException {
+    return getRoutingQueueUsers(createGetRoutingQueueUsersRequest(queueId, pageNumber, pageSize, sortOrder, expand, joined, name, profileSkills, skills, languages, routingStatus, presence).withHttpInfo());
   }
 
-  private GetRoutingQueueUsersRequest createGetRoutingQueueUsersRequest(String queueId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) {
+  private GetRoutingQueueUsersRequest createGetRoutingQueueUsersRequest(String queueId, Integer pageNumber, Integer pageSize, String sortOrder, List<String> expand, Boolean joined, String name, List<String> profileSkills, List<String> skills, List<String> languages, List<String> routingStatus, List<String> presence) {
     return GetRoutingQueueUsersRequest.builder()
             .withQueueId(queueId)
     
-            .withPageSize(pageSize)
-    
             .withPageNumber(pageNumber)
     
-            .withSortBy(sortBy)
+            .withPageSize(pageSize)
+    
+            .withSortOrder(sortOrder)
     
             .withExpand(expand)
     
@@ -3499,43 +3502,43 @@ public class RoutingApi {
   /**
    * Get list of queues.
    * 
-   * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @param sortBy Sort by (optional, default to name)
-   * @param name Name (optional)
-   * @param id ID(s) (optional)
-   * @param divisionId Division ID(s) (optional)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortOrder Note: results are sorted by name. (optional, default to asc)
+   * @param name Filter by queue name (optional)
+   * @param id Filter by queue ID(s) (optional)
+   * @param divisionId Filter by queue division ID(s) (optional)
    * @return QueueEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public QueueEntityListing getRoutingQueues(Integer pageSize, Integer pageNumber, String sortBy, String name, List<String> id, List<String> divisionId) throws IOException, ApiException {
-    return  getRoutingQueues(createGetRoutingQueuesRequest(pageSize, pageNumber, sortBy, name, id, divisionId));
+  public QueueEntityListing getRoutingQueues(Integer pageNumber, Integer pageSize, String sortOrder, String name, List<String> id, List<String> divisionId) throws IOException, ApiException {
+    return  getRoutingQueues(createGetRoutingQueuesRequest(pageNumber, pageSize, sortOrder, name, id, divisionId));
   }
 
   /**
    * Get list of queues.
    * 
-   * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @param sortBy Sort by (optional, default to name)
-   * @param name Name (optional)
-   * @param id ID(s) (optional)
-   * @param divisionId Division ID(s) (optional)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortOrder Note: results are sorted by name. (optional, default to asc)
+   * @param name Filter by queue name (optional)
+   * @param id Filter by queue ID(s) (optional)
+   * @param divisionId Filter by queue division ID(s) (optional)
    * @return QueueEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueueEntityListing> getRoutingQueuesWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String name, List<String> id, List<String> divisionId) throws IOException {
-    return getRoutingQueues(createGetRoutingQueuesRequest(pageSize, pageNumber, sortBy, name, id, divisionId).withHttpInfo());
+  public ApiResponse<QueueEntityListing> getRoutingQueuesWithHttpInfo(Integer pageNumber, Integer pageSize, String sortOrder, String name, List<String> id, List<String> divisionId) throws IOException {
+    return getRoutingQueues(createGetRoutingQueuesRequest(pageNumber, pageSize, sortOrder, name, id, divisionId).withHttpInfo());
   }
 
-  private GetRoutingQueuesRequest createGetRoutingQueuesRequest(Integer pageSize, Integer pageNumber, String sortBy, String name, List<String> id, List<String> divisionId) {
+  private GetRoutingQueuesRequest createGetRoutingQueuesRequest(Integer pageNumber, Integer pageSize, String sortOrder, String name, List<String> id, List<String> divisionId) {
     return GetRoutingQueuesRequest.builder()
-            .withPageSize(pageSize)
-    
             .withPageNumber(pageNumber)
     
-            .withSortBy(sortBy)
+            .withPageSize(pageSize)
+    
+            .withSortOrder(sortOrder)
     
             .withName(name)
     
@@ -3792,43 +3795,39 @@ public class RoutingApi {
   /**
    * Get a paged listing of queues the user is a member of.
    * 
-   * @param joined Joined (optional)
-   * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @param sortBy Sort by (optional, default to name)
-   * @param sortOrder Sort order (optional, default to asc)
+   * @param pageSize Page size (optional, default to 25)
+   * @param joined Filter by joined status. (optional)
+   * @param sortOrder Note: results are sorted by name. (optional, default to asc)
    * @return UserQueueEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public UserQueueEntityListing getRoutingQueuesMe(Boolean joined, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getRoutingQueuesMe(createGetRoutingQueuesMeRequest(joined, pageSize, pageNumber, sortBy, sortOrder));
+  public UserQueueEntityListing getRoutingQueuesMe(Integer pageNumber, Integer pageSize, Boolean joined, String sortOrder) throws IOException, ApiException {
+    return  getRoutingQueuesMe(createGetRoutingQueuesMeRequest(pageNumber, pageSize, joined, sortOrder));
   }
 
   /**
    * Get a paged listing of queues the user is a member of.
    * 
-   * @param joined Joined (optional)
-   * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @param sortBy Sort by (optional, default to name)
-   * @param sortOrder Sort order (optional, default to asc)
+   * @param pageSize Page size (optional, default to 25)
+   * @param joined Filter by joined status. (optional)
+   * @param sortOrder Note: results are sorted by name. (optional, default to asc)
    * @return UserQueueEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<UserQueueEntityListing> getRoutingQueuesMeWithHttpInfo(Boolean joined, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException {
-    return getRoutingQueuesMe(createGetRoutingQueuesMeRequest(joined, pageSize, pageNumber, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<UserQueueEntityListing> getRoutingQueuesMeWithHttpInfo(Integer pageNumber, Integer pageSize, Boolean joined, String sortOrder) throws IOException {
+    return getRoutingQueuesMe(createGetRoutingQueuesMeRequest(pageNumber, pageSize, joined, sortOrder).withHttpInfo());
   }
 
-  private GetRoutingQueuesMeRequest createGetRoutingQueuesMeRequest(Boolean joined, Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) {
+  private GetRoutingQueuesMeRequest createGetRoutingQueuesMeRequest(Integer pageNumber, Integer pageSize, Boolean joined, String sortOrder) {
     return GetRoutingQueuesMeRequest.builder()
-            .withJoined(joined)
+            .withPageNumber(pageNumber)
     
             .withPageSize(pageSize)
     
-            .withPageNumber(pageNumber)
-    
-            .withSortBy(sortBy)
+            .withJoined(joined)
     
             .withSortOrder(sortOrder)
     
@@ -5325,30 +5324,30 @@ public class RoutingApi {
   
   /**
    * Update attributes of an in-queue conversation
-   * Returns an object indicating the updated values of all settable attributes.  Supported attributes: priority (each point of priority is equivalent to one minute of time in queue).
+   * Returns an object indicating the updated values of all settable attributes. Supported attributes: priority (each point of priority is equivalent to one minute of time in queue), skillIds and languageId.
    * @param conversationId Conversation ID (required)
    * @param body Conversation Attributes (required)
-   * @return RoutingConversationAttributes
+   * @return RoutingConversationAttributesResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public RoutingConversationAttributes patchRoutingConversation(String conversationId, RoutingConversationAttributes body) throws IOException, ApiException {
+  public RoutingConversationAttributesResponse patchRoutingConversation(String conversationId, RoutingConversationAttributesRequest body) throws IOException, ApiException {
     return  patchRoutingConversation(createPatchRoutingConversationRequest(conversationId, body));
   }
 
   /**
    * Update attributes of an in-queue conversation
-   * Returns an object indicating the updated values of all settable attributes.  Supported attributes: priority (each point of priority is equivalent to one minute of time in queue).
+   * Returns an object indicating the updated values of all settable attributes. Supported attributes: priority (each point of priority is equivalent to one minute of time in queue), skillIds and languageId.
    * @param conversationId Conversation ID (required)
    * @param body Conversation Attributes (required)
-   * @return RoutingConversationAttributes
+   * @return RoutingConversationAttributesResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RoutingConversationAttributes> patchRoutingConversationWithHttpInfo(String conversationId, RoutingConversationAttributes body) throws IOException {
+  public ApiResponse<RoutingConversationAttributesResponse> patchRoutingConversationWithHttpInfo(String conversationId, RoutingConversationAttributesRequest body) throws IOException {
     return patchRoutingConversation(createPatchRoutingConversationRequest(conversationId, body).withHttpInfo());
   }
 
-  private PatchRoutingConversationRequest createPatchRoutingConversationRequest(String conversationId, RoutingConversationAttributes body) {
+  private PatchRoutingConversationRequest createPatchRoutingConversationRequest(String conversationId, RoutingConversationAttributesRequest body) {
     return PatchRoutingConversationRequest.builder()
             .withConversationId(conversationId)
     
@@ -5359,15 +5358,15 @@ public class RoutingApi {
 
   /**
    * Update attributes of an in-queue conversation
-   * Returns an object indicating the updated values of all settable attributes.  Supported attributes: priority (each point of priority is equivalent to one minute of time in queue).
+   * Returns an object indicating the updated values of all settable attributes. Supported attributes: priority (each point of priority is equivalent to one minute of time in queue), skillIds and languageId.
    * @param request The request object
-   * @return RoutingConversationAttributes
+   * @return RoutingConversationAttributesResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public RoutingConversationAttributes patchRoutingConversation(PatchRoutingConversationRequest request) throws IOException, ApiException {
+  public RoutingConversationAttributesResponse patchRoutingConversation(PatchRoutingConversationRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<RoutingConversationAttributes> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RoutingConversationAttributes>() {});
+      ApiResponse<RoutingConversationAttributesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<RoutingConversationAttributesResponse>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -5378,18 +5377,18 @@ public class RoutingApi {
 
   /**
    * Update attributes of an in-queue conversation
-   * Returns an object indicating the updated values of all settable attributes.  Supported attributes: priority (each point of priority is equivalent to one minute of time in queue).
+   * Returns an object indicating the updated values of all settable attributes. Supported attributes: priority (each point of priority is equivalent to one minute of time in queue), skillIds and languageId.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RoutingConversationAttributes> patchRoutingConversation(ApiRequest<RoutingConversationAttributes> request) throws IOException {
+  public ApiResponse<RoutingConversationAttributesResponse> patchRoutingConversation(ApiRequest<RoutingConversationAttributesRequest> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<RoutingConversationAttributes>() {});
+      return pcapiClient.invoke(request, new TypeReference<RoutingConversationAttributesResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<RoutingConversationAttributes> response = (ApiResponse<RoutingConversationAttributes>)(ApiResponse<?>)exception;
+      ApiResponse<RoutingConversationAttributesResponse> response = (ApiResponse<RoutingConversationAttributesResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -5400,7 +5399,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<RoutingConversationAttributes> response = (ApiResponse<RoutingConversationAttributes>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<RoutingConversationAttributesResponse> response = (ApiResponse<RoutingConversationAttributesResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5567,89 +5566,6 @@ public class RoutingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<InboundDomain> response = (ApiResponse<InboundDomain>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Request an update of the emails from /replyTo of an outbound domain
-   * 
-   * @param domainId domain ID (required)
-   * @param body domain with emails that need update set (required)
-   * @return OutboundDomain
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public OutboundDomain patchRoutingEmailOutboundDomain(String domainId, OutboundDomain body) throws IOException, ApiException {
-    return  patchRoutingEmailOutboundDomain(createPatchRoutingEmailOutboundDomainRequest(domainId, body));
-  }
-
-  /**
-   * Request an update of the emails from /replyTo of an outbound domain
-   * 
-   * @param domainId domain ID (required)
-   * @param body domain with emails that need update set (required)
-   * @return OutboundDomain
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<OutboundDomain> patchRoutingEmailOutboundDomainWithHttpInfo(String domainId, OutboundDomain body) throws IOException {
-    return patchRoutingEmailOutboundDomain(createPatchRoutingEmailOutboundDomainRequest(domainId, body).withHttpInfo());
-  }
-
-  private PatchRoutingEmailOutboundDomainRequest createPatchRoutingEmailOutboundDomainRequest(String domainId, OutboundDomain body) {
-    return PatchRoutingEmailOutboundDomainRequest.builder()
-            .withDomainId(domainId)
-    
-            .withBody(body)
-    
-            .build();
-  }
-
-  /**
-   * Request an update of the emails from /replyTo of an outbound domain
-   * 
-   * @param request The request object
-   * @return OutboundDomain
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public OutboundDomain patchRoutingEmailOutboundDomain(PatchRoutingEmailOutboundDomainRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<OutboundDomain> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutboundDomain>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Request an update of the emails from /replyTo of an outbound domain
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<OutboundDomain> patchRoutingEmailOutboundDomain(ApiRequest<OutboundDomain> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<OutboundDomain>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<OutboundDomain> response = (ApiResponse<OutboundDomain>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<OutboundDomain> response = (ApiResponse<OutboundDomain>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

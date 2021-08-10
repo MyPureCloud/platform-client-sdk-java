@@ -93,7 +93,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyProvidersEdgesTrunks**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunks) | Get the list of available trunks. |
 | [**getTelephonyProvidersEdgesTrunksMetrics**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunksMetrics) | Get the metrics for a list of trunks. |
 | [**getTelephonyProvidersEdgesTrunkswithrecording**](TelephonyProvidersEdgeApi.html#getTelephonyProvidersEdgesTrunkswithrecording) | Get Counts of trunks that have recording disabled or enabled |
-| [**patchTelephonyProvidersEdgesAutoscalinggroupCapacity**](TelephonyProvidersEdgeApi.html#patchTelephonyProvidersEdgesAutoscalinggroupCapacity) | Scales the ASG to match the desired capacity |
 | [**postTelephonyProvidersEdgeDiagnosticNslookup**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgeDiagnosticNslookup) | Nslookup request command to collect networking-related information from an Edge for a target IP or host. |
 | [**postTelephonyProvidersEdgeDiagnosticPing**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgeDiagnosticPing) | Ping Request command to collect networking-related information from an Edge for a target IP or host. |
 | [**postTelephonyProvidersEdgeDiagnosticRoute**](TelephonyProvidersEdgeApi.html#postTelephonyProvidersEdgeDiagnosticRoute) | Route request command to collect networking-related information from an Edge for a target IP or host. |
@@ -584,7 +583,7 @@ null (empty response body)
 
 Delete Outbound Route
 
-
+This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
 
 Wraps DELETE /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}  
 
@@ -3977,7 +3976,7 @@ try {
 
 Get outbound route
 
-
+This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
 
 Wraps GET /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}  
 
@@ -5786,72 +5785,6 @@ try {
 
 [**TrunkRecordingEnabledCount**](TrunkRecordingEnabledCount.html)
 
-<a name="patchTelephonyProvidersEdgesAutoscalinggroupCapacity"></a>
-
-# **patchTelephonyProvidersEdgesAutoscalinggroupCapacity**
-
-
-
-> [ScaleASGResponse](ScaleASGResponse.html) patchTelephonyProvidersEdgesAutoscalinggroupCapacity(asgId, body)
-
-Scales the ASG to match the desired capacity
-
-
-
-Wraps PATCH /api/v2/telephony/providers/edges/autoscalinggroups/{asgId}/capacity  
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-* internal:edge:edit
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
-String asgId = "asgId_example"; // String | Id of the asg that is to be scaled
-AsgScaleRequest body = new AsgScaleRequest(); // AsgScaleRequest | AsgScaleRequest
-try {
-    ScaleASGResponse result = apiInstance.patchTelephonyProvidersEdgesAutoscalinggroupCapacity(asgId, body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TelephonyProvidersEdgeApi#patchTelephonyProvidersEdgesAutoscalinggroupCapacity");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **asgId** | **String**| Id of the asg that is to be scaled | 
-| **body** | [**AsgScaleRequest**](AsgScaleRequest.html)| AsgScaleRequest | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**ScaleASGResponse**](ScaleASGResponse.html)
-
 <a name="postTelephonyProvidersEdgeDiagnosticNslookup"></a>
 
 # **postTelephonyProvidersEdgeDiagnosticNslookup**
@@ -6952,7 +6885,7 @@ try {
 
 Create outbound rule
 
-
+This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes instead.
 
 Wraps POST /api/v2/telephony/providers/edges/outboundroutes  
 
@@ -8174,7 +8107,7 @@ try {
 
 Update outbound route
 
-
+This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
 
 Wraps PUT /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}  
 

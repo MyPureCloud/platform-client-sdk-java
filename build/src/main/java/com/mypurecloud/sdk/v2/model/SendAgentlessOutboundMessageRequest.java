@@ -38,7 +38,7 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
     }
   }
   /**
-   * The recipient messaging address messenger type. Currently SMS is the only one supported. WhatsApp will be supported in a future release.
+   * The recipient messaging address messenger type. Currently SMS and Open are the only supported types. WhatsApp will be supported in a future release
    */
  @JsonDeserialize(using = ToAddressMessengerTypeEnumDeserializer.class)
   public enum ToAddressMessengerTypeEnum {
@@ -118,14 +118,14 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
 
   
   /**
-   * The recipient messaging address messenger type. Currently SMS is the only one supported. WhatsApp will be supported in a future release.
+   * The recipient messaging address messenger type. Currently SMS and Open are the only supported types. WhatsApp will be supported in a future release
    **/
   public SendAgentlessOutboundMessageRequest toAddressMessengerType(ToAddressMessengerTypeEnum toAddressMessengerType) {
     this.toAddressMessengerType = toAddressMessengerType;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The recipient messaging address messenger type. Currently SMS is the only one supported. WhatsApp will be supported in a future release.")
+  @ApiModelProperty(example = "null", required = true, value = "The recipient messaging address messenger type. Currently SMS and Open are the only supported types. WhatsApp will be supported in a future release")
   @JsonProperty("toAddressMessengerType")
   public ToAddressMessengerTypeEnum getToAddressMessengerType() {
     return toAddressMessengerType;

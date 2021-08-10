@@ -165,6 +165,7 @@ public class GetOutboundCampaignsAllDivisionviewsRequest {
 	} 
 
 	public enum mediaTypeValues { 
+		EMAIL("email"), 
 		SMS("sms"), 
 		VOICE("voice");
 

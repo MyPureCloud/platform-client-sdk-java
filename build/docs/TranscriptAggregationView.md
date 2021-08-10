@@ -24,6 +24,7 @@ title: TranscriptAggregationView
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NTOPICCOMMUNICATIONS | &quot;nTopicCommunications&quot; |
 | OCUSTOMERSENTIMENT | &quot;oCustomerSentiment&quot; |
+| OSENTIMENTSCORE | &quot;oSentimentScore&quot; |
 {: class="table table-striped"}
 
 

@@ -20,8 +20,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.mypurecloud.sdk.v2.model.PostTextResponse;
+import com.mypurecloud.sdk.v2.model.TextBotFlowTurnRequest;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.TextBotFlowTurnResponse;
+import com.mypurecloud.sdk.v2.model.TextBotFlowLaunchRequest;
+import com.mypurecloud.sdk.v2.model.TextBotFlowLaunchResponse;
+import com.mypurecloud.sdk.v2.model.PostTextResponse;
 import com.mypurecloud.sdk.v2.model.PostTextRequest;
 
 public class PostTextbotsBotsExecuteRequest {

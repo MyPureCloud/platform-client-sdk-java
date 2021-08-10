@@ -53,6 +53,7 @@ title: TranscriptAggregationQuery
 | ---- | ----- |
 | NTOPICCOMMUNICATIONS | &quot;nTopicCommunications&quot; |
 | OCUSTOMERSENTIMENT | &quot;oCustomerSentiment&quot; |
+| OSENTIMENTSCORE | &quot;oSentimentScore&quot; |
 {: class="table table-striped"}
 
 

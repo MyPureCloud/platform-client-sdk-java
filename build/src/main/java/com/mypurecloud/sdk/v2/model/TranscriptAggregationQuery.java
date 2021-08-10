@@ -109,7 +109,8 @@ public class TranscriptAggregationQuery  implements Serializable {
  @JsonDeserialize(using = MetricsEnumDeserializer.class)
   public enum MetricsEnum {
     NTOPICCOMMUNICATIONS("nTopicCommunications"),
-    OCUSTOMERSENTIMENT("oCustomerSentiment");
+    OCUSTOMERSENTIMENT("oCustomerSentiment"),
+    OSENTIMENTSCORE("oSentimentScore");
 
     private String value;
 

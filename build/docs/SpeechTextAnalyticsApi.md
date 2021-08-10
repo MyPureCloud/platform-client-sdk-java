@@ -927,7 +927,7 @@ try {
 
 
 
-> [TopicsEntityListing](TopicsEntityListing.html) getSpeechandtextanalyticsTopics(nextPage, pageSize)
+> [TopicsEntityListing](TopicsEntityListing.html) getSpeechandtextanalyticsTopics(nextPage, pageSize, state, name, ids)
 
 Get the list of Speech &amp; Text Analytics topics
 
@@ -963,8 +963,11 @@ Configuration.setDefaultApiClient(apiClient);
 SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
 String nextPage = "nextPage_example"; // String | The key for listing the next page
 Integer pageSize = 20; // Integer | The page size for the listing
+String state = "state_example"; // String | Topic state
+String name = "name_example"; // String | Case insensitive partial name to filter by
+List<String> ids = Arrays.asList("ids_example"); // List<String> | Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
 try {
-    TopicsEntityListing result = apiInstance.getSpeechandtextanalyticsTopics(nextPage, pageSize);
+    TopicsEntityListing result = apiInstance.getSpeechandtextanalyticsTopics(nextPage, pageSize, state, name, ids);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopics");
@@ -979,6 +982,9 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **nextPage** | **String**| The key for listing the next page | [optional] 
 | **pageSize** | **Integer**| The page size for the listing | [optional] [default to 20] 
+| **state** | **String**| Topic state | [optional]<br />**Values**: latest, published 
+| **name** | **String**| Case insensitive partial name to filter by | [optional] 
+| **ids** | [**List&lt;String&gt;**](String.html)| Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional] 
 {: class="table-striped"}
 
 
