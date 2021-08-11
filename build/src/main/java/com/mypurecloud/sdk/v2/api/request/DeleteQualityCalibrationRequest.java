@@ -26,7 +26,6 @@ import com.mypurecloud.sdk.v2.model.Evaluation;
 import com.mypurecloud.sdk.v2.model.AgentActivityEntityListing;
 import java.util.Date;
 import com.mypurecloud.sdk.v2.model.CalibrationEntityListing;
-import com.mypurecloud.sdk.v2.model.QualityAuditPage;
 import com.mypurecloud.sdk.v2.model.Survey;
 import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionStatusResponse;
 import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionResultsResponse;

@@ -27,6 +27,8 @@ import com.mypurecloud.sdk.v2.model.LearningModule;
 import com.mypurecloud.sdk.v2.model.LearningModuleRule;
 import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
+import com.mypurecloud.sdk.v2.model.AssessmentScoringSet;
+import com.mypurecloud.sdk.v2.model.LearningAssessmentScoringRequest;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateParam;

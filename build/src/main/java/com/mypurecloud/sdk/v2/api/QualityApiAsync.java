@@ -19,7 +19,6 @@ import com.mypurecloud.sdk.v2.model.Evaluation;
 import com.mypurecloud.sdk.v2.model.AgentActivityEntityListing;
 import java.util.Date;
 import com.mypurecloud.sdk.v2.model.CalibrationEntityListing;
-import com.mypurecloud.sdk.v2.model.QualityAuditPage;
 import com.mypurecloud.sdk.v2.model.Survey;
 import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionStatusResponse;
 import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionResultsResponse;
@@ -51,7 +50,6 @@ import com.mypurecloud.sdk.v2.api.request.DeleteQualityFormsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityAgentsActivityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityCalibrationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityCalibrationsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetQualityConversationAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityConversationEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityConversationSurveysRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityConversationsAuditsQueryTransactionIdRequest;
@@ -714,82 +712,6 @@ public class QualityApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<CalibrationEntityListing> response = (ApiResponse<CalibrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  
-  /**
-   * Get audits for conversation or recording
-   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.This endpoint is deprecated. Use following async endpoints, To query for audits POST /api/v2/quality/conversations/audits/queryTo get status of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}To get results of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}/results
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<QualityAuditPage> getQualityConversationAuditsAsync(GetQualityConversationAuditsRequest request, final AsyncApiCallback<QualityAuditPage> callback) {
-    try {
-      final SettableFuture<QualityAuditPage> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<QualityAuditPage>() {}, new AsyncApiCallback<ApiResponse<QualityAuditPage>>() {
-        @Override
-        public void onCompleted(ApiResponse<QualityAuditPage> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Get audits for conversation or recording
-   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.This endpoint is deprecated. Use following async endpoints, To query for audits POST /api/v2/quality/conversations/audits/queryTo get status of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}To get results of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}/results
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   */
-  public Future<ApiResponse<QualityAuditPage>> getQualityConversationAuditsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<QualityAuditPage>> callback) {
-    try {
-      final SettableFuture<ApiResponse<QualityAuditPage>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<QualityAuditPage>() {}, new AsyncApiCallback<ApiResponse<QualityAuditPage>>() {
-        @Override
-        public void onCompleted(ApiResponse<QualityAuditPage> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<QualityAuditPage> response = (ApiResponse<QualityAuditPage>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<QualityAuditPage> response = (ApiResponse<QualityAuditPage>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

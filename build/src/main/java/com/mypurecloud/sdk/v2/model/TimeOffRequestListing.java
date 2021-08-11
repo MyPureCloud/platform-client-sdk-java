@@ -27,14 +27,14 @@ public class TimeOffRequestListing  implements Serializable {
 
   
   /**
-   * List of time off request look up objects
+   * List of time off requests
    **/
   public TimeOffRequestListing entities(List<TimeOffRequest> entities) {
     this.entities = entities;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "List of time off request look up objects")
+  @ApiModelProperty(example = "null", required = true, value = "List of time off requests")
   @JsonProperty("entities")
   public List<TimeOffRequest> getEntities() {
     return entities;

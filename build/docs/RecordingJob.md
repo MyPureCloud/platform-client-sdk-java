@@ -17,6 +17,7 @@ title: RecordingJob
 | **totalProcessedRecordings** | <!----><!---->**Integer**<!----> | Total number of recordings have been processed. |  [optional] |
 | **percentProgress** | <!----><!---->**Integer**<!----> | Progress in percentage based on the number of recordings |  [optional] |
 | **errorMessage** | <!----><!---->**String**<!----> | Error occurred during the job execution |  [optional] |
+| **failedRecordings** | <!----><!---->**String**<!----> | Get IDs of recordings that the bulk job failed for |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 | **user** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | Details of the user created the job |  [optional] |
 {: class="table table-striped"}

@@ -10,8 +10,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getDate**](UtilitiesApi.html#getDate) | Get the current system date/time |
 | [**getIpranges**](UtilitiesApi.html#getIpranges) | Get public ip address ranges for PureCloud |
 | [**getTimezones**](UtilitiesApi.html#getTimezones) | Get time zones list |
-| [**getUploadsV1Publicasset**](UtilitiesApi.html#getUploadsV1Publicasset) | 301 redirect. |
-| [**getWebdeploymentsV1SubResources**](UtilitiesApi.html#getWebdeploymentsV1SubResources) | 301 redirect. |
 | [**postCertificateDetails**](UtilitiesApi.html#postCertificateDetails) | Returns the information about an X509 PEM encoded certificate or certificate chain. |
 {: class="table-striped"}
 
@@ -194,94 +192,6 @@ try {
 ### Return type
 
 [**TimeZoneEntityListing**](TimeZoneEntityListing.html)
-
-<a name="getUploadsV1Publicasset"></a>
-
-# **getUploadsV1Publicasset**
-
-
-
-> Void getUploadsV1Publicasset()
-
-301 redirect.
-
-
-
-Wraps GET /uploads/v1/publicassets/{subResources}  
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.api.UtilitiesApi;
-
-
-UtilitiesApi apiInstance = new UtilitiesApi();
-try {
-    apiInstance.getUploadsV1Publicasset();
-} catch (ApiException e) {
-    System.err.println("Exception when calling UtilitiesApi#getUploadsV1Publicasset");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-This endpoint does not require any parameters.
-
-
-
-### Return type
-
-null (empty response body)
-
-<a name="getWebdeploymentsV1SubResources"></a>
-
-# **getWebdeploymentsV1SubResources**
-
-
-
-> Void getWebdeploymentsV1SubResources()
-
-301 redirect.
-
-
-
-Wraps GET /webdeployments/v1/{subResources}  
-
-Requires NO permissions: 
-
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.api.UtilitiesApi;
-
-
-UtilitiesApi apiInstance = new UtilitiesApi();
-try {
-    apiInstance.getWebdeploymentsV1SubResources();
-} catch (ApiException e) {
-    System.err.println("Exception when calling UtilitiesApi#getWebdeploymentsV1SubResources");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-This endpoint does not require any parameters.
-
-
-
-### Return type
-
-null (empty response body)
 
 <a name="postCertificateDetails"></a>
 

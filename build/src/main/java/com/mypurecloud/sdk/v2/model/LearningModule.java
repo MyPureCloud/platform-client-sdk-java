@@ -11,8 +11,10 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AssessmentForm;
 import com.mypurecloud.sdk.v2.model.LearningModuleInformStep;
 import com.mypurecloud.sdk.v2.model.LearningModuleRule;
+import com.mypurecloud.sdk.v2.model.LearningModuleSummary;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -90,7 +92,59 @@ public class LearningModule  implements Serializable {
   private Boolean isPublished = null;
   private String description = null;
   private Integer completionTimeInDays = null;
+
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type for the learning module
+   */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
+  public enum TypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    INFORMATIONAL("Informational"),
+    ASSESSEDCONTENT("AssessedContent"),
+    QUESTIONNAIRE("Questionnaire"),
+    ASSESSMENT("Assessment");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TypeEnum value : TypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TypeEnum type = null;
   private List<LearningModuleInformStep> informSteps = new ArrayList<LearningModuleInformStep>();
+  private AssessmentForm assessmentForm = null;
+  private LearningModuleSummary summaryData = null;
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
@@ -265,6 +319,24 @@ public class LearningModule  implements Serializable {
 
   
   /**
+   * The type for the learning module
+   **/
+  public LearningModule type(TypeEnum type) {
+    this.type = type;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type for the learning module")
+  @JsonProperty("type")
+  public TypeEnum getType() {
+    return type;
+  }
+  public void setType(TypeEnum type) {
+    this.type = type;
+  }
+
+  
+  /**
    * The list of inform steps in a learning module
    **/
   public LearningModule informSteps(List<LearningModuleInformStep> informSteps) {
@@ -279,6 +351,42 @@ public class LearningModule  implements Serializable {
   }
   public void setInformSteps(List<LearningModuleInformStep> informSteps) {
     this.informSteps = informSteps;
+  }
+
+  
+  /**
+   * The assessment form for learning module
+   **/
+  public LearningModule assessmentForm(AssessmentForm assessmentForm) {
+    this.assessmentForm = assessmentForm;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The assessment form for learning module")
+  @JsonProperty("assessmentForm")
+  public AssessmentForm getAssessmentForm() {
+    return assessmentForm;
+  }
+  public void setAssessmentForm(AssessmentForm assessmentForm) {
+    this.assessmentForm = assessmentForm;
+  }
+
+  
+  /**
+   * The learning module summary data
+   **/
+  public LearningModule summaryData(LearningModuleSummary summaryData) {
+    this.summaryData = summaryData;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The learning module summary data")
+  @JsonProperty("summaryData")
+  public LearningModuleSummary getSummaryData() {
+    return summaryData;
+  }
+  public void setSummaryData(LearningModuleSummary summaryData) {
+    this.summaryData = summaryData;
   }
 
   
@@ -307,12 +415,15 @@ public class LearningModule  implements Serializable {
         Objects.equals(this.isPublished, learningModule.isPublished) &&
         Objects.equals(this.description, learningModule.description) &&
         Objects.equals(this.completionTimeInDays, learningModule.completionTimeInDays) &&
-        Objects.equals(this.informSteps, learningModule.informSteps);
+        Objects.equals(this.type, learningModule.type) &&
+        Objects.equals(this.informSteps, learningModule.informSteps) &&
+        Objects.equals(this.assessmentForm, learningModule.assessmentForm) &&
+        Objects.equals(this.summaryData, learningModule.summaryData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, createdBy, dateCreated, modifiedBy, dateModified, version, externalId, source, rule, selfUri, isArchived, isPublished, description, completionTimeInDays, informSteps);
+    return Objects.hash(id, name, createdBy, dateCreated, modifiedBy, dateModified, version, externalId, source, rule, selfUri, isArchived, isPublished, description, completionTimeInDays, type, informSteps, assessmentForm, summaryData);
   }
 
   @Override
@@ -335,7 +446,10 @@ public class LearningModule  implements Serializable {
     sb.append("    isPublished: ").append(toIndentedString(isPublished)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    completionTimeInDays: ").append(toIndentedString(completionTimeInDays)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    informSteps: ").append(toIndentedString(informSteps)).append("\n");
+    sb.append("    assessmentForm: ").append(toIndentedString(assessmentForm)).append("\n");
+    sb.append("    summaryData: ").append(toIndentedString(summaryData)).append("\n");
     sb.append("}");
     return sb.toString();
   }

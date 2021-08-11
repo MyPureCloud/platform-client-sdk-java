@@ -27,6 +27,8 @@ import com.mypurecloud.sdk.v2.model.LearningModule;
 import com.mypurecloud.sdk.v2.model.LearningModuleRule;
 import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
+import com.mypurecloud.sdk.v2.model.AssessmentScoringSet;
+import com.mypurecloud.sdk.v2.model.LearningAssessmentScoringRequest;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateParam;
@@ -273,6 +275,51 @@ public class GetLearningModulesRequest {
 		}
 	}
 	
+	private String isPublished;
+	public String getIsPublished() {
+		return this.isPublished;
+	}
+
+	public void setIsPublished(String isPublished) {
+		this.isPublished = isPublished;
+	}
+
+	public GetLearningModulesRequest withIsPublished(String isPublished) {
+	    this.setIsPublished(isPublished);
+	    return this;
+	} 
+
+	public enum isPublishedValues { 
+		TRUE("True"), 
+		FALSE("False"), 
+		ANY("Any");
+
+		private String value;
+
+		isPublishedValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static isPublishedValues fromString(String key) {
+			if (key == null) return null;
+
+			for (isPublishedValues value : isPublishedValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return isPublishedValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -311,6 +358,8 @@ public class GetLearningModulesRequest {
                 .withQueryParameters("searchTerm", "", searchTerm)
         
                 .withQueryParameters("expand", "multi", expand)
+        
+                .withQueryParameters("isPublished", "", isPublished)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -398,6 +447,16 @@ public class GetLearningModulesRequest {
 	        stringList.add(e.toString());
 	      }
 	      request.setExpand(stringList);
+		    return this;
+		}
+		
+		public Builder withIsPublished(String isPublished) {
+			request.setIsPublished(isPublished);
+			return this;
+		}
+
+		public Builder withIsPublished(isPublishedValues isPublished) {
+		    request.setIsPublished(isPublished.toString());
 		    return this;
 		}
 		

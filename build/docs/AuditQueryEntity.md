@@ -55,6 +55,7 @@ title: AuditQueryEntity
 | DIDPOOL | &quot;DIDPool&quot; |
 | DNCLIST | &quot;DNCList&quot; |
 | DOCUMENT | &quot;Document&quot; |
+| DYNAMICGROUP | &quot;DynamicGroup&quot; |
 | EDGE | &quot;Edge&quot; |
 | EDGEGROUP | &quot;EdgeGroup&quot; |
 | EDGELOG | &quot;EdgeLog&quot; |

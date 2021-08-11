@@ -20,6 +20,8 @@ import com.mypurecloud.sdk.v2.model.LearningModule;
 import com.mypurecloud.sdk.v2.model.LearningModuleRule;
 import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
+import com.mypurecloud.sdk.v2.model.AssessmentScoringSet;
+import com.mypurecloud.sdk.v2.model.LearningAssessmentScoringRequest;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateParam;
@@ -42,6 +44,7 @@ import com.mypurecloud.sdk.v2.api.request.GetLearningModuleRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModuleVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLearningAssessmentsScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsBulkaddRequest;
@@ -820,6 +823,82 @@ public class LearningApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<LearningAssignment> response = (ApiResponse<LearningAssignment>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Score learning assessment for preview
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AssessmentScoringSet> postLearningAssessmentsScoringAsync(PostLearningAssessmentsScoringRequest request, final AsyncApiCallback<AssessmentScoringSet> callback) {
+    try {
+      final SettableFuture<AssessmentScoringSet> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AssessmentScoringSet>() {}, new AsyncApiCallback<ApiResponse<AssessmentScoringSet>>() {
+        @Override
+        public void onCompleted(ApiResponse<AssessmentScoringSet> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Score learning assessment for preview
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AssessmentScoringSet>> postLearningAssessmentsScoringAsync(ApiRequest<LearningAssessmentScoringRequest> request, final AsyncApiCallback<ApiResponse<AssessmentScoringSet>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AssessmentScoringSet>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AssessmentScoringSet>() {}, new AsyncApiCallback<ApiResponse<AssessmentScoringSet>>() {
+        @Override
+        public void onCompleted(ApiResponse<AssessmentScoringSet> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AssessmentScoringSet> response = (ApiResponse<AssessmentScoringSet>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AssessmentScoringSet> response = (ApiResponse<AssessmentScoringSet>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

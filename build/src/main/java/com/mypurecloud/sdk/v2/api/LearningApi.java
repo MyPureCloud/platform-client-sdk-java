@@ -17,6 +17,8 @@ import com.mypurecloud.sdk.v2.model.LearningModule;
 import com.mypurecloud.sdk.v2.model.LearningModuleRule;
 import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
+import com.mypurecloud.sdk.v2.model.AssessmentScoringSet;
+import com.mypurecloud.sdk.v2.model.LearningAssessmentScoringRequest;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateParam;
@@ -39,6 +41,7 @@ import com.mypurecloud.sdk.v2.api.request.GetLearningModuleRuleRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModuleVersionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetLearningModulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchLearningAssignmentRequest;
+import com.mypurecloud.sdk.v2.api.request.PostLearningAssessmentsScoringRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsAggregatesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostLearningAssignmentsBulkaddRequest;
@@ -312,6 +315,9 @@ public class LearningApi {
    * @param overdue Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned (optional, default to Any)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param pass Specifies if only the failed (pass is \&quot;False\&quot;) or passed (pass is \&quot;True\&quot;) assignments (completed with assessment)are returned. If pass is \&quot;Any\&quot; or if the pass parameter is not supplied, all assignments are returned (optional, default to Any)
+   * @param minPercentageScore The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
+   * @param maxPercentageScore The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
    * @param sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional, default to Desc)
    * @param sortBy Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)
    * @param userId Specifies the list of user IDs to be queried, up to 100 user IDs. (optional)
@@ -322,8 +328,8 @@ public class LearningApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LearningAssignmentsDomainEntity getLearningAssignments(String moduleId, String interval, String completionInterval, String overdue, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, List<String> userId, List<String> types, List<String> states, List<String> expand) throws IOException, ApiException {
-    return  getLearningAssignments(createGetLearningAssignmentsRequest(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, sortBy, userId, types, states, expand));
+  public LearningAssignmentsDomainEntity getLearningAssignments(String moduleId, String interval, String completionInterval, String overdue, Integer pageSize, Integer pageNumber, String pass, Float minPercentageScore, Float maxPercentageScore, String sortOrder, String sortBy, List<String> userId, List<String> types, List<String> states, List<String> expand) throws IOException, ApiException {
+    return  getLearningAssignments(createGetLearningAssignmentsRequest(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, userId, types, states, expand));
   }
 
   /**
@@ -335,6 +341,9 @@ public class LearningApi {
    * @param overdue Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned (optional, default to Any)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param pass Specifies if only the failed (pass is \&quot;False\&quot;) or passed (pass is \&quot;True\&quot;) assignments (completed with assessment)are returned. If pass is \&quot;Any\&quot; or if the pass parameter is not supplied, all assignments are returned (optional, default to Any)
+   * @param minPercentageScore The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
+   * @param maxPercentageScore The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
    * @param sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional, default to Desc)
    * @param sortBy Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)
    * @param userId Specifies the list of user IDs to be queried, up to 100 user IDs. (optional)
@@ -344,11 +353,11 @@ public class LearningApi {
    * @return LearningAssignmentsDomainEntity
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LearningAssignmentsDomainEntity> getLearningAssignmentsWithHttpInfo(String moduleId, String interval, String completionInterval, String overdue, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, List<String> userId, List<String> types, List<String> states, List<String> expand) throws IOException {
-    return getLearningAssignments(createGetLearningAssignmentsRequest(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, sortBy, userId, types, states, expand).withHttpInfo());
+  public ApiResponse<LearningAssignmentsDomainEntity> getLearningAssignmentsWithHttpInfo(String moduleId, String interval, String completionInterval, String overdue, Integer pageSize, Integer pageNumber, String pass, Float minPercentageScore, Float maxPercentageScore, String sortOrder, String sortBy, List<String> userId, List<String> types, List<String> states, List<String> expand) throws IOException {
+    return getLearningAssignments(createGetLearningAssignmentsRequest(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, userId, types, states, expand).withHttpInfo());
   }
 
-  private GetLearningAssignmentsRequest createGetLearningAssignmentsRequest(String moduleId, String interval, String completionInterval, String overdue, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, List<String> userId, List<String> types, List<String> states, List<String> expand) {
+  private GetLearningAssignmentsRequest createGetLearningAssignmentsRequest(String moduleId, String interval, String completionInterval, String overdue, Integer pageSize, Integer pageNumber, String pass, Float minPercentageScore, Float maxPercentageScore, String sortOrder, String sortBy, List<String> userId, List<String> types, List<String> states, List<String> expand) {
     return GetLearningAssignmentsRequest.builder()
             .withModuleId(moduleId)
     
@@ -361,6 +370,12 @@ public class LearningApi {
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withPass(pass)
+    
+            .withMinPercentageScore(minPercentageScore)
+    
+            .withMaxPercentageScore(maxPercentageScore)
     
             .withSortOrder(sortOrder)
     
@@ -435,6 +450,9 @@ public class LearningApi {
    * @param overdue Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned (optional, default to Any)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param pass Specifies if only the failed (pass is \&quot;False\&quot;) or passed (pass is \&quot;True\&quot;) assignments (completed with assessment)are returned. If pass is \&quot;Any\&quot; or if the pass parameter is not supplied, all assignments are returned (optional, default to Any)
+   * @param minPercentageScore The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
+   * @param maxPercentageScore The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
    * @param sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional, default to Desc)
    * @param sortBy Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)
    * @param types Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned (optional)
@@ -444,8 +462,8 @@ public class LearningApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LearningAssignmentsDomainEntity getLearningAssignmentsMe(String moduleId, String interval, String completionInterval, String overdue, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, List<String> types, List<String> states, List<String> expand) throws IOException, ApiException {
-    return  getLearningAssignmentsMe(createGetLearningAssignmentsMeRequest(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, sortBy, types, states, expand));
+  public LearningAssignmentsDomainEntity getLearningAssignmentsMe(String moduleId, String interval, String completionInterval, String overdue, Integer pageSize, Integer pageNumber, String pass, Float minPercentageScore, Float maxPercentageScore, String sortOrder, String sortBy, List<String> types, List<String> states, List<String> expand) throws IOException, ApiException {
+    return  getLearningAssignmentsMe(createGetLearningAssignmentsMeRequest(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, types, states, expand));
   }
 
   /**
@@ -457,6 +475,9 @@ public class LearningApi {
    * @param overdue Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned (optional, default to Any)
    * @param pageSize Page size (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
+   * @param pass Specifies if only the failed (pass is \&quot;False\&quot;) or passed (pass is \&quot;True\&quot;) assignments (completed with assessment)are returned. If pass is \&quot;Any\&quot; or if the pass parameter is not supplied, all assignments are returned (optional, default to Any)
+   * @param minPercentageScore The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
+   * @param maxPercentageScore The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
    * @param sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional, default to Desc)
    * @param sortBy Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)
    * @param types Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned (optional)
@@ -465,11 +486,11 @@ public class LearningApi {
    * @return LearningAssignmentsDomainEntity
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LearningAssignmentsDomainEntity> getLearningAssignmentsMeWithHttpInfo(String moduleId, String interval, String completionInterval, String overdue, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, List<String> types, List<String> states, List<String> expand) throws IOException {
-    return getLearningAssignmentsMe(createGetLearningAssignmentsMeRequest(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, sortBy, types, states, expand).withHttpInfo());
+  public ApiResponse<LearningAssignmentsDomainEntity> getLearningAssignmentsMeWithHttpInfo(String moduleId, String interval, String completionInterval, String overdue, Integer pageSize, Integer pageNumber, String pass, Float minPercentageScore, Float maxPercentageScore, String sortOrder, String sortBy, List<String> types, List<String> states, List<String> expand) throws IOException {
+    return getLearningAssignmentsMe(createGetLearningAssignmentsMeRequest(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, types, states, expand).withHttpInfo());
   }
 
-  private GetLearningAssignmentsMeRequest createGetLearningAssignmentsMeRequest(String moduleId, String interval, String completionInterval, String overdue, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, List<String> types, List<String> states, List<String> expand) {
+  private GetLearningAssignmentsMeRequest createGetLearningAssignmentsMeRequest(String moduleId, String interval, String completionInterval, String overdue, Integer pageSize, Integer pageNumber, String pass, Float minPercentageScore, Float maxPercentageScore, String sortOrder, String sortBy, List<String> types, List<String> states, List<String> expand) {
     return GetLearningAssignmentsMeRequest.builder()
             .withModuleId(moduleId)
     
@@ -482,6 +503,12 @@ public class LearningApi {
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withPass(pass)
+    
+            .withMinPercentageScore(minPercentageScore)
+    
+            .withMaxPercentageScore(maxPercentageScore)
     
             .withSortOrder(sortOrder)
     
@@ -805,12 +832,13 @@ public class LearningApi {
    * @param sortBy Sort by (optional, default to name)
    * @param searchTerm Search Term (searchable by name) (optional)
    * @param expand Fields to expand in response(case insensitive) (optional)
+   * @param isPublished Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned (optional, default to Any)
    * @return LearningModulesDomainEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public LearningModulesDomainEntityListing getLearningModules(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand) throws IOException, ApiException {
-    return  getLearningModules(createGetLearningModulesRequest(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand));
+  public LearningModulesDomainEntityListing getLearningModules(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand, String isPublished) throws IOException, ApiException {
+    return  getLearningModules(createGetLearningModulesRequest(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished));
   }
 
   /**
@@ -824,14 +852,15 @@ public class LearningApi {
    * @param sortBy Sort by (optional, default to name)
    * @param searchTerm Search Term (searchable by name) (optional)
    * @param expand Fields to expand in response(case insensitive) (optional)
+   * @param isPublished Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned (optional, default to Any)
    * @return LearningModulesDomainEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<LearningModulesDomainEntityListing> getLearningModulesWithHttpInfo(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand) throws IOException {
-    return getLearningModules(createGetLearningModulesRequest(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand).withHttpInfo());
+  public ApiResponse<LearningModulesDomainEntityListing> getLearningModulesWithHttpInfo(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand, String isPublished) throws IOException {
+    return getLearningModules(createGetLearningModulesRequest(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished).withHttpInfo());
   }
 
-  private GetLearningModulesRequest createGetLearningModulesRequest(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand) {
+  private GetLearningModulesRequest createGetLearningModulesRequest(Boolean isArchived, List<String> types, Integer pageSize, Integer pageNumber, String sortOrder, String sortBy, String searchTerm, List<String> expand, String isPublished) {
     return GetLearningModulesRequest.builder()
             .withIsArchived(isArchived)
     
@@ -848,6 +877,8 @@ public class LearningApi {
             .withSearchTerm(searchTerm)
     
             .withExpand(expand)
+    
+            .withIsPublished(isPublished)
     
             .build();
   }
@@ -979,6 +1010,85 @@ public class LearningApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<LearningAssignment> response = (ApiResponse<LearningAssignment>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Score learning assessment for preview
+   * 
+   * @param body Assessment form and answers to score (required)
+   * @return AssessmentScoringSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AssessmentScoringSet postLearningAssessmentsScoring(LearningAssessmentScoringRequest body) throws IOException, ApiException {
+    return  postLearningAssessmentsScoring(createPostLearningAssessmentsScoringRequest(body));
+  }
+
+  /**
+   * Score learning assessment for preview
+   * 
+   * @param body Assessment form and answers to score (required)
+   * @return AssessmentScoringSet
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AssessmentScoringSet> postLearningAssessmentsScoringWithHttpInfo(LearningAssessmentScoringRequest body) throws IOException {
+    return postLearningAssessmentsScoring(createPostLearningAssessmentsScoringRequest(body).withHttpInfo());
+  }
+
+  private PostLearningAssessmentsScoringRequest createPostLearningAssessmentsScoringRequest(LearningAssessmentScoringRequest body) {
+    return PostLearningAssessmentsScoringRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Score learning assessment for preview
+   * 
+   * @param request The request object
+   * @return AssessmentScoringSet
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AssessmentScoringSet postLearningAssessmentsScoring(PostLearningAssessmentsScoringRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AssessmentScoringSet> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AssessmentScoringSet>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Score learning assessment for preview
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AssessmentScoringSet> postLearningAssessmentsScoring(ApiRequest<LearningAssessmentScoringRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AssessmentScoringSet>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AssessmentScoringSet> response = (ApiResponse<AssessmentScoringSet>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AssessmentScoringSet> response = (ApiResponse<AssessmentScoringSet>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

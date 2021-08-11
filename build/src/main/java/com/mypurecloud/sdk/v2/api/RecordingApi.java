@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.BatchDownloadJobStatusResult;
 import com.mypurecloud.sdk.v2.model.PolicyEntityListing;
 import com.mypurecloud.sdk.v2.model.CrossPlatformPolicy;
 import com.mypurecloud.sdk.v2.model.RecordingJob;
+import com.mypurecloud.sdk.v2.model.FailedRecordingsEntityListing;
 import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
@@ -66,6 +67,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRecordingBatchrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingCrossplatformMediaretentionpoliciesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingCrossplatformMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingJobFailedrecordingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingLocalkeysSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingLocalkeysSettingsRequest;
@@ -1832,6 +1834,93 @@ public class RecordingApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<RecordingJob> response = (ApiResponse<RecordingJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get IDs of recordings that the bulk job failed for
+   * 
+   * @param jobId jobId (required)
+   * @param pageSize Page size. Maximum is 100. (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return FailedRecordingsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FailedRecordingsEntityListing getRecordingJobFailedrecordings(String jobId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
+    return  getRecordingJobFailedrecordings(createGetRecordingJobFailedrecordingsRequest(jobId, pageSize, pageNumber));
+  }
+
+  /**
+   * Get IDs of recordings that the bulk job failed for
+   * 
+   * @param jobId jobId (required)
+   * @param pageSize Page size. Maximum is 100. (optional, default to 25)
+   * @param pageNumber Page number (optional, default to 1)
+   * @return FailedRecordingsEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FailedRecordingsEntityListing> getRecordingJobFailedrecordingsWithHttpInfo(String jobId, Integer pageSize, Integer pageNumber) throws IOException {
+    return getRecordingJobFailedrecordings(createGetRecordingJobFailedrecordingsRequest(jobId, pageSize, pageNumber).withHttpInfo());
+  }
+
+  private GetRecordingJobFailedrecordingsRequest createGetRecordingJobFailedrecordingsRequest(String jobId, Integer pageSize, Integer pageNumber) {
+    return GetRecordingJobFailedrecordingsRequest.builder()
+            .withJobId(jobId)
+    
+            .withPageSize(pageSize)
+    
+            .withPageNumber(pageNumber)
+    
+            .build();
+  }
+
+  /**
+   * Get IDs of recordings that the bulk job failed for
+   * 
+   * @param request The request object
+   * @return FailedRecordingsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public FailedRecordingsEntityListing getRecordingJobFailedrecordings(GetRecordingJobFailedrecordingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<FailedRecordingsEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FailedRecordingsEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get IDs of recordings that the bulk job failed for
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<FailedRecordingsEntityListing> getRecordingJobFailedrecordings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<FailedRecordingsEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<FailedRecordingsEntityListing> response = (ApiResponse<FailedRecordingsEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<FailedRecordingsEntityListing> response = (ApiResponse<FailedRecordingsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

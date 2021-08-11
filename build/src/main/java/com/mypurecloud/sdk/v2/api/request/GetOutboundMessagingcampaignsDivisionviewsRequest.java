@@ -166,6 +166,50 @@ public class GetOutboundMessagingcampaignsDivisionviewsRequest {
 	    return this;
 	} 
 	
+	private String type;
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public GetOutboundMessagingcampaignsDivisionviewsRequest withType(String type) {
+	    this.setType(type);
+	    return this;
+	} 
+
+	public enum typeValues { 
+		EMAIL("EMAIL"), 
+		SMS("SMS");
+
+		private String value;
+
+		typeValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static typeValues fromString(String key) {
+			if (key == null) return null;
+
+			for (typeValues value : typeValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return typeValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
 	private List<String> id;
 	public List<String> getId() {
 		return this.id;
@@ -225,6 +269,8 @@ public class GetOutboundMessagingcampaignsDivisionviewsRequest {
         
                 .withQueryParameters("name", "", name)
         
+                .withQueryParameters("type", "", type)
+        
                 .withQueryParameters("id", "multi", id)
         
                 .withQueryParameters("senderSmsPhoneNumber", "", senderSmsPhoneNumber)
@@ -273,6 +319,16 @@ public class GetOutboundMessagingcampaignsDivisionviewsRequest {
 		public Builder withName(String name) {
 			request.setName(name);
 			return this;
+		}
+		
+		public Builder withType(String type) {
+			request.setType(type);
+			return this;
+		}
+
+		public Builder withType(typeValues type) {
+		    request.setType(type.toString());
+		    return this;
 		}
 		
 		public Builder withId(List<String> id) {

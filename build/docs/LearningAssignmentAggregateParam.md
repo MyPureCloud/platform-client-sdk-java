@@ -26,6 +26,9 @@ title: LearningAssignmentAggregateParam
 | NINPROGRESSACTIVITIES | &quot;nInProgressActivities&quot; |
 | NCOMPLETEACTIVITIES | &quot;nCompleteActivities&quot; |
 | NOVERDUEACTIVITIES | &quot;nOverdueActivities&quot; |
+| NPASSEDACTIVITIES | &quot;nPassedActivities&quot; |
+| NFAILEDACTIVITIES | &quot;nFailedActivities&quot; |
+| OACTIVITYSCORE | &quot;oActivityScore&quot; |
 {: class="table table-striped"}
 
 

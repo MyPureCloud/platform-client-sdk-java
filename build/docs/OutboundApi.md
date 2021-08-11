@@ -3973,9 +3973,10 @@ This returns a simplified version of a Messaging Campaign, consisting of id, nam
 
 Wraps GET /api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId}  
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * outbound:messagingCampaign:search
+* outbound:emailCampaign:search
 
 ### Example
 
@@ -4028,7 +4029,7 @@ try {
 
 
 
-> [MessagingCampaignDivisionViewEntityListing](MessagingCampaignDivisionViewEntityListing.html) getOutboundMessagingcampaignsDivisionviews(pageSize, pageNumber, sortOrder, name, id, senderSmsPhoneNumber)
+> [MessagingCampaignDivisionViewEntityListing](MessagingCampaignDivisionViewEntityListing.html) getOutboundMessagingcampaignsDivisionviews(pageSize, pageNumber, sortOrder, name, type, id, senderSmsPhoneNumber)
 
 Query a list of basic Messaging Campaign information objects
 
@@ -4036,9 +4037,10 @@ This returns a listing of simplified Messaging Campaigns, each consisting of id,
 
 Wraps GET /api/v2/outbound/messagingcampaigns/divisionviews  
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * outbound:messagingCampaign:search
+* outbound:emailCampaign:search
 
 ### Example
 
@@ -4066,10 +4068,11 @@ Integer pageSize = 25; // Integer | Page size. The max that will be returned is 
 Integer pageNumber = 1; // Integer | Page number
 String sortOrder = "a"; // String | The direction to sort
 String name = "name_example"; // String | Name
+String type = "type_example"; // String | Campaign Type
 List<String> id = Arrays.asList("id_example"); // List<String> | id
 String senderSmsPhoneNumber = "senderSmsPhoneNumber_example"; // String | Sender SMS Phone Number
 try {
-    MessagingCampaignDivisionViewEntityListing result = apiInstance.getOutboundMessagingcampaignsDivisionviews(pageSize, pageNumber, sortOrder, name, id, senderSmsPhoneNumber);
+    MessagingCampaignDivisionViewEntityListing result = apiInstance.getOutboundMessagingcampaignsDivisionviews(pageSize, pageNumber, sortOrder, name, type, id, senderSmsPhoneNumber);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundMessagingcampaignsDivisionviews");
@@ -4086,6 +4089,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortOrder** | **String**| The direction to sort | [optional] [default to a]<br />**Values**: ascending, descending 
 | **name** | **String**| Name | [optional] 
+| **type** | **String**| Campaign Type | [optional]<br />**Values**: EMAIL, SMS 
 | **id** | [**List&lt;String&gt;**](String.html)| id | [optional] 
 | **senderSmsPhoneNumber** | **String**| Sender SMS Phone Number | [optional] 
 {: class="table-striped"}

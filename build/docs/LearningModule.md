@@ -23,7 +23,10 @@ title: LearningModule
 | **isPublished** | <!----><!---->**Boolean**<!----> | If true, learning module is published |  [optional] |
 | **description** | <!----><!---->**String**<!----> | The description of learning module |  [optional] |
 | **completionTimeInDays** | <!----><!---->**Integer**<!----> | The completion time of learning module in days |  |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type for the learning module |  [optional] |
 | **informSteps** | <!----><!---->[**List&lt;LearningModuleInformStep&gt;**](LearningModuleInformStep.html)<!----> | The list of inform steps in a learning module |  [optional] |
+| **assessmentForm** | <!----><!---->[**AssessmentForm**](AssessmentForm.html)<!----> | The assessment form for learning module |  [optional] |
+| **summaryData** | <!----><!---->[**LearningModuleSummary**](LearningModuleSummary.html)<!----> | The learning module summary data |  [optional] |
 {: class="table table-striped"}
 
 
@@ -36,6 +39,20 @@ title: LearningModule
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | USERCREATED | &quot;UserCreated&quot; |
 | GENESYSBEYOND | &quot;GenesysBeyond&quot; |
+{: class="table table-striped"}
+
+
+<a name="TypeEnum"></a>
+
+## Enum: TypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| INFORMATIONAL | &quot;Informational&quot; |
+| ASSESSEDCONTENT | &quot;AssessedContent&quot; |
+| QUESTIONNAIRE | &quot;Questionnaire&quot; |
+| ASSESSMENT | &quot;Assessment&quot; |
 {: class="table table-striped"}
 
 

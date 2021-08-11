@@ -23,6 +23,7 @@ import com.mypurecloud.sdk.v2.model.BatchDownloadJobStatusResult;
 import com.mypurecloud.sdk.v2.model.PolicyEntityListing;
 import com.mypurecloud.sdk.v2.model.CrossPlatformPolicy;
 import com.mypurecloud.sdk.v2.model.RecordingJob;
+import com.mypurecloud.sdk.v2.model.FailedRecordingsEntityListing;
 import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
@@ -69,6 +70,7 @@ import com.mypurecloud.sdk.v2.api.request.GetRecordingBatchrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingCrossplatformMediaretentionpoliciesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingCrossplatformMediaretentionpolicyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetRecordingJobFailedrecordingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingLocalkeysSettingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetRecordingLocalkeysSettingsRequest;
@@ -1631,6 +1633,82 @@ public class RecordingApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<RecordingJob> response = (ApiResponse<RecordingJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get IDs of recordings that the bulk job failed for
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<FailedRecordingsEntityListing> getRecordingJobFailedrecordingsAsync(GetRecordingJobFailedrecordingsRequest request, final AsyncApiCallback<FailedRecordingsEntityListing> callback) {
+    try {
+      final SettableFuture<FailedRecordingsEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<FailedRecordingsEntityListing>() {}, new AsyncApiCallback<ApiResponse<FailedRecordingsEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<FailedRecordingsEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get IDs of recordings that the bulk job failed for
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<FailedRecordingsEntityListing>> getRecordingJobFailedrecordingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<FailedRecordingsEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<FailedRecordingsEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<FailedRecordingsEntityListing>() {}, new AsyncApiCallback<ApiResponse<FailedRecordingsEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<FailedRecordingsEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FailedRecordingsEntityListing> response = (ApiResponse<FailedRecordingsEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<FailedRecordingsEntityListing> response = (ApiResponse<FailedRecordingsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

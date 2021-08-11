@@ -125,6 +125,9 @@ title: ViewFilter
 | **botSlotList** | <!----><!---->**List&lt;String&gt;**<!----> | The list of bot slots used to filter bot views |  [optional] |
 | **botResultList** | <!---->[**List&lt;BotResultListEnum&gt;**](#BotResultListEnum)<!----> | The list of bot results used to filter bot views |  [optional] |
 | **blockedReasons** | <!---->[**List&lt;BlockedReasonsEnum&gt;**](#BlockedReasonsEnum)<!----> | The list of blocked reason used to filter action map constraints views |  [optional] |
+| **isRecorded** | <!----><!---->**Boolean**<!----> | Indicates filtering for recorded |  [optional] |
+| **hasEvaluation** | <!----><!---->**Boolean**<!----> | Indicates filtering for evaluation |  [optional] |
+| **hasScoredEvaluation** | <!----><!---->**Boolean**<!----> | Indicates filtering for scored evaluation |  [optional] |
 {: class="table table-striped"}
 
 

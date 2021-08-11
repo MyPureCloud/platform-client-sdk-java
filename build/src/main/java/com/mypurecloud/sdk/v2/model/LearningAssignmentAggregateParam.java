@@ -46,7 +46,10 @@ public class LearningAssignmentAggregateParam  implements Serializable {
     NPLANNEDACTIVITIES("nPlannedActivities"),
     NINPROGRESSACTIVITIES("nInProgressActivities"),
     NCOMPLETEACTIVITIES("nCompleteActivities"),
-    NOVERDUEACTIVITIES("nOverdueActivities");
+    NOVERDUEACTIVITIES("nOverdueActivities"),
+    NPASSEDACTIVITIES("nPassedActivities"),
+    NFAILEDACTIVITIES("nFailedActivities"),
+    OACTIVITYSCORE("oActivityScore");
 
     private String value;
 

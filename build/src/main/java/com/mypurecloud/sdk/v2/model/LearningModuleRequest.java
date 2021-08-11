@@ -10,6 +10,8 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AssessmentForm;
 import com.mypurecloud.sdk.v2.model.LearningModuleInformStepRequest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -28,6 +30,57 @@ public class LearningModuleRequest  implements Serializable {
   private String description = null;
   private Integer completionTimeInDays = null;
   private List<LearningModuleInformStepRequest> informSteps = new ArrayList<LearningModuleInformStepRequest>();
+
+  private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
+    public TypeEnumDeserializer() {
+      super(TypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type for the learning module
+   */
+ @JsonDeserialize(using = TypeEnumDeserializer.class)
+  public enum TypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    INFORMATIONAL("Informational"),
+    ASSESSEDCONTENT("AssessedContent"),
+    QUESTIONNAIRE("Questionnaire"),
+    ASSESSMENT("Assessment");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TypeEnum value : TypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TypeEnum type = null;
+  private AssessmentForm assessmentForm = null;
 
   
   /**
@@ -102,6 +155,42 @@ public class LearningModuleRequest  implements Serializable {
   }
 
   
+  /**
+   * The type for the learning module
+   **/
+  public LearningModuleRequest type(TypeEnum type) {
+    this.type = type;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type for the learning module")
+  @JsonProperty("type")
+  public TypeEnum getType() {
+    return type;
+  }
+  public void setType(TypeEnum type) {
+    this.type = type;
+  }
+
+  
+  /**
+   * The assessment form for learning module
+   **/
+  public LearningModuleRequest assessmentForm(AssessmentForm assessmentForm) {
+    this.assessmentForm = assessmentForm;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The assessment form for learning module")
+  @JsonProperty("assessmentForm")
+  public AssessmentForm getAssessmentForm() {
+    return assessmentForm;
+  }
+  public void setAssessmentForm(AssessmentForm assessmentForm) {
+    this.assessmentForm = assessmentForm;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -115,12 +204,14 @@ public class LearningModuleRequest  implements Serializable {
     return Objects.equals(this.name, learningModuleRequest.name) &&
         Objects.equals(this.description, learningModuleRequest.description) &&
         Objects.equals(this.completionTimeInDays, learningModuleRequest.completionTimeInDays) &&
-        Objects.equals(this.informSteps, learningModuleRequest.informSteps);
+        Objects.equals(this.informSteps, learningModuleRequest.informSteps) &&
+        Objects.equals(this.type, learningModuleRequest.type) &&
+        Objects.equals(this.assessmentForm, learningModuleRequest.assessmentForm);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, completionTimeInDays, informSteps);
+    return Objects.hash(name, description, completionTimeInDays, informSteps, type, assessmentForm);
   }
 
   @Override
@@ -132,6 +223,8 @@ public class LearningModuleRequest  implements Serializable {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    completionTimeInDays: ").append(toIndentedString(completionTimeInDays)).append("\n");
     sb.append("    informSteps: ").append(toIndentedString(informSteps)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    assessmentForm: ").append(toIndentedString(assessmentForm)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -27,6 +27,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRecordingCrossplatformMediaretentionpolicies**](RecordingApi.html#getRecordingCrossplatformMediaretentionpolicies) | Gets media retention policy list with query options to filter on name and enabled. |
 | [**getRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#getRecordingCrossplatformMediaretentionpolicy) | Get a media retention policy |
 | [**getRecordingJob**](RecordingApi.html#getRecordingJob) | Get the status of the job associated with the job id. |
+| [**getRecordingJobFailedrecordings**](RecordingApi.html#getRecordingJobFailedrecordings) | Get IDs of recordings that the bulk job failed for |
 | [**getRecordingJobs**](RecordingApi.html#getRecordingJobs) | Get the status of all jobs within the user&#39;s organization |
 | [**getRecordingLocalkeysSetting**](RecordingApi.html#getRecordingLocalkeysSetting) | Get the local encryption settings |
 | [**getRecordingLocalkeysSettings**](RecordingApi.html#getRecordingLocalkeysSettings) | gets a list local key settings data |
@@ -1391,6 +1392,73 @@ try {
 ### Return type
 
 [**RecordingJob**](RecordingJob.html)
+
+<a name="getRecordingJobFailedrecordings"></a>
+
+# **getRecordingJobFailedrecordings**
+
+
+
+> [FailedRecordingsEntityListing](FailedRecordingsEntityListing.html) getRecordingJobFailedrecordings(jobId, pageSize, pageNumber)
+
+Get IDs of recordings that the bulk job failed for
+
+
+
+Wraps GET /api/v2/recording/jobs/{jobId}/failedrecordings  
+
+Requires ALL permissions: 
+
+* recording:job:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.RecordingApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+RecordingApi apiInstance = new RecordingApi();
+String jobId = "jobId_example"; // String | jobId
+Integer pageSize = 25; // Integer | Page size. Maximum is 100.
+Integer pageNumber = 1; // Integer | Page number
+try {
+    FailedRecordingsEntityListing result = apiInstance.getRecordingJobFailedrecordings(jobId, pageSize, pageNumber);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling RecordingApi#getRecordingJobFailedrecordings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| jobId | 
+| **pageSize** | **Integer**| Page size. Maximum is 100. | [optional] [default to 25] 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**FailedRecordingsEntityListing**](FailedRecordingsEntityListing.html)
 
 <a name="getRecordingJobs"></a>
 

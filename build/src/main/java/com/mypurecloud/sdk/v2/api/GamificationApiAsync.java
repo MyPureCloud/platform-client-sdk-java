@@ -67,6 +67,8 @@ import com.mypurecloud.sdk.v2.api.request.GetGamificationStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationTemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationMetricsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileActivateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileDeactivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationMetricRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationProfileRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationStatusRequest;
@@ -2435,6 +2437,158 @@ public class GamificationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Metric> response = (ApiResponse<Metric>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Activate a performance profile
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PerformanceProfile> postGamificationProfileActivateAsync(PostGamificationProfileActivateRequest request, final AsyncApiCallback<PerformanceProfile> callback) {
+    try {
+      final SettableFuture<PerformanceProfile> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PerformanceProfile>() {}, new AsyncApiCallback<ApiResponse<PerformanceProfile>>() {
+        @Override
+        public void onCompleted(ApiResponse<PerformanceProfile> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Activate a performance profile
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PerformanceProfile>> postGamificationProfileActivateAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PerformanceProfile>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PerformanceProfile>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PerformanceProfile>() {}, new AsyncApiCallback<ApiResponse<PerformanceProfile>>() {
+        @Override
+        public void onCompleted(ApiResponse<PerformanceProfile> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PerformanceProfile> response = (ApiResponse<PerformanceProfile>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PerformanceProfile> response = (ApiResponse<PerformanceProfile>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Deactivate a performance profile
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<PerformanceProfile> postGamificationProfileDeactivateAsync(PostGamificationProfileDeactivateRequest request, final AsyncApiCallback<PerformanceProfile> callback) {
+    try {
+      final SettableFuture<PerformanceProfile> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<PerformanceProfile>() {}, new AsyncApiCallback<ApiResponse<PerformanceProfile>>() {
+        @Override
+        public void onCompleted(ApiResponse<PerformanceProfile> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Deactivate a performance profile
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<PerformanceProfile>> postGamificationProfileDeactivateAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<PerformanceProfile>> callback) {
+    try {
+      final SettableFuture<ApiResponse<PerformanceProfile>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<PerformanceProfile>() {}, new AsyncApiCallback<ApiResponse<PerformanceProfile>>() {
+        @Override
+        public void onCompleted(ApiResponse<PerformanceProfile> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PerformanceProfile> response = (ApiResponse<PerformanceProfile>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<PerformanceProfile> response = (ApiResponse<PerformanceProfile>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

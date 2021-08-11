@@ -205,6 +205,53 @@ public class Recording  implements Serializable {
     }
   }
   private RecordingFileRoleEnum recordingFileRole = null;
+
+  private static class RecordingErrorStatusEnumDeserializer extends StdDeserializer<RecordingErrorStatusEnum> {
+    public RecordingErrorStatusEnumDeserializer() {
+      super(RecordingErrorStatusEnumDeserializer.class);
+    }
+
+    @Override
+    public RecordingErrorStatusEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return RecordingErrorStatusEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Status of a recording that cannot be returned because of an error
+   */
+ @JsonDeserialize(using = RecordingErrorStatusEnumDeserializer.class)
+  public enum RecordingErrorStatusEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    EMAIL_TRANSCRIPT_TOO_LARGE("EMAIL_TRANSCRIPT_TOO_LARGE");
+
+    private String value;
+
+    RecordingErrorStatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static RecordingErrorStatusEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (RecordingErrorStatusEnum value : RecordingErrorStatusEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return RecordingErrorStatusEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private RecordingErrorStatusEnum recordingErrorStatus = null;
   private String selfUri = null;
 
   
@@ -696,6 +743,24 @@ public class Recording  implements Serializable {
   }
 
   
+  /**
+   * Status of a recording that cannot be returned because of an error
+   **/
+  public Recording recordingErrorStatus(RecordingErrorStatusEnum recordingErrorStatus) {
+    this.recordingErrorStatus = recordingErrorStatus;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Status of a recording that cannot be returned because of an error")
+  @JsonProperty("recordingErrorStatus")
+  public RecordingErrorStatusEnum getRecordingErrorStatus() {
+    return recordingErrorStatus;
+  }
+  public void setRecordingErrorStatus(RecordingErrorStatusEnum recordingErrorStatus) {
+    this.recordingErrorStatus = recordingErrorStatus;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -741,12 +806,13 @@ public class Recording  implements Serializable {
         Objects.equals(this.sessionId, recording.sessionId) &&
         Objects.equals(this.users, recording.users) &&
         Objects.equals(this.recordingFileRole, recording.recordingFileRole) &&
+        Objects.equals(this.recordingErrorStatus, recording.recordingErrorStatus) &&
         Objects.equals(this.selfUri, recording.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, annotations, transcript, emailTranscript, messagingTranscript, fileState, restoreExpirationTime, mediaUris, estimatedTranscodeTimeMs, actualTranscodeTimeMs, archiveDate, archiveMedium, deleteDate, exportDate, exportedDate, outputDurationMs, outputSizeInBytes, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, users, recordingFileRole, selfUri);
+    return Objects.hash(id, name, conversationId, path, startTime, endTime, media, annotations, transcript, emailTranscript, messagingTranscript, fileState, restoreExpirationTime, mediaUris, estimatedTranscodeTimeMs, actualTranscodeTimeMs, archiveDate, archiveMedium, deleteDate, exportDate, exportedDate, outputDurationMs, outputSizeInBytes, maxAllowedRestorationsForOrg, remainingRestorationsAllowedForOrg, sessionId, users, recordingFileRole, recordingErrorStatus, selfUri);
   }
 
   @Override
@@ -782,6 +848,7 @@ public class Recording  implements Serializable {
     sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
     sb.append("    users: ").append(toIndentedString(users)).append("\n");
     sb.append("    recordingFileRole: ").append(toIndentedString(recordingFileRole)).append("\n");
+    sb.append("    recordingErrorStatus: ").append(toIndentedString(recordingErrorStatus)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

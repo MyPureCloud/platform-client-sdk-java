@@ -38,6 +38,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getGamificationTemplate**](GamificationApi.html#getGamificationTemplate) | Objective template by id |
 | [**getGamificationTemplates**](GamificationApi.html#getGamificationTemplates) | All objective templates |
 | [**postGamificationMetrics**](GamificationApi.html#postGamificationMetrics) | Creates a gamified metric with a given metric definition and metric objective |
+| [**postGamificationProfileActivate**](GamificationApi.html#postGamificationProfileActivate) | Activate a performance profile |
+| [**postGamificationProfileDeactivate**](GamificationApi.html#postGamificationProfileDeactivate) | Deactivate a performance profile |
 | [**putGamificationMetric**](GamificationApi.html#putGamificationMetric) | Updates a metric |
 | [**putGamificationProfile**](GamificationApi.html#putGamificationProfile) | Updates a performance profile |
 | [**putGamificationStatus**](GamificationApi.html#putGamificationStatus) | Update gamification activation status |
@@ -2053,6 +2055,132 @@ try {
 ### Return type
 
 [**Metric**](Metric.html)
+
+<a name="postGamificationProfileActivate"></a>
+
+# **postGamificationProfileActivate**
+
+
+
+> [PerformanceProfile](PerformanceProfile.html) postGamificationProfileActivate(performanceProfileId)
+
+Activate a performance profile
+
+
+
+Wraps POST /api/v2/gamification/profiles/{performanceProfileId}/activate  
+
+Requires ANY permissions: 
+
+* gamification:profile:update
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+try {
+    PerformanceProfile result = apiInstance.postGamificationProfileActivate(performanceProfileId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#postGamificationProfileActivate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **performanceProfileId** | **String**| Performance Profile Id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PerformanceProfile**](PerformanceProfile.html)
+
+<a name="postGamificationProfileDeactivate"></a>
+
+# **postGamificationProfileDeactivate**
+
+
+
+> [PerformanceProfile](PerformanceProfile.html) postGamificationProfileDeactivate(performanceProfileId)
+
+Deactivate a performance profile
+
+
+
+Wraps POST /api/v2/gamification/profiles/{performanceProfileId}/deactivate  
+
+Requires ANY permissions: 
+
+* gamification:profile:update
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+try {
+    PerformanceProfile result = apiInstance.postGamificationProfileDeactivate(performanceProfileId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#postGamificationProfileDeactivate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **performanceProfileId** | **String**| Performance Profile Id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PerformanceProfile**](PerformanceProfile.html)
 
 <a name="putGamificationMetric"></a>
 

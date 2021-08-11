@@ -84,6 +84,7 @@ public class RecordingJob  implements Serializable {
   private Integer totalProcessedRecordings = null;
   private Integer percentProgress = null;
   private String errorMessage = null;
+  private String failedRecordings = null;
   private String selfUri = null;
   private AddressableEntityRef user = null;
 
@@ -173,6 +174,13 @@ public class RecordingJob  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "Get IDs of recordings that the bulk job failed for")
+  @JsonProperty("failedRecordings")
+  public String getFailedRecordings() {
+    return failedRecordings;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -217,13 +225,14 @@ public class RecordingJob  implements Serializable {
         Objects.equals(this.totalProcessedRecordings, recordingJob.totalProcessedRecordings) &&
         Objects.equals(this.percentProgress, recordingJob.percentProgress) &&
         Objects.equals(this.errorMessage, recordingJob.errorMessage) &&
+        Objects.equals(this.failedRecordings, recordingJob.failedRecordings) &&
         Objects.equals(this.selfUri, recordingJob.selfUri) &&
         Objects.equals(this.user, recordingJob.user);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, recordingJobsQuery, dateCreated, totalConversations, totalRecordings, totalProcessedRecordings, percentProgress, errorMessage, selfUri, user);
+    return Objects.hash(id, state, recordingJobsQuery, dateCreated, totalConversations, totalRecordings, totalProcessedRecordings, percentProgress, errorMessage, failedRecordings, selfUri, user);
   }
 
   @Override
@@ -240,6 +249,7 @@ public class RecordingJob  implements Serializable {
     sb.append("    totalProcessedRecordings: ").append(toIndentedString(totalProcessedRecordings)).append("\n");
     sb.append("    percentProgress: ").append(toIndentedString(percentProgress)).append("\n");
     sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
+    sb.append("    failedRecordings: ").append(toIndentedString(failedRecordings)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("}");

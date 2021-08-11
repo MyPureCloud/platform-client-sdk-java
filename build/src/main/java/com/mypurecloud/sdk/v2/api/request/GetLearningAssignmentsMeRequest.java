@@ -27,6 +27,8 @@ import com.mypurecloud.sdk.v2.model.LearningModule;
 import com.mypurecloud.sdk.v2.model.LearningModuleRule;
 import com.mypurecloud.sdk.v2.model.LearningModulesDomainEntityListing;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentUpdate;
+import com.mypurecloud.sdk.v2.model.AssessmentScoringSet;
+import com.mypurecloud.sdk.v2.model.LearningAssessmentScoringRequest;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentCreate;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateResponse;
 import com.mypurecloud.sdk.v2.model.LearningAssignmentAggregateParam;
@@ -152,6 +154,79 @@ public class GetLearningAssignmentsMeRequest {
 
 	public GetLearningAssignmentsMeRequest withPageNumber(Integer pageNumber) {
 	    this.setPageNumber(pageNumber);
+	    return this;
+	} 
+	
+	private String pass;
+	public String getPass() {
+		return this.pass;
+	}
+
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+
+	public GetLearningAssignmentsMeRequest withPass(String pass) {
+	    this.setPass(pass);
+	    return this;
+	} 
+
+	public enum passValues { 
+		TRUE("True"), 
+		FALSE("False"), 
+		ANY("Any");
+
+		private String value;
+
+		passValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static passValues fromString(String key) {
+			if (key == null) return null;
+
+			for (passValues value : passValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return passValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
+	private Float minPercentageScore;
+	public Float getMinPercentageScore() {
+		return this.minPercentageScore;
+	}
+
+	public void setMinPercentageScore(Float minPercentageScore) {
+		this.minPercentageScore = minPercentageScore;
+	}
+
+	public GetLearningAssignmentsMeRequest withMinPercentageScore(Float minPercentageScore) {
+	    this.setMinPercentageScore(minPercentageScore);
+	    return this;
+	} 
+	
+	private Float maxPercentageScore;
+	public Float getMaxPercentageScore() {
+		return this.maxPercentageScore;
+	}
+
+	public void setMaxPercentageScore(Float maxPercentageScore) {
+		this.maxPercentageScore = maxPercentageScore;
+	}
+
+	public GetLearningAssignmentsMeRequest withMaxPercentageScore(Float maxPercentageScore) {
+	    this.setMaxPercentageScore(maxPercentageScore);
 	    return this;
 	} 
 	
@@ -412,6 +487,12 @@ public class GetLearningAssignmentsMeRequest {
         
                 .withQueryParameters("pageNumber", "", pageNumber)
         
+                .withQueryParameters("pass", "", pass)
+        
+                .withQueryParameters("minPercentageScore", "", minPercentageScore)
+        
+                .withQueryParameters("maxPercentageScore", "", maxPercentageScore)
+        
                 .withQueryParameters("sortOrder", "", sortOrder)
         
                 .withQueryParameters("sortBy", "", sortBy)
@@ -475,6 +556,26 @@ public class GetLearningAssignmentsMeRequest {
 		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
+			return this;
+		}
+		
+		public Builder withPass(String pass) {
+			request.setPass(pass);
+			return this;
+		}
+
+		public Builder withPass(passValues pass) {
+		    request.setPass(pass.toString());
+		    return this;
+		}
+		
+		public Builder withMinPercentageScore(Float minPercentageScore) {
+			request.setMinPercentageScore(minPercentageScore);
+			return this;
+		}
+		
+		public Builder withMaxPercentageScore(Float maxPercentageScore) {
+			request.setMaxPercentageScore(maxPercentageScore);
 			return this;
 		}
 		

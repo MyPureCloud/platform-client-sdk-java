@@ -77,6 +77,7 @@ public class AuditQueryEntity  implements Serializable {
     DIDPOOL("DIDPool"),
     DNCLIST("DNCList"),
     DOCUMENT("Document"),
+    DYNAMICGROUP("DynamicGroup"),
     EDGE("Edge"),
     EDGEGROUP("EdgeGroup"),
     EDGELOG("EdgeLog"),

@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getLearningModuleVersion**](LearningApi.html#getLearningModuleVersion) | Get specific version of a published module |
 | [**getLearningModules**](LearningApi.html#getLearningModules) | Get all learning modules of an organization |
 | [**patchLearningAssignment**](LearningApi.html#patchLearningAssignment) | Update Learning Assignment |
+| [**postLearningAssessmentsScoring**](LearningApi.html#postLearningAssessmentsScoring) | Score learning assessment for preview |
 | [**postLearningAssignments**](LearningApi.html#postLearningAssignments) | Create Learning Assignment |
 | [**postLearningAssignmentsAggregatesQuery**](LearningApi.html#postLearningAssignmentsAggregatesQuery) | Retrieve aggregated assignment data |
 | [**postLearningAssignmentsBulkadd**](LearningApi.html#postLearningAssignmentsBulkadd) | Add multiple learning assignments |
@@ -223,7 +224,7 @@ try {
 
 
 
-> [LearningAssignmentsDomainEntity](LearningAssignmentsDomainEntity.html) getLearningAssignments(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, sortBy, userId, types, states, expand)
+> [LearningAssignmentsDomainEntity](LearningAssignmentsDomainEntity.html) getLearningAssignments(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, userId, types, states, expand)
 
 List of Learning module Assignments
 
@@ -263,6 +264,9 @@ String completionInterval = "completionInterval_example"; // String | Specifies 
 String overdue = "Any"; // String | Specifies if only the non-overdue (overdue is \"False\") or overdue (overdue is \"True\") assignments are returned. If overdue is \"Any\" or if the overdue parameter is not supplied, all assignments are returned
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
+String pass = "Any"; // String | Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") assignments (completed with assessment)are returned. If pass is \"Any\" or if the pass parameter is not supplied, all assignments are returned
+Float minPercentageScore = 3.4F; // Float | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
+Float maxPercentageScore = 3.4F; // Float | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
 String sortOrder = "Desc"; // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)
 String sortBy = "sortBy_example"; // String | Specifies which field to sort the results by, default sort is by recommendedCompletionDate
 List<String> userId = Arrays.asList("userId_example"); // List<String> | Specifies the list of user IDs to be queried, up to 100 user IDs.
@@ -270,7 +274,7 @@ List<String> types = Arrays.asList("types_example"); // List<String> | Specifies
 List<String> states = Arrays.asList("states_example"); // List<String> | Specifies the assignment states to filter by
 List<String> expand = Arrays.asList("expand_example"); // List<String> | Specifies the expand option for returning additional information
 try {
-    LearningAssignmentsDomainEntity result = apiInstance.getLearningAssignments(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, sortBy, userId, types, states, expand);
+    LearningAssignmentsDomainEntity result = apiInstance.getLearningAssignments(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, userId, types, states, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LearningApi#getLearningAssignments");
@@ -289,6 +293,9 @@ try {
 | **overdue** | **String**| Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pass** | **String**| Specifies if only the failed (pass is \&quot;False\&quot;) or passed (pass is \&quot;True\&quot;) assignments (completed with assessment)are returned. If pass is \&quot;Any\&quot; or if the pass parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any 
+| **minPercentageScore** | **Float**| The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional] 
+| **maxPercentageScore** | **Float**| The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional] 
 | **sortOrder** | **String**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc 
 | **sortBy** | **String**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional]<br />**Values**: RecommendedCompletionDate, DateModified 
 | **userId** | [**List&lt;String&gt;**](String.html)| Specifies the list of user IDs to be queried, up to 100 user IDs. | [optional] 
@@ -308,7 +315,7 @@ try {
 
 
 
-> [LearningAssignmentsDomainEntity](LearningAssignmentsDomainEntity.html) getLearningAssignmentsMe(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, sortBy, types, states, expand)
+> [LearningAssignmentsDomainEntity](LearningAssignmentsDomainEntity.html) getLearningAssignmentsMe(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, types, states, expand)
 
 List of Learning Assignments assigned to current user
 
@@ -347,13 +354,16 @@ String completionInterval = "completionInterval_example"; // String | Specifies 
 String overdue = "Any"; // String | Specifies if only the non-overdue (overdue is \"False\") or overdue (overdue is \"True\") assignments are returned. If overdue is \"Any\" or if the overdue parameter is not supplied, all assignments are returned
 Integer pageSize = 25; // Integer | Page size
 Integer pageNumber = 1; // Integer | Page number
+String pass = "Any"; // String | Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") assignments (completed with assessment)are returned. If pass is \"Any\" or if the pass parameter is not supplied, all assignments are returned
+Float minPercentageScore = 3.4F; // Float | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
+Float maxPercentageScore = 3.4F; // Float | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
 String sortOrder = "Desc"; // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)
 String sortBy = "sortBy_example"; // String | Specifies which field to sort the results by, default sort is by recommendedCompletionDate
 List<String> types = Arrays.asList("types_example"); // List<String> | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned
 List<String> states = Arrays.asList("states_example"); // List<String> | Specifies the assignment states to filter by
 List<String> expand = Arrays.asList("expand_example"); // List<String> | Specifies the expand option for returning additional information
 try {
-    LearningAssignmentsDomainEntity result = apiInstance.getLearningAssignmentsMe(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, sortOrder, sortBy, types, states, expand);
+    LearningAssignmentsDomainEntity result = apiInstance.getLearningAssignmentsMe(moduleId, interval, completionInterval, overdue, pageSize, pageNumber, pass, minPercentageScore, maxPercentageScore, sortOrder, sortBy, types, states, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LearningApi#getLearningAssignmentsMe");
@@ -372,6 +382,9 @@ try {
 | **overdue** | **String**| Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pass** | **String**| Specifies if only the failed (pass is \&quot;False\&quot;) or passed (pass is \&quot;True\&quot;) assignments (completed with assessment)are returned. If pass is \&quot;Any\&quot; or if the pass parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any 
+| **minPercentageScore** | **Float**| The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional] 
+| **maxPercentageScore** | **Float**| The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional] 
 | **sortOrder** | **String**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc 
 | **sortBy** | **String**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional]<br />**Values**: RecommendedCompletionDate, DateModified 
 | **types** | [**List&lt;String&gt;**](String.html)| Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned | [optional]<br />**Values**: Informational, AssessedContent, Questionnaire, Assessment 
@@ -585,7 +598,7 @@ try {
 
 
 
-> [LearningModulesDomainEntityListing](LearningModulesDomainEntityListing.html) getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand)
+> [LearningModulesDomainEntityListing](LearningModulesDomainEntityListing.html) getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished)
 
 Get all learning modules of an organization
 
@@ -627,8 +640,9 @@ String sortOrder = "ascending"; // String | Sort order
 String sortBy = "name"; // String | Sort by
 String searchTerm = "searchTerm_example"; // String | Search Term (searchable by name)
 List<String> expand = Arrays.asList("expand_example"); // List<String> | Fields to expand in response(case insensitive)
+String isPublished = "Any"; // String | Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned
 try {
-    LearningModulesDomainEntityListing result = apiInstance.getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand);
+    LearningModulesDomainEntityListing result = apiInstance.getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LearningApi#getLearningModules");
@@ -649,6 +663,7 @@ try {
 | **sortBy** | **String**| Sort by | [optional] [default to name]<br />**Values**: name 
 | **searchTerm** | **String**| Search Term (searchable by name) | [optional] 
 | **expand** | [**List&lt;String&gt;**](String.html)| Fields to expand in response(case insensitive) | [optional]<br />**Values**: rule, summaryData 
+| **isPublished** | **String**| Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned | [optional] [default to Any]<br />**Values**: True, False, Any 
 {: class="table-striped"}
 
 
@@ -719,6 +734,71 @@ try {
 ### Return type
 
 [**LearningAssignment**](LearningAssignment.html)
+
+<a name="postLearningAssessmentsScoring"></a>
+
+# **postLearningAssessmentsScoring**
+
+
+
+> [AssessmentScoringSet](AssessmentScoringSet.html) postLearningAssessmentsScoring(body)
+
+Score learning assessment for preview
+
+
+
+Wraps POST /api/v2/learning/assessments/scoring  
+
+Requires ANY permissions: 
+
+* learning:module:view
+* learning:module:add
+* learning:module:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.LearningApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+LearningApi apiInstance = new LearningApi();
+LearningAssessmentScoringRequest body = new LearningAssessmentScoringRequest(); // LearningAssessmentScoringRequest | Assessment form and answers to score
+try {
+    AssessmentScoringSet result = apiInstance.postLearningAssessmentsScoring(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling LearningApi#postLearningAssessmentsScoring");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**LearningAssessmentScoringRequest**](LearningAssessmentScoringRequest.html)| Assessment form and answers to score | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AssessmentScoringSet**](AssessmentScoringSet.html)
 
 <a name="postLearningAssignments"></a>
 

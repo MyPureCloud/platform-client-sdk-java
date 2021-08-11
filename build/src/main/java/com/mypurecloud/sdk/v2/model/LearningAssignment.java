@@ -11,6 +11,8 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.AssessmentForm;
+import com.mypurecloud.sdk.v2.model.LearningAssessment;
 import com.mypurecloud.sdk.v2.model.LearningModule;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import io.swagger.annotations.ApiModel;
@@ -26,13 +28,16 @@ import java.io.Serializable;
 public class LearningAssignment  implements Serializable {
   
   private String id = null;
+  private LearningAssessment assessment = null;
   private UserReference createdBy = null;
   private Date dateCreated = null;
   private UserReference modifiedBy = null;
   private Date dateModified = null;
   private Boolean isOverdue = null;
+  private Float percentageScore = null;
   private Boolean isRule = null;
   private Boolean isManual = null;
+  private Boolean isPassed = null;
   private String selfUri = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
@@ -88,12 +93,31 @@ public class LearningAssignment  implements Serializable {
   private Integer version = null;
   private LearningModule module = null;
   private UserReference user = null;
+  private AssessmentForm assessmentForm = null;
 
   
   @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
   @JsonProperty("id")
   public String getId() {
     return id;
+  }
+
+  
+  /**
+   * The assessment associated with this assignment
+   **/
+  public LearningAssignment assessment(LearningAssessment assessment) {
+    this.assessment = assessment;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The assessment associated with this assignment")
+  @JsonProperty("assessment")
+  public LearningAssessment getAssessment() {
+    return assessment;
+  }
+  public void setAssessment(LearningAssessment assessment) {
+    this.assessment = assessment;
   }
 
   
@@ -154,6 +178,13 @@ public class LearningAssignment  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The user's percentage score for this assignment")
+  @JsonProperty("percentageScore")
+  public Float getPercentageScore() {
+    return percentageScore;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "True if this assignment was created by a Rule")
   @JsonProperty("isRule")
   public Boolean getIsRule() {
@@ -165,6 +196,13 @@ public class LearningAssignment  implements Serializable {
   @JsonProperty("isManual")
   public Boolean getIsManual() {
     return isManual;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "True if the assessment was passed")
+  @JsonProperty("isPassed")
+  public Boolean getIsPassed() {
+    return isPassed;
   }
 
   
@@ -265,6 +303,24 @@ public class LearningAssignment  implements Serializable {
   }
 
   
+  /**
+   * The assessment form associated with this assignment
+   **/
+  public LearningAssignment assessmentForm(AssessmentForm assessmentForm) {
+    this.assessmentForm = assessmentForm;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The assessment form associated with this assignment")
+  @JsonProperty("assessmentForm")
+  public AssessmentForm getAssessmentForm() {
+    return assessmentForm;
+  }
+  public void setAssessmentForm(AssessmentForm assessmentForm) {
+    this.assessmentForm = assessmentForm;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -276,24 +332,28 @@ public class LearningAssignment  implements Serializable {
     }
     LearningAssignment learningAssignment = (LearningAssignment) o;
     return Objects.equals(this.id, learningAssignment.id) &&
+        Objects.equals(this.assessment, learningAssignment.assessment) &&
         Objects.equals(this.createdBy, learningAssignment.createdBy) &&
         Objects.equals(this.dateCreated, learningAssignment.dateCreated) &&
         Objects.equals(this.modifiedBy, learningAssignment.modifiedBy) &&
         Objects.equals(this.dateModified, learningAssignment.dateModified) &&
         Objects.equals(this.isOverdue, learningAssignment.isOverdue) &&
+        Objects.equals(this.percentageScore, learningAssignment.percentageScore) &&
         Objects.equals(this.isRule, learningAssignment.isRule) &&
         Objects.equals(this.isManual, learningAssignment.isManual) &&
+        Objects.equals(this.isPassed, learningAssignment.isPassed) &&
         Objects.equals(this.selfUri, learningAssignment.selfUri) &&
         Objects.equals(this.state, learningAssignment.state) &&
         Objects.equals(this.dateRecommendedForCompletion, learningAssignment.dateRecommendedForCompletion) &&
         Objects.equals(this.version, learningAssignment.version) &&
         Objects.equals(this.module, learningAssignment.module) &&
-        Objects.equals(this.user, learningAssignment.user);
+        Objects.equals(this.user, learningAssignment.user) &&
+        Objects.equals(this.assessmentForm, learningAssignment.assessmentForm);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdBy, dateCreated, modifiedBy, dateModified, isOverdue, isRule, isManual, selfUri, state, dateRecommendedForCompletion, version, module, user);
+    return Objects.hash(id, assessment, createdBy, dateCreated, modifiedBy, dateModified, isOverdue, percentageScore, isRule, isManual, isPassed, selfUri, state, dateRecommendedForCompletion, version, module, user, assessmentForm);
   }
 
   @Override
@@ -302,19 +362,23 @@ public class LearningAssignment  implements Serializable {
     sb.append("class LearningAssignment {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    assessment: ").append(toIndentedString(assessment)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    isOverdue: ").append(toIndentedString(isOverdue)).append("\n");
+    sb.append("    percentageScore: ").append(toIndentedString(percentageScore)).append("\n");
     sb.append("    isRule: ").append(toIndentedString(isRule)).append("\n");
     sb.append("    isManual: ").append(toIndentedString(isManual)).append("\n");
+    sb.append("    isPassed: ").append(toIndentedString(isPassed)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    dateRecommendedForCompletion: ").append(toIndentedString(dateRecommendedForCompletion)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    module: ").append(toIndentedString(module)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
+    sb.append("    assessmentForm: ").append(toIndentedString(assessmentForm)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -16,7 +16,6 @@ import com.mypurecloud.sdk.v2.model.Evaluation;
 import com.mypurecloud.sdk.v2.model.AgentActivityEntityListing;
 import java.util.Date;
 import com.mypurecloud.sdk.v2.model.CalibrationEntityListing;
-import com.mypurecloud.sdk.v2.model.QualityAuditPage;
 import com.mypurecloud.sdk.v2.model.Survey;
 import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionStatusResponse;
 import com.mypurecloud.sdk.v2.model.QualityAuditQueryExecutionResultsResponse;
@@ -48,7 +47,6 @@ import com.mypurecloud.sdk.v2.api.request.DeleteQualityFormsSurveyRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityAgentsActivityRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityCalibrationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityCalibrationsRequest;
-import com.mypurecloud.sdk.v2.api.request.GetQualityConversationAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityConversationEvaluationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityConversationSurveysRequest;
 import com.mypurecloud.sdk.v2.api.request.GetQualityConversationsAuditsQueryTransactionIdRequest;
@@ -832,117 +830,6 @@ public class QualityApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<CalibrationEntityListing> response = (ApiResponse<CalibrationEntityListing>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Get audits for conversation or recording
-   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.This endpoint is deprecated. Use following async endpoints, To query for audits POST /api/v2/quality/conversations/audits/queryTo get status of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}To get results of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}/results
-   * @param conversationId Conversation ID (required)
-   * @param pageSize The total page size requested (optional, default to 25)
-   * @param pageNumber The page number requested (optional, default to 1)
-   * @param sortBy variable name requested to sort by (optional)
-   * @param expand variable name requested by expand list (optional)
-   * @param nextPage next page token (optional)
-   * @param previousPage Previous page token (optional)
-   * @param recordingId id of the recording (optional)
-   * @param entityType entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording (optional, default to Recording)
-   * @return QualityAuditPage
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public QualityAuditPage getQualityConversationAudits(String conversationId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String recordingId, String entityType) throws IOException, ApiException {
-    return  getQualityConversationAudits(createGetQualityConversationAuditsRequest(conversationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, recordingId, entityType));
-  }
-
-  /**
-   * Get audits for conversation or recording
-   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.This endpoint is deprecated. Use following async endpoints, To query for audits POST /api/v2/quality/conversations/audits/queryTo get status of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}To get results of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}/results
-   * @param conversationId Conversation ID (required)
-   * @param pageSize The total page size requested (optional, default to 25)
-   * @param pageNumber The page number requested (optional, default to 1)
-   * @param sortBy variable name requested to sort by (optional)
-   * @param expand variable name requested by expand list (optional)
-   * @param nextPage next page token (optional)
-   * @param previousPage Previous page token (optional)
-   * @param recordingId id of the recording (optional)
-   * @param entityType entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording (optional, default to Recording)
-   * @return QualityAuditPage
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<QualityAuditPage> getQualityConversationAuditsWithHttpInfo(String conversationId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String recordingId, String entityType) throws IOException {
-    return getQualityConversationAudits(createGetQualityConversationAuditsRequest(conversationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, recordingId, entityType).withHttpInfo());
-  }
-
-  private GetQualityConversationAuditsRequest createGetQualityConversationAuditsRequest(String conversationId, Integer pageSize, Integer pageNumber, String sortBy, List<String> expand, String nextPage, String previousPage, String recordingId, String entityType) {
-    return GetQualityConversationAuditsRequest.builder()
-            .withConversationId(conversationId)
-    
-            .withPageSize(pageSize)
-    
-            .withPageNumber(pageNumber)
-    
-            .withSortBy(sortBy)
-    
-            .withExpand(expand)
-    
-            .withNextPage(nextPage)
-    
-            .withPreviousPage(previousPage)
-    
-            .withRecordingId(recordingId)
-    
-            .withEntityType(entityType)
-    
-            .build();
-  }
-
-  /**
-   * Get audits for conversation or recording
-   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.This endpoint is deprecated. Use following async endpoints, To query for audits POST /api/v2/quality/conversations/audits/queryTo get status of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}To get results of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}/results
-   * @param request The request object
-   * @return QualityAuditPage
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public QualityAuditPage getQualityConversationAudits(GetQualityConversationAuditsRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<QualityAuditPage> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QualityAuditPage>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Get audits for conversation or recording
-   * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.This endpoint is deprecated. Use following async endpoints, To query for audits POST /api/v2/quality/conversations/audits/queryTo get status of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}To get results of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}/results
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<QualityAuditPage> getQualityConversationAudits(ApiRequest<Void> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<QualityAuditPage>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<QualityAuditPage> response = (ApiResponse<QualityAuditPage>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<QualityAuditPage> response = (ApiResponse<QualityAuditPage>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

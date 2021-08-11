@@ -5247,14 +5247,15 @@ public class OutboundApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder The direction to sort (optional, default to a)
    * @param name Name (optional)
+   * @param type Campaign Type (optional)
    * @param id id (optional)
    * @param senderSmsPhoneNumber Sender SMS Phone Number (optional)
    * @return MessagingCampaignDivisionViewEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public MessagingCampaignDivisionViewEntityListing getOutboundMessagingcampaignsDivisionviews(Integer pageSize, Integer pageNumber, String sortOrder, String name, List<String> id, String senderSmsPhoneNumber) throws IOException, ApiException {
-    return  getOutboundMessagingcampaignsDivisionviews(createGetOutboundMessagingcampaignsDivisionviewsRequest(pageSize, pageNumber, sortOrder, name, id, senderSmsPhoneNumber));
+  public MessagingCampaignDivisionViewEntityListing getOutboundMessagingcampaignsDivisionviews(Integer pageSize, Integer pageNumber, String sortOrder, String name, String type, List<String> id, String senderSmsPhoneNumber) throws IOException, ApiException {
+    return  getOutboundMessagingcampaignsDivisionviews(createGetOutboundMessagingcampaignsDivisionviewsRequest(pageSize, pageNumber, sortOrder, name, type, id, senderSmsPhoneNumber));
   }
 
   /**
@@ -5264,16 +5265,17 @@ public class OutboundApi {
    * @param pageNumber Page number (optional, default to 1)
    * @param sortOrder The direction to sort (optional, default to a)
    * @param name Name (optional)
+   * @param type Campaign Type (optional)
    * @param id id (optional)
    * @param senderSmsPhoneNumber Sender SMS Phone Number (optional)
    * @return MessagingCampaignDivisionViewEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<MessagingCampaignDivisionViewEntityListing> getOutboundMessagingcampaignsDivisionviewsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder, String name, List<String> id, String senderSmsPhoneNumber) throws IOException {
-    return getOutboundMessagingcampaignsDivisionviews(createGetOutboundMessagingcampaignsDivisionviewsRequest(pageSize, pageNumber, sortOrder, name, id, senderSmsPhoneNumber).withHttpInfo());
+  public ApiResponse<MessagingCampaignDivisionViewEntityListing> getOutboundMessagingcampaignsDivisionviewsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder, String name, String type, List<String> id, String senderSmsPhoneNumber) throws IOException {
+    return getOutboundMessagingcampaignsDivisionviews(createGetOutboundMessagingcampaignsDivisionviewsRequest(pageSize, pageNumber, sortOrder, name, type, id, senderSmsPhoneNumber).withHttpInfo());
   }
 
-  private GetOutboundMessagingcampaignsDivisionviewsRequest createGetOutboundMessagingcampaignsDivisionviewsRequest(Integer pageSize, Integer pageNumber, String sortOrder, String name, List<String> id, String senderSmsPhoneNumber) {
+  private GetOutboundMessagingcampaignsDivisionviewsRequest createGetOutboundMessagingcampaignsDivisionviewsRequest(Integer pageSize, Integer pageNumber, String sortOrder, String name, String type, List<String> id, String senderSmsPhoneNumber) {
     return GetOutboundMessagingcampaignsDivisionviewsRequest.builder()
             .withPageSize(pageSize)
     
@@ -5282,6 +5284,8 @@ public class OutboundApi {
             .withSortOrder(sortOrder)
     
             .withName(name)
+    
+            .withType(type)
     
             .withId(id)
     

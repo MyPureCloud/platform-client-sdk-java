@@ -26,6 +26,9 @@ title: DevelopmentActivityAggregateQueryResponseMetric
 | NCOMPLETEACTIVITIES | &quot;nCompleteActivities&quot; |
 | NOVERDUEACTIVITIES | &quot;nOverdueActivities&quot; |
 | NINVALIDSCHEDULEACTIVITIES | &quot;nInvalidScheduleActivities&quot; |
+| NPASSEDACTIVITIES | &quot;nPassedActivities&quot; |
+| NFAILEDACTIVITIES | &quot;nFailedActivities&quot; |
+| OACTIVITYSCORE | &quot;oActivityScore&quot; |
 {: class="table table-striped"}
 
 

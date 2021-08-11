@@ -15,7 +15,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getQualityAgentsActivity**](QualityApi.html#getQualityAgentsActivity) | Gets a list of Agent Activities |
 | [**getQualityCalibration**](QualityApi.html#getQualityCalibration) | Get a calibration by id.  Requires either calibrator id or conversation id |
 | [**getQualityCalibrations**](QualityApi.html#getQualityCalibrations) | Get the list of calibrations |
-| [**getQualityConversationAudits**](QualityApi.html#getQualityConversationAudits) | Get audits for conversation or recording |
 | [**getQualityConversationEvaluation**](QualityApi.html#getQualityConversationEvaluation) | Get an evaluation |
 | [**getQualityConversationSurveys**](QualityApi.html#getQualityConversationSurveys) | Get the surveys for a conversation |
 | [**getQualityConversationsAuditsQueryTransactionId**](QualityApi.html#getQualityConversationsAuditsQueryTransactionId) | Get status of audit query execution |
@@ -613,90 +612,6 @@ try {
 ### Return type
 
 [**CalibrationEntityListing**](CalibrationEntityListing.html)
-
-<a name="getQualityConversationAudits"></a>
-
-# **getQualityConversationAudits**
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-> [QualityAuditPage](QualityAuditPage.html) getQualityConversationAudits(conversationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, recordingId, entityType)
-
-Get audits for conversation or recording
-
-Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.This endpoint is deprecated. Use following async endpoints, To query for audits POST /api/v2/quality/conversations/audits/queryTo get status of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}To get results of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}/results
-
-Wraps GET /api/v2/quality/conversations/{conversationId}/audits  
-
-Requires ANY permissions: 
-
-* quality:calibration:viewAudit
-* quality:evaluation:viewAudit
-* quality:survey:viewAudit
-* recording:recording:viewAudit
-* recording:annotation:viewAudit
-* recording:screenRecording:viewAudit
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.QualityApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-QualityApi apiInstance = new QualityApi();
-String conversationId = "conversationId_example"; // String | Conversation ID
-Integer pageSize = 25; // Integer | The total page size requested
-Integer pageNumber = 1; // Integer | The page number requested
-String sortBy = "sortBy_example"; // String | variable name requested to sort by
-List<String> expand = Arrays.asList("expand_example"); // List<String> | variable name requested by expand list
-String nextPage = "nextPage_example"; // String | next page token
-String previousPage = "previousPage_example"; // String | Previous page token
-String recordingId = "recordingId_example"; // String | id of the recording
-String entityType = "Recording"; // String | entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording
-try {
-    QualityAuditPage result = apiInstance.getQualityConversationAudits(conversationId, pageSize, pageNumber, sortBy, expand, nextPage, previousPage, recordingId, entityType);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling QualityApi#getQualityConversationAudits");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| Conversation ID | 
-| **pageSize** | **Integer**| The total page size requested | [optional] [default to 25] 
-| **pageNumber** | **Integer**| The page number requested | [optional] [default to 1] 
-| **sortBy** | **String**| variable name requested to sort by | [optional] 
-| **expand** | [**List&lt;String&gt;**](String.html)| variable name requested by expand list | [optional] 
-| **nextPage** | **String**| next page token | [optional] 
-| **previousPage** | **String**| Previous page token | [optional] 
-| **recordingId** | **String**| id of the recording | [optional] 
-| **entityType** | **String**| entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording | [optional] [default to Recording] 
-{: class="table-striped"}
-
-
-### Return type
-
-[**QualityAuditPage**](QualityAuditPage.html)
 
 <a name="getQualityConversationEvaluation"></a>
 

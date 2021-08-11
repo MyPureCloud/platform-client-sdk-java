@@ -21,6 +21,9 @@ import java.io.Serializable;
 public class DevelopmentActivityAggregateQueryResponseStatistics  implements Serializable {
   
   private Integer count = null;
+  private Integer min = null;
+  private Integer max = null;
+  private Integer sum = null;
 
   
   /**
@@ -41,6 +44,60 @@ public class DevelopmentActivityAggregateQueryResponseStatistics  implements Ser
   }
 
   
+  /**
+   * The minimum value in this metric
+   **/
+  public DevelopmentActivityAggregateQueryResponseStatistics min(Integer min) {
+    this.min = min;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The minimum value in this metric")
+  @JsonProperty("min")
+  public Integer getMin() {
+    return min;
+  }
+  public void setMin(Integer min) {
+    this.min = min;
+  }
+
+  
+  /**
+   * The maximum value in this metric
+   **/
+  public DevelopmentActivityAggregateQueryResponseStatistics max(Integer max) {
+    this.max = max;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The maximum value in this metric")
+  @JsonProperty("max")
+  public Integer getMax() {
+    return max;
+  }
+  public void setMax(Integer max) {
+    this.max = max;
+  }
+
+  
+  /**
+   * The total of the values for this metric
+   **/
+  public DevelopmentActivityAggregateQueryResponseStatistics sum(Integer sum) {
+    this.sum = sum;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The total of the values for this metric")
+  @JsonProperty("sum")
+  public Integer getSum() {
+    return sum;
+  }
+  public void setSum(Integer sum) {
+    this.sum = sum;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -51,12 +108,15 @@ public class DevelopmentActivityAggregateQueryResponseStatistics  implements Ser
       return false;
     }
     DevelopmentActivityAggregateQueryResponseStatistics developmentActivityAggregateQueryResponseStatistics = (DevelopmentActivityAggregateQueryResponseStatistics) o;
-    return Objects.equals(this.count, developmentActivityAggregateQueryResponseStatistics.count);
+    return Objects.equals(this.count, developmentActivityAggregateQueryResponseStatistics.count) &&
+        Objects.equals(this.min, developmentActivityAggregateQueryResponseStatistics.min) &&
+        Objects.equals(this.max, developmentActivityAggregateQueryResponseStatistics.max) &&
+        Objects.equals(this.sum, developmentActivityAggregateQueryResponseStatistics.sum);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(count);
+    return Objects.hash(count, min, max, sum);
   }
 
   @Override
@@ -65,6 +125,9 @@ public class DevelopmentActivityAggregateQueryResponseStatistics  implements Ser
     sb.append("class DevelopmentActivityAggregateQueryResponseStatistics {\n");
     
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
+    sb.append("    min: ").append(toIndentedString(min)).append("\n");
+    sb.append("    max: ").append(toIndentedString(max)).append("\n");
+    sb.append("    sum: ").append(toIndentedString(sum)).append("\n");
     sb.append("}");
     return sb.toString();
   }

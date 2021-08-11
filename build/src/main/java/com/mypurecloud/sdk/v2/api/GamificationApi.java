@@ -64,6 +64,8 @@ import com.mypurecloud.sdk.v2.api.request.GetGamificationStatusRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationTemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationTemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationMetricsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileActivateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileDeactivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationMetricRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationProfileRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationStatusRequest;
@@ -2659,6 +2661,164 @@ public class GamificationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Metric> response = (ApiResponse<Metric>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Activate a performance profile
+   * 
+   * @param performanceProfileId Performance Profile Id (required)
+   * @return PerformanceProfile
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PerformanceProfile postGamificationProfileActivate(String performanceProfileId) throws IOException, ApiException {
+    return  postGamificationProfileActivate(createPostGamificationProfileActivateRequest(performanceProfileId));
+  }
+
+  /**
+   * Activate a performance profile
+   * 
+   * @param performanceProfileId Performance Profile Id (required)
+   * @return PerformanceProfile
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PerformanceProfile> postGamificationProfileActivateWithHttpInfo(String performanceProfileId) throws IOException {
+    return postGamificationProfileActivate(createPostGamificationProfileActivateRequest(performanceProfileId).withHttpInfo());
+  }
+
+  private PostGamificationProfileActivateRequest createPostGamificationProfileActivateRequest(String performanceProfileId) {
+    return PostGamificationProfileActivateRequest.builder()
+            .withPerformanceProfileId(performanceProfileId)
+    
+            .build();
+  }
+
+  /**
+   * Activate a performance profile
+   * 
+   * @param request The request object
+   * @return PerformanceProfile
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PerformanceProfile postGamificationProfileActivate(PostGamificationProfileActivateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PerformanceProfile> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PerformanceProfile>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Activate a performance profile
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PerformanceProfile> postGamificationProfileActivate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PerformanceProfile>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PerformanceProfile> response = (ApiResponse<PerformanceProfile>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PerformanceProfile> response = (ApiResponse<PerformanceProfile>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Deactivate a performance profile
+   * 
+   * @param performanceProfileId Performance Profile Id (required)
+   * @return PerformanceProfile
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PerformanceProfile postGamificationProfileDeactivate(String performanceProfileId) throws IOException, ApiException {
+    return  postGamificationProfileDeactivate(createPostGamificationProfileDeactivateRequest(performanceProfileId));
+  }
+
+  /**
+   * Deactivate a performance profile
+   * 
+   * @param performanceProfileId Performance Profile Id (required)
+   * @return PerformanceProfile
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PerformanceProfile> postGamificationProfileDeactivateWithHttpInfo(String performanceProfileId) throws IOException {
+    return postGamificationProfileDeactivate(createPostGamificationProfileDeactivateRequest(performanceProfileId).withHttpInfo());
+  }
+
+  private PostGamificationProfileDeactivateRequest createPostGamificationProfileDeactivateRequest(String performanceProfileId) {
+    return PostGamificationProfileDeactivateRequest.builder()
+            .withPerformanceProfileId(performanceProfileId)
+    
+            .build();
+  }
+
+  /**
+   * Deactivate a performance profile
+   * 
+   * @param request The request object
+   * @return PerformanceProfile
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PerformanceProfile postGamificationProfileDeactivate(PostGamificationProfileDeactivateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PerformanceProfile> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PerformanceProfile>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Deactivate a performance profile
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PerformanceProfile> postGamificationProfileDeactivate(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PerformanceProfile>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PerformanceProfile> response = (ApiResponse<PerformanceProfile>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PerformanceProfile> response = (ApiResponse<PerformanceProfile>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
