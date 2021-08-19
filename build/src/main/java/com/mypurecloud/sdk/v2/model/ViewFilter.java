@@ -43,13 +43,13 @@ public class ViewFilter  implements Serializable {
    */
  @JsonDeserialize(using = MediaTypesEnumDeserializer.class)
   public enum MediaTypesEnum {
-    UNKNOWN("unknown"),
     CALLBACK("callback"),
     CHAT("chat"),
     COBROWSE("cobrowse"),
     EMAIL("email"),
     MESSAGE("message"),
     SCREENSHARE("screenshare"),
+    UNKNOWN("unknown"),
     VIDEO("video"),
     VOICE("voice");
 

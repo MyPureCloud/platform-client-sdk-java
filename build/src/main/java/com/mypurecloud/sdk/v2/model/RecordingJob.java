@@ -81,6 +81,8 @@ public class RecordingJob  implements Serializable {
   private Date dateCreated = null;
   private Integer totalConversations = null;
   private Integer totalRecordings = null;
+  private Integer totalSkippedRecordings = null;
+  private Integer totalFailedRecordings = null;
   private Integer totalProcessedRecordings = null;
   private Integer percentProgress = null;
   private String errorMessage = null;
@@ -153,6 +155,20 @@ public class RecordingJob  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "Total number of recordings that have been skipped.")
+  @JsonProperty("totalSkippedRecordings")
+  public Integer getTotalSkippedRecordings() {
+    return totalSkippedRecordings;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "Total number of recordings that the bulk job failed to process.")
+  @JsonProperty("totalFailedRecordings")
+  public Integer getTotalFailedRecordings() {
+    return totalFailedRecordings;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "Total number of recordings have been processed.")
   @JsonProperty("totalProcessedRecordings")
   public Integer getTotalProcessedRecordings() {
@@ -222,6 +238,8 @@ public class RecordingJob  implements Serializable {
         Objects.equals(this.dateCreated, recordingJob.dateCreated) &&
         Objects.equals(this.totalConversations, recordingJob.totalConversations) &&
         Objects.equals(this.totalRecordings, recordingJob.totalRecordings) &&
+        Objects.equals(this.totalSkippedRecordings, recordingJob.totalSkippedRecordings) &&
+        Objects.equals(this.totalFailedRecordings, recordingJob.totalFailedRecordings) &&
         Objects.equals(this.totalProcessedRecordings, recordingJob.totalProcessedRecordings) &&
         Objects.equals(this.percentProgress, recordingJob.percentProgress) &&
         Objects.equals(this.errorMessage, recordingJob.errorMessage) &&
@@ -232,7 +250,7 @@ public class RecordingJob  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, state, recordingJobsQuery, dateCreated, totalConversations, totalRecordings, totalProcessedRecordings, percentProgress, errorMessage, failedRecordings, selfUri, user);
+    return Objects.hash(id, state, recordingJobsQuery, dateCreated, totalConversations, totalRecordings, totalSkippedRecordings, totalFailedRecordings, totalProcessedRecordings, percentProgress, errorMessage, failedRecordings, selfUri, user);
   }
 
   @Override
@@ -246,6 +264,8 @@ public class RecordingJob  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    totalConversations: ").append(toIndentedString(totalConversations)).append("\n");
     sb.append("    totalRecordings: ").append(toIndentedString(totalRecordings)).append("\n");
+    sb.append("    totalSkippedRecordings: ").append(toIndentedString(totalSkippedRecordings)).append("\n");
+    sb.append("    totalFailedRecordings: ").append(toIndentedString(totalFailedRecordings)).append("\n");
     sb.append("    totalProcessedRecordings: ").append(toIndentedString(totalProcessedRecordings)).append("\n");
     sb.append("    percentProgress: ").append(toIndentedString(percentProgress)).append("\n");
     sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");

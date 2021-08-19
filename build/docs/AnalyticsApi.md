@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteAnalyticsConversationsDetailsJob**](AnalyticsApi.html#deleteAnalyticsConversationsDetailsJob) | Delete/cancel an async request |
 | [**deleteAnalyticsReportingSchedule**](AnalyticsApi.html#deleteAnalyticsReportingSchedule) | Delete a scheduled report job. |
 | [**deleteAnalyticsUsersDetailsJob**](AnalyticsApi.html#deleteAnalyticsUsersDetailsJob) | Delete/cancel an async request |
+| [**getAnalyticsBotflowReportingturns**](AnalyticsApi.html#getAnalyticsBotflowReportingturns) | Get Reporting Turns. |
 | [**getAnalyticsConversationDetails**](AnalyticsApi.html#getAnalyticsConversationDetails) | Get a conversation by id |
 | [**getAnalyticsConversationsDetails**](AnalyticsApi.html#getAnalyticsConversationsDetails) | Gets multiple conversations by id |
 | [**getAnalyticsConversationsDetailsJob**](AnalyticsApi.html#getAnalyticsConversationsDetailsJob) | Get status for async query for conversation details |
@@ -236,6 +237,77 @@ try {
 ### Return type
 
 null (empty response body)
+
+<a name="getAnalyticsBotflowReportingturns"></a>
+
+# **getAnalyticsBotflowReportingturns**
+
+
+
+> [ReportingTurnsResponse](ReportingTurnsResponse.html) getAnalyticsBotflowReportingturns(botFlowId, after, pageSize, actionId, sessionId)
+
+Get Reporting Turns.
+
+
+
+Wraps GET /api/v2/analytics/botflows/{botFlowId}/reportingturns  
+
+Requires ANY permissions: 
+
+* analytics:botFlowReportingTurn:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.AnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+AnalyticsApi apiInstance = new AnalyticsApi();
+String botFlowId = "botFlowId_example"; // String | ID of the bot flow.
+String after = "after_example"; // String | The cursor that points to the ID of the last item in the list of entities that has been returned.
+String pageSize = "50"; // String | Max number of entities to return. Maximum of 250
+String actionId = "actionId_example"; // String | Optional action ID to get the reporting turns associated to a particular flow action
+String sessionId = "sessionId_example"; // String | Optional session ID to get the reporting turns for a particular session
+try {
+    ReportingTurnsResponse result = apiInstance.getAnalyticsBotflowReportingturns(botFlowId, after, pageSize, actionId, sessionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AnalyticsApi#getAnalyticsBotflowReportingturns");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **botFlowId** | **String**| ID of the bot flow. | 
+| **after** | **String**| The cursor that points to the ID of the last item in the list of entities that has been returned. | [optional] 
+| **pageSize** | **String**| Max number of entities to return. Maximum of 250 | [optional] [default to 50] 
+| **actionId** | **String**| Optional action ID to get the reporting turns associated to a particular flow action | [optional] 
+| **sessionId** | **String**| Optional session ID to get the reporting turns for a particular session | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ReportingTurnsResponse**](ReportingTurnsResponse.html)
 
 <a name="getAnalyticsConversationDetails"></a>
 

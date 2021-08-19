@@ -99,6 +99,7 @@ public class EvaluationDetailQueryPredicate  implements Serializable {
     FORMID("formId"),
     FORMNAME("formName"),
     QUEUEID("queueId"),
+    RELEASED("released"),
     RESCORED("rescored"),
     USERID("userId");
 

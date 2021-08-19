@@ -2328,7 +2328,7 @@ try {
 
 Get the list of week schedules for the specified week
 
-Use \&quot;recent\&quot; for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+Use \&quot;recent\&quot; (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules  
 
@@ -2360,7 +2360,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-String weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format, or 'recent' to get recent schedules
+String weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules
 Boolean includeOnlyPublished = true; // Boolean | includeOnlyPublished
 String expand = "expand_example"; // String | expand
 try {
@@ -2378,7 +2378,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit | 
-| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format, or &#39;recent&#39; to get recent schedules | 
+| **weekId** | **String**| First day of schedule week in yyyy-MM-dd format, or &#39;recent&#39; (without quotes) to get recent schedules | 
 | **includeOnlyPublished** | **Boolean**| includeOnlyPublished | [optional] 
 | **expand** | **String**| expand | [optional]<br />**Values**: forecast.description 
 {: class="table-striped"}
@@ -2743,7 +2743,7 @@ try {
 
 Get short term forecasts
 
-Use \&quot;recent\&quot; for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+Use \&quot;recent\&quot; (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts  
 
@@ -2775,7 +2775,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
-String weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format or 'recent' to fetch recent forecasts
+String weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format or 'recent' (without quotes) to fetch recent forecasts
 try {
     BuShortTermForecastListing result = apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId, weekDateId);
     System.out.println(result);
@@ -2791,7 +2791,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The business unit ID of the business unit to which the forecast belongs | 
-| **weekDateId** | **String**| The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; to fetch recent forecasts | 
+| **weekDateId** | **String**| The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; (without quotes) to fetch recent forecasts | 
 {: class="table-striped"}
 
 

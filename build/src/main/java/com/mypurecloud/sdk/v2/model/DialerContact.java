@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CallRecord;
 import com.mypurecloud.sdk.v2.model.ConfigurationOverrides;
 import com.mypurecloud.sdk.v2.model.ContactColumnTimeZone;
+import com.mypurecloud.sdk.v2.model.MessageEvaluation;
 import com.mypurecloud.sdk.v2.model.PhoneNumberStatus;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -32,6 +33,7 @@ public class DialerContact  implements Serializable {
   private String contactListId = null;
   private Map<String, Object> data = null;
   private Map<String, CallRecord> callRecords = null;
+  private Map<String, MessageEvaluation> latestSmsEvaluations = null;
   private Boolean callable = null;
   private Map<String, PhoneNumberStatus> phoneNumberStatus = null;
   private Map<String, ContactColumnTimeZone> contactColumnTimeZones = null;
@@ -114,6 +116,24 @@ public class DialerContact  implements Serializable {
   }
   public void setCallRecords(Map<String, CallRecord> callRecords) {
     this.callRecords = callRecords;
+  }
+
+  
+  /**
+   * A map of SMS records for the contact phone columns.
+   **/
+  public DialerContact latestSmsEvaluations(Map<String, MessageEvaluation> latestSmsEvaluations) {
+    this.latestSmsEvaluations = latestSmsEvaluations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A map of SMS records for the contact phone columns.")
+  @JsonProperty("latestSmsEvaluations")
+  public Map<String, MessageEvaluation> getLatestSmsEvaluations() {
+    return latestSmsEvaluations;
+  }
+  public void setLatestSmsEvaluations(Map<String, MessageEvaluation> latestSmsEvaluations) {
+    this.latestSmsEvaluations = latestSmsEvaluations;
   }
 
   
@@ -211,6 +231,7 @@ public class DialerContact  implements Serializable {
         Objects.equals(this.contactListId, dialerContact.contactListId) &&
         Objects.equals(this.data, dialerContact.data) &&
         Objects.equals(this.callRecords, dialerContact.callRecords) &&
+        Objects.equals(this.latestSmsEvaluations, dialerContact.latestSmsEvaluations) &&
         Objects.equals(this.callable, dialerContact.callable) &&
         Objects.equals(this.phoneNumberStatus, dialerContact.phoneNumberStatus) &&
         Objects.equals(this.contactColumnTimeZones, dialerContact.contactColumnTimeZones) &&
@@ -220,7 +241,7 @@ public class DialerContact  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, contactListId, data, callRecords, callable, phoneNumberStatus, contactColumnTimeZones, configurationOverrides, selfUri);
+    return Objects.hash(id, name, contactListId, data, callRecords, latestSmsEvaluations, callable, phoneNumberStatus, contactColumnTimeZones, configurationOverrides, selfUri);
   }
 
   @Override
@@ -233,6 +254,7 @@ public class DialerContact  implements Serializable {
     sb.append("    contactListId: ").append(toIndentedString(contactListId)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    callRecords: ").append(toIndentedString(callRecords)).append("\n");
+    sb.append("    latestSmsEvaluations: ").append(toIndentedString(latestSmsEvaluations)).append("\n");
     sb.append("    callable: ").append(toIndentedString(callable)).append("\n");
     sb.append("    phoneNumberStatus: ").append(toIndentedString(phoneNumberStatus)).append("\n");
     sb.append("    contactColumnTimeZones: ").append(toIndentedString(contactColumnTimeZones)).append("\n");

@@ -282,7 +282,9 @@ public class AuditQueryEntity  implements Serializable {
     SCALE("Scale"),
     IPALLOWLISTCLEAR("IpAllowlistClear"),
     ADDPAIRINGROLE("AddPairingRole"),
-    ADD("Add");
+    ADD("Add"),
+    ASSIGN("Assign"),
+    UNASSIGN("Unassign");
 
     private String value;
 

@@ -2800,9 +2800,9 @@ public class WorkforceManagementApi {
   
   /**
    * Get the list of week schedules for the specified week
-   * Use \&quot;recent\&quot; for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+   * Use \&quot;recent\&quot; (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
    * @param businessUnitId The ID of the business unit (required)
-   * @param weekId First day of schedule week in yyyy-MM-dd format, or &#39;recent&#39; to get recent schedules (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format, or &#39;recent&#39; (without quotes) to get recent schedules (required)
    * @param includeOnlyPublished includeOnlyPublished (optional)
    * @param expand expand (optional)
    * @return BuScheduleListing
@@ -2815,9 +2815,9 @@ public class WorkforceManagementApi {
 
   /**
    * Get the list of week schedules for the specified week
-   * Use \&quot;recent\&quot; for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+   * Use \&quot;recent\&quot; (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
    * @param businessUnitId The ID of the business unit (required)
-   * @param weekId First day of schedule week in yyyy-MM-dd format, or &#39;recent&#39; to get recent schedules (required)
+   * @param weekId First day of schedule week in yyyy-MM-dd format, or &#39;recent&#39; (without quotes) to get recent schedules (required)
    * @param includeOnlyPublished includeOnlyPublished (optional)
    * @param expand expand (optional)
    * @return BuScheduleListing
@@ -2842,7 +2842,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get the list of week schedules for the specified week
-   * Use \&quot;recent\&quot; for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+   * Use \&quot;recent\&quot; (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
    * @param request The request object
    * @return BuScheduleListing
    * @throws ApiException if the request fails on the server
@@ -2861,7 +2861,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get the list of week schedules for the specified week
-   * Use \&quot;recent\&quot; for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+   * Use \&quot;recent\&quot; (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3342,9 +3342,9 @@ public class WorkforceManagementApi {
   
   /**
    * Get short term forecasts
-   * Use \&quot;recent\&quot; for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+   * Use \&quot;recent\&quot; (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
    * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
-   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; to fetch recent forecasts (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; (without quotes) to fetch recent forecasts (required)
    * @return BuShortTermForecastListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3355,9 +3355,9 @@ public class WorkforceManagementApi {
 
   /**
    * Get short term forecasts
-   * Use \&quot;recent\&quot; for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+   * Use \&quot;recent\&quot; (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
    * @param businessUnitId The business unit ID of the business unit to which the forecast belongs (required)
-   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; to fetch recent forecasts (required)
+   * @param weekDateId The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; (without quotes) to fetch recent forecasts (required)
    * @return BuShortTermForecastListing
    * @throws IOException if the request fails to be processed
    */
@@ -3376,7 +3376,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get short term forecasts
-   * Use \&quot;recent\&quot; for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+   * Use \&quot;recent\&quot; (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
    * @param request The request object
    * @return BuShortTermForecastListing
    * @throws ApiException if the request fails on the server
@@ -3395,7 +3395,7 @@ public class WorkforceManagementApi {
 
   /**
    * Get short term forecasts
-   * Use \&quot;recent\&quot; for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+   * Use \&quot;recent\&quot; (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

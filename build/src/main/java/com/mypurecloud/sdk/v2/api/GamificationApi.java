@@ -19,6 +19,7 @@ import com.mypurecloud.sdk.v2.model.MetricDefinition;
 import com.mypurecloud.sdk.v2.model.GetMetricDefinitionsResponse;
 import com.mypurecloud.sdk.v2.model.GetMetricsResponse;
 import com.mypurecloud.sdk.v2.model.PerformanceProfile;
+import com.mypurecloud.sdk.v2.model.GetMetricResponse;
 import com.mypurecloud.sdk.v2.model.GetProfilesResponse;
 import com.mypurecloud.sdk.v2.model.WorkdayMetricListing;
 import com.mypurecloud.sdk.v2.model.AttendanceStatusListing;
@@ -42,7 +43,12 @@ import com.mypurecloud.sdk.v2.api.request.GetGamificationMetricdefinitionRequest
 import com.mypurecloud.sdk.v2.api.request.GetGamificationMetricdefinitionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationProfileRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationProfileMetricRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationProfileMetricsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationProfileMetricsObjectivedetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationProfilesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationProfilesUserRequest;
+import com.mypurecloud.sdk.v2.api.request.GetGamificationProfilesUsersMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsAttendanceRequest;
 import com.mypurecloud.sdk.v2.api.request.GetGamificationScorecardsBestpointsRequest;
@@ -66,8 +72,10 @@ import com.mypurecloud.sdk.v2.api.request.GetGamificationTemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileActivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileDeactivateRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationMetricRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationProfileRequest;
+import com.mypurecloud.sdk.v2.api.request.PutGamificationProfileMetricRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationStatusRequest;
 
 import java.io.IOException;
@@ -180,7 +188,7 @@ public class GamificationApi {
    * Leaderboard by filter type
    * 
    * @param filterType Filter type for the query request. (required)
-   * @param filterId ID for the filter type. For example, division Id (required)
+   * @param filterId ID for the filter type. For example, division or performance profile Id (required)
    * @param startWorkday Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param endWorkday End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param metricId Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. (optional)
@@ -196,7 +204,7 @@ public class GamificationApi {
    * Leaderboard by filter type
    * 
    * @param filterType Filter type for the query request. (required)
-   * @param filterId ID for the filter type. For example, division Id (required)
+   * @param filterId ID for the filter type. For example, division or performance profile Id (required)
    * @param startWorkday Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param endWorkday End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param metricId Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. (optional)
@@ -272,10 +280,10 @@ public class GamificationApi {
 
   
   /**
-   * Best Points by division
+   * Best Points by division or performance profile
    * 
    * @param filterType Filter type for the query request. (required)
-   * @param filterId ID for the filter type. For example, division Id (required)
+   * @param filterId ID for the filter type. For example, division or performance profile Id (required)
    * @return OverallBestPoints
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -285,10 +293,10 @@ public class GamificationApi {
   }
 
   /**
-   * Best Points by division
+   * Best Points by division or performance profile
    * 
    * @param filterType Filter type for the query request. (required)
-   * @param filterId ID for the filter type. For example, division Id (required)
+   * @param filterId ID for the filter type. For example, division or performance profile Id (required)
    * @return OverallBestPoints
    * @throws IOException if the request fails to be processed
    */
@@ -306,7 +314,7 @@ public class GamificationApi {
   }
 
   /**
-   * Best Points by division
+   * Best Points by division or performance profile
    * 
    * @param request The request object
    * @return OverallBestPoints
@@ -325,7 +333,7 @@ public class GamificationApi {
   }
 
   /**
-   * Best Points by division
+   * Best Points by division or performance profile
    * 
    * @param request The request object
    * @return the response
@@ -355,7 +363,7 @@ public class GamificationApi {
 
   
   /**
-   * Best Points of the requesting user&#39;s division
+   * Best Points of the requesting user&#39;s current performance profile or division
    * 
    * @return OverallBestPoints
    * @throws ApiException if the request fails on the server
@@ -366,7 +374,7 @@ public class GamificationApi {
   }
 
   /**
-   * Best Points of the requesting user&#39;s division
+   * Best Points of the requesting user&#39;s current performance profile or division
    * 
    * @return OverallBestPoints
    * @throws IOException if the request fails to be processed
@@ -381,7 +389,7 @@ public class GamificationApi {
   }
 
   /**
-   * Best Points of the requesting user&#39;s division
+   * Best Points of the requesting user&#39;s current performance profile or division
    * 
    * @param request The request object
    * @return OverallBestPoints
@@ -400,7 +408,7 @@ public class GamificationApi {
   }
 
   /**
-   * Best Points of the requesting user&#39;s division
+   * Best Points of the requesting user&#39;s current performance profile or division
    * 
    * @param request The request object
    * @return the response
@@ -833,6 +841,263 @@ public class GamificationApi {
 
   
   /**
+   * Performance profile gamified metric by id
+   * 
+   * @param profileId Performance Profile Id (required)
+   * @param metricId Metric Id (required)
+   * @param workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @return Metric
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Metric getGamificationProfileMetric(String profileId, String metricId, LocalDate workday) throws IOException, ApiException {
+    return  getGamificationProfileMetric(createGetGamificationProfileMetricRequest(profileId, metricId, workday));
+  }
+
+  /**
+   * Performance profile gamified metric by id
+   * 
+   * @param profileId Performance Profile Id (required)
+   * @param metricId Metric Id (required)
+   * @param workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @return Metric
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Metric> getGamificationProfileMetricWithHttpInfo(String profileId, String metricId, LocalDate workday) throws IOException {
+    return getGamificationProfileMetric(createGetGamificationProfileMetricRequest(profileId, metricId, workday).withHttpInfo());
+  }
+
+  private GetGamificationProfileMetricRequest createGetGamificationProfileMetricRequest(String profileId, String metricId, LocalDate workday) {
+    return GetGamificationProfileMetricRequest.builder()
+            .withProfileId(profileId)
+    
+            .withMetricId(metricId)
+    
+            .withWorkday(workday)
+    
+            .build();
+  }
+
+  /**
+   * Performance profile gamified metric by id
+   * 
+   * @param request The request object
+   * @return Metric
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Metric getGamificationProfileMetric(GetGamificationProfileMetricRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Metric> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Metric>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Performance profile gamified metric by id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Metric> getGamificationProfileMetric(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Metric>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Metric> response = (ApiResponse<Metric>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Metric> response = (ApiResponse<Metric>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * All gamified metrics for a given performance profile
+   * 
+   * @param profileId Performance Profile Id (required)
+   * @param expand Which fields, if any, to expand. (optional)
+   * @param workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @return GetMetricResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GetMetricResponse getGamificationProfileMetrics(String profileId, List<String> expand, LocalDate workday) throws IOException, ApiException {
+    return  getGamificationProfileMetrics(createGetGamificationProfileMetricsRequest(profileId, expand, workday));
+  }
+
+  /**
+   * All gamified metrics for a given performance profile
+   * 
+   * @param profileId Performance Profile Id (required)
+   * @param expand Which fields, if any, to expand. (optional)
+   * @param workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @return GetMetricResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GetMetricResponse> getGamificationProfileMetricsWithHttpInfo(String profileId, List<String> expand, LocalDate workday) throws IOException {
+    return getGamificationProfileMetrics(createGetGamificationProfileMetricsRequest(profileId, expand, workday).withHttpInfo());
+  }
+
+  private GetGamificationProfileMetricsRequest createGetGamificationProfileMetricsRequest(String profileId, List<String> expand, LocalDate workday) {
+    return GetGamificationProfileMetricsRequest.builder()
+            .withProfileId(profileId)
+    
+            .withExpand(expand)
+    
+            .withWorkday(workday)
+    
+            .build();
+  }
+
+  /**
+   * All gamified metrics for a given performance profile
+   * 
+   * @param request The request object
+   * @return GetMetricResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GetMetricResponse getGamificationProfileMetrics(GetGamificationProfileMetricsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GetMetricResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GetMetricResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * All gamified metrics for a given performance profile
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GetMetricResponse> getGamificationProfileMetrics(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GetMetricResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GetMetricResponse> response = (ApiResponse<GetMetricResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GetMetricResponse> response = (ApiResponse<GetMetricResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * All metrics for a given performance profile with objective details such as order and maxPoints
+   * 
+   * @param profileId Performance Profile Id (required)
+   * @param workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @return GetMetricsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GetMetricsResponse getGamificationProfileMetricsObjectivedetails(String profileId, LocalDate workday) throws IOException, ApiException {
+    return  getGamificationProfileMetricsObjectivedetails(createGetGamificationProfileMetricsObjectivedetailsRequest(profileId, workday));
+  }
+
+  /**
+   * All metrics for a given performance profile with objective details such as order and maxPoints
+   * 
+   * @param profileId Performance Profile Id (required)
+   * @param workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @return GetMetricsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GetMetricsResponse> getGamificationProfileMetricsObjectivedetailsWithHttpInfo(String profileId, LocalDate workday) throws IOException {
+    return getGamificationProfileMetricsObjectivedetails(createGetGamificationProfileMetricsObjectivedetailsRequest(profileId, workday).withHttpInfo());
+  }
+
+  private GetGamificationProfileMetricsObjectivedetailsRequest createGetGamificationProfileMetricsObjectivedetailsRequest(String profileId, LocalDate workday) {
+    return GetGamificationProfileMetricsObjectivedetailsRequest.builder()
+            .withProfileId(profileId)
+    
+            .withWorkday(workday)
+    
+            .build();
+  }
+
+  /**
+   * All metrics for a given performance profile with objective details such as order and maxPoints
+   * 
+   * @param request The request object
+   * @return GetMetricsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GetMetricsResponse getGamificationProfileMetricsObjectivedetails(GetGamificationProfileMetricsObjectivedetailsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GetMetricsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GetMetricsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * All metrics for a given performance profile with objective details such as order and maxPoints
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GetMetricsResponse> getGamificationProfileMetricsObjectivedetails(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GetMetricsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GetMetricsResponse> response = (ApiResponse<GetMetricsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GetMetricsResponse> response = (ApiResponse<GetMetricsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * All performance profiles
    * 
    * @return GetProfilesResponse
@@ -902,6 +1167,168 @@ public class GamificationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<GetProfilesResponse> response = (ApiResponse<GetProfilesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Performance profile of a user
+   * 
+   * @param userId  (required)
+   * @param workday Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @return PerformanceProfile
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PerformanceProfile getGamificationProfilesUser(String userId, LocalDate workday) throws IOException, ApiException {
+    return  getGamificationProfilesUser(createGetGamificationProfilesUserRequest(userId, workday));
+  }
+
+  /**
+   * Performance profile of a user
+   * 
+   * @param userId  (required)
+   * @param workday Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @return PerformanceProfile
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PerformanceProfile> getGamificationProfilesUserWithHttpInfo(String userId, LocalDate workday) throws IOException {
+    return getGamificationProfilesUser(createGetGamificationProfilesUserRequest(userId, workday).withHttpInfo());
+  }
+
+  private GetGamificationProfilesUserRequest createGetGamificationProfilesUserRequest(String userId, LocalDate workday) {
+    return GetGamificationProfilesUserRequest.builder()
+            .withUserId(userId)
+    
+            .withWorkday(workday)
+    
+            .build();
+  }
+
+  /**
+   * Performance profile of a user
+   * 
+   * @param request The request object
+   * @return PerformanceProfile
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PerformanceProfile getGamificationProfilesUser(GetGamificationProfilesUserRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PerformanceProfile> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PerformanceProfile>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Performance profile of a user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PerformanceProfile> getGamificationProfilesUser(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PerformanceProfile>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PerformanceProfile> response = (ApiResponse<PerformanceProfile>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PerformanceProfile> response = (ApiResponse<PerformanceProfile>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Performance profile of the requesting user
+   * 
+   * @param workday Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @return PerformanceProfile
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PerformanceProfile getGamificationProfilesUsersMe(LocalDate workday) throws IOException, ApiException {
+    return  getGamificationProfilesUsersMe(createGetGamificationProfilesUsersMeRequest(workday));
+  }
+
+  /**
+   * Performance profile of the requesting user
+   * 
+   * @param workday Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+   * @return PerformanceProfile
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PerformanceProfile> getGamificationProfilesUsersMeWithHttpInfo(LocalDate workday) throws IOException {
+    return getGamificationProfilesUsersMe(createGetGamificationProfilesUsersMeRequest(workday).withHttpInfo());
+  }
+
+  private GetGamificationProfilesUsersMeRequest createGetGamificationProfilesUsersMeRequest(LocalDate workday) {
+    return GetGamificationProfilesUsersMeRequest.builder()
+            .withWorkday(workday)
+    
+            .build();
+  }
+
+  /**
+   * Performance profile of the requesting user
+   * 
+   * @param request The request object
+   * @return PerformanceProfile
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public PerformanceProfile getGamificationProfilesUsersMe(GetGamificationProfilesUsersMeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<PerformanceProfile> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<PerformanceProfile>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Performance profile of the requesting user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<PerformanceProfile> getGamificationProfilesUsersMe(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<PerformanceProfile>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<PerformanceProfile> response = (ApiResponse<PerformanceProfile>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<PerformanceProfile> response = (ApiResponse<PerformanceProfile>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -2825,6 +3252,89 @@ public class GamificationApi {
 
   
   /**
+   * Creates a gamified metric with a given metric definition and metric objective under in a performance profile
+   * 
+   * @param profileId Performance Profile Id (required)
+   * @param body Metric (required)
+   * @return Metric
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Metric postGamificationProfileMetrics(String profileId, Metric body) throws IOException, ApiException {
+    return  postGamificationProfileMetrics(createPostGamificationProfileMetricsRequest(profileId, body));
+  }
+
+  /**
+   * Creates a gamified metric with a given metric definition and metric objective under in a performance profile
+   * 
+   * @param profileId Performance Profile Id (required)
+   * @param body Metric (required)
+   * @return Metric
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Metric> postGamificationProfileMetricsWithHttpInfo(String profileId, Metric body) throws IOException {
+    return postGamificationProfileMetrics(createPostGamificationProfileMetricsRequest(profileId, body).withHttpInfo());
+  }
+
+  private PostGamificationProfileMetricsRequest createPostGamificationProfileMetricsRequest(String profileId, Metric body) {
+    return PostGamificationProfileMetricsRequest.builder()
+            .withProfileId(profileId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Creates a gamified metric with a given metric definition and metric objective under in a performance profile
+   * 
+   * @param request The request object
+   * @return Metric
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Metric postGamificationProfileMetrics(PostGamificationProfileMetricsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Metric> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Metric>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a gamified metric with a given metric definition and metric objective under in a performance profile
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Metric> postGamificationProfileMetrics(ApiRequest<Metric> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Metric>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Metric> response = (ApiResponse<Metric>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Metric> response = (ApiResponse<Metric>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Updates a metric
    * 
    * @param metricId metric Id (required)
@@ -2989,6 +3499,93 @@ public class GamificationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<PerformanceProfile> response = (ApiResponse<PerformanceProfile>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Updates a metric in performance profile
+   * 
+   * @param profileId Performance Profile Id (required)
+   * @param metricId Metric Id (required)
+   * @param body Metric (required)
+   * @return Metric
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Metric putGamificationProfileMetric(String profileId, String metricId, Metric body) throws IOException, ApiException {
+    return  putGamificationProfileMetric(createPutGamificationProfileMetricRequest(profileId, metricId, body));
+  }
+
+  /**
+   * Updates a metric in performance profile
+   * 
+   * @param profileId Performance Profile Id (required)
+   * @param metricId Metric Id (required)
+   * @param body Metric (required)
+   * @return Metric
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Metric> putGamificationProfileMetricWithHttpInfo(String profileId, String metricId, Metric body) throws IOException {
+    return putGamificationProfileMetric(createPutGamificationProfileMetricRequest(profileId, metricId, body).withHttpInfo());
+  }
+
+  private PutGamificationProfileMetricRequest createPutGamificationProfileMetricRequest(String profileId, String metricId, Metric body) {
+    return PutGamificationProfileMetricRequest.builder()
+            .withProfileId(profileId)
+    
+            .withMetricId(metricId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Updates a metric in performance profile
+   * 
+   * @param request The request object
+   * @return Metric
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Metric putGamificationProfileMetric(PutGamificationProfileMetricRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Metric> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Metric>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates a metric in performance profile
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Metric> putGamificationProfileMetric(ApiRequest<Metric> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Metric>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Metric> response = (ApiResponse<Metric>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Metric> response = (ApiResponse<Metric>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

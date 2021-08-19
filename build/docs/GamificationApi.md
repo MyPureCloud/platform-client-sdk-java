@@ -9,14 +9,19 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- |
 | [**getGamificationLeaderboard**](GamificationApi.html#getGamificationLeaderboard) | Leaderboard of the requesting user&#39;s division or performance profile |
 | [**getGamificationLeaderboardAll**](GamificationApi.html#getGamificationLeaderboardAll) | Leaderboard by filter type |
-| [**getGamificationLeaderboardAllBestpoints**](GamificationApi.html#getGamificationLeaderboardAllBestpoints) | Best Points by division |
-| [**getGamificationLeaderboardBestpoints**](GamificationApi.html#getGamificationLeaderboardBestpoints) | Best Points of the requesting user&#39;s division |
+| [**getGamificationLeaderboardAllBestpoints**](GamificationApi.html#getGamificationLeaderboardAllBestpoints) | Best Points by division or performance profile |
+| [**getGamificationLeaderboardBestpoints**](GamificationApi.html#getGamificationLeaderboardBestpoints) | Best Points of the requesting user&#39;s current performance profile or division |
 | [**getGamificationMetric**](GamificationApi.html#getGamificationMetric) | Gamified metric by id |
 | [**getGamificationMetricdefinition**](GamificationApi.html#getGamificationMetricdefinition) | Metric definition by id |
 | [**getGamificationMetricdefinitions**](GamificationApi.html#getGamificationMetricdefinitions) | All metric definitions |
 | [**getGamificationMetrics**](GamificationApi.html#getGamificationMetrics) | All gamified metrics for a given profile |
 | [**getGamificationProfile**](GamificationApi.html#getGamificationProfile) | Performance profile by id |
+| [**getGamificationProfileMetric**](GamificationApi.html#getGamificationProfileMetric) | Performance profile gamified metric by id |
+| [**getGamificationProfileMetrics**](GamificationApi.html#getGamificationProfileMetrics) | All gamified metrics for a given performance profile |
+| [**getGamificationProfileMetricsObjectivedetails**](GamificationApi.html#getGamificationProfileMetricsObjectivedetails) | All metrics for a given performance profile with objective details such as order and maxPoints |
 | [**getGamificationProfiles**](GamificationApi.html#getGamificationProfiles) | All performance profiles |
+| [**getGamificationProfilesUser**](GamificationApi.html#getGamificationProfilesUser) | Performance profile of a user |
+| [**getGamificationProfilesUsersMe**](GamificationApi.html#getGamificationProfilesUsersMe) | Performance profile of the requesting user |
 | [**getGamificationScorecards**](GamificationApi.html#getGamificationScorecards) | Workday performance metrics of the requesting user |
 | [**getGamificationScorecardsAttendance**](GamificationApi.html#getGamificationScorecardsAttendance) | Attendance status metrics of the requesting user |
 | [**getGamificationScorecardsBestpoints**](GamificationApi.html#getGamificationScorecardsBestpoints) | Best points of the requesting user |
@@ -40,8 +45,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postGamificationMetrics**](GamificationApi.html#postGamificationMetrics) | Creates a gamified metric with a given metric definition and metric objective |
 | [**postGamificationProfileActivate**](GamificationApi.html#postGamificationProfileActivate) | Activate a performance profile |
 | [**postGamificationProfileDeactivate**](GamificationApi.html#postGamificationProfileDeactivate) | Deactivate a performance profile |
+| [**postGamificationProfileMetrics**](GamificationApi.html#postGamificationProfileMetrics) | Creates a gamified metric with a given metric definition and metric objective under in a performance profile |
 | [**putGamificationMetric**](GamificationApi.html#putGamificationMetric) | Updates a metric |
 | [**putGamificationProfile**](GamificationApi.html#putGamificationProfile) | Updates a performance profile |
+| [**putGamificationProfileMetric**](GamificationApi.html#putGamificationProfileMetric) | Updates a metric in performance profile |
 | [**putGamificationStatus**](GamificationApi.html#putGamificationStatus) | Update gamification activation status |
 {: class="table-striped"}
 
@@ -153,7 +160,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
 String filterType = "filterType_example"; // String | Filter type for the query request.
-String filterId = "filterId_example"; // String | ID for the filter type. For example, division Id
+String filterId = "filterId_example"; // String | ID for the filter type. For example, division or performance profile Id
 LocalDate startWorkday = new LocalDate(); // LocalDate | Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 LocalDate endWorkday = new LocalDate(); // LocalDate | End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String metricId = "metricId_example"; // String | Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given.
@@ -172,7 +179,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **filterType** | **String**| Filter type for the query request. |<br />**Values**: PerformanceProfile, Division 
-| **filterId** | **String**| ID for the filter type. For example, division Id | 
+| **filterId** | **String**| ID for the filter type. For example, division or performance profile Id | 
 | **startWorkday** | **LocalDate**| Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **endWorkday** | **LocalDate**| End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | 
 | **metricId** | **String**| Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. | [optional] 
@@ -191,7 +198,7 @@ try {
 
 > [OverallBestPoints](OverallBestPoints.html) getGamificationLeaderboardAllBestpoints(filterType, filterId)
 
-Best Points by division
+Best Points by division or performance profile
 
 
 
@@ -224,7 +231,7 @@ Configuration.setDefaultApiClient(apiClient);
 
 GamificationApi apiInstance = new GamificationApi();
 String filterType = "filterType_example"; // String | Filter type for the query request.
-String filterId = "filterId_example"; // String | ID for the filter type. For example, division Id
+String filterId = "filterId_example"; // String | ID for the filter type. For example, division or performance profile Id
 try {
     OverallBestPoints result = apiInstance.getGamificationLeaderboardAllBestpoints(filterType, filterId);
     System.out.println(result);
@@ -240,7 +247,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **filterType** | **String**| Filter type for the query request. |<br />**Values**: PerformanceProfile, Division 
-| **filterId** | **String**| ID for the filter type. For example, division Id | 
+| **filterId** | **String**| ID for the filter type. For example, division or performance profile Id | 
 {: class="table-striped"}
 
 
@@ -256,7 +263,7 @@ try {
 
 > [OverallBestPoints](OverallBestPoints.html) getGamificationLeaderboardBestpoints()
 
-Best Points of the requesting user&#39;s division
+Best Points of the requesting user&#39;s current performance profile or division
 
 
 
@@ -628,6 +635,211 @@ try {
 
 [**PerformanceProfile**](PerformanceProfile.html)
 
+<a name="getGamificationProfileMetric"></a>
+
+# **getGamificationProfileMetric**
+
+
+
+> [Metric](Metric.html) getGamificationProfileMetric(profileId, metricId, workday)
+
+Performance profile gamified metric by id
+
+
+
+Wraps GET /api/v2/gamification/profiles/{profileId}/metrics/{metricId}  
+
+Requires ANY permissions: 
+
+* gamification:profile:view
+* gamification:leaderboard:view
+* gamification:scorecard:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String profileId = "profileId_example"; // String | Performance Profile Id
+String metricId = "metricId_example"; // String | Metric Id
+LocalDate workday = new LocalDate(); // LocalDate | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+try {
+    Metric result = apiInstance.getGamificationProfileMetric(profileId, metricId, workday);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#getGamificationProfileMetric");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **profileId** | **String**| Performance Profile Id | 
+| **metricId** | **String**| Metric Id | 
+| **workday** | **LocalDate**| The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Metric**](Metric.html)
+
+<a name="getGamificationProfileMetrics"></a>
+
+# **getGamificationProfileMetrics**
+
+
+
+> [GetMetricResponse](GetMetricResponse.html) getGamificationProfileMetrics(profileId, expand, workday)
+
+All gamified metrics for a given performance profile
+
+
+
+Wraps GET /api/v2/gamification/profiles/{profileId}/metrics  
+
+Requires ANY permissions: 
+
+* gamification:profile:view
+* gamification:leaderboard:view
+* gamification:scorecard:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String profileId = "profileId_example"; // String | Performance Profile Id
+List<String> expand = Arrays.asList("expand_example"); // List<String> | Which fields, if any, to expand.
+LocalDate workday = new LocalDate(); // LocalDate | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+try {
+    GetMetricResponse result = apiInstance.getGamificationProfileMetrics(profileId, expand, workday);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#getGamificationProfileMetrics");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **profileId** | **String**| Performance Profile Id | 
+| **expand** | [**List&lt;String&gt;**](String.html)| Which fields, if any, to expand. | [optional]<br />**Values**: objective 
+| **workday** | **LocalDate**| The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GetMetricResponse**](GetMetricResponse.html)
+
+<a name="getGamificationProfileMetricsObjectivedetails"></a>
+
+# **getGamificationProfileMetricsObjectivedetails**
+
+
+
+> [GetMetricsResponse](GetMetricsResponse.html) getGamificationProfileMetricsObjectivedetails(profileId, workday)
+
+All metrics for a given performance profile with objective details such as order and maxPoints
+
+
+
+Wraps GET /api/v2/gamification/profiles/{profileId}/metrics/objectivedetails  
+
+Requires ANY permissions: 
+
+* gamification:profile:view
+* gamification:leaderboard:view
+* gamification:scorecard:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String profileId = "profileId_example"; // String | Performance Profile Id
+LocalDate workday = new LocalDate(); // LocalDate | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+try {
+    GetMetricsResponse result = apiInstance.getGamificationProfileMetricsObjectivedetails(profileId, workday);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#getGamificationProfileMetricsObjectivedetails");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **profileId** | **String**| Performance Profile Id | 
+| **workday** | **LocalDate**| The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**GetMetricsResponse**](GetMetricsResponse.html)
+
 <a name="getGamificationProfiles"></a>
 
 # **getGamificationProfiles**
@@ -686,6 +898,133 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**GetProfilesResponse**](GetProfilesResponse.html)
+
+<a name="getGamificationProfilesUser"></a>
+
+# **getGamificationProfilesUser**
+
+
+
+> [PerformanceProfile](PerformanceProfile.html) getGamificationProfilesUser(userId, workday)
+
+Performance profile of a user
+
+
+
+Wraps GET /api/v2/gamification/profiles/users/{userId}  
+
+Requires ANY permissions: 
+
+* gamification:profile:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String userId = "userId_example"; // String | 
+LocalDate workday = new LocalDate(); // LocalDate | Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+try {
+    PerformanceProfile result = apiInstance.getGamificationProfilesUser(userId, workday);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#getGamificationProfilesUser");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**|  | 
+| **workday** | **LocalDate**| Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PerformanceProfile**](PerformanceProfile.html)
+
+<a name="getGamificationProfilesUsersMe"></a>
+
+# **getGamificationProfilesUsersMe**
+
+
+
+> [PerformanceProfile](PerformanceProfile.html) getGamificationProfilesUsersMe(workday)
+
+Performance profile of the requesting user
+
+
+
+Wraps GET /api/v2/gamification/profiles/users/me  
+
+Requires NO permissions: 
+
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+LocalDate workday = new LocalDate(); // LocalDate | Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+try {
+    PerformanceProfile result = apiInstance.getGamificationProfilesUsersMe(workday);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#getGamificationProfilesUsersMe");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **workday** | **LocalDate**| Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**PerformanceProfile**](PerformanceProfile.html)
 
 <a name="getGamificationScorecards"></a>
 
@@ -2182,6 +2521,71 @@ try {
 
 [**PerformanceProfile**](PerformanceProfile.html)
 
+<a name="postGamificationProfileMetrics"></a>
+
+# **postGamificationProfileMetrics**
+
+
+
+> [Metric](Metric.html) postGamificationProfileMetrics(profileId, body)
+
+Creates a gamified metric with a given metric definition and metric objective under in a performance profile
+
+
+
+Wraps POST /api/v2/gamification/profiles/{profileId}/metrics  
+
+Requires ALL permissions: 
+
+* gamification:profile:update
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String profileId = "profileId_example"; // String | Performance Profile Id
+Metric body = new Metric(); // Metric | Metric
+try {
+    Metric result = apiInstance.postGamificationProfileMetrics(profileId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#postGamificationProfileMetrics");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **profileId** | **String**| Performance Profile Id | 
+| **body** | [**Metric**](Metric.html)| Metric | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Metric**](Metric.html)
+
 <a name="putGamificationMetric"></a>
 
 # **putGamificationMetric**
@@ -2313,6 +2717,73 @@ try {
 ### Return type
 
 [**PerformanceProfile**](PerformanceProfile.html)
+
+<a name="putGamificationProfileMetric"></a>
+
+# **putGamificationProfileMetric**
+
+
+
+> [Metric](Metric.html) putGamificationProfileMetric(profileId, metricId, body)
+
+Updates a metric in performance profile
+
+
+
+Wraps PUT /api/v2/gamification/profiles/{profileId}/metrics/{metricId}  
+
+Requires ALL permissions: 
+
+* gamification:profile:update
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.GamificationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+GamificationApi apiInstance = new GamificationApi();
+String profileId = "profileId_example"; // String | Performance Profile Id
+String metricId = "metricId_example"; // String | Metric Id
+Metric body = new Metric(); // Metric | Metric
+try {
+    Metric result = apiInstance.putGamificationProfileMetric(profileId, metricId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GamificationApi#putGamificationProfileMetric");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **profileId** | **String**| Performance Profile Id | 
+| **metricId** | **String**| Metric Id | 
+| **body** | [**Metric**](Metric.html)| Metric | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Metric**](Metric.html)
 
 <a name="putGamificationStatus"></a>
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.MessageEvaluation;
 import com.mypurecloud.sdk.v2.model.PhoneNumberStatus;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -27,6 +28,7 @@ public class WritableDialerContact  implements Serializable {
   private String id = null;
   private String contactListId = null;
   private Map<String, Object> data = null;
+  private Map<String, MessageEvaluation> latestSmsEvaluations = null;
   private Boolean callable = null;
   private Map<String, PhoneNumberStatus> phoneNumberStatus = null;
 
@@ -86,6 +88,24 @@ public class WritableDialerContact  implements Serializable {
 
   
   /**
+   * A map of SMS records for the contact phone columns.
+   **/
+  public WritableDialerContact latestSmsEvaluations(Map<String, MessageEvaluation> latestSmsEvaluations) {
+    this.latestSmsEvaluations = latestSmsEvaluations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "A map of SMS records for the contact phone columns.")
+  @JsonProperty("latestSmsEvaluations")
+  public Map<String, MessageEvaluation> getLatestSmsEvaluations() {
+    return latestSmsEvaluations;
+  }
+  public void setLatestSmsEvaluations(Map<String, MessageEvaluation> latestSmsEvaluations) {
+    this.latestSmsEvaluations = latestSmsEvaluations;
+  }
+
+  
+  /**
    * Indicates whether or not the contact can be called.
    **/
   public WritableDialerContact callable(Boolean callable) {
@@ -134,13 +154,14 @@ public class WritableDialerContact  implements Serializable {
     return Objects.equals(this.id, writableDialerContact.id) &&
         Objects.equals(this.contactListId, writableDialerContact.contactListId) &&
         Objects.equals(this.data, writableDialerContact.data) &&
+        Objects.equals(this.latestSmsEvaluations, writableDialerContact.latestSmsEvaluations) &&
         Objects.equals(this.callable, writableDialerContact.callable) &&
         Objects.equals(this.phoneNumberStatus, writableDialerContact.phoneNumberStatus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, contactListId, data, callable, phoneNumberStatus);
+    return Objects.hash(id, contactListId, data, latestSmsEvaluations, callable, phoneNumberStatus);
   }
 
   @Override
@@ -151,6 +172,7 @@ public class WritableDialerContact  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    contactListId: ").append(toIndentedString(contactListId)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    latestSmsEvaluations: ").append(toIndentedString(latestSmsEvaluations)).append("\n");
     sb.append("    callable: ").append(toIndentedString(callable)).append("\n");
     sb.append("    phoneNumberStatus: ").append(toIndentedString(phoneNumberStatus)).append("\n");
     sb.append("}");

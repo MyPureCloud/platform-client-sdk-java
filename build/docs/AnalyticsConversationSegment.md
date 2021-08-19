@@ -71,6 +71,7 @@ title: AnalyticsConversationSegment
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ALERT | &quot;alert&quot; |
 | CALLBACK | &quot;callback&quot; |
+| COACHING | &quot;coaching&quot; |
 | CONTACTING | &quot;contacting&quot; |
 | CONVERTING | &quot;converting&quot; |
 | DELAY | &quot;delay&quot; |

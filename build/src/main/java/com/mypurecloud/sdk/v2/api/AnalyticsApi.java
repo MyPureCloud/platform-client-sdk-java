@@ -11,6 +11,7 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ErrorBody;
+import com.mypurecloud.sdk.v2.model.ReportingTurnsResponse;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributes;
 import com.mypurecloud.sdk.v2.model.AnalyticsConversationWithoutAttributesMultiGetResponse;
 import com.mypurecloud.sdk.v2.model.AsyncQueryStatus;
@@ -64,6 +65,7 @@ import com.mypurecloud.sdk.v2.model.UserObservationQuery;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsConversationsDetailsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsReportingScheduleRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteAnalyticsUsersDetailsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetAnalyticsBotflowReportingturnsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetAnalyticsConversationsDetailsJobRequest;
@@ -347,6 +349,101 @@ public class AnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get Reporting Turns.
+   * 
+   * @param botFlowId ID of the bot flow. (required)
+   * @param after The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)
+   * @param pageSize Max number of entities to return. Maximum of 250 (optional, default to 50)
+   * @param actionId Optional action ID to get the reporting turns associated to a particular flow action (optional)
+   * @param sessionId Optional session ID to get the reporting turns for a particular session (optional)
+   * @return ReportingTurnsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ReportingTurnsResponse getAnalyticsBotflowReportingturns(String botFlowId, String after, String pageSize, String actionId, String sessionId) throws IOException, ApiException {
+    return  getAnalyticsBotflowReportingturns(createGetAnalyticsBotflowReportingturnsRequest(botFlowId, after, pageSize, actionId, sessionId));
+  }
+
+  /**
+   * Get Reporting Turns.
+   * 
+   * @param botFlowId ID of the bot flow. (required)
+   * @param after The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)
+   * @param pageSize Max number of entities to return. Maximum of 250 (optional, default to 50)
+   * @param actionId Optional action ID to get the reporting turns associated to a particular flow action (optional)
+   * @param sessionId Optional session ID to get the reporting turns for a particular session (optional)
+   * @return ReportingTurnsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ReportingTurnsResponse> getAnalyticsBotflowReportingturnsWithHttpInfo(String botFlowId, String after, String pageSize, String actionId, String sessionId) throws IOException {
+    return getAnalyticsBotflowReportingturns(createGetAnalyticsBotflowReportingturnsRequest(botFlowId, after, pageSize, actionId, sessionId).withHttpInfo());
+  }
+
+  private GetAnalyticsBotflowReportingturnsRequest createGetAnalyticsBotflowReportingturnsRequest(String botFlowId, String after, String pageSize, String actionId, String sessionId) {
+    return GetAnalyticsBotflowReportingturnsRequest.builder()
+            .withBotFlowId(botFlowId)
+    
+            .withAfter(after)
+    
+            .withPageSize(pageSize)
+    
+            .withActionId(actionId)
+    
+            .withSessionId(sessionId)
+    
+            .build();
+  }
+
+  /**
+   * Get Reporting Turns.
+   * 
+   * @param request The request object
+   * @return ReportingTurnsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ReportingTurnsResponse getAnalyticsBotflowReportingturns(GetAnalyticsBotflowReportingturnsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ReportingTurnsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ReportingTurnsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Reporting Turns.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ReportingTurnsResponse> getAnalyticsBotflowReportingturns(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ReportingTurnsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ReportingTurnsResponse> response = (ApiResponse<ReportingTurnsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ReportingTurnsResponse> response = (ApiResponse<ReportingTurnsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

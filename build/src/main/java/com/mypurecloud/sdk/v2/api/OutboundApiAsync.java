@@ -1192,7 +1192,7 @@ public class OutboundApiAsync {
 
   
   /**
-   * Delete a Rule set.
+   * Delete a Rule Set.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1226,7 +1226,7 @@ public class OutboundApiAsync {
   }
 
   /**
-   * Delete a Rule set.
+   * Delete a Rule Set.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -7196,7 +7196,7 @@ public class OutboundApiAsync {
 
   
   /**
-   * Create a Dialer Call Analysis Response Set.
+   * Create a Rule Set.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -7230,7 +7230,7 @@ public class OutboundApiAsync {
   }
 
   /**
-   * Create a Dialer Call Analysis Response Set.
+   * Create a Rule Set.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -8184,7 +8184,7 @@ public class OutboundApiAsync {
 
   
   /**
-   * Update a RuleSet.
+   * Update a Rule Set.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -8218,7 +8218,7 @@ public class OutboundApiAsync {
   }
 
   /**
-   * Update a RuleSet.
+   * Update a Rule Set.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

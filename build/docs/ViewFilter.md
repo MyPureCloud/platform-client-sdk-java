@@ -137,13 +137,13 @@ title: ViewFilter
 
 | Name | Value |
 | ---- | ----- |
-| UNKNOWN | &quot;unknown&quot; |
 | CALLBACK | &quot;callback&quot; |
 | CHAT | &quot;chat&quot; |
 | COBROWSE | &quot;cobrowse&quot; |
 | EMAIL | &quot;email&quot; |
 | MESSAGE | &quot;message&quot; |
 | SCREENSHARE | &quot;screenshare&quot; |
+| UNKNOWN | &quot;unknown&quot; |
 | VIDEO | &quot;video&quot; |
 | VOICE | &quot;voice&quot; |
 {: class="table table-striped"}

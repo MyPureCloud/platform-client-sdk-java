@@ -133,6 +133,8 @@ title: AuditLogMessage
 | IPALLOWLISTCLEAR | &quot;IpAllowlistClear&quot; |
 | ADDPAIRINGROLE | &quot;AddPairingRole&quot; |
 | ADD | &quot;Add&quot; |
+| ASSIGN | &quot;Assign&quot; |
+| UNASSIGN | &quot;Unassign&quot; |
 {: class="table table-striped"}
 
 

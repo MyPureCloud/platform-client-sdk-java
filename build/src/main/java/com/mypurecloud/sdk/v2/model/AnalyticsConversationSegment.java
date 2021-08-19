@@ -122,6 +122,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ALERT("alert"),
     CALLBACK("callback"),
+    COACHING("coaching"),
     CONTACTING("contacting"),
     CONVERTING("converting"),
     DELAY("delay"),

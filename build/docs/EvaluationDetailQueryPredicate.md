@@ -46,6 +46,7 @@ title: EvaluationDetailQueryPredicate
 | FORMID | &quot;formId&quot; |
 | FORMNAME | &quot;formName&quot; |
 | QUEUEID | &quot;queueId&quot; |
+| RELEASED | &quot;released&quot; |
 | RESCORED | &quot;rescored&quot; |
 | USERID | &quot;userId&quot; |
 {: class="table table-striped"}

@@ -1202,7 +1202,7 @@ public class OutboundApi {
 
   
   /**
-   * Delete a Rule set.
+   * Delete a Rule Set.
    * 
    * @param ruleSetId Rule Set ID (required)
    * @throws ApiException if the request fails on the server
@@ -1213,7 +1213,7 @@ public class OutboundApi {
   }
 
   /**
-   * Delete a Rule set.
+   * Delete a Rule Set.
    * 
    * @param ruleSetId Rule Set ID (required)
    * @throws IOException if the request fails to be processed
@@ -1230,7 +1230,7 @@ public class OutboundApi {
   }
 
   /**
-   * Delete a Rule set.
+   * Delete a Rule Set.
    * 
    * @param request The request object
    * @throws ApiException if the request fails on the server
@@ -1248,7 +1248,7 @@ public class OutboundApi {
   }
 
   /**
-   * Delete a Rule set.
+   * Delete a Rule Set.
    * 
    * @param request The request object
    * @return the response
@@ -8019,7 +8019,7 @@ public class OutboundApi {
 
   
   /**
-   * Create a Dialer Call Analysis Response Set.
+   * Create a Rule Set.
    * 
    * @param body RuleSet (required)
    * @return RuleSet
@@ -8031,7 +8031,7 @@ public class OutboundApi {
   }
 
   /**
-   * Create a Dialer Call Analysis Response Set.
+   * Create a Rule Set.
    * 
    * @param body RuleSet (required)
    * @return RuleSet
@@ -8049,7 +8049,7 @@ public class OutboundApi {
   }
 
   /**
-   * Create a Dialer Call Analysis Response Set.
+   * Create a Rule Set.
    * 
    * @param request The request object
    * @return RuleSet
@@ -8068,7 +8068,7 @@ public class OutboundApi {
   }
 
   /**
-   * Create a Dialer Call Analysis Response Set.
+   * Create a Rule Set.
    * 
    * @param request The request object
    * @return the response
@@ -9098,7 +9098,7 @@ public class OutboundApi {
 
   
   /**
-   * Update a RuleSet.
+   * Update a Rule Set.
    * 
    * @param ruleSetId Rule Set ID (required)
    * @param body RuleSet (required)
@@ -9111,7 +9111,7 @@ public class OutboundApi {
   }
 
   /**
-   * Update a RuleSet.
+   * Update a Rule Set.
    * 
    * @param ruleSetId Rule Set ID (required)
    * @param body RuleSet (required)
@@ -9132,7 +9132,7 @@ public class OutboundApi {
   }
 
   /**
-   * Update a RuleSet.
+   * Update a Rule Set.
    * 
    * @param request The request object
    * @return RuleSet
@@ -9151,7 +9151,7 @@ public class OutboundApi {
   }
 
   /**
-   * Update a RuleSet.
+   * Update a Rule Set.
    * 
    * @param request The request object
    * @return the response

@@ -49,12 +49,15 @@ public class EvaluationAggregationQuery  implements Serializable {
     CALIBRATIONID("calibrationId"),
     CONTEXTID("contextId"),
     CONVERSATIONID("conversationId"),
+    CONVERSATIONSTART("conversationStart"),
     DIVISIONID("divisionId"),
     EVALUATIONCREATEDDATE("evaluationCreatedDate"),
     EVALUATIONID("evaluationId"),
+    EVALUATIONRELEASEDATE("evaluationReleaseDate"),
     EVALUATORID("evaluatorId"),
     FORMID("formId"),
     QUEUEID("queueId"),
+    RELEASED("released"),
     RESCORED("rescored"),
     TEAMID("teamId"),
     USERID("userId");
@@ -157,7 +160,9 @@ public class EvaluationAggregationQuery  implements Serializable {
  @JsonDeserialize(using = AlternateTimeDimensionEnumDeserializer.class)
   public enum AlternateTimeDimensionEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    CONVERSATIONSTART("conversationStart"),
     EVALUATIONCREATEDDATE("evaluationCreatedDate"),
+    EVALUATIONRELEASEDATE("evaluationReleaseDate"),
     EVENTTIME("eventTime");
 
     private String value;

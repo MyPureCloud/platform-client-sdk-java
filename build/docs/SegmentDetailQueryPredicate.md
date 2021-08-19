@@ -47,6 +47,7 @@ title: SegmentDetailQueryPredicate
 | AUTHENTICATED | &quot;authenticated&quot; |
 | CALLBACKNUMBER | &quot;callbackNumber&quot; |
 | CALLBACKSCHEDULEDTIME | &quot;callbackScheduledTime&quot; |
+| COACHEDPARTICIPANTID | &quot;coachedParticipantId&quot; |
 | CONFERENCE | &quot;conference&quot; |
 | DELIVERYSTATUS | &quot;deliveryStatus&quot; |
 | DESTINATIONCONVERSATIONID | &quot;destinationConversationId&quot; |

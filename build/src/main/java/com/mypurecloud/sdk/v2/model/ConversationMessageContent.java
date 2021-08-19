@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ContentGeneric;
 import com.mypurecloud.sdk.v2.model.ConversationContentAttachment;
 import com.mypurecloud.sdk.v2.model.ConversationContentButtonResponse;
 import com.mypurecloud.sdk.v2.model.ConversationContentNotificationTemplate;
@@ -48,7 +49,8 @@ public class ConversationMessageContent  implements Serializable {
     ATTACHMENT("Attachment"),
     QUICKREPLY("QuickReply"),
     NOTIFICATION("Notification"),
-    BUTTONRESPONSE("ButtonResponse");
+    BUTTONRESPONSE("ButtonResponse"),
+    GENERICTEMPLATE("GenericTemplate");
 
     private String value;
 
@@ -80,6 +82,7 @@ public class ConversationMessageContent  implements Serializable {
   private ConversationContentQuickReply quickReply = null;
   private ConversationContentNotificationTemplate template = null;
   private ConversationContentButtonResponse buttonResponse = null;
+  private ContentGeneric generic = null;
 
   
   /**
@@ -172,6 +175,24 @@ public class ConversationMessageContent  implements Serializable {
   }
 
   
+  /**
+   * Generic Template Object
+   **/
+  public ConversationMessageContent generic(ContentGeneric generic) {
+    this.generic = generic;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Generic Template Object")
+  @JsonProperty("generic")
+  public ContentGeneric getGeneric() {
+    return generic;
+  }
+  public void setGeneric(ContentGeneric generic) {
+    this.generic = generic;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -186,12 +207,13 @@ public class ConversationMessageContent  implements Serializable {
         Objects.equals(this.attachment, conversationMessageContent.attachment) &&
         Objects.equals(this.quickReply, conversationMessageContent.quickReply) &&
         Objects.equals(this.template, conversationMessageContent.template) &&
-        Objects.equals(this.buttonResponse, conversationMessageContent.buttonResponse);
+        Objects.equals(this.buttonResponse, conversationMessageContent.buttonResponse) &&
+        Objects.equals(this.generic, conversationMessageContent.generic);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentType, attachment, quickReply, template, buttonResponse);
+    return Objects.hash(contentType, attachment, quickReply, template, buttonResponse, generic);
   }
 
   @Override
@@ -204,6 +226,7 @@ public class ConversationMessageContent  implements Serializable {
     sb.append("    quickReply: ").append(toIndentedString(quickReply)).append("\n");
     sb.append("    template: ").append(toIndentedString(template)).append("\n");
     sb.append("    buttonResponse: ").append(toIndentedString(buttonResponse)).append("\n");
+    sb.append("    generic: ").append(toIndentedString(generic)).append("\n");
     sb.append("}");
     return sb.toString();
   }

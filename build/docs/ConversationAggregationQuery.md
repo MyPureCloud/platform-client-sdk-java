@@ -132,6 +132,8 @@ title: ConversationAggregationQuery
 | TANSWERED | &quot;tAnswered&quot; |
 | TCALLBACK | &quot;tCallback&quot; |
 | TCALLBACKCOMPLETE | &quot;tCallbackComplete&quot; |
+| TCOACHING | &quot;tCoaching&quot; |
+| TCOACHINGCOMPLETE | &quot;tCoachingComplete&quot; |
 | TCONTACTING | &quot;tContacting&quot; |
 | TDIALING | &quot;tDialing&quot; |
 | TFLOWOUT | &quot;tFlowOut&quot; |
@@ -140,6 +142,7 @@ title: ConversationAggregationQuery
 | THELDCOMPLETE | &quot;tHeldComplete&quot; |
 | TIVR | &quot;tIvr&quot; |
 | TMONITORING | &quot;tMonitoring&quot; |
+| TMONITORINGCOMPLETE | &quot;tMonitoringComplete&quot; |
 | TNOTRESPONDING | &quot;tNotResponding&quot; |
 | TSHORTABANDON | &quot;tShortAbandon&quot; |
 | TTALK | &quot;tTalk&quot; |

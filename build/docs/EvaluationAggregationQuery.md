@@ -29,12 +29,15 @@ title: EvaluationAggregationQuery
 | CALIBRATIONID | &quot;calibrationId&quot; |
 | CONTEXTID | &quot;contextId&quot; |
 | CONVERSATIONID | &quot;conversationId&quot; |
+| CONVERSATIONSTART | &quot;conversationStart&quot; |
 | DIVISIONID | &quot;divisionId&quot; |
 | EVALUATIONCREATEDDATE | &quot;evaluationCreatedDate&quot; |
 | EVALUATIONID | &quot;evaluationId&quot; |
+| EVALUATIONRELEASEDATE | &quot;evaluationReleaseDate&quot; |
 | EVALUATORID | &quot;evaluatorId&quot; |
 | FORMID | &quot;formId&quot; |
 | QUEUEID | &quot;queueId&quot; |
+| RELEASED | &quot;released&quot; |
 | RESCORED | &quot;rescored&quot; |
 | TEAMID | &quot;teamId&quot; |
 | USERID | &quot;userId&quot; |
@@ -62,7 +65,9 @@ title: EvaluationAggregationQuery
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| CONVERSATIONSTART | &quot;conversationStart&quot; |
 | EVALUATIONCREATEDDATE | &quot;evaluationCreatedDate&quot; |
+| EVALUATIONRELEASEDATE | &quot;evaluationReleaseDate&quot; |
 | EVENTTIME | &quot;eventTime&quot; |
 {: class="table table-striped"}
 

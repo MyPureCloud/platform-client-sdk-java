@@ -14,6 +14,8 @@ title: RecordingJob
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Date when the job was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **totalConversations** | <!----><!---->**Integer**<!----> | Total number of conversations affected. |  [optional] |
 | **totalRecordings** | <!----><!---->**Integer**<!----> | Total number of recordings affected. |  [optional] |
+| **totalSkippedRecordings** | <!----><!---->**Integer**<!----> | Total number of recordings that have been skipped. |  [optional] |
+| **totalFailedRecordings** | <!----><!---->**Integer**<!----> | Total number of recordings that the bulk job failed to process. |  [optional] |
 | **totalProcessedRecordings** | <!----><!---->**Integer**<!----> | Total number of recordings have been processed. |  [optional] |
 | **percentProgress** | <!----><!---->**Integer**<!----> | Progress in percentage based on the number of recordings |  [optional] |
 | **errorMessage** | <!----><!---->**String**<!----> | Error occurred during the job execution |  [optional] |

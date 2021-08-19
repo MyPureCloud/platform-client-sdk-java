@@ -30,6 +30,7 @@ public class AnalyticsEvaluation  implements Serializable {
   private String formId = null;
   private String formName = null;
   private String queueId = null;
+  private Boolean released = null;
   private Boolean rescored = null;
   private String userId = null;
   private Long oTotalCriticalScore = null;
@@ -199,6 +200,24 @@ public class AnalyticsEvaluation  implements Serializable {
 
   
   /**
+   * Whether the evaluation has been released
+   **/
+  public AnalyticsEvaluation released(Boolean released) {
+    this.released = released;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether the evaluation has been released")
+  @JsonProperty("released")
+  public Boolean getReleased() {
+    return released;
+  }
+  public void setReleased(Boolean released) {
+    this.released = released;
+  }
+
+  
+  /**
    * Whether the evaluation has been rescored at least once
    **/
   public AnalyticsEvaluation rescored(Boolean rescored) {
@@ -287,6 +306,7 @@ public class AnalyticsEvaluation  implements Serializable {
         Objects.equals(this.formId, analyticsEvaluation.formId) &&
         Objects.equals(this.formName, analyticsEvaluation.formName) &&
         Objects.equals(this.queueId, analyticsEvaluation.queueId) &&
+        Objects.equals(this.released, analyticsEvaluation.released) &&
         Objects.equals(this.rescored, analyticsEvaluation.rescored) &&
         Objects.equals(this.userId, analyticsEvaluation.userId) &&
         Objects.equals(this.oTotalCriticalScore, analyticsEvaluation.oTotalCriticalScore) &&
@@ -295,7 +315,7 @@ public class AnalyticsEvaluation  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(calibrationId, contextId, deleted, evaluationId, evaluatorId, eventTime, formId, formName, queueId, rescored, userId, oTotalCriticalScore, oTotalScore);
+    return Objects.hash(calibrationId, contextId, deleted, evaluationId, evaluatorId, eventTime, formId, formName, queueId, released, rescored, userId, oTotalCriticalScore, oTotalScore);
   }
 
   @Override
@@ -312,6 +332,7 @@ public class AnalyticsEvaluation  implements Serializable {
     sb.append("    formId: ").append(toIndentedString(formId)).append("\n");
     sb.append("    formName: ").append(toIndentedString(formName)).append("\n");
     sb.append("    queueId: ").append(toIndentedString(queueId)).append("\n");
+    sb.append("    released: ").append(toIndentedString(released)).append("\n");
     sb.append("    rescored: ").append(toIndentedString(rescored)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    oTotalCriticalScore: ").append(toIndentedString(oTotalCriticalScore)).append("\n");
