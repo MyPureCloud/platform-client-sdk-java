@@ -53,6 +53,7 @@ title: AuditQueryRequest
 | WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; |
 | MESSAGING | &quot;Messaging&quot; |
 | SUPPORTABILITY | &quot;Supportability&quot; |
+| CALLBACK | &quot;Callback&quot; |
 {: class="table table-striped"}
 
 

@@ -47,6 +47,7 @@ public class MetricDefinition  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NONE("None"),
     PERCENT("Percent"),
+    CURRENCY("Currency"),
     SECONDS("Seconds"),
     NUMBER("Number"),
     ATTENDANCESTATUS("AttendanceStatus"),

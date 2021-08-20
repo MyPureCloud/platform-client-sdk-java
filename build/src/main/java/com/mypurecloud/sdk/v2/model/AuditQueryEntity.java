@@ -176,7 +176,8 @@ public class AuditQueryEntity  implements Serializable {
     WORKPLAN("WorkPlan"),
     WORKSPACE("Workspace"),
     WRAPUPCODE("WrapupCode"),
-    WRAPUPCODEMAPPING("WrapUpCodeMapping");
+    WRAPUPCODEMAPPING("WrapUpCodeMapping"),
+    PARTICIPANT("Participant");
 
     private String value;
 
@@ -284,7 +285,10 @@ public class AuditQueryEntity  implements Serializable {
     ADDPAIRINGROLE("AddPairingRole"),
     ADD("Add"),
     ASSIGN("Assign"),
-    UNASSIGN("Unassign");
+    UNASSIGN("Unassign"),
+    REASSIGN("Reassign"),
+    RESCHEDULE("Reschedule"),
+    CANCEL("Cancel");
 
     private String value;
 

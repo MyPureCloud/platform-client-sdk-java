@@ -11,6 +11,7 @@ title: Metric
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> | The name of this metric |  |
 | **metricDefinitionId** | <!----><!---->**String**<!----> | The id of associated metric definition |  [optional] |
+| **externalMetricDefinitionId** | <!----><!---->**String**<!----> | The id of associated external metric definition |  [optional] |
 | **objective** | <!----><!---->[**Objective**](Objective.html)<!----> | Associated objective for this metric |  [optional] |
 | **performanceProfileId** | <!----><!---->**String**<!----> | Performance profile id of this metric |  [optional] |
 | **linkedMetric** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | The linked metric entity reference |  [optional] |

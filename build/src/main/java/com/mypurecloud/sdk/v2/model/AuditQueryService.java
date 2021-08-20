@@ -73,7 +73,8 @@ public class AuditQueryService  implements Serializable {
     WEBHOOKS("Webhooks"),
     WORKFORCEMANAGEMENT("WorkforceManagement"),
     MESSAGING("Messaging"),
-    SUPPORTABILITY("Supportability");
+    SUPPORTABILITY("Supportability"),
+    CALLBACK("Callback");
 
     private String value;
 

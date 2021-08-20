@@ -200,6 +200,7 @@ public class Evaluation  implements Serializable {
   private ResourceTypeEnum resourceType = null;
   private Boolean redacted = null;
   private Boolean isScoringIndex = null;
+  private List<String> authorizedActions = new ArrayList<String>();
   private String selfUri = null;
 
   
@@ -596,6 +597,24 @@ public class Evaluation  implements Serializable {
   }
 
   
+  /**
+   * List of user authorized actions on evaluation. Possible values: edit, editScore, editAgentSignoff, delete, viewAudit
+   **/
+  public Evaluation authorizedActions(List<String> authorizedActions) {
+    this.authorizedActions = authorizedActions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of user authorized actions on evaluation. Possible values: edit, editScore, editAgentSignoff, delete, viewAudit")
+  @JsonProperty("authorizedActions")
+  public List<String> getAuthorizedActions() {
+    return authorizedActions;
+  }
+  public void setAuthorizedActions(List<String> authorizedActions) {
+    this.authorizedActions = authorizedActions;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -636,12 +655,13 @@ public class Evaluation  implements Serializable {
         Objects.equals(this.resourceType, evaluation.resourceType) &&
         Objects.equals(this.redacted, evaluation.redacted) &&
         Objects.equals(this.isScoringIndex, evaluation.isScoringIndex) &&
+        Objects.equals(this.authorizedActions, evaluation.authorizedActions) &&
         Objects.equals(this.selfUri, evaluation.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, releaseDate, assignedDate, changedDate, queue, mediaType, rescore, conversationDate, conversationEndDate, neverRelease, resourceId, resourceType, redacted, isScoringIndex, selfUri);
+    return Objects.hash(id, name, conversation, evaluationForm, evaluator, agent, calibration, status, answers, agentHasRead, releaseDate, assignedDate, changedDate, queue, mediaType, rescore, conversationDate, conversationEndDate, neverRelease, resourceId, resourceType, redacted, isScoringIndex, authorizedActions, selfUri);
   }
 
   @Override
@@ -672,6 +692,7 @@ public class Evaluation  implements Serializable {
     sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
     sb.append("    redacted: ").append(toIndentedString(redacted)).append("\n");
     sb.append("    isScoringIndex: ").append(toIndentedString(isScoringIndex)).append("\n");
+    sb.append("    authorizedActions: ").append(toIndentedString(authorizedActions)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

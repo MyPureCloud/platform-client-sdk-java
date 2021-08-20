@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.Division;
+import com.mypurecloud.sdk.v2.model.WritableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -24,7 +24,7 @@ public class Team  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private Division division = null;
+  private WritableDivision division = null;
   private String description = null;
   private Date dateModified = null;
   private Long memberCount = null;
@@ -59,17 +59,17 @@ public class Team  implements Serializable {
   /**
    * The division to which this entity belongs.
    **/
-  public Team division(Division division) {
+  public Team division(WritableDivision division) {
     this.division = division;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
   @JsonProperty("division")
-  public Division getDivision() {
+  public WritableDivision getDivision() {
     return division;
   }
-  public void setDivision(Division division) {
+  public void setDivision(WritableDivision division) {
     this.division = division;
   }
 

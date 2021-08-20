@@ -29,6 +29,7 @@ title: MetricDefinition
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NONE | &quot;None&quot; |
 | PERCENT | &quot;Percent&quot; |
+| CURRENCY | &quot;Currency&quot; |
 | SECONDS | &quot;Seconds&quot; |
 | NUMBER | &quot;Number&quot; |
 | ATTENDANCESTATUS | &quot;AttendanceStatus&quot; |

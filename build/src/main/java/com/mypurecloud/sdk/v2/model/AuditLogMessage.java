@@ -84,7 +84,8 @@ public class AuditLogMessage  implements Serializable {
     WEBHOOKS("Webhooks"),
     WORKFORCEMANAGEMENT("WorkforceManagement"),
     MESSAGING("Messaging"),
-    SUPPORTABILITY("Supportability");
+    SUPPORTABILITY("Supportability"),
+    CALLBACK("Callback");
 
     private String value;
 
@@ -195,7 +196,10 @@ public class AuditLogMessage  implements Serializable {
     ADDPAIRINGROLE("AddPairingRole"),
     ADD("Add"),
     ASSIGN("Assign"),
-    UNASSIGN("Unassign");
+    UNASSIGN("Unassign"),
+    REASSIGN("Reassign"),
+    RESCHEDULE("Reschedule"),
+    CANCEL("Cancel");
 
     private String value;
 
@@ -377,7 +381,8 @@ public class AuditLogMessage  implements Serializable {
     WORKPLAN("WorkPlan"),
     WORKSPACE("Workspace"),
     WRAPUPCODE("WrapupCode"),
-    WRAPUPCODEMAPPING("WrapUpCodeMapping");
+    WRAPUPCODEMAPPING("WrapUpCodeMapping"),
+    PARTICIPANT("Participant");
 
     private String value;
 

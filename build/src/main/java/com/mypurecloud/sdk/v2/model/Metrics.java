@@ -26,6 +26,7 @@ public class Metrics  implements Serializable {
   private Integer order = null;
   private String metricDefinitionName = null;
   private String metricDefinitionId = null;
+  private String externalMetricDefinitionId = null;
 
   private static class UnitTypeEnumDeserializer extends StdDeserializer<UnitTypeEnum> {
     public UnitTypeEnumDeserializer() {
@@ -47,6 +48,7 @@ public class Metrics  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NONE("None"),
     PERCENT("Percent"),
+    CURRENCY("Currency"),
     SECONDS("Seconds"),
     NUMBER("Number"),
     ATTENDANCESTATUS("AttendanceStatus"),
@@ -82,6 +84,8 @@ public class Metrics  implements Serializable {
   private String templateName = null;
   private Integer maxPoints = null;
   private String performanceProfileId = null;
+  private String unitDefinition = null;
+  private Integer precision = null;
   private String selfUri = null;
 
   
@@ -160,6 +164,24 @@ public class Metrics  implements Serializable {
   }
   public void setMetricDefinitionId(String metricDefinitionId) {
     this.metricDefinitionId = metricDefinitionId;
+  }
+
+  
+  /**
+   * The id of associated external metric definition
+   **/
+  public Metrics externalMetricDefinitionId(String externalMetricDefinitionId) {
+    this.externalMetricDefinitionId = externalMetricDefinitionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The id of associated external metric definition")
+  @JsonProperty("externalMetricDefinitionId")
+  public String getExternalMetricDefinitionId() {
+    return externalMetricDefinitionId;
+  }
+  public void setExternalMetricDefinitionId(String externalMetricDefinitionId) {
+    this.externalMetricDefinitionId = externalMetricDefinitionId;
   }
 
   
@@ -253,6 +275,20 @@ public class Metrics  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "Unit definition of linked external metric")
+  @JsonProperty("unitDefinition")
+  public String getUnitDefinition() {
+    return unitDefinition;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "Precision of linked external metric")
+  @JsonProperty("precision")
+  public Integer getPrecision() {
+    return precision;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -275,17 +311,20 @@ public class Metrics  implements Serializable {
         Objects.equals(this.order, metrics.order) &&
         Objects.equals(this.metricDefinitionName, metrics.metricDefinitionName) &&
         Objects.equals(this.metricDefinitionId, metrics.metricDefinitionId) &&
+        Objects.equals(this.externalMetricDefinitionId, metrics.externalMetricDefinitionId) &&
         Objects.equals(this.unitType, metrics.unitType) &&
         Objects.equals(this.enabled, metrics.enabled) &&
         Objects.equals(this.templateName, metrics.templateName) &&
         Objects.equals(this.maxPoints, metrics.maxPoints) &&
         Objects.equals(this.performanceProfileId, metrics.performanceProfileId) &&
+        Objects.equals(this.unitDefinition, metrics.unitDefinition) &&
+        Objects.equals(this.precision, metrics.precision) &&
         Objects.equals(this.selfUri, metrics.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, order, metricDefinitionName, metricDefinitionId, unitType, enabled, templateName, maxPoints, performanceProfileId, selfUri);
+    return Objects.hash(id, name, order, metricDefinitionName, metricDefinitionId, externalMetricDefinitionId, unitType, enabled, templateName, maxPoints, performanceProfileId, unitDefinition, precision, selfUri);
   }
 
   @Override
@@ -298,11 +337,14 @@ public class Metrics  implements Serializable {
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    metricDefinitionName: ").append(toIndentedString(metricDefinitionName)).append("\n");
     sb.append("    metricDefinitionId: ").append(toIndentedString(metricDefinitionId)).append("\n");
+    sb.append("    externalMetricDefinitionId: ").append(toIndentedString(externalMetricDefinitionId)).append("\n");
     sb.append("    unitType: ").append(toIndentedString(unitType)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
     sb.append("    maxPoints: ").append(toIndentedString(maxPoints)).append("\n");
     sb.append("    performanceProfileId: ").append(toIndentedString(performanceProfileId)).append("\n");
+    sb.append("    unitDefinition: ").append(toIndentedString(unitDefinition)).append("\n");
+    sb.append("    precision: ").append(toIndentedString(precision)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

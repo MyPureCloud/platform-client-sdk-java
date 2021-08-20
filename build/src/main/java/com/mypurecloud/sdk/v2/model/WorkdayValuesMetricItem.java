@@ -48,6 +48,7 @@ public class WorkdayValuesMetricItem  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     NONE("None"),
     PERCENT("Percent"),
+    CURRENCY("Currency"),
     SECONDS("Seconds"),
     NUMBER("Number"),
     ATTENDANCESTATUS("AttendanceStatus"),

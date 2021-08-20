@@ -155,6 +155,7 @@ title: AuditQueryEntity
 | WORKSPACE | &quot;Workspace&quot; |
 | WRAPUPCODE | &quot;WrapupCode&quot; |
 | WRAPUPCODEMAPPING | &quot;WrapUpCodeMapping&quot; |
+| PARTICIPANT | &quot;Participant&quot; |
 {: class="table table-striped"}
 
 
@@ -227,6 +228,9 @@ title: AuditQueryEntity
 | ADD | &quot;Add&quot; |
 | ASSIGN | &quot;Assign&quot; |
 | UNASSIGN | &quot;Unassign&quot; |
+| REASSIGN | &quot;Reassign&quot; |
+| RESCHEDULE | &quot;Reschedule&quot; |
+| CANCEL | &quot;Cancel&quot; |
 {: class="table table-striped"}
 
 

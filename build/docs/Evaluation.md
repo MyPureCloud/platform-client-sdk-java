@@ -31,6 +31,7 @@ title: Evaluation
 | **resourceType** | [**ResourceTypeEnum**](#ResourceTypeEnum)<!----> | The type of resource. Only used for email evaluations. Will be null for evaluations on all other resources. |  [optional] |
 | **redacted** | <!----><!---->**Boolean**<!----> | Is only true when the user making the request does not have sufficient permissions to see evaluation |  [optional] |
 | **isScoringIndex** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **authorizedActions** | <!----><!---->**List&lt;String&gt;**<!----> | List of user authorized actions on evaluation. Possible values: edit, editScore, editAgentSignoff, delete, viewAudit |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 

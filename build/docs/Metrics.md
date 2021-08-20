@@ -13,11 +13,14 @@ title: Metrics
 | **order** | <!----><!---->**Integer**<!----> | The order of metric within a performance profile |  [optional] |
 | **metricDefinitionName** | <!----><!---->**String**<!----> | The name of associated metric definition |  [optional] |
 | **metricDefinitionId** | <!----><!---->**String**<!----> | The id of associated metric definition |  [optional] |
+| **externalMetricDefinitionId** | <!----><!---->**String**<!----> | The id of associated external metric definition |  [optional] |
 | **unitType** | [**UnitTypeEnum**](#UnitTypeEnum)<!----> | Corresponding unit type for this metric |  [optional] |
 | **enabled** | <!----><!---->**Boolean**<!----> | A flag for whether this metric is enabled for a performance profile |  [optional] |
 | **templateName** | <!----><!---->**String**<!----> | The name of associated objective template |  [optional] |
 | **maxPoints** | <!----><!---->**Integer**<!----> | Achievable maximum points for this metric |  [optional] |
 | **performanceProfileId** | <!----><!---->**String**<!----> | Performance profile id of this metric |  [optional] |
+| **unitDefinition** | <!----><!---->**String**<!----> | Unit definition of linked external metric |  [optional] |
+| **precision** | <!----><!---->**Integer**<!----> | Precision of linked external metric |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
@@ -31,6 +34,7 @@ title: Metrics
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | NONE | &quot;None&quot; |
 | PERCENT | &quot;Percent&quot; |
+| CURRENCY | &quot;Currency&quot; |
 | SECONDS | &quot;Seconds&quot; |
 | NUMBER | &quot;Number&quot; |
 | ATTENDANCESTATUS | &quot;AttendanceStatus&quot; |

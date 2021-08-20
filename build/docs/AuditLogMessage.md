@@ -62,6 +62,7 @@ title: AuditLogMessage
 | WORKFORCEMANAGEMENT | &quot;WorkforceManagement&quot; |
 | MESSAGING | &quot;Messaging&quot; |
 | SUPPORTABILITY | &quot;Supportability&quot; |
+| CALLBACK | &quot;Callback&quot; |
 {: class="table table-striped"}
 
 
@@ -135,6 +136,9 @@ title: AuditLogMessage
 | ADD | &quot;Add&quot; |
 | ASSIGN | &quot;Assign&quot; |
 | UNASSIGN | &quot;Unassign&quot; |
+| REASSIGN | &quot;Reassign&quot; |
+| RESCHEDULE | &quot;Reschedule&quot; |
+| CANCEL | &quot;Cancel&quot; |
 {: class="table table-striped"}
 
 
@@ -280,6 +284,7 @@ title: AuditLogMessage
 | WORKSPACE | &quot;Workspace&quot; |
 | WRAPUPCODE | &quot;WrapupCode&quot; |
 | WRAPUPCODEMAPPING | &quot;WrapUpCodeMapping&quot; |
+| PARTICIPANT | &quot;Participant&quot; |
 {: class="table table-striped"}
 
 

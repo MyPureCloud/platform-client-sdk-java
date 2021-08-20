@@ -28,6 +28,7 @@ public class Metric  implements Serializable {
   private String id = null;
   private String name = null;
   private String metricDefinitionId = null;
+  private String externalMetricDefinitionId = null;
   private Objective objective = null;
   private String performanceProfileId = null;
   private AddressableEntityRef linkedMetric = null;
@@ -77,6 +78,24 @@ public class Metric  implements Serializable {
   }
   public void setMetricDefinitionId(String metricDefinitionId) {
     this.metricDefinitionId = metricDefinitionId;
+  }
+
+  
+  /**
+   * The id of associated external metric definition
+   **/
+  public Metric externalMetricDefinitionId(String externalMetricDefinitionId) {
+    this.externalMetricDefinitionId = externalMetricDefinitionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The id of associated external metric definition")
+  @JsonProperty("externalMetricDefinitionId")
+  public String getExternalMetricDefinitionId() {
+    return externalMetricDefinitionId;
+  }
+  public void setExternalMetricDefinitionId(String externalMetricDefinitionId) {
+    this.externalMetricDefinitionId = externalMetricDefinitionId;
   }
 
   
@@ -186,6 +205,7 @@ public class Metric  implements Serializable {
     return Objects.equals(this.id, metric.id) &&
         Objects.equals(this.name, metric.name) &&
         Objects.equals(this.metricDefinitionId, metric.metricDefinitionId) &&
+        Objects.equals(this.externalMetricDefinitionId, metric.externalMetricDefinitionId) &&
         Objects.equals(this.objective, metric.objective) &&
         Objects.equals(this.performanceProfileId, metric.performanceProfileId) &&
         Objects.equals(this.linkedMetric, metric.linkedMetric) &&
@@ -197,7 +217,7 @@ public class Metric  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, metricDefinitionId, objective, performanceProfileId, linkedMetric, dateCreated, dateUnlinked, sourcePerformanceProfile, selfUri);
+    return Objects.hash(id, name, metricDefinitionId, externalMetricDefinitionId, objective, performanceProfileId, linkedMetric, dateCreated, dateUnlinked, sourcePerformanceProfile, selfUri);
   }
 
   @Override
@@ -208,6 +228,7 @@ public class Metric  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    metricDefinitionId: ").append(toIndentedString(metricDefinitionId)).append("\n");
+    sb.append("    externalMetricDefinitionId: ").append(toIndentedString(externalMetricDefinitionId)).append("\n");
     sb.append("    objective: ").append(toIndentedString(objective)).append("\n");
     sb.append("    performanceProfileId: ").append(toIndentedString(performanceProfileId)).append("\n");
     sb.append("    linkedMetric: ").append(toIndentedString(linkedMetric)).append("\n");
