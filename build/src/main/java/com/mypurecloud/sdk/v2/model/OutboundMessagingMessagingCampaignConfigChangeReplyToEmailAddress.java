@@ -22,7 +22,7 @@ import java.io.Serializable;
 public class OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress  implements Serializable {
   
   private OutboundMessagingMessagingCampaignConfigChangeUriReference domain = null;
-  private OutboundMessagingMessagingCampaignConfigChangeUriReference routeId = null;
+  private OutboundMessagingMessagingCampaignConfigChangeUriReference route = null;
 
   
   /**
@@ -44,18 +44,18 @@ public class OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress  
   
   /**
    **/
-  public OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress routeId(OutboundMessagingMessagingCampaignConfigChangeUriReference routeId) {
-    this.routeId = routeId;
+  public OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress route(OutboundMessagingMessagingCampaignConfigChangeUriReference route) {
+    this.route = route;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("routeId")
-  public OutboundMessagingMessagingCampaignConfigChangeUriReference getRouteId() {
-    return routeId;
+  @JsonProperty("route")
+  public OutboundMessagingMessagingCampaignConfigChangeUriReference getRoute() {
+    return route;
   }
-  public void setRouteId(OutboundMessagingMessagingCampaignConfigChangeUriReference routeId) {
-    this.routeId = routeId;
+  public void setRoute(OutboundMessagingMessagingCampaignConfigChangeUriReference route) {
+    this.route = route;
   }
 
   
@@ -70,12 +70,12 @@ public class OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress  
     }
     OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress outboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress = (OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress) o;
     return Objects.equals(this.domain, outboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress.domain) &&
-        Objects.equals(this.routeId, outboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress.routeId);
+        Objects.equals(this.route, outboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress.route);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(domain, routeId);
+    return Objects.hash(domain, route);
   }
 
   @Override
@@ -84,7 +84,7 @@ public class OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress  
     sb.append("class OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress {\n");
     
     sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
-    sb.append("    routeId: ").append(toIndentedString(routeId)).append("\n");
+    sb.append("    route: ").append(toIndentedString(route)).append("\n");
     sb.append("}");
     return sb.toString();
   }

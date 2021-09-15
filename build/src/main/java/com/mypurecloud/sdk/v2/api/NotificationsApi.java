@@ -365,24 +365,22 @@ public class NotificationsApi {
   
   /**
    * Verify a channel still exists and is valid
-   * 
+   * Returns a 200 OK if channel exists, and a 404 Not Found if it doesn&#39;t
    * @param channelId Channel ID (required)
-   * @return Boolean
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Boolean headNotificationsChannel(String channelId) throws IOException, ApiException {
-    return  headNotificationsChannel(createHeadNotificationsChannelRequest(channelId));
+  public void headNotificationsChannel(String channelId) throws IOException, ApiException {
+     headNotificationsChannel(createHeadNotificationsChannelRequest(channelId));
   }
 
   /**
    * Verify a channel still exists and is valid
-   * 
+   * Returns a 200 OK if channel exists, and a 404 Not Found if it doesn&#39;t
    * @param channelId Channel ID (required)
-   * @return Boolean
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Boolean> headNotificationsChannelWithHttpInfo(String channelId) throws IOException {
+  public ApiResponse<Void> headNotificationsChannelWithHttpInfo(String channelId) throws IOException {
     return headNotificationsChannel(createHeadNotificationsChannelRequest(channelId).withHttpInfo());
   }
 
@@ -395,37 +393,36 @@ public class NotificationsApi {
 
   /**
    * Verify a channel still exists and is valid
-   * 
+   * Returns a 200 OK if channel exists, and a 404 Not Found if it doesn&#39;t
    * @param request The request object
-   * @return Boolean
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Boolean headNotificationsChannel(HeadNotificationsChannelRequest request) throws IOException, ApiException {
+  public void headNotificationsChannel(HeadNotificationsChannelRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Boolean> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Boolean>() {});
-      return response.getBody();
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
+      
     }
   }
 
   /**
    * Verify a channel still exists and is valid
-   * 
+   * Returns a 200 OK if channel exists, and a 404 Not Found if it doesn&#39;t
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Boolean> headNotificationsChannel(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<Void> headNotificationsChannel(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<Boolean>() {});
+      return pcapiClient.invoke(request, null);
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Boolean> response = (ApiResponse<Boolean>)(ApiResponse<?>)exception;
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -436,7 +433,7 @@ public class NotificationsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Boolean> response = (ApiResponse<Boolean>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

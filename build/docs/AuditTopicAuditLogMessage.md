@@ -34,12 +34,14 @@ title: AuditTopicAuditLogMessage
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ARCHITECT | &quot;Architect&quot; |
+| ANALYTICSREPORTING | &quot;AnalyticsReporting&quot; |
 | CONTACTCENTER | &quot;ContactCenter&quot; |
 | CONTENTMANAGEMENT | &quot;ContentManagement&quot; |
 | EMPLOYEEPERFORMANCE | &quot;EmployeePerformance&quot; |
 | GAMIFICATION | &quot;Gamification&quot; |
 | GROUPS | &quot;Groups&quot; |
 | LANGUAGEUNDERSTANDING | &quot;LanguageUnderstanding&quot; |
+| LEARNING | &quot;Learning&quot; |
 | OUTBOUND | &quot;Outbound&quot; |
 | PEOPLEPERMISSIONS | &quot;PeoplePermissions&quot; |
 | PREDICTIVEENGAGEMENT | &quot;PredictiveEngagement&quot; |
@@ -102,6 +104,8 @@ title: AuditTopicAuditLogMessage
 | RECYCLE | &quot;Recycle&quot; |
 | PURGE | &quot;Purge&quot; |
 | PROCESSED | &quot;Processed&quot; |
+| ASSIGN | &quot;Assign&quot; |
+| UNASSIGN | &quot;Unassign&quot; |
 {: class="table table-striped"}
 
 
@@ -115,6 +119,7 @@ title: AuditTopicAuditLogMessage
 | ACCESSTOKEN | &quot;AccessToken&quot; |
 | ACTIONMAP | &quot;ActionMap&quot; |
 | ACTIONTEMPLATE | &quot;ActionTemplate&quot; |
+| ASSIGNMENT | &quot;Assignment&quot; |
 | ATTEMPTLIMITS | &quot;AttemptLimits&quot; |
 | AUTHORGANIZATION | &quot;AuthOrganization&quot; |
 | AUTHUSER | &quot;AuthUser&quot; |
@@ -129,16 +134,19 @@ title: AuditTopicAuditLogMessage
 | CONFIGURATIONVERSION | &quot;ConfigurationVersion&quot; |
 | CONTACTLIST | &quot;ContactList&quot; |
 | CONTACTLISTFILTER | &quot;ContactListFilter&quot; |
+| DASHBOARDSETTINGS | &quot;DashboardSettings&quot; |
 | DID | &quot;DID&quot; |
 | DIDPOOL | &quot;DIDPool&quot; |
 | DNCLIST | &quot;DNCList&quot; |
 | DEPENDENCYTRACKINGBUILD | &quot;DependencyTrackingBuild&quot; |
 | DEPLOYMENT | &quot;Deployment&quot; |
 | DOCUMENT | &quot;Document&quot; |
+| DYNAMICGROUP | &quot;DynamicGroup&quot; |
 | EDGE | &quot;Edge&quot; |
 | EDGEGROUP | &quot;EdgeGroup&quot; |
 | EMERGENCYGROUP | &quot;EmergencyGroup&quot; |
 | EVENTTYPE | &quot;EventType&quot; |
+| EXPORTS | &quot;Exports&quot; |
 | EXTENSION | &quot;Extension&quot; |
 | EXTENSIONPOOL | &quot;ExtensionPool&quot; |
 | EXTERNALMETRICSDEFINITION | &quot;ExternalMetricsDefinition&quot; |
@@ -149,12 +157,14 @@ title: AuditTopicAuditLogMessage
 | FLOWOUTCOME | &quot;FlowOutcome&quot; |
 | FORECAST | &quot;Forecast&quot; |
 | HISTORICALDATA | &quot;HistoricalData&quot; |
+| INSIGHTSETTINGS | &quot;InsightSettings&quot; |
 | IVR | &quot;IVR&quot; |
 | LINE | &quot;Line&quot; |
 | LINEBASE | &quot;LineBase&quot; |
 | MAXORGROUTINGUTILIZATIONCAPACITY | &quot;MaxOrgRoutingUtilizationCapacity&quot; |
 | MESSAGINGCAMPAIGN | &quot;MessagingCampaign&quot; |
 | METRIC | &quot;Metric&quot; |
+| MODULE | &quot;Module&quot; |
 | NUMBERPLAN | &quot;NumberPlan&quot; |
 | OAUTHCLIENT | &quot;OAuthClient&quot; |
 | OAUTHCLIENTAUTHORIZATION | &quot;OAuthClientAuthorization&quot; |
@@ -174,8 +184,10 @@ title: AuditTopicAuditLogMessage
 | RESPONSE | &quot;Response&quot; |
 | ROLE | &quot;Role&quot; |
 | ROUTINGTRANSCRIPTIONSETTINGS | &quot;RoutingTranscriptionSettings&quot; |
+| RULE | &quot;Rule&quot; |
 | RULESET | &quot;RuleSet&quot; |
 | SCHEDULE | &quot;Schedule&quot; |
+| SCHEDULEDEXPORTS | &quot;ScheduledExports&quot; |
 | SCHEDULEGROUP | &quot;ScheduleGroup&quot; |
 | SEGMENT | &quot;Segment&quot; |
 | SEQUENCE | &quot;Sequence&quot; |

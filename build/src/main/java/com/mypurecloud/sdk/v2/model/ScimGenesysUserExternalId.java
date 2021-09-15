@@ -33,7 +33,7 @@ public class ScimGenesysUserExternalId  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Authority, or scope, of \"externalId\". Allows multiple external identifiers to be defined. Represents the source of the external identifier.")
+  @ApiModelProperty(example = "null", required = true, value = "Authority, or scope, of \"externalId\". Allows multiple external identifiers to be defined. Represents the source of the external identifier.")
   @JsonProperty("authority")
   public String getAuthority() {
     return authority;
@@ -51,7 +51,7 @@ public class ScimGenesysUserExternalId  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Identifier of the user in an external system.")
+  @ApiModelProperty(example = "null", required = true, value = "Identifier of the user in an external system.")
   @JsonProperty("value")
   public String getValue() {
     return value;

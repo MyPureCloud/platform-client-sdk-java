@@ -154,6 +154,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailParticipantWrapup
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageCommunicationMessagesMediaMediaIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageParticipantWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageParticipantWrapupcodesRequest;
@@ -4324,6 +4325,85 @@ public class ConversationsApi {
   /**
    * Get message
    * 
+   * @param messageId messageId (required)
+   * @return MessageData
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessageData getConversationsMessageDetails(String messageId) throws IOException, ApiException {
+    return  getConversationsMessageDetails(createGetConversationsMessageDetailsRequest(messageId));
+  }
+
+  /**
+   * Get message
+   * 
+   * @param messageId messageId (required)
+   * @return MessageData
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessageData> getConversationsMessageDetailsWithHttpInfo(String messageId) throws IOException {
+    return getConversationsMessageDetails(createGetConversationsMessageDetailsRequest(messageId).withHttpInfo());
+  }
+
+  private GetConversationsMessageDetailsRequest createGetConversationsMessageDetailsRequest(String messageId) {
+    return GetConversationsMessageDetailsRequest.builder()
+            .withMessageId(messageId)
+    
+            .build();
+  }
+
+  /**
+   * Get message
+   * 
+   * @param request The request object
+   * @return MessageData
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public MessageData getConversationsMessageDetails(GetConversationsMessageDetailsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<MessageData> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<MessageData>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get message
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<MessageData> getConversationsMessageDetails(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<MessageData>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessageData> response = (ApiResponse<MessageData>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<MessageData> response = (ApiResponse<MessageData>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get conversation message
+   * 
    * @param conversationId conversationId (required)
    * @param messageId messageId (required)
    * @return MessageData
@@ -4335,7 +4415,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get message
+   * Get conversation message
    * 
    * @param conversationId conversationId (required)
    * @param messageId messageId (required)
@@ -4356,7 +4436,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get message
+   * Get conversation message
    * 
    * @param request The request object
    * @return MessageData
@@ -4375,7 +4455,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Get message
+   * Get conversation message
    * 
    * @param request The request object
    * @return the response

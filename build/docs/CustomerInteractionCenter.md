@@ -15,6 +15,7 @@ title: CustomerInteractionCenter
 | **ssoTargetURI** | <!----><!---->**String**<!----> |  |  [optional] |
 | **sloURI** | <!----><!---->**String**<!----> |  |  [optional] |
 | **sloBinding** | <!----><!---->**String**<!----> |  |  [optional] |
+| **relyingPartyIdentifier** | <!----><!---->**String**<!----> |  |  [optional] |
 | **certificate** | <!----><!---->**String**<!----> |  |  [optional] |
 | **certificates** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |

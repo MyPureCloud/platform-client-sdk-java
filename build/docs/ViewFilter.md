@@ -128,6 +128,8 @@ title: ViewFilter
 | **isRecorded** | <!----><!---->**Boolean**<!----> | Indicates filtering for recorded |  [optional] |
 | **hasEvaluation** | <!----><!---->**Boolean**<!----> | Indicates filtering for evaluation |  [optional] |
 | **hasScoredEvaluation** | <!----><!---->**Boolean**<!----> | Indicates filtering for scored evaluation |  [optional] |
+| **isAgentOwnedCallback** | <!----><!---->**Boolean**<!----> | Indicates filtering for agent owned callback interactions |  [optional] |
+| **agentCallbackOwnerIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of callback owners used to filter interactions |  [optional] |
 {: class="table table-striped"}
 
 
@@ -343,6 +345,8 @@ title: ViewFilter
 | ---- | ----- |
 | INFORMATIONAL | &quot;Informational&quot; |
 | COACHING | &quot;Coaching&quot; |
+| ASSESSMENT | &quot;Assessment&quot; |
+| ASSESSEDCONTENT | &quot;AssessedContent&quot; |
 {: class="table table-striped"}
 
 

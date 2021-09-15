@@ -21,6 +21,8 @@ import com.mypurecloud.sdk.v2.model.Outcome;
 import com.mypurecloud.sdk.v2.model.OutcomeListing;
 import com.mypurecloud.sdk.v2.model.JourneySegment;
 import com.mypurecloud.sdk.v2.model.SegmentListing;
+import com.mypurecloud.sdk.v2.model.Session;
+import com.mypurecloud.sdk.v2.model.OutcomeScoresResult;
 import com.mypurecloud.sdk.v2.model.PatchActionMap;
 import com.mypurecloud.sdk.v2.model.PatchActionTarget;
 import com.mypurecloud.sdk.v2.model.PatchActionTemplate;
@@ -44,6 +46,8 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyOutcomesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneySegmentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneySegmentsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneySessionRequest;
+import com.mypurecloud.sdk.v2.api.request.GetJourneySessionOutcomescoresRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActionmapRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontargetRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontemplateRequest;
@@ -1267,6 +1271,164 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<SegmentListing> response = (ApiResponse<SegmentListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Retrieve a single session.
+   * 
+   * @param sessionId ID of the session. (required)
+   * @return Session
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Session getJourneySession(String sessionId) throws IOException, ApiException {
+    return  getJourneySession(createGetJourneySessionRequest(sessionId));
+  }
+
+  /**
+   * Retrieve a single session.
+   * 
+   * @param sessionId ID of the session. (required)
+   * @return Session
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Session> getJourneySessionWithHttpInfo(String sessionId) throws IOException {
+    return getJourneySession(createGetJourneySessionRequest(sessionId).withHttpInfo());
+  }
+
+  private GetJourneySessionRequest createGetJourneySessionRequest(String sessionId) {
+    return GetJourneySessionRequest.builder()
+            .withSessionId(sessionId)
+    
+            .build();
+  }
+
+  /**
+   * Retrieve a single session.
+   * 
+   * @param request The request object
+   * @return Session
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Session getJourneySession(GetJourneySessionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Session> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Session>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve a single session.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Session> getJourneySession(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Session>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Session> response = (ApiResponse<Session>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Session> response = (ApiResponse<Session>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Retrieve latest outcome score associated with a session for all outcomes.
+   * 
+   * @param sessionId ID of the session. (required)
+   * @return OutcomeScoresResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OutcomeScoresResult getJourneySessionOutcomescores(String sessionId) throws IOException, ApiException {
+    return  getJourneySessionOutcomescores(createGetJourneySessionOutcomescoresRequest(sessionId));
+  }
+
+  /**
+   * Retrieve latest outcome score associated with a session for all outcomes.
+   * 
+   * @param sessionId ID of the session. (required)
+   * @return OutcomeScoresResult
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OutcomeScoresResult> getJourneySessionOutcomescoresWithHttpInfo(String sessionId) throws IOException {
+    return getJourneySessionOutcomescores(createGetJourneySessionOutcomescoresRequest(sessionId).withHttpInfo());
+  }
+
+  private GetJourneySessionOutcomescoresRequest createGetJourneySessionOutcomescoresRequest(String sessionId) {
+    return GetJourneySessionOutcomescoresRequest.builder()
+            .withSessionId(sessionId)
+    
+            .build();
+  }
+
+  /**
+   * Retrieve latest outcome score associated with a session for all outcomes.
+   * 
+   * @param request The request object
+   * @return OutcomeScoresResult
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OutcomeScoresResult getJourneySessionOutcomescores(GetJourneySessionOutcomescoresRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OutcomeScoresResult> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OutcomeScoresResult>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve latest outcome score associated with a session for all outcomes.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OutcomeScoresResult> getJourneySessionOutcomescores(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OutcomeScoresResult>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutcomeScoresResult> response = (ApiResponse<OutcomeScoresResult>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OutcomeScoresResult> response = (ApiResponse<OutcomeScoresResult>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

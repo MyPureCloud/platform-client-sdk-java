@@ -33,6 +33,7 @@ public class PerformanceProfile  implements Serializable {
   private Date dateCreated = null;
   private List<ReportingInterval> reportingIntervals = new ArrayList<ReportingInterval>();
   private Boolean active = null;
+  private Integer memberCount = null;
   private Integer maxLeaderboardRankSize = null;
   private String selfUri = null;
 
@@ -141,21 +142,17 @@ public class PerformanceProfile  implements Serializable {
   }
 
   
-  /**
-   * The flag for active profiles
-   **/
-  public PerformanceProfile active(Boolean active) {
-    this.active = active;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The flag for active profiles")
   @JsonProperty("active")
   public Boolean getActive() {
     return active;
   }
-  public void setActive(Boolean active) {
-    this.active = active;
+
+  
+  @ApiModelProperty(example = "null", value = "The number of members in this performance profile")
+  @JsonProperty("memberCount")
+  public Integer getMemberCount() {
+    return memberCount;
   }
 
   
@@ -202,13 +199,14 @@ public class PerformanceProfile  implements Serializable {
         Objects.equals(this.dateCreated, performanceProfile.dateCreated) &&
         Objects.equals(this.reportingIntervals, performanceProfile.reportingIntervals) &&
         Objects.equals(this.active, performanceProfile.active) &&
+        Objects.equals(this.memberCount, performanceProfile.memberCount) &&
         Objects.equals(this.maxLeaderboardRankSize, performanceProfile.maxLeaderboardRankSize) &&
         Objects.equals(this.selfUri, performanceProfile.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, metricOrders, dateCreated, reportingIntervals, active, maxLeaderboardRankSize, selfUri);
+    return Objects.hash(id, name, division, description, metricOrders, dateCreated, reportingIntervals, active, memberCount, maxLeaderboardRankSize, selfUri);
   }
 
   @Override
@@ -224,6 +222,7 @@ public class PerformanceProfile  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    reportingIntervals: ").append(toIndentedString(reportingIntervals)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
+    sb.append("    memberCount: ").append(toIndentedString(memberCount)).append("\n");
     sb.append("    maxLeaderboardRankSize: ").append(toIndentedString(maxLeaderboardRankSize)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

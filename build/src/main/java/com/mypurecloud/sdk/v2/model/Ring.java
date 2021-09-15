@@ -29,13 +29,14 @@ public class Ring  implements Serializable {
 
   
   /**
+   * The conditions that will trigger conversations to move to the next bullseye ring.
    **/
   public Ring expansionCriteria(List<ExpansionCriterium> expansionCriteria) {
     this.expansionCriteria = expansionCriteria;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The conditions that will trigger conversations to move to the next bullseye ring.")
   @JsonProperty("expansionCriteria")
   public List<ExpansionCriterium> getExpansionCriteria() {
     return expansionCriteria;
@@ -46,13 +47,14 @@ public class Ring  implements Serializable {
 
   
   /**
+   * The actions that will be performed just before moving conversations to the next bullseye ring.
    **/
   public Ring actions(Actions actions) {
     this.actions = actions;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The actions that will be performed just before moving conversations to the next bullseye ring.")
   @JsonProperty("actions")
   public Actions getActions() {
     return actions;

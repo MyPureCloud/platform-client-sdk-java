@@ -88,6 +88,7 @@ title: AuditQueryEntity
 | KNOWLEDGETRAINING | &quot;KnowledgeTraining&quot; |
 | LINE | &quot;Line&quot; |
 | LINEBASE | &quot;LineBase&quot; |
+| LOCATION | &quot;Location&quot; |
 | MAXORGROUTINGUTILIZATIONCAPACITY | &quot;MaxOrgRoutingUtilizationCapacity&quot; |
 | MEDIADIAGNOSTICSTRACEFILE | &quot;MediaDiagnosticsTraceFile&quot; |
 | MESSAGINGCAMPAIGN | &quot;MessagingCampaign&quot; |
@@ -226,6 +227,7 @@ title: AuditQueryEntity
 | IPALLOWLISTCLEAR | &quot;IpAllowlistClear&quot; |
 | ADDPAIRINGROLE | &quot;AddPairingRole&quot; |
 | ADD | &quot;Add&quot; |
+| VERIFY | &quot;Verify&quot; |
 | ASSIGN | &quot;Assign&quot; |
 | UNASSIGN | &quot;Unassign&quot; |
 | REASSIGN | &quot;Reassign&quot; |

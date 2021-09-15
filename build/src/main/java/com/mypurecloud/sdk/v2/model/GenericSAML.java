@@ -30,9 +30,9 @@ public class GenericSAML  implements Serializable {
   private String ssoTargetURI = null;
   private String sloURI = null;
   private String sloBinding = null;
+  private String relyingPartyIdentifier = null;
   private String certificate = null;
   private List<String> certificates = new ArrayList<String>();
-  private String relyingPartyIdentifier = null;
   private String logoImageData = null;
   private Boolean endpointCompression = null;
 
@@ -203,6 +203,23 @@ public class GenericSAML  implements Serializable {
   
   /**
    **/
+  public GenericSAML relyingPartyIdentifier(String relyingPartyIdentifier) {
+    this.relyingPartyIdentifier = relyingPartyIdentifier;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("relyingPartyIdentifier")
+  public String getRelyingPartyIdentifier() {
+    return relyingPartyIdentifier;
+  }
+  public void setRelyingPartyIdentifier(String relyingPartyIdentifier) {
+    this.relyingPartyIdentifier = relyingPartyIdentifier;
+  }
+
+  
+  /**
+   **/
   public GenericSAML certificate(String certificate) {
     this.certificate = certificate;
     return this;
@@ -232,23 +249,6 @@ public class GenericSAML  implements Serializable {
   }
   public void setCertificates(List<String> certificates) {
     this.certificates = certificates;
-  }
-
-  
-  /**
-   **/
-  public GenericSAML relyingPartyIdentifier(String relyingPartyIdentifier) {
-    this.relyingPartyIdentifier = relyingPartyIdentifier;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("relyingPartyIdentifier")
-  public String getRelyingPartyIdentifier() {
-    return relyingPartyIdentifier;
-  }
-  public void setRelyingPartyIdentifier(String relyingPartyIdentifier) {
-    this.relyingPartyIdentifier = relyingPartyIdentifier;
   }
 
   
@@ -327,9 +327,9 @@ public class GenericSAML  implements Serializable {
         Objects.equals(this.ssoTargetURI, genericSAML.ssoTargetURI) &&
         Objects.equals(this.sloURI, genericSAML.sloURI) &&
         Objects.equals(this.sloBinding, genericSAML.sloBinding) &&
+        Objects.equals(this.relyingPartyIdentifier, genericSAML.relyingPartyIdentifier) &&
         Objects.equals(this.certificate, genericSAML.certificate) &&
         Objects.equals(this.certificates, genericSAML.certificates) &&
-        Objects.equals(this.relyingPartyIdentifier, genericSAML.relyingPartyIdentifier) &&
         Objects.equals(this.logoImageData, genericSAML.logoImageData) &&
         Objects.equals(this.endpointCompression, genericSAML.endpointCompression) &&
         Objects.equals(this.nameIdentifierFormat, genericSAML.nameIdentifierFormat) &&
@@ -338,7 +338,7 @@ public class GenericSAML  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, certificate, certificates, relyingPartyIdentifier, logoImageData, endpointCompression, nameIdentifierFormat, selfUri);
+    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, relyingPartyIdentifier, certificate, certificates, logoImageData, endpointCompression, nameIdentifierFormat, selfUri);
   }
 
   @Override
@@ -353,9 +353,9 @@ public class GenericSAML  implements Serializable {
     sb.append("    ssoTargetURI: ").append(toIndentedString(ssoTargetURI)).append("\n");
     sb.append("    sloURI: ").append(toIndentedString(sloURI)).append("\n");
     sb.append("    sloBinding: ").append(toIndentedString(sloBinding)).append("\n");
+    sb.append("    relyingPartyIdentifier: ").append(toIndentedString(relyingPartyIdentifier)).append("\n");
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
     sb.append("    certificates: ").append(toIndentedString(certificates)).append("\n");
-    sb.append("    relyingPartyIdentifier: ").append(toIndentedString(relyingPartyIdentifier)).append("\n");
     sb.append("    logoImageData: ").append(toIndentedString(logoImageData)).append("\n");
     sb.append("    endpointCompression: ").append(toIndentedString(endpointCompression)).append("\n");
     sb.append("    nameIdentifierFormat: ").append(toIndentedString(nameIdentifierFormat)).append("\n");

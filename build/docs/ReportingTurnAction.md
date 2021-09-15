@@ -38,6 +38,7 @@ title: ReportingTurnAction
 | DATAACTION | &quot;DataAction&quot; |
 | DATATABLELOOKUPACTION | &quot;DataTableLookupAction&quot; |
 | GETEXTERNALCONTACTACTION | &quot;GetExternalContactAction&quot; |
+| GETEXTERNALORGANIZATIONACTION | &quot;GetExternalOrganizationAction&quot; |
 | LOOPACTION | &quot;LoopAction&quot; |
 | EXITLOOPACTION | &quot;ExitLoopAction&quot; |
 | NEXTLOOPACTION | &quot;NextLoopAction&quot; |

@@ -29,6 +29,7 @@ public class CustomerInteractionCenter  implements Serializable {
   private String ssoTargetURI = null;
   private String sloURI = null;
   private String sloBinding = null;
+  private String relyingPartyIdentifier = null;
   private String certificate = null;
   private List<String> certificates = new ArrayList<String>();
   private String selfUri = null;
@@ -145,6 +146,23 @@ public class CustomerInteractionCenter  implements Serializable {
   
   /**
    **/
+  public CustomerInteractionCenter relyingPartyIdentifier(String relyingPartyIdentifier) {
+    this.relyingPartyIdentifier = relyingPartyIdentifier;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("relyingPartyIdentifier")
+  public String getRelyingPartyIdentifier() {
+    return relyingPartyIdentifier;
+  }
+  public void setRelyingPartyIdentifier(String relyingPartyIdentifier) {
+    this.relyingPartyIdentifier = relyingPartyIdentifier;
+  }
+
+  
+  /**
+   **/
   public CustomerInteractionCenter certificate(String certificate) {
     this.certificate = certificate;
     return this;
@@ -201,6 +219,7 @@ public class CustomerInteractionCenter  implements Serializable {
         Objects.equals(this.ssoTargetURI, customerInteractionCenter.ssoTargetURI) &&
         Objects.equals(this.sloURI, customerInteractionCenter.sloURI) &&
         Objects.equals(this.sloBinding, customerInteractionCenter.sloBinding) &&
+        Objects.equals(this.relyingPartyIdentifier, customerInteractionCenter.relyingPartyIdentifier) &&
         Objects.equals(this.certificate, customerInteractionCenter.certificate) &&
         Objects.equals(this.certificates, customerInteractionCenter.certificates) &&
         Objects.equals(this.selfUri, customerInteractionCenter.selfUri);
@@ -208,7 +227,7 @@ public class CustomerInteractionCenter  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, certificate, certificates, selfUri);
+    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, relyingPartyIdentifier, certificate, certificates, selfUri);
   }
 
   @Override
@@ -223,6 +242,7 @@ public class CustomerInteractionCenter  implements Serializable {
     sb.append("    ssoTargetURI: ").append(toIndentedString(ssoTargetURI)).append("\n");
     sb.append("    sloURI: ").append(toIndentedString(sloURI)).append("\n");
     sb.append("    sloBinding: ").append(toIndentedString(sloBinding)).append("\n");
+    sb.append("    relyingPartyIdentifier: ").append(toIndentedString(relyingPartyIdentifier)).append("\n");
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
     sb.append("    certificates: ").append(toIndentedString(certificates)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

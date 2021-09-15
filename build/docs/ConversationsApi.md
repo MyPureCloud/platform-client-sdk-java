@@ -57,7 +57,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationsEmails**](ConversationsApi.html#getConversationsEmails) | Get active email conversations for the logged in user |
 | [**getConversationsMessage**](ConversationsApi.html#getConversationsMessage) | Get message conversation |
 | [**getConversationsMessageCommunicationMessagesMediaMediaId**](ConversationsApi.html#getConversationsMessageCommunicationMessagesMediaMediaId) | Get media |
-| [**getConversationsMessageMessage**](ConversationsApi.html#getConversationsMessageMessage) | Get message |
+| [**getConversationsMessageDetails**](ConversationsApi.html#getConversationsMessageDetails) | Get message |
+| [**getConversationsMessageMessage**](ConversationsApi.html#getConversationsMessageMessage) | Get conversation message |
 | [**getConversationsMessageParticipantWrapup**](ConversationsApi.html#getConversationsMessageParticipantWrapup) | Get the wrap-up for this conversation participant.  |
 | [**getConversationsMessageParticipantWrapupcodes**](ConversationsApi.html#getConversationsMessageParticipantWrapupcodes) | Get list of wrapup codes for this conversation participant |
 | [**getConversationsMessages**](ConversationsApi.html#getConversationsMessages) | Get active message conversations for the logged in user |
@@ -3310,6 +3311,70 @@ try {
 
 [**MessageMediaData**](MessageMediaData.html)
 
+<a name="getConversationsMessageDetails"></a>
+
+# **getConversationsMessageDetails**
+
+
+
+> [MessageData](MessageData.html) getConversationsMessageDetails(messageId)
+
+Get message
+
+
+
+Wraps GET /api/v2/conversations/messages/{messageId}/details  
+
+Requires ANY permissions: 
+
+* conversation:message:view
+* conversation:webmessaging:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String messageId = "messageId_example"; // String | messageId
+try {
+    MessageData result = apiInstance.getConversationsMessageDetails(messageId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#getConversationsMessageDetails");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **messageId** | **String**| messageId | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**MessageData**](MessageData.html)
+
 <a name="getConversationsMessageMessage"></a>
 
 # **getConversationsMessageMessage**
@@ -3318,7 +3383,7 @@ try {
 
 > [MessageData](MessageData.html) getConversationsMessageMessage(conversationId, messageId)
 
-Get message
+Get conversation message
 
 
 

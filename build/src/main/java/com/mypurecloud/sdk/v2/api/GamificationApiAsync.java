@@ -35,6 +35,7 @@ import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
 import com.mypurecloud.sdk.v2.model.GamificationStatus;
 import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
 import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
+import com.mypurecloud.sdk.v2.model.CreatePerformanceProfile;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetGamificationLeaderboardRequest;
@@ -76,6 +77,7 @@ import com.mypurecloud.sdk.v2.api.request.PostGamificationMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileActivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileDeactivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMetricsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationProfilesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationMetricRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationProfileRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationProfileMetricRequest;
@@ -1546,7 +1548,7 @@ public class GamificationApiAsync {
 
   
   /**
-   * Average points of the requesting user&#39;s division
+   * Average points of the requesting user&#39;s division or performance profile
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1580,7 +1582,7 @@ public class GamificationApiAsync {
   }
 
   /**
-   * Average points of the requesting user&#39;s division
+   * Average points of the requesting user&#39;s division or performance profile
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2078,7 +2080,7 @@ public class GamificationApiAsync {
 
   
   /**
-   * Values Trends of a user
+   * Values trends of a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2112,7 +2114,7 @@ public class GamificationApiAsync {
   }
 
   /**
-   * Values Trends of a user
+   * Values trends of a user
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2382,7 +2384,7 @@ public class GamificationApiAsync {
 
   
   /**
-   * Average values of the requesting user&#39;s division
+   * Average values of the requesting user&#39;s division or performance profile
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2416,7 +2418,7 @@ public class GamificationApiAsync {
   }
 
   /**
-   * Average values of the requesting user&#39;s division
+   * Average values of the requesting user&#39;s division or performance profile
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3053,6 +3055,82 @@ public class GamificationApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Metric> response = (ApiResponse<Metric>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Create a new custom performance profile
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<GetProfilesResponse> postGamificationProfilesAsync(PostGamificationProfilesRequest request, final AsyncApiCallback<GetProfilesResponse> callback) {
+    try {
+      final SettableFuture<GetProfilesResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<GetProfilesResponse>() {}, new AsyncApiCallback<ApiResponse<GetProfilesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GetProfilesResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create a new custom performance profile
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<GetProfilesResponse>> postGamificationProfilesAsync(ApiRequest<CreatePerformanceProfile> request, final AsyncApiCallback<ApiResponse<GetProfilesResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<GetProfilesResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<GetProfilesResponse>() {}, new AsyncApiCallback<ApiResponse<GetProfilesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<GetProfilesResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GetProfilesResponse> response = (ApiResponse<GetProfilesResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<GetProfilesResponse> response = (ApiResponse<GetProfilesResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

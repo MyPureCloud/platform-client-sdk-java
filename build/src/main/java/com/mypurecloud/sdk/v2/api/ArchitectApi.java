@@ -115,6 +115,8 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableImportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesDivisionviewRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsExecutionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestoneRequest;
@@ -5039,6 +5041,192 @@ public class ArchitectApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<DataTablesDomainEntityListing> getFlowsDatatables(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataTablesDomainEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataTablesDomainEntityListing> response = (ApiResponse<DataTablesDomainEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataTablesDomainEntityListing> response = (ApiResponse<DataTablesDomainEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Returns a specific datatable by id
+   * Given a datatableId returns the datatable object and schema associated with it.
+   * @param datatableId id of datatable (required)
+   * @param expand Expand instructions for the result (optional)
+   * @return DataTable
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataTable getFlowsDatatablesDivisionview(String datatableId, String expand) throws IOException, ApiException {
+    return  getFlowsDatatablesDivisionview(createGetFlowsDatatablesDivisionviewRequest(datatableId, expand));
+  }
+
+  /**
+   * Returns a specific datatable by id
+   * Given a datatableId returns the datatable object and schema associated with it.
+   * @param datatableId id of datatable (required)
+   * @param expand Expand instructions for the result (optional)
+   * @return DataTable
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataTable> getFlowsDatatablesDivisionviewWithHttpInfo(String datatableId, String expand) throws IOException {
+    return getFlowsDatatablesDivisionview(createGetFlowsDatatablesDivisionviewRequest(datatableId, expand).withHttpInfo());
+  }
+
+  private GetFlowsDatatablesDivisionviewRequest createGetFlowsDatatablesDivisionviewRequest(String datatableId, String expand) {
+    return GetFlowsDatatablesDivisionviewRequest.builder()
+            .withDatatableId(datatableId)
+    
+            .withExpand(expand)
+    
+            .build();
+  }
+
+  /**
+   * Returns a specific datatable by id
+   * Given a datatableId returns the datatable object and schema associated with it.
+   * @param request The request object
+   * @return DataTable
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataTable getFlowsDatatablesDivisionview(GetFlowsDatatablesDivisionviewRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataTable> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataTable>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Returns a specific datatable by id
+   * Given a datatableId returns the datatable object and schema associated with it.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataTable> getFlowsDatatablesDivisionview(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<DataTable>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataTable> response = (ApiResponse<DataTable>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<DataTable> response = (ApiResponse<DataTable>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Retrieve a list of datatables for the org
+   * Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
+   * @param expand Expand instructions for the result (optional)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to id)
+   * @param sortOrder Sort order (optional, default to ascending)
+   * @param divisionId division ID(s) (optional)
+   * @param name Name to filter by (optional)
+   * @return DataTablesDomainEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataTablesDomainEntityListing getFlowsDatatablesDivisionviews(String expand, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> divisionId, String name) throws IOException, ApiException {
+    return  getFlowsDatatablesDivisionviews(createGetFlowsDatatablesDivisionviewsRequest(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId, name));
+  }
+
+  /**
+   * Retrieve a list of datatables for the org
+   * Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
+   * @param expand Expand instructions for the result (optional)
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Page size (optional, default to 25)
+   * @param sortBy Sort by (optional, default to id)
+   * @param sortOrder Sort order (optional, default to ascending)
+   * @param divisionId division ID(s) (optional)
+   * @param name Name to filter by (optional)
+   * @return DataTablesDomainEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataTablesDomainEntityListing> getFlowsDatatablesDivisionviewsWithHttpInfo(String expand, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> divisionId, String name) throws IOException {
+    return getFlowsDatatablesDivisionviews(createGetFlowsDatatablesDivisionviewsRequest(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId, name).withHttpInfo());
+  }
+
+  private GetFlowsDatatablesDivisionviewsRequest createGetFlowsDatatablesDivisionviewsRequest(String expand, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder, List<String> divisionId, String name) {
+    return GetFlowsDatatablesDivisionviewsRequest.builder()
+            .withExpand(expand)
+    
+            .withPageNumber(pageNumber)
+    
+            .withPageSize(pageSize)
+    
+            .withSortBy(sortBy)
+    
+            .withSortOrder(sortOrder)
+    
+            .withDivisionId(divisionId)
+    
+            .withName(name)
+    
+            .build();
+  }
+
+  /**
+   * Retrieve a list of datatables for the org
+   * Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
+   * @param request The request object
+   * @return DataTablesDomainEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public DataTablesDomainEntityListing getFlowsDatatablesDivisionviews(GetFlowsDatatablesDivisionviewsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<DataTablesDomainEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DataTablesDomainEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieve a list of datatables for the org
+   * Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<DataTablesDomainEntityListing> getFlowsDatatablesDivisionviews(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<DataTablesDomainEntityListing>() {});
     }

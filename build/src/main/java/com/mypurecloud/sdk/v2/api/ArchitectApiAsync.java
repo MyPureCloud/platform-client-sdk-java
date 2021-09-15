@@ -118,6 +118,8 @@ import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableImportJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatableRowsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesDivisionviewRequest;
+import com.mypurecloud.sdk.v2.api.request.GetFlowsDatatablesDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsDivisionviewsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsExecutionRequest;
 import com.mypurecloud.sdk.v2.api.request.GetFlowsMilestoneRequest;
@@ -4331,6 +4333,158 @@ public class ArchitectApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<DataTablesDomainEntityListing>> getFlowsDatatablesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataTablesDomainEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DataTablesDomainEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DataTablesDomainEntityListing>() {}, new AsyncApiCallback<ApiResponse<DataTablesDomainEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataTablesDomainEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataTablesDomainEntityListing> response = (ApiResponse<DataTablesDomainEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataTablesDomainEntityListing> response = (ApiResponse<DataTablesDomainEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Returns a specific datatable by id
+   * Given a datatableId returns the datatable object and schema associated with it.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DataTable> getFlowsDatatablesDivisionviewAsync(GetFlowsDatatablesDivisionviewRequest request, final AsyncApiCallback<DataTable> callback) {
+    try {
+      final SettableFuture<DataTable> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataTable>() {}, new AsyncApiCallback<ApiResponse<DataTable>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataTable> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Returns a specific datatable by id
+   * Given a datatableId returns the datatable object and schema associated with it.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DataTable>> getFlowsDatatablesDivisionviewAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataTable>> callback) {
+    try {
+      final SettableFuture<ApiResponse<DataTable>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<DataTable>() {}, new AsyncApiCallback<ApiResponse<DataTable>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataTable> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataTable> response = (ApiResponse<DataTable>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<DataTable> response = (ApiResponse<DataTable>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Retrieve a list of datatables for the org
+   * Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<DataTablesDomainEntityListing> getFlowsDatatablesDivisionviewsAsync(GetFlowsDatatablesDivisionviewsRequest request, final AsyncApiCallback<DataTablesDomainEntityListing> callback) {
+    try {
+      final SettableFuture<DataTablesDomainEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<DataTablesDomainEntityListing>() {}, new AsyncApiCallback<ApiResponse<DataTablesDomainEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<DataTablesDomainEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Retrieve a list of datatables for the org
+   * Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<DataTablesDomainEntityListing>> getFlowsDatatablesDivisionviewsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<DataTablesDomainEntityListing>> callback) {
     try {
       final SettableFuture<ApiResponse<DataTablesDomainEntityListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

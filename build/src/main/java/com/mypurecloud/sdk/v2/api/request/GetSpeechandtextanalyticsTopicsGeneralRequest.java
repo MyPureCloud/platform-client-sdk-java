@@ -69,7 +69,12 @@ public class GetSpeechandtextanalyticsTopicsGeneralRequest {
 		EN_GB("en-GB"), 
 		EN_ZA("en-ZA"), 
 		ES_ES("es-ES"), 
-		EN_IN("en-IN");
+		EN_IN("en-IN"), 
+		FR_FR("fr-FR"), 
+		FR_CA("fr-CA"), 
+		IT_IT("it-IT"), 
+		DE_DE("de-DE"), 
+		PT_BR("pt-BR");
 
 		private String value;
 

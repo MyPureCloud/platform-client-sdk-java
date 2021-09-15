@@ -928,7 +928,7 @@ try {
 
 
 
-> [TopicsEntityListing](TopicsEntityListing.html) getSpeechandtextanalyticsTopics(nextPage, pageSize, state, name, ids)
+> [TopicsEntityListing](TopicsEntityListing.html) getSpeechandtextanalyticsTopics(nextPage, pageSize, state, name, ids, sortBy, sortOrder)
 
 Get the list of Speech &amp; Text Analytics topics
 
@@ -964,11 +964,13 @@ Configuration.setDefaultApiClient(apiClient);
 SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
 String nextPage = "nextPage_example"; // String | The key for listing the next page
 Integer pageSize = 20; // Integer | The page size for the listing
-String state = "state_example"; // String | Topic state
+String state = "state_example"; // String | Topic state. Defaults to latest
 String name = "name_example"; // String | Case insensitive partial name to filter by
 List<String> ids = Arrays.asList("ids_example"); // List<String> | Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
+String sortBy = "sortBy_example"; // String | Sort results by. Defaults to name
+String sortOrder = "sortOrder_example"; // String | Sort order. Defaults to asc
 try {
-    TopicsEntityListing result = apiInstance.getSpeechandtextanalyticsTopics(nextPage, pageSize, state, name, ids);
+    TopicsEntityListing result = apiInstance.getSpeechandtextanalyticsTopics(nextPage, pageSize, state, name, ids, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsTopics");
@@ -983,9 +985,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **nextPage** | **String**| The key for listing the next page | [optional] 
 | **pageSize** | **Integer**| The page size for the listing | [optional] [default to 20] 
-| **state** | **String**| Topic state | [optional]<br />**Values**: latest, published 
+| **state** | **String**| Topic state. Defaults to latest | [optional]<br />**Values**: latest, published 
 | **name** | **String**| Case insensitive partial name to filter by | [optional] 
 | **ids** | [**List&lt;String&gt;**](String.html)| Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional] 
+| **sortBy** | **String**| Sort results by. Defaults to name | [optional]<br />**Values**: name 
+| **sortOrder** | **String**| Sort order. Defaults to asc | [optional]<br />**Values**: asc, desc 
 {: class="table-striped"}
 
 
@@ -1106,7 +1110,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **dialect** | **String**| The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional]<br />**Values**: en-US, es-US, en-AU, en-GB, en-ZA, es-ES, en-IN 
+| **dialect** | **String**| The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional]<br />**Values**: en-US, es-US, en-AU, en-GB, en-ZA, es-ES, en-IN, fr-FR, fr-CA, it-IT, de-DE, pt-BR 
 {: class="table-striped"}
 
 

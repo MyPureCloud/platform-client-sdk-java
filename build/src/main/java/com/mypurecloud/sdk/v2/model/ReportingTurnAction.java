@@ -59,6 +59,7 @@ public class ReportingTurnAction  implements Serializable {
     DATAACTION("DataAction"),
     DATATABLELOOKUPACTION("DataTableLookupAction"),
     GETEXTERNALCONTACTACTION("GetExternalContactAction"),
+    GETEXTERNALORGANIZATIONACTION("GetExternalOrganizationAction"),
     LOOPACTION("LoopAction"),
     EXITLOOPACTION("ExitLoopAction"),
     NEXTLOOPACTION("NextLoopAction"),

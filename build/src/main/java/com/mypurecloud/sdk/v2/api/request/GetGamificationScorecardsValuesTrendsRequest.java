@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
 import com.mypurecloud.sdk.v2.model.GamificationStatus;
 import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
 import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
+import com.mypurecloud.sdk.v2.model.CreatePerformanceProfile;
 
 public class GetGamificationScorecardsValuesTrendsRequest {
     
@@ -117,6 +118,20 @@ public class GetGamificationScorecardsValuesTrendsRequest {
 		}
 	}
 	
+	private LocalDate referenceWorkday;
+	public LocalDate getReferenceWorkday() {
+		return this.referenceWorkday;
+	}
+
+	public void setReferenceWorkday(LocalDate referenceWorkday) {
+		this.referenceWorkday = referenceWorkday;
+	}
+
+	public GetGamificationScorecardsValuesTrendsRequest withReferenceWorkday(LocalDate referenceWorkday) {
+	    this.setReferenceWorkday(referenceWorkday);
+	    return this;
+	} 
+	
 	private String timeZone;
 	public String getTimeZone() {
 		return this.timeZone;
@@ -165,6 +180,8 @@ public class GetGamificationScorecardsValuesTrendsRequest {
 
         return ApiRequestBuilder.create("GET", "/api/v2/gamification/scorecards/values/trends")
                 .withQueryParameters("filterType", "", filterType)
+        
+                .withQueryParameters("referenceWorkday", "", referenceWorkday)
         
                 .withQueryParameters("startWorkday", "", startWorkday)
         
@@ -216,6 +233,11 @@ public class GetGamificationScorecardsValuesTrendsRequest {
 		public Builder withFilterType(filterTypeValues filterType) {
 		    request.setFilterType(filterType.toString());
 		    return this;
+		}
+		
+		public Builder withReferenceWorkday(LocalDate referenceWorkday) {
+			request.setReferenceWorkday(referenceWorkday);
+			return this;
 		}
 		
 		public Builder withTimeZone(String timeZone) {

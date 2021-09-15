@@ -47,6 +47,7 @@ title: MessageMediaParticipant
 | **type** | [**TypeEnum**](#TypeEnum)<!----> | Indicates the type of message platform from which the message originated. |  [optional] |
 | **recipientCountry** | <!----><!---->**String**<!----> | Indicates the country where the recipient is associated in ISO 3166-1 alpha-2 format. |  [optional] |
 | **recipientType** | <!----><!---->**String**<!----> | The type of the recipient. Eg: Provisioned phoneNumber is the recipient for sms message type. |  [optional] |
+| **authenticated** | <!----><!---->**Boolean**<!----> | If true, the participant member is authenticated. |  [optional] |
 {: class="table table-striped"}
 
 

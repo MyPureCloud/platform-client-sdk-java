@@ -1,0 +1,31 @@
+---
+title: MemberGroup
+---
+## MemberGroup
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
+| **name** | <!----><!---->**String**<!----> |  |  [optional] |
+| **division** | <!----><!---->[**Division**](Division.html)<!----> | The division to which this entity belongs. |  [optional] |
+| **type** | [**TypeEnum**](#TypeEnum)<!----> | The type of group, e.g. TEAM, etc. |  [optional] |
+| **memberCount** | <!----><!---->**Integer**<!----> | The number of members in this group |  [optional] |
+| **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
+{: class="table table-striped"}
+
+
+<a name="TypeEnum"></a>
+
+## Enum: TypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| TEAM | &quot;TEAM&quot; |
+{: class="table table-striped"}
+
+
+

@@ -21,6 +21,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getJourneyOutcomes**](JourneyApi.html#getJourneyOutcomes) | Retrieve all outcomes. |
 | [**getJourneySegment**](JourneyApi.html#getJourneySegment) | Retrieve a single segment. |
 | [**getJourneySegments**](JourneyApi.html#getJourneySegments) | Retrieve all segments. |
+| [**getJourneySession**](JourneyApi.html#getJourneySession) | Retrieve a single session. |
+| [**getJourneySessionOutcomescores**](JourneyApi.html#getJourneySessionOutcomescores) | Retrieve latest outcome score associated with a session for all outcomes. |
 | [**patchJourneyActionmap**](JourneyApi.html#patchJourneyActionmap) | Update single action map. |
 | [**patchJourneyActiontarget**](JourneyApi.html#patchJourneyActiontarget) | Update a single action target. |
 | [**patchJourneyActiontemplate**](JourneyApi.html#patchJourneyActiontemplate) | Update a single action template. |
@@ -962,6 +964,132 @@ try {
 ### Return type
 
 [**SegmentListing**](SegmentListing.html)
+
+<a name="getJourneySession"></a>
+
+# **getJourneySession**
+
+
+
+> [Session](Session.html) getJourneySession(sessionId)
+
+Retrieve a single session.
+
+
+
+Wraps GET /api/v2/journey/sessions/{sessionId}  
+
+Requires ANY permissions: 
+
+* journey:session:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String sessionId = "sessionId_example"; // String | ID of the session.
+try {
+    Session result = apiInstance.getJourneySession(sessionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneySession");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sessionId** | **String**| ID of the session. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Session**](Session.html)
+
+<a name="getJourneySessionOutcomescores"></a>
+
+# **getJourneySessionOutcomescores**
+
+
+
+> [OutcomeScoresResult](OutcomeScoresResult.html) getJourneySessionOutcomescores(sessionId)
+
+Retrieve latest outcome score associated with a session for all outcomes.
+
+
+
+Wraps GET /api/v2/journey/sessions/{sessionId}/outcomescores  
+
+Requires ANY permissions: 
+
+* journey:outcomescores:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.JourneyApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+JourneyApi apiInstance = new JourneyApi();
+String sessionId = "sessionId_example"; // String | ID of the session.
+try {
+    OutcomeScoresResult result = apiInstance.getJourneySessionOutcomescores(sessionId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling JourneyApi#getJourneySessionOutcomescores");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **sessionId** | **String**| ID of the session. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OutcomeScoresResult**](OutcomeScoresResult.html)
 
 <a name="patchJourneyActionmap"></a>
 

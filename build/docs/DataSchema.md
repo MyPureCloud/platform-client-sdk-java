@@ -8,7 +8,7 @@ title: DataSchema
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the schema.  Only required if a schema is used for custom fields during external entity creation or updates. |  [optional] |
 | **name** | <!----><!---->**String**<!----> |  |  [optional] |
 | **version** | <!----><!---->**Integer**<!----> | The schema&#39;s version, a positive integer. Required for updates. |  |
 | **appliesTo** | <!---->[**List&lt;AppliesToEnum&gt;**](#AppliesToEnum)<!----> | One of \&quot;CONTACT\&quot; or \&quot;EXTERNAL_ORGANIZATION\&quot;.  Indicates the built-in entity type to which this schema applies. |  [optional] |

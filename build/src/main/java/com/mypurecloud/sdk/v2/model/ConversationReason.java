@@ -51,7 +51,8 @@ public class ConversationReason  implements Serializable {
     INVALIDDESTINATION("InvalidDestination"),
     SERVERERROR("ServerError"),
     MEDIATYPENOTALLOWED("MediaTypeNotAllowed"),
-    INVALIDMEDIACONTENTLENGTH("InvalidMediaContentLength");
+    INVALIDMEDIACONTENTLENGTH("InvalidMediaContentLength"),
+    RECIPIENTOPTEDOUT("RecipientOptedOut");
 
     private String value;
 

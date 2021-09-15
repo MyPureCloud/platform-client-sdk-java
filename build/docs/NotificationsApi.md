@@ -272,11 +272,11 @@ try {
 
 
 
-> Boolean headNotificationsChannel(channelId)
+> Void headNotificationsChannel(channelId)
 
 Verify a channel still exists and is valid
 
-
+Returns a 200 OK if channel exists, and a 404 Not Found if it doesn&#39;t
 
 Wraps HEAD /api/v2/notifications/channels/{channelId}  
 
@@ -307,8 +307,7 @@ Configuration.setDefaultApiClient(apiClient);
 NotificationsApi apiInstance = new NotificationsApi();
 String channelId = "channelId_example"; // String | Channel ID
 try {
-    Boolean result = apiInstance.headNotificationsChannel(channelId);
-    System.out.println(result);
+    apiInstance.headNotificationsChannel(channelId);
 } catch (ApiException e) {
     System.err.println("Exception when calling NotificationsApi#headNotificationsChannel");
     e.printStackTrace();
@@ -326,7 +325,7 @@ try {
 
 ### Return type
 
-**Boolean**
+null (empty response body)
 
 <a name="postNotificationsChannelSubscriptions"></a>
 

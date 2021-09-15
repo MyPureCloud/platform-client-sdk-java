@@ -32,6 +32,7 @@ import com.mypurecloud.sdk.v2.model.SingleWorkdayAverageValues;
 import com.mypurecloud.sdk.v2.model.GamificationStatus;
 import com.mypurecloud.sdk.v2.model.ObjectiveTemplate;
 import com.mypurecloud.sdk.v2.model.GetTemplatesResponse;
+import com.mypurecloud.sdk.v2.model.CreatePerformanceProfile;
 
 
 import com.mypurecloud.sdk.v2.api.request.GetGamificationLeaderboardRequest;
@@ -73,6 +74,7 @@ import com.mypurecloud.sdk.v2.api.request.PostGamificationMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileActivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileDeactivateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostGamificationProfileMetricsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostGamificationProfilesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationMetricRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationProfileRequest;
 import com.mypurecloud.sdk.v2.api.request.PutGamificationProfileMetricRequest;
@@ -1655,7 +1657,7 @@ public class GamificationApi {
 
   
   /**
-   * Average points of the requesting user&#39;s division
+   * Average points of the requesting user&#39;s division or performance profile
    * 
    * @param workday The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @return SingleWorkdayAveragePoints
@@ -1667,7 +1669,7 @@ public class GamificationApi {
   }
 
   /**
-   * Average points of the requesting user&#39;s division
+   * Average points of the requesting user&#39;s division or performance profile
    * 
    * @param workday The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @return SingleWorkdayAveragePoints
@@ -1685,7 +1687,7 @@ public class GamificationApi {
   }
 
   /**
-   * Average points of the requesting user&#39;s division
+   * Average points of the requesting user&#39;s division or performance profile
    * 
    * @param request The request object
    * @return SingleWorkdayAveragePoints
@@ -1704,7 +1706,7 @@ public class GamificationApi {
   }
 
   /**
-   * Average points of the requesting user&#39;s division
+   * Average points of the requesting user&#39;s division or performance profile
    * 
    * @param request The request object
    * @return the response
@@ -2248,7 +2250,7 @@ public class GamificationApi {
 
   
   /**
-   * Values Trends of a user
+   * Values trends of a user
    * 
    * @param userId  (required)
    * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
@@ -2263,7 +2265,7 @@ public class GamificationApi {
   }
 
   /**
-   * Values Trends of a user
+   * Values trends of a user
    * 
    * @param userId  (required)
    * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
@@ -2290,7 +2292,7 @@ public class GamificationApi {
   }
 
   /**
-   * Values Trends of a user
+   * Values trends of a user
    * 
    * @param request The request object
    * @return WorkdayValuesTrend
@@ -2309,7 +2311,7 @@ public class GamificationApi {
   }
 
   /**
-   * Values Trends of a user
+   * Values trends of a user
    * 
    * @param request The request object
    * @return the response
@@ -2612,7 +2614,7 @@ public class GamificationApi {
 
   
   /**
-   * Average values of the requesting user&#39;s division
+   * Average values of the requesting user&#39;s division or performance profile
    * 
    * @param workday The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param timeZone Timezone for the workday. Defaults to UTC (optional, default to UTC)
@@ -2625,7 +2627,7 @@ public class GamificationApi {
   }
 
   /**
-   * Average values of the requesting user&#39;s division
+   * Average values of the requesting user&#39;s division or performance profile
    * 
    * @param workday The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param timeZone Timezone for the workday. Defaults to UTC (optional, default to UTC)
@@ -2646,7 +2648,7 @@ public class GamificationApi {
   }
 
   /**
-   * Average values of the requesting user&#39;s division
+   * Average values of the requesting user&#39;s division or performance profile
    * 
    * @param request The request object
    * @return SingleWorkdayAverageValues
@@ -2665,7 +2667,7 @@ public class GamificationApi {
   }
 
   /**
-   * Average values of the requesting user&#39;s division
+   * Average values of the requesting user&#39;s division or performance profile
    * 
    * @param request The request object
    * @return the response
@@ -2700,13 +2702,14 @@ public class GamificationApi {
    * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param filterType Filter type for the query request. If not set, then the request is for the requesting user. (optional)
+   * @param referenceWorkday Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user&#39;s current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @param timeZone Timezone for the workday. Defaults to UTC (optional, default to UTC)
    * @return WorkdayValuesTrend
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WorkdayValuesTrend getGamificationScorecardsValuesTrends(LocalDate startWorkday, LocalDate endWorkday, String filterType, String timeZone) throws IOException, ApiException {
-    return  getGamificationScorecardsValuesTrends(createGetGamificationScorecardsValuesTrendsRequest(startWorkday, endWorkday, filterType, timeZone));
+  public WorkdayValuesTrend getGamificationScorecardsValuesTrends(LocalDate startWorkday, LocalDate endWorkday, String filterType, LocalDate referenceWorkday, String timeZone) throws IOException, ApiException {
+    return  getGamificationScorecardsValuesTrends(createGetGamificationScorecardsValuesTrendsRequest(startWorkday, endWorkday, filterType, referenceWorkday, timeZone));
   }
 
   /**
@@ -2715,21 +2718,24 @@ public class GamificationApi {
    * @param startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
    * @param filterType Filter type for the query request. If not set, then the request is for the requesting user. (optional)
+   * @param referenceWorkday Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user&#39;s current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @param timeZone Timezone for the workday. Defaults to UTC (optional, default to UTC)
    * @return WorkdayValuesTrend
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkdayValuesTrend> getGamificationScorecardsValuesTrendsWithHttpInfo(LocalDate startWorkday, LocalDate endWorkday, String filterType, String timeZone) throws IOException {
-    return getGamificationScorecardsValuesTrends(createGetGamificationScorecardsValuesTrendsRequest(startWorkday, endWorkday, filterType, timeZone).withHttpInfo());
+  public ApiResponse<WorkdayValuesTrend> getGamificationScorecardsValuesTrendsWithHttpInfo(LocalDate startWorkday, LocalDate endWorkday, String filterType, LocalDate referenceWorkday, String timeZone) throws IOException {
+    return getGamificationScorecardsValuesTrends(createGetGamificationScorecardsValuesTrendsRequest(startWorkday, endWorkday, filterType, referenceWorkday, timeZone).withHttpInfo());
   }
 
-  private GetGamificationScorecardsValuesTrendsRequest createGetGamificationScorecardsValuesTrendsRequest(LocalDate startWorkday, LocalDate endWorkday, String filterType, String timeZone) {
+  private GetGamificationScorecardsValuesTrendsRequest createGetGamificationScorecardsValuesTrendsRequest(LocalDate startWorkday, LocalDate endWorkday, String filterType, LocalDate referenceWorkday, String timeZone) {
     return GetGamificationScorecardsValuesTrendsRequest.builder()
             .withStartWorkday(startWorkday)
     
             .withEndWorkday(endWorkday)
     
             .withFilterType(filterType)
+    
+            .withReferenceWorkday(referenceWorkday)
     
             .withTimeZone(timeZone)
     
@@ -3329,6 +3335,85 @@ public class GamificationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Metric> response = (ApiResponse<Metric>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create a new custom performance profile
+   * 
+   * @param body performanceProfile (required)
+   * @return GetProfilesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GetProfilesResponse postGamificationProfiles(CreatePerformanceProfile body) throws IOException, ApiException {
+    return  postGamificationProfiles(createPostGamificationProfilesRequest(body));
+  }
+
+  /**
+   * Create a new custom performance profile
+   * 
+   * @param body performanceProfile (required)
+   * @return GetProfilesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GetProfilesResponse> postGamificationProfilesWithHttpInfo(CreatePerformanceProfile body) throws IOException {
+    return postGamificationProfiles(createPostGamificationProfilesRequest(body).withHttpInfo());
+  }
+
+  private PostGamificationProfilesRequest createPostGamificationProfilesRequest(CreatePerformanceProfile body) {
+    return PostGamificationProfilesRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a new custom performance profile
+   * 
+   * @param request The request object
+   * @return GetProfilesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public GetProfilesResponse postGamificationProfiles(PostGamificationProfilesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<GetProfilesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<GetProfilesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a new custom performance profile
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<GetProfilesResponse> postGamificationProfiles(ApiRequest<CreatePerformanceProfile> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<GetProfilesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<GetProfilesResponse> response = (ApiResponse<GetProfilesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<GetProfilesResponse> response = (ApiResponse<GetProfilesResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

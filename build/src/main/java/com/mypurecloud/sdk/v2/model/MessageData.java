@@ -191,6 +191,7 @@ public class MessageData  implements Serializable {
   private List<MessageMedia> media = new ArrayList<MessageMedia>();
   private List<MessageSticker> stickers = new ArrayList<MessageSticker>();
   private User createdBy = null;
+  private String conversationId = null;
   private String selfUri = null;
 
   
@@ -416,6 +417,24 @@ public class MessageData  implements Serializable {
   }
 
   
+  /**
+   * The id of the conversation of this message.
+   **/
+  public MessageData conversationId(String conversationId) {
+    this.conversationId = conversationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The id of the conversation of this message.")
+  @JsonProperty("conversationId")
+  public String getConversationId() {
+    return conversationId;
+  }
+  public void setConversationId(String conversationId) {
+    this.conversationId = conversationId;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -446,12 +465,13 @@ public class MessageData  implements Serializable {
         Objects.equals(this.media, messageData.media) &&
         Objects.equals(this.stickers, messageData.stickers) &&
         Objects.equals(this.createdBy, messageData.createdBy) &&
+        Objects.equals(this.conversationId, messageData.conversationId) &&
         Objects.equals(this.selfUri, messageData.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, providerMessageId, timestamp, fromAddress, toAddress, direction, messengerType, textBody, status, media, stickers, createdBy, selfUri);
+    return Objects.hash(id, name, providerMessageId, timestamp, fromAddress, toAddress, direction, messengerType, textBody, status, media, stickers, createdBy, conversationId, selfUri);
   }
 
   @Override
@@ -472,6 +492,7 @@ public class MessageData  implements Serializable {
     sb.append("    media: ").append(toIndentedString(media)).append("\n");
     sb.append("    stickers: ").append(toIndentedString(stickers)).append("\n");
     sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
+    sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

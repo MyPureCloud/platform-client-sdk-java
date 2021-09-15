@@ -157,6 +157,7 @@ import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailParticipantWrapup
 import com.mypurecloud.sdk.v2.api.request.GetConversationsEmailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageCommunicationMessagesMediaMediaIdRequest;
+import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageDetailsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageParticipantWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.GetConversationsMessageParticipantWrapupcodesRequest;
@@ -4081,7 +4082,7 @@ public class ConversationsApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<MessageData> getConversationsMessageMessageAsync(GetConversationsMessageMessageRequest request, final AsyncApiCallback<MessageData> callback) {
+  public Future<MessageData> getConversationsMessageDetailsAsync(GetConversationsMessageDetailsRequest request, final AsyncApiCallback<MessageData> callback) {
     try {
       final SettableFuture<MessageData> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -4110,6 +4111,82 @@ public class ConversationsApiAsync {
 
   /**
    * Get message
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<MessageData>> getConversationsMessageDetailsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<MessageData>> callback) {
+    try {
+      final SettableFuture<ApiResponse<MessageData>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<MessageData>() {}, new AsyncApiCallback<ApiResponse<MessageData>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessageData> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessageData> response = (ApiResponse<MessageData>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<MessageData> response = (ApiResponse<MessageData>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Get conversation message
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<MessageData> getConversationsMessageMessageAsync(GetConversationsMessageMessageRequest request, final AsyncApiCallback<MessageData> callback) {
+    try {
+      final SettableFuture<MessageData> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<MessageData>() {}, new AsyncApiCallback<ApiResponse<MessageData>>() {
+        @Override
+        public void onCompleted(ApiResponse<MessageData> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get conversation message
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

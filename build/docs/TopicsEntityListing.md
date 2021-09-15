@@ -10,6 +10,7 @@ title: TopicsEntityListing
 | ------------ | ------------- | ------------- | ------------- |
 | **entities** | <!----><!---->[**List&lt;ListedTopic&gt;**](ListedTopic.html)<!----> |  |  [optional] |
 | **pageSize** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **total** | <!----><!---->**Integer**<!----> |  |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **nextUri** | <!----><!---->**String**<!----> |  |  [optional] |
 | **pageCount** | <!----><!---->**Integer**<!----> |  |  [optional] |

@@ -42,7 +42,8 @@ public class LearningAssignmentAggregateQueryRequestPredicate  implements Serial
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ATTENDEEID("attendeeId"),
     TYPE("type"),
-    MODULEID("moduleId");
+    MODULEID("moduleId"),
+    ISPASSED("isPassed");
 
     private String value;
 
@@ -92,14 +93,14 @@ public class LearningAssignmentAggregateQueryRequestPredicate  implements Serial
 
   
   /**
-   * Corresponding value for dimensions in predicates. If the dimensions is type, Valid Values: Informational, AssessedContent, Questionnaire
+   * Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment
    **/
   public LearningAssignmentAggregateQueryRequestPredicate value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Corresponding value for dimensions in predicates. If the dimensions is type, Valid Values: Informational, AssessedContent, Questionnaire")
+  @ApiModelProperty(example = "null", required = true, value = "Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment")
   @JsonProperty("value")
   public String getValue() {
     return value;

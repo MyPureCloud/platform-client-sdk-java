@@ -99,6 +99,8 @@ public class QueueRequest  implements Serializable {
   }
   private SkillEvaluationMethodEnum skillEvaluationMethod = null;
   private DomainEntityRef queueFlow = null;
+  private DomainEntityRef emailInQueueFlow = null;
+  private DomainEntityRef messageInQueueFlow = null;
   private DomainEntityRef whisperPrompt = null;
   private Boolean autoAnswerOnly = null;
   private Boolean enableTranscription = null;
@@ -349,20 +351,56 @@ public class QueueRequest  implements Serializable {
 
   
   /**
-   * The in-queue flow to use for conversations waiting in queue.
+   * The in-queue flow to use for call conversations waiting in queue.
    **/
   public QueueRequest queueFlow(DomainEntityRef queueFlow) {
     this.queueFlow = queueFlow;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The in-queue flow to use for conversations waiting in queue.")
+  @ApiModelProperty(example = "null", value = "The in-queue flow to use for call conversations waiting in queue.")
   @JsonProperty("queueFlow")
   public DomainEntityRef getQueueFlow() {
     return queueFlow;
   }
   public void setQueueFlow(DomainEntityRef queueFlow) {
     this.queueFlow = queueFlow;
+  }
+
+  
+  /**
+   * The in-queue flow to use for email conversations waiting in queue.
+   **/
+  public QueueRequest emailInQueueFlow(DomainEntityRef emailInQueueFlow) {
+    this.emailInQueueFlow = emailInQueueFlow;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The in-queue flow to use for email conversations waiting in queue.")
+  @JsonProperty("emailInQueueFlow")
+  public DomainEntityRef getEmailInQueueFlow() {
+    return emailInQueueFlow;
+  }
+  public void setEmailInQueueFlow(DomainEntityRef emailInQueueFlow) {
+    this.emailInQueueFlow = emailInQueueFlow;
+  }
+
+  
+  /**
+   * The in-queue flow to use for message conversations waiting in queue.
+   **/
+  public QueueRequest messageInQueueFlow(DomainEntityRef messageInQueueFlow) {
+    this.messageInQueueFlow = messageInQueueFlow;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The in-queue flow to use for message conversations waiting in queue.")
+  @JsonProperty("messageInQueueFlow")
+  public DomainEntityRef getMessageInQueueFlow() {
+    return messageInQueueFlow;
+  }
+  public void setMessageInQueueFlow(DomainEntityRef messageInQueueFlow) {
+    this.messageInQueueFlow = messageInQueueFlow;
   }
 
   
@@ -560,6 +598,8 @@ public class QueueRequest  implements Serializable {
         Objects.equals(this.acwSettings, queueRequest.acwSettings) &&
         Objects.equals(this.skillEvaluationMethod, queueRequest.skillEvaluationMethod) &&
         Objects.equals(this.queueFlow, queueRequest.queueFlow) &&
+        Objects.equals(this.emailInQueueFlow, queueRequest.emailInQueueFlow) &&
+        Objects.equals(this.messageInQueueFlow, queueRequest.messageInQueueFlow) &&
         Objects.equals(this.whisperPrompt, queueRequest.whisperPrompt) &&
         Objects.equals(this.autoAnswerOnly, queueRequest.autoAnswerOnly) &&
         Objects.equals(this.enableTranscription, queueRequest.enableTranscription) &&
@@ -574,7 +614,7 @@ public class QueueRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, joinedMemberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, queueFlow, whisperPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, joinedMemberCount, mediaSettings, routingRules, bullseye, acwSettings, skillEvaluationMethod, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, autoAnswerOnly, enableTranscription, enableManualAssignment, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, selfUri);
   }
 
   @Override
@@ -598,6 +638,8 @@ public class QueueRequest  implements Serializable {
     sb.append("    acwSettings: ").append(toIndentedString(acwSettings)).append("\n");
     sb.append("    skillEvaluationMethod: ").append(toIndentedString(skillEvaluationMethod)).append("\n");
     sb.append("    queueFlow: ").append(toIndentedString(queueFlow)).append("\n");
+    sb.append("    emailInQueueFlow: ").append(toIndentedString(emailInQueueFlow)).append("\n");
+    sb.append("    messageInQueueFlow: ").append(toIndentedString(messageInQueueFlow)).append("\n");
     sb.append("    whisperPrompt: ").append(toIndentedString(whisperPrompt)).append("\n");
     sb.append("    autoAnswerOnly: ").append(toIndentedString(autoAnswerOnly)).append("\n");
     sb.append("    enableTranscription: ").append(toIndentedString(enableTranscription)).append("\n");

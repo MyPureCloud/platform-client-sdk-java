@@ -15,9 +15,9 @@ title: GenericSAML
 | **ssoTargetURI** | <!----><!---->**String**<!----> |  |  [optional] |
 | **sloURI** | <!----><!---->**String**<!----> |  |  [optional] |
 | **sloBinding** | <!----><!---->**String**<!----> |  |  [optional] |
+| **relyingPartyIdentifier** | <!----><!---->**String**<!----> |  |  [optional] |
 | **certificate** | <!----><!---->**String**<!----> |  |  [optional] |
 | **certificates** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **relyingPartyIdentifier** | <!----><!---->**String**<!----> |  |  [optional] |
 | **logoImageData** | <!----><!---->**String**<!----> |  |  [optional] |
 | **endpointCompression** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 | **nameIdentifierFormat** | [**NameIdentifierFormatEnum**](#NameIdentifierFormatEnum)<!----> |  |  [optional] |

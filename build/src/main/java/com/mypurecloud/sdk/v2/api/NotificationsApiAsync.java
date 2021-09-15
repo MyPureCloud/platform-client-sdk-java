@@ -356,18 +356,18 @@ public class NotificationsApiAsync {
   
   /**
    * Verify a channel still exists and is valid
-   * 
+   * Returns a 200 OK if channel exists, and a 404 Not Found if it doesn&#39;t
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<Boolean> headNotificationsChannelAsync(HeadNotificationsChannelRequest request, final AsyncApiCallback<Boolean> callback) {
+  public Future<Void> headNotificationsChannelAsync(HeadNotificationsChannelRequest request, final AsyncApiCallback<Void> callback) {
     try {
-      final SettableFuture<Boolean> future = SettableFuture.create();
+      final SettableFuture<Void> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<Boolean>() {}, new AsyncApiCallback<ApiResponse<Boolean>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<Boolean> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -390,18 +390,18 @@ public class NotificationsApiAsync {
 
   /**
    * Verify a channel still exists and is valid
-   * 
+   * Returns a 200 OK if channel exists, and a 404 Not Found if it doesn&#39;t
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<Boolean>> headNotificationsChannelAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Boolean>> callback) {
+  public Future<ApiResponse<Void>> headNotificationsChannelAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
-      final SettableFuture<ApiResponse<Boolean>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<Boolean>() {}, new AsyncApiCallback<ApiResponse<Boolean>>() {
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
         @Override
-        public void onCompleted(ApiResponse<Boolean> response) {
+        public void onCompleted(ApiResponse<Void> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -409,7 +409,7 @@ public class NotificationsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<Boolean> response = (ApiResponse<Boolean>)(ApiResponse<?>)exception;
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -417,7 +417,7 @@ public class NotificationsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<Boolean> response = (ApiResponse<Boolean>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

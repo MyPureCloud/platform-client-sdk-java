@@ -31,6 +31,7 @@ title: ConversationReason
 | SERVERERROR | &quot;ServerError&quot; |
 | MEDIATYPENOTALLOWED | &quot;MediaTypeNotAllowed&quot; |
 | INVALIDMEDIACONTENTLENGTH | &quot;InvalidMediaContentLength&quot; |
+| RECIPIENTOPTEDOUT | &quot;RecipientOptedOut&quot; |
 {: class="table table-striped"}
 
 

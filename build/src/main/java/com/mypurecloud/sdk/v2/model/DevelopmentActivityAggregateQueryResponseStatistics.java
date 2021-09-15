@@ -12,6 +12,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.math.BigDecimal;
 
 import java.io.Serializable;
 /**
@@ -21,9 +22,9 @@ import java.io.Serializable;
 public class DevelopmentActivityAggregateQueryResponseStatistics  implements Serializable {
   
   private Integer count = null;
-  private Integer min = null;
-  private Integer max = null;
-  private Integer sum = null;
+  private BigDecimal min = null;
+  private BigDecimal max = null;
+  private BigDecimal sum = null;
 
   
   /**
@@ -47,17 +48,17 @@ public class DevelopmentActivityAggregateQueryResponseStatistics  implements Ser
   /**
    * The minimum value in this metric
    **/
-  public DevelopmentActivityAggregateQueryResponseStatistics min(Integer min) {
+  public DevelopmentActivityAggregateQueryResponseStatistics min(BigDecimal min) {
     this.min = min;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The minimum value in this metric")
   @JsonProperty("min")
-  public Integer getMin() {
+  public BigDecimal getMin() {
     return min;
   }
-  public void setMin(Integer min) {
+  public void setMin(BigDecimal min) {
     this.min = min;
   }
 
@@ -65,17 +66,17 @@ public class DevelopmentActivityAggregateQueryResponseStatistics  implements Ser
   /**
    * The maximum value in this metric
    **/
-  public DevelopmentActivityAggregateQueryResponseStatistics max(Integer max) {
+  public DevelopmentActivityAggregateQueryResponseStatistics max(BigDecimal max) {
     this.max = max;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The maximum value in this metric")
   @JsonProperty("max")
-  public Integer getMax() {
+  public BigDecimal getMax() {
     return max;
   }
-  public void setMax(Integer max) {
+  public void setMax(BigDecimal max) {
     this.max = max;
   }
 
@@ -83,17 +84,17 @@ public class DevelopmentActivityAggregateQueryResponseStatistics  implements Ser
   /**
    * The total of the values for this metric
    **/
-  public DevelopmentActivityAggregateQueryResponseStatistics sum(Integer sum) {
+  public DevelopmentActivityAggregateQueryResponseStatistics sum(BigDecimal sum) {
     this.sum = sum;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The total of the values for this metric")
   @JsonProperty("sum")
-  public Integer getSum() {
+  public BigDecimal getSum() {
     return sum;
   }
-  public void setSum(Integer sum) {
+  public void setSum(BigDecimal sum) {
     this.sum = sum;
   }
 

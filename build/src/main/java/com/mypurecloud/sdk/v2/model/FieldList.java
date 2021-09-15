@@ -33,6 +33,7 @@ public class FieldList  implements Serializable {
   private String state = null;
   private String type = null;
   private Boolean required = null;
+  private Boolean gdpr = null;
 
   
   /**
@@ -188,6 +189,23 @@ public class FieldList  implements Serializable {
   }
 
   
+  /**
+   **/
+  public FieldList gdpr(Boolean gdpr) {
+    this.gdpr = gdpr;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("gdpr")
+  public Boolean getGdpr() {
+    return gdpr;
+  }
+  public void setGdpr(Boolean gdpr) {
+    this.gdpr = gdpr;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -206,12 +224,13 @@ public class FieldList  implements Serializable {
         Objects.equals(this.repeatable, fieldList.repeatable) &&
         Objects.equals(this.state, fieldList.state) &&
         Objects.equals(this.type, fieldList.type) &&
-        Objects.equals(this.required, fieldList.required);
+        Objects.equals(this.required, fieldList.required) &&
+        Objects.equals(this.gdpr, fieldList.gdpr);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customLabels, instructionText, key, labelKeys, params, repeatable, state, type, required);
+    return Objects.hash(customLabels, instructionText, key, labelKeys, params, repeatable, state, type, required, gdpr);
   }
 
   @Override
@@ -228,6 +247,7 @@ public class FieldList  implements Serializable {
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    required: ").append(toIndentedString(required)).append("\n");
+    sb.append("    gdpr: ").append(toIndentedString(gdpr)).append("\n");
     sb.append("}");
     return sb.toString();
   }

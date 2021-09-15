@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.AuthenticationSettings;
+import com.mypurecloud.sdk.v2.model.CobrowseSettings;
 import com.mypurecloud.sdk.v2.model.JourneyEventsSettings;
 import com.mypurecloud.sdk.v2.model.MessengerSettings;
 import io.swagger.annotations.ApiModel;
@@ -36,6 +37,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
   private List<String> languages = new ArrayList<String>();
   private String defaultLanguage = null;
   private MessengerSettings messenger = null;
+  private CobrowseSettings cobrowse = null;
   private JourneyEventsSettings journeyEvents = null;
   private AuthenticationSettings authenticationSettings = null;
   private Date dateCreated = null;
@@ -203,6 +205,24 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
 
   
   /**
+   * The settings for cobrowse
+   **/
+  public WebDeploymentConfigurationVersion cobrowse(CobrowseSettings cobrowse) {
+    this.cobrowse = cobrowse;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The settings for cobrowse")
+  @JsonProperty("cobrowse")
+  public CobrowseSettings getCobrowse() {
+    return cobrowse;
+  }
+  public void setCobrowse(CobrowseSettings cobrowse) {
+    this.cobrowse = cobrowse;
+  }
+
+  
+  /**
    * The settings for journey events
    **/
   public WebDeploymentConfigurationVersion journeyEvents(JourneyEventsSettings journeyEvents) {
@@ -355,6 +375,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
         Objects.equals(this.languages, webDeploymentConfigurationVersion.languages) &&
         Objects.equals(this.defaultLanguage, webDeploymentConfigurationVersion.defaultLanguage) &&
         Objects.equals(this.messenger, webDeploymentConfigurationVersion.messenger) &&
+        Objects.equals(this.cobrowse, webDeploymentConfigurationVersion.cobrowse) &&
         Objects.equals(this.journeyEvents, webDeploymentConfigurationVersion.journeyEvents) &&
         Objects.equals(this.authenticationSettings, webDeploymentConfigurationVersion.authenticationSettings) &&
         Objects.equals(this.dateCreated, webDeploymentConfigurationVersion.dateCreated) &&
@@ -369,7 +390,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, version, description, languages, defaultLanguage, messenger, journeyEvents, authenticationSettings, dateCreated, dateModified, datePublished, lastModifiedUser, createdUser, publishedUser, status, selfUri);
+    return Objects.hash(id, name, version, description, languages, defaultLanguage, messenger, cobrowse, journeyEvents, authenticationSettings, dateCreated, dateModified, datePublished, lastModifiedUser, createdUser, publishedUser, status, selfUri);
   }
 
   @Override
@@ -384,6 +405,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    defaultLanguage: ").append(toIndentedString(defaultLanguage)).append("\n");
     sb.append("    messenger: ").append(toIndentedString(messenger)).append("\n");
+    sb.append("    cobrowse: ").append(toIndentedString(cobrowse)).append("\n");
     sb.append("    journeyEvents: ").append(toIndentedString(journeyEvents)).append("\n");
     sb.append("    authenticationSettings: ").append(toIndentedString(authenticationSettings)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");

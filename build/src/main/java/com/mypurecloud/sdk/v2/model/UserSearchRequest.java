@@ -94,7 +94,7 @@ public class UserSearchRequest  implements Serializable {
     }
   }
   /**
-   * Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 10.
+   * Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100.
    */
  @JsonDeserialize(using = IntegrationPresenceSourceEnumDeserializer.class)
   public enum IntegrationPresenceSourceEnum {
@@ -258,14 +258,14 @@ public class UserSearchRequest  implements Serializable {
 
   
   /**
-   * Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 10.
+   * Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100.
    **/
   public UserSearchRequest integrationPresenceSource(IntegrationPresenceSourceEnum integrationPresenceSource) {
     this.integrationPresenceSource = integrationPresenceSource;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 10.")
+  @ApiModelProperty(example = "null", value = "Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100.")
   @JsonProperty("integrationPresenceSource")
   public IntegrationPresenceSourceEnum getIntegrationPresenceSource() {
     return integrationPresenceSource;

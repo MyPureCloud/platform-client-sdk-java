@@ -27,6 +27,11 @@ title: GeneralProgramJobRequest
 | EN_ZA | &quot;en-ZA&quot; |
 | ES_ES | &quot;es-ES&quot; |
 | EN_IN | &quot;en-IN&quot; |
+| FR_FR | &quot;fr-FR&quot; |
+| FR_CA | &quot;fr-CA&quot; |
+| IT_IT | &quot;it-IT&quot; |
+| DE_DE | &quot;de-DE&quot; |
+| PT_BR | &quot;pt-BR&quot; |
 {: class="table table-striped"}
 
 

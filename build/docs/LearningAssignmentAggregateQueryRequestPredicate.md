@@ -9,7 +9,7 @@ title: LearningAssignmentAggregateQueryRequestPredicate
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **dimension** | [**DimensionEnum**](#DimensionEnum)<!----> | Each predicates specifies a dimension. |  |
-| **value** | <!----><!---->**String**<!----> | Corresponding value for dimensions in predicates. If the dimensions is type, Valid Values: Informational, AssessedContent, Questionnaire |  |
+| **value** | <!----><!---->**String**<!----> | Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment |  |
 {: class="table table-striped"}
 
 
@@ -23,6 +23,7 @@ title: LearningAssignmentAggregateQueryRequestPredicate
 | ATTENDEEID | &quot;attendeeId&quot; |
 | TYPE | &quot;type&quot; |
 | MODULEID | &quot;moduleId&quot; |
+| ISPASSED | &quot;isPassed&quot; |
 {: class="table table-striped"}
 
 

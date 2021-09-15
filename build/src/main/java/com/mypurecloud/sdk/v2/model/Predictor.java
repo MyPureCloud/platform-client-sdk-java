@@ -84,6 +84,7 @@ public class Predictor  implements Serializable {
   private Date dateCreated = null;
   private Date dateModified = null;
   private PredictorWorkloadBalancing workloadBalancingConfig = null;
+  private String errorCode = null;
   private String selfUri = null;
 
   
@@ -205,6 +206,13 @@ public class Predictor  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "Predictor error code - optional details on why the predictor went into error state.")
+  @JsonProperty("errorCode")
+  public String getErrorCode() {
+    return errorCode;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -231,12 +239,13 @@ public class Predictor  implements Serializable {
         Objects.equals(this.dateCreated, predictor.dateCreated) &&
         Objects.equals(this.dateModified, predictor.dateModified) &&
         Objects.equals(this.workloadBalancingConfig, predictor.workloadBalancingConfig) &&
+        Objects.equals(this.errorCode, predictor.errorCode) &&
         Objects.equals(this.selfUri, predictor.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, queues, kpi, routingTimeoutSeconds, schedule, state, dateCreated, dateModified, workloadBalancingConfig, selfUri);
+    return Objects.hash(id, queues, kpi, routingTimeoutSeconds, schedule, state, dateCreated, dateModified, workloadBalancingConfig, errorCode, selfUri);
   }
 
   @Override
@@ -253,6 +262,7 @@ public class Predictor  implements Serializable {
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
     sb.append("    workloadBalancingConfig: ").append(toIndentedString(workloadBalancingConfig)).append("\n");
+    sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

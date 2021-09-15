@@ -42,7 +42,8 @@ public class DevelopmentActivityAggregateQueryRequestPredicate  implements Seria
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ATTENDEEID("attendeeId"),
     TYPE("type"),
-    MODULEID("moduleId");
+    MODULEID("moduleId"),
+    ISPASSED("isPassed");
 
     private String value;
 
@@ -92,14 +93,14 @@ public class DevelopmentActivityAggregateQueryRequestPredicate  implements Seria
 
   
   /**
-   * Corresponding value for dimensions in predicates. If the dimensions is type, Valid Values: Informational, Coaching
+   * Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment, Coaching
    **/
   public DevelopmentActivityAggregateQueryRequestPredicate value(String value) {
     this.value = value;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Corresponding value for dimensions in predicates. If the dimensions is type, Valid Values: Informational, Coaching")
+  @ApiModelProperty(example = "null", required = true, value = "Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment, Coaching")
   @JsonProperty("value")
   public String getValue() {
     return value;

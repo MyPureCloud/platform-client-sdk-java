@@ -17,6 +17,7 @@ title: FieldList
 | **state** | <!----><!---->**String**<!----> |  |  [optional] |
 | **type** | <!----><!---->**String**<!----> |  |  [optional] |
 | **required** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **gdpr** | <!----><!---->**Boolean**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

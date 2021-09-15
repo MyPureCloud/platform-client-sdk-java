@@ -12,8 +12,11 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Format;
+import com.mypurecloud.sdk.v2.model.MessageContent;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -43,7 +46,8 @@ public class TextBotPromptSegment  implements Serializable {
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    TEXT("Text");
+    TEXT("Text"),
+    RICHMEDIA("RichMedia");
 
     private String value;
 
@@ -72,6 +76,7 @@ public class TextBotPromptSegment  implements Serializable {
   }
   private TypeEnum type = null;
   private Format format = null;
+  private List<MessageContent> content = new ArrayList<MessageContent>();
 
   
   /**
@@ -128,6 +133,24 @@ public class TextBotPromptSegment  implements Serializable {
   }
 
   
+  /**
+   * Details to display Rich Media content. This is only populated when the segment 'type' is 'Rich Media'.
+   **/
+  public TextBotPromptSegment content(List<MessageContent> content) {
+    this.content = content;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Details to display Rich Media content. This is only populated when the segment 'type' is 'Rich Media'.")
+  @JsonProperty("content")
+  public List<MessageContent> getContent() {
+    return content;
+  }
+  public void setContent(List<MessageContent> content) {
+    this.content = content;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -140,12 +163,13 @@ public class TextBotPromptSegment  implements Serializable {
     TextBotPromptSegment textBotPromptSegment = (TextBotPromptSegment) o;
     return Objects.equals(this.text, textBotPromptSegment.text) &&
         Objects.equals(this.type, textBotPromptSegment.type) &&
-        Objects.equals(this.format, textBotPromptSegment.format);
+        Objects.equals(this.format, textBotPromptSegment.format) &&
+        Objects.equals(this.content, textBotPromptSegment.content);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(text, type, format);
+    return Objects.hash(text, type, format, content);
   }
 
   @Override
@@ -156,6 +180,7 @@ public class TextBotPromptSegment  implements Serializable {
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    format: ").append(toIndentedString(format)).append("\n");
+    sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("}");
     return sb.toString();
   }

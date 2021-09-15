@@ -29,6 +29,7 @@ public class OneLogin  implements Serializable {
   private String ssoTargetURI = null;
   private String sloURI = null;
   private String sloBinding = null;
+  private String relyingPartyIdentifier = null;
   private String certificate = null;
   private List<String> certificates = new ArrayList<String>();
   private String selfUri = null;
@@ -145,6 +146,23 @@ public class OneLogin  implements Serializable {
   
   /**
    **/
+  public OneLogin relyingPartyIdentifier(String relyingPartyIdentifier) {
+    this.relyingPartyIdentifier = relyingPartyIdentifier;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("relyingPartyIdentifier")
+  public String getRelyingPartyIdentifier() {
+    return relyingPartyIdentifier;
+  }
+  public void setRelyingPartyIdentifier(String relyingPartyIdentifier) {
+    this.relyingPartyIdentifier = relyingPartyIdentifier;
+  }
+
+  
+  /**
+   **/
   public OneLogin certificate(String certificate) {
     this.certificate = certificate;
     return this;
@@ -201,6 +219,7 @@ public class OneLogin  implements Serializable {
         Objects.equals(this.ssoTargetURI, oneLogin.ssoTargetURI) &&
         Objects.equals(this.sloURI, oneLogin.sloURI) &&
         Objects.equals(this.sloBinding, oneLogin.sloBinding) &&
+        Objects.equals(this.relyingPartyIdentifier, oneLogin.relyingPartyIdentifier) &&
         Objects.equals(this.certificate, oneLogin.certificate) &&
         Objects.equals(this.certificates, oneLogin.certificates) &&
         Objects.equals(this.selfUri, oneLogin.selfUri);
@@ -208,7 +227,7 @@ public class OneLogin  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, certificate, certificates, selfUri);
+    return Objects.hash(id, name, disabled, issuerURI, ssoTargetURI, sloURI, sloBinding, relyingPartyIdentifier, certificate, certificates, selfUri);
   }
 
   @Override
@@ -223,6 +242,7 @@ public class OneLogin  implements Serializable {
     sb.append("    ssoTargetURI: ").append(toIndentedString(ssoTargetURI)).append("\n");
     sb.append("    sloURI: ").append(toIndentedString(sloURI)).append("\n");
     sb.append("    sloBinding: ").append(toIndentedString(sloBinding)).append("\n");
+    sb.append("    relyingPartyIdentifier: ").append(toIndentedString(relyingPartyIdentifier)).append("\n");
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
     sb.append("    certificates: ").append(toIndentedString(certificates)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");

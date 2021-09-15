@@ -41,7 +41,8 @@ public class PredictorSchedule  implements Serializable {
  @JsonDeserialize(using = ScheduleTypeEnumDeserializer.class)
   public enum ScheduleTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    HOURONHOUROFF("HourOnHourOff");
+    HOURONHOUROFF("HourOnHourOff"),
+    ONGOINGVALUEMONITORING("OngoingValueMonitoring");
 
     private String value;
 

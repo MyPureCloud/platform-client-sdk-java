@@ -27,13 +27,14 @@ public class Bullseye  implements Serializable {
 
   
   /**
+   * The bullseye rings configured for this queue.
    **/
   public Bullseye rings(List<Ring> rings) {
     this.rings = rings;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The bullseye rings configured for this queue.")
   @JsonProperty("rings")
   public List<Ring> getRings() {
     return rings;

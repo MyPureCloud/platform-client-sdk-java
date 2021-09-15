@@ -62,6 +62,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getFlowsDatatableRow**](ArchitectApi.html#getFlowsDatatableRow) | Returns a specific row for the datatable |
 | [**getFlowsDatatableRows**](ArchitectApi.html#getFlowsDatatableRows) | Returns the rows for the datatable with the given id |
 | [**getFlowsDatatables**](ArchitectApi.html#getFlowsDatatables) | Retrieve a list of datatables for the org |
+| [**getFlowsDatatablesDivisionview**](ArchitectApi.html#getFlowsDatatablesDivisionview) | Returns a specific datatable by id |
+| [**getFlowsDatatablesDivisionviews**](ArchitectApi.html#getFlowsDatatablesDivisionviews) | Retrieve a list of datatables for the org |
 | [**getFlowsDivisionviews**](ArchitectApi.html#getFlowsDivisionviews) | Get a pageable list of basic flow information objects filterable by query parameters. |
 | [**getFlowsExecution**](ArchitectApi.html#getFlowsExecution) | Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started. |
 | [**getFlowsMilestone**](ArchitectApi.html#getFlowsMilestone) | Get a flow milestone |
@@ -3823,6 +3825,146 @@ try {
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getFlowsDatatables");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **expand** | **String**| Expand instructions for the result | [optional]<br />**Values**: schema 
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Page size | [optional] [default to 25] 
+| **sortBy** | **String**| Sort by | [optional] [default to id]<br />**Values**: id, name 
+| **sortOrder** | **String**| Sort order | [optional] [default to ascending] 
+| **divisionId** | [**List&lt;String&gt;**](String.html)| division ID(s) | [optional] 
+| **name** | **String**| Name to filter by | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataTablesDomainEntityListing**](DataTablesDomainEntityListing.html)
+
+<a name="getFlowsDatatablesDivisionview"></a>
+
+# **getFlowsDatatablesDivisionview**
+
+
+
+> [DataTable](DataTable.html) getFlowsDatatablesDivisionview(datatableId, expand)
+
+Returns a specific datatable by id
+
+Given a datatableId returns the datatable object and schema associated with it.
+
+Wraps GET /api/v2/flows/datatables/divisionviews/{datatableId}  
+
+Requires ALL permissions: 
+
+* architect:datatable:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String datatableId = "datatableId_example"; // String | id of datatable
+String expand = "expand_example"; // String | Expand instructions for the result
+try {
+    DataTable result = apiInstance.getFlowsDatatablesDivisionview(datatableId, expand);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowsDatatablesDivisionview");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **datatableId** | **String**| id of datatable | 
+| **expand** | **String**| Expand instructions for the result | [optional]<br />**Values**: schema 
+{: class="table-striped"}
+
+
+### Return type
+
+[**DataTable**](DataTable.html)
+
+<a name="getFlowsDatatablesDivisionviews"></a>
+
+# **getFlowsDatatablesDivisionviews**
+
+
+
+> [DataTablesDomainEntityListing](DataTablesDomainEntityListing.html) getFlowsDatatablesDivisionviews(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId, name)
+
+Retrieve a list of datatables for the org
+
+Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
+
+Wraps GET /api/v2/flows/datatables/divisionviews  
+
+Requires ALL permissions: 
+
+* architect:datatable:search
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ArchitectApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ArchitectApi apiInstance = new ArchitectApi();
+String expand = "expand_example"; // String | Expand instructions for the result
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 25; // Integer | Page size
+String sortBy = "id"; // String | Sort by
+String sortOrder = "ascending"; // String | Sort order
+List<String> divisionId = Arrays.asList("divisionId_example"); // List<String> | division ID(s)
+String name = "name_example"; // String | Name to filter by
+try {
+    DataTablesDomainEntityListing result = apiInstance.getFlowsDatatablesDivisionviews(expand, pageNumber, pageSize, sortBy, sortOrder, divisionId, name);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArchitectApi#getFlowsDatatablesDivisionviews");
     e.printStackTrace();
 }
 ```

@@ -200,6 +200,7 @@ public class Message  implements Serializable {
   private Date connectedTime = null;
   private Date disconnectedTime = null;
   private String provider = null;
+  private Boolean authenticated = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {
@@ -267,6 +268,7 @@ public class Message  implements Serializable {
   private Wrapup wrapup = null;
   private AfterCallWork afterCallWork = null;
   private Boolean afterCallWorkRequired = null;
+  private String agentAssistantId = null;
 
   
   /**
@@ -503,6 +505,24 @@ public class Message  implements Serializable {
 
   
   /**
+   * If true, the participant member is authenticated.
+   **/
+  public Message authenticated(Boolean authenticated) {
+    this.authenticated = authenticated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If true, the participant member is authenticated.")
+  @JsonProperty("authenticated")
+  public Boolean getAuthenticated() {
+    return authenticated;
+  }
+  public void setAuthenticated(Boolean authenticated) {
+    this.authenticated = authenticated;
+  }
+
+  
+  /**
    * Indicates the type of message platform from which the message originated.
    **/
   public Message type(TypeEnum type) {
@@ -718,6 +738,24 @@ public class Message  implements Serializable {
   }
 
   
+  /**
+   * UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.
+   **/
+  public Message agentAssistantId(String agentAssistantId) {
+    this.agentAssistantId = agentAssistantId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "UUID of virtual agent assistant that provide suggestions to the agent participant during the conversation.")
+  @JsonProperty("agentAssistantId")
+  public String getAgentAssistantId() {
+    return agentAssistantId;
+  }
+  public void setAgentAssistantId(String agentAssistantId) {
+    this.agentAssistantId = agentAssistantId;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -741,6 +779,7 @@ public class Message  implements Serializable {
         Objects.equals(this.connectedTime, message.connectedTime) &&
         Objects.equals(this.disconnectedTime, message.disconnectedTime) &&
         Objects.equals(this.provider, message.provider) &&
+        Objects.equals(this.authenticated, message.authenticated) &&
         Objects.equals(this.type, message.type) &&
         Objects.equals(this.recipientCountry, message.recipientCountry) &&
         Objects.equals(this.recipientType, message.recipientType) &&
@@ -752,12 +791,13 @@ public class Message  implements Serializable {
         Objects.equals(this.journeyContext, message.journeyContext) &&
         Objects.equals(this.wrapup, message.wrapup) &&
         Objects.equals(this.afterCallWork, message.afterCallWork) &&
-        Objects.equals(this.afterCallWorkRequired, message.afterCallWorkRequired);
+        Objects.equals(this.afterCallWorkRequired, message.afterCallWorkRequired) &&
+        Objects.equals(this.agentAssistantId, message.agentAssistantId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, id, held, segments, direction, recordingId, errorInfo, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, type, recipientCountry, recipientType, scriptId, peerId, toAddress, fromAddress, messages, journeyContext, wrapup, afterCallWork, afterCallWorkRequired);
+    return Objects.hash(state, id, held, segments, direction, recordingId, errorInfo, disconnectType, startHoldTime, startAlertingTime, connectedTime, disconnectedTime, provider, authenticated, type, recipientCountry, recipientType, scriptId, peerId, toAddress, fromAddress, messages, journeyContext, wrapup, afterCallWork, afterCallWorkRequired, agentAssistantId);
   }
 
   @Override
@@ -778,6 +818,7 @@ public class Message  implements Serializable {
     sb.append("    connectedTime: ").append(toIndentedString(connectedTime)).append("\n");
     sb.append("    disconnectedTime: ").append(toIndentedString(disconnectedTime)).append("\n");
     sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    sb.append("    authenticated: ").append(toIndentedString(authenticated)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    recipientCountry: ").append(toIndentedString(recipientCountry)).append("\n");
     sb.append("    recipientType: ").append(toIndentedString(recipientType)).append("\n");
@@ -790,6 +831,7 @@ public class Message  implements Serializable {
     sb.append("    wrapup: ").append(toIndentedString(wrapup)).append("\n");
     sb.append("    afterCallWork: ").append(toIndentedString(afterCallWork)).append("\n");
     sb.append("    afterCallWorkRequired: ").append(toIndentedString(afterCallWorkRequired)).append("\n");
+    sb.append("    agentAssistantId: ").append(toIndentedString(agentAssistantId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
