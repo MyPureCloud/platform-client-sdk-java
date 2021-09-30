@@ -445,39 +445,17 @@ public class InteractionStatsAlert  implements Serializable {
   }
 
   
-  /**
-   * The ids of users who were notified of alarm state change.
-   **/
-  public InteractionStatsAlert notificationUsers(List<User> notificationUsers) {
-    this.notificationUsers = notificationUsers;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", required = true, value = "The ids of users who were notified of alarm state change.")
   @JsonProperty("notificationUsers")
   public List<User> getNotificationUsers() {
     return notificationUsers;
   }
-  public void setNotificationUsers(List<User> notificationUsers) {
-    this.notificationUsers = notificationUsers;
-  }
 
-  
-  /**
-   * A collection of notification methods.
-   **/
-  public InteractionStatsAlert alertTypes(List<AlertTypesEnum> alertTypes) {
-    this.alertTypes = alertTypes;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", required = true, value = "A collection of notification methods.")
   @JsonProperty("alertTypes")
   public List<AlertTypesEnum> getAlertTypes() {
     return alertTypes;
-  }
-  public void setAlertTypes(List<AlertTypesEnum> alertTypes) {
-    this.alertTypes = alertTypes;
   }
 
   

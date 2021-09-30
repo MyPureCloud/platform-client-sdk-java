@@ -144,7 +144,7 @@ public class RoutePathRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The set of skill IDs to associate with the route path")
+  @ApiModelProperty(example = "[\"33d29376-4267-4968-8042-dcabdf2c1d98\"]", value = "The set of skill IDs to associate with the route path")
   @JsonProperty("skillIds")
   public List<String> getSkillIds() {
     return skillIds;

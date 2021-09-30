@@ -53,39 +53,17 @@ public class ScimV2SchemaDefinition  implements Serializable {
   }
 
   
-  /**
-   * The list of service provider attributes.
-   **/
-  public ScimV2SchemaDefinition attributes(List<ScimV2SchemaAttribute> attributes) {
-    this.attributes = attributes;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The list of service provider attributes.")
   @JsonProperty("attributes")
   public List<ScimV2SchemaAttribute> getAttributes() {
     return attributes;
   }
-  public void setAttributes(List<ScimV2SchemaAttribute> attributes) {
-    this.attributes = attributes;
-  }
 
-  
-  /**
-   * The metadata of the SCIM resource. Only \"location\" and \"resourceType\" are set for \"Schema\" resources.
-   **/
-  public ScimV2SchemaDefinition meta(ScimMetadata meta) {
-    this.meta = meta;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource. Only \"location\" and \"resourceType\" are set for \"Schema\" resources.")
   @JsonProperty("meta")
   public ScimMetadata getMeta() {
     return meta;
-  }
-  public void setMeta(ScimMetadata meta) {
-    this.meta = meta;
   }
 
   

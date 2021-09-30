@@ -158,7 +158,7 @@ public class MinerExecuteRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "List of queue IDs for filtering conversations.")
+  @ApiModelProperty(example = "[ \"7fe8a4ce-7435-4c78-a83f-47c3943e53eb\", \"18c744bf-34d5-452a-b6d6-9af95628aa50\"]", value = "List of queue IDs for filtering conversations.")
   @JsonProperty("queueIds")
   public List<String> getQueueIds() {
     return queueIds;

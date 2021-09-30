@@ -70,21 +70,10 @@ public class ScimGroupListResponse  implements Serializable {
   }
 
   
-  /**
-   * The list of requested resources. If \"count\" is 0, then the list will be empty.
-   **/
-  public ScimGroupListResponse resources(List<ScimV2Group> resources) {
-    this.resources = resources;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The list of requested resources. If \"count\" is 0, then the list will be empty.")
   @JsonProperty("Resources")
   public List<ScimV2Group> getResources() {
     return resources;
-  }
-  public void setResources(List<ScimV2Group> resources) {
-    this.resources = resources;
   }
 
   

@@ -60,21 +60,10 @@ public class SupportedContentReference  implements Serializable {
   }
 
   
-  /**
-   * Media types definition for the supported content
-   **/
-  public SupportedContentReference mediaTypes(MediaTypes mediaTypes) {
-    this.mediaTypes = mediaTypes;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Media types definition for the supported content")
   @JsonProperty("mediaTypes")
   public MediaTypes getMediaTypes() {
     return mediaTypes;
-  }
-  public void setMediaTypes(MediaTypes mediaTypes) {
-    this.mediaTypes = mediaTypes;
   }
 
   

@@ -403,21 +403,10 @@ public class ExternalOrganization  implements Serializable {
   }
 
   
-  /**
-   * Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.
-   **/
-  public ExternalOrganization externalDataSources(List<ExternalDataSource> externalDataSources) {
-    this.externalDataSources = externalDataSources;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Links to the sources of data (e.g. one source might be a CRM) that contributed data to this record.  Read-only, and only populated when requested via expand param.")
   @JsonProperty("externalDataSources")
   public List<ExternalDataSource> getExternalDataSources() {
     return externalDataSources;
-  }
-  public void setExternalDataSources(List<ExternalDataSource> externalDataSources) {
-    this.externalDataSources = externalDataSources;
   }
 
   

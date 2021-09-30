@@ -29,8 +29,8 @@ public class RoutingConversationAttributesRequest  implements Serializable {
   
   /**
    * Priority to be updated on in-queue conversation. Range:[-25000000, 25000000]
-   * minimum: -2.5E7
-   * maximum: 2.5E7
+   * minimum: -25000000
+   * maximum: 25000000
    **/
   public RoutingConversationAttributesRequest priority(Integer priority) {
     this.priority = priority;

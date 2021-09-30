@@ -60,77 +60,77 @@ public class SchemaQuantityLimits  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "&quot;minFieldNameCharacters&quot;:1", value = "The minimum number of schema field name characters allowed.")
+  @ApiModelProperty(example = "\"minFieldNameCharacters\":1", value = "The minimum number of schema field name characters allowed.")
   @JsonProperty("minFieldNameCharacters")
   public Integer getMinFieldNameCharacters() {
     return minFieldNameCharacters;
   }
 
   
-  @ApiModelProperty(example = "&quot;minFieldNameCharacters&quot;:100", value = "The maximum number of schema field name characters allowed.")
+  @ApiModelProperty(example = "\"minFieldNameCharacters\":100", value = "The maximum number of schema field name characters allowed.")
   @JsonProperty("maxFieldNameCharacters")
   public Integer getMaxFieldNameCharacters() {
     return maxFieldNameCharacters;
   }
 
   
-  @ApiModelProperty(example = "&quot;minFieldDescriptionCharacters&quot;:0", value = "The minimum number of schema field description characters allowed.")
+  @ApiModelProperty(example = "\"minFieldDescriptionCharacters\":0", value = "The minimum number of schema field description characters allowed.")
   @JsonProperty("minFieldDescriptionCharacters")
   public Integer getMinFieldDescriptionCharacters() {
     return minFieldDescriptionCharacters;
   }
 
   
-  @ApiModelProperty(example = "&quot;maxFieldDescriptionCharacters&quot;:200", value = "The maximum number of schema field description characters allowed.")
+  @ApiModelProperty(example = "\"maxFieldDescriptionCharacters\":200", value = "The maximum number of schema field description characters allowed.")
   @JsonProperty("maxFieldDescriptionCharacters")
   public Integer getMaxFieldDescriptionCharacters() {
     return maxFieldDescriptionCharacters;
   }
 
   
-  @ApiModelProperty(example = "&quot;minSchemaNameCharacters&quot;:1", value = "The minimum number of schema name characters allowed.")
+  @ApiModelProperty(example = "\"minSchemaNameCharacters\":1", value = "The minimum number of schema name characters allowed.")
   @JsonProperty("minSchemaNameCharacters")
   public Integer getMinSchemaNameCharacters() {
     return minSchemaNameCharacters;
   }
 
   
-  @ApiModelProperty(example = "&quot;maxSchemaNameCharacters&quot;:50", value = "The maximum number of schema name characters allowed.")
+  @ApiModelProperty(example = "\"maxSchemaNameCharacters\":50", value = "The maximum number of schema name characters allowed.")
   @JsonProperty("maxSchemaNameCharacters")
   public Integer getMaxSchemaNameCharacters() {
     return maxSchemaNameCharacters;
   }
 
   
-  @ApiModelProperty(example = "&quot;minSchemaDescriptionCharacters&quot;:0", value = "The minimum number of schema description characters allowed.")
+  @ApiModelProperty(example = "\"minSchemaDescriptionCharacters\":0", value = "The minimum number of schema description characters allowed.")
   @JsonProperty("minSchemaDescriptionCharacters")
   public Integer getMinSchemaDescriptionCharacters() {
     return minSchemaDescriptionCharacters;
   }
 
   
-  @ApiModelProperty(example = "&quot;maxSchemaDescriptionCharacters&quot;:200", value = "The maximum number of schema description characters allowed.")
+  @ApiModelProperty(example = "\"maxSchemaDescriptionCharacters\":200", value = "The maximum number of schema description characters allowed.")
   @JsonProperty("maxSchemaDescriptionCharacters")
   public Integer getMaxSchemaDescriptionCharacters() {
     return maxSchemaDescriptionCharacters;
   }
 
   
-  @ApiModelProperty(example = "&quot;maxNumberOfSchemasPerOrg&quot;:20", value = "The maximum number of schema allowed per org.")
+  @ApiModelProperty(example = "\"maxNumberOfSchemasPerOrg\":20", value = "The maximum number of schema allowed per org.")
   @JsonProperty("maxNumberOfSchemasPerOrg")
   public Integer getMaxNumberOfSchemasPerOrg() {
     return maxNumberOfSchemasPerOrg;
   }
 
   
-  @ApiModelProperty(example = "&quot;maxNumberOfFieldsPerSchema&quot;:25", value = "The maximum number of schema fields allowed per schema.")
+  @ApiModelProperty(example = "\"maxNumberOfFieldsPerSchema\":25", value = "The maximum number of schema fields allowed per schema.")
   @JsonProperty("maxNumberOfFieldsPerSchema")
   public Integer getMaxNumberOfFieldsPerSchema() {
     return maxNumberOfFieldsPerSchema;
   }
 
   
-  @ApiModelProperty(example = "&quot;maxNumberOfFieldsPerOrg&quot;:500", value = "The maximum number of schema fields allowed per organization across all of their schemas.")
+  @ApiModelProperty(example = "\"maxNumberOfFieldsPerOrg\":500", value = "The maximum number of schema fields allowed per organization across all of their schemas.")
   @JsonProperty("maxNumberOfFieldsPerOrg")
   public Integer getMaxNumberOfFieldsPerOrg() {
     return maxNumberOfFieldsPerOrg;

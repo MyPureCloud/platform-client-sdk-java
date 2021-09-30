@@ -439,21 +439,10 @@ public class Campaign  implements Serializable {
   }
 
   
-  /**
-   * A list of current error conditions associated with the campaign.
-   **/
-  public Campaign errors(List<RestErrorDetail> errors) {
-    this.errors = errors;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "A list of current error conditions associated with the campaign.")
   @JsonProperty("errors")
   public List<RestErrorDetail> getErrors() {
     return errors;
-  }
-  public void setErrors(List<RestErrorDetail> errors) {
-    this.errors = errors;
   }
 
   

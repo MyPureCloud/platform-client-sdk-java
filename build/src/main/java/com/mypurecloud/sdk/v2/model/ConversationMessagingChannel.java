@@ -108,39 +108,17 @@ public class ConversationMessagingChannel  implements Serializable {
   }
 
   
-  /**
-   * Information about the recipient the message is sent to.
-   **/
-  public ConversationMessagingChannel to(ConversationMessagingToRecipient to) {
-    this.to = to;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Information about the recipient the message is sent to.")
   @JsonProperty("to")
   public ConversationMessagingToRecipient getTo() {
     return to;
   }
-  public void setTo(ConversationMessagingToRecipient to) {
-    this.to = to;
-  }
 
-  
-  /**
-   * Information about the recipient the message is received from.
-   **/
-  public ConversationMessagingChannel from(ConversationMessagingFromRecipient from) {
-    this.from = from;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Information about the recipient the message is received from.")
   @JsonProperty("from")
   public ConversationMessagingFromRecipient getFrom() {
     return from;
-  }
-  public void setFrom(ConversationMessagingFromRecipient from) {
-    this.from = from;
   }
 
   

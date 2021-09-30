@@ -244,21 +244,10 @@ public class SiteConnection  implements Serializable {
   }
 
   
-  /**
-   * All of the edges to which the site connects
-   **/
-  public SiteConnection edgeList(List<ConnectedEdge> edgeList) {
-    this.edgeList = edgeList;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "All of the edges to which the site connects")
   @JsonProperty("edgeList")
   public List<ConnectedEdge> getEdgeList() {
     return edgeList;
-  }
-  public void setEdgeList(List<ConnectedEdge> edgeList) {
-    this.edgeList = edgeList;
   }
 
   
@@ -269,39 +258,17 @@ public class SiteConnection  implements Serializable {
   }
 
   
-  /**
-   * List of site ids names and selfUris for the primary core sites
-   **/
-  public SiteConnection primaryCoreSites(List<DomainEntityRef> primaryCoreSites) {
-    this.primaryCoreSites = primaryCoreSites;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "List of site ids names and selfUris for the primary core sites")
   @JsonProperty("primaryCoreSites")
   public List<DomainEntityRef> getPrimaryCoreSites() {
     return primaryCoreSites;
   }
-  public void setPrimaryCoreSites(List<DomainEntityRef> primaryCoreSites) {
-    this.primaryCoreSites = primaryCoreSites;
-  }
 
-  
-  /**
-   * List of site ids names and selfUris for the secondary core sites
-   **/
-  public SiteConnection secondaryCoreSites(List<DomainEntityRef> secondaryCoreSites) {
-    this.secondaryCoreSites = secondaryCoreSites;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "List of site ids names and selfUris for the secondary core sites")
   @JsonProperty("secondaryCoreSites")
   public List<DomainEntityRef> getSecondaryCoreSites() {
     return secondaryCoreSites;
-  }
-  public void setSecondaryCoreSites(List<DomainEntityRef> secondaryCoreSites) {
-    this.secondaryCoreSites = secondaryCoreSites;
   }
 
   

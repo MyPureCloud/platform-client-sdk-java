@@ -40,39 +40,17 @@ public class SingleWorkdayAverageValues  implements Serializable {
   }
 
   
-  /**
-   * The targeted division for the metrics
-   **/
-  public SingleWorkdayAverageValues division(Division division) {
-    this.division = division;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The targeted division for the metrics")
   @JsonProperty("division")
   public Division getDivision() {
     return division;
   }
-  public void setDivision(Division division) {
-    this.division = division;
-  }
 
-  
-  /**
-   * The targeted user for the metrics
-   **/
-  public SingleWorkdayAverageValues user(UserReference user) {
-    this.user = user;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The targeted user for the metrics")
   @JsonProperty("user")
   public UserReference getUser() {
     return user;
-  }
-  public void setUser(UserReference user) {
-    this.user = user;
   }
 
   
@@ -83,21 +61,10 @@ public class SingleWorkdayAverageValues  implements Serializable {
   }
 
   
-  /**
-   * The metric value averages
-   **/
-  public SingleWorkdayAverageValues results(List<WorkdayValuesMetricItem> results) {
-    this.results = results;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The metric value averages")
   @JsonProperty("results")
   public List<WorkdayValuesMetricItem> getResults() {
     return results;
-  }
-  public void setResults(List<WorkdayValuesMetricItem> results) {
-    this.results = results;
   }
 
   

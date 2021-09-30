@@ -123,21 +123,10 @@ public class KnowledgeCategory  implements Serializable {
   }
 
   
-  /**
-   * Knowledge base which category does belong to
-   **/
-  public KnowledgeCategory knowledgeBase(KnowledgeBase knowledgeBase) {
-    this.knowledgeBase = knowledgeBase;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Knowledge base which category does belong to")
   @JsonProperty("knowledgeBase")
   public KnowledgeBase getKnowledgeBase() {
     return knowledgeBase;
-  }
-  public void setKnowledgeBase(KnowledgeBase knowledgeBase) {
-    this.knowledgeBase = knowledgeBase;
   }
 
   

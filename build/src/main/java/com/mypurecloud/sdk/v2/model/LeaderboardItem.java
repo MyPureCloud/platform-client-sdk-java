@@ -26,21 +26,10 @@ public class LeaderboardItem  implements Serializable {
   private Long points = null;
 
   
-  /**
-   * The user object for this leaderboard rank
-   **/
-  public LeaderboardItem user(UserReference user) {
-    this.user = user;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The user object for this leaderboard rank")
   @JsonProperty("user")
   public UserReference getUser() {
     return user;
-  }
-  public void setUser(UserReference user) {
-    this.user = user;
   }
 
   

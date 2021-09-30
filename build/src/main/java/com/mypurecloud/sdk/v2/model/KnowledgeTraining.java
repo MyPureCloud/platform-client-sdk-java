@@ -168,21 +168,10 @@ public class KnowledgeTraining  implements Serializable {
   }
 
   
-  /**
-   * Knowledge Base that the training belongs to.
-   **/
-  public KnowledgeTraining knowledgeBase(KnowledgeBase knowledgeBase) {
-    this.knowledgeBase = knowledgeBase;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Knowledge Base that the training belongs to.")
   @JsonProperty("knowledgeBase")
   public KnowledgeBase getKnowledgeBase() {
     return knowledgeBase;
-  }
-  public void setKnowledgeBase(KnowledgeBase knowledgeBase) {
-    this.knowledgeBase = knowledgeBase;
   }
 
   

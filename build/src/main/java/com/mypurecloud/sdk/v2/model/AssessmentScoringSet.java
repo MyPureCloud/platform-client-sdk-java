@@ -119,21 +119,10 @@ public class AssessmentScoringSet  implements Serializable {
   }
 
   
-  /**
-   * If the assessment was not passed, the reasons for failure.
-   **/
-  public AssessmentScoringSet failureReasons(List<FailureReasonsEnum> failureReasons) {
-    this.failureReasons = failureReasons;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "If the assessment was not passed, the reasons for failure.")
   @JsonProperty("failureReasons")
   public List<FailureReasonsEnum> getFailureReasons() {
     return failureReasons;
-  }
-  public void setFailureReasons(List<FailureReasonsEnum> failureReasons) {
-    this.failureReasons = failureReasons;
   }
 
   

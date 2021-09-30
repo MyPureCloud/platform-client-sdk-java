@@ -110,21 +110,10 @@ public class IntegrationType  implements Serializable {
   }
 
   
-  /**
-   * Collection of logos.
-   **/
-  public IntegrationType images(List<UserImage> images) {
-    this.images = images;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Collection of logos.")
   @JsonProperty("images")
   public List<UserImage> getImages() {
     return images;
-  }
-  public void setImages(List<UserImage> images) {
-    this.images = images;
   }
 
   
@@ -205,39 +194,17 @@ public class IntegrationType  implements Serializable {
   }
 
   
-  /**
-   * List of links to additional help resources
-   **/
-  public IntegrationType helpLinks(List<HelpLink> helpLinks) {
-    this.helpLinks = helpLinks;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "List of links to additional help resources")
   @JsonProperty("helpLinks")
   public List<HelpLink> getHelpLinks() {
     return helpLinks;
   }
-  public void setHelpLinks(List<HelpLink> helpLinks) {
-    this.helpLinks = helpLinks;
-  }
 
-  
-  /**
-   * Map of credentials for integrations of this type. The key is the name of a credential that can be provided in the credentials property of the integration configuration.
-   **/
-  public IntegrationType credentials(Map<String, CredentialSpecification> credentials) {
-    this.credentials = credentials;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Map of credentials for integrations of this type. The key is the name of a credential that can be provided in the credentials property of the integration configuration.")
   @JsonProperty("credentials")
   public Map<String, CredentialSpecification> getCredentials() {
     return credentials;
-  }
-  public void setCredentials(Map<String, CredentialSpecification> credentials) {
-    this.credentials = credentials;
   }
 
   
@@ -255,39 +222,17 @@ public class IntegrationType  implements Serializable {
   }
 
   
-  /**
-   * List of permissions required to permit user access to the integration type.
-   **/
-  public IntegrationType userPermissions(List<String> userPermissions) {
-    this.userPermissions = userPermissions;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "List of permissions required to permit user access to the integration type.")
   @JsonProperty("userPermissions")
   public List<String> getUserPermissions() {
     return userPermissions;
   }
-  public void setUserPermissions(List<String> userPermissions) {
-    this.userPermissions = userPermissions;
-  }
 
-  
-  /**
-   * List of OAuth Client IDs that must be authorized when the integration is created.
-   **/
-  public IntegrationType vendorOAuthClientIds(List<String> vendorOAuthClientIds) {
-    this.vendorOAuthClientIds = vendorOAuthClientIds;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "List of OAuth Client IDs that must be authorized when the integration is created.")
   @JsonProperty("vendorOAuthClientIds")
   public List<String> getVendorOAuthClientIds() {
     return vendorOAuthClientIds;
-  }
-  public void setVendorOAuthClientIds(List<String> vendorOAuthClientIds) {
-    this.vendorOAuthClientIds = vendorOAuthClientIds;
   }
 
   

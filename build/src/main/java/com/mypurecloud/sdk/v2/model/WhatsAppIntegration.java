@@ -253,21 +253,10 @@ public class WhatsAppIntegration  implements Serializable {
   }
 
   
-  /**
-   * The recipient associated to the WhatsApp Integration. This recipient is used to associate a flow to an integration
-   **/
-  public WhatsAppIntegration recipient(DomainEntityRef recipient) {
-    this.recipient = recipient;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The recipient associated to the WhatsApp Integration. This recipient is used to associate a flow to an integration")
   @JsonProperty("recipient")
   public DomainEntityRef getRecipient() {
     return recipient;
-  }
-  public void setRecipient(DomainEntityRef recipient) {
-    this.recipient = recipient;
   }
 
   
@@ -368,21 +357,10 @@ public class WhatsAppIntegration  implements Serializable {
   }
 
   
-  /**
-   * The error information of WhatsApp Integration activation process
-   **/
-  public WhatsAppIntegration activationErrorInfo(ErrorBody activationErrorInfo) {
-    this.activationErrorInfo = activationErrorInfo;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The error information of WhatsApp Integration activation process")
   @JsonProperty("activationErrorInfo")
   public ErrorBody getActivationErrorInfo() {
     return activationErrorInfo;
-  }
-  public void setActivationErrorInfo(ErrorBody activationErrorInfo) {
-    this.activationErrorInfo = activationErrorInfo;
   }
 
   
@@ -393,21 +371,10 @@ public class WhatsAppIntegration  implements Serializable {
   }
 
   
-  /**
-   * Error information returned, if createStatus is set to Error
-   **/
-  public WhatsAppIntegration createError(ErrorBody createError) {
-    this.createError = createError;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Error information returned, if createStatus is set to Error")
   @JsonProperty("createError")
   public ErrorBody getCreateError() {
     return createError;
-  }
-  public void setCreateError(ErrorBody createError) {
-    this.createError = createError;
   }
 
   

@@ -32,21 +32,10 @@ public class TokenInfoClonedUser  implements Serializable {
   }
 
   
-  /**
-   * Organization of the original native user
-   **/
-  public TokenInfoClonedUser organization(Entity organization) {
-    this.organization = organization;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Organization of the original native user")
   @JsonProperty("organization")
   public Entity getOrganization() {
     return organization;
-  }
-  public void setOrganization(Entity organization) {
-    this.organization = organization;
   }
 
   

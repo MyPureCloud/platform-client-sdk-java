@@ -51,6 +51,7 @@ title: FlowAggregateQueryPredicate
 | CONVERTEDFROM | &quot;convertedFrom&quot; |
 | CONVERTEDTO | &quot;convertedTo&quot; |
 | DELIVERYSTATUS | &quot;deliveryStatus&quot; |
+| DESTINATIONADDRESS | &quot;destinationAddress&quot; |
 | DIRECTION | &quot;direction&quot; |
 | DISCONNECTTYPE | &quot;disconnectType&quot; |
 | DIVISIONID | &quot;divisionId&quot; |

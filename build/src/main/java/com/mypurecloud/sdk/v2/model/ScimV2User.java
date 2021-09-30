@@ -54,21 +54,10 @@ public class ScimV2User  implements Serializable {
   }
 
   
-  /**
-   * The list of supported schemas.
-   **/
-  public ScimV2User schemas(List<String> schemas) {
-    this.schemas = schemas;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The list of supported schemas.")
   @JsonProperty("schemas")
   public List<String> getSchemas() {
     return schemas;
-  }
-  public void setSchemas(List<String> schemas) {
-    this.schemas = schemas;
   }
 
   
@@ -288,21 +277,10 @@ public class ScimV2User  implements Serializable {
   }
 
   
-  /**
-   * The metadata of the SCIM resource.
-   **/
-  public ScimV2User meta(ScimMetadata meta) {
-    this.meta = meta;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource.")
   @JsonProperty("meta")
   public ScimMetadata getMeta() {
     return meta;
-  }
-  public void setMeta(ScimMetadata meta) {
-    this.meta = meta;
   }
 
   

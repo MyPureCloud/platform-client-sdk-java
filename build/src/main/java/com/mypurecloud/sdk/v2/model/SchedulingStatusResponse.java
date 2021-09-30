@@ -95,21 +95,10 @@ public class SchedulingStatusResponse  implements Serializable {
   }
 
   
-  /**
-   * If the request could not be properly processed, error details will be given here.
-   **/
-  public SchedulingStatusResponse errorDetails(List<SchedulingProcessingError> errorDetails) {
-    this.errorDetails = errorDetails;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "If the request could not be properly processed, error details will be given here.")
   @JsonProperty("errorDetails")
   public List<SchedulingProcessingError> getErrorDetails() {
     return errorDetails;
-  }
-  public void setErrorDetails(List<SchedulingProcessingError> errorDetails) {
-    this.errorDetails = errorDetails;
   }
 
   

@@ -101,6 +101,7 @@ public class AnalyticsSession  implements Serializable {
   }
   private DeliveryStatusEnum deliveryStatus = null;
   private Date deliveryStatusChangeDate = null;
+  private List<String> destinationAddresses = new ArrayList<String>();
 
   private static class DirectionEnumDeserializer extends StdDeserializer<DirectionEnum> {
     public DirectionEnumDeserializer() {
@@ -714,6 +715,24 @@ public class AnalyticsSession  implements Serializable {
   }
   public void setDeliveryStatusChangeDate(Date deliveryStatusChangeDate) {
     this.deliveryStatusChangeDate = deliveryStatusChangeDate;
+  }
+
+  
+  /**
+   * Destination address(es) of transfers or consults
+   **/
+  public AnalyticsSession destinationAddresses(List<String> destinationAddresses) {
+    this.destinationAddresses = destinationAddresses;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Destination address(es) of transfers or consults")
+  @JsonProperty("destinationAddresses")
+  public List<String> getDestinationAddresses() {
+    return destinationAddresses;
+  }
+  public void setDestinationAddresses(List<String> destinationAddresses) {
+    this.destinationAddresses = destinationAddresses;
   }
 
   
@@ -1683,6 +1702,7 @@ public class AnalyticsSession  implements Serializable {
         Objects.equals(this.cobrowseRoomId, analyticsSession.cobrowseRoomId) &&
         Objects.equals(this.deliveryStatus, analyticsSession.deliveryStatus) &&
         Objects.equals(this.deliveryStatusChangeDate, analyticsSession.deliveryStatusChangeDate) &&
+        Objects.equals(this.destinationAddresses, analyticsSession.destinationAddresses) &&
         Objects.equals(this.direction, analyticsSession.direction) &&
         Objects.equals(this.dispositionAnalyzer, analyticsSession.dispositionAnalyzer) &&
         Objects.equals(this.dispositionName, analyticsSession.dispositionName) &&
@@ -1739,7 +1759,7 @@ public class AnalyticsSession  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, callbackNumbers, callbackScheduledTime, callbackUserName, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryStatus, deliveryStatusChangeDate, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, proposedAgents, mediaEndpointStats, flow, metrics, segments);
+    return Objects.hash(activeSkillIds, acwSkipped, addressFrom, addressOther, addressSelf, addressTo, agentAssistantId, agentBullseyeRing, agentOwned, ani, assignerId, authenticated, callbackNumbers, callbackScheduledTime, callbackUserName, coachedParticipantId, cobrowseRole, cobrowseRoomId, deliveryStatus, deliveryStatusChangeDate, destinationAddresses, direction, dispositionAnalyzer, dispositionName, dnis, edgeId, eligibleAgentCounts, flowInType, flowOutType, journeyActionId, journeyActionMapId, journeyActionMapVersion, journeyCustomerId, journeyCustomerIdType, journeyCustomerSessionId, journeyCustomerSessionIdType, mediaBridgeId, mediaCount, mediaType, messageType, monitoredParticipantId, outboundCampaignId, outboundContactId, outboundContactListId, peerId, protocolCallId, provider, recording, remote, remoteNameDisplayable, removedSkillIds, requestedRoutings, roomId, routingRing, screenShareAddressSelf, screenShareRoomId, scriptId, selectedAgentId, selectedAgentRank, sessionDnis, sessionId, sharingScreen, skipEnabled, timeoutSeconds, usedRouting, videoAddressSelf, videoRoomId, waitingInteractionCounts, proposedAgents, mediaEndpointStats, flow, metrics, segments);
   }
 
   @Override
@@ -1767,6 +1787,7 @@ public class AnalyticsSession  implements Serializable {
     sb.append("    cobrowseRoomId: ").append(toIndentedString(cobrowseRoomId)).append("\n");
     sb.append("    deliveryStatus: ").append(toIndentedString(deliveryStatus)).append("\n");
     sb.append("    deliveryStatusChangeDate: ").append(toIndentedString(deliveryStatusChangeDate)).append("\n");
+    sb.append("    destinationAddresses: ").append(toIndentedString(destinationAddresses)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    dispositionAnalyzer: ").append(toIndentedString(dispositionAnalyzer)).append("\n");
     sb.append("    dispositionName: ").append(toIndentedString(dispositionName)).append("\n");

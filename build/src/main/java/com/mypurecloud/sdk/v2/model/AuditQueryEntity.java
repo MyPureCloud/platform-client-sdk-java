@@ -133,6 +133,8 @@ public class AuditQueryEntity  implements Serializable {
     POLICY("Policy"),
     PREDICTOR("Predictor"),
     PRODUCT("Product"),
+    PROFILE("Profile"),
+    PROFILEMEMBERS("ProfileMembers"),
     PROGRAM("Program"),
     PROMPT("Prompt"),
     PROMPTRESOURCE("PromptResource"),

@@ -70,21 +70,10 @@ public class ScimV2SchemaListResponse  implements Serializable {
   }
 
   
-  /**
-   * The list of requested resources.
-   **/
-  public ScimV2SchemaListResponse resources(List<ScimV2SchemaDefinition> resources) {
-    this.resources = resources;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The list of requested resources.")
   @JsonProperty("Resources")
   public List<ScimV2SchemaDefinition> getResources() {
     return resources;
-  }
-  public void setResources(List<ScimV2SchemaDefinition> resources) {
-    this.resources = resources;
   }
 
   

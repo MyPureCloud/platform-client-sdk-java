@@ -76,21 +76,10 @@ public class NluFeedbackResponse  implements Serializable {
   }
 
   
-  /**
-   * The domain version of the feedback.
-   **/
-  public NluFeedbackResponse version(NluDomainVersion version) {
-    this.version = version;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The domain version of the feedback.")
   @JsonProperty("version")
   public NluDomainVersion getVersion() {
     return version;
-  }
-  public void setVersion(NluDomainVersion version) {
-    this.version = version;
   }
 
   

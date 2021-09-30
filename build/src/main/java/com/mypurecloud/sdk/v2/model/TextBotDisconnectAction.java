@@ -12,8 +12,11 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.TextBotFlowLocation;
+import com.mypurecloud.sdk.v2.model.TextBotFlowOutcome;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -76,6 +79,7 @@ public class TextBotDisconnectAction  implements Serializable {
   private ReasonEnum reason = null;
   private String reasonExtendedInfo = null;
   private TextBotFlowLocation flowLocation = null;
+  private List<TextBotFlowOutcome> flowOutcomes = new ArrayList<TextBotFlowOutcome>();
 
   
   /**
@@ -132,6 +136,24 @@ public class TextBotDisconnectAction  implements Serializable {
   }
 
   
+  /**
+   * The list of Flow Outcomes for the bot flow and their details.
+   **/
+  public TextBotDisconnectAction flowOutcomes(List<TextBotFlowOutcome> flowOutcomes) {
+    this.flowOutcomes = flowOutcomes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of Flow Outcomes for the bot flow and their details.")
+  @JsonProperty("flowOutcomes")
+  public List<TextBotFlowOutcome> getFlowOutcomes() {
+    return flowOutcomes;
+  }
+  public void setFlowOutcomes(List<TextBotFlowOutcome> flowOutcomes) {
+    this.flowOutcomes = flowOutcomes;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -144,12 +166,13 @@ public class TextBotDisconnectAction  implements Serializable {
     TextBotDisconnectAction textBotDisconnectAction = (TextBotDisconnectAction) o;
     return Objects.equals(this.reason, textBotDisconnectAction.reason) &&
         Objects.equals(this.reasonExtendedInfo, textBotDisconnectAction.reasonExtendedInfo) &&
-        Objects.equals(this.flowLocation, textBotDisconnectAction.flowLocation);
+        Objects.equals(this.flowLocation, textBotDisconnectAction.flowLocation) &&
+        Objects.equals(this.flowOutcomes, textBotDisconnectAction.flowOutcomes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(reason, reasonExtendedInfo, flowLocation);
+    return Objects.hash(reason, reasonExtendedInfo, flowLocation, flowOutcomes);
   }
 
   @Override
@@ -160,6 +183,7 @@ public class TextBotDisconnectAction  implements Serializable {
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    reasonExtendedInfo: ").append(toIndentedString(reasonExtendedInfo)).append("\n");
     sb.append("    flowLocation: ").append(toIndentedString(flowLocation)).append("\n");
+    sb.append("    flowOutcomes: ").append(toIndentedString(flowOutcomes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -34,39 +34,17 @@ public class Leaderboard  implements Serializable {
   private LeaderboardItem userRank = null;
 
   
-  /**
-   * The targeted division for this leaderboard
-   **/
-  public Leaderboard division(Division division) {
-    this.division = division;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The targeted division for this leaderboard")
   @JsonProperty("division")
   public Division getDivision() {
     return division;
   }
-  public void setDivision(Division division) {
-    this.division = division;
-  }
 
-  
-  /**
-   * The metric id if the leaderboard is about a specific metric
-   **/
-  public Leaderboard metric(AddressableEntityRef metric) {
-    this.metric = metric;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The metric id if the leaderboard is about a specific metric")
   @JsonProperty("metric")
   public AddressableEntityRef getMetric() {
     return metric;
-  }
-  public void setMetric(AddressableEntityRef metric) {
-    this.metric = metric;
   }
 
   
@@ -84,39 +62,17 @@ public class Leaderboard  implements Serializable {
   }
 
   
-  /**
-   * The list of leaders generated.
-   **/
-  public Leaderboard leaders(List<LeaderboardItem> leaders) {
-    this.leaders = leaders;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The list of leaders generated.")
   @JsonProperty("leaders")
   public List<LeaderboardItem> getLeaders() {
     return leaders;
   }
-  public void setLeaders(List<LeaderboardItem> leaders) {
-    this.leaders = leaders;
-  }
 
-  
-  /**
-   * The requesting user's rank
-   **/
-  public Leaderboard userRank(LeaderboardItem userRank) {
-    this.userRank = userRank;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The requesting user's rank")
   @JsonProperty("userRank")
   public LeaderboardItem getUserRank() {
     return userRank;
-  }
-  public void setUserRank(LeaderboardItem userRank) {
-    this.userRank = userRank;
   }
 
   

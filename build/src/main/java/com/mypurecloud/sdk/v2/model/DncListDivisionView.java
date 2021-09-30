@@ -72,21 +72,10 @@ public class DncListDivisionView  implements Serializable {
   }
 
   
-  /**
-   * The status of the import process.
-   **/
-  public DncListDivisionView importStatus(ImportStatus importStatus) {
-    this.importStatus = importStatus;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The status of the import process.")
   @JsonProperty("importStatus")
   public ImportStatus getImportStatus() {
     return importStatus;
-  }
-  public void setImportStatus(ImportStatus importStatus) {
-    this.importStatus = importStatus;
   }
 
   

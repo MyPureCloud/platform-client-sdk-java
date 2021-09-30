@@ -116,21 +116,10 @@ public class RecordingJob  implements Serializable {
   }
 
   
-  /**
-   * Original query of the job.
-   **/
-  public RecordingJob recordingJobsQuery(RecordingJobsQuery recordingJobsQuery) {
-    this.recordingJobsQuery = recordingJobsQuery;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Original query of the job.")
   @JsonProperty("recordingJobsQuery")
   public RecordingJobsQuery getRecordingJobsQuery() {
     return recordingJobsQuery;
-  }
-  public void setRecordingJobsQuery(RecordingJobsQuery recordingJobsQuery) {
-    this.recordingJobsQuery = recordingJobsQuery;
   }
 
   
@@ -204,21 +193,10 @@ public class RecordingJob  implements Serializable {
   }
 
   
-  /**
-   * Details of the user created the job
-   **/
-  public RecordingJob user(AddressableEntityRef user) {
-    this.user = user;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Details of the user created the job")
   @JsonProperty("user")
   public AddressableEntityRef getUser() {
     return user;
-  }
-  public void setUser(AddressableEntityRef user) {
-    this.user = user;
   }
 
   

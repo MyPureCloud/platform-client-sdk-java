@@ -32,39 +32,17 @@ public class WorkdayMetric  implements Serializable {
   private List<PunctualityEvent> punctualityEvents = new ArrayList<PunctualityEvent>();
 
   
-  /**
-   * Gamification metric
-   **/
-  public WorkdayMetric metric(Metric metric) {
-    this.metric = metric;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Gamification metric")
   @JsonProperty("metric")
   public Metric getMetric() {
     return metric;
   }
-  public void setMetric(Metric metric) {
-    this.metric = metric;
-  }
 
-  
-  /**
-   * Current objective for this metric
-   **/
-  public WorkdayMetric objective(Objective objective) {
-    this.objective = objective;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Current objective for this metric")
   @JsonProperty("objective")
   public Objective getObjective() {
     return objective;
-  }
-  public void setObjective(Objective objective) {
-    this.objective = objective;
   }
 
   
@@ -82,21 +60,10 @@ public class WorkdayMetric  implements Serializable {
   }
 
   
-  /**
-   * List of schedule activity events for punctuality metrics
-   **/
-  public WorkdayMetric punctualityEvents(List<PunctualityEvent> punctualityEvents) {
-    this.punctualityEvents = punctualityEvents;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "List of schedule activity events for punctuality metrics")
   @JsonProperty("punctualityEvents")
   public List<PunctualityEvent> getPunctualityEvents() {
     return punctualityEvents;
-  }
-  public void setPunctualityEvents(List<PunctualityEvent> punctualityEvents) {
-    this.punctualityEvents = punctualityEvents;
   }
 
   

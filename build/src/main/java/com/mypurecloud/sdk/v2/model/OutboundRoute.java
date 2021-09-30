@@ -387,21 +387,10 @@ public class OutboundRoute  implements Serializable {
   }
 
   
-  /**
-   * The site associated to the outbound route.
-   **/
-  public OutboundRoute site(Site site) {
-    this.site = site;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The site associated to the outbound route.")
   @JsonProperty("site")
   public Site getSite() {
     return site;
-  }
-  public void setSite(Site site) {
-    this.site = site;
   }
 
   

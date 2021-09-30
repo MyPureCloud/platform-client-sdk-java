@@ -40,6 +40,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUserRoutinglanguages**](UsersApi.html#getUserRoutinglanguages) | List routing language for user |
 | [**getUserRoutingskills**](UsersApi.html#getUserRoutingskills) | List routing skills for user |
 | [**getUserRoutingstatus**](UsersApi.html#getUserRoutingstatus) | Fetch the routing status of a user |
+| [**getUserState**](UsersApi.html#getUserState) | Get user state information. |
 | [**getUserStation**](UsersApi.html#getUserStation) | Get station information for user |
 | [**getUserSuperiors**](UsersApi.html#getUserSuperiors) | Get superiors |
 | [**getUserTrustors**](UsersApi.html#getUserTrustors) | List the organizations that have authorized/trusted the user. |
@@ -82,6 +83,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**putUserRoutingskill**](UsersApi.html#putUserRoutingskill) | Update routing skill proficiency or state. |
 | [**putUserRoutingskillsBulk**](UsersApi.html#putUserRoutingskillsBulk) | Replace all routing skills assigned to a user |
 | [**putUserRoutingstatus**](UsersApi.html#putUserRoutingstatus) | Update the routing status of a user |
+| [**putUserState**](UsersApi.html#putUserState) | Update user state information. |
 | [**putUserStationAssociatedstationStationId**](UsersApi.html#putUserStationAssociatedstationStationId) | Set associated station |
 | [**putUserStationDefaultstationStationId**](UsersApi.html#putUserStationDefaultstationStationId) | Set default station |
 {: class="table-striped"}
@@ -2217,6 +2219,69 @@ try {
 
 [**RoutingStatus**](RoutingStatus.html)
 
+<a name="getUserState"></a>
+
+# **getUserState**
+
+
+
+> [UserState](UserState.html) getUserState(userId)
+
+Get user state information.
+
+
+
+Wraps GET /api/v2/users/{userId}/state  
+
+Requires ANY permissions: 
+
+* directory:userStateChange:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+try {
+    UserState result = apiInstance.getUserState(userId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUserState");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserState**](UserState.html)
+
 <a name="getUserStation"></a>
 
 # **getUserStation**
@@ -2560,7 +2625,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortOrder** | **String**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc 
-| **types** | [**List&lt;String&gt;**](String.html)| Specifies the activity types. | [optional]<br />**Values**: Informational, Coaching, AssessedContent, Questionnaire, Assessment 
+| **types** | [**List&lt;String&gt;**](String.html)| Specifies the activity types. | [optional]<br />**Values**: Informational, Coaching, AssessedContent, Assessment 
 | **statuses** | [**List&lt;String&gt;**](String.html)| Specifies the activity statuses to filter by | [optional]<br />**Values**: Planned, InProgress, Completed, InvalidSchedule 
 | **relationship** | [**List&lt;String&gt;**](String.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional]<br />**Values**: Creator, Facilitator, Attendee 
 {: class="table-striped"}
@@ -2640,7 +2705,7 @@ try {
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **sortOrder** | **String**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc 
-| **types** | [**List&lt;String&gt;**](String.html)| Specifies the activity types. | [optional]<br />**Values**: Informational, Coaching, AssessedContent, Questionnaire, Assessment 
+| **types** | [**List&lt;String&gt;**](String.html)| Specifies the activity types. | [optional]<br />**Values**: Informational, Coaching, AssessedContent, Assessment 
 | **statuses** | [**List&lt;String&gt;**](String.html)| Specifies the activity statuses to filter by | [optional]<br />**Values**: Planned, InProgress, Completed, InvalidSchedule 
 | **relationship** | [**List&lt;String&gt;**](String.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional]<br />**Values**: Creator, Facilitator, Attendee 
 {: class="table-striped"}
@@ -2708,7 +2773,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **activityId** | **String**| Specifies the activity ID, maps to either assignment or appointment ID | 
-| **type** | **String**| Specifies the activity type. |<br />**Values**: Informational, Coaching, AssessedContent, Assessment, Questionnaire 
+| **type** | **String**| Specifies the activity type. |<br />**Values**: Informational, Coaching, AssessedContent, Assessment 
 {: class="table-striped"}
 
 
@@ -4988,6 +5053,71 @@ try {
 ### Return type
 
 [**RoutingStatus**](RoutingStatus.html)
+
+<a name="putUserState"></a>
+
+# **putUserState**
+
+
+
+> [UserState](UserState.html) putUserState(userId, body)
+
+Update user state information.
+
+
+
+Wraps PUT /api/v2/users/{userId}/state  
+
+Requires ANY permissions: 
+
+* directory:user:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+UserState body = new UserState(); // UserState | User
+try {
+    UserState result = apiInstance.putUserState(userId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#putUserState");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+| **body** | [**UserState**](UserState.html)| User | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserState**](UserState.html)
 
 <a name="putUserStationAssociatedstationStationId"></a>
 

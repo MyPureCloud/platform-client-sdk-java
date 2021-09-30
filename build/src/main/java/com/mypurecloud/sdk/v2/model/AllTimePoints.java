@@ -27,21 +27,10 @@ public class AllTimePoints  implements Serializable {
   private Long allTimePoints = null;
 
   
-  /**
-   * Queried user
-   **/
-  public AllTimePoints user(UserReference user) {
-    this.user = user;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Queried user")
   @JsonProperty("user")
   public UserReference getUser() {
     return user;
-  }
-  public void setUser(UserReference user) {
-    this.user = user;
   }
 
   

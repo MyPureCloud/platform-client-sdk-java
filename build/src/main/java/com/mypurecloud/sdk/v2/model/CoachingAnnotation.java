@@ -88,21 +88,10 @@ public class CoachingAnnotation  implements Serializable {
   }
 
   
-  /**
-   * The user who created the annotation.
-   **/
-  public CoachingAnnotation createdBy(UserReference createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The user who created the annotation.")
   @JsonProperty("createdBy")
   public UserReference getCreatedBy() {
     return createdBy;
-  }
-  public void setCreatedBy(UserReference createdBy) {
-    this.createdBy = createdBy;
   }
 
   
@@ -113,21 +102,10 @@ public class CoachingAnnotation  implements Serializable {
   }
 
   
-  /**
-   * The last user to modify the annotation.
-   **/
-  public CoachingAnnotation modifiedBy(UserReference modifiedBy) {
-    this.modifiedBy = modifiedBy;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The last user to modify the annotation.")
   @JsonProperty("modifiedBy")
   public UserReference getModifiedBy() {
     return modifiedBy;
-  }
-  public void setModifiedBy(UserReference modifiedBy) {
-    this.modifiedBy = modifiedBy;
   }
 
   

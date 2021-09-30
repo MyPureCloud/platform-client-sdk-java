@@ -46,21 +46,10 @@ public class DocumentArticle  implements Serializable {
   }
 
   
-  /**
-   * The content of the Article.
-   **/
-  public DocumentArticle content(ArticleContent content) {
-    this.content = content;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The content of the Article.")
   @JsonProperty("content")
   public ArticleContent getContent() {
     return content;
-  }
-  public void setContent(ArticleContent content) {
-    this.content = content;
   }
 
   

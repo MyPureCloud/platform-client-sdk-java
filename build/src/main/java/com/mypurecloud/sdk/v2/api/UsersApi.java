@@ -33,6 +33,7 @@ import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
 import com.mypurecloud.sdk.v2.model.RoutingStatus;
+import com.mypurecloud.sdk.v2.model.UserState;
 import com.mypurecloud.sdk.v2.model.UserStations;
 import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivityListing;
@@ -97,6 +98,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutinglanguagesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutingskillsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserRoutingstatusRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUserStateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserStationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserSuperiorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserTrustorsRequest;
@@ -139,6 +141,7 @@ import com.mypurecloud.sdk.v2.api.request.PutUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserRoutingskillRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserRoutingskillsBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserRoutingstatusRequest;
+import com.mypurecloud.sdk.v2.api.request.PutUserStateRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserStationAssociatedstationStationIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutUserStationDefaultstationStationIdRequest;
 
@@ -2894,6 +2897,85 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<RoutingStatus> response = (ApiResponse<RoutingStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get user state information.
+   * 
+   * @param userId User ID (required)
+   * @return UserState
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserState getUserState(String userId) throws IOException, ApiException {
+    return  getUserState(createGetUserStateRequest(userId));
+  }
+
+  /**
+   * Get user state information.
+   * 
+   * @param userId User ID (required)
+   * @return UserState
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserState> getUserStateWithHttpInfo(String userId) throws IOException {
+    return getUserState(createGetUserStateRequest(userId).withHttpInfo());
+  }
+
+  private GetUserStateRequest createGetUserStateRequest(String userId) {
+    return GetUserStateRequest.builder()
+            .withUserId(userId)
+    
+            .build();
+  }
+
+  /**
+   * Get user state information.
+   * 
+   * @param request The request object
+   * @return UserState
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserState getUserState(GetUserStateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserState> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserState>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get user state information.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserState> getUserState(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserState>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserState> response = (ApiResponse<UserState>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserState> response = (ApiResponse<UserState>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -6455,6 +6537,89 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<RoutingStatus> response = (ApiResponse<RoutingStatus>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update user state information.
+   * 
+   * @param userId User ID (required)
+   * @param body User (required)
+   * @return UserState
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserState putUserState(String userId, UserState body) throws IOException, ApiException {
+    return  putUserState(createPutUserStateRequest(userId, body));
+  }
+
+  /**
+   * Update user state information.
+   * 
+   * @param userId User ID (required)
+   * @param body User (required)
+   * @return UserState
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserState> putUserStateWithHttpInfo(String userId, UserState body) throws IOException {
+    return putUserState(createPutUserStateRequest(userId, body).withHttpInfo());
+  }
+
+  private PutUserStateRequest createPutUserStateRequest(String userId, UserState body) {
+    return PutUserStateRequest.builder()
+            .withUserId(userId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update user state information.
+   * 
+   * @param request The request object
+   * @return UserState
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserState putUserState(PutUserStateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserState> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserState>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update user state information.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserState> putUserState(ApiRequest<UserState> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserState>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserState> response = (ApiResponse<UserState>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserState> response = (ApiResponse<UserState>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -344,21 +344,10 @@ public class Organization  implements Serializable {
   }
 
   
-  /**
-   * The state of features available for the organization.
-   **/
-  public Organization features(Map<String, Boolean> features) {
-    this.features = features;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The state of features available for the organization.")
   @JsonProperty("features")
   public Map<String, Boolean> getFeatures() {
     return features;
-  }
-  public void setFeatures(Map<String, Boolean> features) {
-    this.features = features;
   }
 
   

@@ -488,57 +488,24 @@ public class Flow  implements Serializable {
   }
 
   
-  /**
-   * Information about the natural language understanding configuration for the published version of the flow
-   **/
-  public Flow nluInfo(NluInfo nluInfo) {
-    this.nluInfo = nluInfo;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Information about the natural language understanding configuration for the published version of the flow")
   @JsonProperty("nluInfo")
   public NluInfo getNluInfo() {
     return nluInfo;
   }
-  public void setNluInfo(NluInfo nluInfo) {
-    this.nluInfo = nluInfo;
-  }
 
-  
-  /**
-   * List of supported languages for the published version of the flow.
-   **/
-  public Flow supportedLanguages(List<SupportedLanguage> supportedLanguages) {
-    this.supportedLanguages = supportedLanguages;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "List of supported languages for the published version of the flow.")
   @JsonProperty("supportedLanguages")
   public List<SupportedLanguage> getSupportedLanguages() {
     return supportedLanguages;
   }
-  public void setSupportedLanguages(List<SupportedLanguage> supportedLanguages) {
-    this.supportedLanguages = supportedLanguages;
-  }
 
-  
-  /**
-   * Compatible flow types designate which flow types are allowed to embed a flow’s configuration within their own flow configuration.  Currently the only flows that can be embedded are Common Module flows and the embedding flow can invoke them using the Call Common Module action.
-   **/
-  public Flow compatibleFlowTypes(List<CompatibleFlowTypesEnum> compatibleFlowTypes) {
-    this.compatibleFlowTypes = compatibleFlowTypes;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Compatible flow types designate which flow types are allowed to embed a flow’s configuration within their own flow configuration.  Currently the only flows that can be embedded are Common Module flows and the embedding flow can invoke them using the Call Common Module action.")
   @JsonProperty("compatibleFlowTypes")
   public List<CompatibleFlowTypesEnum> getCompatibleFlowTypes() {
     return compatibleFlowTypes;
-  }
-  public void setCompatibleFlowTypes(List<CompatibleFlowTypesEnum> compatibleFlowTypes) {
-    this.compatibleFlowTypes = compatibleFlowTypes;
   }
 
   

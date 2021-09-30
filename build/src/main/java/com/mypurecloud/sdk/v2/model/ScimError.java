@@ -85,21 +85,10 @@ public class ScimError  implements Serializable {
   private String detail = null;
 
   
-  /**
-   * The list of schemas for the SCIM error.
-   **/
-  public ScimError schemas(List<String> schemas) {
-    this.schemas = schemas;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The list of schemas for the SCIM error.")
   @JsonProperty("schemas")
   public List<String> getSchemas() {
     return schemas;
-  }
-  public void setSchemas(List<String> schemas) {
-    this.schemas = schemas;
   }
 
   

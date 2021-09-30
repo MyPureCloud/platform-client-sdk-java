@@ -29,21 +29,10 @@ public class CampaignStats  implements Serializable {
   private Integer scheduledCalls = null;
 
   
-  /**
-   * Information regarding the campaign's connect rate
-   **/
-  public CampaignStats contactRate(ConnectRate contactRate) {
-    this.contactRate = contactRate;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Information regarding the campaign's connect rate")
   @JsonProperty("contactRate")
   public ConnectRate getContactRate() {
     return contactRate;
-  }
-  public void setContactRate(ConnectRate contactRate) {
-    this.contactRate = contactRate;
   }
 
   

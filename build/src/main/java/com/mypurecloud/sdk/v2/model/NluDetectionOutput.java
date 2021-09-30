@@ -28,39 +28,17 @@ public class NluDetectionOutput  implements Serializable {
   private List<DetectedDialogAct> dialogActs = new ArrayList<DetectedDialogAct>();
 
   
-  /**
-   * The detected intents.
-   **/
-  public NluDetectionOutput intents(List<DetectedIntent> intents) {
-    this.intents = intents;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The detected intents.")
   @JsonProperty("intents")
   public List<DetectedIntent> getIntents() {
     return intents;
   }
-  public void setIntents(List<DetectedIntent> intents) {
-    this.intents = intents;
-  }
 
-  
-  /**
-   * The detected dialog acts.
-   **/
-  public NluDetectionOutput dialogActs(List<DetectedDialogAct> dialogActs) {
-    this.dialogActs = dialogActs;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The detected dialog acts.")
   @JsonProperty("dialogActs")
   public List<DetectedDialogAct> getDialogActs() {
     return dialogActs;
-  }
-  public void setDialogActs(List<DetectedDialogAct> dialogActs) {
-    this.dialogActs = dialogActs;
   }
 
   

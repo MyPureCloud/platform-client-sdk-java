@@ -26,7 +26,6 @@ title: LearningModuleRequest
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | INFORMATIONAL | &quot;Informational&quot; |
 | ASSESSEDCONTENT | &quot;AssessedContent&quot; |
-| QUESTIONNAIRE | &quot;Questionnaire&quot; |
 | ASSESSMENT | &quot;Assessment&quot; |
 {: class="table table-striped"}
 

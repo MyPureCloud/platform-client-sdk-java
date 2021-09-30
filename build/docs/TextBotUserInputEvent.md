@@ -9,7 +9,7 @@ title: TextBotUserInputEvent
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **mode** | [**ModeEnum**](#ModeEnum)<!----> | The input mode. |  |
-| **alternatives** | <!----><!---->[**List&lt;TextBotUserInputAlternative&gt;**](TextBotUserInputAlternative.html)<!----> | The input alternatives. |  [optional] |
+| **alternatives** | <!----><!---->[**List&lt;TextBotUserInputAlternative&gt;**](TextBotUserInputAlternative.html)<!----> | The input alternatives. |  |
 {: class="table table-striped"}
 
 

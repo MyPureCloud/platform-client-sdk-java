@@ -53,57 +53,24 @@ public class CredentialType  implements Serializable {
   }
 
   
-  /**
-   * Properties describing credentials of this type.
-   **/
-  public CredentialType properties(Object properties) {
-    this.properties = properties;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Properties describing credentials of this type.")
   @JsonProperty("properties")
   public Object getProperties() {
     return properties;
   }
-  public void setProperties(Object properties) {
-    this.properties = properties;
-  }
 
-  
-  /**
-   * Order in which properties should be displayed in the UI.
-   **/
-  public CredentialType displayOrder(List<String> displayOrder) {
-    this.displayOrder = displayOrder;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Order in which properties should be displayed in the UI.")
   @JsonProperty("displayOrder")
   public List<String> getDisplayOrder() {
     return displayOrder;
   }
-  public void setDisplayOrder(List<String> displayOrder) {
-    this.displayOrder = displayOrder;
-  }
 
-  
-  /**
-   * Properties that are required fields.
-   **/
-  public CredentialType required(List<String> required) {
-    this.required = required;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Properties that are required fields.")
   @JsonProperty("required")
   public List<String> getRequired() {
     return required;
-  }
-  public void setRequired(List<String> required) {
-    this.required = required;
   }
 
   

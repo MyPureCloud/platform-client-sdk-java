@@ -224,75 +224,31 @@ public class LocationDefinition  implements Serializable {
   }
 
   
-  /**
-   * A list of ancestor IDs in order
-   **/
-  public LocationDefinition path(List<String> path) {
-    this.path = path;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "A list of ancestor IDs in order")
   @JsonProperty("path")
   public List<String> getPath() {
     return path;
   }
-  public void setPath(List<String> path) {
-    this.path = path;
-  }
 
-  
-  /**
-   * Profile image of the location entity, retrieved with ?expand=images query parameter
-   **/
-  public LocationDefinition profileImage(List<LocationImage> profileImage) {
-    this.profileImage = profileImage;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Profile image of the location entity, retrieved with ?expand=images query parameter")
   @JsonProperty("profileImage")
   public List<LocationImage> getProfileImage() {
     return profileImage;
   }
-  public void setProfileImage(List<LocationImage> profileImage) {
-    this.profileImage = profileImage;
-  }
 
-  
-  /**
-   * Floorplan images of the location entity, retrieved with ?expand=images query parameter
-   **/
-  public LocationDefinition floorplanImage(List<LocationImage> floorplanImage) {
-    this.floorplanImage = floorplanImage;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Floorplan images of the location entity, retrieved with ?expand=images query parameter")
   @JsonProperty("floorplanImage")
   public List<LocationImage> getFloorplanImage() {
     return floorplanImage;
   }
-  public void setFloorplanImage(List<LocationImage> floorplanImage) {
-    this.floorplanImage = floorplanImage;
-  }
 
-  
-  /**
-   * Address verification information, retrieve dwith the ?expand=addressVerificationDetails query parameter
-   **/
-  public LocationDefinition addressVerificationDetails(LocationAddressVerificationDetails addressVerificationDetails) {
-    this.addressVerificationDetails = addressVerificationDetails;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Address verification information, retrieve dwith the ?expand=addressVerificationDetails query parameter")
   @JsonProperty("addressVerificationDetails")
   public LocationAddressVerificationDetails getAddressVerificationDetails() {
     return addressVerificationDetails;
-  }
-  public void setAddressVerificationDetails(LocationAddressVerificationDetails addressVerificationDetails) {
-    this.addressVerificationDetails = addressVerificationDetails;
   }
 
   

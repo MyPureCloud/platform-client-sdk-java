@@ -47,57 +47,24 @@ public class UserAuthorization  implements Serializable {
   }
 
   
-  /**
-   * A collection of the roles the user is not using
-   **/
-  public UserAuthorization unusedRoles(List<DomainRole> unusedRoles) {
-    this.unusedRoles = unusedRoles;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "A collection of the roles the user is not using")
   @JsonProperty("unusedRoles")
   public List<DomainRole> getUnusedRoles() {
     return unusedRoles;
   }
-  public void setUnusedRoles(List<DomainRole> unusedRoles) {
-    this.unusedRoles = unusedRoles;
-  }
 
-  
-  /**
-   * A collection of the permissions granted by all assigned roles
-   **/
-  public UserAuthorization permissions(List<String> permissions) {
-    this.permissions = permissions;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "A collection of the permissions granted by all assigned roles")
   @JsonProperty("permissions")
   public List<String> getPermissions() {
     return permissions;
   }
-  public void setPermissions(List<String> permissions) {
-    this.permissions = permissions;
-  }
 
-  
-  /**
-   * The policies configured for assigned permissions.
-   **/
-  public UserAuthorization permissionPolicies(List<ResourcePermissionPolicy> permissionPolicies) {
-    this.permissionPolicies = permissionPolicies;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The policies configured for assigned permissions.")
   @JsonProperty("permissionPolicies")
   public List<ResourcePermissionPolicy> getPermissionPolicies() {
     return permissionPolicies;
-  }
-  public void setPermissionPolicies(List<ResourcePermissionPolicy> permissionPolicies) {
-    this.permissionPolicies = permissionPolicies;
   }
 
   

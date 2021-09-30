@@ -100,21 +100,10 @@ public class WorkdayPointsTrend  implements Serializable {
   }
 
   
-  /**
-   * The targeted user for the query
-   **/
-  public WorkdayPointsTrend user(UserReference user) {
-    this.user = user;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The targeted user for the query")
   @JsonProperty("user")
   public UserReference getUser() {
     return user;
-  }
-  public void setUser(UserReference user) {
-    this.user = user;
   }
 
   
@@ -132,21 +121,10 @@ public class WorkdayPointsTrend  implements Serializable {
   }
 
   
-  /**
-   * Daily points trends
-   **/
-  public WorkdayPointsTrend trend(List<WorkdayPointsTrendItem> trend) {
-    this.trend = trend;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Daily points trends")
   @JsonProperty("trend")
   public List<WorkdayPointsTrendItem> getTrend() {
     return trend;
-  }
-  public void setTrend(List<WorkdayPointsTrendItem> trend) {
-    this.trend = trend;
   }
 
   

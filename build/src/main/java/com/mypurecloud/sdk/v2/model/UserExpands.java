@@ -36,129 +36,52 @@ public class UserExpands  implements Serializable {
   private UserAuthorization authorization = null;
 
   
-  /**
-   * ACD routing status
-   **/
-  public UserExpands routingStatus(RoutingStatus routingStatus) {
-    this.routingStatus = routingStatus;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "ACD routing status")
   @JsonProperty("routingStatus")
   public RoutingStatus getRoutingStatus() {
     return routingStatus;
   }
-  public void setRoutingStatus(RoutingStatus routingStatus) {
-    this.routingStatus = routingStatus;
-  }
 
-  
-  /**
-   * Active presence
-   **/
-  public UserExpands presence(UserPresence presence) {
-    this.presence = presence;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Active presence")
   @JsonProperty("presence")
   public UserPresence getPresence() {
     return presence;
   }
-  public void setPresence(UserPresence presence) {
-    this.presence = presence;
-  }
 
-  
-  /**
-   * Summary of conversion statistics for conversation types.
-   **/
-  public UserExpands conversationSummary(UserConversationSummary conversationSummary) {
-    this.conversationSummary = conversationSummary;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Summary of conversion statistics for conversation types.")
   @JsonProperty("conversationSummary")
   public UserConversationSummary getConversationSummary() {
     return conversationSummary;
   }
-  public void setConversationSummary(UserConversationSummary conversationSummary) {
-    this.conversationSummary = conversationSummary;
-  }
 
-  
-  /**
-   * Determine if out of office is enabled
-   **/
-  public UserExpands outOfOffice(OutOfOffice outOfOffice) {
-    this.outOfOffice = outOfOffice;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Determine if out of office is enabled")
   @JsonProperty("outOfOffice")
   public OutOfOffice getOutOfOffice() {
     return outOfOffice;
   }
-  public void setOutOfOffice(OutOfOffice outOfOffice) {
-    this.outOfOffice = outOfOffice;
-  }
 
-  
-  /**
-   * Current geolocation position
-   **/
-  public UserExpands geolocation(Geolocation geolocation) {
-    this.geolocation = geolocation;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Current geolocation position")
   @JsonProperty("geolocation")
   public Geolocation getGeolocation() {
     return geolocation;
   }
-  public void setGeolocation(Geolocation geolocation) {
-    this.geolocation = geolocation;
-  }
 
-  
-  /**
-   * Effective, default, and last station information
-   **/
-  public UserExpands station(UserStations station) {
-    this.station = station;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Effective, default, and last station information")
   @JsonProperty("station")
   public UserStations getStation() {
     return station;
   }
-  public void setStation(UserStations station) {
-    this.station = station;
-  }
 
-  
-  /**
-   * Roles and permissions assigned to the user
-   **/
-  public UserExpands authorization(UserAuthorization authorization) {
-    this.authorization = authorization;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Roles and permissions assigned to the user")
   @JsonProperty("authorization")
   public UserAuthorization getAuthorization() {
     return authorization;
-  }
-  public void setAuthorization(UserAuthorization authorization) {
-    this.authorization = authorization;
   }
 
   

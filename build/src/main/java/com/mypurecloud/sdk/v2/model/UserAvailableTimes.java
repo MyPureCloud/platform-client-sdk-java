@@ -28,39 +28,17 @@ public class UserAvailableTimes  implements Serializable {
   private List<AvailableTime> availableTimes = new ArrayList<AvailableTime>();
 
   
-  /**
-   * User reference
-   **/
-  public UserAvailableTimes user(UserReference user) {
-    this.user = user;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "User reference")
   @JsonProperty("user")
   public UserReference getUser() {
     return user;
   }
-  public void setUser(UserReference user) {
-    this.user = user;
-  }
 
-  
-  /**
-   * Periods of availability to schedule coaching appointment for an user
-   **/
-  public UserAvailableTimes availableTimes(List<AvailableTime> availableTimes) {
-    this.availableTimes = availableTimes;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Periods of availability to schedule coaching appointment for an user")
   @JsonProperty("availableTimes")
   public List<AvailableTime> getAvailableTimes() {
     return availableTimes;
-  }
-  public void setAvailableTimes(List<AvailableTime> availableTimes) {
-    this.availableTimes = availableTimes;
   }
 
   

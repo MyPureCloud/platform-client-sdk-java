@@ -34,21 +34,10 @@ public class SingleWorkdayAveragePoints  implements Serializable {
   }
 
   
-  /**
-   * The targeted division for the average points
-   **/
-  public SingleWorkdayAveragePoints division(Division division) {
-    this.division = division;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The targeted division for the average points")
   @JsonProperty("division")
   public Division getDivision() {
     return division;
-  }
-  public void setDivision(Division division) {
-    this.division = division;
   }
 
   

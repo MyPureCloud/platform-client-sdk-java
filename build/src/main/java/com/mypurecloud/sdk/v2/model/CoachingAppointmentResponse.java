@@ -137,57 +137,24 @@ public class CoachingAppointmentResponse  implements Serializable {
   }
 
   
-  /**
-   * The facilitator of coaching appointment
-   **/
-  public CoachingAppointmentResponse facilitator(UserReference facilitator) {
-    this.facilitator = facilitator;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The facilitator of coaching appointment")
   @JsonProperty("facilitator")
   public UserReference getFacilitator() {
     return facilitator;
   }
-  public void setFacilitator(UserReference facilitator) {
-    this.facilitator = facilitator;
-  }
 
-  
-  /**
-   * The list of attendees attending the coaching
-   **/
-  public CoachingAppointmentResponse attendees(List<UserReference> attendees) {
-    this.attendees = attendees;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The list of attendees attending the coaching")
   @JsonProperty("attendees")
   public List<UserReference> getAttendees() {
     return attendees;
   }
-  public void setAttendees(List<UserReference> attendees) {
-    this.attendees = attendees;
-  }
 
-  
-  /**
-   * The user who created the coaching appointment
-   **/
-  public CoachingAppointmentResponse createdBy(UserReference createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The user who created the coaching appointment")
   @JsonProperty("createdBy")
   public UserReference getCreatedBy() {
     return createdBy;
-  }
-  public void setCreatedBy(UserReference createdBy) {
-    this.createdBy = createdBy;
   }
 
   
@@ -198,21 +165,10 @@ public class CoachingAppointmentResponse  implements Serializable {
   }
 
   
-  /**
-   * The last user to modify the coaching appointment
-   **/
-  public CoachingAppointmentResponse modifiedBy(UserReference modifiedBy) {
-    this.modifiedBy = modifiedBy;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The last user to modify the coaching appointment")
   @JsonProperty("modifiedBy")
   public UserReference getModifiedBy() {
     return modifiedBy;
-  }
-  public void setModifiedBy(UserReference modifiedBy) {
-    this.modifiedBy = modifiedBy;
   }
 
   
@@ -223,39 +179,17 @@ public class CoachingAppointmentResponse  implements Serializable {
   }
 
   
-  /**
-   * The list of conversations associated with coaching appointment.
-   **/
-  public CoachingAppointmentResponse conversations(List<ConversationReference> conversations) {
-    this.conversations = conversations;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The list of conversations associated with coaching appointment.")
   @JsonProperty("conversations")
   public List<ConversationReference> getConversations() {
     return conversations;
   }
-  public void setConversations(List<ConversationReference> conversations) {
-    this.conversations = conversations;
-  }
 
-  
-  /**
-   * The list of documents associated with coaching appointment.
-   **/
-  public CoachingAppointmentResponse documents(List<DocumentReference> documents) {
-    this.documents = documents;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The list of documents associated with coaching appointment.")
   @JsonProperty("documents")
   public List<DocumentReference> getDocuments() {
     return documents;
-  }
-  public void setDocuments(List<DocumentReference> documents) {
-    this.documents = documents;
   }
 
   

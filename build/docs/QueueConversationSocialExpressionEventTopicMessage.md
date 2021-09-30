@@ -30,6 +30,7 @@ title: QueueConversationSocialExpressionEventTopicMessage
 | **wrapup** | <!----><!---->[**QueueConversationSocialExpressionEventTopicWrapup**](QueueConversationSocialExpressionEventTopicWrapup.html)<!----> |  |  [optional] |
 | **afterCallWork** | <!----><!---->[**QueueConversationSocialExpressionEventTopicAfterCallWork**](QueueConversationSocialExpressionEventTopicAfterCallWork.html)<!----> |  |  [optional] |
 | **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **agentAssistantId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

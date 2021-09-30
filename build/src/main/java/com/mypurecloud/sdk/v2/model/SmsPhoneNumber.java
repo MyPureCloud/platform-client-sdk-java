@@ -372,21 +372,10 @@ public class SmsPhoneNumber  implements Serializable {
   }
 
   
-  /**
-   * The capabilities of the phone number available for provisioning.
-   **/
-  public SmsPhoneNumber capabilities(List<CapabilitiesEnum> capabilities) {
-    this.capabilities = capabilities;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The capabilities of the phone number available for provisioning.")
   @JsonProperty("capabilities")
   public List<CapabilitiesEnum> getCapabilities() {
     return capabilities;
-  }
-  public void setCapabilities(List<CapabilitiesEnum> capabilities) {
-    this.capabilities = capabilities;
   }
 
   

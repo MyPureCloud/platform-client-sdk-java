@@ -32,57 +32,24 @@ public class CampaignDiagnostics  implements Serializable {
   private Integer scheduledInteractionsCount = null;
 
   
-  /**
-   * Campaign properties that can impact which contacts are callable
-   **/
-  public CampaignDiagnostics callableContacts(CallableContactsDiagnostic callableContacts) {
-    this.callableContacts = callableContacts;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Campaign properties that can impact which contacts are callable")
   @JsonProperty("callableContacts")
   public CallableContactsDiagnostic getCallableContacts() {
     return callableContacts;
   }
-  public void setCallableContacts(CallableContactsDiagnostic callableContacts) {
-    this.callableContacts = callableContacts;
-  }
 
-  
-  /**
-   * Information regarding the campaign's queue
-   **/
-  public CampaignDiagnostics queueUtilizationDiagnostic(QueueUtilizationDiagnostic queueUtilizationDiagnostic) {
-    this.queueUtilizationDiagnostic = queueUtilizationDiagnostic;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Information regarding the campaign's queue")
   @JsonProperty("queueUtilizationDiagnostic")
   public QueueUtilizationDiagnostic getQueueUtilizationDiagnostic() {
     return queueUtilizationDiagnostic;
   }
-  public void setQueueUtilizationDiagnostic(QueueUtilizationDiagnostic queueUtilizationDiagnostic) {
-    this.queueUtilizationDiagnostic = queueUtilizationDiagnostic;
-  }
 
-  
-  /**
-   * Information regarding the campaign's rule sets
-   **/
-  public CampaignDiagnostics ruleSetDiagnostics(List<RuleSetDiagnostic> ruleSetDiagnostics) {
-    this.ruleSetDiagnostics = ruleSetDiagnostics;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Information regarding the campaign's rule sets")
   @JsonProperty("ruleSetDiagnostics")
   public List<RuleSetDiagnostic> getRuleSetDiagnostics() {
     return ruleSetDiagnostics;
-  }
-  public void setRuleSetDiagnostics(List<RuleSetDiagnostic> ruleSetDiagnostics) {
-    this.ruleSetDiagnostics = ruleSetDiagnostics;
   }
 
   

@@ -26,57 +26,24 @@ public class MergeOperation  implements Serializable {
   private AddressableEntityRef resultingContact = null;
 
   
-  /**
-   * The source contact for the merge operation
-   **/
-  public MergeOperation sourceContact(AddressableEntityRef sourceContact) {
-    this.sourceContact = sourceContact;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The source contact for the merge operation")
   @JsonProperty("sourceContact")
   public AddressableEntityRef getSourceContact() {
     return sourceContact;
   }
-  public void setSourceContact(AddressableEntityRef sourceContact) {
-    this.sourceContact = sourceContact;
-  }
 
-  
-  /**
-   * The target contact for the merge operation
-   **/
-  public MergeOperation targetContact(AddressableEntityRef targetContact) {
-    this.targetContact = targetContact;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The target contact for the merge operation")
   @JsonProperty("targetContact")
   public AddressableEntityRef getTargetContact() {
     return targetContact;
   }
-  public void setTargetContact(AddressableEntityRef targetContact) {
-    this.targetContact = targetContact;
-  }
 
-  
-  /**
-   * The contact created as a result of the merge operation
-   **/
-  public MergeOperation resultingContact(AddressableEntityRef resultingContact) {
-    this.resultingContact = resultingContact;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The contact created as a result of the merge operation")
   @JsonProperty("resultingContact")
   public AddressableEntityRef getResultingContact() {
     return resultingContact;
-  }
-  public void setResultingContact(AddressableEntityRef resultingContact) {
-    this.resultingContact = resultingContact;
   }
 
   

@@ -30,6 +30,7 @@ title: QueueConversationVideoEventTopicMessage
 | **wrapup** | <!----><!---->[**QueueConversationVideoEventTopicWrapup**](QueueConversationVideoEventTopicWrapup.html)<!----> |  |  [optional] |
 | **afterCallWork** | <!----><!---->[**QueueConversationVideoEventTopicAfterCallWork**](QueueConversationVideoEventTopicAfterCallWork.html)<!----> |  |  [optional] |
 | **afterCallWorkRequired** | <!----><!---->**Boolean**<!----> |  |  [optional] |
+| **agentAssistantId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **additionalProperties** | <!----><!---->**Object**<!----> |  |  [optional] |
 {: class="table table-striped"}
 

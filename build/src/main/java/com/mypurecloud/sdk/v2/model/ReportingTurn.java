@@ -243,21 +243,10 @@ public class ReportingTurn  implements Serializable {
   }
 
   
-  /**
-   * The conversation details, across potentially multiple Cicero sessions.
-   **/
-  public ReportingTurn conversation(AddressableEntityRef conversation) {
-    this.conversation = conversation;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The conversation details, across potentially multiple Cicero sessions.")
   @JsonProperty("conversation")
   public AddressableEntityRef getConversation() {
     return conversation;
-  }
-  public void setConversation(AddressableEntityRef conversation) {
-    this.conversation = conversation;
   }
 
   

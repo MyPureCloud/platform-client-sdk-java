@@ -26,39 +26,17 @@ public class AddConversationResponse  implements Serializable {
   private CoachingAppointmentReference appointment = null;
 
   
-  /**
-   * The conversation reference
-   **/
-  public AddConversationResponse conversation(ConversationReference conversation) {
-    this.conversation = conversation;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The conversation reference")
   @JsonProperty("conversation")
   public ConversationReference getConversation() {
     return conversation;
   }
-  public void setConversation(ConversationReference conversation) {
-    this.conversation = conversation;
-  }
 
-  
-  /**
-   * The appointment reference
-   **/
-  public AddConversationResponse appointment(CoachingAppointmentReference appointment) {
-    this.appointment = appointment;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The appointment reference")
   @JsonProperty("appointment")
   public CoachingAppointmentReference getAppointment() {
     return appointment;
-  }
-  public void setAppointment(CoachingAppointmentReference appointment) {
-    this.appointment = appointment;
   }
 
   

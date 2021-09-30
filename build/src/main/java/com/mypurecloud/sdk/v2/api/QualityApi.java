@@ -512,15 +512,15 @@ public class QualityApi {
   
   /**
    * Gets a list of Agent Activities
-   * Including the number of evaluations and average evaluation score
+   * Includes the number of evaluations and average evaluation score. These statistics include released evaluations only when evaluatorUserId is provided. In the absence of evaluatorUserId in the request, the api excludes evaluations which are set to never release for the calculation of evaluation statistics. 
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
    * @param sortBy variable name requested to sort by (optional)
    * @param expand variable name requested by expand list (optional)
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
-   * @param startTime Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)
-   * @param endTime End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)
+   * @param startTime Start time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)
+   * @param endTime End time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)
    * @param agentUserId user id of agent requested (optional)
    * @param evaluatorUserId user id of the evaluator (optional)
    * @param name name (optional)
@@ -535,15 +535,15 @@ public class QualityApi {
 
   /**
    * Gets a list of Agent Activities
-   * Including the number of evaluations and average evaluation score
+   * Includes the number of evaluations and average evaluation score. These statistics include released evaluations only when evaluatorUserId is provided. In the absence of evaluatorUserId in the request, the api excludes evaluations which are set to never release for the calculation of evaluation statistics. 
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
    * @param sortBy variable name requested to sort by (optional)
    * @param expand variable name requested by expand list (optional)
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
-   * @param startTime Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)
-   * @param endTime End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)
+   * @param startTime Start time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)
+   * @param endTime End time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)
    * @param agentUserId user id of agent requested (optional)
    * @param evaluatorUserId user id of the evaluator (optional)
    * @param name name (optional)
@@ -586,7 +586,7 @@ public class QualityApi {
 
   /**
    * Gets a list of Agent Activities
-   * Including the number of evaluations and average evaluation score
+   * Includes the number of evaluations and average evaluation score. These statistics include released evaluations only when evaluatorUserId is provided. In the absence of evaluatorUserId in the request, the api excludes evaluations which are set to never release for the calculation of evaluation statistics. 
    * @param request The request object
    * @return AgentActivityEntityListing
    * @throws ApiException if the request fails on the server
@@ -605,7 +605,7 @@ public class QualityApi {
 
   /**
    * Gets a list of Agent Activities
-   * Including the number of evaluations and average evaluation score
+   * Includes the number of evaluations and average evaluation score. These statistics include released evaluations only when evaluatorUserId is provided. In the absence of evaluatorUserId in the request, the api excludes evaluations which are set to never release for the calculation of evaluation statistics. 
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

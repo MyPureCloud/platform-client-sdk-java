@@ -385,57 +385,24 @@ public class UserScheduleAdherence  implements Serializable {
   }
 
   
-  /**
-   * The user for whom this status applies
-   **/
-  public UserScheduleAdherence user(UserReference user) {
-    this.user = user;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The user for whom this status applies")
   @JsonProperty("user")
   public UserReference getUser() {
     return user;
   }
-  public void setUser(UserReference user) {
-    this.user = user;
-  }
 
-  
-  /**
-   * The management unit to which this user belongs
-   **/
-  public UserScheduleAdherence managementUnit(ManagementUnit managementUnit) {
-    this.managementUnit = managementUnit;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The management unit to which this user belongs")
   @JsonProperty("managementUnit")
   public ManagementUnit getManagementUnit() {
     return managementUnit;
   }
-  public void setManagementUnit(ManagementUnit managementUnit) {
-    this.managementUnit = managementUnit;
-  }
 
-  
-  /**
-   * The team to which this user belongs
-   **/
-  public UserScheduleAdherence team(Team team) {
-    this.team = team;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The team to which this user belongs")
   @JsonProperty("team")
   public Team getTeam() {
     return team;
-  }
-  public void setTeam(Team team) {
-    this.team = team;
   }
 
   
@@ -509,21 +476,10 @@ public class UserScheduleAdherence  implements Serializable {
   }
 
   
-  /**
-   * The list of queues to which this user is joined
-   **/
-  public UserScheduleAdherence activeQueues(List<QueueReference> activeQueues) {
-    this.activeQueues = activeQueues;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The list of queues to which this user is joined")
   @JsonProperty("activeQueues")
   public List<QueueReference> getActiveQueues() {
     return activeQueues;
-  }
-  public void setActiveQueues(List<QueueReference> activeQueues) {
-    this.activeQueues = activeQueues;
   }
 
   

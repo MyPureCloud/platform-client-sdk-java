@@ -44,21 +44,10 @@ public class ScimV2CreateUser  implements Serializable {
   private ScimUserExtensions urnietfparamsscimschemasextensiongenesyspurecloud20User = null;
 
   
-  /**
-   * The list of supported schemas.
-   **/
-  public ScimV2CreateUser schemas(List<String> schemas) {
-    this.schemas = schemas;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The list of supported schemas.")
   @JsonProperty("schemas")
   public List<String> getSchemas() {
     return schemas;
-  }
-  public void setSchemas(List<String> schemas) {
-    this.schemas = schemas;
   }
 
   

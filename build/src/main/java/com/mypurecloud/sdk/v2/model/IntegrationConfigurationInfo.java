@@ -25,21 +25,10 @@ public class IntegrationConfigurationInfo  implements Serializable {
   private IntegrationConfiguration current = null;
 
   
-  /**
-   * The current, active configuration for the integration.
-   **/
-  public IntegrationConfigurationInfo current(IntegrationConfiguration current) {
-    this.current = current;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The current, active configuration for the integration.")
   @JsonProperty("current")
   public IntegrationConfiguration getCurrent() {
     return current;
-  }
-  public void setCurrent(IntegrationConfiguration current) {
-    this.current = current;
   }
 
   

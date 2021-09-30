@@ -134,39 +134,17 @@ public class WfmUserNotification  implements Serializable {
   }
 
   
-  /**
-   * A shift trade notification.  Only set if type == ShiftTrade
-   **/
-  public WfmUserNotification shiftTrade(ShiftTradeNotification shiftTrade) {
-    this.shiftTrade = shiftTrade;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "A shift trade notification.  Only set if type == ShiftTrade")
   @JsonProperty("shiftTrade")
   public ShiftTradeNotification getShiftTrade() {
     return shiftTrade;
   }
-  public void setShiftTrade(ShiftTradeNotification shiftTrade) {
-    this.shiftTrade = shiftTrade;
-  }
 
-  
-  /**
-   * A time off request notification.  Only set if type == TimeOffRequest
-   **/
-  public WfmUserNotification timeOffRequest(TimeOffRequestNotification timeOffRequest) {
-    this.timeOffRequest = timeOffRequest;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "A time off request notification.  Only set if type == TimeOffRequest")
   @JsonProperty("timeOffRequest")
   public TimeOffRequestNotification getTimeOffRequest() {
     return timeOffRequest;
-  }
-  public void setTimeOffRequest(TimeOffRequestNotification timeOffRequest) {
-    this.timeOffRequest = timeOffRequest;
   }
 
   
@@ -195,21 +173,10 @@ public class WfmUserNotification  implements Serializable {
   }
 
   
-  /**
-   * Other notification IDs in group.  This field is only populated in real-time notifications
-   **/
-  public WfmUserNotification otherNotificationIdsInGroup(List<String> otherNotificationIdsInGroup) {
-    this.otherNotificationIdsInGroup = otherNotificationIdsInGroup;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Other notification IDs in group.  This field is only populated in real-time notifications")
   @JsonProperty("otherNotificationIdsInGroup")
   public List<String> getOtherNotificationIdsInGroup() {
     return otherNotificationIdsInGroup;
-  }
-  public void setOtherNotificationIdsInGroup(List<String> otherNotificationIdsInGroup) {
-    this.otherNotificationIdsInGroup = otherNotificationIdsInGroup;
   }
 
   

@@ -28,39 +28,17 @@ public class UserBestPoints  implements Serializable {
   private List<UserBestPointsItem> bestPoints = new ArrayList<UserBestPointsItem>();
 
   
-  /**
-   * The requested user for the best points
-   **/
-  public UserBestPoints user(UserReference user) {
-    this.user = user;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The requested user for the best points")
   @JsonProperty("user")
   public UserReference getUser() {
     return user;
   }
-  public void setUser(UserReference user) {
-    this.user = user;
-  }
 
-  
-  /**
-   * List of best point for the requested user
-   **/
-  public UserBestPoints bestPoints(List<UserBestPointsItem> bestPoints) {
-    this.bestPoints = bestPoints;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "List of best point for the requested user")
   @JsonProperty("bestPoints")
   public List<UserBestPointsItem> getBestPoints() {
     return bestPoints;
-  }
-  public void setBestPoints(List<UserBestPointsItem> bestPoints) {
-    this.bestPoints = bestPoints;
   }
 
   

@@ -93,21 +93,10 @@ public class KeyPerformanceIndicatorAssessment  implements Serializable {
   }
 
   
-  /**
-   * Set of checks executed as part of an assessment.
-   **/
-  public KeyPerformanceIndicatorAssessment checks(List<Check> checks) {
-    this.checks = checks;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Set of checks executed as part of an assessment.")
   @JsonProperty("checks")
   public List<Check> getChecks() {
     return checks;
-  }
-  public void setChecks(List<Check> checks) {
-    this.checks = checks;
   }
 
   

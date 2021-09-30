@@ -70,21 +70,10 @@ public class ScimConfigResourceTypesListResponse  implements Serializable {
   }
 
   
-  /**
-   * The list of requested resources.
-   **/
-  public ScimConfigResourceTypesListResponse resources(List<ScimConfigResourceType> resources) {
-    this.resources = resources;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The list of requested resources.")
   @JsonProperty("Resources")
   public List<ScimConfigResourceType> getResources() {
     return resources;
-  }
-  public void setResources(List<ScimConfigResourceType> resources) {
-    this.resources = resources;
   }
 
   

@@ -151,21 +151,10 @@ public class NluDomainVersion  implements Serializable {
   }
 
   
-  /**
-   * The NLU domain of the version.
-   **/
-  public NluDomainVersion domain(NluDomain domain) {
-    this.domain = domain;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The NLU domain of the version.")
   @JsonProperty("domain")
   public NluDomain getDomain() {
     return domain;
-  }
-  public void setDomain(NluDomain domain) {
-    this.domain = domain;
   }
 
   

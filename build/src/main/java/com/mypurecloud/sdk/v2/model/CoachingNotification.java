@@ -250,39 +250,17 @@ public class CoachingNotification  implements Serializable {
   }
 
   
-  /**
-   * The user of this notification
-   **/
-  public CoachingNotification user(UserReference user) {
-    this.user = user;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The user of this notification")
   @JsonProperty("user")
   public UserReference getUser() {
     return user;
   }
-  public void setUser(UserReference user) {
-    this.user = user;
-  }
 
-  
-  /**
-   * The appointment
-   **/
-  public CoachingNotification appointment(CoachingAppointmentResponse appointment) {
-    this.appointment = appointment;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The appointment")
   @JsonProperty("appointment")
   public CoachingAppointmentResponse getAppointment() {
     return appointment;
-  }
-  public void setAppointment(CoachingAppointmentResponse appointment) {
-    this.appointment = appointment;
   }
 
   

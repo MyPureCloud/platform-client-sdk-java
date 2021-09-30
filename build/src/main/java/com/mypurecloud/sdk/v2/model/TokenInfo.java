@@ -32,75 +32,31 @@ public class TokenInfo  implements Serializable {
   private OrgOAuthClient oAuthClient = null;
 
   
-  /**
-   * The current organization
-   **/
-  public TokenInfo organization(NamedEntity organization) {
-    this.organization = organization;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The current organization")
   @JsonProperty("organization")
   public NamedEntity getOrganization() {
     return organization;
   }
-  public void setOrganization(NamedEntity organization) {
-    this.organization = organization;
-  }
 
-  
-  /**
-   * The token's home organization
-   **/
-  public TokenInfo homeOrganization(NamedEntity homeOrganization) {
-    this.homeOrganization = homeOrganization;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The token's home organization")
   @JsonProperty("homeOrganization")
   public NamedEntity getHomeOrganization() {
     return homeOrganization;
   }
-  public void setHomeOrganization(NamedEntity homeOrganization) {
-    this.homeOrganization = homeOrganization;
-  }
 
-  
-  /**
-   * The list of scopes authorized for the OAuth client
-   **/
-  public TokenInfo authorizedScope(List<String> authorizedScope) {
-    this.authorizedScope = authorizedScope;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The list of scopes authorized for the OAuth client")
   @JsonProperty("authorizedScope")
   public List<String> getAuthorizedScope() {
     return authorizedScope;
   }
-  public void setAuthorizedScope(List<String> authorizedScope) {
-    this.authorizedScope = authorizedScope;
-  }
 
-  
-  /**
-   * Only present when a user is a clone of trustee user in the trustor org.
-   **/
-  public TokenInfo clonedUser(TokenInfoClonedUser clonedUser) {
-    this.clonedUser = clonedUser;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Only present when a user is a clone of trustee user in the trustor org.")
   @JsonProperty("clonedUser")
   public TokenInfoClonedUser getClonedUser() {
     return clonedUser;
-  }
-  public void setClonedUser(TokenInfoClonedUser clonedUser) {
-    this.clonedUser = clonedUser;
   }
 
   

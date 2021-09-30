@@ -79,39 +79,17 @@ public class CoachingAppointmentStatusResponse  implements Serializable {
   private StatusEnum status = null;
 
   
-  /**
-   * The coaching appointment this status belongs to
-   **/
-  public CoachingAppointmentStatusResponse appointment(CoachingAppointmentReference appointment) {
-    this.appointment = appointment;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The coaching appointment this status belongs to")
   @JsonProperty("appointment")
   public CoachingAppointmentReference getAppointment() {
     return appointment;
   }
-  public void setAppointment(CoachingAppointmentReference appointment) {
-    this.appointment = appointment;
-  }
 
-  
-  /**
-   * User who updated the status
-   **/
-  public CoachingAppointmentStatusResponse createdBy(UserReference createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "User who updated the status")
   @JsonProperty("createdBy")
   public UserReference getCreatedBy() {
     return createdBy;
-  }
-  public void setCreatedBy(UserReference createdBy) {
-    this.createdBy = createdBy;
   }
 
   

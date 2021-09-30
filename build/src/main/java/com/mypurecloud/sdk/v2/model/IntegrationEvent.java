@@ -134,57 +134,24 @@ public class IntegrationEvent  implements Serializable {
   }
 
   
-  /**
-   * Message indicating what happened
-   **/
-  public IntegrationEvent message(MessageInfo message) {
-    this.message = message;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Message indicating what happened")
   @JsonProperty("message")
   public MessageInfo getMessage() {
     return message;
   }
-  public void setMessage(MessageInfo message) {
-    this.message = message;
-  }
 
-  
-  /**
-   * Collection of entities affected by or pertaining to the event (e.g. a list of Integrations or Bridge connectors)
-   **/
-  public IntegrationEvent entities(List<EventEntity> entities) {
-    this.entities = entities;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Collection of entities affected by or pertaining to the event (e.g. a list of Integrations or Bridge connectors)")
   @JsonProperty("entities")
   public List<EventEntity> getEntities() {
     return entities;
   }
-  public void setEntities(List<EventEntity> entities) {
-    this.entities = entities;
-  }
 
-  
-  /**
-   * Map of context attributes specific to this event.
-   **/
-  public IntegrationEvent contextAttributes(Map<String, String> contextAttributes) {
-    this.contextAttributes = contextAttributes;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Map of context attributes specific to this event.")
   @JsonProperty("contextAttributes")
   public Map<String, String> getContextAttributes() {
     return contextAttributes;
-  }
-  public void setContextAttributes(Map<String, String> contextAttributes) {
-    this.contextAttributes = contextAttributes;
   }
 
   
@@ -206,21 +173,10 @@ public class IntegrationEvent  implements Serializable {
   }
 
   
-  /**
-   * User that took an action that resulted in the event.
-   **/
-  public IntegrationEvent user(User user) {
-    this.user = user;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "User that took an action that resulted in the event.")
   @JsonProperty("user")
   public User getUser() {
     return user;
-  }
-  public void setUser(User user) {
-    this.user = user;
   }
 
   

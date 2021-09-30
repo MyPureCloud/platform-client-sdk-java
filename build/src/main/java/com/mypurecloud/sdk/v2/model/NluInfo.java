@@ -30,37 +30,17 @@ public class NluInfo  implements Serializable {
   private List<Intent> intents = new ArrayList<Intent>();
 
   
-  /**
-   **/
-  public NluInfo domain(AddressableEntityRef domain) {
-    this.domain = domain;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("domain")
   public AddressableEntityRef getDomain() {
     return domain;
   }
-  public void setDomain(AddressableEntityRef domain) {
-    this.domain = domain;
-  }
 
-  
-  /**
-   **/
-  public NluInfo version(NluDomainVersion version) {
-    this.version = version;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("version")
   public NluDomainVersion getVersion() {
     return version;
-  }
-  public void setVersion(NluDomainVersion version) {
-    this.version = version;
   }
 
   

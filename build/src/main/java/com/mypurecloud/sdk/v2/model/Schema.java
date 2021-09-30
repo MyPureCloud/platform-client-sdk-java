@@ -44,39 +44,17 @@ public class Schema  implements Serializable {
   }
 
   
-  /**
-   * An array of fundamental JSON Schema primitive types on which the core type is based
-   **/
-  public Schema type(List<String> type) {
-    this.type = type;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "An array of fundamental JSON Schema primitive types on which the core type is based")
+  @ApiModelProperty(example = "[\"string\"] for a text-based core type, [\"integer\"] for a numeric core type, or [\"boolean\", \"null\"] for the checkbox core type", value = "An array of fundamental JSON Schema primitive types on which the core type is based")
   @JsonProperty("type")
   public List<String> getType() {
     return type;
   }
-  public void setType(List<String> type) {
-    this.type = type;
-  }
 
-  
-  /**
-   * Denotes the type and pattern of the items in an enum core type
-   **/
-  public Schema items(Items items) {
-    this.items = items;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Denotes the type and pattern of the items in an enum core type")
   @JsonProperty("items")
   public Items getItems() {
     return items;
-  }
-  public void setItems(Items items) {
-    this.items = items;
   }
 
   

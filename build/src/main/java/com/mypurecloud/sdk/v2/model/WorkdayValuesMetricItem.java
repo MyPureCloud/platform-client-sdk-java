@@ -83,21 +83,10 @@ public class WorkdayValuesMetricItem  implements Serializable {
   private List<WorkdayValuesTrendItem> trend = new ArrayList<WorkdayValuesTrendItem>();
 
   
-  /**
-   * Gamification metric for the average and the trend
-   **/
-  public WorkdayValuesMetricItem metricDefinition(DomainEntityRef metricDefinition) {
-    this.metricDefinition = metricDefinition;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Gamification metric for the average and the trend")
   @JsonProperty("metricDefinition")
   public DomainEntityRef getMetricDefinition() {
     return metricDefinition;
-  }
-  public void setMetricDefinition(DomainEntityRef metricDefinition) {
-    this.metricDefinition = metricDefinition;
   }
 
   
@@ -115,21 +104,10 @@ public class WorkdayValuesMetricItem  implements Serializable {
   }
 
   
-  /**
-   * The metric value trend
-   **/
-  public WorkdayValuesMetricItem trend(List<WorkdayValuesTrendItem> trend) {
-    this.trend = trend;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The metric value trend")
   @JsonProperty("trend")
   public List<WorkdayValuesTrendItem> getTrend() {
     return trend;
-  }
-  public void setTrend(List<WorkdayValuesTrendItem> trend) {
-    this.trend = trend;
   }
 
   

@@ -112,21 +112,10 @@ public class BuAgentScheduleShift  implements Serializable {
   }
 
   
-  /**
-   * The schedule to which this shift belongs
-   **/
-  public BuAgentScheduleShift schedule(BuScheduleReference schedule) {
-    this.schedule = schedule;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The schedule to which this shift belongs")
   @JsonProperty("schedule")
   public BuScheduleReference getSchedule() {
     return schedule;
-  }
-  public void setSchedule(BuScheduleReference schedule) {
-    this.schedule = schedule;
   }
 
   

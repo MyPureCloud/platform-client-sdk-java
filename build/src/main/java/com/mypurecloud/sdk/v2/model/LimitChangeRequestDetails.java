@@ -270,21 +270,10 @@ public class LimitChangeRequestDetails  implements Serializable {
   }
 
   
-  /**
-   * List of statuses that a limit change request has gone through
-   **/
-  public LimitChangeRequestDetails statusHistory(List<StatusChange> statusHistory) {
-    this.statusHistory = statusHistory;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "List of statuses that a limit change request has gone through")
   @JsonProperty("statusHistory")
   public List<StatusChange> getStatusHistory() {
     return statusHistory;
-  }
-  public void setStatusHistory(List<StatusChange> statusHistory) {
-    this.statusHistory = statusHistory;
   }
 
   

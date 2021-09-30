@@ -211,21 +211,10 @@ public class WebDeployment  implements Serializable {
   }
 
   
-  /**
-   * A reference to the user who most recently modified the deployment
-   **/
-  public WebDeployment lastModifiedUser(AddressableEntityRef lastModifiedUser) {
-    this.lastModifiedUser = lastModifiedUser;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "A reference to the user who most recently modified the deployment")
   @JsonProperty("lastModifiedUser")
   public AddressableEntityRef getLastModifiedUser() {
     return lastModifiedUser;
-  }
-  public void setLastModifiedUser(AddressableEntityRef lastModifiedUser) {
-    this.lastModifiedUser = lastModifiedUser;
   }
 
   

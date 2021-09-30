@@ -70,21 +70,10 @@ public class EdgeConnectionInfo  implements Serializable {
   }
 
   
-  /**
-   * Connection errors
-   **/
-  public EdgeConnectionInfo connectionErrors(List<String> connectionErrors) {
-    this.connectionErrors = connectionErrors;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Connection errors")
   @JsonProperty("connectionErrors")
   public List<String> getConnectionErrors() {
     return connectionErrors;
-  }
-  public void setConnectionErrors(List<String> connectionErrors) {
-    this.connectionErrors = connectionErrors;
   }
 
   

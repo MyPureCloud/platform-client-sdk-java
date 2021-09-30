@@ -106,21 +106,10 @@ public class CoachingSlot  implements Serializable {
   }
 
   
-  /**
-   * Workforce Management schedule information associated with the slot
-   **/
-  public CoachingSlot wfmSchedule(WfmScheduleReference wfmSchedule) {
-    this.wfmSchedule = wfmSchedule;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Workforce Management schedule information associated with the slot")
   @JsonProperty("wfmSchedule")
   public WfmScheduleReference getWfmSchedule() {
     return wfmSchedule;
-  }
-  public void setWfmSchedule(WfmScheduleReference wfmSchedule) {
-    this.wfmSchedule = wfmSchedule;
   }
 
   

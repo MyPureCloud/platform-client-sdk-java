@@ -111,21 +111,10 @@ public class AvailableTime  implements Serializable {
   }
 
   
-  /**
-   * Workforce Management schedule information associated with the available time
-   **/
-  public AvailableTime wfmSchedule(WfmScheduleReference wfmSchedule) {
-    this.wfmSchedule = wfmSchedule;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Workforce Management schedule information associated with the available time")
   @JsonProperty("wfmSchedule")
   public WfmScheduleReference getWfmSchedule() {
     return wfmSchedule;
-  }
-  public void setWfmSchedule(WfmScheduleReference wfmSchedule) {
-    this.wfmSchedule = wfmSchedule;
   }
 
   

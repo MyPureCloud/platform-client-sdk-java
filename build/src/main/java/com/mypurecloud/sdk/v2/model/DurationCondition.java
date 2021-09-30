@@ -72,6 +72,55 @@ public class DurationCondition  implements Serializable {
   private String durationOperator = null;
   private String durationRange = null;
 
+  private static class DurationModeEnumDeserializer extends StdDeserializer<DurationModeEnum> {
+    public DurationModeEnumDeserializer() {
+      super(DurationModeEnumDeserializer.class);
+    }
+
+    @Override
+    public DurationModeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return DurationModeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets durationMode
+   */
+ @JsonDeserialize(using = DurationModeEnumDeserializer.class)
+  public enum DurationModeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    BETWEEN("Between"),
+    OVER("Over"),
+    UNDER("Under");
+
+    private String value;
+
+    DurationModeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static DurationModeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (DurationModeEnum value : DurationModeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return DurationModeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private DurationModeEnum durationMode = null;
+
   
   /**
    **/
@@ -124,6 +173,23 @@ public class DurationCondition  implements Serializable {
   }
 
   
+  /**
+   **/
+  public DurationCondition durationMode(DurationModeEnum durationMode) {
+    this.durationMode = durationMode;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("durationMode")
+  public DurationModeEnum getDurationMode() {
+    return durationMode;
+  }
+  public void setDurationMode(DurationModeEnum durationMode) {
+    this.durationMode = durationMode;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -136,12 +202,13 @@ public class DurationCondition  implements Serializable {
     DurationCondition durationCondition = (DurationCondition) o;
     return Objects.equals(this.durationTarget, durationCondition.durationTarget) &&
         Objects.equals(this.durationOperator, durationCondition.durationOperator) &&
-        Objects.equals(this.durationRange, durationCondition.durationRange);
+        Objects.equals(this.durationRange, durationCondition.durationRange) &&
+        Objects.equals(this.durationMode, durationCondition.durationMode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(durationTarget, durationOperator, durationRange);
+    return Objects.hash(durationTarget, durationOperator, durationRange, durationMode);
   }
 
   @Override
@@ -152,6 +219,7 @@ public class DurationCondition  implements Serializable {
     sb.append("    durationTarget: ").append(toIndentedString(durationTarget)).append("\n");
     sb.append("    durationOperator: ").append(toIndentedString(durationOperator)).append("\n");
     sb.append("    durationRange: ").append(toIndentedString(durationRange)).append("\n");
+    sb.append("    durationMode: ").append(toIndentedString(durationMode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -299,21 +299,10 @@ public class ScimV2SchemaAttribute  implements Serializable {
   }
 
   
-  /**
-   * The list of subattributes for an attribute of the type \"complex\". Uses the same schema as \"attributes\".
-   **/
-  public ScimV2SchemaAttribute subAttributes(List<ScimV2SchemaAttribute> subAttributes) {
-    this.subAttributes = subAttributes;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The list of subattributes for an attribute of the type \"complex\". Uses the same schema as \"attributes\".")
   @JsonProperty("subAttributes")
   public List<ScimV2SchemaAttribute> getSubAttributes() {
     return subAttributes;
-  }
-  public void setSubAttributes(List<ScimV2SchemaAttribute> subAttributes) {
-    this.subAttributes = subAttributes;
   }
 
   
@@ -338,21 +327,10 @@ public class ScimV2SchemaAttribute  implements Serializable {
   }
 
   
-  /**
-   * The list of standard values that service providers may use. Service providers may ignore unsupported values.
-   **/
-  public ScimV2SchemaAttribute canonicalValues(List<String> canonicalValues) {
-    this.canonicalValues = canonicalValues;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The list of standard values that service providers may use. Service providers may ignore unsupported values.")
   @JsonProperty("canonicalValues")
   public List<String> getCanonicalValues() {
     return canonicalValues;
-  }
-  public void setCanonicalValues(List<String> canonicalValues) {
-    this.canonicalValues = canonicalValues;
   }
 
   
@@ -384,21 +362,10 @@ public class ScimV2SchemaAttribute  implements Serializable {
   }
 
   
-  /**
-   * The list of SCIM resource types that may be referenced. Only applies when \"type\" is set to \"reference\".
-   **/
-  public ScimV2SchemaAttribute referenceTypes(List<ReferenceTypesEnum> referenceTypes) {
-    this.referenceTypes = referenceTypes;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The list of SCIM resource types that may be referenced. Only applies when \"type\" is set to \"reference\".")
   @JsonProperty("referenceTypes")
   public List<ReferenceTypesEnum> getReferenceTypes() {
     return referenceTypes;
-  }
-  public void setReferenceTypes(List<ReferenceTypesEnum> referenceTypes) {
-    this.referenceTypes = referenceTypes;
   }
 
   

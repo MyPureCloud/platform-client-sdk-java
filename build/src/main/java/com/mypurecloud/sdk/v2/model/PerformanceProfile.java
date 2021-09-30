@@ -63,21 +63,10 @@ public class PerformanceProfile  implements Serializable {
   }
 
   
-  /**
-   * The division for this performance profile associate to
-   **/
-  public PerformanceProfile division(Division division) {
-    this.division = division;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The division for this performance profile associate to")
   @JsonProperty("division")
   public Division getDivision() {
     return division;
-  }
-  public void setDivision(Division division) {
-    this.division = division;
   }
 
   

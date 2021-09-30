@@ -28,21 +28,10 @@ public class NluDetectionResponse  implements Serializable {
   private NluDetectionInput input = null;
 
   
-  /**
-   * The NLU domain version which performed the detection.
-   **/
-  public NluDetectionResponse version(NluDomainVersion version) {
-    this.version = version;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The NLU domain version which performed the detection.")
   @JsonProperty("version")
   public NluDomainVersion getVersion() {
     return version;
-  }
-  public void setVersion(NluDomainVersion version) {
-    this.version = version;
   }
 
   

@@ -42,21 +42,10 @@ public class UploadUrlResponse  implements Serializable {
   }
 
   
-  /**
-   * Required headers when uploading a file through PUT request to the URL
-   **/
-  public UploadUrlResponse headers(Map<String, String> headers) {
-    this.headers = headers;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Required headers when uploading a file through PUT request to the URL")
   @JsonProperty("headers")
   public Map<String, String> getHeaders() {
     return headers;
-  }
-  public void setHeaders(Map<String, String> headers) {
-    this.headers = headers;
   }
 
   

@@ -42,21 +42,10 @@ public class ScimConfigResourceType  implements Serializable {
   }
 
   
-  /**
-   * The list of supported schemas.
-   **/
-  public ScimConfigResourceType schemas(List<String> schemas) {
-    this.schemas = schemas;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The list of supported schemas.")
   @JsonProperty("schemas")
   public List<String> getSchemas() {
     return schemas;
-  }
-  public void setSchemas(List<String> schemas) {
-    this.schemas = schemas;
   }
 
   
@@ -81,21 +70,10 @@ public class ScimConfigResourceType  implements Serializable {
   }
 
   
-  /**
-   * The list of schema extensions for the resource type.
-   **/
-  public ScimConfigResourceType schemaExtensions(List<ScimConfigResourceTypeSchemaExtension> schemaExtensions) {
-    this.schemaExtensions = schemaExtensions;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The list of schema extensions for the resource type.")
   @JsonProperty("schemaExtensions")
   public List<ScimConfigResourceTypeSchemaExtension> getSchemaExtensions() {
     return schemaExtensions;
-  }
-  public void setSchemaExtensions(List<ScimConfigResourceTypeSchemaExtension> schemaExtensions) {
-    this.schemaExtensions = schemaExtensions;
   }
 
   
@@ -106,21 +84,10 @@ public class ScimConfigResourceType  implements Serializable {
   }
 
   
-  /**
-   * The metadata of the SCIM resource. Only \"location\" and \"resourceType\" are set for \"ResourceType\" resources.
-   **/
-  public ScimConfigResourceType meta(ScimMetadata meta) {
-    this.meta = meta;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource. Only \"location\" and \"resourceType\" are set for \"ResourceType\" resources.")
   @JsonProperty("meta")
   public ScimMetadata getMeta() {
     return meta;
-  }
-  public void setMeta(ScimMetadata meta) {
-    this.meta = meta;
   }
 
   

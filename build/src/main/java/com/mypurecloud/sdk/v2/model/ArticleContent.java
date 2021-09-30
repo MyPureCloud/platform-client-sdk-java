@@ -24,21 +24,10 @@ public class ArticleContent  implements Serializable {
   private ArticleContentBody body = null;
 
   
-  /**
-   * Body of the article content.
-   **/
-  public ArticleContent body(ArticleContentBody body) {
-    this.body = body;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Body of the article content.")
   @JsonProperty("body")
   public ArticleContentBody getBody() {
     return body;
-  }
-  public void setBody(ArticleContentBody body) {
-    this.body = body;
   }
 
   

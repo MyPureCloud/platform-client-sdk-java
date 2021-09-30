@@ -59,39 +59,17 @@ public class Draft  implements Serializable {
   }
 
   
-  /**
-   * Miner to which the draft belongs.
-   **/
-  public Draft miner(Miner miner) {
-    this.miner = miner;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Miner to which the draft belongs.")
   @JsonProperty("miner")
   public Miner getMiner() {
     return miner;
   }
-  public void setMiner(Miner miner) {
-    this.miner = miner;
-  }
 
-  
-  /**
-   * Draft intent object.
-   **/
-  public Draft intents(List<DraftIntents> intents) {
-    this.intents = intents;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Draft intent object.")
   @JsonProperty("intents")
   public List<DraftIntents> getIntents() {
     return intents;
-  }
-  public void setIntents(List<DraftIntents> intents) {
-    this.intents = intents;
   }
 
   

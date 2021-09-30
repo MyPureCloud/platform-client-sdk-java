@@ -113,7 +113,6 @@ public class LearningModule  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INFORMATIONAL("Informational"),
     ASSESSEDCONTENT("AssessedContent"),
-    QUESTIONNAIRE("Questionnaire"),
     ASSESSMENT("Assessment");
 
     private String value;
@@ -172,21 +171,10 @@ public class LearningModule  implements Serializable {
   }
 
   
-  /**
-   * The user who created learning module
-   **/
-  public LearningModule createdBy(UserReference createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The user who created learning module")
   @JsonProperty("createdBy")
   public UserReference getCreatedBy() {
     return createdBy;
-  }
-  public void setCreatedBy(UserReference createdBy) {
-    this.createdBy = createdBy;
   }
 
   
@@ -197,21 +185,10 @@ public class LearningModule  implements Serializable {
   }
 
   
-  /**
-   * The user who modified learning module
-   **/
-  public LearningModule modifiedBy(UserReference modifiedBy) {
-    this.modifiedBy = modifiedBy;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The user who modified learning module")
   @JsonProperty("modifiedBy")
   public UserReference getModifiedBy() {
     return modifiedBy;
-  }
-  public void setModifiedBy(UserReference modifiedBy) {
-    this.modifiedBy = modifiedBy;
   }
 
   
@@ -243,21 +220,10 @@ public class LearningModule  implements Serializable {
   }
 
   
-  /**
-   * The rule for learning module; read-only, and only populated when requested via expand param.
-   **/
-  public LearningModule rule(LearningModuleRule rule) {
-    this.rule = rule;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The rule for learning module; read-only, and only populated when requested via expand param.")
   @JsonProperty("rule")
   public LearningModuleRule getRule() {
     return rule;
-  }
-  public void setRule(LearningModuleRule rule) {
-    this.rule = rule;
   }
 
   

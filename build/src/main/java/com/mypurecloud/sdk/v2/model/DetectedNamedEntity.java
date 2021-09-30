@@ -48,21 +48,10 @@ public class DetectedNamedEntity  implements Serializable {
   }
 
   
-  /**
-   * The value of the detected named entity.
-   **/
-  public DetectedNamedEntity value(DetectedNamedEntityValue value) {
-    this.value = value;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The value of the detected named entity.")
   @JsonProperty("value")
   public DetectedNamedEntityValue getValue() {
     return value;
-  }
-  public void setValue(DetectedNamedEntityValue value) {
-    this.value = value;
   }
 
   

@@ -32,21 +32,10 @@ public class QueueUtilizationDiagnostic  implements Serializable {
   private Integer usersOnANonCampaignCall = null;
 
   
-  /**
-   * Identifier of the queue
-   **/
-  public QueueUtilizationDiagnostic queue(DomainEntityRef queue) {
-    this.queue = queue;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Identifier of the queue")
   @JsonProperty("queue")
   public DomainEntityRef getQueue() {
     return queue;
-  }
-  public void setQueue(DomainEntityRef queue) {
-    this.queue = queue;
   }
 
   

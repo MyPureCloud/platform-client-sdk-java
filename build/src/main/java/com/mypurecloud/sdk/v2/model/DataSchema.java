@@ -135,21 +135,10 @@ public class DataSchema  implements Serializable {
   }
 
   
-  /**
-   * One of \"CONTACT\" or \"EXTERNAL_ORGANIZATION\".  Indicates the built-in entity type to which this schema applies.
-   **/
-  public DataSchema appliesTo(List<AppliesToEnum> appliesTo) {
-    this.appliesTo = appliesTo;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "One of \"CONTACT\" or \"EXTERNAL_ORGANIZATION\".  Indicates the built-in entity type to which this schema applies.")
   @JsonProperty("appliesTo")
   public List<AppliesToEnum> getAppliesTo() {
     return appliesTo;
-  }
-  public void setAppliesTo(List<AppliesToEnum> appliesTo) {
-    this.appliesTo = appliesTo;
   }
 
   
@@ -171,21 +160,10 @@ public class DataSchema  implements Serializable {
   }
 
   
-  /**
-   * The URI of the user that created this schema.
-   **/
-  public DataSchema createdBy(DomainEntityRef createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The URI of the user that created this schema.")
   @JsonProperty("createdBy")
   public DomainEntityRef getCreatedBy() {
     return createdBy;
-  }
-  public void setCreatedBy(DomainEntityRef createdBy) {
-    this.createdBy = createdBy;
   }
 
   

@@ -101,39 +101,17 @@ public class Trustee  implements Serializable {
   }
 
   
-  /**
-   * User that created trust.
-   **/
-  public Trustee createdBy(OrgUser createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "User that created trust.")
   @JsonProperty("createdBy")
   public OrgUser getCreatedBy() {
     return createdBy;
   }
-  public void setCreatedBy(OrgUser createdBy) {
-    this.createdBy = createdBy;
-  }
 
-  
-  /**
-   * Organization associated with this trust.
-   **/
-  public Trustee organization(Organization organization) {
-    this.organization = organization;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Organization associated with this trust.")
   @JsonProperty("organization")
   public Organization getOrganization() {
     return organization;
-  }
-  public void setOrganization(Organization organization) {
-    this.organization = organization;
   }
 
   

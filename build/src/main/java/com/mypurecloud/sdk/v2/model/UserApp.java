@@ -44,21 +44,10 @@ public class UserApp  implements Serializable {
   }
 
   
-  /**
-   * Integration Type for the userApp
-   **/
-  public UserApp integrationType(IntegrationType integrationType) {
-    this.integrationType = integrationType;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Integration Type for the userApp")
   @JsonProperty("integrationType")
   public IntegrationType getIntegrationType() {
     return integrationType;
-  }
-  public void setIntegrationType(IntegrationType integrationType) {
-    this.integrationType = integrationType;
   }
 
   

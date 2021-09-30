@@ -54,8 +54,7 @@ public class DevelopmentActivity  implements Serializable {
     INFORMATIONAL("Informational"),
     COACHING("Coaching"),
     ASSESSEDCONTENT("AssessedContent"),
-    ASSESSMENT("Assessment"),
-    QUESTIONNAIRE("Questionnaire");
+    ASSESSMENT("Assessment");
 
     private String value;
 
@@ -153,21 +152,10 @@ public class DevelopmentActivity  implements Serializable {
   }
 
   
-  /**
-   * User that created activity
-   **/
-  public DevelopmentActivity createdBy(UserReference createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "User that created activity")
   @JsonProperty("createdBy")
   public UserReference getCreatedBy() {
     return createdBy;
-  }
-  public void setCreatedBy(UserReference createdBy) {
-    this.createdBy = createdBy;
   }
 
   

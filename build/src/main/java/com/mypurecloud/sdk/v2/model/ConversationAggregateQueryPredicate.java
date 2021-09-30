@@ -105,6 +105,7 @@ public class ConversationAggregateQueryPredicate  implements Serializable {
     CONVERTEDFROM("convertedFrom"),
     CONVERTEDTO("convertedTo"),
     DELIVERYSTATUS("deliveryStatus"),
+    DESTINATIONADDRESS("destinationAddress"),
     DIRECTION("direction"),
     DISCONNECTTYPE("disconnectType"),
     DIVISIONID("divisionId"),

@@ -163,21 +163,10 @@ public class GDPRRequest  implements Serializable {
   }
 
   
-  /**
-   * The user that created this request
-   **/
-  public GDPRRequest createdBy(DomainEntityRef createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", required = true, value = "The user that created this request")
   @JsonProperty("createdBy")
   public DomainEntityRef getCreatedBy() {
     return createdBy;
-  }
-  public void setCreatedBy(DomainEntityRef createdBy) {
-    this.createdBy = createdBy;
   }
 
   
@@ -189,7 +178,7 @@ public class GDPRRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The replacement terms for the provided search terms, in the case of a GDPR_UPDATE request")
+  @ApiModelProperty(example = "[ { \"type\": \"EMAIL\": \"existingValue\": \"personal.email@domain.com\", \"updatedValue\": \"updated.personal.email@domain.com\" } ]", value = "The replacement terms for the provided search terms, in the case of a GDPR_UPDATE request")
   @JsonProperty("replacementTerms")
   public List<ReplacementTerm> getReplacementTerms() {
     return replacementTerms;

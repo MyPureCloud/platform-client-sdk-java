@@ -757,21 +757,10 @@ public class Session  implements Serializable {
   }
 
   
-  /**
-   * The external contact associated with this session.
-   **/
-  public Session externalContact(AddressableEntityRef externalContact) {
-    this.externalContact = externalContact;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The external contact associated with this session.")
   @JsonProperty("externalContact")
   public AddressableEntityRef getExternalContact() {
     return externalContact;
-  }
-  public void setExternalContact(AddressableEntityRef externalContact) {
-    this.externalContact = externalContact;
   }
 
   
@@ -811,21 +800,10 @@ public class Session  implements Serializable {
   }
 
   
-  /**
-   * The conversation for this session.
-   **/
-  public Session conversation(AddressableEntityRef conversation) {
-    this.conversation = conversation;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The conversation for this session.")
   @JsonProperty("conversation")
   public AddressableEntityRef getConversation() {
     return conversation;
-  }
-  public void setConversation(AddressableEntityRef conversation) {
-    this.conversation = conversation;
   }
 
   

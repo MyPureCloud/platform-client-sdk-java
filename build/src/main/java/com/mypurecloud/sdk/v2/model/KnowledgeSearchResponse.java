@@ -66,21 +66,10 @@ public class KnowledgeSearchResponse  implements Serializable {
   }
 
   
-  /**
-   * Results associated to the search response
-   **/
-  public KnowledgeSearchResponse results(List<KnowledgeSearchDocument> results) {
-    this.results = results;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Results associated to the search response")
   @JsonProperty("results")
   public List<KnowledgeSearchDocument> getResults() {
     return results;
-  }
-  public void setResults(List<KnowledgeSearchDocument> results) {
-    this.results = results;
   }
 
   

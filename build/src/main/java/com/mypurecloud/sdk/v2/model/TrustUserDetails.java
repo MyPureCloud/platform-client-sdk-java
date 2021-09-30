@@ -33,21 +33,10 @@ public class TrustUserDetails  implements Serializable {
   }
 
   
-  /**
-   * User that added trusted user.
-   **/
-  public TrustUserDetails createdBy(OrgUser createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "User that added trusted user.")
   @JsonProperty("createdBy")
   public OrgUser getCreatedBy() {
     return createdBy;
-  }
-  public void setCreatedBy(OrgUser createdBy) {
-    this.createdBy = createdBy;
   }
 
   

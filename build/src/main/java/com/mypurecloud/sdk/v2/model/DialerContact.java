@@ -101,39 +101,17 @@ public class DialerContact  implements Serializable {
   }
 
   
-  /**
-   * A map of call records for the contact phone columns.
-   **/
-  public DialerContact callRecords(Map<String, CallRecord> callRecords) {
-    this.callRecords = callRecords;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "A map of call records for the contact phone columns.")
   @JsonProperty("callRecords")
   public Map<String, CallRecord> getCallRecords() {
     return callRecords;
   }
-  public void setCallRecords(Map<String, CallRecord> callRecords) {
-    this.callRecords = callRecords;
-  }
 
-  
-  /**
-   * A map of SMS records for the contact phone columns.
-   **/
-  public DialerContact latestSmsEvaluations(Map<String, MessageEvaluation> latestSmsEvaluations) {
-    this.latestSmsEvaluations = latestSmsEvaluations;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "A map of SMS records for the contact phone columns.")
   @JsonProperty("latestSmsEvaluations")
   public Map<String, MessageEvaluation> getLatestSmsEvaluations() {
     return latestSmsEvaluations;
-  }
-  public void setLatestSmsEvaluations(Map<String, MessageEvaluation> latestSmsEvaluations) {
-    this.latestSmsEvaluations = latestSmsEvaluations;
   }
 
   
@@ -173,39 +151,17 @@ public class DialerContact  implements Serializable {
   }
 
   
-  /**
-   * Map containing data about the timezone the contact is mapped to. This will only be populated if the contact list has automatic timezone mapping turned on. The key is the column name. The value is the timezone it mapped to and the type of column: Phone or Zip
-   **/
-  public DialerContact contactColumnTimeZones(Map<String, ContactColumnTimeZone> contactColumnTimeZones) {
-    this.contactColumnTimeZones = contactColumnTimeZones;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Map containing data about the timezone the contact is mapped to. This will only be populated if the contact list has automatic timezone mapping turned on. The key is the column name. The value is the timezone it mapped to and the type of column: Phone or Zip")
   @JsonProperty("contactColumnTimeZones")
   public Map<String, ContactColumnTimeZone> getContactColumnTimeZones() {
     return contactColumnTimeZones;
   }
-  public void setContactColumnTimeZones(Map<String, ContactColumnTimeZone> contactColumnTimeZones) {
-    this.contactColumnTimeZones = contactColumnTimeZones;
-  }
 
-  
-  /**
-   * the priority property within ConfigurationOverides indicates whether or not the contact to be placed in front of the queue or at the end of the queue
-   **/
-  public DialerContact configurationOverrides(ConfigurationOverrides configurationOverrides) {
-    this.configurationOverrides = configurationOverrides;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "the priority property within ConfigurationOverides indicates whether or not the contact to be placed in front of the queue or at the end of the queue")
   @JsonProperty("configurationOverrides")
   public ConfigurationOverrides getConfigurationOverrides() {
     return configurationOverrides;
-  }
-  public void setConfigurationOverrides(ConfigurationOverrides configurationOverrides) {
-    this.configurationOverrides = configurationOverrides;
   }
 
   

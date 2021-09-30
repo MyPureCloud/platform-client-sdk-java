@@ -42,21 +42,10 @@ public class TrustRequest  implements Serializable {
   }
 
   
-  /**
-   * User who created this request.
-   **/
-  public TrustRequest createdBy(OrgUser createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "User who created this request.")
   @JsonProperty("createdBy")
   public OrgUser getCreatedBy() {
     return createdBy;
-  }
-  public void setCreatedBy(OrgUser createdBy) {
-    this.createdBy = createdBy;
   }
 
   
@@ -67,57 +56,24 @@ public class TrustRequest  implements Serializable {
   }
 
   
-  /**
-   * Trustee organization who generated this request.
-   **/
-  public TrustRequest trustee(Organization trustee) {
-    this.trustee = trustee;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", required = true, value = "Trustee organization who generated this request.")
   @JsonProperty("trustee")
   public Organization getTrustee() {
     return trustee;
   }
-  public void setTrustee(Organization trustee) {
-    this.trustee = trustee;
-  }
 
-  
-  /**
-   * The list of trustee users that are requesting access.
-   **/
-  public TrustRequest users(List<OrgUser> users) {
-    this.users = users;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The list of trustee users that are requesting access.")
   @JsonProperty("users")
   public List<OrgUser> getUsers() {
     return users;
   }
-  public void setUsers(List<OrgUser> users) {
-    this.users = users;
-  }
 
-  
-  /**
-   * The list of trustee groups that are requesting access.
-   **/
-  public TrustRequest groups(List<TrustGroup> groups) {
-    this.groups = groups;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The list of trustee groups that are requesting access.")
   @JsonProperty("groups")
   public List<TrustGroup> getGroups() {
     return groups;
-  }
-  public void setGroups(List<TrustGroup> groups) {
-    this.groups = groups;
   }
 
   

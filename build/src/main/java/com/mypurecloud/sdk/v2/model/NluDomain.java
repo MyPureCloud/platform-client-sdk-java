@@ -76,39 +76,17 @@ public class NluDomain  implements Serializable {
   }
 
   
-  /**
-   * The draft version of that NLU domain.
-   **/
-  public NluDomain draftVersion(NluDomainVersion draftVersion) {
-    this.draftVersion = draftVersion;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The draft version of that NLU domain.")
   @JsonProperty("draftVersion")
   public NluDomainVersion getDraftVersion() {
     return draftVersion;
   }
-  public void setDraftVersion(NluDomainVersion draftVersion) {
-    this.draftVersion = draftVersion;
-  }
 
-  
-  /**
-   * The last published version of that NLU domain.
-   **/
-  public NluDomain lastPublishedVersion(NluDomainVersion lastPublishedVersion) {
-    this.lastPublishedVersion = lastPublishedVersion;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The last published version of that NLU domain.")
   @JsonProperty("lastPublishedVersion")
   public NluDomainVersion getLastPublishedVersion() {
     return lastPublishedVersion;
-  }
-  public void setLastPublishedVersion(NluDomainVersion lastPublishedVersion) {
-    this.lastPublishedVersion = lastPublishedVersion;
   }
 
   

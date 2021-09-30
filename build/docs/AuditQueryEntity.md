@@ -111,6 +111,8 @@ title: AuditQueryEntity
 | POLICY | &quot;Policy&quot; |
 | PREDICTOR | &quot;Predictor&quot; |
 | PRODUCT | &quot;Product&quot; |
+| PROFILE | &quot;Profile&quot; |
+| PROFILEMEMBERS | &quot;ProfileMembers&quot; |
 | PROGRAM | &quot;Program&quot; |
 | PROMPT | &quot;Prompt&quot; |
 | PROMPTRESOURCE | &quot;PromptResource&quot; |

@@ -80,21 +80,10 @@ public class AuthzDivision  implements Serializable {
   }
 
   
-  /**
-   * A count of objects in this division, grouped by type.
-   **/
-  public AuthzDivision objectCounts(Map<String, Long> objectCounts) {
-    this.objectCounts = objectCounts;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "A count of objects in this division, grouped by type.")
   @JsonProperty("objectCounts")
   public Map<String, Long> getObjectCounts() {
     return objectCounts;
-  }
-  public void setObjectCounts(Map<String, Long> objectCounts) {
-    this.objectCounts = objectCounts;
   }
 
   

@@ -176,6 +176,8 @@ title: AuditTopicAuditLogMessage
 | PHONE | &quot;Phone&quot; |
 | PHONEBASE | &quot;PhoneBase&quot; |
 | PREDICTOR | &quot;Predictor&quot; |
+| PROFILE | &quot;Profile&quot; |
+| PROFILEMEMBERS | &quot;ProfileMembers&quot; |
 | PROGRAM | &quot;Program&quot; |
 | PROMPT | &quot;Prompt&quot; |
 | PROMPTRESOURCE | &quot;PromptResource&quot; |

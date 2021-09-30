@@ -51,7 +51,6 @@ public class LearningModuleRequest  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INFORMATIONAL("Informational"),
     ASSESSEDCONTENT("AssessedContent"),
-    QUESTIONNAIRE("Questionnaire"),
     ASSESSMENT("Assessment");
 
     private String value;

@@ -87,21 +87,10 @@ public class WritableDialerContact  implements Serializable {
   }
 
   
-  /**
-   * A map of SMS records for the contact phone columns.
-   **/
-  public WritableDialerContact latestSmsEvaluations(Map<String, MessageEvaluation> latestSmsEvaluations) {
-    this.latestSmsEvaluations = latestSmsEvaluations;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "A map of SMS records for the contact phone columns.")
   @JsonProperty("latestSmsEvaluations")
   public Map<String, MessageEvaluation> getLatestSmsEvaluations() {
     return latestSmsEvaluations;
-  }
-  public void setLatestSmsEvaluations(Map<String, MessageEvaluation> latestSmsEvaluations) {
-    this.latestSmsEvaluations = latestSmsEvaluations;
   }
 
   

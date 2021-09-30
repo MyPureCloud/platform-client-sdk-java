@@ -68,14 +68,14 @@ public class ScimUserExtensions  implements Serializable {
 
   
   /**
-   * The list of external identifiers assigned to user. Always includes an immutable SCIM authority prefixed with \"x-pc:scimv2:v1\".
+   * The list of external identifiers assigned to user. Always includes an immutable SCIM authority prefixed with \"x-pc:scimv2:v1\". ExternalIds are searchable with complex filter query parameter using 'authority' and 'value', e.g., filter=urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:externalIds[authority eq \"matchAuthName\" and value eq \"matchingExternalKeyValue\"].
    **/
   public ScimUserExtensions externalIds(List<ScimGenesysUserExternalId> externalIds) {
     this.externalIds = externalIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The list of external identifiers assigned to user. Always includes an immutable SCIM authority prefixed with \"x-pc:scimv2:v1\".")
+  @ApiModelProperty(example = "null", value = "The list of external identifiers assigned to user. Always includes an immutable SCIM authority prefixed with \"x-pc:scimv2:v1\". ExternalIds are searchable with complex filter query parameter using 'authority' and 'value', e.g., filter=urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:externalIds[authority eq \"matchAuthName\" and value eq \"matchingExternalKeyValue\"].")
   @JsonProperty("externalIds")
   public List<ScimGenesysUserExternalId> getExternalIds() {
     return externalIds;

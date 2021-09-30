@@ -40,21 +40,10 @@ public class ScimServiceProviderConfig  implements Serializable {
   private ScimMetadata meta = null;
 
   
-  /**
-   * The list of supported schemas.
-   **/
-  public ScimServiceProviderConfig schemas(List<String> schemas) {
-    this.schemas = schemas;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The list of supported schemas.")
   @JsonProperty("schemas")
   public List<String> getSchemas() {
     return schemas;
-  }
-  public void setSchemas(List<String> schemas) {
-    this.schemas = schemas;
   }
 
   
@@ -65,147 +54,59 @@ public class ScimServiceProviderConfig  implements Serializable {
   }
 
   
-  /**
-   * The \"patch\" configuration options.
-   **/
-  public ScimServiceProviderConfig patch(ScimServiceProviderConfigSimpleFeature patch) {
-    this.patch = patch;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The \"patch\" configuration options.")
   @JsonProperty("patch")
   public ScimServiceProviderConfigSimpleFeature getPatch() {
     return patch;
   }
-  public void setPatch(ScimServiceProviderConfigSimpleFeature patch) {
-    this.patch = patch;
-  }
 
-  
-  /**
-   * The \"filter\" configuration options.
-   **/
-  public ScimServiceProviderConfig filter(ScimServiceProviderConfigFilterFeature filter) {
-    this.filter = filter;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The \"filter\" configuration options.")
   @JsonProperty("filter")
   public ScimServiceProviderConfigFilterFeature getFilter() {
     return filter;
   }
-  public void setFilter(ScimServiceProviderConfigFilterFeature filter) {
-    this.filter = filter;
-  }
 
-  
-  /**
-   * The \"etag\" configuration options.
-   **/
-  public ScimServiceProviderConfig etag(ScimServiceProviderConfigSimpleFeature etag) {
-    this.etag = etag;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The \"etag\" configuration options.")
   @JsonProperty("etag")
   public ScimServiceProviderConfigSimpleFeature getEtag() {
     return etag;
   }
-  public void setEtag(ScimServiceProviderConfigSimpleFeature etag) {
-    this.etag = etag;
-  }
 
-  
-  /**
-   * The \"sort\" configuration options.
-   **/
-  public ScimServiceProviderConfig sort(ScimServiceProviderConfigSimpleFeature sort) {
-    this.sort = sort;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The \"sort\" configuration options.")
   @JsonProperty("sort")
   public ScimServiceProviderConfigSimpleFeature getSort() {
     return sort;
   }
-  public void setSort(ScimServiceProviderConfigSimpleFeature sort) {
-    this.sort = sort;
-  }
 
-  
-  /**
-   * The \"bulk\" configuration options.
-   **/
-  public ScimServiceProviderConfig bulk(ScimServiceProviderConfigBulkFeature bulk) {
-    this.bulk = bulk;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The \"bulk\" configuration options.")
   @JsonProperty("bulk")
   public ScimServiceProviderConfigBulkFeature getBulk() {
     return bulk;
   }
-  public void setBulk(ScimServiceProviderConfigBulkFeature bulk) {
-    this.bulk = bulk;
-  }
 
-  
-  /**
-   * The \"changePassword\" configuration options.
-   **/
-  public ScimServiceProviderConfig changePassword(ScimServiceProviderConfigSimpleFeature changePassword) {
-    this.changePassword = changePassword;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The \"changePassword\" configuration options.")
   @JsonProperty("changePassword")
   public ScimServiceProviderConfigSimpleFeature getChangePassword() {
     return changePassword;
   }
-  public void setChangePassword(ScimServiceProviderConfigSimpleFeature changePassword) {
-    this.changePassword = changePassword;
-  }
 
-  
-  /**
-   * The list of supported authentication schemes.
-   **/
-  public ScimServiceProviderConfig authenticationSchemes(List<ScimServiceProviderConfigAuthenticationScheme> authenticationSchemes) {
-    this.authenticationSchemes = authenticationSchemes;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The list of supported authentication schemes.")
   @JsonProperty("authenticationSchemes")
   public List<ScimServiceProviderConfigAuthenticationScheme> getAuthenticationSchemes() {
     return authenticationSchemes;
   }
-  public void setAuthenticationSchemes(List<ScimServiceProviderConfigAuthenticationScheme> authenticationSchemes) {
-    this.authenticationSchemes = authenticationSchemes;
-  }
 
-  
-  /**
-   * The metadata of the SCIM resource.
-   **/
-  public ScimServiceProviderConfig meta(ScimMetadata meta) {
-    this.meta = meta;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The metadata of the SCIM resource.")
   @JsonProperty("meta")
   public ScimMetadata getMeta() {
     return meta;
-  }
-  public void setMeta(ScimMetadata meta) {
-    this.meta = meta;
   }
 
   

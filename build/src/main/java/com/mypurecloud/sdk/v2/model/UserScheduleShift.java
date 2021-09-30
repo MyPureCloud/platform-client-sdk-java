@@ -35,21 +35,10 @@ public class UserScheduleShift  implements Serializable {
   private Boolean manuallyEdited = null;
 
   
-  /**
-   * The schedule to which this shift belongs
-   **/
-  public UserScheduleShift weekSchedule(WeekScheduleReference weekSchedule) {
-    this.weekSchedule = weekSchedule;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The schedule to which this shift belongs")
   @JsonProperty("weekSchedule")
   public WeekScheduleReference getWeekSchedule() {
     return weekSchedule;
-  }
-  public void setWeekSchedule(WeekScheduleReference weekSchedule) {
-    this.weekSchedule = weekSchedule;
   }
 
   

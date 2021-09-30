@@ -349,7 +349,6 @@ public class GetLearningAssignmentsRequest {
 	public enum typesValues { 
 		INFORMATIONAL("Informational"), 
 		ASSESSEDCONTENT("AssessedContent"), 
-		QUESTIONNAIRE("Questionnaire"), 
 		ASSESSMENT("Assessment");
 
 		private String value;

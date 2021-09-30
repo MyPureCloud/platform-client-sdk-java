@@ -101,7 +101,7 @@ public class TextBotUserInputEvent  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The input alternatives.")
+  @ApiModelProperty(example = "null", required = true, value = "The input alternatives.")
   @JsonProperty("alternatives")
   public List<TextBotUserInputAlternative> getAlternatives() {
     return alternatives;

@@ -70,21 +70,10 @@ public class ScimUserListResponse  implements Serializable {
   }
 
   
-  /**
-   * The list of requested resources. If \"count\" is 0, then the list will be empty.
-   **/
-  public ScimUserListResponse resources(List<ScimV2User> resources) {
-    this.resources = resources;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The list of requested resources. If \"count\" is 0, then the list will be empty.")
   @JsonProperty("Resources")
   public List<ScimV2User> getResources() {
     return resources;
-  }
-  public void setResources(List<ScimV2User> resources) {
-    this.resources = resources;
   }
 
   

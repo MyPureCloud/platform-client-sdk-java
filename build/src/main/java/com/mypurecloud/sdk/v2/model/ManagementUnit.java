@@ -240,21 +240,10 @@ public class ManagementUnit  implements Serializable {
   }
 
   
-  /**
-   * The user who last modified this entity.  Deprecated, use field from settings.metadata instead
-   **/
-  public ManagementUnit modifiedBy(UserReference modifiedBy) {
-    this.modifiedBy = modifiedBy;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The user who last modified this entity.  Deprecated, use field from settings.metadata instead")
   @JsonProperty("modifiedBy")
   public UserReference getModifiedBy() {
     return modifiedBy;
-  }
-  public void setModifiedBy(UserReference modifiedBy) {
-    this.modifiedBy = modifiedBy;
   }
 
   

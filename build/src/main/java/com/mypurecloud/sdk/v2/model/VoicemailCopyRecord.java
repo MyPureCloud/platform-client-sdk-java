@@ -28,39 +28,17 @@ public class VoicemailCopyRecord  implements Serializable {
   private Date date = null;
 
   
-  /**
-   * The user that the voicemail message was copied to/from
-   **/
-  public VoicemailCopyRecord user(User user) {
-    this.user = user;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The user that the voicemail message was copied to/from")
   @JsonProperty("user")
   public User getUser() {
     return user;
   }
-  public void setUser(User user) {
-    this.user = user;
-  }
 
-  
-  /**
-   * The group that the voicemail message was copied to/from
-   **/
-  public VoicemailCopyRecord group(Group group) {
-    this.group = group;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The group that the voicemail message was copied to/from")
   @JsonProperty("group")
   public Group getGroup() {
     return group;
-  }
-  public void setGroup(Group group) {
-    this.group = group;
   }
 
   

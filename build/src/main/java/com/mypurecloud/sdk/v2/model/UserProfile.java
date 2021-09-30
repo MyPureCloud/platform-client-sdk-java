@@ -147,21 +147,10 @@ public class UserProfile  implements Serializable {
   }
 
   
-  /**
-   * User information expansions
-   **/
-  public UserProfile expands(UserExpands expands) {
-    this.expands = expands;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "User information expansions")
   @JsonProperty("expands")
   public UserExpands getExpands() {
     return expands;
-  }
-  public void setExpands(UserExpands expands) {
-    this.expands = expands;
   }
 
   

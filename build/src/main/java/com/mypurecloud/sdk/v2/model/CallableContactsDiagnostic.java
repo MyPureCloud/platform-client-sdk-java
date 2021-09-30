@@ -29,75 +29,31 @@ public class CallableContactsDiagnostic  implements Serializable {
   private List<DomainEntityRef> ruleSets = new ArrayList<DomainEntityRef>();
 
   
-  /**
-   * Attempt limits for the campaign's contact list
-   **/
-  public CallableContactsDiagnostic attemptLimits(DomainEntityRef attemptLimits) {
-    this.attemptLimits = attemptLimits;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Attempt limits for the campaign's contact list")
   @JsonProperty("attemptLimits")
   public DomainEntityRef getAttemptLimits() {
     return attemptLimits;
   }
-  public void setAttemptLimits(DomainEntityRef attemptLimits) {
-    this.attemptLimits = attemptLimits;
-  }
 
-  
-  /**
-   * Do not call lists for the campaign
-   **/
-  public CallableContactsDiagnostic dncLists(List<DomainEntityRef> dncLists) {
-    this.dncLists = dncLists;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Do not call lists for the campaign")
   @JsonProperty("dncLists")
   public List<DomainEntityRef> getDncLists() {
     return dncLists;
   }
-  public void setDncLists(List<DomainEntityRef> dncLists) {
-    this.dncLists = dncLists;
-  }
 
-  
-  /**
-   * Callable time sets for the campaign
-   **/
-  public CallableContactsDiagnostic callableTimeSet(DomainEntityRef callableTimeSet) {
-    this.callableTimeSet = callableTimeSet;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Callable time sets for the campaign")
   @JsonProperty("callableTimeSet")
   public DomainEntityRef getCallableTimeSet() {
     return callableTimeSet;
   }
-  public void setCallableTimeSet(DomainEntityRef callableTimeSet) {
-    this.callableTimeSet = callableTimeSet;
-  }
 
-  
-  /**
-   * Rule sets for the campaign
-   **/
-  public CallableContactsDiagnostic ruleSets(List<DomainEntityRef> ruleSets) {
-    this.ruleSets = ruleSets;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Rule sets for the campaign")
   @JsonProperty("ruleSets")
   public List<DomainEntityRef> getRuleSets() {
     return ruleSets;
-  }
-  public void setRuleSets(List<DomainEntityRef> ruleSets) {
-    this.ruleSets = ruleSets;
   }
 
   

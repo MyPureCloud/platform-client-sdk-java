@@ -101,21 +101,10 @@ public class Integration  implements Serializable {
   }
 
   
-  /**
-   * Type of the integration
-   **/
-  public Integration integrationType(IntegrationType integrationType) {
-    this.integrationType = integrationType;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Type of the integration")
   @JsonProperty("integrationType")
   public IntegrationType getIntegrationType() {
     return integrationType;
-  }
-  public void setIntegrationType(IntegrationType integrationType) {
-    this.integrationType = integrationType;
   }
 
   
@@ -144,57 +133,24 @@ public class Integration  implements Serializable {
   }
 
   
-  /**
-   * Configuration information for the integration.
-   **/
-  public Integration config(IntegrationConfigurationInfo config) {
-    this.config = config;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Configuration information for the integration.")
   @JsonProperty("config")
   public IntegrationConfigurationInfo getConfig() {
     return config;
   }
-  public void setConfig(IntegrationConfigurationInfo config) {
-    this.config = config;
-  }
 
-  
-  /**
-   * Last reported status of the integration.
-   **/
-  public Integration reportedState(IntegrationStatusInfo reportedState) {
-    this.reportedState = reportedState;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Last reported status of the integration.")
   @JsonProperty("reportedState")
   public IntegrationStatusInfo getReportedState() {
     return reportedState;
   }
-  public void setReportedState(IntegrationStatusInfo reportedState) {
-    this.reportedState = reportedState;
-  }
 
-  
-  /**
-   * Read-only attributes for the integration.
-   **/
-  public Integration attributes(Map<String, String> attributes) {
-    this.attributes = attributes;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Read-only attributes for the integration.")
   @JsonProperty("attributes")
   public Map<String, String> getAttributes() {
     return attributes;
-  }
-  public void setAttributes(Map<String, String> attributes) {
-    this.attributes = attributes;
   }
 
   

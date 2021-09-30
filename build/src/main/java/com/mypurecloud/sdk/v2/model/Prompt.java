@@ -85,39 +85,17 @@ public class Prompt  implements Serializable {
   }
 
   
-  /**
-   * List of resources associated with this prompt
-   **/
-  public Prompt resources(List<PromptAsset> resources) {
-    this.resources = resources;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "List of resources associated with this prompt")
   @JsonProperty("resources")
   public List<PromptAsset> getResources() {
     return resources;
   }
-  public void setResources(List<PromptAsset> resources) {
-    this.resources = resources;
-  }
 
-  
-  /**
-   * Current prompt operation status
-   **/
-  public Prompt currentOperation(Operation currentOperation) {
-    this.currentOperation = currentOperation;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Current prompt operation status")
   @JsonProperty("currentOperation")
   public Operation getCurrentOperation() {
     return currentOperation;
-  }
-  public void setCurrentOperation(Operation currentOperation) {
-    this.currentOperation = currentOperation;
   }
 
   

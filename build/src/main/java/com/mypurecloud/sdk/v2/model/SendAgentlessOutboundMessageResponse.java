@@ -228,21 +228,10 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
   }
 
   
-  /**
-   * Details of the user created the job
-   **/
-  public SendAgentlessOutboundMessageResponse user(AddressableEntityRef user) {
-    this.user = user;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Details of the user created the job")
   @JsonProperty("user")
   public AddressableEntityRef getUser() {
     return user;
-  }
-  public void setUser(AddressableEntityRef user) {
-    this.user = user;
   }
 
   

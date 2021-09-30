@@ -371,21 +371,10 @@ public class TrustGroup  implements Serializable {
   }
 
   
-  /**
-   * The user that added trusted group.
-   **/
-  public TrustGroup createdBy(OrgUser createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The user that added trusted group.")
   @JsonProperty("createdBy")
   public OrgUser getCreatedBy() {
     return createdBy;
-  }
-  public void setCreatedBy(OrgUser createdBy) {
-    this.createdBy = createdBy;
   }
 
   

@@ -46,21 +46,10 @@ public class WfmVersionedEntityMetadata  implements Serializable {
   }
 
   
-  /**
-   * The user who last modified the associated entity
-   **/
-  public WfmVersionedEntityMetadata modifiedBy(UserReference modifiedBy) {
-    this.modifiedBy = modifiedBy;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The user who last modified the associated entity")
   @JsonProperty("modifiedBy")
   public UserReference getModifiedBy() {
     return modifiedBy;
-  }
-  public void setModifiedBy(UserReference modifiedBy) {
-    this.modifiedBy = modifiedBy;
   }
 
   

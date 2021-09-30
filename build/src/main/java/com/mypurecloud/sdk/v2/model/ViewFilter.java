@@ -1253,6 +1253,58 @@ public class ViewFilter  implements Serializable {
   private Boolean isRecorded = null;
   private Boolean hasEvaluation = null;
   private Boolean hasScoredEvaluation = null;
+
+  private static class EmailDeliveryStatusListEnumDeserializer extends StdDeserializer<EmailDeliveryStatusListEnum> {
+    public EmailDeliveryStatusListEnumDeserializer() {
+      super(EmailDeliveryStatusListEnumDeserializer.class);
+    }
+
+    @Override
+    public EmailDeliveryStatusListEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return EmailDeliveryStatusListEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets emailDeliveryStatusList
+   */
+ @JsonDeserialize(using = EmailDeliveryStatusListEnumDeserializer.class)
+  public enum EmailDeliveryStatusListEnum {
+    DELIVERYFAILED("DeliveryFailed"),
+    DELIVERYSUCCESS("DeliverySuccess"),
+    FAILED("Failed"),
+    QUEUED("Queued"),
+    READ("Read"),
+    RECEIVED("Received"),
+    SENT("Sent");
+
+    private String value;
+
+    EmailDeliveryStatusListEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static EmailDeliveryStatusListEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (EmailDeliveryStatusListEnum value : EmailDeliveryStatusListEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return EmailDeliveryStatusListEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private List<EmailDeliveryStatusListEnum> emailDeliveryStatusList = new ArrayList<EmailDeliveryStatusListEnum>();
   private Boolean isAgentOwnedCallback = null;
   private List<String> agentCallbackOwnerIds = new ArrayList<String>();
 
@@ -3418,6 +3470,24 @@ public class ViewFilter  implements Serializable {
 
   
   /**
+   * The list of email delivery statuses used to filter views
+   **/
+  public ViewFilter emailDeliveryStatusList(List<EmailDeliveryStatusListEnum> emailDeliveryStatusList) {
+    this.emailDeliveryStatusList = emailDeliveryStatusList;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of email delivery statuses used to filter views")
+  @JsonProperty("emailDeliveryStatusList")
+  public List<EmailDeliveryStatusListEnum> getEmailDeliveryStatusList() {
+    return emailDeliveryStatusList;
+  }
+  public void setEmailDeliveryStatusList(List<EmailDeliveryStatusListEnum> emailDeliveryStatusList) {
+    this.emailDeliveryStatusList = emailDeliveryStatusList;
+  }
+
+  
+  /**
    * Indicates filtering for agent owned callback interactions
    **/
   public ViewFilter isAgentOwnedCallback(Boolean isAgentOwnedCallback) {
@@ -3583,13 +3653,14 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.isRecorded, viewFilter.isRecorded) &&
         Objects.equals(this.hasEvaluation, viewFilter.hasEvaluation) &&
         Objects.equals(this.hasScoredEvaluation, viewFilter.hasScoredEvaluation) &&
+        Objects.equals(this.emailDeliveryStatusList, viewFilter.emailDeliveryStatusList) &&
         Objects.equals(this.isAgentOwnedCallback, viewFilter.isAgentOwnedCallback) &&
         Objects.equals(this.agentCallbackOwnerIds, viewFilter.agentCallbackOwnerIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, isAgentOwnedCallback, agentCallbackOwnerIds);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds);
   }
 
   @Override
@@ -3717,6 +3788,7 @@ public class ViewFilter  implements Serializable {
     sb.append("    isRecorded: ").append(toIndentedString(isRecorded)).append("\n");
     sb.append("    hasEvaluation: ").append(toIndentedString(hasEvaluation)).append("\n");
     sb.append("    hasScoredEvaluation: ").append(toIndentedString(hasScoredEvaluation)).append("\n");
+    sb.append("    emailDeliveryStatusList: ").append(toIndentedString(emailDeliveryStatusList)).append("\n");
     sb.append("    isAgentOwnedCallback: ").append(toIndentedString(isAgentOwnedCallback)).append("\n");
     sb.append("    agentCallbackOwnerIds: ").append(toIndentedString(agentCallbackOwnerIds)).append("\n");
     sb.append("}");

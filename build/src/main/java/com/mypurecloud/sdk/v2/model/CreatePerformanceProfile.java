@@ -99,21 +99,10 @@ public class CreatePerformanceProfile  implements Serializable {
   }
 
   
-  /**
-   * Order of the associated metrics. The list should contain valid ids for metrics
-   **/
-  public CreatePerformanceProfile metricOrders(List<String> metricOrders) {
-    this.metricOrders = metricOrders;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Order of the associated metrics. The list should contain valid ids for metrics")
   @JsonProperty("metricOrders")
   public List<String> getMetricOrders() {
     return metricOrders;
-  }
-  public void setMetricOrders(List<String> metricOrders) {
-    this.metricOrders = metricOrders;
   }
 
   

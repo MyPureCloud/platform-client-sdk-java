@@ -222,21 +222,10 @@ public class Response  implements Serializable {
   }
 
   
-  /**
-   * User that created the response
-   **/
-  public Response createdBy(User createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "User that created the response")
   @JsonProperty("createdBy")
   public User getCreatedBy() {
     return createdBy;
-  }
-  public void setCreatedBy(User createdBy) {
-    this.createdBy = createdBy;
   }
 
   

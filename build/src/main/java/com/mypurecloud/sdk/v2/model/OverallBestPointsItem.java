@@ -88,21 +88,10 @@ public class OverallBestPointsItem  implements Serializable {
   }
 
   
-  /**
-   * List of associated users with the equal points.
-   **/
-  public OverallBestPointsItem users(List<UserReference> users) {
-    this.users = users;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "List of associated users with the equal points.")
   @JsonProperty("users")
   public List<UserReference> getUsers() {
     return users;
-  }
-  public void setUsers(List<UserReference> users) {
-    this.users = users;
   }
 
   

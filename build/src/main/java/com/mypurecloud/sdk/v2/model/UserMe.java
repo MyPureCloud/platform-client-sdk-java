@@ -247,21 +247,10 @@ public class UserMe  implements Serializable {
   }
 
   
-  /**
-   * Auto populated from addresses.
-   **/
-  public UserMe primaryContactInfo(List<Contact> primaryContactInfo) {
-    this.primaryContactInfo = primaryContactInfo;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Auto populated from addresses.")
   @JsonProperty("primaryContactInfo")
   public List<Contact> getPrimaryContactInfo() {
     return primaryContactInfo;
-  }
-  public void setPrimaryContactInfo(List<Contact> primaryContactInfo) {
-    this.primaryContactInfo = primaryContactInfo;
   }
 
   
@@ -427,237 +416,94 @@ public class UserMe  implements Serializable {
   }
 
   
-  /**
-   * ACD routing status
-   **/
-  public UserMe routingStatus(RoutingStatus routingStatus) {
-    this.routingStatus = routingStatus;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "ACD routing status")
   @JsonProperty("routingStatus")
   public RoutingStatus getRoutingStatus() {
     return routingStatus;
   }
-  public void setRoutingStatus(RoutingStatus routingStatus) {
-    this.routingStatus = routingStatus;
-  }
 
-  
-  /**
-   * Active presence
-   **/
-  public UserMe presence(UserPresence presence) {
-    this.presence = presence;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Active presence")
   @JsonProperty("presence")
   public UserPresence getPresence() {
     return presence;
   }
-  public void setPresence(UserPresence presence) {
-    this.presence = presence;
-  }
 
-  
-  /**
-   * Summary of conversion statistics for conversation types.
-   **/
-  public UserMe conversationSummary(UserConversationSummary conversationSummary) {
-    this.conversationSummary = conversationSummary;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Summary of conversion statistics for conversation types.")
   @JsonProperty("conversationSummary")
   public UserConversationSummary getConversationSummary() {
     return conversationSummary;
   }
-  public void setConversationSummary(UserConversationSummary conversationSummary) {
-    this.conversationSummary = conversationSummary;
-  }
 
-  
-  /**
-   * Determine if out of office is enabled
-   **/
-  public UserMe outOfOffice(OutOfOffice outOfOffice) {
-    this.outOfOffice = outOfOffice;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Determine if out of office is enabled")
   @JsonProperty("outOfOffice")
   public OutOfOffice getOutOfOffice() {
     return outOfOffice;
   }
-  public void setOutOfOffice(OutOfOffice outOfOffice) {
-    this.outOfOffice = outOfOffice;
-  }
 
-  
-  /**
-   * Current geolocation position
-   **/
-  public UserMe geolocation(Geolocation geolocation) {
-    this.geolocation = geolocation;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Current geolocation position")
   @JsonProperty("geolocation")
   public Geolocation getGeolocation() {
     return geolocation;
   }
-  public void setGeolocation(Geolocation geolocation) {
-    this.geolocation = geolocation;
-  }
 
-  
-  /**
-   * Effective, default, and last station information
-   **/
-  public UserMe station(UserStations station) {
-    this.station = station;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Effective, default, and last station information")
   @JsonProperty("station")
   public UserStations getStation() {
     return station;
   }
-  public void setStation(UserStations station) {
-    this.station = station;
-  }
 
-  
-  /**
-   * Roles and permissions assigned to the user
-   **/
-  public UserMe authorization(UserAuthorization authorization) {
-    this.authorization = authorization;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Roles and permissions assigned to the user")
   @JsonProperty("authorization")
   public UserAuthorization getAuthorization() {
     return authorization;
   }
-  public void setAuthorization(UserAuthorization authorization) {
-    this.authorization = authorization;
-  }
 
-  
-  /**
-   * Profile skills possessed by the user
-   **/
-  public UserMe profileSkills(List<String> profileSkills) {
-    this.profileSkills = profileSkills;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Profile skills possessed by the user")
   @JsonProperty("profileSkills")
   public List<String> getProfileSkills() {
     return profileSkills;
   }
-  public void setProfileSkills(List<String> profileSkills) {
-    this.profileSkills = profileSkills;
-  }
 
-  
-  /**
-   * The user placement at each site location.
-   **/
-  public UserMe locations(List<Location> locations) {
-    this.locations = locations;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The user placement at each site location.")
   @JsonProperty("locations")
   public List<Location> getLocations() {
     return locations;
   }
-  public void setLocations(List<Location> locations) {
-    this.locations = locations;
-  }
 
-  
-  /**
-   * The groups the user is a member of
-   **/
-  public UserMe groups(List<Group> groups) {
-    this.groups = groups;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The groups the user is a member of")
   @JsonProperty("groups")
   public List<Group> getGroups() {
     return groups;
   }
-  public void setGroups(List<Group> groups) {
-    this.groups = groups;
-  }
 
-  
-  /**
-   * The team the user is a member of
-   **/
-  public UserMe team(Team team) {
-    this.team = team;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The team the user is a member of")
   @JsonProperty("team")
   public Team getTeam() {
     return team;
   }
-  public void setTeam(Team team) {
-    this.team = team;
-  }
 
-  
-  /**
-   * Routing (ACD) skills possessed by the user
-   **/
-  public UserMe skills(List<UserRoutingSkill> skills) {
-    this.skills = skills;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Routing (ACD) skills possessed by the user")
   @JsonProperty("skills")
   public List<UserRoutingSkill> getSkills() {
     return skills;
   }
-  public void setSkills(List<UserRoutingSkill> skills) {
-    this.skills = skills;
-  }
 
-  
-  /**
-   * Routing (ACD) languages possessed by the user
-   **/
-  public UserMe languages(List<UserRoutingLanguage> languages) {
-    this.languages = languages;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Routing (ACD) languages possessed by the user")
   @JsonProperty("languages")
   public List<UserRoutingLanguage> getLanguages() {
     return languages;
-  }
-  public void setLanguages(List<UserRoutingLanguage> languages) {
-    this.languages = languages;
   }
 
   
@@ -703,273 +549,108 @@ public class UserMe  implements Serializable {
   }
 
   
-  /**
-   * The PureCloud system date time.
-   **/
-  public UserMe date(ServerDate date) {
-    this.date = date;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The PureCloud system date time.")
   @JsonProperty("date")
   public ServerDate getDate() {
     return date;
   }
-  public void setDate(ServerDate date) {
-    this.date = date;
-  }
 
-  
-  /**
-   * Geolocation settings for user's organization.
-   **/
-  public UserMe geolocationSettings(GeolocationSettings geolocationSettings) {
-    this.geolocationSettings = geolocationSettings;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Geolocation settings for user's organization.")
   @JsonProperty("geolocationSettings")
   public GeolocationSettings getGeolocationSettings() {
     return geolocationSettings;
   }
-  public void setGeolocationSettings(GeolocationSettings geolocationSettings) {
-    this.geolocationSettings = geolocationSettings;
-  }
 
-  
-  /**
-   * Organization details for this user.
-   **/
-  public UserMe organization(Organization organization) {
-    this.organization = organization;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Organization details for this user.")
   @JsonProperty("organization")
   public Organization getOrganization() {
     return organization;
   }
-  public void setOrganization(Organization organization) {
-    this.organization = organization;
-  }
 
-  
-  /**
-   * The first 100 presence definitions for user's organization.
-   **/
-  public UserMe presenceDefinitions(List<OrganizationPresence> presenceDefinitions) {
-    this.presenceDefinitions = presenceDefinitions;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The first 100 presence definitions for user's organization.")
   @JsonProperty("presenceDefinitions")
   public List<OrganizationPresence> getPresenceDefinitions() {
     return presenceDefinitions;
   }
-  public void setPresenceDefinitions(List<OrganizationPresence> presenceDefinitions) {
-    this.presenceDefinitions = presenceDefinitions;
-  }
 
-  
-  /**
-   * The first 100 site locations for user's organization
-   **/
-  public UserMe locationDefinitions(List<LocationDefinition> locationDefinitions) {
-    this.locationDefinitions = locationDefinitions;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The first 100 site locations for user's organization")
   @JsonProperty("locationDefinitions")
   public List<LocationDefinition> getLocationDefinitions() {
     return locationDefinitions;
   }
-  public void setLocationDefinitions(List<LocationDefinition> locationDefinitions) {
-    this.locationDefinitions = locationDefinitions;
-  }
 
-  
-  /**
-   * The first 100 organization roles, with applicable permission policies, for user's organization.
-   **/
-  public UserMe orgAuthorization(List<DomainOrganizationRole> orgAuthorization) {
-    this.orgAuthorization = orgAuthorization;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The first 100 organization roles, with applicable permission policies, for user's organization.")
   @JsonProperty("orgAuthorization")
   public List<DomainOrganizationRole> getOrgAuthorization() {
     return orgAuthorization;
   }
-  public void setOrgAuthorization(List<DomainOrganizationRole> orgAuthorization) {
-    this.orgAuthorization = orgAuthorization;
-  }
 
-  
-  /**
-   * The first 50 favorited users.
-   **/
-  public UserMe favorites(List<User> favorites) {
-    this.favorites = favorites;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The first 50 favorited users.")
   @JsonProperty("favorites")
   public List<User> getFavorites() {
     return favorites;
   }
-  public void setFavorites(List<User> favorites) {
-    this.favorites = favorites;
-  }
 
-  
-  /**
-   * The first 50 superiors of this user.
-   **/
-  public UserMe superiors(List<User> superiors) {
-    this.superiors = superiors;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The first 50 superiors of this user.")
   @JsonProperty("superiors")
   public List<User> getSuperiors() {
     return superiors;
   }
-  public void setSuperiors(List<User> superiors) {
-    this.superiors = superiors;
-  }
 
-  
-  /**
-   * The first 50 direct reports to this user.
-   **/
-  public UserMe directReports(List<User> directReports) {
-    this.directReports = directReports;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The first 50 direct reports to this user.")
   @JsonProperty("directReports")
   public List<User> getDirectReports() {
     return directReports;
   }
-  public void setDirectReports(List<User> directReports) {
-    this.directReports = directReports;
-  }
 
-  
-  /**
-   * The first 50 superiors, direct reports, and siblings of this user. Mutually exclusive with superiors and direct reports expands.
-   **/
-  public UserMe adjacents(Adjacents adjacents) {
-    this.adjacents = adjacents;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The first 50 superiors, direct reports, and siblings of this user. Mutually exclusive with superiors and direct reports expands.")
   @JsonProperty("adjacents")
   public Adjacents getAdjacents() {
     return adjacents;
   }
-  public void setAdjacents(Adjacents adjacents) {
-    this.adjacents = adjacents;
-  }
 
-  
-  /**
-   * The first 50 routing skills for user's organizations
-   **/
-  public UserMe routingSkills(List<RoutingSkill> routingSkills) {
-    this.routingSkills = routingSkills;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The first 50 routing skills for user's organizations")
   @JsonProperty("routingSkills")
   public List<RoutingSkill> getRoutingSkills() {
     return routingSkills;
   }
-  public void setRoutingSkills(List<RoutingSkill> routingSkills) {
-    this.routingSkills = routingSkills;
-  }
 
-  
-  /**
-   * The field config for all entities types of user's organization
-   **/
-  public UserMe fieldConfigs(FieldConfigs fieldConfigs) {
-    this.fieldConfigs = fieldConfigs;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The field config for all entities types of user's organization")
   @JsonProperty("fieldConfigs")
   public FieldConfigs getFieldConfigs() {
     return fieldConfigs;
   }
-  public void setFieldConfigs(FieldConfigs fieldConfigs) {
-    this.fieldConfigs = fieldConfigs;
-  }
 
-  
-  /**
-   * Information about the current token
-   **/
-  public UserMe token(TokenInfo token) {
-    this.token = token;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Information about the current token")
   @JsonProperty("token")
   public TokenInfo getToken() {
     return token;
   }
-  public void setToken(TokenInfo token) {
-    this.token = token;
-  }
 
-  
-  /**
-   * Organizations having this user as a trustee
-   **/
-  public UserMe trustors(List<Trustor> trustors) {
-    this.trustors = trustors;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Organizations having this user as a trustee")
   @JsonProperty("trustors")
   public List<Trustor> getTrustors() {
     return trustors;
   }
-  public void setTrustors(List<Trustor> trustors) {
-    this.trustors = trustors;
-  }
 
-  
-  /**
-   * Products enabled in this organization
-   **/
-  public UserMe orgProducts(List<DomainOrganizationProduct> orgProducts) {
-    this.orgProducts = orgProducts;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Products enabled in this organization")
   @JsonProperty("orgProducts")
   public List<DomainOrganizationProduct> getOrgProducts() {
     return orgProducts;
-  }
-  public void setOrgProducts(List<DomainOrganizationProduct> orgProducts) {
-    this.orgProducts = orgProducts;
   }
 
   

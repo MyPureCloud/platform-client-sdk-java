@@ -128,21 +128,10 @@ public class KnowledgeExtendedCategory  implements Serializable {
   }
 
   
-  /**
-   * Knowledge base which category does belong to
-   **/
-  public KnowledgeExtendedCategory knowledgeBase(KnowledgeBase knowledgeBase) {
-    this.knowledgeBase = knowledgeBase;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Knowledge base which category does belong to")
   @JsonProperty("knowledgeBase")
   public KnowledgeBase getKnowledgeBase() {
     return knowledgeBase;
-  }
-  public void setKnowledgeBase(KnowledgeBase knowledgeBase) {
-    this.knowledgeBase = knowledgeBase;
   }
 
   
@@ -167,39 +156,17 @@ public class KnowledgeExtendedCategory  implements Serializable {
   }
 
   
-  /**
-   * Category parent
-   **/
-  public KnowledgeExtendedCategory parent(KnowledgeCategory parent) {
-    this.parent = parent;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Category parent")
   @JsonProperty("parent")
   public KnowledgeCategory getParent() {
     return parent;
   }
-  public void setParent(KnowledgeCategory parent) {
-    this.parent = parent;
-  }
 
-  
-  /**
-   * Category children
-   **/
-  public KnowledgeExtendedCategory children(List<KnowledgeCategory> children) {
-    this.children = children;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Category children")
   @JsonProperty("children")
   public List<KnowledgeCategory> getChildren() {
     return children;
-  }
-  public void setChildren(List<KnowledgeCategory> children) {
-    this.children = children;
   }
 
   

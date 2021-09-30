@@ -299,21 +299,10 @@ public class Miner  implements Serializable {
   }
 
   
-  /**
-   * List of queue IDs for filtering conversations.
-   **/
-  public Miner queueIds(List<String> queueIds) {
-    this.queueIds = queueIds;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "List of queue IDs for filtering conversations.")
   @JsonProperty("queueIds")
   public List<String> getQueueIds() {
     return queueIds;
-  }
-  public void setQueueIds(List<String> queueIds) {
-    this.queueIds = queueIds;
   }
 
   
@@ -331,21 +320,10 @@ public class Miner  implements Serializable {
   }
 
   
-  /**
-   * Latest draft details of the miner.
-   **/
-  public Miner latestDraftVersion(Draft latestDraftVersion) {
-    this.latestDraftVersion = latestDraftVersion;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Latest draft details of the miner.")
   @JsonProperty("latestDraftVersion")
   public Draft getLatestDraftVersion() {
     return latestDraftVersion;
-  }
-  public void setLatestDraftVersion(Draft latestDraftVersion) {
-    this.latestDraftVersion = latestDraftVersion;
   }
 
   

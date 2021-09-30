@@ -27,39 +27,17 @@ public class ClientAppConfigurationInfo  implements Serializable {
   private EffectiveConfiguration effective = null;
 
   
-  /**
-   * The current, active configuration for the integration.
-   **/
-  public ClientAppConfigurationInfo current(IntegrationConfiguration current) {
-    this.current = current;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The current, active configuration for the integration.")
   @JsonProperty("current")
   public IntegrationConfiguration getCurrent() {
     return current;
   }
-  public void setCurrent(IntegrationConfiguration current) {
-    this.current = current;
-  }
 
-  
-  /**
-   * The effective configuration for the app, containing the integration specific configuration along with overrides specified in the integration type.
-   **/
-  public ClientAppConfigurationInfo effective(EffectiveConfiguration effective) {
-    this.effective = effective;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The effective configuration for the app, containing the integration specific configuration along with overrides specified in the integration type.")
   @JsonProperty("effective")
   public EffectiveConfiguration getEffective() {
     return effective;
-  }
-  public void setEffective(EffectiveConfiguration effective) {
-    this.effective = effective;
   }
 
   

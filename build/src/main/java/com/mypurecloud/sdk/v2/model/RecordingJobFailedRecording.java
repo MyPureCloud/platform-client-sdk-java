@@ -25,39 +25,17 @@ public class RecordingJobFailedRecording  implements Serializable {
   private AddressableEntityRef recording = null;
 
   
-  /**
-   * Conversation
-   **/
-  public RecordingJobFailedRecording conversation(AddressableEntityRef conversation) {
-    this.conversation = conversation;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Conversation")
   @JsonProperty("conversation")
   public AddressableEntityRef getConversation() {
     return conversation;
   }
-  public void setConversation(AddressableEntityRef conversation) {
-    this.conversation = conversation;
-  }
 
-  
-  /**
-   * Recording
-   **/
-  public RecordingJobFailedRecording recording(AddressableEntityRef recording) {
-    this.recording = recording;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Recording")
   @JsonProperty("recording")
   public AddressableEntityRef getRecording() {
     return recording;
-  }
-  public void setRecording(AddressableEntityRef recording) {
-    this.recording = recording;
   }
 
   

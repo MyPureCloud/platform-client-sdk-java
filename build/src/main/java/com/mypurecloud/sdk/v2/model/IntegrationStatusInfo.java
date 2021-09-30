@@ -94,21 +94,10 @@ public class IntegrationStatusInfo  implements Serializable {
   }
 
   
-  /**
-   * Localizable status details for the integration.
-   **/
-  public IntegrationStatusInfo detail(MessageInfo detail) {
-    this.detail = detail;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Localizable status details for the integration.")
   @JsonProperty("detail")
   public MessageInfo getDetail() {
     return detail;
-  }
-  public void setDetail(MessageInfo detail) {
-    this.detail = detail;
   }
 
   

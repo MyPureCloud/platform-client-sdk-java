@@ -29,6 +29,7 @@ public class RoutingData  implements Serializable {
   private List<String> skillIds = new ArrayList<String>();
   private List<String> preferredAgentIds = new ArrayList<String>();
   private List<ScoredAgent> scoredAgents = new ArrayList<ScoredAgent>();
+  private List<String> routingFlags = new ArrayList<String>();
 
   
   /**
@@ -139,6 +140,24 @@ public class RoutingData  implements Serializable {
   }
 
   
+  /**
+   * An array of flags indicating how the conversation should be routed
+   **/
+  public RoutingData routingFlags(List<String> routingFlags) {
+    this.routingFlags = routingFlags;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "An array of flags indicating how the conversation should be routed")
+  @JsonProperty("routingFlags")
+  public List<String> getRoutingFlags() {
+    return routingFlags;
+  }
+  public void setRoutingFlags(List<String> routingFlags) {
+    this.routingFlags = routingFlags;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -154,12 +173,13 @@ public class RoutingData  implements Serializable {
         Objects.equals(this.priority, routingData.priority) &&
         Objects.equals(this.skillIds, routingData.skillIds) &&
         Objects.equals(this.preferredAgentIds, routingData.preferredAgentIds) &&
-        Objects.equals(this.scoredAgents, routingData.scoredAgents);
+        Objects.equals(this.scoredAgents, routingData.scoredAgents) &&
+        Objects.equals(this.routingFlags, routingData.routingFlags);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(queueId, languageId, priority, skillIds, preferredAgentIds, scoredAgents);
+    return Objects.hash(queueId, languageId, priority, skillIds, preferredAgentIds, scoredAgents, routingFlags);
   }
 
   @Override
@@ -173,6 +193,7 @@ public class RoutingData  implements Serializable {
     sb.append("    skillIds: ").append(toIndentedString(skillIds)).append("\n");
     sb.append("    preferredAgentIds: ").append(toIndentedString(preferredAgentIds)).append("\n");
     sb.append("    scoredAgents: ").append(toIndentedString(scoredAgents)).append("\n");
+    sb.append("    routingFlags: ").append(toIndentedString(routingFlags)).append("\n");
     sb.append("}");
     return sb.toString();
   }

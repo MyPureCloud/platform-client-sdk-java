@@ -282,21 +282,10 @@ public class Metrics  implements Serializable {
   }
 
   
-  /**
-   * The linked metric entity reference
-   **/
-  public Metrics linkedMetric(AddressableEntityRef linkedMetric) {
-    this.linkedMetric = linkedMetric;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The linked metric entity reference")
   @JsonProperty("linkedMetric")
   public AddressableEntityRef getLinkedMetric() {
     return linkedMetric;
-  }
-  public void setLinkedMetric(AddressableEntityRef linkedMetric) {
-    this.linkedMetric = linkedMetric;
   }
 
   
@@ -314,21 +303,10 @@ public class Metrics  implements Serializable {
   }
 
   
-  /**
-   * The source performance profile when this metric is linked
-   **/
-  public Metrics sourcePerformanceProfile(PerformanceProfile sourcePerformanceProfile) {
-    this.sourcePerformanceProfile = sourcePerformanceProfile;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The source performance profile when this metric is linked")
   @JsonProperty("sourcePerformanceProfile")
   public PerformanceProfile getSourcePerformanceProfile() {
     return sourcePerformanceProfile;
-  }
-  public void setSourcePerformanceProfile(PerformanceProfile sourcePerformanceProfile) {
-    this.sourcePerformanceProfile = sourcePerformanceProfile;
   }
 
   

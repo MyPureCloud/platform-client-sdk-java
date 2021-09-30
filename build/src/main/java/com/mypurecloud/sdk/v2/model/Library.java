@@ -112,21 +112,10 @@ public class Library  implements Serializable {
   }
 
   
-  /**
-   * User that created the library.
-   **/
-  public Library createdBy(User createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "User that created the library.")
   @JsonProperty("createdBy")
   public User getCreatedBy() {
     return createdBy;
-  }
-  public void setCreatedBy(User createdBy) {
-    this.createdBy = createdBy;
   }
 
   

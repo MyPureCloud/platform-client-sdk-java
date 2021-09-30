@@ -542,93 +542,38 @@ public class Trunk  implements Serializable {
   }
 
   
-  /**
-   * The Logical Interface on the Edge to which the trunk is assigned.
-   **/
-  public Trunk logicalInterface(DomainEntityRef logicalInterface) {
-    this.logicalInterface = logicalInterface;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The Logical Interface on the Edge to which the trunk is assigned.")
   @JsonProperty("logicalInterface")
   public DomainEntityRef getLogicalInterface() {
     return logicalInterface;
   }
-  public void setLogicalInterface(DomainEntityRef logicalInterface) {
-    this.logicalInterface = logicalInterface;
-  }
 
-  
-  /**
-   * The connected status of the trunk
-   **/
-  public Trunk connectedStatus(TrunkConnectedStatus connectedStatus) {
-    this.connectedStatus = connectedStatus;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The connected status of the trunk")
   @JsonProperty("connectedStatus")
   public TrunkConnectedStatus getConnectedStatus() {
     return connectedStatus;
   }
-  public void setConnectedStatus(TrunkConnectedStatus connectedStatus) {
-    this.connectedStatus = connectedStatus;
-  }
 
-  
-  /**
-   * The trunk optionsStatus
-   **/
-  public Trunk optionsStatus(List<TrunkMetricsOptions> optionsStatus) {
-    this.optionsStatus = optionsStatus;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The trunk optionsStatus")
   @JsonProperty("optionsStatus")
   public List<TrunkMetricsOptions> getOptionsStatus() {
     return optionsStatus;
   }
-  public void setOptionsStatus(List<TrunkMetricsOptions> optionsStatus) {
-    this.optionsStatus = optionsStatus;
-  }
 
-  
-  /**
-   * The trunk registersStatus
-   **/
-  public Trunk registersStatus(List<TrunkMetricsRegisters> registersStatus) {
-    this.registersStatus = registersStatus;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The trunk registersStatus")
   @JsonProperty("registersStatus")
   public List<TrunkMetricsRegisters> getRegistersStatus() {
     return registersStatus;
   }
-  public void setRegistersStatus(List<TrunkMetricsRegisters> registersStatus) {
-    this.registersStatus = registersStatus;
-  }
 
-  
-  /**
-   * The trunk ipStatus
-   **/
-  public Trunk ipStatus(TrunkMetricsNetworkTypeIp ipStatus) {
-    this.ipStatus = ipStatus;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The trunk ipStatus")
   @JsonProperty("ipStatus")
   public TrunkMetricsNetworkTypeIp getIpStatus() {
     return ipStatus;
-  }
-  public void setIpStatus(TrunkMetricsNetworkTypeIp ipStatus) {
-    this.ipStatus = ipStatus;
   }
 
   
@@ -653,21 +598,10 @@ public class Trunk  implements Serializable {
   }
 
   
-  /**
-   * The list of proxy addresses (ports if provided) for the trunk
-   **/
-  public Trunk proxyAddressList(List<String> proxyAddressList) {
-    this.proxyAddressList = proxyAddressList;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The list of proxy addresses (ports if provided) for the trunk")
   @JsonProperty("proxyAddressList")
   public List<String> getProxyAddressList() {
     return proxyAddressList;
-  }
-  public void setProxyAddressList(List<String> proxyAddressList) {
-    this.proxyAddressList = proxyAddressList;
   }
 
   

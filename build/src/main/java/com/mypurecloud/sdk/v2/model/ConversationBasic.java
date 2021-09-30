@@ -138,20 +138,10 @@ public class ConversationBasic  implements Serializable {
   }
 
   
-  /**
-   **/
-  public ConversationBasic participants(List<ParticipantBasic> participants) {
-    this.participants = participants;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("participants")
   public List<ParticipantBasic> getParticipants() {
     return participants;
-  }
-  public void setParticipants(List<ParticipantBasic> participants) {
-    this.participants = participants;
   }
 
   

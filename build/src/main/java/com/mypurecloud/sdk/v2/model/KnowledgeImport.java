@@ -272,39 +272,17 @@ public class KnowledgeImport  implements Serializable {
   }
 
   
-  /**
-   * Report of the import operation
-   **/
-  public KnowledgeImport report(ImportReport report) {
-    this.report = report;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Report of the import operation")
   @JsonProperty("report")
   public ImportReport getReport() {
     return report;
   }
-  public void setReport(ImportReport report) {
-    this.report = report;
-  }
 
-  
-  /**
-   * Knowledge base which document import does belong to
-   **/
-  public KnowledgeImport knowledgeBase(KnowledgeBase knowledgeBase) {
-    this.knowledgeBase = knowledgeBase;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Knowledge base which document import does belong to")
   @JsonProperty("knowledgeBase")
   public KnowledgeBase getKnowledgeBase() {
     return knowledgeBase;
-  }
-  public void setKnowledgeBase(KnowledgeBase knowledgeBase) {
-    this.knowledgeBase = knowledgeBase;
   }
 
   

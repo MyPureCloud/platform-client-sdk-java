@@ -183,21 +183,10 @@ public class FacebookIntegration  implements Serializable {
   }
 
   
-  /**
-   * The recipient reference associated to the Facebook Integration. This recipient is used to associate a flow to an integration
-   **/
-  public FacebookIntegration recipient(DomainEntityRef recipient) {
-    this.recipient = recipient;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The recipient reference associated to the Facebook Integration. This recipient is used to associate a flow to an integration")
   @JsonProperty("recipient")
   public DomainEntityRef getRecipient() {
     return recipient;
-  }
-  public void setRecipient(DomainEntityRef recipient) {
-    this.recipient = recipient;
   }
 
   
@@ -298,21 +287,10 @@ public class FacebookIntegration  implements Serializable {
   }
 
   
-  /**
-   * Error information returned, if createStatus is set to Error
-   **/
-  public FacebookIntegration createError(ErrorBody createError) {
-    this.createError = createError;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Error information returned, if createStatus is set to Error")
   @JsonProperty("createError")
   public ErrorBody getCreateError() {
     return createError;
-  }
-  public void setCreateError(ErrorBody createError) {
-    this.createError = createError;
   }
 
   

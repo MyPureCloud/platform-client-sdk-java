@@ -25,21 +25,10 @@ public class TrusteeAuthorization  implements Serializable {
   private List<String> permissions = new ArrayList<String>();
 
   
-  /**
-   * Permissions that the trustee user has in the trustor organization
-   **/
-  public TrusteeAuthorization permissions(List<String> permissions) {
-    this.permissions = permissions;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Permissions that the trustee user has in the trustor organization")
   @JsonProperty("permissions")
   public List<String> getPermissions() {
     return permissions;
-  }
-  public void setPermissions(List<String> permissions) {
-    this.permissions = permissions;
   }
 
   

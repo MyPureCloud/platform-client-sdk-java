@@ -176,21 +176,10 @@ public class UpdateUser  implements Serializable {
   }
 
   
-  /**
-   * The address(s) used for primary contact. Updates to the corresponding address in the addresses list will be reflected here.
-   **/
-  public UpdateUser primaryContactInfo(List<Contact> primaryContactInfo) {
-    this.primaryContactInfo = primaryContactInfo;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The address(s) used for primary contact. Updates to the corresponding address in the addresses list will be reflected here.")
   @JsonProperty("primaryContactInfo")
   public List<Contact> getPrimaryContactInfo() {
     return primaryContactInfo;
-  }
-  public void setPrimaryContactInfo(List<Contact> primaryContactInfo) {
-    this.primaryContactInfo = primaryContactInfo;
   }
 
   

@@ -158,7 +158,7 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A list of languages supported on the configuration")
+  @ApiModelProperty(example = "en-us, de-de", value = "A list of languages supported on the configuration")
   @JsonProperty("languages")
   public List<String> getLanguages() {
     return languages;
@@ -279,57 +279,24 @@ public class WebDeploymentConfigurationVersion  implements Serializable {
   }
 
   
-  /**
-   * A reference to the user who most recently modified the configuration version
-   **/
-  public WebDeploymentConfigurationVersion lastModifiedUser(AddressableEntityRef lastModifiedUser) {
-    this.lastModifiedUser = lastModifiedUser;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "A reference to the user who most recently modified the configuration version")
   @JsonProperty("lastModifiedUser")
   public AddressableEntityRef getLastModifiedUser() {
     return lastModifiedUser;
   }
-  public void setLastModifiedUser(AddressableEntityRef lastModifiedUser) {
-    this.lastModifiedUser = lastModifiedUser;
-  }
 
-  
-  /**
-   * A reference to the user who created the configuration version
-   **/
-  public WebDeploymentConfigurationVersion createdUser(AddressableEntityRef createdUser) {
-    this.createdUser = createdUser;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "A reference to the user who created the configuration version")
   @JsonProperty("createdUser")
   public AddressableEntityRef getCreatedUser() {
     return createdUser;
   }
-  public void setCreatedUser(AddressableEntityRef createdUser) {
-    this.createdUser = createdUser;
-  }
 
-  
-  /**
-   * A reference to the user who published the configuration version
-   **/
-  public WebDeploymentConfigurationVersion publishedUser(AddressableEntityRef publishedUser) {
-    this.publishedUser = publishedUser;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "A reference to the user who published the configuration version")
   @JsonProperty("publishedUser")
   public AddressableEntityRef getPublishedUser() {
     return publishedUser;
-  }
-  public void setPublishedUser(AddressableEntityRef publishedUser) {
-    this.publishedUser = publishedUser;
   }
 
   

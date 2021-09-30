@@ -65,57 +65,24 @@ public class Trustor  implements Serializable {
   }
 
   
-  /**
-   * User that created trust.
-   **/
-  public Trustor createdBy(OrgUser createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "User that created trust.")
   @JsonProperty("createdBy")
   public OrgUser getCreatedBy() {
     return createdBy;
   }
-  public void setCreatedBy(OrgUser createdBy) {
-    this.createdBy = createdBy;
-  }
 
-  
-  /**
-   * Organization associated with this trust.
-   **/
-  public Trustor organization(Organization organization) {
-    this.organization = organization;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Organization associated with this trust.")
   @JsonProperty("organization")
   public Organization getOrganization() {
     return organization;
   }
-  public void setOrganization(Organization organization) {
-    this.organization = organization;
-  }
 
-  
-  /**
-   * Authorization for the trustee user has in this trustor organization
-   **/
-  public Trustor authorization(TrusteeAuthorization authorization) {
-    this.authorization = authorization;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Authorization for the trustee user has in this trustor organization")
   @JsonProperty("authorization")
   public TrusteeAuthorization getAuthorization() {
     return authorization;
-  }
-  public void setAuthorization(TrusteeAuthorization authorization) {
-    this.authorization = authorization;
   }
 
   

@@ -51,6 +51,7 @@ public class AuditQueryRequest  implements Serializable {
     CONTACTCENTER("ContactCenter"),
     CONTENTMANAGEMENT("ContentManagement"),
     DATATABLES("Datatables"),
+    DIRECTORY("Directory"),
     GAMIFICATION("Gamification"),
     GROUPS("Groups"),
     INTEGRATIONS("Integrations"),

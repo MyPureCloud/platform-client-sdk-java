@@ -43,6 +43,7 @@ import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.UserLanguageEntityListing;
 import com.mypurecloud.sdk.v2.model.UserSkillEntityListing;
 import com.mypurecloud.sdk.v2.model.RoutingStatus;
+import com.mypurecloud.sdk.v2.model.UserState;
 import com.mypurecloud.sdk.v2.model.UserStations;
 import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivityListing;
@@ -107,8 +108,7 @@ public class GetUsersDevelopmentActivityRequest {
 		INFORMATIONAL("Informational"), 
 		COACHING("Coaching"), 
 		ASSESSEDCONTENT("AssessedContent"), 
-		ASSESSMENT("Assessment"), 
-		QUESTIONNAIRE("Questionnaire");
+		ASSESSMENT("Assessment");
 
 		private String value;
 

@@ -121,21 +121,10 @@ public class LearningAssignment  implements Serializable {
   }
 
   
-  /**
-   * The user who created the assignment
-   **/
-  public LearningAssignment createdBy(UserReference createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The user who created the assignment")
   @JsonProperty("createdBy")
   public UserReference getCreatedBy() {
     return createdBy;
-  }
-  public void setCreatedBy(UserReference createdBy) {
-    this.createdBy = createdBy;
   }
 
   
@@ -146,21 +135,10 @@ public class LearningAssignment  implements Serializable {
   }
 
   
-  /**
-   * The user who modified the assignment
-   **/
-  public LearningAssignment modifiedBy(UserReference modifiedBy) {
-    this.modifiedBy = modifiedBy;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The user who modified the assignment")
   @JsonProperty("modifiedBy")
   public UserReference getModifiedBy() {
     return modifiedBy;
-  }
-  public void setModifiedBy(UserReference modifiedBy) {
-    this.modifiedBy = modifiedBy;
   }
 
   

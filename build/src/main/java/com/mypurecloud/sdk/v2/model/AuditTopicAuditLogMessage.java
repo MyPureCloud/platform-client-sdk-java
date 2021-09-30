@@ -273,6 +273,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     PHONE("Phone"),
     PHONEBASE("PhoneBase"),
     PREDICTOR("Predictor"),
+    PROFILE("Profile"),
+    PROFILEMEMBERS("ProfileMembers"),
     PROGRAM("Program"),
     PROMPT("Prompt"),
     PROMPTRESOURCE("PromptResource"),

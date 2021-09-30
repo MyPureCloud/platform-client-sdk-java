@@ -66,21 +66,10 @@ public class IntentDefinition  implements Serializable {
   }
 
   
-  /**
-   * The references for the named entity used in this intent.This field is mutually exclusive with entityTypeBindings
-   **/
-  public IntentDefinition entityNameReferences(List<String> entityNameReferences) {
-    this.entityNameReferences = entityNameReferences;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The references for the named entity used in this intent.This field is mutually exclusive with entityTypeBindings")
   @JsonProperty("entityNameReferences")
   public List<String> getEntityNameReferences() {
     return entityNameReferences;
-  }
-  public void setEntityNameReferences(List<String> entityNameReferences) {
-    this.entityNameReferences = entityNameReferences;
   }
 
   

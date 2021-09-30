@@ -220,21 +220,10 @@ public class User  implements Serializable {
   }
 
   
-  /**
-   * Auto populated from addresses.
-   **/
-  public User primaryContactInfo(List<Contact> primaryContactInfo) {
-    this.primaryContactInfo = primaryContactInfo;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Auto populated from addresses.")
   @JsonProperty("primaryContactInfo")
   public List<Contact> getPrimaryContactInfo() {
     return primaryContactInfo;
-  }
-  public void setPrimaryContactInfo(List<Contact> primaryContactInfo) {
-    this.primaryContactInfo = primaryContactInfo;
   }
 
   
@@ -400,237 +389,94 @@ public class User  implements Serializable {
   }
 
   
-  /**
-   * ACD routing status
-   **/
-  public User routingStatus(RoutingStatus routingStatus) {
-    this.routingStatus = routingStatus;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "ACD routing status")
   @JsonProperty("routingStatus")
   public RoutingStatus getRoutingStatus() {
     return routingStatus;
   }
-  public void setRoutingStatus(RoutingStatus routingStatus) {
-    this.routingStatus = routingStatus;
-  }
 
-  
-  /**
-   * Active presence
-   **/
-  public User presence(UserPresence presence) {
-    this.presence = presence;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Active presence")
   @JsonProperty("presence")
   public UserPresence getPresence() {
     return presence;
   }
-  public void setPresence(UserPresence presence) {
-    this.presence = presence;
-  }
 
-  
-  /**
-   * Summary of conversion statistics for conversation types.
-   **/
-  public User conversationSummary(UserConversationSummary conversationSummary) {
-    this.conversationSummary = conversationSummary;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Summary of conversion statistics for conversation types.")
   @JsonProperty("conversationSummary")
   public UserConversationSummary getConversationSummary() {
     return conversationSummary;
   }
-  public void setConversationSummary(UserConversationSummary conversationSummary) {
-    this.conversationSummary = conversationSummary;
-  }
 
-  
-  /**
-   * Determine if out of office is enabled
-   **/
-  public User outOfOffice(OutOfOffice outOfOffice) {
-    this.outOfOffice = outOfOffice;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Determine if out of office is enabled")
   @JsonProperty("outOfOffice")
   public OutOfOffice getOutOfOffice() {
     return outOfOffice;
   }
-  public void setOutOfOffice(OutOfOffice outOfOffice) {
-    this.outOfOffice = outOfOffice;
-  }
 
-  
-  /**
-   * Current geolocation position
-   **/
-  public User geolocation(Geolocation geolocation) {
-    this.geolocation = geolocation;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Current geolocation position")
   @JsonProperty("geolocation")
   public Geolocation getGeolocation() {
     return geolocation;
   }
-  public void setGeolocation(Geolocation geolocation) {
-    this.geolocation = geolocation;
-  }
 
-  
-  /**
-   * Effective, default, and last station information
-   **/
-  public User station(UserStations station) {
-    this.station = station;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Effective, default, and last station information")
   @JsonProperty("station")
   public UserStations getStation() {
     return station;
   }
-  public void setStation(UserStations station) {
-    this.station = station;
-  }
 
-  
-  /**
-   * Roles and permissions assigned to the user
-   **/
-  public User authorization(UserAuthorization authorization) {
-    this.authorization = authorization;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Roles and permissions assigned to the user")
   @JsonProperty("authorization")
   public UserAuthorization getAuthorization() {
     return authorization;
   }
-  public void setAuthorization(UserAuthorization authorization) {
-    this.authorization = authorization;
-  }
 
-  
-  /**
-   * Profile skills possessed by the user
-   **/
-  public User profileSkills(List<String> profileSkills) {
-    this.profileSkills = profileSkills;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Profile skills possessed by the user")
   @JsonProperty("profileSkills")
   public List<String> getProfileSkills() {
     return profileSkills;
   }
-  public void setProfileSkills(List<String> profileSkills) {
-    this.profileSkills = profileSkills;
-  }
 
-  
-  /**
-   * The user placement at each site location.
-   **/
-  public User locations(List<Location> locations) {
-    this.locations = locations;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The user placement at each site location.")
   @JsonProperty("locations")
   public List<Location> getLocations() {
     return locations;
   }
-  public void setLocations(List<Location> locations) {
-    this.locations = locations;
-  }
 
-  
-  /**
-   * The groups the user is a member of
-   **/
-  public User groups(List<Group> groups) {
-    this.groups = groups;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The groups the user is a member of")
   @JsonProperty("groups")
   public List<Group> getGroups() {
     return groups;
   }
-  public void setGroups(List<Group> groups) {
-    this.groups = groups;
-  }
 
-  
-  /**
-   * The team the user is a member of
-   **/
-  public User team(Team team) {
-    this.team = team;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The team the user is a member of")
   @JsonProperty("team")
   public Team getTeam() {
     return team;
   }
-  public void setTeam(Team team) {
-    this.team = team;
-  }
 
-  
-  /**
-   * Routing (ACD) skills possessed by the user
-   **/
-  public User skills(List<UserRoutingSkill> skills) {
-    this.skills = skills;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Routing (ACD) skills possessed by the user")
   @JsonProperty("skills")
   public List<UserRoutingSkill> getSkills() {
     return skills;
   }
-  public void setSkills(List<UserRoutingSkill> skills) {
-    this.skills = skills;
-  }
 
-  
-  /**
-   * Routing (ACD) languages possessed by the user
-   **/
-  public User languages(List<UserRoutingLanguage> languages) {
-    this.languages = languages;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Routing (ACD) languages possessed by the user")
   @JsonProperty("languages")
   public List<UserRoutingLanguage> getLanguages() {
     return languages;
-  }
-  public void setLanguages(List<UserRoutingLanguage> languages) {
-    this.languages = languages;
   }
 
   

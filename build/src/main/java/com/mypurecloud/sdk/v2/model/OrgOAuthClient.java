@@ -326,21 +326,10 @@ public class OrgOAuthClient  implements Serializable {
   }
 
   
-  /**
-   * The  oauth client's organization.
-   **/
-  public OrgOAuthClient organization(NamedEntity organization) {
-    this.organization = organization;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The  oauth client's organization.")
   @JsonProperty("organization")
   public NamedEntity getOrganization() {
     return organization;
-  }
-  public void setOrganization(NamedEntity organization) {
-    this.organization = organization;
   }
 
   

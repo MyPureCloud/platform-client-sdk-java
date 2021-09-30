@@ -12,9 +12,12 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.TextBotFlowLocation;
+import com.mypurecloud.sdk.v2.model.TextBotFlowOutcome;
 import com.mypurecloud.sdk.v2.model.TextBotInputOutputData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -79,6 +82,7 @@ public class TextBotExitAction  implements Serializable {
   private String activeIntent = null;
   private TextBotFlowLocation flowLocation = null;
   private TextBotInputOutputData outputData = null;
+  private List<TextBotFlowOutcome> flowOutcomes = new ArrayList<TextBotFlowOutcome>();
 
   
   /**
@@ -171,6 +175,24 @@ public class TextBotExitAction  implements Serializable {
   }
 
   
+  /**
+   * The list of Flow Outcomes for the bot flow and their details.
+   **/
+  public TextBotExitAction flowOutcomes(List<TextBotFlowOutcome> flowOutcomes) {
+    this.flowOutcomes = flowOutcomes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of Flow Outcomes for the bot flow and their details.")
+  @JsonProperty("flowOutcomes")
+  public List<TextBotFlowOutcome> getFlowOutcomes() {
+    return flowOutcomes;
+  }
+  public void setFlowOutcomes(List<TextBotFlowOutcome> flowOutcomes) {
+    this.flowOutcomes = flowOutcomes;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -185,12 +207,13 @@ public class TextBotExitAction  implements Serializable {
         Objects.equals(this.reasonExtendedInfo, textBotExitAction.reasonExtendedInfo) &&
         Objects.equals(this.activeIntent, textBotExitAction.activeIntent) &&
         Objects.equals(this.flowLocation, textBotExitAction.flowLocation) &&
-        Objects.equals(this.outputData, textBotExitAction.outputData);
+        Objects.equals(this.outputData, textBotExitAction.outputData) &&
+        Objects.equals(this.flowOutcomes, textBotExitAction.flowOutcomes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(reason, reasonExtendedInfo, activeIntent, flowLocation, outputData);
+    return Objects.hash(reason, reasonExtendedInfo, activeIntent, flowLocation, outputData, flowOutcomes);
   }
 
   @Override
@@ -203,6 +226,7 @@ public class TextBotExitAction  implements Serializable {
     sb.append("    activeIntent: ").append(toIndentedString(activeIntent)).append("\n");
     sb.append("    flowLocation: ").append(toIndentedString(flowLocation)).append("\n");
     sb.append("    outputData: ").append(toIndentedString(outputData)).append("\n");
+    sb.append("    flowOutcomes: ").append(toIndentedString(flowOutcomes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

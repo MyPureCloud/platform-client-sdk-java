@@ -29,57 +29,24 @@ public class CoachingSlotsResponse  implements Serializable {
   private List<UserAvailableTimes> facilitatorSchedules = new ArrayList<UserAvailableTimes>();
 
   
-  /**
-   * List of slots where coaching appointment can be scheduled
-   **/
-  public CoachingSlotsResponse suggestedSlots(List<CoachingSlot> suggestedSlots) {
-    this.suggestedSlots = suggestedSlots;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "List of slots where coaching appointment can be scheduled")
   @JsonProperty("suggestedSlots")
   public List<CoachingSlot> getSuggestedSlots() {
     return suggestedSlots;
   }
-  public void setSuggestedSlots(List<CoachingSlot> suggestedSlots) {
-    this.suggestedSlots = suggestedSlots;
-  }
 
-  
-  /**
-   * Periods of availability for attendees to schedule coaching appointment
-   **/
-  public CoachingSlotsResponse attendeeSchedules(List<UserAvailableTimes> attendeeSchedules) {
-    this.attendeeSchedules = attendeeSchedules;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Periods of availability for attendees to schedule coaching appointment")
   @JsonProperty("attendeeSchedules")
   public List<UserAvailableTimes> getAttendeeSchedules() {
     return attendeeSchedules;
   }
-  public void setAttendeeSchedules(List<UserAvailableTimes> attendeeSchedules) {
-    this.attendeeSchedules = attendeeSchedules;
-  }
 
-  
-  /**
-   * Periods of availability for facilitators to schedule coaching appointment
-   **/
-  public CoachingSlotsResponse facilitatorSchedules(List<UserAvailableTimes> facilitatorSchedules) {
-    this.facilitatorSchedules = facilitatorSchedules;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Periods of availability for facilitators to schedule coaching appointment")
   @JsonProperty("facilitatorSchedules")
   public List<UserAvailableTimes> getFacilitatorSchedules() {
     return facilitatorSchedules;
-  }
-  public void setFacilitatorSchedules(List<UserAvailableTimes> facilitatorSchedules) {
-    this.facilitatorSchedules = facilitatorSchedules;
   }
 
   

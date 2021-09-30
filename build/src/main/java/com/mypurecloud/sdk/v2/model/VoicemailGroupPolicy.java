@@ -98,21 +98,10 @@ public class VoicemailGroupPolicy  implements Serializable {
   }
 
   
-  /**
-   * The group associated with the policy
-   **/
-  public VoicemailGroupPolicy group(Group group) {
-    this.group = group;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The group associated with the policy")
   @JsonProperty("group")
   public Group getGroup() {
     return group;
-  }
-  public void setGroup(Group group) {
-    this.group = group;
   }
 
   

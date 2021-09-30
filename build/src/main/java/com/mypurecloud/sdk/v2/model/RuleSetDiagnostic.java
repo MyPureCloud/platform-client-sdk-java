@@ -75,39 +75,17 @@ public class RuleSetDiagnostic  implements Serializable {
   private List<WarningsEnum> warnings = new ArrayList<WarningsEnum>();
 
   
-  /**
-   * A campaign rule set
-   **/
-  public RuleSetDiagnostic ruleSet(DomainEntityRef ruleSet) {
-    this.ruleSet = ruleSet;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "A campaign rule set")
   @JsonProperty("ruleSet")
   public DomainEntityRef getRuleSet() {
     return ruleSet;
   }
-  public void setRuleSet(DomainEntityRef ruleSet) {
-    this.ruleSet = ruleSet;
-  }
 
-  
-  /**
-   * Diagnostic warnings for the rule set
-   **/
-  public RuleSetDiagnostic warnings(List<WarningsEnum> warnings) {
-    this.warnings = warnings;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Diagnostic warnings for the rule set")
   @JsonProperty("warnings")
   public List<WarningsEnum> getWarnings() {
     return warnings;
-  }
-  public void setWarnings(List<WarningsEnum> warnings) {
-    this.warnings = warnings;
   }
 
   

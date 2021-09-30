@@ -93,21 +93,10 @@ public class IntentFeedback  implements Serializable {
   }
 
   
-  /**
-   * The collection of named entities detected.
-   **/
-  public IntentFeedback entities(List<DetectedNamedEntity> entities) {
-    this.entities = entities;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The collection of named entities detected.")
   @JsonProperty("entities")
   public List<DetectedNamedEntity> getEntities() {
     return entities;
-  }
-  public void setEntities(List<DetectedNamedEntity> entities) {
-    this.entities = entities;
   }
 
   

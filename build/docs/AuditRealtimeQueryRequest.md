@@ -30,6 +30,7 @@ title: AuditRealtimeQueryRequest
 | CONTACTCENTER | &quot;ContactCenter&quot; |
 | CONTENTMANAGEMENT | &quot;ContentManagement&quot; |
 | DATATABLES | &quot;Datatables&quot; |
+| DIRECTORY | &quot;Directory&quot; |
 | GAMIFICATION | &quot;Gamification&quot; |
 | GROUPS | &quot;Groups&quot; |
 | INTEGRATIONS | &quot;Integrations&quot; |

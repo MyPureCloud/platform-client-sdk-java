@@ -37,6 +37,7 @@ title: AuditLogMessage
 | CONTACTCENTER | &quot;ContactCenter&quot; |
 | CONTENTMANAGEMENT | &quot;ContentManagement&quot; |
 | DATATABLES | &quot;Datatables&quot; |
+| DIRECTORY | &quot;Directory&quot; |
 | GAMIFICATION | &quot;Gamification&quot; |
 | GROUPS | &quot;Groups&quot; |
 | INTEGRATIONS | &quot;Integrations&quot; |
@@ -241,6 +242,8 @@ title: AuditLogMessage
 | POLICY | &quot;Policy&quot; |
 | PREDICTOR | &quot;Predictor&quot; |
 | PRODUCT | &quot;Product&quot; |
+| PROFILE | &quot;Profile&quot; |
+| PROFILEMEMBERS | &quot;ProfileMembers&quot; |
 | PROGRAM | &quot;Program&quot; |
 | PROMPT | &quot;Prompt&quot; |
 | PROMPTRESOURCE | &quot;PromptResource&quot; |

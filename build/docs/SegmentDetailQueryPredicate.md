@@ -50,6 +50,7 @@ title: SegmentDetailQueryPredicate
 | COACHEDPARTICIPANTID | &quot;coachedParticipantId&quot; |
 | CONFERENCE | &quot;conference&quot; |
 | DELIVERYSTATUS | &quot;deliveryStatus&quot; |
+| DESTINATIONADDRESS | &quot;destinationAddress&quot; |
 | DESTINATIONCONVERSATIONID | &quot;destinationConversationId&quot; |
 | DIRECTION | &quot;direction&quot; |
 | DISCONNECTTYPE | &quot;disconnectType&quot; |

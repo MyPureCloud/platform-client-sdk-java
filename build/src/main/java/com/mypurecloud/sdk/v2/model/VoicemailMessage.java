@@ -58,21 +58,10 @@ public class VoicemailMessage  implements Serializable {
   }
 
   
-  /**
-   * The conversation that the voicemail message is associated with
-   **/
-  public VoicemailMessage conversation(Conversation conversation) {
-    this.conversation = conversation;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The conversation that the voicemail message is associated with")
   @JsonProperty("conversation")
   public Conversation getConversation() {
     return conversation;
-  }
-  public void setConversation(Conversation conversation) {
-    this.conversation = conversation;
   }
 
   
@@ -143,21 +132,10 @@ public class VoicemailMessage  implements Serializable {
   }
 
   
-  /**
-   * Optionally the user that left the voicemail message if the caller was a known user
-   **/
-  public VoicemailMessage callerUser(User callerUser) {
-    this.callerUser = callerUser;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Optionally the user that left the voicemail message if the caller was a known user")
   @JsonProperty("callerUser")
   public User getCallerUser() {
     return callerUser;
-  }
-  public void setCallerUser(User callerUser) {
-    this.callerUser = callerUser;
   }
 
   
@@ -197,93 +175,38 @@ public class VoicemailMessage  implements Serializable {
   }
 
   
-  /**
-   * The user that the voicemail message belongs to or null which means the voicemail message belongs to a group or queue
-   **/
-  public VoicemailMessage user(User user) {
-    this.user = user;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The user that the voicemail message belongs to or null which means the voicemail message belongs to a group or queue")
   @JsonProperty("user")
   public User getUser() {
     return user;
   }
-  public void setUser(User user) {
-    this.user = user;
-  }
 
-  
-  /**
-   * The group that the voicemail message belongs to or null which means the voicemail message belongs to a user or queue
-   **/
-  public VoicemailMessage group(Group group) {
-    this.group = group;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The group that the voicemail message belongs to or null which means the voicemail message belongs to a user or queue")
   @JsonProperty("group")
   public Group getGroup() {
     return group;
   }
-  public void setGroup(Group group) {
-    this.group = group;
-  }
 
-  
-  /**
-   * The queue that the voicemail message belongs to or null which means the voicemail message belongs to a user or group
-   **/
-  public VoicemailMessage queue(Queue queue) {
-    this.queue = queue;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The queue that the voicemail message belongs to or null which means the voicemail message belongs to a user or group")
   @JsonProperty("queue")
   public Queue getQueue() {
     return queue;
   }
-  public void setQueue(Queue queue) {
-    this.queue = queue;
-  }
 
-  
-  /**
-   * Represents where this voicemail message was copied from
-   **/
-  public VoicemailMessage copiedFrom(VoicemailCopyRecord copiedFrom) {
-    this.copiedFrom = copiedFrom;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Represents where this voicemail message was copied from")
   @JsonProperty("copiedFrom")
   public VoicemailCopyRecord getCopiedFrom() {
     return copiedFrom;
   }
-  public void setCopiedFrom(VoicemailCopyRecord copiedFrom) {
-    this.copiedFrom = copiedFrom;
-  }
 
-  
-  /**
-   * Represents where this voicemail has been copied to
-   **/
-  public VoicemailMessage copiedTo(List<VoicemailCopyRecord> copiedTo) {
-    this.copiedTo = copiedTo;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "Represents where this voicemail has been copied to")
   @JsonProperty("copiedTo")
   public List<VoicemailCopyRecord> getCopiedTo() {
     return copiedTo;
-  }
-  public void setCopiedTo(List<VoicemailCopyRecord> copiedTo) {
-    this.copiedTo = copiedTo;
   }
 
   

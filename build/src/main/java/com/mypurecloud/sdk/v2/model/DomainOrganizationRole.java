@@ -112,21 +112,10 @@ public class DomainOrganizationRole  implements Serializable {
   }
 
   
-  /**
-   * A collection of the permissions the role is not using
-   **/
-  public DomainOrganizationRole unusedPermissions(List<String> unusedPermissions) {
-    this.unusedPermissions = unusedPermissions;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "A collection of the permissions the role is not using")
   @JsonProperty("unusedPermissions")
   public List<String> getUnusedPermissions() {
     return unusedPermissions;
-  }
-  public void setUnusedPermissions(List<String> unusedPermissions) {
-    this.unusedPermissions = unusedPermissions;
   }
 
   

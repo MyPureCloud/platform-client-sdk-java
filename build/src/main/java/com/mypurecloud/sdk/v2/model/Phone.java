@@ -407,21 +407,10 @@ public class Phone  implements Serializable {
   }
 
   
-  /**
-   * User Agent Information for this phone. This includes model, firmware version, and manufacturer.
-   **/
-  public Phone userAgentInfo(UserAgentInfo userAgentInfo) {
-    this.userAgentInfo = userAgentInfo;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "User Agent Information for this phone. This includes model, firmware version, and manufacturer.")
   @JsonProperty("userAgentInfo")
   public UserAgentInfo getUserAgentInfo() {
     return userAgentInfo;
-  }
-  public void setUserAgentInfo(UserAgentInfo userAgentInfo) {
-    this.userAgentInfo = userAgentInfo;
   }
 
   

@@ -28,39 +28,17 @@ public class OverallBestPoints  implements Serializable {
   private List<OverallBestPointsItem> bestPoints = new ArrayList<OverallBestPointsItem>();
 
   
-  /**
-   * The requested division
-   **/
-  public OverallBestPoints division(Division division) {
-    this.division = division;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The requested division")
   @JsonProperty("division")
   public Division getDivision() {
     return division;
   }
-  public void setDivision(Division division) {
-    this.division = division;
-  }
 
-  
-  /**
-   * List of gamification best point items
-   **/
-  public OverallBestPoints bestPoints(List<OverallBestPointsItem> bestPoints) {
-    this.bestPoints = bestPoints;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "List of gamification best point items")
   @JsonProperty("bestPoints")
   public List<OverallBestPointsItem> getBestPoints() {
     return bestPoints;
-  }
-  public void setBestPoints(List<OverallBestPointsItem> bestPoints) {
-    this.bestPoints = bestPoints;
   }
 
   

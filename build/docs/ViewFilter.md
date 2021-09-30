@@ -128,6 +128,7 @@ title: ViewFilter
 | **isRecorded** | <!----><!---->**Boolean**<!----> | Indicates filtering for recorded |  [optional] |
 | **hasEvaluation** | <!----><!---->**Boolean**<!----> | Indicates filtering for evaluation |  [optional] |
 | **hasScoredEvaluation** | <!----><!---->**Boolean**<!----> | Indicates filtering for scored evaluation |  [optional] |
+| **emailDeliveryStatusList** | <!---->[**List&lt;EmailDeliveryStatusListEnum&gt;**](#EmailDeliveryStatusListEnum)<!----> | The list of email delivery statuses used to filter views |  [optional] |
 | **isAgentOwnedCallback** | <!----><!---->**Boolean**<!----> | Indicates filtering for agent owned callback interactions |  [optional] |
 | **agentCallbackOwnerIds** | <!----><!---->**List&lt;String&gt;**<!----> | The list of callback owners used to filter interactions |  [optional] |
 {: class="table table-striped"}
@@ -468,6 +469,22 @@ title: ViewFilter
 | OFFEREDOUTSIDESCHEDULE | &quot;OfferedOutsideSchedule&quot; |
 | SERVICELEVELTHROTTLING | &quot;ServiceLevelThrottling&quot; |
 | NOAVAILABLEAGENTS | &quot;NoAvailableAgents&quot; |
+{: class="table table-striped"}
+
+
+<a name="EmailDeliveryStatusListEnum"></a>
+
+## Enum: EmailDeliveryStatusListEnum
+
+| Name | Value |
+| ---- | ----- |
+| DELIVERYFAILED | &quot;DeliveryFailed&quot; |
+| DELIVERYSUCCESS | &quot;DeliverySuccess&quot; |
+| FAILED | &quot;Failed&quot; |
+| QUEUED | &quot;Queued&quot; |
+| READ | &quot;Read&quot; |
+| RECEIVED | &quot;Received&quot; |
+| SENT | &quot;Sent&quot; |
 {: class="table table-striped"}
 
 

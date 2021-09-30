@@ -175,21 +175,10 @@ public class SurveyForm  implements Serializable {
   }
 
   
-  /**
-   * List of published version of this form
-   **/
-  public SurveyForm publishedVersions(DomainEntityListingSurveyForm publishedVersions) {
-    this.publishedVersions = publishedVersions;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "List of published version of this form")
   @JsonProperty("publishedVersions")
   public DomainEntityListingSurveyForm getPublishedVersions() {
     return publishedVersions;
-  }
-  public void setPublishedVersions(DomainEntityListingSurveyForm publishedVersions) {
-    this.publishedVersions = publishedVersions;
   }
 
   

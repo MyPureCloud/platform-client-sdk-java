@@ -94,21 +94,10 @@ public class ModelingStatusResponse  implements Serializable {
   }
 
   
-  /**
-   * If the request could not be properly processed, error details will be given here.
-   **/
-  public ModelingStatusResponse errorDetails(List<ModelingProcessingError> errorDetails) {
-    this.errorDetails = errorDetails;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "If the request could not be properly processed, error details will be given here.")
   @JsonProperty("errorDetails")
   public List<ModelingProcessingError> getErrorDetails() {
     return errorDetails;
-  }
-  public void setErrorDetails(List<ModelingProcessingError> errorDetails) {
-    this.errorDetails = errorDetails;
   }
 
   

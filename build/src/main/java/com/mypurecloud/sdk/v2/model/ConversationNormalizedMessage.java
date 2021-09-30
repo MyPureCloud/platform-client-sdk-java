@@ -242,21 +242,10 @@ public class ConversationNormalizedMessage  implements Serializable {
   }
 
   
-  /**
-   * Channel-specific information that describes the message and the message channel/provider.
-   **/
-  public ConversationNormalizedMessage channel(ConversationMessagingChannel channel) {
-    this.channel = channel;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "Channel-specific information that describes the message and the message channel/provider.")
   @JsonProperty("channel")
   public ConversationMessagingChannel getChannel() {
     return channel;
-  }
-  public void setChannel(ConversationMessagingChannel channel) {
-    this.channel = channel;
   }
 
   
@@ -321,21 +310,10 @@ public class ConversationNormalizedMessage  implements Serializable {
   }
 
   
-  /**
-   * List of reasons for a message receipt that indicates the message has failed. Only used with Failed status.
-   **/
-  public ConversationNormalizedMessage reasons(List<ConversationReason> reasons) {
-    this.reasons = reasons;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "List of reasons for a message receipt that indicates the message has failed. Only used with Failed status.")
   @JsonProperty("reasons")
   public List<ConversationReason> getReasons() {
     return reasons;
-  }
-  public void setReasons(List<ConversationReason> reasons) {
-    this.reasons = reasons;
   }
 
   

@@ -168,21 +168,10 @@ public class MessagingIntegration  implements Serializable {
   }
 
   
-  /**
-   * The recipient associated to the Integration. This recipient is used to associate a flow to an integration
-   **/
-  public MessagingIntegration recipient(DomainEntityRef recipient) {
-    this.recipient = recipient;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The recipient associated to the Integration. This recipient is used to associate a flow to an integration")
   @JsonProperty("recipient")
   public DomainEntityRef getRecipient() {
     return recipient;
-  }
-  public void setRecipient(DomainEntityRef recipient) {
-    this.recipient = recipient;
   }
 
   
@@ -200,39 +189,17 @@ public class MessagingIntegration  implements Serializable {
   }
 
   
-  /**
-   * User reference that created this Integration
-   **/
-  public MessagingIntegration createdBy(DomainEntityRef createdBy) {
-    this.createdBy = createdBy;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "User reference that created this Integration")
   @JsonProperty("createdBy")
   public DomainEntityRef getCreatedBy() {
     return createdBy;
   }
-  public void setCreatedBy(DomainEntityRef createdBy) {
-    this.createdBy = createdBy;
-  }
 
-  
-  /**
-   * User reference that last modified this Integration
-   **/
-  public MessagingIntegration modifiedBy(DomainEntityRef modifiedBy) {
-    this.modifiedBy = modifiedBy;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "User reference that last modified this Integration")
   @JsonProperty("modifiedBy")
   public DomainEntityRef getModifiedBy() {
     return modifiedBy;
-  }
-  public void setModifiedBy(DomainEntityRef modifiedBy) {
-    this.modifiedBy = modifiedBy;
   }
 
   

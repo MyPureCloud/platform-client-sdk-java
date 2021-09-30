@@ -90,39 +90,17 @@ public class BenefitAssessment  implements Serializable {
   }
 
   
-  /**
-   * The list of queues that are assessed for Predictive Routing benefit.
-   **/
-  public BenefitAssessment queues(List<AddressableEntityRef> queues) {
-    this.queues = queues;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The list of queues that are assessed for Predictive Routing benefit.")
   @JsonProperty("queues")
   public List<AddressableEntityRef> getQueues() {
     return queues;
   }
-  public void setQueues(List<AddressableEntityRef> queues) {
-    this.queues = queues;
-  }
 
-  
-  /**
-   * A set of key performance indicators applied on the queue to determine suitability of Predictive Routing.
-   **/
-  public BenefitAssessment kpiAssessments(List<KeyPerformanceIndicatorAssessment> kpiAssessments) {
-    this.kpiAssessments = kpiAssessments;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "A set of key performance indicators applied on the queue to determine suitability of Predictive Routing.")
   @JsonProperty("kpiAssessments")
   public List<KeyPerformanceIndicatorAssessment> getKpiAssessments() {
     return kpiAssessments;
-  }
-  public void setKpiAssessments(List<KeyPerformanceIndicatorAssessment> kpiAssessments) {
-    this.kpiAssessments = kpiAssessments;
   }
 
   

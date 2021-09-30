@@ -42,21 +42,10 @@ public class CredentialSpecification  implements Serializable {
   }
 
   
-  /**
-   * List of acceptable credential types that can be provided for this credential.
-   **/
-  public CredentialSpecification credentialTypes(List<String> credentialTypes) {
-    this.credentialTypes = credentialTypes;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "List of acceptable credential types that can be provided for this credential.")
   @JsonProperty("credentialTypes")
   public List<String> getCredentialTypes() {
     return credentialTypes;
-  }
-  public void setCredentialTypes(List<String> credentialTypes) {
-    this.credentialTypes = credentialTypes;
   }
 
   
