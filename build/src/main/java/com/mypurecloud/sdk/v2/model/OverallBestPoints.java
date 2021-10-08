@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.OverallBestPointsItem;
 import io.swagger.annotations.ApiModel;
@@ -26,6 +27,7 @@ public class OverallBestPoints  implements Serializable {
   
   private Division division = null;
   private List<OverallBestPointsItem> bestPoints = new ArrayList<OverallBestPointsItem>();
+  private AddressableEntityRef performanceProfile = null;
 
   
   @ApiModelProperty(example = "null", value = "The requested division")
@@ -42,6 +44,13 @@ public class OverallBestPoints  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The targeted performance profile for the average points")
+  @JsonProperty("performanceProfile")
+  public AddressableEntityRef getPerformanceProfile() {
+    return performanceProfile;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -53,12 +62,13 @@ public class OverallBestPoints  implements Serializable {
     }
     OverallBestPoints overallBestPoints = (OverallBestPoints) o;
     return Objects.equals(this.division, overallBestPoints.division) &&
-        Objects.equals(this.bestPoints, overallBestPoints.bestPoints);
+        Objects.equals(this.bestPoints, overallBestPoints.bestPoints) &&
+        Objects.equals(this.performanceProfile, overallBestPoints.performanceProfile);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(division, bestPoints);
+    return Objects.hash(division, bestPoints, performanceProfile);
   }
 
   @Override
@@ -68,6 +78,7 @@ public class OverallBestPoints  implements Serializable {
     
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    bestPoints: ").append(toIndentedString(bestPoints)).append("\n");
+    sb.append("    performanceProfile: ").append(toIndentedString(performanceProfile)).append("\n");
     sb.append("}");
     return sb.toString();
   }

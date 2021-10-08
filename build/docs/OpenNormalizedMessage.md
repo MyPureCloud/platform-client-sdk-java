@@ -13,7 +13,11 @@ title: OpenNormalizedMessage
 | **type** | [**TypeEnum**](#TypeEnum)<!----> | Message type. |  |
 | **text** | <!----><!---->**String**<!----> | Message text. |  [optional] |
 | **content** | <!----><!---->[**List&lt;OpenMessageContent&gt;**](OpenMessageContent.html)<!----> | List of content elements. |  [optional] |
+| **status** | [**StatusEnum**](#StatusEnum)<!----> | Message receipt status, only used with type Receipt. |  [optional] |
+| **reasons** | <!----><!---->[**List&lt;Reason&gt;**](Reason.html)<!----> | List of reasons for a message receipt that indicates the message has failed. Only used with Failed status. |  [optional] |
+| **isFinalReceipt** | <!----><!---->**Boolean**<!----> | Indicates if this is the last message receipt for this message, or if another message receipt can be expected. |  [optional] |
 | **direction** | [**DirectionEnum**](#DirectionEnum)<!----> | The direction of the message. |  [optional] |
+| **metadata** | <!----><!---->**Map&lt;String, String&gt;**<!----> | Additional metadata about this message. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -25,6 +29,23 @@ title: OpenNormalizedMessage
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | TEXT | &quot;Text&quot; |
+| RECEIPT | &quot;Receipt&quot; |
+{: class="table table-striped"}
+
+
+<a name="StatusEnum"></a>
+
+## Enum: StatusEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
+| SENT | &quot;Sent&quot; |
+| DELIVERED | &quot;Delivered&quot; |
+| READ | &quot;Read&quot; |
+| FAILED | &quot;Failed&quot; |
+| PUBLISHED | &quot;Published&quot; |
+| REMOVED | &quot;Removed&quot; |
 {: class="table table-striped"}
 
 

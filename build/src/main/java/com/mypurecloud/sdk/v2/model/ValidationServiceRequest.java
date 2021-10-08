@@ -23,6 +23,7 @@ public class ValidationServiceRequest  implements Serializable {
   
   private Date dateImportEnded = null;
   private String fileUrl = null;
+  private String uploadKey = null;
 
   
   /**
@@ -44,20 +45,38 @@ public class ValidationServiceRequest  implements Serializable {
 
   
   /**
-   * Path to the file in the storage including the file name
+   * File URL is deprecated, please use upload key
    **/
   public ValidationServiceRequest fileUrl(String fileUrl) {
     this.fileUrl = fileUrl;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Path to the file in the storage including the file name")
+  @ApiModelProperty(example = "null", value = "File URL is deprecated, please use upload key")
   @JsonProperty("fileUrl")
   public String getFileUrl() {
     return fileUrl;
   }
   public void setFileUrl(String fileUrl) {
     this.fileUrl = fileUrl;
+  }
+
+  
+  /**
+   * S3 key for the uploaded file
+   **/
+  public ValidationServiceRequest uploadKey(String uploadKey) {
+    this.uploadKey = uploadKey;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "S3 key for the uploaded file")
+  @JsonProperty("uploadKey")
+  public String getUploadKey() {
+    return uploadKey;
+  }
+  public void setUploadKey(String uploadKey) {
+    this.uploadKey = uploadKey;
   }
 
   
@@ -72,12 +91,13 @@ public class ValidationServiceRequest  implements Serializable {
     }
     ValidationServiceRequest validationServiceRequest = (ValidationServiceRequest) o;
     return Objects.equals(this.dateImportEnded, validationServiceRequest.dateImportEnded) &&
-        Objects.equals(this.fileUrl, validationServiceRequest.fileUrl);
+        Objects.equals(this.fileUrl, validationServiceRequest.fileUrl) &&
+        Objects.equals(this.uploadKey, validationServiceRequest.uploadKey);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dateImportEnded, fileUrl);
+    return Objects.hash(dateImportEnded, fileUrl, uploadKey);
   }
 
   @Override
@@ -87,6 +107,7 @@ public class ValidationServiceRequest  implements Serializable {
     
     sb.append("    dateImportEnded: ").append(toIndentedString(dateImportEnded)).append("\n");
     sb.append("    fileUrl: ").append(toIndentedString(fileUrl)).append("\n");
+    sb.append("    uploadKey: ").append(toIndentedString(uploadKey)).append("\n");
     sb.append("}");
     return sb.toString();
   }

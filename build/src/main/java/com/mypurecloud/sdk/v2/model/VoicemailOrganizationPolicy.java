@@ -27,12 +27,13 @@ public class VoicemailOrganizationPolicy  implements Serializable {
   private PINConfiguration pinConfiguration = null;
   private String voicemailExtension = null;
   private Boolean pinRequired = null;
+  private Boolean interactiveResponseRequired = null;
   private Boolean sendEmailNotifications = null;
   private Boolean disableEmailPii = null;
   private Date modifiedDate = null;
 
   
-  @ApiModelProperty(example = "null", value = "Whether voicemail is enable for this organization")
+  @ApiModelProperty(example = "null", value = "Whether voicemail is enabled for this organization")
   @JsonProperty("enabled")
   public Boolean getEnabled() {
     return enabled;
@@ -40,14 +41,14 @@ public class VoicemailOrganizationPolicy  implements Serializable {
 
   
   /**
-   * The organization's default number of seconds to ring a user's phone before a call is transfered to voicemail
+   * The organization's default number of seconds to ring a user's phone before a call is transferred to voicemail
    **/
   public VoicemailOrganizationPolicy alertTimeoutSeconds(Integer alertTimeoutSeconds) {
     this.alertTimeoutSeconds = alertTimeoutSeconds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The organization's default number of seconds to ring a user's phone before a call is transfered to voicemail")
+  @ApiModelProperty(example = "null", value = "The organization's default number of seconds to ring a user's phone before a call is transferred to voicemail")
   @JsonProperty("alertTimeoutSeconds")
   public Integer getAlertTimeoutSeconds() {
     return alertTimeoutSeconds;
@@ -112,6 +113,24 @@ public class VoicemailOrganizationPolicy  implements Serializable {
 
   
   /**
+   * Whether user should be prompted with a confirmation prompt when connecting to a Group Ring call
+   **/
+  public VoicemailOrganizationPolicy interactiveResponseRequired(Boolean interactiveResponseRequired) {
+    this.interactiveResponseRequired = interactiveResponseRequired;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether user should be prompted with a confirmation prompt when connecting to a Group Ring call")
+  @JsonProperty("interactiveResponseRequired")
+  public Boolean getInteractiveResponseRequired() {
+    return interactiveResponseRequired;
+  }
+  public void setInteractiveResponseRequired(Boolean interactiveResponseRequired) {
+    this.interactiveResponseRequired = interactiveResponseRequired;
+  }
+
+  
+  /**
    * Whether email notifications are sent for new voicemails in the organization. If false, new voicemail email notifications are not be sent for the organization overriding any user or group setting.
    **/
   public VoicemailOrganizationPolicy sendEmailNotifications(Boolean sendEmailNotifications) {
@@ -169,6 +188,7 @@ public class VoicemailOrganizationPolicy  implements Serializable {
         Objects.equals(this.pinConfiguration, voicemailOrganizationPolicy.pinConfiguration) &&
         Objects.equals(this.voicemailExtension, voicemailOrganizationPolicy.voicemailExtension) &&
         Objects.equals(this.pinRequired, voicemailOrganizationPolicy.pinRequired) &&
+        Objects.equals(this.interactiveResponseRequired, voicemailOrganizationPolicy.interactiveResponseRequired) &&
         Objects.equals(this.sendEmailNotifications, voicemailOrganizationPolicy.sendEmailNotifications) &&
         Objects.equals(this.disableEmailPii, voicemailOrganizationPolicy.disableEmailPii) &&
         Objects.equals(this.modifiedDate, voicemailOrganizationPolicy.modifiedDate);
@@ -176,7 +196,7 @@ public class VoicemailOrganizationPolicy  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, alertTimeoutSeconds, pinConfiguration, voicemailExtension, pinRequired, sendEmailNotifications, disableEmailPii, modifiedDate);
+    return Objects.hash(enabled, alertTimeoutSeconds, pinConfiguration, voicemailExtension, pinRequired, interactiveResponseRequired, sendEmailNotifications, disableEmailPii, modifiedDate);
   }
 
   @Override
@@ -189,6 +209,7 @@ public class VoicemailOrganizationPolicy  implements Serializable {
     sb.append("    pinConfiguration: ").append(toIndentedString(pinConfiguration)).append("\n");
     sb.append("    voicemailExtension: ").append(toIndentedString(voicemailExtension)).append("\n");
     sb.append("    pinRequired: ").append(toIndentedString(pinRequired)).append("\n");
+    sb.append("    interactiveResponseRequired: ").append(toIndentedString(interactiveResponseRequired)).append("\n");
     sb.append("    sendEmailNotifications: ").append(toIndentedString(sendEmailNotifications)).append("\n");
     sb.append("    disableEmailPii: ").append(toIndentedString(disableEmailPii)).append("\n");
     sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");

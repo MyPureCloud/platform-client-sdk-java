@@ -35,7 +35,7 @@ public class LongTermForecastPlanningGroupData  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The ID of the planning group to which this data applies. Note this is a snapshot of the planning group at the time of forecast creation and may not correspond to the current configuration")
+  @ApiModelProperty(example = "null", required = true, value = "The ID of the planning group to which this data applies. Note this is a snapshot of the planning group at the time of forecast creation and may not correspond to the current configuration")
   @JsonProperty("planningGroupId")
   public String getPlanningGroupId() {
     return planningGroupId;
@@ -53,7 +53,7 @@ public class LongTermForecastPlanningGroupData  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Forecast offered counts per day for this planning group")
+  @ApiModelProperty(example = "null", required = true, value = "Forecast offered counts per day for this planning group")
   @JsonProperty("offeredPerDay")
   public List<Double> getOfferedPerDay() {
     return offeredPerDay;
@@ -71,7 +71,7 @@ public class LongTermForecastPlanningGroupData  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Forecast average handle time per day in seconds")
+  @ApiModelProperty(example = "null", required = true, value = "Forecast average handle time per day in seconds")
   @JsonProperty("averageHandleTimeSecondsPerDay")
   public List<Double> getAverageHandleTimeSecondsPerDay() {
     return averageHandleTimeSecondsPerDay;

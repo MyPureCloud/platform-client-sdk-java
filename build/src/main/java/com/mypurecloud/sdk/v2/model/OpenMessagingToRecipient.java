@@ -75,6 +75,8 @@ public class OpenMessagingToRecipient  implements Serializable {
   private IdTypeEnum idType = null;
   private String firstName = null;
   private String lastName = null;
+  private String image = null;
+  private String email = null;
 
   
   @ApiModelProperty(example = "null", value = "Nickname or display name of the recipient.")
@@ -123,6 +125,31 @@ public class OpenMessagingToRecipient  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "URL of an image that represents the recipient.")
+  @JsonProperty("image")
+  public String getImage() {
+    return image;
+  }
+
+  
+  /**
+   * E-mail address of the recipient.
+   **/
+  public OpenMessagingToRecipient email(String email) {
+    this.email = email;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "E-mail address of the recipient.")
+  @JsonProperty("email")
+  public String getEmail() {
+    return email;
+  }
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -137,12 +164,14 @@ public class OpenMessagingToRecipient  implements Serializable {
         Objects.equals(this.id, openMessagingToRecipient.id) &&
         Objects.equals(this.idType, openMessagingToRecipient.idType) &&
         Objects.equals(this.firstName, openMessagingToRecipient.firstName) &&
-        Objects.equals(this.lastName, openMessagingToRecipient.lastName);
+        Objects.equals(this.lastName, openMessagingToRecipient.lastName) &&
+        Objects.equals(this.image, openMessagingToRecipient.image) &&
+        Objects.equals(this.email, openMessagingToRecipient.email);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nickname, id, idType, firstName, lastName);
+    return Objects.hash(nickname, id, idType, firstName, lastName, image, email);
   }
 
   @Override
@@ -155,6 +184,8 @@ public class OpenMessagingToRecipient  implements Serializable {
     sb.append("    idType: ").append(toIndentedString(idType)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
+    sb.append("    image: ").append(toIndentedString(image)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -9,7 +9,8 @@ title: ValidationServiceRequest
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **dateImportEnded** | <!----><!---->[**Date**](Date.html)<!----> | The last day of the data you are importing. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
-| **fileUrl** | <!----><!---->**String**<!----> | Path to the file in the storage including the file name |  |
+| **fileUrl** | <!----><!---->**String**<!----> | File URL is deprecated, please use upload key |  [optional] |
+| **uploadKey** | <!----><!---->**String**<!----> | S3 key for the uploaded file |  [optional] |
 {: class="table table-striped"}
 
 

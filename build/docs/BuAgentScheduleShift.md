@@ -8,7 +8,7 @@ title: BuAgentScheduleShift
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
+| **id** | <!----><!---->**String**<!----> | The ID of the shift |  [optional] |
 | **startDate** | <!----><!---->[**Date**](Date.html)<!----> | The start date of this shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **lengthMinutes** | <!----><!---->**Integer**<!----> | The length of this shift in minutes |  [optional] |
 | **activities** | <!----><!---->[**List&lt;BuAgentScheduleActivity&gt;**](BuAgentScheduleActivity.html)<!----> | The activities associated with this shift |  [optional] |

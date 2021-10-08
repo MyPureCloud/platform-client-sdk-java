@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.TrunkConnectedStatus;
 import com.mypurecloud.sdk.v2.model.TrunkMetricsNetworkTypeIp;
@@ -31,6 +32,7 @@ public class Trunk  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private Division division = null;
   private String description = null;
   private Integer version = null;
   private Date dateCreated = null;
@@ -273,6 +275,24 @@ public class Trunk  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  
+  /**
+   * The division to which this entity belongs.
+   **/
+  public Trunk division(Division division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public Division getDivision() {
+    return division;
+  }
+  public void setDivision(Division division) {
+    this.division = division;
   }
 
   
@@ -624,6 +644,7 @@ public class Trunk  implements Serializable {
     Trunk trunk = (Trunk) o;
     return Objects.equals(this.id, trunk.id) &&
         Objects.equals(this.name, trunk.name) &&
+        Objects.equals(this.division, trunk.division) &&
         Objects.equals(this.description, trunk.description) &&
         Objects.equals(this.version, trunk.version) &&
         Objects.equals(this.dateCreated, trunk.dateCreated) &&
@@ -654,7 +675,7 @@ public class Trunk  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, trunkType, edge, trunkBase, trunkMetabase, edgeGroup, inService, enabled, logicalInterface, connectedStatus, optionsStatus, registersStatus, ipStatus, optionsEnabledStatus, registersEnabledStatus, family, proxyAddressList, selfUri);
+    return Objects.hash(id, name, division, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, trunkType, edge, trunkBase, trunkMetabase, edgeGroup, inService, enabled, logicalInterface, connectedStatus, optionsStatus, registersStatus, ipStatus, optionsEnabledStatus, registersEnabledStatus, family, proxyAddressList, selfUri);
   }
 
   @Override
@@ -664,6 +685,7 @@ public class Trunk  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");

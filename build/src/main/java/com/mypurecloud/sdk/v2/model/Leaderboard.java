@@ -32,6 +32,7 @@ public class Leaderboard  implements Serializable {
   private LocalDate dateEndWorkday = null;
   private List<LeaderboardItem> leaders = new ArrayList<LeaderboardItem>();
   private LeaderboardItem userRank = null;
+  private AddressableEntityRef performanceProfile = null;
 
   
   @ApiModelProperty(example = "null", value = "The targeted division for this leaderboard")
@@ -76,6 +77,13 @@ public class Leaderboard  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The targeted performance profile for the average points")
+  @JsonProperty("performanceProfile")
+  public AddressableEntityRef getPerformanceProfile() {
+    return performanceProfile;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -91,12 +99,13 @@ public class Leaderboard  implements Serializable {
         Objects.equals(this.dateStartWorkday, leaderboard.dateStartWorkday) &&
         Objects.equals(this.dateEndWorkday, leaderboard.dateEndWorkday) &&
         Objects.equals(this.leaders, leaderboard.leaders) &&
-        Objects.equals(this.userRank, leaderboard.userRank);
+        Objects.equals(this.userRank, leaderboard.userRank) &&
+        Objects.equals(this.performanceProfile, leaderboard.performanceProfile);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(division, metric, dateStartWorkday, dateEndWorkday, leaders, userRank);
+    return Objects.hash(division, metric, dateStartWorkday, dateEndWorkday, leaders, userRank, performanceProfile);
   }
 
   @Override
@@ -110,6 +119,7 @@ public class Leaderboard  implements Serializable {
     sb.append("    dateEndWorkday: ").append(toIndentedString(dateEndWorkday)).append("\n");
     sb.append("    leaders: ").append(toIndentedString(leaders)).append("\n");
     sb.append("    userRank: ").append(toIndentedString(userRank)).append("\n");
+    sb.append("    performanceProfile: ").append(toIndentedString(performanceProfile)).append("\n");
     sb.append("}");
     return sb.toString();
   }

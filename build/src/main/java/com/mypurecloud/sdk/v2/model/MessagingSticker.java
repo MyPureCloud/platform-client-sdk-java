@@ -51,6 +51,7 @@ public class MessagingSticker  implements Serializable {
     LINE("line"),
     WHATSAPP("whatsapp"),
     WEBMESSAGING("webmessaging"),
+    INSTAGRAM("instagram"),
     OPEN("open");
 
     private String value;

@@ -8182,7 +8182,7 @@ public class ConversationsApiAsync {
 
   
   /**
-   * Attempts to manually assign a specified conversation to a specified agent.  Ignores bullseye ring, PAR score, skills, and languages.
+   * Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -8216,7 +8216,7 @@ public class ConversationsApiAsync {
   }
 
   /**
-   * Attempts to manually assign a specified conversation to a specified agent.  Ignores bullseye ring, PAR score, skills, and languages.
+   * Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

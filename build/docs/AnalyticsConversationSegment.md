@@ -79,6 +79,7 @@ title: AnalyticsConversationSegment
 | HOLD | &quot;hold&quot; |
 | INTERACT | &quot;interact&quot; |
 | IVR | &quot;ivr&quot; |
+| MONITORING | &quot;monitoring&quot; |
 | SCHEDULED | &quot;scheduled&quot; |
 | SHARING | &quot;sharing&quot; |
 | SYSTEM | &quot;system&quot; |

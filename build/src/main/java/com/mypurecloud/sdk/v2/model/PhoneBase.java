@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.LineBase;
 import com.mypurecloud.sdk.v2.model.PhoneCapabilities;
@@ -31,6 +32,7 @@ public class PhoneBase  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private Division division = null;
   private String description = null;
   private Integer version = null;
   private Date dateCreated = null;
@@ -117,6 +119,24 @@ public class PhoneBase  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  
+  /**
+   * The division to which this entity belongs.
+   **/
+  public PhoneBase division(Division division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public Division getDivision() {
+    return division;
+  }
+  public void setDivision(Division division) {
+    this.division = division;
   }
 
   
@@ -360,6 +380,7 @@ public class PhoneBase  implements Serializable {
     PhoneBase phoneBase = (PhoneBase) o;
     return Objects.equals(this.id, phoneBase.id) &&
         Objects.equals(this.name, phoneBase.name) &&
+        Objects.equals(this.division, phoneBase.division) &&
         Objects.equals(this.description, phoneBase.description) &&
         Objects.equals(this.version, phoneBase.version) &&
         Objects.equals(this.dateCreated, phoneBase.dateCreated) &&
@@ -378,7 +399,7 @@ public class PhoneBase  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, phoneMetaBase, lines, properties, capabilities, selfUri);
+    return Objects.hash(id, name, division, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, phoneMetaBase, lines, properties, capabilities, selfUri);
   }
 
   @Override
@@ -388,6 +409,7 @@ public class PhoneBase  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");

@@ -34,6 +34,7 @@ title: SendAgentlessOutboundMessageResponse
 | LINE | &quot;line&quot; |
 | WHATSAPP | &quot;whatsapp&quot; |
 | WEBMESSAGING | &quot;webmessaging&quot; |
+| INSTAGRAM | &quot;instagram&quot; |
 | OPEN | &quot;open&quot; |
 {: class="table table-striped"}
 

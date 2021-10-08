@@ -47,7 +47,11 @@ public class Miner  implements Serializable {
  @JsonDeserialize(using = LanguageEnumDeserializer.class)
   public enum LanguageEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    EN_US("en-us");
+    EN_US("en-us"),
+    EN_GB("en-gb"),
+    EN_AU("en-au"),
+    EN_IN("en-in"),
+    EN_ZA("en-za");
 
     private String value;
 

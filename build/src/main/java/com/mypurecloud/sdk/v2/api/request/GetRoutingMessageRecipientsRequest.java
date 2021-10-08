@@ -105,7 +105,8 @@ public class GetRoutingMessageRecipientsRequest {
 		TWITTER("twitter"), 
 		LINE("line"), 
 		WHATSAPP("whatsapp"), 
-		OPEN("open");
+		OPEN("open"), 
+		INSTAGRAM("instagram");
 
 		private String value;
 

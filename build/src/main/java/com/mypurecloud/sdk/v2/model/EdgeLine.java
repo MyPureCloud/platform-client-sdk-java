@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.Edge;
 import com.mypurecloud.sdk.v2.model.EdgeGroup;
@@ -31,6 +32,7 @@ public class EdgeLine  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private Division division = null;
   private String description = null;
   private Integer version = null;
   private Date dateCreated = null;
@@ -170,6 +172,24 @@ public class EdgeLine  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  
+  /**
+   * The division to which this entity belongs.
+   **/
+  public EdgeLine division(Division division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public Division getDivision() {
+    return division;
+  }
+  public void setDivision(Division division) {
+    this.division = division;
   }
 
   
@@ -479,6 +499,7 @@ public class EdgeLine  implements Serializable {
     EdgeLine edgeLine = (EdgeLine) o;
     return Objects.equals(this.id, edgeLine.id) &&
         Objects.equals(this.name, edgeLine.name) &&
+        Objects.equals(this.division, edgeLine.division) &&
         Objects.equals(this.description, edgeLine.description) &&
         Objects.equals(this.version, edgeLine.version) &&
         Objects.equals(this.dateCreated, edgeLine.dateCreated) &&
@@ -501,7 +522,7 @@ public class EdgeLine  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, schema, properties, edge, edgeGroup, lineType, endpoint, ipAddress, logicalInterfaceId, selfUri);
+    return Objects.hash(id, name, division, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, schema, properties, edge, edgeGroup, lineType, endpoint, ipAddress, logicalInterfaceId, selfUri);
   }
 
   @Override
@@ -511,6 +532,7 @@ public class EdgeLine  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");

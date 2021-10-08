@@ -11,9 +11,10 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.ContentGeneric;
 import com.mypurecloud.sdk.v2.model.ConversationContentAttachment;
 import com.mypurecloud.sdk.v2.model.ConversationContentButtonResponse;
+import com.mypurecloud.sdk.v2.model.ConversationContentGeneric;
+import com.mypurecloud.sdk.v2.model.ConversationContentLocation;
 import com.mypurecloud.sdk.v2.model.ConversationContentNotificationTemplate;
 import com.mypurecloud.sdk.v2.model.ConversationContentQuickReply;
 import io.swagger.annotations.ApiModel;
@@ -47,6 +48,7 @@ public class ConversationMessageContent  implements Serializable {
   public enum ContentTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ATTACHMENT("Attachment"),
+    LOCATION("Location"),
     QUICKREPLY("QuickReply"),
     NOTIFICATION("Notification"),
     BUTTONRESPONSE("ButtonResponse"),
@@ -78,11 +80,12 @@ public class ConversationMessageContent  implements Serializable {
     }
   }
   private ContentTypeEnum contentType = null;
+  private ConversationContentLocation location = null;
   private ConversationContentAttachment attachment = null;
   private ConversationContentQuickReply quickReply = null;
   private ConversationContentNotificationTemplate template = null;
   private ConversationContentButtonResponse buttonResponse = null;
-  private ContentGeneric generic = null;
+  private ConversationContentGeneric generic = null;
 
   
   /**
@@ -100,6 +103,24 @@ public class ConversationMessageContent  implements Serializable {
   }
   public void setContentType(ContentTypeEnum contentType) {
     this.contentType = contentType;
+  }
+
+  
+  /**
+   * Location content.
+   **/
+  public ConversationMessageContent location(ConversationContentLocation location) {
+    this.location = location;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Location content.")
+  @JsonProperty("location")
+  public ConversationContentLocation getLocation() {
+    return location;
+  }
+  public void setLocation(ConversationContentLocation location) {
+    this.location = location;
   }
 
   
@@ -178,17 +199,17 @@ public class ConversationMessageContent  implements Serializable {
   /**
    * Generic Template Object
    **/
-  public ConversationMessageContent generic(ContentGeneric generic) {
+  public ConversationMessageContent generic(ConversationContentGeneric generic) {
     this.generic = generic;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Generic Template Object")
   @JsonProperty("generic")
-  public ContentGeneric getGeneric() {
+  public ConversationContentGeneric getGeneric() {
     return generic;
   }
-  public void setGeneric(ContentGeneric generic) {
+  public void setGeneric(ConversationContentGeneric generic) {
     this.generic = generic;
   }
 
@@ -204,6 +225,7 @@ public class ConversationMessageContent  implements Serializable {
     }
     ConversationMessageContent conversationMessageContent = (ConversationMessageContent) o;
     return Objects.equals(this.contentType, conversationMessageContent.contentType) &&
+        Objects.equals(this.location, conversationMessageContent.location) &&
         Objects.equals(this.attachment, conversationMessageContent.attachment) &&
         Objects.equals(this.quickReply, conversationMessageContent.quickReply) &&
         Objects.equals(this.template, conversationMessageContent.template) &&
@@ -213,7 +235,7 @@ public class ConversationMessageContent  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentType, attachment, quickReply, template, buttonResponse, generic);
+    return Objects.hash(contentType, location, attachment, quickReply, template, buttonResponse, generic);
   }
 
   @Override
@@ -222,6 +244,7 @@ public class ConversationMessageContent  implements Serializable {
     sb.append("class ConversationMessageContent {\n");
     
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
+    sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("    attachment: ").append(toIndentedString(attachment)).append("\n");
     sb.append("    quickReply: ").append(toIndentedString(quickReply)).append("\n");
     sb.append("    template: ").append(toIndentedString(template)).append("\n");

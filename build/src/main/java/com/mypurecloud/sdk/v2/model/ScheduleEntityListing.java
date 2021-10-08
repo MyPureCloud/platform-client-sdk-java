@@ -30,8 +30,8 @@ public class ScheduleEntityListing  implements Serializable, PagedResource<Sched
   private Long total = null;
   private String firstUri = null;
   private String selfUri = null;
-  private String previousUri = null;
   private String nextUri = null;
+  private String previousUri = null;
   private String lastUri = null;
   private Integer pageCount = null;
 
@@ -140,23 +140,6 @@ public class ScheduleEntityListing  implements Serializable, PagedResource<Sched
   
   /**
    **/
-  public ScheduleEntityListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
-  }
-
-  
-  /**
-   **/
   public ScheduleEntityListing nextUri(String nextUri) {
     this.nextUri = nextUri;
     return this;
@@ -169,6 +152,23 @@ public class ScheduleEntityListing  implements Serializable, PagedResource<Sched
   }
   public void setNextUri(String nextUri) {
     this.nextUri = nextUri;
+  }
+
+  
+  /**
+   **/
+  public ScheduleEntityListing previousUri(String previousUri) {
+    this.previousUri = previousUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("previousUri")
+  public String getPreviousUri() {
+    return previousUri;
+  }
+  public void setPreviousUri(String previousUri) {
+    this.previousUri = previousUri;
   }
 
   
@@ -222,15 +222,15 @@ public class ScheduleEntityListing  implements Serializable, PagedResource<Sched
         Objects.equals(this.total, scheduleEntityListing.total) &&
         Objects.equals(this.firstUri, scheduleEntityListing.firstUri) &&
         Objects.equals(this.selfUri, scheduleEntityListing.selfUri) &&
-        Objects.equals(this.previousUri, scheduleEntityListing.previousUri) &&
         Objects.equals(this.nextUri, scheduleEntityListing.nextUri) &&
+        Objects.equals(this.previousUri, scheduleEntityListing.previousUri) &&
         Objects.equals(this.lastUri, scheduleEntityListing.lastUri) &&
         Objects.equals(this.pageCount, scheduleEntityListing.pageCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, previousUri, nextUri, lastUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, nextUri, previousUri, lastUri, pageCount);
   }
 
   @Override
@@ -244,8 +244,8 @@ public class ScheduleEntityListing  implements Serializable, PagedResource<Sched
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
+    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("}");

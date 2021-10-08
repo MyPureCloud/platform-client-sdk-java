@@ -35,6 +35,10 @@ title: Miner
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | EN_US | &quot;en-us&quot; |
+| EN_GB | &quot;en-gb&quot; |
+| EN_AU | &quot;en-au&quot; |
+| EN_IN | &quot;en-in&quot; |
+| EN_ZA | &quot;en-za&quot; |
 {: class="table table-striped"}
 
 

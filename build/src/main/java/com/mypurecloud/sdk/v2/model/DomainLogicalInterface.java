@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.DomainCapabilities;
 import com.mypurecloud.sdk.v2.model.DomainNetworkAddress;
 import com.mypurecloud.sdk.v2.model.DomainNetworkCommandResponse;
@@ -31,6 +32,7 @@ public class DomainLogicalInterface  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private Division division = null;
   private String description = null;
   private Integer version = null;
   private Date dateCreated = null;
@@ -240,6 +242,24 @@ public class DomainLogicalInterface  implements Serializable {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  
+  /**
+   * The division to which this entity belongs.
+   **/
+  public DomainLogicalInterface division(Division division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public Division getDivision() {
+    return division;
+  }
+  public void setDivision(Division division) {
+    this.division = division;
   }
 
   
@@ -904,6 +924,7 @@ public class DomainLogicalInterface  implements Serializable {
     DomainLogicalInterface domainLogicalInterface = (DomainLogicalInterface) o;
     return Objects.equals(this.id, domainLogicalInterface.id) &&
         Objects.equals(this.name, domainLogicalInterface.name) &&
+        Objects.equals(this.division, domainLogicalInterface.division) &&
         Objects.equals(this.description, domainLogicalInterface.description) &&
         Objects.equals(this.version, domainLogicalInterface.version) &&
         Objects.equals(this.dateCreated, domainLogicalInterface.dateCreated) &&
@@ -947,7 +968,7 @@ public class DomainLogicalInterface  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, edgeUri, edgeAssignedId, friendlyName, vlanTagId, hardwareAddress, physicalAdapterId, ifStatus, interfaceType, publicNatAddressIpV4, publicNatAddressIpV6, routes, addresses, ipv4Capabilities, ipv6Capabilities, currentState, lastModifiedUserId, lastModifiedCorrelationId, commandResponses, inheritPhoneTrunkBasesIPv4, inheritPhoneTrunkBasesIPv6, useForInternalEdgeCommunication, useForIndirectEdgeCommunication, useForCloudProxyEdgeCommunication, useForWanInterface, externalTrunkBaseAssignments, phoneTrunkBaseAssignments, traceEnabled, startDate, endDate, selfUri);
+    return Objects.hash(id, name, division, description, version, dateCreated, dateModified, modifiedBy, createdBy, state, modifiedByApp, createdByApp, edgeUri, edgeAssignedId, friendlyName, vlanTagId, hardwareAddress, physicalAdapterId, ifStatus, interfaceType, publicNatAddressIpV4, publicNatAddressIpV6, routes, addresses, ipv4Capabilities, ipv6Capabilities, currentState, lastModifiedUserId, lastModifiedCorrelationId, commandResponses, inheritPhoneTrunkBasesIPv4, inheritPhoneTrunkBasesIPv6, useForInternalEdgeCommunication, useForIndirectEdgeCommunication, useForCloudProxyEdgeCommunication, useForWanInterface, externalTrunkBaseAssignments, phoneTrunkBaseAssignments, traceEnabled, startDate, endDate, selfUri);
   }
 
   @Override
@@ -957,6 +978,7 @@ public class DomainLogicalInterface  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");

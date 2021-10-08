@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.Division;
 import com.mypurecloud.sdk.v2.model.UserReference;
 import com.mypurecloud.sdk.v2.model.WorkdayValuesMetricItem;
@@ -32,6 +33,7 @@ public class WorkdayValuesTrend  implements Serializable {
   private UserReference user = null;
   private String timezone = null;
   private List<WorkdayValuesMetricItem> results = new ArrayList<WorkdayValuesMetricItem>();
+  private AddressableEntityRef performanceProfile = null;
 
   
   @ApiModelProperty(example = "null", value = "The start workday for the query range for the metric value trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
@@ -76,6 +78,13 @@ public class WorkdayValuesTrend  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The targeted performance profile for the average points")
+  @JsonProperty("performanceProfile")
+  public AddressableEntityRef getPerformanceProfile() {
+    return performanceProfile;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -91,12 +100,13 @@ public class WorkdayValuesTrend  implements Serializable {
         Objects.equals(this.division, workdayValuesTrend.division) &&
         Objects.equals(this.user, workdayValuesTrend.user) &&
         Objects.equals(this.timezone, workdayValuesTrend.timezone) &&
-        Objects.equals(this.results, workdayValuesTrend.results);
+        Objects.equals(this.results, workdayValuesTrend.results) &&
+        Objects.equals(this.performanceProfile, workdayValuesTrend.performanceProfile);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dateStartWorkday, dateEndWorkday, division, user, timezone, results);
+    return Objects.hash(dateStartWorkday, dateEndWorkday, division, user, timezone, results, performanceProfile);
   }
 
   @Override
@@ -110,6 +120,7 @@ public class WorkdayValuesTrend  implements Serializable {
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
+    sb.append("    performanceProfile: ").append(toIndentedString(performanceProfile)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -29,6 +29,8 @@ title: KnowledgeExtendedCategory
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | EN_US | &quot;en-US&quot; |
+| EN_UK | &quot;en-UK&quot; |
+| EN_AU | &quot;en-AU&quot; |
 | DE_DE | &quot;de-DE&quot; |
 {: class="table table-striped"}
 

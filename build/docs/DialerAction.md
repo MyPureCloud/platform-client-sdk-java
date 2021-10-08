@@ -24,6 +24,7 @@ title: DialerAction
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ACTION | &quot;Action&quot; |
 | MODIFYCONTACTATTRIBUTE | &quot;modifyContactAttribute&quot; |
+| DATAACTIONBEHAVIOR | &quot;dataActionBehavior&quot; |
 {: class="table table-striped"}
 
 
@@ -43,6 +44,7 @@ title: DialerAction
 | NUMBER_UNCALLABLE | &quot;NUMBER_UNCALLABLE&quot; |
 | SET_CALLER_ID | &quot;SET_CALLER_ID&quot; |
 | SET_SKILLS | &quot;SET_SKILLS&quot; |
+| DATA_ACTION | &quot;DATA_ACTION&quot; |
 {: class="table table-striped"}
 
 

@@ -157,7 +157,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **categoryId** | **String**| Category ID | 
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
 {: class="table-striped"}
 
 
@@ -224,7 +224,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **documentId** | **String**| Document ID | 
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
 {: class="table-striped"}
 
 
@@ -289,7 +289,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
 | **importId** | **String**| Import ID | 
 {: class="table-striped"}
 
@@ -423,7 +423,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional] 
@@ -495,7 +495,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **categoryId** | **String**| Category ID | 
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
 {: class="table-striped"}
 
 
@@ -562,7 +562,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **documentId** | **String**| Document ID | 
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
 {: class="table-striped"}
 
 
@@ -576,7 +576,7 @@ try {
 
 
 
-> [DocumentListing](DocumentListing.html) getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title, documentIds)
+> [DocumentListing](DocumentListing.html) getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title, sortBy, sortOrder, documentIds)
 
 Get documents
 
@@ -618,9 +618,11 @@ String limit = "limit_example"; // String | Number of entities to return. Maximu
 String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
 String categories = "categories_example"; // String | Filter by categories ids, comma separated values expected.
 String title = "title_example"; // String | Filter by document title.
+String sortBy = "sortBy_example"; // String | Sort by.
+String sortOrder = "sortOrder_example"; // String | Sort Order.
 List<String> documentIds = Arrays.asList("documentIds_example"); // List<String> | Comma-separated list of document identifiers to fetch by.
 try {
-    DocumentListing result = apiInstance.getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title, documentIds);
+    DocumentListing result = apiInstance.getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, before, after, limit, pageSize, categories, title, sortBy, sortOrder, documentIds);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebaseLanguageDocuments");
@@ -634,13 +636,15 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
 | **categories** | **String**| Filter by categories ids, comma separated values expected. | [optional] 
 | **title** | **String**| Filter by document title. | [optional] 
+| **sortBy** | **String**| Sort by. | [optional]<br />**Values**: Title, Date 
+| **sortOrder** | **String**| Sort Order. | [optional]<br />**Values**: ASC, ascending, DESC, descending 
 | **documentIds** | [**List&lt;String&gt;**](String.html)| Comma-separated list of document identifiers to fetch by. | [optional] 
 {: class="table-striped"}
 
@@ -707,7 +711,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
 | **importId** | **String**| Import ID | 
 {: class="table-striped"}
 
@@ -774,7 +778,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
 | **trainingId** | **String**| Training ID | 
 {: class="table-striped"}
 
@@ -845,7 +849,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
 | **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional] 
@@ -864,7 +868,7 @@ try {
 
 
 
-> [KnowledgeBaseListing](KnowledgeBaseListing.html) getKnowledgeKnowledgebases(before, after, limit, pageSize, name, coreLanguage, published)
+> [KnowledgeBaseListing](KnowledgeBaseListing.html) getKnowledgeKnowledgebases(before, after, limit, pageSize, name, coreLanguage, published, sortBy, sortOrder)
 
 Get knowledge bases
 
@@ -905,8 +909,10 @@ String pageSize = "pageSize_example"; // String | Number of entities to return. 
 String name = "name_example"; // String | Filter by Name.
 String coreLanguage = "coreLanguage_example"; // String | Filter by core language.
 Boolean published = true; // Boolean | Filter by published status.
+String sortBy = "sortBy_example"; // String | Sort by.
+String sortOrder = "sortOrder_example"; // String | Sort Order.
 try {
-    KnowledgeBaseListing result = apiInstance.getKnowledgeKnowledgebases(before, after, limit, pageSize, name, coreLanguage, published);
+    KnowledgeBaseListing result = apiInstance.getKnowledgeKnowledgebases(before, after, limit, pageSize, name, coreLanguage, published, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KnowledgeApi#getKnowledgeKnowledgebases");
@@ -924,8 +930,10 @@ try {
 | **limit** | **String**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional] 
 | **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
 | **name** | **String**| Filter by Name. | [optional] 
-| **coreLanguage** | **String**| Filter by core language. | [optional]<br />**Values**: en-US, de-DE 
+| **coreLanguage** | **String**| Filter by core language. | [optional]<br />**Values**: en-US, en-UK, en-AU, de-DE 
 | **published** | **Boolean**| Filter by published status. | [optional] 
+| **sortBy** | **String**| Sort by. | [optional]<br />**Values**: Name, Date 
+| **sortOrder** | **String**| Sort Order. | [optional]<br />**Values**: ASC, ascending, DESC, descending 
 {: class="table-striped"}
 
 
@@ -1058,7 +1066,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **categoryId** | **String**| Category ID | 
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
 | **body** | [**KnowledgeCategoryRequest**](KnowledgeCategoryRequest.html)|  | 
 {: class="table-striped"}
 
@@ -1127,7 +1135,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **documentId** | **String**| Document ID | 
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
 | **body** | [**KnowledgeDocumentRequest**](KnowledgeDocumentRequest.html)|  | 
 {: class="table-striped"}
 
@@ -1194,7 +1202,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
 | **body** | [**List&lt;KnowledgeDocumentBulkRequest&gt;**](KnowledgeDocumentBulkRequest.html)|  | 
 {: class="table-striped"}
 
@@ -1263,7 +1271,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
 | **importId** | **String**| Import ID | 
 | **body** | [**ImportStatusRequest**](ImportStatusRequest.html)|  | 
 {: class="table-striped"}
@@ -1394,7 +1402,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
 | **body** | [**KnowledgeCategoryRequest**](KnowledgeCategoryRequest.html)|  | 
 {: class="table-striped"}
 
@@ -1461,7 +1469,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
 | **body** | [**KnowledgeDocumentRequest**](KnowledgeDocumentRequest.html)|  | 
 {: class="table-striped"}
 
@@ -1528,7 +1536,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
 | **body** | [**KnowledgeImport**](KnowledgeImport.html)|  | 
 {: class="table-striped"}
 
@@ -1595,7 +1603,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
 | **trainingId** | **String**| Training ID | 
 {: class="table-striped"}
 
@@ -1661,7 +1669,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **knowledgeBaseId** | **String**| Knowledge base ID | 
-| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, de-DE 
+| **languageCode** | **String**| Language code, format: iso2-LOCALE |<br />**Values**: en-US, en-UK, en-AU, de-DE 
 {: class="table-striped"}
 
 

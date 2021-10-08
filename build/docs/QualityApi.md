@@ -1747,7 +1747,7 @@ try {
 
 
 
-> [SurveyFormEntityListing](SurveyFormEntityListing.html) getQualityFormsSurveysBulkContexts(contextId, published)
+> [List&lt;SurveyForm&gt;](SurveyForm.html) getQualityFormsSurveysBulkContexts(contextId, published)
 
 Retrieve a list of the latest form versions by context ids
 
@@ -1784,7 +1784,7 @@ QualityApi apiInstance = new QualityApi();
 List<String> contextId = Arrays.asList("contextId_example"); // List<String> | A comma-delimited list of valid survey form context ids
 Boolean published = true; // Boolean | If true, the latest published version will be included. If false, only the unpublished version will be included.
 try {
-    SurveyFormEntityListing result = apiInstance.getQualityFormsSurveysBulkContexts(contextId, published);
+    List<SurveyForm> result = apiInstance.getQualityFormsSurveysBulkContexts(contextId, published);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling QualityApi#getQualityFormsSurveysBulkContexts");
@@ -1804,7 +1804,7 @@ try {
 
 ### Return type
 
-[**SurveyFormEntityListing**](SurveyFormEntityListing.html)
+[**List&lt;SurveyForm&gt;**](SurveyForm.html)
 
 <a name="getQualityPublishedform"></a>
 

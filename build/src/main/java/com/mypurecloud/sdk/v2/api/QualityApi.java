@@ -2344,11 +2344,11 @@ public class QualityApi {
    * 
    * @param contextId A comma-delimited list of valid survey form context ids (required)
    * @param published If true, the latest published version will be included. If false, only the unpublished version will be included. (optional, default to true)
-   * @return SurveyFormEntityListing
+   * @return List<SurveyForm>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SurveyFormEntityListing getQualityFormsSurveysBulkContexts(List<String> contextId, Boolean published) throws IOException, ApiException {
+  public List<SurveyForm> getQualityFormsSurveysBulkContexts(List<String> contextId, Boolean published) throws IOException, ApiException {
     return  getQualityFormsSurveysBulkContexts(createGetQualityFormsSurveysBulkContextsRequest(contextId, published));
   }
 
@@ -2357,10 +2357,10 @@ public class QualityApi {
    * 
    * @param contextId A comma-delimited list of valid survey form context ids (required)
    * @param published If true, the latest published version will be included. If false, only the unpublished version will be included. (optional, default to true)
-   * @return SurveyFormEntityListing
+   * @return List<SurveyForm>
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SurveyFormEntityListing> getQualityFormsSurveysBulkContextsWithHttpInfo(List<String> contextId, Boolean published) throws IOException {
+  public ApiResponse<List<SurveyForm>> getQualityFormsSurveysBulkContextsWithHttpInfo(List<String> contextId, Boolean published) throws IOException {
     return getQualityFormsSurveysBulkContexts(createGetQualityFormsSurveysBulkContextsRequest(contextId, published).withHttpInfo());
   }
 
@@ -2377,13 +2377,13 @@ public class QualityApi {
    * Retrieve a list of the latest form versions by context ids
    * 
    * @param request The request object
-   * @return SurveyFormEntityListing
+   * @return List<SurveyForm>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SurveyFormEntityListing getQualityFormsSurveysBulkContexts(GetQualityFormsSurveysBulkContextsRequest request) throws IOException, ApiException {
+  public List<SurveyForm> getQualityFormsSurveysBulkContexts(GetQualityFormsSurveysBulkContextsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<SurveyFormEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SurveyFormEntityListing>() {});
+      ApiResponse<List<SurveyForm>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<SurveyForm>>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -2399,13 +2399,13 @@ public class QualityApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SurveyFormEntityListing> getQualityFormsSurveysBulkContexts(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<List<SurveyForm>> getQualityFormsSurveysBulkContexts(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<SurveyFormEntityListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<List<SurveyForm>>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)exception;
+      ApiResponse<List<SurveyForm>> response = (ApiResponse<List<SurveyForm>>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -2416,7 +2416,7 @@ public class QualityApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<List<SurveyForm>> response = (ApiResponse<List<SurveyForm>>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

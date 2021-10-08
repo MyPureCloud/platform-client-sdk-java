@@ -71,7 +71,7 @@ public class CreatePerformanceProfile  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The associated division for this Performance Profile")
+  @ApiModelProperty(example = "null", required = true, value = "The associated division for this Performance Profile")
   @JsonProperty("division")
   public WritableDivision getDivision() {
     return division;

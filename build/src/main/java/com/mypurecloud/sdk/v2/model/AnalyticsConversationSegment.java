@@ -130,6 +130,7 @@ public class AnalyticsConversationSegment  implements Serializable {
     HOLD("hold"),
     INTERACT("interact"),
     IVR("ivr"),
+    MONITORING("monitoring"),
     SCHEDULED("scheduled"),
     SHARING("sharing"),
     SYSTEM("system"),

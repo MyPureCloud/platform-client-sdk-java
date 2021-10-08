@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.Division;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -25,6 +26,7 @@ public class SingleWorkdayAveragePoints  implements Serializable {
   private LocalDate dateWorkday = null;
   private Division division = null;
   private Double averagePoints = null;
+  private AddressableEntityRef performanceProfile = null;
 
   
   @ApiModelProperty(example = "null", value = "Queried target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
@@ -48,6 +50,13 @@ public class SingleWorkdayAveragePoints  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The targeted performance profile for the average points")
+  @JsonProperty("performanceProfile")
+  public AddressableEntityRef getPerformanceProfile() {
+    return performanceProfile;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -60,12 +69,13 @@ public class SingleWorkdayAveragePoints  implements Serializable {
     SingleWorkdayAveragePoints singleWorkdayAveragePoints = (SingleWorkdayAveragePoints) o;
     return Objects.equals(this.dateWorkday, singleWorkdayAveragePoints.dateWorkday) &&
         Objects.equals(this.division, singleWorkdayAveragePoints.division) &&
-        Objects.equals(this.averagePoints, singleWorkdayAveragePoints.averagePoints);
+        Objects.equals(this.averagePoints, singleWorkdayAveragePoints.averagePoints) &&
+        Objects.equals(this.performanceProfile, singleWorkdayAveragePoints.performanceProfile);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dateWorkday, division, averagePoints);
+    return Objects.hash(dateWorkday, division, averagePoints, performanceProfile);
   }
 
   @Override
@@ -76,6 +86,7 @@ public class SingleWorkdayAveragePoints  implements Serializable {
     sb.append("    dateWorkday: ").append(toIndentedString(dateWorkday)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    averagePoints: ").append(toIndentedString(averagePoints)).append("\n");
+    sb.append("    performanceProfile: ").append(toIndentedString(performanceProfile)).append("\n");
     sb.append("}");
     return sb.toString();
   }

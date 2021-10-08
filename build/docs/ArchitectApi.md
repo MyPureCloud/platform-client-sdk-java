@@ -6749,7 +6749,7 @@ try {
 
 
 
-> [DataTable](DataTable.html) putFlowsDatatable(datatableId, expand, body)
+> [DataTable](DataTable.html) putFlowsDatatable(datatableId, body, expand)
 
 Updates a specific datatable by id
 
@@ -6784,10 +6784,10 @@ Configuration.setDefaultApiClient(apiClient);
 
 ArchitectApi apiInstance = new ArchitectApi();
 String datatableId = "datatableId_example"; // String | id of datatable
-String expand = "expand_example"; // String | Expand instructions for the result
 DataTable body = new DataTable(); // DataTable | datatable json-schema
+String expand = "expand_example"; // String | Expand instructions for the result
 try {
-    DataTable result = apiInstance.putFlowsDatatable(datatableId, expand, body);
+    DataTable result = apiInstance.putFlowsDatatable(datatableId, body, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#putFlowsDatatable");
@@ -6801,8 +6801,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **datatableId** | **String**| id of datatable | 
+| **body** | [**DataTable**](DataTable.html)| datatable json-schema | 
 | **expand** | **String**| Expand instructions for the result | [optional]<br />**Values**: schema 
-| **body** | [**DataTable**](DataTable.html)| datatable json-schema | [optional] 
 {: class="table-striped"}
 
 

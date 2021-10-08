@@ -28,6 +28,7 @@ title: ConversationMessagingChannel
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | TWITTER | &quot;Twitter&quot; |
 | FACEBOOK | &quot;Facebook&quot; |
+| INSTAGRAM | &quot;Instagram&quot; |
 | LINE | &quot;Line&quot; |
 | WHATSAPP | &quot;Whatsapp&quot; |
 | WEBMESSAGING | &quot;WebMessaging&quot; |

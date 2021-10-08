@@ -8889,7 +8889,7 @@ public class ConversationsApi {
 
   
   /**
-   * Attempts to manually assign a specified conversation to a specified agent.  Ignores bullseye ring, PAR score, skills, and languages.
+   * Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
    * 
    * @param conversationId conversation ID (required)
    * @param body Targeted user (required)
@@ -8902,7 +8902,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Attempts to manually assign a specified conversation to a specified agent.  Ignores bullseye ring, PAR score, skills, and languages.
+   * Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
    * 
    * @param conversationId conversation ID (required)
    * @param body Targeted user (required)
@@ -8923,7 +8923,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Attempts to manually assign a specified conversation to a specified agent.  Ignores bullseye ring, PAR score, skills, and languages.
+   * Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
    * 
    * @param request The request object
    * @return String
@@ -8942,7 +8942,7 @@ public class ConversationsApi {
   }
 
   /**
-   * Attempts to manually assign a specified conversation to a specified agent.  Ignores bullseye ring, PAR score, skills, and languages.
+   * Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
    * 
    * @param request The request object
    * @return the response

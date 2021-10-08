@@ -44,7 +44,8 @@ public class DialerAction  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ACTION("Action"),
-    MODIFYCONTACTATTRIBUTE("modifyContactAttribute");
+    MODIFYCONTACTATTRIBUTE("modifyContactAttribute"),
+    DATAACTIONBEHAVIOR("dataActionBehavior");
 
     private String value;
 
@@ -99,7 +100,8 @@ public class DialerAction  implements Serializable {
     CONTACT_UNCALLABLE("CONTACT_UNCALLABLE"),
     NUMBER_UNCALLABLE("NUMBER_UNCALLABLE"),
     SET_CALLER_ID("SET_CALLER_ID"),
-    SET_SKILLS("SET_SKILLS");
+    SET_SKILLS("SET_SKILLS"),
+    DATA_ACTION("DATA_ACTION");
 
     private String value;
 

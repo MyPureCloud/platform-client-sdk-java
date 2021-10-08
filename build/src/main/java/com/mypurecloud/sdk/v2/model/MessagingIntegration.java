@@ -103,6 +103,7 @@ public class MessagingIntegration  implements Serializable {
     LINE("line"),
     WHATSAPP("whatsapp"),
     WEBMESSAGING("webmessaging"),
+    INSTAGRAM("instagram"),
     OPEN("open");
 
     private String value;

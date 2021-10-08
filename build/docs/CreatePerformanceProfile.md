@@ -10,7 +10,7 @@ title: CreatePerformanceProfile
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | <!----><!---->**String**<!----> | The globally unique identifier for the object. |  [optional] |
 | **name** | <!----><!---->**String**<!----> | A name for this performance profile |  |
-| **division** | <!----><!---->[**WritableDivision**](WritableDivision.html)<!----> | The associated division for this Performance Profile |  [optional] |
+| **division** | <!----><!---->[**WritableDivision**](WritableDivision.html)<!----> | The associated division for this Performance Profile |  |
 | **description** | <!----><!---->**String**<!----> | A description about this performance profile |  |
 | **metricOrders** | <!----><!---->**List&lt;String&gt;**<!----> | Order of the associated metrics. The list should contain valid ids for metrics |  [optional] |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Creation date for this performance profile. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |

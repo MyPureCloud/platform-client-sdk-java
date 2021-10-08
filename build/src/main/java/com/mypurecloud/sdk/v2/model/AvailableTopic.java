@@ -133,6 +133,7 @@ public class AvailableTopic  implements Serializable {
   }
   private List<TransportsEnum> transports = new ArrayList<TransportsEnum>();
   private List<String> publicApiTemplateUriPaths = new ArrayList<String>();
+  private List<String> topicParameters = new ArrayList<String>();
 
   
   /**
@@ -365,6 +366,24 @@ public class AvailableTopic  implements Serializable {
   }
 
   
+  /**
+   * Parameters in the topic name that can be substituted
+   **/
+  public AvailableTopic topicParameters(List<String> topicParameters) {
+    this.topicParameters = topicParameters;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Parameters in the topic name that can be substituted")
+  @JsonProperty("topicParameters")
+  public List<String> getTopicParameters() {
+    return topicParameters;
+  }
+  public void setTopicParameters(List<String> topicParameters) {
+    this.topicParameters = topicParameters;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -387,12 +406,13 @@ public class AvailableTopic  implements Serializable {
         Objects.equals(this.requiresCurrentUser, availableTopic.requiresCurrentUser) &&
         Objects.equals(this.requiresCurrentUserOrPermission, availableTopic.requiresCurrentUserOrPermission) &&
         Objects.equals(this.transports, availableTopic.transports) &&
-        Objects.equals(this.publicApiTemplateUriPaths, availableTopic.publicApiTemplateUriPaths);
+        Objects.equals(this.publicApiTemplateUriPaths, availableTopic.publicApiTemplateUriPaths) &&
+        Objects.equals(this.topicParameters, availableTopic.topicParameters);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, id, permissionDetails, requiresPermissions, requiresDivisionPermissions, requiresAnyValidator, enforced, visibility, schema, requiresCurrentUser, requiresCurrentUserOrPermission, transports, publicApiTemplateUriPaths);
+    return Objects.hash(description, id, permissionDetails, requiresPermissions, requiresDivisionPermissions, requiresAnyValidator, enforced, visibility, schema, requiresCurrentUser, requiresCurrentUserOrPermission, transports, publicApiTemplateUriPaths, topicParameters);
   }
 
   @Override
@@ -413,6 +433,7 @@ public class AvailableTopic  implements Serializable {
     sb.append("    requiresCurrentUserOrPermission: ").append(toIndentedString(requiresCurrentUserOrPermission)).append("\n");
     sb.append("    transports: ").append(toIndentedString(transports)).append("\n");
     sb.append("    publicApiTemplateUriPaths: ").append(toIndentedString(publicApiTemplateUriPaths)).append("\n");
+    sb.append("    topicParameters: ").append(toIndentedString(topicParameters)).append("\n");
     sb.append("}");
     return sb.toString();
   }

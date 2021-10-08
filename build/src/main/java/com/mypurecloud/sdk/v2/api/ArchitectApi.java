@@ -8788,36 +8788,36 @@ public class ArchitectApi {
    * Updates a specific datatable by id
    * Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
    * @param datatableId id of datatable (required)
+   * @param body datatable json-schema (required)
    * @param expand Expand instructions for the result (optional)
-   * @param body datatable json-schema (optional)
    * @return DataTable
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public DataTable putFlowsDatatable(String datatableId, String expand, DataTable body) throws IOException, ApiException {
-    return  putFlowsDatatable(createPutFlowsDatatableRequest(datatableId, expand, body));
+  public DataTable putFlowsDatatable(String datatableId, DataTable body, String expand) throws IOException, ApiException {
+    return  putFlowsDatatable(createPutFlowsDatatableRequest(datatableId, body, expand));
   }
 
   /**
    * Updates a specific datatable by id
    * Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
    * @param datatableId id of datatable (required)
+   * @param body datatable json-schema (required)
    * @param expand Expand instructions for the result (optional)
-   * @param body datatable json-schema (optional)
    * @return DataTable
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<DataTable> putFlowsDatatableWithHttpInfo(String datatableId, String expand, DataTable body) throws IOException {
-    return putFlowsDatatable(createPutFlowsDatatableRequest(datatableId, expand, body).withHttpInfo());
+  public ApiResponse<DataTable> putFlowsDatatableWithHttpInfo(String datatableId, DataTable body, String expand) throws IOException {
+    return putFlowsDatatable(createPutFlowsDatatableRequest(datatableId, body, expand).withHttpInfo());
   }
 
-  private PutFlowsDatatableRequest createPutFlowsDatatableRequest(String datatableId, String expand, DataTable body) {
+  private PutFlowsDatatableRequest createPutFlowsDatatableRequest(String datatableId, DataTable body, String expand) {
     return PutFlowsDatatableRequest.builder()
             .withDatatableId(datatableId)
     
-            .withExpand(expand)
-    
             .withBody(body)
+    
+            .withExpand(expand)
     
             .build();
   }

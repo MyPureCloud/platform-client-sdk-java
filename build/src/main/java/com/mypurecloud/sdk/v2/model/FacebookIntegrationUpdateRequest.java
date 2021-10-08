@@ -53,14 +53,14 @@ public class FacebookIntegrationUpdateRequest  implements Serializable {
 
   
   /**
-   * The long-lived Page Access Token of a facebook page.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.
+   * The long-lived Page Access Token of Facebook page.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.
    **/
   public FacebookIntegrationUpdateRequest pageAccessToken(String pageAccessToken) {
     this.pageAccessToken = pageAccessToken;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The long-lived Page Access Token of a facebook page.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.")
+  @ApiModelProperty(example = "null", value = "The long-lived Page Access Token of Facebook page.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.")
   @JsonProperty("pageAccessToken")
   public String getPageAccessToken() {
     return pageAccessToken;
@@ -71,14 +71,14 @@ public class FacebookIntegrationUpdateRequest  implements Serializable {
 
   
   /**
-   * The short-lived User Access Token of the facebook user logged into the facebook app.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.
+   * The short-lived User Access Token of the Facebook user logged into the Facebook app.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.
    **/
   public FacebookIntegrationUpdateRequest userAccessToken(String userAccessToken) {
     this.userAccessToken = userAccessToken;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The short-lived User Access Token of the facebook user logged into the facebook app.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.")
+  @ApiModelProperty(example = "null", value = "The short-lived User Access Token of the Facebook user logged into the Facebook app.  See https://developers.facebook.com/docs/facebook-login/access-tokens.  Either pageAccessToken or userAccessToken should be provided.")
   @JsonProperty("userAccessToken")
   public String getUserAccessToken() {
     return userAccessToken;

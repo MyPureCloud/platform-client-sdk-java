@@ -33,46 +33,35 @@ public class BuAgentScheduleShift  implements Serializable {
   private BuScheduleReference schedule = null;
 
   
-  @ApiModelProperty(example = "null", value = "The globally unique identifier for the object.")
+  /**
+   * The ID of the shift
+   **/
+  public BuAgentScheduleShift id(String id) {
+    this.id = id;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The ID of the shift")
   @JsonProperty("id")
   public String getId() {
     return id;
   }
-
-  
-  /**
-   * The start date of this shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-   **/
-  public BuAgentScheduleShift startDate(Date startDate) {
-    this.startDate = startDate;
-    return this;
+  public void setId(String id) {
+    this.id = id;
   }
+
   
   @ApiModelProperty(example = "null", value = "The start date of this shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("startDate")
   public Date getStartDate() {
     return startDate;
   }
-  public void setStartDate(Date startDate) {
-    this.startDate = startDate;
-  }
 
-  
-  /**
-   * The length of this shift in minutes
-   **/
-  public BuAgentScheduleShift lengthMinutes(Integer lengthMinutes) {
-    this.lengthMinutes = lengthMinutes;
-    return this;
-  }
   
   @ApiModelProperty(example = "null", value = "The length of this shift in minutes")
   @JsonProperty("lengthMinutes")
   public Integer getLengthMinutes() {
     return lengthMinutes;
-  }
-  public void setLengthMinutes(Integer lengthMinutes) {
-    this.lengthMinutes = lengthMinutes;
   }
 
   

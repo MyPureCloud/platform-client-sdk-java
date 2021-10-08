@@ -47,6 +47,7 @@ public class ConversationMessagingChannel  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TWITTER("Twitter"),
     FACEBOOK("Facebook"),
+    INSTAGRAM("Instagram"),
     LINE("Line"),
     WHATSAPP("Whatsapp"),
     WEBMESSAGING("WebMessaging"),

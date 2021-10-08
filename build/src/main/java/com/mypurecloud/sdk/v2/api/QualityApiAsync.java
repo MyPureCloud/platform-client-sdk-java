@@ -1947,13 +1947,13 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<SurveyFormEntityListing> getQualityFormsSurveysBulkContextsAsync(GetQualityFormsSurveysBulkContextsRequest request, final AsyncApiCallback<SurveyFormEntityListing> callback) {
+  public Future<List<SurveyForm>> getQualityFormsSurveysBulkContextsAsync(GetQualityFormsSurveysBulkContextsRequest request, final AsyncApiCallback<List<SurveyForm>> callback) {
     try {
-      final SettableFuture<SurveyFormEntityListing> future = SettableFuture.create();
+      final SettableFuture<List<SurveyForm>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SurveyFormEntityListing>() {}, new AsyncApiCallback<ApiResponse<SurveyFormEntityListing>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<SurveyForm>>() {}, new AsyncApiCallback<ApiResponse<List<SurveyForm>>>() {
         @Override
-        public void onCompleted(ApiResponse<SurveyFormEntityListing> response) {
+        public void onCompleted(ApiResponse<List<SurveyForm>> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -1981,13 +1981,13 @@ public class QualityApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<SurveyFormEntityListing>> getQualityFormsSurveysBulkContextsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SurveyFormEntityListing>> callback) {
+  public Future<ApiResponse<List<SurveyForm>>> getQualityFormsSurveysBulkContextsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<SurveyForm>>> callback) {
     try {
-      final SettableFuture<ApiResponse<SurveyFormEntityListing>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<List<SurveyForm>>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<SurveyFormEntityListing>() {}, new AsyncApiCallback<ApiResponse<SurveyFormEntityListing>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<List<SurveyForm>>() {}, new AsyncApiCallback<ApiResponse<List<SurveyForm>>>() {
         @Override
-        public void onCompleted(ApiResponse<SurveyFormEntityListing> response) {
+        public void onCompleted(ApiResponse<List<SurveyForm>> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -1995,7 +1995,7 @@ public class QualityApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)exception;
+            ApiResponse<List<SurveyForm>> response = (ApiResponse<List<SurveyForm>>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2003,7 +2003,7 @@ public class QualityApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<SurveyFormEntityListing> response = (ApiResponse<SurveyFormEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<List<SurveyForm>> response = (ApiResponse<List<SurveyForm>>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

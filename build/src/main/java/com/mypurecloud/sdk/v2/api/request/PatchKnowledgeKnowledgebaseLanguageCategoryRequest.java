@@ -86,6 +86,8 @@ public class PatchKnowledgeKnowledgebaseLanguageCategoryRequest {
 
 	public enum languageCodeValues { 
 		EN_US("en-US"), 
+		EN_UK("en-UK"), 
+		EN_AU("en-AU"), 
 		DE_DE("de-DE");
 
 		private String value;

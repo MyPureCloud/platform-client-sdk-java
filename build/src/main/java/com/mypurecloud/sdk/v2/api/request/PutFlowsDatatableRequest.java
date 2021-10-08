@@ -85,6 +85,20 @@ public class PutFlowsDatatableRequest {
 	    return this;
 	} 
 	
+	private DataTable body;
+	public DataTable getBody() {
+		return this.body;
+	}
+
+	public void setBody(DataTable body) {
+		this.body = body;
+	}
+
+	public PutFlowsDatatableRequest withBody(DataTable body) {
+	    this.setBody(body);
+	    return this;
+	} 
+	
 	private String expand;
 	public String getExpand() {
 		return this.expand;
@@ -128,20 +142,6 @@ public class PutFlowsDatatableRequest {
 		}
 	}
 	
-	private DataTable body;
-	public DataTable getBody() {
-		return this.body;
-	}
-
-	public void setBody(DataTable body) {
-		this.body = body;
-	}
-
-	public PutFlowsDatatableRequest withBody(DataTable body) {
-	    this.setBody(body);
-	    return this;
-	} 
-	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -168,6 +168,11 @@ public class PutFlowsDatatableRequest {
             throw new IllegalStateException("Missing the required parameter 'datatableId' when building request for PutFlowsDatatableRequest.");
         }
         
+        // verify the required parameter 'body' is set
+        if (this.body == null) {
+            throw new IllegalStateException("Missing the required parameter 'body' when building request for PutFlowsDatatableRequest.");
+        }
+        
 
         return ApiRequestBuilder.create("PUT", "/api/v2/flows/datatables/{datatableId}")
                 .withPathParameter("datatableId", datatableId)
@@ -188,9 +193,9 @@ public class PutFlowsDatatableRequest {
 	}
 
 	
-	public static Builder builder(String datatableId) {
+	public static Builder builder(String datatableId, DataTable body) {
 	    return new Builder()
-	            .withRequiredParams(datatableId);
+	            .withRequiredParams(datatableId, body);
 	}
 	
 
@@ -207,6 +212,11 @@ public class PutFlowsDatatableRequest {
 			return this;
 		}
 		
+		public Builder withBody(DataTable body) {
+			request.setBody(body);
+			return this;
+		}
+		
 		public Builder withExpand(String expand) {
 			request.setExpand(expand);
 			return this;
@@ -217,15 +227,11 @@ public class PutFlowsDatatableRequest {
 		    return this;
 		}
 		
-		public Builder withBody(DataTable body) {
-			request.setBody(body);
-			return this;
-		}
-		
 
 		
-		public Builder withRequiredParams(String datatableId) {
+		public Builder withRequiredParams(String datatableId, DataTable body) {
 			request.setDatatableId(datatableId);
+						request.setBody(body);
 			
 			return this;
 		}
@@ -236,6 +242,11 @@ public class PutFlowsDatatableRequest {
             // verify the required parameter 'datatableId' is set
             if (request.datatableId == null) {
                 throw new IllegalStateException("Missing the required parameter 'datatableId' when building request for PutFlowsDatatableRequest.");
+            }
+            
+            // verify the required parameter 'body' is set
+            if (request.body == null) {
+                throw new IllegalStateException("Missing the required parameter 'body' when building request for PutFlowsDatatableRequest.");
             }
             
 			return request;

@@ -128,6 +128,8 @@ public class GetKnowledgeKnowledgebasesRequest {
 
 	public enum coreLanguageValues { 
 		EN_US("en-US"), 
+		EN_UK("en-UK"), 
+		EN_AU("en-AU"), 
 		DE_DE("de-DE");
 
 		private String value;
@@ -170,6 +172,96 @@ public class GetKnowledgeKnowledgebasesRequest {
 	    return this;
 	} 
 	
+	private String sortBy;
+	public String getSortBy() {
+		return this.sortBy;
+	}
+
+	public void setSortBy(String sortBy) {
+		this.sortBy = sortBy;
+	}
+
+	public GetKnowledgeKnowledgebasesRequest withSortBy(String sortBy) {
+	    this.setSortBy(sortBy);
+	    return this;
+	} 
+
+	public enum sortByValues { 
+		NAME("Name"), 
+		DATE("Date");
+
+		private String value;
+
+		sortByValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static sortByValues fromString(String key) {
+			if (key == null) return null;
+
+			for (sortByValues value : sortByValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return sortByValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
+	private String sortOrder;
+	public String getSortOrder() {
+		return this.sortOrder;
+	}
+
+	public void setSortOrder(String sortOrder) {
+		this.sortOrder = sortOrder;
+	}
+
+	public GetKnowledgeKnowledgebasesRequest withSortOrder(String sortOrder) {
+	    this.setSortOrder(sortOrder);
+	    return this;
+	} 
+
+	public enum sortOrderValues { 
+		ASC("ASC"), 
+		ASCENDING("ascending"), 
+		DESC("DESC"), 
+		DESCENDING("descending");
+
+		private String value;
+
+		sortOrderValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static sortOrderValues fromString(String key) {
+			if (key == null) return null;
+
+			for (sortOrderValues value : sortOrderValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return sortOrderValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+	}
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -206,6 +298,10 @@ public class GetKnowledgeKnowledgebasesRequest {
                 .withQueryParameters("coreLanguage", "", coreLanguage)
         
                 .withQueryParameters("published", "", published)
+        
+                .withQueryParameters("sortBy", "", sortBy)
+        
+                .withQueryParameters("sortOrder", "", sortOrder)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -266,6 +362,26 @@ public class GetKnowledgeKnowledgebasesRequest {
 		public Builder withPublished(Boolean published) {
 			request.setPublished(published);
 			return this;
+		}
+		
+		public Builder withSortBy(String sortBy) {
+			request.setSortBy(sortBy);
+			return this;
+		}
+
+		public Builder withSortBy(sortByValues sortBy) {
+		    request.setSortBy(sortBy.toString());
+		    return this;
+		}
+		
+		public Builder withSortOrder(String sortOrder) {
+			request.setSortOrder(sortOrder);
+			return this;
+		}
+
+		public Builder withSortOrder(sortOrderValues sortOrder) {
+		    request.setSortOrder(sortOrder.toString());
+		    return this;
 		}
 		
 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -21,6 +22,7 @@ import java.io.Serializable;
 public class WebMessagingOfferFields  implements Serializable {
   
   private String offerText = null;
+  private AddressableEntityRef architectFlow = null;
 
   
   /**
@@ -41,6 +43,24 @@ public class WebMessagingOfferFields  implements Serializable {
   }
 
   
+  /**
+   * Flow to be invoked, overrides default flow when specified.
+   **/
+  public WebMessagingOfferFields architectFlow(AddressableEntityRef architectFlow) {
+    this.architectFlow = architectFlow;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flow to be invoked, overrides default flow when specified.")
+  @JsonProperty("architectFlow")
+  public AddressableEntityRef getArchitectFlow() {
+    return architectFlow;
+  }
+  public void setArchitectFlow(AddressableEntityRef architectFlow) {
+    this.architectFlow = architectFlow;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -51,12 +71,13 @@ public class WebMessagingOfferFields  implements Serializable {
       return false;
     }
     WebMessagingOfferFields webMessagingOfferFields = (WebMessagingOfferFields) o;
-    return Objects.equals(this.offerText, webMessagingOfferFields.offerText);
+    return Objects.equals(this.offerText, webMessagingOfferFields.offerText) &&
+        Objects.equals(this.architectFlow, webMessagingOfferFields.architectFlow);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(offerText);
+    return Objects.hash(offerText, architectFlow);
   }
 
   @Override
@@ -65,6 +86,7 @@ public class WebMessagingOfferFields  implements Serializable {
     sb.append("class WebMessagingOfferFields {\n");
     
     sb.append("    offerText: ").append(toIndentedString(offerText)).append("\n");
+    sb.append("    architectFlow: ").append(toIndentedString(architectFlow)).append("\n");
     sb.append("}");
     return sb.toString();
   }
