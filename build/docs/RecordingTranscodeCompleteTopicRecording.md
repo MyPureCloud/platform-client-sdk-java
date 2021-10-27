@@ -12,8 +12,8 @@ title: RecordingTranscodeCompleteTopicRecording
 | **conversationId** | <!----><!---->**String**<!----> |  |  [optional] |
 | **fileState** | <!----><!---->**String**<!----> |  |  [optional] |
 | **mediaUris** | <!----><!---->[**List&lt;RecordingTranscodeCompleteTopicMediaResult&gt;**](RecordingTranscodeCompleteTopicMediaResult.html)<!----> |  |  [optional] |
-| **estimatedTranscodeTimeMs** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
-| **actualTranscodeTimeMs** | <!----><!---->[**BigDecimal**](BigDecimal.html)<!----> |  |  [optional] |
+| **estimatedTranscodeTimeMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
+| **actualTranscodeTimeMs** | <!----><!---->**Integer**<!----> |  |  [optional] |
 {: class="table table-striped"}
 
 

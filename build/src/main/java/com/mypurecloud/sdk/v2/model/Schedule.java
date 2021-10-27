@@ -322,14 +322,14 @@ public class Schedule  implements Serializable {
 
   
   /**
-   * An iCal Recurrence Rule (RRULE) string.
+   * An iCal Recurrence Rule (RRULE) string. It is required to be set for schedules determining when upgrades to the Edge software can be applied.
    **/
   public Schedule rrule(String rrule) {
     this.rrule = rrule;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "An iCal Recurrence Rule (RRULE) string.")
+  @ApiModelProperty(example = "null", value = "An iCal Recurrence Rule (RRULE) string. It is required to be set for schedules determining when upgrades to the Edge software can be applied.")
   @JsonProperty("rrule")
   public String getRrule() {
     return rrule;

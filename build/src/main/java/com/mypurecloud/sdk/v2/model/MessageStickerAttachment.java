@@ -43,13 +43,14 @@ public class MessageStickerAttachment  implements Serializable {
 
   
   /**
+   * A globally unique identifier for the media object.
    **/
   public MessageStickerAttachment id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A globally unique identifier for the media object.")
   @JsonProperty("id")
   public String getId() {
     return id;

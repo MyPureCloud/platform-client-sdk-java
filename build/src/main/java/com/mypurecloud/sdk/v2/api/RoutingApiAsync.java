@@ -4840,7 +4840,7 @@ public class RoutingApiAsync {
   
   /**
    * Update attributes of an in-queue conversation
-   * Returns an object indicating the updated values of all settable attributes. Supported attributes: priority (each point of priority is equivalent to one minute of time in queue), skillIds and languageId.
+   * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -4874,7 +4874,7 @@ public class RoutingApiAsync {
 
   /**
    * Update attributes of an in-queue conversation
-   * Returns an object indicating the updated values of all settable attributes. Supported attributes: priority (each point of priority is equivalent to one minute of time in queue), skillIds and languageId.
+   * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

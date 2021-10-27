@@ -154,6 +154,7 @@ title: AuditLogMessage
 | ACCESSTOKEN | &quot;AccessToken&quot; |
 | ACTIONMAP | &quot;ActionMap&quot; |
 | ACTIONTEMPLATE | &quot;ActionTemplate&quot; |
+| AGENTROUTINGINFO | &quot;AgentRoutingInfo&quot; |
 | ANNOTATION | &quot;Annotation&quot; |
 | APPOINTMENT | &quot;Appointment&quot; |
 | ASSIGNMENT | &quot;Assignment&quot; |
@@ -174,6 +175,7 @@ title: AuditLogMessage
 | CONFIGURATIONVERSION | &quot;ConfigurationVersion&quot; |
 | CONTACTLIST | &quot;ContactList&quot; |
 | CONTACTLISTFILTER | &quot;ContactListFilter&quot; |
+| CONVERSATIONATTRIBUTES | &quot;ConversationAttributes&quot; |
 | CONVERSATIONACCOUNT | &quot;ConversationAccount&quot; |
 | CONVERSATIONDEFAULTSUPPORTEDCONTENT | &quot;ConversationDefaultSupportedContent&quot; |
 | CONVERSATIONPHONENUMBER | &quot;ConversationPhoneNumber&quot; |
@@ -255,6 +257,7 @@ title: AuditLogMessage
 | ROLE | &quot;Role&quot; |
 | ROW | &quot;Row&quot; |
 | ROUTINGTRANSCRIPTIONSETTINGS | &quot;RoutingTranscriptionSettings&quot; |
+| ROUTINGUTILIZATIONTAG | &quot;RoutingUtilizationTag&quot; |
 | RULE | &quot;Rule&quot; |
 | RULESET | &quot;RuleSet&quot; |
 | SCHEDULE | &quot;Schedule&quot; |
@@ -267,6 +270,7 @@ title: AuditLogMessage
 | SEQUENCE | &quot;Sequence&quot; |
 | SEQUENCESCHEDULE | &quot;SequenceSchedule&quot; |
 | SESSIONTYPE | &quot;SessionType&quot; |
+| SHIFTTRADE | &quot;ShiftTrade&quot; |
 | SITE | &quot;Site&quot; |
 | SPEECHTEXTANALYTICSSETTINGS | &quot;SpeechTextAnalyticsSettings&quot; |
 | STATUS | &quot;Status&quot; |
@@ -275,6 +279,7 @@ title: AuditLogMessage
 | SURVEY | &quot;Survey&quot; |
 | SURVEYFORM | &quot;SurveyForm&quot; |
 | TEAM | &quot;Team&quot; |
+| TIMEOFFREQUEST | &quot;TimeOffRequest&quot; |
 | TOPIC | &quot;Topic&quot; |
 | TRANSCRIPTIONSETTINGS | &quot;TranscriptionSettings&quot; |
 | TRIGGER | &quot;Trigger&quot; |

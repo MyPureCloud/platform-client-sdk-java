@@ -27,6 +27,7 @@ title: LearningModuleInformStep
 | URL | &quot;Url&quot; |
 | CONTENT | &quot;Content&quot; |
 | GENESYSBUILTINCOURSE | &quot;GenesysBuiltInCourse&quot; |
+| RICHTEXT | &quot;RichText&quot; |
 {: class="table table-striped"}
 
 

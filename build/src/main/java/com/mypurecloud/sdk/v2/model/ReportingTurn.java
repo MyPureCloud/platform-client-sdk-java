@@ -62,6 +62,7 @@ public class ReportingTurn  implements Serializable {
     AGENTREQUESTEDBYUSER("AgentRequestedByUser"),
     CONFIRMATIONREQUIRED("ConfirmationRequired"),
     ERROR("Error"),
+    EXPRESSIONERROR("ExpressionError"),
     NOINPUTCOLLECTION("NoInputCollection"),
     NOINPUTCONFIRMATION("NoInputConfirmation"),
     DISAMBIGUATIONREQUIRED("DisambiguationRequired"),
@@ -243,7 +244,7 @@ public class ReportingTurn  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The conversation details, across potentially multiple Cicero sessions.")
+  @ApiModelProperty(example = "null", value = "The conversation details, across potentially multiple Bot Flow sessions.")
   @JsonProperty("conversation")
   public AddressableEntityRef getConversation() {
     return conversation;

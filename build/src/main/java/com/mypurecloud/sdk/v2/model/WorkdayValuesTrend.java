@@ -29,11 +29,13 @@ public class WorkdayValuesTrend  implements Serializable {
   
   private LocalDate dateStartWorkday = null;
   private LocalDate dateEndWorkday = null;
+  private LocalDate dateReferenceWorkday = null;
   private Division division = null;
   private UserReference user = null;
   private String timezone = null;
   private List<WorkdayValuesMetricItem> results = new ArrayList<WorkdayValuesMetricItem>();
   private AddressableEntityRef performanceProfile = null;
+  private AddressableEntityRef metric = null;
 
   
   @ApiModelProperty(example = "null", value = "The start workday for the query range for the metric value trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
@@ -47,6 +49,13 @@ public class WorkdayValuesTrend  implements Serializable {
   @JsonProperty("dateEndWorkday")
   public LocalDate getDateEndWorkday() {
     return dateEndWorkday;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "The reference workday used to determine the metric definition. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd")
+  @JsonProperty("dateReferenceWorkday")
+  public LocalDate getDateReferenceWorkday() {
+    return dateReferenceWorkday;
   }
 
   
@@ -85,6 +94,13 @@ public class WorkdayValuesTrend  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The targeted metric for the average points")
+  @JsonProperty("metric")
+  public AddressableEntityRef getMetric() {
+    return metric;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -97,16 +113,18 @@ public class WorkdayValuesTrend  implements Serializable {
     WorkdayValuesTrend workdayValuesTrend = (WorkdayValuesTrend) o;
     return Objects.equals(this.dateStartWorkday, workdayValuesTrend.dateStartWorkday) &&
         Objects.equals(this.dateEndWorkday, workdayValuesTrend.dateEndWorkday) &&
+        Objects.equals(this.dateReferenceWorkday, workdayValuesTrend.dateReferenceWorkday) &&
         Objects.equals(this.division, workdayValuesTrend.division) &&
         Objects.equals(this.user, workdayValuesTrend.user) &&
         Objects.equals(this.timezone, workdayValuesTrend.timezone) &&
         Objects.equals(this.results, workdayValuesTrend.results) &&
-        Objects.equals(this.performanceProfile, workdayValuesTrend.performanceProfile);
+        Objects.equals(this.performanceProfile, workdayValuesTrend.performanceProfile) &&
+        Objects.equals(this.metric, workdayValuesTrend.metric);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dateStartWorkday, dateEndWorkday, division, user, timezone, results, performanceProfile);
+    return Objects.hash(dateStartWorkday, dateEndWorkday, dateReferenceWorkday, division, user, timezone, results, performanceProfile, metric);
   }
 
   @Override
@@ -116,11 +134,13 @@ public class WorkdayValuesTrend  implements Serializable {
     
     sb.append("    dateStartWorkday: ").append(toIndentedString(dateStartWorkday)).append("\n");
     sb.append("    dateEndWorkday: ").append(toIndentedString(dateEndWorkday)).append("\n");
+    sb.append("    dateReferenceWorkday: ").append(toIndentedString(dateReferenceWorkday)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");
     sb.append("    performanceProfile: ").append(toIndentedString(performanceProfile)).append("\n");
+    sb.append("    metric: ").append(toIndentedString(metric)).append("\n");
     sb.append("}");
     return sb.toString();
   }

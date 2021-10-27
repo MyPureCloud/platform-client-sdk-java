@@ -42,7 +42,8 @@ public class LearningModuleInformStepRequest  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     URL("Url"),
-    CONTENT("Content");
+    CONTENT("Content"),
+    RICHTEXT("RichText");
 
     private String value;
 

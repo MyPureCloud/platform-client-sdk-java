@@ -16,7 +16,7 @@ title: ReportingTurn
 | **knowledge** | <!----><!---->[**ReportingTurnKnowledge**](ReportingTurnKnowledge.html)<!----> | The knowledge data captured during this reporting turn. |  [optional] |
 | **dateCreated** | <!----><!---->[**Date**](Date.html)<!----> | Timestamp indicating when the original turn was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **askActionResult** | [**AskActionResultEnum**](#AskActionResultEnum)<!----> | Result of the bot flow &#39;ask&#39; action. |  [optional] |
-| **conversation** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | The conversation details, across potentially multiple Cicero sessions. |  [optional] |
+| **conversation** | <!----><!---->[**AddressableEntityRef**](AddressableEntityRef.html)<!----> | The conversation details, across potentially multiple Bot Flow sessions. |  [optional] |
 {: class="table table-striped"}
 
 
@@ -35,6 +35,7 @@ title: ReportingTurn
 | AGENTREQUESTEDBYUSER | &quot;AgentRequestedByUser&quot; |
 | CONFIRMATIONREQUIRED | &quot;ConfirmationRequired&quot; |
 | ERROR | &quot;Error&quot; |
+| EXPRESSIONERROR | &quot;ExpressionError&quot; |
 | NOINPUTCOLLECTION | &quot;NoInputCollection&quot; |
 | NOINPUTCONFIRMATION | &quot;NoInputConfirmation&quot; |
 | DISAMBIGUATIONREQUIRED | &quot;DisambiguationRequired&quot; |

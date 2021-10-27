@@ -23,6 +23,7 @@ title: CreateEmailRequest
 | **direction** | [**DirectionEnum**](#DirectionEnum)<!----> | Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloud based. |  [optional] |
 | **htmlBody** | <!----><!---->**String**<!----> | An HTML body content of the email. |  [optional] |
 | **textBody** | <!----><!---->**String**<!----> | A text body content of the email. |  [optional] |
+| **externalContactId** | <!----><!---->**String**<!----> | The external contact with which the email should be associated. This field is only valid for OUTBOUND email. |  [optional] |
 {: class="table table-striped"}
 
 

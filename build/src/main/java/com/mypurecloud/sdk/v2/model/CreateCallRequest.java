@@ -35,6 +35,7 @@ public class CreateCallRequest  implements Serializable {
   private List<String> conversationIds = new ArrayList<String>();
   private List<Destination> participants = new ArrayList<Destination>();
   private String uuiData = null;
+  private String externalContactId = null;
 
   
   /**
@@ -253,6 +254,24 @@ public class CreateCallRequest  implements Serializable {
   }
 
   
+  /**
+   * The external contact with which to associate the call.
+   **/
+  public CreateCallRequest externalContactId(String externalContactId) {
+    this.externalContactId = externalContactId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The external contact with which to associate the call.")
+  @JsonProperty("externalContactId")
+  public String getExternalContactId() {
+    return externalContactId;
+  }
+  public void setExternalContactId(String externalContactId) {
+    this.externalContactId = externalContactId;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -274,12 +293,13 @@ public class CreateCallRequest  implements Serializable {
         Objects.equals(this.routingSkillsIds, createCallRequest.routingSkillsIds) &&
         Objects.equals(this.conversationIds, createCallRequest.conversationIds) &&
         Objects.equals(this.participants, createCallRequest.participants) &&
-        Objects.equals(this.uuiData, createCallRequest.uuiData);
+        Objects.equals(this.uuiData, createCallRequest.uuiData) &&
+        Objects.equals(this.externalContactId, createCallRequest.externalContactId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(phoneNumber, callerId, callerIdName, callFromQueueId, callQueueId, callUserId, priority, languageId, routingSkillsIds, conversationIds, participants, uuiData);
+    return Objects.hash(phoneNumber, callerId, callerIdName, callFromQueueId, callQueueId, callUserId, priority, languageId, routingSkillsIds, conversationIds, participants, uuiData, externalContactId);
   }
 
   @Override
@@ -299,6 +319,7 @@ public class CreateCallRequest  implements Serializable {
     sb.append("    conversationIds: ").append(toIndentedString(conversationIds)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("    uuiData: ").append(toIndentedString(uuiData)).append("\n");
+    sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

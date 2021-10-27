@@ -28,7 +28,7 @@ public class RoutingConversationAttributesRequest  implements Serializable {
 
   
   /**
-   * Priority to be updated on in-queue conversation. Range:[-25000000, 25000000]
+   * Priority for the conversation.  Each point of priority is equivalent to one minute of time in queue.  Range:[-25000000, 25000000].  To reset, specify 0.
    * minimum: -25000000
    * maximum: 25000000
    **/
@@ -37,7 +37,7 @@ public class RoutingConversationAttributesRequest  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Priority to be updated on in-queue conversation. Range:[-25000000, 25000000]")
+  @ApiModelProperty(example = "null", value = "Priority for the conversation.  Each point of priority is equivalent to one minute of time in queue.  Range:[-25000000, 25000000].  To reset, specify 0.")
   @JsonProperty("priority")
   public Integer getPriority() {
     return priority;
@@ -48,14 +48,14 @@ public class RoutingConversationAttributesRequest  implements Serializable {
 
   
   /**
-   * Skills to be updated on in-queue conversation.
+   * Skill requirements for the conversation.  To remove all skill requirements, specify an empty list, i.e. [].
    **/
   public RoutingConversationAttributesRequest skillIds(List<String> skillIds) {
     this.skillIds = skillIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Skills to be updated on in-queue conversation.")
+  @ApiModelProperty(example = "null", value = "Skill requirements for the conversation.  To remove all skill requirements, specify an empty list, i.e. [].")
   @JsonProperty("skillIds")
   public List<String> getSkillIds() {
     return skillIds;
@@ -66,14 +66,14 @@ public class RoutingConversationAttributesRequest  implements Serializable {
 
   
   /**
-   * Language required on the in-queue conversation.
+   * Language requirement for the conversation.  To remove the language requirement, specify an empty string, i.e., \"\".
    **/
   public RoutingConversationAttributesRequest languageId(String languageId) {
     this.languageId = languageId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Language required on the in-queue conversation.")
+  @ApiModelProperty(example = "null", value = "Language requirement for the conversation.  To remove the language requirement, specify an empty string, i.e., \"\".")
   @JsonProperty("languageId")
   public String getLanguageId() {
     return languageId;

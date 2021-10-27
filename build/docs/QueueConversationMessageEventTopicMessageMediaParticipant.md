@@ -139,6 +139,7 @@ title: QueueConversationMessageEventTopicMessageMediaParticipant
 | KAKAO | &quot;KAKAO&quot; |
 | WEBMESSAGING | &quot;WEBMESSAGING&quot; |
 | OPEN | &quot;OPEN&quot; |
+| INSTAGRAM | &quot;INSTAGRAM&quot; |
 {: class="table table-striped"}
 
 

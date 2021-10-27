@@ -82,6 +82,7 @@ public class Station  implements Serializable {
   private Integer webRtcMediaDscp = null;
   private Boolean webRtcPersistentEnabled = null;
   private Boolean webRtcForceTurn = null;
+  private Integer webRtcCallAppearances = null;
   private String selfUri = null;
 
   
@@ -268,6 +269,13 @@ public class Station  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The number of call appearances on the station.")
+  @JsonProperty("webRtcCallAppearances")
+  public Integer getWebRtcCallAppearances() {
+    return webRtcCallAppearances;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -298,12 +306,13 @@ public class Station  implements Serializable {
         Objects.equals(this.webRtcMediaDscp, station.webRtcMediaDscp) &&
         Objects.equals(this.webRtcPersistentEnabled, station.webRtcPersistentEnabled) &&
         Objects.equals(this.webRtcForceTurn, station.webRtcForceTurn) &&
+        Objects.equals(this.webRtcCallAppearances, station.webRtcCallAppearances) &&
         Objects.equals(this.selfUri, station.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, status, userId, webRtcUserId, primaryEdge, secondaryEdge, type, lineAppearanceId, webRtcMediaDscp, webRtcPersistentEnabled, webRtcForceTurn, selfUri);
+    return Objects.hash(id, name, description, status, userId, webRtcUserId, primaryEdge, secondaryEdge, type, lineAppearanceId, webRtcMediaDscp, webRtcPersistentEnabled, webRtcForceTurn, webRtcCallAppearances, selfUri);
   }
 
   @Override
@@ -324,6 +333,7 @@ public class Station  implements Serializable {
     sb.append("    webRtcMediaDscp: ").append(toIndentedString(webRtcMediaDscp)).append("\n");
     sb.append("    webRtcPersistentEnabled: ").append(toIndentedString(webRtcPersistentEnabled)).append("\n");
     sb.append("    webRtcForceTurn: ").append(toIndentedString(webRtcForceTurn)).append("\n");
+    sb.append("    webRtcCallAppearances: ").append(toIndentedString(webRtcCallAppearances)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

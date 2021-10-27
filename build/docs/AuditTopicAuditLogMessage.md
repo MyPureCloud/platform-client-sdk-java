@@ -119,6 +119,7 @@ title: AuditTopicAuditLogMessage
 | ACCESSTOKEN | &quot;AccessToken&quot; |
 | ACTIONMAP | &quot;ActionMap&quot; |
 | ACTIONTEMPLATE | &quot;ActionTemplate&quot; |
+| AGENTROUTINGINFO | &quot;AgentRoutingInfo&quot; |
 | ASSIGNMENT | &quot;Assignment&quot; |
 | ATTEMPTLIMITS | &quot;AttemptLimits&quot; |
 | AUTHORGANIZATION | &quot;AuthOrganization&quot; |
@@ -186,6 +187,7 @@ title: AuditTopicAuditLogMessage
 | RESPONSE | &quot;Response&quot; |
 | ROLE | &quot;Role&quot; |
 | ROUTINGTRANSCRIPTIONSETTINGS | &quot;RoutingTranscriptionSettings&quot; |
+| ROUTINGUTILIZATIONTAG | &quot;RoutingUtilizationTag&quot; |
 | RULE | &quot;Rule&quot; |
 | RULESET | &quot;RuleSet&quot; |
 | SCHEDULE | &quot;Schedule&quot; |
@@ -195,10 +197,12 @@ title: AuditTopicAuditLogMessage
 | SEQUENCE | &quot;Sequence&quot; |
 | SEQUENCESCHEDULE | &quot;SequenceSchedule&quot; |
 | SESSIONTYPE | &quot;SessionType&quot; |
+| SHIFTTRADE | &quot;ShiftTrade&quot; |
 | SITE | &quot;Site&quot; |
 | SPEECHTEXTANALYTICSSETTINGS | &quot;SpeechTextAnalyticsSettings&quot; |
 | STATUS | &quot;Status&quot; |
 | TEAM | &quot;Team&quot; |
+| TIMEOFFREQUEST | &quot;TimeOffRequest&quot; |
 | TOPIC | &quot;Topic&quot; |
 | TRANSCRIPTIONSETTINGS | &quot;TranscriptionSettings&quot; |
 | TRIGGER | &quot;Trigger&quot; |

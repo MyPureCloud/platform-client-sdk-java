@@ -184,7 +184,8 @@ public class QueueConversationEventTopicMessage  implements Serializable {
     TELEGRAM("TELEGRAM"),
     KAKAO("KAKAO"),
     WEBMESSAGING("WEBMESSAGING"),
-    OPEN("OPEN");
+    OPEN("OPEN"),
+    INSTAGRAM("INSTAGRAM");
 
     private String value;
 

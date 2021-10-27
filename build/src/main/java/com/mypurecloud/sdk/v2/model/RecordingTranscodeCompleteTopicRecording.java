@@ -13,7 +13,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.RecordingTranscodeCompleteTopicMediaResult;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,8 +27,8 @@ public class RecordingTranscodeCompleteTopicRecording  implements Serializable {
   private String conversationId = null;
   private String fileState = null;
   private List<RecordingTranscodeCompleteTopicMediaResult> mediaUris = new ArrayList<RecordingTranscodeCompleteTopicMediaResult>();
-  private BigDecimal estimatedTranscodeTimeMs = null;
-  private BigDecimal actualTranscodeTimeMs = null;
+  private Integer estimatedTranscodeTimeMs = null;
+  private Integer actualTranscodeTimeMs = null;
 
   
   /**
@@ -102,34 +101,34 @@ public class RecordingTranscodeCompleteTopicRecording  implements Serializable {
   
   /**
    **/
-  public RecordingTranscodeCompleteTopicRecording estimatedTranscodeTimeMs(BigDecimal estimatedTranscodeTimeMs) {
+  public RecordingTranscodeCompleteTopicRecording estimatedTranscodeTimeMs(Integer estimatedTranscodeTimeMs) {
     this.estimatedTranscodeTimeMs = estimatedTranscodeTimeMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("estimatedTranscodeTimeMs")
-  public BigDecimal getEstimatedTranscodeTimeMs() {
+  public Integer getEstimatedTranscodeTimeMs() {
     return estimatedTranscodeTimeMs;
   }
-  public void setEstimatedTranscodeTimeMs(BigDecimal estimatedTranscodeTimeMs) {
+  public void setEstimatedTranscodeTimeMs(Integer estimatedTranscodeTimeMs) {
     this.estimatedTranscodeTimeMs = estimatedTranscodeTimeMs;
   }
 
   
   /**
    **/
-  public RecordingTranscodeCompleteTopicRecording actualTranscodeTimeMs(BigDecimal actualTranscodeTimeMs) {
+  public RecordingTranscodeCompleteTopicRecording actualTranscodeTimeMs(Integer actualTranscodeTimeMs) {
     this.actualTranscodeTimeMs = actualTranscodeTimeMs;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("actualTranscodeTimeMs")
-  public BigDecimal getActualTranscodeTimeMs() {
+  public Integer getActualTranscodeTimeMs() {
     return actualTranscodeTimeMs;
   }
-  public void setActualTranscodeTimeMs(BigDecimal actualTranscodeTimeMs) {
+  public void setActualTranscodeTimeMs(Integer actualTranscodeTimeMs) {
     this.actualTranscodeTimeMs = actualTranscodeTimeMs;
   }
 

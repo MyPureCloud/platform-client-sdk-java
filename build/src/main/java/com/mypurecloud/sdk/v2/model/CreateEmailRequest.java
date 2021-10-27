@@ -87,6 +87,7 @@ public class CreateEmailRequest  implements Serializable {
   private DirectionEnum direction = null;
   private String htmlBody = null;
   private String textBody = null;
+  private String externalContactId = null;
 
   
   /**
@@ -359,6 +360,24 @@ public class CreateEmailRequest  implements Serializable {
   }
 
   
+  /**
+   * The external contact with which the email should be associated. This field is only valid for OUTBOUND email.
+   **/
+  public CreateEmailRequest externalContactId(String externalContactId) {
+    this.externalContactId = externalContactId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The external contact with which the email should be associated. This field is only valid for OUTBOUND email.")
+  @JsonProperty("externalContactId")
+  public String getExternalContactId() {
+    return externalContactId;
+  }
+  public void setExternalContactId(String externalContactId) {
+    this.externalContactId = externalContactId;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -383,12 +402,13 @@ public class CreateEmailRequest  implements Serializable {
         Objects.equals(this.subject, createEmailRequest.subject) &&
         Objects.equals(this.direction, createEmailRequest.direction) &&
         Objects.equals(this.htmlBody, createEmailRequest.htmlBody) &&
-        Objects.equals(this.textBody, createEmailRequest.textBody);
+        Objects.equals(this.textBody, createEmailRequest.textBody) &&
+        Objects.equals(this.externalContactId, createEmailRequest.externalContactId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(queueId, flowId, provider, skillIds, languageId, priority, attributes, toAddress, toName, fromAddress, fromName, subject, direction, htmlBody, textBody);
+    return Objects.hash(queueId, flowId, provider, skillIds, languageId, priority, attributes, toAddress, toName, fromAddress, fromName, subject, direction, htmlBody, textBody, externalContactId);
   }
 
   @Override
@@ -411,6 +431,7 @@ public class CreateEmailRequest  implements Serializable {
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    htmlBody: ").append(toIndentedString(htmlBody)).append("\n");
     sb.append("    textBody: ").append(toIndentedString(textBody)).append("\n");
+    sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

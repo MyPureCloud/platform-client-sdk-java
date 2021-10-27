@@ -39,12 +39,13 @@ public class MemberGroup  implements Serializable {
     }
   }
   /**
-   * The type of group, e.g. TEAM, etc.
+   * The group type
    */
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    TEAM("TEAM");
+    TEAM("TEAM"),
+    GROUP("GROUP");
 
     private String value;
 
@@ -119,14 +120,14 @@ public class MemberGroup  implements Serializable {
 
   
   /**
-   * The type of group, e.g. TEAM, etc.
+   * The group type
    **/
   public MemberGroup type(TypeEnum type) {
     this.type = type;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The type of group, e.g. TEAM, etc.")
+  @ApiModelProperty(example = "null", value = "The group type")
   @JsonProperty("type")
   public TypeEnum getType() {
     return type;
@@ -136,21 +137,10 @@ public class MemberGroup  implements Serializable {
   }
 
   
-  /**
-   * The number of members in this group
-   **/
-  public MemberGroup memberCount(Integer memberCount) {
-    this.memberCount = memberCount;
-    return this;
-  }
-  
   @ApiModelProperty(example = "null", value = "The number of members in this group")
   @JsonProperty("memberCount")
   public Integer getMemberCount() {
     return memberCount;
-  }
-  public void setMemberCount(Integer memberCount) {
-    this.memberCount = memberCount;
   }
 
   

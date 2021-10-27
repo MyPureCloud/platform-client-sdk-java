@@ -50,6 +50,7 @@ title: ReportingTurnAction
 | ADDFLOWMILESTONEACTION | &quot;AddFlowMilestoneAction&quot; |
 | ASKFORSTRINGACTION | &quot;AskForStringAction&quot; |
 | SENDRESPONSEACTION | &quot;SendResponseAction&quot; |
+| GETRESPONSEACTION | &quot;GetResponseAction&quot; |
 | UNKNOWN | &quot;Unknown&quot; |
 {: class="table table-striped"}
 

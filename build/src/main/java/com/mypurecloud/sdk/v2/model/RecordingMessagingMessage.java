@@ -10,9 +10,11 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.ButtonResponse;
 import com.mypurecloud.sdk.v2.model.ExternalContact;
 import com.mypurecloud.sdk.v2.model.MessageMediaAttachment;
 import com.mypurecloud.sdk.v2.model.MessageStickerAttachment;
+import com.mypurecloud.sdk.v2.model.QuickReply;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -36,16 +38,19 @@ public class RecordingMessagingMessage  implements Serializable {
   private String messageText = null;
   private List<MessageMediaAttachment> messageMediaAttachments = new ArrayList<MessageMediaAttachment>();
   private List<MessageStickerAttachment> messageStickerAttachments = new ArrayList<MessageStickerAttachment>();
+  private List<QuickReply> quickReplies = new ArrayList<QuickReply>();
+  private ButtonResponse buttonResponse = null;
 
   
   /**
+   * The message sender session id.
    **/
   public RecordingMessagingMessage from(String from) {
     this.from = from;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The message sender session id.")
   @JsonProperty("from")
   public String getFrom() {
     return from;
@@ -56,13 +61,14 @@ public class RecordingMessagingMessage  implements Serializable {
 
   
   /**
+   * The user who sent this message.
    **/
   public RecordingMessagingMessage fromUser(User fromUser) {
     this.fromUser = fromUser;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The user who sent this message.")
   @JsonProperty("fromUser")
   public User getFromUser() {
     return fromUser;
@@ -73,13 +79,14 @@ public class RecordingMessagingMessage  implements Serializable {
 
   
   /**
+   * The PureCloud external contact sender details.
    **/
   public RecordingMessagingMessage fromExternalContact(ExternalContact fromExternalContact) {
     this.fromExternalContact = fromExternalContact;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The PureCloud external contact sender details.")
   @JsonProperty("fromExternalContact")
   public ExternalContact getFromExternalContact() {
     return fromExternalContact;
@@ -90,13 +97,14 @@ public class RecordingMessagingMessage  implements Serializable {
 
   
   /**
+   * The message recipient.
    **/
   public RecordingMessagingMessage to(String to) {
     this.to = to;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The message recipient.")
   @JsonProperty("to")
   public String getTo() {
     return to;
@@ -107,14 +115,14 @@ public class RecordingMessagingMessage  implements Serializable {
 
   
   /**
-   * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   * The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public RecordingMessagingMessage timestamp(Date timestamp) {
     this.timestamp = timestamp;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", value = "The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("timestamp")
   public Date getTimestamp() {
     return timestamp;
@@ -125,13 +133,14 @@ public class RecordingMessagingMessage  implements Serializable {
 
   
   /**
+   * A globally unique identifier for this communication.
    **/
   public RecordingMessagingMessage id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A globally unique identifier for this communication.")
   @JsonProperty("id")
   public String getId() {
     return id;
@@ -142,13 +151,14 @@ public class RecordingMessagingMessage  implements Serializable {
 
   
   /**
+   * The content of this message.
    **/
   public RecordingMessagingMessage messageText(String messageText) {
     this.messageText = messageText;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The content of this message.")
   @JsonProperty("messageText")
   public String getMessageText() {
     return messageText;
@@ -159,13 +169,14 @@ public class RecordingMessagingMessage  implements Serializable {
 
   
   /**
+   * List of media objects attached  with this message.
    **/
   public RecordingMessagingMessage messageMediaAttachments(List<MessageMediaAttachment> messageMediaAttachments) {
     this.messageMediaAttachments = messageMediaAttachments;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of media objects attached  with this message.")
   @JsonProperty("messageMediaAttachments")
   public List<MessageMediaAttachment> getMessageMediaAttachments() {
     return messageMediaAttachments;
@@ -176,19 +187,56 @@ public class RecordingMessagingMessage  implements Serializable {
 
   
   /**
+   * List of message stickers attached with this message.
    **/
   public RecordingMessagingMessage messageStickerAttachments(List<MessageStickerAttachment> messageStickerAttachments) {
     this.messageStickerAttachments = messageStickerAttachments;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of message stickers attached with this message.")
   @JsonProperty("messageStickerAttachments")
   public List<MessageStickerAttachment> getMessageStickerAttachments() {
     return messageStickerAttachments;
   }
   public void setMessageStickerAttachments(List<MessageStickerAttachment> messageStickerAttachments) {
     this.messageStickerAttachments = messageStickerAttachments;
+  }
+
+  
+  /**
+   * List of quick reply options offered with this message.
+   **/
+  public RecordingMessagingMessage quickReplies(List<QuickReply> quickReplies) {
+    this.quickReplies = quickReplies;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of quick reply options offered with this message.")
+  @JsonProperty("quickReplies")
+  public List<QuickReply> getQuickReplies() {
+    return quickReplies;
+  }
+  public void setQuickReplies(List<QuickReply> quickReplies) {
+    this.quickReplies = quickReplies;
+  }
+
+  
+  /**
+   * Button Response selected by user for this message.
+   **/
+  public RecordingMessagingMessage buttonResponse(ButtonResponse buttonResponse) {
+    this.buttonResponse = buttonResponse;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Button Response selected by user for this message.")
+  @JsonProperty("buttonResponse")
+  public ButtonResponse getButtonResponse() {
+    return buttonResponse;
+  }
+  public void setButtonResponse(ButtonResponse buttonResponse) {
+    this.buttonResponse = buttonResponse;
   }
 
   
@@ -210,12 +258,14 @@ public class RecordingMessagingMessage  implements Serializable {
         Objects.equals(this.id, recordingMessagingMessage.id) &&
         Objects.equals(this.messageText, recordingMessagingMessage.messageText) &&
         Objects.equals(this.messageMediaAttachments, recordingMessagingMessage.messageMediaAttachments) &&
-        Objects.equals(this.messageStickerAttachments, recordingMessagingMessage.messageStickerAttachments);
+        Objects.equals(this.messageStickerAttachments, recordingMessagingMessage.messageStickerAttachments) &&
+        Objects.equals(this.quickReplies, recordingMessagingMessage.quickReplies) &&
+        Objects.equals(this.buttonResponse, recordingMessagingMessage.buttonResponse);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, messageText, messageMediaAttachments, messageStickerAttachments);
+    return Objects.hash(from, fromUser, fromExternalContact, to, timestamp, id, messageText, messageMediaAttachments, messageStickerAttachments, quickReplies, buttonResponse);
   }
 
   @Override
@@ -232,6 +282,8 @@ public class RecordingMessagingMessage  implements Serializable {
     sb.append("    messageText: ").append(toIndentedString(messageText)).append("\n");
     sb.append("    messageMediaAttachments: ").append(toIndentedString(messageMediaAttachments)).append("\n");
     sb.append("    messageStickerAttachments: ").append(toIndentedString(messageStickerAttachments)).append("\n");
+    sb.append("    quickReplies: ").append(toIndentedString(quickReplies)).append("\n");
+    sb.append("    buttonResponse: ").append(toIndentedString(buttonResponse)).append("\n");
     sb.append("}");
     return sb.toString();
   }

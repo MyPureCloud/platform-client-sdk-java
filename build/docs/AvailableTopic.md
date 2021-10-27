@@ -21,7 +21,7 @@ title: AvailableTopic
 | **requiresCurrentUserOrPermission** | <!----><!---->**Boolean**<!----> | True if permissions are only required when the topic user ID does not match the subscribing user ID |  [optional] |
 | **transports** | <!---->[**List&lt;TransportsEnum&gt;**](#TransportsEnum)<!----> | Transports that support events for the topic |  [optional] |
 | **publicApiTemplateUriPaths** | <!----><!---->**List&lt;String&gt;**<!----> |  |  [optional] |
-| **topicParameters** | <!----><!---->**List&lt;String&gt;**<!----> | Parameters in the topic name that can be substituted |  [optional] |
+| **topicParameters** | <!----><!---->**List&lt;String&gt;**<!----> | Parameters in the topic name that can be substituted, in the order they appear in the topic name |  [optional] |
 {: class="table table-striped"}
 
 

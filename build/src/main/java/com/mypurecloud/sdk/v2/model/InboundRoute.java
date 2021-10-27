@@ -181,7 +181,7 @@ public class InboundRoute  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The sender email to use for outgoing replies.")
+  @ApiModelProperty(example = "null", value = "The sender email to use for outgoing replies.")
   @JsonProperty("fromEmail")
   public String getFromEmail() {
     return fromEmail;

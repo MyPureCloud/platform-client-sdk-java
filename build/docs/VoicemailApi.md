@@ -31,6 +31,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postVoicemailSearch**](VoicemailApi.html#postVoicemailSearch) | Search voicemails |
 | [**putVoicemailMessage**](VoicemailApi.html#putVoicemailMessage) | Update a voicemail message |
 | [**putVoicemailPolicy**](VoicemailApi.html#putVoicemailPolicy) | Update a policy |
+| [**putVoicemailUserpolicy**](VoicemailApi.html#putVoicemailUserpolicy) | Update a user&#39;s voicemail policy |
 {: class="table-striped"}
 
 <a name="deleteVoicemailMessage"></a>
@@ -1531,4 +1532,69 @@ try {
 ### Return type
 
 [**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html)
+
+<a name="putVoicemailUserpolicy"></a>
+
+# **putVoicemailUserpolicy**
+
+
+
+> [VoicemailUserPolicy](VoicemailUserPolicy.html) putVoicemailUserpolicy(userId, body)
+
+Update a user&#39;s voicemail policy
+
+
+
+Wraps PUT /api/v2/voicemail/userpolicies/{userId}  
+
+Requires ALL permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.VoicemailApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+VoicemailApi apiInstance = new VoicemailApi();
+String userId = "userId_example"; // String | User ID
+VoicemailUserPolicy body = new VoicemailUserPolicy(); // VoicemailUserPolicy | The user's voicemail policy
+try {
+    VoicemailUserPolicy result = apiInstance.putVoicemailUserpolicy(userId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VoicemailApi#putVoicemailUserpolicy");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+| **body** | [**VoicemailUserPolicy**](VoicemailUserPolicy.html)| The user&#39;s voicemail policy | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**VoicemailUserPolicy**](VoicemailUserPolicy.html)
 

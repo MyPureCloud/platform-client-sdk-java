@@ -44,14 +44,14 @@ public class ScheduleGenerationResultSummary  implements Serializable {
 
   
   /**
-   * The run ID for the schedule generation. Reference this when requesting support
+   * The ID of the schedule generation run. Reference this when requesting support
    **/
   public ScheduleGenerationResultSummary runId(String runId) {
     this.runId = runId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The run ID for the schedule generation. Reference this when requesting support")
+  @ApiModelProperty(example = "null", value = "The ID of the schedule generation run. Reference this when requesting support")
   @JsonProperty("runId")
   public String getRunId() {
     return runId;

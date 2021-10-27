@@ -5324,7 +5324,7 @@ public class RoutingApi {
   
   /**
    * Update attributes of an in-queue conversation
-   * Returns an object indicating the updated values of all settable attributes. Supported attributes: priority (each point of priority is equivalent to one minute of time in queue), skillIds and languageId.
+   * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
    * @param conversationId Conversation ID (required)
    * @param body Conversation Attributes (required)
    * @return RoutingConversationAttributesResponse
@@ -5337,7 +5337,7 @@ public class RoutingApi {
 
   /**
    * Update attributes of an in-queue conversation
-   * Returns an object indicating the updated values of all settable attributes. Supported attributes: priority (each point of priority is equivalent to one minute of time in queue), skillIds and languageId.
+   * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
    * @param conversationId Conversation ID (required)
    * @param body Conversation Attributes (required)
    * @return RoutingConversationAttributesResponse
@@ -5358,7 +5358,7 @@ public class RoutingApi {
 
   /**
    * Update attributes of an in-queue conversation
-   * Returns an object indicating the updated values of all settable attributes. Supported attributes: priority (each point of priority is equivalent to one minute of time in queue), skillIds and languageId.
+   * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
    * @param request The request object
    * @return RoutingConversationAttributesResponse
    * @throws ApiException if the request fails on the server
@@ -5377,7 +5377,7 @@ public class RoutingApi {
 
   /**
    * Update attributes of an in-queue conversation
-   * Returns an object indicating the updated values of all settable attributes. Supported attributes: priority (each point of priority is equivalent to one minute of time in queue), skillIds and languageId.
+   * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

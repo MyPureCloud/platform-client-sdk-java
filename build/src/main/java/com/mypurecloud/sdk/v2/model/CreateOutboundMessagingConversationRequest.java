@@ -79,7 +79,6 @@ public class CreateOutboundMessagingConversationRequest  implements Serializable
   private ToAddressMessengerTypeEnum toAddressMessengerType = null;
   private Boolean useExistingConversation = null;
   private String externalContactId = null;
-  private String externalOrganizationId = null;
 
   
   /**
@@ -155,38 +154,20 @@ public class CreateOutboundMessagingConversationRequest  implements Serializable
 
   
   /**
-   * The external contact Id of the recipient of the message.
+   * The external contact with which the message will be associated.
    **/
   public CreateOutboundMessagingConversationRequest externalContactId(String externalContactId) {
     this.externalContactId = externalContactId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The external contact Id of the recipient of the message.")
+  @ApiModelProperty(example = "null", value = "The external contact with which the message will be associated.")
   @JsonProperty("externalContactId")
   public String getExternalContactId() {
     return externalContactId;
   }
   public void setExternalContactId(String externalContactId) {
     this.externalContactId = externalContactId;
-  }
-
-  
-  /**
-   * The external organization Id of the recipient of the message.
-   **/
-  public CreateOutboundMessagingConversationRequest externalOrganizationId(String externalOrganizationId) {
-    this.externalOrganizationId = externalOrganizationId;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The external organization Id of the recipient of the message.")
-  @JsonProperty("externalOrganizationId")
-  public String getExternalOrganizationId() {
-    return externalOrganizationId;
-  }
-  public void setExternalOrganizationId(String externalOrganizationId) {
-    this.externalOrganizationId = externalOrganizationId;
   }
 
   
@@ -204,13 +185,12 @@ public class CreateOutboundMessagingConversationRequest  implements Serializable
         Objects.equals(this.toAddress, createOutboundMessagingConversationRequest.toAddress) &&
         Objects.equals(this.toAddressMessengerType, createOutboundMessagingConversationRequest.toAddressMessengerType) &&
         Objects.equals(this.useExistingConversation, createOutboundMessagingConversationRequest.useExistingConversation) &&
-        Objects.equals(this.externalContactId, createOutboundMessagingConversationRequest.externalContactId) &&
-        Objects.equals(this.externalOrganizationId, createOutboundMessagingConversationRequest.externalOrganizationId);
+        Objects.equals(this.externalContactId, createOutboundMessagingConversationRequest.externalContactId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(queueId, toAddress, toAddressMessengerType, useExistingConversation, externalContactId, externalOrganizationId);
+    return Objects.hash(queueId, toAddress, toAddressMessengerType, useExistingConversation, externalContactId);
   }
 
   @Override
@@ -223,7 +203,6 @@ public class CreateOutboundMessagingConversationRequest  implements Serializable
     sb.append("    toAddressMessengerType: ").append(toIndentedString(toAddressMessengerType)).append("\n");
     sb.append("    useExistingConversation: ").append(toIndentedString(useExistingConversation)).append("\n");
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
-    sb.append("    externalOrganizationId: ").append(toIndentedString(externalOrganizationId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -131,13 +131,14 @@ public class MessageMediaAttachment  implements Serializable {
 
   
   /**
+   * The name of the media object.
    **/
   public MessageMediaAttachment name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "The name of the media object.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -148,13 +149,14 @@ public class MessageMediaAttachment  implements Serializable {
 
   
   /**
+   * A globally unique identifier for the media object.
    **/
   public MessageMediaAttachment id(String id) {
     this.id = id;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "A globally unique identifier for the media object.")
   @JsonProperty("id")
   public String getId() {
     return id;

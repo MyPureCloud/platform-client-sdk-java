@@ -51,7 +51,8 @@ public class GetNotificationsAvailabletopicsRequest {
 		TRANSPORTS("transports"), 
 		PUBLICAPITEMPLATEURIPATHS("publicApiTemplateUriPaths"), 
 		REQUIRESPERMISSIONS("requiresPermissions"), 
-		PERMISSIONDETAILS("permissionDetails");
+		PERMISSIONDETAILS("permissionDetails"), 
+		TOPICPARAMETERS("topicParameters");
 
 		private String value;
 

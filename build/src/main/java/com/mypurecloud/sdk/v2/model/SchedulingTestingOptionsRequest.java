@@ -24,6 +24,7 @@ public class SchedulingTestingOptionsRequest  implements Serializable {
   private Boolean delayScheduling = null;
   private Boolean failScheduling = null;
   private Boolean populateWarnings = null;
+  private Boolean populateDeprecatedWarnings = null;
 
   
   /**
@@ -98,6 +99,24 @@ public class SchedulingTestingOptionsRequest  implements Serializable {
   }
 
   
+  /**
+   * Whether to populate deprecated warnings in the generated schedule
+   **/
+  public SchedulingTestingOptionsRequest populateDeprecatedWarnings(Boolean populateDeprecatedWarnings) {
+    this.populateDeprecatedWarnings = populateDeprecatedWarnings;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether to populate deprecated warnings in the generated schedule")
+  @JsonProperty("populateDeprecatedWarnings")
+  public Boolean getPopulateDeprecatedWarnings() {
+    return populateDeprecatedWarnings;
+  }
+  public void setPopulateDeprecatedWarnings(Boolean populateDeprecatedWarnings) {
+    this.populateDeprecatedWarnings = populateDeprecatedWarnings;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -111,12 +130,13 @@ public class SchedulingTestingOptionsRequest  implements Serializable {
     return Objects.equals(this.fastScheduling, schedulingTestingOptionsRequest.fastScheduling) &&
         Objects.equals(this.delayScheduling, schedulingTestingOptionsRequest.delayScheduling) &&
         Objects.equals(this.failScheduling, schedulingTestingOptionsRequest.failScheduling) &&
-        Objects.equals(this.populateWarnings, schedulingTestingOptionsRequest.populateWarnings);
+        Objects.equals(this.populateWarnings, schedulingTestingOptionsRequest.populateWarnings) &&
+        Objects.equals(this.populateDeprecatedWarnings, schedulingTestingOptionsRequest.populateDeprecatedWarnings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fastScheduling, delayScheduling, failScheduling, populateWarnings);
+    return Objects.hash(fastScheduling, delayScheduling, failScheduling, populateWarnings, populateDeprecatedWarnings);
   }
 
   @Override
@@ -128,6 +148,7 @@ public class SchedulingTestingOptionsRequest  implements Serializable {
     sb.append("    delayScheduling: ").append(toIndentedString(delayScheduling)).append("\n");
     sb.append("    failScheduling: ").append(toIndentedString(failScheduling)).append("\n");
     sb.append("    populateWarnings: ").append(toIndentedString(populateWarnings)).append("\n");
+    sb.append("    populateDeprecatedWarnings: ").append(toIndentedString(populateDeprecatedWarnings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

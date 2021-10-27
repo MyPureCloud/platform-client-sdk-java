@@ -367,14 +367,14 @@ public class AvailableTopic  implements Serializable {
 
   
   /**
-   * Parameters in the topic name that can be substituted
+   * Parameters in the topic name that can be substituted, in the order they appear in the topic name
    **/
   public AvailableTopic topicParameters(List<String> topicParameters) {
     this.topicParameters = topicParameters;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Parameters in the topic name that can be substituted")
+  @ApiModelProperty(example = "null", value = "Parameters in the topic name that can be substituted, in the order they appear in the topic name")
   @JsonProperty("topicParameters")
   public List<String> getTopicParameters() {
     return topicParameters;

@@ -50,6 +50,7 @@ import com.mypurecloud.sdk.v2.api.request.PostVoicemailMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostVoicemailSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PutVoicemailMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PutVoicemailPolicyRequest;
+import com.mypurecloud.sdk.v2.api.request.PutVoicemailUserpolicyRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1883,6 +1884,82 @@ public class VoicemailApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<VoicemailOrganizationPolicy> response = (ApiResponse<VoicemailOrganizationPolicy>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update a user&#39;s voicemail policy
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<VoicemailUserPolicy> putVoicemailUserpolicyAsync(PutVoicemailUserpolicyRequest request, final AsyncApiCallback<VoicemailUserPolicy> callback) {
+    try {
+      final SettableFuture<VoicemailUserPolicy> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {}, new AsyncApiCallback<ApiResponse<VoicemailUserPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailUserPolicy> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update a user&#39;s voicemail policy
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<VoicemailUserPolicy>> putVoicemailUserpolicyAsync(ApiRequest<VoicemailUserPolicy> request, final AsyncApiCallback<ApiResponse<VoicemailUserPolicy>> callback) {
+    try {
+      final SettableFuture<ApiResponse<VoicemailUserPolicy>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<VoicemailUserPolicy>() {}, new AsyncApiCallback<ApiResponse<VoicemailUserPolicy>>() {
+        @Override
+        public void onCompleted(ApiResponse<VoicemailUserPolicy> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailUserPolicy> response = (ApiResponse<VoicemailUserPolicy>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<VoicemailUserPolicy> response = (ApiResponse<VoicemailUserPolicy>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

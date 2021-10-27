@@ -42,7 +42,8 @@ public class LearningModuleInformStep  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     URL("Url"),
     CONTENT("Content"),
-    GENESYSBUILTINCOURSE("GenesysBuiltInCourse");
+    GENESYSBUILTINCOURSE("GenesysBuiltInCourse"),
+    RICHTEXT("RichText");
 
     private String value;
 

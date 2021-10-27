@@ -47,6 +47,7 @@ import com.mypurecloud.sdk.v2.api.request.PostVoicemailMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostVoicemailSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PutVoicemailMessageRequest;
 import com.mypurecloud.sdk.v2.api.request.PutVoicemailPolicyRequest;
+import com.mypurecloud.sdk.v2.api.request.PutVoicemailUserpolicyRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1984,6 +1985,89 @@ public class VoicemailApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<VoicemailOrganizationPolicy> response = (ApiResponse<VoicemailOrganizationPolicy>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Update a user&#39;s voicemail policy
+   * 
+   * @param userId User ID (required)
+   * @param body The user&#39;s voicemail policy (required)
+   * @return VoicemailUserPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public VoicemailUserPolicy putVoicemailUserpolicy(String userId, VoicemailUserPolicy body) throws IOException, ApiException {
+    return  putVoicemailUserpolicy(createPutVoicemailUserpolicyRequest(userId, body));
+  }
+
+  /**
+   * Update a user&#39;s voicemail policy
+   * 
+   * @param userId User ID (required)
+   * @param body The user&#39;s voicemail policy (required)
+   * @return VoicemailUserPolicy
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<VoicemailUserPolicy> putVoicemailUserpolicyWithHttpInfo(String userId, VoicemailUserPolicy body) throws IOException {
+    return putVoicemailUserpolicy(createPutVoicemailUserpolicyRequest(userId, body).withHttpInfo());
+  }
+
+  private PutVoicemailUserpolicyRequest createPutVoicemailUserpolicyRequest(String userId, VoicemailUserPolicy body) {
+    return PutVoicemailUserpolicyRequest.builder()
+            .withUserId(userId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Update a user&#39;s voicemail policy
+   * 
+   * @param request The request object
+   * @return VoicemailUserPolicy
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public VoicemailUserPolicy putVoicemailUserpolicy(PutVoicemailUserpolicyRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<VoicemailUserPolicy> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<VoicemailUserPolicy>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update a user&#39;s voicemail policy
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<VoicemailUserPolicy> putVoicemailUserpolicy(ApiRequest<VoicemailUserPolicy> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<VoicemailUserPolicy>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailUserPolicy> response = (ApiResponse<VoicemailUserPolicy>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<VoicemailUserPolicy> response = (ApiResponse<VoicemailUserPolicy>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

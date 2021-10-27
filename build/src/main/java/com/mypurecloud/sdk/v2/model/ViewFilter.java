@@ -1309,6 +1309,19 @@ public class ViewFilter  implements Serializable {
   private Boolean isAgentOwnedCallback = null;
   private List<String> agentCallbackOwnerIds = new ArrayList<String>();
   private List<TranscriptTopics> transcriptTopics = new ArrayList<TranscriptTopics>();
+  private List<String> journeyFrequencyCapReasons = new ArrayList<String>();
+  private List<String> journeyBlockingActionMapIds = new ArrayList<String>();
+  private List<String> journeyActionTargetIds = new ArrayList<String>();
+  private List<String> journeyBlockingScheduleGroupIds = new ArrayList<String>();
+  private List<String> journeyBlockingEmergencyScheduleGroupIds = new ArrayList<String>();
+  private List<String> journeyUrlEqualConditions = new ArrayList<String>();
+  private List<String> journeyUrlNotEqualConditions = new ArrayList<String>();
+  private List<String> journeyUrlStartsWithConditions = new ArrayList<String>();
+  private List<String> journeyUrlEndsWithConditions = new ArrayList<String>();
+  private List<String> journeyUrlContainsAnyConditions = new ArrayList<String>();
+  private List<String> journeyUrlNotContainsAnyConditions = new ArrayList<String>();
+  private List<String> journeyUrlContainsAllConditions = new ArrayList<String>();
+  private List<String> journeyUrlNotContainsAllConditions = new ArrayList<String>();
 
   
   /**
@@ -3543,6 +3556,240 @@ public class ViewFilter  implements Serializable {
   }
 
   
+  /**
+   * The list of frequency cap reasons to filter offer constraints
+   **/
+  public ViewFilter journeyFrequencyCapReasons(List<String> journeyFrequencyCapReasons) {
+    this.journeyFrequencyCapReasons = journeyFrequencyCapReasons;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of frequency cap reasons to filter offer constraints")
+  @JsonProperty("journeyFrequencyCapReasons")
+  public List<String> getJourneyFrequencyCapReasons() {
+    return journeyFrequencyCapReasons;
+  }
+  public void setJourneyFrequencyCapReasons(List<String> journeyFrequencyCapReasons) {
+    this.journeyFrequencyCapReasons = journeyFrequencyCapReasons;
+  }
+
+  
+  /**
+   * The list of blocking action maps to filter offer constraints
+   **/
+  public ViewFilter journeyBlockingActionMapIds(List<String> journeyBlockingActionMapIds) {
+    this.journeyBlockingActionMapIds = journeyBlockingActionMapIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of blocking action maps to filter offer constraints")
+  @JsonProperty("journeyBlockingActionMapIds")
+  public List<String> getJourneyBlockingActionMapIds() {
+    return journeyBlockingActionMapIds;
+  }
+  public void setJourneyBlockingActionMapIds(List<String> journeyBlockingActionMapIds) {
+    this.journeyBlockingActionMapIds = journeyBlockingActionMapIds;
+  }
+
+  
+  /**
+   * The list of action targets to filter offer constraints
+   **/
+  public ViewFilter journeyActionTargetIds(List<String> journeyActionTargetIds) {
+    this.journeyActionTargetIds = journeyActionTargetIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of action targets to filter offer constraints")
+  @JsonProperty("journeyActionTargetIds")
+  public List<String> getJourneyActionTargetIds() {
+    return journeyActionTargetIds;
+  }
+  public void setJourneyActionTargetIds(List<String> journeyActionTargetIds) {
+    this.journeyActionTargetIds = journeyActionTargetIds;
+  }
+
+  
+  /**
+   * The list of blocking schedule groups to filter offer constraints
+   **/
+  public ViewFilter journeyBlockingScheduleGroupIds(List<String> journeyBlockingScheduleGroupIds) {
+    this.journeyBlockingScheduleGroupIds = journeyBlockingScheduleGroupIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of blocking schedule groups to filter offer constraints")
+  @JsonProperty("journeyBlockingScheduleGroupIds")
+  public List<String> getJourneyBlockingScheduleGroupIds() {
+    return journeyBlockingScheduleGroupIds;
+  }
+  public void setJourneyBlockingScheduleGroupIds(List<String> journeyBlockingScheduleGroupIds) {
+    this.journeyBlockingScheduleGroupIds = journeyBlockingScheduleGroupIds;
+  }
+
+  
+  /**
+   * The list of emergency schedule groups to filter offer constraints
+   **/
+  public ViewFilter journeyBlockingEmergencyScheduleGroupIds(List<String> journeyBlockingEmergencyScheduleGroupIds) {
+    this.journeyBlockingEmergencyScheduleGroupIds = journeyBlockingEmergencyScheduleGroupIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of emergency schedule groups to filter offer constraints")
+  @JsonProperty("journeyBlockingEmergencyScheduleGroupIds")
+  public List<String> getJourneyBlockingEmergencyScheduleGroupIds() {
+    return journeyBlockingEmergencyScheduleGroupIds;
+  }
+  public void setJourneyBlockingEmergencyScheduleGroupIds(List<String> journeyBlockingEmergencyScheduleGroupIds) {
+    this.journeyBlockingEmergencyScheduleGroupIds = journeyBlockingEmergencyScheduleGroupIds;
+  }
+
+  
+  /**
+   * The list of url equal conditions to filter offer constraints
+   **/
+  public ViewFilter journeyUrlEqualConditions(List<String> journeyUrlEqualConditions) {
+    this.journeyUrlEqualConditions = journeyUrlEqualConditions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of url equal conditions to filter offer constraints")
+  @JsonProperty("journeyUrlEqualConditions")
+  public List<String> getJourneyUrlEqualConditions() {
+    return journeyUrlEqualConditions;
+  }
+  public void setJourneyUrlEqualConditions(List<String> journeyUrlEqualConditions) {
+    this.journeyUrlEqualConditions = journeyUrlEqualConditions;
+  }
+
+  
+  /**
+   * The list of url not equal conditions to filter offer constraints
+   **/
+  public ViewFilter journeyUrlNotEqualConditions(List<String> journeyUrlNotEqualConditions) {
+    this.journeyUrlNotEqualConditions = journeyUrlNotEqualConditions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of url not equal conditions to filter offer constraints")
+  @JsonProperty("journeyUrlNotEqualConditions")
+  public List<String> getJourneyUrlNotEqualConditions() {
+    return journeyUrlNotEqualConditions;
+  }
+  public void setJourneyUrlNotEqualConditions(List<String> journeyUrlNotEqualConditions) {
+    this.journeyUrlNotEqualConditions = journeyUrlNotEqualConditions;
+  }
+
+  
+  /**
+   * The list of url starts with conditions to filter offer constraints
+   **/
+  public ViewFilter journeyUrlStartsWithConditions(List<String> journeyUrlStartsWithConditions) {
+    this.journeyUrlStartsWithConditions = journeyUrlStartsWithConditions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of url starts with conditions to filter offer constraints")
+  @JsonProperty("journeyUrlStartsWithConditions")
+  public List<String> getJourneyUrlStartsWithConditions() {
+    return journeyUrlStartsWithConditions;
+  }
+  public void setJourneyUrlStartsWithConditions(List<String> journeyUrlStartsWithConditions) {
+    this.journeyUrlStartsWithConditions = journeyUrlStartsWithConditions;
+  }
+
+  
+  /**
+   * The list of url ends with conditions to filter offer constraints
+   **/
+  public ViewFilter journeyUrlEndsWithConditions(List<String> journeyUrlEndsWithConditions) {
+    this.journeyUrlEndsWithConditions = journeyUrlEndsWithConditions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of url ends with conditions to filter offer constraints")
+  @JsonProperty("journeyUrlEndsWithConditions")
+  public List<String> getJourneyUrlEndsWithConditions() {
+    return journeyUrlEndsWithConditions;
+  }
+  public void setJourneyUrlEndsWithConditions(List<String> journeyUrlEndsWithConditions) {
+    this.journeyUrlEndsWithConditions = journeyUrlEndsWithConditions;
+  }
+
+  
+  /**
+   * The list of url contains any conditions to filter offer constraints
+   **/
+  public ViewFilter journeyUrlContainsAnyConditions(List<String> journeyUrlContainsAnyConditions) {
+    this.journeyUrlContainsAnyConditions = journeyUrlContainsAnyConditions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of url contains any conditions to filter offer constraints")
+  @JsonProperty("journeyUrlContainsAnyConditions")
+  public List<String> getJourneyUrlContainsAnyConditions() {
+    return journeyUrlContainsAnyConditions;
+  }
+  public void setJourneyUrlContainsAnyConditions(List<String> journeyUrlContainsAnyConditions) {
+    this.journeyUrlContainsAnyConditions = journeyUrlContainsAnyConditions;
+  }
+
+  
+  /**
+   * The list of url not contains any conditions to filter offer constraints
+   **/
+  public ViewFilter journeyUrlNotContainsAnyConditions(List<String> journeyUrlNotContainsAnyConditions) {
+    this.journeyUrlNotContainsAnyConditions = journeyUrlNotContainsAnyConditions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of url not contains any conditions to filter offer constraints")
+  @JsonProperty("journeyUrlNotContainsAnyConditions")
+  public List<String> getJourneyUrlNotContainsAnyConditions() {
+    return journeyUrlNotContainsAnyConditions;
+  }
+  public void setJourneyUrlNotContainsAnyConditions(List<String> journeyUrlNotContainsAnyConditions) {
+    this.journeyUrlNotContainsAnyConditions = journeyUrlNotContainsAnyConditions;
+  }
+
+  
+  /**
+   * The list of url contains all conditions to filter offer constraints
+   **/
+  public ViewFilter journeyUrlContainsAllConditions(List<String> journeyUrlContainsAllConditions) {
+    this.journeyUrlContainsAllConditions = journeyUrlContainsAllConditions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of url contains all conditions to filter offer constraints")
+  @JsonProperty("journeyUrlContainsAllConditions")
+  public List<String> getJourneyUrlContainsAllConditions() {
+    return journeyUrlContainsAllConditions;
+  }
+  public void setJourneyUrlContainsAllConditions(List<String> journeyUrlContainsAllConditions) {
+    this.journeyUrlContainsAllConditions = journeyUrlContainsAllConditions;
+  }
+
+  
+  /**
+   * The list of url not contains all conditions to filter offer constraints
+   **/
+  public ViewFilter journeyUrlNotContainsAllConditions(List<String> journeyUrlNotContainsAllConditions) {
+    this.journeyUrlNotContainsAllConditions = journeyUrlNotContainsAllConditions;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of url not contains all conditions to filter offer constraints")
+  @JsonProperty("journeyUrlNotContainsAllConditions")
+  public List<String> getJourneyUrlNotContainsAllConditions() {
+    return journeyUrlNotContainsAllConditions;
+  }
+  public void setJourneyUrlNotContainsAllConditions(List<String> journeyUrlNotContainsAllConditions) {
+    this.journeyUrlNotContainsAllConditions = journeyUrlNotContainsAllConditions;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -3676,12 +3923,25 @@ public class ViewFilter  implements Serializable {
         Objects.equals(this.emailDeliveryStatusList, viewFilter.emailDeliveryStatusList) &&
         Objects.equals(this.isAgentOwnedCallback, viewFilter.isAgentOwnedCallback) &&
         Objects.equals(this.agentCallbackOwnerIds, viewFilter.agentCallbackOwnerIds) &&
-        Objects.equals(this.transcriptTopics, viewFilter.transcriptTopics);
+        Objects.equals(this.transcriptTopics, viewFilter.transcriptTopics) &&
+        Objects.equals(this.journeyFrequencyCapReasons, viewFilter.journeyFrequencyCapReasons) &&
+        Objects.equals(this.journeyBlockingActionMapIds, viewFilter.journeyBlockingActionMapIds) &&
+        Objects.equals(this.journeyActionTargetIds, viewFilter.journeyActionTargetIds) &&
+        Objects.equals(this.journeyBlockingScheduleGroupIds, viewFilter.journeyBlockingScheduleGroupIds) &&
+        Objects.equals(this.journeyBlockingEmergencyScheduleGroupIds, viewFilter.journeyBlockingEmergencyScheduleGroupIds) &&
+        Objects.equals(this.journeyUrlEqualConditions, viewFilter.journeyUrlEqualConditions) &&
+        Objects.equals(this.journeyUrlNotEqualConditions, viewFilter.journeyUrlNotEqualConditions) &&
+        Objects.equals(this.journeyUrlStartsWithConditions, viewFilter.journeyUrlStartsWithConditions) &&
+        Objects.equals(this.journeyUrlEndsWithConditions, viewFilter.journeyUrlEndsWithConditions) &&
+        Objects.equals(this.journeyUrlContainsAnyConditions, viewFilter.journeyUrlContainsAnyConditions) &&
+        Objects.equals(this.journeyUrlNotContainsAnyConditions, viewFilter.journeyUrlNotContainsAnyConditions) &&
+        Objects.equals(this.journeyUrlContainsAllConditions, viewFilter.journeyUrlContainsAllConditions) &&
+        Objects.equals(this.journeyUrlNotContainsAllConditions, viewFilter.journeyUrlNotContainsAllConditions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics);
+    return Objects.hash(mediaTypes, queueIds, skillIds, skillGroups, languageIds, languageGroups, directions, originatingDirections, wrapUpCodes, dnisList, sessionDnisList, filterQueuesByUserIds, filterUsersByQueueIds, userIds, addressTos, addressFroms, outboundCampaignIds, outboundContactListIds, contactIds, externalContactIds, externalOrgIds, aniList, durationsMilliseconds, acdDurationsMilliseconds, talkDurationsMilliseconds, acwDurationsMilliseconds, handleDurationsMilliseconds, holdDurationsMilliseconds, abandonDurationsMilliseconds, evaluationScore, evaluationCriticalScore, evaluationFormIds, evaluatedAgentIds, evaluatorIds, transferred, abandoned, answered, messageTypes, divisionIds, surveyFormIds, surveyTotalScore, surveyNpsScore, mos, surveyQuestionGroupScore, surveyPromoterScore, surveyFormContextIds, conversationIds, sipCallIds, isEnded, isSurveyed, surveyScores, promoterScores, isCampaign, surveyStatuses, conversationProperties, isBlindTransferred, isConsulted, isConsultTransferred, remoteParticipants, flowIds, flowOutcomeIds, flowOutcomeValues, flowDestinationTypes, flowDisconnectReasons, flowTypes, flowEntryTypes, flowEntryReasons, flowVersions, groupIds, hasJourneyCustomerId, hasJourneyActionMapId, hasJourneyVisitId, hasMedia, roleIds, reportsTos, locationIds, flowOutTypes, providerList, callbackNumberList, callbackInterval, usedRoutingTypes, requestedRoutingTypes, hasAgentAssistId, transcripts, transcriptLanguages, participantPurposes, showFirstQueue, teamIds, filterUsersByTeamIds, journeyActionMapIds, journeyOutcomeIds, journeySegmentIds, journeyActionMapTypes, developmentRoleList, developmentTypeList, developmentStatusList, developmentModuleIds, developmentActivityOverdue, customerSentimentScore, customerSentimentTrend, flowTransferTargets, developmentName, topicIds, externalTags, isNotResponding, isAuthenticated, botIds, botVersions, botMessageTypes, botProviderList, botProductList, botRecognitionFailureReasonList, botIntentList, botFinalIntentList, botSlotList, botResultList, blockedReasons, isRecorded, hasEvaluation, hasScoredEvaluation, emailDeliveryStatusList, isAgentOwnedCallback, agentCallbackOwnerIds, transcriptTopics, journeyFrequencyCapReasons, journeyBlockingActionMapIds, journeyActionTargetIds, journeyBlockingScheduleGroupIds, journeyBlockingEmergencyScheduleGroupIds, journeyUrlEqualConditions, journeyUrlNotEqualConditions, journeyUrlStartsWithConditions, journeyUrlEndsWithConditions, journeyUrlContainsAnyConditions, journeyUrlNotContainsAnyConditions, journeyUrlContainsAllConditions, journeyUrlNotContainsAllConditions);
   }
 
   @Override
@@ -3813,6 +4073,19 @@ public class ViewFilter  implements Serializable {
     sb.append("    isAgentOwnedCallback: ").append(toIndentedString(isAgentOwnedCallback)).append("\n");
     sb.append("    agentCallbackOwnerIds: ").append(toIndentedString(agentCallbackOwnerIds)).append("\n");
     sb.append("    transcriptTopics: ").append(toIndentedString(transcriptTopics)).append("\n");
+    sb.append("    journeyFrequencyCapReasons: ").append(toIndentedString(journeyFrequencyCapReasons)).append("\n");
+    sb.append("    journeyBlockingActionMapIds: ").append(toIndentedString(journeyBlockingActionMapIds)).append("\n");
+    sb.append("    journeyActionTargetIds: ").append(toIndentedString(journeyActionTargetIds)).append("\n");
+    sb.append("    journeyBlockingScheduleGroupIds: ").append(toIndentedString(journeyBlockingScheduleGroupIds)).append("\n");
+    sb.append("    journeyBlockingEmergencyScheduleGroupIds: ").append(toIndentedString(journeyBlockingEmergencyScheduleGroupIds)).append("\n");
+    sb.append("    journeyUrlEqualConditions: ").append(toIndentedString(journeyUrlEqualConditions)).append("\n");
+    sb.append("    journeyUrlNotEqualConditions: ").append(toIndentedString(journeyUrlNotEqualConditions)).append("\n");
+    sb.append("    journeyUrlStartsWithConditions: ").append(toIndentedString(journeyUrlStartsWithConditions)).append("\n");
+    sb.append("    journeyUrlEndsWithConditions: ").append(toIndentedString(journeyUrlEndsWithConditions)).append("\n");
+    sb.append("    journeyUrlContainsAnyConditions: ").append(toIndentedString(journeyUrlContainsAnyConditions)).append("\n");
+    sb.append("    journeyUrlNotContainsAnyConditions: ").append(toIndentedString(journeyUrlNotContainsAnyConditions)).append("\n");
+    sb.append("    journeyUrlContainsAllConditions: ").append(toIndentedString(journeyUrlContainsAllConditions)).append("\n");
+    sb.append("    journeyUrlNotContainsAllConditions: ").append(toIndentedString(journeyUrlNotContainsAllConditions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

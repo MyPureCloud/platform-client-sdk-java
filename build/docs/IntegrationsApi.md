@@ -81,8 +81,9 @@ Delete integration.
 
 Wraps DELETE /api/v2/integrations/{integrationId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:delete
 
 ### Example
 
@@ -328,8 +329,9 @@ Get integration.
 
 Wraps GET /api/v2/integrations/{integrationId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:view
 
 ### Example
 
@@ -402,8 +404,9 @@ Get integration configuration.
 
 Wraps GET /api/v2/integrations/{integrationId}/config/current  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:view
 
 ### Example
 
@@ -464,8 +467,9 @@ List integrations
 
 Wraps GET /api/v2/integrations  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:view
 
 ### Example
 
@@ -2555,8 +2559,9 @@ Get integration type.
 
 Wraps GET /api/v2/integrations/types/{typeId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:view
 
 ### Example
 
@@ -2617,8 +2622,9 @@ Get properties config schema for an integration type.
 
 Wraps GET /api/v2/integrations/types/{typeId}/configschemas/{configType}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:view
 
 ### Example
 
@@ -2681,8 +2687,9 @@ List integration types
 
 Wraps GET /api/v2/integrations/types  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:view
 
 ### Example
 
@@ -2827,8 +2834,9 @@ Update an integration.
 
 Wraps PATCH /api/v2/integrations/{integrationId}  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:edit
 
 ### Example
 
@@ -3033,8 +3041,9 @@ Create an integration.
 
 Wraps POST /api/v2/integrations  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:add
 
 ### Example
 
@@ -3670,8 +3679,9 @@ Update integration configuration.
 
 Wraps PUT /api/v2/integrations/{integrationId}/config/current  
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:edit
 
 ### Example
 
