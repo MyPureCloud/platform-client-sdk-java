@@ -12,6 +12,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.SmsAddress;
+import com.mypurecloud.sdk.v2.model.SmsProvisioningStatus;
 import com.mypurecloud.sdk.v2.model.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -103,7 +104,8 @@ public class SmsPhoneNumber  implements Serializable {
     ACTIVE("ACTIVE"),
     PORTING("PORTING"),
     PENDING("PENDING"),
-    PENDING_CANCELLATION("PENDING_CANCELLATION");
+    PENDING_CANCELLATION("PENDING_CANCELLATION"),
+    INITIATED("INITIATED");
 
     private String value;
 
@@ -284,6 +286,7 @@ public class SmsPhoneNumber  implements Serializable {
     }
   }
   private ShortCodeBillingTypeEnum shortCodeBillingType = null;
+  private SmsProvisioningStatus provisioningStatus = null;
   private String selfUri = null;
 
   
@@ -595,6 +598,24 @@ public class SmsPhoneNumber  implements Serializable {
   }
 
   
+  /**
+   * Status of latest asynchronous provisioning action
+   **/
+  public SmsPhoneNumber provisioningStatus(SmsProvisioningStatus provisioningStatus) {
+    this.provisioningStatus = provisioningStatus;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Status of latest asynchronous provisioning action")
+  @JsonProperty("provisioningStatus")
+  public SmsProvisioningStatus getProvisioningStatus() {
+    return provisioningStatus;
+  }
+  public void setProvisioningStatus(SmsProvisioningStatus provisioningStatus) {
+    this.provisioningStatus = provisioningStatus;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -631,12 +652,13 @@ public class SmsPhoneNumber  implements Serializable {
         Objects.equals(this.autoRenewable, smsPhoneNumber.autoRenewable) &&
         Objects.equals(this.addressId, smsPhoneNumber.addressId) &&
         Objects.equals(this.shortCodeBillingType, smsPhoneNumber.shortCodeBillingType) &&
+        Objects.equals(this.provisioningStatus, smsPhoneNumber.provisioningStatus) &&
         Objects.equals(this.selfUri, smsPhoneNumber.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, phoneNumber, phoneNumberType, provisionedThroughPureCloud, phoneNumberStatus, capabilities, countryCode, dateCreated, dateModified, createdBy, modifiedBy, version, purchaseDate, cancellationDate, renewalDate, autoRenewable, addressId, shortCodeBillingType, selfUri);
+    return Objects.hash(id, name, phoneNumber, phoneNumberType, provisionedThroughPureCloud, phoneNumberStatus, capabilities, countryCode, dateCreated, dateModified, createdBy, modifiedBy, version, purchaseDate, cancellationDate, renewalDate, autoRenewable, addressId, shortCodeBillingType, provisioningStatus, selfUri);
   }
 
   @Override
@@ -663,6 +685,7 @@ public class SmsPhoneNumber  implements Serializable {
     sb.append("    autoRenewable: ").append(toIndentedString(autoRenewable)).append("\n");
     sb.append("    addressId: ").append(toIndentedString(addressId)).append("\n");
     sb.append("    shortCodeBillingType: ").append(toIndentedString(shortCodeBillingType)).append("\n");
+    sb.append("    provisioningStatus: ").append(toIndentedString(provisioningStatus)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

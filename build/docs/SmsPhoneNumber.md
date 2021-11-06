@@ -27,6 +27,7 @@ title: SmsPhoneNumber
 | **autoRenewable** | [**AutoRenewableEnum**](#AutoRenewableEnum)<!----> | Renewal time period of this phone number, if the phoneNumberType is shortcode. |  [optional] |
 | **addressId** | <!----><!---->[**SmsAddress**](SmsAddress.html)<!----> | The id of an address attached to this phone number. |  [optional] |
 | **shortCodeBillingType** | [**ShortCodeBillingTypeEnum**](#ShortCodeBillingTypeEnum)<!----> | BillingType of this phone number, if the phoneNumberType is shortcode. |  [optional] |
+| **provisioningStatus** | <!----><!---->[**SmsProvisioningStatus**](SmsProvisioningStatus.html)<!----> | Status of latest asynchronous provisioning action |  [optional] |
 | **selfUri** | <!----><!---->**String**<!----> | The URI for this object |  [optional] |
 {: class="table table-striped"}
 
@@ -57,6 +58,7 @@ title: SmsPhoneNumber
 | PORTING | &quot;PORTING&quot; |
 | PENDING | &quot;PENDING&quot; |
 | PENDING_CANCELLATION | &quot;PENDING_CANCELLATION&quot; |
+| INITIATED | &quot;INITIATED&quot; |
 {: class="table table-striped"}
 
 

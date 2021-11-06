@@ -113,6 +113,7 @@ public class GetUserAdjacentsRequest {
 		STATION("station"), 
 		AUTHORIZATION("authorization"), 
 		LASTTOKENISSUED("lasttokenissued"), 
+		DATELASTLOGIN("dateLastLogin"), 
 		AUTHORIZATION_UNUSEDROLES("authorization.unusedRoles"), 
 		TEAM("team"), 
 		PROFILESKILLS("profileSkills"), 

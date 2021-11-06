@@ -1054,26 +1054,30 @@ public class RoutingApi {
    * Delete a phone number provisioned for SMS.
    * 
    * @param addressId Address ID (required)
+   * @param async Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number.  (optional, default to false)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteRoutingSmsPhonenumber(String addressId) throws IOException, ApiException {
-     deleteRoutingSmsPhonenumber(createDeleteRoutingSmsPhonenumberRequest(addressId));
+  public void deleteRoutingSmsPhonenumber(String addressId, Boolean async) throws IOException, ApiException {
+     deleteRoutingSmsPhonenumber(createDeleteRoutingSmsPhonenumberRequest(addressId, async));
   }
 
   /**
    * Delete a phone number provisioned for SMS.
    * 
    * @param addressId Address ID (required)
+   * @param async Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number.  (optional, default to false)
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteRoutingSmsPhonenumberWithHttpInfo(String addressId) throws IOException {
-    return deleteRoutingSmsPhonenumber(createDeleteRoutingSmsPhonenumberRequest(addressId).withHttpInfo());
+  public ApiResponse<Void> deleteRoutingSmsPhonenumberWithHttpInfo(String addressId, Boolean async) throws IOException {
+    return deleteRoutingSmsPhonenumber(createDeleteRoutingSmsPhonenumberRequest(addressId, async).withHttpInfo());
   }
 
-  private DeleteRoutingSmsPhonenumberRequest createDeleteRoutingSmsPhonenumberRequest(String addressId) {
+  private DeleteRoutingSmsPhonenumberRequest createDeleteRoutingSmsPhonenumberRequest(String addressId, Boolean async) {
     return DeleteRoutingSmsPhonenumberRequest.builder()
             .withAddressId(addressId)
+    
+            .withAsync(async)
     
             .build();
   }
@@ -7623,28 +7627,32 @@ public class RoutingApi {
    * Provision a phone number for SMS
    * 
    * @param body SmsPhoneNumber (required)
+   * @param async Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber&#39;s provisioningStatus for completion of this request. (optional, default to false)
    * @return SmsPhoneNumber
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SmsPhoneNumber postRoutingSmsPhonenumbers(SmsPhoneNumberProvision body) throws IOException, ApiException {
-    return  postRoutingSmsPhonenumbers(createPostRoutingSmsPhonenumbersRequest(body));
+  public SmsPhoneNumber postRoutingSmsPhonenumbers(SmsPhoneNumberProvision body, Boolean async) throws IOException, ApiException {
+    return  postRoutingSmsPhonenumbers(createPostRoutingSmsPhonenumbersRequest(body, async));
   }
 
   /**
    * Provision a phone number for SMS
    * 
    * @param body SmsPhoneNumber (required)
+   * @param async Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber&#39;s provisioningStatus for completion of this request. (optional, default to false)
    * @return SmsPhoneNumber
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SmsPhoneNumber> postRoutingSmsPhonenumbersWithHttpInfo(SmsPhoneNumberProvision body) throws IOException {
-    return postRoutingSmsPhonenumbers(createPostRoutingSmsPhonenumbersRequest(body).withHttpInfo());
+  public ApiResponse<SmsPhoneNumber> postRoutingSmsPhonenumbersWithHttpInfo(SmsPhoneNumberProvision body, Boolean async) throws IOException {
+    return postRoutingSmsPhonenumbers(createPostRoutingSmsPhonenumbersRequest(body, async).withHttpInfo());
   }
 
-  private PostRoutingSmsPhonenumbersRequest createPostRoutingSmsPhonenumbersRequest(SmsPhoneNumberProvision body) {
+  private PostRoutingSmsPhonenumbersRequest createPostRoutingSmsPhonenumbersRequest(SmsPhoneNumberProvision body, Boolean async) {
     return PostRoutingSmsPhonenumbersRequest.builder()
             .withBody(body)
+    
+            .withAsync(async)
     
             .build();
   }
@@ -8359,12 +8367,13 @@ public class RoutingApi {
    * 
    * @param addressId Address ID (required)
    * @param body SmsPhoneNumber (required)
+   * @param async Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber&#39;s provisioningStatus for the progress of this request. (optional, default to false)
    * @return SmsPhoneNumber
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public SmsPhoneNumber putRoutingSmsPhonenumber(String addressId, SmsPhoneNumber body) throws IOException, ApiException {
-    return  putRoutingSmsPhonenumber(createPutRoutingSmsPhonenumberRequest(addressId, body));
+  public SmsPhoneNumber putRoutingSmsPhonenumber(String addressId, SmsPhoneNumber body, Boolean async) throws IOException, ApiException {
+    return  putRoutingSmsPhonenumber(createPutRoutingSmsPhonenumberRequest(addressId, body, async));
   }
 
   /**
@@ -8372,18 +8381,21 @@ public class RoutingApi {
    * 
    * @param addressId Address ID (required)
    * @param body SmsPhoneNumber (required)
+   * @param async Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber&#39;s provisioningStatus for the progress of this request. (optional, default to false)
    * @return SmsPhoneNumber
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<SmsPhoneNumber> putRoutingSmsPhonenumberWithHttpInfo(String addressId, SmsPhoneNumber body) throws IOException {
-    return putRoutingSmsPhonenumber(createPutRoutingSmsPhonenumberRequest(addressId, body).withHttpInfo());
+  public ApiResponse<SmsPhoneNumber> putRoutingSmsPhonenumberWithHttpInfo(String addressId, SmsPhoneNumber body, Boolean async) throws IOException {
+    return putRoutingSmsPhonenumber(createPutRoutingSmsPhonenumberRequest(addressId, body, async).withHttpInfo());
   }
 
-  private PutRoutingSmsPhonenumberRequest createPutRoutingSmsPhonenumberRequest(String addressId, SmsPhoneNumber body) {
+  private PutRoutingSmsPhonenumberRequest createPutRoutingSmsPhonenumberRequest(String addressId, SmsPhoneNumber body, Boolean async) {
     return PutRoutingSmsPhonenumberRequest.builder()
             .withAddressId(addressId)
     
             .withBody(body)
+    
+            .withAsync(async)
     
             .build();
   }

@@ -13,6 +13,7 @@ title: ConversationNormalizedMessage
 | **type** | [**TypeEnum**](#TypeEnum)<!----> | Message type. |  |
 | **text** | <!----><!---->**String**<!----> | Message text. |  [optional] |
 | **content** | <!----><!---->[**List&lt;ConversationMessageContent&gt;**](ConversationMessageContent.html)<!----> | List of content elements |  [optional] |
+| **events** | <!----><!---->[**List&lt;ConversationMessageEvent&gt;**](ConversationMessageEvent.html)<!----> | List of event elements. |  [optional] |
 | **status** | [**StatusEnum**](#StatusEnum)<!----> | Message receipt status, only used with type Receipt. |  [optional] |
 | **reasons** | <!----><!---->[**List&lt;ConversationReason&gt;**](ConversationReason.html)<!----> | List of reasons for a message receipt that indicates the message has failed. Only used with Failed status. |  [optional] |
 | **originatingEntity** | [**OriginatingEntityEnum**](#OriginatingEntityEnum)<!----> | Specifies if this message was sent by a human agent or bot. The platform may use this to apply appropriate provider policies. |  [optional] |
@@ -32,6 +33,7 @@ title: ConversationNormalizedMessage
 | TEXT | &quot;Text&quot; |
 | STRUCTURED | &quot;Structured&quot; |
 | RECEIPT | &quot;Receipt&quot; |
+| EVENT | &quot;Event&quot; |
 {: class="table table-striped"}
 
 

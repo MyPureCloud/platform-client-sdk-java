@@ -24,6 +24,10 @@ import com.mypurecloud.sdk.v2.model.KnowledgeImport;
 import com.mypurecloud.sdk.v2.model.KnowledgeTraining;
 import com.mypurecloud.sdk.v2.model.TrainingListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeBaseListing;
+import com.mypurecloud.sdk.v2.model.KnowledgeContextResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeContextRequest;
+import com.mypurecloud.sdk.v2.model.KnowledgeContextValueResponse;
+import com.mypurecloud.sdk.v2.model.KnowledgeContextValueRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeCategoryRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRequest;
@@ -48,6 +52,8 @@ import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageTrain
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageTrainingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebasesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseContextRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseContextValueRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageDocumentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageDocumentsRequest;
@@ -1133,6 +1139,158 @@ public class KnowledgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<KnowledgeBase> response = (ApiResponse<KnowledgeBase>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update specific context data of the knowledge base.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<KnowledgeContextResponse> patchKnowledgeKnowledgebaseContextAsync(PatchKnowledgeKnowledgebaseContextRequest request, final AsyncApiCallback<KnowledgeContextResponse> callback) {
+    try {
+      final SettableFuture<KnowledgeContextResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KnowledgeContextResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeContextResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeContextResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update specific context data of the knowledge base.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<KnowledgeContextResponse>> patchKnowledgeKnowledgebaseContextAsync(ApiRequest<KnowledgeContextRequest> request, final AsyncApiCallback<ApiResponse<KnowledgeContextResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<KnowledgeContextResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<KnowledgeContextResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeContextResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeContextResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeContextResponse> response = (ApiResponse<KnowledgeContextResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeContextResponse> response = (ApiResponse<KnowledgeContextResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  
+  /**
+   * Update context value.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<KnowledgeContextValueResponse> patchKnowledgeKnowledgebaseContextValueAsync(PatchKnowledgeKnowledgebaseContextValueRequest request, final AsyncApiCallback<KnowledgeContextValueResponse> callback) {
+    try {
+      final SettableFuture<KnowledgeContextValueResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KnowledgeContextValueResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeContextValueResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeContextValueResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update context value.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<KnowledgeContextValueResponse>> patchKnowledgeKnowledgebaseContextValueAsync(ApiRequest<KnowledgeContextValueRequest> request, final AsyncApiCallback<ApiResponse<KnowledgeContextValueResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<KnowledgeContextValueResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<KnowledgeContextValueResponse>() {}, new AsyncApiCallback<ApiResponse<KnowledgeContextValueResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<KnowledgeContextValueResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeContextValueResponse> response = (ApiResponse<KnowledgeContextValueResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<KnowledgeContextValueResponse> response = (ApiResponse<KnowledgeContextValueResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

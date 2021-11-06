@@ -121,6 +121,7 @@ title: ReportingExportJobRequest
 | QUEUE_TOPIC_DETAIL_VIEW | &quot;QUEUE_TOPIC_DETAIL_VIEW&quot; |
 | FLOW_TOPIC_SUMMARY_VIEW | &quot;FLOW_TOPIC_SUMMARY_VIEW&quot; |
 | FLOW_TOPIC_DETAIL_VIEW | &quot;FLOW_TOPIC_DETAIL_VIEW&quot; |
+| AGENT_INTERACTIONS_ME_VIEW | &quot;AGENT_INTERACTIONS_ME_VIEW&quot; |
 {: class="table table-striped"}
 
 

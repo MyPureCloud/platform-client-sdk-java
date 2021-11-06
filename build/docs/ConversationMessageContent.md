@@ -10,6 +10,7 @@ title: ConversationMessageContent
 | ------------ | ------------- | ------------- | ------------- |
 | **contentType** | [**ContentTypeEnum**](#ContentTypeEnum)<!----> | Type of this content element. If contentType = \&quot;Attachment\&quot; only one item is allowed. |  |
 | **location** | <!----><!---->[**ConversationContentLocation**](ConversationContentLocation.html)<!----> | Location content. |  [optional] |
+| **story** | <!----><!---->[**ConversationContentStory**](ConversationContentStory.html)<!----> | Ephemeral story content. |  [optional] |
 | **attachment** | <!----><!---->[**ConversationContentAttachment**](ConversationContentAttachment.html)<!----> | Attachment content. |  [optional] |
 | **quickReply** | <!----><!---->[**ConversationContentQuickReply**](ConversationContentQuickReply.html)<!----> | Quick reply content. |  [optional] |
 | **template** | <!----><!---->[**ConversationContentNotificationTemplate**](ConversationContentNotificationTemplate.html)<!----> | Template notification content. |  [optional] |
@@ -27,6 +28,7 @@ title: ConversationMessageContent
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ATTACHMENT | &quot;Attachment&quot; |
 | LOCATION | &quot;Location&quot; |
+| STORY | &quot;Story&quot; |
 | QUICKREPLY | &quot;QuickReply&quot; |
 | NOTIFICATION | &quot;Notification&quot; |
 | BUTTONRESPONSE | &quot;ButtonResponse&quot; |

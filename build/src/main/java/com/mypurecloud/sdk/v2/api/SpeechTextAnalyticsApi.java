@@ -20,6 +20,7 @@ import com.mypurecloud.sdk.v2.model.GeneralProgramJob;
 import com.mypurecloud.sdk.v2.model.ProgramsMappingsEntityListing;
 import com.mypurecloud.sdk.v2.model.ProgramJob;
 import com.mypurecloud.sdk.v2.model.UnpublishedProgramsEntityListing;
+import com.mypurecloud.sdk.v2.model.SentimentFeedbackEntityListing;
 import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsResponse;
 import com.mypurecloud.sdk.v2.model.Topic;
 import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
@@ -30,6 +31,7 @@ import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.ProgramRequest;
 import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
 import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
+import com.mypurecloud.sdk.v2.model.SentimentFeedback;
 import com.mypurecloud.sdk.v2.model.TopicRequest;
 import com.mypurecloud.sdk.v2.model.TopicJobRequest;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
@@ -38,6 +40,8 @@ import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsProgramRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsSentimentfeedbackRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackIdRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteSpeechandtextanalyticsTopicRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlRequest;
@@ -49,6 +53,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsGener
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsMappingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsPublishjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsUnpublishedRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsSentimentfeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsRequest;
@@ -59,6 +64,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchSpeechandtextanalyticsSettingsReq
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsGeneralJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsProgramsPublishjobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsSentimentfeedbackRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTopicsPublishjobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsTranscriptsSearchRequest;
@@ -144,6 +150,154 @@ public class SpeechTextAnalyticsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteSpeechandtextanalyticsProgram(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete All Speech &amp; Text Analytics SentimentFeedback
+   * 
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteSpeechandtextanalyticsSentimentfeedback() throws IOException, ApiException {
+     deleteSpeechandtextanalyticsSentimentfeedback(createDeleteSpeechandtextanalyticsSentimentfeedbackRequest());
+  }
+
+  /**
+   * Delete All Speech &amp; Text Analytics SentimentFeedback
+   * 
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteSpeechandtextanalyticsSentimentfeedbackWithHttpInfo() throws IOException {
+    return deleteSpeechandtextanalyticsSentimentfeedback(createDeleteSpeechandtextanalyticsSentimentfeedbackRequest().withHttpInfo());
+  }
+
+  private DeleteSpeechandtextanalyticsSentimentfeedbackRequest createDeleteSpeechandtextanalyticsSentimentfeedbackRequest() {
+    return DeleteSpeechandtextanalyticsSentimentfeedbackRequest.builder()
+            .build();
+  }
+
+  /**
+   * Delete All Speech &amp; Text Analytics SentimentFeedback
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteSpeechandtextanalyticsSentimentfeedback(DeleteSpeechandtextanalyticsSentimentfeedbackRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete All Speech &amp; Text Analytics SentimentFeedback
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteSpeechandtextanalyticsSentimentfeedback(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Delete a Speech &amp; Text Analytics SentimentFeedback by Id
+   * 
+   * @param sentimentFeedbackId The Id of the SentimentFeedback (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId(String sentimentFeedbackId) throws IOException, ApiException {
+     deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId(createDeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackIdRequest(sentimentFeedbackId));
+  }
+
+  /**
+   * Delete a Speech &amp; Text Analytics SentimentFeedback by Id
+   * 
+   * @param sentimentFeedbackId The Id of the SentimentFeedback (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackIdWithHttpInfo(String sentimentFeedbackId) throws IOException {
+    return deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId(createDeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackIdRequest(sentimentFeedbackId).withHttpInfo());
+  }
+
+  private DeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackIdRequest createDeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackIdRequest(String sentimentFeedbackId) {
+    return DeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackIdRequest.builder()
+            .withSentimentFeedbackId(sentimentFeedbackId)
+    
+            .build();
+  }
+
+  /**
+   * Delete a Speech &amp; Text Analytics SentimentFeedback by Id
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId(DeleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackIdRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete a Speech &amp; Text Analytics SentimentFeedback by Id
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -1045,6 +1199,85 @@ public class SpeechTextAnalyticsApi {
 
   
   /**
+   * Get the list of Speech &amp; Text Analytics SentimentFeedback
+   * 
+   * @param dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)
+   * @return SentimentFeedbackEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SentimentFeedbackEntityListing getSpeechandtextanalyticsSentimentfeedback(String dialect) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsSentimentfeedback(createGetSpeechandtextanalyticsSentimentfeedbackRequest(dialect));
+  }
+
+  /**
+   * Get the list of Speech &amp; Text Analytics SentimentFeedback
+   * 
+   * @param dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)
+   * @return SentimentFeedbackEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SentimentFeedbackEntityListing> getSpeechandtextanalyticsSentimentfeedbackWithHttpInfo(String dialect) throws IOException {
+    return getSpeechandtextanalyticsSentimentfeedback(createGetSpeechandtextanalyticsSentimentfeedbackRequest(dialect).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsSentimentfeedbackRequest createGetSpeechandtextanalyticsSentimentfeedbackRequest(String dialect) {
+    return GetSpeechandtextanalyticsSentimentfeedbackRequest.builder()
+            .withDialect(dialect)
+    
+            .build();
+  }
+
+  /**
+   * Get the list of Speech &amp; Text Analytics SentimentFeedback
+   * 
+   * @param request The request object
+   * @return SentimentFeedbackEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SentimentFeedbackEntityListing getSpeechandtextanalyticsSentimentfeedback(GetSpeechandtextanalyticsSentimentfeedbackRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SentimentFeedbackEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SentimentFeedbackEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the list of Speech &amp; Text Analytics SentimentFeedback
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SentimentFeedbackEntityListing> getSpeechandtextanalyticsSentimentfeedback(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SentimentFeedbackEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SentimentFeedbackEntityListing> response = (ApiResponse<SentimentFeedbackEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SentimentFeedbackEntityListing> response = (ApiResponse<SentimentFeedbackEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get Speech And Text Analytics Settings
    * 
    * @return SpeechTextAnalyticsSettingsResponse
@@ -1845,6 +2078,85 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ProgramJob> response = (ApiResponse<ProgramJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Create a Speech &amp; Text Analytics SentimentFeedback
+   * 
+   * @param body The SentimentFeedback to create (required)
+   * @return SentimentFeedback
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SentimentFeedback postSpeechandtextanalyticsSentimentfeedback(SentimentFeedback body) throws IOException, ApiException {
+    return  postSpeechandtextanalyticsSentimentfeedback(createPostSpeechandtextanalyticsSentimentfeedbackRequest(body));
+  }
+
+  /**
+   * Create a Speech &amp; Text Analytics SentimentFeedback
+   * 
+   * @param body The SentimentFeedback to create (required)
+   * @return SentimentFeedback
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SentimentFeedback> postSpeechandtextanalyticsSentimentfeedbackWithHttpInfo(SentimentFeedback body) throws IOException {
+    return postSpeechandtextanalyticsSentimentfeedback(createPostSpeechandtextanalyticsSentimentfeedbackRequest(body).withHttpInfo());
+  }
+
+  private PostSpeechandtextanalyticsSentimentfeedbackRequest createPostSpeechandtextanalyticsSentimentfeedbackRequest(SentimentFeedback body) {
+    return PostSpeechandtextanalyticsSentimentfeedbackRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Create a Speech &amp; Text Analytics SentimentFeedback
+   * 
+   * @param request The request object
+   * @return SentimentFeedback
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SentimentFeedback postSpeechandtextanalyticsSentimentfeedback(PostSpeechandtextanalyticsSentimentfeedbackRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SentimentFeedback> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SentimentFeedback>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a Speech &amp; Text Analytics SentimentFeedback
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SentimentFeedback> postSpeechandtextanalyticsSentimentfeedback(ApiRequest<SentimentFeedback> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SentimentFeedback>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SentimentFeedback> response = (ApiResponse<SentimentFeedback>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SentimentFeedback> response = (ApiResponse<SentimentFeedback>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

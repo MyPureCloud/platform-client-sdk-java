@@ -113,6 +113,20 @@ public class PutRoutingSmsPhonenumberRequest {
 	    return this;
 	} 
 	
+	private Boolean async;
+	public Boolean getAsync() {
+		return this.async;
+	}
+
+	public void setAsync(Boolean async) {
+		this.async = async;
+	}
+
+	public PutRoutingSmsPhonenumberRequest withAsync(Boolean async) {
+	    this.setAsync(async);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -147,6 +161,8 @@ public class PutRoutingSmsPhonenumberRequest {
 
         return ApiRequestBuilder.create("PUT", "/api/v2/routing/sms/phonenumbers/{addressId}")
                 .withPathParameter("addressId", addressId)
+        
+                .withQueryParameters("async", "", async)
         
                 .withBody(body)
         
@@ -183,6 +199,11 @@ public class PutRoutingSmsPhonenumberRequest {
 		
 		public Builder withBody(SmsPhoneNumber body) {
 			request.setBody(body);
+			return this;
+		}
+		
+		public Builder withAsync(Boolean async) {
+			request.setAsync(async);
 			return this;
 		}
 		

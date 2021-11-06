@@ -34,6 +34,7 @@ import com.mypurecloud.sdk.v2.model.UserStations;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -124,6 +125,7 @@ public class User  implements Serializable {
   private Boolean acdAutoAnswer = null;
   private String languagePreference = null;
   private OAuthLastTokenIssued lastTokenIssued = null;
+  private Date dateLastLogin = null;
   private String selfUri = null;
 
   
@@ -522,6 +524,13 @@ public class User  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The last time the user logged in using username and password. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateLastLogin")
+  public Date getDateLastLogin() {
+    return dateLastLogin;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -572,12 +581,13 @@ public class User  implements Serializable {
         Objects.equals(this.acdAutoAnswer, user.acdAutoAnswer) &&
         Objects.equals(this.languagePreference, user.languagePreference) &&
         Objects.equals(this.lastTokenIssued, user.lastTokenIssued) &&
+        Objects.equals(this.dateLastLogin, user.dateLastLogin) &&
         Objects.equals(this.selfUri, user.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, team, skills, languages, acdAutoAnswer, languagePreference, lastTokenIssued, selfUri);
+    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, team, skills, languages, acdAutoAnswer, languagePreference, lastTokenIssued, dateLastLogin, selfUri);
   }
 
   @Override
@@ -618,6 +628,7 @@ public class User  implements Serializable {
     sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
     sb.append("    languagePreference: ").append(toIndentedString(languagePreference)).append("\n");
     sb.append("    lastTokenIssued: ").append(toIndentedString(lastTokenIssued)).append("\n");
+    sb.append("    dateLastLogin: ").append(toIndentedString(dateLastLogin)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

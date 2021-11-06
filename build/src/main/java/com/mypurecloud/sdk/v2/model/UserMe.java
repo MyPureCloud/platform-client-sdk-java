@@ -46,6 +46,7 @@ import com.mypurecloud.sdk.v2.model.UserStations;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -136,6 +137,7 @@ public class UserMe  implements Serializable {
   private Boolean acdAutoAnswer = null;
   private String languagePreference = null;
   private OAuthLastTokenIssued lastTokenIssued = null;
+  private Date dateLastLogin = null;
   private ServerDate date = null;
   private GeolocationSettings geolocationSettings = null;
   private Organization organization = null;
@@ -549,6 +551,13 @@ public class UserMe  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "The last time the user logged in using username and password. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateLastLogin")
+  public Date getDateLastLogin() {
+    return dateLastLogin;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The PureCloud system date time.")
   @JsonProperty("date")
   public ServerDate getDate() {
@@ -704,6 +713,7 @@ public class UserMe  implements Serializable {
         Objects.equals(this.acdAutoAnswer, userMe.acdAutoAnswer) &&
         Objects.equals(this.languagePreference, userMe.languagePreference) &&
         Objects.equals(this.lastTokenIssued, userMe.lastTokenIssued) &&
+        Objects.equals(this.dateLastLogin, userMe.dateLastLogin) &&
         Objects.equals(this.date, userMe.date) &&
         Objects.equals(this.geolocationSettings, userMe.geolocationSettings) &&
         Objects.equals(this.organization, userMe.organization) &&
@@ -724,7 +734,7 @@ public class UserMe  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, team, skills, languages, acdAutoAnswer, languagePreference, lastTokenIssued, date, geolocationSettings, organization, presenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, orgProducts, selfUri);
+    return Objects.hash(id, name, division, chat, department, email, primaryContactInfo, addresses, state, title, username, manager, images, version, certifications, biography, employerInfo, routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, profileSkills, locations, groups, team, skills, languages, acdAutoAnswer, languagePreference, lastTokenIssued, dateLastLogin, date, geolocationSettings, organization, presenceDefinitions, locationDefinitions, orgAuthorization, favorites, superiors, directReports, adjacents, routingSkills, fieldConfigs, token, trustors, orgProducts, selfUri);
   }
 
   @Override
@@ -765,6 +775,7 @@ public class UserMe  implements Serializable {
     sb.append("    acdAutoAnswer: ").append(toIndentedString(acdAutoAnswer)).append("\n");
     sb.append("    languagePreference: ").append(toIndentedString(languagePreference)).append("\n");
     sb.append("    lastTokenIssued: ").append(toIndentedString(lastTokenIssued)).append("\n");
+    sb.append("    dateLastLogin: ").append(toIndentedString(dateLastLogin)).append("\n");
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    geolocationSettings: ").append(toIndentedString(geolocationSettings)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");

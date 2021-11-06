@@ -17,6 +17,7 @@ import com.mypurecloud.sdk.v2.model.ConversationContentGeneric;
 import com.mypurecloud.sdk.v2.model.ConversationContentLocation;
 import com.mypurecloud.sdk.v2.model.ConversationContentNotificationTemplate;
 import com.mypurecloud.sdk.v2.model.ConversationContentQuickReply;
+import com.mypurecloud.sdk.v2.model.ConversationContentStory;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -49,6 +50,7 @@ public class ConversationMessageContent  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ATTACHMENT("Attachment"),
     LOCATION("Location"),
+    STORY("Story"),
     QUICKREPLY("QuickReply"),
     NOTIFICATION("Notification"),
     BUTTONRESPONSE("ButtonResponse"),
@@ -81,6 +83,7 @@ public class ConversationMessageContent  implements Serializable {
   }
   private ContentTypeEnum contentType = null;
   private ConversationContentLocation location = null;
+  private ConversationContentStory story = null;
   private ConversationContentAttachment attachment = null;
   private ConversationContentQuickReply quickReply = null;
   private ConversationContentNotificationTemplate template = null;
@@ -121,6 +124,24 @@ public class ConversationMessageContent  implements Serializable {
   }
   public void setLocation(ConversationContentLocation location) {
     this.location = location;
+  }
+
+  
+  /**
+   * Ephemeral story content.
+   **/
+  public ConversationMessageContent story(ConversationContentStory story) {
+    this.story = story;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Ephemeral story content.")
+  @JsonProperty("story")
+  public ConversationContentStory getStory() {
+    return story;
+  }
+  public void setStory(ConversationContentStory story) {
+    this.story = story;
   }
 
   
@@ -226,6 +247,7 @@ public class ConversationMessageContent  implements Serializable {
     ConversationMessageContent conversationMessageContent = (ConversationMessageContent) o;
     return Objects.equals(this.contentType, conversationMessageContent.contentType) &&
         Objects.equals(this.location, conversationMessageContent.location) &&
+        Objects.equals(this.story, conversationMessageContent.story) &&
         Objects.equals(this.attachment, conversationMessageContent.attachment) &&
         Objects.equals(this.quickReply, conversationMessageContent.quickReply) &&
         Objects.equals(this.template, conversationMessageContent.template) &&
@@ -235,7 +257,7 @@ public class ConversationMessageContent  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentType, location, attachment, quickReply, template, buttonResponse, generic);
+    return Objects.hash(contentType, location, story, attachment, quickReply, template, buttonResponse, generic);
   }
 
   @Override
@@ -245,6 +267,7 @@ public class ConversationMessageContent  implements Serializable {
     
     sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
+    sb.append("    story: ").append(toIndentedString(story)).append("\n");
     sb.append("    attachment: ").append(toIndentedString(attachment)).append("\n");
     sb.append("    quickReply: ").append(toIndentedString(quickReply)).append("\n");
     sb.append("    template: ").append(toIndentedString(template)).append("\n");

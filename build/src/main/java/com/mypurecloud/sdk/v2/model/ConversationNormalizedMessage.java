@@ -12,6 +12,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationMessageContent;
+import com.mypurecloud.sdk.v2.model.ConversationMessageEvent;
 import com.mypurecloud.sdk.v2.model.ConversationMessagingChannel;
 import com.mypurecloud.sdk.v2.model.ConversationReason;
 import io.swagger.annotations.ApiModel;
@@ -52,7 +53,8 @@ public class ConversationNormalizedMessage  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     TEXT("Text"),
     STRUCTURED("Structured"),
-    RECEIPT("Receipt");
+    RECEIPT("Receipt"),
+    EVENT("Event");
 
     private String value;
 
@@ -82,6 +84,7 @@ public class ConversationNormalizedMessage  implements Serializable {
   private TypeEnum type = null;
   private String text = null;
   private List<ConversationMessageContent> content = new ArrayList<ConversationMessageContent>();
+  private List<ConversationMessageEvent> events = new ArrayList<ConversationMessageEvent>();
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
     public StatusEnumDeserializer() {
@@ -303,6 +306,24 @@ public class ConversationNormalizedMessage  implements Serializable {
   }
 
   
+  /**
+   * List of event elements.
+   **/
+  public ConversationNormalizedMessage events(List<ConversationMessageEvent> events) {
+    this.events = events;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of event elements.")
+  @JsonProperty("events")
+  public List<ConversationMessageEvent> getEvents() {
+    return events;
+  }
+  public void setEvents(List<ConversationMessageEvent> events) {
+    this.events = events;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "Message receipt status, only used with type Receipt.")
   @JsonProperty("status")
   public StatusEnum getStatus() {
@@ -382,6 +403,7 @@ public class ConversationNormalizedMessage  implements Serializable {
         Objects.equals(this.type, conversationNormalizedMessage.type) &&
         Objects.equals(this.text, conversationNormalizedMessage.text) &&
         Objects.equals(this.content, conversationNormalizedMessage.content) &&
+        Objects.equals(this.events, conversationNormalizedMessage.events) &&
         Objects.equals(this.status, conversationNormalizedMessage.status) &&
         Objects.equals(this.reasons, conversationNormalizedMessage.reasons) &&
         Objects.equals(this.originatingEntity, conversationNormalizedMessage.originatingEntity) &&
@@ -392,7 +414,7 @@ public class ConversationNormalizedMessage  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, channel, type, text, content, status, reasons, originatingEntity, isFinalReceipt, direction, metadata);
+    return Objects.hash(id, channel, type, text, content, events, status, reasons, originatingEntity, isFinalReceipt, direction, metadata);
   }
 
   @Override
@@ -405,6 +427,7 @@ public class ConversationNormalizedMessage  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
+    sb.append("    events: ").append(toIndentedString(events)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    reasons: ").append(toIndentedString(reasons)).append("\n");
     sb.append("    originatingEntity: ").append(toIndentedString(originatingEntity)).append("\n");
