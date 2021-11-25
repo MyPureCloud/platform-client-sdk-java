@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ChannelMetadata;
 import com.mypurecloud.sdk.v2.model.OpenMessagingFromRecipient;
 import com.mypurecloud.sdk.v2.model.OpenMessagingToRecipient;
 import io.swagger.annotations.ApiModel;
@@ -124,6 +125,7 @@ public class OpenMessagingChannel  implements Serializable {
   private OpenMessagingToRecipient to = null;
   private OpenMessagingFromRecipient from = null;
   private Date time = null;
+  private ChannelMetadata metadata = null;
 
   
   @ApiModelProperty(example = "null", value = "The Messaging Platform integration ID.")
@@ -230,6 +232,24 @@ public class OpenMessagingChannel  implements Serializable {
   }
 
   
+  /**
+   * Information about the channel.
+   **/
+  public OpenMessagingChannel metadata(ChannelMetadata metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Information about the channel.")
+  @JsonProperty("metadata")
+  public ChannelMetadata getMetadata() {
+    return metadata;
+  }
+  public void setMetadata(ChannelMetadata metadata) {
+    this.metadata = metadata;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -246,12 +266,13 @@ public class OpenMessagingChannel  implements Serializable {
         Objects.equals(this.messageId, openMessagingChannel.messageId) &&
         Objects.equals(this.to, openMessagingChannel.to) &&
         Objects.equals(this.from, openMessagingChannel.from) &&
-        Objects.equals(this.time, openMessagingChannel.time);
+        Objects.equals(this.time, openMessagingChannel.time) &&
+        Objects.equals(this.metadata, openMessagingChannel.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, platform, type, messageId, to, from, time);
+    return Objects.hash(id, platform, type, messageId, to, from, time, metadata);
   }
 
   @Override
@@ -266,6 +287,7 @@ public class OpenMessagingChannel  implements Serializable {
     sb.append("    to: ").append(toIndentedString(to)).append("\n");
     sb.append("    from: ").append(toIndentedString(from)).append("\n");
     sb.append("    time: ").append(toIndentedString(time)).append("\n");
+    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

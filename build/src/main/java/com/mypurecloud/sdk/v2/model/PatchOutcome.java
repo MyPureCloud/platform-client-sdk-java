@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.AssociatedValueField;
 import com.mypurecloud.sdk.v2.model.Context;
 import com.mypurecloud.sdk.v2.model.Journey;
 import io.swagger.annotations.ApiModel;
@@ -31,6 +32,7 @@ public class PatchOutcome  implements Serializable {
   private Boolean isPositive = null;
   private Context context = null;
   private Journey journey = null;
+  private AssociatedValueField associatedValueField = null;
   private String selfUri = null;
   private Date createdDate = null;
   private Date modifiedDate = null;
@@ -169,6 +171,24 @@ public class PatchOutcome  implements Serializable {
   }
 
   
+  /**
+   * The field from the event indicating the associated value.
+   **/
+  public PatchOutcome associatedValueField(AssociatedValueField associatedValueField) {
+    this.associatedValueField = associatedValueField;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The field from the event indicating the associated value.")
+  @JsonProperty("associatedValueField")
+  public AssociatedValueField getAssociatedValueField() {
+    return associatedValueField;
+  }
+  public void setAssociatedValueField(AssociatedValueField associatedValueField) {
+    this.associatedValueField = associatedValueField;
+  }
+
+  
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -230,6 +250,7 @@ public class PatchOutcome  implements Serializable {
         Objects.equals(this.isPositive, patchOutcome.isPositive) &&
         Objects.equals(this.context, patchOutcome.context) &&
         Objects.equals(this.journey, patchOutcome.journey) &&
+        Objects.equals(this.associatedValueField, patchOutcome.associatedValueField) &&
         Objects.equals(this.selfUri, patchOutcome.selfUri) &&
         Objects.equals(this.createdDate, patchOutcome.createdDate) &&
         Objects.equals(this.modifiedDate, patchOutcome.modifiedDate);
@@ -237,7 +258,7 @@ public class PatchOutcome  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, isActive, displayName, version, description, isPositive, context, journey, selfUri, createdDate, modifiedDate);
+    return Objects.hash(id, isActive, displayName, version, description, isPositive, context, journey, associatedValueField, selfUri, createdDate, modifiedDate);
   }
 
   @Override
@@ -253,6 +274,7 @@ public class PatchOutcome  implements Serializable {
     sb.append("    isPositive: ").append(toIndentedString(isPositive)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    journey: ").append(toIndentedString(journey)).append("\n");
+    sb.append("    associatedValueField: ").append(toIndentedString(associatedValueField)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    createdDate: ").append(toIndentedString(createdDate)).append("\n");
     sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");

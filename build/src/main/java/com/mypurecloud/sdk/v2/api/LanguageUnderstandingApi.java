@@ -1674,7 +1674,7 @@ public class LanguageUnderstandingApi {
 
   
   /**
-   * Save information for the draft
+   * Save information for the draft. Either topic draft or intent draft should be sent.
    * 
    * @param minerId Miner ID (required)
    * @param draftId Draft ID (required)
@@ -1688,7 +1688,7 @@ public class LanguageUnderstandingApi {
   }
 
   /**
-   * Save information for the draft
+   * Save information for the draft. Either topic draft or intent draft should be sent.
    * 
    * @param minerId Miner ID (required)
    * @param draftId Draft ID (required)
@@ -1712,7 +1712,7 @@ public class LanguageUnderstandingApi {
   }
 
   /**
-   * Save information for the draft
+   * Save information for the draft. Either topic draft or intent draft should be sent.
    * 
    * @param request The request object
    * @return Draft
@@ -1731,7 +1731,7 @@ public class LanguageUnderstandingApi {
   }
 
   /**
-   * Save information for the draft
+   * Save information for the draft. Either topic draft or intent draft should be sent.
    * 
    * @param request The request object
    * @return the response
@@ -2342,7 +2342,7 @@ public class LanguageUnderstandingApi {
 
   
   /**
-   * Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+   * Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
    * 
    * @param minerId Miner ID (required)
    * @param body  (optional)
@@ -2355,7 +2355,7 @@ public class LanguageUnderstandingApi {
   }
 
   /**
-   * Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+   * Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
    * 
    * @param minerId Miner ID (required)
    * @param body  (optional)
@@ -2376,7 +2376,7 @@ public class LanguageUnderstandingApi {
   }
 
   /**
-   * Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+   * Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
    * 
    * @param request The request object
    * @return Miner
@@ -2395,7 +2395,7 @@ public class LanguageUnderstandingApi {
   }
 
   /**
-   * Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+   * Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
    * 
    * @param request The request object
    * @return the response

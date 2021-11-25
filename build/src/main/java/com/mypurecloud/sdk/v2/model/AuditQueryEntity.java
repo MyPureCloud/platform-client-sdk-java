@@ -80,6 +80,7 @@ public class AuditQueryEntity  implements Serializable {
     DNCLIST("DNCList"),
     DOCUMENT("Document"),
     DYNAMICGROUP("DynamicGroup"),
+    DYNAMICSCHEMA("DynamicSchema"),
     EDGE("Edge"),
     EDGEGROUP("EdgeGroup"),
     EDGELOG("EdgeLog"),
@@ -297,7 +298,8 @@ public class AuditQueryEntity  implements Serializable {
     UNASSIGN("Unassign"),
     REASSIGN("Reassign"),
     RESCHEDULE("Reschedule"),
-    CANCEL("Cancel");
+    CANCEL("Cancel"),
+    SOFTDELETE("SoftDelete");
 
     private String value;
 

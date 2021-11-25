@@ -61,6 +61,7 @@ public class AuditLogMessage  implements Serializable {
     CONTENTMANAGEMENT("ContentManagement"),
     DATATABLES("Datatables"),
     DIRECTORY("Directory"),
+    DYNAMICSCHEMA("DynamicSchema"),
     GAMIFICATION("Gamification"),
     GROUPS("Groups"),
     INTEGRATIONS("Integrations"),
@@ -201,7 +202,8 @@ public class AuditLogMessage  implements Serializable {
     UNASSIGN("Unassign"),
     REASSIGN("Reassign"),
     RESCHEDULE("Reschedule"),
-    CANCEL("Cancel");
+    CANCEL("Cancel"),
+    SOFTDELETE("SoftDelete");
 
     private String value;
 
@@ -287,6 +289,7 @@ public class AuditLogMessage  implements Serializable {
     DNCLIST("DNCList"),
     DOCUMENT("Document"),
     DYNAMICGROUP("DynamicGroup"),
+    DYNAMICSCHEMA("DynamicSchema"),
     EDGE("Edge"),
     EDGEGROUP("EdgeGroup"),
     EDGELOG("EdgeLog"),

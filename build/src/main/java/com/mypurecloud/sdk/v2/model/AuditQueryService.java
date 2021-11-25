@@ -50,6 +50,7 @@ public class AuditQueryService  implements Serializable {
     CONTENTMANAGEMENT("ContentManagement"),
     DATATABLES("Datatables"),
     DIRECTORY("Directory"),
+    DYNAMICSCHEMA("DynamicSchema"),
     GAMIFICATION("Gamification"),
     GROUPS("Groups"),
     INTEGRATIONS("Integrations"),

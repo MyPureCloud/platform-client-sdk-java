@@ -50,7 +50,12 @@ import com.mypurecloud.sdk.v2.model.WfmAgent;
 import com.mypurecloud.sdk.v2.model.ShiftTradeListResponse;
 import com.mypurecloud.sdk.v2.model.ShiftTradeMatchesSummaryResponse;
 import com.mypurecloud.sdk.v2.model.WfmUserEntityListing;
+import com.mypurecloud.sdk.v2.model.TimeOffLimit;
+import com.mypurecloud.sdk.v2.model.TimeOffLimitListing;
+import com.mypurecloud.sdk.v2.model.TimeOffPlan;
+import com.mypurecloud.sdk.v2.model.TimeOffPlanListing;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestResponse;
+import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesResponse;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestList;
 import com.mypurecloud.sdk.v2.model.WeekScheduleResponse;
 import com.mypurecloud.sdk.v2.model.WeekScheduleListResponse;
@@ -61,12 +66,15 @@ import com.mypurecloud.sdk.v2.model.WorkPlanRotationListResponse;
 import com.mypurecloud.sdk.v2.model.WorkPlanListResponse;
 import com.mypurecloud.sdk.v2.model.NotificationsResponse;
 import com.mypurecloud.sdk.v2.model.SchedulingStatusResponse;
+import com.mypurecloud.sdk.v2.model.WaitlistPositionListing;
 import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.UpdatePlanningGroupRequest;
 import com.mypurecloud.sdk.v2.model.PatchBuScheduleRunRequest;
 import com.mypurecloud.sdk.v2.model.UpdateServiceGoalTemplate;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
+import com.mypurecloud.sdk.v2.model.UpdateTimeOffLimitRequest;
+import com.mypurecloud.sdk.v2.model.UpdateTimeOffPlanRequest;
 import com.mypurecloud.sdk.v2.model.AdminTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.ShiftTradeResponse;
 import com.mypurecloud.sdk.v2.model.PatchShiftTradeRequest;
@@ -100,9 +108,13 @@ import com.mypurecloud.sdk.v2.model.MoveManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.MoveManagementUnitResponse;
 import com.mypurecloud.sdk.v2.model.UserScheduleContainer;
 import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
+import com.mypurecloud.sdk.v2.model.CreateTimeOffLimitRequest;
+import com.mypurecloud.sdk.v2.model.QueryTimeOffLimitValuesRequest;
+import com.mypurecloud.sdk.v2.model.CreateTimeOffPlanRequest;
 import com.mypurecloud.sdk.v2.model.CreateAdminTimeOffRequest;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestQueryBody;
 import com.mypurecloud.sdk.v2.model.TimeOffRequestListing;
+import com.mypurecloud.sdk.v2.model.QueryWaitlistPositionsRequest;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.MatchShiftTradeResponse;
 import com.mypurecloud.sdk.v2.model.AddShiftTradeRequest;
@@ -120,7 +132,10 @@ import com.mypurecloud.sdk.v2.model.CreateManagementUnitApiRequest;
 import com.mypurecloud.sdk.v2.model.UpdateNotificationsResponse;
 import com.mypurecloud.sdk.v2.model.UpdateNotificationsRequest;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
+import com.mypurecloud.sdk.v2.model.AvailableTimeOffResponse;
+import com.mypurecloud.sdk.v2.model.AvailableTimeOffRequest;
 import com.mypurecloud.sdk.v2.model.CreateAgentTimeOffRequest;
+import com.mypurecloud.sdk.v2.model.SetTimeOffLimitValuesRequest;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitRequest;
@@ -132,6 +147,8 @@ import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitW
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitWeekShorttermforecastRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementCalendarUrlIcsRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitTimeofflimitRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitTimeoffplanRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanrotationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceRequest;
@@ -174,7 +191,12 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAg
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAgentShifttradesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitShifttradesMatchedRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitShifttradesUsersRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitTimeofflimitRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitTimeofflimitsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitTimeoffplanRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitTimeoffplansRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitUserTimeoffrequestRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimitsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitUserTimeoffrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitWeekScheduleRequest;
@@ -190,6 +212,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementNotificationsReq
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulingjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestWaitlistpositionsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementTimeoffrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitActivitycodeRequest;
@@ -197,6 +220,8 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitPl
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeofflimitRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeoffplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitUserTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWeekShifttradeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWorkplanRequest;
@@ -224,8 +249,12 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitA
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitHistoricaladherencequeryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitMoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitSchedulesSearchRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeofflimitsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeofflimitsValuesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeoffplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeoffrequestsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeoffrequestsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShifttradeMatchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShifttradesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitWeekShifttradesSearchRequest;
@@ -238,7 +267,9 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitW
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementNotificationsUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementSchedulesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeofflimitsAvailableQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeoffrequestsRequest;
+import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementManagementunitTimeofflimitValuesRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -952,6 +983,166 @@ public class WorkforceManagementApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteWorkforcemanagementManagementunit(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Deletes a time off limit object
+   * 
+   * @param managementUnitId The management unit ID of the management unit. (required)
+   * @param timeOffLimitId The ID of the time off limit object to delete (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementManagementunitTimeofflimit(String managementUnitId, String timeOffLimitId) throws IOException, ApiException {
+     deleteWorkforcemanagementManagementunitTimeofflimit(createDeleteWorkforcemanagementManagementunitTimeofflimitRequest(managementUnitId, timeOffLimitId));
+  }
+
+  /**
+   * Deletes a time off limit object
+   * 
+   * @param managementUnitId The management unit ID of the management unit. (required)
+   * @param timeOffLimitId The ID of the time off limit object to delete (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementManagementunitTimeofflimitWithHttpInfo(String managementUnitId, String timeOffLimitId) throws IOException {
+    return deleteWorkforcemanagementManagementunitTimeofflimit(createDeleteWorkforcemanagementManagementunitTimeofflimitRequest(managementUnitId, timeOffLimitId).withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementManagementunitTimeofflimitRequest createDeleteWorkforcemanagementManagementunitTimeofflimitRequest(String managementUnitId, String timeOffLimitId) {
+    return DeleteWorkforcemanagementManagementunitTimeofflimitRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withTimeOffLimitId(timeOffLimitId)
+    
+            .build();
+  }
+
+  /**
+   * Deletes a time off limit object
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementManagementunitTimeofflimit(DeleteWorkforcemanagementManagementunitTimeofflimitRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Deletes a time off limit object
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementManagementunitTimeofflimit(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Deletes a time off plan
+   * 
+   * @param managementUnitId The management unit ID. (required)
+   * @param timeOffPlanId The ID of the time off plan to delete (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementManagementunitTimeoffplan(String managementUnitId, String timeOffPlanId) throws IOException, ApiException {
+     deleteWorkforcemanagementManagementunitTimeoffplan(createDeleteWorkforcemanagementManagementunitTimeoffplanRequest(managementUnitId, timeOffPlanId));
+  }
+
+  /**
+   * Deletes a time off plan
+   * 
+   * @param managementUnitId The management unit ID. (required)
+   * @param timeOffPlanId The ID of the time off plan to delete (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementManagementunitTimeoffplanWithHttpInfo(String managementUnitId, String timeOffPlanId) throws IOException {
+    return deleteWorkforcemanagementManagementunitTimeoffplan(createDeleteWorkforcemanagementManagementunitTimeoffplanRequest(managementUnitId, timeOffPlanId).withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementManagementunitTimeoffplanRequest createDeleteWorkforcemanagementManagementunitTimeoffplanRequest(String managementUnitId, String timeOffPlanId) {
+    return DeleteWorkforcemanagementManagementunitTimeoffplanRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withTimeOffPlanId(timeOffPlanId)
+    
+            .build();
+  }
+
+  /**
+   * Deletes a time off plan
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementManagementunitTimeoffplan(DeleteWorkforcemanagementManagementunitTimeoffplanRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Deletes a time off plan
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementManagementunitTimeoffplan(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -4463,6 +4654,330 @@ public class WorkforceManagementApi {
 
   
   /**
+   * Gets a time off limit object
+   * Returns properties of time off limit object, but not daily values.
+   * @param managementUnitId The management unit ID of the management unit. (required)
+   * @param timeOffLimitId The ID of the time off limit to fetch (required)
+   * @return TimeOffLimit
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffLimit getWorkforcemanagementManagementunitTimeofflimit(String managementUnitId, String timeOffLimitId) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitTimeofflimit(createGetWorkforcemanagementManagementunitTimeofflimitRequest(managementUnitId, timeOffLimitId));
+  }
+
+  /**
+   * Gets a time off limit object
+   * Returns properties of time off limit object, but not daily values.
+   * @param managementUnitId The management unit ID of the management unit. (required)
+   * @param timeOffLimitId The ID of the time off limit to fetch (required)
+   * @return TimeOffLimit
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffLimit> getWorkforcemanagementManagementunitTimeofflimitWithHttpInfo(String managementUnitId, String timeOffLimitId) throws IOException {
+    return getWorkforcemanagementManagementunitTimeofflimit(createGetWorkforcemanagementManagementunitTimeofflimitRequest(managementUnitId, timeOffLimitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementManagementunitTimeofflimitRequest createGetWorkforcemanagementManagementunitTimeofflimitRequest(String managementUnitId, String timeOffLimitId) {
+    return GetWorkforcemanagementManagementunitTimeofflimitRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withTimeOffLimitId(timeOffLimitId)
+    
+            .build();
+  }
+
+  /**
+   * Gets a time off limit object
+   * Returns properties of time off limit object, but not daily values.
+   * @param request The request object
+   * @return TimeOffLimit
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffLimit getWorkforcemanagementManagementunitTimeofflimit(GetWorkforcemanagementManagementunitTimeofflimitRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TimeOffLimit> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeOffLimit>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets a time off limit object
+   * Returns properties of time off limit object, but not daily values.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffLimit> getWorkforcemanagementManagementunitTimeofflimit(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TimeOffLimit>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffLimit> response = (ApiResponse<TimeOffLimit>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffLimit> response = (ApiResponse<TimeOffLimit>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Gets a list of time off limit objects under management unit.
+   * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
+   * @param managementUnitId The management unit ID of the management unit. (required)
+   * @return TimeOffLimitListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffLimitListing getWorkforcemanagementManagementunitTimeofflimits(String managementUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitTimeofflimits(createGetWorkforcemanagementManagementunitTimeofflimitsRequest(managementUnitId));
+  }
+
+  /**
+   * Gets a list of time off limit objects under management unit.
+   * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
+   * @param managementUnitId The management unit ID of the management unit. (required)
+   * @return TimeOffLimitListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffLimitListing> getWorkforcemanagementManagementunitTimeofflimitsWithHttpInfo(String managementUnitId) throws IOException {
+    return getWorkforcemanagementManagementunitTimeofflimits(createGetWorkforcemanagementManagementunitTimeofflimitsRequest(managementUnitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementManagementunitTimeofflimitsRequest createGetWorkforcemanagementManagementunitTimeofflimitsRequest(String managementUnitId) {
+    return GetWorkforcemanagementManagementunitTimeofflimitsRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .build();
+  }
+
+  /**
+   * Gets a list of time off limit objects under management unit.
+   * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
+   * @param request The request object
+   * @return TimeOffLimitListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffLimitListing getWorkforcemanagementManagementunitTimeofflimits(GetWorkforcemanagementManagementunitTimeofflimitsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TimeOffLimitListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeOffLimitListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets a list of time off limit objects under management unit.
+   * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffLimitListing> getWorkforcemanagementManagementunitTimeofflimits(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TimeOffLimitListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffLimitListing> response = (ApiResponse<TimeOffLimitListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffLimitListing> response = (ApiResponse<TimeOffLimitListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Gets a time off plan
+   * 
+   * @param managementUnitId The management unit ID. (required)
+   * @param timeOffPlanId The ID of the time off plan to fetch (required)
+   * @return TimeOffPlan
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffPlan getWorkforcemanagementManagementunitTimeoffplan(String managementUnitId, String timeOffPlanId) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitTimeoffplan(createGetWorkforcemanagementManagementunitTimeoffplanRequest(managementUnitId, timeOffPlanId));
+  }
+
+  /**
+   * Gets a time off plan
+   * 
+   * @param managementUnitId The management unit ID. (required)
+   * @param timeOffPlanId The ID of the time off plan to fetch (required)
+   * @return TimeOffPlan
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffPlan> getWorkforcemanagementManagementunitTimeoffplanWithHttpInfo(String managementUnitId, String timeOffPlanId) throws IOException {
+    return getWorkforcemanagementManagementunitTimeoffplan(createGetWorkforcemanagementManagementunitTimeoffplanRequest(managementUnitId, timeOffPlanId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementManagementunitTimeoffplanRequest createGetWorkforcemanagementManagementunitTimeoffplanRequest(String managementUnitId, String timeOffPlanId) {
+    return GetWorkforcemanagementManagementunitTimeoffplanRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withTimeOffPlanId(timeOffPlanId)
+    
+            .build();
+  }
+
+  /**
+   * Gets a time off plan
+   * 
+   * @param request The request object
+   * @return TimeOffPlan
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffPlan getWorkforcemanagementManagementunitTimeoffplan(GetWorkforcemanagementManagementunitTimeoffplanRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TimeOffPlan> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeOffPlan>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets a time off plan
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffPlan> getWorkforcemanagementManagementunitTimeoffplan(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TimeOffPlan>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffPlan> response = (ApiResponse<TimeOffPlan>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffPlan> response = (ApiResponse<TimeOffPlan>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Gets a list of time off plans
+   * 
+   * @param managementUnitId The management unit ID. (required)
+   * @return TimeOffPlanListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffPlanListing getWorkforcemanagementManagementunitTimeoffplans(String managementUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitTimeoffplans(createGetWorkforcemanagementManagementunitTimeoffplansRequest(managementUnitId));
+  }
+
+  /**
+   * Gets a list of time off plans
+   * 
+   * @param managementUnitId The management unit ID. (required)
+   * @return TimeOffPlanListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffPlanListing> getWorkforcemanagementManagementunitTimeoffplansWithHttpInfo(String managementUnitId) throws IOException {
+    return getWorkforcemanagementManagementunitTimeoffplans(createGetWorkforcemanagementManagementunitTimeoffplansRequest(managementUnitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementManagementunitTimeoffplansRequest createGetWorkforcemanagementManagementunitTimeoffplansRequest(String managementUnitId) {
+    return GetWorkforcemanagementManagementunitTimeoffplansRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .build();
+  }
+
+  /**
+   * Gets a list of time off plans
+   * 
+   * @param request The request object
+   * @return TimeOffPlanListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffPlanListing getWorkforcemanagementManagementunitTimeoffplans(GetWorkforcemanagementManagementunitTimeoffplansRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TimeOffPlanListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeOffPlanListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets a list of time off plans
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffPlanListing> getWorkforcemanagementManagementunitTimeoffplans(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TimeOffPlanListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffPlanListing> response = (ApiResponse<TimeOffPlanListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffPlanListing> response = (ApiResponse<TimeOffPlanListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get a time off request
    * 
    * @param managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
@@ -4544,6 +5059,93 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TimeOffRequestResponse> response = (ApiResponse<TimeOffRequestResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Retrieves time off limit, allocated and waitlisted values according to specific time off request
+   * 
+   * @param managementUnitId The management unit ID of the management unit. (required)
+   * @param userId The userId to whom the time off request applies. (required)
+   * @param timeOffRequestId The ID of the time off request, which dates and activityCodeId determine limit values to retrieve (required)
+   * @return QueryTimeOffLimitValuesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueryTimeOffLimitValuesResponse getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(String managementUnitId, String userId, String timeOffRequestId) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(createGetWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimitsRequest(managementUnitId, userId, timeOffRequestId));
+  }
+
+  /**
+   * Retrieves time off limit, allocated and waitlisted values according to specific time off request
+   * 
+   * @param managementUnitId The management unit ID of the management unit. (required)
+   * @param userId The userId to whom the time off request applies. (required)
+   * @param timeOffRequestId The ID of the time off request, which dates and activityCodeId determine limit values to retrieve (required)
+   * @return QueryTimeOffLimitValuesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueryTimeOffLimitValuesResponse> getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimitsWithHttpInfo(String managementUnitId, String userId, String timeOffRequestId) throws IOException {
+    return getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(createGetWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimitsRequest(managementUnitId, userId, timeOffRequestId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimitsRequest createGetWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimitsRequest(String managementUnitId, String userId, String timeOffRequestId) {
+    return GetWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimitsRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withUserId(userId)
+    
+            .withTimeOffRequestId(timeOffRequestId)
+    
+            .build();
+  }
+
+  /**
+   * Retrieves time off limit, allocated and waitlisted values according to specific time off request
+   * 
+   * @param request The request object
+   * @return QueryTimeOffLimitValuesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueryTimeOffLimitValuesResponse getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(GetWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimitsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<QueryTimeOffLimitValuesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueryTimeOffLimitValuesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieves time off limit, allocated and waitlisted values according to specific time off request
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueryTimeOffLimitValuesResponse> getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<QueryTimeOffLimitValuesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryTimeOffLimitValuesResponse> response = (ApiResponse<QueryTimeOffLimitValuesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryTimeOffLimitValuesResponse> response = (ApiResponse<QueryTimeOffLimitValuesResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -5811,6 +6413,85 @@ public class WorkforceManagementApi {
 
   
   /**
+   * Get the daily waitlist positions of a time off request for the current user
+   * 
+   * @param timeOffRequestId Time Off Request Id (required)
+   * @return WaitlistPositionListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WaitlistPositionListing getWorkforcemanagementTimeoffrequestWaitlistpositions(String timeOffRequestId) throws IOException, ApiException {
+    return  getWorkforcemanagementTimeoffrequestWaitlistpositions(createGetWorkforcemanagementTimeoffrequestWaitlistpositionsRequest(timeOffRequestId));
+  }
+
+  /**
+   * Get the daily waitlist positions of a time off request for the current user
+   * 
+   * @param timeOffRequestId Time Off Request Id (required)
+   * @return WaitlistPositionListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WaitlistPositionListing> getWorkforcemanagementTimeoffrequestWaitlistpositionsWithHttpInfo(String timeOffRequestId) throws IOException {
+    return getWorkforcemanagementTimeoffrequestWaitlistpositions(createGetWorkforcemanagementTimeoffrequestWaitlistpositionsRequest(timeOffRequestId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementTimeoffrequestWaitlistpositionsRequest createGetWorkforcemanagementTimeoffrequestWaitlistpositionsRequest(String timeOffRequestId) {
+    return GetWorkforcemanagementTimeoffrequestWaitlistpositionsRequest.builder()
+            .withTimeOffRequestId(timeOffRequestId)
+    
+            .build();
+  }
+
+  /**
+   * Get the daily waitlist positions of a time off request for the current user
+   * 
+   * @param request The request object
+   * @return WaitlistPositionListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WaitlistPositionListing getWorkforcemanagementTimeoffrequestWaitlistpositions(GetWorkforcemanagementTimeoffrequestWaitlistpositionsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WaitlistPositionListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WaitlistPositionListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the daily waitlist positions of a time off request for the current user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WaitlistPositionListing> getWorkforcemanagementTimeoffrequestWaitlistpositions(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WaitlistPositionListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WaitlistPositionListing> response = (ApiResponse<WaitlistPositionListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WaitlistPositionListing> response = (ApiResponse<WaitlistPositionListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get a list of time off requests for the current user
    * 
    * @param recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (optional, default to false)
@@ -6395,6 +7076,180 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ManagementUnit> response = (ApiResponse<ManagementUnit>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Updates a time off limit object.
+   * Updates time off limit object properties, but not daily values.
+   * @param managementUnitId The management unit ID of the management unit. (required)
+   * @param timeOffLimitId The id of time off limit object to update (required)
+   * @param body body (optional)
+   * @return TimeOffLimit
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffLimit patchWorkforcemanagementManagementunitTimeofflimit(String managementUnitId, String timeOffLimitId, UpdateTimeOffLimitRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementManagementunitTimeofflimit(createPatchWorkforcemanagementManagementunitTimeofflimitRequest(managementUnitId, timeOffLimitId, body));
+  }
+
+  /**
+   * Updates a time off limit object.
+   * Updates time off limit object properties, but not daily values.
+   * @param managementUnitId The management unit ID of the management unit. (required)
+   * @param timeOffLimitId The id of time off limit object to update (required)
+   * @param body body (optional)
+   * @return TimeOffLimit
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffLimit> patchWorkforcemanagementManagementunitTimeofflimitWithHttpInfo(String managementUnitId, String timeOffLimitId, UpdateTimeOffLimitRequest body) throws IOException {
+    return patchWorkforcemanagementManagementunitTimeofflimit(createPatchWorkforcemanagementManagementunitTimeofflimitRequest(managementUnitId, timeOffLimitId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementManagementunitTimeofflimitRequest createPatchWorkforcemanagementManagementunitTimeofflimitRequest(String managementUnitId, String timeOffLimitId, UpdateTimeOffLimitRequest body) {
+    return PatchWorkforcemanagementManagementunitTimeofflimitRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withTimeOffLimitId(timeOffLimitId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Updates a time off limit object.
+   * Updates time off limit object properties, but not daily values.
+   * @param request The request object
+   * @return TimeOffLimit
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffLimit patchWorkforcemanagementManagementunitTimeofflimit(PatchWorkforcemanagementManagementunitTimeofflimitRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TimeOffLimit> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeOffLimit>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates a time off limit object.
+   * Updates time off limit object properties, but not daily values.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffLimit> patchWorkforcemanagementManagementunitTimeofflimit(ApiRequest<UpdateTimeOffLimitRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TimeOffLimit>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffLimit> response = (ApiResponse<TimeOffLimit>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffLimit> response = (ApiResponse<TimeOffLimit>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Updates a time off plan
+   * 
+   * @param managementUnitId The management unit ID. (required)
+   * @param timeOffPlanId The ID of the time off plan to update (required)
+   * @param body body (optional)
+   * @return TimeOffPlan
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffPlan patchWorkforcemanagementManagementunitTimeoffplan(String managementUnitId, String timeOffPlanId, UpdateTimeOffPlanRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementManagementunitTimeoffplan(createPatchWorkforcemanagementManagementunitTimeoffplanRequest(managementUnitId, timeOffPlanId, body));
+  }
+
+  /**
+   * Updates a time off plan
+   * 
+   * @param managementUnitId The management unit ID. (required)
+   * @param timeOffPlanId The ID of the time off plan to update (required)
+   * @param body body (optional)
+   * @return TimeOffPlan
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffPlan> patchWorkforcemanagementManagementunitTimeoffplanWithHttpInfo(String managementUnitId, String timeOffPlanId, UpdateTimeOffPlanRequest body) throws IOException {
+    return patchWorkforcemanagementManagementunitTimeoffplan(createPatchWorkforcemanagementManagementunitTimeoffplanRequest(managementUnitId, timeOffPlanId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementManagementunitTimeoffplanRequest createPatchWorkforcemanagementManagementunitTimeoffplanRequest(String managementUnitId, String timeOffPlanId, UpdateTimeOffPlanRequest body) {
+    return PatchWorkforcemanagementManagementunitTimeoffplanRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withTimeOffPlanId(timeOffPlanId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Updates a time off plan
+   * 
+   * @param request The request object
+   * @return TimeOffPlan
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffPlan patchWorkforcemanagementManagementunitTimeoffplan(PatchWorkforcemanagementManagementunitTimeoffplanRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TimeOffPlan> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeOffPlan>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Updates a time off plan
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffPlan> patchWorkforcemanagementManagementunitTimeoffplan(ApiRequest<UpdateTimeOffPlanRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TimeOffPlan>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffPlan> response = (ApiResponse<TimeOffPlan>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffPlan> response = (ApiResponse<TimeOffPlan>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -8719,6 +9574,255 @@ public class WorkforceManagementApi {
 
   
   /**
+   * Creates a new time off limit object under management unit.
+   * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
+   * @param managementUnitId The management unit ID of the management unit. (required)
+   * @param body body (optional)
+   * @return TimeOffLimit
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffLimit postWorkforcemanagementManagementunitTimeofflimits(String managementUnitId, CreateTimeOffLimitRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitTimeofflimits(createPostWorkforcemanagementManagementunitTimeofflimitsRequest(managementUnitId, body));
+  }
+
+  /**
+   * Creates a new time off limit object under management unit.
+   * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
+   * @param managementUnitId The management unit ID of the management unit. (required)
+   * @param body body (optional)
+   * @return TimeOffLimit
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffLimit> postWorkforcemanagementManagementunitTimeofflimitsWithHttpInfo(String managementUnitId, CreateTimeOffLimitRequest body) throws IOException {
+    return postWorkforcemanagementManagementunitTimeofflimits(createPostWorkforcemanagementManagementunitTimeofflimitsRequest(managementUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitTimeofflimitsRequest createPostWorkforcemanagementManagementunitTimeofflimitsRequest(String managementUnitId, CreateTimeOffLimitRequest body) {
+    return PostWorkforcemanagementManagementunitTimeofflimitsRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Creates a new time off limit object under management unit.
+   * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
+   * @param request The request object
+   * @return TimeOffLimit
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffLimit postWorkforcemanagementManagementunitTimeofflimits(PostWorkforcemanagementManagementunitTimeofflimitsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TimeOffLimit> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeOffLimit>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a new time off limit object under management unit.
+   * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffLimit> postWorkforcemanagementManagementunitTimeofflimits(ApiRequest<CreateTimeOffLimitRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TimeOffLimit>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffLimit> response = (ApiResponse<TimeOffLimit>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffLimit> response = (ApiResponse<TimeOffLimit>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Retrieves time off limit related values based on a given set of filters.
+   * 
+   * @param managementUnitId The management unit ID of the management unit. (required)
+   * @param body body (optional)
+   * @return QueryTimeOffLimitValuesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueryTimeOffLimitValuesResponse postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(String managementUnitId, QueryTimeOffLimitValuesRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(createPostWorkforcemanagementManagementunitTimeofflimitsValuesQueryRequest(managementUnitId, body));
+  }
+
+  /**
+   * Retrieves time off limit related values based on a given set of filters.
+   * 
+   * @param managementUnitId The management unit ID of the management unit. (required)
+   * @param body body (optional)
+   * @return QueryTimeOffLimitValuesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueryTimeOffLimitValuesResponse> postWorkforcemanagementManagementunitTimeofflimitsValuesQueryWithHttpInfo(String managementUnitId, QueryTimeOffLimitValuesRequest body) throws IOException {
+    return postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(createPostWorkforcemanagementManagementunitTimeofflimitsValuesQueryRequest(managementUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitTimeofflimitsValuesQueryRequest createPostWorkforcemanagementManagementunitTimeofflimitsValuesQueryRequest(String managementUnitId, QueryTimeOffLimitValuesRequest body) {
+    return PostWorkforcemanagementManagementunitTimeofflimitsValuesQueryRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Retrieves time off limit related values based on a given set of filters.
+   * 
+   * @param request The request object
+   * @return QueryTimeOffLimitValuesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public QueryTimeOffLimitValuesResponse postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(PostWorkforcemanagementManagementunitTimeofflimitsValuesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<QueryTimeOffLimitValuesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<QueryTimeOffLimitValuesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieves time off limit related values based on a given set of filters.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<QueryTimeOffLimitValuesResponse> postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(ApiRequest<QueryTimeOffLimitValuesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<QueryTimeOffLimitValuesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryTimeOffLimitValuesResponse> response = (ApiResponse<QueryTimeOffLimitValuesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<QueryTimeOffLimitValuesResponse> response = (ApiResponse<QueryTimeOffLimitValuesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Creates a new time off plan
+   * 
+   * @param managementUnitId The management unit ID. (required)
+   * @param body body (optional)
+   * @return TimeOffPlan
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffPlan postWorkforcemanagementManagementunitTimeoffplans(String managementUnitId, CreateTimeOffPlanRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitTimeoffplans(createPostWorkforcemanagementManagementunitTimeoffplansRequest(managementUnitId, body));
+  }
+
+  /**
+   * Creates a new time off plan
+   * 
+   * @param managementUnitId The management unit ID. (required)
+   * @param body body (optional)
+   * @return TimeOffPlan
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffPlan> postWorkforcemanagementManagementunitTimeoffplansWithHttpInfo(String managementUnitId, CreateTimeOffPlanRequest body) throws IOException {
+    return postWorkforcemanagementManagementunitTimeoffplans(createPostWorkforcemanagementManagementunitTimeoffplansRequest(managementUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitTimeoffplansRequest createPostWorkforcemanagementManagementunitTimeoffplansRequest(String managementUnitId, CreateTimeOffPlanRequest body) {
+    return PostWorkforcemanagementManagementunitTimeoffplansRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Creates a new time off plan
+   * 
+   * @param request The request object
+   * @return TimeOffPlan
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffPlan postWorkforcemanagementManagementunitTimeoffplans(PostWorkforcemanagementManagementunitTimeoffplansRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TimeOffPlan> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeOffPlan>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a new time off plan
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffPlan> postWorkforcemanagementManagementunitTimeoffplans(ApiRequest<CreateTimeOffPlanRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TimeOffPlan>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffPlan> response = (ApiResponse<TimeOffPlan>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffPlan> response = (ApiResponse<TimeOffPlan>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Create a new time off request
    * 
    * @param managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. (required)
@@ -8879,6 +9983,89 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TimeOffRequestListing> response = (ApiResponse<TimeOffRequestListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Retrieves daily waitlist position for a list of time off requests
+   * 
+   * @param managementUnitId The management unit ID of the management unit. (required)
+   * @param body body (optional)
+   * @return WaitlistPositionListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WaitlistPositionListing postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(String managementUnitId, QueryWaitlistPositionsRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(createPostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQueryRequest(managementUnitId, body));
+  }
+
+  /**
+   * Retrieves daily waitlist position for a list of time off requests
+   * 
+   * @param managementUnitId The management unit ID of the management unit. (required)
+   * @param body body (optional)
+   * @return WaitlistPositionListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WaitlistPositionListing> postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQueryWithHttpInfo(String managementUnitId, QueryWaitlistPositionsRequest body) throws IOException {
+    return postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(createPostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQueryRequest(managementUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQueryRequest createPostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQueryRequest(String managementUnitId, QueryWaitlistPositionsRequest body) {
+    return PostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQueryRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Retrieves daily waitlist position for a list of time off requests
+   * 
+   * @param request The request object
+   * @return WaitlistPositionListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public WaitlistPositionListing postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(PostWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<WaitlistPositionListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<WaitlistPositionListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Retrieves daily waitlist position for a list of time off requests
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<WaitlistPositionListing> postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(ApiRequest<QueryWaitlistPositionsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<WaitlistPositionListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<WaitlistPositionListing> response = (ApiResponse<WaitlistPositionListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<WaitlistPositionListing> response = (ApiResponse<WaitlistPositionListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -9913,6 +11100,85 @@ public class WorkforceManagementApi {
 
   
   /**
+   * Queries available time off for the current user
+   * 
+   * @param body body (optional)
+   * @return AvailableTimeOffResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AvailableTimeOffResponse postWorkforcemanagementTimeofflimitsAvailableQuery(AvailableTimeOffRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementTimeofflimitsAvailableQuery(createPostWorkforcemanagementTimeofflimitsAvailableQueryRequest(body));
+  }
+
+  /**
+   * Queries available time off for the current user
+   * 
+   * @param body body (optional)
+   * @return AvailableTimeOffResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AvailableTimeOffResponse> postWorkforcemanagementTimeofflimitsAvailableQueryWithHttpInfo(AvailableTimeOffRequest body) throws IOException {
+    return postWorkforcemanagementTimeofflimitsAvailableQuery(createPostWorkforcemanagementTimeofflimitsAvailableQueryRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementTimeofflimitsAvailableQueryRequest createPostWorkforcemanagementTimeofflimitsAvailableQueryRequest(AvailableTimeOffRequest body) {
+    return PostWorkforcemanagementTimeofflimitsAvailableQueryRequest.builder()
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Queries available time off for the current user
+   * 
+   * @param request The request object
+   * @return AvailableTimeOffResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AvailableTimeOffResponse postWorkforcemanagementTimeofflimitsAvailableQuery(PostWorkforcemanagementTimeofflimitsAvailableQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AvailableTimeOffResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AvailableTimeOffResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Queries available time off for the current user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AvailableTimeOffResponse> postWorkforcemanagementTimeofflimitsAvailableQuery(ApiRequest<AvailableTimeOffRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AvailableTimeOffResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AvailableTimeOffResponse> response = (ApiResponse<AvailableTimeOffResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AvailableTimeOffResponse> response = (ApiResponse<AvailableTimeOffResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Create a time off request for the current user
    * 
    * @param body body (optional)
@@ -9986,6 +11252,93 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TimeOffRequestResponse> response = (ApiResponse<TimeOffRequestResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Sets daily values for a date range of time off limit object
+   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
+   * @param managementUnitId The management unit ID of the management unit. (required)
+   * @param timeOffLimitId The ID of the time off limit object to set values for (required)
+   * @param body body (optional)
+   * @return TimeOffLimit
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffLimit putWorkforcemanagementManagementunitTimeofflimitValues(String managementUnitId, String timeOffLimitId, SetTimeOffLimitValuesRequest body) throws IOException, ApiException {
+    return  putWorkforcemanagementManagementunitTimeofflimitValues(createPutWorkforcemanagementManagementunitTimeofflimitValuesRequest(managementUnitId, timeOffLimitId, body));
+  }
+
+  /**
+   * Sets daily values for a date range of time off limit object
+   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
+   * @param managementUnitId The management unit ID of the management unit. (required)
+   * @param timeOffLimitId The ID of the time off limit object to set values for (required)
+   * @param body body (optional)
+   * @return TimeOffLimit
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffLimit> putWorkforcemanagementManagementunitTimeofflimitValuesWithHttpInfo(String managementUnitId, String timeOffLimitId, SetTimeOffLimitValuesRequest body) throws IOException {
+    return putWorkforcemanagementManagementunitTimeofflimitValues(createPutWorkforcemanagementManagementunitTimeofflimitValuesRequest(managementUnitId, timeOffLimitId, body).withHttpInfo());
+  }
+
+  private PutWorkforcemanagementManagementunitTimeofflimitValuesRequest createPutWorkforcemanagementManagementunitTimeofflimitValuesRequest(String managementUnitId, String timeOffLimitId, SetTimeOffLimitValuesRequest body) {
+    return PutWorkforcemanagementManagementunitTimeofflimitValuesRequest.builder()
+            .withManagementUnitId(managementUnitId)
+    
+            .withTimeOffLimitId(timeOffLimitId)
+    
+            .withBody(body)
+    
+            .build();
+  }
+
+  /**
+   * Sets daily values for a date range of time off limit object
+   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
+   * @param request The request object
+   * @return TimeOffLimit
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TimeOffLimit putWorkforcemanagementManagementunitTimeofflimitValues(PutWorkforcemanagementManagementunitTimeofflimitValuesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TimeOffLimit> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TimeOffLimit>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Sets daily values for a date range of time off limit object
+   * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TimeOffLimit> putWorkforcemanagementManagementunitTimeofflimitValues(ApiRequest<SetTimeOffLimitValuesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TimeOffLimit>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffLimit> response = (ApiResponse<TimeOffLimit>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TimeOffLimit> response = (ApiResponse<TimeOffLimit>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

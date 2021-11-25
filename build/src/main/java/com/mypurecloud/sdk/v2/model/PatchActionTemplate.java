@@ -47,7 +47,8 @@ public class PatchActionTemplate  implements Serializable {
     WEBMESSAGINGOFFER("webMessagingOffer"),
     CONTENTOFFER("contentOffer"),
     INTEGRATIONACTION("integrationAction"),
-    ARCHITECTFLOW("architectFlow");
+    ARCHITECTFLOW("architectFlow"),
+    OPENACTION("openAction");
 
     private String value;
 

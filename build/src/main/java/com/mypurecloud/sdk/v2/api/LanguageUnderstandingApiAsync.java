@@ -1532,7 +1532,7 @@ public class LanguageUnderstandingApiAsync {
 
   
   /**
-   * Save information for the draft
+   * Save information for the draft. Either topic draft or intent draft should be sent.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1566,7 +1566,7 @@ public class LanguageUnderstandingApiAsync {
   }
 
   /**
-   * Save information for the draft
+   * Save information for the draft. Either topic draft or intent draft should be sent.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2140,7 +2140,7 @@ public class LanguageUnderstandingApiAsync {
 
   
   /**
-   * Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+   * Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -2174,7 +2174,7 @@ public class LanguageUnderstandingApiAsync {
   }
 
   /**
-   * Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+   * Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

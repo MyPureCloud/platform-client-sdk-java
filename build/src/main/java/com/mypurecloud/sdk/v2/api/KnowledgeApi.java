@@ -21,10 +21,6 @@ import com.mypurecloud.sdk.v2.model.KnowledgeImport;
 import com.mypurecloud.sdk.v2.model.KnowledgeTraining;
 import com.mypurecloud.sdk.v2.model.TrainingListing;
 import com.mypurecloud.sdk.v2.model.KnowledgeBaseListing;
-import com.mypurecloud.sdk.v2.model.KnowledgeContextResponse;
-import com.mypurecloud.sdk.v2.model.KnowledgeContextRequest;
-import com.mypurecloud.sdk.v2.model.KnowledgeContextValueResponse;
-import com.mypurecloud.sdk.v2.model.KnowledgeContextValueRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeCategoryRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentRequest;
 import com.mypurecloud.sdk.v2.model.KnowledgeDocumentBulkRequest;
@@ -49,8 +45,6 @@ import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageTrain
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebaseLanguageTrainingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeKnowledgebasesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseRequest;
-import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseContextRequest;
-import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseContextValueRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageDocumentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseLanguageDocumentsRequest;
@@ -1361,184 +1355,6 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<KnowledgeBase> response = (ApiResponse<KnowledgeBase>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Update specific context data of the knowledge base.
-   * 
-   * @param knowledgeBaseId Knowledge base ID. (required)
-   * @param contextId Context ID. (required)
-   * @param body  (optional)
-   * @return KnowledgeContextResponse
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public KnowledgeContextResponse patchKnowledgeKnowledgebaseContext(String knowledgeBaseId, String contextId, KnowledgeContextRequest body) throws IOException, ApiException {
-    return  patchKnowledgeKnowledgebaseContext(createPatchKnowledgeKnowledgebaseContextRequest(knowledgeBaseId, contextId, body));
-  }
-
-  /**
-   * Update specific context data of the knowledge base.
-   * 
-   * @param knowledgeBaseId Knowledge base ID. (required)
-   * @param contextId Context ID. (required)
-   * @param body  (optional)
-   * @return KnowledgeContextResponse
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<KnowledgeContextResponse> patchKnowledgeKnowledgebaseContextWithHttpInfo(String knowledgeBaseId, String contextId, KnowledgeContextRequest body) throws IOException {
-    return patchKnowledgeKnowledgebaseContext(createPatchKnowledgeKnowledgebaseContextRequest(knowledgeBaseId, contextId, body).withHttpInfo());
-  }
-
-  private PatchKnowledgeKnowledgebaseContextRequest createPatchKnowledgeKnowledgebaseContextRequest(String knowledgeBaseId, String contextId, KnowledgeContextRequest body) {
-    return PatchKnowledgeKnowledgebaseContextRequest.builder()
-            .withKnowledgeBaseId(knowledgeBaseId)
-    
-            .withContextId(contextId)
-    
-            .withBody(body)
-    
-            .build();
-  }
-
-  /**
-   * Update specific context data of the knowledge base.
-   * 
-   * @param request The request object
-   * @return KnowledgeContextResponse
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public KnowledgeContextResponse patchKnowledgeKnowledgebaseContext(PatchKnowledgeKnowledgebaseContextRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<KnowledgeContextResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeContextResponse>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Update specific context data of the knowledge base.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<KnowledgeContextResponse> patchKnowledgeKnowledgebaseContext(ApiRequest<KnowledgeContextRequest> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<KnowledgeContextResponse>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<KnowledgeContextResponse> response = (ApiResponse<KnowledgeContextResponse>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<KnowledgeContextResponse> response = (ApiResponse<KnowledgeContextResponse>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  
-  /**
-   * Update context value.
-   * 
-   * @param knowledgeBaseId Knowledge base ID. (required)
-   * @param contextId Context ID. (required)
-   * @param contextValueId Context Value ID. (required)
-   * @param body  (optional)
-   * @return KnowledgeContextValueResponse
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public KnowledgeContextValueResponse patchKnowledgeKnowledgebaseContextValue(String knowledgeBaseId, String contextId, String contextValueId, KnowledgeContextValueRequest body) throws IOException, ApiException {
-    return  patchKnowledgeKnowledgebaseContextValue(createPatchKnowledgeKnowledgebaseContextValueRequest(knowledgeBaseId, contextId, contextValueId, body));
-  }
-
-  /**
-   * Update context value.
-   * 
-   * @param knowledgeBaseId Knowledge base ID. (required)
-   * @param contextId Context ID. (required)
-   * @param contextValueId Context Value ID. (required)
-   * @param body  (optional)
-   * @return KnowledgeContextValueResponse
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<KnowledgeContextValueResponse> patchKnowledgeKnowledgebaseContextValueWithHttpInfo(String knowledgeBaseId, String contextId, String contextValueId, KnowledgeContextValueRequest body) throws IOException {
-    return patchKnowledgeKnowledgebaseContextValue(createPatchKnowledgeKnowledgebaseContextValueRequest(knowledgeBaseId, contextId, contextValueId, body).withHttpInfo());
-  }
-
-  private PatchKnowledgeKnowledgebaseContextValueRequest createPatchKnowledgeKnowledgebaseContextValueRequest(String knowledgeBaseId, String contextId, String contextValueId, KnowledgeContextValueRequest body) {
-    return PatchKnowledgeKnowledgebaseContextValueRequest.builder()
-            .withKnowledgeBaseId(knowledgeBaseId)
-    
-            .withContextId(contextId)
-    
-            .withContextValueId(contextValueId)
-    
-            .withBody(body)
-    
-            .build();
-  }
-
-  /**
-   * Update context value.
-   * 
-   * @param request The request object
-   * @return KnowledgeContextValueResponse
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   */
-  public KnowledgeContextValueResponse patchKnowledgeKnowledgebaseContextValue(PatchKnowledgeKnowledgebaseContextValueRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<KnowledgeContextValueResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KnowledgeContextValueResponse>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Update context value.
-   * 
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   */
-  public ApiResponse<KnowledgeContextValueResponse> patchKnowledgeKnowledgebaseContextValue(ApiRequest<KnowledgeContextValueRequest> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<KnowledgeContextValueResponse>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<KnowledgeContextValueResponse> response = (ApiResponse<KnowledgeContextValueResponse>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<KnowledgeContextValueResponse> response = (ApiResponse<KnowledgeContextValueResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

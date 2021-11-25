@@ -3706,41 +3706,37 @@ public class RoutingApi {
 
   
   /**
-   * Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.
+   * Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.
    * 
    * @param pageSize Page size [max value is 500] (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @param sortBy Sort by (optional, default to name)
    * @param sortOrder Sort order (optional, default to asc)
    * @return QueueEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public QueueEntityListing getRoutingQueuesDivisionviewsAll(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getRoutingQueuesDivisionviewsAll(createGetRoutingQueuesDivisionviewsAllRequest(pageSize, pageNumber, sortBy, sortOrder));
+  public QueueEntityListing getRoutingQueuesDivisionviewsAll(Integer pageSize, Integer pageNumber, String sortOrder) throws IOException, ApiException {
+    return  getRoutingQueuesDivisionviewsAll(createGetRoutingQueuesDivisionviewsAllRequest(pageSize, pageNumber, sortOrder));
   }
 
   /**
-   * Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.
+   * Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.
    * 
    * @param pageSize Page size [max value is 500] (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @param sortBy Sort by (optional, default to name)
    * @param sortOrder Sort order (optional, default to asc)
    * @return QueueEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<QueueEntityListing> getRoutingQueuesDivisionviewsAllWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) throws IOException {
-    return getRoutingQueuesDivisionviewsAll(createGetRoutingQueuesDivisionviewsAllRequest(pageSize, pageNumber, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<QueueEntityListing> getRoutingQueuesDivisionviewsAllWithHttpInfo(Integer pageSize, Integer pageNumber, String sortOrder) throws IOException {
+    return getRoutingQueuesDivisionviewsAll(createGetRoutingQueuesDivisionviewsAllRequest(pageSize, pageNumber, sortOrder).withHttpInfo());
   }
 
-  private GetRoutingQueuesDivisionviewsAllRequest createGetRoutingQueuesDivisionviewsAllRequest(Integer pageSize, Integer pageNumber, String sortBy, String sortOrder) {
+  private GetRoutingQueuesDivisionviewsAllRequest createGetRoutingQueuesDivisionviewsAllRequest(Integer pageSize, Integer pageNumber, String sortOrder) {
     return GetRoutingQueuesDivisionviewsAllRequest.builder()
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
-    
-            .withSortBy(sortBy)
     
             .withSortOrder(sortOrder)
     
@@ -3748,7 +3744,7 @@ public class RoutingApi {
   }
 
   /**
-   * Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.
+   * Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.
    * 
    * @param request The request object
    * @return QueueEntityListing
@@ -3767,7 +3763,7 @@ public class RoutingApi {
   }
 
   /**
-   * Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.
+   * Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.
    * 
    * @param request The request object
    * @return the response

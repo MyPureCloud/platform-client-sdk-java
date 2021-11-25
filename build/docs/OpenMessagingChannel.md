@@ -15,6 +15,7 @@ title: OpenMessagingChannel
 | **to** | <!----><!---->[**OpenMessagingToRecipient**](OpenMessagingToRecipient.html)<!----> | Information about the recipient the message is sent to. |  |
 | **from** | <!----><!---->[**OpenMessagingFromRecipient**](OpenMessagingFromRecipient.html)<!----> | Information about the recipient the message is received from. |  |
 | **time** | <!----><!---->[**Date**](Date.html)<!----> | Original time of the event. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  |
+| **metadata** | <!----><!---->[**ChannelMetadata**](ChannelMetadata.html)<!----> | Information about the channel. |  [optional] |
 {: class="table table-striped"}
 
 

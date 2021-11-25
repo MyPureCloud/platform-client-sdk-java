@@ -174,8 +174,7 @@ public class GetRoutingQueuesDivisionviewsRequest {
 
 	public enum sortOrderValues { 
 		ASC("asc"), 
-		DESC("desc"), 
-		SCORE("score");
+		DESC("desc");
 
 		private String value;
 

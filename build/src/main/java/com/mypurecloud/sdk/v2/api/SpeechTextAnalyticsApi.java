@@ -560,7 +560,7 @@ public class SpeechTextAnalyticsApi {
   
   /**
    * Get list of supported Speech &amp; Text Analytics dialects
-   * 
+   * This api has been deprecated. Use api/v2/topics/dialects instead
    * @return List<Object>
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -571,7 +571,7 @@ public class SpeechTextAnalyticsApi {
 
   /**
    * Get list of supported Speech &amp; Text Analytics dialects
-   * 
+   * This api has been deprecated. Use api/v2/topics/dialects instead
    * @return List<Object>
    * @throws IOException if the request fails to be processed
    */
@@ -586,7 +586,7 @@ public class SpeechTextAnalyticsApi {
 
   /**
    * Get list of supported Speech &amp; Text Analytics dialects
-   * 
+   * This api has been deprecated. Use api/v2/topics/dialects instead
    * @param request The request object
    * @return List<Object>
    * @throws ApiException if the request fails on the server
@@ -605,7 +605,7 @@ public class SpeechTextAnalyticsApi {
 
   /**
    * Get list of supported Speech &amp; Text Analytics dialects
-   * 
+   * This api has been deprecated. Use api/v2/topics/dialects instead
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

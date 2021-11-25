@@ -72,6 +72,55 @@ public class ButtonResponse  implements Serializable {
   private String text = null;
   private String payload = null;
 
+  private static class MessageTypeEnumDeserializer extends StdDeserializer<MessageTypeEnum> {
+    public MessageTypeEnumDeserializer() {
+      super(MessageTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MessageTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MessageTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Button response message type that captures QuickReply , Cards and Carousel .This is used  as label for Card selection
+   */
+ @JsonDeserialize(using = MessageTypeEnumDeserializer.class)
+  public enum MessageTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    QUICKREPLY("QuickReply"),
+    CARD("Card"),
+    CAROUSEL("Carousel");
+
+    private String value;
+
+    MessageTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MessageTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MessageTypeEnum value : MessageTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MessageTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private MessageTypeEnum messageType = null;
+
   
   /**
    * Button response type that captures Button and QuickReply type responses
@@ -127,6 +176,24 @@ public class ButtonResponse  implements Serializable {
   }
 
   
+  /**
+   * Button response message type that captures QuickReply , Cards and Carousel .This is used  as label for Card selection
+   **/
+  public ButtonResponse messageType(MessageTypeEnum messageType) {
+    this.messageType = messageType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Button response message type that captures QuickReply , Cards and Carousel .This is used  as label for Card selection")
+  @JsonProperty("messageType")
+  public MessageTypeEnum getMessageType() {
+    return messageType;
+  }
+  public void setMessageType(MessageTypeEnum messageType) {
+    this.messageType = messageType;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -139,12 +206,13 @@ public class ButtonResponse  implements Serializable {
     ButtonResponse buttonResponse = (ButtonResponse) o;
     return Objects.equals(this.type, buttonResponse.type) &&
         Objects.equals(this.text, buttonResponse.text) &&
-        Objects.equals(this.payload, buttonResponse.payload);
+        Objects.equals(this.payload, buttonResponse.payload) &&
+        Objects.equals(this.messageType, buttonResponse.messageType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, text, payload);
+    return Objects.hash(type, text, payload, messageType);
   }
 
   @Override
@@ -155,6 +223,7 @@ public class ButtonResponse  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
+    sb.append("    messageType: ").append(toIndentedString(messageType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

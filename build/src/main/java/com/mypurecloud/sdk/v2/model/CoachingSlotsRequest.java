@@ -26,6 +26,7 @@ public class CoachingSlotsRequest  implements Serializable {
   private Integer lengthInMinutes = null;
   private List<String> attendeeIds = new ArrayList<String>();
   private List<String> facilitatorIds = new ArrayList<String>();
+  private List<String> interruptibleAppointmentIds = new ArrayList<String>();
 
   
   /**
@@ -100,6 +101,24 @@ public class CoachingSlotsRequest  implements Serializable {
   }
 
   
+  /**
+   * List of appointment ids to exclude from consideration when determining blocked slots
+   **/
+  public CoachingSlotsRequest interruptibleAppointmentIds(List<String> interruptibleAppointmentIds) {
+    this.interruptibleAppointmentIds = interruptibleAppointmentIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of appointment ids to exclude from consideration when determining blocked slots")
+  @JsonProperty("interruptibleAppointmentIds")
+  public List<String> getInterruptibleAppointmentIds() {
+    return interruptibleAppointmentIds;
+  }
+  public void setInterruptibleAppointmentIds(List<String> interruptibleAppointmentIds) {
+    this.interruptibleAppointmentIds = interruptibleAppointmentIds;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -113,12 +132,13 @@ public class CoachingSlotsRequest  implements Serializable {
     return Objects.equals(this.interval, coachingSlotsRequest.interval) &&
         Objects.equals(this.lengthInMinutes, coachingSlotsRequest.lengthInMinutes) &&
         Objects.equals(this.attendeeIds, coachingSlotsRequest.attendeeIds) &&
-        Objects.equals(this.facilitatorIds, coachingSlotsRequest.facilitatorIds);
+        Objects.equals(this.facilitatorIds, coachingSlotsRequest.facilitatorIds) &&
+        Objects.equals(this.interruptibleAppointmentIds, coachingSlotsRequest.interruptibleAppointmentIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(interval, lengthInMinutes, attendeeIds, facilitatorIds);
+    return Objects.hash(interval, lengthInMinutes, attendeeIds, facilitatorIds, interruptibleAppointmentIds);
   }
 
   @Override
@@ -130,6 +150,7 @@ public class CoachingSlotsRequest  implements Serializable {
     sb.append("    lengthInMinutes: ").append(toIndentedString(lengthInMinutes)).append("\n");
     sb.append("    attendeeIds: ").append(toIndentedString(attendeeIds)).append("\n");
     sb.append("    facilitatorIds: ").append(toIndentedString(facilitatorIds)).append("\n");
+    sb.append("    interruptibleAppointmentIds: ").append(toIndentedString(interruptibleAppointmentIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

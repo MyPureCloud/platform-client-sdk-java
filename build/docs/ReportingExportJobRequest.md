@@ -122,6 +122,8 @@ title: ReportingExportJobRequest
 | FLOW_TOPIC_SUMMARY_VIEW | &quot;FLOW_TOPIC_SUMMARY_VIEW&quot; |
 | FLOW_TOPIC_DETAIL_VIEW | &quot;FLOW_TOPIC_DETAIL_VIEW&quot; |
 | AGENT_INTERACTIONS_ME_VIEW | &quot;AGENT_INTERACTIONS_ME_VIEW&quot; |
+| ALERT_RULES_VIEW | &quot;ALERT_RULES_VIEW&quot; |
+| CONFIGURE_ALERT_RULE_VIEW | &quot;CONFIGURE_ALERT_RULE_VIEW&quot; |
 {: class="table table-striped"}
 
 

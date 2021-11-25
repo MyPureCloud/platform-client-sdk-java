@@ -33,10 +33,21 @@ public class LogCaptureUserConfiguration  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", required = true, value = "Indicates when log capture will be turned off for the user. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  /**
+   * Indicates when log capture will be turned off for the user. (Must be within 24 hours). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public LogCaptureUserConfiguration dateExpired(Date dateExpired) {
+    this.dateExpired = dateExpired;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Indicates when log capture will be turned off for the user. (Must be within 24 hours). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateExpired")
   public Date getDateExpired() {
     return dateExpired;
+  }
+  public void setDateExpired(Date dateExpired) {
+    this.dateExpired = dateExpired;
   }
 
   

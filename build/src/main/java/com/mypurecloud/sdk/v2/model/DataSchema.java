@@ -47,7 +47,8 @@ public class DataSchema  implements Serializable {
  @JsonDeserialize(using = AppliesToEnumDeserializer.class)
   public enum AppliesToEnum {
     CONTACT("CONTACT"),
-    EXTERNAL_ORGANIZATION("EXTERNAL_ORGANIZATION");
+    EXTERNAL_ORGANIZATION("EXTERNAL_ORGANIZATION"),
+    OPEN_ACTION("OPEN_ACTION");
 
     private String value;
 

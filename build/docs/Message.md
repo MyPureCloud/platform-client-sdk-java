@@ -106,6 +106,7 @@ title: Message
 | KAKAO | &quot;kakao&quot; |
 | WEBMESSAGING | &quot;webmessaging&quot; |
 | OPEN | &quot;open&quot; |
+| INSTAGRAM | &quot;instagram&quot; |
 {: class="table table-striped"}
 
 

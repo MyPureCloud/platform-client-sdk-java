@@ -28,6 +28,7 @@ title: PatchActionTemplate
 | CONTENTOFFER | &quot;contentOffer&quot; |
 | INTEGRATIONACTION | &quot;integrationAction&quot; |
 | ARCHITECTFLOW | &quot;architectFlow&quot; |
+| OPENACTION | &quot;openAction&quot; |
 {: class="table table-striped"}
 
 

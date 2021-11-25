@@ -680,7 +680,7 @@ try {
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
 | **pageSize** | **Integer**| Page size | [optional] [default to 25] 
 | **sortBy** | **String**| Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=name,-createdDate). | [optional] 
-| **mediaType** | **String**| Media type | [optional]<br />**Values**: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow 
+| **mediaType** | **String**| Media type | [optional]<br />**Values**: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow, openAction 
 | **state** | **String**| Action template state. | [optional]<br />**Values**: Active, Inactive, Deleted 
 | **queryFields** | [**List&lt;String&gt;**](String.html)| ActionTemplate field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional] 
 | **queryValue** | **String**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional] 

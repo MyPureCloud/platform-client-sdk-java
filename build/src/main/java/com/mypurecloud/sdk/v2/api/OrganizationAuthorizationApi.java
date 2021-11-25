@@ -13,11 +13,13 @@ import com.mypurecloud.sdk.v2.Pair;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.TrustRequest;
 import com.mypurecloud.sdk.v2.model.Trustee;
+import com.mypurecloud.sdk.v2.model.ClonedUserEntityListing;
 import com.mypurecloud.sdk.v2.model.TrustUser;
 import com.mypurecloud.sdk.v2.model.UserAuthorization;
 import com.mypurecloud.sdk.v2.model.TrustUserEntityListing;
 import com.mypurecloud.sdk.v2.model.TrustEntityListing;
 import com.mypurecloud.sdk.v2.model.Trustor;
+import com.mypurecloud.sdk.v2.model.ClonedUser;
 import com.mypurecloud.sdk.v2.model.TrustorEntityListing;
 import com.mypurecloud.sdk.v2.model.TrustRequestCreate;
 import com.mypurecloud.sdk.v2.model.TrustMemberCreate;
@@ -30,17 +32,23 @@ import com.mypurecloud.sdk.v2.model.RoleDivisionGrants;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeCloneduserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeUserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrusteeUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrustorRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrustorCloneduserRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteOrgauthorizationTrustorUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationPairingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeClonedusersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeUserRolesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteeUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrusteesDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorCloneduserRequest;
+import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorClonedusersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorUserRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetOrgauthorizationTrustorsRequest;
@@ -48,10 +56,12 @@ import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationPairingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteeUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteesAuditsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrusteesDefaultRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOrgauthorizationTrustorAuditsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrusteeRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrusteeUserRoledivisionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrusteeUserRolesRequest;
+import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrustorCloneduserRequest;
 import com.mypurecloud.sdk.v2.api.request.PutOrgauthorizationTrustorUserRequest;
 
 import java.io.IOException;
@@ -127,6 +137,86 @@ public class OrganizationAuthorizationApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteOrgauthorizationTrustee(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Deletes cloned user
+   * 
+   * @param trusteeOrgId Trustee Organization Id (required)
+   * @param trusteeUserId Id of the cloned user to delete (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOrgauthorizationTrusteeCloneduser(String trusteeOrgId, String trusteeUserId) throws IOException, ApiException {
+     deleteOrgauthorizationTrusteeCloneduser(createDeleteOrgauthorizationTrusteeCloneduserRequest(trusteeOrgId, trusteeUserId));
+  }
+
+  /**
+   * Deletes cloned user
+   * 
+   * @param trusteeOrgId Trustee Organization Id (required)
+   * @param trusteeUserId Id of the cloned user to delete (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOrgauthorizationTrusteeCloneduserWithHttpInfo(String trusteeOrgId, String trusteeUserId) throws IOException {
+    return deleteOrgauthorizationTrusteeCloneduser(createDeleteOrgauthorizationTrusteeCloneduserRequest(trusteeOrgId, trusteeUserId).withHttpInfo());
+  }
+
+  private DeleteOrgauthorizationTrusteeCloneduserRequest createDeleteOrgauthorizationTrusteeCloneduserRequest(String trusteeOrgId, String trusteeUserId) {
+    return DeleteOrgauthorizationTrusteeCloneduserRequest.builder()
+            .withTrusteeOrgId(trusteeOrgId)
+    
+            .withTrusteeUserId(trusteeUserId)
+    
+            .build();
+  }
+
+  /**
+   * Deletes cloned user
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOrgauthorizationTrusteeCloneduser(DeleteOrgauthorizationTrusteeCloneduserRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Deletes cloned user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOrgauthorizationTrusteeCloneduser(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -386,6 +476,86 @@ public class OrganizationAuthorizationApi {
 
   
   /**
+   * Delete Cloned User
+   * 
+   * @param trustorOrgId Trustor Organization Id (required)
+   * @param trusteeUserId Trustee User Id (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOrgauthorizationTrustorCloneduser(String trustorOrgId, String trusteeUserId) throws IOException, ApiException {
+     deleteOrgauthorizationTrustorCloneduser(createDeleteOrgauthorizationTrustorCloneduserRequest(trustorOrgId, trusteeUserId));
+  }
+
+  /**
+   * Delete Cloned User
+   * 
+   * @param trustorOrgId Trustor Organization Id (required)
+   * @param trusteeUserId Trustee User Id (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOrgauthorizationTrustorCloneduserWithHttpInfo(String trustorOrgId, String trusteeUserId) throws IOException {
+    return deleteOrgauthorizationTrustorCloneduser(createDeleteOrgauthorizationTrustorCloneduserRequest(trustorOrgId, trusteeUserId).withHttpInfo());
+  }
+
+  private DeleteOrgauthorizationTrustorCloneduserRequest createDeleteOrgauthorizationTrustorCloneduserRequest(String trustorOrgId, String trusteeUserId) {
+    return DeleteOrgauthorizationTrustorCloneduserRequest.builder()
+            .withTrustorOrgId(trustorOrgId)
+    
+            .withTrusteeUserId(trusteeUserId)
+    
+            .build();
+  }
+
+  /**
+   * Delete Cloned User
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteOrgauthorizationTrustorCloneduser(DeleteOrgauthorizationTrustorCloneduserRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete Cloned User
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteOrgauthorizationTrustorCloneduser(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Delete Trustee User
    * 
    * @param trustorOrgId Trustor Organization Id (required)
@@ -618,6 +788,85 @@ public class OrganizationAuthorizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Trustee> response = (ApiResponse<Trustee>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * The list of cloned users from the trustee organization (i.e. users with a native user record).
+   * There can be no more than 5 cloned users per organization, so results are represented as simple list and not paged
+   * @param trusteeOrgId Trustee Organization Id (required)
+   * @return ClonedUserEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClonedUserEntityListing getOrgauthorizationTrusteeClonedusers(String trusteeOrgId) throws IOException, ApiException {
+    return  getOrgauthorizationTrusteeClonedusers(createGetOrgauthorizationTrusteeClonedusersRequest(trusteeOrgId));
+  }
+
+  /**
+   * The list of cloned users from the trustee organization (i.e. users with a native user record).
+   * There can be no more than 5 cloned users per organization, so results are represented as simple list and not paged
+   * @param trusteeOrgId Trustee Organization Id (required)
+   * @return ClonedUserEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClonedUserEntityListing> getOrgauthorizationTrusteeClonedusersWithHttpInfo(String trusteeOrgId) throws IOException {
+    return getOrgauthorizationTrusteeClonedusers(createGetOrgauthorizationTrusteeClonedusersRequest(trusteeOrgId).withHttpInfo());
+  }
+
+  private GetOrgauthorizationTrusteeClonedusersRequest createGetOrgauthorizationTrusteeClonedusersRequest(String trusteeOrgId) {
+    return GetOrgauthorizationTrusteeClonedusersRequest.builder()
+            .withTrusteeOrgId(trusteeOrgId)
+    
+            .build();
+  }
+
+  /**
+   * The list of cloned users from the trustee organization (i.e. users with a native user record).
+   * There can be no more than 5 cloned users per organization, so results are represented as simple list and not paged
+   * @param request The request object
+   * @return ClonedUserEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClonedUserEntityListing getOrgauthorizationTrusteeClonedusers(GetOrgauthorizationTrusteeClonedusersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ClonedUserEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ClonedUserEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * The list of cloned users from the trustee organization (i.e. users with a native user record).
+   * There can be no more than 5 cloned users per organization, so results are represented as simple list and not paged
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClonedUserEntityListing> getOrgauthorizationTrusteeClonedusers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ClonedUserEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClonedUserEntityListing> response = (ApiResponse<ClonedUserEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClonedUserEntityListing> response = (ApiResponse<ClonedUserEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -960,6 +1209,81 @@ public class OrganizationAuthorizationApi {
 
   
   /**
+   * Get organization authorization trust with Customer Care, if one exists.
+   * 
+   * @return Trustee
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Trustee getOrgauthorizationTrusteesDefault() throws IOException, ApiException {
+    return  getOrgauthorizationTrusteesDefault(createGetOrgauthorizationTrusteesDefaultRequest());
+  }
+
+  /**
+   * Get organization authorization trust with Customer Care, if one exists.
+   * 
+   * @return Trustee
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Trustee> getOrgauthorizationTrusteesDefaultWithHttpInfo() throws IOException {
+    return getOrgauthorizationTrusteesDefault(createGetOrgauthorizationTrusteesDefaultRequest().withHttpInfo());
+  }
+
+  private GetOrgauthorizationTrusteesDefaultRequest createGetOrgauthorizationTrusteesDefaultRequest() {
+    return GetOrgauthorizationTrusteesDefaultRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get organization authorization trust with Customer Care, if one exists.
+   * 
+   * @param request The request object
+   * @return Trustee
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Trustee getOrgauthorizationTrusteesDefault(GetOrgauthorizationTrusteesDefaultRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Trustee> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Trustee>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get organization authorization trust with Customer Care, if one exists.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Trustee> getOrgauthorizationTrusteesDefault(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Trustee>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Trustee> response = (ApiResponse<Trustee>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Trustee> response = (ApiResponse<Trustee>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get Org Trust
    * 
    * @param trustorOrgId Trustor Organization Id (required)
@@ -1033,6 +1357,168 @@ public class OrganizationAuthorizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Trustor> response = (ApiResponse<Trustor>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Get Cloned User
+   * 
+   * @param trustorOrgId Trustor Organization Id (required)
+   * @param trusteeUserId Trustee User Id (required)
+   * @return ClonedUser
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClonedUser getOrgauthorizationTrustorCloneduser(String trustorOrgId, String trusteeUserId) throws IOException, ApiException {
+    return  getOrgauthorizationTrustorCloneduser(createGetOrgauthorizationTrustorCloneduserRequest(trustorOrgId, trusteeUserId));
+  }
+
+  /**
+   * Get Cloned User
+   * 
+   * @param trustorOrgId Trustor Organization Id (required)
+   * @param trusteeUserId Trustee User Id (required)
+   * @return ClonedUser
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClonedUser> getOrgauthorizationTrustorCloneduserWithHttpInfo(String trustorOrgId, String trusteeUserId) throws IOException {
+    return getOrgauthorizationTrustorCloneduser(createGetOrgauthorizationTrustorCloneduserRequest(trustorOrgId, trusteeUserId).withHttpInfo());
+  }
+
+  private GetOrgauthorizationTrustorCloneduserRequest createGetOrgauthorizationTrustorCloneduserRequest(String trustorOrgId, String trusteeUserId) {
+    return GetOrgauthorizationTrustorCloneduserRequest.builder()
+            .withTrustorOrgId(trustorOrgId)
+    
+            .withTrusteeUserId(trusteeUserId)
+    
+            .build();
+  }
+
+  /**
+   * Get Cloned User
+   * 
+   * @param request The request object
+   * @return ClonedUser
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClonedUser getOrgauthorizationTrustorCloneduser(GetOrgauthorizationTrustorCloneduserRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ClonedUser> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ClonedUser>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get Cloned User
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClonedUser> getOrgauthorizationTrustorCloneduser(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ClonedUser>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClonedUser> response = (ApiResponse<ClonedUser>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClonedUser> response = (ApiResponse<ClonedUser>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * The list of cloned users in the trustor organization (i.e. users with a native user record).
+   * 
+   * @param trustorOrgId Trustor Organization Id (required)
+   * @return ClonedUserEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClonedUserEntityListing getOrgauthorizationTrustorClonedusers(String trustorOrgId) throws IOException, ApiException {
+    return  getOrgauthorizationTrustorClonedusers(createGetOrgauthorizationTrustorClonedusersRequest(trustorOrgId));
+  }
+
+  /**
+   * The list of cloned users in the trustor organization (i.e. users with a native user record).
+   * 
+   * @param trustorOrgId Trustor Organization Id (required)
+   * @return ClonedUserEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClonedUserEntityListing> getOrgauthorizationTrustorClonedusersWithHttpInfo(String trustorOrgId) throws IOException {
+    return getOrgauthorizationTrustorClonedusers(createGetOrgauthorizationTrustorClonedusersRequest(trustorOrgId).withHttpInfo());
+  }
+
+  private GetOrgauthorizationTrustorClonedusersRequest createGetOrgauthorizationTrustorClonedusersRequest(String trustorOrgId) {
+    return GetOrgauthorizationTrustorClonedusersRequest.builder()
+            .withTrustorOrgId(trustorOrgId)
+    
+            .build();
+  }
+
+  /**
+   * The list of cloned users in the trustor organization (i.e. users with a native user record).
+   * 
+   * @param request The request object
+   * @return ClonedUserEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClonedUserEntityListing getOrgauthorizationTrustorClonedusers(GetOrgauthorizationTrustorClonedusersRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ClonedUserEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ClonedUserEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * The list of cloned users in the trustor organization (i.e. users with a native user record).
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClonedUserEntityListing> getOrgauthorizationTrustorClonedusers(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ClonedUserEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClonedUserEntityListing> response = (ApiResponse<ClonedUserEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClonedUserEntityListing> response = (ApiResponse<ClonedUserEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1628,6 +2114,89 @@ public class OrganizationAuthorizationApi {
 
   
   /**
+   * Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+   * 
+   * @param assignDefaultRole Assign Admin role to default pairing with Customer Care (optional)
+   * @param autoExpire Automatically expire pairing after 30 days (optional)
+   * @return Trustee
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Trustee postOrgauthorizationTrusteesDefault(Boolean assignDefaultRole, Boolean autoExpire) throws IOException, ApiException {
+    return  postOrgauthorizationTrusteesDefault(createPostOrgauthorizationTrusteesDefaultRequest(assignDefaultRole, autoExpire));
+  }
+
+  /**
+   * Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+   * 
+   * @param assignDefaultRole Assign Admin role to default pairing with Customer Care (optional)
+   * @param autoExpire Automatically expire pairing after 30 days (optional)
+   * @return Trustee
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Trustee> postOrgauthorizationTrusteesDefaultWithHttpInfo(Boolean assignDefaultRole, Boolean autoExpire) throws IOException {
+    return postOrgauthorizationTrusteesDefault(createPostOrgauthorizationTrusteesDefaultRequest(assignDefaultRole, autoExpire).withHttpInfo());
+  }
+
+  private PostOrgauthorizationTrusteesDefaultRequest createPostOrgauthorizationTrusteesDefaultRequest(Boolean assignDefaultRole, Boolean autoExpire) {
+    return PostOrgauthorizationTrusteesDefaultRequest.builder()
+            .withAssignDefaultRole(assignDefaultRole)
+    
+            .withAutoExpire(autoExpire)
+    
+            .build();
+  }
+
+  /**
+   * Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+   * 
+   * @param request The request object
+   * @return Trustee
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Trustee postOrgauthorizationTrusteesDefault(PostOrgauthorizationTrusteesDefaultRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Trustee> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Trustee>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Trustee> postOrgauthorizationTrusteesDefault(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Trustee>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Trustee> response = (ApiResponse<Trustee>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Trustee> response = (ApiResponse<Trustee>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
    * Get Org Trustor Audits
    * 
    * @param body Values to scope the request. (required)
@@ -1974,6 +2543,89 @@ public class OrganizationAuthorizationApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<UserAuthorization> response = (ApiResponse<UserAuthorization>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  
+  /**
+   * Creates a clone of the trustee user in the trustor org.
+   * 
+   * @param trustorOrgId Trustor Organization Id (required)
+   * @param trusteeUserId Trustee User Id (required)
+   * @return ClonedUser
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClonedUser putOrgauthorizationTrustorCloneduser(String trustorOrgId, String trusteeUserId) throws IOException, ApiException {
+    return  putOrgauthorizationTrustorCloneduser(createPutOrgauthorizationTrustorCloneduserRequest(trustorOrgId, trusteeUserId));
+  }
+
+  /**
+   * Creates a clone of the trustee user in the trustor org.
+   * 
+   * @param trustorOrgId Trustor Organization Id (required)
+   * @param trusteeUserId Trustee User Id (required)
+   * @return ClonedUser
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClonedUser> putOrgauthorizationTrustorCloneduserWithHttpInfo(String trustorOrgId, String trusteeUserId) throws IOException {
+    return putOrgauthorizationTrustorCloneduser(createPutOrgauthorizationTrustorCloneduserRequest(trustorOrgId, trusteeUserId).withHttpInfo());
+  }
+
+  private PutOrgauthorizationTrustorCloneduserRequest createPutOrgauthorizationTrustorCloneduserRequest(String trustorOrgId, String trusteeUserId) {
+    return PutOrgauthorizationTrustorCloneduserRequest.builder()
+            .withTrustorOrgId(trustorOrgId)
+    
+            .withTrusteeUserId(trusteeUserId)
+    
+            .build();
+  }
+
+  /**
+   * Creates a clone of the trustee user in the trustor org.
+   * 
+   * @param request The request object
+   * @return ClonedUser
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ClonedUser putOrgauthorizationTrustorCloneduser(PutOrgauthorizationTrustorCloneduserRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ClonedUser> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ClonedUser>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates a clone of the trustee user in the trustor org.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ClonedUser> putOrgauthorizationTrustorCloneduser(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ClonedUser>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClonedUser> response = (ApiResponse<ClonedUser>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ClonedUser> response = (ApiResponse<ClonedUser>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

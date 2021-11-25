@@ -54,9 +54,9 @@ public class OrgOAuthClient  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     CODE("CODE"),
     TOKEN("TOKEN"),
-    SAML2BEARER("SAML2BEARER"),
+    SAML2_BEARER("SAML2-BEARER"),
     PASSWORD("PASSWORD"),
-    CLIENT_CREDENTIALS("CLIENT_CREDENTIALS");
+    CLIENT_CREDENTIALS("CLIENT-CREDENTIALS");
 
     private String value;
 

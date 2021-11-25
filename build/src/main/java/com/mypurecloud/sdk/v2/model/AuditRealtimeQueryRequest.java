@@ -52,6 +52,7 @@ public class AuditRealtimeQueryRequest  implements Serializable {
     CONTENTMANAGEMENT("ContentManagement"),
     DATATABLES("Datatables"),
     DIRECTORY("Directory"),
+    DYNAMICSCHEMA("DynamicSchema"),
     GAMIFICATION("Gamification"),
     GROUPS("Groups"),
     INTEGRATIONS("Integrations"),

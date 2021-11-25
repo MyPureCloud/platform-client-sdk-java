@@ -12,6 +12,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CoachingSlot;
 import com.mypurecloud.sdk.v2.model.UserAvailableTimes;
+import com.mypurecloud.sdk.v2.model.WfmScheduleActivity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class CoachingSlotsResponse  implements Serializable {
   private List<CoachingSlot> suggestedSlots = new ArrayList<CoachingSlot>();
   private List<UserAvailableTimes> attendeeSchedules = new ArrayList<UserAvailableTimes>();
   private List<UserAvailableTimes> facilitatorSchedules = new ArrayList<UserAvailableTimes>();
+  private List<WfmScheduleActivity> wfmScheduleActivities = new ArrayList<WfmScheduleActivity>();
 
   
   @ApiModelProperty(example = "null", value = "List of slots where coaching appointment can be scheduled")
@@ -50,6 +52,13 @@ public class CoachingSlotsResponse  implements Serializable {
   }
 
   
+  @ApiModelProperty(example = "null", value = "Detailed data for WFM scheduled activities")
+  @JsonProperty("wfmScheduleActivities")
+  public List<WfmScheduleActivity> getWfmScheduleActivities() {
+    return wfmScheduleActivities;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -62,12 +71,13 @@ public class CoachingSlotsResponse  implements Serializable {
     CoachingSlotsResponse coachingSlotsResponse = (CoachingSlotsResponse) o;
     return Objects.equals(this.suggestedSlots, coachingSlotsResponse.suggestedSlots) &&
         Objects.equals(this.attendeeSchedules, coachingSlotsResponse.attendeeSchedules) &&
-        Objects.equals(this.facilitatorSchedules, coachingSlotsResponse.facilitatorSchedules);
+        Objects.equals(this.facilitatorSchedules, coachingSlotsResponse.facilitatorSchedules) &&
+        Objects.equals(this.wfmScheduleActivities, coachingSlotsResponse.wfmScheduleActivities);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(suggestedSlots, attendeeSchedules, facilitatorSchedules);
+    return Objects.hash(suggestedSlots, attendeeSchedules, facilitatorSchedules, wfmScheduleActivities);
   }
 
   @Override
@@ -78,6 +88,7 @@ public class CoachingSlotsResponse  implements Serializable {
     sb.append("    suggestedSlots: ").append(toIndentedString(suggestedSlots)).append("\n");
     sb.append("    attendeeSchedules: ").append(toIndentedString(attendeeSchedules)).append("\n");
     sb.append("    facilitatorSchedules: ").append(toIndentedString(facilitatorSchedules)).append("\n");
+    sb.append("    wfmScheduleActivities: ").append(toIndentedString(wfmScheduleActivities)).append("\n");
     sb.append("}");
     return sb.toString();
   }

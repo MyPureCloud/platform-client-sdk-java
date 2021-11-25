@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.PerformanceProfile;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.LocalDate;
+import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -31,7 +32,7 @@ public class Metric  implements Serializable {
   private Objective objective = null;
   private String performanceProfileId = null;
   private AddressableEntityRef linkedMetric = null;
-  private Long dateCreated = null;
+  private Date dateCreated = null;
   private LocalDate dateUnlinked = null;
   private PerformanceProfile sourcePerformanceProfile = null;
   private String selfUri = null;
@@ -141,9 +142,9 @@ public class Metric  implements Serializable {
   }
 
   
-  @ApiModelProperty(example = "null", value = "The created date of this metric")
+  @ApiModelProperty(example = "null", value = "The created date of this metric. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
   @JsonProperty("dateCreated")
-  public Long getDateCreated() {
+  public Date getDateCreated() {
     return dateCreated;
   }
 

@@ -58,6 +58,7 @@ title: AuditQueryEntity
 | DNCLIST | &quot;DNCList&quot; |
 | DOCUMENT | &quot;Document&quot; |
 | DYNAMICGROUP | &quot;DynamicGroup&quot; |
+| DYNAMICSCHEMA | &quot;DynamicSchema&quot; |
 | EDGE | &quot;Edge&quot; |
 | EDGEGROUP | &quot;EdgeGroup&quot; |
 | EDGELOG | &quot;EdgeLog&quot; |
@@ -240,6 +241,7 @@ title: AuditQueryEntity
 | REASSIGN | &quot;Reassign&quot; |
 | RESCHEDULE | &quot;Reschedule&quot; |
 | CANCEL | &quot;Cancel&quot; |
+| SOFTDELETE | &quot;SoftDelete&quot; |
 {: class="table table-striped"}
 
 

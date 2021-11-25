@@ -49,7 +49,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getRoutingQueueWrapupcodes**](RoutingApi.html#getRoutingQueueWrapupcodes) | Get the wrap-up codes for a queue |
 | [**getRoutingQueues**](RoutingApi.html#getRoutingQueues) | Get list of queues. |
 | [**getRoutingQueuesDivisionviews**](RoutingApi.html#getRoutingQueuesDivisionviews) | Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s). |
-| [**getRoutingQueuesDivisionviewsAll**](RoutingApi.html#getRoutingQueuesDivisionviewsAll) | Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization. |
+| [**getRoutingQueuesDivisionviewsAll**](RoutingApi.html#getRoutingQueuesDivisionviewsAll) | Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization. |
 | [**getRoutingQueuesMe**](RoutingApi.html#getRoutingQueuesMe) | Get a paged listing of queues the user is a member of. |
 | [**getRoutingSettings**](RoutingApi.html#getRoutingSettings) | Get an organization&#39;s routing settings |
 | [**getRoutingSettingsContactcenter**](RoutingApi.html#getRoutingSettingsContactcenter) | Get Contact Center Settings |
@@ -2489,6 +2489,8 @@ Wraps GET /api/v2/routing/queues/{queueId}/members
 Requires ANY permissions: 
 
 * routing:queue:view
+* routing:queue:edit
+* routing:queue:readonly
 * routing:queueMember:manage
 
 ### Example
@@ -2850,7 +2852,7 @@ try {
 | **pageSize** | **Integer**| Page size [max value is 100] | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number [max value is 5] | [optional] [default to 1] 
 | **sortBy** | **String**| Sort by | [optional] [default to name]<br />**Values**: name, id, divisionId 
-| **sortOrder** | **String**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc, score 
+| **sortOrder** | **String**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc 
 | **name** | **String**| Name | [optional] 
 | **id** | [**List&lt;String&gt;**](String.html)| Queue ID(s) | [optional] 
 | **divisionId** | [**List&lt;String&gt;**](String.html)| Division ID(s) | [optional] 
@@ -2867,9 +2869,9 @@ try {
 
 
 
-> [QueueEntityListing](QueueEntityListing.html) getRoutingQueuesDivisionviewsAll(pageSize, pageNumber, sortBy, sortOrder)
+> [QueueEntityListing](QueueEntityListing.html) getRoutingQueuesDivisionviewsAll(pageSize, pageNumber, sortOrder)
 
-Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.
+Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.
 
 
 
@@ -2903,10 +2905,9 @@ Configuration.setDefaultApiClient(apiClient);
 RoutingApi apiInstance = new RoutingApi();
 Integer pageSize = 25; // Integer | Page size [max value is 500]
 Integer pageNumber = 1; // Integer | Page number
-String sortBy = "name"; // String | Sort by
 String sortOrder = "asc"; // String | Sort order
 try {
-    QueueEntityListing result = apiInstance.getRoutingQueuesDivisionviewsAll(pageSize, pageNumber, sortBy, sortOrder);
+    QueueEntityListing result = apiInstance.getRoutingQueuesDivisionviewsAll(pageSize, pageNumber, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingQueuesDivisionviewsAll");
@@ -2921,8 +2922,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **pageSize** | **Integer**| Page size [max value is 500] | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
-| **sortBy** | **String**| Sort by | [optional] [default to name]<br />**Values**: name, id, divisionId 
-| **sortOrder** | **String**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc, score 
+| **sortOrder** | **String**| Sort order | [optional] [default to asc]<br />**Values**: asc, desc 
 {: class="table-striped"}
 
 

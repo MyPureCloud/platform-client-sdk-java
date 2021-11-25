@@ -32,9 +32,9 @@ title: OrgOAuthClient
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | CODE | &quot;CODE&quot; |
 | TOKEN | &quot;TOKEN&quot; |
-| SAML2BEARER | &quot;SAML2BEARER&quot; |
+| SAML2_BEARER | &quot;SAML2-BEARER&quot; |
 | PASSWORD | &quot;PASSWORD&quot; |
-| CLIENT_CREDENTIALS | &quot;CLIENT_CREDENTIALS&quot; |
+| CLIENT_CREDENTIALS | &quot;CLIENT-CREDENTIALS&quot; |
 {: class="table table-striped"}
 
 

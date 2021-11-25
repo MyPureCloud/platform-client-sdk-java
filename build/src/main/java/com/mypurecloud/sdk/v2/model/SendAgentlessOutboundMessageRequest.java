@@ -80,6 +80,7 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
   private ToAddressMessengerTypeEnum toAddressMessengerType = null;
   private String textBody = null;
   private MessagingTemplateRequest messagingTemplate = null;
+  private Boolean useExistingActiveConversation = null;
 
   
   /**
@@ -172,6 +173,24 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
   }
 
   
+  /**
+   * Use an existing active conversation to send the agentless outbound message. Set this parameter to 'true' to use active conversation. Default value: false
+   **/
+  public SendAgentlessOutboundMessageRequest useExistingActiveConversation(Boolean useExistingActiveConversation) {
+    this.useExistingActiveConversation = useExistingActiveConversation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Use an existing active conversation to send the agentless outbound message. Set this parameter to 'true' to use active conversation. Default value: false")
+  @JsonProperty("useExistingActiveConversation")
+  public Boolean getUseExistingActiveConversation() {
+    return useExistingActiveConversation;
+  }
+  public void setUseExistingActiveConversation(Boolean useExistingActiveConversation) {
+    this.useExistingActiveConversation = useExistingActiveConversation;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -186,12 +205,13 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
         Objects.equals(this.toAddress, sendAgentlessOutboundMessageRequest.toAddress) &&
         Objects.equals(this.toAddressMessengerType, sendAgentlessOutboundMessageRequest.toAddressMessengerType) &&
         Objects.equals(this.textBody, sendAgentlessOutboundMessageRequest.textBody) &&
-        Objects.equals(this.messagingTemplate, sendAgentlessOutboundMessageRequest.messagingTemplate);
+        Objects.equals(this.messagingTemplate, sendAgentlessOutboundMessageRequest.messagingTemplate) &&
+        Objects.equals(this.useExistingActiveConversation, sendAgentlessOutboundMessageRequest.useExistingActiveConversation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(fromAddress, toAddress, toAddressMessengerType, textBody, messagingTemplate);
+    return Objects.hash(fromAddress, toAddress, toAddressMessengerType, textBody, messagingTemplate, useExistingActiveConversation);
   }
 
   @Override
@@ -204,6 +224,7 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
     sb.append("    toAddressMessengerType: ").append(toIndentedString(toAddressMessengerType)).append("\n");
     sb.append("    textBody: ").append(toIndentedString(textBody)).append("\n");
     sb.append("    messagingTemplate: ").append(toIndentedString(messagingTemplate)).append("\n");
+    sb.append("    useExistingActiveConversation: ").append(toIndentedString(useExistingActiveConversation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

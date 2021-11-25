@@ -10,7 +10,6 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -22,7 +21,6 @@ import java.io.Serializable;
 public class AchievedOutcome  implements Serializable {
   
   private String id = null;
-  private AddressableEntityRef outcome = null;
   private String selfUri = null;
 
   
@@ -30,24 +28,6 @@ public class AchievedOutcome  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
-  }
-
-  
-  /**
-   * The ID of the outcome achieved.
-   **/
-  public AchievedOutcome outcome(AddressableEntityRef outcome) {
-    this.outcome = outcome;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The ID of the outcome achieved.")
-  @JsonProperty("outcome")
-  public AddressableEntityRef getOutcome() {
-    return outcome;
-  }
-  public void setOutcome(AddressableEntityRef outcome) {
-    this.outcome = outcome;
   }
 
   
@@ -69,13 +49,12 @@ public class AchievedOutcome  implements Serializable {
     }
     AchievedOutcome achievedOutcome = (AchievedOutcome) o;
     return Objects.equals(this.id, achievedOutcome.id) &&
-        Objects.equals(this.outcome, achievedOutcome.outcome) &&
         Objects.equals(this.selfUri, achievedOutcome.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, outcome, selfUri);
+    return Objects.hash(id, selfUri);
   }
 
   @Override
@@ -84,7 +63,6 @@ public class AchievedOutcome  implements Serializable {
     sb.append("class AchievedOutcome {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    outcome: ").append(toIndentedString(outcome)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

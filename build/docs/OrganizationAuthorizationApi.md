@@ -8,17 +8,23 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | Description |
 | ------------- | ------------- |
 | [**deleteOrgauthorizationTrustee**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrustee) | Delete Org Trust |
+| [**deleteOrgauthorizationTrusteeCloneduser**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrusteeCloneduser) | Deletes cloned user |
 | [**deleteOrgauthorizationTrusteeUser**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrusteeUser) | Delete Trustee User |
 | [**deleteOrgauthorizationTrusteeUserRoles**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrusteeUserRoles) | Delete Trustee User Roles |
 | [**deleteOrgauthorizationTrustor**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrustor) | Delete Org Trust |
+| [**deleteOrgauthorizationTrustorCloneduser**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrustorCloneduser) | Delete Cloned User |
 | [**deleteOrgauthorizationTrustorUser**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrustorUser) | Delete Trustee User |
 | [**getOrgauthorizationPairing**](OrganizationAuthorizationApi.html#getOrgauthorizationPairing) | Get Pairing Info |
 | [**getOrgauthorizationTrustee**](OrganizationAuthorizationApi.html#getOrgauthorizationTrustee) | Get Org Trust |
+| [**getOrgauthorizationTrusteeClonedusers**](OrganizationAuthorizationApi.html#getOrgauthorizationTrusteeClonedusers) | The list of cloned users from the trustee organization (i.e. users with a native user record). |
 | [**getOrgauthorizationTrusteeUser**](OrganizationAuthorizationApi.html#getOrgauthorizationTrusteeUser) | Get Trustee User |
 | [**getOrgauthorizationTrusteeUserRoles**](OrganizationAuthorizationApi.html#getOrgauthorizationTrusteeUserRoles) | Get Trustee User Roles |
 | [**getOrgauthorizationTrusteeUsers**](OrganizationAuthorizationApi.html#getOrgauthorizationTrusteeUsers) | The list of trustee users for this organization (i.e. users granted access to this organization). |
 | [**getOrgauthorizationTrustees**](OrganizationAuthorizationApi.html#getOrgauthorizationTrustees) | The list of trustees for this organization (i.e. organizations granted access to this organization). |
+| [**getOrgauthorizationTrusteesDefault**](OrganizationAuthorizationApi.html#getOrgauthorizationTrusteesDefault) | Get organization authorization trust with Customer Care, if one exists. |
 | [**getOrgauthorizationTrustor**](OrganizationAuthorizationApi.html#getOrgauthorizationTrustor) | Get Org Trust |
+| [**getOrgauthorizationTrustorCloneduser**](OrganizationAuthorizationApi.html#getOrgauthorizationTrustorCloneduser) | Get Cloned User |
+| [**getOrgauthorizationTrustorClonedusers**](OrganizationAuthorizationApi.html#getOrgauthorizationTrustorClonedusers) | The list of cloned users in the trustor organization (i.e. users with a native user record). |
 | [**getOrgauthorizationTrustorUser**](OrganizationAuthorizationApi.html#getOrgauthorizationTrustorUser) | Get Trustee User |
 | [**getOrgauthorizationTrustorUsers**](OrganizationAuthorizationApi.html#getOrgauthorizationTrustorUsers) | The list of users in the trustor organization (i.e. users granted access). |
 | [**getOrgauthorizationTrustors**](OrganizationAuthorizationApi.html#getOrgauthorizationTrustors) | The list of organizations that have authorized/trusted your organization. |
@@ -26,10 +32,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postOrgauthorizationTrusteeUsers**](OrganizationAuthorizationApi.html#postOrgauthorizationTrusteeUsers) | Add a user to the trust. |
 | [**postOrgauthorizationTrustees**](OrganizationAuthorizationApi.html#postOrgauthorizationTrustees) | Create a new organization authorization trust. This is required to grant other organizations access to your organization. |
 | [**postOrgauthorizationTrusteesAudits**](OrganizationAuthorizationApi.html#postOrgauthorizationTrusteesAudits) | Get Org Trustee Audits |
+| [**postOrgauthorizationTrusteesDefault**](OrganizationAuthorizationApi.html#postOrgauthorizationTrusteesDefault) | Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization. |
 | [**postOrgauthorizationTrustorAudits**](OrganizationAuthorizationApi.html#postOrgauthorizationTrustorAudits) | Get Org Trustor Audits |
 | [**putOrgauthorizationTrustee**](OrganizationAuthorizationApi.html#putOrgauthorizationTrustee) | Update Org Trust |
 | [**putOrgauthorizationTrusteeUserRoledivisions**](OrganizationAuthorizationApi.html#putOrgauthorizationTrusteeUserRoledivisions) | Update Trustee User Roles |
 | [**putOrgauthorizationTrusteeUserRoles**](OrganizationAuthorizationApi.html#putOrgauthorizationTrusteeUserRoles) | Update Trustee User Roles |
+| [**putOrgauthorizationTrustorCloneduser**](OrganizationAuthorizationApi.html#putOrgauthorizationTrustorCloneduser) | Creates a clone of the trustee user in the trustor org. |
 | [**putOrgauthorizationTrustorUser**](OrganizationAuthorizationApi.html#putOrgauthorizationTrustorUser) | Add a Trustee user to the trust. |
 {: class="table-striped"}
 
@@ -88,6 +96,70 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **trusteeOrgId** | **String**| Trustee Organization Id | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+<a name="deleteOrgauthorizationTrusteeCloneduser"></a>
+
+# **deleteOrgauthorizationTrusteeCloneduser**
+
+
+
+> Void deleteOrgauthorizationTrusteeCloneduser(trusteeOrgId, trusteeUserId)
+
+Deletes cloned user
+
+
+
+Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers/{trusteeUserId}  
+
+Requires ANY permissions: 
+
+* directory:user:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();
+String trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
+String trusteeUserId = "trusteeUserId_example"; // String | Id of the cloned user to delete
+try {
+    apiInstance.deleteOrgauthorizationTrusteeCloneduser(trusteeOrgId, trusteeUserId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationAuthorizationApi#deleteOrgauthorizationTrusteeCloneduser");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **trusteeOrgId** | **String**| Trustee Organization Id | 
+| **trusteeUserId** | **String**| Id of the cloned user to delete | 
 {: class="table-striped"}
 
 
@@ -285,6 +357,70 @@ try {
 
 null (empty response body)
 
+<a name="deleteOrgauthorizationTrustorCloneduser"></a>
+
+# **deleteOrgauthorizationTrustorCloneduser**
+
+
+
+> Void deleteOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
+
+Delete Cloned User
+
+
+
+Wraps DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}  
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();
+String trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
+String trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+try {
+    apiInstance.deleteOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationAuthorizationApi#deleteOrgauthorizationTrustorCloneduser");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **trustorOrgId** | **String**| Trustor Organization Id | 
+| **trusteeUserId** | **String**| Trustee User Id | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
 <a name="deleteOrgauthorizationTrustorUser"></a>
 
 # **deleteOrgauthorizationTrustorUser**
@@ -475,6 +611,69 @@ try {
 ### Return type
 
 [**Trustee**](Trustee.html)
+
+<a name="getOrgauthorizationTrusteeClonedusers"></a>
+
+# **getOrgauthorizationTrusteeClonedusers**
+
+
+
+> [ClonedUserEntityListing](ClonedUserEntityListing.html) getOrgauthorizationTrusteeClonedusers(trusteeOrgId)
+
+The list of cloned users from the trustee organization (i.e. users with a native user record).
+
+There can be no more than 5 cloned users per organization, so results are represented as simple list and not paged
+
+Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers  
+
+Requires ANY permissions: 
+
+* directory:user:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();
+String trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
+try {
+    ClonedUserEntityListing result = apiInstance.getOrgauthorizationTrusteeClonedusers(trusteeOrgId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationAuthorizationApi#getOrgauthorizationTrusteeClonedusers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **trusteeOrgId** | **String**| Trustee Organization Id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ClonedUserEntityListing**](ClonedUserEntityListing.html)
 
 <a name="getOrgauthorizationTrusteeUser"></a>
 
@@ -738,6 +937,66 @@ try {
 
 [**TrustEntityListing**](TrustEntityListing.html)
 
+<a name="getOrgauthorizationTrusteesDefault"></a>
+
+# **getOrgauthorizationTrusteesDefault**
+
+
+
+> [Trustee](Trustee.html) getOrgauthorizationTrusteesDefault()
+
+Get organization authorization trust with Customer Care, if one exists.
+
+
+
+Wraps GET /api/v2/orgauthorization/trustees/default  
+
+Requires ANY permissions: 
+
+* authorization:orgTrustee:view
+* authorization:orgTrusteeUser:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();
+try {
+    Trustee result = apiInstance.getOrgauthorizationTrusteesDefault();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationAuthorizationApi#getOrgauthorizationTrusteesDefault");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**Trustee**](Trustee.html)
+
 <a name="getOrgauthorizationTrustor"></a>
 
 # **getOrgauthorizationTrustor**
@@ -800,6 +1059,134 @@ try {
 ### Return type
 
 [**Trustor**](Trustor.html)
+
+<a name="getOrgauthorizationTrustorCloneduser"></a>
+
+# **getOrgauthorizationTrustorCloneduser**
+
+
+
+> [ClonedUser](ClonedUser.html) getOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
+
+Get Cloned User
+
+
+
+Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}  
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();
+String trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
+String trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+try {
+    ClonedUser result = apiInstance.getOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationAuthorizationApi#getOrgauthorizationTrustorCloneduser");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **trustorOrgId** | **String**| Trustor Organization Id | 
+| **trusteeUserId** | **String**| Trustee User Id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ClonedUser**](ClonedUser.html)
+
+<a name="getOrgauthorizationTrustorClonedusers"></a>
+
+# **getOrgauthorizationTrustorClonedusers**
+
+
+
+> [ClonedUserEntityListing](ClonedUserEntityListing.html) getOrgauthorizationTrustorClonedusers(trustorOrgId)
+
+The list of cloned users in the trustor organization (i.e. users with a native user record).
+
+
+
+Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers  
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();
+String trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
+try {
+    ClonedUserEntityListing result = apiInstance.getOrgauthorizationTrustorClonedusers(trustorOrgId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationAuthorizationApi#getOrgauthorizationTrustorClonedusers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **trustorOrgId** | **String**| Trustor Organization Id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ClonedUserEntityListing**](ClonedUserEntityListing.html)
 
 <a name="getOrgauthorizationTrustorUser"></a>
 
@@ -1261,6 +1648,72 @@ try {
 
 [**AuditQueryResponse**](AuditQueryResponse.html)
 
+<a name="postOrgauthorizationTrusteesDefault"></a>
+
+# **postOrgauthorizationTrusteesDefault**
+
+
+
+> [Trustee](Trustee.html) postOrgauthorizationTrusteesDefault(assignDefaultRole, autoExpire)
+
+Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+
+
+
+Wraps POST /api/v2/orgauthorization/trustees/default  
+
+Requires ALL permissions: 
+
+* authorization:orgTrustee:add
+* authorization:orgTrusteeUser:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();
+Boolean assignDefaultRole = true; // Boolean | Assign Admin role to default pairing with Customer Care
+Boolean autoExpire = true; // Boolean | Automatically expire pairing after 30 days
+try {
+    Trustee result = apiInstance.postOrgauthorizationTrusteesDefault(assignDefaultRole, autoExpire);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationAuthorizationApi#postOrgauthorizationTrusteesDefault");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **assignDefaultRole** | **Boolean**| Assign Admin role to default pairing with Customer Care | [optional] 
+| **autoExpire** | **Boolean**| Automatically expire pairing after 30 days | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Trustee**](Trustee.html)
+
 <a name="postOrgauthorizationTrustorAudits"></a>
 
 # **postOrgauthorizationTrustorAudits**
@@ -1530,6 +1983,71 @@ try {
 ### Return type
 
 [**UserAuthorization**](UserAuthorization.html)
+
+<a name="putOrgauthorizationTrustorCloneduser"></a>
+
+# **putOrgauthorizationTrustorCloneduser**
+
+
+
+> [ClonedUser](ClonedUser.html) putOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
+
+Creates a clone of the trustee user in the trustor org.
+
+
+
+Wraps PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}  
+
+Requires ALL permissions: 
+
+* authorization:orgTrusteeUser:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OrganizationAuthorizationApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OrganizationAuthorizationApi apiInstance = new OrganizationAuthorizationApi();
+String trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
+String trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+try {
+    ClonedUser result = apiInstance.putOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationAuthorizationApi#putOrgauthorizationTrustorCloneduser");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **trustorOrgId** | **String**| Trustor Organization Id | 
+| **trusteeUserId** | **String**| Trustee User Id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ClonedUser**](ClonedUser.html)
 
 <a name="putOrgauthorizationTrustorUser"></a>
 

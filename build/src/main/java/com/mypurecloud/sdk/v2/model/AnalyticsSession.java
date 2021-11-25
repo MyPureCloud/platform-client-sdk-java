@@ -61,7 +61,7 @@ public class AnalyticsSession  implements Serializable {
     }
   }
   /**
-   * The email delivery status
+   * The email or SMS delivery status
    */
  @JsonDeserialize(using = DeliveryStatusEnumDeserializer.class)
   public enum DeliveryStatusEnum {
@@ -683,14 +683,14 @@ public class AnalyticsSession  implements Serializable {
 
   
   /**
-   * The email delivery status
+   * The email or SMS delivery status
    **/
   public AnalyticsSession deliveryStatus(DeliveryStatusEnum deliveryStatus) {
     this.deliveryStatus = deliveryStatus;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The email delivery status")
+  @ApiModelProperty(example = "null", value = "The email or SMS delivery status")
   @JsonProperty("deliveryStatus")
   public DeliveryStatusEnum getDeliveryStatus() {
     return deliveryStatus;

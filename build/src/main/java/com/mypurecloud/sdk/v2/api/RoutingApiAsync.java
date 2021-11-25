@@ -3395,7 +3395,7 @@ public class RoutingApiAsync {
 
   
   /**
-   * Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.
+   * Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -3429,7 +3429,7 @@ public class RoutingApiAsync {
   }
 
   /**
-   * Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.
+   * Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

@@ -10,8 +10,11 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.WfmBuScheduleTopicSchedulerMessageSeverityCount;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -23,6 +26,7 @@ public class WfmBuScheduleTopicBuScheduleGenerationResultSummary  implements Ser
   private Boolean failed = null;
   private String runId = null;
   private Integer messageCount = null;
+  private List<WfmBuScheduleTopicSchedulerMessageSeverityCount> messageSeverityCounts = new ArrayList<WfmBuScheduleTopicSchedulerMessageSeverityCount>();
 
   
   /**
@@ -76,6 +80,23 @@ public class WfmBuScheduleTopicBuScheduleGenerationResultSummary  implements Ser
   }
 
   
+  /**
+   **/
+  public WfmBuScheduleTopicBuScheduleGenerationResultSummary messageSeverityCounts(List<WfmBuScheduleTopicSchedulerMessageSeverityCount> messageSeverityCounts) {
+    this.messageSeverityCounts = messageSeverityCounts;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("messageSeverityCounts")
+  public List<WfmBuScheduleTopicSchedulerMessageSeverityCount> getMessageSeverityCounts() {
+    return messageSeverityCounts;
+  }
+  public void setMessageSeverityCounts(List<WfmBuScheduleTopicSchedulerMessageSeverityCount> messageSeverityCounts) {
+    this.messageSeverityCounts = messageSeverityCounts;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -88,12 +109,13 @@ public class WfmBuScheduleTopicBuScheduleGenerationResultSummary  implements Ser
     WfmBuScheduleTopicBuScheduleGenerationResultSummary wfmBuScheduleTopicBuScheduleGenerationResultSummary = (WfmBuScheduleTopicBuScheduleGenerationResultSummary) o;
     return Objects.equals(this.failed, wfmBuScheduleTopicBuScheduleGenerationResultSummary.failed) &&
         Objects.equals(this.runId, wfmBuScheduleTopicBuScheduleGenerationResultSummary.runId) &&
-        Objects.equals(this.messageCount, wfmBuScheduleTopicBuScheduleGenerationResultSummary.messageCount);
+        Objects.equals(this.messageCount, wfmBuScheduleTopicBuScheduleGenerationResultSummary.messageCount) &&
+        Objects.equals(this.messageSeverityCounts, wfmBuScheduleTopicBuScheduleGenerationResultSummary.messageSeverityCounts);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(failed, runId, messageCount);
+    return Objects.hash(failed, runId, messageCount, messageSeverityCounts);
   }
 
   @Override
@@ -104,6 +126,7 @@ public class WfmBuScheduleTopicBuScheduleGenerationResultSummary  implements Ser
     sb.append("    failed: ").append(toIndentedString(failed)).append("\n");
     sb.append("    runId: ").append(toIndentedString(runId)).append("\n");
     sb.append("    messageCount: ").append(toIndentedString(messageCount)).append("\n");
+    sb.append("    messageSeverityCounts: ").append(toIndentedString(messageSeverityCounts)).append("\n");
     sb.append("}");
     return sb.toString();
   }

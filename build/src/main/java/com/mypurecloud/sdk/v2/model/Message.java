@@ -229,7 +229,8 @@ public class Message  implements Serializable {
     TELEGRAM("telegram"),
     KAKAO("kakao"),
     WEBMESSAGING("webmessaging"),
-    OPEN("open");
+    OPEN("open"),
+    INSTAGRAM("instagram");
 
     private String value;
 

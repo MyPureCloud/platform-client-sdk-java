@@ -38,6 +38,7 @@ title: AuditLogMessage
 | CONTENTMANAGEMENT | &quot;ContentManagement&quot; |
 | DATATABLES | &quot;Datatables&quot; |
 | DIRECTORY | &quot;Directory&quot; |
+| DYNAMICSCHEMA | &quot;DynamicSchema&quot; |
 | GAMIFICATION | &quot;Gamification&quot; |
 | GROUPS | &quot;Groups&quot; |
 | INTEGRATIONS | &quot;Integrations&quot; |
@@ -141,6 +142,7 @@ title: AuditLogMessage
 | REASSIGN | &quot;Reassign&quot; |
 | RESCHEDULE | &quot;Reschedule&quot; |
 | CANCEL | &quot;Cancel&quot; |
+| SOFTDELETE | &quot;SoftDelete&quot; |
 {: class="table table-striped"}
 
 
@@ -189,6 +191,7 @@ title: AuditLogMessage
 | DNCLIST | &quot;DNCList&quot; |
 | DOCUMENT | &quot;Document&quot; |
 | DYNAMICGROUP | &quot;DynamicGroup&quot; |
+| DYNAMICSCHEMA | &quot;DynamicSchema&quot; |
 | EDGE | &quot;Edge&quot; |
 | EDGEGROUP | &quot;EdgeGroup&quot; |
 | EDGELOG | &quot;EdgeLog&quot; |

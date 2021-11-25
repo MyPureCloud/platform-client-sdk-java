@@ -84,6 +84,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
   private MessengerTypeEnum messengerType = null;
   private String textBody = null;
   private MessagingTemplateRequest messagingTemplate = null;
+  private Boolean useExistingActiveConversation = null;
   private Date timestamp = null;
   private String selfUri = null;
   private AddressableEntityRef user = null;
@@ -205,6 +206,24 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
 
   
   /**
+   * Use an existing active conversation to send the agentless outbound message. Set this parameter to 'true' to use active conversation. Default value: false
+   **/
+  public SendAgentlessOutboundMessageResponse useExistingActiveConversation(Boolean useExistingActiveConversation) {
+    this.useExistingActiveConversation = useExistingActiveConversation;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Use an existing active conversation to send the agentless outbound message. Set this parameter to 'true' to use active conversation. Default value: false")
+  @JsonProperty("useExistingActiveConversation")
+  public Boolean getUseExistingActiveConversation() {
+    return useExistingActiveConversation;
+  }
+  public void setUseExistingActiveConversation(Boolean useExistingActiveConversation) {
+    this.useExistingActiveConversation = useExistingActiveConversation;
+  }
+
+  
+  /**
    * The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public SendAgentlessOutboundMessageResponse timestamp(Date timestamp) {
@@ -253,6 +272,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
         Objects.equals(this.messengerType, sendAgentlessOutboundMessageResponse.messengerType) &&
         Objects.equals(this.textBody, sendAgentlessOutboundMessageResponse.textBody) &&
         Objects.equals(this.messagingTemplate, sendAgentlessOutboundMessageResponse.messagingTemplate) &&
+        Objects.equals(this.useExistingActiveConversation, sendAgentlessOutboundMessageResponse.useExistingActiveConversation) &&
         Objects.equals(this.timestamp, sendAgentlessOutboundMessageResponse.timestamp) &&
         Objects.equals(this.selfUri, sendAgentlessOutboundMessageResponse.selfUri) &&
         Objects.equals(this.user, sendAgentlessOutboundMessageResponse.user);
@@ -260,7 +280,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, conversationId, fromAddress, toAddress, messengerType, textBody, messagingTemplate, timestamp, selfUri, user);
+    return Objects.hash(id, conversationId, fromAddress, toAddress, messengerType, textBody, messagingTemplate, useExistingActiveConversation, timestamp, selfUri, user);
   }
 
   @Override
@@ -275,6 +295,7 @@ public class SendAgentlessOutboundMessageResponse  implements Serializable {
     sb.append("    messengerType: ").append(toIndentedString(messengerType)).append("\n");
     sb.append("    textBody: ").append(toIndentedString(textBody)).append("\n");
     sb.append("    messagingTemplate: ").append(toIndentedString(messagingTemplate)).append("\n");
+    sb.append("    useExistingActiveConversation: ").append(toIndentedString(useExistingActiveConversation)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");

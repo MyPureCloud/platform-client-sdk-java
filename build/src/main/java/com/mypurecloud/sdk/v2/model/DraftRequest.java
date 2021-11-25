@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.DraftIntents;
+import com.mypurecloud.sdk.v2.model.DraftTopics;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ import java.io.Serializable;
 public class DraftRequest  implements Serializable {
   
   private List<DraftIntents> intents = new ArrayList<DraftIntents>();
+  private List<DraftTopics> topic = new ArrayList<DraftTopics>();
 
   
   /**
@@ -44,6 +46,23 @@ public class DraftRequest  implements Serializable {
   }
 
   
+  /**
+   **/
+  public DraftRequest topic(List<DraftTopics> topic) {
+    this.topic = topic;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("topic")
+  public List<DraftTopics> getTopic() {
+    return topic;
+  }
+  public void setTopic(List<DraftTopics> topic) {
+    this.topic = topic;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -54,12 +73,13 @@ public class DraftRequest  implements Serializable {
       return false;
     }
     DraftRequest draftRequest = (DraftRequest) o;
-    return Objects.equals(this.intents, draftRequest.intents);
+    return Objects.equals(this.intents, draftRequest.intents) &&
+        Objects.equals(this.topic, draftRequest.topic);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(intents);
+    return Objects.hash(intents, topic);
   }
 
   @Override
@@ -68,6 +88,7 @@ public class DraftRequest  implements Serializable {
     sb.append("class DraftRequest {\n");
     
     sb.append("    intents: ").append(toIndentedString(intents)).append("\n");
+    sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
     sb.append("}");
     return sb.toString();
   }

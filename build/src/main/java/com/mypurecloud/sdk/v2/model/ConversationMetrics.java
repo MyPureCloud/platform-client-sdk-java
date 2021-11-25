@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -24,6 +25,58 @@ public class ConversationMetrics  implements Serializable {
   private AddressableEntityRef conversation = null;
   private Double sentimentScore = null;
   private Double sentimentTrend = null;
+
+  private static class SentimentTrendClassEnumDeserializer extends StdDeserializer<SentimentTrendClassEnum> {
+    public SentimentTrendClassEnumDeserializer() {
+      super(SentimentTrendClassEnumDeserializer.class);
+    }
+
+    @Override
+    public SentimentTrendClassEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SentimentTrendClassEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The Sentiment Trend Class
+   */
+ @JsonDeserialize(using = SentimentTrendClassEnumDeserializer.class)
+  public enum SentimentTrendClassEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NOTCALCULATED("NotCalculated"),
+    DECLINING("Declining"),
+    SLIGHTLYDECLINING("SlightlyDeclining"),
+    NOCHANGE("NoChange"),
+    SLIGHTLYIMPROVING("SlightlyImproving"),
+    IMPROVING("Improving");
+
+    private String value;
+
+    SentimentTrendClassEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SentimentTrendClassEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SentimentTrendClassEnum value : SentimentTrendClassEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SentimentTrendClassEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SentimentTrendClassEnum sentimentTrendClass = null;
 
   
   /**
@@ -80,6 +133,24 @@ public class ConversationMetrics  implements Serializable {
   }
 
   
+  /**
+   * The Sentiment Trend Class
+   **/
+  public ConversationMetrics sentimentTrendClass(SentimentTrendClassEnum sentimentTrendClass) {
+    this.sentimentTrendClass = sentimentTrendClass;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The Sentiment Trend Class")
+  @JsonProperty("sentimentTrendClass")
+  public SentimentTrendClassEnum getSentimentTrendClass() {
+    return sentimentTrendClass;
+  }
+  public void setSentimentTrendClass(SentimentTrendClassEnum sentimentTrendClass) {
+    this.sentimentTrendClass = sentimentTrendClass;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -92,12 +163,13 @@ public class ConversationMetrics  implements Serializable {
     ConversationMetrics conversationMetrics = (ConversationMetrics) o;
     return Objects.equals(this.conversation, conversationMetrics.conversation) &&
         Objects.equals(this.sentimentScore, conversationMetrics.sentimentScore) &&
-        Objects.equals(this.sentimentTrend, conversationMetrics.sentimentTrend);
+        Objects.equals(this.sentimentTrend, conversationMetrics.sentimentTrend) &&
+        Objects.equals(this.sentimentTrendClass, conversationMetrics.sentimentTrendClass);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversation, sentimentScore, sentimentTrend);
+    return Objects.hash(conversation, sentimentScore, sentimentTrend, sentimentTrendClass);
   }
 
   @Override
@@ -108,6 +180,7 @@ public class ConversationMetrics  implements Serializable {
     sb.append("    conversation: ").append(toIndentedString(conversation)).append("\n");
     sb.append("    sentimentScore: ").append(toIndentedString(sentimentScore)).append("\n");
     sb.append("    sentimentTrend: ").append(toIndentedString(sentimentTrend)).append("\n");
+    sb.append("    sentimentTrendClass: ").append(toIndentedString(sentimentTrendClass)).append("\n");
     sb.append("}");
     return sb.toString();
   }
