@@ -42,6 +42,7 @@ title: JourneyAggregationView
 | NWEBACTIONSTIMEDOUT | &quot;nWebActionsTimedout&quot; |
 | NWEBACTIONSFREQUENCYCAPREACHED | &quot;nWebActionsFrequencyCapReached&quot; |
 | NWEBACTIONSOFFEREDOUTSIDESCHEDULE | &quot;nWebActionsOfferedOutsideSchedule&quot; |
+| OJOURNEYOUTCOMEVALUE | &quot;oJourneyOutcomeValue&quot; |
 {: class="table table-striped"}
 
 

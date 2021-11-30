@@ -60,7 +60,8 @@ public class JourneyAggregationView  implements Serializable {
     NWEBACTIONSSTARTED("nWebActionsStarted"),
     NWEBACTIONSTIMEDOUT("nWebActionsTimedout"),
     NWEBACTIONSFREQUENCYCAPREACHED("nWebActionsFrequencyCapReached"),
-    NWEBACTIONSOFFEREDOUTSIDESCHEDULE("nWebActionsOfferedOutsideSchedule");
+    NWEBACTIONSOFFEREDOUTSIDESCHEDULE("nWebActionsOfferedOutsideSchedule"),
+    OJOURNEYOUTCOMEVALUE("oJourneyOutcomeValue");
 
     private String value;
 
