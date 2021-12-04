@@ -19,9 +19,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Route path configuration
+ * RoutePathRequest
  */
-@ApiModel(description = "Route path configuration")
 
 public class RoutePathRequest  implements Serializable {
   
@@ -155,14 +154,14 @@ public class RoutePathRequest  implements Serializable {
 
   
   /**
-   * The planning group from which to copy route paths
+   * The planning group from which to take route paths. This property is only needed if a route path already exists in another planning group.Note that taking a route path from another planning group will modify the other planning group
    **/
   public RoutePathRequest sourcePlanningGroup(SourcePlanningGroupRequest sourcePlanningGroup) {
     this.sourcePlanningGroup = sourcePlanningGroup;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The planning group from which to copy route paths")
+  @ApiModelProperty(example = "null", value = "The planning group from which to take route paths. This property is only needed if a route path already exists in another planning group.Note that taking a route path from another planning group will modify the other planning group")
   @JsonProperty("sourcePlanningGroup")
   public SourcePlanningGroupRequest getSourcePlanningGroup() {
     return sourcePlanningGroup;

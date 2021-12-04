@@ -45,6 +45,7 @@ public class NamedEntityTypeMechanism  implements Serializable {
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    DYNAMICLIST("DynamicList"),
     LIST("List"),
     REGEX("Regex"),
     UNKNOWN("Unknown");

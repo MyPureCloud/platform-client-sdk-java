@@ -23,6 +23,7 @@ title: AuditQueryEntity
 | ACCESSTOKEN | &quot;AccessToken&quot; |
 | ACTIONMAP | &quot;ActionMap&quot; |
 | ACTIONTEMPLATE | &quot;ActionTemplate&quot; |
+| ACTIVITYCODE | &quot;ActivityCode&quot; |
 | AGENTROUTINGINFO | &quot;AgentRoutingInfo&quot; |
 | ANNOTATION | &quot;Annotation&quot; |
 | APPOINTMENT | &quot;Appointment&quot; |
@@ -32,6 +33,7 @@ title: AuditQueryEntity
 | AUTHUSER | &quot;AuthUser&quot; |
 | BULK | &quot;Bulk&quot; |
 | BULKACTIONS | &quot;BulkActions&quot; |
+| BUSINESSUNIT | &quot;BusinessUnit&quot; |
 | CALIBRATION | &quot;Calibration&quot; |
 | CALLABLETIMESET | &quot;CallableTimeSet&quot; |
 | CALLANALYSISRESPONSESET | &quot;CallAnalysisResponseSet&quot; |
@@ -87,11 +89,13 @@ title: AuditQueryEntity
 | KNOWLEDGEBASE | &quot;KnowledgeBase&quot; |
 | KNOWLEDGECATEGORY | &quot;KnowledgeCategory&quot; |
 | KNOWLEDGEDOCUMENT | &quot;KnowledgeDocument&quot; |
+| KNOWLEDGEDOCUMENTVARIATION | &quot;KnowledgeDocumentVariation&quot; |
 | KNOWLEDGESEARCHFEEDBACK | &quot;KnowledgeSearchFeedback&quot; |
 | KNOWLEDGETRAINING | &quot;KnowledgeTraining&quot; |
 | LINE | &quot;Line&quot; |
 | LINEBASE | &quot;LineBase&quot; |
 | LOCATION | &quot;Location&quot; |
+| MANAGEMENTUNIT | &quot;ManagementUnit&quot; |
 | MAXORGROUTINGUTILIZATIONCAPACITY | &quot;MaxOrgRoutingUtilizationCapacity&quot; |
 | MEDIADIAGNOSTICSTRACEFILE | &quot;MediaDiagnosticsTraceFile&quot; |
 | MESSAGINGCAMPAIGN | &quot;MessagingCampaign&quot; |
@@ -111,6 +115,7 @@ title: AuditQueryEntity
 | PCAPS | &quot;Pcaps&quot; |
 | PHONE | &quot;Phone&quot; |
 | PHONEBASE | &quot;PhoneBase&quot; |
+| PLANNINGGROUP | &quot;PlanningGroup&quot; |
 | POLICY | &quot;Policy&quot; |
 | PREDICTOR | &quot;Predictor&quot; |
 | PRODUCT | &quot;Product&quot; |
@@ -139,6 +144,7 @@ title: AuditQueryEntity
 | SENTIMENTFEEDBACK | &quot;SentimentFeedback&quot; |
 | SEQUENCE | &quot;Sequence&quot; |
 | SEQUENCESCHEDULE | &quot;SequenceSchedule&quot; |
+| SERVICEGOALTEMPLATE | &quot;ServiceGoalTemplate&quot; |
 | SESSIONTYPE | &quot;SessionType&quot; |
 | SHIFTTRADE | &quot;ShiftTrade&quot; |
 | SITE | &quot;Site&quot; |
@@ -161,6 +167,7 @@ title: AuditQueryEntity
 | VOICEMAILUSERPOLICY | &quot;VoicemailUserPolicy&quot; |
 | WEBHOOK | &quot;Webhook&quot; |
 | WORKPLAN | &quot;WorkPlan&quot; |
+| WORKPLANROTATION | &quot;WorkPlanRotation&quot; |
 | WORKSPACE | &quot;Workspace&quot; |
 | WRAPUPCODE | &quot;WrapupCode&quot; |
 | WRAPUPCODEMAPPING | &quot;WrapUpCodeMapping&quot; |

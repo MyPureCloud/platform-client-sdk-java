@@ -30,7 +30,7 @@ import com.mypurecloud.sdk.v2.model.BatchDownloadJobStatusResult;
 import com.mypurecloud.sdk.v2.model.PolicyEntityListing;
 import com.mypurecloud.sdk.v2.model.CrossPlatformPolicy;
 import com.mypurecloud.sdk.v2.model.RecordingJob;
-import com.mypurecloud.sdk.v2.model.FailedRecordingsEntityListing;
+import com.mypurecloud.sdk.v2.model.FailedRecordingEntityListing;
 import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
@@ -100,6 +100,34 @@ public class GetRecordingJobFailedrecordingsRequest {
 	    return this;
 	} 
 	
+	private Boolean includeTotal;
+	public Boolean getIncludeTotal() {
+		return this.includeTotal;
+	}
+
+	public void setIncludeTotal(Boolean includeTotal) {
+		this.includeTotal = includeTotal;
+	}
+
+	public GetRecordingJobFailedrecordingsRequest withIncludeTotal(Boolean includeTotal) {
+	    this.setIncludeTotal(includeTotal);
+	    return this;
+	} 
+	
+	private String cursor;
+	public String getCursor() {
+		return this.cursor;
+	}
+
+	public void setCursor(String cursor) {
+		this.cursor = cursor;
+	}
+
+	public GetRecordingJobFailedrecordingsRequest withCursor(String cursor) {
+	    this.setCursor(cursor);
+	    return this;
+	} 
+	
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -133,6 +161,10 @@ public class GetRecordingJobFailedrecordingsRequest {
                 .withQueryParameters("pageSize", "", pageSize)
         
                 .withQueryParameters("pageNumber", "", pageNumber)
+        
+                .withQueryParameters("includeTotal", "", includeTotal)
+        
+                .withQueryParameters("cursor", "", cursor)
         
                 .withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -172,6 +204,16 @@ public class GetRecordingJobFailedrecordingsRequest {
 		
 		public Builder withPageNumber(Integer pageNumber) {
 			request.setPageNumber(pageNumber);
+			return this;
+		}
+		
+		public Builder withIncludeTotal(Boolean includeTotal) {
+			request.setIncludeTotal(includeTotal);
+			return this;
+		}
+		
+		public Builder withCursor(String cursor) {
+			request.setCursor(cursor);
 			return this;
 		}
 		

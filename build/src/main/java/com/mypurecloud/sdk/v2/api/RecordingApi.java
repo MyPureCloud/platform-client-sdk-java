@@ -20,7 +20,7 @@ import com.mypurecloud.sdk.v2.model.BatchDownloadJobStatusResult;
 import com.mypurecloud.sdk.v2.model.PolicyEntityListing;
 import com.mypurecloud.sdk.v2.model.CrossPlatformPolicy;
 import com.mypurecloud.sdk.v2.model.RecordingJob;
-import com.mypurecloud.sdk.v2.model.FailedRecordingsEntityListing;
+import com.mypurecloud.sdk.v2.model.FailedRecordingEntityListing;
 import com.mypurecloud.sdk.v2.model.RecordingJobEntityListing;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfiguration;
 import com.mypurecloud.sdk.v2.model.LocalEncryptionConfigurationListing;
@@ -1845,12 +1845,14 @@ public class RecordingApi {
    * @param jobId jobId (required)
    * @param pageSize Page size. Maximum is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @return FailedRecordingsEntityListing
+   * @param includeTotal If false, cursor will be used to locate the page instead of pageNumber. (optional)
+   * @param cursor Indicates where to resume query results (not required for first page) (optional)
+   * @return FailedRecordingEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public FailedRecordingsEntityListing getRecordingJobFailedrecordings(String jobId, Integer pageSize, Integer pageNumber) throws IOException, ApiException {
-    return  getRecordingJobFailedrecordings(createGetRecordingJobFailedrecordingsRequest(jobId, pageSize, pageNumber));
+  public FailedRecordingEntityListing getRecordingJobFailedrecordings(String jobId, Integer pageSize, Integer pageNumber, Boolean includeTotal, String cursor) throws IOException, ApiException {
+    return  getRecordingJobFailedrecordings(createGetRecordingJobFailedrecordingsRequest(jobId, pageSize, pageNumber, includeTotal, cursor));
   }
 
   /**
@@ -1859,20 +1861,26 @@ public class RecordingApi {
    * @param jobId jobId (required)
    * @param pageSize Page size. Maximum is 100. (optional, default to 25)
    * @param pageNumber Page number (optional, default to 1)
-   * @return FailedRecordingsEntityListing
+   * @param includeTotal If false, cursor will be used to locate the page instead of pageNumber. (optional)
+   * @param cursor Indicates where to resume query results (not required for first page) (optional)
+   * @return FailedRecordingEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FailedRecordingsEntityListing> getRecordingJobFailedrecordingsWithHttpInfo(String jobId, Integer pageSize, Integer pageNumber) throws IOException {
-    return getRecordingJobFailedrecordings(createGetRecordingJobFailedrecordingsRequest(jobId, pageSize, pageNumber).withHttpInfo());
+  public ApiResponse<FailedRecordingEntityListing> getRecordingJobFailedrecordingsWithHttpInfo(String jobId, Integer pageSize, Integer pageNumber, Boolean includeTotal, String cursor) throws IOException {
+    return getRecordingJobFailedrecordings(createGetRecordingJobFailedrecordingsRequest(jobId, pageSize, pageNumber, includeTotal, cursor).withHttpInfo());
   }
 
-  private GetRecordingJobFailedrecordingsRequest createGetRecordingJobFailedrecordingsRequest(String jobId, Integer pageSize, Integer pageNumber) {
+  private GetRecordingJobFailedrecordingsRequest createGetRecordingJobFailedrecordingsRequest(String jobId, Integer pageSize, Integer pageNumber, Boolean includeTotal, String cursor) {
     return GetRecordingJobFailedrecordingsRequest.builder()
             .withJobId(jobId)
     
             .withPageSize(pageSize)
     
             .withPageNumber(pageNumber)
+    
+            .withIncludeTotal(includeTotal)
+    
+            .withCursor(cursor)
     
             .build();
   }
@@ -1881,13 +1889,13 @@ public class RecordingApi {
    * Get IDs of recordings that the bulk job failed for
    * 
    * @param request The request object
-   * @return FailedRecordingsEntityListing
+   * @return FailedRecordingEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public FailedRecordingsEntityListing getRecordingJobFailedrecordings(GetRecordingJobFailedrecordingsRequest request) throws IOException, ApiException {
+  public FailedRecordingEntityListing getRecordingJobFailedrecordings(GetRecordingJobFailedrecordingsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<FailedRecordingsEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FailedRecordingsEntityListing>() {});
+      ApiResponse<FailedRecordingEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<FailedRecordingEntityListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -1903,13 +1911,13 @@ public class RecordingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<FailedRecordingsEntityListing> getRecordingJobFailedrecordings(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<FailedRecordingEntityListing> getRecordingJobFailedrecordings(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<FailedRecordingsEntityListing>() {});
+      return pcapiClient.invoke(request, new TypeReference<FailedRecordingEntityListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<FailedRecordingsEntityListing> response = (ApiResponse<FailedRecordingsEntityListing>)(ApiResponse<?>)exception;
+      ApiResponse<FailedRecordingEntityListing> response = (ApiResponse<FailedRecordingEntityListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1920,7 +1928,7 @@ public class RecordingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<FailedRecordingsEntityListing> response = (ApiResponse<FailedRecordingsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<FailedRecordingEntityListing> response = (ApiResponse<FailedRecordingEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -1935,12 +1943,14 @@ public class RecordingApi {
    * @param state Filter by state (optional)
    * @param showOnlyMyJobs Show only my jobs (optional)
    * @param jobType Job Type (Can be left empty for both) (optional)
+   * @param includeTotal If false, cursor will be used to locate the page instead of pageNumber. (optional)
+   * @param cursor Indicates where to resume query results (not required for first page) (optional)
    * @return RecordingJobEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public RecordingJobEntityListing getRecordingJobs(Integer pageSize, Integer pageNumber, String sortBy, String state, Boolean showOnlyMyJobs, String jobType) throws IOException, ApiException {
-    return  getRecordingJobs(createGetRecordingJobsRequest(pageSize, pageNumber, sortBy, state, showOnlyMyJobs, jobType));
+  public RecordingJobEntityListing getRecordingJobs(Integer pageSize, Integer pageNumber, String sortBy, String state, Boolean showOnlyMyJobs, String jobType, Boolean includeTotal, String cursor) throws IOException, ApiException {
+    return  getRecordingJobs(createGetRecordingJobsRequest(pageSize, pageNumber, sortBy, state, showOnlyMyJobs, jobType, includeTotal, cursor));
   }
 
   /**
@@ -1952,14 +1962,16 @@ public class RecordingApi {
    * @param state Filter by state (optional)
    * @param showOnlyMyJobs Show only my jobs (optional)
    * @param jobType Job Type (Can be left empty for both) (optional)
+   * @param includeTotal If false, cursor will be used to locate the page instead of pageNumber. (optional)
+   * @param cursor Indicates where to resume query results (not required for first page) (optional)
    * @return RecordingJobEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RecordingJobEntityListing> getRecordingJobsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String state, Boolean showOnlyMyJobs, String jobType) throws IOException {
-    return getRecordingJobs(createGetRecordingJobsRequest(pageSize, pageNumber, sortBy, state, showOnlyMyJobs, jobType).withHttpInfo());
+  public ApiResponse<RecordingJobEntityListing> getRecordingJobsWithHttpInfo(Integer pageSize, Integer pageNumber, String sortBy, String state, Boolean showOnlyMyJobs, String jobType, Boolean includeTotal, String cursor) throws IOException {
+    return getRecordingJobs(createGetRecordingJobsRequest(pageSize, pageNumber, sortBy, state, showOnlyMyJobs, jobType, includeTotal, cursor).withHttpInfo());
   }
 
-  private GetRecordingJobsRequest createGetRecordingJobsRequest(Integer pageSize, Integer pageNumber, String sortBy, String state, Boolean showOnlyMyJobs, String jobType) {
+  private GetRecordingJobsRequest createGetRecordingJobsRequest(Integer pageSize, Integer pageNumber, String sortBy, String state, Boolean showOnlyMyJobs, String jobType, Boolean includeTotal, String cursor) {
     return GetRecordingJobsRequest.builder()
             .withPageSize(pageSize)
     
@@ -1972,6 +1984,10 @@ public class RecordingApi {
             .withShowOnlyMyJobs(showOnlyMyJobs)
     
             .withJobType(jobType)
+    
+            .withIncludeTotal(includeTotal)
+    
+            .withCursor(cursor)
     
             .build();
   }

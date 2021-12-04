@@ -16,9 +16,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Source planning group
+ * SourcePlanningGroupRequest
  */
-@ApiModel(description = "Source planning group")
 
 public class SourcePlanningGroupRequest  implements Serializable {
   

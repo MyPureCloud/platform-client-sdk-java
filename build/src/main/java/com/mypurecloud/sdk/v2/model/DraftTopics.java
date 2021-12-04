@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import java.util.Objects;
 import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.Miner;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -24,6 +25,11 @@ public class DraftTopics  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private Miner miner = null;
+  private Integer conversationCount = null;
+  private Float conversationPercent = null;
+  private Integer utteranceCount = null;
+  private Integer phraseCount = null;
   private List<String> phrases = new ArrayList<String>();
   private String selfUri = null;
 
@@ -47,20 +53,55 @@ public class DraftTopics  implements Serializable {
 
   
   /**
-   * Name/Label for a topic.
+   * Topic name.
    **/
   public DraftTopics name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Name/Label for a topic.")
+  @ApiModelProperty(example = "null", value = "Topic name.")
   @JsonProperty("name")
   public String getName() {
     return name;
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "The miner to which the topic belongs.")
+  @JsonProperty("miner")
+  public Miner getMiner() {
+    return miner;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "Number of conversations where a topic has occurred.")
+  @JsonProperty("conversationCount")
+  public Integer getConversationCount() {
+    return conversationCount;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "Percentage of conversations where a topic has occurred.")
+  @JsonProperty("conversationPercent")
+  public Float getConversationPercent() {
+    return conversationPercent;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "Number of unique utterances where a topic has occurred.")
+  @JsonProperty("utteranceCount")
+  public Integer getUtteranceCount() {
+    return utteranceCount;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "Number of unique phrases (sub-utterances) where a topic has occurred.")
+  @JsonProperty("phraseCount")
+  public Integer getPhraseCount() {
+    return phraseCount;
   }
 
   
@@ -101,13 +142,18 @@ public class DraftTopics  implements Serializable {
     DraftTopics draftTopics = (DraftTopics) o;
     return Objects.equals(this.id, draftTopics.id) &&
         Objects.equals(this.name, draftTopics.name) &&
+        Objects.equals(this.miner, draftTopics.miner) &&
+        Objects.equals(this.conversationCount, draftTopics.conversationCount) &&
+        Objects.equals(this.conversationPercent, draftTopics.conversationPercent) &&
+        Objects.equals(this.utteranceCount, draftTopics.utteranceCount) &&
+        Objects.equals(this.phraseCount, draftTopics.phraseCount) &&
         Objects.equals(this.phrases, draftTopics.phrases) &&
         Objects.equals(this.selfUri, draftTopics.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, phrases, selfUri);
+    return Objects.hash(id, name, miner, conversationCount, conversationPercent, utteranceCount, phraseCount, phrases, selfUri);
   }
 
   @Override
@@ -117,6 +163,11 @@ public class DraftTopics  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    miner: ").append(toIndentedString(miner)).append("\n");
+    sb.append("    conversationCount: ").append(toIndentedString(conversationCount)).append("\n");
+    sb.append("    conversationPercent: ").append(toIndentedString(conversationPercent)).append("\n");
+    sb.append("    utteranceCount: ").append(toIndentedString(utteranceCount)).append("\n");
+    sb.append("    phraseCount: ").append(toIndentedString(phraseCount)).append("\n");
     sb.append("    phrases: ").append(toIndentedString(phrases)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

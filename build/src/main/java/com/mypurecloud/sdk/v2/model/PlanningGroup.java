@@ -20,9 +20,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Planning Group
+ * PlanningGroup
  */
-@ApiModel(description = "Planning Group")
 
 public class PlanningGroup  implements Serializable {
   

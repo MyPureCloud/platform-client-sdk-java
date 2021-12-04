@@ -72,7 +72,9 @@ public class PostAuthorizationDivisionObjectRequest {
 		ROUTINGSCHEDULES("ROUTINGSCHEDULES"), 
 		ROUTINGSCHEDULEGROUPS("ROUTINGSCHEDULEGROUPS"), 
 		DATATABLES("DATATABLES"), 
-		TEAM("TEAM");
+		TEAM("TEAM"), 
+		WORKBIN("WORKBIN"), 
+		WORKTYPE("WORKTYPE");
 
 		private String value;
 

@@ -21,9 +21,8 @@ import java.util.List;
 
 import java.io.Serializable;
 /**
- * Route path configuration
+ * RoutePathResponse
  */
-@ApiModel(description = "Route path configuration")
 
 public class RoutePathResponse  implements Serializable {
   

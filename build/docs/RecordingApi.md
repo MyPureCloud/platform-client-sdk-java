@@ -1399,7 +1399,7 @@ try {
 
 
 
-> [FailedRecordingsEntityListing](FailedRecordingsEntityListing.html) getRecordingJobFailedrecordings(jobId, pageSize, pageNumber)
+> [FailedRecordingEntityListing](FailedRecordingEntityListing.html) getRecordingJobFailedrecordings(jobId, pageSize, pageNumber, includeTotal, cursor)
 
 Get IDs of recordings that the bulk job failed for
 
@@ -1436,8 +1436,10 @@ RecordingApi apiInstance = new RecordingApi();
 String jobId = "jobId_example"; // String | jobId
 Integer pageSize = 25; // Integer | Page size. Maximum is 100.
 Integer pageNumber = 1; // Integer | Page number
+Boolean includeTotal = true; // Boolean | If false, cursor will be used to locate the page instead of pageNumber.
+String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page)
 try {
-    FailedRecordingsEntityListing result = apiInstance.getRecordingJobFailedrecordings(jobId, pageSize, pageNumber);
+    FailedRecordingEntityListing result = apiInstance.getRecordingJobFailedrecordings(jobId, pageSize, pageNumber, includeTotal, cursor);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RecordingApi#getRecordingJobFailedrecordings");
@@ -1453,12 +1455,14 @@ try {
 | **jobId** | **String**| jobId | 
 | **pageSize** | **Integer**| Page size. Maximum is 100. | [optional] [default to 25] 
 | **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **includeTotal** | **Boolean**| If false, cursor will be used to locate the page instead of pageNumber. | [optional] 
+| **cursor** | **String**| Indicates where to resume query results (not required for first page) | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**FailedRecordingsEntityListing**](FailedRecordingsEntityListing.html)
+[**FailedRecordingEntityListing**](FailedRecordingEntityListing.html)
 
 <a name="getRecordingJobs"></a>
 
@@ -1466,7 +1470,7 @@ try {
 
 
 
-> [RecordingJobEntityListing](RecordingJobEntityListing.html) getRecordingJobs(pageSize, pageNumber, sortBy, state, showOnlyMyJobs, jobType)
+> [RecordingJobEntityListing](RecordingJobEntityListing.html) getRecordingJobs(pageSize, pageNumber, sortBy, state, showOnlyMyJobs, jobType, includeTotal, cursor)
 
 Get the status of all jobs within the user&#39;s organization
 
@@ -1506,8 +1510,10 @@ String sortBy = "userId"; // String | Sort by
 String state = "state_example"; // String | Filter by state
 Boolean showOnlyMyJobs = true; // Boolean | Show only my jobs
 String jobType = "jobType_example"; // String | Job Type (Can be left empty for both)
+Boolean includeTotal = true; // Boolean | If false, cursor will be used to locate the page instead of pageNumber.
+String cursor = "cursor_example"; // String | Indicates where to resume query results (not required for first page)
 try {
-    RecordingJobEntityListing result = apiInstance.getRecordingJobs(pageSize, pageNumber, sortBy, state, showOnlyMyJobs, jobType);
+    RecordingJobEntityListing result = apiInstance.getRecordingJobs(pageSize, pageNumber, sortBy, state, showOnlyMyJobs, jobType, includeTotal, cursor);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RecordingApi#getRecordingJobs");
@@ -1526,6 +1532,8 @@ try {
 | **state** | **String**| Filter by state | [optional]<br />**Values**: FULFILLED, PENDING, READY, PROCESSING, CANCELLED, FAILED 
 | **showOnlyMyJobs** | **Boolean**| Show only my jobs | [optional] 
 | **jobType** | **String**| Job Type (Can be left empty for both) | [optional]<br />**Values**: DELETE, EXPORT 
+| **includeTotal** | **Boolean**| If false, cursor will be used to locate the page instead of pageNumber. | [optional] 
+| **cursor** | **String**| Indicates where to resume query results (not required for first page) | [optional] 
 {: class="table-striped"}
 
 

@@ -12,6 +12,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
+import com.mypurecloud.sdk.v2.model.ParticipantMetrics;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -77,6 +78,7 @@ public class ConversationMetrics  implements Serializable {
     }
   }
   private SentimentTrendClassEnum sentimentTrendClass = null;
+  private ParticipantMetrics participantMetrics = null;
 
   
   /**
@@ -151,6 +153,24 @@ public class ConversationMetrics  implements Serializable {
   }
 
   
+  /**
+   * The Participant Metrics
+   **/
+  public ConversationMetrics participantMetrics(ParticipantMetrics participantMetrics) {
+    this.participantMetrics = participantMetrics;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The Participant Metrics")
+  @JsonProperty("participantMetrics")
+  public ParticipantMetrics getParticipantMetrics() {
+    return participantMetrics;
+  }
+  public void setParticipantMetrics(ParticipantMetrics participantMetrics) {
+    this.participantMetrics = participantMetrics;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -164,12 +184,13 @@ public class ConversationMetrics  implements Serializable {
     return Objects.equals(this.conversation, conversationMetrics.conversation) &&
         Objects.equals(this.sentimentScore, conversationMetrics.sentimentScore) &&
         Objects.equals(this.sentimentTrend, conversationMetrics.sentimentTrend) &&
-        Objects.equals(this.sentimentTrendClass, conversationMetrics.sentimentTrendClass);
+        Objects.equals(this.sentimentTrendClass, conversationMetrics.sentimentTrendClass) &&
+        Objects.equals(this.participantMetrics, conversationMetrics.participantMetrics);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversation, sentimentScore, sentimentTrend, sentimentTrendClass);
+    return Objects.hash(conversation, sentimentScore, sentimentTrend, sentimentTrendClass, participantMetrics);
   }
 
   @Override
@@ -181,6 +202,7 @@ public class ConversationMetrics  implements Serializable {
     sb.append("    sentimentScore: ").append(toIndentedString(sentimentScore)).append("\n");
     sb.append("    sentimentTrend: ").append(toIndentedString(sentimentTrend)).append("\n");
     sb.append("    sentimentTrendClass: ").append(toIndentedString(sentimentTrendClass)).append("\n");
+    sb.append("    participantMetrics: ").append(toIndentedString(participantMetrics)).append("\n");
     sb.append("}");
     return sb.toString();
   }

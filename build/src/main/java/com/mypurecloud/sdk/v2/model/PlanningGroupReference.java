@@ -15,9 +15,8 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
- * Planning Group
+ * PlanningGroupReference
  */
-@ApiModel(description = "Planning Group")
 
 public class PlanningGroupReference  implements Serializable {
   
